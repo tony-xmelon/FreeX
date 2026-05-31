@@ -36,7 +36,20 @@ The root object stores workbook-wide state:
 
 ## Workbook Theme
 
-`Theme` stores the workbook theme name, font family choices, and color slots. Colors are serialized as `#RRGGBB`; theme-color references use a color slot plus optional tint.
+`Theme` stores the workbook theme name, font family choices, effect-set name, and color slots. Colors are serialized as `#RRGGBB`; theme-color references use a color slot plus optional tint.
+
+For XLSX fidelity, `Theme` also carries native DrawingML fragments when a workbook came from, or is intended to round-trip back to, `xl/theme/theme1.xml`:
+
+| Property | Type | Notes |
+|---|---|---|
+| `NativeColorSchemeXml` | string/null | Preserved `<a:clrScheme>` XML, including custom transforms and scheme metadata. |
+| `NativeFontSchemeXml` | string/null | Preserved `<a:fontScheme>` XML, including East Asian, complex-script, and script-specific font entries. |
+| `NativeFormatSchemeXml` | string/null | Preserved `<a:fmtScheme>` XML, including effect, line, fill, and background-fill details that FreeX may not interpret yet. |
+| `NativeThemeSupplementXml` | string/null | Preserved theme-level DrawingML elements outside `themeElements`, such as object defaults, alternate color scheme lists, custom color lists, and extension lists. |
+| `AlternateColorSchemes` | object[] | Modeled alternate color schemes plus optional native `<a:clrScheme>` XML for each scheme. |
+| `HasObjectDefaults` / `ObjectDefaults` | bool/object | Modeled shape, line, and text defaults parsed from `<a:objectDefaults>` where supported, plus optional native object-default XML. |
+
+When both modeled values and native XML are present, modeled values drive FreeX behavior while native XML preserves unsupported Office details for save round-trips.
 
 ## Sheets
 
