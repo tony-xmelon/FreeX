@@ -291,5 +291,5 @@ These are documented product decisions, not bugs. They will not be fixed unless 
 | **Treemap, Waterfall, Histogram, Box-Whisker, Funnel, and Map charts are not authorable** | These chart families do not yet have a data model and renderer. They are detected from XLSX files and preserved. |
 | **True 3D mesh surface rendering is partial** | 3D surface charts render as a value-colored matrix; full 3D mesh graphics remain a deferred renderer enhancement. |
 | **Theme-color effects are partial** | Full OOXML theme-effect chains (glow, shadow, reflection, etc.) are not interpreted; only base theme colors are applied. |
-| **Multi-window workbook view** | New Window, View Side by Side, Synchronous Scrolling require a multi-window hosting architecture not yet built. |
+| **Advanced multi-window workbook view** | New Window and Switch Windows are registry-backed. Hide/Unhide, View Side by Side, Synchronous Scrolling, and Reset Window Position are not exposed until live visibility and paired-window subsystems exist. |
 | **OLE embedded objects are not interactive** | Embedded Word documents, images, or other OLE objects are preserved as package bytes but not rendered or editable. |

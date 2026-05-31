@@ -59,7 +59,7 @@ Not cloud/proprietary exclusions, but require larger architecture before adding 
 
 | Area | Excel Feature | FreeX Decision |
 |---|---|---|
-| Window Management | New Window, View Side by Side, Synchronous Scrolling, Reset Window Position, Switch Windows | Deferred until multi-window workbook hosting exists |
+| Window Management | New Window, Switch Windows; Hide/Unhide, View Side by Side, Synchronous Scrolling, Reset Window Position | New/Switch implemented through the live workbook-window registry; the rest are deferred and not exposed in the ribbon until visibility/pairing subsystems exist |
 | Theme System | Themes, theme colors, theme fonts, theme effects | Partial; theme part load/save now preserves loaded `fmtScheme` OOXML, while full effect interpretation remains deferred |
 | Advanced Chart Families | Treemap, sunburst, histogram, Pareto, box-and-whisker, waterfall, funnel, map, true 3D surface mesh | Deferred - recognized from XLSX where detected and blocked from broken authoring/rendering; 2D/3D surface charts now have package and matrix-rendering paths, while mixed drawing-part retention for unsupported chart families remains partial until per-family data model and package writer support exist |
 
@@ -184,7 +184,7 @@ worksheet coordinates.
 
 | Command | Status | Notes |
 |---|---|---|
-| Conditional Formatting | Partial | Most modeled rules; grid rendering covers cell value, formulas, above/below average, top/bottom, duplicate/unique, text, blank/nonblank, error/no-error, color scales, data bars, and visible 3/4/5-band icon sets with style-aware arrows, traffic lights, signs, symbols, flags, ratings, quarters, boxes, reverse/icons-only display, and authored percent/number thresholds; icon-set authoring/editing supports core OOXML styles with show/reverse options, rule dialogs expose access-keyed value/format fields, visual-rule threshold/color fields, option toggles, and OK/Cancel, the ribbon menu exposes grouped Directional/Shapes/Indicators/Ratings one-click presets plus More Rules, and the manager preserves advanced CF fields including Stop If True plus rules outside Current Selection; simplified rule manager remains partial |
+| Conditional Formatting | Partial | Most modeled rules; grid rendering covers cell value, formulas, above/below average, top/bottom, duplicate/unique, text, blank/nonblank, error/no-error, color scales, data bars, and visible 3/4/5-band icon sets with style-aware arrows, traffic lights, signs, symbols, flags, ratings, quarters, boxes, reverse/icons-only display, and authored percent/number thresholds; icon-set authoring/editing supports core OOXML styles with show/reverse options, rule dialogs expose access-keyed value/format fields, visual-rule threshold/color fields, option toggles, and OK/Cancel, the ribbon menu exposes direct one-click icon-set presets plus More Rules without disabled category pseudo-commands, and the manager preserves advanced CF fields including Stop If True plus rules outside Current Selection; simplified rule manager remains partial |
 | Format as Table | Partial | Creates structured table metadata with generated headers, AutoFilter flag, style name, visible banding, access-keyed range/header controls, one-step undo for table creation plus styling, and an Excel-scale Light/Medium/Dark gallery with swatch previews; command-level style-option toggles for first column, last column, row stripes, and column stripes are undoable and preserve loaded table metadata; command-level and XLSX-loaded table value filters hide non-matching data rows with multi-column AND, blank inclusion, and totals-row exclusion semantics; totals-row labels and common functions (`sum`, `average`, `count`, `countNums`, `min`, `max`) can be materialized with undo; formulas can evaluate and track dependencies for basic data-body column structured references such as `Sales[Amount]`, evaluate whole-table section selectors `#Headers`, `#Data`, `#All`, and `#Totals`, evaluate section-column intersections such as `Sales[[#Totals],[Amount]]`, evaluate scalar current-row references such as `[@Amount]` or `Sales[@Amount]` from table data-body formulas, evaluate qualified and unqualified `#This Row` references such as `Sales[[#This Row],[Amount]:[Tax]]` and `[[#This Row],[Amount]:[Tax]]`, and evaluate multi-column ranges such as `Sales[[Amount]:[Tax]]` and `Sales[[#Data],[Amount]:[Tax]]`; full table style theme semantics remain partial |
 | Cell Styles | Partial | Expanded built-in preset gallery backed by reusable `StyleDiff` planners; Accent 20% presets resolve against the active workbook theme; full workbook named-style semantics remain deferred |
 
@@ -241,7 +241,7 @@ worksheet coordinates.
 | Screenshot | Excluded | OS-level feature (Win+Shift+S) |
 | Chart (column/bar/line/area/pie/doughnut/scatter/bubble) | Implemented | Select Data Source, Move Chart, Insert Chart, and chart format dialogs expose keyboard access keys for modeled fields and option controls |
 | Chart (stock/radar) | Implemented | Model, ribbon insertion, renderer, and XLSX read/write paths implemented |
-| Chart (treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel/map/true 3D surface mesh) | Deferred | Surface has package, matrix-rendering, and Insert/Change Chart picker support; remaining advanced families are recognized from XLSX where detected and blocked from broken authoring/rendering, with lossless mixed drawing-part retention partial until per-family package writer support exists |
+| Chart (treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel/true 3D surface mesh) | Deferred | Surface has package, matrix-rendering, and Insert/Change Chart picker support; remaining advanced families are recognized from XLSX where detected and blocked from broken authoring/rendering, with lossless mixed drawing-part retention partial until per-family package writer support exists. Map Chart remains recognized for XLSX preservation but is hidden from the Insert ribbon until authoring/rendering is implemented. |
 | Recommended Charts | Excluded | AI/ML heuristics; proprietary |
 | Sparklines (line/column/win-loss) | Implemented |  |
 | Text Box | Implemented |  |
@@ -250,7 +250,7 @@ worksheet coordinates.
 | Symbols | Implemented | Picker Cancel action exposes a keyboard access key. |
 | Hyperlink (Ctrl+K) | Implemented |  |
 | Comment/Note | Partial | Insert tab creates local threaded comments; Review tab also keeps simple note commands. Full threaded conversation/reply UI remains partial |
-| Equation | Excluded |  |
+| Equation | Excluded | Hidden from the Insert ribbon until equation authoring is implemented |
 <!-- command-inventory:command-surface:insert:end -->
 
 ---
@@ -424,14 +424,14 @@ workbook command behavior to track here.
 | Split Panes | Implemented | Toggle clears frozen panes and supports independent split quadrants, draggable dividers, pane-specific scrollbars, wheel targeting, clipping, and active-state ribbon feedback |
 | Zoom | Implemented | 10-400% range |
 | Zoom to Selection | Implemented |  |
-| New Window | Partial | Planner-backed command path and owned message are wired; creating another live workbook window still requires multi-window hosting |
+| New Window | Implemented | Creates a secondary MainWindow over the shared workbook through WorkbookWindowRegistry |
 | Arrange All | Partial | Stores choice; no live multi-window |
-| Hide Window | Partial | Single-visible-window state disables unsafe hiding and explains the boundary; hiding secondary workbook windows still requires live multi-window visibility state |
-| Unhide Window | Partial | No-hidden-window state disables Unhide with runtime help text; restoring hidden workbook windows still requires live multi-window visibility state |
-| View Side by Side | Partial | Toggle-style command reflects planner state and is disabled until a second visible workbook window exists; live side-by-side hosting remains deferred |
-| Synchronous Scrolling | Partial | Toggle-style command reflects planner state and is disabled until an active side-by-side pair exists; synchronized viewport routing remains deferred |
-| Reset Window Position | Partial | Planner disables the command until an active side-by-side pair exists; resetting live paired window layout remains deferred |
-| Switch Windows | Partial | Planner disables the command until more than one visible workbook window exists; switching focus through a live window registry remains deferred |
+| Hide Window | Deferred | Removed from the ribbon until workbook-window visibility state exists |
+| Unhide Window | Deferred | Removed from the ribbon until hidden workbook-window state exists |
+| View Side by Side | Deferred | Removed from the ribbon until paired workbook-window layout exists |
+| Synchronous Scrolling | Deferred | Removed from the ribbon until paired-window synchronized viewport routing exists |
+| Reset Window Position | Deferred | Removed from the ribbon until paired workbook-window layout exists |
+| Switch Windows | Implemented | Cycles focus through the live WorkbookWindowRegistry and enables once a second workbook window exists |
 <!-- command-inventory:command-surface:view:end -->
 
 ---

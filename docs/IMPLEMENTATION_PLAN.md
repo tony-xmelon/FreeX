@@ -13,7 +13,7 @@ The following previously "Not Implemented" items are now explicitly excluded. Ea
 
 | Feature | Reason |
 |---|---|
-| **Multi-window View** (New Window, Side-by-Side, Sync Scrolling, Switch Windows) | Insignificant UX value; requires complex multi-window WPF hosting with shared workbook state. The arrangement-choice state is already persisted. Not a blocker for any real workflow. |
+| **Multi-window View advanced controls** (Hide/Unhide, Side-by-Side, Sync Scrolling, Reset Window Position) | Requires window visibility state, paired layout, and synchronized viewport routing. New Window and Switch Windows now have a live registry-backed slice; the remaining advanced controls stay out of the ribbon until their subsystems exist. |
 | **Thesaurus** | Requires an external dictionary/thesaurus service or bundled corpus. No offline equivalent in .NET base libraries. |
 | **Insert > Icons** | Requires Microsoft's proprietary Fluent icon library; not redistributable. |
 | **Insert > Screenshot** | OS-level snipping tools (Win+Shift+S) are a better UX; not worth duplicating. |
@@ -253,7 +253,7 @@ In addition to the existing excluded features (cloud, VBA, Power Query, data mod
 
 | Feature | Category |
 |---|---|
-| Multi-window View (New Window, Side-by-Side, Sync Scrolling) | Insignificant / complex |
+| Multi-window View advanced controls (Hide/Unhide, Side-by-Side, Sync Scrolling, Reset Position) | Complex paired-window/visibility subsystem |
 | Thesaurus | External service dependency |
 | Insert > Icons | Proprietary Microsoft library |
 | Insert > Screenshot | OS-level feature |
