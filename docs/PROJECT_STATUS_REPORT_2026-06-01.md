@@ -3,7 +3,7 @@
 Generated: 2026-06-01
 Observed at: 2026-06-01T00:20:00+03:00
 Report scope: current consolidated documentation/status snapshot after May 31 integrations
-Mainline observed: `main` and `origin/main` at `279fbc1df` before this documentation refresh
+Mainline observed: `main` and `origin/main` at `a199df80f` after this documentation refresh
 
 ## Executive Summary
 
@@ -11,18 +11,18 @@ FreeX remains in late-stage parity hardening. The broad app surface is functiona
 
 Overall completion remains **95%** in [release/progress.json](../release/progress.json), which keeps tester builds in the `v0.8.<run>` stream. The main remaining work is package-preserving XLSX validation, broader corpus proof, release signing/trust and human accessibility validation, localization breadth, keytip/visual polish, and measured performance hardening.
 
-The project history metrics report now covers Git and provider-log activity from 2026-05-12 through 2026-05-31 inclusive. Through May 31, the daily churn table records **11,760 commits**, **14,416 changed-file/day entries**, **+1,426,953 / -922,561 LoC**, and local provider logs attribute **116,943,364,224 observed raw tokens** across OpenAI/Codex and Anthropic/Claude rows.
+The project history metrics report now covers Git and provider-log activity from 2026-05-12 through 2026-05-31 inclusive. Through May 31, the daily churn table records **11,780 commits**, **14,464 changed-file/day entries**, **+1,429,132 / -922,973 LoC**, and local provider logs attribute **116,943,364,224 observed raw tokens** across OpenAI/Codex and Anthropic/Claude rows.
 
 ## Current Repository Metrics
 
 | Metric | Count |
 | --- | ---: |
-| Tracked files | 2,161 |
-| C# source files under `src/` | 1,001 |
-| C# test files under `tests/` | 505 |
-| Markdown docs under `docs/` | 242 |
-| Current C# source LOC | 191,932 |
-| Current C# test LOC | 194,791 |
+| Tracked files | 2,168 |
+| C# source files under `src/` | 1,004 |
+| C# test files under `tests/` | 508 |
+| Markdown docs under `docs/` | 243 |
+| Current C# source LOC | 192,737 |
+| Current C# test LOC | 195,772 |
 | Current XAML LOC | 8,232 |
 | XLSX corpus manifest rows | 175 |
 
@@ -30,7 +30,7 @@ The project history metrics report now covers Git and provider-log activity from
 
 | Item | Status |
 | --- | --- |
-| Mainline | `main` was clean and synchronized with `origin/main` at `279fbc1df` before this documentation branch started |
+| Mainline | `main` is clean and synchronized with `origin/main` at `a199df80f` after this documentation refresh |
 | Completion tracking | [release/progress.json](../release/progress.json) remains at `overallCompletion: 95` |
 | History metrics | [PROJECT_BUILD_HISTORY_METRICS.md](PROJECT_BUILD_HISTORY_METRICS.md) is refreshed through 2026-05-31 inclusive |
 | Branch posture | Multiple worker branches/worktrees are still registered for active or paused parallel implementation; this report does not treat worker-owned checkouts as mainline status |
@@ -64,8 +64,11 @@ The project history metrics report now covers Git and provider-log activity from
 4. **Object/chart/data parity advanced**
    - Object resize/rotation handles, chart data-label content toggles, custom-list primary sort application, and keytip placement improvements are now reflected in the backlog as completed or narrowed work.
 
-5. **History metrics extended through May 31**
-   - May 31 added 226 integrated commits, 210 changed files, +28,077 / -2,540 LoC, and 7,845,703,301 observed raw provider tokens.
+5. **XLSX metadata and performance slices continued into June 1**
+   - The current mainline includes batch XLSX workbook metadata save work, quick-analysis preview write avoidance, sparkline layout streaming, and selection-refresh/rendering performance updates.
+
+6. **History metrics extended through May 31**
+   - May 31 added 246 integrated commits, 258 changed files, +30,256 / -2,952 LoC, and 7,845,703,301 observed raw provider tokens.
 
 ## Active Workstream Picture
 

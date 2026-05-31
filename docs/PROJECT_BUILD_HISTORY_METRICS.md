@@ -2,7 +2,7 @@
 
 Generated: 2026-06-01 00:20 +03:00
 Repository: https://github.com/tony-xmelon/FreeX.git
-Baseline ref: local main at 279fbc1df; origin/main at 279fbc1df before this documentation refresh
+Baseline ref: local main at a199df80f; origin/main at a199df80f after this documentation refresh
 History window: 2026-05-12 through 2026-05-31
 
 ## Scope And Caveats
@@ -18,11 +18,11 @@ History window: 2026-05-12 through 2026-05-31
 - Registered worktrees: 46
 - Local branches: 206
 - Remote branches: 216
-- Tracked files: 2,161
-- Current C# source LOC: 191,932
-- Current C# test LOC: 194,791
+- Tracked files: 2,168
+- Current C# source LOC: 192,737
+- Current C# test LOC: 195,772
 - Current XAML LOC: 8,232
-- Current docs LOC: 29,169
+- Current docs LOC: 29,277
 - Observed Codex JSONL sessions/logs: 2,637
 - Observed Claude FreeX JSONL sessions/logs: 255
 - Provider log bytes attributed: 18,837,587,033
@@ -52,8 +52,8 @@ History window: 2026-05-12 through 2026-05-31
 | 2026-05-28 | 937 | 468 | +27,609 / -6,564 | +11,212 / -5,041 | +14,032 / -770 | +1,698 / -596 | +1,098,883,021 / -0 | 24,060,030,258 | 178,994,747 | 2 |
 | 2026-05-29 | 1,113 | 2,374 | +30,142 / -13,112 | +8,609 / -4,446 | +15,373 / -4,018 | +4,214 / -3,756 | +1,337,119,861 / -0 | 42,404,907,390 | 15,242,087 | 2 |
 | 2026-05-30 | 497 | 811 | +55,520 / -18,403 | +14,261 / -4,549 | +14,604 / -2,718 | +4,711 / -5,633 | +1,011,844,017 / -0 | 16,008,528,128 | 156,988,459 | 1 |
-| 2026-05-31 | 226 | 210 | +28,077 / -2,540 | +5,723 / -849 | +6,293 / -661 | +284 / -219 | +761,396,394 / -0 | 7,672,088,514 | 173,614,787 | 1 |
-| TOTAL | 11,760 | 14,416 | +1,426,953 / -922,561 | +360,213 / -157,472 | +229,202 / -15,860 | +53,428 / -18,372 | +18,837,587,033 / -0 | 115,334,056,414 | 1,609,307,810 | 2 |
+| 2026-05-31 | 246 | 258 | +30,256 / -2,952 | +6,950 / -1,224 | +7,245 / -698 | +284 / -219 | +761,396,394 / -0 | 7,672,088,514 | 173,614,787 | 1 |
+| TOTAL | 11,780 | 14,464 | +1,429,132 / -922,973 | +361,440 / -157,847 | +230,154 / -15,897 | +53,428 / -18,372 | +18,837,587,033 / -0 | 115,334,056,414 | 1,609,307,810 | 2 |
 
 ## Daily Provider Token Usage
 
@@ -143,4 +143,4 @@ History window: 2026-05-12 through 2026-05-31
 - The project started in Git on 2026-05-12 and has consolidated work through 2026-05-31.
 - The daily churn table highlights where implementation volume, tests, and documentation moved together.
 - The refreshed token pass attributed 18,837,587,033 bytes of local provider logs, 116,943,364,224 observed raw tokens, and 59,381,348,531 provider-style billable-equivalent tokens across OpenAI/Codex and Anthropic/Claude rows through 2026-05-31.
-- May 31 added 226 integrated commits, 210 changed files, +28,077 / -2,540 LoC, and 7,845,703,301 observed raw provider tokens.
+- May 31 added 246 integrated commits, 258 changed files, +30,256 / -2,952 LoC, and 7,845,703,301 observed raw provider tokens.
