@@ -48,7 +48,7 @@ Confirmed present in code and tests:
 
 4. **Keytip overlay placement**
    - Continue UI automation coverage for the shortcut matrix and WPF key routing beyond the first process-scoped visible-control snapshot.
-   - Improve keytip overlay placement toward Excel-perfect visual positioning.
+   - Improve keytip overlay placement toward Excel-perfect visual positioning. Control-type-aware placement landed 2026-05-31 (tab keytips anchor below the tab; command keytips bottom-center); remaining is finer pixel-perfect tuning.
    - Extend nested submenu keytips beyond the current covered Conditional Formatting paths as new nested menus appear.
    - Keyboard shortcut parity is now **100% (87/87)** — keytip visual polish remains.
 
@@ -90,8 +90,9 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
    - Richer combo-chart mixes and advanced chart families such as treemap, sunburst, histogram, Pareto, box-and-whisker, waterfall, funnel, map, and true 3D mesh-style surface polish; blank-display rendering now covers line/area plus blank-as-zero column/bar charts, 2D/3D surface charts have standard OOXML package parts with series axes and value-colored matrix rendering paths, 3D clustered column/bar, 3D line, 3D area, and 3D pie now have standard OOXML package/rendering paths, and stock chart parity now includes high-low-close, open-high-low-close, volume stock package/rendering paths, date-axis rendering, and up/down bar candlestick rendering but still needs deeper formatting preset polish.
    - Deeper OOXML effect semantics and broader chart-theme extraction.
    - Arbitrary pie/doughnut data-label text angles and richer tick placement beyond renderer constraints.
-   - Interactive picture/object resize and rotation handles.
-   - Crop, gradients, richer effects, richer text/shape formatting, and selection-handle polish.
+   - Interactive picture/object resize (all 8 handles) and rotation handles — **done 2026-05-31** (`GridObjectDragPlanner` 8-direction resize + rotation grip; `SetDrawingObjectRotationCommand`).
+   - Chart data-label content toggles (value / series / category / percentage / legend-key) wired through dialog + formatter — **done 2026-05-31** (#3 polish slice).
+   - Crop is available via the Format Picture dialog. Remaining: gradients, richer shape effects, richer text/shape formatting, rotated selection-handle frame, and the legend-key colour swatch beside data labels.
 
 3. **Conditional formatting**
    - Continue hardening advanced conditional-format semantics beyond current color-scale, data-bar, and icon-set model/UI/XLSX coverage.
@@ -102,11 +103,11 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
    - Remaining: any deeper color-scale XLSX edge semantics.
 
 4. **Data workflow polish**
-   - Full Excel sort/filter dialog UX.
-   - Data Validation range-picker UX with live modal collapse/selection.
-   - Forecast chart UX rather than only generated forecast-sheet formulas.
-   - Full Scenario PivotTable-style reports.
-   - Additional polish for advanced Subtotal dialog behavior.
+   - Sort/filter dialog UX: multi-level sort, case-sensitive, orientation, sort-by-colour, and custom-list "First key sort order" are implemented; custom-list order is now actually applied to the primary key — **done 2026-05-31** (`CustomSortOrder`). Remaining: any further niche sort/filter dialog options.
+   - Data Validation range-picker with live modal collapse/selection — **done** (`DataValidationRangeSelectionRequest`, present in code).
+   - Full Scenario PivotTable-style reports — **done** (Scenario Manager "Summary" report via `ScenarioManagerAction.Report` / `ScenarioCommands`).
+   - Advanced Subtotal dialog (replace current subtotals, page break between groups, summary below data, multiple summary functions) — **done** (present in code).
+   - Remaining gap: **Forecast chart UX** rather than only the generated forecast-sheet formulas (`ForecastSheetDialog` generates the sheet; the forecast *chart* visualization is not yet built).
 
 5. **Grouped-sheet propagation**
    - Extend grouped-sheet behavior for advanced object effects.
