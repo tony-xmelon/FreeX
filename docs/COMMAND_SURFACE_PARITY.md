@@ -277,7 +277,7 @@ workbook command behavior to track here.
 | Alt Text | Implemented |  |
 | Interactive drag handles | Deferred | Needs a dedicated object-selection/adornment layer; command-based size/rotation is implemented |
 | Crop | Partial | Image picture crop/reset is undoable, rendered, and persisted in native JSON and XLSX; interactive crop handles remain pending |
-| Gradients/Effects | Partial | Authored drawing shapes support two-color gradient fills and a shadow effect with dedicated access-keyed start/end color pickers, undo, and native JSON/XLSX persistence; full Excel gradient gallery and additional effect types remain pending |
+| Gradients/Effects | Partial | Authored drawing shapes support two-color gradient fills plus selectable None/Shadow/Glow/Soft Edges effects from the Draw Effects dialog, with undo and native JSON/XLSX persistence; full Excel gradient/effect galleries remain pending |
 | Selection Pane | Partial | Lists sheet objects with per-item visibility checkboxes, search/filter controls, access-keyed Show All / Hide All bulk controls, Bring Forward / Send Backward reorder buttons, same-kind drag reorder within the list, model-backed object renaming with undo plus Native JSON and XLSX `cNvPr` name persistence for supported drawing objects, and OK/Cancel; full Excel pane visuals remain partial |
 <!-- command-inventory:command-surface:draw:end -->
 
