@@ -58,14 +58,14 @@ Each surface is tracked with these states:
 
 | Source | Current count | Notes |
 |---|---:|---|
-| Command surface in-scope rows | 196 | From `COMMAND_INVENTORY.json`: Implemented + Partial command-surface rows. |
-| Menu/toolbar in-scope rows | 197 | Includes the current Draw tab menu/toolbar delta. |
+| Command surface in-scope rows | 197 | From `COMMAND_INVENTORY.json`: Implemented + Partial command-surface rows. |
+| Menu/toolbar in-scope rows | 198 | Includes the current Draw tab menu/toolbar delta. |
 | Top-level ribbon/backstage tabs | 10 | File, Home, Insert, Draw, Page Layout, Formulas, Data, Review, View, Help. |
 | Contextual ribbon tab declarations | 3 | Table Design, PivotTable Analyze, Design from collapsed `MainWindow.xaml` tab declarations. |
 | Dialog source classes | 110 | Unique `*Dialog` class/x:Class names in `src/FreeX.App.Host`. |
-| XAML click-wired controls | 625 | `Click="..."` occurrences in `MainWindow.xaml` on latest synced `origin/main`. |
+| XAML click-wired controls | 622 | `Click="..."` occurrences in `MainWindow.xaml` on latest synced `origin/main`. |
 | Explicit UIA automation ids | 55 | `AutomationProperties.AutomationId="..."` declarations in `MainWindow.xaml`. |
-| Ribbon keytip metadata declarations | 635 | `RibbonTooltip.KeyTip="..."` declarations in `MainWindow.xaml`. |
+| Ribbon keytip metadata declarations | 632 | `RibbonTooltip.KeyTip="..."` declarations in `MainWindow.xaml`. |
 | Keyboard command shortcut usages | 74 | 74 matcher rules / 73 dispatcher targets |
 | Documented shortcut rows | 87 | From `SHORTCUT_PARITY_MATRIX.md`: 87 parity, 0 partial. |
 | Worksheet context menu commands | 50 | From `WorksheetContextMenuPlanner.BuildCommands()`. |
@@ -386,7 +386,7 @@ These are the next exact leaf IDs to materialize as testing reaches each area. T
 | Leaf ID range | Parent | Commands to split | Status |
 |---|---|---|---|
 | UI-CAT-FILE-001D-L | UI-CAT-FILE-001 | New; Save; Close; Backstage Back/Escape return; Info panel; Share; Account; Options; visible excluded/unsupported backstage entries such as Check In/Out and Online Templates. | In Progress - Online Templates excluded source/XAML coverage now proves visible excluded copy, stable UIA metadata/help text, normal button routing, and owned-message disclosure for the external Microsoft template-service dependency. |
-| UI-CAT-QAT-001D | UI-CAT-SHELL-001 | Customize QAT excluded/disabled affordance if visible. | In Progress - Options dialog source/XAML coverage proves the Quick Access Toolbar category, below-ribbon affordance, reset deferred route, and non-persistence disclosure. |
+| UI-CAT-QAT-001D | UI-CAT-SHELL-001 | Customize QAT command-list, order, reset, and above/below-ribbon location. | In Progress - Options dialog source/XAML coverage proves persisted Quick Access Toolbar command customization, reset, add/remove/reorder, and below-ribbon location. |
 | UI-CAT-SHELL-001A-C | UI-CAT-SHELL-001 | Minimize; maximize/restore; close window. Source/XAML coverage now proves the custom title-bar buttons expose Minimize, Maximize or Restore, and Close automation names, render the matching window icons, and route to WPF `SystemCommands`. | In Progress |
 | UI-CAT-HOME-001A-E | UI-CAT-HOME-001 | Cut; Copy; Paste; Paste Special; Format Painter. | In Progress |
 | UI-CAT-HOME-002A-M | UI-CAT-HOME-002 | Font family; font size; grow/shrink font; bold; italic; underline; double underline; strikethrough; font color; fill color; border presets; full border gallery; theme colors. | Not Started |

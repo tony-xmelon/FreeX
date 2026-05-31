@@ -13,10 +13,10 @@
     {
       "name": "QAT",
       "implemented": 3,
-      "partial": 0,
+      "partial": 1,
       "notImplemented": 0,
       "deferred": 0,
-      "excluded": 1
+      "excluded": 0
     },
     {
       "name": "Home",
@@ -111,10 +111,10 @@
     {
       "name": "QAT",
       "implemented": 3,
-      "partial": 0,
+      "partial": 1,
       "notImplemented": 0,
       "deferred": 0,
-      "excluded": 1
+      "excluded": 0
     },
     {
       "name": "Home",
@@ -300,8 +300,8 @@
         },
         {
           "name": "Customize QAT",
-          "status": "Excluded",
-          "notes": "Low v1 value"
+          "status": "Partial",
+          "notes": "Options dialog persists command list, order, reset, and above/below-ribbon location for the broad direct-command catalog; arbitrary command browsing, ribbon right-click add, and import/export of customizations remain out of scope"
         }
       ]
     },
@@ -653,7 +653,7 @@
         {
           "name": "Recommended PivotTables",
           "status": "Excluded",
-          "notes": "AI/ML heuristics; proprietary"
+          "notes": "Excel-equivalent recommendations require proprietary Microsoft-style data-pattern heuristics; normal PivotTable authoring remains partial/in scope"
         },
         {
           "name": "Table",
@@ -668,7 +668,7 @@
         {
           "name": "Online Pictures",
           "status": "Excluded",
-          "notes": ""
+          "notes": "External image search/service, licensing, content filtering, and network dependency; local Picture from file remains implemented"
         },
         {
           "name": "Shapes",
@@ -678,17 +678,17 @@
         {
           "name": "Icons",
           "status": "Excluded",
-          "notes": "Requires proprietary Microsoft icon library"
+          "notes": "Excel Icons depends on Microsoft's proprietary icon catalog; a FreeX-owned/open icon picker would be a separate feature"
         },
         {
           "name": "3D Models",
           "status": "Excluded",
-          "notes": ""
+          "notes": "Requires 3D asset import, rendering, object manipulation, persistence, and format support beyond the current drawing model"
         },
         {
           "name": "SmartArt",
           "status": "Excluded",
-          "notes": "Retained as package part; no authoring"
+          "notes": "Retained as package part; authoring requires a diagram model, layout engine, editor, renderer, and OOXML persistence"
         },
         {
           "name": "Screenshot",
@@ -713,7 +713,7 @@
         {
           "name": "Recommended Charts",
           "status": "Excluded",
-          "notes": "AI/ML heuristics; proprietary"
+          "notes": "Excel-equivalent recommendations require proprietary Microsoft-style data-pattern heuristics; normal chart authoring remains implemented/partial by chart family"
         },
         {
           "name": "Sparklines (line/column/win-loss)",
@@ -733,7 +733,7 @@
         {
           "name": "WordArt",
           "status": "Excluded",
-          "notes": ""
+          "notes": "Requires stylized text drawing objects, text effects/geometry, editing UI, rendering, and OOXML drawing persistence"
         },
         {
           "name": "Symbols",
@@ -753,7 +753,7 @@
         {
           "name": "Equation",
           "status": "Excluded",
-          "notes": "Hidden from the Insert ribbon until equation authoring is implemented"
+          "notes": "Hidden from the Insert ribbon until a math object model, editor, renderer, and OOXML equation persistence are implemented"
         }
       ]
     },
@@ -1554,8 +1554,8 @@
         },
         {
           "name": "Customize QAT",
-          "status": "Excluded",
-          "notes": "Low v1 value"
+          "status": "Partial",
+          "notes": "Options dialog persists command list, order, reset, and above/below-ribbon location for the broad direct-command catalog; arbitrary command browsing, ribbon right-click add, and import/export of customizations remain out of scope"
         }
       ]
     },
@@ -1917,7 +1917,7 @@
         {
           "name": "Recommended PivotTables",
           "status": "Excluded",
-          "notes": "Proprietary heuristics"
+          "notes": "Excel-equivalent recommender requires proprietary data-pattern heuristics; normal PivotTables remain partial/in scope"
         },
         {
           "name": "Table",
@@ -1932,7 +1932,7 @@
         {
           "name": "Online Pictures",
           "status": "Excluded",
-          "notes": ""
+          "notes": "External image search/service, licensing, content filtering, and network dependency; local Picture from file remains implemented"
         },
         {
           "name": "Shapes",
@@ -1942,17 +1942,17 @@
         {
           "name": "Icons",
           "status": "Excluded",
-          "notes": "Proprietary Microsoft icon library"
+          "notes": "Excel Icons depends on Microsoft's proprietary catalog; FreeX-owned/open icons would be a separate feature"
         },
         {
           "name": "3D Models",
           "status": "Excluded",
-          "notes": ""
+          "notes": "Needs 3D import/render/manipulation/persistence and format support beyond the current drawing model"
         },
         {
           "name": "SmartArt",
           "status": "Excluded",
-          "notes": "Retained part"
+          "notes": "Retained as package part; authoring needs a diagram model, layout engine, editor, renderer, and OOXML persistence"
         },
         {
           "name": "Screenshot",
@@ -1987,7 +1987,7 @@
         {
           "name": "Recommended Charts",
           "status": "Excluded",
-          "notes": "Proprietary heuristics"
+          "notes": "Excel-equivalent recommender requires proprietary data-pattern heuristics; normal chart authoring remains implemented/partial by chart family"
         },
         {
           "name": "Sparklines (line/column/win-loss)",
@@ -2007,7 +2007,7 @@
         {
           "name": "WordArt",
           "status": "Excluded",
-          "notes": ""
+          "notes": "Needs stylized text objects, effects/geometry, editing UI, rendering, and OOXML drawing persistence"
         },
         {
           "name": "Symbols",
@@ -2027,7 +2027,7 @@
         {
           "name": "Equation",
           "status": "Excluded",
-          "notes": "Hidden from the Insert ribbon until equation authoring is implemented"
+          "notes": "Hidden from the Insert ribbon until math object model/editor/renderer and OOXML equation persistence exist"
         }
       ]
     },
