@@ -97,7 +97,7 @@ worksheet coordinates.
 | Close | Implemented | Backstage caption exposes a visible access key |
 | Options | Partial | General, Formulas, View, and Save subsets including calculation/error-checking and formula bar preferences; sidebar categories, editable fields, option toggles, and OK/Cancel expose keyboard access keys |
 | Recent Files | Implemented |  |
-| Info panel | Partial | Protection/accessibility summary, workbook statistics, accessibility and formula-error counts, and file properties |
+| Info panel | Partial | Protection/accessibility summary, workbook statistics, accessibility and formula-error counts, saved file size/last-modified metadata, active sheet/workbook protection status, and Backstage action buttons for Protect Workbook, Check Accessibility, Workbook Statistics, and Error Checking |
 | Share | Partial | Windows Share for saved local files; missing or unsaved local files route through Save As first; Microsoft 365 cloud links/coauthoring excluded |
 | Check In/Out | Excluded | SharePoint workflow |
 | Online Templates | Excluded | Microsoft online template discovery |

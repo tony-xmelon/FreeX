@@ -250,7 +250,7 @@
         {
           "name": "Info panel",
           "status": "Partial",
-          "notes": "Protection/accessibility summary, workbook statistics, accessibility and formula-error counts, and file properties"
+          "notes": "Protection/accessibility summary, workbook statistics, accessibility and formula-error counts, saved file size/last-modified metadata, active sheet/workbook protection status, and Backstage action buttons for Protect Workbook, Check Accessibility, Workbook Statistics, and Error Checking"
         },
         {
           "name": "Share",
@@ -1504,7 +1504,7 @@
         {
           "name": "Info panel",
           "status": "Partial",
-          "notes": "Protection/accessibility summary, workbook statistics, accessibility and formula-error counts, and file properties"
+          "notes": "Protection/accessibility summary, workbook statistics, accessibility and formula-error counts, saved file size/last-modified metadata, active sheet/workbook protection status, and Backstage action buttons for Protect Workbook, Check Accessibility, Workbook Statistics, and Error Checking"
         },
         {
           "name": "Share",
