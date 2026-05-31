@@ -365,8 +365,8 @@ scans literal text cells in sheet/row/column order and plans undoable replacemen
 
 Accessibility Checker remains a deterministic model-backed audit in `Core.Commands`, not a full WCAG or screen-reader
 engine. It reports issues supported by current workbook state, including merged cells, blank structured-table headers,
-missing object alternate text, hidden sheets/rows/columns with content, unclear hyperlink display text, and charts whose
-title is missing as the current accessible label.
+low-contrast cell text against base and patterned fills, missing object alternate text, hidden sheets/rows/columns with
+content, unclear hyperlink display text, and charts whose title is missing as the current accessible label.
 
 Native JSON persists the local threaded-comment model, including author, replies, created/modified UTC activity
 metadata, and resolved state, so FreeX's in-app comment threads survive native save/load. Comment navigation and
