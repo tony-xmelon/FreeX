@@ -131,13 +131,13 @@ Local worktree/branch status was checked on 2026-05-30 before opening these item
 - `codex/freex-build-20260530` has dirty tester-publish/build script work, not product parity for these commands.
 - `codex/freex-six-lane-integration-20260530` is behind `origin/main` and does not currently identify a dedicated owner for these planned ribbon actions.
 
-No local active workstream was found for the planned map-chart, multi-window workbook, or PivotTable ribbon-action buckets.
+No local active workstream was found for the planned map-chart or multi-window workbook buckets.
 
 ### Parity Orchestrator
 
 - **Map Chart / advanced chart family lane:** define the map-chart model, Insert/Change Chart picker behavior, renderer, XLSX read/write support, and known-gap retention story. This can ride with the existing advanced chart family backlog for treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel/map/true 3D mesh.
 - **View multi-window lane:** own New Window, Hide Window, Unhide Window, View Side by Side, Synchronous Scrolling, Reset Window Position, and Switch Windows. Required foundation is a workbook-window registry, shared workbook state, per-window viewport state, window visibility state, paired-window layout, and synchronized scrolling semantics.
-- **PivotTable ribbon-action lane:** own PivotTable Name, PivotTable Options entrypoint polish, Clear, Select, and Move PivotTable. Scope should include contextual enablement, selected-PivotTable targeting, command/undo behavior where applicable, keytips, and source tests tying the visible commands to implemented handlers.
+- **PivotTable ribbon-action lane:** completed in the Pivot contextual ribbon command breadth slice. PivotTable Name, PivotTable Options, Clear, Select, and Move PivotTable are routed from the Analyze tab with selected-PivotTable targeting, command/undo behavior where applicable, keytips, and focused source/planner/core command tests.
 
 ### Build Orchestrator
 

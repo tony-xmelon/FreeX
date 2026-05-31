@@ -658,7 +658,7 @@
         {
           "name": "Table",
           "status": "Partial",
-          "notes": "Creates structured table metadata with generated headers, AutoFilter flag, style name, visible banding, access-keyed range/header controls, and one-step undo via the same path as Format as Table; the shared Format as Table gallery exposes Excel-scale Light/Medium/Dark style choices with swatch previews; table value filters execute for command and XLSX-loaded metadata; totals-row labels and common functions can be materialized with undo; formulas can evaluate and track dependencies for basic data-body column structured references such as `Sales[Amount]`, evaluate whole-table section selectors `#Headers`, `#Data`, `#All`, and `#Totals`, evaluate section-column intersections such as `Sales[[#Totals],[Amount]]`, evaluate scalar current-row references such as `[@Amount]` or `Sales[@Amount]` from table data-body formulas, evaluate qualified and unqualified `#This Row` references such as `Sales[[#This Row],[Amount]:[Tax]]` and `[[#This Row],[Amount]:[Tax]]`, and evaluate multi-column ranges such as `Sales[[Amount]:[Tax]]` and `Sales[[#Data],[Amount]:[Tax]]`; full table style theme semantics remain partial"
+          "notes": "Creates structured table metadata with generated headers, AutoFilter flag, style name, visible banding, access-keyed range/header controls, and one-step undo via the same path as Format as Table; the shared Format as Table gallery exposes Excel-scale Light/Medium/Dark style choices with swatch previews; Table Design can rename, resize, summarize the active table through the supported PivotTable creation flow, remove duplicates, convert to range while preserving cell values/formatting, and toggle totals/filter/first/last/banded style options through undoable model commands; table value filters execute for command and XLSX-loaded metadata; totals-row labels and common functions can be materialized with undo; formulas can evaluate and track dependencies for basic data-body column structured references such as `Sales[Amount]`, evaluate whole-table section selectors `#Headers`, `#Data`, `#All`, and `#Totals`, evaluate section-column intersections such as `Sales[[#Totals],[Amount]]`, evaluate scalar current-row references such as `[@Amount]` or `Sales[@Amount]` from table data-body formulas, evaluate qualified and unqualified `#This Row` references such as `Sales[[#This Row],[Amount]:[Tax]]` and `[[#This Row],[Amount]:[Tax]]`, and evaluate multi-column ranges such as `Sales[[Amount]:[Tax]]` and `Sales[[#Data],[Amount]:[Tax]]`; full table style theme semantics remain partial"
         },
         {
           "name": "Picture (from file)",
@@ -981,7 +981,7 @@
         {
           "name": "Error Checking",
           "status": "Partial",
-          "notes": "Issue list plus ribbon entry point to error-checking options, access-keyed issue actions, and supported checks including numbers stored as text, formulas referring to blank cells, two-digit-year text dates, formulas inconsistent with nearby formulas, SUM formulas omitting adjacent cells, and unlocked formula cells; partial rule taxonomy"
+          "notes": "Issue list plus ribbon entry point to error-checking options, access-keyed issue actions, and supported checks including numbers stored as text, formulas referring to blank cells, two-digit-year text dates, formulas inconsistent with nearby formulas, SUM formulas omitting adjacent cells including gaps between separate SUM arguments, and unlocked formula cells; partial rule taxonomy"
         },
         {
           "name": "Evaluate Formula (step-through)",
@@ -2290,7 +2290,7 @@
         {
           "name": "Error Checking",
           "status": "Partial",
-          "notes": "Issue list plus ribbon entry point to error-checking options, access-keyed issue actions, and supported checks including numbers stored as text, formulas referring to blank cells, two-digit-year text dates, formulas inconsistent with nearby formulas, SUM formulas omitting adjacent cells, and unlocked formula cells; partial rule taxonomy"
+          "notes": "Issue list plus ribbon entry point to error-checking options, access-keyed issue actions, and supported checks including numbers stored as text, formulas referring to blank cells, two-digit-year text dates, formulas inconsistent with nearby formulas, SUM formulas omitting adjacent cells including gaps between separate SUM arguments, and unlocked formula cells; partial rule taxonomy"
         },
         {
           "name": "Evaluate Formula",
