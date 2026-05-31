@@ -58,8 +58,8 @@ Each surface is tracked with these states:
 
 | Source | Current count | Notes |
 |---|---:|---|
-| Command surface in-scope rows | 189 | From `COMMAND_INVENTORY.json`: Implemented + Partial command-surface rows. |
-| Menu/toolbar in-scope rows | 190 | Includes the current Draw tab menu/toolbar delta. |
+| Command surface in-scope rows | 196 | From `COMMAND_INVENTORY.json`: Implemented + Partial command-surface rows. |
+| Menu/toolbar in-scope rows | 197 | Includes the current Draw tab menu/toolbar delta. |
 | Top-level ribbon/backstage tabs | 10 | File, Home, Insert, Draw, Page Layout, Formulas, Data, Review, View, Help. |
 | Contextual ribbon tab declarations | 3 | Table Design, PivotTable Analyze, Design from collapsed `MainWindow.xaml` tab declarations. |
 | Dialog source classes | 107 | Unique `*Dialog` class/x:Class names in `src/FreeX.App.Host`. |
@@ -407,7 +407,7 @@ These are the next exact leaf IDs to materialize as testing reaches each area. T
 | UI-CAT-REVIEW-001A-C | UI-CAT-REVIEW-001 | Spell Check; Accessibility Checker; Statistics. | In Progress |
 | UI-CAT-REVIEW-002A-Q | UI-CAT-REVIEW-002 | New Comment; Delete Comment; Previous Comment; Next Comment; Show Comments; threaded comment workflow; New Note; Edit Note; Delete Note; Previous Note; Next Note; Show Notes; Protect Sheet; Allow Edit Ranges; Protect Workbook; Share; Thesaurus excluded; Smart Lookup excluded; Translate excluded; Share Workbook legacy excluded; Track Changes excluded. | In Progress |
 | UI-CAT-VIEW-001A-H | UI-CAT-VIEW-001 | Normal; Page Break Preview; Page Layout; Custom Views; Show Gridlines; Show Headings; Show Ruler; Show Formula Bar. | In Progress |
-| UI-CAT-VIEW-002A-H | UI-CAT-VIEW-002 | Freeze Panes; Split; Zoom; Zoom to Selection; 100% Zoom; Arrange All; New Window excluded; View Side by Side excluded; Synchronous Scrolling excluded; Switch Windows excluded. Freeze Panes menu keytips now execute top-row, first-column, selection-based, and unfreeze commands against model state; Split keytips toggle selected-cell split state. Source coverage now proves visible multi-window commands expose stable keytips/deferred tooltips and route through the owned deferred-message path. | In Progress |
+| UI-CAT-VIEW-002A-H | UI-CAT-VIEW-002 | Freeze Panes; Split; Zoom; Zoom to Selection; 100% Zoom; Arrange All; New Window, Hide, Unhide, View Side by Side, Synchronous Scrolling, Reset Window Position, and Switch Windows now have planner-backed single-window state. Freeze Panes menu keytips now execute top-row, first-column, selection-based, and unfreeze commands against model state; Split keytips toggle selected-cell split state. Source and live keytip coverage prove New Window stays invokable through the owned deferred-message path while unsafe dependent window commands are disabled with runtime help text until multi-window hosting exists. | In Progress |
 | UI-CAT-SHEETTAB-002A-J | UI-CAT-CONTEXT-002 | Add Sheet; Rename with default name-box focus/select-all; Delete; Duplicate; Move Left; Move Right; Tab Color; Hide Sheet; Unhide Sheet; Select All Sheets; Ungroup Sheets. | In Progress |
 | UI-CAT-SHEETTAB-003A-C | UI-CAT-CONTEXT-002 | Tab click selection; double-click rename; drag reorder and overflow arrows. | Not Started |
 | UI-CAT-STATUS-002A-F | UI-CAT-VIEW-002 | Ready/Edit/Input mode text; Average; Count; Sum; Min; Max. Status calculator coverage proves Ready/input prompt and numeric Average/Count/Sum/Min/Max semantics; host layout coverage now verifies a numeric worksheet selection renders aggregate labels, separates Count from Numerical Count, and entering inline edit mode renders `Edit` while hiding aggregate text. | In Progress |

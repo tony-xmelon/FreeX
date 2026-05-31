@@ -1,7 +1,7 @@
 # FreeX Command Surface Parity
 
 **Status:** working audit  
-**Last updated:** 2026-05-30
+**Last updated:** 2026-05-31
 
 This document tracks FreeX's visible command surface against Excel for Windows. The goal is Excel parity for commands we choose to support, and an explicit exclusion list for commands that depend on Microsoft cloud services, proprietary runtimes, or very large subsystems.
 
@@ -33,10 +33,10 @@ Coverage is computed as **(Implemented + Partial) / (Implemented + Partial + Not
 | Formulas | 16 | 1 | 0 | 0 | 0 | **100%** |
 | Data | 17 | 1 | 0 | 0 | 2 | **100%** |
 | Review | 11 | 2 | 0 | 0 | 6 | **100%** |
-| View | 13 | 1 | 0 | 7 | 0 | **100%** |
+| View | 13 | 8 | 0 | 0 | 0 | **100%** |
 | Sheet Tabs | 9 | 0 | 0 | 0 | 0 | **100%** |
 | Help | 6 | 0 | 0 | 0 | 3 | **100%** |
-| **TOTAL** | **165** | **24** | **0** | **9** | **26** | **100%** |
+| **TOTAL** | **165** | **31** | **0** | **2** | **26** | **100%** |
 <!-- command-inventory:coverage-summary:end -->
 
 ---
@@ -406,7 +406,7 @@ workbook command behavior to track here.
 
 ## View Tab
 
-> **Tab coverage: 13 Implemented + 1 Partial = 100% of 14 in-scope commands (7 Deferred)**
+> **Tab coverage: 13 Implemented + 8 Partial = 100% of 21 in-scope commands**
 
 <!-- command-inventory:command-surface:view:start -->
 | Command | Status | Notes |
@@ -424,14 +424,14 @@ workbook command behavior to track here.
 | Split Panes | Implemented | Toggle clears frozen panes and supports independent split quadrants, draggable dividers, pane-specific scrollbars, wheel targeting, clipping, and active-state ribbon feedback |
 | Zoom | Implemented | 10-400% range |
 | Zoom to Selection | Implemented |  |
-| New Window | Deferred | Requires multi-window workbook hosting |
+| New Window | Partial | Planner-backed command path and owned message are wired; creating another live workbook window still requires multi-window hosting |
 | Arrange All | Partial | Stores choice; no live multi-window |
-| Hide Window | Deferred | Requires workbook-window visibility state |
-| Unhide Window | Deferred | Requires workbook-window visibility state |
-| View Side by Side | Deferred | Requires multi-window workbook hosting and synchronized scroll routing |
-| Synchronous Scrolling | Deferred | Requires paired workbook windows with synchronized viewport state |
-| Reset Window Position | Deferred | Requires paired workbook windows and side-by-side layout state |
-| Switch Windows | Deferred | Requires a multi-window workbook registry |
+| Hide Window | Partial | Single-visible-window state disables unsafe hiding and explains the boundary; hiding secondary workbook windows still requires live multi-window visibility state |
+| Unhide Window | Partial | No-hidden-window state disables Unhide with runtime help text; restoring hidden workbook windows still requires live multi-window visibility state |
+| View Side by Side | Partial | Toggle-style command reflects planner state and is disabled until a second visible workbook window exists; live side-by-side hosting remains deferred |
+| Synchronous Scrolling | Partial | Toggle-style command reflects planner state and is disabled until an active side-by-side pair exists; synchronized viewport routing remains deferred |
+| Reset Window Position | Partial | Planner disables the command until an active side-by-side pair exists; resetting live paired window layout remains deferred |
+| Switch Windows | Partial | Planner disables the command until more than one visible workbook window exists; switching focus through a live window registry remains deferred |
 <!-- command-inventory:command-surface:view:end -->
 
 ---

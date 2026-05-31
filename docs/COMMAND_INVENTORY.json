@@ -77,9 +77,9 @@
     {
       "name": "View",
       "implemented": 13,
-      "partial": 1,
+      "partial": 8,
       "notImplemented": 0,
-      "deferred": 7,
+      "deferred": 0,
       "excluded": 0
     },
     {
@@ -175,9 +175,9 @@
     {
       "name": "View",
       "implemented": 13,
-      "partial": 1,
+      "partial": 8,
       "notImplemented": 0,
-      "deferred": 7,
+      "deferred": 0,
       "excluded": 0
     },
     {
@@ -1308,8 +1308,8 @@
         },
         {
           "name": "New Window",
-          "status": "Deferred",
-          "notes": "Requires multi-window workbook hosting"
+          "status": "Partial",
+          "notes": "Planner-backed command path and owned message are wired; creating another live workbook window still requires multi-window hosting"
         },
         {
           "name": "Arrange All",
@@ -1318,33 +1318,33 @@
         },
         {
           "name": "Hide Window",
-          "status": "Deferred",
-          "notes": "Requires workbook-window visibility state"
+          "status": "Partial",
+          "notes": "Single-visible-window state disables unsafe hiding and explains the boundary; hiding secondary workbook windows still requires live multi-window visibility state"
         },
         {
           "name": "Unhide Window",
-          "status": "Deferred",
-          "notes": "Requires workbook-window visibility state"
+          "status": "Partial",
+          "notes": "No-hidden-window state disables Unhide with runtime help text; restoring hidden workbook windows still requires live multi-window visibility state"
         },
         {
           "name": "View Side by Side",
-          "status": "Deferred",
-          "notes": "Requires multi-window workbook hosting and synchronized scroll routing"
+          "status": "Partial",
+          "notes": "Toggle-style command reflects planner state and is disabled until a second visible workbook window exists; live side-by-side hosting remains deferred"
         },
         {
           "name": "Synchronous Scrolling",
-          "status": "Deferred",
-          "notes": "Requires paired workbook windows with synchronized viewport state"
+          "status": "Partial",
+          "notes": "Toggle-style command reflects planner state and is disabled until an active side-by-side pair exists; synchronized viewport routing remains deferred"
         },
         {
           "name": "Reset Window Position",
-          "status": "Deferred",
-          "notes": "Requires paired workbook windows and side-by-side layout state"
+          "status": "Partial",
+          "notes": "Planner disables the command until an active side-by-side pair exists; resetting live paired window layout remains deferred"
         },
         {
           "name": "Switch Windows",
-          "status": "Deferred",
-          "notes": "Requires a multi-window workbook registry"
+          "status": "Partial",
+          "notes": "Planner disables the command until more than one visible workbook window exists; switching focus through a live window registry remains deferred"
         }
       ]
     },
@@ -2617,8 +2617,8 @@
         },
         {
           "name": "New Window",
-          "status": "Deferred",
-          "notes": "Requires multi-window workbook hosting"
+          "status": "Partial",
+          "notes": "Planner-backed command path and owned message are wired; creating another live workbook window still requires multi-window hosting"
         },
         {
           "name": "Arrange All",
@@ -2627,33 +2627,33 @@
         },
         {
           "name": "Hide Window",
-          "status": "Deferred",
-          "notes": "Requires workbook-window visibility state"
+          "status": "Partial",
+          "notes": "Single-visible-window state disables unsafe hiding and explains the boundary; hiding secondary workbook windows still requires live multi-window visibility state"
         },
         {
           "name": "Unhide Window",
-          "status": "Deferred",
-          "notes": "Requires workbook-window visibility state"
+          "status": "Partial",
+          "notes": "No-hidden-window state disables Unhide with runtime help text; restoring hidden workbook windows still requires live multi-window visibility state"
         },
         {
           "name": "View Side by Side",
-          "status": "Deferred",
-          "notes": "Requires multi-window workbook hosting and synchronized scroll routing"
+          "status": "Partial",
+          "notes": "Toggle-style command reflects planner state and is disabled until a second visible workbook window exists; live side-by-side hosting remains deferred"
         },
         {
           "name": "Synchronous Scrolling",
-          "status": "Deferred",
-          "notes": "Requires paired workbook windows with synchronized viewport state"
+          "status": "Partial",
+          "notes": "Toggle-style command reflects planner state and is disabled until an active side-by-side pair exists; synchronized viewport routing remains deferred"
         },
         {
           "name": "Reset Window Position",
-          "status": "Deferred",
-          "notes": "Requires paired workbook windows and side-by-side layout state"
+          "status": "Partial",
+          "notes": "Planner disables the command until an active side-by-side pair exists; resetting live paired window layout remains deferred"
         },
         {
           "name": "Switch Windows",
-          "status": "Deferred",
-          "notes": "Requires a multi-window workbook registry"
+          "status": "Partial",
+          "notes": "Planner disables the command until more than one visible workbook window exists; switching focus through a live window registry remains deferred"
         }
       ]
     },
