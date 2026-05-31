@@ -80,7 +80,7 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
 ## Product Parity Work Still Outstanding
 
 1. **View and window management**
-   - True multi-window workbook hosting for New Window, View Side by Side, Synchronous Scrolling, Reset Window Position, and Switch Windows.
+   - Workbook-window visibility state for Hide/Unhide and paired-window hosting for View Side by Side, Synchronous Scrolling, and Reset Window Position. New Window and Switch Windows have the first live registry-backed slice.
    - Fine split-pane scroll feel parity.
    - Split-pane merged-cell edge cases across non-visible rows/columns.
    - Full workbook view-mode polish beyond the current state/persistence baseline.
@@ -137,7 +137,7 @@ No local active workstream was found for the planned map-chart or multi-window w
 ### Parity Orchestrator
 
 - **Map Chart / advanced chart family lane:** define the map-chart model, Insert/Change Chart picker behavior, renderer, XLSX read/write support, and known-gap retention story. This can ride with the existing advanced chart family backlog for treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel/map/true 3D mesh.
-- **View multi-window lane:** own New Window, Hide Window, Unhide Window, View Side by Side, Synchronous Scrolling, Reset Window Position, and Switch Windows. Required foundation is a workbook-window registry, shared workbook state, per-window viewport state, window visibility state, paired-window layout, and synchronized scrolling semantics.
+- **View multi-window lane:** New Window and Switch Windows have the first live registry-backed slice. Remaining scope is Hide Window, Unhide Window, View Side by Side, Synchronous Scrolling, and Reset Window Position; required foundation is live window visibility state, paired-window layout, and synchronized scrolling semantics.
 - **PivotTable ribbon-action lane:** completed in the Pivot contextual ribbon command breadth slice. PivotTable Name, PivotTable Options, Clear, Select, and Move PivotTable are routed from the Analyze tab with selected-PivotTable targeting, command/undo behavior where applicable, keytips, and focused source/planner/core command tests.
 
 ### Build Orchestrator

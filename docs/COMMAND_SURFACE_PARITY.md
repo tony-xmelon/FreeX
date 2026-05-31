@@ -59,7 +59,7 @@ Not cloud/proprietary exclusions, but require larger architecture before adding 
 
 | Area | Excel Feature | FreeX Decision |
 |---|---|---|
-| Window Management | New Window, View Side by Side, Synchronous Scrolling, Reset Window Position, Switch Windows | Deferred until multi-window workbook hosting exists |
+| Window Management | New Window, Switch Windows; Hide/Unhide, View Side by Side, Synchronous Scrolling, Reset Window Position | New/Switch implemented through the live workbook-window registry; the rest are deferred and not exposed in the ribbon until visibility/pairing subsystems exist |
 | Theme System | Themes, theme colors, theme fonts, theme effects | Partial; theme part load/save now preserves loaded `fmtScheme` OOXML, while full effect interpretation remains deferred |
 | Advanced Chart Families | Treemap, sunburst, histogram, Pareto, box-and-whisker, waterfall, funnel, map, true 3D surface mesh | Deferred - recognized from XLSX where detected and blocked from broken authoring/rendering; 2D/3D surface charts now have package and matrix-rendering paths, while mixed drawing-part retention for unsupported chart families remains partial until per-family data model and package writer support exist |
 
@@ -424,14 +424,14 @@ workbook command behavior to track here.
 | Split Panes | Implemented | Toggle clears frozen panes and supports independent split quadrants, draggable dividers, pane-specific scrollbars, wheel targeting, clipping, and active-state ribbon feedback |
 | Zoom | Implemented | 10-400% range |
 | Zoom to Selection | Implemented |  |
-| New Window | Partial | Planner-backed command path and owned message are wired; creating another live workbook window still requires multi-window hosting |
+| New Window | Implemented | Creates a secondary MainWindow over the shared workbook through WorkbookWindowRegistry |
 | Arrange All | Partial | Stores choice; no live multi-window |
-| Hide Window | Partial | Single-visible-window state disables unsafe hiding and explains the boundary; hiding secondary workbook windows still requires live multi-window visibility state |
-| Unhide Window | Partial | No-hidden-window state disables Unhide with runtime help text; restoring hidden workbook windows still requires live multi-window visibility state |
-| View Side by Side | Partial | Toggle-style command reflects planner state and is disabled until a second visible workbook window exists; live side-by-side hosting remains deferred |
-| Synchronous Scrolling | Partial | Toggle-style command reflects planner state and is disabled until an active side-by-side pair exists; synchronized viewport routing remains deferred |
-| Reset Window Position | Partial | Planner disables the command until an active side-by-side pair exists; resetting live paired window layout remains deferred |
-| Switch Windows | Partial | Planner disables the command until more than one visible workbook window exists; switching focus through a live window registry remains deferred |
+| Hide Window | Deferred | Removed from the ribbon until workbook-window visibility state exists |
+| Unhide Window | Deferred | Removed from the ribbon until hidden workbook-window state exists |
+| View Side by Side | Deferred | Removed from the ribbon until paired workbook-window layout exists |
+| Synchronous Scrolling | Deferred | Removed from the ribbon until paired-window synchronized viewport routing exists |
+| Reset Window Position | Deferred | Removed from the ribbon until paired workbook-window layout exists |
+| Switch Windows | Implemented | Cycles focus through the live WorkbookWindowRegistry and enables once a second workbook window exists |
 <!-- command-inventory:command-surface:view:end -->
 
 ---

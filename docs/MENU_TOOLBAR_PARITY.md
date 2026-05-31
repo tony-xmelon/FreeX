@@ -376,14 +376,14 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Zoom | Implemented |  |
 | Zoom to Selection | Implemented |  |
 | 100% Zoom | Implemented |  |
-| New Window | Partial | Planner-backed command path and owned message are wired; creating another live workbook window still requires multi-window hosting |
+| New Window | Implemented | Creates a secondary MainWindow over the shared workbook through WorkbookWindowRegistry |
 | Arrange All | Partial | Stores choice and marks the selected menu option; no live multi-window layout |
-| Hide Window | Partial | Single-visible-window state disables unsafe hiding and explains the boundary; hiding secondary workbook windows still requires live multi-window visibility state |
-| Unhide Window | Partial | No-hidden-window state disables Unhide with runtime help text; restoring hidden workbook windows still requires live multi-window visibility state |
-| View Side by Side | Partial | Toggle-style command reflects planner state and is disabled until a second visible workbook window exists; live side-by-side hosting remains deferred |
-| Synchronous Scrolling | Partial | Toggle-style command reflects planner state and is disabled until an active side-by-side pair exists; synchronized viewport routing remains deferred |
-| Reset Window Position | Partial | Planner disables the command until an active side-by-side pair exists; resetting live paired window layout remains deferred |
-| Switch Windows | Partial | Planner disables the command until more than one visible workbook window exists; switching focus through a live window registry remains deferred |
+| Hide Window | Deferred | Removed from the ribbon until workbook-window visibility state exists |
+| Unhide Window | Deferred | Removed from the ribbon until hidden workbook-window state exists |
+| View Side by Side | Deferred | Removed from the ribbon until paired workbook-window layout exists |
+| Synchronous Scrolling | Deferred | Removed from the ribbon until paired-window synchronized viewport routing exists |
+| Reset Window Position | Deferred | Removed from the ribbon until paired workbook-window layout exists |
+| Switch Windows | Implemented | Cycles focus through the live WorkbookWindowRegistry and enables once a second workbook window exists |
 <!-- command-inventory:menu-toolbar:view:end -->
 
 ---
