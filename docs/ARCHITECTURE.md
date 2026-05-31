@@ -388,8 +388,9 @@ The Backstage File > Info panel is a host-only summary surface over existing mod
 template, Document Inspector, or extended document-metadata subsystems.
 
 Error Checking remains a deterministic model-backed audit in `Core.Commands`, not a full Excel heuristic inference
-engine. It reports cached formula error values, text cells that parse as finite invariant-culture numbers, and formulas
-whose direct parser-extracted precedents include missing or blank cells. Rule toggles use
+engine. It reports cached formula error values, text cells that parse as finite invariant-culture numbers, formulas
+whose direct parser-extracted precedents include missing or blank cells, and SUM formulas that omit valued adjacent
+cells or valued gaps between separate SUM arguments. Rule toggles use
 `Workbook.DisabledFormulaErrorCodes`, and per-cell ignore state reuses `Cell.IgnoreFormulaError` for both formula-error
 and non-error issue kinds.
 
