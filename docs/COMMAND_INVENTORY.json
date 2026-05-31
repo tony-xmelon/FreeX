@@ -819,7 +819,7 @@
         {
           "name": "Gradients/Effects",
           "status": "Partial",
-          "notes": "Authored drawing shapes support two-color gradient fills and a shadow effect with dedicated access-keyed start/end color pickers, undo, and native JSON/XLSX persistence; full Excel gradient gallery and additional effect types remain pending"
+          "notes": "Authored drawing shapes support two-color gradient fills plus selectable None/Shadow/Glow/Soft Edges effects from the Draw Effects dialog, with undo and native JSON/XLSX persistence; full Excel gradient/effect galleries remain pending"
         },
         {
           "name": "Selection Pane",
@@ -2098,7 +2098,7 @@
         {
           "name": "Gradients/Effects",
           "status": "Partial",
-          "notes": "Shape gradient fill with dedicated access-keyed start/end color pickers and shadow effect with native JSON/XLSX persistence; full Excel gradient gallery and additional effect types pending"
+          "notes": "Shape gradient fill with dedicated access-keyed start/end color pickers plus selectable None/Shadow/Glow/Soft Edges effects with native JSON/XLSX persistence; full Excel gradient/effect galleries pending"
         },
         {
           "name": "Selection Pane",
