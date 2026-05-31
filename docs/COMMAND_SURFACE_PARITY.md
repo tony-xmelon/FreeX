@@ -25,7 +25,7 @@ Coverage is computed as **(Implemented + Partial) / (Implemented + Partial + Not
 | Tab | Implemented | Partial | Not Implemented | Deferred | Excluded | **Coverage** |
 |---|---:|---:|---:|---:|---:|---:|
 | File/Backstage | 8 | 4 | 0 | 0 | 3 | **100%** |
-| QAT | 3 | 0 | 0 | 0 | 1 | **100%** |
+| QAT | 3 | 1 | 0 | 0 | 0 | **100%** |
 | Home | 48 | 8 | 0 | 0 | 1 | **100%** |
 | Insert | 10 | 3 | 0 | 1 | 9 | **100%** |
 | Draw | 8 | 3 | 0 | 1 | 1 | **100%** |
@@ -36,7 +36,7 @@ Coverage is computed as **(Implemented + Partial) / (Implemented + Partial + Not
 | View | 13 | 8 | 0 | 0 | 0 | **100%** |
 | Sheet Tabs | 9 | 0 | 0 | 0 | 0 | **100%** |
 | Help | 6 | 0 | 0 | 0 | 3 | **100%** |
-| **TOTAL** | **165** | **31** | **0** | **2** | **26** | **100%** |
+| **TOTAL** | **165** | **32** | **0** | **2** | **25** | **100%** |
 <!-- command-inventory:coverage-summary:end -->
 
 ---
@@ -107,7 +107,7 @@ worksheet coordinates.
 
 ## Quick Access Toolbar
 
-> **Tab coverage: 3 Implemented + 0 Partial = 100% of 3 in-scope commands (1 Excluded)**
+> **Tab coverage: 3 Implemented + 1 Partial = 100% of 4 in-scope commands**
 
 <!-- command-inventory:command-surface:qat:start -->
 | Command | Status | Notes |
@@ -115,7 +115,7 @@ worksheet coordinates.
 | Save | Implemented |  |
 | Undo | Implemented |  |
 | Redo | Implemented |  |
-| Customize QAT | Excluded | Low v1 value |
+| Customize QAT | Partial | Options dialog persists command list, order, reset, and above/below-ribbon location for the broad direct-command catalog; arbitrary command browsing, ribbon right-click add, and import/export of customizations remain out of scope |
 <!-- command-inventory:command-surface:qat:end -->
 
 ---
