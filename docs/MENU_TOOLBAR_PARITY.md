@@ -1,6 +1,6 @@
 # FreeX Menu and Toolbar Parity
 
-**Last updated:** 2026-05-31
+**Last updated:** 2026-06-01
 **Purpose:** Tracks individual ribbon button and menu-item fidelity against Excel for Windows.
 
 ## Coverage Summary
@@ -9,7 +9,7 @@
 | Tab | Implemented | Partial | Not Implemented | Deferred | Excluded | Coverage |
 |---|---:|---:|---:|---:|---:|---:|
 | File/Backstage | 8 | 4 | 0 | 0 | 3 | **100%** |
-| QAT | 3 | 0 | 0 | 0 | 1 | **100%** |
+| QAT | 3 | 1 | 0 | 0 | 0 | **100%** |
 | Home | 48 | 8 | 0 | 0 | 1 | **100%** |
 | Insert | 10 | 3 | 0 | 1 | 9 | **100%** |
 | Draw | 9 | 3 | 0 | 1 | 1 | **100%** |
@@ -20,7 +20,7 @@
 | View | 13 | 8 | 0 | 0 | 0 | **100%** |
 | Sheet Tabs | 9 | 0 | 0 | 0 | 0 | **100%** |
 | Help | 6 | 0 | 0 | 0 | 3 | **100%** |
-| **TOTAL** | **166** | **31** | **0** | **2** | **26** | **100%** |
+| **TOTAL** | **166** | **32** | **0** | **2** | **25** | **100%** |
 <!-- command-inventory:coverage-summary:end -->
 
 Coverage = (Implemented + Partial) / (Implemented + Partial + Not Implemented). Deferred and Excluded items are reported separately.
@@ -76,7 +76,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Save | Implemented |  |
 | Undo | Implemented |  |
 | Redo | Implemented |  |
-| Customize QAT | Excluded | Low v1 value |
+| Customize QAT | Partial | Options dialog persists command list, order, reset, and above/below-ribbon location for the broad direct-command catalog; arbitrary command browsing, ribbon right-click add, and import/export of customizations remain out of scope |
 <!-- command-inventory:menu-toolbar:qat:end -->
 
 ---
@@ -189,29 +189,29 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 |---|---|---|
 | PivotTable | Partial | Creates worksheet-range PivotTables on the current sheet or a new worksheet; create dialog source/placement choices expose access keys; Field List action buttons expose access keys; PivotTable Options choices expose access keys including undoable "For empty cells show" and "For error values show" text persistence; materialized value cells apply supported built-in and custom workbook-catalog value-field number format IDs; missing matrix intersections can display modeled empty-cell text; label/value filter dialogs expose access-keyed fields and OK/Cancel; checked-item filter search/select-all and the tabbed Value Field Settings dialog expose access-keyed fields, tabs, and OK/Cancel; Value Field Settings exposes a broader built-in preset catalog and edits custom format codes; model-first load/save |
 | PivotChart | Partial | Inserts a bound chart from an existing PivotTable, preserves the PivotTable connection across type changes, reads/writes native `pivotSource`, renders PivotChart field buttons, and exposes PivotChart Options with undoable master, report-filter, axis-field, and value-field button toggles; full PivotChart Tools layout/design editing remains partial |
-| Recommended PivotTables | Excluded | Proprietary heuristics |
+| Recommended PivotTables | Excluded | Excel-equivalent recommender requires proprietary data-pattern heuristics; normal PivotTables remain partial/in scope |
 | Table | Partial | Creates structured table metadata with generated headers, AutoFilter flag, style name, visible banding, access-keyed range/header controls, and one-step undo via the same path as Format as Table; the shared Format as Table gallery exposes Excel-scale Light/Medium/Dark style choices with swatch previews; style-option toggles for first/last column plus row/column stripes are undoable and preserve loaded table metadata; table value filters execute for command and XLSX-loaded metadata; totals-row labels and common functions can be materialized with undo; formulas evaluate modeled structured references for data-body columns, table sections, section-column intersections, current-row references, `#This Row`, and multi-column ranges; full table style theme semantics remain partial |
 | Picture (from file) | Implemented |  |
-| Online Pictures | Excluded |  |
+| Online Pictures | Excluded | External image search/service, licensing, content filtering, and network dependency; local Picture from file remains implemented |
 | Shapes | Implemented | Rect/ellipse/line |
-| Icons | Excluded | Proprietary Microsoft icon library |
-| 3D Models | Excluded |  |
-| SmartArt | Excluded | Retained part |
+| Icons | Excluded | Excel Icons depends on Microsoft's proprietary catalog; FreeX-owned/open icons would be a separate feature |
+| 3D Models | Excluded | Needs 3D import/render/manipulation/persistence and format support beyond the current drawing model |
+| SmartArt | Excluded | Retained as package part; authoring needs a diagram model, layout engine, editor, renderer, and OOXML persistence |
 | Screenshot | Excluded | OS-level feature |
 | Chart - column/bar/line/area | Implemented | Select Data Source, Move Chart, Insert Chart, and chart format dialogs expose keyboard access keys for modeled fields and option controls |
 | Chart - pie/doughnut/scatter/bubble | Implemented |  |
 | Chart - stock/radar/surface | Implemented | Surface and 3D Surface insert/change, render as value-colored matrix views, and write standard OOXML package parts with series axes |
 | Chart - treemap/sunburst/histogram | Deferred | Recognized from XLSX where detected; authoring/rendering and lossless package writing need per-family model/renderer |
 | Chart - waterfall/funnel/true 3D mesh | Deferred | Recognized from XLSX where detected; authoring/rendering and lossless package writing need per-family model/renderer. Map Chart remains recognized for XLSX preservation but is hidden from the Insert ribbon until authoring/rendering is implemented. |
-| Recommended Charts | Excluded | Proprietary heuristics |
+| Recommended Charts | Excluded | Excel-equivalent recommender requires proprietary data-pattern heuristics; normal chart authoring remains implemented/partial by chart family |
 | Sparklines (line/column/win-loss) | Implemented |  |
 | Text Box | Implemented |  |
 | Header & Footer | Implemented | Presets, section fields, token buttons, options, and OK/Cancel expose access keys |
-| WordArt | Excluded |  |
+| WordArt | Excluded | Needs stylized text objects, effects/geometry, editing UI, rendering, and OOXML drawing persistence |
 | Symbols | Implemented | Picker Cancel action exposes a keyboard access key. |
 | Hyperlink | Implemented | Ctrl+K |
 | Comment/Note | Partial | Insert tab creates local threaded comments; Review tab also keeps simple note commands. Full threaded conversation/reply UI remains partial |
-| Equation | Excluded | Hidden from the Insert ribbon until equation authoring is implemented |
+| Equation | Excluded | Hidden from the Insert ribbon until math object model/editor/renderer and OOXML equation persistence exist |
 <!-- command-inventory:menu-toolbar:insert:end -->
 
 ---

@@ -1,6 +1,6 @@
 # Shortcut Parity Matrix
 
-**Last updated:** 2026-05-28
+**Last updated:** 2026-06-01
 
 This matrix tracks Excel-for-Windows shortcut fidelity for the visible FreeX command surface. Status values use the command-surface contract: Parity, Partial, Excluded, or Missing. Exact command shortcuts reject unrelated extra modifiers so combinations such as Ctrl+Alt+C or Ctrl+Shift+Z do not steal AltGr/non-US input or future shortcut space.
 

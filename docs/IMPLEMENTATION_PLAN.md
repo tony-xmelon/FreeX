@@ -1,6 +1,6 @@
 # FreeX Implementation Plan — Gap Closure
 
-**Last updated:** 2026-05-18  
+**Last updated:** 2026-05-31
 **Basis:** Gap analysis from FUNCTION_PARITY.md, COMMAND_SURFACE_PARITY.md, SHORTCUT_PARITY_MATRIX.md, FIDELITY_CONTRACT.md, and MENU_TOOLBAR_PARITY.md
 
 > **Historical note (2026-05-19):** This plan is retained as implementation history. Its formula gap phases are complete and some scope decisions here have since changed (for example `CELL`, `INFO`, `LET`, `LAMBDA`, statistical distributions, financial functions, `HYPERLINK`, and engineering base/bit functions are implemented). Use `FUNCTION_PARITY.md`, `NEXT_PHASES_PLAN.md`, and `OUTSTANDING_BUILD.md` for current status.
@@ -15,13 +15,17 @@ The following previously "Not Implemented" items are now explicitly excluded. Ea
 |---|---|
 | **Multi-window View advanced controls** (Hide/Unhide, Side-by-Side, Sync Scrolling, Reset Window Position) | Requires window visibility state, paired layout, and synchronized viewport routing. New Window and Switch Windows now have a live registry-backed slice; the remaining advanced controls stay out of the ribbon until their subsystems exist. |
 | **Thesaurus** | Requires an external dictionary/thesaurus service or bundled corpus. No offline equivalent in .NET base libraries. |
-| **Insert > Icons** | Requires Microsoft's proprietary Fluent icon library; not redistributable. |
-| **Insert > Screenshot** | OS-level snipping tools (Win+Shift+S) are a better UX; not worth duplicating. |
-| **Recommended PivotTables / Recommended Charts** | AI/ML-driven suggestions requiring data-pattern analysis; proprietary Microsoft heuristics. |
-| **Customize QAT** | Low user value for v1; the fixed QAT (Save/Undo/Redo) covers typical use. |
+| **Insert > Online Pictures** | Requires an external image search/service integration plus licensing, content filtering, and network policy decisions. Local Picture from file remains implemented. |
+| **Insert > Icons** | Excel's Icons command depends on Microsoft's proprietary icon catalog; a FreeX-owned/open icon picker would be a separate feature. |
+| **Insert > 3D Models** | Requires 3D asset import, rendering, object manipulation, persistence, and format support beyond the current drawing model. |
+| **Insert > SmartArt authoring** | Requires a diagram model, layout engine, editor, renderer, and OOXML persistence. Retaining existing package parts is separate from authoring. |
+| **Insert > Screenshot** | OS-level snipping tools (Win+Shift+S) are a better UX; not worth duplicating as an in-app capture subsystem. |
+| **Recommended PivotTables / Recommended Charts** | Excel-equivalent recommendations require proprietary Microsoft-style data-pattern heuristics. Normal PivotTable/chart authoring remains in scope separately. |
+| **Insert > WordArt** | Requires stylized text drawing objects, text effects/geometry, editing UI, rendering, and OOXML drawing persistence. |
+| **Insert > Map Chart authoring/rendering** | Geographic chart authoring needs a dedicated map/geospatial model and renderer; XLSX preservation stays documented separately. |
+| **Insert > Equation authoring** | Requires a math object model/editor, renderer, and OOXML equation persistence before it can be exposed as a live command. |
+| **Freehand Ink** | Requires an ink capture/conversion subsystem; no disabled ribbon placeholder should be shown without it. |
 | **Select Objects (arrow cursor mode)** | Niche; interactive drag-handle object selection is already deferred. |
-| **CELL() function** | Returns ~30 different cell properties (format codes, address styles, protection state) deeply tied to display internals; rarely used; too complex relative to value. |
-| **INFO() function** | Returns system/environment info (OS name, .NET version, etc.) irrelevant to spreadsheet calculation. |
 | **Spell Check full dictionary** | No offline spell-check corpus in scope; the existing known-corrections baseline is sufficient for v1. |
 | **Accessibility Checker full expansion** | Current merged-cell + alt-text checks cover the most common issues; full WCAG audit engine is a separate product concern. |
 
@@ -255,12 +259,16 @@ In addition to the existing excluded features (cloud, VBA, Power Query, data mod
 |---|---|
 | Multi-window View advanced controls (Hide/Unhide, Side-by-Side, Sync Scrolling, Reset Position) | Complex paired-window/visibility subsystem |
 | Thesaurus | External service dependency |
-| Insert > Icons | Proprietary Microsoft library |
-| Insert > Screenshot | OS-level feature |
-| Recommended PivotTables / Recommended Charts | AI/ML heuristics |
-| Customize QAT | Low v1 value |
+| Insert > Online Pictures | External image service, licensing, and content filtering |
+| Insert > Icons | Proprietary Microsoft icon catalog; FreeX-owned/open icons would be separate |
+| Insert > 3D Models | 3D import/render/manipulation/persistence subsystem |
+| Insert > SmartArt authoring | Diagram model, layout engine, editor, renderer, and OOXML persistence |
+| Insert > Screenshot | OS-level capture/snipping feature |
+| Recommended PivotTables / Recommended Charts | Excel-equivalent proprietary data-pattern heuristics |
+| Insert > WordArt | Stylized text effects/object model and OOXML drawing persistence |
+| Insert > Map Chart authoring/rendering | Dedicated geospatial chart subsystem |
+| Insert > Equation authoring | Math object model/editor/renderer and OOXML equation persistence not implemented |
+| Freehand Ink | Ink capture/conversion subsystem |
 | Select Objects cursor mode | Niche |
-| CELL() function | Too complex, rarely used |
-| INFO() function | System info irrelevant to calculation |
 | Full spell-check dictionary | Out-of-scope corpus |
 | Full accessibility audit engine | Separate product concern |
