@@ -28,12 +28,12 @@ App.Host (composition root, DI, startup)
 ## Current Implemented Baseline
 
 - **Core.Model**: `Workbook`, `Sheet`, `Cell`, `ScalarValue` hierarchy (`BlankValue`, `NumberValue`, `BoolValue`, `TextValue`, `DateTimeValue`, `ErrorValue`), `CellAddress` (A1 notation), `GridRange`, `CellStyle` with `StyleId` registry (structural equality includes `NativeDifferential*` fields; `GetStyle` returns the registered instance directly without cloning), `NativeXmlPreserveBag` (keyed string bag replacing 12 `WorksheetXxxMetadataModel` classes)
-- **Core.Formula**: Lexer → Parser → AST → Evaluator; 345 in-scope Excel built-in functions; dynamic arrays; LET/LAMBDA higher-order functions; cross-sheet reference support (`Sheet1!A1`)
+- **Core.Formula**: Lexer → Parser → AST → Evaluator; 487 in-scope Excel built-in functions; dynamic arrays; LET/LAMBDA higher-order functions; cross-sheet reference support (`Sheet1!A1`)
 - **Core.Calc**: `DependencyGraph` (topological sort, Kahn's algorithm, cycle detection), `RecalcEngine` (volatile-cell support), `ViewportService`
 - **Core.Commands**: `ICommandBus` with undo/redo stack (count-bounded + 50 MB byte-budget via `IEstimatesMemory`), `EditCellsCommand`, `AddSheetCommand`, `RenameSheetCommand`, `FindReplaceService`
 - **Core.IO**: `NativeJsonAdapter` (.fxl — compact JSON, SHA-256 password hashing via `NativePasswordHelper`), `XlsxFileAdapter` (ClosedXML 0.105.0 — stream-load, structured load warnings via `XlsxLoadResult`), `CsvFileAdapter`, delimited-text adapters, `SpreadsheetXmlFileAdapter` for Excel XML Spreadsheet 2003 `.xml`, `XsltWorkbookTransform` for safe XSLT-to-SpreadsheetML imports, and `XmlNativeBagSerializer` for `NativeXmlPreserveBag` round-trip serialisation
 - **App.UI**: `GridView` — virtualized DrawingContext rendering (per-frame brush/pen/typeface caches reused via class-level fields), selection, row/column headers; `IUserMessageService` interface for injectable message dialogs
-- **App.Host**: `MainWindow` — formula bar, scrollbars, open/save dialogs, keyboard navigation, Find & Replace; `WpfUserMessageService` (MessageBox-backed `IUserMessageService`); `HyperlinkNavigationPlanner` with URI scheme whitelist (`http`, `https`, `mailto`, `ftp`)
+- **App.Host**: `MainWindow` — formula bar, scrollbars, open/save dialogs, keyboard navigation, Find & Replace; `WpfUserMessageService` (MessageBox-backed `IUserMessageService`); localization foundation (`UiText`, `LocExtension`, neutral `Strings.resx`, `Strings.bg-BG.resx`, and `AppLocalization`); `HyperlinkNavigationPlanner` with URI scheme whitelist (`http`, `https`, `mailto`, `ftp`)
 
 Native `.fxl` files are versioned JSON documents. Current files declare `FileFormat = FreeX.NativeJsonWorkbook`,
 `SchemaVersion = 1`, and `MinimumReaderVersion = 1`; unversioned legacy files remain readable and are migrated to the

@@ -1,7 +1,7 @@
 # FreeX XLSX Test Corpus Plan
 
 **Status:** Executable scaffold active  
-**Last updated:** 2026-05-28  
+**Last updated:** 2026-06-01
 **Goal:** Build a 100+ workbook corpus that measures whether FreeX preserves supported Excel workbook content while clearly reporting excluded or deferred features.
 
 Current executable manifest baseline: 175 rows (121 generated, 25 public, 20 local-private, 9 regression).
