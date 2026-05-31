@@ -269,7 +269,7 @@ workbook command behavior to track here.
 | Rectangle | Implemented |  |
 | Ellipse | Implemented |  |
 | Line | Implemented |  |
-| Freehand Ink | Excluded |  |
+| Freehand Ink | Excluded | Out of scope and not surfaced in the ribbon |
 | Bring Forward/Send Backward | Implemented |  |
 | Object Size/Rotation (command-based) | Implemented |  |
 | Fill Color | Implemented | Shared color picker exposes custom color and button access keys. |
