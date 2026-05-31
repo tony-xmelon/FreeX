@@ -21,7 +21,6 @@ The following previously "Not Implemented" items are now explicitly excluded. Ea
 | **Insert > Map Chart authoring/rendering** | Geographic chart authoring needs a dedicated map/geospatial model and renderer; XLSX preservation stays documented separately. |
 | **Insert > Equation authoring** | Requires a math object model/editor and renderer before it can be exposed as a live command. |
 | **Freehand Ink** | Requires an ink capture/conversion subsystem; no disabled ribbon placeholder should be shown without it. |
-| **Customize QAT** | Low user value for v1; the fixed QAT (Save/Undo/Redo) covers typical use. |
 | **Select Objects (arrow cursor mode)** | Niche; interactive drag-handle object selection is already deferred. |
 | **Spell Check full dictionary** | No offline spell-check corpus in scope; the existing known-corrections baseline is sufficient for v1. |
 | **Accessibility Checker full expansion** | Current merged-cell + alt-text checks cover the most common issues; full WCAG audit engine is a separate product concern. |
@@ -262,7 +261,6 @@ In addition to the existing excluded features (cloud, VBA, Power Query, data mod
 | Insert > Map Chart authoring/rendering | Dedicated geospatial chart subsystem |
 | Insert > Equation authoring | Math object model/editor not implemented |
 | Freehand Ink | Ink capture/conversion subsystem |
-| Customize QAT | Low v1 value |
 | Select Objects cursor mode | Niche |
 | Full spell-check dictionary | Out-of-scope corpus |
 | Full accessibility audit engine | Separate product concern |

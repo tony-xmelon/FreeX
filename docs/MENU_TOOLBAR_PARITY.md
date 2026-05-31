@@ -9,7 +9,7 @@
 | Tab | Implemented | Partial | Not Implemented | Deferred | Excluded | Coverage |
 |---|---:|---:|---:|---:|---:|---:|
 | File/Backstage | 8 | 4 | 0 | 0 | 3 | **100%** |
-| QAT | 3 | 0 | 0 | 0 | 1 | **100%** |
+| QAT | 3 | 1 | 0 | 0 | 0 | **100%** |
 | Home | 48 | 8 | 0 | 0 | 1 | **100%** |
 | Insert | 10 | 3 | 0 | 1 | 9 | **100%** |
 | Draw | 9 | 3 | 0 | 1 | 1 | **100%** |
@@ -20,7 +20,7 @@
 | View | 13 | 8 | 0 | 0 | 0 | **100%** |
 | Sheet Tabs | 9 | 0 | 0 | 0 | 0 | **100%** |
 | Help | 6 | 0 | 0 | 0 | 3 | **100%** |
-| **TOTAL** | **166** | **31** | **0** | **2** | **26** | **100%** |
+| **TOTAL** | **166** | **32** | **0** | **2** | **25** | **100%** |
 <!-- command-inventory:coverage-summary:end -->
 
 Coverage = (Implemented + Partial) / (Implemented + Partial + Not Implemented). Deferred and Excluded items are reported separately.
@@ -76,7 +76,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Save | Implemented |  |
 | Undo | Implemented |  |
 | Redo | Implemented |  |
-| Customize QAT | Excluded | Low v1 value |
+| Customize QAT | Partial | Options dialog persists command list, order, reset, and above/below-ribbon location for the broad direct-command catalog; arbitrary command browsing, ribbon right-click add, and import/export of customizations remain out of scope |
 <!-- command-inventory:menu-toolbar:qat:end -->
 
 ---

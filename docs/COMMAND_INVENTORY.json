@@ -13,10 +13,10 @@
     {
       "name": "QAT",
       "implemented": 3,
-      "partial": 0,
+      "partial": 1,
       "notImplemented": 0,
       "deferred": 0,
-      "excluded": 1
+      "excluded": 0
     },
     {
       "name": "Home",
@@ -111,10 +111,10 @@
     {
       "name": "QAT",
       "implemented": 3,
-      "partial": 0,
+      "partial": 1,
       "notImplemented": 0,
       "deferred": 0,
-      "excluded": 1
+      "excluded": 0
     },
     {
       "name": "Home",
@@ -300,8 +300,8 @@
         },
         {
           "name": "Customize QAT",
-          "status": "Excluded",
-          "notes": "Low v1 value"
+          "status": "Partial",
+          "notes": "Options dialog persists command list, order, reset, and above/below-ribbon location for the broad direct-command catalog; arbitrary command browsing, ribbon right-click add, and import/export of customizations remain out of scope"
         }
       ]
     },
@@ -1554,8 +1554,8 @@
         },
         {
           "name": "Customize QAT",
-          "status": "Excluded",
-          "notes": "Low v1 value"
+          "status": "Partial",
+          "notes": "Options dialog persists command list, order, reset, and above/below-ribbon location for the broad direct-command catalog; arbitrary command browsing, ribbon right-click add, and import/export of customizations remain out of scope"
         }
       ]
     },
