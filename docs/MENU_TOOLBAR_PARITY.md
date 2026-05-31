@@ -145,7 +145,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 
 | Item | Status | Notes |
 |---|---|---|
-| Conditional Formatting | Partial | Authoring/editing available for modeled rules with access-keyed value/format fields, visual-rule threshold/color fields, option toggles, and OK/Cancel; Conditional Formatting > Icon Sets exposes Excel-like grouped Directional/Shapes/Indicators/Ratings presets with direct one-click rules plus More Rules; grid rendering covers cell value, formulas, above/below average, top/bottom, duplicate/unique, text, blank/nonblank, error/no-error, color scales, data bars, and visible 3/4/5-band icon sets with style-aware arrows, traffic lights, signs, symbols, flags, ratings, quarters, boxes, reverse/icons-only display, and authored percent/number thresholds; simplified manager remains partial |
+| Conditional Formatting | Partial | Authoring/editing available for modeled rules with access-keyed value/format fields, visual-rule threshold/color fields, option toggles, and OK/Cancel; Conditional Formatting > Icon Sets exposes direct one-click icon-set presets plus More Rules without disabled category pseudo-commands; grid rendering covers cell value, formulas, above/below average, top/bottom, duplicate/unique, text, blank/nonblank, error/no-error, color scales, data bars, and visible 3/4/5-band icon sets with style-aware arrows, traffic lights, signs, symbols, flags, ratings, quarters, boxes, reverse/icons-only display, and authored percent/number thresholds; simplified manager remains partial |
 | Format as Table | Partial | Creates structured table metadata with generated headers, AutoFilter flag, style name, visible banding, access-keyed range/header controls, one-step undo for table creation plus styling, and an Excel-scale Light/Medium/Dark gallery with swatch previews; command-level style-option toggles for first/last column plus row/column stripes are undoable and preserve loaded table metadata; command-level and XLSX-loaded table value filters hide non-matching data rows with multi-column AND, blank inclusion, and totals-row exclusion semantics; totals-row labels and common functions (`sum`, `average`, `count`, `countNums`, `min`, `max`) can be materialized with undo; formulas evaluate modeled structured references for data-body columns, table sections, section-column intersections, current-row references, `#This Row`, and multi-column ranges; full table style theme semantics remain partial |
 | Cell Styles | Partial | Expanded built-in preset gallery backed by reusable `StyleDiff` planners; Accent 20% presets resolve against the active workbook theme; full workbook named styles remain deferred |
 
@@ -202,7 +202,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Chart - pie/doughnut/scatter/bubble | Implemented |  |
 | Chart - stock/radar/surface | Implemented | Surface and 3D Surface insert/change, render as value-colored matrix views, and write standard OOXML package parts with series axes |
 | Chart - treemap/sunburst/histogram | Deferred | Recognized from XLSX where detected; authoring/rendering and lossless package writing need per-family model/renderer |
-| Chart - waterfall/funnel/map/true 3D mesh | Deferred | Recognized from XLSX where detected; authoring/rendering and lossless package writing need per-family model/renderer |
+| Chart - waterfall/funnel/true 3D mesh | Deferred | Recognized from XLSX where detected; authoring/rendering and lossless package writing need per-family model/renderer. Map Chart remains recognized for XLSX preservation but is hidden from the Insert ribbon until authoring/rendering is implemented. |
 | Recommended Charts | Excluded | Proprietary heuristics |
 | Sparklines (line/column/win-loss) | Implemented |  |
 | Text Box | Implemented |  |
@@ -211,7 +211,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Symbols | Implemented | Picker Cancel action exposes a keyboard access key. |
 | Hyperlink | Implemented | Ctrl+K |
 | Comment/Note | Partial | Insert tab creates local threaded comments; Review tab also keeps simple note commands. Full threaded conversation/reply UI remains partial |
-| Equation | Excluded |  |
+| Equation | Excluded | Hidden from the Insert ribbon until equation authoring is implemented |
 <!-- command-inventory:menu-toolbar:insert:end -->
 
 ---
