@@ -1,7 +1,7 @@
 # FreeX Next Development Phases
 
-**Last updated:** 2026-05-29
-**Current state:** Formula engine at 345/345 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (87/87), XLSX round-trip and corpus coverage at a 175-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, and UIA accessibility peers in place. The active focus is advanced chart/XLSX fidelity, corpus expansion/regression cleanup, release packaging, and the explicitly documented native-Excel pivot edge cases.
+**Last updated:** 2026-06-01
+**Current state:** Formula engine at 487/487 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (87/87), XLSX round-trip and corpus coverage at a 175-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, UIA accessibility peers, and the first localization foundation in place. The active focus is advanced chart/XLSX fidelity proof, package-preserving save validation, release packaging/trust validation, localization breadth, and the explicitly documented native-Excel pivot edge cases.
 
 ---
 
@@ -9,7 +9,7 @@
 
 ### Phase 6: Formula Completeness
 
-All 345 in-scope Excel functions are implemented and tested:
+All 487 in-scope Excel functions are implemented and tested. The original Phase 6 buckets below are historical milestones; the current catalog is authoritative in [FUNCTION_PARITY.md](FUNCTION_PARITY.md):
 
 - **6A** - LET, LAMBDA, MAP, REDUCE, SCAN, BYROW, BYCOL, MAKEARRAY (+ recursive lambda support)
 - **6B** - Full statistical distribution suite (normal, t, F, chi-squared, binomial, beta, gamma, Weibull, lognormal, exponential, FREQUENCY, SKEW, KURT, CONFIDENCE)
@@ -54,6 +54,15 @@ The production readiness pass hardened accessibility, test corpus quality, dialo
 - **#47 Dialog parity**: All remaining `MessageBox.Show` calls in dialog classes replaced with `IUserMessageService`; access keys and `IsDefault`/`IsCancel` audited across all dialogs.
 - **#48 Shortcut parity**: AutoFilter shortcut improvements; shortcut parity now at 100% (87/87, 0 partial).
 - **#49 Docs**: `PROJECT_STATUS_REPORT` and `OUTSTANDING_BUILD` updated; `overallCompletion` raised to 95.
+
+### May 31 Integration and Localization Foundation
+
+May 31 closed several late hardening slices and added the first production localization substrate:
+
+- Formula documentation and catalog status now track 487/487 in-scope functions.
+- `UiText`, `LocExtension`, neutral `Strings.resx`, and `Strings.bg-BG.resx` are present with resource key, XAML usage, automation metadata, and Bulgarian satellite coverage tests.
+- Ribbon/sheet-tab polish continued through compact split-button segment fixes, standalone ribbon command layout at wider widths, sheet add/options icon polish, and tab navigation hover alignment.
+- Object resize/rotation handles, chart data-label toggles, custom-list primary sort behavior, and keytip placement polish are recorded as done in the outstanding-build backlog.
 
 ---
 

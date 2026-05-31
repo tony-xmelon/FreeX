@@ -1,7 +1,7 @@
 # FreeX User Guide
 
 **Version:** v1.0  
-**Updated:** 2026-05-25
+**Updated:** 2026-06-01
 
 FreeX is a free, native Windows desktop spreadsheet application for `.xlsx` files. It reads and writes standard XLSX workbooks and supports formulas, charts, PivotTables, conditional formatting, data tools, and page layout.
 
@@ -128,7 +128,7 @@ Functions that return multiple values (FILTER, SORT, UNIQUE, SEQUENCE, RANDARRAY
 
 ### Supported Functions
 
-FreeX implements **345 in-scope Excel functions**, including:
+FreeX implements **487 in-scope Excel functions**, including:
 
 | Category | Examples |
 |---|---|

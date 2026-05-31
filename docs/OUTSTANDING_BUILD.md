@@ -1,7 +1,7 @@
 # FreeX Outstanding Build List
 
-**Last updated:** 2026-05-31
-**Basis:** reviewed the repository Markdown files, cross-checked the active codebase under `src/` and `tests/`, and confirmed the current branch/worktree maintenance snapshot. Updated after production-readiness pass (PRs #45–#48) and the 2026-05-30 comprehensive source review ([CODE_REVIEW_COMPREHENSIVE_2026-05-30.md](CODE_REVIEW_COMPREHENSIVE_2026-05-30.md)), which verified the entire `src/` tree (967 files / ~178 KLOC), confirmed all 17 findings from the 2026-05-28 review are resolved, and recorded a small residual code-quality backlog (see below).
+**Last updated:** 2026-06-01
+**Basis:** reviewed the repository Markdown files, cross-checked the active codebase under `src/` and `tests/`, confirmed `release/progress.json`, and refreshed the current documentation/status metrics after the May 31 integration work. This follows the production-readiness pass and the 2026-05-30 comprehensive source review ([CODE_REVIEW_COMPREHENSIVE_2026-05-30.md](CODE_REVIEW_COMPREHENSIVE_2026-05-30.md)), which verified the source tree, confirmed all 17 findings from the 2026-05-28 review are resolved, and recorded a small residual code-quality backlog (see below).
 
 This is the current source-of-truth backlog for features still outstanding to build. Older planning docs are useful historical context, but several items they list as future work are now implemented.
 
@@ -10,7 +10,7 @@ This is the current source-of-truth backlog for features still outstanding to bu
 Confirmed present in code and tests:
 
 - Core spreadsheet shell, command bus, undo/redo, virtualized WPF grid, multi-sheet UI, native/CSV/XLSX adapters.
-- Formula engine at 345/345 in-scope functions with catalog guards and category-focused Excel parity tests. This includes modern lookup/dynamic-array functions (`XLOOKUP`, `XMATCH`, `SEQUENCE`, `RANDARRAY`, `FILTER`, `SORT`, `SORTBY`, `UNIQUE`, `TAKE`, `DROP`, `CHOOSEROWS`, `CHOOSECOLS`, `VSTACK`, `HSTACK`, `TOROW`, `TOCOL`, `WRAPROWS`, `WRAPCOLS`, `EXPAND`), higher-order formulas (`LET`, `LAMBDA`, `MAP`, `REDUCE`, `SCAN`, `BYROW`, `BYCOL`, `MAKEARRAY`), statistical distributions, financial bond/depreciation helpers, database functions, `HYPERLINK`, discrete engineering base/bit functions, locale-specific text helpers (`ASC`, `DBCS`, `PHONETIC`, `BAHTTEXT`), and local web-text helpers (`ENCODEURL`, `FILTERXML`). Formula hardening now includes Excel cached-result fixtures, inverse/round-trip property tests, dynamic-array error/volatility edge guards, and structured-reference current-row/spaced-header coverage; remaining formula work is ongoing parity proof as new edge cases are discovered (see `docs/FUNCTION_PARITY.md`).
+- Formula engine at 487/487 in-scope functions with catalog guards and category-focused Excel parity tests. This includes modern lookup/dynamic-array functions (`XLOOKUP`, `XMATCH`, `SEQUENCE`, `RANDARRAY`, `FILTER`, `SORT`, `SORTBY`, `UNIQUE`, `TAKE`, `DROP`, `CHOOSEROWS`, `CHOOSECOLS`, `VSTACK`, `HSTACK`, `TOROW`, `TOCOL`, `WRAPROWS`, `WRAPCOLS`, `EXPAND`), higher-order formulas (`LET`, `LAMBDA`, `MAP`, `REDUCE`, `SCAN`, `BYROW`, `BYCOL`, `MAKEARRAY`), statistical distributions, financial bond/depreciation helpers, database functions, `HYPERLINK`, discrete engineering base/bit functions, locale-specific text helpers (`ASC`, `DBCS`, `PHONETIC`, `BAHTTEXT`), regex/text helpers, and local web-text helpers (`ENCODEURL`, `FILTERXML`). Formula hardening now includes Excel cached-result fixtures, inverse/round-trip property tests, dynamic-array error/volatility edge guards, and structured-reference current-row/spaced-header coverage; remaining formula work is ongoing parity proof as new edge cases are discovered (see `docs/FUNCTION_PARITY.md`).
 - Spill infrastructure and formula AST caching in recalculation.
 - Formula reference rewriting for insert/delete/paste/autofill paths.
 - Autofill drag UI and `AutofillCommand`; Flash Fill command/service baseline.
@@ -24,6 +24,7 @@ Confirmed present in code and tests:
 - Keyboard shortcuts at **100% parity (87/87)**; AutoFilter shortcut improvements in `DataFilterCommands` (PR #48).
 - All `MessageBox.Show` calls in dialog classes migrated to `IUserMessageService`/`DialogMessageHelper`; all dialog access keys and `IsDefault`/`IsCancel` states audited (PR #47).
 - XLSX corpus at **175 rows** (+31 new feature buckets); 3 per-feature XML structural comparisons; 6 round-trip bugs fixed (PR #46).
+- Localization foundation is now present in code and tests: `UiText`, `LocExtension`, neutral `Strings.resx`, full `Strings.bg-BG.resx` satellite coverage, startup UI-culture selection, WPF language metadata application, and resource/usage guard tests.
 
 ## Highest Priority Outstanding Work
 
@@ -114,7 +115,11 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
    - Extend grouped-sheet behavior for advanced object effects.
    - Extend grouped-sheet behavior for supported advanced data commands where Excel applies actions across grouped sheets.
 
-6. **Calculation performance architecture**
+6. **Localization and culture**
+   - Foundation, neutral `en-US` resources, and full Bulgarian satellite resources are implemented.
+   - Remaining work is translator review, additional locales, broader core-message code boundaries, current-culture direct-entry/import audits, pseudo-localization layout smoke coverage, and release/package language metadata validation.
+
+7. **Calculation performance architecture**
    - Recalculation is intentionally single-threaded today.
    - Build multi-threaded recalculation only after large-workbook profiling proves it is needed.
    - If built, add thread-safe dependency graph/evaluation, progress reporting, cancellation, and result parity tests against the single-threaded engine.

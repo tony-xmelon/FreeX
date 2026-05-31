@@ -1,33 +1,33 @@
 # Project Build History Metrics
 
-Generated: 2026-05-31 00:19 +03:00
+Generated: 2026-06-01 00:20 +03:00
 Repository: https://github.com/tony-xmelon/FreeX.git
-Baseline ref: local main at 052124e3e; origin/main at 052124e3e
-History window: 2026-05-12 through 2026-05-30
+Baseline ref: local main at 279fbc1df; origin/main at 279fbc1df before this documentation refresh
+History window: 2026-05-12 through 2026-05-31
 
 ## Scope And Caveats
 
 - Daily build rows are Git numstat churn on the current local main integration branch for src, tests, and docs. They answer how much code changed per day.
 - Current LOC counts are exact for the checkout at the baseline ref. Historical cumulative LOC requires a longer offline ETL pass over each snapshot and is intentionally not estimated here.
-- Token/provider rows were reprocessed from local Codex and Claude JSONL logs on 2026-05-31 for activity through 2026-05-30 inclusive. Bytes are attributed log-file bytes reported by those extraction passes; raw token counts are observed local usage, not provider invoices.
+- Token/provider rows were reprocessed from local Codex and Claude JSONL logs on 2026-06-01 for activity through 2026-05-31 inclusive. Bytes are attributed log-file bytes reported by those extraction passes; raw token counts are observed local usage, not provider invoices.
 - Provider-style billable-equivalent tokens apply cache weighting to make the local logs easier to compare with provider dashboards: OpenAI cached input is weighted at 0.5x, Anthropic cache write at 1.25x, Anthropic cache read at 0.1x, and output/reasoning at 1x. Exact billed cost still requires provider exports, model-level rates, and invoice-side normalization.
 - Daily build churn `Bytes +/-`, `OpenAI Tokens`, and `Anthropic Tokens` are the per-date raw provider-log totals from the token extraction table. Byte removals are reported as `-0` because logs are attributed by observed usage, not deleted usage.
 
 ## Current Repository Footprint
 
-- Registered worktrees: 36
-- Local branches: 195
-- Remote branches: 214
-- Tracked files: 2,136
-- Current C# source LOC: 187,141
-- Current C# test LOC: 189,187
-- Current XAML LOC: 8,219
-- Current docs LOC: 31,926
-- Observed Codex JSONL sessions/logs: 2,343
-- Observed Claude FreeX JSONL sessions/logs: 249
-- Provider log bytes attributed: 18,076,190,639
-- Observed raw provider tokens: 109,097,660,923
-- Provider-style billable-equivalent tokens: 55,380,438,651
+- Registered worktrees: 46
+- Local branches: 206
+- Remote branches: 216
+- Tracked files: 2,161
+- Current C# source LOC: 191,932
+- Current C# test LOC: 194,791
+- Current XAML LOC: 8,232
+- Current docs LOC: 29,169
+- Observed Codex JSONL sessions/logs: 2,637
+- Observed Claude FreeX JSONL sessions/logs: 255
+- Provider log bytes attributed: 18,837,587,033
+- Observed raw provider tokens: 116,943,364,224
+- Provider-style billable-equivalent tokens: 59,381,348,531
 
 ## Daily Build Churn
 
@@ -52,7 +52,8 @@ History window: 2026-05-12 through 2026-05-30
 | 2026-05-28 | 937 | 468 | +27,609 / -6,564 | +11,212 / -5,041 | +14,032 / -770 | +1,698 / -596 | +1,098,883,021 / -0 | 24,060,030,258 | 178,994,747 | 2 |
 | 2026-05-29 | 1,113 | 2,374 | +30,142 / -13,112 | +8,609 / -4,446 | +15,373 / -4,018 | +4,214 / -3,756 | +1,337,119,861 / -0 | 42,404,907,390 | 15,242,087 | 2 |
 | 2026-05-30 | 497 | 811 | +55,520 / -18,403 | +14,261 / -4,549 | +14,604 / -2,718 | +4,711 / -5,633 | +1,011,844,017 / -0 | 16,008,528,128 | 156,988,459 | 1 |
-| TOTAL | 11,534 | 14,206 | +1,398,876 / -920,021 | +354,490 / -156,623 | +222,909 / -15,199 | +53,144 / -18,153 | +18,076,190,639 / -0 | 107,661,967,900 | 1,435,693,023 | 2 |
+| 2026-05-31 | 226 | 210 | +28,077 / -2,540 | +5,723 / -849 | +6,293 / -661 | +284 / -219 | +761,396,394 / -0 | 7,672,088,514 | 173,614,787 | 1 |
+| TOTAL | 11,760 | 14,416 | +1,426,953 / -922,561 | +360,213 / -157,472 | +229,202 / -15,860 | +53,428 / -18,372 | +18,837,587,033 / -0 | 115,334,056,414 | 1,609,307,810 | 2 |
 
 ## Daily Provider Token Usage
 
@@ -92,7 +93,9 @@ History window: 2026-05-12 through 2026-05-30
 | 2026-05-29 | openai | 244 | 244 | 316,657 | 1,249,888,317 | 42,315,429,592 | 41,551,918,848 | 0 | 0 | 73,046,880 | 6,322,658 | 42,404,907,390 | 21,618,839,706 |
 | 2026-05-30 | anthropic | 2 | 2 | 434 | 5,246,319 | 90,666 | 0 | 4,684,036 | 151,810,000 | 403,757 | 0 | 156,988,459 | 21,530,468 |
 | 2026-05-30 | openai | 280 | 280 | 118,863 | 1,006,597,698 | 15,957,243,192 | 15,420,708,224 | 0 | 0 | 33,925,992 | 8,352,004 | 16,008,528,128 | 8,289,167,076 |
-| TOTAL | all | 2,773 | 2,773 | 828,669 | 18,076,190,639 | 107,392,989,131 | 104,879,120,384 | 41,074,029 | 1,387,974,361 | 208,427,985 | 28,441,754 | 109,097,660,923 | 55,380,438,651 |
+| 2026-05-31 | anthropic | 8 | 8 | 550 | 16,207,176 | 88,740 | 0 | 7,771,149 | 165,556,427 | 198,471 | 0 | 173,614,787 | 26,556,790 |
+| 2026-05-31 | openai | 315 | 304 | 57,704 | 745,189,218 | 7,641,032,254 | 7,377,207,296 | 0 | 0 | 17,127,671 | 4,796,813 | 7,672,088,514 | 3,974,353,090 |
+| TOTAL | all | 3,096 | 3,085 | 886,923 | 18,837,587,033 | 115,034,110,125 | 112,256,327,680 | 48,845,178 | 1,553,530,788 | 225,754,127 | 33,238,567 | 116,943,364,224 | 59,381,348,531 |
 
 ## Token Extraction Notes
 
@@ -105,12 +108,12 @@ History window: 2026-05-12 through 2026-05-30
 - freex_openai_daily_tokens.json: Included only JSONL session files whose session_meta cwd/initial_cwd contained FreeX or an earlier local project folder name, or whose first 250 lines / 256 KiB mentioned the project.
 - freex_openai_daily_tokens.json: Aggregated event timestamps into local +03 dates from payload.info.last_token_usage on token_count events.
 - freex_openai_daily_tokens.json: bytes is the sum of distinct matching session file sizes attributed to each date/provider row; cacheCreate and cacheRead are fixed at 0 because Codex logs expose cached_input_tokens, not create/read split.
-- freex_openai_daily_tokens.json: Reprocessed `C:/Users/anton/.codex/sessions/2026/05` and `C:/Users/anton/.codex/archived_sessions`; row-attributed OpenAI file/date bytes total 16,884,028,049 through 2026-05-30.
+- freex_openai_daily_tokens.json: Reprocessed `C:/Users/anton/.codex/sessions/2026/05` and `C:/Users/anton/.codex/archived_sessions`; row-attributed OpenAI file/date bytes total 17,629,217,267 through 2026-05-31.
 - freex_anthropic_daily_tokens.json: Scanned only local Claude project directories under C:/Users/anton/.claude/projects whose directory names contain FreeX or an earlier local project folder name.
 - freex_anthropic_daily_tokens.json: Reprocessed local Claude FreeX/Freexcel project transcripts using line streaming; skipped non-jsonl tool-result side files.
 - freex_anthropic_daily_tokens.json: Deduplicated assistant usage events by requestId when present, otherwise by file path plus uuid/timestamp.
 - freex_anthropic_daily_tokens.json: Bytes are attributed per date as the sum of each matching .jsonl file's full size, counted once for every date on which that file had at least one attributed assistant usage event.
-- freex_anthropic_daily_tokens.json: Row-attributed Anthropic file/date bytes total 1,192,162,590 through 2026-05-30; attributed assistant usage events: 14,772.
+- freex_anthropic_daily_tokens.json: Row-attributed Anthropic file/date bytes total 1,208,369,766 through 2026-05-31; attributed assistant usage events: 15,322.
 
 ## Git Authors Observed
 
@@ -133,10 +136,11 @@ History window: 2026-05-12 through 2026-05-30
 - 2026-05-28: Antoni Ivanov <tony.xmelon@gmail.com>; tony-xmelon <tony.xmelon@gmail.com>
 - 2026-05-29: Antoni Ivanov <tony.xmelon@gmail.com>; tony-xmelon <tony.xmelon@gmail.com>
 - 2026-05-30: tony-xmelon <tony.xmelon@gmail.com>
+- 2026-05-31: tony-xmelon <tony.xmelon@gmail.com>
 
 ## Reading The Trend
 
-- The project started in Git on 2026-05-12 and has consolidated work through 2026-05-30.
+- The project started in Git on 2026-05-12 and has consolidated work through 2026-05-31.
 - The daily churn table highlights where implementation volume, tests, and documentation moved together.
-- The refreshed token pass attributed 18,076,190,639 bytes of local provider logs, 109,097,660,923 observed raw tokens, and 55,380,438,651 provider-style billable-equivalent tokens across OpenAI/Codex and Anthropic/Claude rows through 2026-05-30.
-- May 30 added 497 integrated commits, 811 changed files, +55,520 / -18,403 LoC, and 16,165,516,587 observed raw provider tokens.
+- The refreshed token pass attributed 18,837,587,033 bytes of local provider logs, 116,943,364,224 observed raw tokens, and 59,381,348,531 provider-style billable-equivalent tokens across OpenAI/Codex and Anthropic/Claude rows through 2026-05-31.
+- May 31 added 226 integrated commits, 210 changed files, +28,077 / -2,540 LoC, and 7,845,703,301 observed raw provider tokens.

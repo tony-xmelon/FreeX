@@ -1,7 +1,7 @@
 # FreeX XLSX Fidelity Contract
 
 **Status:** v1 working contract  
-**Last updated:** 2026-05-29
+**Last updated:** 2026-06-01
 
 FreeX saves supported `.xlsx` workbook content from the in-memory model. For workbooks opened from native `.xlsx`, it also keeps a source package snapshot and merges package entries the model writer did not produce, along with content type declarations and relationships to copied targets. This is package-preserving best effort, not byte-for-byte editing of every OOXML node.
 
