@@ -70,6 +70,10 @@ Loaders validate row and column bounds, skip malformed ranges, clamp invalid num
 
 `StyleOnlyCells` preserve formatting for blank cells. Each entry has an `Address` and a `Style` object. Invalid addresses are skipped during load.
 
+## Comments
+
+`Comments` entries store legacy note text by `Address`. `ThreadedComments` entries store root `Text`, `Author`, `IsResolved`, optional UTC `CreatedAtUtc`/`ModifiedAtUtc`, and `Replies`; each reply stores `Text`, `Author`, and optional UTC created/modified timestamps. Invalid addresses are skipped during load.
+
 ## Data Validations
 
 `DataValidations` entries store `Range`, validation type, operator, formula/value fields, prompt/error UI flags, and dropdown visibility. Unsupported enum values or malformed ranges are skipped.
