@@ -25,7 +25,7 @@ Coverage is computed as **(Implemented + Partial) / (Implemented + Partial + Not
 | Tab | Implemented | Partial | Not Implemented | Deferred | Excluded | **Coverage** |
 |---|---:|---:|---:|---:|---:|---:|
 | File/Backstage | 8 | 4 | 0 | 0 | 3 | **100%** |
-| QAT | 3 | 0 | 0 | 0 | 1 | **100%** |
+| QAT | 3 | 1 | 0 | 0 | 0 | **100%** |
 | Home | 48 | 8 | 0 | 0 | 1 | **100%** |
 | Insert | 10 | 3 | 0 | 1 | 9 | **100%** |
 | Draw | 8 | 3 | 0 | 1 | 1 | **100%** |
@@ -36,7 +36,7 @@ Coverage is computed as **(Implemented + Partial) / (Implemented + Partial + Not
 | View | 13 | 8 | 0 | 0 | 0 | **100%** |
 | Sheet Tabs | 9 | 0 | 0 | 0 | 0 | **100%** |
 | Help | 6 | 0 | 0 | 0 | 3 | **100%** |
-| **TOTAL** | **165** | **31** | **0** | **2** | **26** | **100%** |
+| **TOTAL** | **165** | **32** | **0** | **2** | **25** | **100%** |
 <!-- command-inventory:coverage-summary:end -->
 
 ---
@@ -107,7 +107,7 @@ worksheet coordinates.
 
 ## Quick Access Toolbar
 
-> **Tab coverage: 3 Implemented + 0 Partial = 100% of 3 in-scope commands (1 Excluded)**
+> **Tab coverage: 3 Implemented + 1 Partial = 100% of 4 in-scope commands**
 
 <!-- command-inventory:command-surface:qat:start -->
 | Command | Status | Notes |
@@ -115,7 +115,7 @@ worksheet coordinates.
 | Save | Implemented |  |
 | Undo | Implemented |  |
 | Redo | Implemented |  |
-| Customize QAT | Excluded | Low v1 value |
+| Customize QAT | Partial | Options dialog persists command list, order, reset, and above/below-ribbon location for the broad direct-command catalog; arbitrary command browsing, ribbon right-click add, and import/export of customizations remain out of scope |
 <!-- command-inventory:command-surface:qat:end -->
 
 ---
@@ -230,27 +230,27 @@ worksheet coordinates.
 |---|---|---|
 | PivotTable | Partial | Creates from selected or cross-sheet source ranges on the current sheet or a new worksheet, refreshes existing PivotTables, supports command-level field layout/view/options/source changes including workbook-qualified source ranges, values-only and column-only layouts, nested row/column fields, Compact/Outline/Tabular report-layout state with Compact row-label rendering, top/bottom row-only subtotals and compact matrix top/bottom subtotals, calculated fields/items, date/number grouping, row/column label filters including comparison/between variants, row/column value filters with field targets including between/not-between and above/below-average variants, access-keyed create/source/placement choices, label/value filter dialog fields and OK/Cancel, value/label sorting including column label/value sorting, multi-select page/row/column checked-item filters with search/select-all/OK/Cancel access keys, Excel-style Show Values As modes including percent totals, running total, difference/% difference, rank, index, and parent-total variants with base field/item settings, common and statistical summary functions, built-in and custom workbook-catalog value-field number format IDs, broader built-in number-format preset catalog including comma, red-negative, currency/accounting, date/time, elapsed-time, fraction, scientific, percentage, and text IDs, editable custom value-field format codes on materialized value cells through an access-keyed tabbed Value Field Settings dialog, and PivotTable Options exposes undoable "For empty cells show" text for missing matrix intersections and no-data row/column field items, separate row/column grand-total controls, repeated-label/blank-line layout options for row-only and matrix reports, materialized report-filter captions and selected-item text with over/down wrap layout metadata plus PivotStyle header visual treatment, merge-and-center-label metadata with basic non-compact repeated and hidden-repeat outer row-label merge materialization plus subtotal caption merges across row-label columns, compact matrix Row Labels header merges across bounded multi-row column-header gaps, compact multi-level column-header parent-label merges, and centered retained label-cell alignment, nested subtotal captions that use the subtotaled row-field item in compact and non-compact layouts, display field captions/filter drop-downs, contextual tooltip/property-in-tooltip display options, classic drag-in-grid layout/drop-zones, and display expand/collapse buttons separately from print expand/collapse buttons, modeled autofit-column and preserve-formatting update options, cache "refresh on open", "save source data", "enable refresh", "Enable Show Details", and deleted-item retention toggles, access-keyed PivotTable Options choices, built-in Light/Medium/Dark PivotStyle name gallery selection with current custom/authored style preservation, a focused contextual PivotTable Design Styles gallery that applies only the style through the undoable options command, PivotTable style-name and style-option round-trip, GETPIVOTDATA lookups, Field List task pane with access-keyed action buttons, checkbox toggles, and drag/drop reordering, field context-menu sort/select-items/label-filter/value-filter/clear/value-settings entry points, checkbox item-filter dialog, label/value filter dialogs, tabbed Value Field Settings dialog, contextual PivotTable Analyze/Design tabs, ribbon/double-click Show Details drill-down for item/subtotal/grand-total/matrix/column-only data cells with a command guard when Show Details is disabled, Insert Slicer/Insert Timeline authoring with deterministic default drawing anchors and date-backed timeline field validation, active slicer and timeline filtering commands and pane controls for connected worksheet-range PivotTables, authored slicer/timeline state round-trip including cross-sheet source data, cache relationships, native floating drawing anchor coordinates, nonvisual shape names, and lightweight anchored redraw/placeholders for controls connected to PivotTables on the active sheet, rendered header/subtotal/grand-total-row/grand-total-column/row-stripe/column-stripe styles for built-in PivotStyle presets including explicit `PivotStyleMedium2`, custom-workbook-theme accent/tint resolution for the supported built-in Light/Medium/Dark PivotStyle subset including `PivotStyleLight16` through `PivotStyleLight21`, and model-first XLSX load/save including refresh flags, field-header display flags, tooltip display flags, drop-zone display flags, merge-label flags, report-filter layout flags, display/print drill flags, enable-drill data option, update-format flags, and shared-item metadata; exact full-gallery PivotStyle theme semantics, exact native slicer/timeline styling and placement on sheets that differ from the connected PivotTable sheet, full Excel merged-label behavior for compact layout beyond bounded matrix header merges, full Excel number-format picker/catalog UI, exact Excel report-filter visual styling/drop-down widgets and external/OLAP/data-model pivot cache execution remain partial or excluded |
 | PivotChart | Partial | Inserts a bound chart from an existing PivotTable, supports bound PivotChart type changes while preserving the PivotTable connection, native `pivotSource` read/write and refresh binding implemented; renders PivotChart field buttons with master and per-button report-filter/axis-field/value-field visibility; PivotChart Options exposes undoable master/report-filter/axis-field/value-field button toggles; Native JSON persists PivotChart binding/style/button option state plus modeled chart design metadata; field buttons open the same sort/filter/value-settings menu used by PivotTable fields; bound chart ranges stay synchronized after PivotTable layout/view changes; full PivotChart Tools layout/design editing remains partial |
-| Recommended PivotTables | Excluded | AI/ML heuristics; proprietary |
+| Recommended PivotTables | Excluded | Excel-equivalent recommendations require proprietary Microsoft-style data-pattern heuristics; normal PivotTable authoring remains partial/in scope |
 | Table | Partial | Creates structured table metadata with generated headers, AutoFilter flag, style name, visible banding, access-keyed range/header controls, and one-step undo via the same path as Format as Table; the shared Format as Table gallery exposes Excel-scale Light/Medium/Dark style choices with swatch previews; Table Design can rename, resize, summarize the active table through the supported PivotTable creation flow, remove duplicates, convert to range while preserving cell values/formatting, and toggle totals/filter/first/last/banded style options through undoable model commands; table value filters execute for command and XLSX-loaded metadata; totals-row labels and common functions can be materialized with undo; formulas can evaluate and track dependencies for basic data-body column structured references such as `Sales[Amount]`, evaluate whole-table section selectors `#Headers`, `#Data`, `#All`, and `#Totals`, evaluate section-column intersections such as `Sales[[#Totals],[Amount]]`, evaluate scalar current-row references such as `[@Amount]` or `Sales[@Amount]` from table data-body formulas, evaluate qualified and unqualified `#This Row` references such as `Sales[[#This Row],[Amount]:[Tax]]` and `[[#This Row],[Amount]:[Tax]]`, and evaluate multi-column ranges such as `Sales[[Amount]:[Tax]]` and `Sales[[#Data],[Amount]:[Tax]]`; full table style theme semantics remain partial |
 | Picture (from file) | Implemented |  |
-| Online Pictures | Excluded |  |
+| Online Pictures | Excluded | External image search/service, licensing, content filtering, and network dependency; local Picture from file remains implemented |
 | Shapes | Implemented | Rectangle/ellipse/line |
-| Icons | Excluded | Requires proprietary Microsoft icon library |
-| 3D Models | Excluded |  |
-| SmartArt | Excluded | Retained as package part; no authoring |
+| Icons | Excluded | Excel Icons depends on Microsoft's proprietary icon catalog; a FreeX-owned/open icon picker would be a separate feature |
+| 3D Models | Excluded | Requires 3D asset import, rendering, object manipulation, persistence, and format support beyond the current drawing model |
+| SmartArt | Excluded | Retained as package part; authoring requires a diagram model, layout engine, editor, renderer, and OOXML persistence |
 | Screenshot | Excluded | OS-level feature (Win+Shift+S) |
 | Chart (column/bar/line/area/pie/doughnut/scatter/bubble) | Implemented | Select Data Source, Move Chart, Insert Chart, and chart format dialogs expose keyboard access keys for modeled fields and option controls |
 | Chart (stock/radar) | Implemented | Model, ribbon insertion, renderer, and XLSX read/write paths implemented |
 | Chart (treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel/true 3D surface mesh) | Deferred | Surface has package, matrix-rendering, and Insert/Change Chart picker support; remaining advanced families are recognized from XLSX where detected and blocked from broken authoring/rendering, with lossless mixed drawing-part retention partial until per-family package writer support exists. Map Chart remains recognized for XLSX preservation but is hidden from the Insert ribbon until authoring/rendering is implemented. |
-| Recommended Charts | Excluded | AI/ML heuristics; proprietary |
+| Recommended Charts | Excluded | Excel-equivalent recommendations require proprietary Microsoft-style data-pattern heuristics; normal chart authoring remains implemented/partial by chart family |
 | Sparklines (line/column/win-loss) | Implemented |  |
 | Text Box | Implemented |  |
 | Header & Footer | Implemented | Presets, section fields, token buttons, options, and OK/Cancel expose access keys |
-| WordArt | Excluded |  |
+| WordArt | Excluded | Requires stylized text drawing objects, text effects/geometry, editing UI, rendering, and OOXML drawing persistence |
 | Symbols | Implemented | Picker Cancel action exposes a keyboard access key. |
 | Hyperlink (Ctrl+K) | Implemented |  |
 | Comment/Note | Partial | Insert tab creates local threaded comments; Review tab also keeps simple note commands. Full threaded conversation/reply UI remains partial |
-| Equation | Excluded | Hidden from the Insert ribbon until equation authoring is implemented |
+| Equation | Excluded | Hidden from the Insert ribbon until a math object model, editor, renderer, and OOXML equation persistence are implemented |
 <!-- command-inventory:command-surface:insert:end -->
 
 ---
