@@ -224,7 +224,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Rectangle | Implemented |  |
 | Ellipse | Implemented |  |
 | Line | Implemented |  |
-| Freehand Ink | Excluded |  |
+| Freehand Ink | Excluded | Out of scope and not surfaced in the ribbon |
 | Bring Forward | Implemented |  |
 | Send Backward | Implemented |  |
 | Object Size/Rotation | Implemented | Command-based |

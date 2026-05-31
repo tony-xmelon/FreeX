@@ -779,7 +779,7 @@
         {
           "name": "Freehand Ink",
           "status": "Excluded",
-          "notes": ""
+          "notes": "Out of scope and not surfaced in the ribbon"
         },
         {
           "name": "Bring Forward/Send Backward",
@@ -2053,7 +2053,7 @@
         {
           "name": "Freehand Ink",
           "status": "Excluded",
-          "notes": ""
+          "notes": "Out of scope and not surfaced in the ribbon"
         },
         {
           "name": "Bring Forward",
