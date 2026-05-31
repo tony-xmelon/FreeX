@@ -79,8 +79,8 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
 
 ## Product Parity Work Still Outstanding
 
-1. **View and window management**
-   - Workbook-window visibility state for Hide/Unhide and paired-window hosting for View Side by Side, Synchronous Scrolling, and Reset Window Position. New Window and Switch Windows have the first live registry-backed slice.
+1. **View and window management** — **IN SCOPE; full multi-window set is being actively implemented (do not remove the ribbon buttons).**
+   - Multi-window is a committed v1 feature: New Window, Switch Windows, Hide Window, Unhide Window, View Side by Side, Synchronous Scrolling, and Reset Window Position. New Window + Switch Windows are live (registry-backed); Hide/Unhide/Reset and Side-by-Side/Synchronous-Scrolling are under active implementation. The `View ▸ Window` ribbon buttons for these commands must remain in `MainWindow.xaml` — they were briefly removed only because no implementation existed yet; that is no longer true. Owning lane: the source-review/feature session (`worktree-code-review-20260530`).
    - Fine split-pane scroll feel parity.
    - Split-pane merged-cell edge cases across non-visible rows/columns.
    - Full workbook view-mode polish beyond the current state/persistence baseline.
@@ -137,12 +137,12 @@ No local active workstream was found for the planned map-chart or multi-window w
 ### Parity Orchestrator
 
 - **Map Chart / advanced chart family lane:** define the map-chart model, Insert/Change Chart picker behavior, renderer, XLSX read/write support, and known-gap retention story. This can ride with the existing advanced chart family backlog for treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel/map/true 3D mesh.
-- **View multi-window lane:** New Window and Switch Windows have the first live registry-backed slice. Remaining scope is Hide Window, Unhide Window, View Side by Side, Synchronous Scrolling, and Reset Window Position; required foundation is live window visibility state, paired-window layout, and synchronized scrolling semantics.
+- **View multi-window lane — OWNED by `worktree-code-review-20260530`, full set in active implementation.** New Window + Switch Windows are live (registry-backed). Hide Window, Unhide Window, Reset Window Position, View Side by Side, and Synchronous Scrolling are being implemented now and their ribbon buttons are being re-added to `MainWindow.xaml`. Other lanes: do NOT remove the `View ▸ Window` buttons or treat these commands as unsupported — coordinate with this lane instead.
 - **PivotTable ribbon-action lane:** completed in the Pivot contextual ribbon command breadth slice. PivotTable Name, PivotTable Options, Clear, Select, and Move PivotTable are routed from the Analyze tab with selected-PivotTable targeting, command/undo behavior where applicable, keytips, and focused source/planner/core command tests.
 
 ### Build Orchestrator
 
-- Keep the removed excluded placeholders out of the ribbon by preserving source guards around `MainWindow.xaml` and adaptive group profiles.
+- Keep the removed *excluded Microsoft-integration* placeholders out of the ribbon by preserving source guards around `MainWindow.xaml` and adaptive group profiles. NOTE: the `View ▸ Window` multi-window commands (Hide/Unhide/Reset/Side-by-Side/Synchronous Scrolling) are NOT excluded — they are an actively-implemented in-scope lane and their buttons must stay.
 - When ribbon XAML or adaptive group changes land, include the focused Host tests that cover `InsertCommandSourceTests`, `HelpCommandSourceTests`, `RibbonTabParityTests`, and adaptive ribbon planner/engine behavior.
 - If a future lane reintroduces an excluded Microsoft integration, require a product-scope design document first rather than adding a disabled ribbon placeholder.
 
