@@ -1,6 +1,6 @@
 # Localization Plan
 
-Date: 2026-05-30
+Date: 2026-06-01
 
 ## Goal
 
@@ -8,13 +8,13 @@ Make FreeX localizable without weakening spreadsheet fidelity. UI text should co
 
 ## Current State
 
-- FreeX is a .NET 10 WPF desktop app. `FreeX.App.Host` owns the shell, dialogs, message boxes, and command surface; `FreeX.App.UI` owns custom rendering such as the grid and charts; core projects own model, formulas, commands, calc, and IO.
-- There is no localization substrate yet. The repository has theme/icon XAML resources, but no `.resx`, `.resw`, `.po`, or `.xlf` resources.
-- String scans found a broad English surface: about 1,843 text-bearing XAML hits in `FreeX.App.Host`, about 1,252 of those in `MainWindow.xaml`, about 13,739 C# string-literal hits under `src`, and about 9,001 test assertions that compare or search English string literals.
-- The largest UI surfaces are the ribbon/backstage shell, XAML dialogs, code-built dialogs, message services, status/progress text, file dialog filters, accessibility text, function browser text, and chart fallback labels.
-- Several layout/icon/keytip planners currently classify commands by English display text. Localizing labels directly would break behavior unless command identity is separated from display text first.
-- Core and command services return English prose in some result/error paths. Those strings should move behind structured error/message codes so UI layers can localize them.
-- Culture handling is mixed: many workbook/file paths correctly use `InvariantCulture`, but direct user entry and some dialog/import parsers also use invariant parsing where localized entry should be accepted.
+- FreeX is a .NET 10 WPF desktop app. `FreeX.App.Host` owns the shell, dialogs, message boxes, localization resources, and command surface; `FreeX.App.UI` owns custom rendering such as the grid and charts; core projects own model, formulas, commands, calc, and IO.
+- The first localization substrate is implemented in `FreeX.App.Host`: `UiText` wraps `ResourceManager`, `LocExtension` binds XAML attributes to resources, `AppLocalization` applies startup UI culture and WPF language metadata, and `AppLanguageCatalog` discovers satellite resources after build.
+- Neutral resources now live in `src/FreeX.App.Host/Resources/Strings.resx`. A full Bulgarian satellite resource file, `Strings.bg-BG.resx`, exists and is covered by tests for key parity, placeholder parity, access-key parity, and high-value Excel terminology.
+- XAML and host-source guard tests now enforce localization usage for user-facing XAML attributes, message/progress calls, automation names/help text, and used resource keys.
+- A large portion of host dialog and shell text now flows through `UiText`/`Loc`. Remaining work is translator review, additional locales, core message-code boundaries, culture-sensitive user input audits, pseudo-localization visual smoke coverage, and package/release language metadata validation.
+- Command identity remains a risk area wherever planners still infer behavior from display text. Continue migrating behavior to invariant command IDs before expanding translated command surfaces.
+- Culture handling is still mixed: workbook/file paths correctly use `InvariantCulture`, but direct user entry and some dialog/import parsers still need explicit `CurrentCulture` acceptance tests where localized entry should be accepted.
 
 ## Localization Boundaries
 
@@ -67,16 +67,18 @@ Use culture deliberately:
 ## Rollout
 
 1. Foundation and guardrails
-   - Add `UiText`, `Loc`, neutral resources, resource key naming conventions, and a pseudo-localization resource set.
-   - Add tests for missing/empty keys, key parity across resource files, fallback behavior, and an allowlist for literals that must remain invariant.
+   - **Implemented:** `UiText`, `LocExtension`, neutral resources, Bulgarian satellite resources, startup UI-culture application, and WPF language metadata application.
+   - **Implemented:** tests for missing keys, used resource keys, raw XAML user-facing text, inline message/progress text, raw automation metadata, Bulgarian key parity, placeholder parity, and access-key parity.
+   - **Remaining:** pseudo-localization resource set and visual clipping smoke pass.
 
 2. Centralized strings
-   - Migrate common buttons, message-box titles, deferred command messages, file-dialog filters, backstage progress/status text, and app/about text.
+   - **Partially implemented:** common buttons, message-box titles, many dialogs, automation metadata, MainWindow XAML, progress/status calls, and app/startup text now use resources.
+   - Continue migrating any residual host/core user-facing strings found by focused audits.
    - This creates early value with low merge risk and establishes patterns for later slices.
 
 3. Ribbon and command identity
-   - Add invariant command IDs and update ribbon presentation/icon/layout/keytip planners to consume IDs.
-   - Migrate ribbon tab/group/command labels, tooltips, keytips, and automation names to resources.
+   - **Partially implemented:** visible ribbon labels/tooltips/keytips and many automation names are resource-backed.
+   - Remaining work is to finish invariant command-ID plumbing anywhere behavior still depends on localized English labels.
 
 4. Dialog batches
    - Convert XAML dialogs in grouped batches: Format Cells/Page Setup/Options, then Data Validation/Find Replace/Goal Seek, then Pivot/Chart/Workbook Theme dialogs.
@@ -127,8 +129,9 @@ These slices are mostly disjoint if shared files are coordinated: `MainWindow.xa
 
 ## Initial Done Criteria
 
-- App can run in default `en-US` from resources with no visible regression.
-- Pseudo-localized resources can be selected at startup and cover common shell/dialog/message surfaces.
-- Command identity is no longer derived from localized English labels.
-- Core user-facing errors converted in at least one vertical slice use codes plus localized host rendering.
-- Build and relevant tests pass under default culture, with at least one culture smoke suite under `de-DE` or another comma-decimal culture.
+- App can run in default `en-US` from resources with no visible regression. **Implemented for the current resource-backed host surfaces.**
+- A full non-English satellite resource can be discovered and selected at startup. **Implemented for `bg-BG`; translator review is still needed before treating the translation as final.**
+- Pseudo-localized resources can be selected at startup and cover common shell/dialog/message surfaces. **Remaining.**
+- Command identity is no longer derived from localized English labels. **Partially complete; continue replacing display-text classification with invariant IDs.**
+- Core user-facing errors converted in at least one vertical slice use codes plus localized host rendering. **Remaining beyond host-layer message/resource migration.**
+- Build and relevant tests pass under default culture, with at least one culture smoke suite under `de-DE` or another comma-decimal culture. **Resource tests exist; broader culture parsing/display smoke coverage remains.**

@@ -1,7 +1,7 @@
 # FreeX Command Surface Parity
 
 **Status:** working audit  
-**Last updated:** 2026-05-31
+**Last updated:** 2026-06-01
 
 This document tracks FreeX's visible command surface against Excel for Windows. The goal is Excel parity for commands we choose to support, and an explicit exclusion list for commands that depend on Microsoft cloud services, proprietary runtimes, or very large subsystems.
 

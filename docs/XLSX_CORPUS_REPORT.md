@@ -1,6 +1,6 @@
 # FreeX XLSX Corpus Report
 
-**Last updated:** 2026-05-28
+**Last updated:** 2026-06-01
 **Status:** Executable parity harness with 175 workbook manifest rows, model-first XLSX retention, URI-aware package-health checks, stronger semantic corpus tag assertions, public-corpus package-tag retention checks after ordinary model edits, public-corpus model-summary stability and warning checks, expanded generated feature coverage, expanded chart-format metadata coverage, expanded PivotTable/PivotChart fidelity slices, deeper worksheet/workbook native-metadata preservation, model-backed worksheet sort/data-consolidation/additional-view metadata, model-backed additional workbook-view metadata, private/regression corpus scaffolding, and 31 new generated fixtures covering named-range depth, multi-rule CF, multi-series charts, DV edge cases, merged-cell formulas, cross-sheet references, array formulas, scatter/bubble charts, pivot calculated fields, structured-table references, formatting, sparklines, protection, CF dxf styles, cached formulas, pie/doughnut charts, hyperlinks, comments, table AutoFilter, multiple sheets, number formats, validation messages, row/column groups, mixed chart types, large named-range suites, plus per-feature structural XML comparison fixtures for CF rules, chart series, and DV counts
 
 ## Current Corpus

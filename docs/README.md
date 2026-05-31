@@ -1,6 +1,6 @@
 # FreeX Documentation
 
-**Last updated:** 2026-05-30
+**Last updated:** 2026-06-01
 
 Use these files as the current documentation set. Point-in-time reports are snapshots; prefer the newest report plus the source-of-truth backlog for current planning.
 
@@ -19,7 +19,7 @@ Use these files as the current documentation set. Point-in-time reports are snap
 ## Start Here
 
 - [OUTSTANDING_BUILD.md](OUTSTANDING_BUILD.md) - source-of-truth backlog for outstanding build work.
-- [PROJECT_STATUS_REPORT_2026-05-29.md](PROJECT_STATUS_REPORT_2026-05-29.md) - project status snapshot as of 2026-05-29; current `overallCompletion` is 95 following the production-readiness pass.
+- [PROJECT_STATUS_REPORT_2026-06-01.md](PROJECT_STATUS_REPORT_2026-06-01.md) - current project status snapshot; current `overallCompletion` remains 95 while parity hardening, release validation, localization breadth, and XLSX fidelity proof continue.
 - [NEXT_PHASES_PLAN.md](NEXT_PHASES_PLAN.md) - next development phases and priority sequencing.
 
 ## Parity And Fidelity
@@ -46,6 +46,7 @@ Use these files as the current documentation set. Point-in-time reports are snap
 ## Architecture And Decisions
 
 - [ARCHITECTURE.md](ARCHITECTURE.md) - current layer boundaries and architectural decisions.
+- [LOCALIZATION_PLAN.md](LOCALIZATION_PLAN.md) - localization foundation, current resource status, rollout plan, and remaining culture/localization work.
 - [CODE_REVIEW_COMPREHENSIVE_2026-05-28.md](CODE_REVIEW_COMPREHENSIVE_2026-05-28.md) - comprehensive review batch behind the May 28 hardening work (PRs #33–#44).
 - [CODE_REVIEW_COMPREHENSIVE_2026-05-30.md](CODE_REVIEW_COMPREHENSIVE_2026-05-30.md) - May 30 full-source review: verifies the May 28 findings are resolved and records the residual hardening backlog.
 - [CODE_REVIEW.md](CODE_REVIEW.md) - cumulative review findings and fixed-item verification history, including the 2026-05-29 production readiness pass (PRs #45–#49).
@@ -56,6 +57,7 @@ Use these files as the current documentation set. Point-in-time reports are snap
 
 ## Historical Snapshots
 
+- [PROJECT_STATUS_REPORT_2026-05-29.md](PROJECT_STATUS_REPORT_2026-05-29.md) - prior status snapshot covering the May 29 production-readiness pass.
 - [PROJECT_STATUS_REPORT_2026-05-28.md](PROJECT_STATUS_REPORT_2026-05-28.md) - prior status snapshot covering the production-readiness transition.
 - [PROJECT_STATUS_REPORT_2026-05-27.md](PROJECT_STATUS_REPORT_2026-05-27.md) - prior maintenance/status snapshot.
 - [PROJECT_STATUS_REPORT_2026-05-26.md](PROJECT_STATUS_REPORT_2026-05-26.md) - prior status snapshot with the May 26 consolidation view.

@@ -1,6 +1,6 @@
 # FreeX Formula Function Parity
 
-**Last updated:** 2026-05-30
+**Last updated:** 2026-06-01
 **Total implemented:** 487
 **Status:** All in-scope functions implemented
 

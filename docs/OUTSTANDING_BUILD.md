@@ -1,7 +1,7 @@
 # FreeX Outstanding Build List
 
-**Last updated:** 2026-05-31
-**Basis:** reviewed the repository Markdown files, cross-checked the active codebase under `src/` and `tests/`, and confirmed the current branch/worktree maintenance snapshot. Updated after production-readiness pass (PRs #45–#48) and the 2026-05-30 comprehensive source review ([CODE_REVIEW_COMPREHENSIVE_2026-05-30.md](CODE_REVIEW_COMPREHENSIVE_2026-05-30.md)), which verified the entire `src/` tree (967 files / ~178 KLOC), confirmed all 17 findings from the 2026-05-28 review are resolved, and recorded a small residual code-quality backlog (see below).
+**Last updated:** 2026-06-01
+**Basis:** reviewed the repository Markdown files, cross-checked the active codebase under `src/` and `tests/`, confirmed `release/progress.json`, and refreshed the current documentation/status metrics after the May 31 integration work. This follows the production-readiness pass and the 2026-05-30 comprehensive source review ([CODE_REVIEW_COMPREHENSIVE_2026-05-30.md](CODE_REVIEW_COMPREHENSIVE_2026-05-30.md)), which verified the source tree, confirmed all 17 findings from the 2026-05-28 review are resolved, and recorded a small residual code-quality backlog (see below).
 
 This is the current source-of-truth backlog for features still outstanding to build. Older planning docs are useful historical context, but several items they list as future work are now implemented.
 
@@ -10,7 +10,7 @@ This is the current source-of-truth backlog for features still outstanding to bu
 Confirmed present in code and tests:
 
 - Core spreadsheet shell, command bus, undo/redo, virtualized WPF grid, multi-sheet UI, native/CSV/XLSX adapters.
-- Formula engine at 345/345 in-scope functions with catalog guards and category-focused Excel parity tests. This includes modern lookup/dynamic-array functions (`XLOOKUP`, `XMATCH`, `SEQUENCE`, `RANDARRAY`, `FILTER`, `SORT`, `SORTBY`, `UNIQUE`, `TAKE`, `DROP`, `CHOOSEROWS`, `CHOOSECOLS`, `VSTACK`, `HSTACK`, `TOROW`, `TOCOL`, `WRAPROWS`, `WRAPCOLS`, `EXPAND`), higher-order formulas (`LET`, `LAMBDA`, `MAP`, `REDUCE`, `SCAN`, `BYROW`, `BYCOL`, `MAKEARRAY`), statistical distributions, financial bond/depreciation helpers, database functions, `HYPERLINK`, discrete engineering base/bit functions, locale-specific text helpers (`ASC`, `DBCS`, `PHONETIC`, `BAHTTEXT`), and local web-text helpers (`ENCODEURL`, `FILTERXML`). Formula hardening now includes Excel cached-result fixtures, inverse/round-trip property tests, dynamic-array error/volatility edge guards, and structured-reference current-row/spaced-header coverage; remaining formula work is ongoing parity proof as new edge cases are discovered (see `docs/FUNCTION_PARITY.md`).
+- Formula engine at 487/487 in-scope functions with catalog guards and category-focused Excel parity tests. This includes modern lookup/dynamic-array functions (`XLOOKUP`, `XMATCH`, `SEQUENCE`, `RANDARRAY`, `FILTER`, `SORT`, `SORTBY`, `UNIQUE`, `TAKE`, `DROP`, `CHOOSEROWS`, `CHOOSECOLS`, `VSTACK`, `HSTACK`, `TOROW`, `TOCOL`, `WRAPROWS`, `WRAPCOLS`, `EXPAND`), higher-order formulas (`LET`, `LAMBDA`, `MAP`, `REDUCE`, `SCAN`, `BYROW`, `BYCOL`, `MAKEARRAY`), statistical distributions, financial bond/depreciation helpers, database functions, `HYPERLINK`, discrete engineering base/bit functions, locale-specific text helpers (`ASC`, `DBCS`, `PHONETIC`, `BAHTTEXT`), regex/text helpers, and local web-text helpers (`ENCODEURL`, `FILTERXML`). Formula hardening now includes Excel cached-result fixtures, inverse/round-trip property tests, dynamic-array error/volatility edge guards, and structured-reference current-row/spaced-header coverage; remaining formula work is ongoing parity proof as new edge cases are discovered (see `docs/FUNCTION_PARITY.md`).
 - Spill infrastructure and formula AST caching in recalculation.
 - Formula reference rewriting for insert/delete/paste/autofill paths.
 - Autofill drag UI and `AutofillCommand`; Flash Fill command/service baseline.
@@ -24,6 +24,7 @@ Confirmed present in code and tests:
 - Keyboard shortcuts at **100% parity (87/87)**; AutoFilter shortcut improvements in `DataFilterCommands` (PR #48).
 - All `MessageBox.Show` calls in dialog classes migrated to `IUserMessageService`/`DialogMessageHelper`; all dialog access keys and `IsDefault`/`IsCancel` states audited (PR #47).
 - XLSX corpus at **175 rows** (+31 new feature buckets); 3 per-feature XML structural comparisons; 6 round-trip bugs fixed (PR #46).
+- Localization foundation is now present in code and tests: `UiText`, `LocExtension`, neutral `Strings.resx`, full `Strings.bg-BG.resx` satellite coverage, startup UI-culture selection, WPF language metadata application, and resource/usage guard tests.
 
 ## Highest Priority Outstanding Work
 
@@ -68,6 +69,10 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
 - **(P3, security hygiene) Done** — All URL shell launches now go through one guarded `ExternalUrlLauncher` (scheme allowlist enforced); the previously-unguarded help/feedback `Process.Start` and the hyperlink path both route through it. 5 new tests.
 - **(P3, reliability) Done** — `RecentFilesStore` now saves via `AtomicFileWriter` (temp-then-rename), so an interrupted write can no longer corrupt `recent.json`. 2 new tests.
 
+### Newly discovered regression (2026-06-01) — needs owner
+
+- **(P2, regression) — open** Drag row/column **resize preview now refreshes the viewport once** before commit, violating the "preview without mutating the sheet or refreshing the viewport until commit" contract. `MainWindowMouseResizeTests.DragRowResize_PreviewsWithoutRefreshingViewportOrMutatingSheetUntilCommit` and `DragColumnResize_...` both fail with `ViewportCallCount` = 1 (expected 0). **Confirmed pre-existing on clean `origin/main`** (reproduced after stashing the multi-window branch), so it was introduced by a separate grid/viewport workstream, not by multi-window. Owner: the grid mouse-resize / viewport lane. Repro: run those two tests (`tests/FreeX.App.Host.Tests/MainWindowMouseResizeTests.cs:59,83`). Likely cause: a preview-path change that now calls `IViewportService.GetViewport` (or `UpdateViewport`) during `OnColumnResizing`/`OnRowResizing` instead of only at commit.
+
 ### Remaining (deferred with rationale)
 
 1. **(P1, perf) — deferred (needs perf baseline + visual verification)** Cache `FormattedText` in the GridView render loop and remove the per-probe-size allocation in shrink-to-fit (`GridView.Rendering.cs`). A correct cache must key on text/typeface/size/brush/dip/decorations and avoid re-mutating shared instances; there are no pixel/perf tests to catch a regression, so this needs a `PERF_BASELINE.md` measurement and manual visual check before landing.
@@ -81,7 +86,7 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
 
 1. **View and window management**
    - New Window and Switch Windows are live through the registry-backed workbook-window slice.
-   - Hide Window, Unhide Window, View Side by Side, Synchronous Scrolling, and Reset Window Position are deferred until workbook-window visibility, paired layout, and synchronized viewport routing exist; they are intentionally not surfaced as disabled ribbon placeholders.
+   - Hide Window, Unhide Window, View Side by Side, Synchronous Scrolling, and Reset Window Position are **done 2026-06-01** — the full `View ▸ Window` set is live with dedicated handlers backed by `WorkbookWindowRegistry` visibility/side-by-side/sync-scroll state and the pure `WindowResetPositionPlanner` / `SideBySideLayoutPlanner` geometry helpers. Cross-window scroll mirroring is double-guarded against feedback loops.
    - Fine split-pane scroll feel parity.
    - Split-pane merged-cell edge cases across non-visible rows/columns.
    - Full workbook view-mode polish beyond the current state/persistence baseline.
@@ -114,7 +119,11 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
    - Extend grouped-sheet behavior for advanced object effects.
    - Extend grouped-sheet behavior for supported advanced data commands where Excel applies actions across grouped sheets.
 
-6. **Calculation performance architecture**
+6. **Localization and culture**
+   - Foundation, neutral `en-US` resources, and full Bulgarian satellite resources are implemented.
+   - Remaining work is translator review, additional locales, broader core-message code boundaries, current-culture direct-entry/import audits, pseudo-localization layout smoke coverage, and release/package language metadata validation.
+
+7. **Calculation performance architecture**
    - Recalculation is intentionally single-threaded today.
    - Build multi-threaded recalculation only after large-workbook profiling proves it is needed.
    - If built, add thread-safe dependency graph/evaluation, progress reporting, cancellation, and result parity tests against the single-threaded engine.
@@ -138,12 +147,12 @@ No local active workstream was found for the planned map-chart or multi-window w
 ### Parity Orchestrator
 
 - **Map Chart / advanced chart family lane:** define the map-chart model, Insert/Change Chart picker behavior, renderer, XLSX read/write support, and known-gap retention story. This can ride with the existing advanced chart family backlog for treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel/map/true 3D mesh.
-- **View multi-window lane:** New Window + Switch Windows are live (registry-backed). Hide Window, Unhide Window, Reset Window Position, View Side by Side, and Synchronous Scrolling are deferred and hidden from `MainWindow.xaml` until their visibility/pairing/viewport subsystems are implemented and verified.
+- **View multi-window lane:** **COMPLETE 2026-06-01.** New Window + Switch Windows plus Hide Window, Unhide Window, Reset Window Position, View Side by Side, and Synchronous Scrolling are all live (registry-backed visibility/pairing/sync-scroll state + `WindowResetPositionPlanner` / `SideBySideLayoutPlanner`). All five buttons are present in `MainWindow.xaml` with dedicated live handlers and focused tests; do not re-hide them.
 - **PivotTable ribbon-action lane:** completed in the Pivot contextual ribbon command breadth slice. PivotTable Name, PivotTable Options, Clear, Select, and Move PivotTable are routed from the Analyze tab with selected-PivotTable targeting, command/undo behavior where applicable, keytips, and focused source/planner/core command tests.
 
 ### Build Orchestrator
 
-- Keep excluded and deferred placeholders out of the ribbon by preserving source guards around `MainWindow.xaml` and adaptive group profiles. The live `View ▸ Window` commands are New Window and Switch Windows; advanced visibility/pairing commands should only return with working handlers, focused tests, and current parity-doc updates.
+- Keep excluded placeholders out of the ribbon by preserving source guards around `MainWindow.xaml` and adaptive group profiles. The `View ▸ Window` group is now complete (New Window, Switch Windows, Hide, Unhide, Reset Window Position, View Side by Side, Synchronous Scrolling) — all have working handlers and focused tests; do not remove them.
 - When ribbon XAML or adaptive group changes land, include the focused Host tests that cover `InsertCommandSourceTests`, `HelpCommandSourceTests`, `RibbonTabParityTests`, and adaptive ribbon planner/engine behavior.
 - If a future lane reintroduces an excluded Microsoft integration, require a product-scope design document first rather than adding a disabled ribbon placeholder.
 
