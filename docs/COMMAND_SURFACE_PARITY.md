@@ -383,7 +383,7 @@ workbook command behavior to track here.
 | Accessibility Checker | Partial | Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors with no fill treated as white, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; conditional-format rendered colors, theme/tint expansion beyond existing style values, chart/shape/text-box text, pattern fills, and the full Excel rule taxonomy remain partial |
 | Smart Lookup / Researcher | Excluded |  |
 | Translate | Excluded |  |
-| New Comment | Partial | Threaded comment text can be added/edited/deleted locally through the Review ribbon and Ctrl+Shift+F2, including root-message edits, explicit Reply/Add actions, and Ctrl+Enter reply submission from the threaded-comment dialog; full threaded conversation UI remains partial |
+| New Comment | Partial | Threaded comment text can be added/edited/deleted locally through the Review ribbon and Ctrl+Shift+F2, including root-message edits, explicit Reply/Add actions, Ctrl+Enter reply submission, and created/modified UTC metadata for local threads; full threaded conversation UI remains partial |
 | Delete Comment | Implemented | Removes the threaded comment on the selected cell |
 | Previous/Next Comment | Implemented | Navigates threaded comments and notes on the active sheet |
 | Show Comments | Implemented | Opens a list of threaded comments and notes on the active sheet |
@@ -398,7 +398,7 @@ workbook command behavior to track here.
 | Share | Implemented | Windows Share for saved local files; missing current paths route through Save As |
 | Share Workbook (legacy) | Excluded |  |
 | Track Changes | Excluded |  |
-| Threaded Comments | Partial | Local threaded comment model, shortcut, navigation, delete command, list/print summaries with authors, replies, and resolved state, plus Native JSON persistence are supported; full Excel conversation/reply UI, XLSX threaded-comment authoring, and cloud identity semantics remain partial |
+| Threaded Comments | Partial | Local threaded comment model, shortcut, navigation, delete command, list/dialog summaries with authors, replies, created timestamps, and resolved state, plus Native JSON persistence for reply/thread activity metadata are supported; XLSX threaded-comment authoring and cloud identity semantics remain partial |
 | Statistics | Implemented |  |
 <!-- command-inventory:command-surface:review:end -->
 

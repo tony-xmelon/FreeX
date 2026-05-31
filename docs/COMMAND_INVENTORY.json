@@ -1153,7 +1153,7 @@
         {
           "name": "New Comment",
           "status": "Partial",
-          "notes": "Threaded comment text can be added/edited/deleted locally through the Review ribbon and Ctrl+Shift+F2, including root-message edits, explicit Reply/Add actions, and Ctrl+Enter reply submission from the threaded-comment dialog; full threaded conversation UI remains partial"
+          "notes": "Threaded comment text can be added/edited/deleted locally through the Review ribbon and Ctrl+Shift+F2, including root-message edits, explicit Reply/Add actions, Ctrl+Enter reply submission, and created/modified UTC metadata for local threads; full threaded conversation UI remains partial"
         },
         {
           "name": "Delete Comment",
@@ -1228,7 +1228,7 @@
         {
           "name": "Threaded Comments",
           "status": "Partial",
-          "notes": "Local threaded comment model, shortcut, navigation, delete command, list/print summaries with authors, replies, and resolved state, plus Native JSON persistence are supported; full Excel conversation/reply UI, XLSX threaded-comment authoring, and cloud identity semantics remain partial"
+          "notes": "Local threaded comment model, shortcut, navigation, delete command, list/dialog summaries with authors, replies, created timestamps, and resolved state, plus Native JSON persistence for reply/thread activity metadata are supported; XLSX threaded-comment authoring and cloud identity semantics remain partial"
         },
         {
           "name": "Statistics",
@@ -2462,7 +2462,7 @@
         {
           "name": "New Comment",
           "status": "Partial",
-          "notes": "Threaded comment text can be added/edited/deleted locally through the Review ribbon and Ctrl+Shift+F2, including root-message edits, explicit Reply/Add actions, and Ctrl+Enter reply submission from the threaded-comment dialog; full threaded conversation UI remains partial"
+          "notes": "Threaded comment text can be added/edited/deleted locally through the Review ribbon and Ctrl+Shift+F2, including root-message edits, explicit Reply/Add actions, Ctrl+Enter reply submission, and created/modified UTC metadata for local threads; full threaded conversation UI remains partial"
         },
         {
           "name": "Delete Comment",
@@ -2537,7 +2537,7 @@
         {
           "name": "Threaded Comments",
           "status": "Partial",
-          "notes": "Local threaded comment model, shortcut, navigation, delete command, list/print summaries with authors, replies, and resolved state, plus Native JSON persistence are supported; full Excel conversation/reply UI, XLSX threaded-comment authoring, and cloud identity semantics remain partial"
+          "notes": "Local threaded comment model, shortcut, navigation, delete command, list/dialog summaries with authors, replies, created timestamps, and resolved state, plus Native JSON persistence for reply/thread activity metadata are supported; XLSX threaded-comment authoring and cloud identity semantics remain partial"
         },
         {
           "name": "Statistics",
