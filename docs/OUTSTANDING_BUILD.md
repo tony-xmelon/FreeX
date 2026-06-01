@@ -25,7 +25,7 @@ Confirmed present in code and tests:
 - All `MessageBox.Show` calls in dialog classes migrated to `IUserMessageService`/`DialogMessageHelper`; all dialog access keys and `IsDefault`/`IsCancel` states audited (PR #47).
 - XLSX corpus at **175 rows** (+31 new feature buckets); per-feature XML structural comparisons now include conditional formatting, chart series, and data-validation rule semantics; live web-query warning/retention coverage includes connection metadata; 6 round-trip bugs fixed (PR #46).
 - Chart interop comparison is now evidence-backed: the latest complete `tools/FreeX.ChartInteropCompare` run passed 28/28 chart cases for FreeX render PNGs, FreeX-authored XLSX opened/exported by Excel, Excel-authored XLSX opened/exported by Excel, and Excel-authored XLSX loaded/saved by FreeX then reopened/exported by Excel. The harness records openability/export failures separately from visual mismatches.
-- Localization foundation is now present in code and tests: `UiText`, `LocExtension`, neutral `Strings.resx`, full `Strings.bg-BG.resx` satellite coverage, startup UI-culture selection, WPF language metadata application, current-culture direct numeric cell entry, delimited CSV/TSV import, and Text to Columns numeric parsing with invariant fallback, plus resource/usage guard tests.
+- Localization foundation is now present in code and tests: `UiText`, `LocExtension`, neutral `Strings.resx`, 43 complete satellite resource cultures, startup UI-culture selection, WPF language metadata application, current-culture direct numeric cell entry, delimited CSV/TSV import, and Text to Columns numeric parsing with invariant fallback, plus resource/usage guard tests.
 
 ## Highest Priority Outstanding Work
 
@@ -132,9 +132,9 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
    - Remove Duplicates, Subtotal, and Remove All Subtotals now propagate across visible grouped sheets with per-sheet remapped ranges; extend any remaining supported object/data commands where Excel applies actions across grouped sheets as they are identified.
 
 6. **Localization and culture**
-   - Foundation, neutral `en-US` resources, and full Bulgarian satellite resources are implemented.
+   - Foundation, neutral `en-US` resources, and 43 complete satellite resource cultures are implemented.
    - Current-culture direct numeric cell entry, delimited CSV/TSV import, and Text to Columns numeric parsing with invariant fallback are implemented.
-   - Remaining work is translator review, additional locales, broader core-message code boundaries, additional date/import parser audits, pseudo-localization layout smoke coverage, and release/package language metadata validation.
+   - Remaining work is native-speaker/translator review, broader core-message code boundaries, additional date/import parser audits, pseudo-localization layout smoke coverage, and release/package language metadata validation.
 
 7. **Calculation performance architecture**
    - Recalculation is intentionally single-threaded today.
