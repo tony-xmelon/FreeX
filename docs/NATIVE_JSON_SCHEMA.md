@@ -74,12 +74,12 @@ Loaders validate row and column bounds, skip malformed ranges, clamp invalid num
 | Property | Type | Notes |
 |---|---|---|
 | `Address` | string | A1 address on the containing sheet. |
-| `Value` | string/null | Serialized scalar value. |
-| `ValueType` | string/null | Type tag used by `NativeJsonScalarValueMapper`. |
-| `Formula` | string/null | Formula text without the leading `=` convention enforced by the model. |
+| `Value` | string/null | Serialized scalar value. Omitted when the effective value is blank. |
+| `ValueType` | string/null | Type tag used by `NativeJsonScalarValueMapper`. Omitted when the value is blank. |
+| `Formula` | string/null | Formula text without the leading `=` convention enforced by the model. Omitted for literal cells. |
 | `StyleId` | number/null | Zero-based index into the workbook `CellStyles` table. |
 | `Style` | object/null | Legacy inline cell style DTO. New saves omit this when no inline style is needed; readers still accept it when `StyleId` is absent or invalid. |
-| `IgnoredFormulaErrorCodes` | string[] | Per-cell ignored formula warning codes. |
+| `IgnoreFormulaError` | bool | Per-cell formula warning suppression flag. New saves omit the default `false` value; readers treat missing values as `false`. |
 
 ## Cell Styles
 
