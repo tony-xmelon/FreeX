@@ -45,7 +45,7 @@ The project history metrics report now covers Git and provider-log activity from
 | Command surface | 100% of in-scope command-surface rows covered; deferred/excluded rows are documented rather than counted as missing. |
 | Menu/toolbar parity | 100% of in-scope menu/toolbar rows covered, with deferred/excluded rows tracked separately. |
 | Keyboard shortcuts | 100% parity, 87/87 in-scope shortcuts, 0 partial, 0 missing. |
-| XLSX fidelity | 71 documented in-scope feature categories with at least partial support; corpus remains at 175 manifest rows with generated/public/regression evidence and known-gap warning coverage. |
+| XLSX fidelity | 71 documented in-scope feature categories with at least partial support; corpus remains at 175 workbook manifest rows with generated/public/regression evidence and known-gap warning coverage. |
 | UI/dialog parity | Dialog message routing, access keys, default/cancel semantics, UIA metadata, keytips, ribbon layout, titlebar/QAT states, and sheet-tab chrome have broad automated coverage and continuing visual polish. |
 | Localization | `UiText`, `LocExtension`, neutral resources, Bulgarian satellite resources, startup UI culture, WPF language metadata, and localization guard tests are present. |
 | Release readiness | User guide, troubleshooting, legal/privacy notices, release checklist, diagnostics, crash analytics, and tester-release workflow docs are present; public-preview promotion still needs live validation evidence. |
@@ -81,7 +81,7 @@ Parallel implementation remains expected. Mainline is the integration target, wh
 See [OUTSTANDING_BUILD.md](OUTSTANDING_BUILD.md) for the source-of-truth backlog. The highest-priority open items are:
 
 1. **XLSX corpus and fidelity proof**
-   - Broader public/private/regression workbook coverage and per-feature pass/fail publication.
+   - Expand the 175-row corpus baseline with broader public/private/regression workbook coverage and per-feature pass/fail publication.
 2. **Package-preserving XLSX save path**
    - Desktop Excel open/save/reopen checks remain release-critical validation.
 3. **Release documentation and packaging**
