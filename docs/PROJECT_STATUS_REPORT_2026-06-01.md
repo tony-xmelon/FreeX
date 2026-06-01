@@ -1,13 +1,13 @@
 # FreeX Project Status Report
 
 Generated: 2026-06-01
-Observed at: 2026-06-01T03:05:22+03:00
+Observed at: 2026-06-01T03:45:57+03:00
 Report scope: current consolidated documentation/status snapshot after June 1 integrations
-Mainline observed: branch-neutral `origin/main` snapshot; local integration main observed at `59dce6bc5`
+Mainline observed: branch-neutral `origin/main` snapshot; local integration main observed at `4d957113e`
 
 ## Executive Summary
 
-FreeX remains in late-stage parity hardening. The broad app surface is functional and documented: formula coverage is **487/487 in-scope functions**, command and menu coverage remain **100% for in-scope rows**, shortcut parity remains **100% (87/87)**, and XLSX work is now focused on fidelity proof, package-preserving save validation, and real-world workbook breadth rather than first-pass support.
+FreeX remains in late-stage parity hardening. The broad app surface is functional and documented: formula coverage is **487/487 in-scope functions**, command and menu coverage remain **100% for in-scope rows**, shortcut parity remains **100% (87/87)**, and XLSX work is now focused on fidelity proof, package-preserving save validation, and real-world workbook breadth rather than first-pass support. The XLSX corpus currently has 175 workbook manifest rows.
 
 Overall completion remains **95%** in [release/progress.json](../release/progress.json), which keeps tester builds in the `v0.8.<run>` stream. Overall completion estimate is now **95%**. The main remaining work is package-preserving XLSX validation, broader corpus proof, release signing/trust and human accessibility validation, localization breadth, keytip/visual polish, and measured performance hardening.
 
@@ -17,12 +17,12 @@ The project history metrics report now covers Git and provider-log activity from
 
 | Metric | Count |
 | --- | ---: |
-| Tracked files | 2,178 |
-| C# source files under `src/` | 1,010 |
-| C# test files under `tests/` | 512 |
-| Markdown docs under `docs/` | 243 |
-| Current C# source LOC | 193,709 |
-| Current C# test LOC | 197,488 |
+| Tracked files | 2,190 |
+| C# source files under `src/` | 1,015 |
+| C# test files under `tests/` | 515 |
+| Markdown docs under `docs/` | 245 |
+| Current C# source LOC | 195,027 |
+| Current C# test LOC | 198,575 |
 | Current XAML LOC | 8,256 |
 | XLSX corpus manifest rows | 175 |
 
@@ -30,7 +30,7 @@ The project history metrics report now covers Git and provider-log activity from
 
 | Item | Status |
 | --- | --- |
-| Mainline | Branch-neutral `origin/main` snapshot remains the canonical comparison point; local integration main was observed at `59dce6bc5` for this refresh |
+| Mainline | Branch-neutral `origin/main` snapshot remains the canonical comparison point; local integration main was observed at `4d957113e` for this refresh |
 | Completion tracking | [release/progress.json](../release/progress.json) remains at `overallCompletion: 95` |
 | History metrics | [PROJECT_BUILD_HISTORY_METRICS.md](PROJECT_BUILD_HISTORY_METRICS.md) is refreshed through 2026-05-31 inclusive |
 | Branch posture | Multiple worker branches/worktrees are still registered for active or paused parallel implementation; this report does not treat worker-owned checkouts as mainline status |
