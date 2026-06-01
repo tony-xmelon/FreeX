@@ -1,9 +1,9 @@
 # FreeX Project Status Report
 
 Generated: 2026-06-01
-Observed at: 2026-06-01T20:29:27+03:00
+Observed at: 2026-06-01T20:40:08+03:00
 Report scope: current consolidated documentation/status snapshot after the June 1 evening integrations
-Mainline observed: local integration `main` at `b31d07586`; `origin/main` was at `197965d5` before this documentation refresh
+Mainline observed: local integration `main` and `origin/main` both at `12b99529f` before this documentation refresh
 
 ## Executive Summary
 
@@ -30,10 +30,10 @@ The project history metrics report now covers Git and provider-log activity from
 
 | Item | Status |
 | --- | --- |
-| Mainline | Local `main` was clean and one commit ahead of `origin/main` at observation time; the pending integration was `b31d07586` (`Skip non-finite sparkline layout values`) |
+| Mainline | Local `main` was clean and synced with `origin/main` at `12b99529f` (`Merge host test stabilization`) |
 | Completion tracking | [release/progress.json](../release/progress.json) remains at `overallCompletion: 95` |
 | History metrics | [PROJECT_BUILD_HISTORY_METRICS.md](PROJECT_BUILD_HISTORY_METRICS.md) is refreshed through 2026-05-31 inclusive |
-| Branch posture | Parallel work is active again: observed 122 registered worktrees, 128 local branches, 9 branches not yet merged to `main`, and 8 dirty worker-owned worktrees. These were left untouched. |
+| Branch posture | Parallel work is active again: observed 122 registered worktrees, 129 local branches, 13 branches not yet merged to `main`, and 2 dirty worker-owned worktrees. These were left untouched. |
 | Release posture | Tester-release automation can publish `.exe` and MSIX assets; signing/trust and public-preview evidence remain release-gate work |
 | Documentation posture | The docs index, backlog, next-phase plan, localization plan, fidelity report, and metrics report now point at the current app state |
 
@@ -92,7 +92,7 @@ Phase 7D: Deeper color-scale XLSX edge semantics as new gaps are found.
 
 Parallel implementation remains expected. Mainline is the integration target, while worker-owned branches and worktrees may continue carrying active, dirty, or paused work. Before merging any implementation slice, keep syncing from `main`, verify relevant build/tests in the owning worktree, and leave unrelated worker-owned changes untouched.
 
-Observed worker state at 2026-06-01T20:30+03:00: 122 registered worktrees and 128 local branches. The dirty worktrees belonged to active app-host, chart, culture, keyboard/formula-bar/keytip, QAT, and conditional-format lanes; this report does not treat those as mainline dirt.
+Observed worker state at 2026-06-01T20:40+03:00: 122 registered worktrees and 129 local branches. The dirty worktrees belonged to active chart parity lanes; this report does not treat those as mainline dirt.
 
 ## Remaining Outstanding Work
 
