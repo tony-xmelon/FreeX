@@ -27,7 +27,7 @@ Coverage is computed as **(Implemented + Partial) / (Implemented + Partial + Not
 | File/Backstage | 8 | 4 | 0 | 0 | 3 | **100%** |
 | QAT | 3 | 1 | 0 | 0 | 0 | **100%** |
 | Home | 48 | 8 | 0 | 0 | 1 | **100%** |
-| Insert | 10 | 3 | 0 | 1 | 9 | **100%** |
+| Insert | 10 | 4 | 0 | 0 | 9 | **100%** |
 | Draw | 8 | 3 | 0 | 1 | 1 | **100%** |
 | Page Layout | 16 | 1 | 0 | 0 | 0 | **100%** |
 | Formulas | 16 | 1 | 0 | 0 | 0 | **100%** |
@@ -36,7 +36,7 @@ Coverage is computed as **(Implemented + Partial) / (Implemented + Partial + Not
 | View | 20 | 1 | 0 | 0 | 0 | **100%** |
 | Sheet Tabs | 9 | 0 | 0 | 0 | 0 | **100%** |
 | Help | 6 | 0 | 0 | 0 | 3 | **100%** |
-| **TOTAL** | **172** | **25** | **0** | **2** | **25** | **100%** |
+| **TOTAL** | **172** | **26** | **0** | **1** | **25** | **100%** |
 <!-- command-inventory:coverage-summary:end -->
 
 ---
@@ -243,7 +243,7 @@ worksheet coordinates.
 | Screenshot | Excluded | OS-level feature (Win+Shift+S) |
 | Chart (column/bar/line/area/pie/doughnut/scatter/bubble) | Implemented | Select Data Source, Move Chart, Insert Chart, and chart format dialogs expose keyboard access keys for modeled fields and option controls |
 | Chart (stock/radar) | Implemented | Model, ribbon insertion, renderer, and XLSX read/write paths implemented |
-| Chart (treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel/true 3D surface mesh) | Deferred | Surface has package, matrix-rendering, and Insert/Change Chart picker support; remaining advanced families are recognized from XLSX where detected and blocked from broken authoring/rendering, with lossless mixed drawing-part retention partial until per-family package writer support exists. Map Chart remains recognized for XLSX preservation but is hidden from the Insert ribbon until authoring/rendering is implemented. |
+| Chart (treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel/true 3D surface mesh) | Partial | Treemap, sunburst, histogram, Pareto, box-and-whisker, waterfall, and funnel now have model/render/XLSX paths and are covered by the 28-case chart interop harness; chartEx passed 7/7 openability/export and visual gate in the final 2026-06-01 evidence. Surface has package, matrix-rendering, and Insert/Change Chart picker support. Map Chart and true 3D mesh-style surface remain deferred/hidden until authoring/rendering scope is productized. |
 | Recommended Charts | Excluded | Excel-equivalent recommendations require proprietary Microsoft-style data-pattern heuristics; normal chart authoring remains implemented/partial by chart family |
 | Sparklines (line/column/win-loss) | Implemented |  |
 | Text Box | Implemented |  |
