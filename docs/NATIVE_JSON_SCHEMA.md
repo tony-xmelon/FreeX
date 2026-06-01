@@ -32,6 +32,7 @@ The root object stores workbook-wide state:
 | `WatchedCells` | object[] | Watch Window entries. |
 | `Scenarios` | object[] | Scenario Manager definitions. |
 | `CustomViews` | object[] | Workbook custom views. |
+| `CellStyles` | object[]/null | Workbook-level cell style table. Cell and style-only entries may reference this table by zero-based `StyleId`. |
 | `Sheets` | object[] | Worksheet payloads. |
 
 ## Workbook Theme
@@ -76,12 +77,17 @@ Loaders validate row and column bounds, skip malformed ranges, clamp invalid num
 | `Value` | string/null | Serialized scalar value. |
 | `ValueType` | string/null | Type tag used by `NativeJsonScalarValueMapper`. |
 | `Formula` | string/null | Formula text without the leading `=` convention enforced by the model. |
-| `Style` | object/null | Cell style DTO. |
+| `StyleId` | number/null | Zero-based index into the workbook `CellStyles` table. |
+| `Style` | object/null | Legacy inline cell style DTO. New saves omit this when no inline style is needed; readers still accept it when `StyleId` is absent or invalid. |
 | `IgnoredFormulaErrorCodes` | string[] | Per-cell ignored formula warning codes. |
+
+## Cell Styles
+
+`CellStyles` stores deduplicated workbook style DTOs once at the root. New saves write repeated cell styles through `StyleId` references, while readers continue accepting legacy inline `Style` objects on cells and style-only cells.
 
 ## Style-Only Cells
 
-`StyleOnlyCells` preserve formatting for blank cells. Each entry has an `Address` and a `Style` object. Invalid addresses are skipped during load.
+`StyleOnlyCells` preserve formatting for blank cells. Each entry has an `Address` plus either a `StyleId` reference into `CellStyles` or a legacy inline `Style` object. Invalid addresses are skipped during load.
 
 ## Comments
 
