@@ -226,7 +226,7 @@ FreeX is closest to Excel where it has exact SVGs and weakest where it uses gene
 | Bar, Stacked Bar, 100% Stacked Bar, 3D Bar | mostly chart fallback | Same as column family. | Add bar-family modifiers. | P2 | [ ] | [ ] |  |
 | Line, 3D Line | `line-chart.svg` for base, fallback for 3D | Good base; 3D indistinct. | Keep Line; add 3D modifier if 3D remains visible. | P2 | [ ] | [ ] |  |
 | Area, 3D Area | `area-chart.svg` for base, fallback for 3D | Good base. | Keep Area; add 3D modifier if visible. | P2 | [ ] | [ ] |  |
-| Stock, Radar, Surface, Treemap, Sunburst, Histogram, Pareto, Box and Whisker, Waterfall, Funnel, Map | mostly fallback/generic chart | Many hidden/contextual commands, but not Excel-clear if exposed. | Add family icons only for visible supported chart types; hidden tooling can share chart fallback. | P2 | [ ] | [ ] |  |
+| Stock, Radar, Surface, Treemap, Sunburst, Histogram, Pareto, Box and Whisker, Waterfall, Funnel, Map | mostly fallback/generic chart | Supported chartEx families are now visible enough to deserve clearer metaphors; Map remains hidden/deferred. | Add family icons for visible supported chart types; hidden/deferred tooling can share chart fallback. | P2 | [ ] | [ ] |  |
 | Pie, 3D Pie, Doughnut | pie/doughnut asset expected but variants may fall back | Base metaphor good. | Ensure `pie-doughnut-chart.svg` maps all three; add 3D modifier if visible. | P2 | [ ] | [ ] |  |
 | Scatter, Bubble | scatter/bubble asset expected | Clear enough. | Keep, add bubble size cue if needed. | P3 | [ ] | [ ] |  |
 | Change Chart Type, Select Data Source, Move Chart | chart fallback | Acceptable hidden/contextual, but generic. | Add exact assets if these remain visible in Insert. | P2 | [ ] | [ ] |  |

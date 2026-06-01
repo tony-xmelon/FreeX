@@ -35,7 +35,7 @@ Common warning messages and what they mean:
 |---|---|
 | **VBA macros detected** | The file contains VBA code. FreeX cannot run macros. The code is preserved and will be saved back, but buttons and macro-assigned shortcuts will not work. |
 | **Power Query / Power Pivot** | Data model or query connections are present. FreeX cannot refresh them, but the cached data and metadata are retained. |
-| **Unsupported chart type** | The file contains a chart family (Treemap, Waterfall, Histogram, etc.) that FreeX cannot author or fully render. The chart's XLSX package part is retained; it will display as a placeholder. |
+| **Unsupported chart type** | The file contains a chart family or package shape outside the current FreeX model, such as Filled Map or an unparseable future chart part. The chart package part is retained and disclosed rather than silently dropped. |
 | **ActiveX / Form controls** | Form controls or ActiveX objects are present. They are preserved but not interactive. |
 | **Threaded comments** | Excel threaded comment threads are present. FreeX shows them as read-only notes; full threaded comment editing is not yet supported. |
 | **Track changes / revision history** | Revision history is present and preserved but not shown in the editing UI. |
@@ -160,7 +160,11 @@ Check that the source data range is correct. Click the chart to select it, then 
 
 ### The chart type I need is not in the Insert menu
 
-Advanced chart families (Treemap, Sunburst, Histogram, Pareto, Box-and-Whisker, Waterfall, Funnel, Filled Map) are not yet authorable in FreeX. If your XLSX file already contains one of these chart types, it will be displayed as a placeholder and preserved on save.
+Current chartEx families (Treemap, Sunburst, Histogram, Pareto, Box-and-Whisker, Waterfall, and Funnel) are supported in the chart interop matrix. Filled Map remains deferred and unparseable future chart package parts are preserved with an unsupported-feature warning.
+
+### A 3-D column chart looks slightly different after round-trip
+
+`ThreeDColumn` has a non-blocking Excel chart-export raster variance in the chart parity harness. The XLSX package round-trip has been verified byte-identical for that case; the caveat is limited to Excel's exported chart PNG raster output and does not indicate a workbook openability issue.
 
 ### Chart colors are wrong
 
@@ -288,7 +292,7 @@ These are documented product decisions, not bugs. They will not be fixed unless 
 | **Power Query / Power Pivot cannot refresh** | Requires the Microsoft data-model engine (M/DAX runtimes). |
 | **No Microsoft 365 cloud sync or co-authoring** | Requires Microsoft identity, OneDrive/SharePoint infrastructure, and real-time conflict resolution. |
 | **No external linked-data types** (Stocks, Geography) | Requires live Microsoft data service connectivity. |
-| **Treemap, Waterfall, Histogram, Box-Whisker, Funnel, and Map charts are not authorable** | These chart families do not yet have a data model and renderer. They are detected from XLSX files and preserved. |
+| **Filled Map charts are not authorable** | Map charts are recognized as deferred scope and preserved when possible; they are not yet modeled for FreeX authoring/rendering. |
 | **True 3D mesh surface rendering is partial** | 3D surface charts render as a value-colored matrix; full 3D mesh graphics remain a deferred renderer enhancement. |
 | **Theme-color effects are partial** | Full OOXML theme-effect chains (glow, shadow, reflection, etc.) are not interpreted; only base theme colors are applied. |
 | **Advanced multi-window workbook view** | New Window, Switch Windows, Hide/Unhide, View Side by Side, Synchronous Scrolling, and Reset Window Position are registry-backed. Arrange All stores the workbook arrangement choice; exact Excel-style automatic tiling for every Arrange All layout remains partial. |

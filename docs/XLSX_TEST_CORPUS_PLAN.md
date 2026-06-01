@@ -24,7 +24,7 @@ Current executable manifest baseline: 175 rows (121 generated, 25 public, 20 loc
 | Named ranges and validation | 10 | Defined names, list validation, numeric/date/text/custom validation, input/error messages | Native model records, XLSX round-trip |
 | Conditional formatting | 10 | Modeled conditional-format rules plus unknown/future rules retained from native XML | Supported rules preserved, unknown rules retained |
 | Objects and links | 10 | Comments, hyperlinks, images, text boxes, basic shapes, sparklines | Native objects, warning behavior for unsupported records |
-| Charts | 10 | Native supported chart families and richer unsupported package chart parts | Supported native chart model, explicit unsupported warnings |
+| Charts | 10 | Native supported chart families, current chartEx families, and richer unsupported package chart parts | Supported native/chartEx chart model, explicit unsupported warnings for Map or unparseable package parts |
 | Protection and page setup | 5 | Sheet/workbook protection, allow-edit ranges, margins, print areas, scaling | Protection/page setup model properties |
 
 Total planned minimum: 110 files. The extra 10 files provide slack for corrupted, duplicate, or license-ineligible samples.

@@ -1,13 +1,13 @@
 # FreeX Project Status Report
 
 Generated: 2026-06-01
-Observed at: 2026-06-01T20:54:23+03:00
+Observed at: 2026-06-01T22:53:27+03:00
 Report scope: current consolidated documentation/status snapshot after the June 1 evening integrations
 Mainline observed: branch-neutral `origin/main` snapshot; worker-specific branch and worktree names are intentionally omitted from this status report
 
 ## Executive Summary
 
-FreeX remains in late-stage parity hardening. The broad app surface is functional and documented: formula coverage is **487/487 in-scope functions**, command and menu coverage remain **100% for in-scope rows**, shortcut parity remains **100% (87/87)**, and XLSX work is now focused on fidelity proof, package-preserving save validation, and real-world workbook breadth rather than first-pass support. The XLSX corpus currently has 175 workbook manifest rows, including data-validation semantic XML proof and live web-query warning/retention coverage through connection metadata. The June 1 chart interop pass now has a repeatable comparison harness with a complete 28/28 chart openability/export and visual-gate pass, including chartEx coverage for Pareto, waterfall, box-and-whisker, treemap, sunburst, histogram, and funnel.
+FreeX remains in late-stage parity hardening. The broad app surface is functional and documented: formula coverage is **487/487 in-scope functions**, command and menu coverage remain **100% for in-scope rows**, shortcut parity remains **100% (87/87)**, and XLSX work is now focused on fidelity proof, package-preserving save validation, and real-world workbook breadth rather than first-pass support. The XLSX corpus currently has 175 workbook manifest rows, including data-validation semantic XML proof and live web-query warning/retention coverage through connection metadata. The June 1 chart interop pass now has a repeatable comparison harness with a complete 28/28 chart openability/export and visual-gate pass, including chartEx coverage for Pareto, waterfall, box-and-whisker, treemap, sunburst, histogram, and funnel; the only chart caveat is non-blocking `ThreeDColumn` Excel raster/export variance after byte-identical package proof.
 
 Overall completion remains **95%** in [release/progress.json](../release/progress.json), which keeps tester builds in the `v0.8.<run>` stream. Overall completion estimate is now **95%**. The main remaining work is package-preserving XLSX validation, broader corpus proof, release signing/trust and human accessibility validation, localization review/pseudo-localization/package metadata, keytip/visual polish, and measured performance hardening.
 
@@ -30,7 +30,7 @@ The project history metrics report now covers Git and provider-log activity from
 
 | Item | Status |
 | --- | --- |
-| Mainline | Local `main` was clean and synced with `origin/main` at `12b99529f` (`Merge host test stabilization`) |
+| Mainline | Local `main` was clean and synced with `origin/main` at `1ca18a809` (`Merge XSLT current function coverage`) |
 | Completion tracking | [release/progress.json](../release/progress.json) remains at `overallCompletion: 95` |
 | History metrics | [PROJECT_BUILD_HISTORY_METRICS.md](PROJECT_BUILD_HISTORY_METRICS.md) is refreshed through 2026-05-31 inclusive |
 | Branch posture | Parallel work is active again: observed 122 registered worktrees, 129 local branches, 13 branches not yet merged to `main`, and 2 dirty worker-owned worktrees. These were left untouched. |
@@ -80,7 +80,7 @@ Phase 7D: Deeper color-scale XLSX edge semantics as new gaps are found.
 
 9. **Chart interop and chartEx parity moved from blocker to evidence-driven hardening**
    - `tools/FreeX.ChartInteropCompare` now separates openability/export failures from visual mismatches and records chart comparison evidence. The latest complete run passed 28/28 chart cases for FreeX-rendered PNGs, FreeX-authored XLSX opened/exported by Excel, Excel-authored XLSX opened/exported by Excel, and Excel-authored XLSX loaded/saved by FreeX then reopened/exported by Excel.
-   - June 1 chart fixes include Excel-openable Pareto chartEx axis metadata, box-and-whisker chartEx metadata, waterfall chartEx XML and Set as Total UI, scatter default connector suppression, classic default layout polish, 3-D depth axis ids, and best-effort chart contact-sheet generation.
+   - June 1 chart fixes include Excel-openable Pareto chartEx axis metadata, box-and-whisker chartEx metadata, waterfall chartEx XML and Set as Total UI, scatter default connector suppression, classic default layout polish, 3-D depth axis ids, chartEx sidecars using native style `id="201"`/color style `id="10"`, and best-effort chart contact-sheet generation. The only current chart allowance is `ThreeDColumn` Excel raster/export variance; package XML and relationships are byte-identical across the native and FreeX round-trip files.
 
 10. **Workbook culture, non-finite value, and window parity tightened**
    - Current-culture numeric entry/import/Text to Columns paths were hardened, non-finite values are kept as text across delimited, native JSON, SpreadsheetML, XLSX, and sparkline layout paths, and live Arrange All/Side by Side/window layout behavior is now documented as implemented.

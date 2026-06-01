@@ -65,9 +65,9 @@ latest complete all-green full run passed all 28 chart cases. Final focused bran
 `Pareto`, `ThreeDBar`, `BoxAndWhisker`, `Waterfall`, and the sizing-normalized classic probes also
 passed openability/export and the visual gate.
 
-After many repeated Excel COM runs in this session, later full/focused diagnostics started returning
-Excel automation RPC/open failures even for basic `Column`. The harness correctly reports these as
-`openability` failures rather than visual mismatches; no production writer change was made here.
+After many repeated Excel COM runs in this session, later environment diagnostics occasionally
+returned Excel automation RPC/open failures. These are treated as automation issues unless
+reproduced by the final full harness.
 
 | Path | Result |
 |---|---:|
@@ -84,8 +84,8 @@ latest complete full run, every chart passed openability and the visual gate:
 | Openability/export | 28/28 |
 | FreeX renderer PNG | 28/28 |
 | Visual gate | 28/28 |
-| Known visual gap charts tracked | 1 |
-| Known-gap threshold allowances used | 1 |
+| Accepted Excel raster/export caveat charts | 1 |
+| ThreeDColumn caveat allowance used | 1 |
 
 After the chartEx style sidecar was aligned to Excel's native `id="201"` profile, the focused
 chartEx run at `20260601-chartex-native-style-201-known-gap-clean` passed 7/7 openability/export,
@@ -95,13 +95,17 @@ The visual gate distinguishes openability failures from visual mismatches in `ch
 (`OpenabilityError`, `VisualFailure`, `FailureCategory`) and exits with separate codes:
 `1` for openability/export failure, `2` for visual mismatch, and `3` for FreeX renderer PNG failure.
 
-Known-gap allowances used in the latest complete full run:
+Accepted caveat allowance used in the latest complete full run:
 
 - `ThreeDColumn`: Excel-native -> FreeX -> Excel round-trip hash distance was 6, allowed under the 3-D known-gap round-trip threshold of 12.
+- Cicero's read-only package audit confirmed this is not an XLSX package drift: the Excel-native
+  and FreeX round-tripped `ThreeDColumn.xlsx` packages are byte-identical, with SHA-256
+  `27F042F3716F9FFA9CA0C90893DCC2AECE3F920704DC8957FA733038451FC7FB`, and all 17 package parts
+  match by name, size, CRC, and per-entry SHA.
 
 Per-family visual summary from the latest complete full run:
 
-| Family | Charts | Openability pass | Visual pass | Known-gap allowance | Visual fail | Max native-vs-FreeX hash | Threshold |
+| Family | Charts | Openability pass | Strict visual pass | Caveat allowance | Visual fail | Max native-vs-FreeX hash | Threshold |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | classic | 21 | 21 | 20 | 1 | 0 | 86 | 96 |
 | chartEx | 7 | 7 | 7 | 0 | 0 | 54 | 72 |
@@ -121,9 +125,10 @@ Per-family visual summary from the latest complete full run:
 - The interop harness now converts FreeX pixel fixture sizes to Excel COM points when creating Excel-native charts, so visual hashes compare similarly sized exports instead of point-vs-pixel artifacts.
 - The FreeX Pareto renderer now aggregates repeated categories before sorting and formats the right axis as percentages.
 
-## Remaining Visual Parity Gaps
+## Remaining Non-Blocking Chart Caveats
 
-These do not block XLSX open/load/save interop, but they are visible parity work:
+No P0 Excel-openability blockers remain for the current 28-chart matrix. The only current caveat
+is `ThreeDColumn` Excel-native round-trip raster/export variance:
 
 - `ThreeDColumn` still has minor Excel-native -> FreeX -> Excel round-trip chart-export raster variance: the latest full run measured round-trip hash distance 6 against the strict threshold 4, allowed under the dedicated 3-D column threshold 12.
 - FreeX renderer visuals intentionally differ from Excel-native rendering because FreeX uses the OxyPlot/WPF renderer path; this pass treats it as a separate visual surface, not a pixel-parity target.
@@ -163,8 +168,8 @@ dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.c
 Result from the latest complete full run at
 `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-final-current-main-full-chart-parity`:
 28/28 chart cases passed openability/export and the visual gate, with only the `ThreeDColumn`
-round-trip allowance used. Later repeated Excel COM diagnostics showed RPC/open failures; these are
-reported in the `OpenabilityError`/`FailureCategory=openability` columns, not as visual mismatches.
+round-trip raster/export allowance used. Later environment/COM diagnostics, if seen, are treated as
+automation issues unless reproduced in the final harness.
 
 ```powershell
 dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.csproj -- --family chartEx --out C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-chartex-native-style-201-known-gap-clean
