@@ -29,9 +29,9 @@
     {
       "name": "Insert",
       "implemented": 10,
-      "partial": 3,
+      "partial": 4,
       "notImplemented": 0,
-      "deferred": 1,
+      "deferred": 0,
       "excluded": 9
     },
     {
@@ -127,9 +127,9 @@
     {
       "name": "Insert",
       "implemented": 10,
-      "partial": 3,
+      "partial": 4,
       "notImplemented": 0,
-      "deferred": 1,
+      "deferred": 0,
       "excluded": 9
     },
     {
@@ -585,7 +585,7 @@
             {
               "name": "Flash Fill",
               "status": "Partial",
-              "notes": "Expanded deterministic inference including common first-name/last-name contact patterns, dotted-token extraction such as file extensions and extension removal across variable dot counts, rightmost delimiter token extraction/removal across variable-depth hyphen, slash, backslash, underscore, comma, semicolon, colon, or pipe segments, semicolon- and pipe-delimited token extraction, dotted/underscored/hyphenated and mixed-separator email display-name cleanup with plus-address tag removal, plus-address email local-part extraction, email domain-stem extraction, paired-delimiter extraction or qualifier removal for text inside `(...)`, `[...]`, `{...}`, quotes, or `<...>`, label-value extraction and label qualifier removal around `:`, `=`, hyphen, slash, pipe, arrow, and fat-arrow separators with compact, spaced, uneven-space, or tab-separated forms, digit-mask formatting such as phone-number punctuation, final numeric group extraction such as last-four phone/account fragments, PascalCase name splitting such as `AdaLovelace` to `Ada Lovelace`, two-part full-name reordering such as `Ada Lovelace` to `Lovelace, Ada`, last-name extraction across variable-length full names, known title/suffix removal such as `Dr. Ada Lovelace`, `Dr. Lovelace`, `Ada Lovelace Jr.`, `Ada Lovelace, Ph.D.`, `Ada Lovelace, CPA`, or `Lovelace Jr.` to the untitled/unsuffixed name, uppercase initial inference from lowercase names, first/last and all-initial abbreviations such as `Ada Lovelace` to `A. Lovelace`, `A. L.`, `Ada L.`, `Lovelace A.`, or `Lovelace, A.`, exactly three-token name edge/middle-token drops, full last-name reordering, and initial abbreviations such as `Ada Byron Lovelace` to `Byron Lovelace`, `Ada Byron`, `Ada Lovelace`, `Lovelace, Ada`, `Lovelace, Ada Byron`, `Ada B. Lovelace`, `A. Lovelace`, `Ada L.`, `Lovelace A.`, `B. Lovelace`, `Byron L.`, `A. B. Lovelace`, `A. B. L.`, `Ada B.`, `Ada Byron L.`, `Lovelace, Ada B.`, `Lovelace A. B.`, `Lovelace, A. B.`, or `B.`, shared-domain email generation from full-name cells or adjacent first/last columns with `.`, `_`, or `-` first/last, last/first, first-initial/last, first/last-initial, and last/first-initial separators, and first/last-initial email aliases; Excel's full ML-like inference remains partial"
+              "notes": "Expanded deterministic inference including common first-name/last-name contact patterns, dotted-token extraction such as file extensions and extension removal across variable dot counts, rightmost delimiter token extraction/removal across variable-depth hyphen, slash, backslash, underscore, comma, semicolon, colon, or pipe segments, semicolon- and pipe-delimited token extraction, dotted/underscored/hyphenated and mixed-separator email display-name cleanup with plus-address tag removal, plus-address email local-part extraction, email domain-stem extraction, paired-delimiter extraction or qualifier removal for text inside `(...)`, `[...]`, `{...}`, quotes, or `<...>`, label-value extraction and label qualifier removal around `:`, `=`, hyphen, slash, pipe, arrow, and fat-arrow separators with compact, spaced, uneven-space, or tab-separated forms, digit-mask formatting such as phone-number punctuation, final numeric group extraction such as last-four phone/account fragments, PascalCase name splitting such as `AdaLovelace` to `Ada Lovelace`, two-part full-name reordering such as `Ada Lovelace` to `Lovelace, Ada`, last-name extraction across variable-length full names, known title/suffix and organization legal-suffix removal such as `Dr. Ada Lovelace`, `Dr. Lovelace`, `Ada Lovelace Jr.`, `Ada Lovelace, Ph.D.`, `Ada Lovelace, CPA`, `Lovelace Jr.`, or `Northwind Traders LLC` to the cleaned name, uppercase initial inference from lowercase names, first/last and all-initial abbreviations such as `Ada Lovelace` to `A. Lovelace`, `A. L.`, `Ada L.`, `Lovelace A.`, or `Lovelace, A.`, exactly three-token name edge/middle-token drops, full last-name reordering, and initial abbreviations such as `Ada Byron Lovelace` to `Byron Lovelace`, `Ada Byron`, `Ada Lovelace`, `Lovelace, Ada`, `Lovelace, Ada Byron`, `Ada B. Lovelace`, `A. Lovelace`, `Ada L.`, `Lovelace A.`, `B. Lovelace`, `Byron L.`, `A. B. Lovelace`, `A. B. L.`, `Ada B.`, `Ada Byron L.`, `Lovelace, Ada B.`, `Lovelace A. B.`, `Lovelace, A. B.`, or `B.`, shared-domain email generation from full-name cells or adjacent first/last columns with `.`, `_`, or `-` first/last, last/first, first-initial/last, first/last-initial, and last/first-initial separators, and first/last-initial email aliases; Excel's full ML-like inference remains partial"
             },
             {
               "name": "Flash Fill title+suffix cleanup",
@@ -707,8 +707,8 @@
         },
         {
           "name": "Chart (treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel/true 3D surface mesh)",
-          "status": "Deferred",
-          "notes": "Surface has package, matrix-rendering, and Insert/Change Chart picker support; remaining advanced families are recognized from XLSX where detected and blocked from broken authoring/rendering, with lossless mixed drawing-part retention partial until per-family package writer support exists. Map Chart remains recognized for XLSX preservation but is hidden from the Insert ribbon until authoring/rendering is implemented."
+          "status": "Partial",
+          "notes": "Treemap, sunburst, histogram, Pareto, box-and-whisker, waterfall, and funnel now have model/render/XLSX paths and are covered by the 28-case chart interop harness; chartEx passed 7/7 openability/export and visual gate in the final 2026-06-01 evidence. Surface has package, matrix-rendering, and Insert/Change Chart picker support. Map Chart and true 3D mesh-style surface remain deferred/hidden until authoring/rendering scope is productized."
         },
         {
           "name": "Recommended Charts",
@@ -1112,7 +1112,7 @@
         {
           "name": "Flash Fill (Data tab)",
           "status": "Partial",
-          "notes": "Expanded deterministic inference including common first-name/last-name contact patterns, dotted-token extraction such as file extensions and extension removal across variable dot counts, delimiter-token extraction with trimmed token edges including comma, semicolon, colon, and pipe examples, rightmost delimiter token extraction/removal across variable-depth hyphen, slash, backslash, underscore, comma, semicolon, colon, or pipe segments, dotted/underscored/hyphenated email display-name cleanup with plus-address tag removal, plus-address email local-part extraction, email domain-stem extraction, paired-delimiter extraction or qualifier removal for text inside `(...)`, `[...]`, `{...}`, quotes, or `<...>`, label-value extraction and label qualifier removal around `:`, `=`, hyphen, slash, pipe, arrow, and fat-arrow separators with compact, spaced, uneven-space, or tab-separated forms, digit-mask formatting such as phone-number punctuation, final numeric group extraction such as last-four phone/account fragments, PascalCase name splitting such as `AdaLovelace` to `Ada Lovelace`, two-part full-name reordering such as `Ada Lovelace` to `Lovelace, Ada`, last-name extraction across variable-length full names, known title/suffix removal such as `Dr. Ada Lovelace`, `Dr. Lovelace`, `Ada Lovelace Jr.`, `Ada Lovelace, Ph.D.`, `Ada Lovelace, CPA`, or `Lovelace Jr.` to the untitled/unsuffixed name, uppercase initial inference from lowercase names, first/last and all-initial abbreviations such as `Ada Lovelace` to `A. Lovelace`, `A. L.`, `Ada L.`, `Lovelace A.`, or `Lovelace, A.`, exactly three-token name edge/middle-token drops, full last-name reordering, and initial abbreviations such as `Ada Byron Lovelace` to `Byron Lovelace`, `Ada Byron`, `Ada Lovelace`, `Lovelace, Ada`, `Lovelace, Ada Byron`, `Ada B. Lovelace`, `A. Lovelace`, `Ada L.`, `Lovelace A.`, `B.`, `Byron L.`, `A. B. Lovelace`, `A. B. L.`, `Ada B.`, `Ada Byron L.`, `Lovelace, Ada B.`, `Lovelace A. B.`, `Lovelace, A. B.`, or `B.`, shared-domain email generation from full-name cells or adjacent first/last columns with `.`, `_`, or `-` first/last, last/first, first-initial/last, first/last-initial, and last/first-initial separators; Excel's full ML-like inference remains partial"
+          "notes": "Expanded deterministic inference including common first-name/last-name contact patterns, dotted-token extraction such as file extensions and extension removal across variable dot counts, delimiter-token extraction with trimmed token edges including comma, semicolon, colon, and pipe examples, rightmost delimiter token extraction/removal across variable-depth hyphen, slash, backslash, underscore, comma, semicolon, colon, or pipe segments, dotted/underscored/hyphenated email display-name cleanup with plus-address tag removal, plus-address email local-part extraction, email domain-stem extraction, paired-delimiter extraction or qualifier removal for text inside `(...)`, `[...]`, `{...}`, quotes, or `<...>`, label-value extraction and label qualifier removal around `:`, `=`, hyphen, slash, pipe, arrow, and fat-arrow separators with compact, spaced, uneven-space, or tab-separated forms, digit-mask formatting such as phone-number punctuation, final numeric group extraction such as last-four phone/account fragments, PascalCase name splitting such as `AdaLovelace` to `Ada Lovelace`, two-part full-name reordering such as `Ada Lovelace` to `Lovelace, Ada`, last-name extraction across variable-length full names, known title/suffix and organization legal-suffix removal such as `Dr. Ada Lovelace`, `Dr. Lovelace`, `Ada Lovelace Jr.`, `Ada Lovelace, Ph.D.`, `Ada Lovelace, CPA`, `Lovelace Jr.`, or `Northwind Traders LLC` to the cleaned name, uppercase initial inference from lowercase names, first/last and all-initial abbreviations such as `Ada Lovelace` to `A. Lovelace`, `A. L.`, `Ada L.`, `Lovelace A.`, or `Lovelace, A.`, exactly three-token name edge/middle-token drops, full last-name reordering, and initial abbreviations such as `Ada Byron Lovelace` to `Byron Lovelace`, `Ada Byron`, `Ada Lovelace`, `Lovelace, Ada`, `Lovelace, Ada Byron`, `Ada B. Lovelace`, `A. Lovelace`, `Ada L.`, `Lovelace A.`, `B.`, `Byron L.`, `A. B. Lovelace`, `A. B. L.`, `Ada B.`, `Ada Byron L.`, `Lovelace, Ada B.`, `Lovelace A. B.`, `Lovelace, A. B.`, or `B.`, shared-domain email generation from full-name cells or adjacent first/last columns with `.`, `_`, or `-` first/last, last/first, first-initial/last, first/last-initial, and last/first-initial separators; Excel's full ML-like inference remains partial"
         },
         {
           "name": "Flash Fill title+suffix cleanup (Data tab)",
@@ -1138,7 +1138,7 @@
         {
           "name": "Accessibility Checker",
           "status": "Partial",
-          "notes": "Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, patterned fills, and no fill treated as white, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; conditional-format rendered colors, theme/tint expansion beyond existing style values, chart/shape/text-box text, and the full Excel rule taxonomy remain partial"
+          "notes": "Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, patterned fills, no fill treated as white, and matching conditional-format styles for cell-value, text, blank/error, no-blank/no-error, duplicate-value, unique-value, and above/below-average rules, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; formula, date-occurring, and top/bottom conditional-format evaluation, theme/tint expansion beyond existing style values, chart/shape/text-box text, and the full Excel rule taxonomy remain partial"
         },
         {
           "name": "Smart Lookup / Researcher",
@@ -1976,13 +1976,13 @@
         },
         {
           "name": "Chart - treemap/sunburst/histogram",
-          "status": "Deferred",
-          "notes": "Recognized from XLSX where detected; authoring/rendering and lossless package writing need per-family model/renderer"
+          "status": "Partial",
+          "notes": "Model/render/XLSX paths are covered by the current chart interop harness; chartEx passed 7/7 openability/export and visual gate in the final 2026-06-01 evidence"
         },
         {
           "name": "Chart - waterfall/funnel/true 3D mesh",
-          "status": "Deferred",
-          "notes": "Recognized from XLSX where detected; authoring/rendering and lossless package writing need per-family model/renderer. Map Chart remains recognized for XLSX preservation but is hidden from the Insert ribbon until authoring/rendering is implemented."
+          "status": "Partial",
+          "notes": "Waterfall and funnel have model/render/XLSX paths and chartEx interop evidence; true 3D mesh-style surface remains deferred. Map Chart remains recognized for XLSX preservation but is hidden from the Insert ribbon until authoring/rendering is implemented."
         },
         {
           "name": "Recommended Charts",
@@ -2447,7 +2447,7 @@
         {
           "name": "Accessibility Checker",
           "status": "Partial",
-          "notes": "Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, patterned fills, and no fill treated as white, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; conditional-format rendered colors, theme/tint expansion beyond existing style values, chart/shape/text-box text, and full Excel rule taxonomy remain partial"
+          "notes": "Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, patterned fills, no fill treated as white, and matching conditional-format styles for cell-value, text, blank/error, no-blank/no-error, duplicate-value, unique-value, and above/below-average rules, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; formula, date-occurring, and top/bottom conditional-format evaluation, theme/tint expansion beyond existing style values, chart/shape/text-box text, and full Excel rule taxonomy remain partial"
         },
         {
           "name": "Smart Lookup",
