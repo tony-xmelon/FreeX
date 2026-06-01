@@ -7,19 +7,19 @@ Keep this document as the compact current-state handoff for future chart/XLSX la
 ## Current status
 
 - **P0 Excel openability is resolved for the chart parity matrix.** The latest full harness run at
-  `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-final-current-main-full-chart-parity`
+  `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-threedcolumn-caveat-full-clean-r2`
   passed 28/28 chart cases for FreeX renderer PNG output, FreeX-authored XLSX opened/exported by
   Excel, Excel-authored XLSX opened/exported by Excel, and Excel-authored XLSX loaded/saved by
   FreeX then reopened/exported by Excel.
-- **Visual gate is green.** The same run passed 28/28 visual gates. The only caveat allowance is
-  `ThreeDColumn` Excel-native -> FreeX -> Excel round-trip chart-export raster variance: pHash
-  distance 6 against the strict threshold 4, allowed under the dedicated 3-D column threshold 12.
-- **The remaining `ThreeDColumn` caveat is not an XLSX package/openability bug.** Cicero's
-  read-only package audit showed the native and round-tripped `ThreeDColumn.xlsx` files are
-  byte-identical, with SHA-256
-  `27F042F3716F9FFA9CA0C90893DCC2AECE3F920704DC8957FA733038451FC7FB`; all 17 package parts,
-  including `xl/charts/chart1.xml`, `xl/charts/style1.xml`, `xl/charts/colors1.xml`, drawings,
-  relationships, styles, theme, and docProps match by name, size, CRC, and per-entry SHA.
+- **Visual gate is green without chart-specific allowances.** The same run passed 28/28 visual
+  gates, reported 0 known-gap charts, used 0 known-gap threshold allowances, and confirmed 28/28
+  Excel-native -> FreeX -> Excel round-trip XLSX packages are byte-identical to the Excel-native
+  packages.
+- **The former `ThreeDColumn` caveat is now covered by package-identity evidence.** Focused
+  verification showed the Excel-native and FreeX round-tripped `ThreeDColumn.xlsx` packages are
+  byte-identical while repeated Excel chart PNG export can still differ by pHash distance 6. The
+  harness records `NativeRoundTripXlsxByteIdentical=true` and treats that raster-only drift as an
+  Excel export repeatability artifact, not a FreeX writer/openability bug.
 - **chartEx package parity is verified for the current supported families.** Histogram, Waterfall,
   Treemap, Sunburst, Pareto, Funnel, and Box-and-Whisker now open/export in Excel and pass the
   visual gate. The focused chartEx run
@@ -50,6 +50,9 @@ Keep this document as the compact current-state handoff for future chart/XLSX la
 - `tools/FreeX.ChartInteropCompare` separates openability/export failures, FreeX renderer failures,
   and visual mismatches, and normalizes FreeX pixel fixture sizes to Excel COM point sizes for
   native authoring.
+- `tools/FreeX.ChartInteropCompare` now records byte-identical Excel-native/FreeX-round-trip XLSX
+  packages and passes those cases without a chart-specific visual allowance when repeated Excel PNG
+  export has minor raster drift.
 
 ## Verification evidence
 
@@ -70,18 +73,18 @@ Result: 6/6 passed.
 Full interop harness:
 
 ```powershell
-dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.csproj -- --out C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-final-current-main-full-chart-parity
+dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.csproj -- --out C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-threedcolumn-caveat-full-clean-r2
 ```
 
-Result: 28/28 openability/export, 28/28 FreeX renderer PNG, 28/28 visual gate, one caveat
-threshold allowance used for `ThreeDColumn` raster variance.
+Result: 28/28 openability/export, 28/28 FreeX renderer PNG, 28/28 visual gate, 0 known-gap charts,
+0 known-gap threshold allowances, and 28/28 byte-identical Excel-native/FreeX-round-trip packages.
 
 ## Remaining follow-ups
 
 1. Keep the chart harness green as future XLSX writer or renderer changes land; treat a new Excel
    openability failure as P0.
-2. Keep `ThreeDColumn` documented as an Excel chart-export raster variance unless a future run
-   shows package XML/relationship drift.
+2. Preserve the package-identity guard in `tools/FreeX.ChartInteropCompare` so repeated Excel PNG
+   export variance stays separate from package/openability regressions.
 3. Continue broader XLSX corpus proof and manual desktop Excel open/save/reopen sampling outside
    the 28-chart parity matrix.
 4. Finish product polish that is separate from openability: full chart format panes/dialogs, deeper

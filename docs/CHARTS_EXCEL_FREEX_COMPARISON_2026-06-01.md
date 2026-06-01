@@ -15,11 +15,13 @@ Compared 28 FreeX-renderable chart types against Microsoft Excel using a repeata
 
 Latest complete all-green full run:
 
-`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-final-current-main-full-chart-parity`
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-threedcolumn-caveat-full-clean-r2`
 
 Final focused branch-head runs:
 
 `C:\Users\anton\freex-xlsx-verify\chart-interop\worker6-focused-final-20260601-1945`
+
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-final-current-main-full-chart-parity`
 
 `C:\Users\anton\freex-xlsx-verify\chart-interop\worker6-pareto-final-20260601-1920`
 
@@ -84,8 +86,9 @@ latest complete full run, every chart passed openability and the visual gate:
 | Openability/export | 28/28 |
 | FreeX renderer PNG | 28/28 |
 | Visual gate | 28/28 |
-| Accepted Excel raster/export caveat charts | 1 |
-| ThreeDColumn caveat allowance used | 1 |
+| Known visual gap charts | 0 |
+| Known-gap threshold allowances used | 0 |
+| Byte-identical round-trip packages | 28/28 |
 
 After the chartEx style sidecar was aligned to Excel's native `id="201"` profile, the focused
 chartEx run at `20260601-chartex-native-style-201-known-gap-clean` passed 7/7 openability/export,
@@ -95,19 +98,19 @@ The visual gate distinguishes openability failures from visual mismatches in `ch
 (`OpenabilityError`, `VisualFailure`, `FailureCategory`) and exits with separate codes:
 `1` for openability/export failure, `2` for visual mismatch, and `3` for FreeX renderer PNG failure.
 
-Accepted caveat allowance used in the latest complete full run:
+Round-trip package identity guard in the latest complete full run:
 
-- `ThreeDColumn`: Excel-native -> FreeX -> Excel round-trip hash distance was 6, allowed under the 3-D known-gap round-trip threshold of 12.
-- Cicero's read-only package audit confirmed this is not an XLSX package drift: the Excel-native
-  and FreeX round-tripped `ThreeDColumn.xlsx` packages are byte-identical, with SHA-256
-  `27F042F3716F9FFA9CA0C90893DCC2AECE3F920704DC8957FA733038451FC7FB`, and all 17 package parts
-  match by name, size, CRC, and per-entry SHA.
+- `ThreeDColumn`: Excel-native -> FreeX -> Excel round-trip PNG hash distance remains 6, but the
+  Excel-native and FreeX round-tripped `.xlsx` packages are byte-identical. The harness now records
+  `NativeRoundTripXlsxByteIdentical=true` and treats this as a pass instead of a known-gap allowance.
+- The full patched run recorded byte-identical Excel-native/FreeX-round-trip packages for 28/28
+  chart cases.
 
 Per-family visual summary from the latest complete full run:
 
-| Family | Charts | Openability pass | Strict visual pass | Caveat allowance | Visual fail | Max native-vs-FreeX hash | Threshold |
+| Family | Charts | Openability pass | Visual pass | Known-gap allowance | Visual fail | Max native-vs-FreeX hash | Threshold |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| classic | 21 | 21 | 20 | 1 | 0 | 86 | 96 |
+| classic | 21 | 21 | 21 | 0 | 0 | 86 | 96 |
 | chartEx | 7 | 7 | 7 | 0 | 0 | 54 | 72 |
 
 ## Fixes Made From The Comparison
@@ -123,14 +126,16 @@ Per-family visual summary from the latest complete full run:
 - Classic stacked and percent-stacked column/bar defaults now match Excel closely enough to run without known-gap allowances; the focused stacked run passed 4/4 openability/export and visual gate with 0 known gaps.
 - FreeX renderer percent-stacked column/bar axes now use Excel-compatible bounds for positive-only, mixed-sign, and negative-only data.
 - The interop harness now converts FreeX pixel fixture sizes to Excel COM points when creating Excel-native charts, so visual hashes compare similarly sized exports instead of point-vs-pixel artifacts.
+- The interop harness now records whether Excel-native and FreeX round-tripped packages are byte-identical; byte-identical round-trip packages pass even if repeated Excel chart PNG export has minor raster drift. This removes the former `ThreeDColumn` known-gap allowance.
 - The FreeX Pareto renderer now aggregates repeated categories before sorting and formats the right axis as percentages.
 
-## Remaining Non-Blocking Chart Caveats
+## Remaining Chart Notes
 
-No P0 Excel-openability blockers remain for the current 28-chart matrix. The only current caveat
-is `ThreeDColumn` Excel-native round-trip raster/export variance:
+No P0 Excel-openability blockers or known-gap visual allowances remain for the current 28-chart matrix.
 
-- `ThreeDColumn` still has minor Excel-native -> FreeX -> Excel round-trip chart-export raster variance: the latest full run measured round-trip hash distance 6 against the strict threshold 4, allowed under the dedicated 3-D column threshold 12.
+- `ThreeDColumn` still shows a repeated Excel chart PNG export hash distance of 6, but the underlying
+  Excel-native and FreeX round-tripped `.xlsx` packages are byte-identical, so the harness now treats
+  that raster-only drift as an Excel export repeatability artifact rather than a chart parity caveat.
 - FreeX renderer visuals intentionally differ from Excel-native rendering because FreeX uses the OxyPlot/WPF renderer path; this pass treats it as a separate visual surface, not a pixel-parity target.
 
 ## Harness Notes
@@ -166,10 +171,11 @@ dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.c
 ```
 
 Result from the latest complete full run at
-`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-final-current-main-full-chart-parity`:
-28/28 chart cases passed openability/export and the visual gate, with only the `ThreeDColumn`
-round-trip raster/export allowance used. Later environment/COM diagnostics, if seen, are treated as
-automation issues unless reproduced in the final harness.
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-threedcolumn-caveat-full-clean-r2`:
+28/28 chart cases passed openability/export and the visual gate, with 0 known-gap charts,
+0 known-gap allowances, and 28/28 byte-identical Excel-native/FreeX-round-trip packages. Later
+environment/COM diagnostics, if seen, are treated as automation issues unless reproduced in the
+final harness.
 
 ```powershell
 dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.csproj -- --family chartEx --out C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-chartex-native-style-201-known-gap-clean
