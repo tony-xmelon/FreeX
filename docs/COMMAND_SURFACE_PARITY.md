@@ -115,7 +115,7 @@ worksheet coordinates.
 | Save | Implemented |  |
 | Undo | Implemented |  |
 | Redo | Implemented |  |
-| Customize QAT | Partial | Options dialog persists command list, order, reset, and above/below-ribbon location for the broad direct-command catalog; arbitrary command browsing, ribbon right-click add, and import/export of customizations remain out of scope |
+| Customize QAT | Partial | Options dialog persists command list, order, reset, and above/below-ribbon location for the broad direct-command catalog; eligible direct ribbon commands can now be added/removed through command context menus; arbitrary command browsing and import/export of customizations remain out of scope |
 <!-- command-inventory:command-surface:qat:end -->
 
 ---
