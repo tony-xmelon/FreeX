@@ -301,7 +301,7 @@
         {
           "name": "Customize QAT",
           "status": "Partial",
-          "notes": "Options dialog persists command list, order, reset, and above/below-ribbon location for the broad direct-command catalog; eligible direct ribbon commands can now be added/removed through command context menus; arbitrary command browsing and import/export of customizations remain out of scope"
+          "notes": "Options dialog filters the broad direct-command catalog and persists command list, order, reset, and above/below-ribbon location; eligible direct ribbon commands can now be added/removed through command context menus; arbitrary command browsing and import/export of customizations remain out of scope"
         }
       ]
     },
@@ -1555,7 +1555,7 @@
         {
           "name": "Customize QAT",
           "status": "Partial",
-          "notes": "Options dialog persists command list, order, reset, and above/below-ribbon location for the broad direct-command catalog; eligible direct ribbon commands can now be added/removed through command context menus; arbitrary command browsing and import/export of customizations remain out of scope"
+          "notes": "Options dialog filters the broad direct-command catalog and persists command list, order, reset, and above/below-ribbon location; eligible direct ribbon commands can now be added/removed through command context menus; arbitrary command browsing and import/export of customizations remain out of scope"
         }
       ]
     },
