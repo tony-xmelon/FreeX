@@ -15,7 +15,7 @@ Compared 28 FreeX-renderable chart types against Microsoft Excel using a repeata
 
 Latest complete all-green full run:
 
-`C:\Users\anton\freex-xlsx-verify\chart-interop\worker6-full-20260601-1835`
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-full-after-sizing-normalization`
 
 Final focused branch-head runs:
 
@@ -24,6 +24,12 @@ Final focused branch-head runs:
 `C:\Users\anton\freex-xlsx-verify\chart-interop\worker6-pareto-final-20260601-1920`
 
 `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-boxwhisker-chartex-parent`
+
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-waterfall-chartex-worker`
+
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-sizing-probe-classic`
+
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-sizing-probe-3d`
 
 Late full-run diagnostics after repeated Excel automation:
 
@@ -48,7 +54,8 @@ Key artifacts:
 
 The harness change is active and separates openability/export failures from visual mismatches. The
 latest complete all-green full run passed all 28 chart cases. Final focused branch-head reruns for
-`Pareto`, `ThreeDBar`, and `BoxAndWhisker` also passed openability/export and the visual gate.
+`Pareto`, `ThreeDBar`, `BoxAndWhisker`, `Waterfall`, and the sizing-normalized classic probes also
+passed openability/export and the visual gate.
 
 After many repeated Excel COM runs in this session, later full/focused diagnostics started returning
 Excel automation RPC/open failures even for basic `Column`. The harness correctly reports these as
@@ -69,8 +76,8 @@ latest complete full run, every chart passed openability and the visual gate:
 | Openability/export | 28/28 |
 | FreeX renderer PNG | 28/28 |
 | Visual gate | 28/28 |
-| Known visual gap charts tracked | 14 |
-| Known-gap threshold allowances used | 1 |
+| Known visual gap charts tracked | 11 |
+| Known-gap threshold allowances used | 2 |
 
 The visual gate distinguishes openability failures from visual mismatches in `chart_compare_results.csv`
 (`OpenabilityError`, `VisualFailure`, `FailureCategory`) and exits with separate codes:
@@ -78,14 +85,15 @@ The visual gate distinguishes openability failures from visual mismatches in `ch
 
 Known-gap allowances used in the latest complete full run:
 
-- `ThreeDBar`: Excel-native -> FreeX -> Excel round-trip hash distance was 8, allowed under the 3-D known-gap round-trip threshold of 12.
+- `PercentStackedColumn`: native-vs-FreeX hash distance was 99, allowed under the known-gap threshold of 128.
+- `ThreeDColumn`: Excel-native -> FreeX -> Excel round-trip hash distance was 6, allowed under the 3-D known-gap round-trip threshold of 12.
 
 Per-family visual summary from the latest complete full run:
 
 | Family | Charts | Openability pass | Visual pass | Known-gap allowance | Visual fail | Max native-vs-FreeX hash | Threshold |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| classic | 21 | 21 | 20 | 1 | 0 | 89 | 96 |
-| chartEx | 7 | 7 | 7 | 0 | 0 | 65 | 72 |
+| classic | 21 | 21 | 19 | 2 | 0 | 99 | 96 |
+| chartEx | 7 | 7 | 7 | 0 | 0 | 54 | 72 |
 
 ## Fixes Made From The Comparison
 
@@ -94,7 +102,9 @@ Per-family visual summary from the latest complete full run:
 - `Scatter` classic XLSX now suppresses default connector lines, matching Excel's marker-only scatter default unless a series explicitly requests line styling or smoothing.
 - `Pareto` chartEx now writes aggregation, an owner-linked Pareto line, and plot-area percentage axis metadata while omitting series-level `cx:axisId` values that made Excel reject the workbook.
 - `BoxAndWhisker` chartEx now writes per-series title metadata, stable series `uniqueId`s, exclusive-quartile statistics layout metadata, and Excel-native chartEx axes for multi-series sample data.
+- `Waterfall` chartEx now writes Excel-native connector-line visibility and chartEx axes alongside subtotal metadata, and the app now exposes a tested Set as Total context-menu path for waterfall points.
 - Stacked column/bar and 3-D families now emit closer Excel-native default layout metadata, including stacked gap/overlap defaults, 3-D view/wall defaults, and 3-D chart axis defaults.
+- The interop harness now converts FreeX pixel fixture sizes to Excel COM points when creating Excel-native charts, so visual hashes compare similarly sized exports instead of point-vs-pixel artifacts.
 - The FreeX Pareto renderer now aggregates repeated categories before sorting and formats the right axis as percentages.
 
 ## Remaining Visual Parity Gaps
@@ -102,7 +112,7 @@ Per-family visual summary from the latest complete full run:
 These do not block XLSX open/load/save interop, but they are visible parity work:
 
 - FreeX-authored stacked column/bar and several 3-D families are structurally valid but differ from Excel-native default styling/layout.
-- FreeX-authored `Waterfall` is visible and openable but still has connector/subtotal styling differences from Excel-native output.
+- FreeX-authored `Waterfall` is visible and openable, with connector/axis metadata now aligned; remaining differences are primarily chartEx style sidecar/default styling.
 - FreeX renderer visuals intentionally differ from Excel-native rendering because FreeX uses the OxyPlot/WPF renderer path; this pass treats it as a separate visual surface, not a pixel-parity target.
 
 ## Harness Notes
@@ -119,14 +129,16 @@ Visual thresholds can be overridden with `--classic-visual-threshold`,
 `--chartex-visual-threshold`, `--known-gap-threshold`, and `--roundtrip-threshold`.
 The harness uses a fresh Excel COM instance per chart case with activation retry/owned-PID cleanup,
 which avoids one dead Excel automation server cascading into unrelated chart failures.
+Excel-native fixtures created through COM use point units, so the harness converts the shared
+FreeX pixel fixture rectangle to points before authoring native Excel charts.
 
 ## Verification Commands
 
 ```powershell
-dotnet test tests\FreeX.Core.IO.Tests\FreeX.Core.IO.Tests.csproj --filter "XlsxChartExWriterTests|XlsxSchemaValidationTests" --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1
+dotnet test tests\FreeX.Core.IO.Tests\FreeX.Core.IO.Tests.csproj --filter "XlsxClassicChartDefaultTests|XlsxChartExWriterTests|XlsxSchemaValidationTests" --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1
 ```
 
-Result: 54/54 passed.
+Result: 78/78 passed.
 
 ```powershell
 dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.csproj
