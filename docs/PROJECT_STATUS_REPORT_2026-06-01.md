@@ -93,7 +93,7 @@ See [OUTSTANDING_BUILD.md](OUTSTANDING_BUILD.md) for the source-of-truth backlog
 3. **Release documentation and packaging**
    - Signing, installer trust validation, and live accessibility validation remain release-gate work.
 4. **Keytip overlay placement**
-   - Continue visual-placement polish beyond the current automated key routing and UIA coverage.
+   - Continue visual-placement polish beyond the current automated key routing and UIA coverage; collapsed ribbon overflow group badges now use centered placement instead of the command bottom-edge anchor.
 5. **XLSX warning coverage as new gaps are found**
    - Keep unsupported-feature detection aligned with newly discovered OOXML package parts.
 
