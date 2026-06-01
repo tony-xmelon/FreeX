@@ -15,7 +15,7 @@ Compared 28 FreeX-renderable chart types against Microsoft Excel using a repeata
 
 Latest run:
 
-`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-165656`
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-170450`
 
 Key artifacts:
 
