@@ -113,7 +113,7 @@ If any required item is skipped, mark the tester build as internal-only and do n
 - Vertical and Horizontal scroll bars: `AutomationProperties.Name` and `HelpText` set.
 - Zoom Slider and Zoom Text: `AutomationProperties.Name` and `HelpText` set.
 - Add Sheet button: explicit `AutomationProperties.Name` and `HelpText` set.
-- Key dialogs (Accessibility Checker, Spell Check, Color Picker, Workbook Statistics, Chart dialogs, etc.): extensive UIA name/help-text/automation-id coverage verified by `ReviewDialogFocusAccessibilityTests`, `UiAutomationCatalogSnapshotTests`, and dialog-specific tests.
+- Key dialogs (Accessibility Checker, Spell Check, Color Picker, Workbook Statistics, Chart dialogs, etc.): extensive UIA name/help-text/automation-id coverage verified by `ReviewDialogFocusAccessibilityTests`, the shared `UiAutomationCatalogSnapshotHarness`, and dialog-specific tests.
 - F6 shell focus cycle: worksheet → ribbon → formula bar → sheet tabs → status bar traversal proven by `ShellFocusCyclePlannerTests` and live host coverage.
 - `KeyboardNavigation.TabNavigation` properties on RibbonTabs and task panes: verified by `MainWindowXamlKeyTipTests`.
 - `AutomationInvokeButton` override: Insert Function and Backstage entry-point buttons expose `InvokePattern`.
