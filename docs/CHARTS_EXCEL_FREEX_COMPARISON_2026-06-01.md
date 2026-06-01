@@ -15,14 +15,16 @@ Compared 28 FreeX-renderable chart types against Microsoft Excel using a repeata
 
 Latest run:
 
-`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-170450`
+`C:\Users\anton\freex-xlsx-verify\chart-interop\worker6-full-20260601-1835`
 
 Key artifacts:
 
 - `chart_compare_results.csv` / `.json`: functional interop matrix.
+- `README.md`: openability/export vs visual-gate summary, including per-family counts.
+- `visual_metrics.csv`: nonblank-image checks, perceptual hash distances, thresholds, and visual status.
 - `visual_contact_sheet_classic.png`: classic chart visual comparison.
 - `visual_contact_sheet_chartex.png`: chartEx visual comparison.
-- `visual_metrics.csv`: nonblank-image and perceptual hash-distance metrics.
+- `visual_contact_sheet_all.png`: full side-by-side chart visual comparison.
 
 ## Result
 
@@ -35,7 +37,31 @@ Functional interop passed for all 28 tested chart types.
 | Excel-authored XLSX opened/exported in Excel | 28/28 |
 | Excel-authored XLSX loaded/saved by FreeX, then reopened/exported in Excel | 28/28 |
 
-The Excel-to-FreeX-to-Excel visual path is effectively preserved: round-trip image hash distance was 0 for nearly every chart, with only tiny 3-D chart differences observed (`ThreeDColumn` distance 1, `ThreeDBar` distance 2 on a 16x16 average-hash scale).
+The harness now has an explicit visual gate in addition to the openability/export gate. The latest run passed both:
+
+| Gate | Result |
+|---|---:|
+| Openability/export | 28/28 |
+| FreeX renderer PNG | 28/28 |
+| Visual gate | 28/28 |
+| Known visual gap charts tracked | 14 |
+| Known-gap threshold allowances used | 2 |
+
+The visual gate distinguishes openability failures from visual mismatches in `chart_compare_results.csv`
+(`OpenabilityError`, `VisualFailure`, `FailureCategory`) and exits with separate codes:
+`1` for openability/export failure, `2` for visual mismatch, and `3` for FreeX renderer PNG failure.
+
+Known-gap allowances used in the latest run:
+
+- `ThreeDBar`: Excel-native -> FreeX -> Excel round-trip hash distance was 8, allowed under the 3-D known-gap round-trip threshold of 12.
+- `Pareto`: Excel-native vs FreeX-authored XLSX hash distance was 83, allowed under the chartEx known-gap threshold of 128.
+
+Per-family visual summary from the latest run:
+
+| Family | Charts | Openability pass | Visual pass | Known-gap allowance | Visual fail | Max native-vs-FreeX hash | Threshold |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| classic | 21 | 21 | 20 | 1 | 0 | 89 | 96 |
+| chartEx | 7 | 7 | 6 | 1 | 0 | 83 | 72 |
 
 ## Fixes Made From The Comparison
 
@@ -52,6 +78,21 @@ These do not block XLSX open/load/save interop, but they are visible parity work
 - FreeX-authored `BoxAndWhisker` is visible but not Excel-equivalent for multi-column sample data; Excel-native uses per-series statistics layout metadata.
 - FreeX renderer visuals intentionally differ from Excel-native rendering because FreeX uses the OxyPlot/WPF renderer path; this pass treats it as a separate visual surface, not a pixel-parity target.
 
+## Harness Notes
+
+`tools\FreeX.ChartInteropCompare` now supports focused runs:
+
+```powershell
+dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.csproj -- --chart Pareto,ThreeDBar
+dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.csproj -- --family chartEx
+dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.csproj -- --list-charts
+```
+
+Visual thresholds can be overridden with `--classic-visual-threshold`,
+`--chartex-visual-threshold`, `--known-gap-threshold`, and `--roundtrip-threshold`.
+The harness uses a fresh Excel COM instance per chart case with activation retry/owned-PID cleanup,
+which avoids one dead Excel automation server cascading into unrelated chart failures.
+
 ## Verification Commands
 
 ```powershell
@@ -64,4 +105,4 @@ Result: 54/54 passed.
 dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.csproj
 ```
 
-Result: 28/28 chart cases passed functional interop.
+Result: 28/28 chart cases passed openability/export and the visual gate.
