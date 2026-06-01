@@ -92,6 +92,7 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
    - Full workbook view-mode polish beyond the current state/persistence baseline.
 
 2. **Charts, themes, and visual objects**
+   - Histogram bin configuration (Excel "Format Axis ▸ Bins": automatic / bin width / number of bins, plus overflow & underflow bins) — **modeled + rendered + native-persisted 2026-06-01** (pure `HistogramBinPlanner` with 10 unit tests, `ChartModel.HistogramBinning`, renderer delegates to the planner, native JSON round-trip). Follow-on: Format-Axis dialog UI to set bins and XLSX read/write of the bin settings.
    - Full chart format panes/dialog UX.
    - Richer combo-chart mixes and advanced chart families such as treemap, sunburst, histogram, Pareto, box-and-whisker, waterfall, funnel, map, and true 3D mesh-style surface polish; blank-display rendering now covers line/area plus blank-as-zero column/bar charts, 2D/3D surface charts have standard OOXML package parts with series axes and value-colored matrix rendering paths, 3D clustered column/bar, 3D line, 3D area, and 3D pie now have standard OOXML package/rendering paths, and stock chart parity now includes high-low-close, open-high-low-close, volume stock package/rendering paths, date-axis rendering, and up/down bar candlestick rendering but still needs deeper formatting preset polish.
    - Deeper OOXML effect semantics and broader chart-theme extraction.
@@ -113,7 +114,7 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
    - Data Validation range-picker with live modal collapse/selection — **done** (`DataValidationRangeSelectionRequest`, present in code).
    - Full Scenario PivotTable-style reports — **done** (Scenario Manager "Summary" report via `ScenarioManagerAction.Report` / `ScenarioCommands`).
    - Advanced Subtotal dialog (replace current subtotals, page break between groups, summary below data, multiple summary functions) — **done** (present in code).
-   - Remaining gap: **Forecast chart UX** rather than only the generated forecast-sheet formulas (`ForecastSheetDialog` generates the sheet; the forecast *chart* visualization is not yet built).
+   - Forecast chart visualization — **done** (`ForecastSheetCommand` adds a `ForecastChartPlanner`-planned line chart — Actual/Forecast plus dashed lower/upper confidence bounds — to the generated sheet; reverting the command removes the sheet and its chart. Covered by `ForecastSheetCommandTests.ForecastSheetCommand_InsertsForecastChartOnGeneratedSheetAndUndoRemovesIt` + `ForecastChartPlannerTests`).
 
 5. **Grouped-sheet propagation**
    - Extend grouped-sheet behavior for advanced object effects.
