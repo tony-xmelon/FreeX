@@ -3,11 +3,11 @@
 Generated: 2026-06-01
 Observed at: 2026-06-01T05:17:57+03:00
 Report scope: current consolidated documentation/status snapshot after June 1 integrations
-Mainline observed: branch-neutral `origin/main` snapshot; local integration main observed at `357ef17799`
+Mainline observed: branch-neutral `origin/main` snapshot; local integration main observed at `af0d4a6aa` before this documentation refresh
 
 ## Executive Summary
 
-FreeX remains in late-stage parity hardening. The broad app surface is functional and documented: formula coverage is **487/487 in-scope functions**, command and menu coverage remain **100% for in-scope rows**, shortcut parity remains **100% (87/87)**, and XLSX work is now focused on fidelity proof, package-preserving save validation, and real-world workbook breadth rather than first-pass support. The XLSX corpus currently has 175 workbook manifest rows.
+FreeX remains in late-stage parity hardening. The broad app surface is functional and documented: formula coverage is **487/487 in-scope functions**, command and menu coverage remain **100% for in-scope rows**, shortcut parity remains **100% (87/87)**, and XLSX work is now focused on fidelity proof, package-preserving save validation, and real-world workbook breadth rather than first-pass support. The XLSX corpus currently has 175 workbook manifest rows, including data-validation semantic XML proof and live web-query warning/retention coverage through connection metadata.
 
 Overall completion remains **95%** in [release/progress.json](../release/progress.json), which keeps tester builds in the `v0.8.<run>` stream. Overall completion estimate is now **95%**. The main remaining work is package-preserving XLSX validation, broader corpus proof, release signing/trust and human accessibility validation, localization breadth, keytip/visual polish, and measured performance hardening.
 
@@ -30,7 +30,7 @@ The project history metrics report now covers Git and provider-log activity from
 
 | Item | Status |
 | --- | --- |
-| Mainline | Branch-neutral `origin/main` snapshot remains the canonical comparison point; local integration main was observed at `357ef17799` for this refresh |
+| Mainline | Branch-neutral `origin/main` snapshot remains the canonical comparison point; local integration main was observed at `af0d4a6aa` before this documentation refresh |
 | Completion tracking | [release/progress.json](../release/progress.json) remains at `overallCompletion: 95` |
 | History metrics | [PROJECT_BUILD_HISTORY_METRICS.md](PROJECT_BUILD_HISTORY_METRICS.md) is refreshed through 2026-05-31 inclusive |
 | Branch posture | Multiple worker branches/worktrees are still registered for active or paused parallel implementation; this report does not treat worker-owned checkouts as mainline status |
@@ -47,7 +47,7 @@ The project history metrics report now covers Git and provider-log activity from
 | Keyboard shortcuts | **100% parity** (87/87), **0% partial** (0/87), **0 missing**. |
 | XLSX fidelity | 71 documented in-scope feature categories with at least partial support; corpus remains at 175 workbook manifest rows with generated/public/regression evidence and known-gap warning coverage. |
 | UI/dialog parity | Dialog message routing, access keys, default/cancel semantics, UIA metadata, keytips, ribbon layout, titlebar/QAT states, and sheet-tab chrome have broad automated coverage and continuing visual polish. |
-| Localization | `UiText`, `LocExtension`, neutral resources, Bulgarian satellite resources, startup UI culture, WPF language metadata, and localization guard tests are present. |
+| Localization | `UiText`, `LocExtension`, neutral resources, Bulgarian satellite resources, startup UI culture, WPF language metadata, localization guard tests, current-culture direct numeric entry, delimited numeric import, and Text to Columns numeric parsing are present. |
 | Release readiness | User guide, troubleshooting, legal/privacy notices, release checklist, diagnostics, crash analytics, and tester-release workflow docs are present; public-preview promotion still needs live validation evidence. |
 
 Phase 7D: Deeper color-scale XLSX edge semantics as new gaps are found.
@@ -74,6 +74,9 @@ Phase 7D: Deeper color-scale XLSX edge semantics as new gaps are found.
 
 7. **History metrics extended through May 31**
    - May 31 added 246 integrated commits, 258 changed files, +30,256 / -2,952 LoC, and 7,845,703,301 observed raw provider tokens.
+
+8. **Second-wave non-chart parity slices landed**
+   - Worksheet primary view-mode persistence, live web-query warning detection, data-validation XML semantic proof, AutoFilter color-menu availability, current-culture delimited import/Text to Columns numeric parsing, and grouped-sheet Selection Pane object propagation are integrated locally and reflected in the parity/backlog docs.
 
 ## Active Workstream Picture
 

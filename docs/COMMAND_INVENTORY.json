@@ -824,7 +824,7 @@
         {
           "name": "Selection Pane",
           "status": "Partial",
-          "notes": "Lists sheet objects with per-item visibility checkboxes, search/filter controls, access-keyed Show All / Hide All bulk controls, Bring Forward / Send Backward reorder buttons, same-kind drag reorder within the list, model-backed object renaming with undo plus Native JSON and XLSX `cNvPr` name persistence for supported drawing objects, and OK/Cancel; full Excel pane visuals remain partial"
+          "notes": "Lists sheet objects with per-item visibility checkboxes, search/filter controls, access-keyed Show All / Hide All bulk controls, Bring Forward / Send Backward reorder buttons, same-kind drag reorder within the list, model-backed object renaming with undo plus Native JSON and XLSX `cNvPr` name persistence for supported drawing objects, grouped-sheet propagation for supported picture/shape/text-box rename, visibility, and z-order edits, and OK/Cancel; full Excel pane visuals remain partial"
         }
       ]
     },
@@ -1017,7 +1017,7 @@
         {
           "name": "Get Data (CSV)",
           "status": "Implemented",
-          "notes": ""
+          "notes": "Delimited CSV/TSV import parses user-entered numbers with CurrentCulture first and invariant fallback while keeping file-format metadata invariant"
         },
         {
           "name": "Queries & Connections",
@@ -1037,7 +1037,7 @@
         {
           "name": "Filter (auto-filter with conditions)",
           "status": "Implemented",
-          "notes": ""
+          "notes": "AutoFilter dropdown exposes Filter by Color only when actual color choices exist"
         },
         {
           "name": "Advanced Filter",
@@ -1047,7 +1047,7 @@
         {
           "name": "Text to Columns",
           "status": "Implemented",
-          "notes": "Wizard exposes access-keyed source mode, delimiter, qualifier, destination, reference picker, and OK/Cancel controls"
+          "notes": "Wizard exposes access-keyed source mode, delimiter, qualifier, destination, reference picker, and OK/Cancel controls; General numeric conversion accepts CurrentCulture with invariant fallback and rejects non-finite values"
         },
         {
           "name": "Remove Duplicates",
@@ -2103,7 +2103,7 @@
         {
           "name": "Selection Pane",
           "status": "Partial",
-          "notes": "Lists sheet objects with per-item visibility checkboxes, search/filter controls, access-keyed Show All / Hide All bulk controls, Bring Forward / Send Backward reorder buttons, same-kind drag reorder within the list, model-backed object renaming with undo plus Native JSON and XLSX `cNvPr` name persistence for supported drawing objects, and OK/Cancel; full Excel pane visuals remain partial"
+          "notes": "Lists sheet objects with per-item visibility checkboxes, search/filter controls, access-keyed Show All / Hide All bulk controls, Bring Forward / Send Backward reorder buttons, same-kind drag reorder within the list, model-backed object renaming with undo plus Native JSON and XLSX `cNvPr` name persistence for supported drawing objects, grouped-sheet propagation for supported picture/shape/text-box rename, visibility, and z-order edits, and OK/Cancel; full Excel pane visuals remain partial"
         }
       ]
     },
@@ -2331,7 +2331,7 @@
         {
           "name": "Get Data (CSV)",
           "status": "Implemented",
-          "notes": ""
+          "notes": "Delimited CSV/TSV import parses user-entered numbers with CurrentCulture first and invariant fallback while keeping file-format metadata invariant"
         },
         {
           "name": "Queries & Connections",
@@ -2351,7 +2351,7 @@
         {
           "name": "Filter",
           "status": "Implemented",
-          "notes": ""
+          "notes": "AutoFilter dropdown exposes Filter by Color only when actual color choices exist"
         },
         {
           "name": "Advanced Filter",
@@ -2361,7 +2361,7 @@
         {
           "name": "Text to Columns",
           "status": "Implemented",
-          "notes": "Wizard exposes access-keyed source mode, delimiter, qualifier, destination, reference picker, and OK/Cancel controls"
+          "notes": "Wizard exposes access-keyed source mode, delimiter, qualifier, destination, reference picker, and OK/Cancel controls; General numeric conversion accepts CurrentCulture with invariant fallback and rejects non-finite values"
         },
         {
           "name": "Remove Duplicates",
