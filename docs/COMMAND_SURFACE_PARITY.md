@@ -425,7 +425,7 @@ workbook command behavior to track here.
 | Zoom | Implemented | 10-400% range |
 | Zoom to Selection | Implemented |  |
 | New Window | Implemented | Creates a secondary MainWindow over the shared workbook through WorkbookWindowRegistry |
-| Arrange All | Partial | Stores the workbook arrangement choice through an undoable command and native persistence; full Excel Arrange Windows tiling beyond View Side by Side remains partial |
+| Arrange All | Implemented | Stores the workbook arrangement choice through an undoable command/native persistence and applies live visible-window layouts for Tiled, Horizontal, Vertical, and Cascade through WorkbookWindowRegistry |
 | Hide Window | Implemented | Registry-backed command hides the current workbook window while keeping at least one visible window |
 | Unhide Window | Implemented | Registry-backed command restores the next hidden workbook window and reports when none are hidden |
 | View Side by Side | Implemented | Toggles paired workbook-window tiling through WorkbookWindowRegistry and SideBySideLayoutPlanner when a second visible window exists |
@@ -486,7 +486,7 @@ These visible workflows are command-based and undoable where applicable, but F4 
 | Data / What-If | Goal Seek, Scenario Manager add/edit/delete/report/list actions, Forecast Sheet | Depend on dialog choices, solver state, or scenario-management UI state; Scenario Manager Show is repeatable after the first explicit apply. |
 | Review | Protect Workbook, Allow Users to Edit Ranges | Password/protection decisions should be explicit. |
 | Formulas | Error Checking options, Ignore Error | Command target is dialog issue/global option, not selection. |
-| View / Window | Arrange Windows and context-dependent window commands | Targets live window state; Arrange All stores workbook arrangement while Side by Side handles the live paired layout. |
+| View / Window | Arrange Windows and context-dependent window commands | Targets live window state; Arrange All stores workbook arrangement and applies live visible-window layouts, while Side by Side handles paired tiling/sync state. |
 | Sheet Tabs | Delete, move, hide/unhide, duplicate, tab color | Targets a specific sheet tab; can become destructive after first run. |
 
 Protection workflows are source-guarded to stay outside the `ExecuteRepeatable`/`TryExecuteRepeatable` paths, preserving `F4` repeat without replaying password or structure-protection dialogs.

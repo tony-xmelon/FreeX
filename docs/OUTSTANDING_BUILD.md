@@ -15,7 +15,7 @@ Confirmed present in code and tests:
 - Formula reference rewriting for insert/delete/paste/autofill paths.
 - Autofill drag UI and `AutofillCommand`; Flash Fill command/service baseline.
 - Sort/filter, Advanced Filter copy-to replacement semantics, Text to Columns, Remove Duplicates, Data Validation, Consolidate, Goal Seek, Scenario Manager, Forecast Sheet, one- and two-variable Data Tables, Subtotal, grouping/outline.
-- Conditional formatting model/UI for cell-value, formula, top/bottom/above-average, color scales, icon sets, and advanced data-bar dialog options including min/max length, gradient, border, axis, and negative colors.
+- Conditional formatting model/UI for cell-value, formula, top/bottom/above-average, color scales, icon sets, and advanced data-bar dialog options including min/max length, gradient, border, axis, negative colors, and x14 data-bar explicit threshold serialization.
 - Page layout, page setup, print/export, custom views, workbook/theme commands, chart/object/theme baselines.
 - Slicer/timeline metadata, authored state, pane controls, cache relationships, native floating drawing-anchor retention, Insert commands, and connected PivotTable filtering are implemented.
 - PivotTable functional core is implemented, including creation, refresh, field layout/source/options changes, filtering/grouping/sorting, Show Values As, calculated fields/items, built-in and custom workbook-catalog value-field number formats, GETPIVOTDATA, Show Details, PivotChart sync, slicer/timeline integration, external/OLAP pivot-cache source metadata load/save, custom PivotStyle definition metadata load/save, and PivotChart chart-space design metadata round-trip for `pivotFmts`, external-data relationship pointers plus package relationship type/target/target-mode metadata, plot-area and legend manual layout metadata, 3D view metadata, date-system/language, color-map overrides, print settings, style ids, chart protection flags, rounded corners, auto-title-deleted state, hidden-row-data visibility, blank-display behavior, rendered data-table options, and data-label-over-maximum flags. PivotChart Options now edits field buttons, data-table/legend-key display, rounded corners, hidden-row data visibility, and blank-cell display mode. Remaining gaps are exact PivotStyle gallery UI/rendering semantics, richer PivotChart layout/design editing beyond these chart-space flags, and external/OLAP/data-model refresh or execution.
@@ -24,7 +24,7 @@ Confirmed present in code and tests:
 - Keyboard shortcuts at **100% parity (87/87)**; AutoFilter shortcut improvements in `DataFilterCommands` (PR #48).
 - All `MessageBox.Show` calls in dialog classes migrated to `IUserMessageService`/`DialogMessageHelper`; all dialog access keys and `IsDefault`/`IsCancel` states audited (PR #47).
 - XLSX corpus at **175 rows** (+31 new feature buckets); 3 per-feature XML structural comparisons; 6 round-trip bugs fixed (PR #46).
-- Localization foundation is now present in code and tests: `UiText`, `LocExtension`, neutral `Strings.resx`, full `Strings.bg-BG.resx` satellite coverage, startup UI-culture selection, WPF language metadata application, and resource/usage guard tests.
+- Localization foundation is now present in code and tests: `UiText`, `LocExtension`, neutral `Strings.resx`, full `Strings.bg-BG.resx` satellite coverage, startup UI-culture selection, WPF language metadata application, current-culture direct numeric cell entry with invariant fallback, and resource/usage guard tests.
 
 ## Highest Priority Outstanding Work
 
@@ -52,7 +52,7 @@ Confirmed present in code and tests:
 4. **Keytip overlay placement**
    - Continue UI automation coverage for the shortcut matrix and WPF key routing beyond the first process-scoped visible-control snapshot.
    - Improve keytip overlay placement toward Excel-perfect visual positioning. Control-type-aware placement landed 2026-05-31 (tab keytips anchor below the tab; command keytips bottom-center); remaining is finer pixel-perfect tuning.
-   - Extend nested submenu keytips beyond the current covered Conditional Formatting paths as new nested menus appear.
+   - Scoped nested submenu routing now strips active parent prefixes and has coverage beyond Conditional Formatting paths; continue adding coverage as new nested menus appear.
    - Keyboard shortcut parity is now **100% (87/87)** — keytip visual polish remains.
 
 5. **XLSX warning coverage as new gaps are found**
@@ -88,9 +88,9 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
 
 1. **View and window management**
    - New Window and Switch Windows are live through the registry-backed workbook-window slice.
-   - Hide Window, Unhide Window, View Side by Side, Synchronous Scrolling, and Reset Window Position are **done 2026-06-01** with dedicated handlers backed by `WorkbookWindowRegistry` visibility/side-by-side/sync-scroll state and the pure `WindowResetPositionPlanner` / `SideBySideLayoutPlanner` geometry helpers. Cross-window scroll mirroring is double-guarded against feedback loops. `Arrange All` remains partial: it stores the workbook arrangement choice, while full Excel-style automatic tiling for every arrangement is still pending beyond the live Side by Side path.
+   - Hide Window, Unhide Window, View Side by Side, Synchronous Scrolling, Reset Window Position, and Arrange All are **done 2026-06-01**. Arrange All stores the workbook arrangement choice and applies live visible-window layouts for Tiled, Horizontal, Vertical, and Cascade through `WorkbookWindowRegistry` / `ArrangeAllLayoutPlanner`; Side by Side uses `SideBySideLayoutPlanner`, and Reset uses `WindowResetPositionPlanner`. Cross-window scroll mirroring is double-guarded against feedback loops.
    - Fine split-pane scroll feel parity.
-   - Split-pane merged-cell edge cases across non-visible rows/columns.
+   - Split-pane merged-cell indexing now prunes regions outside queried pane row/column bounds before visible-row expansion; keep closing any newly discovered merged-cell edge cases.
    - Full workbook view-mode polish beyond the current state/persistence baseline.
 
 2. **Charts, themes, and visual objects**
@@ -107,6 +107,7 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
 3. **Conditional formatting**
    - Continue hardening advanced conditional-format semantics beyond current color-scale, data-bar, and icon-set model/UI/XLSX coverage.
    - Keep closing color-scale and data-bar XLSX/rendering edge semantics as new gaps are found.
+   - x14 data-bar explicit threshold serialization is **done 2026-06-01** for modeled `num`, `percent`, `percentile`, and `formula` cfvo values with `xm:f` children.
    - Advanced data bar options (border, axis display, negative fill/border colors) are now exposed in the dialog UI (PR #26).
    - CF rule manager has double-click-to-edit and Enter/Delete keyboard shortcuts matching Excel's rule manager UX (PR #27).
    - Per-threshold icon overrides for icon-set rules now fully implemented (model, XLSX adapter, viewport, dialog UI) - PR #29.
@@ -121,11 +122,12 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
 
 5. **Grouped-sheet propagation**
    - Extend grouped-sheet behavior for advanced object effects.
-   - Extend grouped-sheet behavior for supported advanced data commands where Excel applies actions across grouped sheets.
+   - Remove Duplicates, Subtotal, and Remove All Subtotals now propagate across visible grouped sheets with per-sheet remapped ranges; extend any remaining supported advanced data commands where Excel applies actions across grouped sheets as they are identified.
 
 6. **Localization and culture**
    - Foundation, neutral `en-US` resources, and full Bulgarian satellite resources are implemented.
-   - Remaining work is translator review, additional locales, broader core-message code boundaries, current-culture direct-entry/import audits, pseudo-localization layout smoke coverage, and release/package language metadata validation.
+   - Current-culture direct numeric cell entry with invariant fallback is implemented.
+   - Remaining work is translator review, additional locales, broader core-message code boundaries, current-culture import audits, pseudo-localization layout smoke coverage, and release/package language metadata validation.
 
 7. **Calculation performance architecture**
    - Recalculation is intentionally single-threaded today.
@@ -151,12 +153,12 @@ No local active workstream was found for the planned map-chart or multi-window w
 ### Parity Orchestrator
 
 - **Map Chart / advanced chart family lane:** define the map-chart model, Insert/Change Chart picker behavior, renderer, XLSX read/write support, and known-gap retention story. This can ride with the existing advanced chart family backlog for treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel/map/true 3D mesh.
-- **View multi-window lane:** **COMPLETE 2026-06-01 for the five formerly deferred commands.** New Window + Switch Windows plus Hide Window, Unhide Window, Reset Window Position, View Side by Side, and Synchronous Scrolling are all live (registry-backed visibility/pairing/sync-scroll state + `WindowResetPositionPlanner` / `SideBySideLayoutPlanner`). All five buttons are present in `MainWindow.xaml` with dedicated live handlers and focused tests; do not re-hide them. `Arrange All` remains partial until every Excel arrangement choice performs live tiling rather than only storing the workbook arrangement option.
+- **View multi-window lane:** **COMPLETE 2026-06-01.** New Window + Switch Windows plus Hide Window, Unhide Window, Reset Window Position, View Side by Side, Synchronous Scrolling, and Arrange All are all live (registry-backed visibility/pairing/sync-scroll/arrangement state + `WindowResetPositionPlanner` / `SideBySideLayoutPlanner` / `ArrangeAllLayoutPlanner`). The buttons are present in `MainWindow.xaml` with dedicated live handlers and focused tests; do not re-hide them.
 - **PivotTable ribbon-action lane:** completed in the Pivot contextual ribbon command breadth slice. PivotTable Name, PivotTable Options, Clear, Select, and Move PivotTable are routed from the Analyze tab with selected-PivotTable targeting, command/undo behavior where applicable, keytips, and focused source/planner/core command tests.
 
 ### Build Orchestrator
 
-- Keep excluded placeholders out of the ribbon by preserving source guards around `MainWindow.xaml` and adaptive group profiles. The formerly deferred `View ▸ Window` commands (New Window, Switch Windows, Hide, Unhide, Reset Window Position, View Side by Side, Synchronous Scrolling) have working handlers and focused tests; do not remove them. Keep `Arrange All` documented as partial until its non-side-by-side layouts perform live Excel-style tiling.
+- Keep excluded placeholders out of the ribbon by preserving source guards around `MainWindow.xaml` and adaptive group profiles. The formerly deferred `View ▸ Window` commands (New Window, Switch Windows, Hide, Unhide, Reset Window Position, View Side by Side, Synchronous Scrolling, Arrange All) have working handlers and focused tests; do not remove them.
 - When ribbon XAML or adaptive group changes land, include the focused Host tests that cover `InsertCommandSourceTests`, `HelpCommandSourceTests`, `RibbonTabParityTests`, and adaptive ribbon planner/engine behavior.
 - If a future lane reintroduces an excluded Microsoft integration, require a product-scope design document first rather than adding a disabled ribbon placeholder.
 
