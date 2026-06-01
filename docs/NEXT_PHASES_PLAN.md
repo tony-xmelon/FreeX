@@ -1,7 +1,7 @@
 # FreeX Next Development Phases
 
 **Last updated:** 2026-06-01
-**Current state:** Formula engine at 487/487 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (87/87), XLSX round-trip and corpus coverage at a 175-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, UIA accessibility peers, and the first localization foundation in place. The active focus is advanced chart/XLSX fidelity proof, package-preserving save validation, release packaging/trust validation, localization breadth, and the explicitly documented native-Excel pivot edge cases.
+**Current state:** Formula engine at 487/487 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (87/87), XLSX round-trip and corpus coverage at a 175-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, UIA accessibility peers, the first localization foundation, and a chart interop harness with a latest-complete 28/28 openability/export plus visual-gate pass. The active focus is advanced chart/XLSX fidelity proof, package-preserving save validation, release packaging/trust validation, localization breadth, performance hardening, and the explicitly documented native-Excel pivot edge cases.
 
 ---
 
@@ -101,6 +101,8 @@ Slicer and timeline metadata plus the worksheet-range PivotTable interaction lay
 - Hierarchy: treemap, sunburst
 - Modern: waterfall, funnel
 - Full chart format pane/dialog UX for all chart families
+
+June 1 status: `tools/FreeX.ChartInteropCompare` now provides repeatable Excel COM openability/export and visual-gate evidence. The latest complete run passed 28/28 chart cases, with current fixes for Pareto chartEx axis metadata, box-and-whisker chartEx metadata, waterfall chartEx XML and Set as Total UI, scatter connector defaults, classic chart default layout, and 3-D depth axis ids. Remaining work is per-family visual/layout polish, map-chart scope if productized, and keeping the chart gate green as writer changes continue.
 
 ### 7D: Conditional Formatting and Formatting Polish
 
