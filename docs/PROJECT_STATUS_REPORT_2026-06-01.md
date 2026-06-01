@@ -7,7 +7,7 @@ Mainline observed: `main` and `origin/main` at `a199df80f` after this documentat
 
 ## Executive Summary
 
-FreeX remains in late-stage parity hardening. The broad app surface is functional and documented: formula coverage is **487/487 in-scope functions**, command and menu coverage remain **100% for in-scope rows**, shortcut parity remains **100% (87/87)**, and XLSX work is now focused on fidelity proof, package-preserving save validation, and real-world workbook breadth rather than first-pass support.
+FreeX remains in late-stage parity hardening. The broad app surface is functional and documented: formula coverage is **487/487 in-scope functions**, command and menu coverage remain **100% for in-scope rows**, shortcut parity remains **100% (87/87)**, and XLSX work is now focused on fidelity proof, package-preserving save validation, and real-world workbook breadth rather than first-pass support. The XLSX corpus currently has 175 workbook manifest rows.
 
 Overall completion remains **95%** in [release/progress.json](../release/progress.json), which keeps tester builds in the `v0.8.<run>` stream. The main remaining work is package-preserving XLSX validation, broader corpus proof, release signing/trust and human accessibility validation, localization breadth, keytip/visual polish, and measured performance hardening.
 
@@ -78,7 +78,7 @@ Parallel implementation remains expected. Mainline is the integration target, wh
 
 See [OUTSTANDING_BUILD.md](OUTSTANDING_BUILD.md) for the source-of-truth backlog. The highest-priority open items are:
 
-1. XLSX corpus and fidelity proof, including broader public/private/regression workbook coverage and per-feature pass/fail publication.
+1. XLSX corpus and fidelity proof, including broader public/private/regression workbook coverage and per-feature pass/fail publication. Expand the 175-row corpus baseline as new fixtures are admitted.
 2. Package-preserving XLSX save validation, including desktop Excel open/save/reopen checks.
 3. Release documentation/packaging evidence: signing, installer trust validation, and live accessibility validation.
 4. Keytip overlay placement and visual polish.
