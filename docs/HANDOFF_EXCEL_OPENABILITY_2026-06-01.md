@@ -7,7 +7,7 @@ Keep this document as the compact current-state handoff for future chart/XLSX la
 ## Current status
 
 - **P0 Excel openability is resolved for the chart parity matrix.** The latest full harness run at
-  `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-threedcolumn-caveat-full-clean-r2`
+  `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-threedcolumn-caveat-merged-full-r2`
   passed 28/28 chart cases for FreeX renderer PNG output, FreeX-authored XLSX opened/exported by
   Excel, Excel-authored XLSX opened/exported by Excel, and Excel-authored XLSX loaded/saved by
   FreeX then reopened/exported by Excel.
@@ -73,7 +73,7 @@ Result: 6/6 passed.
 Full interop harness:
 
 ```powershell
-dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.csproj -- --out C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-threedcolumn-caveat-full-clean-r2
+dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.csproj -- --out C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-threedcolumn-caveat-merged-full-r2
 ```
 
 Result: 28/28 openability/export, 28/28 FreeX renderer PNG, 28/28 visual gate, 0 known-gap charts,

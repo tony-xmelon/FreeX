@@ -15,7 +15,7 @@ Compared 28 FreeX-renderable chart types against Microsoft Excel using a repeata
 
 Latest complete all-green full run:
 
-`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-threedcolumn-caveat-full-clean-r2`
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-threedcolumn-caveat-merged-full-r2`
 
 Final focused branch-head runs:
 
@@ -171,7 +171,7 @@ dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.c
 ```
 
 Result from the latest complete full run at
-`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-threedcolumn-caveat-full-clean-r2`:
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-threedcolumn-caveat-merged-full-r2`:
 28/28 chart cases passed openability/export and the visual gate, with 0 known-gap charts,
 0 known-gap allowances, and 28/28 byte-identical Excel-native/FreeX-round-trip packages. Later
 environment/COM diagnostics, if seen, are treated as automation issues unless reproduced in the
