@@ -30,7 +30,7 @@ Use these files as the current documentation set. Point-in-time reports are snap
 - [COMMAND_ICON_REVIEW_2026-05-29.md](COMMAND_ICON_REVIEW_2026-05-29.md) - prior SVG command-icon audit and proposed next icon improvements.
 - [SHORTCUT_PARITY_MATRIX.md](SHORTCUT_PARITY_MATRIX.md) - keyboard shortcut and keytip parity tracking.
 - [FIDELITY_CONTRACT.md](FIDELITY_CONTRACT.md) - supported, partial, and excluded XLSX round-trip behavior.
-- [CHARTS_EXCEL_FREEX_COMPARISON_2026-06-01.md](CHARTS_EXCEL_FREEX_COMPARISON_2026-06-01.md) - current chart interop evidence, including the 28/28 latest-complete Excel openability/export and visual-gate pass plus the non-blocking `ThreeDColumn` raster/export caveat.
+- [CHARTS_EXCEL_FREEX_COMPARISON_2026-06-01.md](CHARTS_EXCEL_FREEX_COMPARISON_2026-06-01.md) - current chart interop evidence, including the 28/28 latest-complete Excel openability/export and visual-gate pass, 0 known-gap allowances, and the byte-identical package guard for repeated Excel PNG export variance.
 - [FUNCTION_PARITY.md](FUNCTION_PARITY.md) - formula function coverage and hardening notes.
 - [XLSX_CORPUS_REPORT.md](XLSX_CORPUS_REPORT.md) - current executable corpus status.
 - [XLSX_TEST_CORPUS_PLAN.md](XLSX_TEST_CORPUS_PLAN.md) - planned corpus shape and reporting rules.
