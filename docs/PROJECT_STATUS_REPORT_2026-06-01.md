@@ -69,7 +69,10 @@ Phase 7D: Deeper color-scale XLSX edge semantics as new gaps are found.
 5. **XLSX metadata and performance slices continued into June 1**
    - The current mainline includes batch XLSX workbook metadata save work, quick-analysis preview write avoidance, sparkline layout streaming, and selection-refresh/rendering performance updates.
 
-6. **History metrics extended through May 31**
+6. **Resize-preview blocker stale-cleared**
+   - The previously listed `MainWindowMouseResizeTests` resize-preview blocker is no longer open: targeted Release verification on `main` at `3ddbbebb3` passed 8/8.
+
+7. **History metrics extended through May 31**
    - May 31 added 246 integrated commits, 258 changed files, +30,256 / -2,952 LoC, and 7,845,703,301 observed raw provider tokens.
 
 ## Active Workstream Picture
