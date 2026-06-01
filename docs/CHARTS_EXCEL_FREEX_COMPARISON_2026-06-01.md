@@ -15,7 +15,7 @@ Compared 28 FreeX-renderable chart types against Microsoft Excel using a repeata
 
 Latest complete all-green full run:
 
-`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-full-after-sizing-normalization`
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-main-full-known-gap-metadata-clean`
 
 Final focused branch-head runs:
 
@@ -28,6 +28,10 @@ Final focused branch-head runs:
 `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-waterfall-chartex-worker`
 
 `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-chartex-native-style-201-known-gap-clean`
+
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-classic-stacked-defaults-post-rebase`
+
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-main-full-after-stacked-chartex-renderer`
 
 `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-sizing-probe-classic`
 
@@ -78,8 +82,8 @@ latest complete full run, every chart passed openability and the visual gate:
 | Openability/export | 28/28 |
 | FreeX renderer PNG | 28/28 |
 | Visual gate | 28/28 |
-| Known visual gap charts tracked | 11 |
-| Known-gap threshold allowances used | 2 |
+| Known visual gap charts tracked | 1 |
+| Known-gap threshold allowances used | 1 |
 
 After the chartEx style sidecar was aligned to Excel's native `id="201"` profile, the focused
 chartEx run at `20260601-chartex-native-style-201-known-gap-clean` passed 7/7 openability/export,
@@ -91,14 +95,13 @@ The visual gate distinguishes openability failures from visual mismatches in `ch
 
 Known-gap allowances used in the latest complete full run:
 
-- `PercentStackedColumn`: native-vs-FreeX hash distance was 99, allowed under the known-gap threshold of 128.
 - `ThreeDColumn`: Excel-native -> FreeX -> Excel round-trip hash distance was 6, allowed under the 3-D known-gap round-trip threshold of 12.
 
 Per-family visual summary from the latest complete full run:
 
 | Family | Charts | Openability pass | Visual pass | Known-gap allowance | Visual fail | Max native-vs-FreeX hash | Threshold |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| classic | 21 | 21 | 19 | 2 | 0 | 99 | 96 |
+| classic | 21 | 21 | 20 | 1 | 0 | 86 | 96 |
 | chartEx | 7 | 7 | 7 | 0 | 0 | 54 | 72 |
 
 ## Fixes Made From The Comparison
@@ -111,6 +114,8 @@ Per-family visual summary from the latest complete full run:
 - `Waterfall` chartEx now writes Excel-native connector-line visibility and chartEx axes alongside subtotal metadata, and the app now exposes a tested Set as Total context-menu path for waterfall points.
 - ChartEx package sidecars now use Excel's native style profile `id="201"` for all supported chartEx types while preserving the Excel-native color style `id="10"` sequence; the harness no longer tracks Waterfall as a chartEx known visual gap.
 - Stacked column/bar and 3-D families now emit closer Excel-native default layout metadata, including stacked gap/overlap defaults, 3-D view/wall defaults, and 3-D chart axis defaults.
+- Classic stacked and percent-stacked column/bar defaults now match Excel closely enough to run without known-gap allowances; the focused stacked run passed 4/4 openability/export and visual gate with 0 known gaps.
+- FreeX renderer percent-stacked column/bar axes now use Excel-compatible bounds for positive-only, mixed-sign, and negative-only data.
 - The interop harness now converts FreeX pixel fixture sizes to Excel COM points when creating Excel-native charts, so visual hashes compare similarly sized exports instead of point-vs-pixel artifacts.
 - The FreeX Pareto renderer now aggregates repeated categories before sorting and formats the right axis as percentages.
 
@@ -118,7 +123,7 @@ Per-family visual summary from the latest complete full run:
 
 These do not block XLSX open/load/save interop, but they are visible parity work:
 
-- FreeX-authored stacked column/bar and several 3-D families are structurally valid but differ from Excel-native default styling/layout.
+- `ThreeDColumn` still has minor Excel-native -> FreeX -> Excel round-trip chart-export raster variance: the latest full run measured round-trip hash distance 6 against the strict threshold 4, allowed under the dedicated 3-D column threshold 12.
 - FreeX renderer visuals intentionally differ from Excel-native rendering because FreeX uses the OxyPlot/WPF renderer path; this pass treats it as a separate visual surface, not a pixel-parity target.
 
 ## Harness Notes
@@ -146,13 +151,18 @@ dotnet test tests\FreeX.Core.IO.Tests\FreeX.Core.IO.Tests.csproj --filter "XlsxC
 
 Result: 78/78 passed.
 
+Latest rerun after chartEx style, 3-D axis, classic stacked, and percent-stacked renderer fixes:
+79/79 passed.
+
 ```powershell
 dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.csproj
 ```
 
-Result from the latest complete full run: 28/28 chart cases passed openability/export and the
-visual gate. Later repeated Excel COM diagnostics showed RPC/open failures; these are reported in
-the `OpenabilityError`/`FailureCategory=openability` columns, not as visual mismatches.
+Result from the latest complete full run at
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-main-full-known-gap-metadata-clean`:
+28/28 chart cases passed openability/export and the visual gate, with only the `ThreeDColumn`
+round-trip allowance used. Later repeated Excel COM diagnostics showed RPC/open failures; these are
+reported in the `OpenabilityError`/`FailureCategory=openability` columns, not as visual mismatches.
 
 ```powershell
 dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.csproj -- --family chartEx --out C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-chartex-native-style-201-known-gap-clean
