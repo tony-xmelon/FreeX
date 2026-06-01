@@ -1,15 +1,15 @@
 # FreeX Project Status Report
 
 Generated: 2026-06-01
-Observed at: 2026-06-01T00:20:00+03:00
-Report scope: current consolidated documentation/status snapshot after May 31 integrations
-Mainline observed: `main` and `origin/main` at `a199df80f` after this documentation refresh
+Observed at: 2026-06-01T03:05:22+03:00
+Report scope: current consolidated documentation/status snapshot after June 1 integrations
+Mainline observed: branch-neutral `origin/main` snapshot; local integration main observed at `59dce6bc5`
 
 ## Executive Summary
 
 FreeX remains in late-stage parity hardening. The broad app surface is functional and documented: formula coverage is **487/487 in-scope functions**, command and menu coverage remain **100% for in-scope rows**, shortcut parity remains **100% (87/87)**, and XLSX work is now focused on fidelity proof, package-preserving save validation, and real-world workbook breadth rather than first-pass support.
 
-Overall completion remains **95%** in [release/progress.json](../release/progress.json), which keeps tester builds in the `v0.8.<run>` stream. The main remaining work is package-preserving XLSX validation, broader corpus proof, release signing/trust and human accessibility validation, localization breadth, keytip/visual polish, and measured performance hardening.
+Overall completion remains **95%** in [release/progress.json](../release/progress.json), which keeps tester builds in the `v0.8.<run>` stream. Overall completion estimate is now **95%**. The main remaining work is package-preserving XLSX validation, broader corpus proof, release signing/trust and human accessibility validation, localization breadth, keytip/visual polish, and measured performance hardening.
 
 The project history metrics report now covers Git and provider-log activity from 2026-05-12 through 2026-05-31 inclusive. Through May 31, the daily churn table records **11,780 commits**, **14,464 changed-file/day entries**, **+1,429,132 / -922,973 LoC**, and local provider logs attribute **116,943,364,224 observed raw tokens** across OpenAI/Codex and Anthropic/Claude rows.
 
@@ -17,20 +17,20 @@ The project history metrics report now covers Git and provider-log activity from
 
 | Metric | Count |
 | --- | ---: |
-| Tracked files | 2,168 |
-| C# source files under `src/` | 1,004 |
-| C# test files under `tests/` | 508 |
+| Tracked files | 2,178 |
+| C# source files under `src/` | 1,010 |
+| C# test files under `tests/` | 512 |
 | Markdown docs under `docs/` | 243 |
-| Current C# source LOC | 192,737 |
-| Current C# test LOC | 195,772 |
-| Current XAML LOC | 8,232 |
+| Current C# source LOC | 193,709 |
+| Current C# test LOC | 197,488 |
+| Current XAML LOC | 8,256 |
 | XLSX corpus manifest rows | 175 |
 
 ## Current Repository State
 
 | Item | Status |
 | --- | --- |
-| Mainline | `main` is clean and synchronized with `origin/main` at `a199df80f` after this documentation refresh |
+| Mainline | Branch-neutral `origin/main` snapshot remains the canonical comparison point; local integration main was observed at `59dce6bc5` for this refresh |
 | Completion tracking | [release/progress.json](../release/progress.json) remains at `overallCompletion: 95` |
 | History metrics | [PROJECT_BUILD_HISTORY_METRICS.md](PROJECT_BUILD_HISTORY_METRICS.md) is refreshed through 2026-05-31 inclusive |
 | Branch posture | Multiple worker branches/worktrees are still registered for active or paused parallel implementation; this report does not treat worker-owned checkouts as mainline status |
@@ -49,6 +49,8 @@ The project history metrics report now covers Git and provider-log activity from
 | UI/dialog parity | Dialog message routing, access keys, default/cancel semantics, UIA metadata, keytips, ribbon layout, titlebar/QAT states, and sheet-tab chrome have broad automated coverage and continuing visual polish. |
 | Localization | `UiText`, `LocExtension`, neutral resources, Bulgarian satellite resources, startup UI culture, WPF language metadata, and localization guard tests are present. |
 | Release readiness | User guide, troubleshooting, legal/privacy notices, release checklist, diagnostics, crash analytics, and tester-release workflow docs are present; public-preview promotion still needs live validation evidence. |
+
+Phase 7D: Deeper color-scale XLSX edge semantics as new gaps are found.
 
 ## Recent Highlights Since The May 29 Snapshot
 
@@ -78,11 +80,15 @@ Parallel implementation remains expected. Mainline is the integration target, wh
 
 See [OUTSTANDING_BUILD.md](OUTSTANDING_BUILD.md) for the source-of-truth backlog. The highest-priority open items are:
 
-1. XLSX corpus and fidelity proof, including broader public/private/regression workbook coverage and per-feature pass/fail publication.
-2. Package-preserving XLSX save validation, including desktop Excel open/save/reopen checks.
-3. Release documentation/packaging evidence: signing, installer trust validation, and live accessibility validation.
-4. Keytip overlay placement and visual polish.
-5. Localization breadth: translator review, additional locales, pseudo-localization smoke coverage, and culture-sensitive input/display audits.
-6. XLSX warning coverage as new unsupported package parts or edge cases are found.
+1. **XLSX corpus and fidelity proof**
+   - Broader public/private/regression workbook coverage and per-feature pass/fail publication.
+2. **Package-preserving XLSX save path**
+   - Desktop Excel open/save/reopen checks remain release-critical validation.
+3. **Release documentation and packaging**
+   - Signing, installer trust validation, and live accessibility validation remain release-gate work.
+4. **Keytip overlay placement**
+   - Continue visual-placement polish beyond the current automated key routing and UIA coverage.
+5. **XLSX warning coverage as new gaps are found**
+   - Keep unsupported-feature detection aligned with newly discovered OOXML package parts.
 
 Current planning, parity, and release-readiness sources: [OUTSTANDING_BUILD.md](OUTSTANDING_BUILD.md), [NEXT_PHASES_PLAN.md](NEXT_PHASES_PLAN.md), [COMMAND_SURFACE_PARITY.md](COMMAND_SURFACE_PARITY.md), [MENU_TOOLBAR_PARITY.md](MENU_TOOLBAR_PARITY.md), [SHORTCUT_PARITY_MATRIX.md](SHORTCUT_PARITY_MATRIX.md), [FUNCTION_PARITY.md](FUNCTION_PARITY.md), [FIDELITY_CONTRACT.md](FIDELITY_CONTRACT.md), [XLSX_CORPUS_REPORT.md](XLSX_CORPUS_REPORT.md), [LOCALIZATION_PLAN.md](LOCALIZATION_PLAN.md), [TEST_DISTRIBUTION_PLAN.md](TEST_DISTRIBUTION_PLAN.md), and [PERF_BASELINE.md](PERF_BASELINE.md).
