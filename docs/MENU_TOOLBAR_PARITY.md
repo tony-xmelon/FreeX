@@ -377,7 +377,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Zoom to Selection | Implemented |  |
 | 100% Zoom | Implemented |  |
 | New Window | Implemented | Creates a secondary MainWindow over the shared workbook through WorkbookWindowRegistry |
-| Arrange All | Partial | Stores the workbook arrangement choice through an undoable command and marks the selected menu option; full Excel Arrange Windows tiling beyond View Side by Side remains partial |
+| Arrange All | Implemented | Stores the workbook arrangement choice, marks the selected menu option, and applies live visible-window layouts for Tiled, Horizontal, Vertical, and Cascade through WorkbookWindowRegistry |
 | Hide Window | Implemented | Registry-backed command hides the current workbook window while keeping at least one visible window |
 | Unhide Window | Implemented | Registry-backed command restores the next hidden workbook window and reports when none are hidden |
 | View Side by Side | Implemented | Toggles paired workbook-window tiling through WorkbookWindowRegistry and SideBySideLayoutPlanner when a second visible window exists |
