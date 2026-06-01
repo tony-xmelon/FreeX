@@ -69,9 +69,9 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
 - **(P3, security hygiene) Done** — All URL shell launches now go through one guarded `ExternalUrlLauncher` (scheme allowlist enforced); the previously-unguarded help/feedback `Process.Start` and the hyperlink path both route through it. 5 new tests.
 - **(P3, reliability) Done** — `RecentFilesStore` now saves via `AtomicFileWriter` (temp-then-rename), so an interrupted write can no longer corrupt `recent.json`. 2 new tests.
 
-### Newly discovered regression (2026-06-01) — needs owner
+### Stale-cleared regression report (2026-06-01)
 
-- **(P2, regression) — open** Drag row/column **resize preview now refreshes the viewport once** before commit, violating the "preview without mutating the sheet or refreshing the viewport until commit" contract. `MainWindowMouseResizeTests.DragRowResize_PreviewsWithoutRefreshingViewportOrMutatingSheetUntilCommit` and `DragColumnResize_...` both fail with `ViewportCallCount` = 1 (expected 0). **Confirmed pre-existing on clean `origin/main`** (reproduced after stashing the multi-window branch), so it was introduced by a separate grid/viewport workstream, not by multi-window. Owner: the grid mouse-resize / viewport lane. Repro: run those two tests (`tests/FreeX.App.Host.Tests/MainWindowMouseResizeTests.cs:59,83`). Likely cause: a preview-path change that now calls `IViewportService.GetViewport` (or `UpdateViewport`) during `OnColumnResizing`/`OnRowResizing` instead of only at commit.
+- **(P2, regression) — stale-cleared** The previously documented drag row/column resize-preview blocker is no longer open. Targeted Release verification on `main` at `3ddbbebb3` passed 8/8 for `MainWindowMouseResizeTests`: `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --configuration Release --no-restore --no-build --filter "FullyQualifiedName~MainWindowMouseResizeTests"`. Keep the preview contract covered by those tests: preview drag should not mutate sheet dimensions or refresh the viewport until commit.
 
 ### Remaining (deferred with rationale)
 
