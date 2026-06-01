@@ -233,10 +233,13 @@ Home -> Format Painter (paint-brush icon) copies the format of the selected cell
 | Radar | Radar, Radar with Markers, Filled Radar |
 | Stock | High-Low-Close, Open-High-Low-Close, Volume Stock |
 | Surface | 2-D Surface, 3-D Surface (matrix rendering) |
+| Statistical / chartEx | Histogram, Pareto, Box-and-Whisker |
+| Hierarchy / chartEx | Treemap, Sunburst |
+| Waterfall / Funnel | Waterfall, Funnel |
 | Combo | Mixed series using secondary axis |
 | Area | Area, Stacked Area |
 
-Charts not yet supported (opened from XLSX files but not authorable): Treemap, Sunburst, Histogram, Pareto, Box-and-Whisker, Waterfall, Funnel, Filled Map.
+Charts not yet supported for authoring/rendering: Filled Map. True 3-D surface mesh rendering remains partial; FreeX renders 3-D surface charts as a value-colored matrix.
 
 ### Chart Tab (Context)
 

@@ -197,10 +197,10 @@ All require LAMBDA to be implemented first.
 - Insert Slicer / Insert Timeline commands
 
 ### E5: Advanced Chart Families
-Priority order:
-1. **Radar** — already saves/loads; add WPF renderer using OxyPlot RadarSeries
-2. **Stock (OHLC/candlestick)** — already saves/loads; add CandleStickSeries renderer
-3. **Surface / 3D variants** — low priority; defer beyond these two
+Current status:
+1. **Radar, stock, surface/3-D, and chartEx families** have model/render/XLSX paths and are covered by the 28-case chart interop harness.
+2. **chartEx parity** passed 7/7 openability/export and visual gate for treemap, sunburst, histogram, Pareto, box-and-whisker, waterfall, and funnel.
+3. **Remaining work** is Map/true 3D mesh scope if productized, richer chart formatting/layout polish, and keeping the 28-case interop gate green.
 
 ### E6: Object Drag Handles and Crop
 - Interactive resize/move handles on selected pictures, shapes, and text boxes

@@ -27,7 +27,7 @@ Coverage is computed as **(Implemented + Partial) / (Implemented + Partial + Not
 | File/Backstage | 8 | 4 | 0 | 0 | 3 | **100%** |
 | QAT | 3 | 1 | 0 | 0 | 0 | **100%** |
 | Home | 48 | 8 | 0 | 0 | 1 | **100%** |
-| Insert | 10 | 3 | 0 | 1 | 9 | **100%** |
+| Insert | 10 | 4 | 0 | 0 | 9 | **100%** |
 | Draw | 8 | 3 | 0 | 1 | 1 | **100%** |
 | Page Layout | 16 | 1 | 0 | 0 | 0 | **100%** |
 | Formulas | 16 | 1 | 0 | 0 | 0 | **100%** |
@@ -36,7 +36,7 @@ Coverage is computed as **(Implemented + Partial) / (Implemented + Partial + Not
 | View | 20 | 1 | 0 | 0 | 0 | **100%** |
 | Sheet Tabs | 9 | 0 | 0 | 0 | 0 | **100%** |
 | Help | 6 | 0 | 0 | 0 | 3 | **100%** |
-| **TOTAL** | **172** | **25** | **0** | **2** | **25** | **100%** |
+| **TOTAL** | **172** | **26** | **0** | **1** | **25** | **100%** |
 <!-- command-inventory:coverage-summary:end -->
 
 ---
@@ -61,7 +61,7 @@ The earlier Window Management row was completed on 2026-06-01; the live View > W
 | Area | Excel Feature | FreeX Decision |
 |---|---|---|
 | Theme System | Themes, theme colors, theme fonts, theme effects | Partial; theme part load/save now preserves loaded `fmtScheme` OOXML, while full effect interpretation remains deferred |
-| Advanced Chart Families | Treemap, sunburst, histogram, Pareto, box-and-whisker, waterfall, funnel, map, true 3D surface mesh | Deferred - recognized from XLSX where detected and blocked from broken authoring/rendering; 2D/3D surface charts now have package and matrix-rendering paths, while mixed drawing-part retention for unsupported chart families remains partial until per-family data model and package writer support exist |
+| Advanced Chart Families | Treemap, sunburst, histogram, Pareto, box-and-whisker, waterfall, funnel, map, true 3D surface mesh | Partial - 28 renderable chart types now have Excel-openability/export and visual-gate evidence, including chartEx treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel and 2D/3D surface package/rendering paths; Map and true 3D mesh-style surface remain deferred, and unsupported/unparseable chart package parts stay in the retained-opaque warning path |
 
 ## Commands Parity Closeout Scope
 
@@ -69,9 +69,11 @@ The May 2026 closeout targets the remaining Partial rows where FreeX already has
 paste matrix completion, persistent Format Painter, alignment and shrink-to-fit style state,
 AutoFit measurement, Format Cells dialog coverage, Flash Fill inference, and PDF/XPS export options.
 
-Advanced chart families stay Deferred until each family has a data model and renderer. Surface charts now have a modeled package/rendering path; FreeX detects other common
-unsupported chart package families and presents disabled or clearly-labeled commands rather than claiming authored
-rendering support. Lossless mixed drawing-part retention remains a package-writer limitation for this closeout.
+Advanced chart families moved from broad deferral to evidence-backed partial support for the 28 renderable-chart
+matrix. FreeX now has package/rendering paths and real Excel interop evidence for chartEx treemap, sunburst,
+histogram, Pareto, box-and-whisker, waterfall, and funnel, plus the classic/stock/radar/surface/3-D families in the
+current harness. Map charts remain deferred, and unsupported or unparseable chart package families continue to produce
+retained-opaque warnings instead of silent loss.
 Ribbon overflow now keeps collapsed group menus closer to Excel by preserving cloned menu checked state,
 input gesture text, and dynamic menu-open behavior instead of reducing collapsed groups to static labels.
 PDF export now carries printed worksheet hyperlink metadata into `/Link` annotations for external web/file/email targets
@@ -223,7 +225,7 @@ worksheet coordinates.
 
 ## Insert Tab
 
-> **Tab coverage: 10 Implemented + 3 Partial = 100% of 13 in-scope commands (1 Deferred, 9 Excluded)**
+> **Tab coverage: 10 Implemented + 4 Partial = 100% of 14 in-scope commands (9 Excluded)**
 
 <!-- command-inventory:command-surface:insert:start -->
 | Command | Status | Notes |
@@ -241,7 +243,7 @@ worksheet coordinates.
 | Screenshot | Excluded | OS-level feature (Win+Shift+S) |
 | Chart (column/bar/line/area/pie/doughnut/scatter/bubble) | Implemented | Select Data Source, Move Chart, Insert Chart, and chart format dialogs expose keyboard access keys for modeled fields and option controls |
 | Chart (stock/radar) | Implemented | Model, ribbon insertion, renderer, and XLSX read/write paths implemented |
-| Chart (treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel/true 3D surface mesh) | Deferred | Surface has package, matrix-rendering, and Insert/Change Chart picker support; remaining advanced families are recognized from XLSX where detected and blocked from broken authoring/rendering, with lossless mixed drawing-part retention partial until per-family package writer support exists. Map Chart remains recognized for XLSX preservation but is hidden from the Insert ribbon until authoring/rendering is implemented. |
+| Chart (treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel/true 3D surface mesh) | Partial | Treemap, sunburst, histogram, Pareto, box-and-whisker, waterfall, and funnel now have model/render/XLSX paths and are covered by the 28-case chart interop harness; chartEx passed 7/7 openability/export and visual gate in the final 2026-06-01 evidence. Surface has package, matrix-rendering, and Insert/Change Chart picker support. Map Chart and true 3D mesh-style surface remain deferred/hidden until authoring/rendering scope is productized. |
 | Recommended Charts | Excluded | Excel-equivalent recommendations require proprietary Microsoft-style data-pattern heuristics; normal chart authoring remains implemented/partial by chart family |
 | Sparklines (line/column/win-loss) | Implemented |  |
 | Text Box | Implemented |  |

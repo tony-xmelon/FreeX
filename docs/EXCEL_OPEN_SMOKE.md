@@ -31,9 +31,10 @@ Operational details:
 - The tool tracks the Excel PID it creates and kills orphan `EXCEL` processes that were not present
   before the smoke run.
 
-Expected use for chartEx work:
+Expected use for chart maintenance:
 
-1. Integrate the chartEx package-wiring change.
-2. Run the generated-fixture command above.
-3. Treat exit code `0` as "real Excel opened every workbook"; any non-zero exit means the generated
-   files still need package repair before handoff.
+1. Use this tool for focused real-Excel smoke checks when touching chart package writing.
+2. Treat the full chart parity source of truth as
+   `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-final-current-main-full-chart-parity`.
+3. Treat exit code `0` as "real Excel opened every staged workbook"; any non-zero exit needs triage
+   before handoff, with new failures compared against the 28-case chart interop harness.
