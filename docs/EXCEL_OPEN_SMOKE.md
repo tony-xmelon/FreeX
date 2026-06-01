@@ -79,7 +79,7 @@ Expected use for chart maintenance:
 
 1. Use this tool for focused real-Excel smoke checks when touching chart package writing.
 2. Treat the full chart parity source of truth as
-   `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-final-current-main-full-chart-parity`.
+   `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-threedcolumn-caveat-final-main-sync-full`.
 3. Treat exit code `0` as "real Excel opened every staged workbook"; any non-zero exit needs triage
    before handoff, with new failures compared against the 28-case chart interop harness.
 
