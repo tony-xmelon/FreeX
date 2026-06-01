@@ -3,7 +3,7 @@
 Generated: 2026-06-01
 Observed at: 2026-06-01T20:54:23+03:00
 Report scope: current consolidated documentation/status snapshot after the June 1 evening integrations
-Mainline observed: local integration `main` and `origin/main` both at `97f6af3c3` before this documentation refresh
+Mainline observed: branch-neutral `origin/main` snapshot; worker-specific branch and worktree names are intentionally omitted from this status report
 
 ## Executive Summary
 
