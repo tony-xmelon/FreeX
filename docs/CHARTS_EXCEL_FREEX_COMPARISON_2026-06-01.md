@@ -23,6 +23,8 @@ Final focused branch-head runs:
 
 `C:\Users\anton\freex-xlsx-verify\chart-interop\worker6-pareto-final-20260601-1920`
 
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-boxwhisker-chartex-parent`
+
 Late full-run diagnostics after repeated Excel automation:
 
 `C:\Users\anton\freex-xlsx-verify\chart-interop\worker6-full-postmerge-20260601-1855`
@@ -46,7 +48,7 @@ Key artifacts:
 
 The harness change is active and separates openability/export failures from visual mismatches. The
 latest complete all-green full run passed all 28 chart cases. Final focused branch-head reruns for
-`Pareto` and `ThreeDBar` also passed openability/export and the visual gate.
+`Pareto`, `ThreeDBar`, and `BoxAndWhisker` also passed openability/export and the visual gate.
 
 After many repeated Excel COM runs in this session, later full/focused diagnostics started returning
 Excel automation RPC/open failures even for basic `Column`. The harness correctly reports these as
@@ -91,6 +93,7 @@ Per-family visual summary from the latest complete full run:
 - `Histogram` chartEx output now writes Excel's default `<cx:binning intervalClosed="r" />` layout while still omitting custom `cx:binCount` and `cx:binSize` values that were proven to make Excel reject the workbook.
 - `Scatter` classic XLSX now suppresses default connector lines, matching Excel's marker-only scatter default unless a series explicitly requests line styling or smoothing.
 - `Pareto` chartEx now writes aggregation, an owner-linked Pareto line, and plot-area percentage axis metadata while omitting series-level `cx:axisId` values that made Excel reject the workbook.
+- `BoxAndWhisker` chartEx now writes per-series title metadata, stable series `uniqueId`s, exclusive-quartile statistics layout metadata, and Excel-native chartEx axes for multi-series sample data.
 - Stacked column/bar and 3-D families now emit closer Excel-native default layout metadata, including stacked gap/overlap defaults, 3-D view/wall defaults, and 3-D chart axis defaults.
 - The FreeX Pareto renderer now aggregates repeated categories before sorting and formats the right axis as percentages.
 
@@ -99,7 +102,6 @@ Per-family visual summary from the latest complete full run:
 These do not block XLSX open/load/save interop, but they are visible parity work:
 
 - FreeX-authored stacked column/bar and several 3-D families are structurally valid but differ from Excel-native default styling/layout.
-- FreeX-authored `BoxAndWhisker` is visible but not Excel-equivalent for multi-column sample data; Excel-native uses per-series statistics layout metadata.
 - FreeX-authored `Waterfall` is visible and openable but still has connector/subtotal styling differences from Excel-native output.
 - FreeX renderer visuals intentionally differ from Excel-native rendering because FreeX uses the OxyPlot/WPF renderer path; this pass treats it as a separate visual surface, not a pixel-parity target.
 
