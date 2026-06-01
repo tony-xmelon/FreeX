@@ -19,7 +19,7 @@ Use these files as the current documentation set. Point-in-time reports are snap
 ## Start Here
 
 - [OUTSTANDING_BUILD.md](OUTSTANDING_BUILD.md) - source-of-truth backlog for outstanding build work.
-- [PROJECT_STATUS_REPORT_2026-06-01.md](PROJECT_STATUS_REPORT_2026-06-01.md) - current project status snapshot; current `overallCompletion` remains 95 while parity hardening, release validation, localization breadth, and XLSX fidelity proof continue.
+- [PROJECT_STATUS_REPORT_2026-06-01.md](PROJECT_STATUS_REPORT_2026-06-01.md) - current project status snapshot; current `overallCompletion` remains 95 while parity hardening, release validation, localization review/package metadata, and XLSX fidelity proof continue.
 - [NEXT_PHASES_PLAN.md](NEXT_PHASES_PLAN.md) - next development phases and priority sequencing.
 
 ## Parity And Fidelity
