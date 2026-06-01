@@ -11,7 +11,7 @@
 | File/Backstage | 8 | 4 | 0 | 0 | 3 | **100%** |
 | QAT | 3 | 1 | 0 | 0 | 0 | **100%** |
 | Home | 48 | 8 | 0 | 0 | 1 | **100%** |
-| Insert | 10 | 3 | 0 | 1 | 9 | **100%** |
+| Insert | 10 | 4 | 0 | 0 | 9 | **100%** |
 | Draw | 9 | 3 | 0 | 1 | 1 | **100%** |
 | Page Layout | 16 | 1 | 0 | 0 | 0 | **100%** |
 | Formulas | 16 | 1 | 0 | 0 | 0 | **100%** |
@@ -20,7 +20,7 @@
 | View | 20 | 1 | 0 | 0 | 0 | **100%** |
 | Sheet Tabs | 9 | 0 | 0 | 0 | 0 | **100%** |
 | Help | 6 | 0 | 0 | 0 | 3 | **100%** |
-| **TOTAL** | **173** | **25** | **0** | **2** | **25** | **100%** |
+| **TOTAL** | **173** | **26** | **0** | **1** | **25** | **100%** |
 <!-- command-inventory:coverage-summary:end -->
 
 Coverage = (Implemented + Partial) / (Implemented + Partial + Not Implemented). Deferred and Excluded items are reported separately.
@@ -201,8 +201,8 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Chart - column/bar/line/area | Implemented | Select Data Source, Move Chart, Insert Chart, and chart format dialogs expose keyboard access keys for modeled fields and option controls |
 | Chart - pie/doughnut/scatter/bubble | Implemented |  |
 | Chart - stock/radar/surface | Implemented | Surface and 3D Surface insert/change, render as value-colored matrix views, and write standard OOXML package parts with series axes |
-| Chart - treemap/sunburst/histogram | Deferred | Recognized from XLSX where detected; authoring/rendering and lossless package writing need per-family model/renderer |
-| Chart - waterfall/funnel/true 3D mesh | Deferred | Recognized from XLSX where detected; authoring/rendering and lossless package writing need per-family model/renderer. Map Chart remains recognized for XLSX preservation but is hidden from the Insert ribbon until authoring/rendering is implemented. |
+| Chart - treemap/sunburst/histogram | Partial | Model/render/XLSX paths are covered by the current chart interop harness; chartEx passed 7/7 openability/export and visual gate in the final 2026-06-01 evidence |
+| Chart - waterfall/funnel/true 3D mesh | Partial | Waterfall and funnel have model/render/XLSX paths and chartEx interop evidence; true 3D mesh-style surface remains deferred. Map Chart remains recognized for XLSX preservation but is hidden from the Insert ribbon until authoring/rendering is implemented. |
 | Recommended Charts | Excluded | Excel-equivalent recommender requires proprietary data-pattern heuristics; normal chart authoring remains implemented/partial by chart family |
 | Sparklines (line/column/win-loss) | Implemented |  |
 | Text Box | Implemented |  |
@@ -334,7 +334,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 |---|---|---|
 | Spell Check | Partial | Broader known-corrections text-cell scan with casing-preserving replace, replace-all, ignore support, and internet/email/file-address span skipping; no full dictionary/proofing engine |
 | Thesaurus | Excluded | Requires external dictionary service |
-| Accessibility Checker | Partial | Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, patterned fills, and no fill treated as white, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; conditional-format rendered colors, theme/tint expansion beyond existing style values, chart/shape/text-box text, and full Excel rule taxonomy remain partial |
+| Accessibility Checker | Partial | Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, patterned fills, no fill treated as white, and matching conditional-format styles for cell-value, text, blank/error, no-blank/no-error, duplicate-value, and unique-value rules, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; formula, date-occurring, top/bottom, and above/below-average conditional-format evaluation, theme/tint expansion beyond existing style values, chart/shape/text-box text, and full Excel rule taxonomy remain partial |
 | Smart Lookup | Excluded |  |
 | Translate | Excluded |  |
 | New Comment | Partial | Threaded comment text can be added/edited/deleted locally through the Review ribbon and Ctrl+Shift+F2, including root-message edits, explicit Reply/Add actions, Ctrl+Enter reply submission, and created/modified UTC metadata for local threads; full threaded conversation UI remains partial |
