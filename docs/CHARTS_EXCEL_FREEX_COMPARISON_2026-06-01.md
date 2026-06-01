@@ -13,7 +13,15 @@ Compared 28 FreeX-renderable chart types against Microsoft Excel using a repeata
 
 ## Evidence
 
-Latest run:
+Latest post-main-sync run:
+
+`C:\Users\anton\freex-xlsx-verify\chart-interop\worker6-full-postmerge-20260601-1855`
+
+Focused reproduction for the current `Pareto` openability failure:
+
+`C:\Users\anton\freex-xlsx-verify\chart-interop\worker6-pareto-postmerge-20260601-1905`
+
+Last all-green run before syncing the latest local `main` into the harness branch:
 
 `C:\Users\anton\freex-xlsx-verify\chart-interop\worker6-full-20260601-1835`
 
@@ -28,40 +36,48 @@ Key artifacts:
 
 ## Result
 
-Functional interop passed for all 28 tested chart types.
+The harness change is active and separates openability/export failures from visual mismatches.
+After syncing the latest local `main`, functional interop currently has one openability failure:
+FreeX-authored `Pareto` fails desktop Excel `Workbooks.Open` with
+`Unable to get the Open property of the Workbooks class`. This is outside the harness-owned
+surface and was not repaired here.
 
 | Path | Result |
 |---|---:|
 | FreeX renderer produced a PNG | 28/28 |
-| FreeX-authored XLSX opened in Excel and exported a chart PNG | 28/28 |
+| FreeX-authored XLSX opened in Excel and exported a chart PNG | 27/28 |
 | Excel-authored XLSX opened/exported in Excel | 28/28 |
 | Excel-authored XLSX loaded/saved by FreeX, then reopened/exported in Excel | 28/28 |
 
-The harness now has an explicit visual gate in addition to the openability/export gate. The latest run passed both:
+The harness now has an explicit visual gate in addition to the openability/export gate. In the
+latest post-main-sync full run, every chart that passed openability also passed the visual gate:
 
 | Gate | Result |
 |---|---:|
-| Openability/export | 28/28 |
+| Openability/export | 27/28 |
 | FreeX renderer PNG | 28/28 |
-| Visual gate | 28/28 |
+| Visual gate | 27/27 evaluated |
 | Known visual gap charts tracked | 14 |
-| Known-gap threshold allowances used | 2 |
+| Known-gap threshold allowances used | 1 |
 
 The visual gate distinguishes openability failures from visual mismatches in `chart_compare_results.csv`
 (`OpenabilityError`, `VisualFailure`, `FailureCategory`) and exits with separate codes:
 `1` for openability/export failure, `2` for visual mismatch, and `3` for FreeX renderer PNG failure.
 
-Known-gap allowances used in the latest run:
+Known-gap allowance used in the latest post-main-sync run:
 
 - `ThreeDBar`: Excel-native -> FreeX -> Excel round-trip hash distance was 8, allowed under the 3-D known-gap round-trip threshold of 12.
-- `Pareto`: Excel-native vs FreeX-authored XLSX hash distance was 83, allowed under the chartEx known-gap threshold of 128.
 
-Per-family visual summary from the latest run:
+The pre-main-sync all-green run also used a `Pareto` known-gap visual allowance
+(`native-vs-FreeX` hash distance 83 under the chartEx known-gap threshold of 128), but the current
+post-main-sync `Pareto` FreeX-authored workbook does not open far enough for visual evaluation.
+
+Per-family visual summary from the latest post-main-sync run:
 
 | Family | Charts | Openability pass | Visual pass | Known-gap allowance | Visual fail | Max native-vs-FreeX hash | Threshold |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | classic | 21 | 21 | 20 | 1 | 0 | 89 | 96 |
-| chartEx | 7 | 7 | 6 | 1 | 0 | 83 | 72 |
+| chartEx | 7 | 6 | 6 | 0 | 0 | 65 | 72 |
 
 ## Fixes Made From The Comparison
 
@@ -105,4 +121,6 @@ Result: 54/54 passed.
 dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.csproj
 ```
 
-Result: 28/28 chart cases passed openability/export and the visual gate.
+Result after syncing latest local `main`: 27/28 chart cases passed openability/export; 27/27
+evaluated chart cases passed the visual gate. `Pareto` is a current openability failure, not a
+visual mismatch.
