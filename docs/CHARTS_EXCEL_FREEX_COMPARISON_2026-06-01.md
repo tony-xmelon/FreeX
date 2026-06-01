@@ -27,6 +27,8 @@ Final focused branch-head runs:
 
 `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-waterfall-chartex-worker`
 
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-chartex-native-style-201-known-gap-clean`
+
 `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-sizing-probe-classic`
 
 `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-sizing-probe-3d`
@@ -79,6 +81,10 @@ latest complete full run, every chart passed openability and the visual gate:
 | Known visual gap charts tracked | 11 |
 | Known-gap threshold allowances used | 2 |
 
+After the chartEx style sidecar was aligned to Excel's native `id="201"` profile, the focused
+chartEx run at `20260601-chartex-native-style-201-known-gap-clean` passed 7/7 openability/export,
+7/7 visual gate, and reported 0 chartEx known-gap charts.
+
 The visual gate distinguishes openability failures from visual mismatches in `chart_compare_results.csv`
 (`OpenabilityError`, `VisualFailure`, `FailureCategory`) and exits with separate codes:
 `1` for openability/export failure, `2` for visual mismatch, and `3` for FreeX renderer PNG failure.
@@ -103,6 +109,7 @@ Per-family visual summary from the latest complete full run:
 - `Pareto` chartEx now writes aggregation, an owner-linked Pareto line, and plot-area percentage axis metadata while omitting series-level `cx:axisId` values that made Excel reject the workbook.
 - `BoxAndWhisker` chartEx now writes per-series title metadata, stable series `uniqueId`s, exclusive-quartile statistics layout metadata, and Excel-native chartEx axes for multi-series sample data.
 - `Waterfall` chartEx now writes Excel-native connector-line visibility and chartEx axes alongside subtotal metadata, and the app now exposes a tested Set as Total context-menu path for waterfall points.
+- ChartEx package sidecars now use Excel's native style profile `id="201"` for all supported chartEx types while preserving the Excel-native color style `id="10"` sequence; the harness no longer tracks Waterfall as a chartEx known visual gap.
 - Stacked column/bar and 3-D families now emit closer Excel-native default layout metadata, including stacked gap/overlap defaults, 3-D view/wall defaults, and 3-D chart axis defaults.
 - The interop harness now converts FreeX pixel fixture sizes to Excel COM points when creating Excel-native charts, so visual hashes compare similarly sized exports instead of point-vs-pixel artifacts.
 - The FreeX Pareto renderer now aggregates repeated categories before sorting and formats the right axis as percentages.
@@ -112,7 +119,6 @@ Per-family visual summary from the latest complete full run:
 These do not block XLSX open/load/save interop, but they are visible parity work:
 
 - FreeX-authored stacked column/bar and several 3-D families are structurally valid but differ from Excel-native default styling/layout.
-- FreeX-authored `Waterfall` is visible and openable, with connector/axis metadata now aligned; remaining differences are primarily chartEx style sidecar/default styling.
 - FreeX renderer visuals intentionally differ from Excel-native rendering because FreeX uses the OxyPlot/WPF renderer path; this pass treats it as a separate visual surface, not a pixel-parity target.
 
 ## Harness Notes
@@ -147,3 +153,10 @@ dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.c
 Result from the latest complete full run: 28/28 chart cases passed openability/export and the
 visual gate. Later repeated Excel COM diagnostics showed RPC/open failures; these are reported in
 the `OpenabilityError`/`FailureCategory=openability` columns, not as visual mismatches.
+
+```powershell
+dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.csproj -- --family chartEx --out C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-chartex-native-style-201-known-gap-clean
+```
+
+Result: 7/7 chartEx cases passed openability/export and the visual gate, with 0 chartEx known-gap
+charts and 0 known-gap allowances used.
