@@ -406,7 +406,7 @@ workbook command behavior to track here.
 
 ## View Tab
 
-> **Tab coverage: 13 Implemented + 8 Partial = 100% of 21 in-scope commands**
+> **Tab coverage: 20 Implemented + 1 Partial = 100% of 21 in-scope commands**
 
 <!-- command-inventory:command-surface:view:start -->
 | Command | Status | Notes |
