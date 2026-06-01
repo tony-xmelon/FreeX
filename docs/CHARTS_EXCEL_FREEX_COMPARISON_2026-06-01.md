@@ -68,7 +68,7 @@ latest complete full run, every chart passed openability and the visual gate:
 | FreeX renderer PNG | 28/28 |
 | Visual gate | 28/28 |
 | Known visual gap charts tracked | 14 |
-| Known-gap threshold allowances used | 2 |
+| Known-gap threshold allowances used | 1 |
 
 The visual gate distinguishes openability failures from visual mismatches in `chart_compare_results.csv`
 (`OpenabilityError`, `VisualFailure`, `FailureCategory`) and exits with separate codes:
@@ -77,31 +77,30 @@ The visual gate distinguishes openability failures from visual mismatches in `ch
 Known-gap allowances used in the latest complete full run:
 
 - `ThreeDBar`: Excel-native -> FreeX -> Excel round-trip hash distance was 8, allowed under the 3-D known-gap round-trip threshold of 12.
-- `Pareto`: Excel-native vs FreeX-authored XLSX hash distance was 83, allowed under the chartEx known-gap threshold of 128.
-
-The final branch-head focused `Pareto` rerun later measured native-vs-FreeX hash distance 39, which
-is within the normal chartEx threshold and no longer needed the known-gap allowance.
 
 Per-family visual summary from the latest complete full run:
 
 | Family | Charts | Openability pass | Visual pass | Known-gap allowance | Visual fail | Max native-vs-FreeX hash | Threshold |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | classic | 21 | 21 | 20 | 1 | 0 | 89 | 96 |
-| chartEx | 7 | 7 | 6 | 1 | 0 | 83 | 72 |
+| chartEx | 7 | 7 | 7 | 0 | 0 | 65 | 72 |
 
 ## Fixes Made From The Comparison
 
 - `Treemap` and `Sunburst` chartEx data now writes numeric dimensions as `type="size"` instead of `type="val"`. Before this, desktop Excel opened the files but rendered blank chart areas.
 - `Histogram` chartEx output now writes Excel's default `<cx:binning intervalClosed="r" />` layout while still omitting custom `cx:binCount` and `cx:binSize` values that were proven to make Excel reject the workbook.
+- `Scatter` classic XLSX now suppresses default connector lines, matching Excel's marker-only scatter default unless a series explicitly requests line styling or smoothing.
+- `Pareto` chartEx now writes aggregation, an owner-linked Pareto line, and plot-area percentage axis metadata while omitting series-level `cx:axisId` values that made Excel reject the workbook.
+- Stacked column/bar and 3-D families now emit closer Excel-native default layout metadata, including stacked gap/overlap defaults, 3-D view/wall defaults, and 3-D chart axis defaults.
+- The FreeX Pareto renderer now aggregates repeated categories before sorting and formats the right axis as percentages.
 
 ## Remaining Visual Parity Gaps
 
 These do not block XLSX open/load/save interop, but they are visible parity work:
 
-- FreeX-authored `Scatter` exports as a connected/multiseries-looking chart in Excel rather than Excel's default marker-only scatter.
 - FreeX-authored stacked column/bar and several 3-D families are structurally valid but differ from Excel-native default styling/layout.
-- FreeX-authored `Pareto` is visible but not Excel-equivalent: Excel-native uses aggregation, an owner-linked Pareto line, and secondary percentage axis metadata that FreeX does not fully model yet.
 - FreeX-authored `BoxAndWhisker` is visible but not Excel-equivalent for multi-column sample data; Excel-native uses per-series statistics layout metadata.
+- FreeX-authored `Waterfall` is visible and openable but still has connector/subtotal styling differences from Excel-native output.
 - FreeX renderer visuals intentionally differ from Excel-native rendering because FreeX uses the OxyPlot/WPF renderer path; this pass treats it as a separate visual surface, not a pixel-parity target.
 
 ## Harness Notes
