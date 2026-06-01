@@ -15,7 +15,7 @@ Compared 28 FreeX-renderable chart types against Microsoft Excel using a repeata
 
 Latest complete all-green full run:
 
-`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-main-full-known-gap-metadata-clean`
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-final-current-main-full-chart-parity`
 
 Final focused branch-head runs:
 
@@ -32,6 +32,8 @@ Final focused branch-head runs:
 `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-classic-stacked-defaults-post-rebase`
 
 `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-main-full-after-stacked-chartex-renderer`
+
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-main-full-known-gap-metadata-clean`
 
 `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-sizing-probe-classic`
 
@@ -159,7 +161,7 @@ dotnet run --project tools\FreeX.ChartInteropCompare\FreeX.ChartInteropCompare.c
 ```
 
 Result from the latest complete full run at
-`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-main-full-known-gap-metadata-clean`:
+`C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-final-current-main-full-chart-parity`:
 28/28 chart cases passed openability/export and the visual gate, with only the `ThreeDColumn`
 round-trip allowance used. Later repeated Excel COM diagnostics showed RPC/open failures; these are
 reported in the `OpenabilityError`/`FailureCategory=openability` columns, not as visual mismatches.
