@@ -1,9 +1,9 @@
 # FreeX Project Status Report
 
 Generated: 2026-06-01
-Observed at: 2026-06-01T03:45:57+03:00
+Observed at: 2026-06-01T03:59:00+03:00
 Report scope: current consolidated documentation/status snapshot after June 1 integrations
-Mainline observed: branch-neutral `origin/main` snapshot; local integration main observed at `4d957113e`
+Mainline observed: branch-neutral `origin/main` snapshot; local integration main observed at `605e9e1bd`
 
 ## Executive Summary
 
@@ -17,12 +17,12 @@ The project history metrics report now covers Git and provider-log activity from
 
 | Metric | Count |
 | --- | ---: |
-| Tracked files | 2,190 |
+| Tracked files | 2,189 |
 | C# source files under `src/` | 1,015 |
-| C# test files under `tests/` | 515 |
-| Markdown docs under `docs/` | 245 |
-| Current C# source LOC | 195,027 |
-| Current C# test LOC | 198,575 |
+| C# test files under `tests/` | 516 |
+| Markdown docs under `docs/` | 243 |
+| Current C# source LOC | 195,728 |
+| Current C# test LOC | 199,299 |
 | Current XAML LOC | 8,256 |
 | XLSX corpus manifest rows | 175 |
 
@@ -30,7 +30,7 @@ The project history metrics report now covers Git and provider-log activity from
 
 | Item | Status |
 | --- | --- |
-| Mainline | Branch-neutral `origin/main` snapshot remains the canonical comparison point; local integration main was observed at `4d957113e` for this refresh |
+| Mainline | Branch-neutral `origin/main` snapshot remains the canonical comparison point; local integration main was observed at `605e9e1bd` for this refresh |
 | Completion tracking | [release/progress.json](../release/progress.json) remains at `overallCompletion: 95` |
 | History metrics | [PROJECT_BUILD_HISTORY_METRICS.md](PROJECT_BUILD_HISTORY_METRICS.md) is refreshed through 2026-05-31 inclusive |
 | Branch posture | Multiple worker branches/worktrees are still registered for active or paused parallel implementation; this report does not treat worker-owned checkouts as mainline status |
