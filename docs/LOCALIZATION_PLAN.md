@@ -14,7 +14,7 @@ Make FreeX localizable without weakening spreadsheet fidelity. UI text should co
 - XAML and host-source guard tests now enforce localization usage for user-facing XAML attributes, message/progress calls, automation names/help text, and used resource keys.
 - A large portion of host dialog and shell text now flows through `UiText`/`Loc`. Remaining work is translator review, additional locales, core message-code boundaries, culture-sensitive user input audits, pseudo-localization visual smoke coverage, and package/release language metadata validation.
 - Command identity remains a risk area wherever planners still infer behavior from display text. Continue migrating behavior to invariant command IDs before expanding translated command surfaces.
-- Culture handling is still mixed: workbook/file paths correctly use `InvariantCulture`, but direct user entry and some dialog/import parsers still need explicit `CurrentCulture` acceptance tests where localized entry should be accepted.
+- Culture handling is still mixed, but the highest-value numeric entry paths now have explicit coverage: direct cell entry, delimited CSV/TSV import, and Text to Columns General conversion try `CurrentCulture` first with invariant fallback where compatibility matters. Date parsing, additional dialog parsers, and packaging/release language metadata still need focused audits.
 
 ## Localization Boundaries
 
@@ -60,8 +60,9 @@ Use culture deliberately:
    - Treat localized formula-name aliases as a later feature at parser/display edges, with explicit round-trip tests.
 
 6. Normalize user culture behavior.
-   - Change direct cell entry and dialog numeric/date entry to try `CurrentCulture` first, with invariant fallback where compatibility matters.
-   - Keep file import/export parsers invariant by default unless the UI exposes explicit delimiter/date/number culture options.
+   - Direct cell entry, delimited CSV/TSV import, and Text to Columns numeric conversion now try `CurrentCulture` first, with invariant fallback where compatibility matters.
+   - Continue auditing dialog numeric/date entry for the same user-input behavior.
+   - Keep persisted workbook formats, formula storage, package metadata, and machine-readable diagnostics invariant even when the UI/import path accepts localized user input.
    - Preserve existing locale-aware number-format behavior and add tests for current-culture display vs invariant storage.
 
 ## Rollout
@@ -89,7 +90,8 @@ Use culture deliberately:
    - Add host-side resource rendering and keep core tests focused on codes/args.
 
 6. Culture-sensitive input/display
-   - Audit parsers that currently use invariant parsing for user input.
+   - **Implemented:** direct cell numeric entry, delimited CSV/TSV numeric import, and Text to Columns General numeric conversion accept current-culture numbers with invariant fallback.
+   - Continue auditing date parsing and remaining dialog/import parsers that still use invariant parsing for user input.
    - Add culture smoke tests for `de-DE` and one pilot UI culture, plus import/export tests proving persisted workbook data remains invariant.
 
 7. Packaging and release
@@ -134,4 +136,4 @@ These slices are mostly disjoint if shared files are coordinated: `MainWindow.xa
 - Pseudo-localized resources can be selected at startup and cover common shell/dialog/message surfaces. **Remaining.**
 - Command identity is no longer derived from localized English labels. **Partially complete; continue replacing display-text classification with invariant IDs.**
 - Core user-facing errors converted in at least one vertical slice use codes plus localized host rendering. **Remaining beyond host-layer message/resource migration.**
-- Build and relevant tests pass under default culture, with at least one culture smoke suite under `de-DE` or another comma-decimal culture. **Resource tests exist; broader culture parsing/display smoke coverage remains.**
+- Build and relevant tests pass under default culture, with at least one culture smoke suite under `de-DE` or another comma-decimal culture. **Resource tests plus focused comma-decimal direct-entry/import/Text to Columns tests exist; broader date/dialog/display smoke coverage remains.**
