@@ -2,7 +2,7 @@
 
 **Last updated:** 2026-06-01
 
-This matrix tracks Excel-for-Windows shortcut fidelity for the visible FreeX command surface. Status values use the command-surface contract: Parity, Partial, Excluded, or Missing. Exact command shortcuts reject unrelated extra modifiers so combinations such as Ctrl+Alt+C or Ctrl+Shift+Z do not steal AltGr/non-US input or future shortcut space.
+This matrix tracks Excel-for-Windows shortcut fidelity for the visible FreeX command surface. Status values use the command-surface contract: Parity, Partial, Excluded, or Missing. Exact command shortcuts reject unrelated extra modifiers so combinations such as Ctrl+Alt+C or Ctrl+Shift+C do not steal AltGr/non-US input or future shortcut space.
 
 ## Coverage Summary
 
@@ -24,7 +24,7 @@ This matrix tracks Excel-for-Windows shortcut fidelity for the visible FreeX com
 | File | Ctrl+W / Ctrl+F4 | Parity | Closes the current workbook window. |
 | File | Ctrl+P | Parity | Opens FreeX's print preview immediately through the File/Backstage Print entry point, with access-keyed Print, printer, copies, collation, one-sided/duplex sides, all-pages/current-page/custom-pages print range, page, and zoom toolbar controls plus an active-sheet print-settings summary for orientation, paper size, scaling, gridlines, headings, and print-area scope. The print preview settings panel exposes access-keyed orientation, paper size, margins, and scaling controls, keyboardable gridline and heading toggles backed by undoable print option commands, and an access-keyed non-destructive ignore-print-area option that refreshes preview/print output against the active sheet. Page Setup exposes tab, option, OK, and Cancel access keys for the modeled print settings. Printed comment output includes notes and local threaded comments for as-displayed overlays and at-end summary pages. |
 | Edit | Ctrl+Z / Alt+Backspace | Parity | Undo command bus action. |
-| Edit | Ctrl+Y | Parity | Redo command bus action. |
+| Edit | Ctrl+Y / Ctrl+Shift+Z | Parity | Redo command bus action. |
 | Clipboard | Ctrl+C / Ctrl+Insert | Parity | Copies selection. |
 | Clipboard | Ctrl+X / Shift+Delete | Parity | Defers source clearing until a non-overlapping paste, preserves an internal cut clipboard, and shows the cut outline while pending. |
 | Clipboard | Ctrl+V / Shift+Insert / Ctrl+Shift+V | Parity | Paste and paste-values exist, including F4 repeat for internal cell paste, values/formulas/formats, transposed format-only paste, values-and-source-formatting, transpose/arithmetic Paste Special, arithmetic plus values-and-number-formats, skip blanks, paste link, pasted range pictures, linked range-picture source metadata, external text paste, Paste Special Text/Unicode Text preserving numeric-looking fields as text, keep-column-widths composite paste, validation paste with relative formula rebasing, comments/notes/threaded-comments paste, all-using-source-theme, all-except-borders, all-merging-conditional-formats, formulas-and-number-formats, and values-and-number-formats. |
