@@ -1313,8 +1313,8 @@
         },
         {
           "name": "Arrange All",
-          "status": "Partial",
-          "notes": "Stores the workbook arrangement choice through an undoable command and native persistence; full Excel Arrange Windows tiling beyond View Side by Side remains partial"
+          "status": "Implemented",
+          "notes": "Stores the workbook arrangement choice through an undoable command/native persistence and applies live visible-window layouts for Tiled, Horizontal, Vertical, and Cascade through WorkbookWindowRegistry"
         },
         {
           "name": "Hide Window",
@@ -2622,8 +2622,8 @@
         },
         {
           "name": "Arrange All",
-          "status": "Partial",
-          "notes": "Stores the workbook arrangement choice through an undoable command and marks the selected menu option; full Excel Arrange Windows tiling beyond View Side by Side remains partial"
+          "status": "Implemented",
+          "notes": "Stores the workbook arrangement choice, marks the selected menu option, and applies live visible-window layouts for Tiled, Horizontal, Vertical, and Cascade through WorkbookWindowRegistry"
         },
         {
           "name": "Hide Window",
