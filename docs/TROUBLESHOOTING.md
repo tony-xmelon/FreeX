@@ -162,9 +162,9 @@ Check that the source data range is correct. Click the chart to select it, then 
 
 Current chartEx families (Treemap, Sunburst, Histogram, Pareto, Box-and-Whisker, Waterfall, and Funnel) are supported in the chart interop matrix. Filled Map remains deferred and unparseable future chart package parts are preserved with an unsupported-feature warning.
 
-### A 3-D column chart looks slightly different after round-trip
+### A chart PNG export looks slightly different in automated comparison
 
-`ThreeDColumn` has a non-blocking Excel chart-export raster variance in the chart parity harness. The XLSX package round-trip has been verified byte-identical for that case; the caveat is limited to Excel's exported chart PNG raster output and does not indicate a workbook openability issue.
+The chart parity harness compares both packages and Excel-exported chart PNGs. When Excel-native and FreeX round-tripped XLSX packages are byte-identical, minor differences from repeated Excel PNG export are treated as export repeatability noise rather than a workbook openability issue.
 
 ### Chart colors are wrong
 
