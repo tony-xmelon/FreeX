@@ -33,10 +33,10 @@ Coverage is computed as **(Implemented + Partial) / (Implemented + Partial + Not
 | Formulas | 16 | 1 | 0 | 0 | 0 | **100%** |
 | Data | 17 | 1 | 0 | 0 | 2 | **100%** |
 | Review | 11 | 2 | 0 | 0 | 6 | **100%** |
-| View | 13 | 8 | 0 | 0 | 0 | **100%** |
+| View | 20 | 1 | 0 | 0 | 0 | **100%** |
 | Sheet Tabs | 9 | 0 | 0 | 0 | 0 | **100%** |
 | Help | 6 | 0 | 0 | 0 | 3 | **100%** |
-| **TOTAL** | **165** | **32** | **0** | **2** | **25** | **100%** |
+| **TOTAL** | **172** | **25** | **0** | **2** | **25** | **100%** |
 <!-- command-inventory:coverage-summary:end -->
 
 ---
@@ -56,10 +56,10 @@ These features are out of scope and should not be treated as bugs when absent.
 ## Deferred Architectural Features
 
 Not cloud/proprietary exclusions, but require larger architecture before adding UI.
+The earlier Window Management row was completed on 2026-06-01; the live View > Window commands are now tracked in the View tab rather than this deferred table.
 
 | Area | Excel Feature | FreeX Decision |
 |---|---|---|
-| Window Management | New Window, Switch Windows; Hide/Unhide, View Side by Side, Synchronous Scrolling, Reset Window Position | New/Switch implemented through the live workbook-window registry; the rest are deferred and not exposed in the ribbon until visibility/pairing subsystems exist |
 | Theme System | Themes, theme colors, theme fonts, theme effects | Partial; theme part load/save now preserves loaded `fmtScheme` OOXML, while full effect interpretation remains deferred |
 | Advanced Chart Families | Treemap, sunburst, histogram, Pareto, box-and-whisker, waterfall, funnel, map, true 3D surface mesh | Deferred - recognized from XLSX where detected and blocked from broken authoring/rendering; 2D/3D surface charts now have package and matrix-rendering paths, while mixed drawing-part retention for unsupported chart families remains partial until per-family data model and package writer support exist |
 
@@ -425,12 +425,12 @@ workbook command behavior to track here.
 | Zoom | Implemented | 10-400% range |
 | Zoom to Selection | Implemented |  |
 | New Window | Implemented | Creates a secondary MainWindow over the shared workbook through WorkbookWindowRegistry |
-| Arrange All | Partial | Stores choice; no live multi-window |
-| Hide Window | Deferred | Removed from the ribbon until workbook-window visibility state exists |
-| Unhide Window | Deferred | Removed from the ribbon until hidden workbook-window state exists |
-| View Side by Side | Deferred | Removed from the ribbon until paired workbook-window layout exists |
-| Synchronous Scrolling | Deferred | Removed from the ribbon until paired-window synchronized viewport routing exists |
-| Reset Window Position | Deferred | Removed from the ribbon until paired workbook-window layout exists |
+| Arrange All | Partial | Stores the workbook arrangement choice through an undoable command and native persistence; full Excel Arrange Windows tiling beyond View Side by Side remains partial |
+| Hide Window | Implemented | Registry-backed command hides the current workbook window while keeping at least one visible window |
+| Unhide Window | Implemented | Registry-backed command restores the next hidden workbook window and reports when none are hidden |
+| View Side by Side | Implemented | Toggles paired workbook-window tiling through WorkbookWindowRegistry and SideBySideLayoutPlanner when a second visible window exists |
+| Synchronous Scrolling | Implemented | Toggles synchronized viewport scrolling for the active side-by-side window pair |
+| Reset Window Position | Implemented | Restores and positions the current workbook window through WindowResetPositionPlanner |
 | Switch Windows | Implemented | Cycles focus through the live WorkbookWindowRegistry and enables once a second workbook window exists |
 <!-- command-inventory:command-surface:view:end -->
 
@@ -486,7 +486,7 @@ These visible workflows are command-based and undoable where applicable, but F4 
 | Data / What-If | Goal Seek, Scenario Manager add/edit/delete/report/list actions, Forecast Sheet | Depend on dialog choices, solver state, or scenario-management UI state; Scenario Manager Show is repeatable after the first explicit apply. |
 | Review | Protect Workbook, Allow Users to Edit Ranges | Password/protection decisions should be explicit. |
 | Formulas | Error Checking options, Ignore Error | Command target is dialog issue/global option, not selection. |
-| View / Window | Arrange Windows and deferred multi-window commands | Live multi-window routing is deferred. |
+| View / Window | Arrange Windows and context-dependent window commands | Targets live window state; Arrange All stores workbook arrangement while Side by Side handles the live paired layout. |
 | Sheet Tabs | Delete, move, hide/unhide, duplicate, tab color | Targets a specific sheet tab; can become destructive after first run. |
 
 Protection workflows are source-guarded to stay outside the `ExecuteRepeatable`/`TryExecuteRepeatable` paths, preserving `F4` repeat without replaying password or structure-protection dialogs.

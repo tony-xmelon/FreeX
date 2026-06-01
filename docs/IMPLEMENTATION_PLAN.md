@@ -4,6 +4,7 @@
 **Basis:** Gap analysis from FUNCTION_PARITY.md, COMMAND_SURFACE_PARITY.md, SHORTCUT_PARITY_MATRIX.md, FIDELITY_CONTRACT.md, and MENU_TOOLBAR_PARITY.md
 
 > **Historical note (2026-05-19):** This plan is retained as implementation history. Its formula gap phases are complete and some scope decisions here have since changed (for example `CELL`, `INFO`, `LET`, `LAMBDA`, statistical distributions, financial functions, `HYPERLINK`, and engineering base/bit functions are implemented). Use `FUNCTION_PARITY.md`, `NEXT_PHASES_PLAN.md`, and `OUTSTANDING_BUILD.md` for current status.
+> **Status correction (2026-06-01):** The multi-window View advanced controls formerly listed below are implemented and should not be treated as excluded or deferred. Current command status is in `COMMAND_SURFACE_PARITY.md`.
 
 ---
 
@@ -13,7 +14,6 @@ The following previously "Not Implemented" items are now explicitly excluded. Ea
 
 | Feature | Reason |
 |---|---|
-| **Multi-window View advanced controls** (Hide/Unhide, Side-by-Side, Sync Scrolling, Reset Window Position) | Requires window visibility state, paired layout, and synchronized viewport routing. New Window and Switch Windows now have a live registry-backed slice; the remaining advanced controls stay out of the ribbon until their subsystems exist. |
 | **Thesaurus** | Requires an external dictionary/thesaurus service or bundled corpus. No offline equivalent in .NET base libraries. |
 | **Insert > Online Pictures** | Requires an external image search/service integration plus licensing, content filtering, and network policy decisions. Local Picture from file remains implemented. |
 | **Insert > Icons** | Excel's Icons command depends on Microsoft's proprietary icon catalog; a FreeX-owned/open icon picker would be a separate feature. |
@@ -257,7 +257,6 @@ In addition to the existing excluded features (cloud, VBA, Power Query, data mod
 
 | Feature | Category |
 |---|---|
-| Multi-window View advanced controls (Hide/Unhide, Side-by-Side, Sync Scrolling, Reset Position) | Complex paired-window/visibility subsystem |
 | Thesaurus | External service dependency |
 | Insert > Online Pictures | External image service, licensing, and content filtering |
 | Insert > Icons | Proprietary Microsoft icon catalog; FreeX-owned/open icons would be separate |

@@ -88,7 +88,7 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
 
 1. **View and window management**
    - New Window and Switch Windows are live through the registry-backed workbook-window slice.
-   - Hide Window, Unhide Window, View Side by Side, Synchronous Scrolling, and Reset Window Position are **done 2026-06-01** — the full `View ▸ Window` set is live with dedicated handlers backed by `WorkbookWindowRegistry` visibility/side-by-side/sync-scroll state and the pure `WindowResetPositionPlanner` / `SideBySideLayoutPlanner` geometry helpers. Cross-window scroll mirroring is double-guarded against feedback loops.
+   - Hide Window, Unhide Window, View Side by Side, Synchronous Scrolling, and Reset Window Position are **done 2026-06-01** with dedicated handlers backed by `WorkbookWindowRegistry` visibility/side-by-side/sync-scroll state and the pure `WindowResetPositionPlanner` / `SideBySideLayoutPlanner` geometry helpers. Cross-window scroll mirroring is double-guarded against feedback loops. `Arrange All` remains partial: it stores the workbook arrangement choice, while full Excel-style automatic tiling for every arrangement is still pending beyond the live Side by Side path.
    - Fine split-pane scroll feel parity.
    - Split-pane merged-cell edge cases across non-visible rows/columns.
    - Full workbook view-mode polish beyond the current state/persistence baseline.
@@ -151,12 +151,12 @@ No local active workstream was found for the planned map-chart or multi-window w
 ### Parity Orchestrator
 
 - **Map Chart / advanced chart family lane:** define the map-chart model, Insert/Change Chart picker behavior, renderer, XLSX read/write support, and known-gap retention story. This can ride with the existing advanced chart family backlog for treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel/map/true 3D mesh.
-- **View multi-window lane:** **COMPLETE 2026-06-01.** New Window + Switch Windows plus Hide Window, Unhide Window, Reset Window Position, View Side by Side, and Synchronous Scrolling are all live (registry-backed visibility/pairing/sync-scroll state + `WindowResetPositionPlanner` / `SideBySideLayoutPlanner`). All five buttons are present in `MainWindow.xaml` with dedicated live handlers and focused tests; do not re-hide them.
+- **View multi-window lane:** **COMPLETE 2026-06-01 for the five formerly deferred commands.** New Window + Switch Windows plus Hide Window, Unhide Window, Reset Window Position, View Side by Side, and Synchronous Scrolling are all live (registry-backed visibility/pairing/sync-scroll state + `WindowResetPositionPlanner` / `SideBySideLayoutPlanner`). All five buttons are present in `MainWindow.xaml` with dedicated live handlers and focused tests; do not re-hide them. `Arrange All` remains partial until every Excel arrangement choice performs live tiling rather than only storing the workbook arrangement option.
 - **PivotTable ribbon-action lane:** completed in the Pivot contextual ribbon command breadth slice. PivotTable Name, PivotTable Options, Clear, Select, and Move PivotTable are routed from the Analyze tab with selected-PivotTable targeting, command/undo behavior where applicable, keytips, and focused source/planner/core command tests.
 
 ### Build Orchestrator
 
-- Keep excluded placeholders out of the ribbon by preserving source guards around `MainWindow.xaml` and adaptive group profiles. The `View ▸ Window` group is now complete (New Window, Switch Windows, Hide, Unhide, Reset Window Position, View Side by Side, Synchronous Scrolling) — all have working handlers and focused tests; do not remove them.
+- Keep excluded placeholders out of the ribbon by preserving source guards around `MainWindow.xaml` and adaptive group profiles. The formerly deferred `View ▸ Window` commands (New Window, Switch Windows, Hide, Unhide, Reset Window Position, View Side by Side, Synchronous Scrolling) have working handlers and focused tests; do not remove them. Keep `Arrange All` documented as partial until its non-side-by-side layouts perform live Excel-style tiling.
 - When ribbon XAML or adaptive group changes land, include the focused Host tests that cover `InsertCommandSourceTests`, `HelpCommandSourceTests`, `RibbonTabParityTests`, and adaptive ribbon planner/engine behavior.
 - If a future lane reintroduces an excluded Microsoft integration, require a product-scope design document first rather than adding a disabled ribbon placeholder.
 

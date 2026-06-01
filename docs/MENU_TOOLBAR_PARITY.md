@@ -17,10 +17,10 @@
 | Formulas | 16 | 1 | 0 | 0 | 0 | **100%** |
 | Data | 17 | 1 | 0 | 0 | 2 | **100%** |
 | Review | 11 | 2 | 0 | 0 | 6 | **100%** |
-| View | 13 | 8 | 0 | 0 | 0 | **100%** |
+| View | 20 | 1 | 0 | 0 | 0 | **100%** |
 | Sheet Tabs | 9 | 0 | 0 | 0 | 0 | **100%** |
 | Help | 6 | 0 | 0 | 0 | 3 | **100%** |
-| **TOTAL** | **166** | **32** | **0** | **2** | **25** | **100%** |
+| **TOTAL** | **173** | **25** | **0** | **2** | **25** | **100%** |
 <!-- command-inventory:coverage-summary:end -->
 
 Coverage = (Implemented + Partial) / (Implemented + Partial + Not Implemented). Deferred and Excluded items are reported separately.
@@ -377,12 +377,12 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Zoom to Selection | Implemented |  |
 | 100% Zoom | Implemented |  |
 | New Window | Implemented | Creates a secondary MainWindow over the shared workbook through WorkbookWindowRegistry |
-| Arrange All | Partial | Stores choice and marks the selected menu option; no live multi-window layout |
-| Hide Window | Deferred | Removed from the ribbon until workbook-window visibility state exists |
-| Unhide Window | Deferred | Removed from the ribbon until hidden workbook-window state exists |
-| View Side by Side | Deferred | Removed from the ribbon until paired workbook-window layout exists |
-| Synchronous Scrolling | Deferred | Removed from the ribbon until paired-window synchronized viewport routing exists |
-| Reset Window Position | Deferred | Removed from the ribbon until paired workbook-window layout exists |
+| Arrange All | Partial | Stores the workbook arrangement choice through an undoable command and marks the selected menu option; full Excel Arrange Windows tiling beyond View Side by Side remains partial |
+| Hide Window | Implemented | Registry-backed command hides the current workbook window while keeping at least one visible window |
+| Unhide Window | Implemented | Registry-backed command restores the next hidden workbook window and reports when none are hidden |
+| View Side by Side | Implemented | Toggles paired workbook-window tiling through WorkbookWindowRegistry and SideBySideLayoutPlanner when a second visible window exists |
+| Synchronous Scrolling | Implemented | Toggles synchronized viewport scrolling for the active side-by-side window pair |
+| Reset Window Position | Implemented | Restores and positions the current workbook window through WindowResetPositionPlanner |
 | Switch Windows | Implemented | Cycles focus through the live WorkbookWindowRegistry and enables once a second workbook window exists |
 <!-- command-inventory:menu-toolbar:view:end -->
 

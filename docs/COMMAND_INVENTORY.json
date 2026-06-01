@@ -76,8 +76,8 @@
     },
     {
       "name": "View",
-      "implemented": 13,
-      "partial": 8,
+      "implemented": 20,
+      "partial": 1,
       "notImplemented": 0,
       "deferred": 0,
       "excluded": 0
@@ -174,8 +174,8 @@
     },
     {
       "name": "View",
-      "implemented": 13,
-      "partial": 8,
+      "implemented": 20,
+      "partial": 1,
       "notImplemented": 0,
       "deferred": 0,
       "excluded": 0
@@ -1314,32 +1314,32 @@
         {
           "name": "Arrange All",
           "status": "Partial",
-          "notes": "Stores choice; no live multi-window"
+          "notes": "Stores the workbook arrangement choice through an undoable command and native persistence; full Excel Arrange Windows tiling beyond View Side by Side remains partial"
         },
         {
           "name": "Hide Window",
-          "status": "Deferred",
-          "notes": "Removed from the ribbon until workbook-window visibility state exists"
+          "status": "Implemented",
+          "notes": "Registry-backed command hides the current workbook window while keeping at least one visible window"
         },
         {
           "name": "Unhide Window",
-          "status": "Deferred",
-          "notes": "Removed from the ribbon until hidden workbook-window state exists"
+          "status": "Implemented",
+          "notes": "Registry-backed command restores the next hidden workbook window and reports when none are hidden"
         },
         {
           "name": "View Side by Side",
-          "status": "Deferred",
-          "notes": "Removed from the ribbon until paired workbook-window layout exists"
+          "status": "Implemented",
+          "notes": "Toggles paired workbook-window tiling through WorkbookWindowRegistry and SideBySideLayoutPlanner when a second visible window exists"
         },
         {
           "name": "Synchronous Scrolling",
-          "status": "Deferred",
-          "notes": "Removed from the ribbon until paired-window synchronized viewport routing exists"
+          "status": "Implemented",
+          "notes": "Toggles synchronized viewport scrolling for the active side-by-side window pair"
         },
         {
           "name": "Reset Window Position",
-          "status": "Deferred",
-          "notes": "Removed from the ribbon until paired workbook-window layout exists"
+          "status": "Implemented",
+          "notes": "Restores and positions the current workbook window through WindowResetPositionPlanner"
         },
         {
           "name": "Switch Windows",
@@ -2623,32 +2623,32 @@
         {
           "name": "Arrange All",
           "status": "Partial",
-          "notes": "Stores choice and marks the selected menu option; no live multi-window layout"
+          "notes": "Stores the workbook arrangement choice through an undoable command and marks the selected menu option; full Excel Arrange Windows tiling beyond View Side by Side remains partial"
         },
         {
           "name": "Hide Window",
-          "status": "Deferred",
-          "notes": "Removed from the ribbon until workbook-window visibility state exists"
+          "status": "Implemented",
+          "notes": "Registry-backed command hides the current workbook window while keeping at least one visible window"
         },
         {
           "name": "Unhide Window",
-          "status": "Deferred",
-          "notes": "Removed from the ribbon until hidden workbook-window state exists"
+          "status": "Implemented",
+          "notes": "Registry-backed command restores the next hidden workbook window and reports when none are hidden"
         },
         {
           "name": "View Side by Side",
-          "status": "Deferred",
-          "notes": "Removed from the ribbon until paired workbook-window layout exists"
+          "status": "Implemented",
+          "notes": "Toggles paired workbook-window tiling through WorkbookWindowRegistry and SideBySideLayoutPlanner when a second visible window exists"
         },
         {
           "name": "Synchronous Scrolling",
-          "status": "Deferred",
-          "notes": "Removed from the ribbon until paired-window synchronized viewport routing exists"
+          "status": "Implemented",
+          "notes": "Toggles synchronized viewport scrolling for the active side-by-side window pair"
         },
         {
           "name": "Reset Window Position",
-          "status": "Deferred",
-          "notes": "Removed from the ribbon until paired workbook-window layout exists"
+          "status": "Implemented",
+          "notes": "Restores and positions the current workbook window through WindowResetPositionPlanner"
         },
         {
           "name": "Switch Windows",
