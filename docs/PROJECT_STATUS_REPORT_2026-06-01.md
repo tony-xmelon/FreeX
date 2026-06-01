@@ -1,15 +1,15 @@
 # FreeX Project Status Report
 
 Generated: 2026-06-01
-Observed at: 2026-06-01T20:40:08+03:00
+Observed at: 2026-06-01T20:54:23+03:00
 Report scope: current consolidated documentation/status snapshot after the June 1 evening integrations
-Mainline observed: local integration `main` and `origin/main` both at `12b99529f` before this documentation refresh
+Mainline observed: local integration `main` and `origin/main` both at `97f6af3c3` before this documentation refresh
 
 ## Executive Summary
 
 FreeX remains in late-stage parity hardening. The broad app surface is functional and documented: formula coverage is **487/487 in-scope functions**, command and menu coverage remain **100% for in-scope rows**, shortcut parity remains **100% (87/87)**, and XLSX work is now focused on fidelity proof, package-preserving save validation, and real-world workbook breadth rather than first-pass support. The XLSX corpus currently has 175 workbook manifest rows, including data-validation semantic XML proof and live web-query warning/retention coverage through connection metadata. The June 1 chart interop pass now has a repeatable comparison harness with a complete 28/28 chart openability/export and visual-gate pass, including chartEx coverage for Pareto, waterfall, box-and-whisker, treemap, sunburst, histogram, and funnel.
 
-Overall completion remains **95%** in [release/progress.json](../release/progress.json), which keeps tester builds in the `v0.8.<run>` stream. Overall completion estimate is now **95%**. The main remaining work is package-preserving XLSX validation, broader corpus proof, release signing/trust and human accessibility validation, localization breadth, keytip/visual polish, and measured performance hardening.
+Overall completion remains **95%** in [release/progress.json](../release/progress.json), which keeps tester builds in the `v0.8.<run>` stream. Overall completion estimate is now **95%**. The main remaining work is package-preserving XLSX validation, broader corpus proof, release signing/trust and human accessibility validation, localization review/pseudo-localization/package metadata, keytip/visual polish, and measured performance hardening.
 
 The project history metrics report now covers Git and provider-log activity from 2026-05-12 through 2026-05-31 inclusive. Through May 31, the daily churn table records **11,780 commits**, **14,464 changed-file/day entries**, **+1,429,132 / -922,973 LoC**, and local provider logs attribute **116,943,364,224 observed raw tokens** across OpenAI/Codex and Anthropic/Claude rows.
 
@@ -47,7 +47,7 @@ The project history metrics report now covers Git and provider-log activity from
 | Keyboard shortcuts | **100% parity** (87/87), **0% partial** (0/87), **0 missing**. |
 | XLSX fidelity | 71 documented in-scope feature categories with at least partial support; corpus remains at 175 workbook manifest rows with generated/public/regression evidence and known-gap warning coverage. Chart interop now has a 28/28 latest-complete pass for Excel openability/export and visual gates. |
 | UI/dialog parity | Dialog message routing, access keys, default/cancel semantics, UIA metadata, keytips, ribbon layout, titlebar/QAT states, and sheet-tab chrome have broad automated coverage and continuing visual polish. |
-| Localization | `UiText`, `LocExtension`, neutral resources, Bulgarian satellite resources, startup UI culture, WPF language metadata, localization guard tests, current-culture direct numeric entry, delimited numeric import, and Text to Columns numeric parsing are present. |
+| Localization | `UiText`, `LocExtension`, neutral resources, 43 satellite resource cultures, startup UI culture, WPF language metadata, localization guard tests, current-culture direct numeric entry, delimited numeric import, and Text to Columns numeric parsing are present. |
 | Release readiness | User guide, troubleshooting, legal/privacy notices, release checklist, diagnostics, crash analytics, and tester-release workflow docs are present; public-preview promotion still needs live validation evidence. |
 
 Phase 7D: Deeper color-scale XLSX edge semantics as new gaps are found.
@@ -57,8 +57,8 @@ Phase 7D: Deeper color-scale XLSX edge semantics as new gaps are found.
 1. **Formula catalog status corrected**
    - Current docs now use the 487/487 in-scope function catalog from `FUNCTION_PARITY.md` and `FormulaParityCatalogTests`.
 
-2. **Localization foundation landed**
-   - Host UI text now has a resource path through `UiText` and `LocExtension`, with neutral and Bulgarian resource files plus guard tests for resource usage, key parity, placeholders, access keys, and automation metadata.
+2. **Localization resource breadth landed**
+   - Host UI text now has a resource path through `UiText` and `LocExtension`, with neutral resources plus 43 complete satellite resource cultures. Guard tests cover resource usage, language catalog discovery, key parity, placeholders, access keys, blank values, full satellite assemblies without parent fallback, and automation metadata; Bulgarian keeps an extra high-value terminology smoke suite.
 
 3. **Ribbon, tab, and titlebar polish continued**
    - Recent integrated work includes compact split-button segment fixes, standalone ribbon command promotion at wider widths, sheet add/options icon polish, sheet-tab hover alignment, and improved disabled/hover titlebar icon treatments.
