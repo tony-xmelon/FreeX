@@ -1,9 +1,9 @@
 # FreeX Project Status Report
 
 Generated: 2026-06-01
-Observed at: 2026-06-01T04:29:25+03:00
+Observed at: 2026-06-01T05:17:57+03:00
 Report scope: current consolidated documentation/status snapshot after June 1 integrations
-Mainline observed: branch-neutral `origin/main` snapshot; local integration main observed at `0138532fd`
+Mainline observed: branch-neutral `origin/main` snapshot; local integration main observed at `357ef17799`
 
 ## Executive Summary
 
@@ -21,8 +21,8 @@ The project history metrics report now covers Git and provider-log activity from
 | C# source files under `src/` | 1,015 |
 | C# test files under `tests/` | 516 |
 | Markdown docs under `docs/` | 243 |
-| Current C# source LOC | 195,808 |
-| Current C# test LOC | 199,480 |
+| Current C# source LOC | 196,147 |
+| Current C# test LOC | 199,785 |
 | Current XAML LOC | 8,256 |
 | XLSX corpus manifest rows | 175 |
 
@@ -30,7 +30,7 @@ The project history metrics report now covers Git and provider-log activity from
 
 | Item | Status |
 | --- | --- |
-| Mainline | Branch-neutral `origin/main` snapshot remains the canonical comparison point; local integration main was observed at `0138532fd` for this refresh |
+| Mainline | Branch-neutral `origin/main` snapshot remains the canonical comparison point; local integration main was observed at `357ef17799` for this refresh |
 | Completion tracking | [release/progress.json](../release/progress.json) remains at `overallCompletion: 95` |
 | History metrics | [PROJECT_BUILD_HISTORY_METRICS.md](PROJECT_BUILD_HISTORY_METRICS.md) is refreshed through 2026-05-31 inclusive |
 | Branch posture | Multiple worker branches/worktrees are still registered for active or paused parallel implementation; this report does not treat worker-owned checkouts as mainline status |
@@ -44,7 +44,7 @@ The project history metrics report now covers Git and provider-log activity from
 | Formula engine | 487/487 in-scope functions implemented and tested; current work is parity proof and targeted edge-case hardening. |
 | Command surface | 100% of in-scope command-surface rows covered; deferred/excluded rows are documented rather than counted as missing. |
 | Menu/toolbar parity | 100% of in-scope menu/toolbar rows covered, with deferred/excluded rows tracked separately. |
-| Keyboard shortcuts | 100% parity, 87/87 in-scope shortcuts, 0 partial, 0 missing. |
+| Keyboard shortcuts | **100% parity** (87/87), **0% partial** (0/87), **0 missing**. |
 | XLSX fidelity | 71 documented in-scope feature categories with at least partial support; corpus remains at 175 workbook manifest rows with generated/public/regression evidence and known-gap warning coverage. |
 | UI/dialog parity | Dialog message routing, access keys, default/cancel semantics, UIA metadata, keytips, ribbon layout, titlebar/QAT states, and sheet-tab chrome have broad automated coverage and continuing visual polish. |
 | Localization | `UiText`, `LocExtension`, neutral resources, Bulgarian satellite resources, startup UI culture, WPF language metadata, and localization guard tests are present. |
