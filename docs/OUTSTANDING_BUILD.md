@@ -93,7 +93,7 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
 1. **View and window management**
    - New Window and Switch Windows are live through the registry-backed workbook-window slice.
    - Hide Window, Unhide Window, View Side by Side, Synchronous Scrolling, Reset Window Position, and Arrange All are **done 2026-06-01**. Arrange All stores the workbook arrangement choice and applies live visible-window layouts for Tiled, Horizontal, Vertical, and Cascade through `WorkbookWindowRegistry` / `ArrangeAllLayoutPlanner`; Side by Side uses `SideBySideLayoutPlanner`, and Reset uses `WindowResetPositionPlanner`. Cross-window scroll mirroring is double-guarded against feedback loops.
-   - Fine split-pane scroll feel parity.
+   - Fine split-pane scroll feel parity is narrowed: mini-scrollbar wheel gestures now resolve the pane and axis from the chrome under the pointer before falling back to cell-region targeting (covered by `ResolveSplitPaneWheelTarget` and the host wheel-handler source test). Remaining polish is live WPF evidence for divider drag/visual feel and any newly found active-pane edge cases.
    - Split-pane merged-cell indexing now prunes regions outside queried pane row/column bounds before visible-row expansion; keep closing any newly discovered merged-cell edge cases.
    - Worksheet primary view-mode load/save now targets the primary `sheetView` (`workbookViewId="0"`) even when additional sheet views appear first in the XML; remaining view work is any deeper workbook/window view-mode polish found in real files.
 
