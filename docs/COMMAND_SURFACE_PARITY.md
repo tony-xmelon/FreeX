@@ -352,7 +352,7 @@ workbook command behavior to track here.
 | Sort (single/multi-key) | Implemented |  |
 | Filter (auto-filter with conditions) | Implemented | AutoFilter dropdown exposes Filter by Color only when actual color choices exist |
 | Advanced Filter | Implemented | Criteria range supports AND/OR rows, copy-to output, unique records, undo, F4 repeat of the applied dialog result, and access-keyed action/options/reference controls |
-| Text to Columns | Implemented | Wizard exposes access-keyed source mode, delimiter, qualifier, destination, reference picker, and OK/Cancel controls; General numeric conversion accepts CurrentCulture with invariant fallback and rejects non-finite values |
+| Text to Columns | Implemented | Wizard exposes access-keyed source mode, delimiter, qualifier, destination, reference picker, and OK/Cancel controls; General numeric conversion accepts CurrentCulture with invariant fallback and rejects non-finite values; visible grouped sheets split their own source text into remapped destination ranges as one undoable command |
 | Remove Duplicates | Implemented |  |
 | Data Validation | Implemented |  |
 | Consolidate | Implemented | Function, reference list, destination, label options, and Add/Delete/OK/Cancel expose access keys |
