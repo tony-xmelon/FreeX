@@ -1,7 +1,7 @@
 # FreeX Next Development Phases
 
 **Last updated:** 2026-06-01
-**Current state:** Formula engine at 487/487 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (87/87), XLSX round-trip and corpus coverage at a 175-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, UIA accessibility peers, the first localization foundation, and a chart interop harness with a latest-complete 28/28 openability/export plus visual-gate pass. The active focus is advanced chart/XLSX fidelity proof, package-preserving save validation, release packaging/trust validation, localization breadth, performance hardening, and the explicitly documented native-Excel pivot edge cases.
+**Current state:** Formula engine at 487/487 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (87/87), XLSX round-trip and corpus coverage at a 175-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, UIA accessibility peers, a 43-culture localization resource foundation, and a chart interop harness with a latest-complete 28/28 openability/export plus visual-gate pass. The active focus is advanced chart/XLSX fidelity proof, package-preserving save validation, release packaging/trust validation, localization review/pseudo-localization/package metadata, performance hardening, and the explicitly documented native-Excel pivot edge cases.
 
 ---
 
@@ -55,12 +55,12 @@ The production readiness pass hardened accessibility, test corpus quality, dialo
 - **#48 Shortcut parity**: AutoFilter shortcut improvements; shortcut parity now at 100% (87/87, 0 partial).
 - **#49 Docs**: `PROJECT_STATUS_REPORT` and `OUTSTANDING_BUILD` updated; `overallCompletion` raised to 95.
 
-### May 31 Integration and Localization Foundation
+### May 31 and June 1 Integration and Localization Foundation
 
-May 31 closed several late hardening slices and added the first production localization substrate:
+May 31 closed several late hardening slices and June 1 expanded the production localization substrate:
 
 - Formula documentation and catalog status now track 487/487 in-scope functions.
-- `UiText`, `LocExtension`, neutral `Strings.resx`, and `Strings.bg-BG.resx` are present with resource key, XAML usage, automation metadata, and Bulgarian satellite coverage tests.
+- `UiText`, `LocExtension`, neutral `Strings.resx`, and 43 complete satellite resource cultures are present. Tests cover resource keys, XAML usage, automation metadata, language catalog discovery, satellite key/placeholder/access-key parity, blank-value prevention, full satellite assemblies without parent fallback, and Bulgarian terminology smoke coverage.
 - Ribbon/sheet-tab polish continued through compact split-button segment fixes, standalone ribbon command layout at wider widths, sheet add/options icon polish, and tab navigation hover alignment.
 - Object resize/rotation handles, chart data-label toggles, custom-list primary sort behavior, and keytip placement polish are recorded as done in the outstanding-build backlog.
 
