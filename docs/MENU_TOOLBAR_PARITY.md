@@ -76,7 +76,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Save | Implemented |  |
 | Undo | Implemented |  |
 | Redo | Implemented |  |
-| Customize QAT | Partial | Options dialog persists command list, order, reset, and above/below-ribbon location for the broad direct-command catalog; eligible direct ribbon commands can now be added/removed through command context menus; arbitrary command browsing and import/export of customizations remain out of scope |
+| Customize QAT | Partial | Options dialog filters the broad direct-command catalog and persists command list, order, reset, and above/below-ribbon location; eligible direct ribbon commands can now be added/removed through command context menus; arbitrary command browsing and import/export of customizations remain out of scope |
 <!-- command-inventory:menu-toolbar:qat:end -->
 
 ---
@@ -334,7 +334,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 |---|---|---|
 | Spell Check | Partial | Broader known-corrections text-cell scan with casing-preserving replace, replace-all, ignore support, and internet/email/file-address span skipping; no full dictionary/proofing engine |
 | Thesaurus | Excluded | Requires external dictionary service |
-| Accessibility Checker | Partial | Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, patterned fills, no fill treated as white, and matching conditional-format styles for cell-value, text, blank/error, no-blank/no-error, duplicate-value, unique-value, above/below-average, and top/bottom rules, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; formula and date-occurring conditional-format evaluation, theme/tint expansion beyond existing style values, chart/shape/text-box text, and full Excel rule taxonomy remain partial |
+| Accessibility Checker | Partial | Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, patterned fills, no fill treated as white, and matching conditional-format styles for cell-value, text, date-occurring, blank/error, no-blank/no-error, duplicate-value, unique-value, above/below-average, and top/bottom rules, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; formula conditional-format evaluation, theme/tint expansion beyond existing style values, chart/shape/text-box text, and full Excel rule taxonomy remain partial |
 | Smart Lookup | Excluded |  |
 | Translate | Excluded |  |
 | New Comment | Partial | Threaded comment text can be added/edited/deleted locally through the Review ribbon and Ctrl+Shift+F2, including root-message edits, explicit Reply/Add actions, Ctrl+Enter reply submission, and created/modified UTC metadata for local threads; full threaded conversation UI remains partial |

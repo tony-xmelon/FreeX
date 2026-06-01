@@ -1,7 +1,7 @@
 # FreeX Next Development Phases
 
 **Last updated:** 2026-06-01
-**Current state:** Formula engine at 487/487 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (87/87), XLSX round-trip and corpus coverage at a 175-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, UIA accessibility peers, a 43-culture localization resource foundation, and a chart interop harness with a latest-complete 28/28 openability/export plus visual-gate pass. The only chart caveat currently tracked is non-blocking `ThreeDColumn` Excel raster/export variance after byte-identical package proof. The active focus is broader XLSX fidelity proof, package-preserving save validation, release packaging/trust validation, localization review/pseudo-localization/package metadata, performance hardening, and the explicitly documented native-Excel pivot edge cases.
+**Current state:** Formula engine at 487/487 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (87/87), XLSX round-trip and corpus coverage at a 175-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, UIA accessibility peers, a 43-culture localization resource foundation, and a chart interop harness with a latest-complete 28/28 openability/export plus visual-gate pass, 0 known-gap chart allowances, and 28/28 byte-identical Excel-native/FreeX-round-trip packages. The active focus is broader XLSX fidelity proof, package-preserving save validation, release packaging/trust validation, localization review/pseudo-localization/package metadata, performance hardening, and the explicitly documented native-Excel pivot edge cases.
 
 ---
 
@@ -102,7 +102,7 @@ Slicer and timeline metadata plus the worksheet-range PivotTable interaction lay
 - Modern: waterfall, funnel
 - Full chart format pane/dialog UX for all chart families
 
-June 1 status: `tools/FreeX.ChartInteropCompare` now provides repeatable Excel COM openability/export and visual-gate evidence. The latest complete run passed 28/28 chart cases, with current fixes for Pareto chartEx axis metadata, box-and-whisker chartEx metadata, waterfall chartEx XML and Set as Total UI, scatter connector defaults, classic chart default layout, and 3-D depth axis ids. chartEx passed 7/7 openability/export and visual gate with 0 chartEx known gaps. Remaining work is full chart formatting/layout UX, map-chart scope if productized, and keeping the chart gate green as writer changes continue.
+June 1 status: `tools/FreeX.ChartInteropCompare` now provides repeatable Excel COM openability/export and visual-gate evidence. The latest complete run passed 28/28 chart cases with 0 known-gap allowances and byte-identical Excel-native/FreeX-round-trip packages, with current fixes for Pareto chartEx axis metadata, box-and-whisker chartEx metadata, waterfall chartEx XML and Set as Total UI, scatter connector defaults, classic chart default layout, and 3-D depth axis ids. chartEx passed 7/7 openability/export and visual gate with 0 chartEx known gaps. Remaining work is full chart formatting/layout UX, map-chart scope if productized, and keeping the chart gate green as writer changes continue.
 
 ### 7D: Conditional Formatting and Formatting Polish
 
