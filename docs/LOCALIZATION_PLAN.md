@@ -12,7 +12,7 @@ Make FreeX localizable without weakening spreadsheet fidelity. UI text should co
 - The production localization substrate is implemented in `FreeX.App.Host`: `UiText` wraps `ResourceManager`, `LocExtension` binds XAML attributes to resources, `AppLocalization` applies startup UI culture and WPF language metadata, and `AppLanguageCatalog` discovers satellite resources after build.
 - Neutral resources now live in `src/FreeX.App.Host/Resources/Strings.resx`. The app now ships 43 complete satellite resource files covering `bg-BG`, `cs-CZ`, `da-DK`, `de-AT`, `de-CH`, `de-DE`, `el-GR`, `en-AU`, `en-CA`, `en-GB`, `en-IE`, `en-NZ`, `en-ZA`, `es-AR`, `es-CL`, `es-CO`, `es-ES`, `es-MX`, `et-EE`, `fi-FI`, `fr-CA`, `fr-FR`, `ga-IE`, `hr-HR`, `hu-HU`, `it-IT`, `lt-LT`, `lv-LV`, `mt-MT`, `nb-NO`, `nl-BE`, `nl-NL`, `pl-PL`, `pt-BR`, `pt-PT`, `ro-RO`, `sk-SK`, `sl-SI`, `sr-Cyrl-RS`, `sr-Latn-RS`, `sv-SE`, `tr-TR`, and `uk-UA`.
 - XAML and host-source guard tests now enforce localization usage for user-facing XAML attributes, message/progress calls, automation names/help text, and used resource keys.
-- A large portion of host dialog and shell text now flows through `UiText`/`Loc`. Remaining work is native-speaker/translator review for the satellite files, core message-code boundaries, culture-sensitive user input audits, pseudo-localization visual smoke coverage, and package/release language metadata validation.
+- A large portion of host dialog and shell text now flows through `UiText`/`Loc`. Pseudo-localization contract smoke coverage now proves high-risk shell/ribbon/dialog strings can be expanded while preserving placeholders and access-key counts. Remaining work is native-speaker/translator review for the satellite files, core message-code boundaries, culture-sensitive user input audits, selectable pseudo-localized runtime/visual clipping coverage, and package/release language metadata validation.
 - Command identity remains a risk area wherever planners still infer behavior from display text. Continue migrating behavior to invariant command IDs before expanding translated command surfaces.
 - Culture handling is still mixed, but the highest-value numeric entry paths now have explicit coverage: direct cell entry, delimited CSV/TSV import, and Text to Columns General conversion try `CurrentCulture` first with invariant fallback where compatibility matters. Date parsing, additional dialog parsers, and packaging/release language metadata still need focused audits.
 
@@ -69,8 +69,8 @@ Use culture deliberately:
 
 1. Foundation and guardrails
    - **Implemented:** `UiText`, `LocExtension`, neutral resources, 43 satellite resource cultures, startup UI-culture application, and WPF language metadata application.
-   - **Implemented:** tests for missing keys, used resource keys, raw XAML user-facing text, inline message/progress text, raw automation metadata, satellite resource discovery, key parity, placeholder parity, access-key parity, blank-value prevention, non-English translation-count smoke coverage, and full satellite assemblies without parent fallback. Bulgarian also has a focused terminology smoke suite for high-value Excel commands.
-   - **Remaining:** pseudo-localization resource set and visual clipping smoke pass.
+   - **Implemented:** tests for missing keys, used resource keys, raw XAML user-facing text, inline message/progress text, raw automation metadata, satellite resource discovery, key parity, placeholder parity, access-key parity, blank-value prevention, non-English translation-count smoke coverage, pseudo-localization contract smoke coverage for high-risk shell/ribbon/dialog strings, and full satellite assemblies without parent fallback. Bulgarian also has a focused terminology smoke suite for high-value Excel commands.
+   - **Remaining:** selectable pseudo-localized runtime/resource path and visual clipping smoke pass.
 
 2. Centralized strings
    - **Partially implemented:** common buttons, message-box titles, many dialogs, automation metadata, MainWindow XAML, progress/status calls, and app/startup text now use resources.
@@ -117,7 +117,7 @@ These slices are mostly disjoint if shared files are coordinated: `MainWindow.xa
 - UI tests: assert stable `AutomationId` values and localized visible/accessibility text from resources instead of duplicated English literals.
 - Keytip tests: validate uniqueness per localized menu/tab and detect prefixes/collisions.
 - Culture tests: run representative parsing/display tests under `en-US`, `de-DE`, and at least one satellite UI culture.
-- Layout tests: run pseudo-localized resource smoke tests for ribbon/dialog clipping risk.
+- Layout tests: run pseudo-localized resource contract smoke tests, then follow with a WPF visual clipping pass for ribbon/dialog risk.
 - Packaging tests: confirm satellite resources are present in publish output and package manifests declare expected languages.
 
 ## Risks
@@ -133,7 +133,7 @@ These slices are mostly disjoint if shared files are coordinated: `MainWindow.xa
 
 - App can run in default `en-US` from resources with no visible regression. **Implemented for the current resource-backed host surfaces.**
 - Full satellite resources can be discovered and selected at startup. **Implemented for 43 cultures; translator/native-speaker review is still needed before treating the translations as final.**
-- Pseudo-localized resources can be selected at startup and cover common shell/dialog/message surfaces. **Remaining.**
+- Pseudo-expanded resource contracts cover common shell/ribbon/dialog surfaces. **Implemented as a non-visual smoke foundation; selectable startup pseudo-localization and visual clipping coverage remain.**
 - Command identity is no longer derived from localized English labels. **Partially complete; continue replacing display-text classification with invariant IDs.**
 - Core user-facing errors converted in at least one vertical slice use codes plus localized host rendering. **Remaining beyond host-layer message/resource migration.**
 - Build and relevant tests pass under default culture, with at least one culture smoke suite under `de-DE` or another comma-decimal culture. **Resource tests plus focused comma-decimal direct-entry/import/Text to Columns tests exist; broader date/dialog/display smoke coverage remains.**
