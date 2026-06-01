@@ -1138,7 +1138,7 @@
         {
           "name": "Accessibility Checker",
           "status": "Partial",
-          "notes": "Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, patterned fills, no fill treated as white, and matching conditional-format styles for cell-value, text, blank/error, no-blank/no-error, duplicate-value, unique-value, and above/below-average rules, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; formula, date-occurring, and top/bottom conditional-format evaluation, theme/tint expansion beyond existing style values, chart/shape/text-box text, and the full Excel rule taxonomy remain partial"
+          "notes": "Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, patterned fills, no fill treated as white, and matching conditional-format styles for cell-value, text, blank/error, no-blank/no-error, duplicate-value, unique-value, above/below-average, and top/bottom rules, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; formula and date-occurring conditional-format evaluation, theme/tint expansion beyond existing style values, chart/shape/text-box text, and the full Excel rule taxonomy remain partial"
         },
         {
           "name": "Smart Lookup / Researcher",
@@ -2447,7 +2447,7 @@
         {
           "name": "Accessibility Checker",
           "status": "Partial",
-          "notes": "Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, patterned fills, no fill treated as white, and matching conditional-format styles for cell-value, text, blank/error, no-blank/no-error, duplicate-value, unique-value, and above/below-average rules, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; formula, date-occurring, and top/bottom conditional-format evaluation, theme/tint expansion beyond existing style values, chart/shape/text-box text, and full Excel rule taxonomy remain partial"
+          "notes": "Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, patterned fills, no fill treated as white, and matching conditional-format styles for cell-value, text, blank/error, no-blank/no-error, duplicate-value, unique-value, above/below-average, and top/bottom rules, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; formula and date-occurring conditional-format evaluation, theme/tint expansion beyond existing style values, chart/shape/text-box text, and full Excel rule taxonomy remain partial"
         },
         {
           "name": "Smart Lookup",
