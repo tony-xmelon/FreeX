@@ -278,7 +278,7 @@ workbook command behavior to track here.
 | Interactive drag handles | Deferred | Needs a dedicated object-selection/adornment layer; command-based size/rotation is implemented |
 | Crop | Partial | Image picture crop/reset is undoable, rendered, and persisted in native JSON and XLSX; interactive crop handles remain pending |
 | Gradients/Effects | Partial | Authored drawing shapes support two-color gradient fills plus selectable None/Shadow/Glow/Soft Edges effects from the Draw Effects dialog, with undo and native JSON/XLSX persistence; full Excel gradient/effect galleries remain pending |
-| Selection Pane | Partial | Lists sheet objects with per-item visibility checkboxes, search/filter controls, access-keyed Show All / Hide All bulk controls, Bring Forward / Send Backward reorder buttons, same-kind drag reorder within the list, model-backed object renaming with undo plus Native JSON and XLSX `cNvPr` name persistence for supported drawing objects, and OK/Cancel; full Excel pane visuals remain partial |
+| Selection Pane | Partial | Lists sheet objects with per-item visibility checkboxes, search/filter controls, access-keyed Show All / Hide All bulk controls, Bring Forward / Send Backward reorder buttons, same-kind drag reorder within the list, model-backed object renaming with undo plus Native JSON and XLSX `cNvPr` name persistence for supported drawing objects, grouped-sheet propagation for supported picture/shape/text-box rename, visibility, and z-order edits, and OK/Cancel; full Excel pane visuals remain partial |
 <!-- command-inventory:command-surface:draw:end -->
 
 ---
@@ -346,13 +346,13 @@ workbook command behavior to track here.
 <!-- command-inventory:command-surface:data:start -->
 | Command | Status | Notes |
 |---|---|---|
-| Get Data (CSV) | Implemented |  |
+| Get Data (CSV) | Implemented | Delimited CSV/TSV import parses user-entered numbers with CurrentCulture first and invariant fallback while keeping file-format metadata invariant |
 | Queries & Connections | Excluded | External workbook queries, connection management, and Power Query connectors are excluded and are not surfaced as a disabled ribbon command; Refresh All remains available |
 | Refresh All | Implemented | Recalc |
 | Sort (single/multi-key) | Implemented |  |
-| Filter (auto-filter with conditions) | Implemented |  |
+| Filter (auto-filter with conditions) | Implemented | AutoFilter dropdown exposes Filter by Color only when actual color choices exist |
 | Advanced Filter | Implemented | Criteria range supports AND/OR rows, copy-to output, unique records, undo, F4 repeat of the applied dialog result, and access-keyed action/options/reference controls |
-| Text to Columns | Implemented | Wizard exposes access-keyed source mode, delimiter, qualifier, destination, reference picker, and OK/Cancel controls |
+| Text to Columns | Implemented | Wizard exposes access-keyed source mode, delimiter, qualifier, destination, reference picker, and OK/Cancel controls; General numeric conversion accepts CurrentCulture with invariant fallback and rejects non-finite values |
 | Remove Duplicates | Implemented |  |
 | Data Validation | Implemented |  |
 | Consolidate | Implemented | Function, reference list, destination, label options, and Add/Delete/OK/Cancel expose access keys |
