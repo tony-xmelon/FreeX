@@ -82,7 +82,7 @@ FreeX saves supported `.xlsx` workbook content from the in-memory model. For wor
 | VBA macros | Excluded | Retained as package part; not executed |
 | Power Query | Excluded | Retained as package part; not executed |
 | Data Model / Power Pivot | Excluded | Retained as package part; not executed |
-| Linked data types | Excluded | Retained as package part |
+| Linked data types | Excluded | Retained as package parts, including rich value data/structure metadata |
 | Threaded comments | Excluded | Retained as package part |
 | Track changes / revision history | Excluded | Retained as package part |
 | Form controls / ActiveX | Excluded | Retained as package part |
@@ -207,6 +207,7 @@ These feature assets are retained best-effort when the workbook was opened from 
 - Unsupported charts and chart formatting
 - Deeper OOXML effect semantics and full XLSX chart-theme extraction beyond the current native/XLSX workbook theme model, loaded-cell-style color-resolution, drawing-object theme-rendering/effect baseline, simple embedded native-chart package loading, chart theme-color rendering, preset menus, and custom theme dialog baseline
 - External workbook links and linked data model artifacts
+- Microsoft linked data type rich-data parts, including rich value data/structure metadata
 - Embedded/OLE objects
 - Custom OOXML package parts not represented in `Core.Model`
 - Unsupported workbook, worksheet, view, protection, and metadata settings
