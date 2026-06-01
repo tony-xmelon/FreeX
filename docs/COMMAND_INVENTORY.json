@@ -1047,7 +1047,7 @@
         {
           "name": "Text to Columns",
           "status": "Implemented",
-          "notes": "Wizard exposes access-keyed source mode, delimiter, qualifier, destination, reference picker, and OK/Cancel controls; General numeric conversion accepts CurrentCulture with invariant fallback and rejects non-finite values"
+          "notes": "Wizard exposes access-keyed source mode, delimiter, qualifier, destination, reference picker, and OK/Cancel controls; General numeric conversion accepts CurrentCulture with invariant fallback and rejects non-finite values; visible grouped sheets split their own source text into remapped destination ranges as one undoable command"
         },
         {
           "name": "Remove Duplicates",
@@ -2361,7 +2361,7 @@
         {
           "name": "Text to Columns",
           "status": "Implemented",
-          "notes": "Wizard exposes access-keyed source mode, delimiter, qualifier, destination, reference picker, and OK/Cancel controls; General numeric conversion accepts CurrentCulture with invariant fallback and rejects non-finite values"
+          "notes": "Wizard exposes access-keyed source mode, delimiter, qualifier, destination, reference picker, and OK/Cancel controls; General numeric conversion accepts CurrentCulture with invariant fallback and rejects non-finite values; visible grouped sheets split their own source text into remapped destination ranges as one undoable command"
         },
         {
           "name": "Remove Duplicates",
