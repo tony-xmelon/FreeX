@@ -1,7 +1,7 @@
 # FreeX Project Status Report
 
 Generated: 2026-06-01
-Observed at: 2026-06-01T22:53:27+03:00
+Observed at: 2026-06-01T23:07:27+03:00
 Report scope: current consolidated documentation/status snapshot after the June 1 evening integrations
 Mainline observed: branch-neutral `origin/main` snapshot; worker-specific branch and worktree names are intentionally omitted from this status report
 
@@ -30,7 +30,7 @@ The project history metrics report now covers Git and provider-log activity from
 
 | Item | Status |
 | --- | --- |
-| Mainline | Local `main` was clean and synced with `origin/main` at `1ca18a809` (`Merge XSLT current function coverage`) |
+| Mainline | Local `main` was clean and synced with `origin/main` at `df55ab3ad` (`Merge pseudo-localization smoke coverage`) |
 | Completion tracking | [release/progress.json](../release/progress.json) remains at `overallCompletion: 95` |
 | History metrics | [PROJECT_BUILD_HISTORY_METRICS.md](PROJECT_BUILD_HISTORY_METRICS.md) is refreshed through 2026-05-31 inclusive |
 | Branch posture | Parallel work is active again: observed 122 registered worktrees, 129 local branches, 13 branches not yet merged to `main`, and 2 dirty worker-owned worktrees. These were left untouched. |
