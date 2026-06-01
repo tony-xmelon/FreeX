@@ -19,12 +19,12 @@ Confirmed present in code and tests:
 - Page layout, page setup, print/export, custom views, workbook/theme commands, chart/object/theme baselines.
 - Slicer/timeline metadata, authored state, pane controls, cache relationships, native floating drawing-anchor retention, Insert commands, and connected PivotTable filtering are implemented.
 - PivotTable functional core is implemented, including creation, refresh, field layout/source/options changes, filtering/grouping/sorting, Show Values As, calculated fields/items, built-in and custom workbook-catalog value-field number formats, GETPIVOTDATA, Show Details, PivotChart sync, slicer/timeline integration, external/OLAP pivot-cache source metadata load/save, custom PivotStyle definition metadata load/save, and PivotChart chart-space design metadata round-trip for `pivotFmts`, external-data relationship pointers plus package relationship type/target/target-mode metadata, plot-area and legend manual layout metadata, 3D view metadata, date-system/language, color-map overrides, print settings, style ids, chart protection flags, rounded corners, auto-title-deleted state, hidden-row-data visibility, blank-display behavior, rendered data-table options, and data-label-over-maximum flags. PivotChart Options now edits field buttons, data-table/legend-key display, rounded corners, hidden-row data visibility, and blank-cell display mode. Remaining gaps are exact PivotStyle gallery UI/rendering semantics, richer PivotChart layout/design editing beyond these chart-space flags, and external/OLAP/data-model refresh or execution.
-- Unsupported XLSX feature detection and open/save warnings for macros, Power Query, data model/Power Pivot, linked data types, threaded comments, track changes, chart/dialog/macro sheet types, form controls/ActiveX, digital signatures, custom ribbon UI, Office add-ins/web extensions, SmartArt diagrams, embedded objects, and unsupported chart package parts, with retained-opaque package wording rather than general package-loss wording.
+- Unsupported XLSX feature detection and open/save warnings for macros, Power Query, data model/Power Pivot, linked data types, threaded comments, track changes, chart/dialog/macro sheet types, form controls/ActiveX, digital signatures, custom ribbon UI, Office add-ins/web extensions, live web queries/web publishing metadata including `xl/connections.xml` web-query connection metadata, SmartArt diagrams, embedded objects, and unsupported chart package parts, with retained-opaque package wording rather than general package-loss wording.
 - Accessibility: `SheetGrid` and sheet-tab `TabChrome` have correct `AutomationProperties.Name`; `GridView` exposes a `DataGrid`-typed automation peer; all dialogs have `IsDefault`/`IsCancel` and programmatic initial focus; 10 UIA XAML-parse tests added (PR #45).
 - Keyboard shortcuts at **100% parity (87/87)**; AutoFilter shortcut improvements in `DataFilterCommands` (PR #48).
 - All `MessageBox.Show` calls in dialog classes migrated to `IUserMessageService`/`DialogMessageHelper`; all dialog access keys and `IsDefault`/`IsCancel` states audited (PR #47).
-- XLSX corpus at **175 rows** (+31 new feature buckets); 3 per-feature XML structural comparisons; 6 round-trip bugs fixed (PR #46).
-- Localization foundation is now present in code and tests: `UiText`, `LocExtension`, neutral `Strings.resx`, full `Strings.bg-BG.resx` satellite coverage, startup UI-culture selection, WPF language metadata application, current-culture direct numeric cell entry with invariant fallback, and resource/usage guard tests.
+- XLSX corpus at **175 rows** (+31 new feature buckets); per-feature XML structural comparisons now include conditional formatting, chart series, and data-validation rule semantics; live web-query warning/retention coverage includes connection metadata; 6 round-trip bugs fixed (PR #46).
+- Localization foundation is now present in code and tests: `UiText`, `LocExtension`, neutral `Strings.resx`, full `Strings.bg-BG.resx` satellite coverage, startup UI-culture selection, WPF language metadata application, current-culture direct numeric cell entry, delimited CSV/TSV import, and Text to Columns numeric parsing with invariant fallback, plus resource/usage guard tests.
 
 ## Highest Priority Outstanding Work
 
@@ -32,6 +32,8 @@ Confirmed present in code and tests:
    - Current manifest has 175 rows: 121 generated rows, 25 public Tealeg rows, 20 optional local-private rows, and 9 regression formula-cache workbooks.
    - Continue growing the 100+ row baseline with public/open-license, local-private, and regression workbooks.
    - Continue expanding corpus checks from model-summary stability into deeper per-feature comparisons.
+   - **Done 2026-06-01:** `generated-dv-count-package-003` now verifies ten native `dataValidation` rules by type/operator/formula/`sqref` semantics after ordinary model edits.
+   - **Done 2026-06-01:** the live web-query known-gap row now covers retained web-publish package parts plus web-query connection metadata and emits the expected unsupported-feature warning.
    - Add more Excel-authored formula-result fixtures that compare FreeX evaluation against cached Excel results for newly discovered high-risk edge semantics, especially volatility and spill boundaries.
    - Publish pass/fail rate by workbook and feature bucket before claiming 95% fidelity.
 
@@ -57,6 +59,7 @@ Confirmed present in code and tests:
 
 5. **XLSX warning coverage as new gaps are found**
    - Keep unsupported-feature detection aligned with newly discovered OOXML package parts.
+   - Live web-query/web-publish warning coverage is current through `xl/connections.xml` web-query metadata as of 2026-06-01.
    - Add known-gap corpus rows whenever a workbook contains unsupported content that should be disclosed rather than silently lost.
 
 ## Code-Quality Hardening Backlog (2026-05-30 review)
@@ -91,7 +94,7 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
    - Hide Window, Unhide Window, View Side by Side, Synchronous Scrolling, Reset Window Position, and Arrange All are **done 2026-06-01**. Arrange All stores the workbook arrangement choice and applies live visible-window layouts for Tiled, Horizontal, Vertical, and Cascade through `WorkbookWindowRegistry` / `ArrangeAllLayoutPlanner`; Side by Side uses `SideBySideLayoutPlanner`, and Reset uses `WindowResetPositionPlanner`. Cross-window scroll mirroring is double-guarded against feedback loops.
    - Fine split-pane scroll feel parity.
    - Split-pane merged-cell indexing now prunes regions outside queried pane row/column bounds before visible-row expansion; keep closing any newly discovered merged-cell edge cases.
-   - Full workbook view-mode polish beyond the current state/persistence baseline.
+   - Worksheet primary view-mode load/save now targets the primary `sheetView` (`workbookViewId="0"`) even when additional sheet views appear first in the XML; remaining view work is any deeper workbook/window view-mode polish found in real files.
 
 2. **Charts, themes, and visual objects**
    - Histogram bin configuration (Excel "Format Axis ▸ Bins": automatic / bin width / number of bins, plus overflow & underflow bins) — **modeled + rendered + native-persisted 2026-06-01** (pure `HistogramBinPlanner` with 10 unit tests, `ChartModel.HistogramBinning`, renderer delegates to the planner, native JSON round-trip). Follow-on: Format-Axis dialog UI to set bins and XLSX read/write of the bin settings.
@@ -114,6 +117,8 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
    - Remaining: any deeper color-scale XLSX edge semantics.
 
 4. **Data workflow polish**
+   - AutoFilter `Filter by Color` menu availability now matches the modeled data: the command is hidden unless actual color choices exist.
+   - Text to Columns General numeric conversion now accepts current-culture numbers with invariant fallback and rejects non-finite values.
    - Sort/filter dialog UX: multi-level sort, case-sensitive, orientation, sort-by-colour, and custom-list "First key sort order" are implemented; custom-list order is now actually applied to the primary key — **done 2026-05-31** (`CustomSortOrder`). Remaining: any further niche sort/filter dialog options.
    - Data Validation range-picker with live modal collapse/selection — **done** (`DataValidationRangeSelectionRequest`, present in code).
    - Full Scenario PivotTable-style reports — **done** (Scenario Manager "Summary" report via `ScenarioManagerAction.Report` / `ScenarioCommands`).
@@ -121,13 +126,13 @@ From the 2026-05-30 comprehensive source review. The build is green and every pr
    - Forecast chart visualization — **done** (`ForecastSheetCommand` adds a `ForecastChartPlanner`-planned line chart — Actual/Forecast plus dashed lower/upper confidence bounds — to the generated sheet; reverting the command removes the sheet and its chart. Covered by `ForecastSheetCommandTests.ForecastSheetCommand_InsertsForecastChartOnGeneratedSheetAndUndoRemovesIt` + `ForecastChartPlannerTests`).
 
 5. **Grouped-sheet propagation**
-   - Extend grouped-sheet behavior for advanced object effects.
-   - Remove Duplicates, Subtotal, and Remove All Subtotals now propagate across visible grouped sheets with per-sheet remapped ranges; extend any remaining supported advanced data commands where Excel applies actions across grouped sheets as they are identified.
+   - Selection Pane rename, visibility, and z-order edits now propagate across visible grouped sheets for supported pictures, shapes, and text boxes, with per-sheet object remapping and rollback when an equivalent object cannot be resolved.
+   - Remove Duplicates, Subtotal, and Remove All Subtotals now propagate across visible grouped sheets with per-sheet remapped ranges; extend any remaining supported object/data commands where Excel applies actions across grouped sheets as they are identified.
 
 6. **Localization and culture**
    - Foundation, neutral `en-US` resources, and full Bulgarian satellite resources are implemented.
-   - Current-culture direct numeric cell entry with invariant fallback is implemented.
-   - Remaining work is translator review, additional locales, broader core-message code boundaries, current-culture import audits, pseudo-localization layout smoke coverage, and release/package language metadata validation.
+   - Current-culture direct numeric cell entry, delimited CSV/TSV import, and Text to Columns numeric parsing with invariant fallback are implemented.
+   - Remaining work is translator review, additional locales, broader core-message code boundaries, additional date/import parser audits, pseudo-localization layout smoke coverage, and release/package language metadata validation.
 
 7. **Calculation performance architecture**
    - Recalculation is intentionally single-threaded today.
