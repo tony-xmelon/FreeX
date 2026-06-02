@@ -824,7 +824,7 @@
         {
           "name": "Selection Pane",
           "status": "Partial",
-          "notes": "Lists sheet objects with per-item visibility checkboxes, search/filter controls, access-keyed Show All / Hide All bulk controls, Bring Forward / Send Backward reorder buttons, mixed drag reorder for supported picture/shape/text-box drawing objects with charts kept chart-only, model-backed object renaming with undo plus Native JSON and XLSX `cNvPr` name persistence for supported drawing objects, grouped-sheet propagation for supported picture/shape/text-box rename, visibility, and z-order edits, and OK/Cancel; full Excel pane visuals remain partial"
+          "notes": "Lists sheet objects with per-item visibility checkboxes, search/filter controls, access-keyed Show All / Hide All bulk controls, Bring Forward / Send Backward reorder buttons, mixed drag reorder for supported picture/shape/text-box drawing objects with charts kept chart-only, model-backed object renaming with undo plus Native JSON and XLSX `cNvPr` name persistence for supported drawing objects, Native JSON/XLSX mixed z-order persistence, grouped-sheet propagation for supported picture/shape/text-box rename, visibility, and z-order edits, and OK/Cancel; full Excel pane visuals remain partial"
         }
       ]
     },
@@ -2103,7 +2103,7 @@
         {
           "name": "Selection Pane",
           "status": "Partial",
-          "notes": "Lists sheet objects with per-item visibility checkboxes, search/filter controls, access-keyed Show All / Hide All bulk controls, Bring Forward / Send Backward reorder buttons, mixed drag reorder for supported picture/shape/text-box drawing objects with charts kept chart-only, model-backed object renaming with undo plus Native JSON and XLSX `cNvPr` name persistence for supported drawing objects, grouped-sheet propagation for supported picture/shape/text-box rename, visibility, and z-order edits, and OK/Cancel; full Excel pane visuals remain partial"
+          "notes": "Lists sheet objects with per-item visibility checkboxes, search/filter controls, access-keyed Show All / Hide All bulk controls, Bring Forward / Send Backward reorder buttons, mixed drag reorder for supported picture/shape/text-box drawing objects with charts kept chart-only, model-backed object renaming with undo plus Native JSON and XLSX `cNvPr` name persistence for supported drawing objects, Native JSON/XLSX mixed z-order persistence, grouped-sheet propagation for supported picture/shape/text-box rename, visibility, and z-order edits, and OK/Cancel; full Excel pane visuals remain partial"
         }
       ]
     },
