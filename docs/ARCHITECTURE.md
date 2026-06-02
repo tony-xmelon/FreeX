@@ -356,11 +356,13 @@ cell is inside the table data body. Data-body and section-scoped multi-column ra
 and `Sales[[#Data],[Amount]:[Tax]]` resolve to rectangular table ranges. Excel's `#This Row` selector resolves through
 the same current-cell context as `[@Column]`, including row-scoped column ranges such as
 `Sales[[#This Row],[Amount]:[Tax]]`. Unqualified `#This Row` selectors bind to the containing table for calculated
-column-style formulas, for example `[[#This Row],[Amount]:[Tax]]`. Current-row references outside a table data row,
-external workbook structured references and full Excel table style element semantics remain outside this slice. Custom
-authored table-only style XML is retained on load and fresh save, but not interpreted as active style semantics. Built-in table styles `TableStyleMedium2`-`TableStyleMedium7` and `TableStyleLight16`-
-`TableStyleLight21` resolve Accent 1-6 banding from the active workbook theme for gallery swatches and Format as Table
-materialization.
+column-style formulas, for example `[[#This Row],[Amount]:[Tax]]`. Current-row references outside a table data row and
+external workbook structured references remain outside this slice. Custom authored table-only style XML is retained on
+load and fresh save, and supported custom table style DXFs materialize `wholeTable`, `headerRow`, `totalRow`,
+row/column stripe, first/last column, and first/last header/total cell semantics. Unsupported/full Excel-only table
+style elements remain raw XML-preserved and otherwise uninterpreted. Built-in table styles `TableStyleMedium2`-
+`TableStyleMedium7` and `TableStyleLight16`-`TableStyleLight21` resolve Accent 1-6 banding from the active workbook
+theme for gallery swatches and Format as Table materialization.
 
 Flash Fill remains a deterministic pattern service, not an Excel-like ML inference engine. It supports conservative
 single-column transforms including dotted-token extraction with variable dot counts for final-token patterns,
