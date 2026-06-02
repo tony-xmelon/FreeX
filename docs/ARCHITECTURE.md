@@ -171,7 +171,9 @@ while active-sheet and workbook export can bypass each sheet's stored `PrintArea
 honors the quality choice by changing raster page DPI while preserving the physical page size; XPS keeps the
 print-pipeline paginator path. `ExportPlanner`
 validates requested page-range starts and ends against the rendered page count before file creation, so out-of-range requests surface
-as export-option errors instead of half-written files. Extensionless export paths are normalized to `.pdf` when PDF is
+as export-option errors instead of half-written files. `ExportReadinessPlanner` supplies the local Backstage status text
+for PDF/XPS export readiness, selected-range availability, supported local options, and the no-Microsoft-account/cloud
+boundary without invoking file dialogs or renderers. Extensionless export paths are normalized to `.pdf` when PDF is
 inferred and to `.xps` when the save dialog explicitly selects XPS; explicit PDF/XPS save-dialog choices also replace
 mismatched extensions so the written bytes and visible filename agree. PDF sheet-name bookmarks are modeled on `ExportOptions` and written through
 `PdfDocument.Outlines`; bookmark targets are filtered and re-indexed after page-range selection so exported outlines
@@ -408,11 +410,12 @@ and selected image crop handles remain supported on the same rendering path.
 The Backstage File > Info panel is a host-only summary surface over existing model services. It reads
 `WorkbookStatisticsService` and `AccessibilityCheckerService`, then formats protection/status copy through
 `InfoPanelSummaryPlanner` when the Info view opens. It also reuses `ShareWorkbookPlanner` to show whether the
-currently saved local file is ready for Windows Share or must go through Save As first. It does not introduce cloud account, version-history,
+currently saved local file is ready for Windows Share or must go through Save As first, and `ExportReadinessPlanner`
+to show local PDF/XPS readiness without requiring the workbook to be saved first. It does not introduce cloud account, version-history,
 template, Document Inspector, or extended document-metadata subsystems.
 
 The Backstage Account action is also local-only. `LocalAccountPlanner` reports the FreeX user name, Windows account,
-device, app version, options file path, current workbook save/path status, and Windows Share readiness while explicitly
+device, app version, options file path, current workbook save/path status, Windows Share readiness, and PDF/XPS export readiness while explicitly
 stating that Microsoft 365 sign-in, cloud links, and coauthoring are not implemented. Share readiness is planned through
 `ShareWorkbookPlanner`, which trims and normalizes absolute local file paths, routes missing/invalid/unsaved paths
 through Save As, and hands Windows Share the normalized local path.
