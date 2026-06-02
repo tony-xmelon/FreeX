@@ -1163,12 +1163,12 @@
         {
           "name": "Previous/Next Comment",
           "status": "Implemented",
-          "notes": "Navigates threaded comments and notes on the active sheet"
+          "notes": "Navigates threaded comments on the active sheet"
         },
         {
           "name": "Show Comments",
           "status": "Implemented",
-          "notes": "Opens a list of threaded comments and notes on the active sheet"
+          "notes": "Opens a list of threaded comments on the active sheet"
         },
         {
           "name": "New Note",
@@ -1228,7 +1228,7 @@
         {
           "name": "Threaded Comments",
           "status": "Partial",
-          "notes": "Local threaded comment model, shortcut, navigation, delete command, list/dialog summaries with authors, replies, created timestamps, and resolved state, plus reply edit/delete actions that preserve resolved-state checkbox changes atomically, disable edit/delete when no reply is selected, disable blank selected-reply updates, and support Ctrl+Enter commit for selected reply edits; Native JSON persistence and XLSX root/reply round-trip for reply/thread activity metadata are supported; full threaded conversation UI and cloud identity semantics remain partial"
+          "notes": "Local threaded comment model, shortcut, threaded-only Review navigation/delete/listing, list/dialog summaries with authors, replies, created timestamps, and resolved state, plus reply edit/delete actions that preserve resolved-state checkbox changes atomically, disable edit/delete when no reply is selected, disable blank selected-reply updates, and support Ctrl+Enter commit for selected reply edits; Native JSON persistence and XLSX root/reply round-trip for reply/thread activity metadata are supported; full threaded conversation UI and cloud identity semantics remain partial"
         },
         {
           "name": "Statistics",
@@ -2472,12 +2472,12 @@
         {
           "name": "Previous/Next Comment",
           "status": "Implemented",
-          "notes": "Navigates threaded comments and notes on the active sheet"
+          "notes": "Navigates threaded comments on the active sheet"
         },
         {
           "name": "Show Comments",
           "status": "Implemented",
-          "notes": "Opens a list of threaded comments and notes on the active sheet"
+          "notes": "Opens a list of threaded comments on the active sheet"
         },
         {
           "name": "New Note",
@@ -2537,7 +2537,7 @@
         {
           "name": "Threaded Comments",
           "status": "Partial",
-          "notes": "Local threaded comment model, shortcut, navigation, delete command, list/dialog summaries with authors, replies, created timestamps, and resolved state, plus reply edit/delete actions that preserve resolved-state checkbox changes atomically, disable edit/delete when no reply is selected, disable blank selected-reply updates, and support Ctrl+Enter commit for selected reply edits; Native JSON persistence and XLSX root/reply round-trip for reply/thread activity metadata are supported; full threaded conversation UI and cloud identity semantics remain partial"
+          "notes": "Local threaded comment model, shortcut, threaded-only Review navigation/delete/listing, list/dialog summaries with authors, replies, created timestamps, and resolved state, plus reply edit/delete actions that preserve resolved-state checkbox changes atomically, disable edit/delete when no reply is selected, disable blank selected-reply updates, and support Ctrl+Enter commit for selected reply edits; Native JSON persistence and XLSX root/reply round-trip for reply/thread activity metadata are supported; full threaded conversation UI and cloud identity semantics remain partial"
         },
         {
           "name": "Statistics",
