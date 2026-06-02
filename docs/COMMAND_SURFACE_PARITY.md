@@ -387,8 +387,8 @@ workbook command behavior to track here.
 | Translate | Excluded |  |
 | New Comment | Partial | Threaded comment text can be added/edited/deleted locally through the Review ribbon and Ctrl+Shift+F2, including root-message edits, explicit Reply/Add actions, Ctrl+Enter reply submission, selected-reply edit/delete enablement, blank-update suppression, Ctrl+Enter commit for selected reply edits, and created/modified UTC metadata for local threads; full threaded conversation UI remains partial |
 | Delete Comment | Implemented | Removes the threaded comment on the selected cell |
-| Previous/Next Comment | Implemented | Navigates threaded comments and notes on the active sheet |
-| Show Comments | Implemented | Opens a list of threaded comments and notes on the active sheet |
+| Previous/Next Comment | Implemented | Navigates threaded comments on the active sheet |
+| Show Comments | Implemented | Opens a list of threaded comments on the active sheet |
 | New Note | Implemented | Simple cell notes |
 | Edit Note | Implemented | Reuses the note editor with existing note text preloaded |
 | Delete Note | Implemented |  |
@@ -400,7 +400,7 @@ workbook command behavior to track here.
 | Share | Implemented | Windows Share for saved local files using trimmed absolute local paths; missing, invalid, or unsaved local paths route through Save As |
 | Share Workbook (legacy) | Excluded |  |
 | Track Changes | Excluded |  |
-| Threaded Comments | Partial | Local threaded comment model, shortcut, navigation, delete command, list/dialog summaries with authors, replies, created timestamps, and resolved state, plus reply edit/delete actions that preserve resolved-state checkbox changes atomically, disable edit/delete when no reply is selected, disable blank selected-reply updates, and support Ctrl+Enter commit for selected reply edits; Native JSON persistence and XLSX root/reply round-trip for reply/thread activity metadata are supported; full threaded conversation UI and cloud identity semantics remain partial |
+| Threaded Comments | Partial | Local threaded comment model, shortcut, threaded-only Review navigation/delete/listing, list/dialog summaries with authors, replies, created timestamps, and resolved state, plus reply edit/delete actions that preserve resolved-state checkbox changes atomically, disable edit/delete when no reply is selected, disable blank selected-reply updates, and support Ctrl+Enter commit for selected reply edits; Native JSON persistence and XLSX root/reply round-trip for reply/thread activity metadata are supported; full threaded conversation UI and cloud identity semantics remain partial |
 | Statistics | Implemented |  |
 <!-- command-inventory:command-surface:review:end -->
 
