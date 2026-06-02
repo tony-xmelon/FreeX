@@ -56,6 +56,7 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `a09aa57d3` - Disabled visible Options dialog checkboxes that are not backed by persisted options or behavior, and added source/runtime coverage that they remain read-only.
 - `460971ad1` - Rejected unsupported command IDs in imported `.freex-qat.json` Quick Access Toolbar customization files instead of silently dropping them from mixed imports.
 - `b0de8daaa` - Hardened Backstage Info formatting for invalid saved workbook paths so extension metadata falls back safely and sharing status reports Save As readiness without probing invalid paths.
+- `bade3a1ae` - Skipped malformed workbook drag/drop path candidates so one invalid dropped path no longer aborts selection of a later supported workbook file.
 
 Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, and Selection Pane mixed reorder coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
@@ -86,6 +87,7 @@ Additional resume verification:
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~OptionsDialogSourceTests" -v:minimal` - passed.
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~QuickAccessToolbarCustomizationFileTests|FullyQualifiedName~OptionsDialogSourceTests" -v:minimal` - passed.
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~BackstageInfoPlannerTests|FullyQualifiedName~ShareWorkbookPlannerTests|FullyQualifiedName~LocalAccountPlannerTests" -v:minimal` - passed.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~WorkbookDropPlannerTests|FullyQualifiedName~MainWindowSourceHygieneTests.MainWindowFileDrop" -v:minimal` - passed.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - command inventory docs up to date.
 - `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - passed repeatedly on synced branch/main; final clean rerun was 0 warnings/errors.
 - `git diff --check` - clean for each committed slice.
@@ -110,6 +112,7 @@ Completed and merged lanes from this wave:
 - Resume / Options non-persisted toggle honesty: completed, pushed to `origin/main`.
 - Resume / QAT unsupported command import validation: completed, pushed to `origin/main`.
 - Resume / Backstage Info invalid saved-path handling: completed, pushed to `origin/main`.
+- Resume / Workbook drag/drop malformed-path handling: completed, pushed to `origin/main`.
 
 Read-only resume auditors:
 
