@@ -151,7 +151,7 @@ Still excluded or handled elsewhere:
 
 1. Start by `git fetch origin`, `git status --short --branch`, and `git log --oneline --decorate --graph origin/main..main`.
 2. Confirm this handoff commit and all merged slices are on `origin/main`; if `main` is ahead, verify the new commits before pushing.
-3. The coordinator branch and `origin/main` were aligned at this handoff, but the primary local `main` worktree was clean and diverged (`ahead 3, behind 1`) from other sessions. Treat `origin/main` plus this handoff as canonical unless those local `main` commits are verified and intentionally integrated by their owning lane.
+3. The coordinator branch and `origin/main` were aligned at this handoff, while the primary local `main` worktree was being changed by other sessions and may be dirty or diverged. Treat `origin/main` plus this handoff as canonical unless local `main` commits/edits are verified and intentionally integrated by their owning lane.
 4. Confirm no worker subagents are still open before spawning a new wave.
 5. Spawn the next wave only for non-overlapping bounded slices, excluding chart/PivotChart.
 6. Prefer next slices in Backstage Info/Share/Account, carefully bounded PDF/XPS option honesty, QAT command browsing/import validation only if the scope is narrowed, Accessibility Checker deterministic metadata/rule gaps, Spell Check deterministic skip/correction gaps, or Selection Pane/Draw fidelity polish.
