@@ -1,0 +1,122 @@
+# FreeX Orchestrator Handoff - 2026-06-02
+
+## Goal
+
+Continue FreeX non-chart, non-human v1 readiness work until remaining non-chart feature-parity, fidelity, warning, and documentation gaps are exhausted or explicitly blocked. Use isolated worktrees/subagents under `AGENTS.md`, with full local access and no permission/escalation prompts.
+
+The orchestration goal is paused for thread handoff, not complete.
+
+## Operating Policy
+
+- Repository: `E:\Users\anton\Documents\Claude\FreeX`.
+- Product name: FreeX.
+- Follow `AGENTS.md`: one branch/worktree per active lane, sync before edits, verify before merge, merge verified slices into `main`, then sync/push.
+- Do not ask the user for permissions; do not request escalation; do not pass `sandbox_permissions`.
+- Leave chart and PivotChart work to the parallel chart orchestrator.
+- Treat primary `main` as integration and verification only.
+
+## Integrated During This Orchestration Wave
+
+Verified and merged during this orchestration wave:
+
+- Backstage PDF/XPS export readiness: `ExportReadinessPlanner`, Backstage Info export status, Local Account export readiness, docs/inventory updates.
+- Selection Pane keyboard reorder shortcuts: `Ctrl+Up` / `Ctrl+Down` route through existing bring-forward/send-backward planning, with accessibility/help-text updates.
+- Accessibility Checker alt metadata: broader missing/generic object alt/title/name checks for supported non-chart drawing objects.
+- XLSX style-only save post-processing performance: style-only writer/post-processing split and focused IO coverage.
+- Sheet-tab focused-keyboard follow-up coverage: inactive tab menu-key selection, Home/End routing, ignored Enter/Escape/Tab fallthrough, Tab fallthrough, and clipping budget tests.
+- Mouse/dialog follow-up coverage: pivot calculated item double-click handling and chart type gallery double-click handling.
+- SpreadsheetML invalid named range coverage.
+- Grid/chart rendering performance cleanup: reused chart render scale per render pass.
+
+Earlier slices already present on `origin/main` by the time this handoff was written:
+
+- Flash Fill stacked title/suffix cleanup.
+- Theme preset shadow (`a:prstShdw`) effect interpretation.
+- Review comments/notes navigation split.
+- Formula error-checking disabled-rule ignore behavior.
+- Spell Check proofing catalog expansion.
+- QAT customization polish.
+- Sheet-tab clipping/focused-keyboard coverage.
+
+Parallel-stream commits also landed on `main` during cleanup and are not owned by the non-chart lane:
+
+- `4465a3265` - Handle pivot calculated item double clicks.
+- `f2f3a240d` - Handle chart type gallery double clicks.
+- `301392a92` - Cover SpreadsheetML invalid named ranges.
+- `95d466adb` - Reuse chart render scale per pass.
+
+## Verification Completed
+
+Passed on merged `main`:
+
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - 75/75 passed.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~SelectionPanePlannerTests|FullyQualifiedName~BackstageInfoPanelSourceTests|FullyQualifiedName~BackstageInfoPlannerTests|FullyQualifiedName~ExportReadinessPlannerTests|FullyQualifiedName~LocalAccountPlannerTests" -v:minimal` - 50/50 passed.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date.
+- `dotnet test tests\FreeX.Core.IO.Tests\FreeX.Core.IO.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~XlsxFileAdapterFormatTests|FullyQualifiedName~XlsxFileAdapterPerformanceTests" -v:minimal` - 43/43 passed.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -m:1 -p:UseSharedCompilation=false -p:NodeReuse=false --filter "FullyQualifiedName~MainWindowSheetTabKeyboardTests.MenuKeyOnFocusedSheetTab_OpensSheetTabContextMenuWithFocusAndAccessKeys|FullyQualifiedName~MainWindowSheetTabKeyboardTests.MenuKeyOnInactiveFocusedSheetTab_SelectsTabBeforeWorksheetFallback|FullyQualifiedName~MainWindowSheetTabKeyboardTests.ArrowKeyOnFocusedSheetTab_RoutesAsSheetTabNavigation|FullyQualifiedName~MainWindowSheetTabKeyboardTests.HomeEndKeysOnFocusedSheetTab_RouteToEdgeSheetTabs|FullyQualifiedName~MainWindowSheetTabKeyboardTests.NonNavigationKeyOnFocusedSheetTab_DoesNotRouteAsSheetTabNavigation|FullyQualifiedName~MainWindowSheetTabKeyboardTests.ArrowKeyOnAddSheetButton_DoesNotRouteAsFocusedSheetTabNavigation|FullyQualifiedName~SheetTabFocusPlannerTests|FullyQualifiedName~PivotWorkflowDialogTests.PivotCalculated|FullyQualifiedName~ChartDialogTests.InsertChartDialog|FullyQualifiedName~ChartDialogTests.ChangeChartTypeDialog|FullyQualifiedName~ChartDialogTests.ChartTypeGalleries" --logger "console;verbosity=minimal"` - 44/44 passed.
+- `dotnet test tests\FreeX.Core.IO.Tests\FreeX.Core.IO.Tests.csproj --filter "FullyQualifiedName~SpreadsheetXmlFileAdapterTests" --no-restore --logger "console;verbosity=minimal"` - 140/140 passed.
+- `dotnet test tests\FreeX.App.UI.Tests\FreeX.App.UI.Tests.csproj --no-restore --filter "FullyQualifiedName~GridViewRenderPerformanceTests|FullyQualifiedName~GridViewDrawingObjectThemeTests" --logger "console;verbosity=minimal"` - 101/101 passed.
+- `git diff --check` - clean.
+
+During verification, stale App.Host test/build processes briefly locked `FreeX.App.Host` outputs; main-tree build/test processes were cleared and the focused verification was rerun successfully.
+
+## Worker Lane Status
+
+Completed and merged lanes from this wave:
+
+- Data / Flash Fill: completed, merged, synced to `origin/main`.
+- Review / Spell Check: completed, merged, synced to `origin/main`.
+- Review / Comments and Notes: completed, merged, synced to `origin/main`.
+- File / Backstage Export Readiness: completed, merged into local `main`.
+- Draw / Selection Pane: completed, merged into local `main`.
+- Formulas / Error Checking: completed, merged, synced to `origin/main`.
+- Page Layout / Theme Effects: completed, merged, synced to `origin/main`.
+- Review / Accessibility Checker: completed, merged into local `main`.
+- QAT customization polish: branch contains no extra commits ahead of `main` at handoff.
+
+Subagents from the prior non-chart wave were marked for closure:
+
+- `019e87b1-ca29-7992-a41e-78ac7141c3e3`
+- `019e87b1-e3ed-79e0-8e95-a2daff14a6bf`
+- `019e87b1-f47b-7121-9618-a29694ce0c4e`
+- `019e87b2-0c97-7a43-9305-8ffe9a75a6f5`
+- `019e87b2-1cf3-7352-9e71-a4d2a291841e`
+- `019e87b2-284d-78a1-9a28-9c015992e980`
+
+Workers stopped cleanly during final cleanup:
+
+- Keyboard: `019e858b-8aaf-70d3-bfb5-fef95f5a784b`.
+- Mouse: `019e858b-96e6-7b93-a0b9-98d961da3546`.
+- Grid: `019e858b-a228-7d63-9603-7ce5a335bf99`.
+- Formula Bar: `019e858b-c26a-7af3-bcb3-ed23efecdc35`.
+- File Formats: `019e858b-db3c-75a0-b905-533445f8f689`.
+- XSLT: `019e858b-e7d7-7182-8e97-d71f4a495cdb`.
+
+Formula Bar and XSLT had no unique unmerged patch content at final cleanup; their relevant changes were already patch-equivalent or present on `main`.
+
+## Outstanding Non-Chart V1 Work
+
+Keep focusing on deterministic, bounded parity slices. The current partial non-chart inventory still includes:
+
+- File/Backstage: Export to PDF/XPS long tail, Options, Info panel, Share, Account.
+- QAT: broader command browsing/customization polish; Excel `customUI` import/export remains out of scope unless explicitly rescoped.
+- Insert: PivotTable and Table fidelity tails; Comment/Note conversation UI tail.
+- Draw: Interactive drag handles, Gradients/Effects, Selection Pane visual/fidelity tail.
+- Page Layout: Themes full effect interpretation tail.
+- Formulas: Error Checking rule taxonomy tail.
+- Data: Flash Fill ML-like inference tail.
+- Review: Spell Check no full dictionary/proofing engine, Accessibility Checker full taxonomy/shape-text tail, New Comment/Threaded Comments cloud/full-conversation tail.
+
+Still excluded or handled elsewhere:
+
+- Chart and PivotChart work is owned by the chart orchestrator.
+- Human tasks, Microsoft 365/cloud identity/coauthoring, external/OLAP/data-model execution, full Excel ML inference, full dictionary engine, full tagged PDF/PDF-A output, and other explicitly documented exclusions remain outside the current non-chart v1 lane.
+
+## Next Thread
+
+1. Start by `git fetch origin`, `git status --short --branch`, and `git log --oneline --decorate --graph origin/main..main`.
+2. Confirm this handoff commit and all merged slices are on `origin/main`; if `main` is ahead, verify the new commits before pushing.
+3. Confirm no worker subagents are still open before spawning a new wave.
+4. Spawn the next wave only for non-overlapping bounded slices, excluding chart/PivotChart.
+5. Prefer next slices in Backstage Options/Info/Share/Account, PDF/XPS remaining options, QAT command browsing/import validation, Accessibility Checker deterministic metadata/rule gaps, Spell Check deterministic skip/correction gaps, or Selection Pane/Draw fidelity polish.
