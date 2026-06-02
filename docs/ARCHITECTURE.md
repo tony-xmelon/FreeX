@@ -404,7 +404,8 @@ and selected image crop handles remain supported on the same rendering path.
 
 The Backstage File > Info panel is a host-only summary surface over existing model services. It reads
 `WorkbookStatisticsService` and `AccessibilityCheckerService`, then formats protection/status copy through
-`InfoPanelSummaryPlanner` when the Info view opens. It does not introduce cloud account, version-history,
+`InfoPanelSummaryPlanner` when the Info view opens. It also reuses `ShareWorkbookPlanner` to show whether the
+currently saved local file is ready for Windows Share or must go through Save As first. It does not introduce cloud account, version-history,
 template, Document Inspector, or extended document-metadata subsystems.
 
 The Backstage Account action is also local-only. `LocalAccountPlanner` reports the FreeX user name, Windows account,
