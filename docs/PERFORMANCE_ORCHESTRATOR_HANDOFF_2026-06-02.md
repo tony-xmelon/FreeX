@@ -9,8 +9,8 @@ This goal is not complete. This file records the current clean checkpoint.
 ## Operating Rules
 
 - Repository: `E:\Users\anton\Documents\Claude\Freexcel`.
-- Current synced head after this wave: `a610dc824`.
-- `main` and `origin/main` were aligned after push at `a610dc824`.
+- Latest upstream checkpoint before this handoff update: `073a67c81`.
+- `codex/performance-orchestrator-resume-20260602` was rebased onto `origin/main` at `073a67c81` before this handoff update.
 - Follow `AGENTS.md`: use isolated worktrees/branches for implementation, do not edit `main` directly, sync before work, verify before merge, push verified integrations frequently.
 - User explicitly requested no permission prompts and no escalation requests.
 - Treat unrelated dirty or untracked files as owned by other sessions unless explicitly proven otherwise.
@@ -124,9 +124,24 @@ All items below were merged into `main` and pushed to `origin/main`.
   - Focused dense mutated save and ignored-error/style-only load benchmarks passed `2/2`.
   - Full `FreeX.Core.IO.Tests` passed `1749/1749`.
 
+### App.Host Selection Toolbar Status Tail
+
+- Worker: `019e8a34-a5dd-7091-91a2-477c1551093f`.
+- Branch: `codex/app-host-toolbar-status-perf-20260603-r1`.
+- Commit: `390f087b7`, integrated through `415e00113`.
+- Change: avoided repeated `SelectedRanges` writes when the effective selection did not change, disabled undo history for selection hot-path name-box updates when the box is not focused, and reduced `SpreadsheetDisplayFormatter` A1/R1C1 reference formatting churn with span/string-create helpers.
+- Metrics:
+  - `NON_DRAG_SELECTION_TOOLBAR` improved from `13,144,584` bytes / `20.16 ms` to focused verification `13,013,680` bytes / `15.30 ms`; post-sync no-build smoke was `13,022,176` bytes / `18.44 ms`.
+  - `SELECTION_DRAG_STATUS` improved from `22,511,680` bytes to focused verification `22,469,496` bytes; post-sync no-build smoke was `22,014,992` bytes.
+  - `ADDITIONAL_SELECTION_DRAG_TOOLBAR` improved from `23,612,832` bytes to focused verification `23,570,656` bytes; post-sync no-build smoke was `22,987,920` bytes.
+- Verification:
+  - Focused Host selection/formatter/performance set passed `35/35` before commit.
+  - Post-sync focused no-build Host smoke passed `34/34`.
+  - Full `FreeX.App.Host.Tests` still has a pre-existing unrelated failure: `MainWindowSourceHygieneTests.DrawingCommands_UseOwnedNoTargetMessages` expects `MainWindowMessage_NoDrawingShapesOnSheet`, while `MainWindow.Drawing.cs` contains `MainWindowMessage_NoDrawingShapeOnSheet`. The same single test was confirmed failing on primary `main`.
+
 ## Other Main Integrations During This Wave
 
-Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, QAT validation, and parity handoff updates.
+Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, QAT validation, Flash Fill parity coverage clarification, and parity handoff updates.
 
 ## Remaining Backlog
 
@@ -137,9 +152,9 @@ The obvious high-impact backlog is reduced but not exhausted.
    - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` is improved again but still allocates around `144.2 MB`.
    - Unchanged loaded workbook fast-copy remains healthy: `XLSX_SAVE_LOADED_DENSE` around `554,248` bytes in the full IO run.
 2. App.Host toolbar/ribbon:
-   - `NON_DRAG_SELECTION_TOOLBAR` remains around `13.1 MB`; current guardrails show zero QAT probes and zero toolbar writes.
+   - `NON_DRAG_SELECTION_TOOLBAR` remains around `13.0 MB`; current guardrails show zero QAT probes and zero toolbar writes.
    - `RIBBON_FORCE_COMPACT` remains around `14.6-14.7 MB`.
-   - `SELECTION_DRAG_STATUS` and `ADDITIONAL_SELECTION_DRAG_TOOLBAR` remain around `22-23 MB` in recent samples.
+   - `SELECTION_DRAG_STATUS` and `ADDITIONAL_SELECTION_DRAG_TOOLBAR` remain around `22-23 MB` in recent samples after modest improvements.
 3. Core.Commands:
    - Dense insert undo allocation is improved; dense filter/table operations now report low allocations but still have time-cost tails worth rechecking if command work continues.
    - Advanced Filter copy-unique dense rows is improved to about `8.27 MB`; remaining cost is lower priority than the open Host/UI/Formula/XLSX tails.
@@ -160,12 +175,12 @@ Completed and integrated performance agents from the resumed wave:
 
 Current 2026-06-03 workers launched with full-access/no-permission instructions:
 
-- `019e8a34-a5dd-7091-91a2-477c1551093f`: App.Host toolbar/status tail, running.
+- `019e8a34-a5dd-7091-91a2-477c1551093f`: App.Host toolbar/status tail, completed and pushed.
 - `019e8a34-ba23-7b12-907a-d170358abd6f`: App.UI render benchmark/hot path, completed and pushed.
 - `019e8a34-cf08-72c1-a27b-c921e95e05ed`: Formula/Core.Calc parse/eval tail, completed and pushed.
 - `019e8a34-e815-7f12-9bd2-c548baf41c06`: XLSX IO dense-save/load metadata tail, completed and pushed.
 
-Close completed agents when this thread finishes or when no more result inspection is needed.
+The known worker IDs were closed or were no longer active after restart.
 
 ## Resume Checklist
 
@@ -173,7 +188,7 @@ Close completed agents when this thread finishes or when no more result inspecti
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `main` and `origin/main` are aligned at or after `a610dc824`.
+2. Confirm `main` and `origin/main` are aligned at or after `073a67c81`.
 3. Start the next wave with disjoint scopes:
    - App.Host non-drag toolbar / drag-status allocation tail.
    - App.UI render benchmark stabilization and next hot path.
