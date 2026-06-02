@@ -373,7 +373,8 @@ first-initial/last-name, and last-name/first-initial email generation learn cons
 domains and modeled `.`, `_`, or `-` separators from examples, as do first-name/last-initial aliases. It returns no result when the examples are ambiguous.
 
 Spell Check remains a deterministic known-corrections service in `Core.Commands`, not dictionary-backed proofing. It
-scans literal text cells in sheet/row/column order and plans undoable replacement edits while leaving formula cells alone.
+scans literal text cells, notes, threaded comment roots, and threaded comment replies in deterministic sheet/address order
+and plans undoable replacement edits while leaving formula cells alone.
 The host workflow keeps Ignore All case-insensitive for the current pass and persists Add to Dictionary custom words
 through `FreeXOptions` so matching scanner results stay suppressed across sessions/workbooks without introducing a full
 proofing dictionary engine.
@@ -404,7 +405,8 @@ and selected image crop handles remain supported on the same rendering path.
 
 The Backstage File > Info panel is a host-only summary surface over existing model services. It reads
 `WorkbookStatisticsService` and `AccessibilityCheckerService`, then formats protection/status copy through
-`InfoPanelSummaryPlanner` when the Info view opens. It does not introduce cloud account, version-history,
+`InfoPanelSummaryPlanner` when the Info view opens. It also reuses `ShareWorkbookPlanner` to show whether the
+currently saved local file is ready for Windows Share or must go through Save As first. It does not introduce cloud account, version-history,
 template, Document Inspector, or extended document-metadata subsystems.
 
 The Backstage Account action is also local-only. `LocalAccountPlanner` reports the FreeX user name, Windows account,
@@ -417,7 +419,8 @@ Error Checking remains a deterministic model-backed audit in `Core.Commands`, no
 engine. It reports cached formula error values, text cells that parse as finite invariant-culture numbers, formulas
 stored as text, formulas whose direct parser-extracted precedents include missing or blank cells, table calculated
 column formulas that differ from the column formula, and common aggregate formulas (`SUM`, `AVERAGE`, `COUNT`,
-`COUNTA`, `MIN`, `MAX`, `PRODUCT`) that omit valued adjacent cells or valued gaps between separate arguments. Rule toggles use
+`COUNTA`, `MIN`, `MAX`, `PRODUCT`, `SUBTOTAL`, `AGGREGATE`) that omit valued adjacent cells or valued gaps between
+separate arguments. It also reports literal cells whose values fail applied data-validation rules. Rule toggles use
 `Workbook.DisabledFormulaErrorCodes`, and per-cell ignore state reuses `Cell.IgnoreFormulaError` for both formula-error
 and non-error issue kinds.
 

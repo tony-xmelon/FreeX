@@ -331,7 +331,7 @@ workbook command behavior to track here.
 | Trace Dependents | Implemented |  |
 | Remove Arrows | Implemented |  |
 | Show Formulas (Ctrl+`) | Implemented |  |
-| Error Checking | Partial | Issue list plus ribbon entry point to error-checking options, access-keyed issue actions, and supported checks including numbers stored as text, formulas stored as text, formulas referring to blank cells, two-digit-year text dates, formulas inconsistent with nearby formulas, inconsistent calculated-column formulas in tables, common aggregate formulas (`SUM`, `AVERAGE`, `COUNT`, `COUNTA`, `MIN`, `MAX`, `PRODUCT`) omitting adjacent cells including gaps between separate arguments, and unlocked formula cells; partial rule taxonomy |
+| Error Checking | Partial | Issue list plus ribbon entry point to error-checking options, access-keyed issue actions, and supported checks including numbers stored as text, formulas stored as text, formulas referring to blank cells, two-digit-year text dates, formulas inconsistent with nearby formulas, inconsistent calculated-column formulas in tables, common aggregate formulas (`SUM`, `AVERAGE`, `COUNT`, `COUNTA`, `MIN`, `MAX`, `PRODUCT`, `SUBTOTAL`, `AGGREGATE`) omitting adjacent cells including gaps between separate arguments, unlocked formula cells, and invalid data-validation entries; partial rule taxonomy |
 | Evaluate Formula (step-through) | Implemented | Help, Previous, Step Out, Evaluate, Step In, and Close actions expose access keys |
 | Watch Window | Implemented | Dialog command buttons expose keyboard access keys. |
 | R1C1 Reference Style | Implemented |  |
@@ -380,7 +380,7 @@ workbook command behavior to track here.
 <!-- command-inventory:command-surface:review:start -->
 | Command | Status | Notes |
 |---|---|---|
-| Spell Check | Partial | Broader known-corrections text-cell scan with casing-preserving replace, replace-all, case-insensitive Ignore All, persisted Add to Dictionary custom dictionary suppression across sessions/workbooks via FreeX options, and internet/email/file-address span skipping; no full dictionary/proofing engine |
+| Spell Check | Partial | Broader known-corrections scan across text cells, notes, threaded comment roots, and threaded comment replies with casing-preserving replace, replace-all, case-insensitive Ignore All, persisted Add to Dictionary custom dictionary suppression across sessions/workbooks via FreeX options, and internet/email/file-address span skipping; no full dictionary/proofing engine |
 | Thesaurus | Excluded | Requires external dictionary service |
 | Accessibility Checker | Partial | Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, workbook theme/tint font, fill, and pattern foreground colors, patterned fills, no fill treated as white, and matching conditional-format styles for cell-value, text, date-occurring, blank/error, no-blank/no-error, duplicate-value, unique-value, above/below-average, top/bottom rules, and formula scalar comparisons with shifted cell references, low-contrast text boxes using explicit fills, theme fills, and workbook object-default fills, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; broader formula conditional-format evaluation, chart/shape text beyond modeled text boxes, and the full Excel rule taxonomy remain partial |
 | Smart Lookup / Researcher | Excluded |  |
