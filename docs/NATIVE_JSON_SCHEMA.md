@@ -45,7 +45,7 @@ For XLSX fidelity, `Theme` also carries native DrawingML fragments when a workbo
 |---|---|---|
 | `NativeColorSchemeXml` | string/null | Preserved `<a:clrScheme>` XML, including custom transforms and scheme metadata. |
 | `NativeFontSchemeXml` | string/null | Preserved `<a:fontScheme>` XML, including East Asian, complex-script, and script-specific font entries. |
-| `NativeFormatSchemeXml` | string/null | Preserved `<a:fmtScheme>` XML, including effect, line, fill, and background-fill details; FreeX interprets the first `outerShdw` effect style for non-chart drawing-object theme shadows and preserves deeper details for XLSX save. |
+| `NativeFormatSchemeXml` | string/null | Preserved `<a:fmtScheme>` XML, including effect, line, fill, and background-fill details; FreeX interprets the first `outerShdw`/`prstShdw` effect style for non-chart drawing-object theme shadows and preserves deeper details for XLSX save. |
 | `NativeThemeSupplementXml` | string/null | Preserved theme-level DrawingML elements outside `themeElements`, such as object defaults, alternate color scheme lists, custom color lists, and extension lists. |
 | `AlternateColorSchemes` | object[] | Modeled alternate color schemes plus optional native `<a:clrScheme>` XML for each scheme. |
 | `HasObjectDefaults` / `ObjectDefaults` | bool/object | Modeled shape, line, and text defaults parsed from `<a:objectDefaults>` where supported, plus optional native object-default XML. |
