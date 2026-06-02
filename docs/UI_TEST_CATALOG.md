@@ -58,14 +58,14 @@ Each surface is tracked with these states:
 
 | Source | Current count | Notes |
 |---|---:|---|
-| Command surface in-scope rows | 198 | From `COMMAND_INVENTORY.json`: Implemented + Partial command-surface rows. |
-| Menu/toolbar in-scope rows | 199 | Includes the current Draw tab menu/toolbar delta. |
+| Command surface in-scope rows | 199 | From `COMMAND_INVENTORY.json`: Implemented + Partial command-surface rows. |
+| Menu/toolbar in-scope rows | 200 | Includes the current Draw tab menu/toolbar delta. |
 | Top-level ribbon/backstage tabs | 10 | File, Home, Insert, Draw, Page Layout, Formulas, Data, Review, View, Help. |
 | Contextual ribbon tab declarations | 3 | Table Design, PivotTable Analyze, Design from collapsed `MainWindow.xaml` tab declarations. |
 | Dialog source classes | 110 | Unique `*Dialog` class/x:Class names in `src/FreeX.App.Host`. |
-| XAML click-wired controls | 627 | `Click="..."` occurrences in `MainWindow.xaml` on latest synced `origin/main`. |
+| XAML click-wired controls | 639 | `Click="..."` occurrences in `MainWindow.xaml` on latest synced `origin/main`. |
 | Explicit UIA automation ids | 55 | `AutomationProperties.AutomationId="..."` declarations in `MainWindow.xaml`. |
-| Ribbon keytip metadata declarations | 637 | `RibbonTooltip.KeyTip="..."` declarations in `MainWindow.xaml`. |
+| Ribbon keytip metadata declarations | 649 | `RibbonTooltip.KeyTip="..."` declarations in `MainWindow.xaml`. |
 | Keyboard command shortcut usages | 74 | 74 matcher rules / 73 dispatcher targets |
 | Documented shortcut rows | 87 | From `SHORTCUT_PARITY_MATRIX.md`: 87 parity, 0 partial. |
 | Worksheet context menu commands | 50 | From `WorksheetContextMenuPlanner.BuildCommands()`. |
