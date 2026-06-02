@@ -301,7 +301,7 @@
         {
           "name": "Customize QAT",
           "status": "Partial",
-          "notes": "Options dialog filters the broad direct-command catalog and persists command list, order, reset, Enter/Delete/Backspace/Ctrl+Up/Ctrl+Down keyboard customization shortcuts, and above/below-ribbon location; eligible direct ribbon commands can now be added/removed through command context menus; FreeX-owned `.freex-qat.json` customization import/export round-trips normalized command IDs and below-ribbon state; arbitrary command browsing and Excel `customUI` import/export remain out of scope"
+          "notes": "Options dialog filters the broad direct-command catalog and persists command list, order, reset, Enter/Delete/Backspace/Ctrl+Up/Ctrl+Down keyboard customization shortcuts, and above/below-ribbon location; eligible direct ribbon commands can now be added/removed through command context menus; FreeX-owned `.freex-qat.json` customization import/export round-trips normalized command IDs and below-ribbon state, and import rejects unsupported command IDs instead of silently dropping them; arbitrary command browsing and Excel `customUI` import/export remain out of scope"
         }
       ]
     },
@@ -1555,7 +1555,7 @@
         {
           "name": "Customize QAT",
           "status": "Partial",
-          "notes": "Options dialog filters the broad direct-command catalog and persists command list, order, reset, Enter/Delete/Backspace/Ctrl+Up/Ctrl+Down keyboard customization shortcuts, and above/below-ribbon location; eligible direct ribbon commands can now be added/removed through command context menus; FreeX-owned `.freex-qat.json` customization import/export round-trips normalized command IDs and below-ribbon state; arbitrary command browsing and Excel `customUI` import/export remain out of scope"
+          "notes": "Options dialog filters the broad direct-command catalog and persists command list, order, reset, Enter/Delete/Backspace/Ctrl+Up/Ctrl+Down keyboard customization shortcuts, and above/below-ribbon location; eligible direct ribbon commands can now be added/removed through command context menus; FreeX-owned `.freex-qat.json` customization import/export round-trips normalized command IDs and below-ribbon state, and import rejects unsupported command IDs instead of silently dropping them; arbitrary command browsing and Excel `customUI` import/export remain out of scope"
         }
       ]
     },
