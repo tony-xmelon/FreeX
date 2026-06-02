@@ -61,7 +61,9 @@ Clipboard, paste, Format Painter, AutoFit, Format Cells, and Flash Fill are comm
 model changes and focused planner/service tests. Rendering-only concerns, such as clipboard marquee, shrink-to-fit
 text bounds, and deferred chart display, stay in `App.UI` or `App.Host`.
 Border gallery presets are modeled as reusable `StyleDiff` planners in `Core.Commands`; `App.Host` only maps menu
-choices to those planners and batches perimeter presets into one undoable command.
+choices to those planners and batches perimeter presets into one undoable command. Draw Border Grid and Erase Border
+use the same remembered line color/style and grouped-sheet command path for clicked or dragged grid ranges; edge-level
+pencil border drawing remains deferred.
 Cell Style gallery commands use `App.Host` preset planners that return deterministic `StyleDiff` values for supported
 font, fill, border, number-format, and alignment fields. They intentionally do not create workbook named styles or bind
 to the workbook theme model, so theme-aware named-style semantics remain a parity gap.
@@ -363,15 +365,17 @@ Flash Fill remains a deterministic pattern service, not an Excel-like ML inferen
 single-column transforms including dotted-token extraction with variable dot counts for final-token patterns,
 dotted/underscored/hyphenated email display-name cleanup, plus-address email local-part tag removal,
 spaced or compact pipe/arrow label-value splitting, digit-mask formatting
-such as phone-number punctuation copied from examples, and two-part full-name reordering such as `Ada Lovelace` to
+such as phone-number punctuation copied from examples, calendar-valid embedded-date extraction/normalization from
+labeled text with ambiguous multi-date sources rejected, and two-part full-name reordering such as `Ada Lovelace` to
 `Lovelace, Ada`, plus a small multi-column pattern set. First/last-name,
 first-initial/last-name, and last-name/first-initial email generation learn constant
 domains and modeled `.`, `_`, or `-` separators from examples, as do first-name/last-initial aliases. It returns no result when the examples are ambiguous.
 
 Spell Check remains a deterministic known-corrections service in `Core.Commands`, not dictionary-backed proofing. It
 scans literal text cells in sheet/row/column order and plans undoable replacement edits while leaving formula cells alone.
-The host workflow keeps Ignore All case-insensitive for the current pass and treats Add to Dictionary as a pass-local
-custom dictionary that suppresses matching scanner results without introducing a durable proofing dictionary.
+The host workflow keeps Ignore All case-insensitive for the current pass and persists Add to Dictionary custom words
+through `FreeXOptions` so matching scanner results stay suppressed across sessions/workbooks without introducing a full
+proofing dictionary engine.
 
 Accessibility Checker remains a deterministic model-backed audit in `Core.Commands`, not a full WCAG or screen-reader
 engine. It reports issues supported by current workbook state, including merged cells, blank structured-table headers,
@@ -392,7 +396,9 @@ plans rename/visibility/move changes from buttons or same-kind drag reorder and 
 one `CompositeWorkbookCommand`, so a single dialog acceptance is one undo step. Native JSON persists modeled object names. XLSX drawing object name
 load/save maps the drawing non-visual `cNvPr/@name` value for charts, pictures, text boxes, and drawing shapes to
 the modeled object name, while deeper Office drawing IDs and other non-visual metadata remain best-effort package
-details rather than first-class model state.
+details rather than first-class model state. `GridView` exposes interactive non-chart object handles for selected
+shapes, text boxes, and pictures through the object-selection adornment layer; hidden/display-none objects are skipped,
+and selected image crop handles remain supported on the same rendering path.
 
 The Backstage File > Info panel is a host-only summary surface over existing model services. It reads
 `WorkbookStatisticsService` and `AccessibilityCheckerService`, then formats protection/status copy through
@@ -401,7 +407,9 @@ template, Document Inspector, or extended document-metadata subsystems.
 
 The Backstage Account action is also local-only. `LocalAccountPlanner` reports the FreeX user name, Windows account,
 device, app version, options file path, current workbook save/path status, and Windows Share readiness while explicitly
-stating that Microsoft 365 sign-in, cloud links, and coauthoring are not implemented.
+stating that Microsoft 365 sign-in, cloud links, and coauthoring are not implemented. Share readiness is planned through
+`ShareWorkbookPlanner`, which trims and normalizes absolute local file paths, routes missing/invalid/unsaved paths
+through Save As, and hands Windows Share the normalized local path.
 
 Error Checking remains a deterministic model-backed audit in `Core.Commands`, not a full Excel heuristic inference
 engine. It reports cached formula error values, text cells that parse as finite invariant-culture numbers, formulas
@@ -489,7 +497,7 @@ owned by the dedicated printer-settings retention path.
 ## Current Architectural Limitations
 
 - Sheet rename rewrites existing sheet-qualified formula references through the formula AST/serializer path
-- `Core.Model` has a workbook theme scaffold with native and XLSX theme-part persistence, loaded-cell-style theme-color resolution, drawing-object theme color references, chart theme-color references/rendering, loaded `fmtScheme` OOXML preservation, and an undoable `SetWorkbookThemeCommand`; `Core.IO` has reusable DrawingML color parsing plus worksheet/drawing relationship-based load/save for embedded package parts for every current native chart type, including `twoCellAnchor` chart bounds/EMU offsets, `oneCellAnchor` bounds, `absoluteAnchor` bounds, no-header and no-category-column series range semantics, chart title/range with title text color/font size, axis titles with text color/font size, value-axis bounds/units/log-scale/number formats, axis gridline visibility/color/thickness, tick marks, axis label visibility, axis line color/thickness, legend visibility/position/text/fill/border/theme-text/font-size, global data-label visibility/position/content/number-format/fill/border/text/font/rotation/callout baseline, per-point data-label fill/border/text/font formatting, trendline type/equation/R-squared/line formatting, common column/area combo line-overlay and column/area/line/scatter secondary-value-axis package state, chart/plot area fill and plot border, bar direction/grouping, scatter/bubble X/Y ranges and value-axis pairs, bubble-size ranges, pie/doughnut first-slice angle and exploded-slice package state, doughnut hole size, line/scatter series color-width-dash-marker and marker-fill package formatting, filled-series fill/outline color-width-dash package formatting, chartEx style/color sidecars, chartEx axes/metadata for the supported modern chart families, and Excel-openability/visual-gate coverage for the 28-renderable-chart matrix; `App.Host` exposes initial Page Layout Themes, Colors, Fonts, and Effects preset dropdowns plus a custom theme dialog for name, heading/body fonts, effects, and core color slots, and `App.UI` renders Subtle/Refined drawing-object shadow effects while full interpretation of OOXML effect semantics, richer chart formatting panes, and Map chart product scope remain future work
+- `Core.Model` has a workbook theme scaffold with native and XLSX theme-part persistence, loaded-cell-style theme-color resolution, drawing-object theme color references, chart theme-color references/rendering, loaded `fmtScheme` OOXML preservation on save and across modeled effect-name changes, and an undoable `SetWorkbookThemeCommand`; `Core.IO` has reusable DrawingML color parsing plus worksheet/drawing relationship-based load/save for embedded package parts for every current native chart type, including `twoCellAnchor` chart bounds/EMU offsets, `oneCellAnchor` bounds, `absoluteAnchor` bounds, no-header and no-category-column series range semantics, chart title/range with title text color/font size, axis titles with text color/font size, value-axis bounds/units/log-scale/number formats, axis gridline visibility/color/thickness, tick marks, axis label visibility, axis line color/thickness, legend visibility/position/text/fill/border/theme-text/font-size, global data-label visibility/position/content/number-format/fill/border/text/font/rotation/callout baseline, per-point data-label fill/border/text/font formatting, trendline type/equation/R-squared/line formatting, common column/area combo line-overlay and column/area/line/scatter secondary-value-axis package state, chart/plot area fill and plot border, bar direction/grouping, scatter/bubble X/Y ranges and value-axis pairs, bubble-size ranges, pie/doughnut first-slice angle and exploded-slice package state, doughnut hole size, line/scatter series color-width-dash-marker and marker-fill package formatting, filled-series fill/outline color-width-dash package formatting, chartEx style/color sidecars, chartEx axes/metadata for the supported modern chart families, and Excel-openability/visual-gate coverage for the 28-renderable-chart matrix; `App.Host` exposes initial Page Layout Themes, Colors, Fonts, and Effects preset dropdowns plus a custom theme dialog for name, heading/body fonts, effects, and core color slots, and `App.UI` renders Subtle/Refined drawing-object shadow effects while full interpretation of OOXML effect semantics, richer chart formatting panes, and Map chart product scope remain future work
 - CSV and delimited-text adapters support RFC 4180-style quoted fields, embedded line breaks, UTF BOM detection, Excel `sep=` directives, and literal-text preservation for formula/coercion-like text; multi-sheet workbook export remains intentionally limited to the first sheet for text formats
 - Volatile function tracking is not thread-safe (single UI thread assumed)
 - Style registry uses linear scan (acceptable for v1 style counts)
