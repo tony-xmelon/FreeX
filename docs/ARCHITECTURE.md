@@ -112,7 +112,8 @@ avoiding any new UI-specific formatter behavior.
 Conditional Formatting authoring is split between lightweight WPF dialogs in `App.Host` and the `Core.Model`
 `ConditionalFormat` model consumed by commands and XLSX IO. The rule manager clones the full modeled rule state
 when editing or reordering so advanced rules such as color scales, data bars, icon sets, Top/Bottom, text, and date
-rules do not lose fields even though full Excel manager UI and icon rendering taxonomy remain partial.
+rules do not lose fields. Cell-value thresholds may be constants or formulas, with relative references shifted from the
+conditional-format range anchor, even though full Excel manager UI and icon rendering taxonomy remain partial.
 
 Advanced chart families are modeled through `ChartType` and split between renderable/writable families and explicit
 deferred families in `ChartTypeSupport`. The current renderable parity matrix covers 28 chart types, including classic
@@ -356,8 +357,8 @@ and `Sales[[#Data],[Amount]:[Tax]]` resolve to rectangular table ranges. Excel's
 the same current-cell context as `[@Column]`, including row-scoped column ranges such as
 `Sales[[#This Row],[Amount]:[Tax]]`. Unqualified `#This Row` selectors bind to the containing table for calculated
 column-style formulas, for example `[[#This Row],[Amount]:[Tax]]`. Current-row references outside a table data row,
-external workbook structured references, custom/authored table style XML, and full Excel table style element semantics
-remain outside this slice. Built-in table styles `TableStyleMedium2`-`TableStyleMedium7` and `TableStyleLight16`-
+external workbook structured references and full Excel table style element semantics remain outside this slice. Custom
+authored table-only style XML is retained on load and fresh save, but not interpreted as active style semantics. Built-in table styles `TableStyleMedium2`-`TableStyleMedium7` and `TableStyleLight16`-
 `TableStyleLight21` resolve Accent 1-6 banding from the active workbook theme for gallery swatches and Format as Table
 materialization.
 
@@ -379,15 +380,16 @@ proofing dictionary engine.
 
 Accessibility Checker remains a deterministic model-backed audit in `Core.Commands`, not a full WCAG or screen-reader
 engine. It reports issues supported by current workbook state, including merged cells, blank structured-table headers,
-low-contrast cell text against base and patterned fills, low-contrast text boxes, missing object alternate text, hidden
-sheets/rows/columns with content, unclear hyperlink display text, and charts whose title is missing as the current
-accessible label.
+low-contrast cell text against base, workbook theme/tint, and patterned fills, low-contrast text boxes, missing object
+alternate text, hidden sheets/rows/columns with content, unclear hyperlink display text, and charts whose title is
+missing as the current accessible label.
 
 Native JSON persists the local threaded-comment model, including author, replies, created/modified UTC activity
 metadata, and resolved state, so FreeX's in-app comment threads survive native save/load. Comment navigation and
 printable comment summaries surface authors, replies, and resolved state from that model. Reply edit/delete actions
-can update resolved state atomically and undo restores the prior thread. XLSX threaded-comment roots and replies
-round-trip through the modeled writer; cloud identity and coauthoring semantics remain outside the local model.
+can update resolved state atomically, keep disabled states aligned with selected/blank replies, support Ctrl+Enter for
+selected reply edits, and undo restores the prior thread. XLSX threaded-comment roots and replies round-trip through
+the modeled writer; cloud identity and coauthoring semantics remain outside the local model.
 
 Selection Pane object editing uses lightweight `Name` fields on charts, pictures, text boxes, and drawing shapes.
 Generated names remain the fallback when no explicit name is modeled. Visibility, z-order, and rename edits stay in
@@ -414,8 +416,8 @@ through Save As, and hands Windows Share the normalized local path.
 Error Checking remains a deterministic model-backed audit in `Core.Commands`, not a full Excel heuristic inference
 engine. It reports cached formula error values, text cells that parse as finite invariant-culture numbers, formulas
 stored as text, formulas whose direct parser-extracted precedents include missing or blank cells, table calculated
-column formulas that differ from the column formula, and SUM formulas that omit valued adjacent cells or valued gaps
-between separate SUM arguments. Rule toggles use
+column formulas that differ from the column formula, and common aggregate formulas (`SUM`, `AVERAGE`, `COUNT`,
+`COUNTA`, `MIN`, `MAX`, `PRODUCT`) that omit valued adjacent cells or valued gaps between separate arguments. Rule toggles use
 `Workbook.DisabledFormulaErrorCodes`, and per-cell ignore state reuses `Cell.IgnoreFormulaError` for both formula-error
 and non-error issue kinds.
 
