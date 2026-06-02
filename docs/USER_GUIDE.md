@@ -157,6 +157,8 @@ Press **Shift+F3** to open the Insert Function dialog with category search.
 
 Formulas tab -> Trace Precedents / Trace Dependents draws arrows showing cell relationships. Evaluate Formula steps through a formula's calculation order.
 
+Error Checking lists deterministic workbook issues such as cached formula errors, inconsistent formulas, text-number/date warnings, blank references, omitted aggregate cells, unlocked formula cells, and invalid data-validation entries. Use Ignore Error for a selected issue or File -> Options -> Formulas to change the supported rule set.
+
 ### Calculation
 
 - **F9** - Recalculate the workbook.

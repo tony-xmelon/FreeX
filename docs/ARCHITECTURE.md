@@ -171,7 +171,9 @@ while active-sheet and workbook export can bypass each sheet's stored `PrintArea
 honors the quality choice by changing raster page DPI while preserving the physical page size; XPS keeps the
 print-pipeline paginator path. `ExportPlanner`
 validates requested page-range starts and ends against the rendered page count before file creation, so out-of-range requests surface
-as export-option errors instead of half-written files. Extensionless export paths are normalized to `.pdf` when PDF is
+as export-option errors instead of half-written files. `ExportReadinessPlanner` supplies the local Backstage status text
+for PDF/XPS export readiness, selected-range availability, supported local options, and the no-Microsoft-account/cloud
+boundary without invoking file dialogs or renderers. Extensionless export paths are normalized to `.pdf` when PDF is
 inferred and to `.xps` when the save dialog explicitly selects XPS; explicit PDF/XPS save-dialog choices also replace
 mismatched extensions so the written bytes and visible filename agree. PDF sheet-name bookmarks are modeled on `ExportOptions` and written through
 `PdfDocument.Outlines`; bookmark targets are filtered and re-indexed after page-range selection so exported outlines
@@ -356,11 +358,13 @@ cell is inside the table data body. Data-body and section-scoped multi-column ra
 and `Sales[[#Data],[Amount]:[Tax]]` resolve to rectangular table ranges. Excel's `#This Row` selector resolves through
 the same current-cell context as `[@Column]`, including row-scoped column ranges such as
 `Sales[[#This Row],[Amount]:[Tax]]`. Unqualified `#This Row` selectors bind to the containing table for calculated
-column-style formulas, for example `[[#This Row],[Amount]:[Tax]]`. Current-row references outside a table data row,
-external workbook structured references and full Excel table style element semantics remain outside this slice. Custom
-authored table-only style XML is retained on load and fresh save, but not interpreted as active style semantics. Built-in table styles `TableStyleMedium2`-`TableStyleMedium7` and `TableStyleLight16`-
-`TableStyleLight21` resolve Accent 1-6 banding from the active workbook theme for gallery swatches and Format as Table
-materialization.
+column-style formulas, for example `[[#This Row],[Amount]:[Tax]]`. Current-row references outside a table data row and
+external workbook structured references remain outside this slice. Custom authored table-only style XML is retained on
+load and fresh save, and supported custom table style DXFs materialize `wholeTable`, `headerRow`, `totalRow`,
+row/column stripe, first/last column, and first/last header/total cell semantics. Unsupported/full Excel-only table
+style elements remain raw XML-preserved and otherwise uninterpreted. Built-in table styles `TableStyleMedium2`-
+`TableStyleMedium7` and `TableStyleLight16`-`TableStyleLight21` resolve Accent 1-6 banding from the active workbook
+theme for gallery swatches and Format as Table materialization.
 
 Flash Fill remains a deterministic pattern service, not an Excel-like ML inference engine. It supports conservative
 single-column transforms including dotted-token extraction with variable dot counts for final-token patterns,
@@ -373,16 +377,17 @@ first-initial/last-name, and last-name/first-initial email generation learn cons
 domains and modeled `.`, `_`, or `-` separators from examples, as do first-name/last-initial aliases. It returns no result when the examples are ambiguous.
 
 Spell Check remains a deterministic known-corrections service in `Core.Commands`, not dictionary-backed proofing. It
-scans literal text cells in sheet/row/column order and plans undoable replacement edits while leaving formula cells alone.
+scans literal text cells, notes, threaded comment roots, and threaded comment replies in deterministic sheet/address order
+and plans undoable replacement edits while leaving formula cells alone.
 The host workflow keeps Ignore All case-insensitive for the current pass and persists Add to Dictionary custom words
 through `FreeXOptions` so matching scanner results stay suppressed across sessions/workbooks without introducing a full
 proofing dictionary engine.
 
 Accessibility Checker remains a deterministic model-backed audit in `Core.Commands`, not a full WCAG or screen-reader
 engine. It reports issues supported by current workbook state, including merged cells, blank structured-table headers,
-low-contrast cell text against base, workbook theme/tint, and patterned fills, low-contrast text boxes, missing object
-alternate text, hidden sheets/rows/columns with content, unclear hyperlink display text, and charts whose title is
-missing as the current accessible label.
+low-contrast cell text against base, workbook theme/tint, and patterned fills, low-contrast text boxes against
+explicit, theme, and workbook object-default fills, missing object alternate text, hidden sheets/rows/columns with
+content, unclear hyperlink display text, and charts whose title is missing as the current accessible label.
 
 Native JSON persists the local threaded-comment model, including author, replies, created/modified UTC activity
 metadata, and resolved state, so FreeX's in-app comment threads survive native save/load. Comment navigation and
@@ -404,11 +409,13 @@ and selected image crop handles remain supported on the same rendering path.
 
 The Backstage File > Info panel is a host-only summary surface over existing model services. It reads
 `WorkbookStatisticsService` and `AccessibilityCheckerService`, then formats protection/status copy through
-`InfoPanelSummaryPlanner` when the Info view opens. It does not introduce cloud account, version-history,
+`InfoPanelSummaryPlanner` when the Info view opens. It also reuses `ShareWorkbookPlanner` to show whether the
+currently saved local file is ready for Windows Share or must go through Save As first, and `ExportReadinessPlanner`
+to show local PDF/XPS readiness without requiring the workbook to be saved first. It does not introduce cloud account, version-history,
 template, Document Inspector, or extended document-metadata subsystems.
 
 The Backstage Account action is also local-only. `LocalAccountPlanner` reports the FreeX user name, Windows account,
-device, app version, options file path, current workbook save/path status, and Windows Share readiness while explicitly
+device, app version, options file path, current workbook save/path status, Windows Share readiness, and PDF/XPS export readiness while explicitly
 stating that Microsoft 365 sign-in, cloud links, and coauthoring are not implemented. Share readiness is planned through
 `ShareWorkbookPlanner`, which trims and normalizes absolute local file paths, routes missing/invalid/unsaved paths
 through Save As, and hands Windows Share the normalized local path.
@@ -417,7 +424,8 @@ Error Checking remains a deterministic model-backed audit in `Core.Commands`, no
 engine. It reports cached formula error values, text cells that parse as finite invariant-culture numbers, formulas
 stored as text, formulas whose direct parser-extracted precedents include missing or blank cells, table calculated
 column formulas that differ from the column formula, and common aggregate formulas (`SUM`, `AVERAGE`, `COUNT`,
-`COUNTA`, `MIN`, `MAX`, `PRODUCT`) that omit valued adjacent cells or valued gaps between separate arguments. Rule toggles use
+`COUNTA`, `MIN`, `MAX`, `PRODUCT`, `SUBTOTAL`, `AGGREGATE`) that omit valued adjacent cells or valued gaps between
+separate arguments. It also reports literal cells whose values fail applied data-validation rules. Rule toggles use
 `Workbook.DisabledFormulaErrorCodes`, and per-cell ignore state reuses `Cell.IgnoreFormulaError` for both formula-error
 and non-error issue kinds.
 
@@ -499,7 +507,7 @@ owned by the dedicated printer-settings retention path.
 ## Current Architectural Limitations
 
 - Sheet rename rewrites existing sheet-qualified formula references through the formula AST/serializer path
-- `Core.Model` has a workbook theme scaffold with native and XLSX theme-part persistence, loaded-cell-style theme-color resolution, drawing-object theme color references, chart theme-color references/rendering, loaded `fmtScheme` OOXML preservation on save and across modeled effect-name changes, and an undoable `SetWorkbookThemeCommand`; `Core.IO` has reusable DrawingML color parsing plus worksheet/drawing relationship-based load/save for embedded package parts for every current native chart type, including `twoCellAnchor` chart bounds/EMU offsets, `oneCellAnchor` bounds, `absoluteAnchor` bounds, no-header and no-category-column series range semantics, chart title/range with title text color/font size, axis titles with text color/font size, value-axis bounds/units/log-scale/number formats, axis gridline visibility/color/thickness, tick marks, axis label visibility, axis line color/thickness, legend visibility/position/text/fill/border/theme-text/font-size, global data-label visibility/position/content/number-format/fill/border/text/font/rotation/callout baseline, per-point data-label fill/border/text/font formatting, trendline type/equation/R-squared/line formatting, common column/area combo line-overlay and column/area/line/scatter secondary-value-axis package state, chart/plot area fill and plot border, bar direction/grouping, scatter/bubble X/Y ranges and value-axis pairs, bubble-size ranges, pie/doughnut first-slice angle and exploded-slice package state, doughnut hole size, line/scatter series color-width-dash-marker and marker-fill package formatting, filled-series fill/outline color-width-dash package formatting, chartEx style/color sidecars, chartEx axes/metadata for the supported modern chart families, and Excel-openability/visual-gate coverage for the 28-renderable-chart matrix; `App.Host` exposes initial Page Layout Themes, Colors, Fonts, and Effects preset dropdowns plus a custom theme dialog for name, heading/body fonts, effects, and core color slots, and `App.UI` renders Subtle/Refined drawing-object shadow effects while full interpretation of OOXML effect semantics, richer chart formatting panes, and Map chart product scope remain future work
+- `Core.Model` has a workbook theme scaffold with native and XLSX theme-part persistence, loaded-cell-style theme-color resolution, drawing-object theme color references, chart theme-color references/rendering, loaded `fmtScheme` OOXML preservation on save and across modeled effect-name changes, first `outerShdw`/`prstShdw` effect-style interpretation for non-chart drawing-object theme shadows, and an undoable `SetWorkbookThemeCommand`; `Core.IO` has reusable DrawingML color parsing plus worksheet/drawing relationship-based load/save for embedded package parts for every current native chart type, including `twoCellAnchor` chart bounds/EMU offsets, `oneCellAnchor` bounds, `absoluteAnchor` bounds, no-header and no-category-column series range semantics, chart title/range with title text color/font size, axis titles with text color/font size, value-axis bounds/units/log-scale/number formats, axis gridline visibility/color/thickness, tick marks, axis label visibility, axis line color/thickness, legend visibility/position/text/fill/border/theme-text/font-size, global data-label visibility/position/content/number-format/fill/border/text/font/rotation/callout baseline, per-point data-label fill/border/text/font formatting, trendline type/equation/R-squared/line formatting, common column/area combo line-overlay and column/area/line/scatter secondary-value-axis package state, chart/plot area fill and plot border, bar direction/grouping, scatter/bubble X/Y ranges and value-axis pairs, bubble-size ranges, pie/doughnut first-slice angle and exploded-slice package state, doughnut hole size, line/scatter series color-width-dash-marker and marker-fill package formatting, filled-series fill/outline color-width-dash package formatting, chartEx style/color sidecars, chartEx axes/metadata for the supported modern chart families, and Excel-openability/visual-gate coverage for the 28-renderable-chart matrix; `App.Host` exposes initial Page Layout Themes, Colors, Fonts, and Effects preset dropdowns plus a custom theme dialog for name, heading/body fonts, effects, and core color slots, and `App.UI` renders Subtle/Refined plus imported `fmtScheme` outer/preset-shadow drawing-object effects while full OOXML effect semantics beyond that slice, richer chart formatting panes, and Map chart product scope remain future work
 - CSV and delimited-text adapters support RFC 4180-style quoted fields, embedded line breaks, UTF BOM detection, Excel `sep=` directives, and literal-text preservation for formula/coercion-like text; multi-sheet workbook export remains intentionally limited to the first sheet for text formats
 - Volatile function tracking is not thread-safe (single UI thread assumed)
 - Style registry uses linear scan (acceptable for v1 style counts)
