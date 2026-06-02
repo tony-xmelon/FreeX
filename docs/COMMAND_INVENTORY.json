@@ -250,7 +250,7 @@
         {
           "name": "Info panel",
           "status": "Partial",
-          "notes": "Protection/accessibility summary, workbook statistics, accessibility and formula-error counts, saved file size/last-modified metadata, active sheet/workbook protection status, and Backstage action buttons for Protect Workbook, Check Accessibility, Workbook Statistics, and Error Checking"
+          "notes": "Protection/accessibility summary, workbook statistics, accessibility and formula-error counts, saved file size/last-modified metadata, active sheet/workbook protection status, local PDF/XPS export readiness, and Backstage action buttons for Protect Workbook, Check Accessibility, Workbook Statistics, and Error Checking"
         },
         {
           "name": "Share",
@@ -275,7 +275,7 @@
         {
           "name": "Account",
           "status": "Partial",
-          "notes": "Local Account backstage action shows FreeX user name, Windows account, device, app version, options file, current workbook save/path status, Windows Share readiness, and explicit Microsoft 365 sign-in/cloud-link/coauthoring exclusion; no Microsoft account integration"
+          "notes": "Local Account backstage action shows FreeX user name, Windows account, device, app version, options file, current workbook save/path status, Windows Share readiness, local PDF/XPS export readiness, and explicit Microsoft 365 sign-in/cloud-link/coauthoring exclusion; no Microsoft account integration"
         }
       ]
     },
@@ -1504,7 +1504,7 @@
         {
           "name": "Info panel",
           "status": "Partial",
-          "notes": "Protection/accessibility summary, workbook statistics, accessibility and formula-error counts, saved file size/last-modified metadata, active sheet/workbook protection status, and Backstage action buttons for Protect Workbook, Check Accessibility, Workbook Statistics, and Error Checking"
+          "notes": "Protection/accessibility summary, workbook statistics, accessibility and formula-error counts, saved file size/last-modified metadata, active sheet/workbook protection status, local PDF/XPS export readiness, and Backstage action buttons for Protect Workbook, Check Accessibility, Workbook Statistics, and Error Checking"
         },
         {
           "name": "Share",
@@ -1529,7 +1529,7 @@
         {
           "name": "Account",
           "status": "Partial",
-          "notes": "Local Account backstage action shows FreeX user name, Windows account, device, app version, options file, current workbook save/path status, Windows Share readiness, and explicit Microsoft 365 sign-in/cloud-link/coauthoring exclusion; no Microsoft account integration"
+          "notes": "Local Account backstage action shows FreeX user name, Windows account, device, app version, options file, current workbook save/path status, Windows Share readiness, local PDF/XPS export readiness, and explicit Microsoft 365 sign-in/cloud-link/coauthoring exclusion; no Microsoft account integration"
         }
       ]
     },

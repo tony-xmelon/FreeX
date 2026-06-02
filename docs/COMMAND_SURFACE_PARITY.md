@@ -99,12 +99,12 @@ worksheet coordinates.
 | Close | Implemented | Backstage caption exposes a visible access key |
 | Options | Partial | General, Formulas, View, and Save subsets including calculation/error-checking and formula bar preferences; sidebar categories, editable fields, option toggles, and OK/Cancel expose keyboard access keys |
 | Recent Files | Implemented |  |
-| Info panel | Partial | Protection/accessibility summary, workbook statistics, accessibility and formula-error counts, saved file size/last-modified metadata, active sheet/workbook protection status, and Backstage action buttons for Protect Workbook, Check Accessibility, Workbook Statistics, and Error Checking |
+| Info panel | Partial | Protection/accessibility summary, workbook statistics, accessibility and formula-error counts, saved file size/last-modified metadata, active sheet/workbook protection status, local PDF/XPS export readiness, and Backstage action buttons for Protect Workbook, Check Accessibility, Workbook Statistics, and Error Checking |
 | Share | Partial | Windows Share for saved local files using trimmed absolute local paths; missing, invalid, or unsaved local files route through Save As first with local readiness reasons; Microsoft 365 cloud links/coauthoring excluded |
 | Check In/Out | Excluded | SharePoint workflow |
 | Online Templates | Excluded | Microsoft online template discovery |
 | Open XLSX unsupported-feature warnings | Implemented | Names VBA/Power Query/data model/etc. |
-| Account | Partial | Local Account backstage action shows FreeX user name, Windows account, device, app version, options file, current workbook save/path status, Windows Share readiness, and explicit Microsoft 365 sign-in/cloud-link/coauthoring exclusion; no Microsoft account integration |
+| Account | Partial | Local Account backstage action shows FreeX user name, Windows account, device, app version, options file, current workbook save/path status, Windows Share readiness, local PDF/XPS export readiness, and explicit Microsoft 365 sign-in/cloud-link/coauthoring exclusion; no Microsoft account integration |
 <!-- command-inventory:command-surface:file-backstage:end -->
 
 ## Quick Access Toolbar
