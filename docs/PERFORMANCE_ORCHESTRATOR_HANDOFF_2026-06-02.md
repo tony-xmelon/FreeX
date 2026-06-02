@@ -9,8 +9,8 @@ This goal is not complete. This file records the current clean checkpoint.
 ## Operating Rules
 
 - Repository: `E:\Users\anton\Documents\Claude\Freexcel`.
-- Current synced head after this wave: `52032b09f`.
-- `main` and `origin/main` were aligned after push at `52032b09f`.
+- Current synced head after this wave: `a610dc824`.
+- `main` and `origin/main` were aligned after push at `a610dc824`.
 - Follow `AGENTS.md`: use isolated worktrees/branches for implementation, do not edit `main` directly, sync before work, verify before merge, push verified integrations frequently.
 - User explicitly requested no permission prompts and no escalation requests.
 - Treat unrelated dirty or untracked files as owned by other sessions unless explicitly proven otherwise.
@@ -110,9 +110,23 @@ All items below were merged into `main` and pushed to `origin/main`.
   - `GridViewRenderPerformanceTests|GridViewSelectionLayoutTests` passed `92/92`.
   - Full `FreeX.App.UI.Tests` passed `564/564`.
 
+### XLSX Style-Only Stripping Stream
+
+- Worker: `019e8a34-e815-7f12-9bd2-c548baf41c06`.
+- Branch: `codex/perf-xlsx-io-backlog-20260603-r1`.
+- Commit: `ad9bedb59`, integrated through `a610dc824`.
+- Change: streamed XLSX style-only stripping directly into the replacement package instead of materializing stripped worksheet/package byte arrays.
+- Metrics:
+  - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` allocation improved from `156,788,696` bytes to `144,172,872` bytes.
+  - `XLSX_SAVE_LOADED_DENSE_MUTATED` stayed effectively unchanged at about `194.9 MB`.
+- Verification:
+  - `XlsxFileAdapterFormatTests.LoadPath_AvoidsFullPackageToArrayCopies` passed `1/1`.
+  - Focused dense mutated save and ignored-error/style-only load benchmarks passed `2/2`.
+  - Full `FreeX.Core.IO.Tests` passed `1749/1749`.
+
 ## Other Main Integrations During This Wave
 
-Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, and parity handoff updates.
+Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, QAT validation, and parity handoff updates.
 
 ## Remaining Backlog
 
@@ -120,7 +134,7 @@ The obvious high-impact backlog is reduced but not exhausted.
 
 1. XLSX IO:
    - `XLSX_SAVE_LOADED_DENSE_MUTATED` is improved but still allocates around `194.9 MB`.
-   - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` is improved but still allocates around `156.7 MB`.
+   - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` is improved again but still allocates around `144.2 MB`.
    - Unchanged loaded workbook fast-copy remains healthy: `XLSX_SAVE_LOADED_DENSE` around `554,248` bytes in the full IO run.
 2. App.Host toolbar/ribbon:
    - `NON_DRAG_SELECTION_TOOLBAR` remains around `13.1 MB`; current guardrails show zero QAT probes and zero toolbar writes.
@@ -149,7 +163,7 @@ Current 2026-06-03 workers launched with full-access/no-permission instructions:
 - `019e8a34-a5dd-7091-91a2-477c1551093f`: App.Host toolbar/status tail, running.
 - `019e8a34-ba23-7b12-907a-d170358abd6f`: App.UI render benchmark/hot path, completed and pushed.
 - `019e8a34-cf08-72c1-a27b-c921e95e05ed`: Formula/Core.Calc parse/eval tail, completed and pushed.
-- `019e8a34-e815-7f12-9bd2-c548baf41c06`: XLSX IO dense-save/load metadata tail, running.
+- `019e8a34-e815-7f12-9bd2-c548baf41c06`: XLSX IO dense-save/load metadata tail, completed and pushed.
 
 Close completed agents when this thread finishes or when no more result inspection is needed.
 
@@ -159,7 +173,7 @@ Close completed agents when this thread finishes or when no more result inspecti
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `main` and `origin/main` are aligned at or after `52032b09f`.
+2. Confirm `main` and `origin/main` are aligned at or after `a610dc824`.
 3. Start the next wave with disjoint scopes:
    - App.Host non-drag toolbar / drag-status allocation tail.
    - App.UI render benchmark stabilization and next hot path.
