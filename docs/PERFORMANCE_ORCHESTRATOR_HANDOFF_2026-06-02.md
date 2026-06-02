@@ -9,9 +9,8 @@ This goal is not complete. This file records the current clean checkpoint.
 ## Operating Rules
 
 - Repository: `E:\Users\anton\Documents\Claude\Freexcel`.
-- Current synced head after this wave: `18e1401e1`.
-- `main` and `origin/main` were aligned after push at `18e1401e1`.
-- Primary `main` currently has unrelated uncommitted XLSX IO edits in `src/FreeX.Core.IO/XlsxClosedXmlStyleOnlyCellStripper.cs`, `src/FreeX.Core.IO/XlsxFileAdapter.SourcePackageSnapshot.cs`, `src/FreeX.Core.IO/XlsxWorksheetMetadataPreserver.PlainPreflight.cs`, and `src/FreeX.Core.IO/XlsxWorksheetMetadataPreserver.cs`; treat them as externally owned and do not overwrite, stash, or clean them.
+- Current synced head after this wave: `52032b09f`.
+- `main` and `origin/main` were aligned after push at `52032b09f`.
 - Follow `AGENTS.md`: use isolated worktrees/branches for implementation, do not edit `main` directly, sync before work, verify before merge, push verified integrations frequently.
 - User explicitly requested no permission prompts and no escalation requests.
 - Treat unrelated dirty or untracked files as owned by other sessions unless explicitly proven otherwise.
@@ -99,6 +98,18 @@ All items below were merged into `main` and pushed to `origin/main`.
   - `FreeX.Core.Formula.Tests` passed `2716/2716`.
   - Focused repeated-identical-formula dependency rebuild benchmark passed with the final metric above.
 
+### App.UI Quick Analysis Render Paths
+
+- Worker: `019e8a34-ba23-7b12-907a-d170358abd6f`.
+- Branch: `codex/app-ui-render-orchestrator-perf-20260603`.
+- Commit: `52032b09f`, pushed on `main`.
+- Change: cached no-op Quick Analysis data-bar preview geometry when no positive values can draw bars, and clipped background grid line rendering to the actual visible control bounds.
+- Metric: focused `GRID_RENDER_QUICK_ANALYSIS_DATABARS_NONPOSITIVE` improved from `mean_ms=59.56`, `allocated_bytes=10,035,752` to three-run mean `53.82 ms`, average allocation `10,022,272` bytes. Other noisy render samples stayed healthy: text-heavy `166.34 -> 160.75 ms`, wrapped text `367.54 -> 287.89 ms`, positive quick-analysis `162.72 -> 161.43 ms`.
+- Verification:
+  - Focused App.UI benchmark filter passed `5/5`, plus two no-build repeats passed `5/5` each.
+  - `GridViewRenderPerformanceTests|GridViewSelectionLayoutTests` passed `92/92`.
+  - Full `FreeX.App.UI.Tests` passed `564/564`.
+
 ## Other Main Integrations During This Wave
 
 Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, and parity handoff updates.
@@ -122,7 +133,7 @@ The obvious high-impact backlog is reduced but not exhausted.
    - Repeated identical formula dependency rebuild improved again but still allocates about `22.4 MB`.
    - Formula parser/evaluator tail remains a candidate if further dependency-plan or graph-storage reuse can be proven semantics-safe.
 5. App.UI render:
-   - Earlier grid text/render and split-pane work improved major paths, but quick-analysis/wrapped text render benchmarks remain noisy; rerun a stable measurement set before declaring exhausted.
+   - Quick-analysis no-op data-bar rendering is improved; render benchmarks remain noisy, so rerun a stable measurement set before declaring App.UI exhausted.
 
 ## Subagent Status
 
@@ -136,9 +147,9 @@ Completed and integrated performance agents from the resumed wave:
 Current 2026-06-03 workers launched with full-access/no-permission instructions:
 
 - `019e8a34-a5dd-7091-91a2-477c1551093f`: App.Host toolbar/status tail, running.
-- `019e8a34-ba23-7b12-907a-d170358abd6f`: App.UI render benchmark/hot path, running.
+- `019e8a34-ba23-7b12-907a-d170358abd6f`: App.UI render benchmark/hot path, completed and pushed.
 - `019e8a34-cf08-72c1-a27b-c921e95e05ed`: Formula/Core.Calc parse/eval tail, completed and pushed.
-- `019e8a34-e815-7f12-9bd2-c548baf41c06`: XLSX IO dense-save/load metadata tail, running; note the unrelated dirty primary-main XLSX IO edits overlap this area and must be treated as externally owned.
+- `019e8a34-e815-7f12-9bd2-c548baf41c06`: XLSX IO dense-save/load metadata tail, running.
 
 Close completed agents when this thread finishes or when no more result inspection is needed.
 
@@ -148,7 +159,7 @@ Close completed agents when this thread finishes or when no more result inspecti
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `main` and `origin/main` are aligned at or after `18e1401e1`.
+2. Confirm `main` and `origin/main` are aligned at or after `52032b09f`.
 3. Start the next wave with disjoint scopes:
    - App.Host non-drag toolbar / drag-status allocation tail.
    - App.UI render benchmark stabilization and next hot path.
