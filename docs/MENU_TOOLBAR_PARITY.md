@@ -12,7 +12,7 @@
 | QAT | 3 | 1 | 0 | 0 | 0 | **100%** |
 | Home | 48 | 8 | 0 | 0 | 1 | **100%** |
 | Insert | 10 | 4 | 0 | 0 | 9 | **100%** |
-| Draw | 10 | 2 | 0 | 1 | 1 | **100%** |
+| Draw | 10 | 3 | 0 | 0 | 1 | **100%** |
 | Page Layout | 16 | 1 | 0 | 0 | 0 | **100%** |
 | Formulas | 16 | 1 | 0 | 0 | 0 | **100%** |
 | Data | 17 | 1 | 0 | 0 | 2 | **100%** |
@@ -20,7 +20,7 @@
 | View | 20 | 1 | 0 | 0 | 0 | **100%** |
 | Sheet Tabs | 9 | 0 | 0 | 0 | 0 | **100%** |
 | Help | 6 | 0 | 0 | 0 | 3 | **100%** |
-| **TOTAL** | **174** | **25** | **0** | **1** | **25** | **100%** |
+| **TOTAL** | **174** | **26** | **0** | **0** | **25** | **100%** |
 <!-- command-inventory:coverage-summary:end -->
 
 Coverage = (Implemented + Partial) / (Implemented + Partial + Not Implemented). Deferred and Excluded items are reported separately.
@@ -61,7 +61,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Options | Partial | General, Formulas, View, and Save subsets including calculation/error-checking and formula bar preferences; sidebar categories, editable fields, option toggles, and OK/Cancel expose keyboard access keys |
 | Recent Files | Implemented |  |
 | Info panel | Partial | Protection/accessibility summary, workbook statistics, accessibility and formula-error counts, saved file size/last-modified metadata, active sheet/workbook protection status, and Backstage action buttons for Protect Workbook, Check Accessibility, Workbook Statistics, and Error Checking |
-| Share | Partial | Windows Share for saved local files; missing or unsaved local files route through Save As first; Microsoft 365 cloud links/coauthoring excluded |
+| Share | Partial | Windows Share for saved local files using trimmed absolute local paths; missing, invalid, or unsaved local files route through Save As first with local readiness reasons; Microsoft 365 cloud links/coauthoring excluded |
 | Check In/Out | Excluded | SharePoint |
 | Online Templates | Excluded |  |
 | XLSX unsupported-feature warnings | Implemented |  |
@@ -109,8 +109,8 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Font Color | Implemented | Shared color picker exposes custom color and button access keys; Format Cells Font tab also exposes keyboardable common-color swatches with live preview. |
 | Fill Color | Implemented | Shared color picker exposes custom color and button access keys. |
 | Borders (presets) | Implemented |  |
-| Full Border Gallery | Partial | Expanded preset gallery with remembered line color/style; interactive draw/erase border tools deferred |
-| Theme Colors | Partial | Preset color schemes plus Customize Colors entry point through an access-keyed theme dialog; loaded theme `fmtScheme` details are preserved on save |
+| Full Border Gallery | Partial | Expanded preset gallery with remembered line color/style; Draw Border Grid and Erase Border apply remembered borders or clear borders to clicked/dragged grid ranges; edge-level pencil border drawing remains deferred |
+| Theme Colors | Partial | Preset color schemes plus Customize Colors entry point through an access-keyed theme dialog; loaded theme `fmtScheme` details are preserved on save and across modeled effect-name changes |
 
 ### Alignment
 
@@ -168,7 +168,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | AutoSum | Implemented | Alt+= |
 | Fill Down/Right/Up/Left | Implemented | Ctrl+D/R |
 | Fill Series | Implemented |  |
-| Flash Fill | Partial | Expanded deterministic inference including common first-name/last-name contact patterns, dotted/underscored/hyphenated and mixed-separator email display-name cleanup with plus-address tag removal, plus-address email local-part extraction, email domain-stem extraction, digit-mask formatting such as phone-number punctuation, two-part full-name reordering, known title/suffix removal such as `Dr. Ada Lovelace`, `Dr. Lovelace`, `Ada Lovelace Jr.`, or `Lovelace Jr.` to the untitled/unsuffixed name, uppercase initial inference from lowercase names, first/last or all-initial abbreviations such as `Ada Lovelace` to `Lovelace, Ada`, `A. Lovelace`, `A. L.`, `Ada L.`, `Lovelace A.`, or `Lovelace, A.`, exactly three-token name edge/middle-token drops, full last-name reordering, and initial abbreviations such as `Ada Byron Lovelace` to `Byron Lovelace`, `Ada Byron`, `Ada Lovelace`, `Lovelace, Ada`, `Lovelace, Ada Byron`, `Ada B. Lovelace`, `A. Lovelace`, `Ada L.`, `Lovelace A.`, `B. Lovelace`, `Byron L.`, `A. B. Lovelace`, `A. B. L.`, `Ada B.`, `Ada Byron L.`, `Lovelace, Ada B.`, `Lovelace A. B.`, `Lovelace, A. B.`, or `B.`, shared-domain email generation with `.`, `_`, or `-` first/last, first-initial/last, first/last-initial, and last/first-initial separators, and first/last-initial email aliases; Excel's full ML-like inference remains partial |
+| Flash Fill | Partial | Expanded deterministic inference including common first-name/last-name contact patterns, dotted/underscored/hyphenated and mixed-separator email display-name cleanup with plus-address tag removal, plus-address email local-part extraction, email domain-stem extraction, digit-mask formatting such as phone-number punctuation, calendar-valid embedded-date extraction/normalization from labeled text with ambiguous multi-date sources rejected, two-part full-name reordering, known title/suffix removal such as `Dr. Ada Lovelace`, `Dr. Lovelace`, `Ada Lovelace Jr.`, or `Lovelace Jr.` to the untitled/unsuffixed name, uppercase initial inference from lowercase names, first/last or all-initial abbreviations such as `Ada Lovelace` to `Lovelace, Ada`, `A. Lovelace`, `A. L.`, `Ada L.`, `Lovelace A.`, or `Lovelace, A.`, exactly three-token name edge/middle-token drops, full last-name reordering, and initial abbreviations such as `Ada Byron Lovelace` to `Byron Lovelace`, `Ada Byron`, `Ada Lovelace`, `Lovelace, Ada`, `Lovelace, Ada Byron`, `Ada B. Lovelace`, `A. Lovelace`, `Ada L.`, `Lovelace A.`, `B. Lovelace`, `Byron L.`, `A. B. Lovelace`, `A. B. L.`, `Ada B.`, `Ada Byron L.`, `Lovelace, Ada B.`, `Lovelace A. B.`, `Lovelace, A. B.`, or `B.`, shared-domain email generation with `.`, `_`, or `-` first/last, first-initial/last, first/last-initial, and last/first-initial separators, and first/last-initial email aliases; Excel's full ML-like inference remains partial |
 | Clear All | Implemented |  |
 | Clear Formats/Contents/Comments/Hyperlinks | Implemented |  |
 | Sort | Implemented |  |
@@ -231,7 +231,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Fill Color | Implemented | Shared color picker exposes custom color and button access keys. |
 | Outline Color | Implemented |  |
 | Alt Text | Implemented |  |
-| Interactive drag handles | Deferred | Needs object-selection/adornment layer |
+| Interactive drag handles | Partial | Selected non-chart shapes, text boxes, and pictures expose interactive move/resize/rotation handles via the grid object-selection adornment layer; hidden/display-none objects are skipped and selected image crop handles remain supported. Charts remain out of scope |
 | Crop | Implemented | Inserted image crop/reset commands render, persist to native JSON/XLSX, and support interactive edge/corner crop handles for selected images; broader Excel crop galleries remain outside v1 unless separately scoped |
 | Gradients/Effects | Partial | Shape gradient fill with dedicated access-keyed start/end color pickers plus selectable None/Shadow/Glow/Soft Edges effects with native JSON/XLSX persistence; full Excel gradient/effect galleries pending |
 | Selection Pane | Partial | Lists sheet objects with per-item visibility checkboxes, search/filter controls, access-keyed Show All / Hide All bulk controls, Bring Forward / Send Backward reorder buttons, same-kind drag reorder within the list, model-backed object renaming with undo plus Native JSON and XLSX `cNvPr` name persistence for supported drawing objects, grouped-sheet propagation for supported picture/shape/text-box rename, visibility, and z-order edits, and OK/Cancel; full Excel pane visuals remain partial |
@@ -255,7 +255,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Print Gridlines | Implemented |  |
 | Print Headings | Implemented |  |
 | Sheet Options | Implemented |  |
-| Themes | Partial | Presets plus custom theme dialog reachable from Themes, Theme Colors, Theme Fonts, and Theme Effects; dialog preset buttons, metadata fields, color slots, and Save/Cancel expose keyboard access keys; loaded `fmtScheme` OOXML is preserved, while full OOXML effect interpretation remains deferred |
+| Themes | Partial | Presets plus custom theme dialog reachable from Themes, Theme Colors, Theme Fonts, and Theme Effects; dialog preset buttons, metadata fields, color slots, and Save/Cancel expose keyboard access keys; loaded `fmtScheme` OOXML is preserved on save and across modeled effect-name changes, while full OOXML effect interpretation remains deferred |
 | Colors preset menu | Implemented |  |
 | Fonts preset menu | Implemented |  |
 | Effects preset menu | Implemented |  |
@@ -322,7 +322,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Ungroup | Implemented |  |
 | Show/Hide Detail | Implemented |  |
 | Data Model / Power Pivot | Excluded |  |
-| Flash Fill | Partial | Expanded deterministic inference including common first-name/last-name contact patterns, dotted/underscored/hyphenated email display-name cleanup with plus-address tag removal, plus-address email local-part extraction, email domain-stem extraction, digit-mask formatting such as phone-number punctuation, two-part full-name reordering, known title/suffix removal such as `Dr. Ada Lovelace`, `Dr. Lovelace`, `Ada Lovelace Jr.`, or `Lovelace Jr.` to the untitled/unsuffixed name, uppercase initial inference from lowercase names, first/last or all-initial abbreviations such as `Ada Lovelace` to `Lovelace, Ada`, `A. Lovelace`, `A. L.`, `Ada L.`, `Lovelace A.`, or `Lovelace, A.`, exactly three-token name edge/middle-token drops, full last-name reordering, and initial abbreviations such as `Ada Byron Lovelace` to `Byron Lovelace`, `Ada Byron`, `Ada Lovelace`, `Lovelace, Ada`, `Lovelace, Ada Byron`, `Ada B. Lovelace`, `A. Lovelace`, `Ada L.`, `Lovelace A.`, `B. Lovelace`, `Byron L.`, `A. B. Lovelace`, `A. B. L.`, `Ada B.`, `Ada Byron L.`, `Lovelace, Ada B.`, `Lovelace A. B.`, `Lovelace, A. B.`, or `B.`, shared-domain email generation with `.`, `_`, or `-` first/last, first-initial/last, first/last-initial, and last/first-initial separators, and first/last-initial email aliases; Excel's full ML-like inference remains partial |
+| Flash Fill | Partial | Expanded deterministic inference including common first-name/last-name contact patterns, dotted/underscored/hyphenated email display-name cleanup with plus-address tag removal, plus-address email local-part extraction, email domain-stem extraction, digit-mask formatting such as phone-number punctuation, calendar-valid embedded-date extraction/normalization from labeled text with ambiguous multi-date sources rejected, two-part full-name reordering, known title/suffix removal such as `Dr. Ada Lovelace`, `Dr. Lovelace`, `Ada Lovelace Jr.`, or `Lovelace Jr.` to the untitled/unsuffixed name, uppercase initial inference from lowercase names, first/last or all-initial abbreviations such as `Ada Lovelace` to `Lovelace, Ada`, `A. Lovelace`, `A. L.`, `Ada L.`, `Lovelace A.`, or `Lovelace, A.`, exactly three-token name edge/middle-token drops, full last-name reordering, and initial abbreviations such as `Ada Byron Lovelace` to `Byron Lovelace`, `Ada Byron`, `Ada Lovelace`, `Lovelace, Ada`, `Lovelace, Ada Byron`, `Ada B. Lovelace`, `A. Lovelace`, `Ada L.`, `Lovelace A.`, `B. Lovelace`, `Byron L.`, `A. B. Lovelace`, `A. B. L.`, `Ada B.`, `Ada Byron L.`, `Lovelace, Ada B.`, `Lovelace A. B.`, `Lovelace, A. B.`, or `B.`, shared-domain email generation with `.`, `_`, or `-` first/last, first-initial/last, first/last-initial, and last/first-initial separators, and first/last-initial email aliases; Excel's full ML-like inference remains partial |
 <!-- command-inventory:menu-toolbar:data:end -->
 
 ---
@@ -332,7 +332,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 <!-- command-inventory:menu-toolbar:review:start -->
 | Item | Status | Notes |
 |---|---|---|
-| Spell Check | Partial | Broader known-corrections text-cell scan with casing-preserving replace, replace-all, case-insensitive Ignore All, pass-local Add to Dictionary custom dictionary suppression, and internet/email/file-address span skipping; no full dictionary/proofing engine |
+| Spell Check | Partial | Broader known-corrections text-cell scan with casing-preserving replace, replace-all, case-insensitive Ignore All, persisted Add to Dictionary custom dictionary suppression across sessions/workbooks via FreeX options, and internet/email/file-address span skipping; no full dictionary/proofing engine |
 | Thesaurus | Excluded | Requires external dictionary service |
 | Accessibility Checker | Partial | Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, patterned fills, no fill treated as white, and matching conditional-format styles for cell-value, text, date-occurring, blank/error, no-blank/no-error, duplicate-value, unique-value, above/below-average, top/bottom rules, and formula scalar comparisons with shifted cell references, low-contrast text boxes, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; broader formula conditional-format evaluation, theme/tint expansion beyond existing style values, chart/shape text beyond modeled text boxes, and full Excel rule taxonomy remain partial |
 | Smart Lookup | Excluded |  |
@@ -349,7 +349,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Protect Sheet | Implemented | Password dialog OK/Cancel expose access keys |
 | Allow Users to Edit Ranges | Implemented | Add, remove, and clear allowed ranges with undo support; range field and OK/Cancel expose access keys |
 | Protect Workbook | Implemented | Password dialog OK/Cancel expose access keys |
-| Share | Implemented | Windows Share for saved local files; missing current paths route through Save As |
+| Share | Implemented | Windows Share for saved local files using trimmed absolute local paths; missing, invalid, or unsaved local paths route through Save As |
 | Share Workbook (legacy) | Excluded |  |
 | Track Changes | Excluded |  |
 | Threaded Comments | Partial | Local threaded comment model, shortcut, navigation, delete command, list/dialog summaries with authors, replies, created timestamps, and resolved state, plus reply edit/delete actions that preserve resolved-state checkbox changes atomically; Native JSON persistence and XLSX root/reply round-trip for reply/thread activity metadata are supported; full threaded conversation UI and cloud identity semantics remain partial |
