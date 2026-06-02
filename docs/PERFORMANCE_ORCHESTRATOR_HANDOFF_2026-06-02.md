@@ -9,8 +9,9 @@ This goal is not complete. This file records the current clean checkpoint.
 ## Operating Rules
 
 - Repository: `E:\Users\anton\Documents\Claude\Freexcel`.
-- Current synced head after this wave: `6f8ceeb6e`.
-- `main` and `origin/main` were aligned after push at `6f8ceeb6e`.
+- Current synced head after this wave: `68ef39350`.
+- `main` and `origin/main` were aligned after push at `68ef39350`.
+- Primary `main` currently has an unrelated uncommitted edit in `src/FreeX.Core.IO/XlsxWorksheetMetadataPreserver.cs`; treat it as externally owned and do not overwrite, stash, or clean it.
 - Follow `AGENTS.md`: use isolated worktrees/branches for implementation, do not edit `main` directly, sync before work, verify before merge, push verified integrations frequently.
 - User explicitly requested no permission prompts and no escalation requests.
 - Treat unrelated dirty or untracked files as owned by other sessions unless explicitly proven otherwise.
@@ -75,9 +76,20 @@ All items below were merged into `main` and pushed to `origin/main`.
   - Focused dense-save and sheet-property/print-option retention tests passed `4/4`.
   - Full `FreeX.Core.IO.Tests` passed `1749/1749`.
 
+### Core.Commands Advanced Filter Unique Rows
+
+- Local orchestrator branch: `codex/performance-orchestrator-resume-20260602`.
+- Commit: `f4e64f552`, integrated through `68ef39350`.
+- Change: replaced per-matching-row concatenated string keys for Advanced Filter unique output with a row-key set that hashes and compares formatted scalar text directly.
+- Metric: `ADVANCED_FILTER_COPY_UNIQUE_DENSE` allocation improved from `12,277,664` bytes to `8,272,344` bytes in focused samples.
+- Verification after sync:
+  - `AdvancedFilterCommandTests` passed `15/15`.
+  - Focused `AdvancedFilterCommandTests|FilterCommandPerformanceTests|StructuredTableCommandTests` performance set passed `21/21`.
+  - Final post-merge smoke for the unique-row benchmark and formatted-text dedupe test passed `2/2`.
+
 ## Other Main Integrations During This Wave
 
-Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, and FormulaEvaluator partial extraction.
+Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, and parity handoff updates.
 
 ## Remaining Backlog
 
@@ -93,6 +105,7 @@ The obvious high-impact backlog is reduced but not exhausted.
    - `SELECTION_DRAG_STATUS` and `ADDITIONAL_SELECTION_DRAG_TOOLBAR` remain around `22-23 MB` in recent samples.
 3. Core.Commands:
    - Dense insert undo allocation is improved; dense filter/table operations now report low allocations but still have time-cost tails worth rechecking if command work continues.
+   - Advanced Filter copy-unique dense rows is improved to about `8.27 MB`; remaining cost is lower priority than the open Host/UI/Formula/XLSX tails.
 4. Formula/Core.Calc:
    - Repeated identical formula dependency rebuild improved but still allocates about `26.8 MB`.
    - Formula parser/evaluator tail remains a candidate, especially beyond the shared parse-cache path.
@@ -108,7 +121,14 @@ Completed and integrated performance agents from the resumed wave:
 - `019e8a04-59aa-7732-9c5d-368ae7fa311f`: App.Host ribbon resize, merged/pushed.
 - `019e8a1a-9d81-70f3-933f-38956185f1dc`: XLSX dense loaded mutated save, merged/pushed.
 
-Close these agents when this thread finishes or when no more result inspection is needed.
+Current 2026-06-03 workers launched with full-access/no-permission instructions:
+
+- `019e8a34-a5dd-7091-91a2-477c1551093f`: App.Host toolbar/status tail, running.
+- `019e8a34-ba23-7b12-907a-d170358abd6f`: App.UI render benchmark/hot path, running.
+- `019e8a34-cf08-72c1-a27b-c921e95e05ed`: Formula/Core.Calc parse/eval tail, running.
+- `019e8a34-e815-7f12-9bd2-c548baf41c06`: XLSX IO dense-save/load metadata tail, running; note the unrelated dirty primary-main `XlsxWorksheetMetadataPreserver.cs` edit overlaps this area and must be treated as externally owned.
+
+Close completed agents when this thread finishes or when no more result inspection is needed.
 
 ## Resume Checklist
 
@@ -116,7 +136,7 @@ Close these agents when this thread finishes or when no more result inspection i
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `main` and `origin/main` are aligned at or after `6f8ceeb6e`.
+2. Confirm `main` and `origin/main` are aligned at or after `68ef39350`.
 3. Start the next wave with disjoint scopes:
    - App.Host non-drag toolbar / drag-status allocation tail.
    - App.UI render benchmark stabilization and next hot path.
