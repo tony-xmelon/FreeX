@@ -44,6 +44,19 @@ Parallel-stream commits also landed on `main` during cleanup and are not owned b
 - `301392a92` - Cover SpreadsheetML invalid named ranges.
 - `95d466adb` - Reuse chart render scale per pass.
 
+## Resumed Continuation Progress
+
+The 2026-06-02 resume continued on isolated branch/worktree
+`codex/parity-orchestrator-resume-20260602` and integrated these additional bounded non-chart slices:
+
+- `40a63bf44` - Expanded Accessibility Checker generic hyperlink detection for short non-descriptive labels such as download/open/view/visit variants.
+- `937a27641` - Routed Account workbook-path status through `ShareWorkbookPlanner` classification so invalid saved paths report readiness state instead of probing/crashing.
+- `29dbc369d` - Cleared drag/format-painter/header selection state on lost mouse capture and completed deferred toolbar/status refreshes.
+- `08466537f` - Routed Draw tab Bring Forward / Send Backward through `MoveSelectionPaneObjectCommand` for supported mixed non-chart drawing objects (pictures, text boxes, shapes), matching Selection Pane z-order support.
+- `a09aa57d3` - Disabled visible Options dialog checkboxes that are not backed by persisted options or behavior, and added source/runtime coverage that they remain read-only.
+
+Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, and Selection Pane mixed reorder coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
+
 ## Verification Completed
 
 Passed on merged `main`:
@@ -60,6 +73,18 @@ Passed on merged `main`:
 
 During verification, stale App.Host test/build processes briefly locked `FreeX.App.Host` outputs; main-tree build/test processes were cleared and the focused verification was rerun successfully.
 
+Additional resume verification:
+
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed.
+- `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~LocalAccountPlannerTests|FullyQualifiedName~ShareWorkbookPlannerTests" -v:minimal` - passed; main rerun passed 13/13.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~MainWindowMouseSelectionSourceTests" -v:minimal` - passed; main rerun passed 26/26.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~DrawCommandSourceTests|FullyQualifiedName~DrawingTargetResolverTests" -v:minimal` - passed; merged-main rerun passed 26/26.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~SelectionPaneCommandTests" -v:minimal` - passed; merged-main rerun passed 11/11.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~OptionsDialogSourceTests" -v:minimal` - passed.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - passed repeatedly on synced branch/main; final clean rerun was 0 warnings/errors.
+- `git diff --check` - clean for each committed slice.
+
 ## Worker Lane Status
 
 Completed and merged lanes from this wave:
@@ -73,6 +98,16 @@ Completed and merged lanes from this wave:
 - Page Layout / Theme Effects: completed, merged, synced to `origin/main`.
 - Review / Accessibility Checker: completed, merged into local `main`.
 - QAT customization polish: branch contains no extra commits ahead of `main` at handoff.
+- Resume / Accessibility generic hyperlink text: completed, pushed to `origin/main`.
+- Resume / Account invalid saved-path status: completed, pushed to `origin/main`.
+- Resume / Mouse lost-capture selection cleanup: completed, pushed to `origin/main`.
+- Resume / Draw mixed-object arrange commands: completed, pushed to `origin/main`.
+- Resume / Options non-persisted toggle honesty: completed, pushed to `origin/main`.
+
+Read-only resume auditors:
+
+- File/Backstage/PDF audit: `019e8a09-eeb1-7b62-93e0-1c45b39554f4` completed without edits.
+- QAT/Selection Pane/Draw audit: `019e8a0a-0384-7e80-9bc1-eeabe2273edb` completed without edits.
 
 Subagents from the prior non-chart wave were marked for closure:
 
@@ -116,6 +151,7 @@ Still excluded or handled elsewhere:
 
 1. Start by `git fetch origin`, `git status --short --branch`, and `git log --oneline --decorate --graph origin/main..main`.
 2. Confirm this handoff commit and all merged slices are on `origin/main`; if `main` is ahead, verify the new commits before pushing.
-3. Confirm no worker subagents are still open before spawning a new wave.
-4. Spawn the next wave only for non-overlapping bounded slices, excluding chart/PivotChart.
-5. Prefer next slices in Backstage Options/Info/Share/Account, PDF/XPS remaining options, QAT command browsing/import validation, Accessibility Checker deterministic metadata/rule gaps, Spell Check deterministic skip/correction gaps, or Selection Pane/Draw fidelity polish.
+3. At resume time, the primary `main` worktree had unrelated staged App.Host test changes plus an unfinished merge (`MERGE_HEAD`) from another session. Do not abort, reset, stash, or commit that state from the parity lane; wait for the owning session or coordinate if local `main` integration is required.
+4. Confirm no worker subagents are still open before spawning a new wave.
+5. Spawn the next wave only for non-overlapping bounded slices, excluding chart/PivotChart.
+6. Prefer next slices in Backstage Info/Share/Account, carefully bounded PDF/XPS option honesty, QAT command browsing/import validation only if the scope is narrowed, Accessibility Checker deterministic metadata/rule gaps, Spell Check deterministic skip/correction gaps, or Selection Pane/Draw fidelity polish.
