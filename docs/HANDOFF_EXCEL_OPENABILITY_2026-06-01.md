@@ -6,6 +6,21 @@ Keep this document as the compact current-state handoff for future chart/XLSX la
 
 ## Current status
 
+- **Partner Dashboard source-package openability is now verified.** The real workbook
+  `E:\Users\anton\Documents\Melon\Kin+Carta\Partner Dashboard 20250116.xlsx` now loads in FreeX,
+  saves through FreeX, and opens in desktop Excel without repair/rejection. The verified FreeX
+  output is
+  `C:\Users\anton\freex-xlsx-verify\excel-smoke\20260603-codex-normalizer-r4\freex-saved\Partner Dashboard 20250116-freex-saved.xlsx`.
+  OpenXML validation for that output reported `errors=0`.
+- **Loaded source-package custom views are intentionally removed on save.** Fresh modeled custom
+  views remain supported, but source `customWorkbookViews` and worksheet `customSheetViews` are
+  dropped in the source-package compatibility repair path because the Partner investigation proved
+  those native view blocks can make Excel reject otherwise valid workbooks.
+- **Corrupt source-package pivot cache metadata is repaired conservatively.** When a pivot cache has
+  more `cacheField` entries than its worksheet source range can support, FreeX writes a refreshable
+  skeleton pivot cache/table tied to the original source range instead of preserving an Excel-
+  rejected native payload. This prioritizes opening the workbook in Excel over retaining corrupt
+  pivot layout XML.
 - **P0 Excel openability is resolved for the chart parity matrix.** The latest full harness run at
   `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-threedcolumn-caveat-final-main-sync-full`
   passed 28/28 chart cases for FreeX renderer PNG output, FreeX-authored XLSX opened/exported by
@@ -28,6 +43,15 @@ Keep this document as the compact current-state handoff for future chart/XLSX la
 
 ## Completed fixes
 
+- Source-package saves now run an Excel compatibility normalizer that removes stale calc-chain
+  references when repairs are applied, removes duplicate worksheet drawing relationships pointing
+  at the same drawing part, converts phone-like invalid formula text such as `+389 78 609-030` to
+  literal text, prunes missing content type overrides, and repairs internally inconsistent pivot
+  cache/table packages.
+- The Excel open smoke tool now has representative FreeX-authored feature fixtures covering
+  formulas, data validation, conditional formatting, tables, links/comments, images/sparklines,
+  shapes/text boxes, and protection/page setup, plus an enriched Excel-authored fixture for
+  FreeX->Excel validation.
 - Theme output now emits valid `theme1.xml` `fontScheme`/`fmtScheme` content, unblocking plain
   workbooks.
 - Classic charts now emit valid title/axis rich text, line chart grouping, worksheet drawing order,
@@ -55,6 +79,40 @@ Keep this document as the compact current-state handoff for future chart/XLSX la
   export has minor raster drift.
 
 ## Verification evidence
+
+Partner Dashboard:
+
+```powershell
+dotnet run --project tools\FreeX.ExcelOpenSmoke\FreeX.ExcelOpenSmoke.csproj --no-build -- --freex-resave-before-excel --out "C:\Users\anton\freex-xlsx-verify\excel-smoke\20260603-codex-normalizer-r4" "E:\Users\anton\Documents\Melon\Kin+Carta\Partner Dashboard 20250116.xlsx"
+```
+
+Result: 1/1 passed. FreeX source load: 27 sheets, 56,958 cells, 16,863 formulas. Excel open:
+28 worksheets, 124 worksheet shapes.
+
+```powershell
+dotnet run --project "$env:TEMP\freex-openxml-validator" -- "C:\Users\anton\freex-xlsx-verify\excel-smoke\20260603-codex-normalizer-r4\freex-saved\Partner Dashboard 20250116-freex-saved.xlsx"
+```
+
+Result: `errors=0`.
+
+Feature smoke:
+
+```powershell
+dotnet run --project tools\FreeX.ExcelOpenSmoke\FreeX.ExcelOpenSmoke.csproj --no-build -- --save-reopen --generate-freex-feature-fixtures --out "C:\Users\anton\freex-xlsx-verify\excel-smoke\20260603-feature-fixtures-r2"
+dotnet run --project tools\FreeX.ExcelOpenSmoke\FreeX.ExcelOpenSmoke.csproj --no-build -- --save-reopen --generate-excel-fixture --out "C:\Users\anton\freex-xlsx-verify\excel-smoke\20260603-excel-authored-r2"
+dotnet run --project tools\FreeX.ExcelOpenSmoke\FreeX.ExcelOpenSmoke.csproj --no-build -- --save-reopen --generate-chart-fixtures --out "C:\Users\anton\freex-xlsx-verify\excel-smoke\20260603-chart-fixtures-r2"
+```
+
+Result: FreeX feature fixtures 7/7 passed, Excel-authored fixture 1/1 passed, chart fixtures
+2/2 passed.
+
+Core IO regression suite:
+
+```powershell
+dotnet test tests\FreeX.Core.IO.Tests\FreeX.Core.IO.Tests.csproj --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1
+```
+
+Result: 1,767/1,767 passed.
 
 Focused tests:
 
