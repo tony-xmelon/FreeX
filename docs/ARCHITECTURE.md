@@ -417,7 +417,8 @@ Error Checking remains a deterministic model-backed audit in `Core.Commands`, no
 engine. It reports cached formula error values, text cells that parse as finite invariant-culture numbers, formulas
 stored as text, formulas whose direct parser-extracted precedents include missing or blank cells, table calculated
 column formulas that differ from the column formula, and common aggregate formulas (`SUM`, `AVERAGE`, `COUNT`,
-`COUNTA`, `MIN`, `MAX`, `PRODUCT`) that omit valued adjacent cells or valued gaps between separate arguments. Rule toggles use
+`COUNTA`, `MIN`, `MAX`, `PRODUCT`, `SUBTOTAL`, `AGGREGATE`) that omit valued adjacent cells or valued gaps between
+separate arguments. It also reports literal cells whose values fail applied data-validation rules. Rule toggles use
 `Workbook.DisabledFormulaErrorCodes`, and per-cell ignore state reuses `Cell.IgnoreFormulaError` for both formula-error
 and non-error issue kinds.
 

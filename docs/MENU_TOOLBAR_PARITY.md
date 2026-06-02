@@ -287,7 +287,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Trace Dependents | Implemented |  |
 | Remove Arrows | Implemented |  |
 | Show Formulas | Implemented | Ctrl+` |
-| Error Checking | Partial | Issue list plus ribbon entry point to error-checking options, access-keyed issue actions, and supported checks including numbers stored as text, formulas stored as text, formulas referring to blank cells, two-digit-year text dates, formulas inconsistent with nearby formulas, inconsistent calculated-column formulas in tables, common aggregate formulas (`SUM`, `AVERAGE`, `COUNT`, `COUNTA`, `MIN`, `MAX`, `PRODUCT`) omitting adjacent cells including gaps between separate arguments, and unlocked formula cells; partial rule taxonomy |
+| Error Checking | Partial | Issue list plus ribbon entry point to error-checking options, access-keyed issue actions, and supported checks including numbers stored as text, formulas stored as text, formulas referring to blank cells, two-digit-year text dates, formulas inconsistent with nearby formulas, inconsistent calculated-column formulas in tables, common aggregate formulas (`SUM`, `AVERAGE`, `COUNT`, `COUNTA`, `MIN`, `MAX`, `PRODUCT`, `SUBTOTAL`, `AGGREGATE`) omitting adjacent cells including gaps between separate arguments, unlocked formula cells, and invalid data-validation entries; partial rule taxonomy |
 | Evaluate Formula | Implemented | Help, Previous, Step Out, Evaluate, Step In, and Close actions expose access keys |
 | Watch Window | Implemented | Dialog command buttons expose keyboard access keys. |
 | R1C1 Reference Style | Implemented |  |
