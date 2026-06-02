@@ -76,7 +76,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Save | Implemented |  |
 | Undo | Implemented |  |
 | Redo | Implemented |  |
-| Customize QAT | Partial | Options dialog filters the broad direct-command catalog and persists command list, order, reset, Enter/Delete/Backspace/Ctrl+Up/Ctrl+Down keyboard customization shortcuts, and above/below-ribbon location; eligible direct ribbon commands can now be added/removed through command context menus; FreeX-owned `.freex-qat.json` customization import/export round-trips normalized command IDs and below-ribbon state; arbitrary command browsing and Excel `customUI` import/export remain out of scope |
+| Customize QAT | Partial | Options dialog filters the broad direct-command catalog and persists command list, order, reset, Enter/Delete/Backspace/Ctrl+Up/Ctrl+Down keyboard customization shortcuts, and above/below-ribbon location; eligible direct ribbon commands can now be added/removed through command context menus; FreeX-owned `.freex-qat.json` customization import/export round-trips normalized command IDs and below-ribbon state, and import rejects unsupported command IDs instead of silently dropping them; arbitrary command browsing and Excel `customUI` import/export remain out of scope |
 <!-- command-inventory:menu-toolbar:qat:end -->
 
 ---
