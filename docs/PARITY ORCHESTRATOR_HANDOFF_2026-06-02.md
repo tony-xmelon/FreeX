@@ -2,7 +2,7 @@
 
 ## Goal
 
-Continue FreeX non-chart, non-human v1 readiness work until remaining non-chart feature-parity, fidelity, warning, and documentation gaps are exhausted or explicitly blocked. Use isolated worktrees/subagents under `AGENTS.md`, with full local access and no permission/escalation prompts.
+Continue FreeX non-human v1 readiness work until remaining feature-parity, fidelity, warning, and documentation gaps are exhausted or explicitly blocked. Use isolated worktrees/subagents under `AGENTS.md`, with full local access and no permission/escalation prompts.
 
 The orchestration goal is paused for thread handoff, not complete.
 
@@ -12,7 +12,6 @@ The orchestration goal is paused for thread handoff, not complete.
 - Product name: FreeX.
 - Follow `AGENTS.md`: one branch/worktree per active lane, sync before edits, verify before merge, merge verified slices into `main`, then sync/push.
 - Do not ask the user for permissions; do not request escalation; do not pass `sandbox_permissions`.
-- Leave chart and PivotChart work to the parallel chart orchestrator.
 - Treat primary `main` as integration and verification only.
 
 ## Integrated During This Orchestration Wave
