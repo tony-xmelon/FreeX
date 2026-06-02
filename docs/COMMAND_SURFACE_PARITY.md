@@ -259,7 +259,7 @@ worksheet coordinates.
 
 ## Draw Tab
 
-> **Tab coverage: 8 Implemented + 3 Partial = 100% of 11 in-scope commands (1 Deferred, 1 Excluded)**
+> **Tab coverage: 9 Implemented + 3 Partial = 100% of 12 in-scope commands (1 Excluded)**
 
 The menu/toolbar inventory intentionally counts one additional Draw implemented item for the current ribbon
 surface delta; command-surface parity stays at eight implemented commands until that UI-only item has a
