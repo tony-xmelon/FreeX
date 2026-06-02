@@ -66,6 +66,7 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `73c06d76e` - Treated default shape-specific metadata such as Rectangle 1, Ellipse 1, Oval 1, and Line 1 as generic Accessibility Checker object text.
 - `15fbebaaa` - Clarified generated QAT and Accessibility Checker parity docs for the newly completed command catalog, hidden-content, and default shape-name metadata slices.
 - `86cb86be5` - Extended Spell Check address-span skipping to quoted or bracketed file paths with spaces, preserving those spans during issue detection and correction planning.
+- `d5d9b7a34` - Added `MEDIAN` to Error Checking's omitted-adjacent-cells aggregate detection and generated parity docs.
 
 Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, and Selection Pane mixed reorder coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
@@ -97,6 +98,11 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated Spell Check generated docs.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the Spell Check docs sync.
 - `git diff --check` - clean after the quoted/bracketed file-path slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~FormulaAuditingServiceTests" -v:minimal` - passed after the MEDIAN omitted-adjacent aggregate slice.
+- `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the MEDIAN omitted-adjacent aggregate slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated Error Checking generated docs.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the Error Checking docs sync.
+- `git diff --check` - clean after the MEDIAN omitted-adjacent aggregate slice.
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~QuickAccessToolbarCustomizationPlannerTests|FullyQualifiedName~QuickAccessCommandStateResolverTests|FullyQualifiedName~ReviewCommandSourceTests|FullyQualifiedName~DrawCommandSourceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed after the default shape-name slice.
@@ -150,6 +156,7 @@ Completed and merged lanes from this wave:
 - Resume / Accessibility default shape-name generic metadata: completed, pushed to `origin/main`.
 - Resume / QAT and Accessibility generated parity-doc sync: completed, pushed to `origin/main`.
 - Resume / Spell Check quoted and bracketed file paths with spaces: completed, pushed to `origin/main`.
+- Resume / Error Checking MEDIAN omitted-adjacent aggregate detection: completed, pushed to `origin/main`.
 
 Read-only resume auditors:
 
