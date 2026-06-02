@@ -153,7 +153,7 @@ worksheet coordinates.
 | Fill/Highlight Color | Implemented |  |
 | Borders (presets) | Implemented |  |
 | Full Border Gallery | Partial | Expanded preset gallery with remembered line color/style; Draw Border Grid and Erase Border apply remembered borders or clear borders to clicked/dragged grid ranges; edge-level pencil border drawing remains deferred |
-| Theme Colors | Partial | Preset color schemes plus Customize Colors entry point through an access-keyed theme dialog; loaded theme `fmtScheme` details are preserved on save and across modeled effect-name changes, with first `outerShdw` effect-style shadows interpreted for non-chart drawing objects |
+| Theme Colors | Partial | Preset color schemes plus Customize Colors entry point through an access-keyed theme dialog; loaded theme `fmtScheme` details are preserved on save and across modeled effect-name changes, with first `outerShdw`/`prstShdw` effect-style shadows interpreted for non-chart drawing objects |
 
 ### Alignment
 
@@ -303,7 +303,7 @@ workbook command behavior to track here.
 | Print Gridlines | Implemented |  |
 | Print Headings | Implemented |  |
 | Sheet Options (gridlines/headings display) | Implemented |  |
-| Themes (preset + custom dialog) | Partial | Presets plus custom theme dialog reachable from Themes, Theme Colors, Theme Fonts, and Theme Effects; dialog preset buttons, metadata fields, color slots, and Save/Cancel expose keyboard access keys; loaded `fmtScheme` OOXML is preserved on save and across modeled effect-name changes, and first `outerShdw` effect-style shadows render for non-chart drawing objects while fuller OOXML effect interpretation remains deferred |
+| Themes (preset + custom dialog) | Partial | Presets plus custom theme dialog reachable from Themes, Theme Colors, Theme Fonts, and Theme Effects; dialog preset buttons, metadata fields, color slots, and Save/Cancel expose keyboard access keys; loaded `fmtScheme` OOXML is preserved on save and across modeled effect-name changes, and first `outerShdw`/`prstShdw` effect-style shadows render for non-chart drawing objects while fuller OOXML effect interpretation remains deferred |
 | Colors/Fonts/Effects preset menus | Implemented |  |
 | Header/Footer editing | Implemented | First/odd/even variants, presets, section fields, token buttons, option toggles, and OK/Cancel expose access keys |
 | Page Setup dialog | Implemented | Page, Margins, and Sheet tab labels plus footer actions expose access keys |

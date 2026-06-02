@@ -110,7 +110,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Fill Color | Implemented | Shared color picker exposes custom color and button access keys. |
 | Borders (presets) | Implemented |  |
 | Full Border Gallery | Partial | Expanded preset gallery with remembered line color/style; Draw Border Grid and Erase Border apply remembered borders or clear borders to clicked/dragged grid ranges; edge-level pencil border drawing remains deferred |
-| Theme Colors | Partial | Preset color schemes plus Customize Colors entry point through an access-keyed theme dialog; loaded theme `fmtScheme` details are preserved on save and across modeled effect-name changes, with first `outerShdw` effect-style shadows interpreted for non-chart drawing objects |
+| Theme Colors | Partial | Preset color schemes plus Customize Colors entry point through an access-keyed theme dialog; loaded theme `fmtScheme` details are preserved on save and across modeled effect-name changes, with first `outerShdw`/`prstShdw` effect-style shadows interpreted for non-chart drawing objects |
 
 ### Alignment
 
@@ -255,7 +255,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Print Gridlines | Implemented |  |
 | Print Headings | Implemented |  |
 | Sheet Options | Implemented |  |
-| Themes | Partial | Presets plus custom theme dialog reachable from Themes, Theme Colors, Theme Fonts, and Theme Effects; dialog preset buttons, metadata fields, color slots, and Save/Cancel expose keyboard access keys; loaded `fmtScheme` OOXML is preserved on save and across modeled effect-name changes, and first `outerShdw` effect-style shadows render for non-chart drawing objects while fuller OOXML effect interpretation remains deferred |
+| Themes | Partial | Presets plus custom theme dialog reachable from Themes, Theme Colors, Theme Fonts, and Theme Effects; dialog preset buttons, metadata fields, color slots, and Save/Cancel expose keyboard access keys; loaded `fmtScheme` OOXML is preserved on save and across modeled effect-name changes, and first `outerShdw`/`prstShdw` effect-style shadows render for non-chart drawing objects while fuller OOXML effect interpretation remains deferred |
 | Colors preset menu | Implemented |  |
 | Fonts preset menu | Implemented |  |
 | Effects preset menu | Implemented |  |
