@@ -54,6 +54,7 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `29dbc369d` - Cleared drag/format-painter/header selection state on lost mouse capture and completed deferred toolbar/status refreshes.
 - `08466537f` - Routed Draw tab Bring Forward / Send Backward through `MoveSelectionPaneObjectCommand` for supported mixed non-chart drawing objects (pictures, text boxes, shapes), matching Selection Pane z-order support.
 - `a09aa57d3` - Disabled visible Options dialog checkboxes that are not backed by persisted options or behavior, and added source/runtime coverage that they remain read-only.
+- `460971ad1` - Rejected unsupported command IDs in imported `.freex-qat.json` Quick Access Toolbar customization files instead of silently dropping them from mixed imports.
 
 Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, and Selection Pane mixed reorder coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
@@ -82,6 +83,8 @@ Additional resume verification:
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~DrawCommandSourceTests|FullyQualifiedName~DrawingTargetResolverTests" -v:minimal` - passed; merged-main rerun passed 26/26.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~SelectionPaneCommandTests" -v:minimal` - passed; merged-main rerun passed 11/11.
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~OptionsDialogSourceTests" -v:minimal` - passed.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~QuickAccessToolbarCustomizationFileTests|FullyQualifiedName~OptionsDialogSourceTests" -v:minimal` - passed.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - command inventory docs up to date.
 - `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - passed repeatedly on synced branch/main; final clean rerun was 0 warnings/errors.
 - `git diff --check` - clean for each committed slice.
 
@@ -103,6 +106,7 @@ Completed and merged lanes from this wave:
 - Resume / Mouse lost-capture selection cleanup: completed, pushed to `origin/main`.
 - Resume / Draw mixed-object arrange commands: completed, pushed to `origin/main`.
 - Resume / Options non-persisted toggle honesty: completed, pushed to `origin/main`.
+- Resume / QAT unsupported command import validation: completed, pushed to `origin/main`.
 
 Read-only resume auditors:
 
@@ -154,4 +158,4 @@ Still excluded or handled elsewhere:
 3. The coordinator branch and `origin/main` were aligned at this handoff, while the primary local `main` worktree was being changed by other sessions and may be dirty or diverged. Treat `origin/main` plus this handoff as canonical unless local `main` commits/edits are verified and intentionally integrated by their owning lane.
 4. Confirm no worker subagents are still open before spawning a new wave.
 5. Spawn the next wave only for non-overlapping bounded slices, excluding chart/PivotChart.
-6. Prefer next slices in Backstage Info/Share/Account, carefully bounded PDF/XPS option honesty, QAT command browsing/import validation only if the scope is narrowed, Accessibility Checker deterministic metadata/rule gaps, Spell Check deterministic skip/correction gaps, or Selection Pane/Draw fidelity polish.
+6. Prefer next slices in Backstage Info/Share/Account, carefully bounded PDF/XPS option honesty, QAT command browsing only if the scope is narrowed, Accessibility Checker deterministic metadata/rule gaps, Spell Check deterministic skip/correction gaps, or Selection Pane/Draw fidelity polish.
