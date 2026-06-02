@@ -354,7 +354,10 @@ and `Sales[[#Data],[Amount]:[Tax]]` resolve to rectangular table ranges. Excel's
 the same current-cell context as `[@Column]`, including row-scoped column ranges such as
 `Sales[[#This Row],[Amount]:[Tax]]`. Unqualified `#This Row` selectors bind to the containing table for calculated
 column-style formulas, for example `[[#This Row],[Amount]:[Tax]]`. Current-row references outside a table data row,
-external workbook structured references, and full table style theme semantics remain outside this slice.
+external workbook structured references, custom/authored table style XML, and full Excel table style element semantics
+remain outside this slice. Built-in table styles `TableStyleMedium2`-`TableStyleMedium7` and `TableStyleLight16`-
+`TableStyleLight21` resolve Accent 1-6 banding from the active workbook theme for gallery swatches and Format as Table
+materialization.
 
 Flash Fill remains a deterministic pattern service, not an Excel-like ML inference engine. It supports conservative
 single-column transforms including dotted-token extraction with variable dot counts for final-token patterns,
@@ -367,16 +370,20 @@ domains and modeled `.`, `_`, or `-` separators from examples, as do first-name/
 
 Spell Check remains a deterministic known-corrections service in `Core.Commands`, not dictionary-backed proofing. It
 scans literal text cells in sheet/row/column order and plans undoable replacement edits while leaving formula cells alone.
+The host workflow keeps Ignore All case-insensitive for the current pass and treats Add to Dictionary as a pass-local
+custom dictionary that suppresses matching scanner results without introducing a durable proofing dictionary.
 
 Accessibility Checker remains a deterministic model-backed audit in `Core.Commands`, not a full WCAG or screen-reader
 engine. It reports issues supported by current workbook state, including merged cells, blank structured-table headers,
-low-contrast cell text against base and patterned fills, missing object alternate text, hidden sheets/rows/columns with
-content, unclear hyperlink display text, and charts whose title is missing as the current accessible label.
+low-contrast cell text against base and patterned fills, low-contrast text boxes, missing object alternate text, hidden
+sheets/rows/columns with content, unclear hyperlink display text, and charts whose title is missing as the current
+accessible label.
 
 Native JSON persists the local threaded-comment model, including author, replies, created/modified UTC activity
 metadata, and resolved state, so FreeX's in-app comment threads survive native save/load. Comment navigation and
-printable comment summaries surface authors, replies, and resolved state from that model, even though XLSX
-threaded-comment package authoring remains outside the modeled writer.
+printable comment summaries surface authors, replies, and resolved state from that model. Reply edit/delete actions
+can update resolved state atomically and undo restores the prior thread. XLSX threaded-comment roots and replies
+round-trip through the modeled writer; cloud identity and coauthoring semantics remain outside the local model.
 
 Selection Pane object editing uses lightweight `Name` fields on charts, pictures, text boxes, and drawing shapes.
 Generated names remain the fallback when no explicit name is modeled. Visibility, z-order, and rename edits stay in
@@ -392,10 +399,15 @@ The Backstage File > Info panel is a host-only summary surface over existing mod
 `InfoPanelSummaryPlanner` when the Info view opens. It does not introduce cloud account, version-history,
 template, Document Inspector, or extended document-metadata subsystems.
 
+The Backstage Account action is also local-only. `LocalAccountPlanner` reports the FreeX user name, Windows account,
+device, app version, options file path, current workbook save/path status, and Windows Share readiness while explicitly
+stating that Microsoft 365 sign-in, cloud links, and coauthoring are not implemented.
+
 Error Checking remains a deterministic model-backed audit in `Core.Commands`, not a full Excel heuristic inference
 engine. It reports cached formula error values, text cells that parse as finite invariant-culture numbers, formulas
-whose direct parser-extracted precedents include missing or blank cells, and SUM formulas that omit valued adjacent
-cells or valued gaps between separate SUM arguments. Rule toggles use
+stored as text, formulas whose direct parser-extracted precedents include missing or blank cells, table calculated
+column formulas that differ from the column formula, and SUM formulas that omit valued adjacent cells or valued gaps
+between separate SUM arguments. Rule toggles use
 `Workbook.DisabledFormulaErrorCodes`, and per-cell ignore state reuses `Cell.IgnoreFormulaError` for both formula-error
 and non-error issue kinds.
 
