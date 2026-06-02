@@ -69,6 +69,7 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `d5d9b7a34` - Added `MEDIAN` to Error Checking's omitted-adjacent-cells aggregate detection and generated parity docs.
 - `dff9f2f6d` - Corrected stale Draw command-surface parity prose so the implemented-count sentence matches the generated 9-implemented table.
 - `d9888687b` - Treated displayed numeric, Boolean, and error cell values as visible Accessibility Checker low-contrast cell text, alongside existing text/date coverage, and regenerated parity docs.
+- `e17171ac0` - Added stable Backstage Share, Info, and Export UI Automation IDs/names/help text and updated the UI test catalog automation-ID count.
 
 Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, and Selection Pane mixed reorder coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
@@ -112,6 +113,9 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated Accessibility Checker generated docs after the displayed non-text low-contrast cell value slice.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the displayed non-text low-contrast cell value slice.
 - `git diff --check` - clean after the displayed non-text low-contrast cell value slice.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~MainWindowXamlKeyTipTests|FullyQualifiedName~UiAutomationCatalogSnapshotTests|FullyQualifiedName~UiTestCatalogInventoryTests" -v:minimal` - passed after the Backstage Share/Info/Export UIA metadata slice.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the Backstage Share/Info/Export UIA metadata slice; the first run timed out without diagnostics and the immediate rerun passed with no stale worktree-scoped processes.
+- `git diff --check` - clean after the Backstage Share/Info/Export UIA metadata slice.
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~QuickAccessToolbarCustomizationPlannerTests|FullyQualifiedName~QuickAccessCommandStateResolverTests|FullyQualifiedName~ReviewCommandSourceTests|FullyQualifiedName~DrawCommandSourceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed after the default shape-name slice.
@@ -167,7 +171,8 @@ Completed and merged lanes from this wave:
 - Resume / Spell Check quoted and bracketed file paths with spaces: completed, pushed to `origin/main`.
 - Resume / Error Checking MEDIAN omitted-adjacent aggregate detection: completed, pushed to `origin/main`.
 - Resume / Draw implemented-count parity prose sync: completed, pushed to `origin/main`.
-- Resume / Accessibility displayed non-text low-contrast cell values: completed, pending push to `origin/main`.
+- Resume / Accessibility displayed non-text low-contrast cell values: completed, pushed to `origin/main`.
+- Resume / Backstage Share, Info, and Export UIA metadata: completed, pending push to `origin/main`.
 
 Read-only resume auditors:
 
@@ -175,6 +180,7 @@ Read-only resume auditors:
 - QAT/Selection Pane/Draw audit: `019e8a0a-0384-7e80-9bc1-eeabe2273edb` completed without edits.
 - Review/Data audit: `019e8aa7-7901-7323-8e62-d6d67755203c` completed without edits; it identified the displayed non-text low-contrast cell value slice and a Flash Fill blank-source selected-range candidate.
 - File/Backstage/Options audit: `019e8aa7-540c-7283-8bad-6414b5f6331b` completed without edits; it identified Options default-save-format and Backstage Share/Info/Export UIA metadata candidates.
+- Options default-save-format follow-up audit: `019e8ab2-862d-7633-b388-a23832ab9d1e` completed without edits; it confirmed the `.json`/`.fxl` Options and Save As default-format mismatch remains a real, bounded but broader host/IO/localization slice.
 
 Subagents from the prior non-chart wave were marked for closure:
 
