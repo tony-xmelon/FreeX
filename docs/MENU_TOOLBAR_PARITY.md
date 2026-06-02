@@ -76,7 +76,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Save | Implemented |  |
 | Undo | Implemented |  |
 | Redo | Implemented |  |
-| Customize QAT | Partial | Options dialog filters the broad direct-command catalog and persists command list, order, reset, and above/below-ribbon location; eligible direct ribbon commands can now be added/removed through command context menus; FreeX-owned `.freex-qat.json` customization import/export round-trips normalized command IDs and below-ribbon state; arbitrary command browsing and Excel `customUI` import/export remain out of scope |
+| Customize QAT | Partial | Options dialog filters the broad direct-command catalog and persists command list, order, reset, Enter/Delete/Backspace/Ctrl+Up/Ctrl+Down keyboard customization shortcuts, and above/below-ribbon location; eligible direct ribbon commands can now be added/removed through command context menus; FreeX-owned `.freex-qat.json` customization import/export round-trips normalized command IDs and below-ribbon state; arbitrary command browsing and Excel `customUI` import/export remain out of scope |
 <!-- command-inventory:menu-toolbar:qat:end -->
 
 ---
@@ -332,7 +332,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 <!-- command-inventory:menu-toolbar:review:start -->
 | Item | Status | Notes |
 |---|---|---|
-| Spell Check | Partial | Broader known-corrections text-cell scan with casing-preserving replace, replace-all, case-insensitive Ignore All, persisted Add to Dictionary custom dictionary suppression across sessions/workbooks via FreeX options, and internet/email/file-address span skipping; no full dictionary/proofing engine |
+| Spell Check | Partial | Broader known-corrections scan across text cells, notes, threaded comment roots, and threaded comment replies with casing-preserving replace, replace-all, case-insensitive Ignore All, persisted Add to Dictionary custom dictionary suppression across sessions/workbooks via FreeX options, and internet/email/file-address span skipping; no full dictionary/proofing engine |
 | Thesaurus | Excluded | Requires external dictionary service |
 | Accessibility Checker | Partial | Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, workbook theme/tint font, fill, and pattern foreground colors, patterned fills, no fill treated as white, and matching conditional-format styles for cell-value, text, date-occurring, blank/error, no-blank/no-error, duplicate-value, unique-value, above/below-average, top/bottom rules, and formula scalar comparisons with shifted cell references, low-contrast text boxes, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; broader formula conditional-format evaluation, chart/shape text beyond modeled text boxes, and full Excel rule taxonomy remain partial |
 | Smart Lookup | Excluded |  |

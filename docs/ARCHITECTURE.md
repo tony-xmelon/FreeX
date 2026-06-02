@@ -375,7 +375,8 @@ first-initial/last-name, and last-name/first-initial email generation learn cons
 domains and modeled `.`, `_`, or `-` separators from examples, as do first-name/last-initial aliases. It returns no result when the examples are ambiguous.
 
 Spell Check remains a deterministic known-corrections service in `Core.Commands`, not dictionary-backed proofing. It
-scans literal text cells in sheet/row/column order and plans undoable replacement edits while leaving formula cells alone.
+scans literal text cells, notes, threaded comment roots, and threaded comment replies in deterministic sheet/address order
+and plans undoable replacement edits while leaving formula cells alone.
 The host workflow keeps Ignore All case-insensitive for the current pass and persists Add to Dictionary custom words
 through `FreeXOptions` so matching scanner results stay suppressed across sessions/workbooks without introducing a full
 proofing dictionary engine.
