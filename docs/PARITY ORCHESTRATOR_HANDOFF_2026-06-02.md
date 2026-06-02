@@ -60,6 +60,7 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `389dd42cc` - Made existing-path Save resolution return false for malformed saved paths so Save falls through to Save As instead of throwing before UI handling.
 - `b4b6a1f5e` - Hardened export format/path planning for malformed PDF/XPS paths so planner decisions do not throw before the export failure dialog path.
 - `ec025f2f7` - Extended Error Checking's omitted-adjacent-cells aggregate rule to explicit current-sheet-qualified ranges, including quoted sheet names, while leaving other-sheet ranges out of scope.
+- `2c7a856d2` - Clarified generated Flash Fill parity docs to include already-implemented web-address cleanup, thousand-separator stripping, digit-only extraction, and US address component extraction patterns.
 
 Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, and Selection Pane mixed reorder coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
@@ -95,6 +96,7 @@ Additional resume verification:
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~ExportPlannerTests" -v:minimal` - passed.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~FormulaAuditingServiceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~FlashFillServiceTests.Fill_WebAddress|FullyQualifiedName~FlashFillServiceTests.Fill_Address|FullyQualifiedName~FlashFillServiceTests.Fill_StripThousandSeparators|FullyQualifiedName~FlashFillServiceTests.Fill_ExtractDigitsOnly" -v:minimal` - passed.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - command inventory docs up to date.
 - `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - passed repeatedly on synced branch/main; final clean rerun was 0 warnings/errors.
 - `git diff --check` - clean for each committed slice.
@@ -123,6 +125,7 @@ Completed and merged lanes from this wave:
 - Resume / Existing Save malformed-path fallback: completed, pushed to `origin/main`.
 - Resume / PDF/XPS export malformed-path planning: completed, pushed to `origin/main`.
 - Resume / Error Checking same-sheet-qualified omitted aggregate ranges: completed, pushed to `origin/main`.
+- Resume / Flash Fill generated parity-doc coverage: completed, pushed to `origin/main`.
 
 Read-only resume auditors:
 
