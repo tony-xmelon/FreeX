@@ -397,7 +397,7 @@ the modeled writer; cloud identity and coauthoring semantics remain outside the 
 Selection Pane object editing uses lightweight `Name` fields on charts, pictures, text boxes, and drawing shapes.
 Generated names remain the fallback when no explicit name is modeled. Visibility, z-order, and rename edits stay in
 `Core.Commands`; `RenameSelectionPaneObjectCommand` snapshots the previous name for undo, while the host dialog only
-plans rename/visibility/move changes from buttons or same-kind drag reorder and applies them through the command bus as
+plans rename/visibility/move changes from buttons, list keyboard shortcuts, or mixed drawing-object drag reorder and applies them through the command bus as
 one `CompositeWorkbookCommand`, so a single dialog acceptance is one undo step. Native JSON persists modeled object names. XLSX drawing object name
 load/save maps the drawing non-visual `cNvPr/@name` value for charts, pictures, text boxes, and drawing shapes to
 the modeled object name, while deeper Office drawing IDs and other non-visual metadata remain best-effort package
