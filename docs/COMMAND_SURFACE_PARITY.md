@@ -262,7 +262,7 @@ worksheet coordinates.
 > **Tab coverage: 9 Implemented + 3 Partial = 100% of 12 in-scope commands (1 Excluded)**
 
 The menu/toolbar inventory intentionally counts one additional Draw implemented item for the current ribbon
-surface delta; command-surface parity stays at eight implemented commands until that UI-only item has a
+surface delta; command-surface parity stays at nine implemented commands until that UI-only item has a
 workbook command behavior to track here.
 
 <!-- command-inventory:command-surface:draw:start -->
