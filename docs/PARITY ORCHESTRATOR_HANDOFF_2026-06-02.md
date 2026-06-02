@@ -61,6 +61,7 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `b4b6a1f5e` - Hardened export format/path planning for malformed PDF/XPS paths so planner decisions do not throw before the export failure dialog path.
 - `ec025f2f7` - Extended Error Checking's omitted-adjacent-cells aggregate rule to explicit current-sheet-qualified ranges, including quoted sheet names, while leaving other-sheet ranges out of scope.
 - `2c7a856d2` - Clarified generated Flash Fill parity docs to include already-implemented web-address cleanup, thousand-separator stripping, digit-only extraction, and US address component extraction patterns.
+- `0ced8a711` - Extended Accessibility Checker's hidden-content checks beyond occupied cells to comments, threaded comments, structured tables, sparklines, and visible non-chart drawing objects.
 
 Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, and Selection Pane mixed reorder coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
@@ -100,6 +101,8 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - command inventory docs up to date.
 - `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - passed repeatedly on synced branch/main; final clean rerun was 0 warnings/errors.
 - `git diff --check` - clean for each committed slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed.
+- `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 
 ## Worker Lane Status
 
@@ -126,6 +129,7 @@ Completed and merged lanes from this wave:
 - Resume / PDF/XPS export malformed-path planning: completed, pushed to `origin/main`.
 - Resume / Error Checking same-sheet-qualified omitted aggregate ranges: completed, pushed to `origin/main`.
 - Resume / Flash Fill generated parity-doc coverage: completed, pushed to `origin/main`.
+- Resume / Accessibility hidden non-cell content: completed, pushed to `origin/main`.
 
 Read-only resume auditors:
 
