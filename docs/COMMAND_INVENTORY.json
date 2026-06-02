@@ -510,12 +510,12 @@
             {
               "name": "Conditional Formatting",
               "status": "Partial",
-              "notes": "Most modeled rules; grid rendering covers cell value, formulas, above/below average, top/bottom, duplicate/unique, text, blank/nonblank, error/no-error, color scales, data bars, and visible 3/4/5-band icon sets with style-aware arrows, traffic lights, signs, symbols, flags, ratings, quarters, boxes, reverse/icons-only display, and authored percent/number thresholds; icon-set authoring/editing supports core OOXML styles with show/reverse options, rule dialogs expose access-keyed value/format fields, visual-rule threshold/color fields, option toggles, and OK/Cancel, the ribbon menu exposes direct one-click icon-set presets plus More Rules without disabled category pseudo-commands, and the manager preserves advanced CF fields including Stop If True plus rules outside Current Selection; simplified rule manager remains partial"
+              "notes": "Most modeled rules; grid rendering covers cell value, formulas, above/below average, top/bottom, duplicate/unique, text, blank/nonblank, error/no-error, color scales, data bars, and visible 3/4/5-band icon sets with style-aware arrows, traffic lights, signs, symbols, flags, ratings, quarters, boxes, reverse/icons-only display, authored percent/number thresholds, and cell-value formula thresholds with absolute/relative reference shifting from the conditional-format range anchor; icon-set authoring/editing supports core OOXML styles with show/reverse options, rule dialogs expose access-keyed value/format fields, visual-rule threshold/color fields, option toggles, and OK/Cancel, the ribbon menu exposes direct one-click icon-set presets plus More Rules without disabled category pseudo-commands, and the manager preserves advanced CF fields including Stop If True plus rules outside Current Selection; simplified rule manager remains partial"
             },
             {
               "name": "Format as Table",
               "status": "Partial",
-              "notes": "Creates structured table metadata with generated headers, AutoFilter flag, style name, visible banding, access-keyed range/header controls, one-step undo for table creation plus styling, and an Excel-scale Light/Medium/Dark gallery with swatch previews; built-in TableStyleMedium2-7 and TableStyleLight16-21 resolve Accent 1-6 banding from the active workbook theme for swatches and table materialization; command-level style-option toggles for first column, last column, row stripes, and column stripes are undoable and preserve loaded table metadata; command-level and XLSX-loaded table value filters hide non-matching data rows with multi-column AND, blank inclusion, and totals-row exclusion semantics; totals-row labels and common functions (`sum`, `average`, `count`, `countNums`, `min`, `max`) can be materialized with undo; formulas can evaluate and track dependencies for basic data-body column structured references such as `Sales[Amount]`, evaluate whole-table section selectors `#Headers`, `#Data`, `#All`, and `#Totals`, evaluate section-column intersections such as `Sales[[#Totals],[Amount]]`, evaluate scalar current-row references such as `[@Amount]` or `Sales[@Amount]` from table data-body formulas, evaluate qualified and unqualified `#This Row` references such as `Sales[[#This Row],[Amount]:[Tax]]` and `[[#This Row],[Amount]:[Tax]]`, and evaluate multi-column ranges such as `Sales[[Amount]:[Tax]]` and `Sales[[#Data],[Amount]:[Tax]]`; custom/authored table style XML and full Excel table style element semantics remain partial"
+              "notes": "Creates structured table metadata with generated headers, AutoFilter flag, style name, visible banding, access-keyed range/header controls, one-step undo for table creation plus styling, and an Excel-scale Light/Medium/Dark gallery with swatch previews; built-in TableStyleMedium2-7 and TableStyleLight16-21 resolve Accent 1-6 banding from the active workbook theme for swatches and table materialization; command-level style-option toggles for first column, last column, row stripes, and column stripes are undoable and preserve loaded table metadata; command-level and XLSX-loaded table value filters hide non-matching data rows with multi-column AND, blank inclusion, and totals-row exclusion semantics; totals-row labels and common functions (`sum`, `average`, `count`, `countNums`, `min`, `max`) can be materialized with undo; formulas can evaluate and track dependencies for basic data-body column structured references such as `Sales[Amount]`, evaluate whole-table section selectors `#Headers`, `#Data`, `#All`, and `#Totals`, evaluate section-column intersections such as `Sales[[#Totals],[Amount]]`, evaluate scalar current-row references such as `[@Amount]` or `Sales[@Amount]` from table data-body formulas, evaluate qualified and unqualified `#This Row` references such as `Sales[[#This Row],[Amount]:[Tax]]` and `[[#This Row],[Amount]:[Tax]]`, and evaluate multi-column ranges such as `Sales[[Amount]:[Tax]]` and `Sales[[#Data],[Amount]:[Tax]]`; custom/authored table-only style XML is retained on load and fresh save, while full Excel table style element semantics remain partial/uninterpreted"
             },
             {
               "name": "Cell Styles",
@@ -658,7 +658,7 @@
         {
           "name": "Table",
           "status": "Partial",
-          "notes": "Creates structured table metadata with generated headers, AutoFilter flag, style name, visible banding, access-keyed range/header controls, and one-step undo via the same path as Format as Table; the shared Format as Table gallery exposes Excel-scale Light/Medium/Dark style choices with swatch previews, and built-in TableStyleMedium2-7 plus TableStyleLight16-21 resolve Accent 1-6 banding from the active workbook theme for gallery swatches and Format as Table materialization; Table Design can rename, resize, summarize the active table through the supported PivotTable creation flow, remove duplicates, convert to range while preserving cell values/formatting, and toggle totals/filter/first/last/banded style options through undoable model commands; table value filters execute for command and XLSX-loaded metadata; totals-row labels and common functions can be materialized with undo; formulas can evaluate and track dependencies for basic data-body column structured references such as `Sales[Amount]`, evaluate whole-table section selectors `#Headers`, `#Data`, `#All`, and `#Totals`, evaluate section-column intersections such as `Sales[[#Totals],[Amount]]`, evaluate scalar current-row references such as `[@Amount]` or `Sales[@Amount]` from table data-body formulas, evaluate qualified and unqualified `#This Row` references such as `Sales[[#This Row],[Amount]:[Tax]]` and `[[#This Row],[Amount]:[Tax]]`, and evaluate multi-column ranges such as `Sales[[Amount]:[Tax]]` and `Sales[[#Data],[Amount]:[Tax]]`; custom/authored table style XML and full Excel table style element semantics remain partial"
+          "notes": "Creates structured table metadata with generated headers, AutoFilter flag, style name, visible banding, access-keyed range/header controls, and one-step undo via the same path as Format as Table; the shared Format as Table gallery exposes Excel-scale Light/Medium/Dark style choices with swatch previews, and built-in TableStyleMedium2-7 plus TableStyleLight16-21 resolve Accent 1-6 banding from the active workbook theme for gallery swatches and Format as Table materialization; Table Design can rename, resize, summarize the active table through the supported PivotTable creation flow, remove duplicates, convert to range while preserving cell values/formatting, and toggle totals/filter/first/last/banded style options through undoable model commands; table value filters execute for command and XLSX-loaded metadata; totals-row labels and common functions can be materialized with undo; formulas can evaluate and track dependencies for basic data-body column structured references such as `Sales[Amount]`, evaluate whole-table section selectors `#Headers`, `#Data`, `#All`, and `#Totals`, evaluate section-column intersections such as `Sales[[#Totals],[Amount]]`, evaluate scalar current-row references such as `[@Amount]` or `Sales[@Amount]` from table data-body formulas, evaluate qualified and unqualified `#This Row` references such as `Sales[[#This Row],[Amount]:[Tax]]` and `[[#This Row],[Amount]:[Tax]]`, and evaluate multi-column ranges such as `Sales[[Amount]:[Tax]]` and `Sales[[#Data],[Amount]:[Tax]]`; custom/authored table-only style XML is retained on load and fresh save, while full Excel table style element semantics remain partial/uninterpreted"
         },
         {
           "name": "Picture (from file)",
@@ -748,7 +748,7 @@
         {
           "name": "Comment/Note",
           "status": "Partial",
-          "notes": "Insert tab creates local threaded comments; Review tab also keeps simple note commands. Full threaded conversation/reply UI remains partial"
+          "notes": "Insert tab creates local threaded comments; Review tab also keeps simple note commands. Threaded reply actions include selected-reply edit/delete enablement, blank-update suppression, and Ctrl+Enter commit for selected reply edits; full threaded conversation UI remains partial"
         },
         {
           "name": "Equation",
@@ -819,7 +819,7 @@
         {
           "name": "Gradients/Effects",
           "status": "Partial",
-          "notes": "Authored drawing shapes support two-color gradient fills plus selectable None/Shadow/Glow/Soft Edges effects from the Draw Effects dialog, with undo and native JSON/XLSX persistence; full Excel gradient/effect galleries remain pending"
+          "notes": "Authored drawing shapes support two-color gradient fills with direction presets plus selectable None/Shadow/Glow/Soft Edges effects from the Draw Effects dialog, with undo, rendering, and native JSON/XLSX persistence; full Excel gradient/effect galleries remain pending"
         },
         {
           "name": "Selection Pane",
@@ -981,7 +981,7 @@
         {
           "name": "Error Checking",
           "status": "Partial",
-          "notes": "Issue list plus ribbon entry point to error-checking options, access-keyed issue actions, and supported checks including numbers stored as text, formulas stored as text, formulas referring to blank cells, two-digit-year text dates, formulas inconsistent with nearby formulas, inconsistent calculated-column formulas in tables, SUM formulas omitting adjacent cells including gaps between separate SUM arguments, and unlocked formula cells; partial rule taxonomy"
+          "notes": "Issue list plus ribbon entry point to error-checking options, access-keyed issue actions, and supported checks including numbers stored as text, formulas stored as text, formulas referring to blank cells, two-digit-year text dates, formulas inconsistent with nearby formulas, inconsistent calculated-column formulas in tables, common aggregate formulas (`SUM`, `AVERAGE`, `COUNT`, `COUNTA`, `MIN`, `MAX`, `PRODUCT`) omitting adjacent cells including gaps between separate arguments, and unlocked formula cells; partial rule taxonomy"
         },
         {
           "name": "Evaluate Formula (step-through)",
@@ -1138,7 +1138,7 @@
         {
           "name": "Accessibility Checker",
           "status": "Partial",
-          "notes": "Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, patterned fills, no fill treated as white, and matching conditional-format styles for cell-value, text, date-occurring, blank/error, no-blank/no-error, duplicate-value, unique-value, above/below-average, top/bottom rules, and formula scalar comparisons with shifted cell references, low-contrast text boxes, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; broader formula conditional-format evaluation, theme/tint expansion beyond existing style values, chart/shape text beyond modeled text boxes, and the full Excel rule taxonomy remain partial"
+          "notes": "Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, workbook theme/tint font, fill, and pattern foreground colors, patterned fills, no fill treated as white, and matching conditional-format styles for cell-value, text, date-occurring, blank/error, no-blank/no-error, duplicate-value, unique-value, above/below-average, top/bottom rules, and formula scalar comparisons with shifted cell references, low-contrast text boxes, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; broader formula conditional-format evaluation, chart/shape text beyond modeled text boxes, and the full Excel rule taxonomy remain partial"
         },
         {
           "name": "Smart Lookup / Researcher",
@@ -1153,7 +1153,7 @@
         {
           "name": "New Comment",
           "status": "Partial",
-          "notes": "Threaded comment text can be added/edited/deleted locally through the Review ribbon and Ctrl+Shift+F2, including root-message edits, explicit Reply/Add actions, Ctrl+Enter reply submission, and created/modified UTC metadata for local threads; full threaded conversation UI remains partial"
+          "notes": "Threaded comment text can be added/edited/deleted locally through the Review ribbon and Ctrl+Shift+F2, including root-message edits, explicit Reply/Add actions, Ctrl+Enter reply submission, selected-reply edit/delete enablement, blank-update suppression, Ctrl+Enter commit for selected reply edits, and created/modified UTC metadata for local threads; full threaded conversation UI remains partial"
         },
         {
           "name": "Delete Comment",
@@ -1228,7 +1228,7 @@
         {
           "name": "Threaded Comments",
           "status": "Partial",
-          "notes": "Local threaded comment model, shortcut, navigation, delete command, list/dialog summaries with authors, replies, created timestamps, and resolved state, plus reply edit/delete actions that preserve resolved-state checkbox changes atomically; Native JSON persistence and XLSX root/reply round-trip for reply/thread activity metadata are supported; full threaded conversation UI and cloud identity semantics remain partial"
+          "notes": "Local threaded comment model, shortcut, navigation, delete command, list/dialog summaries with authors, replies, created timestamps, and resolved state, plus reply edit/delete actions that preserve resolved-state checkbox changes atomically, disable edit/delete when no reply is selected, disable blank selected-reply updates, and support Ctrl+Enter commit for selected reply edits; Native JSON persistence and XLSX root/reply round-trip for reply/thread activity metadata are supported; full threaded conversation UI and cloud identity semantics remain partial"
         },
         {
           "name": "Statistics",
@@ -1774,12 +1774,12 @@
             {
               "name": "Conditional Formatting",
               "status": "Partial",
-              "notes": "Authoring/editing available for modeled rules with access-keyed value/format fields, visual-rule threshold/color fields, option toggles, and OK/Cancel; Conditional Formatting > Icon Sets exposes direct one-click icon-set presets plus More Rules without disabled category pseudo-commands; grid rendering covers cell value, formulas, above/below average, top/bottom, duplicate/unique, text, blank/nonblank, error/no-error, color scales, data bars, and visible 3/4/5-band icon sets with style-aware arrows, traffic lights, signs, symbols, flags, ratings, quarters, boxes, reverse/icons-only display, and authored percent/number thresholds; simplified manager remains partial"
+              "notes": "Authoring/editing available for modeled rules with access-keyed value/format fields, visual-rule threshold/color fields, option toggles, and OK/Cancel; Conditional Formatting > Icon Sets exposes direct one-click icon-set presets plus More Rules without disabled category pseudo-commands; grid rendering covers cell value, formulas, above/below average, top/bottom, duplicate/unique, text, blank/nonblank, error/no-error, color scales, data bars, and visible 3/4/5-band icon sets with style-aware arrows, traffic lights, signs, symbols, flags, ratings, quarters, boxes, reverse/icons-only display, authored percent/number thresholds, and cell-value formula thresholds with absolute/relative reference shifting from the conditional-format range anchor; simplified manager remains partial"
             },
             {
               "name": "Format as Table",
               "status": "Partial",
-              "notes": "Creates structured table metadata with generated headers, AutoFilter flag, style name, visible banding, access-keyed range/header controls, one-step undo for table creation plus styling, and an Excel-scale Light/Medium/Dark gallery with swatch previews; built-in TableStyleMedium2-7 and TableStyleLight16-21 resolve Accent 1-6 banding from the active workbook theme for swatches and table materialization; command-level style-option toggles for first/last column plus row/column stripes are undoable and preserve loaded table metadata; command-level and XLSX-loaded table value filters hide non-matching data rows with multi-column AND, blank inclusion, and totals-row exclusion semantics; totals-row labels and common functions (`sum`, `average`, `count`, `countNums`, `min`, `max`) can be materialized with undo; formulas evaluate modeled structured references for data-body columns, table sections, section-column intersections, current-row references, `#This Row`, and multi-column ranges; custom/authored table style XML and full Excel table style element semantics remain partial"
+              "notes": "Creates structured table metadata with generated headers, AutoFilter flag, style name, visible banding, access-keyed range/header controls, one-step undo for table creation plus styling, and an Excel-scale Light/Medium/Dark gallery with swatch previews; built-in TableStyleMedium2-7 and TableStyleLight16-21 resolve Accent 1-6 banding from the active workbook theme for swatches and table materialization; command-level style-option toggles for first/last column plus row/column stripes are undoable and preserve loaded table metadata; command-level and XLSX-loaded table value filters hide non-matching data rows with multi-column AND, blank inclusion, and totals-row exclusion semantics; totals-row labels and common functions (`sum`, `average`, `count`, `countNums`, `min`, `max`) can be materialized with undo; formulas evaluate modeled structured references for data-body columns, table sections, section-column intersections, current-row references, `#This Row`, and multi-column ranges; custom/authored table-only style XML is retained on load and fresh save, while full Excel table style element semantics remain partial/uninterpreted"
             },
             {
               "name": "Cell Styles",
@@ -1922,7 +1922,7 @@
         {
           "name": "Table",
           "status": "Partial",
-          "notes": "Creates structured table metadata with generated headers, AutoFilter flag, style name, visible banding, access-keyed range/header controls, and one-step undo via the same path as Format as Table; the shared Format as Table gallery exposes Excel-scale Light/Medium/Dark style choices with swatch previews, and built-in TableStyleMedium2-7 plus TableStyleLight16-21 resolve Accent 1-6 banding from the active workbook theme for gallery swatches and Format as Table materialization; style-option toggles for first/last column plus row/column stripes are undoable and preserve loaded table metadata; table value filters execute for command and XLSX-loaded metadata; totals-row labels and common functions can be materialized with undo; formulas evaluate modeled structured references for data-body columns, table sections, section-column intersections, current-row references, `#This Row`, and multi-column ranges; custom/authored table style XML and full Excel table style element semantics remain partial"
+          "notes": "Creates structured table metadata with generated headers, AutoFilter flag, style name, visible banding, access-keyed range/header controls, and one-step undo via the same path as Format as Table; the shared Format as Table gallery exposes Excel-scale Light/Medium/Dark style choices with swatch previews, and built-in TableStyleMedium2-7 plus TableStyleLight16-21 resolve Accent 1-6 banding from the active workbook theme for gallery swatches and Format as Table materialization; style-option toggles for first/last column plus row/column stripes are undoable and preserve loaded table metadata; table value filters execute for command and XLSX-loaded metadata; totals-row labels and common functions can be materialized with undo; formulas evaluate modeled structured references for data-body columns, table sections, section-column intersections, current-row references, `#This Row`, and multi-column ranges; custom/authored table-only style XML is retained on load and fresh save, while full Excel table style element semantics remain partial/uninterpreted"
         },
         {
           "name": "Picture (from file)",
@@ -2098,7 +2098,7 @@
         {
           "name": "Gradients/Effects",
           "status": "Partial",
-          "notes": "Shape gradient fill with dedicated access-keyed start/end color pickers plus selectable None/Shadow/Glow/Soft Edges effects with native JSON/XLSX persistence; full Excel gradient/effect galleries pending"
+          "notes": "Shape gradient fill with direction presets, dedicated access-keyed start/end color pickers, and selectable None/Shadow/Glow/Soft Edges effects with rendering plus native JSON/XLSX persistence; full Excel gradient/effect galleries pending"
         },
         {
           "name": "Selection Pane",
@@ -2290,7 +2290,7 @@
         {
           "name": "Error Checking",
           "status": "Partial",
-          "notes": "Issue list plus ribbon entry point to error-checking options, access-keyed issue actions, and supported checks including numbers stored as text, formulas stored as text, formulas referring to blank cells, two-digit-year text dates, formulas inconsistent with nearby formulas, inconsistent calculated-column formulas in tables, SUM formulas omitting adjacent cells including gaps between separate SUM arguments, and unlocked formula cells; partial rule taxonomy"
+          "notes": "Issue list plus ribbon entry point to error-checking options, access-keyed issue actions, and supported checks including numbers stored as text, formulas stored as text, formulas referring to blank cells, two-digit-year text dates, formulas inconsistent with nearby formulas, inconsistent calculated-column formulas in tables, common aggregate formulas (`SUM`, `AVERAGE`, `COUNT`, `COUNTA`, `MIN`, `MAX`, `PRODUCT`) omitting adjacent cells including gaps between separate arguments, and unlocked formula cells; partial rule taxonomy"
         },
         {
           "name": "Evaluate Formula",
@@ -2447,7 +2447,7 @@
         {
           "name": "Accessibility Checker",
           "status": "Partial",
-          "notes": "Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, patterned fills, no fill treated as white, and matching conditional-format styles for cell-value, text, date-occurring, blank/error, no-blank/no-error, duplicate-value, unique-value, above/below-average, top/bottom rules, and formula scalar comparisons with shifted cell references, low-contrast text boxes, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; broader formula conditional-format evaluation, theme/tint expansion beyond existing style values, chart/shape text beyond modeled text boxes, and full Excel rule taxonomy remain partial"
+          "notes": "Merged cells, low-contrast cell text with 4.5:1 normal-text and 3.0:1 large-text thresholds using registered font/fill colors, workbook theme/tint font, fill, and pattern foreground colors, patterned fills, no fill treated as white, and matching conditional-format styles for cell-value, text, date-occurring, blank/error, no-blank/no-error, duplicate-value, unique-value, above/below-average, top/bottom rules, and formula scalar comparisons with shifted cell references, low-contrast text boxes, blank structured-table headers, missing/generic alt text, untitled or generic-titled charts, non-descriptive hyperlink text, default worksheet tab names, and hidden sheets/rows/columns with content; broader formula conditional-format evaluation, chart/shape text beyond modeled text boxes, and full Excel rule taxonomy remain partial"
         },
         {
           "name": "Smart Lookup",
@@ -2462,7 +2462,7 @@
         {
           "name": "New Comment",
           "status": "Partial",
-          "notes": "Threaded comment text can be added/edited/deleted locally through the Review ribbon and Ctrl+Shift+F2, including root-message edits, explicit Reply/Add actions, Ctrl+Enter reply submission, and created/modified UTC metadata for local threads; full threaded conversation UI remains partial"
+          "notes": "Threaded comment text can be added/edited/deleted locally through the Review ribbon and Ctrl+Shift+F2, including root-message edits, explicit Reply/Add actions, Ctrl+Enter reply submission, selected-reply edit/delete enablement, blank-update suppression, Ctrl+Enter commit for selected reply edits, and created/modified UTC metadata for local threads; full threaded conversation UI remains partial"
         },
         {
           "name": "Delete Comment",
@@ -2537,7 +2537,7 @@
         {
           "name": "Threaded Comments",
           "status": "Partial",
-          "notes": "Local threaded comment model, shortcut, navigation, delete command, list/dialog summaries with authors, replies, created timestamps, and resolved state, plus reply edit/delete actions that preserve resolved-state checkbox changes atomically; Native JSON persistence and XLSX root/reply round-trip for reply/thread activity metadata are supported; full threaded conversation UI and cloud identity semantics remain partial"
+          "notes": "Local threaded comment model, shortcut, navigation, delete command, list/dialog summaries with authors, replies, created timestamps, and resolved state, plus reply edit/delete actions that preserve resolved-state checkbox changes atomically, disable edit/delete when no reply is selected, disable blank selected-reply updates, and support Ctrl+Enter commit for selected reply edits; Native JSON persistence and XLSX root/reply round-trip for reply/thread activity metadata are supported; full threaded conversation UI and cloud identity semantics remain partial"
         },
         {
           "name": "Statistics",
