@@ -1301,3 +1301,28 @@ Repository checkpoint after Formula, Core.IO, and App.UI tail-worker integration
 - Local orchestrator census after the CommandGuards slice produced no additional patch:
   - App.Host performance subset passed `31/31`; remaining large lines were known output/materialization, WPF, or already-covered ribbon/status paths.
   - Core.Model/Core.Commands and Core.Calc performance subsets passed locally; the remaining tails were dominated by required snapshots, returned metric payloads, result strings, or Formula-owned paths.
+
+Repository checkpoint after sparse current-region integration:
+
+- `codex/perf-model-current-region-integration-20260603-r1` added the rebased Core.Commands/Core.Model slice.
+  - Worker: `019e8dc5-6734-7470-a060-03788cc146ba`.
+  - Change: `SelectionRangeService.GetCurrentRegion` now builds the sparse content index with pooled sorted primitive row/column key arrays instead of per-call dictionaries and inline/list value containers.
+  - Metrics: `CURRENT_REGION_SPARSE_STAIRCASE` improved from the worker baseline `156.88 ms` / `654,640` bytes to the rebased focused sample `2.08 ms` / `2,440` bytes over `25` steps. The dense current-region case stayed allocation-flat at `40` bytes.
+  - Verification after final rebase: focused `SelectionRangeServiceTests` passed `14/14`; full Release `FreeX.Core.Model.Tests` passed `1906/1906` with `RunConfiguration.DisableParallelization=true`; `git diff --check origin/main...HEAD` passed.
+- Local orchestrator census after the previous integration produced no source patch:
+  - Formula performance filter passed `72/72`; remaining notable allocations were the known UNIQUE output/hash path and REPT large result buffer.
+  - Core.Calc performance filter passed `30/30`; remaining large samples matched viewport/style payloads, result strings, or Formula-owned large-range evaluation.
+  - App.Host performance filter passed `31/31`; `VIEWPORT_NO_COMMENTS_FAST_PATH` is dense `ViewportService` output materialization (`4,800` returned cells per call), not comment-preview work.
+- Core.IO worker `019e8dc5-52aa-76c0-87bc-c1529a5cb6a8` completed and was integrated on the same branch.
+  - Change: ignored-error save sorts primitive row/column pairs instead of temporary `CellAddress` entries, coalesces adjacent identical row runs into rectangular `sqref`s while preserving native metadata boundaries, and replaces the ignored-error supported-flag LINQ scan with a direct loop.
+  - Metrics: `XLSX_SAVE_IGNORED_ERRORS` improved from the worker baseline `678.17 ms` mean / `74,699` package bytes / `94,198,880` allocated bytes to the rebased focused sample `271.22 ms` mean / `72,559` package bytes / `92,795,672` allocated bytes.
+  - Verification after final rebase: focused ignored-errors benchmark/source/behavior set passed `3/3`; full Release `FreeX.Core.IO.Tests` passed `1802/1802`.
+- App.UI worker `019e8dc5-2edb-78a1-bbe2-61eb06723010` completed and was integrated on the same branch.
+  - Change: `GridView.RenderCells` now defers overflow occupancy lookup until after text layout is measured and only probes occupied cells when text actually exceeds the current cell width.
+  - Metrics: worker baseline to integrated focused samples:
+    - `GRID_RENDER_TEXT_HEAVY`: `78.70 ms` mean / `92.32 ms` p95 / `62,344` bytes -> `25.36 ms` mean / `27.22 ms` p95 / `54,976` bytes.
+    - `GRID_RENDER_DEFAULT_STYLED_TEXT_HEAVY`: `79.91 ms` mean / `89.60 ms` p95 / `54,976` bytes -> `25.89 ms` mean / `27.95 ms` p95 / `61,272` bytes.
+    - `GRID_RENDER_WRAPPED_TEXT_HEAVY`: `146.13 ms` mean / `162.04 ms` p95 / `44,280` bytes -> `51.89 ms` mean / `62.55 ms` p95 / `44,168` bytes.
+    - `GRID_RENDER_SHRINK_TEXT_HEAVY`: `87.88 ms` mean / `98.35 ms` p95 / `57,368` bytes -> `25.96 ms` mean / `29.03 ms` p95 / `56,208` bytes.
+  - Verification after final rebase: focused render/text benchmark set passed `4/4`; focused render/text source and behavior set passed `97/97` before the final rebase; full Release `FreeX.App.UI.Tests` passed `575/575`.
+- All workers from this wave completed. Continue with linked worktrees from current `origin/main`.
