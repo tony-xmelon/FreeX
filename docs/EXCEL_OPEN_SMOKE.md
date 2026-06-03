@@ -43,6 +43,17 @@ with an actual marker-sheet edit before Excel opens them:
 dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --freex-resave-before-excel --generate-freex-feature-fixtures
 ```
 
+The full generated supported-pass corpus can also be generated from `test-corpus/manifest.csv` and
+validated through the same FreeX-edited path:
+
+```powershell
+dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --freex-resave-before-excel --generate-supported-corpus-fixtures --corpus-manifest test-corpus\manifest.csv
+```
+
+This generates the manifest rows backed by `XlsxCorpusFixtureFactory` under the run directory and
+adds feature-tag expectations for formulas, structured tables, data validation, conditional
+formatting, hyperlinks, comments, images, sparklines, text boxes/shapes, protection, and PivotTables.
+
 Formula, structured table, validation/conditional-format, hyperlink/comment, drawing/shape,
 sparkline/image, protection, and PivotTable feature fixtures have retention expectations, not just
 passive summary counts. When `--save-reopen` is used, the smoke fails if FreeX cannot load the
@@ -124,6 +135,9 @@ save/reopen, reflecting Excel's normalization of duplicate status-text rules in 
   workbook validation failure.
 - FreeX-saved copies and Excel-saved copies are validated with the Open XML SDK Microsoft 365
   schema validator; any package-open or schema error is reported as a workbook validation failure.
+- Excel-saved `calcChain.xml` style-reference validation errors are ignored when Excel itself wrote
+  the copy, because Excel can emit those after a successful open/save/reopen cycle without a repair
+  log. The same schema issue still fails when it appears in a FreeX-saved workbook.
 - The tool tracks the Excel PID it creates and kills orphan `EXCEL` processes that were not present
   before the smoke run.
 
