@@ -1129,3 +1129,27 @@ Repository checkpoint after App.UI split-pane, Core.Model dense-shift snapshot, 
   - `019e8cae-a1f2-7f33-99ad-64fb8c2bbbab`: Core.IO allocation tail, still running at this checkpoint.
 - Hourly thread heartbeat automation `hourly-performance-orchestrator-status` is present for progress updates while the goal remains active.
 - The primary local `main` remained untouched and locally divergent; continue using linked worktrees from `origin/main` and do not push/reset primary `main` wholesale.
+
+Repository checkpoint after Core.IO replay, Core.Calc dependency scan, App.UI overflow map, and Formula small-number cache integrations:
+
+- `origin/main` was advanced to `5b5027b04` with clean branch `codex/perf-core-io-replay-current-20260603-r1`.
+  - Worker source: `019e8cae-a1f2-7f33-99ad-64fb8c2bbbab`; original worker patch was `6a3c47b75`.
+  - Integration note: the worker branch also contained unrelated local merge/refactor history, so only the two-file Core.IO patch was replayed onto current `origin/main`.
+  - Change: `XlsxPackageXmlEditor.ReplaceXml` saves rewritten XLSX XML with `SaveOptions.DisableFormatting`, avoiding formatting whitespace during post-processing rewrites.
+  - Metrics: rebased focused samples were `XLSX_SAVE_STYLE_ONLY` `116,932,080` bytes, `XLSX_SAVE_IGNORED_ERRORS` `77,031,720` bytes, and `XLSX_SAVE_WORKSHEET_NATIVE_METADATA` `12,749,688` bytes. Worker before/after samples showed ignored-errors save improving from `81,774,784` to `77,033,536` bytes.
+  - Verification: focused save benchmarks passed `3/3`; full Release `FreeX.Core.IO.Tests` passed `1786/1786`; `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `800e0fec9` with `codex/perf-core-calc-current-tail-20260603-r2`.
+  - Change: dependency registration now checks volatile function names with a tiny Core.Calc-local switch instead of calling `BuiltInFunctions.IsVolatile`, so dependency-only scans do not initialize the full formula built-in registry.
+  - Metrics: `Benchmark_LargeRangeDependencyRebuild_UsesCompactRangeTracking` rebuild allocation improved from about `12,785,544` bytes to `3,824` bytes on the rebased focused run; full performance-class sample was `7.04 ms` / `3,544` bytes.
+  - Verification: focused dependency/volatile/large-range set passed `40/40`; full Calc performance class passed `18/18`; full Release `FreeX.Core.Calc.Tests` passed `676/676`; `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `4220f2d77` with `codex/app-ui-render-layout-allocation-tail-20260603-r2`.
+  - Worker: `019e8cbe-6975-7be1-bc5b-044abc05fd31`.
+  - Change: split-pane overflow occupancy stores the first two occupied column spans inline per row and only allocates a list for rare overflow spans.
+  - Metrics: rebased focused sample reported `SPLIT_PANE_CELL_LAYOUT_VISITOR` `419.53 ms` / `627,240` bytes over 400 steps and `SPLIT_PANE_SCROLLBAR_CHROME` `112.64 ms` / `40` bytes; worker before/after visitor allocation was `1,653,560 -> 627,240` bytes.
+  - Verification: focused split-pane benchmarks passed `2/2`; full Release `FreeX.App.UI.Tests` passed `572/572`; `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `d1920d7e2` with `codex/formula-eval-builtins-tail-20260603-r1`.
+  - Worker: `019e8cc0-6afd-79c1-9f87-51f036ac72ba`.
+  - Change: the formula evaluator caches immutable small nonnegative integer `NumberValue` instances and routes common numeric evaluator/fast-aggregate result creation through that helper.
+  - Metrics: `RepeatedBooleanCoercionFormulaTextEvaluation_AvoidsCoercedNumberChurn` improved from `407.71 ms` / `2,400,040` bytes to the rebased focused sample `279.87 ms` / `40` bytes over 100,000 evaluations.
+  - Verification: focused Formula performance test passed `1/1`; full Release `FreeX.Core.Formula.Tests` passed `2726/2726`; `git diff --check HEAD~1..HEAD` passed.
+- All worker agents from this wave have been closed. The primary local `main` remains outside the performance integration path; continue using linked worktrees from `origin/main`.
