@@ -2,12 +2,12 @@
 
 ## 0. Method And Coverage
 
-Fresh full-codebase review on isolated branch `codex/code-review-docs-20260603`, created after `git fetch origin` and `git pull --ff-only origin main` reported `Already up to date.` Initial review baseline HEAD: `241684d65bac7c55ca19ccaec4f6f11635992763`. Before final handoff, the branch was synced with the newer local `main` (`34af1482f436b51120558356cc42728e2f267925`) and the findings below were spot-verified on synced branch HEAD `7de41a547d709b728846620049e343051e4b2f5d`.
+Fresh full-codebase review on isolated branch `codex/code-review-docs-20260603`, created after `git fetch origin` and `git pull --ff-only origin main` reported `Already up to date.` Initial review baseline HEAD: `241684d65bac7c55ca19ccaec4f6f11635992763`. Before final handoff, the branch was repeatedly synced with newer local `main` integrations as they landed, and the findings below were spot-verified on synced branch HEAD `e6d5f37b36dd8727617defb0da933283fa9656b2`.
 
 Scope covered:
 
-- `src/`: 1,127 C# files, 198,325 source lines.
-- `tests/`: 778 C# files, 206,636 source lines.
+- `src/`: 1,127 C# files, 198,390 source lines.
+- `tests/`: 800 C# files, 207,088 source lines.
 - Tooling, workflows, release scripts, docs index, and XLSX interop tools.
 
 Review method:
@@ -158,7 +158,7 @@ Recommended fix: move these strings/titles into `UiText` resources and extend th
 ## 4. Clean Signals Worth Recording
 
 - Full solution build passed with 0 warnings and 0 errors.
-- Full solution tests passed: 13,513 passed, 1 skipped, 0 failed.
+- Full solution tests passed: 13,523 passed, 1 skipped, 0 failed.
 - Repository preflight passed, including JSON/XML validation, tool scripts, workflows, SDK readiness, project references, solution membership, generated docs, and conflict-marker scanning.
 - `dotnet list ... package --vulnerable --include-transitive` found no vulnerable NuGet packages for the solution or the two interop tool projects.
 - Direct restore/build of `tools\FreeX.ExcelOpenSmoke` and `tools\FreeX.ChartInteropCompare` passed.
