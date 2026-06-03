@@ -121,6 +121,8 @@ save/reopen, reflecting Excel's normalization of duplicate status-text rules in 
 - A COM rejection with `0x800A03EC` is reported as an Excel workbook validation failure.
 - In `--save-reopen` mode, an Excel-saved copy containing repair/recovery log XML is reported as a
   workbook validation failure.
+- FreeX-saved copies and Excel-saved copies are validated with the Open XML SDK Microsoft 365
+  schema validator; any package-open or schema error is reported as a workbook validation failure.
 - The tool tracks the Excel PID it creates and kills orphan `EXCEL` processes that were not present
   before the smoke run.
 
@@ -172,7 +174,8 @@ As of 2026-06-03 on the local desktop Excel COM environment:
   `--save-reopen --freex-resave-before-excel --corpus-source public --corpus-source regression`
   passed: `34/34`.
 - The 34 FreeX-saved corpus workbooks from that run also passed Open XML SDK schema validation:
-  `errors=0` for every file.
+  `errors=0` for every file. The Excel smoke harness now performs this schema validation directly
+  for FreeX-saved and Excel-saved outputs.
 - The local-private Partner Dashboard regression row
   `local-private-partner-dashboard-20250116` passed
   `--save-reopen --freex-resave-before-excel`: `1/1`, with the manifest retention gates above.
