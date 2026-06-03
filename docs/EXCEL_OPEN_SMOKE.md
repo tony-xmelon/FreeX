@@ -138,6 +138,12 @@ save/reopen, reflecting Excel's normalization of duplicate status-text rules in 
 - Excel-saved `calcChain.xml` style-reference validation errors are ignored when Excel itself wrote
   the copy, because Excel can emit those after a successful open/save/reopen cycle without a repair
   log. The same schema issue still fails when it appears in a FreeX-saved workbook.
+- Open XML SDK can reject legacy Excel metadata children (`smartTagPr`, `smartTags`, and
+  `singleXmlCells`) even when desktop Excel opens, saves, and reopens the workbook without repair
+  logs. The smoke ignores only those legacy-child diagnostics; unrelated schema errors still fail.
+- Excel-saved `pageSetup` DPI minimum-value diagnostics are ignored only when Excel itself wrote the
+  copy after a successful open/save/reopen cycle. The same schema issue still fails when it appears
+  in a FreeX-saved workbook.
 - The tool tracks the Excel PID it creates and kills orphan `EXCEL` processes that were not present
   before the smoke run.
 
@@ -199,9 +205,16 @@ As of 2026-06-03 on the local desktop Excel COM environment:
   The original workbook was rejected by direct Excel COM open with `0x800A03EC`, while the
   FreeX-saved copy opened, saved, reopened, reloaded in FreeX, and passed Open XML SDK schema
   validation with `errors=0`.
+- Generated `supported-metadata-pass` corpus rows selected from `test-corpus/manifest.csv` with
+  `--save-reopen --freex-resave-before-excel --generate-supported-corpus-fixtures --corpus-status supported-metadata-pass`
+  passed: `52/52`. This covers printer settings, workbook and worksheet smart tags, worksheet
+  single XML cells, slicers, timelines, external links, custom XML, calc chains, document
+  properties, and worksheet/workbook native metadata package retention through desktop Excel.
 
 The 2026-06-03 corpus pass specifically covers prior Excel/OpenXML failures from invalid
 `styles.xml` ordering (`dxfs`/`tableStyles`/`colors`), invalid `workbook.xml` ordering
 (`workbookPr` before `workbookProtection`), dangling authored pivot-style `dxfId` references,
 missing authored pivot cache records, missing pivot data-field markers, and invalid preserved
-`x14:workbookPr/@defaultImageDpi` values.
+`x14:workbookPr/@defaultImageDpi` values, plus generated metadata failures from a placeholder
+printer-settings binary, worksheet `singleXmlCells` ordering, and legacy smart-tag schema
+diagnostics that desktop Excel accepts without repair logs.
