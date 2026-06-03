@@ -9,8 +9,8 @@ This goal is not complete. This file records the current clean checkpoint.
 ## Operating Rules
 
 - Repository: `E:\Users\anton\Documents\Claude\Freexcel`.
-- Latest upstream checkpoint before this handoff update: `66a60b9eb`.
-- `codex/performance-orchestrator-resume-20260602` was rebased onto `origin/main` at `66a60b9eb` before this handoff update.
+- Latest upstream checkpoint before this handoff update: `0382937a1`.
+- `codex/performance-orchestrator-resume-20260602` was rebased onto `origin/main` at `0382937a1` before this handoff update.
 - Follow `AGENTS.md`: use isolated worktrees/branches for implementation, do not edit `main` directly, sync before work, verify before merge, push verified integrations frequently.
 - User explicitly requested no permission prompts and no escalation requests.
 - Treat unrelated dirty or untracked files as owned by other sessions unless explicitly proven otherwise.
@@ -482,6 +482,37 @@ All items below were verified, pushed to their `codex/` branches, and fast-forwa
   - Broad Host suite excluding only the two known current-main failures passed `5789/5789`, with `1` skipped.
   - Full Host on the branch failed only `ConfigureServices_NativeFreexWorkbookAppearsInSaveFilter` and `RibbonSplitButtonHover_UsesRibbonButtonHoverBrushInsteadOfMenuHoverBrush`; the same two-test filter reproduced both failures on detached `origin/main`.
 
+### XLSX Drawing Picture Load Tail
+
+- Branch: `codex/perf-xlsx-drawing-load-tail-20260603-r1`.
+- Commit: `30207e687`.
+- Local orchestrator slice.
+- Change: worksheet drawing picture load now reads image ZIP entries directly into one owned byte array, transfers that owned buffer into `PictureModel` without a second copy, and uses single-pass picture XML helpers for non-visual properties, embed relationships, and nearest anchors.
+- Metrics:
+  - Baseline before change: `XLSX_LOAD_DRAWING_PICTURES` `23,614,088` bytes, `254.51 ms` mean.
+  - Final focused sample: `22,846,160` bytes, `104.11 ms` mean.
+  - Drawing/picture correctness sample: `22,798,376` bytes, `116.02 ms` mean.
+- Verification:
+  - Focused drawing-picture benchmark/source-guard set passed `2/2`.
+  - Drawing/picture Core.IO correctness set passed `67/67`.
+  - Full `FreeX.Core.IO.Tests` passed `1780/1780`.
+
+### App.UI Drawing Object Cache Warm-Up Tail
+
+- Branch: `codex/perf-app-ui-drawing-followup-20260603-r1`.
+- Commit: `0382937a1`.
+- Worker: `019e8b6a-e31e-73f2-a807-ba672fc87d85`, then orchestrator rebased, reviewed, reverified, and integrated.
+- Change: drawing-object layer caching now builds the frozen cached layer only after a second identical render key, avoiding cache construction for one-off first renders and transient invalidations while preserving steady-state cached repaint behavior.
+- Metrics:
+  - Worker baseline `GRID_RENDER_OFFSCREEN_DRAWING_OBJECTS`: `38,592` bytes, `29.45 ms` mean.
+  - Worker patched sample: `38,592` bytes, `28.97 ms` mean.
+  - Orchestrator post-rebase focused sample: `26,200` bytes, `28.76 ms` mean.
+  - `DRAWING_OBJECT_ANCHOR_RECT_LOOKUP` allocation stayed at `3,112` bytes; timing remained noisy.
+- Verification:
+  - Focused drawing-cache/offscreen/anchor benchmark set passed `3/3`.
+  - Broader drawing/render set passed `112/112`.
+  - Full `FreeX.App.UI.Tests` passed `570/570`.
+
 ## Other Main Integrations During This Wave
 
 Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, QAT validation, Flash Fill parity coverage clarification, and parity handoff updates.
@@ -495,7 +526,7 @@ The obvious high-impact backlog is reduced but not exhausted.
    - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` improved again and now allocates around `131.5 MB` in full Core.IO samples; it is still one of the largest open allocation pools.
    - `XLSX_SAVE_STYLE_ONLY` improved to about `143.1 MB` but remains a high-allocation save path because ClosedXML/style seeding and package XML rewriting still dominate.
    - `XLSX_SAVE_IGNORED_ERRORS` improved to about `81.46 MB`; `XLSX_SAVE_DATA_VALIDATION_NATIVE_METADATA` improved from about `80.5 MB` to about `18.6 MB`.
-   - `XLSX_LOAD_DRAWING_PICTURES` remains a candidate for a fresh baseline because recent IO work focused metadata/style paths rather than drawing image load copies.
+   - `XLSX_LOAD_DRAWING_PICTURES` now has a current baseline and a small copy/traversal win (`23.6 MB` to about `22.8 MB`); further cuts likely require a larger picture-storage or image-retention redesign.
    - Unchanged loaded workbook fast-copy remains healthy: `XLSX_SAVE_LOADED_DENSE` around `554,248` bytes in the full IO run.
    - Further IO cuts likely require deeper metadata load/save redesign or more streaming XML writers.
 2. App.Host toolbar/ribbon:
@@ -517,7 +548,7 @@ The obvious high-impact backlog is reduced but not exhausted.
    - Formula-trace visible arrow drawing improved from about `36.9 MB` to `5.3 MB`.
    - Formula-trace layout visitor improved from about `1.19 MB` to about `5 KB`; timing remains noisy and should be watched if more render work touches that planner.
    - Chart dimension resize repaint improved from about `14.3 MB` to about `46-52 KB` by reusing the light pre-selection render layer cache.
-   - Drawing-object render allocation improved from about `5.2 MB` to `46-53 KB`; first-render/offscreen culling and anchor lookup remain practical follow-up candidates.
+   - Drawing-object render allocation improved from about `5.2 MB` to `46-53 KB`; offscreen drawing-object repaint is now around `26 KB` on the latest sample, and anchor lookup remains allocation-flat at about `3 KB`.
 
 ## Subagent Status
 
@@ -559,6 +590,10 @@ Restarted 2026-06-03 workers after Codex restart:
 - `019e8b08-c2a0-7992-bd1f-a9fe95c32e3f`: XLSX dense mutated save regression, completed; rebased commit `50bac941e` integrated to `origin/main`.
 - `019e8b24-13ea-7bc3-9bac-c7c1357831a2`: XLSX load ignored-error/style-only metadata tail, restarted after the user-requested Codex restart; completed, rebased commit `853119318` integrated to `origin/main`.
 
+Follow-up 2026-06-03 workers launched with full-access/no-permission instructions:
+
+- `019e8b6a-e31e-73f2-a807-ba672fc87d85`: App.UI drawing-object cache warm-up follow-up, completed; orchestrator committed, rebased, reverified, and integrated `0382937a1`.
+
 Local orchestrator slices after restart:
 
 - `codex/perf-xlsx-metadata-save-tail-20260603-r1`: XLSX ignored-errors worksheet save tail, completed; commit `ca85fa850` integrated to `origin/main`.
@@ -568,6 +603,8 @@ Local orchestrator slices after restart:
 - `codex/perf-app-ui-render-tail-20260603-r4`: App.UI resize pre-selection layer cache tail, completed; commit `f9115462f` integrated to `origin/main`.
 - `codex/perf-app-ui-drawing-objects-tail-20260603-r1`: App.UI drawing-object stable layer cache, completed; rebased commit `e5699197b` integrated to `origin/main`.
 - `codex/perf-host-drag-ribbon-tail-20260603-r1`: App.Host drag/ribbon compact tail, completed; clean Host-only commit `66a60b9eb` integrated to `origin/main`.
+- `codex/perf-xlsx-drawing-load-tail-20260603-r1`: XLSX drawing-picture load copy/traversal tail, completed; commit `30207e687` integrated to `origin/main`.
+- `codex/perf-app-ui-drawing-followup-20260603-r1`: App.UI drawing-object cache warm-up follow-up, completed; rebased commit `0382937a1` integrated to `origin/main`.
 
 ## Resume Checklist
 
@@ -575,12 +612,12 @@ Local orchestrator slices after restart:
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `origin/main` is at or after `66a60b9eb`. The primary local `main` may still contain unrelated local refactor commits; do not push or overwrite them as part of the performance thread unless their owning session has verified them.
+2. Confirm `origin/main` is at or after `0382937a1`. The primary local `main` may still contain unrelated local refactor commits; do not push or overwrite them as part of the performance thread unless their owning session has verified them.
 3. Start the next wave with disjoint scopes:
    - XLSX IO style-only/ignored-error load-save tail if a semantics-safe streaming or bounded-strip path is found.
-   - XLSX drawing-picture load path baseline and copy-reduction review.
+   - Recheck XLSX drawing-picture load only if a larger picture-storage redesign is acceptable; the narrow copy/traversal tail is already integrated.
    - Core.Commands dense row/column tails now need deeper model-level redesign; prefer other high-impact areas unless a narrow safe path is proven.
-   - App.UI drawing-object first-render/offscreen culling and anchor lookup follow-up.
+   - App.UI drawing-object first-render/offscreen cache warm-up follow-up is integrated; anchor lookup remains allocation-flat and lower priority.
 4. Merge verified slices back to `main` promptly and push after each coherent unit.
 
 ## Codex Restart Pause - 2026-06-03
@@ -638,3 +675,9 @@ Repository checkpoint after App.UI drawing-object, XLSX load, and Host tail inte
 - `origin/main` was advanced to `853119318` with the bounded XLSX ignored-error/style-only load stripping slice.
 - `origin/main` was advanced to `66a60b9eb` with the clean Host drag/ribbon compact tail slice.
 - The primary local `main` was left untouched; performance integration continued through verified linked worktrees and fast-forward pushes to `origin/main`.
+
+Repository checkpoint after XLSX drawing load and App.UI drawing follow-up:
+
+- `origin/main` was advanced to `30207e687` with the XLSX drawing-picture load copy/traversal slice.
+- `origin/main` was advanced to `0382937a1` with the App.UI drawing-object cache warm-up follow-up.
+- The primary local `main` was left untouched; it remains outside the performance integration path because unrelated sessions own its local divergence.
