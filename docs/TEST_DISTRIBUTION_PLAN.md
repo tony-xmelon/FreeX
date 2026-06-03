@@ -7,7 +7,7 @@
 | 1. Shareable builds | Complete | Framework-dependent user-test builds publish into `artifacts/releases` with version, timestamp, commit, runtime, and mode in the file name. |
 | 2. Feedback intake | Complete | User testing findings are tracked in `docs/USER_TESTING_REPORT_2026-05-24.md`; GitHub issues now include a structured user-test report template. |
 | 3. Local diagnostics | Complete | Test builds record local JSONL usage events and crash reports under `%LOCALAPPDATA%\FreeX\Diagnostics`. No network upload is performed. |
-| 4. Hosted release channel | Complete | GitHub Actions publishes latest builds through GitHub Releases with versioned artifacts, a stable latest test build link, and an MSIX package that is signed when certificate secrets are configured. |
+| 4. Hosted release channel | Complete | GitHub Actions publishes latest builds through GitHub Releases with versioned artifacts, a stable latest test build link, and an MSIX package signed from required release certificate secrets. |
 | 5. Crash analytics | Complete | Opt-in Sentry crash upload is wired behind tester consent and `FREEX_SENTRY_DSN`; local diagnostics remain available without network upload. |
 | 6. Lightweight usage analytics | Complete | Stabilization-only app usage events are recorded through the existing diagnostics pipeline and safe crash breadcrumbs. |
 | 7. Auto-update readiness | Complete | Help now exposes the stable latest release page while full in-app update packaging remains deferred. |
@@ -28,7 +28,9 @@ The `Tester Release` GitHub Actions workflow runs repository preflight, restore,
 - `FreeX-latest-win-x64.msix`
 - `FreeX-latest-win-x64.msix.sha256`
 
-The MSIX publish path signs the package only when `FREEX_MSIX_CERTIFICATE_BASE64` is configured, with optional `FREEX_MSIX_CERTIFICATE_PASSWORD` and `FREEX_MSIX_TIMESTAMP_URL` inputs. Without those settings it still produces an unsigned local package for packaging validation. Installer trust validation and Store-style submission remain release-gate work.
+Release dispatches must run from `main` because the workflow publishes stable latest assets, and a workflow-level `tester-release` concurrency group prevents overlapping dispatches from moving `latest` backward.
+
+The hosted MSIX publish path requires `FREEX_MSIX_CERTIFICATE_BASE64`, with optional `FREEX_MSIX_CERTIFICATE_PASSWORD` and `FREEX_MSIX_TIMESTAMP_URL` inputs. `tools/Publish-UserTestBuild.ps1` derives the manifest `Publisher` from the signing certificate subject before packaging; unsigned MSIX output is available only for local packaging validation by passing `-AllowUnsignedMsix` directly to the script. Installer trust validation and Store-style submission remain release-gate work.
 
 Default tester versions come from `release/progress.json`: the current `overallCompletion` value maps to a minor-version band, and the GitHub run number becomes the patch number. At 95% completion, default tester releases use the `v0.8.<run>` stream. Manual `release_version` overrides remain available for special validation builds.
 
