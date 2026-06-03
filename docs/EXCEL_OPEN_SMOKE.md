@@ -62,6 +62,10 @@ passive summary counts. When `--save-reopen` is used, the smoke fails if FreeX c
 expected feature metadata before Excel opens the staged workbook, if Excel open/reopen loses the
 expected formula cells, structured tables, worksheet shapes, or PivotTables, or if FreeX cannot
 reload the Excel-saved copy with the expected metadata still present.
+For generated and local-private supported corpus rows without declared warning expectations, the
+smoke also fails on any FreeX load warning before Excel or after reloading Excel's saved copy.
+Public corpus rows are excluded from that no-warning assertion because some public-pass files
+intentionally carry unsupported-surface tags for retention coverage.
 
 ## Excel-authored through FreeX
 
@@ -215,7 +219,8 @@ As of 2026-06-03 on the local desktop Excel COM environment:
 - The default generated corpus command now selects all materializable generated supported rows,
   covering `supported-pass` plus `supported-metadata-pass` fixtures in one bidirectional
   FreeX-resave -> desktop Excel save/reopen gate. The current default generated corpus run passed
-  `104/104`: `52` supported-pass rows and `52` supported-metadata-pass rows.
+  `104/104`: `52` supported-pass rows and `52` supported-metadata-pass rows, with zero FreeX load
+  warning rows before Excel and zero FreeX load-warning rows after reloading Excel-saved copies.
 
 The 2026-06-03 corpus pass specifically covers prior Excel/OpenXML failures from invalid
 `styles.xml` ordering (`dxfs`/`tableStyles`/`colors`), invalid `workbook.xml` ordering
