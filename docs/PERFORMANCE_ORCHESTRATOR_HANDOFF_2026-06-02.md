@@ -438,10 +438,42 @@ Local orchestrator slices after restart:
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `main` and `origin/main` are aligned at or after `5de331aac`.
+2. Confirm `main` and `origin/main` are aligned at or after `1a04e7c9d`.
 3. Start the next wave with disjoint scopes:
    - Check the active App.Host drag-status/ribbon compact worker and integrate if complete.
    - XLSX IO ignored-errors/data-validation metadata save tails if a semantics-safe streaming path is found.
    - Core.Commands dense row/column tails now need deeper model-level redesign; prefer other high-impact areas unless a narrow safe path is proven.
    - App.UI render benchmark stabilization and remaining chart/formula-trace tails.
 4. Merge verified slices back to `main` promptly and push after each coherent unit.
+
+## Codex Restart Pause - 2026-06-03
+
+The user asked to pause agents for a Codex restart. All active subagents were closed cleanly; do not wait on the old ids after restart. Spawn fresh workers only after rechecking the worktrees below.
+
+- `019e8aee-d2ca-73d2-910a-69e2d3451dd1`: App.Host drag-status/ribbon compact tail, closed while running.
+  - Worktree: `E:\Users\anton\Documents\Claude\FreeX\.worktrees\perf-host-drag-ribbon-tail-20260603-r1`.
+  - Branch: `codex/perf-host-drag-ribbon-tail-20260603-r1`.
+  - Dirty files at pause: `src/FreeX.App.Host/MainWindow.RibbonAdaptive.cs`, `src/FreeX.App.Host/MainWindow.Selection.cs`, `src/FreeX.App.Host/RibbonAdaptiveLayoutEngine.cs`, `src/FreeX.App.Host/RibbonAdaptivePriorityPlanner.cs`, `src/FreeX.App.Host/RibbonAdaptiveStateApplicator.cs`, `tests/FreeX.App.Host.Tests/MainWindowMouseSelectionSourceTests.cs`.
+  - Branch state at pause: ahead 1 and behind 20 relative to `origin/main`; review/rebase before using or integrating.
+- `019e8afe-6ccd-7d91-a8b0-e0a04e906827`: XLSX dense mutated save regression, closed while running.
+  - Worktree: `E:\Users\anton\Documents\Claude\FreeX\.worktrees\perf-xlsx-dense-mutated-regression-20260603-r1`.
+  - Branch: `codex/perf-xlsx-dense-mutated-regression-20260603-r1`.
+  - Dirty files at pause: `src/FreeX.Core.IO/XlsxExcelCompatibilityNormalizer.cs`, `src/FreeX.Core.IO/XlsxFileAdapter.SavePostProcessing.cs`, `tests/FreeX.Core.IO.Tests/XlsxExcelCompatibilityNormalizerTests.cs`, `tests/FreeX.Core.IO.Tests/XlsxFileAdapterPerformanceTests.cs`.
+  - Branch state at pause: behind 8 relative to `origin/main`; review/rebase before using or integrating.
+
+Local orchestrator work paused in progress:
+
+- Worktree: `E:\Users\anton\Documents\Claude\FreeX\.worktrees\perf-app-ui-trace-render-tail-20260603-r1`.
+- Branch: `codex/perf-app-ui-trace-render-tail-20260603-r1`.
+- Dirty files: `src/FreeX.App.UI/GridView.Overlays.cs`, `tests/FreeX.App.UI.Tests/GridViewRenderPerformanceTests.cs`.
+- Implemented but not committed: formula-trace visible arrow drawing cache in `GridView.Overlays.cs` plus the render-performance source guard update.
+- Verified before pause:
+  - Focused formula trace benchmark and guard passed `2/2`.
+  - Broader focused no-build App.UI benchmark set passed `5/5`.
+  - `FORMULA_TRACE_VISIBLE_ARROW_DRAW` improved from about `36,913,576` bytes / `30.97 ms` to about `5,306,536` bytes / `2.15-3.23 ms`.
+- Still needed after restart: run full `FreeX.App.UI.Tests`, run `git diff --check`, rebase onto current `origin/main`, rerun focused/full verification if needed, commit, push, integrate to `main`, and update this handoff again.
+
+Repository checkpoint at pause:
+
+- `main` was clean and pushed to `origin/main` at `1a04e7c9d` before this pause note.
+- This handoff branch was fast-forwarded to `origin/main` before writing the pause note.
