@@ -1403,3 +1403,26 @@ Repository checkpoint after Formula lookup, Calc leaf-report, NativeJson integer
   - `019e8e91-5761-7df2-be60-6c19a7900730`: Core.IO current performance tail, scope `src/FreeX.Core.IO/**` and `tests/FreeX.Core.IO.Tests/**`.
 - Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
 - Primary local `main` currently contains unrelated local chart/PDF/XLSX history and is divergent from `origin/main`; continue performance integration from linked worktrees based on `origin/main`.
+
+Repository checkpoint after NativeJson token numeric load and Advanced Filter unprotected-destination integrations:
+
+- `origin/main` was advanced to `e83248c12` with `codex/perf-io-token-load-integration-20260603-r1`.
+- The integration added rebased Core.IO commit `12c741d00`.
+  - Worker: `019e8e91-5761-7df2-be60-6c19a7900730`.
+  - Change: native JSON scalar cells now write `ValueType` before `Value`, allowing load to parse finite numeric value tokens directly into `NumberValue` / `DateTimeValue` without allocating a per-cell value string. Legacy `Value`-before-`ValueType` files still load through the existing fallback path.
+  - Metrics: worker before/after for `NATIVE_JSON_LOAD_DENSE` was `514.51 ms` / `37,786,976` bytes to `453.24 ms` / `35,183,968` bytes; worker `NATIVE_JSON_LOAD_REPEATED_STYLES` improved from `583.00 ms` / `21,458,592` bytes to `494.08 ms` / `19,344,608` bytes. Integration focused post-rebase sample after upstream churn passed at `55/55`.
+  - Verification before final rebase: focused NativeJson/XLSX performance set passed `55/55`; full Release `FreeX.Core.IO.Tests` passed `1817/1817`. Final post-rebase focused NativeJson/XLSX performance set passed `55/55`.
+- The integration added rebased Core.Commands commit `e83248c12`.
+  - Worker: `019e8e91-40ab-76c2-896c-f110798cdc7a`.
+  - Change: `AdvancedFilterCommand` skips the copy-destination editability scan when the target sheet is not protected, preserving protected-sheet behavior while avoiding redundant `CanEditCell` calls in dense copy output.
+  - Metrics: worker baseline `ADVANCED_FILTER_COPY_UNIQUE_DENSE` was `789.02 ms` total / `157.80 ms` mean; final integration focused sample after replay was `446.52 ms` total / `89.29 ms` mean / `2,893,624` bytes.
+  - Verification before final rebase: focused Advanced Filter set passed `17/17`; full Release `FreeX.Core.Model.Tests` passed `1906/1906` with `RunConfiguration.DisableParallelization=true`. Final post-rebase focused Advanced Filter set passed `17/17`.
+- A parallel post-rebase focused rerun initially hit a compiler output lock from `VBCSCompiler`; `dotnet build-server shutdown` cleared the stale lock and the affected Advanced Filter gate passed sequentially.
+- Local Formula/Core.Calc census after this push:
+  - Formula performance filter passed `76/76`; no local Formula patch was carried. Remaining timings are mostly already guarded direct-range/lookup paths or known output-heavy functions.
+  - Core.Calc performance filter passed `33/33`; no local Calc patch was carried. Remaining large samples are known output/materialization, returned metric payload, or Formula-owned large-range evaluation paths.
+- Active workers after this push:
+  - `019e8e91-2c71-7991-8d4e-191f5a9c185a`: App.Host current performance tail, still running.
+  - `019e8eb0-ea89-7973-9424-28dd13959792`: Core.Formula current performance tail, scope `src/FreeX.Core.Formula/**` and `tests/FreeX.Core.Formula.Tests/**`.
+  - `019e8eb0-f97f-7353-8ed2-d3f2e73ea026`: Core.Calc current performance tail, scope `src/FreeX.Core.Calc/**` and `tests/FreeX.Core.Calc.Tests/**`.
+- Primary local `main` has unrelated local App.Host test-split changes and `.vscode/settings.json`; continue using linked worktrees from current `origin/main` for performance integration.
