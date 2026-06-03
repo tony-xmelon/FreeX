@@ -387,7 +387,7 @@ Accessibility Checker remains a deterministic model-backed audit in `Core.Comman
 engine. It reports issues supported by current workbook state, including merged cells, blank structured-table headers,
 low-contrast cell text against base, workbook theme/tint, and patterned fills, low-contrast text boxes against
 explicit, theme, and workbook object-default fills, missing object alternate text, hidden sheets/rows/columns with
-content, unclear hyperlink display text, and charts whose title is missing as the current accessible label.
+modeled content including hyperlinks, unclear hyperlink display text, and charts whose title is missing as the current accessible label.
 
 Native JSON persists the local threaded-comment model, including author, replies, created/modified UTC activity
 metadata, and resolved state, so FreeX's in-app comment threads survive native save/load. Comment navigation and
