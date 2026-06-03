@@ -9,8 +9,8 @@ This goal is not complete. This file records the current clean checkpoint.
 ## Operating Rules
 
 - Repository: `E:\Users\anton\Documents\Claude\Freexcel`.
-- Latest upstream checkpoint before this handoff update: `0382937a1`.
-- `codex/performance-orchestrator-resume-20260602` was rebased onto `origin/main` at `0382937a1` before this handoff update.
+- Latest upstream checkpoint before this handoff update: `d468bb5bd`.
+- `codex/performance-orchestrator-resume-20260602` was rebased onto `origin/main` at `d468bb5bd` before this handoff update.
 - Follow `AGENTS.md`: use isolated worktrees/branches for implementation, do not edit `main` directly, sync before work, verify before merge, push verified integrations frequently.
 - User explicitly requested no permission prompts and no escalation requests.
 - Treat unrelated dirty or untracked files as owned by other sessions unless explicitly proven otherwise.
@@ -513,6 +513,22 @@ All items below were verified, pushed to their `codex/` branches, and fast-forwa
   - Broader drawing/render set passed `112/112`.
   - Full `FreeX.App.UI.Tests` passed `570/570`.
 
+### XLSX Style-Only Row Insertion Cursor Tail
+
+- Branch: `codex/perf-xlsx-styleonly-save-tail-20260603-r1`.
+- Commit: `d468bb5bd`.
+- Worker: `019e8b77-a76a-7d00-b175-90ebb05259ba`, then orchestrator reviewed, re-ran focused verification, committed, and integrated.
+- Change: style-only worksheet post-processing now keeps a forward row insertion cursor, avoiding a fresh worksheet-row scan for every newly inserted style-only row.
+- Metrics:
+  - Worker baseline `XLSX_SAVE_STYLE_ONLY`: `144,065,592` bytes, `650.01 ms` mean.
+  - Worker final post-sync sample: `143,924,120` bytes, `606.30 ms` mean.
+  - Orchestrator focused repeat: `143,993,336` bytes, `601.21 ms` mean.
+  - Targeted mixed style-only/ignored-error run was noisy for timing but passed all facts; `XLSX_SAVE_IGNORED_ERRORS` remained essentially unchanged around `81.45 MB`.
+- Verification:
+  - Focused style-only/ignored-error benchmark and correctness set passed `29/29`.
+  - No-build style-only benchmark repeat passed `1/1`.
+  - Worker full `FreeX.Core.IO.Tests` passed `1780/1780`.
+
 ## Other Main Integrations During This Wave
 
 Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, QAT validation, Flash Fill parity coverage clarification, and parity handoff updates.
@@ -524,7 +540,7 @@ The obvious high-impact backlog is reduced but not exhausted.
 1. XLSX IO:
    - `XLSX_SAVE_LOADED_DENSE_MUTATED` was re-stabilized from about `244.9 MB` to `150.1-157.5 MB` by skipping irrelevant worksheet compatibility scans; further wins likely require deeper package normalization redesign.
    - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` improved again and now allocates around `131.5 MB` in full Core.IO samples; it is still one of the largest open allocation pools.
-   - `XLSX_SAVE_STYLE_ONLY` improved to about `143.1 MB` but remains a high-allocation save path because ClosedXML/style seeding and package XML rewriting still dominate.
+   - `XLSX_SAVE_STYLE_ONLY` improved modestly again to about `143.9-144.0 MB` with the forward row insertion cursor tail, but remains a high-allocation save path because ClosedXML/style seeding and package XML rewriting still dominate.
    - `XLSX_SAVE_IGNORED_ERRORS` improved to about `81.46 MB`; `XLSX_SAVE_DATA_VALIDATION_NATIVE_METADATA` improved from about `80.5 MB` to about `18.6 MB`.
    - `XLSX_LOAD_DRAWING_PICTURES` now has a current baseline and a small copy/traversal win (`23.6 MB` to about `22.8 MB`); further cuts likely require a larger picture-storage or image-retention redesign.
    - Unchanged loaded workbook fast-copy remains healthy: `XLSX_SAVE_LOADED_DENSE` around `554,248` bytes in the full IO run.
@@ -593,6 +609,7 @@ Restarted 2026-06-03 workers after Codex restart:
 Follow-up 2026-06-03 workers launched with full-access/no-permission instructions:
 
 - `019e8b6a-e31e-73f2-a807-ba672fc87d85`: App.UI drawing-object cache warm-up follow-up, completed; orchestrator committed, rebased, reverified, and integrated `0382937a1`.
+- `019e8b77-a76a-7d00-b175-90ebb05259ba`: XLSX style-only save row insertion cursor tail, completed; orchestrator committed, verified, and integrated `d468bb5bd`.
 
 Local orchestrator slices after restart:
 
@@ -605,6 +622,11 @@ Local orchestrator slices after restart:
 - `codex/perf-host-drag-ribbon-tail-20260603-r1`: App.Host drag/ribbon compact tail, completed; clean Host-only commit `66a60b9eb` integrated to `origin/main`.
 - `codex/perf-xlsx-drawing-load-tail-20260603-r1`: XLSX drawing-picture load copy/traversal tail, completed; commit `30207e687` integrated to `origin/main`.
 - `codex/perf-app-ui-drawing-followup-20260603-r1`: App.UI drawing-object cache warm-up follow-up, completed; rebased commit `0382937a1` integrated to `origin/main`.
+- `codex/perf-xlsx-styleonly-save-tail-20260603-r1`: XLSX style-only save row insertion cursor tail, completed; commit `d468bb5bd` integrated to `origin/main`.
+
+Local orchestrator exploratory slice after drawing tails:
+
+- `codex/perf-core-commands-model-tail-20260603-r1`: Core.Commands/model probe for pivot/table/watch-window tails, completed locally with no integration; the pivot-refresh pre-sized filter-row candidate only saved about `2 KB`, so the patch was reverted and the worktree was left clean and uncommitted.
 
 ## Resume Checklist
 
@@ -612,9 +634,9 @@ Local orchestrator slices after restart:
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `origin/main` is at or after `0382937a1`. The primary local `main` may still contain unrelated local refactor commits; do not push or overwrite them as part of the performance thread unless their owning session has verified them.
+2. Confirm `origin/main` is at or after `d468bb5bd`. The primary local `main` may still contain unrelated local refactor commits; do not push or overwrite them as part of the performance thread unless their owning session has verified them.
 3. Start the next wave with disjoint scopes:
-   - XLSX IO style-only/ignored-error load-save tail if a semantics-safe streaming or bounded-strip path is found.
+   - XLSX IO style-only/ignored-error load-save tail only if a larger semantics-safe streaming or package-normalization path is found; narrow cell/row insertion cursor tails are integrated.
    - Recheck XLSX drawing-picture load only if a larger picture-storage redesign is acceptable; the narrow copy/traversal tail is already integrated.
    - Core.Commands dense row/column tails now need deeper model-level redesign; prefer other high-impact areas unless a narrow safe path is proven.
    - App.UI drawing-object first-render/offscreen cache warm-up follow-up is integrated; anchor lookup remains allocation-flat and lower priority.
@@ -681,3 +703,9 @@ Repository checkpoint after XLSX drawing load and App.UI drawing follow-up:
 - `origin/main` was advanced to `30207e687` with the XLSX drawing-picture load copy/traversal slice.
 - `origin/main` was advanced to `0382937a1` with the App.UI drawing-object cache warm-up follow-up.
 - The primary local `main` was left untouched; it remains outside the performance integration path because unrelated sessions own its local divergence.
+
+Repository checkpoint after XLSX style-only row insertion cursor integration:
+
+- `origin/main` was advanced to `d468bb5bd` with the XLSX style-only save row insertion cursor slice.
+- `codex/perf-core-commands-model-tail-20260603-r1` was left clean and uncommitted after a negligible pivot-refresh allocation probe was reverted.
+- The primary local `main` was left untouched; performance integration continued through verified linked worktrees and fast-forward pushes to `origin/main`.
