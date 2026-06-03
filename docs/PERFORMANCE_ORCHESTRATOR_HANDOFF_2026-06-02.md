@@ -1071,3 +1071,23 @@ Repository checkpoint after Core.Model census/no-patch probe:
   - `019e8c79-53c6-7511-947b-dddd55ba7839`: Core.Formula evaluator/built-in function tail, scope `src/FreeX.Core.Formula/**` and `tests/FreeX.Core.Formula.Tests/**`.
   - `019e8c79-86bc-7e42-8654-b1f3a0d6eaab`: App.Host performance-review tail, scope `src/FreeX.App.Host/**` and `tests/FreeX.App.Host.Tests/**`.
   - `019e8c7f-ed62-7f70-be6b-fd09149881aa`: Core.IO allocation tail, scope `src/FreeX.Core.IO/**` and `tests/FreeX.Core.IO.Tests/**`.
+
+Repository checkpoint after conditional-icon DTO, Formula direct SUBTOTAL/AGGREGATE, and XLSX style-only save integrations:
+
+- `origin/main` was advanced to `0bee1bbf6` with `codex/perf-core-calc-census-tail-20260603-r1`.
+  - Change: `ConditionalFormatIcon` is now a readonly record struct, removing per-visible-cell icon object allocation while preserving value equality/nullability usage.
+  - Metric: `CF_ICONSET_THRESHOLDS` improved from `6,291,000` bytes to `5,523,024` bytes in the rebased focused Release run.
+  - Verification: focused icon filter passed `10/10`; full Release `FreeX.Core.Calc.Tests` passed `675/675`; full `FreeX.App.UI.Tests` passed `572/572`; `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `649312100` with `codex/perf-core-formula-tail-20260603-r1`.
+  - Worker: `019e8c79-53c6-7511-947b-dddd55ba7839`.
+  - Change: direct range streaming fast paths for `SUBTOTAL` non-statistical functions and `AGGREGATE` functions 1..11 avoid `RangeValue` materialization for large direct ranges; SUBTOTAL statistical functions remain on the old path.
+  - Metrics: `SUBTOTAL(1/2/9,A1:A100000)` dropped from about `800,240` bytes to `168` bytes; `AGGREGATE(1..11,4,A1:A100000)` dropped from about `800,272` bytes to `192` bytes.
+  - Verification: performance filter passed `71/71`; semantic/overflow filter passed `309/309`; full `FreeX.Core.Formula.Tests` passed `2726/2726`; `git diff --check HEAD~1..HEAD` passed. A compiler-server lock from parallel verification was cleared with `dotnet build-server shutdown` before rerun.
+- `origin/main` was advanced to `03c039fbf` with `codex/perf-core-io-tail-20260603-r1`.
+  - Worker: `019e8c7f-ed62-7f70-be6b-fd09149881aa`.
+  - Change: style-only worksheet post-processing now walks existing row cells with an in-order cursor instead of building a per-row reference dictionary; source guard prevents `.ToDictionary(` from returning to that writer path.
+  - Metric: `XLSX_SAVE_STYLE_ONLY` improved from about `144,675,896` bytes to rebased focused `117,068,192` bytes; mean sample was `579.87 ms`. Other IO allocation tails were flat/noisy.
+  - Verification: focused Release performance set passed `5/5`; exact style-only source guard passed `1/1`; full Release `FreeX.Core.IO.Tests` passed `1785/1785`; `git diff --check HEAD~1..HEAD` passed.
+- Remaining active worker:
+  - `019e8c79-86bc-7e42-8654-b1f3a0d6eaab`: App.Host performance-review tail, still running at this checkpoint.
+- The primary local `main` remained untouched and divergent; verified performance work continued through linked worktrees and fast-forward pushes to `origin/main`.
