@@ -1254,21 +1254,22 @@ Repository checkpoint after Calc lazy report allocation and Formula monotonic UN
   - Verification on the combined branch: focused UNIQUE set passed `12/12`; full Release `FreeX.Core.Formula.Tests` passed `2726/2726`.
 - Integration note: the first parallel Calc focused verification hit a transient compiler output lock because two test commands built the same worktree simultaneously; the check was rerun sequentially and passed. Use sequential test runs per worktree for final verification.
 
-Repository checkpoint after App.Host ribbon planner no-expansion integration:
+Repository checkpoint after App.Host, App.UI, and Core.IO tail integration:
 
-- `codex/perf-host-ui-io-tail-integration-20260603-r1` added App.Host commit `6aa2bed8f`.
+- `codex/perf-host-ui-io-tail-integration-20260603-r1` added the rebased App.Host slice.
   - Worker: `019e8d30-7daf-7e63-b4ea-134d6212d6a8`.
   - Change: ribbon adaptive layout planning now avoids empty protected-index set/list allocations, skips expansion setup when both expansion lists are empty, and returns early when current planned states already fit.
-  - Metrics: the pure planner guard improved from the worker baseline `239.86 ms` / `25,840,040` bytes over 10,000 iterations to the rebased final sample `217.30 ms` / `9,360,040` bytes. The WPF forced-compact sanity sample remained allocation-light at `181.93 ms` / `436,424` bytes over 300 steps.
-  - Verification on the integration branch before adding the other disjoint worker commits: App.Host Release test build passed with `0` warnings/errors; focused ribbon layout/planner tests passed `41/41` with the pure planner guard at `293.52 ms` / `9,360,040` bytes; focused resize coordinator tests passed `8/8`; the forced-compact performance guard passed `1/1` at `83.58 ms` / `436,504` bytes.
-- `codex/perf-host-ui-io-tail-integration-20260603-r1` added App.UI commit `5a076d86a`.
+  - Metrics: the pure planner guard improved from the worker baseline `239.86 ms` / `25,840,040` bytes over 10,000 iterations to the final current-main sample `137.49 ms` / `9,360,040` bytes. The WPF forced-compact sanity sample remained allocation-light at `48.47 ms` / `437,528` bytes over 300 steps.
+  - Verification after final rebase to current `origin/main`: focused ribbon layout/planner, source-hygiene, resize coordinator, and forced-compact checks passed `51/51`.
+- `codex/perf-host-ui-io-tail-integration-20260603-r1` added the rebased App.UI slice.
   - Worker: `019e8d46-7c16-7ff2-ad48-5b34fc969938`.
   - Change: Quick Analysis data-bar preview rectangle calculation now returns before row/column metric dictionary construction when numeric values exist but all drawable positive widths are zero. The source guard keeps the `max <= 0` check before metric lookup allocation.
-  - Metrics: `QUICK_ANALYSIS_DATABARS_NONPOSITIVE_RECTS` improved from `4.9950 ms` mean / `9.6315 ms` p95 / `11,528,848` bytes to `0.4654 ms` mean / `0.5029 ms` p95 / `99,880` bytes.
-  - Worker verification before orchestrator integration: focused Quick Analysis tests passed `3/3`; full Release `FreeX.App.UI.Tests` passed `574/574`.
-- `codex/perf-host-ui-io-tail-integration-20260603-r1` added Core.IO commit `1c1f18b35`.
+  - Metrics: `QUICK_ANALYSIS_DATABARS_NONPOSITIVE_RECTS` improved from `4.9950 ms` mean / `9.6315 ms` p95 / `11,528,848` bytes to the final current-main sample `0.1650 ms` mean / `0.2011 ms` p95 / `99,880` bytes.
+  - Verification after final rebase to current `origin/main`: focused Quick Analysis guard passed `3/3`; full Release `FreeX.App.UI.Tests` passed `575/575` on the immediately preceding synced base.
+- `codex/perf-host-ui-io-tail-integration-20260603-r1` added the rebased Core.IO slice.
   - Worker: `019e8d46-afdb-7c31-bf72-3dd7b4128e8f`.
   - Change: XLSX source-package replay metadata post-processing now uses a direct workbook sheet loop instead of a save-time LINQ `Any(...)` predicate iterator, with the existing source guard tightened for that path.
-  - Metrics: replay metadata save allocation stayed effectively flat around `18,320,624` bytes, while warm benchmark mean time improved from `156.24 ms` to `136.36 ms` and p95 from `188.07 ms` to `174.54 ms`.
-  - Worker verification before orchestrator integration: focused replay metadata source/benchmark checks passed `2/2`; full Release `FreeX.Core.IO.Tests` passed `1794/1794`; `git diff --check` was clean except Git CRLF notices.
-- Final combined verification before push: App.UI focused Quick Analysis guard passed `3/3` with `99,880` allocated bytes, and full Release `FreeX.App.UI.Tests` passed `574/574`. Core.IO focused replay metadata checks passed `2/2` with `143.76 ms` mean / `18,320,632` bytes, and full Release `FreeX.Core.IO.Tests` passed `1794/1794`. App.Host focused checks passed before the disjoint worker commits (`41/41`, `8/8`, and `1/1`), and the final rebuilt full Release `FreeX.App.Host.Tests` passed `5815/5816` with the expected `SharedAppInstance_CoversLiveUiScenarios` skip. Use sequential test runs per worktree; unbuilt test assemblies may return no useful console output when invoked with `--no-restore`.
+  - Metrics: replay metadata save allocation stayed effectively flat around `18,371,128` bytes, while warm benchmark mean time improved from `156.24 ms` to the final current-main sample `93.69 ms`.
+  - Verification after final rebase to current `origin/main`: focused replay metadata checks passed `2/2`; full Release `FreeX.Core.IO.Tests` passed `1798/1798` on the immediately preceding synced base.
+- Integration cleanup: current `origin/main` already localized the Fill Series warning source but left `HomeEditingCommandSourceTests` expecting the old literal. The integration branch updates that source-hygiene assertion to expect `UiText.Get("FillSeriesStep_SelectNumericOrDateStartMessage")`; the focused drift test passed `1/1`.
+- Final combined verification before push: full Release `FreeX.App.Host.Tests` passed `5821/5822` with the expected `SharedAppInstance_CoversLiveUiScenarios` skip on the immediately preceding synced base; after the last fast-moving-main rebase, the scoped App.Host checks passed `51/51`. Use sequential test runs per worktree; unbuilt test assemblies may return no useful console output when invoked with `--no-restore`.
