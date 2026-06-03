@@ -1468,6 +1468,20 @@ Repository checkpoint after Model/Commands structured-table filter and Core.IO s
 - Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
 - Primary local `main` remains untouched; continue performance integration from linked worktrees based on `origin/main`.
 
+Repository checkpoint after Core.Formula direct statistical selection buffer pooling:
+
+- `origin/main` was advanced to `9aafbb9e` with `codex/perf-formula-selection-pool-integration-20260603-r1`.
+- The integration added rebased Core.Formula commit `9aafbb9e`.
+  - Worker: `019e8ef2-f3a4-7403-9b66-7f346eb7606f`; integration added a grow-path correctness fix and regression test before push.
+  - Change: direct statistical selection fast paths now use an `ArrayPool<double>`-backed `DirectSelectionBuffer` instead of allocating a fresh large `List<double>` backing array for every large direct-range `LARGE`, `SMALL`, `PERCENTILE`, and selection-style `AGGREGATE`. The integration also preserves collected values when combined direct ranges exceed the preallocation limit and the buffer has to grow.
+  - Metrics: worker allocation-focused samples improved `LARGE(A1:A100000,10)` and `SMALL(A1:A100000,10)` from `800,208` bytes to `184` bytes, `PERCENTILE(A1:A100000,0.5)` from `800,232` bytes to `208` bytes, and selection `AGGREGATE` cases from about `800,256-800,304` bytes to `232-280` bytes. Integration focused samples after the grow fix stayed in the same range: `184-280` bytes.
+  - Verification after integration: focused selection/grow-path set passed `9/9`; full Formula performance filter passed `78/78`; full Release `FreeX.Core.Formula.Tests` passed `2750/2750`; `git diff --check origin/main...HEAD` passed before push.
+- Completed Core.Formula worker `019e8ef2-f3a4-7403-9b66-7f346eb7606f` can be closed after this docs push.
+- Still-running worker:
+  - `019e8ed1-b4cd-7180-abd1-73756789dba5`: App.Host current performance tail.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` remains untouched; continue performance integration from linked worktrees based on `origin/main`.
+
 Repository checkpoint after App.UI dense chart data-label format lookup integration:
 
 - `origin/main` was advanced to `1b0cd8149` with `codex/perf-ui-chart-label-lookup-integration-20260603-r1`.
