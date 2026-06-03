@@ -81,6 +81,7 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `f8369bb19` - Honored manual worksheet row and column page breaks in the shared print renderer pagination path, so print preview, PDF, XPS, and workbook export split pages at modeled/imported break IDs.
 - `f7948367e` - Interpreted imported workbook theme `a:glow` effect defaults and rendered the bounded approximation for non-chart text boxes and drawing shapes without extending picture or full `effectRef` semantics.
 - `94c7def23` - Applied modeled scale-percent and fit-to-pages-wide/tall settings to shared print renderer pagination capacity so print preview, PDF, XPS, and workbook export page counts reflect Scale to Fit settings.
+- `a3e4e6230` - Counted Print Comments At End summary pages in worksheet header/footer total-page tokens so print preview, PDF, XPS, and workbook export footers no longer show `Page 1 of 1` when a comment summary page is appended.
 
 Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, Selection Pane mixed reorder coverage, and manual worksheet page-break metadata/storage/preview coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full workbook theme effect fidelity beyond the bounded shadow/glow approximations, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
@@ -186,6 +187,12 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the print renderer scale-to-fit pagination slice.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the print renderer scale-to-fit pagination slice.
 - `git diff --check` - clean after the print renderer scale-to-fit pagination slice.
+- `dotnet restore tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj` - restored missing App.Host test assets for this worktree before focused verification.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~PrintRendererPageSetupTests" -v:minimal` - 40/40 passed after the Print Comments At End total-page token slice.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the Print Comments At End total-page token slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Print Comments At End total-page token slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Print Comments At End total-page token slice.
+- `git diff --check` - clean after the Print Comments At End total-page token slice.
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~QuickAccessToolbarCustomizationPlannerTests|FullyQualifiedName~QuickAccessCommandStateResolverTests|FullyQualifiedName~ReviewCommandSourceTests|FullyQualifiedName~DrawCommandSourceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed after the default shape-name slice.
@@ -254,6 +261,7 @@ Completed and merged lanes from this wave:
 - Resume / Manual page breaks in print pagination: completed, pushed to `origin/main`.
 - Resume / Workbook theme glow effect approximation for text boxes and shapes: completed, pushed to `origin/main`.
 - Resume / Print renderer scale-to-fit pagination: completed, pushed to `origin/main`.
+- Resume / Print Comments At End total-page tokens: completed on `a3e4e6230`.
 
 Read-only resume auditors:
 
@@ -264,6 +272,8 @@ Read-only resume auditors:
 - Options default-save-format follow-up audit: `019e8ab2-862d-7633-b388-a23832ab9d1e` completed without edits; it confirmed the prior `.json`/`.fxl` Options and Save As default-format mismatch was a real, bounded but broader host/IO/localization slice.
 - Page Layout / manual page-break print-pagination audit: `019e8b11-b8db-7b11-82f5-6aaf2b4e8776` completed without edits; it confirmed manual row/column breaks were modeled, persisted, and shown in Page Break Preview but ignored by `PrintRenderer` pagination before the now-completed slice.
 - Draw / workbook theme effect fidelity audit: `019e8b11-de99-7c82-9853-55743f3e6182` completed without edits; it confirmed deeper theme/effect fidelity remains broad, with only a tightly scoped theme-glow approximation for shapes/text boxes as a possible future bounded slice.
+- Review/Data audit: `019e8b50-24ea-7ee2-913e-1585dd8d4313` completed without edits; it identified bounded Formula Auditing omitted-adjacent aggregate candidates for statistical aggregates and same-sheet named ranges, while Spell Check, Accessibility Checker, and Flash Fill remaining tails looked broad or model-limited.
+- File/Backstage/QAT/Draw audit: `019e8b50-5237-7033-a99b-6b6b0c84e4c3` completed without edits; it identified bounded candidates for PDF/XPS readiness honesty text, QAT Options dialog UIA metadata, and Selection Pane stable AutomationIds.
 
 Subagents from the prior non-chart wave were marked for closure:
 
