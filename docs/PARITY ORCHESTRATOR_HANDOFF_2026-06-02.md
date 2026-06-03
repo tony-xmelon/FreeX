@@ -88,6 +88,7 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `e65c7f022` - Counted modeled hyperlinks as hidden sheet/row/column content in Accessibility Checker hidden-content scans, including hyperlink-only hidden sheets and blank-cell hyperlinks in hidden rows or columns, and regenerated command-surface parity docs.
 - `9e3c95864` - Added deterministic Flash Fill inference for final slash/backslash path segment stems with extension removal, while rejecting no-extension or no-path remaining values, and regenerated command-surface parity docs.
 - `a2d54dfbb` - Collapsed repeated-word runs during Spell Check Replace All so overlapping detections such as `the the the` reduce to one word instead of leaving a duplicate pair, with host planner coverage and regenerated command-surface parity docs.
+- `9ba947791` - Materialized imported/custom PivotTable grand-total captions in row-only, column-only, and matrix refresh output, while keeping PivotStyle grand-total styling, merged-label exclusion, and Show Details extraction aligned with the active caption, and regenerated command-surface parity docs.
 
 Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, Selection Pane mixed reorder coverage, and manual worksheet page-break metadata/storage/preview coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full workbook theme effect fidelity beyond the bounded shadow/glow approximations, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
@@ -138,6 +139,13 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the repeated-word Replace All slice.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the repeated-word Replace All slice.
 - `git diff --check` - clean after the repeated-word Replace All slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~PivotTableRefreshServiceTests|FullyQualifiedName~PivotTableCommandTests" -v:minimal` - 178/178 passed after the PivotTable custom grand-total caption slice.
+- `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the PivotTable custom grand-total caption slice; an earlier parallel build collided with test output and was rerun sequentially after no stale compiler/test process remained.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated PivotTable generated docs after the custom grand-total caption slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the PivotTable custom grand-total caption slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the PivotTable custom grand-total caption slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the PivotTable custom grand-total caption slice.
+- `git diff --check` - clean after the PivotTable custom grand-total caption slice.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated QAT and Accessibility Checker generated docs.
@@ -342,6 +350,7 @@ Completed and merged lanes from this wave:
 - Resume / Selection Pane stable AutomationIds: completed on `5144947c6`.
 - Resume / QAT Options UIA metadata: completed on `d1dc16336`.
 - Resume / PDF/XPS readiness honesty text: completed on `cd02bf47c`.
+- Resume / PivotTable custom grand-total captions: completed on `9ba947791`.
 
 Read-only resume auditors:
 

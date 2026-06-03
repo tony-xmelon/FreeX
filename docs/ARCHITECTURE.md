@@ -245,6 +245,9 @@ The PivotTable Options dialog and `ConfigurePivotTableOptionsCommand` edit and p
 whitespace-to-`null` behavior and undo snapshotting as the empty-cell caption. FreeX does not currently evaluate
 PivotTable aggregate errors through a separate display-semantic path; the option is preserved for authored/read XLSX
 metadata and future rendering support.
+`PivotTableModel.GrandTotalCaption` models imported/authored custom grand-total caption text. The refresh service
+materializes that caption for row-only, column-only, and matrix grand-total labels, and the same caption is used when
+detecting grand-total cells for PivotStyle formatting, merged-label exclusion, and Show Details extraction.
 Pivot cache data options remain owned by `PivotCacheModel`, not duplicated onto `PivotTableModel`. `PivotTableOptionsDialog`
 reads the cache connected by `PivotTableModel.CacheId`, and `ConfigurePivotTableOptionsCommand` updates the cache's
 `RefreshOnLoad`, `SaveData`, `EnableRefresh`, and `MissingItemsLimit` settings with undoable snapshots. The deleted-item
