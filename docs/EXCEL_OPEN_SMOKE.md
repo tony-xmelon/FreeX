@@ -28,6 +28,10 @@ Chart fixture coverage is still available:
 dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --generate-chart-fixtures
 ```
 
+Those generated chart workbooks now assert chart counts separately from generic worksheet shapes,
+and they use the same no-FreeX-load-warning gate when FreeX reload checkpoints are part of the
+selected workflow.
+
 The broader FreeX feature fixture set covers formulas, validation, conditional formatting, tables,
 links/comments, images/sparklines, shapes/text boxes, PivotTables/pivot caches, protection, and
 page setup:
@@ -53,17 +57,18 @@ dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --freex-resave-
 This generates the manifest rows backed by `XlsxCorpusFixtureFactory` under the run directory,
 including both `supported-pass` model fixtures and `supported-metadata-pass` package fixtures by
 default. It adds feature-tag expectations for formulas, structured tables, data validation,
-conditional formatting, hyperlinks, comments, images, sparklines, text boxes/shapes, protection,
-and PivotTables. Use `--corpus-status <status>` to narrow the generated set for focused runs.
+conditional formatting, named ranges, charts, hyperlinks, comments, images, sparklines,
+text boxes/shapes, protection, and PivotTables. Use `--corpus-status <status>` to narrow the
+generated set for focused runs.
 
-Formula, structured table, validation/conditional-format, hyperlink/comment, drawing/shape,
-sparkline/image, protection, and PivotTable feature fixtures have retention expectations, not just
-passive summary counts. When `--save-reopen` is used, the smoke fails if FreeX cannot load the
-expected feature metadata before Excel opens the staged workbook, if Excel open/reopen loses the
-expected formula cells, structured tables, worksheet shapes, or PivotTables, or if FreeX cannot
-reload the Excel-saved copy with the expected metadata still present. These supported FreeX-authored
-feature fixtures also fail on any FreeX load warning before Excel or after reloading Excel's saved
-copy.
+Formula, named-range, structured table, chart, validation/conditional-format, hyperlink/comment,
+drawing/shape, sparkline/image, protection, and PivotTable feature fixtures have retention
+expectations, not just passive summary counts. When `--save-reopen` is used, the smoke fails if
+FreeX cannot load the expected feature metadata before Excel opens the staged workbook, if Excel
+open/reopen loses the expected formula cells, named ranges, structured tables, charts, worksheet
+shapes, or PivotTables, or if FreeX cannot reload the Excel-saved copy with the expected metadata
+still present. These supported FreeX-authored feature fixtures also fail on any FreeX load warning
+before Excel or after reloading Excel's saved copy.
 For generated and local-private supported corpus rows without declared warning expectations, the
 smoke also fails on any FreeX load warning before Excel or after reloading Excel's saved copy.
 Public corpus rows without declared warning expectations now participate in the same no-warning

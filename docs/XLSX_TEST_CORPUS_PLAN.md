@@ -88,7 +88,7 @@ Allowed `expected_status` values:
 4. Reopen the saved file.
 5. Compare supported model features against the first loaded model.
 6. Verify expected unsupported/excluded warnings were emitted.
-7. Verify feature tags that have deterministic model signals, such as hyperlinks, merged cells, chart counts, and cell-type content.
+7. Verify feature tags that have deterministic model signals, such as named ranges, hyperlinks, merged cells, chart counts, and cell-type content.
 8. Compare retained critical package parts and relationship targets for known-gap packages.
 9. Record pass/fail by workbook and by feature bucket.
 
