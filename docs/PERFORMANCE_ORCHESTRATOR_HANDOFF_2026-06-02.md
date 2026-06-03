@@ -1217,3 +1217,39 @@ Repository checkpoint after viewport, mode-count, and formula-trace tail integra
   - Metrics: worker baseline for `PERF FORMULA_TRACE_LAYOUT_VISITOR` was `90.23 ms` visitor total / `5,160` bytes; final rebased focused sample was `72.91 ms` visitor total / `40` bytes.
   - Verification after final rebase: focused FormulaTrace filter passed `13/13`; full Release `FreeX.App.UI.Tests` passed `572/572`; `git diff --check HEAD~2..HEAD` passed.
 - All three worker agents from this wave have completed and can be closed after the source/docs push. Continue using linked worktrees from `origin/main`; the primary local `main` has unrelated local history and must not be used as the performance integration path.
+
+Repository checkpoint after sparse GridView, address-snapshot, and page-break metadata integrations:
+
+- `codex/perf-ui-model-tail-integration-20260603-r1` added rebased App.UI commit `d23c2ca5e`.
+  - Worker: `019e8d1b-3e77-7aa2-84cc-3355b08f7a67`.
+  - Change: `GridView.RenderCells` renders sparse styled-cell and merge-start surfaces from cached styled/merge entries instead of scanning every visible row/column coordinate for the background pass.
+  - Metrics: worker baseline for `GRID_RENDER_SPARSE_STYLED_SURFACES` was `432.78 ms` total / `27.03 ms` mean / `78,160` bytes; worker after-sample was `281.81 ms` total / `17.60 ms` mean / `73,712` bytes. Rebased focused samples were noisy but passed (`341.74 ms` total / `21.34 ms` mean / `82,648` bytes).
+  - Verification after final rebase: focused sparse-surface benchmark passed `1/1`; full Release `FreeX.App.UI.Tests` passed `573/573`; `git diff --check HEAD~3..HEAD` passed.
+- `codex/perf-ui-model-tail-integration-20260603-r1` added rebased Core.Model/Core.Commands commit `d6ee54151`.
+  - Worker: `019e8d1b-2a5a-7b32-88b5-ef5c4bf5ff2d`.
+  - Change: address-bearing row/column shift snapshot capture now uses pre-sized explicit helpers, shared empty snapshots, and `Sheet.StyleOnlyCellCount` instead of LINQ/materialized snapshot chains for empty collections.
+  - Metrics: representative allocation deltas from worker verification: `STYLE_ONLY_ROW_SHIFT` `3,860,760 -> 3,854,080` bytes, dense row/column shifts `10,560,832-10,622,992 -> 10,556,464-10,618,624` bytes, metadata shifts `6,928,936-7,075,528 -> 6,924,568-7,071,160` bytes, and `INSERT_ROWS_DENSE_TAIL_SHIFT` `223,720 -> 219,352` bytes. Rebased focused samples matched the after allocation range.
+  - Verification after final rebase: focused row/column benchmark set passed `10/10`; full Release `FreeX.Core.Model.Tests` passed `1905/1905`; `git diff --check HEAD~3..HEAD` passed.
+- `codex/perf-ui-model-tail-integration-20260603-r1` added rebased Core.IO commit `e4c486f94`.
+  - Worker: `019e8d1b-161f-7463-94d5-08f5585a5ef3`.
+  - Change: XLSX page-break metadata save streams modeled `SortedSet<uint>` breaks without `Where(...).Distinct().ToArray()`, skips modeled-break pre-scans when metadata is already present, counts total/manual breaks in one XML pass, and reuses a static worksheet insertion-order lookup.
+  - Metrics: `PERF XLSX_SAVE_PAGE_BREAK_METADATA` improved from `28,304,296` to `25,481,896` bytes over 20 saves (`~9.97%` allocation reduction). Rebased focused sample was `110.85 ms` total / `5.53 ms` mean / `25,481,896` bytes.
+  - Verification after final rebase: focused page-break benchmark/source guard passed `2/2`; full Release `FreeX.Core.IO.Tests` passed `1789/1789`; `git diff --check HEAD~3..HEAD` passed.
+- Local orchestrator census produced no additional patch:
+  - Formula: bounded streaming `LARGE`/`SMALL` and `AGGREGATE(14/15)` reduced allocation from about `800 KB` to `360-440` bytes, but regressed representative time (`LARGE` about `6.87 ms -> 21.36 ms`, `AGGREGATE(14)` about `8.81 ms -> 22.79 ms`), so it was reverted. `UNIQUE` single-column allocation is mostly required output/hash tracking, and returning shared cached lexer token lists would weaken the public mutable `List<Token>` contract.
+  - Core.Calc: conditional-format formula/style benchmark allocation is dominated by viewport output/context/style payload, while inside-cell large-range recalc allocation is Formula-owned. No safe Core.Calc-only patch was carried.
+- All workers from this wave completed. Continue using linked worktrees from `origin/main`; primary local `main` remains outside the performance integration path.
+
+Repository checkpoint after Calc lazy report allocation and Formula monotonic UNIQUE integrations:
+
+- `codex/perf-calc-formula-tail-integration-20260603-r1` added Core.Calc commit `db78be1ff`.
+  - Worker: `019e8d30-9313-7c70-91cc-8a4e34a6c729`.
+  - Change: `RecalcEngine` now allocates error and cycle report lists only when an error or cycle is actually recorded, and successful recalcs reuse shared empty read-only lists.
+  - Metrics: worker baseline for `Benchmark_RepeatedSmallChangeRecalc_ReportsAllocationDiagnostics` was `7.63 ms` / `340,040` bytes over 250 iterations; combined-branch focused sample was `5.32 ms` / `308,040` bytes (`1,232` bytes/iteration).
+  - Verification on the combined branch: focused Calc recalc/error/cycle set passed `4/4`; full Release `FreeX.Core.Calc.Tests` passed `679/679`.
+- `codex/perf-calc-formula-tail-integration-20260603-r1` added Formula commit `73494dc9e`.
+  - Worker: `019e8d30-aa80-7f42-9fe4-e39e9120409d`.
+  - Change: `UNIQUE` skips the `HashSet` and result-copy path for strictly monotonic numeric/date single-column ranges, returning the existing range payload when it is already unique.
+  - Metrics: worker baseline for `UNIQUE(A1:A20000)` was `20.63 ms` / `742,736` bytes; combined-branch focused sample was `162,120` bytes with the tightened guard `< 250,000` bytes.
+  - Verification on the combined branch: focused UNIQUE set passed `12/12`; full Release `FreeX.Core.Formula.Tests` passed `2726/2726`.
+- Integration note: the first parallel Calc focused verification hit a transient compiler output lock because two test commands built the same worktree simultaneously; the check was rerun sequentially and passed. Use sequential test runs per worktree for final verification.
