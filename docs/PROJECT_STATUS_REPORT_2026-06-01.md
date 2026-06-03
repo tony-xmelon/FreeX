@@ -1,8 +1,8 @@
 # FreeX Project Status Report
 
 Generated: 2026-06-01
-Observed at: 2026-06-01T23:52:30+03:00
-Report scope: current consolidated documentation/status snapshot after the June 1 evening integrations
+Observed at: 2026-06-03T18:40:00+03:00
+Report scope: current consolidated documentation/status snapshot after the June 1 evening integrations, with project history metrics refreshed through June 3
 Mainline observed: branch-neutral `origin/main` snapshot; worker-specific branch and worktree names are intentionally omitted from this status report
 
 ## Executive Summary
@@ -11,7 +11,7 @@ FreeX remains in late-stage parity hardening. The broad app surface is functiona
 
 Overall completion remains **95%** in [release/progress.json](../release/progress.json), which keeps tester builds in the `v0.8.<run>` stream. Overall completion estimate is now **95%**. The main remaining work is package-preserving XLSX validation, broader corpus proof, release signing/trust and human accessibility validation, localization review/pseudo-localization/package metadata, keytip/visual polish, and measured performance hardening.
 
-The project history metrics report now covers Git and provider-log activity from 2026-05-12 through 2026-05-31 inclusive. Through May 31, the daily churn table records **11,780 commits**, **14,464 changed-file/day entries**, **+1,429,132 / -922,973 LoC**, and local provider logs attribute **116,943,364,224 observed raw tokens** across OpenAI/Codex and Anthropic/Claude rows.
+The project history metrics report now covers Git and provider-log activity from 2026-05-12 through 2026-06-03 inclusive. Through June 3, the daily churn table records **14,560 commits**, **16,373 changed-file/day entries**, **+2,315,748 / -1,072,230 LoC**, and local provider logs attribute **159,975,270,570 observed raw tokens** across OpenAI/Codex and Anthropic/Claude rows.
 
 ## Current Repository Metrics
 
@@ -19,12 +19,12 @@ Metrics refreshed 2026-06-03 after the latest test-splitting, performance, and r
 
 | Metric | Count |
 | --- | ---: |
-| Tracked files | 2,830 |
-| C# source files under `src/` | 1,130 |
-| C# test files under `tests/` | 977 |
+| Tracked files | 2,856 |
+| C# source files under `src/` | 1,132 |
+| C# test files under `tests/` | 1,001 |
 | Markdown docs under `docs/` | 250 |
-| Current C# source LOC | 232,074 |
-| Current C# test LOC | 242,244 |
+| Current C# source LOC | 232,806 |
+| Current C# test LOC | 242,970 |
 | Current XAML LOC | 8,308 |
 | XLSX corpus manifest rows | 176 |
 
@@ -32,10 +32,10 @@ Metrics refreshed 2026-06-03 after the latest test-splitting, performance, and r
 
 | Item | Status |
 | --- | --- |
-| Mainline | Local `main` was clean at `063e23ccf` (`Merge ribbon measured correction performance`) |
+| Mainline | Local `main` was clean at `1da0ab389` (`Round-trip exact column widths through XLSX save/load`) |
 | Completion tracking | [release/progress.json](../release/progress.json) remains at `overallCompletion: 95` |
-| History metrics | [PROJECT_BUILD_HISTORY_METRICS.md](PROJECT_BUILD_HISTORY_METRICS.md) is refreshed through 2026-05-31 inclusive |
-| Branch posture | Parallel work is active again: observed 122 registered worktrees, 129 local branches, 13 branches not yet merged to `main`, and 2 dirty worker-owned worktrees. These were left untouched. |
+| History metrics | [PROJECT_BUILD_HISTORY_METRICS.md](PROJECT_BUILD_HISTORY_METRICS.md) is refreshed through 2026-06-03 inclusive |
+| Branch posture | Parallel work is active again: observed 531 registered worktrees and 548 local branches. Worker-owned worktrees were left untouched. |
 | Release posture | Tester-release automation can publish `.exe` and MSIX assets; signing/trust and public-preview evidence remain release-gate work |
 | Documentation posture | The docs index, backlog, next-phase plan, localization plan, fidelity report, and metrics report now point at the current app state |
 
@@ -74,8 +74,8 @@ Phase 7D: Deeper color-scale XLSX edge semantics as new gaps are found.
 6. **Resize-preview blocker stale-cleared**
    - The previously listed `MainWindowMouseResizeTests` resize-preview blocker is no longer open: targeted Release verification on `main` at `3ddbbebb3` passed 8/8.
 
-7. **History metrics extended through May 31**
-   - May 31 added 246 integrated commits, 258 changed files, +30,256 / -2,952 LoC, and 7,845,703,301 observed raw provider tokens.
+7. **History metrics extended through June 3**
+   - June 1-3 added 2,780 integrated commits, 1,909 changed-file/day entries, +886,616 / -149,257 LoC, and 43,031,906,346 observed raw provider tokens.
 
 8. **Second-wave non-chart parity slices landed**
    - Worksheet primary view-mode persistence, live web-query warning detection, data-validation XML semantic proof, AutoFilter color-menu availability, current-culture delimited import/Text to Columns numeric parsing, and grouped-sheet Selection Pane object propagation are integrated locally and reflected in the parity/backlog docs.
@@ -94,7 +94,7 @@ Phase 7D: Deeper color-scale XLSX edge semantics as new gaps are found.
 
 Parallel implementation remains expected. Mainline is the integration target, while worker-owned branches and worktrees may continue carrying active, dirty, or paused work. Before merging any implementation slice, keep syncing from `main`, verify relevant build/tests in the owning worktree, and leave unrelated worker-owned changes untouched.
 
-Observed worker state at 2026-06-01T20:40+03:00: 122 registered worktrees and 129 local branches. The dirty worktrees belonged to active chart parity lanes; this report does not treat those as mainline dirt.
+Observed worker state at 2026-06-03T18:40+03:00: 531 registered worktrees and 548 local branches. Worker-owned worktrees were left untouched, and this report does not treat them as mainline dirt.
 
 ## Remaining Outstanding Work
 
