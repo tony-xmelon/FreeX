@@ -836,7 +836,7 @@ Local orchestrator exploratory slice after drawing tails:
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `origin/main` is at or after `8f3a72eb3`. The primary local `main` may still contain unrelated local commits; do not push, reset, or overwrite it as part of the performance thread unless its owning session has verified and handed it over.
+2. Confirm `origin/main` is at or after `5778727fe`. The primary local `main` may still contain unrelated local commits; do not push, reset, or overwrite it as part of the performance thread unless its owning session has verified and handed it over.
 3. Start the next wave with disjoint scopes:
    - XLSX IO style-only/ignored-error load-save tail only if a larger semantics-safe streaming or package-normalization path is found; narrow cell/row insertion cursor tails are integrated.
    - NativeJson load pre-sizing is integrated; future NativeJson work should start from save paths or deeper load-model redesign rather than repeating the dense-load capacity slice.
@@ -973,3 +973,21 @@ Repository checkpoint after App.Host native visual filter, Core.IO no-patch, and
   - Focused IRR/financial Formula filter passed `101/101`; full `FreeX.Core.Formula.Tests` passed `2719/2719`.
   - `git diff --check HEAD~1..HEAD` passed for both integrated code slices.
 - The primary local `main` remained untouched; continue using linked worktrees from `origin/main` for the performance thread and do not push or reset primary `main` wholesale.
+
+Repository checkpoint after Host selection, App.UI formula-trace, and Pivot refresh integrations:
+
+- `origin/main` was advanced to `8fff95db5` with `codex/perf-host-status-selection-tail-20260603-r1`.
+  - Change: selection-driven FormulaBar updates now use the same skip-unchanged and temporary undo-disable pattern as the name box.
+  - Metric: focused samples improved `NON_DRAG_SELECTION_TOOLBAR` from `11,842,696` bytes to about `11,680,992` bytes, and `ADDITIONAL_SELECTION_DRAG_TOOLBAR` from `3,861,912` bytes to about `3,822,864` bytes. `SELECTION_DRAG_STATUS` stayed essentially flat at about `2.746 MB`.
+  - Verification: focused Host selection/source-guard set passed `30/30` after the final rebase; full `FreeX.App.Host.Tests` passed `5806/5807` with `1` skipped before the last unrelated non-Host rebase; `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `829960874` with `codex/app-ui-render-allocation-tail-20260603`.
+  - Worker: `019e8c13-fa19-72d0-b251-a6979c5d3bf6`.
+  - Change: formula-trace arrows render through a cached frozen layer drawing, invalidated by trace inputs/viewport changes and guarded by snapshot comparison for reused mutable arrow lists.
+  - Metric: `GRID_RENDER_FORMULA_TRACE_LAYER_CACHE` was `271,328` bytes over 48 renders for 1,000 arrows on the rebased integration branch; direct visible-arrow draw remains about `5,306,536` bytes in the comparison benchmark.
+  - Verification: formula-trace focused benchmarks/source guards passed `9/9`, full `FreeX.App.UI.Tests` passed `571/571`, and `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `5778727fe` with `codex/core-model-commands-tail-20260603`.
+  - Worker: `019e8c14-5799-74d1-8b68-1d9b35183bba`.
+  - Change: Pivot refresh reuses the already-retained row list when visible column keys exactly cover all populated column-key buckets after filters and sorts; filtered/no-data/partial groups stay on the old filtered-list path.
+  - Metric: `PIVOT_REFRESH_COLUMN_VALUE_FILTER_SORT` allocation improved from `12,980,200` bytes to `9,171,904` bytes; final focused sample was `mean_ms=32.94`.
+  - Verification: pivot refresh/command focused set passed `178/178`, full `FreeX.Core.Model.Tests` passed `1896/1896`, and `git diff --check HEAD~1..HEAD` passed.
+- Primary local `main` remained outside the performance integration path; verified performance work continued through linked worktrees and fast-forward pushes to `origin/main`.
