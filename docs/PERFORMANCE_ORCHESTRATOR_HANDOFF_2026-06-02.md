@@ -1357,3 +1357,49 @@ Repository checkpoint after Formula TEXTJOIN direct-range integration:
 - Remaining active worker:
   - `019e8ddb-3b17-7413-ad7a-418bbb5fcf09`: App.Host performance tail, still running and needs rebase/review once it reports a final commit.
 - Hourly thread heartbeat automation `hourly-performance-orchestrator-status` was removed/not found in the app automation registry; do not recreate it unless the user explicitly asks.
+
+Repository checkpoint after Host planner, Calc number-format, and UI drawing-bound integrations:
+
+- `origin/main` was advanced to `8a7c9370f` with `codex/perf-host-calc-ui-integration-20260603-r1`.
+- The integration added rebased Core.Calc commit `fc75dd05c`.
+  - Change: plain single-section numeric formats such as `#,##0.00` use a direct invariant numeric formatting fast path while Excel-specific formats keep the existing path.
+  - Metrics: `NUMBERFORMAT_SINGLE_SECTION` sampled `83.44 ms` / `640,040` bytes in focused integration verification; worker baseline was `135.97 ms` / `2,160,040` bytes.
+  - Verification: focused number-format set passed `380/380`; full Release `FreeX.Core.Calc.Tests` passed `682/682` before the last fast-moving-main rebase; post-rebase focused gate passed `380/380`.
+- The integration added rebased App.UI commit `fa18ea202`.
+  - Change: drawing-object renderable row/column bound scans stop at the first metric past the viewport edge instead of walking every metric.
+  - Metrics: `DRAWING_OBJECT_RENDERABLE_BOUNDS` sampled `1.30 ms` total / `8,232` bytes after the change; worker baseline was `601.95 ms` total.
+  - Verification: focused drawing/render performance set passed `73/73`; full Release `FreeX.App.UI.Tests` passed `577/577` before the last fast-moving-main rebase; post-rebase focused gate passed `73/73`.
+- The integration added rebased App.Host commit `8a7c9370f`.
+  - Change: `SlicerTimelinePlanner.GetNativeVisualFilters` caches paired visible slicer/timeline planning for unchanged workbook/sheet state, with validation on workbook reference, active pivot-name set reference, control counts, control model references, source pivot names, and drawing-anchor presence.
+  - Metrics: `NATIVE_VISUAL_FILTERS_LARGE_PAIRED` improved from the local baseline `435.89 ms` / `9,622,440` bytes to focused samples of `61-63 ms` / `40` bytes; final integration focused sample was noisier at `177.32 ms` / `40` bytes.
+  - Verification: focused Host planner/source-hygiene set passed `175/175`; full Release `FreeX.App.Host.Tests` passed `5829/5830` with the expected `SharedAppInstance_CoversLiveUiScenarios` skip before the last fast-moving-main rebase; post-rebase focused gate passed `175/175`.
+- Primary local `main` remained outside the performance integration path.
+
+Repository checkpoint after Formula lookup, Calc leaf-report, NativeJson integer-load, and chart-format integrations:
+
+- `origin/main` was advanced to `6239ad73f` with `codex/perf-formula-calc-integration-20260603-r1`.
+- The integration added rebased Core.Formula commit `1e26a0dbd`.
+  - Worker: `019e8e7f-3ed6-7f71-a97d-d48ab781f5e7`.
+  - Change: direct lookup fast paths now use `DirectLookupRangeReader`, resolving the target sheet once per vector for large direct `VLOOKUP`/`HLOOKUP`/`MATCH`/`LOOKUP`/`XMATCH`/`XLOOKUP` scans.
+  - Metrics: worker baseline `PERF VLOOKUP_LARGE_DIRECT_TABLE` was `196.65 ms` / `64` bytes; integration focused sample was `30.70 ms` / `64` bytes.
+  - Verification after integration: focused Lookup/Performance set passed `141/141`; full Release `FreeX.Core.Formula.Tests` passed `2748/2748`.
+- The integration added rebased Core.Calc commit `adf2bdfc0`.
+  - Change: leaf formula-root recalculation reuses the caller's one-cell changed set when the changed cell is itself a formula and builds a one-item recalculated report without a list-backed report allocation.
+  - Metrics: `LEAF_FORMULA_ROOT_RECALC` improved from current-main `4,880,040` bytes (`488` bytes/iteration) to `2,000,040` bytes (`200` bytes/iteration) over `10,000` iterations.
+  - Verification after integration: focused leaf/source/dependency set passed `3/3`; full Release `FreeX.Core.Calc.Tests` passed `682/682`.
+- The integration added rebased Core.IO commit `b7c31ee71`.
+  - Worker: `019e8e7f-8ddc-79c1-bbef-413c0ffc8f78`.
+  - Change: native JSON numeric load fast-parses plain signed integer strings before falling back to the existing culture-aware `double.TryParse` path; decimals, exponents, overflow, and non-finite values keep existing behavior.
+  - Metrics: worker baseline `NATIVE_JSON_LOAD_DENSE` was `509.88 ms` mean / `37,784,280` bytes and focused after-sample was `157.98 ms` / `37,782,672` bytes; integration focused sample was `189.06 ms` / `37,782,672` bytes. `NATIVE_JSON_LOAD_REPEATED_STYLES` integration focused sample was `175.60 ms` / `21,451,048` bytes.
+  - Verification after integration: focused load/scalar set passed `3/3`; full Release `FreeX.Core.IO.Tests` passed `1815/1815`.
+- The integration added rebased App.UI commit `6239ad73f`.
+  - Worker: `019e8e7f-a21a-7b22-b777-05a1d1f8b74b`.
+  - Change: chart series and point-format lookup paths use reverse indexed scans instead of per-series/per-point `LastOrDefault` predicates, preserving last-format-wins semantics while avoiding LINQ predicate/closure overhead.
+  - Metrics: worker baseline dense chart-format benchmark was `13.0962 ms` mean / `26,991,440` bytes; integration focused sample was `2.7330 ms` mean / `24,787,296` bytes.
+  - Verification after integration: focused chart renderer set passed `104/104`; full Release `FreeX.App.UI.Tests` passed `579/579`.
+- Active workers launched after this push:
+  - `019e8e91-2c71-7991-8d4e-191f5a9c185a`: App.Host current performance tail, scope `src/FreeX.App.Host/**` and `tests/FreeX.App.Host.Tests/**`.
+  - `019e8e91-40ab-76c2-896c-f110798cdc7a`: Core.Model/Core.Commands current performance tail, scope `src/FreeX.Core.Model/**`, `src/FreeX.Core.Commands/**`, and `tests/FreeX.Core.Model.Tests/**`.
+  - `019e8e91-5761-7df2-be60-6c19a7900730`: Core.IO current performance tail, scope `src/FreeX.Core.IO/**` and `tests/FreeX.Core.IO.Tests/**`.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` currently contains unrelated local chart/PDF/XLSX history and is divergent from `origin/main`; continue performance integration from linked worktrees based on `origin/main`.
