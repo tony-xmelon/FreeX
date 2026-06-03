@@ -1280,3 +1280,24 @@ Repository checkpoint after CommandGuards editability guard integration:
   - Change: `CommandGuards.CanEditCell` now checks protected-sheet allow-edit ranges with an explicit loop instead of a captured LINQ `Any(...)` predicate. This avoids per-cell closure allocation even on unprotected sheets where the method returns immediately.
   - Metrics: `PERF ADVANCED_FILTER_COPY_UNIQUE_DENSE` allocation dropped from the current-main baseline `8,272,024` bytes to `2,893,624` bytes over five repeated Advanced Filter copy-unique runs. The guard now asserts `< 3,500,000` bytes.
   - Verification: focused Advanced Filter/source/protected-destination set passed `4/4`; full `AdvancedFilterCommandTests` passed `17/17`; the two unrelated timing-only `CellAddressTests` guards passed focused after failing under parallel full-suite load; full Release `FreeX.Core.Model.Tests` passed `1906/1906` with `RunConfiguration.DisableParallelization=true`.
+
+Repository checkpoint after Formula, Core.IO, and App.UI tail-worker integration:
+
+- `codex/perf-tail-worker-integration-20260603-r1` added the rebased Core.Formula slice.
+  - Worker: `019e8dac-86fd-7341-82a6-9c137427fd6a`.
+  - Change: `FormulaEvaluator` now caches immutable integer `NumberValue` instances through `64` instead of `16`, covering common cached-AST scalar arithmetic results.
+  - Metrics: `RepeatedFormulaTextEvaluation_ReusesParsedAst` allocation improved from the worker baseline `480,040` bytes over `20,000` evaluations to the integrated sample `109.50 ms` / `40` bytes. Worker timing samples were noisy but remained within the existing performance guard.
+  - Verification after integration: full Release `FreeX.Core.Formula.Tests` passed `2742/2742`; focused cached-integer/formula-text set passed `2/2`; detailed rerun of the formula-text guard passed `1/1`.
+- `codex/perf-tail-worker-integration-20260603-r1` added the rebased Core.IO slice.
+  - Worker: `019e8dac-52d7-7192-bba8-f39fb090ce8f`.
+  - Change: advanced conditional-format differential-style order normalization now scans for already-ordered native payloads and only copies/sorts child elements when the payload is actually out of order.
+  - Metrics: `XLSX_SAVE_ADVANCED_CONDITIONAL_FORMATTING` allocation improved from the worker baseline `46,672,104` bytes to the integrated focused sample `44,597,600` bytes. Timing was noisy and not treated as an improvement.
+  - Verification after integration: full Release `FreeX.Core.IO.Tests` passed `1800/1800`; focused benchmark/source/schema filter passed `3/3`.
+- `codex/perf-tail-worker-integration-20260603-r1` added the rebased App.UI slice.
+  - Worker: `019e8dac-2113-77b1-847c-7632b4123c1d`.
+  - Change: formula trace layout planning avoids list materialization for the visitor path and routes overlay drawing through the allocation-light visitor flow.
+  - Metrics: `FORMULA_TRACE_LAYOUT_VISITOR` materialized path improved from the worker baseline `145.44 ms` / `38,409,000` bytes to the integrated sample `245.21 ms` / `25,603,880` bytes. The integrated visitor path sampled `130.17 ms` / `40` bytes.
+  - Verification after integration: full Release `FreeX.App.UI.Tests` passed `575/575`; focused FormulaTrace filter passed `13/13`.
+- Local orchestrator census after the CommandGuards slice produced no additional patch:
+  - App.Host performance subset passed `31/31`; remaining large lines were known output/materialization, WPF, or already-covered ribbon/status paths.
+  - Core.Model/Core.Commands and Core.Calc performance subsets passed locally; the remaining tails were dominated by required snapshots, returned metric payloads, result strings, or Formula-owned paths.
