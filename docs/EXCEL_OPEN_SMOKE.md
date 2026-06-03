@@ -58,8 +58,9 @@ dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --generate-exce
 
 That command creates an Excel-authored workbook through COM under the run directory, including a
 native table, data validation, conditional formatting, comment, hyperlink, text box, named range,
-and native PivotTable/pivot cache. It then loads and saves the workbook through `XlsxFileAdapter`,
-then validates the FreeX-saved copy with the same Excel open/`SaveCopyAs`/close/reopen sequence.
+worksheet/workbook protection, and native PivotTable/pivot cache. It then loads and saves the
+workbook through `XlsxFileAdapter`, then validates the FreeX-saved copy with the same Excel
+open/`SaveCopyAs`/close/reopen sequence.
 The FreeX-first path adds a small `FreeXSmoke` marker worksheet before saving so the adapter writes
 a new package instead of preserving an unchanged source package.
 
@@ -148,8 +149,10 @@ As of 2026-06-03 on the local desktop Excel COM environment:
   (`--freex-resave-before-excel --generate-freex-feature-fixtures`): `8/8`.
 - The Excel-authored fixture, including a native Excel PivotTable and pivot cache, passed
   Excel-authored -> FreeX save/edit -> Excel open/`SaveCopyAs`/close/reopen -> FreeX reopen:
-  `1/1`. The FreeX source load and reopened Excel save both reported `pivots 1; pivot caches 1`,
-  and the FreeX-saved workbook passed Open XML SDK schema validation with `errors=0`.
+  `1/1`. The fixture also covers an Excel-authored text box, comment, hyperlink, worksheet
+  protection, and workbook structure protection. The FreeX source load and reopened Excel save both
+  reported `pivots 1; pivot caches 1`, and the FreeX-saved workbook passed Open XML SDK schema
+  validation with `errors=0`.
 - Pivot retention assertions passed for the FreeX-authored pivot fixture after Excel rewrote the
   workbook/pivot-table cache id to `0`; the FreeX source load and reopened Excel save both reported
   `pivots 1; pivot caches 1`, and the FreeX-saved workbook passed Open XML SDK schema validation
