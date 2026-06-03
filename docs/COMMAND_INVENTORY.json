@@ -1128,7 +1128,7 @@
         {
           "name": "Spell Check",
           "status": "Partial",
-          "notes": "Broader known-corrections scan across text cells, notes, threaded comment roots, and threaded comment replies with casing-preserving replace, replace-all, case-insensitive Ignore All, persisted Add to Dictionary custom dictionary suppression across sessions/workbooks via FreeX options, and internet/email/file-address span skipping including quoted/bracketed file paths with spaces; no full dictionary/proofing engine"
+          "notes": "Broader known-corrections scan across text cells, notes, threaded comment roots, and threaded comment replies with casing-preserving replace, replace-all including repeated-word run collapse, case-insensitive Ignore All, persisted Add to Dictionary custom dictionary suppression across sessions/workbooks via FreeX options, and internet/email/file-address span skipping including quoted/bracketed file paths with spaces; no full dictionary/proofing engine"
         },
         {
           "name": "Thesaurus",
@@ -2437,7 +2437,7 @@
         {
           "name": "Spell Check",
           "status": "Partial",
-          "notes": "Broader known-corrections scan across text cells, notes, threaded comment roots, and threaded comment replies with casing-preserving replace, replace-all, case-insensitive Ignore All, persisted Add to Dictionary custom dictionary suppression across sessions/workbooks via FreeX options, and internet/email/file-address span skipping including quoted/bracketed file paths with spaces; no full dictionary/proofing engine"
+          "notes": "Broader known-corrections scan across text cells, notes, threaded comment roots, and threaded comment replies with casing-preserving replace, replace-all including repeated-word run collapse, case-insensitive Ignore All, persisted Add to Dictionary custom dictionary suppression across sessions/workbooks via FreeX options, and internet/email/file-address span skipping including quoted/bracketed file paths with spaces; no full dictionary/proofing engine"
         },
         {
           "name": "Thesaurus",
