@@ -78,8 +78,9 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `264b846af` - Honored the Options default sheet count for File > New and startup-new workbooks by routing creation through a normalized `NewWorkbookFactory` with `Sheet1` through `SheetN` names.
 - `66ba1f053` - Added stable UI Automation IDs, names, and help text to remaining Backstage sidebar commands: Back, Home, New, Open, Save, Save As, and Close.
 - `275e51aa0` - Checked visible structured-table header cells directly in Accessibility Checker so retained table-column metadata no longer masks blank imported headers.
+- `f8369bb19` - Honored manual worksheet row and column page breaks in the shared print renderer pagination path, so print preview, PDF, XPS, and workbook export split pages at modeled/imported break IDs.
 
-Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, and Selection Pane mixed reorder coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
+Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, Selection Pane mixed reorder coverage, and manual worksheet page-break metadata/storage/preview coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full workbook theme effect fidelity beyond the bounded shadow/glow approximations, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
 ## Verification Completed
 
@@ -165,6 +166,12 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Accessibility Checker visible table-header-cell slice.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Accessibility Checker visible table-header-cell slice.
 - `git diff --check` - clean after the Accessibility Checker visible table-header-cell slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~PrintLayoutPlannerTests" -v:minimal` - 9/9 passed after the manual page-break print-pagination slice.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~PrintRendererPageSetupTests" -v:minimal` - passed after the manual page-break print-pagination slice.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the manual page-break print-pagination slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the manual page-break print-pagination slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the manual page-break print-pagination slice.
+- `git diff --check` - clean after the manual page-break print-pagination slice.
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~QuickAccessToolbarCustomizationPlannerTests|FullyQualifiedName~QuickAccessCommandStateResolverTests|FullyQualifiedName~ReviewCommandSourceTests|FullyQualifiedName~DrawCommandSourceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed after the default shape-name slice.
@@ -230,6 +237,7 @@ Completed and merged lanes from this wave:
 - Resume / Options default sheet count for new workbooks: completed, pushed to `origin/main`.
 - Resume / Backstage sidebar UIA metadata: completed, pushed to `origin/main`.
 - Resume / Accessibility Checker visible table header cells: completed, pushed to `origin/main`.
+- Resume / Manual page breaks in print pagination: completed, pushed to `origin/main`.
 
 Read-only resume auditors:
 
@@ -238,6 +246,8 @@ Read-only resume auditors:
 - Review/Data audit: `019e8aa7-7901-7323-8e62-d6d67755203c` completed without edits; it identified the displayed non-text low-contrast cell value slice and the now-completed Flash Fill blank-source selected-range candidate.
 - File/Backstage/Options audit: `019e8aa7-540c-7283-8bad-6414b5f6331b` completed without edits; it identified Options default-save-format and Backstage Share/Info/Export UIA metadata candidates.
 - Options default-save-format follow-up audit: `019e8ab2-862d-7633-b388-a23832ab9d1e` completed without edits; it confirmed the prior `.json`/`.fxl` Options and Save As default-format mismatch was a real, bounded but broader host/IO/localization slice.
+- Page Layout / manual page-break print-pagination audit: `019e8b11-b8db-7b11-82f5-6aaf2b4e8776` completed without edits; it confirmed manual row/column breaks were modeled, persisted, and shown in Page Break Preview but ignored by `PrintRenderer` pagination before the now-completed slice.
+- Draw / workbook theme effect fidelity audit: `019e8b11-de99-7c82-9853-55743f3e6182` completed without edits; it confirmed deeper theme/effect fidelity remains broad, with only a tightly scoped theme-glow approximation for shapes/text boxes as a possible future bounded slice.
 
 Subagents from the prior non-chart wave were marked for closure:
 
