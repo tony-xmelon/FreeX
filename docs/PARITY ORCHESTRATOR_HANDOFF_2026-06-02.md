@@ -87,6 +87,7 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `136ae1d0a` - Resolved bounded custom number-format workbook-theme color directives with optional `TintNN`/`TintNN%` suffixes through the active workbook theme for formatter and viewport display paths, and regenerated command-surface parity docs.
 - `e65c7f022` - Counted modeled hyperlinks as hidden sheet/row/column content in Accessibility Checker hidden-content scans, including hyperlink-only hidden sheets and blank-cell hyperlinks in hidden rows or columns, and regenerated command-surface parity docs.
 - `9e3c95864` - Added deterministic Flash Fill inference for final slash/backslash path segment stems with extension removal, while rejecting no-extension or no-path remaining values, and regenerated command-surface parity docs.
+- `a2d54dfbb` - Collapsed repeated-word runs during Spell Check Replace All so overlapping detections such as `the the the` reduce to one word instead of leaving a duplicate pair, with host planner coverage and regenerated command-surface parity docs.
 
 Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, Selection Pane mixed reorder coverage, and manual worksheet page-break metadata/storage/preview coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full workbook theme effect fidelity beyond the bounded shadow/glow approximations, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
@@ -129,6 +130,14 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Flash Fill path-stem slice.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Flash Fill path-stem slice.
 - `git diff --check` - clean after the Flash Fill path-stem slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~SpellCheckServiceTests" -v:minimal` - 30/30 passed after the repeated-word Replace All slice.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~SpellCheckWorkflowPlannerTests" -v:minimal` - 17/17 passed after the repeated-word Replace All slice; an earlier parallel run timed out/locked outputs, no stale test process remained, and the clean rerun passed.
+- `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the repeated-word Replace All slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated Spell Check generated docs after the repeated-word Replace All slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the repeated-word Replace All slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the repeated-word Replace All slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the repeated-word Replace All slice.
+- `git diff --check` - clean after the repeated-word Replace All slice.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated QAT and Accessibility Checker generated docs.
