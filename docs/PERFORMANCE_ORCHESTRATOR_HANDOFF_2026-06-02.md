@@ -1468,6 +1468,35 @@ Repository checkpoint after Model/Commands structured-table filter and Core.IO s
 - Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
 - Primary local `main` remains untouched; continue performance integration from linked worktrees based on `origin/main`.
 
+Repository checkpoint after Core.Formula direct statistical selection buffer pooling:
+
+- `origin/main` was advanced to `9aafbb9e` with `codex/perf-formula-selection-pool-integration-20260603-r1`.
+- The integration added rebased Core.Formula commit `9aafbb9e`.
+  - Worker: `019e8ef2-f3a4-7403-9b66-7f346eb7606f`; integration added a grow-path correctness fix and regression test before push.
+  - Change: direct statistical selection fast paths now use an `ArrayPool<double>`-backed `DirectSelectionBuffer` instead of allocating a fresh large `List<double>` backing array for every large direct-range `LARGE`, `SMALL`, `PERCENTILE`, and selection-style `AGGREGATE`. The integration also preserves collected values when combined direct ranges exceed the preallocation limit and the buffer has to grow.
+  - Metrics: worker allocation-focused samples improved `LARGE(A1:A100000,10)` and `SMALL(A1:A100000,10)` from `800,208` bytes to `184` bytes, `PERCENTILE(A1:A100000,0.5)` from `800,232` bytes to `208` bytes, and selection `AGGREGATE` cases from about `800,256-800,304` bytes to `232-280` bytes. Integration focused samples after the grow fix stayed in the same range: `184-280` bytes.
+  - Verification after integration: focused selection/grow-path set passed `9/9`; full Formula performance filter passed `78/78`; full Release `FreeX.Core.Formula.Tests` passed `2750/2750`; `git diff --check origin/main...HEAD` passed before push.
+- Completed Core.Formula worker `019e8ef2-f3a4-7403-9b66-7f346eb7606f` can be closed after this docs push.
+- Still-running worker:
+  - `019e8ed1-b4cd-7180-abd1-73756789dba5`: App.Host current performance tail.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` remains untouched; continue performance integration from linked worktrees based on `origin/main`.
+
+Repository checkpoint after App.UI dense chart data-label format lookup integration:
+
+- `origin/main` was advanced to `1b0cd8149` with `codex/perf-ui-chart-label-lookup-integration-20260603-r1`.
+- The integration added rebased App.UI commit `1b0cd8149`.
+  - Worker: `019e8ef3-07e6-7820-ac59-d59f99dea73c`.
+  - Change: dense point-specific chart data-label formats now build one per-render lookup instead of reverse-scanning the full point-format list for every annotation. Sparse format lists keep the reverse-scan fallback, and duplicate dense formats preserve last-format-wins semantics.
+  - Metrics: worker same-base sample for `CHART_BUILD_DENSE_FORMAT_LOOKUPS` improved from `372.34 ms` / `16,566,096` bytes to `267.69 ms` / `17,346,896` bytes; worker focused rerun sampled `119.12 ms` / `17,346,896` bytes. Integration focused samples after replay were `158.49 ms` / `17,346,896` bytes in the chart set and `242.74 ms` / `17,346,896` bytes in the broader UI perf set. Timing is the stable improvement signal; allocation rises about `781 KB` to hold the dense lookup.
+  - Verification after integration: focused `ChartRendererTests|ChartRendererPerformanceMeasurementTests` passed `105/105`; UI performance/render subset passed `97/97`; full Release `FreeX.App.UI.Tests` passed `582/582`; `git diff --check origin/main...HEAD` passed before push.
+- Completed App.UI worker `019e8ef3-07e6-7820-ac59-d59f99dea73c` can be closed after this docs push.
+- Still-running workers:
+  - `019e8ed1-b4cd-7180-abd1-73756789dba5`: App.Host current performance tail.
+  - `019e8ef2-f3a4-7403-9b66-7f346eb7606f`: Core.Formula current performance tail.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` remains untouched; continue performance integration from linked worktrees based on `origin/main`.
+
 Repository checkpoint after Core.Calc sparse viewport metric integration:
 
 - `origin/main` was advanced to `fa0d0eb63` with `codex/perf-calc-sparse-viewport-integration-20260603-r1`.
