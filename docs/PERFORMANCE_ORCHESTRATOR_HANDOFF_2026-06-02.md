@@ -1091,3 +1091,18 @@ Repository checkpoint after conditional-icon DTO, Formula direct SUBTOTAL/AGGREG
 - Remaining active worker:
   - `019e8c79-86bc-7e42-8654-b1f3a0d6eaab`: App.Host performance-review tail, still running at this checkpoint.
 - The primary local `main` remained untouched and divergent; verified performance work continued through linked worktrees and fast-forward pushes to `origin/main`.
+
+Repository checkpoint after App.Host no-patch and Formula statistical-selection integration:
+
+- App.Host worker `019e8c79-86bc-7e42-8654-b1f3a0d6eaab` completed with no patch on `codex/perf-app-host-tail-20260603-r1`.
+  - Evidence: Release `PerformanceReviewMeasurementTests` passed `17/17`.
+  - Clean final samples included `RIBBON_RESIZE` `20,646,544` bytes, `RIBBON_FORCE_COMPACT` `22,343,720` bytes, `RIBBON_COLLAPSED_BUTTON_FOOTPRINT` `3,264,568` bytes, `NON_DRAG_SELECTION_TOOLBAR` `16,114,576` bytes, `SELECTION_DRAG_STATUS` `3,455,312` bytes, `ADDITIONAL_SELECTION_DRAG_TOOLBAR` `5,697,920` bytes, and `RIBBON_FORCE_COMPACT_SKIP` `450,656` bytes.
+  - Rejected candidate: removing drag name-box updates cut `SELECTION_DRAG_STATUS` allocation, but removed visible UI behavior. Undo-suppression/`SetCurrentValue` variants were noisy or regressed additional-selection drag, so they were reverted.
+- `origin/main` was advanced to `ddc4376e8` with `codex/perf-formula-current-tail-20260603-r1`.
+  - Change: `LARGE`, `SMALL`, percentile/quartile direct ranges, and `AGGREGATE` functions 12-19 now stream direct/named ranges into the numeric selection buffer instead of materializing an intermediate `RangeValue`; unsupported mixed scalar/array cases still fall back to the existing path.
+  - Metrics: top-level `LARGE`/`SMALL`/`PERCENTILE` improved from `1,600,320` bytes to `800,232` bytes; `AGGREGATE(12/14/15/16/18)` improved from about `2,897,856-2,897,888` bytes to `800,304-800,352` bytes; `AGGREGATE(13)` mode improved from `4,872,432` bytes to `4,072,360` bytes.
+  - Verification: focused selection filter passed `9/9`; full Formula performance filter passed `71/71`; full Release `FreeX.Core.Formula.Tests` passed `2726/2726`; focused statistical/Aggregate semantic filter passed `164/164`; `git diff --check HEAD~1..HEAD` passed.
+- Active workers at this checkpoint:
+  - `019e8ca0-4cb8-7442-b4dc-7535fd558a54`: Core.Calc current performance tail, scope `src/FreeX.Core.Calc/**` and `tests/FreeX.Core.Calc.Tests/**`.
+  - `019e8ca0-f355-7a41-99ad-8682351da88f`: App.UI current render/allocation tail, scope `src/FreeX.App.UI/**` and `tests/FreeX.App.UI.Tests/**`.
+- The primary local `main` remained untouched and divergent; verified performance work continued through linked worktrees and fast-forward pushes to `origin/main`.
