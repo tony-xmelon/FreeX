@@ -212,6 +212,14 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the same-sheet named-range omitted-adjacent slice.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the same-sheet named-range omitted-adjacent slice.
 - `git diff --check` - clean after the same-sheet named-range omitted-adjacent slice.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "SelectionPaneDialog_ExposesStableAutomationIds|SelectionPaneDialogItem_AutomationIdsIncludeKindAndObjectId" --logger "console;verbosity=normal"` - failed before the Selection Pane UIA metadata implementation with missing `SelectionPaneDialogItem` AutomationId properties, then passed 2/2 after `5144947c6`.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~SelectionPanePlannerTests" -v:minimal` - 36/36 passed after the Selection Pane stable AutomationIds slice.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the Selection Pane stable AutomationIds slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated Selection Pane command-surface docs after the stable AutomationIds slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the Selection Pane stable AutomationIds slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Selection Pane stable AutomationIds slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Selection Pane stable AutomationIds slice.
+- `git diff --check` - clean after the Selection Pane stable AutomationIds slice.
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~QuickAccessToolbarCustomizationPlannerTests|FullyQualifiedName~QuickAccessCommandStateResolverTests|FullyQualifiedName~ReviewCommandSourceTests|FullyQualifiedName~DrawCommandSourceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed after the default shape-name slice.
@@ -283,6 +291,7 @@ Completed and merged lanes from this wave:
 - Resume / Print Comments At End total-page tokens: completed on `a3e4e6230`.
 - Resume / Error Checking statistical aggregate omitted-adjacent detection: completed on `c0f981318`.
 - Resume / Error Checking same-sheet named-range omitted-adjacent detection: completed on `9d578e9af`.
+- Resume / Selection Pane stable AutomationIds: completed on `5144947c6`.
 
 Read-only resume auditors:
 
