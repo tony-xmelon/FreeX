@@ -359,6 +359,19 @@ All items below were verified, pushed to their `codex/` branches, and fast-forwa
   - Focused insert/delete row/column tests passed `58/58`.
   - Full `FreeX.Core.Model.Tests` passed `1872/1872`.
 
+### App.UI Formula Trace Arrow Drawing Tail
+
+- Branch: `codex/perf-app-ui-trace-render-tail-20260603-r1`.
+- Commit: `b2c4e3bdf`.
+- Change: visible formula-trace arrow rendering now reuses cached frozen `DrawingGroup` instances keyed by start/end points, while preserving the existing frozen arrowhead geometry cache and clearing both caches on formula-trace input changes.
+- Metrics:
+  - Pre-change focused baseline: `FORMULA_TRACE_VISIBLE_ARROW_DRAW` about `36,913,576` bytes, `30.97 ms` mean.
+  - Final focused post-rebase sample: `5,306,536` bytes, `2.96 ms` mean.
+  - Final full-suite sample: `5,306,536` bytes, `1.49 ms` mean.
+- Verification:
+  - Focused formula trace benchmark/source-guard set passed `2/2`.
+  - Full `FreeX.App.UI.Tests` passed `567/567`.
+
 ## Other Main Integrations During This Wave
 
 Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, QAT validation, Flash Fill parity coverage clarification, and parity handoff updates.
@@ -390,6 +403,7 @@ The obvious high-impact backlog is reduced but not exhausted.
 5. App.UI render:
    - Text-heavy and wrapped render allocations are now down to tens of KB in recent samples.
    - Selection-only repaint improved from about `1.04 MB` to about `0.40-0.43 MB`; render timings remain noisy.
+   - Formula-trace visible arrow drawing improved from about `36.9 MB` to `5.3 MB`; remaining formula-trace layout visitor allocation is about `1.19 MB`.
 
 ## Subagent Status
 
@@ -427,10 +441,13 @@ Restarted 2026-06-03 workers after Codex restart:
 
 - `019e8aee-d2ca-73d2-910a-69e2d3451dd1`: App.Host drag-status/ribbon compact tail, still running.
 - `019e8aee-e6ff-79f1-bfec-cf36cb75b866`: Core.Commands dense-shift tail, completed; rebased commit `5de331aac` integrated to `origin/main`.
+- `019e8b08-ae70-7c80-b40e-fa0432e027e1`: App.Host drag-status/ribbon compact tail, restarted after the user-requested Codex restart; running.
+- `019e8b08-c2a0-7992-bd1f-a9fe95c32e3f`: XLSX dense mutated save regression, restarted after the user-requested Codex restart; running.
 
 Local orchestrator slices after restart:
 
 - `codex/perf-xlsx-metadata-save-tail-20260603-r1`: XLSX ignored-errors worksheet save tail, completed; commit `ca85fa850` integrated to `origin/main`.
+- `codex/perf-app-ui-trace-render-tail-20260603-r1`: App.UI formula-trace visible arrow drawing cache, completed; rebased commit `b2c4e3bdf` integrated to `origin/main`.
 
 ## Resume Checklist
 
@@ -438,12 +455,13 @@ Local orchestrator slices after restart:
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `main` and `origin/main` are aligned at or after `1a04e7c9d`.
+2. Confirm `origin/main` is at or after `b2c4e3bdf`. The primary local `main` may still contain unrelated local refactor commits; do not push or overwrite them as part of the performance thread unless their owning session has verified them.
 3. Start the next wave with disjoint scopes:
    - Check the active App.Host drag-status/ribbon compact worker and integrate if complete.
+   - Check the active XLSX dense mutated save regression worker and integrate if complete.
    - XLSX IO ignored-errors/data-validation metadata save tails if a semantics-safe streaming path is found.
    - Core.Commands dense row/column tails now need deeper model-level redesign; prefer other high-impact areas unless a narrow safe path is proven.
-   - App.UI render benchmark stabilization and remaining chart/formula-trace tails.
+   - App.UI render benchmark stabilization and remaining chart/formula-trace layout tails.
 4. Merge verified slices back to `main` promptly and push after each coherent unit.
 
 ## Codex Restart Pause - 2026-06-03
@@ -461,19 +479,20 @@ The user asked to pause agents for a Codex restart. All active subagents were cl
   - Dirty files at pause: `src/FreeX.Core.IO/XlsxExcelCompatibilityNormalizer.cs`, `src/FreeX.Core.IO/XlsxFileAdapter.SavePostProcessing.cs`, `tests/FreeX.Core.IO.Tests/XlsxExcelCompatibilityNormalizerTests.cs`, `tests/FreeX.Core.IO.Tests/XlsxFileAdapterPerformanceTests.cs`.
   - Branch state at pause: behind 8 relative to `origin/main`; review/rebase before using or integrating.
 
-Local orchestrator work paused in progress:
+Local orchestrator work completed after this restart:
 
 - Worktree: `E:\Users\anton\Documents\Claude\FreeX\.worktrees\perf-app-ui-trace-render-tail-20260603-r1`.
 - Branch: `codex/perf-app-ui-trace-render-tail-20260603-r1`.
-- Dirty files: `src/FreeX.App.UI/GridView.Overlays.cs`, `tests/FreeX.App.UI.Tests/GridViewRenderPerformanceTests.cs`.
-- Implemented but not committed: formula-trace visible arrow drawing cache in `GridView.Overlays.cs` plus the render-performance source guard update.
-- Verified before pause:
-  - Focused formula trace benchmark and guard passed `2/2`.
-  - Broader focused no-build App.UI benchmark set passed `5/5`.
-  - `FORMULA_TRACE_VISIBLE_ARROW_DRAW` improved from about `36,913,576` bytes / `30.97 ms` to about `5,306,536` bytes / `2.15-3.23 ms`.
-- Still needed after restart: run full `FreeX.App.UI.Tests`, run `git diff --check`, rebase onto current `origin/main`, rerun focused/full verification if needed, commit, push, integrate to `main`, and update this handoff again.
+- Commit: `b2c4e3bdf`.
+- Integrated to `origin/main` by fast-forward push from the App.UI branch because the primary local `main` contained unrelated local refactor commits.
+- Verification after rebasing onto current `origin/main`: focused formula trace benchmark/source guard passed `2/2`, full `FreeX.App.UI.Tests` passed `567/567`, and `git diff --check` passed.
 
 Repository checkpoint at pause:
 
 - `main` was clean and pushed to `origin/main` at `1a04e7c9d` before this pause note.
 - This handoff branch was fast-forwarded to `origin/main` before writing the pause note.
+
+Repository checkpoint after App.UI integration:
+
+- `origin/main` was advanced to `b2c4e3bdf` with the App.UI performance slice.
+- Primary local `main` was left untouched because it contains unrelated local refactor commits (`6fcef8192` side) and is not a reliable integration target for this performance slice until that owner syncs it.

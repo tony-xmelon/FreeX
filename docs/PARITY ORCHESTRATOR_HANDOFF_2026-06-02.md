@@ -77,6 +77,7 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `9f182b03c` - Updated generated command inventory parity docs to mention Flash Fill active-cell example planning.
 - `264b846af` - Honored the Options default sheet count for File > New and startup-new workbooks by routing creation through a normalized `NewWorkbookFactory` with `Sheet1` through `SheetN` names.
 - `66ba1f053` - Added stable UI Automation IDs, names, and help text to remaining Backstage sidebar commands: Back, Home, New, Open, Save, Save As, and Close.
+- `275e51aa0` - Checked visible structured-table header cells directly in Accessibility Checker so retained table-column metadata no longer masks blank imported headers.
 
 Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, and Selection Pane mixed reorder coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
@@ -159,6 +160,11 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Backstage sidebar UIA metadata slice.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Backstage sidebar UIA metadata slice.
 - `git diff --check` - clean after the Backstage sidebar UIA metadata slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - 84/84 passed after the Accessibility Checker visible table-header-cell slice.
+- `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the Accessibility Checker visible table-header-cell slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Accessibility Checker visible table-header-cell slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Accessibility Checker visible table-header-cell slice.
+- `git diff --check` - clean after the Accessibility Checker visible table-header-cell slice.
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~QuickAccessToolbarCustomizationPlannerTests|FullyQualifiedName~QuickAccessCommandStateResolverTests|FullyQualifiedName~ReviewCommandSourceTests|FullyQualifiedName~DrawCommandSourceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed after the default shape-name slice.
@@ -223,6 +229,7 @@ Completed and merged lanes from this wave:
 - Resume / Flash Fill active-cell example docs sync: completed, pushed to `origin/main`.
 - Resume / Options default sheet count for new workbooks: completed, pushed to `origin/main`.
 - Resume / Backstage sidebar UIA metadata: completed, pushed to `origin/main`.
+- Resume / Accessibility Checker visible table header cells: completed, pushed to `origin/main`.
 
 Read-only resume auditors:
 
