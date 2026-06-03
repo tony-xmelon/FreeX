@@ -1165,3 +1165,15 @@ Repository checkpoint after Core.Calc range-precedent capacity integration:
   - `019e8cd5-1d43-77a1-b87e-cdf21adb8d51`: Core.Model/Commands performance tail, scope `src/FreeX.Core.Model/**`, `src/FreeX.Core.Commands/**`, and `tests/FreeX.Core.Model.Tests/**`.
   - `019e8cd5-307a-7a60-a36e-ed768b44412e`: Core.IO performance tail, scope `src/FreeX.Core.IO/**` and `tests/FreeX.Core.IO.Tests/**`.
 - Hourly thread heartbeat automation `hourly-performance-orchestrator-status` is active for progress updates while the performance goal remains active.
+
+Repository checkpoint after Core.Commands tail-shift snapshot integration:
+
+- `origin/main` was advanced to `3bff54ba1` with rebased branch `codex/core-model-commands-tail-perf-20260603`.
+  - Worker: `019e8cd5-1d43-77a1-b87e-cdf21adb8d51`. Original worker commit `b18bea89c` was clean but had to be rebased because `origin/main` moved through a merge-heavy chain to `8ce4bfe9d` during verification.
+  - Change: structural row/column shifts that start after row/column `32` now pre-count the actual deleted/moved cells and allocate snapshot lists to that exact tail size. Near-top shifts keep the existing single-pass full-capacity path to avoid slowing dense head-shift benchmarks.
+  - Metric: `INSERT_ROWS_DENSE_TAIL_SHIFT` improved from the worker baseline `4,927,552` bytes to the rebased final focused sample `223,720` bytes. Final rebased sample time was `8.67 ms` total / `2.89 ms` mean over three steps.
+  - Verification: rebased focused row/column benchmark set passed `9/9`; full Release `FreeX.Core.Model.Tests` passed `1905/1905` with `RunConfiguration.DisableParallelization=true`; `git diff --check HEAD~1..HEAD` passed. Two unrelated timing-only CellAddress/merge-region assertions failed during parallel full-suite runs but passed immediately when rerun focused, so the final full-suite verification was run without test parallelization.
+- Remaining active workers at this checkpoint:
+  - `019e8cd4-fb02-7ef0-bc62-df786d7aeb38`: App.Host performance tail, scope `src/FreeX.App.Host/**` and `tests/FreeX.App.Host.Tests/**`.
+  - `019e8cd5-307a-7a60-a36e-ed768b44412e`: Core.IO performance tail, scope `src/FreeX.Core.IO/**` and `tests/FreeX.Core.IO.Tests/**`.
+- Local orchestrator slice in progress: Core.Formula conditional aggregate direct-range streaming on `codex/perf-formula-next-wave-20260603-r1`.
