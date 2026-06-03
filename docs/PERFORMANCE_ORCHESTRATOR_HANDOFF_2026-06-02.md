@@ -1187,3 +1187,13 @@ Repository checkpoint after Formula conditional aggregate direct-range streaming
 - Remaining active/integration work:
   - `019e8cd4-fb02-7ef0-bc62-df786d7aeb38`: App.Host performance tail, still running.
   - Core.IO worker `019e8cd5-307a-7a60-a36e-ed768b44412e` completed commit `6252a8d04` and still needs orchestrator rebase/reverification/integration from current `origin/main`.
+
+Repository checkpoint after Core.IO NativeJson reference-save integration:
+
+- `origin/main` was advanced to `fdac8c68f` with rebased branch `codex/core-io-tail-nativejson-20260603`.
+  - Worker: `019e8cd5-307a-7a60-a36e-ed768b44412e`. Original worker commit `6252a8d04` was rebased onto the current main after the Formula conditional-aggregate integration.
+  - Change: NativeJson workbook reference save now builds `WatchedCells` and `Scenarios` with explicit pre-sized loops instead of LINQ projection/null-filter chains, preserving null-dropping and invalid-reference filtering semantics. A source guard prevents the old projection chain from returning.
+  - Metrics: `NATIVE_JSON_SAVE_WORKBOOK_REFERENCES` improved from the worker baseline `8,431,040` bytes to the rebased final sample `8,264,984` bytes over three save iterations. The final sample time was `27.90 ms` total / `9.29 ms` mean.
+  - Verification: rebased NativeJson-focused set passed `230/230`; full Release `FreeX.Core.IO.Tests` passed `1787/1787`; `git diff --check HEAD~1..HEAD` passed.
+- Remaining active worker:
+  - `019e8cd4-fb02-7ef0-bc62-df786d7aeb38`: App.Host performance tail, still running.
