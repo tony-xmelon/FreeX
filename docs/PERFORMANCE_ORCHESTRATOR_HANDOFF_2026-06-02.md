@@ -1446,6 +1446,66 @@ Repository checkpoint after Calc shared-leaf and Formula parsed-reference integr
 - Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
 - Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
 
+Repository checkpoint after Core.Calc sparse viewport metric integration:
+
+- `origin/main` was advanced to `fa0d0eb63` with `codex/perf-calc-sparse-viewport-integration-20260603-r1`.
+- The integration added rebased Core.Calc commit `fa0d0eb63`.
+  - Worker: `019e8ed2-5c8a-7c22-ad1d-ab86a7340ed4`.
+  - Change: sparse viewport misses now expose lazy default row/column metric lists, avoiding eager `RowMetric`/`ColMetric` object allocation when the used range does not overlap the requested viewport; dense rendering paths that inspect metrics still materialize once up front.
+  - Metrics: sparse occupied viewport benchmark improved from the worker baseline `83.60 ms` / `5,883,880` bytes over `60` iterations to the integration focused sample `0.28 ms` / `19,720` bytes (`328` bytes/iteration). Dense conditional-format guard remained healthy at `CF_AND_FORMULA_RULES allocated_bytes=5,709,824`.
+  - Verification: focused Calc performance/dependency/viewport set passed `65/65`; Formula performance filter passed `77/77`; full Release `FreeX.Core.Calc.Tests` passed `684/684`; full Release `FreeX.Core.Formula.Tests` passed `2749/2749`; `git diff --check origin/main..HEAD` passed before push.
+- Completed Core.Calc/Formulas worker `019e8ed2-5c8a-7c22-ad1d-ab86a7340ed4` can be closed after this docs push.
+- Still-running worker:
+  - `019e8ed1-b4cd-7180-abd1-73756789dba5`: App.Host current performance tail.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
+
+Repository checkpoint after Core.IO SpreadsheetML numeric write integration:
+
+- `origin/main` was advanced to `f53ffcfd6` with `codex/perf-io-spreadsheetxml-integration-20260603-r1`.
+- The integration added rebased Core.IO commit `f53ffcfd6`.
+  - Worker: `019e8ed2-20ea-7272-bdf1-6b640a53a3dd`.
+  - Change: SpreadsheetML save writes numeric cell text and `uint` row/cell index attributes through a per-thread reusable `char[]` buffer plus `TryFormat`, avoiding per-value formatted string allocation on dense numeric save paths.
+  - Metrics: worker baseline `SPREADSHEET_XML_SAVE_DENSE` was `194.35 ms` / `11,383,816` bytes; integration focused samples were `118.53-157.11 ms` / `9,709,552` bytes. Worker baseline `SPREADSHEET_XML_SAVE_RICH_DENSE` was `164.05 ms` / `18,155,536` bytes; integration focused samples were `309.73-319.54 ms` / about `16,49x,xxx` bytes, with timing noisy and allocation stable.
+  - Verification: focused SpreadsheetML filter passed `141/141`; full IO benchmark filter passed `26/26`; full Release `FreeX.Core.IO.Tests` passed `1818/1818`; `git diff --check origin/main..HEAD` passed before push.
+- Completed Core.IO worker `019e8ed2-20ea-7272-bdf1-6b640a53a3dd` can be closed after this docs push.
+- Pending completed worker after this push:
+  - `019e8ed2-5c8a-7c22-ad1d-ab86a7340ed4`: Core.Calc sparse viewport metric slice, commit `b15d32313`, needs clean orchestrator integration from current `origin/main`.
+- Still-running worker:
+  - `019e8ed1-b4cd-7180-abd1-73756789dba5`: App.Host current performance tail.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
+
+Repository checkpoint after App.UI chart build collection pre-sizing:
+
+- `origin/main` was advanced to `866c1a5f6` with `codex/perf-ui-chart-presize-integration-20260603-r1`.
+- The integration added rebased App.UI commit `866c1a5f6`.
+  - Worker: `019e8ed1-eb2b-7d62-b045-43746d86e449`.
+  - Change: `ChartRenderer` pre-sizes the chart cell lookup dictionary, category label list, and pie data-label point list from known viewport/data sizes.
+  - Metrics: dense chart-format build allocation improved from the worker baseline `24,783,728` bytes over `64` builds to the integration focused samples `16,566,096` bytes; integration timing samples were noisy (`178.96-307.44 ms` total), so allocation is the stable signal.
+  - Verification: focused chart/render guards passed `195/195`; UI performance subset passed `29/29`; full Release `FreeX.App.UI.Tests` passed `581/581`; `git diff --check origin/main..HEAD` passed before push.
+- Completed App.UI worker `019e8ed1-eb2b-7d62-b045-43746d86e449` can be closed after this docs push.
+- Pending completed worker after this push:
+  - `019e8ed2-20ea-7272-bdf1-6b640a53a3dd`: Core.IO SpreadsheetML numeric write allocation slice, commit `868900a1a`, needs clean orchestrator integration from current `origin/main`.
+- Still-running workers:
+  - `019e8ed1-b4cd-7180-abd1-73756789dba5`: App.Host current performance tail.
+  - `019e8ed2-5c8a-7c22-ad1d-ab86a7340ed4`: Core.Formula/Core.Calc current performance tail.
+- Local Core.Model/Core.Commands census found no patch worth carrying: the benchmark filter passed `41/41`; an attempted pivot column key in-place sort/filter rewrite reduced allocation only about `34 KB` and regressed a controlled timing sample (`228.88 ms` baseline vs `288.31 ms` patched), so it was reverted and left uncommitted.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
+
+Repository checkpoint after App.UI comment-indicator geometry cache integration:
+
+- `origin/main` was advanced to `484c0f0ad` with `codex/perf-ui-comment-indicators-integration-20260603-r1`.
+- The integration added rebased App.UI commit `484c0f0ad`.
+  - Worker: `019e8eb8-bc86-7392-a9a9-22dd949dc971`.
+  - Change: `GridView` caches frozen comment-indicator triangle geometries per view, bounded at `16,384` rects, avoiding repeated `StreamGeometry` creation for stable comment-marker viewport refreshes.
+  - Metrics: `GRID_RENDER_COMMENT_INDICATORS` improved from the worker baseline `48.74 ms` mean / `85.18 ms` p95 / `9,702,176` allocated bytes to the integration focused sample `36.65 ms` mean / `39.61 ms` p95 / `3,220,896` allocated bytes.
+  - Verification: focused App.UI performance/render set passed `29/29`; full Release `FreeX.App.UI.Tests` passed `581/581`; `git diff --check origin/main..HEAD` passed before push.
+- All completed workers from this wave have now been integrated; close their agent handles before launching the next wave.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
+
 Repository checkpoint after App.Host open-progress formatter integration:
 
 - `origin/main` was advanced to `4d9b800bf` with `codex/perf-host-open-progress-integration-20260603-r1`.
