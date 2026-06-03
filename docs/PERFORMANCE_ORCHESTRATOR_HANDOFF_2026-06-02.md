@@ -573,7 +573,9 @@ The obvious high-impact backlog is reduced but not exhausted.
    - Data-validation range list items are now low allocation; Go To Special data-validation lookup was checked and left unchanged because it is already low.
 4. Formula/Core.Calc:
    - Repeated identical formula dependency rebuild improved again; latest isolated worker sample was `15.48 MB`, while warm focused runs can be much lower because dependency-plan caches are hot.
-   - Formula parser/evaluator tail remains a candidate only if a semantics-safe path can be proven.
+   - Core.Calc conditional-format formula rule stacking improved after the handoff: `CF_FORMULA_RULES` dropped from `12,387,000` bytes to `5,643,480` bytes by caching repeated stacked CF style combinations per viewport.
+   - Formula built-in focused benchmarks were reprobed after the handoff: `UNIQUE_SINGLE_COLUMN` was about `742,824` bytes and is still mostly required `HashSet` plus returned `RangeValue` storage; `REPT_LARGE_RESULT` was about `65,736` bytes and already bounded by output-string allocation.
+   - Formula parser/evaluator tail remains a candidate only if a semantics-safe path can be proven; the latest broad focused Formula test run passed without exposing a narrow patch.
 5. App.UI render:
    - Text-heavy and wrapped render allocations are now down to tens of KB in recent samples.
    - Selection-only repaint improved from about `1.04 MB` to about `0.40-0.43 MB`; render timings remain noisy.
@@ -632,6 +634,11 @@ Post-handoff-resume 2026-06-03 workers launched with full-access/no-permission i
 - `019e8b86-2829-71b3-ae1a-1e2661323639`: App.Host `RIBBON_FORCE_COMPACT` tail, completed with no patch; same-base candidate improved `RIBBON_DATA_REPEATED_COMPACT` timing (`10.68 ms -> 8.21 ms`) but allocation stayed flat at `150,704` bytes, while `RIBBON_FORCE_COMPACT_SKIP` stayed allocation-flat/noisy around `439.6 KB`; branch left clean with no commit.
 - `019e8b86-6a75-7ea3-9b34-a5d9790a0e65`: Core.IO `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` / style-only metadata tail, completed with no patch; only narrow safe trial saved about `211 KB` on a `~131 MB` path, so it was reverted and the branch was left clean with no commit.
 
+Goal-continuation 2026-06-03 workers launched with full-access/no-permission instructions:
+
+- `019e8b99-f72a-7d31-81f1-53fadcf81bb4`: App.UI/App.Host benchmark census and narrow patch worker, active at the checkpoint; branch/worktree requested: `codex/perf-ui-host-census-20260603-r2` / `.worktrees/perf-ui-host-census-20260603-r2`.
+- `019e8b9a-0be0-70b1-b9c8-60726a3ba50b`: Core.IO XLSX profiling tail worker, active at the checkpoint; branch/worktree requested: `codex/perf-xlsx-profiling-tail-20260603-r1` / `.worktrees/perf-xlsx-profiling-tail-20260603-r1`.
+
 Local orchestrator slices after restart:
 
 - `codex/perf-xlsx-metadata-save-tail-20260603-r1`: XLSX ignored-errors worksheet save tail, completed; commit `ca85fa850` integrated to `origin/main`.
@@ -645,6 +652,7 @@ Local orchestrator slices after restart:
 - `codex/perf-app-ui-drawing-followup-20260603-r1`: App.UI drawing-object cache warm-up follow-up, completed; rebased commit `0382937a1` integrated to `origin/main`.
 - `codex/perf-xlsx-styleonly-save-tail-20260603-r1`: XLSX style-only save row insertion cursor tail, completed; commit `d468bb5bd` integrated to `origin/main`.
 - `codex/perf-formula-eval-tail-20260603-r2`: Core.Commands formula-audit inconsistent-formula scan allocation tail, completed; commit `cf15c0392` integrated to `origin/main`.
+- `codex/perf-formula-builtins-tail-20260603-r1`: Core.Calc conditional-format stacked style cache tail, completed; commit `78a40e1bd` integrated to `origin/main`. Baseline `CF_FORMULA_RULES` was `12,387,000` bytes; final focused samples were `5,643,480` bytes with full `FreeX.Core.Calc.Tests` passing `667/667`.
 
 Local orchestrator exploratory slice after drawing tails:
 
@@ -745,3 +753,9 @@ Repository checkpoint after no-patch worker/probe results:
 - `origin/main` was advanced to `001cd2cd5` with the previous handoff update; no additional performance code commits were integrated after `cf15c0392`.
 - `codex/perf-host-ribbon-compact-tail-20260603-r1`, `codex/perf-xlsx-metadata-load-tail-20260603-r1`, and `codex/perf-clipboard-dense-serde-tail-20260603-r1` were left clean with no commits.
 - Remaining high-allocation XLSX paths and Host compact tails need profiling or larger redesign before more edits are likely to be practical.
+
+Repository checkpoint after Core.Calc CF stacked-style cache integration:
+
+- `origin/main` was advanced to `78a40e1bd` with the Core.Calc conditional-format stacked style cache slice.
+- The primary local `main` remained untouched and locally divergent; performance integration continued through linked worktrees and fast-forward pushes to `origin/main`.
+- Fresh App.UI/App.Host and Core.IO agents were running from current `origin/main`; wait on their new IDs, not the old paused IDs, before claiming the next wave is exhausted.
