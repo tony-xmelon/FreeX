@@ -206,9 +206,9 @@ Completed and merged lanes from this wave:
 - Resume / Backstage Share, Info, and Export UIA metadata: completed, pushed to `origin/main`.
 - Resume / Options default `.fxl` save format: completed, pushed to `origin/main`.
 - Resume / Flash Fill selected-range blank source rows: completed, pushed to `origin/main`.
-- Resume / Flash Fill selected-range blank source docs sync: completed, pending push to `origin/main`.
-- Resume / Flash Fill active-cell example range planning: completed, pending push to `origin/main`.
-- Resume / Flash Fill active-cell example docs sync: completed, pending push to `origin/main`.
+- Resume / Flash Fill selected-range blank source docs sync: completed, pushed to `origin/main`.
+- Resume / Flash Fill active-cell example range planning: completed, pushed to `origin/main`.
+- Resume / Flash Fill active-cell example docs sync: completed, pushed to `origin/main`.
 
 Read-only resume auditors:
 
