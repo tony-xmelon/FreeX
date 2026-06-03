@@ -9,8 +9,8 @@ This goal is not complete. This file records the current clean checkpoint.
 ## Operating Rules
 
 - Repository: `E:\Users\anton\Documents\Claude\Freexcel`.
-- Latest upstream checkpoint before this handoff update: `2a6c3066d`.
-- `codex/performance-orchestrator-resume-20260602` was rebased onto `origin/main` at `2a6c3066d` before this handoff update.
+- Latest upstream checkpoint before this handoff update: `f9115462f`.
+- `codex/performance-orchestrator-resume-20260602` was rebased onto `origin/main` at `f9115462f` before this handoff update.
 - Follow `AGENTS.md`: use isolated worktrees/branches for implementation, do not edit `main` directly, sync before work, verify before merge, push verified integrations frequently.
 - User explicitly requested no permission prompts and no escalation requests.
 - Treat unrelated dirty or untracked files as owned by other sessions unless explicitly proven otherwise.
@@ -417,6 +417,22 @@ All items below were verified, pushed to their `codex/` branches, and fast-forwa
   - Data-validation correctness/schema set passed `20/20`.
   - Full `FreeX.Core.IO.Tests` passed `1777/1777`.
 
+### App.UI Resize Pre-Selection Layer Cache Tail
+
+- Branch: `codex/perf-app-ui-render-tail-20260603-r4`.
+- Commit: `f9115462f`.
+- Local orchestrator slice after restart.
+- Change: the pre-selection render-surface cache now keys full/light layer mode separately and remains enabled when a resize target is active but live resize continuation is not being drawn. This lets column/row resize repaint paths reuse stable grid/cell/header pre-selection drawing instead of rebuilding it every frame.
+- Metrics:
+  - Baseline before change: `GRID_RENDER_CHART_DIMENSION_RESIZE` `14,302,656` bytes, `83.41 ms` mean.
+  - Focused post-change sample: `51,976` bytes, `55.35 ms` mean.
+  - Full render-benchmark sample: `46,008` bytes, `39.89 ms` mean.
+  - Full App.UI suite sample: `46,008` bytes, `46.42 ms` mean.
+- Verification:
+  - Focused resize benchmark/source-guard set passed `2/2`.
+  - Full `GridViewPerformanceMeasurementTests` passed `16/16`.
+  - Full `FreeX.App.UI.Tests` passed `567/567`.
+
 ## Other Main Integrations During This Wave
 
 Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, QAT validation, Flash Fill parity coverage clarification, and parity handoff updates.
@@ -450,6 +466,7 @@ The obvious high-impact backlog is reduced but not exhausted.
    - Selection-only repaint improved from about `1.04 MB` to about `0.40-0.43 MB`; render timings remain noisy.
    - Formula-trace visible arrow drawing improved from about `36.9 MB` to `5.3 MB`.
    - Formula-trace layout visitor improved from about `1.19 MB` to about `5 KB`; timing remains noisy and should be watched if more render work touches that planner.
+   - Chart dimension resize repaint improved from about `14.3 MB` to about `46-52 KB` by reusing the light pre-selection render layer cache.
 
 ## Subagent Status
 
@@ -497,6 +514,7 @@ Local orchestrator slices after restart:
 - `codex/perf-app-ui-trace-render-tail-20260603-r1`: App.UI formula-trace visible arrow drawing cache, completed; rebased commit `b2c4e3bdf` integrated to `origin/main`.
 - `codex/perf-app-ui-formula-layout-tail-20260603-r1`: App.UI formula-trace layout lookup allocation tail, completed; rebased commit `7613818b3` integrated to `origin/main`.
 - `codex/perf-xlsx-datavalidation-save-tail-20260603-r1`: XLSX native data-validation save tail, completed; rebased commit `2a6c3066d` integrated to `origin/main`.
+- `codex/perf-app-ui-render-tail-20260603-r4`: App.UI resize pre-selection layer cache tail, completed; commit `f9115462f` integrated to `origin/main`.
 
 ## Resume Checklist
 
@@ -504,7 +522,7 @@ Local orchestrator slices after restart:
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `origin/main` is at or after `2a6c3066d`. The primary local `main` may still contain unrelated local refactor commits; do not push or overwrite them as part of the performance thread unless their owning session has verified them.
+2. Confirm `origin/main` is at or after `f9115462f`. The primary local `main` may still contain unrelated local refactor commits; do not push or overwrite them as part of the performance thread unless their owning session has verified them.
 3. Start the next wave with disjoint scopes:
    - Check the active App.Host drag-status/ribbon compact worker and integrate if complete.
    - XLSX IO ignored-errors/data-validation metadata save tails if a semantics-safe streaming path is found.
@@ -555,3 +573,8 @@ Repository checkpoint after native data-validation save integration:
 
 - `origin/main` was advanced to `2a6c3066d` with the XLSX native data-validation post-processing save slice.
 - The primary local `main` was still left untouched because it contains unrelated local refactor commits and staged corpus-runner refactor files owned by another session.
+
+Repository checkpoint after App.UI resize cache integration:
+
+- `origin/main` was advanced to `f9115462f` with the App.UI resize pre-selection render cache slice.
+- The primary local `main` was still left untouched for the same unrelated-local-refactor reason.
