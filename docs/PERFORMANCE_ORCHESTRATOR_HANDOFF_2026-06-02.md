@@ -1426,3 +1426,22 @@ Repository checkpoint after NativeJson token numeric load and Advanced Filter un
   - `019e8eb0-ea89-7973-9424-28dd13959792`: Core.Formula current performance tail, scope `src/FreeX.Core.Formula/**` and `tests/FreeX.Core.Formula.Tests/**`.
   - `019e8eb0-f97f-7353-8ed2-d3f2e73ea026`: Core.Calc current performance tail, scope `src/FreeX.Core.Calc/**` and `tests/FreeX.Core.Calc.Tests/**`.
 - Primary local `main` has unrelated local App.Host test-split changes and `.vscode/settings.json`; continue using linked worktrees from current `origin/main` for performance integration.
+
+Repository checkpoint after Calc shared-leaf and Formula parsed-reference integrations:
+
+- `origin/main` was advanced to `32473f7b6` with `codex/perf-calc-formula-tail-integration-20260603-r2`.
+- The integration added rebased Core.Calc commit `98a76faf3`.
+  - Worker: `019e8eb0-f97f-7353-8ed2-d3f2e73ea026`.
+  - Change: `DependencyGraph` now fast-paths multi-root exact edits when all changed roots invalidate the same leaf formula, avoiding BFS/topological scaffolding only when there are no compact range dependencies and no downstream dependents.
+  - Metrics: repeated small-change recalc improved from `280,040` bytes over `250` iterations (`1,120` bytes/iteration) to the integration focused sample `72,040` bytes (`288` bytes/iteration).
+  - Verification: focused leaf/recalc filter passed `2/2`; full Release `FreeX.Core.Calc.Tests` passed `683/683`; `git diff --check origin/main..HEAD` passed before push.
+- The integration added rebased Core.Formula commit `32473f7b6`.
+  - Worker: `019e8eb0-ea89-7973-9424-28dd13959792`.
+  - Change: parsed reference nodes cache `ColumnNumber`, `StartColumnNumber`, and `EndColumnNumber` so formula evaluation/read paths do not recompute column-name conversions.
+  - Metrics: repeated boolean coercion formula-text evaluation improved from the worker baseline `602.50 ms` / `40` bytes to `319.27 ms` / `40` bytes.
+  - Verification: focused parsed-reference/boolean-coercion filter passed `2/2`; full Release `FreeX.Core.Formula.Tests` passed `2749/2749`. A first parallel focused Formula run hit a compiler output lock from `VBCSCompiler`; `dotnet build-server shutdown` cleared it and the gate passed sequentially.
+- Active/pending workers after this push:
+  - `019e8e91-2c71-7991-8d4e-191f5a9c185a`: App.Host current performance tail, completed commit `9024c0dcc` and needs clean orchestrator integration from current `origin/main`.
+  - `019e8eb8-bc86-7392-a9a9-22dd949dc971`: App.UI current performance tail, still running or not yet reported final status.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
