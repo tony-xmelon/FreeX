@@ -36,6 +36,13 @@ page setup:
 dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --generate-freex-feature-fixtures
 ```
 
+Add `--freex-resave-before-excel` to make those generated FreeX workbooks load/save through FreeX
+with an actual marker-sheet edit before Excel opens them:
+
+```powershell
+dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --freex-resave-before-excel --generate-freex-feature-fixtures
+```
+
 ## Excel-authored through FreeX
 
 ```powershell
@@ -120,6 +127,8 @@ As of 2026-06-03 on the local desktop Excel COM environment:
 
 - FreeX-authored feature fixtures passed Excel open/`SaveCopyAs`/close/reopen plus FreeX reopen:
   `8/8`, including the authored PivotTable/pivot-cache fixture.
+- FreeX-authored feature fixtures also passed the authored-then-FreeX-edited path
+  (`--freex-resave-before-excel --generate-freex-feature-fixtures`): `8/8`.
 - Public + regression corpus rows selected from `test-corpus/manifest.csv` with
   `--save-reopen --freex-resave-before-excel --corpus-source public --corpus-source regression`
   passed: `34/34`.
