@@ -1,7 +1,7 @@
 # FreeX XLSX Corpus Report
 
-**Last updated:** 2026-06-01
-**Status:** Executable parity harness with 175 workbook manifest rows, model-first XLSX retention, URI-aware package-health checks, stronger semantic corpus tag assertions, public-corpus package-tag retention checks after ordinary model edits, public-corpus model-summary stability and warning checks, expanded generated feature coverage, expanded chart-format metadata coverage, expanded PivotTable/PivotChart fidelity slices, deeper worksheet/workbook native-metadata preservation, model-backed worksheet sort/data-consolidation/additional-view metadata, model-backed additional workbook-view metadata, private/regression corpus scaffolding, and 31 new generated fixtures covering named-range depth, multi-rule CF, multi-series charts, DV edge cases, merged-cell formulas, cross-sheet references, array formulas, scatter/bubble charts, pivot calculated fields, structured-table references, formatting, sparklines, protection, CF dxf styles, cached formulas, pie/doughnut charts, hyperlinks, comments, table AutoFilter, multiple sheets, number formats, validation messages, row/column groups, mixed chart types, large named-range suites, plus per-feature structural XML comparison fixtures for CF rules, chart series, and DV rule semantics
+**Last updated:** 2026-06-03
+**Status:** Executable parity harness with 176 workbook manifest rows, model-first XLSX retention, URI-aware package-health checks, stronger semantic corpus tag assertions, public-corpus package-tag retention checks after ordinary model edits, public-corpus model-summary stability and warning checks, expanded generated feature coverage, expanded chart-format metadata coverage, expanded PivotTable/PivotChart fidelity slices, deeper worksheet/workbook native-metadata preservation, model-backed worksheet sort/data-consolidation/additional-view metadata, model-backed additional workbook-view metadata, private/regression corpus scaffolding, user-approved Partner Dashboard Excel save/reopen coverage, and 31 new generated fixtures covering named-range depth, multi-rule CF, multi-series charts, DV edge cases, merged-cell formulas, cross-sheet references, array formulas, scatter/bubble charts, pivot calculated fields, structured-table references, formatting, sparklines, protection, CF dxf styles, cached formulas, pie/doughnut charts, hyperlinks, comments, table AutoFilter, multiple sheets, number formats, validation messages, row/column groups, mixed chart types, large named-range suites, plus per-feature structural XML comparison fixtures for CF rules, chart series, and DV rule semantics
 
 ## Current Corpus
 
@@ -11,10 +11,10 @@
 | Generated deterministic supported-metadata-pass fixtures | 52 | Slicers, timelines, external workbook links, printer settings, calc chains, stable document properties, header/footer and worksheet legacy drawings, workbook/worksheet extension lists, workbook property/calculation/defined-name/theme metadata, workbook file version/recovery/sharing/protection metadata, workbook smart tags/function groups/views, stylesheet colors/table-style/pivot-style/extension metadata, worksheet ignored errors, worksheet cell watches, worksheet calculation properties, worksheet AutoFilter metadata, worksheet sheet views, worksheet sheet format, worksheet page breaks, worksheet print options, worksheet page setup, worksheet header/footer metadata, worksheet dimension metadata, worksheet sheet properties, worksheet protection metadata, worksheet protected ranges, worksheet row/cell/column/formula/merged-cell metadata, worksheet single XML cells, worksheet phonetic properties, worksheet sort state, worksheet data consolidation, worksheet custom properties, worksheet smart tags, worksheet scenarios, worksheet custom sheet views, custom XML parts, CF rules count, chart series count, DV rule type/operator/formula/`sqref` semantics, structured-table reference formulas, cross-sheet range formulas, and named-range count retain native package references after ordinary edits |
 | Generated deterministic known-gap fixtures | 17 | Declared with expected warnings and notes; warning detector covers unsupported chart package parts, threaded comments, track changes/revision history, unsupported sheet types, form controls/ActiveX controls, digital signatures, custom ribbon UI, Office add-ins/web extensions, live web queries/web publishing including web-query connection metadata, sensitivity labels/IRM metadata including custom document properties, SmartArt diagrams, VBA macros, Power Query, Data Model/Power Pivot, Microsoft linked data types including rich value data/structure package relationships, and embedded objects |
 | Public redistributed workbooks | 25 | Open-license Tealeg XLSX public corpus; files open, save, and reload through the runner with tag assertions for hyperlinks, merged cells, sheet-name boundaries, inline/shared strings, mixed cell types, and retained package structures for styles, hyperlinks, merged cells, sheet-name boundaries, inline strings, mixed cell types, and chartsheets |
-| Local private workbooks | 20 | Optional user-approved torture rows are in the manifest; missing files are skipped, and known-gap warning expectations are declared for optional private rows |
+| Local private workbooks | 21 | Optional user-approved torture rows are in the manifest; the Partner Dashboard workbook is a verified local-private Excel save/reopen regression row, missing files are skipped, and known-gap warning expectations are declared for optional private rows |
 | Regression workbooks | 9 | Excel-authored cached formula-result fixtures covering basics, coercion/errors, date serials, date/time edge cases, engineering bitwise/base conversions, financial price/yield pairs, lookup/reference edges, dynamic-array scalar/range composition, scalar-array coercion, statistical inverse/distribution round trips, and array comparison/arithmetic expressions |
 
-Total manifest rows: 175.
+Total manifest rows: 176.
 
 ## Current Result
 
@@ -44,7 +44,7 @@ Total manifest rows: 175.
 | Non-public unsupported/excluded warning declarations | 27/27 present in manifest |
 | Public unsupported-tag warning detection | 1/1 exercised by corpus runner |
 | Public source metadata coverage | 25/25 rows declare source URL, retrieval date, and license |
-| Local-private privacy metadata coverage | 20/20 rows use local-only source markers and private-local license |
+| Local-private privacy metadata coverage | 21/21 rows use local-only source markers and private-local license |
 | Local-private known-gap warning declarations | 10/10 present in manifest for skipped optional private rows |
 | Workbook structure protection XLSX round-trip | Pass; `workbookPassword` is written as legacy hash text, not raw password text |
 | Structured table XLSX retention | Pass; table metadata loads, authored table parts save, totals-row column metadata and simple value AutoFilter metadata round-trip, and native table references are preserved after edits |
@@ -64,7 +64,7 @@ Total manifest rows: 175.
 | Document property metadata | Pass; stable native `docProps/core.xml`, `docProps/app.xml`, and `docProps/custom.xml` fields survive ordinary edits and are counted by corpus critical-part retention checks |
 | Worksheet/workbook edge-case metadata | Pass; veryHidden sheet state, worksheet `codeName`, unsupported worksheet `sheetPr` metadata, worksheet `sheetFormatPr` native attributes/children, worksheet dimension metadata, worksheet `sheetCalcPr` model/native metadata, worksheet `sheetData`/row/cell/`cols`/column native attributes plus row/cell native child payloads, worksheet formula element metadata, merged-cell metadata, worksheet page-break native attributes, worksheet print-option/page-setup/header-footer native attributes and native-only child payloads, primary worksheet sheet-view native metadata, advanced worksheet/workbook protection metadata, protected-range native attributes, model-backed additional worksheet sheet views, header/footer legacy drawing references, worksheet custom properties, worksheet smart tags, sheet-level AutoFilter metadata, per-sheet calculation properties, worksheet phonetic properties, model-backed worksheet sort state, model-backed worksheet data-consolidation settings, ignored worksheet errors, worksheet cell watches, workbook file version/sharing/recovery/smart-tag/function-group metadata including multiple workbook `fileRecoveryPr` records, unsupported workbook properties, workbook calculation native metadata, model-backed additional workbook views plus primary workbook views, custom workbook views, unsupported workbook defined names, printer settings package references, worksheet `customSheetViews`, worksheet scenarios, unknown worksheet/workbook extension-list entries, and `calcChain.xml` package retention survive ordinary edits |
 | Public workbook corpus | 25/25 public/open-license Tealeg workbooks open, save, reload, pass saved-package health validation, retain model-visible workbook summaries, satisfy tag-level semantic assertions where applicable, preserve checked package structures for public styles/hyperlinks/merged cells/sheet-name boundaries/inline strings/mixed cell types/chartsheets after ordinary model edits, and execute warning detection for present public rows tagged with unsupported surfaces |
-| Local-private workbook corpus | 20 optional manifest rows skipped when files are absent |
+| Local-private workbook corpus | 1 user-approved Partner Dashboard row passed real Excel save/reopen locally; remaining optional manifest rows skip when files are absent |
 
 ## Pass Rate Summary
 
@@ -76,7 +76,7 @@ Total manifest rows: 175.
 | Generated known-gap retention workbooks | 17 | 17 | 100% |
 | Public redistributed workbooks | 25 | 25 | 100% |
 | Regression cached-result workbooks | 9 | 9 | 100% |
-| Local-private workbook rows | 0 | 0 | Skipped; files absent |
+| Local-private workbook rows | 1 | 1 | 100% locally for present Partner Dashboard row; absent optional rows skipped |
 
 | Feature bucket | Evidence | Pass rate |
 |---|---|---:|
@@ -144,8 +144,8 @@ Recent focused verification: generated XLSX corpus round-trip tests pass; focuse
 
 ## Gaps Before 95% Fidelity Claim
 
-- Fill the existing local-private workbook rows with user-approved samples; keep files ignored.
-- Continue expanding the 175-row corpus baseline, with deeper per-feature semantic comparisons for package-only public samples and richer private workbooks.
+- Fill the remaining local-private workbook rows with user-approved samples; keep files ignored unless the user explicitly approves a local absolute workbook path.
+- Continue expanding the 176-row corpus baseline, with deeper per-feature semantic comparisons for package-only public samples and richer private workbooks.
 - Continue adding issue-specific regression workbooks when a failing XLSX round-trip is fixed.
 - Complete manual desktop Excel interop review: open native samples in FreeX, save, reopen in desktop Excel, and verify no repair dialog or feature loss for the sampled features.
 - Continue PivotTable fidelity past the current functional core only in the remaining native-fidelity gaps: exact PivotStyle gallery UI/rendering semantics, richer PivotChart layout/design editing beyond chart-space design metadata, and external/OLAP/data-model refresh or execution.
