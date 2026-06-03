@@ -1326,3 +1326,34 @@ Repository checkpoint after sparse current-region integration:
     - `GRID_RENDER_SHRINK_TEXT_HEAVY`: `87.88 ms` mean / `98.35 ms` p95 / `57,368` bytes -> `25.96 ms` mean / `29.03 ms` p95 / `56,208` bytes.
   - Verification after final rebase: focused render/text benchmark set passed `4/4`; focused render/text source and behavior set passed `97/97` before the final rebase; full Release `FreeX.App.UI.Tests` passed `575/575`.
 - All workers from this wave completed. Continue with linked worktrees from current `origin/main`.
+
+Repository checkpoint after Calc leaf-root and IO ignored-error sorted-pass integrations:
+
+- `codex/perf-core-calc-leaf-root-integration-20260603-r1` added the rebased Core.Calc slice.
+  - Worker: `019e8ddb-5c92-7522-be86-460088d1a39b`.
+  - Change: `RecalcEngine` now directly evaluates changed formula roots when there are no volatile cells, no downstream dependency plan, and no cycles, skipping dirty-set evaluation-order scaffolding on leaf formula roots. Existing dirty-root ordering coverage confirms dependent formula roots still use the topological path.
+  - Metrics: `LEAF_FORMULA_ROOT_RECALC` improved from the worker baseline `163.78 ms` / `12,720,040` bytes over `10,000` iterations to the integrated focused sample `196.41 ms` / `4,880,040` bytes (`488` bytes/iteration). The broader performance run sampled `188.45 ms` / `4,880,040` bytes.
+  - Verification after integration: focused semantic/performance/source set passed `3/3`; broader Calc performance set passed `32/32`; full Release `FreeX.Core.Calc.Tests` passed `681/681`; `git diff --check origin/main...HEAD` passed.
+- `codex/perf-core-calc-leaf-root-integration-20260603-r1` also added the Core.IO ignored-error follow-up.
+  - Worker: `019e8ddc-549a-7472-b8ed-66827b6ac3b2`.
+  - Change: ignored-error save now tracks whether ignored cells are already row-major and skips the primitive-coordinate `Sort` pass on that common path, while retaining out-of-order coalescing coverage.
+  - Metrics: `XLSX_SAVE_IGNORED_ERRORS` allocation stayed effectively flat/slightly lower; the integrated focused sample was `673.32 ms` mean / `72,559` package bytes / `92,746,632` allocated bytes. Timing was noisy and not treated as a stable improvement.
+  - Verification after integration: focused ignored-errors behavior/source/benchmark set passed `4/4`; full Release `FreeX.Core.IO.Tests` passed `1803/1803`.
+- Active workers at this checkpoint:
+  - `019e8ddb-3b17-7413-ad7a-418bbb5fcf09`: App.Host performance tail, still running.
+  - `019e8ddb-4e8e-77a3-aba3-f60708742629`: Core.Formula performance tail, still running.
+
+Repository checkpoint after Formula TEXTJOIN direct-range integration:
+
+- `codex/perf-core-calc-leaf-root-integration-20260603-r1` added the rebased Core.Formula slice.
+  - Worker: `019e8ddb-4e8e-77a3-aba3-f60708742629`.
+  - Change: `FormulaEvaluator` now evaluates supported `TEXTJOIN` calls over direct ranges without materializing `RangeValue` arrays or intermediate text lists. The fast path is intentionally narrow: scalar delimiter and `ignore_empty` controls, direct ranges/scalars for text arguments, and fallback for delimiter ranges/arrays or other unsupported dynamic argument shapes.
+  - Metrics: `TEXTJOIN("",TRUE,A1:A20000)` improved from the worker same-load old-path sample `14.84 ms` / `1,458,912` bytes to the integrated focused sample `8.61 ms` / `80,144` bytes. Worker focused and full-performance samples after the change were `13.92 ms` / `80,144` bytes and `21.98 ms` / `80,144` bytes.
+  - Verification after integration: focused `Textjoin` filter passed `7/7`; full Formula performance filter passed `73/73`; full Release `FreeX.Core.Formula.Tests` passed `2743/2743`; focused TEXTJOIN measurement rerun passed `1/1`.
+- Final affected-suite verification after the Formula replay:
+  - Full Release `FreeX.Core.Calc.Tests` passed `681/681`; current `LEAF_FORMULA_ROOT_RECALC` sample was `101.68 ms` / `4,880,040` bytes over `10,000` iterations.
+  - Full Release `FreeX.Core.IO.Tests` passed `1803/1803`.
+- Completed worker agents from this wave have been closed for Core.Formula, Core.Calc, and Core.IO.
+- Remaining active worker:
+  - `019e8ddb-3b17-7413-ad7a-418bbb5fcf09`: App.Host performance tail, still running and needs rebase/review once it reports a final commit.
+- Hourly thread heartbeat automation `hourly-performance-orchestrator-status` was removed/not found in the app automation registry; do not recreate it unless the user explicitly asks.
