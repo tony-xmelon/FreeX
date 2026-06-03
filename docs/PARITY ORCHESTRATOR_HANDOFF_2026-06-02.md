@@ -90,6 +90,7 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `a2d54dfbb` - Collapsed repeated-word runs during Spell Check Replace All so overlapping detections such as `the the the` reduce to one word instead of leaving a duplicate pair, with host planner coverage and regenerated command-surface parity docs.
 - `9ba947791` - Materialized imported/custom PivotTable grand-total captions in row-only, column-only, and matrix refresh output, while keeping PivotStyle grand-total styling, merged-label exclusion, and Show Details extraction aligned with the active caption, and regenerated command-surface parity docs.
 - `2eb3c635a` - Honored the Options default font name and size for startup and File > New workbooks by routing full `FreeXOptions` through `NewWorkbookFactory`, normalizing persisted font options, and seeding `StyleId.Default` on newly created workbooks.
+- `10bca934b` - Used the first supported workbook theme `effectStyle` group for bounded shadow/glow defaults so imported theme effects no longer synthesize shadow and glow from separate groups, and regenerated command-surface parity docs.
 
 Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, Selection Pane mixed reorder coverage, and manual worksheet page-break metadata/storage/preview coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full workbook theme effect fidelity beyond the bounded shadow/glow approximations, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
@@ -154,6 +155,13 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Options default font new-workbook slice.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Options default font new-workbook slice.
 - `git diff --check` - clean after the Options default font new-workbook slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~WorkbookThemeTests" -v:minimal` - 16/16 passed after the workbook theme effect-style grouping hygiene slice.
+- `dotnet test tests\FreeX.App.UI.Tests\FreeX.App.UI.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~WorkbookThemeEffectStyleTests|FullyQualifiedName~GridViewDrawingObjectThemeTests" -v:normal` - 42/42 passed after the workbook theme effect-style grouping hygiene slice.
+- `dotnet build src\FreeX.App.UI\FreeX.App.UI.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the workbook theme effect-style grouping hygiene slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the workbook theme effect-style grouping hygiene slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the workbook theme effect-style grouping hygiene slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the workbook theme effect-style grouping hygiene slice.
+- `git diff --check` - clean after the workbook theme effect-style grouping hygiene slice.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated QAT and Accessibility Checker generated docs.
@@ -360,6 +368,7 @@ Completed and merged lanes from this wave:
 - Resume / PDF/XPS readiness honesty text: completed on `cd02bf47c`.
 - Resume / PivotTable custom grand-total captions: completed on `9ba947791`.
 - Resume / Options default font for new workbooks: completed on `2eb3c635a`.
+- Resume / Workbook theme effect-style grouping hygiene: completed on `10bca934b`.
 
 Read-only resume auditors:
 
@@ -374,7 +383,7 @@ Read-only resume auditors:
 - File/Backstage/QAT/Draw audit: `019e8b50-5237-7033-a99b-6b6b0c84e4c3` completed without edits; it identified bounded candidates for PDF/XPS readiness honesty text, QAT Options dialog UIA metadata, and Selection Pane stable AutomationIds.
 - File/Options/QAT/PDF audit: `019e8bd7-bed1-7a11-961d-3118826f9063` completed without edits; it identified the now-completed Options default font/size new-workbook slice and a future bounded Options user-name metadata candidate.
 - Review/Data/Formulas audit: `019e8bd7-f060-7312-948a-ab5ce5e159e6` completed without edits; it found no remaining bounded deterministic Review/Data/Formulas slice outside broad/deferred Accessibility, Spell Check, Flash Fill, and Error Checking tails.
-- Draw/PageLayout/Pivot audit: `019e8bd8-1c47-7d02-9e62-4287b4fe3c96` completed without edits; it identified the now-completed PivotTable custom grand-total caption slice and a future bounded workbook-theme effect-style grouping hygiene candidate.
+- Draw/PageLayout/Pivot audit: `019e8bd8-1c47-7d02-9e62-4287b4fe3c96` completed without edits; it identified the now-completed PivotTable custom grand-total caption slice and now-completed workbook-theme effect-style grouping hygiene candidate.
 
 Subagents from the prior non-chart wave were marked for closure:
 
