@@ -190,7 +190,7 @@ Completed and merged lanes from this wave:
 - Resume / Accessibility displayed non-text low-contrast cell values: completed, pushed to `origin/main`.
 - Resume / Backstage Share, Info, and Export UIA metadata: completed, pushed to `origin/main`.
 - Resume / Options default `.fxl` save format: completed, pushed to `origin/main`.
-- Resume / Flash Fill selected-range blank source rows: completed, pending push to `origin/main`.
+- Resume / Flash Fill selected-range blank source rows: completed, pushed to `origin/main`.
 
 Read-only resume auditors:
 
