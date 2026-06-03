@@ -61,7 +61,9 @@ sparkline/image, protection, and PivotTable feature fixtures have retention expe
 passive summary counts. When `--save-reopen` is used, the smoke fails if FreeX cannot load the
 expected feature metadata before Excel opens the staged workbook, if Excel open/reopen loses the
 expected formula cells, structured tables, worksheet shapes, or PivotTables, or if FreeX cannot
-reload the Excel-saved copy with the expected metadata still present.
+reload the Excel-saved copy with the expected metadata still present. These supported FreeX-authored
+feature fixtures also fail on any FreeX load warning before Excel or after reloading Excel's saved
+copy.
 For generated and local-private supported corpus rows without declared warning expectations, the
 smoke also fails on any FreeX load warning before Excel or after reloading Excel's saved copy.
 Public corpus rows without declared warning expectations now participate in the same no-warning
@@ -81,6 +83,8 @@ workbook through `XlsxFileAdapter`, then validates the FreeX-saved copy with the
 open/`SaveCopyAs`/close/reopen sequence.
 The FreeX-first path adds a small `FreeXSmoke` marker worksheet before saving so the adapter writes
 a new package instead of preserving an unchanged source package.
+The Excel-authored fixture is also warning-free: FreeX must emit zero load warnings when saving the
+native Excel source and when reloading Excel's saved copy.
 
 To validate an existing Excel-created or Excel-modified workbook through the same FreeX-first path:
 
@@ -173,15 +177,17 @@ machine cannot run desktop Excel COM.
 As of 2026-06-03 on the local desktop Excel COM environment:
 
 - FreeX-authored feature fixtures passed Excel open/`SaveCopyAs`/close/reopen plus FreeX reopen:
-  `8/8`, including the authored PivotTable/pivot-cache fixture.
+  `8/8`, including the authored PivotTable/pivot-cache fixture, with zero FreeX load-warning rows
+  after reloading Excel-saved copies.
 - FreeX-authored feature fixtures also passed the authored-then-FreeX-edited path
-  (`--freex-resave-before-excel --generate-freex-feature-fixtures`): `8/8`.
+  (`--freex-resave-before-excel --generate-freex-feature-fixtures`): `8/8`, with zero FreeX load
+  warnings before Excel and after reloading Excel-saved copies.
 - The Excel-authored fixture, including a native Excel PivotTable and pivot cache, passed
   Excel-authored -> FreeX save/edit -> Excel open/`SaveCopyAs`/close/reopen -> FreeX reopen:
   `1/1`. The fixture also covers an Excel-authored text box, comment, hyperlink, worksheet
   protection, and workbook structure protection. The FreeX source load and reopened Excel save both
-  reported `pivots 1; pivot caches 1`, and the FreeX-saved workbook passed Open XML SDK schema
-  validation with `errors=0`.
+  reported `pivots 1; pivot caches 1`; FreeX emitted zero load warnings at both load checkpoints;
+  and the FreeX-saved workbook passed Open XML SDK schema validation with `errors=0`.
 - Pivot retention assertions passed for the FreeX-authored pivot fixture after Excel rewrote the
   workbook/pivot-table cache id to `0`; the FreeX source load and reopened Excel save both reported
   `pivots 1; pivot caches 1`, and the FreeX-saved workbook passed Open XML SDK schema validation
