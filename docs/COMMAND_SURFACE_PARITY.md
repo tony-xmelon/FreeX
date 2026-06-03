@@ -60,7 +60,7 @@ The earlier Window Management row was completed on 2026-06-01; the live View > W
 
 | Area | Excel Feature | FreeX Decision |
 |---|---|---|
-| Theme System | Themes, theme colors, theme fonts, theme effects | Partial; theme part load/save now preserves loaded `fmtScheme` OOXML and interprets first `outerShdw` effect-style shadows for non-chart drawing objects, while fuller effect interpretation remains deferred |
+| Theme System | Themes, theme colors, theme fonts, theme effects | Partial; theme part load/save now preserves loaded `fmtScheme` OOXML and interprets the first supported `effectStyle` group for bounded `outerShdw`/`prstShdw` shadows and `glow` effects on non-chart drawing objects, while fuller effect interpretation remains deferred |
 | Advanced Chart Families | Treemap, sunburst, histogram, Pareto, box-and-whisker, waterfall, funnel, map, true 3D surface mesh | Partial - 28 renderable chart types now have Excel-openability/export and visual-gate evidence, including chartEx treemap/sunburst/histogram/Pareto/box-and-whisker/waterfall/funnel and 2D/3D surface package/rendering paths; Map and true 3D mesh-style surface remain deferred, and unsupported/unparseable chart package parts stay in the retained-opaque warning path |
 
 ## Commands Parity Closeout Scope
@@ -153,7 +153,7 @@ worksheet coordinates.
 | Fill/Highlight Color | Implemented |  |
 | Borders (presets) | Implemented |  |
 | Full Border Gallery | Partial | Expanded preset gallery with remembered line color/style; Draw Border Grid and Erase Border apply remembered borders or clear borders to clicked/dragged grid ranges; edge-level pencil border drawing remains deferred |
-| Theme Colors | Partial | Preset color schemes plus Customize Colors entry point through an access-keyed theme dialog; loaded theme `fmtScheme` details are preserved on save and across modeled effect-name changes, with first `outerShdw`/`prstShdw` effect-style shadows interpreted for non-chart drawing objects |
+| Theme Colors | Partial | Preset color schemes plus Customize Colors entry point through an access-keyed theme dialog; loaded theme `fmtScheme` details are preserved on save and across modeled effect-name changes, with the first supported `effectStyle` group interpreted for bounded `outerShdw`/`prstShdw` shadows and `glow` effects on non-chart drawing objects |
 
 ### Alignment
 
@@ -303,7 +303,7 @@ workbook command behavior to track here.
 | Print Gridlines | Implemented |  |
 | Print Headings | Implemented |  |
 | Sheet Options (gridlines/headings display) | Implemented |  |
-| Themes (preset + custom dialog) | Partial | Presets plus custom theme dialog reachable from Themes, Theme Colors, Theme Fonts, and Theme Effects; dialog preset buttons, metadata fields, color slots, and Save/Cancel expose keyboard access keys; loaded `fmtScheme` OOXML is preserved on save and across modeled effect-name changes, and first `outerShdw`/`prstShdw` effect-style shadows render for non-chart drawing objects while fuller OOXML effect interpretation remains deferred |
+| Themes (preset + custom dialog) | Partial | Presets plus custom theme dialog reachable from Themes, Theme Colors, Theme Fonts, and Theme Effects; dialog preset buttons, metadata fields, color slots, and Save/Cancel expose keyboard access keys; loaded `fmtScheme` OOXML is preserved on save and across modeled effect-name changes, and the first supported `effectStyle` group renders bounded `outerShdw`/`prstShdw` shadows and `glow` effects for non-chart drawing objects while fuller OOXML effect interpretation remains deferred |
 | Colors/Fonts/Effects preset menus | Implemented |  |
 | Header/Footer editing | Implemented | First/odd/even variants, presets, section fields, token buttons, option toggles, and OK/Cancel expose access keys |
 | Page Setup dialog | Implemented | Page, Margins, and Sheet tab labels plus footer actions expose access keys |
