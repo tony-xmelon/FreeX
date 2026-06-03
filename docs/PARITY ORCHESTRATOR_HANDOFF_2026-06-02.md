@@ -228,6 +228,13 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the QAT Options UIA metadata slice.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the QAT Options UIA metadata slice.
 - `git diff --check` - clean after the QAT Options UIA metadata slice.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "ExportReadinessPlannerTests" --logger "console;verbosity=normal"` - failed before the PDF/XPS readiness honesty text update on the missing PDF-only/PDF-A/tagged-PDF limitation wording, then passed 3/3 after `cd02bf47c`.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "ExportReadinessPlannerTests" -v:minimal` - 3/3 passed after the PDF/XPS readiness honesty text slice.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the PDF/XPS readiness honesty text slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the PDF/XPS readiness honesty text slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the PDF/XPS readiness honesty text slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the PDF/XPS readiness honesty text slice.
+- `git diff --check` - clean after the PDF/XPS readiness honesty text slice.
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~QuickAccessToolbarCustomizationPlannerTests|FullyQualifiedName~QuickAccessCommandStateResolverTests|FullyQualifiedName~ReviewCommandSourceTests|FullyQualifiedName~DrawCommandSourceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed after the default shape-name slice.
@@ -301,6 +308,7 @@ Completed and merged lanes from this wave:
 - Resume / Error Checking same-sheet named-range omitted-adjacent detection: completed on `9d578e9af`.
 - Resume / Selection Pane stable AutomationIds: completed on `5144947c6`.
 - Resume / QAT Options UIA metadata: completed on `d1dc16336`.
+- Resume / PDF/XPS readiness honesty text: completed on `cd02bf47c`.
 
 Read-only resume auditors:
 
