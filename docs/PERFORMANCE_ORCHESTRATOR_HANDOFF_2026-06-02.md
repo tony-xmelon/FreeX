@@ -1273,3 +1273,10 @@ Repository checkpoint after App.Host, App.UI, and Core.IO tail integration:
   - Verification after final rebase to current `origin/main`: focused replay metadata checks passed `2/2`; full Release `FreeX.Core.IO.Tests` passed `1798/1798` on the immediately preceding synced base.
 - Integration cleanup: current `origin/main` already localized the Fill Series warning source but left `HomeEditingCommandSourceTests` expecting the old literal. The integration branch updates that source-hygiene assertion to expect `UiText.Get("FillSeriesStep_SelectNumericOrDateStartMessage")`; the focused drift test passed `1/1`.
 - Final combined verification before push: full Release `FreeX.App.Host.Tests` passed `5821/5822` with the expected `SharedAppInstance_CoversLiveUiScenarios` skip on the immediately preceding synced base; after the last fast-moving-main rebase, the scoped App.Host checks passed `51/51`. Use sequential test runs per worktree; unbuilt test assemblies may return no useful console output when invoked with `--no-restore`.
+
+Repository checkpoint after CommandGuards editability guard integration:
+
+- `codex/perf-core-model-next-tail-20260603-r2` added the Core.Commands/Core.Model guard-path slice.
+  - Change: `CommandGuards.CanEditCell` now checks protected-sheet allow-edit ranges with an explicit loop instead of a captured LINQ `Any(...)` predicate. This avoids per-cell closure allocation even on unprotected sheets where the method returns immediately.
+  - Metrics: `PERF ADVANCED_FILTER_COPY_UNIQUE_DENSE` allocation dropped from the current-main baseline `8,272,024` bytes to `2,893,624` bytes over five repeated Advanced Filter copy-unique runs. The guard now asserts `< 3,500,000` bytes.
+  - Verification: focused Advanced Filter/source/protected-destination set passed `4/4`; full `AdvancedFilterCommandTests` passed `17/17`; the two unrelated timing-only `CellAddressTests` guards passed focused after failing under parallel full-suite load; full Release `FreeX.Core.Model.Tests` passed `1906/1906` with `RunConfiguration.DisableParallelization=true`.
