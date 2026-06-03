@@ -991,3 +991,33 @@ Repository checkpoint after Host selection, App.UI formula-trace, and Pivot refr
   - Metric: `PIVOT_REFRESH_COLUMN_VALUE_FILTER_SORT` allocation improved from `12,980,200` bytes to `9,171,904` bytes; final focused sample was `mean_ms=32.94`.
   - Verification: pivot refresh/command focused set passed `178/178`, full `FreeX.Core.Model.Tests` passed `1896/1896`, and `git diff --check HEAD~1..HEAD` passed.
 - Primary local `main` remained outside the performance integration path; verified performance work continued through linked worktrees and fast-forward pushes to `origin/main`.
+
+Repository checkpoint after Core.Calc viewport terminal metric probe integration:
+
+- `origin/main` was advanced to `bf0d78573` with `codex/perf-core-calc-next-tail-20260603-r1`.
+  - Change: default all-visible sheets now skip the discarded backward terminal row/column metric probe when the requested viewport start is clearly before the worksheet-end alignment zone. Custom row heights, custom column widths, hidden/filter/group-hidden rows, hidden/group-hidden columns, and near-terminal requests keep the existing terminal scan path.
+  - Metric: `SPARSE_OCCUPIED_VIEWPORT` allocation improved from the earlier baseline `29,161,480` bytes over 60 iterations to the rebased final sample `25,112,952` bytes; final sample time was `83.04 ms`.
+  - Verification: focused sparse viewport benchmark passed `1/1`; focused viewport layout/style/benchmark set passed `35/35`; full `FreeX.Core.Calc.Tests` passed `674/674`; full `FreeX.App.UI.Tests` passed `571/571`; `git diff --check HEAD~1..HEAD` passed.
+- The temporary `RowMetric`/`ColMetric` value-record experiment was reverted before commit because App.UI relies on the existing nullable class-record semantics in metric lookups.
+- Fresh Core.IO worker `019e8c3f-3a5b-7932-a247-79d1d64a9317` and Core.Formula worker `019e8c3f-4e98-7f13-840c-119bdeba7652` were started from the resumed orchestrator context; wait for their results before claiming the current wave is exhausted.
+
+Repository checkpoint after Core.IO no-patch, Host census, Core.Model metadata, and Formula lookup integrations:
+
+- Core.IO worker `019e8c3f-3a5b-7932-a247-79d1d64a9317` completed with no patch on `codex/core-io-xlsx-nativejson-tail-20260603`.
+  - Evidence: focused Release Core.IO performance filter passed `50/50`; full Release `FreeX.Core.IO.Tests` passed `1784/1784`.
+  - Clean samples included `XLSX_SAVE_LOADED_DENSE_MUTATED` about `157.76 MB`, `XLSX_SAVE_STYLE_ONLY` about `144.68 MB`, `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` about `131.59 MB`, `XLSX_LOAD_DENSE` about `73.85 MB`, and `NATIVE_JSON_LOAD_DENSE` about `37.79 MB`.
+  - Rejected candidate: ignored-error save tuple gather saved only about `0.5 MB` and slowed the focused benchmark materially, so it was reverted.
+- Local Host census branch `codex/perf-host-next-tail-20260603-r1` completed with no patch.
+  - `PerformanceReviewMeasurementTests` passed `17/17`.
+  - Current samples: `VIEWPORT_NO_COMMENTS_FAST_PATH` `34,924,200` bytes; `RIBBON_FORCE_COMPACT` `13,108,240` bytes; `RIBBON_RESIZE` `11,940,720` bytes; `RIBBON_COLLAPSED_BUTTON_FOOTPRINT` `6,144,040` bytes; `NON_DRAG_SELECTION_TOOLBAR` `11,673,152` bytes; selection drag toolbar/status remained around `3.82 MB`/`2.75 MB`.
+  - Decision: no safe narrow Host patch found. Ribbon collapsed footprint already uses cached boxed dependency-property values and same-mode skip guards; remaining allocation appears tied to real mode-change `SetValue` work plus benchmark instrumentation.
+- `origin/main` was advanced to `a72d52cd2` with `codex/perf-core-model-next-tail-20260603-r1`.
+  - Change: `DeleteRowsCommand` now captures full row metadata undo state as compact key-value/value lists instead of dictionary/hashset snapshots, preserving full restore semantics while reducing snapshot overhead.
+  - Metric: `DELETE_ROWS_METADATA_SHIFT` improved from `10,181,320` bytes to the rebased final sample `7,075,600` bytes; final focused mean was `84.38 ms`.
+  - Verification: focused delete-row metadata/shift/guard set passed `12/12`; full `FreeX.Core.Model.Tests` passed `1898/1898`; `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `8e8833d56` with clean branch `codex/perf-formula-lookup-streaming-clean-20260603-r1`.
+  - Worker source branch was `codex/perf-formula-builtins-fresh-tail-20260603-r1`; integration used a clean cherry-pick of performance commit `4628af8c3` because the worker branch also contained unrelated local merge/refactor history.
+  - Change: direct range streaming fast paths for lookup-family formulas avoid flattening large worksheet ranges for `MATCH`, `XMATCH`, `XLOOKUP`, and `LOOKUP`.
+  - Metric: baseline `MATCH(100000,A1:A100000,1/0)` was about `800,464` bytes; final focused allocations were `MATCH` `112` bytes, `XMATCH` `136-160` bytes, `XLOOKUP` `112-136` bytes, and `LOOKUP` `64` bytes.
+  - Verification: focused Release lookup allocation tests passed `12/12`; full Release `FreeX.Core.Formula.Tests` passed `2726/2726`; `git diff --check HEAD~1..HEAD` passed.
+- Hourly thread heartbeat automation `hourly-performance-orchestrator-status` was created so the user receives regular progress updates while the goal remains active.

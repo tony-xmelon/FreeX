@@ -43,11 +43,12 @@ with an actual marker-sheet edit before Excel opens them:
 dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --freex-resave-before-excel --generate-freex-feature-fixtures
 ```
 
-Formula, structured table, drawing/shape, and PivotTable feature fixtures have retention
-expectations, not just passive summary counts. When `--save-reopen` is used, the smoke fails if
-FreeX cannot load the expected feature metadata before Excel opens the staged workbook, if Excel
-open/reopen loses the expected formula cells, structured tables, worksheet shapes, or PivotTables,
-or if FreeX cannot reload the Excel-saved copy with the expected metadata still present.
+Formula, structured table, validation/conditional-format, hyperlink/comment, drawing/shape,
+sparkline/image, protection, and PivotTable feature fixtures have retention expectations, not just
+passive summary counts. When `--save-reopen` is used, the smoke fails if FreeX cannot load the
+expected feature metadata before Excel opens the staged workbook, if Excel open/reopen loses the
+expected formula cells, structured tables, worksheet shapes, or PivotTables, or if FreeX cannot
+reload the Excel-saved copy with the expected metadata still present.
 
 ## Excel-authored through FreeX
 
@@ -96,6 +97,13 @@ dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --freex-resave-
 When no status filter is supplied, the tool selects `supported-pass`, `supported-metadata-pass`,
 `supported-pivot-metadata-pass`, and `public-pass` rows. Missing generated or local-private files are
 reported as skipped, not silently ignored.
+
+The local-private Partner Dashboard row `local-private-partner-dashboard-20250116` carries
+additional retention gates when the file is present. The FreeX-resaved path must retain at least
+`16000` formulas, `1` table, `3` PivotTables, `1` pivot cache, `5` validations, `47` hyperlinks,
+`117` comments, `1` picture, and `120` Excel-visible worksheet shapes. Conditional-format retention
+is gated at `100` rules before Excel opens the FreeX-saved copy and `66` rules after Excel
+save/reopen, reflecting Excel's normalization of duplicate status-text rules in that workbook.
 
 ## Operational details
 
@@ -153,6 +161,13 @@ As of 2026-06-03 on the local desktop Excel COM environment:
   shapes/text, and Excel-authored fixtures. The final feature fixture smoke reported shape counts of
   `1`, `1`, and `2` for those three FreeX-authored drawing fixtures through Excel open/reopen, and
   representative FreeX-saved outputs passed Open XML SDK schema validation with `errors=0`.
+- FreeX-side metadata assertions passed for validation/conditional formatting (`3` validations,
+  `4` conditional formats), hyperlinks/comments (`3` hyperlinks, `1` comment),
+  images/sparklines (`1` picture, `2` sparklines), text/drawing shapes (`1` text box, `1` drawing
+  shape), protection (`1` protected sheet, workbook structure protection), and the Excel-authored
+  fixture (`1` validation, `1` conditional format, `1` hyperlink, `1` comment, `1` text box).
+  Representative metadata-heavy FreeX-saved outputs passed Open XML SDK schema validation with
+  `errors=0`.
 - Public + regression corpus rows selected from `test-corpus/manifest.csv` with
   `--save-reopen --freex-resave-before-excel --corpus-source public --corpus-source regression`
   passed: `34/34`.
@@ -160,8 +175,10 @@ As of 2026-06-03 on the local desktop Excel COM environment:
   `errors=0` for every file.
 - The local-private Partner Dashboard regression row
   `local-private-partner-dashboard-20250116` passed
-  `--save-reopen --freex-resave-before-excel`: `1/1`. The FreeX-saved workbook also passed Open XML
-  SDK schema validation with `errors=0`.
+  `--save-reopen --freex-resave-before-excel`: `1/1`, with the manifest retention gates above.
+  The original workbook was rejected by direct Excel COM open with `0x800A03EC`, while the
+  FreeX-saved copy opened, saved, reopened, reloaded in FreeX, and passed Open XML SDK schema
+  validation with `errors=0`.
 
 The 2026-06-03 corpus pass specifically covers prior Excel/OpenXML failures from invalid
 `styles.xml` ordering (`dxfs`/`tableStyles`/`colors`), invalid `workbook.xml` ordering
