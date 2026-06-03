@@ -1029,3 +1029,45 @@ Repository checkpoint after Core.Commands insert-row metadata snapshot integrati
   - Metric: `INSERT_ROWS_METADATA_SHIFT` improved from the pre-change branch baseline `8,773,744` bytes / `124.23 ms` mean to the focused post-change sample `7,073,272` bytes / `61.13 ms` mean over three iterations.
   - Verification: focused insert-row metadata/guard/nearby insert set passed `22/22`; full `InsertDeleteRowsTests` passed `36/36`; full `FreeX.Core.Model.Tests` passed `1899/1899`; `git diff --check HEAD~1..HEAD` passed.
 - The primary local `main` remained untouched and locally divergent; performance integration continued through linked worktrees and fast-forward pushes to `origin/main`.
+
+Repository checkpoint after column metadata, Core.Calc sparse viewport, and App.UI drawing-object cache integrations:
+
+- `origin/main` first moved through an unrelated parity orchestrator merge chain to `f84b21064`; the local performance branches were rebased over that before integration.
+- `origin/main` was advanced to `e75d94f28` with `codex/perf-core-commands-column-metadata-tail-20260603-r1`.
+  - Change: `InsertColumnsCommand` and `DeleteColumnsCommand` now capture full column metadata undo state as compact key-value/value lists instead of dictionary/hashset snapshots, and use the shared sorted-set capture helper for column page breaks. Dedicated dense column-metadata benchmarks were added to cover this path.
+  - Metrics from a temporary benchmark-only baseline worktree versus the rebased patch: `INSERT_COLUMNS_METADATA_SHIFT` improved from `8,629,480` bytes to `6,929,008` bytes; `DELETE_COLUMNS_METADATA_SHIFT` improved from `9,334,000` bytes to `6,930,904` bytes.
+  - Verification: focused column metadata benchmark/guard set passed `3/3`; `InsertDeleteColumnsTests|RowColumnShiftAddressStateTests` passed `33/33`; full `FreeX.Core.Model.Tests` passed `1902/1902`; `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `2e1379fc7` with `codex/core-calc-tail-worker-20260603`.
+  - Worker: `019e8c60-2738-7001-b136-5aa6abc0d401`.
+  - Change: sparse occupied viewport scans avoid preallocating a large `DisplayCell` list when the sheet used range cannot overlap the visible row/column metric bounds, and reject occupied cells outside visible metric ranges before binary metric membership lookup.
+  - Metrics: worker baseline for `SPARSE_OCCUPIED_VIEWPORT` was `25,088,680` bytes / `671.40 ms` in the full benchmark class; final rebased full-class sample was `5,887,240` bytes / `243.79 ms` over 60 iterations. The worker's sparse-only final sample was `5,887,240` bytes / `70.18 ms`.
+  - Verification: rebased Release `PerformanceBenchmarkTests` passed `18/18`; full Release `FreeX.Core.Calc.Tests` passed `674/674`; `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `d146a7136` with `codex/app-ui-render-layout-tail-20260603-r1`.
+  - Worker: `019e8c60-1278-7771-b3f9-83e7790c99cd`.
+  - Change: the drawing-object layer cache now keys selection state by visible selected-picture anchor only, instead of the whole active cell range, so shape/text-box-heavy object layers survive unrelated cell-selection repaints while picture selection adorners remain correct.
+  - Metrics: focused worker baseline `GRID_RENDER_DRAWING_OBJECT_SELECTION_REPAINT` was `31,345,144` bytes / `141.23 ms` mean; worker final sample was `268,496` bytes / `69.14 ms` mean. The rebased integration sample was `287,256` bytes / `90.84 ms` mean.
+  - Verification: rebased `GridViewPerformanceMeasurementTests` passed `18/18`; full `FreeX.App.UI.Tests` passed `572/572`; `git diff --check HEAD~1..HEAD` passed.
+- The primary local `main` remained untouched and locally divergent; performance integration continued through linked worktrees and fast-forward pushes to `origin/main`.
+
+Repository checkpoint after Core.Model census/no-patch probe:
+
+- Local branch `codex/perf-core-model-census-tail-20260603-r1` was synced to `origin/main` at `dc1988e27` and left as a documentation/census branch.
+- Full Core.Model benchmark-class census passed `38/38`.
+- Current notable samples:
+  - `WATCHWINDOW_GET_ENTRIES_MANY`: `6,050,280` bytes.
+  - `CLIPBOARD_DESERIALIZE_DENSE`: `7,686,400` bytes.
+  - `CLIPBOARD_SERIALIZE_DENSE`: `2,766,720` bytes.
+  - `FLASHFILL_COLUMNS_EMAIL`: `9,630,560` bytes.
+  - `FLASHFILL_FIRST_TOKENS`: `4,944,120` bytes.
+  - `FLASHFILL_FILE_EXTENSIONS`: `900,920` bytes.
+  - `SUBTOTAL_PLAN_MANY_GROUPS_PAGEBREAKS`: `1,712,032` bytes.
+  - `PIVOT_REFRESH_COLUMN_VALUE_FILTER_SORT`: `9,171,904` bytes.
+  - Dense row/column shifts stayed around the current integrated range: `12.42-12.59 MB`; metadata shifts stayed around `6.93-7.08 MB`.
+- No source patch was carried from this census:
+  - Flash Fill email/first-token/file-extension paths are mostly required output-string allocation; the email path already uses the lower-allocation token-pair helpers.
+  - A Subtotal plan streaming trial increased allocation (`1,712,032 -> 1,854,232` bytes) because losing exact group-count/list pre-sizing outweighed the removed span list, so it was reverted.
+  - Watch Window entries already use pooled sort buffers, value-type entries, and exact arrays; remaining allocation is dominated by the returned entry array and formatted value strings, so a safe narrow patch would require API or presentation-string caching changes.
+- Current active workers launched with full-access/no-permission instructions:
+  - `019e8c79-53c6-7511-947b-dddd55ba7839`: Core.Formula evaluator/built-in function tail, scope `src/FreeX.Core.Formula/**` and `tests/FreeX.Core.Formula.Tests/**`.
+  - `019e8c79-86bc-7e42-8654-b1f3a0d6eaab`: App.Host performance-review tail, scope `src/FreeX.App.Host/**` and `tests/FreeX.App.Host.Tests/**`.
+  - `019e8c7f-ed62-7f70-be6b-fd09149881aa`: Core.IO allocation tail, scope `src/FreeX.Core.IO/**` and `tests/FreeX.Core.IO.Tests/**`.
