@@ -43,16 +43,18 @@ with an actual marker-sheet edit before Excel opens them:
 dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --freex-resave-before-excel --generate-freex-feature-fixtures
 ```
 
-The full generated supported-pass corpus can also be generated from `test-corpus/manifest.csv` and
+The full generated supported corpus can also be generated from `test-corpus/manifest.csv` and
 validated through the same FreeX-edited path:
 
 ```powershell
 dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --freex-resave-before-excel --generate-supported-corpus-fixtures --corpus-manifest test-corpus\manifest.csv
 ```
 
-This generates the manifest rows backed by `XlsxCorpusFixtureFactory` under the run directory and
-adds feature-tag expectations for formulas, structured tables, data validation, conditional
-formatting, hyperlinks, comments, images, sparklines, text boxes/shapes, protection, and PivotTables.
+This generates the manifest rows backed by `XlsxCorpusFixtureFactory` under the run directory,
+including both `supported-pass` model fixtures and `supported-metadata-pass` package fixtures by
+default. It adds feature-tag expectations for formulas, structured tables, data validation,
+conditional formatting, hyperlinks, comments, images, sparklines, text boxes/shapes, protection,
+and PivotTables. Use `--corpus-status <status>` to narrow the generated set for focused runs.
 
 Formula, structured table, validation/conditional-format, hyperlink/comment, drawing/shape,
 sparkline/image, protection, and PivotTable feature fixtures have retention expectations, not just
@@ -210,6 +212,10 @@ As of 2026-06-03 on the local desktop Excel COM environment:
   passed: `52/52`. This covers printer settings, workbook and worksheet smart tags, worksheet
   single XML cells, slicers, timelines, external links, custom XML, calc chains, document
   properties, and worksheet/workbook native metadata package retention through desktop Excel.
+- The default generated corpus command now selects all materializable generated supported rows,
+  covering `supported-pass` plus `supported-metadata-pass` fixtures in one bidirectional
+  FreeX-resave -> desktop Excel save/reopen gate. The current default generated corpus run passed
+  `104/104`: `52` supported-pass rows and `52` supported-metadata-pass rows.
 
 The 2026-06-03 corpus pass specifically covers prior Excel/OpenXML failures from invalid
 `styles.xml` ordering (`dxfs`/`tableStyles`/`colors`), invalid `workbook.xml` ordering
