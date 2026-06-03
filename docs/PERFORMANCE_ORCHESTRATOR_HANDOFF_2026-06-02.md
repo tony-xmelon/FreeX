@@ -1446,6 +1446,20 @@ Repository checkpoint after Calc shared-leaf and Formula parsed-reference integr
 - Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
 - Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
 
+Repository checkpoint after Core.Calc sparse viewport metric integration:
+
+- `origin/main` was advanced to `fa0d0eb63` with `codex/perf-calc-sparse-viewport-integration-20260603-r1`.
+- The integration added rebased Core.Calc commit `fa0d0eb63`.
+  - Worker: `019e8ed2-5c8a-7c22-ad1d-ab86a7340ed4`.
+  - Change: sparse viewport misses now expose lazy default row/column metric lists, avoiding eager `RowMetric`/`ColMetric` object allocation when the used range does not overlap the requested viewport; dense rendering paths that inspect metrics still materialize once up front.
+  - Metrics: sparse occupied viewport benchmark improved from the worker baseline `83.60 ms` / `5,883,880` bytes over `60` iterations to the integration focused sample `0.28 ms` / `19,720` bytes (`328` bytes/iteration). Dense conditional-format guard remained healthy at `CF_AND_FORMULA_RULES allocated_bytes=5,709,824`.
+  - Verification: focused Calc performance/dependency/viewport set passed `65/65`; Formula performance filter passed `77/77`; full Release `FreeX.Core.Calc.Tests` passed `684/684`; full Release `FreeX.Core.Formula.Tests` passed `2749/2749`; `git diff --check origin/main..HEAD` passed before push.
+- Completed Core.Calc/Formulas worker `019e8ed2-5c8a-7c22-ad1d-ab86a7340ed4` can be closed after this docs push.
+- Still-running worker:
+  - `019e8ed1-b4cd-7180-abd1-73756789dba5`: App.Host current performance tail.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
+
 Repository checkpoint after Core.IO SpreadsheetML numeric write integration:
 
 - `origin/main` was advanced to `f53ffcfd6` with `codex/perf-io-spreadsheetxml-integration-20260603-r1`.
