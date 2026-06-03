@@ -557,6 +557,7 @@ The obvious high-impact backlog is reduced but not exhausted.
    - `XLSX_SAVE_STYLE_ONLY` improved modestly again to about `143.9-144.0 MB` with the forward row insertion cursor tail, but remains a high-allocation save path because ClosedXML/style seeding and package XML rewriting still dominate.
    - `XLSX_SAVE_IGNORED_ERRORS` improved to about `81.46 MB`; `XLSX_SAVE_DATA_VALIDATION_NATIVE_METADATA` improved from about `80.5 MB` to about `18.6 MB`.
    - `XLSX_LOAD_DRAWING_PICTURES` now has a current baseline and a small copy/traversal win (`23.6 MB` to about `22.8 MB`); further cuts likely require a larger picture-storage or image-retention redesign.
+   - A post-`11bcab08a` Core.IO profiling worker found no practical narrow follow-up: `XLSX_SAVE_STYLE_ONLY` was about `143,994,216` bytes, `XLSX_LOAD_DRAWING_PICTURES` about `22,846,608` bytes, and `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` about `131,572,344` bytes. Its style-only save trial was effectively flat (`~184` bytes on a `~144 MB` path) and was reverted.
    - Unchanged loaded workbook fast-copy remains healthy: `XLSX_SAVE_LOADED_DENSE` around `554,248` bytes in the full IO run.
    - Further IO cuts likely require deeper metadata load/save redesign or more streaming XML writers.
 2. App.Host toolbar/ribbon:
@@ -574,6 +575,7 @@ The obvious high-impact backlog is reduced but not exhausted.
 4. Formula/Core.Calc:
    - Repeated identical formula dependency rebuild improved again; latest isolated worker sample was `15.48 MB`, while warm focused runs can be much lower because dependency-plan caches are hot.
    - Core.Calc conditional-format formula rule stacking improved after the handoff: `CF_FORMULA_RULES` dropped from `12,387,000` bytes to `5,643,480` bytes by caching repeated stacked CF style combinations per viewport.
+   - Core.Calc dependency rebuild improved again after the handoff: repeated identical formula dependency rebuild dropped from about `15,454,928` bytes / `3,090` bytes per formula to `1,916,992` bytes / `383` bytes per formula by grouping identical compact range dependencies in the range index.
    - Formula built-in focused benchmarks were reprobed after the handoff: `UNIQUE_SINGLE_COLUMN` was about `742,824` bytes and is still mostly required `HashSet` plus returned `RangeValue` storage; `REPT_LARGE_RESULT` was about `65,736` bytes and already bounded by output-string allocation.
    - Formula parser/evaluator tail remains a candidate only if a semantics-safe path can be proven; the latest broad focused Formula test run passed without exposing a narrow patch.
 5. App.UI render:
@@ -583,6 +585,7 @@ The obvious high-impact backlog is reduced but not exhausted.
    - Formula-trace layout visitor improved from about `1.19 MB` to about `5 KB`; timing remains noisy and should be watched if more render work touches that planner.
    - Chart dimension resize repaint improved from about `14.3 MB` to about `46-52 KB` by reusing the light pre-selection render layer cache.
    - Drawing-object render allocation improved from about `5.2 MB` to `46-53 KB`; offscreen drawing-object repaint is now around `26 KB` on the latest sample, and anchor lookup remains allocation-flat at about `3 KB`.
+   - Split-pane scrollbar chrome improved after the handoff by changing the layout DTOs to value records: `SPLIT_PANE_SCROLLBAR_CHROME` dropped from `16,000,048` bytes to `4,000,040` bytes for `50,000` steps.
 
 ## Subagent Status
 
@@ -636,8 +639,8 @@ Post-handoff-resume 2026-06-03 workers launched with full-access/no-permission i
 
 Goal-continuation 2026-06-03 workers launched with full-access/no-permission instructions:
 
-- `019e8b99-f72a-7d31-81f1-53fadcf81bb4`: App.UI/App.Host benchmark census and narrow patch worker, active at the checkpoint; branch/worktree requested: `codex/perf-ui-host-census-20260603-r2` / `.worktrees/perf-ui-host-census-20260603-r2`.
-- `019e8b9a-0be0-70b1-b9c8-60726a3ba50b`: Core.IO XLSX profiling tail worker, active at the checkpoint; branch/worktree requested: `codex/perf-xlsx-profiling-tail-20260603-r1` / `.worktrees/perf-xlsx-profiling-tail-20260603-r1`.
+- `019e8b99-f72a-7d31-81f1-53fadcf81bb4`: App.UI/App.Host benchmark census and narrow patch worker, completed. Rebased commit `b6e08488d` integrated to `origin/main`; split-pane scrollbar chrome allocation improved `16,000,048 -> 4,000,040` bytes.
+- `019e8b9a-0be0-70b1-b9c8-60726a3ba50b`: Core.IO XLSX profiling tail worker, completed with no patch. Style-only save trial was negligible/flat and reverted; worktree left clean with no commit.
 
 Local orchestrator slices after restart:
 
@@ -653,6 +656,8 @@ Local orchestrator slices after restart:
 - `codex/perf-xlsx-styleonly-save-tail-20260603-r1`: XLSX style-only save row insertion cursor tail, completed; commit `d468bb5bd` integrated to `origin/main`.
 - `codex/perf-formula-eval-tail-20260603-r2`: Core.Commands formula-audit inconsistent-formula scan allocation tail, completed; commit `cf15c0392` integrated to `origin/main`.
 - `codex/perf-formula-builtins-tail-20260603-r1`: Core.Calc conditional-format stacked style cache tail, completed; commit `78a40e1bd` integrated to `origin/main`. Baseline `CF_FORMULA_RULES` was `12,387,000` bytes; final focused samples were `5,643,480` bytes with full `FreeX.Core.Calc.Tests` passing `667/667`.
+- `codex/perf-calc-dependency-tail-20260603-r1`: Core.Calc compact range dependency grouping tail, completed; commit `13ecd1000` integrated to `origin/main`. Baseline `REPEATED_IDENTICAL_FORMULA_REBUILD` was `15,454,928` bytes / `3,090` bytes per formula; final was `1,916,992` bytes / `383` bytes per formula with full `FreeX.Core.Calc.Tests` passing `667/667`.
+- `codex/perf-ui-host-census-20260603-r2`: App.UI split-pane scrollbar chrome tail, completed by worker and rebased by orchestrator; commit `b6e08488d` integrated to `origin/main`. Final focused split-pane tests passed `66/66`, full `FreeX.App.UI.Tests` passed `570/570`, and `git diff --check` passed.
 
 Local orchestrator exploratory slice after drawing tails:
 
@@ -759,3 +764,10 @@ Repository checkpoint after Core.Calc CF stacked-style cache integration:
 - `origin/main` was advanced to `78a40e1bd` with the Core.Calc conditional-format stacked style cache slice.
 - The primary local `main` remained untouched and locally divergent; performance integration continued through linked worktrees and fast-forward pushes to `origin/main`.
 - Fresh App.UI/App.Host and Core.IO agents were running from current `origin/main`; wait on their new IDs, not the old paused IDs, before claiming the next wave is exhausted.
+
+Repository checkpoint after dependency graph and split-pane integrations:
+
+- `origin/main` was advanced to `13ecd1000` with the Core.Calc repeated range dependency grouping slice.
+- `origin/main` was then advanced to `b6e08488d` with the App.UI split-pane scrollbar chrome allocation slice.
+- Core.IO worker `019e8b9a-0be0-70b1-b9c8-60726a3ba50b` completed with no patch; its clean no-patch result should be treated as current evidence for the XLSX style-only/load metadata tail.
+- The primary local `main` remained untouched and locally divergent; continue using linked worktrees from `origin/main` for this performance thread.
