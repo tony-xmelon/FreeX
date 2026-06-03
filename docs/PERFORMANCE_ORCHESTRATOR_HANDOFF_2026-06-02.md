@@ -1197,3 +1197,23 @@ Repository checkpoint after Core.IO NativeJson reference-save integration:
   - Verification: rebased NativeJson-focused set passed `230/230`; full Release `FreeX.Core.IO.Tests` passed `1787/1787`; `git diff --check HEAD~1..HEAD` passed.
 - Remaining active worker:
   - `019e8cd4-fb02-7ef0-bc62-df786d7aeb38`: App.Host performance tail, still running.
+
+Repository checkpoint after viewport, mode-count, and formula-trace tail integrations:
+
+- Core.Calc worker `019e8d04-626f-7803-b8a2-043798106b12` completed `549065354` on `codex/core-calc-perf-tail-20260603-r1`; by the final integration rebase this slice was already present in `origin/main` through merge `1a639c13c`.
+  - Change: `ViewportService` skips the occupied-cell dictionary scan when the sheet used range cannot overlap the requested visible row/column metrics.
+  - Metrics: worker baseline for sparse occupied viewport metric lookup was `38.12 ms` / `5,887,240` bytes; final rebased focused sample was `15.68 ms` / `5,883,880` bytes. Allocation is mostly returned row/column metric payload, so the improvement is time from avoiding an impossible scan.
+  - Verification observed in the clean integration branch before rebase: focused sparse occupied viewport set passed `2/2`; full Release `FreeX.Core.Calc.Tests` passed `678/678`; `git diff --check` passed. The final rebase skipped the commit because it was already upstream.
+- App.Host worker `019e8cd4-fb02-7ef0-bc62-df786d7aeb38` completed `f21ccf77` on `codex/app-host-perf-tail-worker-20260603`; by the final integration rebase this slice was already present in `origin/main` through merge `582f420d3`.
+  - Change: viewport scrollable row/column metric counting now uses direct loops instead of captured LINQ `Count(...)` predicates, with a source guard.
+  - Metrics: worker baseline for `PERF VIEWPORT_SIDE_PANE_REFRESH` was `862.27 ms` total / `10.77 ms` mean / `4,404,216` bytes; worker after-sample was `225.99 ms` total / `2.82 ms` mean / `4,381,176` bytes. Clean integration focused sample was `287.49 ms` total / `3.59 ms` mean / `4,504,696` bytes.
+  - Verification observed in the clean integration branch before rebase: focused viewport-side-pane set passed `2/2`; full Release `FreeX.App.Host.Tests` passed `5813/5814` with the expected `SharedAppInstance_CoversLiveUiScenarios` skip; `git diff --check` passed. The final rebase skipped the commit because it was already upstream.
+- `codex/perf-wave-tail-integration-20260603-r1` added rebased Formula commit `7ae37035f`.
+  - Change: `AGGREGATE(13,...)` direct-range mode counting pre-sizes the frequency dictionary to a capped direct-range capacity and allocates it lazily on the first numeric value.
+  - Metrics: original branch baseline for `=AGGREGATE(13,4,A1:A100000)` was `14.85 ms` / `4,072,312` bytes; final rebased focused sample was `10.19 ms` / `1,466,544` bytes. The performance guard was tightened from `< 5,000,000` to `< 2,000,000` bytes.
+  - Verification after final rebase: focused mode guard passed `1/1`; full Release `FreeX.Core.Formula.Tests` passed `2726/2726`; `git diff --check HEAD~2..HEAD` passed.
+- `codex/perf-wave-tail-integration-20260603-r1` added rebased App.UI commit `6d5f98602`.
+  - Change: formula trace layout visiting and marker hit-testing use indexed loops over `IReadOnlyList<FormulaTraceArrow>`, avoiding enumerator allocation; the allocation guard moved into the new `GridViewPerformanceMeasurementTests.FormulaTrace.cs` split test file during rebase.
+  - Metrics: worker baseline for `PERF FORMULA_TRACE_LAYOUT_VISITOR` was `90.23 ms` visitor total / `5,160` bytes; final rebased focused sample was `72.91 ms` visitor total / `40` bytes.
+  - Verification after final rebase: focused FormulaTrace filter passed `13/13`; full Release `FreeX.App.UI.Tests` passed `572/572`; `git diff --check HEAD~2..HEAD` passed.
+- All three worker agents from this wave have completed and can be closed after the source/docs push. Continue using linked worktrees from `origin/main`; the primary local `main` has unrelated local history and must not be used as the performance integration path.

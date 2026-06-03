@@ -165,7 +165,10 @@ metadata on the same `VisualHost` boundary and are emitted as PDF `/Link` annota
 External web/file/email hyperlink targets are exported for included printed cells in active-sheet, selected-range, and
 entire-workbook PDF exports, and bitmap-text mode does not suppress those link annotations because it only controls
 selectable text overlays. Internal worksheet links (`PlaceInThisDocument`) are intentionally skipped until FreeX has
-a PDF destination model that can map workbook locations to exported page coordinates. XPS export remains a separate ReachFramework-backed
+a PDF destination model that can map workbook locations to exported page coordinates. Embedded worksheet charts on
+printed pages are rendered through the existing chart bitmap renderer and clipped to the printed page body so PDF and
+XPS exports include the same raster chart content as print; vector chart graphics, selectable chart text, chart-sheet
+pagination, and full drawing-object z-order fidelity remain separate deferred scope. XPS export remains a separate ReachFramework-backed
 path for Windows print-pipeline workflows. `ExportOptions` models active-sheet, selected-range, entire-workbook, and
 one-based page-range scopes; selected-range export is implemented by passing a `GridRange` override into `PrintRenderer`,
 workbook export combines visible worksheet documents rendered through the same sheet-level path, and active-sheet export resolves Excel-style grouped visible worksheets in workbook order rather than only the current sheet, PDF page ranges subset
