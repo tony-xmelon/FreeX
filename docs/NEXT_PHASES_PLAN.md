@@ -49,7 +49,7 @@ The late May workstreams moved several remaining parity areas from feature build
 
 The production readiness pass hardened accessibility, test corpus quality, dialog parity, shortcut coverage, and documentation:
 
-- **#45 Accessibility gate**: `SheetGrid` (`GridView`) UIA peer override returns a DataGrid-typed peer; `TabChrome` sheet-tab grid `AutomationProperties.Name` bound to sheet name; 10 new UIA XAML-parse tests in `MainWindowUiaPropertiesTests`.
+- **Accessibility gate**: `SheetGrid` (`GridView`) has worksheet automation metadata plus grid, selection, visible cell grid-item, value, and selection-item provider coverage; `TabChrome` sheet-tab grid `AutomationProperties.Name` is bound to sheet name; `MainWindowUiaPropertiesTests` and `GridViewAutomationPeerTests` guard the current UIA contracts.
 - **#46 XLSX corpus**: Manifest expanded from 144 to 175 rows; 3 per-feature XML structural comparisons (CF rules, chart series, DV counts) added; 6 round-trip bugs fixed.
 - **#47 Dialog parity**: All remaining `MessageBox.Show` calls in dialog classes replaced with `IUserMessageService`; access keys and `IsDefault`/`IsCancel` audited across all dialogs.
 - **#48 Shortcut parity**: AutoFilter shortcut improvements; shortcut parity now at 100% (87/87, 0 partial).
