@@ -72,6 +72,7 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `e17171ac0` - Added stable Backstage Share, Info, and Export UI Automation IDs/names/help text and updated the UI test catalog automation-ID count.
 - `a28d282c4` - Honored the Options default save format for native `.fxl` workbooks, normalized legacy `.json` option values, selected the matching Save As filter index, and updated localized visible labels.
 - `36e3bf264` - Skipped blank source rows inside selected Flash Fill ranges so populated later rows still fill while source-blank rows remain blank.
+- `06762c674` - Updated generated command inventory parity docs to mention Flash Fill selected-range source-blank row handling.
 
 Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, and Selection Pane mixed reorder coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
@@ -132,6 +133,9 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Flash Fill blank-source selected-range fix.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Flash Fill blank-source selected-range fix.
 - `git diff --check` - clean after the Flash Fill blank-source selected-range fix.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated Flash Fill generated parity docs for selected-range source-blank row handling.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the Flash Fill selected-range source-blank row docs sync.
+- `git diff --check` - clean after the Flash Fill selected-range source-blank row docs sync.
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~QuickAccessToolbarCustomizationPlannerTests|FullyQualifiedName~QuickAccessCommandStateResolverTests|FullyQualifiedName~ReviewCommandSourceTests|FullyQualifiedName~DrawCommandSourceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed after the default shape-name slice.
@@ -191,6 +195,7 @@ Completed and merged lanes from this wave:
 - Resume / Backstage Share, Info, and Export UIA metadata: completed, pushed to `origin/main`.
 - Resume / Options default `.fxl` save format: completed, pushed to `origin/main`.
 - Resume / Flash Fill selected-range blank source rows: completed, pushed to `origin/main`.
+- Resume / Flash Fill selected-range blank source docs sync: completed, pending push to `origin/main`.
 
 Read-only resume auditors:
 
