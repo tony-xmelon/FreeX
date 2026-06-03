@@ -167,7 +167,9 @@ entire-workbook PDF exports, and bitmap-text mode does not suppress those link a
 selectable text overlays. Internal worksheet links (`PlaceInThisDocument`) are intentionally skipped until FreeX has
 a PDF destination model that can map workbook locations to exported page coordinates. Embedded worksheet charts on
 printed pages are rendered through the existing chart bitmap renderer and clipped to the printed page body so PDF and
-XPS exports include the same raster chart content as print; vector chart graphics, selectable chart text, chart-sheet
+XPS exports include the same raster chart content as print. The printed chart layer also records bounded selectable
+PDF text overlays for fully visible chart titles plus X/Y axis titles, including rotated Y-axis title metadata, while
+the chart bitmap remains the visual source of truth. Vector chart graphics, selectable legend/data-label/tick-label text, chart-sheet
 pagination, and full drawing-object z-order fidelity remain separate deferred scope. XPS export remains a separate ReachFramework-backed
 path for Windows print-pipeline workflows. `ExportOptions` models active-sheet, selected-range, entire-workbook, and
 one-based page-range scopes; selected-range export is implemented by passing a `GridRange` override into `PrintRenderer`,
