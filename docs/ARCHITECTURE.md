@@ -425,8 +425,9 @@ engine. It reports cached formula error values, text cells that parse as finite 
 stored as text, formulas whose direct parser-extracted precedents include missing or blank cells, table calculated
 column formulas that differ from the column formula, and common aggregate formulas (`SUM`, `AVERAGE`, `COUNT`,
 `COUNTA`, `MEDIAN`, `MIN`, `MAX`, `PRODUCT`, `STDEV`, `STDEVP`, `STDEV.S`, `STDEV.P`, `VAR`, `VARP`,
-`VAR.S`, `VAR.P`, `SUBTOTAL`, `AGGREGATE`) that omit valued adjacent cells or valued gaps between separate
-arguments. It also reports literal cells whose values fail applied data-validation rules. Rule toggles use
+`VAR.S`, `VAR.P`, `SUBTOTAL`, `AGGREGATE`) that omit valued adjacent cells, including through same-sheet named-range
+arguments or valued gaps between separate arguments. It also reports literal cells whose values fail applied
+data-validation rules. Rule toggles use
 `Workbook.DisabledFormulaErrorCodes`, and per-cell ignore state reuses `Cell.IgnoreFormulaError` for both formula-error
 and non-error issue kinds.
 
