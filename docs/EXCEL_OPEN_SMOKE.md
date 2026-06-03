@@ -64,8 +64,9 @@ expected formula cells, structured tables, worksheet shapes, or PivotTables, or 
 reload the Excel-saved copy with the expected metadata still present.
 For generated and local-private supported corpus rows without declared warning expectations, the
 smoke also fails on any FreeX load warning before Excel or after reloading Excel's saved copy.
-Public corpus rows are excluded from that no-warning assertion because some public-pass files
-intentionally carry unsupported-surface tags for retention coverage.
+Public corpus rows without declared warning expectations now participate in the same no-warning
+assertion unless their manifest tags identify an unsupported or excluded warning-tolerated surface,
+such as the public chartsheet retention row.
 
 ## Excel-authored through FreeX
 
@@ -203,7 +204,8 @@ As of 2026-06-03 on the local desktop Excel COM environment:
   `errors=0`.
 - Public + regression corpus rows selected from `test-corpus/manifest.csv` with
   `--save-reopen --freex-resave-before-excel --corpus-source public --corpus-source regression`
-  passed: `34/34`.
+  passed: `34/34`; the supported public rows without unsupported-surface tags now also require
+  zero FreeX load warnings before Excel and after reloading Excel-saved copies.
 - The 34 FreeX-saved corpus workbooks from that run also passed Open XML SDK schema validation:
   `errors=0` for every file. The Excel smoke harness now performs this schema validation directly
   for FreeX-saved and Excel-saved outputs.
