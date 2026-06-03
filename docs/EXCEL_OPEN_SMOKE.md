@@ -64,8 +64,9 @@ expected formula cells, structured tables, worksheet shapes, or PivotTables, or 
 reload the Excel-saved copy with the expected metadata still present.
 For generated and local-private supported corpus rows without declared warning expectations, the
 smoke also fails on any FreeX load warning before Excel or after reloading Excel's saved copy.
-Public corpus rows are excluded from that no-warning assertion because some public-pass files
-intentionally carry unsupported-surface tags for retention coverage.
+Public corpus rows without declared warning expectations now participate in the same no-warning
+assertion unless their manifest tags identify an unsupported or excluded warning-tolerated surface,
+such as the public chartsheet retention row.
 
 ## Excel-authored through FreeX
 
@@ -121,7 +122,9 @@ additional retention gates when the file is present. The FreeX-resaved path must
 `16000` formulas, `1` table, `3` PivotTables, `1` pivot cache, `5` validations, `47` hyperlinks,
 `117` comments, `1` picture, and `120` Excel-visible worksheet shapes. Conditional-format retention
 is gated at `100` rules before Excel opens the FreeX-saved copy and `66` rules after Excel
-save/reopen, reflecting Excel's normalization of duplicate status-text rules in that workbook.
+save/reopen, reflecting Excel's normalization of duplicate status-text rules in that workbook. The
+row also participates in the supported-workbook no-warning gate: FreeX must emit zero load warnings
+before Excel and zero load warnings after reloading Excel's saved copy.
 
 ## Operational details
 
@@ -201,7 +204,8 @@ As of 2026-06-03 on the local desktop Excel COM environment:
   `errors=0`.
 - Public + regression corpus rows selected from `test-corpus/manifest.csv` with
   `--save-reopen --freex-resave-before-excel --corpus-source public --corpus-source regression`
-  passed: `34/34`.
+  passed: `34/34`; the supported public rows without unsupported-surface tags now also require
+  zero FreeX load warnings before Excel and after reloading Excel-saved copies.
 - The 34 FreeX-saved corpus workbooks from that run also passed Open XML SDK schema validation:
   `errors=0` for every file. The Excel smoke harness now performs this schema validation directly
   for FreeX-saved and Excel-saved outputs.
@@ -210,7 +214,8 @@ As of 2026-06-03 on the local desktop Excel COM environment:
   `--save-reopen --freex-resave-before-excel`: `1/1`, with the manifest retention gates above.
   The original workbook was rejected by direct Excel COM open with `0x800A03EC`, while the
   FreeX-saved copy opened, saved, reopened, reloaded in FreeX, and passed Open XML SDK schema
-  validation with `errors=0`.
+  validation with `errors=0`. The stricter supported-workbook gate also passed with zero FreeX load
+  warnings before Excel and zero FreeX load warnings after reloading Excel's saved copy.
 - Generated `supported-metadata-pass` corpus rows selected from `test-corpus/manifest.csv` with
   `--save-reopen --freex-resave-before-excel --generate-supported-corpus-fixtures --corpus-status supported-metadata-pass`
   passed: `52/52`. This covers printer settings, workbook and worksheet smart tags, worksheet

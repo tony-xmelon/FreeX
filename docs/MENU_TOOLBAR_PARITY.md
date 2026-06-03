@@ -1,6 +1,6 @@
 # FreeX Menu and Toolbar Parity
 
-**Last updated:** 2026-06-01
+**Last updated:** 2026-06-03
 **Purpose:** Tracks individual ribbon button and menu-item fidelity against Excel for Windows.
 
 ## Coverage Summary
@@ -56,7 +56,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Save | Implemented | Ctrl+S; Backstage caption exposes a visible access key |
 | Save As | Implemented | Backstage caption exposes a visible access key |
 | Print Preview | Implemented | Keyboardable printer, copies, collation, sides, page range, zoom, margins, and Page Setup controls |
-| Export to PDF/XPS | Partial | Deterministic PDF export uses the print renderer and PDFsharp-WPF raster pages plus selectable/searchable text overlays for worksheet cells, headings, header/footer text, and common WPF text controls unless the bitmap-text option is selected; active-sheet, selected-range, and entire-visible-workbook exports support grouped visible sheets, rendered page-range validation, standard/minimum-size quality, ignore-print-areas, PDF initial-view/open-mode, catalog language, bookmark modes, document properties, and access-keyed publish/open-after-publish options; XPS remains available with format-aware option summaries; full vector PDF graphics, PDF/A, tagged PDF structure, and remaining full Excel PDF publish options remain partial |
+| Export to PDF/XPS | Partial | Deterministic PDF export uses the print renderer and PDFsharp-WPF raster pages plus selectable/searchable text overlays for worksheet cells, headings, header/footer text, common WPF text controls, and fully visible embedded chart titles, X/Y axis titles, legend entries, category tick labels, and data labels for classic embedded category charts unless the bitmap-text option is selected; active-sheet, selected-range, and entire-visible-workbook exports support grouped visible sheets, rendered page-range validation, standard/minimum-size quality, ignore-print-areas, PDF initial-view/open-mode, catalog language, bookmark modes, document properties, and access-keyed publish/open-after-publish options; XPS remains available with format-aware option summaries; full vector PDF graphics, value-axis tick labels and full chart text coverage, PDF/A, tagged PDF structure, and remaining full Excel PDF publish options remain partial |
 | Close | Implemented | Backstage caption exposes a visible access key |
 | Options | Partial | General, Formulas, View, and Save subsets including calculation/error-checking and formula bar preferences; sidebar categories, editable fields, option toggles, and OK/Cancel expose keyboard access keys |
 | Recent Files | Implemented |  |

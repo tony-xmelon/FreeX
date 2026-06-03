@@ -168,9 +168,10 @@ selectable text overlays. Internal worksheet links (`PlaceInThisDocument`) are i
 a PDF destination model that can map workbook locations to exported page coordinates. Embedded worksheet charts on
 printed pages are rendered through the existing chart bitmap renderer and clipped to the printed page body so PDF and
 XPS exports include the same raster chart content as print. The printed chart layer also records bounded selectable
-PDF text overlays for fully visible chart titles plus X/Y axis titles, including rotated Y-axis title metadata, while
-the chart bitmap remains the visual source of truth. Vector chart graphics, selectable legend/data-label/tick-label text, chart-sheet
-pagination, and full drawing-object z-order fidelity remain separate deferred scope. XPS export remains a separate ReachFramework-backed
+PDF text overlays for fully visible embedded chart titles, X/Y axis titles including rotated Y-axis title metadata,
+legend entries, category tick labels, and data labels for classic embedded category charts, while the chart bitmap
+remains the visual source of truth. Value-axis tick labels, vector chart graphics, chart-sheet pagination, and full
+drawing-object z-order fidelity remain separate deferred scope. XPS export remains a separate ReachFramework-backed
 path for Windows print-pipeline workflows. `ExportOptions` models active-sheet, selected-range, entire-workbook, and
 one-based page-range scopes; selected-range export is implemented by passing a `GridRange` override into `PrintRenderer`,
 workbook export combines visible worksheet documents rendered through the same sheet-level path, and active-sheet export resolves Excel-style grouped visible worksheets in workbook order rather than only the current sheet, PDF page ranges subset
