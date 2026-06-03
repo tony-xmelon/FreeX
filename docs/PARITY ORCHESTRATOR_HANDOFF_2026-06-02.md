@@ -76,8 +76,21 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `d27c443d7` - Planned single-cell Flash Fill invocation through a host range planner that includes contiguous examples above the active cell and adjacent source data below.
 - `9f182b03c` - Updated generated command inventory parity docs to mention Flash Fill active-cell example planning.
 - `264b846af` - Honored the Options default sheet count for File > New and startup-new workbooks by routing creation through a normalized `NewWorkbookFactory` with `Sheet1` through `SheetN` names.
+- `66ba1f053` - Added stable UI Automation IDs, names, and help text to remaining Backstage sidebar commands: Back, Home, New, Open, Save, Save As, and Close.
+- `275e51aa0` - Checked visible structured-table header cells directly in Accessibility Checker so retained table-column metadata no longer masks blank imported headers.
+- `f8369bb19` - Honored manual worksheet row and column page breaks in the shared print renderer pagination path, so print preview, PDF, XPS, and workbook export split pages at modeled/imported break IDs.
+- `f7948367e` - Interpreted imported workbook theme `a:glow` effect defaults and rendered the bounded approximation for non-chart text boxes and drawing shapes without extending picture or full `effectRef` semantics.
+- `94c7def23` - Applied modeled scale-percent and fit-to-pages-wide/tall settings to shared print renderer pagination capacity so print preview, PDF, XPS, and workbook export page counts reflect Scale to Fit settings.
+- `a3e4e6230` - Counted Print Comments At End summary pages in worksheet header/footer total-page tokens so print preview, PDF, XPS, and workbook export footers no longer show `Page 1 of 1` when a comment summary page is appended.
+- `c0f981318` - Extended Error Checking's omitted-adjacent-cells aggregate rule to statistical aggregate formulas (`STDEV`, `STDEVP`, `STDEV.S`, `STDEV.P`, `VAR`, `VARP`, `VAR.S`, and `VAR.P`) and regenerated command-surface parity docs.
+- `9d578e9af` - Resolved same-sheet named ranges inside Error Checking omitted-adjacent aggregate arguments while keeping other-sheet named ranges out of the current-sheet heuristic, and regenerated command-surface parity docs.
+- `136ae1d0a` - Resolved bounded custom number-format workbook-theme color directives with optional `TintNN`/`TintNN%` suffixes through the active workbook theme for formatter and viewport display paths, and regenerated command-surface parity docs.
+- `e65c7f022` - Counted modeled hyperlinks as hidden sheet/row/column content in Accessibility Checker hidden-content scans, including hyperlink-only hidden sheets and blank-cell hyperlinks in hidden rows or columns, and regenerated command-surface parity docs.
+- `9e3c95864` - Added deterministic Flash Fill inference for final slash/backslash path segment stems with extension removal, while rejecting no-extension or no-path remaining values, and regenerated command-surface parity docs.
+- `a2d54dfbb` - Collapsed repeated-word runs during Spell Check Replace All so overlapping detections such as `the the the` reduce to one word instead of leaving a duplicate pair, with host planner coverage and regenerated command-surface parity docs.
+- `9ba947791` - Materialized imported/custom PivotTable grand-total captions in row-only, column-only, and matrix refresh output, while keeping PivotStyle grand-total styling, merged-label exclusion, and Show Details extraction aligned with the active caption, and regenerated command-surface parity docs.
 
-Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, and Selection Pane mixed reorder coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
+Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, Selection Pane mixed reorder coverage, and manual worksheet page-break metadata/storage/preview coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full workbook theme effect fidelity beyond the bounded shadow/glow approximations, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
 ## Verification Completed
 
@@ -97,6 +110,42 @@ During verification, stale App.Host test/build processes briefly locked `FreeX.A
 
 Additional resume verification:
 
+- `dotnet test tests\FreeX.Core.Calc.Tests\FreeX.Core.Calc.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -v:minimal` - passed after the tinted workbook-theme number-format color slice.
+- `dotnet build src\FreeX.Core.Calc\FreeX.Core.Calc.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the tinted workbook-theme number-format color slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the tinted workbook-theme number-format color slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the tinted workbook-theme number-format color slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the tinted workbook-theme number-format color slice.
+- `git diff --check` - clean after the tinted workbook-theme number-format color slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - 85/85 passed after the hidden hyperlink-only content slice.
+- `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the hidden hyperlink-only content slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated Accessibility Checker generated docs after the hidden hyperlink-only content slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the hidden hyperlink-only content slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the hidden hyperlink-only content slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the hidden hyperlink-only content slice.
+- `git diff --check` - clean after the hidden hyperlink-only content slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~FlashFillServiceTests.Fill_ExtractFinalPathSegmentStem|FullyQualifiedName~FlashFillServiceTests.Fill_RemoveFinalDottedToken|FullyQualifiedName~FlashFillServiceTests.Fill_ExtractFinalDelimitedToken" -v:minimal` - 10/10 passed after the Flash Fill path-stem slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~FlashFillServiceTests" -v:minimal` - 238/238 passed after the Flash Fill path-stem slice.
+- `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the Flash Fill path-stem slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated Flash Fill generated docs after the path-stem slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the Flash Fill path-stem slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Flash Fill path-stem slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Flash Fill path-stem slice.
+- `git diff --check` - clean after the Flash Fill path-stem slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~SpellCheckServiceTests" -v:minimal` - 30/30 passed after the repeated-word Replace All slice.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~SpellCheckWorkflowPlannerTests" -v:minimal` - 17/17 passed after the repeated-word Replace All slice; an earlier parallel run timed out/locked outputs, no stale test process remained, and the clean rerun passed.
+- `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the repeated-word Replace All slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated Spell Check generated docs after the repeated-word Replace All slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the repeated-word Replace All slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the repeated-word Replace All slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the repeated-word Replace All slice.
+- `git diff --check` - clean after the repeated-word Replace All slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~PivotTableRefreshServiceTests|FullyQualifiedName~PivotTableCommandTests" -v:minimal` - 178/178 passed after the PivotTable custom grand-total caption slice.
+- `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the PivotTable custom grand-total caption slice; an earlier parallel build collided with test output and was rerun sequentially after no stale compiler/test process remained.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated PivotTable generated docs after the custom grand-total caption slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the PivotTable custom grand-total caption slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the PivotTable custom grand-total caption slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the PivotTable custom grand-total caption slice.
+- `git diff --check` - clean after the PivotTable custom grand-total caption slice.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated QAT and Accessibility Checker generated docs.
@@ -153,6 +202,80 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Options default sheet-count new-workbook slice.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Options default sheet-count new-workbook slice.
 - `git diff --check` - clean after the Options default sheet-count new-workbook slice.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~MainWindowXamlKeyTipTests|FullyQualifiedName~UiTestCatalogInventoryTests" -v:minimal` - passed after the Backstage sidebar UIA metadata slice.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the Backstage sidebar UIA metadata slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Backstage sidebar UIA metadata slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Backstage sidebar UIA metadata slice.
+- `git diff --check` - clean after the Backstage sidebar UIA metadata slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - 84/84 passed after the Accessibility Checker visible table-header-cell slice.
+- `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the Accessibility Checker visible table-header-cell slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Accessibility Checker visible table-header-cell slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Accessibility Checker visible table-header-cell slice.
+- `git diff --check` - clean after the Accessibility Checker visible table-header-cell slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~PrintLayoutPlannerTests" -v:minimal` - 9/9 passed after the manual page-break print-pagination slice.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~PrintRendererPageSetupTests" -v:minimal` - passed after the manual page-break print-pagination slice.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the manual page-break print-pagination slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the manual page-break print-pagination slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the manual page-break print-pagination slice.
+- `git diff --check` - clean after the manual page-break print-pagination slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~WorkbookThemeTests" -v:minimal` - 15/15 passed after the workbook theme glow slice.
+- `dotnet test tests\FreeX.App.UI.Tests\FreeX.App.UI.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~WorkbookThemeEffectStyleTests|FullyQualifiedName~GridViewDrawingObjectThemeTests" -v:minimal` - passed after the workbook theme glow slice.
+- `dotnet test tests\FreeX.Core.IO.Tests\FreeX.Core.IO.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~XlsxWorkbookThemeReaderTests" -v:minimal` - passed after the workbook theme glow slice.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the workbook theme glow slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the workbook theme glow slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the workbook theme glow slice.
+- `git diff --check` - clean after the workbook theme glow slice.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~PrintRendererPageSetupTests" -v:minimal` - passed after the print renderer scale-to-fit pagination slice.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the print renderer scale-to-fit pagination slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the print renderer scale-to-fit pagination slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the print renderer scale-to-fit pagination slice.
+- `git diff --check` - clean after the print renderer scale-to-fit pagination slice.
+- `dotnet restore tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj` - restored missing App.Host test assets for this worktree before focused verification.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~PrintRendererPageSetupTests" -v:minimal` - 40/40 passed after the Print Comments At End total-page token slice.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the Print Comments At End total-page token slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Print Comments At End total-page token slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Print Comments At End total-page token slice.
+- `git diff --check` - clean after the Print Comments At End total-page token slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FindFormulaErrorIssues_ReturnsFormulaOmitsAdjacentCellsForAggregateFunctions" --logger "console;verbosity=normal"` - failed before the statistical aggregate omitted-adjacent implementation and passed after it.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~FormulaAuditingServiceTests" -v:minimal` - 84/84 passed after the statistical aggregate omitted-adjacent slice.
+- `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the statistical aggregate omitted-adjacent slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated Error Checking command-surface docs after the statistical aggregate omitted-adjacent slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the statistical aggregate omitted-adjacent slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the statistical aggregate omitted-adjacent slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the statistical aggregate omitted-adjacent slice.
+- `git diff --check` - clean after the statistical aggregate omitted-adjacent slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FindFormulaErrorIssues_ReturnsFormulaOmitsAdjacentCellsForSameSheetNamedAggregateRange" --logger "console;verbosity=normal"` - failed before the same-sheet named-range omitted-adjacent implementation and passed after it.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FindFormulaErrorIssues_ReturnsFormulaOmitsAdjacentCellsForSameSheetNamedAggregateRange|FindFormulaErrorIssues_DoesNotTreatOtherSheetNamedAggregateRangeAsOmittedAdjacentCurrentSheetRange" --logger "console;verbosity=normal"` - 2/2 passed after the same-sheet named-range omitted-adjacent slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~FormulaAuditingServiceTests" -v:minimal` - 86/86 passed after the same-sheet named-range omitted-adjacent slice.
+- `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the same-sheet named-range omitted-adjacent slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated Error Checking command-surface docs after the same-sheet named-range omitted-adjacent slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the same-sheet named-range omitted-adjacent slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the same-sheet named-range omitted-adjacent slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the same-sheet named-range omitted-adjacent slice.
+- `git diff --check` - clean after the same-sheet named-range omitted-adjacent slice.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "SelectionPaneDialog_ExposesStableAutomationIds|SelectionPaneDialogItem_AutomationIdsIncludeKindAndObjectId" --logger "console;verbosity=normal"` - failed before the Selection Pane UIA metadata implementation with missing `SelectionPaneDialogItem` AutomationId properties, then passed 2/2 after `5144947c6`.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~SelectionPanePlannerTests" -v:minimal` - 36/36 passed after the Selection Pane stable AutomationIds slice.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the Selection Pane stable AutomationIds slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated Selection Pane command-surface docs after the stable AutomationIds slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the Selection Pane stable AutomationIds slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Selection Pane stable AutomationIds slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Selection Pane stable AutomationIds slice.
+- `git diff --check` - clean after the Selection Pane stable AutomationIds slice.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "OptionsDialog_ExposesStableQuickAccessToolbarAutomationMetadata" --logger "console;verbosity=normal"` - failed before the QAT Options UIA metadata implementation on the first missing stable QAT control AutomationId, then passed 1/1 after `d1dc16336`.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~OptionsDialogSourceTests" -v:minimal` - 23/23 passed after the QAT Options UIA metadata slice.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the QAT Options UIA metadata slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated QAT command-surface docs after the Options UIA metadata slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the QAT Options UIA metadata slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the QAT Options UIA metadata slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the QAT Options UIA metadata slice.
+- `git diff --check` - clean after the QAT Options UIA metadata slice.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "ExportReadinessPlannerTests" --logger "console;verbosity=normal"` - failed before the PDF/XPS readiness honesty text update on the missing PDF-only/PDF-A/tagged-PDF limitation wording, then passed 3/3 after `cd02bf47c`.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "ExportReadinessPlannerTests" -v:minimal` - 3/3 passed after the PDF/XPS readiness honesty text slice.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the PDF/XPS readiness honesty text slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the PDF/XPS readiness honesty text slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the PDF/XPS readiness honesty text slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the PDF/XPS readiness honesty text slice.
+- `git diff --check` - clean after the PDF/XPS readiness honesty text slice.
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~QuickAccessToolbarCustomizationPlannerTests|FullyQualifiedName~QuickAccessCommandStateResolverTests|FullyQualifiedName~ReviewCommandSourceTests|FullyQualifiedName~DrawCommandSourceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed after the default shape-name slice.
@@ -216,6 +339,18 @@ Completed and merged lanes from this wave:
 - Resume / Flash Fill active-cell example range planning: completed, pushed to `origin/main`.
 - Resume / Flash Fill active-cell example docs sync: completed, pushed to `origin/main`.
 - Resume / Options default sheet count for new workbooks: completed, pushed to `origin/main`.
+- Resume / Backstage sidebar UIA metadata: completed, pushed to `origin/main`.
+- Resume / Accessibility Checker visible table header cells: completed, pushed to `origin/main`.
+- Resume / Manual page breaks in print pagination: completed, pushed to `origin/main`.
+- Resume / Workbook theme glow effect approximation for text boxes and shapes: completed, pushed to `origin/main`.
+- Resume / Print renderer scale-to-fit pagination: completed, pushed to `origin/main`.
+- Resume / Print Comments At End total-page tokens: completed on `a3e4e6230`.
+- Resume / Error Checking statistical aggregate omitted-adjacent detection: completed on `c0f981318`.
+- Resume / Error Checking same-sheet named-range omitted-adjacent detection: completed on `9d578e9af`.
+- Resume / Selection Pane stable AutomationIds: completed on `5144947c6`.
+- Resume / QAT Options UIA metadata: completed on `d1dc16336`.
+- Resume / PDF/XPS readiness honesty text: completed on `cd02bf47c`.
+- Resume / PivotTable custom grand-total captions: completed on `9ba947791`.
 
 Read-only resume auditors:
 
@@ -224,6 +359,10 @@ Read-only resume auditors:
 - Review/Data audit: `019e8aa7-7901-7323-8e62-d6d67755203c` completed without edits; it identified the displayed non-text low-contrast cell value slice and the now-completed Flash Fill blank-source selected-range candidate.
 - File/Backstage/Options audit: `019e8aa7-540c-7283-8bad-6414b5f6331b` completed without edits; it identified Options default-save-format and Backstage Share/Info/Export UIA metadata candidates.
 - Options default-save-format follow-up audit: `019e8ab2-862d-7633-b388-a23832ab9d1e` completed without edits; it confirmed the prior `.json`/`.fxl` Options and Save As default-format mismatch was a real, bounded but broader host/IO/localization slice.
+- Page Layout / manual page-break print-pagination audit: `019e8b11-b8db-7b11-82f5-6aaf2b4e8776` completed without edits; it confirmed manual row/column breaks were modeled, persisted, and shown in Page Break Preview but ignored by `PrintRenderer` pagination before the now-completed slice.
+- Draw / workbook theme effect fidelity audit: `019e8b11-de99-7c82-9853-55743f3e6182` completed without edits; it confirmed deeper theme/effect fidelity remains broad, with only a tightly scoped theme-glow approximation for shapes/text boxes as a possible future bounded slice.
+- Review/Data audit: `019e8b50-24ea-7ee2-913e-1585dd8d4313` completed without edits; it identified bounded Formula Auditing omitted-adjacent aggregate candidates for statistical aggregates and same-sheet named ranges, while Spell Check, Accessibility Checker, and Flash Fill remaining tails looked broad or model-limited.
+- File/Backstage/QAT/Draw audit: `019e8b50-5237-7033-a99b-6b6b0c84e4c3` completed without edits; it identified bounded candidates for PDF/XPS readiness honesty text, QAT Options dialog UIA metadata, and Selection Pane stable AutomationIds.
 
 Subagents from the prior non-chart wave were marked for closure:
 
