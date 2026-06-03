@@ -27,6 +27,18 @@ The highest-priority risks are two Core.IO resource-exhaustion hardening gaps ar
 
 The rest of the review is mostly P2 product/release correctness: out-of-grid named ranges can be shadowed by formula tokenization, literal `INDIRECT` aggregates miss the full-row/full-column clamp, the custom grid UIA peer still exposes no cell/value patterns, export can overwrite a normalized path without a second prompt, Get Data imports run synchronously on the WPF thread, release metadata can report stale version `0.5`, and the interop verification tool projects are not part of the solution/CI build boundary.
 
+### Resolution update - 2026-06-03 follow-up
+
+All findings below have been addressed and merged back to `main` through the follow-up branch `codex/review-findings-fixes-20260603`:
+
+- `d7db36ef6` - hardened XLSX load stream caps and routed package XML loads through secure reader settings.
+- `97532d532` - fixed formula tokenization, literal `INDIRECT` full-range clamping, and ordinary function arity-before-expansion behavior.
+- `286c050e1` - added grid UIA cell/grid/value/selection providers, normalized export overwrite prompting, async Get Data loading/status refresh, and localized message-service prompts.
+- `cf2655424` - moved tester release version display to assembly metadata, added tool projects to solution/preflight coverage, required signed hosted MSIX assets, derived MSIX Publisher from the cert, and added tester-release concurrency/main-branch guards.
+- `3a7317ac8` - validated preserved `[Content_Types].xml` overrides against valid target package parts.
+
+Code-level verification for those slices included focused regression suites, full Core.IO, full Formula, full App.UI, focused Host release/localization/import/export matrices, repository preflight, and Release solution restore/build. Clean-machine MSIX install/trust validation remains an operational release-gate checklist item rather than a repository code finding.
+
 ## 2. Findings By Priority
 
 ### P1 - Core.IO copies arbitrary stream input before enforcing workbook size limits

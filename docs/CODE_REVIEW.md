@@ -10,31 +10,35 @@ Full report: [CODE_REVIEW_COMPREHENSIVE_2026-06-03.md](CODE_REVIEW_COMPREHENSIVE
 
 Verification passed on `codex/code-review-docs-20260603`: solution restore/build/test, repository preflight, solution/tool vulnerability scans, and direct builds of `tools\FreeX.ExcelOpenSmoke` and `tools\FreeX.ChartInteropCompare`.
 
-Open issues by priority:
+Follow-up status: all P1/P2/P3 findings from this review were fixed on `codex/review-findings-fixes-20260603`, merged into `main`, and are tracked here by original priority.
 
-| Priority | Area | Finding | Recommended Slice |
+Resolved follow-up by priority:
+
+| Priority | Area | Finding | Resolution |
 |---|---|---|---|
-| P1 | Core.IO safety | `XlsxFileAdapter.Load(Stream)` copies arbitrary stream input into memory before workbook-size/archive guards run. | Add seekable length checks and capped non-seekable copies before allocating package snapshots. |
-| P1 | Core.IO safety | Several XLSX package XML readers use raw `XDocument.Load(stream)` instead of the existing secure XML reader settings. | Centralize package XML DOM loads through `SecureXmlReaderSettings.Create()` and add oversized XML-part fixtures. |
-| P2 | Formula correctness | Out-of-grid A1-shaped named ranges such as `XFE1` or `A1048577` can be tokenized as cell references and become unreachable. | Validate row/column bounds in the lexer before emitting cell-reference tokens. |
-| P2 | Formula perf/parity | Literal `INDIRECT` full-row/full-column aggregate references miss the used-range clamp applied to direct ranges. | Apply the direct full-range clamp to literal `INDIRECT` aggregate ranges before range-size checks. |
-| P2 | Accessibility | `SheetGrid` reports as a DataGrid but exposes no cell peers, grid pattern, value pattern, or selection pattern. | Implement virtualized UIA grid/cell providers and add UIA pattern tests. |
-| P2 | Export UX | PDF/XPS export can overwrite a normalized extension path without a second overwrite prompt. | Normalize before save-dialog acceptance or prompt when the final request path differs and exists. |
-| P2 | Import UX | Get Data imports parse synchronously on the WPF click handler. | Move adapter load to an async import path with dispatcher-only UI updates. |
-| P2 | Release metadata | App/version surfaces can report hard-coded `Version 0.5` while tester release produces `0.8.<run>`. | Pass release version into build metadata or generated source and have `AppInfo` read it. |
-| P2 | Build/release gates | Excel-open smoke and chart-interop tool projects are outside solution/preflight restore-build coverage. | Add tool projects to the solution or explicit CI/preflight restore-build gates. |
-| P2 | Release packaging | Latest tester release can publish unsigned MSIX assets and hard-codes `Publisher="CN=FreeXLocal"`. | Require signing for latest MSIX or keep unsigned packages internal; parameterize/validate Publisher from the cert. |
-| P2 | Release ordering | Tester release workflow lacks concurrency and can move `latest` backward if manual runs finish out of order. | Add workflow concurrency or newest-run/version checks before `--latest`. |
-| P3 | XLSX package validity | Content type merge can preserve overrides for skipped or invalid package parts. | Validate override `PartName` with OPC/path rules and require a matching target entry/generated part. |
-| P3 | Formula perf | Non-aggregate functions expand arguments before max-arity validation. | Check ordinary scalar function arity before range materialization. |
-| P3 | Import UI/test quality | Get Data does not refresh the status bar and the source test scans too broadly. | Add the refresh call and narrow the test to `GetDataBtn_Click`. |
-| P3 | Localization | Delete Sheet and Fill Series message-service prompts still pass raw English strings, and the guard misses `_messageService`. | Move strings into `UiText` and extend localization usage tests to message-service calls. |
+| P1 | Core.IO safety | `XlsxFileAdapter.Load(Stream)` copied arbitrary stream input into memory before workbook-size/archive guards ran. | Added seekable length checks and capped non-seekable copies before allocating package snapshots. |
+| P1 | Core.IO safety | Several XLSX package XML readers used raw `XDocument.Load(stream)` instead of the existing secure XML reader settings. | Routed package XML DOM loads through `SecureXmlReaderSettings.Create()` with oversized XML fixture coverage. |
+| P2 | Formula correctness | Out-of-grid A1-shaped named ranges such as `XFE1` or `A1048577` could be tokenized as cell references and become unreachable. | Validated row/column bounds in the lexer before emitting cell-reference tokens. |
+| P2 | Formula perf/parity | Literal `INDIRECT` full-row/full-column aggregate references missed the used-range clamp applied to direct ranges. | Applied the direct full-range clamp to literal `INDIRECT` aggregate ranges before range-size checks. |
+| P2 | Accessibility | `SheetGrid` reported as a DataGrid but exposed no cell peers, grid pattern, value pattern, or selection pattern. | Added virtualized grid/cell automation peers with grid, selection, grid-item, value, and selection-item providers. |
+| P2 | Export UX | PDF/XPS export could overwrite a normalized extension path without a second overwrite prompt. | Normalized the final export path before overwrite confirmation and prompted again when the final path differed and existed. |
+| P2 | Import UX | Get Data imports parsed synchronously on the WPF click handler. | Moved adapter loading off the dispatcher and kept UI updates on the dispatcher path. |
+| P2 | Release metadata | App/version surfaces could report hard-coded `Version 0.5` while tester release produced `0.8.<run>`. | Made `AppInfo` read assembly informational metadata and taught the publish script to pass the release version into build metadata. |
+| P2 | Build/release gates | Excel-open smoke and chart-interop tool projects were outside solution/preflight restore-build coverage. | Added the tool projects to `FreeX.slnx` and repository preflight project coverage. |
+| P2 | Release packaging | Latest tester release could publish unsigned MSIX assets and hard-coded `Publisher="CN=FreeXLocal"`. | Required signing for hosted MSIX releases, derived `Publisher` from the signing cert, and kept unsigned MSIX builds behind an explicit local validation switch. |
+| P2 | Release ordering | Tester release workflow lacked concurrency and could move `latest` backward if manual runs finished out of order. | Added tester-release workflow concurrency and a `main` branch validation guard before latest publication. |
+| P3 | XLSX package validity | Content type merge could preserve overrides for skipped or invalid package parts. | Validated preserved override part names against OPC/path rules and required matching target package entries. |
+| P3 | Formula perf | Non-aggregate functions expanded arguments before max-arity validation. | Checked ordinary scalar function arity before range materialization. |
+| P3 | Import UI/test quality | Get Data did not refresh the status bar and the source test scanned too broadly. | Refreshed status after import and narrowed the source hygiene check to `GetDataBtn_Click`. |
+| P3 | Localization | Delete Sheet and Fill Series message-service prompts still passed raw English strings, and the guard missed `_messageService`. | Moved prompts into `UiText` resources and extended localization usage tests to message-service calls. |
 
-Documentation resolved during this review:
+Documentation resolved during and after this review:
 
 | Area | Finding | Resolution |
 |---|---|---|
 | Contributor verification docs | Root `README.md` documented only Debug restore/build/test and did not mention repository preflight or Release verification. | Updated the README development block to use the canonical preflight plus Release build/test sequence from tester-release readiness docs. |
+| Tester release runbooks | Release packaging guidance did not reflect signed hosted MSIX requirements, certificate-derived Publisher metadata, or the local unsigned-validation escape hatch. | Updated the tester distribution plan, release checklist, and readiness preflight markers to document the signed hosted release path and local `-AllowUnsignedMsix` validation-only path. |
+| Review status docs | The June 3 review index continued to list the now-fixed P1/P2/P3 findings as open. | Added this resolved follow-up ledger and a resolution update to the comprehensive report. |
 
 ## Fixed During Review
 
