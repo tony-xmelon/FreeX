@@ -1239,3 +1239,17 @@ Repository checkpoint after sparse GridView, address-snapshot, and page-break me
   - Formula: bounded streaming `LARGE`/`SMALL` and `AGGREGATE(14/15)` reduced allocation from about `800 KB` to `360-440` bytes, but regressed representative time (`LARGE` about `6.87 ms -> 21.36 ms`, `AGGREGATE(14)` about `8.81 ms -> 22.79 ms`), so it was reverted. `UNIQUE` single-column allocation is mostly required output/hash tracking, and returning shared cached lexer token lists would weaken the public mutable `List<Token>` contract.
   - Core.Calc: conditional-format formula/style benchmark allocation is dominated by viewport output/context/style payload, while inside-cell large-range recalc allocation is Formula-owned. No safe Core.Calc-only patch was carried.
 - All workers from this wave completed. Continue using linked worktrees from `origin/main`; primary local `main` remains outside the performance integration path.
+
+Repository checkpoint after Calc lazy report allocation and Formula monotonic UNIQUE integrations:
+
+- `codex/perf-calc-formula-tail-integration-20260603-r1` added Core.Calc commit `db78be1ff`.
+  - Worker: `019e8d30-9313-7c70-91cc-8a4e34a6c729`.
+  - Change: `RecalcEngine` now allocates error and cycle report lists only when an error or cycle is actually recorded, and successful recalcs reuse shared empty read-only lists.
+  - Metrics: worker baseline for `Benchmark_RepeatedSmallChangeRecalc_ReportsAllocationDiagnostics` was `7.63 ms` / `340,040` bytes over 250 iterations; combined-branch focused sample was `5.32 ms` / `308,040` bytes (`1,232` bytes/iteration).
+  - Verification on the combined branch: focused Calc recalc/error/cycle set passed `4/4`; full Release `FreeX.Core.Calc.Tests` passed `679/679`.
+- `codex/perf-calc-formula-tail-integration-20260603-r1` added Formula commit `73494dc9e`.
+  - Worker: `019e8d30-aa80-7f42-9fe4-e39e9120409d`.
+  - Change: `UNIQUE` skips the `HashSet` and result-copy path for strictly monotonic numeric/date single-column ranges, returning the existing range payload when it is already unique.
+  - Metrics: worker baseline for `UNIQUE(A1:A20000)` was `20.63 ms` / `742,736` bytes; combined-branch focused sample was `162,120` bytes with the tightened guard `< 250,000` bytes.
+  - Verification on the combined branch: focused UNIQUE set passed `12/12`; full Release `FreeX.Core.Formula.Tests` passed `2726/2726`.
+- Integration note: the first parallel Calc focused verification hit a transient compiler output lock because two test commands built the same worktree simultaneously; the check was rerun sequentially and passed. Use sequential test runs per worktree for final verification.
