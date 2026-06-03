@@ -1446,6 +1446,28 @@ Repository checkpoint after Calc shared-leaf and Formula parsed-reference integr
 - Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
 - Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
 
+Repository checkpoint after Model/Commands structured-table filter and Core.IO style-only A1 allocation integrations:
+
+- `origin/main` was advanced to `fcd43458c` with `codex/perf-model-io-style-integration-20260603-r1`.
+- The integration added rebased Core.Commands/Core.Model commit `931f572f8`.
+  - Worker: `019e8eea-8ab9-7c43-803f-b22867308998`.
+  - Change: `ApplyStructuredTableFiltersCommand` now reuses the existing single-value-aware `FilterAllowedValueMatcher` instead of always allocating/probing a `HashSet<string>` for each filter column.
+  - Metrics: worker same-base sample improved `STRUCTURED_TABLE_FILTER_DENSE` from `142.38 ms` / `6,024` bytes to `74.26 ms` / `3,816` bytes. Final post-rebase focused sample was `124.22 ms` / `3,856` bytes.
+  - Verification after final rebase: focused `StructuredTableCommandTests|Benchmark_ApplyStructuredTableFiltersDenseRows` passed `33/33`; full Release `FreeX.Core.Model.Tests` passed `1907/1907`; `git diff --check origin/main...HEAD` passed before push.
+- The integration added rebased Core.IO commit `fcd43458c`.
+  - Local orchestrator slice from `codex/core-io-local-tail-20260603-r2`.
+  - Change: `XlsxStyleOnlyCellWriter` pre-sizes its writable style-only cell list and creates A1 references with `string.Create`, avoiding separate column-name, row-number, and interpolated reference strings for each style-only cell.
+  - Metrics: current-main local baseline for `XLSX_SAVE_STYLE_ONLY` was `3,840.63 ms` / `184,919,560` bytes; final post-rebase focused sample was `1,769.32 ms` / `174,396,576` bytes. Timing is noisy, allocation is the stable signal.
+  - Verification after final rebase: focused style-only/save guard set passed `14/14`; full Release `FreeX.Core.IO.Tests` passed `1818/1818`; `git diff --check origin/main...HEAD` passed before push.
+- Completed Model/Commands worker `019e8eea-8ab9-7c43-803f-b22867308998` can be closed after this docs push.
+- Pending completed worker after this push:
+  - `019e8ef3-07e6-7820-ac59-d59f99dea73c`: App.UI chart dense point data-label format lookup slice, commit `4c1da87d`, needs clean orchestrator integration from current `origin/main`.
+- Still-running workers:
+  - `019e8ed1-b4cd-7180-abd1-73756789dba5`: App.Host current performance tail.
+  - `019e8ef2-f3a4-7403-9b66-7f346eb7606f`: Core.Formula current performance tail.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` remains untouched; continue performance integration from linked worktrees based on `origin/main`.
+
 Repository checkpoint after Core.Calc sparse viewport metric integration:
 
 - `origin/main` was advanced to `fa0d0eb63` with `codex/perf-calc-sparse-viewport-integration-20260603-r1`.
