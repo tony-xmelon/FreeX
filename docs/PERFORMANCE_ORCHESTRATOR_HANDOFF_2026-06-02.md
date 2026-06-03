@@ -1106,3 +1106,26 @@ Repository checkpoint after App.Host no-patch and Formula statistical-selection 
   - `019e8ca0-4cb8-7442-b4dc-7535fd558a54`: Core.Calc current performance tail, scope `src/FreeX.Core.Calc/**` and `tests/FreeX.Core.Calc.Tests/**`.
   - `019e8ca0-f355-7a41-99ad-8682351da88f`: App.UI current render/allocation tail, scope `src/FreeX.App.UI/**` and `tests/FreeX.App.UI.Tests/**`.
 - The primary local `main` remained untouched and divergent; verified performance work continued through linked worktrees and fast-forward pushes to `origin/main`.
+
+Repository checkpoint after App.UI split-pane, Core.Model dense-shift snapshot, and Core.Calc exact-chain integrations:
+
+- `origin/main` was advanced to `c3f95f569` with `codex/perf-app-ui-tail-current-20260603-r1`.
+  - Worker: `019e8ca0-f355-7a41-99ad-8682351da88f`.
+  - Change: split-pane cell layout uses allocation-free sorted row/column metric lookup structs instead of four metric dictionaries per visitor pass.
+  - Metrics: `SPLIT_PANE_CELL_LAYOUT_VISITOR` improved from `1,115.31 ms` / `4,609,920` bytes over 400 steps to focused `244.07 ms` / `1,632,040` bytes.
+  - Verification: focused split-pane render/layout tests passed `2/2`; full `FreeX.App.UI.Tests` passed `572/572`; `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `67501655a` with `codex/perf-core-model-current-tail-20260603-r1`.
+  - Change: row/column dense-shift undo snapshots now store primitive row/column coordinates instead of a full `CellAddress` with repeated per-snapshot `SheetId`, rebuilding sheet-qualified addresses only during restore.
+  - Metrics: dense shift allocation improved from `12,480,832 -> 10,560,832` bytes for `INSERT_ROWS_DENSE_SHIFT`, `12,523,288 -> 10,591,192` bytes for `DELETE_ROWS_DENSE_SHIFT`, `12,420,424 -> 10,500,424` bytes for `INSERT_COLUMNS_DENSE_SHIFT`, and `12,591,952 -> 10,622,992` bytes for `DELETE_COLUMNS_DENSE_SHIFT`.
+  - Verification: focused insert/delete row/column shift set passed `70/70`; full Release `FreeX.Core.Model.Tests` passed `1903/1903`; `git diff --check` passed before commit.
+- `origin/main` was advanced to `a0c644927` with clean branch `codex/perf-core-calc-replay-20260603-r1`.
+  - Worker source: `019e8ca0-4cb8-7442-b4dc-7535fd558a54`; original patch commit was `b15d42917` on `codex/perf-core-calc-tail-current-20260603-r1`.
+  - Integration note: the original local branch tip also contained unrelated local `main` merge/refactor history, so only the Calc performance commit was replayed onto current `origin/main`.
+  - Change: dependency graph recalc order uses a linear fast path for single-root exact formula chains, avoiding repeated precedent-dedupe scaffolding.
+  - Metrics: worker baseline for the exact 1,000-formula chain was `367.83 ms` / `19,991,240` bytes over 100 iterations; replay verification sampled `25.07 ms` / `2,412,840` bytes.
+  - Verification: focused `DependencyGraphTests|PerformanceBenchmarkTests` passed `45/45`; full Release `FreeX.Core.Calc.Tests` passed `676/676`; `git diff --check HEAD~1..HEAD` passed.
+- `codex/perf-core-model-current-tail-20260603-r1` was fast-forwarded and pushed so the session branch is aligned with `origin/main` at `a0c644927`.
+- Remaining active worker:
+  - `019e8cae-a1f2-7f33-99ad-64fb8c2bbbab`: Core.IO allocation tail, still running at this checkpoint.
+- Hourly thread heartbeat automation `hourly-performance-orchestrator-status` is present for progress updates while the goal remains active.
+- The primary local `main` remained untouched and locally divergent; continue using linked worktrees from `origin/main` and do not push/reset primary `main` wholesale.
