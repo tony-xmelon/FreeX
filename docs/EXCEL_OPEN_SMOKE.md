@@ -43,11 +43,12 @@ with an actual marker-sheet edit before Excel opens them:
 dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --freex-resave-before-excel --generate-freex-feature-fixtures
 ```
 
-Formula, structured table, drawing/shape, and PivotTable feature fixtures have retention
-expectations, not just passive summary counts. When `--save-reopen` is used, the smoke fails if
-FreeX cannot load the expected feature metadata before Excel opens the staged workbook, if Excel
-open/reopen loses the expected formula cells, structured tables, worksheet shapes, or PivotTables,
-or if FreeX cannot reload the Excel-saved copy with the expected metadata still present.
+Formula, structured table, validation/conditional-format, hyperlink/comment, drawing/shape,
+sparkline/image, protection, and PivotTable feature fixtures have retention expectations, not just
+passive summary counts. When `--save-reopen` is used, the smoke fails if FreeX cannot load the
+expected feature metadata before Excel opens the staged workbook, if Excel open/reopen loses the
+expected formula cells, structured tables, worksheet shapes, or PivotTables, or if FreeX cannot
+reload the Excel-saved copy with the expected metadata still present.
 
 ## Excel-authored through FreeX
 
@@ -153,6 +154,13 @@ As of 2026-06-03 on the local desktop Excel COM environment:
   shapes/text, and Excel-authored fixtures. The final feature fixture smoke reported shape counts of
   `1`, `1`, and `2` for those three FreeX-authored drawing fixtures through Excel open/reopen, and
   representative FreeX-saved outputs passed Open XML SDK schema validation with `errors=0`.
+- FreeX-side metadata assertions passed for validation/conditional formatting (`3` validations,
+  `4` conditional formats), hyperlinks/comments (`3` hyperlinks, `1` comment),
+  images/sparklines (`1` picture, `2` sparklines), text/drawing shapes (`1` text box, `1` drawing
+  shape), protection (`1` protected sheet, workbook structure protection), and the Excel-authored
+  fixture (`1` validation, `1` conditional format, `1` hyperlink, `1` comment, `1` text box).
+  Representative metadata-heavy FreeX-saved outputs passed Open XML SDK schema validation with
+  `errors=0`.
 - Public + regression corpus rows selected from `test-corpus/manifest.csv` with
   `--save-reopen --freex-resave-before-excel --corpus-source public --corpus-source regression`
   passed: `34/34`.
