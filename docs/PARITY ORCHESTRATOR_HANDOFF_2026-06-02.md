@@ -91,6 +91,7 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `9ba947791` - Materialized imported/custom PivotTable grand-total captions in row-only, column-only, and matrix refresh output, while keeping PivotStyle grand-total styling, merged-label exclusion, and Show Details extraction aligned with the active caption, and regenerated command-surface parity docs.
 - `2eb3c635a` - Honored the Options default font name and size for startup and File > New workbooks by routing full `FreeXOptions` through `NewWorkbookFactory`, normalizing persisted font options, and seeding `StyleId.Default` on newly created workbooks.
 - `10bca934b` - Used the first supported workbook theme `effectStyle` group for bounded shadow/glow defaults so imported theme effects no longer synthesize shadow and glow from separate groups, and regenerated command-surface parity docs.
+- `bce94cee0` - Used normalized Options user-name metadata for startup/File > New workbook file-sharing identity and included PDF/XPS document properties, with authored XLSX file-sharing username coverage and regenerated command-surface parity docs.
 
 Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, Selection Pane mixed reorder coverage, and manual worksheet page-break metadata/storage/preview coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full workbook theme effect fidelity beyond the bounded shadow/glow approximations, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
@@ -162,6 +163,15 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the workbook theme effect-style grouping hygiene slice.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the workbook theme effect-style grouping hygiene slice.
 - `git diff --check` - clean after the workbook theme effect-style grouping hygiene slice.
+- `dotnet restore FreeX.slnx --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -v:minimal` - restored the session worktree after fast-forwarding to the current main baseline before the Options user-name metadata slice.
+- `dotnet test tests\FreeX.Core.IO.Tests\FreeX.Core.IO.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~XlsxAdapter_Save_WritesAuthoredWorkbookFileSharingUserName|FullyQualifiedName~NativeJsonAdapter_RoundTrip_WorkbookFileSharing" -v:minimal` - 2/2 passed after the Options user-name metadata slice.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~NewWorkbookFactoryTests|FullyQualifiedName~FreeXOptionsPersistenceTests|FullyQualifiedName~PdfDocumentProperties|FullyQualifiedName~XpsDocumentProperties" -v:minimal` - 31/31 passed after the Options user-name metadata slice.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the Options user-name metadata slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated generated command-surface docs after the Options user-name metadata slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the Options user-name metadata slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Options user-name metadata slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Options user-name metadata slice.
+- `git diff --check` - clean after the Options user-name metadata slice.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated QAT and Accessibility Checker generated docs.
@@ -369,6 +379,7 @@ Completed and merged lanes from this wave:
 - Resume / PivotTable custom grand-total captions: completed on `9ba947791`.
 - Resume / Options default font for new workbooks: completed on `2eb3c635a`.
 - Resume / Workbook theme effect-style grouping hygiene: completed on `10bca934b`.
+- Resume / Options user-name metadata for new workbooks and export document properties: completed on `bce94cee0`.
 
 Read-only resume auditors:
 
@@ -381,7 +392,7 @@ Read-only resume auditors:
 - Draw / workbook theme effect fidelity audit: `019e8b11-de99-7c82-9853-55743f3e6182` completed without edits; it confirmed deeper theme/effect fidelity remains broad, with only a tightly scoped theme-glow approximation for shapes/text boxes as a possible future bounded slice.
 - Review/Data audit: `019e8b50-24ea-7ee2-913e-1585dd8d4313` completed without edits; it identified bounded Formula Auditing omitted-adjacent aggregate candidates for statistical aggregates and same-sheet named ranges, while Spell Check, Accessibility Checker, and Flash Fill remaining tails looked broad or model-limited.
 - File/Backstage/QAT/Draw audit: `019e8b50-5237-7033-a99b-6b6b0c84e4c3` completed without edits; it identified bounded candidates for PDF/XPS readiness honesty text, QAT Options dialog UIA metadata, and Selection Pane stable AutomationIds.
-- File/Options/QAT/PDF audit: `019e8bd7-bed1-7a11-961d-3118826f9063` completed without edits; it identified the now-completed Options default font/size new-workbook slice and a future bounded Options user-name metadata candidate.
+- File/Options/QAT/PDF audit: `019e8bd7-bed1-7a11-961d-3118826f9063` completed without edits; it identified the now-completed Options default font/size new-workbook slice and now-completed bounded Options user-name metadata candidate.
 - Review/Data/Formulas audit: `019e8bd7-f060-7312-948a-ab5ce5e159e6` completed without edits; it found no remaining bounded deterministic Review/Data/Formulas slice outside broad/deferred Accessibility, Spell Check, Flash Fill, and Error Checking tails.
 - Draw/PageLayout/Pivot audit: `019e8bd8-1c47-7d02-9e62-4287b4fe3c96` completed without edits; it identified the now-completed PivotTable custom grand-total caption slice and now-completed workbook-theme effect-style grouping hygiene candidate.
 
