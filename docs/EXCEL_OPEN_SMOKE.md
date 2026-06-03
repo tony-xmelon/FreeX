@@ -43,6 +43,12 @@ with an actual marker-sheet edit before Excel opens them:
 dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --freex-resave-before-excel --generate-freex-feature-fixtures
 ```
 
+Pivot feature fixtures and the Excel-authored fixture have retention expectations, not just passive
+summary counts. When `--save-reopen` is used, the smoke fails if FreeX cannot load at least one
+PivotTable and pivot cache before Excel opens the staged workbook, if Excel open/reopen loses the
+PivotTable, or if FreeX cannot reload the Excel-saved copy with the PivotTable and pivot cache still
+present.
+
 ## Excel-authored through FreeX
 
 ```powershell
@@ -134,6 +140,10 @@ As of 2026-06-03 on the local desktop Excel COM environment:
   Excel-authored -> FreeX save/edit -> Excel open/`SaveCopyAs`/close/reopen -> FreeX reopen:
   `1/1`. The FreeX source load and reopened Excel save both reported `pivots 1; pivot caches 1`,
   and the FreeX-saved workbook passed Open XML SDK schema validation with `errors=0`.
+- Pivot retention assertions passed for the FreeX-authored pivot fixture after Excel rewrote the
+  workbook/pivot-table cache id to `0`; the FreeX source load and reopened Excel save both reported
+  `pivots 1; pivot caches 1`, and the FreeX-saved workbook passed Open XML SDK schema validation
+  with `errors=0`.
 - Public + regression corpus rows selected from `test-corpus/manifest.csv` with
   `--save-reopen --freex-resave-before-excel --corpus-source public --corpus-source regression`
   passed: `34/34`.
