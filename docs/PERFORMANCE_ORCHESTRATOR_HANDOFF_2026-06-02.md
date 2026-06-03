@@ -9,8 +9,8 @@ This goal is not complete. This file records the current clean checkpoint.
 ## Operating Rules
 
 - Repository: `E:\Users\anton\Documents\Claude\Freexcel`.
-- Latest upstream checkpoint before this handoff update: `5538bfcf6`.
-- `codex/performance-orchestrator-resume-20260602` was fast-forwarded onto `origin/main` at `5538bfcf6` before this handoff update.
+- Latest upstream checkpoint before this handoff update: `264483fef`.
+- `codex/performance-orchestrator-resume-20260602` was fast-forwarded onto `origin/main` at `264483fef` before this handoff update.
 - Follow `AGENTS.md`: use isolated worktrees/branches for implementation, do not edit `main` directly, sync before work, verify before merge, push verified integrations frequently.
 - User explicitly requested no permission prompts and no escalation requests.
 - Treat unrelated dirty or untracked files as owned by other sessions unless explicitly proven otherwise.
@@ -287,6 +287,49 @@ All items below were verified, pushed to their `codex/` branches, and fast-forwa
   - `PerformanceReviewMeasurementTests` passed `17/17`.
   - Full `FreeX.App.Host.Tests` passed `5771/5772`, with `1` skipped.
 
+### XLSX Style-Only Cell Insertion Tail
+
+- Branch: `codex/perf-xlsx-io-tail-20260603-r4`.
+- Commit: `28dc32ea1`.
+- Change: `XlsxStyleOnlyCellWriter` now keeps a per-row insertion cursor while processing sorted style-only cells, avoiding a fresh row cell scan for every inserted style-only cell.
+- Metrics:
+  - Focused pre-change baseline: `XLSX_SAVE_STYLE_ONLY` `165,942,208` bytes, `1427.94 ms` mean.
+  - Focused post-change sample after final sync: `143,138,344` bytes, `719.21 ms` mean.
+  - Full performance-class post-change sample: `143,198,584` bytes, `584.11 ms` mean.
+- Verification:
+  - Focused style-only save and roundtrip checks passed `3/3`.
+  - Full `XlsxFileAdapterPerformanceTests` passed `36/36`.
+  - Full `FreeX.Core.IO.Tests` passed `1758/1758` at the final sync base.
+
+### App.UI Selection-Only Header Render Tail
+
+- Branch: `codex/perf-app-ui-selection-render-tail-20260603-r1`.
+- Commit: `bad2009e5`.
+- Worker: `019e8ad5-dce5-7f80-b359-967eb329494c`, then orchestrator rebased, reverified, and integrated.
+- Change: selected header repaint now reuses cached frozen header text drawings, so single-cell selection-only repaints redraw selection chrome without reissuing header `DrawText` work for stable header labels.
+- Metrics:
+  - Local worker baseline: `GRID_RENDER_SELECTION_ONLY` `1,039,480` bytes, `53.75 ms` mean.
+  - Focused post-rebase sample: `404,480` bytes, `36.99 ms` mean.
+  - Full-suite post-rebase sample: `422,936` bytes, `42.84 ms` mean.
+- Verification:
+  - Focused App.UI render/selection set passed `96/96`.
+  - Full `FreeX.App.UI.Tests` passed `567/567`.
+
+### Formula Compact Range Dependency Tail
+
+- Branch: `codex/perf-formula-eval-tail-20260603-r1`.
+- Commit: `b0e435f7d`.
+- Worker: `019e8ad5-f147-7f52-b755-57165012ca7e`, then orchestrator rebased, reviewed, reverified, and integrated.
+- Change: only tiny ranges expand into exact dependency edges; larger ranges use compact range tracking, reducing repeated dependent-list fan-out during dependency rebuild.
+- Metrics:
+  - Worker isolated baseline: `REPEATED_IDENTICAL_FORMULA_REBUILD` `17,383,592` bytes, `194.33 ms`.
+  - Worker final isolated sample: `15,484,568` bytes, `166.92 ms`.
+  - Orchestrator focused post-rebase warm sample: `2,703,144` bytes, `239.83 ms`, `540` bytes/formula.
+- Verification:
+  - Focused dependency/benchmark set passed `27/27`.
+  - Full `FreeX.Core.Calc.Tests` passed `666/666`.
+  - Full `FreeX.Core.Formula.Tests` passed `2716/2716`.
+
 ## Other Main Integrations During This Wave
 
 Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, QAT validation, Flash Fill parity coverage clarification, and parity handoff updates.
@@ -298,23 +341,26 @@ The obvious high-impact backlog is reduced but not exhausted.
 1. XLSX IO:
    - `XLSX_SAVE_LOADED_DENSE_MUTATED` is improved but still allocates around `156.3 MB`.
    - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` is improved again but still allocates around `144.2 MB`.
+   - `XLSX_SAVE_STYLE_ONLY` improved to about `143.1 MB` but remains a high-allocation save path because ClosedXML/style seeding and package XML rewriting still dominate.
+   - `XLSX_SAVE_IGNORED_ERRORS` and `XLSX_SAVE_DATA_VALIDATION_NATIVE_METADATA` remain around `80 MB` in recent samples.
    - Unchanged loaded workbook fast-copy remains healthy: `XLSX_SAVE_LOADED_DENSE` around `554,248` bytes in the full IO run.
-   - Latest IO worker has completed and integrated; further IO cuts likely require a deeper metadata load/save redesign.
+   - Further IO cuts likely require deeper metadata load/save redesign or more streaming XML writers.
 2. App.Host toolbar/ribbon:
    - `NON_DRAG_SELECTION_TOOLBAR` remains around `13.0 MB`; current guardrails show zero QAT probes and zero toolbar writes.
    - `RIBBON_FORCE_COMPACT` improved to about `14.1 MB` but remains a visible tail.
    - `SELECTION_DRAG_STATUS` and `ADDITIONAL_SELECTION_DRAG_TOOLBAR` remain around `22-23 MB` in recent samples after modest improvements.
+   - Worker `019e8ad5-c8c1-7023-8e84-e21232b61bed` was shut down for the Codex restart before reporting a completed slice; restart or re-scope this tail before continuing Host work.
 3. Core.Commands:
    - Dense insert undo and dense row/column shift allocations are improved; dense row/column shift still allocates about `15.2-15.4 MB`, so further improvement probably needs a deeper snapshot/restore redesign.
    - Dense filter/table operations now report low allocations but still have time-cost tails worth rechecking if command work continues.
    - Advanced Filter copy-unique dense rows is improved to about `8.27 MB`; remaining cost is lower priority than the open Host/UI/Formula/XLSX tails.
    - Data-validation range list items are now low allocation; Go To Special data-validation lookup was checked and left unchanged because it is already low.
 4. Formula/Core.Calc:
-   - Repeated identical formula dependency rebuild improved again but still allocates about `17.35 MB`.
-   - Formula parser/evaluator tail remains a candidate only if a semantics-safe path can be proven; the current graph pre-sizing tail is a small remaining win.
+   - Repeated identical formula dependency rebuild improved again; latest isolated worker sample was `15.48 MB`, while warm focused runs can be much lower because dependency-plan caches are hot.
+   - Formula parser/evaluator tail remains a candidate only if a semantics-safe path can be proven.
 5. App.UI render:
    - Text-heavy and wrapped render allocations are now down to tens of KB in recent samples.
-   - Selection-only repaint still allocates about `1.05 MB`; render timings remain noisy, so rerun a stable measurement set before declaring App.UI exhausted.
+   - Selection-only repaint improved from about `1.04 MB` to about `0.40-0.43 MB`; render timings remain noisy.
 
 ## Subagent Status
 
@@ -338,16 +384,26 @@ Post-restart 2026-06-03 workers launched with full-access/no-permission instruct
 - `019e8a99-ff5d-7961-b27f-6a180f6427fb`: XLSX IO dense-save/load metadata tail, completed; rebased commit `1697d0396` integrated to `origin/main`.
 - `019e8a9a-2f48-75a0-a430-0ba877c90268`: App.UI render tail, completed; rebased commit `55710539a` integrated to `origin/main`.
 
+Next-wave 2026-06-03 workers launched with full-access/no-permission instructions:
+
+- `019e8ad5-c8c1-7023-8e84-e21232b61bed`: App.Host drag-status/ribbon compact tail, shut down for the Codex restart before reporting completion.
+- `019e8ad5-dce5-7f80-b359-967eb329494c`: App.UI selection-render tail, completed; rebased commit `bad2009e5` integrated to `origin/main`.
+- `019e8ad5-f147-7f52-b755-57165012ca7e`: Formula/Core.Calc tail, completed; rebased commit `b0e435f7d` integrated to `origin/main`.
+
+Local orchestrator next-wave slice:
+
+- `codex/perf-xlsx-io-tail-20260603-r4`: XLSX style-only cell insertion tail, completed; commit `28dc32ea1` integrated to `origin/main`.
+
 ## Resume Checklist
 
 1. Run:
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `main` and `origin/main` are aligned at or after `5538bfcf6`.
+2. Confirm `main` and `origin/main` are aligned at or after `264483fef`.
 3. Start the next wave with disjoint scopes:
-   - App.Host drag-status and ribbon compact allocation tail.
-   - App.UI render benchmark stabilization and next hot path.
-   - Formula/Core.Calc parse/eval tail beyond shared parse cache.
-   - XLSX IO deeper dense-save/load metadata follow-up if a semantics-safe path is found.
+   - Restart or re-scope the App.Host drag-status/ribbon compact tail.
+   - XLSX IO ignored-errors/data-validation metadata save tails if a semantics-safe streaming path is found.
+   - Core.Commands dense row/column or Advanced Filter tails only if the remaining allocation can be reduced without broad snapshot semantics changes.
+   - App.UI render benchmark stabilization and remaining chart/formula-trace tails.
 4. Merge verified slices back to `main` promptly and push after each coherent unit.
