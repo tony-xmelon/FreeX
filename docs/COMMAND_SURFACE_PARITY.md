@@ -107,6 +107,8 @@ worksheet coordinates.
 | Account | Partial | Local Account backstage action shows FreeX user name, Windows account, device, app version, options file, current workbook save/path status, Windows Share readiness, local PDF/XPS export readiness, and explicit Microsoft 365 sign-in/cloud-link/coauthoring exclusion; no Microsoft account integration |
 <!-- command-inventory:command-surface:file-backstage:end -->
 
+**PDF export reassessment (2026-06-03):** the partial PDF/XPS status now includes selectable/searchable PDF text overlays for fully visible embedded chart titles plus X/Y axis titles, including rotated Y-axis title metadata. Still deferred for parity: vector chart graphics, selectable legend/data-label/tick-label text, chart-sheet pagination, full drawing-object z-order fidelity, internal workbook PDF destinations, PDF/A, and tagged PDF.
+
 ## Quick Access Toolbar
 
 > **Tab coverage: 3 Implemented + 1 Partial = 100% of 4 in-scope commands**

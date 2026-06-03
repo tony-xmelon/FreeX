@@ -1,7 +1,7 @@
 # FreeX Project Status Report
 
 Generated: 2026-06-01
-Observed at: 2026-06-03T18:40:00+03:00
+Observed at: 2026-06-03T19:00:00+03:00
 Report scope: current consolidated documentation/status snapshot after the June 1 evening integrations, with project history metrics refreshed through June 3
 Mainline observed: branch-neutral `origin/main` snapshot; worker-specific branch and worktree names are intentionally omitted from this status report
 
@@ -9,9 +9,9 @@ Mainline observed: branch-neutral `origin/main` snapshot; worker-specific branch
 
 FreeX remains in late-stage parity hardening. The broad app surface is functional and documented: formula coverage is **487/487 in-scope functions**, command and menu coverage remain **100% for in-scope rows**, shortcut parity remains **100% (87/87)**, and XLSX work is now focused on fidelity proof, package-preserving save validation, and real-world workbook breadth rather than first-pass support. The XLSX corpus currently has 176 workbook manifest rows, including data-validation semantic XML proof, live web-query warning/retention coverage through connection metadata, and the user-approved Partner Dashboard local-private Excel save/reopen regression row. The June 1 chart interop pass now has a repeatable comparison harness with a complete 28/28 chart openability/export and visual-gate pass, including chartEx coverage for Pareto, waterfall, box-and-whisker, treemap, sunburst, histogram, and funnel; the run reports 0 known-gap chart allowances and 28/28 byte-identical Excel-native/FreeX-round-trip packages.
 
-Overall completion remains **95%** in [release/progress.json](../release/progress.json), which keeps tester builds in the `v0.8.<run>` stream. Overall completion estimate is now **95%**. The main remaining work is package-preserving XLSX validation, broader corpus proof, release signing/trust and human accessibility validation, localization review/pseudo-localization/package metadata, keytip/visual polish, and measured performance hardening.
+Overall completion remains **95%** in [release/progress.json](../release/progress.json), which keeps tester builds in the `v0.8.<run>` stream. Overall completion estimate is now **95%**. The main remaining work is package-preserving XLSX validation, broader corpus proof, installer trust/Store-style packaging evidence and human accessibility validation, localization review/pseudo-localization/package metadata, keytip/visual polish, and measured performance hardening.
 
-The project history metrics report now covers Git and provider-log activity from 2026-05-12 through 2026-06-03 inclusive. Through June 3, the daily churn table records **14,560 commits**, **16,373 changed-file/day entries**, **+2,315,748 / -1,072,230 LoC**, and local provider logs attribute **159,975,270,570 observed raw tokens** across OpenAI/Codex and Anthropic/Claude rows.
+The project history metrics report now covers Git and provider-log activity from 2026-05-12 through 2026-06-03 inclusive. Through June 3, the daily churn table records **13,948 commits**, **16,061 changed-file/day entries**, **+1,646,544 / -1,069,920 LoC**, and local provider logs attribute **159,975,270,570 observed raw tokens** across OpenAI/Codex and Anthropic/Claude rows.
 
 ## Current Repository Metrics
 
@@ -19,12 +19,12 @@ Metrics refreshed 2026-06-03 after the latest test-splitting, performance, and r
 
 | Metric | Count |
 | --- | ---: |
-| Tracked files | 2,856 |
+| Tracked files | 2,884 |
 | C# source files under `src/` | 1,132 |
-| C# test files under `tests/` | 1,001 |
+| C# test files under `tests/` | 1,029 |
 | Markdown docs under `docs/` | 250 |
-| Current C# source LOC | 232,806 |
-| Current C# test LOC | 242,970 |
+| Current C# source LOC | 233,054 |
+| Current C# test LOC | 243,347 |
 | Current XAML LOC | 8,308 |
 | XLSX corpus manifest rows | 176 |
 
@@ -32,11 +32,11 @@ Metrics refreshed 2026-06-03 after the latest test-splitting, performance, and r
 
 | Item | Status |
 | --- | --- |
-| Mainline | Local `main` was clean at `1da0ab389` (`Round-trip exact column widths through XLSX save/load`) |
+| Mainline | Local `main` was clean at branch-neutral snapshot `d9c88c723` before this June 3 metrics refresh |
 | Completion tracking | [release/progress.json](../release/progress.json) remains at `overallCompletion: 95` |
 | History metrics | [PROJECT_BUILD_HISTORY_METRICS.md](PROJECT_BUILD_HISTORY_METRICS.md) is refreshed through 2026-06-03 inclusive |
-| Branch posture | Parallel work is active again: observed 531 registered worktrees and 548 local branches. Worker-owned worktrees were left untouched. |
-| Release posture | Tester-release automation can publish `.exe` and MSIX assets; signing/trust and public-preview evidence remain release-gate work |
+| Branch posture | Parallel work is active again: observed 533 registered worktrees and 550 local branches. Worker-owned worktrees were left untouched. |
+| Release posture | Tester-release automation publishes `.exe` and signed MSIX assets; installer trust, Store-style submission, and public-preview evidence remain release-gate work |
 | Documentation posture | The docs index, backlog, next-phase plan, localization plan, fidelity report, and metrics report now point at the current app state |
 
 ## Current Parity Snapshot
@@ -75,7 +75,7 @@ Phase 7D: Deeper color-scale XLSX edge semantics as new gaps are found.
    - The previously listed `MainWindowMouseResizeTests` resize-preview blocker is no longer open: targeted Release verification on `main` at `3ddbbebb3` passed 8/8.
 
 7. **History metrics extended through June 3**
-   - June 1-3 added 2,780 integrated commits, 1,909 changed-file/day entries, +886,616 / -149,257 LoC, and 43,031,906,346 observed raw provider tokens.
+   - June 1-3 added 2,168 integrated commits, 1,597 changed-file/day entries, +217,412 / -146,947 LoC, and 43,031,906,346 observed raw provider tokens.
 
 8. **Second-wave non-chart parity slices landed**
    - Worksheet primary view-mode persistence, live web-query warning detection, data-validation XML semantic proof, AutoFilter color-menu availability, current-culture delimited import/Text to Columns numeric parsing, and grouped-sheet Selection Pane object propagation are integrated locally and reflected in the parity/backlog docs.
@@ -94,7 +94,7 @@ Phase 7D: Deeper color-scale XLSX edge semantics as new gaps are found.
 
 Parallel implementation remains expected. Mainline is the integration target, while worker-owned branches and worktrees may continue carrying active, dirty, or paused work. Before merging any implementation slice, keep syncing from `main`, verify relevant build/tests in the owning worktree, and leave unrelated worker-owned changes untouched.
 
-Observed worker state at 2026-06-03T18:40+03:00: 531 registered worktrees and 548 local branches. Worker-owned worktrees were left untouched, and this report does not treat them as mainline dirt.
+Observed worker state at 2026-06-03T19:00+03:00: 533 registered worktrees and 550 local branches. Worker-owned worktrees were left untouched, and this report does not treat them as mainline dirt.
 
 ## Remaining Outstanding Work
 
@@ -105,7 +105,7 @@ See [OUTSTANDING_BUILD.md](OUTSTANDING_BUILD.md) for the source-of-truth backlog
 2. **Package-preserving XLSX save path**
    - Desktop Excel open/save/reopen checks remain release-critical validation.
 3. **Release documentation and packaging**
-   - Signing, installer trust validation, and live accessibility validation remain release-gate work.
+   - Signed hosted tester-release artifacts are in place; installer trust validation, Store-style submission, and live accessibility validation remain release-gate work.
 4. **Keytip overlay placement**
    - Continue visual-placement polish beyond the current automated key routing and UIA coverage; collapsed ribbon overflow group badges now use centered placement instead of the command bottom-edge anchor.
 5. **XLSX warning coverage as new gaps are found**
