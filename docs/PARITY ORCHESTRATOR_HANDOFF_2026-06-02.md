@@ -82,6 +82,7 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `f7948367e` - Interpreted imported workbook theme `a:glow` effect defaults and rendered the bounded approximation for non-chart text boxes and drawing shapes without extending picture or full `effectRef` semantics.
 - `94c7def23` - Applied modeled scale-percent and fit-to-pages-wide/tall settings to shared print renderer pagination capacity so print preview, PDF, XPS, and workbook export page counts reflect Scale to Fit settings.
 - `a3e4e6230` - Counted Print Comments At End summary pages in worksheet header/footer total-page tokens so print preview, PDF, XPS, and workbook export footers no longer show `Page 1 of 1` when a comment summary page is appended.
+- `c0f981318` - Extended Error Checking's omitted-adjacent-cells aggregate rule to statistical aggregate formulas (`STDEV`, `STDEVP`, `STDEV.S`, `STDEV.P`, `VAR`, `VARP`, `VAR.S`, and `VAR.P`) and regenerated command-surface parity docs.
 
 Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, Selection Pane mixed reorder coverage, and manual worksheet page-break metadata/storage/preview coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full workbook theme effect fidelity beyond the bounded shadow/glow approximations, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
@@ -193,6 +194,14 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Print Comments At End total-page token slice.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Print Comments At End total-page token slice.
 - `git diff --check` - clean after the Print Comments At End total-page token slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FindFormulaErrorIssues_ReturnsFormulaOmitsAdjacentCellsForAggregateFunctions" --logger "console;verbosity=normal"` - failed before the statistical aggregate omitted-adjacent implementation and passed after it.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~FormulaAuditingServiceTests" -v:minimal` - 84/84 passed after the statistical aggregate omitted-adjacent slice.
+- `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the statistical aggregate omitted-adjacent slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated Error Checking command-surface docs after the statistical aggregate omitted-adjacent slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the statistical aggregate omitted-adjacent slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the statistical aggregate omitted-adjacent slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the statistical aggregate omitted-adjacent slice.
+- `git diff --check` - clean after the statistical aggregate omitted-adjacent slice.
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~QuickAccessToolbarCustomizationPlannerTests|FullyQualifiedName~QuickAccessCommandStateResolverTests|FullyQualifiedName~ReviewCommandSourceTests|FullyQualifiedName~DrawCommandSourceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed after the default shape-name slice.
@@ -262,6 +271,7 @@ Completed and merged lanes from this wave:
 - Resume / Workbook theme glow effect approximation for text boxes and shapes: completed, pushed to `origin/main`.
 - Resume / Print renderer scale-to-fit pagination: completed, pushed to `origin/main`.
 - Resume / Print Comments At End total-page tokens: completed on `a3e4e6230`.
+- Resume / Error Checking statistical aggregate omitted-adjacent detection: completed on `c0f981318`.
 
 Read-only resume auditors:
 
