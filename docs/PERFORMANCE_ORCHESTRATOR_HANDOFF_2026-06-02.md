@@ -1446,6 +1446,28 @@ Repository checkpoint after Calc shared-leaf and Formula parsed-reference integr
 - Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
 - Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
 
+Repository checkpoint after Core.Calc compact leaf recalc and Core.IO delimited numeric streaming integrations:
+
+- Integration branch/worktree: `codex/perf-calc-io-tail-integration-20260603-r1`, rebased onto current `origin/main` at `35d54d036` before the performance commits.
+- The integration added rebased Core.Calc commit `c224c4ff6`.
+  - Worker: `019e8f14-6760-7e91-af0f-bd4d51e79cde`.
+  - Change: `DependencyGraph.GetRecalcOrder` now has a guarded single-cell compact-range leaf fast path, avoiding full topological ordering when the edited cell only invalidates one leaf formula and there are no downstream exact/range dependents requiring the full path.
+  - Metrics: worker sample for `Benchmark_ManyCompactRangeDependents_ReportsIndexedLookupTiming` improved from `24.33 ms` / `304,040` bytes (`1,216` bytes/iteration) to `16.79 ms` / `28,000` bytes (`112` bytes/iteration). Post-rebase integration focused sample was `9.23 ms` / `28,000` bytes; full-suite sample was `13.78 ms` / `28,040` bytes.
+  - Verification: focused Calc compact-range/dependency filter passed `3/3`; full Release `FreeX.Core.Calc.Tests` passed `685/685`.
+- The integration added rebased Core.IO commit `98b5e3809`.
+  - Worker: `019e8f14-7c3c-79c3-8634-d37fe62d883d`.
+  - Change: `DelimitedTextWorkbookWriter` streams numeric CSV/delimited values through invariant `TryFormat` instead of allocating a formatted string per numeric cell; a source guard covers the path.
+  - Metrics: worker samples improved dense CSV save allocation from `1,772,256` bytes to `620,440` bytes and sparse-wide CSV save allocation from `1,369,184` bytes to `889,248` bytes. Post-rebase integration focused samples matched `620,440` and `889,248` bytes respectively; elapsed xUnit samples remain noisy.
+  - Verification: focused CSV/delimited save and source-guard set passed `67/67`; full Release `FreeX.Core.IO.Tests` passed `1819/1819`.
+- Local Model/Commands census from `codex/model-commands-local-census-20260603-r3` passed the benchmark filter `41/41`. A row/column shift in-place move attempt was rejected because it did not reduce allocations and regressed the delete-row timing sample; the branch was restored clean with no patch carried.
+- `git diff --check origin/main...HEAD` passed before the docs update.
+- Completed worker handles to close after this docs push:
+  - `019e8f14-6760-7e91-af0f-bd4d51e79cde`: Core.Calc compact leaf recalc slice.
+  - `019e8f14-7c3c-79c3-8634-d37fe62d883d`: Core.IO delimited numeric streaming slice.
+  - `019e8ed1-b4cd-7180-abd1-73756789dba5`: stale App.Host open-progress worker branch already integrated earlier.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` remains dirty/divergent and should not be used for implementation; continue from linked worktrees based on `origin/main`.
+
 Repository checkpoint after Model/Commands structured-table filter and Core.IO style-only A1 allocation integrations:
 
 - `origin/main` was advanced to `fcd43458c` with `codex/perf-model-io-style-integration-20260603-r1`.
