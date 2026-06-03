@@ -991,3 +991,165 @@ Repository checkpoint after Host selection, App.UI formula-trace, and Pivot refr
   - Metric: `PIVOT_REFRESH_COLUMN_VALUE_FILTER_SORT` allocation improved from `12,980,200` bytes to `9,171,904` bytes; final focused sample was `mean_ms=32.94`.
   - Verification: pivot refresh/command focused set passed `178/178`, full `FreeX.Core.Model.Tests` passed `1896/1896`, and `git diff --check HEAD~1..HEAD` passed.
 - Primary local `main` remained outside the performance integration path; verified performance work continued through linked worktrees and fast-forward pushes to `origin/main`.
+
+Repository checkpoint after Core.Calc viewport terminal metric probe integration:
+
+- `origin/main` was advanced to `bf0d78573` with `codex/perf-core-calc-next-tail-20260603-r1`.
+  - Change: default all-visible sheets now skip the discarded backward terminal row/column metric probe when the requested viewport start is clearly before the worksheet-end alignment zone. Custom row heights, custom column widths, hidden/filter/group-hidden rows, hidden/group-hidden columns, and near-terminal requests keep the existing terminal scan path.
+  - Metric: `SPARSE_OCCUPIED_VIEWPORT` allocation improved from the earlier baseline `29,161,480` bytes over 60 iterations to the rebased final sample `25,112,952` bytes; final sample time was `83.04 ms`.
+  - Verification: focused sparse viewport benchmark passed `1/1`; focused viewport layout/style/benchmark set passed `35/35`; full `FreeX.Core.Calc.Tests` passed `674/674`; full `FreeX.App.UI.Tests` passed `571/571`; `git diff --check HEAD~1..HEAD` passed.
+- The temporary `RowMetric`/`ColMetric` value-record experiment was reverted before commit because App.UI relies on the existing nullable class-record semantics in metric lookups.
+- Fresh Core.IO worker `019e8c3f-3a5b-7932-a247-79d1d64a9317` and Core.Formula worker `019e8c3f-4e98-7f13-840c-119bdeba7652` were started from the resumed orchestrator context; wait for their results before claiming the current wave is exhausted.
+
+Repository checkpoint after Core.IO no-patch, Host census, Core.Model metadata, and Formula lookup integrations:
+
+- Core.IO worker `019e8c3f-3a5b-7932-a247-79d1d64a9317` completed with no patch on `codex/core-io-xlsx-nativejson-tail-20260603`.
+  - Evidence: focused Release Core.IO performance filter passed `50/50`; full Release `FreeX.Core.IO.Tests` passed `1784/1784`.
+  - Clean samples included `XLSX_SAVE_LOADED_DENSE_MUTATED` about `157.76 MB`, `XLSX_SAVE_STYLE_ONLY` about `144.68 MB`, `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` about `131.59 MB`, `XLSX_LOAD_DENSE` about `73.85 MB`, and `NATIVE_JSON_LOAD_DENSE` about `37.79 MB`.
+  - Rejected candidate: ignored-error save tuple gather saved only about `0.5 MB` and slowed the focused benchmark materially, so it was reverted.
+- Local Host census branch `codex/perf-host-next-tail-20260603-r1` completed with no patch.
+  - `PerformanceReviewMeasurementTests` passed `17/17`.
+  - Current samples: `VIEWPORT_NO_COMMENTS_FAST_PATH` `34,924,200` bytes; `RIBBON_FORCE_COMPACT` `13,108,240` bytes; `RIBBON_RESIZE` `11,940,720` bytes; `RIBBON_COLLAPSED_BUTTON_FOOTPRINT` `6,144,040` bytes; `NON_DRAG_SELECTION_TOOLBAR` `11,673,152` bytes; selection drag toolbar/status remained around `3.82 MB`/`2.75 MB`.
+  - Decision: no safe narrow Host patch found. Ribbon collapsed footprint already uses cached boxed dependency-property values and same-mode skip guards; remaining allocation appears tied to real mode-change `SetValue` work plus benchmark instrumentation.
+- `origin/main` was advanced to `a72d52cd2` with `codex/perf-core-model-next-tail-20260603-r1`.
+  - Change: `DeleteRowsCommand` now captures full row metadata undo state as compact key-value/value lists instead of dictionary/hashset snapshots, preserving full restore semantics while reducing snapshot overhead.
+  - Metric: `DELETE_ROWS_METADATA_SHIFT` improved from `10,181,320` bytes to the rebased final sample `7,075,600` bytes; final focused mean was `84.38 ms`.
+  - Verification: focused delete-row metadata/shift/guard set passed `12/12`; full `FreeX.Core.Model.Tests` passed `1898/1898`; `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `8e8833d56` with clean branch `codex/perf-formula-lookup-streaming-clean-20260603-r1`.
+  - Worker source branch was `codex/perf-formula-builtins-fresh-tail-20260603-r1`; integration used a clean cherry-pick of performance commit `4628af8c3` because the worker branch also contained unrelated local merge/refactor history.
+  - Change: direct range streaming fast paths for lookup-family formulas avoid flattening large worksheet ranges for `MATCH`, `XMATCH`, `XLOOKUP`, and `LOOKUP`.
+  - Metric: baseline `MATCH(100000,A1:A100000,1/0)` was about `800,464` bytes; final focused allocations were `MATCH` `112` bytes, `XMATCH` `136-160` bytes, `XLOOKUP` `112-136` bytes, and `LOOKUP` `64` bytes.
+  - Verification: focused Release lookup allocation tests passed `12/12`; full Release `FreeX.Core.Formula.Tests` passed `2726/2726`; `git diff --check HEAD~1..HEAD` passed.
+- Hourly thread heartbeat automation `hourly-performance-orchestrator-status` was created so the user receives regular progress updates while the goal remains active.
+
+Repository checkpoint after Core.Commands insert-row metadata snapshot integration:
+
+- `origin/main` was advanced to `aed4e532e` with `codex/perf-core-commands-insert-metadata-tail-20260603-r1`.
+  - Change: `InsertRowsCommand` now captures full row metadata undo state as compact key-value lists instead of dictionary snapshots, and uses the shared sorted-set capture helper for row page breaks. This mirrors the delete-row metadata undo optimization while preserving the existing full restore semantics for row heights, comments, threaded comments, hyperlinks, hyperlink metadata, and page breaks.
+  - Metric: `INSERT_ROWS_METADATA_SHIFT` improved from the pre-change branch baseline `8,773,744` bytes / `124.23 ms` mean to the focused post-change sample `7,073,272` bytes / `61.13 ms` mean over three iterations.
+  - Verification: focused insert-row metadata/guard/nearby insert set passed `22/22`; full `InsertDeleteRowsTests` passed `36/36`; full `FreeX.Core.Model.Tests` passed `1899/1899`; `git diff --check HEAD~1..HEAD` passed.
+- The primary local `main` remained untouched and locally divergent; performance integration continued through linked worktrees and fast-forward pushes to `origin/main`.
+
+Repository checkpoint after column metadata, Core.Calc sparse viewport, and App.UI drawing-object cache integrations:
+
+- `origin/main` first moved through an unrelated parity orchestrator merge chain to `f84b21064`; the local performance branches were rebased over that before integration.
+- `origin/main` was advanced to `e75d94f28` with `codex/perf-core-commands-column-metadata-tail-20260603-r1`.
+  - Change: `InsertColumnsCommand` and `DeleteColumnsCommand` now capture full column metadata undo state as compact key-value/value lists instead of dictionary/hashset snapshots, and use the shared sorted-set capture helper for column page breaks. Dedicated dense column-metadata benchmarks were added to cover this path.
+  - Metrics from a temporary benchmark-only baseline worktree versus the rebased patch: `INSERT_COLUMNS_METADATA_SHIFT` improved from `8,629,480` bytes to `6,929,008` bytes; `DELETE_COLUMNS_METADATA_SHIFT` improved from `9,334,000` bytes to `6,930,904` bytes.
+  - Verification: focused column metadata benchmark/guard set passed `3/3`; `InsertDeleteColumnsTests|RowColumnShiftAddressStateTests` passed `33/33`; full `FreeX.Core.Model.Tests` passed `1902/1902`; `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `2e1379fc7` with `codex/core-calc-tail-worker-20260603`.
+  - Worker: `019e8c60-2738-7001-b136-5aa6abc0d401`.
+  - Change: sparse occupied viewport scans avoid preallocating a large `DisplayCell` list when the sheet used range cannot overlap the visible row/column metric bounds, and reject occupied cells outside visible metric ranges before binary metric membership lookup.
+  - Metrics: worker baseline for `SPARSE_OCCUPIED_VIEWPORT` was `25,088,680` bytes / `671.40 ms` in the full benchmark class; final rebased full-class sample was `5,887,240` bytes / `243.79 ms` over 60 iterations. The worker's sparse-only final sample was `5,887,240` bytes / `70.18 ms`.
+  - Verification: rebased Release `PerformanceBenchmarkTests` passed `18/18`; full Release `FreeX.Core.Calc.Tests` passed `674/674`; `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `d146a7136` with `codex/app-ui-render-layout-tail-20260603-r1`.
+  - Worker: `019e8c60-1278-7771-b3f9-83e7790c99cd`.
+  - Change: the drawing-object layer cache now keys selection state by visible selected-picture anchor only, instead of the whole active cell range, so shape/text-box-heavy object layers survive unrelated cell-selection repaints while picture selection adorners remain correct.
+  - Metrics: focused worker baseline `GRID_RENDER_DRAWING_OBJECT_SELECTION_REPAINT` was `31,345,144` bytes / `141.23 ms` mean; worker final sample was `268,496` bytes / `69.14 ms` mean. The rebased integration sample was `287,256` bytes / `90.84 ms` mean.
+  - Verification: rebased `GridViewPerformanceMeasurementTests` passed `18/18`; full `FreeX.App.UI.Tests` passed `572/572`; `git diff --check HEAD~1..HEAD` passed.
+- The primary local `main` remained untouched and locally divergent; performance integration continued through linked worktrees and fast-forward pushes to `origin/main`.
+
+Repository checkpoint after Core.Model census/no-patch probe:
+
+- Local branch `codex/perf-core-model-census-tail-20260603-r1` was synced to `origin/main` at `dc1988e27` and left as a documentation/census branch.
+- Full Core.Model benchmark-class census passed `38/38`.
+- Current notable samples:
+  - `WATCHWINDOW_GET_ENTRIES_MANY`: `6,050,280` bytes.
+  - `CLIPBOARD_DESERIALIZE_DENSE`: `7,686,400` bytes.
+  - `CLIPBOARD_SERIALIZE_DENSE`: `2,766,720` bytes.
+  - `FLASHFILL_COLUMNS_EMAIL`: `9,630,560` bytes.
+  - `FLASHFILL_FIRST_TOKENS`: `4,944,120` bytes.
+  - `FLASHFILL_FILE_EXTENSIONS`: `900,920` bytes.
+  - `SUBTOTAL_PLAN_MANY_GROUPS_PAGEBREAKS`: `1,712,032` bytes.
+  - `PIVOT_REFRESH_COLUMN_VALUE_FILTER_SORT`: `9,171,904` bytes.
+  - Dense row/column shifts stayed around the current integrated range: `12.42-12.59 MB`; metadata shifts stayed around `6.93-7.08 MB`.
+- No source patch was carried from this census:
+  - Flash Fill email/first-token/file-extension paths are mostly required output-string allocation; the email path already uses the lower-allocation token-pair helpers.
+  - A Subtotal plan streaming trial increased allocation (`1,712,032 -> 1,854,232` bytes) because losing exact group-count/list pre-sizing outweighed the removed span list, so it was reverted.
+  - Watch Window entries already use pooled sort buffers, value-type entries, and exact arrays; remaining allocation is dominated by the returned entry array and formatted value strings, so a safe narrow patch would require API or presentation-string caching changes.
+- Current active workers launched with full-access/no-permission instructions:
+  - `019e8c79-53c6-7511-947b-dddd55ba7839`: Core.Formula evaluator/built-in function tail, scope `src/FreeX.Core.Formula/**` and `tests/FreeX.Core.Formula.Tests/**`.
+  - `019e8c79-86bc-7e42-8654-b1f3a0d6eaab`: App.Host performance-review tail, scope `src/FreeX.App.Host/**` and `tests/FreeX.App.Host.Tests/**`.
+  - `019e8c7f-ed62-7f70-be6b-fd09149881aa`: Core.IO allocation tail, scope `src/FreeX.Core.IO/**` and `tests/FreeX.Core.IO.Tests/**`.
+
+Repository checkpoint after conditional-icon DTO, Formula direct SUBTOTAL/AGGREGATE, and XLSX style-only save integrations:
+
+- `origin/main` was advanced to `0bee1bbf6` with `codex/perf-core-calc-census-tail-20260603-r1`.
+  - Change: `ConditionalFormatIcon` is now a readonly record struct, removing per-visible-cell icon object allocation while preserving value equality/nullability usage.
+  - Metric: `CF_ICONSET_THRESHOLDS` improved from `6,291,000` bytes to `5,523,024` bytes in the rebased focused Release run.
+  - Verification: focused icon filter passed `10/10`; full Release `FreeX.Core.Calc.Tests` passed `675/675`; full `FreeX.App.UI.Tests` passed `572/572`; `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `649312100` with `codex/perf-core-formula-tail-20260603-r1`.
+  - Worker: `019e8c79-53c6-7511-947b-dddd55ba7839`.
+  - Change: direct range streaming fast paths for `SUBTOTAL` non-statistical functions and `AGGREGATE` functions 1..11 avoid `RangeValue` materialization for large direct ranges; SUBTOTAL statistical functions remain on the old path.
+  - Metrics: `SUBTOTAL(1/2/9,A1:A100000)` dropped from about `800,240` bytes to `168` bytes; `AGGREGATE(1..11,4,A1:A100000)` dropped from about `800,272` bytes to `192` bytes.
+  - Verification: performance filter passed `71/71`; semantic/overflow filter passed `309/309`; full `FreeX.Core.Formula.Tests` passed `2726/2726`; `git diff --check HEAD~1..HEAD` passed. A compiler-server lock from parallel verification was cleared with `dotnet build-server shutdown` before rerun.
+- `origin/main` was advanced to `03c039fbf` with `codex/perf-core-io-tail-20260603-r1`.
+  - Worker: `019e8c7f-ed62-7f70-be6b-fd09149881aa`.
+  - Change: style-only worksheet post-processing now walks existing row cells with an in-order cursor instead of building a per-row reference dictionary; source guard prevents `.ToDictionary(` from returning to that writer path.
+  - Metric: `XLSX_SAVE_STYLE_ONLY` improved from about `144,675,896` bytes to rebased focused `117,068,192` bytes; mean sample was `579.87 ms`. Other IO allocation tails were flat/noisy.
+  - Verification: focused Release performance set passed `5/5`; exact style-only source guard passed `1/1`; full Release `FreeX.Core.IO.Tests` passed `1785/1785`; `git diff --check HEAD~1..HEAD` passed.
+- Remaining active worker:
+  - `019e8c79-86bc-7e42-8654-b1f3a0d6eaab`: App.Host performance-review tail, still running at this checkpoint.
+- The primary local `main` remained untouched and divergent; verified performance work continued through linked worktrees and fast-forward pushes to `origin/main`.
+
+Repository checkpoint after App.Host no-patch and Formula statistical-selection integration:
+
+- App.Host worker `019e8c79-86bc-7e42-8654-b1f3a0d6eaab` completed with no patch on `codex/perf-app-host-tail-20260603-r1`.
+  - Evidence: Release `PerformanceReviewMeasurementTests` passed `17/17`.
+  - Clean final samples included `RIBBON_RESIZE` `20,646,544` bytes, `RIBBON_FORCE_COMPACT` `22,343,720` bytes, `RIBBON_COLLAPSED_BUTTON_FOOTPRINT` `3,264,568` bytes, `NON_DRAG_SELECTION_TOOLBAR` `16,114,576` bytes, `SELECTION_DRAG_STATUS` `3,455,312` bytes, `ADDITIONAL_SELECTION_DRAG_TOOLBAR` `5,697,920` bytes, and `RIBBON_FORCE_COMPACT_SKIP` `450,656` bytes.
+  - Rejected candidate: removing drag name-box updates cut `SELECTION_DRAG_STATUS` allocation, but removed visible UI behavior. Undo-suppression/`SetCurrentValue` variants were noisy or regressed additional-selection drag, so they were reverted.
+- `origin/main` was advanced to `ddc4376e8` with `codex/perf-formula-current-tail-20260603-r1`.
+  - Change: `LARGE`, `SMALL`, percentile/quartile direct ranges, and `AGGREGATE` functions 12-19 now stream direct/named ranges into the numeric selection buffer instead of materializing an intermediate `RangeValue`; unsupported mixed scalar/array cases still fall back to the existing path.
+  - Metrics: top-level `LARGE`/`SMALL`/`PERCENTILE` improved from `1,600,320` bytes to `800,232` bytes; `AGGREGATE(12/14/15/16/18)` improved from about `2,897,856-2,897,888` bytes to `800,304-800,352` bytes; `AGGREGATE(13)` mode improved from `4,872,432` bytes to `4,072,360` bytes.
+  - Verification: focused selection filter passed `9/9`; full Formula performance filter passed `71/71`; full Release `FreeX.Core.Formula.Tests` passed `2726/2726`; focused statistical/Aggregate semantic filter passed `164/164`; `git diff --check HEAD~1..HEAD` passed.
+- Active workers at this checkpoint:
+  - `019e8ca0-4cb8-7442-b4dc-7535fd558a54`: Core.Calc current performance tail, scope `src/FreeX.Core.Calc/**` and `tests/FreeX.Core.Calc.Tests/**`.
+  - `019e8ca0-f355-7a41-99ad-8682351da88f`: App.UI current render/allocation tail, scope `src/FreeX.App.UI/**` and `tests/FreeX.App.UI.Tests/**`.
+- The primary local `main` remained untouched and divergent; verified performance work continued through linked worktrees and fast-forward pushes to `origin/main`.
+
+Repository checkpoint after App.UI split-pane, Core.Model dense-shift snapshot, and Core.Calc exact-chain integrations:
+
+- `origin/main` was advanced to `c3f95f569` with `codex/perf-app-ui-tail-current-20260603-r1`.
+  - Worker: `019e8ca0-f355-7a41-99ad-8682351da88f`.
+  - Change: split-pane cell layout uses allocation-free sorted row/column metric lookup structs instead of four metric dictionaries per visitor pass.
+  - Metrics: `SPLIT_PANE_CELL_LAYOUT_VISITOR` improved from `1,115.31 ms` / `4,609,920` bytes over 400 steps to focused `244.07 ms` / `1,632,040` bytes.
+  - Verification: focused split-pane render/layout tests passed `2/2`; full `FreeX.App.UI.Tests` passed `572/572`; `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `67501655a` with `codex/perf-core-model-current-tail-20260603-r1`.
+  - Change: row/column dense-shift undo snapshots now store primitive row/column coordinates instead of a full `CellAddress` with repeated per-snapshot `SheetId`, rebuilding sheet-qualified addresses only during restore.
+  - Metrics: dense shift allocation improved from `12,480,832 -> 10,560,832` bytes for `INSERT_ROWS_DENSE_SHIFT`, `12,523,288 -> 10,591,192` bytes for `DELETE_ROWS_DENSE_SHIFT`, `12,420,424 -> 10,500,424` bytes for `INSERT_COLUMNS_DENSE_SHIFT`, and `12,591,952 -> 10,622,992` bytes for `DELETE_COLUMNS_DENSE_SHIFT`.
+  - Verification: focused insert/delete row/column shift set passed `70/70`; full Release `FreeX.Core.Model.Tests` passed `1903/1903`; `git diff --check` passed before commit.
+- `origin/main` was advanced to `a0c644927` with clean branch `codex/perf-core-calc-replay-20260603-r1`.
+  - Worker source: `019e8ca0-4cb8-7442-b4dc-7535fd558a54`; original patch commit was `b15d42917` on `codex/perf-core-calc-tail-current-20260603-r1`.
+  - Integration note: the original local branch tip also contained unrelated local `main` merge/refactor history, so only the Calc performance commit was replayed onto current `origin/main`.
+  - Change: dependency graph recalc order uses a linear fast path for single-root exact formula chains, avoiding repeated precedent-dedupe scaffolding.
+  - Metrics: worker baseline for the exact 1,000-formula chain was `367.83 ms` / `19,991,240` bytes over 100 iterations; replay verification sampled `25.07 ms` / `2,412,840` bytes.
+  - Verification: focused `DependencyGraphTests|PerformanceBenchmarkTests` passed `45/45`; full Release `FreeX.Core.Calc.Tests` passed `676/676`; `git diff --check HEAD~1..HEAD` passed.
+- `codex/perf-core-model-current-tail-20260603-r1` was fast-forwarded and pushed so the session branch is aligned with `origin/main` at `a0c644927`.
+- Remaining active worker:
+  - `019e8cae-a1f2-7f33-99ad-64fb8c2bbbab`: Core.IO allocation tail, still running at this checkpoint.
+- Hourly thread heartbeat automation `hourly-performance-orchestrator-status` is present for progress updates while the goal remains active.
+- The primary local `main` remained untouched and locally divergent; continue using linked worktrees from `origin/main` and do not push/reset primary `main` wholesale.
+
+Repository checkpoint after Core.IO replay, Core.Calc dependency scan, App.UI overflow map, and Formula small-number cache integrations:
+
+- `origin/main` was advanced to `5b5027b04` with clean branch `codex/perf-core-io-replay-current-20260603-r1`.
+  - Worker source: `019e8cae-a1f2-7f33-99ad-64fb8c2bbbab`; original worker patch was `6a3c47b75`.
+  - Integration note: the worker branch also contained unrelated local merge/refactor history, so only the two-file Core.IO patch was replayed onto current `origin/main`.
+  - Change: `XlsxPackageXmlEditor.ReplaceXml` saves rewritten XLSX XML with `SaveOptions.DisableFormatting`, avoiding formatting whitespace during post-processing rewrites.
+  - Metrics: rebased focused samples were `XLSX_SAVE_STYLE_ONLY` `116,932,080` bytes, `XLSX_SAVE_IGNORED_ERRORS` `77,031,720` bytes, and `XLSX_SAVE_WORKSHEET_NATIVE_METADATA` `12,749,688` bytes. Worker before/after samples showed ignored-errors save improving from `81,774,784` to `77,033,536` bytes.
+  - Verification: focused save benchmarks passed `3/3`; full Release `FreeX.Core.IO.Tests` passed `1786/1786`; `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `800e0fec9` with `codex/perf-core-calc-current-tail-20260603-r2`.
+  - Change: dependency registration now checks volatile function names with a tiny Core.Calc-local switch instead of calling `BuiltInFunctions.IsVolatile`, so dependency-only scans do not initialize the full formula built-in registry.
+  - Metrics: `Benchmark_LargeRangeDependencyRebuild_UsesCompactRangeTracking` rebuild allocation improved from about `12,785,544` bytes to `3,824` bytes on the rebased focused run; full performance-class sample was `7.04 ms` / `3,544` bytes.
+  - Verification: focused dependency/volatile/large-range set passed `40/40`; full Calc performance class passed `18/18`; full Release `FreeX.Core.Calc.Tests` passed `676/676`; `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `4220f2d77` with `codex/app-ui-render-layout-allocation-tail-20260603-r2`.
+  - Worker: `019e8cbe-6975-7be1-bc5b-044abc05fd31`.
+  - Change: split-pane overflow occupancy stores the first two occupied column spans inline per row and only allocates a list for rare overflow spans.
+  - Metrics: rebased focused sample reported `SPLIT_PANE_CELL_LAYOUT_VISITOR` `419.53 ms` / `627,240` bytes over 400 steps and `SPLIT_PANE_SCROLLBAR_CHROME` `112.64 ms` / `40` bytes; worker before/after visitor allocation was `1,653,560 -> 627,240` bytes.
+  - Verification: focused split-pane benchmarks passed `2/2`; full Release `FreeX.App.UI.Tests` passed `572/572`; `git diff --check HEAD~1..HEAD` passed.
+- `origin/main` was advanced to `d1920d7e2` with `codex/formula-eval-builtins-tail-20260603-r1`.
+  - Worker: `019e8cc0-6afd-79c1-9f87-51f036ac72ba`.
+  - Change: the formula evaluator caches immutable small nonnegative integer `NumberValue` instances and routes common numeric evaluator/fast-aggregate result creation through that helper.
+  - Metrics: `RepeatedBooleanCoercionFormulaTextEvaluation_AvoidsCoercedNumberChurn` improved from `407.71 ms` / `2,400,040` bytes to the rebased focused sample `279.87 ms` / `40` bytes over 100,000 evaluations.
+  - Verification: focused Formula performance test passed `1/1`; full Release `FreeX.Core.Formula.Tests` passed `2726/2726`; `git diff --check HEAD~1..HEAD` passed.
+- All worker agents from this wave have been closed. The primary local `main` remains outside the performance integration path; continue using linked worktrees from `origin/main`.
