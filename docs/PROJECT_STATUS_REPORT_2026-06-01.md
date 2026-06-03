@@ -15,17 +15,17 @@ The project history metrics report now covers Git and provider-log activity from
 
 ## Current Repository Metrics
 
-Metrics refreshed 2026-06-03 after the latest test-splitting and review-documentation integrations; the narrative remains the June 1 status snapshot.
+Metrics refreshed 2026-06-03 after the latest test-splitting, performance, and review-documentation integrations; the narrative remains the June 1 status snapshot.
 
 | Metric | Count |
 | --- | ---: |
-| Tracked files | 2,706 |
-| C# source files under `src/` | 1,129 |
-| C# test files under `tests/` | 854 |
+| Tracked files | 2,824 |
+| C# source files under `src/` | 1,130 |
+| C# test files under `tests/` | 971 |
 | Markdown docs under `docs/` | 250 |
-| Current C# source LOC | 200,249 |
-| Current C# test LOC | 207,849 |
-| Current XAML LOC | 7,957 |
+| Current C# source LOC | 232,031 |
+| Current C# test LOC | 242,114 |
+| Current XAML LOC | 8,308 |
 | XLSX corpus manifest rows | 176 |
 
 ## Current Repository State
