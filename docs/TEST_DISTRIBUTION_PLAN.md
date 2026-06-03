@@ -11,7 +11,7 @@
 | 5. Crash analytics | Complete | Opt-in Sentry crash upload is wired behind tester consent and `FREEX_SENTRY_DSN`; local diagnostics remain available without network upload. |
 | 6. Lightweight usage analytics | Complete | Stabilization-only app usage events are recorded through the existing diagnostics pipeline and safe crash breadcrumbs. |
 | 7. Auto-update readiness | Complete | Help now exposes the stable latest release page while full in-app update packaging remains deferred. |
-| 8. Accessibility validation | Complete (PR #45) | UIA AutomationProperties audit completed; `GridView`/`SheetGrid` UIA peer override and `TabChrome` name binding fixed; 10 automated UIA property tests added. Every public-preview candidate still needs a live keyboard-only smoke pass, screen-reader smoke pass, and UI Automation catalog review recorded in release notes. |
+| 8. Accessibility validation | Complete | UIA AutomationProperties audit completed; `GridView`/`SheetGrid` exposes grid, selection, visible cell grid-item, value, and selection-item provider contracts; `TabChrome` name binding is fixed; automated UIA property and `GridViewAutomationPeerTests` guards cover the current contracts. Every public-preview candidate still needs a live keyboard-only smoke pass, screen-reader smoke pass, and UI Automation catalog review recorded in release notes. |
 
 ## Phase 4 Release Channel
 
@@ -104,7 +104,7 @@ If any required item is skipped, mark the tester build as internal-only and do n
 
 1. **Sheet tab `TabChrome` Grid missing UIA name** — The `ItemsControl` DataTemplate that renders each sheet tab had a focusable `Grid` with no `AutomationProperties.Name`. Keyboard users reaching sheet tabs via F6 received no announcement from Narrator. Fixed: `AutomationProperties.Name="{Binding Name}"` and `AutomationProperties.HelpText` added.
 
-2. **`GridView` (`SheetGrid`) missing UIA name and AutomationPeer** — The custom `FrameworkElement`-derived grid exposed a generic FrameworkElement peer with no meaningful control type or name. Fixed: `AutomationProperties.Name="Worksheet"` added in XAML and `OnCreateAutomationPeer` override added to `GridView.cs` returning a `DataGrid`-typed peer so screen readers announce the worksheet region correctly.
+2. **`GridView` (`SheetGrid`) missing UIA name and worksheet patterns** — The custom `FrameworkElement`-derived grid originally exposed a generic FrameworkElement peer with no meaningful control type, name, cell peers, grid pattern, value pattern, or selection pattern. Fixed: `AutomationProperties.Name="Worksheet"` added in XAML, `OnCreateAutomationPeer` returns a custom grid peer, and visible cell peers expose grid-item, value, and selection-item providers.
 
 **Already well-covered:**
 
@@ -121,16 +121,17 @@ If any required item is skipped, mark the tester build as internal-only and do n
 - `AutomationInvokeButton` override: Insert Function and Backstage entry-point buttons expose `InvokePattern`.
 - `AccessibilityCheckerService`: model-level issues (merged cells, missing alt text, generic alt text, chart titles, hyperlink text, hidden content, contrast) covered by `AccessibilityCheckerServiceTests`.
 
-**UIA catalog automated guards added (`MainWindowUiaPropertiesTests`):**
+**UIA catalog automated guards added (`MainWindowUiaPropertiesTests` and `GridViewAutomationPeerTests`):**
 
 - Formula bar, name box, scroll bars, zoom slider — name/help-text/automation-id present.
 - `SheetGrid` GridView — `AutomationProperties.Name="Worksheet"` set in XAML.
 - Sheet tab `TabChrome` — `AutomationProperties.Name` bound to sheet name.
 - `GridView.OnCreateAutomationPeer` override present (source check).
+- `GridViewAutomationPeer` exposes visible cells as grid items with values and selection state.
 
 **Known deferred items (not blocking public preview):**
 
-- Pixel-perfect Narrator cell-grid navigation (row/column header announcements, cell value read-back) requires a full `IGridProvider`/`ISelectionProvider` implementation on `GridViewAutomationPeer`. The current pass establishes the peer and control-type; the full grid pattern is tracked for a follow-up sprint.
+- Pixel-perfect Narrator navigation polish, such as richer row/column header announcements, remains a live screen-reader validation item. The grid and visible-cell UIA provider contracts themselves are implemented and covered by automated tests.
 - Status bar statistics text blocks (`Average`, `Count`, `Sum`, etc.) are display-only (not keyboard focus stops) and do not require UIA names for this gate; they are readable via screen reader browse mode from context.
 - Remaining Phase 8 items (interactive screen-reader and keyboard smoke passes requiring a live session with Narrator) must be executed before a public-preview build is tagged.
 
