@@ -9,8 +9,8 @@ This goal is not complete. This file records the current clean checkpoint.
 ## Operating Rules
 
 - Repository: `E:\Users\anton\Documents\Claude\Freexcel`.
-- Latest upstream checkpoint before this handoff update: `264483fef`.
-- `codex/performance-orchestrator-resume-20260602` was fast-forwarded onto `origin/main` at `264483fef` before this handoff update.
+- Latest upstream checkpoint before this handoff update: `5de331aac`.
+- `codex/performance-orchestrator-resume-20260602` was fast-forwarded onto `origin/main` at `5de331aac` before this handoff update.
 - Follow `AGENTS.md`: use isolated worktrees/branches for implementation, do not edit `main` directly, sync before work, verify before merge, push verified integrations frequently.
 - User explicitly requested no permission prompts and no escalation requests.
 - Treat unrelated dirty or untracked files as owned by other sessions unless explicitly proven otherwise.
@@ -330,6 +330,35 @@ All items below were verified, pushed to their `codex/` branches, and fast-forwa
   - Full `FreeX.Core.Calc.Tests` passed `666/666`.
   - Full `FreeX.Core.Formula.Tests` passed `2716/2716`.
 
+### XLSX Ignored Errors Worksheet Save Tail
+
+- Branch: `codex/perf-xlsx-metadata-save-tail-20260603-r1`.
+- Commit: `ca85fa850`.
+- Change: ignored-errors post-processing now reuses the shared worksheet path map/edit session and pre-sizes ignored-cell run capture exactly for the sheet.
+- Metrics:
+  - Focused baseline: `XLSX_SAVE_IGNORED_ERRORS` `83,004,720` bytes, `520.83 ms` mean.
+  - Focused post-rebase sample: `81,463,504` bytes, `339.65 ms` mean.
+  - Data-validation native metadata allocation remained essentially flat around `80.4 MB`.
+- Verification:
+  - Focused ignored-errors correctness and benchmark set passed `8/8`.
+  - Full `FreeX.Core.IO.Tests` passed `1775/1775`.
+
+### Core.Commands Cell State Snapshot Tail
+
+- Branch: `codex/perf-core-commands-tail-20260603-r1`.
+- Commit: `5de331aac`.
+- Worker: `019e8aee-e6ff-79f1-bfec-cf36cb75b866`, then orchestrator rebased, reviewed, reverified, and integrated.
+- Change: row/column insert/delete undo snapshots now store captured cell state fields and materialize `Cell` instances only during undo.
+- Metrics:
+  - `INSERT_ROWS_DENSE_SHIFT`: `15,350,608` bytes -> `12,482,128` bytes.
+  - `DELETE_ROWS_DENSE_SHIFT`: `15,375,304` bytes -> `12,524,968` bytes.
+  - `INSERT_COLUMNS_DENSE_SHIFT`: `15,229,720` bytes -> `12,421,720` bytes.
+  - `DELETE_COLUMNS_DENSE_SHIFT`: `15,328,000` bytes -> `12,593,440` bytes.
+- Verification:
+  - Rebased dense command/filter benchmark set passed `9/9`.
+  - Focused insert/delete row/column tests passed `58/58`.
+  - Full `FreeX.Core.Model.Tests` passed `1872/1872`.
+
 ## Other Main Integrations During This Wave
 
 Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, QAT validation, Flash Fill parity coverage clarification, and parity handoff updates.
@@ -339,19 +368,19 @@ Other sessions also advanced `main` with verified non-performance/refactor/parit
 The obvious high-impact backlog is reduced but not exhausted.
 
 1. XLSX IO:
-   - `XLSX_SAVE_LOADED_DENSE_MUTATED` is improved but still allocates around `156.3 MB`.
+   - `XLSX_SAVE_LOADED_DENSE_MUTATED` was previously improved to around `156.3 MB`, but the latest full IO sample on current main reported about `243.5 MB`; re-baseline this before targeting it again.
    - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` is improved again but still allocates around `144.2 MB`.
    - `XLSX_SAVE_STYLE_ONLY` improved to about `143.1 MB` but remains a high-allocation save path because ClosedXML/style seeding and package XML rewriting still dominate.
-   - `XLSX_SAVE_IGNORED_ERRORS` and `XLSX_SAVE_DATA_VALIDATION_NATIVE_METADATA` remain around `80 MB` in recent samples.
+   - `XLSX_SAVE_IGNORED_ERRORS` improved to about `81.46 MB`; `XLSX_SAVE_DATA_VALIDATION_NATIVE_METADATA` remains around `80.4 MB`.
    - Unchanged loaded workbook fast-copy remains healthy: `XLSX_SAVE_LOADED_DENSE` around `554,248` bytes in the full IO run.
    - Further IO cuts likely require deeper metadata load/save redesign or more streaming XML writers.
 2. App.Host toolbar/ribbon:
    - `NON_DRAG_SELECTION_TOOLBAR` remains around `13.0 MB`; current guardrails show zero QAT probes and zero toolbar writes.
    - `RIBBON_FORCE_COMPACT` improved to about `14.1 MB` but remains a visible tail.
    - `SELECTION_DRAG_STATUS` and `ADDITIONAL_SELECTION_DRAG_TOOLBAR` remain around `22-23 MB` in recent samples after modest improvements.
-   - Worker `019e8ad5-c8c1-7023-8e84-e21232b61bed` was shut down for the Codex restart before reporting a completed slice; restart or re-scope this tail before continuing Host work.
+   - Restarted worker `019e8aee-d2ca-73d2-910a-69e2d3451dd1` is currently running on this tail.
 3. Core.Commands:
-   - Dense insert undo and dense row/column shift allocations are improved; dense row/column shift still allocates about `15.2-15.4 MB`, so further improvement probably needs a deeper snapshot/restore redesign.
+   - Dense insert undo and dense row/column shift allocations are improved; dense row/column shift now allocates about `12.4-12.6 MB`, so further improvement probably needs model-level cell move primitives or a deeper snapshot/restore redesign.
    - Dense filter/table operations now report low allocations but still have time-cost tails worth rechecking if command work continues.
    - Advanced Filter copy-unique dense rows is improved to about `8.27 MB`; remaining cost is lower priority than the open Host/UI/Formula/XLSX tails.
    - Data-validation range list items are now low allocation; Go To Special data-validation lookup was checked and left unchanged because it is already low.
@@ -394,16 +423,25 @@ Local orchestrator next-wave slice:
 
 - `codex/perf-xlsx-io-tail-20260603-r4`: XLSX style-only cell insertion tail, completed; commit `28dc32ea1` integrated to `origin/main`.
 
+Restarted 2026-06-03 workers after Codex restart:
+
+- `019e8aee-d2ca-73d2-910a-69e2d3451dd1`: App.Host drag-status/ribbon compact tail, still running.
+- `019e8aee-e6ff-79f1-bfec-cf36cb75b866`: Core.Commands dense-shift tail, completed; rebased commit `5de331aac` integrated to `origin/main`.
+
+Local orchestrator slices after restart:
+
+- `codex/perf-xlsx-metadata-save-tail-20260603-r1`: XLSX ignored-errors worksheet save tail, completed; commit `ca85fa850` integrated to `origin/main`.
+
 ## Resume Checklist
 
 1. Run:
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `main` and `origin/main` are aligned at or after `264483fef`.
+2. Confirm `main` and `origin/main` are aligned at or after `5de331aac`.
 3. Start the next wave with disjoint scopes:
-   - Restart or re-scope the App.Host drag-status/ribbon compact tail.
+   - Check the active App.Host drag-status/ribbon compact worker and integrate if complete.
    - XLSX IO ignored-errors/data-validation metadata save tails if a semantics-safe streaming path is found.
-   - Core.Commands dense row/column or Advanced Filter tails only if the remaining allocation can be reduced without broad snapshot semantics changes.
+   - Core.Commands dense row/column tails now need deeper model-level redesign; prefer other high-impact areas unless a narrow safe path is proven.
    - App.UI render benchmark stabilization and remaining chart/formula-trace tails.
 4. Merge verified slices back to `main` promptly and push after each coherent unit.
