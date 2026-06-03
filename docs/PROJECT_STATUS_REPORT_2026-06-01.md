@@ -11,7 +11,7 @@ FreeX remains in late-stage parity hardening. The broad app surface is functiona
 
 Overall completion remains **95%** in [release/progress.json](../release/progress.json), which keeps tester builds in the `v0.8.<run>` stream. Overall completion estimate is now **95%**. The main remaining work is package-preserving XLSX validation, broader corpus proof, installer trust/Store-style packaging evidence and human accessibility validation, localization review/pseudo-localization/package metadata, keytip/visual polish, and measured performance hardening.
 
-The project history metrics report now covers Git and provider-log activity from 2026-05-12 through 2026-06-03 inclusive. Through June 3, the daily churn table records **13,940 commits**, **16,074 changed-file/day entries**, **+1,647,218 / -1,070,424 LoC**, and local provider logs attribute **159,975,270,570 observed raw tokens** across OpenAI/Codex and Anthropic/Claude rows.
+The project history metrics report now covers Git and provider-log activity from 2026-05-12 through 2026-06-03 inclusive. Through June 3, the daily churn table records **13,935 commits**, **16,071 changed-file/day entries**, **+1,647,061 / -1,070,426 LoC**, and local provider logs attribute **159,975,270,570 observed raw tokens** across OpenAI/Codex and Anthropic/Claude rows.
 
 ## Current Repository Metrics
 
@@ -32,7 +32,7 @@ Metrics refreshed 2026-06-03 after the latest test-splitting, performance, and r
 
 | Item | Status |
 | --- | --- |
-| Mainline | Local `main` was clean at branch-neutral snapshot `2577a5009` before this June 3 metrics refresh |
+| Mainline | Local `main` was clean at branch-neutral snapshot `ca7f14e93` before this June 3 metrics refresh |
 | Completion tracking | [release/progress.json](../release/progress.json) remains at `overallCompletion: 95` |
 | History metrics | [PROJECT_BUILD_HISTORY_METRICS.md](PROJECT_BUILD_HISTORY_METRICS.md) is refreshed through 2026-06-03 inclusive |
 | Branch posture | Parallel work is active again: observed 539 registered worktrees and 556 local branches. Worker-owned worktrees were left untouched. |
@@ -75,7 +75,7 @@ Phase 7D: Deeper color-scale XLSX edge semantics as new gaps are found.
    - The previously listed `MainWindowMouseResizeTests` resize-preview blocker is no longer open: targeted Release verification on `main` at `3ddbbebb3` passed 8/8.
 
 7. **History metrics extended through June 3**
-   - June 1-3 added 2,160 integrated commits, 1,610 changed-file/day entries, +218,086 / -147,451 LoC, and 43,031,906,346 observed raw provider tokens.
+   - June 1-3 added 2,155 integrated commits, 1,607 changed-file/day entries, +217,929 / -147,453 LoC, and 43,031,906,346 observed raw provider tokens.
 
 8. **Second-wave non-chart parity slices landed**
    - Worksheet primary view-mode persistence, live web-query warning detection, data-validation XML semantic proof, AutoFilter color-menu availability, current-culture delimited import/Text to Columns numeric parsing, and grouped-sheet Selection Pane object propagation are integrated locally and reflected in the parity/backlog docs.
