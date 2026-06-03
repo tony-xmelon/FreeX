@@ -19,12 +19,12 @@ Metrics refreshed 2026-06-03 after the latest test-splitting and review-document
 
 | Metric | Count |
 | --- | ---: |
-| Tracked files | 2,673 |
-| C# source files under `src/` | 1,128 |
-| C# test files under `tests/` | 822 |
+| Tracked files | 2,682 |
+| C# source files under `src/` | 1,129 |
+| C# test files under `tests/` | 830 |
 | Markdown docs under `docs/` | 250 |
-| Current C# source LOC | 198,908 |
-| Current C# test LOC | 207,274 |
+| Current C# source LOC | 199,484 |
+| Current C# test LOC | 207,406 |
 | Current XAML LOC | 7,986 |
 | XLSX corpus manifest rows | 176 |
 
