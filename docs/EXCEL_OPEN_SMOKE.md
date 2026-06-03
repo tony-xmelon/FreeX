@@ -125,6 +125,10 @@ As of 2026-06-03 on the local desktop Excel COM environment:
   passed: `34/34`.
 - The 34 FreeX-saved corpus workbooks from that run also passed Open XML SDK schema validation:
   `errors=0` for every file.
+- The local-private Partner Dashboard regression row
+  `local-private-partner-dashboard-20250116` passed
+  `--save-reopen --freex-resave-before-excel`: `1/1`. The FreeX-saved workbook also passed Open XML
+  SDK schema validation with `errors=0`.
 
 The 2026-06-03 corpus pass specifically covers prior Excel/OpenXML failures from invalid
 `styles.xml` ordering (`dxfs`/`tableStyles`/`colors`), invalid `workbook.xml` ordering
