@@ -9,8 +9,8 @@ This goal is not complete. This file records the current clean checkpoint.
 ## Operating Rules
 
 - Repository: `E:\Users\anton\Documents\Claude\Freexcel`.
-- Latest upstream checkpoint before this handoff update: `d468bb5bd`.
-- `codex/performance-orchestrator-resume-20260602` was rebased onto `origin/main` at `d468bb5bd` before this handoff update.
+- Latest upstream checkpoint before this handoff update: `001cd2cd5`.
+- `codex/performance-orchestrator-resume-20260602` was rebased onto `origin/main` at `001cd2cd5` before this handoff update.
 - Follow `AGENTS.md`: use isolated worktrees/branches for implementation, do not edit `main` directly, sync before work, verify before merge, push verified integrations frequently.
 - User explicitly requested no permission prompts and no escalation requests.
 - Treat unrelated dirty or untracked files as owned by other sessions unless explicitly proven otherwise.
@@ -529,6 +529,20 @@ All items below were verified, pushed to their `codex/` branches, and fast-forwa
   - No-build style-only benchmark repeat passed `1/1`.
   - Worker full `FreeX.Core.IO.Tests` passed `1780/1780`.
 
+### Core.Commands Formula Audit Inconsistency Scan Tail
+
+- Branch: `codex/perf-formula-eval-tail-20260603-r2`.
+- Commit: `cf15c0392`.
+- Change: inconsistent-formula auditing now scans in-place sorted row/column runs instead of building LINQ `GroupBy`/`OrderBy`/`ToList` scaffolding, and stores formula patterns as value records.
+- Metrics:
+  - Baseline `FORMULA_AUDIT_SPARSE_FORMULAS`: `5,902,192` bytes, `31.64 ms` mean.
+  - Final focused/full-class samples: `1,882,336` bytes, about `25.1-25.9 ms` mean.
+- Verification:
+  - `FormulaAuditingServiceTests` passed `86/86`.
+  - Full `FreeX.Core.Model.Tests` initially had two noisy `CellAddressTests` allocation guard failures; both passed on direct rerun.
+  - Broad `FreeX.Core.Model.Tests` excluding only those two noisy guards passed `1886/1886`.
+  - `git diff --check` passed.
+
 ## Other Main Integrations During This Wave
 
 Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, QAT validation, Flash Fill parity coverage clarification, and parity handoff updates.
@@ -539,7 +553,7 @@ The obvious high-impact backlog is reduced but not exhausted.
 
 1. XLSX IO:
    - `XLSX_SAVE_LOADED_DENSE_MUTATED` was re-stabilized from about `244.9 MB` to `150.1-157.5 MB` by skipping irrelevant worksheet compatibility scans; further wins likely require deeper package normalization redesign.
-   - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` improved again and now allocates around `131.5 MB` in full Core.IO samples; it is still one of the largest open allocation pools.
+   - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` improved again and now allocates around `131.5 MB` in full Core.IO samples; a post-resume Core.IO worker found only a ~`211 KB` narrow XML-read delta and reverted it, so further wins likely need package/model construction redesign.
    - `XLSX_SAVE_STYLE_ONLY` improved modestly again to about `143.9-144.0 MB` with the forward row insertion cursor tail, but remains a high-allocation save path because ClosedXML/style seeding and package XML rewriting still dominate.
    - `XLSX_SAVE_IGNORED_ERRORS` improved to about `81.46 MB`; `XLSX_SAVE_DATA_VALIDATION_NATIVE_METADATA` improved from about `80.5 MB` to about `18.6 MB`.
    - `XLSX_LOAD_DRAWING_PICTURES` now has a current baseline and a small copy/traversal win (`23.6 MB` to about `22.8 MB`); further cuts likely require a larger picture-storage or image-retention redesign.
@@ -547,13 +561,15 @@ The obvious high-impact backlog is reduced but not exhausted.
    - Further IO cuts likely require deeper metadata load/save redesign or more streaming XML writers.
 2. App.Host toolbar/ribbon:
    - `NON_DRAG_SELECTION_TOOLBAR` is down to about `12.2 MB`; current guardrails show zero QAT probes and zero toolbar writes.
-   - `RIBBON_FORCE_COMPACT` is about `13.4 MB` in the latest focused run and remains a visible tail.
+   - `RIBBON_FORCE_COMPACT`/compact skip paths did not produce a proven allocation win in the post-resume Host worker; the same-base candidate was timing-noisy and allocation-flat, so future Host work should start with allocation profiling.
    - `SELECTION_DRAG_STATUS` and `ADDITIONAL_SELECTION_DRAG_TOOLBAR` are about `4.6 MB` and `5.7 MB` respectively in the latest focused run; treat them as lower priority unless a new benchmark regresses.
    - The restarted Host worker branch is integrated; future Host work should start from current `origin/main` and avoid overlapping stale worktrees.
 3. Core.Commands:
    - Dense insert undo and dense row/column shift allocations are improved; dense row/column shift now allocates about `12.4-12.6 MB`, so further improvement probably needs model-level cell move primitives or a deeper snapshot/restore redesign.
    - Dense filter/table operations now report low allocations but still have time-cost tails worth rechecking if command work continues.
    - Advanced Filter copy-unique dense rows is improved to about `8.27 MB`; remaining cost is lower priority than the open Host/UI/Formula/XLSX tails.
+   - Formula auditing sparse formula scans improved from about `5.9 MB` to `1.88 MB`; remaining issue-scan work is lower priority unless a new benchmark exposes it.
+   - Clipboard dense serialize/deserialize was reprobed: serialize is mostly output-string allocation, dense deserialize is mostly returned field strings/row arrays, so no patch was carried.
    - Data-validation range list items are now low allocation; Go To Special data-validation lookup was checked and left unchanged because it is already low.
 4. Formula/Core.Calc:
    - Repeated identical formula dependency rebuild improved again; latest isolated worker sample was `15.48 MB`, while warm focused runs can be much lower because dependency-plan caches are hot.
@@ -611,6 +627,11 @@ Follow-up 2026-06-03 workers launched with full-access/no-permission instruction
 - `019e8b6a-e31e-73f2-a807-ba672fc87d85`: App.UI drawing-object cache warm-up follow-up, completed; orchestrator committed, rebased, reverified, and integrated `0382937a1`.
 - `019e8b77-a76a-7d00-b175-90ebb05259ba`: XLSX style-only save row insertion cursor tail, completed; orchestrator committed, verified, and integrated `d468bb5bd`.
 
+Post-handoff-resume 2026-06-03 workers launched with full-access/no-permission instructions:
+
+- `019e8b86-2829-71b3-ae1a-1e2661323639`: App.Host `RIBBON_FORCE_COMPACT` tail, completed with no patch; same-base candidate improved `RIBBON_DATA_REPEATED_COMPACT` timing (`10.68 ms -> 8.21 ms`) but allocation stayed flat at `150,704` bytes, while `RIBBON_FORCE_COMPACT_SKIP` stayed allocation-flat/noisy around `439.6 KB`; branch left clean with no commit.
+- `019e8b86-6a75-7ea3-9b34-a5d9790a0e65`: Core.IO `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` / style-only metadata tail, completed with no patch; only narrow safe trial saved about `211 KB` on a `~131 MB` path, so it was reverted and the branch was left clean with no commit.
+
 Local orchestrator slices after restart:
 
 - `codex/perf-xlsx-metadata-save-tail-20260603-r1`: XLSX ignored-errors worksheet save tail, completed; commit `ca85fa850` integrated to `origin/main`.
@@ -623,10 +644,13 @@ Local orchestrator slices after restart:
 - `codex/perf-xlsx-drawing-load-tail-20260603-r1`: XLSX drawing-picture load copy/traversal tail, completed; commit `30207e687` integrated to `origin/main`.
 - `codex/perf-app-ui-drawing-followup-20260603-r1`: App.UI drawing-object cache warm-up follow-up, completed; rebased commit `0382937a1` integrated to `origin/main`.
 - `codex/perf-xlsx-styleonly-save-tail-20260603-r1`: XLSX style-only save row insertion cursor tail, completed; commit `d468bb5bd` integrated to `origin/main`.
+- `codex/perf-formula-eval-tail-20260603-r2`: Core.Commands formula-audit inconsistent-formula scan allocation tail, completed; commit `cf15c0392` integrated to `origin/main`.
 
 Local orchestrator exploratory slice after drawing tails:
 
 - `codex/perf-core-commands-model-tail-20260603-r1`: Core.Commands/model probe for pivot/table/watch-window tails, completed locally with no integration; the pivot-refresh pre-sized filter-row candidate only saved about `2 KB`, so the patch was reverted and the worktree was left clean and uncommitted.
+- `codex/perf-clipboard-dense-serde-tail-20260603-r1`: Clipboard dense serialize/deserialize probe, completed locally with no integration; benchmark samples were `CLIPBOARD_DESERIALIZE_DENSE` `7,686,400` bytes and `CLIPBOARD_SERIALIZE_DENSE` `2,766,720` bytes, both dominated by required returned strings/arrays, so no patch was carried.
+- Additional low-allocation probes stayed clean: data validation list/prompt paths were under `48 KB`, accessibility low-contrast CF text was about `3.4 KB`, dense filters were about `10 KB`, subtotal row finder was about `9.8 KB`, and subtotal page-break planning was about `1.7 MB` but appears plan-output dominated.
 
 ## Resume Checklist
 
@@ -634,7 +658,7 @@ Local orchestrator exploratory slice after drawing tails:
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `origin/main` is at or after `d468bb5bd`. The primary local `main` may still contain unrelated local refactor commits; do not push or overwrite them as part of the performance thread unless their owning session has verified them.
+2. Confirm `origin/main` is at or after `001cd2cd5`. The primary local `main` may still contain unrelated local refactor commits; do not push or overwrite them as part of the performance thread unless their owning session has verified them.
 3. Start the next wave with disjoint scopes:
    - XLSX IO style-only/ignored-error load-save tail only if a larger semantics-safe streaming or package-normalization path is found; narrow cell/row insertion cursor tails are integrated.
    - Recheck XLSX drawing-picture load only if a larger picture-storage redesign is acceptable; the narrow copy/traversal tail is already integrated.
@@ -709,3 +733,15 @@ Repository checkpoint after XLSX style-only row insertion cursor integration:
 - `origin/main` was advanced to `d468bb5bd` with the XLSX style-only save row insertion cursor slice.
 - `codex/perf-core-commands-model-tail-20260603-r1` was left clean and uncommitted after a negligible pivot-refresh allocation probe was reverted.
 - The primary local `main` was left untouched; performance integration continued through verified linked worktrees and fast-forward pushes to `origin/main`.
+
+Repository checkpoint after Core.Commands formula audit integration:
+
+- `origin/main` was advanced to `cf15c0392` with the formula-audit inconsistent-formula scan allocation slice.
+- `codex/perf-host-ribbon-compact-tail-20260603-r1` and `codex/perf-xlsx-metadata-load-tail-20260603-r1` were active worker-owned branches at this checkpoint; review worker output before touching those scopes.
+- The primary local `main` was left untouched; it remains outside the performance integration path because unrelated sessions own its local divergence.
+
+Repository checkpoint after no-patch worker/probe results:
+
+- `origin/main` was advanced to `001cd2cd5` with the previous handoff update; no additional performance code commits were integrated after `cf15c0392`.
+- `codex/perf-host-ribbon-compact-tail-20260603-r1`, `codex/perf-xlsx-metadata-load-tail-20260603-r1`, and `codex/perf-clipboard-dense-serde-tail-20260603-r1` were left clean with no commits.
+- Remaining high-allocation XLSX paths and Host compact tails need profiling or larger redesign before more edits are likely to be practical.
