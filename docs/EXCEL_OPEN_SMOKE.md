@@ -49,11 +49,12 @@ dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --freex-resave-
 dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --generate-excel-fixture
 ```
 
-That command creates an Excel-authored workbook through COM under the run directory, loads and saves
-it through `XlsxFileAdapter`, then validates the FreeX-saved copy with the same Excel
-open/`SaveCopyAs`/close/reopen sequence. The FreeX-first path adds a small `FreeXSmoke` marker
-worksheet before saving so the adapter writes a new package instead of preserving an unchanged
-source package.
+That command creates an Excel-authored workbook through COM under the run directory, including a
+native table, data validation, conditional formatting, comment, hyperlink, text box, named range,
+and native PivotTable/pivot cache. It then loads and saves the workbook through `XlsxFileAdapter`,
+then validates the FreeX-saved copy with the same Excel open/`SaveCopyAs`/close/reopen sequence.
+The FreeX-first path adds a small `FreeXSmoke` marker worksheet before saving so the adapter writes
+a new package instead of preserving an unchanged source package.
 
 To validate an existing Excel-created or Excel-modified workbook through the same FreeX-first path:
 
@@ -129,6 +130,10 @@ As of 2026-06-03 on the local desktop Excel COM environment:
   `8/8`, including the authored PivotTable/pivot-cache fixture.
 - FreeX-authored feature fixtures also passed the authored-then-FreeX-edited path
   (`--freex-resave-before-excel --generate-freex-feature-fixtures`): `8/8`.
+- The Excel-authored fixture, including a native Excel PivotTable and pivot cache, passed
+  Excel-authored -> FreeX save/edit -> Excel open/`SaveCopyAs`/close/reopen -> FreeX reopen:
+  `1/1`. The FreeX source load and reopened Excel save both reported `pivots 1; pivot caches 1`,
+  and the FreeX-saved workbook passed Open XML SDK schema validation with `errors=0`.
 - Public + regression corpus rows selected from `test-corpus/manifest.csv` with
   `--save-reopen --freex-resave-before-excel --corpus-source public --corpus-source regression`
   passed: `34/34`.
