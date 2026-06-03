@@ -9,8 +9,8 @@ This goal is not complete. This file records the current clean checkpoint.
 ## Operating Rules
 
 - Repository: `E:\Users\anton\Documents\Claude\Freexcel`.
-- Latest upstream checkpoint before this handoff update: `5de331aac`.
-- `codex/performance-orchestrator-resume-20260602` was fast-forwarded onto `origin/main` at `5de331aac` before this handoff update.
+- Latest upstream checkpoint before this handoff update: `2a6c3066d`.
+- `codex/performance-orchestrator-resume-20260602` was rebased onto `origin/main` at `2a6c3066d` before this handoff update.
 - Follow `AGENTS.md`: use isolated worktrees/branches for implementation, do not edit `main` directly, sync before work, verify before merge, push verified integrations frequently.
 - User explicitly requested no permission prompts and no escalation requests.
 - Treat unrelated dirty or untracked files as owned by other sessions unless explicitly proven otherwise.
@@ -402,6 +402,21 @@ All items below were verified, pushed to their `codex/` branches, and fast-forwa
   - Orchestrator post-rebase focused Core.IO normalizer/performance set passed `39/39`.
   - Excel desktop openability smoke was not run; coverage is package-level correctness plus the Core.IO suite.
 
+### XLSX Native Data Validation Save Tail
+
+- Branch: `codex/perf-xlsx-datavalidation-save-tail-20260603-r1`.
+- Commit: `2a6c3066d`.
+- Local orchestrator slice after restart.
+- Change: sheets carrying native data-validation metadata now skip the duplicate ClosedXML data-validation save pass and emit the full `<dataValidations>` element directly during worksheet XML post-processing, while preserving native container/rule metadata and keeping ordinary validation sheets on the existing ClosedXML path.
+- Metrics:
+  - Pre-change baseline before commit: `XLSX_SAVE_DATA_VALIDATION_NATIVE_METADATA` `80,514,024` bytes, `104.23 ms` mean.
+  - Focused post-rebase sample: `18,650,496` bytes, `33.17 ms` mean, `35.55 ms` p95.
+  - Data-validation correctness run sample: `18,591,848` bytes, `48.65 ms` mean.
+- Verification:
+  - Focused benchmark/source-guard set passed `2/2`.
+  - Data-validation correctness/schema set passed `20/20`.
+  - Full `FreeX.Core.IO.Tests` passed `1777/1777`.
+
 ## Other Main Integrations During This Wave
 
 Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, QAT validation, Flash Fill parity coverage clarification, and parity handoff updates.
@@ -414,7 +429,7 @@ The obvious high-impact backlog is reduced but not exhausted.
    - `XLSX_SAVE_LOADED_DENSE_MUTATED` was re-stabilized from about `244.9 MB` to `150.1-157.5 MB` by skipping irrelevant worksheet compatibility scans; further wins likely require deeper package normalization redesign.
    - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` is improved again but still allocates around `144.2 MB`.
    - `XLSX_SAVE_STYLE_ONLY` improved to about `143.1 MB` but remains a high-allocation save path because ClosedXML/style seeding and package XML rewriting still dominate.
-   - `XLSX_SAVE_IGNORED_ERRORS` improved to about `81.46 MB`; `XLSX_SAVE_DATA_VALIDATION_NATIVE_METADATA` remains around `80.4 MB`.
+   - `XLSX_SAVE_IGNORED_ERRORS` improved to about `81.46 MB`; `XLSX_SAVE_DATA_VALIDATION_NATIVE_METADATA` improved from about `80.5 MB` to about `18.6 MB`.
    - Unchanged loaded workbook fast-copy remains healthy: `XLSX_SAVE_LOADED_DENSE` around `554,248` bytes in the full IO run.
    - Further IO cuts likely require deeper metadata load/save redesign or more streaming XML writers.
 2. App.Host toolbar/ribbon:
@@ -474,12 +489,14 @@ Restarted 2026-06-03 workers after Codex restart:
 - `019e8aee-e6ff-79f1-bfec-cf36cb75b866`: Core.Commands dense-shift tail, completed; rebased commit `5de331aac` integrated to `origin/main`.
 - `019e8b08-ae70-7c80-b40e-fa0432e027e1`: App.Host drag-status/ribbon compact tail, restarted after the user-requested Codex restart; running.
 - `019e8b08-c2a0-7992-bd1f-a9fe95c32e3f`: XLSX dense mutated save regression, completed; rebased commit `50bac941e` integrated to `origin/main`.
+- `019e8b24-13ea-7bc3-9bac-c7c1357831a2`: XLSX load ignored-error/style-only metadata tail, restarted after the user-requested Codex restart; running.
 
 Local orchestrator slices after restart:
 
 - `codex/perf-xlsx-metadata-save-tail-20260603-r1`: XLSX ignored-errors worksheet save tail, completed; commit `ca85fa850` integrated to `origin/main`.
 - `codex/perf-app-ui-trace-render-tail-20260603-r1`: App.UI formula-trace visible arrow drawing cache, completed; rebased commit `b2c4e3bdf` integrated to `origin/main`.
 - `codex/perf-app-ui-formula-layout-tail-20260603-r1`: App.UI formula-trace layout lookup allocation tail, completed; rebased commit `7613818b3` integrated to `origin/main`.
+- `codex/perf-xlsx-datavalidation-save-tail-20260603-r1`: XLSX native data-validation save tail, completed; rebased commit `2a6c3066d` integrated to `origin/main`.
 
 ## Resume Checklist
 
@@ -487,7 +504,7 @@ Local orchestrator slices after restart:
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `origin/main` is at or after `50bac941e`. The primary local `main` may still contain unrelated local refactor commits; do not push or overwrite them as part of the performance thread unless their owning session has verified them.
+2. Confirm `origin/main` is at or after `2a6c3066d`. The primary local `main` may still contain unrelated local refactor commits; do not push or overwrite them as part of the performance thread unless their owning session has verified them.
 3. Start the next wave with disjoint scopes:
    - Check the active App.Host drag-status/ribbon compact worker and integrate if complete.
    - XLSX IO ignored-errors/data-validation metadata save tails if a semantics-safe streaming path is found.
@@ -533,3 +550,8 @@ Repository checkpoint after App.UI layout and XLSX integrations:
 - `origin/main` was advanced to `7613818b3` with the App.UI layout allocation slice.
 - `origin/main` was then advanced to `50bac941e` with the XLSX dense mutated save normalization slice.
 - The primary local `main` was still left untouched for the same unrelated-local-refactor reason.
+
+Repository checkpoint after native data-validation save integration:
+
+- `origin/main` was advanced to `2a6c3066d` with the XLSX native data-validation post-processing save slice.
+- The primary local `main` was still left untouched because it contains unrelated local refactor commits and staged corpus-runner refactor files owned by another session.
