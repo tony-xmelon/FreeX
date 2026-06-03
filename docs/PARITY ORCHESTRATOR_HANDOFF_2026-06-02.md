@@ -4,7 +4,7 @@
 
 Continue FreeX non-human v1 readiness work until remaining feature-parity, fidelity, warning, and documentation gaps are exhausted or explicitly blocked. Use isolated worktrees/subagents under `AGENTS.md`, with full local access and no permission/escalation prompts.
 
-The orchestration goal is paused for thread handoff, not complete.
+The bounded non-chart slice queue is exhausted as of `origin/main`/`codex/parity-orchestrator-resume-20260602` at `f84b21064`; remaining partial rows are broad/deferred or explicitly excluded unless a future thread narrows one into a deterministic slice.
 
 ## Operating Policy
 
@@ -92,8 +92,9 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `2eb3c635a` - Honored the Options default font name and size for startup and File > New workbooks by routing full `FreeXOptions` through `NewWorkbookFactory`, normalizing persisted font options, and seeding `StyleId.Default` on newly created workbooks.
 - `10bca934b` - Used the first supported workbook theme `effectStyle` group for bounded shadow/glow defaults so imported theme effects no longer synthesize shadow and glow from separate groups, and regenerated command-surface parity docs.
 - `bce94cee0` - Used normalized Options user-name metadata for startup/File > New workbook file-sharing identity and included PDF/XPS document properties, with authored XLSX file-sharing username coverage and regenerated command-surface parity docs.
+- `f84b21064` - Integrated the Options user-name metadata slice into `origin/main` after repeatedly merging concurrent `origin/main` performance/doc updates, rerunning the focused verification set from the session worktree, and aligning `origin/main` with `origin/codex/parity-orchestrator-resume-20260602`.
 
-Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, Selection Pane mixed reorder coverage, and manual worksheet page-break metadata/storage/preview coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full workbook theme effect fidelity beyond the bounded shadow/glow approximations, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
+Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, Selection Pane mixed reorder coverage, and manual worksheet page-break metadata/storage/preview coverage. A final post-integration audit wave found no additional bounded deterministic non-chart slices in Backstage/File/PDF/XPS, QAT/Selection Pane, Draw/Page Layout, Accessibility Checker, or Spell Check. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full workbook theme effect fidelity beyond the bounded shadow/glow approximations, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
 ## Verification Completed
 
@@ -172,6 +173,7 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Options user-name metadata slice.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Options user-name metadata slice.
 - `git diff --check` - clean after the Options user-name metadata slice.
+- The same Options user-name focused verification set was rerun after each concurrent `origin/main` merge during integration; the final pushed tip `f84b21064` passed `dotnet restore FreeX.slnx`, the two targeted Core.IO tests, 31 targeted App.Host tests, `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj`, `tools\Generate-CommandInventoryDocs.ps1`, `tools\Test-GeneratedDocs.ps1`, `tools\Test-ConflictMarkers.ps1`, `tools\Test-RepositoryPreflight.ps1`, and `git diff --check` before being pushed to `origin/main` and `origin/codex/parity-orchestrator-resume-20260602`.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated QAT and Accessibility Checker generated docs.
@@ -395,6 +397,9 @@ Read-only resume auditors:
 - File/Options/QAT/PDF audit: `019e8bd7-bed1-7a11-961d-3118826f9063` completed without edits; it identified the now-completed Options default font/size new-workbook slice and now-completed bounded Options user-name metadata candidate.
 - Review/Data/Formulas audit: `019e8bd7-f060-7312-948a-ab5ce5e159e6` completed without edits; it found no remaining bounded deterministic Review/Data/Formulas slice outside broad/deferred Accessibility, Spell Check, Flash Fill, and Error Checking tails.
 - Draw/PageLayout/Pivot audit: `019e8bd8-1c47-7d02-9e62-4287b4fe3c96` completed without edits; it identified the now-completed PivotTable custom grand-total caption slice and now-completed workbook-theme effect-style grouping hygiene candidate.
+- Backstage/File/PDF/XPS final audit: `019e8c70-68df-7821-975e-a79bed05c835` completed without edits; it found no bounded local slice beyond the now-completed Options user-name metadata work and classified remaining PDF/XPS, Share, and Account partials as broad/excluded tails.
+- QAT/Options/Selection Pane final audit: `019e8c70-95d5-7262-bd46-0ad10d42ca9e` completed without edits; it found no bounded deterministic slice outside already-covered `.freex-qat.json` import/export validation, QAT context add/remove, and Selection Pane non-chart reorder/undo/grouped propagation coverage.
+- Draw/Page Layout/Review final audit: `019e8c70-bcef-79b2-a8df-131ce5e091f7` completed without edits; it found no bounded deterministic slice outside broad/deferred full Draw effect galleries, fuller OOXML theme/effect interpretation, full dictionary/proofing, and full Accessibility Checker taxonomy.
 
 Subagents from the prior non-chart wave were marked for closure:
 
@@ -418,7 +423,7 @@ Formula Bar and XSLT had no unique unmerged patch content at final cleanup; thei
 
 ## Outstanding Non-Chart V1 Work
 
-Keep focusing on deterministic, bounded parity slices. The current partial non-chart inventory still includes:
+The bounded deterministic non-chart queue is exhausted at this handoff. The current partial non-chart inventory still includes broad/deferred tails:
 
 - File/Backstage: Export to PDF/XPS long tail, Options, Info panel, Share, Account.
 - QAT: broader command browsing/customization polish; Excel `customUI` import/export remains out of scope unless explicitly rescoped.
@@ -440,5 +445,5 @@ Still excluded or handled elsewhere:
 2. Confirm this handoff commit and all merged slices are on `origin/main`; if `main` is ahead, verify the new commits before pushing.
 3. The coordinator branch and `origin/main` were aligned at this handoff, while the primary local `main` worktree was being changed by other sessions and may be dirty or diverged. Treat `origin/main` plus this handoff as canonical unless local `main` commits/edits are verified and intentionally integrated by their owning lane.
 4. Confirm no worker subagents are still open before spawning a new wave.
-5. Spawn the next wave only for non-overlapping bounded slices, excluding chart/PivotChart.
-6. Prefer next slices in Backstage Info/Share/Account, carefully bounded PDF/XPS option honesty, QAT command browsing only if the scope is narrowed, Accessibility Checker deterministic metadata/rule gaps, Spell Check deterministic skip/correction gaps, or Selection Pane/Draw fidelity polish.
+5. Spawn another wave only if one of the broad/deferred tails is explicitly narrowed to a non-overlapping deterministic slice, excluding chart/PivotChart.
+6. Otherwise treat the remaining File/Backstage/PDF, QAT `customUI`, Draw/Page Layout effect galleries, Spell Check dictionary/proofing, Accessibility Checker taxonomy, Flash Fill ML-like inference, and Microsoft 365/cloud items as deferred or excluded rather than pending safe small slices.
