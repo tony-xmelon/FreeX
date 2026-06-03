@@ -86,6 +86,7 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `9d578e9af` - Resolved same-sheet named ranges inside Error Checking omitted-adjacent aggregate arguments while keeping other-sheet named ranges out of the current-sheet heuristic, and regenerated command-surface parity docs.
 - `136ae1d0a` - Resolved bounded custom number-format workbook-theme color directives with optional `TintNN`/`TintNN%` suffixes through the active workbook theme for formatter and viewport display paths, and regenerated command-surface parity docs.
 - `e65c7f022` - Counted modeled hyperlinks as hidden sheet/row/column content in Accessibility Checker hidden-content scans, including hyperlink-only hidden sheets and blank-cell hyperlinks in hidden rows or columns, and regenerated command-surface parity docs.
+- `9e3c95864` - Added deterministic Flash Fill inference for final slash/backslash path segment stems with extension removal, while rejecting no-extension or no-path remaining values, and regenerated command-surface parity docs.
 
 Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, Selection Pane mixed reorder coverage, and manual worksheet page-break metadata/storage/preview coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full workbook theme effect fidelity beyond the bounded shadow/glow approximations, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
@@ -120,6 +121,14 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the hidden hyperlink-only content slice.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the hidden hyperlink-only content slice.
 - `git diff --check` - clean after the hidden hyperlink-only content slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~FlashFillServiceTests.Fill_ExtractFinalPathSegmentStem|FullyQualifiedName~FlashFillServiceTests.Fill_RemoveFinalDottedToken|FullyQualifiedName~FlashFillServiceTests.Fill_ExtractFinalDelimitedToken" -v:minimal` - 10/10 passed after the Flash Fill path-stem slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~FlashFillServiceTests" -v:minimal` - 238/238 passed after the Flash Fill path-stem slice.
+- `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the Flash Fill path-stem slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated Flash Fill generated docs after the path-stem slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the Flash Fill path-stem slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Flash Fill path-stem slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Flash Fill path-stem slice.
+- `git diff --check` - clean after the Flash Fill path-stem slice.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated QAT and Accessibility Checker generated docs.
