@@ -117,7 +117,7 @@ worksheet coordinates.
 | Save | Implemented |  |
 | Undo | Implemented |  |
 | Redo | Implemented |  |
-| Customize QAT | Partial | Options dialog filters the broad direct-command catalog and persists command list, order, reset, Enter/Delete/Backspace/Ctrl+Up/Ctrl+Down keyboard customization shortcuts, and above/below-ribbon location; eligible direct ribbon commands, including Check Accessibility, Share Workbook, and Selection Pane, can now be added/removed through command context menus; FreeX-owned `.freex-qat.json` customization import/export round-trips normalized command IDs and below-ribbon state, and import rejects unsupported command IDs instead of silently dropping them; arbitrary command browsing and Excel `customUI` import/export remain out of scope |
+| Customize QAT | Partial | Options dialog filters the broad direct-command catalog and persists command list, order, reset, Enter/Delete/Backspace/Ctrl+Up/Ctrl+Down keyboard customization shortcuts, above/below-ribbon location, and stable UI Automation IDs/help text for QAT customization lists and edit controls; eligible direct ribbon commands, including Check Accessibility, Share Workbook, and Selection Pane, can now be added/removed through command context menus; FreeX-owned `.freex-qat.json` customization import/export round-trips normalized command IDs and below-ribbon state, and import rejects unsupported command IDs instead of silently dropping them; arbitrary command browsing and Excel `customUI` import/export remain out of scope |
 <!-- command-inventory:command-surface:qat:end -->
 
 ---

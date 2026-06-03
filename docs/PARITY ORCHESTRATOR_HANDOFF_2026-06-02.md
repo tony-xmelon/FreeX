@@ -220,6 +220,14 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the Selection Pane stable AutomationIds slice.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the Selection Pane stable AutomationIds slice.
 - `git diff --check` - clean after the Selection Pane stable AutomationIds slice.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "OptionsDialog_ExposesStableQuickAccessToolbarAutomationMetadata" --logger "console;verbosity=normal"` - failed before the QAT Options UIA metadata implementation on the first missing stable QAT control AutomationId, then passed 1/1 after `d1dc16336`.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~OptionsDialogSourceTests" -v:minimal` - 23/23 passed after the QAT Options UIA metadata slice.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the QAT Options UIA metadata slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated QAT command-surface docs after the Options UIA metadata slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the QAT Options UIA metadata slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the QAT Options UIA metadata slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the QAT Options UIA metadata slice.
+- `git diff --check` - clean after the QAT Options UIA metadata slice.
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~QuickAccessToolbarCustomizationPlannerTests|FullyQualifiedName~QuickAccessCommandStateResolverTests|FullyQualifiedName~ReviewCommandSourceTests|FullyQualifiedName~DrawCommandSourceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed after the default shape-name slice.
@@ -292,6 +300,7 @@ Completed and merged lanes from this wave:
 - Resume / Error Checking statistical aggregate omitted-adjacent detection: completed on `c0f981318`.
 - Resume / Error Checking same-sheet named-range omitted-adjacent detection: completed on `9d578e9af`.
 - Resume / Selection Pane stable AutomationIds: completed on `5144947c6`.
+- Resume / QAT Options UIA metadata: completed on `d1dc16336`.
 
 Read-only resume auditors:
 
