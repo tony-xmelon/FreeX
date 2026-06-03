@@ -9,8 +9,8 @@ This goal is not complete. This file records the current clean checkpoint.
 ## Operating Rules
 
 - Repository: `E:\Users\anton\Documents\Claude\Freexcel`.
-- Latest upstream checkpoint before this handoff update: `e00bd5d67`.
-- `codex/performance-orchestrator-resume-20260602` was fast-forwarded onto `origin/main` at `e00bd5d67` before this handoff update.
+- Latest upstream checkpoint before this handoff update: `513eea00c`.
+- `codex/performance-orchestrator-resume-20260602` was fast-forwarded onto `origin/main` at `513eea00c` before this handoff update.
 - Follow `AGENTS.md`: use isolated worktrees/branches for implementation, do not edit `main` directly, sync before work, verify before merge, push verified integrations frequently.
 - User explicitly requested no permission prompts and no escalation requests.
 - Treat unrelated dirty or untracked files as owned by other sessions unless explicitly proven otherwise.
@@ -597,6 +597,52 @@ All items below were verified, pushed to their `codex/` branches, and fast-forwa
   - Integrated-main focused XNPV allocation guard passed.
   - `git diff --check` passed.
 
+### Core.IO NativeJson Loaded Cell Pre-sizing
+
+- Local orchestrator branch: `codex/perf-nativejson-tail-20260603-r1`.
+- Commit: `f35ffa046`.
+- Change: exposed the deserialized `CellDtoSequence.Count` and called the existing `Sheet.EnsureCellCapacity` before loading native JSON cells into a sheet.
+- Metrics:
+  - `NATIVE_JSON_LOAD_DENSE` improved from `44,182,608` bytes to `37,782,672` bytes in focused samples.
+  - `NATIVE_JSON_LOAD_REPEATED_STYLES` improved from `27,672,864` bytes to `21,740,168` bytes in focused samples; integrated-main sample was `21,740,192` bytes.
+  - Save benchmarks were unchanged by design (`NATIVE_JSON_SAVE_DENSE` remained about `29,231,000` bytes; workbook references about `8,381,816` bytes).
+- Verification:
+  - Focused `NativeJsonAdapterPerformanceTests` passed `11/11`.
+  - No-build repeat of the two affected load benchmarks passed `2/2`.
+  - Full `FreeX.Core.IO.Tests` passed `1781/1781` before and after rebase.
+  - Integrated-main focused NativeJson load/source-guard filter passed `3/3`.
+  - `git diff --check` passed.
+
+### App.Host Non-local Test Drift Cleanup
+
+- Worker: `019e8bbe-f615-7303-9419-36121e2f20c5`.
+- Branch: `codex/app-host-nonlocal-test-drift-20260603`.
+- Commits after orchestrator rebase: `38075f26c`, `b7386880d`, `028cd235c`.
+- Change: updated the native FreeX save-filter index expectation to match current adapter ordering, removed mojibake from Formula source comments, and refreshed the live repository metrics in `docs/PROJECT_STATUS_REPORT_2026-06-01.md`.
+- Verification:
+  - Worker focused drift filter passed `3/3`.
+  - Orchestrator post-rebase focused drift filter passed `3/3`.
+  - Full `FreeX.App.Host.Tests` passed `5794/5796` with `1` skipped and one transient `MainWindowSheetTabKeyboardTests.SheetTabActiveAndAddTab_StayBelowGridRule` focus failure; that exact test passed on direct rerun.
+  - Integrated-main focused drift filter passed `3/3`.
+  - `git diff --check` passed.
+
+### Core.Formula Direct NPV Range Streaming
+
+- Worker: `019e8bd4-d108-7eb2-a604-16e564c63798`.
+- Local clean integration branch: `codex/perf-formula-npv-range-tail-20260603-r1`.
+- Commit integrated to `origin/main`: `513eea00c`.
+- Change: isolated the worker's `726b83e60` NPV patch onto a fresh branch from current `origin/main`, avoiding unrelated local `main` parity/refactor commits. The NPV fast path streams direct range values instead of materializing large value arrays.
+- Metrics:
+  - Worker baseline `NPV(0.08,A1:A20000)`: `10.82 ms`, `1,324,912` bytes.
+  - Worker final focused sample: `9.82 ms`, `88` bytes.
+- Verification:
+  - Worker focused NPV tests passed `8/8`.
+  - Worker full Formula tests passed `2718/2718`.
+  - Orchestrator clean-branch focused NPV/XNPV filter passed `11/11`.
+  - Orchestrator clean-branch full `FreeX.Core.Formula.Tests` passed `2718/2718`.
+  - Integrated-main focused NPV allocation/source filter passed `2/2`.
+  - `git diff --check HEAD~1..HEAD` passed.
+
 ## Other Main Integrations During This Wave
 
 Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, QAT validation, Flash Fill parity coverage clarification, and parity handoff updates.
@@ -605,7 +651,7 @@ Other sessions also advanced `main` with verified non-performance/refactor/parit
 
 The obvious high-impact backlog is reduced but not exhausted.
 
-1. XLSX IO:
+1. XLSX/Core.IO:
    - `XLSX_SAVE_LOADED_DENSE_MUTATED` was re-stabilized from about `244.9 MB` to `150.1-157.5 MB` by skipping irrelevant worksheet compatibility scans; further wins likely require deeper package normalization redesign.
    - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` improved again and now allocates around `131.5 MB` in full Core.IO samples; a post-resume Core.IO worker found only a ~`211 KB` narrow XML-read delta and reverted it, so further wins likely need package/model construction redesign.
    - `XLSX_SAVE_STYLE_ONLY` improved modestly again to about `143.9-144.0 MB` with the forward row insertion cursor tail, but remains a high-allocation save path because ClosedXML/style seeding and package XML rewriting still dominate.
@@ -613,11 +659,13 @@ The obvious high-impact backlog is reduced but not exhausted.
    - `XLSX_LOAD_DRAWING_PICTURES` now has a current baseline and a small copy/traversal win (`23.6 MB` to about `22.8 MB`); further cuts likely require a larger picture-storage or image-retention redesign.
    - A post-`11bcab08a` Core.IO profiling worker found no practical narrow follow-up: `XLSX_SAVE_STYLE_ONLY` was about `143,994,216` bytes, `XLSX_LOAD_DRAWING_PICTURES` about `22,846,608` bytes, and `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` about `131,572,344` bytes. Its style-only save trial was effectively flat (`~184` bytes on a `~144 MB` path) and was reverted.
    - Unchanged loaded workbook fast-copy remains healthy: `XLSX_SAVE_LOADED_DENSE` around `554,248` bytes in the full IO run.
+   - NativeJson dense load now pre-sizes sheet cell storage: `NATIVE_JSON_LOAD_DENSE` improved from `44.18 MB` to `37.78 MB`, and repeated custom styles load improved from `27.67 MB` to about `21.74 MB`.
    - Further IO cuts likely require deeper metadata load/save redesign or more streaming XML writers.
 2. App.Host toolbar/ribbon:
    - `NON_DRAG_SELECTION_TOOLBAR` is down to about `12.2 MB`; current guardrails show zero QAT probes and zero toolbar writes.
    - `RIBBON_FORCE_COMPACT`/compact skip paths did not produce a proven allocation win in the post-resume Host worker; the same-base candidate was timing-noisy and allocation-flat, so future Host work should start with allocation profiling.
    - `SELECTION_DRAG_STATUS` and `ADDITIONAL_SELECTION_DRAG_TOOLBAR` are about `4.6 MB` and `5.7 MB` respectively in the latest focused run; treat them as lower priority unless a new benchmark regresses.
+   - App.Host deterministic non-local drift failures are fixed on `origin/main`; a full Host run had one transient keyboard-focus failure that passed on direct rerun.
    - The restarted Host worker branch is integrated; future Host work should start from current `origin/main` and avoid overlapping stale worktrees.
 3. Core.Commands:
    - Dense insert undo and dense row/column shift allocations are improved; dense row/column shift now allocates about `12.4-12.6 MB`, so further improvement probably needs model-level cell move primitives or a deeper snapshot/restore redesign.
@@ -631,6 +679,7 @@ The obvious high-impact backlog is reduced but not exhausted.
    - Core.Calc conditional-format formula rule stacking improved after the handoff: `CF_FORMULA_RULES` dropped from `12,387,000` bytes to `5,643,480` bytes by caching repeated stacked CF style combinations per viewport.
    - Core.Calc dependency rebuild improved again after the handoff: repeated identical formula dependency rebuild dropped from about `15,454,928` bytes / `3,090` bytes per formula to `1,916,992` bytes / `383` bytes per formula by grouping identical compact range dependencies in the range index.
    - Core.Formula XNPV range evaluation improved after the handoff: the large cash-flow range guard dropped from `320,360` bytes to `48` bytes by streaming direct value/date ranges.
+   - Core.Formula NPV range evaluation improved after the handoff: `NPV(0.08,A1:A20000)` allocation dropped from `1,324,912` bytes to `88` bytes by streaming direct range values.
    - Formula built-in focused benchmarks were reprobed after the handoff: `UNIQUE_SINGLE_COLUMN` was about `742,824` bytes and is still mostly required `HashSet` plus returned `RangeValue` storage; `REPT_LARGE_RESULT` was about `65,736` bytes and already bounded by output-string allocation.
    - Formula parser/evaluator tail remains a candidate only if a semantics-safe path can be proven; the latest broad focused Formula test run passed without exposing a narrow patch.
 5. App.UI render:
@@ -701,8 +750,9 @@ Goal-continuation 2026-06-03 workers launched with full-access/no-permission ins
 Post-restart continuation workers launched with full-access/no-permission instructions:
 
 - `019e8bbe-e1e1-7f51-9316-bc063c95d00f`: App.Host satellite localization resource drift, completed; rebased commit `461a30e5a` integrated to `origin/main`.
-- `019e8bbe-f615-7303-9419-36121e2f20c5`: App.Host non-local test drift worker, still running at this handoff update. Owned scope: `AppFileAdapterRegistrationTests`, the single mojibake comment, and documentation metric drift. Do not overlap its files unless it reports completion or is closed.
+- `019e8bbe-f615-7303-9419-36121e2f20c5`: App.Host non-local test drift worker, completed; rebased commits `38075f26c`, `b7386880d`, and `028cd235c` integrated to `origin/main`. Full Host tests had one transient keyboard-focus failure that passed on direct rerun.
 - `019e8bbf-0a6b-79b1-9f0f-8754062c2052`: Core.Formula XNPV direct range streaming, completed; rebased commit `e00bd5d67` integrated to `origin/main`.
+- `019e8bd4-d108-7eb2-a604-16e564c63798`: Core.Formula NPV direct range streaming, completed. The worker had merged into the primary local `main` with unrelated local commits, so the orchestrator isolated only patch commit `726b83e60` onto `codex/perf-formula-npv-range-tail-20260603-r1` and integrated clean commit `513eea00c` to `origin/main`.
 
 Local orchestrator slices after restart:
 
@@ -721,6 +771,8 @@ Local orchestrator slices after restart:
 - `codex/perf-calc-dependency-tail-20260603-r1`: Core.Calc compact range dependency grouping tail, completed; commit `13ecd1000` integrated to `origin/main`. Baseline `REPEATED_IDENTICAL_FORMULA_REBUILD` was `15,454,928` bytes / `3,090` bytes per formula; final was `1,916,992` bytes / `383` bytes per formula with full `FreeX.Core.Calc.Tests` passing `667/667`.
 - `codex/perf-ui-host-census-20260603-r2`: App.UI split-pane scrollbar chrome tail, completed by worker and rebased by orchestrator; commit `b6e08488d` integrated to `origin/main`. Final focused split-pane tests passed `66/66`, full `FreeX.App.UI.Tests` passed `570/570`, and `git diff --check` passed.
 - `codex/perf-viewport-displaycell-tail-20260603-r1`: App.Host viewport DisplayCell allocation tail, completed; commit `19a4056b5` integrated to `origin/main`. Baseline `VIEWPORT_NO_COMMENTS_FAST_PATH` was `44,977,320` bytes; integrated-main sample was `35,766,736` bytes. Full `FreeX.App.UI.Tests` passed `570/570`, full `FreeX.Core.Model.Tests` passed `1893/1893`, full `FreeX.Core.Calc.Tests` passed `673/673`, and focused Host viewport benchmark passed.
+- `codex/perf-nativejson-tail-20260603-r1`: Core.IO NativeJson loaded cell pre-sizing tail, completed; commit `f35ffa046` integrated to `origin/main`. `NATIVE_JSON_LOAD_DENSE` improved from `44,182,608` bytes to `37,782,672`, repeated custom styles load improved from `27,672,864` bytes to about `21,740,192`, full `FreeX.Core.IO.Tests` passed `1781/1781`, and the integrated-main focused load/source guard filter passed `3/3`.
+- `codex/perf-formula-npv-range-tail-20260603-r1`: Core.Formula direct NPV range streaming clean integration branch, completed; commit `513eea00c` integrated to `origin/main`. `NPV(0.08,A1:A20000)` allocation improved from `1,324,912` bytes to `88` bytes, focused NPV/XNPV tests passed `11/11`, full `FreeX.Core.Formula.Tests` passed `2718/2718`, and the integrated-main focused NPV allocation/source filter passed `2/2`.
 
 Local orchestrator exploratory slice after drawing tails:
 
@@ -734,11 +786,13 @@ Local orchestrator exploratory slice after drawing tails:
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `origin/main` is at or after `001cd2cd5`. The primary local `main` may still contain unrelated local refactor commits; do not push or overwrite them as part of the performance thread unless their owning session has verified them.
+2. Confirm `origin/main` is at or after `513eea00c`. The primary local `main` is currently ahead of `origin/main` by unrelated local commits (`16 0` from `git rev-list --left-right --count main...origin/main` at this checkpoint); do not push, reset, or overwrite it as part of the performance thread unless its owning session has verified and handed it over.
 3. Start the next wave with disjoint scopes:
    - XLSX IO style-only/ignored-error load-save tail only if a larger semantics-safe streaming or package-normalization path is found; narrow cell/row insertion cursor tails are integrated.
+   - NativeJson load pre-sizing is integrated; future NativeJson work should start from save paths or deeper load-model redesign rather than repeating the dense-load capacity slice.
    - Recheck XLSX drawing-picture load only if a larger picture-storage redesign is acceptable; the narrow copy/traversal tail is already integrated.
    - Core.Commands dense row/column tails now need deeper model-level redesign; prefer other high-impact areas unless a narrow safe path is proven.
+   - Core.Formula direct range streaming is integrated for XNPV and NPV; future financial-function work should start with fresh allocation profiles instead of duplicating those paths.
    - App.UI drawing-object first-render/offscreen cache warm-up follow-up is integrated; anchor lookup remains allocation-flat and lower priority.
 4. Merge verified slices back to `main` promptly and push after each coherent unit.
 
@@ -844,5 +898,17 @@ Repository checkpoint after DisplayCell, localization, and XNPV integrations:
   - `BuiltInFunctionsPerformanceTests.Xnpv_LargeCashFlowRangeAvoidsDateListAllocationChurn` passed.
   - `GridViewSplitPaneLayoutTests.Benchmark_SplitPaneCellLayoutMaterialization_ReportsAllocations` passed with `63,379,240` materialized bytes and `4,563,240` visitor bytes.
   - Host localization/AppLanguageCatalog plus `PerformanceReviewMeasurementTests.Benchmark_ViewportNoCommentsFastPath` passed `132/132`, with viewport allocation `35,766,736` bytes.
-- The App.Host non-local drift worker `019e8bbe-f615-7303-9419-36121e2f20c5` was still running when this handoff update was written.
+- The App.Host non-local drift worker `019e8bbe-f615-7303-9419-36121e2f20c5` was still running at this checkpoint; it completed later and was integrated in the next checkpoint below.
 - The primary local `main` remained untouched; performance integration continued through linked worktrees and fast-forward pushes to `origin/main`.
+
+Repository checkpoint after NativeJson, Host drift, and NPV integrations:
+
+- `origin/main` was advanced to `f35ffa046` with the Core.IO NativeJson loaded cell pre-sizing slice.
+- `origin/main` was advanced to `028cd235c` with the App.Host non-local test drift cleanup.
+- `origin/main` was advanced to `513eea00c` with the Core.Formula direct NPV range streaming slice.
+- Integrated-main targeted verification passed:
+  - Host non-local drift filter passed `3/3`.
+  - NativeJson load/source guard filter passed `3/3`, with `NATIVE_JSON_LOAD_DENSE` at `37,782,672` bytes and repeated custom styles load at `21,740,192` bytes.
+  - NPV allocation/source filter passed `2/2`.
+- Broader verification before integration included full `FreeX.Core.IO.Tests` passing `1781/1781`, full `FreeX.Core.Formula.Tests` passing `2718/2718`, and full `FreeX.App.Host.Tests` passing `5794/5796` with `1` skipped plus one transient keyboard-focus failure that passed on direct rerun.
+- The primary local `main` remained untouched and is currently clean but locally divergent: `main` is at `1efc6f70f` and `origin/main` is at `513eea00c`, with `main...origin/main` showing `16 0`. Continue using linked worktrees from `origin/main` for the performance thread and do not push or reset primary `main` wholesale.
