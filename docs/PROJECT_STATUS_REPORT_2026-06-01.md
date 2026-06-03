@@ -7,7 +7,7 @@ Mainline observed: branch-neutral `origin/main` snapshot; worker-specific branch
 
 ## Executive Summary
 
-FreeX remains in late-stage parity hardening. The broad app surface is functional and documented: formula coverage is **487/487 in-scope functions**, command and menu coverage remain **100% for in-scope rows**, shortcut parity remains **100% (87/87)**, and XLSX work is now focused on fidelity proof, package-preserving save validation, and real-world workbook breadth rather than first-pass support. The XLSX corpus currently has 175 workbook manifest rows, including data-validation semantic XML proof and live web-query warning/retention coverage through connection metadata. The June 1 chart interop pass now has a repeatable comparison harness with a complete 28/28 chart openability/export and visual-gate pass, including chartEx coverage for Pareto, waterfall, box-and-whisker, treemap, sunburst, histogram, and funnel; the run reports 0 known-gap chart allowances and 28/28 byte-identical Excel-native/FreeX-round-trip packages.
+FreeX remains in late-stage parity hardening. The broad app surface is functional and documented: formula coverage is **487/487 in-scope functions**, command and menu coverage remain **100% for in-scope rows**, shortcut parity remains **100% (87/87)**, and XLSX work is now focused on fidelity proof, package-preserving save validation, and real-world workbook breadth rather than first-pass support. The XLSX corpus currently has 176 workbook manifest rows, including data-validation semantic XML proof, live web-query warning/retention coverage through connection metadata, and the user-approved Partner Dashboard local-private Excel save/reopen regression row. The June 1 chart interop pass now has a repeatable comparison harness with a complete 28/28 chart openability/export and visual-gate pass, including chartEx coverage for Pareto, waterfall, box-and-whisker, treemap, sunburst, histogram, and funnel; the run reports 0 known-gap chart allowances and 28/28 byte-identical Excel-native/FreeX-round-trip packages.
 
 Overall completion remains **95%** in [release/progress.json](../release/progress.json), which keeps tester builds in the `v0.8.<run>` stream. Overall completion estimate is now **95%**. The main remaining work is package-preserving XLSX validation, broader corpus proof, release signing/trust and human accessibility validation, localization review/pseudo-localization/package metadata, keytip/visual polish, and measured performance hardening.
 
@@ -24,7 +24,7 @@ The project history metrics report now covers Git and provider-log activity from
 | Current C# source LOC | 181,042 |
 | Current C# test LOC | 182,955 |
 | Current XAML LOC | 7,888 |
-| XLSX corpus manifest rows | 175 |
+| XLSX corpus manifest rows | 176 |
 
 ## Current Repository State
 
@@ -45,7 +45,7 @@ The project history metrics report now covers Git and provider-log activity from
 | Command surface | 100% of in-scope command-surface rows covered; deferred/excluded rows are documented rather than counted as missing. |
 | Menu/toolbar parity | 100% of in-scope menu/toolbar rows covered, with deferred/excluded rows tracked separately. |
 | Keyboard shortcuts | **100% parity** (87/87), **0% partial** (0/87), **0 missing**. |
-| XLSX fidelity | 71 documented in-scope feature categories with at least partial support; corpus remains at 175 workbook manifest rows with generated/public/regression evidence and known-gap warning coverage. Chart interop now has a 28/28 latest-complete pass for Excel openability/export and visual gates. |
+| XLSX fidelity | 71 documented in-scope feature categories with at least partial support; corpus remains at 176 workbook manifest rows with generated/public/regression/local-private evidence and known-gap warning coverage. Chart interop now has a 28/28 latest-complete pass for Excel openability/export and visual gates. |
 | UI/dialog parity | Dialog message routing, access keys, default/cancel semantics, UIA metadata, keytips, ribbon layout, titlebar/QAT states, and sheet-tab chrome have broad automated coverage and continuing visual polish. |
 | Localization | `UiText`, `LocExtension`, neutral resources, 43 satellite resource cultures, startup UI culture, WPF language metadata, localization guard tests, current-culture direct numeric entry, delimited numeric import, and Text to Columns numeric parsing are present. |
 | Release readiness | User guide, troubleshooting, legal/privacy notices, release checklist, diagnostics, crash analytics, and tester-release workflow docs are present; public-preview promotion still needs live validation evidence. |
@@ -99,7 +99,7 @@ Observed worker state at 2026-06-01T20:40+03:00: 122 registered worktrees and 12
 See [OUTSTANDING_BUILD.md](OUTSTANDING_BUILD.md) for the source-of-truth backlog. The highest-priority open items are:
 
 1. **XLSX corpus and fidelity proof**
-   - Expand the 175-row corpus baseline with broader public/private/regression workbook coverage and per-feature pass/fail publication.
+   - Expand the 176-row corpus baseline with broader public/private/regression workbook coverage and per-feature pass/fail publication.
 2. **Package-preserving XLSX save path**
    - Desktop Excel open/save/reopen checks remain release-critical validation.
 3. **Release documentation and packaging**

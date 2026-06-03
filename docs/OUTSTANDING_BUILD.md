@@ -1,6 +1,6 @@
 # FreeX Outstanding Build List
 
-**Last updated:** 2026-06-01
+**Last updated:** 2026-06-03
 **Basis:** reviewed the repository Markdown files, cross-checked the active codebase under `src/` and `tests/`, confirmed `release/progress.json`, and refreshed the current documentation/status metrics after the June 1 evening integration work. This follows the production-readiness pass and the 2026-05-30 comprehensive source review ([CODE_REVIEW_COMPREHENSIVE_2026-05-30.md](CODE_REVIEW_COMPREHENSIVE_2026-05-30.md)), which verified the source tree, confirmed all 17 findings from the 2026-05-28 review are resolved, and recorded a small residual code-quality backlog (see below).
 
 This is the current source-of-truth backlog for features still outstanding to build. Older planning docs are useful historical context, but several items they list as future work are now implemented.
@@ -23,14 +23,14 @@ Confirmed present in code and tests:
 - Accessibility: `SheetGrid` and sheet-tab `TabChrome` have correct `AutomationProperties.Name`; `GridView` exposes a `DataGrid`-typed automation peer; all dialogs have `IsDefault`/`IsCancel` and programmatic initial focus; 10 UIA XAML-parse tests added (PR #45).
 - Keyboard shortcuts at **100% parity (87/87)**; AutoFilter shortcut improvements in `DataFilterCommands` (PR #48).
 - All `MessageBox.Show` calls in dialog classes migrated to `IUserMessageService`/`DialogMessageHelper`; all dialog access keys and `IsDefault`/`IsCancel` states audited (PR #47).
-- XLSX corpus at **175 rows** (+31 new feature buckets); per-feature XML structural comparisons now include conditional formatting, chart series, and data-validation rule semantics; live web-query warning/retention coverage includes connection metadata; 6 round-trip bugs fixed (PR #46).
+- XLSX corpus at **176 rows** (+31 new feature buckets plus a user-approved Partner Dashboard local-private Excel save/reopen regression row); per-feature XML structural comparisons now include conditional formatting, chart series, and data-validation rule semantics; live web-query warning/retention coverage includes connection metadata; 6 round-trip bugs fixed (PR #46).
 - Chart interop comparison is now evidence-backed: the latest complete `tools/FreeX.ChartInteropCompare` run passed 28/28 chart cases for FreeX render PNGs, FreeX-authored XLSX opened/exported by Excel, Excel-authored XLSX opened/exported by Excel, and Excel-authored XLSX loaded/saved by FreeX then reopened/exported by Excel. The harness records openability/export failures separately from visual mismatches.
 - Localization foundation is now present in code and tests: `UiText`, `LocExtension`, neutral `Strings.resx`, 43 complete satellite resource cultures, startup UI-culture selection, WPF language metadata application, current-culture direct numeric cell entry, delimited CSV/TSV import, and Text to Columns numeric parsing with invariant fallback, plus resource/usage guard tests and pseudo-localization contract smoke coverage for high-risk shell/ribbon/dialog strings.
 
 ## Highest Priority Outstanding Work
 
 1. **XLSX corpus and fidelity proof**
-   - Current manifest has 175 rows: 121 generated rows, 25 public Tealeg rows, 20 optional local-private rows, and 9 regression formula-cache workbooks.
+   - Current manifest has 176 rows: 121 generated rows, 25 public Tealeg rows, 21 optional local-private rows, and 9 regression formula-cache workbooks.
    - Continue growing the 100+ row baseline with public/open-license, local-private, and regression workbooks.
    - Continue expanding corpus checks from model-summary stability into deeper per-feature comparisons.
    - **Done 2026-06-01:** `generated-dv-count-package-003` now verifies ten native `dataValidation` rules by type/operator/formula/`sqref` semantics after ordinary model edits.
