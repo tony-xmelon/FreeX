@@ -1021,3 +1021,11 @@ Repository checkpoint after Core.IO no-patch, Host census, Core.Model metadata, 
   - Metric: baseline `MATCH(100000,A1:A100000,1/0)` was about `800,464` bytes; final focused allocations were `MATCH` `112` bytes, `XMATCH` `136-160` bytes, `XLOOKUP` `112-136` bytes, and `LOOKUP` `64` bytes.
   - Verification: focused Release lookup allocation tests passed `12/12`; full Release `FreeX.Core.Formula.Tests` passed `2726/2726`; `git diff --check HEAD~1..HEAD` passed.
 - Hourly thread heartbeat automation `hourly-performance-orchestrator-status` was created so the user receives regular progress updates while the goal remains active.
+
+Repository checkpoint after Core.Commands insert-row metadata snapshot integration:
+
+- `origin/main` was advanced to `aed4e532e` with `codex/perf-core-commands-insert-metadata-tail-20260603-r1`.
+  - Change: `InsertRowsCommand` now captures full row metadata undo state as compact key-value lists instead of dictionary snapshots, and uses the shared sorted-set capture helper for row page breaks. This mirrors the delete-row metadata undo optimization while preserving the existing full restore semantics for row heights, comments, threaded comments, hyperlinks, hyperlink metadata, and page breaks.
+  - Metric: `INSERT_ROWS_METADATA_SHIFT` improved from the pre-change branch baseline `8,773,744` bytes / `124.23 ms` mean to the focused post-change sample `7,073,272` bytes / `61.13 ms` mean over three iterations.
+  - Verification: focused insert-row metadata/guard/nearby insert set passed `22/22`; full `InsertDeleteRowsTests` passed `36/36`; full `FreeX.Core.Model.Tests` passed `1899/1899`; `git diff --check HEAD~1..HEAD` passed.
+- The primary local `main` remained untouched and locally divergent; performance integration continued through linked worktrees and fast-forward pushes to `origin/main`.
