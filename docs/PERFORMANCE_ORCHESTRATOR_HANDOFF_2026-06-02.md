@@ -1342,3 +1342,18 @@ Repository checkpoint after Calc leaf-root and IO ignored-error sorted-pass inte
 - Active workers at this checkpoint:
   - `019e8ddb-3b17-7413-ad7a-418bbb5fcf09`: App.Host performance tail, still running.
   - `019e8ddb-4e8e-77a3-aba3-f60708742629`: Core.Formula performance tail, still running.
+
+Repository checkpoint after Formula TEXTJOIN direct-range integration:
+
+- `codex/perf-core-calc-leaf-root-integration-20260603-r1` added the rebased Core.Formula slice.
+  - Worker: `019e8ddb-4e8e-77a3-aba3-f60708742629`.
+  - Change: `FormulaEvaluator` now evaluates supported `TEXTJOIN` calls over direct ranges without materializing `RangeValue` arrays or intermediate text lists. The fast path is intentionally narrow: scalar delimiter and `ignore_empty` controls, direct ranges/scalars for text arguments, and fallback for delimiter ranges/arrays or other unsupported dynamic argument shapes.
+  - Metrics: `TEXTJOIN("",TRUE,A1:A20000)` improved from the worker same-load old-path sample `14.84 ms` / `1,458,912` bytes to the integrated focused sample `8.61 ms` / `80,144` bytes. Worker focused and full-performance samples after the change were `13.92 ms` / `80,144` bytes and `21.98 ms` / `80,144` bytes.
+  - Verification after integration: focused `Textjoin` filter passed `7/7`; full Formula performance filter passed `73/73`; full Release `FreeX.Core.Formula.Tests` passed `2743/2743`; focused TEXTJOIN measurement rerun passed `1/1`.
+- Final affected-suite verification after the Formula replay:
+  - Full Release `FreeX.Core.Calc.Tests` passed `681/681`; current `LEAF_FORMULA_ROOT_RECALC` sample was `101.68 ms` / `4,880,040` bytes over `10,000` iterations.
+  - Full Release `FreeX.Core.IO.Tests` passed `1803/1803`.
+- Completed worker agents from this wave have been closed for Core.Formula, Core.Calc, and Core.IO.
+- Remaining active worker:
+  - `019e8ddb-3b17-7413-ad7a-418bbb5fcf09`: App.Host performance tail, still running and needs rebase/review once it reports a final commit.
+- Hourly thread heartbeat automation `hourly-performance-orchestrator-status` was removed/not found in the app automation registry; do not recreate it unless the user explicitly asks.
