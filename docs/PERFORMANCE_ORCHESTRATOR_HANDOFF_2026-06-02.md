@@ -1445,3 +1445,16 @@ Repository checkpoint after Calc shared-leaf and Formula parsed-reference integr
   - `019e8eb8-bc86-7392-a9a9-22dd949dc971`: App.UI current performance tail, still running or not yet reported final status.
 - Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
 - Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
+
+Repository checkpoint after App.Host open-progress formatter integration:
+
+- `origin/main` was advanced to `4d9b800bf` with `codex/perf-host-open-progress-integration-20260603-r1`.
+- The integration added rebased App.Host commit `4d9b800bf`.
+  - Worker: `019e8e91-2c71-7991-8d4e-191f5a9c185a`.
+  - Change: `OpenWorkbookProgressPlanner.FormatLoadingFileDetail` now maps phases directly to localized resource keys instead of lowercasing the phase and allocating a message array on each timer tick.
+  - Metrics: `OPEN_PROGRESS_DETAIL_FORMAT` improved from the worker baseline `276.74 ms` / `11,200,040` bytes over `200,000` calls to the integration focused sample `103.04 ms` / `600` bytes.
+  - Verification: focused `OpenProgressTests` passed `5/5`; focused Host performance/source-hygiene set passed `175/175`; full Release `FreeX.App.Host.Tests` passed `5832/5833` with the expected `SharedAppInstance_CoversLiveUiScenarios` skip.
+- Active/pending worker after this push:
+  - `019e8eb8-bc86-7392-a9a9-22dd949dc971`: App.UI current performance tail, completed commit `41138aaa1` and needs clean orchestrator integration from current `origin/main`.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
