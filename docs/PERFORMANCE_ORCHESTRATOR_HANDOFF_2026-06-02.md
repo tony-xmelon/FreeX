@@ -1446,6 +1446,24 @@ Repository checkpoint after Calc shared-leaf and Formula parsed-reference integr
 - Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
 - Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
 
+Repository checkpoint after App.UI chart build collection pre-sizing:
+
+- `origin/main` was advanced to `866c1a5f6` with `codex/perf-ui-chart-presize-integration-20260603-r1`.
+- The integration added rebased App.UI commit `866c1a5f6`.
+  - Worker: `019e8ed1-eb2b-7d62-b045-43746d86e449`.
+  - Change: `ChartRenderer` pre-sizes the chart cell lookup dictionary, category label list, and pie data-label point list from known viewport/data sizes.
+  - Metrics: dense chart-format build allocation improved from the worker baseline `24,783,728` bytes over `64` builds to the integration focused samples `16,566,096` bytes; integration timing samples were noisy (`178.96-307.44 ms` total), so allocation is the stable signal.
+  - Verification: focused chart/render guards passed `195/195`; UI performance subset passed `29/29`; full Release `FreeX.App.UI.Tests` passed `581/581`; `git diff --check origin/main..HEAD` passed before push.
+- Completed App.UI worker `019e8ed1-eb2b-7d62-b045-43746d86e449` can be closed after this docs push.
+- Pending completed worker after this push:
+  - `019e8ed2-20ea-7272-bdf1-6b640a53a3dd`: Core.IO SpreadsheetML numeric write allocation slice, commit `868900a1a`, needs clean orchestrator integration from current `origin/main`.
+- Still-running workers:
+  - `019e8ed1-b4cd-7180-abd1-73756789dba5`: App.Host current performance tail.
+  - `019e8ed2-5c8a-7c22-ad1d-ab86a7340ed4`: Core.Formula/Core.Calc current performance tail.
+- Local Core.Model/Core.Commands census found no patch worth carrying: the benchmark filter passed `41/41`; an attempted pivot column key in-place sort/filter rewrite reduced allocation only about `34 KB` and regressed a controlled timing sample (`228.88 ms` baseline vs `288.31 ms` patched), so it was reverted and left uncommitted.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
+
 Repository checkpoint after App.UI comment-indicator geometry cache integration:
 
 - `origin/main` was advanced to `484c0f0ad` with `codex/perf-ui-comment-indicators-integration-20260603-r1`.
