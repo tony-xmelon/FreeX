@@ -1,8 +1,40 @@
 # Code Review Findings
 
-Last updated: 2026-05-27
+Last updated: 2026-06-03
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
+
+## 2026-06-03 Comprehensive Review
+
+Full report: [CODE_REVIEW_COMPREHENSIVE_2026-06-03.md](CODE_REVIEW_COMPREHENSIVE_2026-06-03.md).
+
+Verification passed on `codex/code-review-docs-20260603`: solution restore/build/test, repository preflight, solution/tool vulnerability scans, and direct builds of `tools\FreeX.ExcelOpenSmoke` and `tools\FreeX.ChartInteropCompare`.
+
+Open issues by priority:
+
+| Priority | Area | Finding | Recommended Slice |
+|---|---|---|---|
+| P1 | Core.IO safety | `XlsxFileAdapter.Load(Stream)` copies arbitrary stream input into memory before workbook-size/archive guards run. | Add seekable length checks and capped non-seekable copies before allocating package snapshots. |
+| P1 | Core.IO safety | Several XLSX package XML readers use raw `XDocument.Load(stream)` instead of the existing secure XML reader settings. | Centralize package XML DOM loads through `SecureXmlReaderSettings.Create()` and add oversized XML-part fixtures. |
+| P2 | Formula correctness | Out-of-grid A1-shaped named ranges such as `XFE1` or `A1048577` can be tokenized as cell references and become unreachable. | Validate row/column bounds in the lexer before emitting cell-reference tokens. |
+| P2 | Formula perf/parity | Literal `INDIRECT` full-row/full-column aggregate references miss the used-range clamp applied to direct ranges. | Apply the direct full-range clamp to literal `INDIRECT` aggregate ranges before range-size checks. |
+| P2 | Accessibility | `SheetGrid` reports as a DataGrid but exposes no cell peers, grid pattern, value pattern, or selection pattern. | Implement virtualized UIA grid/cell providers and add UIA pattern tests. |
+| P2 | Export UX | PDF/XPS export can overwrite a normalized extension path without a second overwrite prompt. | Normalize before save-dialog acceptance or prompt when the final request path differs and exists. |
+| P2 | Import UX | Get Data imports parse synchronously on the WPF click handler. | Move adapter load to an async import path with dispatcher-only UI updates. |
+| P2 | Release metadata | App/version surfaces can report hard-coded `Version 0.5` while tester release produces `0.8.<run>`. | Pass release version into build metadata or generated source and have `AppInfo` read it. |
+| P2 | Build/release gates | Excel-open smoke and chart-interop tool projects are outside solution/preflight restore-build coverage. | Add tool projects to the solution or explicit CI/preflight restore-build gates. |
+| P2 | Release packaging | Latest tester release can publish unsigned MSIX assets and hard-codes `Publisher="CN=FreeXLocal"`. | Require signing for latest MSIX or keep unsigned packages internal; parameterize/validate Publisher from the cert. |
+| P2 | Release ordering | Tester release workflow lacks concurrency and can move `latest` backward if manual runs finish out of order. | Add workflow concurrency or newest-run/version checks before `--latest`. |
+| P3 | XLSX package validity | Content type merge can preserve overrides for skipped or invalid package parts. | Validate override `PartName` with OPC/path rules and require a matching target entry/generated part. |
+| P3 | Formula perf | Non-aggregate functions expand arguments before max-arity validation. | Check ordinary scalar function arity before range materialization. |
+| P3 | Import UI/test quality | Get Data does not refresh the status bar and the source test scans too broadly. | Add the refresh call and narrow the test to `GetDataBtn_Click`. |
+| P3 | Localization | Delete Sheet and Fill Series message-service prompts still pass raw English strings, and the guard misses `_messageService`. | Move strings into `UiText` and extend localization usage tests to message-service calls. |
+
+Documentation resolved during this review:
+
+| Area | Finding | Resolution |
+|---|---|---|
+| Contributor verification docs | Root `README.md` documented only Debug restore/build/test and did not mention repository preflight or Release verification. | Updated the README development block to use the canonical preflight plus Release build/test sequence from tester-release readiness docs. |
 
 ## Fixed During Review
 
