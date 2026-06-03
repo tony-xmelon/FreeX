@@ -98,6 +98,13 @@ When no status filter is supplied, the tool selects `supported-pass`, `supported
 `supported-pivot-metadata-pass`, and `public-pass` rows. Missing generated or local-private files are
 reported as skipped, not silently ignored.
 
+The local-private Partner Dashboard row `local-private-partner-dashboard-20250116` carries
+additional retention gates when the file is present. The FreeX-resaved path must retain at least
+`16000` formulas, `1` table, `3` PivotTables, `1` pivot cache, `5` validations, `47` hyperlinks,
+`117` comments, `1` picture, and `120` Excel-visible worksheet shapes. Conditional-format retention
+is gated at `100` rules before Excel opens the FreeX-saved copy and `66` rules after Excel
+save/reopen, reflecting Excel's normalization of duplicate status-text rules in that workbook.
+
 ## Operational details
 
 - Run output, generated fixtures, staged workbooks, FreeX-saved copies, and Excel-saved copies live
@@ -168,8 +175,10 @@ As of 2026-06-03 on the local desktop Excel COM environment:
   `errors=0` for every file.
 - The local-private Partner Dashboard regression row
   `local-private-partner-dashboard-20250116` passed
-  `--save-reopen --freex-resave-before-excel`: `1/1`. The FreeX-saved workbook also passed Open XML
-  SDK schema validation with `errors=0`.
+  `--save-reopen --freex-resave-before-excel`: `1/1`, with the manifest retention gates above.
+  The original workbook was rejected by direct Excel COM open with `0x800A03EC`, while the
+  FreeX-saved copy opened, saved, reopened, reloaded in FreeX, and passed Open XML SDK schema
+  validation with `errors=0`.
 
 The 2026-06-03 corpus pass specifically covers prior Excel/OpenXML failures from invalid
 `styles.xml` ordering (`dxfs`/`tableStyles`/`colors`), invalid `workbook.xml` ordering
