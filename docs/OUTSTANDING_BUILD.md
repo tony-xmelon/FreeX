@@ -48,7 +48,7 @@ Confirmed present in code and tests:
    - `USER_GUIDE.md` - written; covers all supported features, navigation, formulas, charts, PivotTables, data tools, printing, keyboard shortcuts.
    - `TROUBLESHOOTING.md` - written; covers common issues, unsupported-feature warnings, formula errors, chart/PivotTable issues, known limitations.
    - Keep the docs index, current project status report, and tester release notes aligned with `main`.
-   - The hosted tester release channel is complete: GitHub Actions publishes versioned and stable-latest Windows x64 `.exe` artifacts plus an MSIX package signed from required release certificate secrets. Unsigned MSIX output is limited to local packaging validation with `-AllowUnsignedMsix`; remaining release packaging work is installer trust validation, Store-style submission, and the deferred in-app update lane.
+   - The hosted tester release channel is complete: GitHub Actions publishes versioned and stable-latest Windows x64 `.exe` artifacts plus an MSIX package. The MSIX is signed when release certificate secrets are configured; until then, the workflow publishes unsigned MSIX assets for tester continuity. Remaining release packaging work is installer trust validation, Store-style submission, and the deferred in-app update lane.
    - `release/progress.json` now drives default tester-release version bands; `overallCompletion: 95` maps to the `v0.8.<run>` tester stream.
    - The accessibility validation gate from `TEST_DISTRIBUTION_PLAN.md` has been audited (PR #45): `SheetGrid` and sheet-tab automation peers fixed, 10 new UIA XAML-parse tests added. Remaining: live keyboard-only and screen-reader validation with a human tester.
 
