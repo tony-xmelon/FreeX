@@ -35,6 +35,11 @@ App.Host (composition root, DI, startup)
 - **App.UI**: `GridView` — virtualized DrawingContext rendering (per-frame brush/pen/typeface caches reused via class-level fields), selection, row/column headers; `IUserMessageService` interface for injectable message dialogs
 - **App.Host**: `MainWindow` — formula bar, scrollbars, open/save dialogs, keyboard navigation, Find & Replace; `WpfUserMessageService` (MessageBox-backed `IUserMessageService`); localization foundation (`UiText`, `LocExtension`, neutral `Strings.resx`, 43 satellite resource cultures, `AppLanguageCatalog`, and `AppLocalization`); `HyperlinkNavigationPlanner` with URI scheme whitelist (`http`, `https`, `mailto`, `ftp`)
 
+New workbook creation is centralized in `NewWorkbookFactory`. Startup and File > New pass the full `FreeXOptions` object
+so normalized default sheet count, font name, and font size seed the initial `Sheet1..N` workbook and `StyleId.Default`
+style for newly created workbooks. Existing loaded workbooks keep their imported style registry; Options changes apply to
+subsequent new workbooks.
+
 Native `.fxl` files are versioned JSON documents. Current files declare `FileFormat = FreeX.NativeJsonWorkbook`,
 `SchemaVersion = 1`, and `MinimumReaderVersion = 1`; unversioned legacy files remain readable and are migrated to the
 current header on save, while future schema versions are rejected until an explicit migration is implemented.
