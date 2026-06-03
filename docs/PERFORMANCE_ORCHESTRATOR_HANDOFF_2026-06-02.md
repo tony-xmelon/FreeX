@@ -372,6 +372,36 @@ All items below were verified, pushed to their `codex/` branches, and fast-forwa
   - Focused formula trace benchmark/source-guard set passed `2/2`.
   - Full `FreeX.App.UI.Tests` passed `567/567`.
 
+### App.UI Formula Trace Layout Lookup Tail
+
+- Branch: `codex/perf-app-ui-formula-layout-tail-20260603-r1`.
+- Commit: `7613818b3`.
+- Change: formula-trace layout now uses a per-visit allocation-free metric lookup with cached row/column bounds and array/list fast paths instead of building row/column dictionaries for each visit.
+- Metrics:
+  - Same-machine baseline from the prior App.UI trace branch: `FORMULA_TRACE_LAYOUT_VISITOR` visitor `1,186,600` bytes, `87.07 ms` mean sample.
+  - Final focused post-rebase sample: visitor `5,160` bytes, `108.38 ms` mean.
+  - Final full-suite sample: visitor `5,160` bytes; timing remains noisy (`207.58 ms` in the full run).
+- Verification:
+  - Focused formula-trace layout benchmark/source-guard set passed `3/3`.
+  - Full `FreeX.App.UI.Tests` passed `567/567`.
+
+### XLSX Loaded Dense Mutated Save Normalization Tail
+
+- Branch: `codex/perf-xlsx-dense-mutated-regression-20260603-r1`.
+- Commit: `50bac941e`.
+- Worker: `019e8b08-c2a0-7992-bd1f-a9fe95c32e3f`, then orchestrator rebased, reviewed, reverified, and integrated.
+- Change: source-package Excel compatibility normalization now builds a small plan so worksheet-level compatibility scans run only when relevant, while workbook-level repairs still run unconditionally.
+- Metrics:
+  - Worker baseline on current `origin/main`: `XLSX_SAVE_LOADED_DENSE_MUTATED` `244,860,704` bytes, `694.16 ms` mean, `793.94 ms` p95.
+  - Worker final sample: `157,533,264` bytes, `514.92 ms` mean, `642.55 ms` p95.
+  - Orchestrator post-rebase focused sample: `150,107,432` bytes, `227.39 ms` mean, `258.63 ms` p95.
+- Verification:
+  - Worker baseline and branch benchmark each passed `1/1`.
+  - Worker focused Core.IO normalizer/performance set passed `39/39`.
+  - Worker full `FreeX.Core.IO.Tests` passed `1777/1777`.
+  - Orchestrator post-rebase focused Core.IO normalizer/performance set passed `39/39`.
+  - Excel desktop openability smoke was not run; coverage is package-level correctness plus the Core.IO suite.
+
 ## Other Main Integrations During This Wave
 
 Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, QAT validation, Flash Fill parity coverage clarification, and parity handoff updates.
@@ -381,7 +411,7 @@ Other sessions also advanced `main` with verified non-performance/refactor/parit
 The obvious high-impact backlog is reduced but not exhausted.
 
 1. XLSX IO:
-   - `XLSX_SAVE_LOADED_DENSE_MUTATED` was previously improved to around `156.3 MB`, but the latest full IO sample on current main reported about `243.5 MB`; re-baseline this before targeting it again.
+   - `XLSX_SAVE_LOADED_DENSE_MUTATED` was re-stabilized from about `244.9 MB` to `150.1-157.5 MB` by skipping irrelevant worksheet compatibility scans; further wins likely require deeper package normalization redesign.
    - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` is improved again but still allocates around `144.2 MB`.
    - `XLSX_SAVE_STYLE_ONLY` improved to about `143.1 MB` but remains a high-allocation save path because ClosedXML/style seeding and package XML rewriting still dominate.
    - `XLSX_SAVE_IGNORED_ERRORS` improved to about `81.46 MB`; `XLSX_SAVE_DATA_VALIDATION_NATIVE_METADATA` remains around `80.4 MB`.
@@ -403,7 +433,8 @@ The obvious high-impact backlog is reduced but not exhausted.
 5. App.UI render:
    - Text-heavy and wrapped render allocations are now down to tens of KB in recent samples.
    - Selection-only repaint improved from about `1.04 MB` to about `0.40-0.43 MB`; render timings remain noisy.
-   - Formula-trace visible arrow drawing improved from about `36.9 MB` to `5.3 MB`; remaining formula-trace layout visitor allocation is about `1.19 MB`.
+   - Formula-trace visible arrow drawing improved from about `36.9 MB` to `5.3 MB`.
+   - Formula-trace layout visitor improved from about `1.19 MB` to about `5 KB`; timing remains noisy and should be watched if more render work touches that planner.
 
 ## Subagent Status
 
@@ -442,12 +473,13 @@ Restarted 2026-06-03 workers after Codex restart:
 - `019e8aee-d2ca-73d2-910a-69e2d3451dd1`: App.Host drag-status/ribbon compact tail, still running.
 - `019e8aee-e6ff-79f1-bfec-cf36cb75b866`: Core.Commands dense-shift tail, completed; rebased commit `5de331aac` integrated to `origin/main`.
 - `019e8b08-ae70-7c80-b40e-fa0432e027e1`: App.Host drag-status/ribbon compact tail, restarted after the user-requested Codex restart; running.
-- `019e8b08-c2a0-7992-bd1f-a9fe95c32e3f`: XLSX dense mutated save regression, restarted after the user-requested Codex restart; running.
+- `019e8b08-c2a0-7992-bd1f-a9fe95c32e3f`: XLSX dense mutated save regression, completed; rebased commit `50bac941e` integrated to `origin/main`.
 
 Local orchestrator slices after restart:
 
 - `codex/perf-xlsx-metadata-save-tail-20260603-r1`: XLSX ignored-errors worksheet save tail, completed; commit `ca85fa850` integrated to `origin/main`.
 - `codex/perf-app-ui-trace-render-tail-20260603-r1`: App.UI formula-trace visible arrow drawing cache, completed; rebased commit `b2c4e3bdf` integrated to `origin/main`.
+- `codex/perf-app-ui-formula-layout-tail-20260603-r1`: App.UI formula-trace layout lookup allocation tail, completed; rebased commit `7613818b3` integrated to `origin/main`.
 
 ## Resume Checklist
 
@@ -455,10 +487,9 @@ Local orchestrator slices after restart:
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `origin/main` is at or after `b2c4e3bdf`. The primary local `main` may still contain unrelated local refactor commits; do not push or overwrite them as part of the performance thread unless their owning session has verified them.
+2. Confirm `origin/main` is at or after `50bac941e`. The primary local `main` may still contain unrelated local refactor commits; do not push or overwrite them as part of the performance thread unless their owning session has verified them.
 3. Start the next wave with disjoint scopes:
    - Check the active App.Host drag-status/ribbon compact worker and integrate if complete.
-   - Check the active XLSX dense mutated save regression worker and integrate if complete.
    - XLSX IO ignored-errors/data-validation metadata save tails if a semantics-safe streaming path is found.
    - Core.Commands dense row/column tails now need deeper model-level redesign; prefer other high-impact areas unless a narrow safe path is proven.
    - App.UI render benchmark stabilization and remaining chart/formula-trace layout tails.
@@ -496,3 +527,9 @@ Repository checkpoint after App.UI integration:
 
 - `origin/main` was advanced to `b2c4e3bdf` with the App.UI performance slice.
 - Primary local `main` was left untouched because it contains unrelated local refactor commits (`6fcef8192` side) and is not a reliable integration target for this performance slice until that owner syncs it.
+
+Repository checkpoint after App.UI layout and XLSX integrations:
+
+- `origin/main` was advanced to `7613818b3` with the App.UI layout allocation slice.
+- `origin/main` was then advanced to `50bac941e` with the XLSX dense mutated save normalization slice.
+- The primary local `main` was still left untouched for the same unrelated-local-refactor reason.
