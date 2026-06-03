@@ -2,12 +2,12 @@
 
 ## 0. Method And Coverage
 
-Fresh full-codebase review on isolated branch `codex/code-review-docs-20260603`, created after `git fetch origin` and `git pull --ff-only origin main` reported `Already up to date.` Initial review baseline HEAD: `241684d65bac7c55ca19ccaec4f6f11635992763`. Before final handoff, the branch was repeatedly synced with newer local `main` integrations as they landed, and the findings below were spot-verified on synced branch HEAD `8ec7a95350afd31991bfc6a9f0d1a33a6a211b1e`.
+Fresh full-codebase review on isolated branch `codex/code-review-docs-20260603`, created after `git fetch origin` and `git pull --ff-only origin main` reported `Already up to date.` Initial review baseline HEAD: `241684d65bac7c55ca19ccaec4f6f11635992763`. Before final handoff, the branch was repeatedly synced with newer local `main` integrations as they landed, and the findings below were spot-verified on integrated `main` HEAD `17537c358e73b6177fb72256de4912e58348c4a3`.
 
 Scope covered:
 
-- `src/`: 1,129 C# files, 199,484 source lines.
-- `tests/`: 830 C# files, 207,406 source lines.
+- `src/`: 1,129 C# files, 200,249 source lines.
+- `tests/`: 854 C# files, 207,849 source lines.
 - Tooling, workflows, release scripts, docs index, and XLSX interop tools.
 
 Review method:
@@ -158,7 +158,7 @@ Recommended fix: move these strings/titles into `UiText` resources and extend th
 ## 4. Clean Signals Worth Recording
 
 - Full solution build passed with 0 warnings and 0 errors.
-- Full solution tests passed: 13,527 passed, 1 skipped, 0 failed.
+- Full solution tests passed: 13,527 passed, 1 skipped, 0 failed before final integration; integrated-state preflight and documentation-index tests passed after the last `main` merge.
 - Repository preflight passed, including JSON/XML validation, tool scripts, workflows, SDK readiness, project references, solution membership, generated docs, and conflict-marker scanning.
 - `dotnet list ... package --vulnerable --include-transitive` found no vulnerable NuGet packages for the solution or the two interop tool projects.
 - Direct restore/build of `tools\FreeX.ExcelOpenSmoke` and `tools\FreeX.ChartInteropCompare` passed.
