@@ -80,6 +80,7 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `275e51aa0` - Checked visible structured-table header cells directly in Accessibility Checker so retained table-column metadata no longer masks blank imported headers.
 - `f8369bb19` - Honored manual worksheet row and column page breaks in the shared print renderer pagination path, so print preview, PDF, XPS, and workbook export split pages at modeled/imported break IDs.
 - `f7948367e` - Interpreted imported workbook theme `a:glow` effect defaults and rendered the bounded approximation for non-chart text boxes and drawing shapes without extending picture or full `effectRef` semantics.
+- `94c7def23` - Applied modeled scale-percent and fit-to-pages-wide/tall settings to shared print renderer pagination capacity so print preview, PDF, XPS, and workbook export page counts reflect Scale to Fit settings.
 
 Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, Selection Pane mixed reorder coverage, and manual worksheet page-break metadata/storage/preview coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full workbook theme effect fidelity beyond the bounded shadow/glow approximations, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
@@ -180,6 +181,11 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the workbook theme glow slice.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the workbook theme glow slice.
 - `git diff --check` - clean after the workbook theme glow slice.
+- `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~PrintRendererPageSetupTests" -v:minimal` - passed after the print renderer scale-to-fit pagination slice.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the print renderer scale-to-fit pagination slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the print renderer scale-to-fit pagination slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the print renderer scale-to-fit pagination slice.
+- `git diff --check` - clean after the print renderer scale-to-fit pagination slice.
 - `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~QuickAccessToolbarCustomizationPlannerTests|FullyQualifiedName~QuickAccessCommandStateResolverTests|FullyQualifiedName~ReviewCommandSourceTests|FullyQualifiedName~DrawCommandSourceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed after the default shape-name slice.
@@ -247,6 +253,7 @@ Completed and merged lanes from this wave:
 - Resume / Accessibility Checker visible table header cells: completed, pushed to `origin/main`.
 - Resume / Manual page breaks in print pagination: completed, pushed to `origin/main`.
 - Resume / Workbook theme glow effect approximation for text boxes and shapes: completed, pushed to `origin/main`.
+- Resume / Print renderer scale-to-fit pagination: completed, pushed to `origin/main`.
 
 Read-only resume auditors:
 
