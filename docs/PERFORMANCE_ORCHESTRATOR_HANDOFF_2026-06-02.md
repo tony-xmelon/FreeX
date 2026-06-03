@@ -9,8 +9,8 @@ This goal is not complete. This file records the current clean checkpoint.
 ## Operating Rules
 
 - Repository: `E:\Users\anton\Documents\Claude\Freexcel`.
-- Latest upstream checkpoint before this handoff update: `55710539a`.
-- `codex/performance-orchestrator-resume-20260602` was rebased onto `origin/main` at `55710539a` before this handoff update.
+- Latest upstream checkpoint before this handoff update: `5538bfcf6`.
+- `codex/performance-orchestrator-resume-20260602` was fast-forwarded onto `origin/main` at `5538bfcf6` before this handoff update.
 - Follow `AGENTS.md`: use isolated worktrees/branches for implementation, do not edit `main` directly, sync before work, verify before merge, push verified integrations frequently.
 - User explicitly requested no permission prompts and no escalation requests.
 - Treat unrelated dirty or untracked files as owned by other sessions unless explicitly proven otherwise.
@@ -137,7 +137,7 @@ All items below were merged into `main` and pushed to `origin/main`.
 - Verification:
   - Focused Host selection/formatter/performance set passed `35/35` before commit.
   - Post-sync focused no-build Host smoke passed `34/34`.
-  - Full `FreeX.App.Host.Tests` still has a pre-existing unrelated failure: `MainWindowSourceHygieneTests.DrawingCommands_UseOwnedNoTargetMessages` expects `MainWindowMessage_NoDrawingShapesOnSheet`, while `MainWindow.Drawing.cs` contains `MainWindowMessage_NoDrawingShapeOnSheet`. The same single test was confirmed failing on primary `main`.
+  - At this checkpoint, full `FreeX.App.Host.Tests` had a pre-existing unrelated source-hygiene failure. The later post-restart Host tail fixed the expected message key and the full Host suite passed.
 
 ## Integrated Since Restart
 
@@ -232,6 +232,61 @@ All items below were verified, pushed to their `codex/` branches, and fast-forwa
 - Result: no code change; `GOTO_SPECIAL_DATA_VALIDATION_RANGE_LOOKUP` is already low at `64,880` bytes over five runs, matching the conditional-format path. Remaining allocation is primarily required result materialization.
 - Verification: focused Go To Special data-validation and conditional-format benchmarks passed `2/2`.
 
+### Advanced Filter Copy Undo State
+
+- Branch: `codex/perf-advanced-filter-tail-20260603-r1`.
+- Commit: `08ab0f9d7`.
+- Change: copy-to Advanced Filter no longer snapshots/restores `FilterHiddenRows`; only in-place filtering owns that undo state.
+- Metric: `ADVANCED_FILTER_COPY_UNIQUE_DENSE` allocation improved slightly from `8,272,344` bytes to `8,272,024` bytes over five runs; the main value is narrower undo state and less unrelated mutation.
+- Verification:
+  - `AdvancedFilterCommandTests` passed `16/16`.
+  - Focused post-rebase smoke passed `2/2`.
+  - Full `FreeX.Core.Model.Tests` passed `1869/1869`.
+
+### XLSX Source Metadata Preflight Cache
+
+- Branch: `codex/perf-xlsx-io-tail-20260603-r3`.
+- Commit: `1697d0396`.
+- Change: cached source-package snapshot/preflight metadata for worksheet/style paths so dense loaded saves can avoid repeated XML/package inspection work while preserving native metadata fidelity.
+- Metrics:
+  - `XLSX_SAVE_LOADED_DENSE_MUTATED` improved from about `158,411,848` bytes to `156,311,824` bytes on the rebased run.
+  - `XLSX_SAVE_LOADED_DENSE_POSTPROCESSING` improved from about `41,987,528` bytes to `40,723,392` bytes.
+  - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` stayed effectively flat around `144.17 MB`.
+  - `XLSX_SAVE_LOADED_DENSE` fast-copy stayed unchanged at `556,600` bytes.
+- Verification:
+  - Focused source/preflight guard tests passed `3/3`.
+  - Focused performance benchmarks passed `4/4`.
+  - Full `FreeX.Core.IO.Tests` passed `1752/1752`.
+
+### Core.Commands Dense Row/Column Move Tail
+
+- Branch: `codex/perf-row-column-shift-tail-20260603-r2`.
+- Commit: `d3d636257`.
+- Change: row/column insert/delete commands now move dense shifted cells through a pooled original-cell buffer instead of retaining an original cell reference in every undo snapshot tuple.
+- Metrics:
+  - `INSERT_COLUMNS_DENSE_SHIFT` improved from `16,189,792` bytes to `15,229,792` bytes.
+  - `DELETE_ROWS_DENSE_SHIFT` improved from `16,335,376` bytes to `15,375,376` bytes.
+  - `DELETE_COLUMNS_DENSE_SHIFT` improved from `16,288,072` bytes to `15,328,072` bytes.
+  - `INSERT_ROWS_DENSE_SHIFT` improved from `16,310,680` bytes to `15,350,680` bytes.
+- Verification:
+  - Focused `InsertDeleteRowsTests|InsertDeleteColumnsTests` passed `57/57`.
+  - Full `FreeX.Core.Model.Tests` passed `1869/1869`.
+
+### App.Host Toolbar/Status Hot Path Tail
+
+- Branch: `codex/perf-host-toolbar-status-tail-20260603-r3`.
+- Commit: `5538bfcf6`.
+- Worker: `019e8a99-d0bd-71a3-97d4-c7db4b824245`, then final sync/verification/integration by the orchestrator after restart.
+- Change: reused the selection-toolbar skip check for non-drag selection changes, added single-cell status-bar stats, fixed toolbar-state cache recency trimming after refresh, and added cheap malformed-path guards in Host planners. This slice also fixed the previously noted Host source hygiene failure by using the expected `MainWindowMessage_NoDrawingShapesOnSheet` key.
+- Metrics from the synced focused run:
+  - `NON_DRAG_SELECTION_TOOLBAR`: `12,995,976` bytes with `can_undo_probes=0`, `can_redo_probes=0`, `toolbar_writes=0`.
+  - `RIBBON_FORCE_COMPACT`: `14,093,072` bytes.
+  - `SELECTION_DRAG_STATUS`: `22,002,904` bytes.
+  - `ADDITIONAL_SELECTION_DRAG_TOOLBAR`: `23,136,200` bytes.
+- Verification:
+  - `PerformanceReviewMeasurementTests` passed `17/17`.
+  - Full `FreeX.App.Host.Tests` passed `5771/5772`, with `1` skipped.
+
 ## Other Main Integrations During This Wave
 
 Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, QAT validation, Flash Fill parity coverage clarification, and parity handoff updates.
@@ -241,17 +296,17 @@ Other sessions also advanced `main` with verified non-performance/refactor/parit
 The obvious high-impact backlog is reduced but not exhausted.
 
 1. XLSX IO:
-   - `XLSX_SAVE_LOADED_DENSE_MUTATED` is improved but still allocates around `158.4 MB`.
+   - `XLSX_SAVE_LOADED_DENSE_MUTATED` is improved but still allocates around `156.3 MB`.
    - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` is improved again but still allocates around `144.2 MB`.
    - Unchanged loaded workbook fast-copy remains healthy: `XLSX_SAVE_LOADED_DENSE` around `554,248` bytes in the full IO run.
-   - Worker `019e8a99-ff5d-7961-b27f-6a180f6427fb` is currently investigating the next IO tail.
+   - Latest IO worker has completed and integrated; further IO cuts likely require a deeper metadata load/save redesign.
 2. App.Host toolbar/ribbon:
    - `NON_DRAG_SELECTION_TOOLBAR` remains around `13.0 MB`; current guardrails show zero QAT probes and zero toolbar writes.
-   - `RIBBON_FORCE_COMPACT` remains around `14.6-14.7 MB`.
+   - `RIBBON_FORCE_COMPACT` improved to about `14.1 MB` but remains a visible tail.
    - `SELECTION_DRAG_STATUS` and `ADDITIONAL_SELECTION_DRAG_TOOLBAR` remain around `22-23 MB` in recent samples after modest improvements.
-   - Worker `019e8a99-d0bd-71a3-97d4-c7db4b824245` is currently investigating the next Host tail.
 3. Core.Commands:
-   - Dense insert undo allocation is improved; dense filter/table operations now report low allocations but still have time-cost tails worth rechecking if command work continues.
+   - Dense insert undo and dense row/column shift allocations are improved; dense row/column shift still allocates about `15.2-15.4 MB`, so further improvement probably needs a deeper snapshot/restore redesign.
+   - Dense filter/table operations now report low allocations but still have time-cost tails worth rechecking if command work continues.
    - Advanced Filter copy-unique dense rows is improved to about `8.27 MB`; remaining cost is lower priority than the open Host/UI/Formula/XLSX tails.
    - Data-validation range list items are now low allocation; Go To Special data-validation lookup was checked and left unchanged because it is already low.
 4. Formula/Core.Calc:
@@ -279,8 +334,8 @@ Current 2026-06-03 workers launched with full-access/no-permission instructions:
 
 Post-restart 2026-06-03 workers launched with full-access/no-permission instructions:
 
-- `019e8a99-d0bd-71a3-97d4-c7db4b824245`: App.Host toolbar/status tail, still running at this checkpoint.
-- `019e8a99-ff5d-7961-b27f-6a180f6427fb`: XLSX IO dense-save/load metadata tail, still running at this checkpoint.
+- `019e8a99-d0bd-71a3-97d4-c7db4b824245`: App.Host toolbar/status tail, completed; orchestrator committed and integrated `5538bfcf6`.
+- `019e8a99-ff5d-7961-b27f-6a180f6427fb`: XLSX IO dense-save/load metadata tail, completed; rebased commit `1697d0396` integrated to `origin/main`.
 - `019e8a9a-2f48-75a0-a430-0ba877c90268`: App.UI render tail, completed; rebased commit `55710539a` integrated to `origin/main`.
 
 ## Resume Checklist
@@ -289,9 +344,9 @@ Post-restart 2026-06-03 workers launched with full-access/no-permission instruct
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `main` and `origin/main` are aligned at or after `073a67c81`.
+2. Confirm `main` and `origin/main` are aligned at or after `5538bfcf6`.
 3. Start the next wave with disjoint scopes:
-   - App.Host non-drag toolbar / drag-status allocation tail.
+   - App.Host drag-status and ribbon compact allocation tail.
    - App.UI render benchmark stabilization and next hot path.
    - Formula/Core.Calc parse/eval tail beyond shared parse cache.
    - XLSX IO deeper dense-save/load metadata follow-up if a semantics-safe path is found.
