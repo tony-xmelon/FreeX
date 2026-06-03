@@ -9,8 +9,8 @@ This goal is not complete. This file records the current clean checkpoint.
 ## Operating Rules
 
 - Repository: `E:\Users\anton\Documents\Claude\Freexcel`.
-- Latest upstream checkpoint before this handoff update: `001cd2cd5`.
-- `codex/performance-orchestrator-resume-20260602` was rebased onto `origin/main` at `001cd2cd5` before this handoff update.
+- Latest upstream checkpoint before this handoff update: `e00bd5d67`.
+- `codex/performance-orchestrator-resume-20260602` was fast-forwarded onto `origin/main` at `e00bd5d67` before this handoff update.
 - Follow `AGENTS.md`: use isolated worktrees/branches for implementation, do not edit `main` directly, sync before work, verify before merge, push verified integrations frequently.
 - User explicitly requested no permission prompts and no escalation requests.
 - Treat unrelated dirty or untracked files as owned by other sessions unless explicitly proven otherwise.
@@ -543,6 +543,60 @@ All items below were verified, pushed to their `codex/` branches, and fast-forwa
   - Broad `FreeX.Core.Model.Tests` excluding only those two noisy guards passed `1886/1886`.
   - `git diff --check` passed.
 
+### App.Host Split-Pane Nullable Flow Hotfix
+
+- Branch: `codex/fix-splitpane-scrollbar-nullability-20260603`.
+- Commit: `de506e356`, integrated through merge commit `6384ac574`.
+- Change: fixed downstream App.Host nullable flow after the split-pane scrollbar DTOs became value records by capturing nullable scrollbars into non-null locals before passing them to wheel-target calculations.
+- Verification evidence:
+  - The Host viewport benchmark compiled and passed after the fix.
+  - Later targeted Host run on current `origin/main` passed localization plus viewport benchmark filter `132/132`.
+
+### App.Host Satellite Localization Resource Drift
+
+- Worker: `019e8bbe-e1e1-7f51-9316-bc063c95d00f`.
+- Branch: `codex/app-host-localization-resources-20260603`.
+- Commit: `461a30e5a` after orchestrator rebase.
+- Change: synchronized all 43 App.Host satellite resource files with the 12 neutral Quick Access Toolbar keys that current `origin/main` was missing.
+- Reason: this unblocked full App.Host verification drift discovered while validating the performance slice.
+- Verification:
+  - Worker focused localization/AppLanguageCatalog tests passed `131/131`.
+  - Orchestrator post-rebase localization/AppLanguageCatalog run passed `131/131`.
+  - Targeted integrated-main Host run including localization and viewport benchmark passed `132/132`.
+  - `git diff --check` passed.
+
+### App.Host Viewport DisplayCell Allocation Tail
+
+- Local orchestrator branch: `codex/perf-viewport-displaycell-tail-20260603-r1`.
+- Commit: `19a4056b5`.
+- Change: made `DisplayCell` a `readonly record struct` and changed split-pane materialized layout storage to hold compact source cell indexes plus geometry arrays, avoiding large repeated `DisplayCell` copies inside `SplitPaneCellLayout` backing arrays.
+- Metrics:
+  - `VIEWPORT_NO_COMMENTS_FAST_PATH` improved from `44,977,320` bytes to `35,761,320` bytes in the focused branch run.
+  - Integrated-main targeted Host run reported `35,766,736` bytes.
+  - The first naive DTO-only attempt regressed `SPLIT_PANE_CELL_LAYOUT_MATERIALIZATION` to about `115.6 MB`; compact layout storage brought it back under guard at `63,379,240` bytes, with visitor allocation unchanged at `4,563,240` bytes.
+- Verification:
+  - `dotnet build FreeX.slnx` passed.
+  - `FreeX.Core.Model.Tests` passed `1893/1893`.
+  - `FreeX.Core.Calc.Tests` passed `673/673`.
+  - Full `FreeX.App.UI.Tests` passed `570/570`.
+  - Focused Host viewport benchmark passed after integration.
+  - `git diff --check` passed.
+
+### Core.Formula Direct XNPV Range Streaming
+
+- Worker: `019e8bbf-0a6b-79b1-9f0f-8754062c2052`.
+- Branch: `codex/perf-tail-explore-20260603`.
+- Commit: `e00bd5d67` after orchestrator rebase.
+- Change: added a direct XNPV financial fast path that streams value/date ranges instead of materializing large date/value lists.
+- Metric: `XNPV large cash-flow range` allocation improved from `320,360` bytes to `48` bytes in the worker benchmark.
+- Verification:
+  - Worker focused XNPV/financial tests passed `3/3`.
+  - Worker full `FreeX.Core.Formula.Tests` passed `2716/2716`.
+  - Orchestrator post-rebase focused XNPV filter passed `4/4`.
+  - Orchestrator full `FreeX.Core.Formula.Tests` passed `2716/2716`.
+  - Integrated-main focused XNPV allocation guard passed.
+  - `git diff --check` passed.
+
 ## Other Main Integrations During This Wave
 
 Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, QAT validation, Flash Fill parity coverage clarification, and parity handoff updates.
@@ -576,6 +630,7 @@ The obvious high-impact backlog is reduced but not exhausted.
    - Repeated identical formula dependency rebuild improved again; latest isolated worker sample was `15.48 MB`, while warm focused runs can be much lower because dependency-plan caches are hot.
    - Core.Calc conditional-format formula rule stacking improved after the handoff: `CF_FORMULA_RULES` dropped from `12,387,000` bytes to `5,643,480` bytes by caching repeated stacked CF style combinations per viewport.
    - Core.Calc dependency rebuild improved again after the handoff: repeated identical formula dependency rebuild dropped from about `15,454,928` bytes / `3,090` bytes per formula to `1,916,992` bytes / `383` bytes per formula by grouping identical compact range dependencies in the range index.
+   - Core.Formula XNPV range evaluation improved after the handoff: the large cash-flow range guard dropped from `320,360` bytes to `48` bytes by streaming direct value/date ranges.
    - Formula built-in focused benchmarks were reprobed after the handoff: `UNIQUE_SINGLE_COLUMN` was about `742,824` bytes and is still mostly required `HashSet` plus returned `RangeValue` storage; `REPT_LARGE_RESULT` was about `65,736` bytes and already bounded by output-string allocation.
    - Formula parser/evaluator tail remains a candidate only if a semantics-safe path can be proven; the latest broad focused Formula test run passed without exposing a narrow patch.
 5. App.UI render:
@@ -586,6 +641,7 @@ The obvious high-impact backlog is reduced but not exhausted.
    - Chart dimension resize repaint improved from about `14.3 MB` to about `46-52 KB` by reusing the light pre-selection render layer cache.
    - Drawing-object render allocation improved from about `5.2 MB` to `46-53 KB`; offscreen drawing-object repaint is now around `26 KB` on the latest sample, and anchor lookup remains allocation-flat at about `3 KB`.
    - Split-pane scrollbar chrome improved after the handoff by changing the layout DTOs to value records: `SPLIT_PANE_SCROLLBAR_CHROME` dropped from `16,000,048` bytes to `4,000,040` bytes for `50,000` steps.
+   - Viewport DisplayCell allocation improved after the handoff: `VIEWPORT_NO_COMMENTS_FAST_PATH` dropped from `44,977,320` bytes to about `35,766,736` bytes after `DisplayCell` became a value DTO and split-pane materialization switched to compact cell-index storage. Watch this public DTO change if future code depends on reference identity or nullable `DisplayCell?` semantics.
 
 ## Subagent Status
 
@@ -642,6 +698,12 @@ Goal-continuation 2026-06-03 workers launched with full-access/no-permission ins
 - `019e8b99-f72a-7d31-81f1-53fadcf81bb4`: App.UI/App.Host benchmark census and narrow patch worker, completed. Rebased commit `b6e08488d` integrated to `origin/main`; split-pane scrollbar chrome allocation improved `16,000,048 -> 4,000,040` bytes.
 - `019e8b9a-0be0-70b1-b9c8-60726a3ba50b`: Core.IO XLSX profiling tail worker, completed with no patch. Style-only save trial was negligible/flat and reverted; worktree left clean with no commit.
 
+Post-restart continuation workers launched with full-access/no-permission instructions:
+
+- `019e8bbe-e1e1-7f51-9316-bc063c95d00f`: App.Host satellite localization resource drift, completed; rebased commit `461a30e5a` integrated to `origin/main`.
+- `019e8bbe-f615-7303-9419-36121e2f20c5`: App.Host non-local test drift worker, still running at this handoff update. Owned scope: `AppFileAdapterRegistrationTests`, the single mojibake comment, and documentation metric drift. Do not overlap its files unless it reports completion or is closed.
+- `019e8bbf-0a6b-79b1-9f0f-8754062c2052`: Core.Formula XNPV direct range streaming, completed; rebased commit `e00bd5d67` integrated to `origin/main`.
+
 Local orchestrator slices after restart:
 
 - `codex/perf-xlsx-metadata-save-tail-20260603-r1`: XLSX ignored-errors worksheet save tail, completed; commit `ca85fa850` integrated to `origin/main`.
@@ -658,6 +720,7 @@ Local orchestrator slices after restart:
 - `codex/perf-formula-builtins-tail-20260603-r1`: Core.Calc conditional-format stacked style cache tail, completed; commit `78a40e1bd` integrated to `origin/main`. Baseline `CF_FORMULA_RULES` was `12,387,000` bytes; final focused samples were `5,643,480` bytes with full `FreeX.Core.Calc.Tests` passing `667/667`.
 - `codex/perf-calc-dependency-tail-20260603-r1`: Core.Calc compact range dependency grouping tail, completed; commit `13ecd1000` integrated to `origin/main`. Baseline `REPEATED_IDENTICAL_FORMULA_REBUILD` was `15,454,928` bytes / `3,090` bytes per formula; final was `1,916,992` bytes / `383` bytes per formula with full `FreeX.Core.Calc.Tests` passing `667/667`.
 - `codex/perf-ui-host-census-20260603-r2`: App.UI split-pane scrollbar chrome tail, completed by worker and rebased by orchestrator; commit `b6e08488d` integrated to `origin/main`. Final focused split-pane tests passed `66/66`, full `FreeX.App.UI.Tests` passed `570/570`, and `git diff --check` passed.
+- `codex/perf-viewport-displaycell-tail-20260603-r1`: App.Host viewport DisplayCell allocation tail, completed; commit `19a4056b5` integrated to `origin/main`. Baseline `VIEWPORT_NO_COMMENTS_FAST_PATH` was `44,977,320` bytes; integrated-main sample was `35,766,736` bytes. Full `FreeX.App.UI.Tests` passed `570/570`, full `FreeX.Core.Model.Tests` passed `1893/1893`, full `FreeX.Core.Calc.Tests` passed `673/673`, and focused Host viewport benchmark passed.
 
 Local orchestrator exploratory slice after drawing tails:
 
@@ -771,3 +834,15 @@ Repository checkpoint after dependency graph and split-pane integrations:
 - `origin/main` was then advanced to `b6e08488d` with the App.UI split-pane scrollbar chrome allocation slice.
 - Core.IO worker `019e8b9a-0be0-70b1-b9c8-60726a3ba50b` completed with no patch; its clean no-patch result should be treated as current evidence for the XLSX style-only/load metadata tail.
 - The primary local `main` remained untouched and locally divergent; continue using linked worktrees from `origin/main` for this performance thread.
+
+Repository checkpoint after DisplayCell, localization, and XNPV integrations:
+
+- `origin/main` was advanced to `19a4056b5` with the App.Host viewport DisplayCell allocation slice.
+- `origin/main` was advanced to `461a30e5a` with the App.Host satellite localization resource drift fix.
+- `origin/main` was advanced to `e00bd5d67` with the Core.Formula direct XNPV range streaming slice.
+- Integrated-main targeted verification passed:
+  - `BuiltInFunctionsPerformanceTests.Xnpv_LargeCashFlowRangeAvoidsDateListAllocationChurn` passed.
+  - `GridViewSplitPaneLayoutTests.Benchmark_SplitPaneCellLayoutMaterialization_ReportsAllocations` passed with `63,379,240` materialized bytes and `4,563,240` visitor bytes.
+  - Host localization/AppLanguageCatalog plus `PerformanceReviewMeasurementTests.Benchmark_ViewportNoCommentsFastPath` passed `132/132`, with viewport allocation `35,766,736` bytes.
+- The App.Host non-local drift worker `019e8bbe-f615-7303-9419-36121e2f20c5` was still running when this handoff update was written.
+- The primary local `main` remained untouched; performance integration continued through linked worktrees and fast-forward pushes to `origin/main`.
