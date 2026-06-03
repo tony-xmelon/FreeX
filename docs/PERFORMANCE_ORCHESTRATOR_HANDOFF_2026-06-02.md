@@ -9,8 +9,8 @@ This goal is not complete. This file records the current clean checkpoint.
 ## Operating Rules
 
 - Repository: `E:\Users\anton\Documents\Claude\Freexcel`.
-- Latest upstream checkpoint before this handoff update: `513eea00c`.
-- `codex/performance-orchestrator-resume-20260602` was fast-forwarded onto `origin/main` at `513eea00c` before this handoff update.
+- Latest upstream checkpoint before this handoff update: `8f3a72eb3`.
+- `codex/performance-orchestrator-resume-20260602` was fast-forwarded onto `origin/main` at `8f3a72eb3` before this handoff update.
 - Follow `AGENTS.md`: use isolated worktrees/branches for implementation, do not edit `main` directly, sync before work, verify before merge, push verified integrations frequently.
 - User explicitly requested no permission prompts and no escalation requests.
 - Treat unrelated dirty or untracked files as owned by other sessions unless explicitly proven otherwise.
@@ -643,6 +643,47 @@ All items below were verified, pushed to their `codex/` branches, and fast-forwa
   - Integrated-main focused NPV allocation/source filter passed `2/2`.
   - `git diff --check HEAD~1..HEAD` passed.
 
+### App.Host Native Visual Filter Pivot Lookup Cache
+
+- Local orchestrator branch: `codex/perf-local-census-tail-20260603-r1`.
+- Commit integrated to `origin/main`: `20bf862c8`.
+- Change: caches active-sheet PivotTable name lookups in `SlicerTimelinePlanner` with a `ConditionalWeakTable<Sheet, ...>` and exact name-sequence validation, and pre-sizes visible slicer/timeline result lists for large workbook refreshes.
+- Metrics:
+  - `NATIVE_VISUAL_FILTERS_LARGE_PAIRED` improved from `58,544,840` bytes to `9,622,440` bytes over `100` paired calls for `6,000` visible controls.
+  - Empty-workbook fast path stayed allocation-flat at `40` bytes.
+- Verification:
+  - Focused `SlicerTimelinePlannerTests` passed `16/16` after rebase.
+  - Full `FreeX.App.Host.Tests` passed `5796/5797`, with `1` skipped.
+  - `git diff --check HEAD~1..HEAD` passed.
+
+### Core.Formula Direct IRR Range Streaming
+
+- Worker: `019e8bf2-ff68-7322-8f52-42c5c3ee6c3b`.
+- Branch: `codex/core-formula-financial-tail-20260603`.
+- Commit integrated to `origin/main`: `8f3a72eb3`.
+- Change: added a direct `IRR(A1:A...)` range path that collects numeric cash flows from cells without first materializing a `RangeValue` matrix, reusing the existing IRR solver.
+- Metrics:
+  - Worker baseline `IRR` over `20,000` cash-flow cells: `8.25 ms`, `160,336` bytes.
+  - Final focused sample after rebase: `8.24 ms`, `152` bytes.
+- Verification:
+  - Focused IRR/financial filter passed `101/101`.
+  - Full `FreeX.Core.Formula.Tests` passed `2719/2719`.
+  - `git diff --check HEAD~1..HEAD` passed.
+
+### Core.IO XLSX Allocation Tail No-patch Probe
+
+- Worker: `019e8bf2-c3b6-7213-8022-2d1b9c5fcf79`.
+- Branch: `codex/xlsx-core-io-allocation-tail-20260603`.
+- Result: no patch carried; branch left clean at `bdfdb6c84`.
+- Rejected candidates:
+  - Skipping the default theme rewrite was semantically unsafe: `XlsxFileAdapter_SaveDefaultTheme_RoundTripsOfficeTheme` showed ClosedXML's default theme round-trips as `"Office Theme"` instead of the modeled `"Office"`.
+  - Pre-sizing load-time package-copy `MemoryStream`s in the ClosedXML sanitizer/style-only stripper was semantics-safe but allocation-flat/noisy; `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` moved from `131,569,008` bytes to `131,572,312`, and save tails were flat or worse.
+- Current synced focused samples:
+  - `XLSX_SAVE_STYLE_ONLY`: `144,747,016` bytes.
+  - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA`: `131,569,208` bytes.
+  - `XLSX_SAVE_LOADED_DENSE_MUTATED`: `157,801,408` bytes.
+  - `XLSX_LOAD_DRAWING_PICTURES`: `22,845,712` bytes.
+
 ## Other Main Integrations During This Wave
 
 Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, QAT validation, Flash Fill parity coverage clarification, and parity handoff updates.
@@ -658,6 +699,7 @@ The obvious high-impact backlog is reduced but not exhausted.
    - `XLSX_SAVE_IGNORED_ERRORS` improved to about `81.46 MB`; `XLSX_SAVE_DATA_VALIDATION_NATIVE_METADATA` improved from about `80.5 MB` to about `18.6 MB`.
    - `XLSX_LOAD_DRAWING_PICTURES` now has a current baseline and a small copy/traversal win (`23.6 MB` to about `22.8 MB`); further cuts likely require a larger picture-storage or image-retention redesign.
    - A post-`11bcab08a` Core.IO profiling worker found no practical narrow follow-up: `XLSX_SAVE_STYLE_ONLY` was about `143,994,216` bytes, `XLSX_LOAD_DRAWING_PICTURES` about `22,846,608` bytes, and `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` about `131,572,344` bytes. Its style-only save trial was effectively flat (`~184` bytes on a `~144 MB` path) and was reverted.
+   - A later Core.IO worker again found no safe practical patch: default-theme rewrite skipping failed semantics, and package-copy `MemoryStream` pre-sizing was allocation-flat/noisy. Current focused samples are `XLSX_SAVE_STYLE_ONLY` `144,747,016` bytes, `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` `131,569,208` bytes, `XLSX_SAVE_LOADED_DENSE_MUTATED` `157,801,408` bytes, and `XLSX_LOAD_DRAWING_PICTURES` `22,845,712` bytes.
    - Unchanged loaded workbook fast-copy remains healthy: `XLSX_SAVE_LOADED_DENSE` around `554,248` bytes in the full IO run.
    - NativeJson dense load now pre-sizes sheet cell storage: `NATIVE_JSON_LOAD_DENSE` improved from `44.18 MB` to `37.78 MB`, and repeated custom styles load improved from `27.67 MB` to about `21.74 MB`.
    - Further IO cuts likely require deeper metadata load/save redesign or more streaming XML writers.
@@ -665,6 +707,7 @@ The obvious high-impact backlog is reduced but not exhausted.
    - `NON_DRAG_SELECTION_TOOLBAR` is down to about `12.2 MB`; current guardrails show zero QAT probes and zero toolbar writes.
    - `RIBBON_FORCE_COMPACT`/compact skip paths did not produce a proven allocation win in the post-resume Host worker; the same-base candidate was timing-noisy and allocation-flat, so future Host work should start with allocation profiling.
    - `SELECTION_DRAG_STATUS` and `ADDITIONAL_SELECTION_DRAG_TOOLBAR` are about `4.6 MB` and `5.7 MB` respectively in the latest focused run; treat them as lower priority unless a new benchmark regresses.
+   - Native visual filter refresh for large slicer/timeline workbooks improved after the latest wave: `NATIVE_VISUAL_FILTERS_LARGE_PAIRED` dropped from `58,544,840` bytes to `9,622,440` bytes by caching active PivotTable name lookups and pre-sizing visible control lists.
    - App.Host deterministic non-local drift failures are fixed on `origin/main`; a full Host run had one transient keyboard-focus failure that passed on direct rerun.
    - The restarted Host worker branch is integrated; future Host work should start from current `origin/main` and avoid overlapping stale worktrees.
 3. Core.Commands:
@@ -680,6 +723,7 @@ The obvious high-impact backlog is reduced but not exhausted.
    - Core.Calc dependency rebuild improved again after the handoff: repeated identical formula dependency rebuild dropped from about `15,454,928` bytes / `3,090` bytes per formula to `1,916,992` bytes / `383` bytes per formula by grouping identical compact range dependencies in the range index.
    - Core.Formula XNPV range evaluation improved after the handoff: the large cash-flow range guard dropped from `320,360` bytes to `48` bytes by streaming direct value/date ranges.
    - Core.Formula NPV range evaluation improved after the handoff: `NPV(0.08,A1:A20000)` allocation dropped from `1,324,912` bytes to `88` bytes by streaming direct range values.
+   - Core.Formula IRR range evaluation improved after the handoff: `IRR(A1:A20000)` allocation dropped from `160,336` bytes to `152` bytes by streaming direct range cash-flow collection.
    - Formula built-in focused benchmarks were reprobed after the handoff: `UNIQUE_SINGLE_COLUMN` was about `742,824` bytes and is still mostly required `HashSet` plus returned `RangeValue` storage; `REPT_LARGE_RESULT` was about `65,736` bytes and already bounded by output-string allocation.
    - Formula parser/evaluator tail remains a candidate only if a semantics-safe path can be proven; the latest broad focused Formula test run passed without exposing a narrow patch.
 5. App.UI render:
@@ -754,6 +798,11 @@ Post-restart continuation workers launched with full-access/no-permission instru
 - `019e8bbf-0a6b-79b1-9f0f-8754062c2052`: Core.Formula XNPV direct range streaming, completed; rebased commit `e00bd5d67` integrated to `origin/main`.
 - `019e8bd4-d108-7eb2-a604-16e564c63798`: Core.Formula NPV direct range streaming, completed. The worker had merged into the primary local `main` with unrelated local commits, so the orchestrator isolated only patch commit `726b83e60` onto `codex/perf-formula-npv-range-tail-20260603-r1` and integrated clean commit `513eea00c` to `origin/main`.
 
+Current post-handoff continuation workers launched with full-access/no-permission instructions:
+
+- `019e8bf2-ff68-7322-8f52-42c5c3ee6c3b`: Core.Formula IRR direct range streaming, completed; rebased commit `8f3a72eb3` integrated to `origin/main`.
+- `019e8bf2-c3b6-7213-8022-2d1b9c5fcf79`: Core.IO XLSX allocation tail, completed with no patch; branch left clean after one unsafe default-theme candidate and one allocation-flat package-copy pre-sizing candidate were reverted.
+
 Local orchestrator slices after restart:
 
 - `codex/perf-xlsx-metadata-save-tail-20260603-r1`: XLSX ignored-errors worksheet save tail, completed; commit `ca85fa850` integrated to `origin/main`.
@@ -773,6 +822,7 @@ Local orchestrator slices after restart:
 - `codex/perf-viewport-displaycell-tail-20260603-r1`: App.Host viewport DisplayCell allocation tail, completed; commit `19a4056b5` integrated to `origin/main`. Baseline `VIEWPORT_NO_COMMENTS_FAST_PATH` was `44,977,320` bytes; integrated-main sample was `35,766,736` bytes. Full `FreeX.App.UI.Tests` passed `570/570`, full `FreeX.Core.Model.Tests` passed `1893/1893`, full `FreeX.Core.Calc.Tests` passed `673/673`, and focused Host viewport benchmark passed.
 - `codex/perf-nativejson-tail-20260603-r1`: Core.IO NativeJson loaded cell pre-sizing tail, completed; commit `f35ffa046` integrated to `origin/main`. `NATIVE_JSON_LOAD_DENSE` improved from `44,182,608` bytes to `37,782,672`, repeated custom styles load improved from `27,672,864` bytes to about `21,740,192`, full `FreeX.Core.IO.Tests` passed `1781/1781`, and the integrated-main focused load/source guard filter passed `3/3`.
 - `codex/perf-formula-npv-range-tail-20260603-r1`: Core.Formula direct NPV range streaming clean integration branch, completed; commit `513eea00c` integrated to `origin/main`. `NPV(0.08,A1:A20000)` allocation improved from `1,324,912` bytes to `88` bytes, focused NPV/XNPV tests passed `11/11`, full `FreeX.Core.Formula.Tests` passed `2718/2718`, and the integrated-main focused NPV allocation/source filter passed `2/2`.
+- `codex/perf-local-census-tail-20260603-r1`: App.Host native visual filter pivot lookup cache, completed; commit `20bf862c8` integrated to `origin/main`. `NATIVE_VISUAL_FILTERS_LARGE_PAIRED` improved from `58,544,840` bytes to `9,622,440`, focused `SlicerTimelinePlannerTests` passed `16/16`, full `FreeX.App.Host.Tests` passed `5796/5797` with `1` skipped, and `git diff --check` passed.
 
 Local orchestrator exploratory slice after drawing tails:
 
@@ -786,13 +836,13 @@ Local orchestrator exploratory slice after drawing tails:
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `origin/main` is at or after `513eea00c`. The primary local `main` is currently ahead of `origin/main` by unrelated local commits (`16 0` from `git rev-list --left-right --count main...origin/main` at this checkpoint); do not push, reset, or overwrite it as part of the performance thread unless its owning session has verified and handed it over.
+2. Confirm `origin/main` is at or after `8f3a72eb3`. The primary local `main` may still contain unrelated local commits; do not push, reset, or overwrite it as part of the performance thread unless its owning session has verified and handed it over.
 3. Start the next wave with disjoint scopes:
    - XLSX IO style-only/ignored-error load-save tail only if a larger semantics-safe streaming or package-normalization path is found; narrow cell/row insertion cursor tails are integrated.
    - NativeJson load pre-sizing is integrated; future NativeJson work should start from save paths or deeper load-model redesign rather than repeating the dense-load capacity slice.
    - Recheck XLSX drawing-picture load only if a larger picture-storage redesign is acceptable; the narrow copy/traversal tail is already integrated.
    - Core.Commands dense row/column tails now need deeper model-level redesign; prefer other high-impact areas unless a narrow safe path is proven.
-   - Core.Formula direct range streaming is integrated for XNPV and NPV; future financial-function work should start with fresh allocation profiles instead of duplicating those paths.
+   - Core.Formula direct range streaming is integrated for XNPV, NPV, and IRR; future financial-function work should start with fresh allocation profiles instead of duplicating those paths.
    - App.UI drawing-object first-render/offscreen cache warm-up follow-up is integrated; anchor lookup remains allocation-flat and lower priority.
 4. Merge verified slices back to `main` promptly and push after each coherent unit.
 
@@ -912,3 +962,14 @@ Repository checkpoint after NativeJson, Host drift, and NPV integrations:
   - NPV allocation/source filter passed `2/2`.
 - Broader verification before integration included full `FreeX.Core.IO.Tests` passing `1781/1781`, full `FreeX.Core.Formula.Tests` passing `2718/2718`, and full `FreeX.App.Host.Tests` passing `5794/5796` with `1` skipped plus one transient keyboard-focus failure that passed on direct rerun.
 - The primary local `main` remained untouched and is currently clean but locally divergent: `main` is at `1efc6f70f` and `origin/main` is at `513eea00c`, with `main...origin/main` showing `16 0`. Continue using linked worktrees from `origin/main` for the performance thread and do not push or reset primary `main` wholesale.
+
+Repository checkpoint after App.Host native visual filter, Core.IO no-patch, and IRR integrations:
+
+- `origin/main` was advanced to `20bf862c8` with the App.Host native visual filter PivotTable lookup cache slice.
+- Core.IO worker `019e8bf2-c3b6-7213-8022-2d1b9c5fcf79` completed with no patch; treat its focused benchmark samples and rejected candidates as current evidence for the remaining XLSX IO tail.
+- `origin/main` was advanced to `8f3a72eb3` with the Core.Formula direct IRR range streaming slice.
+- Verification passed:
+  - Focused `SlicerTimelinePlannerTests` passed `16/16`; full `FreeX.App.Host.Tests` passed `5796/5797` with `1` skipped.
+  - Focused IRR/financial Formula filter passed `101/101`; full `FreeX.Core.Formula.Tests` passed `2719/2719`.
+  - `git diff --check HEAD~1..HEAD` passed for both integrated code slices.
+- The primary local `main` remained untouched; continue using linked worktrees from `origin/main` for the performance thread and do not push or reset primary `main` wholesale.
