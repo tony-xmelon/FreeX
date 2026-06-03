@@ -182,7 +182,7 @@ Completed and merged lanes from this wave:
 - Resume / Draw implemented-count parity prose sync: completed, pushed to `origin/main`.
 - Resume / Accessibility displayed non-text low-contrast cell values: completed, pushed to `origin/main`.
 - Resume / Backstage Share, Info, and Export UIA metadata: completed, pushed to `origin/main`.
-- Resume / Options default `.fxl` save format: completed, pending push to `origin/main`.
+- Resume / Options default `.fxl` save format: completed, pushed to `origin/main`.
 
 Read-only resume auditors:
 
