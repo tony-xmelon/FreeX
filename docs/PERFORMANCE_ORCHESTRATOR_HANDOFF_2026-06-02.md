@@ -991,3 +991,12 @@ Repository checkpoint after Host selection, App.UI formula-trace, and Pivot refr
   - Metric: `PIVOT_REFRESH_COLUMN_VALUE_FILTER_SORT` allocation improved from `12,980,200` bytes to `9,171,904` bytes; final focused sample was `mean_ms=32.94`.
   - Verification: pivot refresh/command focused set passed `178/178`, full `FreeX.Core.Model.Tests` passed `1896/1896`, and `git diff --check HEAD~1..HEAD` passed.
 - Primary local `main` remained outside the performance integration path; verified performance work continued through linked worktrees and fast-forward pushes to `origin/main`.
+
+Repository checkpoint after Core.Calc viewport terminal metric probe integration:
+
+- `origin/main` was advanced to `bf0d78573` with `codex/perf-core-calc-next-tail-20260603-r1`.
+  - Change: default all-visible sheets now skip the discarded backward terminal row/column metric probe when the requested viewport start is clearly before the worksheet-end alignment zone. Custom row heights, custom column widths, hidden/filter/group-hidden rows, hidden/group-hidden columns, and near-terminal requests keep the existing terminal scan path.
+  - Metric: `SPARSE_OCCUPIED_VIEWPORT` allocation improved from the earlier baseline `29,161,480` bytes over 60 iterations to the rebased final sample `25,112,952` bytes; final sample time was `83.04 ms`.
+  - Verification: focused sparse viewport benchmark passed `1/1`; focused viewport layout/style/benchmark set passed `35/35`; full `FreeX.Core.Calc.Tests` passed `674/674`; full `FreeX.App.UI.Tests` passed `571/571`; `git diff --check HEAD~1..HEAD` passed.
+- The temporary `RowMetric`/`ColMetric` value-record experiment was reverted before commit because App.UI relies on the existing nullable class-record semantics in metric lookups.
+- Fresh Core.IO worker `019e8c3f-3a5b-7932-a247-79d1d64a9317` and Core.Formula worker `019e8c3f-4e98-7f13-840c-119bdeba7652` were started from the resumed orchestrator context; wait for their results before claiming the current wave is exhausted.
