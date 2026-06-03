@@ -1217,3 +1217,25 @@ Repository checkpoint after viewport, mode-count, and formula-trace tail integra
   - Metrics: worker baseline for `PERF FORMULA_TRACE_LAYOUT_VISITOR` was `90.23 ms` visitor total / `5,160` bytes; final rebased focused sample was `72.91 ms` visitor total / `40` bytes.
   - Verification after final rebase: focused FormulaTrace filter passed `13/13`; full Release `FreeX.App.UI.Tests` passed `572/572`; `git diff --check HEAD~2..HEAD` passed.
 - All three worker agents from this wave have completed and can be closed after the source/docs push. Continue using linked worktrees from `origin/main`; the primary local `main` has unrelated local history and must not be used as the performance integration path.
+
+Repository checkpoint after sparse GridView, address-snapshot, and page-break metadata integrations:
+
+- `codex/perf-ui-model-tail-integration-20260603-r1` added rebased App.UI commit `d23c2ca5e`.
+  - Worker: `019e8d1b-3e77-7aa2-84cc-3355b08f7a67`.
+  - Change: `GridView.RenderCells` renders sparse styled-cell and merge-start surfaces from cached styled/merge entries instead of scanning every visible row/column coordinate for the background pass.
+  - Metrics: worker baseline for `GRID_RENDER_SPARSE_STYLED_SURFACES` was `432.78 ms` total / `27.03 ms` mean / `78,160` bytes; worker after-sample was `281.81 ms` total / `17.60 ms` mean / `73,712` bytes. Rebased focused samples were noisy but passed (`341.74 ms` total / `21.34 ms` mean / `82,648` bytes).
+  - Verification after final rebase: focused sparse-surface benchmark passed `1/1`; full Release `FreeX.App.UI.Tests` passed `573/573`; `git diff --check HEAD~3..HEAD` passed.
+- `codex/perf-ui-model-tail-integration-20260603-r1` added rebased Core.Model/Core.Commands commit `d6ee54151`.
+  - Worker: `019e8d1b-2a5a-7b32-88b5-ef5c4bf5ff2d`.
+  - Change: address-bearing row/column shift snapshot capture now uses pre-sized explicit helpers, shared empty snapshots, and `Sheet.StyleOnlyCellCount` instead of LINQ/materialized snapshot chains for empty collections.
+  - Metrics: representative allocation deltas from worker verification: `STYLE_ONLY_ROW_SHIFT` `3,860,760 -> 3,854,080` bytes, dense row/column shifts `10,560,832-10,622,992 -> 10,556,464-10,618,624` bytes, metadata shifts `6,928,936-7,075,528 -> 6,924,568-7,071,160` bytes, and `INSERT_ROWS_DENSE_TAIL_SHIFT` `223,720 -> 219,352` bytes. Rebased focused samples matched the after allocation range.
+  - Verification after final rebase: focused row/column benchmark set passed `10/10`; full Release `FreeX.Core.Model.Tests` passed `1905/1905`; `git diff --check HEAD~3..HEAD` passed.
+- `codex/perf-ui-model-tail-integration-20260603-r1` added rebased Core.IO commit `e4c486f94`.
+  - Worker: `019e8d1b-161f-7463-94d5-08f5585a5ef3`.
+  - Change: XLSX page-break metadata save streams modeled `SortedSet<uint>` breaks without `Where(...).Distinct().ToArray()`, skips modeled-break pre-scans when metadata is already present, counts total/manual breaks in one XML pass, and reuses a static worksheet insertion-order lookup.
+  - Metrics: `PERF XLSX_SAVE_PAGE_BREAK_METADATA` improved from `28,304,296` to `25,481,896` bytes over 20 saves (`~9.97%` allocation reduction). Rebased focused sample was `110.85 ms` total / `5.53 ms` mean / `25,481,896` bytes.
+  - Verification after final rebase: focused page-break benchmark/source guard passed `2/2`; full Release `FreeX.Core.IO.Tests` passed `1789/1789`; `git diff --check HEAD~3..HEAD` passed.
+- Local orchestrator census produced no additional patch:
+  - Formula: bounded streaming `LARGE`/`SMALL` and `AGGREGATE(14/15)` reduced allocation from about `800 KB` to `360-440` bytes, but regressed representative time (`LARGE` about `6.87 ms -> 21.36 ms`, `AGGREGATE(14)` about `8.81 ms -> 22.79 ms`), so it was reverted. `UNIQUE` single-column allocation is mostly required output/hash tracking, and returning shared cached lexer token lists would weaken the public mutable `List<Token>` contract.
+  - Core.Calc: conditional-format formula/style benchmark allocation is dominated by viewport output/context/style payload, while inside-cell large-range recalc allocation is Formula-owned. No safe Core.Calc-only patch was carried.
+- All workers from this wave completed. Continue using linked worktrees from `origin/main`; primary local `main` remains outside the performance integration path.
