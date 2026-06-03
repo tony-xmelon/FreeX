@@ -1446,6 +1446,18 @@ Repository checkpoint after Calc shared-leaf and Formula parsed-reference integr
 - Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
 - Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
 
+Repository checkpoint after App.UI comment-indicator geometry cache integration:
+
+- `origin/main` was advanced to `484c0f0ad` with `codex/perf-ui-comment-indicators-integration-20260603-r1`.
+- The integration added rebased App.UI commit `484c0f0ad`.
+  - Worker: `019e8eb8-bc86-7392-a9a9-22dd949dc971`.
+  - Change: `GridView` caches frozen comment-indicator triangle geometries per view, bounded at `16,384` rects, avoiding repeated `StreamGeometry` creation for stable comment-marker viewport refreshes.
+  - Metrics: `GRID_RENDER_COMMENT_INDICATORS` improved from the worker baseline `48.74 ms` mean / `85.18 ms` p95 / `9,702,176` allocated bytes to the integration focused sample `36.65 ms` mean / `39.61 ms` p95 / `3,220,896` allocated bytes.
+  - Verification: focused App.UI performance/render set passed `29/29`; full Release `FreeX.App.UI.Tests` passed `581/581`; `git diff --check origin/main..HEAD` passed before push.
+- All completed workers from this wave have now been integrated; close their agent handles before launching the next wave.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
+
 Repository checkpoint after App.Host open-progress formatter integration:
 
 - `origin/main` was advanced to `4d9b800bf` with `codex/perf-host-open-progress-integration-20260603-r1`.
