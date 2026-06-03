@@ -65,10 +65,10 @@ Formula, named-range, structured table, chart, validation/conditional-format, hy
 drawing/shape, sparkline/image, protection, and PivotTable feature fixtures have retention
 expectations, not just passive summary counts. When `--save-reopen` is used, the smoke fails if
 FreeX cannot load the expected feature metadata before Excel opens the staged workbook, if Excel
-open/reopen loses the expected formula cells, named ranges, structured tables, charts, worksheet
-shapes, or PivotTables, or if FreeX cannot reload the Excel-saved copy with the expected metadata
-still present. These supported FreeX-authored feature fixtures also fail on any FreeX load warning
-before Excel or after reloading Excel's saved copy.
+open/reopen loses the expected formula cells, named ranges, structured tables, charts, validation
+cells, conditional-format rules, worksheet shapes, or PivotTables, or if FreeX cannot reload the
+Excel-saved copy with the expected metadata still present. These supported FreeX-authored feature
+fixtures also fail on any FreeX load warning before Excel or after reloading Excel's saved copy.
 For generated and local-private supported corpus rows without declared warning expectations, the
 smoke also fails on any FreeX load warning before Excel or after reloading Excel's saved copy.
 Public corpus rows without declared warning expectations now participate in the same no-warning
@@ -206,6 +206,8 @@ As of 2026-06-03 on the local desktop Excel COM environment:
   shapes/text, and Excel-authored fixtures. The final feature fixture smoke reported shape counts of
   `1`, `1`, and `2` for those three FreeX-authored drawing fixtures through Excel open/reopen, and
   representative FreeX-saved outputs passed Open XML SDK schema validation with `errors=0`.
+- Excel-side metadata assertions now cover validation/conditional formatting too: the validation/CF
+  fixture must expose validation cells and `4` conditional-format rules through Excel open/reopen.
 - FreeX-side metadata assertions passed for validation/conditional formatting (`3` validations,
   `4` conditional formats), hyperlinks/comments (`3` hyperlinks, `1` comment),
   images/sparklines (`1` picture, `2` sparklines), text/drawing shapes (`1` text box, `1` drawing
