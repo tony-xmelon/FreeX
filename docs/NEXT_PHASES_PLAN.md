@@ -1,7 +1,7 @@
 # FreeX Next Development Phases
 
-**Last updated:** 2026-06-01
-**Current state:** Formula engine at 487/487 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (87/87), XLSX round-trip and corpus coverage at a 175-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, UIA accessibility peers, a 43-culture localization resource foundation, and a chart interop harness with a latest-complete 28/28 openability/export plus visual-gate pass, 0 known-gap chart allowances, and 28/28 byte-identical Excel-native/FreeX-round-trip packages. The active focus is broader XLSX fidelity proof, package-preserving save validation, release packaging/trust validation, localization review/pseudo-localization/package metadata, performance hardening, and the explicitly documented native-Excel pivot edge cases.
+**Last updated:** 2026-06-03
+**Current state:** Formula engine at 487/487 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (87/87), XLSX round-trip and corpus coverage at a current 176-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, UIA accessibility peers, a 43-culture localization resource foundation, and a chart interop harness with a latest-complete 28/28 openability/export plus visual-gate pass, 0 known-gap chart allowances, and 28/28 byte-identical Excel-native/FreeX-round-trip packages. The active focus is broader XLSX fidelity proof, package-preserving save validation, release packaging/trust validation, localization review/pseudo-localization/package metadata, performance hardening, and the explicitly documented native-Excel pivot edge cases.
 
 ---
 
@@ -131,7 +131,7 @@ June 1 status: `tools/FreeX.ChartInteropCompare` now provides repeatable Excel C
 
 ## Phase 9: XLSX Corpus Expansion (ongoing)
 
-- Continue expanding beyond the current 175-row manifest baseline
+- Continue expanding beyond the current 176-row manifest baseline
 - Add public/open-license workbooks covering every feature bucket (charts, CF, pivot, validation, named ranges, shared formulas, etc.)
 - Graduate per-workbook smoke tests to per-feature structural comparisons (cell values, styles, chart series counts, CF rules, etc.)
 - Track and publish pass/fail rate by feature bucket; target 95% of supported features passing before any public release claim
