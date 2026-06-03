@@ -43,11 +43,11 @@ with an actual marker-sheet edit before Excel opens them:
 dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --freex-resave-before-excel --generate-freex-feature-fixtures
 ```
 
-Pivot feature fixtures and the Excel-authored fixture have retention expectations, not just passive
-summary counts. When `--save-reopen` is used, the smoke fails if FreeX cannot load at least one
-PivotTable and pivot cache before Excel opens the staged workbook, if Excel open/reopen loses the
-PivotTable, or if FreeX cannot reload the Excel-saved copy with the PivotTable and pivot cache still
-present.
+Formula, structured table, drawing/shape, and PivotTable feature fixtures have retention
+expectations, not just passive summary counts. When `--save-reopen` is used, the smoke fails if
+FreeX cannot load the expected feature metadata before Excel opens the staged workbook, if Excel
+open/reopen loses the expected formula cells, structured tables, worksheet shapes, or PivotTables,
+or if FreeX cannot reload the Excel-saved copy with the expected metadata still present.
 
 ## Excel-authored through FreeX
 
@@ -144,6 +144,15 @@ As of 2026-06-03 on the local desktop Excel COM environment:
   workbook/pivot-table cache id to `0`; the FreeX source load and reopened Excel save both reported
   `pivots 1; pivot caches 1`, and the FreeX-saved workbook passed Open XML SDK schema validation
   with `errors=0`.
+- Formula and structured-table retention assertions passed for the FreeX-authored feature fixtures
+  and the Excel-authored fixture. The final feature fixture smoke reported `formulas 4` for the
+  grid/formulas fixture and `tables 1` for the table fixture through Excel open/reopen and FreeX
+  reload of the Excel-saved copy; representative FreeX-saved outputs passed Open XML SDK schema
+  validation with `errors=0`.
+- Excel-side worksheet shape assertions passed for the objects/links, images/sparklines,
+  shapes/text, and Excel-authored fixtures. The final feature fixture smoke reported shape counts of
+  `1`, `1`, and `2` for those three FreeX-authored drawing fixtures through Excel open/reopen, and
+  representative FreeX-saved outputs passed Open XML SDK schema validation with `errors=0`.
 - Public + regression corpus rows selected from `test-corpus/manifest.csv` with
   `--save-reopen --freex-resave-before-excel --corpus-source public --corpus-source regression`
   passed: `34/34`.
