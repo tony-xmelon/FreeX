@@ -1468,6 +1468,21 @@ Repository checkpoint after Model/Commands structured-table filter and Core.IO s
 - Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
 - Primary local `main` remains untouched; continue performance integration from linked worktrees based on `origin/main`.
 
+Repository checkpoint after App.UI dense chart data-label format lookup integration:
+
+- `origin/main` was advanced to `1b0cd8149` with `codex/perf-ui-chart-label-lookup-integration-20260603-r1`.
+- The integration added rebased App.UI commit `1b0cd8149`.
+  - Worker: `019e8ef3-07e6-7820-ac59-d59f99dea73c`.
+  - Change: dense point-specific chart data-label formats now build one per-render lookup instead of reverse-scanning the full point-format list for every annotation. Sparse format lists keep the reverse-scan fallback, and duplicate dense formats preserve last-format-wins semantics.
+  - Metrics: worker same-base sample for `CHART_BUILD_DENSE_FORMAT_LOOKUPS` improved from `372.34 ms` / `16,566,096` bytes to `267.69 ms` / `17,346,896` bytes; worker focused rerun sampled `119.12 ms` / `17,346,896` bytes. Integration focused samples after replay were `158.49 ms` / `17,346,896` bytes in the chart set and `242.74 ms` / `17,346,896` bytes in the broader UI perf set. Timing is the stable improvement signal; allocation rises about `781 KB` to hold the dense lookup.
+  - Verification after integration: focused `ChartRendererTests|ChartRendererPerformanceMeasurementTests` passed `105/105`; UI performance/render subset passed `97/97`; full Release `FreeX.App.UI.Tests` passed `582/582`; `git diff --check origin/main...HEAD` passed before push.
+- Completed App.UI worker `019e8ef3-07e6-7820-ac59-d59f99dea73c` can be closed after this docs push.
+- Still-running workers:
+  - `019e8ed1-b4cd-7180-abd1-73756789dba5`: App.Host current performance tail.
+  - `019e8ef2-f3a4-7403-9b66-7f346eb7606f`: Core.Formula current performance tail.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` remains untouched; continue performance integration from linked worktrees based on `origin/main`.
+
 Repository checkpoint after Core.Calc sparse viewport metric integration:
 
 - `origin/main` was advanced to `fa0d0eb63` with `codex/perf-calc-sparse-viewport-integration-20260603-r1`.
