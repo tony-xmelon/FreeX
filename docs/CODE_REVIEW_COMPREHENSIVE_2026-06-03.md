@@ -2,12 +2,12 @@
 
 ## 0. Method And Coverage
 
-Fresh full-codebase review on isolated branch `codex/code-review-docs-20260603`, created after `git fetch origin` and `git pull --ff-only origin main` reported `Already up to date.` Baseline HEAD: `241684d65bac7c55ca19ccaec4f6f11635992763`.
+Fresh full-codebase review on isolated branch `codex/code-review-docs-20260603`, created after `git fetch origin` and `git pull --ff-only origin main` reported `Already up to date.` Initial review baseline HEAD: `241684d65bac7c55ca19ccaec4f6f11635992763`. Before final handoff, the branch was synced with the newer local `main` (`34af1482f436b51120558356cc42728e2f267925`) and the findings below were spot-verified on synced branch HEAD `7de41a547d709b728846620049e343051e4b2f5d`.
 
 Scope covered:
 
-- `src/`: 1,126 C# files, 197,579 source lines.
-- `tests/`: 720 C# files, 206,013 source lines.
+- `src/`: 1,127 C# files, 198,325 source lines.
+- `tests/`: 778 C# files, 206,636 source lines.
 - Tooling, workflows, release scripts, docs index, and XLSX interop tools.
 
 Review method:
@@ -127,7 +127,7 @@ Recommended fix: validate `PartName` with the same OPC/path rules and merge over
 
 ### P3 - Non-aggregate functions expand arguments before max-arity validation
 
-Evidence: [`FormulaEvaluator.Functions`](../src/FreeX.Core.Formula/FormulaEvaluator.Functions.cs#L70) expands range arguments before enforcing max arity at [`line 207`](../src/FreeX.Core.Formula/FormulaEvaluator.Functions.cs#L207).
+Evidence: [`FormulaEvaluator.Functions`](../src/FreeX.Core.Formula/FormulaEvaluator.Functions.cs#L86) expands range arguments before enforcing max arity at [`line 223`](../src/FreeX.Core.Formula/FormulaEvaluator.Functions.cs#L223).
 
 Impact: malformed formulas such as an oversized extra range passed to a scalar function can perform avoidable CPU/memory work before returning `#VALUE!`.
 
@@ -158,7 +158,7 @@ Recommended fix: move these strings/titles into `UiText` resources and extend th
 ## 4. Clean Signals Worth Recording
 
 - Full solution build passed with 0 warnings and 0 errors.
-- Full solution tests passed: 13,504 passed, 1 skipped, 0 failed.
+- Full solution tests passed: 13,513 passed, 1 skipped, 0 failed.
 - Repository preflight passed, including JSON/XML validation, tool scripts, workflows, SDK readiness, project references, solution membership, generated docs, and conflict-marker scanning.
 - `dotnet list ... package --vulnerable --include-transitive` found no vulnerable NuGet packages for the solution or the two interop tool projects.
 - Direct restore/build of `tools\FreeX.ExcelOpenSmoke` and `tools\FreeX.ChartInteropCompare` passed.
