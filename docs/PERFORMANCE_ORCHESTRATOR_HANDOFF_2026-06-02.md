@@ -9,8 +9,8 @@ This goal is not complete. This file records the current clean checkpoint.
 ## Operating Rules
 
 - Repository: `E:\Users\anton\Documents\Claude\Freexcel`.
-- Latest upstream checkpoint before this handoff update: `f9115462f`.
-- `codex/performance-orchestrator-resume-20260602` was rebased onto `origin/main` at `f9115462f` before this handoff update.
+- Latest upstream checkpoint before this handoff update: `66a60b9eb`.
+- `codex/performance-orchestrator-resume-20260602` was rebased onto `origin/main` at `66a60b9eb` before this handoff update.
 - Follow `AGENTS.md`: use isolated worktrees/branches for implementation, do not edit `main` directly, sync before work, verify before merge, push verified integrations frequently.
 - User explicitly requested no permission prompts and no escalation requests.
 - Treat unrelated dirty or untracked files as owned by other sessions unless explicitly proven otherwise.
@@ -433,6 +433,55 @@ All items below were verified, pushed to their `codex/` branches, and fast-forwa
   - Full `GridViewPerformanceMeasurementTests` passed `16/16`.
   - Full `FreeX.App.UI.Tests` passed `567/567`.
 
+### App.UI Drawing Object Layer Cache Tail
+
+- Branch: `codex/perf-app-ui-drawing-objects-tail-20260603-r1`.
+- Commit: `e5699197b`.
+- Change: stable floating object bodies now render through a cached frozen drawing layer, separate from selection handles and drag/crop previews. Object source, theme, viewport, and selected-range changes invalidate the cache.
+- Metrics:
+  - Baseline before change: `GRID_RENDER_DRAWING_OBJECTS` `5,221,792` bytes, `133.07 ms` mean.
+  - Focused post-rebase sample: `45,976` bytes, `90.69 ms` mean.
+  - Full App.UI sample: `52,664` bytes, `102.98 ms` mean.
+- Verification:
+  - Focused drawing-object benchmark/source-guard set passed `4/4`.
+  - Full render benchmark set passed `16/16`.
+  - Full `FreeX.App.UI.Tests` passed `570/570`.
+
+### XLSX Ignored-Error Style-Only Load Bound
+
+- Branch: `codex/perf-xlsx-load-ignored-style-tail-20260603-r1`.
+- Commit: `853119318`.
+- Worker: `019e8b24-13ea-7bc3-9bac-c7c1357831a2`, then orchestrator rebased, reviewed, reverified, and integrated.
+- Change: known worksheet layouts now skip expensive ClosedXML style-only stripping unless aggregate explicit style-only cells exceed `16,384`; warning/unknown-pressure paths stay conservative.
+- Metrics:
+  - Worker baseline: `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` `144,217,480` bytes, `1427.30 ms` mean, `1614.41 ms` p95.
+  - Worker final sample: `129,266,064` bytes, `1090.89 ms` mean, `1290.33 ms` p95.
+  - Orchestrator post-rebase focused sample: `131,568,456` bytes, `762.38 ms` mean, `797.47 ms` p95.
+  - Full Core.IO sample: `131,518,664` bytes, `1215.52 ms` mean, `1265.03 ms` p95.
+- Verification:
+  - Focused load/style/correctness set passed `35/35`.
+  - Full `FreeX.Core.IO.Tests` passed `1779/1779`.
+
+### App.Host Drag Selection And Ribbon Compact Tail
+
+- Branch: `codex/perf-host-drag-ribbon-tail-20260603-r1`.
+- Commit: `66a60b9eb`.
+- Worker: `019e8b08-ae70-7c80-b40e-fa0432e027e1`, then orchestrator cleaned stale rebase drift, recommitted a Host-only patch, reverified, and integrated.
+- Change: repeated drag selection targets now stay allocation-light and skip redundant refresh work, while ribbon adaptive planning/apply paths avoid avoidable state mutation and allocation on repeated compact/resize states.
+- Metrics from the final focused verification:
+  - `SELECTION_DRAG_REPEATED_TARGET`: `64` bytes across `2,000` steps.
+  - `ADDITIONAL_SELECTION_DRAG_REPEATED_TARGET`: `1,088` bytes across `2,000` steps.
+  - `NON_DRAG_SELECTION_TOOLBAR`: `12,203,384` bytes, `14.96 ms` mean, with zero undo/redo probes and zero toolbar writes.
+  - `RIBBON_RESIZE`: `12,277,392` bytes, `32.25 ms` mean.
+  - `RIBBON_FORCE_COMPACT`: `13,445,872` bytes.
+  - `RIBBON_FORCE_COMPACT_SKIP`: `439,344` bytes across `300` steps, with `300` applied-state skips and zero state applies.
+  - `SELECTION_DRAG_STATUS`: `4,619,592` bytes.
+  - `ADDITIONAL_SELECTION_DRAG_TOOLBAR`: `5,732,888` bytes.
+- Verification:
+  - Final focused Host performance/test filter passed `159/159`.
+  - Broad Host suite excluding only the two known current-main failures passed `5789/5789`, with `1` skipped.
+  - Full Host on the branch failed only `ConfigureServices_NativeFreexWorkbookAppearsInSaveFilter` and `RibbonSplitButtonHover_UsesRibbonButtonHoverBrushInsteadOfMenuHoverBrush`; the same two-test filter reproduced both failures on detached `origin/main`.
+
 ## Other Main Integrations During This Wave
 
 Other sessions also advanced `main` with verified non-performance/refactor/parity work while this orchestrator was active, including sheet-tab chrome, App.UI rect hit testing, model command test-context cleanup, drawing arrange parity, IO native attribute helper reuse, advanced filter copy planning, command-bus undo entry refactor, FormulaEvaluator partial extraction, NativeJson cell DTO partial extraction, Host dispatcher test-pump sharing, disabled nonpersisted Options toggles, QAT validation, Flash Fill parity coverage clarification, and parity handoff updates.
@@ -443,16 +492,17 @@ The obvious high-impact backlog is reduced but not exhausted.
 
 1. XLSX IO:
    - `XLSX_SAVE_LOADED_DENSE_MUTATED` was re-stabilized from about `244.9 MB` to `150.1-157.5 MB` by skipping irrelevant worksheet compatibility scans; further wins likely require deeper package normalization redesign.
-   - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` is improved again but still allocates around `144.2 MB`.
+   - `XLSX_LOAD_IGNORED_ERROR_STYLE_ONLY_METADATA` improved again and now allocates around `131.5 MB` in full Core.IO samples; it is still one of the largest open allocation pools.
    - `XLSX_SAVE_STYLE_ONLY` improved to about `143.1 MB` but remains a high-allocation save path because ClosedXML/style seeding and package XML rewriting still dominate.
    - `XLSX_SAVE_IGNORED_ERRORS` improved to about `81.46 MB`; `XLSX_SAVE_DATA_VALIDATION_NATIVE_METADATA` improved from about `80.5 MB` to about `18.6 MB`.
+   - `XLSX_LOAD_DRAWING_PICTURES` remains a candidate for a fresh baseline because recent IO work focused metadata/style paths rather than drawing image load copies.
    - Unchanged loaded workbook fast-copy remains healthy: `XLSX_SAVE_LOADED_DENSE` around `554,248` bytes in the full IO run.
    - Further IO cuts likely require deeper metadata load/save redesign or more streaming XML writers.
 2. App.Host toolbar/ribbon:
-   - `NON_DRAG_SELECTION_TOOLBAR` remains around `13.0 MB`; current guardrails show zero QAT probes and zero toolbar writes.
-   - `RIBBON_FORCE_COMPACT` improved to about `14.1 MB` but remains a visible tail.
-   - `SELECTION_DRAG_STATUS` and `ADDITIONAL_SELECTION_DRAG_TOOLBAR` remain around `22-23 MB` in recent samples after modest improvements.
-   - Restarted worker `019e8aee-d2ca-73d2-910a-69e2d3451dd1` is currently running on this tail.
+   - `NON_DRAG_SELECTION_TOOLBAR` is down to about `12.2 MB`; current guardrails show zero QAT probes and zero toolbar writes.
+   - `RIBBON_FORCE_COMPACT` is about `13.4 MB` in the latest focused run and remains a visible tail.
+   - `SELECTION_DRAG_STATUS` and `ADDITIONAL_SELECTION_DRAG_TOOLBAR` are about `4.6 MB` and `5.7 MB` respectively in the latest focused run; treat them as lower priority unless a new benchmark regresses.
+   - The restarted Host worker branch is integrated; future Host work should start from current `origin/main` and avoid overlapping stale worktrees.
 3. Core.Commands:
    - Dense insert undo and dense row/column shift allocations are improved; dense row/column shift now allocates about `12.4-12.6 MB`, so further improvement probably needs model-level cell move primitives or a deeper snapshot/restore redesign.
    - Dense filter/table operations now report low allocations but still have time-cost tails worth rechecking if command work continues.
@@ -467,6 +517,7 @@ The obvious high-impact backlog is reduced but not exhausted.
    - Formula-trace visible arrow drawing improved from about `36.9 MB` to `5.3 MB`.
    - Formula-trace layout visitor improved from about `1.19 MB` to about `5 KB`; timing remains noisy and should be watched if more render work touches that planner.
    - Chart dimension resize repaint improved from about `14.3 MB` to about `46-52 KB` by reusing the light pre-selection render layer cache.
+   - Drawing-object render allocation improved from about `5.2 MB` to `46-53 KB`; first-render/offscreen culling and anchor lookup remain practical follow-up candidates.
 
 ## Subagent Status
 
@@ -502,11 +553,11 @@ Local orchestrator next-wave slice:
 
 Restarted 2026-06-03 workers after Codex restart:
 
-- `019e8aee-d2ca-73d2-910a-69e2d3451dd1`: App.Host drag-status/ribbon compact tail, still running.
+- `019e8aee-d2ca-73d2-910a-69e2d3451dd1`: App.Host drag-status/ribbon compact tail, superseded by restarted worker `019e8b08-ae70-7c80-b40e-fa0432e027e1` and the integrated Host slice.
 - `019e8aee-e6ff-79f1-bfec-cf36cb75b866`: Core.Commands dense-shift tail, completed; rebased commit `5de331aac` integrated to `origin/main`.
-- `019e8b08-ae70-7c80-b40e-fa0432e027e1`: App.Host drag-status/ribbon compact tail, restarted after the user-requested Codex restart; running.
+- `019e8b08-ae70-7c80-b40e-fa0432e027e1`: App.Host drag-status/ribbon compact tail, restarted after the user-requested Codex restart; completed, cleaned to Host-only commit `66a60b9eb`, and integrated to `origin/main`.
 - `019e8b08-c2a0-7992-bd1f-a9fe95c32e3f`: XLSX dense mutated save regression, completed; rebased commit `50bac941e` integrated to `origin/main`.
-- `019e8b24-13ea-7bc3-9bac-c7c1357831a2`: XLSX load ignored-error/style-only metadata tail, restarted after the user-requested Codex restart; running.
+- `019e8b24-13ea-7bc3-9bac-c7c1357831a2`: XLSX load ignored-error/style-only metadata tail, restarted after the user-requested Codex restart; completed, rebased commit `853119318` integrated to `origin/main`.
 
 Local orchestrator slices after restart:
 
@@ -515,6 +566,8 @@ Local orchestrator slices after restart:
 - `codex/perf-app-ui-formula-layout-tail-20260603-r1`: App.UI formula-trace layout lookup allocation tail, completed; rebased commit `7613818b3` integrated to `origin/main`.
 - `codex/perf-xlsx-datavalidation-save-tail-20260603-r1`: XLSX native data-validation save tail, completed; rebased commit `2a6c3066d` integrated to `origin/main`.
 - `codex/perf-app-ui-render-tail-20260603-r4`: App.UI resize pre-selection layer cache tail, completed; commit `f9115462f` integrated to `origin/main`.
+- `codex/perf-app-ui-drawing-objects-tail-20260603-r1`: App.UI drawing-object stable layer cache, completed; rebased commit `e5699197b` integrated to `origin/main`.
+- `codex/perf-host-drag-ribbon-tail-20260603-r1`: App.Host drag/ribbon compact tail, completed; clean Host-only commit `66a60b9eb` integrated to `origin/main`.
 
 ## Resume Checklist
 
@@ -522,12 +575,12 @@ Local orchestrator slices after restart:
    - `git fetch origin`
    - `git status --short --branch`
    - `git rev-list --left-right --count main...origin/main`
-2. Confirm `origin/main` is at or after `f9115462f`. The primary local `main` may still contain unrelated local refactor commits; do not push or overwrite them as part of the performance thread unless their owning session has verified them.
+2. Confirm `origin/main` is at or after `66a60b9eb`. The primary local `main` may still contain unrelated local refactor commits; do not push or overwrite them as part of the performance thread unless their owning session has verified them.
 3. Start the next wave with disjoint scopes:
-   - Check the active App.Host drag-status/ribbon compact worker and integrate if complete.
-   - XLSX IO ignored-errors/data-validation metadata save tails if a semantics-safe streaming path is found.
+   - XLSX IO style-only/ignored-error load-save tail if a semantics-safe streaming or bounded-strip path is found.
+   - XLSX drawing-picture load path baseline and copy-reduction review.
    - Core.Commands dense row/column tails now need deeper model-level redesign; prefer other high-impact areas unless a narrow safe path is proven.
-   - App.UI render benchmark stabilization and remaining chart/formula-trace layout tails.
+   - App.UI drawing-object first-render/offscreen culling and anchor lookup follow-up.
 4. Merge verified slices back to `main` promptly and push after each coherent unit.
 
 ## Codex Restart Pause - 2026-06-03
@@ -578,3 +631,10 @@ Repository checkpoint after App.UI resize cache integration:
 
 - `origin/main` was advanced to `f9115462f` with the App.UI resize pre-selection render cache slice.
 - The primary local `main` was still left untouched for the same unrelated-local-refactor reason.
+
+Repository checkpoint after App.UI drawing-object, XLSX load, and Host tail integrations:
+
+- `origin/main` was advanced to `e5699197b` with the App.UI drawing-object stable render layer cache.
+- `origin/main` was advanced to `853119318` with the bounded XLSX ignored-error/style-only load stripping slice.
+- `origin/main` was advanced to `66a60b9eb` with the clean Host drag/ribbon compact tail slice.
+- The primary local `main` was left untouched; performance integration continued through verified linked worktrees and fast-forward pushes to `origin/main`.
