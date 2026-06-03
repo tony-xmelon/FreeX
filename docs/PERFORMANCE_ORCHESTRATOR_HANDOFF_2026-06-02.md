@@ -1591,3 +1591,22 @@ Repository checkpoint after App.Host open-progress formatter integration:
   - `019e8eb8-bc86-7392-a9a9-22dd949dc971`: App.UI current performance tail, completed commit `41138aaa1` and needs clean orchestrator integration from current `origin/main`.
 - Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
 - Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
+
+Repository checkpoint after Formula aggregate mode and App.UI render-cache integration:
+
+- Integration branch: `codex/perf-formula-ui-integration-20260603-r1`.
+- The integration added rebased Core.Formula commit `ada6cf150`.
+  - Local orchestrator slice from `codex/core-formula-local-census-20260603-r5`.
+  - Change: `AGGREGATE(13,...)` direct-range mode counting now uses a pooled open-addressing table instead of allocating `Dictionary<double, ...>` buckets for every large direct range evaluation. First-occurrence tie semantics are preserved, and the performance guard was tightened from `< 2,000,000` bytes to `< 8,000` bytes.
+  - Metrics: current-main baseline for `=AGGREGATE(13,4,A1:A100000)` was about `17.79 ms` / `1,466,520` bytes. Integration focused samples were `5.38-6.04 ms` / `304` bytes.
+  - Verification: focused mode guard passed `1/1`; focused aggregate selection rerun passed `5/5`; full Formula performance filter passed `67/67`; full Release `FreeX.Core.Formula.Tests` passed `2750/2750`. The first cold integration run of the Formula performance filter exposed an existing direct-selection `ArrayPool` cold allocation and passed on focused/full rerun after warm-up.
+- The integration added rebased App.UI commit `610c09c9`.
+  - Worker: `019e8f2c-2041-7131-b52e-8c3dcf3abe95`.
+  - Change: `GridView` render lookup and pre-selection layer caches are keyed by stable viewport source lists instead of the transient `ViewportModel` wrapper, so equivalent wrapper refreshes reuse cached lookup/layer state while changed cell/metric lists still invalidate.
+  - Metrics: worker baseline for `GRID_RENDER_COMMENT_INDICATORS` was `3114.86 ms` total / `194.53 ms` mean / `3,157,328` bytes. Worker final focused sample was `1222.22 ms` total / `76.27 ms` mean / `84,696` bytes. Integration focused sample was `260.25 ms` total / `16.25 ms` mean / `70,200` bytes; full App.UI sample was `257.52 ms` total / `16.08 ms` mean / `74,616` bytes.
+  - Verification: focused App.UI render/performance set passed `104/104`; full Release `FreeX.App.UI.Tests` passed `584/584`.
+- Integration verification also included `git diff --check origin/main...HEAD` passing before the docs update.
+- Still-running worker:
+  - `019e8f2c-0b69-7d00-b521-85c029627c45`: App.Host current performance tail on `codex/app-host-performance-tail-20260603-r10`.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
