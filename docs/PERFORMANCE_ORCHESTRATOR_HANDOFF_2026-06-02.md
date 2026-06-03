@@ -1048,3 +1048,26 @@ Repository checkpoint after column metadata, Core.Calc sparse viewport, and App.
   - Metrics: focused worker baseline `GRID_RENDER_DRAWING_OBJECT_SELECTION_REPAINT` was `31,345,144` bytes / `141.23 ms` mean; worker final sample was `268,496` bytes / `69.14 ms` mean. The rebased integration sample was `287,256` bytes / `90.84 ms` mean.
   - Verification: rebased `GridViewPerformanceMeasurementTests` passed `18/18`; full `FreeX.App.UI.Tests` passed `572/572`; `git diff --check HEAD~1..HEAD` passed.
 - The primary local `main` remained untouched and locally divergent; performance integration continued through linked worktrees and fast-forward pushes to `origin/main`.
+
+Repository checkpoint after Core.Model census/no-patch probe:
+
+- Local branch `codex/perf-core-model-census-tail-20260603-r1` was synced to `origin/main` at `dc1988e27` and left as a documentation/census branch.
+- Full Core.Model benchmark-class census passed `38/38`.
+- Current notable samples:
+  - `WATCHWINDOW_GET_ENTRIES_MANY`: `6,050,280` bytes.
+  - `CLIPBOARD_DESERIALIZE_DENSE`: `7,686,400` bytes.
+  - `CLIPBOARD_SERIALIZE_DENSE`: `2,766,720` bytes.
+  - `FLASHFILL_COLUMNS_EMAIL`: `9,630,560` bytes.
+  - `FLASHFILL_FIRST_TOKENS`: `4,944,120` bytes.
+  - `FLASHFILL_FILE_EXTENSIONS`: `900,920` bytes.
+  - `SUBTOTAL_PLAN_MANY_GROUPS_PAGEBREAKS`: `1,712,032` bytes.
+  - `PIVOT_REFRESH_COLUMN_VALUE_FILTER_SORT`: `9,171,904` bytes.
+  - Dense row/column shifts stayed around the current integrated range: `12.42-12.59 MB`; metadata shifts stayed around `6.93-7.08 MB`.
+- No source patch was carried from this census:
+  - Flash Fill email/first-token/file-extension paths are mostly required output-string allocation; the email path already uses the lower-allocation token-pair helpers.
+  - A Subtotal plan streaming trial increased allocation (`1,712,032 -> 1,854,232` bytes) because losing exact group-count/list pre-sizing outweighed the removed span list, so it was reverted.
+  - Watch Window entries already use pooled sort buffers, value-type entries, and exact arrays; remaining allocation is dominated by the returned entry array and formatted value strings, so a safe narrow patch would require API or presentation-string caching changes.
+- Current active workers launched with full-access/no-permission instructions:
+  - `019e8c79-53c6-7511-947b-dddd55ba7839`: Core.Formula evaluator/built-in function tail, scope `src/FreeX.Core.Formula/**` and `tests/FreeX.Core.Formula.Tests/**`.
+  - `019e8c79-86bc-7e42-8654-b1f3a0d6eaab`: App.Host performance-review tail, scope `src/FreeX.App.Host/**` and `tests/FreeX.App.Host.Tests/**`.
+  - `019e8c7f-ed62-7f70-be6b-fd09149881aa`: Core.IO allocation tail, scope `src/FreeX.Core.IO/**` and `tests/FreeX.Core.IO.Tests/**`.
