@@ -1446,6 +1446,22 @@ Repository checkpoint after Calc shared-leaf and Formula parsed-reference integr
 - Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
 - Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
 
+Repository checkpoint after Core.IO SpreadsheetML numeric write integration:
+
+- `origin/main` was advanced to `f53ffcfd6` with `codex/perf-io-spreadsheetxml-integration-20260603-r1`.
+- The integration added rebased Core.IO commit `f53ffcfd6`.
+  - Worker: `019e8ed2-20ea-7272-bdf1-6b640a53a3dd`.
+  - Change: SpreadsheetML save writes numeric cell text and `uint` row/cell index attributes through a per-thread reusable `char[]` buffer plus `TryFormat`, avoiding per-value formatted string allocation on dense numeric save paths.
+  - Metrics: worker baseline `SPREADSHEET_XML_SAVE_DENSE` was `194.35 ms` / `11,383,816` bytes; integration focused samples were `118.53-157.11 ms` / `9,709,552` bytes. Worker baseline `SPREADSHEET_XML_SAVE_RICH_DENSE` was `164.05 ms` / `18,155,536` bytes; integration focused samples were `309.73-319.54 ms` / about `16,49x,xxx` bytes, with timing noisy and allocation stable.
+  - Verification: focused SpreadsheetML filter passed `141/141`; full IO benchmark filter passed `26/26`; full Release `FreeX.Core.IO.Tests` passed `1818/1818`; `git diff --check origin/main..HEAD` passed before push.
+- Completed Core.IO worker `019e8ed2-20ea-7272-bdf1-6b640a53a3dd` can be closed after this docs push.
+- Pending completed worker after this push:
+  - `019e8ed2-5c8a-7c22-ad1d-ab86a7340ed4`: Core.Calc sparse viewport metric slice, commit `b15d32313`, needs clean orchestrator integration from current `origin/main`.
+- Still-running worker:
+  - `019e8ed1-b4cd-7180-abd1-73756789dba5`: App.Host current performance tail.
+- Hourly thread heartbeat automation remains absent; do not recreate it unless the user explicitly asks.
+- Primary local `main` remains untouched and divergent; continue performance integration from linked worktrees based on `origin/main`.
+
 Repository checkpoint after App.UI chart build collection pre-sizing:
 
 - `origin/main` was advanced to `866c1a5f6` with `codex/perf-ui-chart-presize-integration-20260603-r1`.
