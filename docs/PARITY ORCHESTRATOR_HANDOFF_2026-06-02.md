@@ -85,6 +85,7 @@ The 2026-06-02 resume continued on isolated branch/worktree
 - `c0f981318` - Extended Error Checking's omitted-adjacent-cells aggregate rule to statistical aggregate formulas (`STDEV`, `STDEVP`, `STDEV.S`, `STDEV.P`, `VAR`, `VARP`, `VAR.S`, and `VAR.P`) and regenerated command-surface parity docs.
 - `9d578e9af` - Resolved same-sheet named ranges inside Error Checking omitted-adjacent aggregate arguments while keeping other-sheet named ranges out of the current-sheet heuristic, and regenerated command-surface parity docs.
 - `136ae1d0a` - Resolved bounded custom number-format workbook-theme color directives with optional `TintNN`/`TintNN%` suffixes through the active workbook theme for formatter and viewport display paths, and regenerated command-surface parity docs.
+- `e65c7f022` - Counted modeled hyperlinks as hidden sheet/row/column content in Accessibility Checker hidden-content scans, including hyperlink-only hidden sheets and blank-cell hyperlinks in hidden rows or columns, and regenerated command-surface parity docs.
 
 Read-only audits also confirmed current `main` already exhausts the obvious stale branch deltas for Spell Check, Accessibility Checker, Error Checking, prior XSLT/file-format lanes, QAT import/export polish, Selection Pane mixed reorder coverage, and manual worksheet page-break metadata/storage/preview coverage. Remaining QAT `customUI`, PDF/A/tagged PDF, full Draw effect galleries, full workbook theme effect fidelity beyond the bounded shadow/glow approximations, full dictionary/proofing, and full Accessibility Checker taxonomy items are still broad/deferred rather than safe small slices.
 
@@ -112,6 +113,13 @@ Additional resume verification:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the tinted workbook-theme number-format color slice.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the tinted workbook-theme number-format color slice.
 - `git diff --check` - clean after the tinted workbook-theme number-format color slice.
+- `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - 85/85 passed after the hidden hyperlink-only content slice.
+- `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors after the hidden hyperlink-only content slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated Accessibility Checker generated docs after the hidden hyperlink-only content slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-GeneratedDocs.ps1` - generated docs up to date after the hidden hyperlink-only content slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-ConflictMarkers.ps1` - passed after the hidden hyperlink-only content slice.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - repository preflight passed after the hidden hyperlink-only content slice.
+- `git diff --check` - clean after the hidden hyperlink-only content slice.
 - `dotnet test tests\FreeX.Core.Model.Tests\FreeX.Core.Model.Tests.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~AccessibilityCheckerServiceTests" -v:minimal` - passed.
 - `dotnet build src\FreeX.Core.Commands\FreeX.Core.Commands.csproj --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -clp:Summary -v:minimal` - 0 warnings/errors.
 - `powershell -NoProfile -ExecutionPolicy Bypass -File tools\Generate-CommandInventoryDocs.ps1` - regenerated QAT and Accessibility Checker generated docs.
