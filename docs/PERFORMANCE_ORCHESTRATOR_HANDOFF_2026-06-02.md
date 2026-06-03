@@ -1153,3 +1153,15 @@ Repository checkpoint after Core.IO replay, Core.Calc dependency scan, App.UI ov
   - Metrics: `RepeatedBooleanCoercionFormulaTextEvaluation_AvoidsCoercedNumberChurn` improved from `407.71 ms` / `2,400,040` bytes to the rebased focused sample `279.87 ms` / `40` bytes over 100,000 evaluations.
   - Verification: focused Formula performance test passed `1/1`; full Release `FreeX.Core.Formula.Tests` passed `2726/2726`; `git diff --check HEAD~1..HEAD` passed.
 - All worker agents from this wave have been closed. The primary local `main` remains outside the performance integration path; continue using linked worktrees from `origin/main`.
+
+Repository checkpoint after Core.Calc range-precedent capacity integration:
+
+- `origin/main` was advanced to `70855d35a` with `codex/perf-core-calc-next-wave-20260603-r1`.
+  - Change: `DependencyGraph.EnsureFormulaCapacity` now pre-sizes range-precedent storage alongside exact-precedent storage before formula dependency rebuilds. Repeated formulas with compact range dependencies avoid repeated dictionary growth during registration.
+  - Metrics: `Benchmark_RepeatedIdenticalFormulaDependencyRebuild_ReportsParserCacheTail` improved from the branch baseline `1,916,456` bytes / `383` bytes per formula to the rebased final sample `1,464,496-1,464,544` bytes / `292` bytes per formula. Exact-reference formula-free rebuild allocation stayed flat at `1,217,280` bytes / `152,160` bytes per iteration.
+  - Verification: focused source/benchmark set passed `3/3`; full `PerformanceBenchmarkTests` passed `18/18`; full Release `FreeX.Core.Calc.Tests` passed `677/677`; `git diff --check` passed before commit.
+- Active workers at this checkpoint:
+  - `019e8cd4-fb02-7ef0-bc62-df786d7aeb38`: App.Host performance tail, scope `src/FreeX.App.Host/**` and `tests/FreeX.App.Host.Tests/**`.
+  - `019e8cd5-1d43-77a1-b87e-cdf21adb8d51`: Core.Model/Commands performance tail, scope `src/FreeX.Core.Model/**`, `src/FreeX.Core.Commands/**`, and `tests/FreeX.Core.Model.Tests/**`.
+  - `019e8cd5-307a-7a60-a36e-ed768b44412e`: Core.IO performance tail, scope `src/FreeX.Core.IO/**` and `tests/FreeX.Core.IO.Tests/**`.
+- Hourly thread heartbeat automation `hourly-performance-orchestrator-status` is active for progress updates while the performance goal remains active.
