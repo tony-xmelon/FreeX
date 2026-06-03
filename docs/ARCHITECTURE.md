@@ -169,7 +169,8 @@ a PDF destination model that can map workbook locations to exported page coordin
 printed pages are rendered through the existing chart bitmap renderer and clipped to the printed page body so PDF and
 XPS exports include the same raster chart content as print. The printed chart layer also records bounded selectable
 PDF text overlays for fully visible embedded chart titles, X/Y axis titles including rotated Y-axis title metadata,
-legend entries, category and value-axis tick labels, and data labels for classic embedded category charts, while the
+legend entries, category and value-axis tick labels, and data labels for classic embedded category charts, plus
+slice legend entries and value/percentage data labels for embedded pie-family charts (pie, 3-D pie, and doughnut), while the
 chart bitmap remains the visual source of truth. Vector chart graphics, chart-sheet pagination, full chart text
 coverage, and full drawing-object z-order fidelity remain separate deferred scope. XPS export remains a separate ReachFramework-backed
 path for Windows print-pipeline workflows. `ExportOptions` models active-sheet, selected-range, entire-workbook, and
