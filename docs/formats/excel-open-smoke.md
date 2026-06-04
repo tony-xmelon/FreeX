@@ -283,9 +283,10 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   for FreeX-saved and Excel-saved outputs, and it also checks that saved ZIP package part names are
   canonical and unique, that saved packages contain no repair/recovery log XML, that
   `[Content_Types].xml` declarations are well-formed, unique, non-stale, and give every saved ZIP
-  part an effective content type, and that every saved `.rels` part has valid relationship XML,
-  well-formed relationship declarations, and non-external targets that resolve to package parts
-  before the workbook is accepted.
+  part an effective content type, that relationship parts use the OPC relationship content type
+  and no ordinary package part masquerades as relationship XML, and that every saved `.rels` part
+  has valid relationship XML, well-formed relationship declarations, and non-external targets that
+  resolve to package parts before the workbook is accepted.
 - The local-private Partner Dashboard regression row
   `local-private-partner-dashboard-20250116` passed
   `--save-reopen --freex-resave-before-excel`: `1/1`, with the manifest retention gates above.
@@ -312,7 +313,8 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   In addition to those row-specific MIME checks, every FreeX-saved and Excel-saved package in the
   smoke run must have canonical unique ZIP package part names, no repair/recovery log XML,
   well-formed, unique, non-stale `[Content_Types].xml` declarations with effective content-type
-  coverage for all ZIP parts, a package-root `officeDocument` relationship
+  coverage for all ZIP parts, exact relationship-part content-type semantics, a package-root
+  `officeDocument` relationship
   to `xl/workbook.xml` with the SpreadsheetML workbook content type, parseable relationship parts,
   well-formed relationship declarations, and existing package targets for every non-external
   relationship.
