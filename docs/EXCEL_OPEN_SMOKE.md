@@ -265,9 +265,12 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   single XML cells, slicers, timelines, external links, custom XML, calc chains, document
   properties, and worksheet/workbook native metadata package retention through desktop Excel.
   Concrete Excel-visible feature assertions are enabled for non-native metadata rows whose package
-  fixtures surface charts, data validation, or conditional formatting; native-only formula,
-  named-range, and table package metadata remain covered by package-retention gates rather than
-  Excel-visible model-count smoke gates.
+  fixtures surface charts, data validation, or conditional formatting, plus selected native
+  metadata rows that desktop Excel exposes as workbook structure protection, worksheet protection,
+  protected ranges, workbook defined names, header/footer text, and x14 sparklines. Formula,
+  structured-table, and named-range-count package fixtures remain covered by package-retention
+  gates until their generated package fixups materialize those features in Excel-visible saved
+  workbooks.
 - The default generated corpus command now selects all materializable generated supported rows,
   covering `supported-pass` plus `supported-metadata-pass` fixtures in one bidirectional
   FreeX-resave -> desktop Excel save/reopen gate. The current default generated corpus run passed
