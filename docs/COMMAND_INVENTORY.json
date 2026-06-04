@@ -400,7 +400,7 @@
             {
               "name": "Full Border Gallery",
               "status": "Partial",
-              "notes": "Expanded preset gallery with remembered line color/style; Draw Border Grid and Erase Border apply remembered borders or clear borders to clicked/dragged grid ranges; edge-level pencil border drawing remains deferred"
+              "notes": "Expanded preset gallery with remembered line color/style; Draw Border applies remembered outline/perimeter borders to clicked or dragged rectangular ranges, including all four edges for a single cell; Draw Border Grid and Erase Border apply remembered borders or clear borders to clicked/dragged grid ranges. Exact Excel freehand stroke fidelity remains partial"
             },
             {
               "name": "Theme Colors",
@@ -1654,7 +1654,7 @@
             {
               "name": "Full Border Gallery",
               "status": "Partial",
-              "notes": "Expanded preset gallery with remembered line color/style; Draw Border Grid and Erase Border apply remembered borders or clear borders to clicked/dragged grid ranges; edge-level pencil border drawing remains deferred"
+              "notes": "Expanded preset gallery with remembered line color/style; Draw Border applies remembered outline/perimeter borders to clicked or dragged rectangular ranges, including all four edges for a single cell; Draw Border Grid and Erase Border apply remembered borders or clear borders to clicked/dragged grid ranges. Exact Excel freehand stroke fidelity remains partial"
             },
             {
               "name": "Theme Colors",
