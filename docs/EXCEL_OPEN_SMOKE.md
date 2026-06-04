@@ -67,9 +67,9 @@ expectations, not just passive summary counts. When `--save-reopen` is used, the
 FreeX cannot load the expected feature metadata before Excel opens the staged workbook, if Excel
 open/reopen loses the expected formula cells, named ranges, structured tables, charts, validation
 cells, conditional-format rules, hyperlinks, comments, worksheet/workbook protection, worksheet
-shapes, or PivotTables, or if FreeX cannot reload the Excel-saved copy with the expected metadata
-still present. These supported FreeX-authored feature fixtures also fail on any FreeX load warning
-before Excel or after reloading Excel's saved copy.
+pictures, sparklines, text boxes, drawing shapes, or PivotTables, or if FreeX cannot reload the
+Excel-saved copy with the expected metadata still present. These supported FreeX-authored feature
+fixtures also fail on any FreeX load warning before Excel or after reloading Excel's saved copy.
 For generated and local-private supported corpus rows without declared warning expectations, the
 smoke also fails on any FreeX load warning before Excel or after reloading Excel's saved copy.
 Public corpus rows without declared warning expectations now participate in the same no-warning
@@ -131,11 +131,11 @@ The local-private Partner Dashboard row `local-private-partner-dashboard-2025011
 additional retention gates when the file is present. The FreeX-resaved path must retain at least
 `16000` formulas, `1` table, `3` PivotTables, `1` pivot cache, `5` validations, `47` hyperlinks,
 `117` comments, `1` picture, and `120` Excel-visible worksheet shapes; Excel open/save/reopen must
-also preserve the hyperlink and comment counts. Conditional-format retention is gated at `100`
-rules before Excel opens the FreeX-saved copy and `66` rules after Excel save/reopen, reflecting
-Excel's normalization of duplicate status-text rules in that workbook. The row also participates in
-the supported-workbook no-warning gate: FreeX must emit zero load warnings before Excel and zero
-load warnings after reloading Excel's saved copy.
+also preserve the hyperlink, comment, and picture counts. Conditional-format retention is gated at
+`100` rules before Excel opens the FreeX-saved copy and `66` rules after Excel save/reopen,
+reflecting Excel's normalization of duplicate status-text rules in that workbook. The row also
+participates in the supported-workbook no-warning gate: FreeX must emit zero load warnings before
+Excel and zero load warnings after reloading Excel's saved copy.
 
 ## Operational details
 
