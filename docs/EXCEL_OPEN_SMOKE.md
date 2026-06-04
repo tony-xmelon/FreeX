@@ -58,20 +58,23 @@ This generates the manifest rows backed by `XlsxCorpusFixtureFactory` under the 
 including both `supported-pass` model fixtures and `supported-metadata-pass` package fixtures by
 default. It adds feature-tag expectations for formulas, structured tables, data validation,
 conditional formatting, named ranges, charts, hyperlinks, comments, images, sparklines,
-text boxes/shapes, structure, protection, page setup, allow-edit ranges, and PivotTables. Structure
-tags assert Excel-visible merged areas, freeze panes, hidden rows/columns, custom row/column
-dimensions, and outline rows/columns. Page setup tags now assert Excel-visible print areas, print
-titles, landscape orientation, scale-to-fit, print gridlines/headings, headers/footers, and manual
-page breaks. Use `--corpus-status <status>` to narrow the generated set for focused runs.
+text boxes/shapes, formatting/styles/number formats, structure, protection, page setup,
+allow-edit ranges, and PivotTables. Formatting/style tags assert Excel-visible styled cells and
+non-General number-format cells. Structure tags assert Excel-visible merged areas, freeze panes,
+hidden rows/columns, custom row/column dimensions, and outline rows/columns. Page setup tags now
+assert Excel-visible print areas, print titles, landscape orientation, scale-to-fit, print
+gridlines/headings, headers/footers, and manual page breaks. Use `--corpus-status <status>` to
+narrow the generated set for focused runs.
 
 Formula, named-range, structured table, chart, validation/conditional-format, hyperlink/comment,
-drawing/shape, sparkline/image, structure, protection/page-setup, allow-edit-range, and PivotTable feature
+drawing/shape, sparkline/image, formatting/style/number-format, structure, protection/page-setup,
+allow-edit-range, and PivotTable feature
 fixtures have retention expectations, not just passive summary counts. When `--save-reopen` is used, the smoke fails if
 FreeX cannot load the expected feature metadata before Excel opens the staged workbook, if Excel
 open/reopen loses the expected formula cells, named ranges, structured tables, charts, validation
 cells, conditional-format rules, hyperlinks, comments, worksheet/workbook protection, worksheet
-pictures, sparklines, text boxes, drawing shapes, Excel-visible structure/page setup/protected-range
-metadata, or PivotTables, or if FreeX cannot reload the Excel-saved copy with the expected metadata
+pictures, sparklines, text boxes, drawing shapes, Excel-visible formatting/number-format,
+structure/page setup/protected-range metadata, or PivotTables, or if FreeX cannot reload the Excel-saved copy with the expected metadata
 still present. These supported FreeX-authored feature fixtures also fail on any FreeX load warning
 before Excel or after reloading Excel's saved copy.
 For generated and local-private supported corpus rows without declared warning expectations, the
@@ -214,6 +217,10 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   representative FreeX-saved outputs passed Open XML SDK schema validation with `errors=0`.
 - Excel-side metadata assertions now cover validation/conditional formatting too: the validation/CF
   fixture must expose validation cells and `4` conditional-format rules through Excel open/reopen.
+- Excel-side formatting assertions now cover generated supported-pass formatting/style rows through
+  Excel open/reopen: styled cells and non-General number-format cells are asserted where tagged. A
+  focused 2026-06-04 generated `supported-pass` run passed `52/52` after FreeX resave with those
+  counters enabled, and caught a built-in Excel number-format ID load regression before the fix.
 - Excel-side page setup and protected-range assertions now cover the protection/page fixture through
   Excel open/reopen: `1` print-area sheet, `1` print-title sheet, `1` landscape sheet, `1`
   scale-to-fit sheet, `1` print grid/headings sheet, `1` header/footer sheet, `2` manual page

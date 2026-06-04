@@ -19,7 +19,7 @@ Current executable manifest baseline: 176 rows (121 generated, 25 public, 21 loc
 |---|---:|---|---|
 | Basic grid data | 20 | Plain workbooks with numbers, text, blanks, booleans, dates, and errors | Values, sheet names, dimensions |
 | Formulas | 20 | Common arithmetic, aggregate, lookup, date/time, text, logical, and cross-sheet formulas | Formula text, cached values when present, recalc result |
-| Formatting | 15 | Fonts, fills, borders, alignment, wrapping, number formats, style-only empty cells | Style IDs, rendered display text, cell style properties |
+| Formatting | 15 | Fonts, fills, borders, alignment, wrapping, number formats, style-only empty cells | Style IDs, rendered display text, cell style properties, plus Excel-visible smoke counters for styled cells and non-General number-format cells |
 | Structure | 10 | Multiple sheets, hidden rows/columns, row heights, column widths, freeze panes, merged regions | Model metadata plus Excel-visible smoke counters for merged areas, freeze panes, hidden rows/columns, custom dimensions, and outline groups |
 | Named ranges and validation | 10 | Defined names, list validation, numeric/date/text/custom validation, input/error messages | Native model records, XLSX round-trip |
 | Conditional formatting | 10 | Modeled conditional-format rules plus unknown/future rules retained from native XML | Supported rules preserved, unknown rules retained |
@@ -88,7 +88,7 @@ Allowed `expected_status` values:
 4. Reopen the saved file.
 5. Compare supported model features against the first loaded model.
 6. Verify expected unsupported/excluded warnings were emitted.
-7. Verify feature tags that have deterministic model or Excel-visible signals, such as named ranges, hyperlinks, merged cells, chart counts, structure counters, page setup/protected-range counters, and cell-type content.
+7. Verify feature tags that have deterministic model or Excel-visible signals, such as named ranges, hyperlinks, merged cells, chart counts, formatting/number-format counters, structure counters, page setup/protected-range counters, and cell-type content.
 8. Compare retained critical package parts and relationship targets for known-gap packages.
 9. Record pass/fail by workbook and by feature bucket.
 
