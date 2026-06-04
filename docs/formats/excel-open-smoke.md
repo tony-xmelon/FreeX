@@ -190,6 +190,9 @@ Excel and zero load warnings after reloading Excel's saved copy.
 - FreeX-saved and Excel-saved packages must also keep the package root wired as an XLSX workbook:
   `_rels/.rels` must contain an `officeDocument` relationship to `xl/workbook.xml`, and
   `xl/workbook.xml` must have the SpreadsheetML workbook content type.
+- Active worksheet hyperlink package graphs are validated in every FreeX-saved and Excel-saved
+  package: each `<hyperlink r:id>` must resolve to a worksheet hyperlink relationship with an
+  external target, while internal location-only hyperlinks remain valid without a relationship.
 - Metadata rows can declare required Excel-saved package parts. The smoke then opens the
   Excel `SaveCopyAs` ZIP and fails if any required package part disappeared; this now covers the
   generated printer-settings, calc-chain, header/footer legacy-drawing, slicer, timeline,
