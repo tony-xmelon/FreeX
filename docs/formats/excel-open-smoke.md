@@ -94,7 +94,8 @@ types, workbook relationships, and cell/row/column style indexes that resolve in
 worksheet shared-string tables, exact content types, and workbook relationships; workbook sheet
 relationship graphs with exact sheet content types; shared-string cell indexes that resolve into
 the shared-string table; hyperlink and merged-cell XML, inline-string cells, hyperlink relationship
-graphs, mixed cell types, 31-character sheet-name boundaries, and chartsheet package graphs through
+graphs, mixed cell types, 31-character sheet-name boundaries, worksheet drawing package graphs
+through drawing/chart/image relationships and content types, and chartsheet package graphs through
 drawing/chart relationships and content types.
 Excel-saved copies assert the same Excel-stable public
 package structures after `SaveCopyAs`, excluding inline-string encoding because desktop Excel may
@@ -321,7 +322,9 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   relationship, plus workbook sheet relationship graphs with exact worksheet, chartsheet,
   dialogsheet, and macrosheet content types, and shared-string package graphs whose `t="s"` cells
   resolve to existing `xl/sharedStrings.xml` entries, and styles package graphs whose cell, row,
-  and column style indexes resolve into `xl/styles.xml` `cellXfs` entries.
+  and column style indexes resolve into `xl/styles.xml` `cellXfs` entries, and worksheet drawing
+  package graphs whose drawing/chart/image references resolve to drawing, chart, and image package
+  parts with matching relationship and content-type declarations.
   Concrete Excel-visible feature assertions are enabled for non-native metadata rows whose package
   fixtures surface charts, data validation, or conditional formatting, plus selected native
   metadata rows that desktop Excel exposes as workbook structure protection, worksheet protection,
