@@ -22,6 +22,7 @@ Use these files as the current documentation set. Point-in-time reports are snap
 - [OUTSTANDING_BUILD.md](OUTSTANDING_BUILD.md) - source-of-truth backlog for outstanding build work.
 - [PROJECT_STATUS_REPORT_2026-06-04.md](PROJECT_STATUS_REPORT_2026-06-04.md) - current project status snapshot; current `overallCompletion` remains 95 while parity hardening, release validation, localization review/package metadata, and XLSX fidelity proof continue.
 - [NEXT_PHASES_PLAN.md](NEXT_PHASES_PLAN.md) - next development phases and priority sequencing.
+- [PERFORMANCE_BACKLOG_2026-06-04.md](PERFORMANCE_BACKLOG_2026-06-04.md) - current performance backlog and active XLSX open/save IO priority.
 
 ## Parity And Fidelity
 
@@ -61,6 +62,7 @@ Use these files as the current documentation set. Point-in-time reports are snap
 - [DECISIONS/008-code-review-hardening-2026-05-28.md](DECISIONS/008-code-review-hardening-2026-05-28.md) - ADR for the May 28 code-review hardening batch.
 - [NATIVE_JSON_SCHEMA.md](NATIVE_JSON_SCHEMA.md) - FreeX native JSON format.
 - [PERF_BASELINE.md](PERF_BASELINE.md) - performance baseline notes.
+- [PERFORMANCE_BACKLOG_2026-06-04.md](PERFORMANCE_BACKLOG_2026-06-04.md) - current performance backlog and XLSX IO focus.
 - [PERFORMANCE_REVIEW_2026-05-28.md](PERFORMANCE_REVIEW_2026-05-28.md) - May 28 UI performance review, measurements, and remaining bottlenecks.
 
 ## Historical Snapshots
