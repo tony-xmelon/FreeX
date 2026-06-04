@@ -398,6 +398,8 @@ and plans undoable replacement edits while leaving formula cells alone.
 The host workflow keeps Ignore All case-insensitive for the current pass and persists Add to Dictionary custom words
 through `FreeXOptions` so matching scanner results stay suppressed across sessions/workbooks without introducing a full
 proofing dictionary engine.
+The Options dialog's Proofing page edits that same custom dictionary through a local list model so OK persists
+normalized add/remove/clear changes and Cancel leaves the original options object untouched.
 
 Accessibility Checker remains a deterministic model-backed audit in `Core.Commands`, not a full WCAG or screen-reader
 engine. It reports issues supported by current workbook state, including merged cells, blank structured-table headers,
