@@ -90,11 +90,12 @@ assertion unless their manifest tags identify an unsupported or excluded warning
 such as the public chartsheet retention row.
 Public corpus rows with package-only manifest tags also assert their declared package structures on
 the produced FreeX-saved ZIPs before Excel opens them: styles/formatting parts, exact content
-types, and workbook relationships; worksheet shared-string tables, exact content types, and
-workbook relationships; workbook sheet relationship graphs with exact sheet content types;
-shared-string cell indexes that resolve into the shared-string table; hyperlink and merged-cell XML,
-inline-string cells, hyperlink relationship graphs, mixed cell types, 31-character sheet-name
-boundaries, and chartsheet package graphs through drawing/chart relationships and content types.
+types, workbook relationships, and cell/row/column style indexes that resolve into `cellXfs`;
+worksheet shared-string tables, exact content types, and workbook relationships; workbook sheet
+relationship graphs with exact sheet content types; shared-string cell indexes that resolve into
+the shared-string table; hyperlink and merged-cell XML, inline-string cells, hyperlink relationship
+graphs, mixed cell types, 31-character sheet-name boundaries, and chartsheet package graphs through
+drawing/chart relationships and content types.
 Excel-saved copies assert the same Excel-stable public
 package structures after `SaveCopyAs`, excluding inline-string encoding because desktop Excel may
 normalize those cells into shared strings without a repair.
@@ -319,7 +320,8 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   well-formed relationship declarations, and existing package targets for every non-external
   relationship, plus workbook sheet relationship graphs with exact worksheet, chartsheet,
   dialogsheet, and macrosheet content types, and shared-string package graphs whose `t="s"` cells
-  resolve to existing `xl/sharedStrings.xml` entries.
+  resolve to existing `xl/sharedStrings.xml` entries, and styles package graphs whose cell, row,
+  and column style indexes resolve into `xl/styles.xml` `cellXfs` entries.
   Concrete Excel-visible feature assertions are enabled for non-native metadata rows whose package
   fixtures surface charts, data validation, or conditional formatting, plus selected native
   metadata rows that desktop Excel exposes as workbook structure protection, worksheet protection,
