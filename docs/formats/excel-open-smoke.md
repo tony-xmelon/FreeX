@@ -326,7 +326,9 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   package graphs whose drawing/chart/image references resolve to drawing, chart, and image package
   parts with matching relationship and content-type declarations, and worksheet table package
   graphs whose `tableParts` references resolve to table package parts with exact relationship and
-  content-type declarations.
+  content-type declarations, and PivotTable package graphs whose worksheet pivot-table references,
+  workbook pivot-cache references, pivot-cache records references, and pivot-table cache bindings
+  resolve to matching package parts with exact relationship and content-type declarations.
   Concrete Excel-visible feature assertions are enabled for non-native metadata rows whose package
   fixtures surface charts, data validation, or conditional formatting, plus selected native
   metadata rows that desktop Excel exposes as workbook structure protection, worksheet protection,
