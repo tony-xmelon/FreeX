@@ -268,9 +268,12 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   passed: `52/52`. This covers printer settings, workbook and worksheet smart tags, worksheet
   single XML cells, slicers, timelines, external links, custom XML, calc chains, document
   properties, and worksheet/workbook native metadata in the repair-free desktop Excel
-  open/save/reopen path. Printer-settings, calc-chain, header/footer legacy-drawing, slicer,
-  timeline, external-link, and custom XML rows additionally assert that their required package
-  parts remain present in Excel-saved ZIPs.
+  open/save/reopen path. Printer-settings, calc-chain, document-property, header/footer
+  legacy-drawing, worksheet legacy-drawing, slicer, timeline, external-link, and custom XML
+  rows additionally assert that their required package parts remain present in FreeX-saved ZIPs
+  before Excel opens them; printer-settings, calc-chain, header/footer legacy-drawing, slicer,
+  timeline, external-link, and custom XML rows also assert package parts that remain present in
+  Excel-saved ZIPs.
   Concrete Excel-visible feature assertions are enabled for non-native metadata rows whose package
   fixtures surface charts, data validation, or conditional formatting, plus selected native
   metadata rows that desktop Excel exposes as workbook structure protection, worksheet protection,
