@@ -78,6 +78,11 @@ pictures, sparklines, text boxes, drawing shapes, Excel-visible formatting/numbe
 structure/page setup/protected-range metadata, or PivotTables, or if FreeX cannot reload the Excel-saved copy with the expected metadata
 still present. These supported FreeX-authored feature fixtures also fail on any FreeX load warning
 before Excel or after reloading Excel's saved copy.
+
+Excel-side feature probes are expectation-driven for manifest rows: the smoke always opens/saves and
+reopens selected workbooks, but it only asks desktop Excel for expensive per-feature counts when the
+row's tags require those counts. Inputs without feature expectations validate Excel openability and
+repair-free SaveCopyAs without forcing unrelated empty table/pivot/formatting probes.
 For generated and local-private supported corpus rows without declared warning expectations, the
 smoke also fails on any FreeX load warning before Excel or after reloading Excel's saved copy.
 Public corpus rows without declared warning expectations now participate in the same no-warning
@@ -221,11 +226,10 @@ As of 2026-06-04 on the local desktop Excel COM environment:
 - Excel-side formatting assertions now cover generated supported-pass formatting/style rows through
   Excel open/reopen: styled cells, non-General number-format cells, bold cells, filled cells,
   bordered cells, aligned cells, and wrapped cells are asserted where tagged. Focused 2026-06-04
-  formatting-detail verification passed the three tagged formatting rows and a broader `51/51`
-  generated `supported-pass` sweep excluding the unrelated `generated-grid-basic-001` row after
-  local Excel COM returned `RPC_E_SERVERCALL_RETRYLATER` on that no-formatting workbook; earlier
-  generated `supported-pass` runs caught a built-in Excel number-format ID load regression before
-  the fix.
+  formatting-detail verification passed the three tagged formatting rows, and the stabilized
+  expectation-driven smoke restored the full generated `supported-pass` run to `52/52` after FreeX
+  resave, including `generated-grid-basic-001`. Earlier generated `supported-pass` runs caught a
+  built-in Excel number-format ID load regression before the fix.
 - Excel-side page setup and protected-range assertions now cover the protection/page fixture through
   Excel open/reopen: `1` print-area sheet, `1` print-title sheet, `1` landscape sheet, `1`
   scale-to-fit sheet, `1` print grid/headings sheet, `1` header/footer sheet, `2` manual page
