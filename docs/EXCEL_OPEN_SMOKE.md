@@ -168,6 +168,9 @@ Excel and zero load warnings after reloading Excel's saved copy.
   workbook validation failure.
 - FreeX-saved copies and Excel-saved copies are validated with the Open XML SDK Microsoft 365
   schema validator; any package-open or schema error is reported as a workbook validation failure.
+- Metadata rows can declare required Excel-saved package parts. The smoke then opens the
+  Excel `SaveCopyAs` ZIP and fails if any required package part disappeared; this now covers the
+  generated slicer, timeline, and custom XML package rows.
 - Excel-saved `calcChain.xml` style-reference validation errors are ignored when Excel itself wrote
   the copy, because Excel can emit those after a successful open/save/reopen cycle without a repair
   log. The same schema issue still fails when it appears in a FreeX-saved workbook.
@@ -263,7 +266,12 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   `--save-reopen --freex-resave-before-excel --generate-supported-corpus-fixtures --corpus-status supported-metadata-pass`
   passed: `52/52`. This covers printer settings, workbook and worksheet smart tags, worksheet
   single XML cells, slicers, timelines, external links, custom XML, calc chains, document
-  properties, and worksheet/workbook native metadata package retention through desktop Excel.
+  properties, and worksheet/workbook native metadata in the repair-free desktop Excel
+  open/save/reopen path. Slicer, timeline, and custom XML rows additionally assert that their
+  required package parts remain present in Excel-saved ZIPs; the generated external-link placeholder
+  row remains covered by FreeX package-retention tests and repair-free Excel open/save/reopen, but
+  is not yet promoted to an Excel-saved package-part retention assertion because desktop Excel drops
+  those placeholder external-link parts on `SaveCopyAs`.
   Concrete Excel-visible feature assertions are enabled for non-native metadata rows whose package
   fixtures surface charts, data validation, or conditional formatting, plus selected native
   metadata rows that desktop Excel exposes as workbook structure protection, worksheet protection,
