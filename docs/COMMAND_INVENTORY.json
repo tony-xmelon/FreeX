@@ -240,7 +240,7 @@
         {
           "name": "Options",
           "status": "Partial",
-          "notes": "General, Formulas, View, and Save subsets including calculation/error-checking and formula bar preferences; sidebar categories, editable fields, option toggles, and OK/Cancel expose keyboard access keys"
+          "notes": "General, Formulas, Proofing custom dictionary, View, and Save subsets including calculation/error-checking, formula bar preferences, and add/remove/clear custom dictionary management; sidebar categories, editable fields, option toggles, and OK/Cancel expose keyboard access keys"
         },
         {
           "name": "Recent Files",
@@ -1494,7 +1494,7 @@
         {
           "name": "Options",
           "status": "Partial",
-          "notes": "General, Formulas, View, and Save subsets including calculation/error-checking and formula bar preferences; sidebar categories, editable fields, option toggles, and OK/Cancel expose keyboard access keys"
+          "notes": "General, Formulas, Proofing custom dictionary, View, and Save subsets including calculation/error-checking, formula bar preferences, and add/remove/clear custom dictionary management; sidebar categories, editable fields, option toggles, and OK/Cancel expose keyboard access keys"
         },
         {
           "name": "Recent Files",
