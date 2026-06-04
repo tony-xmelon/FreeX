@@ -283,9 +283,9 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   for FreeX-saved and Excel-saved outputs, and it also checks that saved ZIP package part names are
   canonical and unique, that saved packages contain no repair/recovery log XML, that
   `[Content_Types].xml` declarations are well-formed, unique, non-stale, and give every saved ZIP
-  part an effective content type, and that every saved `.rels`
-  part has valid relationship XML whose non-external targets resolve to package parts before the
-  workbook is accepted.
+  part an effective content type, and that every saved `.rels` part has valid relationship XML,
+  well-formed relationship declarations, and non-external targets that resolve to package parts
+  before the workbook is accepted.
 - The local-private Partner Dashboard regression row
   `local-private-partner-dashboard-20250116` passed
   `--save-reopen --freex-resave-before-excel`: `1/1`, with the manifest retention gates above.
@@ -314,7 +314,8 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   well-formed, unique, non-stale `[Content_Types].xml` declarations with effective content-type
   coverage for all ZIP parts, a package-root `officeDocument` relationship
   to `xl/workbook.xml` with the SpreadsheetML workbook content type, parseable relationship parts,
-  and existing package targets for every non-external relationship.
+  well-formed relationship declarations, and existing package targets for every non-external
+  relationship.
   Concrete Excel-visible feature assertions are enabled for non-native metadata rows whose package
   fixtures surface charts, data validation, or conditional formatting, plus selected native
   metadata rows that desktop Excel exposes as workbook structure protection, worksheet protection,
