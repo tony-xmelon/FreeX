@@ -109,7 +109,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Font Color | Implemented | Shared color picker exposes custom color and button access keys; Format Cells Font tab also exposes keyboardable common-color swatches with live preview. |
 | Fill Color | Implemented | Shared color picker exposes custom color and button access keys. |
 | Borders (presets) | Implemented |  |
-| Full Border Gallery | Partial | Expanded preset gallery with remembered line color/style; Draw Border Grid and Erase Border apply remembered borders or clear borders to clicked/dragged grid ranges; edge-level pencil border drawing remains deferred |
+| Full Border Gallery | Partial | Expanded preset gallery with remembered line color/style; Draw Border applies remembered outline/perimeter borders to clicked or dragged rectangular ranges, including all four edges for a single cell; Draw Border Grid and Erase Border apply remembered borders or clear borders to clicked/dragged grid ranges. Exact Excel freehand stroke fidelity remains partial |
 | Theme Colors | Partial | Preset color schemes plus Customize Colors entry point through an access-keyed theme dialog; loaded theme `fmtScheme` details are preserved on save and across modeled effect-name changes, with the first supported `effectStyle` group interpreted for bounded `outerShdw`/`prstShdw` shadows and `glow` effects on non-chart drawing objects |
 
 ### Alignment

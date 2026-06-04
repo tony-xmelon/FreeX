@@ -67,8 +67,9 @@ model changes and focused planner/service tests. Rendering-only concerns, such a
 text bounds, and deferred chart display, stay in `App.UI` or `App.Host`.
 Border gallery presets are modeled as reusable `StyleDiff` planners in `Core.Commands`; `App.Host` only maps menu
 choices to those planners and batches perimeter presets into one undoable command. Draw Border Grid and Erase Border
-use the same remembered line color/style and grouped-sheet command path for clicked or dragged grid ranges; edge-level
-pencil border drawing remains deferred.
+use the same remembered line color/style and grouped-sheet command path for clicked or dragged grid ranges. Draw Border
+uses the outline/perimeter planner for clicked or dragged rectangular ranges, including all four edges for a single
+cell; exact Excel freehand stroke fidelity remains a partial UI-fidelity gap.
 Cell Style gallery commands use `App.Host` preset planners that return deterministic `StyleDiff` values for supported
 font, fill, border, number-format, and alignment fields. They intentionally do not create workbook named styles or bind
 to the workbook theme model, so theme-aware named-style semantics remain a parity gap.
