@@ -185,6 +185,9 @@ Excel and zero load warnings after reloading Excel's saved copy.
   a workbook validation failure.
 - FreeX-saved copies and Excel-saved copies are validated with the Open XML SDK Microsoft 365
   schema validator; any package-open or schema error is reported as a workbook validation failure.
+- FreeX-saved and Excel-saved packages must also keep the package root wired as an XLSX workbook:
+  `_rels/.rels` must contain an `officeDocument` relationship to `xl/workbook.xml`, and
+  `xl/workbook.xml` must have the SpreadsheetML workbook content type.
 - Metadata rows can declare required Excel-saved package parts. The smoke then opens the
   Excel `SaveCopyAs` ZIP and fails if any required package part disappeared; this now covers the
   generated printer-settings, calc-chain, header/footer legacy-drawing, slicer, timeline,
@@ -307,8 +310,9 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   external-link, and custom XML rows assert Excel-saved package parts directly.
   In addition to those row-specific MIME checks, every FreeX-saved and Excel-saved package in the
   smoke run must have canonical unique ZIP package part names, no repair/recovery log XML,
-  effective content-type coverage for all ZIP parts, parseable relationship parts, and existing
-  package targets for every non-external relationship.
+  effective content-type coverage for all ZIP parts, a package-root `officeDocument` relationship
+  to `xl/workbook.xml` with the SpreadsheetML workbook content type, parseable relationship parts,
+  and existing package targets for every non-external relationship.
   Concrete Excel-visible feature assertions are enabled for non-native metadata rows whose package
   fixtures surface charts, data validation, or conditional formatting, plus selected native
   metadata rows that desktop Excel exposes as workbook structure protection, worksheet protection,
