@@ -13,6 +13,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [planning/outstanding-build.md](planning/outstanding-build.md) - source-of-truth backlog for outstanding build work.
 - [history/status-2026-06-04.md](history/status-2026-06-04.md) - current project status snapshot; current `overallCompletion` remains 95 while parity hardening, release validation, localization review/package metadata, and XLSX fidelity proof continue.
 - [planning/next-phases.md](planning/next-phases.md) - next development phases and priority sequencing.
+- [performance/backlog-2026-06-04.md](performance/backlog-2026-06-04.md) - current performance backlog and active XLSX open/save IO priority.
 
 ## User
 
@@ -56,6 +57,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [architecture/decisions/](architecture/decisions/) - ADRs for durable technical decisions.
 - [architecture/decisions/008-code-review-hardening-2026-05-28.md](architecture/decisions/008-code-review-hardening-2026-05-28.md) - ADR for the May 28 code-review hardening batch.
 - [performance/baseline.md](performance/baseline.md) - performance baseline notes.
+- [performance/backlog-2026-06-04.md](performance/backlog-2026-06-04.md) - current performance backlog and XLSX IO focus.
 
 ## Reviews
 
