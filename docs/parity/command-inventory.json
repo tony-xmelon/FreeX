@@ -981,7 +981,7 @@
         {
           "name": "Error Checking",
           "status": "Partial",
-          "notes": "Issue list plus ribbon entry point to error-checking options, access-keyed issue actions, and supported checks including numbers stored as text, formulas stored as text, formulas referring to blank cells, two-digit-year text dates, formulas inconsistent with nearby formulas, inconsistent calculated-column formulas in tables, common aggregate formulas (`SUM`, `AVERAGE`, `COUNT`, `COUNTA`, `MEDIAN`, `MIN`, `MAX`, `PRODUCT`, `STDEV`, `STDEVP`, `STDEV.S`, `STDEV.P`, `VAR`, `VARP`, `VAR.S`, `VAR.P`, `SUBTOTAL`, `AGGREGATE`) omitting adjacent cells including same-sheet named-range arguments and gaps between separate arguments, unlocked formula cells, and invalid data-validation entries; partial rule taxonomy"
+          "notes": "Issue list plus ribbon entry point to error-checking options, access-keyed issue actions, and supported checks including numbers stored as text, formulas stored as text, formulas referring to blank cells, two-digit-year text dates, formulas inconsistent with nearby formulas, inconsistent calculated-column formulas in tables, common aggregate formulas (`SUM`, `AVERAGE`, `COUNT`, `COUNTA`, `MEDIAN`, `MIN`, `MAX`, `PRODUCT`, `STDEV`, `STDEVP`, `STDEV.S`, `STDEV.P`, `VAR`, `VARP`, `VAR.S`, `VAR.P`, `SUBTOTAL`, `AGGREGATE`) omitting adjacent cells including same-sheet named-range and structured table reference arguments and gaps between separate arguments, unlocked formula cells, and invalid data-validation entries; partial rule taxonomy"
         },
         {
           "name": "Evaluate Formula (step-through)",
@@ -2290,7 +2290,7 @@
         {
           "name": "Error Checking",
           "status": "Partial",
-          "notes": "Issue list plus ribbon entry point to error-checking options, access-keyed issue actions, and supported checks including numbers stored as text, formulas stored as text, formulas referring to blank cells, two-digit-year text dates, formulas inconsistent with nearby formulas, inconsistent calculated-column formulas in tables, common aggregate formulas (`SUM`, `AVERAGE`, `COUNT`, `COUNTA`, `MEDIAN`, `MIN`, `MAX`, `PRODUCT`, `STDEV`, `STDEVP`, `STDEV.S`, `STDEV.P`, `VAR`, `VARP`, `VAR.S`, `VAR.P`, `SUBTOTAL`, `AGGREGATE`) omitting adjacent cells including same-sheet named-range arguments and gaps between separate arguments, unlocked formula cells, and invalid data-validation entries; partial rule taxonomy"
+          "notes": "Issue list plus ribbon entry point to error-checking options, access-keyed issue actions, and supported checks including numbers stored as text, formulas stored as text, formulas referring to blank cells, two-digit-year text dates, formulas inconsistent with nearby formulas, inconsistent calculated-column formulas in tables, common aggregate formulas (`SUM`, `AVERAGE`, `COUNT`, `COUNTA`, `MEDIAN`, `MIN`, `MAX`, `PRODUCT`, `STDEV`, `STDEVP`, `STDEV.S`, `STDEV.P`, `VAR`, `VARP`, `VAR.S`, `VAR.P`, `SUBTOTAL`, `AGGREGATE`) omitting adjacent cells including same-sheet named-range and structured table reference arguments and gaps between separate arguments, unlocked formula cells, and invalid data-validation entries; partial rule taxonomy"
         },
         {
           "name": "Evaluate Formula",
