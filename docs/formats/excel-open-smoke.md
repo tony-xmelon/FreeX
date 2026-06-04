@@ -197,6 +197,10 @@ Excel and zero load warnings after reloading Excel's saved copy.
 - Active worksheet background-image package graphs are validated in every FreeX-saved and
   Excel-saved package: each worksheet `<picture r:id>` must resolve to a worksheet image
   relationship whose target exists and has an image content type.
+- Active workbook external-link package graphs are validated in every FreeX-saved and Excel-saved
+  package: each workbook `<externalReference r:id>` must either point to a tolerated external
+  workbook relationship target or resolve to an `xl/externalLinks/*.xml` part with the exact
+  external-link content type and external workbook-path relationship.
 - Metadata rows can declare required Excel-saved package parts. The smoke then opens the
   Excel `SaveCopyAs` ZIP and fails if any required package part disappeared; this now covers the
   generated printer-settings, calc-chain, header/footer legacy-drawing, slicer, timeline,
@@ -331,9 +335,11 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   resolve to existing `xl/sharedStrings.xml` entries, and styles package graphs whose cell, row,
   and column style indexes resolve into `xl/styles.xml` `cellXfs` entries, worksheet background
   image package graphs whose `<picture>` references resolve to image package parts with image
-  content types, and worksheet drawing package graphs whose drawing/chart/image references resolve
-  to drawing, chart, and image package parts with matching relationship and content-type
-  declarations, legacy comment and VML package
+  content types, and workbook external-link package graphs whose `<externalReference r:id>` entries
+  either point to external workbook relationship targets or resolve to external-link parts with
+  exact content-type and external workbook-path relationships, and worksheet drawing package graphs
+  whose drawing/chart/image references resolve to drawing, chart, and image package parts with
+  matching relationship and content-type declarations, legacy comment and VML package
   graphs whose worksheet comment, `legacyDrawing`, `legacyDrawingHF`, and VML image references
   resolve to matching package parts with exact relationship and content-type declarations, worksheet
   table package graphs whose `tableParts` references resolve to table package parts with exact
