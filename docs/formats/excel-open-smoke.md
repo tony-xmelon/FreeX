@@ -89,10 +89,11 @@ Public corpus rows without declared warning expectations now participate in the 
 assertion unless their manifest tags identify an unsupported or excluded warning-tolerated surface,
 such as the public chartsheet retention row.
 Public corpus rows with package-only manifest tags also assert their declared package structures on
-the produced FreeX-saved ZIPs before Excel opens them: styles/formatting parts and workbook
-relationships, worksheet shared-string tables and workbook relationships, hyperlink and merged-cell
-XML, inline-string cells, hyperlink relationship graphs, mixed cell types, 31-character sheet-name
-boundaries, and chartsheet package graphs through drawing/chart relationships and content types.
+the produced FreeX-saved ZIPs before Excel opens them: styles/formatting parts, exact content
+types, and workbook relationships; worksheet shared-string tables, exact content types, and
+workbook relationships; hyperlink and merged-cell XML, inline-string cells, hyperlink relationship
+graphs, mixed cell types, 31-character sheet-name boundaries, and chartsheet package graphs through
+drawing/chart relationships and content types.
 Excel-saved copies assert the same Excel-stable public
 package structures after `SaveCopyAs`, excluding inline-string encoding because desktop Excel may
 normalize those cells into shared strings without a repair.
