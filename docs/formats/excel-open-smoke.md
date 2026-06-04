@@ -164,8 +164,8 @@ Excel and zero load warnings after reloading Excel's saved copy.
 - Excel is launched with `Visible=false`, `DisplayAlerts=false`, and `AutomationSecurity=3` when
   the installed Excel build accepts that property.
 - A COM rejection with `0x800A03EC` is reported as an Excel workbook validation failure.
-- In `--save-reopen` mode, an Excel-saved copy containing repair/recovery log XML is reported as a
-  workbook validation failure.
+- Any produced FreeX-saved or Excel-saved package containing repair/recovery log XML is reported as
+  a workbook validation failure.
 - FreeX-saved copies and Excel-saved copies are validated with the Open XML SDK Microsoft 365
   schema validator; any package-open or schema error is reported as a workbook validation failure.
 - Metadata rows can declare required Excel-saved package parts. The smoke then opens the
@@ -256,9 +256,10 @@ As of 2026-06-04 on the local desktop Excel COM environment:
 - The 34 FreeX-saved corpus workbooks from that run also passed Open XML SDK schema validation:
   `errors=0` for every file. The Excel smoke harness now performs this schema validation directly
   for FreeX-saved and Excel-saved outputs, and it also checks that saved ZIP package part names are
-  canonical and unique, that every saved ZIP part resolves to an effective `[Content_Types].xml`
-  content type, and that every saved `.rels` part has valid relationship XML whose non-external
-  targets resolve to package parts before the workbook is accepted.
+  canonical and unique, that saved packages contain no repair/recovery log XML, that every saved ZIP
+  part resolves to an effective `[Content_Types].xml` content type, and that every saved `.rels`
+  part has valid relationship XML whose non-external targets resolve to package parts before the
+  workbook is accepted.
 - The local-private Partner Dashboard regression row
   `local-private-partner-dashboard-20250116` passed
   `--save-reopen --freex-resave-before-excel`: `1/1`, with the manifest retention gates above.
@@ -283,9 +284,9 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   printer-settings, calc-chain, header/footer legacy-drawing, slicer, timeline, external-link, and
   custom XML rows assert Excel-saved package parts directly.
   In addition to those row-specific MIME checks, every FreeX-saved and Excel-saved package in the
-  smoke run must have canonical unique ZIP package part names, effective content-type coverage for
-  all ZIP parts, parseable relationship parts, and existing package targets for every non-external
-  relationship.
+  smoke run must have canonical unique ZIP package part names, no repair/recovery log XML,
+  effective content-type coverage for all ZIP parts, parseable relationship parts, and existing
+  package targets for every non-external relationship.
   Concrete Excel-visible feature assertions are enabled for non-native metadata rows whose package
   fixtures surface charts, data validation, or conditional formatting, plus selected native
   metadata rows that desktop Excel exposes as workbook structure protection, worksheet protection,
