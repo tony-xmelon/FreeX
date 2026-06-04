@@ -296,8 +296,8 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   calc-chain, document-property, header/footer legacy-drawing, slicer, timeline, external-link,
   and custom XML rows also assert Excel-retained effective content types after desktop Excel
   `SaveCopyAs`, with the same Excel-saved check covering retained part presence. Printer-settings,
-  calc-chain, document-property, header/footer legacy-drawing, slicer, external-link, and custom
-  XML rows also assert the Excel-retained relationship subset after desktop Excel `SaveCopyAs`,
+  calc-chain, document-property, header/footer legacy-drawing, slicer, timeline, external-link,
+  and custom XML rows also assert the Excel-retained relationship subset after desktop Excel `SaveCopyAs`,
   while printer-settings, calc-chain, header/footer legacy-drawing, slicer, timeline,
   external-link, and custom XML rows assert Excel-saved package parts directly.
   In addition to those row-specific MIME checks, every FreeX-saved and Excel-saved package in the
