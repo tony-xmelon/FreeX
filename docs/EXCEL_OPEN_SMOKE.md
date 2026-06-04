@@ -56,7 +56,7 @@ dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --freex-resave-
 
 This generates the manifest rows backed by `XlsxCorpusFixtureFactory` under the run directory,
 including both `supported-pass` model fixtures and `supported-metadata-pass` package fixtures by
-default. It adds feature-tag expectations for formulas, structured tables, data validation,
+default. It adds feature-tag expectations for formulas, structured tables, AutoFilter sheets, data validation,
 conditional formatting, named ranges, charts, hyperlinks, comments, images, sparklines,
 text boxes/shapes, formatting/styles/number formats, structure, protection, page setup,
 allow-edit ranges, and PivotTables. Formatting/style tags assert Excel-visible styled cells and
@@ -67,12 +67,12 @@ Page setup tags now assert Excel-visible print areas, print titles, landscape or
 scale-to-fit, print gridlines/headings, headers/footers, and manual page breaks. Use
 `--corpus-status <status>` to narrow the generated set for focused runs.
 
-Formula, named-range, structured table, chart, validation/conditional-format, hyperlink/comment,
+Formula, named-range, structured table, AutoFilter, chart, validation/conditional-format, hyperlink/comment,
 drawing/shape, sparkline/image, formatting/style/number-format/border/detail, structure,
 protection/page-setup, allow-edit-range, and PivotTable feature
 fixtures have retention expectations, not just passive summary counts. When `--save-reopen` is used, the smoke fails if
 FreeX cannot load the expected feature metadata before Excel opens the staged workbook, if Excel
-open/reopen loses the expected formula cells, named ranges, structured tables, charts, validation
+open/reopen loses the expected formula cells, named ranges, structured tables, AutoFilter sheets, charts, validation
 cells, conditional-format rules, hyperlinks, comments, worksheet/workbook protection, worksheet
 pictures, sparklines, text boxes, drawing shapes, Excel-visible formatting/number-format/detail,
 structure/page setup/protected-range metadata, or PivotTables, or if FreeX cannot reload the Excel-saved copy with the expected metadata
