@@ -92,7 +92,8 @@ Public corpus rows with package-only manifest tags also assert their declared pa
 the produced FreeX-saved ZIPs before Excel opens them: styles/formatting parts and workbook
 relationships, worksheet shared-string tables and workbook relationships, hyperlink and merged-cell
 XML, inline-string cells, hyperlink relationship graphs, mixed cell types, 31-character sheet-name
-boundaries, and chartsheet package parts. Excel-saved copies assert the same Excel-stable public
+boundaries, and chartsheet package graphs through drawing/chart relationships and content types.
+Excel-saved copies assert the same Excel-stable public
 package structures after `SaveCopyAs`, excluding inline-string encoding because desktop Excel may
 normalize those cells into shared strings without a repair.
 
@@ -189,8 +190,8 @@ Excel and zero load warnings after reloading Excel's saved copy.
 - Public corpus rows with package-only tags assert the tagged XML/package structures on FreeX-saved
   workbooks and the Excel-stable subset on Excel-saved workbooks, so public style, hyperlink,
   style-relationship, hyperlink-relationship, merged-cell, shared-string-table/relationship,
-  inline-string, mixed-cell-type, sheet-name-boundary, and chartsheet regressions are caught in the
-  desktop Excel smoke instead of only in in-memory IO tests.
+  inline-string, mixed-cell-type, sheet-name-boundary, and chartsheet package graph regressions are
+  caught in the desktop Excel smoke instead of only in in-memory IO tests.
 - Excel-saved `calcChain.xml` style-reference validation errors are ignored when Excel itself wrote
   the copy, because Excel can emit those after a successful open/save/reopen cycle without a repair
   log. The same schema issue still fails when it appears in a FreeX-saved workbook.
