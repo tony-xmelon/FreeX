@@ -95,7 +95,8 @@ worksheet shared-string tables, exact content types, and workbook relationships;
 relationship graphs with exact sheet content types; shared-string cell indexes that resolve into
 the shared-string table; hyperlink and merged-cell XML, inline-string cells, hyperlink relationship
 graphs, mixed cell types, 31-character sheet-name boundaries, worksheet drawing package graphs
-through drawing/chart/image relationships and content types, and chartsheet package graphs through
+through drawing/chart/image relationships and content types, direct worksheet background-image
+package graphs through image relationships and content types, and chartsheet package graphs through
 drawing/chart relationships and content types.
 Excel-saved copies assert the same Excel-stable public
 package structures after `SaveCopyAs`, excluding inline-string encoding because desktop Excel may
@@ -190,6 +191,12 @@ Excel and zero load warnings after reloading Excel's saved copy.
 - FreeX-saved and Excel-saved packages must also keep the package root wired as an XLSX workbook:
   `_rels/.rels` must contain an `officeDocument` relationship to `xl/workbook.xml`, and
   `xl/workbook.xml` must have the SpreadsheetML workbook content type.
+- Active worksheet hyperlink package graphs are validated in every FreeX-saved and Excel-saved
+  package: each `<hyperlink r:id>` must resolve to a worksheet hyperlink relationship with an
+  external target, while internal location-only hyperlinks remain valid without a relationship.
+- Active worksheet background-image package graphs are validated in every FreeX-saved and
+  Excel-saved package: each worksheet `<picture r:id>` must resolve to a worksheet image
+  relationship whose target exists and has an image content type.
 - Metadata rows can declare required Excel-saved package parts. The smoke then opens the
   Excel `SaveCopyAs` ZIP and fails if any required package part disappeared; this now covers the
   generated printer-settings, calc-chain, header/footer legacy-drawing, slicer, timeline,
@@ -322,13 +329,18 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   relationship, plus workbook sheet relationship graphs with exact worksheet, chartsheet,
   dialogsheet, and macrosheet content types, and shared-string package graphs whose `t="s"` cells
   resolve to existing `xl/sharedStrings.xml` entries, and styles package graphs whose cell, row,
-  and column style indexes resolve into `xl/styles.xml` `cellXfs` entries, and worksheet drawing
-  package graphs whose drawing/chart/image references resolve to drawing, chart, and image package
-  parts with matching relationship and content-type declarations, and worksheet table package
-  graphs whose `tableParts` references resolve to table package parts with exact relationship and
-  content-type declarations, and PivotTable package graphs whose worksheet pivot-table references,
-  workbook pivot-cache references, pivot-cache records references, and pivot-table cache bindings
-  resolve to matching package parts with exact relationship and content-type declarations.
+  and column style indexes resolve into `xl/styles.xml` `cellXfs` entries, worksheet background
+  image package graphs whose `<picture>` references resolve to image package parts with image
+  content types, and worksheet drawing package graphs whose drawing/chart/image references resolve
+  to drawing, chart, and image package parts with matching relationship and content-type
+  declarations, legacy comment and VML package
+  graphs whose worksheet comment, `legacyDrawing`, `legacyDrawingHF`, and VML image references
+  resolve to matching package parts with exact relationship and content-type declarations, worksheet
+  table package graphs whose `tableParts` references resolve to table package parts with exact
+  relationship and content-type declarations, and PivotTable package graphs whose worksheet
+  pivot-table references, workbook pivot-cache references, pivot-cache records references, and
+  pivot-table cache bindings resolve to matching package parts with exact relationship and
+  content-type declarations.
   Concrete Excel-visible feature assertions are enabled for non-native metadata rows whose package
   fixtures surface charts, data validation, or conditional formatting, plus selected native
   metadata rows that desktop Excel exposes as workbook structure protection, worksheet protection,
