@@ -1,6 +1,6 @@
 # FreeX Documentation
 
-**Last updated:** 2026-06-03
+**Last updated:** 2026-06-04
 
 Use these files as the current documentation set. Point-in-time reports are snapshots; prefer the newest report plus the source-of-truth backlog for current planning.
 
@@ -19,7 +19,7 @@ Use these files as the current documentation set. Point-in-time reports are snap
 ## Start Here
 
 - [OUTSTANDING_BUILD.md](OUTSTANDING_BUILD.md) - source-of-truth backlog for outstanding build work.
-- [PROJECT_STATUS_REPORT_2026-06-01.md](PROJECT_STATUS_REPORT_2026-06-01.md) - current project status snapshot; current `overallCompletion` remains 95 while parity hardening, release validation, localization review/package metadata, and XLSX fidelity proof continue.
+- [PROJECT_STATUS_REPORT_2026-06-04.md](PROJECT_STATUS_REPORT_2026-06-04.md) - current project status snapshot; current `overallCompletion` remains 95 while parity hardening, release validation, localization review/package metadata, and XLSX fidelity proof continue.
 - [NEXT_PHASES_PLAN.md](NEXT_PHASES_PLAN.md) - next development phases and priority sequencing.
 
 ## Parity And Fidelity
@@ -59,6 +59,9 @@ Use these files as the current documentation set. Point-in-time reports are snap
 
 ## Historical Snapshots
 
+- [PROJECT_STATUS_REPORT_2026-06-03.md](PROJECT_STATUS_REPORT_2026-06-03.md) - backfilled status snapshot covering the June 3 review, test split, XLSX smoke, PDF overlay, and performance integrations.
+- [PROJECT_STATUS_REPORT_2026-06-02.md](PROJECT_STATUS_REPORT_2026-06-02.md) - backfilled status snapshot covering the June 2 performance, parity, file-format, and release-gate integrations.
+- [PROJECT_STATUS_REPORT_2026-06-01.md](PROJECT_STATUS_REPORT_2026-06-01.md) - prior status snapshot covering the June 1 localization, chart interop, metrics, and corpus state.
 - [PROJECT_STATUS_REPORT_2026-05-29.md](PROJECT_STATUS_REPORT_2026-05-29.md) - prior status snapshot covering the May 29 production-readiness pass.
 - [PROJECT_STATUS_REPORT_2026-05-28.md](PROJECT_STATUS_REPORT_2026-05-28.md) - prior status snapshot covering the production-readiness transition.
 - [PROJECT_STATUS_REPORT_2026-05-27.md](PROJECT_STATUS_REPORT_2026-05-27.md) - prior maintenance/status snapshot.
