@@ -1,0 +1,93 @@
+# FreeX Project Status Report
+
+Generated: 2026-06-04
+Observed at: 2026-06-04T10:16:40+03:00
+Report scope: current June 4 project-status snapshot reconstructed from integrated mainline Git history through `db44202da`
+Mainline observed: branch-neutral `origin/main` snapshot; worker-specific branch and worktree names are intentionally omitted from this status report
+
+## Executive Summary
+
+FreeX remains in late-stage parity hardening. The broad app surface is functional and documented: formula coverage is **487/487 in-scope functions**, command and menu coverage remain **100% for in-scope rows**, shortcut parity remains **100% (87/87)**, and XLSX work is focused on package-preserving save validation, broader real-workbook evidence, warning-free Excel smoke proof, and deeper metadata retention.
+
+Overall completion remains driven by [release/progress.json](../release/progress.json), with `overallCompletion: 95` mapping tester builds to the `v0.8.<run>` stream. Overall completion estimate is now **95%**. The main remaining work is package-preserving XLSX validation, broader corpus proof, installer trust/Store-style packaging evidence and human accessibility validation, localization review/pseudo-localization/package metadata, keytip/visual polish, and measured performance hardening.
+
+The June 4 snapshot has 176 workbook manifest rows. The most important same-day changes are the UI/default test-lane correction, warning-free generated Excel smoke hardening, Excel-visible formatting/protection smoke expectations, shape/theme effect authoring, and continued XLSX load/style-only save performance work.
+
+## Current Repository Metrics
+
+Metrics reflect the current backfilled report commit shape, including the three newly added project-status reports.
+
+| Metric | Count |
+| --- | ---: |
+| Tracked files | 3,027 |
+| C# source files under `src/` | 1,133 |
+| C# test files under `tests/` | 1,163 |
+| Markdown docs under `docs/` | 253 |
+| Current C# source LOC | 236,854 |
+| Current C# test LOC | 248,064 |
+| Current XAML LOC | 8,377 |
+| XLSX corpus manifest rows | 176 |
+
+## Current Repository State
+
+| Item | Status |
+| --- | --- |
+| Mainline | Snapshot anchor `db44202da` at 2026-06-04T10:16:40+03:00 |
+| Completion tracking | [release/progress.json](../release/progress.json) remains at `overallCompletion: 95` |
+| History metrics | [PROJECT_BUILD_HISTORY_METRICS.md](PROJECT_BUILD_HISTORY_METRICS.md) is refreshed through 2026-06-03 inclusive; June 4 activity is still in progress |
+| Branch posture | Parallel implementation remains active; branch-neutral reporting omits worker-owned names and transient worktree state |
+| Release posture | Tester-release automation remains the release gate; the UI test lane is separated from the default agent verification path but still runs for release/public-preview gating |
+| Documentation posture | The docs index now points at this June 4 status snapshot, while June 2 and June 3 are retained as reconstructed historical reports |
+
+## Current Parity Snapshot
+
+| Surface | Status |
+| --- | --- |
+| Formula engine | 487/487 in-scope functions implemented and tested; current work is parity proof, cached-result fixtures, reference handling, and performance hardening. |
+| Command surface | 100% of in-scope command-surface rows covered; deferred/excluded rows are documented rather than counted as missing. |
+| Menu/toolbar parity | 100% of in-scope menu/toolbar rows covered, with deferred/excluded rows tracked separately. |
+| Keyboard shortcuts | **100% parity** (87/87), **0% partial** (0/87), **0 missing**. |
+| XLSX fidelity | 71 documented in-scope feature categories with at least partial support; corpus has 176 workbook manifest rows with generated/public/regression/local-private evidence, warning-free Excel smoke gates, and known-gap warning coverage. |
+| UI/dialog parity | Dialog message routing, access keys, default/cancel semantics, UIA metadata, keytips, ribbon layout, titlebar/QAT states, and sheet-tab chrome have broad automated coverage and continuing visual polish. |
+| Localization | `UiText`, `LocExtension`, neutral resources, 43 satellite resource cultures, startup UI culture, WPF language metadata, localization guard tests, current-culture direct numeric entry, delimited numeric import, and Text to Columns numeric parsing are present. |
+| Release readiness | User guide, troubleshooting, legal/privacy notices, release checklist, diagnostics, crash analytics, and tester-release workflow docs are present; public-preview promotion still needs live validation evidence. |
+
+Phase 7D: Deeper color-scale XLSX edge semantics as new gaps are found.
+
+## June 4 Highlights
+
+1. **Default and UI test lanes were clarified**
+   - Routine agent verification now runs repository preflight, full solution restore/build, and `FreeX.DefaultTests.slnx` only. The UI lane remains separate for UI/host work and release/public-preview gates.
+
+2. **Excel smoke expectations grew sharper**
+   - Native metadata smoke assertions, generated feature coverage, object protection, formatting detail, border formatting, page setup, structure, validation, and feature-probing stability were strengthened.
+
+3. **Shape and theme effects advanced**
+   - Authored inner shadow, reflection, bevel, 3-D rotation, soft edge, and draw-border capabilities moved forward with model, UI, rendering, or persistence coverage depending on the slice.
+
+4. **XLSX fidelity and performance work continued**
+   - Current work includes preserving chart drawing parts, hyperlink font metadata, formula references, font-name limits, chart label format semantics, and improving XLSX load/style-only save performance.
+
+5. **Inventory and docs were refreshed**
+   - Command inventory consistency, current inventory snapshots, UI inventory documentation, and v1 parity status were refreshed alongside the project-status backfill.
+
+## Active Workstream Picture
+
+Parallel implementation remains expected. Mainline is the integration target, while worker-owned branches and worktrees may continue carrying active, dirty, or paused work. Before merging any implementation slice, keep syncing from main, verify relevant build/tests in the owning worktree, and leave unrelated worker-owned changes untouched.
+
+## Remaining Outstanding Work
+
+See [OUTSTANDING_BUILD.md](OUTSTANDING_BUILD.md) for the source-of-truth backlog. The highest-priority open items are:
+
+1. **XLSX corpus and fidelity proof**
+   - Expand the 176-row corpus baseline with broader public/private/regression workbook coverage and per-feature pass/fail publication.
+2. **Package-preserving XLSX save path**
+   - Continue retention coverage, semantic comparison breadth, and desktop Excel open/save/reopen validation.
+3. **Release documentation and packaging**
+   - Keep release docs aligned while finishing installer trust, Store-style packaging evidence, and live accessibility validation.
+4. **Keytip overlay placement**
+   - Continue visual placement polish beyond automated key routing and UIA coverage.
+5. **XLSX warning coverage as new gaps are found**
+   - Keep unsupported-feature detection aligned with newly discovered OOXML package parts.
+
+Current planning, parity, and release-readiness sources: [OUTSTANDING_BUILD.md](OUTSTANDING_BUILD.md), [NEXT_PHASES_PLAN.md](NEXT_PHASES_PLAN.md), [COMMAND_SURFACE_PARITY.md](COMMAND_SURFACE_PARITY.md), [MENU_TOOLBAR_PARITY.md](MENU_TOOLBAR_PARITY.md), [SHORTCUT_PARITY_MATRIX.md](SHORTCUT_PARITY_MATRIX.md), [FUNCTION_PARITY.md](FUNCTION_PARITY.md), [FIDELITY_CONTRACT.md](FIDELITY_CONTRACT.md), [XLSX_CORPUS_REPORT.md](XLSX_CORPUS_REPORT.md), [LOCALIZATION_PLAN.md](LOCALIZATION_PLAN.md), [TEST_DISTRIBUTION_PLAN.md](TEST_DISTRIBUTION_PLAN.md), and [PERF_BASELINE.md](PERF_BASELINE.md).
