@@ -59,8 +59,8 @@ including both `supported-pass` model fixtures and `supported-metadata-pass` pac
 default. It adds feature-tag expectations for formulas, structured tables, AutoFilter sheets, data validation,
 conditional formatting, named ranges, charts, hyperlinks, comments, images, sparklines,
 text boxes/shapes, formatting/styles/number formats, structure, protection, page setup,
-allow-edit ranges, and PivotTables. Formatting/style tags assert Excel-visible styled cells and
-non-General number-format cells; formatting detail tags assert Excel-visible bold, filled,
+allow-edit ranges, and PivotTables. Formatting/style tags assert Excel-visible styled cells;
+number-format tags assert non-General number-format cells; formatting detail tags assert Excel-visible bold, filled,
 bordered, aligned, and wrapped cells where present. Structure tags assert Excel-visible merged
 areas, freeze panes, hidden rows/columns, custom row/column dimensions, and outline rows/columns.
 Page setup tags now assert Excel-visible print areas, print titles, landscape orientation,
@@ -255,7 +255,8 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   zero FreeX load warnings before Excel and after reloading Excel-saved copies.
 - The 34 FreeX-saved corpus workbooks from that run also passed Open XML SDK schema validation:
   `errors=0` for every file. The Excel smoke harness now performs this schema validation directly
-  for FreeX-saved and Excel-saved outputs.
+  for FreeX-saved and Excel-saved outputs, and it also checks that every saved ZIP part resolves
+  to an effective `[Content_Types].xml` content type before the workbook is accepted.
 - The local-private Partner Dashboard regression row
   `local-private-partner-dashboard-20250116` passed
   `--save-reopen --freex-resave-before-excel`: `1/1`, with the manifest retention gates above.
@@ -279,6 +280,8 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   also assert the Excel-retained relationship subset after desktop Excel `SaveCopyAs`, while
   printer-settings, calc-chain, header/footer legacy-drawing, slicer, timeline, external-link, and
   custom XML rows assert Excel-saved package parts directly.
+  In addition to those row-specific MIME checks, every FreeX-saved and Excel-saved package in the
+  smoke run must have effective content-type coverage for all ZIP parts.
   Concrete Excel-visible feature assertions are enabled for non-native metadata rows whose package
   fixtures surface charts, data validation, or conditional formatting, plus selected native
   metadata rows that desktop Excel exposes as workbook structure protection, worksheet protection,
