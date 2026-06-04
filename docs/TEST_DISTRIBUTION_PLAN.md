@@ -40,17 +40,24 @@ Before dispatching a candidate, run `tools/Test-TesterReleaseReadiness.ps1` from
 
 Use [TESTER_RELEASE_CHECKLIST.md](TESTER_RELEASE_CHECKLIST.md) as the operator checklist for release-gate evidence and public-preview accessibility notes. The `Tester Release` workflow exposes `public_preview_candidate` plus four accessibility evidence inputs; public-preview promotion fails unless keyboard-only, screen-reader, UI Automation catalog, and known-issues review inputs are all completed.
 
-## Canonical Build Verification
+## Default Agent Build Verification
 
-Run these commands from the repository root when validating a build-lane slice or preflighting a tester release locally:
+Run these commands from the repository root when validating routine agent work or a non-UI build-lane slice:
 
 0. `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1`
 1. `dotnet restore FreeX.slnx`
 2. `dotnet build FreeX.slnx --configuration Release --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1`
 3. `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx" --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1`
-4. `dotnet test FreeX.UiTests.slnx --configuration Release --no-build --logger "trx;LogFileName=ui-tests.trx" --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1`
 
-Success means the repository preflight validates tracked JSON/XML-backed files, tool scripts, workflows, local .NET SDK readiness against the tester-release SDK band, .NET project references, solution membership, and generated docs; restore exits cleanly; the Release solution build reports zero errors; and both Release test lane runs report zero failed tests. If output files are locked by a stale `dotnet`, `MSBuild`, `VBCSCompiler`, or `testhost` process from another local run, clear the stale process and rerun the same command before treating the build as failed.
+Default agent verification does not run the UI lane and does not use `dotnet test FreeX.slnx`. Success means the repository preflight validates tracked JSON/XML-backed files, tool scripts, workflows, local .NET SDK readiness against the tester-release SDK band, .NET project references, solution membership, and generated docs; restore exits cleanly; the Release solution build reports zero errors; and the default Release test lane reports zero failed tests. If output files are locked by a stale `dotnet`, `MSBuild`, `VBCSCompiler`, or `testhost` process from another local run, clear the stale process and rerun the same command before treating the build as failed.
+
+## UI Lane Verification
+
+Run the UI lane separately only when a task explicitly requests UI tests, touches WPF app/host behavior or UI test infrastructure, changes UI documentation/inventory, or prepares a tester-release/public-preview candidate:
+
+0. `dotnet test FreeX.UiTests.slnx --configuration Release --no-build --logger "trx;LogFileName=ui-tests.trx" --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1`
+
+Success means the UI Release test lane reports zero failed tests. The `Tester Release` workflow remains a full release gate and still runs both the default and UI test lanes before publishing.
 
 ## Phase 3 Diagnostics Contract
 
