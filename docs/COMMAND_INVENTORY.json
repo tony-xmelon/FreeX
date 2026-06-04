@@ -405,7 +405,7 @@
             {
               "name": "Theme Colors",
               "status": "Partial",
-              "notes": "Preset color schemes plus Customize Colors entry point through an access-keyed theme dialog; loaded theme `fmtScheme` details are preserved on save and across modeled effect-name changes, with the first supported `effectStyle` group interpreted for bounded `outerShdw`/`prstShdw` shadows, `innerShdw` inner shadows, `glow`, and `softEdge` effects on non-chart drawing objects"
+              "notes": "Preset color schemes plus Customize Colors entry point through an access-keyed theme dialog; loaded theme `fmtScheme` details are preserved on save and across modeled effect-name changes, with the first supported `effectStyle` group interpreted for bounded `outerShdw`/`prstShdw` shadows, `innerShdw` inner shadows, `glow`, `softEdge`, `sp3d`/`bevelT` bevel, and `scene3d`/`camera` 3-D rotation cues on non-chart drawing shapes"
             }
           ]
         },
@@ -890,7 +890,7 @@
         {
           "name": "Themes (preset + custom dialog)",
           "status": "Partial",
-          "notes": "Presets plus custom theme dialog reachable from Themes, Theme Colors, Theme Fonts, and Theme Effects; dialog preset buttons, metadata fields, color slots, and Save/Cancel expose keyboard access keys; loaded `fmtScheme` OOXML is preserved on save and across modeled effect-name changes, and the first supported `effectStyle` group renders bounded `outerShdw`/`prstShdw` shadows, `innerShdw` inner shadows, `glow`, and `softEdge` effects for non-chart drawing objects while fuller OOXML effect interpretation remains deferred"
+          "notes": "Presets plus custom theme dialog reachable from Themes, Theme Colors, Theme Fonts, and Theme Effects; dialog preset buttons, metadata fields, color slots, and Save/Cancel expose keyboard access keys; loaded `fmtScheme` OOXML is preserved on save and across modeled effect-name changes, and the first supported `effectStyle` group renders bounded `outerShdw`/`prstShdw` shadows, `innerShdw` inner shadows, `glow`, `softEdge`, `sp3d`/`bevelT` bevel, and `scene3d`/`camera` 3-D rotation cues for non-chart drawing shapes while fuller OOXML effect interpretation remains deferred"
         },
         {
           "name": "Colors/Fonts/Effects preset menus",
@@ -1659,7 +1659,7 @@
             {
               "name": "Theme Colors",
               "status": "Partial",
-              "notes": "Preset color schemes plus Customize Colors entry point through an access-keyed theme dialog; loaded theme `fmtScheme` details are preserved on save and across modeled effect-name changes, with the first supported `effectStyle` group interpreted for bounded `outerShdw`/`prstShdw` shadows, `innerShdw` inner shadows, `glow`, and `softEdge` effects on non-chart drawing objects"
+              "notes": "Preset color schemes plus Customize Colors entry point through an access-keyed theme dialog; loaded theme `fmtScheme` details are preserved on save and across modeled effect-name changes, with the first supported `effectStyle` group interpreted for bounded `outerShdw`/`prstShdw` shadows, `innerShdw` inner shadows, `glow`, `softEdge`, `sp3d`/`bevelT` bevel, and `scene3d`/`camera` 3-D rotation cues on non-chart drawing shapes"
             }
           ]
         },
@@ -2169,7 +2169,7 @@
         {
           "name": "Themes",
           "status": "Partial",
-          "notes": "Presets plus custom theme dialog reachable from Themes, Theme Colors, Theme Fonts, and Theme Effects; dialog preset buttons, metadata fields, color slots, and Save/Cancel expose keyboard access keys; loaded `fmtScheme` OOXML is preserved on save and across modeled effect-name changes, and the first supported `effectStyle` group renders bounded `outerShdw`/`prstShdw` shadows, `innerShdw` inner shadows, `glow`, and `softEdge` effects for non-chart drawing objects while fuller OOXML effect interpretation remains deferred"
+          "notes": "Presets plus custom theme dialog reachable from Themes, Theme Colors, Theme Fonts, and Theme Effects; dialog preset buttons, metadata fields, color slots, and Save/Cancel expose keyboard access keys; loaded `fmtScheme` OOXML is preserved on save and across modeled effect-name changes, and the first supported `effectStyle` group renders bounded `outerShdw`/`prstShdw` shadows, `innerShdw` inner shadows, `glow`, `softEdge`, `sp3d`/`bevelT` bevel, and `scene3d`/`camera` 3-D rotation cues for non-chart drawing shapes while fuller OOXML effect interpretation remains deferred"
         },
         {
           "name": "Colors preset menu",
