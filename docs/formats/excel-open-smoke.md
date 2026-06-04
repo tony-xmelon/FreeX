@@ -142,6 +142,13 @@ dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --freex-resave-
 ```
 
 `--corpus-source <source_type>` and `--corpus-status <expected_status>` are repeatable filters.
+`--corpus-id <id>` is also repeatable and is useful for focused package-retention regressions,
+for example:
+
+```powershell
+dotnet run --project tools/FreeX.ExcelOpenSmoke -- --save-reopen --freex-resave-before-excel --generate-supported-corpus-fixtures --corpus-manifest test-corpus\manifest.csv --corpus-id generated-slicers-001
+```
+
 When no status filter is supplied, the tool selects `supported-pass`, `supported-metadata-pass`,
 `supported-pivot-metadata-pass`, and `public-pass` rows. Missing generated or local-private files are
 reported as skipped, not silently ignored.
@@ -286,13 +293,13 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   legacy-drawing, worksheet legacy-drawing, slicer, timeline, external-link, and custom XML
   rows additionally assert that their required package parts, effective content types, and package
   relationships remain present in FreeX-saved ZIPs before Excel opens them; printer-settings,
-  calc-chain, document-property, header/footer legacy-drawing, slicer, timeline, external-link, and
-  custom XML rows also assert Excel-retained effective content types after desktop Excel
+  calc-chain, document-property, header/footer legacy-drawing, slicer, timeline, external-link,
+  and custom XML rows also assert Excel-retained effective content types after desktop Excel
   `SaveCopyAs`, with the same Excel-saved check covering retained part presence. Printer-settings,
-  calc-chain, document-property, header/footer legacy-drawing, external-link, and custom XML rows
-  also assert the Excel-retained relationship subset after desktop Excel `SaveCopyAs`, while
-  printer-settings, calc-chain, header/footer legacy-drawing, slicer, timeline, external-link, and
-  custom XML rows assert Excel-saved package parts directly.
+  calc-chain, document-property, header/footer legacy-drawing, slicer, external-link, and custom
+  XML rows also assert the Excel-retained relationship subset after desktop Excel `SaveCopyAs`,
+  while printer-settings, calc-chain, header/footer legacy-drawing, slicer, timeline,
+  external-link, and custom XML rows assert Excel-saved package parts directly.
   In addition to those row-specific MIME checks, every FreeX-saved and Excel-saved package in the
   smoke run must have canonical unique ZIP package part names, no repair/recovery log XML,
   effective content-type coverage for all ZIP parts, parseable relationship parts, and existing
