@@ -201,6 +201,10 @@ Excel and zero load warnings after reloading Excel's saved copy.
   package: each workbook `<externalReference r:id>` must either point to a tolerated external
   workbook relationship target or resolve to an `xl/externalLinks/*.xml` part with the exact
   external-link content type and external workbook-path relationship.
+- Active workbook calc-chain package graphs are validated in every FreeX-saved and Excel-saved
+  package: workbook calc-chain relationships must resolve to an internal calc-chain part with the
+  exact content type and root element, and each calc-chain cell entry must keep a cell reference and
+  valid workbook sheet id when one is present.
 - Active slicer/timeline package graphs are validated in every FreeX-saved and Excel-saved
   package: workbook cache refs, worksheet visual refs, and drawing control relationships must
   resolve to slicer/timeline parts with exact relationship types, content types, and root elements.
