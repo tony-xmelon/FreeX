@@ -1,0 +1,75 @@
+# FreeX Performance Backlog
+
+**Last updated:** 2026-06-04
+**Status:** Current working backlog after the June 4 end-to-end performance pass.
+
+This document records the remaining performance work that is worth pursuing after the practical low-risk UI/model/host pass. The next active focus is file IO, with XLSX open/save as the highest priority because it is the user-visible compatibility path and still trails Excel on large workbooks.
+
+## Active Priority: XLSX Open/Save
+
+Goal: move FreeX XLSX open/save closer to Excel while preserving the current fidelity contract, package-retention guarantees, and Excel openability smoke coverage.
+
+Current constraints:
+
+- `XlsxFileAdapter` still uses ClosedXML for workbook materialization and save, so large improvements may require bypassing ClosedXML in selected hot paths rather than tuning around it.
+- XLSX save also performs package post-processing to retain native metadata. Optimizations must not weaken `XLSX_CORPUS_REPORT.md` guarantees.
+- Benchmark timing from xUnit microbenchmarks is noisy; allocation and repeated relative comparisons are more reliable than a single run.
+
+Completed in this pass:
+
+- Added external workbook stage/save benchmarks gated by `FREEX_IO_BENCHMARK_PATHS`.
+- Added app-load integration so `OpenWorkbookLoader` can use the `XlsxFileAdapter` load pass feature report instead of opening and inspecting real XLSX files separately.
+- Added worksheet schema-normalizer preflight so already ordered worksheets skip full `XDocument` loads during save post-processing.
+- Measured `XLSX_SAVE_STYLE_ONLY` improvement from `mean_ms=741.24 allocated_bytes=174,363,856` to latest verification `mean_ms=526.84 allocated_bytes=112,295,376`; best post-change run observed `mean_ms=484.71`.
+- Measured Partner Dashboard edited-save improvement from `elapsed_ms=43,965.35 allocated_bytes=5,295,944,640` to latest verification `elapsed_ms=38,806.10 allocated_bytes=5,066,709,960`; best post-change run observed `elapsed_ms=32,336.62`.
+- Measured Partner Dashboard open stages: raw ClosedXML load fails on source package XML, sanitized ClosedXML load was `elapsed_ms=16,071.56`, style-stripped sanitized ClosedXML load was `elapsed_ms=2,361.72`, and full FreeX load was `elapsed_ms=5,255.04`.
+
+Primary measurement commands:
+
+```powershell
+$env:FREEX_RUN_BENCHMARK_TESTS='1'
+dotnet test tests\FreeX.Core.IO.Tests\FreeX.Core.IO.Tests.csproj --configuration Release --filter "FullyQualifiedName~XlsxFileAdapterPerformanceTests" --logger "console;verbosity=normal"
+```
+
+For real workbook checks, set `FREEX_IO_BENCHMARK_PATHS` to one or more local `.xlsx` files and rerun the external-load benchmark lane:
+
+```powershell
+$env:FREEX_RUN_BENCHMARK_TESTS='1'
+$env:FREEX_IO_BENCHMARK_PATHS='E:\path\to\large.xlsx'
+dotnet test tests\FreeX.Core.IO.Tests\FreeX.Core.IO.Tests.csproj --configuration Release --filter "FullyQualifiedName~XlsxFileAdapterPerformanceTests.Benchmark_LoadExternalWorkbook_ReportsTiming" --logger "console;verbosity=normal"
+```
+
+For external load stages and edited-save timing:
+
+```powershell
+$env:FREEX_RUN_BENCHMARK_TESTS='1'
+$env:FREEX_IO_BENCHMARK_PATHS='E:\path\to\large.xlsx'
+dotnet test tests\FreeX.Core.IO.Tests\FreeX.Core.IO.Tests.csproj --configuration Release --filter "FullyQualifiedName~XlsxFileAdapterPerformanceTests.Benchmark_LoadExternalWorkbookStages_ReportsTiming|FullyQualifiedName~XlsxFileAdapterPerformanceTests.Benchmark_SaveExternalLoadedWorkbook_ReportsTiming" --logger "console;verbosity=detailed"
+```
+
+Candidate work, in priority order:
+
+1. Add a deterministic large-workbook open/save benchmark fixture that is not dependent on private user files.
+2. Split XLSX save further into ClosedXML workbook emission, modeled feature writers, native metadata merge/post-processing, package validation, and stream/file replacement.
+3. Investigate direct Open XML writers or package patching for stable loaded workbooks where only a small model edit was made.
+4. Investigate direct Open XML readers for high-cardinality workbook surfaces that are currently expensive through ClosedXML.
+5. Fold more load-time package facts together: sheet XML layout, sanitizer requirements, style-only strip decisions, and feature inspection still share adjacent ZIP/XML scans.
+6. Compare `.fxl`, CSV, and SpreadsheetML after XLSX has a fresh deterministic fixture, but keep XLSX first.
+
+## Remaining Cross-App Backlog
+
+These items remain valid but are behind XLSX IO for now:
+
+- **App.UI drawing-object repainting:** consider bitmap or frozen-layer caching for stable drawing-object layers. This needs careful invalidation and visual-regression coverage.
+- **App.Host viewport batching:** batch vertical/horizontal scroll reveal updates so a single offscreen navigation does not trigger duplicate viewport refresh work. Split panes and side-by-side sync make this medium risk.
+- **Core.Commands dense undo paths:** row/column shift undo can likely move existing cells back instead of re-materializing all shifted `CellStateSnapshot` instances. This is correctness-heavy because undo history and formula restore ordering are involved.
+- **Core.Calc conditional-format formulas:** cache more static formula results for viewport conditional formatting. Volatile functions, current-cell-sensitive formulas, structured references, and relative references need strict guards.
+- **Core.IO non-XLSX formats:** SpreadsheetML and CSV have measurable load/save work remaining, but XLSX is the priority because it carries the compatibility burden.
+
+## Guardrails
+
+- Keep every optimization benchmark-backed.
+- Prefer deterministic fixtures before private workbook measurements.
+- Preserve Excel openability, package-health, and corpus-retention tests.
+- Reject changes that only reduce allocation while worsening wall-clock time on the priority scenario.
+- Integrate small, verified slices rather than accumulating a large IO branch.
