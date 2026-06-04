@@ -1,7 +1,7 @@
 # FreeX XLSX Test Corpus Plan
 
 **Status:** Executable scaffold active  
-**Last updated:** 2026-06-03
+**Last updated:** 2026-06-04
 **Goal:** Build a 100+ workbook corpus that measures whether FreeX preserves supported Excel workbook content while clearly reporting excluded or deferred features.
 
 Current executable manifest baseline: 176 rows (121 generated, 25 public, 21 local-private, 9 regression).
@@ -25,7 +25,7 @@ Current executable manifest baseline: 176 rows (121 generated, 25 public, 21 loc
 | Conditional formatting | 10 | Modeled conditional-format rules plus unknown/future rules retained from native XML | Supported rules preserved, unknown rules retained |
 | Objects and links | 10 | Comments, hyperlinks, images, text boxes, basic shapes, sparklines | Native objects, warning behavior for unsupported records |
 | Charts | 10 | Native supported chart families, current chartEx families, and richer unsupported package chart parts | Supported native/chartEx chart model, explicit unsupported warnings for Map or unparseable package parts |
-| Protection and page setup | 5 | Sheet/workbook protection, allow-edit ranges, margins, print areas, scaling | Protection/page setup model properties |
+| Protection and page setup | 5 | Sheet/workbook protection, allow-edit ranges, margins, print areas, print titles, orientation, scaling, print options, headers/footers, manual page breaks | Protection/page setup model properties and Excel-visible smoke counters |
 
 Total planned minimum: 110 files. The extra 10 files provide slack for corrupted, duplicate, or license-ineligible samples.
 
@@ -88,7 +88,7 @@ Allowed `expected_status` values:
 4. Reopen the saved file.
 5. Compare supported model features against the first loaded model.
 6. Verify expected unsupported/excluded warnings were emitted.
-7. Verify feature tags that have deterministic model signals, such as named ranges, hyperlinks, merged cells, chart counts, and cell-type content.
+7. Verify feature tags that have deterministic model or Excel-visible signals, such as named ranges, hyperlinks, merged cells, chart counts, page setup/protected-range counters, and cell-type content.
 8. Compare retained critical package parts and relationship targets for known-gap packages.
 9. Record pass/fail by workbook and by feature bucket.
 
