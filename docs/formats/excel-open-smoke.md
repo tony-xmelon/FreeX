@@ -270,12 +270,15 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   properties, and worksheet/workbook native metadata in the repair-free desktop Excel
   open/save/reopen path. Printer-settings, calc-chain, document-property, header/footer
   legacy-drawing, worksheet legacy-drawing, slicer, timeline, external-link, and custom XML
-  rows additionally assert that their required package parts and package relationships remain
-  present in FreeX-saved ZIPs before Excel opens them; printer-settings, calc-chain,
-  document-property, header/footer legacy-drawing, external-link, and custom XML rows also assert
-  the Excel-retained relationship subset after desktop Excel `SaveCopyAs`, while
+  rows additionally assert that their required package parts, effective content types, and package
+  relationships remain present in FreeX-saved ZIPs before Excel opens them; printer-settings,
+  calc-chain, document-property, header/footer legacy-drawing, slicer, timeline, external-link, and
+  custom XML rows also assert Excel-retained effective content types after desktop Excel
+  `SaveCopyAs`, with the same Excel-saved check covering retained part presence. Printer-settings,
+  calc-chain, document-property, header/footer legacy-drawing, external-link, and custom XML rows
+  also assert the Excel-retained relationship subset after desktop Excel `SaveCopyAs`, while
   printer-settings, calc-chain, header/footer legacy-drawing, slicer, timeline, external-link, and
-  custom XML rows assert Excel-saved package parts.
+  custom XML rows assert Excel-saved package parts directly.
   Concrete Excel-visible feature assertions are enabled for non-native metadata rows whose package
   fixtures surface charts, data validation, or conditional formatting, plus selected native
   metadata rows that desktop Excel exposes as workbook structure protection, worksheet protection,
