@@ -73,7 +73,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 
 ## History
 
-- [history/status-2026-06-05.md](history/status-2026-06-05.md) - current status snapshot covering June 5 XLSX package-fidelity, v1 parity reliability/accessibility batches, open-smoke/AppIoBench tooling, test-helper consolidation, docs/metrics, and tester-release preparation.
+- [history/status-2026-06-05.md](history/status-2026-06-05.md) - current status snapshot covering the frozen June 5 tester-release candidate, XLSX package-fidelity, v1 parity reliability/accessibility batches, open-smoke/AppIoBench tooling, test-helper consolidation, and docs/metrics.
 - [history/status-2026-06-04.md](history/status-2026-06-04.md) - prior status snapshot covering the June 4 default/UI test split correction, Excel smoke, shape/theme, XLSX performance, and inventory work.
 - [history/status-2026-06-03.md](history/status-2026-06-03.md) - backfilled status snapshot covering the June 3 review, test split, XLSX smoke, PDF overlay, and performance integrations.
 - [history/status-2026-06-02.md](history/status-2026-06-02.md) - backfilled status snapshot covering the June 2 performance, parity, file-format, and release-gate integrations.
