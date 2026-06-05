@@ -98,6 +98,9 @@ graphs, mixed cell types, 31-character sheet-name boundaries, worksheet drawing 
 through drawing/chart/image relationships and content types, direct worksheet background-image
 package graphs through image relationships and content types, and chartsheet package graphs through
 drawing/chart relationships and content types.
+Generated supported-metadata rows also assert active worksheet sort-state and data-consolidation
+metadata when present, including schema order, local references, boolean/integer attributes, known
+function/sort values, and `dataRefs` counts.
 Excel-saved copies assert the same Excel-stable public
 package structures after `SaveCopyAs`, excluding inline-string encoding because desktop Excel may
 normalize those cells into shared strings without a repair.
