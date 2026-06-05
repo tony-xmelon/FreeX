@@ -102,7 +102,7 @@ Generated supported-metadata rows also assert workbook `fileVersion`, `fileShari
 `workbookPr`, `workbookProtection`, `bookViews`, `customWorkbookViews`, `functionGroups`,
 `definedNames`, `calcPr`, `fileRecoveryPr`, workbook `extLst` metadata, active workbook theme
 package graphs, and active worksheet
-`sheetPr`, `sheetProtection`, `protectedRanges`, `sheetViews`, `autoFilter`, `customSheetViews`, `mergeCells`, sort-state, data-consolidation, `dataValidations`, `printOptions`,
+`sheetPr`, `cols`, `sheetData`, `sheetProtection`, `protectedRanges`, `sheetViews`, `autoFilter`, `customSheetViews`, `mergeCells`, sort-state, data-consolidation, `conditionalFormatting`, `dataValidations`, `printOptions`,
 `pageMargins`, `pageSetup`, `headerFooter`, page-break, and worksheet `extLst` metadata when present, including schema
 order, view ids, pane/selection references, boolean/integer attributes, known
 view/function/sort/page-setup values, `printOptions` flags, file-version edit/build ids,
@@ -115,7 +115,7 @@ file-recovery flags, extension-list entry URIs, workbook theme relationship targ
 root elements, color/font/format scheme containers, `syncRef` values, sheet-property child slots, page-margin values,
 header/footer flags and child slots, custom-sheet-view GUIDs, view/state values, pane/selection refs,
 child payload shape, worksheet-protection flags/spin counts/hash attrs, protected-range refs/names/ext payloads,
-AutoFilter refs/filter-column ids/filter payloads, merge-cell counts/refs/overlaps, data-validation counts/refs/types/formula slots,
+AutoFilter refs/filter-column ids/filter payloads, column ranges/row refs/cell refs/formula payloads, merge-cell counts/refs/overlaps, conditional-formatting order/refs/priorities/dxf refs/rule payloads, data-validation counts/refs/types/formula slots,
 `brk` ids/ranges, and `dataRefs` counts.
 Worksheet phonetic-property metadata is also checked for schema order, `fontId`, known phonetic
 type/alignment values, and attribute-only payload shape.
@@ -279,6 +279,12 @@ Excel and zero load warnings after reloading Excel's saved copy.
   local cell or range `ref`, and remain attribute-only. Desktop Excel may normalize the saved
   `ref` as it recalculates the used range, so the smoke gate validates structure rather than an
   exact range string.
+- Active worksheet `cols` and `sheetData` structure is validated in every FreeX-saved and
+  Excel-saved package: column groups must stay before `sheetData`, `sheetData` must stay before
+  later worksheet metadata, column min/max ranges must be valid, row refs must stay unique and
+  ascending, cell refs must stay local and unique, row/cell/formula known attributes must stay
+  well-formed, `f`/`v`/`is`/`extLst` child slots must stay schema-ordered, and row/cell extension
+  payloads must stay well-formed.
 - Active worksheet `sheetFormatPr` metadata is validated in every FreeX-saved and Excel-saved
   package when present: the element must stay in schema order before `cols`/`sheetData` and
   later worksheet metadata, numeric/default-size attributes must remain nonnegative, outline
@@ -306,6 +312,12 @@ Excel and zero load warnings after reloading Excel's saved copy.
   when present: the container must stay in worksheet schema order, declared counts must match
   `mergeCell` entries, merge refs must remain local worksheet ranges, duplicate/overlapping ranges
   are rejected, and child payloads are rejected while native attributes remain tolerated.
+- Active worksheet `conditionalFormatting` metadata is validated in every FreeX-saved and
+  Excel-saved package when present: each block must stay in worksheet schema order, `sqref`
+  ranges must remain local, rule priorities and `dxfId` references must stay valid, common
+  boolean/operator/time-period attributes must stay well-formed, formula and payload child slots
+  must stay schema-ordered, color-scale, data-bar, and icon-set payloads must keep valid
+  thresholds/colors, and extension payloads must stay well-formed.
 - Active worksheet `dataValidations` metadata is validated in every FreeX-saved and Excel-saved
   package when present: the container must stay in worksheet schema order, declared counts must
   match `dataValidation` entries, `sqref` ranges must remain local, known type/operator/error/IME
@@ -521,9 +533,11 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   content-type declarations, worksheet scenario metadata whose `scenario` counts, refs, values,
   and boolean/index attributes remain internally consistent, worksheet `sheetPr` metadata whose
   schema order, known boolean flags, sync refs, and child slots remain valid, worksheet `dimension` metadata
-  whose schema order, local used-range refs, and attribute-only payload remain valid, worksheet `sheetFormatPr` metadata
+  whose schema order, local used-range refs, and attribute-only payload remain valid, worksheet `cols`/`sheetData`
+  structure whose schema order, column ranges, row refs, cell refs, formula payloads, and extension payload shape remain valid, worksheet `sheetFormatPr` metadata
   whose schema order, size attributes, outline levels, and known boolean flags remain valid, worksheet `sheetCalcPr` metadata
-  whose schema order, boolean flags, and retained calculation ids remain valid, worksheet `dataValidations` metadata
+  whose schema order, boolean flags, and retained calculation ids remain valid, worksheet `conditionalFormatting` metadata
+  whose schema order, local refs, rule priorities, dxf refs, rule payloads, thresholds/colors, and extension payload shape remain valid, worksheet `dataValidations` metadata
   whose schema order, counts, local refs, known type/operator/error/IME values, boolean/window attributes, formula slots, and extension payload shape remain valid, worksheet `printOptions` metadata
   whose schema order, known boolean flags, and attribute-only payload remain valid, worksheet `pageMargins` metadata
   whose schema order, margin/header/footer values, and attribute-only payload remain valid, worksheet `pageSetup` metadata
@@ -545,7 +559,9 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   `legacyDrawingHF`, and VML image references resolve to matching package parts with exact
   relationship and content-type declarations, worksheet
   table package graphs whose `tableParts` references resolve to table package parts with exact
-  relationship and content-type declarations, and PivotTable package graphs whose worksheet
+  relationship and content-type declarations and whose table XML has valid ids, local refs,
+  tableColumns counts/ids/names/formulas, table AutoFilter/sortState payloads, style-info flags,
+  and extension payload shape, and PivotTable package graphs whose worksheet
   pivot-table references, workbook pivot-cache references, pivot-cache records references, and
   pivot-table cache bindings resolve to matching package parts with exact relationship and
   content-type declarations.
