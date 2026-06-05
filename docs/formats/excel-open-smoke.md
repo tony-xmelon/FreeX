@@ -559,7 +559,9 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   `legacyDrawingHF`, and VML image references resolve to matching package parts with exact
   relationship and content-type declarations, worksheet
   table package graphs whose `tableParts` references resolve to table package parts with exact
-  relationship and content-type declarations, and PivotTable package graphs whose worksheet
+  relationship and content-type declarations and whose table XML has valid ids, local refs,
+  tableColumns counts/ids/names/formulas, table AutoFilter/sortState payloads, style-info flags,
+  and extension payload shape, and PivotTable package graphs whose worksheet
   pivot-table references, workbook pivot-cache references, pivot-cache records references, and
   pivot-table cache bindings resolve to matching package parts with exact relationship and
   content-type declarations.
