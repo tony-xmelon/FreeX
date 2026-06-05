@@ -100,7 +100,8 @@ package graphs through image relationships and content types, and chartsheet pac
 drawing/chart relationships and content types.
 Generated supported-metadata rows also assert active worksheet sort-state and data-consolidation
 metadata when present, including schema order, local references, boolean/integer attributes, known
-function/sort values, and `dataRefs` counts.
+function/sort values, and `dataRefs` counts. Worksheet phonetic-property metadata is also checked
+for schema order, `fontId`, known phonetic type/alignment values, and attribute-only payload shape.
 Excel-saved copies assert the same Excel-stable public
 package structures after `SaveCopyAs`, excluding inline-string encoding because desktop Excel may
 normalize those cells into shared strings without a repair.
