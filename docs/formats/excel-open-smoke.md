@@ -102,7 +102,7 @@ Generated supported-metadata rows also assert workbook `fileVersion`, `fileShari
 `workbookPr`, `workbookProtection`, `bookViews`, `customWorkbookViews`, `functionGroups`,
 `definedNames`, `calcPr`, `fileRecoveryPr`, workbook `extLst` metadata, active workbook theme
 package graphs, and active worksheet
-`sheetPr`, `sheetProtection`, `protectedRanges`, `sheetViews`, `autoFilter`, `customSheetViews`, `mergeCells`, sort-state, data-consolidation, `dataValidations`, `printOptions`,
+`sheetPr`, `sheetProtection`, `protectedRanges`, `sheetViews`, `autoFilter`, `customSheetViews`, `mergeCells`, sort-state, data-consolidation, `conditionalFormatting`, `dataValidations`, `printOptions`,
 `pageMargins`, `pageSetup`, `headerFooter`, page-break, and worksheet `extLst` metadata when present, including schema
 order, view ids, pane/selection references, boolean/integer attributes, known
 view/function/sort/page-setup values, `printOptions` flags, file-version edit/build ids,
@@ -115,7 +115,7 @@ file-recovery flags, extension-list entry URIs, workbook theme relationship targ
 root elements, color/font/format scheme containers, `syncRef` values, sheet-property child slots, page-margin values,
 header/footer flags and child slots, custom-sheet-view GUIDs, view/state values, pane/selection refs,
 child payload shape, worksheet-protection flags/spin counts/hash attrs, protected-range refs/names/ext payloads,
-AutoFilter refs/filter-column ids/filter payloads, merge-cell counts/refs/overlaps, data-validation counts/refs/types/formula slots,
+AutoFilter refs/filter-column ids/filter payloads, merge-cell counts/refs/overlaps, conditional-formatting order/refs/priorities/dxf refs/rule payloads, data-validation counts/refs/types/formula slots,
 `brk` ids/ranges, and `dataRefs` counts.
 Worksheet phonetic-property metadata is also checked for schema order, `fontId`, known phonetic
 type/alignment values, and attribute-only payload shape.
@@ -306,6 +306,12 @@ Excel and zero load warnings after reloading Excel's saved copy.
   when present: the container must stay in worksheet schema order, declared counts must match
   `mergeCell` entries, merge refs must remain local worksheet ranges, duplicate/overlapping ranges
   are rejected, and child payloads are rejected while native attributes remain tolerated.
+- Active worksheet `conditionalFormatting` metadata is validated in every FreeX-saved and
+  Excel-saved package when present: each block must stay in worksheet schema order, `sqref`
+  ranges must remain local, rule priorities and `dxfId` references must stay valid, common
+  boolean/operator/time-period attributes must stay well-formed, formula and payload child slots
+  must stay schema-ordered, color-scale, data-bar, and icon-set payloads must keep valid
+  thresholds/colors, and extension payloads must stay well-formed.
 - Active worksheet `dataValidations` metadata is validated in every FreeX-saved and Excel-saved
   package when present: the container must stay in worksheet schema order, declared counts must
   match `dataValidation` entries, `sqref` ranges must remain local, known type/operator/error/IME
@@ -523,7 +529,8 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   schema order, known boolean flags, sync refs, and child slots remain valid, worksheet `dimension` metadata
   whose schema order, local used-range refs, and attribute-only payload remain valid, worksheet `sheetFormatPr` metadata
   whose schema order, size attributes, outline levels, and known boolean flags remain valid, worksheet `sheetCalcPr` metadata
-  whose schema order, boolean flags, and retained calculation ids remain valid, worksheet `dataValidations` metadata
+  whose schema order, boolean flags, and retained calculation ids remain valid, worksheet `conditionalFormatting` metadata
+  whose schema order, local refs, rule priorities, dxf refs, rule payloads, thresholds/colors, and extension payload shape remain valid, worksheet `dataValidations` metadata
   whose schema order, counts, local refs, known type/operator/error/IME values, boolean/window attributes, formula slots, and extension payload shape remain valid, worksheet `printOptions` metadata
   whose schema order, known boolean flags, and attribute-only payload remain valid, worksheet `pageMargins` metadata
   whose schema order, margin/header/footer values, and attribute-only payload remain valid, worksheet `pageSetup` metadata
