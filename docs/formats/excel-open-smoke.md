@@ -100,9 +100,9 @@ package graphs through image relationships and content types, and chartsheet pac
 drawing/chart relationships and content types.
 Generated supported-metadata rows also assert workbook `fileVersion`, `fileSharing`,
 `workbookPr`, `workbookProtection`, `bookViews`, `customWorkbookViews`, `functionGroups`,
-`definedNames`, `calcPr`, and `fileRecoveryPr` metadata and active worksheet
+`definedNames`, `calcPr`, `fileRecoveryPr`, and workbook `extLst` metadata and active worksheet
 `sheetPr`, `sheetViews`, sort-state, data-consolidation, `printOptions`,
-`pageMargins`, `pageSetup`, `headerFooter`, and page-break metadata when present, including schema
+`pageMargins`, `pageSetup`, `headerFooter`, page-break, and worksheet `extLst` metadata when present, including schema
 order, view ids, pane/selection references, boolean/integer attributes, known
 view/function/sort/page-setup values, `printOptions` flags, file-version edit/build ids,
 workbook file-sharing flags and attributes, workbook-property flags, workbook-property enum values,
@@ -110,7 +110,7 @@ default theme versions, sheet-property flags, workbook-protection flags, workboo
 counts, workbook view flags, indexes, visibility values, custom-view GUIDs,
 workbook function-group built-in counts and names, workbook defined-name names, scope ids, and flags,
 workbook calculation modes, reference modes, ids, counts, and delta values, workbook
-file-recovery flags, `syncRef` values, sheet-property child slots, page-margin values,
+file-recovery flags, extension-list entry URIs, `syncRef` values, sheet-property child slots, page-margin values,
 header/footer flags and child slots, `brk` ids/ranges, and `dataRefs` counts.
 Worksheet phonetic-property metadata is also checked for schema order, `fontId`, known phonetic
 type/alignment values, and attribute-only payload shape.
@@ -236,8 +236,8 @@ Excel and zero load warnings after reloading Excel's saved copy.
   unexpected child payloads are rejected.
 - Active workbook `definedNames` metadata is validated in every FreeX-saved and Excel-saved
   package when present: the container must remain before later workbook metadata, `definedName`
-  entries must keep non-empty names, scope/function-group ids and known flags must remain valid,
-  and unexpected child payloads are rejected.
+  entries, when present, must keep non-empty names, scope/function-group ids and known flags
+  must remain valid, and unexpected child payloads are rejected.
 - Active workbook `calcPr` metadata is validated in every FreeX-saved and Excel-saved package
   when present: the element must remain before later workbook metadata, known calculation and
   reference modes must remain valid, known booleans and unsigned counts/ids must remain valid,
@@ -245,6 +245,9 @@ Excel and zero load warnings after reloading Excel's saved copy.
 - Active workbook `fileRecoveryPr` metadata is validated in every FreeX-saved and Excel-saved
   package when present: each block must remain before later workbook metadata, known recovery
   flags must remain boolean, and child payloads are rejected.
+- Active workbook `extLst` metadata is validated in every FreeX-saved and Excel-saved package
+  when present: the extension-list block must remain after earlier workbook metadata, contain
+  `ext` entries with non-empty unique `uri` values, and avoid malformed container children.
 - Active worksheet hyperlink package graphs are validated in every FreeX-saved and Excel-saved
   package: each `<hyperlink r:id>` must resolve to a worksheet hyperlink relationship with an
   external target, while internal location-only hyperlinks remain valid without a relationship.
@@ -311,6 +314,10 @@ Excel and zero load warnings after reloading Excel's saved copy.
   contain `singleXmlCell` entries with nonnegative `id`/`xmlCellPrId` values and local single-cell
   refs, and avoid duplicate ids/refs or unexpected child payloads. Desktop Excel can drop legacy
   single XML cells on `SaveCopyAs`, so absence in Excel-saved packages is still accepted.
+- Active worksheet `extLst` metadata is validated in every FreeX-saved and Excel-saved package
+  when present: the extension-list block must remain after earlier worksheet metadata, contain
+  `ext` entries with non-empty unique `uri` values, and avoid malformed container children while
+  preserving vendor-specific extension payloads without interpretation.
 - Active smart-tag metadata is validated in every FreeX-saved and Excel-saved package when
   present: workbook `smartTagPr` booleans and `smartTagTypes` declarations must be coherent,
   worksheet `smartTags` entries must carry local cell refs, nonnegative tag types, valid
@@ -478,7 +485,8 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   payload shape remain valid, workbook `definedNames` metadata whose schema order, names,
   scope ids, flags, and payload shape remain valid, workbook `calcPr` metadata whose schema order, modes, booleans, ids/counts, delta values,
   and attribute-only payload remain valid, workbook `fileRecoveryPr` metadata whose schema order,
-  recovery flags, and attribute-only payload remain valid, worksheet custom-property package graphs whose
+  recovery flags, and attribute-only payload remain valid, workbook `extLst` metadata whose schema
+  order, entry URIs, and container shape remain valid, worksheet custom-property package graphs whose
   `customPr r:id` references resolve to internal custom-property binary parts with exact
   content-type declarations, worksheet scenario metadata whose `scenario` counts, refs, values,
   and boolean/index attributes remain internally consistent, worksheet `sheetPr` metadata whose
@@ -492,7 +500,8 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   whose schema order, known boolean flags, and child slot payload remain valid, worksheet page-break metadata whose
   `rowBreaks`/`colBreaks` order, counts, `brk` ids/ranges, and known boolean flags remain valid, worksheet diagnostic metadata whose
   `cellWatches`/`ignoredErrors` order, cell refs, `sqref` ranges, and known boolean flags remain valid, worksheet `singleXmlCells` metadata
-  whose schema order, required ids, single-cell refs, and property ids remain valid, and workbook external-link package graphs
+  whose schema order, required ids, single-cell refs, and property ids remain valid, worksheet `extLst` metadata whose
+  schema order, entry URIs, and container shape remain valid, and workbook external-link package graphs
   whose `<externalReference r:id>` entries either point to external workbook relationship targets
   or resolve to external-link parts with exact content-type and external workbook-path
   relationships, custom XML package graphs whose XML
