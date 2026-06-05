@@ -1,33 +1,35 @@
 # Project Build History Metrics
 
-Generated: 2026-06-03 19:00 +03:00
+Generated: 2026-06-05 09:20 +03:00
 Repository: https://github.com/tony-xmelon/FreeX.git
-Baseline ref: local main at ca7f14e93; origin/main at 2577a5009 before this documentation refresh
-History window: 2026-05-12 through 2026-06-03
+Baseline ref: local main at f879f98e1146; origin/main at ecdacc85878f before this documentation refresh
+History window: 2026-05-12 through 2026-06-05 for Git/build rows; provider-token rows remain through 2026-06-03
 
 ## Scope And Caveats
 
 - Daily build rows are Git numstat churn on the current local main integration branch for src, tests, and docs. They answer how much code changed per day. The June refresh uses commit-date filtering after traversal so merge-heavy history with non-monotonic dates does not prune reachable commits before date bucketing.
 - Current LOC counts are exact for the checkout at the baseline ref. Historical cumulative LOC requires a longer offline ETL pass over each snapshot and is intentionally not estimated here.
-- Token/provider rows were reprocessed from local Codex and Claude JSONL logs on 2026-06-03 for activity through 2026-06-03 inclusive. Bytes are attributed log-file bytes reported by those extraction passes; raw token counts are observed local usage, not provider invoices.
+- Token/provider rows were last reprocessed from local Codex and Claude JSONL logs on 2026-06-03 for activity through 2026-06-03 inclusive. The June 5 release-prep refresh updates repository and Git churn metrics only; June 4-5 provider-token columns are marked pending until a separate local-log extraction pass.
 - Provider-style billable-equivalent tokens apply cache weighting to make the local logs easier to compare with provider dashboards: OpenAI cached input is weighted at 0.5x, Anthropic cache write at 1.25x, Anthropic cache read at 0.1x, and output/reasoning at 1x. Exact billed cost still requires provider exports, model-level rates, and invoice-side normalization.
-- Daily build churn `Bytes +/-`, `OpenAI Tokens`, and `Anthropic Tokens` are the per-date raw provider-log totals from the token extraction table. Byte removals are reported as `-0` because logs are attributed by observed usage, not deleted usage.
+- Daily build churn `Bytes +/-`, `OpenAI Tokens`, and `Anthropic Tokens` are the per-date raw provider-log totals from the token extraction table when available. Byte removals are reported as `-0` because logs are attributed by observed usage, not deleted usage.
 
 ## Current Repository Footprint
 
-- Registered worktrees: 539
-- Local branches: 556
+- Registered worktrees: 908
+- Local branches: 923
 - Remote branches: 333
-- Tracked files: 2,892
-- Current C# source LOC: 233,148
-- Current C# test LOC: 243,570
-- Current XAML LOC: 8,308
-- Current docs LOC: 32,184
-- Observed Codex JSONL sessions/logs: 3,333
-- Observed Claude FreeX JSONL sessions/logs: 257
-- Provider log bytes attributed: 21,148,031,471
-- Observed raw provider tokens: 159,975,270,570
-- Provider-style billable-equivalent tokens: 81,215,078,345
+- Tracked files: 3,059
+- Current C# source LOC: 217,893
+- Current C# test LOC: 222,340
+- Current XAML LOC: 8,026
+- Current docs LOC: 23,646
+- Observed Codex JSONL sessions/logs: 3,333 (last reprocessed through 2026-06-03)
+- Observed Claude FreeX JSONL sessions/logs: 257 (last reprocessed through 2026-06-03)
+- Provider log bytes attributed: 21,148,031,471 (last reprocessed through 2026-06-03)
+- Observed raw provider tokens: 159,975,270,570 (last reprocessed through 2026-06-03)
+- Provider-style billable-equivalent tokens: 81,215,078,345 (last reprocessed through 2026-06-03)
+
+The worktree and branch counts are operational coordination metrics. They are high during this snapshot because multiple parallel agent sessions are active.
 
 ## Daily Build Churn
 
@@ -56,9 +58,11 @@ History window: 2026-05-12 through 2026-06-03
 | 2026-06-01 | 345 | 209 | +12,554 / -1,393 | +3,192 / -709 | +6,948 / -82 | +758 / -429 | +1,404,881,546 / -0 | 37,729,785,040 | 272,171,419 | 1 |
 | 2026-06-02 | 999 | 410 | +30,758 / -3,920 | +13,222 / -2,949 | +15,082 / -451 | +612 / -302 | +598,607,123 / -0 | 2,202,148,604 | 186,835,909 | 1 |
 | 2026-06-03 | 811 | 988 | +174,617 / -142,140 | +33,710 / -19,877 | +131,034 / -119,051 | +2,675 / -675 | +306,955,769 / -0 | 2,470,645,104 | 170,320,270 | 1 |
-| TOTAL | 13,935 | 16,071 | +1,647,061 / -1,070,426 | +411,564 / -181,382 | +383,218 / -135,481 | +57,473 / -19,778 | +21,148,031,471 / -0 | 157,736,635,162 | 2,238,635,408 | 2 |
+| 2026-06-04 | 465 | 828 | +34,267 / -9,434 | +15,108 / -1,436 | +11,751 / -4,279 | +1,526 / -3,446 | pending | pending | pending | 1 |
+| 2026-06-05 | 366 | 200 | +18,029 / -2,602 | +6,761 / -654 | +4,398 / -1,322 | +725 / -568 | pending | pending | pending | 1 |
+| TOTAL | 14,766 | 17,099 | +1,699,357 / -1,082,462 | +433,433 / -183,472 | +399,367 / -141,082 | +59,724 / -23,792 | +21,148,031,471 / -0 | 157,736,635,162 | 2,238,635,408 | 2 |
 
-## Daily Provider Token Usage
+## Daily Provider Token Usage (through 2026-06-03)
 
 | Date | Provider | Files | Sessions | Events | Bytes +/- | Input | Cached Input | Cache Write | Cache Read | Output | Reasoning | Raw Tokens | Billable Eq Tokens |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -149,10 +153,12 @@ History window: 2026-05-12 through 2026-06-03
 - 2026-06-01: tony-xmelon <tony.xmelon@gmail.com>
 - 2026-06-02: tony-xmelon <tony.xmelon@gmail.com>
 - 2026-06-03: tony-xmelon <tony.xmelon@gmail.com>
+- 2026-06-04: tony-xmelon <tony.xmelon@gmail.com>
+- 2026-06-05: tony-xmelon <tony.xmelon@gmail.com>
 
 ## Reading The Trend
 
-- The project started in Git on 2026-05-12 and has consolidated work through 2026-06-03.
+- The project started in Git on 2026-05-12 and has consolidated Git/build work through 2026-06-05.
 - The daily churn table highlights where implementation volume, tests, and documentation moved together.
-- The refreshed token pass attributed 21,148,031,471 bytes of local provider logs, 159,975,270,570 observed raw tokens, and 81,215,078,345 provider-style billable-equivalent tokens across OpenAI/Codex and Anthropic/Claude rows through 2026-06-03.
-- June 1-3 added 2,155 integrated commits, 1,607 changed-file/day entries, +217,929 / -147,453 LoC, and 43,031,906,346 observed raw provider tokens.
+- The most recent token pass attributed 21,148,031,471 bytes of local provider logs, 159,975,270,570 observed raw tokens, and 81,215,078,345 provider-style billable-equivalent tokens across OpenAI/Codex and Anthropic/Claude rows through 2026-06-03.
+- June 4-5 added 831 integrated commits, 1,028 changed-file/day entries, and +52,296 / -12,036 LoC in reachable Git history. Provider-token extraction for these two local dates is intentionally pending.

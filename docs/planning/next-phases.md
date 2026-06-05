@@ -1,7 +1,7 @@
 # FreeX Next Development Phases
 
-**Last updated:** 2026-06-03
-**Current state:** Formula engine at 487/487 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (87/87), XLSX round-trip and corpus coverage at a current 176-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, UIA accessibility peers, a 43-culture localization resource foundation, and a chart interop harness with a latest-complete 28/28 openability/export plus visual-gate pass, 0 known-gap chart allowances, and 28/28 byte-identical Excel-native/FreeX-round-trip packages. The active focus is broader XLSX fidelity proof, package-preserving save validation, release packaging/trust validation, localization review/pseudo-localization/package metadata, performance hardening, and the explicitly documented native-Excel pivot edge cases.
+**Last updated:** 2026-06-05
+**Current state:** Formula engine at 487/487 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (87/87), XLSX round-trip and corpus coverage at a current 176-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, UIA accessibility peers, a 43-culture localization resource foundation, and a chart interop harness with a latest-complete 28/28 openability/export plus visual-gate pass, 0 known-gap chart allowances, and 28/28 byte-identical Excel-native/FreeX-round-trip packages. June 5 work moved XLSX package-preserving save closer to load fidelity with dashboard source-patch improvements and package-graph smoke validation while consolidating shared test helpers. The active focus is broader XLSX fidelity proof, package-preserving save validation, release packaging/trust validation, localization review/pseudo-localization/package metadata, performance hardening, and the explicitly documented native-Excel pivot edge cases.
 
 ---
 
@@ -76,7 +76,7 @@ Before opening new broad UI workstreams, finish or explicitly pause dirty overla
 - Merge focused formula, chart/XLSX, and dialog branches after targeted verification rather than letting many session branches drift.
 - Clean generated build/log artifacts before status reviews so real source changes are visible.
 - Keep this plan, [planning/outstanding-build.md](outstanding-build.md), and the newest project status report aligned after significant merges.
-- Treat tester-release failures as release blockers when they occur before publish; the current known blocker is Core.IO corpus regression coverage, not the GitHub dispatch API.
+- Treat tester-release failures as release blockers when they occur before publish; there is no standing GitHub dispatch blocker in the current release lane.
 
 ### 7A: PivotTable Authoring UI
 

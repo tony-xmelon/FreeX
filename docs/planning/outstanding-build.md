@@ -1,7 +1,7 @@
 # FreeX Outstanding Build List
 
-**Last updated:** 2026-06-03
-**Basis:** reviewed the repository Markdown files, cross-checked the active codebase under `src/` and `tests/`, confirmed `release/progress.json`, and refreshed the current documentation/status metrics after the June 3 main-line reassessment, including PDF chart text overlays, chart dialog/source coverage, metadata fixture repair, content-type override validation, tester release automation hardening, import/export accessibility fixes, and the latest test split/perf-tail integrations. This follows the production-readiness pass and the 2026-05-30 comprehensive source review ([reviews/comprehensive-code-review-2026-05-30.md](../reviews/comprehensive-code-review-2026-05-30.md)), which verified the source tree, confirmed all 17 findings from the 2026-05-28 review are resolved, and recorded a small residual code-quality backlog (see below).
+**Last updated:** 2026-06-05
+**Basis:** reviewed the repository Markdown files, cross-checked the active codebase under `src/` and `tests/`, confirmed `release/progress.json`, and refreshed the current documentation/status metrics after the June 5 main-line reassessment, including XLSX package-graph smoke validation, dashboard source-patch save improvements, v1 Flash Fill/Spell Check/Error Checking reliability batches, shared test-helper consolidation, and tester-release preparation. This follows the production-readiness pass and the 2026-05-30 comprehensive source review ([reviews/comprehensive-code-review-2026-05-30.md](../reviews/comprehensive-code-review-2026-05-30.md)), which verified the source tree, confirmed all 17 findings from the 2026-05-28 review are resolved, and recorded a small residual code-quality backlog (see below).
 
 This is the current source-of-truth backlog for features still outstanding to build. Older planning docs are useful historical context, but several items they list as future work are now implemented.
 
@@ -35,12 +35,14 @@ Confirmed present in code and tests:
    - Continue expanding corpus checks from model-summary stability into deeper per-feature comparisons.
    - **Done 2026-06-01:** `generated-dv-count-package-003` now verifies ten native `dataValidation` rules by type/operator/formula/`sqref` semantics after ordinary model edits.
    - **Done 2026-06-01:** the live web-query known-gap row now covers retained web-publish package parts plus web-query connection metadata and emits the expected unsupported-feature warning.
+   - **Done 2026-06-05:** package-graph smoke validation now covers custom XML, calc chain, worksheet hyperlinks, smart tags, worksheet scenarios, diagnostics, single XML cells, sort/consolidation, phonetic metadata, sheet views, dimensions, page setup, and page margins.
    - Add more Excel-authored formula-result fixtures that compare FreeX evaluation against cached Excel results for newly discovered high-risk edge semantics, especially volatility and spill boundaries.
    - Publish pass/fail rate by workbook and feature bucket before claiming 95% fidelity.
 
 2. **Package-preserving XLSX save path**
    - Package-preserving XLSX save exists as a best-effort source-package merge.
    - Remaining work is broader retention coverage, deeper semantic comparisons, and manual desktop Excel open/save/reopen validation.
+   - **Done 2026-06-05:** dashboard-oriented source patch save coverage expanded, patch-save decisions are attributable, and recent patch-save slices cover legacy notes, internal hyperlinks, merge ranges, row/column dimensions, and structured tables.
    - **Excel-openability of FreeX-authored chart XLSX is verified for the current 28-chart parity matrix (2026-06-01).** The original manual desktop Excel check found two P0 openability blockers: invalid modeled `theme1.xml` blocked every workbook, and invalid chart package XML/relationships blocked chart workbooks. Both are fixed. The latest full `tools\FreeX.ChartInteropCompare` run at `C:\Users\anton\freex-xlsx-verify\chart-interop\20260601-threedcolumn-caveat-final-main-sync-full` passed 28/28 FreeX renderer PNGs, 28/28 FreeX-authored XLSX open/export checks in Excel, 28/28 Excel-authored native open/export checks, and 28/28 Excel-native -> FreeX -> Excel round-trip open/export checks.
    - **Chart interop status is evidence-driven rather than blocked.** chartEx package sidecars now use Excel's native style profile `id="201"` and color style `id="10"`; Pareto, Box-and-Whisker, Waterfall, Histogram, Treemap, Sunburst, and Funnel pass Excel openability/export and visual gates. Classic stacked/percent-stacked defaults and 3-D package cleanup also pass without broad known-gap allowances. No current chart visual allowances remain: the former `ThreeDColumn` Excel chart-export raster variance is handled by the harness as a byte-identical package round-trip with repeated-Excel-export raster drift, not an openability/package defect.
 
@@ -48,6 +50,7 @@ Confirmed present in code and tests:
    - `user/guide.md` - written; covers all supported features, navigation, formulas, charts, PivotTables, data tools, printing, keyboard shortcuts.
    - `user/troubleshooting.md` - written; covers common issues, unsupported-feature warnings, formula errors, chart/PivotTable issues, known limitations.
    - Keep the docs index, current project status report, and tester release notes aligned with `main`.
+   - **Done 2026-06-05:** docs index, project status, and build-history metrics were refreshed for the tester-release run.
    - The hosted tester release channel is complete: GitHub Actions publishes versioned and stable-latest Windows x64 `.exe` artifacts plus an MSIX package. The MSIX is signed when release certificate secrets are configured; until then, the workflow publishes unsigned MSIX assets for tester continuity. Remaining release packaging work is installer trust validation, Store-style submission, and the deferred in-app update lane.
    - `release/progress.json` now drives default tester-release version bands; `overallCompletion: 95` maps to the `v0.8.<run>` tester stream.
    - The accessibility validation gate from `release/test-distribution.md` has been audited: `SheetGrid`, sheet-tab automation metadata, and `GridView` grid/cell UIA provider contracts have automated coverage. Remaining: live keyboard-only and screen-reader validation with a human tester.

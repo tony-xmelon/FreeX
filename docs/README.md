@@ -1,6 +1,6 @@
 # FreeX Documentation
 
-**Last updated:** 2026-06-04
+**Last updated:** 2026-06-05
 
 Use this index as the current documentation map. Point-in-time material lives under `history/` and `archive/`; prefer the newest status snapshot plus the current planning docs when making product or release decisions.
 
@@ -11,7 +11,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 ## Start Here
 
 - [planning/outstanding-build.md](planning/outstanding-build.md) - source-of-truth backlog for outstanding build work.
-- [history/status-2026-06-04.md](history/status-2026-06-04.md) - current project status snapshot; current `overallCompletion` remains 95 while parity hardening, release validation, localization review/package metadata, and XLSX fidelity proof continue.
+- [history/status-2026-06-05.md](history/status-2026-06-05.md) - current project status snapshot; current `overallCompletion` remains 95 while the tester-release gate, installer trust evidence, localization review/package metadata, and XLSX fidelity proof continue.
 - [planning/next-phases.md](planning/next-phases.md) - next development phases and priority sequencing.
 - [performance/backlog-2026-06-04.md](performance/backlog-2026-06-04.md) - current performance backlog and active XLSX open/save IO priority.
 
@@ -73,6 +73,8 @@ Use this index as the current documentation map. Point-in-time material lives un
 
 ## History
 
+- [history/status-2026-06-05.md](history/status-2026-06-05.md) - current status snapshot covering June 5 XLSX package-fidelity, v1 parity, test-helper consolidation, docs/metrics, and tester-release preparation.
+- [history/status-2026-06-04.md](history/status-2026-06-04.md) - prior status snapshot covering the June 4 default/UI test split correction, Excel smoke, shape/theme, XLSX performance, and inventory work.
 - [history/status-2026-06-03.md](history/status-2026-06-03.md) - backfilled status snapshot covering the June 3 review, test split, XLSX smoke, PDF overlay, and performance integrations.
 - [history/status-2026-06-02.md](history/status-2026-06-02.md) - backfilled status snapshot covering the June 2 performance, parity, file-format, and release-gate integrations.
 - [history/status-2026-06-01.md](history/status-2026-06-01.md) - prior status snapshot covering the June 1 localization, chart interop, metrics, and corpus state.
@@ -84,7 +86,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [history/status-2026-05-24.md](history/status-2026-05-24.md) - prior status snapshot.
 - [history/status-2026-05-21.md](history/status-2026-05-21.md) - prior status snapshot.
 - [history/status-2026-05-19.md](history/status-2026-05-19.md) - prior status snapshot.
-- [history/build-history-metrics.md](history/build-history-metrics.md) - generated build-history and provider-log metrics through 2026-06-03.
+- [history/build-history-metrics.md](history/build-history-metrics.md) - generated build-history metrics through 2026-06-05 for Git/build rows, with provider-log rows retained through the last 2026-06-03 extraction.
 - [history/implementation-plan.md](history/implementation-plan.md) - historical formula/XLSX implementation plan retained for context.
 - [archive/superpowers/](archive/superpowers/) - historical implementation plans and specs; not current build-status documentation.
 
