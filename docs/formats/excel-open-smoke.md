@@ -211,6 +211,11 @@ Excel and zero load warnings after reloading Excel's saved copy.
 - Active worksheet scenario metadata is validated in every FreeX-saved and Excel-saved package:
   worksheet `scenarios/scenario` entries must have names, consistent `count` and `inputCells`
   entries, local worksheet refs, literal `val` attributes, and valid boolean/index attributes.
+- Active smart-tag metadata is validated in every FreeX-saved and Excel-saved package when
+  present: workbook `smartTagPr` booleans and `smartTagTypes` declarations must be coherent,
+  worksheet `smartTags` entries must carry local cell refs, nonnegative tag types, valid
+  `deleted` booleans, and `cellSmartTagPr` key/value attributes. Desktop Excel can drop legacy
+  smart tags on `SaveCopyAs`, so absence in Excel-saved packages is still accepted.
 - Active workbook external-link package graphs are validated in every FreeX-saved and Excel-saved
   package: each workbook `<externalReference r:id>` must either point to a tolerated external
   workbook relationship target or resolve to an `xl/externalLinks/*.xml` part with the exact
