@@ -511,7 +511,9 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   relationships resolve to internal `xl/theme/*.xml` parts with exact content types, DrawingML
   `theme` root elements, and color/font/format scheme containers, and shared-string package graphs whose `t="s"` cells
   resolve to existing `xl/sharedStrings.xml` entries, and styles package graphs whose cell, row,
-  and column style indexes resolve into `xl/styles.xml` `cellXfs` entries, document-properties
+  and column style indexes resolve into `xl/styles.xml` `cellXfs` entries, plus stylesheet
+  metadata whose top-level order, singleton containers, `colors`, `dxfs`, `tableStyles`, dxf
+  references, and extension-list payloads remain valid, document-properties
   package graphs whose package-root relationships resolve to canonical `docProps` parts with exact
   content-type declarations and root elements, worksheet background image package graphs whose
   `<picture>` references resolve to image package parts with image content types, worksheet
