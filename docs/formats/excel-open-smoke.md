@@ -226,6 +226,10 @@ Excel and zero load warnings after reloading Excel's saved copy.
   later worksheet metadata, numeric/default-size attributes must remain nonnegative, outline
   levels must stay within Excel's 0-7 range, known booleans must remain valid, and child payloads
   are rejected.
+- Active worksheet `sheetCalcPr` metadata is validated in every FreeX-saved and Excel-saved
+  package when present: the element must stay after `sheetData` and before later worksheet
+  metadata, `fullCalcOnLoad` must remain a valid package boolean, retained `calcId` values must
+  remain nonnegative integers, and child payloads are rejected.
 - Active worksheet diagnostic metadata is validated in every FreeX-saved and Excel-saved package
   when present: `cellWatches` must stay before `ignoredErrors`, watched cells must be unique
   local cell refs, and `ignoredErrors` entries must carry valid local `sqref` ranges with valid
@@ -396,7 +400,8 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   content-type declarations, worksheet scenario metadata whose `scenario` counts, refs, values,
   and boolean/index attributes remain internally consistent, worksheet `dimension` metadata
   whose schema order, local used-range refs, and attribute-only payload remain valid, worksheet `sheetFormatPr` metadata
-  whose schema order, size attributes, outline levels, and known boolean flags remain valid, worksheet diagnostic metadata whose
+  whose schema order, size attributes, outline levels, and known boolean flags remain valid, worksheet `sheetCalcPr` metadata
+  whose schema order, boolean flags, and retained calculation ids remain valid, worksheet diagnostic metadata whose
   `cellWatches`/`ignoredErrors` order, cell refs, `sqref` ranges, and known boolean flags remain valid, worksheet `singleXmlCells` metadata
   whose schema order, required ids, single-cell refs, and property ids remain valid, and workbook external-link package graphs
   whose `<externalReference r:id>` entries either point to external workbook relationship targets
