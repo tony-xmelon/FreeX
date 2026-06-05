@@ -102,7 +102,7 @@ Generated supported-metadata rows also assert workbook `fileVersion`, `fileShari
 `workbookPr`, `workbookProtection`, `bookViews`, `customWorkbookViews`, `functionGroups`,
 `definedNames`, `calcPr`, `fileRecoveryPr`, workbook `extLst` metadata, active workbook theme
 package graphs, and active worksheet
-`sheetPr`, `sheetViews`, `customSheetViews`, `mergeCells`, sort-state, data-consolidation, `printOptions`,
+`sheetPr`, `sheetProtection`, `protectedRanges`, `sheetViews`, `customSheetViews`, `mergeCells`, sort-state, data-consolidation, `printOptions`,
 `pageMargins`, `pageSetup`, `headerFooter`, page-break, and worksheet `extLst` metadata when present, including schema
 order, view ids, pane/selection references, boolean/integer attributes, known
 view/function/sort/page-setup values, `printOptions` flags, file-version edit/build ids,
@@ -114,7 +114,8 @@ workbook calculation modes, reference modes, ids, counts, and delta values, work
 file-recovery flags, extension-list entry URIs, workbook theme relationship targets, content types,
 root elements, color/font/format scheme containers, `syncRef` values, sheet-property child slots, page-margin values,
 header/footer flags and child slots, custom-sheet-view GUIDs, view/state values, pane/selection refs,
-child payload shape, merge-cell counts/refs/overlaps, `brk` ids/ranges, and `dataRefs` counts.
+child payload shape, worksheet-protection flags/spin counts/hash attrs, protected-range refs/names/ext payloads,
+merge-cell counts/refs/overlaps, `brk` ids/ranges, and `dataRefs` counts.
 Worksheet phonetic-property metadata is also checked for schema order, `fontId`, known phonetic
 type/alignment values, and attribute-only payload shape.
 Excel-saved copies assert the same Excel-stable public
@@ -286,6 +287,11 @@ Excel and zero load warnings after reloading Excel's saved copy.
   package when present: the element must stay after `sheetData` and before later worksheet
   metadata, `fullCalcOnLoad` must remain a valid package boolean, retained `calcId` values must
   remain nonnegative integers, and child payloads are rejected.
+- Active worksheet `sheetProtection` and `protectedRanges` metadata is validated in every
+  FreeX-saved and Excel-saved package when present: protection blocks must stay in schema order,
+  known protection booleans, spin counts, and hash attributes must remain valid, protected ranges
+  must carry valid local `sqref` refs, duplicate names/refs are rejected, and protected-range
+  extension payloads must stay well-formed.
 - Active worksheet `customSheetViews` metadata is validated in every FreeX-saved and Excel-saved
   package when present: the container must stay in worksheet schema order, each view must carry a
   valid unique GUID, known view/state/boolean/numeric attributes must stay valid, pane and selection
