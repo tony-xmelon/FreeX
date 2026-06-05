@@ -208,6 +208,14 @@ Excel and zero load warnings after reloading Excel's saved copy.
   Excel-saved package: each worksheet `customPr r:id` must resolve through the worksheet
   relationship part to an internal worksheet custom-property binary part with the exact content
   type, and orphan custom-property relationships or binary parts are rejected.
+- Active worksheet scenario metadata is validated in every FreeX-saved and Excel-saved package:
+  worksheet `scenarios/scenario` entries must have names, consistent `count` and `inputCells`
+  entries, local worksheet refs, literal `val` attributes, and valid boolean/index attributes.
+- Active smart-tag metadata is validated in every FreeX-saved and Excel-saved package when
+  present: workbook `smartTagPr` booleans and `smartTagTypes` declarations must be coherent,
+  worksheet `smartTags` entries must carry local cell refs, nonnegative tag types, valid
+  `deleted` booleans, and `cellSmartTagPr` key/value attributes. Desktop Excel can drop legacy
+  smart tags on `SaveCopyAs`, so absence in Excel-saved packages is still accepted.
 - Active workbook external-link package graphs are validated in every FreeX-saved and Excel-saved
   package: each workbook `<externalReference r:id>` must either point to a tolerated external
   workbook relationship target or resolve to an `xl/externalLinks/*.xml` part with the exact
@@ -361,7 +369,8 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   printer-settings package graphs whose `pageSetup r:id` references resolve to printer-settings
   binary parts with exact content-type declarations, worksheet custom-property package graphs whose
   `customPr r:id` references resolve to internal custom-property binary parts with exact
-  content-type declarations, and workbook external-link package graphs
+  content-type declarations, worksheet scenario metadata whose `scenario` counts, refs, values,
+  and boolean/index attributes remain internally consistent, and workbook external-link package graphs
   whose `<externalReference r:id>` entries either point to external workbook relationship targets
   or resolve to external-link parts with exact content-type and external workbook-path
   relationships, custom XML package graphs whose XML
