@@ -98,12 +98,14 @@ graphs, mixed cell types, 31-character sheet-name boundaries, worksheet drawing 
 through drawing/chart/image relationships and content types, direct worksheet background-image
 package graphs through image relationships and content types, and chartsheet package graphs through
 drawing/chart relationships and content types.
-Generated supported-metadata rows also assert active worksheet `sheetPr`, `sheetViews`, sort-state,
-data-consolidation, `printOptions`, `pageMargins`, `pageSetup`, `headerFooter`, and page-break
-metadata when present, including schema order, view ids, pane/selection references,
-boolean/integer attributes, known view/function/sort/page-setup values, `printOptions` flags,
-sheet-property flags, `syncRef` values, sheet-property child slots, page-margin values,
-header/footer flags and child slots, `brk` ids/ranges, and `dataRefs` counts.
+Generated supported-metadata rows also assert workbook `fileVersion` and `workbookPr` metadata and
+active worksheet `sheetPr`, `sheetViews`, sort-state, data-consolidation, `printOptions`,
+`pageMargins`, `pageSetup`, `headerFooter`, and page-break metadata when present, including schema
+order, view ids, pane/selection references, boolean/integer attributes, known
+view/function/sort/page-setup values, `printOptions` flags, file-version edit/build ids,
+workbook-property flags, workbook-property enum values, default theme versions, sheet-property
+flags, `syncRef` values, sheet-property child slots, page-margin values, header/footer flags and
+child slots, `brk` ids/ranges, and `dataRefs` counts.
 Worksheet phonetic-property metadata is also checked for schema order, `fontId`, known phonetic
 type/alignment values, and attribute-only payload shape.
 Excel-saved copies assert the same Excel-stable public
@@ -203,6 +205,13 @@ Excel and zero load warnings after reloading Excel's saved copy.
   package: package-root core, extended, and custom property relationships must target canonical
   `docProps/*.xml` parts with exact content types and root elements, and standard `docProps` parts
   must have matching root relationships.
+- Active workbook `fileVersion` metadata is validated in every FreeX-saved and Excel-saved
+  package when present: the element must remain before later workbook metadata, known edit/build
+  id attributes must remain nonnegative integers, and child payloads are rejected.
+- Active workbook `workbookPr` metadata is validated in every FreeX-saved and Excel-saved package
+  when present: the element must remain before workbook protection, views, sheets, and later
+  workbook metadata, known booleans and enum values must remain valid, `defaultThemeVersion` must
+  remain nonnegative, and child payloads are rejected.
 - Active worksheet hyperlink package graphs are validated in every FreeX-saved and Excel-saved
   package: each `<hyperlink r:id>` must resolve to a worksheet hyperlink relationship with an
   external target, while internal location-only hyperlinks remain valid without a relationship.
@@ -425,7 +434,9 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   content-type declarations and root elements, worksheet background image package graphs whose
   `<picture>` references resolve to image package parts with image content types, worksheet
   printer-settings package graphs whose `pageSetup r:id` references resolve to printer-settings
-  binary parts with exact content-type declarations, worksheet custom-property package graphs whose
+  binary parts with exact content-type declarations, workbook `fileVersion` metadata whose schema
+  order, edit/build ids, and attribute-only payload remain valid, workbook `workbookPr` metadata
+  whose schema order, known boolean flags, enum values, default theme version, and attribute-only payload remain valid, worksheet custom-property package graphs whose
   `customPr r:id` references resolve to internal custom-property binary parts with exact
   content-type declarations, worksheet scenario metadata whose `scenario` counts, refs, values,
   and boolean/index attributes remain internally consistent, worksheet `sheetPr` metadata whose
