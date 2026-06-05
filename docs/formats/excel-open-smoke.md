@@ -99,9 +99,10 @@ through drawing/chart/image relationships and content types, direct worksheet ba
 package graphs through image relationships and content types, and chartsheet package graphs through
 drawing/chart relationships and content types.
 Generated supported-metadata rows also assert active worksheet `sheetViews`, sort-state,
-data-consolidation, `printOptions`, and page-break metadata when present, including schema order,
-view ids, pane/selection references, boolean/integer attributes, known view/function/sort values,
-`printOptions` flags, `brk` ids/ranges, and `dataRefs` counts.
+data-consolidation, `printOptions`, `pageSetup`, and page-break metadata when present, including
+schema order, view ids, pane/selection references, boolean/integer attributes, known
+view/function/sort/page-setup values, `printOptions` flags, `brk` ids/ranges, and `dataRefs`
+counts.
 Worksheet phonetic-property metadata is also checked for schema order, `fontId`, known phonetic
 type/alignment values, and attribute-only payload shape.
 Excel-saved copies assert the same Excel-stable public
@@ -235,6 +236,12 @@ Excel and zero load warnings after reloading Excel's saved copy.
   package when present: the element must stay after prior worksheet metadata and before page
   margins/setup, header/footer, page breaks, and later worksheet metadata, known flags must remain
   valid package booleans, and child payloads are rejected.
+- Active worksheet `pageSetup` metadata is validated in every FreeX-saved and Excel-saved package
+  when present: the element must stay after prior worksheet metadata and before header/footer,
+  page breaks, and later worksheet metadata, known enum values must remain recognized,
+  numeric attributes must remain nonnegative, known booleans must remain valid, and child payloads
+  are rejected. Any `pageSetup r:id` printer-settings reference is also covered by the
+  printer-settings package-graph gate.
 - Active worksheet page-break metadata is validated in every FreeX-saved and Excel-saved package
   when present: `rowBreaks` and `colBreaks` must stay in schema order, counts must remain
   consistent with `brk` entries, break ids and spans must stay within worksheet bounds, known
@@ -411,7 +418,8 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   whose schema order, local used-range refs, and attribute-only payload remain valid, worksheet `sheetFormatPr` metadata
   whose schema order, size attributes, outline levels, and known boolean flags remain valid, worksheet `sheetCalcPr` metadata
   whose schema order, boolean flags, and retained calculation ids remain valid, worksheet `printOptions` metadata
-  whose schema order, known boolean flags, and attribute-only payload remain valid, worksheet page-break metadata whose
+  whose schema order, known boolean flags, and attribute-only payload remain valid, worksheet `pageSetup` metadata
+  whose schema order, known enum values, numeric attributes, boolean flags, and attribute-only payload remain valid, worksheet page-break metadata whose
   `rowBreaks`/`colBreaks` order, counts, `brk` ids/ranges, and known boolean flags remain valid, worksheet diagnostic metadata whose
   `cellWatches`/`ignoredErrors` order, cell refs, `sqref` ranges, and known boolean flags remain valid, worksheet `singleXmlCells` metadata
   whose schema order, required ids, single-cell refs, and property ids remain valid, and workbook external-link package graphs
