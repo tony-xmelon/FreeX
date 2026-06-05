@@ -233,4 +233,4 @@ This keeps future build workers from getting a late restore/build failure when t
 
 ## Next Implementation Slice
 
-The Tester Release workflow now uses the same Release build/test isolation flags as the local canonical verification commands. A future Build slice can still add a wrapper around the canonical restore/build/test sequence if the release-lane owner wants CI and local build verification to share one command surface.
+Superseded by the faster verification policy: local verification, CI, and Tester Release now use normal .NET restore/build caching and parallelism by default. The old serial/no-build-server flags are reserved for a one-time rerun when stale build-server or output-lock state is the suspected failure mode.
