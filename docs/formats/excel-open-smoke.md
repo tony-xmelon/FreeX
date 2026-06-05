@@ -191,6 +191,10 @@ Excel and zero load warnings after reloading Excel's saved copy.
 - FreeX-saved and Excel-saved packages must also keep the package root wired as an XLSX workbook:
   `_rels/.rels` must contain an `officeDocument` relationship to `xl/workbook.xml`, and
   `xl/workbook.xml` must have the SpreadsheetML workbook content type.
+- Active document-properties package graphs are validated in every FreeX-saved and Excel-saved
+  package: package-root core, extended, and custom property relationships must target canonical
+  `docProps/*.xml` parts with exact content types and root elements, and standard `docProps` parts
+  must have matching root relationships.
 - Active worksheet hyperlink package graphs are validated in every FreeX-saved and Excel-saved
   package: each `<hyperlink r:id>` must resolve to a worksheet hyperlink relationship with an
   external target, while internal location-only hyperlinks remain valid without a relationship.
@@ -346,13 +350,15 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   relationship, plus workbook sheet relationship graphs with exact worksheet, chartsheet,
   dialogsheet, and macrosheet content types, and shared-string package graphs whose `t="s"` cells
   resolve to existing `xl/sharedStrings.xml` entries, and styles package graphs whose cell, row,
-  and column style indexes resolve into `xl/styles.xml` `cellXfs` entries, worksheet background
-  image package graphs whose `<picture>` references resolve to image package parts with image
-  content types, worksheet printer-settings package graphs whose `pageSetup r:id` references
-  resolve to printer-settings binary parts with exact content-type declarations, and workbook
-  external-link package graphs whose `<externalReference r:id>` entries either point to external
-  workbook relationship targets or resolve to external-link parts with exact content-type and
-  external workbook-path relationships, custom XML package graphs whose XML
+  and column style indexes resolve into `xl/styles.xml` `cellXfs` entries, document-properties
+  package graphs whose package-root relationships resolve to canonical `docProps` parts with exact
+  content-type declarations and root elements, worksheet background image package graphs whose
+  `<picture>` references resolve to image package parts with image content types, worksheet
+  printer-settings package graphs whose `pageSetup r:id` references resolve to printer-settings
+  binary parts with exact content-type declarations, and workbook external-link package graphs
+  whose `<externalReference r:id>` entries either point to external workbook relationship targets
+  or resolve to external-link parts with exact content-type and external workbook-path
+  relationships, custom XML package graphs whose XML
   item parts resolve to `datastoreItem` properties parts with exact content-type declarations, and
   slicer/timeline package graphs whose workbook cache refs, worksheet visual refs, and drawing
   control relationships resolve to matching package parts with exact relationship and content-type
