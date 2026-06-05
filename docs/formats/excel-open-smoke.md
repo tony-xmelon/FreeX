@@ -102,7 +102,7 @@ Generated supported-metadata rows also assert workbook `fileVersion`, `fileShari
 `workbookPr`, `workbookProtection`, `bookViews`, `customWorkbookViews`, `functionGroups`,
 `definedNames`, `calcPr`, `fileRecoveryPr`, workbook `extLst` metadata, active workbook theme
 package graphs, and active worksheet
-`sheetPr`, `sheetViews`, `customSheetViews`, sort-state, data-consolidation, `printOptions`,
+`sheetPr`, `sheetViews`, `customSheetViews`, `mergeCells`, sort-state, data-consolidation, `printOptions`,
 `pageMargins`, `pageSetup`, `headerFooter`, page-break, and worksheet `extLst` metadata when present, including schema
 order, view ids, pane/selection references, boolean/integer attributes, known
 view/function/sort/page-setup values, `printOptions` flags, file-version edit/build ids,
@@ -114,7 +114,7 @@ workbook calculation modes, reference modes, ids, counts, and delta values, work
 file-recovery flags, extension-list entry URIs, workbook theme relationship targets, content types,
 root elements, color/font/format scheme containers, `syncRef` values, sheet-property child slots, page-margin values,
 header/footer flags and child slots, custom-sheet-view GUIDs, view/state values, pane/selection refs,
-child payload shape, `brk` ids/ranges, and `dataRefs` counts.
+child payload shape, merge-cell counts/refs/overlaps, `brk` ids/ranges, and `dataRefs` counts.
 Worksheet phonetic-property metadata is also checked for schema order, `fontId`, known phonetic
 type/alignment values, and attribute-only payload shape.
 Excel-saved copies assert the same Excel-stable public
@@ -290,6 +290,10 @@ Excel and zero load warnings after reloading Excel's saved copy.
   package when present: the container must stay in worksheet schema order, each view must carry a
   valid unique GUID, known view/state/boolean/numeric attributes must stay valid, pane and selection
   refs must remain local worksheet refs, and supported child payloads must stay schema-ordered.
+- Active worksheet `mergeCells` metadata is validated in every FreeX-saved and Excel-saved package
+  when present: the container must stay in worksheet schema order, declared counts must match
+  `mergeCell` entries, merge refs must remain local worksheet ranges, duplicate/overlapping ranges
+  are rejected, and child payloads are rejected while native attributes remain tolerated.
 - Active worksheet `printOptions` metadata is validated in every FreeX-saved and Excel-saved
   package when present: the element must stay after prior worksheet metadata and before page
   margins/setup, header/footer, page breaks, and later worksheet metadata, known flags must remain
