@@ -197,10 +197,23 @@ Excel and zero load warnings after reloading Excel's saved copy.
 - Active worksheet background-image package graphs are validated in every FreeX-saved and
   Excel-saved package: each worksheet `<picture r:id>` must resolve to a worksheet image
   relationship whose target exists and has an image content type.
+- Active worksheet printer-settings package graphs are validated in every FreeX-saved and
+  Excel-saved package: each worksheet `pageSetup r:id` and printer-settings relationship must
+  resolve to an internal `xl/printerSettings/*.bin` part with the exact content type.
 - Active workbook external-link package graphs are validated in every FreeX-saved and Excel-saved
   package: each workbook `<externalReference r:id>` must either point to a tolerated external
   workbook relationship target or resolve to an `xl/externalLinks/*.xml` part with the exact
   external-link content type and external workbook-path relationship.
+- Active workbook calc-chain package graphs are validated in every FreeX-saved and Excel-saved
+  package: workbook calc-chain relationships must resolve to an internal calc-chain part with the
+  exact content type and root element, and each calc-chain cell entry must keep a cell reference and
+  valid workbook sheet id when one is present.
+- Active custom XML package graphs are validated in every FreeX-saved and Excel-saved package:
+  each custom XML relationship must resolve to an XML item part whose item relationship part points
+  to a custom XML properties part with the exact content type and `datastoreItem` metadata.
+- Active slicer/timeline package graphs are validated in every FreeX-saved and Excel-saved
+  package: workbook cache refs, worksheet visual refs, and drawing control relationships must
+  resolve to slicer/timeline parts with exact relationship types, content types, and root elements.
 - Metadata rows can declare required Excel-saved package parts. The smoke then opens the
   Excel `SaveCopyAs` ZIP and fails if any required package part disappeared; this now covers the
   generated printer-settings, calc-chain, header/footer legacy-drawing, slicer, timeline,
@@ -335,13 +348,19 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   resolve to existing `xl/sharedStrings.xml` entries, and styles package graphs whose cell, row,
   and column style indexes resolve into `xl/styles.xml` `cellXfs` entries, worksheet background
   image package graphs whose `<picture>` references resolve to image package parts with image
-  content types, and workbook external-link package graphs whose `<externalReference r:id>` entries
-  either point to external workbook relationship targets or resolve to external-link parts with
-  exact content-type and external workbook-path relationships, and worksheet drawing package graphs
-  whose drawing/chart/image references resolve to drawing, chart, and image package parts with
-  matching relationship and content-type declarations, legacy comment and VML package
-  graphs whose worksheet comment, `legacyDrawing`, `legacyDrawingHF`, and VML image references
-  resolve to matching package parts with exact relationship and content-type declarations, worksheet
+  content types, worksheet printer-settings package graphs whose `pageSetup r:id` references
+  resolve to printer-settings binary parts with exact content-type declarations, and workbook
+  external-link package graphs whose `<externalReference r:id>` entries either point to external
+  workbook relationship targets or resolve to external-link parts with exact content-type and
+  external workbook-path relationships, custom XML package graphs whose XML
+  item parts resolve to `datastoreItem` properties parts with exact content-type declarations, and
+  slicer/timeline package graphs whose workbook cache refs, worksheet visual refs, and drawing
+  control relationships resolve to matching package parts with exact relationship and content-type
+  declarations, and worksheet drawing package graphs whose drawing/chart/image references resolve
+  to drawing, chart, and image package parts with matching relationship and content-type
+  declarations, legacy comment and VML package graphs whose worksheet comment, `legacyDrawing`,
+  `legacyDrawingHF`, and VML image references resolve to matching package parts with exact
+  relationship and content-type declarations, worksheet
   table package graphs whose `tableParts` references resolve to table package parts with exact
   relationship and content-type declarations, and PivotTable package graphs whose worksheet
   pivot-table references, workbook pivot-cache references, pivot-cache records references, and
