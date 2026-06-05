@@ -92,7 +92,8 @@ Public corpus rows with package-only manifest tags also assert their declared pa
 the produced FreeX-saved ZIPs before Excel opens them: styles/formatting parts, exact content
 types, workbook relationships, and cell/row/column style indexes that resolve into `cellXfs`;
 worksheet shared-string tables, exact content types, and workbook relationships; workbook sheet
-relationship graphs with exact sheet content types; shared-string cell indexes that resolve into
+relationship graphs with exact sheet content types, valid sheet names/ids/states, and bounded workbook
+view sheet indexes; shared-string cell indexes that resolve into
 the shared-string table; hyperlink and merged-cell XML, inline-string cells, hyperlink relationship
 graphs, mixed cell types, 31-character sheet-name boundaries, worksheet drawing package graphs
 through drawing/chart/image relationships and content types, direct worksheet background-image
@@ -507,7 +508,9 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   to `xl/workbook.xml` with the SpreadsheetML workbook content type, parseable relationship parts,
   well-formed relationship declarations, and existing package targets for every non-external
   relationship, plus workbook sheet relationship graphs with exact worksheet, chartsheet,
-  dialogsheet, and macrosheet content types, workbook theme package graphs whose workbook
+  dialogsheet, and macrosheet content types, direct `sheets` children, unique valid sheet names and
+  sheet ids, known sheet states, and bounded workbook view `firstSheet`/`activeTab` indexes,
+  workbook theme package graphs whose workbook
   relationships resolve to internal `xl/theme/*.xml` parts with exact content types, DrawingML
   `theme` root elements, and color/font/format scheme containers, and shared-string package graphs whose `t="s"` cells
   resolve to existing `xl/sharedStrings.xml` entries, and styles package graphs whose cell, row,
