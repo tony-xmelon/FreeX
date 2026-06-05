@@ -35,7 +35,7 @@ Confirmed present in code and tests:
    - Continue expanding corpus checks from model-summary stability into deeper per-feature comparisons.
    - **Done 2026-06-01:** `generated-dv-count-package-003` now verifies ten native `dataValidation` rules by type/operator/formula/`sqref` semantics after ordinary model edits.
    - **Done 2026-06-01:** the live web-query known-gap row now covers retained web-publish package parts plus web-query connection metadata and emits the expected unsupported-feature warning.
-   - **Done 2026-06-05:** package-graph smoke validation now covers custom XML, calc chain, worksheet hyperlinks, smart tags, worksheet scenarios, diagnostics, single XML cells, sort/consolidation, phonetic metadata, sheet views, dimensions, page setup, page margins, and sheet properties.
+   - **Done 2026-06-05:** package-graph smoke validation now covers custom XML, calc chain, worksheet hyperlinks, smart tags, worksheet scenarios, diagnostics, single XML cells, sort/consolidation, phonetic metadata, sheet views, dimensions, page setup, page margins, sheet properties, and workbook file version metadata.
    - **Done 2026-06-05:** `fidelity-corpus/`, `tools/Fetch-FidelityCorpus.ps1`, `tools/Run-FidelityBatch.ps1`, and `tools/FreeX.FidelityCompare` establish a separate 21-row external fidelity comparison lane.
    - Add more Excel-authored formula-result fixtures that compare FreeX evaluation against cached Excel results for newly discovered high-risk edge semantics, especially volatility and spill boundaries.
    - Publish pass/fail rate by workbook and feature bucket before claiming 95% fidelity.
