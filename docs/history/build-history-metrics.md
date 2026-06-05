@@ -1,8 +1,8 @@
 # Project Build History Metrics
 
-Generated: 2026-06-05 11:22 +03:00
+Generated: 2026-06-05 11:26 +03:00
 Repository: https://github.com/tony-xmelon/FreeX.git
-Baseline ref: release-prep integration at 665d93fe913d; local main at c5d44ed521bd and origin/main at 6f4ade7818e2 before this documentation refresh
+Baseline ref: release-prep integration at 756d6f118e51; local main at f9596dc796d7 and origin/main at 6f4ade7818e2 before this documentation refresh
 History window: 2026-05-12 through 2026-06-05 for Git/build rows; provider-token rows remain through 2026-06-03
 
 ## Scope And Caveats
@@ -20,9 +20,9 @@ History window: 2026-05-12 through 2026-06-05 for Git/build rows; provider-token
 - Remote branches: 333
 - Tracked files: 3,073
 - Current C# source LOC: 218,975
-- Current C# test LOC: 222,838
+- Current C# test LOC: 222,803
 - Current XAML LOC: 8,025
-- Current docs LOC: 23,817
+- Current docs LOC: 23,822
 - Observed Codex JSONL sessions/logs: 3,333 (last reprocessed through 2026-06-03)
 - Observed Claude FreeX JSONL sessions/logs: 257 (last reprocessed through 2026-06-03)
 - Provider log bytes attributed: 21,148,031,471 (last reprocessed through 2026-06-03)
@@ -59,8 +59,8 @@ The worktree and branch counts are operational coordination metrics. They are hi
 | 2026-06-02 | 999 | 410 | +30,758 / -3,920 | +13,222 / -2,949 | +15,082 / -451 | +612 / -302 | +598,607,123 / -0 | 2,202,148,604 | 186,835,909 | 1 |
 | 2026-06-03 | 811 | 988 | +174,617 / -142,140 | +33,710 / -19,877 | +131,034 / -119,051 | +2,675 / -675 | +306,955,769 / -0 | 2,470,645,104 | 170,320,270 | 1 |
 | 2026-06-04 | 466 | 832 | +34,414 / -9,434 | +15,108 / -1,436 | +11,751 / -4,279 | +1,561 / -3,446 | pending | pending | pending | 1 |
-| 2026-06-05 | 447 | 245 | +23,146 / -4,131 | +8,120 / -775 | +6,149 / -2,489 | +1,178 / -807 | pending | pending | pending | 1 |
-| TOTAL | 14,848 | 17,148 | +1,704,621 / -1,083,991 | +434,792 / -183,593 | +401,118 / -142,249 | +60,212 / -24,031 | +21,148,031,471 / -0 | 157,736,635,162 | 2,238,635,408 | 2 |
+| 2026-06-05 | 461 | 246 | +23,431 / -4,316 | +8,120 / -775 | +6,264 / -2,638 | +1,219 / -843 | pending | pending | pending | 1 |
+| TOTAL | 14,862 | 17,149 | +1,704,906 / -1,084,176 | +434,792 / -183,593 | +401,233 / -142,398 | +60,253 / -24,067 | +21,148,031,471 / -0 | 157,736,635,162 | 2,238,635,408 | 2 |
 
 ## Daily Provider Token Usage (through 2026-06-03)
 
@@ -161,4 +161,4 @@ The worktree and branch counts are operational coordination metrics. They are hi
 - The project started in Git on 2026-05-12 and has consolidated Git/build work through 2026-06-05.
 - The daily churn table highlights where implementation volume, tests, and documentation moved together.
 - The most recent token pass attributed 21,148,031,471 bytes of local provider logs, 159,975,270,570 observed raw tokens, and 81,215,078,345 provider-style billable-equivalent tokens across OpenAI/Codex and Anthropic/Claude rows through 2026-06-03.
-- June 4-5 added 913 integrated commits, 1,077 changed-file/day entries, and +57,560 / -13,565 LoC in reachable Git history. Provider-token extraction for these two local dates is intentionally pending.
+- June 4-5 added 927 integrated commits, 1,078 changed-file/day entries, and +57,845 / -13,750 LoC in reachable Git history. Provider-token extraction for these two local dates is intentionally pending.
