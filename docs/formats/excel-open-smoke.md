@@ -99,14 +99,17 @@ through drawing/chart/image relationships and content types, direct worksheet ba
 package graphs through image relationships and content types, and chartsheet package graphs through
 drawing/chart relationships and content types.
 Generated supported-metadata rows also assert workbook `fileVersion`, `fileSharing`,
-`workbookPr`, `workbookProtection`, `bookViews`, `customWorkbookViews`, `functionGroups`, `calcPr`, and `fileRecoveryPr` metadata and active worksheet
+`workbookPr`, `workbookProtection`, `bookViews`, `customWorkbookViews`, `functionGroups`,
+`definedNames`, `calcPr`, and `fileRecoveryPr` metadata and active worksheet
 `sheetPr`, `sheetViews`, sort-state, data-consolidation, `printOptions`,
 `pageMargins`, `pageSetup`, `headerFooter`, and page-break metadata when present, including schema
 order, view ids, pane/selection references, boolean/integer attributes, known
 view/function/sort/page-setup values, `printOptions` flags, file-version edit/build ids,
 workbook file-sharing flags and attributes, workbook-property flags, workbook-property enum values,
 default theme versions, sheet-property flags, workbook-protection flags, workbook-protection spin
-counts, workbook view flags, indexes, visibility values, custom-view GUIDs, workbook function-group built-in counts and names, workbook calculation modes, reference modes, ids, counts, and delta values, workbook
+counts, workbook view flags, indexes, visibility values, custom-view GUIDs,
+workbook function-group built-in counts and names, workbook defined-name names, scope ids, and flags,
+workbook calculation modes, reference modes, ids, counts, and delta values, workbook
 file-recovery flags, `syncRef` values, sheet-property child slots, page-margin values,
 header/footer flags and child slots, `brk` ids/ranges, and `dataRefs` counts.
 Worksheet phonetic-property metadata is also checked for schema order, `fontId`, known phonetic
@@ -231,6 +234,10 @@ Excel and zero load warnings after reloading Excel's saved copy.
   package when present: the container must remain before later workbook metadata,
   `builtInGroupCount` must remain unsigned, `functionGroup` names must remain non-empty, and
   unexpected child payloads are rejected.
+- Active workbook `definedNames` metadata is validated in every FreeX-saved and Excel-saved
+  package when present: the container must remain before later workbook metadata, `definedName`
+  entries must keep non-empty names, scope/function-group ids and known flags must remain valid,
+  and unexpected child payloads are rejected.
 - Active workbook `calcPr` metadata is validated in every FreeX-saved and Excel-saved package
   when present: the element must remain before later workbook metadata, known calculation and
   reference modes must remain valid, known booleans and unsigned counts/ids must remain valid,
@@ -468,7 +475,8 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   metadata whose schema order, known boolean flags, spin count, and attribute-only payload remain
   valid, workbook `bookViews`/`customWorkbookViews` metadata whose schema order, view containers,
   known flags/indexes, visibility values, GUIDs, and payload shape remain valid, workbook `functionGroups` metadata whose schema order, built-in counts, child names, and
-  payload shape remain valid, workbook `calcPr` metadata whose schema order, modes, booleans, ids/counts, delta values,
+  payload shape remain valid, workbook `definedNames` metadata whose schema order, names,
+  scope ids, flags, and payload shape remain valid, workbook `calcPr` metadata whose schema order, modes, booleans, ids/counts, delta values,
   and attribute-only payload remain valid, workbook `fileRecoveryPr` metadata whose schema order,
   recovery flags, and attribute-only payload remain valid, worksheet custom-property package graphs whose
   `customPr r:id` references resolve to internal custom-property binary parts with exact
