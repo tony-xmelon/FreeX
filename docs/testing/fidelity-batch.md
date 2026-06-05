@@ -15,7 +15,23 @@ For every corpus workbook it records, from FreeX (`FreeX.Core.IO` loader) and fr
 
 - **Openability** — FreeX loads without throwing; Excel opens without raising.
 - **Computed cell values** — cell-by-cell over the intersection of occupied cells (numbers within
-  relative tolerance, text/bool exact). FreeX's loaded value vs Excel's `Value2`.
+  relative tolerance, text/bool exact), FreeX vs Excel's `Value2`.
+
+### Two modes: load-fidelity vs compute-fidelity
+
+- **Default (load-fidelity):** FreeX's *loaded* values (the file's cached formula results) vs Excel's live
+  values. Catches loader bugs (e.g. time cells parsed as text) but masks engine gaps when the file's cache
+  already matches Excel, and can show false diffs when a file ships a stale cache that Excel recomputes.
+- **`--recalc` (compute-fidelity):** recomputes every FreeX formula through the engine
+  (`RecalcEngine.RecalculateAllFormulas`, which passes each cell as `currentCell` so `COLUMN()`/`ROW()`
+  resolve) before comparing — i.e. FreeX's engine vs Excel. This is the truer fidelity measure and surfaces
+  engine gaps directly. It is noisier on workbooks built around **legacy array / implicit-intersection**
+  formulas (e.g. `=A7:J7*B15` in one cell): Excel resolves the range to the single intersecting cell (a
+  scalar via the implicit `@`), whereas FreeX spills the whole array → `#SPILL!`, with cascades into
+  dependents. On the current Apache-POI seed corpus, the 2026-06-05 compute sweep passed 18/21; the 3 fails
+  are POI's formula-engine torture fixtures and surfaced two real, sizeable gaps for follow-up: **implicit
+  intersection** (the `#SPILL!` pattern above) and **`TEXT()` / number-format-code** handling (e.g. the `?`
+  digit-placeholder and comma scaling emit literal placeholder characters instead of a formatted number).
 - **Feature inventory** — sheets, charts, pivot tables, tables, comments. `namedRanges` and `hyperlinks`
   are recorded as raw per-side counts but **not** diffed: Excel's `Names` includes hidden built-ins
   (`Print_Area`, `_FilterDatabase`, table names) and its `Hyperlinks` auto-detects URL-like text, so the
@@ -39,13 +55,14 @@ diffs), and `README.md` (summary table).
 From the repo root, with desktop Excel installed:
 
 ```powershell
-pwsh tools/Run-FidelityBatch.ps1                 # fetch corpus, build, run all
+pwsh tools/Run-FidelityBatch.ps1                 # fetch corpus, build, run all (load-fidelity)
+pwsh tools/Run-FidelityBatch.ps1 -Recalc         # compute-fidelity: recompute FreeX formulas vs Excel
 pwsh tools/Run-FidelityBatch.ps1 -Filter chart   # only files whose name contains "chart"
 pwsh tools/Run-FidelityBatch.ps1 -Tolerance 1    # allow up to 1% of cells to differ
 pwsh tools/Run-FidelityBatch.ps1 -SkipFetch      # skip the download step
 ```
 
-Or directly: `tools/FreeX.FidelityCompare.exe [--filter <substr>] [--out <dir>] [--tolerance <pct>]`.
+Or directly: `tools/FreeX.FidelityCompare.exe [--filter <substr>] [--out <dir>] [--tolerance <pct>] [--recalc]`.
 
 ## The corpus
 
