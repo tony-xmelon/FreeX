@@ -98,16 +98,16 @@ graphs, mixed cell types, 31-character sheet-name boundaries, worksheet drawing 
 through drawing/chart/image relationships and content types, direct worksheet background-image
 package graphs through image relationships and content types, and chartsheet package graphs through
 drawing/chart relationships and content types.
-Generated supported-metadata rows also assert workbook `fileVersion`, `workbookPr`, and
-`workbookProtection` metadata and active worksheet `sheetPr`, `sheetViews`, sort-state,
-data-consolidation, `printOptions`,
+Generated supported-metadata rows also assert workbook `fileVersion`, `workbookPr`,
+`workbookProtection`, and `calcPr` metadata and active worksheet `sheetPr`, `sheetViews`,
+sort-state, data-consolidation, `printOptions`,
 `pageMargins`, `pageSetup`, `headerFooter`, and page-break metadata when present, including schema
 order, view ids, pane/selection references, boolean/integer attributes, known
 view/function/sort/page-setup values, `printOptions` flags, file-version edit/build ids,
 workbook-property flags, workbook-property enum values, default theme versions, sheet-property
-flags, workbook-protection flags, workbook-protection spin counts, `syncRef` values, sheet-property
-child slots, page-margin values, header/footer flags and child slots, `brk` ids/ranges, and
-`dataRefs` counts.
+flags, workbook-protection flags, workbook-protection spin counts, workbook calculation modes,
+reference modes, ids, counts, and delta values, `syncRef` values, sheet-property child slots,
+page-margin values, header/footer flags and child slots, `brk` ids/ranges, and `dataRefs` counts.
 Worksheet phonetic-property metadata is also checked for schema order, `fontId`, known phonetic
 type/alignment values, and attribute-only payload shape.
 Excel-saved copies assert the same Excel-stable public
@@ -218,6 +218,10 @@ Excel and zero load warnings after reloading Excel's saved copy.
   package when present: the element must remain before views, sheets, and later workbook metadata,
   known boolean flags must remain valid, `spinCount` must remain nonnegative, and child payloads
   are rejected.
+- Active workbook `calcPr` metadata is validated in every FreeX-saved and Excel-saved package
+  when present: the element must remain before later workbook metadata, known calculation and
+  reference modes must remain valid, known booleans and unsigned counts/ids must remain valid,
+  `iterateDelta` must remain finite and nonnegative, and child payloads are rejected.
 - Active worksheet hyperlink package graphs are validated in every FreeX-saved and Excel-saved
   package: each `<hyperlink r:id>` must resolve to a worksheet hyperlink relationship with an
   external target, while internal location-only hyperlinks remain valid without a relationship.
@@ -444,7 +448,8 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   order, edit/build ids, and attribute-only payload remain valid, workbook `workbookPr` metadata
   whose schema order, known boolean flags, enum values, default theme version, and attribute-only
   payload remain valid, workbook `workbookProtection` metadata whose schema order, known boolean
-  flags, spin count, and attribute-only payload remain valid, worksheet custom-property package graphs whose
+  flags, spin count, and attribute-only payload remain valid, workbook `calcPr` metadata whose
+  schema order, modes, booleans, ids/counts, delta values, and attribute-only payload remain valid, worksheet custom-property package graphs whose
   `customPr r:id` references resolve to internal custom-property binary parts with exact
   content-type declarations, worksheet scenario metadata whose `scenario` counts, refs, values,
   and boolean/index attributes remain internally consistent, worksheet `sheetPr` metadata whose
