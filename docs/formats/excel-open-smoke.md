@@ -100,7 +100,8 @@ package graphs through image relationships and content types, and chartsheet pac
 drawing/chart relationships and content types.
 Generated supported-metadata rows also assert workbook `fileVersion`, `fileSharing`,
 `workbookPr`, `workbookProtection`, `bookViews`, `customWorkbookViews`, `functionGroups`,
-`definedNames`, `calcPr`, `fileRecoveryPr`, and workbook `extLst` metadata and active worksheet
+`definedNames`, `calcPr`, `fileRecoveryPr`, workbook `extLst` metadata, active workbook theme
+package graphs, and active worksheet
 `sheetPr`, `sheetViews`, sort-state, data-consolidation, `printOptions`,
 `pageMargins`, `pageSetup`, `headerFooter`, page-break, and worksheet `extLst` metadata when present, including schema
 order, view ids, pane/selection references, boolean/integer attributes, known
@@ -110,7 +111,8 @@ default theme versions, sheet-property flags, workbook-protection flags, workboo
 counts, workbook view flags, indexes, visibility values, custom-view GUIDs,
 workbook function-group built-in counts and names, workbook defined-name names, scope ids, and flags,
 workbook calculation modes, reference modes, ids, counts, and delta values, workbook
-file-recovery flags, extension-list entry URIs, `syncRef` values, sheet-property child slots, page-margin values,
+file-recovery flags, extension-list entry URIs, workbook theme relationship targets, content types,
+root elements, color/font/format scheme containers, `syncRef` values, sheet-property child slots, page-margin values,
 header/footer flags and child slots, `brk` ids/ranges, and `dataRefs` counts.
 Worksheet phonetic-property metadata is also checked for schema order, `fontId`, known phonetic
 type/alignment values, and attribute-only payload shape.
@@ -467,7 +469,9 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   to `xl/workbook.xml` with the SpreadsheetML workbook content type, parseable relationship parts,
   well-formed relationship declarations, and existing package targets for every non-external
   relationship, plus workbook sheet relationship graphs with exact worksheet, chartsheet,
-  dialogsheet, and macrosheet content types, and shared-string package graphs whose `t="s"` cells
+  dialogsheet, and macrosheet content types, workbook theme package graphs whose workbook
+  relationships resolve to internal `xl/theme/*.xml` parts with exact content types, DrawingML
+  `theme` root elements, and color/font/format scheme containers, and shared-string package graphs whose `t="s"` cells
   resolve to existing `xl/sharedStrings.xml` entries, and styles package graphs whose cell, row,
   and column style indexes resolve into `xl/styles.xml` `cellXfs` entries, document-properties
   package graphs whose package-root relationships resolve to canonical `docProps` parts with exact
