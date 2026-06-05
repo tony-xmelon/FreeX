@@ -204,6 +204,10 @@ Excel and zero load warnings after reloading Excel's saved copy.
 - Active worksheet printer-settings package graphs are validated in every FreeX-saved and
   Excel-saved package: each worksheet `pageSetup r:id` and printer-settings relationship must
   resolve to an internal `xl/printerSettings/*.bin` part with the exact content type.
+- Active worksheet custom-property package graphs are validated in every FreeX-saved and
+  Excel-saved package: each worksheet `customPr r:id` must resolve through the worksheet
+  relationship part to an internal worksheet custom-property binary part with the exact content
+  type, and orphan custom-property relationships or binary parts are rejected.
 - Active workbook external-link package graphs are validated in every FreeX-saved and Excel-saved
   package: each workbook `<externalReference r:id>` must either point to a tolerated external
   workbook relationship target or resolve to an `xl/externalLinks/*.xml` part with the exact
@@ -355,7 +359,9 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   content-type declarations and root elements, worksheet background image package graphs whose
   `<picture>` references resolve to image package parts with image content types, worksheet
   printer-settings package graphs whose `pageSetup r:id` references resolve to printer-settings
-  binary parts with exact content-type declarations, and workbook external-link package graphs
+  binary parts with exact content-type declarations, worksheet custom-property package graphs whose
+  `customPr r:id` references resolve to internal custom-property binary parts with exact
+  content-type declarations, and workbook external-link package graphs
   whose `<externalReference r:id>` entries either point to external workbook relationship targets
   or resolve to external-link parts with exact content-type and external workbook-path
   relationships, custom XML package graphs whose XML
