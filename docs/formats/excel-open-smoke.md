@@ -211,6 +211,11 @@ Excel and zero load warnings after reloading Excel's saved copy.
 - Active worksheet scenario metadata is validated in every FreeX-saved and Excel-saved package:
   worksheet `scenarios/scenario` entries must have names, consistent `count` and `inputCells`
   entries, local worksheet refs, literal `val` attributes, and valid boolean/index attributes.
+- Active worksheet `singleXmlCells` metadata is validated in every FreeX-saved and Excel-saved
+  package when present: the block must remain in schema order before later worksheet metadata,
+  contain `singleXmlCell` entries with nonnegative `id`/`xmlCellPrId` values and local single-cell
+  refs, and avoid duplicate ids/refs or unexpected child payloads. Desktop Excel can drop legacy
+  single XML cells on `SaveCopyAs`, so absence in Excel-saved packages is still accepted.
 - Active smart-tag metadata is validated in every FreeX-saved and Excel-saved package when
   present: workbook `smartTagPr` booleans and `smartTagTypes` declarations must be coherent,
   worksheet `smartTags` entries must carry local cell refs, nonnegative tag types, valid
@@ -370,7 +375,8 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   binary parts with exact content-type declarations, worksheet custom-property package graphs whose
   `customPr r:id` references resolve to internal custom-property binary parts with exact
   content-type declarations, worksheet scenario metadata whose `scenario` counts, refs, values,
-  and boolean/index attributes remain internally consistent, and workbook external-link package graphs
+  and boolean/index attributes remain internally consistent, worksheet `singleXmlCells` metadata
+  whose schema order, required ids, single-cell refs, and property ids remain valid, and workbook external-link package graphs
   whose `<externalReference r:id>` entries either point to external workbook relationship targets
   or resolve to external-link parts with exact content-type and external workbook-path
   relationships, custom XML package graphs whose XML
