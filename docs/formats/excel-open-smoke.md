@@ -197,6 +197,9 @@ Excel and zero load warnings after reloading Excel's saved copy.
 - Active worksheet background-image package graphs are validated in every FreeX-saved and
   Excel-saved package: each worksheet `<picture r:id>` must resolve to a worksheet image
   relationship whose target exists and has an image content type.
+- Active worksheet printer-settings package graphs are validated in every FreeX-saved and
+  Excel-saved package: each worksheet `pageSetup r:id` and printer-settings relationship must
+  resolve to an internal `xl/printerSettings/*.bin` part with the exact content type.
 - Active workbook external-link package graphs are validated in every FreeX-saved and Excel-saved
   package: each workbook `<externalReference r:id>` must either point to a tolerated external
   workbook relationship target or resolve to an `xl/externalLinks/*.xml` part with the exact
@@ -345,9 +348,11 @@ As of 2026-06-04 on the local desktop Excel COM environment:
   resolve to existing `xl/sharedStrings.xml` entries, and styles package graphs whose cell, row,
   and column style indexes resolve into `xl/styles.xml` `cellXfs` entries, worksheet background
   image package graphs whose `<picture>` references resolve to image package parts with image
-  content types, and workbook external-link package graphs whose `<externalReference r:id>` entries
-  either point to external workbook relationship targets or resolve to external-link parts with
-  exact content-type and external workbook-path relationships, custom XML package graphs whose XML
+  content types, worksheet printer-settings package graphs whose `pageSetup r:id` references
+  resolve to printer-settings binary parts with exact content-type declarations, and workbook
+  external-link package graphs whose `<externalReference r:id>` entries either point to external
+  workbook relationship targets or resolve to external-link parts with exact content-type and
+  external workbook-path relationships, custom XML package graphs whose XML
   item parts resolve to `datastoreItem` properties parts with exact content-type declarations, and
   slicer/timeline package graphs whose workbook cache refs, worksheet visual refs, and drawing
   control relationships resolve to matching package parts with exact relationship and content-type
