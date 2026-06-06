@@ -13,6 +13,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [planning/outstanding-build.md](planning/outstanding-build.md) - source-of-truth backlog for outstanding build work.
 - [history/status-2026-06-06.md](history/status-2026-06-06.md) - current project status snapshot; latest internal tester release is v0.8.88 from run 88 attempt 2 at `57f281a8`, with `overallCompletion` still 95 while parity hardening, release validation, localization review/package metadata, and XLSX fidelity proof continue.
 - [planning/next-phases.md](planning/next-phases.md) - next development phases and priority sequencing.
+- [planning/multiplatform-macos-port.md](planning/multiplatform-macos-port.md) - preparation plan for a future multiplatform port, starting with macOS and a portable GitHub Actions lane.
 - [performance/backlog-2026-06-04.md](performance/backlog-2026-06-04.md) - current performance backlog and active XLSX open/save IO priority.
 
 ## User
@@ -29,6 +30,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 ## Planning And Release
 
 - [planning/localization.md](planning/localization.md) - localization foundation, current resource status, rollout plan, and remaining culture/localization work.
+- [planning/multiplatform-macos-port.md](planning/multiplatform-macos-port.md) - macOS-first port preparation, portable CI validation, and future app-shell milestones.
 - [release/test-distribution.md](release/test-distribution.md) - test-suite distribution, default agent verification path, separate UI lane, diagnostics plan, and tester-release workflow.
 - [release/tester-release-checklist.md](release/tester-release-checklist.md) - release-gate and public-preview accessibility checklist for tester builds.
 
