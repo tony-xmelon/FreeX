@@ -58,7 +58,9 @@ The preview shell can open startup-argument workbooks, handle macOS file-activat
 
 The file-activation route depends on Avalonia's macOS app delegate and `IActivatableLifetime`; do not set `DisableAvaloniaAppDelegate` while Finder-open support is part of the preview artifact.
 
-This is a preview artifact, not a release channel. Public distribution still needs a macOS icon, actual Developer ID/notarization secret configuration and successful hosted evidence, checksum instructions for testers, full drawing-object rendering and interaction parity beyond placeholder bounds, range/internal clipboard and Paste Special parity beyond active-cell copy and plain-text paste, a Windows-runnable macOS app readiness preflight, and a broader macOS UI/accessibility test plan.
+`tools/Test-MacOsAppReadiness.ps1` is wired into repository preflight and gives Windows agents a static readiness guard for the Avalonia app project, macOS `Info.plist`, hosted bundle workflow, LaunchServices smoke markers, packaging smoke wiring, `.fxl` native workbook identity, and portable source hygiene. It does not replace hosted macOS runner evidence for `plutil`, apphost architecture, signing, notarization, LaunchServices activation, or runtime smoke.
+
+This is a preview artifact, not a release channel. Public distribution still needs a macOS icon, actual Developer ID/notarization secret configuration and successful hosted evidence, checksum instructions for testers, full drawing-object rendering and interaction parity beyond placeholder bounds, range/internal clipboard and Paste Special parity beyond active-cell copy and plain-text paste, and a broader macOS UI/accessibility test plan.
 
 ## Non-Goals For The First macOS Lane
 
