@@ -43,10 +43,16 @@ This lane is intentionally limited to portable projects. It must not build `Free
 ## First Port Milestones
 
 1. **Portable CI gate:** macOS GitHub Actions builds and tests `FreeX.DefaultTests.slnx`.
-2. **Portable app shell spike:** add a small macOS-targeting shell that starts, loads a workbook through `Core.IO`, and renders a read-only viewport from `IViewportService`.
+2. **Portable app shell spike:** add a small macOS-targeting shell that starts, loads a workbook through `Core.IO`, and renders a read-only viewport from `IViewportService`. The initial shell lives in `src/FreeX.App.Avalonia` and references only portable `Core.*` projects.
 3. **Grid renderer spike:** prove scrolling, selection, cell text, row/column headers, freeze panes, and basic drawing-object bounds in the candidate UI stack.
 4. **Service abstraction pass:** replace direct WPF/Windows calls in reusable host logic with platform-service interfaces.
 5. **macOS packaging spike:** once the shell exists, add GitHub Actions publish jobs for `osx-arm64` and `osx-x64` artifacts.
+
+## Initial macOS App Artifact
+
+The `macOS App Preview` GitHub Actions workflow builds `src/FreeX.App.Avalonia` on `macos-latest`, publishes separate self-contained `osx-arm64` and `osx-x64` outputs, wraps each output in a `FreeX.app` bundle, ad-hoc signs the bundle, and uploads zipped artifacts plus SHA-256 checksums.
+
+This is a preview artifact, not a release channel. Public distribution still needs a macOS icon, Developer ID signing, notarization, and a broader macOS UI/accessibility test plan.
 
 ## Non-Goals For The First macOS Lane
 
