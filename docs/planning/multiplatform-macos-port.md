@@ -45,7 +45,7 @@ This lane is intentionally limited to portable projects. It must not build `Free
 1. **Portable CI gate:** macOS GitHub Actions builds and tests `FreeX.DefaultTests.slnx`.
 2. **Portable app shell spike:** add a small macOS-targeting shell that starts, loads a workbook through `Core.IO`, and renders a read-only viewport from `IViewportService`. The initial shell lives in `src/FreeX.App.Avalonia` and references only portable `Core.*` projects.
 3. **Grid renderer spike:** prove scrolling, selection, cell text, row/column headers, freeze panes, and basic drawing-object bounds in the candidate UI stack.
-4. **Service abstraction pass:** replace direct WPF/Windows calls in reusable host logic with platform-service interfaces. `src/FreeX.App.Services` now holds the shared adapter catalog, default workbook factory, startup workbook loader, portable workbook open/save services, active-sheet selection, cell-entry parsing, single-cell edit orchestration, formula scanning, and text-import open normalization used by the Avalonia shell and WPF host adapters.
+4. **Service abstraction pass:** replace direct WPF/Windows calls in reusable host logic with platform-service interfaces. `src/FreeX.App.Services` now holds the shared adapter catalog, default workbook factory, startup workbook loader, portable workbook open/save services, workbook session orchestration, active-sheet selection, cell-entry parsing, single-cell edit orchestration, formula scanning, and text-import open normalization used by the Avalonia shell and WPF host adapters.
 5. **macOS packaging spike:** once the shell exists, add GitHub Actions publish jobs for `osx-arm64` and `osx-x64` artifacts.
 
 ## Initial macOS App Artifact
