@@ -50,7 +50,7 @@ This lane is intentionally limited to portable projects. It must not build `Free
 
 ## Initial macOS App Artifact
 
-The `macOS App Preview` GitHub Actions workflow builds `src/FreeX.App.Avalonia` on `macos-latest`, publishes separate self-contained `osx-arm64` and `osx-x64` outputs, wraps each output in a `FreeX.app` bundle, ad-hoc signs the bundle, verifies the zipped artifact after extraction, and uploads zipped artifacts plus SHA-256 checksums.
+The `macOS App Preview` GitHub Actions workflow builds `src/FreeX.App.Avalonia` on `macos-latest`, publishes separate self-contained `osx-arm64` and `osx-x64` outputs, wraps each output in a `FreeX.app` bundle, ad-hoc signs the bundle, verifies the zipped artifact after extraction, runs a native-architecture packaged .NET host plus workbook/session smoke when the runner can execute that runtime, and uploads zipped artifacts plus SHA-256 checksums.
 
 The preview shell can open startup-argument workbooks and use an in-app Open command for local workbook files. Finder document registration and macOS open-document events are still deferred.
 
