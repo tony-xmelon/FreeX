@@ -1,7 +1,7 @@
 # FreeX Formula Function Parity
 
 **Last updated:** 2026-06-01
-**Total implemented:** 487
+**Total implemented:** 488
 **Status:** All in-scope functions implemented
 
 ## Status Legend
@@ -22,7 +22,7 @@
 | Math / Trig | 78 | 0 | 0 | 0 | 78 | **100%** |
 | Statistical | 136 | 0 | 0 | 0 | 136 | **100%** |
 | Logical | 11 | 0 | 0 | 0 | 11 | **100%** |
-| Lookup / Reference | 38 | 0 | 0 | 0 | 38 | **100%** |
+| Lookup / Reference | 39 | 0 | 0 | 0 | 39 | **100%** |
 | Text | 51 | 0 | 0 | 0 | 51 | **100%** |
 | Date / Time | 25 | 0 | 0 | 0 | 25 | **100%** |
 | Financial | 55 | 0 | 0 | 0 | 55 | **100%** |
@@ -30,7 +30,7 @@
 | Lambda / Advanced | 9 | 0 | 0 | 0 | 9 | **100%** |
 | Database | 12 | 0 | 0 | 0 | 12 | **100%** |
 | Engineering / Cube / Cloud | 53 | 0 | 0 | 7 | 53 | **100%** |
-| **TOTAL** | **487** | **0** | **0** | **7** | **487** | **100%** |
+| **TOTAL** | **488** | **0** | **0** | **7** | **488** | **100%** |
 
 Coverage = (Implemented + Partial) / In-scope Total. Excluded functions are not counted in the in-scope total.
 
@@ -315,7 +315,7 @@ Post-sweep hardening also pins `ASC`, `DBCS`, and `JIS` to Excel's non-DBCS lang
 
 ## Lookup / Reference
 
-**Coverage: 38/38 (100%)**
+**Coverage: 39/39 (100%)**
 
 | Function | Status |
 |---|---|
@@ -342,6 +342,7 @@ Post-sweep hardening also pins `ASC`, `DBCS`, and `JIS` to Excel's non-DBCS lang
 | ROW | Implemented |
 | ROWS | Implemented |
 | SEQUENCE | Implemented |
+| SINGLE | Implemented |
 | SORT | Implemented |
 | SORTBY | Implemented |
 | TAKE | Implemented |
