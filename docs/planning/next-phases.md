@@ -1,7 +1,7 @@
 # FreeX Next Development Phases
 
 **Last updated:** 2026-06-03
-**Current state:** Formula engine at 487/487 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (87/87), XLSX round-trip and corpus coverage at a current 176-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, UIA accessibility peers, a 43-culture localization resource foundation, and a chart interop harness with a latest-complete 28/28 openability/export plus visual-gate pass, 0 known-gap chart allowances, and 28/28 byte-identical Excel-native/FreeX-round-trip packages. The active focus is broader XLSX fidelity proof, package-preserving save validation, release packaging/trust validation, localization review/pseudo-localization/package metadata, performance hardening, and the explicitly documented native-Excel pivot edge cases.
+**Current state:** Formula engine at 488/488 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (87/87), XLSX round-trip and corpus coverage at a current 176-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, UIA accessibility peers, a 43-culture localization resource foundation, and a chart interop harness with a latest-complete 28/28 openability/export plus visual-gate pass, 0 known-gap chart allowances, and 28/28 byte-identical Excel-native/FreeX-round-trip packages. The active focus is broader XLSX fidelity proof, package-preserving save validation, release packaging/trust validation, localization review/pseudo-localization/package metadata, performance hardening, and the explicitly documented native-Excel pivot edge cases.
 
 ---
 
@@ -9,7 +9,7 @@
 
 ### Phase 6: Formula Completeness
 
-All 487 in-scope Excel functions are implemented and tested. The original Phase 6 buckets below are historical milestones; the current catalog is authoritative in [parity/functions.md](../parity/functions.md):
+All 488 in-scope Excel functions are implemented and tested. The original Phase 6 buckets below are historical milestones; the current catalog is authoritative in [parity/functions.md](../parity/functions.md):
 
 - **6A** - LET, LAMBDA, MAP, REDUCE, SCAN, BYROW, BYCOL, MAKEARRAY (+ recursive lambda support)
 - **6B** - Full statistical distribution suite (normal, t, F, chi-squared, binomial, beta, gamma, Weibull, lognormal, exponential, FREQUENCY, SKEW, KURT, CONFIDENCE)
@@ -59,7 +59,7 @@ The production readiness pass hardened accessibility, test corpus quality, dialo
 
 May 31 closed several late hardening slices and June 1 expanded the production localization substrate:
 
-- Formula documentation and catalog status now track 487/487 in-scope functions.
+- Formula documentation and catalog status now track 488/488 in-scope functions.
 - `UiText`, `LocExtension`, neutral `Strings.resx`, and 43 complete satellite resource cultures are present. Tests cover resource keys, XAML usage, automation metadata, language catalog discovery, satellite key/placeholder/access-key parity, blank-value prevention, full satellite assemblies without parent fallback, and Bulgarian terminology smoke coverage.
 - Ribbon/sheet-tab polish continued through compact split-button segment fixes, standalone ribbon command layout at wider widths, sheet add/options icon polish, and tab navigation hover alignment.
 - Object resize/rotation handles, chart data-label toggles, custom-list primary sort behavior, and keytip placement polish are recorded as done in the outstanding-build backlog.
