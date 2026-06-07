@@ -11,7 +11,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 ## Start Here
 
 - [planning/outstanding-build.md](planning/outstanding-build.md) - source-of-truth backlog for outstanding build work.
-- [history/status-2026-06-06.md](history/status-2026-06-06.md) - current project status snapshot; latest internal tester release is v0.8.89 from run 89 attempt 1 at `62a28033`, with `overallCompletion` still 95 while parity hardening, release validation, localization review/package metadata, and XLSX fidelity proof continue.
+- [history/status-2026-06-07.md](history/status-2026-06-07.md) - current project status snapshot; latest internal tester release is v0.8.90 from run 91 attempt 1 at `eddc4c65`, with `overallCompletion` still 95 while parity hardening, release validation, localization review/package metadata, and XLSX fidelity proof continue.
 - [planning/next-phases.md](planning/next-phases.md) - next development phases and priority sequencing.
 - [planning/multiplatform-macos-port.md](planning/multiplatform-macos-port.md) - preparation plan for a future multiplatform port, starting with macOS and a portable GitHub Actions lane.
 - [planning/macos-port-dependency-backlog.md](planning/macos-port-dependency-backlog.md) - concise inventory of Windows/WPF-only dependencies that block or shape the Avalonia/macOS port.
@@ -79,7 +79,8 @@ Use this index as the current documentation map. Point-in-time material lives un
 
 ## History
 
-- [history/status-2026-06-06.md](history/status-2026-06-06.md) - current status snapshot covering the v0.8.89 daily tester release, frozen release commit, and hosted gate evidence.
+- [history/status-2026-06-07.md](history/status-2026-06-07.md) - current status snapshot covering the v0.8.90 daily tester release, frozen release commit, and hosted gate evidence.
+- [history/status-2026-06-06.md](history/status-2026-06-06.md) - prior status snapshot covering the v0.8.89 daily tester release, frozen release commit, and hosted gate evidence.
 - [history/status-2026-06-04.md](history/status-2026-06-04.md) - prior status snapshot covering the June 4 parity hardening and release-validation state.
 - [history/status-2026-06-03.md](history/status-2026-06-03.md) - backfilled status snapshot covering the June 3 review, test split, XLSX smoke, PDF overlay, and performance integrations.
 - [history/status-2026-06-02.md](history/status-2026-06-02.md) - backfilled status snapshot covering the June 2 performance, parity, file-format, and release-gate integrations.
@@ -93,6 +94,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [history/status-2026-05-21.md](history/status-2026-05-21.md) - prior status snapshot.
 - [history/status-2026-05-19.md](history/status-2026-05-19.md) - prior status snapshot.
 - [history/build-history-metrics.md](history/build-history-metrics.md) - generated build-history and provider-log metrics through 2026-06-06.
+- [history/thread-commit-timing.md](history/thread-commit-timing.md) - generated first-parent thread timing report with commit counts, discovery offsets, implementation spans, and integration lags.
 - [history/implementation-plan.md](history/implementation-plan.md) - historical formula/XLSX implementation plan retained for context.
 - [archive/superpowers/](archive/superpowers/) - historical implementation plans and specs; not current build-status documentation.
 
