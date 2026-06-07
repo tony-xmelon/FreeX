@@ -58,7 +58,7 @@ The preview shell can open startup-argument workbooks, handle macOS file-activat
 
 Wrap Text now has hosted LaunchServices evidence for both the toolbar button and native Format menu item through `toolbar_wrap_text_button=true` and `native_wrap_text_menu_item=true`.
 
-Basic Find, Find Next, and Go To now have a shared app-service route for the Avalonia shell: `WorkbookSession` owns last-find state, wraparound navigation, and range selection, while `WorkbookReferenceNavigator` shares A1/absolute A1/R1C1/named-range/sheet-qualified reference parsing with the WPF Go To dialog. This slice is source/readiness guarded only; Replace, Go To Special, and hosted macOS LaunchServices evidence remain separate follow-up work.
+Basic Find, Find Next, Go To, and values-only Replace All now have a shared app-service route for the Avalonia shell: `WorkbookSession` owns last-find state, wraparound navigation, active-sheet values-only replacement, command-bus undo/recalc/dirty refresh, and range selection, while `WorkbookReferenceNavigator` shares A1/absolute A1/R1C1/named-range/sheet-qualified reference parsing with the WPF Go To dialog. This slice is source/readiness guarded only; single Replace, Find All, format/options parity, formula/comment/note replacement, Go To Special, and hosted macOS LaunchServices evidence remain separate follow-up work.
 
 The file-activation route depends on Avalonia's macOS app delegate and `IActivatableLifetime`; do not set `DisableAvaloniaAppDelegate` while Finder-open support is part of the preview artifact.
 
