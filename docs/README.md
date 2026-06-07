@@ -1,6 +1,6 @@
 # FreeX Documentation
 
-**Last updated:** 2026-06-06
+**Last updated:** 2026-06-07
 
 Use this index as the current documentation map. Point-in-time material lives under `history/` and `archive/`; prefer the newest status snapshot plus the current planning docs when making product or release decisions.
 
@@ -14,6 +14,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [history/status-2026-06-06.md](history/status-2026-06-06.md) - current project status snapshot; latest internal tester release is v0.8.89 from run 89 attempt 1 at `62a28033`, with `overallCompletion` still 95 while parity hardening, release validation, localization review/package metadata, and XLSX fidelity proof continue.
 - [planning/next-phases.md](planning/next-phases.md) - next development phases and priority sequencing.
 - [planning/multiplatform-macos-port.md](planning/multiplatform-macos-port.md) - preparation plan for a future multiplatform port, starting with macOS and a portable GitHub Actions lane.
+- [planning/macos-port-dependency-backlog.md](planning/macos-port-dependency-backlog.md) - concise inventory of Windows/WPF-only dependencies that block or shape the Avalonia/macOS port.
 - [performance/backlog-2026-06-04.md](performance/backlog-2026-06-04.md) - current performance backlog and active XLSX open/save IO priority.
 
 ## User
@@ -31,6 +32,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 
 - [planning/localization.md](planning/localization.md) - localization foundation, current resource status, rollout plan, and remaining culture/localization work.
 - [planning/multiplatform-macos-port.md](planning/multiplatform-macos-port.md) - macOS-first port preparation, portable CI validation, and future app-shell milestones.
+- [planning/macos-port-dependency-backlog.md](planning/macos-port-dependency-backlog.md) - macOS port backlog inventory for WPF/Windows-only components and platform-service replacement work.
 - [release/test-distribution.md](release/test-distribution.md) - test-suite distribution, default agent verification path, separate UI lane, diagnostics plan, and tester-release workflow.
 - [release/macos-signing-notarization.md](release/macos-signing-notarization.md) - Developer ID signing and notarization runbook for hosted macOS app preview artifacts.
 - [release/tester-release-checklist.md](release/tester-release-checklist.md) - release-gate and public-preview accessibility checklist for tester builds.
