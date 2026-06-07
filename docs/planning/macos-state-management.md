@@ -1,6 +1,6 @@
 # macOS Port State Management Note
 
-**Last updated:** 2026-06-07
+**Last updated:** 2026-06-08
 
 This note narrows the state-storage guidance from the [multiplatform macOS port plan](multiplatform-macos-port.md) and the [macOS dependency backlog](macos-port-dependency-backlog.md). The current tree has no `docs/research/` directory; the active anchors are the planning docs plus the portable recent-file implementation in `FreeX.App.Services`.
 
@@ -25,9 +25,8 @@ Use Application Support for durable user/app state that should survive app resta
 - Keep the newest entry first, cap the list at 25 entries, and preserve pin state when a file is reopened.
 - Write through `AtomicFileWriter` so an interrupted save does not corrupt `recent.json`.
 - Add or update entries only after a successful startup activation, open, save, or save-as path. Pin, unpin, and remove commands may update the store directly.
+- Route path identity through `PlatformPathIdentityComparer`: Windows recent-file matching stays case-insensitive and slash-normalized, while Unix/macOS matching stays ordinal so case-sensitive volumes can keep distinct paths.
 - Treat Windows jump lists, macOS `Open Recent`, LaunchServices, or future `NSDocumentController` integration as platform mirrors only. They cannot carry FreeX pin state and should not become the durable source of truth.
-
-If future work needs exact path identity on case-sensitive macOS volumes, add a small platform path comparer/normalizer rather than baking Windows path comparison assumptions into shared state stores.
 
 ## Abstraction Direction
 
