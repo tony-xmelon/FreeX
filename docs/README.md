@@ -32,6 +32,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [planning/localization.md](planning/localization.md) - localization foundation, current resource status, rollout plan, and remaining culture/localization work.
 - [planning/multiplatform-macos-port.md](planning/multiplatform-macos-port.md) - macOS-first port preparation, portable CI validation, and future app-shell milestones.
 - [release/test-distribution.md](release/test-distribution.md) - test-suite distribution, default agent verification path, separate UI lane, diagnostics plan, and tester-release workflow.
+- [release/macos-signing-notarization.md](release/macos-signing-notarization.md) - Developer ID signing and notarization runbook for hosted macOS app preview artifacts.
 - [release/tester-release-checklist.md](release/tester-release-checklist.md) - release-gate and public-preview accessibility checklist for tester builds.
 
 ## Parity And Testing
