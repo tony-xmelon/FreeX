@@ -1,6 +1,6 @@
 # FreeX Documentation
 
-**Last updated:** 2026-06-06
+**Last updated:** 2026-06-07
 
 Use this index as the current documentation map. Point-in-time material lives under `history/` and `archive/`; prefer the newest status snapshot plus the current planning docs when making product or release decisions.
 
@@ -87,6 +87,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [history/status-2026-05-21.md](history/status-2026-05-21.md) - prior status snapshot.
 - [history/status-2026-05-19.md](history/status-2026-05-19.md) - prior status snapshot.
 - [history/build-history-metrics.md](history/build-history-metrics.md) - generated build-history and provider-log metrics through 2026-06-06.
+- [history/thread-commit-timing.md](history/thread-commit-timing.md) - generated first-parent thread timing report with commit counts, discovery offsets, implementation spans, and integration lags.
 - [history/implementation-plan.md](history/implementation-plan.md) - historical formula/XLSX implementation plan retained for context.
 - [archive/superpowers/](archive/superpowers/) - historical implementation plans and specs; not current build-status documentation.
 
