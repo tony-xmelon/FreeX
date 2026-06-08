@@ -24,9 +24,11 @@ This slice investigated the visual-evidence harness gap for transient Excel/Free
 - Added a concise catalog note to `UI-CMD-HARNESS-001`.
 - Added the first concrete in-app FreeX popup capture path: `FREEX_AUTOFILTER_FLYOUT_TOUR=1` seeds a `score` AutoFilter range, opens the production modeless AutoFilter flyout, captures `screenshots/autofilter-flyout-tour/freex_table_autofilter_dropdown.png`, and writes `autofilter_flyout_tour_manifest.json` with pair key `interactive:table-autofilter-dropdown:opened`.
 - Added the paired Excel popup capture path: `FREEX_EXCEL_AUTOFILTER_FLYOUT_TOUR=1` seeds the same `score` range in Microsoft Excel, opens the header AutoFilter dropdown with a foreground-guarded header-arrow click, captures `screenshots_excel/autofilter-flyout-tour/interactive_table_autofilter_dropdown_opened.png`, and writes `excel_autofilter_flyout_tour_manifest.json` with the same pair key.
+- Added the first concrete FreeX Home number-format dropdown capture path: `FREEX_HOME_NUMBER_FORMAT_DROPDOWN_TOUR=1` opens the production Home `NumberFormatBox`, captures the open WPF ComboBox popup child at `screenshots/home-number-format-dropdown-tour/freex_dropdown_home_number_format_opened.png`, and writes `home_number_format_dropdown_tour_manifest.json` with pair key `interactive:home-number-format:opened`.
 
 ## Remaining Limitations
 
-- This slice now has paired FreeX and Microsoft Excel AutoFilter popup capture hooks for `interactive:table-autofilter-dropdown:opened`, but it does not yet drive the other planned transient surfaces.
+- This slice now has paired FreeX and Microsoft Excel AutoFilter popup capture hooks for `interactive:table-autofilter-dropdown:opened`, plus a FreeX-only Home number-format dropdown capture hook for `interactive:home-number-format:opened`.
+- The Microsoft Excel Home number-format dropdown counterpart, worksheet context menu, and native Open dialog remain future runner tasks.
 - The eventual runner should open one scenario at a time, verify foreground ownership before every input, verify the popup/dialog/menu target before capture, and delete partial artifacts if ownership drifts.
 - Native dialogs may legitimately change the foreground title/class; the runner needs dialog-aware ownership validation instead of the current owner-window title equality check.
