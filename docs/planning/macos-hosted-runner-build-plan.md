@@ -80,7 +80,7 @@ A hosted `.app` artifact is not automatically a trusted tester build. Treat defa
 4. Download app, diagnostics, and release-channel prepared-assets artifacts, preserving each `freex-<run-id>-<run-attempt>-<runtime>-macos-app`, `freex-<run-id>-<run-attempt>-<runtime>-macos-diagnostics`, and `freex-<run-id>-<run-attempt>-macos-release-assets` wrapper directory under the artifact root so stale or mixed-run downloads, split release-assets manifest/instructions, and missing publication output can be detected. Then run the Windows-runnable evidence preflight with distribution-candidate promotion requirements and the optional run identity flags for the specific GitHub Actions run:
 
 ```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Test-MacOsPublicPreviewReadiness.ps1 -ArtifactRoot artifacts/macos-preview -ExpectedRunId <run-id> -ExpectedRunAttempt <run-attempt> -DistributionCandidate -RequireSeparateDiagnosticsArtifact -RequireReleasePublicationArtifact
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Test-MacOsPublicPreviewReadiness.ps1 -ArtifactRoot artifacts/macos-preview -ExpectedRunId <run-id> -ExpectedRunAttempt <run-attempt> -DistributionCandidate -RequireSeparateDiagnosticsArtifact -RequireAggregateReadinessArtifact -RequireReleasePublicationArtifact
 ```
 
 5. Preserve the checksum, evidence, smoke logs, notarization log, tester instructions, diagnostics artifact, run id, run attempt, source commit, and generated release manifest with the release record.
