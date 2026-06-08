@@ -1,0 +1,65 @@
+# macOS Port Dependency Backlog
+
+**Last updated:** 2026-06-08
+
+This inventory tracks the Windows/WPF-only surfaces that block or shape the Avalonia/macOS port. It is intentionally practical: keep portable workbook behavior shared, replace user-facing platform services in Avalonia/native macOS, guard Windows evidence lanes, and defer deep parity where the preview does not need it yet.
+
+## Strategy Labels
+
+- **Keep core/shared:** keep or move logic into `Core.*` or `FreeX.App.Services` with no Windows/WPF references.
+- **Replace with Avalonia/native macOS:** implement the user-facing route in `FreeX.App.Avalonia` or macOS workflow assets.
+- **Guard Windows-only:** keep the Windows implementation and tests, but prevent it from entering portable projects or macOS lanes.
+- **Defer:** acknowledge the dependency and leave it out of the current preview scope.
+
+## Inventory
+
+| Area | Current Windows/WPF owner | Port strategy | Practical backlog item |
+| --- | --- | --- | --- |
+| Workbook model, formulas, commands, calc, IO | `src/FreeX.Core.*` | Keep core/shared | Keep these projects plain `net10.0`; continue source guards against `System.Windows`, `Microsoft.Win32`, WinRT, COM, WPF packages, and app-project references. |
+| Shared workbook session and command orchestration | `src/FreeX.App.Services` | Keep core/shared | Keep session, open/save services, clipboard serializers, compact dialog planners, Review workflow, find/replace/go-to, sheet, formatting, Goal Seek, sort, Advanced Filter, Forecast Sheet, Scenario Manager, Data Table, Data Validation mutation, export/print planning, portable PDF writing, and viewport orchestration portable. New macOS features should enter here when they are not UI-specific. |
+| WPF host shell, ribbon, backstage, task panes, and custom grid/chart rendering | `src/FreeX.App.Host`, `src/FreeX.App.UI` | Replace with Avalonia/native macOS | Do not port WPF XAML directly. Recreate required shell/menu/toolbar/grid/chart surfaces in `src/FreeX.App.Avalonia`, backed by shared session/core services. Keep WPF as the Windows app. |
+| File dialogs and import pickers | `MainWindow.Backstage.cs`, `MainWindow.DataCommands.cs`, `MainWindow.Drawing.cs`, `MainWindow.PageLayout.cs`, `HeaderFooterDialog.Pictures.cs`, `OptionsDialog.xaml.cs` using `Microsoft.Win32.OpenFileDialog`/`SaveFileDialog` | Replace with Avalonia/native macOS | Reuse `FileDialogFilterBuilder`, file adapters, and save/open writers; keep Avalonia `StorageProvider` as the macOS path. Add new picker routes only in Avalonia or a platform-service abstraction. |
+| Clipboard, paste, image paste, drag/drop | WPF clipboard/file-drop handlers in `MainWindow.ClipboardCommands.cs` and `MainWindow.FileDrop.cs`; Avalonia already uses platform clipboard for preview routes | Replace with Avalonia/native macOS | Keep payload semantics in `WorkbookSession` and `Core.Commands`; implement platform transfer details in Avalonia. Defer remaining WPF clipboard parity such as multi-range and full Paste Special dialog/access-key parity. |
+| Printing, print preview, PDF, and XPS export | `PrintRenderer*`, `PrintPreviewDialog*`, `MainWindow.PrintExport.cs`, `PdfDocumentExporter.cs`, `PDFsharp-WPF`, ReachFramework/XPS, `System.Windows.Documents`; shared `WorkbookExportReadinessPlanner` and `WorkbookExportPrintPlanner`; portable PDF writer | Keep shared planning/PDF writing; defer / guard WPF, XPS, embedded-font Unicode PDF rendering, and native print | Keep export readiness, PDF print planning, and dependency-free portable PDF writing in `FreeX.App.Services`. Avalonia File > Export to PDF now uses the native save picker and shared planners to write planned PDF pages on macOS for ASCII plus WinAnsi workbook, sheet, and cell text. XPS remains rejected/deferred on that surface, embedded-font Unicode PDF rendering remains follow-up, and the WPF fixed-document/PDFsharp/XPS plus native print paths remain Windows-only or follow-up work. |
+| Review workflow / Windows Share / macOS share fallback | `ReviewWorkflowPlanner.cs`, `WorkbookShareReadinessPlanner.cs`, `WorkbookShareActionPlanner.cs`, `ShareWorkbookPlanner.cs`, `WindowsWorkbookShareService.cs`, `MainWindow.ReviewCommands.cs` with WinRT `DataTransferManager`, `StorageFile`, COM interop, and `WindowInteropHelper` | Keep planners shared; replace adapter / defer | `ReviewWorkflowPlanner` now backs the Avalonia Review Summary/Accessibility route plus notes/comment navigation. Keep save-before-share planning reusable in `FreeX.App.Services`: `WorkbookShareActionPlanner` maps saved/unsaved local workbook state plus injected share-sheet/open-containing-folder capabilities to share-sheet, open-containing-folder, save-first, or deferred outcomes without platform API references. Avalonia File > Share Workbook now uses the planner, saves dirty/current workbooks when needed, routes unsaved or missing paths through Save As first, and falls back through Avalonia `TopLevel.Launcher` to Reveal in Finder on macOS or open-containing-folder elsewhere. Native share-sheet integration remains deferred. |
+| WPF modal/modeless dialogs | Many `*Dialog.xaml`, `*Dialog.xaml.cs`, and code-built dialogs under `src/FreeX.App.Host`; compact Avalonia routes now cover Format Cells, Find/Replace/Go To, Goal Seek, Advanced Filter, Scenario Manager, Forecast Sheet, Data Table, Review Summary, and selected-range Data Validation | Replace with Avalonia/native macOS | Port remaining dialog behavior by priority, not file-for-file. The listed compact routes are integrated preview paths, so follow-up work is full WPF dialog/workflow parity, range-picker breadth, access keys, hosted/human macOS evidence, and multi-range semantics where the workbook model differs from single-range previews. Keep WPF dialog tests as Windows coverage. |
+| User messages and shell launching | `WpfUserMessageService`, WPF `MessageBox`, `ExternalUrlLauncher`, `ProcessStartInfo.UseShellExecute` export opener | Replace with Avalonia/native macOS | Use Avalonia dialogs/window ownership and `TopLevel.Launcher` where available. Keep shell-open behavior best-effort and platform-scoped. |
+| UI automation and live UI tests | `FreeX.UiTests.slnx`, WPF UIA peers/tests, `tests/FreeX.App.Host.Tests`, Windows STA/UIA assumptions | Guard Windows-only; replace evidence lane | Keep WPF UIA and UI lanes on Windows. For macOS, grow hosted LaunchServices smoke, source/readiness guards, and eventual Avalonia accessibility checks instead of trying to run WPF UIA. |
+| Excel COM and Windows fidelity tools | Excel desktop COM/open-save-reopen and chart/fidelity tooling; Windows clipboard facts | Guard Windows-only | Keep as Windows evidence lanes. macOS portable validation should use `FreeX.DefaultTests.slnx`, corpus tests, hosted macOS app smoke, and future manual Office-for-Mac evidence only if explicitly scoped. |
+| Windows tester packaging and MSIX | `tools/Publish-UserTestBuild.ps1`, Windows SDK `makeappx.exe`/`signtool.exe`, `.github` tester release workflow | Guard Windows-only | Keep Windows tester release flow separate from macOS. Do not make MSIX assumptions in Avalonia/macOS packaging. |
+| macOS app bundle, signing, notarization, LaunchServices | `.github/workflows/macos-app.yml`, `src/FreeX.App.Avalonia/Packaging/macos`, `docs/release/macos-signing-notarization.md` | Replace with Avalonia/native macOS | Continue hosted `osx-arm64`/`osx-x64` bundle evidence, focused hosted tests for portable PDF/export readiness and normalized export-path overwrite protection before packaging, ad-hoc signing for preview, optional Developer ID signing/notarization, checksum, LaunchServices, and smoke logs. Public distribution remains blocked until Developer ID/notarization/stapling and human macOS validation are recorded. |
+| Source/readiness guards | `tools/Test-MacOsAppReadiness.ps1`, `tools/Test-MacOsPublicPreviewReadiness.ps1`, `MacOsAppReadinessPreflightTests`, `MacOsPublicPreviewReadinessPreflightTests`, repository preflight | Keep core/shared guard; guard Windows-only | Keep portable-source hygiene focused on `FreeX.App.Avalonia` and `FreeX.App.Services`, including the hosted macOS focused service-test workflow contract. Extend guards when new macOS-owned services are added, and keep artifact-level public-preview evidence checks separate from human macOS validation; do not require WPF host parity in the static readiness gate. |
+
+## Share/Open Containing Folder Contract
+
+`FreeX.App.Services.WorkbookShareActionPlanner` is the portable decision point for macOS share fallback planning. Hosts provide a `WorkbookShareActionSurface` that says whether a native share sheet and/or open-containing-folder action exists. The planner normalizes and probes the saved workbook path through the shared readiness route, then returns one of four bounded outcomes:
+
+- `ShareSheet`: a saved local file can be handed to a native share-sheet adapter.
+- `OpenContainingFolder`: the share sheet is unavailable, but the host can reveal the saved workbook's containing folder.
+- `SaveAsBeforeShare`: the workbook is unsaved, missing, or has an invalid local path, and at least one native action could use a saved file after Save As.
+- `Deferred`: the workbook action should remain hidden or disabled because the macOS native adapter is not available yet.
+
+Avalonia File > Share Workbook now wires the planner into the preview host as a bounded fallback: unsaved, missing, or invalid local paths route through Save As first; saved workbooks reveal/open the containing folder through Avalonia `TopLevel.Launcher` when available; and unavailable adapters report the planner's deferred status. A native macOS share-sheet adapter is still not wired.
+
+## Native Share Sheet Integration Plan
+
+The next native sharing step should keep the same portable decision boundary and add only a macOS host adapter. `WorkbookShareActionPlanner` remains the only place that decides whether the workbook is ready to share, needs Save As first, can fall back to open-containing-folder, or must stay deferred. The Avalonia shell should continue to save dirty workbooks or route unsaved/missing paths through Save As before invoking any platform adapter.
+
+Once a Mac-backed implementation lane is available, the smallest credible adapter is:
+
+1. Add a macOS-only share service owned by `src/FreeX.App.Avalonia` that can present an AppKit share sheet for a saved local workbook path. The adapter can use the native `NSSharingServicePicker` equivalent available to the chosen Avalonia/.NET interop layer, but it must not move AppKit, WinRT, COM, WPF, or platform-launch code into `FreeX.App.Services`.
+2. Inject `WorkbookShareActionSurface` with `CanShowShareSheet=true` only when that adapter is actually available. Keep `CanOpenContainingFolder=true` as the fallback path so ad-hoc/internal preview builds can still reveal the workbook in Finder.
+3. Route File > Share Workbook through the existing dirty-save and Save As flow, then execute `ShareSheet` plans with the native adapter and `OpenContainingFolder` plans with the current launcher fallback.
+4. Record hosted smoke evidence only for the planner route and fallback markers. GitHub-hosted macOS runners can build the app and prove that the menu route, saved-path preconditions, and fallback evidence stay wired, but they must not be treated as proof that a human can complete the interactive native share sheet.
+5. Require a real macOS validation pass before claiming native sharing parity: saved workbook share sheet opens, Cancel is non-destructive, at least one local share target receives the expected file, Finder reveal fallback still works, keyboard focus is usable, and VoiceOver announces the share action without losing the workbook window.
+
+Keep this lane separate from Windows Share, Microsoft 365 co-authoring, cloud permissions, Teams-linked sharing, and live collaboration. Those remain Windows/service-specific or future product features rather than requirements for the first macOS preview app.
+
+## Immediate Port Priorities
+
+1. Keep `FreeX.App.Services` and `FreeX.App.Avalonia` clean of WPF/WinRT/COM and Windows target frameworks.
+2. Route any new macOS user-facing feature through shared session/core logic first, then an Avalonia platform adapter.
+3. Do not track Review, Advanced Filter, Forecast Sheet, Scenario Manager, or Data Table as missing route gaps; their compact shared/session-backed preview routes are integrated.
+4. Move remaining route work to full WPF dialog/workflow parity, access-key breadth, hosted/human macOS evidence, native print rendering, embedded-font Unicode PDF rendering, WPF/XPS export parity, and actual multi-range semantics.
+5. Leave native share-sheet integration, WPF UIA, Excel COM, Windows Share, and Windows packaging as separate guarded or deferred lanes until the preview shell needs them.
+6. Treat macOS public-distribution readiness as packaging/signing/notarization plus live macOS validation, not just a successful Windows preflight.
