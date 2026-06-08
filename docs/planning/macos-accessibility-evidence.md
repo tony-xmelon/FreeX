@@ -28,7 +28,7 @@ A human tester on macOS must record candidate evidence for:
 
 Record the macOS version, processor family, artifact runtime, workflow run id, run attempt, evidence file name, signing mode, notarization status, and tester notes with the release record.
 
-Use [../release/macos-public-preview-checklist.md](../release/macos-public-preview-checklist.md) to capture the human keyboard-only, VoiceOver, Finder, Gatekeeper, and public-preview decision evidence for each candidate runtime.
+Use [../release/macos-public-preview-checklist.md](../release/macos-public-preview-checklist.md) to capture the human keyboard-only, VoiceOver, Finder, Gatekeeper, and public-preview decision evidence for each candidate runtime. After the checklist is filled for a specific release record, run `tools/Test-MacOsHumanValidationChecklist.ps1` with the expected runtime, GitHub Actions run id, and run attempt so Windows agents can reject incomplete, internal-only, or stale-run human evidence before public-preview promotion.
 
 ## Initial Controls And Surfaces
 
@@ -49,6 +49,7 @@ Do not call a macOS artifact public-preview eligible until all of these are true
 - the human keyboard-only pass is complete on real macOS hardware for the initial controls and surfaces above;
 - the human VoiceOver pass is complete on real macOS hardware for the candidate app flows above;
 - known accessibility issues are reviewed, listed in the release record, and either fixed or explicitly accepted as non-blocking for public preview;
+- the completed human checklist passes `tools/Test-MacOsHumanValidationChecklist.ps1` with the candidate runtime and hosted run identity;
 - no candidate workflow has an untriaged focus trap, unreachable command, missing accessible name for a primary control, misleading VoiceOver announcement for a destructive action, or Gatekeeper/accessibility prompt that testers cannot follow.
 
 If any item is missing or failed, treat the artifact as internal-only and keep the release notes clear that macOS accessibility evidence is incomplete.
