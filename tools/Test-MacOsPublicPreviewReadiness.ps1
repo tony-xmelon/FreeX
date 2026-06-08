@@ -281,6 +281,19 @@ function Get-ExpectedArtifactWrapperName {
     return "freex-<run-id>-<run-attempt>-$Runtime-macos-$Kind"
 }
 
+function Get-ExpectedReleaseArtifactWrapperName {
+    param(
+        [string]$RunId = "<run-id>",
+        [string]$RunAttempt = "<run-attempt>"
+    )
+
+    if ($RunId -eq "<run-id>" -and $RunAttempt -eq "<run-attempt>") {
+        return "freex-<run-id>-<run-attempt>-macos-release-assets"
+    }
+
+    return "freex-$RunId-$RunAttempt-macos-release-assets"
+}
+
 function Get-ArtifactDownloadIdentity {
     param(
         [Parameter(Mandatory = $true)][string]$Root,
@@ -296,6 +309,35 @@ function Get-ArtifactDownloadIdentity {
                 RunAttempt = $Matches["RunAttempt"]
                 Runtime = $Matches["Runtime"]
                 Kind = $Matches["Kind"]
+                WrapperDirectory = $current.FullName
+            }
+        }
+
+        if ([System.StringComparer]::OrdinalIgnoreCase.Equals($current.FullName, $rootInfo.FullName)) {
+            break
+        }
+
+        $current = $current.Parent
+    }
+
+    return $null
+}
+
+function Get-ReleaseArtifactDownloadIdentity {
+    param(
+        [Parameter(Mandatory = $true)][string]$Root,
+        [Parameter(Mandatory = $true)][string]$Directory
+    )
+
+    $rootInfo = Get-Item -LiteralPath $Root
+    $current = Get-Item -LiteralPath $Directory
+    while ($null -ne $current) {
+        if ($current.Name -match "^freex-(?<RunId>[0-9]+)-(?<RunAttempt>[0-9]+)-macos-release-assets$") {
+            return [pscustomobject]@{
+                RunId = $Matches["RunId"]
+                RunAttempt = $Matches["RunAttempt"]
+                Runtime = $null
+                Kind = "release-assets"
                 WrapperDirectory = $current.FullName
             }
         }
@@ -343,6 +385,31 @@ function Test-ArtifactDownloadIdentity {
     return $identity
 }
 
+function Test-ReleaseArtifactDownloadIdentity {
+    param(
+        [Parameter(Mandatory = $true)][string]$Root,
+        [Parameter(Mandatory = $true)][string]$Directory,
+        [Parameter(Mandatory = $true)][string]$Label
+    )
+
+    $identity = Get-ReleaseArtifactDownloadIdentity -Root $Root -Directory $Directory
+    if ($null -eq $identity) {
+        $expectedWrapper = Get-ExpectedReleaseArtifactWrapperName
+        Add-ValidationError "$Label does not preserve a GitHub Actions artifact wrapper directory named '$expectedWrapper'. Do not flatten release assets into the artifact root; re-download the artifact or keep the unzipped files under that wrapper directory."
+        return $null
+    }
+
+    if (-not [string]::IsNullOrWhiteSpace($ExpectedRunId)) {
+        Assert-True -Condition ($identity.RunId -eq $ExpectedRunId) -Message "$Label is from GitHub Actions run '$($identity.RunId)', expected run '$ExpectedRunId'."
+    }
+
+    if (-not [string]::IsNullOrWhiteSpace($ExpectedRunAttempt)) {
+        Assert-True -Condition ($identity.RunAttempt -eq $ExpectedRunAttempt) -Message "$Label is from GitHub Actions run attempt '$($identity.RunAttempt)', expected attempt '$ExpectedRunAttempt'."
+    }
+
+    return $identity
+}
+
 function Test-ArtifactIdentityConsistency {
     param(
         [Parameter(Mandatory = $true)][object[]]$Identities,
@@ -373,6 +440,22 @@ function Test-ArtifactIdentityMatches {
     if ($Identity.RunId -ne $ExpectedIdentity.RunId -or $Identity.RunAttempt -ne $ExpectedIdentity.RunAttempt) {
         Add-ValidationError "$Label is from GitHub Actions run '$($Identity.RunId)' attempt '$($Identity.RunAttempt)', but $ExpectedLabel is from run '$($ExpectedIdentity.RunId)' attempt '$($ExpectedIdentity.RunAttempt)'. Remove stale artifact folders under the artifact root or re-download the matching artifact set."
     }
+}
+
+function Test-EvidenceRunIdentity {
+    param(
+        [Parameter(Mandatory = $true)][hashtable]$Evidence,
+        [object]$ArtifactIdentity,
+        [Parameter(Mandatory = $true)][string]$Runtime
+    )
+
+    if ($null -eq $ArtifactIdentity) {
+        return
+    }
+
+    $label = "$Runtime evidence GitHub Actions identity"
+    Assert-KeyEquals -Map $Evidence -Key "github_run_id" -ExpectedValue $ArtifactIdentity.RunId -Label $label
+    Assert-KeyEquals -Map $Evidence -Key "github_run_attempt" -ExpectedValue $ArtifactIdentity.RunAttempt -Label $label
 }
 
 function Find-RuntimeBundleDirectories {
@@ -589,7 +672,8 @@ function Assert-JsonPropertyEquals {
 function Test-ReleasePublicationArtifact {
     param(
         [Parameter(Mandatory = $true)][string]$Root,
-        [Parameter(Mandatory = $true)][string[]]$ExpectedRuntimes
+        [Parameter(Mandatory = $true)][string[]]$ExpectedRuntimes,
+        [object[]]$ExpectedArtifactIdentities = @()
     )
 
     $manifestName = "FreeX-latest-macos-distribution-candidate-manifest.json"
@@ -621,7 +705,19 @@ function Test-ReleasePublicationArtifact {
     }
 
     $manifestPath = $manifestFiles[0].FullName
-    $releaseDirectory = $manifestFiles[0].Directory.FullName
+    $manifestDirectory = $manifestFiles[0].Directory.FullName
+    $instructionsDirectory = $instructionsFiles[0].Directory.FullName
+    if (-not [System.StringComparer]::OrdinalIgnoreCase.Equals($manifestDirectory, $instructionsDirectory)) {
+        Add-ValidationError "macOS release publication manifest and instructions must be in the same downloaded release-assets wrapper directory. Manifest: '$manifestDirectory'. Instructions: '$instructionsDirectory'. Remove split or stale release-assets artifact folders under $Root."
+        return
+    }
+
+    $releaseIdentity = Test-ReleaseArtifactDownloadIdentity -Root $Root -Directory $manifestDirectory -Label "macOS release publication artifact"
+    if ($null -eq $releaseIdentity) {
+        return
+    }
+
+    $releaseDirectory = $releaseIdentity.WrapperDirectory
     try {
         $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
     }
@@ -631,8 +727,17 @@ function Test-ReleasePublicationArtifact {
     }
 
     Assert-JsonPropertyEquals -Object $manifest -PropertyName "schema" -ExpectedValue "io.github.tony-xmelon.freex.macos-distribution-candidate.v1" -Label "macOS release publication manifest"
-    foreach ($propertyName in @("release_id", "tag", "repository", "workflow", "run_id", "run_attempt", "commit", "generated_at_utc", "source_artifact_pattern")) {
+    foreach ($propertyName in @("release_id", "tag", "repository", "workflow", "run_id", "run_attempt", "release_assets_artifact", "commit", "generated_at_utc", "source_artifact_pattern")) {
         Assert-JsonPropertyPresent -Object $manifest -PropertyName $propertyName -Label "macOS release publication manifest"
+    }
+
+    Assert-JsonPropertyEquals -Object $manifest -PropertyName "run_id" -ExpectedValue $releaseIdentity.RunId -Label "macOS release publication manifest"
+    Assert-JsonPropertyEquals -Object $manifest -PropertyName "run_attempt" -ExpectedValue $releaseIdentity.RunAttempt -Label "macOS release publication manifest"
+    Assert-JsonPropertyEquals -Object $manifest -PropertyName "release_assets_artifact" -ExpectedValue (Get-ExpectedReleaseArtifactWrapperName -RunId $releaseIdentity.RunId -RunAttempt $releaseIdentity.RunAttempt) -Label "macOS release publication manifest"
+
+    $knownArtifactIdentities = @($ExpectedArtifactIdentities | Where-Object { $null -ne $_ })
+    if ($knownArtifactIdentities.Count -gt 0) {
+        Test-ArtifactIdentityMatches -Identity $releaseIdentity -ExpectedIdentity $knownArtifactIdentities[0] -Label "macOS release publication artifact" -ExpectedLabel "downloaded macOS app artifacts"
     }
 
     if (-not [string]::IsNullOrWhiteSpace($ExpectedRunId)) {
@@ -798,7 +903,8 @@ function Test-ReleasePublicationArtifact {
             "stapler",
             "Gatekeeper",
             "gatekeeper_assessment_status=accepted",
-            "Reject")) {
+            "Reject",
+            (Get-ExpectedReleaseArtifactWrapperName -RunId $releaseIdentity.RunId -RunAttempt $releaseIdentity.RunAttempt))) {
         Assert-ContainsText -Text $releaseInstructions -Needle $needle -Message "macOS release publication instructions must mention '$needle'."
     }
 }
@@ -837,14 +943,45 @@ function Test-LaunchSmoke {
     Assert-KeyPositiveInteger -Map $launch -Key "viewport_columns" -Minimum 1 -Label "$Runtime LaunchServices smoke"
     Assert-KeyEquals -Map $launch -Key "native_open_recent_menu_item" -ExpectedValue "true" -Label "$Runtime LaunchServices smoke"
     Assert-KeyPositiveInteger -Map $launch -Key "native_open_recent_item_count" -Minimum 1 -Label "$Runtime LaunchServices smoke"
-    Assert-KeyEquals -Map $launch -Key "live_command_key_smoke_required" -ExpectedValue "true" -Label "$Runtime command key smoke"
-    Assert-KeyEquals -Map $launch -Key "live_command_key_smoke" -ExpectedValue "passed" -Label "$Runtime command key smoke"
-    Assert-KeyEquals -Map $launch -Key "live_command_key_smoke_attempted" -ExpectedValue "true" -Label "$Runtime command key smoke"
-    Assert-KeyEquals -Map $launch -Key "live_command_key_smoke_ready" -ExpectedValue "true" -Label "$Runtime command key smoke"
-    Assert-KeyEquals -Map $launch -Key "live_cmd_select_all_state_changed" -ExpectedValue "true" -Label "$Runtime command key smoke"
-    Assert-KeyEquals -Map $launch -Key "live_cmd_bold_state_changed" -ExpectedValue "true" -Label "$Runtime command key smoke"
-    Assert-KeyEquals -Map $launch -Key "live_cmd_italic_state_changed" -ExpectedValue "true" -Label "$Runtime command key smoke"
-    Assert-KeyEquals -Map $launch -Key "live_cmd_underline_state_changed" -ExpectedValue "true" -Label "$Runtime command key smoke"
+    Assert-KeyEquals -Map $launch -Key "command_key_smoke" -ExpectedValue "passed" -Label "$Runtime command key smoke"
+    Assert-KeyEquals -Map $launch -Key "command_key_smoke_attempted" -ExpectedValue "true" -Label "$Runtime command key smoke"
+    foreach ($key in @(
+            "cmd_new_workbook_menu_gesture",
+            "cmd_open_menu_gesture",
+            "cmd_save_menu_gesture",
+            "cmd_save_as_menu_gesture",
+            "cmd_close_workbook_menu_gesture",
+            "cmd_quit_menu_gesture",
+            "cmd_select_all_menu_gesture",
+            "cmd_find_menu_gesture",
+            "cmd_find_direct_route_source_guard",
+            "cmd_page_up_direct_route_source_guard",
+            "cmd_page_down_direct_route_source_guard",
+            "cmd_bold_menu_gesture",
+            "cmd_italic_menu_gesture",
+            "cmd_underline_menu_gesture")) {
+        Assert-KeyEquals -Map $launch -Key $key -ExpectedValue "true" -Label "$Runtime command key smoke"
+    }
+
+    Assert-KeyPresent -Map $launch -Key "live_command_key_smoke_required" -Label "$Runtime command key smoke"
+    $liveCommandKeyRequiredValues = @(Get-KeyValues -Map $launch -Key "live_command_key_smoke_required")
+    Assert-KeyHasNoConflictingDuplicateValues -Values $liveCommandKeyRequiredValues -Key "live_command_key_smoke_required" -Label "$Runtime command key smoke" -ExpectedDescription "Expected 'live_command_key_smoke_required=true' or 'live_command_key_smoke_required=false'." | Out-Null
+    $liveCommandKeyRequired = Get-LatestKeyValue -Map $launch -Key "live_command_key_smoke_required"
+    if ($liveCommandKeyRequired -eq "true") {
+        Assert-KeyEquals -Map $launch -Key "live_command_key_smoke" -ExpectedValue "passed" -Label "$Runtime command key smoke"
+        Assert-KeyEquals -Map $launch -Key "live_command_key_smoke_attempted" -ExpectedValue "true" -Label "$Runtime command key smoke"
+        Assert-KeyEquals -Map $launch -Key "live_command_key_smoke_ready" -ExpectedValue "true" -Label "$Runtime command key smoke"
+        Assert-KeyEquals -Map $launch -Key "live_cmd_select_all_state_changed" -ExpectedValue "true" -Label "$Runtime command key smoke"
+        Assert-KeyEquals -Map $launch -Key "live_cmd_bold_state_changed" -ExpectedValue "true" -Label "$Runtime command key smoke"
+        Assert-KeyEquals -Map $launch -Key "live_cmd_italic_state_changed" -ExpectedValue "true" -Label "$Runtime command key smoke"
+        Assert-KeyEquals -Map $launch -Key "live_cmd_underline_state_changed" -ExpectedValue "true" -Label "$Runtime command key smoke"
+    }
+    elseif ($liveCommandKeyRequired -eq "false") {
+        Assert-KeyEquals -Map $launch -Key "live_command_key_smoke" -ExpectedValue "not_required" -Label "$Runtime command key smoke"
+    }
+    else {
+        Add-ValidationError "$Runtime command key smoke must include 'live_command_key_smoke_required=true' or 'live_command_key_smoke_required=false'. Actual value(s): $($liveCommandKeyRequiredValues -join ', ')."
+    }
 }
 
 function Test-OpenWithSmoke {
@@ -1032,6 +1169,7 @@ function Test-RuntimeBundle {
     $testerInstructionsPath = Join-Path $BundleDirectory $names.TesterInstructions
 
     $evidence = Get-KeyValueMap -Path $evidencePath
+    Test-EvidenceRunIdentity -Evidence $evidence -ArtifactIdentity $ArtifactIdentity -Runtime $Runtime
     $isDistributionCandidateArtifact = Test-ChannelEvidence -Evidence $evidence -Runtime $Runtime
 
     Test-ChecksumEvidence -BundleDirectory $BundleDirectory -Runtime $Runtime -Evidence $evidence
@@ -1078,7 +1216,7 @@ foreach ($runtime in $Runtimes) {
 }
 
 Test-ArtifactIdentityConsistency -Identities $artifactIdentities.ToArray() -Root $resolvedArtifactRoot
-Test-ReleasePublicationArtifact -Root $resolvedArtifactRoot -ExpectedRuntimes $Runtimes
+Test-ReleasePublicationArtifact -Root $resolvedArtifactRoot -ExpectedRuntimes $Runtimes -ExpectedArtifactIdentities $artifactIdentities.ToArray()
 
 if ($validationErrors.Count -gt 0) {
     throw "macOS public-preview evidence preflight failed with $($validationErrors.Count) issue(s)."

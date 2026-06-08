@@ -9,7 +9,7 @@ This note answers how GitHub-hosted macOS runners can produce a downloadable Fre
 The build path is the `macOS App Preview` workflow at `.github/workflows/macos-app.yml`. It does not require a developer-owned Mac because the app bundle is assembled, signed, smoke-tested, zipped, and uploaded on GitHub-hosted macOS runners:
 
 1. Run the matrix for both supported runtimes:
-   - `osx-arm64` on `macos-latest`
+   - `osx-arm64` on `macos-15`
    - `osx-x64` on `macos-15-intel`
 2. Checkout the repository and install `.NET 10` with `actions/setup-dotnet`.
 3. Capture runner/toolchain evidence, including `RUNNER_OS`, `RUNNER_ARCH`, `ImageOS`, `ImageVersion`, `sw_vers`, `uname -m`, `dotnet --info`, and `xcodebuild -version`.
@@ -27,17 +27,28 @@ The build path is the `macOS App Preview` workflow at `.github/workflows/macos-a
 11. Record Gatekeeper assessment with `spctl`, then run native-architecture packaging and LaunchServices/Open-With/default-open smoke where the hosted runner can execute the runtime.
 12. Upload the app artifact and always-on diagnostics artifact with workflow artifacts.
 
-GitHub's hosted-runner documentation treats `-latest` labels as GitHub's latest stable runner image rather than necessarily the newest vendor OS, so the workflow's captured image/toolchain evidence should remain part of every artifact review.
+The workflow pins explicit hosted runner labels for both runtime jobs, and the captured image/toolchain evidence should remain part of every artifact review so runner image changes are visible in the release record.
+
+## Latest Hosted Evidence
+
+As of 2026-06-08, `macOS App Preview` run [27135077357](https://github.com/tony-xmelon/FreeX/actions/runs/27135077357) passed on current `main` commit `6ecfb1f3c4c67e839aae63954f44c6007d22c629`. Both matrix jobs completed successfully and uploaded app plus diagnostics artifacts:
+
+| Runtime | App artifact | Diagnostics artifact |
+| --- | --- | --- |
+| `osx-arm64` | `freex-27135077357-1-osx-arm64-macos-app` (`7479167956`) | `freex-27135077357-1-osx-arm64-macos-diagnostics` (`7479169074`) |
+| `osx-x64` | `freex-27135077357-1-osx-x64-macos-app` (`7479237177`) | `freex-27135077357-1-osx-x64-macos-diagnostics` (`7479238443`) |
+
+The hosted logs show packaging smoke, LaunchServices launch, Open-With launch, and default-open launch checks passing for both runtimes. Internal-preview artifacts intentionally record live Command-key and external image clipboard probes as not required; those remain local/human macOS validation gates.
 
 ## Already Wired
 
 - `src/FreeX.App.Avalonia` targets `net10.0`, declares `RuntimeIdentifiers` for `osx-arm64` and `osx-x64`, and includes `Packaging/macos/FreeX.icns` as publish content.
 - `Packaging/macos/Info.plist` declares `FreeX` as the executable, `io.github.tony-xmelon.freex` as the bundle id, `FreeX.icns` as the icon, `.fxl` as the owned workbook type, and common spreadsheet formats as alternate/viewer document types.
 - `.github/workflows/ci.yml` has a portable hosted macOS lane that builds and tests `FreeX.DefaultTests.slnx` without pulling WPF, UI tests, or Windows-only tools into the macOS job.
-- `.github/workflows/macos-app.yml` builds both runtime-specific `.app` bundles, uploads `freex-<run-id>-<run-attempt>-<runtime>-macos-app`, and preserves diagnostics with a separate always-on artifact.
+- `.github/workflows/macos-app.yml` builds both runtime-specific `.app` bundles, uploads `freex-<run-id>-<run-attempt>-<runtime>-macos-app`, uploads distribution-candidate release assets as `freex-<run-id>-<run-attempt>-macos-release-assets`, and preserves diagnostics with a separate always-on artifact.
 - The uploaded app artifact includes the inner app zip, checksum, evidence file, packaging-smoke log, LaunchServices launch-smoke report, Open-With launch-smoke report, default-open launch-smoke report, notarization log, and tester instructions.
 - The workflow separates `artifact_channel=internal-preview` from `artifact_channel=distribution-candidate`. Pull request runs never use Developer ID signing secrets; `workflow_dispatch` with `distribution_candidate=true` requires signing and notarization evidence.
-- The distribution-candidate publication job downloads both runtime artifacts, revalidates evidence markers, prepares stable `FreeX-latest-macos-arm64.zip` and `FreeX-latest-macos-x64.zip` assets, writes a manifest, and creates or updates a prerelease GitHub Release.
+- The distribution-candidate publication job downloads both runtime artifacts, revalidates evidence markers, prepares stable `FreeX-latest-macos-arm64.zip` and `FreeX-latest-macos-x64.zip` assets, writes a manifest, uploads the prepared release-assets wrapper, and creates or updates a prerelease GitHub Release.
 - `tools/Test-MacOsAppReadiness.ps1` is wired into repository preflight for static macOS app readiness checks, and `tools/Test-MacOsPublicPreviewReadiness.ps1` validates downloaded evidence bundles on Windows after hosted packaging.
 - Existing runbooks already cover retrieval, signing/notarization secrets, public-preview evidence validation, and human macOS checklist work:
   - `docs/release/macos-signing-notarization.md`
@@ -66,7 +77,7 @@ A hosted `.app` artifact is not automatically a trusted tester build. Treat defa
    - `stapler_validated=true`
    - `gatekeeper_assessment_status=accepted`
    - `gatekeeper_assessment_source=Notarized Developer ID`
-4. Download app, diagnostics, and release-channel prepared-assets artifacts, preserving each `freex-<run-id>-<run-attempt>-<runtime>-macos-app`, `freex-<run-id>-<run-attempt>-<runtime>-macos-diagnostics`, and macOS release-assets wrapper directory under the artifact root so stale or mixed-run downloads and missing publication output can be detected. Then run the Windows-runnable evidence preflight with distribution-candidate promotion requirements and the optional run identity flags for the specific GitHub Actions run:
+4. Download app, diagnostics, and release-channel prepared-assets artifacts, preserving each `freex-<run-id>-<run-attempt>-<runtime>-macos-app`, `freex-<run-id>-<run-attempt>-<runtime>-macos-diagnostics`, and `freex-<run-id>-<run-attempt>-macos-release-assets` wrapper directory under the artifact root so stale or mixed-run downloads, split release-assets manifest/instructions, and missing publication output can be detected. Then run the Windows-runnable evidence preflight with distribution-candidate promotion requirements and the optional run identity flags for the specific GitHub Actions run:
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Test-MacOsPublicPreviewReadiness.ps1 -ArtifactRoot artifacts/macos-preview -ExpectedRunId <run-id> -ExpectedRunAttempt <run-attempt> -DistributionCandidate -RequireSeparateDiagnosticsArtifact -RequireReleasePublicationArtifact

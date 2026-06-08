@@ -271,6 +271,27 @@ function Assert-TableContainsLabels {
     }
 }
 
+function Assert-TableContainsHeaders {
+    param(
+        [Parameter(Mandatory = $true)][object]$Table,
+        [Parameter(Mandatory = $true)][string[]]$ExpectedHeaders
+    )
+
+    foreach ($expected in $ExpectedHeaders) {
+        $headerFound = $false
+        foreach ($header in @($Table.Headers)) {
+            if ([string]::Equals([string]$header, $expected, [System.StringComparison]::OrdinalIgnoreCase)) {
+                $headerFound = $true
+                break
+            }
+        }
+
+        if (-not $headerFound) {
+            Add-ValidationError "Checklist section '$($Table.Section)' table must include a '$expected' column."
+        }
+    }
+}
+
 function Get-StatusAllowedValues {
     param(
         [Parameter(Mandatory = $true)][string]$Label,
@@ -331,6 +352,75 @@ function Get-SummaryValue {
     return ""
 }
 
+function Get-WorkflowRunIdentity {
+    param([Parameter(Mandatory = $true)][AllowEmptyString()][AllowNull()][string]$Value)
+
+    if ($Value -notmatch "^(?<RunId>[0-9]+)\s*/\s*(?<RunAttempt>[0-9]+)$") {
+        Add-ValidationError "Candidate Summary 'Workflow run id / attempt' must be '<numeric run id> / <numeric run attempt>', but was '$Value'."
+        return [pscustomobject]@{
+            RunId = ""
+            RunAttempt = ""
+        }
+    }
+
+    return [pscustomobject]@{
+        RunId = $Matches.RunId
+        RunAttempt = $Matches.RunAttempt
+    }
+}
+
+function Get-TableRowByLabel {
+    param(
+        [Parameter(Mandatory = $true)][object]$Table,
+        [Parameter(Mandatory = $true)][string]$LabelColumn,
+        [Parameter(Mandatory = $true)][string]$Label
+    )
+
+    foreach ($row in $Table.Rows) {
+        $candidateLabel = Get-CellValue -Row $row -Column $LabelColumn
+        if ([string]::Equals($candidateLabel, $Label, [System.StringComparison]::OrdinalIgnoreCase)) {
+            return $row
+        }
+    }
+
+    return $null
+}
+
+function Get-RowEvidenceText {
+    param(
+        [Parameter(Mandatory = $true)][hashtable]$Row,
+        [Parameter(Mandatory = $true)][string[]]$Columns
+    )
+
+    $values = @()
+    foreach ($column in $Columns) {
+        $values += Get-CellValue -Row $Row -Column $column
+    }
+
+    return ($values -join " ")
+}
+
+function Assert-TextIncludesValue {
+    param(
+        [Parameter(Mandatory = $true)][AllowEmptyString()][AllowNull()][string]$Text,
+        [Parameter(Mandatory = $true)][AllowEmptyString()][AllowNull()][string]$ExpectedValue,
+        [Parameter(Mandatory = $true)][string]$Label
+    )
+
+    if ([string]::IsNullOrWhiteSpace($ExpectedValue)) {
+        return
+    }
+
+    $normalizedText = ""
+    if ($null -ne $Text) {
+        $normalizedText = $Text
+    }
+
+    if ($normalizedText.IndexOf($ExpectedValue, [System.StringComparison]::OrdinalIgnoreCase) -lt 0) {
+        Add-ValidationError "$Label must include '$ExpectedValue'."
+    }
+}
+
 function Test-CandidateSummary {
     param([Parameter(Mandatory = $true)][object]$SummaryTable)
 
@@ -368,34 +458,174 @@ function Test-CandidateSummary {
     }
 
     $workflowRun = Get-SummaryValue -SummaryTable $SummaryTable -Field "Workflow run id / attempt"
-    if (-not [string]::IsNullOrWhiteSpace($ExpectedRunId)) {
-        Assert-ValueMatches -Value $workflowRun -Pattern "(^|[^0-9])$([System.Text.RegularExpressions.Regex]::Escape($ExpectedRunId))([^0-9]|$)" -Label "Candidate Summary 'Workflow run id / attempt'"
+    $workflowIdentity = Get-WorkflowRunIdentity -Value $workflowRun
+    $workflowRunMatchesExpected = $true
+    if (-not [string]::IsNullOrWhiteSpace($ExpectedRunId) -and $workflowIdentity.RunId -ne $ExpectedRunId) {
+        $workflowRunMatchesExpected = $false
     }
 
-    if (-not [string]::IsNullOrWhiteSpace($ExpectedRunAttempt)) {
-        Assert-ValueMatches -Value $workflowRun -Pattern "(^|[^0-9])$([System.Text.RegularExpressions.Regex]::Escape($ExpectedRunAttempt))([^0-9]|$)" -Label "Candidate Summary 'Workflow run id / attempt'"
+    if (-not [string]::IsNullOrWhiteSpace($ExpectedRunAttempt) -and $workflowIdentity.RunAttempt -ne $ExpectedRunAttempt) {
+        $workflowRunMatchesExpected = $false
+    }
+
+    if (-not $workflowRunMatchesExpected) {
+        Add-ValidationError "Candidate Summary 'Workflow run id / attempt' has unexpected value '$workflowRun'."
     }
 
     $artifactWrapper = Get-SummaryValue -SummaryTable $SummaryTable -Field "Artifact wrapper name"
     $diagnosticsWrapper = Get-SummaryValue -SummaryTable $SummaryTable -Field "Diagnostics artifact name"
-    if (-not [string]::IsNullOrWhiteSpace($ExpectedRunId) -and -not [string]::IsNullOrWhiteSpace($ExpectedRunAttempt)) {
-        Assert-ValueEquals -Value $artifactWrapper -ExpectedValue "freex-$ExpectedRunId-$ExpectedRunAttempt-$runtime-macos-app" -Label "Candidate Summary 'Artifact wrapper name'"
-        Assert-ValueEquals -Value $diagnosticsWrapper -ExpectedValue "freex-$ExpectedRunId-$ExpectedRunAttempt-$runtime-macos-diagnostics" -Label "Candidate Summary 'Diagnostics artifact name'"
+    $artifactRunId = $workflowIdentity.RunId
+    $artifactRunAttempt = $workflowIdentity.RunAttempt
+    if (-not [string]::IsNullOrWhiteSpace($ExpectedRunId)) {
+        $artifactRunId = $ExpectedRunId
+    }
+
+    if (-not [string]::IsNullOrWhiteSpace($ExpectedRunAttempt)) {
+        $artifactRunAttempt = $ExpectedRunAttempt
+    }
+
+    if (-not [string]::IsNullOrWhiteSpace($artifactRunId) -and -not [string]::IsNullOrWhiteSpace($artifactRunAttempt)) {
+        Assert-ValueEquals -Value $artifactWrapper -ExpectedValue "freex-$artifactRunId-$artifactRunAttempt-$runtime-macos-app" -Label "Candidate Summary 'Artifact wrapper name'"
+        Assert-ValueEquals -Value $diagnosticsWrapper -ExpectedValue "freex-$artifactRunId-$artifactRunAttempt-$runtime-macos-diagnostics" -Label "Candidate Summary 'Diagnostics artifact name'"
     }
     else {
         Assert-ValueMatches -Value $artifactWrapper -Pattern "^freex-[0-9]+-[0-9]+-$runtime-macos-app$" -Label "Candidate Summary 'Artifact wrapper name'"
         Assert-ValueMatches -Value $diagnosticsWrapper -Pattern "^freex-[0-9]+-[0-9]+-$runtime-macos-diagnostics$" -Label "Candidate Summary 'Diagnostics artifact name'"
     }
 
-    Assert-ValueEquals -Value (Get-SummaryValue -SummaryTable $SummaryTable -Field "Inner app ZIP") -ExpectedValue "freex-$runtime-macos-app.zip" -Label "Candidate Summary 'Inner app ZIP'"
-    Assert-ValueEquals -Value (Get-SummaryValue -SummaryTable $SummaryTable -Field "Evidence file") -ExpectedValue "freex-$runtime-macos-evidence.txt" -Label "Candidate Summary 'Evidence file'"
-    Assert-ValueMatches -Value (Get-SummaryValue -SummaryTable $SummaryTable -Field "ZIP SHA-256") -Pattern "^[0-9a-fA-F]{64}$" -Label "Candidate Summary 'ZIP SHA-256'"
+    $innerAppZip = Get-SummaryValue -SummaryTable $SummaryTable -Field "Inner app ZIP"
+    $evidenceFile = Get-SummaryValue -SummaryTable $SummaryTable -Field "Evidence file"
+    $zipSha256 = Get-SummaryValue -SummaryTable $SummaryTable -Field "ZIP SHA-256"
+    Assert-ValueEquals -Value $innerAppZip -ExpectedValue "freex-$runtime-macos-app.zip" -Label "Candidate Summary 'Inner app ZIP'"
+    Assert-ValueEquals -Value $evidenceFile -ExpectedValue "freex-$runtime-macos-evidence.txt" -Label "Candidate Summary 'Evidence file'"
+    Assert-ValueMatches -Value $zipSha256 -Pattern "^[0-9a-fA-F]{64}$" -Label "Candidate Summary 'ZIP SHA-256'"
     Assert-ValueMatches -Value (Get-SummaryValue -SummaryTable $SummaryTable -Field "Signing mode") -Pattern "^(developer-id|developer id)$" -Label "Candidate Summary 'Signing mode'"
     Assert-ValueEquals -Value (Get-SummaryValue -SummaryTable $SummaryTable -Field "Notarization status") -ExpectedValue "accepted" -Label "Candidate Summary 'Notarization status'"
     Assert-ValueMatches -Value (Get-SummaryValue -SummaryTable $SummaryTable -Field "Stapler status") -Pattern "^(true|validated|valid|stapled)$" -Label "Candidate Summary 'Stapler status'"
     Assert-ValueEquals -Value (Get-SummaryValue -SummaryTable $SummaryTable -Field "Final decision") -ExpectedValue "Pass" -Label "Candidate Summary 'Final decision'"
 
-    return $runtime
+    return [pscustomobject]@{
+        Runtime = $runtime
+        RunId = $workflowIdentity.RunId
+        RunAttempt = $workflowIdentity.RunAttempt
+        ArtifactWrapper = $artifactWrapper
+        DiagnosticsWrapper = $diagnosticsWrapper
+        InnerAppZip = $innerAppZip
+        ZipSha256 = $zipSha256
+        EvidenceFile = $evidenceFile
+    }
+}
+
+function Test-HostedEvidenceCopyForwardConsistency {
+    param(
+        [Parameter(Mandatory = $true)][object]$Table,
+        [Parameter(Mandatory = $true)][object]$CandidateSummary
+    )
+
+    $checksumRow = Get-TableRowByLabel -Table $Table -LabelColumn "Required check" -Label "Checksum"
+    if ($null -eq $checksumRow) {
+        return
+    }
+
+    $checksumEvidence = Get-RowEvidenceText -Row $checksumRow -Columns @("Actual evidence", "Attachment")
+    Assert-TextIncludesValue -Text $checksumEvidence -ExpectedValue $CandidateSummary.InnerAppZip -Label "Hosted Evidence Copy-Forward 'Checksum' evidence"
+    Assert-TextIncludesValue -Text $checksumEvidence -ExpectedValue $CandidateSummary.ZipSha256 -Label "Hosted Evidence Copy-Forward 'Checksum' evidence"
+}
+
+function Test-AccessibilityKnownIssues {
+    param([Parameter(Mandatory = $true)][object]$Table)
+
+    Assert-TableContainsHeaders -Table $Table -ExpectedHeaders @(
+        "Issue ID",
+        "Affected workflow",
+        "Severity",
+        "User impact / evidence",
+        "Workaround",
+        "Owner",
+        "Public-preview blocking",
+        "Decision / rationale"
+    )
+
+    if ($Table.Rows.Count -eq 0) {
+        return [pscustomobject]@{
+            IssueCount = 0
+            BlockingIssueCount = 0
+            HasNoneRow = $false
+        }
+    }
+
+    $noneRows = @()
+    foreach ($row in $Table.Rows) {
+        $issueId = Get-CellValue -Row $row -Column "Issue ID"
+        if ([string]::Equals($issueId, "None", [System.StringComparison]::OrdinalIgnoreCase)) {
+            $noneRows += $row
+        }
+    }
+
+    if ($noneRows.Count -gt 0) {
+        if ($noneRows.Count -ne 1 -or $Table.Rows.Count -ne 1) {
+            Add-ValidationError "Accessibility Known Issues must contain either exactly one 'None' row or issue rows, not both."
+        }
+
+        $noneRow = $noneRows[0]
+        Assert-ValueEquals -Value (Get-CellValue -Row $noneRow -Column "Affected workflow") -ExpectedValue "None" -Label "Accessibility Known Issues 'None' affected workflow"
+        Assert-ValueEquals -Value (Get-CellValue -Row $noneRow -Column "Severity") -ExpectedValue "None" -Label "Accessibility Known Issues 'None' severity"
+        Assert-FilledValue -Value (Get-CellValue -Row $noneRow -Column "User impact / evidence") -Label "Accessibility Known Issues 'None' user impact / evidence"
+        Assert-ValueEquals -Value (Get-CellValue -Row $noneRow -Column "Workaround") -ExpectedValue "None" -Label "Accessibility Known Issues 'None' workaround"
+        Assert-FilledValue -Value (Get-CellValue -Row $noneRow -Column "Owner") -Label "Accessibility Known Issues 'None' owner"
+        Assert-AllowedValue -Value (Get-CellValue -Row $noneRow -Column "Public-preview blocking") -AllowedValues @("No") -Label "Accessibility Known Issues 'None' public-preview blocking"
+        Assert-FilledValue -Value (Get-CellValue -Row $noneRow -Column "Decision / rationale") -Label "Accessibility Known Issues 'None' decision / rationale"
+
+        return [pscustomobject]@{
+            IssueCount = 0
+            BlockingIssueCount = 0
+            HasNoneRow = $true
+        }
+    }
+
+    $issueCount = 0
+    $blockingIssueCount = 0
+    foreach ($row in $Table.Rows) {
+        $issueId = Get-CellValue -Row $row -Column "Issue ID"
+        $issueLabel = $issueId
+        if ([string]::IsNullOrWhiteSpace($issueLabel)) {
+            $issueLabel = "<blank issue id>"
+        }
+
+        Assert-FilledValue -Value $issueId -Label "Accessibility Known Issues issue id"
+        Assert-FilledValue -Value (Get-CellValue -Row $row -Column "Affected workflow") -Label "Accessibility Known Issues '$issueLabel' affected workflow"
+        Assert-AllowedValue -Value (Get-CellValue -Row $row -Column "Severity") -AllowedValues @("Critical", "High", "Medium", "Low") -Label "Accessibility Known Issues '$issueLabel' severity"
+        Assert-FilledValue -Value (Get-CellValue -Row $row -Column "User impact / evidence") -Label "Accessibility Known Issues '$issueLabel' user impact / evidence"
+        Assert-FilledValue -Value (Get-CellValue -Row $row -Column "Workaround") -Label "Accessibility Known Issues '$issueLabel' workaround"
+        Assert-FilledValue -Value (Get-CellValue -Row $row -Column "Owner") -Label "Accessibility Known Issues '$issueLabel' owner"
+        $blocking = Get-CellValue -Row $row -Column "Public-preview blocking"
+        Assert-AllowedValue -Value $blocking -AllowedValues @("Yes", "No") -Label "Accessibility Known Issues '$issueLabel' public-preview blocking"
+        Assert-FilledValue -Value (Get-CellValue -Row $row -Column "Decision / rationale") -Label "Accessibility Known Issues '$issueLabel' decision / rationale"
+
+        $issueCount++
+        if ([string]::Equals($blocking, "Yes", [System.StringComparison]::OrdinalIgnoreCase)) {
+            $blockingIssueCount++
+            Add-ValidationError "Accessibility Known Issues '$issueLabel' is marked public-preview blocking; public-preview candidates must be Internal-only until it is resolved or accepted as non-blocking."
+        }
+    }
+
+    return [pscustomobject]@{
+        IssueCount = $issueCount
+        BlockingIssueCount = $blockingIssueCount
+        HasNoneRow = $false
+    }
+}
+
+function Test-VoiceOverKnownIssuesReviewConsistency {
+    param([Parameter(Mandatory = $true)][object]$VoiceOverTable)
+
+    $knownIssuesRow = Get-TableRowByLabel -Table $VoiceOverTable -LabelColumn "Surface" -Label "Known issues review"
+    if ($null -eq $knownIssuesRow) {
+        return
+    }
+
+    $knownIssuesEvidence = Get-RowEvidenceText -Row $knownIssuesRow -Columns @("Actual announcement or issue", "Evidence")
+    Assert-TextIncludesValue -Text $knownIssuesEvidence -ExpectedValue "Accessibility Known Issues" -Label "VoiceOver Smoke 'Known issues review'"
 }
 
 function Test-LogAndArtifactCollection {
@@ -416,8 +646,55 @@ function Test-LogAndArtifactCollection {
     }
 }
 
+function Test-LogAndArtifactCollectionConsistency {
+    param(
+        [Parameter(Mandatory = $true)][object]$Table,
+        [Parameter(Mandatory = $true)][object]$CandidateSummary
+    )
+
+    $appWrapperRow = Get-TableRowByLabel -Table $Table -LabelColumn "Artifact" -Label "GitHub Actions app artifact wrapper"
+    if ($null -ne $appWrapperRow) {
+        $appWrapperEvidence = Get-RowEvidenceText -Row $appWrapperRow -Columns @("Collected path or attachment", "Notes")
+        Assert-TextIncludesValue -Text $appWrapperEvidence -ExpectedValue $CandidateSummary.ArtifactWrapper -Label "Log And Artifact Collection 'GitHub Actions app artifact wrapper'"
+    }
+
+    $innerZipRow = Get-TableRowByLabel -Table $Table -LabelColumn "Artifact" -Label "Inner app ZIP and .sha256 file"
+    if ($null -ne $innerZipRow) {
+        $innerZipEvidence = Get-RowEvidenceText -Row $innerZipRow -Columns @("Collected path or attachment", "Notes")
+        Assert-TextIncludesValue -Text $innerZipEvidence -ExpectedValue $CandidateSummary.InnerAppZip -Label "Log And Artifact Collection 'Inner app ZIP and .sha256 file'"
+        Assert-TextIncludesValue -Text $innerZipEvidence -ExpectedValue "$($CandidateSummary.InnerAppZip).sha256" -Label "Log And Artifact Collection 'Inner app ZIP and .sha256 file'"
+    }
+
+    $evidenceRow = Get-TableRowByLabel -Table $Table -LabelColumn "Artifact" -Label $CandidateSummary.EvidenceFile
+    if ($null -ne $evidenceRow) {
+        $evidenceFileEvidence = Get-RowEvidenceText -Row $evidenceRow -Columns @("Collected path or attachment", "Notes")
+        Assert-TextIncludesValue -Text $evidenceFileEvidence -ExpectedValue $CandidateSummary.EvidenceFile -Label "Log And Artifact Collection '$($CandidateSummary.EvidenceFile)'"
+    }
+
+    $releaseAssetsRow = Get-TableRowByLabel -Table $Table -LabelColumn "Artifact" -Label "macOS release-assets wrapper"
+    if ($null -ne $releaseAssetsRow) {
+        $releaseAssetsEvidence = Get-RowEvidenceText -Row $releaseAssetsRow -Columns @("Collected path or attachment", "Notes")
+        Assert-TextIncludesValue -Text $releaseAssetsEvidence -ExpectedValue "macos-release-assets" -Label "Log And Artifact Collection 'macOS release-assets wrapper'"
+    }
+
+    $manifestRow = Get-TableRowByLabel -Table $Table -LabelColumn "Artifact" -Label "FreeX-latest-macos-distribution-candidate-manifest.json"
+    if ($null -ne $manifestRow) {
+        $manifestEvidence = Get-RowEvidenceText -Row $manifestRow -Columns @("Collected path or attachment", "Notes")
+        Assert-TextIncludesValue -Text $manifestEvidence -ExpectedValue "FreeX-latest-macos-distribution-candidate-manifest.json" -Label "Log And Artifact Collection 'FreeX-latest-macos-distribution-candidate-manifest.json'"
+    }
+
+    $diagnosticsRow = Get-TableRowByLabel -Table $Table -LabelColumn "Artifact" -Label "Diagnostics artifact"
+    if ($null -ne $diagnosticsRow) {
+        $diagnosticsEvidence = Get-RowEvidenceText -Row $diagnosticsRow -Columns @("Collected path or attachment", "Notes")
+        Assert-TextIncludesValue -Text $diagnosticsEvidence -ExpectedValue $CandidateSummary.DiagnosticsWrapper -Label "Log And Artifact Collection 'Diagnostics artifact'"
+    }
+}
+
 function Test-PublicPreviewDecision {
-    param([Parameter(Mandatory = $true)][object]$Table)
+    param(
+        [Parameter(Mandatory = $true)][object]$Table,
+        [AllowNull()][object]$AccessibilityKnownIssues
+    )
 
     $expectedDecisionRows = @(
         "Hosted public-preview preflight passed for both runtimes",
@@ -439,6 +716,10 @@ function Test-PublicPreviewDecision {
             Assert-AllowedValue -Value $result -AllowedValues @("Pass") -Label "Public-Preview Decision '$label'"
         }
     }
+
+    if ($null -ne $AccessibilityKnownIssues -and $AccessibilityKnownIssues.BlockingIssueCount -gt 0) {
+        Add-ValidationError "Public-Preview Decision 'Known issues are listed with severity, workaround, owner, and blocking decision' cannot pass while Accessibility Known Issues has public-preview blocking issues."
+    }
 }
 
 $resolvedChecklistPath = Resolve-InputPath $ChecklistPath
@@ -448,9 +729,11 @@ if (-not (Test-Path -LiteralPath $resolvedChecklistPath -PathType Leaf)) {
 
 $tables = Get-MarkdownTables -Path $resolvedChecklistPath
 $candidateSummary = Get-RequiredTable -Tables $tables -Section "Candidate Summary"
+$candidateSummaryDetails = $null
 $runtimeUnderTest = ""
 if ($null -ne $candidateSummary) {
-    $runtimeUnderTest = Test-CandidateSummary -SummaryTable $candidateSummary
+    $candidateSummaryDetails = Test-CandidateSummary -SummaryTable $candidateSummary
+    $runtimeUnderTest = $candidateSummaryDetails.Runtime
 }
 
 $hostedEvidence = Get-RequiredTable -Tables $tables -Section "Hosted Evidence Copy-Forward"
@@ -469,6 +752,9 @@ if ($null -ne $hostedEvidence) {
         "Diagnostics artifact"
     )
     Test-StatusTable -Table $hostedEvidence -LabelColumn "Required check" -StatusColumn "Status" -EvidenceColumns @("Actual evidence", "Attachment")
+    if ($null -ne $candidateSummaryDetails) {
+        Test-HostedEvidenceCopyForwardConsistency -Table $hostedEvidence -CandidateSummary $candidateSummaryDetails
+    }
 }
 
 $gatekeeper = Get-RequiredTable -Tables $tables -Section "Gatekeeper First Launch"
@@ -566,6 +852,13 @@ if ($null -ne $voiceOver) {
         "Drawing objects*" = @("Pass", "N/A")
         "Gatekeeper or accessibility prompts" = @("Pass", "N/A")
     } -EvidenceColumns @("Actual announcement or issue", "Evidence")
+    Test-VoiceOverKnownIssuesReviewConsistency -VoiceOverTable $voiceOver
+}
+
+$accessibilityKnownIssues = Get-RequiredTable -Tables $tables -Section "Accessibility Known Issues"
+$accessibilityKnownIssuesDetails = $null
+if ($null -ne $accessibilityKnownIssues) {
+    $accessibilityKnownIssuesDetails = Test-AccessibilityKnownIssues -Table $accessibilityKnownIssues
 }
 
 $logCollection = Get-RequiredTable -Tables $tables -Section "Log And Artifact Collection"
@@ -580,6 +873,8 @@ if ($null -ne $logCollection) {
         "GitHub Actions app artifact wrapper",
         "Inner app ZIP and .sha256 file",
         $evidenceArtifactLabel,
+        "macOS release-assets wrapper",
+        "FreeX-latest-macos-distribution-candidate-manifest.json",
         "Packaging smoke log",
         "Launch smoke file",
         "Notarization log",
@@ -589,11 +884,14 @@ if ($null -ne $logCollection) {
         "Terminal transcript"
     )
     Test-LogAndArtifactCollection -Table $logCollection
+    if ($null -ne $candidateSummaryDetails) {
+        Test-LogAndArtifactCollectionConsistency -Table $logCollection -CandidateSummary $candidateSummaryDetails
+    }
 }
 
 $publicDecision = Get-RequiredTable -Tables $tables -Section "Public-Preview Decision"
 if ($null -ne $publicDecision) {
-    Test-PublicPreviewDecision -Table $publicDecision
+    Test-PublicPreviewDecision -Table $publicDecision -AccessibilityKnownIssues $accessibilityKnownIssuesDetails
 }
 
 if ($validationErrors.Count -gt 0) {
