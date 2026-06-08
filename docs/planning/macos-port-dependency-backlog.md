@@ -41,6 +41,20 @@ This inventory tracks the Windows/WPF-only surfaces that block or shape the Aval
 
 Avalonia File > Share Workbook now wires the planner into the preview host as a bounded fallback: unsaved, missing, or invalid local paths route through Save As first; saved workbooks reveal/open the containing folder through Avalonia `TopLevel.Launcher` when available; and unavailable adapters report the planner's deferred status. A native macOS share-sheet adapter is still not wired.
 
+## Native Share Sheet Integration Plan
+
+The next native sharing step should keep the same portable decision boundary and add only a macOS host adapter. `WorkbookShareActionPlanner` remains the only place that decides whether the workbook is ready to share, needs Save As first, can fall back to open-containing-folder, or must stay deferred. The Avalonia shell should continue to save dirty workbooks or route unsaved/missing paths through Save As before invoking any platform adapter.
+
+Once a Mac-backed implementation lane is available, the smallest credible adapter is:
+
+1. Add a macOS-only share service owned by `src/FreeX.App.Avalonia` that can present an AppKit share sheet for a saved local workbook path. The adapter can use the native `NSSharingServicePicker` equivalent available to the chosen Avalonia/.NET interop layer, but it must not move AppKit, WinRT, COM, WPF, or platform-launch code into `FreeX.App.Services`.
+2. Inject `WorkbookShareActionSurface` with `CanShowShareSheet=true` only when that adapter is actually available. Keep `CanOpenContainingFolder=true` as the fallback path so ad-hoc/internal preview builds can still reveal the workbook in Finder.
+3. Route File > Share Workbook through the existing dirty-save and Save As flow, then execute `ShareSheet` plans with the native adapter and `OpenContainingFolder` plans with the current launcher fallback.
+4. Record hosted smoke evidence only for the planner route and fallback markers. GitHub-hosted macOS runners can build the app and prove that the menu route, saved-path preconditions, and fallback evidence stay wired, but they must not be treated as proof that a human can complete the interactive native share sheet.
+5. Require a real macOS validation pass before claiming native sharing parity: saved workbook share sheet opens, Cancel is non-destructive, at least one local share target receives the expected file, Finder reveal fallback still works, keyboard focus is usable, and VoiceOver announces the share action without losing the workbook window.
+
+Keep this lane separate from Windows Share, Microsoft 365 co-authoring, cloud permissions, Teams-linked sharing, and live collaboration. Those remain Windows/service-specific or future product features rather than requirements for the first macOS preview app.
+
 ## Immediate Port Priorities
 
 1. Keep `FreeX.App.Services` and `FreeX.App.Avalonia` clean of WPF/WinRT/COM and Windows target frameworks.
