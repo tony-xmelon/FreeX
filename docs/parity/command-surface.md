@@ -337,7 +337,7 @@ workbook command behavior to track here.
 | Evaluate Formula (step-through) | Implemented | Help, Previous, Step Out, Evaluate, Step In, and Close actions expose access keys |
 | Watch Window | Implemented | Dialog command buttons expose keyboard access keys. |
 | R1C1 Reference Style | Implemented |  |
-| Calculation Options (manual/auto) | Implemented |  |
+| Calculation Options | Implemented | Automatic, Automatic Except Data Tables, and Manual modes |
 | Calculate Now / Calculate Sheet | Implemented |  |
 <!-- command-inventory:command-surface:formulas:end -->
 

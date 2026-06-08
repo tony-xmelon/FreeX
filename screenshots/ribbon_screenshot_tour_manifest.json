@@ -1,0 +1,271 @@
+{
+  "Tool": "FREEX_SS_TOUR",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\autofilter-excel-behavior-20260606\\screenshots",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
+  "Context": null,
+  "BurstMode": false,
+  "CaptureLogicalHeight": 300,
+  "PlannedCaptureCount": 36,
+  "Tabs": [
+    "Home",
+    "Insert",
+    "Draw",
+    "Page Layout",
+    "Formulas",
+    "Data",
+    "Review",
+    "View",
+    "Help"
+  ],
+  "Widths": [
+    {
+      "Label": "max",
+      "WindowWidth": null,
+      "EvidencePurpose": "Maximized baseline before resize pressure."
+    },
+    {
+      "Label": "1100",
+      "WindowWidth": 1100,
+      "EvidencePurpose": "Wide ribbon breakpoint before most command groups collapse."
+    },
+    {
+      "Label": "900",
+      "WindowWidth": 900,
+      "EvidencePurpose": "Medium ribbon breakpoint where grouped commands begin to compress."
+    },
+    {
+      "Label": "750",
+      "WindowWidth": 750,
+      "EvidencePurpose": "Narrow ribbon breakpoint for overflow and compact command layouts."
+    }
+  ],
+  "Phases": [
+    {
+      "Label": "settled",
+      "FileNameSuffix": null
+    }
+  ],
+  "Captures": [
+    {
+      "Tab": "Home",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_Home.png"
+    },
+    {
+      "Tab": "Insert",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_Insert.png"
+    },
+    {
+      "Tab": "Draw",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_Draw.png"
+    },
+    {
+      "Tab": "Page Layout",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_Page_Layout.png"
+    },
+    {
+      "Tab": "Formulas",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_Formulas.png"
+    },
+    {
+      "Tab": "Data",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_Data.png"
+    },
+    {
+      "Tab": "Review",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_Review.png"
+    },
+    {
+      "Tab": "View",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_View.png"
+    },
+    {
+      "Tab": "Help",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_Help.png"
+    },
+    {
+      "Tab": "Home",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_Home.png"
+    },
+    {
+      "Tab": "Insert",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_Insert.png"
+    },
+    {
+      "Tab": "Draw",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_Draw.png"
+    },
+    {
+      "Tab": "Page Layout",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_Page_Layout.png"
+    },
+    {
+      "Tab": "Formulas",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_Formulas.png"
+    },
+    {
+      "Tab": "Data",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_Data.png"
+    },
+    {
+      "Tab": "Review",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_Review.png"
+    },
+    {
+      "Tab": "View",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_View.png"
+    },
+    {
+      "Tab": "Help",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_Help.png"
+    },
+    {
+      "Tab": "Home",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_Home.png"
+    },
+    {
+      "Tab": "Insert",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_Insert.png"
+    },
+    {
+      "Tab": "Draw",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_Draw.png"
+    },
+    {
+      "Tab": "Page Layout",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_Page_Layout.png"
+    },
+    {
+      "Tab": "Formulas",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_Formulas.png"
+    },
+    {
+      "Tab": "Data",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_Data.png"
+    },
+    {
+      "Tab": "Review",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_Review.png"
+    },
+    {
+      "Tab": "View",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_View.png"
+    },
+    {
+      "Tab": "Help",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_Help.png"
+    },
+    {
+      "Tab": "Home",
+      "Width": "750",
+      "Phase": "settled",
+      "FileName": "750_Home.png"
+    },
+    {
+      "Tab": "Insert",
+      "Width": "750",
+      "Phase": "settled",
+      "FileName": "750_Insert.png"
+    },
+    {
+      "Tab": "Draw",
+      "Width": "750",
+      "Phase": "settled",
+      "FileName": "750_Draw.png"
+    },
+    {
+      "Tab": "Page Layout",
+      "Width": "750",
+      "Phase": "settled",
+      "FileName": "750_Page_Layout.png"
+    },
+    {
+      "Tab": "Formulas",
+      "Width": "750",
+      "Phase": "settled",
+      "FileName": "750_Formulas.png"
+    },
+    {
+      "Tab": "Data",
+      "Width": "750",
+      "Phase": "settled",
+      "FileName": "750_Data.png"
+    },
+    {
+      "Tab": "Review",
+      "Width": "750",
+      "Phase": "settled",
+      "FileName": "750_Review.png"
+    },
+    {
+      "Tab": "View",
+      "Width": "750",
+      "Phase": "settled",
+      "FileName": "750_View.png"
+    },
+    {
+      "Tab": "Help",
+      "Width": "750",
+      "Phase": "settled",
+      "FileName": "750_Help.png"
+    }
+  ],
+  "Limitations": [
+    "Ribbon captures cover the top window band only.",
+    "Transient popups, dropdowns, native dialogs, and context menus require separate guarded captures.",
+    "This in-app tour deletes only the currently requested plan\u0027s expected PNG files before capture."
+  ]
+}

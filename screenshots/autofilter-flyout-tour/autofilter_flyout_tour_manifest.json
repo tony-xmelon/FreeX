@@ -1,0 +1,40 @@
+{
+  "Tool": "FREEX_AUTOFILTER_FLYOUT_TOUR",
+  "EvidenceFamily": "popup",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "popup:table-autofilter-dropdown",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\autofilter-excel-behavior-20260606\\screenshots\\autofilter-flyout-tour",
+  "OutputNaming": "freex_table_autofilter_dropdown.png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
+  "HeaderCell": "A1",
+  "HeaderText": "score",
+  "AutoFilterRange": "A1:D6",
+  "FilterColumnOffset": 0,
+  "CaptureStatus": "complete",
+  "CaptureMethod": "RenderTargetBitmap-autofilter-flyout-window",
+  "Pairing": {
+    "PairKeyPattern": "interactive:table-autofilter-dropdown:\u003CState\u003E",
+    "CounterpartSubject": "excel",
+    "CounterpartTool": "screenshot_excel.ps1",
+    "CounterpartOutputNaming": "interactive_table_autofilter_dropdown_opened.png"
+  },
+  "Captures": [
+    {
+      "CaptureKey": "interactive:table-autofilter-dropdown:opened",
+      "PairKey": "interactive:table-autofilter-dropdown:opened",
+      "ScenarioId": "popup:table-autofilter-dropdown",
+      "State": "opened",
+      "FileName": "freex_table_autofilter_dropdown",
+      "OutputFileName": "freex_table_autofilter_dropdown.png",
+      "CounterpartFileName": "interactive_table_autofilter_dropdown_opened.png",
+      "CaptureLogicalWidth": 312,
+      "CaptureLogicalHeight": 437.05834003448484
+    }
+  ],
+  "Limitations": [
+    "This in-app tour captures the actual FreeX AutoFilter flyout window without global mouse or keyboard input.",
+    "The paired Microsoft Excel transient capture is declared by tools/screenshot_excel.ps1 and remains a separate foreground-guarded capture.",
+    "The scenario opens the worksheet AutoFilter dropdown for the score header against numeric values 1-4 plus a blank row."
+  ]
+}

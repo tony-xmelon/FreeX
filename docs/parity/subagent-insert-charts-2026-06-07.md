@@ -33,6 +33,6 @@ Validated the Insert tab chart/charting command surfaces that route chart insert
 
 - Recommended Charts still uses a fixed small recommendation set rather than Excel's proprietary data-pattern recommendation heuristics.
 - Combo remains available through existing chart layout/series commands, but it is not yet represented as an All Charts picker category like Excel.
-- FreeX does not yet expose dedicated Excel-style Chart Design and Format contextual tabs; chart edit commands exist through the current chart command surface and dialogs.
+- Excel-style Chart Design and Format contextual tabs are now integrated in the aggregate branch; remaining work is live chart-object selection evidence and deeper chart-edit workflow proof.
 - Map chart authoring remains deferred/hidden.
 - Full live UI mutation/render evidence for advanced chart picker selections remains a broader UI-test/catalog task.
