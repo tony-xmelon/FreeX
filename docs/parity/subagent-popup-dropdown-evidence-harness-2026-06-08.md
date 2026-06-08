@@ -28,6 +28,7 @@ This slice investigated the visual-evidence harness gap for transient Excel/Free
 - Added the paired Excel Home number-format dropdown capture path: `FREEX_EXCEL_NUMBER_FORMAT_DROPDOWN_TOUR=1` seeds a numeric A1 sample in Microsoft Excel, expands the Home `NumberFormatGallery` ComboBox through UI Automation, captures `screenshots_excel/home-number-format-dropdown-tour/interactive_home_number_format_opened.png`, and writes `excel_home_number_format_dropdown_tour_manifest.json` with the same pair key.
 - Added the first concrete FreeX worksheet-cell context-menu capture path: `FREEX_WORKSHEET_CONTEXT_MENU_TOUR=1` opens the production worksheet-cell `ContextMenu` for A1, captures `screenshots/worksheet-context-menu-tour/freex_context_menu_worksheet_cell_opened.png`, and writes `worksheet_context_menu_tour_manifest.json` with pair key `interactive:worksheet-cell-context-menu:opened`.
 - Added the paired Excel worksheet-cell context-menu capture path: `FREEX_EXCEL_WORKSHEET_CONTEXT_MENU_TOUR=1` seeds/selects B2 in Microsoft Excel, opens the worksheet context menu with a foreground-guarded `Shift+F10`, captures `screenshots_excel/worksheet-context-menu-tour/interactive_worksheet_cell_context_menu_opened.png`, and writes `excel_worksheet_context_menu_tour_manifest.json` with the same pair key.
+- Added the Excel native Open dialog capture path: `FREEX_EXCEL_OPEN_WORKBOOK_DIALOG_TOUR=1` opens Microsoft Excel's native `Open` common dialog with foreground-guarded `Ctrl+F12`, captures `screenshots_excel/open-workbook-dialog-tour/interactive_open_workbook_dialog_opened.png`, and writes `excel_open_workbook_dialog_tour_manifest.json` with pair key `interactive:open-workbook-dialog:opened`.
 
 ## Observed Parity Findings
 
@@ -36,7 +37,7 @@ This slice investigated the visual-evidence harness gap for transient Excel/Free
 ## Remaining Limitations
 
 - This slice now has paired FreeX and Microsoft Excel AutoFilter popup capture hooks for `interactive:table-autofilter-dropdown:opened`, paired FreeX and Microsoft Excel Home number-format dropdown capture hooks for `interactive:home-number-format:opened`, and paired FreeX and Microsoft Excel worksheet-cell context-menu capture hooks for `interactive:worksheet-cell-context-menu:opened`.
-- The native Open dialog remains a future runner task.
+- The FreeX native Open dialog counterpart remains a future runner task.
 - The live Excel Home number-format capture initially blocked because `i5-32gb - Remote Desktop Connection` retained foreground ownership; after minimizing that foreground window, `FREEX_EXCEL_NUMBER_FORMAT_DROPDOWN_TOUR=1` completed and produced the paired Excel artifact.
 - The eventual runner should open one scenario at a time, verify foreground ownership before every input, verify the popup/dialog/menu target before capture, and delete partial artifacts if ownership drifts.
 - Native dialogs may legitimately change the foreground title/class; the runner needs dialog-aware ownership validation instead of the current owner-window title equality check.
