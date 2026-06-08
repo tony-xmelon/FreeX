@@ -9,7 +9,7 @@ This note answers how GitHub-hosted macOS runners can produce a downloadable Fre
 The build path is the `macOS App Preview` workflow at `.github/workflows/macos-app.yml`. It does not require a developer-owned Mac because the app bundle is assembled, signed, smoke-tested, zipped, and uploaded on GitHub-hosted macOS runners:
 
 1. Run the matrix for both supported runtimes:
-   - `osx-arm64` on `macos-latest`
+   - `osx-arm64` on `macos-15`
    - `osx-x64` on `macos-15-intel`
 2. Checkout the repository and install `.NET 10` with `actions/setup-dotnet`.
 3. Capture runner/toolchain evidence, including `RUNNER_OS`, `RUNNER_ARCH`, `ImageOS`, `ImageVersion`, `sw_vers`, `uname -m`, `dotnet --info`, and `xcodebuild -version`.
@@ -27,7 +27,7 @@ The build path is the `macOS App Preview` workflow at `.github/workflows/macos-a
 11. Record Gatekeeper assessment with `spctl`, then run native-architecture packaging and LaunchServices/Open-With/default-open smoke where the hosted runner can execute the runtime.
 12. Upload the app artifact and always-on diagnostics artifact with workflow artifacts.
 
-GitHub's hosted-runner documentation treats `-latest` labels as GitHub's latest stable runner image rather than necessarily the newest vendor OS, so the workflow's captured image/toolchain evidence should remain part of every artifact review.
+The workflow pins explicit hosted runner labels for both runtime jobs, and the captured image/toolchain evidence should remain part of every artifact review so runner image changes are visible in the release record.
 
 ## Latest Hosted Evidence
 
