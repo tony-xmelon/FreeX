@@ -37,10 +37,11 @@ The lane should prove only these early facts:
 - the existing `net10.0` hosted bundle still publishes for both `osx-arm64` and `osx-x64`;
 - workload failures are reported as lane readiness failures, not product regressions in the current hosted app path.
 
-When the opt-in macOS TFM validation input is enabled, a maintainer can manually dispatch it from the hosted macOS workflow as a compile-validation companion. Treat that run as evidence-only:
+When `validate_macos_tfm=true` is enabled, a maintainer can manually dispatch the `macos-tfm-build` job from the hosted macOS workflow as a compile-validation companion. Treat that run as evidence-only:
 
-- it installs or restores the macOS workload/reference packs on hosted macOS before compiling `net10.0-macos`;
-- it records toolchain, workload, restore, and compile evidence so maintainers can tell whether the hosted runner can compile the future macOS target;
+- it runs on the hosted macOS 26 arm64 and Intel images so the compile evidence matches the current .NET macOS workload/Xcode runway;
+- it installs the pinned macOS workload set on hosted macOS before compiling `net10.0-macos`;
+- it records toolchain, workload, and compile evidence in `freex-<run-id>-<run-attempt>-macos-tfm-build-<arch>-evidence`;
 - it does not produce, sign, notarize, staple, publish, or promote a `FreeX.app` artifact;
 - it does not replace the current `net10.0` plus `osx-arm64` / `osx-x64` RID bundle lane;
 - it cannot prove native AppKit share-sheet runtime behavior, menu focus, VoiceOver interaction, or share-target completion.
