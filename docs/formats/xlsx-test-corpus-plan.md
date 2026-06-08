@@ -4,7 +4,7 @@
 **Last updated:** 2026-06-05
 **Goal:** Build a 100+ workbook corpus that measures whether FreeX preserves supported Excel workbook content while clearly reporting excluded or deferred features.
 
-Current executable manifest baseline: 176 rows (121 generated, 25 public, 21 local-private, 9 regression).
+Current executable manifest baseline: 179 rows (124 generated, 25 public, 21 local-private, 9 regression).
 
 ## Acceptance Target
 
@@ -89,7 +89,7 @@ Allowed `expected_status` values:
 5. Compare supported model features against the first loaded model.
 6. Verify expected unsupported/excluded warnings were emitted.
 7. Verify feature tags that have deterministic model or Excel-visible signals, such as named ranges, hyperlinks, merged cells, chart counts, formatting detail counters, structure counters, page setup/protected-range counters, and cell-type content.
-8. Compare retained critical package parts and relationship targets for known-gap packages.
+8. Compare retained critical package parts, relationship targets, content-type declarations, and repair-risk pruning for known-gap and metadata package graphs.
 9. Record pass/fail by workbook and by feature bucket.
 
 ## Required Report
