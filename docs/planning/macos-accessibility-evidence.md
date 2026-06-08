@@ -28,6 +28,8 @@ A human tester on macOS must record candidate evidence for:
 
 Record the macOS version, processor family, artifact runtime, workflow run id, run attempt, evidence file name, signing mode, notarization status, and tester notes with the release record.
 
+Use [../release/macos-public-preview-checklist.md](../release/macos-public-preview-checklist.md) to capture the human keyboard-only, VoiceOver, Finder, Gatekeeper, and public-preview decision evidence for each candidate runtime.
+
 ## Initial Controls And Surfaces
 
 The first macOS/Avalonia accessibility pass should cover these surfaces before widening scope:
