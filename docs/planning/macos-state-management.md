@@ -21,12 +21,14 @@ Use Application Support for durable user/app state that should survive app resta
 `RecentFilesStore` is the current source of truth for recent workbook state. Both WPF and Avalonia should use the shared store rather than keeping host-specific recent-file lists.
 
 - Store the file at `<application-data-root>/FreeX/recent.json`, where `IApplicationDataPathProvider` resolves the platform root.
-- Persist JSON entries with absolute local `Path`, `LastOpened` as a `DateTimeOffset`, and `IsPinned`.
+- Persist JSON entries with absolute local `Path`, `LastOpened` as a `DateTimeOffset`, and `IsPinned`. `FileAccessIdentity` is optional, omitted for path-only identities, and reserved for future host-supplied bookmark or grant metadata.
 - Keep the newest entry first, cap the list at 25 entries, and preserve pin state when a file is reopened.
 - Write through `AtomicFileWriter` so an interrupted save does not corrupt `recent.json`.
 - Add or update entries only after a successful startup activation, open, save, or save-as path. Pin, unpin, and remove commands may update the store directly.
+- Preserve an existing bookmarked `FileAccessIdentity` when a path-only reopen or same-path save updates the entry. Save As to a different path should not carry the old grant unless the host supplies a fresh identity for the new path.
 - Route path identity through `PlatformPathIdentityComparer`: Windows recent-file matching stays case-insensitive and slash-normalized, while Unix/macOS matching stays ordinal so case-sensitive volumes can keep distinct paths.
 - Treat Windows jump lists, macOS `Open Recent`, LaunchServices, or future `NSDocumentController` integration as platform mirrors only. They cannot carry FreeX pin state and should not become the durable source of truth.
+- Keep bookmark payloads out of workbook files, diagnostics, exports, and logs. Removing a recent entry must remove any associated grant metadata with it.
 
 ## Abstraction Direction
 
