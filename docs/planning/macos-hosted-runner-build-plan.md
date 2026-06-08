@@ -66,10 +66,10 @@ A hosted `.app` artifact is not automatically a trusted tester build. Treat defa
    - `stapler_validated=true`
    - `gatekeeper_assessment_status=accepted`
    - `gatekeeper_assessment_source=Notarized Developer ID`
-4. Download app and diagnostics artifacts, then run the Windows-runnable evidence preflight with distribution-candidate requirements:
+4. Download app and diagnostics artifacts, preserving each `freex-<run-id>-<run-attempt>-<runtime>-macos-app` and `freex-<run-id>-<run-attempt>-<runtime>-macos-diagnostics` wrapper directory under the artifact root so stale or mixed-run downloads can be detected. Then run the Windows-runnable evidence preflight with distribution-candidate requirements and the optional run identity flags for the specific GitHub Actions run:
 
 ```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Test-MacOsPublicPreviewReadiness.ps1 -ArtifactRoot artifacts/macos-preview -DistributionCandidate -RequireSeparateDiagnosticsArtifact
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Test-MacOsPublicPreviewReadiness.ps1 -ArtifactRoot artifacts/macos-preview -ExpectedRunId <run-id> -ExpectedRunAttempt <run-attempt> -DistributionCandidate -RequireSeparateDiagnosticsArtifact
 ```
 
 5. Preserve the checksum, evidence, smoke logs, notarization log, tester instructions, diagnostics artifact, run id, run attempt, source commit, and generated release manifest with the release record.
