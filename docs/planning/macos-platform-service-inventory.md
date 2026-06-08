@@ -52,6 +52,18 @@ host carries macOS grants:
   bookmarks through the Avalonia `StorageProvider`, maps them back to the same
   absolute local path identity before calling shared services, and clears grants
   when a recent file entry is removed.
+- Diagnostics for the grant lifecycle are redacted readiness evidence only.
+  The safe events `workbook_file_access_identity` and
+  `workbook_file_access_scope` may record the allowlisted properties
+  `grantKind` and `payloadRedacted`; they must not record absolute paths,
+  filenames, workbook contents, formulas, worksheet data, or bookmark payload
+  bytes/strings.
+- Hosted GitHub Actions can prove the instrumentation and artifact plumbing are
+  present, but it cannot prove that a sandboxed macOS process has real
+  security-scoped read/write access to tester-selected files. Keep on-device
+  manual validation for picker open, save, Save As, recent reopen,
+  Finder/Open-With activation, and any sandboxed security-scope confirmation
+  before promoting the claim.
 - If live sandboxed macOS validation shows Avalonia bookmarks do not keep
   FreeX's raw-path workbook readers/writers authorized, the next slice should
   add a macOS-only native adapter under `src/FreeX.App.Avalonia/MacOs/` using
