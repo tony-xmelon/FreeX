@@ -3,7 +3,7 @@
 This inventory maps the Windows/WPF platform services that matter for the first
 macOS public preview to the current Avalonia/macOS surface or to the abstraction
 decision still needed. It is scoped to the repository state on `origin/main` as
-of 2026-06-08 and is intended to guide preview readiness, not to define full
+of 2026-06-09 and is intended to guide preview readiness, not to define full
 Excel parity.
 
 Priority key:
@@ -17,7 +17,7 @@ Priority key:
 | Priority | Capability | Windows/WPF surface today | Avalonia/macOS route or decision | Current refs | Windows-verifiable gates |
 | --- | --- | --- | --- | --- | --- |
 | P0 | App bundle, launch, and file activation | WPF desktop startup and Windows file associations stay in `FreeX.App.Host`. | Use the Avalonia app bundle metadata and activation path. `Info.plist` declares the app identity, icon, and workbook/spreadsheet document types; `App.cs` handles `IActivatableLifetime` file activation and routes opened files into `MainWindow.OpenActivatedFilesAsync`. Keep LaunchServices, Open-With/default-open, and aggregate readiness proof as hosted evidence. | `src/FreeX.App.Avalonia/FreeX.App.Avalonia.csproj`; `src/FreeX.App.Avalonia/Packaging/macos/Info.plist`; `src/FreeX.App.Avalonia/App.cs`; `src/FreeX.App.Avalonia/MacOsLaunchSmoke.cs`; `src/FreeX.App.Services/WorkbookStartupSmokeService.cs`; `.github/workflows/macos-app.yml` | `tools/Test-MacOsAppReadiness.ps1`; `tests/FreeX.App.Services.Tests/MacOsBundleMetadataTests.cs`; `tests/FreeX.App.Services.Tests/MacOsLaunchSmokeReportKeyDriftGuardTests.cs`; per-runtime artifact pass from `tools/Test-MacOsPublicPreviewReadiness.ps1`; `macos-preview-readiness` aggregate artifact |
-| P0 | Open, save, save as, startup files, and recent files | WPF uses `Microsoft.Win32.OpenFileDialog`, `SaveFileDialog`, backstage recent-file actions, and host-local workbook readers/writers. | Use Avalonia `StorageProvider` for open/save panels, portable `WorkbookOpenService` and `WorkbookSaveService` for I/O, `StartupWorkbookLoader` for command-line/activation input, and `RecentFilesStore` with platform path identity rules. Keep the macOS path surface local-file based until sandbox/bookmark support is explicitly required. | `src/FreeX.App.Host/MainWindow.Backstage.cs`; `src/FreeX.App.Avalonia/MainWindow.cs`; `src/FreeX.App.Services/WorkbookOpenService.cs`; `src/FreeX.App.Services/WorkbookSaveService.cs`; `src/FreeX.App.Services/StartupWorkbookLoader.cs`; `src/FreeX.App.Services/RecentFilesStore.cs`; `src/FreeX.App.Services/PlatformPathIdentityComparer.cs`; `src/FreeX.App.Services/LocalFilePath.cs` | `tests/FreeX.App.Services.Tests/AvaloniaShellSourceTests.cs`; `tests/FreeX.App.Services.Tests/RecentFilesStoreTests.cs`; `tests/FreeX.App.Host.Tests/AppFileAdapterRegistrationTests.cs`; `tools/Test-MacOsAppReadiness.ps1` |
+| P0 | Open, save, save as, startup files, and recent files | WPF uses `Microsoft.Win32.OpenFileDialog`, `SaveFileDialog`, backstage recent-file actions, and host-local workbook readers/writers. | Use Avalonia `StorageProvider` for open/save panels, portable `WorkbookOpenService` and `WorkbookSaveService` for I/O, `StartupWorkbookLoader` for command-line/activation input, and `RecentFilesStore` with platform path identity rules. `WorkbookFileAccessService` is the Avalonia host boundary for file grants: on macOS it creates bookmark-backed `WorkbookFileAccessIdentity` values with `IStorageItem.SaveBookmarkAsync`, reopens them with `IStorageProvider.OpenFileBookmarkAsync` around raw-path I/O, and falls back to path-only identities elsewhere. | `src/FreeX.App.Host/MainWindow.Backstage.cs`; `src/FreeX.App.Avalonia/MainWindow.cs`; `src/FreeX.App.Avalonia/WorkbookFileAccessService.cs`; `src/FreeX.App.Services/WorkbookOpenService.cs`; `src/FreeX.App.Services/WorkbookSaveService.cs`; `src/FreeX.App.Services/StartupWorkbookLoader.cs`; `src/FreeX.App.Services/RecentFilesStore.cs`; `src/FreeX.App.Services/WorkbookFileAccessIdentity.cs`; `src/FreeX.App.Services/PlatformPathIdentityComparer.cs`; `src/FreeX.App.Services/LocalFilePath.cs` | `tests/FreeX.App.Services.Tests/AvaloniaShellSourceTests.cs`; `tests/FreeX.App.Services.Tests/RecentFilesStoreTests.cs`; `tests/FreeX.App.Host.Tests/AppFileAdapterRegistrationTests.cs`; `tools/Test-MacOsAppReadiness.ps1` |
 | P0 | App data, options, diagnostics paths, and atomic writes | Windows stores app/options/diagnostics data under roaming or local app data paths. | Keep path choice in services: macOS options under `~/Library/Application Support/FreeX/options.json`, diagnostics under `~/Library/Logs/FreeX`, and portable atomic writes for JSON stores. Avalonia startup still needs host-level diagnostics wiring if public-preview evidence requires crash/session reports. | `src/FreeX.App.Services/ApplicationDataPathProvider.cs`; `src/FreeX.App.Services/AppDiagnosticsPathProvider.cs`; `src/FreeX.App.Services/AppStoragePathPlanner.cs`; `src/FreeX.App.Services/AppOptionsStore.cs`; `src/FreeX.App.Services/AtomicFileWriter.cs`; `src/FreeX.App.Host/AppDiagnostics.cs` | `tests/FreeX.App.Services.Tests/ApplicationDataPathGuardTests.cs`; `tests/FreeX.App.Services.Tests/AppStoragePathPlannerTests.cs`; `tests/FreeX.App.Services.Tests/AppOptionsStoreTests.cs`; `tests/FreeX.App.Services.Tests/AtomicFileWriterTests.cs`; diagnostics artifact checks in `tools/Test-MacOsPublicPreviewReadiness.ps1` |
 | P0 | Native menus and keyboard commands | WPF ribbon, backstage, key tips, and command bindings drive most commands. | Use Avalonia `NativeMenu` for macOS menu bar commands and direct command-key routes for the public-preview command set. Do not treat WPF ribbon/key-tip parity as a preview blocker, but require live macOS proof for Command-key routing before promotion. | `src/FreeX.App.Host/MainWindow.Ribbon.cs`; `src/FreeX.App.Host/MainWindow.KeyboardCommands.cs`; `src/FreeX.App.Host/MainWindow.CommandExecution.cs`; `src/FreeX.App.Avalonia/MainWindow.cs`; `src/FreeX.App.Avalonia/MacOsLaunchSmoke.cs` | `tests/FreeX.App.Services.Tests/AvaloniaShellSourceTests.cs`; `tests/FreeX.App.Services.Tests/MacOsLaunchSmokeReportKeyDriftGuardTests.cs`; `tools/Test-MacOsAppReadiness.ps1`; live command-key checks through `tools/Test-MacOsPublicPreviewReadiness.ps1` |
 | P0 | Clipboard, paste special, and image paste | WPF uses `System.Windows.Clipboard`, internal range serialization, image extraction, Paste Special dialogs, and linked-picture routes. | Use Avalonia `IClipboard` plus shared session/planner code for text, internal range paste, Paste Special choices, and bitmap paste via `TryGetBitmapAsync`. Hosted app-bundle evidence records relaxed image-clipboard markers; seeded image-only external clipboard paste remains a local/human macOS validation requirement because Windows source guards cannot prove platform clipboard fidelity. | `src/FreeX.App.Host/MainWindow.ClipboardCommands.cs`; `src/FreeX.Core.Commands/ClipboardSerializer.cs`; `src/FreeX.App.Avalonia/MainWindow.cs`; `src/FreeX.App.Avalonia/MacOsLaunchSmoke.cs` | `tests/FreeX.App.Services.Tests/AvaloniaShellSourceTests.cs`; `tests/FreeX.App.Host.Tests/ClipboardPastePlannerTests.cs`; optional live Windows clipboard tests where enabled; image clipboard evidence markers in `tools/Test-MacOsPublicPreviewReadiness.ps1` |
@@ -34,8 +34,8 @@ Priority key:
 
 ## Workbook File-Access Identity Contract
 
-Before adding macOS security-scoped bookmark activation, the portable workbook
-access surface stays local-path based and host-neutral:
+The portable workbook access surface stays host-neutral even when the Avalonia
+host carries macOS grants:
 
 - The shared identity for an opened, saved, recent, activated, dropped, shared,
   or exported workbook is its normalized absolute local file path plus the
@@ -47,10 +47,16 @@ access surface stays local-path based and host-neutral:
   planners. It must not depend on Avalonia `IStorageFile`, AppKit `NSUrl`,
   Foundation security-scoped bookmark APIs, LaunchServices document handles, or
   other host-owned grant objects.
-- A future macOS bookmark adapter belongs in the Avalonia/macOS host layer. It
-  should map resolved bookmarks back to the same absolute local path identity
-  before calling shared services, refresh or discard stale grants after
-  successful user access, and clear grants when a recent file entry is removed.
+- `WorkbookFileAccessService` belongs to the Avalonia host layer. It creates
+  bookmark identities from selected `IStorageItem` instances, resolves stored
+  bookmarks through the Avalonia `StorageProvider`, maps them back to the same
+  absolute local path identity before calling shared services, and clears grants
+  when a recent file entry is removed.
+- If live sandboxed macOS validation shows Avalonia bookmarks do not keep
+  FreeX's raw-path workbook readers/writers authorized, the next slice should
+  add a macOS-only native adapter under `src/FreeX.App.Avalonia/MacOs/` using
+  Foundation security-scoped bookmark APIs. `FreeX.App.Services` must still see
+  only `WorkbookFileAccessIdentity`.
 - `recent.json` remains backward compatible. Path-only entries omit
   `FileAccessIdentity`; the optional field is persisted only when a host supplies
   bookmark/grant metadata. Do not persist bookmark payloads in workbook files,
