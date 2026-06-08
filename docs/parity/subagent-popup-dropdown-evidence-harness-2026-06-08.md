@@ -14,11 +14,12 @@ This slice investigated the visual-evidence harness gap for transient Excel/Free
 ## Changes
 
 - Added an `InteractiveCapturePlan` section to both screenshot script manifests.
-- The plan makes four paired Excel/FreeX transient scenarios machine-readable:
+- The plan makes five paired Excel/FreeX transient scenarios machine-readable:
   - `popup:table-autofilter-dropdown`
   - `dropdown:home-number-format`
   - `context-menu:worksheet-cell`
   - `native-dialog:open-workbook`
+  - `native-dialog:save-as-workbook`
 - Each scenario declares priority, evidence family, output naming, pair key pattern, trigger, capture requirement, foreground guard, and counterpart subject.
 - Added source tests so future harness changes keep this transient-surface plan present in both scripts.
 - Added a concise catalog note to `UI-CMD-HARNESS-001`.
@@ -30,15 +31,18 @@ This slice investigated the visual-evidence harness gap for transient Excel/Free
 - Added the paired Excel worksheet-cell context-menu capture path: `FREEX_EXCEL_WORKSHEET_CONTEXT_MENU_TOUR=1` seeds/selects B2 in Microsoft Excel, opens the worksheet context menu with a foreground-guarded `Shift+F10`, captures `screenshots_excel/worksheet-context-menu-tour/interactive_worksheet_cell_context_menu_opened.png`, and writes `excel_worksheet_context_menu_tour_manifest.json` with the same pair key.
 - Added the Excel native Open dialog capture path: `FREEX_EXCEL_OPEN_WORKBOOK_DIALOG_TOUR=1` opens Microsoft Excel's native `Open` common dialog with foreground-guarded `Ctrl+F12`, captures `screenshots_excel/open-workbook-dialog-tour/interactive_open_workbook_dialog_opened.png`, and writes `excel_open_workbook_dialog_tour_manifest.json` with pair key `interactive:open-workbook-dialog:opened`.
 - Added the paired FreeX native Open dialog capture path: `FREEX_OPEN_WORKBOOK_DIALOG_TOUR=1` opens the FreeX native Open dialog with foreground-guarded `Ctrl+O`, captures `screenshots/open-workbook-dialog-tour/freex_open_workbook_dialog_opened.png`, and writes `freex_open_workbook_dialog_tour_manifest.json` with pair key `interactive:open-workbook-dialog:opened`.
+- Added the FreeX native Save As dialog capture path: `FREEX_SAVE_AS_WORKBOOK_DIALOG_TOUR=1` opens the FreeX native `Save As` common dialog with foreground-guarded `F12`, captures `screenshots/save-as-workbook-dialog-tour/freex_save_as_workbook_dialog_opened.png`, and writes `freex_save_as_workbook_dialog_tour_manifest.json` with pair key `interactive:save-as-workbook-dialog:opened`.
+- Added the paired Excel Save As dialog capture path: `FREEX_EXCEL_SAVE_AS_WORKBOOK_DIALOG_TOUR=1` opens Microsoft Excel's foreground `F12` Save As surface, captures `screenshots_excel/save-as-workbook-dialog-tour/interactive_save_as_workbook_dialog_opened.png`, and writes `excel_save_as_workbook_dialog_tour_manifest.json` with the same pair key. In this Office build the first Excel Save As surface is an Excel-owned `NUIDialog`, not a Windows `#32770` common dialog.
 
 ## Observed Parity Findings
 
 - `interactive:worksheet-cell-context-menu:opened`: Excel's default worksheet-cell context menu is shorter and focused on core cell actions (`Cut`, `Copy`, paste options, `Insert...`, `Delete...`, `Clear Contents`, `Quick Analysis`, `Filter`, `Sort`, comments/notes, `Format Cells...`, picker/dropdown, names, links). FreeX's default worksheet context menu exposes a much longer 50-command set including row/column sizing, table/data-validation/text-to-columns/remove-duplicates, hide/unhide, and comment/note variants; the live FreeX capture reaches the screen-height viewport before the lower items are visible. This is now documented as a follow-up product parity discrepancy, separate from the harness capture work.
 - `interactive:open-workbook-dialog:opened`: both products route to the Windows common `Open` dialog with the expected navigation chrome, file list, file-name input, filter selector, and `Open`/`Cancel` buttons. Excel's captured dialog opens wider/taller on the same desktop, while FreeX opens a smaller dialog and uses the `All supported files` filter label. The FreeX capture path now records dialog DPI and scales the crop so WPF-owned native dialogs are not truncated by logical/physical coordinate conversion.
+- `interactive:save-as-workbook-dialog:opened`: Excel `F12` first opens an Office `Save this file` dialog (`NUIDialog`) with a filename field, `.xlsx` suffix, location chooser, `More options...`, `Save`, and `Cancel`. FreeX `F12` opens the Windows common `Save As` dialog directly with filesystem navigation, `Book1.xlsx` selected, file-type selector, `Save`, and `Cancel`. This is now documented as a product parity follow-up: FreeX currently skips Excel's intermediate Office Save As surface.
 
 ## Remaining Limitations
 
-- This slice now has paired FreeX and Microsoft Excel capture hooks for `interactive:table-autofilter-dropdown:opened`, `interactive:home-number-format:opened`, `interactive:worksheet-cell-context-menu:opened`, and `interactive:open-workbook-dialog:opened`.
+- This slice now has paired FreeX and Microsoft Excel capture hooks for `interactive:table-autofilter-dropdown:opened`, `interactive:home-number-format:opened`, `interactive:worksheet-cell-context-menu:opened`, `interactive:open-workbook-dialog:opened`, and `interactive:save-as-workbook-dialog:opened`.
 - The live Excel Home number-format capture initially blocked because `i5-32gb - Remote Desktop Connection` retained foreground ownership; after minimizing that foreground window, `FREEX_EXCEL_NUMBER_FORMAT_DROPDOWN_TOUR=1` completed and produced the paired Excel artifact.
 - The eventual runner should open one scenario at a time, verify foreground ownership before every input, verify the popup/dialog/menu target before capture, and delete partial artifacts if ownership drifts.
 - Native dialogs may legitimately change the foreground title/class; the runner needs dialog-aware ownership validation instead of the current owner-window title equality check.
