@@ -29,6 +29,17 @@ The build path is the `macOS App Preview` workflow at `.github/workflows/macos-a
 
 GitHub's hosted-runner documentation treats `-latest` labels as GitHub's latest stable runner image rather than necessarily the newest vendor OS, so the workflow's captured image/toolchain evidence should remain part of every artifact review.
 
+## Latest Hosted Evidence
+
+As of 2026-06-08, `macOS App Preview` run [27135077357](https://github.com/tony-xmelon/FreeX/actions/runs/27135077357) passed on current `main` commit `6ecfb1f3c4c67e839aae63954f44c6007d22c629`. Both matrix jobs completed successfully and uploaded app plus diagnostics artifacts:
+
+| Runtime | App artifact | Diagnostics artifact |
+| --- | --- | --- |
+| `osx-arm64` | `freex-27135077357-1-osx-arm64-macos-app` (`7479167956`) | `freex-27135077357-1-osx-arm64-macos-diagnostics` (`7479169074`) |
+| `osx-x64` | `freex-27135077357-1-osx-x64-macos-app` (`7479237177`) | `freex-27135077357-1-osx-x64-macos-diagnostics` (`7479238443`) |
+
+The hosted logs show packaging smoke, LaunchServices launch, Open-With launch, and default-open launch checks passing for both runtimes. Internal-preview artifacts intentionally record live Command-key and external image clipboard probes as not required; those remain local/human macOS validation gates.
+
 ## Already Wired
 
 - `src/FreeX.App.Avalonia` targets `net10.0`, declares `RuntimeIdentifiers` for `osx-arm64` and `osx-x64`, and includes `Packaging/macos/FreeX.icns` as publish content.
