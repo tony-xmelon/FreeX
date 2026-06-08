@@ -1017,7 +1017,7 @@
         {
           "name": "Get Data (CSV)",
           "status": "Implemented",
-          "notes": "Delimited CSV/TSV import parses user-entered numbers with CurrentCulture first and invariant fallback while keeping file-format metadata invariant"
+          "notes": "Local CSV/TXT/TSV/TAB and SpreadsheetML XML import uses file adapters; delimited text parses user-entered numbers with CurrentCulture first and invariant fallback while keeping file-format metadata invariant"
         },
         {
           "name": "Queries & Connections",
@@ -2331,7 +2331,7 @@
         {
           "name": "Get Data (CSV)",
           "status": "Implemented",
-          "notes": "Delimited CSV/TSV import parses user-entered numbers with CurrentCulture first and invariant fallback while keeping file-format metadata invariant"
+          "notes": "Local CSV/TXT/TSV/TAB and SpreadsheetML XML import uses file adapters; delimited text parses user-entered numbers with CurrentCulture first and invariant fallback while keeping file-format metadata invariant"
         },
         {
           "name": "Queries & Connections",
