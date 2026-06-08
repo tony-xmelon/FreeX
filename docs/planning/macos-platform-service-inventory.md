@@ -32,6 +32,30 @@ Priority key:
 | P2 | WPF visual chrome, ribbon, backstage, task panes, and grid renderer parity | WPF owns the mature ribbon/backstage/task-pane chrome and many rendering controls. | Keep Avalonia's preview shell focused on workbook access, menus, toolbar actions, and safe data operations. Decide later whether to extract more rendering/chrome abstractions or keep separate host-specific implementations. | `src/FreeX.App.Host/*.xaml`; `src/FreeX.App.UI`; `src/FreeX.App.Avalonia/MainWindow.cs` | `tests/FreeX.App.Services.Tests/AppServicesPortabilityGuardTests.cs`; `tests/FreeX.App.Services.Tests/AvaloniaProjectPortabilityGuardTests.cs`; Windows UI tests remain authoritative for WPF; Avalonia source guards cover preview shell breadth |
 | P2 | Crash analytics and remote telemetry | WPF has diagnostics and optional Sentry startup integration. | Keep path planning portable and require local diagnostics evidence for preview artifacts. Remote analytics on macOS should be an explicit product/privacy decision, not an automatic port of WPF startup behavior. | `src/FreeX.App.Host/AppDiagnostics.cs`; `src/FreeX.App.Host/App.xaml.cs`; `src/FreeX.App.Services/AppDiagnosticsPathProvider.cs`; `src/FreeX.App.Services/AppStoragePathPlanner.cs` | `tests/FreeX.App.Host.Tests/AppDiagnosticsStartupTests.cs`; `tests/FreeX.App.Host.Tests/AppCrashAnalyticsTests.cs`; diagnostics artifact checks in `tools/Test-MacOsPublicPreviewReadiness.ps1` |
 
+## Workbook File-Access Identity Contract
+
+Before adding macOS security-scoped bookmark activation, the portable workbook
+access surface stays local-path based and host-neutral:
+
+- The shared identity for an opened, saved, recent, activated, dropped, shared,
+  or exported workbook is its normalized absolute local file path plus the
+  existing `PlatformPathIdentityComparer` matching rule. Windows keeps
+  slash-normalized, case-insensitive matching; Unix/macOS keeps ordinal path
+  matching so case-sensitive volumes can distinguish files.
+- `FreeX.App.Services` may carry `WorkbookFileAccessIdentity` alongside paths,
+  update it after Save or Save As, and pass it through open/session/recent-menu
+  planners. It must not depend on Avalonia `IStorageFile`, AppKit `NSUrl`,
+  Foundation security-scoped bookmark APIs, LaunchServices document handles, or
+  other host-owned grant objects.
+- A future macOS bookmark adapter belongs in the Avalonia/macOS host layer. It
+  should map resolved bookmarks back to the same absolute local path identity
+  before calling shared services, refresh or discard stale grants after
+  successful user access, and clear grants when a recent file entry is removed.
+- `recent.json` remains backward compatible. Path-only entries omit
+  `FileAccessIdentity`; the optional field is persisted only when a host supplies
+  bookmark/grant metadata. Do not persist bookmark payloads in workbook files,
+  diagnostics, export metadata, or app logs.
+
 ## Suggested Public-Preview Gates
 
 Run these from Windows before accepting a macOS-preview branch into the release
