@@ -291,7 +291,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 | Evaluate Formula | Implemented | Help, Previous, Step Out, Evaluate, Step In, and Close actions expose access keys |
 | Watch Window | Implemented | Dialog command buttons expose keyboard access keys. |
 | R1C1 Reference Style | Implemented |  |
-| Calculation Options | Implemented | Manual/auto |
+| Calculation Options | Implemented | Automatic, Automatic Except Data Tables, and Manual modes |
 | Calculate Now | Implemented |  |
 | Calculate Sheet | Implemented |  |
 <!-- command-inventory:menu-toolbar:formulas:end -->
