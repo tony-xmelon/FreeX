@@ -1,8 +1,7 @@
 using FluentAssertions;
-using FreeX.App.Services;
 using FreeX.Core.Model;
 
-namespace FreeX.App.Host.Tests;
+namespace FreeX.App.Services.Tests;
 
 public sealed class FlashFillRangePlannerTests
 {
@@ -77,6 +76,24 @@ public sealed class FlashFillRangePlannerTests
             SourceColumn: 1,
             StartRow: 3,
             EndRow: 4));
+    }
+
+    [Fact]
+    public void Plan_SingleCellStopsAdjacentDataScanWhenFillAndSourceCellsAreBothBlank()
+    {
+        var sheet = CreateSheet();
+        SetText(sheet, 1, 1, "Ada Lovelace");
+        SetText(sheet, 1, 2, "Ada");
+        SetText(sheet, 2, 1, "Grace Hopper");
+        SetText(sheet, 4, 1, "Alan Turing");
+
+        var plan = FlashFillRangePlanner.Plan(sheet, Range(sheet, 2, 2, 2, 2));
+
+        plan.Should().Be(new FlashFillCommandPlan(
+            FillColumn: 2,
+            SourceColumn: 1,
+            StartRow: 1,
+            EndRow: 2));
     }
 
     private static Sheet CreateSheet()
