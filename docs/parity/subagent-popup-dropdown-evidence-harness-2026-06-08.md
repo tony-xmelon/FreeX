@@ -23,10 +23,10 @@ This slice investigated the visual-evidence harness gap for transient Excel/Free
 - Added source tests so future harness changes keep this transient-surface plan present in both scripts.
 - Added a concise catalog note to `UI-CMD-HARNESS-001`.
 - Added the first concrete in-app FreeX popup capture path: `FREEX_AUTOFILTER_FLYOUT_TOUR=1` seeds a `score` AutoFilter range, opens the production modeless AutoFilter flyout, captures `screenshots/autofilter-flyout-tour/freex_table_autofilter_dropdown.png`, and writes `autofilter_flyout_tour_manifest.json` with pair key `interactive:table-autofilter-dropdown:opened`.
+- Added the paired Excel popup capture path: `FREEX_EXCEL_AUTOFILTER_FLYOUT_TOUR=1` seeds the same `score` range in Microsoft Excel, opens the header AutoFilter dropdown with a foreground-guarded header-arrow click, captures `screenshots_excel/autofilter-flyout-tour/interactive_table_autofilter_dropdown_opened.png`, and writes `excel_autofilter_flyout_tour_manifest.json` with the same pair key.
 
 ## Remaining Limitations
 
-- This slice now captures the FreeX AutoFilter popup through an in-app WPF render path, but it does not yet drive the Microsoft Excel popup or the other planned transient surfaces.
+- This slice now has paired FreeX and Microsoft Excel AutoFilter popup capture hooks for `interactive:table-autofilter-dropdown:opened`, but it does not yet drive the other planned transient surfaces.
 - The eventual runner should open one scenario at a time, verify foreground ownership before every input, verify the popup/dialog/menu target before capture, and delete partial artifacts if ownership drifts.
-- AutoFilter setup should reuse the seeded `score` workbook state when opening the paired Excel header dropdown.
 - Native dialogs may legitimately change the foreground title/class; the runner needs dialog-aware ownership validation instead of the current owner-window title equality check.
