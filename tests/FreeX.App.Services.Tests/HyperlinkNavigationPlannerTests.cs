@@ -58,6 +58,99 @@ public sealed class HyperlinkNavigationPlannerTests
     }
 
     [Fact]
+    public void TryCreatePlan_CreatesLocalFilePlanForLocalFileUriWithoutAllowingExternalLaunch()
+    {
+        var sheetId = SheetId.New();
+        var sheet = new Sheet(sheetId, "Sheet1");
+        var address = new CellAddress(sheetId, 1, 1);
+        sheet.Hyperlinks[address] = " file:///Users/anton/Work/Budget%202026.xlsx ";
+        sheet.HyperlinkMetadata[address] = new HyperlinkMetadata(HyperlinkTargetKind.ExistingFileOrWebPage);
+
+        HyperlinkNavigationPlanner.TryCreatePlan(sheet, address, out var plan).Should().BeTrue();
+
+        plan.Should().Be(new HyperlinkNavigationPlan(
+            HyperlinkNavigationKind.LocalFile,
+            "file:///Users/anton/Work/Budget%202026.xlsx",
+            null,
+            "/Users/anton/Work/Budget 2026.xlsx"));
+        HyperlinkNavigationPlanner.IsAllowedScheme(plan!.Target).Should().BeFalse();
+    }
+
+    [Fact]
+    public void TryCreatePlan_CreatesLocalFilePlanForMacOsAbsolutePath()
+    {
+        var sheetId = SheetId.New();
+        var sheet = new Sheet(sheetId, "Sheet1");
+        var address = new CellAddress(sheetId, 1, 1);
+        sheet.Hyperlinks[address] = " /Users/anton/Work/Budget.xlsx ";
+        sheet.HyperlinkMetadata[address] = new HyperlinkMetadata(HyperlinkTargetKind.ExistingFileOrWebPage);
+
+        HyperlinkNavigationPlanner.TryCreatePlan(sheet, address, out var plan).Should().BeTrue();
+
+        plan.Should().Be(new HyperlinkNavigationPlan(
+            HyperlinkNavigationKind.LocalFile,
+            "/Users/anton/Work/Budget.xlsx",
+            null,
+            "/Users/anton/Work/Budget.xlsx"));
+    }
+
+    [Fact]
+    public void TryCreatePlan_ResolvesRelativeLocalFileAgainstWorkbookPathOnly()
+    {
+        var sheetId = SheetId.New();
+        var sheet = new Sheet(sheetId, "Sheet1");
+        var address = new CellAddress(sheetId, 1, 1);
+        var workbookDirectory = Path.Combine(Path.GetTempPath(), "FreeXHyperlinkPlanner");
+        var workbookPath = Path.Combine(workbookDirectory, "Book.fxl");
+        var expectedLocalPath = Path.GetFullPath(Path.Combine(workbookDirectory, "Reports", "Budget.xlsx"));
+        sheet.Hyperlinks[address] = " Reports/Budget.xlsx ";
+        sheet.HyperlinkMetadata[address] = new HyperlinkMetadata(HyperlinkTargetKind.ExistingFileOrWebPage);
+
+        HyperlinkNavigationPlanner.TryCreatePlan(sheet, address, workbookPath, out var plan).Should().BeTrue();
+
+        plan.Should().Be(new HyperlinkNavigationPlan(
+            HyperlinkNavigationKind.LocalFile,
+            "Reports/Budget.xlsx",
+            null,
+            expectedLocalPath));
+    }
+
+    [Fact]
+    public void TryCreatePlan_LeavesRelativeLocalFileExternalWithoutWorkbookPath()
+    {
+        var sheetId = SheetId.New();
+        var sheet = new Sheet(sheetId, "Sheet1");
+        var address = new CellAddress(sheetId, 1, 1);
+        sheet.Hyperlinks[address] = " Reports/Budget.xlsx ";
+        sheet.HyperlinkMetadata[address] = new HyperlinkMetadata(HyperlinkTargetKind.ExistingFileOrWebPage);
+
+        HyperlinkNavigationPlanner.TryCreatePlan(sheet, address, out var plan).Should().BeTrue();
+
+        plan.Should().Be(new HyperlinkNavigationPlan(
+            HyperlinkNavigationKind.External,
+            "Reports/Budget.xlsx",
+            null));
+    }
+
+    [Fact]
+    public void TryCreatePlan_LeavesRemoteFileUriExternalForLauncherBlock()
+    {
+        var sheetId = SheetId.New();
+        var sheet = new Sheet(sheetId, "Sheet1");
+        var address = new CellAddress(sheetId, 1, 1);
+        sheet.Hyperlinks[address] = " file://server/share/Budget.xlsx ";
+        sheet.HyperlinkMetadata[address] = new HyperlinkMetadata(HyperlinkTargetKind.ExistingFileOrWebPage);
+
+        HyperlinkNavigationPlanner.TryCreatePlan(sheet, address, out var plan).Should().BeTrue();
+
+        plan.Should().Be(new HyperlinkNavigationPlan(
+            HyperlinkNavigationKind.External,
+            "file://server/share/Budget.xlsx",
+            null));
+        HyperlinkNavigationPlanner.IsAllowedScheme(plan!.Target).Should().BeFalse();
+    }
+
+    [Fact]
     public void TryCreatePlan_RejectsMissingOrBlankHyperlink()
     {
         var sheetId = SheetId.New();
