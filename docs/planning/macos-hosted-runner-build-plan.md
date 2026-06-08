@@ -23,7 +23,7 @@ The build path is the `macOS App Preview` workflow at `.github/workflows/macos-a
 9. Sign the bundle:
    - internal preview: ad-hoc signing by default;
    - distribution candidate: Developer ID signing from GitHub Secrets, accepted notarization with `xcrun notarytool`, stapling, and stapler validation.
-10. Zip the bundle with `ditto --keepParent`, generate and verify `freex-<runtime>-macos-app.zip.sha256`, unzip the zip back out, recheck bundle contents, and run `codesign --verify`.
+10. Zip the bundle with `ditto --keepParent`, generate and verify `freex-<runtime>-macos-app.zip.sha256`, extract the zip back out with `ditto -x -k` so macOS signing metadata is preserved, recheck bundle contents, and run `codesign --verify`.
 11. Record Gatekeeper assessment with `spctl`, then run native-architecture packaging and LaunchServices/Open-With/default-open smoke where the hosted runner can execute the runtime.
 12. Upload the app artifact and always-on diagnostics artifact with workflow artifacts.
 
