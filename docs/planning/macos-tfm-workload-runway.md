@@ -2,11 +2,12 @@
 
 **Last updated:** 2026-06-08
 
-This note scopes the smallest staged path from the current hosted macOS app bundle to a future native AppKit share-sheet adapter. It is intentionally not an implementation plan for the adapter itself. The immediate goal is to keep the existing `net10.0` Avalonia app path stable while carving out an opt-in lane that can compile macOS-specific AppKit bindings later.
+This note scopes the smallest staged path from the current hosted macOS app bundle to a native AppKit share-sheet adapter. The immediate goal is to keep the existing `net10.0` Avalonia app path stable while using an opt-in lane for macOS-specific AppKit bindings.
 
 ## Current Baseline
 
-- `src/FreeX.App.Avalonia` currently targets plain `net10.0` and declares `RuntimeIdentifiers` for `osx-arm64` and `osx-x64`.
+- `src/FreeX.App.Avalonia` targets plain `net10.0` by default and declares `RuntimeIdentifiers` for `osx-arm64` and `osx-x64`.
+- When `EnableMacOsTargetFramework=true`, the app also targets `net10.0-macos` and compiles host-only native source from `src/FreeX.App.Avalonia/MacOs/`.
 - The hosted `macOS App Preview` workflow publishes self-contained `.app` bundles for those RIDs, then validates bundle metadata, signing/notarization evidence, LaunchServices/Open-With/default-open smoke, checksums, diagnostics, and public-preview evidence wrappers.
 - Plain `net10.0` plus `osx-*` RIDs is enough for the current Avalonia-hosted bundle and fallback share route. It is not the compile-time surface for AppKit bindings.
 - AppKit bindings require an explicit macOS target framework, such as `net10.0-macos`, plus the matching macOS workload/reference pack on the machine or runner that compiles that target.
@@ -41,25 +42,25 @@ When `validate_macos_tfm=true` is enabled, a maintainer can manually dispatch th
 
 - it runs on the hosted macOS 26 arm64 and Intel images so the compile evidence matches the current .NET macOS workload/Xcode runway;
 - it installs the pinned macOS workload set on hosted macOS before compiling `net10.0-macos`;
-- it records toolchain, workload, and compile evidence in `freex-<run-id>-<run-attempt>-macos-tfm-build-<arch>-evidence`;
+- it records toolchain, workload, native source-boundary, compile-item, and compile evidence in `freex-<run-id>-<run-attempt>-macos-tfm-build-<arch>-evidence`;
 - it does not produce, sign, notarize, staple, publish, or promote a `FreeX.app` artifact;
 - it does not replace the current `net10.0` plus `osx-arm64` / `osx-x64` RID bundle lane;
 - it cannot prove native AppKit share-sheet runtime behavior, menu focus, VoiceOver interaction, or share-target completion.
 
 A green opt-in compile lane means the hosted macOS SDK/workload surface is ready for later host-boundary work. A red workload install/restore step means the lane is not ready and should be fixed in the opt-in lane before any product conclusion is drawn. A red `net10.0-macos` compile step means the macOS target or host-only source needs attention, while the current hosted `net10.0` artifact lane remains the release source of truth unless its own jobs fail.
 
-### Stage 2: Add The Host Boundary Before AppKit Code
+### Stage 2: Keep The Host Boundary Compile-Gated
 
-Before any AppKit adapter is added, introduce or identify a host-only boundary in `src/FreeX.App.Avalonia` for macOS native integrations. Acceptable shapes are:
+The first native host boundary is `src/FreeX.App.Avalonia/MacOs/`. Files in that folder are removed from every non-`net10.0-macos` target and compiled only by the opt-in macOS TFM lane. Acceptable future shapes remain:
 
 - conditional host files compiled only when `$(TargetFramework)` is `net10.0-macos`; or
 - a thin macOS host/adapter project that targets `net10.0-macos` and depends on the portable services without reversing that dependency.
 
-Either shape must keep the share decision in `WorkbookShareActionPlanner` and keep the platform execution in the Avalonia/macOS host. Source guards should continue to fail if AppKit, WinRT, COM, WPF, or Windows-only APIs appear in `FreeX.App.Services`.
+Either shape must keep the share decision in `WorkbookShareActionPlanner` and keep platform execution in the Avalonia/macOS host. Source guards should continue to fail if AppKit appears outside the macOS host boundary, or if WinRT, COM, WPF, or Windows-only APIs appear in `FreeX.App.Services` or the Avalonia host.
 
 ### Stage 3: Add The Native Share-Sheet Adapter
 
-After Stage 1 and Stage 2 are green, add a macOS host adapter that presents the native AppKit share sheet for a saved local workbook path. The adapter should execute only `ShareSheet` plans from `WorkbookShareActionPlanner`; dirty-save, Save As, missing-path, invalid-path, cloud/web-link, fallback, and deferred decisions stay in the portable planner and existing Avalonia share route.
+The initial adapter lives in `src/FreeX.App.Avalonia/MacOs/MacOsWorkbookShareSheetService.cs`. It presents the native AppKit share sheet for a saved local workbook path and is selected through `WorkbookShareSheetServiceFactory` only when `FREEX_MACOS_SHARE_SHEET` is defined by the `net10.0-macos` target. The adapter should execute only `ShareSheet` plans from `WorkbookShareActionPlanner`; dirty-save, Save As, missing-path, invalid-path, cloud/web-link, fallback, and deferred decisions stay in the portable planner and existing Avalonia share route.
 
 The fallback contract remains required:
 
