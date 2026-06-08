@@ -303,7 +303,7 @@ input gesture text, and dynamic menu-open behavior instead of reducing collapsed
 <!-- command-inventory:menu-toolbar:data:start -->
 | Item | Status | Notes |
 |---|---|---|
-| Get Data (CSV) | Implemented | Delimited CSV/TSV import parses user-entered numbers with CurrentCulture first and invariant fallback while keeping file-format metadata invariant |
+| Get Data (CSV) | Implemented | Local CSV/TXT/TSV/TAB and SpreadsheetML XML import uses file adapters; delimited text parses user-entered numbers with CurrentCulture first and invariant fallback while keeping file-format metadata invariant |
 | Queries & Connections | Excluded | External workbook queries, connection management, and Power Query connectors are excluded and are not surfaced as a disabled ribbon command; Refresh All remains available |
 | Refresh All | Implemented | Recalc |
 | Sort | Implemented | Single/multi-key |
