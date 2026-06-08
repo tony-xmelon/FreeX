@@ -31,6 +31,6 @@ This slice investigated the visual-evidence harness gap for transient Excel/Free
 
 - This slice now has paired FreeX and Microsoft Excel AutoFilter popup capture hooks for `interactive:table-autofilter-dropdown:opened`, plus paired FreeX and Microsoft Excel Home number-format dropdown capture hooks for `interactive:home-number-format:opened`.
 - The worksheet context menu and native Open dialog remain future runner tasks.
-- The current desktop session blocked the live Excel Home number-format capture because `i5-32gb - Remote Desktop Connection` retained foreground ownership; the Excel tour correctly cleared partial evidence and aborted instead of capturing the wrong window.
+- The live Excel Home number-format capture initially blocked because `i5-32gb - Remote Desktop Connection` retained foreground ownership; after minimizing that foreground window, `FREEX_EXCEL_NUMBER_FORMAT_DROPDOWN_TOUR=1` completed and produced the paired Excel artifact.
 - The eventual runner should open one scenario at a time, verify foreground ownership before every input, verify the popup/dialog/menu target before capture, and delete partial artifacts if ownership drifts.
 - Native dialogs may legitimately change the foreground title/class; the runner needs dialog-aware ownership validation instead of the current owner-window title equality check.
