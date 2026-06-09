@@ -1,0 +1,70 @@
+﻿{
+    "Tool":  "FREEX_OPEN_WORKBOOK_DIALOG_TOUR",
+    "EvidenceFamily":  "native-dialog",
+    "EvidenceSubject":  "freex",
+    "EvidenceApp":  "FreeX",
+    "OutputDirectory":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-popup-excel-capture-20260608\\tools\\screenshots\\open-workbook-dialog-tour",
+    "OutputNaming":  "freex_open_workbook_dialog_opened.png",
+    "CatalogEvidenceTarget":  "docs/testing/ui-test-catalog.md",
+    "ScenarioId":  "native-dialog:open-workbook",
+    "DialogClassName":  "#32770",
+    "EntryPath":  "Ctrl+O",
+    "CaptureStatus":  "complete",
+    "CaptureMethod":  "native-dialog-window-rectangle",
+    "ForegroundGuard":  {
+                            "Required":  true,
+                            "ExpectedProcessId":  14108,
+                            "ExpectedWindowTitle":  "Book1 - FreeX",
+                            "Policy":  "Abort and clear native Open dialog evidence unless FreeX owns foreground immediately before Ctrl+O and before screen capture."
+                        },
+    "Pairing":  {
+                    "PairKeyPattern":  "interactive:open-workbook-dialog:\u003cState\u003e",
+                    "PairKey":  "interactive:open-workbook-dialog:opened",
+                    "CounterpartSubject":  "excel",
+                    "CounterpartTool":  "FREEX_EXCEL_OPEN_WORKBOOK_DIALOG_TOUR",
+                    "CounterpartFileName":  "interactive_open_workbook_dialog_opened.png"
+                },
+    "Scenario":  {
+                     "ScenarioId":  "native-dialog:open-workbook",
+                     "ScenarioFileName":  "open_workbook_dialog",
+                     "State":  "opened",
+                     "Trigger":  "A foreground-guarded Ctrl+O opens the FreeX native Open dialog."
+                 },
+    "WindowBounds":  {
+                         "Left":  0,
+                         "Top":  0,
+                         "Right":  1280,
+                         "Bottom":  800,
+                         "Width":  1280,
+                         "Height":  800
+                     },
+    "DialogBounds":  {
+                         "Handle":  "10815708",
+                         "ClassName":  "#32770",
+                         "Title":  "Open",
+                         "Dpi":  144,
+                         "CaptureScale":  1.5,
+                         "Left":  0,
+                         "Top":  0,
+                         "Right":  853,
+                         "Bottom":  533,
+                         "Width":  853,
+                         "Height":  533
+                     },
+    "Captures":  [
+                     {
+                         "CaptureSequence":  1,
+                         "CaptureKey":  "interactive:open-workbook-dialog:opened",
+                         "PairKey":  "interactive:open-workbook-dialog:opened",
+                         "EvidenceSubject":  "freex",
+                         "CounterpartSubject":  "excel",
+                         "CounterpartFileName":  "interactive_open_workbook_dialog_opened.png",
+                         "FileName":  "freex_open_workbook_dialog_opened.png",
+                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-popup-excel-capture-20260608\\tools\\screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png",
+                         "Width":  1280,
+                         "Height":  800,
+                         "CaptureMethod":  "native-dialog-window-rectangle",
+                         "CaptureStatus":  "complete"
+                     }
+                 ]
+}
