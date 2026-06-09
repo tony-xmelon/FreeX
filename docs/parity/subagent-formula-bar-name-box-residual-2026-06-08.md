@@ -50,6 +50,25 @@ Added/updated focused host tests around:
 
 ## Remaining Gaps
 
-- The Name Box drop-down list itself is still not modeled as an Excel-like selectable list of defined names, tables, and objects.
+- The Name Box drop-down list now has FreeX visual evidence for workbook defined names, but it is still not an Excel-like selectable list of defined names, tables, and objects.
 - Table/object names in the Name Box remain out of scope for this slice.
 - Ambiguous overlapping names are resolved deterministically by alphabetic name order; this is sufficient for stable FreeX behavior but has not been exhaustively compared against every Excel duplicate/overlap scenario.
+
+## 2026-06-10 Visual Evidence Slice
+
+Added a deterministic FreeX-only screenshot tour behind `FREEX_FORMULA_BAR_NAME_BOX_TOUR=1`. With `FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1`, it emits 12 PNGs plus `screenshots/formula-bar-name-box-tour/formula_bar_name_box_tour_manifest.json`.
+
+Covered visual states:
+
+- Exact defined-name display for `Sales` (`B2:C3`) in the Name Box.
+- Name Box dropdown opening and dropdown selection navigation back to the named range.
+- Formula bar edit mode with visible Cancel and Enter controls, plus cancel restore and enter commit states.
+- Formula bar `fx` focus and the production Insert Function dialog surface.
+- Expanded formula bar, formula bar focus, and top-level keytips while focus starts in the Name Box.
+
+Limitations:
+
+- Evidence is in-process WPF `RenderTargetBitmap` output, not foreground OS `CopyFromScreen`.
+- Name Box dropdown navigation and Formula Bar Cancel/Enter use production control state/handlers without global mouse or keyboard input.
+- The Insert Function dialog is shown by the tour using the production dialog type because the formula-bar `fx` handler is modal; physical `fx` click and Shift+F3 foreground proof remain open.
+- Microsoft Excel paired screenshots remain open.
