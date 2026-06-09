@@ -1,0 +1,136 @@
+{
+  "Tool": "FREEX_SHEET_TAB_TOUR",
+  "EvidenceFamily": "sheet-tabs",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "sheet-tabs:visual-evidence",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-sheet-tabs-20260610\\screenshots\\sheet-tabs-tour",
+  "OutputNaming": "freex_sheet_tabs_\u003CState\u003E.png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
+  "CaptureStatus": "complete",
+  "CaptureMethod": "RenderTargetBitmap-sheet-tab-strip-context-menu-and-dialogs",
+  "FocusGuard": {
+    "Required": false,
+    "Policy": "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 allowed deterministic in-process RenderTargetBitmap captures; no global mouse, keyboard, or screen capture input is used."
+  },
+  "PlannedCaptureCount": 10,
+  "ActualCaptureCount": 10,
+  "Captures": [
+    {
+      "CaptureKey": "sheet-tabs:single-sheet",
+      "PairKey": "interactive:sheet-tabs:single-sheet",
+      "ScenarioId": "sheet-tabs:visual-parity",
+      "State": "single-sheet",
+      "Surface": "sheet-tab-strip",
+      "FileName": "freex_sheet_tabs_single_sheet",
+      "OutputFileName": "freex_sheet_tabs_single_sheet.png",
+      "EvidenceSummary": "Fresh workbook tab strip shows the selected Sheet1 tab and the plus add-sheet affordance."
+    },
+    {
+      "CaptureKey": "sheet-tabs:after-add-sheet",
+      "PairKey": "interactive:sheet-tabs:after-add-sheet",
+      "ScenarioId": "sheet-tabs:visual-parity",
+      "State": "after-add-sheet",
+      "Surface": "sheet-tab-strip",
+      "FileName": "freex_sheet_tabs_after_add_sheet",
+      "OutputFileName": "freex_sheet_tabs_after_add_sheet.png",
+      "EvidenceSummary": "Production Insert Sheet route added Sheet2, selected it, and left the plus affordance visible."
+    },
+    {
+      "CaptureKey": "sheet-tabs:grouped-colored-tabs",
+      "PairKey": "interactive:sheet-tabs:grouped-colored-tabs",
+      "ScenarioId": "sheet-tabs:visual-parity",
+      "State": "grouped-colored-tabs",
+      "Surface": "sheet-tab-strip",
+      "FileName": "freex_sheet_tabs_grouped_colored",
+      "OutputFileName": "freex_sheet_tabs_grouped_colored.png",
+      "EvidenceSummary": "Grouped tabs 2-6 show active/grouped styling while tab colors render on colored sheets."
+    },
+    {
+      "CaptureKey": "sheet-tabs:context-menu-opened",
+      "PairKey": "interactive:sheet-tabs:context-menu-opened",
+      "ScenarioId": "sheet-tabs:context-menu",
+      "State": "context-menu-opened",
+      "Surface": "sheet-tab-context-menu",
+      "FileName": "freex_sheet_tabs_context_menu_opened",
+      "OutputFileName": "freex_sheet_tabs_context_menu_opened.png",
+      "EvidenceSummary": "Production sheet-tab ContextMenu is open for the active tab, including Insert, Delete, Rename, Move or Copy, Tab Color, Hide, Unhide, Select All Sheets, and Ungroup Sheets entries."
+    },
+    {
+      "CaptureKey": "sheet-tabs:rename-dialog-opened",
+      "PairKey": "interactive:sheet-tabs:rename-dialog-opened",
+      "ScenarioId": "sheet-tabs:rename-dialog",
+      "State": "rename-dialog-opened",
+      "Surface": "rename-sheet-dialog",
+      "FileName": "freex_sheet_tabs_rename_dialog_opened",
+      "OutputFileName": "freex_sheet_tabs_rename_dialog_opened.png",
+      "EvidenceSummary": "Rename Sheet dialog is open through the same SheetNameDialog used by sheet-tab double-click and context Rename, with the name box focused and selected on load."
+    },
+    {
+      "CaptureKey": "sheet-tabs:hidden-sheet-excluded",
+      "PairKey": "interactive:sheet-tabs:hidden-sheet-excluded",
+      "ScenarioId": "sheet-tabs:visual-parity",
+      "State": "hidden-sheet-excluded",
+      "Surface": "sheet-tab-strip",
+      "FileName": "freex_sheet_tabs_hidden_sheet_excluded",
+      "OutputFileName": "freex_sheet_tabs_hidden_sheet_excluded.png",
+      "EvidenceSummary": "Hidden sheet is absent from the visible tab strip while adjacent visible tabs remain selectable."
+    },
+    {
+      "CaptureKey": "sheet-tabs:unhide-dialog-opened",
+      "PairKey": "interactive:sheet-tabs:unhide-dialog-opened",
+      "ScenarioId": "sheet-tabs:unhide-dialog",
+      "State": "unhide-dialog-opened",
+      "Surface": "unhide-sheet-dialog",
+      "FileName": "freex_sheet_tabs_unhide_dialog_opened",
+      "OutputFileName": "freex_sheet_tabs_unhide_dialog_opened.png",
+      "EvidenceSummary": "Unhide Sheet dialog lists the hidden worksheet \u0027Audit\u0027 and focuses the hidden-sheet list."
+    },
+    {
+      "CaptureKey": "sheet-tabs:overflow-start",
+      "PairKey": "interactive:sheet-tabs:overflow-start",
+      "ScenarioId": "sheet-tabs:visual-parity",
+      "State": "overflow-start",
+      "Surface": "sheet-tab-strip",
+      "FileName": "freex_sheet_tabs_overflow_start",
+      "OutputFileName": "freex_sheet_tabs_overflow_start.png",
+      "EvidenceSummary": "Narrow tab strip at the first visible sheet shows overflow navigation affordances."
+    },
+    {
+      "CaptureKey": "sheet-tabs:overflow-middle",
+      "PairKey": "interactive:sheet-tabs:overflow-middle",
+      "ScenarioId": "sheet-tabs:visual-parity",
+      "State": "overflow-middle",
+      "Surface": "sheet-tab-strip",
+      "FileName": "freex_sheet_tabs_overflow_middle",
+      "OutputFileName": "freex_sheet_tabs_overflow_middle.png",
+      "EvidenceSummary": "Narrow tab strip scrolls the active middle sheet into view with left/right navigation affordances."
+    },
+    {
+      "CaptureKey": "sheet-tabs:overflow-end",
+      "PairKey": "interactive:sheet-tabs:overflow-end",
+      "ScenarioId": "sheet-tabs:visual-parity",
+      "State": "overflow-end",
+      "Surface": "sheet-tab-strip",
+      "FileName": "freex_sheet_tabs_overflow_end",
+      "OutputFileName": "freex_sheet_tabs_overflow_end.png",
+      "EvidenceSummary": "Narrow tab strip scrolls to the final sheet and shows the right edge overflow state."
+    }
+  ],
+  "CoveredStates": [
+    "Selected single-sheet tab and plus add-sheet affordance",
+    "Add Sheet route selecting the newly created sheet",
+    "Grouped sheet-tab styling and tab color rendering",
+    "Production sheet-tab context menu",
+    "Rename Sheet dialog focus/select-all affordance",
+    "Hidden sheet excluded from the tab strip",
+    "Unhide Sheet dialog with hidden-sheet list",
+    "Narrow tab-strip overflow navigation at start, middle, and end positions"
+  ],
+  "Limitations": [
+    "This tour renders FreeX WPF surfaces in-process; it does not synthesize physical mouse clicks, Ctrl/Shift modifiers, drag reorder, or double-click input.",
+    "The context menu capture is opened from the production tab ContextMenu object rather than by OS right-click, so live placement/focus evidence remains separate.",
+    "The rename and unhide dialog captures show the production dialogs and initial focus targets, but they do not submit dialog changes.",
+    "No Microsoft Excel counterpart or macOS/native-host capture is produced by this tool."
+  ]
+}
