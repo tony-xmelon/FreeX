@@ -999,9 +999,9 @@
           "notes": ""
         },
         {
-          "name": "Calculation Options (manual/auto)",
+          "name": "Calculation Options",
           "status": "Implemented",
-          "notes": ""
+          "notes": "Automatic, Automatic Except Data Tables, and Manual modes"
         },
         {
           "name": "Calculate Now / Calculate Sheet",
@@ -2310,7 +2310,7 @@
         {
           "name": "Calculation Options",
           "status": "Implemented",
-          "notes": "Manual/auto"
+          "notes": "Automatic, Automatic Except Data Tables, and Manual modes"
         },
         {
           "name": "Calculate Now",

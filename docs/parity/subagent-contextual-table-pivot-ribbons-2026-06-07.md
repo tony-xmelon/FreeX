@@ -1,13 +1,17 @@
-# Contextual Table and Pivot Ribbon Slice
+# Contextual Table And Pivot Ribbons Reconciliation - 2026-06-07
 
-## Findings addressed
+## Purpose
 
-- PivotTable Analyze > Show now exposes Excel-like `+/- Buttons` and `Field Headers` commands next to `Field List`.
-- Both commands route through the existing undoable `ConfigurePivotTableOptionsCommand` path and only toggle the modeled `ShowExpandCollapseButtons` and `ShowFieldHeaders` flags.
-- Focused ribbon catalog/source tests cover the added command names, key tips, handlers, and expected Show group order.
+This note preserves the historical contextual table/pivot ribbon report reference used by the visual parity ledger. The current aggregate branch has the detailed implementation notes split across table/pivot residual reports and source-visible tests.
 
-## Remaining gaps
+## Current Coverage
 
-- Table Design still has no table-connected slicer command because FreeX slicer authoring is currently PivotTable-backed.
-- PivotTable Analyze still does not expose separate expand-field/collapse-field active-field commands; the model has display toggles and Show Details, but no field expand/collapse action command in this slice.
-- Visual QA against a live Excel window was not performed in this slice; parity was checked against Excel command layout conventions and existing FreeX modeled behavior.
+- Table Design is present as a collapsed contextual tab with Properties, Tools, Table Style Options, and Table Styles groups.
+- PivotTable Analyze and PivotTable Design are present as collapsed contextual tabs with Excel-like group ordering and key-tip routing.
+- `docs/parity/subagent-insert-table-pivot-residual-2026-06-08.md` and `docs/parity/subagent-pivottable-contextual-residual-2026-06-08.md` record the latest table/pivot command behavior and remaining evidence gaps.
+- `RibbonTabParityTests`, `RibbonXamlCatalogSnapshotReaderTests`, and `MainWindowRibbonKeyTipTests.Pivot` guard the contextual tab catalog and key-tip behavior.
+
+## Remaining Gaps
+
+- Live screenshot evidence for contextual tab appearance, collapse breakpoints, and command routing still needs workbook-backed table and PivotTable selections.
+- PivotTable field-list, slicer/timeline, and protected-sheet command matrices continue to be tracked in their focused residual reports.
