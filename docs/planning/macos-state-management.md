@@ -1,6 +1,6 @@
 # macOS Port State Management Note
 
-**Last updated:** 2026-06-08
+**Last updated:** 2026-06-09
 
 This note narrows the state-storage guidance from the [multiplatform macOS port plan](multiplatform-macos-port.md) and the [macOS dependency backlog](macos-port-dependency-backlog.md). The current tree has no `docs/research/` directory; the active anchors are the planning docs plus the portable recent-file implementation in `FreeX.App.Services`.
 
@@ -14,19 +14,22 @@ This note narrows the state-storage guidance from the [multiplatform macOS port 
 | Disposable cache or generated render artifacts | `%LOCALAPPDATA%\FreeX\Cache` or the process temp directory | `~/Library/Caches/FreeX` or the process temp directory | Delete-safe state only. Do not put cache output in Application Support. |
 | User workbooks | User-selected file paths | User-selected file paths | Workbook contents and workbook-authored state belong in the saved workbook, not in app data. |
 
-Use Application Support for durable user/app state that should survive app restarts and machine cleanup. Use Logs or Caches for local artifacts that are not preferences. Do not store workbook contents, formulas, filenames for diagnostics, or cloud/account state in app-state files unless a later feature explicitly owns that privacy surface.
+Use Application Support for durable user/app state that should survive app restarts and machine cleanup. Use Logs or Caches for local artifacts that are not preferences. The recent-file store may hold app-owned paths and grant metadata as described below, but diagnostics must not record workbook file paths, filenames, contents, formulas, or bookmark payloads.
 
 ## Recent Files
 
 `RecentFilesStore` is the current source of truth for recent workbook state. Both WPF and Avalonia should use the shared store rather than keeping host-specific recent-file lists.
 
 - Store the file at `<application-data-root>/FreeX/recent.json`, where `IApplicationDataPathProvider` resolves the platform root.
-- Persist JSON entries with absolute local `Path`, `LastOpened` as a `DateTimeOffset`, and `IsPinned`.
+- Persist JSON entries with absolute local `Path`, `LastOpened` as a `DateTimeOffset`, and `IsPinned`. `FileAccessIdentity` is optional, omitted for path-only identities, and may contain host-supplied bookmark or grant metadata such as the Avalonia macOS storage bookmark used for security-scoped access.
 - Keep the newest entry first, cap the list at 25 entries, and preserve pin state when a file is reopened.
 - Write through `AtomicFileWriter` so an interrupted save does not corrupt `recent.json`.
 - Add or update entries only after a successful startup activation, open, save, or save-as path. Pin, unpin, and remove commands may update the store directly.
+- Preserve an existing bookmarked `FileAccessIdentity` when a path-only reopen or same-path save updates the entry. Save As to a different path should not carry the old grant unless the host supplies a fresh identity for the new path.
 - Route path identity through `PlatformPathIdentityComparer`: Windows recent-file matching stays case-insensitive and slash-normalized, while Unix/macOS matching stays ordinal so case-sensitive volumes can keep distinct paths.
 - Treat Windows jump lists, macOS `Open Recent`, LaunchServices, or future `NSDocumentController` integration as platform mirrors only. They cannot carry FreeX pin state and should not become the durable source of truth.
+- Keep bookmark payloads out of workbook files, diagnostics, exports, and logs. `recent.json` is the durable grant store; removing a recent entry must remove any associated grant metadata with it.
+- File-access diagnostics, when present, are limited to `workbook_file_access_identity` and `workbook_file_access_scope` with safe properties `grantKind` and `payloadRedacted`. They exist to show grant plumbing and lifecycle readiness, not workbook identity, and must not include file paths, filenames, workbook contents, formulas, or bookmark payload data.
 
 ## Abstraction Direction
 
