@@ -1,0 +1,295 @@
+{
+  "Tool": "FREEX_TITLEBAR_WINDOW_CHROME_TOUR",
+  "EvidenceFamily": "window-chrome",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "window-chrome:titlebar",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-titlebar-window-chrome-20260610\\screenshots\\titlebar-window-chrome-tour",
+  "OutputNaming": "freex_titlebar_\u003CState\u003E.png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
+  "PlannedCaptureCount": 5,
+  "ActualCaptureCount": 5,
+  "CaptureStatus": "complete",
+  "CaptureMethod": "RenderTargetBitmap-window-top-band",
+  "SavedWorkbookOutputFileName": "freex_titlebar_renamed_workbook.xlsx",
+  "SavedWorkbookRetained": true,
+  "Pairing": {
+    "PairKeyPattern": "interactive:titlebar-window-chrome:\u003CState\u003E",
+    "CounterpartSubject": "excel",
+    "CounterpartTool": "not-yet-wired",
+    "CounterpartOutputNaming": "not-yet-captured"
+  },
+  "FocusGuard": {
+    "Required": false,
+    "Policy": "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 allowed in-process RenderTargetBitmap capture; no global mouse, keyboard, close, minimize, or drag input was used."
+  },
+  "Captures": [
+    {
+      "CaptureKey": "window-chrome:titlebar:unsaved-restored",
+      "PairKey": "interactive:titlebar-window-chrome:unsaved-restored",
+      "ScenarioId": "window-chrome:titlebar",
+      "State": "unsaved-restored",
+      "FileName": "freex_titlebar_unsaved_restored",
+      "OutputFileName": "freex_titlebar_unsaved_restored.png",
+      "CaptureMethod": "RenderTargetBitmap-window-top-band",
+      "CaptureLogicalWidth": 1100,
+      "CaptureLogicalHeight": 220,
+      "EvidenceSummary": "Fresh workbook titlebar shows Book1, QAT Save/Undo/Redo, and custom minimize/maximize/close buttons in restored state.",
+      "WindowState": "Normal",
+      "WindowTitle": "Book1 - FreeX",
+      "WorkbookNameText": "Book1 - FreeX",
+      "WorkbookName": "Book1",
+      "WorkbookDirty": false,
+      "CurrentFileName": null,
+      "TitleBarQatVisible": true,
+      "TitleBarQatCommandIds": [
+        "Save",
+        "Undo",
+        "Redo"
+      ],
+      "MinimizeButton": {
+        "AutomationId": "MinimizeBtn",
+        "AutomationName": "Minimize",
+        "HelpText": "Minimize",
+        "IsVisible": true,
+        "IsEnabled": true,
+        "ActualWidth": 46,
+        "ActualHeight": 22
+      },
+      "MaxRestoreButton": {
+        "AutomationId": "MaxRestoreBtn",
+        "AutomationName": "Maximize",
+        "HelpText": "Maximize",
+        "IsVisible": true,
+        "IsEnabled": true,
+        "ActualWidth": 46,
+        "ActualHeight": 22
+      },
+      "CloseButton": {
+        "AutomationId": "CloseSysBtn",
+        "AutomationName": "Close",
+        "HelpText": "Close",
+        "IsVisible": true,
+        "IsEnabled": true,
+        "ActualWidth": 46,
+        "ActualHeight": 22
+      },
+      "MaxRestoreIconKind": "WindowMaximize"
+    },
+    {
+      "CaptureKey": "window-chrome:titlebar:dirty-marker-restored",
+      "PairKey": "interactive:titlebar-window-chrome:dirty-marker-restored",
+      "ScenarioId": "window-chrome:titlebar",
+      "State": "dirty-marker-restored",
+      "FileName": "freex_titlebar_dirty_marker_restored",
+      "OutputFileName": "freex_titlebar_dirty_marker_restored.png",
+      "CaptureMethod": "RenderTargetBitmap-window-top-band",
+      "CaptureLogicalWidth": 1100,
+      "CaptureLogicalHeight": 220,
+      "EvidenceSummary": "Dirty marker appears in the workbook title after a command-stack edit.",
+      "WindowState": "Normal",
+      "WindowTitle": "Book1* - FreeX",
+      "WorkbookNameText": "Book1* - FreeX",
+      "WorkbookName": "Book1",
+      "WorkbookDirty": true,
+      "CurrentFileName": null,
+      "TitleBarQatVisible": true,
+      "TitleBarQatCommandIds": [
+        "Save",
+        "Undo",
+        "Redo"
+      ],
+      "MinimizeButton": {
+        "AutomationId": "MinimizeBtn",
+        "AutomationName": "Minimize",
+        "HelpText": "Minimize",
+        "IsVisible": true,
+        "IsEnabled": true,
+        "ActualWidth": 46,
+        "ActualHeight": 22
+      },
+      "MaxRestoreButton": {
+        "AutomationId": "MaxRestoreBtn",
+        "AutomationName": "Maximize",
+        "HelpText": "Maximize",
+        "IsVisible": true,
+        "IsEnabled": true,
+        "ActualWidth": 46,
+        "ActualHeight": 22
+      },
+      "CloseButton": {
+        "AutomationId": "CloseSysBtn",
+        "AutomationName": "Close",
+        "HelpText": "Close",
+        "IsVisible": true,
+        "IsEnabled": true,
+        "ActualWidth": 46,
+        "ActualHeight": 22
+      },
+      "MaxRestoreIconKind": "WindowMaximize"
+    },
+    {
+      "CaptureKey": "window-chrome:titlebar:saved-renamed-restored",
+      "PairKey": "interactive:titlebar-window-chrome:saved-renamed-restored",
+      "ScenarioId": "window-chrome:titlebar",
+      "State": "saved-renamed-restored",
+      "FileName": "freex_titlebar_saved_renamed_restored",
+      "OutputFileName": "freex_titlebar_saved_renamed_restored.png",
+      "CaptureMethod": "RenderTargetBitmap-window-top-band",
+      "CaptureLogicalWidth": 1100,
+      "CaptureLogicalHeight": 220,
+      "EvidenceSummary": "Real save-to-XLSX path renames the title and clears the dirty marker in restored state.",
+      "WindowState": "Normal",
+      "WindowTitle": "freex_titlebar_renamed_workbook - FreeX",
+      "WorkbookNameText": "freex_titlebar_renamed_workbook - FreeX",
+      "WorkbookName": "freex_titlebar_renamed_workbook",
+      "WorkbookDirty": false,
+      "CurrentFileName": "freex_titlebar_renamed_workbook.xlsx",
+      "TitleBarQatVisible": true,
+      "TitleBarQatCommandIds": [
+        "Save",
+        "Undo",
+        "Redo"
+      ],
+      "MinimizeButton": {
+        "AutomationId": "MinimizeBtn",
+        "AutomationName": "Minimize",
+        "HelpText": "Minimize",
+        "IsVisible": true,
+        "IsEnabled": true,
+        "ActualWidth": 46,
+        "ActualHeight": 22
+      },
+      "MaxRestoreButton": {
+        "AutomationId": "MaxRestoreBtn",
+        "AutomationName": "Maximize",
+        "HelpText": "Maximize",
+        "IsVisible": true,
+        "IsEnabled": true,
+        "ActualWidth": 46,
+        "ActualHeight": 22
+      },
+      "CloseButton": {
+        "AutomationId": "CloseSysBtn",
+        "AutomationName": "Close",
+        "HelpText": "Close",
+        "IsVisible": true,
+        "IsEnabled": true,
+        "ActualWidth": 46,
+        "ActualHeight": 22
+      },
+      "MaxRestoreIconKind": "WindowMaximize"
+    },
+    {
+      "CaptureKey": "window-chrome:titlebar:saved-renamed-maximized",
+      "PairKey": "interactive:titlebar-window-chrome:saved-renamed-maximized",
+      "ScenarioId": "window-chrome:titlebar",
+      "State": "saved-renamed-maximized",
+      "FileName": "freex_titlebar_saved_renamed_maximized",
+      "OutputFileName": "freex_titlebar_saved_renamed_maximized.png",
+      "CaptureMethod": "RenderTargetBitmap-window-top-band",
+      "CaptureLogicalWidth": 1100,
+      "CaptureLogicalHeight": 220,
+      "EvidenceSummary": "Maximized window state shows the saved title and restore-down system-button state.",
+      "WindowState": "Maximized",
+      "WindowTitle": "freex_titlebar_renamed_workbook - FreeX",
+      "WorkbookNameText": "freex_titlebar_renamed_workbook - FreeX",
+      "WorkbookName": "freex_titlebar_renamed_workbook",
+      "WorkbookDirty": false,
+      "CurrentFileName": "freex_titlebar_renamed_workbook.xlsx",
+      "TitleBarQatVisible": true,
+      "TitleBarQatCommandIds": [
+        "Save",
+        "Undo",
+        "Redo"
+      ],
+      "MinimizeButton": {
+        "AutomationId": "MinimizeBtn",
+        "AutomationName": "Minimize",
+        "HelpText": "Minimize",
+        "IsVisible": true,
+        "IsEnabled": true,
+        "ActualWidth": 46,
+        "ActualHeight": 22
+      },
+      "MaxRestoreButton": {
+        "AutomationId": "MaxRestoreBtn",
+        "AutomationName": "Restore Down",
+        "HelpText": "Restore Down",
+        "IsVisible": true,
+        "IsEnabled": true,
+        "ActualWidth": 46,
+        "ActualHeight": 22
+      },
+      "CloseButton": {
+        "AutomationId": "CloseSysBtn",
+        "AutomationName": "Close",
+        "HelpText": "Close",
+        "IsVisible": true,
+        "IsEnabled": true,
+        "ActualWidth": 46,
+        "ActualHeight": 22
+      },
+      "MaxRestoreIconKind": "WindowRestore"
+    },
+    {
+      "CaptureKey": "window-chrome:titlebar:saved-renamed-restored-after-maximize",
+      "PairKey": "interactive:titlebar-window-chrome:saved-renamed-restored-after-maximize",
+      "ScenarioId": "window-chrome:titlebar",
+      "State": "saved-renamed-restored-after-maximize",
+      "FileName": "freex_titlebar_saved_renamed_restored_after_maximize",
+      "OutputFileName": "freex_titlebar_saved_renamed_restored_after_maximize.png",
+      "CaptureMethod": "RenderTargetBitmap-window-top-band",
+      "CaptureLogicalWidth": 1100,
+      "CaptureLogicalHeight": 220,
+      "EvidenceSummary": "Restored-after-maximize state shows the saved title and maximize system-button state.",
+      "WindowState": "Normal",
+      "WindowTitle": "freex_titlebar_renamed_workbook - FreeX",
+      "WorkbookNameText": "freex_titlebar_renamed_workbook - FreeX",
+      "WorkbookName": "freex_titlebar_renamed_workbook",
+      "WorkbookDirty": false,
+      "CurrentFileName": "freex_titlebar_renamed_workbook.xlsx",
+      "TitleBarQatVisible": true,
+      "TitleBarQatCommandIds": [
+        "Save",
+        "Undo",
+        "Redo"
+      ],
+      "MinimizeButton": {
+        "AutomationId": "MinimizeBtn",
+        "AutomationName": "Minimize",
+        "HelpText": "Minimize",
+        "IsVisible": true,
+        "IsEnabled": true,
+        "ActualWidth": 46,
+        "ActualHeight": 22
+      },
+      "MaxRestoreButton": {
+        "AutomationId": "MaxRestoreBtn",
+        "AutomationName": "Maximize",
+        "HelpText": "Maximize",
+        "IsVisible": true,
+        "IsEnabled": true,
+        "ActualWidth": 46,
+        "ActualHeight": 22
+      },
+      "CloseButton": {
+        "AutomationId": "CloseSysBtn",
+        "AutomationName": "Close",
+        "HelpText": "Close",
+        "IsVisible": true,
+        "IsEnabled": true,
+        "ActualWidth": 46,
+        "ActualHeight": 22
+      },
+      "MaxRestoreIconKind": "WindowMaximize"
+    }
+  ],
+  "Limitations": [
+    "This tour captures real FreeX WPF titlebar/window chrome visuals and changes WindowState directly instead of using global mouse input.",
+    "Minimize and Close are not clicked; evidence is limited to visible button/UIA state so the tour cannot lose unsaved work.",
+    "Alt\u002BSpace/system menu, native titlebar drag, hover styling, and live mouse clicks remain foreground-runner gaps.",
+    "The saved/renamed title state is produced through SaveWorkbookToTargetAsync against an XLSX target without opening the native Save As dialog.",
+    "No Microsoft Excel counterpart capture is produced by this tool."
+  ]
+}
