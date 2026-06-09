@@ -1,0 +1,93 @@
+{
+  "Tool": "FREEX_PRINT_PREVIEW_TOUR",
+  "EvidenceFamily": "print-preview",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "print-preview:foreground-focus-return",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-print-preview-screenshots-20260609\\screenshots\\print-preview-tour",
+  "OutputNaming": "freex_print_preview_\u003CState\u003E.png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
+  "EntryPaths": [
+    "Ctrl\u002BP",
+    "File \u003E Print \u003E Print Preview"
+  ],
+  "SheetName": "Sheet1",
+  "TotalPages": 4,
+  "SettingsSummary": "Print active sheet; Orientation: Landscape; Paper size: Letter; Scaling: 100%; fit 1 page wide by 0 tall; Gridlines: on; Headings: on",
+  "CaptureStatus": "complete",
+  "CaptureMethod": "RenderTargetBitmap-print-preview-dialog-and-main-window",
+  "FocusGuard": {
+    "Required": false,
+    "Policy": "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 allowed in-process RenderTargetBitmap capture; no global mouse, keyboard, or screen capture input was used."
+  },
+  "ClosedViaEscapeEquivalent": true,
+  "FocusReturnedToBackstagePrintPreviewCommand": true,
+  "Captures": [
+    {
+      "CaptureKey": "print-preview:file-print-entry:opened",
+      "PairKey": "interactive:print-preview:file-print-entry:opened",
+      "ScenarioId": "print-preview:file-print-entry",
+      "State": "opened",
+      "EntryPath": "File \u003E Print",
+      "FileName": "freex_print_backstage_file_print_entry",
+      "OutputFileName": "freex_print_backstage_file_print_entry.png",
+      "EvidenceSummary": "Backstage Print view shows the Print Preview command and active sheet settings summary."
+    },
+    {
+      "CaptureKey": "print-preview:ctrl-p-entry:opened",
+      "PairKey": "interactive:print-preview:ctrl-p-entry:opened",
+      "ScenarioId": "print-preview:ctrl-p-entry",
+      "State": "opened",
+      "EntryPath": "Ctrl\u002BP routed to File \u003E Print, then Print Preview",
+      "FileName": "freex_print_preview_ctrlp_entry_opened",
+      "OutputFileName": "freex_print_preview_ctrlp_entry_opened.png",
+      "EvidenceSummary": "Print Preview dialog opens with the production toolbar, preview surface, settings panel, and Print as the initial keyboard target."
+    },
+    {
+      "CaptureKey": "print-preview:toolbar:first-page",
+      "PairKey": "interactive:print-preview:toolbar:first-page",
+      "ScenarioId": "print-preview:toolbar-navigation",
+      "State": "first-page",
+      "EntryPath": "File \u003E Print \u003E Print Preview",
+      "FileName": "freex_print_preview_toolbar_first_page",
+      "OutputFileName": "freex_print_preview_toolbar_first_page.png",
+      "EvidenceSummary": "Toolbar shows first-page navigation state, page count label, print controls, zoom, margins, page setup, close, and settings summary."
+    },
+    {
+      "CaptureKey": "print-preview:toolbar:last-page",
+      "PairKey": "interactive:print-preview:toolbar:last-page",
+      "ScenarioId": "print-preview:toolbar-navigation",
+      "State": "last-page",
+      "EntryPath": "File \u003E Print \u003E Print Preview, page number box to final page",
+      "FileName": "freex_print_preview_toolbar_last_page",
+      "OutputFileName": "freex_print_preview_toolbar_last_page.png",
+      "EvidenceSummary": "Toolbar shows the final-page page-count label after keyboard-equivalent page-number navigation."
+    },
+    {
+      "CaptureKey": "print-preview:zoom-settings-summary:page-width",
+      "PairKey": "interactive:print-preview:zoom-settings-summary:page-width",
+      "ScenarioId": "print-preview:zoom-settings-summary",
+      "State": "page-width-zoom",
+      "EntryPath": "Print Preview \u003E Zoom \u003E Page Width",
+      "FileName": "freex_print_preview_zoom_settings_summary",
+      "OutputFileName": "freex_print_preview_zoom_settings_summary.png",
+      "EvidenceSummary": "Zoom combo is changed to Page Width while the print settings summary remains visible."
+    },
+    {
+      "CaptureKey": "print-preview:closed:focus-return",
+      "PairKey": "interactive:print-preview:closed:focus-return",
+      "ScenarioId": "print-preview:close-focus-return",
+      "State": "closed-focus-return",
+      "EntryPath": "Print Preview close via IsCancel Close button route",
+      "FileName": "freex_print_preview_closed_focus_return",
+      "OutputFileName": "freex_print_preview_closed_focus_return.png",
+      "EvidenceSummary": "Preview is closed and the workbook window is visible again with focus explicitly returned to the backstage Print Preview command."
+    }
+  ],
+  "Limitations": [
+    "This in-app tour renders real FreeX WPF windows using RenderTargetBitmap rather than OS CopyFromScreen.",
+    "The Ctrl\u002BP route is represented by FreeX\u0027s existing source-proven Ctrl\u002BP-to-File-Print path plus a live Print Preview dialog opened from that backstage entry point; no global Ctrl\u002BP keystroke is synthesized.",
+    "The close capture uses the PrintPreviewCloseButton IsCancel route as the Escape-equivalent path, then explicitly returns focus to the backstage Print Preview command before the final screenshot.",
+    "The native Windows print dialog is not opened during this tour to avoid sending output to a real printer or blocking on system print UI."
+  ]
+}
