@@ -1,0 +1,69 @@
+﻿{
+    "Tool":  "FREEX_EXCEL_NUMBER_FORMAT_DROPDOWN_TOUR",
+    "EvidenceFamily":  "dropdown",
+    "EvidenceSubject":  "excel",
+    "EvidenceApp":  "Microsoft Excel",
+    "OutputDirectory":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-popup-excel-capture-20260608\\tools\\screenshots_excel\\home-number-format-dropdown-tour",
+    "OutputNaming":  "interactive_home_number_format_opened.png",
+    "CatalogEvidenceTarget":  "docs/testing/ui-test-catalog.md",
+    "SelectedCell":  "A1",
+    "SelectedFormat":  "General",
+    "CaptureStatus":  "complete",
+    "CaptureMethod":  "popup-window-rectangle",
+    "ForegroundGuard":  {
+                            "Required":  true,
+                            "ExpectedProcessId":  2660,
+                            "ExpectedWindowTitle":  "Book1 - Excel",
+                            "Policy":  "Seed through Excel automation, then abort and clear number-format dropdown evidence unless Excel owns foreground immediately before expanding NumberFormatGallery and before screen capture."
+                        },
+    "Pairing":  {
+                    "PairKeyPattern":  "interactive:home-number-format:\u003cState\u003e",
+                    "PairKey":  "interactive:home-number-format:opened",
+                    "CounterpartSubject":  "freex",
+                    "CounterpartTool":  "FREEX_HOME_NUMBER_FORMAT_DROPDOWN_TOUR",
+                    "CounterpartFileName":  "freex_dropdown_home_number_format_opened.png"
+                },
+    "Scenario":  {
+                     "ScenarioId":  "dropdown:home-number-format",
+                     "ScenarioFileName":  "home_number_format",
+                     "State":  "opened",
+                     "SelectedCell":  "A1",
+                     "SampleValue":  "1234.56",
+                     "Trigger":  "Excel COM seeds A1, selects Home\u0027s NumberFormatGallery ComboBox through UI Automation, and expands it with a foreground guard."
+                 },
+    "WindowBounds":  {
+                         "Left":  856,
+                         "Top":  159,
+                         "Right":  1146,
+                         "Bottom":  1002,
+                         "Width":  290,
+                         "Height":  843
+                     },
+    "PopupBounds":  {
+                        "Handle":  "8128608",
+                        "ClassName":  "Net UI Tool Window",
+                        "Title":  "",
+                        "Left":  856,
+                        "Top":  159,
+                        "Right":  1146,
+                        "Bottom":  1002,
+                        "Width":  290,
+                        "Height":  843
+                    },
+    "Captures":  [
+                     {
+                         "CaptureSequence":  1,
+                         "CaptureKey":  "interactive:home-number-format:opened",
+                         "PairKey":  "interactive:home-number-format:opened",
+                         "EvidenceSubject":  "excel",
+                         "CounterpartSubject":  "freex",
+                         "CounterpartFileName":  "freex_dropdown_home_number_format_opened.png",
+                         "FileName":  "interactive_home_number_format_opened.png",
+                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-popup-excel-capture-20260608\\tools\\screenshots_excel\\home-number-format-dropdown-tour\\interactive_home_number_format_opened.png",
+                         "Width":  290,
+                         "Height":  843,
+                         "CaptureMethod":  "popup-window-rectangle",
+                         "CaptureStatus":  "complete"
+                     }
+                 ]
+}
