@@ -16,8 +16,9 @@
 - `WorkbookTitleFormatterTests` covers workbook name, dirty marker, grouped-sheet marker, and multi-window suffix ordering.
 - Existing QAT tests cover direct `Alt+1/2/3` Save/Undo/Redo routing, disabled keytip guards, custom below-ribbon QAT routing, and prefix-safe generated keytips.
 - Existing window chrome source tests cover minimize, maximize/restore, and close command routing to WPF `SystemCommands`.
+- 2026-06-10 visual evidence slice: `FREEX_TITLEBAR_WINDOW_CHROME_TOUR=1` with `FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1` emits real FreeX WPF titlebar/window-chrome captures under `screenshots/titlebar-window-chrome-tour/`, including unsaved restored title, dirty marker, saved/renamed clean title from a real XLSX save path, maximized restore-button state, restored-after-maximize maximize-button state, visible titlebar QAT, and Minimize/Maximize/Restore/Close UIA state metadata in `titlebar_window_chrome_tour_manifest.json`.
 
 ## Remaining Gaps
 
-- Live foreground evidence for native window drag, Alt+Space/system menu behavior, and mouse-level minimize/maximize/close clicks remains open.
+- Live foreground evidence for native window drag, Alt+Space/system menu behavior, hover styling, and mouse-level minimize/maximize/close clicks remains open.
 - Dirty marker clearing when undo returns exactly to the last saved state remains a product gap; the current command stack exposes undo/redo availability but not a saved revision marker.
