@@ -1,0 +1,59 @@
+{
+  "Tool": "FREEX_HOME_BORDERS_DROPDOWN_TOUR",
+  "EvidenceFamily": "dropdown",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "dropdown:home-borders",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-popup-excel-capture-20260608\\screenshots\\home-borders-dropdown-tour",
+  "OutputNaming": "freex_dropdown_home_borders_opened.png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
+  "EntryPath": "Home \u003E Borders",
+  "MenuHeaders": [
+    "All Borders",
+    "Outside Borders",
+    "Inside Borders",
+    "No Border",
+    "Bottom Border",
+    "Top Border",
+    "Left Border",
+    "Right Border",
+    "Thick Bottom Border",
+    "Bottom Double Border",
+    "Thick Outside Borders",
+    "Top and Bottom Border",
+    "Top and Thick Bottom Border",
+    "Top and Double Bottom Border",
+    "Draw Border",
+    "Draw Border Grid",
+    "Erase Border",
+    "Line Color",
+    "Line Style",
+    "More Borders..."
+  ],
+  "CaptureStatus": "complete",
+  "CaptureMethod": "RenderTargetBitmap-context-menu",
+  "Pairing": {
+    "PairKeyPattern": "interactive:home-borders:\u003CState\u003E",
+    "CounterpartSubject": "excel",
+    "CounterpartTool": "screenshot_excel.ps1",
+    "CounterpartOutputNaming": "interactive_home_borders_opened.png"
+  },
+  "Captures": [
+    {
+      "CaptureKey": "interactive:home-borders:opened",
+      "PairKey": "interactive:home-borders:opened",
+      "ScenarioId": "dropdown:home-borders",
+      "State": "opened",
+      "FileName": "freex_dropdown_home_borders_opened",
+      "OutputFileName": "freex_dropdown_home_borders_opened.png",
+      "CounterpartFileName": "interactive_home_borders_opened.png",
+      "CaptureLogicalWidth": 266.6666666666667,
+      "CaptureLogicalHeight": 488
+    }
+  ],
+  "Limitations": [
+    "This in-app tour opens the production Home Borders menu and captures the live WPF ContextMenu without global mouse or keyboard input.",
+    "The paired Microsoft Excel transient capture remains a separate foreground-guarded capture.",
+    "The scenario captures the top-level Borders menu; nested Line Color and Line Style submenus are separate future captures."
+  ]
+}
