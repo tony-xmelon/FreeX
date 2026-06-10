@@ -1,0 +1,331 @@
+{
+  "Tool": "FREEX_DATA_WHAT_IF_WORKFLOWS_TOUR",
+  "EvidenceFamily": "data-what-if-workflows",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "data-what-if-workflows:submitted-command-evidence",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-data-what-if-workflows-20260610\\screenshots\\data-what-if-workflows-tour",
+  "OutputNaming": "freex_data_what_if_workflows_\u003CWorkflow\u003E_\u003CState\u003E.png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md#UI-CAT-DATA-002",
+  "CatalogRows": [
+    "UI-CAT-DATA-002",
+    "UI-CAT-DIALOG-001A",
+    "UI-CMD-DATA-006"
+  ],
+  "SheetName": "Sheet1",
+  "GoalSeekRange": "A1:B4",
+  "ScenarioRange": "D1:E4",
+  "OneVariableDataTableRange": "A10:B13",
+  "TwoVariableDataTableRange": "D10:G13",
+  "CaptureStatus": "partial-with-blocked-planned-items",
+  "CaptureMethod": "RenderTargetBitmap-window-and-dialogs-with-real-what-if-commands",
+  "FocusGuard": {
+    "Required": false,
+    "Policy": "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 allowed deterministic in-process RenderTargetBitmap captures after supported command/service execution; no global mouse, keyboard, keytip, native dialog, access-key, or UI Automation Invoke input is used."
+  },
+  "PlannedWorkflowCount": 4,
+  "ActualWorkflowCount": 3,
+  "PlannedCaptureCount": 10,
+  "ActualCaptureCount": 10,
+  "Captures": [
+    {
+      "CaptureKey": "data-what-if-workflows:seeded-formula-grid",
+      "PairKey": "interactive:data-what-if-workflows:seeded-formula-grid",
+      "CatalogRow": "UI-CMD-DATA-006",
+      "State": "seeded-formula-grid",
+      "Surface": "Worksheet grid",
+      "FileName": "freex_data_what_if_workflows_seeded_formula_grid",
+      "OutputFileName": "freex_data_what_if_workflows_seeded_formula_grid.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CommandRoute": "Seeded workbook state before command execution.",
+      "EvidenceSummary": "Seeded What-If worksheet grid with Goal Seek, Scenario Manager, and one/two-variable Data Table formula targets before submissions.",
+      "SelectedRange": "A1:G17",
+      "VisibleRows": [
+        "1:Goal Seek|||Scenario Manager|||",
+        "2:Units|6||Units|10||",
+        "3:Price|15||Price|20||",
+        "4:Revenue|=B2*B3:90||Revenue|=E2*E3:200||",
+        "5:||||||",
+        "6:||||||",
+        "7:One-variable Data Table||||||",
+        "8:Input cell|100|||||",
+        "9:Trial|Markup|||||",
+        "10:|=B8*1.25:125||=B16*B17:50|8|10|12",
+        "11:80|||5|||",
+        "12:100|||8|||",
+        "13:120|||11|||",
+        "14:||||||"
+      ],
+      "ScenarioCount": 0,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "data-what-if-workflows:goal-seek-dialog-defaults",
+      "PairKey": "interactive:data-what-if-workflows:goal-seek-dialog-defaults",
+      "CatalogRow": "UI-CMD-DATA-006",
+      "State": "goal-seek-dialog-defaults",
+      "Surface": "goal-seek-dialog",
+      "FileName": "freex_data_what_if_workflows_goal_seek_dialog",
+      "OutputFileName": "freex_data_what_if_workflows_goal_seek_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-dialog-window",
+      "CommandRoute": "new GoalSeekDialog(sheet.Id, selectedSetCell); dialog fields populated without submitting foreground input.",
+      "EvidenceSummary": "Goal Seek dialog is open with the selected formula cell prefilled, target value entered, changing cell entered, and OK as the default action.",
+      "SelectedRange": "",
+      "VisibleRows": [],
+      "ScenarioCount": 0,
+      "CaptureLogicalWidth": 0,
+      "CaptureLogicalHeight": 0
+    },
+    {
+      "CaptureKey": "data-what-if-workflows:goal-seek-status-success",
+      "PairKey": "interactive:data-what-if-workflows:goal-seek-status-success",
+      "CatalogRow": "UI-CMD-DATA-006",
+      "State": "goal-seek-status-success",
+      "Surface": "goal-seek-status-dialog",
+      "FileName": "freex_data_what_if_workflows_goal_seek_status_success",
+      "OutputFileName": "freex_data_what_if_workflows_goal_seek_status_success.png",
+      "CaptureMethod": "RenderTargetBitmap-dialog-window",
+      "CommandRoute": "new GoalSeekStatusDialog(goalSeekResult, targetValue: 180.0)",
+      "EvidenceSummary": "Goal Seek Status dialog reports convergence with Keep Result as the default action; found value is 12.",
+      "SelectedRange": "",
+      "VisibleRows": [],
+      "ScenarioCount": 0,
+      "CaptureLogicalWidth": 0,
+      "CaptureLogicalHeight": 0
+    },
+    {
+      "CaptureKey": "data-what-if-workflows:goal-seek-applied-result",
+      "PairKey": "interactive:data-what-if-workflows:goal-seek-applied-result",
+      "CatalogRow": "UI-CMD-DATA-006",
+      "State": "goal-seek-applied-result",
+      "Surface": "Worksheet grid",
+      "FileName": "freex_data_what_if_workflows_goal_seek_result",
+      "OutputFileName": "freex_data_what_if_workflows_goal_seek_result.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CommandRoute": "GoalSeekService.Seek(...); TryExecuteCommand(new GoalSeekCommand(changingCell, result.FoundValue), \u0022Goal Seek\u0022)",
+      "EvidenceSummary": "Worksheet grid after GoalSeekService converged and GoalSeekCommand applied changing-cell value 12.",
+      "SelectedRange": "A1:B4",
+      "VisibleRows": [
+        "1:Goal Seek|",
+        "2:Units|12",
+        "3:Price|15",
+        "4:Revenue|=B2*B3:180"
+      ],
+      "ScenarioCount": 0,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "data-what-if-workflows:scenario-manager-dialog-with-scenarios",
+      "PairKey": "interactive:data-what-if-workflows:scenario-manager-dialog-with-scenarios",
+      "CatalogRow": "UI-CMD-DATA-006",
+      "State": "scenario-manager-dialog-with-scenarios",
+      "Surface": "scenario-manager-dialog",
+      "FileName": "freex_data_what_if_workflows_scenario_manager_dialog",
+      "OutputFileName": "freex_data_what_if_workflows_scenario_manager_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-dialog-window",
+      "CommandRoute": "new ScenarioManagerDialog(workbook, currentSheetId, ResolveSheetIdByName) after SaveScenarioCommand seeds.",
+      "EvidenceSummary": "Scenario Manager dialog lists the seeded Base, Upside, and Lean scenarios with Show enabled/default for the selected scenario and Add/Edit/Delete/Summary side actions visible.",
+      "SelectedRange": "",
+      "VisibleRows": [],
+      "ScenarioCount": 0,
+      "CaptureLogicalWidth": 0,
+      "CaptureLogicalHeight": 0
+    },
+    {
+      "CaptureKey": "data-what-if-workflows:scenario-manager-show-upside-result",
+      "PairKey": "interactive:data-what-if-workflows:scenario-manager-show-upside-result",
+      "CatalogRow": "UI-CMD-DATA-006",
+      "State": "scenario-manager-show-upside-result",
+      "Surface": "Worksheet grid",
+      "FileName": "freex_data_what_if_workflows_scenario_show_result",
+      "OutputFileName": "freex_data_what_if_workflows_scenario_show_result.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CommandRoute": "TryExecuteCommand(new ApplyScenarioCommand(\u0022Upside Plan\u0022), \u0022Scenario Manager\u0022); RecalculateIfAutomatic(outcome.AffectedCells)",
+      "EvidenceSummary": "Worksheet grid after ApplyScenarioCommand showed the saved Upside Plan scenario and recalculated the scenario result formula.",
+      "SelectedRange": "D1:E4",
+      "VisibleRows": [
+        "1:Scenario Manager|",
+        "2:Units|14",
+        "3:Price|23",
+        "4:Revenue|=E2*E3:322"
+      ],
+      "ScenarioCount": 3,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "data-what-if-workflows:scenario-summary-report-result",
+      "PairKey": "interactive:data-what-if-workflows:scenario-summary-report-result",
+      "CatalogRow": "UI-CMD-DATA-006",
+      "State": "scenario-summary-report-result",
+      "Surface": "Worksheet grid",
+      "FileName": "freex_data_what_if_workflows_scenario_summary_report",
+      "OutputFileName": "freex_data_what_if_workflows_scenario_summary_report.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CommandRoute": "TryExecuteCommand(new ScenarioSummaryReportCommand([scenarioResultCell], recalcCallback), \u0022Scenario Manager\u0022)",
+      "EvidenceSummary": "Scenario Summary worksheet created by ScenarioSummaryReportCommand, including changing cells and result-cell values for the seeded scenarios.",
+      "SelectedRange": "A1:D12",
+      "VisibleRows": [
+        "1:Scenario Summary|||",
+        "2:|||",
+        "3:Changing Cells|Base Plan|Upside Plan|Lean Plan",
+        "4:Sheet1!E2|10|14|8",
+        "5:Sheet1!E3|20|23|18",
+        "6:|||",
+        "7:|||",
+        "8:Result Cells|Base Plan|Upside Plan|Lean Plan",
+        "9:Sheet1!E4|200|322|144",
+        "10:|||",
+        "11:|||",
+        "12:|||"
+      ],
+      "ScenarioCount": 3,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "data-what-if-workflows:data-table-dialog-defaults",
+      "PairKey": "interactive:data-what-if-workflows:data-table-dialog-defaults",
+      "CatalogRow": "UI-CMD-DATA-006",
+      "State": "data-table-dialog-defaults",
+      "Surface": "data-table-dialog",
+      "FileName": "freex_data_what_if_workflows_data_table_dialog",
+      "OutputFileName": "freex_data_what_if_workflows_data_table_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-dialog-window",
+      "CommandRoute": "new DataTableDialog(currentSheetId, selectedTableRange); column input populated without submitting foreground input.",
+      "EvidenceSummary": "Data Table dialog is open for the selected one-variable table range with row and column input editors plus range-picker buttons; column input is populated for the deterministic submission.",
+      "SelectedRange": "",
+      "VisibleRows": [],
+      "ScenarioCount": 0,
+      "CaptureLogicalWidth": 0,
+      "CaptureLogicalHeight": 0
+    },
+    {
+      "CaptureKey": "data-what-if-workflows:data-table-one-variable-result",
+      "PairKey": "interactive:data-what-if-workflows:data-table-one-variable-result",
+      "CatalogRow": "UI-CMD-DATA-006",
+      "State": "data-table-one-variable-result",
+      "Surface": "Worksheet grid",
+      "FileName": "freex_data_what_if_workflows_data_table_one_variable_result",
+      "OutputFileName": "freex_data_what_if_workflows_data_table_one_variable_result.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CommandRoute": "DataTablePlanner.CreatePlan(... columnInputCellText); TryExecuteCommand(plan.CreateCommand(), \u0022Data Table\u0022); RecalculateIfAutomatic(outcome.AffectedCells)",
+      "EvidenceSummary": "Worksheet grid after DataTablePlanner produced a one-variable plan and OneVariableDataTableCommand filled recalculated output formulas.",
+      "SelectedRange": "A10:B13",
+      "VisibleRows": [
+        "10:|=B8*1.25:125",
+        "11:80|=A11*1.25:100",
+        "12:100|=A12*1.25:125",
+        "13:120|=A13*1.25:150"
+      ],
+      "ScenarioCount": 3,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "data-what-if-workflows:data-table-two-variable-result",
+      "PairKey": "interactive:data-what-if-workflows:data-table-two-variable-result",
+      "CatalogRow": "UI-CMD-DATA-006",
+      "State": "data-table-two-variable-result",
+      "Surface": "Worksheet grid",
+      "FileName": "freex_data_what_if_workflows_data_table_two_variable_result",
+      "OutputFileName": "freex_data_what_if_workflows_data_table_two_variable_result.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CommandRoute": "DataTablePlanner.CreatePlan(... rowInputCellText, columnInputCellText); TryExecuteCommand(plan.CreateCommand(), \u0022Data Table\u0022); RecalculateIfAutomatic(outcome.AffectedCells)",
+      "EvidenceSummary": "Worksheet grid after DataTablePlanner produced a two-variable plan and TwoVariableDataTableCommand filled recalculated output formulas.",
+      "SelectedRange": "D10:G13",
+      "VisibleRows": [
+        "10:=B16*B17:50|8|10|12",
+        "11:5|=E10*D11:40|=F10*D11:50|=G10*D11:60",
+        "12:8|=E10*D12:64|=F10*D12:80|=G10*D12:96",
+        "13:11|=E10*D13:88|=F10*D13:110|=G10*D13:132"
+      ],
+      "ScenarioCount": 3,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    }
+  ],
+  "Workflows": [
+    {
+      "Name": "Goal Seek submitted result",
+      "CatalogRows": [
+        "UI-CAT-DATA-002",
+        "UI-CAT-DIALOG-001A",
+        "UI-CMD-DATA-006"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "GoalSeekDialog default capture, GoalSeekService.Seek, GoalSeekStatusDialog, GoalSeekCommand",
+      "LimitationNote": "Captured through deterministic in-process dialog construction, supported command/service execution, and RenderTargetBitmap; no global mouse, keytip, access-key, native dialog, or UI Automation Invoke input is synthesized.",
+      "CaptureKeys": [
+        "data-what-if-workflows:goal-seek-dialog-defaults",
+        "data-what-if-workflows:goal-seek-status-success",
+        "data-what-if-workflows:goal-seek-applied-result"
+      ]
+    },
+    {
+      "Name": "Scenario Manager save, show, and summary",
+      "CatalogRows": [
+        "UI-CAT-DATA-002",
+        "UI-CAT-DIALOG-001A",
+        "UI-CMD-DATA-006"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "SaveScenarioCommand, ScenarioManagerDialog default capture, ApplyScenarioCommand, ScenarioSummaryReportCommand",
+      "LimitationNote": "Captured through deterministic in-process dialog construction, supported command/service execution, and RenderTargetBitmap; no global mouse, keytip, access-key, native dialog, or UI Automation Invoke input is synthesized.",
+      "CaptureKeys": [
+        "data-what-if-workflows:scenario-manager-dialog-with-scenarios",
+        "data-what-if-workflows:scenario-manager-show-upside-result",
+        "data-what-if-workflows:scenario-summary-report-result"
+      ]
+    },
+    {
+      "Name": "Data Table one/two-variable submitted results",
+      "CatalogRows": [
+        "UI-CAT-DATA-002",
+        "UI-CAT-DIALOG-001A",
+        "UI-CMD-DATA-006"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "DataTableDialog default capture, DataTablePlanner.CreatePlan, OneVariableDataTableCommand, TwoVariableDataTableCommand",
+      "LimitationNote": "Captured through deterministic in-process dialog construction, supported command/service execution, and RenderTargetBitmap; no global mouse, keytip, access-key, native dialog, or UI Automation Invoke input is synthesized.",
+      "CaptureKeys": [
+        "data-what-if-workflows:data-table-dialog-defaults",
+        "data-what-if-workflows:data-table-one-variable-result",
+        "data-what-if-workflows:data-table-two-variable-result"
+      ]
+    },
+    {
+      "Name": "Foreground What-If range picker, access keys, and modal button commit",
+      "CatalogRows": [
+        "UI-CAT-DATA-002",
+        "UI-CAT-DIALOG-001A",
+        "UI-CMD-DATA-006"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "planned-but-blocked",
+      "CommandRoute": "Goal Seek/Data Table range-picker collapse, Scenario Manager side-button UI, Data \u003E What-If keytips Alt,A,W,G/S/D",
+      "LimitationNote": "This deterministic slice does not synthesize foreground mouse, keytip, access-key, Enter/Escape, or collapsed range-picker input; those paths remain foreground-only evidence work.",
+      "CaptureKeys": []
+    }
+  ],
+  "CoveredStates": [
+    "Seeded What-If formula grid",
+    "Goal Seek dialog defaults, success status, and applied result",
+    "Scenario Manager seeded dialog, Show result, and Scenario Summary report",
+    "Data Table dialog defaults and one/two-variable submitted results"
+  ],
+  "Limitations": [
+    "This slice submits currently supported FreeX command/service paths where they are deterministic in process.",
+    "Goal Seek status is captured before applying the Keep Result path; the application of that result is proven separately through GoalSeekCommand and the worksheet grid result.",
+    "Scenario Manager add/edit side-button foreground submission is represented by SaveScenarioCommand seeding plus the production ScenarioManagerDialog state; physical button activation remains open.",
+    "Data Table one/two-variable results are captured through DataTablePlanner and DataTable commands; collapsed range-picker and Enter/Escape dialog submission remain open.",
+    "The tour does not synthesize foreground mouse, keytip, access-key, dropdown keyboard, collapsed range-picker, or UI Automation Invoke workflows.",
+    "Forecast Sheet is not included in this bounded slice, which focuses on product-supported Goal Seek, Scenario Manager, and Data Table evidence.",
+    "No Microsoft Excel counterpart screenshots are produced by this tool."
+  ]
+}
