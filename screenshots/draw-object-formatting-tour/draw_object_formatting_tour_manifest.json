@@ -1,0 +1,357 @@
+{
+  "Tool": "FREEX_DRAW_OBJECT_FORMATTING_TOUR",
+  "EvidenceFamily": "draw-object-formatting",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "draw-object-formatting:visual-evidence",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-draw-object-formatting-20260610\\screenshots\\draw-object-formatting-tour",
+  "OutputNaming": "freex_draw_object_formatting_\u003CState\u003E.png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
+  "CatalogIds": [
+    "UI-CAT-DRAW-001",
+    "UI-CAT-DRAW-001A",
+    "UI-CAT-DRAW-001B",
+    "UI-CAT-DRAW-001C",
+    "UI-CMD-DRAW-001",
+    "UI-CMD-DRAW-002",
+    "UI-CMD-DRAW-003",
+    "UI-CMD-DRAW-004",
+    "UI-CMD-DRAW-005"
+  ],
+  "CaptureStatus": "complete",
+  "CaptureMode": "background-render-opt-in",
+  "PlannedCaptureCount": 10,
+  "ActualCaptureCount": 10,
+  "Pairing": {
+    "PairKeyPattern": "interactive:draw-object-formatting:\u003CState\u003E",
+    "CounterpartSubject": "excel",
+    "CounterpartTool": "not-yet-wired",
+    "CounterpartOutputNaming": "not-yet-captured"
+  },
+  "FocusGuard": {
+    "Required": false,
+    "Policy": "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 allowed in-process RenderTargetBitmap capture; no foreground mouse, keyboard, native file dialog, or screen capture input was used."
+  },
+  "SeededObjects": [
+    "shape:Tour Process Shape:B3",
+    "picture:Tour Picture Logo:E5",
+    "text-box:Tour Text Box:C8"
+  ],
+  "Captures": [
+    {
+      "CaptureKey": "interactive:draw-object-formatting:draw-tab-baseline-seeded-objects",
+      "PairKey": "interactive:draw-object-formatting:draw-tab-baseline-seeded-objects",
+      "ScenarioId": "draw-object-formatting:visual-evidence",
+      "State": "draw-tab-baseline-seeded-objects",
+      "Surface": "Draw ribbon",
+      "FileName": "freex_draw_object_formatting_draw_tab_baseline",
+      "OutputFileName": "freex_draw_object_formatting_draw_tab_baseline.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760,
+      "SheetName": "Sheet1",
+      "ActiveRange": "B3:B3",
+      "SelectedObjectKind": "Shape",
+      "SelectedObjectName": "Tour Process Shape",
+      "ShapeCount": 1,
+      "PictureCount": 1,
+      "TextBoxCount": 1,
+      "DrawingZOrder": [
+        "Shape:aaaaaaaa111141118111aaaaaaaaaaaa",
+        "Picture:bbbbbbbb222242228222bbbbbbbbbbbb",
+        "TextBox:cccccccc333343338333cccccccccccc"
+      ],
+      "CommandRows": [
+        "UI-CAT-DRAW-001",
+        "UI-CMD-DRAW-001",
+        "UI-CMD-DRAW-002",
+        "UI-CMD-DRAW-003"
+      ],
+      "MenuHeaders": [],
+      "EvidencePurpose": "Draw tab baseline shows Arrange and Format command groups with seeded shape, picture, and text-box objects visible on the worksheet."
+    },
+    {
+      "CaptureKey": "interactive:draw-object-formatting:shape-fill-color-picker",
+      "PairKey": "interactive:draw-object-formatting:shape-fill-color-picker",
+      "ScenarioId": "draw-object-formatting:visual-evidence",
+      "State": "shape-fill-color-picker",
+      "Surface": "Shape Fill",
+      "FileName": "freex_draw_object_formatting_shape_fill_color_picker",
+      "OutputFileName": "freex_draw_object_formatting_shape_fill_color_picker.png",
+      "CaptureMethod": "RenderTargetBitmap-color-picker-dialog-window",
+      "CaptureLogicalWidth": 500,
+      "CaptureLogicalHeight": 560,
+      "SheetName": "Sheet1",
+      "ActiveRange": "B3:B3",
+      "SelectedObjectKind": "Shape",
+      "SelectedObjectName": "Tour Process Shape",
+      "ShapeCount": 1,
+      "PictureCount": 1,
+      "TextBoxCount": 1,
+      "DrawingZOrder": [
+        "Shape:aaaaaaaa111141118111aaaaaaaaaaaa",
+        "Picture:bbbbbbbb222242228222bbbbbbbbbbbb",
+        "TextBox:cccccccc333343338333cccccccccccc"
+      ],
+      "CommandRows": [
+        "UI-CMD-DRAW-003"
+      ],
+      "MenuHeaders": [],
+      "EvidencePurpose": "Shape Fill color picker opens on the standard/theme/custom palette surface using the selected shape fill color."
+    },
+    {
+      "CaptureKey": "interactive:draw-object-formatting:object-outline-color-picker",
+      "PairKey": "interactive:draw-object-formatting:object-outline-color-picker",
+      "ScenarioId": "draw-object-formatting:visual-evidence",
+      "State": "object-outline-color-picker",
+      "Surface": "Object Outline",
+      "FileName": "freex_draw_object_formatting_object_outline_color_picker",
+      "OutputFileName": "freex_draw_object_formatting_object_outline_color_picker.png",
+      "CaptureMethod": "RenderTargetBitmap-color-picker-dialog-window",
+      "CaptureLogicalWidth": 500,
+      "CaptureLogicalHeight": 560,
+      "SheetName": "Sheet1",
+      "ActiveRange": "B3:B3",
+      "SelectedObjectKind": "Shape",
+      "SelectedObjectName": "Tour Process Shape",
+      "ShapeCount": 1,
+      "PictureCount": 1,
+      "TextBoxCount": 1,
+      "DrawingZOrder": [
+        "Shape:aaaaaaaa111141118111aaaaaaaaaaaa",
+        "Picture:bbbbbbbb222242228222bbbbbbbbbbbb",
+        "TextBox:cccccccc333343338333cccccccccccc"
+      ],
+      "CommandRows": [
+        "UI-CMD-DRAW-003"
+      ],
+      "MenuHeaders": [],
+      "EvidencePurpose": "Object Outline color picker opens against the selected drawing object\u0027s current outline color."
+    },
+    {
+      "CaptureKey": "interactive:draw-object-formatting:shape-gradient-dialog",
+      "PairKey": "interactive:draw-object-formatting:shape-gradient-dialog",
+      "ScenarioId": "draw-object-formatting:visual-evidence",
+      "State": "shape-gradient-dialog",
+      "Surface": "Shape Gradient",
+      "FileName": "freex_draw_object_formatting_shape_gradient_dialog",
+      "OutputFileName": "freex_draw_object_formatting_shape_gradient_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-shape-gradient-dialog-window",
+      "CaptureLogicalWidth": 420,
+      "CaptureLogicalHeight": 280,
+      "SheetName": "Sheet1",
+      "ActiveRange": "B3:B3",
+      "SelectedObjectKind": "Shape",
+      "SelectedObjectName": "Tour Process Shape",
+      "ShapeCount": 1,
+      "PictureCount": 1,
+      "TextBoxCount": 1,
+      "DrawingZOrder": [
+        "Shape:aaaaaaaa111141118111aaaaaaaaaaaa",
+        "Picture:bbbbbbbb222242228222bbbbbbbbbbbb",
+        "TextBox:cccccccc333343338333cccccccccccc"
+      ],
+      "CommandRows": [
+        "UI-CMD-DRAW-004"
+      ],
+      "MenuHeaders": [],
+      "EvidencePurpose": "Shape Gradient dialog shows start/end RGB stop inputs, color buttons, direction choices, and OK/Cancel."
+    },
+    {
+      "CaptureKey": "interactive:draw-object-formatting:shape-effects-dialog",
+      "PairKey": "interactive:draw-object-formatting:shape-effects-dialog",
+      "ScenarioId": "draw-object-formatting:visual-evidence",
+      "State": "shape-effects-dialog",
+      "Surface": "Shape Effects",
+      "FileName": "freex_draw_object_formatting_shape_effects_dialog",
+      "OutputFileName": "freex_draw_object_formatting_shape_effects_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-shape-effects-dialog-window",
+      "CaptureLogicalWidth": 380,
+      "CaptureLogicalHeight": 190,
+      "SheetName": "Sheet1",
+      "ActiveRange": "B3:B3",
+      "SelectedObjectKind": "Shape",
+      "SelectedObjectName": "Tour Process Shape",
+      "ShapeCount": 1,
+      "PictureCount": 1,
+      "TextBoxCount": 1,
+      "DrawingZOrder": [
+        "Shape:aaaaaaaa111141118111aaaaaaaaaaaa",
+        "Picture:bbbbbbbb222242228222bbbbbbbbbbbb",
+        "TextBox:cccccccc333343338333cccccccccccc"
+      ],
+      "CommandRows": [
+        "UI-CMD-DRAW-004"
+      ],
+      "MenuHeaders": [],
+      "EvidencePurpose": "Shape Effects dialog shows the current effect preset selector and description text."
+    },
+    {
+      "CaptureKey": "interactive:draw-object-formatting:crop-reset-crop-menu-opened",
+      "PairKey": "interactive:draw-object-formatting:crop-reset-crop-menu-opened",
+      "ScenarioId": "draw-object-formatting:visual-evidence",
+      "State": "crop-reset-crop-menu-opened",
+      "Surface": "Crop Picture menu",
+      "FileName": "freex_draw_object_formatting_crop_menu_opened",
+      "OutputFileName": "freex_draw_object_formatting_crop_menu_opened.png",
+      "CaptureMethod": "RenderTargetBitmap-draw-crop-context-menu",
+      "CaptureLogicalWidth": 0,
+      "CaptureLogicalHeight": 0,
+      "SheetName": "Sheet1",
+      "ActiveRange": "E5:E5",
+      "SelectedObjectKind": "Picture",
+      "SelectedObjectName": "Tour Picture Logo",
+      "ShapeCount": 1,
+      "PictureCount": 1,
+      "TextBoxCount": 1,
+      "DrawingZOrder": [
+        "Shape:aaaaaaaa111141118111aaaaaaaaaaaa",
+        "Picture:bbbbbbbb222242228222bbbbbbbbbbbb",
+        "TextBox:cccccccc333343338333cccccccccccc"
+      ],
+      "CommandRows": [
+        "UI-CMD-DRAW-004"
+      ],
+      "MenuHeaders": [
+        "Crop...",
+        "Reset Crop"
+      ],
+      "EvidencePurpose": "Crop Picture split menu exposes Crop and Reset Crop commands for the selected picture object."
+    },
+    {
+      "CaptureKey": "interactive:draw-object-formatting:object-size-dialog",
+      "PairKey": "interactive:draw-object-formatting:object-size-dialog",
+      "ScenarioId": "draw-object-formatting:visual-evidence",
+      "State": "object-size-dialog",
+      "Surface": "Object Size",
+      "FileName": "freex_draw_object_formatting_object_size_dialog",
+      "OutputFileName": "freex_draw_object_formatting_object_size_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-object-size-dialog-window",
+      "CaptureLogicalWidth": 360,
+      "CaptureLogicalHeight": 250,
+      "SheetName": "Sheet1",
+      "ActiveRange": "B3:B3",
+      "SelectedObjectKind": "Shape",
+      "SelectedObjectName": "Tour Process Shape",
+      "ShapeCount": 1,
+      "PictureCount": 1,
+      "TextBoxCount": 1,
+      "DrawingZOrder": [
+        "Shape:aaaaaaaa111141118111aaaaaaaaaaaa",
+        "Picture:bbbbbbbb222242228222bbbbbbbbbbbb",
+        "TextBox:cccccccc333343338333cccccccccccc"
+      ],
+      "CommandRows": [
+        "UI-CMD-DRAW-003"
+      ],
+      "MenuHeaders": [],
+      "EvidencePurpose": "Object Size dialog opens with the height box focused/select-all and lock-aspect-ratio visible for the selected shape."
+    },
+    {
+      "CaptureKey": "interactive:draw-object-formatting:format-picture-size-tab",
+      "PairKey": "interactive:draw-object-formatting:format-picture-size-tab",
+      "ScenarioId": "draw-object-formatting:visual-evidence",
+      "State": "format-picture-size-tab",
+      "Surface": "Format Picture",
+      "FileName": "freex_draw_object_formatting_picture_size_tab",
+      "OutputFileName": "freex_draw_object_formatting_picture_size_tab.png",
+      "CaptureMethod": "RenderTargetBitmap-format-picture-dialog-window",
+      "CaptureLogicalWidth": 480,
+      "CaptureLogicalHeight": 440,
+      "SheetName": "Sheet1",
+      "ActiveRange": "B3:B3",
+      "SelectedObjectKind": "Shape",
+      "SelectedObjectName": "Tour Process Shape",
+      "ShapeCount": 1,
+      "PictureCount": 1,
+      "TextBoxCount": 1,
+      "DrawingZOrder": [
+        "Shape:aaaaaaaa111141118111aaaaaaaaaaaa",
+        "Picture:bbbbbbbb222242228222bbbbbbbbbbbb",
+        "TextBox:cccccccc333343338333cccccccccccc"
+      ],
+      "CommandRows": [
+        "UI-CMD-DRAW-003",
+        "UI-CMD-DRAW-004"
+      ],
+      "MenuHeaders": [],
+      "EvidencePurpose": "Format Picture dialog Size tab shows width, height, rotation, lock aspect ratio, tabs, and OK/Cancel for the selected picture."
+    },
+    {
+      "CaptureKey": "interactive:draw-object-formatting:format-picture-alt-text-tab",
+      "PairKey": "interactive:draw-object-formatting:format-picture-alt-text-tab",
+      "ScenarioId": "draw-object-formatting:visual-evidence",
+      "State": "format-picture-alt-text-tab",
+      "Surface": "Format Picture",
+      "FileName": "freex_draw_object_formatting_picture_alt_text_tab",
+      "OutputFileName": "freex_draw_object_formatting_picture_alt_text_tab.png",
+      "CaptureMethod": "RenderTargetBitmap-format-picture-dialog-window",
+      "CaptureLogicalWidth": 480,
+      "CaptureLogicalHeight": 440,
+      "SheetName": "Sheet1",
+      "ActiveRange": "B3:B3",
+      "SelectedObjectKind": "Shape",
+      "SelectedObjectName": "Tour Process Shape",
+      "ShapeCount": 1,
+      "PictureCount": 1,
+      "TextBoxCount": 1,
+      "DrawingZOrder": [
+        "Shape:aaaaaaaa111141118111aaaaaaaaaaaa",
+        "Picture:bbbbbbbb222242228222bbbbbbbbbbbb",
+        "TextBox:cccccccc333343338333cccccccccccc"
+      ],
+      "CommandRows": [
+        "UI-CMD-DRAW-003"
+      ],
+      "MenuHeaders": [],
+      "EvidencePurpose": "Format Picture dialog Alt Text tab shows the seeded picture description field and dialog action buttons."
+    },
+    {
+      "CaptureKey": "interactive:draw-object-formatting:selection-pane-rename-visibility",
+      "PairKey": "interactive:draw-object-formatting:selection-pane-rename-visibility",
+      "ScenarioId": "draw-object-formatting:visual-evidence",
+      "State": "selection-pane-rename-visibility",
+      "Surface": "Selection Pane",
+      "FileName": "freex_draw_object_formatting_selection_pane_rename_visibility",
+      "OutputFileName": "freex_draw_object_formatting_selection_pane_rename_visibility.png",
+      "CaptureMethod": "RenderTargetBitmap-selection-pane-dialog-window",
+      "CaptureLogicalWidth": 380,
+      "CaptureLogicalHeight": 360,
+      "SheetName": "Sheet1",
+      "ActiveRange": "B3:B3",
+      "SelectedObjectKind": "Shape",
+      "SelectedObjectName": "Tour Process Shape",
+      "ShapeCount": 1,
+      "PictureCount": 1,
+      "TextBoxCount": 1,
+      "DrawingZOrder": [
+        "Shape:aaaaaaaa111141118111aaaaaaaaaaaa",
+        "Picture:bbbbbbbb222242228222bbbbbbbbbbbb",
+        "TextBox:cccccccc333343338333cccccccccccc"
+      ],
+      "CommandRows": [
+        "UI-CMD-DRAW-002",
+        "UI-CMD-DRAW-005"
+      ],
+      "MenuHeaders": [],
+      "EvidencePurpose": "Selection Pane dialog shows search/list state, a renamed object preview, visibility toggle state, show/hide all, bring/send, OK, and Cancel."
+    }
+  ],
+  "CoveredStates": [
+    "Draw tab baseline with Arrange and Format groups plus seeded visible shape, picture, and text-box objects.",
+    "Shape Fill and Object Outline color picker surfaces.",
+    "Shape Gradient and Shape Effects dialogs.",
+    "Crop/Reset Crop split-menu surface for a selected picture.",
+    "Object Size dialog default numeric-input focus/select-all surface.",
+    "Format Picture Size and Alt Text tabs for object size/rotation/crop/alt-text evidence.",
+    "Selection Pane list/search/rename/visibility/reorder controls with seeded drawing objects."
+  ],
+  "Limitations": [
+    "RenderTargetBitmap evidence only; it is not foreground CopyFromScreen proof.",
+    "The tour drives FreeX in process and captures WPF windows/menus without physical mouse, keyboard, keytip, drag-handle, or UIA invocation.",
+    "Color picker and dialog captures are visual states only; OK/Cancel/Escape, invalid input recovery, and command mutation from those dialogs remain open.",
+    "Picture insertion uses deterministic in-process placeholder bytes rather than opening the native Windows file picker.",
+    "Selection Pane rename and visibility states are previewed in the dialog before OK/apply; grouped-sheet propagation and persistence breadth remain covered by planner/command tests.",
+    "No paired Microsoft Excel screenshots are produced by this tool."
+  ]
+}
