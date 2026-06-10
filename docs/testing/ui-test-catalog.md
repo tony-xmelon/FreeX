@@ -739,6 +739,8 @@ Actual: `Insert Function` and `About FreeX` both exposed activation patterns and
 
 - 2026-06-10 guarded native/foreground attempt pass: `docs/parity/worker-foreground-native-attempts-2026-06-10.md` records a docs-only pass across the remaining hard-native/foreground gaps. Produced transient, foreground-guarded evidence for FreeX Save As, Excel AutoFilter, Excel Open, Page Layout output/background guard, Data Submitted Workflows, and Status Footer/zoom was inspected and then restored to preserve the checked-in artifact baseline. Excel main ribbon aborted on missing planned Draw tab after transient Home/Insert captures, FreeX main ribbon and FreeX Open blocked on unexpected foreground ownership, Excel Home Borders blocked before setup with FreeX foreground, Data Validation dropdown remains planned-but-blocked pending foreground popup input, and status zoom slider/Ctrl+wheel remain open because the existing tour uses guarded in-app render rather than physical wheel/drag.
 
+- 2026-06-10 S4/S6 grid/status pointer inventory: `docs/parity/ux-grid-status-pointer-s4-s6-2026-06-10.md` maps the remaining drag-select, autofill, row/column resize, split-divider, status zoom slider, and Ctrl/wheel mechanics to existing deterministic tests/tours and records that `tools/FreeX.ForegroundCapture` currently has no FreeX grid/status drag or wheel scenario. No foreground pointer input was synthesized; S4 and S6 remain open for guarded live mouse/drag/wheel/UIA RangeValue evidence.
+
 ## Current High-Risk Gaps
 
 | Gap | Why it matters |
