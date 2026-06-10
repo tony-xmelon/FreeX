@@ -1,0 +1,424 @@
+{
+  "Tool": "FREEX_DATA_SUBMITTED_WORKFLOWS_TOUR",
+  "EvidenceFamily": "data-submitted-workflows",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "data-submitted-workflows:submitted-command-evidence",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-data-submitted-workflows-20260610\\screenshots\\data-submitted-workflows-tour",
+  "OutputNaming": "freex_data_submitted_workflows_\u003CWorkflow\u003E_\u003CState\u003E.png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md#UI-CAT-DATA-001",
+  "CatalogRows": [
+    "UI-CAT-DATA-001",
+    "UI-CAT-DATA-002",
+    "UI-CAT-DATA-003",
+    "UI-CMD-DATA-002",
+    "UI-CMD-DATA-004",
+    "UI-CMD-DATA-005",
+    "UI-CMD-DATA-007"
+  ],
+  "SheetName": "Sheet1",
+  "SortRange": "A1:E9",
+  "FilterRange": "A1:E9",
+  "TextToColumnsRange": "A12:A14",
+  "ValidationRange": "A18:A20",
+  "SubtotalRange": "A23:C29",
+  "CaptureStatus": "partial-with-blocked-planned-items",
+  "CaptureMethod": "RenderTargetBitmap-window-full-with-real-workbook-commands",
+  "FocusGuard": {
+    "Required": false,
+    "Policy": "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 allowed deterministic in-process RenderTargetBitmap captures after real command execution; no global mouse, keyboard, keytip, native dialog, or UI Automation Invoke input is used."
+  },
+  "PlannedWorkflowCount": 7,
+  "ActualWorkflowCount": 6,
+  "PlannedCaptureCount": 9,
+  "ActualCaptureCount": 9,
+  "Captures": [
+    {
+      "CaptureKey": "data-submitted-workflows:sort-before-unsorted-data",
+      "PairKey": "interactive:data-submitted-workflows:sort-before-unsorted-data",
+      "CatalogRow": "UI-CMD-DATA-002",
+      "State": "sort-before-unsorted-data",
+      "Surface": "Worksheet grid",
+      "FileName": "freex_data_submitted_workflows_sort_before",
+      "OutputFileName": "freex_data_submitted_workflows_sort_before.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CommandRoute": "Seeded workbook state before command execution.",
+      "EvidenceSummary": "Seeded table before submitting SortCommand; Amount values are intentionally unsorted.",
+      "SelectedRange": "A1:E9",
+      "VisibleRows": [
+        "1:Region|Rep|Amount|Status|Month",
+        "2:South|Beth|3150|Closed|Feb",
+        "3:North|Ada|4200|Open|Jan",
+        "4:East|Drew|2800|Pending|Apr",
+        "5:West|Eli|6300|Open|May",
+        "6:North|Cora|5100|Open|Mar",
+        "7:East|Fay|2400|Closed|Jun",
+        "8:South|Gus|4700|Open|Jul",
+        "9:West|Hana|3900|Pending|Aug"
+      ],
+      "FilterHiddenRows": [],
+      "GroupHiddenRows": [],
+      "DataValidationRuleCount": 0,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "data-submitted-workflows:sort-after-amount-descending",
+      "PairKey": "interactive:data-submitted-workflows:sort-after-amount-descending",
+      "CatalogRow": "UI-CMD-DATA-002",
+      "State": "sort-after-amount-descending",
+      "Surface": "Worksheet grid",
+      "FileName": "freex_data_submitted_workflows_sort_after_amount_desc",
+      "OutputFileName": "freex_data_submitted_workflows_sort_after_amount_desc.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CommandRoute": "TryExecuteCommand(new SortCommand(sheet.Id, dataRowsRange, [new SortKey(2, ascending: false)]), \u0022Sort\u0022)",
+      "EvidenceSummary": "Worksheet grid after the real SortCommand sorted data rows by Amount descending while preserving the header row.",
+      "SelectedRange": "A1:E9",
+      "VisibleRows": [
+        "1:Region|Rep|Amount|Status|Month",
+        "2:West|Eli|6300|Open|May",
+        "3:North|Cora|5100|Open|Mar",
+        "4:South|Gus|4700|Open|Jul",
+        "5:North|Ada|4200|Open|Jan",
+        "6:West|Hana|3900|Pending|Aug",
+        "7:South|Beth|3150|Closed|Feb",
+        "8:East|Drew|2800|Pending|Apr",
+        "9:East|Fay|2400|Closed|Jun"
+      ],
+      "FilterHiddenRows": [],
+      "GroupHiddenRows": [],
+      "DataValidationRuleCount": 0,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "data-submitted-workflows:autofilter-applied-open",
+      "PairKey": "interactive:data-submitted-workflows:autofilter-applied-open",
+      "CatalogRow": "UI-CMD-DATA-002",
+      "State": "autofilter-applied-open",
+      "Surface": "Worksheet grid",
+      "FileName": "freex_data_submitted_workflows_autofilter_applied_open",
+      "OutputFileName": "freex_data_submitted_workflows_autofilter_applied_open.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CommandRoute": "TryExecuteRememberedAutoFilterCommand(\u0022Filter\u0022, tableRange, range =\u003E new FilterCommand(sheet.Id, range, 3, [\u0022Open\u0022]))",
+      "EvidenceSummary": "Worksheet grid after the real FilterCommand hid rows whose Status is not Open.",
+      "SelectedRange": "A1:E9",
+      "VisibleRows": [
+        "1:Region|Rep|Amount|Status|Month",
+        "2:West|Eli|6300|Open|May",
+        "3:North|Cora|5100|Open|Mar",
+        "4:South|Gus|4700|Open|Jul",
+        "5:North|Ada|4200|Open|Jan"
+      ],
+      "FilterHiddenRows": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "GroupHiddenRows": [],
+      "DataValidationRuleCount": 0,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "data-submitted-workflows:autofilter-cleared-all-rows-visible",
+      "PairKey": "interactive:data-submitted-workflows:autofilter-cleared-all-rows-visible",
+      "CatalogRow": "UI-CMD-DATA-002",
+      "State": "autofilter-cleared-all-rows-visible",
+      "Surface": "Worksheet grid",
+      "FileName": "freex_data_submitted_workflows_autofilter_cleared",
+      "OutputFileName": "freex_data_submitted_workflows_autofilter_cleared.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CommandRoute": "TryExecuteCommand(new FilterCommand(sheet.Id, tableRange, 3, []), \u0022Clear Filter\u0022)",
+      "EvidenceSummary": "Worksheet grid after the real clear-filter command restored all table rows.",
+      "SelectedRange": "A1:E9",
+      "VisibleRows": [
+        "1:Region|Rep|Amount|Status|Month",
+        "2:West|Eli|6300|Open|May",
+        "3:North|Cora|5100|Open|Mar",
+        "4:South|Gus|4700|Open|Jul",
+        "5:North|Ada|4200|Open|Jan",
+        "6:West|Hana|3900|Pending|Aug",
+        "7:South|Beth|3150|Closed|Feb",
+        "8:East|Drew|2800|Pending|Apr",
+        "9:East|Fay|2400|Closed|Jun"
+      ],
+      "FilterHiddenRows": [],
+      "GroupHiddenRows": [],
+      "DataValidationRuleCount": 0,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "data-submitted-workflows:autofilter-reapplied-open",
+      "PairKey": "interactive:data-submitted-workflows:autofilter-reapplied-open",
+      "CatalogRow": "UI-CMD-DATA-002",
+      "State": "autofilter-reapplied-open",
+      "Surface": "Worksheet grid",
+      "FileName": "freex_data_submitted_workflows_autofilter_reapplied_open",
+      "OutputFileName": "freex_data_submitted_workflows_autofilter_reapplied_open.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CommandRoute": "ReapplyAutoFilter() using the remembered FilterCommand factory",
+      "EvidenceSummary": "Worksheet grid after the host ReapplyAutoFilter path replayed the remembered Status=Open command.",
+      "SelectedRange": "A1:E9",
+      "VisibleRows": [
+        "1:Region|Rep|Amount|Status|Month",
+        "2:West|Eli|6300|Open|May",
+        "3:North|Cora|5100|Open|Mar",
+        "4:South|Gus|4700|Open|Jul",
+        "5:North|Ada|4200|Open|Jan"
+      ],
+      "FilterHiddenRows": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "GroupHiddenRows": [],
+      "DataValidationRuleCount": 0,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "data-submitted-workflows:text-to-columns-result",
+      "PairKey": "interactive:data-submitted-workflows:text-to-columns-result",
+      "CatalogRow": "UI-CMD-DATA-004",
+      "State": "text-to-columns-result",
+      "Surface": "Worksheet grid",
+      "FileName": "freex_data_submitted_workflows_text_to_columns_result",
+      "OutputFileName": "freex_data_submitted_workflows_text_to_columns_result.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CommandRoute": "CreateTextToColumnsCommand([sheet.Id], sourceRange, TextToColumnsDialog.CreateResult(...))",
+      "EvidenceSummary": "Worksheet grid after TextToColumnsCommandPlanner produced EditCellsCommand output at the requested destination.",
+      "SelectedRange": "A12:D14",
+      "VisibleRows": [
+        "12:North,125,Open|North|125|Open",
+        "13:West,98,Closed|West|98|Closed",
+        "14:East,143,Open|East|143|Open"
+      ],
+      "FilterHiddenRows": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "GroupHiddenRows": [],
+      "DataValidationRuleCount": 0,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "data-submitted-workflows:data-validation-invalid-cell-selected",
+      "PairKey": "interactive:data-submitted-workflows:data-validation-invalid-cell-selected",
+      "CatalogRow": "UI-CMD-DATA-005",
+      "State": "data-validation-invalid-cell-selected",
+      "Surface": "Worksheet grid",
+      "FileName": "freex_data_submitted_workflows_data_validation_invalid_selected",
+      "OutputFileName": "freex_data_submitted_workflows_data_validation_invalid_selected.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CommandRoute": "TryExecuteCommand(new SetDataValidationCommand(...)); CircleInvalidDataMenuItem_Click(...)",
+      "EvidenceSummary": "Worksheet grid after SetDataValidationCommand and the production Circle Invalid Data path selected the invalid Mars entry.",
+      "SelectedRange": "A18:A20",
+      "VisibleRows": [
+        "18:North",
+        "19:Mars",
+        "20:West"
+      ],
+      "FilterHiddenRows": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "GroupHiddenRows": [],
+      "DataValidationRuleCount": 1,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "data-submitted-workflows:subtotal-command-result",
+      "PairKey": "interactive:data-submitted-workflows:subtotal-command-result",
+      "CatalogRow": "UI-CMD-DATA-007",
+      "State": "subtotal-command-result",
+      "Surface": "Worksheet grid",
+      "FileName": "freex_data_submitted_workflows_subtotal_result",
+      "OutputFileName": "freex_data_submitted_workflows_subtotal_result.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CommandRoute": "TryExecuteCommand(new SubtotalCommand(...)); RecalculateIfAutomatic(outcome.AffectedCells)",
+      "EvidenceSummary": "Worksheet grid after SubtotalCommand inserted group subtotal rows and a grand-total row.",
+      "SelectedRange": "A23:C33",
+      "VisibleRows": [
+        "23:Subtotal Region|Rep|Amount",
+        "24:East|Drew|2800",
+        "25:East|Fay|2400",
+        "26:East Total||5200",
+        "27:North|Ada|4200",
+        "28:North|Cora|5100",
+        "29:North Total||",
+        "30:West|Eli|6300",
+        "31:West|Hana|3900",
+        "32:West Total||",
+        "33:Grand Total||24700"
+      ],
+      "FilterHiddenRows": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "GroupHiddenRows": [],
+      "DataValidationRuleCount": 1,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "data-submitted-workflows:remove-duplicates-result",
+      "PairKey": "interactive:data-submitted-workflows:remove-duplicates-result",
+      "CatalogRow": "UI-CMD-DATA-005",
+      "State": "remove-duplicates-result",
+      "Surface": "Worksheet grid",
+      "FileName": "freex_data_submitted_workflows_remove_duplicates_result",
+      "OutputFileName": "freex_data_submitted_workflows_remove_duplicates_result.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CommandRoute": "TryExecuteCommand(new RemoveDuplicateRowsCommand(sheet.Id, dataRowsRange, [0, 1, 2]), \u0022Remove Duplicates\u0022)",
+      "EvidenceSummary": "Worksheet grid after RemoveDuplicateRowsCommand removed 2 duplicate row.",
+      "SelectedRange": "A42:D47",
+      "VisibleRows": [
+        "42:Duplicate Region|Rep|Amount|Status",
+        "43:North|Ada|4200|Open",
+        "44:South|Beth|3150|Closed",
+        "45:West|Eli|6300|Open",
+        "46:|||",
+        "47:|||"
+      ],
+      "FilterHiddenRows": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "GroupHiddenRows": [],
+      "DataValidationRuleCount": 1,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    }
+  ],
+  "Workflows": [
+    {
+      "Name": "Sort mutation",
+      "CatalogRows": [
+        "UI-CAT-DATA-001",
+        "UI-CMD-DATA-002"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "TryExecuteCommand(new SortCommand(...))",
+      "LimitationNote": "Captured through deterministic in-process command execution and RenderTargetBitmap; no global mouse, keytip, native dialog, or UI Automation Invoke input is synthesized.",
+      "CaptureKeys": [
+        "data-submitted-workflows:sort-before-unsorted-data",
+        "data-submitted-workflows:sort-after-amount-descending"
+      ]
+    },
+    {
+      "Name": "AutoFilter apply, clear, and reapply",
+      "CatalogRows": [
+        "UI-CAT-DATA-001",
+        "UI-CMD-DATA-002"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "TryExecuteRememberedAutoFilterCommand, FilterCommand clear, ReapplyAutoFilter",
+      "LimitationNote": "Captured through deterministic in-process command execution and RenderTargetBitmap; no global mouse, keytip, native dialog, or UI Automation Invoke input is synthesized.",
+      "CaptureKeys": [
+        "data-submitted-workflows:autofilter-applied-open",
+        "data-submitted-workflows:autofilter-cleared-all-rows-visible",
+        "data-submitted-workflows:autofilter-reapplied-open"
+      ]
+    },
+    {
+      "Name": "Text to Columns submitted result",
+      "CatalogRows": [
+        "UI-CAT-DATA-002",
+        "UI-CMD-DATA-004"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "CreateTextToColumnsCommand -\u003E EditCellsCommand",
+      "LimitationNote": "Captured through deterministic in-process command execution and RenderTargetBitmap; no global mouse, keytip, native dialog, or UI Automation Invoke input is synthesized.",
+      "CaptureKeys": [
+        "data-submitted-workflows:text-to-columns-result"
+      ]
+    },
+    {
+      "Name": "Data Validation invalid-data proof",
+      "CatalogRows": [
+        "UI-CAT-DATA-002",
+        "UI-CMD-DATA-005"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "SetDataValidationCommand plus CircleInvalidDataMenuItem_Click/DataValidationCirclePlanner",
+      "LimitationNote": "Captured through deterministic in-process command execution and RenderTargetBitmap; no global mouse, keytip, native dialog, or UI Automation Invoke input is synthesized.",
+      "CaptureKeys": [
+        "data-submitted-workflows:data-validation-invalid-cell-selected"
+      ]
+    },
+    {
+      "Name": "Subtotal submitted mutation",
+      "CatalogRows": [
+        "UI-CAT-DATA-003",
+        "UI-CMD-DATA-007"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "SubtotalCommand through TryExecuteCommand",
+      "LimitationNote": "Captured through deterministic in-process command execution and RenderTargetBitmap; no global mouse, keytip, native dialog, or UI Automation Invoke input is synthesized.",
+      "CaptureKeys": [
+        "data-submitted-workflows:subtotal-command-result"
+      ]
+    },
+    {
+      "Name": "Remove Duplicates submitted result",
+      "CatalogRows": [
+        "UI-CAT-DATA-002",
+        "UI-CMD-DATA-005"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "RemoveDuplicateRowsCommand through TryExecuteCommand",
+      "LimitationNote": "Captured through deterministic in-process command execution and RenderTargetBitmap; no global mouse, keytip, native dialog, or UI Automation Invoke input is synthesized.",
+      "CaptureKeys": [
+        "data-submitted-workflows:remove-duplicates-result"
+      ]
+    },
+    {
+      "Name": "Data Validation dropdown popup commit",
+      "CatalogRows": [
+        "UI-CAT-DATA-002",
+        "UI-CMD-DATA-005"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "planned-but-blocked",
+      "CommandRoute": "OpenActiveDropdown/ComboBox popup plus ValidationDropdown_SelectionChanged",
+      "LimitationNote": "The list dropdown is a WPF popup/ComboBox interaction path and requires foreground keyboard or mouse input to prove safely; this slice instead captures deterministic invalid-data proof through SetDataValidationCommand and Circle Invalid Data.",
+      "CaptureKeys": []
+    }
+  ],
+  "CoveredStates": [
+    "Sort before and after submitted SortCommand",
+    "AutoFilter applied, cleared, and reapplied visible-row states",
+    "Text to Columns submitted result grid",
+    "Data Validation invalid-cell selection through Circle Invalid Data",
+    "Subtotal submitted mutation result",
+    "Remove Duplicates submitted result"
+  ],
+  "Limitations": [
+    "This slice submits real FreeX command/service paths where they are deterministic in process.",
+    "The tour does not synthesize foreground mouse, keytip, dropdown keyboard, access-key, range-picker, or UI Automation Invoke workflows.",
+    "The AutoFilter clear capture uses the same FilterCommand clear path while preserving the remembered command factory so ReapplyAutoFilter can be captured in the same deterministic run.",
+    "The Data Validation proof captures invalid-data detection/selection rather than the foreground ComboBox dropdown popup or modal invalid-entry alert.",
+    "Remove Duplicates is seeded near the end of the sheet because the command deletes worksheet rows; the tour keeps that mutation isolated from earlier captures.",
+    "No Microsoft Excel counterpart screenshots are produced by this tool."
+  ]
+}
