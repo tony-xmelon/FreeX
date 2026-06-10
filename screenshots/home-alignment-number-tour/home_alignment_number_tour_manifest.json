@@ -1,0 +1,104 @@
+{
+  "Tool": "FREEX_HOME_ALIGNMENT_NUMBER_TOUR",
+  "EvidenceFamily": "home-ribbon",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "home:alignment-number",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-home-alignment-number-20260610\\screenshots\\home-alignment-number-tour",
+  "OutputNaming": "freex_home_alignment_*.png, freex_home_number_*.png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
+  "SheetName": "Sheet1",
+  "AlignmentRange": "A2:C4",
+  "NumberRange": "D2:D5",
+  "SampleFormats": [
+    "_($* #,##0.00_);_($* (#,##0.00);_($* \u0022-\u0022??_);_(@_)",
+    "0%",
+    "m/d/yyyy",
+    "[Red]#,##0.00;[Blue]-#,##0.00;0"
+  ],
+  "CaptureStatus": "complete",
+  "CaptureMethod": "RenderTargetBitmap-main-window-context-menu-and-dialogs",
+  "Pairing": {
+    "PairKeyPattern": "interactive:home-alignment-number:\u003CState\u003E",
+    "CounterpartSubject": "excel",
+    "CounterpartTool": "screenshot_excel.ps1",
+    "CounterpartOutputNaming": "interactive_home_alignment_number_\u003Cstate\u003E.png"
+  },
+  "Captures": [
+    {
+      "CaptureKey": "interactive:home-alignment-number:alignment-grid",
+      "PairKey": "interactive:home-alignment-number:alignment-grid",
+      "ScenarioId": "home:alignment-number",
+      "State": "alignment-grid",
+      "Surface": "window-full",
+      "FileName": "freex_home_alignment_grid_commands",
+      "OutputFileName": "freex_home_alignment_grid_commands.png",
+      "CounterpartFileName": "interactive_home_alignment_number_alignment_grid.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CaptureLogicalWidth": 1180,
+      "CaptureLogicalHeight": 760,
+      "EvidencePurpose": "Home Alignment group focused with rendered left/center/right, top/middle/bottom, wrap, indent, rotation, and merged-center worksheet examples."
+    },
+    {
+      "CaptureKey": "interactive:home-alignment-number:orientation-menu-opened",
+      "PairKey": "interactive:home-alignment-number:orientation-menu-opened",
+      "ScenarioId": "home:alignment-number",
+      "State": "orientation-menu-opened",
+      "Surface": "orientation-menu",
+      "FileName": "freex_home_alignment_orientation_menu_opened",
+      "OutputFileName": "freex_home_alignment_orientation_menu_opened.png",
+      "CounterpartFileName": "interactive_home_alignment_number_orientation_menu_opened.png",
+      "CaptureMethod": "RenderTargetBitmap-context-menu",
+      "CaptureLogicalWidth": 222,
+      "CaptureLogicalHeight": 138.66666666666666,
+      "EvidencePurpose": "Production Orientation menu opened from the Home Alignment group."
+    },
+    {
+      "CaptureKey": "interactive:home-alignment-number:number-format-grid",
+      "PairKey": "interactive:home-alignment-number:number-format-grid",
+      "ScenarioId": "home:alignment-number",
+      "State": "number-format-grid",
+      "Surface": "window-full",
+      "FileName": "freex_home_number_format_grid_commands",
+      "OutputFileName": "freex_home_number_format_grid_commands.png",
+      "CounterpartFileName": "interactive_home_alignment_number_number_format_grid.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CaptureLogicalWidth": 1180,
+      "CaptureLogicalHeight": 760,
+      "EvidencePurpose": "Home Number group focused with rendered Accounting, Percent, Short Date, and custom number format examples."
+    },
+    {
+      "CaptureKey": "interactive:home-alignment-number:format-cells-alignment-dialog",
+      "PairKey": "interactive:home-alignment-number:format-cells-alignment-dialog",
+      "ScenarioId": "home:alignment-number",
+      "State": "format-cells-alignment-dialog",
+      "Surface": "format-cells-dialog",
+      "FileName": "freex_home_alignment_format_cells_dialog",
+      "OutputFileName": "freex_home_alignment_format_cells_dialog.png",
+      "CounterpartFileName": "interactive_home_alignment_number_format_cells_alignment_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-format-cells-dialog",
+      "CaptureLogicalWidth": 700,
+      "CaptureLogicalHeight": 610,
+      "EvidencePurpose": "Format Cells dialog opened directly to the Alignment tab with wrap, shrink, indent, rotation, and distributed alignment state."
+    },
+    {
+      "CaptureKey": "interactive:home-alignment-number:format-cells-number-dialog",
+      "PairKey": "interactive:home-alignment-number:format-cells-number-dialog",
+      "ScenarioId": "home:alignment-number",
+      "State": "format-cells-number-dialog",
+      "Surface": "format-cells-dialog",
+      "FileName": "freex_home_number_format_cells_dialog",
+      "OutputFileName": "freex_home_number_format_cells_dialog.png",
+      "CounterpartFileName": "interactive_home_alignment_number_format_cells_number_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-format-cells-dialog",
+      "CaptureLogicalWidth": 700,
+      "CaptureLogicalHeight": 610,
+      "EvidencePurpose": "Format Cells dialog opened directly to the Number tab with a locale/custom date format scenario."
+    }
+  ],
+  "Limitations": [
+    "This in-app tour seeds worksheet cells, executes the production FreeX style command path, and captures WPF output with RenderTargetBitmap.",
+    "The paired Microsoft Excel transient captures remain a separate foreground-guarded capture set.",
+    "The tour covers visible Home Alignment and Number group command rendering, Orientation menu shape, and Format Cells Alignment/Number entry states; save/reload and locale-specific number-format fidelity remain follow-up verification."
+  ]
+}
