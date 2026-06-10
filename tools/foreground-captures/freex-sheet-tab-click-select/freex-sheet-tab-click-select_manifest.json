@@ -1,0 +1,69 @@
+{
+  "Scenario": "freex-sheet-tab-click-select",
+  "Subject": "freex",
+  "CaptureStatus": "complete",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s5-sheet-tab-pointer-20260610\\tools\\foreground-captures\\freex-sheet-tab-click-select\\freex-sheet-tab-click-select_20260610_180306.png",
+  "Window": {
+    "Handle": 34934174,
+    "ProcessId": 43624,
+    "Title": "Book1 - FreeX",
+    "ClassName": "HwndWrapper[FreeX.App.Host;;d977f6bc-100b-4669-a6d4-af1eabb278a6]",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 114,
+        "Y": 114
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1920,
+        "Height": 1080
+      },
+      "X": 114,
+      "Y": 114,
+      "Width": 1920,
+      "Height": 1080,
+      "Left": 114,
+      "Top": 114,
+      "Right": 2034,
+      "Bottom": 1194,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 43624,
+    "ExpectedHandle": 34934174,
+    "ForegroundWindow": {
+      "Handle": 34934174,
+      "ProcessId": 43624,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;d977f6bc-100b-4669-a6d4-af1eabb278a6]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 114,
+          "Y": 114
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1920,
+          "Height": 1080
+        },
+        "X": 114,
+        "Y": 114,
+        "Width": 1920,
+        "Height": 1080,
+        "Left": 114,
+        "Top": 114,
+        "Right": 2034,
+        "Bottom": 1194,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-10T18:03:06.8393779+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s5-sheet-tab-pointer-20260610\\tools\\foreground-captures\\freex-sheet-tab-click-select\\freex-sheet-tab-click-select_manifest.json",
+  "ResultValidation": "Created Sheet2 and Sheet3 through physical Insert Sheet button clicks, then physically left-clicked the Sheet2 tab. Screenshot should show Sheet2 selected in the tab strip."
+}
