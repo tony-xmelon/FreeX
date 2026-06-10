@@ -1,0 +1,146 @@
+{
+  "Tool": "FREEX_INSERT_OBJECTS_LINKS_TOUR",
+  "EvidenceFamily": "insert-objects-links-text",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "insert:objects-links-text",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-insert-objects-links-20260610\\screenshots\\insert-objects-links-tour",
+  "OutputNaming": "freex_insert_\u003CState\u003E.png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
+  "CatalogIds": [
+    "UI-CAT-INSERT-003",
+    "UI-CMD-INSERT-008",
+    "UI-CMD-INSERT-009",
+    "UI-CMD-INSERT-010"
+  ],
+  "CaptureStatus": "complete",
+  "CaptureMode": "background-render-opt-in",
+  "PlannedCaptureCount": 7,
+  "ActualCaptureCount": 7,
+  "Pairing": {
+    "PairKeyPattern": "interactive:insert-objects-links:\u003CState\u003E",
+    "CounterpartSubject": "manual-or-excel",
+    "CounterpartTool": "not-yet-wired",
+    "CounterpartOutputNaming": "not-yet-captured"
+  },
+  "FocusGuard": {
+    "Required": false,
+    "Policy": "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 allowed deterministic in-process RenderTargetBitmap captures; no global mouse, keyboard, or screen capture input is used."
+  },
+  "Captures": [
+    {
+      "CaptureKey": "insert-objects-links:hyperlink-dialog-address-focus",
+      "PairKey": "interactive:insert-objects-links:hyperlink-dialog-address-focus",
+      "ScenarioId": "insert:objects-links-text",
+      "State": "hyperlink-dialog-address-focus",
+      "FileName": "freex_insert_hyperlink_dialog_address_focus",
+      "OutputFileName": "freex_insert_hyperlink_dialog_address_focus.png",
+      "CounterpartFileName": "interactive_insert_objects_links_hyperlink_dialog_address_focus.png",
+      "EvidenceSummary": "Insert Hyperlink dialog opened with the address box as the initial focused/select-all target.",
+      "CommandRow": "UI-CMD-INSERT-009",
+      "CaptureMethod": "RenderTargetBitmap-hyperlink-dialog-window",
+      "CaptureLogicalWidth": 560,
+      "CaptureLogicalHeight": 300
+    },
+    {
+      "CaptureKey": "insert-objects-links:symbol-picker-opened",
+      "PairKey": "interactive:insert-objects-links:symbol-picker-opened",
+      "ScenarioId": "insert:objects-links-text",
+      "State": "symbol-picker-opened",
+      "FileName": "freex_insert_symbol_picker_opened",
+      "OutputFileName": "freex_insert_symbol_picker_opened.png",
+      "CounterpartFileName": "interactive_insert_objects_links_symbol_picker_opened.png",
+      "EvidenceSummary": "Symbol picker opened on the production Symbols tab/grid with insert/cancel actions visible.",
+      "CommandRow": "UI-CMD-INSERT-009",
+      "CaptureMethod": "RenderTargetBitmap-symbol-picker-dialog-window",
+      "CaptureLogicalWidth": 620,
+      "CaptureLogicalHeight": 500
+    },
+    {
+      "CaptureKey": "insert-objects-links:inserted-objects-grid-visuals",
+      "PairKey": "interactive:insert-objects-links:inserted-objects-grid-visuals",
+      "ScenarioId": "insert:objects-links-text",
+      "State": "inserted-objects-grid-visuals",
+      "FileName": "freex_insert_objects_grid_visuals",
+      "OutputFileName": "freex_insert_objects_grid_visuals.png",
+      "CounterpartFileName": "interactive_insert_objects_links_inserted_objects_grid_visuals.png",
+      "EvidenceSummary": "Worksheet visual state after applying model-backed hyperlink, rectangle shape, text box, picture placeholder, threaded comment, and note evidence.",
+      "CommandRow": "UI-CMD-INSERT-008",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CaptureLogicalWidth": 1100,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "insert-objects-links:new-threaded-comment-dialog",
+      "PairKey": "interactive:insert-objects-links:new-threaded-comment-dialog",
+      "ScenarioId": "insert:objects-links-text",
+      "State": "new-threaded-comment-dialog",
+      "FileName": "freex_insert_new_comment_dialog",
+      "OutputFileName": "freex_insert_new_comment_dialog.png",
+      "CounterpartFileName": "interactive_insert_objects_links_new_threaded_comment_dialog.png",
+      "EvidenceSummary": "New Comment dialog opened for D6 with the threaded-comment text box focused.",
+      "CommandRow": "UI-CMD-INSERT-010",
+      "CaptureMethod": "RenderTargetBitmap-threaded-comment-dialog-window",
+      "CaptureLogicalWidth": 480,
+      "CaptureLogicalHeight": 280
+    },
+    {
+      "CaptureKey": "insert-objects-links:new-note-dialog",
+      "PairKey": "interactive:insert-objects-links:new-note-dialog",
+      "ScenarioId": "insert:objects-links-text",
+      "State": "new-note-dialog",
+      "FileName": "freex_insert_new_note_dialog",
+      "OutputFileName": "freex_insert_new_note_dialog.png",
+      "CounterpartFileName": "interactive_insert_objects_links_new_note_dialog.png",
+      "EvidenceSummary": "New Note dialog opened for E6 with the note text box focused.",
+      "CommandRow": "UI-CMD-INSERT-010",
+      "CaptureMethod": "RenderTargetBitmap-note-dialog-window",
+      "CaptureLogicalWidth": 420,
+      "CaptureLogicalHeight": 170
+    },
+    {
+      "CaptureKey": "insert-objects-links:comments-list-surface",
+      "PairKey": "interactive:insert-objects-links:comments-list-surface",
+      "ScenarioId": "insert:objects-links-text",
+      "State": "comments-list-surface",
+      "FileName": "freex_insert_comments_list_surface",
+      "OutputFileName": "freex_insert_comments_list_surface.png",
+      "CounterpartFileName": "interactive_insert_objects_links_comments_list_surface.png",
+      "EvidenceSummary": "Review/Insert comments list surface showing the seeded threaded comment.",
+      "CommandRow": "UI-CMD-INSERT-010",
+      "CaptureMethod": "RenderTargetBitmap-comment-list-window",
+      "CaptureLogicalWidth": 520,
+      "CaptureLogicalHeight": 360
+    },
+    {
+      "CaptureKey": "insert-objects-links:notes-list-surface",
+      "PairKey": "interactive:insert-objects-links:notes-list-surface",
+      "ScenarioId": "insert:objects-links-text",
+      "State": "notes-list-surface",
+      "FileName": "freex_insert_notes_list_surface",
+      "OutputFileName": "freex_insert_notes_list_surface.png",
+      "CounterpartFileName": "interactive_insert_objects_links_notes_list_surface.png",
+      "EvidenceSummary": "Review/Insert notes list surface showing the seeded note.",
+      "CommandRow": "UI-CMD-INSERT-010",
+      "CaptureMethod": "RenderTargetBitmap-note-list-window",
+      "CaptureLogicalWidth": 520,
+      "CaptureLogicalHeight": 360
+    }
+  ],
+  "CoveredStates": [
+    "Insert Hyperlink dialog with address box default focus/select-all behavior",
+    "Symbol picker dialog with Symbols tab/grid and Insert/Cancel controls",
+    "Model-backed worksheet visuals for hyperlink, rectangle shape, text box, picture placeholder, threaded comment, and note",
+    "New Comment threaded-comment dialog",
+    "New Note text-entry dialog",
+    "Threaded comments list surface",
+    "Notes list surface"
+  ],
+  "Limitations": [
+    "This tour renders FreeX WPF surfaces in process with RenderTargetBitmap; it is not foreground CopyFromScreen or physical mouse/keytip/UIA proof.",
+    "The picture evidence uses the production InsertPictureCommand sizing/fallback path with deterministic placeholder bytes rather than opening the native Windows file picker.",
+    "Dialog captures show production initial states and focus targets but do not submit hyperlink, symbol, comment, or note dialogs through keyboard/mouse input.",
+    "The inserted worksheet object evidence is applied through command model calls so save/reload persistence and selection-handle drag evidence remain separate.",
+    "No paired Microsoft Excel screenshots are produced by this tool."
+  ]
+}
