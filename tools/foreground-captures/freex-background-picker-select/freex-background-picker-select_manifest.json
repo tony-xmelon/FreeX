@@ -1,0 +1,70 @@
+{
+  "Scenario": "freex-background-picker-select",
+  "Subject": "freex",
+  "CaptureStatus": "complete",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s3-native-dialog-continuations-20260610\\tools\\foreground-captures\\freex-background-picker-select\\freex-background-picker-select_20260610_175934.png",
+  "Window": {
+    "Handle": 15336714,
+    "ProcessId": 61096,
+    "Title": "Sheet Background",
+    "ClassName": "#32770",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 38,
+        "Y": 38
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1800,
+        "Height": 1080
+      },
+      "X": 38,
+      "Y": 38,
+      "Width": 1800,
+      "Height": 1080,
+      "Left": 38,
+      "Top": 38,
+      "Right": 1838,
+      "Bottom": 1118,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 61096,
+    "ExpectedHandle": 3018578,
+    "ForegroundWindow": {
+      "Handle": 3018578,
+      "ProcessId": 61096,
+      "Title": "Book1* - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;56eecf90-5297-4a56-87d9-aee89d1ed5b2]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 38,
+          "Y": 38
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1920,
+          "Height": 1080
+        },
+        "X": 38,
+        "Y": 38,
+        "Width": 1920,
+        "Height": 1080,
+        "Left": 38,
+        "Top": 38,
+        "Right": 1958,
+        "Bottom": 1118,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-10T17:59:34.9402128+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s3-native-dialog-continuations-20260610\\tools\\foreground-captures\\freex-background-picker-select\\freex-background-picker-select_manifest.json",
+  "ResultValidation": "Selected supported PNG background path and returned focus to FreeX: E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s3-native-dialog-continuations-20260610\\tools\\foreground-captures\\s3-sheet-background.png",
+  "ContinuationScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s3-native-dialog-continuations-20260610\\tools\\foreground-captures\\freex-background-picker-select\\freex-background-picker-select_continuation_20260610_175936.png"
+}
