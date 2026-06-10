@@ -13,7 +13,7 @@ This pass inventories the remaining pointer-only closeout work for:
 - S4 grid pointer mechanics: drag select, autofill, row/column resize, split divider drag, split-pane mini-scrollbar/wheel routing, and Ctrl/wheel-related grid behavior.
 - S6 status/footer pointer mechanics: status view shortcut buttons, zoom out/in buttons, zoom text/slider, status slider drag, Ctrl+wheel zoom, and status/footer accessibility routes.
 
-The initial inventory made no production code changes and inspected `tools/FreeX.ForegroundCapture/Program.cs` only far enough to confirm supported scenarios. The follow-up S6 foreground expansion edits that harness to add guarded status/footer scenarios and retained artifacts.
+The initial inventory made no production code changes and inspected `tools/FreeX.ForegroundCapture/Program.cs` only far enough to confirm supported scenarios. Follow-up S6 and S4 foreground expansions edit that harness to add guarded, result-validated scenarios and retained artifacts.
 
 ## Existing Deterministic Coverage
 
@@ -21,11 +21,11 @@ The initial inventory made no production code changes and inspected `tools/FreeX
 |---|---|---|
 | Drag selection | `MainWindowMouseSelectionSourceTests.*` source guards cover cell/header mouse down, drag extension, Shift/Ctrl range behavior, deferred refresh, edge auto-scroll, mouse-up ordering, and lost-capture cleanup. `UI-CAT-GRID-001` also has `FREEX_GRID_SELECTION_EDITING_TOUR` deterministic selected-cell/range/row/column/filtered viewport evidence. | Live WPF click/drag with per-action foreground validation, visible selection rectangle/status stats after physical drag, Excel-paired comparison. |
 | Autofill handle | `GridViewAutofillTests` covers handle hit testing, axis constraint, above/left/below/right fill ranges, completed selection ranges, drag target math, edge auto-scroll intent, and cursor source guard. `MainWindowAutofillSelectionSourceTests` verifies successful autofill selects the completed source-plus-fill range. | Physical fill-handle drag, visual fill preview, committed values/series options, edge-scroll behavior under real drag, Excel-paired comparison. |
-| Row/column resize | `GridResizeHitPlannerTests`, `GridResizeSizePlannerTests`, `GridViewPointerCursorTests`, and `MainWindowMouseResizeTests` cover header edge hit bands, collapsed hidden-boundary unhide targeting, preview/commit clamp behavior including zero-size hide, double-click AutoFit routes, undo/cancel behavior, and resize capture/cursor cleanup. `docs/parity/subagent-grid-pointer-mechanics-2026-06-07.md` records the prior implementation slice and verification. | Physical resize drag and double-click AutoFit screenshots with foreground CopyFromScreen or equivalent guarded evidence; exact pixel-to-character parity still needs manual Excel pairing. |
+| Row/column resize | `GridResizeHitPlannerTests`, `GridResizeSizePlannerTests`, `GridViewPointerCursorTests`, and `MainWindowMouseResizeTests` cover header edge hit bands, collapsed hidden-boundary unhide targeting, preview/commit clamp behavior including zero-size hide, double-click AutoFit routes, undo/cancel behavior, and resize capture/cursor cleanup. `docs/parity/subagent-grid-pointer-mechanics-2026-06-07.md` records the prior implementation slice and verification. `tools/FreeX.ForegroundCapture` now retains guarded physical row/column resize drag proof with UIA cell-bound validation. | Double-click AutoFit foreground proof, hidden-boundary foreground breadth, exact pixel-to-character parity, and Excel pairing remain. |
 | Split divider drag | `GridViewSplitPaneLayoutTests.HitTesting`, `GridViewSplitPaneLayoutTests.Scrollbars`, `GridViewPointerCursorTests`, `ViewportScrollCalculatorTests`, and `FREEX_VIEW_WORKFLOWS_TOUR` cover split state, divider hit testing, drag target math, split mini-scrollbars, wheel target routing, and deterministic split result/persistence captures. The View Workflows manifest intentionally records `physical-split-divider-drag` as planned-but-blocked. | Physical split-divider drag, active-pane scroll proof, split mini-scrollbar drag, synchronous scrolling/window arrangement foreground proof. |
 | Status view shortcut/buttons | `StatusBarLayoutTests` covers footer view shortcut commands, F6/footer focus traversal, status zoom focus order, and stable visual alignment. `FREEX_STATUS_FOOTER_INTERACTIONS_TOUR` captures view shortcut click-result states by raising WPF button click events through production handlers. `tools/FreeX.ForegroundCapture` now retains physical foreground Zoom In and Zoom Out button click proof with UIA result validation. | Footer view shortcut physical clicks, zoom percentage/dialog physical click proof, min/max foreground breadth, and Excel-paired status button behavior remain. |
 | Status zoom slider | `ZoomLevelMapperTests`, `ZoomSelectionPlannerTests`, `StatusBarLayoutTests`, `UiAutomationCatalogSnapshotTests`, `FREEX_STATUS_FOOTER_TOUR`, and `FREEX_STATUS_FOOTER_INTERACTIONS_TOUR` cover zoom range mapping, dialog/custom zoom planning, keyboard focus metadata, UIA RangeValue exposure, representative 10/100/400 slider values, and button/custom route result states. `tools/FreeX.ForegroundCapture` now retains physical slider drag proof and native UIA `RangeValue.SetValue(150)` proof with guarded foreground ownership and UIA result validation. | Shift/ordinary wheel distinctions, min/max foreground breadth, and Excel-paired status slider behavior remain. |
-| Ctrl/wheel and ordinary wheel | `ViewportScrollCalculatorTests` covers normalized wheel deltas, high-resolution touchpad deltas, split-pane wheel target routing, and scrollbar extent calculations. `docs/parity/subagent-grid-pointer-mechanics-2026-06-07.md` records ordinary wheel as covered by source/calculator tests. `tools/FreeX.ForegroundCapture` now retains Ctrl+wheel-over-grid foreground proof with slider `110` and visible zoom text about `130%`. | Physical ordinary wheel, Shift-wheel, touchpad/hardware parity evidence, and Excel-paired wheel behavior remain. |
+| Ctrl/wheel and ordinary wheel | `ViewportScrollCalculatorTests` covers normalized wheel deltas, high-resolution touchpad deltas, split-pane wheel target routing, and scrollbar extent calculations. `docs/parity/subagent-grid-pointer-mechanics-2026-06-07.md` records ordinary wheel as covered by source/calculator tests. `tools/FreeX.ForegroundCapture` now retains Ctrl+wheel-over-grid foreground proof with slider `110` and visible zoom text about `130%`, plus ordinary wheel and Shift+wheel foreground proof with vertical/horizontal scrollbar validation. | Touchpad/hardware parity evidence, split-pane wheel foreground proof, and Excel-paired wheel behavior remain. |
 
 ## Foreground Evidence Attempt
 
@@ -62,10 +62,25 @@ A follow-up S6 pass extended `tools/FreeX.ForegroundCapture` with guarded, resul
 | `freex-status-zoom-slider-rangevalue-set` | Closed native UIA `RangeValue.SetValue(150)` with visible zoom text about `250%`. |
 | `freex-status-ctrl-wheel-grid-zoom` | Closed Ctrl+wheel-over-grid zoom with slider `110` and visible zoom text about `130%`. |
 
+## S4 Foreground Expansion
+
+This checkpoint extended `tools/FreeX.ForegroundCapture` only for stable S4 foreground scenarios that completed with guarded CopyFromScreen PNGs and result validation:
+
+| Scenario | Result |
+|---|---|
+| `freex-grid-row-column-resize` | Closed physical column-header and row-header resize drags; retained `tools/foreground-captures/freex-grid-row-column-resize/freex-grid-row-column-resize_20260610_180152.png` and manifest validation `A1 width 96->134, height 30->48`. |
+| `freex-grid-wheel-scroll` | Closed ordinary wheel plus Shift+wheel over the worksheet grid; retained `tools/foreground-captures/freex-grid-wheel-scroll/freex-grid-wheel-scroll_20260610_180244.png` and manifest validation `vertical scrollbar 1->10`, `horizontal scrollbar 1->10`. |
+
+Blocked S4 attempts were discarded rather than retained:
+
+- `freex-grid-drag-select` with stricter UIA selection validation blocked because `Cell_B2` was not reported selected after the A1:C4 physical drag; the prior partial drag-select artifact remains the only retained drag-select evidence.
+- `freex-grid-autofill-handle` blocked once on launch/window detection before usable input; no artifact retained.
+- `freex-grid-split-divider-drag` blocked because the Name Box was not discoverable through UIA in that launch state; no artifact retained.
+
 ## Remaining Blockers
 
-- The foreground harness needs explicit FreeX grid/status scenarios that can compute target coordinates from the live WPF/UIA tree, verify FreeX owns foreground before each action, synthesize bounded drag/wheel/UIA input, and discard artifacts on any guard failure.
-- S4 remains open for live drag select, fill-handle drag, resize drag/double-click AutoFit, split-divider drag, split mini-scrollbar drag, wheel/Shift-wheel, and Excel-paired screenshots.
+- The foreground harness still needs more explicit FreeX grid/status scenarios that can compute target coordinates from the live WPF/UIA tree, verify FreeX owns foreground before each action, synthesize bounded drag/wheel/UIA input, and discard artifacts on any guard failure.
+- S4 remains open for validated live cell-range drag select, fill-handle drag, double-click AutoFit, hidden-boundary resize foreground breadth, split-divider drag, split mini-scrollbar drag, split-pane wheel routing, touchpad/hardware wheel parity, and Excel-paired screenshots.
 - S6 remains open for footer view shortcut physical clicks, zoom percentage/dialog physical click proof, Shift/ordinary wheel distinctions, min/max foreground breadth, Ctrl+Alt+=/-, and Excel-paired status/footer evidence.
 - Existing deterministic tours are useful result-state evidence but are not OS foreground CopyFromScreen proof; several intentionally use RenderTargetBitmap and production command/session routes instead of physical pointer input.
 

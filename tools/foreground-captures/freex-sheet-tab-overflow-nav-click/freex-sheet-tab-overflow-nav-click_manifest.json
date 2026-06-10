@@ -1,0 +1,69 @@
+{
+  "Scenario": "freex-sheet-tab-overflow-nav-click",
+  "Subject": "freex",
+  "CaptureStatus": "complete",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s5-sheet-tab-pointer-20260610\\tools\\foreground-captures\\freex-sheet-tab-overflow-nav-click\\freex-sheet-tab-overflow-nav-click_20260610_181033.png",
+  "Window": {
+    "Handle": 40108128,
+    "ProcessId": 91308,
+    "Title": "Book1 - FreeX",
+    "ClassName": "HwndWrapper[FreeX.App.Host;;e17be263-0b7c-4c71-a39a-62e13ae89b45]",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 266,
+        "Y": 266
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1920,
+        "Height": 1080
+      },
+      "X": 266,
+      "Y": 266,
+      "Width": 1920,
+      "Height": 1080,
+      "Left": 266,
+      "Top": 266,
+      "Right": 2186,
+      "Bottom": 1346,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 91308,
+    "ExpectedHandle": 40108128,
+    "ForegroundWindow": {
+      "Handle": 40108128,
+      "ProcessId": 91308,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;e17be263-0b7c-4c71-a39a-62e13ae89b45]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 266,
+          "Y": 266
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1920,
+          "Height": 1080
+        },
+        "X": 266,
+        "Y": 266,
+        "Width": 1920,
+        "Height": 1080,
+        "Left": 266,
+        "Top": 266,
+        "Right": 2186,
+        "Bottom": 1346,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-10T18:10:33.499295+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s5-sheet-tab-pointer-20260610\\tools\\foreground-captures\\freex-sheet-tab-overflow-nav-click\\freex-sheet-tab-overflow-nav-click_manifest.json",
+  "ResultValidation": "Created Sheet2-Sheet8 through physical Insert Sheet button clicks, then physically clicked the visible Scroll Tabs Right overflow navigation button."
+}
