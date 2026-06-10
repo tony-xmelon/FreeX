@@ -1,0 +1,79 @@
+﻿{
+    "Tool":  "FREEX_EXCEL_AUTOFILTER_FLYOUT_TOUR",
+    "EvidenceFamily":  "popup",
+    "EvidenceSubject":  "excel",
+    "EvidenceApp":  "Microsoft Excel",
+    "OutputDirectory":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-excel-popup-evidence-20260610\\screenshots_excel\\autofilter-flyout-tour",
+    "OutputNaming":  "interactive_table_autofilter_dropdown_opened.png",
+    "CatalogEvidenceTarget":  "docs/testing/ui-test-catalog.md",
+    "HeaderCell":  "A1",
+    "HeaderText":  "score",
+    "AutoFilterRange":  "A1:D6",
+    "FilterColumnOffset":  0,
+    "CaptureStatus":  "complete",
+    "CaptureMethod":  "popup-window-rectangle",
+    "ForegroundGuard":  {
+                            "Required":  true,
+                            "ExpectedProcessId":  41092,
+                            "ExpectedWindowTitle":  "Book1 - Excel",
+                            "Policy":  "Seed through Excel automation, then abort and clear AutoFilter flyout evidence unless Excel owns foreground immediately before the header-arrow click and screen capture."
+                        },
+    "Pairing":  {
+                    "PairKeyPattern":  "interactive:table-autofilter-dropdown:\u003cState\u003e",
+                    "PairKey":  "interactive:table-autofilter-dropdown:opened",
+                    "CounterpartSubject":  "freex",
+                    "CounterpartTool":  "FREEX_AUTOFILTER_FLYOUT_TOUR",
+                    "CounterpartFileName":  "freex_table_autofilter_dropdown.png"
+                },
+    "Scenario":  {
+                     "ScenarioId":  "popup:table-autofilter-dropdown",
+                     "ScenarioFileName":  "table_autofilter_dropdown",
+                     "State":  "opened",
+                     "HeaderCell":  "A1",
+                     "HeaderText":  "score",
+                     "SampleRange":  "A1:D6",
+                     "SampleValues":  [
+                                          "1",
+                                          "2",
+                                          "3",
+                                          "4",
+                                          "(Blanks)"
+                                      ],
+                     "Trigger":  "Excel COM seeds the sample range, selects A1, and a foreground-guarded header-arrow click opens the AutoFilter dropdown."
+                 },
+    "WindowBounds":  {
+                         "Left":  0,
+                         "Top":  380,
+                         "Right":  401,
+                         "Bottom":  1198,
+                         "Width":  401,
+                         "Height":  818
+                     },
+    "PopupBounds":  {
+                        "Handle":  "28052042",
+                        "ClassName":  "Net UI Tool Window",
+                        "Title":  "",
+                        "Left":  0,
+                        "Top":  380,
+                        "Right":  401,
+                        "Bottom":  1198,
+                        "Width":  401,
+                        "Height":  818
+                    },
+    "Captures":  [
+                     {
+                         "CaptureSequence":  1,
+                         "CaptureKey":  "interactive:table-autofilter-dropdown:opened",
+                         "PairKey":  "interactive:table-autofilter-dropdown:opened",
+                         "EvidenceSubject":  "excel",
+                         "CounterpartSubject":  "freex",
+                         "CounterpartFileName":  "freex_table_autofilter_dropdown.png",
+                         "FileName":  "interactive_table_autofilter_dropdown_opened.png",
+                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-excel-popup-evidence-20260610\\screenshots_excel\\autofilter-flyout-tour\\interactive_table_autofilter_dropdown_opened.png",
+                         "Width":  401,
+                         "Height":  818,
+                         "CaptureMethod":  "popup-window-rectangle",
+                         "CaptureStatus":  "complete"
+                     }
+                 ]
+}
