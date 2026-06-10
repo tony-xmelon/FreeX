@@ -4,7 +4,7 @@
   "EvidenceSubject": "freex",
   "EvidenceApp": "FreeX",
   "ScenarioId": "qat:undo-redo",
-  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-qat-screenshots-20260609\\screenshots\\qat-undo-redo-tour",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-accent-chrome-sweep-20260610\\screenshots\\qat-undo-redo-tour",
   "OutputNaming": "freex_qat_\u003CState\u003E.png",
   "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
   "SelectedCell": "A1",
