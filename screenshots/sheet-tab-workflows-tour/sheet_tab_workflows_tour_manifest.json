@@ -1,0 +1,661 @@
+{
+  "Tool": "FREEX_SHEET_TAB_WORKFLOWS_TOUR",
+  "EvidenceFamily": "sheet-tab-workflows",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "sheet-tab-workflows:submitted-result-and-persistence-evidence",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-sheet-tab-workflows-20260610\\screenshots\\sheet-tab-workflows-tour",
+  "OutputNaming": "freex_sheet_tab_workflows_\u003CState\u003E.png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md#UI-CAT-CONTEXT-002",
+  "CatalogRows": [
+    "UI-CAT-SHEETTAB-001A",
+    "UI-CAT-SHEETTAB-001B",
+    "UI-CAT-SHEETTAB-001C",
+    "UI-CAT-SHEETTAB-001D",
+    "UI-CAT-SHEETTAB-002A-J"
+  ],
+  "SavedWorkbookPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-sheet-tab-workflows-20260610\\screenshots\\sheet-tab-workflows-tour\\freex_sheet_tab_workflows_persisted.xlsx",
+  "SavedWorkbookExists": true,
+  "CaptureStatus": "complete-with-foreground-input-limitations",
+  "CaptureMethod": "RenderTargetBitmap-main-window-with-real-host-command-and-save-open-paths",
+  "FocusGuard": {
+    "Required": false,
+    "Policy": "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 allowed deterministic in-process RenderTargetBitmap captures after real host command/save/open execution; no global mouse, keyboard, keytip, native dialog, or UI Automation Invoke input is used."
+  },
+  "PlannedWorkflowCount": 10,
+  "ActualWorkflowCount": 10,
+  "PlannedCaptureCount": 11,
+  "ActualCaptureCount": 11,
+  "PlannedCaptureKeys": [
+    "seeded-before-workflows",
+    "insert-sheet-result",
+    "rename-submitted-result",
+    "move-or-copy-result",
+    "tab-color-applied-result",
+    "hide-sheet-result",
+    "unhide-sheet-result",
+    "select-all-sheets-result",
+    "ungroup-sheets-result",
+    "save-persistence-path-result",
+    "reopened-persistence-result"
+  ],
+  "ActualCaptureKeys": [
+    "seeded-before-workflows",
+    "insert-sheet-result",
+    "rename-submitted-result",
+    "move-or-copy-result",
+    "tab-color-applied-result",
+    "hide-sheet-result",
+    "unhide-sheet-result",
+    "select-all-sheets-result",
+    "ungroup-sheets-result",
+    "save-persistence-path-result",
+    "reopened-persistence-result"
+  ],
+  "CommandRoutesUsed": [
+    "Setup seeded workbook; no submitted command yet.",
+    "InsertNewSheet() -\u003E CommandBus.ExecuteRepeatable(AddSheetCommand)",
+    "RenameSheetCommand(insertedSheet.Id, \u0022Submitted Plan\u0022)",
+    "DuplicateSheetCommand(sourceSheet.Id) -\u003E RenameSheetCommand(copySheet.Id, \u0022Summary Copy\u0022) -\u003E MoveSheetCommand(copyIndex, lastIndex)",
+    "SetSheetTabColorCommand(insertedSheet.Id, CellColor(255, 192, 0))",
+    "SetSheetHiddenCommand(archiveSheet.Id, hidden: true)",
+    "SetSheetHiddenCommand(archiveSheet.Id, hidden: false)",
+    "SheetCtxSelectAllSheets_Click -\u003E SheetGroupSelectionService.SelectAll",
+    "SheetCtxUngroupSheets_Click",
+    "SaveWorkbookToTargetAsync(FileSaveTarget(savedWorkbookPath, xlsxAdapter))",
+    "OpenFileAsync(savedWorkbookPath) -\u003E WorkbookOpenService/XlsxFileAdapter"
+  ],
+  "Captures": [
+    {
+      "CaptureKey": "sheet-tab-workflows:seeded-before-workflows",
+      "PairKey": "interactive:sheet-tab-workflows:seeded-before-workflows",
+      "State": "seeded-before-workflows",
+      "Surface": "main-window-grid-and-sheet-tab-strip",
+      "FileName": "freex_sheet_tab_workflows_seeded_before",
+      "OutputFileName": "freex_sheet_tab_workflows_seeded_before.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CommandRoute": "Setup seeded workbook; no submitted command yet.",
+      "EvidenceSummary": "Seeded workbook before submitted sheet-tab workflows, with Summary, Inputs, Archive, and Review sheets visible.",
+      "ActiveSheetName": "Summary",
+      "SheetOrder": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review"
+      ],
+      "VisibleSheetNames": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review"
+      ],
+      "HiddenSheetNames": [],
+      "GroupedSheetNames": [
+        "Summary"
+      ],
+      "ActiveTabColor": "91,155,213",
+      "CurrentFilePath": "",
+      "WorkbookDirty": false,
+      "CanUndo": false,
+      "CanRedo": false,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "sheet-tab-workflows:insert-sheet-result",
+      "PairKey": "interactive:sheet-tab-workflows:insert-sheet-result",
+      "State": "insert-sheet-result",
+      "Surface": "main-window-grid-and-sheet-tab-strip",
+      "FileName": "freex_sheet_tab_workflows_insert_sheet_result",
+      "OutputFileName": "freex_sheet_tab_workflows_insert_sheet_result.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CommandRoute": "InsertNewSheet() -\u003E CommandBus.ExecuteRepeatable(AddSheetCommand)",
+      "EvidenceSummary": "Insert Sheet result shows the newly added sheet selected through the host InsertNewSheet/AddSheetCommand path.",
+      "ActiveSheetName": "Sheet5",
+      "SheetOrder": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Sheet5"
+      ],
+      "VisibleSheetNames": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Sheet5"
+      ],
+      "HiddenSheetNames": [],
+      "GroupedSheetNames": [
+        "Sheet5"
+      ],
+      "ActiveTabColor": "",
+      "CurrentFilePath": "",
+      "WorkbookDirty": false,
+      "CanUndo": true,
+      "CanRedo": false,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "sheet-tab-workflows:rename-submitted-result",
+      "PairKey": "interactive:sheet-tab-workflows:rename-submitted-result",
+      "State": "rename-submitted-result",
+      "Surface": "main-window-grid-and-sheet-tab-strip",
+      "FileName": "freex_sheet_tab_workflows_rename_submitted_result",
+      "OutputFileName": "freex_sheet_tab_workflows_rename_submitted_result.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CommandRoute": "RenameSheetCommand(insertedSheet.Id, \u0022Submitted Plan\u0022)",
+      "EvidenceSummary": "Rename submitted result shows the inserted sheet renamed to Submitted Plan through RenameSheetCommand.",
+      "ActiveSheetName": "Submitted Plan",
+      "SheetOrder": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan"
+      ],
+      "VisibleSheetNames": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan"
+      ],
+      "HiddenSheetNames": [],
+      "GroupedSheetNames": [
+        "Submitted Plan"
+      ],
+      "ActiveTabColor": "",
+      "CurrentFilePath": "",
+      "WorkbookDirty": true,
+      "CanUndo": true,
+      "CanRedo": false,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "sheet-tab-workflows:move-or-copy-result",
+      "PairKey": "interactive:sheet-tab-workflows:move-or-copy-result",
+      "State": "move-or-copy-result",
+      "Surface": "main-window-grid-and-sheet-tab-strip",
+      "FileName": "freex_sheet_tab_workflows_move_or_copy_result",
+      "OutputFileName": "freex_sheet_tab_workflows_move_or_copy_result.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CommandRoute": "DuplicateSheetCommand(sourceSheet.Id) -\u003E RenameSheetCommand(copySheet.Id, \u0022Summary Copy\u0022) -\u003E MoveSheetCommand(copyIndex, lastIndex)",
+      "EvidenceSummary": "Move or Copy result shows a copied Summary sheet moved to the end of the workbook order through the same DuplicateSheetCommand and MoveSheetCommand path used after dialog submission.",
+      "ActiveSheetName": "Summary Copy",
+      "SheetOrder": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan",
+        "Summary Copy"
+      ],
+      "VisibleSheetNames": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan",
+        "Summary Copy"
+      ],
+      "HiddenSheetNames": [],
+      "GroupedSheetNames": [
+        "Summary Copy"
+      ],
+      "ActiveTabColor": "91,155,213",
+      "CurrentFilePath": "",
+      "WorkbookDirty": true,
+      "CanUndo": true,
+      "CanRedo": false,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "sheet-tab-workflows:tab-color-applied-result",
+      "PairKey": "interactive:sheet-tab-workflows:tab-color-applied-result",
+      "State": "tab-color-applied-result",
+      "Surface": "main-window-grid-and-sheet-tab-strip",
+      "FileName": "freex_sheet_tab_workflows_tab_color_applied",
+      "OutputFileName": "freex_sheet_tab_workflows_tab_color_applied.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CommandRoute": "SetSheetTabColorCommand(insertedSheet.Id, CellColor(255, 192, 0))",
+      "EvidenceSummary": "Tab Color result shows Submitted Plan with an applied amber tab color through SetSheetTabColorCommand.",
+      "ActiveSheetName": "Submitted Plan",
+      "SheetOrder": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan",
+        "Summary Copy"
+      ],
+      "VisibleSheetNames": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan",
+        "Summary Copy"
+      ],
+      "HiddenSheetNames": [],
+      "GroupedSheetNames": [
+        "Summary Copy"
+      ],
+      "ActiveTabColor": "255,192,0",
+      "CurrentFilePath": "",
+      "WorkbookDirty": true,
+      "CanUndo": true,
+      "CanRedo": false,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "sheet-tab-workflows:hide-sheet-result",
+      "PairKey": "interactive:sheet-tab-workflows:hide-sheet-result",
+      "State": "hide-sheet-result",
+      "Surface": "main-window-grid-and-sheet-tab-strip",
+      "FileName": "freex_sheet_tab_workflows_hide_sheet_result",
+      "OutputFileName": "freex_sheet_tab_workflows_hide_sheet_result.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CommandRoute": "SetSheetHiddenCommand(archiveSheet.Id, hidden: true)",
+      "EvidenceSummary": "Hide Sheet result excludes Archive from the visible tab strip while the workbook still contains the hidden sheet.",
+      "ActiveSheetName": "Submitted Plan",
+      "SheetOrder": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan",
+        "Summary Copy"
+      ],
+      "VisibleSheetNames": [
+        "Summary",
+        "Inputs",
+        "Review",
+        "Submitted Plan",
+        "Summary Copy"
+      ],
+      "HiddenSheetNames": [
+        "Archive"
+      ],
+      "GroupedSheetNames": [
+        "Submitted Plan"
+      ],
+      "ActiveTabColor": "255,192,0",
+      "CurrentFilePath": "",
+      "WorkbookDirty": true,
+      "CanUndo": true,
+      "CanRedo": false,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "sheet-tab-workflows:unhide-sheet-result",
+      "PairKey": "interactive:sheet-tab-workflows:unhide-sheet-result",
+      "State": "unhide-sheet-result",
+      "Surface": "main-window-grid-and-sheet-tab-strip",
+      "FileName": "freex_sheet_tab_workflows_unhide_sheet_result",
+      "OutputFileName": "freex_sheet_tab_workflows_unhide_sheet_result.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CommandRoute": "SetSheetHiddenCommand(archiveSheet.Id, hidden: false)",
+      "EvidenceSummary": "Unhide Sheet result restores Archive to the visible tab strip through SetSheetHiddenCommand.",
+      "ActiveSheetName": "Archive",
+      "SheetOrder": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan",
+        "Summary Copy"
+      ],
+      "VisibleSheetNames": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan",
+        "Summary Copy"
+      ],
+      "HiddenSheetNames": [],
+      "GroupedSheetNames": [
+        "Archive"
+      ],
+      "ActiveTabColor": "",
+      "CurrentFilePath": "",
+      "WorkbookDirty": true,
+      "CanUndo": true,
+      "CanRedo": false,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "sheet-tab-workflows:select-all-sheets-result",
+      "PairKey": "interactive:sheet-tab-workflows:select-all-sheets-result",
+      "State": "select-all-sheets-result",
+      "Surface": "main-window-grid-and-sheet-tab-strip",
+      "FileName": "freex_sheet_tab_workflows_select_all_sheets_result",
+      "OutputFileName": "freex_sheet_tab_workflows_select_all_sheets_result.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CommandRoute": "SheetCtxSelectAllSheets_Click -\u003E SheetGroupSelectionService.SelectAll",
+      "EvidenceSummary": "Select All Sheets result shows all visible sheets grouped through the production sheet-tab context handler.",
+      "ActiveSheetName": "Submitted Plan",
+      "SheetOrder": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan",
+        "Summary Copy"
+      ],
+      "VisibleSheetNames": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan",
+        "Summary Copy"
+      ],
+      "HiddenSheetNames": [],
+      "GroupedSheetNames": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan",
+        "Summary Copy"
+      ],
+      "ActiveTabColor": "255,192,0",
+      "CurrentFilePath": "",
+      "WorkbookDirty": true,
+      "CanUndo": true,
+      "CanRedo": false,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "sheet-tab-workflows:ungroup-sheets-result",
+      "PairKey": "interactive:sheet-tab-workflows:ungroup-sheets-result",
+      "State": "ungroup-sheets-result",
+      "Surface": "main-window-grid-and-sheet-tab-strip",
+      "FileName": "freex_sheet_tab_workflows_ungroup_sheets_result",
+      "OutputFileName": "freex_sheet_tab_workflows_ungroup_sheets_result.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CommandRoute": "SheetCtxUngroupSheets_Click",
+      "EvidenceSummary": "Ungroup Sheets result restores single-sheet targeting through the production sheet-tab context handler.",
+      "ActiveSheetName": "Submitted Plan",
+      "SheetOrder": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan",
+        "Summary Copy"
+      ],
+      "VisibleSheetNames": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan",
+        "Summary Copy"
+      ],
+      "HiddenSheetNames": [],
+      "GroupedSheetNames": [
+        "Submitted Plan"
+      ],
+      "ActiveTabColor": "255,192,0",
+      "CurrentFilePath": "",
+      "WorkbookDirty": true,
+      "CanUndo": true,
+      "CanRedo": false,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "sheet-tab-workflows:save-persistence-path-result",
+      "PairKey": "interactive:sheet-tab-workflows:save-persistence-path-result",
+      "State": "save-persistence-path-result",
+      "Surface": "main-window-grid-and-sheet-tab-strip",
+      "FileName": "freex_sheet_tab_workflows_save_persistence_path",
+      "OutputFileName": "freex_sheet_tab_workflows_save_persistence_path.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CommandRoute": "SaveWorkbookToTargetAsync(FileSaveTarget(savedWorkbookPath, xlsxAdapter))",
+      "EvidenceSummary": "Save result uses SaveWorkbookToTargetAsync to persist the renamed, moved, colored, and ungrouped workbook to an XLSX path.",
+      "ActiveSheetName": "Submitted Plan",
+      "SheetOrder": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan",
+        "Summary Copy"
+      ],
+      "VisibleSheetNames": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan",
+        "Summary Copy"
+      ],
+      "HiddenSheetNames": [],
+      "GroupedSheetNames": [
+        "Submitted Plan"
+      ],
+      "ActiveTabColor": "255,192,0",
+      "CurrentFilePath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-sheet-tab-workflows-20260610\\screenshots\\sheet-tab-workflows-tour\\freex_sheet_tab_workflows_persisted.xlsx",
+      "WorkbookDirty": false,
+      "CanUndo": true,
+      "CanRedo": false,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    },
+    {
+      "CaptureKey": "sheet-tab-workflows:reopened-persistence-result",
+      "PairKey": "interactive:sheet-tab-workflows:reopened-persistence-result",
+      "State": "reopened-persistence-result",
+      "Surface": "main-window-grid-and-sheet-tab-strip",
+      "FileName": "freex_sheet_tab_workflows_reopened_persistence_result",
+      "OutputFileName": "freex_sheet_tab_workflows_reopened_persistence_result.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CommandRoute": "OpenFileAsync(savedWorkbookPath) -\u003E WorkbookOpenService/XlsxFileAdapter",
+      "EvidenceSummary": "Reopened persistence result shows Submitted Plan, Summary Copy, restored Archive visibility, and Submitted Plan tab color after OpenFileAsync loaded the saved workbook.",
+      "ActiveSheetName": "Submitted Plan",
+      "SheetOrder": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan",
+        "Summary Copy"
+      ],
+      "VisibleSheetNames": [
+        "Summary",
+        "Inputs",
+        "Archive",
+        "Review",
+        "Submitted Plan",
+        "Summary Copy"
+      ],
+      "HiddenSheetNames": [],
+      "GroupedSheetNames": [
+        "Submitted Plan"
+      ],
+      "ActiveTabColor": "255,192,0",
+      "CurrentFilePath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-sheet-tab-workflows-20260610\\screenshots\\sheet-tab-workflows-tour\\freex_sheet_tab_workflows_persisted.xlsx",
+      "WorkbookDirty": false,
+      "CanUndo": false,
+      "CanRedo": false,
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760
+    }
+  ],
+  "Workflows": [
+    {
+      "Name": "Insert sheet submitted result",
+      "CatalogRows": [
+        "UI-CAT-SHEETTAB-001C",
+        "UI-CAT-SHEETTAB-002A-J"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "InsertNewSheet() -\u003E AddSheetCommand",
+      "LimitationNote": "Captured through deterministic in-process host command/session paths and RenderTargetBitmap; no global mouse, double-click, drag, right-click, keytip, access-key, or UI Automation input is synthesized.",
+      "CaptureKeys": [
+        "sheet-tab-workflows:insert-sheet-result"
+      ]
+    },
+    {
+      "Name": "Rename submitted result",
+      "CatalogRows": [
+        "UI-CAT-SHEETTAB-001C",
+        "UI-CAT-SHEETTAB-002A-J"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "RenameSheetCommand",
+      "LimitationNote": "Captured through deterministic in-process host command/session paths and RenderTargetBitmap; no global mouse, double-click, drag, right-click, keytip, access-key, or UI Automation input is synthesized.",
+      "CaptureKeys": [
+        "sheet-tab-workflows:rename-submitted-result"
+      ]
+    },
+    {
+      "Name": "Move or Copy create-copy result",
+      "CatalogRows": [
+        "UI-CAT-SHEETTAB-001B",
+        "UI-CAT-SHEETTAB-002A-J"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "DuplicateSheetCommand plus MoveSheetCommand",
+      "LimitationNote": "Captured through deterministic in-process host command/session paths and RenderTargetBitmap; no global mouse, double-click, drag, right-click, keytip, access-key, or UI Automation input is synthesized.",
+      "CaptureKeys": [
+        "sheet-tab-workflows:move-or-copy-result"
+      ]
+    },
+    {
+      "Name": "Tab color applied result",
+      "CatalogRows": [
+        "UI-CAT-SHEETTAB-001D",
+        "UI-CAT-SHEETTAB-002A-J"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "SetSheetTabColorCommand",
+      "LimitationNote": "Captured through deterministic in-process host command/session paths and RenderTargetBitmap; no global mouse, double-click, drag, right-click, keytip, access-key, or UI Automation input is synthesized.",
+      "CaptureKeys": [
+        "sheet-tab-workflows:tab-color-applied-result"
+      ]
+    },
+    {
+      "Name": "Hide sheet result",
+      "CatalogRows": [
+        "UI-CAT-SHEETTAB-001D",
+        "UI-CAT-SHEETTAB-002A-J"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "SetSheetHiddenCommand(hidden: true)",
+      "LimitationNote": "Captured through deterministic in-process host command/session paths and RenderTargetBitmap; no global mouse, double-click, drag, right-click, keytip, access-key, or UI Automation input is synthesized.",
+      "CaptureKeys": [
+        "sheet-tab-workflows:hide-sheet-result"
+      ]
+    },
+    {
+      "Name": "Unhide sheet result",
+      "CatalogRows": [
+        "UI-CAT-SHEETTAB-001D",
+        "UI-CAT-SHEETTAB-002A-J"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "SetSheetHiddenCommand(hidden: false)",
+      "LimitationNote": "Captured through deterministic in-process host command/session paths and RenderTargetBitmap; no global mouse, double-click, drag, right-click, keytip, access-key, or UI Automation input is synthesized.",
+      "CaptureKeys": [
+        "sheet-tab-workflows:unhide-sheet-result"
+      ]
+    },
+    {
+      "Name": "Select All Sheets grouping result",
+      "CatalogRows": [
+        "UI-CAT-SHEETTAB-001A",
+        "UI-CAT-SHEETTAB-001D",
+        "UI-CAT-SHEETTAB-002A-J"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "SheetCtxSelectAllSheets_Click",
+      "LimitationNote": "Captured through deterministic in-process host command/session paths and RenderTargetBitmap; no global mouse, double-click, drag, right-click, keytip, access-key, or UI Automation input is synthesized.",
+      "CaptureKeys": [
+        "sheet-tab-workflows:select-all-sheets-result"
+      ]
+    },
+    {
+      "Name": "Ungroup Sheets result",
+      "CatalogRows": [
+        "UI-CAT-SHEETTAB-001A",
+        "UI-CAT-SHEETTAB-001D",
+        "UI-CAT-SHEETTAB-002A-J"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "SheetCtxUngroupSheets_Click",
+      "LimitationNote": "Captured through deterministic in-process host command/session paths and RenderTargetBitmap; no global mouse, double-click, drag, right-click, keytip, access-key, or UI Automation input is synthesized.",
+      "CaptureKeys": [
+        "sheet-tab-workflows:ungroup-sheets-result"
+      ]
+    },
+    {
+      "Name": "Save persistence path",
+      "CatalogRows": [
+        "UI-CAT-SHEETTAB-001C",
+        "UI-CAT-SHEETTAB-001D",
+        "UI-CAT-SHEETTAB-002A-J"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "SaveWorkbookToTargetAsync",
+      "LimitationNote": "Captured through deterministic in-process host command/session paths and RenderTargetBitmap; no global mouse, double-click, drag, right-click, keytip, access-key, or UI Automation input is synthesized.",
+      "CaptureKeys": [
+        "sheet-tab-workflows:save-persistence-path-result"
+      ]
+    },
+    {
+      "Name": "Reopen persistence proof",
+      "CatalogRows": [
+        "UI-CAT-SHEETTAB-001C",
+        "UI-CAT-SHEETTAB-001D",
+        "UI-CAT-SHEETTAB-002A-J"
+      ],
+      "PlannedStatus": "planned",
+      "ActualStatus": "captured",
+      "CommandRoute": "OpenFileAsync -\u003E WorkbookOpenService/XlsxFileAdapter",
+      "LimitationNote": "Captured through deterministic in-process host command/session paths and RenderTargetBitmap; no global mouse, double-click, drag, right-click, keytip, access-key, or UI Automation input is synthesized.",
+      "CaptureKeys": [
+        "sheet-tab-workflows:reopened-persistence-result"
+      ]
+    }
+  ],
+  "CoveredStates": [
+    "Seeded workbook before submitted sheet-tab workflows",
+    "Insert Sheet selected the newly created sheet",
+    "Submitted rename result through RenameSheetCommand",
+    "Move or Copy create-copy result through DuplicateSheetCommand plus MoveSheetCommand",
+    "Tab Color applied through SetSheetTabColorCommand",
+    "Hide Sheet and Unhide Sheet result states through SetSheetHiddenCommand",
+    "Select All Sheets and Ungroup Sheets grouping states through production context handlers",
+    "SaveWorkbookToTargetAsync persistence path",
+    "OpenFileAsync reload proof for sheet name, order, visibility, and tab color"
+  ],
+  "Limitations": [
+    "This slice drives deterministic in-process command/session paths and captures the resulting WPF main window with RenderTargetBitmap.",
+    "It does not synthesize physical double-click rename, foreground right-click context-menu opening, tab drag reorder, Ctrl/Shift tab-click grouping, keytip/access-key traversal, native dialogs, UI Automation Invoke, or screen-wide capture input.",
+    "Move or Copy is represented by the submitted command result after DuplicateSheetCommand and MoveSheetCommand, matching the host path after the Move or Copy dialog returns rather than physically submitting the dialog.",
+    "Rename, tab color, hide, and unhide are captured after their backing commands execute; dialog foreground entry and color-picker foreground submission remain separate evidence gaps.",
+    "The persistence proof saves and reopens an XLSX through FreeX host services; no Microsoft Excel counterpart screenshots are produced by this tool."
+  ]
+}
