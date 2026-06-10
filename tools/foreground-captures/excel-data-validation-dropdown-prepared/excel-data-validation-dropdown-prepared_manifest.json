@@ -1,0 +1,41 @@
+{
+  "Scenario": "excel-data-validation-dropdown-prepared",
+  "Subject": "excel",
+  "CaptureStatus": "blocked",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 95240,
+    "ExpectedHandle": 11472950,
+    "ForegroundWindow": {
+      "Handle": 11472950,
+      "ProcessId": 95240,
+      "Title": "prepared-validation-list.xlsx  -  Read-Only - Excel",
+      "ClassName": "XLMAIN",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1200,
+          "Height": 960
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 1200,
+        "Height": 960,
+        "Left": 0,
+        "Top": 0,
+        "Right": 1200,
+        "Bottom": 960,
+        "IsEmpty": false
+      }
+    }
+  },
+  "BlockReason": "popup-not-found: Prepared and reopened a validation-list workbook, but did not detect a foreground Excel Data Validation dropdown after the physical in-cell arrow click or Alt\u002BDown.",
+  "CapturedAtUtc": "2026-06-10T19:00:48.7606005+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s2s7-dialog-dropdown-edge-20260610b\\tools\\foreground-captures\\excel-data-validation-dropdown-prepared\\excel-data-validation-dropdown-prepared_manifest.json"
+}
