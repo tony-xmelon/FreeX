@@ -1,0 +1,381 @@
+{
+  "Tool": "FREEX_PIVOT_FIELD_LIST_CONTEXT_TOUR",
+  "EvidenceFamily": "pivot-field-list-context",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "pivot:field-list-context",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-pivot-field-list-context-20260610\\screenshots\\pivot-field-list-context-tour",
+  "OutputNaming": "freex_pivot_*.png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
+  "CatalogIds": [
+    "UI-CAT-CONTEXT-003",
+    "UI-CAT-CONTEXT-003B",
+    "UI-CAT-CONTEXT-003C",
+    "UI-CMD-INSERT-002",
+    "UI-CMD-INSERT-003",
+    "UI-CMD-CTXOBJ-001"
+  ],
+  "SheetName": "Sheet1",
+  "PivotTableName": "TourPivotTable",
+  "SourceRange": "A1:F7",
+  "TargetRange": "H2:L12",
+  "SourceHeaders": [
+    "Region",
+    "Product",
+    "Quarter",
+    "Sales",
+    "Channel",
+    "Margin"
+  ],
+  "CaptureStatus": "complete",
+  "CaptureMode": "RenderTargetBitmap-main-window-context-menu-and-dialogs",
+  "PlannedCaptureCount": 7,
+  "ActualCaptureCount": 7,
+  "FocusGuard": {
+    "Required": false,
+    "Policy": "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 allowed in-process RenderTargetBitmap capture without OS foreground ownership; no global mouse, keyboard, or screen capture input is used."
+  },
+  "Captures": [
+    {
+      "CaptureKey": "interactive:pivot-field-list-context:analyze-field-list-visible",
+      "PairKey": "interactive:pivot-field-list-context:analyze-field-list-visible",
+      "ScenarioId": "pivot:field-list-context",
+      "State": "analyze-field-list-visible",
+      "Surface": "PivotTable Analyze ribbon plus field list",
+      "FileName": "freex_pivot_field_list_analyze_field_list",
+      "OutputFileName": "freex_pivot_field_list_analyze_field_list.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CaptureLogicalWidth": 1280,
+      "CaptureLogicalHeight": 780,
+      "FieldListVisible": true,
+      "DeferLayoutChecked": false,
+      "UpdateButtonEnabled": false,
+      "SearchText": "",
+      "AvailableFields": [
+        "Region",
+        "Product",
+        "Quarter",
+        "Sales",
+        "Channel",
+        "Margin"
+      ],
+      "CheckedAvailableFields": [
+        "Region",
+        "Product",
+        "Quarter",
+        "Sales"
+      ],
+      "RowAreaFields": [
+        "Region"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Sum of Sales"
+      ],
+      "MenuHeaders": [],
+      "EvidenceSummary": "PivotTable Analyze is selected with the production PivotTable Fields pane visible beside a populated pivot result grid."
+    },
+    {
+      "CaptureKey": "interactive:pivot-field-list-context:design-field-list-visible",
+      "PairKey": "interactive:pivot-field-list-context:design-field-list-visible",
+      "ScenarioId": "pivot:field-list-context",
+      "State": "design-field-list-visible",
+      "Surface": "PivotTable Design ribbon plus field list",
+      "FileName": "freex_pivot_field_list_design_field_list",
+      "OutputFileName": "freex_pivot_field_list_design_field_list.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CaptureLogicalWidth": 1280,
+      "CaptureLogicalHeight": 780,
+      "FieldListVisible": true,
+      "DeferLayoutChecked": false,
+      "UpdateButtonEnabled": false,
+      "SearchText": "",
+      "AvailableFields": [
+        "Region",
+        "Product",
+        "Quarter",
+        "Sales",
+        "Channel",
+        "Margin"
+      ],
+      "CheckedAvailableFields": [
+        "Region",
+        "Product",
+        "Quarter",
+        "Sales"
+      ],
+      "RowAreaFields": [
+        "Region"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Sum of Sales"
+      ],
+      "MenuHeaders": [],
+      "EvidenceSummary": "PivotTable Design is selected while the same pivot target keeps the field list pane visible."
+    },
+    {
+      "CaptureKey": "interactive:pivot-field-list-context:field-list-deferred-search-buttons-checks",
+      "PairKey": "interactive:pivot-field-list-context:field-list-deferred-search-buttons-checks",
+      "ScenarioId": "pivot:field-list-context",
+      "State": "field-list-deferred-search-buttons-checks",
+      "Surface": "PivotTable Fields pane",
+      "FileName": "freex_pivot_field_list_deferred_search_buttons_checks",
+      "OutputFileName": "freex_pivot_field_list_deferred_search_buttons_checks.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CaptureLogicalWidth": 1280,
+      "CaptureLogicalHeight": 780,
+      "FieldListVisible": true,
+      "DeferLayoutChecked": true,
+      "UpdateButtonEnabled": true,
+      "SearchText": "sales",
+      "AvailableFields": [
+        "Region",
+        "Product",
+        "Quarter",
+        "Sales",
+        "Channel",
+        "Margin"
+      ],
+      "CheckedAvailableFields": [
+        "Region",
+        "Product",
+        "Quarter",
+        "Sales",
+        "Channel"
+      ],
+      "RowAreaFields": [
+        "Region",
+        "Channel"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Sum of Sales"
+      ],
+      "MenuHeaders": [],
+      "EvidenceSummary": "Field list shows search filtering, checked available-field state, Rows/Columns/Values/Filters/Remove buttons, Defer Layout Update, and enabled Update."
+    },
+    {
+      "CaptureKey": "interactive:pivot-field-list-context:value-field-context-menu-opened",
+      "PairKey": "interactive:pivot-field-list-context:value-field-context-menu-opened",
+      "ScenarioId": "pivot:field-list-context",
+      "State": "value-field-context-menu-opened",
+      "Surface": "Pivot field context menu",
+      "FileName": "freex_pivot_field_list_context_menu_opened",
+      "OutputFileName": "freex_pivot_field_list_context_menu_opened.png",
+      "CaptureMethod": "RenderTargetBitmap-pivot-field-context-menu",
+      "CaptureLogicalWidth": 208,
+      "CaptureLogicalHeight": 166.66666666666666,
+      "FieldListVisible": true,
+      "DeferLayoutChecked": true,
+      "UpdateButtonEnabled": true,
+      "SearchText": "",
+      "AvailableFields": [
+        "Region",
+        "Product",
+        "Quarter",
+        "Sales",
+        "Channel",
+        "Margin"
+      ],
+      "CheckedAvailableFields": [
+        "Region",
+        "Product",
+        "Quarter",
+        "Sales",
+        "Channel"
+      ],
+      "RowAreaFields": [
+        "Region",
+        "Channel"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Sum of Sales"
+      ],
+      "MenuHeaders": [
+        "Sort A to Z",
+        "Sort Z to A",
+        "Select Items...",
+        "Label Filter...",
+        "Value Filter...",
+        "Clear Filter",
+        "Value Field Settings..."
+      ],
+      "EvidenceSummary": "Values-area context menu exposes sort, item/filter actions, clear filter, and Value Field Settings for the selected Sum of Sales field."
+    },
+    {
+      "CaptureKey": "interactive:pivot-field-list-context:value-field-settings-dialog",
+      "PairKey": "interactive:pivot-field-list-context:value-field-settings-dialog",
+      "ScenarioId": "pivot:field-list-context",
+      "State": "value-field-settings-dialog",
+      "Surface": "Value Field Settings dialog",
+      "FileName": "freex_pivot_value_field_settings_dialog",
+      "OutputFileName": "freex_pivot_value_field_settings_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-value-field-settings-dialog-window",
+      "CaptureLogicalWidth": 430,
+      "CaptureLogicalHeight": 430,
+      "FieldListVisible": true,
+      "DeferLayoutChecked": true,
+      "UpdateButtonEnabled": true,
+      "SearchText": "",
+      "AvailableFields": [
+        "Region",
+        "Product",
+        "Quarter",
+        "Sales",
+        "Channel",
+        "Margin"
+      ],
+      "CheckedAvailableFields": [
+        "Region",
+        "Product",
+        "Quarter",
+        "Sales",
+        "Channel"
+      ],
+      "RowAreaFields": [
+        "Region",
+        "Channel"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Sum of Sales"
+      ],
+      "MenuHeaders": [],
+      "EvidenceSummary": "Value Field Settings opens for Sum of Sales with custom-name focus, summary function, Show Values As, base-field controls, number format controls, and OK/Cancel."
+    },
+    {
+      "CaptureKey": "interactive:pivot-field-list-context:field-filter-dialog",
+      "PairKey": "interactive:pivot-field-list-context:field-filter-dialog",
+      "ScenarioId": "pivot:field-list-context",
+      "State": "field-filter-dialog",
+      "Surface": "Pivot field Select Items dialog",
+      "FileName": "freex_pivot_field_filter_dialog",
+      "OutputFileName": "freex_pivot_field_filter_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-pivot-field-filter-dialog-window",
+      "CaptureLogicalWidth": 380,
+      "CaptureLogicalHeight": 470,
+      "FieldListVisible": true,
+      "DeferLayoutChecked": true,
+      "UpdateButtonEnabled": true,
+      "SearchText": "",
+      "AvailableFields": [
+        "Region",
+        "Product",
+        "Quarter",
+        "Sales",
+        "Channel",
+        "Margin"
+      ],
+      "CheckedAvailableFields": [
+        "Region",
+        "Product",
+        "Quarter",
+        "Sales",
+        "Channel"
+      ],
+      "RowAreaFields": [
+        "Region",
+        "Channel"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Sum of Sales"
+      ],
+      "MenuHeaders": [],
+      "EvidenceSummary": "Pivot field Select Items dialog shows search-box filtering, checklist check states, Select All, Label Filter, Value Filter, OK, and Cancel."
+    },
+    {
+      "CaptureKey": "interactive:pivot-field-list-context:pivot-result-grid",
+      "PairKey": "interactive:pivot-field-list-context:pivot-result-grid",
+      "ScenarioId": "pivot:field-list-context",
+      "State": "pivot-result-grid",
+      "Surface": "Worksheet pivot result grid",
+      "FileName": "freex_pivot_field_list_result_grid",
+      "OutputFileName": "freex_pivot_field_list_result_grid.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CaptureLogicalWidth": 1280,
+      "CaptureLogicalHeight": 780,
+      "FieldListVisible": false,
+      "DeferLayoutChecked": false,
+      "UpdateButtonEnabled": false,
+      "SearchText": "",
+      "AvailableFields": [
+        "Region",
+        "Product",
+        "Quarter",
+        "Sales",
+        "Channel",
+        "Margin"
+      ],
+      "CheckedAvailableFields": [
+        "Region",
+        "Product",
+        "Quarter",
+        "Sales",
+        "Channel"
+      ],
+      "RowAreaFields": [
+        "Region",
+        "Channel"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Sum of Sales"
+      ],
+      "MenuHeaders": [],
+      "EvidenceSummary": "Pivot result grid remains materialized after the deferred field-list update applies the added Channel row field."
+    }
+  ],
+  "CoveredStates": [
+    "analyze-field-list-visible",
+    "design-field-list-visible",
+    "field-list-deferred-search-buttons-checks",
+    "value-field-context-menu-opened",
+    "value-field-settings-dialog",
+    "field-filter-dialog",
+    "pivot-result-grid"
+  ],
+  "Limitations": [
+    "This in-app tour captures FreeX-only RenderTargetBitmap evidence; paired Microsoft Excel screenshots remain separate.",
+    "The tour manipulates the production WPF controls in-process and does not prove foreground mouse, keyboard, drag/drop, or keytip traversal.",
+    "Drag/drop field placement is represented by the same layout mutation path used by buttons; physical pointer drag evidence remains open.",
+    "PivotChart field-button dropdowns and saved/reloaded pivot field-list persistence are outside this bounded slice."
+  ]
+}
