@@ -1,14 +1,14 @@
 {
-  "Scenario": "freex-status-zoom-in-click",
+  "Scenario": "freex-status-zoom-out-click",
   "Subject": "freex",
   "CaptureStatus": "complete",
   "CaptureMode": "foreground-guarded-uia-win32",
-  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s6-status-footer-foreground-pointer-20260610\\tools\\foreground-captures\\freex-status-zoom-in-click\\freex-status-zoom-in-click_20260610_170919.png",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s6-status-footer-foreground-pointer-20260610\\tools\\foreground-captures\\freex-status-zoom-out-click\\freex-status-zoom-out-click_20260610_170615.png",
   "Window": {
-    "Handle": 40438920,
-    "ProcessId": 88136,
+    "Handle": 14225506,
+    "ProcessId": 95068,
     "Title": "Book1* - FreeX",
-    "ClassName": "HwndWrapper[FreeX.App.Host;;ec799331-a2b3-4c2a-97b8-ccf12f74be27]",
+    "ClassName": "HwndWrapper[FreeX.App.Host;;8415f7a6-19fb-4bf3-a814-50aeee081de3]",
     "Bounds": {
       "Location": {
         "IsEmpty": false,
@@ -33,13 +33,13 @@
   },
   "ForegroundGuard": {
     "Success": true,
-    "ExpectedProcessId": 88136,
-    "ExpectedHandle": 40438920,
+    "ExpectedProcessId": 95068,
+    "ExpectedHandle": 14225506,
     "ForegroundWindow": {
-      "Handle": 40438920,
-      "ProcessId": 88136,
+      "Handle": 14225506,
+      "ProcessId": 95068,
       "Title": "Book1* - FreeX",
-      "ClassName": "HwndWrapper[FreeX.App.Host;;ec799331-a2b3-4c2a-97b8-ccf12f74be27]",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;8415f7a6-19fb-4bf3-a814-50aeee081de3]",
       "Bounds": {
         "Location": {
           "IsEmpty": false,
@@ -63,7 +63,7 @@
       }
     }
   },
-  "CapturedAtUtc": "2026-06-10T17:09:20.0987651+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s6-status-footer-foreground-pointer-20260610\\tools\\foreground-captures\\freex-status-zoom-in-click\\freex-status-zoom-in-click_manifest.json",
-  "ResultValidation": "AutomationId \u0027StatusZoomInButton\u0027 click; UIA Zoom slider=105; expected slider=105; expected visible zoom text about 115%"
+  "CapturedAtUtc": "2026-06-10T17:06:15.6217202+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s6-status-footer-foreground-pointer-20260610\\tools\\foreground-captures\\freex-status-zoom-out-click\\freex-status-zoom-out-click_manifest.json",
+  "ResultValidation": "AutomationId \u0027StatusZoomOutButton\u0027 click; UIA Zoom slider=95.556; expected slider=95; expected visible zoom text about 96%"
 }
