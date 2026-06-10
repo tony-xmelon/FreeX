@@ -1,0 +1,258 @@
+{
+  "Tool": "FREEX_CHART_DATA_LAYOUT_TOUR",
+  "EvidenceFamily": "chart-data-layout-context",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "chart-data-layout-context:visual-evidence",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-chart-data-layout-20260610\\screenshots\\chart-data-layout-tour",
+  "OutputNaming": "freex_chart_data_layout_\u003CState\u003E.png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
+  "CatalogIds": [
+    "UI-CAT-INSERT-002B",
+    "UI-CAT-INSERT-002C",
+    "UI-CMD-INSERT-016"
+  ],
+  "SheetName": "Sheet1",
+  "SourceRange": "A1:C6",
+  "ChartTitle": "Regional Revenue",
+  "ChartType": "Column",
+  "ChartDataRange": "A1:C6",
+  "WaterfallContextRange": "A9:B14",
+  "CaptureStatus": "complete",
+  "CaptureMode": "background-render-opt-in",
+  "PlannedCaptureCount": 9,
+  "ActualCaptureCount": 9,
+  "Pairing": {
+    "PairKeyTemplate": "interactive:chart-data-layout:\u003CState\u003E",
+    "CounterpartApp": "excel",
+    "CounterpartTool": "not-yet-wired",
+    "CounterpartStatus": "not-yet-captured"
+  },
+  "FocusGuard": {
+    "Required": false,
+    "Policy": "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 allowed deterministic in-process RenderTargetBitmap captures; no global mouse, keyboard, keytip, UIA, range-picker, or screen capture input is used."
+  },
+  "Captures": [
+    {
+      "CaptureKey": "chart-data-layout:selected-chart-design-context",
+      "PairKey": "interactive:chart-data-layout:selected-chart-design-context",
+      "CatalogIds": [
+        "UI-CAT-INSERT-002B",
+        "UI-CAT-INSERT-002C",
+        "UI-CMD-INSERT-016"
+      ],
+      "State": "selected-chart-design-context",
+      "Surface": "Selected embedded chart with Chart Design contextual tab",
+      "FileName": "freex_chart_data_layout_selected_chart_design_context",
+      "OutputFileName": "freex_chart_data_layout_selected_chart_design_context.png",
+      "CaptureMethod": "RenderTargetBitmap-chart-window",
+      "CaptureLogicalWidth": 1280,
+      "CaptureLogicalHeight": 800,
+      "SelectedRange": "A1:A1",
+      "ChartCount": 2,
+      "ActiveChartTitle": "Regional Revenue",
+      "ActiveChartType": "Column",
+      "ActiveChartDataRange": "A1:C6",
+      "VisibleCommands": [],
+      "EvidenceSummary": "Seeded embedded chart is visible with Chart Design selected, exposing Chart Layouts, Chart Styles, Data, Type, and Location command groups."
+    },
+    {
+      "CaptureKey": "chart-data-layout:selected-chart-format-context",
+      "PairKey": "interactive:chart-data-layout:selected-chart-format-context",
+      "CatalogIds": [
+        "UI-CAT-INSERT-002B",
+        "UI-CAT-INSERT-002C",
+        "UI-CMD-INSERT-016"
+      ],
+      "State": "selected-chart-format-context",
+      "Surface": "Selected embedded chart with Format contextual tab",
+      "FileName": "freex_chart_data_layout_selected_chart_format_context",
+      "OutputFileName": "freex_chart_data_layout_selected_chart_format_context.png",
+      "CaptureMethod": "RenderTargetBitmap-chart-window",
+      "CaptureLogicalWidth": 1280,
+      "CaptureLogicalHeight": 800,
+      "SelectedRange": "A1:A1",
+      "ChartCount": 2,
+      "ActiveChartTitle": "Regional Revenue",
+      "ActiveChartType": "Column",
+      "ActiveChartDataRange": "A1:C6",
+      "VisibleCommands": [],
+      "EvidenceSummary": "The same chart target keeps the Format contextual tab visible with chart area, title, axis, series, trendline, and error-bar command surfaces."
+    },
+    {
+      "CaptureKey": "chart-data-layout:select-data-dialog",
+      "PairKey": "interactive:chart-data-layout:select-data-dialog",
+      "CatalogIds": [
+        "UI-CAT-INSERT-002B",
+        "UI-CMD-INSERT-016"
+      ],
+      "State": "select-data-dialog",
+      "Surface": "Select Data Source dialog",
+      "FileName": "freex_chart_data_layout_select_data_dialog",
+      "OutputFileName": "freex_chart_data_layout_select_data_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-chart-dialog-window",
+      "CaptureLogicalWidth": 620,
+      "CaptureLogicalHeight": 500,
+      "SelectedRange": "A1:A1",
+      "ChartCount": 2,
+      "ActiveChartTitle": "Regional Revenue",
+      "ActiveChartType": "Column",
+      "ActiveChartDataRange": "A1:C6",
+      "VisibleCommands": [],
+      "EvidenceSummary": "Select Data Source shows the current chart range, first-column category choice, switch-row/column option, previewed series, axis labels, Add/Edit/Remove controls, and Hidden and Empty Cells entry point."
+    },
+    {
+      "CaptureKey": "chart-data-layout:move-chart-dialog",
+      "PairKey": "interactive:chart-data-layout:move-chart-dialog",
+      "CatalogIds": [
+        "UI-CAT-INSERT-002B",
+        "UI-CMD-INSERT-016"
+      ],
+      "State": "move-chart-dialog",
+      "Surface": "Move Chart dialog",
+      "FileName": "freex_chart_data_layout_move_chart_dialog",
+      "OutputFileName": "freex_chart_data_layout_move_chart_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-chart-dialog-window",
+      "CaptureLogicalWidth": 340,
+      "CaptureLogicalHeight": 210,
+      "SelectedRange": "A1:A1",
+      "ChartCount": 2,
+      "ActiveChartTitle": "Regional Revenue",
+      "ActiveChartType": "Column",
+      "ActiveChartDataRange": "A1:C6",
+      "VisibleCommands": [],
+      "EvidenceSummary": "Move Chart opens with Object in sheet selected, New chart sheet available, target name editor, and OK/Cancel command row."
+    },
+    {
+      "CaptureKey": "chart-data-layout:change-chart-type-dialog",
+      "PairKey": "interactive:chart-data-layout:change-chart-type-dialog",
+      "CatalogIds": [
+        "UI-CAT-INSERT-002B",
+        "UI-CMD-INSERT-016"
+      ],
+      "State": "change-chart-type-dialog",
+      "Surface": "Change Chart Type dialog",
+      "FileName": "freex_chart_data_layout_change_chart_type_dialog",
+      "OutputFileName": "freex_chart_data_layout_change_chart_type_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-chart-dialog-window",
+      "CaptureLogicalWidth": 640,
+      "CaptureLogicalHeight": 390,
+      "SelectedRange": "A1:A1",
+      "ChartCount": 2,
+      "ActiveChartTitle": "Regional Revenue",
+      "ActiveChartType": "Column",
+      "ActiveChartDataRange": "A1:C6",
+      "VisibleCommands": [],
+      "EvidenceSummary": "Change Chart Type opens to the subtype gallery for the current Column chart, with supported chart families and OK/Cancel controls visible."
+    },
+    {
+      "CaptureKey": "chart-data-layout:chart-styles-dialog",
+      "PairKey": "interactive:chart-data-layout:chart-styles-dialog",
+      "CatalogIds": [
+        "UI-CAT-INSERT-002B",
+        "UI-CMD-INSERT-016"
+      ],
+      "State": "chart-styles-dialog",
+      "Surface": "Chart Styles dialog",
+      "FileName": "freex_chart_data_layout_chart_styles_dialog",
+      "OutputFileName": "freex_chart_data_layout_chart_styles_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-chart-dialog-window",
+      "CaptureLogicalWidth": 480,
+      "CaptureLogicalHeight": 350,
+      "SelectedRange": "A1:A1",
+      "ChartCount": 2,
+      "ActiveChartTitle": "Regional Revenue",
+      "ActiveChartType": "Column",
+      "ActiveChartDataRange": "A1:C6",
+      "VisibleCommands": [],
+      "EvidenceSummary": "Chart Styles dialog displays the style gallery for the active chart, including selected style state and OK/Cancel controls."
+    },
+    {
+      "CaptureKey": "chart-data-layout:chart-titles-dialog",
+      "PairKey": "interactive:chart-data-layout:chart-titles-dialog",
+      "CatalogIds": [
+        "UI-CAT-INSERT-002B",
+        "UI-CMD-INSERT-016"
+      ],
+      "State": "chart-titles-dialog",
+      "Surface": "Chart Titles dialog",
+      "FileName": "freex_chart_data_layout_chart_titles_dialog",
+      "OutputFileName": "freex_chart_data_layout_chart_titles_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-chart-dialog-window",
+      "CaptureLogicalWidth": 380,
+      "CaptureLogicalHeight": 240,
+      "SelectedRange": "A1:A1",
+      "ChartCount": 2,
+      "ActiveChartTitle": "Regional Revenue",
+      "ActiveChartType": "Column",
+      "ActiveChartDataRange": "A1:C6",
+      "VisibleCommands": [],
+      "EvidenceSummary": "Chart Titles dialog shows chart title, horizontal-axis title, and vertical-axis title fields populated from the seeded chart metadata."
+    },
+    {
+      "CaptureKey": "chart-data-layout:format-chart-area-dialog",
+      "PairKey": "interactive:chart-data-layout:format-chart-area-dialog",
+      "CatalogIds": [
+        "UI-CAT-INSERT-002B",
+        "UI-CMD-INSERT-016"
+      ],
+      "State": "format-chart-area-dialog",
+      "Surface": "Format Chart Area dialog",
+      "FileName": "freex_chart_data_layout_format_chart_area_dialog",
+      "OutputFileName": "freex_chart_data_layout_format_chart_area_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-chart-dialog-window",
+      "CaptureLogicalWidth": 420,
+      "CaptureLogicalHeight": 590,
+      "SelectedRange": "A1:A1",
+      "ChartCount": 2,
+      "ActiveChartTitle": "Regional Revenue",
+      "ActiveChartType": "Column",
+      "ActiveChartDataRange": "A1:C6",
+      "VisibleCommands": [],
+      "EvidenceSummary": "Format Chart Area shows chart area, plot area, and legend formatting sections, including fill/border fields, legend position, overlay, and font-size controls."
+    },
+    {
+      "CaptureKey": "chart-data-layout:waterfall-point-context-menu",
+      "PairKey": "interactive:chart-data-layout:waterfall-point-context-menu",
+      "CatalogIds": [
+        "UI-CAT-INSERT-002C"
+      ],
+      "State": "waterfall-point-context-menu",
+      "Surface": "Waterfall data-point context menu",
+      "FileName": "freex_chart_data_layout_waterfall_point_context_menu",
+      "OutputFileName": "freex_chart_data_layout_waterfall_point_context_menu.png",
+      "CaptureMethod": "RenderTargetBitmap-chart-subtarget-context-menu",
+      "CaptureLogicalWidth": 154.66666666666666,
+      "CaptureLogicalHeight": 25.333333333333332,
+      "SelectedRange": "A1:A1",
+      "ChartCount": 2,
+      "ActiveChartTitle": "Regional Revenue",
+      "ActiveChartType": "Column",
+      "ActiveChartDataRange": "A1:C6",
+      "VisibleCommands": [
+        "_Set as Total"
+      ],
+      "EvidenceSummary": "Waterfall data-point context menu opens for a seeded point with _Set as Total command text."
+    }
+  ],
+  "CoveredStates": [
+    "Seeded embedded chart visible with Chart Design contextual tab selected.",
+    "Seeded embedded chart visible with Format contextual tab selected.",
+    "Select Data Source dialog with chart range, series preview, axis-label preview, Switch Row/Column, and Hidden and Empty Cells controls.",
+    "Move Chart dialog with object/new-sheet target choices.",
+    "Change Chart Type dialog subtype gallery.",
+    "Chart Styles dialog gallery.",
+    "Chart Titles dialog for chart and axis-title metadata.",
+    "Format Chart Area dialog for chart area, plot area, and legend layout/format controls.",
+    "Waterfall point context menu when the supported chart-point context surface is available."
+  ],
+  "Limitations": [
+    "This bounded tour captures real FreeX WPF chart windows, dialogs, and menus with RenderTargetBitmap; it is not foreground CopyFromScreen proof.",
+    "Dialog captures show production visual/default-focus states, but this slice does not submit dialog mutations, save/reload native JSON/XLSX metadata, or prove undo/repeat.",
+    "The chart is seeded and formatted through in-process workbook commands; physical mouse, keytip, access-key, range-picker collapse/restore, and UIA invocation remain open.",
+    "The worksheet window captures use FreeX\u0027s deterministic chart-object placeholder display so the selected chart target is visible without depending on asynchronous full chart rendering.",
+    "FreeX currently exposes chart contextual tabs for visible normal charts; physical chart selection handles and chart-area/plot-area/series/axis/title/legend hit-tested subtarget selection remain open.",
+    "The subtarget context capture is limited to the supported Waterfall data-point Set as Total context menu.",
+    "No paired Microsoft Excel screenshots are produced by this tool."
+  ]
+}
