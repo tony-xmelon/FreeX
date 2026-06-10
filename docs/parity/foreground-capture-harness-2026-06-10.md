@@ -8,20 +8,21 @@ Branch/worktree:
 
 ## Remaining Slice Count
 
-The remaining UX parity closeout is tracked as 8 umbrella slices:
+The remaining UX parity closeout is tracked as 7 open umbrella slices after S8 closed:
 
 | Slice | Status after this pass |
 |---|---|
 | S1 Excel/FreeX paired main ribbon capture matrix | Open. |
-| S2 Popup, dropdown, and gallery captures | Partially advanced: Excel AutoFilter, Home Borders, Number Format, and worksheet context-menu foreground captures succeeded. |
+| S2 Popup, dropdown, and gallery captures | Four-surface opened-state pairing closed for AutoFilter, Home Borders, Home Number Format, and worksheet context menu. Broader popup/gallery breadth remains open. See `docs/parity/worker-popup-evidence-pairing-s2s7-2026-06-10.md`. |
 | S3 Native Open/Save/Background/export dialogs | Advanced: Excel Open, FreeX Open, and FreeX Save As foreground dialog-open proof is retained; Excel Save As is blocked by Office `NUIDialog`, and Background/export/native print proof remains open. See `docs/parity/ux-s3-native-dialogs-backstage-export-2026-06-10.md`. |
-| S4 Grid pointer mechanics | Open. |
-| S5 Sheet-tab pointer mechanics | Open. |
-| S6 Status/footer pointer mechanics | Open. |
-| S7 Excel-paired popup/dialog captures | Partially advanced: Excel AutoFilter, Open, Borders, Number Format, and worksheet context-menu captures now have retained foreground evidence. |
-| S8 Non-visual model-depth tail | Open. |
+| S4 Grid pointer mechanics | Partially advanced: foreground grid/header drag selection proof is retained, but precise cell-range drag and other pointer mechanics remain open. See `docs/parity/foreground-pointer-harness-2026-06-10.md`. |
+| S5 Sheet-tab pointer mechanics | Partially advanced: foreground sheet-tab right-click context-menu proof is retained; double-click rename, drag reorder, modifier grouping, overflow arrows, and Excel pairing remain open. |
+| S6 Status/footer pointer mechanics | Partially advanced: foreground status Zoom In click and zoom slider drag proof are retained; Ctrl-wheel/UIA RangeValue/min-max breadth and Excel pairing remain open. |
+| S7 Excel-paired popup/dialog captures | Four-surface opened-state pairing closed for AutoFilter, Home Borders, Home Number Format, and worksheet context menu; broader Excel-paired popup/dialog breadth remains open. |
 
-No umbrella slice is fully closed yet because each still has remaining sub-scenarios, but the new harness converted several previously foreground-blocked sub-scenarios into retained evidence.
+Closed but no longer counted as remaining: S8 non-visual model-depth tail closed by `38d05898c` with focused tests/docs for cross-target matrix, locale/accounting, accessibility/formula/watch breadth, and native persistence warnings.
+
+S8 is fully closed. The remaining umbrella slices still have open sub-scenarios, but the harness and pairing docs converted several previously foreground-blocked sub-scenarios into retained evidence.
 
 ## Harness Added
 
@@ -42,12 +43,17 @@ The harness uses guarded foreground activation with `AttachThreadInput`, `SetFor
 | `excel-context-menu` | Complete | `tools/foreground-captures/excel-context-menu/excel-context-menu_20260610_143257.png`, `excel-context-menu_manifest.json` |
 | `freex-open-dialog` | Complete | `tools/foreground-captures/freex-open-dialog/freex-open-dialog_20260610_142532.png`, `freex-open-dialog_manifest.json` |
 | `freex-save-as-dialog` | Complete | `tools/foreground-captures/freex-save-as-dialog/freex-save-as-dialog_20260610_142550.png`, `freex-save-as-dialog_manifest.json` |
+| `freex-status-zoom-in-click` | Complete | `tools/foreground-captures/freex-status-zoom-in-click/freex-status-zoom-in-click_20260610_160853.png`, `freex-status-zoom-in-click_manifest.json` |
+| `freex-status-zoom-slider-drag` | Complete | `tools/foreground-captures/freex-status-zoom-slider-drag/freex-status-zoom-slider-drag_20260610_160932.png`, `freex-status-zoom-slider-drag_manifest.json` |
+| `freex-sheet-tab-context-menu` | Complete | `tools/foreground-captures/freex-sheet-tab-context-menu/freex-sheet-tab-context-menu_20260610_160955.png`, `freex-sheet-tab-context-menu_manifest.json` |
+| `freex-grid-drag-select` | Partial | `tools/foreground-captures/freex-grid-drag-select/freex-grid-drag-select_20260610_161353.png`, `freex-grid-drag-select_manifest.json` |
 
 ## Blocked or Needs Harness Follow-Up
 
 | Scenario | Current result |
 |---|---|
 | `excel-save-as-dialog` | Foreground acquisition succeeds and F12 exposes an Office `NUIDialog`, but that helper window is not a capturable native Save As file dialog in this Office state. Needs the Office backstage Save As path or another visible dialog trigger. |
+| `freex-grid-drag-select` | Retained foreground proof shows a header-style selected span after physical drag input, not the intended cell-range drag. Needs WPF-aware target-coordinate refinement before it can close cell-range drag selection. |
 
 ## Verification
 
@@ -58,4 +64,4 @@ The harness uses guarded foreground activation with `AttachThreadInput`, `SetFor
 - First `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests-foreground-harness.trx"` had one transient timing-only perf failure in `FormulaEvaluatorPerformanceTests.RepeatedBooleanCoercionFormulaTextEvaluation_AvoidsCoercedNumberChurn`.
 - Focused rerun of that perf test passed.
 - Full rerun `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests-foreground-harness-rerun.trx"` passed with 0 failures.
-- `dotnet run --project tools\FreeX.ForegroundCapture\FreeX.ForegroundCapture.csproj --configuration Release -- --list-slices` reported 8 remaining umbrella slices.
+- `dotnet run --project tools\FreeX.ForegroundCapture\FreeX.ForegroundCapture.csproj --configuration Release -- --list-slices` originally reported 8 umbrella slices; after the S8 closeout, the foreground harness reports 7 open umbrella slices.

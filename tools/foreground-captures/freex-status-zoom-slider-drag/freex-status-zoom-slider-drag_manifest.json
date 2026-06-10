@@ -1,0 +1,68 @@
+{
+  "Scenario": "freex-status-zoom-slider-drag",
+  "Subject": "freex",
+  "CaptureStatus": "complete",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-status-zoom-slider-drag\\freex-status-zoom-slider-drag_20260610_160932.png",
+  "Window": {
+    "Handle": 14225438,
+    "ProcessId": 29560,
+    "Title": "Book1* - FreeX",
+    "ClassName": "HwndWrapper[FreeX.App.Host;;88476575-5b09-494d-9695-1a2ca73ff6e9]",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 190,
+        "Y": 190
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1920,
+        "Height": 1080
+      },
+      "X": 190,
+      "Y": 190,
+      "Width": 1920,
+      "Height": 1080,
+      "Left": 190,
+      "Top": 190,
+      "Right": 2110,
+      "Bottom": 1270,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 29560,
+    "ExpectedHandle": 14225438,
+    "ForegroundWindow": {
+      "Handle": 14225438,
+      "ProcessId": 29560,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;88476575-5b09-494d-9695-1a2ca73ff6e9]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 127,
+          "Y": 127
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "X": 127,
+        "Y": 127,
+        "Width": 1280,
+        "Height": 720,
+        "Left": 127,
+        "Top": 127,
+        "Right": 1407,
+        "Bottom": 847,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-10T16:09:32.7971963+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-status-zoom-slider-drag\\freex-status-zoom-slider-drag_manifest.json"
+}
