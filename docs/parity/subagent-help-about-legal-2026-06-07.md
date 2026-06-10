@@ -12,10 +12,11 @@
 - `HelpCommandSourceTests` checks all surfaced Help commands for localized content, invariant command name, keytip, click handler, automation id, UIA name, and UIA help text.
 - `MainWindowXamlKeyTipTests.Dialogs` checks Help/Feedback/Diagnostics/About/Legal entry points, stable automation ids, keytips, and honest help text.
 - `LegalNoticeProviderTests` checks embedded offline legal resources, copyable read-only Legal Notices text, generated tab UIA metadata, and default/cancel Close behavior.
-- Existing source coverage confirms About uses an owned message box and Legal Notices uses `ShowOwnedDialog`, while external Help/Feedback/Update launches use guarded browser-opening code.
+- Existing source coverage confirms About uses an owned `AboutDialog`, Legal Notices uses `ShowOwnedDialog`, and external Help/Feedback/Update launches use guarded browser-opening code.
+- 2026-06-10 visual closure: `FREEX_HELP_ABOUT_LEGAL_TOUR=1` with `FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1` now emits committed deterministic FreeX evidence under `screenshots/help-about-legal-tour/`: Help ribbon context, owned guarded Help Online/Feedback/Updates warnings, About FreeX, Legal Notices tabs/Close surface, and Help focus-return/Ready-status proof after owned dialogs close.
 
 ## Remaining gaps
 
-- No live foreground UIA pass was run in this slice, so browser launch allow/block behavior and native message-box focus return still need guarded live validation.
-- About remains an owned `MessageBox` rather than a custom inspectable dialog; source coverage verifies ownership and text, but live close/focus proof is still pending.
-- Legal Notices visual screenshots were not captured; this slice validated the generated WPF tree and source behavior only.
+- No live foreground UIA pass was run in this slice, so mouse/keytip/UIA invoke, keyboard-close, and foreground-owned focus behavior still need guarded live validation.
+- Browser launch allow-path behavior remains guarded separately; the committed tour intentionally captures owned blocked messages and records `ExternalBrowserLaunched=false`.
+- No Microsoft Excel counterpart capture is produced by the FreeX tour; Excel About/license comparison remains a separate paired-evidence task where an exact equivalent exists.
