@@ -11,7 +11,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 ## Start Here
 
 - [planning/outstanding-build.md](planning/outstanding-build.md) - source-of-truth backlog for outstanding build work.
-- [history/status-2026-06-10.md](history/status-2026-06-10.md) - current project status snapshot covering the June 10 `origin/main` release attempt at `303ea25e`, the failed hosted UI release gate, the 95% `v0.8.<run>` release stream, parity hardening, release validation, localization review/package metadata, and XLSX fidelity proof.
+- [history/status-2026-06-10.md](history/status-2026-06-10.md) - current project status snapshot covering the June 10 `origin/main` release at `cc294d2e`, v0.8.110 tester pre-release, the prior run 109 hosted UI release-gate blocker, the 95% `v0.8.<run>` release stream, parity hardening, release validation, localization review/package metadata, and XLSX fidelity proof.
 - [planning/next-phases.md](planning/next-phases.md) - next development phases and priority sequencing.
 - [planning/multiplatform-macos-port.md](planning/multiplatform-macos-port.md) - preparation plan for a future multiplatform port, starting with macOS and a portable GitHub Actions lane.
 - [planning/macos-port-dependency-backlog.md](planning/macos-port-dependency-backlog.md) - concise inventory of Windows/WPF-only dependencies that block or shape the Avalonia/macOS port.
@@ -79,7 +79,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 
 ## History
 
-- [history/status-2026-06-10.md](history/status-2026-06-10.md) - current status snapshot covering the June 10 branch-neutral `origin/main` release attempt, failed hosted UI release gate, and current release blockers.
+- [history/status-2026-06-10.md](history/status-2026-06-10.md) - current status snapshot covering the June 10 branch-neutral `origin/main` release, v0.8.110 tester pre-release, prior failed run 109 hosted UI gate, and current release blockers.
 - [history/status-2026-06-08.md](history/status-2026-06-08.md) - prior status snapshot covering the June 8 corpus, v0.8.108 tester pre-release, release-readiness, and outstanding-work alignment.
 - [history/status-2026-06-07.md](history/status-2026-06-07.md) - prior status snapshot covering the v0.8.90 daily tester release, frozen release commit, and hosted gate evidence.
 - [history/status-2026-06-06.md](history/status-2026-06-06.md) - prior status snapshot covering the v0.8.89 daily tester release, frozen release commit, and hosted gate evidence.
