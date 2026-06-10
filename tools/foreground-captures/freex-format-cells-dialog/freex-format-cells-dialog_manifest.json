@@ -1,0 +1,41 @@
+{
+  "Scenario": "freex-format-cells-dialog",
+  "Subject": "freex",
+  "CaptureStatus": "blocked",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 31556,
+    "ExpectedHandle": 922132,
+    "ForegroundWindow": {
+      "Handle": 922132,
+      "ProcessId": 31556,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;5c317463-b17a-4f8c-8806-1d506fcb7930]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 127,
+          "Y": 127
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "X": 127,
+        "Y": 127,
+        "Width": 1280,
+        "Height": 720,
+        "Left": 127,
+        "Top": 127,
+        "Right": 1407,
+        "Bottom": 847,
+        "IsEmpty": false
+      }
+    }
+  },
+  "BlockReason": "dialog-not-found: Did not detect FreeX Format Cells dialog after Ctrl\u002B1.",
+  "CapturedAtUtc": "2026-06-10T18:03:04.1359555+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s2s7-popup-gallery-pairing-20260610\\tools\\foreground-captures\\freex-format-cells-dialog\\freex-format-cells-dialog_manifest.json"
+}
