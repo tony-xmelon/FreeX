@@ -1,0 +1,68 @@
+{
+  "Scenario": "freex-open-dialog",
+  "Subject": "freex",
+  "CaptureStatus": "complete",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-foreground-harness-20260610\\tools\\foreground-captures\\freex-open-dialog\\freex-open-dialog_20260610_142532.png",
+  "Window": {
+    "Handle": 28511608,
+    "ProcessId": 88136,
+    "Title": "Open",
+    "ClassName": "#32770",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 101,
+        "Y": 101
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1200,
+        "Height": 720
+      },
+      "X": 101,
+      "Y": 101,
+      "Width": 1200,
+      "Height": 720,
+      "Left": 101,
+      "Top": 101,
+      "Right": 1301,
+      "Bottom": 821,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 88136,
+    "ExpectedHandle": 267342,
+    "ForegroundWindow": {
+      "Handle": 267342,
+      "ProcessId": 88136,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;27e6199f-57c6-4d73-928c-b5d6ed2f5baa]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 101,
+          "Y": 101
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "X": 101,
+        "Y": 101,
+        "Width": 1280,
+        "Height": 720,
+        "Left": 101,
+        "Top": 101,
+        "Right": 1381,
+        "Bottom": 821,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-10T14:25:32.2822536+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-foreground-harness-20260610\\tools\\foreground-captures\\freex-open-dialog\\freex-open-dialog_manifest.json"
+}

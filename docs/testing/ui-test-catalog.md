@@ -69,7 +69,7 @@ Each surface is tracked with these states:
 | Keyboard command shortcut usages | 74 | 74 matcher rules / 73 dispatcher targets |
 | Documented shortcut rows | 87 | From `parity/shortcuts.md`: 87 parity, 0 partial. |
 | Worksheet context menu commands | 50 | From `WorksheetContextMenuPlanner.BuildCommands()`. |
-| Screenshot tool scripts | 2 | `tools/screenshot_excel.ps1`, `tools/screenshot_ribbon.ps1` documented and present. |
+| Screenshot tool scripts | 3 | `tools/screenshot_excel.ps1`, `tools/screenshot_ribbon.ps1`, and `tools/Invoke-ForegroundCapture.ps1` documented and present. |
 | Existing UI evidence screenshots | 0 | Historical PNG evidence artifacts were removed during documentation cleanup; append new evidence paths to the relevant row. |
 
 ## Target Matrix
@@ -111,7 +111,7 @@ Each command should be tested against every applicable target. Mark non-applicab
 | Mouse/grid interaction | Grid click, Shift+click, drag selection, double-click edit/pivot detail, row/column/top-left header selection, autofill handle, row/column resize, page-layout margin guide drag, split divider drag, split-pane mini-scrollbars, pivot chart field buttons, wheel/Shift+wheel/Ctrl+wheel, and sheet-tab click/group/drag/double-click/right-click all need live WPF hit-test evidence. |
 | Context menus | Worksheet context menu has 50 planner commands and should be tested through right-click, Shift+F10, Menu key, access-key traversal, target-specific disabled states, and command state mutation. Sheet-tab, pivot field, ribbon dropdown, backstage recent/pinned, and object-aware context menus need separate rows. |
 | Ribbon/backstage/dialogs | Backstage, QAT, Home, Insert, Draw, Page Layout, Formulas, Data, Review, View, contextual PivotTable Analyze/Design, and Help are fully inventoried in parity docs. Dialog coverage is strong at parser/planner level but needs real focus order, access keys, Escape/Enter/default/cancel, high-DPI layout, and UIA pattern checks. |
-| System-dependent flows | Open/Save file dialogs, picture/background import, CSV Get Data, PDF/XPS export save dialogs, Windows Share, browser Help/Feedback links, and print dialogs require guarded environment-aware manual testing. |
+| System-dependent flows | Open/Save file dialogs, picture/background import, CSV Get Data, PDF/XPS export save dialogs, Windows Share, browser Help/Feedback links, and print dialogs require guarded environment-aware manual testing. `tools/FreeX.ForegroundCapture` now provides a stronger foreground-owned UIA/Win32 harness for these lanes. |
 
 ## Live Input Safety Rule
 
