@@ -1,0 +1,9 @@
+{
+  "Scenario": "excel-data-validation-dropdown",
+  "Subject": "excel",
+  "CaptureStatus": "blocked",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "BlockReason": "exception: 0x800AC472",
+  "CapturedAtUtc": "2026-06-10T18:02:13.5220979+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s2s7-popup-gallery-pairing-20260610\\tools\\foreground-captures\\excel-data-validation-dropdown\\excel-data-validation-dropdown_manifest.json"
+}
