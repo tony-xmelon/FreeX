@@ -1,0 +1,68 @@
+{
+  "Scenario": "freex-grid-drag-select",
+  "Subject": "freex",
+  "CaptureStatus": "complete",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-grid-drag-select\\freex-grid-drag-select_20260610_161353.png",
+  "Window": {
+    "Handle": 8979252,
+    "ProcessId": 56220,
+    "Title": "Book1 - FreeX",
+    "ClassName": "HwndWrapper[FreeX.App.Host;;f78dcd58-e585-4c8e-808a-8983b5deb049]",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 51,
+        "Y": 51
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1280,
+        "Height": 720
+      },
+      "X": 51,
+      "Y": 51,
+      "Width": 1280,
+      "Height": 720,
+      "Left": 51,
+      "Top": 51,
+      "Right": 1331,
+      "Bottom": 771,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 56220,
+    "ExpectedHandle": 8979252,
+    "ForegroundWindow": {
+      "Handle": 8979252,
+      "ProcessId": 56220,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;f78dcd58-e585-4c8e-808a-8983b5deb049]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 51,
+          "Y": 51
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "X": 51,
+        "Y": 51,
+        "Width": 1280,
+        "Height": 720,
+        "Left": 51,
+        "Top": 51,
+        "Right": 1331,
+        "Bottom": 771,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-10T16:13:53.9740483+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-grid-drag-select\\freex-grid-drag-select_manifest.json"
+}
