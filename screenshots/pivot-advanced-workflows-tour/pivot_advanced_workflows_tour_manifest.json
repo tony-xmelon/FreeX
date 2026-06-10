@@ -1,0 +1,500 @@
+{
+  "Tool": "FREEX_PIVOT_ADVANCED_WORKFLOWS_TOUR",
+  "EvidenceFamily": "pivot-advanced-workflows-persistence",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "pivot:advanced-workflows-persistence",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-pivot-advanced-workflows-20260610\\screenshots\\pivot-advanced-workflows-tour",
+  "OutputNaming": "freex_pivot_advanced_\u003CState\u003E.png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
+  "CatalogIds": [
+    "UI-CAT-INSERT-001",
+    "UI-CAT-CONTEXT-003",
+    "UI-CMD-INSERT-002",
+    "UI-CMD-INSERT-003",
+    "UI-CMD-CTXOBJ-001"
+  ],
+  "SheetName": "Pivot Advanced",
+  "PivotTableName": "TourPivotTable",
+  "SourceRange": "A1:F8",
+  "TargetRange": "H2:M12",
+  "SavedWorkbookPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-pivot-advanced-workflows-20260610\\screenshots\\pivot-advanced-workflows-tour\\freex_pivot_advanced_workflows_saved.xlsx",
+  "SavedWorkbookOutputFileName": "freex_pivot_advanced_workflows_saved.xlsx",
+  "SavedWorkbookBytes": 9917,
+  "PersistencePath": "SaveWorkbookToTargetAsync(.xlsx adapter) then OpenFileAsync(saved .xlsx)",
+  "CaptureStatus": "complete-with-deterministic-submitted-pivot-workflows",
+  "CaptureMode": "background-render-opt-in",
+  "PlannedCaptureCount": 11,
+  "ActualCaptureCount": 11,
+  "FocusGuard": {
+    "Required": false,
+    "Policy": "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 allowed deterministic in-process RenderTargetBitmap captures; no global mouse, keyboard, physical drag/drop, keytip, dialog access-key, UIA, or screen capture input is used."
+  },
+  "Captures": [
+    {
+      "CaptureKey": "interactive:pivot-advanced-workflows:seeded-analyze-layout",
+      "PairKey": "interactive:pivot-advanced-workflows:seeded-analyze-layout",
+      "ScenarioId": "pivot:advanced-workflows-persistence",
+      "State": "seeded-analyze-layout",
+      "Surface": "PivotTable worksheet/ribbon state",
+      "FileName": "freex_pivot_advanced_seeded_analyze_layout",
+      "OutputFileName": "freex_pivot_advanced_seeded_analyze_layout.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CaptureLogicalWidth": 1360,
+      "CaptureLogicalHeight": 820,
+      "SheetName": "Pivot Advanced",
+      "SelectedRange": "H2:H2",
+      "PivotTableName": "TourPivotTable",
+      "SourceRange": "A1:F7",
+      "TargetRange": "H2:N14",
+      "RowAreaFields": [
+        "Region"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Sum of Sales"
+      ],
+      "LabelFilterCount": 0,
+      "ValueFilterCount": 0,
+      "SortCount": 0,
+      "PivotChartCount": 0,
+      "SavedWorkbookOutputFileName": "freex_pivot_advanced_workflows_saved.xlsx",
+      "SavedWorkbookBytes": 0,
+      "PersistenceStage": "seeded",
+      "MenuHeaders": [],
+      "EvidenceSummary": "PivotTable Analyze is visible for the seeded pivot with row/column/filter/value areas populated before advanced mutations."
+    },
+    {
+      "CaptureKey": "interactive:pivot-advanced-workflows:field-layout-mutated",
+      "PairKey": "interactive:pivot-advanced-workflows:field-layout-mutated",
+      "ScenarioId": "pivot:advanced-workflows-persistence",
+      "State": "field-layout-mutated",
+      "Surface": "PivotTable worksheet/ribbon state",
+      "FileName": "freex_pivot_advanced_field_layout_mutated",
+      "OutputFileName": "freex_pivot_advanced_field_layout_mutated.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CaptureLogicalWidth": 1360,
+      "CaptureLogicalHeight": 820,
+      "SheetName": "Pivot Advanced",
+      "SelectedRange": "H2:H2",
+      "PivotTableName": "TourPivotTable",
+      "SourceRange": "A1:F7",
+      "TargetRange": "H2:N14",
+      "RowAreaFields": [
+        "Region",
+        "Channel"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Sum of Sales"
+      ],
+      "LabelFilterCount": 0,
+      "ValueFilterCount": 0,
+      "SortCount": 0,
+      "PivotChartCount": 0,
+      "SavedWorkbookOutputFileName": "freex_pivot_advanced_workflows_saved.xlsx",
+      "SavedWorkbookBytes": 0,
+      "PersistenceStage": "layout-mutated",
+      "MenuHeaders": [],
+      "EvidenceSummary": "The production field-list move path adds Channel to the Rows area as a model-equivalent field layout mutation."
+    },
+    {
+      "CaptureKey": "interactive:pivot-advanced-workflows:label-filter-dialog",
+      "PairKey": "interactive:pivot-advanced-workflows:label-filter-dialog",
+      "ScenarioId": "pivot:advanced-workflows-persistence",
+      "State": "label-filter-dialog",
+      "Surface": "Pivot Label Filter dialog",
+      "FileName": "freex_pivot_advanced_label_filter_dialog",
+      "OutputFileName": "freex_pivot_advanced_label_filter_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-pivot-label-filter-dialog-window",
+      "CaptureLogicalWidth": 380,
+      "CaptureLogicalHeight": 260,
+      "SheetName": "Pivot Advanced",
+      "SelectedRange": "H2:H2",
+      "PivotTableName": "TourPivotTable",
+      "SourceRange": "A1:F7",
+      "TargetRange": "H2:N14",
+      "RowAreaFields": [
+        "Region",
+        "Channel"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Sum of Sales"
+      ],
+      "LabelFilterCount": 0,
+      "ValueFilterCount": 0,
+      "SortCount": 0,
+      "PivotChartCount": 0,
+      "SavedWorkbookOutputFileName": "freex_pivot_advanced_workflows_saved.xlsx",
+      "SavedWorkbookBytes": 0,
+      "PersistenceStage": "layout-mutated",
+      "MenuHeaders": [],
+      "EvidenceSummary": "Label Filter dialog is prepared for the Region field before the deterministic Contains \u0027o\u0027 filter submission."
+    },
+    {
+      "CaptureKey": "interactive:pivot-advanced-workflows:value-filter-dialog",
+      "PairKey": "interactive:pivot-advanced-workflows:value-filter-dialog",
+      "ScenarioId": "pivot:advanced-workflows-persistence",
+      "State": "value-filter-dialog",
+      "Surface": "Pivot Value Filter dialog",
+      "FileName": "freex_pivot_advanced_value_filter_dialog",
+      "OutputFileName": "freex_pivot_advanced_value_filter_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-pivot-value-filter-dialog-window",
+      "CaptureLogicalWidth": 380,
+      "CaptureLogicalHeight": 260,
+      "SheetName": "Pivot Advanced",
+      "SelectedRange": "H2:H2",
+      "PivotTableName": "TourPivotTable",
+      "SourceRange": "A1:F7",
+      "TargetRange": "H2:N14",
+      "RowAreaFields": [
+        "Region",
+        "Channel"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Sum of Sales"
+      ],
+      "LabelFilterCount": 0,
+      "ValueFilterCount": 0,
+      "SortCount": 0,
+      "PivotChartCount": 0,
+      "SavedWorkbookOutputFileName": "freex_pivot_advanced_workflows_saved.xlsx",
+      "SavedWorkbookBytes": 0,
+      "PersistenceStage": "layout-mutated",
+      "MenuHeaders": [],
+      "EvidenceSummary": "Value Filter dialog is prepared for the Region field before the deterministic Greater Than 800 filter submission."
+    },
+    {
+      "CaptureKey": "interactive:pivot-advanced-workflows:label-value-filters-submitted",
+      "PairKey": "interactive:pivot-advanced-workflows:label-value-filters-submitted",
+      "ScenarioId": "pivot:advanced-workflows-persistence",
+      "State": "label-value-filters-submitted",
+      "Surface": "PivotTable worksheet/ribbon state",
+      "FileName": "freex_pivot_advanced_label_value_filters_submitted",
+      "OutputFileName": "freex_pivot_advanced_label_value_filters_submitted.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CaptureLogicalWidth": 1360,
+      "CaptureLogicalHeight": 820,
+      "SheetName": "Pivot Advanced",
+      "SelectedRange": "H2:H2",
+      "PivotTableName": "TourPivotTable",
+      "SourceRange": "A1:F7",
+      "TargetRange": "H2:N14",
+      "RowAreaFields": [
+        "Region",
+        "Channel"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Sum of Sales"
+      ],
+      "LabelFilterCount": 1,
+      "ValueFilterCount": 1,
+      "SortCount": 1,
+      "PivotChartCount": 0,
+      "SavedWorkbookOutputFileName": "freex_pivot_advanced_workflows_saved.xlsx",
+      "SavedWorkbookBytes": 0,
+      "PersistenceStage": "filters-submitted",
+      "MenuHeaders": [],
+      "EvidenceSummary": "Submitted label and value filter models are applied through ConfigurePivotTableViewCommand and the pivot grid is refreshed."
+    },
+    {
+      "CaptureKey": "interactive:pivot-advanced-workflows:value-field-settings-dialog",
+      "PairKey": "interactive:pivot-advanced-workflows:value-field-settings-dialog",
+      "ScenarioId": "pivot:advanced-workflows-persistence",
+      "State": "value-field-settings-dialog",
+      "Surface": "Value Field Settings dialog",
+      "FileName": "freex_pivot_advanced_value_field_settings_dialog",
+      "OutputFileName": "freex_pivot_advanced_value_field_settings_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-value-field-settings-dialog-window",
+      "CaptureLogicalWidth": 430,
+      "CaptureLogicalHeight": 430,
+      "SheetName": "Pivot Advanced",
+      "SelectedRange": "H2:H2",
+      "PivotTableName": "TourPivotTable",
+      "SourceRange": "A1:F7",
+      "TargetRange": "H2:N14",
+      "RowAreaFields": [
+        "Region",
+        "Channel"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Sum of Sales"
+      ],
+      "LabelFilterCount": 1,
+      "ValueFilterCount": 1,
+      "SortCount": 1,
+      "PivotChartCount": 0,
+      "SavedWorkbookOutputFileName": "freex_pivot_advanced_workflows_saved.xlsx",
+      "SavedWorkbookBytes": 0,
+      "PersistenceStage": "filters-submitted",
+      "MenuHeaders": [],
+      "EvidenceSummary": "Value Field Settings dialog shows Show Values As controls before the submitted Avg Sales % Grand Total data-field mutation."
+    },
+    {
+      "CaptureKey": "interactive:pivot-advanced-workflows:value-field-settings-result",
+      "PairKey": "interactive:pivot-advanced-workflows:value-field-settings-result",
+      "ScenarioId": "pivot:advanced-workflows-persistence",
+      "State": "value-field-settings-result",
+      "Surface": "PivotTable worksheet/ribbon state",
+      "FileName": "freex_pivot_advanced_value_field_settings_result",
+      "OutputFileName": "freex_pivot_advanced_value_field_settings_result.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CaptureLogicalWidth": 1360,
+      "CaptureLogicalHeight": 820,
+      "SheetName": "Pivot Advanced",
+      "SelectedRange": "H2:H2",
+      "PivotTableName": "TourPivotTable",
+      "SourceRange": "A1:F7",
+      "TargetRange": "H2:N14",
+      "RowAreaFields": [
+        "Region",
+        "Channel"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Avg Sales % Grand Total"
+      ],
+      "LabelFilterCount": 1,
+      "ValueFilterCount": 1,
+      "SortCount": 1,
+      "PivotChartCount": 0,
+      "SavedWorkbookOutputFileName": "freex_pivot_advanced_workflows_saved.xlsx",
+      "SavedWorkbookBytes": 0,
+      "PersistenceStage": "value-settings",
+      "MenuHeaders": [],
+      "EvidenceSummary": "Submitted Value Field Settings replace Sum of Sales with Avg Sales % Grand Total and a percent number format."
+    },
+    {
+      "CaptureKey": "interactive:pivot-advanced-workflows:clear-select-refresh-source-result",
+      "PairKey": "interactive:pivot-advanced-workflows:clear-select-refresh-source-result",
+      "ScenarioId": "pivot:advanced-workflows-persistence",
+      "State": "clear-select-refresh-source-result",
+      "Surface": "PivotTable worksheet/ribbon state",
+      "FileName": "freex_pivot_advanced_clear_select_refresh_source_result",
+      "OutputFileName": "freex_pivot_advanced_clear_select_refresh_source_result.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CaptureLogicalWidth": 1360,
+      "CaptureLogicalHeight": 820,
+      "SheetName": "Pivot Advanced",
+      "SelectedRange": "H2:H2",
+      "PivotTableName": "TourPivotTable",
+      "SourceRange": "A1:F8",
+      "TargetRange": "H2:N14",
+      "RowAreaFields": [
+        "Region",
+        "Channel"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Avg Sales % Grand Total"
+      ],
+      "LabelFilterCount": 0,
+      "ValueFilterCount": 0,
+      "SortCount": 0,
+      "PivotChartCount": 0,
+      "SavedWorkbookOutputFileName": "freex_pivot_advanced_workflows_saved.xlsx",
+      "SavedWorkbookBytes": 0,
+      "PersistenceStage": "clear-select-refresh-source",
+      "MenuHeaders": [],
+      "EvidenceSummary": "Clear PivotTable removes filters, Select PivotTable selects the rendered target range, Change Data Source expands the range, and Refresh materializes the new East row."
+    },
+    {
+      "CaptureKey": "interactive:pivot-advanced-workflows:pivotchart-field-button-menu",
+      "PairKey": "interactive:pivot-advanced-workflows:pivotchart-field-button-menu",
+      "ScenarioId": "pivot:advanced-workflows-persistence",
+      "State": "pivotchart-field-button-menu",
+      "Surface": "PivotChart field-button menu",
+      "FileName": "freex_pivot_advanced_pivotchart_field_button_menu",
+      "OutputFileName": "freex_pivot_advanced_pivotchart_field_button_menu.png",
+      "CaptureMethod": "RenderTargetBitmap-pivotchart-field-button-context-menu",
+      "CaptureLogicalWidth": 208,
+      "CaptureLogicalHeight": 166.66666666666666,
+      "SheetName": "Pivot Advanced",
+      "SelectedRange": "H2:H2",
+      "PivotTableName": "TourPivotTable",
+      "SourceRange": "A1:F8",
+      "TargetRange": "H2:N14",
+      "RowAreaFields": [
+        "Region",
+        "Channel"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Avg Sales % Grand Total"
+      ],
+      "LabelFilterCount": 0,
+      "ValueFilterCount": 0,
+      "SortCount": 0,
+      "PivotChartCount": 1,
+      "SavedWorkbookOutputFileName": "freex_pivot_advanced_workflows_saved.xlsx",
+      "SavedWorkbookBytes": 0,
+      "PersistenceStage": "pivotchart",
+      "MenuHeaders": [
+        "Sort A to Z",
+        "Sort Z to A",
+        "Select Items...",
+        "Label Filter...",
+        "Value Filter...",
+        "Clear Filter",
+        "Value Field Settings..."
+      ],
+      "EvidenceSummary": "PivotChart field-button menu uses the production Pivot field context menu after the advanced PivotChart is created."
+    },
+    {
+      "CaptureKey": "interactive:pivot-advanced-workflows:saved-xlsx-workbook",
+      "PairKey": "interactive:pivot-advanced-workflows:saved-xlsx-workbook",
+      "ScenarioId": "pivot:advanced-workflows-persistence",
+      "State": "saved-xlsx-workbook",
+      "Surface": "PivotTable worksheet/ribbon state",
+      "FileName": "freex_pivot_advanced_saved_xlsx_workbook",
+      "OutputFileName": "freex_pivot_advanced_saved_xlsx_workbook.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CaptureLogicalWidth": 1360,
+      "CaptureLogicalHeight": 820,
+      "SheetName": "Pivot Advanced",
+      "SelectedRange": "H2:H2",
+      "PivotTableName": "TourPivotTable",
+      "SourceRange": "A1:F8",
+      "TargetRange": "H2:N14",
+      "RowAreaFields": [
+        "Region",
+        "Channel"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Avg Sales % Grand Total"
+      ],
+      "LabelFilterCount": 0,
+      "ValueFilterCount": 0,
+      "SortCount": 0,
+      "PivotChartCount": 1,
+      "SavedWorkbookOutputFileName": "freex_pivot_advanced_workflows_saved.xlsx",
+      "SavedWorkbookBytes": 9917,
+      "PersistenceStage": "saved",
+      "MenuHeaders": [],
+      "EvidenceSummary": "SaveWorkbookToTargetAsync writes the authored PivotTable/PivotChart workbook through the XLSX adapter while the advanced pivot state remains selected."
+    },
+    {
+      "CaptureKey": "interactive:pivot-advanced-workflows:reopened-persisted-pivot",
+      "PairKey": "interactive:pivot-advanced-workflows:reopened-persisted-pivot",
+      "ScenarioId": "pivot:advanced-workflows-persistence",
+      "State": "reopened-persisted-pivot",
+      "Surface": "PivotTable worksheet/ribbon state",
+      "FileName": "freex_pivot_advanced_reopened_persisted_pivot",
+      "OutputFileName": "freex_pivot_advanced_reopened_persisted_pivot.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CaptureLogicalWidth": 1360,
+      "CaptureLogicalHeight": 820,
+      "SheetName": "Pivot Advanced",
+      "SelectedRange": "H2:H2",
+      "PivotTableName": "TourPivotTable",
+      "SourceRange": "A1:F8",
+      "TargetRange": "H2:M12",
+      "RowAreaFields": [
+        "Region",
+        "Channel"
+      ],
+      "ColumnAreaFields": [
+        "Product"
+      ],
+      "FilterAreaFields": [
+        "Quarter"
+      ],
+      "ValueAreaFields": [
+        "Avg Sales % Grand Total"
+      ],
+      "LabelFilterCount": 0,
+      "ValueFilterCount": 0,
+      "SortCount": 0,
+      "PivotChartCount": 1,
+      "SavedWorkbookOutputFileName": "freex_pivot_advanced_workflows_saved.xlsx",
+      "SavedWorkbookBytes": 9917,
+      "PersistenceStage": "reopened",
+      "MenuHeaders": [],
+      "EvidenceSummary": "OpenFileAsync reopens the saved XLSX workbook and restores the PivotTable layout, value-field settings, expanded source range, and PivotChart binding where supported."
+    }
+  ],
+  "SubmittedMutations": [
+    "MoveSelectedPivotField(PivotFieldDropZone.Rows) exercises the production model-equivalent field layout mutation path for Channel.",
+    "ConfigurePivotTableViewCommand applies submitted label and value filters plus label sort.",
+    "ConfigurePivotTableLayoutCommand applies the submitted Value Field Settings result for Avg Sales % Grand Total.",
+    "ClearPivotTableViewCommand, ChangePivotTableSourceCommand, RefreshPivotTableCommand, and PivotTable selection cover clear/select/refresh/change-source states.",
+    "AddPivotChartCommand creates a PivotChart before the field-button context menu state is captured.",
+    "SaveWorkbookToTargetAsync writes the authored .xlsx and OpenFileAsync reopens it through the host open path."
+  ],
+  "CoveredStates": [
+    "seeded-analyze-layout",
+    "field-layout-mutated",
+    "label-filter-dialog",
+    "value-filter-dialog",
+    "label-value-filters-submitted",
+    "value-field-settings-dialog",
+    "value-field-settings-result",
+    "clear-select-refresh-source-result",
+    "pivotchart-field-button-menu",
+    "saved-xlsx-workbook",
+    "reopened-persisted-pivot"
+  ],
+  "Limitations": [
+    "This bounded tour opens production FreeX WPF surfaces in process and captures them with RenderTargetBitmap.",
+    "It does not synthesize foreground mouse/keytip/dialog access-key/UIA input or physical field-list drag/drop.",
+    "Field placement is covered by the same model-equivalent mutation path used by the production field-list controls; physical pointer drag/drop remains a separate foreground-only gap.",
+    "Label/value filter and value-field setting submissions are deterministic command submissions after dialog surface capture, not foreground OK-button input proof.",
+    "PivotChart field-button menu routing is captured through the production field context menu; rendered chart field-button annotations and hit-test pointer opening remain outside this background-render slice.",
+    "No Microsoft Excel counterpart screenshots are produced by this tool."
+  ]
+}
