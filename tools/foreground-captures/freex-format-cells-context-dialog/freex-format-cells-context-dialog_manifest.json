@@ -1,0 +1,41 @@
+{
+  "Scenario": "freex-format-cells-context-dialog",
+  "Subject": "freex",
+  "CaptureStatus": "blocked",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 83508,
+    "ExpectedHandle": 67962964,
+    "ForegroundWindow": {
+      "Handle": 67962964,
+      "ProcessId": 83508,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;612610c9-28a5-499e-ac43-a251e3aa554f]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 51,
+          "Y": 51
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "X": 51,
+        "Y": 51,
+        "Width": 1280,
+        "Height": 720,
+        "Left": 51,
+        "Top": 51,
+        "Right": 1331,
+        "Bottom": 771,
+        "IsEmpty": false
+      }
+    }
+  },
+  "BlockReason": "context-menu-item-not-found: Right-clicked A1 in FreeX, but could not find or invoke a visible Format Cells menu item through UI Automation.",
+  "CapturedAtUtc": "2026-06-10T22:21:50.4843591+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s2s7-alt-proof-20260611\\tools\\foreground-captures\\freex-format-cells-context-dialog\\freex-format-cells-context-dialog_manifest.json"
+}
