@@ -1,0 +1,70 @@
+{
+  "Scenario": "freex-export-pdf-save-dialog-cancel",
+  "Subject": "freex",
+  "CaptureStatus": "complete",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s3-export-print-edge-20260610b\\tools\\foreground-captures\\freex-export-pdf-save-dialog-cancel\\freex-export-pdf-save-dialog-cancel_20260610_190710.png",
+  "Window": {
+    "Handle": 11276076,
+    "ProcessId": 95944,
+    "Title": "Export as PDF / XPS",
+    "ClassName": "#32770",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 266,
+        "Y": 266
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1800,
+        "Height": 1080
+      },
+      "X": 266,
+      "Y": 266,
+      "Width": 1800,
+      "Height": 1080,
+      "Left": 266,
+      "Top": 266,
+      "Right": 2066,
+      "Bottom": 1346,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 95944,
+    "ExpectedHandle": 6754864,
+    "ForegroundWindow": {
+      "Handle": 6754864,
+      "ProcessId": 95944,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;fec64371-aba9-4725-b3f6-ee4fd9843320]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 266,
+          "Y": 266
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1920,
+          "Height": 1080
+        },
+        "X": 266,
+        "Y": 266,
+        "Width": 1920,
+        "Height": 1080,
+        "Left": 266,
+        "Top": 266,
+        "Right": 2186,
+        "Bottom": 1346,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-10T19:07:10.4746697+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s3-export-print-edge-20260610b\\tools\\foreground-captures\\freex-export-pdf-save-dialog-cancel\\freex-export-pdf-save-dialog-cancel_manifest.json",
+  "ResultValidation": "Escape canceled the PDF/XPS native SaveFileDialog and returned foreground focus to FreeX.",
+  "ContinuationScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s3-export-print-edge-20260610b\\tools\\foreground-captures\\freex-export-pdf-save-dialog-cancel\\freex-export-pdf-save-dialog-cancel_continuation_20260610_190711.png"
+}
