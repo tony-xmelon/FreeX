@@ -1,0 +1,70 @@
+{
+  "Scenario": "freex-background-picker-cancel",
+  "Subject": "freex",
+  "CaptureStatus": "complete",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s3-native-dialog-continuations-20260610\\tools\\foreground-captures\\freex-background-picker-cancel\\freex-background-picker-cancel_20260610_175813.png",
+  "Window": {
+    "Handle": 13308014,
+    "ProcessId": 98640,
+    "Title": "Sheet Background",
+    "ClassName": "#32770",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 152,
+        "Y": 152
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1800,
+        "Height": 1080
+      },
+      "X": 152,
+      "Y": 152,
+      "Width": 1800,
+      "Height": 1080,
+      "Left": 152,
+      "Top": 152,
+      "Right": 1952,
+      "Bottom": 1232,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 98640,
+    "ExpectedHandle": 7147476,
+    "ForegroundWindow": {
+      "Handle": 7147476,
+      "ProcessId": 98640,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;b3e1e751-2402-4f32-8a99-fd5f73dd9212]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 152,
+          "Y": 152
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1920,
+          "Height": 1080
+        },
+        "X": 152,
+        "Y": 152,
+        "Width": 1920,
+        "Height": 1080,
+        "Left": 152,
+        "Top": 152,
+        "Right": 2072,
+        "Bottom": 1232,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-10T17:58:14.0818779+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s3-native-dialog-continuations-20260610\\tools\\foreground-captures\\freex-background-picker-cancel\\freex-background-picker-cancel_manifest.json",
+  "ResultValidation": "Escape canceled the sheet-background OpenFileDialog and returned foreground focus to FreeX.",
+  "ContinuationScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s3-native-dialog-continuations-20260610\\tools\\foreground-captures\\freex-background-picker-cancel\\freex-background-picker-cancel_continuation_20260610_175815.png"
+}
