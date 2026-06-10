@@ -1,0 +1,320 @@
+{
+  "Tool": "FREEX_PAGE_LAYOUT_OUTPUT_TOUR",
+  "EvidenceFamily": "page-layout-output",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "page-layout-output:visual-and-output-evidence",
+  "GeneratedAtUtc": "2026-06-10T06:07:42.9455101+00:00",
+  "OutputDirectory": "screenshots/page-layout-output-tour",
+  "CaptureStatus": "complete-with-native-picker-limitation",
+  "CaptureMode": "background-render-allowed",
+  "PlannedCaptureCount": 7,
+  "ActualCaptureCount": 7,
+  "PlannedOutputProofCount": 2,
+  "ActualOutputProofCount": 2,
+  "Pairing": {
+    "PairKeyPattern": "interactive:page-layout-output:\u003CState\u003E",
+    "CounterpartSubject": "excel",
+    "CounterpartTool": "not-yet-wired",
+    "CounterpartOutputNaming": "not-yet-captured"
+  },
+  "FocusGuard": {
+    "Required": false,
+    "Policy": "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 bypassed foreground-window enforcement for deterministic local rendering."
+  },
+  "Captures": [
+    {
+      "CaptureKey": "interactive:page-layout-output:background-native-picker-guard",
+      "PairKey": "interactive:page-layout-output:background-native-picker-guard",
+      "ScenarioId": "page-layout-output:visual-and-output-evidence",
+      "State": "background-native-picker-guard",
+      "Surface": "Background",
+      "FileName": "freex_page_layout_output_background_native_picker_guard",
+      "OutputFileName": "freex_page_layout_output_background_native_picker_guard.png",
+      "CaptureMethod": "RenderTargetBitmap-page-layout-context-menu",
+      "CaptureLogicalWidth": 0,
+      "CaptureLogicalHeight": 0,
+      "CoveredBacklogIds": [
+        "UI-CAT-PAGE-001",
+        "UI-CMD-PAGE-002"
+      ],
+      "SheetName": "Sheet1",
+      "ActiveRange": "A1:F24",
+      "ViewMode": "PageLayout",
+      "BackgroundImageFileName": "page-layout-output-background.png",
+      "PrintArea": "A1:F24",
+      "PrintTitleRows": "WorksheetRepeatRange { Start = 1, End = 2 }",
+      "PrintTitleColumns": "WorksheetRepeatRange { Start = 1, End = 1 }",
+      "RowPageBreaks": [
+        12,
+        24
+      ],
+      "ColumnPageBreaks": [
+        5
+      ],
+      "ScaleToFit": "WorksheetScaleToFit { ScalePercent = , FitToPagesWide = 1, FitToPagesTall = 2 }",
+      "PrintGridlines": true,
+      "PrintHeadings": true,
+      "MenuHeaders": [
+        "Choose Background...",
+        "Delete Background"
+      ],
+      "EvidencePurpose": "Background command evidence captures the owned menu surface only; the native image picker is intentionally not opened without foreground ownership."
+    },
+    {
+      "CaptureKey": "interactive:page-layout-output:print-titles-defaults",
+      "PairKey": "interactive:page-layout-output:print-titles-defaults",
+      "ScenarioId": "page-layout-output:visual-and-output-evidence",
+      "State": "print-titles-defaults",
+      "Surface": "Page Setup \u003E Sheet",
+      "FileName": "freex_page_layout_output_print_titles_defaults",
+      "OutputFileName": "freex_page_layout_output_print_titles_defaults.png",
+      "CaptureMethod": "RenderTargetBitmap-page-setup-dialog-window",
+      "CaptureLogicalWidth": 1240,
+      "CaptureLogicalHeight": 780,
+      "CoveredBacklogIds": [
+        "UI-CAT-PAGE-001",
+        "UI-CMD-PAGE-002",
+        "UI-CMD-PAGE-003"
+      ],
+      "SheetName": "Sheet1",
+      "ActiveRange": "A1:F24",
+      "ViewMode": "PageLayout",
+      "BackgroundImageFileName": "page-layout-output-background.png",
+      "PrintArea": "A1:F24",
+      "PrintTitleRows": "WorksheetRepeatRange { Start = 1, End = 2 }",
+      "PrintTitleColumns": "WorksheetRepeatRange { Start = 1, End = 1 }",
+      "RowPageBreaks": [
+        12,
+        24
+      ],
+      "ColumnPageBreaks": [
+        5
+      ],
+      "ScaleToFit": "WorksheetScaleToFit { ScalePercent = , FitToPagesWide = 1, FitToPagesTall = 2 }",
+      "PrintGridlines": true,
+      "PrintHeadings": true,
+      "MenuHeaders": [],
+      "EvidencePurpose": "Page Setup opens from Print Titles on the Sheet tab with print area, rows/columns to repeat, range-picker buttons, print options, and page order visible."
+    },
+    {
+      "CaptureKey": "interactive:page-layout-output:print-titles-range-picker-result",
+      "PairKey": "interactive:page-layout-output:print-titles-range-picker-result",
+      "ScenarioId": "page-layout-output:visual-and-output-evidence",
+      "State": "print-titles-range-picker-result",
+      "Surface": "Page Setup \u003E Sheet range picker",
+      "FileName": "freex_page_layout_output_print_titles_range_picker_result",
+      "OutputFileName": "freex_page_layout_output_print_titles_range_picker_result.png",
+      "CaptureMethod": "RenderTargetBitmap-page-setup-dialog-window",
+      "CaptureLogicalWidth": 1240,
+      "CaptureLogicalHeight": 780,
+      "CoveredBacklogIds": [
+        "UI-CMD-PAGE-002"
+      ],
+      "SheetName": "Sheet1",
+      "ActiveRange": "A1:F2",
+      "ViewMode": "PageLayout",
+      "BackgroundImageFileName": "page-layout-output-background.png",
+      "PrintArea": "A1:F24",
+      "PrintTitleRows": "WorksheetRepeatRange { Start = 1, End = 2 }",
+      "PrintTitleColumns": "WorksheetRepeatRange { Start = 1, End = 1 }",
+      "RowPageBreaks": [
+        12,
+        24
+      ],
+      "ColumnPageBreaks": [
+        5
+      ],
+      "ScaleToFit": "WorksheetScaleToFit { ScalePercent = , FitToPagesWide = 1, FitToPagesTall = 2 }",
+      "PrintGridlines": true,
+      "PrintHeadings": true,
+      "MenuHeaders": [],
+      "EvidencePurpose": "Rows to repeat is populated by the Page Setup range-picker callback from the current worksheet selection without native or unsafe input."
+    },
+    {
+      "CaptureKey": "interactive:page-layout-output:print-area-menu-status",
+      "PairKey": "interactive:page-layout-output:print-area-menu-status",
+      "ScenarioId": "page-layout-output:visual-and-output-evidence",
+      "State": "print-area-menu-status",
+      "Surface": "Print Area",
+      "FileName": "freex_page_layout_output_print_area_menu_status",
+      "OutputFileName": "freex_page_layout_output_print_area_menu_status.png",
+      "CaptureMethod": "RenderTargetBitmap-page-layout-context-menu",
+      "CaptureLogicalWidth": 0,
+      "CaptureLogicalHeight": 0,
+      "CoveredBacklogIds": [
+        "UI-CAT-PAGE-001",
+        "UI-CMD-PAGE-001"
+      ],
+      "SheetName": "Sheet1",
+      "ActiveRange": "A1:F24",
+      "ViewMode": "PageLayout",
+      "BackgroundImageFileName": "page-layout-output-background.png",
+      "PrintArea": "A1:F24",
+      "PrintTitleRows": "WorksheetRepeatRange { Start = 1, End = 2 }",
+      "PrintTitleColumns": "WorksheetRepeatRange { Start = 1, End = 1 }",
+      "RowPageBreaks": [
+        12,
+        24
+      ],
+      "ColumnPageBreaks": [
+        5
+      ],
+      "ScaleToFit": "WorksheetScaleToFit { ScalePercent = , FitToPagesWide = 1, FitToPagesTall = 2 }",
+      "PrintGridlines": true,
+      "PrintHeadings": true,
+      "MenuHeaders": [
+        "Set Print Area",
+        "Add to Print Area",
+        "Clear Print Area"
+      ],
+      "EvidencePurpose": "Print Area menu status is captured against the selected persisted print-area range, including Set, disabled Add to Print Area, and Clear."
+    },
+    {
+      "CaptureKey": "interactive:page-layout-output:breaks-menu-status",
+      "PairKey": "interactive:page-layout-output:breaks-menu-status",
+      "ScenarioId": "page-layout-output:visual-and-output-evidence",
+      "State": "breaks-menu-status",
+      "Surface": "Breaks",
+      "FileName": "freex_page_layout_output_breaks_menu_status",
+      "OutputFileName": "freex_page_layout_output_breaks_menu_status.png",
+      "CaptureMethod": "RenderTargetBitmap-page-layout-context-menu",
+      "CaptureLogicalWidth": 0,
+      "CaptureLogicalHeight": 0,
+      "CoveredBacklogIds": [
+        "UI-CAT-PAGE-001",
+        "UI-CMD-PAGE-001"
+      ],
+      "SheetName": "Sheet1",
+      "ActiveRange": "E12:E12",
+      "ViewMode": "PageLayout",
+      "BackgroundImageFileName": "page-layout-output-background.png",
+      "PrintArea": "A1:F24",
+      "PrintTitleRows": "WorksheetRepeatRange { Start = 1, End = 2 }",
+      "PrintTitleColumns": "WorksheetRepeatRange { Start = 1, End = 1 }",
+      "RowPageBreaks": [
+        12,
+        24
+      ],
+      "ColumnPageBreaks": [
+        5
+      ],
+      "ScaleToFit": "WorksheetScaleToFit { ScalePercent = , FitToPagesWide = 1, FitToPagesTall = 2 }",
+      "PrintGridlines": true,
+      "PrintHeadings": true,
+      "MenuHeaders": [
+        "Insert Page Break",
+        "Remove Page Break",
+        "Reset All Page Breaks"
+      ],
+      "EvidencePurpose": "Breaks menu status is captured with seeded row and column breaks plus a selected split point for Insert/Remove/Reset evidence."
+    },
+    {
+      "CaptureKey": "interactive:page-layout-output:scale-to-fit-result-status",
+      "PairKey": "interactive:page-layout-output:scale-to-fit-result-status",
+      "ScenarioId": "page-layout-output:visual-and-output-evidence",
+      "State": "scale-to-fit-result-status",
+      "Surface": "Page Layout ribbon",
+      "FileName": "freex_page_layout_output_scale_to_fit_result_status",
+      "OutputFileName": "freex_page_layout_output_scale_to_fit_result_status.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CaptureLogicalWidth": 1240,
+      "CaptureLogicalHeight": 780,
+      "CoveredBacklogIds": [
+        "UI-CAT-PAGE-001",
+        "UI-CMD-PAGE-002"
+      ],
+      "SheetName": "Sheet1",
+      "ActiveRange": "E12:E12",
+      "ViewMode": "PageLayout",
+      "BackgroundImageFileName": "page-layout-output-background.png",
+      "PrintArea": "A1:F24",
+      "PrintTitleRows": "WorksheetRepeatRange { Start = 1, End = 2 }",
+      "PrintTitleColumns": "WorksheetRepeatRange { Start = 1, End = 1 }",
+      "RowPageBreaks": [
+        12,
+        24
+      ],
+      "ColumnPageBreaks": [
+        5
+      ],
+      "ScaleToFit": "WorksheetScaleToFit { ScalePercent = , FitToPagesWide = 1, FitToPagesTall = 2 }",
+      "PrintGridlines": true,
+      "PrintHeadings": true,
+      "MenuHeaders": [],
+      "EvidencePurpose": "Scale-to-Fit result status shows the production fit-to-pages model and ribbon fields after applying one-page-wide by two-pages-tall output settings."
+    },
+    {
+      "CaptureKey": "interactive:page-layout-output:print-preview-output-summary",
+      "PairKey": "interactive:page-layout-output:print-preview-output-summary",
+      "ScenarioId": "page-layout-output:visual-and-output-evidence",
+      "State": "print-preview-output-summary",
+      "Surface": "Print Preview",
+      "FileName": "freex_page_layout_output_print_preview_summary",
+      "OutputFileName": "freex_page_layout_output_print_preview_summary.png",
+      "CaptureMethod": "RenderTargetBitmap-print-preview-dialog-window",
+      "CaptureLogicalWidth": 1240,
+      "CaptureLogicalHeight": 780,
+      "CoveredBacklogIds": [
+        "UI-CAT-PAGE-001",
+        "UI-CMD-PAGE-001",
+        "UI-CMD-PAGE-002",
+        "UI-CMD-PAGE-003"
+      ],
+      "SheetName": "Sheet1",
+      "ActiveRange": "E12:E12",
+      "ViewMode": "PageLayout",
+      "BackgroundImageFileName": "page-layout-output-background.png",
+      "PrintArea": "A1:F24",
+      "PrintTitleRows": "WorksheetRepeatRange { Start = 1, End = 2 }",
+      "PrintTitleColumns": "WorksheetRepeatRange { Start = 1, End = 1 }",
+      "RowPageBreaks": [
+        12,
+        24
+      ],
+      "ColumnPageBreaks": [
+        5
+      ],
+      "ScaleToFit": "WorksheetScaleToFit { ScalePercent = , FitToPagesWide = 1, FitToPagesTall = 2 }",
+      "PrintGridlines": true,
+      "PrintHeadings": true,
+      "MenuHeaders": [],
+      "EvidencePurpose": "Print Preview links the seeded print area, print titles, page breaks, gridlines/headings, and scale-to-fit state to a rendered output summary."
+    }
+  ],
+  "OutputProof": {
+    "SavedWorkbookFileName": "freex_page_layout_output_saved.xlsx",
+    "SavedWorkbookBytes": 6962,
+    "SavedWorkbookReloaded": true,
+    "ReloadedPrintArea": "A1:F24",
+    "ReloadedPrintTitleRows": "WorksheetRepeatRange { Start = 1, End = 2 }",
+    "ReloadedPrintTitleColumns": "WorksheetRepeatRange { Start = 1, End = 1 }",
+    "ReloadedScaleToFit": "WorksheetScaleToFit { ScalePercent = , FitToPagesWide = 1, FitToPagesTall = 2 }",
+    "ReloadedBackgroundImageFileName": "page-layout-output-background.png",
+    "ReloadedBackgroundImageBytes": 70,
+    "PrintPreviewPageCount": 8,
+    "PrintSettingsSummary": "Print selected print area; Orientation: Landscape; Paper size: Letter; Scaling: fit 1 page wide by 2 tall; Gridlines: on; Headings: on",
+    "ExportedPdfFileName": "freex_page_layout_output_print_titles.pdf",
+    "ExportedPdfBytes": 141654,
+    "ExportedPdfPageCount": 8,
+    "ExportedPdfPageLayout": "/OneColumn",
+    "ExportedPdfPageMode": "/UseOutlines",
+    "ExportedPdfOutlineCount": 1
+  },
+  "CoveredStates": [
+    "background-native-picker-guard",
+    "print-titles-defaults",
+    "print-titles-range-picker-result",
+    "print-area-menu-status",
+    "breaks-menu-status",
+    "scale-to-fit-result-status",
+    "print-preview-output-summary",
+    "xlsx-persistence-proof",
+    "pdf-output-inspection-proof"
+  ],
+  "Limitations": [
+    "Background Choose uses Microsoft.Win32.OpenFileDialog; the tour captures the owned command/menu guard and seeded model status but does not open or drive the native image picker without foreground ownership.",
+    "Print Preview and PDF proof are produced in-process from FreeX rendering services; no native PrintDialog, printer driver, or SaveFileDialog is opened.",
+    "Microsoft Excel counterpart screenshots are not produced by this tool."
+  ]
+}
