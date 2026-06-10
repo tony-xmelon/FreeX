@@ -1,0 +1,68 @@
+﻿{
+    "Tool":  "FREEX_EXCEL_SAVE_AS_WORKBOOK_DIALOG_TOUR",
+    "EvidenceFamily":  "native-dialog",
+    "EvidenceSubject":  "excel",
+    "EvidenceApp":  "Microsoft Excel",
+    "OutputDirectory":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-file-native-dialogs-20260610\\screenshots_excel\\save-as-workbook-dialog-tour",
+    "OutputNaming":  "interactive_save_as_workbook_dialog_opened.png",
+    "CatalogEvidenceTarget":  "docs/testing/ui-test-catalog.md",
+    "DialogTitle":  "",
+    "DialogClassName":  "NUIDialog",
+    "EntryPath":  "F12",
+    "CaptureStatus":  "complete",
+    "CaptureMethod":  "native-dialog-window-rectangle",
+    "ForegroundGuard":  {
+                            "Required":  true,
+                            "ExpectedProcessId":  37816,
+                            "ExpectedWindowTitle":  "Book2 - Excel",
+                            "Policy":  "Seed a blank Excel workbook, then abort and clear Save As dialog evidence unless Excel owns foreground immediately before F12 and before screen capture."
+                        },
+    "Pairing":  {
+                    "PairKeyPattern":  "interactive:save-as-workbook-dialog:\u003cState\u003e",
+                    "PairKey":  "interactive:save-as-workbook-dialog:opened",
+                    "CounterpartSubject":  "freex",
+                    "CounterpartTool":  "FREEX_SAVE_AS_WORKBOOK_DIALOG_TOUR",
+                    "CounterpartFileName":  "freex_save_as_workbook_dialog_opened.png"
+                },
+    "Scenario":  {
+                     "ScenarioId":  "native-dialog:save-as-workbook",
+                     "ScenarioFileName":  "save_as_workbook_dialog",
+                     "State":  "opened",
+                     "Trigger":  "Excel COM starts a blank workbook and a foreground-guarded F12 opens the native Save As dialog."
+                 },
+    "WindowBounds":  {
+                         "Left":  553,
+                         "Top":  479,
+                         "Right":  1243,
+                         "Bottom":  958,
+                         "Width":  690,
+                         "Height":  479
+                     },
+    "DialogBounds":  {
+                         "Handle":  "8259842",
+                         "ClassName":  "NUIDialog",
+                         "Title":  "",
+                         "Left":  553,
+                         "Top":  479,
+                         "Right":  1243,
+                         "Bottom":  958,
+                         "Width":  690,
+                         "Height":  479
+                     },
+    "Captures":  [
+                     {
+                         "CaptureSequence":  1,
+                         "CaptureKey":  "interactive:save-as-workbook-dialog:opened",
+                         "PairKey":  "interactive:save-as-workbook-dialog:opened",
+                         "EvidenceSubject":  "excel",
+                         "CounterpartSubject":  "freex",
+                         "CounterpartFileName":  "freex_save_as_workbook_dialog_opened.png",
+                         "FileName":  "interactive_save_as_workbook_dialog_opened.png",
+                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-file-native-dialogs-20260610\\screenshots_excel\\save-as-workbook-dialog-tour\\interactive_save_as_workbook_dialog_opened.png",
+                         "Width":  690,
+                         "Height":  479,
+                         "CaptureMethod":  "native-dialog-window-rectangle",
+                         "CaptureStatus":  "complete"
+                     }
+                 ]
+}
