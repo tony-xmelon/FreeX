@@ -1,0 +1,41 @@
+{
+  "Scenario": "freex-s4-grid-double-click-autofit",
+  "Subject": "freex",
+  "CaptureStatus": "blocked",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 105984,
+    "ExpectedHandle": 17567516,
+    "ForegroundWindow": {
+      "Handle": 17567516,
+      "ProcessId": 105984,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;b3467a11-5267-4f35-874c-48c38f1f5589]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 203,
+          "Y": 203
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "X": 203,
+        "Y": 203,
+        "Width": 1280,
+        "Height": 720,
+        "Left": 203,
+        "Top": 203,
+        "Right": 1483,
+        "Bottom": 923,
+        "IsEmpty": false
+      }
+    }
+  },
+  "BlockReason": "column-autofit-validation-failed: Expected column A width to grow after double-click AutoFit; before 96, after 92.",
+  "CapturedAtUtc": "2026-06-10T22:18:34.7908796+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s4-grid-validation-run-20260611\\tools\\foreground-captures\\freex-s4-grid-double-click-autofit\\freex-s4-grid-double-click-autofit_manifest.json"
+}
