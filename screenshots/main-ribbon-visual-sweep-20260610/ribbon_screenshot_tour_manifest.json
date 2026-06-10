@@ -1,0 +1,365 @@
+{
+  "Tool": "FREEX_SS_TOUR",
+  "EvidenceFamily": "ribbon",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-main-ribbon-sweep-20260610\\screenshots\\main-ribbon-visual-sweep-20260610",
+  "OutputNaming": "\u003CWidthLabel\u003E_\u003CRibbonTab\u003E[_\u003CPhase\u003E].png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
+  "Context": null,
+  "BurstMode": false,
+  "CaptureLogicalHeight": 300,
+  "PlannedCaptureCount": 27,
+  "ActualCaptureCount": 27,
+  "CaptureStatus": "complete",
+  "CaptureMethod": "RenderTargetBitmap-window-top-band",
+  "Pairing": {
+    "PairKeyPattern": "ribbon:\u003CWidthLabel\u003E:\u003CTabFileName\u003E",
+    "CounterpartSubject": "excel",
+    "CounterpartTool": "screenshot_excel.ps1",
+    "CounterpartOutputNaming": "excel_\u003CWidthLabel\u003E_\u003CRibbonTab\u003E.png"
+  },
+  "FocusGuard": {
+    "Required": false,
+    "Policy": "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 allowed in-process RenderTargetBitmap capture without OS foreground ownership; no global mouse, keyboard, or screen capture input is used."
+  },
+  "Tabs": [
+    "Home",
+    "Insert",
+    "Draw",
+    "Page Layout",
+    "Formulas",
+    "Data",
+    "Review",
+    "View",
+    "Help"
+  ],
+  "Widths": [
+    {
+      "Label": "max",
+      "WindowWidth": null,
+      "EvidencePurpose": "Maximized baseline before resize pressure."
+    },
+    {
+      "Label": "1100",
+      "WindowWidth": 1100,
+      "EvidencePurpose": "Wide ribbon breakpoint before most command groups collapse."
+    },
+    {
+      "Label": "900",
+      "WindowWidth": 900,
+      "EvidencePurpose": "Medium ribbon breakpoint where grouped commands begin to compress."
+    }
+  ],
+  "Phases": [
+    {
+      "Label": "settled",
+      "FileNameSuffix": null
+    }
+  ],
+  "Captures": [
+    {
+      "CaptureKey": "ribbon:max:Home",
+      "PairKey": "ribbon:max:Home",
+      "Tab": "Home",
+      "TabFileName": "Home",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_Home",
+      "OutputFileName": "max_Home.png",
+      "CounterpartFileName": "excel_max_Home.png"
+    },
+    {
+      "CaptureKey": "ribbon:max:Insert",
+      "PairKey": "ribbon:max:Insert",
+      "Tab": "Insert",
+      "TabFileName": "Insert",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_Insert",
+      "OutputFileName": "max_Insert.png",
+      "CounterpartFileName": "excel_max_Insert.png"
+    },
+    {
+      "CaptureKey": "ribbon:max:Draw",
+      "PairKey": "ribbon:max:Draw",
+      "Tab": "Draw",
+      "TabFileName": "Draw",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_Draw",
+      "OutputFileName": "max_Draw.png",
+      "CounterpartFileName": "excel_max_Draw.png"
+    },
+    {
+      "CaptureKey": "ribbon:max:Page_Layout",
+      "PairKey": "ribbon:max:Page_Layout",
+      "Tab": "Page Layout",
+      "TabFileName": "Page_Layout",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_Page_Layout",
+      "OutputFileName": "max_Page_Layout.png",
+      "CounterpartFileName": "excel_max_Page_Layout.png"
+    },
+    {
+      "CaptureKey": "ribbon:max:Formulas",
+      "PairKey": "ribbon:max:Formulas",
+      "Tab": "Formulas",
+      "TabFileName": "Formulas",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_Formulas",
+      "OutputFileName": "max_Formulas.png",
+      "CounterpartFileName": "excel_max_Formulas.png"
+    },
+    {
+      "CaptureKey": "ribbon:max:Data",
+      "PairKey": "ribbon:max:Data",
+      "Tab": "Data",
+      "TabFileName": "Data",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_Data",
+      "OutputFileName": "max_Data.png",
+      "CounterpartFileName": "excel_max_Data.png"
+    },
+    {
+      "CaptureKey": "ribbon:max:Review",
+      "PairKey": "ribbon:max:Review",
+      "Tab": "Review",
+      "TabFileName": "Review",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_Review",
+      "OutputFileName": "max_Review.png",
+      "CounterpartFileName": "excel_max_Review.png"
+    },
+    {
+      "CaptureKey": "ribbon:max:View",
+      "PairKey": "ribbon:max:View",
+      "Tab": "View",
+      "TabFileName": "View",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_View",
+      "OutputFileName": "max_View.png",
+      "CounterpartFileName": "excel_max_View.png"
+    },
+    {
+      "CaptureKey": "ribbon:max:Help",
+      "PairKey": "ribbon:max:Help",
+      "Tab": "Help",
+      "TabFileName": "Help",
+      "Width": "max",
+      "Phase": "settled",
+      "FileName": "max_Help",
+      "OutputFileName": "max_Help.png",
+      "CounterpartFileName": "excel_max_Help.png"
+    },
+    {
+      "CaptureKey": "ribbon:1100:Home",
+      "PairKey": "ribbon:1100:Home",
+      "Tab": "Home",
+      "TabFileName": "Home",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_Home",
+      "OutputFileName": "1100_Home.png",
+      "CounterpartFileName": "excel_1100_Home.png"
+    },
+    {
+      "CaptureKey": "ribbon:1100:Insert",
+      "PairKey": "ribbon:1100:Insert",
+      "Tab": "Insert",
+      "TabFileName": "Insert",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_Insert",
+      "OutputFileName": "1100_Insert.png",
+      "CounterpartFileName": "excel_1100_Insert.png"
+    },
+    {
+      "CaptureKey": "ribbon:1100:Draw",
+      "PairKey": "ribbon:1100:Draw",
+      "Tab": "Draw",
+      "TabFileName": "Draw",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_Draw",
+      "OutputFileName": "1100_Draw.png",
+      "CounterpartFileName": "excel_1100_Draw.png"
+    },
+    {
+      "CaptureKey": "ribbon:1100:Page_Layout",
+      "PairKey": "ribbon:1100:Page_Layout",
+      "Tab": "Page Layout",
+      "TabFileName": "Page_Layout",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_Page_Layout",
+      "OutputFileName": "1100_Page_Layout.png",
+      "CounterpartFileName": "excel_1100_Page_Layout.png"
+    },
+    {
+      "CaptureKey": "ribbon:1100:Formulas",
+      "PairKey": "ribbon:1100:Formulas",
+      "Tab": "Formulas",
+      "TabFileName": "Formulas",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_Formulas",
+      "OutputFileName": "1100_Formulas.png",
+      "CounterpartFileName": "excel_1100_Formulas.png"
+    },
+    {
+      "CaptureKey": "ribbon:1100:Data",
+      "PairKey": "ribbon:1100:Data",
+      "Tab": "Data",
+      "TabFileName": "Data",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_Data",
+      "OutputFileName": "1100_Data.png",
+      "CounterpartFileName": "excel_1100_Data.png"
+    },
+    {
+      "CaptureKey": "ribbon:1100:Review",
+      "PairKey": "ribbon:1100:Review",
+      "Tab": "Review",
+      "TabFileName": "Review",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_Review",
+      "OutputFileName": "1100_Review.png",
+      "CounterpartFileName": "excel_1100_Review.png"
+    },
+    {
+      "CaptureKey": "ribbon:1100:View",
+      "PairKey": "ribbon:1100:View",
+      "Tab": "View",
+      "TabFileName": "View",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_View",
+      "OutputFileName": "1100_View.png",
+      "CounterpartFileName": "excel_1100_View.png"
+    },
+    {
+      "CaptureKey": "ribbon:1100:Help",
+      "PairKey": "ribbon:1100:Help",
+      "Tab": "Help",
+      "TabFileName": "Help",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_Help",
+      "OutputFileName": "1100_Help.png",
+      "CounterpartFileName": "excel_1100_Help.png"
+    },
+    {
+      "CaptureKey": "ribbon:900:Home",
+      "PairKey": "ribbon:900:Home",
+      "Tab": "Home",
+      "TabFileName": "Home",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_Home",
+      "OutputFileName": "900_Home.png",
+      "CounterpartFileName": "excel_900_Home.png"
+    },
+    {
+      "CaptureKey": "ribbon:900:Insert",
+      "PairKey": "ribbon:900:Insert",
+      "Tab": "Insert",
+      "TabFileName": "Insert",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_Insert",
+      "OutputFileName": "900_Insert.png",
+      "CounterpartFileName": "excel_900_Insert.png"
+    },
+    {
+      "CaptureKey": "ribbon:900:Draw",
+      "PairKey": "ribbon:900:Draw",
+      "Tab": "Draw",
+      "TabFileName": "Draw",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_Draw",
+      "OutputFileName": "900_Draw.png",
+      "CounterpartFileName": "excel_900_Draw.png"
+    },
+    {
+      "CaptureKey": "ribbon:900:Page_Layout",
+      "PairKey": "ribbon:900:Page_Layout",
+      "Tab": "Page Layout",
+      "TabFileName": "Page_Layout",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_Page_Layout",
+      "OutputFileName": "900_Page_Layout.png",
+      "CounterpartFileName": "excel_900_Page_Layout.png"
+    },
+    {
+      "CaptureKey": "ribbon:900:Formulas",
+      "PairKey": "ribbon:900:Formulas",
+      "Tab": "Formulas",
+      "TabFileName": "Formulas",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_Formulas",
+      "OutputFileName": "900_Formulas.png",
+      "CounterpartFileName": "excel_900_Formulas.png"
+    },
+    {
+      "CaptureKey": "ribbon:900:Data",
+      "PairKey": "ribbon:900:Data",
+      "Tab": "Data",
+      "TabFileName": "Data",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_Data",
+      "OutputFileName": "900_Data.png",
+      "CounterpartFileName": "excel_900_Data.png"
+    },
+    {
+      "CaptureKey": "ribbon:900:Review",
+      "PairKey": "ribbon:900:Review",
+      "Tab": "Review",
+      "TabFileName": "Review",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_Review",
+      "OutputFileName": "900_Review.png",
+      "CounterpartFileName": "excel_900_Review.png"
+    },
+    {
+      "CaptureKey": "ribbon:900:View",
+      "PairKey": "ribbon:900:View",
+      "Tab": "View",
+      "TabFileName": "View",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_View",
+      "OutputFileName": "900_View.png",
+      "CounterpartFileName": "excel_900_View.png"
+    },
+    {
+      "CaptureKey": "ribbon:900:Help",
+      "PairKey": "ribbon:900:Help",
+      "Tab": "Help",
+      "TabFileName": "Help",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_Help",
+      "OutputFileName": "900_Help.png",
+      "CounterpartFileName": "excel_900_Help.png"
+    }
+  ],
+  "Limitations": [
+    "Ribbon captures cover the top window band only.",
+    "Transient popups, dropdowns, native dialogs, and context menus require separate guarded captures.",
+    "This in-app tour deletes only the currently requested plan\u0027s expected PNG files before capture.",
+    "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 was used for in-process rendering; pair with foreground-guarded screen captures when validating OS compositing or input focus."
+  ]
+}
