@@ -13,12 +13,12 @@ The remaining UX parity closeout is tracked as 7 open umbrella slices after S8 c
 | Slice | Status after this pass |
 |---|---|
 | S1 Excel/FreeX paired main ribbon capture matrix | Open. |
-| S2 Popup, dropdown, and gallery captures | Partially advanced: AutoFilter, Home Number Format, and worksheet context-menu opened-state pairings are closed; Home Borders remains open. See `docs/parity/worker-popup-evidence-pairing-s2s7-2026-06-10.md`. |
+| S2 Popup, dropdown, and gallery captures | Four-surface opened-state pairing closed for AutoFilter, Home Borders, Home Number Format, and worksheet context menu. Broader popup/gallery breadth remains open. See `docs/parity/worker-popup-evidence-pairing-s2s7-2026-06-10.md`. |
 | S3 Native Open/Save/Background/export dialogs | Advanced: Excel Open, FreeX Open, and FreeX Save As foreground dialog-open proof is retained; Excel Save As is blocked by Office `NUIDialog`, and Background/export/native print proof remains open. See `docs/parity/ux-s3-native-dialogs-backstage-export-2026-06-10.md`. |
 | S4 Grid pointer mechanics | Partially advanced: foreground grid/header drag selection proof is retained, but precise cell-range drag and other pointer mechanics remain open. See `docs/parity/foreground-pointer-harness-2026-06-10.md`. |
 | S5 Sheet-tab pointer mechanics | Partially advanced: foreground sheet-tab right-click context-menu proof is retained; double-click rename, drag reorder, modifier grouping, overflow arrows, and Excel pairing remain open. |
 | S6 Status/footer pointer mechanics | Partially advanced: foreground status Zoom In click and zoom slider drag proof are retained; Ctrl-wheel/UIA RangeValue/min-max breadth and Excel pairing remain open. |
-| S7 Excel-paired popup/dialog captures | Partially advanced: AutoFilter, Home Number Format, and worksheet context-menu opened-state pairings are closed; Home Borders remains open. |
+| S7 Excel-paired popup/dialog captures | Four-surface opened-state pairing closed for AutoFilter, Home Borders, Home Number Format, and worksheet context menu; broader Excel-paired popup/dialog breadth remains open. |
 
 Closed but no longer counted as remaining: S8 non-visual model-depth tail closed by `38d05898c` with focused tests/docs for cross-target matrix, locale/accounting, accessibility/formula/watch breadth, and native persistence warnings.
 
