@@ -13,7 +13,8 @@
     "Help \u003E Feedback",
     "Help \u003E Check for Updates",
     "Help \u003E About FreeX",
-    "Help \u003E Legal Notices"
+    "Help \u003E Legal Notices",
+    "Help tab focus return / Ready status"
   ],
   "CaptureStatus": "complete",
   "CaptureMethod": "RenderTargetBitmap-WPF-windows-and-PrintWindow-owned-native-dialogs",
@@ -22,8 +23,8 @@
     "Policy": "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 allowed deterministic in-process WPF RenderTargetBitmap captures plus owned native guarded-message PrintWindow captures; no global mouse, keyboard, UIA input, or external browser launch is used."
   },
   "ExternalBrowserLaunched": false,
-  "PlannedCaptureCount": 6,
-  "ActualCaptureCount": 6,
+  "PlannedCaptureCount": 7,
+  "ActualCaptureCount": 7,
   "Captures": [
     {
       "CaptureKey": "help:ribbon-command-context",
@@ -120,6 +121,22 @@
       "FocusedElementAutomationId": "LegalNoticesProjectLicenseText",
       "CaptureLogicalWidth": 840,
       "CaptureLogicalHeight": 620
+    },
+    {
+      "CaptureKey": "help:focus-return-status",
+      "PairKey": "interactive:help:focus-return-status",
+      "ScenarioId": "help-about-legal:focus-return",
+      "State": "focus-return-status",
+      "Surface": "Help tab focus return and status bar",
+      "FileName": "freex_help_focus_return_status",
+      "OutputFileName": "freex_help_focus_return_status.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window-full",
+      "EntryPath": "Help tab after owned dialog close",
+      "EvidenceSummary": "Focus returns to the FreeX Help ribbon context after owned About/Legal dialogs close, with the Ready status bar still visible.",
+      "Url": null,
+      "FocusedElementAutomationId": "HelpOnlineButton",
+      "CaptureLogicalWidth": 1120,
+      "CaptureLogicalHeight": 768
     }
   ],
   "Limitations": [
@@ -127,6 +144,7 @@
     "The Help Online, Feedback, and Check for Updates captures intentionally render FreeX-owned guarded failure messages instead of launching a browser or external process.",
     "The tour does not synthesize foreground mouse clicks, keytips, or UI Automation invoke; those interaction paths remain separate from this visual evidence.",
     "The About and Legal Notices dialogs are shown as owned WPF windows for deterministic capture, then closed directly by the tour.",
+    "The final full-window capture records FreeX focus returned to the Help ribbon context and the Ready status bar after owned dialogs close.",
     "No Microsoft Excel counterpart capture is produced by this tool."
   ]
 }
