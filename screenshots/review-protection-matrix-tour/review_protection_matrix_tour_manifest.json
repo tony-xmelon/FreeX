@@ -1,0 +1,409 @@
+{
+  "Tool": "FREEX_REVIEW_PROTECTION_MATRIX_TOUR",
+  "EvidenceFamily": "review-protection-matrix",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "review-protection-matrix:visual-evidence",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-review-protection-matrix-20260610\\screenshots\\review-protection-matrix-tour",
+  "OutputNaming": "freex_review_protection_matrix_\u003CState\u003E.png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
+  "CatalogIds": [
+    "UI-CAT-REVIEW-002",
+    "UI-CMD-REVIEW-004",
+    "UI-CMD-REVIEW-006"
+  ],
+  "EntryPaths": [
+    "Review \u003E Protect Sheet",
+    "Review \u003E Allow Users to Edit Ranges",
+    "Review \u003E Protect Workbook",
+    "Grid edit command path",
+    "SaveWorkbookToTargetAsync(.fxl) \u003E OpenFileAsync(.fxl)"
+  ],
+  "SheetName": "Sheet1",
+  "LockedCell": "B2",
+  "UnlockedCell": "B3",
+  "AllowEditRange": "B4:C4",
+  "SelectedSheetPermissions": [
+    "Select unlocked cells",
+    "Sort",
+    "Use AutoFilter",
+    "Format rows"
+  ],
+  "SavedWorkbookOutputFileName": "freex_review_protection_matrix_saved.fxl",
+  "SavedWorkbookBytes": 7757,
+  "SavedWorkbookRetained": true,
+  "ReopenedSheetProtected": true,
+  "ReopenedWorkbookStructureProtected": true,
+  "ReopenedAllowEditRangeCount": 1,
+  "CaptureStatus": "complete",
+  "CaptureMode": "background-render-opt-in",
+  "PlannedCaptureCount": 9,
+  "ActualCaptureCount": 9,
+  "PlannedCaptures": [
+    {
+      "OutputFileName": "freex_review_protection_matrix_protect_sheet_permissions.png",
+      "Status": "captured"
+    },
+    {
+      "OutputFileName": "freex_review_protection_matrix_protected_disabled_state.png",
+      "Status": "captured"
+    },
+    {
+      "OutputFileName": "freex_review_protection_matrix_locked_cell_blocked.png",
+      "Status": "captured"
+    },
+    {
+      "OutputFileName": "freex_review_protection_matrix_unlocked_cell_allowed.png",
+      "Status": "captured"
+    },
+    {
+      "OutputFileName": "freex_review_protection_matrix_allow_range_allowed.png",
+      "Status": "captured"
+    },
+    {
+      "OutputFileName": "freex_review_protection_matrix_unprotect_password_dialog.png",
+      "Status": "captured"
+    },
+    {
+      "OutputFileName": "freex_review_protection_matrix_after_unprotect.png",
+      "Status": "captured"
+    },
+    {
+      "OutputFileName": "freex_review_protection_matrix_protect_workbook_structure.png",
+      "Status": "captured"
+    },
+    {
+      "OutputFileName": "freex_review_protection_matrix_reopened_persistence.png",
+      "Status": "captured"
+    }
+  ],
+  "Pairing": {
+    "PairKeyPattern": "interactive:review-protection-matrix:\u003CState\u003E",
+    "CounterpartSubject": "excel",
+    "CounterpartTool": "not-yet-wired",
+    "CounterpartOutputNaming": "not-yet-captured"
+  },
+  "FocusGuard": {
+    "Required": false,
+    "Policy": "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 allowed deterministic in-process WPF RenderTargetBitmap capture; no global mouse, keyboard, keytip, physical edit, range-picker, or native screen capture input was used."
+  },
+  "Captures": [
+    {
+      "CaptureKey": "review-protection-matrix:protect-sheet-selected-permissions",
+      "PairKey": "interactive:review-protection-matrix:protect-sheet-selected-permissions",
+      "ScenarioId": "review-protection-matrix:visual-evidence",
+      "State": "protect-sheet-selected-permissions",
+      "Surface": "Protect Sheet dialog",
+      "EntryPath": "Review \u003E Protect Sheet",
+      "FileName": "freex_review_protection_matrix_protect_sheet_permissions",
+      "OutputFileName": "freex_review_protection_matrix_protect_sheet_permissions.png",
+      "CaptureMethod": "RenderTargetBitmap-owned-dialog",
+      "CaptureLogicalWidth": 430,
+      "CaptureLogicalHeight": 540,
+      "SelectedRange": "B2:B2",
+      "FocusedElementAutomationId": "ProtectionPasswordBox",
+      "IsSheetProtected": false,
+      "IsWorkbookStructureProtected": false,
+      "AllowEditRangesEnabled": true,
+      "ProtectSheetContent": "Protect Sheet",
+      "ProtectWorkbookContent": "Protect Workbook",
+      "SheetProtectionPermissions": [],
+      "AllowEditRangeCount": 1,
+      "EvidenceSummary": "Protect Sheet dialog shows the optional password field and a selected permission matrix for unlocked cells, sort, AutoFilter, and row formatting."
+    },
+    {
+      "CaptureKey": "review-protection-matrix:protected-sheet-disabled-state",
+      "PairKey": "interactive:review-protection-matrix:protected-sheet-disabled-state",
+      "ScenarioId": "review-protection-matrix:visual-evidence",
+      "State": "protected-sheet-disabled-state",
+      "Surface": "Review tab",
+      "EntryPath": "Review \u003E Protect group",
+      "FileName": "freex_review_protection_matrix_protected_disabled_state",
+      "OutputFileName": "freex_review_protection_matrix_protected_disabled_state.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760,
+      "SelectedRange": "B2:B2",
+      "FocusedElementAutomationId": "SheetGrid",
+      "IsSheetProtected": true,
+      "IsWorkbookStructureProtected": false,
+      "AllowEditRangesEnabled": false,
+      "ProtectSheetContent": "Unprotect Sheet",
+      "ProtectWorkbookContent": "Protect Workbook",
+      "SheetProtectionPermissions": [
+        "SelectUnlockedCells",
+        "Sort",
+        "UseAutoFilter",
+        "FormatRows"
+      ],
+      "AllowEditRangeCount": 1,
+      "EvidenceSummary": "Protected Review tab state shows Protect Sheet retitled to Unprotect Sheet while Allow Users to Edit Ranges is disabled."
+    },
+    {
+      "CaptureKey": "review-protection-matrix:locked-cell-edit-blocked",
+      "PairKey": "interactive:review-protection-matrix:locked-cell-edit-blocked",
+      "ScenarioId": "review-protection-matrix:visual-evidence",
+      "State": "locked-cell-edit-blocked",
+      "Surface": "Worksheet grid",
+      "EntryPath": "Grid edit command guard",
+      "FileName": "freex_review_protection_matrix_locked_cell_blocked",
+      "OutputFileName": "freex_review_protection_matrix_locked_cell_blocked.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760,
+      "SelectedRange": "B2:B2",
+      "FocusedElementAutomationId": "SheetGrid",
+      "IsSheetProtected": true,
+      "IsWorkbookStructureProtected": false,
+      "AllowEditRangesEnabled": false,
+      "ProtectSheetContent": "Unprotect Sheet",
+      "ProtectWorkbookContent": "Protect Workbook",
+      "SheetProtectionPermissions": [
+        "SelectUnlockedCells",
+        "Sort",
+        "UseAutoFilter",
+        "FormatRows"
+      ],
+      "AllowEditRangeCount": 1,
+      "EvidenceSummary": "Locked cell edit attempt returned Success=False with message \u0027The sheet is protected.\u0027."
+    },
+    {
+      "CaptureKey": "review-protection-matrix:unlocked-cell-edit-allowed",
+      "PairKey": "interactive:review-protection-matrix:unlocked-cell-edit-allowed",
+      "ScenarioId": "review-protection-matrix:visual-evidence",
+      "State": "unlocked-cell-edit-allowed",
+      "Surface": "Worksheet grid",
+      "EntryPath": "Grid edit command guard",
+      "FileName": "freex_review_protection_matrix_unlocked_cell_allowed",
+      "OutputFileName": "freex_review_protection_matrix_unlocked_cell_allowed.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760,
+      "SelectedRange": "B3:B3",
+      "FocusedElementAutomationId": "SheetGrid",
+      "IsSheetProtected": true,
+      "IsWorkbookStructureProtected": false,
+      "AllowEditRangesEnabled": false,
+      "ProtectSheetContent": "Unprotect Sheet",
+      "ProtectWorkbookContent": "Protect Workbook",
+      "SheetProtectionPermissions": [
+        "SelectUnlockedCells",
+        "Sort",
+        "UseAutoFilter",
+        "FormatRows"
+      ],
+      "AllowEditRangeCount": 1,
+      "EvidenceSummary": "Unlocked cell edit attempt returned Success=True through EditCellsCommand on the protected sheet."
+    },
+    {
+      "CaptureKey": "review-protection-matrix:allow-edit-range-edit-allowed",
+      "PairKey": "interactive:review-protection-matrix:allow-edit-range-edit-allowed",
+      "ScenarioId": "review-protection-matrix:visual-evidence",
+      "State": "allow-edit-range-edit-allowed",
+      "Surface": "Worksheet grid",
+      "EntryPath": "Grid edit command guard",
+      "FileName": "freex_review_protection_matrix_allow_range_allowed",
+      "OutputFileName": "freex_review_protection_matrix_allow_range_allowed.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760,
+      "SelectedRange": "B4:C4",
+      "FocusedElementAutomationId": "SheetGrid",
+      "IsSheetProtected": true,
+      "IsWorkbookStructureProtected": false,
+      "AllowEditRangesEnabled": false,
+      "ProtectSheetContent": "Unprotect Sheet",
+      "ProtectWorkbookContent": "Protect Workbook",
+      "SheetProtectionPermissions": [
+        "SelectUnlockedCells",
+        "Sort",
+        "UseAutoFilter",
+        "FormatRows"
+      ],
+      "AllowEditRangeCount": 1,
+      "EvidenceSummary": "Allowed edit range attempt returned Success=True while the cell style remained locked."
+    },
+    {
+      "CaptureKey": "review-protection-matrix:unprotect-password-dialog",
+      "PairKey": "interactive:review-protection-matrix:unprotect-password-dialog",
+      "ScenarioId": "review-protection-matrix:visual-evidence",
+      "State": "unprotect-password-dialog",
+      "Surface": "Unprotect Sheet dialog",
+      "EntryPath": "Review \u003E Unprotect Sheet",
+      "FileName": "freex_review_protection_matrix_unprotect_password_dialog",
+      "OutputFileName": "freex_review_protection_matrix_unprotect_password_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-owned-dialog",
+      "CaptureLogicalWidth": 360,
+      "CaptureLogicalHeight": 250,
+      "SelectedRange": "B4:C4",
+      "FocusedElementAutomationId": "ProtectionPasswordBox",
+      "IsSheetProtected": true,
+      "IsWorkbookStructureProtected": false,
+      "AllowEditRangesEnabled": false,
+      "ProtectSheetContent": "Unprotect Sheet",
+      "ProtectWorkbookContent": "Protect Workbook",
+      "SheetProtectionPermissions": [
+        "SelectUnlockedCells",
+        "Sort",
+        "UseAutoFilter",
+        "FormatRows"
+      ],
+      "AllowEditRangeCount": 1,
+      "EvidenceSummary": "Unprotect Sheet dialog captures the owned password prompt with OK/Cancel surface before wrong-password and cancel limitations are recorded."
+    },
+    {
+      "CaptureKey": "review-protection-matrix:after-unprotect-sheet",
+      "PairKey": "interactive:review-protection-matrix:after-unprotect-sheet",
+      "ScenarioId": "review-protection-matrix:visual-evidence",
+      "State": "after-unprotect-sheet",
+      "Surface": "Review tab",
+      "EntryPath": "Review \u003E Protect group",
+      "FileName": "freex_review_protection_matrix_after_unprotect",
+      "OutputFileName": "freex_review_protection_matrix_after_unprotect.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760,
+      "SelectedRange": "B4:C4",
+      "FocusedElementAutomationId": "SheetGrid",
+      "IsSheetProtected": false,
+      "IsWorkbookStructureProtected": false,
+      "AllowEditRangesEnabled": true,
+      "ProtectSheetContent": "Protect Sheet",
+      "ProtectWorkbookContent": "Protect Workbook",
+      "SheetProtectionPermissions": [
+        "SelectUnlockedCells",
+        "Sort",
+        "UseAutoFilter",
+        "FormatRows"
+      ],
+      "AllowEditRangeCount": 1,
+      "EvidenceSummary": "After successful command-path unprotect, Protect Sheet returns to its protect label and Allow Users to Edit Ranges is enabled."
+    },
+    {
+      "CaptureKey": "review-protection-matrix:protected-workbook-structure-state",
+      "PairKey": "interactive:review-protection-matrix:protected-workbook-structure-state",
+      "ScenarioId": "review-protection-matrix:visual-evidence",
+      "State": "protected-workbook-structure-state",
+      "Surface": "Review tab",
+      "EntryPath": "Review \u003E Protect Workbook",
+      "FileName": "freex_review_protection_matrix_protect_workbook_structure",
+      "OutputFileName": "freex_review_protection_matrix_protect_workbook_structure.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760,
+      "SelectedRange": "B4:C4",
+      "FocusedElementAutomationId": "SheetGrid",
+      "IsSheetProtected": true,
+      "IsWorkbookStructureProtected": true,
+      "AllowEditRangesEnabled": false,
+      "ProtectSheetContent": "Unprotect Sheet",
+      "ProtectWorkbookContent": "Unprotect Workbook",
+      "SheetProtectionPermissions": [
+        "SelectUnlockedCells",
+        "Sort",
+        "UseAutoFilter",
+        "FormatRows"
+      ],
+      "AllowEditRangeCount": 1,
+      "EvidenceSummary": "Workbook structure protection is enabled through WorkbookProtectionWorkflow and the Review Protect Workbook button shows the unprotect state."
+    },
+    {
+      "CaptureKey": "review-protection-matrix:reopened-protection-persistence",
+      "PairKey": "interactive:review-protection-matrix:reopened-protection-persistence",
+      "ScenarioId": "review-protection-matrix:visual-evidence",
+      "State": "reopened-protection-persistence",
+      "Surface": "Review tab",
+      "EntryPath": "Host open path",
+      "FileName": "freex_review_protection_matrix_reopened_persistence",
+      "OutputFileName": "freex_review_protection_matrix_reopened_persistence.png",
+      "CaptureMethod": "RenderTargetBitmap-main-window",
+      "CaptureLogicalWidth": 1220,
+      "CaptureLogicalHeight": 760,
+      "SelectedRange": "B2:B2",
+      "FocusedElementAutomationId": "SheetGrid",
+      "IsSheetProtected": true,
+      "IsWorkbookStructureProtected": true,
+      "AllowEditRangesEnabled": false,
+      "ProtectSheetContent": "Unprotect Sheet",
+      "ProtectWorkbookContent": "Unprotect Workbook",
+      "SheetProtectionPermissions": [
+        "SelectUnlockedCells",
+        "Sort",
+        "UseAutoFilter",
+        "FormatRows"
+      ],
+      "AllowEditRangeCount": 1,
+      "EvidenceSummary": "Saved native FreeX workbook is reopened through OpenFileAsync; sheet protection, selected permissions, allow edit range, and workbook structure protection remain present."
+    }
+  ],
+  "CommandOutcomes": [
+    {
+      "Title": "Protect Sheet",
+      "CommandLabel": "Protect Sheet",
+      "Success": true,
+      "ErrorMessage": null
+    },
+    {
+      "Title": "Edit locked protected cell",
+      "CommandLabel": "Edit Cell",
+      "Success": false,
+      "ErrorMessage": "The sheet is protected."
+    },
+    {
+      "Title": "Edit unlocked protected cell",
+      "CommandLabel": "Edit Cell",
+      "Success": true,
+      "ErrorMessage": null
+    },
+    {
+      "Title": "Edit allowed protected range",
+      "CommandLabel": "Edit Cell",
+      "Success": true,
+      "ErrorMessage": null
+    },
+    {
+      "Title": "Unprotect Sheet wrong password",
+      "CommandLabel": "Unprotect Sheet",
+      "Success": false,
+      "ErrorMessage": "The password you supplied is not correct."
+    },
+    {
+      "Title": "Unprotect Sheet",
+      "CommandLabel": "Unprotect Sheet",
+      "Success": true,
+      "ErrorMessage": null
+    },
+    {
+      "Title": "Protect Sheet for persistence",
+      "CommandLabel": "Protect Sheet",
+      "Success": true,
+      "ErrorMessage": null
+    },
+    {
+      "Title": "Protect Workbook",
+      "CommandLabel": "Protect Workbook",
+      "Success": true,
+      "ErrorMessage": null
+    }
+  ],
+  "CoveredStates": [
+    "Protect Sheet dialog with selected permissions.",
+    "Protected sheet Review command disabled state for Allow Users to Edit Ranges.",
+    "Locked protected cell edit blocked through EditCellsCommand.",
+    "Unlocked protected cell edit allowed through EditCellsCommand.",
+    "Locked cell inside Allow Edit Range allowed through EditCellsCommand.",
+    "Unprotect password dialog surface, wrong-password command outcome, and cancel limitation note.",
+    "Successful unprotect command state.",
+    "Workbook structure protection command state.",
+    "Native FreeX save/reopen persistence for sheet/workbook protection and allowed ranges."
+  ],
+  "Limitations": [
+    "This tour drives FreeX in process and captures WPF surfaces with RenderTargetBitmap; it is not foreground CopyFromScreen proof.",
+    "Physical mouse, keytip, access-key, inline editor typing, and range-picker paths are not synthesized because those would require foreground-global input.",
+    "Wrong-password evidence is recorded as an UnprotectSheetCommand failure outcome; the transient warning MessageBox is not captured.",
+    "Cancel behavior is represented by the owned Unprotect Sheet dialog\u0027s Cancel surface and by not submitting it; no physical Escape or Cancel click is performed.",
+    "Permissions button behavior in Allow Edit Ranges remains disabled/guarded in the existing dialog evidence; per-range password permissions are not implemented.",
+    "Persistence is proven for the native FreeX .fxl adapter through host save/open services; XLSX round-trip parity remains separate.",
+    "No paired Microsoft Excel screenshots are produced by this tool."
+  ]
+}
