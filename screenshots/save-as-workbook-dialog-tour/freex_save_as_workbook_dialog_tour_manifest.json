@@ -1,0 +1,70 @@
+﻿{
+    "Tool":  "FREEX_SAVE_AS_WORKBOOK_DIALOG_TOUR",
+    "EvidenceFamily":  "native-dialog",
+    "EvidenceSubject":  "freex",
+    "EvidenceApp":  "FreeX",
+    "OutputDirectory":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-file-native-dialogs-20260610\\screenshots\\save-as-workbook-dialog-tour",
+    "OutputNaming":  "freex_save_as_workbook_dialog_opened.png",
+    "CatalogEvidenceTarget":  "docs/testing/ui-test-catalog.md",
+    "ScenarioId":  "native-dialog:save-as-workbook",
+    "DialogClassName":  "#32770",
+    "EntryPath":  "F12",
+    "CaptureStatus":  "complete",
+    "CaptureMethod":  "native-dialog-window-rectangle",
+    "ForegroundGuard":  {
+                            "Required":  true,
+                            "ExpectedProcessId":  43668,
+                            "ExpectedWindowTitle":  "Book1 - FreeX",
+                            "Policy":  "Abort and clear native Save As dialog evidence unless FreeX owns foreground immediately before F12 and before screen capture."
+                        },
+    "Pairing":  {
+                    "PairKeyPattern":  "interactive:save-as-workbook-dialog:\u003cState\u003e",
+                    "PairKey":  "interactive:save-as-workbook-dialog:opened",
+                    "CounterpartSubject":  "excel",
+                    "CounterpartTool":  "FREEX_EXCEL_SAVE_AS_WORKBOOK_DIALOG_TOUR",
+                    "CounterpartFileName":  "interactive_save_as_workbook_dialog_opened.png"
+                },
+    "Scenario":  {
+                     "ScenarioId":  "native-dialog:save-as-workbook",
+                     "ScenarioFileName":  "save_as_workbook_dialog",
+                     "State":  "opened",
+                     "Trigger":  "A foreground-guarded F12 opens the FreeX native Save As dialog."
+                 },
+    "WindowBounds":  {
+                         "Left":  0,
+                         "Top":  0,
+                         "Right":  1280,
+                         "Bottom":  800,
+                         "Width":  1280,
+                         "Height":  800
+                     },
+    "DialogBounds":  {
+                         "Handle":  "722364",
+                         "ClassName":  "#32770",
+                         "Title":  "Save As",
+                         "Dpi":  144,
+                         "CaptureScale":  1.5,
+                         "Left":  0,
+                         "Top":  0,
+                         "Right":  853,
+                         "Bottom":  533,
+                         "Width":  853,
+                         "Height":  533
+                     },
+    "Captures":  [
+                     {
+                         "CaptureSequence":  1,
+                         "CaptureKey":  "interactive:save-as-workbook-dialog:opened",
+                         "PairKey":  "interactive:save-as-workbook-dialog:opened",
+                         "EvidenceSubject":  "freex",
+                         "CounterpartSubject":  "excel",
+                         "CounterpartFileName":  "interactive_save_as_workbook_dialog_opened.png",
+                         "FileName":  "freex_save_as_workbook_dialog_opened.png",
+                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-file-native-dialogs-20260610\\screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png",
+                         "Width":  1280,
+                         "Height":  800,
+                         "CaptureMethod":  "native-dialog-window-rectangle",
+                         "CaptureStatus":  "complete"
+                     }
+                 ]
+}
