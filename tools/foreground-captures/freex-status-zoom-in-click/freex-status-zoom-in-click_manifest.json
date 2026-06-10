@@ -3,66 +3,67 @@
   "Subject": "freex",
   "CaptureStatus": "complete",
   "CaptureMode": "foreground-guarded-uia-win32",
-  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-status-zoom-in-click\\freex-status-zoom-in-click_20260610_160853.png",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s6-status-footer-foreground-pointer-20260610\\tools\\foreground-captures\\freex-status-zoom-in-click\\freex-status-zoom-in-click_20260610_170919.png",
   "Window": {
-    "Handle": 4198162,
-    "ProcessId": 89648,
+    "Handle": 40438920,
+    "ProcessId": 88136,
     "Title": "Book1* - FreeX",
-    "ClassName": "HwndWrapper[FreeX.App.Host;;8088c557-ca7f-44f0-a596-a0b714d1b1b5]",
+    "ClassName": "HwndWrapper[FreeX.App.Host;;ec799331-a2b3-4c2a-97b8-ccf12f74be27]",
     "Bounds": {
       "Location": {
         "IsEmpty": false,
-        "X": 152,
-        "Y": 152
+        "X": 76,
+        "Y": 76
       },
       "Size": {
         "IsEmpty": false,
         "Width": 1920,
         "Height": 1080
       },
-      "X": 152,
-      "Y": 152,
+      "X": 76,
+      "Y": 76,
       "Width": 1920,
       "Height": 1080,
-      "Left": 152,
-      "Top": 152,
-      "Right": 2072,
-      "Bottom": 1232,
+      "Left": 76,
+      "Top": 76,
+      "Right": 1996,
+      "Bottom": 1156,
       "IsEmpty": false
     }
   },
   "ForegroundGuard": {
     "Success": true,
-    "ExpectedProcessId": 89648,
-    "ExpectedHandle": 4198162,
+    "ExpectedProcessId": 88136,
+    "ExpectedHandle": 40438920,
     "ForegroundWindow": {
-      "Handle": 4198162,
-      "ProcessId": 89648,
-      "Title": "Book1 - FreeX",
-      "ClassName": "HwndWrapper[FreeX.App.Host;;8088c557-ca7f-44f0-a596-a0b714d1b1b5]",
+      "Handle": 40438920,
+      "ProcessId": 88136,
+      "Title": "Book1* - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;ec799331-a2b3-4c2a-97b8-ccf12f74be27]",
       "Bounds": {
         "Location": {
           "IsEmpty": false,
-          "X": 101,
-          "Y": 101
+          "X": 76,
+          "Y": 76
         },
         "Size": {
           "IsEmpty": false,
-          "Width": 1280,
-          "Height": 720
+          "Width": 1920,
+          "Height": 1080
         },
-        "X": 101,
-        "Y": 101,
-        "Width": 1280,
-        "Height": 720,
-        "Left": 101,
-        "Top": 101,
-        "Right": 1381,
-        "Bottom": 821,
+        "X": 76,
+        "Y": 76,
+        "Width": 1920,
+        "Height": 1080,
+        "Left": 76,
+        "Top": 76,
+        "Right": 1996,
+        "Bottom": 1156,
         "IsEmpty": false
       }
     }
   },
-  "CapturedAtUtc": "2026-06-10T16:08:54.0859019+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-status-zoom-in-click\\freex-status-zoom-in-click_manifest.json"
+  "CapturedAtUtc": "2026-06-10T17:09:20.0987651+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s6-status-footer-foreground-pointer-20260610\\tools\\foreground-captures\\freex-status-zoom-in-click\\freex-status-zoom-in-click_manifest.json",
+  "ResultValidation": "AutomationId \u0027StatusZoomInButton\u0027 click; UIA Zoom slider=105; expected slider=105; expected visible zoom text about 115%"
 }

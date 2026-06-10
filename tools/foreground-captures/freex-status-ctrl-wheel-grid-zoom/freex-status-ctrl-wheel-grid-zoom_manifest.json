@@ -1,0 +1,69 @@
+{
+  "Scenario": "freex-status-ctrl-wheel-grid-zoom",
+  "Subject": "freex",
+  "CaptureStatus": "complete",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s6-status-footer-foreground-pointer-20260610\\tools\\foreground-captures\\freex-status-ctrl-wheel-grid-zoom\\freex-status-ctrl-wheel-grid-zoom_20260610_170732.png",
+  "Window": {
+    "Handle": 9899616,
+    "ProcessId": 91828,
+    "Title": "Book1* - FreeX",
+    "ClassName": "HwndWrapper[FreeX.App.Host;;f81d4e35-884f-4f96-a055-c0743d6885ba]",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 228,
+        "Y": 228
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1920,
+        "Height": 1080
+      },
+      "X": 228,
+      "Y": 228,
+      "Width": 1920,
+      "Height": 1080,
+      "Left": 228,
+      "Top": 228,
+      "Right": 2148,
+      "Bottom": 1308,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 91828,
+    "ExpectedHandle": 9899616,
+    "ForegroundWindow": {
+      "Handle": 9899616,
+      "ProcessId": 91828,
+      "Title": "Book1* - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;f81d4e35-884f-4f96-a055-c0743d6885ba]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 228,
+          "Y": 228
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1920,
+          "Height": 1080
+        },
+        "X": 228,
+        "Y": 228,
+        "Width": 1920,
+        "Height": 1080,
+        "Left": 228,
+        "Top": 228,
+        "Right": 2148,
+        "Bottom": 1308,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-10T17:07:32.8951626+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s6-status-footer-foreground-pointer-20260610\\tools\\foreground-captures\\freex-status-ctrl-wheel-grid-zoom\\freex-status-ctrl-wheel-grid-zoom_manifest.json",
+  "ResultValidation": "Ctrl\u002Bwheel delta 120 over worksheet grid; UIA Zoom slider=110; expected slider=110; expected visible zoom text about 130%"
+}

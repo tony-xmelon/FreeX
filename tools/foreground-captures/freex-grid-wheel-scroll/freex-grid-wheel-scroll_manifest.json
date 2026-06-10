@@ -1,0 +1,69 @@
+{
+  "Scenario": "freex-grid-wheel-scroll",
+  "Subject": "freex",
+  "CaptureStatus": "complete",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s4-grid-pointer-mechanics-20260610\\tools\\foreground-captures\\freex-grid-wheel-scroll\\freex-grid-wheel-scroll_20260610_180244.png",
+  "Window": {
+    "Handle": 5834744,
+    "ProcessId": 104968,
+    "Title": "Book1 - FreeX",
+    "ClassName": "HwndWrapper[FreeX.App.Host;;85ea9766-a218-4c21-b814-8d201c886a99]",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 152,
+        "Y": 152
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1920,
+        "Height": 1080
+      },
+      "X": 152,
+      "Y": 152,
+      "Width": 1920,
+      "Height": 1080,
+      "Left": 152,
+      "Top": 152,
+      "Right": 2072,
+      "Bottom": 1232,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 104968,
+    "ExpectedHandle": 5834744,
+    "ForegroundWindow": {
+      "Handle": 5834744,
+      "ProcessId": 104968,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;85ea9766-a218-4c21-b814-8d201c886a99]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 152,
+          "Y": 152
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1920,
+          "Height": 1080
+        },
+        "X": 152,
+        "Y": 152,
+        "Width": 1920,
+        "Height": 1080,
+        "Left": 152,
+        "Top": 152,
+        "Right": 2072,
+        "Bottom": 1232,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-10T18:02:44.4116905+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s4-grid-pointer-mechanics-20260610\\tools\\foreground-captures\\freex-grid-wheel-scroll\\freex-grid-wheel-scroll_manifest.json",
+  "ResultValidation": "foreground wheel scroll; vertical scrollbar 1-\u003E10; Shift\u002Bwheel horizontal scrollbar 1-\u003E10"
+}

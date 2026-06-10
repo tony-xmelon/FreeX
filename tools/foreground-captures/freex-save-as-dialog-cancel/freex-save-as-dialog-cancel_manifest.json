@@ -1,0 +1,70 @@
+{
+  "Scenario": "freex-save-as-dialog-cancel",
+  "Subject": "freex",
+  "CaptureStatus": "complete",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s3-native-dialog-continuations-20260610\\tools\\foreground-captures\\freex-save-as-dialog-cancel\\freex-save-as-dialog-cancel_20260610_175724.png",
+  "Window": {
+    "Handle": 15601168,
+    "ProcessId": 103564,
+    "Title": "Save As",
+    "ClassName": "#32770",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 76,
+        "Y": 76
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1200,
+        "Height": 720
+      },
+      "X": 76,
+      "Y": 76,
+      "Width": 1200,
+      "Height": 720,
+      "Left": 76,
+      "Top": 76,
+      "Right": 1276,
+      "Bottom": 796,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 103564,
+    "ExpectedHandle": 38864078,
+    "ForegroundWindow": {
+      "Handle": 38864078,
+      "ProcessId": 103564,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;b26d43cd-17bd-4b15-aa7e-c4f0ecac9d06]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 76,
+          "Y": 76
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "X": 76,
+        "Y": 76,
+        "Width": 1280,
+        "Height": 720,
+        "Left": 76,
+        "Top": 76,
+        "Right": 1356,
+        "Bottom": 796,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-10T17:57:24.6203436+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s3-native-dialog-continuations-20260610\\tools\\foreground-captures\\freex-save-as-dialog-cancel\\freex-save-as-dialog-cancel_manifest.json",
+  "ResultValidation": "Escape canceled the native dialog and returned foreground focus to FreeX.",
+  "ContinuationScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s3-native-dialog-continuations-20260610\\tools\\foreground-captures\\freex-save-as-dialog-cancel\\freex-save-as-dialog-cancel_continuation_20260610_175725.png"
+}
