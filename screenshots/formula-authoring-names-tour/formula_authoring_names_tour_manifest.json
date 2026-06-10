@@ -1,0 +1,276 @@
+{
+  "Tool": "FREEX_FORMULA_AUTHORING_NAMES_TOUR",
+  "EvidenceFamily": "formula-authoring-names",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "formula-authoring-names:visual-evidence",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-formula-authoring-names-20260610\\screenshots\\formula-authoring-names-tour",
+  "OutputNaming": "freex_formula_authoring_names_\u003CState\u003E.png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
+  "CatalogIds": [
+    "UI-CAT-FORMULAS-001",
+    "UI-CMD-FORM-001",
+    "UI-CMD-FORM-002",
+    "UI-CAT-DIALOG-001C"
+  ],
+  "SheetName": "Sheet1",
+  "AuthoringRange": "A1:E5",
+  "RevenueRange": "B2:B5",
+  "CostRange": "C2:C5",
+  "ProfitRange": "D2:D5",
+  "MarginRange": "E2:E5",
+  "DefinedNames": [
+    "Cost",
+    "Profit",
+    "RegionLabels",
+    "Revenue"
+  ],
+  "SummaryFormulaCell": "B7",
+  "ProfitFormulaCell": "D2",
+  "CaptureStatus": "complete",
+  "CaptureMode": "background-render-opt-in",
+  "PlannedCaptureCount": 8,
+  "ActualCaptureCount": 8,
+  "Pairing": {
+    "PairKeyPattern": "interactive:formula-authoring-names:\u003CState\u003E",
+    "CounterpartSubject": "excel",
+    "CounterpartTool": "not-yet-wired",
+    "CounterpartOutputNaming": "not-yet-captured"
+  },
+  "FocusGuard": {
+    "Required": false,
+    "Policy": "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 allowed in-process RenderTargetBitmap capture; no foreground mouse, keyboard, keytip, UIA, or screen capture input was used."
+  },
+  "Captures": [
+    {
+      "CaptureKey": "interactive:formula-authoring-names:formulas-tab-seeded",
+      "PairKey": "interactive:formula-authoring-names:formulas-tab-seeded",
+      "ScenarioId": "formula-authoring-names:visual-evidence",
+      "State": "formulas-tab-seeded",
+      "Surface": "Formulas ribbon and worksheet",
+      "FileName": "freex_formula_authoring_names_formulas_tab",
+      "OutputFileName": "freex_formula_authoring_names_formulas_tab.png",
+      "CaptureMethod": "RenderTargetBitmap-window-full",
+      "CaptureLogicalWidth": 1180,
+      "CaptureLogicalHeight": 768,
+      "SheetName": "Sheet1",
+      "SelectedRange": "A1:E5",
+      "FormulaBarText": "Region",
+      "NameCount": 4,
+      "DefinedNames": [
+        "Cost",
+        "Profit",
+        "RegionLabels",
+        "Revenue"
+      ],
+      "MenuHeaders": [],
+      "EvidenceSummary": "Formulas ribbon baseline over seeded revenue/cost/profit cells with workbook names already defined."
+    },
+    {
+      "CaptureKey": "interactive:formula-authoring-names:autosum-menu-opened",
+      "PairKey": "interactive:formula-authoring-names:autosum-menu-opened",
+      "ScenarioId": "formula-authoring-names:visual-evidence",
+      "State": "autosum-menu-opened",
+      "Surface": "AutoSum menu",
+      "FileName": "freex_formula_authoring_names_autosum_menu_opened",
+      "OutputFileName": "freex_formula_authoring_names_autosum_menu_opened.png",
+      "CaptureMethod": "RenderTargetBitmap-formulas-context-menu",
+      "CaptureLogicalWidth": 189.33333333333334,
+      "CaptureLogicalHeight": 161.33333333333334,
+      "SheetName": "Sheet1",
+      "SelectedRange": "A1:E5",
+      "FormulaBarText": "Region",
+      "NameCount": 4,
+      "DefinedNames": [
+        "Cost",
+        "Profit",
+        "RegionLabels",
+        "Revenue"
+      ],
+      "MenuHeaders": [
+        "Sum",
+        "Average",
+        "Count Numbers",
+        "Count All",
+        "Max",
+        "Min",
+        "More Functions..."
+      ],
+      "EvidenceSummary": "Formulas tab AutoSum split-menu showing Sum, Average, Count, Max/Min, and More Functions."
+    },
+    {
+      "CaptureKey": "interactive:formula-authoring-names:logical-functions-menu-opened",
+      "PairKey": "interactive:formula-authoring-names:logical-functions-menu-opened",
+      "ScenarioId": "formula-authoring-names:visual-evidence",
+      "State": "logical-functions-menu-opened",
+      "Surface": "Logical Functions menu",
+      "FileName": "freex_formula_authoring_names_logical_functions_menu_opened",
+      "OutputFileName": "freex_formula_authoring_names_logical_functions_menu_opened.png",
+      "CaptureMethod": "RenderTargetBitmap-formulas-context-menu",
+      "CaptureLogicalWidth": 144,
+      "CaptureLogicalHeight": 161.33333333333334,
+      "SheetName": "Sheet1",
+      "SelectedRange": "A1:E5",
+      "FormulaBarText": "Region",
+      "NameCount": 4,
+      "DefinedNames": [
+        "Cost",
+        "Profit",
+        "RegionLabels",
+        "Revenue"
+      ],
+      "MenuHeaders": [
+        "IF",
+        "IFS",
+        "AND",
+        "OR",
+        "NOT",
+        "IFERROR",
+        "IFNA"
+      ],
+      "EvidenceSummary": "Logical Functions category menu opened from the Formulas Function Library group."
+    },
+    {
+      "CaptureKey": "interactive:formula-authoring-names:use-in-formula-menu-opened",
+      "PairKey": "interactive:formula-authoring-names:use-in-formula-menu-opened",
+      "ScenarioId": "formula-authoring-names:visual-evidence",
+      "State": "use-in-formula-menu-opened",
+      "Surface": "Use in Formula menu",
+      "FileName": "freex_formula_authoring_names_use_in_formula_menu_opened",
+      "OutputFileName": "freex_formula_authoring_names_use_in_formula_menu_opened.png",
+      "CaptureMethod": "RenderTargetBitmap-formulas-context-menu",
+      "CaptureLogicalWidth": 165.33333333333334,
+      "CaptureLogicalHeight": 93.33333333333333,
+      "SheetName": "Sheet1",
+      "SelectedRange": "A1:E5",
+      "FormulaBarText": "Region",
+      "NameCount": 4,
+      "DefinedNames": [
+        "Cost",
+        "Profit",
+        "RegionLabels",
+        "Revenue"
+      ],
+      "MenuHeaders": [
+        "Cost",
+        "Profit",
+        "RegionLabels",
+        "Revenue"
+      ],
+      "EvidenceSummary": "Use in Formula menu listing seeded workbook defined names that can be inserted into the active formula."
+    },
+    {
+      "CaptureKey": "interactive:formula-authoring-names:insert-function-lookup-xlookup",
+      "PairKey": "interactive:formula-authoring-names:insert-function-lookup-xlookup",
+      "ScenarioId": "formula-authoring-names:visual-evidence",
+      "State": "insert-function-lookup-xlookup",
+      "Surface": "Insert Function dialog",
+      "FileName": "freex_formula_authoring_names_insert_function_lookup_xlookup",
+      "OutputFileName": "freex_formula_authoring_names_insert_function_lookup_xlookup.png",
+      "CaptureMethod": "RenderTargetBitmap-insert-function-dialog",
+      "CaptureLogicalWidth": 560,
+      "CaptureLogicalHeight": 460,
+      "SheetName": "Sheet1",
+      "SelectedRange": "A1:E5",
+      "FormulaBarText": "Region",
+      "NameCount": 4,
+      "DefinedNames": [
+        "Cost",
+        "Profit",
+        "RegionLabels",
+        "Revenue"
+      ],
+      "MenuHeaders": [],
+      "EvidenceSummary": "Production Insert Function dialog with Lookup \u0026 Reference selected and XLOOKUP highlighted."
+    },
+    {
+      "CaptureKey": "interactive:formula-authoring-names:name-manager-dialog",
+      "PairKey": "interactive:formula-authoring-names:name-manager-dialog",
+      "ScenarioId": "formula-authoring-names:visual-evidence",
+      "State": "name-manager-dialog",
+      "Surface": "Name Manager dialog",
+      "FileName": "freex_formula_authoring_names_name_manager_dialog",
+      "OutputFileName": "freex_formula_authoring_names_name_manager_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-name-manager-dialog",
+      "CaptureLogicalWidth": 720,
+      "CaptureLogicalHeight": 440,
+      "SheetName": "Sheet1",
+      "SelectedRange": "A1:E5",
+      "FormulaBarText": "Region",
+      "NameCount": 4,
+      "DefinedNames": [
+        "Cost",
+        "Profit",
+        "RegionLabels",
+        "Revenue"
+      ],
+      "MenuHeaders": [],
+      "EvidenceSummary": "Production Name Manager dialog showing seeded Revenue, Cost, Profit, and RegionLabels names."
+    },
+    {
+      "CaptureKey": "interactive:formula-authoring-names:define-name-dialog",
+      "PairKey": "interactive:formula-authoring-names:define-name-dialog",
+      "ScenarioId": "formula-authoring-names:visual-evidence",
+      "State": "define-name-dialog",
+      "Surface": "Define Name dialog",
+      "FileName": "freex_formula_authoring_names_define_name_dialog",
+      "OutputFileName": "freex_formula_authoring_names_define_name_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-define-name-dialog",
+      "CaptureLogicalWidth": 460,
+      "CaptureLogicalHeight": 300,
+      "SheetName": "Sheet1",
+      "SelectedRange": "A1:E5",
+      "FormulaBarText": "Region",
+      "NameCount": 4,
+      "DefinedNames": [
+        "Cost",
+        "Profit",
+        "RegionLabels",
+        "Revenue"
+      ],
+      "MenuHeaders": [],
+      "EvidenceSummary": "Production Define Name dialog with the name box focused/select-all and Refers To seeded from the selected formula range."
+    },
+    {
+      "CaptureKey": "interactive:formula-authoring-names:create-from-selection-dialog",
+      "PairKey": "interactive:formula-authoring-names:create-from-selection-dialog",
+      "ScenarioId": "formula-authoring-names:visual-evidence",
+      "State": "create-from-selection-dialog",
+      "Surface": "Create from Selection dialog",
+      "FileName": "freex_formula_authoring_names_create_from_selection_dialog",
+      "OutputFileName": "freex_formula_authoring_names_create_from_selection_dialog.png",
+      "CaptureMethod": "RenderTargetBitmap-create-from-selection-dialog",
+      "CaptureLogicalWidth": 280,
+      "CaptureLogicalHeight": 230,
+      "SheetName": "Sheet1",
+      "SelectedRange": "A1:E5",
+      "FormulaBarText": "Region",
+      "NameCount": 4,
+      "DefinedNames": [
+        "Cost",
+        "Profit",
+        "RegionLabels",
+        "Revenue"
+      ],
+      "MenuHeaders": [],
+      "EvidenceSummary": "Production Create from Selection dialog with Top row and Left column defaults visible."
+    }
+  ],
+  "CoveredStates": [
+    "Formulas ribbon Function Library and Defined Names groups over a seeded formula/names worksheet.",
+    "AutoSum split-menu state.",
+    "Logical Functions function-library menu state.",
+    "Use in Formula menu populated by seeded workbook defined names.",
+    "Insert Function dialog with a non-default category and selected function.",
+    "Name Manager dialog with seeded workbook names.",
+    "Define Name dialog with name, scope, comment, and Refers To fields.",
+    "Create from Selection dialog with default Top row/Left column choices."
+  ],
+  "Limitations": [
+    "This tour drives FreeX in process and captures WPF windows/menus with RenderTargetBitmap; it is not foreground CopyFromScreen proof.",
+    "Ribbon menus are opened through production handlers or context-menu state without physical mouse, keytip, shortcut, or UIA invocation.",
+    "Dialog captures show production visual/default-focus states but do not submit OK/Cancel, create/delete names, insert a function, or persist/save/reload the defined-name model.",
+    "Use in Formula evidence covers menu population and active formula text only; committing the selected name into formulas and undo/redo remain separate workflow proof.",
+    "Formula diagnostics, formula-bar/name-box, and Excel-paired screenshot evidence are intentionally outside this bounded slice."
+  ]
+}
