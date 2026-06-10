@@ -14,7 +14,7 @@ The remaining UX parity closeout is tracked as 8 umbrella slices:
 |---|---|
 | S1 Excel/FreeX paired main ribbon capture matrix | Open. |
 | S2 Popup, dropdown, and gallery captures | Partially advanced: Excel AutoFilter, Home Borders, Number Format, and worksheet context-menu foreground captures succeeded. |
-| S3 Native Open/Save/Background/export dialogs | Partially advanced: Excel Open, FreeX Open, and FreeX Save As foreground captures succeeded. |
+| S3 Native Open/Save/Background/export dialogs | Advanced: Excel Open, FreeX Open, and FreeX Save As foreground dialog-open proof is retained; Excel Save As is blocked by Office `NUIDialog`, and Background/export/native print proof remains open. See `docs/parity/ux-s3-native-dialogs-backstage-export-2026-06-10.md`. |
 | S4 Grid pointer mechanics | Open. |
 | S5 Sheet-tab pointer mechanics | Open. |
 | S6 Status/footer pointer mechanics | Open. |
