@@ -32,6 +32,7 @@ Related attempt reports already on main:
 - `docs/parity/worker-paired-harness-attempt-2026-06-10.md`
 - `docs/parity/worker-foreground-native-attempts-2026-06-10.md`
 - `docs/parity/foreground-capture-harness-2026-06-10.md`
+- Current S1 continuation branch: `codex/ux-parity-s1-main-ribbon-matrix-20260610`, created from local `main` at `dad1b467572b86a4fcff3493e03771d7b3ec8041` after `git fetch origin main` and `git pull --ff-only` from the main integration worktree reported up to date.
 
 ## Remaining Uncaptured Matrix
 
@@ -62,6 +63,7 @@ S1 remains blocked by the foreground/Office-profile harness gap, not by lack of 
 - The same continuation also changes the Excel launcher to start a separate `/x /e` Excel instance and refuse to bind to pre-existing workbook windows. This avoids accidentally capturing or killing an already-open user/session Excel workbook.
 - A no-input UI Automation probe against a separate Excel instance on this machine found Home, Insert, Page Layout, Formulas, Data, Review, View, and Help available, with `Draw` unavailable. The probe process was terminated afterward; older existing Excel processes were left untouched.
 - The focused live capture command `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\screenshot_excel.ps1 -Widths 1100` then reached the new isolated Excel PID `61232`, but still blocked before initial capture setup because foreground focus was owned by Chrome: `Copy of Copy of Practice Questions. Final Exam - Google Docs - Google Chrome` PID `22828`, expected `Excel` PID `61232`. No root Excel matrix artifacts were retained from that run.
+- The 2026-06-10 S1 continuation attempted the full root Excel matrix with `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\screenshot_excel.ps1 -Widths max,1100,900,750` after a Release host build fallback succeeded. Excel launched as isolated PID `106372`, but the foreground guard blocked before initial capture setup because `live-pivot-pane - FreeX` PID `103828` owned foreground focus while the script expected `Excel` PID `106372`. No root `tools/screenshots_excel/screenshot_manifest.json` or `excel_<Width>_<Tab>.png` files were retained.
 - To avoid losing a successful root ribbon matrix, do not run blocked dialog/popup sub-lanes in the same artifact directory immediately afterward; guard cleanup can clear the root `tools/screenshots*/screenshot_manifest.json` and tab PNGs.
 
 ## Required Closure Run
@@ -92,4 +94,4 @@ S1 can close only when both root manifests are retained and each manifest report
 
 ## Status
 
-S1 is not closed. The Excel Draw-tab expectation gap is now recordable instead of matrix-fatal, but the retained paired foreground root matrix still has not been produced because the latest live Excel sample was blocked by foreground ownership before initial capture setup.
+S1 is not closed. The Excel Draw-tab expectation gap is now recordable instead of matrix-fatal, but the retained paired foreground root matrix still has not been produced because the latest live Excel sample was blocked by foreground ownership before initial capture setup. The current branch made no harness-code changes and retained no new screenshots; it documents the exact remaining closure path and latest foreground owner.
