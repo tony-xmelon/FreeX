@@ -1,0 +1,27 @@
+# S2/S7 Dialog Dropdown Closeout - 2026-06-11
+
+Scope: checkpoint for the Format Cells/Data Validation/dialog-dropdown closeout slice in branch `codex/ux-parity-s2s7-dialog-dropdown-close-20260611`.
+
+## Product/Harness Fix
+
+- FreeX worksheet context-menu items now expose stable UI Automation names from the planner header and stable automation ids from the planner action. This keeps the displayed access-key headers unchanged while giving foreground automation a reliable `WorksheetContextMenu_FormatCells` target.
+- The foreground harness menu-item invoker now normalizes access-key markers and punctuation, matches against both UIA name and automation id, and prefers onscreen menu items before falling back to larger/offscreen matches.
+- A source guard was added for the worksheet context-menu automation metadata.
+
+## Evidence State
+
+- No new valid S2/S7 PNG evidence was produced in this checkpoint.
+- The retained FreeX Format Cells context-menu blocker manifest remains `tools/foreground-captures/freex-format-cells-context-dialog/freex-format-cells-context-dialog_manifest.json`; it records the pre-fix state where A1 was right-clicked under a valid FreeX foreground guard but no invokable `Format Cells` menu item was discoverable through UIA.
+- The retained Excel/Data Validation blocker manifests from `docs/parity/ux-parity-s2s7-popup-gallery-checkpoint-2026-06-10.md` remain the current Office foreground evidence state. The Data Validation dropdown popup is still blocked by Office foreground/popup exposure; this checkpoint did not expand that route.
+
+## Verification
+
+- `dotnet build tools\FreeX.ForegroundCapture\FreeX.ForegroundCapture.csproj --configuration Release` passed after the harness fix.
+- `dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --configuration Release` timed out before producing `src/FreeX.App.Host/bin/Release/net10.0-windows10.0.19041.0/FreeX.App.Host.exe`.
+- The fallback host build with `--disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1` also timed out before producing the host executable; stale build processes tied to this worktree were cleared.
+- A focused host test run for worksheet context menu and shortcut coverage timed out before writing `ux-parity-s2s7-focused.trx`; the timed-out test process for this slice was stopped. Other sessions' unrelated build/test processes were left untouched.
+
+## Remaining Blockers
+
+- Rerun `freex-format-cells-context-dialog` once the host project can build in this worktree; the route should now have a stable UIA target for `Format Cells...`.
+- Excel Format Cells and Excel Data Validation dropdown remain Office foreground/popup-state blockers unless a future runner exposes the dialog/list popup through a different foreground-safe route.

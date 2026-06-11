@@ -95,3 +95,32 @@ S1 can close only when both root manifests are retained and each manifest report
 ## Status
 
 S1 is not closed. The Excel Draw-tab expectation gap is now recordable instead of matrix-fatal, but the retained paired foreground root matrix still has not been produced because the latest live Excel sample was blocked by foreground ownership before initial capture setup. The current branch made no harness-code changes and retained no new screenshots; it documents the exact remaining closure path and latest foreground owner.
+
+## 2026-06-11 Checkpoint
+
+Branch/worktree:
+
+- Branch: `codex/ux-parity-s1-ribbon-matrix-close-20260611`
+- Worktree: `E:\Users\anton\Documents\Claude\FreeX\.worktrees\ux-parity-s1-ribbon-matrix-close-20260611`
+- Base: local `main` at `e1b52f96d65ad1cba6a2871b7dde180eef386254`.
+
+Harness update:
+
+- `tools/screenshot_excel.ps1` and `tools/screenshot_ribbon.ps1` now retry foreground activation with restore/topmost pulse, `AttachThreadInput`, `BringWindowToTop`, `SetActiveWindow`, `SetFocus`, `SetForegroundWindow`, and a guarded Alt-key pulse before enforcing the existing foreground guard.
+- Root ribbon runs now clear stale `screenshot_blocker_manifest.json` files at the start of a new root capture attempt.
+- If the root foreground guard still blocks, the scripts retain a separate `screenshot_blocker_manifest.json` with expected/actual foreground ownership, requested widths/tabs, and blocker reason while still discarding root screenshot PNGs and `screenshot_manifest.json` as invalid evidence.
+
+Retained evidence:
+
+- `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\screenshot_excel.ps1 -Widths 1100` completed under foreground guard.
+- Retained Excel root manifest: `tools/screenshots_excel/screenshot_manifest.json`.
+- Retained Excel root PNGs: `tools/screenshots_excel/excel_1100_Home.png`, `excel_1100_Insert.png`, `excel_1100_Page_Layout.png`, `excel_1100_Formulas.png`, `excel_1100_Data.png`, `excel_1100_Review.png`, `excel_1100_View.png`, and `excel_1100_Help.png`.
+- Manifest status: `CaptureStatus=complete-with-skipped-unavailable-tabs`, `PlannedCaptureCount=8`, `ActualCaptureCount=8`, `SkippedTabs=Draw`.
+
+S1 remains open because the matching FreeX root counterpart matrix was intentionally not run after the checkpoint stop request. The next smallest closure step is:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\screenshot_ribbon.ps1 -Widths 1100
+```
+
+If that retains `tools/screenshots/screenshot_manifest.json` with pair keys matching the Excel 1100 manifest, the focused 1100 pair can be reviewed before expanding to the full width matrix.
