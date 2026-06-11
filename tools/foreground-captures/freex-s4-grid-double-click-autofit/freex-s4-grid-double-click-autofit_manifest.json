@@ -5,37 +5,37 @@
   "CaptureMode": "foreground-guarded-uia-win32",
   "ForegroundGuard": {
     "Success": true,
-    "ExpectedProcessId": 105984,
-    "ExpectedHandle": 17567516,
+    "ExpectedProcessId": 110740,
+    "ExpectedHandle": 45157742,
     "ForegroundWindow": {
-      "Handle": 17567516,
-      "ProcessId": 105984,
+      "Handle": 45157742,
+      "ProcessId": 110740,
       "Title": "Book1 - FreeX",
-      "ClassName": "HwndWrapper[FreeX.App.Host;;b3467a11-5267-4f35-874c-48c38f1f5589]",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;557e8f23-3f47-4ec6-885a-1421e51c652e]",
       "Bounds": {
         "Location": {
           "IsEmpty": false,
-          "X": 203,
-          "Y": 203
+          "X": 51,
+          "Y": 51
         },
         "Size": {
           "IsEmpty": false,
           "Width": 1280,
           "Height": 720
         },
-        "X": 203,
-        "Y": 203,
+        "X": 51,
+        "Y": 51,
         "Width": 1280,
         "Height": 720,
-        "Left": 203,
-        "Top": 203,
-        "Right": 1483,
-        "Bottom": 923,
+        "Left": 51,
+        "Top": 51,
+        "Right": 1331,
+        "Bottom": 771,
         "IsEmpty": false
       }
     }
   },
   "BlockReason": "column-autofit-validation-failed: Expected column A width to grow after double-click AutoFit; before 96, after 92.",
-  "CapturedAtUtc": "2026-06-10T22:18:34.7908796+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s4-grid-validation-run-20260611\\tools\\foreground-captures\\freex-s4-grid-double-click-autofit\\freex-s4-grid-double-click-autofit_manifest.json"
+  "CapturedAtUtc": "2026-06-11T04:00:48.3477681+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-s4-grid-double-click-autofit\\freex-s4-grid-double-click-autofit_manifest.json"
 }

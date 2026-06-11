@@ -37,3 +37,23 @@ dotnet run --project tools\FreeX.ForegroundCapture\FreeX.ForegroundCapture.cspro
 Result: complete. Retained `tools/foreground-captures/freex-format-cells-context-dialog/freex-format-cells-context-dialog_20260611_002043.png` plus the updated manifest. The validation confirms that the foreground-owned FreeX worksheet context menu opened the actual `Format Cells` dialog through the stable `WorksheetContextMenu_FormatCells` route.
 
 Remaining S2/S7 blockers are now narrowed to the Office-side Format Cells/Data Validation popup states and broader gallery/dropdown pairings outside the already retained AutoFilter, Borders, Number Format, worksheet context, Cell Styles, and FreeX Format Cells context-dialog evidence.
+
+## Final Bounded Office Rerun
+
+The final bounded S2/S7 pass reran only existing Office foreground scenarios:
+
+```powershell
+dotnet run --project tools\FreeX.ForegroundCapture\FreeX.ForegroundCapture.csproj --configuration Release -- --scenario excel-format-cells-dialog
+dotnet run --project tools\FreeX.ForegroundCapture\FreeX.ForegroundCapture.csproj --configuration Release -- --scenario excel-format-cells-context-dialog
+dotnet run --project tools\FreeX.ForegroundCapture\FreeX.ForegroundCapture.csproj --configuration Release -- --scenario excel-data-validation-dropdown-prepared
+dotnet run --project tools\FreeX.ForegroundCapture\FreeX.ForegroundCapture.csproj --configuration Release -- --scenario excel-cell-styles-gallery
+```
+
+All four runs reached foreground-owned Excel windows and retained blocker manifests:
+
+- `excel-format-cells-dialog`: blocked because no Excel Format Cells dialog was detected after `Alt,H,O,E`.
+- `excel-format-cells-context-dialog`: blocked because invoking the worksheet context-menu Format Cells route did not expose a detectable Format Cells dialog.
+- `excel-data-validation-dropdown-prepared`: blocked because no foreground Excel validation-list dropdown was detected after physical in-cell arrow click or `Alt+Down`.
+- `excel-cell-styles-gallery`: blocked because the expected `Net UI Tool Window` gallery popup was not detected.
+
+No new S2/S7 closure was produced in this final batch; the remaining work is Office popup/dialog detection strategy rather than FreeX context-route plumbing.

@@ -1,0 +1,9 @@
+{
+  "Scenario": "freex-status-zoom-min-max-rangevalue-set",
+  "Subject": "freex",
+  "CaptureStatus": "blocked",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "BlockReason": "exception: Operation timed out. (0x80131505)",
+  "CapturedAtUtc": "2026-06-11T03:51:57.8782309+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-status-zoom-min-max-rangevalue-set\\freex-status-zoom-min-max-rangevalue-set_manifest.json"
+}
