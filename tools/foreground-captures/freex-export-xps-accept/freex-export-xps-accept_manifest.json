@@ -5,13 +5,13 @@
   "CaptureMode": "foreground-guarded-uia-win32",
   "ForegroundGuard": {
     "Success": true,
-    "ExpectedProcessId": 81660,
-    "ExpectedHandle": 53284128,
+    "ExpectedProcessId": 103632,
+    "ExpectedHandle": 28053862,
     "ForegroundWindow": {
-      "Handle": 53284128,
-      "ProcessId": 81660,
+      "Handle": 28053862,
+      "ProcessId": 103632,
       "Title": "Book1 - FreeX",
-      "ClassName": "HwndWrapper[FreeX.App.Host;;e18689b5-4962-4681-98da-11aadd945cb7]",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;9e7f2b5d-da1b-41b1-9bdb-e09d19476be7]",
       "Bounds": {
         "Location": {
           "IsEmpty": false,
@@ -36,6 +36,6 @@
     }
   },
   "BlockReason": "options-dialog-not-found: Accepted an explicit .xps path but did not detect the PDF/XPS options dialog.",
-  "CapturedAtUtc": "2026-06-11T00:42:32.8233364+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-export-xps-accept\\freex-export-xps-accept_manifest.json"
+  "CapturedAtUtc": "2026-06-11T02:41:09.9814926+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s3-native-export-evidence-20260611\\tools\\foreground-captures\\freex-export-xps-accept\\freex-export-xps-accept_manifest.json"
 }
