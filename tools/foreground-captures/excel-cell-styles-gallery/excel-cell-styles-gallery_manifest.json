@@ -1,43 +1,15 @@
 {
   "Scenario": "excel-cell-styles-gallery",
   "Subject": "excel",
-  "CaptureStatus": "complete",
+  "CaptureStatus": "blocked",
   "CaptureMode": "foreground-guarded-uia-win32",
-  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s2s7-dialog-dropdown-edge-20260610b\\tools\\foreground-captures\\excel-cell-styles-gallery\\excel-cell-styles-gallery_20260610_185707.png",
-  "Window": {
-    "Handle": 6686712,
-    "ProcessId": 59132,
-    "Title": "",
-    "ClassName": "Net UI Tool Window",
-    "Bounds": {
-      "Location": {
-        "IsEmpty": false,
-        "X": 679,
-        "Y": 159
-      },
-      "Size": {
-        "IsEmpty": false,
-        "Width": 652,
-        "Height": 511
-      },
-      "X": 679,
-      "Y": 159,
-      "Width": 652,
-      "Height": 511,
-      "Left": 679,
-      "Top": 159,
-      "Right": 1331,
-      "Bottom": 670,
-      "IsEmpty": false
-    }
-  },
   "ForegroundGuard": {
     "Success": true,
-    "ExpectedProcessId": 59132,
-    "ExpectedHandle": 4067708,
+    "ExpectedProcessId": 93232,
+    "ExpectedHandle": 33754232,
     "ForegroundWindow": {
-      "Handle": 4067708,
-      "ProcessId": 59132,
+      "Handle": 33754232,
+      "ProcessId": 93232,
       "Title": "Book1 - Excel",
       "ClassName": "XLMAIN",
       "Bounds": {
@@ -63,6 +35,7 @@
       }
     }
   },
-  "CapturedAtUtc": "2026-06-10T18:57:07.4934777+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s2s7-dialog-dropdown-edge-20260610b\\tools\\foreground-captures\\excel-cell-styles-gallery\\excel-cell-styles-gallery_manifest.json"
+  "BlockReason": "popup-not-found: Did not detect foreground Excel popup class \u0027Net UI Tool Window\u0027.",
+  "CapturedAtUtc": "2026-06-11T03:59:05.5337095+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\excel-cell-styles-gallery\\excel-cell-styles-gallery_manifest.json"
 }
