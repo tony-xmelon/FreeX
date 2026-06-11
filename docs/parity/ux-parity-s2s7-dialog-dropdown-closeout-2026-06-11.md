@@ -38,6 +38,16 @@ Result: complete. Retained `tools/foreground-captures/freex-format-cells-context
 
 Remaining S2/S7 blockers are now narrowed to the Office-side Format Cells/Data Validation popup states and broader gallery/dropdown pairings outside the already retained AutoFilter, Borders, Number Format, worksheet context, Cell Styles, and FreeX Format Cells context-dialog evidence.
 
+## Office Reference Closeout
+
+The remaining Office-side Format Cells and Data Validation blockers were reclassified after user confirmation that the installed free Microsoft Excel build gates these features as premium. The blocked manifests are retained as truthful local automation results, but they are no longer actionable FreeX parity blockers.
+
+Reference evidence is recorded in `docs/parity/ux-parity-office-reference-closeout-2026-06-11.md`:
+
+- Microsoft Learn reference for the Excel Format Cells dialog and tab structure.
+- Microsoft Support references for Data Validation in-cell dropdown lists.
+- User-validated Excel Activate dialog screenshot description.
+
 ## Final Bounded Office Rerun
 
 The final bounded S2/S7 pass reran only existing Office foreground scenarios:
