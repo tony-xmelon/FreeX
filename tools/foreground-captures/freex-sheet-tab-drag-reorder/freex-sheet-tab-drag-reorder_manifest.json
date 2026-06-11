@@ -1,9 +1,69 @@
 {
   "Scenario": "freex-sheet-tab-drag-reorder",
   "Subject": "freex",
-  "CaptureStatus": "blocked",
+  "CaptureStatus": "complete",
   "CaptureMode": "foreground-guarded-uia-win32",
-  "BlockReason": "reorder-validation-failed: Expected Sheet4 to move before Sheet2 after drag; observed order: Sheet1, Sheet2, Sheet4, Sheet3.",
-  "CapturedAtUtc": "2026-06-11T03:17:05.636499+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-sheet-tab-drag-reorder\\freex-sheet-tab-drag-reorder_manifest.json"
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s5d-sheet-tabs-foreground-20260611\\tools\\foreground-captures\\freex-sheet-tab-drag-reorder\\freex-sheet-tab-drag-reorder_20260611_113502.png",
+  "Window": {
+    "Handle": 62786338,
+    "ProcessId": 8944,
+    "Title": "Book1* - FreeX",
+    "ClassName": "HwndWrapper[FreeX.App.Host;;0afe1914-487e-4f7c-80a6-cae900d655b4]",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 190,
+        "Y": 190
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1920,
+        "Height": 1080
+      },
+      "X": 190,
+      "Y": 190,
+      "Width": 1920,
+      "Height": 1080,
+      "Left": 190,
+      "Top": 190,
+      "Right": 2110,
+      "Bottom": 1270,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 8944,
+    "ExpectedHandle": 62786338,
+    "ForegroundWindow": {
+      "Handle": 62786338,
+      "ProcessId": 8944,
+      "Title": "Book1* - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;0afe1914-487e-4f7c-80a6-cae900d655b4]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 190,
+          "Y": 190
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1920,
+          "Height": 1080
+        },
+        "X": 190,
+        "Y": 190,
+        "Width": 1920,
+        "Height": 1080,
+        "Left": 190,
+        "Top": 190,
+        "Right": 2110,
+        "Bottom": 1270,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-11T11:35:03.0884322+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s5d-sheet-tabs-foreground-20260611\\tools\\foreground-captures\\freex-sheet-tab-drag-reorder\\freex-sheet-tab-drag-reorder_manifest.json",
+  "ResultValidation": "Created Sheet2-Sheet4 through physical Insert Sheet clicks, physically dragged Sheet4 onto Sheet2, and validated visible tab order: Sheet1, Sheet4, Sheet2, Sheet3."
 }

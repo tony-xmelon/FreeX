@@ -1,9 +1,69 @@
 {
   "Scenario": "freex-sheet-tab-grouped-commands",
   "Subject": "freex",
-  "CaptureStatus": "blocked",
+  "CaptureStatus": "complete",
   "CaptureMode": "foreground-guarded-uia-win32",
-  "BlockReason": "context-menu-item-not-found: Opened the grouped sheet-tab context menu but could not invoke Ungroup Sheets.",
-  "CapturedAtUtc": "2026-06-11T03:15:25.0771047+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-sheet-tab-grouped-commands\\freex-sheet-tab-grouped-commands_manifest.json"
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s5d-sheet-tabs-foreground-20260611\\tools\\foreground-captures\\freex-sheet-tab-grouped-commands\\freex-sheet-tab-grouped-commands_20260611_113417.png",
+  "Window": {
+    "Handle": 6099150,
+    "ProcessId": 21100,
+    "Title": "Book1 - FreeX",
+    "ClassName": "HwndWrapper[FreeX.App.Host;;d9de1789-3ac3-43ce-9b69-6d73c7be9309]",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 152,
+        "Y": 152
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1920,
+        "Height": 1080
+      },
+      "X": 152,
+      "Y": 152,
+      "Width": 1920,
+      "Height": 1080,
+      "Left": 152,
+      "Top": 152,
+      "Right": 2072,
+      "Bottom": 1232,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 21100,
+    "ExpectedHandle": 6099150,
+    "ForegroundWindow": {
+      "Handle": 6099150,
+      "ProcessId": 21100,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;d9de1789-3ac3-43ce-9b69-6d73c7be9309]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 152,
+          "Y": 152
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1920,
+          "Height": 1080
+        },
+        "X": 152,
+        "Y": 152,
+        "Width": 1920,
+        "Height": 1080,
+        "Left": 152,
+        "Top": 152,
+        "Right": 2072,
+        "Bottom": 1232,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-11T11:34:17.4107302+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s5d-sheet-tabs-foreground-20260611\\tools\\foreground-captures\\freex-sheet-tab-grouped-commands\\freex-sheet-tab-grouped-commands_manifest.json",
+  "ResultValidation": "Created Sheet2-Sheet4 through physical Insert Sheet clicks, invoked Select All Sheets from the sheet-tab context menu, verified grouped title \u0027Book1 [Group] - FreeX\u0027, then invoked Ungroup Sheets from the focused sheet-tab keyboard context menu and verified title \u0027Book1 - FreeX\u0027."
 }
