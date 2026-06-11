@@ -1,9 +1,69 @@
 {
   "Scenario": "freex-sheet-tab-overflow-activate-dialog",
   "Subject": "freex",
-  "CaptureStatus": "blocked",
+  "CaptureStatus": "complete",
   "CaptureMode": "foreground-guarded-uia-win32",
-  "BlockReason": "dialog-not-found: Did not detect Activate Sheet dialog after right-clicking the sheet-tab overflow navigation button.",
-  "CapturedAtUtc": "2026-06-11T03:20:48.6285692+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-sheet-tab-overflow-activate-dialog\\freex-sheet-tab-overflow-activate-dialog_manifest.json"
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s5d-sheet-tabs-foreground-20260611\\tools\\foreground-captures\\freex-sheet-tab-overflow-activate-dialog\\freex-sheet-tab-overflow-activate-dialog_20260611_113708.png",
+  "Window": {
+    "Handle": 6033072,
+    "ProcessId": 117588,
+    "Title": "Activate",
+    "ClassName": "HwndWrapper[FreeX.App.Host;;9625109f-3929-4124-8f71-177f1fea6c9f]",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 978,
+        "Y": 521
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 420,
+        "Height": 700
+      },
+      "X": 978,
+      "Y": 521,
+      "Width": 420,
+      "Height": 700,
+      "Left": 978,
+      "Top": 521,
+      "Right": 1398,
+      "Bottom": 1221,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 117588,
+    "ExpectedHandle": 6033072,
+    "ForegroundWindow": {
+      "Handle": 6033072,
+      "ProcessId": 117588,
+      "Title": "Activate",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;9625109f-3929-4124-8f71-177f1fea6c9f]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 978,
+          "Y": 521
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 420,
+          "Height": 700
+        },
+        "X": 978,
+        "Y": 521,
+        "Width": 420,
+        "Height": 700,
+        "Left": 978,
+        "Top": 521,
+        "Right": 1398,
+        "Bottom": 1221,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-11T11:37:08.8020973+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s5d-sheet-tabs-foreground-20260611\\tools\\foreground-captures\\freex-sheet-tab-overflow-activate-dialog\\freex-sheet-tab-overflow-activate-dialog_manifest.json",
+  "ResultValidation": "Created Sheet2-Sheet18 through physical Insert Sheet button clicks, then physically right-clicked the sheet-tab overflow navigation button and captured the foreground Activate Sheet dialog."
 }

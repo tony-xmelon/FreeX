@@ -3,67 +3,67 @@
   "Subject": "freex",
   "CaptureStatus": "complete",
   "CaptureMode": "foreground-guarded-uia-win32",
-  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s5-sheet-tab-pointer-20260610\\tools\\foreground-captures\\freex-sheet-tab-overflow-nav-click\\freex-sheet-tab-overflow-nav-click_20260610_181033.png",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s5d-sheet-tabs-foreground-20260611\\tools\\foreground-captures\\freex-sheet-tab-overflow-nav-click\\freex-sheet-tab-overflow-nav-click_20260611_113918.png",
   "Window": {
-    "Handle": 40108128,
-    "ProcessId": 91308,
+    "Handle": 24644860,
+    "ProcessId": 81712,
     "Title": "Book1 - FreeX",
-    "ClassName": "HwndWrapper[FreeX.App.Host;;e17be263-0b7c-4c71-a39a-62e13ae89b45]",
+    "ClassName": "HwndWrapper[FreeX.App.Host;;d6ec82df-ea3e-42b9-8671-18b5f8baae78]",
     "Bounds": {
       "Location": {
         "IsEmpty": false,
-        "X": 266,
-        "Y": 266
+        "X": 342,
+        "Y": 342
       },
       "Size": {
         "IsEmpty": false,
         "Width": 1920,
         "Height": 1080
       },
-      "X": 266,
-      "Y": 266,
+      "X": 342,
+      "Y": 342,
       "Width": 1920,
       "Height": 1080,
-      "Left": 266,
-      "Top": 266,
-      "Right": 2186,
-      "Bottom": 1346,
+      "Left": 342,
+      "Top": 342,
+      "Right": 2262,
+      "Bottom": 1422,
       "IsEmpty": false
     }
   },
   "ForegroundGuard": {
     "Success": true,
-    "ExpectedProcessId": 91308,
-    "ExpectedHandle": 40108128,
+    "ExpectedProcessId": 81712,
+    "ExpectedHandle": 24644860,
     "ForegroundWindow": {
-      "Handle": 40108128,
-      "ProcessId": 91308,
+      "Handle": 24644860,
+      "ProcessId": 81712,
       "Title": "Book1 - FreeX",
-      "ClassName": "HwndWrapper[FreeX.App.Host;;e17be263-0b7c-4c71-a39a-62e13ae89b45]",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;d6ec82df-ea3e-42b9-8671-18b5f8baae78]",
       "Bounds": {
         "Location": {
           "IsEmpty": false,
-          "X": 266,
-          "Y": 266
+          "X": 342,
+          "Y": 342
         },
         "Size": {
           "IsEmpty": false,
           "Width": 1920,
           "Height": 1080
         },
-        "X": 266,
-        "Y": 266,
+        "X": 342,
+        "Y": 342,
         "Width": 1920,
         "Height": 1080,
-        "Left": 266,
-        "Top": 266,
-        "Right": 2186,
-        "Bottom": 1346,
+        "Left": 342,
+        "Top": 342,
+        "Right": 2262,
+        "Bottom": 1422,
         "IsEmpty": false
       }
     }
   },
-  "CapturedAtUtc": "2026-06-10T18:10:33.499295+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s5-sheet-tab-pointer-20260610\\tools\\foreground-captures\\freex-sheet-tab-overflow-nav-click\\freex-sheet-tab-overflow-nav-click_manifest.json",
-  "ResultValidation": "Created Sheet2-Sheet8 through physical Insert Sheet button clicks, then physically clicked the visible Scroll Tabs Right overflow navigation button."
+  "CapturedAtUtc": "2026-06-11T11:39:18.4467381+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s5d-sheet-tabs-foreground-20260611\\tools\\foreground-captures\\freex-sheet-tab-overflow-nav-click\\freex-sheet-tab-overflow-nav-click_manifest.json",
+  "ResultValidation": "Created Sheet2-Sheet18 through physical Insert Sheet button clicks, then physically clicked the visible Scroll Tabs Right overflow navigation button."
 }
