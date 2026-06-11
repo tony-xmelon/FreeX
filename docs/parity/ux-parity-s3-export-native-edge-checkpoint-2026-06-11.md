@@ -67,3 +67,23 @@ Still blocked with retained manifests:
 - `excel-save-as-dialog`: the Office `NUIDialog` path still does not expose the native common Save As dialog continuation expected for a `#32770` Browse/Save proof.
 
 The open S3 list is therefore reduced to explicit XPS options detection, native Windows PrintDialog detection, and the Excel Save As common `#32770` Browse/Save continuation that remains blocked by the Office `NUIDialog` state.
+
+## S3 Blocker Harness Hardening
+
+Branch/worktree:
+
+- Branch: `codex/s3-native-export-blockers-20260611`
+- Worktree: `E:\Users\anton\Documents\Claude\FreeX\.worktrees\s3-native-export-blockers-20260611`
+- Base: local `main` at `e72bc96ecac325c99a4b29b6cb270e139a833b6d`
+
+This pass is non-GUI only. It does not launch foreground FreeX or Excel, does not add or replace retained foreground evidence, and does not close any S3 row until the scenarios are rerun with the desktop slot released.
+
+Harness changes made for the three remaining blockers:
+
+- `freex-export-xps-accept`: the post-SaveFileDialog detector now accepts the actual WPF `Export Options` window title in addition to older `PDF/XPS`/publish title variants. The prior blocker text said "PDF/XPS options dialog," but the app's export options window is titled `Export Options`.
+- `freex-native-print-dialog`: the Print Preview Print command now uses a foreground-verified physical click instead of `InvokePattern.Invoke`, then waits through the normal popup timeout for a native `#32770` Print dialog. This avoids blocking or returning too early around the modal WinForms print dialog handoff.
+- `excel-save-as-dialog`: when Excel exposes an Office `NUIDialog`, the harness now makes a bounded attempt to invoke visible `Browse`, `More options`, `Save As`, `This PC`, or `Computer` continuation targets and then waits for a native `#32770` `Save As` dialog. If Office still does not expose that common dialog, the scenario remains blocked with `nuidialog-common-save-as-continuation-not-found`.
+
+Verification:
+
+- `dotnet build tools\FreeX.ForegroundCapture\FreeX.ForegroundCapture.csproj --configuration Release` passed with 0 warnings and 0 errors.
