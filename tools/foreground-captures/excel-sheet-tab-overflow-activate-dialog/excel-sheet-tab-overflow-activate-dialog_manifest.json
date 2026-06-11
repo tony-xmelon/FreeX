@@ -5,11 +5,11 @@
   "CaptureMode": "foreground-guarded-uia-win32",
   "ForegroundGuard": {
     "Success": true,
-    "ExpectedProcessId": 104752,
-    "ExpectedHandle": 7017976,
+    "ExpectedProcessId": 96296,
+    "ExpectedHandle": 43716548,
     "ForegroundWindow": {
-      "Handle": 7017976,
-      "ProcessId": 104752,
+      "Handle": 43716548,
+      "ProcessId": 96296,
       "Title": "Book1 - Excel",
       "ClassName": "XLMAIN",
       "Bounds": {
@@ -35,7 +35,7 @@
       }
     }
   },
-  "BlockReason": "dialog-not-found: Did not detect Excel\u0027s Activate dialog after right-clicking the sheet-tab navigation button.",
-  "CapturedAtUtc": "2026-06-11T03:21:27.2918265+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\excel-sheet-tab-overflow-activate-dialog\\excel-sheet-tab-overflow-activate-dialog_manifest.json"
+  "BlockReason": "dialog-not-found: Did not detect Excel\u0027s Activate dialog after right-clicking UIA sheet-tab navigation candidates, coordinate fallbacks beside the sheet tabs, or the built-in xlDialogActivate dialog.",
+  "CapturedAtUtc": "2026-06-11T08:09:28.5863347+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\excel-foreground-s2s7-20260611\\tools\\foreground-captures\\excel-sheet-tab-overflow-activate-dialog\\excel-sheet-tab-overflow-activate-dialog_manifest.json"
 }

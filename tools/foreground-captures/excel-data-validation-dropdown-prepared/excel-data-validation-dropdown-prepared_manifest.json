@@ -5,11 +5,11 @@
   "CaptureMode": "foreground-guarded-uia-win32",
   "ForegroundGuard": {
     "Success": true,
-    "ExpectedProcessId": 103684,
-    "ExpectedHandle": 20583068,
+    "ExpectedProcessId": 105104,
+    "ExpectedHandle": 10489308,
     "ForegroundWindow": {
-      "Handle": 20583068,
-      "ProcessId": 103684,
+      "Handle": 10489308,
+      "ProcessId": 105104,
       "Title": "prepared-validation-list.xlsx  -  Read-Only - Excel",
       "ClassName": "XLMAIN",
       "Bounds": {
@@ -36,6 +36,6 @@
     }
   },
   "BlockReason": "popup-not-found: Prepared and reopened a validation-list workbook, but did not detect a foreground Excel Data Validation dropdown after the physical in-cell arrow click or Alt\u002BDown.",
-  "CapturedAtUtc": "2026-06-11T03:58:33.9614136+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\excel-data-validation-dropdown-prepared\\excel-data-validation-dropdown-prepared_manifest.json"
+  "CapturedAtUtc": "2026-06-11T08:07:15.4907705+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\excel-foreground-s2s7-20260611\\tools\\foreground-captures\\excel-data-validation-dropdown-prepared\\excel-data-validation-dropdown-prepared_manifest.json"
 }
