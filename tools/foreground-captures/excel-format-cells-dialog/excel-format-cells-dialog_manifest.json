@@ -5,11 +5,11 @@
   "CaptureMode": "foreground-guarded-uia-win32",
   "ForegroundGuard": {
     "Success": true,
-    "ExpectedProcessId": 16316,
-    "ExpectedHandle": 6360890,
+    "ExpectedProcessId": 14152,
+    "ExpectedHandle": 5833890,
     "ForegroundWindow": {
-      "Handle": 6360890,
-      "ProcessId": 16316,
+      "Handle": 5833890,
+      "ProcessId": 14152,
       "Title": "Book1 - Excel",
       "ClassName": "XLMAIN",
       "Bounds": {
@@ -35,7 +35,7 @@
       }
     }
   },
-  "BlockReason": "dialog-not-found: Did not detect Excel Format Cells dialog after Alt,H,O,E.",
-  "CapturedAtUtc": "2026-06-11T03:57:26.4095679+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\excel-format-cells-dialog\\excel-format-cells-dialog_manifest.json"
+  "BlockReason": "dialog-not-found: Did not detect Excel Format Cells dialog after Ctrl\u002B1, Excel\u0027s FormatCellsDialog command, or the built-in xlDialogFormatNumber dialog.",
+  "CapturedAtUtc": "2026-06-11T08:04:59.5496708+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\excel-foreground-s2s7-20260611\\tools\\foreground-captures\\excel-format-cells-dialog\\excel-format-cells-dialog_manifest.json"
 }
