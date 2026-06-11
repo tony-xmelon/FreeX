@@ -128,6 +128,18 @@ Still blocked with retained manifests:
 
 S6 remains open for the numerical-count UIA readback gap, min/max slider breadth, touchpad/hardware wheel parity, and fuller Excel-paired status/footer comparison. Ordinary, Shift, and Ctrl wheel foreground proof is now retained in one scenario.
 
+## 2026-06-11 S4 AutoFit Confirmation
+
+The final bounded S4 rerun retried the existing foreground AutoFit scenario after clearing only the main-integration FreeX process:
+
+```powershell
+dotnet run --project tools\FreeX.ForegroundCapture\FreeX.ForegroundCapture.csproj --configuration Release -- --scenario freex-s4-grid-double-click-autofit
+```
+
+The clean retry reached a foreground-owned FreeX window and retained `tools/foreground-captures/freex-s4-grid-double-click-autofit/freex-s4-grid-double-click-autofit_manifest.json`, but still blocked with `column-autofit-validation-failed`: column A changed from `96` to `92` after double-click AutoFit, while the seeded long value expected the column to grow.
+
+S4 therefore remains open for a real product/harness follow-up on AutoFit sizing semantics, plus the previously listed split-divider, hidden-boundary resize, touchpad, and Excel-paired pointer breadth.
+
 ## Verification
 
 - `git status --short --branch` in the primary checkout: showed unrelated dirty files on `worker-c-cf-aggregate-list-parity`; left untouched.
