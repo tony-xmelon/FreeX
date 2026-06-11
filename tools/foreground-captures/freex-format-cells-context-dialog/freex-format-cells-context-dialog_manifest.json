@@ -1,41 +1,69 @@
 {
   "Scenario": "freex-format-cells-context-dialog",
   "Subject": "freex",
-  "CaptureStatus": "blocked",
+  "CaptureStatus": "complete",
   "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-format-cells-context-dialog\\freex-format-cells-context-dialog_20260611_002043.png",
+  "Window": {
+    "Handle": 23989372,
+    "ProcessId": 109348,
+    "Title": "Format Cells",
+    "ClassName": "HwndWrapper[FreeX.App.Host;;2d3881a1-bbd1-414d-8995-68404c3d0ef8]",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 473,
+        "Y": 121
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1050,
+        "Height": 915
+      },
+      "X": 473,
+      "Y": 121,
+      "Width": 1050,
+      "Height": 915,
+      "Left": 473,
+      "Top": 121,
+      "Right": 1523,
+      "Bottom": 1036,
+      "IsEmpty": false
+    }
+  },
   "ForegroundGuard": {
     "Success": true,
-    "ExpectedProcessId": 83508,
-    "ExpectedHandle": 67962964,
+    "ExpectedProcessId": 109348,
+    "ExpectedHandle": 5902666,
     "ForegroundWindow": {
-      "Handle": 67962964,
-      "ProcessId": 83508,
+      "Handle": 5902666,
+      "ProcessId": 109348,
       "Title": "Book1 - FreeX",
-      "ClassName": "HwndWrapper[FreeX.App.Host;;612610c9-28a5-499e-ac43-a251e3aa554f]",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;e1c99fc8-e248-4127-9e47-0d56226d0d3e]",
       "Bounds": {
         "Location": {
           "IsEmpty": false,
-          "X": 51,
-          "Y": 51
+          "X": 25,
+          "Y": 25
         },
         "Size": {
           "IsEmpty": false,
           "Width": 1280,
           "Height": 720
         },
-        "X": 51,
-        "Y": 51,
+        "X": 25,
+        "Y": 25,
         "Width": 1280,
         "Height": 720,
-        "Left": 51,
-        "Top": 51,
-        "Right": 1331,
-        "Bottom": 771,
+        "Left": 25,
+        "Top": 25,
+        "Right": 1305,
+        "Bottom": 745,
         "IsEmpty": false
       }
     }
   },
-  "BlockReason": "context-menu-item-not-found: Right-clicked A1 in FreeX, but could not find or invoke a visible Format Cells menu item through UI Automation.",
-  "CapturedAtUtc": "2026-06-10T22:21:50.4843591+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-s2s7-alt-proof-20260611\\tools\\foreground-captures\\freex-format-cells-context-dialog\\freex-format-cells-context-dialog_manifest.json"
+  "CapturedAtUtc": "2026-06-11T00:20:44.5143094+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-format-cells-context-dialog\\freex-format-cells-context-dialog_manifest.json",
+  "ResultValidation": "Opened Format Cells through the FreeX worksheet context menu instead of Ctrl\u002B1."
 }

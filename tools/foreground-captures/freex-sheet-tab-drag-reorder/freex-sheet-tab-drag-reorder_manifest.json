@@ -1,0 +1,9 @@
+{
+  "Scenario": "freex-sheet-tab-drag-reorder",
+  "Subject": "freex",
+  "CaptureStatus": "blocked",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "BlockReason": "reorder-validation-failed: Expected Sheet4 to move before Sheet2 after drag; observed order: Sheet1, Sheet2, Sheet4, Sheet3.",
+  "CapturedAtUtc": "2026-06-11T03:17:05.636499+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-sheet-tab-drag-reorder\\freex-sheet-tab-drag-reorder_manifest.json"
+}

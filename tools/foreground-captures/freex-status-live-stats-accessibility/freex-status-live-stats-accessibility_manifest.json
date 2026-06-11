@@ -1,0 +1,41 @@
+{
+  "Scenario": "freex-status-live-stats-accessibility",
+  "Subject": "freex",
+  "CaptureStatus": "blocked",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 98652,
+    "ExpectedHandle": 32377938,
+    "ForegroundWindow": {
+      "Handle": 32377938,
+      "ProcessId": 98652,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;b2fd1608-0874-4d8f-99a4-f391bee29f5b]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 203,
+          "Y": 203
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "X": 203,
+        "Y": 203,
+        "Width": 1280,
+        "Height": 720,
+        "Left": 203,
+        "Top": 203,
+        "Right": 1483,
+        "Bottom": 923,
+        "IsEmpty": false
+      }
+    }
+  },
+  "BlockReason": "status-stat-validation-unavailable: Could not read a visible UIA name/text value for \u0027StatusNumericalCountText\u0027.",
+  "CapturedAtUtc": "2026-06-11T03:53:37.7286553+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-status-live-stats-accessibility\\freex-status-live-stats-accessibility_manifest.json"
+}

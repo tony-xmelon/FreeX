@@ -1,0 +1,69 @@
+{
+  "Scenario": "excel-status-footer-reference",
+  "Subject": "excel",
+  "CaptureStatus": "complete",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\excel-status-footer-reference\\excel-status-footer-reference_20260611_002445.png",
+  "Window": {
+    "Handle": 31331780,
+    "ProcessId": 110096,
+    "Title": "Book1 - Excel",
+    "ClassName": "XLMAIN",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1200,
+        "Height": 960
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 1200,
+      "Height": 960,
+      "Left": 0,
+      "Top": 0,
+      "Right": 1200,
+      "Bottom": 960,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 110096,
+    "ExpectedHandle": 31331780,
+    "ForegroundWindow": {
+      "Handle": 31331780,
+      "ProcessId": 110096,
+      "Title": "Book1 - Excel",
+      "ClassName": "XLMAIN",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1200,
+          "Height": 960
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 1200,
+        "Height": 960,
+        "Left": 0,
+        "Top": 0,
+        "Right": 1200,
+        "Bottom": 960,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-11T00:24:45.6911657+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\excel-status-footer-reference\\excel-status-footer-reference_manifest.json",
+  "ResultValidation": "Excel status/footer reference: workbook values in A1:A4 are selected with DisplayStatusBar enabled so the native footer/status bar can be paired with FreeX S6 captures."
+}

@@ -88,6 +88,58 @@ Blocked S4 attempts were discarded rather than retained:
 - S6 remains open for zoom percentage/dialog physical click proof, Shift/ordinary wheel distinctions, min/max foreground breadth, Ctrl+Alt+=/-, and Excel-paired status/footer evidence.
 - Existing deterministic tours are useful result-state evidence but are not OS foreground CopyFromScreen proof; several intentionally use RenderTargetBitmap and production command/session routes instead of physical pointer input.
 
+## 2026-06-11 S6 Integration Rerun
+
+The fourth-wave S6 pass added status/zoom hooks for zoom percentage dialog clicks, Ctrl+Alt zoom shortcuts, live statistics accessibility, and an Excel status/footer reference capture. After integration, these scenarios were run:
+
+Closed with retained evidence:
+
+- `freex-status-zoom-text-dialog-click`: complete. Retained `tools/foreground-captures/freex-status-zoom-text-dialog-click/freex-status-zoom-text-dialog-click_20260611_002303.png` plus manifest. The validation records physically clicking the status zoom percentage text and capturing the foreground-owned FreeX Zoom dialog.
+- `freex-status-ctrl-alt-zoom-keys`: complete. Retained `tools/foreground-captures/freex-status-ctrl-alt-zoom-keys/freex-status-ctrl-alt-zoom-keys_20260611_002337.png` plus manifest. The validation records foreground `Ctrl+Alt+=` then `Ctrl+Alt+-` changing the slider `100->105->100` with visible zoom text in sync.
+- `excel-status-footer-reference`: complete. Retained `tools/foreground-captures/excel-status-footer-reference/excel-status-footer-reference_20260611_002445.png` plus manifest. The validation records an Excel workbook with `A1:A4` selected and native status/footer visible for pairing against FreeX S6 captures.
+
+Still blocked with retained manifest:
+
+- `freex-status-live-stats-accessibility`: blocked because the foreground UIA check could not read a visible UIA name/text value for `StatusNumericalCountText`, even though the product updates status statistic text and automation names through `SetStatusStatisticTextIfChanged`.
+
+Remaining S6 work is narrowed to live stat accessibility for numerical count, min/max foreground breadth, wheel/touchpad breadth beyond retained ordinary/Shift/Ctrl-wheel proof, and fuller Excel-paired status/footer comparison.
+
+## 2026-06-11 S6 Accessibility And Wheel Breadth Rerun
+
+The next S6 checkpoint added live automation metadata to status statistic text blocks and expanded foreground harness coverage for status min/max and wheel-modifier breadth.
+
+Verification before rerun:
+
+```powershell
+dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1
+dotnet build tools\FreeX.ForegroundCapture\FreeX.ForegroundCapture.csproj --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1
+```
+
+Both builds passed with 0 warnings and 0 errors.
+
+Closed with retained evidence:
+
+- `freex-status-wheel-modifier-breadth`: complete. Retained `tools/foreground-captures/freex-status-wheel-modifier-breadth/freex-status-wheel-modifier-breadth_20260611_035234.png` plus manifest. Validation records ordinary wheel vertical scroll, Shift+wheel horizontal scroll, and Ctrl+wheel grid zoom with the UIA Zoom slider at `110` and visible zoom text about `130%`.
+
+Still blocked with retained manifests:
+
+- `freex-status-live-stats-accessibility`: still blocked after a clean retry. Foreground ownership was valid, but the harness still could not read a visible UIA name/text value for `StatusNumericalCountText`.
+- `freex-status-zoom-min-max-rangevalue-set`: blocked by a UIA operation timeout while exercising min/max `RangeValue` coverage.
+
+S6 remains open for the numerical-count UIA readback gap, min/max slider breadth, touchpad/hardware wheel parity, and fuller Excel-paired status/footer comparison. Ordinary, Shift, and Ctrl wheel foreground proof is now retained in one scenario.
+
+## 2026-06-11 S4 AutoFit Confirmation
+
+The final bounded S4 rerun retried the existing foreground AutoFit scenario after clearing only the main-integration FreeX process:
+
+```powershell
+dotnet run --project tools\FreeX.ForegroundCapture\FreeX.ForegroundCapture.csproj --configuration Release -- --scenario freex-s4-grid-double-click-autofit
+```
+
+The clean retry reached a foreground-owned FreeX window and retained `tools/foreground-captures/freex-s4-grid-double-click-autofit/freex-s4-grid-double-click-autofit_manifest.json`, but still blocked with `column-autofit-validation-failed`: column A changed from `96` to `92` after double-click AutoFit, while the seeded long value expected the column to grow.
+
+S4 therefore remains open for a real product/harness follow-up on AutoFit sizing semantics, plus the previously listed split-divider, hidden-boundary resize, touchpad, and Excel-paired pointer breadth.
+
 ## Verification
 
 - `git status --short --branch` in the primary checkout: showed unrelated dirty files on `worker-c-cf-aggregate-list-parity`; left untouched.
