@@ -5,11 +5,11 @@
   "CaptureMode": "foreground-guarded-uia-win32",
   "ForegroundGuard": {
     "Success": true,
-    "ExpectedProcessId": 103228,
-    "ExpectedHandle": 86378812,
+    "ExpectedProcessId": 115284,
+    "ExpectedHandle": 13763770,
     "ForegroundWindow": {
-      "Handle": 86378812,
-      "ProcessId": 103228,
+      "Handle": 13763770,
+      "ProcessId": 115284,
       "Title": "Book1 - Excel",
       "ClassName": "XLMAIN",
       "Bounds": {
@@ -35,7 +35,7 @@
       }
     }
   },
-  "BlockReason": "dialog-not-found: Invoked the Excel worksheet context-menu Format Cells route, but did not detect a Format Cells dialog.",
-  "CapturedAtUtc": "2026-06-11T03:57:59.838599+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\excel-format-cells-context-dialog\\excel-format-cells-context-dialog_manifest.json"
+  "BlockReason": "dialog-not-found: Detected the Excel worksheet context menu, but UI Automation, the context-menu mnemonic, Excel\u0027s FormatCellsDialog command, and the built-in xlDialogFormatNumber dialog did not expose a Format Cells dialog.",
+  "CapturedAtUtc": "2026-06-11T08:06:40.2248229+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\excel-foreground-s2s7-20260611\\tools\\foreground-captures\\excel-format-cells-context-dialog\\excel-format-cells-context-dialog_manifest.json"
 }
