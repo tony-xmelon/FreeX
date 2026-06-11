@@ -137,3 +137,33 @@ Retained FreeX root manifest: `tools/screenshots/screenshot_manifest.json`.
 Retained FreeX root PNGs: `tools/screenshots/ribbon_1100_Home.png`, `ribbon_1100_Insert.png`, `ribbon_1100_Draw.png`, `ribbon_1100_Page_Layout.png`, `ribbon_1100_Formulas.png`, `ribbon_1100_Data.png`, `ribbon_1100_Review.png`, `ribbon_1100_View.png`, and `ribbon_1100_Help.png`.
 
 The focused 1100px foreground pair is now retained. Excel contributes the eight tabs available in this Office profile and explicitly records `SkippedTabs=Draw`; FreeX contributes all nine top-level tabs including Draw. S1 remains open only for expanding the paired foreground matrix to the full `max,1100,900,750` width set and for Excel-paired comparison review beyond the focused 1100px baseline.
+
+## 2026-06-11 Full Matrix Closeout
+
+Branch/worktree:
+
+- Branch: `codex/ux-parity-s1-ribbon-closeout-20260611`
+- Worktree: `E:\Users\anton\Documents\Claude\FreeX\.worktrees\ux-parity-s1-ribbon-closeout-20260611`
+- Base: local `main` at `46a1875ae` after the fourth-wave integration guard fix.
+
+Harness update:
+
+- `tools/screenshot_ribbon.ps1` now starts FreeX with the executable directory as the working directory.
+- If the launcher PID does not expose a visible window, the script resolves the visible `FreeX.App.Host` process with the same executable path and uses that real PID/window for the existing foreground guard. This handles FreeX single-instance handoff without weakening the capture ownership checks.
+
+Commands:
+
+```powershell
+$env:FREEX_RIBBON_EXE_PATH='E:\Users\anton\Documents\Claude\FreeX\.worktrees\main-integration-20260607b\src\FreeX.App.Host\bin\Release\net10.0-windows10.0.19041.0\FreeX.App.Host.exe'
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\screenshot_ribbon.ps1
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\screenshot_excel.ps1
+```
+
+Retained evidence:
+
+- FreeX: `tools/screenshots/screenshot_manifest.json`, `CaptureStatus=complete`, `PlannedCaptureCount=36`, `ActualCaptureCount=36`, covering Home, Insert, Draw, Page Layout, Formulas, Data, Review, View, and Help at `max`, `1100`, `900`, and `750`.
+- Excel: `tools/screenshots_excel/screenshot_manifest.json`, `CaptureStatus=complete-with-skipped-unavailable-tabs`, `PlannedCaptureCount=32`, `ActualCaptureCount=32`, covering Home, Insert, Page Layout, Formulas, Data, Review, View, and Help at `max`, `1100`, `900`, and `750`; `SkippedTabs=Draw` because this installed Office profile does not expose Draw.
+
+Status:
+
+S1 paired foreground root ribbon matrix evidence is closed for the available Excel tab set. The remaining review work is comparison analysis and any future rerun on an Office profile that exposes Draw; it is no longer blocked on missing retained root matrix screenshots.
