@@ -1,0 +1,69 @@
+{
+  "Scenario": "freex-status-wheel-modifier-breadth",
+  "Subject": "freex",
+  "CaptureStatus": "complete",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-status-wheel-modifier-breadth\\freex-status-wheel-modifier-breadth_20260611_035234.png",
+  "Window": {
+    "Handle": 28118942,
+    "ProcessId": 65736,
+    "Title": "Book1* - FreeX",
+    "ClassName": "HwndWrapper[FreeX.App.Host;;53af8d00-2ad8-4fce-a15f-d9f5b45a7c85]",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 190,
+        "Y": 190
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1920,
+        "Height": 1080
+      },
+      "X": 190,
+      "Y": 190,
+      "Width": 1920,
+      "Height": 1080,
+      "Left": 190,
+      "Top": 190,
+      "Right": 2110,
+      "Bottom": 1270,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 65736,
+    "ExpectedHandle": 28118942,
+    "ForegroundWindow": {
+      "Handle": 28118942,
+      "ProcessId": 65736,
+      "Title": "Book1* - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;53af8d00-2ad8-4fce-a15f-d9f5b45a7c85]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 190,
+          "Y": 190
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1920,
+          "Height": 1080
+        },
+        "X": 190,
+        "Y": 190,
+        "Width": 1920,
+        "Height": 1080,
+        "Left": 190,
+        "Top": 190,
+        "Right": 2110,
+        "Bottom": 1270,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-11T03:52:34.9043966+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-status-wheel-modifier-breadth\\freex-status-wheel-modifier-breadth_manifest.json",
+  "ResultValidation": "foreground wheel scroll; vertical scrollbar 1-\u003E10; Shift\u002Bwheel horizontal scrollbar 1-\u003E10; Ctrl\u002Bwheel delta 120 over worksheet grid; UIA Zoom slider=110; expected slider=110; expected visible zoom text about 130%."
+}
