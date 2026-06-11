@@ -57,3 +57,12 @@ All four runs reached foreground-owned Excel windows and retained blocker manife
 - `excel-cell-styles-gallery`: blocked because the expected `Net UI Tool Window` gallery popup was not detected.
 
 No new S2/S7 closure was produced in this final batch; the remaining work is Office popup/dialog detection strategy rather than FreeX context-route plumbing.
+
+## Office Detection Harness Follow-up
+
+This follow-up stayed non-GUI because the foreground Excel desktop slot was not released.
+
+- `excel-format-cells-dialog` and `excel-format-cells-context-dialog` now share a bounded Office Format Cells dialog finder that still requires an Excel-owned non-main dialog-sized window, but also accepts UI Automation child text/automation-id matches for `Format Cells` when Office hosts the title below the top-level Win32 title.
+- `excel-data-validation-dropdown-prepared` now searches visible Excel-owned dropdown-sized popup windows instead of only the current foreground handle, while continuing to reject the main `XLMAIN` window and Office `NUIDialog` false positives.
+- `excel-cell-styles-gallery` now uses a dedicated scenario route that first tries to open the visible `Cell Styles` control through UI Automation expand/invoke/click, then falls back to `Alt,H,J`, and detects either the expected `Net UI Tool Window` or a visible Excel-owned popup whose UIA text identifies the Cell Styles gallery.
+- Verification for this non-GUI change: `dotnet build tools\FreeX.ForegroundCapture\FreeX.ForegroundCapture.csproj --configuration Release` passed. No Excel scenario rerun or new PNG/manifest was produced in this worktree.
