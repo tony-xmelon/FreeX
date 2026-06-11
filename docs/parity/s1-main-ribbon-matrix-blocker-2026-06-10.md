@@ -124,3 +124,16 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\screenshot_ribbon.
 ```
 
 If that retains `tools/screenshots/screenshot_manifest.json` with pair keys matching the Excel 1100 manifest, the focused 1100 pair can be reviewed before expanding to the full width matrix.
+
+## 2026-06-11 Integration Closeout
+
+The integration pass ran the matching FreeX focused counterpart:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\screenshot_ribbon.ps1 -Widths 1100
+```
+
+Retained FreeX root manifest: `tools/screenshots/screenshot_manifest.json`.
+Retained FreeX root PNGs: `tools/screenshots/ribbon_1100_Home.png`, `ribbon_1100_Insert.png`, `ribbon_1100_Draw.png`, `ribbon_1100_Page_Layout.png`, `ribbon_1100_Formulas.png`, `ribbon_1100_Data.png`, `ribbon_1100_Review.png`, `ribbon_1100_View.png`, and `ribbon_1100_Help.png`.
+
+The focused 1100px foreground pair is now retained. Excel contributes the eight tabs available in this Office profile and explicitly records `SkippedTabs=Draw`; FreeX contributes all nine top-level tabs including Draw. S1 remains open only for expanding the paired foreground matrix to the full `max,1100,900,750` width set and for Excel-paired comparison review beyond the focused 1100px baseline.

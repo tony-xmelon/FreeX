@@ -53,3 +53,21 @@ No changes were made to `tools/FreeX.ForegroundCapture/Program.cs` in the checkp
 
 - S5 still needs valid retained foreground proof for drag reorder, Shift-click tab range grouping, and right-click Activate from the overflow navigation buttons.
 - Microsoft Excel paired evidence for the same sheet-tab pointer flows remains open.
+
+## 2026-06-11 Integration Rerun
+
+The fourth-wave S5 pass added a product fix for sheet-tab drag hit testing under mouse capture and foreground harness entries for more FreeX/Excel sheet-tab routes. After integration, the following foreground scenarios were rerun:
+
+Closed with retained evidence:
+
+- `freex-sheet-tab-shift-click-grouping`: complete. Retained `tools/foreground-captures/freex-sheet-tab-shift-click-grouping/freex-sheet-tab-shift-click-grouping_20260611_003104.png` plus manifest. The validation records physical Insert Sheet clicks, Sheet1 anchor selection, and physical Shift+click on Sheet5, with the title `Book1 [Group] - FreeX`.
+- `excel-sheet-tab-context-menu`: complete. Retained `tools/foreground-captures/excel-sheet-tab-context-menu/excel-sheet-tab-context-menu_20260611_004008.png` plus manifest. The validation records Microsoft Excel's sheet-tab context menu after a physical right-click on Sheet1.
+
+Still blocked with retained manifests:
+
+- `freex-sheet-tab-grouped-commands`: blocked by a UIA/COM `E_UNEXPECTED` failure during the grouped-command foreground path.
+- `freex-sheet-tab-drag-reorder`: blocked because validation still observed `Sheet1, Sheet2, Sheet3, Sheet4` after the drag, so the product/harness route did not prove reorder.
+- `freex-sheet-tab-overflow-activate-dialog`: blocked because the Activate Sheet dialog was not detected after right-clicking the overflow navigation button.
+- `excel-sheet-tab-overflow-activate-dialog`: blocked because Excel's Activate dialog was not detected after right-clicking the sheet-tab navigation button in this Office state.
+
+Remaining S5 work is now drag reorder, grouped-command foreground proof, Activate dialog proof on both FreeX and Excel, and broader Excel pairing beyond the retained Excel context-menu reference.
