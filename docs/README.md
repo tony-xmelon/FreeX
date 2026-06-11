@@ -72,6 +72,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [reviews/comprehensive-code-review-2026-05-30.md](reviews/comprehensive-code-review-2026-05-30.md) - May 30 full-source review.
 - [reviews/comprehensive-code-review-2026-06-01.md](reviews/comprehensive-code-review-2026-06-01.md) - June 1 full-source review snapshot.
 - [reviews/comprehensive-code-review-2026-06-03.md](reviews/comprehensive-code-review-2026-06-03.md) - June 3 full-codebase review and resolved follow-up.
+- [reviews/comprehensive-code-review-2026-06-11.md](reviews/comprehensive-code-review-2026-06-11.md) - June 11 full-workspace review: save-pipeline data-integrity risks, command shift gaps, formula parity, performance, and consolidation backlog.
 - [reviews/command-icon-audit-2026-05-30.md](reviews/command-icon-audit-2026-05-30.md) - proposal-only command icon audit.
 - [reviews/command-icon-review-2026-05-29.md](reviews/command-icon-review-2026-05-29.md) - prior SVG command-icon audit.
 - [reviews/command-icon-visual-consistency-2026-05-30.md](reviews/command-icon-visual-consistency-2026-05-30.md) - visual-consistency review for command artwork.

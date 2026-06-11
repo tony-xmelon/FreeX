@@ -1,10 +1,34 @@
 # Code Review Findings
 
-Last updated: 2026-06-03
+Last updated: 2026-06-11
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
 
-## 2026-06-03 Comprehensive Review
+## 2026-06-11 Comprehensive Review
+
+Full report: [reviews/comprehensive-code-review-2026-06-11.md](comprehensive-code-review-2026-06-11.md).
+
+Documentation-only review pass; no code changes. Verification: repository preflight passed from the review branch; `FreeX.slnx` Release build (0W/0E) and the default (non-UI) test lane (10,684 passed / 0 failed) passed from a clean worktree at `main` HEAD `8abbf3406`. The review-snapshot commit `0a7777100` failed 17 default-lane tests in the same setup before later `main` commits fixed them; all P1 finding anchors were re-confirmed present on `main` HEAD. The primary tree carried an unrelated in-progress test edit owned by another session and was left untouched.
+
+Open findings by priority (all unresolved as of this review):
+
+| Priority | Area | Finding |
+|---|---|---|
+| P1 | Host save integrity | Save serializes the live workbook on a background thread with the UI interactive, then unconditionally clears the dirty flag; save-on-close force-closes without a second dirty check; save continuation can retarget a workbook opened mid-save. |
+| P1 | Commands data loss | Remove Duplicates deletes entire sheet rows for a partial-range selection, destroying data outside the selected columns. |
+| P1 | Commands data loss | Insert/Delete Cells shifts raw cells with no formula rewrite and no merge/comment/hyperlink/CF/DV adjustment. |
+| P1 | Formula parity | Comparison operators rank blank cells by type order instead of coercing (blank=0/""/FALSE), so `=A1=0` is FALSE for empty A1. |
+| P1 | App resilience | No autosave, no crash recovery, crash handlers record-only; unsaved work dies with any unhandled exception. |
+| P2 | Core.IO save | One bad defined name silently drops all named ranges on save (Debug-only logging); per-sheet DV/merge save failures also swallowed. |
+| P2 | Core.IO patch save | No XML-character sanitization or `_x005F_` escaping on the patch path: control chars abort the save; literal `_x000D_` text and CRLF silently mutate on round-trip. |
+| P2 | Commands | Deleting a sheet leaves formulas referencing it untouched (rebind risk when a same-named sheet is created). |
+| P2 | Formula parity | Approximate VLOOKUP/HLOOKUP/MATCH abort at the first type-mismatched entry (header rows produce `#N/A`); `CompareScalar` calls mixed non-numeric values equal; ROUNDDOWN/ROUNDUP/TRUNC lack the 15-digit correction; text coercion accepts month names and malformed grouped numbers. |
+| P2 | Calc/CF | Duplicate-values conditional formatting counts blanks as duplicates with dense/sparse divergence; CF aggregate context rebuilt every viewport tick; recalc ordering O(dirty²); whole-column style application touches 1M cells. |
+| P2 | Commands undo | Sort drops hyperlinks/style-only formatting (partly unrecoverable); DV lookup cache stale after undo of insert; Autofill undo loses style-only entries. |
+| P2 | Host stability | PDF/XPS export fully synchronous on the UI thread; XPS package handle leak on exception. |
+| P2 | Consistency | Six divergent `QuoteSheetName` copies (two write broken refs into saved XML); ≥6 hand-rolled A1 parsers (overflow-crash variants); case-sensitive chart boolean parsing. |
+| P2 | Architecture/CI | XLSX sanitizer-per-element treadmill vs declarative schema table; MainWindow god object (53 partials / 26.5 KLOC); PR CI never builds `FreeX.slnx` so tools projects break at release time. |
+| P3 | Various | Degenerate 1×1 merges after delete; range-shift MaxRow overflow; move leaves DV/CF behind; `IF("TRUE")` parity; GETPIVOTDATA culture comparisons; blank COUNTIF criteria; named-range fast-aggregate clamp; r-less row patch handling; duplicate zip entry handling; clipboard/picture/screenshot-tour stability; render cache clears; per-cell ClosedXML styling; helper duplication; hygiene-test altitude; UI-lane test gating; relative Serilog path; no central package management; ci.yml concurrency/preflight. |
 
 Full report: [reviews/comprehensive-code-review-2026-06-03.md](comprehensive-code-review-2026-06-03.md).
 
