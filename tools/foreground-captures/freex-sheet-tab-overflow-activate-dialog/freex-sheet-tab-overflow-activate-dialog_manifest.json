@@ -4,6 +4,6 @@
   "CaptureStatus": "blocked",
   "CaptureMode": "foreground-guarded-uia-win32",
   "BlockReason": "dialog-not-found: Did not detect Activate Sheet dialog after right-clicking the sheet-tab overflow navigation button.",
-  "CapturedAtUtc": "2026-06-11T00:39:45.550809+00:00",
+  "CapturedAtUtc": "2026-06-11T03:20:48.6285692+00:00",
   "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-sheet-tab-overflow-activate-dialog\\freex-sheet-tab-overflow-activate-dialog_manifest.json"
 }
