@@ -25,3 +25,15 @@ Scope: checkpoint for the Format Cells/Data Validation/dialog-dropdown closeout 
 
 - Rerun `freex-format-cells-context-dialog` once the host project can build in this worktree; the route should now have a stable UIA target for `Format Cells...`.
 - Excel Format Cells and Excel Data Validation dropdown remain Office foreground/popup-state blockers unless a future runner exposes the dialog/list popup through a different foreground-safe route.
+
+## Integration Rerun
+
+After integration, the host fallback build passed and the fixed route was rerun:
+
+```powershell
+dotnet run --project tools\FreeX.ForegroundCapture\FreeX.ForegroundCapture.csproj --configuration Release -- --scenario freex-format-cells-context-dialog
+```
+
+Result: complete. Retained `tools/foreground-captures/freex-format-cells-context-dialog/freex-format-cells-context-dialog_20260611_002043.png` plus the updated manifest. The validation confirms that the foreground-owned FreeX worksheet context menu opened the actual `Format Cells` dialog through the stable `WorksheetContextMenu_FormatCells` route.
+
+Remaining S2/S7 blockers are now narrowed to the Office-side Format Cells/Data Validation popup states and broader gallery/dropdown pairings outside the already retained AutoFilter, Borders, Number Format, worksheet context, Cell Styles, and FreeX Format Cells context-dialog evidence.

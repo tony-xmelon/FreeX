@@ -1,0 +1,41 @@
+{
+  "Scenario": "excel-sheet-tab-overflow-activate-dialog",
+  "Subject": "excel",
+  "CaptureStatus": "blocked",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 59204,
+    "ExpectedHandle": 26806730,
+    "ForegroundWindow": {
+      "Handle": 26806730,
+      "ProcessId": 59204,
+      "Title": "Book1 - Excel",
+      "ClassName": "XLMAIN",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1200,
+          "Height": 960
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 1200,
+        "Height": 960,
+        "Left": 0,
+        "Top": 0,
+        "Right": 1200,
+        "Bottom": 960,
+        "IsEmpty": false
+      }
+    }
+  },
+  "BlockReason": "dialog-not-found: Did not detect Excel\u0027s Activate dialog after right-clicking the sheet-tab navigation button.",
+  "CapturedAtUtc": "2026-06-11T00:40:37.2315041+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\excel-sheet-tab-overflow-activate-dialog\\excel-sheet-tab-overflow-activate-dialog_manifest.json"
+}

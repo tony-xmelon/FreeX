@@ -1,0 +1,41 @@
+{
+  "Scenario": "freex-native-print-dialog",
+  "Subject": "freex",
+  "CaptureStatus": "blocked",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 67004,
+    "ExpectedHandle": 7868336,
+    "ForegroundWindow": {
+      "Handle": 7868336,
+      "ProcessId": 67004,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;4393c2c3-c8c0-4787-9eb5-8220a36cc040]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 152,
+          "Y": 152
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "X": 152,
+        "Y": 152,
+        "Width": 1280,
+        "Height": 720,
+        "Left": 152,
+        "Top": 152,
+        "Right": 1432,
+        "Bottom": 872,
+        "IsEmpty": false
+      }
+    }
+  },
+  "BlockReason": "native-print-dialog-not-found: Clicked Print Preview\u0027s Print button but did not detect a native Windows Print dialog.",
+  "CapturedAtUtc": "2026-06-11T00:43:08.6899307+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-native-print-dialog\\freex-native-print-dialog_manifest.json"
+}

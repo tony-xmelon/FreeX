@@ -1,0 +1,69 @@
+{
+  "Scenario": "excel-sheet-tab-context-menu",
+  "Subject": "excel",
+  "CaptureStatus": "complete",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\excel-sheet-tab-context-menu\\excel-sheet-tab-context-menu_20260611_004008.png",
+  "Window": {
+    "Handle": 32376996,
+    "ProcessId": 106148,
+    "Title": "",
+    "ClassName": "Net UI Tool Window",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 221,
+        "Y": 923
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 222,
+        "Height": 450
+      },
+      "X": 221,
+      "Y": 923,
+      "Width": 222,
+      "Height": 450,
+      "Left": 221,
+      "Top": 923,
+      "Right": 443,
+      "Bottom": 1373,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 106148,
+    "ExpectedHandle": 7933790,
+    "ForegroundWindow": {
+      "Handle": 7933790,
+      "ProcessId": 106148,
+      "Title": "Book1 - Excel",
+      "ClassName": "XLMAIN",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1200,
+          "Height": 960
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 1200,
+        "Height": 960,
+        "Left": 0,
+        "Top": 0,
+        "Right": 1200,
+        "Bottom": 960,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-11T00:40:08.1789506+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\excel-sheet-tab-context-menu\\excel-sheet-tab-context-menu_manifest.json",
+  "ResultValidation": "Captured Microsoft Excel\u0027s sheet-tab context menu after a physical right-click on Sheet1."
+}
