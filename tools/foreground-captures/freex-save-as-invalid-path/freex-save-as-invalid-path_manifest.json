@@ -1,41 +1,69 @@
 {
   "Scenario": "freex-save-as-invalid-path",
   "Subject": "freex",
-  "CaptureStatus": "blocked",
+  "CaptureStatus": "complete",
   "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s3-native-export-evidence-20260611\\tools\\foreground-captures\\freex-save-as-invalid-path\\freex-save-as-invalid-path_20260611_023505.png",
+  "Window": {
+    "Handle": 6820604,
+    "ProcessId": 102428,
+    "Title": "Save As",
+    "ClassName": "#32770",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 841,
+        "Y": 598
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 856,
+        "Height": 242
+      },
+      "X": 841,
+      "Y": 598,
+      "Width": 856,
+      "Height": 242,
+      "Left": 841,
+      "Top": 598,
+      "Right": 1697,
+      "Bottom": 840,
+      "IsEmpty": false
+    }
+  },
   "ForegroundGuard": {
     "Success": true,
-    "ExpectedProcessId": 93356,
-    "ExpectedHandle": 38276954,
+    "ExpectedProcessId": 102428,
+    "ExpectedHandle": 23071806,
     "ForegroundWindow": {
-      "Handle": 38276954,
-      "ProcessId": 93356,
+      "Handle": 23071806,
+      "ProcessId": 102428,
       "Title": "Book1 - FreeX",
-      "ClassName": "HwndWrapper[FreeX.App.Host;;e3a335b2-d609-4031-9c65-de2a23bfa7ac]",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;fdcff1df-fbd9-46fb-85b5-b95bff1f3734]",
       "Bounds": {
         "Location": {
           "IsEmpty": false,
-          "X": 228,
-          "Y": 228
+          "X": 25,
+          "Y": 25
         },
         "Size": {
           "IsEmpty": false,
           "Width": 1280,
           "Height": 720
         },
-        "X": 228,
-        "Y": 228,
+        "X": 25,
+        "Y": 25,
         "Width": 1280,
         "Height": 720,
-        "Left": 228,
-        "Top": 228,
-        "Right": 1508,
-        "Bottom": 948,
+        "Left": 25,
+        "Top": 25,
+        "Right": 1305,
+        "Bottom": 745,
         "IsEmpty": false
       }
     }
   },
-  "BlockReason": "invalid-path-prompt-not-found: Typed a missing-directory .xlsx path but did not detect a native invalid-path prompt: E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\s3-missing-save-as-directory\\invalid-path.xlsx",
-  "CapturedAtUtc": "2026-06-11T00:41:20.1175611+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-save-as-invalid-path\\freex-save-as-invalid-path_manifest.json"
+  "CapturedAtUtc": "2026-06-11T02:35:05.7224275+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s3-native-export-evidence-20260611\\tools\\foreground-captures\\freex-save-as-invalid-path\\freex-save-as-invalid-path_manifest.json",
+  "ResultValidation": "Missing-directory save path was rejected by the native Save As flow: E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s3-native-export-evidence-20260611\\tools\\foreground-captures\\s3-missing-save-as-directory\\invalid-path.xlsx"
 }
