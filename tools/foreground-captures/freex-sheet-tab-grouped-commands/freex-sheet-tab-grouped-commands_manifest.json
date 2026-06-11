@@ -1,0 +1,9 @@
+{
+  "Scenario": "freex-sheet-tab-grouped-commands",
+  "Subject": "freex",
+  "CaptureStatus": "blocked",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "BlockReason": "context-menu-item-not-found: Opened the grouped sheet-tab context menu but could not invoke Ungroup Sheets.",
+  "CapturedAtUtc": "2026-06-11T03:15:25.0771047+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-sheet-tab-grouped-commands\\freex-sheet-tab-grouped-commands_manifest.json"
+}

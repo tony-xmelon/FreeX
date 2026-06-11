@@ -83,7 +83,7 @@ FreeX saves supported `.xlsx` workbook content from the in-memory model. For wor
 | Power Query | Excluded | Retained as package part; not executed |
 | Data Model / Power Pivot | Excluded | Retained as package part; not executed |
 | Linked data types | Excluded | Retained as package parts, including rich value data/structure metadata |
-| Threaded comments | Excluded | Retained as package part |
+| Threaded comments | Partial | Model-backed local threaded comment roots, replies, authors, timestamps, and resolved state load/save through worksheet threaded-comment parts and workbook persons parts; cloud co-authoring, presence, and service-side conversation semantics are outside local XLSX fidelity |
 | Track changes / revision history | Excluded | Retained as package part |
 | Form controls / ActiveX | Excluded | Retained as package part |
 | Digital signatures | Excluded | Retained as package part |
@@ -96,14 +96,14 @@ FreeX saves supported `.xlsx` workbook content from the in-memory model. For wor
 | Printer settings | Partial | Native `xl/printerSettings/*.bin` parts and worksheet `pageSetup` relationships are retained; binary DEVMODE payload is not interpreted |
 | Unsupported sheet types (chart/dialog/macro sheets) | Excluded | Retained as package part |
 
-**Coverage: 19 Implemented + 52 Partial = 71 documented in-scope feature categories with at least partial support.**
-**15 Excluded feature categories are retained as opaque package parts where safe (package-preserving save).**
+**Coverage: 19 Implemented + 53 Partial = 72 documented in-scope feature categories with at least partial support.**
+**14 Excluded feature categories are retained as opaque package parts where safe (package-preserving save).**
 
 | Status | Count |
 |---|---:|
 | Implemented | 19 |
-| Partial | 52 |
-| Excluded (retained) | 15 |
+| Partial | 53 |
+| Excluded (retained) | 14 |
 | Excluded (not retained) | 0 |
 
 ## Preserved On XLSX Round-Trip
@@ -124,6 +124,7 @@ FreeX saves supported `.xlsx` workbook content from the in-memory model. For wor
 - Modeled page layout settings: print area, margins, orientation, paper size, print gridlines/headings, and scale-to-fit
 - Worksheet background images
 - Modeled worksheet objects: comments (including legacy VML comment rich-text run metadata), hyperlinks, basic charts, sparklines, text boxes, and basic drawing shapes
+- Model-backed local threaded comment roots, replies, authors, timestamps, resolved state, worksheet threaded-comment parts, and workbook persons parts
 - Rich inline cell format runs (bold/italic/color/font-size segments within shared-string cells) are retained on XLSX round-trip
 - PivotTable and pivot-cache metadata plus native PivotTable package references for workbooks opened from `.xlsx`
 - PivotChart bindings for supported chart families via chart `pivotSource` metadata
@@ -191,6 +192,7 @@ FreeX saves supported `.xlsx` workbook content from the in-memory model. For wor
 - Native worksheet smart-tag metadata is retained, but FreeX does not expose smart-tag editing.
 - Native sheet-level AutoFilter metadata is retained, but FreeX does not expose the full worksheet filter execution/editing surface.
 - Additional worksheet views are model-backed through `Sheet.AdditionalViews`, but FreeX does not expose multi-view editing.
+- Threaded comments are model-backed for local workbook roots, replies, authors, timestamps, and resolved state; Microsoft 365 cloud sync, co-authoring presence, and service-side conversation state are intentionally not interpreted.
 - Worksheet `printOptions` and `pageSetup` source-package merges are model-authoritative for fields represented on `Sheet`; native-only attributes are copied only when they do not conflict with modeled state.
 - Data validation formulas are preserved only for supported rule shapes.
 - PivotTable metadata load/save, native package retention, authored pivot package parts, same-sheet/cross-sheet creation, refresh, undoable command-level field layout/source editing, values-only and column-only layouts, multiple row fields, multiple column fields with nested matrix headers, Compact/Outline/Tabular report-layout state with Compact row-label rendering, multiple data fields, common/statistical summary functions, built-in and custom workbook-catalog value-field number formats with Value Field Settings custom-code authoring, single/multi-select page/row/column checked-item filtering, date/number grouping, row/column label filters including comparison/between variants, row/column value filters with field-target round-trip including between/not-between and above/below-average variants, Excel-style Show Values As modes including percent totals, running total, difference/% difference, rank, index, and parent-total variants with base field/item settings, value/label sorting including column label/value sorting, separate row/column grand-total visibility, repeated-label suppression, blank-line spacing, undoable PivotTable Options editing for modeled "For empty cells show" text on missing matrix intersections, style-name/style-option/custom PivotStyle definition round-trip with rendered header/subtotal/grand-total/banded formatting, top/bottom subtotals, calculated fields/items, ribbon/double-click Show Details drill-down detail-sheet creation for item/subtotal/grand-total/matrix/column-only data cells, PivotChart output-range sync, Field List drag/drop, PivotChart field-button menus, slicer/timeline filtering UI, authored slicer/timeline state/cache relationships, and pivot-cache refresh/shared-item/external-OLAP source metadata are implemented. Exact full-gallery PivotStyle UI/rendering semantics and external/OLAP/data-model refresh or execution remain partial.

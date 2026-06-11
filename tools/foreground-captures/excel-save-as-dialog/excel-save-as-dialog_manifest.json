@@ -1,0 +1,41 @@
+{
+  "Scenario": "excel-save-as-dialog",
+  "Subject": "excel",
+  "CaptureStatus": "blocked",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 77644,
+    "ExpectedHandle": 32312440,
+    "ForegroundWindow": {
+      "Handle": 32312440,
+      "ProcessId": 77644,
+      "Title": "Book1 - Excel",
+      "ClassName": "XLMAIN",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1200,
+          "Height": 960
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 1200,
+        "Height": 960,
+        "Left": 0,
+        "Top": 0,
+        "Right": 1200,
+        "Bottom": 960,
+        "IsEmpty": false
+      }
+    }
+  },
+  "BlockReason": "nuidialog-not-capturable: Detected an Office NUIDialog after F12, but it is not a capturable native Save As file dialog in this Office state.",
+  "CapturedAtUtc": "2026-06-11T02:43:28.4437268+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s3-native-export-evidence-20260611\\tools\\foreground-captures\\excel-save-as-dialog\\excel-save-as-dialog_manifest.json"
+}

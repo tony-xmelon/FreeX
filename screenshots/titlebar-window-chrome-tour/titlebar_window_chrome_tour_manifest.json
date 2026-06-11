@@ -4,7 +4,7 @@
   "EvidenceSubject": "freex",
   "EvidenceApp": "FreeX",
   "ScenarioId": "window-chrome:titlebar",
-  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-titlebar-window-chrome-20260610\\screenshots\\titlebar-window-chrome-tour",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-accent-chrome-sweep-20260610\\screenshots\\titlebar-window-chrome-tour",
   "OutputNaming": "freex_titlebar_\u003CState\u003E.png",
   "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
   "PlannedCaptureCount": 5,

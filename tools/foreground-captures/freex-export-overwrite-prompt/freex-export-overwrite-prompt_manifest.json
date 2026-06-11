@@ -1,0 +1,69 @@
+{
+  "Scenario": "freex-export-overwrite-prompt",
+  "Subject": "freex",
+  "CaptureStatus": "complete",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s3-native-export-evidence-20260611\\tools\\foreground-captures\\freex-export-overwrite-prompt\\freex-export-overwrite-prompt_20260611_023756.png",
+  "Window": {
+    "Handle": 3543110,
+    "ProcessId": 84428,
+    "Title": "Export as PDF / XPS",
+    "ClassName": "#32770",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 1004,
+        "Y": 690
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 641,
+        "Height": 303
+      },
+      "X": 1004,
+      "Y": 690,
+      "Width": 641,
+      "Height": 303,
+      "Left": 1004,
+      "Top": 690,
+      "Right": 1645,
+      "Bottom": 993,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 84428,
+    "ExpectedHandle": 14291274,
+    "ForegroundWindow": {
+      "Handle": 14291274,
+      "ProcessId": 84428,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;9be5182d-c73f-4ea2-b320-4818dfe218ef]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 228,
+          "Y": 228
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "X": 228,
+        "Y": 228,
+        "Width": 1280,
+        "Height": 720,
+        "Left": 228,
+        "Top": 228,
+        "Right": 1508,
+        "Bottom": 948,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-11T02:37:56.2574376+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s3-native-export-evidence-20260611\\tools\\foreground-captures\\freex-export-overwrite-prompt\\freex-export-overwrite-prompt_manifest.json",
+  "ResultValidation": "Existing export path used: E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s3-native-export-evidence-20260611\\tools\\foreground-captures\\s3-existing-export-overwrite.pdf"
+}

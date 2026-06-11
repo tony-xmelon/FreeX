@@ -1,0 +1,93 @@
+{
+  "Tool": "FREEX_SS_TOUR",
+  "EvidenceFamily": "ribbon",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "OutputDirectory": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-table-design-sweep-20260610\\screenshots\\contextual-table-design-sweep-20260610",
+  "OutputNaming": "\u003CWidthLabel\u003E_\u003CRibbonTab\u003E[_\u003CPhase\u003E].png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
+  "Context": "table",
+  "BurstMode": false,
+  "CaptureLogicalHeight": 300,
+  "PlannedCaptureCount": 3,
+  "ActualCaptureCount": 3,
+  "CaptureStatus": "complete",
+  "CaptureMethod": "RenderTargetBitmap-window-top-band",
+  "Pairing": {
+    "PairKeyPattern": "ribbon:\u003CWidthLabel\u003E:\u003CTabFileName\u003E",
+    "CounterpartSubject": "excel",
+    "CounterpartTool": "screenshot_excel.ps1",
+    "CounterpartOutputNaming": "excel_\u003CWidthLabel\u003E_\u003CRibbonTab\u003E.png"
+  },
+  "FocusGuard": {
+    "Required": false,
+    "Policy": "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 allowed in-process RenderTargetBitmap capture without OS foreground ownership; no global mouse, keyboard, or screen capture input is used."
+  },
+  "Tabs": [
+    "Table Design"
+  ],
+  "Widths": [
+    {
+      "Label": "1100",
+      "WindowWidth": 1100,
+      "EvidencePurpose": "Wide ribbon breakpoint before most command groups collapse."
+    },
+    {
+      "Label": "900",
+      "WindowWidth": 900,
+      "EvidencePurpose": "Medium ribbon breakpoint where grouped commands begin to compress."
+    },
+    {
+      "Label": "750",
+      "WindowWidth": 750,
+      "EvidencePurpose": "Narrow ribbon breakpoint for overflow and compact command layouts."
+    }
+  ],
+  "Phases": [
+    {
+      "Label": "settled",
+      "FileNameSuffix": null
+    }
+  ],
+  "Captures": [
+    {
+      "CaptureKey": "ribbon:1100:Table_Design",
+      "PairKey": "ribbon:1100:Table_Design",
+      "Tab": "Table Design",
+      "TabFileName": "Table_Design",
+      "Width": "1100",
+      "Phase": "settled",
+      "FileName": "1100_Table_Design",
+      "OutputFileName": "1100_Table_Design.png",
+      "CounterpartFileName": "excel_1100_Table_Design.png"
+    },
+    {
+      "CaptureKey": "ribbon:900:Table_Design",
+      "PairKey": "ribbon:900:Table_Design",
+      "Tab": "Table Design",
+      "TabFileName": "Table_Design",
+      "Width": "900",
+      "Phase": "settled",
+      "FileName": "900_Table_Design",
+      "OutputFileName": "900_Table_Design.png",
+      "CounterpartFileName": "excel_900_Table_Design.png"
+    },
+    {
+      "CaptureKey": "ribbon:750:Table_Design",
+      "PairKey": "ribbon:750:Table_Design",
+      "Tab": "Table Design",
+      "TabFileName": "Table_Design",
+      "Width": "750",
+      "Phase": "settled",
+      "FileName": "750_Table_Design",
+      "OutputFileName": "750_Table_Design.png",
+      "CounterpartFileName": "excel_750_Table_Design.png"
+    }
+  ],
+  "Limitations": [
+    "Ribbon captures cover the top window band only.",
+    "Transient popups, dropdowns, native dialogs, and context menus require separate guarded captures.",
+    "This in-app tour deletes only the currently requested plan\u0027s expected PNG files before capture.",
+    "FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1 was used for in-process rendering; pair with foreground-guarded screen captures when validating OS compositing or input focus."
+  ]
+}

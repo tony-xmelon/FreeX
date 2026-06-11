@@ -1,0 +1,68 @@
+{
+  "Scenario": "excel-open-dialog",
+  "Subject": "excel",
+  "CaptureStatus": "complete",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-foreground-harness-20260610\\tools\\foreground-captures\\excel-open-dialog\\excel-open-dialog_20260610_142513.png",
+  "Window": {
+    "Handle": 3085048,
+    "ProcessId": 57084,
+    "Title": "Open",
+    "ClassName": "#32770",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 7,
+        "Y": 1
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1200,
+        "Height": 720
+      },
+      "X": 7,
+      "Y": 1,
+      "Width": 1200,
+      "Height": 720,
+      "Left": 7,
+      "Top": 1,
+      "Right": 1207,
+      "Bottom": 721,
+      "IsEmpty": false
+    }
+  },
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 57084,
+    "ExpectedHandle": 13373470,
+    "ForegroundWindow": {
+      "Handle": 13373470,
+      "ProcessId": 57084,
+      "Title": "Book1 - Excel",
+      "ClassName": "XLMAIN",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1200,
+          "Height": 960
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 1200,
+        "Height": 960,
+        "Left": 0,
+        "Top": 0,
+        "Right": 1200,
+        "Bottom": 960,
+        "IsEmpty": false
+      }
+    }
+  },
+  "CapturedAtUtc": "2026-06-10T14:25:13.9881088+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\ux-parity-foreground-harness-20260610\\tools\\foreground-captures\\excel-open-dialog\\excel-open-dialog_manifest.json"
+}
