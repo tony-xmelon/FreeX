@@ -71,3 +71,31 @@ Still blocked with retained manifests:
 - `excel-sheet-tab-overflow-activate-dialog`: blocked because Excel's Activate dialog was not detected after right-clicking the sheet-tab navigation button in this Office state.
 
 Remaining S5 work is now drag reorder, grouped-command foreground proof, Activate dialog proof on both FreeX and Excel, and broader Excel pairing beyond the retained Excel context-menu reference.
+
+## 2026-06-11 Sheet-Tab Hardening Rerun
+
+The next S5 checkpoint added product/harness hardening before rerunning the blocked foreground scenarios:
+
+- Sheet-tab drag preserves drag state through tab refresh and recaptures the refreshed tab element.
+- Drag hit-testing falls back to tab bounds when `InputHitTest` misses under mouse capture.
+- Grouped-command menu invocation handles UIA/COM failures more defensively.
+- The drag-reorder harness drags deeper into the target tab.
+- FreeX/Excel Activate dialog lookup now uses a stricter shared detector, and sheet-nav button lookup is anchored to sheet-tab bounds.
+
+Verification before rerun:
+
+```powershell
+dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1
+dotnet build tools\FreeX.ForegroundCapture\FreeX.ForegroundCapture.csproj --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1
+```
+
+Both builds passed with 0 warnings and 0 errors.
+
+Rerun outcomes:
+
+- `freex-sheet-tab-grouped-commands`: still blocked. The grouped sheet-tab context menu opened, but the harness could not invoke `Ungroup Sheets`.
+- `freex-sheet-tab-drag-reorder`: still blocked, but improved. The observed order changed to `Sheet1, Sheet2, Sheet4, Sheet3`; the drag now moves Sheet4, but not before Sheet2 as expected.
+- `freex-sheet-tab-overflow-activate-dialog`: still blocked because the Activate Sheet dialog was not detected after right-clicking the overflow navigation button.
+- `excel-sheet-tab-overflow-activate-dialog`: still blocked because Excel's Activate dialog was not detected after right-clicking the sheet-tab navigation button in this Office state.
+
+The retained manifests in each scenario folder reflect these latest blockers. S5 remains open for the three hard interaction proofs: grouped context command invocation, exact drag insertion targeting, and Activate-dialog detection on FreeX/Excel.
