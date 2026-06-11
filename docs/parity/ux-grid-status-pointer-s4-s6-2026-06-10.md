@@ -128,6 +128,15 @@ Still blocked with retained manifests:
 
 S6 remains open for the numerical-count UIA readback gap, min/max slider breadth, touchpad/hardware wheel parity, and fuller Excel-paired status/footer comparison. Ordinary, Shift, and Ctrl wheel foreground proof is now retained in one scenario.
 
+## 2026-06-11 S6 Status/Footer Blocker Follow-Up
+
+This bounded follow-up did not launch foreground scenarios because the desktop slot was not released. It made harness-only fixes for the two current FreeX status/footer blockers:
+
+- `freex-status-live-stats-accessibility`: the scenario now resizes the restored FreeX test window before physical paste/select so all six enabled status statistics have enough horizontal room for visible UIA readback. If UIA still cannot match a statistic, the retained blocker detail now includes the last non-empty UIA candidate instead of collapsing the failure to a generic unavailable message.
+- `freex-status-zoom-min-max-rangevalue-set`: the min/max scenario now reacquires the Zoom slider and `RangeValuePattern` for each bound before calling `SetValue`, and reports `uia-rangevalue-set-failed` with the UIA exception type/message instead of letting a stale-pattern timeout obscure the failing bound.
+
+The follow-up also added a source-hygiene guard covering the status-stat resize, the per-bound RangeValue reacquisition, and the richer UIA stat diagnostics. S6 remains open until the foreground slot is available to rerun `freex-status-live-stats-accessibility` and `freex-status-zoom-min-max-rangevalue-set`, and for touchpad/hardware wheel parity plus fuller Excel-paired status/footer comparison.
+
 ## 2026-06-11 S4 AutoFit Confirmation
 
 The final bounded S4 rerun retried the existing foreground AutoFit scenario after clearing only the main-integration FreeX process:
