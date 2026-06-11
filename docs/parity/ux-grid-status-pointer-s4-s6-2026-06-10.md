@@ -104,6 +104,30 @@ Still blocked with retained manifest:
 
 Remaining S6 work is narrowed to live stat accessibility for numerical count, min/max foreground breadth, wheel/touchpad breadth beyond retained ordinary/Shift/Ctrl-wheel proof, and fuller Excel-paired status/footer comparison.
 
+## 2026-06-11 S6 Accessibility And Wheel Breadth Rerun
+
+The next S6 checkpoint added live automation metadata to status statistic text blocks and expanded foreground harness coverage for status min/max and wheel-modifier breadth.
+
+Verification before rerun:
+
+```powershell
+dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1
+dotnet build tools\FreeX.ForegroundCapture\FreeX.ForegroundCapture.csproj --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1
+```
+
+Both builds passed with 0 warnings and 0 errors.
+
+Closed with retained evidence:
+
+- `freex-status-wheel-modifier-breadth`: complete. Retained `tools/foreground-captures/freex-status-wheel-modifier-breadth/freex-status-wheel-modifier-breadth_20260611_035234.png` plus manifest. Validation records ordinary wheel vertical scroll, Shift+wheel horizontal scroll, and Ctrl+wheel grid zoom with the UIA Zoom slider at `110` and visible zoom text about `130%`.
+
+Still blocked with retained manifests:
+
+- `freex-status-live-stats-accessibility`: still blocked after a clean retry. Foreground ownership was valid, but the harness still could not read a visible UIA name/text value for `StatusNumericalCountText`.
+- `freex-status-zoom-min-max-rangevalue-set`: blocked by a UIA operation timeout while exercising min/max `RangeValue` coverage.
+
+S6 remains open for the numerical-count UIA readback gap, min/max slider breadth, touchpad/hardware wheel parity, and fuller Excel-paired status/footer comparison. Ordinary, Shift, and Ctrl wheel foreground proof is now retained in one scenario.
+
 ## Verification
 
 - `git status --short --branch` in the primary checkout: showed unrelated dirty files on `worker-c-cf-aggregate-list-parity`; left untouched.
