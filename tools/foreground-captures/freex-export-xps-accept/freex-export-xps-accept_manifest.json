@@ -1,41 +1,70 @@
 {
   "Scenario": "freex-export-xps-accept",
   "Subject": "freex",
-  "CaptureStatus": "blocked",
+  "CaptureStatus": "complete",
   "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s3-xps-export-20260611\\tools\\foreground-captures\\freex-export-xps-accept\\freex-export-xps-accept_20260611_082431.png",
+  "Window": {
+    "Handle": 28839026,
+    "ProcessId": 111176,
+    "Title": "Export XPS",
+    "ClassName": "#32770",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 972,
+        "Y": 624
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 639,
+        "Height": 372
+      },
+      "X": 972,
+      "Y": 624,
+      "Width": 639,
+      "Height": 372,
+      "Left": 972,
+      "Top": 624,
+      "Right": 1611,
+      "Bottom": 996,
+      "IsEmpty": false
+    }
+  },
   "ForegroundGuard": {
     "Success": true,
-    "ExpectedProcessId": 103632,
-    "ExpectedHandle": 28053862,
+    "ExpectedProcessId": 111176,
+    "ExpectedHandle": 7538802,
     "ForegroundWindow": {
-      "Handle": 28053862,
-      "ProcessId": 103632,
+      "Handle": 7538802,
+      "ProcessId": 111176,
       "Title": "Book1 - FreeX",
-      "ClassName": "HwndWrapper[FreeX.App.Host;;9e7f2b5d-da1b-41b1-9bdb-e09d19476be7]",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;c8755a87-3a0f-49fa-8d65-68b1c87e5f8d]",
       "Bounds": {
         "Location": {
           "IsEmpty": false,
-          "X": 101,
-          "Y": 101
+          "X": 152,
+          "Y": 152
         },
         "Size": {
           "IsEmpty": false,
           "Width": 1280,
           "Height": 720
         },
-        "X": 101,
-        "Y": 101,
+        "X": 152,
+        "Y": 152,
         "Width": 1280,
         "Height": 720,
-        "Left": 101,
-        "Top": 101,
-        "Right": 1381,
-        "Bottom": 821,
+        "Left": 152,
+        "Top": 152,
+        "Right": 1432,
+        "Bottom": 872,
         "IsEmpty": false
       }
     }
   },
-  "BlockReason": "options-dialog-not-found: Accepted an explicit .xps path but did not detect the PDF/XPS options dialog.",
-  "CapturedAtUtc": "2026-06-11T02:41:09.9814926+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s3-native-export-evidence-20260611\\tools\\foreground-captures\\freex-export-xps-accept\\freex-export-xps-accept_manifest.json"
+  "CapturedAtUtc": "2026-06-11T08:24:31.3229645+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s3-xps-export-20260611\\tools\\foreground-captures\\freex-export-xps-accept\\freex-export-xps-accept_manifest.json",
+  "ResultValidation": "Explicit .xps native save path was accepted and non-empty output exists (72747 bytes): E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s3-xps-export-20260611\\tools\\foreground-captures\\s3-explicit-export.xps",
+  "OutputPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s3-xps-export-20260611\\tools\\foreground-captures\\s3-explicit-export.xps"
 }
