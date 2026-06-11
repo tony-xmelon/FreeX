@@ -1,41 +1,69 @@
 {
   "Scenario": "freex-s4-grid-double-click-autofit",
   "Subject": "freex",
-  "CaptureStatus": "blocked",
+  "CaptureStatus": "complete",
   "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s4-autofit-foreground-fix-20260611\\tools\\foreground-captures\\freex-s4-grid-double-click-autofit\\freex-s4-grid-double-click-autofit_20260611_061433.png",
+  "Window": {
+    "Handle": 11338112,
+    "ProcessId": 115752,
+    "Title": "Book1* - FreeX",
+    "ClassName": "HwndWrapper[FreeX.App.Host;;2609b5d6-64ba-45c4-91f2-885c8df0ed85]",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 342,
+        "Y": 342
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1920,
+        "Height": 1080
+      },
+      "X": 342,
+      "Y": 342,
+      "Width": 1920,
+      "Height": 1080,
+      "Left": 342,
+      "Top": 342,
+      "Right": 2262,
+      "Bottom": 1422,
+      "IsEmpty": false
+    }
+  },
   "ForegroundGuard": {
     "Success": true,
-    "ExpectedProcessId": 110740,
-    "ExpectedHandle": 45157742,
+    "ExpectedProcessId": 115752,
+    "ExpectedHandle": 11338112,
     "ForegroundWindow": {
-      "Handle": 45157742,
-      "ProcessId": 110740,
-      "Title": "Book1 - FreeX",
-      "ClassName": "HwndWrapper[FreeX.App.Host;;557e8f23-3f47-4ec6-885a-1421e51c652e]",
+      "Handle": 11338112,
+      "ProcessId": 115752,
+      "Title": "Book1* - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;2609b5d6-64ba-45c4-91f2-885c8df0ed85]",
       "Bounds": {
         "Location": {
           "IsEmpty": false,
-          "X": 51,
-          "Y": 51
+          "X": 342,
+          "Y": 342
         },
         "Size": {
           "IsEmpty": false,
-          "Width": 1280,
-          "Height": 720
+          "Width": 1920,
+          "Height": 1080
         },
-        "X": 51,
-        "Y": 51,
-        "Width": 1280,
-        "Height": 720,
-        "Left": 51,
-        "Top": 51,
-        "Right": 1331,
-        "Bottom": 771,
+        "X": 342,
+        "Y": 342,
+        "Width": 1920,
+        "Height": 1080,
+        "Left": 342,
+        "Top": 342,
+        "Right": 2262,
+        "Bottom": 1422,
         "IsEmpty": false
       }
     }
   },
-  "BlockReason": "column-autofit-validation-failed: Expected column A width to grow after double-click AutoFit; before 96, after 92.",
-  "CapturedAtUtc": "2026-06-11T04:00:48.3477681+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-s4-grid-double-click-autofit\\freex-s4-grid-double-click-autofit_manifest.json"
+  "CapturedAtUtc": "2026-06-11T06:14:33.9651551+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\s4-autofit-foreground-fix-20260611\\tools\\foreground-captures\\freex-s4-grid-double-click-autofit\\freex-s4-grid-double-click-autofit_manifest.json",
+  "ResultValidation": "foreground double-click AutoFit; column A width 96-\u003E596, row 1 height 54-\u003E30."
 }
