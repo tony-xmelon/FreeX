@@ -1,41 +1,69 @@
 {
   "Scenario": "freex-status-live-stats-accessibility",
   "Subject": "freex",
-  "CaptureStatus": "blocked",
+  "CaptureStatus": "complete",
   "CaptureMode": "foreground-guarded-uia-win32",
+  "ScreenshotPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\.worktrees\\s6-status-options-roundtrip-20260611\\tools\\foreground-captures\\freex-status-live-stats-accessibility\\freex-status-live-stats-accessibility_20260611_094858.png",
+  "Window": {
+    "Handle": 52496866,
+    "ProcessId": 95452,
+    "Title": "Book1 - FreeX",
+    "ClassName": "HwndWrapper[FreeX.App.Host;;c227d53d-d0c9-4a82-9e10-a2641e0c0183]",
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 80,
+        "Y": 89
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 2400,
+        "Height": 1350
+      },
+      "X": 80,
+      "Y": 89,
+      "Width": 2400,
+      "Height": 1350,
+      "Left": 80,
+      "Top": 89,
+      "Right": 2480,
+      "Bottom": 1439,
+      "IsEmpty": false
+    }
+  },
   "ForegroundGuard": {
     "Success": true,
-    "ExpectedProcessId": 98652,
-    "ExpectedHandle": 32377938,
+    "ExpectedProcessId": 95452,
+    "ExpectedHandle": 52496866,
     "ForegroundWindow": {
-      "Handle": 32377938,
-      "ProcessId": 98652,
+      "Handle": 52496866,
+      "ProcessId": 95452,
       "Title": "Book1 - FreeX",
-      "ClassName": "HwndWrapper[FreeX.App.Host;;b2fd1608-0874-4d8f-99a4-f391bee29f5b]",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;c227d53d-d0c9-4a82-9e10-a2641e0c0183]",
       "Bounds": {
         "Location": {
           "IsEmpty": false,
-          "X": 203,
-          "Y": 203
+          "X": 80,
+          "Y": 89
         },
         "Size": {
           "IsEmpty": false,
-          "Width": 1280,
-          "Height": 720
+          "Width": 2400,
+          "Height": 1350
         },
-        "X": 203,
-        "Y": 203,
-        "Width": 1280,
-        "Height": 720,
-        "Left": 203,
-        "Top": 203,
-        "Right": 1483,
-        "Bottom": 923,
+        "X": 80,
+        "Y": 89,
+        "Width": 2400,
+        "Height": 1350,
+        "Left": 80,
+        "Top": 89,
+        "Right": 2480,
+        "Bottom": 1439,
         "IsEmpty": false
       }
     }
   },
-  "BlockReason": "status-stat-validation-unavailable: Could not read a visible UIA name/text value for \u0027StatusNumericalCountText\u0027.",
-  "CapturedAtUtc": "2026-06-11T03:53:37.7286553+00:00",
-  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-status-live-stats-accessibility\\freex-status-live-stats-accessibility_manifest.json"
+  "CapturedAtUtc": "2026-06-11T09:48:58.7142084+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\.worktrees\\s6-status-options-roundtrip-20260611\\tools\\foreground-captures\\freex-status-live-stats-accessibility\\freex-status-live-stats-accessibility_manifest.json",
+  "ResultValidation": "Foreground status stats after physical paste/select with min/max enabled: StatusAvgText=\u0027Average: 5\u0027; StatusCountText=\u0027Count: 4\u0027; StatusNumericalCountText=\u0027Numerical Count: 4\u0027; StatusSumText=\u0027Sum: 20\u0027; StatusMinText=\u0027Min: 2\u0027; StatusMaxText=\u0027Max: 8\u0027."
 }
