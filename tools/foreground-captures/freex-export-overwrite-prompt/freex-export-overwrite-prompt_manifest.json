@@ -1,0 +1,41 @@
+{
+  "Scenario": "freex-export-overwrite-prompt",
+  "Subject": "freex",
+  "CaptureStatus": "blocked",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 104268,
+    "ExpectedHandle": 36439198,
+    "ForegroundWindow": {
+      "Handle": 36439198,
+      "ProcessId": 104268,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;c8e74a8c-9f58-438f-9d21-8c1993be6893]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 228,
+          "Y": 228
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "X": 228,
+        "Y": 228,
+        "Width": 1280,
+        "Height": 720,
+        "Left": 228,
+        "Top": 228,
+        "Right": 1508,
+        "Bottom": 948,
+        "IsEmpty": false
+      }
+    }
+  },
+  "BlockReason": "overwrite-prompt-not-found: Typed an existing PDF path but did not detect a native export overwrite confirmation prompt.",
+  "CapturedAtUtc": "2026-06-11T00:41:59.9914078+00:00",
+  "ManifestPath": "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\main-integration-20260607b\\tools\\foreground-captures\\freex-export-overwrite-prompt\\freex-export-overwrite-prompt_manifest.json"
+}
