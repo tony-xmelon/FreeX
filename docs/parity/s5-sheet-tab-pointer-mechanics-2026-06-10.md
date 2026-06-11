@@ -118,3 +118,16 @@ dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --configurati
 ```
 
 The foreground blockers remain pending live rerun: grouped command invocation, exact drag insertion proof, and FreeX/Excel Activate-dialog capture.
+
+## 2026-06-11 S5D Closeout
+
+The S5D branch `codex/s5d-sheet-tabs-foreground-20260611` closed the remaining FreeX sheet-tab foreground blockers and was merged to local `main` as `87a76ce56` (`Merge S5 sheet tab foreground parity`).
+
+Closed with retained foreground evidence:
+
+- `freex-sheet-tab-grouped-commands`: complete. Validation records physical Insert Sheet clicks, `Select All Sheets`, grouped title `Book1 [Group] - FreeX`, `Ungroup Sheets`, and final title `Book1 - FreeX`.
+- `freex-sheet-tab-drag-reorder`: complete. Validation records physical drag of `Sheet4` onto `Sheet2` and visible order `Sheet1, Sheet4, Sheet2, Sheet3`.
+- `freex-sheet-tab-overflow-activate-dialog`: complete. Validation records physical right-click on the real overflow navigation button and capture of the foreground `Activate` dialog.
+- `freex-sheet-tab-overflow-nav-click`: complete after the same forced-overflow setup.
+
+User-supplied Excel evidence on 2026-06-11 validated the native Excel sheet-tab overflow `Activate` dialog. The screenshot shows title `Activate`, the `Activate:` list, sheet entries through `Sheet14`, `Sheet14` selected, and `OK`/`Cancel` buttons. The retained Excel foreground manifest remains blocked only because the harness did not detect that dialog through UIA/coordinate/built-in-dialog routes in this Office state.
