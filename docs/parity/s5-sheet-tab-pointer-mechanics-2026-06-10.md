@@ -99,3 +99,22 @@ Rerun outcomes:
 - `excel-sheet-tab-overflow-activate-dialog`: still blocked because Excel's Activate dialog was not detected after right-clicking the sheet-tab navigation button in this Office state.
 
 The retained manifests in each scenario folder reflect these latest blockers. S5 remains open for the three hard interaction proofs: grouped context command invocation, exact drag insertion targeting, and Activate-dialog detection on FreeX/Excel.
+
+## 2026-06-11 Blocker Closeout Prep
+
+This S5 pass did not launch foreground scenarios because the desktop slot was not released. It added bounded product and harness changes aimed at the latest retained blockers:
+
+- Right-clicking a tab that is already part of a multi-sheet group now keeps the group active while making the clicked tab current, so the grouped context menu can still invoke `Ungroup Sheets`.
+- Sheet-tab drag reorder now computes insertion from the target tab half. Dragging left across the right half of an intermediate tab remains a no-op, while dropping into the left half inserts before that target.
+- FreeX sheet-nav right-click now marks the mouse event handled before asynchronously opening the Activate Sheet dialog, avoiding nested right-button input while the dialog opens.
+- The S5 foreground Activate scenarios now retry plausible sheet-nav button candidates and detect Activate dialogs by title or by a sheet list plus OK/Cancel controls.
+
+Non-foreground verification:
+
+```powershell
+dotnet build tools\FreeX.ForegroundCapture\FreeX.ForegroundCapture.csproj --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1
+dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --configuration Release --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1
+dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --configuration Release --filter "FullyQualifiedName~MainWindowSheetTabKeyboardTests" --logger "trx;LogFileName=s5-sheet-tab-keyboard-tests.trx" --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1
+```
+
+The foreground blockers remain pending live rerun: grouped command invocation, exact drag insertion proof, and FreeX/Excel Activate-dialog capture.
