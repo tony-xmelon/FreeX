@@ -10,7 +10,9 @@ Full report: [reviews/comprehensive-code-review-2026-06-12.md](comprehensive-cod
 
 Documentation-only review at `main` HEAD `1fe1b2644`, focused on auditing the 2026-06-12 fix campaign plus previously-unreviewed areas (chart/pivot/CSV/fxl IO, multi-window, Find/Replace, command protection guards, formula breadth, the Avalonia macOS port). All P1 and top-P2 candidates were inline-verified; several finder claims about Excel semantics were refuted and recorded in the report instead of filed as findings.
 
-Open findings by priority (all unresolved as of this review):
+Resolution update 2026-06-12: all findings fixed and merged to `main` the same day via twelve `fix2/*-20260612` branches in three gated waves — see the full report's resolution section for the per-area breakdown (close-flow/multi-window document-scoped state, protection-guard census, recovery-flow hardening, table overlap + fxl fidelity inventory, chart/pivot round-trip fixes, Find/Replace rebinding, campaign-regression cluster, load/save perf incl. the single-pass normalizer (~36→~10 passes), sanitizer container-schema migration (6 more normalizers), Avalonia CI/tests/dirty-generation hardening, formula hardening + BenchmarkFact conversions, and the consistency/localization sweep with an extended guard test). Two review claims were withdrawn during implementation with evidence (FILTER OOB disproven and pinned; FIXED blank-cell default verified correct). Documented defers: full Avalonia localization/splitting, MainWindow next seams, hygiene-test conversion convention, column-default styles, Workbook.Clone background serialize, FidelityCompare oracle run.
+
+Findings by priority as originally reported (see resolution note above for current status):
 
 | Priority | Area | Finding |
 |---|---|---|
