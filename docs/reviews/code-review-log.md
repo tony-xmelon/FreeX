@@ -12,6 +12,8 @@ Documentation-only review pass; no code changes. Verification: repository prefli
 
 Resolution update 2026-06-12: twenty findings fixed and merged to `main` via sixteen `fix/*-20260612` branches (all five P1s, the P2 correctness/perf/CI set, and the P3 formula/commands/IO clusters — see the full report's resolution section). Integrated verification: preflight passed, Release build 0W/0E, default lane 10,946 passed / 0 failed. Remaining open: MainWindow god-object extraction, declarative sanitizer schema table, whole-column ApplyStyle clamp, `_isOpeningFile` timing, partial-shift CF/DV/chart adjustment, remaining P3 stability/consolidation/test-architecture items.
 
+Resolution update 2026-06-12 second pass: the remaining backlog was cleared via twelve more `fix/*-20260612` branches (see the full report's second-pass resolution section): host-stability P3s + `_isOpeningFile`, band-scoped CF/DV translation for Insert/Delete Cells, whole-column style used-range clamp, viewport/render/autofill/ClosedXML-style perf fixes, the A1/writer-helper/cfvo/GridRange/test-helper consolidations, the `WorkbookDocumentState` extraction slice, the declarative sanitizer table with eight normalizers migrated, the `FreeX.App.Host.Logic.Tests` default-lane split (149 files / 1,411 tests now gating), and central package management. Deliberately deferred with reasons: full MainWindow extraction, full sanitizer migration, hygiene-test altitude conversion, Excel-style column-default styles.
+
 Findings by priority as originally reported (see resolution note above for current status):
 
 | Priority | Area | Finding |
