@@ -1,6 +1,6 @@
 # User Testing Feedback Report - 2026-06-09
 
-Last updated: 2026-06-12 19:08:16 +03:00
+Last updated: 2026-06-12 19:11:07 +03:00
 
 This report tracks live user-testing feedback for the FreeX desktop app. Each issue is assigned to a separate worker agent with full access in an isolated worktree/branch. Workers sync before starting, run repository preflight, Release build, and the default non-UI test lane, then merge verified fixes back to `main` and perform a live visual app validation.
 
@@ -95,6 +95,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 | 085 | Shapes multi-button is missing most shape icons or uses a generic icon; restore meaningful icons for the Shapes button/gallery entries. | 2026-06-12 19:02:28 +03:00 | Queued behind Issues 083 and 084 because this shares Insert/Draw ribbon command-presentation and shape gallery surfaces. | Pending | Pending live app check | Queued |
 | 086 | Gradient Fill dialog does not remember the selected color after reopening; Diagonal and Reverse Diagonal previews render like Horizontal instead of showing diagonal gradients. | 2026-06-12 19:04:32 +03:00 | Assigned to worker Pauli (`019ebc94-b499-7c63-9bce-5f52bed63ce4`) at 2026-06-12 19:04:32 +03:00 with scope kept to gradient dialog/state/preview/rendering to avoid Insert ribbon icon work. | Pending | Pending live app check | In progress |
 | 087 | Object Fill does not offer a `No Fill` option; add an explicit no-fill command for object fill workflows. | 2026-06-12 19:08:16 +03:00 | Queued behind Issue 086 because this shares object fill/gradient fill command surfaces; also avoid overlap with active/queued Shape ribbon work if it touches the same Draw/Shape Format controls. | Pending | Pending live app check | Queued |
+| 088 | Newly inserted shapes show an unwanted default shadow or blue line along the bottom; inserted shapes should render without that stray artifact unless the user explicitly applies such styling. | 2026-06-12 19:11:07 +03:00 | Queued behind Issue 087 because this likely shares object fill/style/default shape rendering surfaces; keep separate from active Insert ribbon icon work. | Pending | Pending live app check | Queued |
 
 ## Worker Results
 
@@ -185,6 +186,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 - Issue 085: queued behind Issues 083 and 084 due shared Insert/Draw ribbon command-presentation and shape gallery surfaces. Scope is Shapes multi-button icon fidelity: restore meaningful icons for the Shapes command/gallery instead of blank/generic placeholders and live-validate the ribbon/gallery.
 - Issue 086: assigned to Pauli (`019ebc94-b499-7c63-9bce-5f52bed63ce4`). Scope is Gradient Fill dialog state/preview fidelity: selected colors persist when reopening the dialog, and Diagonal/Reverse Diagonal previews render diagonal rather than horizontal.
 - Issue 087: queued behind Issue 086 due shared object fill/gradient fill command surfaces. Scope is Object Fill menu parity: add a clear `No Fill` option and live-validate object fill can be removed.
+- Issue 088: queued behind Issue 087 due likely shared object fill/style/default shape rendering surfaces. Scope is inserted shape default rendering: remove any unintended bottom shadow/blue line artifact and live-validate newly inserted shapes.
 
 ## Verification Policy
 
