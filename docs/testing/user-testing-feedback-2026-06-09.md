@@ -1,6 +1,6 @@
 # User Testing Feedback Report - 2026-06-09
 
-Last updated: 2026-06-12 19:00:23 +03:00
+Last updated: 2026-06-12 19:02:28 +03:00
 
 This report tracks live user-testing feedback for the FreeX desktop app. Each issue is assigned to a separate worker agent with full access in an isolated worktree/branch. Workers sync before starting, run repository preflight, Release build, and the default non-UI test lane, then merge verified fixes back to `main` and perform a live visual app validation.
 
@@ -92,6 +92,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 | 082 | Custom Views does not appear to change anything; it should save/restore visible workbook view state like Excel or be hidden if unsupported. | 2026-06-11 02:53:11 +03:00 | Assigned with Issue 081 to worker Sartre (`019eb542-1427-75b2-9b9b-38bef5692c6c`) at 2026-06-11 08:56:44 +03:00. | Fixed with Issue 081 in `codex/view-modes-custom-views-081-082-20260611`, commit `7effc5dcc`; merged/synced into local `main` at `6179f0f32`. | Verification passed with Issue 081; live WPF validation saved a Page Layout custom view, switched to Normal, then restored the saved Page Layout state with Page Break off. Custom view state now persists through native JSON/XLSX. | Complete - merged |
 | 083 | Insert ribbon Charts group icons have disappeared; screenshot shows PivotTable/Table and Sparkline icons still visible, but the Charts group command area is blank. Restore chart command icons/labels. | 2026-06-12 18:56:37 +03:00 | Assigned to worker Euclid (`019ebc8c-6068-79c2-9800-9b675120cdda`) at 2026-06-12 18:56:37 +03:00. | Pending | Pending live app check | In progress |
 | 084 | Insert Picture is shown as a multi-button with only one option; that does not make sense and should be a normal icon/button instead. | 2026-06-12 19:00:23 +03:00 | Queued behind Issue 083 because both touch the Insert ribbon command-presentation surface; assign once the chart-icons worker clears or non-overlap is guaranteed. | Pending | Pending live app check | Queued |
+| 085 | Shapes multi-button is missing most shape icons or uses a generic icon; restore meaningful icons for the Shapes button/gallery entries. | 2026-06-12 19:02:28 +03:00 | Queued behind Issues 083 and 084 because this shares Insert/Draw ribbon command-presentation and shape gallery surfaces. | Pending | Pending live app check | Queued |
 
 ## Worker Results
 
@@ -179,6 +180,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 - Issue 082: fixed with Issue 081; Custom Views now save/restore active sheet, selection, scroll, zoom/view mode, and persisted custom view state through native JSON/XLSX. Live WPF validation confirmed saving Page Layout, switching to Normal, and restoring the saved view.
 - Issue 083: assigned to Euclid (`019ebc8c-6068-79c2-9800-9b675120cdda`). Scope is Insert tab Charts group icon regression: restore visible chart command icons/labels and live-validate the built WPF Insert ribbon shows them again.
 - Issue 084: queued behind Issue 083 due shared Insert ribbon command-presentation scope. Scope is Insert Picture presentation: replace the one-option multi-button with a normal icon/button and live-validate the Insert tab.
+- Issue 085: queued behind Issues 083 and 084 due shared Insert/Draw ribbon command-presentation and shape gallery surfaces. Scope is Shapes multi-button icon fidelity: restore meaningful icons for the Shapes command/gallery instead of blank/generic placeholders and live-validate the ribbon/gallery.
 
 ## Verification Policy
 
