@@ -4,6 +4,30 @@ Last updated: 2026-06-12
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
 
+## 2026-06-12 Comprehensive Review
+
+Full report: [reviews/comprehensive-code-review-2026-06-12.md](comprehensive-code-review-2026-06-12.md).
+
+Documentation-only review at `main` HEAD `1fe1b2644`, focused on auditing the 2026-06-12 fix campaign plus previously-unreviewed areas (chart/pivot/CSV/fxl IO, multi-window, Find/Replace, command protection guards, formula breadth, the Avalonia macOS port). All P1 and top-P2 candidates were inline-verified; several finder claims about Excel semantics were refuted and recorded in the report instead of filed as findings.
+
+Open findings by priority (all unresolved as of this review):
+
+| Priority | Area | Finding |
+|---|---|---|
+| P1 | Close flow (campaign regression) | "Don't Save" can never close the window — the close-flow dirty re-check fires for `DiscardWithoutSaving`, which never clears the dirty flag. |
+| P1 | Multi-window (campaign-cemented) | Sibling windows of a shared workbook are never marked dirty (per-window `WorkbookDocumentState` vs shared document); last-closed window skips the save prompt and discards edits. Related: `OpenFileAsync` doesn't notify siblings (commands then mutate the wrong workbook), save doesn't update sibling file context, concurrent-close skips final cleanup. |
+| P1 | Command protection | Goal Seek and Data Table write to protected sheets with zero guards; sparklines, named ranges (structure protection), and Subtotal partial-failure share the guard-omission family. |
+| P2 | Campaign regressions | Whole-column formatting of an empty column does nothing (`StyleOnlyCreateZone` double-dimension clamp); emergency crash-save silently no-ops from background threads; recovery offers only `candidates[0]`, pollutes recent files, and a queued startup file-arg can discard a just-recovered workbook. |
+| P2 | Tables | Create/Resize structured table missing overlap guards — overlapping tables produce Excel-invalid files. |
+| P2 | IO round-trip | Numeric chart categories written as `strRef`; pivot `refreshOnLoad` defaults true against spec; pivot shared items re-typed by string sniffing; chartEx axes dropped for Histogram/Funnel/Treemap/Sunburst; hardcoded pivot records rel id; `.fxl` (now the crash-recovery format) drops `IsVeryHidden` and needs a fidelity-inventory test. |
+| P2 | Find/Replace | Modeless dialog closure follows workbook swaps (Replace All hits the new file); Formulas-mode replace leaves stale cached values. |
+| P2 | Performance | workbook.xml parsed 3× per load; 39 normalize passes re-scan/re-parse worksheets per save (sanitizer-treadmill runtime cost); O(N²) rels traversal per save; per-keystroke WPF Border allocation in formula-reference highlighting. |
+| P2 | Consistency | Wildcard→regex copy without cache (per-CF-evaluation Regex allocation); `SheetNameFormatter` stragglers (chart XML writes sheets named `TRUE`/`A1` unquoted); three hex-color parsers. |
+| P2 | Architecture | Avalonia macOS port: 14.5K-line single-file fork with parallel dirty/save state (save-race fixes not ported), absent from macOS CI compilation, behavioral tests, architecture.md, and localization. |
+| P3 | Various | CF cache eviction queue duplicate keys; `AdditionalRanges` delete gap on partial overlap; Insert-cells Revert ordering; dxf numFmtId collision potential; PID-reuse snapshot clobber; Remove Duplicates snapshot-before-detect; ClosedXML reflection version pin; XIRR/IRR/FIXED/FILTER formula hardening; comment authors dropped; threaded-comment paths by sheet index; cross-sheet chart shifts; legacy P3 perf/consistency items; flaky perf tests still `[Fact]`; architecture.md missing 2 projects; new string-asserting Avalonia source tests (hygiene drift). |
+
+Carry-forward status: MainWindow grew to 81 partials / 53.6K lines (next seams: formula-bar, pivot, ribbon-cache state); sanitizer migration 8/17 blocked on child-element table support; satellite-resx/UI-lane and CI gaps from 2026-06-11 RESOLVED by other sessions; column-default styles and `Workbook.Clone` autosave serialize unchanged defers.
+
 ## 2026-06-11 Comprehensive Review
 
 Full report: [reviews/comprehensive-code-review-2026-06-11.md](comprehensive-code-review-2026-06-11.md).
