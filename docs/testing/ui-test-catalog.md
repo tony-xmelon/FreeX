@@ -61,15 +61,15 @@ Each surface is tracked with these states:
 | Command surface in-scope rows | 199 | From `parity/command-inventory.json`: Implemented + Partial command-surface rows. |
 | Menu/toolbar in-scope rows | 200 | Includes the current Draw tab menu/toolbar delta. |
 | Top-level ribbon/backstage tabs | 10 | File, Home, Insert, Draw, Page Layout, Formulas, Data, Review, View, Help. |
-| Contextual ribbon tab declarations | 5 | Chart Design, Format, Table Design, PivotTable Analyze, Design from collapsed `MainWindow.xaml` tab declarations. |
-| Dialog source classes | 117 | Unique `*Dialog` class/x:Class names in `src/FreeX.App.Host`. |
-| XAML click-wired controls | 745 | `Click="..."` occurrences in `MainWindow.xaml` on latest synced `origin/main`. |
-| Explicit UIA automation ids | 110 | `AutomationProperties.AutomationId="..."` declarations in `MainWindow.xaml`. |
-| Ribbon keytip metadata declarations | 769 | `RibbonTooltip.KeyTip="..."` declarations in `MainWindow.xaml`. |
+| Contextual ribbon tab declarations | 7 | Shape Format, Picture Format, Chart Design, Format, Table Design, PivotTable Analyze, Design from collapsed `MainWindow.xaml` tab declarations. |
+| Dialog source classes | 118 | Unique `*Dialog` class/x:Class names in `src/FreeX.App.Host`. |
+| XAML click-wired controls | 770 | `Click="..."` occurrences in `MainWindow.xaml` on latest synced `origin/main`. |
+| Explicit UIA automation ids | 156 | `AutomationProperties.AutomationId="..."` declarations in `MainWindow.xaml`. |
+| Ribbon keytip metadata declarations | 788 | `RibbonTooltip.KeyTip="..."` declarations in `MainWindow.xaml`. |
 | Keyboard command shortcut usages | 74 | 74 matcher rules / 73 dispatcher targets |
 | Documented shortcut rows | 87 | From `parity/shortcuts.md`: 87 parity, 0 partial. |
 | Worksheet context menu commands | 50 | From `WorksheetContextMenuPlanner.BuildCommands()`. |
-| Screenshot tool scripts | 3 | `tools/screenshot_excel.ps1`, `tools/screenshot_ribbon.ps1`, and `tools/Invoke-ForegroundCapture.ps1` documented and present. |
+| Screenshot tool scripts | 2 | `tools/screenshot_excel.ps1`, `tools/screenshot_ribbon.ps1` documented and present. |
 | Existing UI evidence screenshots | 0 | Historical PNG evidence artifacts were removed during documentation cleanup; append new evidence paths to the relevant row. |
 
 ## Target Matrix
