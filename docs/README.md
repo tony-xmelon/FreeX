@@ -1,6 +1,6 @@
 # FreeX Documentation
 
-**Last updated:** 2026-06-11
+**Last updated:** 2026-06-12
 
 Use this index as the current documentation map. Point-in-time material lives under `history/` and `archive/`; prefer the newest status snapshot plus the current planning docs when making product or release decisions.
 
@@ -11,7 +11,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 ## Start Here
 
 - [planning/outstanding-build.md](planning/outstanding-build.md) - source-of-truth backlog for outstanding build work.
-- [history/status-2026-06-11.md](history/status-2026-06-11.md) - current project status snapshot covering the June 11 stable latest tester release at `c1dbd516`, v0.8.112, the prior run 111 hosted UI release-gate blocker, the 95% `v0.8.<run>` release stream, release-gate stabilization, release validation, localization review/package metadata, and XLSX fidelity proof.
+- [history/status-2026-06-12.md](history/status-2026-06-12.md) - current project status snapshot covering the June 12 stable latest tester release at `d3efaa6c`, v0.8.114, the failed run 113 hosted UI source-contract gate, the 95% `v0.8.<run>` release stream, release validation, localization review/package metadata, and XLSX fidelity proof.
 - [planning/next-phases.md](planning/next-phases.md) - next development phases and priority sequencing.
 - [planning/multiplatform-macos-port.md](planning/multiplatform-macos-port.md) - preparation plan for a future multiplatform port, starting with macOS and a portable GitHub Actions lane.
 - [planning/macos-port-dependency-backlog.md](planning/macos-port-dependency-backlog.md) - concise inventory of Windows/WPF-only dependencies that block or shape the Avalonia/macOS port.
@@ -81,7 +81,8 @@ Use this index as the current documentation map. Point-in-time material lives un
 
 ## History
 
-- [history/status-2026-06-11.md](history/status-2026-06-11.md) - current status snapshot covering the June 11 stable latest `origin/main` release, v0.8.112, prior failed run 111 hosted UI gate, and current release blockers.
+- [history/status-2026-06-12.md](history/status-2026-06-12.md) - current status snapshot covering the June 12 stable latest `origin/main` release, v0.8.114, prior failed run 113 hosted UI source-contract gate, and current release blockers.
+- [history/status-2026-06-11.md](history/status-2026-06-11.md) - prior status snapshot covering the June 11 stable latest `origin/main` release, v0.8.112, prior failed run 111 hosted UI gate, and current release blockers.
 - [history/status-2026-06-10.md](history/status-2026-06-10.md) - prior status snapshot covering the June 10 branch-neutral `origin/main` release, v0.8.110 tester pre-release, prior failed run 109 hosted UI gate, and current release blockers.
 - [history/status-2026-06-08.md](history/status-2026-06-08.md) - prior status snapshot covering the June 8 corpus, v0.8.108 tester pre-release, release-readiness, and outstanding-work alignment.
 - [history/status-2026-06-07.md](history/status-2026-06-07.md) - prior status snapshot covering the v0.8.90 daily tester release, frozen release commit, and hosted gate evidence.
