@@ -1,6 +1,6 @@
 # User Testing Feedback Report - 2026-06-09
 
-Last updated: 2026-06-11 16:08:36 +03:00
+Last updated: 2026-06-12 18:56:37 +03:00
 
 This report tracks live user-testing feedback for the FreeX desktop app. Each issue is assigned to a separate worker agent with full access in an isolated worktree/branch. Workers sync before starting, run repository preflight, Release build, and the default non-UI test lane, then merge verified fixes back to `main` and perform a live visual app validation.
 
@@ -90,6 +90,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 | 080 | Review tab Track Changes section, including Show Changes, appears to do nothing; hide the entire section if not implemented. | 2026-06-11 02:47:07 +03:00 | Added to active Review/ribbon worker Averroes (`019eb393-c79b-75f2-a05f-fe1eb746ffe8`) at 2026-06-11 02:47:07 +03:00 because this shares no-op ribbon visibility ownership with existing ribbon cleanup. | Fixed in `codex/issue-044-contextual-ribbon-tabs-20260611`, product commits `8d41ac7d6` and `51b3a9d18`; merged to local `main` at `0a7538713`. | Verification passed with Issue 044; live WPF validation confirmed the unsupported Track Changes/Show Changes section is hidden. | Complete - merged |
 | 081 | Normal, Page Break Preview, and Page Layout views do not change the grid visually; implement Excel-like distinct view modes. | 2026-06-11 02:50:30 +03:00 | Assigned to worker Sartre (`019eb542-1427-75b2-9b9b-38bef5692c6c`) at 2026-06-11 08:56:44 +03:00 after Issues 068 and 069 freed worker slots. | Fixed in `codex/view-modes-custom-views-081-082-20260611`, commit `7effc5dcc`; merged/synced into local `main` at `6179f0f32`. | Preflight passed, Release build passed, default tests passed on rerun (`10,677` passed, `116` skipped), App.UI policy lane passed (`648` passed, `27` skipped), and live WPF validation confirmed Normal, Page Break Preview, and Page Layout now render distinct grid/page visuals. App.Host UI lane had 13 unrelated out-of-scope source/metadata expectation failures. | Complete - merged |
 | 082 | Custom Views does not appear to change anything; it should save/restore visible workbook view state like Excel or be hidden if unsupported. | 2026-06-11 02:53:11 +03:00 | Assigned with Issue 081 to worker Sartre (`019eb542-1427-75b2-9b9b-38bef5692c6c`) at 2026-06-11 08:56:44 +03:00. | Fixed with Issue 081 in `codex/view-modes-custom-views-081-082-20260611`, commit `7effc5dcc`; merged/synced into local `main` at `6179f0f32`. | Verification passed with Issue 081; live WPF validation saved a Page Layout custom view, switched to Normal, then restored the saved Page Layout state with Page Break off. Custom view state now persists through native JSON/XLSX. | Complete - merged |
+| 083 | Insert ribbon Charts group icons have disappeared; screenshot shows PivotTable/Table and Sparkline icons still visible, but the Charts group command area is blank. Restore chart command icons/labels. | 2026-06-12 18:56:37 +03:00 | Assigned to worker Euclid (`019ebc8c-6068-79c2-9800-9b675120cdda`) at 2026-06-12 18:56:37 +03:00. | Pending | Pending live app check | In progress |
 
 ## Worker Results
 
@@ -175,6 +176,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 - Issue 080: fixed in the Issue 044 branch; live WPF validation confirmed the unsupported Track Changes/Show Changes section is hidden.
 - Issue 081: preflight passed, Release build passed, default tests passed on rerun (`10,677` passed, `116` skipped), App.UI policy lane passed (`648` passed, `27` skipped), and live WPF validation passed. Sartre merged `codex/view-modes-custom-views-081-082-20260611`; Normal, Page Break Preview, and Page Layout now render distinct grid/page visuals.
 - Issue 082: fixed with Issue 081; Custom Views now save/restore active sheet, selection, scroll, zoom/view mode, and persisted custom view state through native JSON/XLSX. Live WPF validation confirmed saving Page Layout, switching to Normal, and restoring the saved view.
+- Issue 083: assigned to Euclid (`019ebc8c-6068-79c2-9800-9b675120cdda`). Scope is Insert tab Charts group icon regression: restore visible chart command icons/labels and live-validate the built WPF Insert ribbon shows them again.
 
 ## Verification Policy
 
