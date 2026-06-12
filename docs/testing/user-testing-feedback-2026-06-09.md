@@ -1,6 +1,6 @@
 # User Testing Feedback Report - 2026-06-09
 
-Last updated: 2026-06-12 19:02:28 +03:00
+Last updated: 2026-06-12 19:04:32 +03:00
 
 This report tracks live user-testing feedback for the FreeX desktop app. Each issue is assigned to a separate worker agent with full access in an isolated worktree/branch. Workers sync before starting, run repository preflight, Release build, and the default non-UI test lane, then merge verified fixes back to `main` and perform a live visual app validation.
 
@@ -93,6 +93,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 | 083 | Insert ribbon Charts group icons have disappeared; screenshot shows PivotTable/Table and Sparkline icons still visible, but the Charts group command area is blank. Restore chart command icons/labels. | 2026-06-12 18:56:37 +03:00 | Assigned to worker Euclid (`019ebc8c-6068-79c2-9800-9b675120cdda`) at 2026-06-12 18:56:37 +03:00. | Pending | Pending live app check | In progress |
 | 084 | Insert Picture is shown as a multi-button with only one option; that does not make sense and should be a normal icon/button instead. | 2026-06-12 19:00:23 +03:00 | Queued behind Issue 083 because both touch the Insert ribbon command-presentation surface; assign once the chart-icons worker clears or non-overlap is guaranteed. | Pending | Pending live app check | Queued |
 | 085 | Shapes multi-button is missing most shape icons or uses a generic icon; restore meaningful icons for the Shapes button/gallery entries. | 2026-06-12 19:02:28 +03:00 | Queued behind Issues 083 and 084 because this shares Insert/Draw ribbon command-presentation and shape gallery surfaces. | Pending | Pending live app check | Queued |
+| 086 | Gradient Fill dialog does not remember the selected color after reopening; Diagonal and Reverse Diagonal previews render like Horizontal instead of showing diagonal gradients. | 2026-06-12 19:04:32 +03:00 | Assigned to worker Pauli (`019ebc94-b499-7c63-9bce-5f52bed63ce4`) at 2026-06-12 19:04:32 +03:00 with scope kept to gradient dialog/state/preview/rendering to avoid Insert ribbon icon work. | Pending | Pending live app check | In progress |
 
 ## Worker Results
 
@@ -181,6 +182,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 - Issue 083: assigned to Euclid (`019ebc8c-6068-79c2-9800-9b675120cdda`). Scope is Insert tab Charts group icon regression: restore visible chart command icons/labels and live-validate the built WPF Insert ribbon shows them again.
 - Issue 084: queued behind Issue 083 due shared Insert ribbon command-presentation scope. Scope is Insert Picture presentation: replace the one-option multi-button with a normal icon/button and live-validate the Insert tab.
 - Issue 085: queued behind Issues 083 and 084 due shared Insert/Draw ribbon command-presentation and shape gallery surfaces. Scope is Shapes multi-button icon fidelity: restore meaningful icons for the Shapes command/gallery instead of blank/generic placeholders and live-validate the ribbon/gallery.
+- Issue 086: assigned to Pauli (`019ebc94-b499-7c63-9bce-5f52bed63ce4`). Scope is Gradient Fill dialog state/preview fidelity: selected colors persist when reopening the dialog, and Diagonal/Reverse Diagonal previews render diagonal rather than horizontal.
 
 ## Verification Policy
 
