@@ -1,6 +1,6 @@
 # User Testing Feedback Report - 2026-06-09
 
-Last updated: 2026-06-12 19:13:18 +03:00
+Last updated: 2026-06-12 19:16:44 +03:00
 
 This report tracks live user-testing feedback for the FreeX desktop app. Each issue is assigned to a separate worker agent with full access in an isolated worktree/branch. Workers sync before starting, run repository preflight, Release build, and the default non-UI test lane, then merge verified fixes back to `main` and perform a live visual app validation.
 
@@ -97,6 +97,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 | 087 | Object Fill does not offer a `No Fill` option; add an explicit no-fill command for object fill workflows. | 2026-06-12 19:08:16 +03:00 | Queued behind Issue 086 because this shares object fill/gradient fill command surfaces; also avoid overlap with active/queued Shape ribbon work if it touches the same Draw/Shape Format controls. | Pending | Pending live app check | Queued |
 | 088 | Newly inserted shapes show an unwanted default shadow or blue line along the bottom; inserted shapes should render without that stray artifact unless the user explicitly applies such styling. | 2026-06-12 19:11:07 +03:00 | Queued behind Issue 087 because this likely shares object fill/style/default shape rendering surfaces; keep separate from active Insert ribbon icon work. | Pending | Pending live app check | Queued |
 | 089 | Picture Crop should provide an interactive crop mode with draggable cropping handles on the picture, not open a dialog. | 2026-06-12 19:13:18 +03:00 | Assigned to worker Hilbert (`019ebc9c-9b52-7a80-81f3-48f9900d4c40`) at 2026-06-12 19:13:18 +03:00 with scope focused on picture crop command/mode/handles/rendering and away from Insert ribbon icon presentation and fill/style workers. | Pending | Pending live app check | In progress |
+| 090 | File overlay Print screen currently shows a Print Preview button and placeholder text; implement print preview directly on this screen and put print/page options on the left. | 2026-06-12 19:16:44 +03:00 | Assigned to worker Nietzsche (`019ebc9f-91cd-7c91-bd2c-ee8122010e52`) at 2026-06-12 19:16:44 +03:00 with scope focused on backstage/File Print overlay, integrated preview, and print/page options. | Pending | Pending live app check | In progress |
 
 ## Worker Results
 
@@ -189,6 +190,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 - Issue 087: queued behind Issue 086 due shared object fill/gradient fill command surfaces. Scope is Object Fill menu parity: add a clear `No Fill` option and live-validate object fill can be removed.
 - Issue 088: queued behind Issue 087 due likely shared object fill/style/default shape rendering surfaces. Scope is inserted shape default rendering: remove any unintended bottom shadow/blue line artifact and live-validate newly inserted shapes.
 - Issue 089: assigned to Hilbert (`019ebc9c-9b52-7a80-81f3-48f9900d4c40`). Scope is Picture Crop interaction parity: crop command enters an interactive crop-handle mode instead of opening a dialog, crop handles are draggable, and crop changes are live-validated on an inserted picture.
+- Issue 090: assigned to Nietzsche (`019ebc9f-91cd-7c91-bd2c-ee8122010e52`). Scope is File/backstage Print screen parity: show print preview directly in the overlay and expose print/page options on the left instead of a placeholder preview button/text.
 
 ## Verification Policy
 
