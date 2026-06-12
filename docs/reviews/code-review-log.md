@@ -1,6 +1,6 @@
 # Code Review Findings
 
-Last updated: 2026-06-11
+Last updated: 2026-06-12
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
 
@@ -10,7 +10,9 @@ Full report: [reviews/comprehensive-code-review-2026-06-11.md](comprehensive-cod
 
 Documentation-only review pass; no code changes. Verification: repository preflight passed from the review branch; `FreeX.slnx` Release build (0W/0E) and the default (non-UI) test lane (10,684 passed / 0 failed) passed from a clean worktree at `main` HEAD `8abbf3406`. The review-snapshot commit `0a7777100` failed 17 default-lane tests in the same setup before later `main` commits fixed them; all P1 finding anchors were re-confirmed present on `main` HEAD. The primary tree carried an unrelated in-progress test edit owned by another session and was left untouched.
 
-Open findings by priority (all unresolved as of this review):
+Resolution update 2026-06-12: twenty findings fixed and merged to `main` via sixteen `fix/*-20260612` branches (all five P1s, the P2 correctness/perf/CI set, and the P3 formula/commands/IO clusters — see the full report's resolution section). Integrated verification: preflight passed, Release build 0W/0E, default lane 10,946 passed / 0 failed. Remaining open: MainWindow god-object extraction, declarative sanitizer schema table, whole-column ApplyStyle clamp, `_isOpeningFile` timing, partial-shift CF/DV/chart adjustment, remaining P3 stability/consolidation/test-architecture items.
+
+Findings by priority as originally reported (see resolution note above for current status):
 
 | Priority | Area | Finding |
 |---|---|---|
