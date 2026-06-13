@@ -116,16 +116,32 @@ next phase starts.
     child/parent-subtotal ratio, subtotal = subtotal/grand, grand = 100%); the
     single-level matrix test corrected to same-column/same-row parent semantics.
 
-- **Phase 4 — Nested column subtotals** (`MatrixWriter.cs`, column-key plumbing)
-  - G4: insert subtotal columns for outer column groups.
-  - Tests: 2-level column pivot emits per-outer-group subtotal columns.
+- **Phase 4 — Nested column subtotals** (`MatrixWriter.cs`, column-key plumbing) — DONE
+  - G4: a `ColumnSlot` (Leaf | Subtotal) list is built from the leaf column keys and
+    every column iteration (headers, data rows, row-subtotal rows, column grand
+    total) is routed through it, emitting a subtotal column per outer column group
+    when `ShowSubtotals && columnFields.Count > 1`. Single-column-field and
+    no-subtotal matrices are byte-identical to before.
 
-- **Phase 5 — Calculated items beyond single row field** (`Writers.cs`, `MatrixWriter.cs`)
-  - G6: materialize calculated items in matrix and nested layouts.
+- **Phase 6 — Compact layout true rendering (row-only)** (`Writers.cs`, `Styles.cs`) — DONE
+  - G5: `WriteRowPivot`'s compact branch now renders one indented row per row-field
+    level (header rows for non-leaf levels carry no value under bottom/off subtotals;
+    leaf rows carry the values; subtotal "X Total" rows sit at their level's indent),
+    matching Excel. Per-row indent levels are tracked on `PivotRenderFootprint` and
+    applied in `ApplyCompactRowLabelIndent`. All compact row-only tests rewritten to
+    the Excel-accurate shape.
 
-- **Phase 6 — Compact layout true rendering** (`Writers.cs`, `MatrixWriter.cs`, styles) — largest, last
-  - G5: render one indented row per row-field level; outer-row value = subtotal or
-    blank. Update the compact-layout tests to the Excel-accurate shape.
+- **Phase 5 — Calculated items beyond single row field** (`Writers.cs`, `MatrixWriter.cs`) — RESIDUAL
+  - G6: calculated items still materialize only in the single-row-field row-only
+    layout. Matrix/nested calculated items are deferred — a niche feature with
+    confusing Excel double-counting semantics; low value relative to risk.
+
+- **Matrix compact rendering** — RESIDUAL: `WriteMatrixPivot`'s compact branch still
+  space-joins nested row labels. Phase 6 deliberately scoped to the common row-only
+  case; applying the same per-level rendering to the matrix path is a follow-up.
+
+- **Base-field `% of Parent Total`** — RESIDUAL (see Phase 3): needs the base-field
+  model/UI path; currently falls back to `% of Grand Total`.
 
 - **Visual/round-trip verification** (after Phases 1–3) — DONE:
   `PivotParityRoundTripTests` authors a 3-level row pivot with multi-level
