@@ -301,6 +301,7 @@ workbook command behavior to track here.
 | Breaks (manual page breaks) | Implemented |  |
 | Background (display-only tiled image) | Implemented |  |
 | Print Titles | Implemented |  |
+| Page Setup | Implemented | Visible Page Layout command opens the Page Setup dialog on the Page tab |
 | Scale to Fit | Implemented |  |
 | Print Gridlines | Implemented |  |
 | Print Headings | Implemented |  |
