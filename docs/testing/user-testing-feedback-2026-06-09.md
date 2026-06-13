@@ -1,6 +1,6 @@
 # User Testing Feedback Report - 2026-06-09
 
-Last updated: 2026-06-13 15:38:09 +03:00
+Last updated: 2026-06-13 17:01:37 +03:00
 
 This report tracks live user-testing feedback for the FreeX desktop app. Each issue is assigned to a separate worker agent with full access in an isolated worktree/branch. Workers sync before starting, run repository preflight, Release build, and the default non-UI test lane, then merge verified fixes back to `main` and perform a live visual app validation.
 
@@ -211,6 +211,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 - Issue 098: fixed with Issue 093; Scale to Fit `Width`, `Height`, and `Scale` controls are vertically stacked and live validation confirmed they are unclipped.
 - Issue 099: focused core tests passed (`51/51`), focused app-service tests passed (`6/6`), preflight passed, Release build passed, default tests passed on final tip, and live WPF validation passed. Locke merged `codex/issue-099-format-painter-validation`; Format Painter now copies data validation rules and live validation confirmed invalid target input is rejected with the copied validation error.
 - Issue 100: preflight passed; fallback Release build passed after normal build timeout; default tests passed; focused host and rendering tests passed; live WPF validation passed. Volta merged `codex/issue-100-shapes-visible-window-drag`; pure window moves no longer enter the lightweight live-resize rendering path, so drawn shapes remain visible while dragging the app window.
+- Pivot Excel parity lane 2026-06-13 17:01:37 +03:00: resumed stale `pivot-excel-parity-20260613`, synced from `origin/main`, reviewed the branch diff and conflict-marker state, and verified the pivot/model/integration scope. Focused PivotTable model tests passed (`223` passed, `1` skipped), focused pivot round-trip integration passed (`1` passed), repository preflight passed, Release build passed with `0` warnings/errors, and default non-UI tests passed. UI tests were intentionally not run.
 - Restart recovery 2026-06-13 13:05:00 +03:00: after the computer restart, active workers Noether, Cicero, Aquinas, Nietzsche, Locke, and Volta were re-prompted to verify their worktrees, sync from `origin/main`, and continue. Cicero was specifically warned that `.worktrees/issue-092-inline-textbox-editing` / `codex/issue-092-inline-textbox-editing` appeared stale or broken and should be recreated safely if needed. Queued Issues 094 and 095 remain queued until a worker slot frees.
 
 ## Verification Policy
