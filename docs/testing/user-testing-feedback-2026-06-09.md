@@ -1,6 +1,6 @@
 # User Testing Feedback Report - 2026-06-09
 
-Last updated: 2026-06-13 12:38:24 +03:00
+Last updated: 2026-06-13 12:42:28 +03:00
 
 This report tracks live user-testing feedback for the FreeX desktop app. Each issue is assigned to a separate worker agent with full access in an isolated worktree/branch. Workers sync before starting, run repository preflight, Release build, and the default non-UI test lane, then merge verified fixes back to `main` and perform a live visual app validation.
 
@@ -100,6 +100,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 | 090 | File overlay Print screen currently shows a Print Preview button and placeholder text; implement print preview directly on this screen and put print/page options on the left. | 2026-06-12 19:16:44 +03:00 | Assigned to worker Nietzsche (`019ebc9f-91cd-7c91-bd2c-ee8122010e52`) at 2026-06-12 19:16:44 +03:00 with scope focused on backstage/File Print overlay, integrated preview, and print/page options. | Fixed in `codex/issue-090-print-backstage`, commit `e7d4a2684`; merged into local `main` before current main `20638a8df`. | Preflight passed, Release build passed, default tests passed, and live WPF validation confirmed File > Print now shows the preview directly in backstage with print/page options on the left and no placeholder preview button. Evidence: `E:\Users\anton\Documents\Claude\FreeX\.worktrees\issue-090-print-backstage\artifacts\issue-090-live-validation\backstage-print-integrated-preview-with-cell.png`. | Complete - merged |
 | 091 | Insert Comment currently opens a yellow window separate from the FreeX app window; it overlays other apps and does not move with FreeX. Replace it with an in-window FreeX-owned yellow popup, and replace the authoring dialog with inline editing inside that popup. | 2026-06-13 12:36:32 +03:00 | Assigned to worker Noether (`019ec056-e621-7ec0-820c-7f5c1ec075ce`) at 2026-06-13 12:36:32 +03:00 with scope focused on comments/notes display, comment creation/editing UI, in-window popup/adornment rendering/positioning, and related tests. | Pending | Pending live app check | In progress |
 | 092 | Inserting a textbox currently opens a dialog; replace that with inline editing within the textbox itself, and make double-clicking an existing textbox enter edit mode. | 2026-06-13 12:38:24 +03:00 | Assigned to worker Cicero (`019ec058-968b-7f63-9367-208c7bfc62be`) at 2026-06-13 12:38:24 +03:00 with scope focused on drawing text box insertion, inline editor/adornment/input handling, double-click edit mode, textbox model/commands if needed, and focused tests. | Pending | Pending live app check | In progress |
+| 093 | Header & Footer dialog is too crowded and not intuitive; redesign it so header/footer editing, presets, insertion commands, first/even page variants, picture controls, and page options are easier to understand and no longer feel cramped. | 2026-06-13 12:42:28 +03:00 | Assigned to worker Aquinas (`019ec05c-59ee-7e41-a4ae-1ca154142ee4`) at 2026-06-13 12:42:28 +03:00 with the user screenshot attached, scope focused on Header & Footer dialog/page setup UI and related tests. | Pending | Pending live app check | In progress |
 
 ## Worker Results
 
@@ -195,6 +196,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 - Issue 090: preflight passed, Release build passed, default tests passed, and live WPF validation passed. Nietzsche merged `codex/issue-090-print-backstage`; File/backstage Print now shows the print preview directly with print/page options on the left instead of a placeholder preview button/text.
 - Issue 091: assigned to Noether (`019ec056-e621-7ec0-820c-7f5c1ec075ce`). Scope is comment/note UI parity: replace the separate top-level yellow comment window and authoring dialog with an in-window FreeX-owned yellow popup that supports inline editing and moves/clips with the app.
 - Issue 092: assigned to Cicero (`019ec058-968b-7f63-9367-208c7bfc62be`). Scope is text box editing parity: inserting a textbox should enter inline editing within the textbox instead of opening a dialog, and double-clicking an existing textbox should re-enter edit mode.
+- Issue 093: assigned to Aquinas (`019ec05c-59ee-7e41-a4ae-1ca154142ee4`) with the user screenshot. Scope is Header & Footer dialog UX: reduce crowding, make the active header/footer section and insertion target obvious, preserve presets/tokens/picture/options, and live-validate the redesigned dialog.
 
 ## Verification Policy
 
