@@ -1,6 +1,6 @@
 # User Testing Feedback Report - 2026-06-09
 
-Last updated: 2026-06-13 17:38:48 +03:00
+Last updated: 2026-06-13 17:44:12 +03:00
 
 This report tracks live user-testing feedback for the FreeX desktop app. Each issue is assigned to a separate worker agent with full access in an isolated worktree/branch. Workers sync before starting, run repository preflight, Release build, and the default non-UI test lane, then merge verified fixes back to `main` and perform a live visual app validation.
 
@@ -113,6 +113,9 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 | 103 | Grouping across several existing groups merges them into one and duplicates/doubles the new group; grouping the outer range first and then creating sublevels works. Grouping over existing sibling groups should preserve them as sublevels and create one outer group. | 2026-06-13 17:36:19 +03:00 | Assigned to worker Mill (`019ec169-dc99-7ad3-aece-173cebc186f1`) at 2026-06-13 17:36:19 +03:00 with scope focused on row/column outline grouping hierarchy, model/command/rendering behavior, regression tests, and live WPF validation. | Pending. | Pending. | In progress |
 | 104 | Spell Check still does nothing: it immediately says spell check is complete and does not catch obvious spelling errors. | 2026-06-13 17:37:33 +03:00 | Assigned to worker Sagan (`019ec16a-f442-73b0-908f-7ca04d277eef`) at 2026-06-13 17:37:33 +03:00 with scope focused on Spell Check/proofing workflow, misspelling detection, clean-sheet completion behavior, focused tests, and live WPF validation. | Pending. | Pending. | In progress |
 | 105 | Workbook Statistics should include more useful metrics, expose selectable text, and provide a Copy to Clipboard button. | 2026-06-13 17:38:48 +03:00 | Assigned to worker Harvey (`019ec16c-20fb-7133-baf6-c6f4b2b8ab0a`) at 2026-06-13 17:38:48 +03:00 with scope focused on Workbook Statistics metrics, selectable/copyable dialog text, focused tests, and live WPF validation. | Pending. | Pending. | In progress |
+| 106 | View ribbon Normal, Page Break Preview, and Page Layout buttons should behave like a mutually exclusive view-mode group, but multiple buttons can appear active or state does not update exclusively. | 2026-06-13 17:41:33 +03:00 | Assigned to worker Fermat (`019ec16e-aa2f-7340-9262-d2887608ad4a`) at 2026-06-13 17:41:33 +03:00 with scope focused on View ribbon mode controls/state, view-mode command binding, focused tests, and live WPF validation. | Pending. | Pending. | In progress |
+| 107 | Page Layout view adds dotted gray lines at the top and bottom of the viewport that stay fixed when scrolling; page boundary/gap lines should scroll with document/page content or be replaced by an Excel-like boundary. | 2026-06-13 17:42:52 +03:00 | Queued at 2026-06-13 17:42:52 +03:00 because the worker pool was full. Next free worker should take the Page Layout rendering/scroll behavior scope and coordinate with Issue 106 if shared view-mode files overlap. | Pending. | Pending. | Queued |
+| 108 | Dragging charts to move them only redraws after dropping; chart objects should move in realtime while dragging, like pictures and shapes. | 2026-06-13 17:44:12 +03:00 | Queued at 2026-06-13 17:44:12 +03:00 because the worker pool was full and the issue likely overlaps the active chart worklane/object-interaction files. Assign after a worker frees, preferably after chart-lane coordination confirms non-overlap. | Pending. | Pending. | Queued |
 
 ## Worker Results
 
