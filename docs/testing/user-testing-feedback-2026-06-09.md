@@ -1,6 +1,6 @@
 # User Testing Feedback Report - 2026-06-09
 
-Last updated: 2026-06-13 12:45:51 +03:00
+Last updated: 2026-06-13 12:48:06 +03:00
 
 This report tracks live user-testing feedback for the FreeX desktop app. Each issue is assigned to a separate worker agent with full access in an isolated worktree/branch. Workers sync before starting, run repository preflight, Release build, and the default non-UI test lane, then merge verified fixes back to `main` and perform a live visual app validation.
 
@@ -102,6 +102,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 | 092 | Inserting a textbox currently opens a dialog; replace that with inline editing within the textbox itself, and make double-clicking an existing textbox enter edit mode. | 2026-06-13 12:38:24 +03:00 | Assigned to worker Cicero (`019ec058-968b-7f63-9367-208c7bfc62be`) at 2026-06-13 12:38:24 +03:00 with scope focused on drawing text box insertion, inline editor/adornment/input handling, double-click edit mode, textbox model/commands if needed, and focused tests. | Pending | Pending live app check | In progress |
 | 093 | Header & Footer dialog is too crowded and not intuitive; redesign it so header/footer editing, presets, insertion commands, first/even page variants, picture controls, and page options are easier to understand and no longer feel cramped. | 2026-06-13 12:42:28 +03:00 | Assigned to worker Aquinas (`019ec05c-59ee-7e41-a4ae-1ca154142ee4`) at 2026-06-13 12:42:28 +03:00 with the user screenshot attached, scope focused on Header & Footer dialog/page setup UI and related tests. | Pending | Pending live app check | In progress |
 | 094 | Insert Symbol dialog is weird: it lists only about 20-30 symbols per set, 4 fonts, 8 sets, and 10 special characters, and each symbol looks like a button. Improve the UX and provide a more optimal layout/catalog. | 2026-06-13 12:45:51 +03:00 | Assigned to worker Pasteur (`019ec05f-6eb9-7a70-bc90-b8af266f26a5`) at 2026-06-13 12:45:51 +03:00 with scope focused on Insert Symbol/Special Characters dialog, symbol data/source, insertion command plumbing if needed, and focused tests. | Pending | Pending live app check | In progress |
+| 095 | Small chart icons have disappeared in the Insert ribbon Charts group; screenshot shows PivotTable/Table and Sparkline icons visible, but the Charts group command area is blank/partial. Restore the small chart icons and labels without regressing the earlier large chart icon fix. | 2026-06-13 12:48:06 +03:00 | Assigned to worker Boole (`019ec061-830a-7c80-bebf-aca69d3dc461`) at 2026-06-13 12:48:06 +03:00 with the user screenshot attached, scope focused on Insert ribbon chart command presentation/icon planning/rendering and focused tests. | Pending | Pending live app check | In progress |
 
 ## Worker Results
 
@@ -199,6 +200,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 - Issue 092: assigned to Cicero (`019ec058-968b-7f63-9367-208c7bfc62be`). Scope is text box editing parity: inserting a textbox should enter inline editing within the textbox instead of opening a dialog, and double-clicking an existing textbox should re-enter edit mode.
 - Issue 093: assigned to Aquinas (`019ec05c-59ee-7e41-a4ae-1ca154142ee4`) with the user screenshot. Scope is Header & Footer dialog UX: reduce crowding, make the active header/footer section and insertion target obvious, preserve presets/tokens/picture/options, and live-validate the redesigned dialog.
 - Issue 094: assigned to Pasteur (`019ec05f-6eb9-7a70-bc90-b8af266f26a5`). Scope is Insert Symbol dialog UX: expand the useful symbol/special-character catalog, improve font/subset navigation and layout density, avoid heavy button-like symbol cells, preserve insertion semantics, and live-validate the dialog.
+- Issue 095: assigned to Boole (`019ec061-830a-7c80-bebf-aca69d3dc461`) with the user screenshot. Scope is Insert ribbon chart command presentation: restore the small chart icons/labels in the Charts group while preserving PivotTable/Table/Sparkline icons and the earlier large/collapsed chart icon fix.
 
 ## Verification Policy
 
