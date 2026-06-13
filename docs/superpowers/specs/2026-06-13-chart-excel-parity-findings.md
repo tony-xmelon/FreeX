@@ -31,33 +31,43 @@ verify them on the contact sheet.
    exponential/power trendline R² from the `ln y` regression, not original-scale
    residuals. `TryCalculateRSquared` gained a `logTransformY` flag set for those types.
 
-## Residual file-fidelity gaps (within tolerance, actionable)
+## File-fidelity work (from a FreeX vs Excel-native Column chart XML diff)
 
-A FreeX vs Excel-native chart XML diff of a clustered **Column** chart (FreeX 2890 B
-vs Excel 8188 B; gate hash 88 / threshold 96) found FreeX omits, relative to Excel
-native:
+FreeX's clustered Column `chart1.xml` (2890 B) vs Excel native (8188 B) omitted:
 
-- **`<c:gapWidth val="219"/>` and `<c:overlap val="-27"/>`** for clustered bar/column.
-  FreeX writes neither when `BarGapWidth`/`BarOverlap` are null, so Excel falls back to
-  the OOXML schema defaults (150 / 0), making FreeX's clustered bars wider and touching
-  vs Excel's UI defaults (219 / −27). Fix: writer emits 219/−27 for clustered bar/column
-  when null, AND extend `NormalizeExcelNativeDefaultBarGapWidth/Overlap`
-  (`XlsxChartPartReader.Bar.cs`, currently stacked-only) to normalize clustered 219/−27
-  → null for round-trip stability. Guard existing chart round-trip/schema tests.
-- **`<c:majorGridlines/>` on the value axis** — Excel's default column chart shows
-  horizontal major gridlines; FreeX's `ShowYAxisMajorGridlines` defaults false, so the
-  written chart has none. Matching Excel means defaulting value-axis major gridlines on
-  for the families Excel does (column/bar/line/area) — broad: affects the renderer and
-  many tests, so do it deliberately.
-- **`<c:txPr>` axis text properties, `roundedCorners`, `dispBlanksAs`, `plotVisOnly`,
-  `autoTitleDeleted`** — minor chart-level elements Excel always writes.
-- **`colors1.xml` + `style1.xml`** chart style parts — Excel native classic charts
-  include the color-mapping and chart-style parts; FreeX emits neither for classic
-  charts. A larger feature (emit `cs:colorStyle`/`cs:chartStyle` parts + content types
-  + rels), parallel to the chartEx style-parts work.
+4. **gapWidth/overlap for clustered bar/column — FIXED (`240ec9219`).** FreeX emitted
+   neither for clustered Column/Bar, so Excel fell back to schema defaults (150/0) vs
+   Excel's 219/−27. The writer now emits 219/−27 for clustered (it already did for
+   stacked), the reader normalizes those defaults back to null (round-trip-safe), and a
+   latent inversion was corrected (stacked overlap stays −27, *verified* against Excel
+   native output; gapWidth=219 for every grouping). Empirically dropped the **Bar**
+   file-fidelity hash 70→61; Column stayed ~88 (its gap is dominated by gridlines below;
+   perceptual hash also has ±2 run-to-run noise from Excel re-rendering).
 
-These all *pass* the visual gate today; closing them would tighten the file-fidelity
-hash distances (Column 88, Bar 70, ThreeDColumn/ThreeDSurface 68) further.
+## Residual file-fidelity gaps (within tolerance)
+
+- **Value-axis `<c:majorGridlines/>` for column/bar/line/area** — the dominant remaining
+  Column-chart divergence. Excel shows them by default; FreeX only does for *stacked*
+  bar/column (`ShouldUseExcelNativeValueAxisMajorGridlineStyle`). Extending the write-time
+  default to clustered/line/area is NOT round-trip-safe with the current `bool`
+  `ShowYAxisMajorGridlines`: a chart with gridlines off reloads as on (the corpus
+  round-trip test `XlsxCorpusRunnerTests.GeneratedCorpusRows_RoundTripThroughXlsxAdapter`
+  catches this), and "default-on" makes "explicitly off" unrepresentable. Doing it right
+  needs a **3-state (nullable) `ShowYAxisMajorGridlines`** (null=Excel default per family,
+  true=on, false=off) threaded through reader/writer/renderer — a deliberate refactor,
+  not a quick fix. (An attempt to do it write-time-only was reverted for breaking the
+  corpus round-trip.)
+- **`colors1.xml` + `style1.xml`** chart style parts — Excel native classic charts include
+  color-mapping and chart-style parts; FreeX emits neither for classic charts. A larger
+  feature (emit `cs:colorStyle`/`cs:chartStyle` parts + content types + rels), parallel to
+  the chartEx style-parts work. Note FreeX's *saved* colors already render correctly in
+  Excel (contact-sheet col 2 matched native), so impact is mostly subtle styling.
+- **Non-visual chart-level elements** (`roundedCorners`, `plotVisOnly`, `dispBlanksAs`,
+  `autoTitleDeleted`, axis `txPr`) — FreeX omits them at their default; Excel always
+  writes them. Schema-equivalent (omitted default == explicit default), so they do NOT
+  affect rendering or the visual hash — purely structural. Low priority.
+
+All charts *pass* the visual gate today; these tighten file-fidelity hashes further.
 
 ## Other residual
 
