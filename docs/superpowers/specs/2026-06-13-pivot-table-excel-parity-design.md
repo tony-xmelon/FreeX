@@ -136,11 +136,14 @@ next phase starts.
   tests with hand-computed Excel ground-truth values; schema validity is unaffected
   because the fixes write only plain cell values (numbers/text/blanks) and existing
   Core.IO pivot-schema tests already cover the pivot parts.
-  - LIMITATION: opening the saved workbook in a live Excel COM instance is not
-    possible in this environment — `Workbooks.Open` fails with the known
-    non-interactive-desktop error ("Unable to get the Open property"), consistent
-    with the project note that the local Excel instance cannot author/host pivots.
-    Real-Excel visual confirmation is therefore deferred to an interactive session.
+  - LIMITATION: live-Excel verification of pivots is out of scope by the user's
+    explicit constraint ("the local Excel instance does not have pivot tables, so
+    cannot use it"). Correctness is therefore anchored to Excel's documented
+    semantics via ground-truth unit tests, not a live Excel comparison. (A COM open
+    attempt failed with "Unable to get the Open property", the known PowerShell
+    late-binding failure on this machine's non-English Office UI; the general
+    workaround is a C# console with `Thread.CurrentCulture = en-US`, but it is moot
+    here since the local Excel cannot host pivots regardless.)
 
 ## Sequencing & Risk
 
