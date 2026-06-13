@@ -1,0 +1,145 @@
+# PivotTable Excel-Parity Hardening — Design
+
+Date: 2026-06-13
+Status: Approved for phased implementation
+Branch base: `main`
+
+## Context
+
+FreeX already has an extensive PivotTable implementation: model
+(`PivotTableModel`), refresh/materialization engine
+(`PivotTableRefreshService.*`), XLSX read/write, slicers/timelines, styles,
+GETPIVOTDATA, calculated fields/items, Show Values As, filters, sorting,
+grouping, and a large UI surface. The Insert-tab parity doc already classifies
+PivotTable as "Partial" with a very long list of working sub-features.
+
+This effort is **parity hardening**, not greenfield: find and fix concrete,
+verifiable divergences from Excel's documented behavior. Because the local Excel
+instance cannot author reference PivotTables, correctness is anchored to Excel's
+documented semantics, and visual/round-trip fidelity is verified by (a) tests
+asserting exact materialized cell positions/values and (b) saving FreeX-authored
+pivots to XLSX, validating schema with OpenXmlValidator, and opening in the real
+Excel COM instance to confirm the workbook loads and renders without repair.
+
+## Confirmed Gaps (with evidence)
+
+### G1 — Calculated fields with non-linear formulas compute the wrong number (P1, data integrity)
+`GetDataFieldValue` (`PivotTableRefreshService.Aggregates.cs:244`) evaluates a
+calculated field's formula **per source row** and returns it as a synthetic cell
+value; `Aggregate` then sums those per-row results. Excel evaluates a calculated
+field on the **sum of each constituent field** within the group. Linear formulas
+(`Revenue*0.1`) coincidentally match; non-linear ones (`Revenue/Units`,
+`FieldA*FieldB`) are silently wrong: FreeX yields `Σ(Rᵢ/Uᵢ)`, Excel yields
+`(ΣRᵢ)/(ΣUᵢ)`. Also: Excel always aggregates constituent fields with SUM
+regardless of the data field's summary function.
+
+### G2 — "% of Parent" Show Values As modes are wrong for nested fields (P1)
+`DisplayAggregate` (`Aggregates.cs:150-164`) maps
+`PercentOfParentRowTotal → RowTotalRows`, `PercentOfParentColumnTotal →
+ColumnTotalRows`, `PercentOfParentTotal → GrandTotalRows` — i.e. identical to the
+non-parent percent modes. Correct only at a single nesting level (which is all
+the existing test exercises). Excel divides by the **immediate parent group's**
+total. `PercentOfParentTotal` additionally has a configurable base field whose
+parent total is the denominator.
+
+### G3 — Subtotals render at only one nesting level (P1, visual + functional)
+`WriteRowPivot` (`Writers.cs:47`) and `WriteMatrixPivot` (`MatrixWriter.cs:84`)
+build the subtotal key with `Take(rowFields.Count - 1)`, producing subtotals only
+for the innermost parent level. With 3+ row fields Excel emits subtotals at
+**every** outer level. Confirmed by
+`Refresh_CompactReportLayoutUsesSubtotaledFieldCaptionForNestedSubtotals`, which
+asserts only Quarter-level subtotals for a 3-field pivot and no Region-level
+subtotal.
+
+### G4 — Nested column fields produce no column subtotals (P2)
+`WriteMatrixPivot` writes one value column per **leaf** column key plus the grand
+total; outer column groups get no subtotal column. Excel emits a subtotal column
+per outer column group (subject to ShowSubtotals).
+
+### G5 — Compact layout space-joins nested row labels (P2, visual)
+`Writers.cs:75` / `MatrixWriter.cs:138` write `string.Join(" ", key.Values)` into
+a single cell ("East Q1"). Excel compact layout places each row-field level on its
+**own indented row** (outer item, then indented inner items), with the data value
+for an outer row being that group's subtotal (or blank). This is the largest
+visual divergence and the most test-churn-heavy change.
+
+### G6 — Calculated items only work for a single row-only field (P2)
+`Writers.cs:109` materializes calculated items only when `rowFields.Count == 1`
+and only in the row-only layout; matrix and nested layouts ignore them.
+
+### G7 — Min/Max/Product/StdDev/Var of an all-non-numeric group return 0 (P3)
+`Aggregate` (`Aggregates.cs:68-87`) returns `0` when `numericCount == 0`. Excel
+shows a blank cell for Min/Max/Product/StdDev/Var when a non-empty group has no
+numeric values. (Empty intersections are already handled via `isEmptyIntersection`.)
+
+### G8 — Locale-sensitive string matching in Show Values As (P3, consistency)
+`RunningTotal`/`RankValue`/`BaseItemAggregate`/`EvaluateCalculatedItem`
+(`Aggregates.cs:183-282`) use `CurrentCultureIgnoreCase`. Same Turkish-I class the
+2026-06-11 comprehensive review flagged for GETPIVOTDATA. Switch to `Ordinal`/
+`OrdinalIgnoreCase` to match item identity by codepoint.
+
+## Approach
+
+Phased, each phase independently verifiable and shippable. File contention is
+high across `Aggregates.cs`, `Writers.cs`, `MatrixWriter.cs`, so phases run
+**sequentially** (per FreeX's low-contention sequential-work convention), each
+driven by a sonnet implementation agent using TDD, verified inline before the
+next phase starts.
+
+- **Phase 1 — Aggregation correctness** (`Aggregates.cs`, `PivotCalculatedExpressionEvaluator.cs`)
+  - G1: compute calculated fields on summed constituent fields. Introduce a
+    field-sum resolver passed to the expression evaluator; aggregate constituent
+    fields with SUM per group, then evaluate the formula once per group.
+  - G7: return blank (not 0) for Min/Max/Product/StdDev/Var with zero numerics;
+    thread a "no value" sentinel through `DisplayAggregate`/`SetPivotValueCell`.
+  - G8: switch item-identity comparisons to ordinal.
+  - Tests: non-linear calc field (`Revenue/Units`) vs hand-computed Excel result;
+    min over text-only group → blank; ordinal item matching.
+
+- **Phase 2 — Multi-level subtotals** (`Writers.cs`, `MatrixWriter.cs`)
+  - G3: emit a subtotal row for every outer nesting level that changes, using the
+    correct subtotaled-field caption per level; honor top/bottom placement,
+    blank-line-after-items, compact captions.
+  - Tests: 3-field row pivot asserts subtotals at level 1 AND level 2 with correct
+    captions and sums; matrix variant; tabular and compact.
+
+- **Phase 3 — Parent-total Show Values As** (`Aggregates.cs`, writer context plumbing)
+  - G2: pass immediate-parent group rows into `PivotDisplayContext`; compute
+    `% of Parent Row/Column/Total` against the parent subtotal; honor the base
+    field for `PercentOfParentTotal`.
+  - Tests: 2-level nested row pivot, `% of Parent Row Total` equals child/parent
+    subtotal ratio; parent column; parent total with base field.
+
+- **Phase 4 — Nested column subtotals** (`MatrixWriter.cs`, column-key plumbing)
+  - G4: insert subtotal columns for outer column groups.
+  - Tests: 2-level column pivot emits per-outer-group subtotal columns.
+
+- **Phase 5 — Calculated items beyond single row field** (`Writers.cs`, `MatrixWriter.cs`)
+  - G6: materialize calculated items in matrix and nested layouts.
+
+- **Phase 6 — Compact layout true rendering** (`Writers.cs`, `MatrixWriter.cs`, styles) — largest, last
+  - G5: render one indented row per row-field level; outer-row value = subtotal or
+    blank. Update the compact-layout tests to the Excel-accurate shape.
+
+- **Visual/round-trip verification** (after Phases 1–4): author a 3-level row +
+  2-level column pivot with subtotals, grand totals, a calculated field, and a
+  parent-total data field; save XLSX; OpenXmlValidator clean; open in real Excel
+  COM; confirm load-without-repair and spot-check rendered values.
+
+## Sequencing & Risk
+
+- Phases 1–4 are the highest value (silent-wrong-number and missing-structure
+  bugs). Phase 5 is additive. Phase 6 is visual-correctness but the most
+  disruptive (rewrites compact materialization and rewrites several existing
+  tests), so it goes last and may be split out if it grows.
+- Each phase gated by: `dotnet build FreeX.slnx -c Release` +
+  `dotnet test FreeX.DefaultTests.slnx -c Release --no-build` green, plus the
+  phase's new tests.
+- Backward-compat: existing pivot round-trip/XLSX tests must stay green except the
+  compact-layout tests intentionally updated in Phase 6.
+
+## Out of Scope
+
+Power Pivot / data model / OLAP cubes, external/data-model cache execution,
+Recommended PivotTables heuristics, and full Excel style-gallery theme semantics
+(all already documented as excluded/partial in the parity surface).
