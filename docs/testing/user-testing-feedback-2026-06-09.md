@@ -1,6 +1,6 @@
 # User Testing Feedback Report - 2026-06-09
 
-Last updated: 2026-06-13 12:51:52 +03:00
+Last updated: 2026-06-13 12:53:45 +03:00
 
 This report tracks live user-testing feedback for the FreeX desktop app. Each issue is assigned to a separate worker agent with full access in an isolated worktree/branch. Workers sync before starting, run repository preflight, Release build, and the default non-UI test lane, then merge verified fixes back to `main` and perform a live visual app validation.
 
@@ -105,6 +105,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 | 095 | Small chart icons have disappeared in the Insert ribbon Charts group; screenshot shows PivotTable/Table and Sparkline icons visible, but the Charts group command area is blank/partial. Restore the small chart icons and labels without regressing the earlier large chart icon fix. | 2026-06-13 12:48:06 +03:00 | Assigned to worker Boole (`019ec061-830a-7c80-bebf-aca69d3dc461`) at 2026-06-13 12:48:06 +03:00 with the user screenshot attached, scope focused on Insert ribbon chart command presentation/icon planning/rendering and focused tests. | Pending | Pending live app check | In progress |
 | 096 | Insert Sparkline crashes the app. Reproduce and fix the sparkline insertion crash path, including dialog OK/Cancel, range handling, and visible sparkline rendering after insertion. | 2026-06-13 12:49:54 +03:00 | Assigned to worker Nietzsche (`019ec063-28f6-70d3-92c9-e843b3dcf850`) at 2026-06-13 12:49:54 +03:00 as a priority crash issue, with scope focused on Sparkline insertion dialog/command/model/rendering and related tests. | Pending | Pending live app check | In progress |
 | 097 | Page Layout ribbon is missing a `Page Setup` command in the Page Setup section; add a visible command that opens the appropriate Page Setup dialog/surface. | 2026-06-13 12:51:52 +03:00 | Added to active Page Layout/Page Setup worker Aquinas (`019ec05c-59ee-7e41-a4ae-1ca154142ee4`) at 2026-06-13 12:51:52 +03:00 because it overlaps Issue 093's Header & Footer/Page Setup dialog and ribbon surface ownership. | Pending | Pending live app check | In progress |
+| 098 | Page Layout ribbon Scale to Fit section would be more optimally laid out if the Width, Height, and Scale dropdowns are vertically stacked. | 2026-06-13 12:53:45 +03:00 | Added to active Page Layout ribbon worker Aquinas (`019ec05c-59ee-7e41-a4ae-1ca154142ee4`) at 2026-06-13 12:53:45 +03:00 because it shares Issue 093/097 Page Layout ribbon ownership. | Pending | Pending live app check | In progress |
 
 ## Worker Results
 
@@ -205,6 +206,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 - Issue 095: assigned to Boole (`019ec061-830a-7c80-bebf-aca69d3dc461`) with the user screenshot. Scope is Insert ribbon chart command presentation: restore the small chart icons/labels in the Charts group while preserving PivotTable/Table/Sparkline icons and the earlier large/collapsed chart icon fix.
 - Issue 096: assigned to Nietzsche (`019ec063-28f6-70d3-92c9-e843b3dcf850`) as a priority crash issue. Scope is Sparkline insertion stability: reproduce/fix the crash, cover Line/Column/Win-Loss insertion paths, range/dialog validation, rendering, and live-validate insertion no longer freezes or crashes.
 - Issue 097: added to Aquinas (`019ec05c-59ee-7e41-a4ae-1ca154142ee4`) because it shares Page Layout/Page Setup ribbon and dialog ownership with Issue 093. Scope is to add a visible Page Setup command in the Page Setup ribbon section that opens the appropriate Page Setup dialog/surface and live-validate the command routing.
+- Issue 098: added to Aquinas (`019ec05c-59ee-7e41-a4ae-1ca154142ee4`) because it shares Page Layout ribbon ownership with Issues 093/097. Scope is to stack Width, Height, and Scale controls vertically in the Scale to Fit group, preserve command behavior, avoid clipping/ellipsis, and live-validate the layout.
 
 ## Verification Policy
 
