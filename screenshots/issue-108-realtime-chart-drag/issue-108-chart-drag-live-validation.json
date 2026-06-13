@@ -1,0 +1,70 @@
+﻿{
+    "Issue":  108,
+    "Scenario":  "FreeX WPF launched workbook chart drag move realtime validation",
+    "TimestampLocal":  "2026-06-13 19:47:12 +03:00",
+    "AppExe":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\issue-108-realtime-chart-drag\\src\\FreeX.App.Host\\bin\\Release\\net10.0-windows10.0.19041.0\\FreeX.App.Host.exe",
+    "Workbook":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\issue-108-realtime-chart-drag\\screenshots\\chart-object-selection-tour\\freex_chart_object_selection_saved.fxl",
+    "EvidenceDirectory":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\issue-108-realtime-chart-drag\\screenshots\\issue-108-realtime-chart-drag",
+    "Captures":  [
+                     {
+                         "State":  "before-selected",
+                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\issue-108-realtime-chart-drag\\screenshots\\issue-108-realtime-chart-drag\\issue-108-chart-drag-before-selected.png"
+                     },
+                     {
+                         "State":  "mid-drag-mouse-button-held",
+                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\issue-108-realtime-chart-drag\\screenshots\\issue-108-realtime-chart-drag\\issue-108-chart-drag-mid-mousedown.png"
+                     },
+                     {
+                         "State":  "final-dropped",
+                         "Path":  "E:\\Users\\anton\\Documents\\Claude\\FreeX\\.worktrees\\issue-108-realtime-chart-drag\\screenshots\\issue-108-realtime-chart-drag\\issue-108-chart-drag-final-dropped.png"
+                     }
+                 ],
+    "DpiScale":  1.5,
+    "GridScreenRect":  {
+                           "Left":  30,
+                           "Width":  2224,
+                           "Top":  335,
+                           "Height":  988
+                       },
+    "ChartOriginalScreenRect":  {
+                                    "Left":  705,
+                                    "Width":  915,
+                                    "Top":  542,
+                                    "Height":  540
+                                },
+    "DragDeltaPixels":  {
+                            "Y":  120,
+                            "X":  255
+                        },
+    "DragDeltaDips":  {
+                          "Y":  80,
+                          "X":  170
+                      },
+    "ValidationStripWindowRect":  {
+                                      "Left":  1608,
+                                      "Width":  219,
+                                      "Top":  707,
+                                      "Height":  360
+                                  },
+    "PixelCounts":  {
+                        "MidDrag":  {
+                                        "Dark":  4924,
+                                        "Blue":  207,
+                                        "Total":  19800,
+                                        "Colored":  2645
+                                    },
+                        "Before":  {
+                                       "Dark":  0,
+                                       "Blue":  0,
+                                       "Total":  19800,
+                                       "Colored":  0
+                                   },
+                        "Final":  {
+                                      "Dark":  4924,
+                                      "Blue":  207,
+                                      "Total":  19800,
+                                      "Colored":  2645
+                                  }
+                    },
+    "Result":  "PASS: mid-drag screenshot contains chart pixels in the live target strip while the mouse button is still held; final drop remains at the same moved location."
+}
