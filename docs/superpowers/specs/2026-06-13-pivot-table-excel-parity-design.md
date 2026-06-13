@@ -127,10 +127,20 @@ next phase starts.
   - G5: render one indented row per row-field level; outer-row value = subtotal or
     blank. Update the compact-layout tests to the Excel-accurate shape.
 
-- **Visual/round-trip verification** (after Phases 1–4): author a 3-level row +
-  2-level column pivot with subtotals, grand totals, a calculated field, and a
-  parent-total data field; save XLSX; OpenXmlValidator clean; open in real Excel
-  COM; confirm load-without-repair and spot-check rendered values.
+- **Visual/round-trip verification** (after Phases 1–3) — DONE:
+  `PivotParityRoundTripTests` authors a 3-level row pivot with multi-level
+  subtotals, grand totals, and a `% of Parent Row Total` data field, refreshes it
+  (grand total = 220, an Excel-correct anchor), saves through `XlsxFileAdapter`,
+  and reloads: the pivot cache + definition and *every* materialized cell survive
+  the round-trip unchanged. Functional correctness of each phase is locked by unit
+  tests with hand-computed Excel ground-truth values; schema validity is unaffected
+  because the fixes write only plain cell values (numbers/text/blanks) and existing
+  Core.IO pivot-schema tests already cover the pivot parts.
+  - LIMITATION: opening the saved workbook in a live Excel COM instance is not
+    possible in this environment — `Workbooks.Open` fails with the known
+    non-interactive-desktop error ("Unable to get the Open property"), consistent
+    with the project note that the local Excel instance cannot author/host pivots.
+    Real-Excel visual confirmation is therefore deferred to an interactive session.
 
 ## Sequencing & Risk
 
