@@ -103,12 +103,18 @@ next phase starts.
   - Tests: 3-field row pivot asserts subtotals at level 1 AND level 2 with correct
     captions and sums; matrix variant; tabular and compact.
 
-- **Phase 3 — Parent-total Show Values As** (`Aggregates.cs`, writer context plumbing)
-  - G2: pass immediate-parent group rows into `PivotDisplayContext`; compute
-    `% of Parent Row/Column/Total` against the parent subtotal; honor the base
-    field for `PercentOfParentTotal`.
-  - Tests: 2-level nested row pivot, `% of Parent Row Total` equals child/parent
-    subtotal ratio; parent column; parent total with base field.
+- **Phase 3 — Parent-total Show Values As** (`Aggregates.cs`, writer context plumbing) — DONE
+  - G2: writers now pass the immediate-parent group rows into `PivotDisplayContext`
+    (`ParentRowRows`/`ParentColumnRows`). `% of Parent Row Total` divides by the
+    parent prefix total taken in the SAME column; `% of Parent Column Total` divides
+    by the parent column prefix total taken in the SAME row; outermost items fall
+    back to the grand total along that axis.
+  - RESIDUAL: base-field-driven `% of Parent Total` is not yet modeled (it needs a
+    selected base field whose parent total is the denominator); it currently falls
+    back to `% of Grand Total`. Deferred until the base-field model/UI path is wired.
+  - Tests: unambiguous 2-level row-only pivot (`% of Parent Row Total` =
+    child/parent-subtotal ratio, subtotal = subtotal/grand, grand = 100%); the
+    single-level matrix test corrected to same-column/same-row parent semantics.
 
 - **Phase 4 — Nested column subtotals** (`MatrixWriter.cs`, column-key plumbing)
   - G4: insert subtotal columns for outer column groups.
