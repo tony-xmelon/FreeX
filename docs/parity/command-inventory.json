@@ -868,6 +868,11 @@
           "notes": ""
         },
         {
+          "name": "Page Setup",
+          "status": "Implemented",
+          "notes": "Visible Page Layout command opens the Page Setup dialog on the Page tab"
+        },
+        {
           "name": "Scale to Fit",
           "status": "Implemented",
           "notes": ""
