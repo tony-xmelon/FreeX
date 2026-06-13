@@ -1,6 +1,6 @@
 # User Testing Feedback Report - 2026-06-09
 
-Last updated: 2026-06-13 17:37:33 +03:00
+Last updated: 2026-06-13 17:38:48 +03:00
 
 This report tracks live user-testing feedback for the FreeX desktop app. Each issue is assigned to a separate worker agent with full access in an isolated worktree/branch. Workers sync before starting, run repository preflight, Release build, and the default non-UI test lane, then merge verified fixes back to `main` and perform a live visual app validation.
 
@@ -112,6 +112,7 @@ This report tracks live user-testing feedback for the FreeX desktop app. Each is
 | 102 | Forecast button produced a weird result: generated forecast output/chart look disconnected and cramped, with confidence-bound headers/legend/layout overlapping or hard to read. | 2026-06-13 17:34:08 +03:00 | Assigned to worker Nash (`019ec167-d435-70d3-a741-60553bd262a8`) at 2026-06-13 17:34:08 +03:00 with screenshot reference and scope focused on Forecast command output table headers/widths, forecast/confidence chart series continuity, chart layout/legend readability, focused tests, and live WPF validation. | Pending. | Pending. | In progress |
 | 103 | Grouping across several existing groups merges them into one and duplicates/doubles the new group; grouping the outer range first and then creating sublevels works. Grouping over existing sibling groups should preserve them as sublevels and create one outer group. | 2026-06-13 17:36:19 +03:00 | Assigned to worker Mill (`019ec169-dc99-7ad3-aece-173cebc186f1`) at 2026-06-13 17:36:19 +03:00 with scope focused on row/column outline grouping hierarchy, model/command/rendering behavior, regression tests, and live WPF validation. | Pending. | Pending. | In progress |
 | 104 | Spell Check still does nothing: it immediately says spell check is complete and does not catch obvious spelling errors. | 2026-06-13 17:37:33 +03:00 | Assigned to worker Sagan (`019ec16a-f442-73b0-908f-7ca04d277eef`) at 2026-06-13 17:37:33 +03:00 with scope focused on Spell Check/proofing workflow, misspelling detection, clean-sheet completion behavior, focused tests, and live WPF validation. | Pending. | Pending. | In progress |
+| 105 | Workbook Statistics should include more useful metrics, expose selectable text, and provide a Copy to Clipboard button. | 2026-06-13 17:38:48 +03:00 | Assigned to worker Harvey (`019ec16c-20fb-7133-baf6-c6f4b2b8ab0a`) at 2026-06-13 17:38:48 +03:00 with scope focused on Workbook Statistics metrics, selectable/copyable dialog text, focused tests, and live WPF validation. | Pending. | Pending. | In progress |
 
 ## Worker Results
 
