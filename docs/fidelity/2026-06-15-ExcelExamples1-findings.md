@@ -21,11 +21,41 @@ feature** gaps.
 - [-] **LinkedDataTypes** (`xl/richData/*`) — rich/linked data types, out of scope.
 - [-] **DataModel** (`xl/model/item.data`) — Power Pivot data model, out of scope.
 
-## 3. Formula recalc parity — 956 / 3575 mismatches (26.7%)
+## 3. Formula recalc parity — 956 → **327** mismatches (after fixes below)
 FreeX recalc (RecalcEngine.RecalculateAllFormulas) vs Excel cached `<v>`. Load values are correct;
-these are **edit-time** divergences. Multiple distinct root causes (this is a long road):
+these are **edit-time** divergences. NOTE: ~277 of the original "646" were date-serial-vs-number
+representation false positives (a date and its serial number display identically); the harness now
+normalizes these, so the **true** progression is 956 → **327**. Progress:
 
-### 3a. [~] Array-criteria conditional aggregates (CONFIRMED root cause, fix dispatched)
+- [x] **3a array-criteria conditional aggregates** — fixed (`fc4f8e7f5`), −310. (Budget/Settings → 0.)
+- [x] **named formulas (scalar)** — `DateOfFirst=DATE(...)`, `FirstWeekDay=WEEKDAY(...)` now evaluate
+  (`63e95b27d`), −42 (Shift Calendar 84→42). Array-valued names still partial (see 3e).
+
+Remaining 327, by root cause:
+
+### 3e. [ ] Dynamic-array SPILL engine on the `Calc`/`Calc (2)` sheets — BIGGEST remaining (~212)
+*Calendar* (96) and *Any Month* (52) only reference `Calc!AA/R…`; *Calc* itself (64) is the engine.
+Those cells are spill targets of loaded `<f t="array" ref="D13:J18">` formulas using
+`LET/SEQUENCE/FILTER/MAP/LAMBDA/XLOOKUP/TEXTJOIN` over **array-valued named formulas**
+(`monthly.calendar`, `month.nums`, `cal.year`, `week.start`) and structured table columns. On recalc the
+spill targets go blank. Sub-gaps: (1) **`ANCHORARRAY` is NOT implemented** (the spilled-range `#` operator
+— used by `MAP(ANCHORARRAY(Z13),LAMBDA(...))`, `ANCHORARRAY(Z6)-ANCHORARRAY(X6)`); (2) loaded `t="array"`
+formulas may not re-spill in full recalc (spill engine keys on `ArrayMode==Implicit`); (3) array-returning
+**named formulas** as FILTER operands. This is the frontier of modern dynamic arrays; the path to ~100%.
+
+### 3f. [ ] Whole-table structured ref `tblShifts[]` + VLOOKUP-array-in-IFERROR (Shift Calendar 42)
+`VLOOKUP(B5,tblShifts[],3)*(MONTH(B5)=$C$12)` — empty-selector whole-table ref `tblShifts[]` returns
+`#VALUE!`, and the `*RangeValue` isn't caught by the surrounding `IFERROR`. Bounded.
+
+### 3g. [ ] `filters.applied` named cell + pivot-cell cross-refs (Calc (2) 19, Calendar View 13)
+`'pvt Depts'!G4` (a PIVOT output cell) → blank on recalc (pivots aren't recomputed by the formula engine;
+minor blank-vs-0). And `filters.applied = 'Calc (2)'!$C$6` evaluates TRUE in FreeX vs FALSE in Excel →
+adds spurious "(6)" to text (e.g. "6 (6) people" vs "6 people"). Investigate `$C$6`'s formula.
+
+### 3b. [~] Date-function cluster — RE-MEASURED: WORKDAY's 119 were ALL date/number false positives
+(now 0). WEEKNUM (55) residual is mostly cascade from 3e (bad input dates). DATE/EDATE/EOMONTH small.
+
+### 3a-orig. [x] Array-criteria conditional aggregates (CONFIRMED root cause, FIXED `fc4f8e7f5`)
 `Budget!G4 = IFERROR(SUMPRODUCT(G7:G26, SUMIFS(freqs[Multiplication factor],freqs[Frequency],H7:H26))/12,0)`
 → cached 951, recalc **0**. The SUMIFS criteria arg `H7:H26` is a 20-cell **range**, so Excel returns a
 20-element array (consumed by SUMPRODUCT). FreeX apparently treats it as scalar / errors → `IFERROR→0`,
@@ -56,4 +86,20 @@ came from 3a/3b roots, e.g. `LEFT` wrapping a value that became `#DIV/0!`). Re-m
 
 ## 5. Charts — TBD (21 classic + 1 funnel chartEx). Run ChartFileCompare on this file.
 
-## 6. Visual per-sheet — TBD (needs app capture; no headless WYSIWYG renderer).
+## 6. Visual per-sheet — harness built (`tools/FreeX.SheetImageCompare`)
+Renders each sheet via `PrintRenderer.RenderWorksheet` → FixedDocument → PNG (36 sheets). Excel ground
+truth captured via COM `Range.CopyPicture` (32/36; 4 CopyPicture failures).
+- **Content + layout: FAITHFUL.** All cell values, text, table structure, side panels render correctly
+  and in the right places (verified Calendar, Budget, Invoice, highlight).
+- **Harness limitation — fills/colors/CF/table-banding NOT shown.** `PrintRenderer` renders text + grid
+  lines only; it omits cell fills, the dark header fill, table row-banding, and conditional-format fills
+  (e.g. *highlight* sheet: Excel has a blue title banner, dark header, blue row banding, orange date
+  cells — the FreeX **print** render is all white/black). This is a PRINT-renderer trait, NOT proof the
+  app's on-screen GridView lacks them (FreeX loads CF (77 rules) + tables (16) + fills correctly per the
+  inventory, and prior Partner-Dashboard work made the GridView render CF/tables/fills). **Color/CF visual
+  fidelity must be verified via the GridView app or a GridView-backed render harness**, not PrintRenderer.
+- Charts/images are not in the print render path (separate ChartRenderer) — see §5.
+
+### Tooling added this pass
+- `tools/FreeX.SheetFidelity` — automated load/feature/formula-parity/round-trip report (any .xlsx).
+- `tools/FreeX.SheetImageCompare` — per-sheet PNG render (content/layout) + optional Excel diff.
