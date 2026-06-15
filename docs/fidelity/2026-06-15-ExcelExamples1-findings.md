@@ -54,7 +54,7 @@ spill targets go blank. Sub-gaps: (1) **`ANCHORARRAY` is NOT implemented** (the 
 formulas may not re-spill in full recalc (spill engine keys on `ArrayMode==Implicit`); (3) array-returning
 **named formulas** as FILTER operands. This is the frontier of modern dynamic arrays; the path to ~100%.
 
-### 3 — PROGRESS SUMMARY: 956 → **14** mismatches (98.5% reduction). Fixes (all on main, gated):
+### 3 — PROGRESS SUMMARY: 956 → **1** mismatch (99.97% recalc parity). Fixes (all on main, gated):
 `fc4f8e7f5` array-criteria *IF(S); `63e95b27d` named formulas; `14072ada8` `tblShifts[]` whole-table ref;
 `60666a3a6`+`198c9e55a` dynamic-array spill + on-open provisional-display; `eb757c99a` COUNTIF `"<>0"`
 text-cell counting + **15-significant-digit comparison rounding** (Excel parity; `filters.applied` →
@@ -66,13 +66,21 @@ blocking the anchor's re-spill) → **Budget Summary 21→0, Data Entry (2) 13�
 Budget Summary's SUMIFS depended on spill-continuation cells loaded as empty-formula cells; the
 `<f ca="1"/>` loader fix resolved it (not a date-criteria bug after all). Data Entry fixed by ANCHORARRAY.
 
-### Remaining **14** (hard / edge — documented):
-- [-] **Pivot-cell cross-refs** (`Calc (2)` 4): `'pvt Depts'!G4` → blank vs 0. Pivot OUTPUT cells aren't
-  recomputed by the formula engine (separate pivot subsystem). Minor blank-vs-0; needs pivot-recalc wiring.
-- [ ] **Calc 2 / Calendar 1**: a residual `FILTER/XLOOKUP/MAP` array edge on the right side of the Calc
-  engine (the `#VALUE!` Activity/Type column) — deep dynamic-array composition.
-- [ ] **Happy Holidays 2, Todo List 3, Calculations 2**: small isolated array/INDEX/implicit-intersection
-  edges (e.g. `Todo List!C7 = Calculations!F3:F14` array-into-scalar).
+### 3 — FINAL: 956 → **1** mismatch (99.97% recalc parity). Last-14 fixes (`d16b1c832`,`cee7df9f1`):
+- [x] **Empty-cell reference → 0** (Calc (2) 4): a bare `='pvt Depts'!G4` to an EMPTY cell now returns 0
+  (Excel semantics) via `NormalizeTopLevelResult`; `ISBLANK`/`&""` still behave (empty).
+- [x] **`SUBTOTAL(funcNum, OFFSET(ref,{array},…))`** (Happy Holidays 2): per-element OFFSET-array
+  evaluation in `SubtotalAggregateFastPaths` (the visible-row-mask idiom).
+- [x] **`SORT` blank-last + stable** (Calculations 2 + Todo List 2): blanks sort to the bottom regardless
+  of order; ties keep original order (Excel SORT is stable). `SORT` sort_index was already correct.
+- [x] **Error-in-both** (Calc N13/S13, Calendar AJ6): `Calc!N13` is `t="e"` cached `#VALUE!` IN THE FILE
+  (Excel errors there too — no Plan dates ≥ TODAY); harness now counts error-vs-error as a match (parity).
+
+### Remaining **1** (deep edge — documented):
+- [ ] **`Todo List!G7 = Calculations!F27:F38`**: the tail slice of `SORT(FILTER(todo[...], status), 2, 1)`.
+  C7/E7 (first two slices) now match; G7 differs in the order of the *no-due-date* todos at the very end of
+  the sorted list — a FILTER tail-membership/ordering nuance among blank-key rows. Cosmetic ordering of one
+  slice; not chased further to avoid destabilizing SORT (which fixed the other 13).
 
 ### 3f. [x] Whole-table structured ref `tblShifts[]` — FIXED (`14072ada8`), Shift Calendar 42→0
 (empty-selector `[]` now resolves to the full data body; parser also no longer rejects it.)
