@@ -10,6 +10,28 @@
 
 ---
 
+## Implementation progress (2026-06-15)
+
+Branch `ribbon-modular-core-sp1`. **Phase 1 complete and green (11 core tests).** Phase 2 started.
+
+- [x] **Task 1** — `FreeX.Ribbon` + `FreeX.Ribbon.Tests` scaffolded, added to `FreeX.slnx` and `FreeX.DefaultTests.slnx`. Note: the test csproj needs `<Using Include="FluentAssertions" />` and `<Using Include="FreeX.Ribbon" />` (added).
+- [x] **Tasks 2–3** — enums relocated (own copies in `FreeX.Ribbon`; App.Host duplicates still present, reconciled in Task 9); full definition model + `RibbonAdaptiveGroup` record created.
+- [x] **Task 4** — `RibbonDefinitionBuilder` (+ `CheckBox`/`ComboBox`/`SplitButton`/`Dropdown`/`Gallery` builder methods beyond the plan's minimum).
+- [x] **Task 5** — validator + diagnostics (RBN001–RBN004).
+- [x] **Task 6** — command registry + contracts.
+- [x] **Task 7** — context state + resolver.
+- [x] **Task 8** — `RibbonLayoutPlan`, `IRibbonMeasurer`, `IRibbonRenderer`.
+- [x] **Phase 2 first step (additive, verified)** — discovered the engine's only WPF coupling is three pure members of `RibbonCollapsedGroupPresentationPlanner` (`BreakpointThresholds`, `GetPlannedWidth`, `GetCacheKey`). Extracted them to `FreeX.Ribbon/Layout/RibbonCollapsedGroupBreakpoints.cs`; App.Host now references `FreeX.Ribbon` and the WPF class delegates to it. App.Host builds; 325 ribbon Logic.Tests green.
+
+**Remaining (high-blast-radius; next session):**
+- [ ] **Task 9 (revised)** — add `<Using Include="FreeX.Ribbon" />` global using to `FreeX.App.Host.csproj`; delete the duplicate `RibbonAdaptiveGroup`/`RibbonAdaptiveGroupState` (in `RibbonAdaptiveLayoutPlanner.cs`) and the whole `RibbonCommandPresentationTypes.cs` (its four enums now live in the core). Build whole solution.
+- [ ] **Task 10 (revised)** — `git mv` the pure planners (`RibbonAdaptiveLayoutPlanner`, `RibbonAdaptivePriorityPlanner`, `RibbonAdaptiveLayoutEngine`, `RibbonResizeThresholdGate`, `RibbonAdaptiveTabProfiles`) into `src/FreeX.Ribbon/Layout/`, re-namespace to `FreeX.Ribbon`, and change the two `RibbonCollapsedGroupPresentationPlanner.*` references inside the engine/tab-profiles to `RibbonCollapsedGroupBreakpoints.*`. `RibbonCommandPresentationPlanner*` is independent of the adaptive engine and need not move for the engine to work (move it only if convenient). Add `<Using Include="FreeX.Ribbon" />` to `FreeX.App.Host.Logic.Tests.csproj` and `FreeX.App.Host.Tests.csproj` so their files still see the relocated types.
+- [ ] **Task 11** — link the four relocated engine tests into `FreeX.Ribbon.Tests`.
+- [ ] **Task 12** — golden snapshot parity gate.
+- [ ] **Task 13** — full-suite verification (`dotnet build FreeX.slnx -c Release` + `dotnet test FreeX.DefaultTests.slnx -c Release --no-build`); App.Host.Tests (WPF STA) is the slow long-pole.
+
+---
+
 ## File Structure
 
 New library `src/FreeX.Ribbon/` (`net10.0`, BCL only):
