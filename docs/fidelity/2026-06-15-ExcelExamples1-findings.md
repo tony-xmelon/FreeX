@@ -33,7 +33,18 @@ normalizes these, so the **true** progression is 956 → **327**. Progress:
 
 Remaining 327, by root cause:
 
-### 3e. [ ] Dynamic-array SPILL engine on the `Calc`/`Calc (2)` sheets — BIGGEST remaining (~212)
+### 3e. [x] Dynamic-array SPILL engine on `Calc` — FIXED (`a30cbe27c` + `198c9e55a`), −214
+ROOT CAUSE: the XLSX loader loaded Excel's cached spill values (plain `<v>` cells under a `t="array"`
+anchor) as ordinary data cells; on recalc `IsSpillBlocked` saw them → anchor `#SPILL!` → whole spill blank
+→ Calendar/Any Month (which read those cells) blank. Plus a topo-order gap (readers of spill *targets*
+had no edge to the spill anchor). FIX: load cached spill values as **provisional spill cells** owned by
+their anchor (so they DISPLAY on open — important because this file has no `fullCalcOnLoad`, so the app
+doesn't recalc on open) while letting the anchor re-spill over them on recalc (`IsSpillBlocked` skips an
+anchor's own provisional cells; `SetSpillRange`/`ClearSpillRange` clear them); plus a second eval pass for
+spill-target readers. Result: **Calendar 96→1, Any Month 52→0, Calc 64→2; harness total 288→74.**
+Verified on-open display: the Calc calendar grid renders all Mon–Sun columns (was blank Tue–Sun).
+
+### 3e-orig (historical note — the cluster, now fixed above)
 *Calendar* (96) and *Any Month* (52) only reference `Calc!AA/R…`; *Calc* itself (64) is the engine.
 Those cells are spill targets of loaded `<f t="array" ref="D13:J18">` formulas using
 `LET/SEQUENCE/FILTER/MAP/LAMBDA/XLOOKUP/TEXTJOIN` over **array-valued named formulas**
