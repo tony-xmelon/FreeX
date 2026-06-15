@@ -54,25 +54,25 @@ spill targets go blank. Sub-gaps: (1) **`ANCHORARRAY` is NOT implemented** (the 
 formulas may not re-spill in full recalc (spill engine keys on `ArrayMode==Implicit`); (3) array-returning
 **named formulas** as FILTER operands. This is the frontier of modern dynamic arrays; the path to ~100%.
 
-### 3 — PROGRESS SUMMARY: 956 → **46** mismatches (95% reduction). Fixes (all on main, gated):
+### 3 — PROGRESS SUMMARY: 956 → **14** mismatches (98.5% reduction). Fixes (all on main, gated):
 `fc4f8e7f5` array-criteria *IF(S); `63e95b27d` named formulas; `14072ada8` `tblShifts[]` whole-table ref;
 `60666a3a6`+`198c9e55a` dynamic-array spill + on-open provisional-display; `eb757c99a` COUNTIF `"<>0"`
-text-cell counting + **15-significant-digit comparison rounding** (Excel parity; fixed `filters.applied`
-TRUE-vs-FALSE → Calendar View 13→0). Remaining **46**, documented below.
+text-cell counting + **15-significant-digit comparison rounding** (Excel parity; `filters.applied` →
+Calendar View 13→0); `a3a3ac9be` **`ANCHORARRAY`** (spill `#` operator) + a second spill-continuation
+loader fix (Excel stores non-anchor spill cells as `<f ca="1"/>` empty-formula cells — these were
+blocking the anchor's re-spill) → **Budget Summary 21→0, Data Entry (2) 13→0**.
 
-### 3h. [ ] Budget Summary (21) — SUMIFS over a DATE-typed structured column
-`SUMIFS(revenues[Budget], revenues[Month], $I$3)` where `revenues[Month]` is a date column and `$I$3`
-is the date serial 44652 (`ytd.month = 'Data Entry (2)'!T6`). Recalc → 0 (cascades to `I7-I6`, `I9/I6`…).
-Likely root: the conditional-aggregate criteria matcher doesn't equate a DATE cell (DateTimeValue) with a
-numeric/date criteria of the same serial (type mismatch) — analogous to the COUNTIF text fix but for
-dates. Bounded; not yet fixed.
+### 3h. [x] Budget Summary (21→0) + Data Entry (2) (13→0) — FIXED (`a3a3ac9be`)
+Budget Summary's SUMIFS depended on spill-continuation cells loaded as empty-formula cells; the
+`<f ca="1"/>` loader fix resolved it (not a date-criteria bug after all). Data Entry fixed by ANCHORARRAY.
 
-### 3i. [ ] `ANCHORARRAY` not implemented (Data Entry (2) ~13) — `ANCHORARRAY(Z6)-ANCHORARRAY(X6)` → #VALUE!.
-The spilled-range `#` operator. Now that spills materialize, this is implementable (return the anchor's
-spilled range). Plus a few Data Entry R-column `#REF!` and SEQUENCE/DATE residuals.
-
-### 3j. [-] Pivot-cell cross-refs (Calc (2) 4): `'pvt Depts'!G4` → blank vs 0. Pivot output cells are not
-recomputed by the formula engine (separate pivot subsystem); minor blank-vs-0. Low priority.
+### Remaining **14** (hard / edge — documented):
+- [-] **Pivot-cell cross-refs** (`Calc (2)` 4): `'pvt Depts'!G4` → blank vs 0. Pivot OUTPUT cells aren't
+  recomputed by the formula engine (separate pivot subsystem). Minor blank-vs-0; needs pivot-recalc wiring.
+- [ ] **Calc 2 / Calendar 1**: a residual `FILTER/XLOOKUP/MAP` array edge on the right side of the Calc
+  engine (the `#VALUE!` Activity/Type column) — deep dynamic-array composition.
+- [ ] **Happy Holidays 2, Todo List 3, Calculations 2**: small isolated array/INDEX/implicit-intersection
+  edges (e.g. `Todo List!C7 = Calculations!F3:F14` array-into-scalar).
 
 ### 3f. [x] Whole-table structured ref `tblShifts[]` — FIXED (`14072ada8`), Shift Calendar 42→0
 (empty-selector `[]` now resolves to the full data body; parser also no longer rejects it.)
