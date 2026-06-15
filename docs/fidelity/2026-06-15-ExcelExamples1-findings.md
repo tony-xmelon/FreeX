@@ -148,6 +148,23 @@ truth captured via COM `Range.CopyPicture` (32/36; 4 CopyPicture failures).
   fidelity must be verified via the GridView app or a GridView-backed render harness**, not PrintRenderer.
 - Charts/images are not in the print render path (separate ChartRenderer) — see §5.
 
+### 6b. [x] GridView-backed visual harness + table-style rendering (color/CF parity)
+- **`tools/FreeX.SheetGridImageCompare`** renders each sheet headlessly via the REAL `GridView` control
+  (off-screen `RenderTargetBitmap` of a full-sheet `ViewportModel`), so cell fills, CF fills/data-bars, and
+  table styling ARE included. Confirmed on the *highlight*/*Data* sheets (fills/CF/orange date cells show).
+- **[x] FIXED — loaded table styles now render.** Excel keeps `TableStyleMediumN` (header + row-stripes)
+  DYNAMIC; FreeX rendered loaded tables PLAIN. Added `StructuredTableStyleService.ApplyLoadedTableStyles`
+  (mirrors the pivot-style materializer) + a shared `StructuredTableStyleBandingResolver`, called from
+  `WorkbookOpenService` with patch-snapshot rebase. All 16 tables now show their blue/banded header +
+  alternating row stripes, closely matching Excel.
+- **[x] FIXED — latent save-fidelity bug** surfaced by the table work: `XlsxSourcePackage.Rebase` was
+  NULLING the model fingerprint, so `Matches()` always returned false after ANY dynamic-style
+  materialization → the byte-copy fast path was skipped → a full rebuild **leaked the materialized fills
+  into the saved `styles.xml`** (affected pivots too, just untested). Fixed `Rebase` to recompute the
+  fingerprint from the materialized workbook. Verified: real-file load→materialize→rebase→save is now
+  **byte-for-byte identical to source** (`styles.xml` 145135==145135 bytes, no leak); full gate green.
+
 ### Tooling added this pass
 - `tools/FreeX.SheetFidelity` — automated load/feature/formula-parity/round-trip report (any .xlsx).
-- `tools/FreeX.SheetImageCompare` — per-sheet PNG render (content/layout) + optional Excel diff.
+- `tools/FreeX.SheetImageCompare` — per-sheet PNG render (content/layout, print path) + optional Excel diff.
+- `tools/FreeX.SheetGridImageCompare` — per-sheet PNG via the real GridView (WITH fills/CF/table styling).
