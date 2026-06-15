@@ -1,6 +1,6 @@
 # Shortcut Parity Matrix
 
-**Last updated:** 2026-06-01
+**Last updated:** 2026-06-15
 
 This matrix tracks Excel-for-Windows shortcut fidelity for the visible FreeX command surface. Status values use the command-surface contract: Parity, Partial, Excluded, or Missing. Exact command shortcuts reject unrelated extra modifiers so combinations such as Ctrl+Alt+C or Ctrl+Shift+C do not steal AltGr/non-US input or future shortcut space.
 
@@ -8,11 +8,11 @@ This matrix tracks Excel-for-Windows shortcut fidelity for the visible FreeX com
 
 | Status | Count | % of in-scope |
 |---|---:|---:|
-| Parity | 87 | **100%** |
+| Parity | 88 | **100%** |
 | Partial | 0 | **0%** |
 | Not Implemented | 0 | **0%** |
 | Excluded | 0 | — |
-| **Total in-scope** | **87** | — |
+| **Total in-scope** | **88** | — |
 
 
 | Area | Excel Shortcut | FreeX Status | Notes |
@@ -91,6 +91,7 @@ This matrix tracks Excel-for-Windows shortcut fidelity for the visible FreeX com
 | Insert | Alt+= | Parity | Inserts SUM through AutoSum. |
 | Insert | Ctrl+L / Ctrl+T | Parity | Opens Create Table with initial keyboard focus on the table range box. |
 | Insert | Ctrl+K | Parity | Opens Insert Hyperlink for the active cell. |
+| Insert | Ctrl+Enter on hyperlink cell | Parity | Opens the selected cell's hyperlink target without entering edit mode; text-entry Ctrl+Enter remains scoped to active edit controls. Hyperlinked cells also show a hand cursor while Ctrl is held over the cell. |
 | Insert | Alt+F1 / F11 | Parity | Alt+F1 inserts a default embedded column chart on the active worksheet; F11 creates a new `Chart1`/`Chart2`-style chart sheet from the current range and activates it. |
 | Analysis | Ctrl+Q | Parity | Opens a grouped Quick Analysis menu for formatting, charts, totals, tables, and sparklines using existing FreeX commands, anchors the keyboard-opened menu to the visible bottom-right of the selected range instead of the mouse point, and moves keyboard focus to the first enabled menu item. It includes conditional-format data bars, color scales, icon sets, greater-than/less-than/between/equal-to/text/date-occurring/duplicate-values, top/bottom item and percent, above/below-average, clear-formatting choices, Column/Stacked Column/100% Stacked Column/Line/Pie/Doughnut/Bar/Stacked Bar/100% Stacked Bar/Area/Scatter/Bubble/Radar/Stock charts plus More Charts to the full Insert Chart dialog, Sum/Average/Count/% Total/Running Total/Max/Min adjacent-row totals, hover preview tooltips, icon-sized visual preview swatches, live mouse and keyboard-focus status previews, and an in-grid preview overlay that targets either the selection or the adjacent totals/sparkline column, including keyboard-verified adjacent-column total/sparkline targeting, proportional data-bar previews for visible numeric cells, color-scale cell previews, icon-set indicators, lightweight highlight/clear-format/total/table overlays, compact line/column/win-loss sparkline previews, and lightweight column-, stacked-column-, line-, bar-, pie-, doughnut-, area-, scatter-, and bubble-chart previews while preserving command and visual descriptors for rendered worksheet previews. |
 | Workbook | Ctrl+Shift+G | Parity | Opens Workbook Statistics, with comment totals including notes and threaded comments. |
