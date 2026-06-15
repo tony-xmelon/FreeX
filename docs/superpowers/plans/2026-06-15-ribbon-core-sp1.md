@@ -23,12 +23,26 @@ Branch `ribbon-modular-core-sp1`. **Phase 1 complete and green (11 core tests).*
 - [x] **Task 8** — `RibbonLayoutPlan`, `IRibbonMeasurer`, `IRibbonRenderer`.
 - [x] **Phase 2 first step (additive, verified)** — discovered the engine's only WPF coupling is three pure members of `RibbonCollapsedGroupPresentationPlanner` (`BreakpointThresholds`, `GetPlannedWidth`, `GetCacheKey`). Extracted them to `FreeX.Ribbon/Layout/RibbonCollapsedGroupBreakpoints.cs`; App.Host now references `FreeX.Ribbon` and the WPF class delegates to it. App.Host builds; 325 ribbon Logic.Tests green.
 
-**Remaining (high-blast-radius; next session):**
-- [ ] **Task 9 (revised)** — add `<Using Include="FreeX.Ribbon" />` global using to `FreeX.App.Host.csproj`; delete the duplicate `RibbonAdaptiveGroup`/`RibbonAdaptiveGroupState` (in `RibbonAdaptiveLayoutPlanner.cs`) and the whole `RibbonCommandPresentationTypes.cs` (its four enums now live in the core). Build whole solution.
-- [ ] **Task 10 (revised)** — `git mv` the pure planners (`RibbonAdaptiveLayoutPlanner`, `RibbonAdaptivePriorityPlanner`, `RibbonAdaptiveLayoutEngine`, `RibbonResizeThresholdGate`, `RibbonAdaptiveTabProfiles`) into `src/FreeX.Ribbon/Layout/`, re-namespace to `FreeX.Ribbon`, and change the two `RibbonCollapsedGroupPresentationPlanner.*` references inside the engine/tab-profiles to `RibbonCollapsedGroupBreakpoints.*`. `RibbonCommandPresentationPlanner*` is independent of the adaptive engine and need not move for the engine to work (move it only if convenient). Add `<Using Include="FreeX.Ribbon" />` to `FreeX.App.Host.Logic.Tests.csproj` and `FreeX.App.Host.Tests.csproj` so their files still see the relocated types.
-- [ ] **Task 11** — link the four relocated engine tests into `FreeX.Ribbon.Tests`.
-- [ ] **Task 12** — golden snapshot parity gate.
-- [ ] **Task 13** — full-suite verification (`dotnet build FreeX.slnx -c Release` + `dotnet test FreeX.DefaultTests.slnx -c Release --no-build`); App.Host.Tests (WPF STA) is the slow long-pole.
+- [x] **Task 9 (enum unification)** — global using `FreeX.Ribbon` in App.Host; deleted `RibbonCommandPresentationTypes.cs` and the duplicate `RibbonAdaptiveGroup`/state; added the global using to both test projects. Fixed two refactor-exposed tests (`TestLaneSolutionTests` default-lane list; `RibbonIconSet_UsesSharedIconSlotsAndDecorator` source read). Whole solution builds; default suite green; 590 ribbon App.Host.Tests green.
+
+## SP2 vertical slice landed (2026-06-15)
+
+Proved the declarative→render pipeline end-to-end and **reproduced the Home tab look**:
+- [x] `RibbonWpfRenderer` — builds a WPF visual tree from a `RibbonTab`, reusing the existing
+  ribbon styles (`RibbonGroupPanel`, `RibbonLargeButton`, `RibbonBtn`, `RibbonGroupDivider`,
+  `GroupLbl`) and `RibbonIcon`; Office-style group flow (large columns + small/combo columns,
+  dropdown/split chevrons); binds commands through the registry by id (unregistered → disabled).
+- [x] `HomeRibbonDefinition` — the Home tab (Clipboard/Font/Alignment/Number/Styles/Cells/Editing)
+  authored against the fluent builder, with split/dropdown modeling.
+- [x] Visual validation — `screenshots/ribbon-declarative/home_declarative.png` (STA render harness).
+- [x] Functional validation — `RibbonWpfRendererTests`: definition validates, click invokes the
+  registered command, unregistered renders disabled.
+
+**Remaining for a full live cutover (SP2 breadth + SP3/SP4):**
+- [ ] Relocate the pure planners into the core (Task 10 — optional cleanup; engine already works via `RibbonCollapsedGroupBreakpoints`) and the golden snapshot parity gate (Task 12).
+- [ ] Author the remaining tabs (Insert, Draw, Page Layout, Formulas, Data, Review, View) + contextual tabs declaratively; register every command (wire existing handlers).
+- [ ] Replace the live `MainWindow.xaml` ribbon with the rendered surface; integrate adaptive/realtime reflow via the relocated engine; delete the hand-authored ribbon XAML behind the golden-snapshot gate.
+- [ ] SP3 Avalonia renderer; SP4 contextual content + non-Home polish.
 
 ---
 
