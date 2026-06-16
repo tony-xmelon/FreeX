@@ -33,6 +33,31 @@ public-preview promotion gated on accessibility evidence. Comparable on Linux me
   Xvfb GUI smoke, aggregate readiness. *(first hosted run validating)*
 - Readiness tooling + guard tests. *(done)*
 
+## Coordination with the macOS parity initiative (no duplication)
+
+The deep UI feature-parity work — declarative ribbon, charts rendering, conditional formatting,
+Format Cells tabbed dialog, sparklines/slicers, drawing-object editing, pivot UI — is being built
+by the **macOS feature-parity initiative** (`worktree-macos-parity`) on the **shared, portable**
+Avalonia stack: `FreeX.App.Presentation`, `FreeX.Ribbon`, `FreeX.Ribbon.Definitions` (verified to
+have zero `System.Windows`/WPF coupling) plus the shared `FreeX.App.Avalonia` shell. Linux runs that
+stack verbatim, so those features arrive on Linux **for free when that branch merges to `main`** —
+re-implementing them here would duplicate and collide with their active branch (which is also
+rewriting the shell toward the ribbon).
+
+Division of labor:
+
+- **Linux initiative (this branch):** delivery — tarball/AppImage/`.deb` packaging, the manual CI
+  + release lanes, readiness/promotion/human-validation tooling, and the Unicode-PDF (Skia) path.
+- **macOS parity initiative:** the feature engine on the shared portable layers.
+- **Handoff / Linux's contribution to parity:** the `linux-app.yml` lane runs the **full
+  `FreeX.App.Avalonia.Tests` suite on Ubuntu**, making Linux the **cross-platform validator** of the
+  shared Avalonia surface (X11/Skia headless) — coverage the macOS-runner lane cannot provide. As
+  the macOS parity features merge to `main`, the Linux lane validates them and the Linux release
+  ships them.
+
+Localization of the shell is deferred until the shared shell stabilizes (the ribbon rewrite is
+in flight), to avoid colliding with that work.
+
 ## Phases
 
 ### Phase R1 — Linux release channel (infra)
