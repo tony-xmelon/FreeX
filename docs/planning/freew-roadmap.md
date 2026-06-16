@@ -39,7 +39,9 @@ possible. Build it as a continuous series of small, verified, pushed increments.
       and apply run/paragraph formatting; undo/redo via the shared `UndoRedoStack`. *(IDocumentCommand
       + DocumentCommandBus over the shared UndoRedoStack; Insert/Delete/SetParagraph/SetRun/
       FormatParagraphRuns commands w/ snapshot revert; bus wired into DocumentView w/ redraw-on-change.)*
-- [ ] A4. FreeW test project + lane (`freew/FreeW.Core.Model.Tests`); model + command tests.
+- [x] A4. FreeW test project + lane (`freew/FreeW.Core.Model.Tests`); model + command tests.
+      *(10 tests: model/styles/PlainText + DocumentCommandBus undo/redo/redo-invalidation/snapshot
+      revert; added to FreeW.slnx. `dotnet test FreeW.slnx` = the FreeW lane. 10/10 green.)*
 
 ## Milestone B — ribbon wired to editing
 - [ ] B1. Implement `IRibbonCommandRegistry` for FreeW; wire Home commands (bold/italic/underline,
