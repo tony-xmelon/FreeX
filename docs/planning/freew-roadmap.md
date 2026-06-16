@@ -105,6 +105,19 @@ possible. Build it as a continuous series of small, verified, pushed increments.
       Insert > Table; run-level `InlineImage` (DrawingML `w:drawing`, `word/media` PNG parts, rels +
       content-type) with Insert > Picture. Round-trip + undo/redo tests.
 
+## Milestone F — deeper document fidelity (next tranche)
+Chosen to extend real `.docx` capability while avoiding the WPF-ribbon-renderer / shell code the other
+session is actively churning. IO-touching items integrate sequentially (they share TextDocument/
+DocxReader/DocxWriter); the editing-UX item is disjoint.
+- [ ] F1. Hyperlinks. Run-level hyperlink target; docx `w:hyperlink` + `word/_rels` external rels;
+      render as a clickable/underlined link in `DocumentView`; round-trip tests.
+- [ ] F2. Document properties. `docProps/core.xml` (+ `app.xml`) title/author/subject/keywords/
+      created/modified; a Properties dialog from the title bar; reader populates, writer emits; tests.
+- [ ] F3. Text colour + highlight. Foreground colour picker + highlight (`w:highlight`/`w:shd`) on the
+      Home/Font group, applied to the selection; docx round-trip for run colour + highlight.
+- [ ] F4. Table & image editing UX (disjoint — view/ribbon only, no IO). Add/delete row & column on a
+      table at the caret; drag-resize or a size box for the selected image. Routes through the undo bus.
+
 ## Status log (newest first)
 - 2026-06-17: E4 + E5 fully done. Three features built in parallel by subagents and integrated
   sequentially (tables → images → page-view), each verified 0/0 build + green tests before push:
