@@ -33,6 +33,31 @@ public-preview promotion gated on accessibility evidence. Comparable on Linux me
   Xvfb GUI smoke, aggregate readiness. *(first hosted run validating)*
 - Readiness tooling + guard tests. *(done)*
 
+## Coordination with the macOS parity initiative (no duplication)
+
+The deep UI feature-parity work — declarative ribbon, charts rendering, conditional formatting,
+Format Cells tabbed dialog, sparklines/slicers, drawing-object editing, pivot UI — is being built
+by the **macOS feature-parity initiative** (`worktree-macos-parity`) on the **shared, portable**
+Avalonia stack: `FreeX.App.Presentation`, `FreeX.Ribbon`, `FreeX.Ribbon.Definitions` (verified to
+have zero `System.Windows`/WPF coupling) plus the shared `FreeX.App.Avalonia` shell. Linux runs that
+stack verbatim, so those features arrive on Linux **for free when that branch merges to `main`** —
+re-implementing them here would duplicate and collide with their active branch (which is also
+rewriting the shell toward the ribbon).
+
+Division of labor:
+
+- **Linux initiative (this branch):** delivery — tarball/AppImage/`.deb` packaging, the manual CI
+  + release lanes, readiness/promotion/human-validation tooling, and the Unicode-PDF (Skia) path.
+- **macOS parity initiative:** the feature engine on the shared portable layers.
+- **Handoff / Linux's contribution to parity:** the `linux-app.yml` lane runs the **full
+  `FreeX.App.Avalonia.Tests` suite on Ubuntu**, making Linux the **cross-platform validator** of the
+  shared Avalonia surface (X11/Skia headless) — coverage the macOS-runner lane cannot provide. As
+  the macOS parity features merge to `main`, the Linux lane validates them and the Linux release
+  ships them.
+
+Localization of the shell is deferred until the shared shell stabilizes (the ribbon rewrite is
+in flight), to avoid colliding with that work.
+
 ## Phases
 
 ### Phase R1 — Linux release channel (infra)
@@ -61,7 +86,7 @@ a credible Linux release:
 | Clipboard / Paste Special | full incl. multi-range | text + internal + image + most Paste Special; congruent multi-range copy now produces a combined block (values via text path); multi-range cut still rejected (Excel parity); formatted/formula-carrying multi-area internal paste is follow-up | P1 |
 | Charts | full render + edit | preview bounds only | P2 — render parity is large |
 | PivotTables | full | model + limited surface | P2 |
-| Print / export | WPF print, PDFsharp, XPS, embedded-font Unicode PDF | portable PDF (ASCII+WinAnsi) | P1 PDF breadth; P2 print/XPS |
+| Print / export | WPF print, PDFsharp, XPS, embedded-font Unicode PDF | portable PDF (ASCII+WinAnsi); Unicode via Skia decided (below) | P1 PDF breadth; P2 print/XPS |
 | Ribbon / backstage / task panes | mature | native menu + toolbar subset | P1 — cover command surface, not necessarily ribbon chrome |
 | Drawing-object editing | full | preview render + select | P2 |
 | Localization | many cultures | English-only UI strings | P1 — extract/share UI text |
@@ -84,6 +109,32 @@ Avalonia wiring + tests + smoke evidence.
 - Trust model: AppImage signature and/or detached signatures; checksum publication.
 - Distro packaging: `.deb`/`.rpm`, and a Flatpak manifest (sandbox-friendly portals for files).
 - Update mechanism (AppImageUpdate or distro/Flatpak channels).
+
+## Decision: Unicode PDF without bundling/embedding our own font
+
+We do **not** hand-embed fonts. The built-in Helvetica/WinAnsi path stays for the
+dependency-free portable exporter (headless, no Skia). For Unicode fidelity we use
+**SkiaSharp's PDF backend** (`SKDocument.CreatePdf`), which is already in the Avalonia app's
+dependency graph (SkiaSharp 3.119.4 + native assets, via Avalonia.Skia). Skia shapes text
+(HarfBuzz) and **automatically embeds/subsets** the fonts it draws — the same fonts Avalonia
+already uses to render the grid (fontconfig on Linux). Rationale:
+
+- No licensed font to bundle, no app-size/licensing decision, no hand-written TrueType parser
+  or Type0/Identity-H/ToUnicode plumbing.
+- Matches on-screen rendering; correct shaping for complex scripts.
+
+Shape of the work (sequenced so it's verifiable):
+1. ✅ **`SkiaPdfDocumentExporter`** implemented in `FreeX.App.Avalonia/Pdf/`, consuming the
+   existing `PortablePdfExportPlanner` + `PortablePdfPageContentPlanner` for page/row/column/cell
+   layout and drawing onto `SKDocument` PDF pages with a Unicode-capable `SKTypeface`. Tests in
+   `tests/FreeX.App.Avalonia.Tests` prove a valid `%PDF` with an embedded font (`FontFile`) and a
+   `/Type0` composite font rendering Cyrillic + Greek — validated locally (SkiaSharp's `win-x64`
+   native asset is present, so it runs on the Windows dev host too, not only on Linux).
+2. **Next:** route Avalonia *File → Export to PDF* through it (Unicode-capable) while keeping the
+   portable WinAnsi writer as the dependency-free headless fallback. The export menu item is
+   unchanged, so launch-smoke assertions stay intact.
+3. **Next:** add `tests/FreeX.App.Avalonia.Tests` (PDF filter) to the `linux-app` CI lane for
+   on-Linux validation alongside the local coverage.
 
 ## Sequencing
 
