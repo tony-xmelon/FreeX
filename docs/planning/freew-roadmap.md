@@ -49,11 +49,16 @@ possible. Build it as a continuous series of small, verified, pushed increments.
       *(FreeWRibbonCommands builds a RibbonCommandRegistry mapping ids → WPF EditingCommands/
       ApplicationCommands on the editor; bold/italic/underline are IRibbonStatefulCommand. Renderer
       wires button Click → command.Execute and disables unregistered ids. Launches clean.)*
-- [ ] B2. Selection-driven toggle state (bold on when selection is bold) via the shared ribbon
-      state store.
-- [ ] B3. Reuse the real WPF ribbon renderer: extract `RibbonWpfRenderer` (+ adaptive panel/keytips)
-      from `FreeX.App.Host` into a shared WPF ribbon library; FreeW renders with it instead of the
-      placeholder. (Localization via `IShellStrings`; coordinate with concurrent ribbon edits.)
+- [x] B2. Selection-driven toggle state (bold on when selection is bold) via the shared ribbon
+      state store. *(editor.SelectionChanged pushes bold/italic/underline state into the shared
+      RibbonStateStore; toggle buttons observe StateChanged and update IsChecked live.)*
+- [ ] B3. *(DEFERRED — reordered.)* Reuse the real WPF ribbon renderer: extract `RibbonWpfRenderer`
+      (+ adaptive panel/keytips) from `FreeX.App.Host` into a shared WPF ribbon library; FreeW renders
+      with it instead of the placeholder. **Held back because the other session is actively churning
+      the WPF ribbon renderer on `origin/main` — extracting it now would conflict hard. FreeW's
+      placeholder ribbon already drives real commands (B1/B2), so this is quality, not function.
+      Revisit once the ribbon work settles. Proceeding to Milestone C (docx I/O), which is
+      independent.**
 
 ## Milestone C — .docx I/O
 - [ ] C1. Phase 3b prerequisite: split `XlsxPackagePath` → format-neutral OPC core in
