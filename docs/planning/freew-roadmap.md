@@ -109,16 +109,25 @@ possible. Build it as a continuous series of small, verified, pushed increments.
 Chosen to extend real `.docx` capability while avoiding the WPF-ribbon-renderer / shell code the other
 session is actively churning. IO-touching items integrate sequentially (they share TextDocument/
 DocxReader/DocxWriter); the editing-UX item is disjoint.
-- [ ] F1. Hyperlinks. Run-level hyperlink target; docx `w:hyperlink` + `word/_rels` external rels;
-      render as a clickable/underlined link in `DocumentView`; round-trip tests.
-- [ ] F2. Document properties. `docProps/core.xml` (+ `app.xml`) title/author/subject/keywords/
-      created/modified; a Properties dialog from the title bar; reader populates, writer emits; tests.
-- [ ] F3. Text colour + highlight. Foreground colour picker + highlight (`w:highlight`/`w:shd`) on the
-      Home/Font group, applied to the selection; docx round-trip for run colour + highlight.
-- [ ] F4. Table & image editing UX (disjoint — view/ribbon only, no IO). Add/delete row & column on a
-      table at the caret; drag-resize or a size box for the selected image. Routes through the undo bus.
+- [x] F1. Hyperlinks. Run-level `Run.HyperlinkUrl`; docx `w:hyperlink` + `word/_rels` external rels
+      (one rel per distinct URL, dedup); rendered as a clickable WPF `Hyperlink` (opens http/https) that
+      round-trips through edit; Insert > Links > Link prompts for a URL. 5 tests (round-trip/formatting/
+      external-rel/dedup).
+- [x] F2. Document properties. `DocumentProperties` + `TextDocument.Properties`; writer emits
+      `docProps/core.xml` (Dublin Core, `dcterms:created/modified` W3CDTF) + content-type + package rel;
+      reader populates (graceful when absent); Properties dialog from the title bar. 3 tests.
+- [x] F3. Text colour + highlight. `RunFormatting.HighlightColorHex`; highlight encoded as
+      `w:shd w:fill` (mirrors `w:color` foreground, exact hex round-trip); Home > Font palette pickers
+      for Text Colour + Highlight applied to the selection; rendered via inline Background. 2 tests.
+- [x] F4. Table & image editing UX (view/ribbon + reversible model commands, no IO). Insert/delete
+      row & column on the caret's table + set selected-image size, all undoable via the bus; Insert tab
+      "Table Tools" group + Image Size dialog. 8 command tests.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone F complete. Four features built in parallel by subagents (isolated worktrees)
+  and integrated sequentially — hyperlinks, document properties, text colour + highlight, table & image
+  editing — each verified 0/0 build + green tests before push; F1's overlap with F2/F3/F4 on the docx
+  writer/ribbon/tests resolved by hand. FreeW lane now 44 tests (26 model, 18 IO). origin/main @ 22c6d7753.
 - 2026-06-17: E4 + E5 fully done. Three features built in parallel by subagents and integrated
   sequentially (tables → images → page-view), each verified 0/0 build + green tests before push:
   tables (block model + docx + Insert Table), inline images (DrawingML + Insert Picture), paginated
