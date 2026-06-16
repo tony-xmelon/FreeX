@@ -94,12 +94,21 @@ possible. Build it as a continuous series of small, verified, pushed increments.
       + right-click suggestions; the right tool for a text surface vs FreeX's cell SpellCheckService.)*
 - [x] E3. Print + Export PDF. *(Ctrl+P → WPF PrintDialog prints the FlowDocument paginator; "Microsoft
       Print to PDF" covers PDF export. Page size from the print dialog's printable area.)*
-- [~] E4. Page layout: margins/orientation/size wired (Layout tab toggles page settings, honoured by
-      docx save + print). **Paginated WYSIWYG page view remains — larger; future.**
-- [~] E5. Bulleted/numbered lists (wired in B1 via EditingCommands) + styles gallery (Normal/
-      Heading 1/Title apply size/weight/colour to the selection). **Tables + inline images (DrawingML
-      via shared OPC) remain — larger; future work.**
+- [x] E4. Page layout: margins/orientation/size wired (Layout tab toggles page settings, honoured by
+      docx save + print). **Paginated WYSIWYG page view DONE** — `PageLayout` (pure point→DIP/printable-
+      area/page-count geometry in the model), `PrintPreviewWindow` (modeless `FlowDocumentPageViewer`
+      over a display-only XAML deep-clone) + page-size-aware `Print()`; "Print Preview" on the Layout
+      tab. 7 PageLayout geometry tests.
+- [x] E5. Bulleted/numbered lists (wired in B1 via EditingCommands) + styles gallery (Normal/
+      Heading 1/Title apply size/weight/colour to the selection). **Tables + inline images DONE** —
+      block model (`Block`/`Paragraph`/`Table`/`TableRow`/`TableCell`) with `w:tbl` docx round-trip +
+      Insert > Table; run-level `InlineImage` (DrawingML `w:drawing`, `word/media` PNG parts, rels +
+      content-type) with Insert > Picture. Round-trip + undo/redo tests.
 
 ## Status log (newest first)
+- 2026-06-17: E4 + E5 fully done. Three features built in parallel by subagents and integrated
+  sequentially (tables → images → page-view), each verified 0/0 build + green tests before push:
+  tables (block model + docx + Insert Table), inline images (DrawingML + Insert Picture), paginated
+  print preview + page-aware print. FreeW lane now 27 tests (18 model, 9 IO). origin/main @ cb3c4c45d.
 - 2026-06-16: Scaffold complete — FreeW builds + runs on `Free.Shared.*`, Word-style ribbon from
   the shared model, own product identity. Roadmap created; beginning Milestone A.
