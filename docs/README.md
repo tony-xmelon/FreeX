@@ -21,6 +21,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 ## User
 
 - [user/guide.md](user/guide.md) - comprehensive end-user guide covering supported features, navigation, formulas, charts, PivotTables, printing, and keyboard shortcuts.
+- [user/linux-install.md](user/linux-install.md) - installing FreeX on Linux: .deb / AppImage / tarball options, checksum verification, and file associations.
 - [user/troubleshooting.md](user/troubleshooting.md) - common issues, error messages, known limitations, and how to report bugs.
 
 ## Legal
