@@ -123,6 +123,21 @@ DocxReader/DocxWriter); the editing-UX item is disjoint.
       row & column on the caret's table + set selected-image size, all undoable via the bus; Insert tab
       "Table Tools" group + Image Size dialog. 8 command tests.
 
+## Milestone G — round-trip fidelity + chrome (next tranche)
+Closes real `.docx` fidelity gaps + editor chrome. Avoids the WPF-ribbon-renderer / shell code the
+other session churns. G1–G3 share TextDocument/Formatting/DocxReader/DocxWriter → integrate
+sequentially; G4 is disjoint (MainWindow/DocumentView status only).
+- [ ] G1. Headers & footers (incl. a page-number field). Section header/footer content; docx
+      `word/header1.xml`/`footer1.xml` parts + rels + `sectPr` references; a PAGE field in the footer;
+      shown in print preview; minimal edit affordance. Round-trip tests.
+- [ ] G2. List persistence to docx. Bulleted/numbered lists currently live only as WPF `List` elements
+      (not saved). Map WPF `List`↔model on render/commit and write/read `numbering.xml` + `w:numPr`
+      (reusing the existing `ListKind`/`ListLevel` on `ParagraphFormatting`). Round-trip tests.
+- [ ] G3. Paragraph borders & shading. `w:pBdr` + paragraph-level `w:shd`; model fields on
+      `ParagraphFormatting`; ribbon/affordance to toggle; render in `DocumentView`. Round-trip tests.
+- [ ] G4. Word count + live status bar (disjoint — view/status only, no IO). Live word/character/
+      paragraph count in the status bar, updated on edit. Reuse the status-bar chrome already in MainWindow.
+
 ## Status log (newest first)
 - 2026-06-17: Milestone F complete. Four features built in parallel by subagents (isolated worktrees)
   and integrated sequentially — hyperlinks, document properties, text colour + highlight, table & image
