@@ -27,9 +27,10 @@ possible. Build it as a continuous series of small, verified, pushed increments.
   leaving grid-specifics behind.
 
 ## Milestone A — rich document model + editing core
-- [ ] A1. Expand `FreeW.Core.Model`: run formatting (font family/size/color, bold/italic/
+- [x] A1. Expand `FreeW.Core.Model`: run formatting (font family/size/color, bold/italic/
       underline/strike), paragraph props (alignment, spacing before/after, line spacing, indent,
-      list level), document defaults + named styles, sections.
+      list level), document defaults + named styles, sections. *(RunFormatting/ParagraphFormatting
+      records, DocumentStyle catalog w/ Normal/Heading1/Title, PageSettings, document defaults.)*
 - [ ] A2. Editing surface: a document control (FlowDocument-backed first) bound to the model;
       caret + selection; typing/delete/enter map to model edits.
 - [ ] A3. Wire `Free.Shared.Commands`: `IDocumentCommandContext`, commands for insert/delete text
