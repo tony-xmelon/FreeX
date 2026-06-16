@@ -44,8 +44,11 @@ possible. Build it as a continuous series of small, verified, pushed increments.
       revert; added to FreeW.slnx. `dotnet test FreeW.slnx` = the FreeW lane. 10/10 green.)*
 
 ## Milestone B — ribbon wired to editing
-- [ ] B1. Implement `IRibbonCommandRegistry` for FreeW; wire Home commands (bold/italic/underline,
+- [x] B1. Implement `IRibbonCommandRegistry` for FreeW; wire Home commands (bold/italic/underline,
       align L/C/R, cut/copy/paste, grow/shrink font) to editing ops through the command bus.
+      *(FreeWRibbonCommands builds a RibbonCommandRegistry mapping ids → WPF EditingCommands/
+      ApplicationCommands on the editor; bold/italic/underline are IRibbonStatefulCommand. Renderer
+      wires button Click → command.Execute and disables unregistered ids. Launches clean.)*
 - [ ] B2. Selection-driven toggle state (bold on when selection is bold) via the shared ribbon
       state store.
 - [ ] B3. Reuse the real WPF ribbon renderer: extract `RibbonWpfRenderer` (+ adaptive panel/keytips)
