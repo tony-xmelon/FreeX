@@ -145,18 +145,23 @@ sequentially; G4 is disjoint (MainWindow/DocumentView status only).
 More real `.docx` fidelity + editor chrome. Avoids the WPF-ribbon-renderer / shell the other session
 churns. H1 (rPr) and H2 (pPr) touch the docx reader/writer in different element scopes; H3 is mostly
 ribbon/model; H4 is disjoint (view chrome). Integrate H1→H2→H3 sequentially, H4 anytime.
-- [ ] H1. Character effects: superscript/subscript (`w:vertAlign`), small caps (`w:smallCaps`), all caps
-      (`w:caps`). Fields on `RunFormatting`; writer/reader map them in `rPr`; render in `DocumentView`
-      (Typography/BaselineAlignment); Home > Font toggles. Round-trip tests.
-- [ ] H2. Tab stops. `w:tabs` in `pPr` (positions + alignment: left/center/right/decimal); a `TabStop`
-      list on `ParagraphFormatting`; writer/reader; render onto the WPF paragraph. Round-trip tests.
-- [ ] H3. Line & paragraph spacing UI. Ribbon control(s) on Home > Paragraph setting the existing
-      `LineSpacing`/`SpaceBeforePt`/`SpaceAfterPt` model fields (1.0/1.5/2.0 + add/remove space);
-      applied to the selection. (Round-trip already covered; this is the affordance.)
-- [ ] H4. Zoom (disjoint — view chrome only, no IO). A zoom slider/control in the status bar scaling the
-      editor surface (e.g. `LayoutTransform`/`FlowDocument` zoom). Reuse the existing status bar.
+- [x] H1. Character effects. `VerticalAlign` enum (Baseline/Superscript/Subscript) + `SmallCaps`/`AllCaps`
+      on `RunFormatting`; writer/reader map `w:vertAlign`/`w:smallCaps`/`w:caps` in `rPr`; `DocumentView`
+      renders via `BaselineAlignment`+shrink and `Typography` capitals; Home > Font toggles. 4 tests.
+- [x] H2. Tab stops. `TabStop(PositionPt, TabStopAlignment)` + `ParagraphFormatting.TabStops` (default
+      empty); writer/reader map `w:tabs`/`w:tab` (dxa + left/center/right/decimal); preserved across edit
+      via the WPF paragraph `Tag` (FlowDocument has no tab-stop API). 2 tests.
+- [x] H3. Line & paragraph spacing UI. `DocumentView.SetLineSpacing`/`ToggleSpaceBefore`/`ToggleSpaceAfter`
+      over the selection via the reversible `SetParagraphFormattingCommand`; Home > Paragraph line-spacing
+      combo + space-before/after toggles; also fixed `LineSpacing` read-back on commit. 2 command tests.
+- [x] H4. Zoom (disjoint). Pure `ZoomLevels` math (clamp/step/percent) in the model; `DocumentView.ZoomLevel`
+      + `ZoomChanged` scaling via `LayoutTransform` `ScaleTransform` + Ctrl+wheel; status-bar slider/±/% (50–200%). 13 tests.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone H complete. Character effects, tab stops, line/para spacing UI, editor zoom —
+  built in parallel by subagents and integrated (H4 zoom + H1 effects + H2 tabs all auto-merged clean;
+  H3 spacing auto-merged). Each verified 0/0 build + green before push. FreeW lane now 100 tests
+  (62 model, 38 IO). origin/main @ 525859908.
 - 2026-06-17: Milestone G complete. Four features built in parallel by subagents and integrated
   sequentially (G4 word-count disjoint; G2 lists, G3 para borders/shading, G1 headers/footers share the
   docx writer/reader → hand-resolved conflicts, esp. G1's `Write`/content-types/rels combining with G2's
