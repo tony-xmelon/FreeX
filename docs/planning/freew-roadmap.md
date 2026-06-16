@@ -241,6 +241,22 @@ Avoids the WPF-ribbon-renderer / shell the other session churns. Mostly disjoint
       column (restores prior layout on exit); status bar shows live selection word/char count (falls back to
       document counts); View > Views toggle. (View-only.) +1 test theory.
 
+## Milestone N — structured docs + power features (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. N2 touches the docx reader/writer
+(sequential); N1/N3/N4 are model/view/disjoint.
+- [ ] N1. Cross-references. Insert > Cross-reference targets an existing heading / bookmark / caption /
+      footnote and inserts a reference run (its text + an internal anchor where applicable, reusing the
+      bookmark/anchor infra). A pure target-list helper (tested). Model + view; no new IO.
+- [ ] N2. Content controls (structured document tags). A plain-text and a checkbox content control on a
+      run/range (`w:sdt`); model field + writer/reader; render as a shaded control region; Developer/Insert
+      control. Round-trip tests.
+- [ ] N3. AutoText / Quick Parts. Save the current selection as a named reusable snippet (a store on the
+      app/document) and insert it later at the caret. A pure snippet store (tested) + Insert > Quick Parts.
+      View/model-light.
+- [ ] N4. Document statistics dialog (disjoint — pure + view). A Word-Count/readability dialog: words,
+      characters (with/without spaces), paragraphs, sentences, estimated reading time, and a simple
+      readability score — all from a pure `DocumentStatistics` helper (tested). View only.
+
 ## Status log (newest first)
 - 2026-06-17: Milestone M complete. Format painter, captions + numbering, document themes, read mode +
   selection stats — built in parallel by subagents and integrated (all four auto-merged clean; chained
