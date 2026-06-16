@@ -127,18 +127,148 @@ DocxReader/DocxWriter); the editing-UX item is disjoint.
 Closes real `.docx` fidelity gaps + editor chrome. Avoids the WPF-ribbon-renderer / shell code the
 other session churns. G1–G3 share TextDocument/Formatting/DocxReader/DocxWriter → integrate
 sequentially; G4 is disjoint (MainWindow/DocumentView status only).
-- [ ] G1. Headers & footers (incl. a page-number field). Section header/footer content; docx
-      `word/header1.xml`/`footer1.xml` parts + rels + `sectPr` references; a PAGE field in the footer;
-      shown in print preview; minimal edit affordance. Round-trip tests.
-- [ ] G2. List persistence to docx. Bulleted/numbered lists currently live only as WPF `List` elements
-      (not saved). Map WPF `List`↔model on render/commit and write/read `numbering.xml` + `w:numPr`
-      (reusing the existing `ListKind`/`ListLevel` on `ParagraphFormatting`). Round-trip tests.
-- [ ] G3. Paragraph borders & shading. `w:pBdr` + paragraph-level `w:shd`; model fields on
-      `ParagraphFormatting`; ribbon/affordance to toggle; render in `DocumentView`. Round-trip tests.
-- [ ] G4. Word count + live status bar (disjoint — view/status only, no IO). Live word/character/
-      paragraph count in the status bar, updated on edit. Reuse the status-bar chrome already in MainWindow.
+- [x] G1. Headers & footers (incl. a page-number field). `TextDocument.Header`/`Footer` (`HeaderFooter`
+      of paragraphs) + `Run.PageNumberField()` (`RunFieldKind`); writer emits `word/header1.xml`/
+      `footer1.xml` parts + content types + rels + `w:headerReference`/`footerReference` in `sectPr`,
+      PAGE field as `w:fldSimple`; reader resolves them back; `HeaderFooterPaginator` draws header/footer
+      (live page number) on every previewed/printed page; Insert > Header & Footer group. 6 tests.
+- [x] G2. List persistence to docx. Editor maps WPF `List`↔model `ListKind`/`ListLevel` on render/commit;
+      writer emits `word/numbering.xml` (bullet `numId=1`, decimal `numId=2`, 9 levels) + content type +
+      rel + `w:numPr` in list paragraphs; reader maps `numbering.xml`/`w:numPr` back. 5 tests.
+- [x] G3. Paragraph borders & shading. `ParagraphBorder` record + `ShadingColorHex` on
+      `ParagraphFormatting`; writer/reader map `w:pBdr` + paragraph `w:shd`; `DocumentView` renders via
+      `Paragraph.BorderBrush`/`Background`; Home > Paragraph toggle + shading palette. 3 tests.
+- [x] G4. Word count + live status bar (disjoint). Pure `WordCount`/`DocumentStats` in the model;
+      `MainWindow` status bar shows live Words/Characters/Paragraphs, updated on every edit. 5 tests.
+
+## Milestone H — character/paragraph polish + chrome (next tranche)
+More real `.docx` fidelity + editor chrome. Avoids the WPF-ribbon-renderer / shell the other session
+churns. H1 (rPr) and H2 (pPr) touch the docx reader/writer in different element scopes; H3 is mostly
+ribbon/model; H4 is disjoint (view chrome). Integrate H1→H2→H3 sequentially, H4 anytime.
+- [x] H1. Character effects. `VerticalAlign` enum (Baseline/Superscript/Subscript) + `SmallCaps`/`AllCaps`
+      on `RunFormatting`; writer/reader map `w:vertAlign`/`w:smallCaps`/`w:caps` in `rPr`; `DocumentView`
+      renders via `BaselineAlignment`+shrink and `Typography` capitals; Home > Font toggles. 4 tests.
+- [x] H2. Tab stops. `TabStop(PositionPt, TabStopAlignment)` + `ParagraphFormatting.TabStops` (default
+      empty); writer/reader map `w:tabs`/`w:tab` (dxa + left/center/right/decimal); preserved across edit
+      via the WPF paragraph `Tag` (FlowDocument has no tab-stop API). 2 tests.
+- [x] H3. Line & paragraph spacing UI. `DocumentView.SetLineSpacing`/`ToggleSpaceBefore`/`ToggleSpaceAfter`
+      over the selection via the reversible `SetParagraphFormattingCommand`; Home > Paragraph line-spacing
+      combo + space-before/after toggles; also fixed `LineSpacing` read-back on commit. 2 command tests.
+- [x] H4. Zoom (disjoint). Pure `ZoomLevels` math (clamp/step/percent) in the model; `DocumentView.ZoomLevel`
+      + `ZoomChanged` scaling via `LayoutTransform` `ScaleTransform` + Ctrl+wheel; status-bar slider/±/% (50–200%). 13 tests.
+
+## Milestone I — structured content (next tranche)
+Larger Word constructs. Avoids the WPF-ribbon-renderer / shell the other session churns. I2/I3 add new
+docx parts/elements (sequential integration); I1 is model/view/ribbon (light IO); I4 is disjoint UI.
+- [x] I1. Real paragraph styles. Added built-in Heading 2/3, Subtitle, Quote; a Styles `freew.style`
+      ComboBox sets selected paragraphs' `StyleId` via a reversible `SetParagraphStyleCommand`;
+      `DocumentView` resolves StyleId through the catalog on render; round-trips via `pStyle`/styles.xml.
+- [x] I2. Footnotes. `Footnote` store on `TextDocument` + `Run.FootnoteReference(id)`; writer emits
+      `word/footnotes.xml` (separators + footnotes) + content type + rel + `w:footnoteReference`; reader
+      parses them; superscript marker in `DocumentView` (preserved across edit) + Insert > Footnote.
+- [x] I3. Bookmarks + internal links. `Paragraph.BookmarkName` + `Run.HyperlinkAnchor`; writer emits
+      `w:bookmarkStart`/`End` + `w:hyperlink w:anchor`; reader parses them (external `r:id` links intact);
+      internal links scroll to the bookmark; Insert > Bookmark / Link to Bookmark. Bookmarks preserved
+      across edit via a combined paragraph `Tag`.
+- [x] I4. Insert Symbol + Date & Time (disjoint). `DocumentView.InsertText` through the edit/undo path;
+      a 36-glyph symbol picker + a date/time dialog (pure `DateTimeFormats` helper); Insert > Symbols.
+
+## Milestone J — review + navigation + polish (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. J1/J2 touch the docx reader/writer
+(sequential); J3/J4 are disjoint (view/editor only, no IO).
+- [x] J1. Comments (review). `Comment` store on `TextDocument` + `Run.CommentId`/`IsCommentReference`;
+      writer emits `word/comments.xml` + content type + rel + `w:commentRangeStart`/`End` +
+      `w:commentReference`; reader parses them; pale-yellow highlight + author/text tooltip (preserved
+      across edit); Review > New Comment over the selection. 4 tests.
+- [x] J2. Table cell shading + per-cell width. `TableCell.ShadingColorHex`/`WidthPt` + `Table.ColumnWidthsPt`;
+      writer emits `w:tcPr/w:shd` + `w:tcW` + `w:tblGrid/w:gridCol`; reader parses them; `DocumentView`
+      renders cell `Background` + column `Width`; Table Tools > Cell Shading. 2 tests.
+- [x] J3. Navigation pane (disjoint). Pure `DocumentOutline.Of` (Title/HeadingN paragraphs → entries with
+      levels); toggleable left pane in `MainWindow` listing headings, click scrolls to the heading
+      (`DocumentView.BringBlockIntoView`); View > Navigation Pane toggle. 11 tests.
+- [x] J4. AutoCorrect / smart typing (disjoint). Pure `AutoCorrect.Evaluate` (smart quotes open/close,
+      `--`→en dash, `(c)`/`(r)`/`(tm)`, `...`→…, sentence caps); wired into `DocumentView.OnPreviewTextInput`
+      through the edit/undo path (toggleable, default on). 38 tests.
+
+## Milestone K — long-document features (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. K1/K3 touch the docx reader/writer
+(sequential); K2 is light-IO (reuses `DocumentOutline`); K4 is disjoint (insert helpers).
+- [x] K1. Track changes (revisions). `Run.Revision` (`RevisionKind` None/Inserted/Deleted) + author/date;
+      writer coalesces runs into `w:ins`/`w:del` (+`w:delText`); reader parses them; insertions render
+      underlined-coloured, deletions strikethrough (preserved across edit); Review > Track Changes toggle +
+      Accept All / Reject All (pure `TrackChanges` ops). 3 IO + 4 model tests.
+- [x] K2. Table of Contents. Pure `TableOfContents.Build` from `DocumentOutline` ("Contents" heading +
+      level-indented entries with TOC styles); Insert > Table of Contents + Update TOC (removes the
+      style-marked region and rebuilds), reversibly via the bus. Round-trips as styled paragraphs. 10 tests.
+- [x] K3. Columns (multi-column layout). `PageSettings.ColumnCount` + `ColumnSpacingPt`; writer/reader
+      `sectPr/w:cols w:num/w:space`; editor + print preview render N equal columns via FlowDocument
+      `ColumnWidth`/`ColumnGap`; Layout > Columns cycles 1→2→3. 4 tests.
+- [x] K4. Cover page + horizontal rule + page break. Pure `DocumentOps` (cover page from Properties,
+      bottom-only-border rule, page-break paragraph); `ParagraphBorder.BottomOnly` + `ParagraphFormatting.
+      PageBreakBefore` (both round-trip via `w:bottom`/`w:pageBreakBefore`); Insert > Pages wired. 5 model + 4 IO tests.
+
+## Milestone L — references + finishing touches (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. L1/L2 touch the docx reader/writer
+(sequential); L3/L4 are disjoint (editor/view + pure helpers).
+- [x] L1. Page borders + watermark. `PageSettings.PageBorder` (`PageBorder` record) + `Watermark`;
+      writer emits `sectPr/w:pgBorders` + persists the watermark as a `docProps/custom.xml` custom property;
+      reader recovers both; editor + print preview render the border frame + faint rotated watermark;
+      Layout > Page Background. 3 tests.
+- [x] L2. Citations & bibliography. `Source` + `TextDocument.Sources`; pure `Citations` helpers (in-text
+      `(Author, Year)`, APA-flavoured bibliography entries, `BuildBibliography` sorted by author); Insert >
+      Citation (pick/add source) + Insert > Bibliography (reversible). Persists as ordinary text/paragraphs. 15 tests.
+- [x] L3. Advanced Find & Replace + Go To. Pure `TextSearch.FindAll` (match-case + whole-word boundaries);
+      Find/Replace dialog gains Whole-word, Replace-All-in-selection, and a Go To (headings via
+      `DocumentOutline` / doc start/end). No model/IO change. ~12 tests.
+- [x] L4. Drop cap + Clear All Formatting. Pure `DropCap.ApplyDropCap` (split first letter into a 42pt
+      bold run) + `ClearFormatting` (reset runs to default); reversible via the bus (`ReplaceParagraphRunsCommand`);
+      Home > Clear Formatting + Insert > Drop Cap. 6 tests.
+
+## Milestone M — editor power tools (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. Mostly disjoint/model this round
+(low docx-IO conflict surface). M2 touches the reader/writer; M1/M3/M4 are editor/model/ribbon.
+- [ ] M1. Format Painter (disjoint — editor only). Wire the long-unwired `freew.format-painter`
+      placeholder: capture the run+paragraph formatting at the caret/selection, then apply it to the next
+      selection. A pure formatting-copy helper (tested) + `DocumentView` capture/apply. No model/IO change.
+- [ ] M2. Captions + figure/table numbering. Insert > Caption under the selected image/table inserts a
+      "Figure N: …" / "Table N: …" paragraph with sequential numbering (a pure numbering helper, tested);
+      persists as an ordinary styled paragraph. Light IO (a Caption style); round-trips as paragraphs.
+- [ ] M3. Document themes. A small set of built-in colour/font themes that rewrite the style catalog's
+      run colours + fonts (`TextDocument.Styles`); a pure `Theme.Apply(doc, theme)` (tested) + a Design
+      ribbon dropdown. Re-render resolves the new style formatting.
+- [ ] M4. Read mode / full-screen + selection stats (disjoint — view only). A distraction-free read view
+      (hide ribbon/chrome, centered page) toggled from View; plus live selection word/char count in the
+      status bar (extends the existing word-count helper). No model/IO change.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone L complete. Page borders + watermark, citations & bibliography, advanced
+  find/replace + Go To, drop cap + clear formatting — built in parallel by subagents and integrated
+  (all four auto-merged clean; no hand-resolution needed). Each verified 0/0 build + green before push.
+  FreeW lane now 239 tests (172 model, 67 IO). origin/main @ bc305f003. **Six milestones (F–L, 28
+  features) shipped this session.**
+- 2026-06-17: Milestone K complete. Track changes, table of contents, multi-column layout, cover
+  page/rule/break — built in parallel by subagents and integrated (K2 TOC + K3 columns auto-merged clean;
+  K4 + K1 hand-resolved against each other on the DocumentView insert methods + ParagraphFormatting
+  read-back + interleaved round-trip tests). Each verified 0/0 build + green before push. FreeW lane now
+  201 tests (137 model, 64 IO). origin/main @ a51c046e2.
+- 2026-06-17: Milestone J complete. Comments/review, table cell shading + widths, navigation pane,
+  autocorrect — built in parallel by subagents and integrated (J3/J4 disjoint + J2 auto-merged clean;
+  J1 comments hand-resolved on the ribbon View-vs-Review tab). Each verified 0/0 build + green before
+  push. FreeW lane now 172 tests (119 model, 53 IO). origin/main @ 2cc04ccc4.
+- 2026-06-17: Milestone I complete. Paragraph styles, footnotes, bookmarks + internal links, insert
+  symbol/date — built in parallel by subagents and integrated (I1 styles + I4 symbol/date auto-merged
+  clean; I2 footnotes + I3 bookmarks hand-resolved against each other on the ribbon command classes +
+  DocumentView insert methods). Each verified 0/0 build + green before push. FreeW lane now 115 tests
+  (68 model, 47 IO). origin/main @ b04ac5dd9.
+- 2026-06-17: Milestone H complete. Character effects, tab stops, line/para spacing UI, editor zoom —
+  built in parallel by subagents and integrated (H4 zoom + H1 effects + H2 tabs all auto-merged clean;
+  H3 spacing auto-merged). Each verified 0/0 build + green before push. FreeW lane now 100 tests
+  (62 model, 38 IO). origin/main @ 525859908.
+- 2026-06-17: Milestone G complete. Four features built in parallel by subagents and integrated
+  sequentially (G4 word-count disjoint; G2 lists, G3 para borders/shading, G1 headers/footers share the
+  docx writer/reader → hand-resolved conflicts, esp. G1's `Write`/content-types/rels combining with G2's
+  numbering). Each verified 0/0 build + green before push. FreeW lane now 76 tests (44 model, 32 IO).
+  origin/main @ bf39839f1.
 - 2026-06-17: Milestone F complete. Four features built in parallel by subagents (isolated worktrees)
   and integrated sequentially — hyperlinks, document properties, text colour + highlight, table & image
   editing — each verified 0/0 build + green tests before push; F1's overlap with F2/F3/F4 on the docx
