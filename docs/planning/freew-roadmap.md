@@ -141,6 +141,21 @@ sequentially; G4 is disjoint (MainWindow/DocumentView status only).
 - [x] G4. Word count + live status bar (disjoint). Pure `WordCount`/`DocumentStats` in the model;
       `MainWindow` status bar shows live Words/Characters/Paragraphs, updated on every edit. 5 tests.
 
+## Milestone H — character/paragraph polish + chrome (next tranche)
+More real `.docx` fidelity + editor chrome. Avoids the WPF-ribbon-renderer / shell the other session
+churns. H1 (rPr) and H2 (pPr) touch the docx reader/writer in different element scopes; H3 is mostly
+ribbon/model; H4 is disjoint (view chrome). Integrate H1→H2→H3 sequentially, H4 anytime.
+- [ ] H1. Character effects: superscript/subscript (`w:vertAlign`), small caps (`w:smallCaps`), all caps
+      (`w:caps`). Fields on `RunFormatting`; writer/reader map them in `rPr`; render in `DocumentView`
+      (Typography/BaselineAlignment); Home > Font toggles. Round-trip tests.
+- [ ] H2. Tab stops. `w:tabs` in `pPr` (positions + alignment: left/center/right/decimal); a `TabStop`
+      list on `ParagraphFormatting`; writer/reader; render onto the WPF paragraph. Round-trip tests.
+- [ ] H3. Line & paragraph spacing UI. Ribbon control(s) on Home > Paragraph setting the existing
+      `LineSpacing`/`SpaceBeforePt`/`SpaceAfterPt` model fields (1.0/1.5/2.0 + add/remove space);
+      applied to the selection. (Round-trip already covered; this is the affordance.)
+- [ ] H4. Zoom (disjoint — view chrome only, no IO). A zoom slider/control in the status bar scaling the
+      editor surface (e.g. `LayoutTransform`/`FlowDocument` zoom). Reuse the existing status bar.
+
 ## Status log (newest first)
 - 2026-06-17: Milestone G complete. Four features built in parallel by subagents and integrated
   sequentially (G4 word-count disjoint; G2 lists, G3 para borders/shading, G1 headers/footers share the
