@@ -31,8 +31,10 @@ possible. Build it as a continuous series of small, verified, pushed increments.
       underline/strike), paragraph props (alignment, spacing before/after, line spacing, indent,
       list level), document defaults + named styles, sections. *(RunFormatting/ParagraphFormatting
       records, DocumentStyle catalog w/ Normal/Heading1/Title, PageSettings, document defaults.)*
-- [ ] A2. Editing surface: a document control (FlowDocument-backed first) bound to the model;
-      caret + selection; typing/delete/enter map to model edits.
+- [x] A2. Editing surface: a document control (FlowDocument-backed first) bound to the model;
+      caret + selection; typing/delete/enter map to model edits. *(DocumentView : RichTextBox —
+      LoadModel renders model→FlowDocument resolving run/para formatting through styles+defaults;
+      CommitToModel maps the edited view back. Verified rendering on screen.)*
 - [ ] A3. Wire `Free.Shared.Commands`: `IDocumentCommandContext`, commands for insert/delete text
       and apply run/paragraph formatting; undo/redo via the shared `UndoRedoStack`.
 - [ ] A4. FreeW test project + lane (`freew/FreeW.Core.Model.Tests`); model + command tests.
