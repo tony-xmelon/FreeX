@@ -210,20 +210,26 @@ Avoids the WPF-ribbon-renderer / shell the other session churns. K1/K3 touch the
 ## Milestone L — references + finishing touches (next tranche)
 Avoids the WPF-ribbon-renderer / shell the other session churns. L1/L2 touch the docx reader/writer
 (sequential); L3/L4 are disjoint (editor/view + pure helpers).
-- [ ] L1. Page borders + watermark. `sectPr/w:pgBorders` (uniform page border: colour/width) on
-      `PageSettings`; a text watermark drawn behind the page (model field + rendered in editor/preview).
-      Writer/reader for pgBorders. Round-trip tests.
-- [ ] L2. Citations & bibliography. A `Sources` store on `TextDocument` (author/title/year); Insert >
-      Citation inserts a `(Author, Year)` run; Insert > Bibliography generates a styled reference list
-      from the sources. Pure build helper (tested); persists as ordinary paragraphs/runs.
-- [ ] L3. Advanced Find & Replace + Go To (disjoint — editor only). Extend the find/replace surface:
-      whole-word + match-case options, Replace-All-in-selection, and a Go To (line/heading) jump. Pure
-      match helper (tested) + wiring in `DocumentView`/the find dialog. No model/IO change.
-- [ ] L4. Drop cap + Clear All Formatting (disjoint — view/model-light). Insert > Drop Cap enlarges the
-      selected paragraph's first letter (a leading run with a big font size); Clear Formatting resets the
-      selection's run formatting to defaults. Pure helpers where possible.
+- [x] L1. Page borders + watermark. `PageSettings.PageBorder` (`PageBorder` record) + `Watermark`;
+      writer emits `sectPr/w:pgBorders` + persists the watermark as a `docProps/custom.xml` custom property;
+      reader recovers both; editor + print preview render the border frame + faint rotated watermark;
+      Layout > Page Background. 3 tests.
+- [x] L2. Citations & bibliography. `Source` + `TextDocument.Sources`; pure `Citations` helpers (in-text
+      `(Author, Year)`, APA-flavoured bibliography entries, `BuildBibliography` sorted by author); Insert >
+      Citation (pick/add source) + Insert > Bibliography (reversible). Persists as ordinary text/paragraphs. 15 tests.
+- [x] L3. Advanced Find & Replace + Go To. Pure `TextSearch.FindAll` (match-case + whole-word boundaries);
+      Find/Replace dialog gains Whole-word, Replace-All-in-selection, and a Go To (headings via
+      `DocumentOutline` / doc start/end). No model/IO change. ~12 tests.
+- [x] L4. Drop cap + Clear All Formatting. Pure `DropCap.ApplyDropCap` (split first letter into a 42pt
+      bold run) + `ClearFormatting` (reset runs to default); reversible via the bus (`ReplaceParagraphRunsCommand`);
+      Home > Clear Formatting + Insert > Drop Cap. 6 tests.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone L complete. Page borders + watermark, citations & bibliography, advanced
+  find/replace + Go To, drop cap + clear formatting — built in parallel by subagents and integrated
+  (all four auto-merged clean; no hand-resolution needed). Each verified 0/0 build + green before push.
+  FreeW lane now 239 tests (172 model, 67 IO). origin/main @ bc305f003. **Six milestones (F–L, 28
+  features) shipped this session.**
 - 2026-06-17: Milestone K complete. Track changes, table of contents, multi-column layout, cover
   page/rule/break — built in parallel by subagents and integrated (K2 TOC + K3 columns auto-merged clean;
   K4 + K1 hand-resolved against each other on the DocumentView insert methods + ParagraphFormatting
