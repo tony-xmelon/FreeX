@@ -95,7 +95,9 @@ possible. Build it as a continuous series of small, verified, pushed increments.
 - [x] E3. Print + Export PDF. *(Ctrl+P → WPF PrintDialog prints the FlowDocument paginator; "Microsoft
       Print to PDF" covers PDF export. Page size from the print dialog's printable area.)*
 - [ ] E4. Page layout: margins/orientation/size, paginated page view.
-- [ ] E5. Tables, inline images (DrawingML via shared OPC), bulleted/numbered lists, styles gallery.
+- [~] E5. Bulleted/numbered lists (wired in B1 via EditingCommands) + styles gallery (Normal/
+      Heading 1/Title apply size/weight/colour to the selection). **Tables + inline images (DrawingML
+      via shared OPC) remain — larger; future work.**
 
 ## Status log (newest first)
 - 2026-06-16: Scaffold complete — FreeW builds + runs on `Free.Shared.*`, Word-style ribbon from
