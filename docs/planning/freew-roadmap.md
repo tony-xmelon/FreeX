@@ -94,12 +94,58 @@ possible. Build it as a continuous series of small, verified, pushed increments.
       + right-click suggestions; the right tool for a text surface vs FreeX's cell SpellCheckService.)*
 - [x] E3. Print + Export PDF. *(Ctrl+P → WPF PrintDialog prints the FlowDocument paginator; "Microsoft
       Print to PDF" covers PDF export. Page size from the print dialog's printable area.)*
-- [~] E4. Page layout: margins/orientation/size wired (Layout tab toggles page settings, honoured by
-      docx save + print). **Paginated WYSIWYG page view remains — larger; future.**
-- [~] E5. Bulleted/numbered lists (wired in B1 via EditingCommands) + styles gallery (Normal/
-      Heading 1/Title apply size/weight/colour to the selection). **Tables + inline images (DrawingML
-      via shared OPC) remain — larger; future work.**
+- [x] E4. Page layout: margins/orientation/size wired (Layout tab toggles page settings, honoured by
+      docx save + print). **Paginated WYSIWYG page view DONE** — `PageLayout` (pure point→DIP/printable-
+      area/page-count geometry in the model), `PrintPreviewWindow` (modeless `FlowDocumentPageViewer`
+      over a display-only XAML deep-clone) + page-size-aware `Print()`; "Print Preview" on the Layout
+      tab. 7 PageLayout geometry tests.
+- [x] E5. Bulleted/numbered lists (wired in B1 via EditingCommands) + styles gallery (Normal/
+      Heading 1/Title apply size/weight/colour to the selection). **Tables + inline images DONE** —
+      block model (`Block`/`Paragraph`/`Table`/`TableRow`/`TableCell`) with `w:tbl` docx round-trip +
+      Insert > Table; run-level `InlineImage` (DrawingML `w:drawing`, `word/media` PNG parts, rels +
+      content-type) with Insert > Picture. Round-trip + undo/redo tests.
+
+## Milestone F — deeper document fidelity (next tranche)
+Chosen to extend real `.docx` capability while avoiding the WPF-ribbon-renderer / shell code the other
+session is actively churning. IO-touching items integrate sequentially (they share TextDocument/
+DocxReader/DocxWriter); the editing-UX item is disjoint.
+- [x] F1. Hyperlinks. Run-level `Run.HyperlinkUrl`; docx `w:hyperlink` + `word/_rels` external rels
+      (one rel per distinct URL, dedup); rendered as a clickable WPF `Hyperlink` (opens http/https) that
+      round-trips through edit; Insert > Links > Link prompts for a URL. 5 tests (round-trip/formatting/
+      external-rel/dedup).
+- [x] F2. Document properties. `DocumentProperties` + `TextDocument.Properties`; writer emits
+      `docProps/core.xml` (Dublin Core, `dcterms:created/modified` W3CDTF) + content-type + package rel;
+      reader populates (graceful when absent); Properties dialog from the title bar. 3 tests.
+- [x] F3. Text colour + highlight. `RunFormatting.HighlightColorHex`; highlight encoded as
+      `w:shd w:fill` (mirrors `w:color` foreground, exact hex round-trip); Home > Font palette pickers
+      for Text Colour + Highlight applied to the selection; rendered via inline Background. 2 tests.
+- [x] F4. Table & image editing UX (view/ribbon + reversible model commands, no IO). Insert/delete
+      row & column on the caret's table + set selected-image size, all undoable via the bus; Insert tab
+      "Table Tools" group + Image Size dialog. 8 command tests.
+
+## Milestone G — round-trip fidelity + chrome (next tranche)
+Closes real `.docx` fidelity gaps + editor chrome. Avoids the WPF-ribbon-renderer / shell code the
+other session churns. G1–G3 share TextDocument/Formatting/DocxReader/DocxWriter → integrate
+sequentially; G4 is disjoint (MainWindow/DocumentView status only).
+- [ ] G1. Headers & footers (incl. a page-number field). Section header/footer content; docx
+      `word/header1.xml`/`footer1.xml` parts + rels + `sectPr` references; a PAGE field in the footer;
+      shown in print preview; minimal edit affordance. Round-trip tests.
+- [ ] G2. List persistence to docx. Bulleted/numbered lists currently live only as WPF `List` elements
+      (not saved). Map WPF `List`↔model on render/commit and write/read `numbering.xml` + `w:numPr`
+      (reusing the existing `ListKind`/`ListLevel` on `ParagraphFormatting`). Round-trip tests.
+- [ ] G3. Paragraph borders & shading. `w:pBdr` + paragraph-level `w:shd`; model fields on
+      `ParagraphFormatting`; ribbon/affordance to toggle; render in `DocumentView`. Round-trip tests.
+- [ ] G4. Word count + live status bar (disjoint — view/status only, no IO). Live word/character/
+      paragraph count in the status bar, updated on edit. Reuse the status-bar chrome already in MainWindow.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone F complete. Four features built in parallel by subagents (isolated worktrees)
+  and integrated sequentially — hyperlinks, document properties, text colour + highlight, table & image
+  editing — each verified 0/0 build + green tests before push; F1's overlap with F2/F3/F4 on the docx
+  writer/ribbon/tests resolved by hand. FreeW lane now 44 tests (26 model, 18 IO). origin/main @ 22c6d7753.
+- 2026-06-17: E4 + E5 fully done. Three features built in parallel by subagents and integrated
+  sequentially (tables → images → page-view), each verified 0/0 build + green tests before push:
+  tables (block model + docx + Insert Table), inline images (DrawingML + Insert Picture), paginated
+  print preview + page-aware print. FreeW lane now 27 tests (18 model, 9 IO). origin/main @ cb3c4c45d.
 - 2026-06-16: Scaffold complete — FreeW builds + runs on `Free.Shared.*`, Word-style ribbon from
   the shared model, own product identity. Roadmap created; beginning Milestone A.
