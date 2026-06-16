@@ -176,20 +176,25 @@ docx parts/elements (sequential integration); I1 is model/view/ribbon (light IO)
 ## Milestone J — review + navigation + polish (next tranche)
 Avoids the WPF-ribbon-renderer / shell the other session churns. J1/J2 touch the docx reader/writer
 (sequential); J3/J4 are disjoint (view/editor only, no IO).
-- [ ] J1. Comments (review). `word/comments.xml` part + content type + rel; `w:commentRangeStart`/`End`
-      + `w:commentReference` around a range; a comments store on `TextDocument`; render a comment marker
-      + show text (tooltip); Review > New Comment. Round-trip tests.
-- [ ] J2. Table cell shading + per-cell width. `w:tcPr/w:shd` (fill) + `w:tcW` (dxa) + `w:tblGrid`
-      `w:gridCol`; model fields on `TableCell`/`Table`; writer/reader; render cell background + widths in
-      `DocumentView`. Round-trip tests.
-- [ ] J3. Navigation pane (disjoint — view only). A toggleable side panel listing the document's heading
-      paragraphs (by Heading/Title style); clicking scrolls that heading into view. Reads the model;
-      updates on edit. No model/IO change.
-- [ ] J4. AutoCorrect / smart typing (disjoint — editor only). As-you-type: straight quotes → curly
-      quotes, `--` → en/em dash, `(c)`→©, capitalize first letter of sentence; a pure transform helper
-      (unit-tested) invoked on text input in `DocumentView`. No model/IO change.
+- [x] J1. Comments (review). `Comment` store on `TextDocument` + `Run.CommentId`/`IsCommentReference`;
+      writer emits `word/comments.xml` + content type + rel + `w:commentRangeStart`/`End` +
+      `w:commentReference`; reader parses them; pale-yellow highlight + author/text tooltip (preserved
+      across edit); Review > New Comment over the selection. 4 tests.
+- [x] J2. Table cell shading + per-cell width. `TableCell.ShadingColorHex`/`WidthPt` + `Table.ColumnWidthsPt`;
+      writer emits `w:tcPr/w:shd` + `w:tcW` + `w:tblGrid/w:gridCol`; reader parses them; `DocumentView`
+      renders cell `Background` + column `Width`; Table Tools > Cell Shading. 2 tests.
+- [x] J3. Navigation pane (disjoint). Pure `DocumentOutline.Of` (Title/HeadingN paragraphs → entries with
+      levels); toggleable left pane in `MainWindow` listing headings, click scrolls to the heading
+      (`DocumentView.BringBlockIntoView`); View > Navigation Pane toggle. 11 tests.
+- [x] J4. AutoCorrect / smart typing (disjoint). Pure `AutoCorrect.Evaluate` (smart quotes open/close,
+      `--`→en dash, `(c)`/`(r)`/`(tm)`, `...`→…, sentence caps); wired into `DocumentView.OnPreviewTextInput`
+      through the edit/undo path (toggleable, default on). 38 tests.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone J complete. Comments/review, table cell shading + widths, navigation pane,
+  autocorrect — built in parallel by subagents and integrated (J3/J4 disjoint + J2 auto-merged clean;
+  J1 comments hand-resolved on the ribbon View-vs-Review tab). Each verified 0/0 build + green before
+  push. FreeW lane now 172 tests (119 model, 53 IO). origin/main @ 2cc04ccc4.
 - 2026-06-17: Milestone I complete. Paragraph styles, footnotes, bookmarks + internal links, insert
   symbol/date — built in parallel by subagents and integrated (I1 styles + I4 symbol/date auto-merged
   clean; I2 footnotes + I3 bookmarks hand-resolved against each other on the ribbon command classes +
