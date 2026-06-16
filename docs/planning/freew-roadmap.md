@@ -227,20 +227,26 @@ Avoids the WPF-ribbon-renderer / shell the other session churns. L1/L2 touch the
 ## Milestone M — editor power tools (next tranche)
 Avoids the WPF-ribbon-renderer / shell the other session churns. Mostly disjoint/model this round
 (low docx-IO conflict surface). M2 touches the reader/writer; M1/M3/M4 are editor/model/ribbon.
-- [ ] M1. Format Painter (disjoint — editor only). Wire the long-unwired `freew.format-painter`
-      placeholder: capture the run+paragraph formatting at the caret/selection, then apply it to the next
-      selection. A pure formatting-copy helper (tested) + `DocumentView` capture/apply. No model/IO change.
-- [ ] M2. Captions + figure/table numbering. Insert > Caption under the selected image/table inserts a
-      "Figure N: …" / "Table N: …" paragraph with sequential numbering (a pure numbering helper, tested);
-      persists as an ordinary styled paragraph. Light IO (a Caption style); round-trips as paragraphs.
-- [ ] M3. Document themes. A small set of built-in colour/font themes that rewrite the style catalog's
-      run colours + fonts (`TextDocument.Styles`); a pure `Theme.Apply(doc, theme)` (tested) + a Design
-      ribbon dropdown. Re-render resolves the new style formatting.
-- [ ] M4. Read mode / full-screen + selection stats (disjoint — view only). A distraction-free read view
-      (hide ribbon/chrome, centered page) toggled from View; plus live selection word/char count in the
-      status bar (extends the existing word-count helper). No model/IO change.
+- [x] M1. Format Painter. Pure `FormatPainterClipboard` (Capture/ApplyTo, wholesale-replace); wired the
+      `freew.format-painter` placeholder — capture from the selection, arm, apply run+paragraph formatting
+      to the next selection on mouse-up, then disarm. 5 tests. (View-only.)
+- [x] M2. Captions + figure/table numbering. Pure `Captions` helper (`CaptionLabel`, `NextCaptionNumber`
+      counts existing same-label captions, `BuildCaption`) + a `Caption` built-in style; Insert > Caption
+      inserts a numbered "Figure/Table N: …" under the caret's block (reversible), auto-picking Table in a
+      table. Round-trips as a styled paragraph. 9 tests.
+- [x] M3. Document themes. Pure `DocumentTheme` (Office/Slate/Berlin/Ion) + `Apply(doc, theme)` rewriting
+      the style catalog's heading/body fonts + Title/Heading colours (body runs inherit through styles);
+      Design tab theme dropdown re-renders. 8 tests.
+- [x] M4. Read mode + selection stats. `MainWindow.ToggleReadMode` hides chrome + shows a centered reading
+      column (restores prior layout on exit); status bar shows live selection word/char count (falls back to
+      document counts); View > Views toggle. (View-only.) +1 test theory.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone M complete. Format painter, captions + numbering, document themes, read mode +
+  selection stats — built in parallel by subagents and integrated (all four auto-merged clean; chained
+  ribbon `Build` overloads + new Design/View tabs composed without conflict). Each verified 0/0 build +
+  green before push. FreeW lane now 264 tests (197 model, 67 IO). origin/main @ 4f8571b93. **Seven
+  milestones (F–M, 32 features) shipped this session.**
 - 2026-06-17: Milestone L complete. Page borders + watermark, citations & bibliography, advanced
   find/replace + Go To, drop cap + clear formatting — built in parallel by subagents and integrated
   (all four auto-merged clean; no hand-resolution needed). Each verified 0/0 build + green before push.
