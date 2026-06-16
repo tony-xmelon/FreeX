@@ -90,8 +90,10 @@ possible. Build it as a continuous series of small, verified, pushed increments.
 - [x] E1. Find/Replace. *(Modeless FindReplaceDialog over the editing surface: TextPointer search,
       Find Next w/ wrap, Replace, Replace All, Match case; opened via Ctrl+F / Ctrl+H. FreeW text
       search is TextPointer-based rather than reusing FreeX's cell-oriented find.)*
-- [ ] E2. Spell-check (reuse `FreeX` `SpellCheckService`; extract to shared).
-- [ ] E3. Print + Export PDF (reuse FreeX print pipeline / PDFsharp; extract the generic frame).
+- [x] E2. Spell-check. *(Enabled WPF RichTextBox built-in spell check on DocumentView — red squiggles
+      + right-click suggestions; the right tool for a text surface vs FreeX's cell SpellCheckService.)*
+- [x] E3. Print + Export PDF. *(Ctrl+P → WPF PrintDialog prints the FlowDocument paginator; "Microsoft
+      Print to PDF" covers PDF export. Page size from the print dialog's printable area.)*
 - [ ] E4. Page layout: margins/orientation/size, paginated page view.
 - [ ] E5. Tables, inline images (DrawingML via shared OPC), bulleted/numbered lists, styles gallery.
 
