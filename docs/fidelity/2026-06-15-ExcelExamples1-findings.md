@@ -132,7 +132,66 @@ came from 3a/3b roots, e.g. `LEFT` wrapping a value that became `#DIV/0!`). Re-m
   a pass-through of the source file's PowerQuery connection (Excel itself wrote type=102). Non-blocking for
   real Excel; tied to the out-of-scope PowerQuery feature.
 
-## 5. Charts — TBD (21 classic + 1 funnel chartEx). Run ChartFileCompare on this file.
+## 5. Charts — MEASURED + first fix landed
+
+The file actually contains **20 classic charts (`chart1..20.xml`) + 1 funnel `chartEx1.xml`** = 21
+chart parts (the earlier "21 classic + 1 funnel" was approximate).
+
+### 5.0 Measurement harness — `tools/FreeX.ExcelExamplesCharts`
+New tool (NOT in FreeX.slnx — `dotnet build tools/FreeX.ExcelExamplesCharts -c Release` first). It:
+(A) loads the file in FreeX, enumerates every chart, renders each to PNG (records type / renderable /
+rendered / visibly-blank); (B) opens the SAME file in a single en-US Excel COM instance and exports
+every chart PNG as ground truth, then diffs (mean per-pixel %) matched per-sheet by chart index;
+(C) round-trips (FreeX save → reopen in Excel) and counts charts retained per sheet. Run:
+`dotnet run --project tools/FreeX.ExcelExamplesCharts -c Release --no-build -- "E:\Users\anton\Downloads\ExcelExamples1.xlsx" <outDir>`
+(append `--no-excel` to skip the COM passes). Output: `REPORT.md` + side-by-side `worst/` composites.
+
+### 5.1 Measured baseline (per chart-bearing sheet)
+FreeX loads **20/21** charts (all 20 classic; the chartEx funnel is NOT loaded as a ChartModel).
+Charts live on 5 sheets: Budget v Actual (12), Budget Summary (3), Data Entry (2) (3),
+Budget - 2013 or lower (1), todo (1).
+- **Render**: 20/20 rendered to PNG; **1 visibly blank** (todo StackedBar).
+- **Render diff vs Excel** (11 charts had a valid Excel ground-truth PNG; the other 9 are the tiny
+  "Budget v Actual" mini-charts whose Excel `chart.Export` produced 0-byte PNGs — an Excel-COM export
+  quirk, not a FreeX gap): mean **10.2% → 9.3%** after the clustered-column fix below; max ~20%.
+- **Round-trip (IO): PERFECT.** After FreeX save→reopen, Excel sees the exact original chart count on
+  every sheet (20/20). The `chartEx1.xml` part ALSO survives byte round-trip (pass-through preserved) —
+  so the funnel is an on-screen render gap, NOT an IO data-loss.
+
+### 5.2 [x] FIXED — clustered Column charts rendered overlapping/stacked (`905f647d1`)
+ROOT CAUSE (renderer, not loader): the loader correctly typed `grouping="clustered"` + `barDir="col"`
+as `ChartType.Column`, but `ChartRenderer` placed EVERY series' `RectangleBarItem` at the same x-window
+`[i-half, i+half]` centred on the category index, so multiple series overdrew each other (the taller,
+last-drawn series hid the rest — looked stacked). FIX (`ChartRenderer.cs` +
+`ChartRenderer.SeriesFormatting.cs`): count the clustered (non-combo-line/scatter) column series and give
+each a disjoint `1/N` sub-slot within the category bar width via `ClusteredBarOffsets(...)`, so the bars
+sit side by side as Excel renders them. TDD test
+`ClusteredColumnChart_PlacesSeriesSideBySideWithinCategorySlot` (asserts disjoint x-windows). Verified
+visually on "Budget v Actual": Budget+Actual now cluster correctly (was overlapping). 144 ChartRenderer
+tests green. NOTE: single-series Column/stacked/bar paths are unchanged (cluster count ≤ 1 ⇒ full slot).
+
+### 5.3 Prioritized remaining chart gaps (out of scope this pass)
+- [ ] **todo StackedBar renders blank (progress-bar idiom).** `chart20.xml` is a stacked bar built from
+  **12 single-cell series** (`todo!$J$4 … $J$15`, each `ptCount=1`, NO `<c:cat>`). FreeX's chart model
+  uses ONE rectangular `DataRange` (series = columns), so the 12 single-cell series collapse into one
+  column J × 12 rows with **0 categories** → the stacked-bar builder skips every point (`i >= categories.Count`,
+  count 0) → blank. Excel draws a single ~45% horizontal progress bar (J4=0.30 + J5=0.15). A correct fix
+  needs per-series range awareness (each series = its own cell) which the single-`DataRange` model cannot
+  express — ARCHITECTURAL, deferred (risk of regressing all bar/column charts). Bounded interim option:
+  detect "N stacked series each a single cell in one column, no cat" and synthesize N series of 1 point.
+- [ ] **Funnel `chartEx1.xml` not rendered.** Loaded as a pass-through part (survives round-trip) but not
+  materialised into a `ChartModel`, so it shows nothing on screen. LOW impact here: this particular
+  chartEx is a degenerate `layoutId="treemap"` funnel with **`ptCount="0"` (zero data points)** — even
+  Excel renders it essentially empty. General chartEx rendering (funnel/treemap/sunburst from the
+  `cx:` namespace) is the real feature; this file isn't a good driver for it.
+- [ ] **Budget v Actual overlay deviation columns + emoji/percent annotations** (residual ~8–20% diff on
+  the main "Budget vs. Actual Performance" chart): Excel overlays small green/blue deviation bars and
+  thumbs-up/down emoji + "30%/5%/…" labels above each category. FreeX renders the clustered base bars
+  faithfully but omits these decorations. Combo/overlay + emoji data-labels — separate, larger feature.
+- [-] **Measurement caveat — chart index matching.** The harness matches FreeX charts to Excel charts by
+  per-sheet ordinal; Excel's `ChartObjects` z-order ≠ FreeX load order on "Budget v Actual" (12 charts),
+  so a couple of diff rows compare mismatched charts (e.g. a FreeX 2-series chart vs an Excel 4-series
+  chart). Affects ranking only, not the fixes; a position/anchor-based matcher would tighten it.
 
 ## 6. Visual per-sheet — harness built (`tools/FreeX.SheetImageCompare`)
 Renders each sheet via `PrintRenderer.RenderWorksheet` → FixedDocument → PNG (36 sheets). Excel ground
