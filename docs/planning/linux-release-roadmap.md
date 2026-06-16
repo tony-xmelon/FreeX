@@ -99,16 +99,17 @@ already uses to render the grid (fontconfig on Linux). Rationale:
 - Matches on-screen rendering; correct shaping for complex scripts.
 
 Shape of the work (sequenced so it's verifiable):
-1. Add `tests/FreeX.App.Avalonia.Tests` to the Linux CI lane (Skia PDF can only be validated
-   where the Skia native asset loads — Linux runner — not the Windows dev host).
-2. Implement `SkiaPdfDocumentExporter` in `FreeX.App.Avalonia`, consuming the existing
-   `PortablePdfExportPlanner` + `PortablePdfPageContentPlanner` for page/row/column/cell layout
-   and drawing onto `SKDocument` PDF pages with a Unicode-capable `SKTypeface`.
-3. Route Avalonia *File → Export to PDF* through it (Unicode-capable); keep the portable
-   WinAnsi writer as the headless fallback. The export menu item is unchanged, so launch-smoke
-   assertions stay intact.
-4. Validate on Linux CI: assert a valid `%PDF`, an embedded font (`/FontFile2`/`Type0`), and
-   that non-Latin text round-trips.
+1. ✅ **`SkiaPdfDocumentExporter`** implemented in `FreeX.App.Avalonia/Pdf/`, consuming the
+   existing `PortablePdfExportPlanner` + `PortablePdfPageContentPlanner` for page/row/column/cell
+   layout and drawing onto `SKDocument` PDF pages with a Unicode-capable `SKTypeface`. Tests in
+   `tests/FreeX.App.Avalonia.Tests` prove a valid `%PDF` with an embedded font (`FontFile`) and a
+   `/Type0` composite font rendering Cyrillic + Greek — validated locally (SkiaSharp's `win-x64`
+   native asset is present, so it runs on the Windows dev host too, not only on Linux).
+2. **Next:** route Avalonia *File → Export to PDF* through it (Unicode-capable) while keeping the
+   portable WinAnsi writer as the dependency-free headless fallback. The export menu item is
+   unchanged, so launch-smoke assertions stay intact.
+3. **Next:** add `tests/FreeX.App.Avalonia.Tests` (PDF filter) to the `linux-app` CI lane for
+   on-Linux validation alongside the local coverage.
 
 ## Sequencing
 
