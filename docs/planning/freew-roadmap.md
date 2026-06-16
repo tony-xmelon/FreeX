@@ -39,16 +39,26 @@ possible. Build it as a continuous series of small, verified, pushed increments.
       and apply run/paragraph formatting; undo/redo via the shared `UndoRedoStack`. *(IDocumentCommand
       + DocumentCommandBus over the shared UndoRedoStack; Insert/Delete/SetParagraph/SetRun/
       FormatParagraphRuns commands w/ snapshot revert; bus wired into DocumentView w/ redraw-on-change.)*
-- [ ] A4. FreeW test project + lane (`freew/FreeW.Core.Model.Tests`); model + command tests.
+- [x] A4. FreeW test project + lane (`freew/FreeW.Core.Model.Tests`); model + command tests.
+      *(10 tests: model/styles/PlainText + DocumentCommandBus undo/redo/redo-invalidation/snapshot
+      revert; added to FreeW.slnx. `dotnet test FreeW.slnx` = the FreeW lane. 10/10 green.)*
 
 ## Milestone B — ribbon wired to editing
-- [ ] B1. Implement `IRibbonCommandRegistry` for FreeW; wire Home commands (bold/italic/underline,
+- [x] B1. Implement `IRibbonCommandRegistry` for FreeW; wire Home commands (bold/italic/underline,
       align L/C/R, cut/copy/paste, grow/shrink font) to editing ops through the command bus.
-- [ ] B2. Selection-driven toggle state (bold on when selection is bold) via the shared ribbon
-      state store.
-- [ ] B3. Reuse the real WPF ribbon renderer: extract `RibbonWpfRenderer` (+ adaptive panel/keytips)
-      from `FreeX.App.Host` into a shared WPF ribbon library; FreeW renders with it instead of the
-      placeholder. (Localization via `IShellStrings`; coordinate with concurrent ribbon edits.)
+      *(FreeWRibbonCommands builds a RibbonCommandRegistry mapping ids → WPF EditingCommands/
+      ApplicationCommands on the editor; bold/italic/underline are IRibbonStatefulCommand. Renderer
+      wires button Click → command.Execute and disables unregistered ids. Launches clean.)*
+- [x] B2. Selection-driven toggle state (bold on when selection is bold) via the shared ribbon
+      state store. *(editor.SelectionChanged pushes bold/italic/underline state into the shared
+      RibbonStateStore; toggle buttons observe StateChanged and update IsChecked live.)*
+- [ ] B3. *(DEFERRED — reordered.)* Reuse the real WPF ribbon renderer: extract `RibbonWpfRenderer`
+      (+ adaptive panel/keytips) from `FreeX.App.Host` into a shared WPF ribbon library; FreeW renders
+      with it instead of the placeholder. **Held back because the other session is actively churning
+      the WPF ribbon renderer on `origin/main` — extracting it now would conflict hard. FreeW's
+      placeholder ribbon already drives real commands (B1/B2), so this is quality, not function.
+      Revisit once the ribbon work settles. Proceeding to Milestone C (docx I/O), which is
+      independent.**
 
 ## Milestone C — .docx I/O
 - [ ] C1. Phase 3b prerequisite: split `XlsxPackagePath` → format-neutral OPC core in
