@@ -127,18 +127,26 @@ DocxReader/DocxWriter); the editing-UX item is disjoint.
 Closes real `.docx` fidelity gaps + editor chrome. Avoids the WPF-ribbon-renderer / shell code the
 other session churns. G1–G3 share TextDocument/Formatting/DocxReader/DocxWriter → integrate
 sequentially; G4 is disjoint (MainWindow/DocumentView status only).
-- [ ] G1. Headers & footers (incl. a page-number field). Section header/footer content; docx
-      `word/header1.xml`/`footer1.xml` parts + rels + `sectPr` references; a PAGE field in the footer;
-      shown in print preview; minimal edit affordance. Round-trip tests.
-- [ ] G2. List persistence to docx. Bulleted/numbered lists currently live only as WPF `List` elements
-      (not saved). Map WPF `List`↔model on render/commit and write/read `numbering.xml` + `w:numPr`
-      (reusing the existing `ListKind`/`ListLevel` on `ParagraphFormatting`). Round-trip tests.
-- [ ] G3. Paragraph borders & shading. `w:pBdr` + paragraph-level `w:shd`; model fields on
-      `ParagraphFormatting`; ribbon/affordance to toggle; render in `DocumentView`. Round-trip tests.
-- [ ] G4. Word count + live status bar (disjoint — view/status only, no IO). Live word/character/
-      paragraph count in the status bar, updated on edit. Reuse the status-bar chrome already in MainWindow.
+- [x] G1. Headers & footers (incl. a page-number field). `TextDocument.Header`/`Footer` (`HeaderFooter`
+      of paragraphs) + `Run.PageNumberField()` (`RunFieldKind`); writer emits `word/header1.xml`/
+      `footer1.xml` parts + content types + rels + `w:headerReference`/`footerReference` in `sectPr`,
+      PAGE field as `w:fldSimple`; reader resolves them back; `HeaderFooterPaginator` draws header/footer
+      (live page number) on every previewed/printed page; Insert > Header & Footer group. 6 tests.
+- [x] G2. List persistence to docx. Editor maps WPF `List`↔model `ListKind`/`ListLevel` on render/commit;
+      writer emits `word/numbering.xml` (bullet `numId=1`, decimal `numId=2`, 9 levels) + content type +
+      rel + `w:numPr` in list paragraphs; reader maps `numbering.xml`/`w:numPr` back. 5 tests.
+- [x] G3. Paragraph borders & shading. `ParagraphBorder` record + `ShadingColorHex` on
+      `ParagraphFormatting`; writer/reader map `w:pBdr` + paragraph `w:shd`; `DocumentView` renders via
+      `Paragraph.BorderBrush`/`Background`; Home > Paragraph toggle + shading palette. 3 tests.
+- [x] G4. Word count + live status bar (disjoint). Pure `WordCount`/`DocumentStats` in the model;
+      `MainWindow` status bar shows live Words/Characters/Paragraphs, updated on every edit. 5 tests.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone G complete. Four features built in parallel by subagents and integrated
+  sequentially (G4 word-count disjoint; G2 lists, G3 para borders/shading, G1 headers/footers share the
+  docx writer/reader → hand-resolved conflicts, esp. G1's `Write`/content-types/rels combining with G2's
+  numbering). Each verified 0/0 build + green before push. FreeW lane now 76 tests (44 model, 32 IO).
+  origin/main @ bf39839f1.
 - 2026-06-17: Milestone F complete. Four features built in parallel by subagents (isolated worktrees)
   and integrated sequentially — hyperlinks, document properties, text colour + highlight, table & image
   editing — each verified 0/0 build + green tests before push; F1's overlap with F2/F3/F4 on the docx
