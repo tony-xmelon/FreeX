@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <Using Include="Xunit" />
-    <Using Include="FreeX.Ribbon" />
+    <Using Include="Free.Shared.Ribbon" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,4 +29,13 @@
     <ProjectReference Include="..\..\src\FreeX.App.Host\FreeX.App.Host.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Using Include="Free.Shared.Opc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="Free.Shared.AppServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="Free.Shared.Shell" />
+  </ItemGroup>
 </Project>

@@ -8,11 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FreeX.Ribbon\FreeX.Ribbon.csproj" />
+    <ProjectReference Include="..\..\shared\Free.Shared.Ribbon\Free.Shared.Ribbon.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Avalonia" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Free.Shared.Ribbon" />
   </ItemGroup>
 
   <ItemGroup>

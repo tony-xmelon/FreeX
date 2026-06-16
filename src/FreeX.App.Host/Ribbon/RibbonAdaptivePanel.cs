@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
-using FreeX.Ribbon;
+using Free.Shared.Ribbon;
 
 namespace FreeX.App.Host;
 

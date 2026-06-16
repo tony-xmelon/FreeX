@@ -1,5 +1,5 @@
 using Avalonia.Controls;
-using FreeX.Ribbon;
+using Free.Shared.Ribbon;
 using FreeX.Ribbon.Avalonia;
 
 namespace FreeX.App.Avalonia.Ribbon;

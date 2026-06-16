@@ -6,19 +6,27 @@
     <ProjectReference Include="..\FreeX.Core.Calc\FreeX.Core.Calc.csproj" />
     <ProjectReference Include="..\FreeX.Core.Commands\FreeX.Core.Commands.csproj" />
     <ProjectReference Include="..\FreeX.Core.IO\FreeX.Core.IO.csproj" />
-    <ProjectReference Include="..\FreeX.Ribbon\FreeX.Ribbon.csproj" />
+    <ProjectReference Include="..\..\shared\Free.Shared.Ribbon\Free.Shared.Ribbon.csproj" />
     <ProjectReference Include="..\FreeX.App.Services\FreeX.App.Services.csproj" />
     <ProjectReference Include="..\FreeX.App.UI\FreeX.App.UI.csproj" />
+    <ProjectReference Include="..\..\shared\Free.Shared.Shell\Free.Shared.Shell.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Using Remove="System.Drawing" />
     <Using Remove="System.Windows.Forms" />
-    <Using Include="FreeX.Ribbon" />
+    <Using Include="Free.Shared.Ribbon" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Resources\FreeX.ico" />
+  </ItemGroup>
+
+  <!-- Compile App.xaml as a Page so the WPF SDK does not generate its own Main; the explicit
+       entry point in Program.cs runs Velopack before WPF initializes. -->
+  <ItemGroup>
+    <ApplicationDefinition Remove="App.xaml" />
+    <Page Include="App.xaml" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(FreeXTesterReleaseEnglishOnly)' == 'true'">
@@ -53,6 +61,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
+    <StartupObject>FreeX.App.Host.Program</StartupObject>
     <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -67,4 +76,10 @@
     <InformationalVersion>0.5.0</InformationalVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Using Include="Free.Shared.Opc" />
+    <Using Include="Free.Shared.Commands" />
+    <Using Include="Free.Shared.AppServices" />
+    <Using Include="Free.Shared.Shell" />
+  </ItemGroup>
 </Project>

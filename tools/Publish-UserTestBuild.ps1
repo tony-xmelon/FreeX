@@ -344,11 +344,23 @@ if ($PublishMode -eq "Velopack") {
         if ($null -eq $vpk) { throw "vpk not found on PATH after install; ensure the dotnet global tools dir is on PATH." }
     }
 
+    # Clean the output directory first so local re-runs of the same version do not fail with
+    # "there is a release ... equal or greater to the current version". CI starts from an empty
+    # workspace, so this only matters for repeated local packs. (Delta packages would require
+    # seeding prior releases here; not wired yet — full packages only.)
     $vpkOut = Join-Path $artifactRoot "velopack-$RuntimeIdentifier"
+    if (Test-Path -LiteralPath $vpkOut) {
+        Remove-Item -LiteralPath $vpkOut -Recurse -Force
+    }
     New-Item -ItemType Directory -Force -Path $vpkOut | Out-Null
 
+    # packId is "FreeXApp" (not "FreeX") on purpose: Velopack installs to %LocalAppData%\<packId>,
+    # and the app already uses %LocalAppData%\FreeX for its own data (Logs/Diagnostics/Recovery).
+    # A matching id would make Velopack rename/own that data dir — wiping user data on uninstall and
+    # failing reinstall when the dir is locked. Distinct id keeps install and data fully separate.
+    # packTitle stays "FreeX" so the display name (Start menu, Programs & Features) is unchanged.
     & vpk pack `
-        --packId "FreeX" `
+        --packId "FreeXApp" `
         --packVersion $assemblyVersion `
         --packDir $publishDir `
         --mainExe "FreeX.App.Host.exe" `

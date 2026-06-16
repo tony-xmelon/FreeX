@@ -1,5 +1,5 @@
-using FreeX.Ribbon;
-using Ico = FreeX.Ribbon.RibbonCommandIconKind;
+using Free.Shared.Ribbon;
+using Ico = Free.Shared.Ribbon.RibbonCommandIconKind;
 
 namespace FreeX.App.Host;
 

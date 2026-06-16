@@ -45,4 +45,6 @@ capture_*.ps1
 enum_tabs.ps1
 *.png
 
+# Test run artifacts
+TestResults/
 tools/_old_mainwindow.xaml
