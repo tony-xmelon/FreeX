@@ -193,20 +193,26 @@ Avoids the WPF-ribbon-renderer / shell the other session churns. J1/J2 touch the
 ## Milestone K — long-document features (next tranche)
 Avoids the WPF-ribbon-renderer / shell the other session churns. K1/K3 touch the docx reader/writer
 (sequential); K2 is light-IO (reuses `DocumentOutline`); K4 is disjoint (insert helpers).
-- [ ] K1. Track changes (revisions). Run-level insertion/deletion marks (`w:ins`/`w:del` with author +
-      date) on `Run`; writer/reader; render insertions underlined-coloured and deletions strikethrough;
-      Review > Track Changes toggle + Accept All / Reject All. Round-trip tests.
-- [ ] K2. Table of Contents. Insert > Table of Contents generates a TOC region from `DocumentOutline`
-      (heading text, indented by level, as styled paragraphs); a refresh command re-builds it. Persists as
-      ordinary paragraphs (round-trips already). Tests for the pure TOC-build from an outline.
-- [ ] K3. Columns (multi-column layout). `PageSettings.ColumnCount` (+ spacing); writer/reader `sectPr`
-      `w:cols w:num/w:space`; render the editor/preview FlowDocument in N columns; Layout > Columns.
-      Round-trip tests.
-- [ ] K4. Cover page + horizontal rule + page break (disjoint — insert helpers, model-light). Insert >
-      Cover Page (prepend Title/Subtitle/spacer paragraphs), Horizontal Rule (a bottom-bordered empty
-      paragraph, reusing the para-border model), and a visible Page Break paragraph marker.
+- [x] K1. Track changes (revisions). `Run.Revision` (`RevisionKind` None/Inserted/Deleted) + author/date;
+      writer coalesces runs into `w:ins`/`w:del` (+`w:delText`); reader parses them; insertions render
+      underlined-coloured, deletions strikethrough (preserved across edit); Review > Track Changes toggle +
+      Accept All / Reject All (pure `TrackChanges` ops). 3 IO + 4 model tests.
+- [x] K2. Table of Contents. Pure `TableOfContents.Build` from `DocumentOutline` ("Contents" heading +
+      level-indented entries with TOC styles); Insert > Table of Contents + Update TOC (removes the
+      style-marked region and rebuilds), reversibly via the bus. Round-trips as styled paragraphs. 10 tests.
+- [x] K3. Columns (multi-column layout). `PageSettings.ColumnCount` + `ColumnSpacingPt`; writer/reader
+      `sectPr/w:cols w:num/w:space`; editor + print preview render N equal columns via FlowDocument
+      `ColumnWidth`/`ColumnGap`; Layout > Columns cycles 1→2→3. 4 tests.
+- [x] K4. Cover page + horizontal rule + page break. Pure `DocumentOps` (cover page from Properties,
+      bottom-only-border rule, page-break paragraph); `ParagraphBorder.BottomOnly` + `ParagraphFormatting.
+      PageBreakBefore` (both round-trip via `w:bottom`/`w:pageBreakBefore`); Insert > Pages wired. 5 model + 4 IO tests.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone K complete. Track changes, table of contents, multi-column layout, cover
+  page/rule/break — built in parallel by subagents and integrated (K2 TOC + K3 columns auto-merged clean;
+  K4 + K1 hand-resolved against each other on the DocumentView insert methods + ParagraphFormatting
+  read-back + interleaved round-trip tests). Each verified 0/0 build + green before push. FreeW lane now
+  201 tests (137 model, 64 IO). origin/main @ a51c046e2.
 - 2026-06-17: Milestone J complete. Comments/review, table cell shading + widths, navigation pane,
   autocorrect — built in parallel by subagents and integrated (J3/J4 disjoint + J2 auto-merged clean;
   J1 comments hand-resolved on the ribbon View-vs-Review tab). Each verified 0/0 build + green before
