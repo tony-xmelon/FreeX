@@ -173,6 +173,22 @@ docx parts/elements (sequential integration); I1 is model/view/ribbon (light IO)
 - [x] I4. Insert Symbol + Date & Time (disjoint). `DocumentView.InsertText` through the edit/undo path;
       a 36-glyph symbol picker + a date/time dialog (pure `DateTimeFormats` helper); Insert > Symbols.
 
+## Milestone J — review + navigation + polish (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. J1/J2 touch the docx reader/writer
+(sequential); J3/J4 are disjoint (view/editor only, no IO).
+- [ ] J1. Comments (review). `word/comments.xml` part + content type + rel; `w:commentRangeStart`/`End`
+      + `w:commentReference` around a range; a comments store on `TextDocument`; render a comment marker
+      + show text (tooltip); Review > New Comment. Round-trip tests.
+- [ ] J2. Table cell shading + per-cell width. `w:tcPr/w:shd` (fill) + `w:tcW` (dxa) + `w:tblGrid`
+      `w:gridCol`; model fields on `TableCell`/`Table`; writer/reader; render cell background + widths in
+      `DocumentView`. Round-trip tests.
+- [ ] J3. Navigation pane (disjoint — view only). A toggleable side panel listing the document's heading
+      paragraphs (by Heading/Title style); clicking scrolls that heading into view. Reads the model;
+      updates on edit. No model/IO change.
+- [ ] J4. AutoCorrect / smart typing (disjoint — editor only). As-you-type: straight quotes → curly
+      quotes, `--` → en/em dash, `(c)`→©, capitalize first letter of sentence; a pure transform helper
+      (unit-tested) invoked on text input in `DocumentView`. No model/IO change.
+
 ## Status log (newest first)
 - 2026-06-17: Milestone I complete. Paragraph styles, footnotes, bookmarks + internal links, insert
   symbol/date — built in parallel by subagents and integrated (I1 styles + I4 symbol/date auto-merged
