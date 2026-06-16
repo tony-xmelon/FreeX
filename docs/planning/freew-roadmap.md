@@ -160,20 +160,25 @@ ribbon/model; H4 is disjoint (view chrome). Integrate H1→H2→H3 sequentially,
 ## Milestone I — structured content (next tranche)
 Larger Word constructs. Avoids the WPF-ribbon-renderer / shell the other session churns. I2/I3 add new
 docx parts/elements (sequential integration); I1 is model/view/ribbon (light IO); I4 is disjoint UI.
-- [ ] I1. Real paragraph styles. Expand the built-in style catalog (Heading 2/3, Quote, Subtitle); a
-      ribbon **styles dropdown** that sets the selected paragraphs' `StyleId` (vs today's direct-format
-      buttons); `DocumentView` resolves StyleId through the catalog on render; round-trips via `pStyle`
-      (already supported). Tests for StyleId application + a couple new styles.
-- [ ] I2. Footnotes. `word/footnotes.xml` part + content type + rel; a `w:footnoteReference` run in the
-      body and a footnote store on `TextDocument`; reader/writer; render the reference (superscript
-      marker) + show footnote text (tooltip or end-of-page in print). Round-trip tests.
-- [ ] I3. Bookmarks + internal links. `w:bookmarkStart`/`w:bookmarkEnd` around a range; an internal
-      hyperlink (`w:hyperlink w:anchor=...`) targeting a bookmark; model + docx read/write; Insert >
-      Bookmark / Link-to-bookmark affordance. Round-trip tests.
-- [ ] I4. Insert Symbol + Date & Time (disjoint — view/ribbon only, no model/IO change). Dialogs that
-      insert a chosen symbol glyph or a formatted current date/time as a normal run at the caret.
+- [x] I1. Real paragraph styles. Added built-in Heading 2/3, Subtitle, Quote; a Styles `freew.style`
+      ComboBox sets selected paragraphs' `StyleId` via a reversible `SetParagraphStyleCommand`;
+      `DocumentView` resolves StyleId through the catalog on render; round-trips via `pStyle`/styles.xml.
+- [x] I2. Footnotes. `Footnote` store on `TextDocument` + `Run.FootnoteReference(id)`; writer emits
+      `word/footnotes.xml` (separators + footnotes) + content type + rel + `w:footnoteReference`; reader
+      parses them; superscript marker in `DocumentView` (preserved across edit) + Insert > Footnote.
+- [x] I3. Bookmarks + internal links. `Paragraph.BookmarkName` + `Run.HyperlinkAnchor`; writer emits
+      `w:bookmarkStart`/`End` + `w:hyperlink w:anchor`; reader parses them (external `r:id` links intact);
+      internal links scroll to the bookmark; Insert > Bookmark / Link to Bookmark. Bookmarks preserved
+      across edit via a combined paragraph `Tag`.
+- [x] I4. Insert Symbol + Date & Time (disjoint). `DocumentView.InsertText` through the edit/undo path;
+      a 36-glyph symbol picker + a date/time dialog (pure `DateTimeFormats` helper); Insert > Symbols.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone I complete. Paragraph styles, footnotes, bookmarks + internal links, insert
+  symbol/date — built in parallel by subagents and integrated (I1 styles + I4 symbol/date auto-merged
+  clean; I2 footnotes + I3 bookmarks hand-resolved against each other on the ribbon command classes +
+  DocumentView insert methods). Each verified 0/0 build + green before push. FreeW lane now 115 tests
+  (68 model, 47 IO). origin/main @ b04ac5dd9.
 - 2026-06-17: Milestone H complete. Character effects, tab stops, line/para spacing UI, editor zoom —
   built in parallel by subagents and integrated (H4 zoom + H1 effects + H2 tabs all auto-merged clean;
   H3 spacing auto-merged). Each verified 0/0 build + green before push. FreeW lane now 100 tests
