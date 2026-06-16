@@ -124,10 +124,23 @@ date-serial / array edge cases. Needs per-cluster root-cause once 3a lands (some
 came from 3a/3b roots, e.g. `LEFT` wrapping a value that became `#DIV/0!`). Re-measure after roots fixed.
 
 ## 4. Round-trip
-- [ ] **Reload exception**: after FreeX save, reloading the saved file throws
-  `NotImplementedException: Array formulas not implemented` (ClosedXML `SignatureAdapter.ToText`).
-  FreeX writes a formula form ClosedXML re-evaluates as an array formula and chokes. Investigate the save
-  of array/spill formulas. (The file itself opens; it's FreeX's own reload that fails.)
+- [x] **Reload exception — FIXED.** Repro sequence (matches the SheetFidelity harness): load → recalc →
+  save → reload. ROOT CAUSE: the **full-save path persists formula TEXT but no cached `<v>` result**.
+  ClosedXML's `FormulaA1`/`FormulaArrayA1` setters write only the formula; preserved Excel source XML
+  likewise carries dynamic-array anchors as `<f t="array" ca="1">` with the value in `vm`/`cm` metadata
+  (no `<v>`). On reload FreeX calls `XLCell.Value`, and ClosedXML **lazily recalculates any uncached
+  formula** (`XLCalcEngine.Recalculate` → `EvaluateArrayFormula`). That recompute is fragile: modern
+  dynamic-array functions (LET/FILTER/SEQUENCE/SORT/MAP/LAMBDA) throw
+  `NotImplementedException: Array formulas not implemented` (`SignatureAdapter.ToText`), and incomplete
+  cross-sheet caches throw spurious cycle errors. Confirmed empirically: all 144 array-formula anchors in
+  the saved file had **zero** cached `<v>` (and 3426 plain formula cells likewise). FIX
+  (`XlsxWorksheetFormulaCachedValueWriter` + wiring in `XlsxFileAdapter.SavePostProcessing`): inject the
+  model's cached value (with matching `t`) onto every saved formula cell that lacks one — run on the
+  no-source-package path AND re-run after `PreserveSourcePackageParts` on the source-package path. This
+  mirrors Excel, which always writes a cached `<v>` for formulas, so FreeX's reload reads the cache instead
+  of recomputing. Verified: real `ExcelExamples1.xlsx` load→recalc→save→reload no longer throws; the saved
+  file remains a valid xlsx. Regression coverage: `XlsxArrayFormulaRoundTripReloadTests`
+  (`tests/FreeX.Core.IO.Tests`).
 - [-] **1 schema error**: `connections.xml/connection[2] type='102'` exceeds schema MaxInclusive=8. This is
   a pass-through of the source file's PowerQuery connection (Excel itself wrote type=102). Non-blocking for
   real Excel; tied to the out-of-scope PowerQuery feature.
