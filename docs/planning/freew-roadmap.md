@@ -82,11 +82,14 @@ possible. Build it as a continuous series of small, verified, pushed increments.
       *(Recent ▾ menu lists the shared store's entries → OpenPath. AutosaveCoordinator writes a .docx
       snapshot + sidecar every 30s when dirty via the shared AutosaveSnapshotStore (FreeW Recovery
       folder), offers recovery of a prior session's snapshot on startup, cleans up on clean exit.)*
-- [ ] D3. Backstage/File menu + Options, reusing the shared shell frames (finish Phase 5 extraction
-      as needed).
+- [ ] D3. *(DEFERRED.)* Backstage/File menu + Options, reusing the shared shell frames. Held back —
+      depends on the large/risky Phase-5 shell extraction (actively churned), and FreeW's title-bar
+      File commands + Recent menu already cover the lifecycle. Revisit after the shell settles.
 
 ## Milestone E — word-processor features
-- [ ] E1. Find/Replace (extract reusable search from FreeX where possible).
+- [x] E1. Find/Replace. *(Modeless FindReplaceDialog over the editing surface: TextPointer search,
+      Find Next w/ wrap, Replace, Replace All, Match case; opened via Ctrl+F / Ctrl+H. FreeW text
+      search is TextPointer-based rather than reusing FreeX's cell-oriented find.)*
 - [ ] E2. Spell-check (reuse `FreeX` `SpellCheckService`; extract to shared).
 - [ ] E3. Print + Export PDF (reuse FreeX print pipeline / PDFsharp; extract the generic frame).
 - [ ] E4. Page layout: margins/orientation/size, paginated page view.
