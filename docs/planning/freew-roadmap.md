@@ -207,6 +207,22 @@ Avoids the WPF-ribbon-renderer / shell the other session churns. K1/K3 touch the
       bottom-only-border rule, page-break paragraph); `ParagraphBorder.BottomOnly` + `ParagraphFormatting.
       PageBreakBefore` (both round-trip via `w:bottom`/`w:pageBreakBefore`); Insert > Pages wired. 5 model + 4 IO tests.
 
+## Milestone L — references + finishing touches (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. L1/L2 touch the docx reader/writer
+(sequential); L3/L4 are disjoint (editor/view + pure helpers).
+- [ ] L1. Page borders + watermark. `sectPr/w:pgBorders` (uniform page border: colour/width) on
+      `PageSettings`; a text watermark drawn behind the page (model field + rendered in editor/preview).
+      Writer/reader for pgBorders. Round-trip tests.
+- [ ] L2. Citations & bibliography. A `Sources` store on `TextDocument` (author/title/year); Insert >
+      Citation inserts a `(Author, Year)` run; Insert > Bibliography generates a styled reference list
+      from the sources. Pure build helper (tested); persists as ordinary paragraphs/runs.
+- [ ] L3. Advanced Find & Replace + Go To (disjoint — editor only). Extend the find/replace surface:
+      whole-word + match-case options, Replace-All-in-selection, and a Go To (line/heading) jump. Pure
+      match helper (tested) + wiring in `DocumentView`/the find dialog. No model/IO change.
+- [ ] L4. Drop cap + Clear All Formatting (disjoint — view/model-light). Insert > Drop Cap enlarges the
+      selected paragraph's first letter (a leading run with a big font size); Clear Formatting resets the
+      selection's run formatting to defaults. Pure helpers where possible.
+
 ## Status log (newest first)
 - 2026-06-17: Milestone K complete. Track changes, table of contents, multi-column layout, cover
   page/rule/break — built in parallel by subagents and integrated (K2 TOC + K3 columns auto-merged clean;
