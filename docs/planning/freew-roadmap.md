@@ -244,20 +244,24 @@ Avoids the WPF-ribbon-renderer / shell the other session churns. Mostly disjoint
 ## Milestone N — structured docs + power features (next tranche)
 Avoids the WPF-ribbon-renderer / shell the other session churns. N2 touches the docx reader/writer
 (sequential); N1/N3/N4 are model/view/disjoint.
-- [ ] N1. Cross-references. Insert > Cross-reference targets an existing heading / bookmark / caption /
-      footnote and inserts a reference run (its text + an internal anchor where applicable, reusing the
-      bookmark/anchor infra). A pure target-list helper (tested). Model + view; no new IO.
-- [ ] N2. Content controls (structured document tags). A plain-text and a checkbox content control on a
-      run/range (`w:sdt`); model field + writer/reader; render as a shaded control region; Developer/Insert
-      control. Round-trip tests.
-- [ ] N3. AutoText / Quick Parts. Save the current selection as a named reusable snippet (a store on the
-      app/document) and insert it later at the caret. A pure snippet store (tested) + Insert > Quick Parts.
-      View/model-light.
-- [ ] N4. Document statistics dialog (disjoint — pure + view). A Word-Count/readability dialog: words,
-      characters (with/without spaces), paragraphs, sentences, estimated reading time, and a simple
-      readability score — all from a pure `DocumentStatistics` helper (tested). View only.
+- [x] N1. Cross-references. Pure `CrossReferences` (`CrossRefType`, `Targets` from headings/bookmarks/
+      captions/footnotes, `ReferenceText`); Insert > Cross-reference dialog inserts a clickable internal
+      link for anchored targets, else plain text. Model + view; no new IO. ~10 tests.
+- [x] N2. Content controls (`w:sdt`). `ContentControl(Kind, Tag, Alias, Checked)` + `Run.Control`
+      (PlainText / CheckBox); writer coalesces runs into `w:sdt` (`w:text` / `w14:checkbox`); reader parses
+      them; shaded control region (preserved across edit), checkbox toggles ☐/☒ on click; Insert > Controls. 5 tests.
+- [x] N3. AutoText / Quick Parts. Pure `QuickPart`/`QuickPartStore`; `QuickPartLibrary` persists snippets
+      as `quickparts.json` under FreeW's data folder (in-memory fallback); Insert > Quick Parts (Save
+      Selection / Insert). 15 tests.
+- [x] N4. Document statistics dialog. Pure `DocumentStatistics.Compute` (words/chars/paragraphs/sentences/
+      syllables/reading-time/avg-wps/Flesch reading ease); Review > Proofing > Word Count dialog. View only. ~12 tests.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone N complete. Cross-references, content controls (`w:sdt`), quick parts/autotext,
+  document statistics — built in parallel by subagents and integrated (N4 disjoint + N1 auto-merged; N3
+  hand-resolved against N1 on the tangled ribbon dialog classes; N2 hand-resolved on the registration
+  block). Each verified 0/0 build + green before push. FreeW lane now 324 tests (252 model, 72 IO).
+  origin/main @ 4bc5e80b9. **Nine milestones (F–N, 36 features) shipped this session.**
 - 2026-06-17: Milestone M complete. Format painter, captions + numbering, document themes, read mode +
   selection stats — built in parallel by subagents and integrated (all four auto-merged clean; chained
   ribbon `Build` overloads + new Design/View tabs composed without conflict). Each verified 0/0 build +
