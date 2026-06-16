@@ -74,8 +74,10 @@ possible. Build it as a continuous series of small, verified, pushed increments.
       paragraph formatting, styles+ref, non-Word rejection. 5/5 green.)*
 
 ## Milestone D — app shell + file lifecycle
-- [ ] D1. New/Open/Save/Save As wired to `FreeW.Core.IO`; file dialogs via `Free.Shared.Shell`;
-      dirty-state + title bar via `Free.Shared.AppServices` document state.
+- [x] D1. New/Open/Save/Save As wired to `FreeW.Core.IO`; file dialogs; dirty-state + title bar.
+      *(FileCommands: New/Open/Save/SaveAs over DocxReader/Writer + Win32 dialogs, recent files via
+      shared RecentFilesStore (persists under FreeW's folder), dirty flag + title-bar New/Open/Save
+      buttons + Ctrl+N/O/S. Verified on screen.)*
 - [ ] D2. Recent files (shared `RecentFilesStore`) + autosave/recovery (shared `AutosaveSnapshotStore`).
 - [ ] D3. Backstage/File menu + Options, reusing the shared shell frames (finish Phase 5 extraction
       as needed).
