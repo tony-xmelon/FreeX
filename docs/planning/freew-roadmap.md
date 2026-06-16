@@ -35,8 +35,10 @@ possible. Build it as a continuous series of small, verified, pushed increments.
       caret + selection; typing/delete/enter map to model edits. *(DocumentView : RichTextBox —
       LoadModel renders model→FlowDocument resolving run/para formatting through styles+defaults;
       CommitToModel maps the edited view back. Verified rendering on screen.)*
-- [ ] A3. Wire `Free.Shared.Commands`: `IDocumentCommandContext`, commands for insert/delete text
-      and apply run/paragraph formatting; undo/redo via the shared `UndoRedoStack`.
+- [x] A3. Wire `Free.Shared.Commands`: `IDocumentCommandContext`, commands for insert/delete text
+      and apply run/paragraph formatting; undo/redo via the shared `UndoRedoStack`. *(IDocumentCommand
+      + DocumentCommandBus over the shared UndoRedoStack; Insert/Delete/SetParagraph/SetRun/
+      FormatParagraphRuns commands w/ snapshot revert; bus wired into DocumentView w/ redraw-on-change.)*
 - [ ] A4. FreeW test project + lane (`freew/FreeW.Core.Model.Tests`); model + command tests.
 
 ## Milestone B — ribbon wired to editing
