@@ -224,6 +224,22 @@ Avoids the WPF-ribbon-renderer / shell the other session churns. L1/L2 touch the
       bold run) + `ClearFormatting` (reset runs to default); reversible via the bus (`ReplaceParagraphRunsCommand`);
       Home > Clear Formatting + Insert > Drop Cap. 6 tests.
 
+## Milestone M — editor power tools (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. Mostly disjoint/model this round
+(low docx-IO conflict surface). M2 touches the reader/writer; M1/M3/M4 are editor/model/ribbon.
+- [ ] M1. Format Painter (disjoint — editor only). Wire the long-unwired `freew.format-painter`
+      placeholder: capture the run+paragraph formatting at the caret/selection, then apply it to the next
+      selection. A pure formatting-copy helper (tested) + `DocumentView` capture/apply. No model/IO change.
+- [ ] M2. Captions + figure/table numbering. Insert > Caption under the selected image/table inserts a
+      "Figure N: …" / "Table N: …" paragraph with sequential numbering (a pure numbering helper, tested);
+      persists as an ordinary styled paragraph. Light IO (a Caption style); round-trips as paragraphs.
+- [ ] M3. Document themes. A small set of built-in colour/font themes that rewrite the style catalog's
+      run colours + fonts (`TextDocument.Styles`); a pure `Theme.Apply(doc, theme)` (tested) + a Design
+      ribbon dropdown. Re-render resolves the new style formatting.
+- [ ] M4. Read mode / full-screen + selection stats (disjoint — view only). A distraction-free read view
+      (hide ribbon/chrome, centered page) toggled from View; plus live selection word/char count in the
+      status bar (extends the existing word-count helper). No model/IO change.
+
 ## Status log (newest first)
 - 2026-06-17: Milestone L complete. Page borders + watermark, citations & bibliography, advanced
   find/replace + Go To, drop cap + clear formatting — built in parallel by subagents and integrated
