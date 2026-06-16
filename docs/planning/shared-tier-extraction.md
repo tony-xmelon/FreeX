@@ -83,6 +83,35 @@ Deferred OPC sub-work (real refactors, not moves):
 - **Cosmetic renames** Xlsx*/Workbook* → Opc*/Ooxml* on the moved public types once the
   shared API surface is intentionally fixed.
 
+## Phase 5b (Shell) status — slice 1 done
+
+`Free.Shared.Shell` created as a `net10.0-windows` `UseWPF` library. Slice 1 moved 4
+genuinely-generic, non-XAML helpers: BackstageProgressOverlayBinder,
+ComboBoxTextEditingExtensions, SideBySideLayoutPlanner, WindowResetPositionPlanner.
+App.Host references it (global using); IVT to the App.Host assemblies.
+
+Whittled out of slice 1 (each needs real decoupling, not a move) — the remaining slices:
+- **XAML-coupled controls/behaviors**: AutomationInvokeButton, ComboBoxDropDownWheelBehavior
+  are used via `local:` (`clr-namespace:FreeX.App.Host`) in App.xaml / MainWindowResources.xaml.
+  Moving them needs an `xmlns:shell="clr-namespace:Free.Shared.Shell;assembly=Free.Shared.Shell"`
+  remap in every consuming XAML — and note attached-property setters fail at **runtime** (BAML),
+  not build time, so they need UI-lane / runtime checks.
+- **DialogButtonRowFactory**: uses `UiText` (App.Host localization) — parameterize labels or
+  introduce an `ILocalizedStrings` before moving.
+- **WpfUserMessageService**: implements `FreeX.App.UI.IUserMessageService` — move the interface
+  to a shared spot first, then the impl.
+- **WorkbookWindowRegistry** (356 LOC): multi-window mgmt; rename `IWorkbookWindow` ->
+  `IDocumentWindow` and pass the arrangement enum at the boundary.
+- **Backstage/print/options frames + MainWindow chrome**: the hard core — extract from the
+  `MainWindow.*` partial behind new interfaces (IDocumentWindow, ITabProvider, IBackstageAction,
+  document factory). Largest remaining work; do as its own focused effort with the UI lane.
+
+Integration note: `origin/main` advanced past this branch's base (other sessions pushed Linux
+work, now at ~`133962757`). Local `main` carries the shared-tier commits and has **diverged**
+from `origin/main`; pushing will require merging origin's new Linux commits first. The 3
+UI-lane failures seen during Phase 5b are pre-existing `linux-*.yml` workflow-validation tests
+on `origin/main`, unrelated to the extraction.
+
 ## Verification gotcha: sibling-worktree masking (IMPORTANT for Phase 5)
 
 `tests/.../RepositoryFileLocator.Find(parts)` (and `WorkspaceFileLocator`) walk **up**
