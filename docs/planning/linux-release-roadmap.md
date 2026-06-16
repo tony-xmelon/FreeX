@@ -58,7 +58,7 @@ a credible Linux release:
 | Number/format/alignment/borders/styles | full | compact Format Cells (first-pass apply set) | P0 — broaden apply + dialog parity |
 | Find/Replace/Go To/Go To Special | full dialogs | compact dialogs + shared session | P1 — parity polish |
 | Data: sort/filter/dedup/subtotal/validation/what-if/forecast | full dialogs | compact routes + planners | P1 |
-| Clipboard / Paste Special | full incl. multi-range | text + internal + image + most Paste Special; multi-range partial | P1 |
+| Clipboard / Paste Special | full incl. multi-range | text + internal + image + most Paste Special; congruent multi-range copy now produces a combined block (values via text path); multi-range cut still rejected (Excel parity); formatted/formula-carrying multi-area internal paste is follow-up | P1 |
 | Charts | full render + edit | preview bounds only | P2 — render parity is large |
 | PivotTables | full | model + limited surface | P2 |
 | Print / export | WPF print, PDFsharp, XPS, embedded-font Unicode PDF | portable PDF (ASCII+WinAnsi) | P1 PDF breadth; P2 print/XPS |
