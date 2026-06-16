@@ -14,9 +14,37 @@ FreeX loads the file with **zero warnings/exceptions**. On open, displayed (cach
 All divergences below are either (a) **recalc-time** (manifest when the user edits) or (b) **visual /
 feature** gaps.
 
-## 2. Unsupported features (silently dropped on load) — 37 flags, 4 kinds
-- [ ] **FormControls** (dominant): checkboxes/option-buttons/spinners on sheets *Shift Calendar*,
-  *Shift Data*, *Inputs*, *pvt Depts* (+ vmlDrawing4-7, 18 ctrlProps). Visible gap (missing controls).
+## 2. Unsupported features (silently dropped on load) — 37 → **7** flags
+- [x] **FormControls** (was the dominant 30/37) — **FIXED.** Legacy form controls (checkboxes /
+  option-buttons / spinners / scroll bars / drop-downs) are no longer dropped. The harness
+  FormControls flag count is now **30 → 0** (total unsupported 37 → 7).
+  - **PARSE + MODEL** — `XlsxFormControlMapper` reads each worksheet `<controls>` block (descending
+    through the `mc:AlternateContent` wrappers), resolves every `<control r:id>` to its
+    `xl/ctrlProps/ctrlPropN.xml`, and loads type / anchor cell-range / state (checked, value, min,
+    max, increment, page, selected index) / linked cell / list fill range into a new
+    `FormControlModel` on `Sheet.FormControls` (`FreeX.Core.Model/FormControlModel.cs`). Wired into
+    the worksheet-XML metadata loader (`XlsxFileAdapter.SheetXmlLayout` →
+    `LoadSheetXmlLayoutApplication`). On ExcelExamples1 this models the controls on *Shift Calendar*
+    (incl. the scroll bar), *Inputs*, *pvt Depts*, etc.
+  - **ROUND-TRIP PRESERVE** — a clean (unedited) save byte-copies the source worksheet, so controls
+    survive trivially. The gap was the **edited / full-rebuild** save path: ClosedXML regenerates
+    each worksheet WITHOUT the `<controls>` block or the form-control `legacyDrawing`, orphaning the
+    (otherwise copied) ctrlProps + VML so Excel showed nothing. `XlsxWorksheetFormControlPreserver`
+    now re-injects the source controls block + form-control `legacyDrawing` into the generated
+    worksheet (schema order preserved) and re-binds the relationship ids via the shared OLE-control
+    normalizer. Verified: after an edited round-trip of ExcelExamples1, *Shift Calendar* again carries
+    `<controls>`/`<control>` → ctrlProp + `legacyDrawing` → vmlDrawing, all 18 ctrlProps retained.
+    OpenXML schema validation of the round-trip is clean for the controls (the single remaining
+    schema error is the pre-existing PowerQuery `connections.xml type='102'` pass-through, §4).
+  - **INSPECTOR** — `XlsxFeatureInspector` no longer flags legacy form controls (ctrlProps parts,
+    worksheet `<controls>`, VML/drawing form-control shapes, `/control` + `/ctrlProp` rels) as
+    unsupported. ActiveX controls (`xl/activeX/`, `/activexControl(Binary)`) remain unsupported.
+  - **RENDER** — [ ] NOT YET. The model now exposes everything a renderer needs (`Sheet.FormControls`
+    with `Kind`, `Anchor` cell-range, and state). NEXT STEP: in `GridView.DrawingObjects` add a
+    form-control layer — anchor each control via `GridDrawingObjectPlanner.TryCreateDrawingAnchorRect`
+    (note the existing `EnsureMinimumControlRect` helper) and draw a static checkbox glyph (☐/☑ from
+    `IsChecked`), option-button dot, or spinner/scrollbar chrome; interactive click→linkedCell wiring
+    is a follow-up. This is WPF-only (net10.0-windows) and must be verified in the running app.
 - [-] **PowerQuery** (`xl/connections.xml`, workbook query connections) — large feature, out of scope.
 - [-] **LinkedDataTypes** (`xl/richData/*`) — rich/linked data types, out of scope.
 - [-] **DataModel** (`xl/model/item.data`) — Power Pivot data model, out of scope.
