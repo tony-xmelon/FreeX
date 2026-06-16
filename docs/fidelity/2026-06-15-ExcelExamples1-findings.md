@@ -14,9 +14,37 @@ FreeX loads the file with **zero warnings/exceptions**. On open, displayed (cach
 All divergences below are either (a) **recalc-time** (manifest when the user edits) or (b) **visual /
 feature** gaps.
 
-## 2. Unsupported features (silently dropped on load) — 37 flags, 4 kinds
-- [ ] **FormControls** (dominant): checkboxes/option-buttons/spinners on sheets *Shift Calendar*,
-  *Shift Data*, *Inputs*, *pvt Depts* (+ vmlDrawing4-7, 18 ctrlProps). Visible gap (missing controls).
+## 2. Unsupported features (silently dropped on load) — 37 → **7** flags
+- [x] **FormControls** (was the dominant 30/37) — **FIXED.** Legacy form controls (checkboxes /
+  option-buttons / spinners / scroll bars / drop-downs) are no longer dropped. The harness
+  FormControls flag count is now **30 → 0** (total unsupported 37 → 7).
+  - **PARSE + MODEL** — `XlsxFormControlMapper` reads each worksheet `<controls>` block (descending
+    through the `mc:AlternateContent` wrappers), resolves every `<control r:id>` to its
+    `xl/ctrlProps/ctrlPropN.xml`, and loads type / anchor cell-range / state (checked, value, min,
+    max, increment, page, selected index) / linked cell / list fill range into a new
+    `FormControlModel` on `Sheet.FormControls` (`FreeX.Core.Model/FormControlModel.cs`). Wired into
+    the worksheet-XML metadata loader (`XlsxFileAdapter.SheetXmlLayout` →
+    `LoadSheetXmlLayoutApplication`). On ExcelExamples1 this models the controls on *Shift Calendar*
+    (incl. the scroll bar), *Inputs*, *pvt Depts*, etc.
+  - **ROUND-TRIP PRESERVE** — a clean (unedited) save byte-copies the source worksheet, so controls
+    survive trivially. The gap was the **edited / full-rebuild** save path: ClosedXML regenerates
+    each worksheet WITHOUT the `<controls>` block or the form-control `legacyDrawing`, orphaning the
+    (otherwise copied) ctrlProps + VML so Excel showed nothing. `XlsxWorksheetFormControlPreserver`
+    now re-injects the source controls block + form-control `legacyDrawing` into the generated
+    worksheet (schema order preserved) and re-binds the relationship ids via the shared OLE-control
+    normalizer. Verified: after an edited round-trip of ExcelExamples1, *Shift Calendar* again carries
+    `<controls>`/`<control>` → ctrlProp + `legacyDrawing` → vmlDrawing, all 18 ctrlProps retained.
+    OpenXML schema validation of the round-trip is clean for the controls (the single remaining
+    schema error is the pre-existing PowerQuery `connections.xml type='102'` pass-through, §4).
+  - **INSPECTOR** — `XlsxFeatureInspector` no longer flags legacy form controls (ctrlProps parts,
+    worksheet `<controls>`, VML/drawing form-control shapes, `/control` + `/ctrlProp` rels) as
+    unsupported. ActiveX controls (`xl/activeX/`, `/activexControl(Binary)`) remain unsupported.
+  - **RENDER** — [ ] NOT YET. The model now exposes everything a renderer needs (`Sheet.FormControls`
+    with `Kind`, `Anchor` cell-range, and state). NEXT STEP: in `GridView.DrawingObjects` add a
+    form-control layer — anchor each control via `GridDrawingObjectPlanner.TryCreateDrawingAnchorRect`
+    (note the existing `EnsureMinimumControlRect` helper) and draw a static checkbox glyph (☐/☑ from
+    `IsChecked`), option-button dot, or spinner/scrollbar chrome; interactive click→linkedCell wiring
+    is a follow-up. This is WPF-only (net10.0-windows) and must be verified in the running app.
 - [-] **PowerQuery** (`xl/connections.xml`, workbook query connections) — large feature, out of scope.
 - [-] **LinkedDataTypes** (`xl/richData/*`) — rich/linked data types, out of scope.
 - [-] **DataModel** (`xl/model/item.data`) — Power Pivot data model, out of scope.
@@ -124,15 +152,87 @@ date-serial / array edge cases. Needs per-cluster root-cause once 3a lands (some
 came from 3a/3b roots, e.g. `LEFT` wrapping a value that became `#DIV/0!`). Re-measure after roots fixed.
 
 ## 4. Round-trip
-- [ ] **Reload exception**: after FreeX save, reloading the saved file throws
-  `NotImplementedException: Array formulas not implemented` (ClosedXML `SignatureAdapter.ToText`).
-  FreeX writes a formula form ClosedXML re-evaluates as an array formula and chokes. Investigate the save
-  of array/spill formulas. (The file itself opens; it's FreeX's own reload that fails.)
+- [x] **Reload exception — FIXED.** Repro sequence (matches the SheetFidelity harness): load → recalc →
+  save → reload. ROOT CAUSE: the **full-save path persists formula TEXT but no cached `<v>` result**.
+  ClosedXML's `FormulaA1`/`FormulaArrayA1` setters write only the formula; preserved Excel source XML
+  likewise carries dynamic-array anchors as `<f t="array" ca="1">` with the value in `vm`/`cm` metadata
+  (no `<v>`). On reload FreeX calls `XLCell.Value`, and ClosedXML **lazily recalculates any uncached
+  formula** (`XLCalcEngine.Recalculate` → `EvaluateArrayFormula`). That recompute is fragile: modern
+  dynamic-array functions (LET/FILTER/SEQUENCE/SORT/MAP/LAMBDA) throw
+  `NotImplementedException: Array formulas not implemented` (`SignatureAdapter.ToText`), and incomplete
+  cross-sheet caches throw spurious cycle errors. Confirmed empirically: all 144 array-formula anchors in
+  the saved file had **zero** cached `<v>` (and 3426 plain formula cells likewise). FIX
+  (`XlsxWorksheetFormulaCachedValueWriter` + wiring in `XlsxFileAdapter.SavePostProcessing`): inject the
+  model's cached value (with matching `t`) onto every saved formula cell that lacks one — run on the
+  no-source-package path AND re-run after `PreserveSourcePackageParts` on the source-package path. This
+  mirrors Excel, which always writes a cached `<v>` for formulas, so FreeX's reload reads the cache instead
+  of recomputing. Verified: real `ExcelExamples1.xlsx` load→recalc→save→reload no longer throws; the saved
+  file remains a valid xlsx. Regression coverage: `XlsxArrayFormulaRoundTripReloadTests`
+  (`tests/FreeX.Core.IO.Tests`).
 - [-] **1 schema error**: `connections.xml/connection[2] type='102'` exceeds schema MaxInclusive=8. This is
   a pass-through of the source file's PowerQuery connection (Excel itself wrote type=102). Non-blocking for
   real Excel; tied to the out-of-scope PowerQuery feature.
 
-## 5. Charts — TBD (21 classic + 1 funnel chartEx). Run ChartFileCompare on this file.
+## 5. Charts — MEASURED + first fix landed
+
+The file actually contains **20 classic charts (`chart1..20.xml`) + 1 funnel `chartEx1.xml`** = 21
+chart parts (the earlier "21 classic + 1 funnel" was approximate).
+
+### 5.0 Measurement harness — `tools/FreeX.ExcelExamplesCharts`
+New tool (NOT in FreeX.slnx — `dotnet build tools/FreeX.ExcelExamplesCharts -c Release` first). It:
+(A) loads the file in FreeX, enumerates every chart, renders each to PNG (records type / renderable /
+rendered / visibly-blank); (B) opens the SAME file in a single en-US Excel COM instance and exports
+every chart PNG as ground truth, then diffs (mean per-pixel %) matched per-sheet by chart index;
+(C) round-trips (FreeX save → reopen in Excel) and counts charts retained per sheet. Run:
+`dotnet run --project tools/FreeX.ExcelExamplesCharts -c Release --no-build -- "E:\Users\anton\Downloads\ExcelExamples1.xlsx" <outDir>`
+(append `--no-excel` to skip the COM passes). Output: `REPORT.md` + side-by-side `worst/` composites.
+
+### 5.1 Measured baseline (per chart-bearing sheet)
+FreeX loads **20/21** charts (all 20 classic; the chartEx funnel is NOT loaded as a ChartModel).
+Charts live on 5 sheets: Budget v Actual (12), Budget Summary (3), Data Entry (2) (3),
+Budget - 2013 or lower (1), todo (1).
+- **Render**: 20/20 rendered to PNG; **1 visibly blank** (todo StackedBar).
+- **Render diff vs Excel** (11 charts had a valid Excel ground-truth PNG; the other 9 are the tiny
+  "Budget v Actual" mini-charts whose Excel `chart.Export` produced 0-byte PNGs — an Excel-COM export
+  quirk, not a FreeX gap): mean **10.2% → 9.3%** after the clustered-column fix below; max ~20%.
+- **Round-trip (IO): PERFECT.** After FreeX save→reopen, Excel sees the exact original chart count on
+  every sheet (20/20). The `chartEx1.xml` part ALSO survives byte round-trip (pass-through preserved) —
+  so the funnel is an on-screen render gap, NOT an IO data-loss.
+
+### 5.2 [x] FIXED — clustered Column charts rendered overlapping/stacked (`905f647d1`)
+ROOT CAUSE (renderer, not loader): the loader correctly typed `grouping="clustered"` + `barDir="col"`
+as `ChartType.Column`, but `ChartRenderer` placed EVERY series' `RectangleBarItem` at the same x-window
+`[i-half, i+half]` centred on the category index, so multiple series overdrew each other (the taller,
+last-drawn series hid the rest — looked stacked). FIX (`ChartRenderer.cs` +
+`ChartRenderer.SeriesFormatting.cs`): count the clustered (non-combo-line/scatter) column series and give
+each a disjoint `1/N` sub-slot within the category bar width via `ClusteredBarOffsets(...)`, so the bars
+sit side by side as Excel renders them. TDD test
+`ClusteredColumnChart_PlacesSeriesSideBySideWithinCategorySlot` (asserts disjoint x-windows). Verified
+visually on "Budget v Actual": Budget+Actual now cluster correctly (was overlapping). 144 ChartRenderer
+tests green. NOTE: single-series Column/stacked/bar paths are unchanged (cluster count ≤ 1 ⇒ full slot).
+
+### 5.3 Prioritized remaining chart gaps (out of scope this pass)
+- [ ] **todo StackedBar renders blank (progress-bar idiom).** `chart20.xml` is a stacked bar built from
+  **12 single-cell series** (`todo!$J$4 … $J$15`, each `ptCount=1`, NO `<c:cat>`). FreeX's chart model
+  uses ONE rectangular `DataRange` (series = columns), so the 12 single-cell series collapse into one
+  column J × 12 rows with **0 categories** → the stacked-bar builder skips every point (`i >= categories.Count`,
+  count 0) → blank. Excel draws a single ~45% horizontal progress bar (J4=0.30 + J5=0.15). A correct fix
+  needs per-series range awareness (each series = its own cell) which the single-`DataRange` model cannot
+  express — ARCHITECTURAL, deferred (risk of regressing all bar/column charts). Bounded interim option:
+  detect "N stacked series each a single cell in one column, no cat" and synthesize N series of 1 point.
+- [ ] **Funnel `chartEx1.xml` not rendered.** Loaded as a pass-through part (survives round-trip) but not
+  materialised into a `ChartModel`, so it shows nothing on screen. LOW impact here: this particular
+  chartEx is a degenerate `layoutId="treemap"` funnel with **`ptCount="0"` (zero data points)** — even
+  Excel renders it essentially empty. General chartEx rendering (funnel/treemap/sunburst from the
+  `cx:` namespace) is the real feature; this file isn't a good driver for it.
+- [ ] **Budget v Actual overlay deviation columns + emoji/percent annotations** (residual ~8–20% diff on
+  the main "Budget vs. Actual Performance" chart): Excel overlays small green/blue deviation bars and
+  thumbs-up/down emoji + "30%/5%/…" labels above each category. FreeX renders the clustered base bars
+  faithfully but omits these decorations. Combo/overlay + emoji data-labels — separate, larger feature.
+- [-] **Measurement caveat — chart index matching.** The harness matches FreeX charts to Excel charts by
+  per-sheet ordinal; Excel's `ChartObjects` z-order ≠ FreeX load order on "Budget v Actual" (12 charts),
+  so a couple of diff rows compare mismatched charts (e.g. a FreeX 2-series chart vs an Excel 4-series
+  chart). Affects ranking only, not the fixes; a position/anchor-based matcher would tighten it.
 
 ## 6. Visual per-sheet — harness built (`tools/FreeX.SheetImageCompare`)
 Renders each sheet via `PrintRenderer.RenderWorksheet` → FixedDocument → PNG (36 sheets). Excel ground
