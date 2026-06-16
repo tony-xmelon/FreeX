@@ -61,12 +61,17 @@ possible. Build it as a continuous series of small, verified, pushed increments.
       independent.**
 
 ## Milestone C — .docx I/O
-- [ ] C1. Phase 3b prerequisite: split `XlsxPackagePath` → format-neutral OPC core in
-      `Free.Shared.Opc`; add `_rels`/content-types/docProps helpers.
-- [ ] C2. `FreeW.Core.IO`: docx reader (WordprocessingML `document.xml` paragraphs/runs/rPr/pPr,
-      `styles.xml`) on `Free.Shared.Opc`.
-- [ ] C3. docx writer; `[Content_Types].xml` + rels + docProps.
-- [ ] C4. Round-trip fidelity tests on a small docx corpus.
+- [~] C1. *(Not needed yet — reordered.)* Phase 3b prerequisite (split `XlsxPackagePath`). The docx
+      reader/writer instead use `System.IO.Compression.ZipArchive` for the OPC container directly +
+      the shared `Free.Shared.Opc.SecureXmlReaderSettings` (promoted to public) for hardened XML.
+      Revisit the full PackagePath split when richer parts (images/rels graph) are needed.
+- [x] C2. `FreeW.Core.IO`: docx reader (WordprocessingML `document.xml` paragraphs/runs/rPr/pPr,
+      `styles.xml`). *(DocxReader on ZipArchive + shared SecureXmlReaderSettings; run formatting,
+      paragraph formatting, style refs + styles.xml.)*
+- [x] C3. docx writer; `[Content_Types].xml` + rels + sectPr + styles.xml. *(DocxWriter emits a
+      minimal valid package round-trippable with the reader.)*
+- [x] C4. Round-trip tests. *(FreeW.Core.IO.Tests: 5 round-trip tests — text, run formatting,
+      paragraph formatting, styles+ref, non-Word rejection. 5/5 green.)*
 
 ## Milestone D — app shell + file lifecycle
 - [ ] D1. New/Open/Save/Save As wired to `FreeW.Core.IO`; file dialogs via `Free.Shared.Shell`;
