@@ -14,6 +14,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [history/status-2026-06-12.md](history/status-2026-06-12.md) - current project status snapshot covering the June 12 stable latest tester release at `d3efaa6c`, v0.8.114, the failed run 113 hosted UI source-contract gate, the 95% `v0.8.<run>` release stream, release validation, localization review/package metadata, and XLSX fidelity proof.
 - [planning/next-phases.md](planning/next-phases.md) - next development phases and priority sequencing.
 - [planning/multiplatform-macos-port.md](planning/multiplatform-macos-port.md) - preparation plan for a future multiplatform port, starting with macOS and a portable GitHub Actions lane.
+- [planning/multiplatform-linux-port.md](planning/multiplatform-linux-port.md) - Linux port plan: Avalonia shell reuse, freedesktop/XDG packaging, hosted Ubuntu CI lane, and readiness tooling.
 - [planning/macos-port-dependency-backlog.md](planning/macos-port-dependency-backlog.md) - concise inventory of Windows/WPF-only dependencies that block or shape the Avalonia/macOS port.
 - [performance/backlog-2026-06-04.md](performance/backlog-2026-06-04.md) - current performance backlog and active XLSX open/save IO priority.
 
@@ -32,6 +33,8 @@ Use this index as the current documentation map. Point-in-time material lives un
 
 - [planning/localization.md](planning/localization.md) - localization foundation, current resource status, rollout plan, and remaining culture/localization work.
 - [planning/multiplatform-macos-port.md](planning/multiplatform-macos-port.md) - macOS-first port preparation, portable CI validation, and future app-shell milestones.
+- [planning/multiplatform-linux-port.md](planning/multiplatform-linux-port.md) - Linux port plan, freedesktop/XDG packaging, and the hosted Ubuntu app-preview lane.
+- [release/linux-public-preview-checklist.md](release/linux-public-preview-checklist.md) - Linux preview release-gate checklist: hosted CI gates plus human X11/Wayland and accessibility validation.
 - [planning/macos-port-dependency-backlog.md](planning/macos-port-dependency-backlog.md) - macOS port backlog inventory for WPF/Windows-only components and platform-service replacement work.
 - [planning/macos-state-management.md](planning/macos-state-management.md) - macOS port state-location guidance for user settings, recent files, diagnostics, caches, and shared abstractions.
 - [release/test-distribution.md](release/test-distribution.md) - test-suite distribution, default agent verification path, separate UI lane, diagnostics plan, and tester-release workflow.
