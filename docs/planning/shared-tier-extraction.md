@@ -83,6 +83,25 @@ Deferred OPC sub-work (real refactors, not moves):
 - **Cosmetic renames** Xlsx*/Workbook* → Opc*/Ooxml* on the moved public types once the
   shared API surface is intentionally fixed.
 
+## Verification gotcha: sibling-worktree masking (IMPORTANT for Phase 5)
+
+`tests/.../RepositoryFileLocator.Find(parts)` (and `WorkspaceFileLocator`) walk **up**
+from the test bin dir until the path exists. From `.worktrees/freew-shared`, that walk
+continues into the parent **main worktree** at the repo root. So a source-path hygiene
+test that reads a moved file can find the *old* copy still sitting in `main` and pass —
+until `main` is fast-forwarded, at which point it fails. This masked a real break in
+`NumberFormatDecimalAdjusterTests` during Phase 2a (fixed in Phase 4).
+
+Consequences for Phase 5 (extracts many `FreeX.App.Host` files that ARE referenced by
+extensive source-hygiene tests, mostly in the **UI lane** `FreeX.App.Host.Tests`):
+- After moving a file, update every hygiene test that reads its `src/FreeX.App.Host/...`
+  path to the new `shared/Free.Shared.Shell/...` path.
+- Do NOT trust an aggregate-green lane from the branch worktree alone; explicitly run the
+  affected hygiene tests, and run the **UI lane** (`FreeX.UiTests.slnx`) since most App.Host
+  source-hygiene tests live there and the default lane skips them.
+- `MacOs*PreflightTests` write *synthetic* `src/...` fixtures into a temp dir — those are
+  not real-file reads and need no path updates.
+
 ## Reuse map summary (why these five)
 
 | Layer | Reusable | Coupling to remove |
