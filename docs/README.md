@@ -36,6 +36,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [planning/multiplatform-linux-port.md](planning/multiplatform-linux-port.md) - Linux port plan, freedesktop/XDG packaging, and the hosted Ubuntu app-preview lane.
 - [planning/linux-release-roadmap.md](planning/linux-release-roadmap.md) - roadmap toward a Windows-comparable Linux release (release channel, parity sweep, accessibility, distribution).
 - [release/linux-public-preview-checklist.md](release/linux-public-preview-checklist.md) - Linux preview release-gate checklist: hosted CI gates plus human X11/Wayland and accessibility validation.
+- [release/linux-human-validation-checklist.md](release/linux-human-validation-checklist.md) - fillable Linux human-validation record (X11/Wayland, keyboard-only, Orca, install/AppImage) validated by Test-LinuxHumanValidationChecklist.ps1.
 - [release/linux-release.md](release/linux-release.md) - Linux release channel runbook: versioned tarball/AppImage publish, promotion gate, and dispatch instructions.
 - [planning/macos-port-dependency-backlog.md](planning/macos-port-dependency-backlog.md) - macOS port backlog inventory for WPF/Windows-only components and platform-service replacement work.
 - [planning/macos-state-management.md](planning/macos-state-management.md) - macOS port state-location guidance for user settings, recent files, diagnostics, caches, and shared abstractions.
