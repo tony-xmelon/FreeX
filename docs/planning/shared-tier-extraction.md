@@ -59,6 +59,30 @@ tests/      # test projects; shared-tier tests use Free.Shared.*.Tests names
   `dotnet build FreeX.slnx -c Release` + `dotnet test FreeX.DefaultTests.slnx -c Release --no-build`.
   UI lane (`FreeX.UiTests.slnx`) only when shell/WPF host behavior is touched (Phase 5).
 
+## Phase 3 (Opc) status — increment 3a done
+
+Moved into `Free.Shared.Opc` (namespace `Free.Shared.Opc`), behaviour-preserving:
+SecureXmlReaderSettings, SaveStreamPreparer, NativePasswordHelper, WorkbookOpenSizeGuard
+(+ WorkbookTooLargeException/WorkbookInvalidException), XlsxXmlTextEscaper,
+XlsxXmlNormalizationHelpers, XlsxNativeXmlMerger, XlsxSaveResult, XsltWorkbookTransform.
+Wiring: `FreeX.Core.IO` references Opc + global `using Free.Shared.Opc`; six consuming
+projects got the same global using; Opc grants `InternalsVisibleTo` to `FreeX.Core.IO`
+and `FreeX.Core.IO.Tests` (the moved helpers stay `internal` until intentionally
+promoted to the public shared API for FreeW).
+
+Deferred OPC sub-work (real refactors, not moves):
+- **Split `XlsxPackagePath`** into a format-neutral path/relationship core (→ Opc) and the
+  `xl/`-hardcoded spreadsheet resolution (stays in Core.IO). Unlocks `_rels` reading,
+  docProps preserver, thumbnail/signature, package metadata merger — all of which FreeW's
+  docx layer needs. Hardcoding sites quoted by analysis: `NormalizeWorkbookTarget` (`xl/`
+  prefix), `ResolveRelationshipTarget`/`GetRelationshipTarget` (14 `xl/<dir>` variants),
+  `IsWorksheetXmlEntry`.
+- **Genericize `IFileAdapter` → `IFileAdapter<TDocument>`** (currently `Load`/`Save` are typed
+  to `Core.Model.Workbook`). Unlocks the file-format/dialog cluster: FileFormatDescriptor,
+  FileFormatResolver, FilePickerTypeDescriptor, FileDialogFilterBuilder, FileSavePlanner.
+- **Cosmetic renames** Xlsx*/Workbook* → Opc*/Ooxml* on the moved public types once the
+  shared API surface is intentionally fixed.
+
 ## Reuse map summary (why these five)
 
 | Layer | Reusable | Coupling to remove |
