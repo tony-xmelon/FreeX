@@ -61,7 +61,7 @@ a credible Linux release:
 | Clipboard / Paste Special | full incl. multi-range | text + internal + image + most Paste Special; congruent multi-range copy now produces a combined block (values via text path); multi-range cut still rejected (Excel parity); formatted/formula-carrying multi-area internal paste is follow-up | P1 |
 | Charts | full render + edit | preview bounds only | P2 — render parity is large |
 | PivotTables | full | model + limited surface | P2 |
-| Print / export | WPF print, PDFsharp, XPS, embedded-font Unicode PDF | portable PDF (ASCII+WinAnsi) | P1 PDF breadth; P2 print/XPS |
+| Print / export | WPF print, PDFsharp, XPS, embedded-font Unicode PDF | portable PDF (ASCII+WinAnsi); Unicode via Skia decided (below) | P1 PDF breadth; P2 print/XPS |
 | Ribbon / backstage / task panes | mature | native menu + toolbar subset | P1 — cover command surface, not necessarily ribbon chrome |
 | Drawing-object editing | full | preview render + select | P2 |
 | Localization | many cultures | English-only UI strings | P1 — extract/share UI text |
@@ -84,6 +84,31 @@ Avalonia wiring + tests + smoke evidence.
 - Trust model: AppImage signature and/or detached signatures; checksum publication.
 - Distro packaging: `.deb`/`.rpm`, and a Flatpak manifest (sandbox-friendly portals for files).
 - Update mechanism (AppImageUpdate or distro/Flatpak channels).
+
+## Decision: Unicode PDF without bundling/embedding our own font
+
+We do **not** hand-embed fonts. The built-in Helvetica/WinAnsi path stays for the
+dependency-free portable exporter (headless, no Skia). For Unicode fidelity we use
+**SkiaSharp's PDF backend** (`SKDocument.CreatePdf`), which is already in the Avalonia app's
+dependency graph (SkiaSharp 3.119.4 + native assets, via Avalonia.Skia). Skia shapes text
+(HarfBuzz) and **automatically embeds/subsets** the fonts it draws — the same fonts Avalonia
+already uses to render the grid (fontconfig on Linux). Rationale:
+
+- No licensed font to bundle, no app-size/licensing decision, no hand-written TrueType parser
+  or Type0/Identity-H/ToUnicode plumbing.
+- Matches on-screen rendering; correct shaping for complex scripts.
+
+Shape of the work (sequenced so it's verifiable):
+1. Add `tests/FreeX.App.Avalonia.Tests` to the Linux CI lane (Skia PDF can only be validated
+   where the Skia native asset loads — Linux runner — not the Windows dev host).
+2. Implement `SkiaPdfDocumentExporter` in `FreeX.App.Avalonia`, consuming the existing
+   `PortablePdfExportPlanner` + `PortablePdfPageContentPlanner` for page/row/column/cell layout
+   and drawing onto `SKDocument` PDF pages with a Unicode-capable `SKTypeface`.
+3. Route Avalonia *File → Export to PDF* through it (Unicode-capable); keep the portable
+   WinAnsi writer as the headless fallback. The export menu item is unchanged, so launch-smoke
+   assertions stay intact.
+4. Validate on Linux CI: assert a valid `%PDF`, an embedded font (`/FontFile2`/`Type0`), and
+   that non-Latin text round-trips.
 
 ## Sequencing
 
