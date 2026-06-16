@@ -190,6 +190,22 @@ Avoids the WPF-ribbon-renderer / shell the other session churns. J1/J2 touch the
       `--`→en dash, `(c)`/`(r)`/`(tm)`, `...`→…, sentence caps); wired into `DocumentView.OnPreviewTextInput`
       through the edit/undo path (toggleable, default on). 38 tests.
 
+## Milestone K — long-document features (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. K1/K3 touch the docx reader/writer
+(sequential); K2 is light-IO (reuses `DocumentOutline`); K4 is disjoint (insert helpers).
+- [ ] K1. Track changes (revisions). Run-level insertion/deletion marks (`w:ins`/`w:del` with author +
+      date) on `Run`; writer/reader; render insertions underlined-coloured and deletions strikethrough;
+      Review > Track Changes toggle + Accept All / Reject All. Round-trip tests.
+- [ ] K2. Table of Contents. Insert > Table of Contents generates a TOC region from `DocumentOutline`
+      (heading text, indented by level, as styled paragraphs); a refresh command re-builds it. Persists as
+      ordinary paragraphs (round-trips already). Tests for the pure TOC-build from an outline.
+- [ ] K3. Columns (multi-column layout). `PageSettings.ColumnCount` (+ spacing); writer/reader `sectPr`
+      `w:cols w:num/w:space`; render the editor/preview FlowDocument in N columns; Layout > Columns.
+      Round-trip tests.
+- [ ] K4. Cover page + horizontal rule + page break (disjoint — insert helpers, model-light). Insert >
+      Cover Page (prepend Title/Subtitle/spacer paragraphs), Horizontal Rule (a bottom-bordered empty
+      paragraph, reusing the para-border model), and a visible Page Break paragraph marker.
+
 ## Status log (newest first)
 - 2026-06-17: Milestone J complete. Comments/review, table cell shading + widths, navigation pane,
   autocorrect — built in parallel by subagents and integrated (J3/J4 disjoint + J2 auto-merged clean;
