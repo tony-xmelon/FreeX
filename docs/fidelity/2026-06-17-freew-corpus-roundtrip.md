@@ -28,13 +28,18 @@ The count metric only proves FreeW preserves what it *models*; a part FreeW neve
 write and looks "stable" (absent on both sides). The part-inventory diff catches that. Drops, by category:
 
 ### Real content loss (genuine fidelity gaps)
-- **Headers / footers** dropped in 7 files (`checkboxes`, `PageSpecificHeadFoot`, `saut_page`,
-  `stress008/010/015/023`). FreeW models header/footer at the **document level** (default + even + first),
-  not **per-section**; multi-section / page-specific header & footer references are lost. *Simple
-  single-header/footer docs (`headerFooter.docx`) round-trip fine.*
-- **Media (images)** dropped in 4 files (`chartex`, `testComment`, `stress010`, `stress015`). In every
-  case the body image count was 0 — FreeW reads inline pictures **only from the body run flow**, so images
-  that live in **headers/footers, comments, or chart parts** are not extracted and are lost.
+- **Headers / footers** — **partly fixed.** FreeW now models **per-section** headers/footers (default + even
+  + first), reads/writes first-page (`w:titlePg`) headers, and round-trips **images inside headers/footers**
+  (part-local `header1.xml.rels`) — all with synthetic-test coverage and byte-equivalent output for legacy
+  single-section docs. *Corpus residual:* most of the corpus header/footer "drops" turned out to be **empty
+  auto-created parts** (`checkboxes` has 6 empty header/footer parts; `saut_page` has 2) that FreeW correctly
+  does not re-emit. **But** `PageSpecificHeadFoot.docx` — which has real header text ("ODD Page Header text",
+  "This is an Even Page…") plus footers — still loses its **headers** on round-trip (footers survive). The
+  read path under-captures real-world even/odd/first header references on multi-section / `titlePg` docs;
+  hardening that read path is the open follow-up.
+- **Media (images)** dropped in 4 files (`chartex`, `testComment`, `stress010`, `stress015`). The header-image
+  fix did not change these — the images live in **comment** or **chart** parts, not headers; FreeW reads
+  inline pictures only from the body and (now) header/footer run flows, not from comments/charts.
 - **Numbering definitions** dropped in 3 files (`FieldCodes`, `stress010`, `stress023`). FreeW writes its
   own `numbering.xml` only for paragraphs it modeled as lists; original numbering not surfaced as a FreeW
   list is dropped (can change list rendering).
