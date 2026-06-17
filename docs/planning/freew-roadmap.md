@@ -392,15 +392,31 @@ features**. Same proven pattern (roadmap → isolated agents → integrate/verif
       not wired — read-only is the milestone). `DocumentView` gained `LayoutChanged`, `CurrentParagraphFormatting`,
       `PageInfo()`. Status bar enhanced with **Page X of Y** + a Read-Mode/Print-Layout view-switch cluster (existing
       zoom slider kept). (Current-section indicator omitted gracefully — now that W4 landed, a future polish item.)
-- [ ] V5. Galleries + KeyTips. Live-preview Styles gallery, theme/colour galleries; Alt-key KeyTips overlay.
+- [x] V5. Galleries + KeyTips. `Ribbon/StylesGallery.cs` (Home → Styles: swatches rendered in each style's own resolved
+      formatting + `▾` full-list popup; hover live-previews, leave reverts, click commits), `Ribbon/ThemeGallery.cs`
+      (Design → Themes + theme-colour galleries via `DocumentTheme.Apply`), `Ribbon/KeyTipsOverlay.cs` (Alt shows
+      KeyTip badges over tabs → tab letter activates + shows control badges → control letter invokes; Esc/Alt/click
+      dismiss). `DocumentView` gained additive preview/commit methods (`PreviewParagraphStyle`/`CommitStylePreview`/
+      `PreviewTheme` — preview bypasses the undo bus via snapshot/revert; commit routes through the reversible command
+      path). `BuildRibbon` injects galleries into the shared-renderer group grids by stamped `CatalogId`. Shared tier untouched.
 
 ### Functional track (hard features)
 - [x] W1. Equations (OMML `m:oMath`) — `Equation`/`MathRun` model carried as an inline `Run.Equation` mark
       (mirrors images/footnotes/content-controls so it flows through runs, table cells, headers); supports plain
       text (`m:r`/`m:t`), superscript (`m:sSup`), and fractions (`m:f`). Writer declares `xmlns:m`, emits inline
       `m:oMath`; reader parses `m:oMath` (unknown constructs degrade to their `m:t` text). 8 new tests (5 IO round-trip + 3 model).
-- [ ] W2. Shapes / text boxes (DrawingML + `w:txbxContent`) — wire the `freew.shapes` placeholder.
-- [ ] W3. Charts (DrawingML chart part) — insert a basic chart with data.
+- [x] W2. Shapes / text boxes. `Shape`/`ShapeKind` (Rectangle/RoundedRectangle/Ellipse/TextBox; size in pt, optional
+      fill, text-box body reuses `List<Paragraph>`) carried as inline `Run.Shape` (mirrors `Run.Equation`/`Run.Image`).
+      Writer declares `wp`/`a`/`wps` xmlns, emits `w:drawing`→`wp:inline`→`wps:wsp` (`a:prstGeom` + optional `a:solidFill`
+      + `w:txbxContent`) with shape docPr ids above the image range; reader parses `wps:wsp` (distinguished from
+      `pic:pic`). The previously-unregistered `freew.shapes` ribbon button now inserts a sample text box (DocumentView
+      renders ellipse/rect/text-box, model on `Tag`). 13 new tests.
+- [x] W3. Charts. `Chart`/`ChartSeries`/`ChartKind` (Column/Bar/Line/Pie, title, categories, series, size) carried as
+      inline `Run.Chart`. On save each chart becomes a self-contained part `word/charts/chartN.xml` (`c:chartSpace` with
+      one chart type, `c:ser` + `c:cat` string cache + `c:val` number cache, axes for cartesian kinds) with a
+      content-type Override + `chart` relationship + inline `w:drawing`/`c:chart r:id`; data embedded as literal caches
+      (no embedded xlsx — "Edit Data" unavailable, noted in code). Writer threads images+charts via a `RunDrawings`
+      record; reader resolves the chart part and parses kind/title/categories/values. 15 new tests (incl. zip-part assertions).
 - [x] W4. Multiple sections. `SectionBreakKind` (Continuous/NextPage/EvenPage/OddPage) + `Section` (own `PageSettings`
       + break kind); `Paragraph.SectionBreak` marks a section-ending paragraph (mirrors OOXML: non-final `w:sectPr` in
       the last para's `w:pPr`, final at body level). `TextDocument.Sections` is a computed view; `TextDocument.Page`
