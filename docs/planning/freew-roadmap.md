@@ -502,6 +502,17 @@ cloud/proprietary (VBA, IRM, online services, 3D models).
       runs were dropped by the editor). Quick Parts: the existing `freew.save-quickpart`/`freew.insert-quickpart` buttons
       already cover save-selection + pick-from-`QuickPartLibrary` (verified, left intact). +2 STA round-trip tests.
 
+## MS Word parity — wave 5: deep fidelity (2026-06-17 →)
+The mainstream surface is complete (waves 1–4). Wave 5 deepens the fidelity of already-shipped objects so they
+are *truly* Word-compatible, not just data-faithful. Still excluding cloud/proprietary.
+- [ ] F1. Editable chart data + richer chart types. Emit an embedded companion workbook
+      (`word/embeddings/Microsoft_Excel_Worksheet*.xlsx`) + `c:externalData r:id` so Word's "Edit Data" works
+      (today charts are cache-only); add scatter/area/doughnut kinds + legend + axis titles. Round-trip.
+- [ ] F2. SmartArt drawing geometry. Emit a minimal `dsp:drawing` (`word/diagrams/drawingN.xml` + the
+      `diagramDrawing` relationship / `dsp:dataModelExt`) so the diagram renders positioned without Word re-laying-out.
+- [ ] F3. Embedded fonts. `word/fontTable.xml` + embedded (ODTTF-obfuscated) font parts (`w:embedRegular`/…) +
+      `w:settings/w:embedTrueTypeFonts`; opt-in `TextDocument` flag. Round-trip the obfuscation.
+
 ## Consolidation & QA (2026-06-17)
 After Milestones F–U, the work pivoted from features to hardening (user choice: "Consolidate & harden"):
 - **CI lane** — `.github/workflows/freew-ci.yml` builds `FreeW.slnx` Release (0 warnings enforced) + runs
