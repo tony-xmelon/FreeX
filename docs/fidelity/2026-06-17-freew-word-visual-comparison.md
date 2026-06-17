@@ -170,6 +170,10 @@ reader → writer → view, each with round-trip + render tests; `FreeW.slnx` 0-
    the note text in the bottom margin (previously only the reference marker showed). Multi-page placement
    (per-page note mapping + content-area space reservation) remains a follow-up; the note position is
    approximate (margin vs Word's content-bottom), so the note *text* is now visible though SSIM is flat.
+8. **Document default spacing (`w:docDefaults`) + automatic spacing (`w:before/afterAutospacing`)** — both
+   were ignored, so paragraphs that don't set their own spacing rendered at 0 space-after / 1.15 line
+   regardless of the document. Now read and applied (autospacing approximated at ~one line). Lifted
+   `VariousPictures` 0.857 → 0.895 and `endnotes` → 0.890; overall page-weighted SSIM 0.614 → 0.619.
 
 ## Suggested follow-ups (priority order)
 
