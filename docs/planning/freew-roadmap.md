@@ -480,9 +480,12 @@ unit-testable on the X1 harness), and surfacing already-built model features in 
 ## MS Word parity — wave 4 (2026-06-17 →)
 Higher-fidelity round-out of mainstream Word surfaces still missing real fidelity. Still excluding
 cloud/proprietary (VBA, IRM, online services, 3D models).
-- [ ] Z1. Advanced typography (Font ▸ Advanced). `RunFormatting` gains character spacing/kerning, position
-      (raised/lowered), ligatures + stylistic sets + number forms/spacing; writer/reader map `w:rPr` (`w:spacing`,
-      `w:kern`, `w:position`, `w14:ligatures`, `w14:stylisticSets`, `w14:numForm`/`w14:numSpacing`); round-trip.
+- [x] Z1. Advanced typography (Font ▸ Advanced). `RunFormatting` gained `CharacterSpacingPt`, `KerningMinSizePt`,
+      `PositionPt` (raised/lowered), `Ligatures` (`LigatureMode`, incl. None vs explicit-none), `StylisticSet`,
+      `NumberForm`, `NumberSpacing` — all optional/default-preserving. Writer emits core `w:spacing`/`w:kern`/`w:position`
+      in their CT_RPr slots (after `w:color`, before `w:sz`) and the `w14:ligatures`/`w14:numForm`/`w14:numSpacing`/
+      `w14:stylisticSets` extensions last; reader parses all back. Token maps shared in `Ooxml`. 29 new tests
+      (incl. defaults-unchanged regression + combined-feature CT_RPr ordering check).
 - [ ] Z2. Real theme part. Emit/parse `word/theme/theme1.xml` (DrawingML `a:clrScheme`/`a:fontScheme`/`a:fmtScheme`)
       so `DocumentTheme` round-trips as a proper theme part (content-type + relationship) instead of only rewriting
       colours inline; reader recovers the active theme.
