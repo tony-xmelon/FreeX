@@ -354,6 +354,18 @@ T2 is model+view (round-trips via styles.xml); T4 is a pure model op + dialog.
       + in-place removal ops (RemoveComments/Revisions[=accept]/Properties/Bookmarks); Review > Inspect dialog
       with selective remove. 9 tests.
 
+## Milestone U — editing conveniences (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. U2/U3 touch the docx reader/writer;
+U1/U4 are disjoint (pure + view).
+- [ ] U1. Change Case (disjoint — pure + editor). UPPERCASE / lowercase / Sentence case / Capitalize Each
+      Word / tOGGLE cASE applied to the selection; a pure `ChangeCase` helper (tested) + Home > Font command.
+- [ ] U2. Image alt text + alignment. `InlineImage.AltText` → DrawingML `wp:docPr @descr/@title`; align the
+      image's paragraph left/center/right; writer/reader; Format Picture affordance. Round-trip tests.
+- [ ] U3. Insert text from file. Open another `.docx` (via `DocxReader`) and insert its blocks at the caret
+      (reversibly); Insert > Object > Text from File. Tests for the pure block-merge.
+- [ ] U4. Bookmark manager + Go To (disjoint — view). A dialog listing bookmarks (go-to / delete) and an
+      enhanced Go To (page/heading/bookmark); reuses the bookmark + outline infra. View-only.
+
 ## Status log (newest first)
 - 2026-06-17: Milestone T complete. Page setup polish (hyphenation/vAlign/titlePg), custom styles, manage
   hyperlinks (ScreenTip), document inspector — built in parallel by subagents and integrated (all four
