@@ -405,7 +405,12 @@ features**. Same proven pattern (roadmap → isolated agents → integrate/verif
       + `w:txbxContent`) with shape docPr ids above the image range; reader parses `wps:wsp` (distinguished from
       `pic:pic`). The previously-unregistered `freew.shapes` ribbon button now inserts a sample text box (DocumentView
       renders ellipse/rect/text-box, model on `Tag`). 13 new tests.
-- [ ] W3. Charts (DrawingML chart part) — insert a basic chart with data.
+- [x] W3. Charts. `Chart`/`ChartSeries`/`ChartKind` (Column/Bar/Line/Pie, title, categories, series, size) carried as
+      inline `Run.Chart`. On save each chart becomes a self-contained part `word/charts/chartN.xml` (`c:chartSpace` with
+      one chart type, `c:ser` + `c:cat` string cache + `c:val` number cache, axes for cartesian kinds) with a
+      content-type Override + `chart` relationship + inline `w:drawing`/`c:chart r:id`; data embedded as literal caches
+      (no embedded xlsx — "Edit Data" unavailable, noted in code). Writer threads images+charts via a `RunDrawings`
+      record; reader resolves the chart part and parses kind/title/categories/values. 15 new tests (incl. zip-part assertions).
 - [x] W4. Multiple sections. `SectionBreakKind` (Continuous/NextPage/EvenPage/OddPage) + `Section` (own `PageSettings`
       + break kind); `Paragraph.SectionBreak` marks a section-ending paragraph (mirrors OOXML: non-final `w:sectPr` in
       the last para's `w:pPr`, final at body level). `TextDocument.Sections` is a computed view; `TextDocument.Page`
