@@ -522,6 +522,12 @@ are *truly* Word-compatible, not just data-faithful. Still excluding cloud/propr
       implements the self-inverse first-32-byte XOR (key from the fontKey GUID); `DeterministicFontKey` derives the GUID
       via FNV-1a (no `Guid.NewGuid()`/`Random`, so byte-reproducible). Reader de-obfuscates back to the original bytes.
       14 new tests (XOR self-inverse, de-obfuscation equals original, 4-style + partial round-trips, no-fonts regression).
+- [x] F4. Concurrency hardening (CI flake fix). `DocxWriter`'s shared mutable static id counters (`_bookmarkId`/
+      `_revisionId`/`_shapeDrawingId`) raced between concurrent `Write(...)` calls (the parallel cross-assembly test run
+      intermittently produced colliding `wp:docPr`/bookmark/revision ids). Replaced them with a per-write `IdAllocator`
+      instance threaded on the `RunDrawings` record (`RunDrawings.None` → `Empty()` factory so no shared state remains);
+      single-threaded output stays byte-identical. New `ConcurrentWriteIdRoundTripTests` writes 50 docs under `Parallel.For`
+      and asserts each document's ids are `1..N`/unique (verified to fail against the old static code). Full lane green 3×, no flakiness.
 
 ## Consolidation & QA (2026-06-17)
 After Milestones F–U, the work pivoted from features to hardening (user choice: "Consolidate & harden"):
