@@ -52,13 +52,9 @@ possible. Build it as a continuous series of small, verified, pushed increments.
 - [x] B2. Selection-driven toggle state (bold on when selection is bold) via the shared ribbon
       state store. *(editor.SelectionChanged pushes bold/italic/underline state into the shared
       RibbonStateStore; toggle buttons observe StateChanged and update IsChecked live.)*
-- [ ] B3. *(DEFERRED — reordered.)* Reuse the real WPF ribbon renderer: extract `RibbonWpfRenderer`
-      (+ adaptive panel/keytips) from `FreeX.App.Host` into a shared WPF ribbon library; FreeW renders
-      with it instead of the placeholder. **Held back because the other session is actively churning
-      the WPF ribbon renderer on `origin/main` — extracting it now would conflict hard. FreeW's
-      placeholder ribbon already drives real commands (B1/B2), so this is quality, not function.
-      Revisit once the ribbon work settles. Proceeding to Milestone C (docx I/O), which is
-      independent.**
+- [x] B3. **DONE via parity item V1.** Extracted the real WPF ribbon renderer (`RibbonWpfRenderer` + adaptive
+      panel/icons/metadata/tooltip) into shared lib `shared/Free.Shared.Ribbon.Wpf`; FreeW now renders through it
+      instead of the placeholder TabControl. See the MS Word parity section (V1) for details.
 
 ## Milestone C — .docx I/O
 - [~] C1. *(Not needed yet — reordered.)* Phase 3b prerequisite (split `XlsxPackagePath`). The docx
@@ -82,9 +78,9 @@ possible. Build it as a continuous series of small, verified, pushed increments.
       *(Recent ▾ menu lists the shared store's entries → OpenPath. AutosaveCoordinator writes a .docx
       snapshot + sidecar every 30s when dirty via the shared AutosaveSnapshotStore (FreeW Recovery
       folder), offers recovery of a prior session's snapshot on startup, cleans up on clean exit.)*
-- [ ] D3. *(DEFERRED.)* Backstage/File menu + Options, reusing the shared shell frames. Held back —
-      depends on the large/risky Phase-5 shell extraction (actively churned), and FreeW's title-bar
-      File commands + Recent menu already cover the lifecycle. Revisit after the shell settles.
+- [x] D3. **DONE via parity item V2.** Full-window Word-style Backstage (`Backstage/BackstageView.cs`) with New/
+      Open/Save/Save As/Print/Export/Info/Recent/Options panes, routed to the existing `FileCommands` (no shared
+      shell-extraction dependency taken). See the MS Word parity section (V2) for details.
 
 ## Milestone E — word-processor features
 - [x] E1. Find/Replace. *(Modeless FindReplaceDialog over the editing surface: TextPointer search,
@@ -390,18 +386,148 @@ features**. Same proven pattern (roadmap → isolated agents → integrate/verif
 - [x] V3. Paginated WYSIWYG page view. `MainWindow.TogglePrintLayout` puts the editor on a grey workspace; the
       `DocumentView` page chrome (`ApplyPageChrome`, page shadow, margins) + `PageBreakAdorner` render discrete pages
       like Word's Print Layout rather than a continuous flow. (The deferred E4 page view.)
-- [ ] V4. Ruler + Word-like status bar. Horizontal/vertical rulers with margin/indent/tab markers; status
-      bar showing Page X of Y, section, word count, the existing zoom slider, view switches.
-- [ ] V5. Galleries + KeyTips. Live-preview Styles gallery, theme/colour galleries; Alt-key KeyTips overlay.
+- [x] V4. Ruler + Word-like status bar. `Editing/Ruler.cs` — code-built horizontal ruler (inch tick scale, shaded
+      margin zones from `PageSettings`, read-only left/right/first-line indent markers + tab ticks from the caret
+      paragraph) and a thinner vertical ruler; both zoom-scaled to the page band, shown in Print-Layout mode (drag
+      not wired — read-only is the milestone). `DocumentView` gained `LayoutChanged`, `CurrentParagraphFormatting`,
+      `PageInfo()`. Status bar enhanced with **Page X of Y** + a Read-Mode/Print-Layout view-switch cluster (existing
+      zoom slider kept). (Current-section indicator omitted gracefully — now that W4 landed, a future polish item.)
+- [x] V5. Galleries + KeyTips. `Ribbon/StylesGallery.cs` (Home → Styles: swatches rendered in each style's own resolved
+      formatting + `▾` full-list popup; hover live-previews, leave reverts, click commits), `Ribbon/ThemeGallery.cs`
+      (Design → Themes + theme-colour galleries via `DocumentTheme.Apply`), `Ribbon/KeyTipsOverlay.cs` (Alt shows
+      KeyTip badges over tabs → tab letter activates + shows control badges → control letter invokes; Esc/Alt/click
+      dismiss). `DocumentView` gained additive preview/commit methods (`PreviewParagraphStyle`/`CommitStylePreview`/
+      `PreviewTheme` — preview bypasses the undo bus via snapshot/revert; commit routes through the reversible command
+      path). `BuildRibbon` injects galleries into the shared-renderer group grids by stamped `CatalogId`. Shared tier untouched.
 
 ### Functional track (hard features)
 - [x] W1. Equations (OMML `m:oMath`) — `Equation`/`MathRun` model carried as an inline `Run.Equation` mark
       (mirrors images/footnotes/content-controls so it flows through runs, table cells, headers); supports plain
       text (`m:r`/`m:t`), superscript (`m:sSup`), and fractions (`m:f`). Writer declares `xmlns:m`, emits inline
       `m:oMath`; reader parses `m:oMath` (unknown constructs degrade to their `m:t` text). 8 new tests (5 IO round-trip + 3 model).
-- [ ] W2. Shapes / text boxes (DrawingML + `w:txbxContent`) — wire the `freew.shapes` placeholder.
-- [ ] W3. Charts (DrawingML chart part) — insert a basic chart with data.
-- [ ] W4. Multiple sections (section breaks continuous/next-page; per-section page setup).
+- [x] W2. Shapes / text boxes. `Shape`/`ShapeKind` (Rectangle/RoundedRectangle/Ellipse/TextBox; size in pt, optional
+      fill, text-box body reuses `List<Paragraph>`) carried as inline `Run.Shape` (mirrors `Run.Equation`/`Run.Image`).
+      Writer declares `wp`/`a`/`wps` xmlns, emits `w:drawing`→`wp:inline`→`wps:wsp` (`a:prstGeom` + optional `a:solidFill`
+      + `w:txbxContent`) with shape docPr ids above the image range; reader parses `wps:wsp` (distinguished from
+      `pic:pic`). The previously-unregistered `freew.shapes` ribbon button now inserts a sample text box (DocumentView
+      renders ellipse/rect/text-box, model on `Tag`). 13 new tests.
+- [x] W3. Charts. `Chart`/`ChartSeries`/`ChartKind` (Column/Bar/Line/Pie, title, categories, series, size) carried as
+      inline `Run.Chart`. On save each chart becomes a self-contained part `word/charts/chartN.xml` (`c:chartSpace` with
+      one chart type, `c:ser` + `c:cat` string cache + `c:val` number cache, axes for cartesian kinds) with a
+      content-type Override + `chart` relationship + inline `w:drawing`/`c:chart r:id`; data embedded as literal caches
+      (no embedded xlsx — "Edit Data" unavailable, noted in code). Writer threads images+charts via a `RunDrawings`
+      record; reader resolves the chart part and parses kind/title/categories/values. 15 new tests (incl. zip-part assertions).
+- [x] W4. Multiple sections. `SectionBreakKind` (Continuous/NextPage/EvenPage/OddPage) + `Section` (own `PageSettings`
+      + break kind); `Paragraph.SectionBreak` marks a section-ending paragraph (mirrors OOXML: non-final `w:sectPr` in
+      the last para's `w:pPr`, final at body level). `TextDocument.Sections` is a computed view; `TextDocument.Page`
+      stays the final section (fully backward-compatible). Writer refactored `BuildSectionProperties(PageSettings,
+      kind)`; reader gained shared `ReadPageSettings` (also fixing pre-existing gap: pgSz/pgMar/orientation were
+      written but never read — landscape now round-trips). 7 new tests + single-section regression guard.
+
+## MS Word parity — wave 2 (2026-06-17 →)
+With the first parity wave (V1–V5, W1–W4) done, wave 2 deepens parity with the remaining mainstream Word
+surfaces and finally stands up an App.Host test harness. Still excluding cloud/proprietary (online video,
+translate/research services, VBA/macros, 3D models).
+- [x] X1. App.Host test harness. New `freew/FreeW.App.Host.Tests` (STA via `Xunit.StaFact`/`[StaFact]`) added to
+      `FreeW.slnx` (CI already covers it) — 15 tests over `DocumentView.Render`/`CommitToModel`. **Both HIGH QA-backlog
+      findings fixed (confirmed real, red→green):** (1) `Run.Tag` collision where revision/comment/content-control
+      markers overwrote each other → composite `RunMarkers(Revision,Comment,Control)` record merged via `AddMarker`;
+      (2) collapsed-heading index drift where visible-block ordinals addressed wrong `_model.Blocks` slots →
+      `ModelIndexFromVisible` helper in `SelectedModelParagraphIndices`/`InsertComment`/`MarkSelectionAsRevision`
+      (plus a latent fix: `Paragraph.StyleId` now round-trips on `ParagraphTag`, previously dropped on commit).
+- [x] X2. WordArt / decorative text. Dedicated `WordArt` record (`Text` + `WordArtStyle` preset FillBlue/GradientFill/
+      Outline/Shadow + font size) carried as inline `Run.WordArt`. Writer emits a `wps:wsp` text box whose run `a:rPr`
+      carries the preset's DrawingML effect (`a:solidFill`/`a:gradFill`/`a:ln`/`a:effectLst`), reusing the shape docPr
+      counter; reader (ordered BEFORE `ReadShape` since WordArt is also a `wps:wsp`) infers the preset from which effect
+      is present — a plain text-box shape with no effects still reads back as `Shape`. Round-trip + model tests.
+- [x] X3. Floating images + text wrapping. `ImageWrapping` (Inline/Square/Tight/TopAndBottom/Behind/InFront) +
+      `HorizontalAnchor`/`VerticalAnchor` + offsets on `InlineImage` (all defaulting to inline → byte-compatible).
+      Writer split `BuildDrawing` into `BuildInlineDrawing`/`BuildAnchorDrawing` sharing `BuildDocPr`/`BuildPicGraphic`;
+      floating emits `wp:anchor` (`wp:positionH/V` + wrap element, `wrapNone`+`behindDoc` for Behind/InFront);
+      reader parses both `wp:inline` and `wp:anchor`. `wp:wrapTight` emitted without wrapPolygon (noted). Round-trip + model tests.
+- [x] X4. Accessibility checker. Pure `AccessibilityChecker.Check(doc) → AccessibilityReport` (mirrors `DocumentInspector`):
+      rules for missing image alt text (Error), uninformative/bare-URL link text, heading-order gaps, tables without a
+      header row, low-contrast text (self-contained WCAG relative-luminance / 4.5:1 ratio), blank cells + missing doc
+      title (Tips). Issues ordered by block with document-wide last. 32 new model tests. No UI (no ribbon placeholder).
+
+## MS Word parity — wave 3 (2026-06-17 →)
+Deepening toward full parity: the last two big DrawingML object types, the remaining App.Host QA fixes (now
+unit-testable on the X1 harness), and surfacing already-built model features in the ribbon UI.
+- [x] Y1. SmartArt (DrawingML diagram). `SmartArt`/`SmartArtNode`/`SmartArtKind` (List/Process/Hierarchy, node tree)
+      carried as inline `Run.SmartArt`. Writer emits the four `word/diagrams/{data,layout,quickStyle,colors}N.xml` parts
+      (+ 4 content-type Overrides + 4 relationships) and an inline `w:drawing`/`dgm:relIds`; the data part carries node
+      text + `dgm:cxnLst parOf` structure. Reader resolves the data part via `dgm:relIds/@r:dm`, rebuilds the tree, infers
+      kind from the layout `uniqueId`. Stock-but-valid layout/style/colors; no `dsp:drawing` geometry (Word re-lays-out). 12 tests.
+- [x] Y2. OLE / embedded objects. `EmbeddedObject` (`Payload` bytes + `ProgId` + optional icon `InlineImage` + size)
+      carried as inline `Run.EmbeddedObject`. Writer emits the payload to `word/embeddings/oleObjectN.bin` (+ `Default bin`
+      content-type + `oleObject` rel) and a `w:object`/VML `v:shape`/`v:imagedata`/`o:OLEObject` run (icon reuses the image
+      plumbing); reader parses `w:object`→`o:OLEObject r:id` back to payload+ProgId+icon. Embed-only, minimal VML (noted). 13 tests.
+- [x] Y3. App.Host MED/LOW QA fixes (on the X1 test harness). **All four defects were real and are fixed**
+      (each red→green-verified via git-stash; +9 STA regression tests in `QaBacklogRegressionTests.cs`):
+      field-run-inside-hyperlink now wraps in `BuildHyperlink` (link survives); author-set cell shading is
+      stamped on a `TableCellTag` and read authoritatively (the colour-equality strip now only applies to
+      editor-created cells); an emptied run keeping a comment/content-control marker is preserved as a
+      zero-length marked run; `WpfList.Tag` stashes the model `ListKind` so MultiLevel no longer degrades to Number.
+- [x] Y4. Surface built features in the ribbon. Insert tab gained an Equation/Chart/WordArt group; Review tab a
+      **Check Accessibility** button (runs `AccessibilityChecker`, shows a grouped `AccessibilityReportDialog`); status
+      bar a **Section X of N** indicator (from `TextDocument.Sections`). Commands route through `FreeWRibbonCommands` to
+      new `DocumentView.InsertEquation/InsertChart/InsertWordArt` (mirroring `InsertShape`). **Crucially also added the
+      editor render→commit path for these marks** (`BuildEquationRun`/`BuildChartRun`/`BuildWordArtRun` + 4 `ReadInline`
+      cases) so inserts survive a commit cycle — previously equation/chart/WordArt runs were never rendered in-editor.
+      +3 STA round-trip tests. (Noted limit: DocumentView's commit doesn't preserve `Paragraph.SectionBreak`, so the
+      section count can collapse to "1 of 1" after unsaved in-editor edits; accurate for freshly loaded docs.)
+
+## MS Word parity — wave 4 (2026-06-17 →)
+Higher-fidelity round-out of mainstream Word surfaces still missing real fidelity. Still excluding
+cloud/proprietary (VBA, IRM, online services, 3D models).
+- [x] Z1. Advanced typography (Font ▸ Advanced). `RunFormatting` gained `CharacterSpacingPt`, `KerningMinSizePt`,
+      `PositionPt` (raised/lowered), `Ligatures` (`LigatureMode`, incl. None vs explicit-none), `StylisticSet`,
+      `NumberForm`, `NumberSpacing` — all optional/default-preserving. Writer emits core `w:spacing`/`w:kern`/`w:position`
+      in their CT_RPr slots (after `w:color`, before `w:sz`) and the `w14:ligatures`/`w14:numForm`/`w14:numSpacing`/
+      `w14:stylisticSets` extensions last; reader parses all back. Token maps shared in `Ooxml`. 29 new tests
+      (incl. defaults-unchanged regression + combined-feature CT_RPr ordering check).
+- [x] Z2. Real theme part. `TextDocument.Theme` (persisted `DocumentTheme`, default Office) + `DocumentTheme.ColorScheme`
+      (`ThemeColorScheme` 12-slot record) + `InferPreset`. Writer unconditionally emits `word/theme/theme1.xml`
+      (`a:clrScheme` + `a:fontScheme` + minimal stock `a:fmtScheme`) with content-type Override + `theme` relationship
+      (mirrors how real Word docs always carry a theme); reader parses clrScheme/fontScheme and infers the preset
+      (foreign themes fall back to Office). fmtScheme is stock-but-valid, not read back (noted). Per-preset round-trip + zip-part tests.
+- [x] Z3. Different odd/even pages + page background. `PageSettings.DifferentOddEvenPages` + `BackgroundColorHex`;
+      `TextDocument.EvenHeader`/`EvenFooter` (mirror Header/Footer). Writer emits `w:evenAndOddHeaders` (settings) +
+      `header2.xml`/`footer2.xml` parts (+ Overrides + rels) with `w:type="even"` references, and `w:background`/@color
+      as the first child of `w:document` + `w:displayBackgroundShape` (settings); reader parses all back (even reference
+      matched explicitly so odd-only docs don't mis-pick). Regression guard: neither feature → no settings part / no background. Round-trip + model tests.
+- [x] Z4. Surface remaining objects + Building Blocks. Insert ▸ Illustrations: a Shapes dropdown (Rectangle/Rounded/
+      Ellipse/Text Box) via `InsertShape`; Insert ▸ Media: SmartArt + Object(OLE) buttons via new `DocumentView.InsertSmartArt`/
+      `InsertEmbeddedObject` (with matching `BuildRun` render cases + `ReadInline` commit cases — previously SmartArt/OLE
+      runs were dropped by the editor). Quick Parts: the existing `freew.save-quickpart`/`freew.insert-quickpart` buttons
+      already cover save-selection + pick-from-`QuickPartLibrary` (verified, left intact). +2 STA round-trip tests.
+
+## MS Word parity — wave 5: deep fidelity (2026-06-17 →)
+The mainstream surface is complete (waves 1–4). Wave 5 deepens the fidelity of already-shipped objects so they
+are *truly* Word-compatible, not just data-faithful. Still excluding cloud/proprietary.
+- [x] F1. Editable chart data + richer chart types. Each chart now writes a minimal embedded companion workbook
+      `word/embeddings/Microsoft_Excel_Worksheet{N}.xlsx` (self-contained, `inlineStr` cells, no FreeX dep) + a part-local
+      `c:externalData r:id` in `word/charts/_rels/chartN.xml.rels`, so Word's "Edit Data" maps columns (caches stay
+      authoritative, `autoUpdate=0`). Added `ChartKind` Scatter/Area/Doughnut (`c:scatterChart` xVal/yVal, `c:areaChart`,
+      `c:doughnutChart`) + optional `ShowLegend` + category/value axis titles; reader maps all back. New tests for embedded
+      workbook presence + each new kind + legend/axis titles + defaults-off regression.
+- [x] F2. SmartArt drawing geometry. Each diagram now emits a fifth part `word/diagrams/drawingN.xml` (`dsp:drawing`,
+      content-type Override) holding one positioned `dsp:sp` per node (text + non-zero `a:xfrm`), wired via a
+      `diagramDrawing` relationship in `word/diagrams/_rels/dataN.xml.rels` + a `dgm:dataModelExt` in the data model, so
+      viewers show the diagram without re-running auto-layout. Deterministic heuristic layout (List=stack, Process=row,
+      Hierarchy=indent-by-depth). Presentation-only (reader still reconstructs from the data part). 3 new tests.
+- [x] F3. Embedded fonts. `TextDocument.EmbeddedFonts` (`EmbeddedFont` per family + per-style bytes, default empty).
+      Writer emits `word/fontTable.xml` (`w:embedRegular`/`Bold`/`Italic`/`BoldItalic` with `r:id` + `w:fontKey`) + the
+      ODTTF-obfuscated `word/fonts/fontN.odttf` parts + `w:embedTrueTypeFonts` in settings. `Ooxml.ObfuscateFont`
+      implements the self-inverse first-32-byte XOR (key from the fontKey GUID); `DeterministicFontKey` derives the GUID
+      via FNV-1a (no `Guid.NewGuid()`/`Random`, so byte-reproducible). Reader de-obfuscates back to the original bytes.
+      14 new tests (XOR self-inverse, de-obfuscation equals original, 4-style + partial round-trips, no-fonts regression).
+- [x] F4. Concurrency hardening (CI flake fix). `DocxWriter`'s shared mutable static id counters (`_bookmarkId`/
+      `_revisionId`/`_shapeDrawingId`) raced between concurrent `Write(...)` calls (the parallel cross-assembly test run
+      intermittently produced colliding `wp:docPr`/bookmark/revision ids). Replaced them with a per-write `IdAllocator`
+      instance threaded on the `RunDrawings` record (`RunDrawings.None` → `Empty()` factory so no shared state remains);
+      single-threaded output stays byte-identical. New `ConcurrentWriteIdRoundTripTests` writes 50 docs under `Parallel.For`
+      and asserts each document's ids are `1..N`/unique (verified to fail against the old static code). Full lane green 3×, no flakiness.
 
 ## Consolidation & QA (2026-06-17)
 After Milestones F–U, the work pivoted from features to hardening (user choice: "Consolidate & harden"):
@@ -419,23 +545,22 @@ After Milestones F–U, the work pivoted from features to hardening (user choice
   `TableOfFiguresEntry` deletable); `MailMerge`/`DocumentCompare` deep-clones dropped `Run.EndnoteId`/
   `HyperlinkTooltip`, `TableCell.GridSpan`/`VerticalMerge`, and several `PageSettings` fields.
 
-### QA backlog (confirmed, deferred — all in `FreeW.App.Host`, which has no test assembly)
-These are real defects the DocumentView audit confirmed but which sit in delicate WPF render/commit code
-that cannot be unit-tested at the current test tier; fix carefully (ideally after adding an App.Host test
-harness). Proposed fixes from the audit:
-- **[HIGH] Run `Tag` collision** (`DocumentView.BuildRun`/`ApplyCommentMarker`/`ApplyContentControlMarker`):
-  revision/comment/content-control markers each overwrite `WpfRun.Tag`, so a run that is both commented and
-  tracked-changed (or a content control over either) loses one mark on the next `CommitToModel`. Fix: a
-  composite marker record (or merge into the existing Tag) + recover every facet in `ReadInline`.
-- **[HIGH] Collapsed-heading index drift** (`InsertComment`, `MarkSelectionAsRevision`,
-  `SelectedModelParagraphIndices`/`FormatSelectedModelParagraphs`): visible-ordinal indices are used to
-  index `_model.Blocks` after `MergeHiddenBlocks` re-splices hidden blocks, so paragraph commands mis-target
-  when a heading is collapsed *before* the selection. Fix: map visible→model index through `_hiddenBlocks`
-  offsets, or capture the target paragraph by reference before commit.
-- **[MED]** Field run inside a hyperlink renders un-linked (`BuildFieldRun` returns before hyperlink
-  wrapping) → link lost on commit. **[MED]** Real cell shading equal to the header/banded style fill colour
-  is stripped on commit (colour-equality heuristic). **[LOW]** Emptied content-control/comment run dropped
-  on commit; MultiLevel list degrades to Number after an in-editor edit (both documented best-effort limits).
+### QA backlog (all in `FreeW.App.Host`) — App.Host now HAS a test assembly (parity X1)
+The DocumentView audit confirmed these. **Both HIGH items are now FIXED** with regression tests, once the
+App.Host STA test harness landed (parity item X1, `freew/FreeW.App.Host.Tests`):
+- **[HIGH — FIXED, X1] Run `Tag` collision** (`DocumentView.BuildRun`/`ApplyCommentMarker`/`ApplyContentControlMarker`):
+  revision/comment/content-control markers each overwrote `WpfRun.Tag`, so a run that is both commented and
+  tracked-changed (or a content control over either) lost one mark on the next `CommitToModel`. Fixed with a
+  composite `RunMarkers(Revision,Comment,Control)` record merged via `AddMarker`; `ReadInline` recovers every facet.
+- **[HIGH — FIXED, X1] Collapsed-heading index drift** (`InsertComment`, `MarkSelectionAsRevision`,
+  `SelectedModelParagraphIndices`): visible-ordinal indices addressed `_model.Blocks` after `MergeHiddenBlocks`
+  re-splices hidden blocks, so paragraph commands mis-targeted when a heading was collapsed *before* the selection.
+  Fixed with a `ModelIndexFromVisible` helper (visible→model via `_hiddenBlocks` offsets); also fixed a latent
+  defect where `Paragraph.StyleId` was dropped on commit (now round-trips on `ParagraphTag`).
+~~Remaining (lower priority)~~ — **ALL FIXED in parity Y3** (with 9 STA regression tests): field-run-in-hyperlink
+now wraps in `BuildHyperlink`; real cell shading is stamped on `TableCellTag` and read authoritatively (colour-
+equality strip restricted to editor-created cells); emptied comment/content-control run preserved as a zero-length
+marked run; `WpfList.Tag` carries the model `ListKind` so MultiLevel no longer degrades to Number on edit.
 
 ## Status log (newest first)
 - 2026-06-17: Consolidation & QA. FreeW CI lane + README/feature catalog + Windows packaging shipped; a
