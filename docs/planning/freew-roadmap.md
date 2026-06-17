@@ -256,7 +256,133 @@ Avoids the WPF-ribbon-renderer / shell the other session churns. N2 touches the 
 - [x] N4. Document statistics dialog. Pure `DocumentStatistics.Compute` (words/chars/paragraphs/sentences/
       syllables/reading-time/avg-wps/Flesch reading ease); Review > Proofing > Word Count dialog. View only. ~12 tests.
 
+## Milestone O — collaboration + automation (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. O1 touches the docx writer/reader
+(settings.xml); O2/O3/O4 are model/view/pure.
+- [x] O1. Restrict editing / document protection. `ProtectionSettings`/`ProtectionMode` (None/ReadOnly/
+      CommentsOnly/TrackChangesOnly) on `TextDocument`; writer emits `word/settings.xml`
+      `w:documentProtection` (content type + rel); reader parses it; editor honours protection via
+      RichTextBox `IsReadOnly`; Review > Protect > Restrict Editing (stateful toggle). 5 tests.
+- [x] O2. Compare documents. Pure `DocumentCompare.Compare(original, revised, author)` — two-level LCS
+      (paragraph anchors + word-level token diff) marking Inserted/Deleted runs; Review > Compare opens a
+      second .docx and loads the tracked-changes comparison. Deterministic, no DateTime.Now. ~6 tests.
+- [x] O3. Mail merge. Pure `MailMerge` (field discovery, `MergeData.FromCsv`, `Substitute`, `MergeRecord`,
+      `MergeAll`); fields are `«Field»` (plain text, round-trips); Mailings tab: Set Data / Insert Field /
+      Preview Record (next-prev) / Finish & Merge (records concatenated, page-broken). 19 tests.
+- [x] O4. Sort + Convert text↔table. Pure `ParagraphSort` (paragraphs + table rows, stable, asc/desc +
+      case) + `TextTableConvert` (text→table with ragged padding, table→text); `ReplaceBlocksCommand`
+      (reversible); Layout > Data: Sort + Convert to Table + Convert to Text. 13 tests.
+
+## Milestone P — references + layout finishing (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. P1/P4 touch the docx writer/reader;
+P2/P3 are model/view.
+- [x] P1. Endnotes. `Endnote` store + `Run.EndnoteId`/`EndnoteReference`/`NextEndnoteId` (mirrors
+      footnotes); writer emits `word/endnotes.xml` + content type + rel + superscript `w:endnoteReference`;
+      reader parses it; superscript marker preserved across edit; References > Endnote. Footnotes + endnotes
+      coexist. 4 tests.
+- [x] P2. Index. `IndexEntry` + `TextDocument.IndexEntries` side store + `IndexHeading`/`IndexEntry` styles;
+      pure `DocumentIndex.Build` (sorted, deduped, heading + entries); References > Mark Entry + Insert Index
+      (reversible). Round-trips as styled paragraphs. 12 tests.
+- [x] P3. Indentation controls. Pure `Indentation` (Increase/Decrease step + clamp, SetIndents with signed
+      first-line = hanging convention); `DocumentView` Increase/Decrease Indent + Set Indents over the
+      selection (reversible); Home > Paragraph buttons + Paragraph dialog. 7 tests.
+- [x] P4. Line numbers. `PageSettings.LineNumberMode` (None/Continuous/RestartEachPage) + `LineNumberCountBy`;
+      writer/reader `sectPr/w:lnNumType` (countBy + restart); print preview draws margin line numbers; Layout
+      > Line Numbers cycles the mode. 5 tests.
+
+## Milestone Q — fields, lists, outline tools (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. Q1/Q2 touch the docx writer/reader;
+Q3/Q4 are disjoint (view/model-light).
+- [x] Q1. Document fields. Extended `RunFieldKind` with Date/Time/FileName/Author/NumPages + factories;
+      writer emits `w:fldSimple` with the right `w:instr` keyword; reader maps the leading keyword back
+      (handles `DATE \@ "..."` switches); editor resolves DATE/TIME (app layer), Author from Properties,
+      FileName from the open file; Insert > Field picker. No DateTime.Now in model/IO. ~7 tests.
+- [x] Q2. Multilevel lists. `ListKind.MultiLevel` (backward-compatible); writer adds a third abstract num
+      (`numId=3`, `multiLevelType="multilevel"`, accumulating `%1.%2.%3.` level text); reader maps it back;
+      editor renders best-effort decimal-per-level; Home > Multilevel List + level promote/demote. 3 tests.
+- [x] Q3. Outline tools. Pure `OutlineTools.Promote`/`Demote` (Heading3→…→Title; Title→Heading1→…→Heading6
+      cap); `DocumentView` Promote/Demote (reversible StyleId) + view-only Collapse/Expand (hidden body
+      blocks re-spliced on commit so collapse stays view-only); nav-pane context menu. 26 tests.
+- [x] Q4. Custom dictionary + spelling options. Pure `CustomDictionary` store + `CustomDictionaryStore`
+      persisting a `.lex` under FreeW's data folder, registered in the RichTextBox's `CustomDictionaries`;
+      Review > Proofing: Add to Dictionary + Spell Check toggle. 13 tests.
+
+## Milestone R — tables + flow control (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. R1/R2/R4 touch the docx writer/reader
+in different scopes (tc structure / pPr / tblPr); R3 is disjoint (editor/view).
+- [x] R1. Table cell merge & split. `TableCell.GridSpan` + `VerticalMergeState`; writer/reader `w:gridSpan`
+      + `w:vMerge` (restart/continue); `DocumentView` renders ColumnSpan/RowSpan + reconstructs Continue cells
+      on commit; reversible Merge Cells / Split Cell commands; Table Tools buttons. 3 IO + 4 model tests.
+- [x] R2. Paragraph flow control. `ParagraphFormatting.KeepWithNext`/`KeepLinesTogether`/`WidowControl`;
+      writer/reader `w:keepNext`/`w:keepLines`/`w:widowControl`; mapped to WPF `Paragraph.KeepWithNext`/
+      `KeepTogether` (widowControl model-only); Home > Paragraph toggles. 4 tests.
+- [x] R3. Paste Special. Pure `PasteText.Normalize` (CRLF/CR→LF, strip control chars, keep tab/newline);
+      `DocumentView.PastePlainText`/`PasteMergeFormatting` via clipboard + InsertText (undoable); Home >
+      Clipboard Paste Text Only / Merge Formatting + Ctrl+Shift+V. 8 tests.
+- [x] R4. Table styles. `TableFormatting.HeaderRow`/`BandedRows`/`RepeatHeaderRow`; writer emits header
+      bold+shaded + banded shading + `w:tblHeader` + `w:tblLook` (flag persistence); reader recovers flags +
+      strips style fills; `DocumentView` renders header/banded styling; Table Tools toggles. 4 tests.
+
+## Milestone S — typography + references polish (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. S1 touches the docx writer/reader;
+S2 is pure model; S3/S4 are disjoint (view + model/view).
+- [x] S1. Tab leaders. `TabLeader` enum (None/Dots/Dashes/Underline) on `TabStop` (defaulted); writer emits
+      `w:tab w:leader="dot|hyphen|underscore"`, reader maps it back; carried verbatim across edit via the
+      paragraph Tag (FlowDocument can't render leaders). 3 tests.
+- [x] S2. Citation/bibliography styles. `CitationStyle` enum (Apa/Mla/Chicago) + style-aware `FormatInText`/
+      `FormatBibliographyEntry`/`BuildBibliography` (heading References/Works Cited/Bibliography); existing
+      no-arg overloads default to APA; References > Citation Style dropdown drives the flow. ~per-style tests.
+- [x] S3. Show formatting marks. AdornerLayer overlay drawing ¶ at paragraph ends, · for spaces, → for tabs
+      (computed from text geometry, never added to the FlowDocument so the model can't be corrupted); pure
+      `FormattingMarks` helper; View > Show ¶ stateful toggle. 7 tests.
+- [x] S4. Table of figures. Pure `TableOfFigures.Build` (heading + caption entries per label, Figure/Table)
+      + `EnsureStyles` + marker; References > Insert/Update Table of Figures (reversible, mirrors TOC). 10 tests.
+
+## Milestone T — page setup + styles + cleanup (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. T1/T3 touch the docx writer/reader;
+T2 is model+view (round-trips via styles.xml); T4 is a pure model op + dialog.
+- [x] T1. Page setup polish. `PageSettings.AutoHyphenation` (`settings.xml w:autoHyphenation`, settings part
+      now emits when hyphenated or protected) + `VerticalAlignment` (`sectPr/w:vAlign`) + `DifferentFirstPage`
+      (`sectPr/w:titlePg`); writer/reader; Layout toggles/cycle. 9 tests.
+- [x] T2. Custom styles. Pure `StyleManager` (Create with safe unique-id gen + collision suffixing, Modify,
+      Delete with built-in guard); New Style + Manage Styles dialogs (name/based-on/run formatting/alignment)
+      applying to the selection; round-trips run formatting via styles.xml. ~per-op tests + a docx round-trip.
+- [x] T3. Manage hyperlinks. `Run.HyperlinkTooltip` → `w:hyperlink w:tooltip` (external + internal, coalescing
+      keyed on tooltip); `DocumentView` Edit/Remove/SetTooltip at the caret with a `HyperlinkInfo` Tag; Insert >
+      Links affordances. Existing external/internal round-trips intact. 4 tests.
+- [x] T4. Document Inspector. Pure `DocumentInspector.Inspect` (counts comments/revisions/properties/bookmarks)
+      + in-place removal ops (RemoveComments/Revisions[=accept]/Properties/Bookmarks); Review > Inspect dialog
+      with selective remove. 9 tests.
+
 ## Status log (newest first)
+- 2026-06-17: Milestone T complete. Page setup polish (hyphenation/vAlign/titlePg), custom styles, manage
+  hyperlinks (ScreenTip), document inspector — built in parallel by subagents and integrated (all four
+  auto-merged clean). Each verified 0/0 build + green before push. FreeW lane now 543 tests (418 model,
+  125 IO). origin/main @ e9967d804. **Fifteen milestones (F–T, 60 features) shipped this session.**
+- 2026-06-17: Milestone S complete. Tab leaders, citation styles (APA/MLA/Chicago), show formatting marks,
+  table of figures — built in parallel by subagents and integrated (all four auto-merged clean). Each
+  verified 0/0 build + green before push. FreeW lane now 497 tests (388 model, 109 IO). origin/main @
+  e80635bf5. **Fourteen milestones (F–S, 56 features) shipped this session.**
+- 2026-06-17: Milestone R complete. Table cell merge/split, paragraph flow control, paste special, table
+  styles — built in parallel by subagents and integrated (R3 disjoint + R2 auto-merged; R1 auto-merged; R4
+  hand-resolved against R1 across the shared table writer/reader/render — combined gridSpan/vMerge with
+  header/banded styling). Each verified 0/0 build + green before push. FreeW lane now 469 tests (363 model,
+  106 IO). origin/main @ 75ae16d70. **Thirteen milestones (F–R, 52 features) shipped this session.**
+- 2026-06-17: Milestone Q complete. Document fields, multilevel lists, outline tools, custom dictionary —
+  built in parallel by subagents and integrated (all four auto-merged clean; Q4's push reconciled the
+  other session's FreeX protection-shell work, which rode along). Each verified 0/0 build + green before
+  push. FreeW lane now 445 tests (349 model, 96 IO). origin/main @ 595dacc2d. **Twelve milestones (F–Q,
+  48 features) shipped this session.**
+- 2026-06-17: Milestone P complete. Endnotes, index, indentation controls, line numbers — built in
+  parallel by subagents and integrated (all four auto-merged clean — P2's merge also reconciled the other
+  session's FreeX work, which rode along without conflict). Each verified 0/0 build + green before push.
+  FreeW lane now 393 tests (307 model, 86 IO). origin/main @ 1b52d0148. **Eleven milestones (F–P, 44
+  features) shipped this session.**
+- 2026-06-17: Milestone O complete. Restrict editing, document compare, mail merge, sort + convert
+  text/table — built in parallel by subagents and integrated (O4 disjoint + O3 auto-merged; O1
+  auto-merged; O2 hand-resolved against O1 on the Review-tab ribbon groups + command classes). Each
+  verified 0/0 build + green before push. FreeW lane now 366 tests (289 model, 77 IO). origin/main @
+  f947acfd6. **Ten milestones (F–O, 40 features) shipped this session.**
 - 2026-06-17: Milestone N complete. Cross-references, content controls (`w:sdt`), quick parts/autotext,
   document statistics — built in parallel by subagents and integrated (N4 disjoint + N1 auto-merged; N3
   hand-resolved against N1 on the tangled ribbon dialog classes; N2 hand-resolved on the registration
