@@ -382,8 +382,11 @@ features**. Same proven pattern (roadmap → isolated agents → integrate/verif
       vector glyphs) instead of the placeholder TabControl. FreeW supplies its command-id→glyph mapping via
       `FreeWRibbonIcons.Install()` (sets the shared `RibbonIconFactory.CommandIconKindResolver`, dependency-free
       `RibbonIconDefinitions` geometry) + `FreeWRibbonResources.xaml`. (The long-deferred B3.) Highest visual impact.
-- [ ] V2. Backstage / File menu. The green File tab → full-window backstage (New/Open/Save/Save As/Print/
-      Export PDF/Info/Recent/Options) reusing the shared shell frames where possible. (The deferred D3.)
+- [x] V2. Backstage / File menu. `Backstage/BackstageView.cs` — a full-window green nav-rail overlay (Info/New/
+      Open/Save/Save As/Print/Export/Recent/Options/Close) wrapped over the document in MainWindow; a title-bar
+      **File** button shows it, back-arrow/Esc hides it. Action entries route to the existing `FileCommands`/`Print`/
+      `OpenProperties` (no file IO reimplemented); Info shows path/properties + `WordCount.Of` stats; Recent lists
+      `RecentFilesStore`; Export/Options are honest placeholders (no PDF/Options back-end exists). (The deferred D3.)
 - [x] V3. Paginated WYSIWYG page view. `MainWindow.TogglePrintLayout` puts the editor on a grey workspace; the
       `DocumentView` page chrome (`ApplyPageChrome`, page shadow, margins) + `PageBreakAdorner` render discrete pages
       like Word's Print Layout rather than a continuous flow. (The deferred E4 page view.)
