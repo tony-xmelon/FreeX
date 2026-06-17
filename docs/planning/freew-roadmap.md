@@ -505,16 +505,23 @@ cloud/proprietary (VBA, IRM, online services, 3D models).
 ## MS Word parity — wave 5: deep fidelity (2026-06-17 →)
 The mainstream surface is complete (waves 1–4). Wave 5 deepens the fidelity of already-shipped objects so they
 are *truly* Word-compatible, not just data-faithful. Still excluding cloud/proprietary.
-- [ ] F1. Editable chart data + richer chart types. Emit an embedded companion workbook
-      (`word/embeddings/Microsoft_Excel_Worksheet*.xlsx`) + `c:externalData r:id` so Word's "Edit Data" works
-      (today charts are cache-only); add scatter/area/doughnut kinds + legend + axis titles. Round-trip.
+- [x] F1. Editable chart data + richer chart types. Each chart now writes a minimal embedded companion workbook
+      `word/embeddings/Microsoft_Excel_Worksheet{N}.xlsx` (self-contained, `inlineStr` cells, no FreeX dep) + a part-local
+      `c:externalData r:id` in `word/charts/_rels/chartN.xml.rels`, so Word's "Edit Data" maps columns (caches stay
+      authoritative, `autoUpdate=0`). Added `ChartKind` Scatter/Area/Doughnut (`c:scatterChart` xVal/yVal, `c:areaChart`,
+      `c:doughnutChart`) + optional `ShowLegend` + category/value axis titles; reader maps all back. New tests for embedded
+      workbook presence + each new kind + legend/axis titles + defaults-off regression.
 - [x] F2. SmartArt drawing geometry. Each diagram now emits a fifth part `word/diagrams/drawingN.xml` (`dsp:drawing`,
       content-type Override) holding one positioned `dsp:sp` per node (text + non-zero `a:xfrm`), wired via a
       `diagramDrawing` relationship in `word/diagrams/_rels/dataN.xml.rels` + a `dgm:dataModelExt` in the data model, so
       viewers show the diagram without re-running auto-layout. Deterministic heuristic layout (List=stack, Process=row,
       Hierarchy=indent-by-depth). Presentation-only (reader still reconstructs from the data part). 3 new tests.
-- [ ] F3. Embedded fonts. `word/fontTable.xml` + embedded (ODTTF-obfuscated) font parts (`w:embedRegular`/…) +
-      `w:settings/w:embedTrueTypeFonts`; opt-in `TextDocument` flag. Round-trip the obfuscation.
+- [x] F3. Embedded fonts. `TextDocument.EmbeddedFonts` (`EmbeddedFont` per family + per-style bytes, default empty).
+      Writer emits `word/fontTable.xml` (`w:embedRegular`/`Bold`/`Italic`/`BoldItalic` with `r:id` + `w:fontKey`) + the
+      ODTTF-obfuscated `word/fonts/fontN.odttf` parts + `w:embedTrueTypeFonts` in settings. `Ooxml.ObfuscateFont`
+      implements the self-inverse first-32-byte XOR (key from the fontKey GUID); `DeterministicFontKey` derives the GUID
+      via FNV-1a (no `Guid.NewGuid()`/`Random`, so byte-reproducible). Reader de-obfuscates back to the original bytes.
+      14 new tests (XOR self-inverse, de-obfuscation equals original, 4-style + partial round-trips, no-fonts regression).
 
 ## Consolidation & QA (2026-06-17)
 After Milestones F–U, the work pivoted from features to hardening (user choice: "Consolidate & harden"):
