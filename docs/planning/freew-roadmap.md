@@ -392,7 +392,13 @@ features**. Same proven pattern (roadmap → isolated agents → integrate/verif
       not wired — read-only is the milestone). `DocumentView` gained `LayoutChanged`, `CurrentParagraphFormatting`,
       `PageInfo()`. Status bar enhanced with **Page X of Y** + a Read-Mode/Print-Layout view-switch cluster (existing
       zoom slider kept). (Current-section indicator omitted gracefully — now that W4 landed, a future polish item.)
-- [ ] V5. Galleries + KeyTips. Live-preview Styles gallery, theme/colour galleries; Alt-key KeyTips overlay.
+- [x] V5. Galleries + KeyTips. `Ribbon/StylesGallery.cs` (Home → Styles: swatches rendered in each style's own resolved
+      formatting + `▾` full-list popup; hover live-previews, leave reverts, click commits), `Ribbon/ThemeGallery.cs`
+      (Design → Themes + theme-colour galleries via `DocumentTheme.Apply`), `Ribbon/KeyTipsOverlay.cs` (Alt shows
+      KeyTip badges over tabs → tab letter activates + shows control badges → control letter invokes; Esc/Alt/click
+      dismiss). `DocumentView` gained additive preview/commit methods (`PreviewParagraphStyle`/`CommitStylePreview`/
+      `PreviewTheme` — preview bypasses the undo bus via snapshot/revert; commit routes through the reversible command
+      path). `BuildRibbon` injects galleries into the shared-renderer group grids by stamped `CatalogId`. Shared tier untouched.
 
 ### Functional track (hard features)
 - [x] W1. Equations (OMML `m:oMath`) — `Equation`/`MathRun` model carried as an inline `Run.Equation` mark
