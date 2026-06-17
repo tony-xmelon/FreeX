@@ -450,6 +450,20 @@ translate/research services, VBA/macros, 3D models).
       header row, low-contrast text (self-contained WCAG relative-luminance / 4.5:1 ratio), blank cells + missing doc
       title (Tips). Issues ordered by block with document-wide last. 32 new model tests. No UI (no ribbon placeholder).
 
+## MS Word parity — wave 3 (2026-06-17 →)
+Deepening toward full parity: the last two big DrawingML object types, the remaining App.Host QA fixes (now
+unit-testable on the X1 harness), and surfacing already-built model features in the ribbon UI.
+- [ ] Y1. SmartArt (DrawingML diagram). Basic list/process/hierarchy diagram inserted as the DrawingML
+      `dgm` parts (data/layout/style/colors) + an inline `w:drawing`; model `Run.SmartArt`; round-trip the node text.
+- [ ] Y2. OLE / embedded objects. Embed a binary object (`w:object`/`o:OLEObject` + an embedded part with an
+      icon image fallback); model `Run.EmbeddedObject`; round-trip the embedded bytes + ProgId.
+- [ ] Y3. App.Host MED/LOW QA fixes (on the X1 test harness). Field-run-inside-hyperlink loses its link;
+      real cell shading equal to header/banded fill is stripped on commit; emptied content-control/comment run
+      dropped; MultiLevel list degrades to Number after an in-editor edit. Fix with App.Host regression tests.
+- [ ] Y4. Surface built features in the ribbon. Insert tab: Equation / Chart / WordArt commands (the model +
+      IO already exist from W1/W3/X2); Review tab: Check Accessibility (uses `AccessibilityChecker`); status bar:
+      current-section indicator (now that W4 sections exist). Wire through the existing command registry.
+
 ## Consolidation & QA (2026-06-17)
 After Milestones F–U, the work pivoted from features to hardening (user choice: "Consolidate & harden"):
 - **CI lane** — `.github/workflows/freew-ci.yml` builds `FreeW.slnx` Release (0 warnings enforced) + runs
