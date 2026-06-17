@@ -338,6 +338,22 @@ S2 is pure model; S3/S4 are disjoint (view + model/view).
 - [x] S4. Table of figures. Pure `TableOfFigures.Build` (heading + caption entries per label, Figure/Table)
       + `EnsureStyles` + marker; References > Insert/Update Table of Figures (reversible, mirrors TOC). 10 tests.
 
+## Milestone T — page setup + styles + cleanup (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. T1/T3 touch the docx writer/reader;
+T2 is model+view (round-trips via styles.xml); T4 is a pure model op + dialog.
+- [ ] T1. Page setup polish. Hyphenation (`settings.xml` `w:autoHyphenation`) + page vertical alignment
+      (`sectPr/w:vAlign` top/center/both) + "different first page" flag (`sectPr/w:titlePg`) → `PageSettings`;
+      writer/reader; Layout commands. Round-trip tests.
+- [ ] T2. Custom styles (New/Modify Style). Create or edit a named `DocumentStyle` (based-on + run +
+      paragraph formatting), add it to `TextDocument.Styles`, apply to the selection; round-trips via
+      styles.xml (already supported). Manage Styles dialog. Model + view; tests for the pure style ops.
+- [ ] T3. Manage hyperlinks. Edit a hyperlink's URL, remove the link, and set a ScreenTip
+      (`w:hyperlink w:tooltip`); right-click / ribbon affordance over a hyperlink run. Light IO (tooltip).
+      Round-trip tests for the tooltip.
+- [ ] T4. Document Inspector (disjoint — pure + dialog). A pure op reporting and optionally removing
+      comments, accepted/rejected revisions, document properties, and bookmarks; surfaced via an Inspect
+      dialog. Pure `DocumentInspector` (tested) over the model.
+
 ## Status log (newest first)
 - 2026-06-17: Milestone S complete. Tab leaders, citation styles (APA/MLA/Chicago), show formatting marks,
   table of figures — built in parallel by subagents and integrated (all four auto-merged clean). Each
