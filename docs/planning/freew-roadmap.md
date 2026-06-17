@@ -431,12 +431,20 @@ translate/research services, VBA/macros, 3D models).
 - [ ] X1. App.Host test harness. New `freew/FreeW.App.Host.Tests` (STA xUnit) added to `FreeW.slnx`; cover
       `DocumentView.Render`/`CommitToModel` round-trips and address the two HIGH QA-backlog findings recorded in
       the Consolidation & QA section. Foundational — unblocks testing the WPF render/commit path.
-- [ ] X2. WordArt / decorative text. Inline `Run.WordArt` (or text-effect fields on the shape text run): DrawingML
-      `wps:wsp` text with `a:gradFill`/`a:ln`/`a:effectLst` (outline/glow/shadow presets); round-trip.
-- [ ] X3. Floating images + text wrapping. `Image.Wrapping` (Inline/Square/Tight/TopAndBottom/Behind/InFront) +
-      anchor/position; writer emits `wp:anchor` (vs `wp:inline`) with `wp:positionH/V` + wrap element; reader parses.
-- [ ] X4. Accessibility checker. Pure-model analysis (missing image alt text, empty hyperlinks, heading-order
-      gaps, tables without header rows, low-contrast text) mirroring `DocumentInspector`; a results model + report.
+- [x] X2. WordArt / decorative text. Dedicated `WordArt` record (`Text` + `WordArtStyle` preset FillBlue/GradientFill/
+      Outline/Shadow + font size) carried as inline `Run.WordArt`. Writer emits a `wps:wsp` text box whose run `a:rPr`
+      carries the preset's DrawingML effect (`a:solidFill`/`a:gradFill`/`a:ln`/`a:effectLst`), reusing the shape docPr
+      counter; reader (ordered BEFORE `ReadShape` since WordArt is also a `wps:wsp`) infers the preset from which effect
+      is present — a plain text-box shape with no effects still reads back as `Shape`. Round-trip + model tests.
+- [x] X3. Floating images + text wrapping. `ImageWrapping` (Inline/Square/Tight/TopAndBottom/Behind/InFront) +
+      `HorizontalAnchor`/`VerticalAnchor` + offsets on `InlineImage` (all defaulting to inline → byte-compatible).
+      Writer split `BuildDrawing` into `BuildInlineDrawing`/`BuildAnchorDrawing` sharing `BuildDocPr`/`BuildPicGraphic`;
+      floating emits `wp:anchor` (`wp:positionH/V` + wrap element, `wrapNone`+`behindDoc` for Behind/InFront);
+      reader parses both `wp:inline` and `wp:anchor`. `wp:wrapTight` emitted without wrapPolygon (noted). Round-trip + model tests.
+- [x] X4. Accessibility checker. Pure `AccessibilityChecker.Check(doc) → AccessibilityReport` (mirrors `DocumentInspector`):
+      rules for missing image alt text (Error), uninformative/bare-URL link text, heading-order gaps, tables without a
+      header row, low-contrast text (self-contained WCAG relative-luminance / 4.5:1 ratio), blank cells + missing doc
+      title (Tips). Issues ordered by block with document-wide last. 32 new model tests. No UI (no ribbon placeholder).
 
 ## Consolidation & QA (2026-06-17)
 After Milestones F–U, the work pivoted from features to hardening (user choice: "Consolidate & harden"):
