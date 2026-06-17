@@ -273,6 +273,21 @@ Avoids the WPF-ribbon-renderer / shell the other session churns. O1 touches the 
       case) + `TextTableConvert` (text→table with ragged padding, table→text); `ReplaceBlocksCommand`
       (reversible); Layout > Data: Sort + Convert to Table + Convert to Text. 13 tests.
 
+## Milestone P — references + layout finishing (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. P1/P4 touch the docx writer/reader;
+P2/P3 are model/view.
+- [ ] P1. Endnotes. Mirror footnotes at the document end: `Endnote` store + `Run.EndnoteId`; writer emits
+      `word/endnotes.xml` + content type + rel + `w:endnoteReference`; reader parses it; superscript marker
+      (roman/i style is a plus); Insert > Endnote. Round-trip tests.
+- [ ] P2. Index. Mark index entries (an `XE` run mark or a stored entry list) and generate an alphabetical
+      index region (pure build helper from the marked entries → styled paragraphs). References > Mark Entry
+      + Insert Index. Tested on the pure build.
+- [ ] P3. Indentation controls (disjoint — editor/model). Increase/Decrease Indent, and a paragraph dialog
+      for left/right/first-line/hanging indents (model already has the indent fields); applied to the
+      selection through the bus. Pure indent-step helper (tested).
+- [ ] P4. Line numbers. `sectPr/w:lnNumType` (continuous, restart-each-page, countBy) → `PageSettings`
+      fields; writer/reader; show line numbers in print preview margin; Layout > Line Numbers. Round-trip tests.
+
 ## Status log (newest first)
 - 2026-06-17: Milestone O complete. Restrict editing, document compare, mail merge, sort + convert
   text/table — built in parallel by subagents and integrated (O4 disjoint + O3 auto-merged; O1
