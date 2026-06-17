@@ -486,9 +486,11 @@ cloud/proprietary (VBA, IRM, online services, 3D models).
       in their CT_RPr slots (after `w:color`, before `w:sz`) and the `w14:ligatures`/`w14:numForm`/`w14:numSpacing`/
       `w14:stylisticSets` extensions last; reader parses all back. Token maps shared in `Ooxml`. 29 new tests
       (incl. defaults-unchanged regression + combined-feature CT_RPr ordering check).
-- [ ] Z2. Real theme part. Emit/parse `word/theme/theme1.xml` (DrawingML `a:clrScheme`/`a:fontScheme`/`a:fmtScheme`)
-      so `DocumentTheme` round-trips as a proper theme part (content-type + relationship) instead of only rewriting
-      colours inline; reader recovers the active theme.
+- [x] Z2. Real theme part. `TextDocument.Theme` (persisted `DocumentTheme`, default Office) + `DocumentTheme.ColorScheme`
+      (`ThemeColorScheme` 12-slot record) + `InferPreset`. Writer unconditionally emits `word/theme/theme1.xml`
+      (`a:clrScheme` + `a:fontScheme` + minimal stock `a:fmtScheme`) with content-type Override + `theme` relationship
+      (mirrors how real Word docs always carry a theme); reader parses clrScheme/fontScheme and infers the preset
+      (foreign themes fall back to Office). fmtScheme is stock-but-valid, not read back (noted). Per-preset round-trip + zip-part tests.
 - [ ] Z3. Different odd/even pages + page background. `PageSettings.DifferentOddEvenPages` → `w:evenAndOddHeaders`
       (settings) + even header/footer parts; page background colour → `w:background` + `w:displayBackgroundShape`.
 - [ ] Z4. Surface remaining objects + Building Blocks. Ribbon Insert commands for Shapes gallery / SmartArt / Object
