@@ -491,10 +491,27 @@ cloud/proprietary (VBA, IRM, online services, 3D models).
       (`a:clrScheme` + `a:fontScheme` + minimal stock `a:fmtScheme`) with content-type Override + `theme` relationship
       (mirrors how real Word docs always carry a theme); reader parses clrScheme/fontScheme and infers the preset
       (foreign themes fall back to Office). fmtScheme is stock-but-valid, not read back (noted). Per-preset round-trip + zip-part tests.
-- [ ] Z3. Different odd/even pages + page background. `PageSettings.DifferentOddEvenPages` → `w:evenAndOddHeaders`
-      (settings) + even header/footer parts; page background colour → `w:background` + `w:displayBackgroundShape`.
-- [ ] Z4. Surface remaining objects + Building Blocks. Ribbon Insert commands for Shapes gallery / SmartArt / Object
-      (OLE); a Quick Parts / Building Blocks gallery over the existing `QuickPartStore`. App.Host wiring.
+- [x] Z3. Different odd/even pages + page background. `PageSettings.DifferentOddEvenPages` + `BackgroundColorHex`;
+      `TextDocument.EvenHeader`/`EvenFooter` (mirror Header/Footer). Writer emits `w:evenAndOddHeaders` (settings) +
+      `header2.xml`/`footer2.xml` parts (+ Overrides + rels) with `w:type="even"` references, and `w:background`/@color
+      as the first child of `w:document` + `w:displayBackgroundShape` (settings); reader parses all back (even reference
+      matched explicitly so odd-only docs don't mis-pick). Regression guard: neither feature → no settings part / no background. Round-trip + model tests.
+- [x] Z4. Surface remaining objects + Building Blocks. Insert ▸ Illustrations: a Shapes dropdown (Rectangle/Rounded/
+      Ellipse/Text Box) via `InsertShape`; Insert ▸ Media: SmartArt + Object(OLE) buttons via new `DocumentView.InsertSmartArt`/
+      `InsertEmbeddedObject` (with matching `BuildRun` render cases + `ReadInline` commit cases — previously SmartArt/OLE
+      runs were dropped by the editor). Quick Parts: the existing `freew.save-quickpart`/`freew.insert-quickpart` buttons
+      already cover save-selection + pick-from-`QuickPartLibrary` (verified, left intact). +2 STA round-trip tests.
+
+## MS Word parity — wave 5: deep fidelity (2026-06-17 →)
+The mainstream surface is complete (waves 1–4). Wave 5 deepens the fidelity of already-shipped objects so they
+are *truly* Word-compatible, not just data-faithful. Still excluding cloud/proprietary.
+- [ ] F1. Editable chart data + richer chart types. Emit an embedded companion workbook
+      (`word/embeddings/Microsoft_Excel_Worksheet*.xlsx`) + `c:externalData r:id` so Word's "Edit Data" works
+      (today charts are cache-only); add scatter/area/doughnut kinds + legend + axis titles. Round-trip.
+- [ ] F2. SmartArt drawing geometry. Emit a minimal `dsp:drawing` (`word/diagrams/drawingN.xml` + the
+      `diagramDrawing` relationship / `dsp:dataModelExt`) so the diagram renders positioned without Word re-laying-out.
+- [ ] F3. Embedded fonts. `word/fontTable.xml` + embedded (ODTTF-obfuscated) font parts (`w:embedRegular`/…) +
+      `w:settings/w:embedTrueTypeFonts`; opt-in `TextDocument` flag. Round-trip the obfuscation.
 
 ## Consolidation & QA (2026-06-17)
 After Milestones F–U, the work pivoted from features to hardening (user choice: "Consolidate & harden"):
