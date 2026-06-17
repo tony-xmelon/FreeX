@@ -502,6 +502,33 @@ cloud/proprietary (VBA, IRM, online services, 3D models).
       runs were dropped by the editor). Quick Parts: the existing `freew.save-quickpart`/`freew.insert-quickpart` buttons
       already cover save-selection + pick-from-`QuickPartLibrary` (verified, left intact). +2 STA round-trip tests.
 
+## MS Word parity — wave 5: deep fidelity (2026-06-17 →)
+The mainstream surface is complete (waves 1–4). Wave 5 deepens the fidelity of already-shipped objects so they
+are *truly* Word-compatible, not just data-faithful. Still excluding cloud/proprietary.
+- [x] F1. Editable chart data + richer chart types. Each chart now writes a minimal embedded companion workbook
+      `word/embeddings/Microsoft_Excel_Worksheet{N}.xlsx` (self-contained, `inlineStr` cells, no FreeX dep) + a part-local
+      `c:externalData r:id` in `word/charts/_rels/chartN.xml.rels`, so Word's "Edit Data" maps columns (caches stay
+      authoritative, `autoUpdate=0`). Added `ChartKind` Scatter/Area/Doughnut (`c:scatterChart` xVal/yVal, `c:areaChart`,
+      `c:doughnutChart`) + optional `ShowLegend` + category/value axis titles; reader maps all back. New tests for embedded
+      workbook presence + each new kind + legend/axis titles + defaults-off regression.
+- [x] F2. SmartArt drawing geometry. Each diagram now emits a fifth part `word/diagrams/drawingN.xml` (`dsp:drawing`,
+      content-type Override) holding one positioned `dsp:sp` per node (text + non-zero `a:xfrm`), wired via a
+      `diagramDrawing` relationship in `word/diagrams/_rels/dataN.xml.rels` + a `dgm:dataModelExt` in the data model, so
+      viewers show the diagram without re-running auto-layout. Deterministic heuristic layout (List=stack, Process=row,
+      Hierarchy=indent-by-depth). Presentation-only (reader still reconstructs from the data part). 3 new tests.
+- [x] F3. Embedded fonts. `TextDocument.EmbeddedFonts` (`EmbeddedFont` per family + per-style bytes, default empty).
+      Writer emits `word/fontTable.xml` (`w:embedRegular`/`Bold`/`Italic`/`BoldItalic` with `r:id` + `w:fontKey`) + the
+      ODTTF-obfuscated `word/fonts/fontN.odttf` parts + `w:embedTrueTypeFonts` in settings. `Ooxml.ObfuscateFont`
+      implements the self-inverse first-32-byte XOR (key from the fontKey GUID); `DeterministicFontKey` derives the GUID
+      via FNV-1a (no `Guid.NewGuid()`/`Random`, so byte-reproducible). Reader de-obfuscates back to the original bytes.
+      14 new tests (XOR self-inverse, de-obfuscation equals original, 4-style + partial round-trips, no-fonts regression).
+- [x] F4. Concurrency hardening (CI flake fix). `DocxWriter`'s shared mutable static id counters (`_bookmarkId`/
+      `_revisionId`/`_shapeDrawingId`) raced between concurrent `Write(...)` calls (the parallel cross-assembly test run
+      intermittently produced colliding `wp:docPr`/bookmark/revision ids). Replaced them with a per-write `IdAllocator`
+      instance threaded on the `RunDrawings` record (`RunDrawings.None` → `Empty()` factory so no shared state remains);
+      single-threaded output stays byte-identical. New `ConcurrentWriteIdRoundTripTests` writes 50 docs under `Parallel.For`
+      and asserts each document's ids are `1..N`/unique (verified to fail against the old static code). Full lane green 3×, no flakiness.
+
 ## Consolidation & QA (2026-06-17)
 After Milestones F–U, the work pivoted from features to hardening (user choice: "Consolidate & harden"):
 - **CI lane** — `.github/workflows/freew-ci.yml` builds `FreeW.slnx` Release (0 warnings enforced) + runs
