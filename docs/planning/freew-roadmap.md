@@ -323,6 +323,20 @@ in different scopes (tc structure / pPr / tblPr); R3 is disjoint (editor/view).
       bold+shaded + banded shading + `w:tblHeader` + `w:tblLook` (flag persistence); reader recovers flags +
       strips style fills; `DocumentView` renders header/banded styling; Table Tools toggles. 4 tests.
 
+## Milestone S — typography + references polish (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. S1 touches the docx writer/reader;
+S2 is pure model; S3/S4 are disjoint (view + model/view).
+- [ ] S1. Tab leaders. Extend `TabStop` with a leader (None/Dots/Dashes/Underline); writer emits
+      `w:tab w:leader="dot|hyphen|underscore"`, reader maps it back; the Paragraph/tab dialog picks a leader.
+      Round-trip tests.
+- [ ] S2. Citation/bibliography styles (pure model). Add APA / MLA / Chicago variants to the `Citations`
+      helper (in-text + bibliography-entry formatting per style); a style selector drives Insert Citation /
+      Bibliography. Pure, tested.
+- [ ] S3. Show formatting marks (disjoint — view). A toggle that renders pilcrows (¶), space dots (·), and
+      tab arrows (→) in the editor; View > Show ¶. View-only (re-render with marker glyphs / adorners).
+- [ ] S4. Table of figures. Generate a "Table of Figures" region from the document's captions (reusing the
+      `Captions` + TOC region pattern); References > Insert Table of Figures. Pure build helper (tested).
+
 ## Status log (newest first)
 - 2026-06-17: Milestone R complete. Table cell merge/split, paragraph flow control, paste special, table
   styles — built in parallel by subagents and integrated (R3 disjoint + R2 auto-merged; R1 auto-merged; R4
