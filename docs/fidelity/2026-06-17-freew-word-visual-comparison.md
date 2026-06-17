@@ -26,14 +26,17 @@ Run artifacts (PDFs, PNGs, triptychs, `scores.csv`) live under the **git-ignored
 
 | Stage | Result |
 |---|---|
-| FreeW headless page render | **21 / 26** documents rendered to PNG (was 14 before the `BuildOverlay` fix below) |
-| Word PDF ground truth | **20 / 26** exported for diffing (`deep-table-cell.docx`: Word reports it *corrupted* and refuses to open without a repair dialog — FreeW opens it without complaint) |
-| Both sides present → diffable | **20** documents, **179** page-pairs |
+| FreeW headless page render | **26 / 26** documents rendered to PNG (was 14 on first run; four print/render crashes fixed this session — see [below](#bugs-fixed-this-session)) |
+| Word PDF ground truth | **25 / 26** exported for diffing (`deep-table-cell.docx`: Word reports it *corrupted* and refuses to open without a repair dialog — FreeW opens it without complaint) |
+| Both sides present → diffable | **25** documents, **310** page-pairs |
 
-The remaining 5 documents still fail to render in FreeW's page path — see
-[FreeW render failures](#freew-render-failures), which are findings in their own right.
+FreeW now renders every corpus document; the only doc not diffed is `deep-table-cell` (Word won't open
+it). The crashes that initially blocked 12 documents are all fixed — see
+[Bugs fixed this session](#bugs-fixed-this-session).
 
 ## Quantitative result (SSIM, 1.0 = identical)
+
+25 documents, 310 page-pairs (`deep-table-cell` excluded — Word won't open it).
 
 | Document | Pages F/W | Mean SSIM | Notes |
 |---|---|---|---|
@@ -41,6 +44,7 @@ The remaining 5 documents still fail to render in FreeW's page path — see
 | FieldCodes | 1 / 1 | **0.998** | field results |
 | saut_page | 1 / 3 | 0.997¹ | page-break stress: FreeW collapses to 1 page |
 | footnotes | 1 / 1 | **0.995** | footnote *marker* matches; note text differs (below) |
+| EmbeddedDocument | 1 / 1 | **0.995** | embedded-object placeholder |
 | NumberingWOverrides | 1 / 1 | **0.994** | numbering overrides |
 | headerFooter | 1 / 1 | **0.994** | simple header **and** footer render; slight x-offset |
 | bookmarks | 1 / 1 | **0.988** | bookmarked list |
@@ -48,23 +52,27 @@ The remaining 5 documents still fail to render in FreeW's page path — see
 | ComplexNumberedLists | 1 / 1 | **0.969** | numbered lists incl. restart |
 | checkboxes | 1 / 1 | 0.959 | checkbox glyphs missing (below) |
 | PageSpecificHeadFoot | 1 / ? | 0.948¹ | page-specific header/footer |
+| WordWithAttachments | 2 / ? | 0.907¹ | mixed parts + attachments |
 | chartex | 2 / 3 | 0.881¹ | chart rendering differs sharply (below) |
 | endnotes | 1 / 1 | 0.877 | endnote text at page foot omitted |
 | VariousPictures | 1 / ? | 0.857¹ | multiple embedded pictures |
 | delins | 1 / 1 | 0.746 | line-spacing drift accumulates (below) |
+| stress003 | 20 / ? | 0.679¹ | pagination drift |
 | stress023 | 12 / ? | 0.675¹ | pagination drift |
 | stress015 | 5 / ? | 0.667¹ | pagination drift |
 | stress010 | 59 / 118 | 0.647¹ | header drop + RTL + 2× pagination drift |
 | stress018 | 32 / ? | 0.638¹ | pagination drift |
+| drawing | 16 / ? | 0.540¹ | DrawingML + media; pagination drift |
 | stress004 | 55 / ? | 0.535¹ | pagination drift (FreeW packs ~half the pages) |
+| stress008 | 92 / ? | 0.522¹ | pagination drift |
 
 ¹ Page-count mismatch: SSIM compares page *i* to page *i*, so once pagination diverges the scores
 measure misalignment as much as rendering. Treat multi-page-mismatch rows as lower bounds — the low
 stress-doc numbers are dominated by FreeW's denser pagination, not per-page rendering error.
 
 - **Clean single-page text documents (same page count):** mean SSIM **≈ 0.95**.
-- **All single-page-compared documents (14):** mean SSIM **≈ 0.95**.
-- **Page-weighted overall (20 docs / 179 pages):** 0.64 — dominated by the multi-page stress documents,
+- **All single-page-compared documents:** mean SSIM **≈ 0.95**.
+- **Page-weighted overall (25 docs / 310 pages):** 0.61 — dominated by the multi-page stress documents,
   where FreeW's pagination density (≈ half Word's page count) misaligns the per-page diff; not
   representative of per-page rendering quality.
 
@@ -98,54 +106,53 @@ concentrated in specific feature areas below.
    line spacing makes the two renders drift apart progressively down the page — the main reason its SSIM
    is 0.75 despite matching content.
 
-## Print-path bug fixed this run — header/footer overlay `∞` crash
+## Bugs fixed this session
 
-The harness renders FreeW pages through the app's real print paginator, which surfaced a crash that the
-shipped Print/Print-Preview also hits: `HeaderFooterPaginator.BuildOverlay`
-(`PrintPreviewWindow.cs`) set `FormattedText.MaxTextWidth = double.PositiveInfinity` whenever the
-header/footer content width came out ≤ 0 (margins meeting/exceeding the page width). WPF's text formatter
-rejects an infinite width with `ArgumentOutOfRangeException: paragraphWidth ('∞')`, taking down the whole
-paginator. **Fixed** to skip the overlay (and never use infinity) when there is no content width, with
-regression tests in `FreeW.App.Host.Tests/HeaderFooterPaginatorTests.cs`. This unblocked 7 documents
-(`headerFooter`, `PageSpecificHeadFoot`, `stress004/015/018/023`, and incidentally `VariousPictures`),
-taking the FreeW render from 14 → 21 / 26 and confirming that **simple single-section headers and footers
-render correctly and match Word** (`headerFooter` SSIM 0.994).
+The harness renders FreeW pages through the app's real print paginator, so the crashes it hit are crashes
+the shipped Print/Print-Preview and editor also hit. Four were fixed this session, taking the FreeW render
+from 14 → **26 / 26** corpus documents:
 
-## FreeW render failures (5 / 26 remaining)
+1. **Print / Print-Preview crash — `XamlWriter` cannot serialize non-public `Tag` types** *(highest
+   severity; affected most real documents).* `PrintLayout.CloneElement` cloned the editor FlowDocument via
+   `XamlWriter.Save`, which throws `Cannot serialize a non-public type
+   'DocumentView+ParagraphTag/TableCellTag/HyperlinkInfo/FootnoteMarker/EndnoteMarker'`. A `ParagraphTag`
+   is stamped on **every paragraph carrying a StyleId / bookmark / tab stop / page-break-before /
+   widow-control** (`DocumentView.cs`), so this fired for essentially any real-world document, and **both
+   `MainWindow.Print` and `PrintPreviewWindow` reach it**. **Fixed** by stripping the non-public Tags from
+   the source for the duration of serialization and restoring them immediately after. Tests in
+   `PrintLayoutTests.cs`.
+2. **Header/footer overlay `∞` crash.** `HeaderFooterPaginator.BuildOverlay` set
+   `FormattedText.MaxTextWidth = double.PositiveInfinity` when the header/footer content width came out
+   ≤ 0 (margins ≥ page width); WPF rejects infinity with `ArgumentOutOfRangeException: paragraphWidth
+   ('∞')`. **Fixed** to skip the overlay when there is no usable width. Tests in
+   `HeaderFooterPaginatorTests.cs`. Confirms **simple single-section headers and footers render and match
+   Word** (`headerFooter` SSIM 0.994).
+3. **Negative `Block.Margin` — `ArgumentException: '0;0;-0.4;0' is not a valid value for property
+   'Margin'`** (`stress003`). A negative paragraph indent/spacing maps to a negative WPF `Block.Margin`,
+   which WPF rejects. **Fixed** by clamping margin components to ≥ 0 (the model keeps the original value, so
+   docx round-trip is unaffected; only the live render clamps).
+4. **Image-decode `NotSupportedException: No imaging component…`** (`drawing`, `EmbeddedDocument`,
+   `stress008`, `WordWithAttachments`). An OLE embedded-object **icon** was decoded via the unguarded
+   `DecodePng`, so an undecodable icon (WMF/EMF/uncommon codec) blanked the whole document. **Fixed** by
+   decoding through a guarded `TryDecodeRaster` with a ProgID-text fallback, mirroring `DecodeImage`.
 
-Each still throws before producing a page — genuine defects, not harness artifacts:
-
-- **Print / Print-Preview crash — `XamlWriter` cannot serialize non-public `Tag` types** (affects most
-  real documents). `PrintLayout.CloneBlocks` deep-clones the editor FlowDocument via `XamlWriter.Save`,
-  which throws `Cannot serialize a non-public type
-  'DocumentView+ParagraphTag/TableCellTag/HyperlinkInfo/FootnoteMarker/EndnoteMarker'`. A `ParagraphTag`
-  is stamped on **every paragraph that carries a StyleId / bookmark / tab stop / page-break-before /
-  widow-control** (`DocumentView.cs:2750`), so this fires for essentially any real-world document. **Both
-  `MainWindow.Print` and `PrintPreviewWindow` reach this path**, so FreeW's Print and Print Preview crash
-  on most documents. *Highest-severity finding; spawned as a separate fix task.* (The harness works around
-  it by paginating the live FlowDocument directly, no XAML serialization — which is why it can render the
-  21 docs above at all.)
-- **Image-format decode — `NotSupportedException: No imaging component…`** (`drawing`, `EmbeddedDocument`,
-  `stress008`, `WordWithAttachments`). An embedded image format (likely WMF/EMF or an uncommon codec)
-  fails to decode, taking down the whole page render. The reader needs an image-format audit / fallback so
-  one bad image cannot blank a page.
-- **Negative `Block.Margin` — `ArgumentException: '0;0;-0.4;0' is not a valid value for property
-  'Margin'`** (`stress003`). A negative paragraph spacing/indent maps to a negative WPF `Block.Margin`,
-  which WPF rejects (block margins must be non-negative). Needs a clamp at the model→FlowDocument seam.
+All four are committed with `FreeW.slnx` building 0-warning and the App.Host test lane green.
 
 ## Suggested follow-ups (priority order)
 
-1. **Fix the Print / Print-Preview `XamlWriter` crash** — strip/skip the non-public `Tag` values before
-   `XamlWriter.Save` (or clone without XAML serialization, as the harness does). This is a user-facing
-   crash on the core Print feature.
-2. **Chart rendering** — honor chart type (line vs column), render all data series, and add value axis +
-   legend, or at minimum render additional series.
-3. **Image-format robustness** — audit reader image decoding; fall back gracefully (placeholder) instead
-   of throwing so one bad image cannot blank a page.
-4. **Negative `Block.Margin`** — clamp negative paragraph spacing/indent at the model→FlowDocument seam
-   (`stress003`). *(The companion multi-section header `∞` exception was fixed this run — see above.)*
-5. **Header content/images, footnote/endnote body text, checkbox glyphs, RTL alignment** — visual gaps
+*(The four crashes that initially blocked rendering — XamlWriter Tag, header/footer `∞`, negative
+`Block.Margin`, image-decode — were all fixed this session; see [Bugs fixed](#bugs-fixed-this-session).
+The remaining items are visual-fidelity gaps, not crashes.)*
+
+1. **Chart rendering** — honor chart type (line vs column), render all data series, and add value axis +
+   legend, or at minimum render additional series. (Highest-impact remaining visual gap.)
+2. **Pagination density** — FreeW packs ≈ half Word's page count on the stress docs (line-height /
+   page-fill metrics; empty page-break-only pages not reproduced). This is what drags the multi-page SSIM
+   scores down; closing it would both improve fidelity and make the per-page diff meaningful.
+3. **Header content/images, footnote/endnote body text, checkbox glyphs, RTL alignment** — visual gaps
    already partly tracked in the round-trip doc; this run confirms them against Word ground truth.
+4. **Word-rejected `deep-table-cell.docx`** — Word deems it corrupt; FreeW opens it. Not actionable for
+   FreeW, noted for completeness.
 
 ## Reproduce
 

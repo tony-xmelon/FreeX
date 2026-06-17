@@ -93,9 +93,10 @@ write and looks "stable" (absent on both sides). The part-inventory diff catches
 > [`2026-06-17-freew-word-visual-comparison.md`](2026-06-17-freew-word-visual-comparison.md). Headline:
 > clean single-page text documents match Word at SSIM ≈ 0.95; gaps concentrate in charts (single series /
 > wrong type), header content + header images, footnote/endnote body text, RTL alignment, and pagination
-> density. The render also surfaced that FreeW's **Print / Print-Preview crashes** on most real documents
-> (`XamlWriter` cannot serialize the editor's non-public paragraph `Tag` types). The original note below is
-> retained for context.
+> density. The render also surfaced — and this session **fixed** — four print/render crashes (Print /
+> Print-Preview `XamlWriter` non-public-`Tag` crash, header/footer overlay `∞`, negative `Block.Margin`,
+> and an unguarded embedded-object icon decode), taking FreeW from rendering 14/26 to **26/26** corpus
+> documents. The original note below is retained for context.
 
 A true **pixel-diff against MS Word could not be run on this machine**: no `WINWORD.EXE` is installed (Word
 COM is unregistered) and no Word-compatible reference renderer (LibreOffice `soffice`) is present, so there is
