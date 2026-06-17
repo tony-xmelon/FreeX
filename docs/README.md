@@ -16,6 +16,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [planning/multiplatform-macos-port.md](planning/multiplatform-macos-port.md) - preparation plan for a future multiplatform port, starting with macOS and a portable GitHub Actions lane.
 - [planning/multiplatform-linux-port.md](planning/multiplatform-linux-port.md) - Linux port plan: Avalonia shell reuse, freedesktop/XDG packaging, hosted Ubuntu CI lane, and readiness tooling.
 - [planning/macos-port-dependency-backlog.md](planning/macos-port-dependency-backlog.md) - concise inventory of Windows/WPF-only dependencies that block or shape the Avalonia/macOS port.
+- [planning/freew-linux-port.md](planning/freew-linux-port.md) - FreeW (word processor) Linux port: Avalonia editing surface, ribbon, freedesktop packaging (tarball/.deb/AppImage), freew-linux CI lane, and feature coverage.
 - [performance/backlog-2026-06-04.md](performance/backlog-2026-06-04.md) - current performance backlog and active XLSX open/save IO priority.
 
 ## User
