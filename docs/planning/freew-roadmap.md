@@ -290,6 +290,21 @@ P2/P3 are model/view.
       writer/reader `sectPr/w:lnNumType` (countBy + restart); print preview draws margin line numbers; Layout
       > Line Numbers cycles the mode. 5 tests.
 
+## Milestone Q — fields, lists, outline tools (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. Q1/Q2 touch the docx writer/reader;
+Q3/Q4 are disjoint (view/model-light).
+- [ ] Q1. Document fields. Extend `RunFieldKind` (already has PageNumber) with DATE, TIME, FILENAME,
+      AUTHOR, NUMPAGES; writer emits each as `w:fldSimple w:instr=" DATE "` etc.; reader maps them back;
+      editor renders the resolved/cached value; Insert > Field. Round-trip tests.
+- [ ] Q2. Multilevel lists. Multilevel numbering definitions in `numbering.xml` (level text like 1.1.1)
+      driven by `ListLevel`; a list-library choice (bullet / decimal / multilevel-legal); writer/reader of
+      the richer numbering; editor renders nested levels. Round-trip tests.
+- [ ] Q3. Outline tools (disjoint — view/editor). In the navigation pane: promote/demote a heading (change
+      its Heading style level) and collapse/expand a heading's body; a pure level-shift helper (tested).
+- [ ] Q4. Custom dictionary + spelling options (disjoint — view/model-light). Add-to-dictionary / ignore-all
+      from the spell-check context, a small persisted custom word list (under FreeW's data folder), and a
+      toggle for the editor's spell check. Pure dictionary store (tested).
+
 ## Status log (newest first)
 - 2026-06-17: Milestone P complete. Endnotes, index, indentation controls, line numbers — built in
   parallel by subagents and integrated (all four auto-merged clean — P2's merge also reconciled the other
