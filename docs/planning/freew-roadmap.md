@@ -369,7 +369,80 @@ U1/U4 are disjoint (pure + view).
 - [x] U4. Bookmark manager + Go To. Pure `Bookmarks.List`/`RemoveBookmark`; Bookmark Manager dialog
       (Go To via `BringBlockIntoView` / Delete) + the Find/Replace Go To now lists bookmarks; Insert > Links. 6 tests.
 
+## MS Word parity (2026-06-17 →) — functional + VISUAL parity, excluding cloud/proprietary
+New standing goal: reach MS Word parity in functionality AND look, excluding cloud/proprietary features
+(co-authoring, Editor AI/Designer, online pictures/templates/services — same exclusions as FreeX). The
+mainstream functional surface (F–U) is done; the gaps are **visual fidelity** and a few **hard structural
+features**. Same proven pattern (roadmap → isolated agents → integrate/verify/push).
+
+### Visual track (make it LOOK like Word)
+- [x] V1. Real Word-style ribbon. Ported the app-neutral `RibbonWpfRenderer` (+`RibbonAdaptivePanel`/`RibbonIcon`/
+      `RibbonMetadata`/`RibbonTooltip`) into shared WPF lib `shared/Free.Shared.Ribbon.Wpf`; `MainWindow.BuildRibbon`
+      now renders each tab via `RibbonWpfRenderer.BuildTabContent` (Large/Medium/Small controls, group dividers/labels,
+      vector glyphs) instead of the placeholder TabControl. FreeW supplies its command-id→glyph mapping via
+      `FreeWRibbonIcons.Install()` (sets the shared `RibbonIconFactory.CommandIconKindResolver`, dependency-free
+      `RibbonIconDefinitions` geometry) + `FreeWRibbonResources.xaml`. (The long-deferred B3.) Highest visual impact.
+- [x] V2. Backstage / File menu. `Backstage/BackstageView.cs` — a full-window green nav-rail overlay (Info/New/
+      Open/Save/Save As/Print/Export/Recent/Options/Close) wrapped over the document in MainWindow; a title-bar
+      **File** button shows it, back-arrow/Esc hides it. Action entries route to the existing `FileCommands`/`Print`/
+      `OpenProperties` (no file IO reimplemented); Info shows path/properties + `WordCount.Of` stats; Recent lists
+      `RecentFilesStore`; Export/Options are honest placeholders (no PDF/Options back-end exists). (The deferred D3.)
+- [x] V3. Paginated WYSIWYG page view. `MainWindow.TogglePrintLayout` puts the editor on a grey workspace; the
+      `DocumentView` page chrome (`ApplyPageChrome`, page shadow, margins) + `PageBreakAdorner` render discrete pages
+      like Word's Print Layout rather than a continuous flow. (The deferred E4 page view.)
+- [ ] V4. Ruler + Word-like status bar. Horizontal/vertical rulers with margin/indent/tab markers; status
+      bar showing Page X of Y, section, word count, the existing zoom slider, view switches.
+- [ ] V5. Galleries + KeyTips. Live-preview Styles gallery, theme/colour galleries; Alt-key KeyTips overlay.
+
+### Functional track (hard features)
+- [x] W1. Equations (OMML `m:oMath`) — `Equation`/`MathRun` model carried as an inline `Run.Equation` mark
+      (mirrors images/footnotes/content-controls so it flows through runs, table cells, headers); supports plain
+      text (`m:r`/`m:t`), superscript (`m:sSup`), and fractions (`m:f`). Writer declares `xmlns:m`, emits inline
+      `m:oMath`; reader parses `m:oMath` (unknown constructs degrade to their `m:t` text). 8 new tests (5 IO round-trip + 3 model).
+- [ ] W2. Shapes / text boxes (DrawingML + `w:txbxContent`) — wire the `freew.shapes` placeholder.
+- [ ] W3. Charts (DrawingML chart part) — insert a basic chart with data.
+- [ ] W4. Multiple sections (section breaks continuous/next-page; per-section page setup).
+
+## Consolidation & QA (2026-06-17)
+After Milestones F–U, the work pivoted from features to hardening (user choice: "Consolidate & harden"):
+- **CI lane** — `.github/workflows/freew-ci.yml` builds `FreeW.slnx` Release (0 warnings enforced) + runs
+  the FreeW test lane on `windows-latest`, gating PRs and direct pushes that touch FreeW/shared.
+- **README / feature catalog** — `freew/README.md` (architecture, grouped feature catalog, docx fidelity,
+  build/test, honest limitations). Sibling-app pointer added to the root README.
+- **Windows packaging** — `freew/build/publish-windows.ps1` (self-contained `win-x64` publish + versioned
+  zip to `artifacts/`, verified locally ~66 MB) + `.github/workflows/freew-release.yml` (`workflow_dispatch`)
+  + `freew/build/README.md`.
+- **QA pass** — three read-only audit agents (IO / model+commands / DocumentView). Fixed (with 5 regression
+  tests): `w:rPr` children were emitted out of CT_RPr schema order (Word-strict-invalid for common combos;
+  the order-independent reader hid it); footnote/endnote markers discarded run formatting; all inline
+  pictures shared `pic:cNvPr id=0`; the `StyleManager` built-in guard named a non-existent style (left
+  `TableOfFiguresEntry` deletable); `MailMerge`/`DocumentCompare` deep-clones dropped `Run.EndnoteId`/
+  `HyperlinkTooltip`, `TableCell.GridSpan`/`VerticalMerge`, and several `PageSettings` fields.
+
+### QA backlog (confirmed, deferred — all in `FreeW.App.Host`, which has no test assembly)
+These are real defects the DocumentView audit confirmed but which sit in delicate WPF render/commit code
+that cannot be unit-tested at the current test tier; fix carefully (ideally after adding an App.Host test
+harness). Proposed fixes from the audit:
+- **[HIGH] Run `Tag` collision** (`DocumentView.BuildRun`/`ApplyCommentMarker`/`ApplyContentControlMarker`):
+  revision/comment/content-control markers each overwrite `WpfRun.Tag`, so a run that is both commented and
+  tracked-changed (or a content control over either) loses one mark on the next `CommitToModel`. Fix: a
+  composite marker record (or merge into the existing Tag) + recover every facet in `ReadInline`.
+- **[HIGH] Collapsed-heading index drift** (`InsertComment`, `MarkSelectionAsRevision`,
+  `SelectedModelParagraphIndices`/`FormatSelectedModelParagraphs`): visible-ordinal indices are used to
+  index `_model.Blocks` after `MergeHiddenBlocks` re-splices hidden blocks, so paragraph commands mis-target
+  when a heading is collapsed *before* the selection. Fix: map visible→model index through `_hiddenBlocks`
+  offsets, or capture the target paragraph by reference before commit.
+- **[MED]** Field run inside a hyperlink renders un-linked (`BuildFieldRun` returns before hyperlink
+  wrapping) → link lost on commit. **[MED]** Real cell shading equal to the header/banded style fill colour
+  is stripped on commit (colour-equality heuristic). **[LOW]** Emptied content-control/comment run dropped
+  on commit; MultiLevel list degrades to Number after an in-editor edit (both documented best-effort limits).
+
 ## Status log (newest first)
+- 2026-06-17: Consolidation & QA. FreeW CI lane + README/feature catalog + Windows packaging shipped; a
+  read-only QA audit (3 agents) fixed 6 confirmed IO/model defects (rPr schema order, footnote/endnote
+  marker formatting, cNvPr ids, StyleManager guard, clone-drops) with 5 regression tests; two HIGH +
+  some MED/LOW App.Host findings recorded as a backlog (no App.Host test tier yet). FreeW lane now 594
+  tests (465 model, 129 IO). origin/main @ ae96966ad.
 - 2026-06-17: Milestone U complete. Change case, image alt text + alignment, insert text from file,
   bookmark manager + Go To — built in parallel by subagents and integrated (all four auto-merged clean;
   U1's push reconciled the other session's FreeX conditional-format work). Each verified 0/0 build + green
