@@ -189,28 +189,43 @@ reader → writer → view, each with round-trip + render tests; `FreeW.slnx` 0-
    default — an acceptable bound given the byte-stability risk a nullable refactor of the reader/writer
    would carry.)
 
-## Diagnosis: the remaining SSIM gap is layout-engine line metrics, not missing content
+10. **Multiple line-spacing applied to the natural line height** (`DocumentView.BuildParagraph` /
+    `ReadLineSpacing`) — the biggest single visual mover. Word's `w:lineRule="auto"` multiplies one *line*
+    (the font's natural ascent+descent+gap) by the multiple; FreeW multiplied the raw em, and
+    `LineStackingStrategy.MaxHeight` then clamped the result back to a single natural line. Every
+    multiple-spaced paragraph therefore rendered ~8–22% too short, so FreeW packed more lines per page and
+    its pagination drifted out of registration with Word's across multi-page docs. Now the multiple is
+    applied to `FontFamily.LineSpacing` (Times 1.15, Calibri 1.22), keyed on the document default font and
+    cached; `ReadLineSpacing` inverts the same ratio so edit round-trips are unchanged (`LineHeightMultipleTests`).
+    Measured effect: `drawing` now paginates to **exactly Word's 20 pages** (was 19); `endnotes`
+    0.890→0.931, `VariousPictures` 0.895→0.930, `stress018` 0.656→0.704, `stress008` 0.547→0.570,
+    `stress010`/`stress004` up; **overall page-weighted SSIM 0.633→0.648**. One regression — `stress023`
+    0.683→0.622 — where the Arabic substitute font's WPF natural line runs taller than Word's, so it now
+    over-paginates (15 vs 12); residual per-font engine variance, not a formula error.
 
-Page-by-page inspection (triptychs in `runs/diff/`) shows the dominant residual is **vertical line drift**,
-not absent or wrong content:
+## Diagnosis: pagination drift was mostly a real line-height bug; the rest is engine line metrics
 
-- Every multi-page low scorer (`drawing` 0.566, `stress004` 0.539, `stress008` 0.547, `stress010` 0.710, …)
-  is flagged `page-count differs` in `scores.csv` — FreeW fits the same text into one fewer/more page than
-  Word, so per-page comparison lines up misaligned pages and the whole heatmap reds out. `drawing-p5` is the
-  proof: identical paragraphs on both sides, offset vertically by accumulated drift.
-- The same drift appears **within a single page** (`endnotes` 0.890): the top lines register, alignment
-  decays downward as small per-line height differences accumulate.
-- Probing WPF's own font metrics (`FontFamily.LineSpacing`: Times 1.150, Calibri 1.221, Arial 1.150) shows
-  they already match Word's single-line heights for installed fonts — there is **no line-height *formula*
-  error to correct**. The residual comes from (a) font **substitution** (Cyrillic/embedded faces WPF and
-  Word substitute differently, with different metrics) and (b) sub-pixel layout rounding between two
-  independent text engines. Neither is reliably closable from the model/IO layer, and forcing an exact
-  line height (`LineStackingStrategy.BlockLineHeight`) clips tall glyphs.
+Page-by-page inspection (triptychs in `runs/diff/`) showed the dominant residual was **vertical line
+drift** — identical content offset vertically (`drawing-p5`: same paragraphs both sides) — and measuring the
+actual line pitch in the rendered PNGs traced most of it to a fixable cause, not engine divergence:
 
-**Conclusion:** 1.0 SSIM is unreachable between WPF and Word's layout engines; the text-only ceiling is
-~0.99 (`testComment`/`FieldCodes` 0.999, `saut_page` 0.998). The functional format gaps the comparison
-surfaced have been closed; the numeric gap that remains is engine-bound rendering divergence, not a FreeW
-fidelity bug.
+- Measured line pitch FreeW vs Word (PNG ink-row analysis): `endnotes` Word/FreeW = **1.08**, `delins`
+  **1.22**, while single-spaced `drawing` matched at **1.00**. The 1.08/1.22 are exactly the *Multiple* line
+  rule being applied to the em instead of the natural line height — fixed in item 10 above.
+- What remains after that fix is genuine two-engine divergence: (a) font **substitution** (Cyrillic/Arabic
+  and embedded faces WPF and Word substitute differently, with different natural-line metrics — this is why
+  `stress023` regressed and `delins` 0.774 is unmoved) and (b) sub-pixel layout rounding. Forcing an exact
+  line height (`LineStackingStrategy.BlockLineHeight`) to erase it clips tall glyphs.
+- A *fully* correct line cascade needs the formatting fields made nullable (the refactor noted in item 9):
+  only then can FreeW tell an **explicit** 1.15-line paragraph from one that merely **inherited** the model
+  default, and apply the natural-line ratio to the former only. The current fix applies it to both, which is
+  right for the corpus (most paragraphs carry explicit spacing) but is the principled next step.
+
+**Conclusion:** A real line-height bug — not engine divergence — was the largest cause of the pagination
+drift, and fixing it lifted overall SSIM and made `drawing` paginate exactly like Word. The remainder is
+engine-bound: 1.0 SSIM is unreachable between WPF and Word's layout engines (text-only ceiling ~0.99 —
+`testComment`/`FieldCodes` 0.999/1.000, `saut_page` 0.998), driven by font substitution and sub-pixel
+rounding that the model/IO layer cannot fully close.
 
 ## Suggested follow-ups (priority order)
 
