@@ -72,9 +72,9 @@ stress-doc numbers are dominated by FreeW's denser pagination, not per-page rend
 
 - **Clean single-page text documents (same page count):** mean SSIM **≈ 0.95**.
 - **All single-page-compared documents:** mean SSIM **≈ 0.95**.
-- **Page-weighted overall (25 docs / 310 pages):** 0.61 — dominated by the multi-page stress documents,
-  where FreeW's pagination density (≈ half Word's page count) misaligns the per-page diff; not
-  representative of per-page rendering quality.
+- **Page-weighted overall (25 docs / 320 pages):** ≈ 0.61 — dominated by the multi-page stress documents,
+  where FreeW's pagination diverges from Word and misaligns the per-page diff (see the measurement caveat
+  below); not representative of per-page rendering quality.
 
 **Bottom line:** for ordinary text, lists, tables, fields, bookmarks, comments and footnote/endnote
 *markers*, FreeW's page rendering is a close visual match to Word (SSIM 0.95–0.999). The gaps are
@@ -88,31 +88,29 @@ concentrated in specific feature areas below.
   with an Office palette, category-axis labels, a baseline, and a legend. Verified: `chartex`'s 3-series
   column chart and 3-series line chart now both match Word.
 
-Remaining gaps (require larger, multi-layer work — see [follow-ups](#suggested-follow-ups)):
+Also **FIXED this session** (see [features added](#format-fidelity-features-added-this-session-toward-100-word-parity)):
+**RTL/bidi** (Arabic docs now mirror right-to-left like Word), **checkbox glyphs** (SDT + legacy
+FORMCHECKBOX now render ☒/☐), **line spacing** (`w:line`/`w:lineRule` read/written), **manual page breaks**,
+and **chart gridlines**.
 
-1. **Pagination density differs from Word.** FreeW consistently produces *fewer* pages: `stress010`
-   59 vs 118, `stress004` 55 vs more, `saut_page` 1 vs 3, `chartex` 2 vs 3. `saut_page` (a page-break
-   stress fixture) collapses to a single FreeW page. FreeW's line-height / page-fill metrics pack more
-   content per page than Word, and empty page-break-only pages are not reproduced. **This is what drags
-   the multi-page SSIM scores down** (the per-page diff misaligns once page counts diverge).
-2. **Header content + header images dropped** (`stress010`, an RTL Arabic CEDAW report). Word renders the
-   "CEDAW" letterhead block and the UN emblem in the page header; FreeW's first page omits the entire
-   header block and emblem. Matches the round-trip doc's header-read and images-in-header gaps. (Simple
-   single-section headers/footers *do* render and match — `headerFooter` SSIM 0.994.)
-3. **RTL / bidirectional alignment** (`stress010`). Word right-aligns the Arabic content and TOC; FreeW
-   does not mirror to RTL. Newly surfaced here; needs **model + reader + writer + view** support
-   (`w:bidi`/`w:rtl` are not modelled today), so it is a feature, not a render tweak.
-4. **Footnote / endnote text not shown at page foot** (`footnotes`, `endnotes`, `table_footnotes`). The
-   superscript reference marker renders correctly, but the note *body* Word prints at the bottom of the
-   page (with separator) is absent — a `FlowDocument` limitation; reproducing it needs a custom
-   page-foot paginator pass that maps notes to the page their markers fall on.
-5. **Content-control checkbox glyphs not drawn** (`checkboxes`). The reader *does* recognise `w14:checkbox`
-   SDTs, but the wrapped run's text/font doesn't yield a visible ☐/☒; needs render-time glyph synthesis
-   from the checked state in a symbol font.
-6. **Line-spacing vertical drift** (`delins`). Content matches (tracked-change insertions in red underline,
-   deletions in red strikethrough, blue hyperlinks all correct), but FreeW's slightly tighter line spacing
-   makes the two renders drift apart progressively down the page — the main reason its SSIM is 0.75 despite
-   matching content. (Same root cause as pagination density.)
+> **Measurement caveat.** The page-weighted SSIM compares FreeW page *i* to Word page *i*. On the
+> multi-page docs FreeW's page count differs from Word's, so the diff measures **pagination misalignment**,
+> not per-page rendering — which is why the RTL fix (visually confirmed to mirror the Arabic stress docs
+> like Word) barely moves their SSIM. The **single-page documents are the trustworthy signal** and sit at
+> **0.95–0.999**. Real-world content (text, lists, tables, fields, charts, RTL, page breaks, line spacing,
+> checkboxes, footnote markers, tracked changes, comments, simple headers/footers) now renders faithfully.
+
+Remaining gaps (larger / niche — see [follow-ups](#suggested-follow-ups)):
+
+1. **Pagination density** on the synthetic stress fixtures — FreeW's per-page line count still diverges
+   from Word (page-fill metrics, exact-spacing clipping, section handling). Dominates the multi-page SSIM;
+   deep WPF line-metric work, low real-world impact.
+2. **Header content + header images on multi-section docs** (`stress010`'s "CEDAW" letterhead/emblem). Word
+   renders the multi-section page header; FreeW omits it. (Simple single-section headers/footers render and
+   match — `headerFooter` SSIM 0.994.)
+3. **Footnote / endnote body text at the page foot** (`footnotes`, `endnotes`, `table_footnotes`). The
+   superscript marker renders; the note *body* Word prints at the page foot needs a paginator pass that
+   reserves page-bottom space and maps notes to the page their markers fall on.
 
 ## Bugs fixed this session
 
@@ -148,21 +146,37 @@ All four are committed with `FreeW.slnx` building 0-warning and the App.Host tes
 rendering** (all series + correct type + legend) was also fixed this session — see
 [Visual fidelity gaps](#visual-fidelity-gaps-rendered-docs).
 
+## Format-fidelity features added this session (toward 100% Word parity)
+
+Beyond the crashes, several real format gaps the comparison surfaced were closed end-to-end (model →
+reader → writer → view, each with round-trip + render tests; `FreeW.slnx` 0-warning, full lane green):
+
+1. **Right-to-left / bidi** (`w:bidi`, `w:rtl`) — was not modelled at all, so Arabic/Hebrew documents
+   rendered left-to-right and the direction was dropped on round-trip. Now maps to WPF
+   `FlowDirection.RightToLeft`. The Arabic stress docs (`stress004/008/010`, …) now mirror RTL like Word
+   (right-aligned text, QR/logo on the right, RTL TOC).
+2. **Manual page breaks** (`w:br w:type="page"`) — break-only runs were dropped (under-paginating badly);
+   now read/written and mapped to `Paragraph.BreakPageBefore` so the paginator starts a new page (`w:pageBreakBefore` too). `saut_page` went 1 → 2 pages.
+3. **Line spacing** (`w:spacing/@w:line` + `@w:lineRule`) — neither read nor written, so every paragraph
+   rendered at the 1.15 default. Now reads/writes the multiple (auto) and exact/at-least absolute heights;
+   default-spaced docs stay byte-stable.
+4. **Checkbox content controls** — render the ☒/☐ glyph synthesised from the checked state in a symbol
+   font, and read **legacy `FORMCHECKBOX` form fields** (what the `checkboxes` doc uses) as checkbox
+   controls. All checkboxes in `checkboxes.docx` now render with correct state.
+5. **Chart gridlines** — faint horizontal value gridlines behind the data, matching Word (layout-neutral).
+
 ## Suggested follow-ups (priority order)
 
-*(Everything that blocked rendering — the four crashes and the single-series/wrong-type chart — was fixed
-this session. FreeW now renders 26/26 corpus docs. The remaining items are larger multi-layer features,
-not quick fixes.)*
+*(All render-blocking crashes, the chart rendering, plus RTL, page breaks, line spacing and checkboxes
+were done this session. FreeW renders 26/26 corpus docs. Remaining items are larger or niche.)*
 
-1. **Pagination density** — FreeW packs ≈ half Word's page count on the stress docs (line-height /
-   page-fill metrics; empty page-break-only pages not reproduced). This is what drags the multi-page SSIM
-   scores down; closing it would both improve fidelity and make the per-page diff meaningful. The single
-   biggest remaining lever, but deep (WPF line-metric tuning).
-2. **RTL / bidirectional layout** — not modelled at all today; needs model + reader (`w:bidi`/`w:rtl`) +
-   writer + view (`FlowDirection`) support.
+1. **Pagination density** — FreeW's per-page line count still diverges from Word on the synthetic stress
+   fixtures (multi-causal: page-fill metrics, exact-spacing clipping, section handling). This drags the
+   multi-page SSIM scores; deep WPF line-metric work, lower real-world impact.
+2. **VML images** (`w:pict`/`v:imagedata`) — older docs (e.g. `stress010`'s WMF/EMF) reference images via
+   legacy VML, which the picture reader (DrawingML-only) skips.
 3. **Header content/images on multi-section docs** and **footnote/endnote body text at the page foot** —
-   reader/paginator work already partly tracked in the round-trip doc.
-4. **Checkbox glyph synthesis** — render `w14:checkbox` controls with a state-derived ☐/☒ in a symbol font.
+   reader/paginator work (the latter needs page-foot space reservation to avoid overlapping body text).
 4. **Word-rejected `deep-table-cell.docx`** — Word deems it corrupt; FreeW opens it. Not actionable for
    FreeW, noted for completeness.
 
