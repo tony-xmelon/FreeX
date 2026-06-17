@@ -259,21 +259,26 @@ Avoids the WPF-ribbon-renderer / shell the other session churns. N2 touches the 
 ## Milestone O — collaboration + automation (next tranche)
 Avoids the WPF-ribbon-renderer / shell the other session churns. O1 touches the docx writer/reader
 (settings.xml); O2/O3/O4 are model/view/pure.
-- [ ] O1. Restrict editing / document protection. `ProtectionSettings` on `TextDocument` (mode:
-      None/ReadOnly/CommentsOnly/TrackChangesOnly); writer emits `word/settings.xml`
-      `w:documentProtection`; reader parses it; editor honours ReadOnly (disables editing); Review >
-      Restrict Editing. Round-trip tests.
-- [ ] O2. Compare documents. A pure paragraph/word diff producing a track-changes result (reusing
-      `RevisionKind` + `TextSearch`): given two `TextDocument`s, return a merged doc whose differences are
-      marked Inserted/Deleted. Review > Compare (open a second .docx). Tested on the pure diff.
-- [ ] O3. Mail merge. Merge fields («Field») as a run mark/field kind; a simple in-doc data source
-      (rows of name→value); preview-by-record (substitute fields) + merge-to-text. Pure substitution
-      helper (tested) + Mailings ribbon. Model + view.
-- [ ] O4. Sort + Convert text↔table (disjoint — editor/model). Sort selected paragraphs / table rows
-      alphabetically (asc/desc, case option); convert delimited text (tab/comma) to a table and a table
-      back to text. Pure helpers (tested) + Insert/Layout commands.
+- [x] O1. Restrict editing / document protection. `ProtectionSettings`/`ProtectionMode` (None/ReadOnly/
+      CommentsOnly/TrackChangesOnly) on `TextDocument`; writer emits `word/settings.xml`
+      `w:documentProtection` (content type + rel); reader parses it; editor honours protection via
+      RichTextBox `IsReadOnly`; Review > Protect > Restrict Editing (stateful toggle). 5 tests.
+- [x] O2. Compare documents. Pure `DocumentCompare.Compare(original, revised, author)` — two-level LCS
+      (paragraph anchors + word-level token diff) marking Inserted/Deleted runs; Review > Compare opens a
+      second .docx and loads the tracked-changes comparison. Deterministic, no DateTime.Now. ~6 tests.
+- [x] O3. Mail merge. Pure `MailMerge` (field discovery, `MergeData.FromCsv`, `Substitute`, `MergeRecord`,
+      `MergeAll`); fields are `«Field»` (plain text, round-trips); Mailings tab: Set Data / Insert Field /
+      Preview Record (next-prev) / Finish & Merge (records concatenated, page-broken). 19 tests.
+- [x] O4. Sort + Convert text↔table. Pure `ParagraphSort` (paragraphs + table rows, stable, asc/desc +
+      case) + `TextTableConvert` (text→table with ragged padding, table→text); `ReplaceBlocksCommand`
+      (reversible); Layout > Data: Sort + Convert to Table + Convert to Text. 13 tests.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone O complete. Restrict editing, document compare, mail merge, sort + convert
+  text/table — built in parallel by subagents and integrated (O4 disjoint + O3 auto-merged; O1
+  auto-merged; O2 hand-resolved against O1 on the Review-tab ribbon groups + command classes). Each
+  verified 0/0 build + green before push. FreeW lane now 366 tests (289 model, 77 IO). origin/main @
+  f947acfd6. **Ten milestones (F–O, 40 features) shipped this session.**
 - 2026-06-17: Milestone N complete. Cross-references, content controls (`w:sdt`), quick parts/autotext,
   document statistics — built in parallel by subagents and integrated (N4 disjoint + N1 auto-merged; N3
   hand-resolved against N1 on the tangled ribbon dialog classes; N2 hand-resolved on the registration
