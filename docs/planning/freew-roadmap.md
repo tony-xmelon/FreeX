@@ -508,8 +508,11 @@ are *truly* Word-compatible, not just data-faithful. Still excluding cloud/propr
 - [ ] F1. Editable chart data + richer chart types. Emit an embedded companion workbook
       (`word/embeddings/Microsoft_Excel_Worksheet*.xlsx`) + `c:externalData r:id` so Word's "Edit Data" works
       (today charts are cache-only); add scatter/area/doughnut kinds + legend + axis titles. Round-trip.
-- [ ] F2. SmartArt drawing geometry. Emit a minimal `dsp:drawing` (`word/diagrams/drawingN.xml` + the
-      `diagramDrawing` relationship / `dsp:dataModelExt`) so the diagram renders positioned without Word re-laying-out.
+- [x] F2. SmartArt drawing geometry. Each diagram now emits a fifth part `word/diagrams/drawingN.xml` (`dsp:drawing`,
+      content-type Override) holding one positioned `dsp:sp` per node (text + non-zero `a:xfrm`), wired via a
+      `diagramDrawing` relationship in `word/diagrams/_rels/dataN.xml.rels` + a `dgm:dataModelExt` in the data model, so
+      viewers show the diagram without re-running auto-layout. Deterministic heuristic layout (List=stack, Process=row,
+      Hierarchy=indent-by-depth). Presentation-only (reader still reconstructs from the data part). 3 new tests.
 - [ ] F3. Embedded fonts. `word/fontTable.xml` + embedded (ODTTF-obfuscated) font parts (`w:embedRegular`/…) +
       `w:settings/w:embedTrueTypeFonts`; opt-in `TextDocument` flag. Round-trip the obfuscation.
 
