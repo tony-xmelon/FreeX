@@ -424,6 +424,20 @@ features**. Same proven pattern (roadmap → isolated agents → integrate/verif
       kind)`; reader gained shared `ReadPageSettings` (also fixing pre-existing gap: pgSz/pgMar/orientation were
       written but never read — landscape now round-trips). 7 new tests + single-section regression guard.
 
+## MS Word parity — wave 2 (2026-06-17 →)
+With the first parity wave (V1–V5, W1–W4) done, wave 2 deepens parity with the remaining mainstream Word
+surfaces and finally stands up an App.Host test harness. Still excluding cloud/proprietary (online video,
+translate/research services, VBA/macros, 3D models).
+- [ ] X1. App.Host test harness. New `freew/FreeW.App.Host.Tests` (STA xUnit) added to `FreeW.slnx`; cover
+      `DocumentView.Render`/`CommitToModel` round-trips and address the two HIGH QA-backlog findings recorded in
+      the Consolidation & QA section. Foundational — unblocks testing the WPF render/commit path.
+- [ ] X2. WordArt / decorative text. Inline `Run.WordArt` (or text-effect fields on the shape text run): DrawingML
+      `wps:wsp` text with `a:gradFill`/`a:ln`/`a:effectLst` (outline/glow/shadow presets); round-trip.
+- [ ] X3. Floating images + text wrapping. `Image.Wrapping` (Inline/Square/Tight/TopAndBottom/Behind/InFront) +
+      anchor/position; writer emits `wp:anchor` (vs `wp:inline`) with `wp:positionH/V` + wrap element; reader parses.
+- [ ] X4. Accessibility checker. Pure-model analysis (missing image alt text, empty hyperlinks, heading-order
+      gaps, tables without header rows, low-contrast text) mirroring `DocumentInspector`; a results model + report.
+
 ## Consolidation & QA (2026-06-17)
 After Milestones F–U, the work pivoted from features to hardening (user choice: "Consolidate & harden"):
 - **CI lane** — `.github/workflows/freew-ci.yml` builds `FreeW.slnx` Release (0 warnings enforced) + runs
