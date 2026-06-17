@@ -307,6 +307,20 @@ Q3/Q4 are disjoint (view/model-light).
       persisting a `.lex` under FreeW's data folder, registered in the RichTextBox's `CustomDictionaries`;
       Review > Proofing: Add to Dictionary + Spell Check toggle. 13 tests.
 
+## Milestone R — tables + flow control (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. R1/R2/R4 touch the docx writer/reader
+in different scopes (tc structure / pPr / tblPr); R3 is disjoint (editor/view).
+- [ ] R1. Table cell merge & split. Horizontal merge (`w:gridSpan`) + vertical merge (`w:vMerge` restart/
+      continue) on `TableCell`; merge selected cells / split a cell; writer/reader; render spanned cells in
+      `DocumentView` (WPF `TableCell.ColumnSpan`/`RowSpan`). Round-trip tests.
+- [ ] R2. Paragraph flow control. `pPr` `w:keepNext` / `w:keepLines` / `w:widowControl` → `ParagraphFormatting`
+      bool fields; writer/reader; a "Line and Page Breaks" affordance applying to the selection. Round-trip tests.
+- [ ] R3. Paste Special (disjoint — editor only). Paste clipboard text as plain text (strip formatting) and
+      "merge formatting"; a small Paste dropdown / Ctrl+Shift+V; pure text-normalization helper (tested).
+- [ ] R4. Table styles. Header-row styling (bold + shaded) + banded-row shading + `w:tblHeader` (repeat
+      header row); a `TableStyle` model option + writer/reader; rendered in `DocumentView`; Table Tools >
+      Table Style. Round-trip tests.
+
 ## Status log (newest first)
 - 2026-06-17: Milestone Q complete. Document fields, multilevel lists, outline tools, custom dictionary —
   built in parallel by subagents and integrated (all four auto-merged clean; Q4's push reconciled the
