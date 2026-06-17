@@ -496,8 +496,11 @@ cloud/proprietary (VBA, IRM, online services, 3D models).
       `header2.xml`/`footer2.xml` parts (+ Overrides + rels) with `w:type="even"` references, and `w:background`/@color
       as the first child of `w:document` + `w:displayBackgroundShape` (settings); reader parses all back (even reference
       matched explicitly so odd-only docs don't mis-pick). Regression guard: neither feature → no settings part / no background. Round-trip + model tests.
-- [ ] Z4. Surface remaining objects + Building Blocks. Ribbon Insert commands for Shapes gallery / SmartArt / Object
-      (OLE); a Quick Parts / Building Blocks gallery over the existing `QuickPartStore`. App.Host wiring.
+- [x] Z4. Surface remaining objects + Building Blocks. Insert ▸ Illustrations: a Shapes dropdown (Rectangle/Rounded/
+      Ellipse/Text Box) via `InsertShape`; Insert ▸ Media: SmartArt + Object(OLE) buttons via new `DocumentView.InsertSmartArt`/
+      `InsertEmbeddedObject` (with matching `BuildRun` render cases + `ReadInline` commit cases — previously SmartArt/OLE
+      runs were dropped by the editor). Quick Parts: the existing `freew.save-quickpart`/`freew.insert-quickpart` buttons
+      already cover save-selection + pick-from-`QuickPartLibrary` (verified, left intact). +2 STA round-trip tests.
 
 ## Consolidation & QA (2026-06-17)
 After Milestones F–U, the work pivoted from features to hardening (user choice: "Consolidate & harden"):
