@@ -369,6 +369,31 @@ U1/U4 are disjoint (pure + view).
 - [x] U4. Bookmark manager + Go To. Pure `Bookmarks.List`/`RemoveBookmark`; Bookmark Manager dialog
       (Go To via `BringBlockIntoView` / Delete) + the Find/Replace Go To now lists bookmarks; Insert > Links. 6 tests.
 
+## MS Word parity (2026-06-17 →) — functional + VISUAL parity, excluding cloud/proprietary
+New standing goal: reach MS Word parity in functionality AND look, excluding cloud/proprietary features
+(co-authoring, Editor AI/Designer, online pictures/templates/services — same exclusions as FreeX). The
+mainstream functional surface (F–U) is done; the gaps are **visual fidelity** and a few **hard structural
+features**. Same proven pattern (roadmap → isolated agents → integrate/verify/push).
+
+### Visual track (make it LOOK like Word)
+- [ ] V1. Real Word-style ribbon. Port the app-neutral `RibbonWpfRenderer` (icons via `Free.Shared.Ribbon`
+      Icons/Layout, Large/Medium/Small controls, group dividers/labels) into a shared WPF lib
+      `shared/Free.Shared.Ribbon.Wpf` and render FreeW with it instead of the placeholder TabControl. (The
+      long-deferred B3.) Highest visual impact.
+- [ ] V2. Backstage / File menu. The green File tab → full-window backstage (New/Open/Save/Save As/Print/
+      Export PDF/Info/Recent/Options) reusing the shared shell frames where possible. (The deferred D3.)
+- [ ] V3. Paginated WYSIWYG page view. The editor shows discrete pages with margins, page gaps, and the
+      page shadow (like Word's Print Layout) rather than a continuous flow. (The deferred E4 page view.)
+- [ ] V4. Ruler + Word-like status bar. Horizontal/vertical rulers with margin/indent/tab markers; status
+      bar showing Page X of Y, section, word count, the existing zoom slider, view switches.
+- [ ] V5. Galleries + KeyTips. Live-preview Styles gallery, theme/colour galleries; Alt-key KeyTips overlay.
+
+### Functional track (hard features)
+- [ ] W1. Equations (OMML `m:oMathPara`/`m:oMath`) — insert/edit basic equations; round-trip.
+- [ ] W2. Shapes / text boxes (DrawingML + `w:txbxContent`) — wire the `freew.shapes` placeholder.
+- [ ] W3. Charts (DrawingML chart part) — insert a basic chart with data.
+- [ ] W4. Multiple sections (section breaks continuous/next-page; per-section page setup).
+
 ## Consolidation & QA (2026-06-17)
 After Milestones F–U, the work pivoted from features to hardening (user choice: "Consolidate & harden"):
 - **CI lane** — `.github/workflows/freew-ci.yml` builds `FreeW.slnx` Release (0 warnings enforced) + runs
