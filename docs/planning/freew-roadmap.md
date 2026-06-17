@@ -401,7 +401,12 @@ features**. Same proven pattern (roadmap → isolated agents → integrate/verif
       `m:oMath`; reader parses `m:oMath` (unknown constructs degrade to their `m:t` text). 8 new tests (5 IO round-trip + 3 model).
 - [ ] W2. Shapes / text boxes (DrawingML + `w:txbxContent`) — wire the `freew.shapes` placeholder.
 - [ ] W3. Charts (DrawingML chart part) — insert a basic chart with data.
-- [ ] W4. Multiple sections (section breaks continuous/next-page; per-section page setup).
+- [x] W4. Multiple sections. `SectionBreakKind` (Continuous/NextPage/EvenPage/OddPage) + `Section` (own `PageSettings`
+      + break kind); `Paragraph.SectionBreak` marks a section-ending paragraph (mirrors OOXML: non-final `w:sectPr` in
+      the last para's `w:pPr`, final at body level). `TextDocument.Sections` is a computed view; `TextDocument.Page`
+      stays the final section (fully backward-compatible). Writer refactored `BuildSectionProperties(PageSettings,
+      kind)`; reader gained shared `ReadPageSettings` (also fixing pre-existing gap: pgSz/pgMar/orientation were
+      written but never read — landscape now round-trips). 7 new tests + single-section regression guard.
 
 ## Consolidation & QA (2026-06-17)
 After Milestones F–U, the work pivoted from features to hardening (user choice: "Consolidate & harden"):
