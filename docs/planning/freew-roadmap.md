@@ -399,7 +399,12 @@ features**. Same proven pattern (roadmap → isolated agents → integrate/verif
       (mirrors images/footnotes/content-controls so it flows through runs, table cells, headers); supports plain
       text (`m:r`/`m:t`), superscript (`m:sSup`), and fractions (`m:f`). Writer declares `xmlns:m`, emits inline
       `m:oMath`; reader parses `m:oMath` (unknown constructs degrade to their `m:t` text). 8 new tests (5 IO round-trip + 3 model).
-- [ ] W2. Shapes / text boxes (DrawingML + `w:txbxContent`) — wire the `freew.shapes` placeholder.
+- [x] W2. Shapes / text boxes. `Shape`/`ShapeKind` (Rectangle/RoundedRectangle/Ellipse/TextBox; size in pt, optional
+      fill, text-box body reuses `List<Paragraph>`) carried as inline `Run.Shape` (mirrors `Run.Equation`/`Run.Image`).
+      Writer declares `wp`/`a`/`wps` xmlns, emits `w:drawing`→`wp:inline`→`wps:wsp` (`a:prstGeom` + optional `a:solidFill`
+      + `w:txbxContent`) with shape docPr ids above the image range; reader parses `wps:wsp` (distinguished from
+      `pic:pic`). The previously-unregistered `freew.shapes` ribbon button now inserts a sample text box (DocumentView
+      renders ellipse/rect/text-box, model on `Tag`). 13 new tests.
 - [ ] W3. Charts (DrawingML chart part) — insert a basic chart with data.
 - [x] W4. Multiple sections. `SectionBreakKind` (Continuous/NextPage/EvenPage/OddPage) + `Section` (own `PageSettings`
       + break kind); `Paragraph.SectionBreak` marks a section-ending paragraph (mirrors OOXML: non-final `w:sectPr` in
