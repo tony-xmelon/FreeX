@@ -491,8 +491,11 @@ cloud/proprietary (VBA, IRM, online services, 3D models).
       (`a:clrScheme` + `a:fontScheme` + minimal stock `a:fmtScheme`) with content-type Override + `theme` relationship
       (mirrors how real Word docs always carry a theme); reader parses clrScheme/fontScheme and infers the preset
       (foreign themes fall back to Office). fmtScheme is stock-but-valid, not read back (noted). Per-preset round-trip + zip-part tests.
-- [ ] Z3. Different odd/even pages + page background. `PageSettings.DifferentOddEvenPages` → `w:evenAndOddHeaders`
-      (settings) + even header/footer parts; page background colour → `w:background` + `w:displayBackgroundShape`.
+- [x] Z3. Different odd/even pages + page background. `PageSettings.DifferentOddEvenPages` + `BackgroundColorHex`;
+      `TextDocument.EvenHeader`/`EvenFooter` (mirror Header/Footer). Writer emits `w:evenAndOddHeaders` (settings) +
+      `header2.xml`/`footer2.xml` parts (+ Overrides + rels) with `w:type="even"` references, and `w:background`/@color
+      as the first child of `w:document` + `w:displayBackgroundShape` (settings); reader parses all back (even reference
+      matched explicitly so odd-only docs don't mis-pick). Regression guard: neither feature → no settings part / no background. Round-trip + model tests.
 - [ ] Z4. Surface remaining objects + Building Blocks. Ribbon Insert commands for Shapes gallery / SmartArt / Object
       (OLE); a Quick Parts / Building Blocks gallery over the existing `QuickPartStore`. App.Host wiring.
 
