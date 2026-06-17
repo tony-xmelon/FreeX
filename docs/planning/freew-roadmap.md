@@ -293,19 +293,26 @@ P2/P3 are model/view.
 ## Milestone Q — fields, lists, outline tools (next tranche)
 Avoids the WPF-ribbon-renderer / shell the other session churns. Q1/Q2 touch the docx writer/reader;
 Q3/Q4 are disjoint (view/model-light).
-- [ ] Q1. Document fields. Extend `RunFieldKind` (already has PageNumber) with DATE, TIME, FILENAME,
-      AUTHOR, NUMPAGES; writer emits each as `w:fldSimple w:instr=" DATE "` etc.; reader maps them back;
-      editor renders the resolved/cached value; Insert > Field. Round-trip tests.
-- [ ] Q2. Multilevel lists. Multilevel numbering definitions in `numbering.xml` (level text like 1.1.1)
-      driven by `ListLevel`; a list-library choice (bullet / decimal / multilevel-legal); writer/reader of
-      the richer numbering; editor renders nested levels. Round-trip tests.
-- [ ] Q3. Outline tools (disjoint — view/editor). In the navigation pane: promote/demote a heading (change
-      its Heading style level) and collapse/expand a heading's body; a pure level-shift helper (tested).
-- [ ] Q4. Custom dictionary + spelling options (disjoint — view/model-light). Add-to-dictionary / ignore-all
-      from the spell-check context, a small persisted custom word list (under FreeW's data folder), and a
-      toggle for the editor's spell check. Pure dictionary store (tested).
+- [x] Q1. Document fields. Extended `RunFieldKind` with Date/Time/FileName/Author/NumPages + factories;
+      writer emits `w:fldSimple` with the right `w:instr` keyword; reader maps the leading keyword back
+      (handles `DATE \@ "..."` switches); editor resolves DATE/TIME (app layer), Author from Properties,
+      FileName from the open file; Insert > Field picker. No DateTime.Now in model/IO. ~7 tests.
+- [x] Q2. Multilevel lists. `ListKind.MultiLevel` (backward-compatible); writer adds a third abstract num
+      (`numId=3`, `multiLevelType="multilevel"`, accumulating `%1.%2.%3.` level text); reader maps it back;
+      editor renders best-effort decimal-per-level; Home > Multilevel List + level promote/demote. 3 tests.
+- [x] Q3. Outline tools. Pure `OutlineTools.Promote`/`Demote` (Heading3→…→Title; Title→Heading1→…→Heading6
+      cap); `DocumentView` Promote/Demote (reversible StyleId) + view-only Collapse/Expand (hidden body
+      blocks re-spliced on commit so collapse stays view-only); nav-pane context menu. 26 tests.
+- [x] Q4. Custom dictionary + spelling options. Pure `CustomDictionary` store + `CustomDictionaryStore`
+      persisting a `.lex` under FreeW's data folder, registered in the RichTextBox's `CustomDictionaries`;
+      Review > Proofing: Add to Dictionary + Spell Check toggle. 13 tests.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone Q complete. Document fields, multilevel lists, outline tools, custom dictionary —
+  built in parallel by subagents and integrated (all four auto-merged clean; Q4's push reconciled the
+  other session's FreeX protection-shell work, which rode along). Each verified 0/0 build + green before
+  push. FreeW lane now 445 tests (349 model, 96 IO). origin/main @ 595dacc2d. **Twelve milestones (F–Q,
+  48 features) shipped this session.**
 - 2026-06-17: Milestone P complete. Endnotes, index, indentation controls, line numbers — built in
   parallel by subagents and integrated (all four auto-merged clean — P2's merge also reconciled the other
   session's FreeX work, which rode along without conflict). Each verified 0/0 build + green before push.
