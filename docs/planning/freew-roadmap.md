@@ -477,6 +477,20 @@ unit-testable on the X1 harness), and surfacing already-built model features in 
       +3 STA round-trip tests. (Noted limit: DocumentView's commit doesn't preserve `Paragraph.SectionBreak`, so the
       section count can collapse to "1 of 1" after unsaved in-editor edits; accurate for freshly loaded docs.)
 
+## MS Word parity — wave 4 (2026-06-17 →)
+Higher-fidelity round-out of mainstream Word surfaces still missing real fidelity. Still excluding
+cloud/proprietary (VBA, IRM, online services, 3D models).
+- [ ] Z1. Advanced typography (Font ▸ Advanced). `RunFormatting` gains character spacing/kerning, position
+      (raised/lowered), ligatures + stylistic sets + number forms/spacing; writer/reader map `w:rPr` (`w:spacing`,
+      `w:kern`, `w:position`, `w14:ligatures`, `w14:stylisticSets`, `w14:numForm`/`w14:numSpacing`); round-trip.
+- [ ] Z2. Real theme part. Emit/parse `word/theme/theme1.xml` (DrawingML `a:clrScheme`/`a:fontScheme`/`a:fmtScheme`)
+      so `DocumentTheme` round-trips as a proper theme part (content-type + relationship) instead of only rewriting
+      colours inline; reader recovers the active theme.
+- [ ] Z3. Different odd/even pages + page background. `PageSettings.DifferentOddEvenPages` → `w:evenAndOddHeaders`
+      (settings) + even header/footer parts; page background colour → `w:background` + `w:displayBackgroundShape`.
+- [ ] Z4. Surface remaining objects + Building Blocks. Ribbon Insert commands for Shapes gallery / SmartArt / Object
+      (OLE); a Quick Parts / Building Blocks gallery over the existing `QuickPartStore`. App.Host wiring.
+
 ## Consolidation & QA (2026-06-17)
 After Milestones F–U, the work pivoted from features to hardening (user choice: "Consolidate & harden"):
 - **CI lane** — `.github/workflows/freew-ci.yml` builds `FreeW.slnx` Release (0 warnings enforced) + runs
