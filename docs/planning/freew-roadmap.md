@@ -453,10 +453,15 @@ translate/research services, VBA/macros, 3D models).
 ## MS Word parity — wave 3 (2026-06-17 →)
 Deepening toward full parity: the last two big DrawingML object types, the remaining App.Host QA fixes (now
 unit-testable on the X1 harness), and surfacing already-built model features in the ribbon UI.
-- [ ] Y1. SmartArt (DrawingML diagram). Basic list/process/hierarchy diagram inserted as the DrawingML
-      `dgm` parts (data/layout/style/colors) + an inline `w:drawing`; model `Run.SmartArt`; round-trip the node text.
-- [ ] Y2. OLE / embedded objects. Embed a binary object (`w:object`/`o:OLEObject` + an embedded part with an
-      icon image fallback); model `Run.EmbeddedObject`; round-trip the embedded bytes + ProgId.
+- [x] Y1. SmartArt (DrawingML diagram). `SmartArt`/`SmartArtNode`/`SmartArtKind` (List/Process/Hierarchy, node tree)
+      carried as inline `Run.SmartArt`. Writer emits the four `word/diagrams/{data,layout,quickStyle,colors}N.xml` parts
+      (+ 4 content-type Overrides + 4 relationships) and an inline `w:drawing`/`dgm:relIds`; the data part carries node
+      text + `dgm:cxnLst parOf` structure. Reader resolves the data part via `dgm:relIds/@r:dm`, rebuilds the tree, infers
+      kind from the layout `uniqueId`. Stock-but-valid layout/style/colors; no `dsp:drawing` geometry (Word re-lays-out). 12 tests.
+- [x] Y2. OLE / embedded objects. `EmbeddedObject` (`Payload` bytes + `ProgId` + optional icon `InlineImage` + size)
+      carried as inline `Run.EmbeddedObject`. Writer emits the payload to `word/embeddings/oleObjectN.bin` (+ `Default bin`
+      content-type + `oleObject` rel) and a `w:object`/VML `v:shape`/`v:imagedata`/`o:OLEObject` run (icon reuses the image
+      plumbing); reader parses `w:object`→`o:OLEObject r:id` back to payload+ProgId+icon. Embed-only, minimal VML (noted). 13 tests.
 - [x] Y3. App.Host MED/LOW QA fixes (on the X1 test harness). **All four defects were real and are fixed**
       (each red→green-verified via git-stash; +9 STA regression tests in `QaBacklogRegressionTests.cs`):
       field-run-inside-hyperlink now wraps in `BuildHyperlink` (link survives); author-set cell shading is
