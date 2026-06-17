@@ -52,13 +52,9 @@ possible. Build it as a continuous series of small, verified, pushed increments.
 - [x] B2. Selection-driven toggle state (bold on when selection is bold) via the shared ribbon
       state store. *(editor.SelectionChanged pushes bold/italic/underline state into the shared
       RibbonStateStore; toggle buttons observe StateChanged and update IsChecked live.)*
-- [ ] B3. *(DEFERRED — reordered.)* Reuse the real WPF ribbon renderer: extract `RibbonWpfRenderer`
-      (+ adaptive panel/keytips) from `FreeX.App.Host` into a shared WPF ribbon library; FreeW renders
-      with it instead of the placeholder. **Held back because the other session is actively churning
-      the WPF ribbon renderer on `origin/main` — extracting it now would conflict hard. FreeW's
-      placeholder ribbon already drives real commands (B1/B2), so this is quality, not function.
-      Revisit once the ribbon work settles. Proceeding to Milestone C (docx I/O), which is
-      independent.**
+- [x] B3. **DONE via parity item V1.** Extracted the real WPF ribbon renderer (`RibbonWpfRenderer` + adaptive
+      panel/icons/metadata/tooltip) into shared lib `shared/Free.Shared.Ribbon.Wpf`; FreeW now renders through it
+      instead of the placeholder TabControl. See the MS Word parity section (V1) for details.
 
 ## Milestone C — .docx I/O
 - [~] C1. *(Not needed yet — reordered.)* Phase 3b prerequisite (split `XlsxPackagePath`). The docx
@@ -82,9 +78,9 @@ possible. Build it as a continuous series of small, verified, pushed increments.
       *(Recent ▾ menu lists the shared store's entries → OpenPath. AutosaveCoordinator writes a .docx
       snapshot + sidecar every 30s when dirty via the shared AutosaveSnapshotStore (FreeW Recovery
       folder), offers recovery of a prior session's snapshot on startup, cleans up on clean exit.)*
-- [ ] D3. *(DEFERRED.)* Backstage/File menu + Options, reusing the shared shell frames. Held back —
-      depends on the large/risky Phase-5 shell extraction (actively churned), and FreeW's title-bar
-      File commands + Recent menu already cover the lifecycle. Revisit after the shell settles.
+- [x] D3. **DONE via parity item V2.** Full-window Word-style Backstage (`Backstage/BackstageView.cs`) with New/
+      Open/Save/Save As/Print/Export/Info/Recent/Options panes, routed to the existing `FileCommands` (no shared
+      shell-extraction dependency taken). See the MS Word parity section (V2) for details.
 
 ## Milestone E — word-processor features
 - [x] E1. Find/Replace. *(Modeless FindReplaceDialog over the editing surface: TextPointer search,
@@ -382,13 +378,20 @@ features**. Same proven pattern (roadmap → isolated agents → integrate/verif
       vector glyphs) instead of the placeholder TabControl. FreeW supplies its command-id→glyph mapping via
       `FreeWRibbonIcons.Install()` (sets the shared `RibbonIconFactory.CommandIconKindResolver`, dependency-free
       `RibbonIconDefinitions` geometry) + `FreeWRibbonResources.xaml`. (The long-deferred B3.) Highest visual impact.
-- [ ] V2. Backstage / File menu. The green File tab → full-window backstage (New/Open/Save/Save As/Print/
-      Export PDF/Info/Recent/Options) reusing the shared shell frames where possible. (The deferred D3.)
+- [x] V2. Backstage / File menu. `Backstage/BackstageView.cs` — a full-window green nav-rail overlay (Info/New/
+      Open/Save/Save As/Print/Export/Recent/Options/Close) wrapped over the document in MainWindow; a title-bar
+      **File** button shows it, back-arrow/Esc hides it. Action entries route to the existing `FileCommands`/`Print`/
+      `OpenProperties` (no file IO reimplemented); Info shows path/properties + `WordCount.Of` stats; Recent lists
+      `RecentFilesStore`; Export/Options are honest placeholders (no PDF/Options back-end exists). (The deferred D3.)
 - [x] V3. Paginated WYSIWYG page view. `MainWindow.TogglePrintLayout` puts the editor on a grey workspace; the
       `DocumentView` page chrome (`ApplyPageChrome`, page shadow, margins) + `PageBreakAdorner` render discrete pages
       like Word's Print Layout rather than a continuous flow. (The deferred E4 page view.)
-- [ ] V4. Ruler + Word-like status bar. Horizontal/vertical rulers with margin/indent/tab markers; status
-      bar showing Page X of Y, section, word count, the existing zoom slider, view switches.
+- [x] V4. Ruler + Word-like status bar. `Editing/Ruler.cs` — code-built horizontal ruler (inch tick scale, shaded
+      margin zones from `PageSettings`, read-only left/right/first-line indent markers + tab ticks from the caret
+      paragraph) and a thinner vertical ruler; both zoom-scaled to the page band, shown in Print-Layout mode (drag
+      not wired — read-only is the milestone). `DocumentView` gained `LayoutChanged`, `CurrentParagraphFormatting`,
+      `PageInfo()`. Status bar enhanced with **Page X of Y** + a Read-Mode/Print-Layout view-switch cluster (existing
+      zoom slider kept). (Current-section indicator omitted gracefully — now that W4 landed, a future polish item.)
 - [ ] V5. Galleries + KeyTips. Live-preview Styles gallery, theme/colour galleries; Alt-key KeyTips overlay.
 
 ### Functional track (hard features)
@@ -398,7 +401,12 @@ features**. Same proven pattern (roadmap → isolated agents → integrate/verif
       `m:oMath`; reader parses `m:oMath` (unknown constructs degrade to their `m:t` text). 8 new tests (5 IO round-trip + 3 model).
 - [ ] W2. Shapes / text boxes (DrawingML + `w:txbxContent`) — wire the `freew.shapes` placeholder.
 - [ ] W3. Charts (DrawingML chart part) — insert a basic chart with data.
-- [ ] W4. Multiple sections (section breaks continuous/next-page; per-section page setup).
+- [x] W4. Multiple sections. `SectionBreakKind` (Continuous/NextPage/EvenPage/OddPage) + `Section` (own `PageSettings`
+      + break kind); `Paragraph.SectionBreak` marks a section-ending paragraph (mirrors OOXML: non-final `w:sectPr` in
+      the last para's `w:pPr`, final at body level). `TextDocument.Sections` is a computed view; `TextDocument.Page`
+      stays the final section (fully backward-compatible). Writer refactored `BuildSectionProperties(PageSettings,
+      kind)`; reader gained shared `ReadPageSettings` (also fixing pre-existing gap: pgSz/pgMar/orientation were
+      written but never read — landscape now round-trips). 7 new tests + single-section regression guard.
 
 ## Consolidation & QA (2026-06-17)
 After Milestones F–U, the work pivoted from features to hardening (user choice: "Consolidate & harden"):
