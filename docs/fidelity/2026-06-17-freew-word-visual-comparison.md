@@ -53,10 +53,10 @@ it). The crashes that initially blocked 12 documents are all fixed — see
 | checkboxes | 1 / 1 | 0.959 | checkbox glyphs missing (below) |
 | PageSpecificHeadFoot | 1 / ? | 0.948¹ | page-specific header/footer |
 | WordWithAttachments | 2 / ? | 0.907¹ | mixed parts + attachments |
-| chartex | 2 / 3 | 0.900¹ | now multi-series + type-correct + legend (fixed this session) |
-| endnotes | 1 / 1 | 0.877 | endnote text at page foot omitted |
-| VariousPictures | 1 / ? | 0.857¹ | multiple embedded pictures |
-| delins | 1 / 1 | 0.746 | line-spacing drift accumulates (below) |
+| chartex | 2 / 3 | 0.894¹ | multi-series + type-correct + legend + gridlines |
+| endnotes | 1 / 1 | 0.890 | note body now drawn at foot; docDefaults spacing |
+| VariousPictures | 1 / ? | 0.895¹ | docDefaults spacing (was 0.857) |
+| delins | 1 / 1 | 0.774 | autospacing block-suppression (was 0.746); residual = WPF/Word line metrics |
 | stress003 | 20 / ? | 0.679¹ | pagination drift |
 | stress023 | 12 / ? | 0.675¹ | pagination drift |
 | stress015 | 5 / ? | 0.667¹ | pagination drift |
