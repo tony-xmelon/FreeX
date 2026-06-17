@@ -376,14 +376,17 @@ mainstream functional surface (F–U) is done; the gaps are **visual fidelity** 
 features**. Same proven pattern (roadmap → isolated agents → integrate/verify/push).
 
 ### Visual track (make it LOOK like Word)
-- [ ] V1. Real Word-style ribbon. Port the app-neutral `RibbonWpfRenderer` (icons via `Free.Shared.Ribbon`
-      Icons/Layout, Large/Medium/Small controls, group dividers/labels) into a shared WPF lib
-      `shared/Free.Shared.Ribbon.Wpf` and render FreeW with it instead of the placeholder TabControl. (The
-      long-deferred B3.) Highest visual impact.
+- [x] V1. Real Word-style ribbon. Ported the app-neutral `RibbonWpfRenderer` (+`RibbonAdaptivePanel`/`RibbonIcon`/
+      `RibbonMetadata`/`RibbonTooltip`) into shared WPF lib `shared/Free.Shared.Ribbon.Wpf`; `MainWindow.BuildRibbon`
+      now renders each tab via `RibbonWpfRenderer.BuildTabContent` (Large/Medium/Small controls, group dividers/labels,
+      vector glyphs) instead of the placeholder TabControl. FreeW supplies its command-id→glyph mapping via
+      `FreeWRibbonIcons.Install()` (sets the shared `RibbonIconFactory.CommandIconKindResolver`, dependency-free
+      `RibbonIconDefinitions` geometry) + `FreeWRibbonResources.xaml`. (The long-deferred B3.) Highest visual impact.
 - [ ] V2. Backstage / File menu. The green File tab → full-window backstage (New/Open/Save/Save As/Print/
       Export PDF/Info/Recent/Options) reusing the shared shell frames where possible. (The deferred D3.)
-- [ ] V3. Paginated WYSIWYG page view. The editor shows discrete pages with margins, page gaps, and the
-      page shadow (like Word's Print Layout) rather than a continuous flow. (The deferred E4 page view.)
+- [x] V3. Paginated WYSIWYG page view. `MainWindow.TogglePrintLayout` puts the editor on a grey workspace; the
+      `DocumentView` page chrome (`ApplyPageChrome`, page shadow, margins) + `PageBreakAdorner` render discrete pages
+      like Word's Print Layout rather than a continuous flow. (The deferred E4 page view.)
 - [ ] V4. Ruler + Word-like status bar. Horizontal/vertical rulers with margin/indent/tab markers; status
       bar showing Page X of Y, section, word count, the existing zoom slider, view switches.
 - [ ] V5. Galleries + KeyTips. Live-preview Styles gallery, theme/colour galleries; Alt-key KeyTips overlay.
