@@ -256,6 +256,23 @@ Avoids the WPF-ribbon-renderer / shell the other session churns. N2 touches the 
 - [x] N4. Document statistics dialog. Pure `DocumentStatistics.Compute` (words/chars/paragraphs/sentences/
       syllables/reading-time/avg-wps/Flesch reading ease); Review > Proofing > Word Count dialog. View only. ~12 tests.
 
+## Milestone O — collaboration + automation (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. O1 touches the docx writer/reader
+(settings.xml); O2/O3/O4 are model/view/pure.
+- [ ] O1. Restrict editing / document protection. `ProtectionSettings` on `TextDocument` (mode:
+      None/ReadOnly/CommentsOnly/TrackChangesOnly); writer emits `word/settings.xml`
+      `w:documentProtection`; reader parses it; editor honours ReadOnly (disables editing); Review >
+      Restrict Editing. Round-trip tests.
+- [ ] O2. Compare documents. A pure paragraph/word diff producing a track-changes result (reusing
+      `RevisionKind` + `TextSearch`): given two `TextDocument`s, return a merged doc whose differences are
+      marked Inserted/Deleted. Review > Compare (open a second .docx). Tested on the pure diff.
+- [ ] O3. Mail merge. Merge fields («Field») as a run mark/field kind; a simple in-doc data source
+      (rows of name→value); preview-by-record (substitute fields) + merge-to-text. Pure substitution
+      helper (tested) + Mailings ribbon. Model + view.
+- [ ] O4. Sort + Convert text↔table (disjoint — editor/model). Sort selected paragraphs / table rows
+      alphabetically (asc/desc, case option); convert delimited text (tab/comma) to a table and a table
+      back to text. Pure helpers (tested) + Insert/Layout commands.
+
 ## Status log (newest first)
 - 2026-06-17: Milestone N complete. Cross-references, content controls (`w:sdt`), quick parts/autotext,
   document statistics — built in parallel by subagents and integrated (N4 disjoint + N1 auto-merged; N3
