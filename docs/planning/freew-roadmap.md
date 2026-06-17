@@ -468,9 +468,14 @@ unit-testable on the X1 harness), and surfacing already-built model features in 
       stamped on a `TableCellTag` and read authoritatively (the colour-equality strip now only applies to
       editor-created cells); an emptied run keeping a comment/content-control marker is preserved as a
       zero-length marked run; `WpfList.Tag` stashes the model `ListKind` so MultiLevel no longer degrades to Number.
-- [ ] Y4. Surface built features in the ribbon. Insert tab: Equation / Chart / WordArt commands (the model +
-      IO already exist from W1/W3/X2); Review tab: Check Accessibility (uses `AccessibilityChecker`); status bar:
-      current-section indicator (now that W4 sections exist). Wire through the existing command registry.
+- [x] Y4. Surface built features in the ribbon. Insert tab gained an Equation/Chart/WordArt group; Review tab a
+      **Check Accessibility** button (runs `AccessibilityChecker`, shows a grouped `AccessibilityReportDialog`); status
+      bar a **Section X of N** indicator (from `TextDocument.Sections`). Commands route through `FreeWRibbonCommands` to
+      new `DocumentView.InsertEquation/InsertChart/InsertWordArt` (mirroring `InsertShape`). **Crucially also added the
+      editor render→commit path for these marks** (`BuildEquationRun`/`BuildChartRun`/`BuildWordArtRun` + 4 `ReadInline`
+      cases) so inserts survive a commit cycle — previously equation/chart/WordArt runs were never rendered in-editor.
+      +3 STA round-trip tests. (Noted limit: DocumentView's commit doesn't preserve `Paragraph.SectionBreak`, so the
+      section count can collapse to "1 of 1" after unsaved in-editor edits; accurate for freshly loaded docs.)
 
 ## Consolidation & QA (2026-06-17)
 After Milestones F–U, the work pivoted from features to hardening (user choice: "Consolidate & harden"):
