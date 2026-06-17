@@ -310,18 +310,25 @@ Q3/Q4 are disjoint (view/model-light).
 ## Milestone R — tables + flow control (next tranche)
 Avoids the WPF-ribbon-renderer / shell the other session churns. R1/R2/R4 touch the docx writer/reader
 in different scopes (tc structure / pPr / tblPr); R3 is disjoint (editor/view).
-- [ ] R1. Table cell merge & split. Horizontal merge (`w:gridSpan`) + vertical merge (`w:vMerge` restart/
-      continue) on `TableCell`; merge selected cells / split a cell; writer/reader; render spanned cells in
-      `DocumentView` (WPF `TableCell.ColumnSpan`/`RowSpan`). Round-trip tests.
-- [ ] R2. Paragraph flow control. `pPr` `w:keepNext` / `w:keepLines` / `w:widowControl` → `ParagraphFormatting`
-      bool fields; writer/reader; a "Line and Page Breaks" affordance applying to the selection. Round-trip tests.
-- [ ] R3. Paste Special (disjoint — editor only). Paste clipboard text as plain text (strip formatting) and
-      "merge formatting"; a small Paste dropdown / Ctrl+Shift+V; pure text-normalization helper (tested).
-- [ ] R4. Table styles. Header-row styling (bold + shaded) + banded-row shading + `w:tblHeader` (repeat
-      header row); a `TableStyle` model option + writer/reader; rendered in `DocumentView`; Table Tools >
-      Table Style. Round-trip tests.
+- [x] R1. Table cell merge & split. `TableCell.GridSpan` + `VerticalMergeState`; writer/reader `w:gridSpan`
+      + `w:vMerge` (restart/continue); `DocumentView` renders ColumnSpan/RowSpan + reconstructs Continue cells
+      on commit; reversible Merge Cells / Split Cell commands; Table Tools buttons. 3 IO + 4 model tests.
+- [x] R2. Paragraph flow control. `ParagraphFormatting.KeepWithNext`/`KeepLinesTogether`/`WidowControl`;
+      writer/reader `w:keepNext`/`w:keepLines`/`w:widowControl`; mapped to WPF `Paragraph.KeepWithNext`/
+      `KeepTogether` (widowControl model-only); Home > Paragraph toggles. 4 tests.
+- [x] R3. Paste Special. Pure `PasteText.Normalize` (CRLF/CR→LF, strip control chars, keep tab/newline);
+      `DocumentView.PastePlainText`/`PasteMergeFormatting` via clipboard + InsertText (undoable); Home >
+      Clipboard Paste Text Only / Merge Formatting + Ctrl+Shift+V. 8 tests.
+- [x] R4. Table styles. `TableFormatting.HeaderRow`/`BandedRows`/`RepeatHeaderRow`; writer emits header
+      bold+shaded + banded shading + `w:tblHeader` + `w:tblLook` (flag persistence); reader recovers flags +
+      strips style fills; `DocumentView` renders header/banded styling; Table Tools toggles. 4 tests.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone R complete. Table cell merge/split, paragraph flow control, paste special, table
+  styles — built in parallel by subagents and integrated (R3 disjoint + R2 auto-merged; R1 auto-merged; R4
+  hand-resolved against R1 across the shared table writer/reader/render — combined gridSpan/vMerge with
+  header/banded styling). Each verified 0/0 build + green before push. FreeW lane now 469 tests (363 model,
+  106 IO). origin/main @ 75ae16d70. **Thirteen milestones (F–R, 52 features) shipped this session.**
 - 2026-06-17: Milestone Q complete. Document fields, multilevel lists, outline tools, custom dictionary —
   built in parallel by subagents and integrated (all four auto-merged clean; Q4's push reconciled the
   other session's FreeX protection-shell work, which rode along). Each verified 0/0 build + green before
