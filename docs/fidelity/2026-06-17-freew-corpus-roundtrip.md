@@ -75,6 +75,15 @@ write and looks "stable" (absent on both sides). The part-inventory diff catches
 
 ## Visual rendering (FreeW's own output)
 
+> **Update (2026-06-17, later):** MS Word (Office16) is now installed and COM-automatable on this machine,
+> so the deferred pixel-diff **has now been run** — see
+> [`2026-06-17-freew-word-visual-comparison.md`](2026-06-17-freew-word-visual-comparison.md). Headline:
+> clean single-page text documents match Word at SSIM ≈ 0.95; gaps concentrate in charts (single series /
+> wrong type), header content + header images, footnote/endnote body text, RTL alignment, and pagination
+> density. The render also surfaced that FreeW's **Print / Print-Preview crashes** on most real documents
+> (`XamlWriter` cannot serialize the editor's non-public paragraph `Tag` types). The original note below is
+> retained for context.
+
 A true **pixel-diff against MS Word could not be run on this machine**: no `WINWORD.EXE` is installed (Word
 COM is unregistered) and no Word-compatible reference renderer (LibreOffice `soffice`) is present, so there is
 no ground-truth Word rendering to diff against. Instead, FreeW's own editor render path (`DocumentView` →
