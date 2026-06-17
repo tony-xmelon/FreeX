@@ -392,7 +392,10 @@ features**. Same proven pattern (roadmap → isolated agents → integrate/verif
 - [ ] V5. Galleries + KeyTips. Live-preview Styles gallery, theme/colour galleries; Alt-key KeyTips overlay.
 
 ### Functional track (hard features)
-- [ ] W1. Equations (OMML `m:oMathPara`/`m:oMath`) — insert/edit basic equations; round-trip.
+- [x] W1. Equations (OMML `m:oMath`) — `Equation`/`MathRun` model carried as an inline `Run.Equation` mark
+      (mirrors images/footnotes/content-controls so it flows through runs, table cells, headers); supports plain
+      text (`m:r`/`m:t`), superscript (`m:sSup`), and fractions (`m:f`). Writer declares `xmlns:m`, emits inline
+      `m:oMath`; reader parses `m:oMath` (unknown constructs degrade to their `m:t` text). 8 new tests (5 IO round-trip + 3 model).
 - [ ] W2. Shapes / text boxes (DrawingML + `w:txbxContent`) — wire the `freew.shapes` placeholder.
 - [ ] W3. Charts (DrawingML chart part) — insert a basic chart with data.
 - [ ] W4. Multiple sections (section breaks continuous/next-page; per-section page setup).
