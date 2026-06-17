@@ -326,18 +326,23 @@ in different scopes (tc structure / pPr / tblPr); R3 is disjoint (editor/view).
 ## Milestone S — typography + references polish (next tranche)
 Avoids the WPF-ribbon-renderer / shell the other session churns. S1 touches the docx writer/reader;
 S2 is pure model; S3/S4 are disjoint (view + model/view).
-- [ ] S1. Tab leaders. Extend `TabStop` with a leader (None/Dots/Dashes/Underline); writer emits
-      `w:tab w:leader="dot|hyphen|underscore"`, reader maps it back; the Paragraph/tab dialog picks a leader.
-      Round-trip tests.
-- [ ] S2. Citation/bibliography styles (pure model). Add APA / MLA / Chicago variants to the `Citations`
-      helper (in-text + bibliography-entry formatting per style); a style selector drives Insert Citation /
-      Bibliography. Pure, tested.
-- [ ] S3. Show formatting marks (disjoint — view). A toggle that renders pilcrows (¶), space dots (·), and
-      tab arrows (→) in the editor; View > Show ¶. View-only (re-render with marker glyphs / adorners).
-- [ ] S4. Table of figures. Generate a "Table of Figures" region from the document's captions (reusing the
-      `Captions` + TOC region pattern); References > Insert Table of Figures. Pure build helper (tested).
+- [x] S1. Tab leaders. `TabLeader` enum (None/Dots/Dashes/Underline) on `TabStop` (defaulted); writer emits
+      `w:tab w:leader="dot|hyphen|underscore"`, reader maps it back; carried verbatim across edit via the
+      paragraph Tag (FlowDocument can't render leaders). 3 tests.
+- [x] S2. Citation/bibliography styles. `CitationStyle` enum (Apa/Mla/Chicago) + style-aware `FormatInText`/
+      `FormatBibliographyEntry`/`BuildBibliography` (heading References/Works Cited/Bibliography); existing
+      no-arg overloads default to APA; References > Citation Style dropdown drives the flow. ~per-style tests.
+- [x] S3. Show formatting marks. AdornerLayer overlay drawing ¶ at paragraph ends, · for spaces, → for tabs
+      (computed from text geometry, never added to the FlowDocument so the model can't be corrupted); pure
+      `FormattingMarks` helper; View > Show ¶ stateful toggle. 7 tests.
+- [x] S4. Table of figures. Pure `TableOfFigures.Build` (heading + caption entries per label, Figure/Table)
+      + `EnsureStyles` + marker; References > Insert/Update Table of Figures (reversible, mirrors TOC). 10 tests.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone S complete. Tab leaders, citation styles (APA/MLA/Chicago), show formatting marks,
+  table of figures — built in parallel by subagents and integrated (all four auto-merged clean). Each
+  verified 0/0 build + green before push. FreeW lane now 497 tests (388 model, 109 IO). origin/main @
+  e80635bf5. **Fourteen milestones (F–S, 56 features) shipped this session.**
 - 2026-06-17: Milestone R complete. Table cell merge/split, paragraph flow control, paste special, table
   styles — built in parallel by subagents and integrated (R3 disjoint + R2 auto-merged; R1 auto-merged; R4
   hand-resolved against R1 across the shared table writer/reader/render — combined gridSpan/vMerge with
