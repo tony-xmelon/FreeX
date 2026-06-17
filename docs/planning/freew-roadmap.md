@@ -428,9 +428,13 @@ features**. Same proven pattern (roadmap → isolated agents → integrate/verif
 With the first parity wave (V1–V5, W1–W4) done, wave 2 deepens parity with the remaining mainstream Word
 surfaces and finally stands up an App.Host test harness. Still excluding cloud/proprietary (online video,
 translate/research services, VBA/macros, 3D models).
-- [ ] X1. App.Host test harness. New `freew/FreeW.App.Host.Tests` (STA xUnit) added to `FreeW.slnx`; cover
-      `DocumentView.Render`/`CommitToModel` round-trips and address the two HIGH QA-backlog findings recorded in
-      the Consolidation & QA section. Foundational — unblocks testing the WPF render/commit path.
+- [x] X1. App.Host test harness. New `freew/FreeW.App.Host.Tests` (STA via `Xunit.StaFact`/`[StaFact]`) added to
+      `FreeW.slnx` (CI already covers it) — 15 tests over `DocumentView.Render`/`CommitToModel`. **Both HIGH QA-backlog
+      findings fixed (confirmed real, red→green):** (1) `Run.Tag` collision where revision/comment/content-control
+      markers overwrote each other → composite `RunMarkers(Revision,Comment,Control)` record merged via `AddMarker`;
+      (2) collapsed-heading index drift where visible-block ordinals addressed wrong `_model.Blocks` slots →
+      `ModelIndexFromVisible` helper in `SelectedModelParagraphIndices`/`InsertComment`/`MarkSelectionAsRevision`
+      (plus a latent fix: `Paragraph.StyleId` now round-trips on `ParagraphTag`, previously dropped on commit).
 - [x] X2. WordArt / decorative text. Dedicated `WordArt` record (`Text` + `WordArtStyle` preset FillBlue/GradientFill/
       Outline/Shadow + font size) carried as inline `Run.WordArt`. Writer emits a `wps:wsp` text box whose run `a:rPr`
       carries the preset's DrawingML effect (`a:solidFill`/`a:gradFill`/`a:ln`/`a:effectLst`), reusing the shape docPr
@@ -462,19 +466,19 @@ After Milestones F–U, the work pivoted from features to hardening (user choice
   `TableOfFiguresEntry` deletable); `MailMerge`/`DocumentCompare` deep-clones dropped `Run.EndnoteId`/
   `HyperlinkTooltip`, `TableCell.GridSpan`/`VerticalMerge`, and several `PageSettings` fields.
 
-### QA backlog (confirmed, deferred — all in `FreeW.App.Host`, which has no test assembly)
-These are real defects the DocumentView audit confirmed but which sit in delicate WPF render/commit code
-that cannot be unit-tested at the current test tier; fix carefully (ideally after adding an App.Host test
-harness). Proposed fixes from the audit:
-- **[HIGH] Run `Tag` collision** (`DocumentView.BuildRun`/`ApplyCommentMarker`/`ApplyContentControlMarker`):
-  revision/comment/content-control markers each overwrite `WpfRun.Tag`, so a run that is both commented and
-  tracked-changed (or a content control over either) loses one mark on the next `CommitToModel`. Fix: a
-  composite marker record (or merge into the existing Tag) + recover every facet in `ReadInline`.
-- **[HIGH] Collapsed-heading index drift** (`InsertComment`, `MarkSelectionAsRevision`,
-  `SelectedModelParagraphIndices`/`FormatSelectedModelParagraphs`): visible-ordinal indices are used to
-  index `_model.Blocks` after `MergeHiddenBlocks` re-splices hidden blocks, so paragraph commands mis-target
-  when a heading is collapsed *before* the selection. Fix: map visible→model index through `_hiddenBlocks`
-  offsets, or capture the target paragraph by reference before commit.
+### QA backlog (all in `FreeW.App.Host`) — App.Host now HAS a test assembly (parity X1)
+The DocumentView audit confirmed these. **Both HIGH items are now FIXED** with regression tests, once the
+App.Host STA test harness landed (parity item X1, `freew/FreeW.App.Host.Tests`):
+- **[HIGH — FIXED, X1] Run `Tag` collision** (`DocumentView.BuildRun`/`ApplyCommentMarker`/`ApplyContentControlMarker`):
+  revision/comment/content-control markers each overwrote `WpfRun.Tag`, so a run that is both commented and
+  tracked-changed (or a content control over either) lost one mark on the next `CommitToModel`. Fixed with a
+  composite `RunMarkers(Revision,Comment,Control)` record merged via `AddMarker`; `ReadInline` recovers every facet.
+- **[HIGH — FIXED, X1] Collapsed-heading index drift** (`InsertComment`, `MarkSelectionAsRevision`,
+  `SelectedModelParagraphIndices`): visible-ordinal indices addressed `_model.Blocks` after `MergeHiddenBlocks`
+  re-splices hidden blocks, so paragraph commands mis-targeted when a heading was collapsed *before* the selection.
+  Fixed with a `ModelIndexFromVisible` helper (visible→model via `_hiddenBlocks` offsets); also fixed a latent
+  defect where `Paragraph.StyleId` was dropped on commit (now round-trips on `ParagraphTag`).
+Remaining (lower priority, now unit-testable on the new harness):
 - **[MED]** Field run inside a hyperlink renders un-linked (`BuildFieldRun` returns before hyperlink
   wrapping) → link lost on commit. **[MED]** Real cell shading equal to the header/banded style fill colour
   is stripped on commit (colour-equality heuristic). **[LOW]** Emptied content-control/comment run dropped
