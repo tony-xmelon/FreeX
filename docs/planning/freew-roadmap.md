@@ -457,9 +457,12 @@ unit-testable on the X1 harness), and surfacing already-built model features in 
       `dgm` parts (data/layout/style/colors) + an inline `w:drawing`; model `Run.SmartArt`; round-trip the node text.
 - [ ] Y2. OLE / embedded objects. Embed a binary object (`w:object`/`o:OLEObject` + an embedded part with an
       icon image fallback); model `Run.EmbeddedObject`; round-trip the embedded bytes + ProgId.
-- [ ] Y3. App.Host MED/LOW QA fixes (on the X1 test harness). Field-run-inside-hyperlink loses its link;
-      real cell shading equal to header/banded fill is stripped on commit; emptied content-control/comment run
-      dropped; MultiLevel list degrades to Number after an in-editor edit. Fix with App.Host regression tests.
+- [x] Y3. App.Host MED/LOW QA fixes (on the X1 test harness). **All four defects were real and are fixed**
+      (each red→green-verified via git-stash; +9 STA regression tests in `QaBacklogRegressionTests.cs`):
+      field-run-inside-hyperlink now wraps in `BuildHyperlink` (link survives); author-set cell shading is
+      stamped on a `TableCellTag` and read authoritatively (the colour-equality strip now only applies to
+      editor-created cells); an emptied run keeping a comment/content-control marker is preserved as a
+      zero-length marked run; `WpfList.Tag` stashes the model `ListKind` so MultiLevel no longer degrades to Number.
 - [ ] Y4. Surface built features in the ribbon. Insert tab: Equation / Chart / WordArt commands (the model +
       IO already exist from W1/W3/X2); Review tab: Check Accessibility (uses `AccessibilityChecker`); status bar:
       current-section indicator (now that W4 sections exist). Wire through the existing command registry.
@@ -492,11 +495,10 @@ App.Host STA test harness landed (parity item X1, `freew/FreeW.App.Host.Tests`):
   re-splices hidden blocks, so paragraph commands mis-targeted when a heading was collapsed *before* the selection.
   Fixed with a `ModelIndexFromVisible` helper (visible→model via `_hiddenBlocks` offsets); also fixed a latent
   defect where `Paragraph.StyleId` was dropped on commit (now round-trips on `ParagraphTag`).
-Remaining (lower priority, now unit-testable on the new harness):
-- **[MED]** Field run inside a hyperlink renders un-linked (`BuildFieldRun` returns before hyperlink
-  wrapping) → link lost on commit. **[MED]** Real cell shading equal to the header/banded style fill colour
-  is stripped on commit (colour-equality heuristic). **[LOW]** Emptied content-control/comment run dropped
-  on commit; MultiLevel list degrades to Number after an in-editor edit (both documented best-effort limits).
+~~Remaining (lower priority)~~ — **ALL FIXED in parity Y3** (with 9 STA regression tests): field-run-in-hyperlink
+now wraps in `BuildHyperlink`; real cell shading is stamped on `TableCellTag` and read authoritatively (colour-
+equality strip restricted to editor-created cells); emptied comment/content-control run preserved as a zero-length
+marked run; `WpfList.Tag` carries the model `ListKind` so MultiLevel no longer degrades to Number on edit.
 
 ## Status log (newest first)
 - 2026-06-17: Consolidation & QA. FreeW CI lane + README/feature catalog + Windows packaging shipped; a
