@@ -390,8 +390,12 @@ features**. Same proven pattern (roadmap → isolated agents → integrate/verif
 - [x] V3. Paginated WYSIWYG page view. `MainWindow.TogglePrintLayout` puts the editor on a grey workspace; the
       `DocumentView` page chrome (`ApplyPageChrome`, page shadow, margins) + `PageBreakAdorner` render discrete pages
       like Word's Print Layout rather than a continuous flow. (The deferred E4 page view.)
-- [ ] V4. Ruler + Word-like status bar. Horizontal/vertical rulers with margin/indent/tab markers; status
-      bar showing Page X of Y, section, word count, the existing zoom slider, view switches.
+- [x] V4. Ruler + Word-like status bar. `Editing/Ruler.cs` — code-built horizontal ruler (inch tick scale, shaded
+      margin zones from `PageSettings`, read-only left/right/first-line indent markers + tab ticks from the caret
+      paragraph) and a thinner vertical ruler; both zoom-scaled to the page band, shown in Print-Layout mode (drag
+      not wired — read-only is the milestone). `DocumentView` gained `LayoutChanged`, `CurrentParagraphFormatting`,
+      `PageInfo()`. Status bar enhanced with **Page X of Y** + a Read-Mode/Print-Layout view-switch cluster (existing
+      zoom slider kept). (Current-section indicator omitted gracefully — now that W4 landed, a future polish item.)
 - [ ] V5. Galleries + KeyTips. Live-preview Styles gallery, theme/colour galleries; Alt-key KeyTips overlay.
 
 ### Functional track (hard features)
