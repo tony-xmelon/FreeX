@@ -53,7 +53,7 @@ it). The crashes that initially blocked 12 documents are all fixed — see
 | checkboxes | 1 / 1 | 0.959 | checkbox glyphs missing (below) |
 | PageSpecificHeadFoot | 1 / ? | 0.948¹ | page-specific header/footer |
 | WordWithAttachments | 2 / ? | 0.907¹ | mixed parts + attachments |
-| chartex | 2 / 3 | 0.881¹ | chart rendering differs sharply (below) |
+| chartex | 2 / 3 | 0.900¹ | now multi-series + type-correct + legend (fixed this session) |
 | endnotes | 1 / 1 | 0.877 | endnote text at page foot omitted |
 | VariousPictures | 1 / ? | 0.857¹ | multiple embedded pictures |
 | delins | 1 / 1 | 0.746 | line-spacing drift accumulates (below) |
@@ -82,29 +82,37 @@ concentrated in specific feature areas below.
 
 ## Visual fidelity gaps (rendered docs)
 
-1. **Charts — only the first series, wrong type, no axes/legend** (`chartex`). Word draws a 3-series
-   column chart (legend, value axis, gridlines) and a real 3-series **line** chart. FreeW draws a
-   **single-series column chart for both** — the line chart renders as columns, the 2nd and 3rd data
-   series are absent, and there is no value axis, no gridlines, and no series legend. Highest-impact
-   visual gap found.
-2. **Header content + header images dropped** (`stress010`, an RTL Arabic CEDAW report). Word renders
-   the "CEDAW" letterhead block and the UN emblem in the page header; FreeW's first page omits the entire
-   header block and emblem. Matches the round-trip doc's header-read and images-in-header gaps.
-3. **RTL / bidirectional alignment** (`stress010`). Word right-aligns the Arabic content and TOC; FreeW's
-   layout does not fully mirror to RTL. Bidi layout is a previously-unflagged visual gap.
+- **Charts — FIXED this session.** Originally FreeW drew a single-series column chart regardless of kind
+  (the `chartex` line chart rendered as columns, series 2–3 absent, no axis/legend). `BuildChartRun` now
+  renders **all** series and honours the kind (grouped columns / horizontal bars / line / pie–doughnut),
+  with an Office palette, category-axis labels, a baseline, and a legend. Verified: `chartex`'s 3-series
+  column chart and 3-series line chart now both match Word.
+
+Remaining gaps (require larger, multi-layer work — see [follow-ups](#suggested-follow-ups)):
+
+1. **Pagination density differs from Word.** FreeW consistently produces *fewer* pages: `stress010`
+   59 vs 118, `stress004` 55 vs more, `saut_page` 1 vs 3, `chartex` 2 vs 3. `saut_page` (a page-break
+   stress fixture) collapses to a single FreeW page. FreeW's line-height / page-fill metrics pack more
+   content per page than Word, and empty page-break-only pages are not reproduced. **This is what drags
+   the multi-page SSIM scores down** (the per-page diff misaligns once page counts diverge).
+2. **Header content + header images dropped** (`stress010`, an RTL Arabic CEDAW report). Word renders the
+   "CEDAW" letterhead block and the UN emblem in the page header; FreeW's first page omits the entire
+   header block and emblem. Matches the round-trip doc's header-read and images-in-header gaps. (Simple
+   single-section headers/footers *do* render and match — `headerFooter` SSIM 0.994.)
+3. **RTL / bidirectional alignment** (`stress010`). Word right-aligns the Arabic content and TOC; FreeW
+   does not mirror to RTL. Newly surfaced here; needs **model + reader + writer + view** support
+   (`w:bidi`/`w:rtl` are not modelled today), so it is a feature, not a render tweak.
 4. **Footnote / endnote text not shown at page foot** (`footnotes`, `endnotes`, `table_footnotes`). The
-   superscript reference marker renders correctly, but the note *body* that Word prints at the bottom of
-   the page (with separator) is absent — a documented `FlowDocument` limitation, confirmed visually.
-5. **Content-control checkbox glyphs not drawn** (`checkboxes`). The ☐/☑ glyphs are blank in FreeW;
-   surrounding text, table and text-box render faithfully.
-6. **Pagination density differs from Word.** FreeW consistently produces *fewer* pages: `stress010`
-   59 vs 118, `saut_page` 1 vs 3, `chartex` 2 vs 3. `saut_page` (a page-break stress fixture) collapses
-   to a single FreeW page. FreeW's line-height / page-fill metrics pack more content per page than Word,
-   and empty page-break-only pages are not reproduced.
-7. **Line-spacing vertical drift** (`delins`). Content matches (tracked-change insertions in red
-   underline, deletions in red strikethrough, blue hyperlinks all correct), but FreeW's slightly tighter
-   line spacing makes the two renders drift apart progressively down the page — the main reason its SSIM
-   is 0.75 despite matching content.
+   superscript reference marker renders correctly, but the note *body* Word prints at the bottom of the
+   page (with separator) is absent — a `FlowDocument` limitation; reproducing it needs a custom
+   page-foot paginator pass that maps notes to the page their markers fall on.
+5. **Content-control checkbox glyphs not drawn** (`checkboxes`). The reader *does* recognise `w14:checkbox`
+   SDTs, but the wrapped run's text/font doesn't yield a visible ☐/☒; needs render-time glyph synthesis
+   from the checked state in a symbol font.
+6. **Line-spacing vertical drift** (`delins`). Content matches (tracked-change insertions in red underline,
+   deletions in red strikethrough, blue hyperlinks all correct), but FreeW's slightly tighter line spacing
+   makes the two renders drift apart progressively down the page — the main reason its SSIM is 0.75 despite
+   matching content. (Same root cause as pagination density.)
 
 ## Bugs fixed this session
 
@@ -136,21 +144,25 @@ from 14 → **26 / 26** corpus documents:
    `DecodePng`, so an undecodable icon (WMF/EMF/uncommon codec) blanked the whole document. **Fixed** by
    decoding through a guarded `TryDecodeRaster` with a ProgID-text fallback, mirroring `DecodeImage`.
 
-All four are committed with `FreeW.slnx` building 0-warning and the App.Host test lane green.
+All four are committed with `FreeW.slnx` building 0-warning and the App.Host test lane green. **Chart
+rendering** (all series + correct type + legend) was also fixed this session — see
+[Visual fidelity gaps](#visual-fidelity-gaps-rendered-docs).
 
 ## Suggested follow-ups (priority order)
 
-*(The four crashes that initially blocked rendering — XamlWriter Tag, header/footer `∞`, negative
-`Block.Margin`, image-decode — were all fixed this session; see [Bugs fixed](#bugs-fixed-this-session).
-The remaining items are visual-fidelity gaps, not crashes.)*
+*(Everything that blocked rendering — the four crashes and the single-series/wrong-type chart — was fixed
+this session. FreeW now renders 26/26 corpus docs. The remaining items are larger multi-layer features,
+not quick fixes.)*
 
-1. **Chart rendering** — honor chart type (line vs column), render all data series, and add value axis +
-   legend, or at minimum render additional series. (Highest-impact remaining visual gap.)
-2. **Pagination density** — FreeW packs ≈ half Word's page count on the stress docs (line-height /
+1. **Pagination density** — FreeW packs ≈ half Word's page count on the stress docs (line-height /
    page-fill metrics; empty page-break-only pages not reproduced). This is what drags the multi-page SSIM
-   scores down; closing it would both improve fidelity and make the per-page diff meaningful.
-3. **Header content/images, footnote/endnote body text, checkbox glyphs, RTL alignment** — visual gaps
-   already partly tracked in the round-trip doc; this run confirms them against Word ground truth.
+   scores down; closing it would both improve fidelity and make the per-page diff meaningful. The single
+   biggest remaining lever, but deep (WPF line-metric tuning).
+2. **RTL / bidirectional layout** — not modelled at all today; needs model + reader (`w:bidi`/`w:rtl`) +
+   writer + view (`FlowDirection`) support.
+3. **Header content/images on multi-section docs** and **footnote/endnote body text at the page foot** —
+   reader/paginator work already partly tracked in the round-trip doc.
+4. **Checkbox glyph synthesis** — render `w14:checkbox` controls with a state-derived ☐/☒ in a symbol font.
 4. **Word-rejected `deep-table-cell.docx`** — Word deems it corrupt; FreeW opens it. Not actionable for
    FreeW, noted for completeness.
 
