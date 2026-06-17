@@ -37,19 +37,24 @@ write and looks "stable" (absent on both sides). The part-inventory diff catches
   **Post-fix corpus result:** every file with *real* header/footer content round-trips it (`PageSpecificHeadFoot`,
   `stress008/010/015/018/023`, …). The only remaining header/footer "drops" are **empty auto-created parts**
   (`checkboxes` 6 empty, `saut_page` 2 empty) that FreeW correctly does not re-emit.
-- **Media (images)** dropped in 4 files (`chartex`, `testComment`, `stress010`, `stress015`). The header-image
-  fix did not change these — the images live in **comment** or **chart** parts, not headers; FreeW reads
-  inline pictures only from the body and header/footer run flows, not from comments/charts. *(Open follow-up.)*
+- **Non-PNG image formats** — **FIXED.** `InlineImage` was PNG-only; it now carries an `ImageFormat`
+  (Png/Jpeg/Gif/Bmp/Tiff/Emf/Wmf) and round-trips the original bytes + extension + content-type. `VariousPictures`
+  (jpeg/png/wmf/emf/pict) no longer drops media. The editor also renders these: WIC for raster formats and
+  **GDI+ metafile rendering** for WMF/EMF, with a crash-proof **placeholder** fallback for any undecodable image
+  (previously an undecodable image threw `NotSupportedException` and failed the whole document open).
+- **Media (images)** still dropped in 4 files (`chartex`, `testComment`, `stress010`, `stress015`). These images
+  live in **comment** or **chart** parts, not the body/header/footer run flows FreeW reads. *(Open follow-up.)*
 - **Numbering definitions** dropped in 3 files (`FieldCodes`, `stress010`, `stress023`). FreeW writes its
   own `numbering.xml` only for paragraphs it modeled as lists; original numbering not surfaced as a FreeW
   list is dropped (can change list rendering). *(Open follow-up.)*
 
-### Subset limitations (low impact / expected)
-- **`settings.xml` / `webSettings.xml`** dropped in ~all files. FreeW emits `settings.xml` only for the
-  features it models (protection, hyphenation, odd/even, background, embedded fonts) and never preserves
-  the original's other compatibility/default settings; `webSettings.xml` is not modeled at all.
-- **`customXml`** data islands (~10 files) and the **`glossary`** (building-blocks) document
-  (`PageSpecificHeadFoot`) are not modeled and are dropped.
+### Subset limitations
+- **`settings.xml` / `webSettings.xml` / `customXml`** — **FIXED** via a preserve-and-re-emit pass-through
+  (`TextDocument.Preserved`): the original `settings.xml` is captured and FreeW's modelled toggles are
+  **overlaid** in CT_Settings schema order (so unmodelled compat/default settings survive); `webSettings.xml`
+  and `customXml/*` (item + itemProps + rels) round-trip verbatim with their content-types/relationships.
+  Authored-from-scratch docs still emit none of these (byte-equivalent). Closed these drops across all 26 files.
+- The **`glossary`** (building-blocks AutoText) document (`PageSpecificHeadFoot`) is still not modelled/dropped (niche).
 
 ### Not actual loss
 - Several `footnotes.xml` / `endnotes.xml` drops are **empty separator-only parts** (the conventional
@@ -87,8 +92,8 @@ Observed **rendering gaps** (FreeW's live view, independent of round-trip):
   (the documented best-effort marker limitation).
 - **Checkbox content-control glyphs** (☐/☑) are not drawn (the surrounding text/table is faithful).
 - Table borders are drawn when the source defines them, but a borderless source table shows no gridlines.
-- One embedded image format failed to decode offscreen (`VariousPictures` → WPF `NotSupportedException`,
-  likely WMF/EMF or an unusual codec) — worth a reader-side image-format audit.
+- ~~One embedded image format failed to decode offscreen (`VariousPictures`)~~ — **FIXED**: `VariousPictures`
+  (jpeg/png/wmf/emf/pict) now renders all five images (WIC + GDI+ metafile decode; placeholder on any failure).
 
 ### Re-running the visual comparison once a Word engine is available
 1. Render ground truth: `soffice --headless --convert-to pdf <doc>` (LibreOffice) **or** Word
