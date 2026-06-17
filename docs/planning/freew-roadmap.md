@@ -505,9 +505,12 @@ cloud/proprietary (VBA, IRM, online services, 3D models).
 ## MS Word parity — wave 5: deep fidelity (2026-06-17 →)
 The mainstream surface is complete (waves 1–4). Wave 5 deepens the fidelity of already-shipped objects so they
 are *truly* Word-compatible, not just data-faithful. Still excluding cloud/proprietary.
-- [ ] F1. Editable chart data + richer chart types. Emit an embedded companion workbook
-      (`word/embeddings/Microsoft_Excel_Worksheet*.xlsx`) + `c:externalData r:id` so Word's "Edit Data" works
-      (today charts are cache-only); add scatter/area/doughnut kinds + legend + axis titles. Round-trip.
+- [x] F1. Editable chart data + richer chart types. Each chart now writes a minimal embedded companion workbook
+      `word/embeddings/Microsoft_Excel_Worksheet{N}.xlsx` (self-contained, `inlineStr` cells, no FreeX dep) + a part-local
+      `c:externalData r:id` in `word/charts/_rels/chartN.xml.rels`, so Word's "Edit Data" maps columns (caches stay
+      authoritative, `autoUpdate=0`). Added `ChartKind` Scatter/Area/Doughnut (`c:scatterChart` xVal/yVal, `c:areaChart`,
+      `c:doughnutChart`) + optional `ShowLegend` + category/value axis titles; reader maps all back. New tests for embedded
+      workbook presence + each new kind + legend/axis titles + defaults-off regression.
 - [x] F2. SmartArt drawing geometry. Each diagram now emits a fifth part `word/diagrams/drawingN.xml` (`dsp:drawing`,
       content-type Override) holding one positioned `dsp:sp` per node (text + non-zero `a:xfrm`), wired via a
       `diagramDrawing` relationship in `word/diagrams/_rels/dataN.xml.rels` + a `dgm:dataModelExt` in the data model, so
