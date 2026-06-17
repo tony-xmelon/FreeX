@@ -276,19 +276,26 @@ Avoids the WPF-ribbon-renderer / shell the other session churns. O1 touches the 
 ## Milestone P — references + layout finishing (next tranche)
 Avoids the WPF-ribbon-renderer / shell the other session churns. P1/P4 touch the docx writer/reader;
 P2/P3 are model/view.
-- [ ] P1. Endnotes. Mirror footnotes at the document end: `Endnote` store + `Run.EndnoteId`; writer emits
-      `word/endnotes.xml` + content type + rel + `w:endnoteReference`; reader parses it; superscript marker
-      (roman/i style is a plus); Insert > Endnote. Round-trip tests.
-- [ ] P2. Index. Mark index entries (an `XE` run mark or a stored entry list) and generate an alphabetical
-      index region (pure build helper from the marked entries → styled paragraphs). References > Mark Entry
-      + Insert Index. Tested on the pure build.
-- [ ] P3. Indentation controls (disjoint — editor/model). Increase/Decrease Indent, and a paragraph dialog
-      for left/right/first-line/hanging indents (model already has the indent fields); applied to the
-      selection through the bus. Pure indent-step helper (tested).
-- [ ] P4. Line numbers. `sectPr/w:lnNumType` (continuous, restart-each-page, countBy) → `PageSettings`
-      fields; writer/reader; show line numbers in print preview margin; Layout > Line Numbers. Round-trip tests.
+- [x] P1. Endnotes. `Endnote` store + `Run.EndnoteId`/`EndnoteReference`/`NextEndnoteId` (mirrors
+      footnotes); writer emits `word/endnotes.xml` + content type + rel + superscript `w:endnoteReference`;
+      reader parses it; superscript marker preserved across edit; References > Endnote. Footnotes + endnotes
+      coexist. 4 tests.
+- [x] P2. Index. `IndexEntry` + `TextDocument.IndexEntries` side store + `IndexHeading`/`IndexEntry` styles;
+      pure `DocumentIndex.Build` (sorted, deduped, heading + entries); References > Mark Entry + Insert Index
+      (reversible). Round-trips as styled paragraphs. 12 tests.
+- [x] P3. Indentation controls. Pure `Indentation` (Increase/Decrease step + clamp, SetIndents with signed
+      first-line = hanging convention); `DocumentView` Increase/Decrease Indent + Set Indents over the
+      selection (reversible); Home > Paragraph buttons + Paragraph dialog. 7 tests.
+- [x] P4. Line numbers. `PageSettings.LineNumberMode` (None/Continuous/RestartEachPage) + `LineNumberCountBy`;
+      writer/reader `sectPr/w:lnNumType` (countBy + restart); print preview draws margin line numbers; Layout
+      > Line Numbers cycles the mode. 5 tests.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone P complete. Endnotes, index, indentation controls, line numbers — built in
+  parallel by subagents and integrated (all four auto-merged clean — P2's merge also reconciled the other
+  session's FreeX work, which rode along without conflict). Each verified 0/0 build + green before push.
+  FreeW lane now 393 tests (307 model, 86 IO). origin/main @ 1b52d0148. **Eleven milestones (F–P, 44
+  features) shipped this session.**
 - 2026-06-17: Milestone O complete. Restrict editing, document compare, mail merge, sort + convert
   text/table — built in parallel by subagents and integrated (O4 disjoint + O3 auto-merged; O1
   auto-merged; O2 hand-resolved against O1 on the Review-tab ribbon groups + command classes). Each
