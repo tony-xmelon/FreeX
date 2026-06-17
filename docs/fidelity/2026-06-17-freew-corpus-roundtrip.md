@@ -44,9 +44,13 @@ write and looks "stable" (absent on both sides). The part-inventory diff catches
   (previously an undecodable image threw `NotSupportedException` and failed the whole document open).
 - **Media (images)** still dropped in 4 files (`chartex`, `testComment`, `stress010`, `stress015`). These images
   live in **comment** or **chart** parts, not the body/header/footer run flows FreeW reads. *(Open follow-up.)*
-- **Numbering definitions** dropped in 3 files (`FieldCodes`, `stress010`, `stress023`). FreeW writes its
-  own `numbering.xml` only for paragraphs it modeled as lists; original numbering not surfaced as a FreeW
-  list is dropped (can change list rendering). *(Open follow-up.)*
+- **Numbering definitions** — **partly fixed.** FreeW now preserves the original `numbering.xml` + paragraphs'
+  `w:numPr` (under a disjoint `numId` range, alongside FreeW's own ids) when a paragraph carries a *direct*
+  `numPr` FreeW doesn't model as a list. *Corpus residual:* the 3 corpus files still dropping numbering use a
+  **different pattern** — `FieldCodes`/`stress023` reference numbering only from **styles.xml** (style-level
+  numbering; `numId=0` in the body, `numId=2/10` in styles), which the direct-`numPr` pass-through doesn't reach;
+  `stress010` has 6 body `numPr` and warrants a separate look. **Style-level numbering preservation is the open
+  deeper follow-up.**
 
 ### Subset limitations
 - **`settings.xml` / `webSettings.xml` / `customXml`** — **FIXED** via a preserve-and-re-emit pass-through
