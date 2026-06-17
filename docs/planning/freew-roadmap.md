@@ -369,7 +369,46 @@ U1/U4 are disjoint (pure + view).
 - [x] U4. Bookmark manager + Go To. Pure `Bookmarks.List`/`RemoveBookmark`; Bookmark Manager dialog
       (Go To via `BringBlockIntoView` / Delete) + the Find/Replace Go To now lists bookmarks; Insert > Links. 6 tests.
 
+## Consolidation & QA (2026-06-17)
+After Milestones F–U, the work pivoted from features to hardening (user choice: "Consolidate & harden"):
+- **CI lane** — `.github/workflows/freew-ci.yml` builds `FreeW.slnx` Release (0 warnings enforced) + runs
+  the FreeW test lane on `windows-latest`, gating PRs and direct pushes that touch FreeW/shared.
+- **README / feature catalog** — `freew/README.md` (architecture, grouped feature catalog, docx fidelity,
+  build/test, honest limitations). Sibling-app pointer added to the root README.
+- **Windows packaging** — `freew/build/publish-windows.ps1` (self-contained `win-x64` publish + versioned
+  zip to `artifacts/`, verified locally ~66 MB) + `.github/workflows/freew-release.yml` (`workflow_dispatch`)
+  + `freew/build/README.md`.
+- **QA pass** — three read-only audit agents (IO / model+commands / DocumentView). Fixed (with 5 regression
+  tests): `w:rPr` children were emitted out of CT_RPr schema order (Word-strict-invalid for common combos;
+  the order-independent reader hid it); footnote/endnote markers discarded run formatting; all inline
+  pictures shared `pic:cNvPr id=0`; the `StyleManager` built-in guard named a non-existent style (left
+  `TableOfFiguresEntry` deletable); `MailMerge`/`DocumentCompare` deep-clones dropped `Run.EndnoteId`/
+  `HyperlinkTooltip`, `TableCell.GridSpan`/`VerticalMerge`, and several `PageSettings` fields.
+
+### QA backlog (confirmed, deferred — all in `FreeW.App.Host`, which has no test assembly)
+These are real defects the DocumentView audit confirmed but which sit in delicate WPF render/commit code
+that cannot be unit-tested at the current test tier; fix carefully (ideally after adding an App.Host test
+harness). Proposed fixes from the audit:
+- **[HIGH] Run `Tag` collision** (`DocumentView.BuildRun`/`ApplyCommentMarker`/`ApplyContentControlMarker`):
+  revision/comment/content-control markers each overwrite `WpfRun.Tag`, so a run that is both commented and
+  tracked-changed (or a content control over either) loses one mark on the next `CommitToModel`. Fix: a
+  composite marker record (or merge into the existing Tag) + recover every facet in `ReadInline`.
+- **[HIGH] Collapsed-heading index drift** (`InsertComment`, `MarkSelectionAsRevision`,
+  `SelectedModelParagraphIndices`/`FormatSelectedModelParagraphs`): visible-ordinal indices are used to
+  index `_model.Blocks` after `MergeHiddenBlocks` re-splices hidden blocks, so paragraph commands mis-target
+  when a heading is collapsed *before* the selection. Fix: map visible→model index through `_hiddenBlocks`
+  offsets, or capture the target paragraph by reference before commit.
+- **[MED]** Field run inside a hyperlink renders un-linked (`BuildFieldRun` returns before hyperlink
+  wrapping) → link lost on commit. **[MED]** Real cell shading equal to the header/banded style fill colour
+  is stripped on commit (colour-equality heuristic). **[LOW]** Emptied content-control/comment run dropped
+  on commit; MultiLevel list degrades to Number after an in-editor edit (both documented best-effort limits).
+
 ## Status log (newest first)
+- 2026-06-17: Consolidation & QA. FreeW CI lane + README/feature catalog + Windows packaging shipped; a
+  read-only QA audit (3 agents) fixed 6 confirmed IO/model defects (rPr schema order, footnote/endnote
+  marker formatting, cNvPr ids, StyleManager guard, clone-drops) with 5 regression tests; two HIGH +
+  some MED/LOW App.Host findings recorded as a backlog (no App.Host test tier yet). FreeW lane now 594
+  tests (465 model, 129 IO). origin/main @ ae96966ad.
 - 2026-06-17: Milestone U complete. Change case, image alt text + alignment, insert text from file,
   bookmark manager + Go To — built in parallel by subagents and integrated (all four auto-merged clean;
   U1's push reconciled the other session's FreeX conditional-format work). Each verified 0/0 build + green
