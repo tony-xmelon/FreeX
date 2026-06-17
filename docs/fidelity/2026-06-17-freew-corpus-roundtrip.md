@@ -59,6 +59,38 @@ write and looks "stable" (absent on both sides). The part-inventory diff catches
    to assert there — a "pass-through unknown parts" strategy would close most of the remaining gap cheaply.
 4. (Low) custom XML / glossary / webSettings pass-through.
 
+## Visual rendering (FreeW's own output)
+
+A true **pixel-diff against MS Word could not be run on this machine**: no `WINWORD.EXE` is installed (Word
+COM is unregistered) and no Word-compatible reference renderer (LibreOffice `soffice`) is present, so there is
+no ground-truth Word rendering to diff against. Instead, FreeW's own editor render path (`DocumentView` →
+`FlowDocument` → page rasterization) was used to render the first page of representative corpus documents to
+PNG, to assess whether FreeW lays these real-world files out sensibly.
+
+What rendered **well** (faithful, Word-like):
+- Body text + run formatting (bold/italic), bullet and **numbered lists incl. restarts** (`ComplexNumberedLists`
+  shows 1–12 then a restarted 1–2 correctly).
+- **Tracked changes** in Word's "All Markup" style — insertions underlined in red, deletions struck through in
+  red — alongside blue underlined hyperlinks (`delins`).
+- **Footnote reference markers** as superscripts (`footnotes`, `table_footnotes`).
+- **Tables with borders** (`checkboxes`).
+
+Observed **rendering gaps** (FreeW's live view, independent of round-trip):
+- Footnote/endnote **text is not shown at the page foot** — only the reference marker (a WPF `FlowDocument`
+  limitation; the note content still round-trips in the model/docx).
+- **Multilevel** list children render as flat decimal (`2-a` → "3.") rather than Word's accumulated `2.1` text
+  (the documented best-effort marker limitation).
+- **Checkbox content-control glyphs** (☐/☑) are not drawn (the surrounding text/table is faithful).
+- Table borders are drawn when the source defines them, but a borderless source table shows no gridlines.
+- One embedded image format failed to decode offscreen (`VariousPictures` → WPF `NotSupportedException`,
+  likely WMF/EMF or an unusual codec) — worth a reader-side image-format audit.
+
+### Re-running the visual comparison once a Word engine is available
+1. Render ground truth: `soffice --headless --convert-to pdf <doc>` (LibreOffice) **or** Word
+   `ExportAsFixedFormat`/`Document.SaveAs2(wdFormatPDF)` (COM) → rasterize the PDF pages to PNG.
+2. Render FreeW: the offscreen `DocumentView` → `FlowDocument` → `RenderTargetBitmap` harness used above.
+3. Diff: per-page SSIM / pixel-delta heatmap (FreeX's image-compare tooling under `tools/` can be adapted).
+
 ## How this was run
 A throwaway console runner referencing `FreeW.Core.IO` + `FreeW.Core.Model` iterated
 `freew-fidelity-corpus/files/*.docx` (fetched via `tools/Fetch-FreeWFidelityCorpus.ps1`). The runner is
