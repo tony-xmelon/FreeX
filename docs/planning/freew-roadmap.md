@@ -357,16 +357,24 @@ T2 is model+view (round-trips via styles.xml); T4 is a pure model op + dialog.
 ## Milestone U — editing conveniences (next tranche)
 Avoids the WPF-ribbon-renderer / shell the other session churns. U2/U3 touch the docx reader/writer;
 U1/U4 are disjoint (pure + view).
-- [ ] U1. Change Case (disjoint — pure + editor). UPPERCASE / lowercase / Sentence case / Capitalize Each
-      Word / tOGGLE cASE applied to the selection; a pure `ChangeCase` helper (tested) + Home > Font command.
-- [ ] U2. Image alt text + alignment. `InlineImage.AltText` → DrawingML `wp:docPr @descr/@title`; align the
-      image's paragraph left/center/right; writer/reader; Format Picture affordance. Round-trip tests.
-- [ ] U3. Insert text from file. Open another `.docx` (via `DocxReader`) and insert its blocks at the caret
-      (reversibly); Insert > Object > Text from File. Tests for the pure block-merge.
-- [ ] U4. Bookmark manager + Go To (disjoint — view). A dialog listing bookmarks (go-to / delete) and an
-      enhanced Go To (page/heading/bookmark); reuses the bookmark + outline infra. View-only.
+- [x] U1. Change Case. Pure `ChangeCase.Apply` (Upper/Lower/Sentence/Capitalize/Toggle, documented
+      boundary rules); `DocumentView.ChangeSelectionCase` over the selection (undoable); Home > Font picker.
+      11 tests.
+- [x] U2. Image alt text + alignment. `InlineImage.AltText` (settable, default null) → `wp:docPr @descr`;
+      writer/reader; image-paragraph alignment via existing infra; rendered as tooltip/automation name;
+      Insert > Illustrations Alt Text + align. 3 tests.
+- [x] U3. Insert text from file. Pure `DocumentMerge.CloneBlocks`/`InsertBlocksAt` (deep clone of runs/
+      tables, source untouched); `DocumentView.InsertDocument` inserts a `DocxReader`-loaded doc's blocks at
+      the caret (reversibly, brings missing styles via TryAdd); Insert > Text from File. 5 tests.
+- [x] U4. Bookmark manager + Go To. Pure `Bookmarks.List`/`RemoveBookmark`; Bookmark Manager dialog
+      (Go To via `BringBlockIntoView` / Delete) + the Find/Replace Go To now lists bookmarks; Insert > Links. 6 tests.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone U complete. Change case, image alt text + alignment, insert text from file,
+  bookmark manager + Go To — built in parallel by subagents and integrated (all four auto-merged clean;
+  U1's push reconciled the other session's FreeX conditional-format work). Each verified 0/0 build + green
+  before push. FreeW lane now 586 tests (459 model, 127 IO). origin/main @ aab7d3247. **Sixteen milestones
+  (F–U, 64 features) shipped this session.**
 - 2026-06-17: Milestone T complete. Page setup polish (hyphenation/vAlign/titlePg), custom styles, manage
   hyperlinks (ScreenTip), document inspector — built in parallel by subagents and integrated (all four
   auto-merged clean). Each verified 0/0 build + green before push. FreeW lane now 543 tests (418 model,
