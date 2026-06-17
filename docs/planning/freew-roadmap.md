@@ -341,20 +341,36 @@ S2 is pure model; S3/S4 are disjoint (view + model/view).
 ## Milestone T — page setup + styles + cleanup (next tranche)
 Avoids the WPF-ribbon-renderer / shell the other session churns. T1/T3 touch the docx writer/reader;
 T2 is model+view (round-trips via styles.xml); T4 is a pure model op + dialog.
-- [ ] T1. Page setup polish. Hyphenation (`settings.xml` `w:autoHyphenation`) + page vertical alignment
-      (`sectPr/w:vAlign` top/center/both) + "different first page" flag (`sectPr/w:titlePg`) → `PageSettings`;
-      writer/reader; Layout commands. Round-trip tests.
-- [ ] T2. Custom styles (New/Modify Style). Create or edit a named `DocumentStyle` (based-on + run +
-      paragraph formatting), add it to `TextDocument.Styles`, apply to the selection; round-trips via
-      styles.xml (already supported). Manage Styles dialog. Model + view; tests for the pure style ops.
-- [ ] T3. Manage hyperlinks. Edit a hyperlink's URL, remove the link, and set a ScreenTip
-      (`w:hyperlink w:tooltip`); right-click / ribbon affordance over a hyperlink run. Light IO (tooltip).
-      Round-trip tests for the tooltip.
-- [ ] T4. Document Inspector (disjoint — pure + dialog). A pure op reporting and optionally removing
-      comments, accepted/rejected revisions, document properties, and bookmarks; surfaced via an Inspect
-      dialog. Pure `DocumentInspector` (tested) over the model.
+- [x] T1. Page setup polish. `PageSettings.AutoHyphenation` (`settings.xml w:autoHyphenation`, settings part
+      now emits when hyphenated or protected) + `VerticalAlignment` (`sectPr/w:vAlign`) + `DifferentFirstPage`
+      (`sectPr/w:titlePg`); writer/reader; Layout toggles/cycle. 9 tests.
+- [x] T2. Custom styles. Pure `StyleManager` (Create with safe unique-id gen + collision suffixing, Modify,
+      Delete with built-in guard); New Style + Manage Styles dialogs (name/based-on/run formatting/alignment)
+      applying to the selection; round-trips run formatting via styles.xml. ~per-op tests + a docx round-trip.
+- [x] T3. Manage hyperlinks. `Run.HyperlinkTooltip` → `w:hyperlink w:tooltip` (external + internal, coalescing
+      keyed on tooltip); `DocumentView` Edit/Remove/SetTooltip at the caret with a `HyperlinkInfo` Tag; Insert >
+      Links affordances. Existing external/internal round-trips intact. 4 tests.
+- [x] T4. Document Inspector. Pure `DocumentInspector.Inspect` (counts comments/revisions/properties/bookmarks)
+      + in-place removal ops (RemoveComments/Revisions[=accept]/Properties/Bookmarks); Review > Inspect dialog
+      with selective remove. 9 tests.
+
+## Milestone U — editing conveniences (next tranche)
+Avoids the WPF-ribbon-renderer / shell the other session churns. U2/U3 touch the docx reader/writer;
+U1/U4 are disjoint (pure + view).
+- [ ] U1. Change Case (disjoint — pure + editor). UPPERCASE / lowercase / Sentence case / Capitalize Each
+      Word / tOGGLE cASE applied to the selection; a pure `ChangeCase` helper (tested) + Home > Font command.
+- [ ] U2. Image alt text + alignment. `InlineImage.AltText` → DrawingML `wp:docPr @descr/@title`; align the
+      image's paragraph left/center/right; writer/reader; Format Picture affordance. Round-trip tests.
+- [ ] U3. Insert text from file. Open another `.docx` (via `DocxReader`) and insert its blocks at the caret
+      (reversibly); Insert > Object > Text from File. Tests for the pure block-merge.
+- [ ] U4. Bookmark manager + Go To (disjoint — view). A dialog listing bookmarks (go-to / delete) and an
+      enhanced Go To (page/heading/bookmark); reuses the bookmark + outline infra. View-only.
 
 ## Status log (newest first)
+- 2026-06-17: Milestone T complete. Page setup polish (hyphenation/vAlign/titlePg), custom styles, manage
+  hyperlinks (ScreenTip), document inspector — built in parallel by subagents and integrated (all four
+  auto-merged clean). Each verified 0/0 build + green before push. FreeW lane now 543 tests (418 model,
+  125 IO). origin/main @ e9967d804. **Fifteen milestones (F–T, 60 features) shipped this session.**
 - 2026-06-17: Milestone S complete. Tab leaders, citation styles (APA/MLA/Chicago), show formatting marks,
   table of figures — built in parallel by subagents and integrated (all four auto-merged clean). Each
   verified 0/0 build + green before push. FreeW lane now 497 tests (388 model, 109 IO). origin/main @
