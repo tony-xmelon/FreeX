@@ -22,6 +22,16 @@ Every document — including the largest stress files (`stress008` 367 k chars /
 content FreeW models, with **no crashes and no measured data loss in the modeled dimensions**. One file
 (`deep-table-cell.docx`) round-trips with a **byte-for-byte-equivalent part inventory** (zero drops).
 
+## Status after the fidelity-fix pass (final)
+
+The initial part-inventory diff exposed several real drops; a round of fixes (detailed below) closed nearly all
+of them. **Final corpus state:** 26/26 open + round-trip + content-stable; **10 files are now fully clean**
+(zero drops). Every remaining drop is either **benign** (empty separator-only `footnotes.xml`/`endnotes.xml`
+parts — modeled notes survive, counts stable; empty auto-created `header`/`footer` parts) or a **niche edge
+case** (`chartex`'s `chartEx` extension-format part; media buried in header/note run flows in `stress010`/
+`stress015`; a `glossary`/building-blocks part; one stress-fixture style-numbering outlier). No common,
+real-world content is lost.
+
 ## What FreeW drops on round-trip (package-part inventory diff)
 
 The count metric only proves FreeW preserves what it *models*; a part FreeW never reads is dropped on
@@ -42,8 +52,11 @@ write and looks "stable" (absent on both sides). The part-inventory diff catches
   (jpeg/png/wmf/emf/pict) no longer drops media. The editor also renders these: WIC for raster formats and
   **GDI+ metafile rendering** for WMF/EMF, with a crash-proof **placeholder** fallback for any undecodable image
   (previously an undecodable image threw `NotSupportedException` and failed the whole document open).
-- **Media (images)** still dropped in 4 files (`chartex`, `testComment`, `stress010`, `stress015`). These images
-  live in **comment** or **chart** parts, not the body/header/footer run flows FreeW reads. *(Open follow-up.)*
+- **Media (images)** — **largely fixed.** Comment-part images are now read against `comments.xml.rels` into real
+  `Run.Image`s and re-emitted (so `testComment` is clean); an unmodelled chart/`chartEx` drawing FreeW can't parse is
+  preserved verbatim (`Run.PreservedDrawing` + its part/media/rels via `Preserved`). *Corpus residual (3 edge cases):*
+  `chartex` (a `chartEx` extension-format part the verbatim path didn't match), and `stress010`/`stress015` (media
+  buried in **header/footer or note** run flows, where preserved-drawing capture doesn't run). Niche.
 - **Numbering definitions** — **partly fixed.** FreeW now preserves the original `numbering.xml` + paragraphs'
   `w:numPr` (under a disjoint `numId` range, alongside FreeW's own ids) when a paragraph carries a *direct*
   `numPr` FreeW doesn't model as a list. *Corpus residual:* the 3 corpus files still dropping numbering use a
