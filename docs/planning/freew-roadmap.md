@@ -52,13 +52,9 @@ possible. Build it as a continuous series of small, verified, pushed increments.
 - [x] B2. Selection-driven toggle state (bold on when selection is bold) via the shared ribbon
       state store. *(editor.SelectionChanged pushes bold/italic/underline state into the shared
       RibbonStateStore; toggle buttons observe StateChanged and update IsChecked live.)*
-- [ ] B3. *(DEFERRED — reordered.)* Reuse the real WPF ribbon renderer: extract `RibbonWpfRenderer`
-      (+ adaptive panel/keytips) from `FreeX.App.Host` into a shared WPF ribbon library; FreeW renders
-      with it instead of the placeholder. **Held back because the other session is actively churning
-      the WPF ribbon renderer on `origin/main` — extracting it now would conflict hard. FreeW's
-      placeholder ribbon already drives real commands (B1/B2), so this is quality, not function.
-      Revisit once the ribbon work settles. Proceeding to Milestone C (docx I/O), which is
-      independent.**
+- [x] B3. **DONE via parity item V1.** Extracted the real WPF ribbon renderer (`RibbonWpfRenderer` + adaptive
+      panel/icons/metadata/tooltip) into shared lib `shared/Free.Shared.Ribbon.Wpf`; FreeW now renders through it
+      instead of the placeholder TabControl. See the MS Word parity section (V1) for details.
 
 ## Milestone C — .docx I/O
 - [~] C1. *(Not needed yet — reordered.)* Phase 3b prerequisite (split `XlsxPackagePath`). The docx
@@ -82,9 +78,9 @@ possible. Build it as a continuous series of small, verified, pushed increments.
       *(Recent ▾ menu lists the shared store's entries → OpenPath. AutosaveCoordinator writes a .docx
       snapshot + sidecar every 30s when dirty via the shared AutosaveSnapshotStore (FreeW Recovery
       folder), offers recovery of a prior session's snapshot on startup, cleans up on clean exit.)*
-- [ ] D3. *(DEFERRED.)* Backstage/File menu + Options, reusing the shared shell frames. Held back —
-      depends on the large/risky Phase-5 shell extraction (actively churned), and FreeW's title-bar
-      File commands + Recent menu already cover the lifecycle. Revisit after the shell settles.
+- [x] D3. **DONE via parity item V2.** Full-window Word-style Backstage (`Backstage/BackstageView.cs`) with New/
+      Open/Save/Save As/Print/Export/Info/Recent/Options panes, routed to the existing `FileCommands` (no shared
+      shell-extraction dependency taken). See the MS Word parity section (V2) for details.
 
 ## Milestone E — word-processor features
 - [x] E1. Find/Replace. *(Modeless FindReplaceDialog over the editing surface: TextPointer search,
