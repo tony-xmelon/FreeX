@@ -108,9 +108,9 @@ Remaining gaps (larger / niche — see [follow-ups](#suggested-follow-ups)):
 2. **Header content + header images on multi-section docs** (`stress010`'s "CEDAW" letterhead/emblem). Word
    renders the multi-section page header; FreeW omits it. (Simple single-section headers/footers render and
    match — `headerFooter` SSIM 0.994.)
-3. **Footnote / endnote body text at the page foot** (`footnotes`, `endnotes`, `table_footnotes`). The
-   superscript marker renders; the note *body* Word prints at the page foot needs a paginator pass that
-   reserves page-bottom space and maps notes to the page their markers fall on.
+3. **Footnote / endnote bodies on *multi-page* docs.** Single-page docs now draw the note bodies at the
+   foot (done this session); multi-page placement needs per-page note→page mapping + content-area space
+   reservation (so the notes sit at Word's content-bottom rather than the margin).
 
 ## Bugs fixed this session
 
@@ -164,6 +164,12 @@ reader → writer → view, each with round-trip + render tests; `FreeW.slnx` 0-
    font, and read **legacy `FORMCHECKBOX` form fields** (what the `checkboxes` doc uses) as checkbox
    controls. All checkboxes in `checkboxes.docx` now render with correct state.
 5. **Chart gridlines** — faint horizontal value gridlines behind the data, matching Word (layout-neutral).
+6. **VML images** (`w:pict/v:imagedata`) — older docs embed pictures via legacy VML rather than DrawingML;
+   the picture reader now reads both (e.g. `stress010`'s WMF/EMF logo).
+7. **Footnote / endnote bodies at the page foot** — single-page documents now draw a separator rule and
+   the note text in the bottom margin (previously only the reference marker showed). Multi-page placement
+   (per-page note mapping + content-area space reservation) remains a follow-up; the note position is
+   approximate (margin vs Word's content-bottom), so the note *text* is now visible though SSIM is flat.
 
 ## Suggested follow-ups (priority order)
 
