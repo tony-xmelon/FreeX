@@ -174,6 +174,43 @@ reader → writer → view, each with round-trip + render tests; `FreeW.slnx` 0-
    were ignored, so paragraphs that don't set their own spacing rendered at 0 space-after / 1.15 line
    regardless of the document. Now read and applied (autospacing approximated at ~one line). Lifted
    `VariousPictures` 0.857 → 0.895 and `endnotes` → 0.890; overall page-weighted SSIM 0.614 → 0.619.
+9. **Per-property paragraph style cascade** (`DocumentView.Resolve`) — resolution was all-or-nothing: a
+   paragraph whose direct formatting differed from the model default in *any* field kept *all* its fields,
+   so a styled paragraph that set only (say) alignment rendered with FreeW's hardcoded 8pt-after / 1.15
+   defaults instead of inheriting its style's spacing. Now each property (alignment, all four spacing/line
+   fields, indents, border, shading) falls back to the style value independently when the direct value
+   equals the model default. Proven by `ParagraphStyleCascadeTests` (styled paragraph with direct
+   alignment inherits the style's 24pt spacing; explicit spacing still wins). **No SSIM change on this
+   corpus** — its styles don't define spacing that differs from what direct formatting already carried — so
+   this is a correctness fix that will matter for real documents with rich style hierarchies, not a mover
+   of the current numbers. (A fuller version would make the formatting fields nullable so an *explicit*
+   value equal to the model default is distinguishable from "unset"; the render-only heuristic here treats
+   them the same, which is correct for every real case except a paragraph that deliberately re-states the
+   default — an acceptable bound given the byte-stability risk a nullable refactor of the reader/writer
+   would carry.)
+
+## Diagnosis: the remaining SSIM gap is layout-engine line metrics, not missing content
+
+Page-by-page inspection (triptychs in `runs/diff/`) shows the dominant residual is **vertical line drift**,
+not absent or wrong content:
+
+- Every multi-page low scorer (`drawing` 0.566, `stress004` 0.539, `stress008` 0.547, `stress010` 0.710, …)
+  is flagged `page-count differs` in `scores.csv` — FreeW fits the same text into one fewer/more page than
+  Word, so per-page comparison lines up misaligned pages and the whole heatmap reds out. `drawing-p5` is the
+  proof: identical paragraphs on both sides, offset vertically by accumulated drift.
+- The same drift appears **within a single page** (`endnotes` 0.890): the top lines register, alignment
+  decays downward as small per-line height differences accumulate.
+- Probing WPF's own font metrics (`FontFamily.LineSpacing`: Times 1.150, Calibri 1.221, Arial 1.150) shows
+  they already match Word's single-line heights for installed fonts — there is **no line-height *formula*
+  error to correct**. The residual comes from (a) font **substitution** (Cyrillic/embedded faces WPF and
+  Word substitute differently, with different metrics) and (b) sub-pixel layout rounding between two
+  independent text engines. Neither is reliably closable from the model/IO layer, and forcing an exact
+  line height (`LineStackingStrategy.BlockLineHeight`) clips tall glyphs.
+
+**Conclusion:** 1.0 SSIM is unreachable between WPF and Word's layout engines; the text-only ceiling is
+~0.99 (`testComment`/`FieldCodes` 0.999, `saut_page` 0.998). The functional format gaps the comparison
+surfaced have been closed; the numeric gap that remains is engine-bound rendering divergence, not a FreeW
+fidelity bug.
 
 ## Suggested follow-ups (priority order)
 
