@@ -239,13 +239,26 @@ reader → writer → view, each with round-trip + render tests; `FreeW.slnx` 0-
     On the corpus it **dipped `checkboxes` 0.946→0.939**: the now-visible borders expose FreeW's residual
     table-cell layout difference from Word (the same WPF-vs-Word floor as text line metrics) — the fix is
     correct (Word draws these borders), the dip is a separate engine-level layout difference it made visible,
-    not a reason to leave real tables unbordered. A precise table-cell layout match is a follow-up.
+    not a reason to leave real tables unbordered. A precise table-cell layout match is a follow-up (item 14).
+14. **Table-cell layout pass** (`DocumentView.BuildParagraph inTableCell`) — table cell paragraphs inherited
+    the body docDefault spacing (e.g. 10pt-after, 1.15-line), so rows rendered visibly taller than Word, which
+    lays cells out via the built-in `TableNormal` style (0pt before/after, single line — the base of every
+    table style). `BuildParagraph` now compacts a cell paragraph's *unset* spacing/line fields (using the
+    `IsSet` flags) to 0/single, matching `TableNormal`; explicitly-spaced cell paragraphs are untouched.
+    Investigation confirmed FreeW already reads table structure, `gridCol` widths and (item 13) style borders
+    correctly; the residual table row-height/position difference vs Word is the **same WPF-vs-Word layout
+    floor as text line metrics** (cell padding + natural-line height computed differently). Net: overall
+    **0.652 (neutral)** — tables are now structurally Word-faithful (borders present, compact rows), but the
+    SSIM metric under-credits that because the residual cell layout/position divergence is engine-level. Black
+    border colour was tried and reverted (it amplified the positional mismatch where faint gray hid it).
 
 **Net across the session: overall page-weighted SSIM 0.614 → 0.652. The paragraph spacing cascade (line +
-before + after) that drives pagination is correct, and table-style borders now render. The remaining gap is
-the engine floor (WPF-vs-Word natural-line metrics even for installed fonts, font substitution where docs
-embed none, sub-pixel rounding, and the analogous table-cell layout divergence) — not correctable from the
-model/IO layer. 100% visual SSIM is unreachable between two independent layout engines.**
+before + after) that drives pagination is correct, table-style borders render, and table cells lay out
+compact like Word. The remaining gap is the engine floor — WPF-vs-Word natural-line metrics even for installed
+fonts, font substitution where docs embed none (70% of weighted pages = Arabic stress docs, fonts confirmed
+absent), sub-pixel rounding, and the analogous table-cell layout divergence — not correctable from the
+model/IO layer. 100% visual SSIM is unreachable between two independent layout engines; every model/IO-layer
+cause has been fixed or empirically disproven.**
 
 ## Diagnosis: pagination drift was mostly a real line-height bug; the rest is engine line metrics
 
