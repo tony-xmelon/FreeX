@@ -34,6 +34,37 @@ All tests are `[Trait("Category","RibbonUiLane")]` (functional) or `RibbonUiLane
   a back-and-forth resize sweep reuses its measurement caches (no re-measuring on revisited widths); a
   benchmark reports per-step resize timing.
 
+## Known pre-existing drift in the older `MainWindowAdaptiveRibbonTests`
+
+Fixing the layout loop un-crashed the legacy `MainWindowAdaptiveRibbonTests` (the whole class aborted the
+test host before). With the loop gone, ~31 of its 85 tests still fail — these are **pre-existing
+harness/test drift from the XAML→declarative cutover, not ribbon defects** (the lane's robust queries and
+the live ribbon both work). They fall into two groups:
+
+- **Stale tree-shape assumptions.** Queries like `ActiveRibbonGroupNames`, `CollapsedActiveRibbonGroupNames`,
+  and `ActiveRibbonScrollViewer` look for a horizontal `StackPanel` whose direct children are ribbon
+  groups, and `CollapsedRibbonGroupNames` reads the (now-empty) `HomeRibbonPanel`. The declarative ribbon
+  instead nests each group `Grid` inside a `RibbonGroupHost` inside a `RibbonAdaptivePanel`, so these
+  queries find nothing.
+- **Missing metadata roles.** `RibbonWpfRenderer.BuildGroup` sets a group `CatalogId` but not the
+  `RibbonGroup` role or `GroupName`, and command captions are not tagged `CommandLabel`. Queries that read
+  those roles (group discovery, dropdown-chevron / split-button / content-layout checks) come back empty.
+  (`GetButtonLabel` was given a caption fallback so the label-list assertions work again.)
+
+A separate batch of older ribbon UI tests (e.g. `RibbonTabParityTests`) fails because they read the
+**stripped** `MainWindow.xaml` via `RibbonXamlCatalogSnapshotReader.ReadMainWindow()` — after the
+declarative cutover that XAML holds only empty tab headers, so the catalog they assert against is empty.
+These are effectively dead (they should be re-pointed at `FreeXRibbon.Build()` or retired); they are
+unrelated to the layout fix and to the Help tab (which lives in the declarative definition).
+
+**Recommended follow-up (deliberately not done here to avoid risking the working ribbon):** seed the group
+metadata in `RibbonWpfRenderer.BuildGroup` (`SetRole(grid, RibbonGroup)` + `SetGroupName(grid, header)`)
+and tag command captions — this also benefits the live adaptive engine and keytips, but the live engine's
+group-discovery/collapse then needs visual re-verification — **or** modernize those harness queries to walk
+the `RibbonGroupHost`/`RibbonAdaptivePanel` tree. Either is a self-contained pass; track separately. New
+ribbon coverage should be added to the `RibbonUiLane` files (which use declarative-aware queries), not the
+legacy class.
+
 ## Background: the bug this lane was created around
 
 The live FreeX ribbon used `FreeX.App.Host.RibbonAdaptivePanel`, whose `MeasureOverride` reset every group
