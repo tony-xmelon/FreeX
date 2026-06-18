@@ -4,6 +4,44 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
+## P5 — Shared test-support (parameterized source/locator helpers) + screenshot-tour render primitives — ✅ DONE (on `unification-program`)
+
+**Commits:** `a3b388ee8` (Part 1 — shared test-support), `de1040b57` (Part 2 — screenshot-tour render primitives).
+
+**Goal.** Reduce the test tooling a future sister app would reinvent by promoting genuinely-reusable test infrastructure into the shared, auto-linked `tests/SharedTestInfrastructure/` (every `*.Tests` project — FreeX **and** FreeW — picks it up via the root `Directory.Build.targets`, zero csproj wiring). The principle followed throughout: **the read/extract/reflect/render *mechanics* are neutral and shared; the *which app / which file* concern stays with the caller via thin shims.**
+
+### Part 1 (primary) — re-home the source-hygiene & localization *engines*
+
+- **New `SourceTextTestSupport`** (WPF-free, no namespace, auto-linked). The neutral engine behind the source-hygiene tests: `ExtractBetweenMarkers(source, start, end)` (the "extract a C# method/region body" mechanic behind `ReadClassSource`), `ReadSources(reader, [sep,] files…)` (join over a caller-supplied reader), and the reflection walkers `GetPrivateField<T>` / `GetPrivateMethod` (walk the base-type chain).
+- **New `ResxResourceTestSupport`** (WPF-free, auto-linked). Neutral resx/placeholder mechanics: `ReadResxValues(path | dir,file)`, `CompositePlaceholderTokens`, `AccessKeyCount`, `CountAsciiLettersOutsideCompositePlaceholders` (the `[GeneratedRegex]` composite-format/access-key patterns moved here verbatim).
+- **`TestWorkspaceFileLocator`** (already shared) gained three neutral helpers: `SourceReaderRootedAt(projectRootParts)` — the "read a source file relative to a project root, locating it up the tree" reader **factory** (the engine behind per-app `ReadHostSource`); and `FindFileFromBaseDirectory` / `FindDirectoryFromBaseDirectory` — the base-directory walker the two per-app `RepositoryFileLocator` copies hand-rolled (preserving their exact `"Could not find repository file/directory '…'"` messages).
+- **FreeX shims now delegate, behaviour unchanged:**
+  - `DialogSourceTestSupport.ReadClassSource` → `ExtractBetweenMarkers`; `.GetPrivateField` → shared; `.InvokePrivateHandler` finds the method via `GetPrivateMethod` (the WPF `RoutedEventArgs` construction stays here); `.ReadHostSourcesWithSeparator` → `ReadSources`.
+  - `LocalizationResourceTestSupport` is now a pure FreeX shim — `ResourceDirectory` (FreeX's `Resources/Strings.resx`) stays, the four measurement methods delegate to `ResxResourceTestSupport`. No longer `partial`/regex-bearing.
+  - Both `RepositoryFileLocator` copies (`FreeX.App.Services.Tests` file-finder, `FreeX.App.Presentation.Tests` dir-finder) collapsed to one-line delegations.
+- **Kept app-specific (correctly):** the **WPF-coupled** handler-invoke / button-click / mouse-event helpers in `DialogSourceTestSupport` (shared infra is auto-linked into portable **`net10.0`** test projects too — those files must stay WPF-free); and `LocalizedXamlTestSupport` (deeply FreeX-coupled — `UiText`, `{local:Loc}`, `local:RibbonMetadata.CommandName`).
+
+### Part 2 (secondary) — screenshot-tour render primitives (DONE, cleanly separable)
+
+The tour *logic* (what to render, foreground/focus guards, manifest schema) is FreeX-specific, but the render/crop/encode/write mechanics are generic and were cleanly separable without touching tour logic.
+
+- **New `Free.Shared.Ribbon.Wpf.ScreenshotCapture`** (`public static`): `CaptureVisualToPngAsync(visual, dir, file, logicalHeight?)` (window/visual capture with optional crop-to-height), `CaptureElementToPngAsync(element, dir, file)` (VisualBrush element capture), `WritePngAsync`, `DeviceDpiScale`. Home chosen as `Free.Shared.Ribbon.Wpf` (already a FreeX+FreeW WPF dependency) rather than a new project, per the task's allowance.
+- **FreeX delegates:** `MainWindow.CaptureCurrentWindowAsync` / `CaptureElementAsync` now call the shared helper; the FreeX foreground-focus **assertions stay in place** around the render. Both methods keep their **names + signatures**, so every tour call site — and the `RibbonScreenshotTourPlannerTests` that pin those call sites (`CaptureElementAsync(dialog, …)` etc.) — is untouched.
+
+**Verification.**
+- `dotnet build FreeX.slnx -c Release` **and** `dotnet build FreeW.slnx -c Release` — both **clean, 0 warnings / 0 errors** (warnings-as-errors), Part 1 and Part 2.
+- `dotnet test FreeX.DefaultTests.slnx -c Release --no-build` — **0 failures** (App.Services 1163, App.Host.Logic 1546+5skip, Presentation 988, Core.Model 3987, Core.Formula 2949, Core.IO 2633, Avalonia 439, Ribbon 465, Integration 78, Calc 784) — identical to the P2b baseline; the `RepositoryFileLocator`/Logic.Tests shim-linked helpers all resolve.
+- **`MainWindowSourceHygieneTests` pass/fail set unchanged:** **157 pass / 10 fail** before == after; the 10 fails are the same pre-existing content-drift (ribbon-chart/border/pivot/draw/format-painter/number-format/arrange-all/startup-controller/live-e2e), none touching the re-homed engines. The 268 localization + `ObjectDialogTests` (which exercise `ResxResourceTestSupport` + `ExtractBetweenMarkers` through the shims) **all pass**.
+- `RibbonScreenshotTourPlannerTests` **85/85**. `FreeW.App.Host.Tests` **81/81** (FreeW auto-links the two new shared files and compiles/passes).
+- **Part 2 end-to-end smoke:** `FREEX_SHEET_TAB_TOUR=1` (element capture) and `FREEX_SS_TOUR=1` (window capture, crop-to-height) both ran with `FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER=1` and produced **fresh, valid PNG evidence** through the shared primitives (`screenshots/sheet-tabs-tour/*.png`, `screenshots/max_Home.png` / `max_Insert.png`). Tours throw + delete evidence on failure, so produced PNGs == working capture.
+- Preflight `tools/Test-DotNetProjectReferences.ps1` (53 projects) ✅. No new projects/solutions (Part 1 = files into existing auto-linked dir; Part 2 = one file into an existing shared project), so no `.slnx` edits needed.
+
+**Decisions / notes.**
+- **No BAIL on Part 2.** It was cleanly separable — the inner primitives touch only WPF types, no FreeX tour/`MainWindow` state — so the extraction was surgical (two method bodies → shared calls) with the guards left intact.
+- **Worktree discipline:** all edits under `.worktrees/unification`; the main checkout was never touched.
+
+---
+
 ## P2b — FreeX file-lifecycle DECISIONS via shared `FileLifecyclePlanner` — ✅ DONE (on `unification-program`)
 
 **Commit:** `5a27f5661`.
