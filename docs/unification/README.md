@@ -14,7 +14,7 @@ This branch is the deliberate, documented execution of that, kept separate from 
 
 ## Current shared spine (already healthy)
 
-Six shared projects under `shared/`, with a clean portable/Windows split and **no domain leakage, nothing "shared in name only."** Both FreeX and FreeW already consume them.
+Seven shared projects under `shared/`, with a clean portable/Windows split and **no domain leakage, nothing "shared in name only."** Both FreeX and FreeW already consume them.
 
 | Project | TFM | Role |
 |---|---|---|
@@ -23,7 +23,8 @@ Six shared projects under `shared/`, with a clean portable/Windows split and **n
 | `Free.Shared.AppServices` | `net10.0` | Neutral app services: document state, recent files, autosave, status-bar model, diagnostics store, path planning, share readiness |
 | `Free.Shared.Ribbon` | `net10.0` | Declarative ribbon model + adaptive layout engine + command/state seams |
 | `Free.Shared.Ribbon.Wpf` | `net10.0-windows` | WPF realization: ribbon renderer, QAT, **BackstageFrame**, ShellChrome, dialogs |
-| `Free.Shared.Shell` | `net10.0-windows` | Backstage/dialog/layout planners (⚠ mixes portable planners with WPF — see roadmap) |
+| `Free.Shared.Shell` | `net10.0` | Portable backstage/recent-file/export planners + shell-string seams (P3 split: now WPF-free) |
+| `Free.Shared.Shell.Wpf` | `net10.0-windows` | WPF shell realizers: dialog focus/sizing/button-row, message-box helper, image-dimension decoder, window-layout geometry |
 
 Pattern in use throughout: **neutral model (POCO/planner) + thin per-platform renderer**, with interface seams (`IRibbonRenderer`, `IUserMessageService`, `IBackstageStrings`, `IApplicationDataPathProvider`, …) implemented once per host.
 
@@ -44,7 +45,7 @@ Status legend: ✅ done · 🔄 in progress · ⬜ planned · 💤 deferred (wai
 | P0 | **Enrich `BackstageFrame`** to a superset (keytips, automation ids, tooltips, arrow-nav) | Unblocks FreeX adoption; FreeW richer for free | ✅ on `main` (`f15c176ac`) |
 | P1 | **FreeX backstage rail → shared frame, _as the test de-brittling pilot_** | Shared rail across apps **+** proves automation-tree tests | ✅ on this branch (`b8cfbf685`, `0483c8015`) |
 | P2 | **File-lifecycle planner** (Open/Save/SaveAs + dirty-prompt + recent registration) | Biggest dedup; app #3 gets file support in ~a day | ✅ shared planner + FreeW adoption on this branch (`7540fc21b`, `50add8dd0`) · **P2b** = FreeX adoption pending |
-| P3 | **Split `Free.Shared.Shell`** into neutral (`net10.0`) + `.Wpf` (`net10.0-windows`) | Unblocks Avalonia/Linux/macOS reuse of the planners | ⬜ |
+| P3 | **Split `Free.Shared.Shell`** into neutral (`net10.0`) + `.Wpf` (`net10.0-windows`) | Unblocks Avalonia/Linux/macOS reuse of the planners | ✅ on this branch (`a02b71194`) |
 | P4 | ~~Adopt `WorkbookDocumentState` in FreeW~~ (folded into P2 ✅); share **options persistence**; **wire FreeW diagnostics** | Removes hand-rolled dirty bool; gives FreeW settings + crash telemetry | 🔄 dirty-state done; options/diagnostics ⬜ |
 | P5 | **Shared test-support package** + extract **screenshot-tour rendering harness** | App #3 doesn't reinvent test tooling | ⬜ |
 | P6 | **"New sister app" scaffold** (shell + ribbon + file lifecycle + diagnostics pre-wired) | App #3 starts from the shared baseline, not a FreeX fork | ⬜ |

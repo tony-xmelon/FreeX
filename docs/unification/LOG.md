@@ -4,6 +4,40 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
+## P3 — Split `Free.Shared.Shell` into portable (`net10.0`) + `.Wpf` (`net10.0-windows`) — ✅ DONE (on `unification-program`)
+
+**Commit:** `a02b71194` (extract + retarget + consumers/solutions; docs in a follow-up commit).
+
+**What changed.** `Free.Shared.Shell` was a single `net10.0-windows10.0.19041.0` (WPF-locked) project mixing pure planners with `System.Windows`-coupled helpers, so the Avalonia/Linux/macOS ports couldn't reuse the planners. Split by actual compiler dependency:
+
+- **`Free.Shared.Shell` retargeted `net10.0-windows10.0.19041.0` → `net10.0`** (dropped `UseWPF`). Confirmed **WPF-free**: `dotnet build shared/Free.Shared.Shell/Free.Shared.Shell.csproj -c Release` emits to `bin/Release/net10.0/` and its `deps.json` has **zero** `PresentationCore`/`WindowsBase`/`System.Windows` references; its only ProjectReference is the already-portable `Free.Shared.AppServices` (net10.0). **8 portable types stayed:**
+  - `BackstageRecentFileListPlanner` (+`BackstageRecentFileListPlan`), `BackstageGreetingFormatter`, `BackstageProgressOverlayPlanner`, `BackstageTabSelectionPlanner`, `IBackstageStrings`, `IShellStrings` (+`DefaultShellStrings`/`ShellStrings`), `PlannerPathHelpers`, `ExportAtomicWriter` (internal).
+- **New `Free.Shared.Shell.Wpf`** (`net10.0-windows10.0.19041.0`, `UseWPF`, ProjectReference → portable `Free.Shared.Shell`; csproj mirrors `Free.Shared.Ribbon.Wpf` conventions). **9 WPF-coupled types moved**, namespaces kept stable (`Free.Shared.Shell`) so consumers churn by one ProjectReference, not a rename:
+  - `DialogFocus`, `DialogButtonRowFactory`, `DialogSizing`, `DialogMessageHelper` (internal; uses `MessageBox`/`Window` + reads portable `ShellStrings.Current`), `StatusDialogKeyboardFocus`, `ComboBoxTextEditingExtensions`, `ImageDimensionDecoder` (WPF `BitmapDecoder`), `WindowResetPositionPlanner`, `SideBySideLayoutPlanner`.
+  - **Surprise worth noting:** `WindowResetPositionPlanner` and `SideBySideLayoutPlanner` are described in code as "WPF-free … pure geometry," but they return `System.Windows.Rect` (WindowsBase/WPF), so they are *not* portable as written. Classified to `.Wpf` rather than refactored — promoting them later only needs swapping `Rect` for a neutral `(double X, double Y, double W, double H)` record. Logged here so a future pass can finish the job.
+  - `InternalsVisibleTo` (`FreeX.App.Host`, `FreeX.App.Host.Tests`, `FreeX.App.Host.Logic.Tests`) lives on **both** projects: the portable one for `ExportAtomicWriter`, the `.Wpf` one for `DialogMessageHelper`.
+
+**Consumers + solutions.**
+- `FreeX.App.Host` gained a ProjectReference to `Free.Shared.Shell.Wpf` (heavy user of the WPF helpers). Its two test projects (`FreeX.App.Host.Tests`, `FreeX.App.Host.Logic.Tests`) resolve the WPF types **and** internals **transitively** through `FreeX.App.Host` — no direct edit needed; the unqualified `using Free.Shared.Shell;` keeps resolving across both assemblies.
+- `FreeW.App.Host` was left referencing **only** the portable `Free.Shared.Shell` — it uses just `ShellStrings`/`DefaultShellStrings`, none of the WPF helpers. (FreeW being WPF/`net10.0-windows` referencing a `net10.0` project is fine.)
+- **Portability proven:** `FreeX.App.Avalonia` (`net10.0`) now references the portable `Free.Shared.Shell` and builds clean — the planners are demonstrably reusable from the Avalonia port (not yet *consumed*, per task scope). `FreeW.App.Avalonia` left untouched; the portable planners are equally available to it.
+- Added `Free.Shared.Shell.Wpf` to **`FreeX.slnx`** and **`FreeW.slnx`** (the only `*.slnx` listing `Free.Shared.Shell`; the FreeX test slnx files list test projects only and pull shared transitively, unchanged).
+
+**Verification.**
+- `dotnet build FreeX.slnx -c Release` and `dotnet build FreeW.slnx -c Release` — both **clean, 0 warnings / 0 errors** (warnings-as-errors).
+- `dotnet build shared/Free.Shared.Shell/Free.Shared.Shell.csproj` — net10.0, no WPF (see above).
+- Preflight: `tools/Test-DotNetProjectReferences.ps1` (53 projects) ✅ and `tools/Test-SolutionProjects.ps1 -SolutionPath FreeX.slnx` (42 entries) ✅. (`Test-SolutionProjects` against `FreeW.slnx` "fails" pre-existingly — it discovers all FreeX `src/tools` projects repo-wide and expects them in whatever solution it's pointed at; it is a FreeX-only check, unrelated to P3.)
+- `dotnet test FreeX.DefaultTests.slnx -c Release --no-build` — **all green, 0 failures** (identical to baseline: App.Services 1155, App.Host.Logic 1546, Core.Model 3987, Core.Formula 2949, Core.IO 2633, Avalonia 439, Presentation 988, Ribbon 465, Integration 78, Calc 784).
+- `dotnet test FreeW.slnx -c Release --no-build` — Model 600, App.Host 71, Avalonia 17 green; one **flaky** `FreeW.Core.IO.Tests` fail that **passed 301/301 on isolated re-run** and at baseline — a DOCX-IO test with zero Shell dependency, not a P3 regression.
+- **`FreeX.App.Host.Tests` before/after failing-set diff (the rigorous check):** this project carries ~161 **pre-existing** environmental failures (ribbon-SVG/`CommandIconsSvg` missing-asset drift + source-hygiene tests that throw `FileNotFoundException: Could not locate workspace file`). Captured the unique failing-test-name set at baseline (P3 stashed, project rebuilt) vs with P3, identical invocation: **161 == 161, `Compare-Object` → 0 new, 0 fixed.** The moved-type tests (`DialogSizingTests`, `DialogFocusTests`) fail only on the workspace-file harness issue, not on any type/assembly resolution; there are **zero** TypeLoad/FileLoad errors. **P3 introduces no new failures.**
+
+**Decisions / notes.**
+- Kept namespaces at `Free.Shared.Shell` across both assemblies (governance: minimise consumer churn) — a consumer adds a second ProjectReference and existing `using`s keep working.
+- Did not refactor the two `Rect`-returning planners into the portable tier this pass (noted above as a cheap follow-up).
+- The portable Shell is now available to both Avalonia apps; only `FreeX.App.Avalonia` carries the reference today (proof-of-portability), wiring up actual consumption is out of P3 scope.
+
+---
+
 ## P2 — File-lifecycle planner (shared) + FreeW adoption — ✅ DONE (FreeX adoption = P2b, pending) (on `unification-program`)
 
 **Commits:** `7540fc21b` (shared planner + tests), `50add8dd0` (FreeW adoption + WorkbookDocumentState).
