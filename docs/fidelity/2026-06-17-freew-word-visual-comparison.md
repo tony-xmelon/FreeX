@@ -199,23 +199,24 @@ reader → writer → view, each with round-trip + render tests; `FreeW.slnx` 0-
     cached; `ReadLineSpacing` inverts the same ratio so edit round-trips are unchanged (`LineHeightMultipleTests`).
     Measured effect: `drawing` now paginates to **exactly Word's 20 pages** (was 19); `endnotes`
     0.890→0.931, `VariousPictures` 0.895→0.930, `stress018` 0.656→0.704, `stress008` 0.547→0.570,
-    `stress010`/`stress004` up; **overall page-weighted SSIM 0.633→0.648**. One regression — `stress023`
-    0.683→0.622 (13→15 pages vs Word's 12). NB this doc uses *installed* Times/Calibri, not a substitute:
-    the over-height is because WPF's `FontFamily.LineSpacing` for Calibri (1.22) exceeds Word's "one line"
-    for the same installed font, so `1.08 × 1.22` overshoots. That is genuine WPF-vs-Word natural-line
-    divergence for an installed font — not substitution, and not a formula error.
-
-### Open correctness gap this surfaced: paragraph spacing isn't resolved through the style chain
-
-Reading a body paragraph (`DocxReader.ReadParagraph`) resolves spacing as `direct pPr ?? docDefaults ??
-builtin` — it never consults the paragraph's own **style** (or its `basedOn` chain). So a paragraph in a
-1.5-/1.0-line style with no direct `w:line` is read as the docDefault (e.g. 1.08), and because the reader
-pre-fills a non-default value the render-time cascade (`DocumentView.Resolve`) can't tell it from an
-explicit setting and won't recover the style's value. `stress023` (178 paragraphs, only 2 with direct
-spacing; styles at 240/259/360 twentieths) is the worst case. The clean fix is the **nullable formatting
-refactor** (item 9): record only explicit values, resolve `direct ?? style ?? basedOn-chain ?? docDefault
-?? builtin` at one place. This is the one remaining model-layer lever; the per-font natural-line divergence
-above is below it (engine floor).
+    `stress010`/`stress004` up; **overall page-weighted SSIM 0.633→0.648**. Caused a temporary regression in
+    `stress023` (0.683→0.622) — fixed by item 11 below. NB `stress023` uses *installed* Times/Calibri, not a
+    substitute: where its pagination still differs (15 vs Word's 12) the cause is WPF's `FontFamily.LineSpacing`
+    for Calibri (1.22) exceeding Word's "one line" for the same installed font — genuine WPF-vs-Word
+    natural-line divergence, not a formula error.
+11. **Paragraph line spacing resolved through the style chain** (`DocxReader` + `DocumentView.Resolve`) —
+    reading a body paragraph resolved spacing as `direct pPr ?? docDefaults ?? builtin`, never consulting the
+    paragraph's own **style**. Because the reader baked the docDefault into a non-default value, the render
+    cascade couldn't tell it from an explicit setting and wouldn't recover the style's spacing — so a
+    paragraph in a 1.0-/1.5-line style inherited the docDefault instead. Added an explicit `LineSpacingIsSet`
+    flag (set only on a direct `w:line`; styles set it likewise) and resolved line spacing as a unit in
+    `Resolve`: `direct ?? style ?? inherited`. **Render-only** — the writer still emits from the value
+    fields, so docx round-trip/byte-stability are unchanged (966 tests green incl. the IO byte-equality lane).
+    Recovered the `stress023` regression (0.622→**0.683**, back to baseline) and lifted **overall 0.648→0.650
+    with no doc below its starting baseline**. Test
+    `StyledParagraph_WithoutDirectLineSpacing_InheritsStyleLineSpacing`. The same treatment for the other
+    spacing/indent fields (the full nullable refactor, item 9) remains optional follow-up; for line spacing —
+    the field that drives pagination — the gap is now closed.
 
 ## Diagnosis: pagination drift was mostly a real line-height bug; the rest is engine line metrics
 
@@ -226,14 +227,15 @@ actual line pitch in the rendered PNGs traced most of it to a fixable cause, not
 - Measured line pitch FreeW vs Word (PNG ink-row analysis): `endnotes` Word/FreeW = **1.08**, `delins`
   **1.22**, while single-spaced `drawing` matched at **1.00**. The 1.08/1.22 are exactly the *Multiple* line
   rule being applied to the em instead of the natural line height — fixed in item 10 above.
-- What remains after that fix is genuine two-engine divergence: (a) font **substitution** (Cyrillic/Arabic
-  and embedded faces WPF and Word substitute differently, with different natural-line metrics — this is why
-  `stress023` regressed and `delins` 0.774 is unmoved) and (b) sub-pixel layout rounding. Forcing an exact
-  line height (`LineStackingStrategy.BlockLineHeight`) to erase it clips tall glyphs.
-- A *fully* correct line cascade needs the formatting fields made nullable (the refactor noted in item 9):
-  only then can FreeW tell an **explicit** 1.15-line paragraph from one that merely **inherited** the model
-  default, and apply the natural-line ratio to the former only. The current fix applies it to both, which is
-  right for the corpus (most paragraphs carry explicit spacing) but is the principled next step.
+- What remains after the item 10 + 11 fixes is genuine two-engine divergence: (a) font **substitution**
+  (Cyrillic/Arabic and embedded faces WPF and Word substitute differently) and (b) the natural-line metric
+  differing even for *installed* fonts (WPF Calibri 1.22 vs Word's smaller value — why `stress023` still
+  paginates 15 vs 12, and `delins` 0.774 is unmoved) plus sub-pixel rounding. Forcing an exact line height
+  (`LineStackingStrategy.BlockLineHeight`) to erase it clips tall glyphs.
+- Line spacing now cascades precisely via the `LineSpacingIsSet` flag (item 11). Extending the same
+  explicit-vs-inherited treatment to the other spacing/indent fields (the full nullable refactor, item 9)
+  is the remaining model-layer correctness step, but it is **fidelity-neutral** on this corpus — the
+  measured residual is the engine floor above, not the model layer.
 
 **Conclusion:** A real line-height bug — not engine divergence — was the largest cause of the pagination
 drift, and fixing it lifted overall SSIM and made `drawing` paginate exactly like Word. The remainder is
