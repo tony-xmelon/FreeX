@@ -14,6 +14,6 @@ Scope: targeted internet sample search for FreeX fidelity gaps around chartEx/fu
 
 ## Still missing
 
-- A permissively licensed downloadable `.xlsx` with true chartEx/funnel package parts (`xl/charts/chartEx*.xml` or actual `cx:chart` content) was not found in the scanned permissive sources.
+- Resolved on 2026-06-18: Apache-2.0 OfficeCLI `.xlsx` samples were found with true `application/vnd.ms-office.chartex+xml` / `cx:chartSpace` content under `xl/drawings/extendedCharts/`; those rows are now catalogued in `fidelity-corpus/manifest.csv`.
 - Scanned permissive fixture sources included Apache POI, ClosedXML, Open XML SDK, NPOI, ExcelJS, PhpSpreadsheet, qax-os/excelize, and SheetJS. Generator/library sources reviewed included xlsx-kit, mschart, openxlsx2, and encharter.
 - LibreOffice has excellent chartEx `.xlsx` fixtures such as `funnel1.xlsx`, `color_funnel.xlsx`, `waterfall.xlsx`, `treemap.xlsx`, `sunburst.xlsx`, and `boxWhisker.xlsx` under `chart2/qa/extras/data/xlsx`, but the GitHub API reports the repository license as GPL-3.0. Those files were not added because the current fidelity corpus gate only allows Apache-2.0, MIT, BSD, CC0-1.0, and Public-Domain rows.
