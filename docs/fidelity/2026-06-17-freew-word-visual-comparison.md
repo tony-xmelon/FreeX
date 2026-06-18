@@ -221,11 +221,20 @@ reader → writer → view, each with round-trip + render tests; `FreeW.slnx` 0-
     style's space-after (packing styled paragraphs tighter than Word). Render-only, byte-stable.
     **overall 0.650→0.652**, `stress010` 0.726→0.733, `stress015` 0.713→0.724, `stress003` up; no regression.
     `delins` 0.774 is **unchanged** — confirming its residual is the list-rendering/line-metric floor, not
-    space-after inheritance (measured, not assumed). Indents remain value-vs-default; extending the flag to
-    them is the last of the nullable refactor and is fidelity-neutral here.
+    space-after inheritance (measured, not assumed).
+    - **Indents: tried the same is-set cascade, measured, and reverted.** It was fidelity-neutral overall but
+      regressed `stress015` (0.724→0.716): that doc has 110 paragraphs with explicit `w:ind/@left="0"`, and
+      honouring the literal 0 (naive OOXML "direct wins") pushed them to the margin — but Word renders them at
+      the **numbering/list indent**, i.e. the list level's indent takes precedence over a paragraph's explicit
+      `w:left="0"` for a numbered paragraph. The value-vs-default behaviour (inherit) happened to match Word
+      better, so the indent flag was reverted. Indents keep value-vs-default resolution (their model default is
+      0, so an unset indent already reads as the default and inherits the style correctly — only the non-zero
+      defaults, space-after=8 and the docDefault-baked line spacing, needed the explicit flag).
 
 **Net across the session: overall page-weighted SSIM 0.614 → 0.652, every doc flat-or-better than its
-starting baseline, no regressions; functional spacing cascade (line + before + after) now correct.**
+starting baseline, no regressions; the paragraph spacing cascade (line + before + after) that drives
+pagination is now correct. Remaining gap is the engine floor (WPF-vs-Word natural-line metrics for installed
+fonts, font substitution, sub-pixel) — not correctable from the model/IO layer.**
 
 ## Diagnosis: pagination drift was mostly a real line-height bug; the rest is engine line metrics
 
