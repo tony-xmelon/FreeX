@@ -214,9 +214,18 @@ reader → writer → view, each with round-trip + render tests; `FreeW.slnx` 0-
     fields, so docx round-trip/byte-stability are unchanged (966 tests green incl. the IO byte-equality lane).
     Recovered the `stress023` regression (0.622→**0.683**, back to baseline) and lifted **overall 0.648→0.650
     with no doc below its starting baseline**. Test
-    `StyledParagraph_WithoutDirectLineSpacing_InheritsStyleLineSpacing`. The same treatment for the other
-    spacing/indent fields (the full nullable refactor, item 9) remains optional follow-up; for line spacing —
-    the field that drives pagination — the gap is now closed.
+    `StyledParagraph_WithoutDirectLineSpacing_InheritsStyleLineSpacing`.
+12. **Paragraph space-before/after resolved through the style chain** — same explicit-vs-inherited fix for
+    `w:before`/`w:after` (`SpaceBeforeIsSet`/`SpaceAfterIsSet`). A read paragraph carries 0pt-after when it
+    sets none, and `0 != the model's 8pt default` made the old cascade keep the 0 and never inherit the
+    style's space-after (packing styled paragraphs tighter than Word). Render-only, byte-stable.
+    **overall 0.650→0.652**, `stress010` 0.726→0.733, `stress015` 0.713→0.724, `stress003` up; no regression.
+    `delins` 0.774 is **unchanged** — confirming its residual is the list-rendering/line-metric floor, not
+    space-after inheritance (measured, not assumed). Indents remain value-vs-default; extending the flag to
+    them is the last of the nullable refactor and is fidelity-neutral here.
+
+**Net across the session: overall page-weighted SSIM 0.614 → 0.652, every doc flat-or-better than its
+starting baseline, no regressions; functional spacing cascade (line + before + after) now correct.**
 
 ## Diagnosis: pagination drift was mostly a real line-height bug; the rest is engine line metrics
 
