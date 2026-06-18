@@ -6,7 +6,7 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ## P2b — FreeX file-lifecycle DECISIONS via shared `FileLifecyclePlanner` — ✅ DONE (on `unification-program`)
 
-**Commit:** `<set after commit>`.
+**Commit:** `5a27f5661`.
 
 **What changed.** P2 promoted FreeX's file-lifecycle *decision* ceremony to the shared, portable `FileLifecyclePlanner` and adopted it in FreeW. P2b routes FreeX's own file-IO decisions through the same shared planner — making it the single source of decision truth across both apps — while preserving FreeX's richer *mechanics* (async open-with-progress, dirty-generation tracking, multi-window close, unsupported-feature warnings, adapter resolution) exactly. This used the **thin-adapter pattern at the decision points**, not a call-site rewrite:
 
