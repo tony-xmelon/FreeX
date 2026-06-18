@@ -4,6 +4,26 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
+## P4b — FreeX `AppOptionsStore` on shared `JsonSettingsStore` — ✅ DONE (on `unification-program`)
+
+**Commit:** `f2bf3cd17`.
+
+**What changed.** P4 flagged FreeX's `AppOptionsStore` (`src/FreeX.App.Services/AppOptionsStore.cs`) as duplicating the generic JSON load/serialize/atomic-write/error-capture plumbing that P4 promoted to the shared `JsonSettingsStore<T>`. This pass retires that duplication while **preserving FreeX behaviour exactly**:
+
+- `AppOptionsStore.LoadFromPath` / `SaveToPath` now delegate the I/O to the shared `JsonSettingsStore<AppOptions>.LoadFromPath` / `SaveToPath` statics. The hand-rolled `try/File.Exists/Deserialize/catch` and `try/AtomicFileWriter/Serialize/catch` bodies (plus the local `JsonSerializerOptions`) are gone — the shared store already does exactly that (safe load → fresh default; atomic write via `AtomicFileWriter`; never-throw exception capture).
+- **FreeX-specific behaviour stays in `AppOptionsStore`:** the `options.json` store-path resolution (`AppStoragePathPlanner` / `FREEX_OPTIONS_PATH`), the `AppOptions.NormalizePersistedCollections()` step (run on every successful load and before every save, as before), surfacing failures via `AppOptions.SetPersistenceError(...)` (cleared on a successful save), and the user-facing **"options"** wording.
+- **The only shared-tier change:** `JsonSettingsStore<T>.LoadFromPath` / `SaveToPath` gained an **optional `noun` parameter (default `"settings"`)** so a caller can read `"Failed to load/save options from/to '…'"` instead of the generic `"settings"` wording. Purely additive — every existing shared/FreeW call site is untouched and the shared store's own tests still assert the `"settings"` default.
+
+**Why it was safe (the message-text + normalization risk P4 called out).** The risk was the tests asserting exact `"Failed to load/save **options**"` text and the inline `NormalizePersistedCollections`. The `noun` parameter preserves the message text verbatim, and normalization stays inline in `AppOptionsStore` (load-success and pre-save), so no FreeX option test needed rewriting — the adaptation is thin, not a behaviour change. (One benign nuance: the shared `LoadFromPath` doesn't distinguish "file missing" from "loaded a value," so `NormalizePersistedCollections` now also runs on the fresh default returned for a missing file; that is provably a no-op since `new AppOptions()` is already in normalized form.)
+
+**Verification.**
+- `dotnet build FreeX.slnx -c Release` and `dotnet build FreeW.slnx -c Release` — both **clean, 0 warnings / 0 errors** (warnings-as-errors).
+- `FreeX.App.Services.Tests` **1163/1163** green — including all 6 `AppOptionsStoreTests` (missing/future-schema load, corrupt→defaults+`"Failed to load options"`+path, blocked-write→`"Failed to save options"`+path+temp-cleanup, atomic-save-clears-error round-trip) and the 7 `JsonSettingsStoreTests` (still asserting the `"settings"` default).
+- `FreeXOptionsPersistenceTests` (App.Host.Tests) **22/22** green — the host-level "Failed to load/save options" assertions hold.
+- `FreeWOptionsTests` **6/6** green — the additive shared-store signature change didn't disturb FreeW's store façade.
+
+---
+
 ## P3b — Neutralize the two Rect-based Shell planners (now portable) — ✅ DONE (on `unification-program`)
 
 **Commit:** `2250828f3`.
