@@ -4,6 +4,38 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
+## P4 — Shared `JsonSettingsStore<T>` (FreeW options) + FreeW local diagnostics — ✅ DONE (on `unification-program`)
+
+**Commits:** `7cd56ed3e` (shared store + tests), `b5edd2070` (FreeW options), `1b34455c3` (FreeW diagnostics).
+
+**Note on the former P4 item.** "FreeW adopts `WorkbookDocumentState`" was **already folded into P2** (`50add8dd0`) and is done — FreeW's hand-rolled `IsDirty` bool + `_currentPath` are the shared `WorkbookDocumentState`. This pass delivered the remaining two P4 items: shared **options persistence** and **FreeW diagnostics**.
+
+**A) Shared options persistence.**
+- **New `shared/Free.Shared.AppServices/JsonSettingsStore<T>`** (`net10.0`, no WPF). Generic JSON persistence for any settings POCO (`where T : class, new()`):
+  - **Safe load** — missing file → fresh default (no error); corrupt/unreadable file → fresh default **and** an observable `LastError` (never throws).
+  - **Atomic save** — through the existing `AtomicFileWriter` (sibling temp file + replace); returns false + `LastError` on failure, never throws; clears `LastError` on success.
+  - **Product-rooted path** — `ForProductFile(fileName, pathProvider?, overridePath?)` derives `{appDataDir}/{AppProduct.Current.ProductDirectoryName}/{fileName}`, so the path respects whatever `AppProduct` the host installed (e.g. `%APPDATA%\FreeW\settings.json`). `ForPath(...)` for explicit/test paths. Static `LoadFromPath` / `SaveToPath` for one-shot use.
+  - Factored from FreeX's `AppOptionsStore` (the same load/serialize/atomic-write/error-capture shape), promoted to the shared tier — **not duplicated**.
+- **Public shape:** `JsonSettingsStore<T>.ForProductFile(...)` / `.ForPath(...)` → instance with `StorePath`, `LastError`, `T Load()`, `bool Save(T)`; plus statics `GetProductFilePath`, `(T,string?) LoadFromPath`, `string? SaveToPath`.
+- **Proven in FreeW.** New app-specific `FreeWOptions` POCO (`RecentFilesCap`, `DefaultSaveFormat`, `UiLanguage` placeholder, with a `Normalize()` that clamps the cap and trims) + a thin `FreeWOptionsStore` façade over `JsonSettingsStore<FreeWOptions>` (file name `settings.json`, post-load normalize). `Program.Main` loads the options once at startup (after installing `AppProduct = "FreeW"`) and passes them into `MainWindow(FreeWOptions)` → `FileCommands`. **Real read site:** `FileCommands.SetSaved` now applies `FreeWOptions.RecentFilesCap` when registering a recent file. To make that possible without changing FreeX behaviour, `RecentFilesStore.AddOrUpdate` gained an **optional `maxRecentEntries` overload** (default = existing `MaxRecentEntries`, so FreeX is untouched); pinned entries are always retained.
+
+**B) FreeW local diagnostics (file-store only, no Sentry).**
+- `AppProduct.Current = "FreeW"` was already set in `Program.Main` (verified FreeW-correct: storage/diagnostics resolve `%LOCALAPPDATA%\FreeW`, not FreeX).
+- New `FreeWDiagnostics` mirrors FreeX's `AppDiagnostics` **minus Sentry/`ICrashAnalytics`**: `CreateDefault(appVersion)` builds an `AppDiagnosticsFileStore` over `AppDiagnosticsOptions.CreateDefault()` (honours `FREEW_DIAGNOSTICS=0`) + `AppDiagnosticsMetadata.Create(version)`; `RecordEvent`/`RecordCrash` are best-effort wrappers; `RegisterCrashHandlers()` hooks `DispatcherUnhandledException` + `AppDomain.UnhandledException` + `TaskScheduler.UnobservedTaskException`. `Program.Main` registers handlers after the `Application` exists, records `app_start` before showing the window and `app_exit` after `Run`. App version comes from the entry assembly's `AssemblyInformationalVersion` (FreeW has no `AppInfo`).
+
+**Verification.**
+- `dotnet build FreeX.slnx -c Release` and `dotnet build FreeW.slnx -c Release` — both **clean, 0 warnings / 0 errors** (warnings-as-errors).
+- **Shared store tests** (`tests/FreeX.App.Services.Tests`): **7 new** `JsonSettingsStoreTests` (load-missing→defaults, save→load round-trip, corrupt→defaults+error, blocked-write→error, product-path derivation, override-path, error-clearing) + **1 new** `RecentFilesStoreTests` cap-overload test. Project **1162/1163 pass**; the single fail is the **pre-existing** `AvaloniaProjectPortabilityGuardTests` (a stale P3 allow-list missing `Free.Shared.Shell`, which P3 legitimately added to `FreeX.App.Avalonia`) — confirmed failing identically with P4 stashed, **not introduced here** (flagged as a follow-up chip).
+- **FreeW host tests** (`FreeW.App.Host.Tests`): **71 → 81** (+6 `FreeWOptionsTests`, +4 `FreeWDiagnosticsTests`; + a `FreeW` `AppProductTestDefaults` module-initializer so the shared path planner resolves the FreeW footprint). `dotnet test FreeW.slnx -c Release --no-build` all green: Core.Model 600, App.Host 81, Avalonia 17, **Core.IO 301** (the P3-flaky DOCX-IO test passed cleanly this run).
+- **FreeX.DefaultTests.slnx** — no new failures vs baseline; only red is the same pre-existing `AvaloniaProjectPortabilityGuardTests`.
+
+**Decisions / notes.**
+- **FreeX `AppOptionsStore` was left as-is** (NOT refactored onto the shared store this pass). Its `Load`/`Save` call `AppOptions.NormalizePersistedCollections()` inline and its tests assert specific message text ("Failed to load/save **options**" vs the shared store's "settings"); sitting it on `JsonSettingsStore<AppOptions>` would either change that behaviour or force a multi-test rewrite — higher risk than the win. **Follow-up:** retire the duplication by having `AppOptionsStore` delegate to the shared store and folding the normalize step into a `Save`/`Load` hook, with the FreeX option tests updated to match.
+- The model stays app-specific (`FreeWOptions` is FreeW's own); only the persistence is shared, per governance principle 5.
+- FreeW does **no** remote telemetry — Sentry is FreeX-specific and was deliberately not pulled in.
+
+---
+
 ## P3 — Split `Free.Shared.Shell` into portable (`net10.0`) + `.Wpf` (`net10.0-windows`) — ✅ DONE (on `unification-program`)
 
 **Commit:** `a02b71194` (extract + retarget + consumers/solutions; docs in a follow-up commit).

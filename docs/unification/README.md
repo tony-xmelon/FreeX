@@ -20,7 +20,7 @@ Seven shared projects under `shared/`, with a clean portable/Windows split and *
 |---|---|---|
 | `Free.Shared.Commands` | `net10.0` | Generic undo/redo engine (`UndoRedoStack<TCommand,TPayload>`) |
 | `Free.Shared.Opc` | `net10.0` | OOXML/zip file-format helpers (XML normalize, password, size guard) |
-| `Free.Shared.AppServices` | `net10.0` | Neutral app services: document state, recent files, autosave, status-bar model, diagnostics store, path planning, share readiness |
+| `Free.Shared.AppServices` | `net10.0` | Neutral app services: document state, recent files, autosave, status-bar model, diagnostics store, settings persistence (`JsonSettingsStore<T>`), path planning, share readiness |
 | `Free.Shared.Ribbon` | `net10.0` | Declarative ribbon model + adaptive layout engine + command/state seams |
 | `Free.Shared.Ribbon.Wpf` | `net10.0-windows` | WPF realization: ribbon renderer, QAT, **BackstageFrame**, ShellChrome, dialogs |
 | `Free.Shared.Shell` | `net10.0` | Portable backstage/recent-file/export planners + shell-string seams (P3 split: now WPF-free) |
@@ -46,7 +46,7 @@ Status legend: ✅ done · 🔄 in progress · ⬜ planned · 💤 deferred (wai
 | P1 | **FreeX backstage rail → shared frame, _as the test de-brittling pilot_** | Shared rail across apps **+** proves automation-tree tests | ✅ on this branch (`b8cfbf685`, `0483c8015`) |
 | P2 | **File-lifecycle planner** (Open/Save/SaveAs + dirty-prompt + recent registration) | Biggest dedup; app #3 gets file support in ~a day | ✅ shared planner + FreeW adoption on this branch (`7540fc21b`, `50add8dd0`) · **P2b** = FreeX adoption pending |
 | P3 | **Split `Free.Shared.Shell`** into neutral (`net10.0`) + `.Wpf` (`net10.0-windows`) | Unblocks Avalonia/Linux/macOS reuse of the planners | ✅ on this branch (`a02b71194`) |
-| P4 | ~~Adopt `WorkbookDocumentState` in FreeW~~ (folded into P2 ✅); share **options persistence**; **wire FreeW diagnostics** | Removes hand-rolled dirty bool; gives FreeW settings + crash telemetry | 🔄 dirty-state done; options/diagnostics ⬜ |
+| P4 | ~~Adopt `WorkbookDocumentState` in FreeW~~ (folded into P2 ✅); share **options persistence** (`JsonSettingsStore<T>` + FreeW options); **wire FreeW local diagnostics** | Removes hand-rolled dirty bool; gives FreeW settings + local crash files | ✅ on this branch (`7cd56ed3e`, `b5edd2070`, `1b34455c3`) · FreeX `AppOptionsStore`→shared = follow-up |
 | P5 | **Shared test-support package** + extract **screenshot-tour rendering harness** | App #3 doesn't reinvent test tooling | ⬜ |
 | P6 | **"New sister app" scaffold** (shell + ribbon + file lifecycle + diagnostics pre-wired) | App #3 starts from the shared baseline, not a FreeX fork | ⬜ |
 | — | Print/export orchestration · update/distribution · file associations | Real but premature | 💤 until a 2nd consumer exists |
