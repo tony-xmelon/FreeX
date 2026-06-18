@@ -42,7 +42,7 @@ Status legend: ✅ done · 🔄 in progress · ⬜ planned · 💤 deferred (wai
 | # | Workstream | Value | Status |
 |---|---|---|---|
 | P0 | **Enrich `BackstageFrame`** to a superset (keytips, automation ids, tooltips, arrow-nav) | Unblocks FreeX adoption; FreeW richer for free | ✅ on `main` (`f15c176ac`) |
-| P1 | **FreeX backstage rail → shared frame, _as the test de-brittling pilot_** | Shared rail across apps **+** proves automation-tree tests | 🔄 this branch |
+| P1 | **FreeX backstage rail → shared frame, _as the test de-brittling pilot_** | Shared rail across apps **+** proves automation-tree tests | ✅ on this branch (`b8cfbf685`, `0483c8015`) |
 | P2 | **File-lifecycle planner** (Open/Save/SaveAs + dirty-prompt + recent registration) | Biggest dedup; app #3 gets file support in ~a day | ⬜ |
 | P3 | **Split `Free.Shared.Shell`** into neutral (`net10.0`) + `.Wpf` (`net10.0-windows`) | Unblocks Avalonia/Linux/macOS reuse of the planners | ⬜ |
 | P4 | **Adopt `WorkbookDocumentState` in FreeW**; share **options persistence**; **wire FreeW diagnostics** | Removes hand-rolled dirty bool; gives FreeW settings + crash telemetry | ⬜ |

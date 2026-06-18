@@ -4,18 +4,22 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
-## P1 — FreeX backstage rail → shared `BackstageFrame` (de-brittling pilot) — 🔄 IN PROGRESS
+## P1 — FreeX backstage rail → shared `BackstageFrame` (de-brittling pilot) — ✅ DONE (on `unification-program`)
 
-**Intent.** Replace FreeX's hand-rolled `StartScreenSidebar` (the backstage nav rail) with the shared, Phase-0-enriched `BackstageFrame`, hosting FreeX's existing content panes (`SsHomeView`/`SsInfoView`/`SsPrintView`) through the frame's `ContentFactory`. Simultaneously convert the backstage-coupled **source-text** hygiene tests to **automation-tree / behavioural** assertions — proving the de-brittling pattern (principle 3) on a real, bounded slice.
+**Commits:** `b8cfbf685` (impl), `0483c8015` (test de-brittling).
 
-**Why this is the pilot.** The earlier scoping showed the migration's cost was dominated not by the rail swap but by the brittle source-assertion net (`MainWindowSourceHygieneTests.Backstage.cs` asserting literal `x:Name="StartScreenSidebar"`, handler names, etc.) and by production screenshot-tour code driving the rail by `x:Name`. Fixing those the right way (automation ids the frame already sets in P0) makes this and every future shared migration cheap.
+**What changed.**
+- **Rail swap.** FreeX's hand-rolled `StartScreenSidebar` (~200 lines of XAML) is gone. The rail is now the shared `BackstageFrame`, built in new `src/FreeX.App.Host/MainWindow.BackstageFrame.cs` with all 12 entries carrying full FreeX metadata (keytips, automation ids/names/help, rich tooltips, command-icon names). The three content panes (`SsHomeView`/`SsInfoView`/`SsPrintView`) are kept verbatim, parked collapsed in a `StartScreenPaneHolder`; each pane entry's `ContentFactory` runs the pane's live-refresh and reparents the element (a `Detach` helper handles the single-parent rule). `MainWindow.Backstage.cs` `ShowStartScreen`/`HideStartScreen`/`Show{Home,Info,Print}View` now drive the frame; obsolete rail code (the `PreviewKeyDown` arrow handler, rail-button forwarders) was removed. Screenshot-tour code retargeted from `Ss*NavBtn.Focus()` to the frame API.
+- **Shared frame API (additive, FreeW-safe).** `FocusEntry(automationIdOrLabel)` / `IsEntryFocused(...)`; `Show(...)`/`SelectPane(...)` accept a pane label OR automation id (language-invariant landing); `ConfigureBackButton(...)`; `DecorateNavButtons(...)` (lets FreeX mirror keytip/title/desc onto its own `RibbonTooltip` so its Alt-keytip overlay lights up the rail); `Divider(dockBottom)`; labels render via `AccessText` (FreeX mnemonics); Home/End focus the first/last rail button deterministically; focus helpers set focus-scope focus so focus lands off-foreground (tests).
+- **Test de-brittling (the pilot).** New `BackstageRailHarness` opens a live MainWindow backstage and reads the rail's automation tree. `MainWindowXamlKeyTipTests.Backstage.cs` and the rail-coupled subset of `MainWindowSourceHygieneTests.Backstage.cs` converted from literal `x:Name`/handler-name source assertions to behavioural automation-id / keytip / pane-swap / focus assertions, intent preserved. Content-pane tests (Recent/Pinned, search, Info copy, progress footer, templates) and file-IO ceremony assertions left as source/XAML. `RibbonScreenshotTourPlannerTests` retargeted to the new frame API.
 
-**Scope guardrails.**
-- Pane *internals* (the ~700 lines of XAML inside `SsHomeView`/`SsInfoView`/`SsPrintView`) and print rendering stay untouched — the frame owns rail + content-swap only.
-- Preserve all keytips, automation ids, localized names, and accessibility behaviour (route them through `BackstageEntry`, which P0 made capable of carrying them).
-- Reparent the existing pane elements into the frame's content host (a WPF element has one visual parent) — detach-from-parent helper required.
+**Verification.**
+- `dotnet build FreeX.slnx -c Release` clean (0 warnings / 0 errors; warnings-as-errors).
+- `FreeW.App.Host.Tests` 64/64 (additive frame change confirmed non-breaking).
+- `RibbonScreenshotTourPlannerTests` 85/85; all converted backstage tests green.
+- Baseline diff (parent commit, identical to `main` modulo docs): **zero** backstage/rail/StartScreen tests fail on `unification-program`, and the baseline's one backstage failure (`CtrlP_RoutesThroughBackstagePrintEntryPoint`, source-text) is now **fixed** behaviourally. All residual `FreeX.App.Host.Tests` failures are pre-existing drift (ribbon SVG/parity/adaptive, docs/inventory, non-backstage source-hygiene) — several rooted in a **missing untracked `src/FreeX.App.Host/Resources/CommandIconsSvg` asset directory absent in both worktrees** — none introduced by P1.
 
-**Status:** implementation in progress on `unification-program`.
+**Gotcha recorded.** `Free.Shared.Ribbon.Wpf.RibbonTooltip` (set by the frame) and FreeX's `FreeX.App.Host.RibbonTooltip` (read by FreeX's keytip overlay) are *different* attached-property types — the frame's keytips must be mirrored onto FreeX's via `DecorateNavButtons` or the rail Alt-keytips go dark.
 
 ---
 
