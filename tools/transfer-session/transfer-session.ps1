@@ -1,16 +1,18 @@
 <#
 .SYNOPSIS
-  transfer-session — package a Claude Code session (transcript + subagents + memory + local-only
+  transfer-session - package a Claude Code session (transcript + subagents + memory + local-only
   assets) into a bundle and move it between machines via Google Drive (rclone).
 
 .DESCRIPTION
   PUSH (source machine): bundles the current session and uploads the .zip to Drive.
   PULL (target machine): downloads the bundle, restores transcript+memory+assets under THIS
   machine's project dir, and self-installs this skill. Then `claude --resume <id>`.
+  PREFLIGHT: verifies rclone is installed, the remote is configured AND authorized, and that the
+  session is locatable - i.e. everything that would block a transfer.
 
   Bytes flow disk<->Drive directly through rclone (never through the model), so there is no size limit.
 
-.PARAMETER Mode      push | pull
+.PARAMETER Mode      push | pull | preflight
 .PARAMETER SessionId push: defaults to $env:CLAUDE_CODE_SESSION_ID. pull: the id to fetch, or 'latest'.
 .PARAMETER Remote    rclone remote name (default 'gdrive').
 .PARAMETER DriveRoot Drive folder that holds per-session bundles (default 'transfer-session').
@@ -19,7 +21,7 @@
 #>
 [CmdletBinding()]
 param(
-  [Parameter(Mandatory)][ValidateSet('push','pull')] [string]$Mode,
+  [Parameter(Mandatory)][ValidateSet('push','pull','preflight')] [string]$Mode,
   [string]$SessionId,
   [string]$Remote   = 'gdrive',
   [string]$DriveRoot= 'transfer-session',
@@ -34,17 +36,45 @@ function Die($m){ Write-Error "[transfer-session] $m"; exit 1 }
 function Get-Rclone {
   $c = Get-Command rclone -ErrorAction SilentlyContinue
   if ($c) { return $c.Source }
-  $cands = @(
-    "$env:LOCALAPPDATA\Microsoft\WinGet\Links\rclone.exe"
-  ) + (Get-ChildItem "$env:LOCALAPPDATA\Microsoft\WinGet\Packages\Rclone.Rclone*\*\rclone.exe" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName)
+  $cands = @("$env:LOCALAPPDATA\Microsoft\WinGet\Links\rclone.exe") +
+    (Get-ChildItem "$env:LOCALAPPDATA\Microsoft\WinGet\Packages\Rclone.Rclone*\*\rclone.exe" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName)
   foreach ($p in $cands) { if ($p -and (Test-Path $p)) { return $p } }
   return $null
+}
+
+# Drive free bytes via `rclone about` (null if unavailable).
+function Get-RcloneFreeBytes($rc,[string]$remote){
+  try { $j = (& $rc about "$remote`:" --json) | ConvertFrom-Json; return [int64]$j.free } catch { return $null }
+}
+
+# Verify everything that would block a transfer: rclone present, remote configured, token actually
+# works (reachable/authorized, not just declared). Prints a checklist; returns $true/$false.
+function Test-Prereqs([string]$remote){
+  $rc = Get-Rclone
+  if (-not $rc){ Write-Host "  [FAIL] rclone not found. Install: winget install Rclone.Rclone  (then open a fresh shell)"; return $false }
+  $ver = (& $rc version 2>$null | Select-Object -First 1)
+  Write-Host "  [ ok ] rclone: $rc  ($ver)"
+  $remotes = @(& $rc listremotes 2>$null)
+  if ($remotes -notcontains "$remote`:"){
+    Write-Host "  [FAIL] rclone remote '$remote`:' not configured. Run 'rclone config' (new remote named '$remote', type 'drive', finish browser OAuth)."
+    if ($remotes){ Write-Host "         configured remotes: $($remotes -join ' ')" }
+    return $false
+  }
+  Write-Host "  [ ok ] remote '$remote`:' configured"
+  $about = & $rc about "$remote`:" --json
+  if ($LASTEXITCODE -ne 0){
+    Write-Host "  [FAIL] remote '$remote`:' is configured but NOT reachable/authorized (token expired or offline)."
+    Write-Host "         Reconnect with: rclone config reconnect $remote`:"
+    return $false
+  }
+  try { $free=[int64](($about | ConvertFrom-Json).free); Write-Host "  [ ok ] authorized; Drive free ~$([math]::Round($free/1GB,1)) GB" } catch { Write-Host "  [ ok ] authorized" }
+  return $true
 }
 
 $ProjectsBase = Join-Path $env:USERPROFILE '.claude\projects'
 $SkillDir     = $PSScriptRoot                      # this skill's own folder (for self-propagation)
 
-# Encode an absolute path the way Claude Code names its project dir: ':' and '\' '/' -> '-'.
+# Encode an absolute path the way Claude Code names its project dir: ':' '\' '/' -> '-'.
 function ConvertTo-ProjectDir([string]$absPath){ return ($absPath -replace '[:\\/]','-') }
 
 # Find the project dir that actually contains <sid>.jsonl (robust to drive-letter case etc.).
@@ -55,11 +85,29 @@ function Resolve-ProjectDirForSession([string]$sid){
   return $null
 }
 
+# ============================== PREFLIGHT ==============================
+if ($Mode -eq 'preflight') {
+  Write-Host "[transfer-session] preflight (remote: $Remote)"
+  $ok = Test-Prereqs $Remote
+  $sid = if ($SessionId) { $SessionId } else { $env:CLAUDE_CODE_SESSION_ID }
+  if ($sid) {
+    $pd = Resolve-ProjectDirForSession $sid
+    if ($pd) { Write-Host "  [ ok ] current session $sid found ($pd)" }
+    else     { Write-Host "  [warn] session $sid .jsonl not found under $ProjectsBase (push needs it)" }
+  } else { Write-Host "  [warn] CLAUDE_CODE_SESSION_ID unset - pass -SessionId for push" }
+  if (Get-Command Compress-Archive -ErrorAction SilentlyContinue) { Write-Host "  [ ok ] Compress-Archive available (PowerShell $($PSVersionTable.PSVersion))" }
+  else { Write-Host "  [FAIL] Compress-Archive missing (need PowerShell 5+)"; $ok = $false }
+  if ($ok) { Write-Host "[transfer-session] PREFLIGHT OK - ready to push/pull."; exit 0 }
+  else     { Write-Host "[transfer-session] PREFLIGHT FAILED - fix the [FAIL] item(s) above."; exit 1 }
+}
+
 # ============================== PUSH ==============================
 if ($Mode -eq 'push') {
   if (-not $SessionId) { $SessionId = $env:CLAUDE_CODE_SESSION_ID }
   if (-not $SessionId) { Die "No SessionId and CLAUDE_CODE_SESSION_ID is unset. Pass -SessionId." }
-  $rclone = Get-Rclone; if (-not $rclone) { Die "rclone not found. Install: winget install Rclone.Rclone, then 'rclone config' a '$Remote' remote." }
+  Write-Host "[transfer-session] preflight:"
+  if (-not (Test-Prereqs $Remote)) { Die "preflight failed - fix the [FAIL] item(s) above and retry (or run -Mode preflight)." }
+  $rclone = Get-Rclone
 
   $projDir = Resolve-ProjectDirForSession $SessionId
   if (-not $projDir) { Die "Could not find $SessionId.jsonl under $ProjectsBase." }
@@ -71,12 +119,9 @@ if ($Mode -eq 'push') {
 
   Info "session  : $SessionId"
   Info "projDir  : $projDir"
-  # transcript + subagents
   Copy-Item (Join-Path $projDir "$SessionId.jsonl") "$stage\session\" -Force
   if (Test-Path (Join-Path $projDir $SessionId)) { Copy-Item (Join-Path $projDir $SessionId) "$stage\session\$SessionId" -Recurse -Force }
-  # memory
   if (Test-Path (Join-Path $projDir 'memory')) { Copy-Item (Join-Path $projDir 'memory\*') "$stage\memory\" -Recurse -Force -ErrorAction SilentlyContinue }
-  # this skill (so the target can self-install it)
   Copy-Item "$SkillDir\*" "$stage\skill\" -Recurse -Force -ErrorAction SilentlyContinue
 
   # local-only assets from manifest: lines `SRC` or `SRC => DEST` (# comments). SRC repo-relative or absolute.
@@ -94,11 +139,10 @@ if ($Mode -eq 'push') {
       $stageRel = "assets\$name"
       Copy-Item $srcAbs "$stage\$stageRel" -Recurse -Force
       $assetMap += [pscustomobject]@{ stage = ($stageRel -replace '\\','/'); dest = $dest }
-      Info "  asset    : $src  ($([math]::Round((Get-Item $srcAbs -ErrorAction SilentlyContinue).Length/1KB)) KB) -> $dest"
+      Info "  asset    : $src -> $dest"
     }
   } else { Info "no assets manifest at $manifest (session+memory only)" }
 
-  # meta
   $gitCommit = (& git -C $repoAbs rev-parse --short HEAD 2>$null)
   $gitRemote = (& git -C $repoAbs remote get-url origin 2>$null)
   [pscustomobject]@{
@@ -114,13 +158,19 @@ if ($Mode -eq 'push') {
   $zip = Join-Path $env:TEMP "transfer-session-$SessionId.zip"
   if (Test-Path $zip){ Remove-Item $zip -Force }
   Compress-Archive -Path "$stage\*" -DestinationPath $zip -CompressionLevel Optimal
-  $mb = [math]::Round((Get-Item $zip).Length/1MB,2)
+  $zipLen = (Get-Item $zip).Length
+  $mb = [math]::Round($zipLen/1MB,2)
   Info "bundle   : $zip ($mb MB)"
+
+  $free = Get-RcloneFreeBytes $rclone $Remote
+  if (($null -ne $free) -and ($zipLen -gt $free)) {
+    Die "bundle ($mb MB) exceeds Drive free space (~$([math]::Round($free/1GB,2)) GB). Free up Drive or use a remote with space."
+  }
 
   $dst = "$Remote`:$DriveRoot/$SessionId/"
   Info "uploading -> $dst"
   & $rclone copy $zip $dst
-  if ($LASTEXITCODE -ne 0) { Die "rclone upload failed (exit $LASTEXITCODE). Is the '$Remote' remote configured? (rclone config)" }
+  if ($LASTEXITCODE -ne 0) { Die "rclone upload failed (exit $LASTEXITCODE)." }
   & $rclone ls $dst
 
   Info "DONE. To acquire on the TARGET machine, run from the repo root there:"
@@ -139,15 +189,21 @@ if ($Mode -eq 'pull') {
     if (-not (Test-Path $BundleZip)) { Die "BundleZip not found: $BundleZip" }
     Copy-Item $BundleZip "$work\bundle.zip" -Force
   } else {
-    $rclone = Get-Rclone; if (-not $rclone) { Die "rclone not found; install+config it, or pass -BundleZip <downloaded.zip>." }
+    Write-Host "[transfer-session] preflight:"
+    if (-not (Test-Prereqs $Remote)) { Die "preflight failed - fix the [FAIL] item(s) above, or pass -BundleZip <downloaded.zip> to skip rclone." }
+    $rclone = Get-Rclone
     if (-not $SessionId -or $SessionId -eq 'latest') {
       Info "resolving latest session under $Remote`:$DriveRoot/ ..."
       $dirs = & $rclone lsf "$Remote`:$DriveRoot/" --dirs-only 2>$null
       if (-not $dirs) { Die "No sessions found under $Remote`:$DriveRoot/." }
-      # pick the most-recently-modified session folder
       $latest = ($dirs | ForEach-Object { $n=$_.TrimEnd('/'); $t=(& $rclone lsl "$Remote`:$DriveRoot/$n/" 2>$null | Select-Object -First 1); [pscustomobject]@{n=$n; t=$t} } | Sort-Object t -Descending | Select-Object -First 1).n
       $SessionId = $latest
       Info "latest = $SessionId"
+    }
+    $probe = @(& $rclone lsf "$Remote`:$DriveRoot/$SessionId/" 2>$null)
+    if (-not ($probe | Where-Object { $_ -match '\.zip$' })) {
+      $have = (@(& $rclone lsf "$Remote`:$DriveRoot/" --dirs-only 2>$null) | ForEach-Object { $_.TrimEnd('/') }) -join ', '
+      Die "No bundle at $Remote`:$DriveRoot/$SessionId/. Push from the source first, or use -SessionId latest. (Sessions present: $have)"
     }
     Info "downloading $Remote`:$DriveRoot/$SessionId/ ..."
     & $rclone copy "$Remote`:$DriveRoot/$SessionId/" $work
@@ -164,7 +220,7 @@ if ($Mode -eq 'pull') {
   Info "restoring session $sid (from repo $($meta.sourceRepoPath), git $($meta.gitCommit))"
 
   # Target project dir name(s). Claude Code derives it from the repo's absolute path, but the
-  # drive-letter case can vary (this machine has both 'e--' and 'E--'). Restore to every plausible
+  # drive-letter case can vary (a machine may have both 'e--' and 'E--'). Restore to every plausible
   # name so `claude --resume` finds the transcript+memory regardless of which case CC uses here.
   $cands = New-Object System.Collections.Generic.List[string]
   if ($meta.sourceRepoPath -and ($meta.sourceRepoPath -ieq $repoAbs) -and $meta.sourceProjectDir) { $cands.Add($meta.sourceProjectDir) }
@@ -185,7 +241,6 @@ if ($Mode -eq 'pull') {
     Info "  restored transcript+memory -> $destProj"
   }
 
-  # assets
   foreach ($a in $meta.assets) {
     $srcA = Join-Path $ext ($a.stage -replace '/','\')
     if (-not (Test-Path $srcA)) { Info "  asset missing in bundle: $($a.stage)"; continue }
@@ -196,7 +251,6 @@ if ($Mode -eq 'pull') {
     Info "  asset -> $dest"
   }
 
-  # self-install this skill on the target
   if (Test-Path "$ext\skill\transfer-session.ps1") {
     $skillDest = Join-Path $env:USERPROFILE '.claude\skills\transfer-session'
     New-Item -ItemType Directory -Force -Path $skillDest | Out-Null
@@ -208,6 +262,6 @@ if ($Mode -eq 'pull') {
   Info "DONE. Next:"
   Info "  1) ensure the repo is present/updated:  git -C `"$repoAbs`" pull   (remote: $($meta.gitRemote))"
   Info "  2) resume the conversation:             claude --resume $sid"
-  if ($meta.sourceRepoPath -and ($meta.sourceRepoPath -ne $repoAbs)) { Info "  NOTE: source repo path was $($meta.sourceRepoPath); restored under THIS path's project dir(s): $($cands -join ', ') so resume works here." }
+  if ($meta.sourceRepoPath -and ($meta.sourceRepoPath -ne $repoAbs)) { Info "  NOTE: source repo path was $($meta.sourceRepoPath); restored under this path's project dir(s): $($cands -join ', ')" }
   exit 0
 }
