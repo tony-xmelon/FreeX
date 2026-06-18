@@ -200,8 +200,22 @@ reader → writer → view, each with round-trip + render tests; `FreeW.slnx` 0-
     Measured effect: `drawing` now paginates to **exactly Word's 20 pages** (was 19); `endnotes`
     0.890→0.931, `VariousPictures` 0.895→0.930, `stress018` 0.656→0.704, `stress008` 0.547→0.570,
     `stress010`/`stress004` up; **overall page-weighted SSIM 0.633→0.648**. One regression — `stress023`
-    0.683→0.622 — where the Arabic substitute font's WPF natural line runs taller than Word's, so it now
-    over-paginates (15 vs 12); residual per-font engine variance, not a formula error.
+    0.683→0.622 (13→15 pages vs Word's 12). NB this doc uses *installed* Times/Calibri, not a substitute:
+    the over-height is because WPF's `FontFamily.LineSpacing` for Calibri (1.22) exceeds Word's "one line"
+    for the same installed font, so `1.08 × 1.22` overshoots. That is genuine WPF-vs-Word natural-line
+    divergence for an installed font — not substitution, and not a formula error.
+
+### Open correctness gap this surfaced: paragraph spacing isn't resolved through the style chain
+
+Reading a body paragraph (`DocxReader.ReadParagraph`) resolves spacing as `direct pPr ?? docDefaults ??
+builtin` — it never consults the paragraph's own **style** (or its `basedOn` chain). So a paragraph in a
+1.5-/1.0-line style with no direct `w:line` is read as the docDefault (e.g. 1.08), and because the reader
+pre-fills a non-default value the render-time cascade (`DocumentView.Resolve`) can't tell it from an
+explicit setting and won't recover the style's value. `stress023` (178 paragraphs, only 2 with direct
+spacing; styles at 240/259/360 twentieths) is the worst case. The clean fix is the **nullable formatting
+refactor** (item 9): record only explicit values, resolve `direct ?? style ?? basedOn-chain ?? docDefault
+?? builtin` at one place. This is the one remaining model-layer lever; the per-font natural-line divergence
+above is below it (engine floor).
 
 ## Diagnosis: pagination drift was mostly a real line-height bug; the rest is engine line metrics
 
