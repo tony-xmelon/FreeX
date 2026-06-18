@@ -4,6 +4,12 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
+## P3 follow-up — revert unused Avalonia→Shell reference (guard green) — ✅ FIXED
+
+The `AvaloniaProjectPortabilityGuardTests` failure that P4 logged as "pre-existing" was in fact a **P3 regression**: P3 added a *speculative, unused* `Free.Shared.Shell` ProjectReference to `FreeX.App.Avalonia` "to prove portability," which trips the guard's deliberate **exact-ordered** reference allow-list. Portability is already proven structurally (P3's deps.json check: `Free.Shared.Shell` builds as `net10.0` with zero WPF), so the correct fix is to **remove the unused reference** rather than weaken the architectural tripwire. Avalonia will reference the portable Shell planners when it actually consumes them (a future workstream), updating the allow-list alongside real usage. `FreeX.App.Avalonia` rebuilds clean; guard test **4/4**. Branch is now green except the known environmental `FreeX.App.Host.Tests` failures (untracked `CommandIconsSvg` asset + worktree workspace-file source-scanners), which are identical on `main`.
+
+---
+
 ## P4 — Shared `JsonSettingsStore<T>` (FreeW options) + FreeW local diagnostics — ✅ DONE (on `unification-program`)
 
 **Commits:** `7cd56ed3e` (shared store + tests), `b5edd2070` (FreeW options), `1b34455c3` (FreeW diagnostics).
