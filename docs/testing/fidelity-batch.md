@@ -69,11 +69,13 @@ Or directly: `tools/FreeX.FidelityCompare.exe [--filter <substr>] [--out <dir>] 
 The library is catalogued in `fidelity-corpus/manifest.csv`; only the manifest and the downloader
 (`tools/Fetch-FidelityCorpus.ps1`) are committed. The workbooks themselves download into the git-ignored
 `fidelity-corpus/files/` folder, so no third-party binaries are redistributed from this repo. The catalogue
-uses Apache POI test data (Apache-2.0) plus targeted MIT-licensed fixtures from ClosedXML, Open XML SDK, and
-PhpSpreadsheet for form controls, ActiveX controls, dropdown validation, Budget-vs-Actual chart data, and
-emoji/unicode strings. It is chosen for broad feature coverage across formulas, tables, pivots, charts,
-conditional formatting, drawings, sparklines, worksheet structure, protection, and page setup; add your own
-complex workbooks as `source=local` rows (they stay git-ignored). See `fidelity-corpus/README.md`.
+uses Apache POI test data (Apache-2.0), OfficeCLI chart/pivot workbooks (Apache-2.0), and targeted
+MIT-licensed fixtures from ClosedXML, ClosedXML.Report, Open XML SDK, and PhpSpreadsheet for form controls,
+ActiveX controls, dropdown validation, ChartEx/cx charts, chartsheets, chart overlays, PivotTables,
+Budget-vs-Actual chart data, and emoji/unicode strings. It is chosen for broad feature coverage across
+formulas, tables, pivots, charts, conditional formatting, drawings, sparklines, worksheet structure,
+protection, and page setup; add your own complex workbooks as `source=local` rows (they stay git-ignored).
+See `fidelity-corpus/README.md`.
 
 ## Interpreting results
 
