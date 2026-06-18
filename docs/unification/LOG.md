@@ -4,6 +4,25 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
+## P3b — Neutralize the two Rect-based Shell planners (now portable) — ✅ DONE (on `unification-program`)
+
+**Commit:** `2250828f3`.
+
+**What changed.** P3 had to classify `WindowResetPositionPlanner` and `SideBySideLayoutPlanner` into `Free.Shared.Shell.Wpf` even though they are "pure geometry," because they returned `System.Windows.Rect` (a WindowsBase/WPF type). This pass finishes the job so they live in the portable tier:
+
+- **New neutral record `ShellRect`** in portable `Free.Shared.Shell` (`shared/Free.Shared.Shell/ShellRect.cs`): `readonly record struct ShellRect(double X, double Y, double Width, double Height)` with `Left`/`Top` aliases that mirror `Rect`'s member names (so existing `.Left`/`.Top`/`.Width`/`.Height` call sites and tests read unchanged). Named `ShellRect` (not `LayoutRect`) deliberately — `FreeX.App.Presentation.Charts` already has an unrelated `LayoutRect`, so a distinct name avoids confusion.
+- **Both planners MOVED** `shared/Free.Shared.Shell.Wpf/` → `shared/Free.Shared.Shell/` and retargeted to return `ShellRect` instead of `System.Windows.Rect`. Namespace stays `Free.Shared.Shell`, so consumers churn by zero `using`s. The `.Wpf` copies were `git rm`'d.
+- **Consumer churn is minimal.** `MainWindow.MultiWindow.cs` `ViewResetWindowPositionBtn_Click` reads `.Left/.Top/.Width/.Height` off the planner result — works unchanged on `ShellRect`. `WorkbookWindowRegistry.EnableSideBySide` feeds `SideBySideLayoutPlanner.Tile` results into the WPF-typed `IWorkbookWindow.TileToWorkArea(Rect)` seam, so it now constructs `new Rect(r.X, r.Y, r.Width, r.Height)` at that one WPF boundary (the only conversion needed). `IWorkbookWindow.TileToWorkArea` keeps its `Rect` signature, and `ArrangeAllLayoutPlanner` (which is FreeX-app-local, **not** shared) keeps returning `Rect` — both out of scope.
+- `FreeX.App.Host` already referenced portable `Free.Shared.Shell` and globally imports its namespace; the planner tests (`FreeX.App.Host.Logic.Tests`) carry a global `<Using Include="Free.Shared.Shell" />`, so both resolve the moved types transitively with no edits.
+
+**Verification.**
+- `dotnet build shared/Free.Shared.Shell/Free.Shared.Shell.csproj -c Release` → `bin/Release/net10.0/`, **0/0**. `deps.json` grep for `PresentationCore|WindowsBase|PresentationFramework|System.Windows` → **zero hits**; the portable Shell stays WPF-free.
+- `dotnet build FreeX.slnx -c Release` and `dotnet build FreeW.slnx -c Release` — both **clean, 0 warnings / 0 errors** (warnings-as-errors).
+- `FreeX.App.Host.Logic.Tests` (the planner tests): the 10 `WindowResetPositionPlannerTests` + `SideBySideLayoutPlannerTests` **green**; full project **1546/1546** (5 skipped benchmarks), identical to the P3 baseline.
+- `ViewCommandSourceTests`: `ViewWindowLiveHandlers_RouteThroughRegistryAndWindowLayoutPlanners` (asserts the `WindowResetPositionPlanner.Compute(...)` + `EnableSideBySide(...)` routing) **passes**. The sibling `ViewWindowHandlers_RouteThroughExpectedPlannersAndCommands` fails — confirmed **pre-existing drift**, not a P3b regression: it asserts `AutomationProperties.SetHelpText(button, description)` in `MainWindow.ViewCommands.cs`, a file P3b never touched and which does not contain that string.
+
+---
+
 ## Visual validation follow-up — rail icons + content inset FIXED — ✅
 
 Both diffs the visual comparison surfaced are now resolved; re-captured Home/Info/Print on the rebuilt unified app match stable.
