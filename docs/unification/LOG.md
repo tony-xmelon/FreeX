@@ -4,7 +4,18 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
-## Visual validation — stable (`origin/main`) vs unified backstage — ⚠️ ONE REGRESSION FOUND
+## Visual validation follow-up — rail icons + content inset FIXED — ✅
+
+Both diffs the visual comparison surfaced are now resolved; re-captured Home/Info/Print on the rebuilt unified app match stable.
+
+- **Rail icons (the regression).** Root cause: two separate `RibbonIconFactory` classes — FreeX's own (`FreeX.App.Host`, loads branded `CommandIconsSvg`, used by the ribbon) and the shared one (`Free.Shared.Ribbon.Wpf`, used by `BackstageFrame`). The shared one exposes a `CommandIconElementResolver` hook *designed* for app artwork, but **FreeX never installed it**, so the rail fell back to geometric `RibbonCommandIconKind` glyphs. Fix: added `FreeX.App.Host.RibbonIconFactory.TryCreateCommandIconElement` (returns the branded SVG element, or **null** for unskinned commands so the shared geometry fallback is preserved — surgical) and wired it into `Free.Shared.Ribbon.Wpf.RibbonIconFactory.CommandIconElementResolver` in `App_OnStartup`. Recursion-safe (FreeX's factory never calls the shared one). Bonus: any shared chrome FreeX hosts (QAT, …) now reuses the same Office icons. The two `RibbonTooltip` types remain distinct (handled separately by `DecorateNavButtons`).
+- **Content inset.** Added `BackstageFrame.SetContentPadding(Thickness)` (default stays `(40,28,40,28)` for FreeW's padding-less code-built panes); FreeX sets it to `0` because its reparented XAML panes carry their own insets — so content lands exactly where the hand-rolled rail had it (greeting back at ~x233/y95, matching stable).
+
+Verified: `FreeX.App.Host` Release clean (0/0); backstage/rail tests **75/75**; Home + Info + Print visually match stable (branded icons, aligned content). Follow-ups P1-icons / P1-inset closed.
+
+---
+
+## Visual validation — stable (`origin/main`) vs unified backstage — ⚠️ ONE REGRESSION FOUND (now fixed, see above)
 
 Built both Release from isolated worktrees (stable `0d67746d2`, unified `fa87b738e` — both **0 warnings / 0 errors**; the shared main checkout itself couldn't be built due to another session's `MSB3021` file lock — contention, not a code issue). Ran FreeX's `FREEX_BACKSTAGE_TOUR` + `FREEX_FILE_BACKSTAGE_WORKFLOWS_TOUR` (background-render) on each and compared Home/Info/Print states.
 
