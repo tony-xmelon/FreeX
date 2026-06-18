@@ -12,11 +12,12 @@ Code itself travels via git; this skill moves the things git does NOT carry (the
 
 ## When invoked (what Claude should do)
 Parse the args after `/transfer-session`:
-- **`push`** (or no args) → run the push command below for the current session. This is the default.
-- **`pull [<sessionId>|latest]`** → run the pull command (default `latest` if no id given).
+- **`push`** (or no args) → bundle + upload the current session. (Auto-runs preflight first.)
+- **`pull [<sessionId>|latest]`** → download + restore (default `latest`). (Auto-runs preflight first.)
+- **`preflight`** / **`check`** → verify rclone is installed, the remote is configured AND authorized, the session is locatable, and zip support exists — i.e. anything that would block a transfer. Run this when the user wants to confirm setup, or first on a new machine.
 - **`status`** → `rclone ls gdrive:transfer-session/` to list transferred sessions.
 
-Then RUN it yourself via the PowerShell tool (don't make the user run anything) and report the result + the next step (`claude --resume <id>` for pull). If rclone or the `gdrive` remote isn't set up, stop and walk the user through the one-time `rclone config` (the OAuth is theirs to click). Pass the script path `~/.claude/skills/transfer-session/transfer-session.ps1` (resolve `~` to `$env:USERPROFILE`). Refresh PATH first: `$env:Path = [Environment]::GetEnvironmentVariable('Path','Machine')+';'+[Environment]::GetEnvironmentVariable('Path','User')`.
+Then RUN it yourself via the PowerShell tool (don't make the user run anything) and report the result + next step (`claude --resume <id>` for pull). The script's preflight gives actionable `[FAIL]` messages — if it reports rclone/remote not set up, walk the user through the one-time `rclone config` (the OAuth is theirs to click). Pass the script path `~/.claude/skills/transfer-session/transfer-session.ps1` (resolve `~` to `$env:USERPROFILE`). Refresh PATH first: `$env:Path = [Environment]::GetEnvironmentVariable('Path','Machine')+';'+[Environment]::GetEnvironmentVariable('Path','User')`.
 
 ## Prerequisites
 - **rclone** installed and a remote configured (default name `gdrive`): `winget install Rclone.Rclone`, then `rclone config` → new remote `gdrive` → Google Drive → finish the browser OAuth. The user must do the OAuth (it's their Google login); you cannot.
