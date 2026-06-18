@@ -1,6 +1,6 @@
 # FreeW Microsoft Word Command Inventory
 
-Last updated: 2026-06-17
+Last updated: 2026-06-18
 
 ## Sources And Scope
 
@@ -86,7 +86,19 @@ Created now for likely next FreeW milestones:
 | Mailings | `envelopes.svg`, `labels.svg`, `mail-merge.svg` |
 | Review | `track-changes.svg`, `accept-change.svg`, `reject-change.svg`, `word-count.svg` |
 
+## Current FreeW Ribbon Icon Coverage
+
+The 2026-06-18 ribbon icon pass covers every direct command id currently emitted by the WPF FreeW ribbon plus the smaller Avalonia FreeW shell: 148 unique `freew.*` command ids.
+
+- SVGs are checked into `freew/FreeW.App.Host/Resources/CommandIconsSvg` under direct command slugs, for example `freew.accept-all` -> `accept-all.svg`.
+- Reused FreeX artwork is copied into FreeW under the FreeW slug so the FreeW app remains self-contained.
+- Word-specific commands that FreeX does not have now have FreeW SVGs in the same 32 px vector style, with crisp 22 px `-small.svg` variants for alignment and indentation rule-line icons.
+- `Free.Shared.Ribbon.Wpf.RibbonIconFactory` now allows a host-supplied app-local artwork resolver; FreeW installs its SVG loader before falling back to shared geometry.
+- `freew/FreeW.App.Host.Tests/RibbonCommandIconAssetTests.cs` guards command-id coverage, non-empty SVGs, `freew.` prefix stripping, and the shared renderer's preference for FreeW app-local SVG artwork.
+
 ## Next Icon Backlog
+
+The items below are now covered for commands that exist on FreeW's current ribbon. They remain useful as future backlog categories when additional Microsoft Word contextual tabs, galleries, and non-ribbon command surfaces are added.
 
 | Priority | Word area | Missing/new icons to add next | Reuse candidates already in FreeW/FreeX |
 |---|---|---|---|
