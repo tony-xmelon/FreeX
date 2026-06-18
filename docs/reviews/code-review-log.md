@@ -1,8 +1,23 @@
 # Code Review Findings
 
-Last updated: 2026-06-12
+Last updated: 2026-06-18
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
+
+## 2026-06-18 Comprehensive Review Iteration 6
+
+Full report: [reviews/comprehensive-code-review-2026-06-18-iter6.md](comprehensive-code-review-2026-06-18-iter6.md).
+
+Documentation-only review at `main` HEAD `06d173eac`, focused on recalc spill cleanup, XLSX save warning fidelity, app-services path-provider wiring, and XLSX package XML validation.
+
+Resolution update: all four findings were fixed on branch `codex/repo-review-findings` after installing .NET SDK `10.0.100` locally. Focused tests passed for the affected calc, IO, and app-services areas. Full preflight/build/default-test verification is still blocked by unrelated repository issues documented in the full report.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P1 | Calc / dynamic arrays | Fixed: evaluator-error catch paths now clear stale spill target values after a formerly successful dynamic-array formula starts returning an error. |
+| P2 | XLSX save | Fixed: `SaveWithWarnings` now reports comment and hyperlink serialization failures instead of silently returning clean. |
+| P2 | Autosave | Fixed: `AutosaveSnapshotStore.CreateDefault` now uses the injected `IApplicationDataPathProvider`. |
+| P3 | XLSX tooling | Fixed: `XlsxPackageHealthValidator` now routes package XML through the hardened XML reader settings used elsewhere. |
 
 ## 2026-06-12 Comprehensive Review
 
