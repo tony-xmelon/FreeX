@@ -33,6 +33,12 @@ All tests are `[Trait("Category","RibbonUiLane")]` (functional) or `RibbonUiLane
 - **Resize performance** (`*.Performance.cs`) — a redundant same-width resize re-applies no adaptive state;
   a back-and-forth resize sweep reuses its measurement caches (no re-measuring on revisited widths); a
   benchmark reports per-step resize timing.
+- **No clipping** (`*.NoClipping.cs`) — at every width and on every tab the live arranged ribbon content
+  fits within its panel (groups fold into overflow buttons) and never overflows the right edge. Guards the
+  "resizing clips the ribbon" defect: the adaptive panel seeded each group's full width from its first
+  (pre-icon-realization) measure and trusted that stale value, so it under-collapsed and clipped wide
+  groups (e.g. Page Setup). `RibbonAdaptivePanel.MeasureOverride` now refreshes each expanded group's
+  cached width from its realized size before deciding, so the collapse decision fits the real content.
 
 ## Known pre-existing drift in the older `MainWindowAdaptiveRibbonTests`
 
