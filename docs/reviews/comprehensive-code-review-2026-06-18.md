@@ -18,6 +18,31 @@ Every reported finding was verified by reading the actual source, not by grep al
 
 Scope limit: this is a static review. No tests were run as part of it; the default lane was green at the prior review (2026-06-12). `freew/` (the sibling `.docx` app) was out of scope for this pass.
 
+## 0.1 Resolution Update (2026-06-18, branch `codex/code-review-fixes-2026-06-18`)
+
+All **High**-severity findings and the two contained correctness **Medium**s were fixed and verified the same day. An adversarial re-review of the fixes (two independent verifier passes over the diff) found one real gap (composite double-revert on a throwing sub-command revert) and one incomplete fix (the recent-files reader/writer race), both since closed. Fix commits:
+
+- **High — command atomicity** (§2/§3): `CommandBus.Execute`/`Redo` wrap `Apply` in try/catch with best-effort `Revert`; `CompositeWorkbookCommand.Apply` rolls back on a *thrown* inner command, and `RevertApplied` is now exception-safe (per-revert guard + `finally` clear) so a throwing sub-command revert can't trigger a double-revert.
+- **High — recalc** (§2): edited-formula precedents are registered before the recalc order is computed; the spill-target dependent follow-up pass now runs in the per-edit `Recalculate` path (recursion-guarded), not just full recalc.
+- **High — formula range rewrite** (§2): partial row/column deletes shrink a range to the surviving rows/cols (Excel semantics) instead of collapsing to `#REF!`; `#REF!` only when the whole range is deleted. New `FormulaRewriter` tests.
+- **High — Sentry PII** (§5): `SetBeforeSend` scrubs the user profile path + username from event messages, exception values, and stack-frame paths. (Known limit: document paths *outside* the profile are not redacted — substring redaction only.)
+- **High — thread-safety** (§6): `AppDiagnosticsFileStore` serializes event-log appends; `RecentFilesStore` serializes mutators and adds `Snapshot()` (locked copy) used by the WPF + Avalonia open-recent menu builders so reads can't race a background mutator.
+- **High — Avalonia async-void** (§6): Drop/Closing/MoreColors handlers and the activation subscription catch exceptions instead of escaping to the dispatcher; assembly version stamped (`0.5.0`).
+- **Medium — Core correctness** (§2): `Sheet.Clone` now copies spill state; `RemoveSheetCommand` rewrites defined-name *formulas* referencing the deleted sheet (with undo). New regression tests.
+- **Medium — CSV DoS** (§4): `DelimitedTextRecord.Add` caps field growth at the sheet column limit.
+- **Build hygiene** (§6): `Nullable`/`ImplicitUsings` centralized in `Directory.Build.props`.
+
+**Verification:** `FreeX.slnx` Release build 0 warnings / 0 errors; `FreeX.DefaultTests.slnx` all green (~19,900 tests). Two new Model tests, six new FormulaRewriter tests, three brittle source-assertion tests updated to match the new wiring.
+
+**Deferred, with rationale (not yet applied):**
+- *CSV number/date locale parsing* (§4 Medium) — Excel's own CSV import is locale-dependent, so switching to invariant-only would *diverge* from Excel. Left as-is pending a product decision (e.g. an explicit import-culture option); only the unbounded-growth half was fixed.
+- *`Workbook.GetStyle` defensive clone* (§2 Medium, perf) — flipping the contract to return the shared instance risks reintroducing the caller-mutation bugs an earlier PR fixed; needs a caller audit, not a blind change.
+- *Raising `AnalysisLevel` / enabling CA analyzers* (§6 Low) — with `TreatWarningsAsErrors=true`, turning these on fails the build on pre-existing violations across ~442k LOC; needs its own cleanup campaign.
+- *Avalonia Windows `app.manifest` / extra RIDs* (§6) — packaging/CI decisions (Avalonia sets DPI awareness programmatically, so the manifest's value is marginal); left to the packaging owner.
+- Most **Low** items (bare-catch narrowing, duplication, doc fixes) and the §4/§5 best-effort warning surfacing remain open as good follow-ups.
+
+**Pre-existing blocker (unrelated to this work):** `tools/Test-RepositoryPreflight.ps1` fails because `tools/FreeW.RenderCompare/FreeW.RenderCompare.csproj` exists but is in no `.slnx`. No solution files were touched by this branch.
+
 ## 1. Executive Summary
 
 The codebase is, overall, **unusually disciplined**. The untrusted-file attack surface (the thing that matters most for a spreadsheet app) is well defended; number/date parsing in the formula engine is consistently invariant-culture; recursion is bounded; most `catch` blocks deliberately convert to Excel error values rather than swallowing. No Critical defects were found. The findings cluster into a few themes:
