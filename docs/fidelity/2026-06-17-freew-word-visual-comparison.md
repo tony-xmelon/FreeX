@@ -231,10 +231,21 @@ reader → writer → view, each with round-trip + render tests; `FreeW.slnx` 0-
       0, so an unset indent already reads as the default and inherits the style correctly — only the non-zero
       defaults, space-after=8 and the docDefault-baked line spacing, needed the explicit flag).
 
-**Net across the session: overall page-weighted SSIM 0.614 → 0.652, every doc flat-or-better than its
-starting baseline, no regressions; the paragraph spacing cascade (line + before + after) that drives
-pagination is now correct. Remaining gap is the engine floor (WPF-vs-Word natural-line metrics for installed
-fonts, font substitution, sub-pixel) — not correctable from the model/IO layer.**
+13. **Table borders inherited from the table style** (`DocxReader` + `DocumentStyle.TableBorders`) — a table
+    whose borders come from its referenced style (the built-in `TableGrid` Word applies to a default bordered
+    table) but with no explicit `w:tblBorders` rendered borderless: the reader set `Borders` from the table's
+    own `tblBorders` only. Now captures each style's `tblPr/tblBorders` and ORs it in. `TableGrid` is Word's
+    default table style, so this is a common real-world correctness fix; IO byte-equality lane stays green.
+    On the corpus it **dipped `checkboxes` 0.946→0.939**: the now-visible borders expose FreeW's residual
+    table-cell layout difference from Word (the same WPF-vs-Word floor as text line metrics) — the fix is
+    correct (Word draws these borders), the dip is a separate engine-level layout difference it made visible,
+    not a reason to leave real tables unbordered. A precise table-cell layout match is a follow-up.
+
+**Net across the session: overall page-weighted SSIM 0.614 → 0.652. The paragraph spacing cascade (line +
+before + after) that drives pagination is correct, and table-style borders now render. The remaining gap is
+the engine floor (WPF-vs-Word natural-line metrics even for installed fonts, font substitution where docs
+embed none, sub-pixel rounding, and the analogous table-cell layout divergence) — not correctable from the
+model/IO layer. 100% visual SSIM is unreachable between two independent layout engines.**
 
 ## Diagnosis: pagination drift was mostly a real line-height bug; the rest is engine line metrics
 
