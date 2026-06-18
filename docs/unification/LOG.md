@@ -4,6 +4,17 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
+## Visual validation — stable (`origin/main`) vs unified backstage — ⚠️ ONE REGRESSION FOUND
+
+Built both Release from isolated worktrees (stable `0d67746d2`, unified `fa87b738e` — both **0 warnings / 0 errors**; the shared main checkout itself couldn't be built due to another session's `MSB3021` file lock — contention, not a code issue). Ran FreeX's `FREEX_BACKSTAGE_TOUR` + `FREEX_FILE_BACKSTAGE_WORKFLOWS_TOUR` (background-render) on each and compared Home/Info/Print states.
+
+- ✅ **Rail structure identical** across all states: order, labels, selection band, bottom-docked Account/Options, greeting, Recent/Pinned, New tile, recent list.
+- ✅ **Pane hosting via `ContentFactory` is pixel-faithful** — Info pane and even the heavy **Print** pane (reparented `DocumentViewer` + live page preview) render with no clipping/breakage. The core migration mechanic (reparent existing XAML panes) is visually de-risked, including the hardest pane.
+- ⚠️ **REGRESSION — rail icons.** Stable shows FreeX's branded per-command SVG icons (house/folder/printer/person/gear); unified shows the shared frame's generic geometric `RibbonCommandIconKind` glyphs (grid/cylinder/rectangle/chevron). Cause: shared `BackstageFrame.BuildIcon` builds its own `RibbonIcon` from `RibbonCommandIconKind` and ignores FreeX's `CommandName→CommandIconsSvg` resolution. **Fix:** add a host icon seam to the frame (e.g. `Func<BackstageEntry,UIElement> iconFactory` / `DecorateNavButtons`-style hook) so FreeX supplies its branded icons — aligns with the superset principle. Follow-up P1-icons.
+- ⚠️ **Minor — content inset.** Unified pane content sits ~27px lower / slightly more inset (shared frame content `Margin(40,28,40,28)` vs FreeX's original). Cosmetic; tune the frame content margin. Follow-up P1-inset.
+
+---
+
 ## P3 follow-up — revert unused Avalonia→Shell reference (guard green) — ✅ FIXED
 
 The `AvaloniaProjectPortabilityGuardTests` failure that P4 logged as "pre-existing" was in fact a **P3 regression**: P3 added a *speculative, unused* `Free.Shared.Shell` ProjectReference to `FreeX.App.Avalonia` "to prove portability," which trips the guard's deliberate **exact-ordered** reference allow-list. Portability is already proven structurally (P3's deps.json check: `Free.Shared.Shell` builds as `net10.0` with zero WPF), so the correct fix is to **remove the unused reference** rather than weaken the architectural tripwire. Avalonia will reference the portable Shell planners when it actually consumes them (a future workstream), updating the allow-list alongside real usage. `FreeX.App.Avalonia` rebuilds clean; guard test **4/4**. Branch is now green except the known environmental `FreeX.App.Host.Tests` failures (untracked `CommandIconsSvg` asset + worktree workspace-file source-scanners), which are identical on `main`.
