@@ -17,13 +17,19 @@ Follow-up review after iteration 1's fixes were merged to `main` (`8fdf34a73`). 
 
 **Verification:** `FreeX.slnx` Release build 0 warnings / 0 errors; `FreeX.DefaultTests.slnx` all green (~19,950 tests, incl. `FreeX.App.Avalonia.Tests`).
 
+### Iteration 3 update (branch `codex/code-review-iter3-2026-06-18`)
+
+- **[Medium] Chart contextual handlers acting on a stale chart reference — FIXED.** All seven `MainWindow.ChartTabs.cs` handlers now re-resolve the selected chart via `TryGetSelectedChart` after their dialog `await` (mirroring the shape handlers), so a command acts on the currently-selected chart, not the one captured before the dialog opened.
+- **[Medium] Deviation-overlay range-label merge "collision" — RECLASSIFIED, not a bug.** The per-`PointIndex` merge is intentional and documented: the overlay draws exactly one floating label per category above the column cluster, so keying by `(SeriesIndex, PointIndex)` would render overlapping duplicates.
+- **[Low] Deviation zero-test (`< double.Epsilon`) — RECLASSIFIED, not a bug.** For normal doubles this is equivalent to "exactly equal," matching the comment; any real deviation still draws a bar.
+
+Verification: `FreeX.slnx` Release build 0/0; `FreeX.DefaultTests.slnx` all green.
+
 ### Deferred (genuine findings, larger or lower-value — next iterations)
 
-- **[High] "Value From Cells" range data labels are dropped on XLSX save** — `XlsxChartDataLabelReader` reads `c15:datalabelsRange` into `ChartModel.RangeDataLabels`, but no writer emits it and the native (.fxl) DTO has no field for it, so the labels are lost on round-trip. Needs a chart-XML writer addition + native DTO field. (Good candidate for the next iteration.)
+- **[High] "Value From Cells" range data labels are dropped on XLSX save** — `XlsxChartDataLabelReader` reads `c15:datalabelsRange` into `ChartModel.RangeDataLabels`, but no writer emits it and the native (.fxl) DTO has no field for it, so the labels are lost on round-trip. **This is a feature, not a quick fix:** the reader discards the `c15:f` source-range formula, so faithful round-trip needs the model to capture `c15:f` per series and the writer to emit the full `datalabelsRange` (formula + cache) — and ideally Excel validation, which isn't available in this environment. Tracked for a dedicated change.
 - **[Medium] Avalonia status-bar path has no view-model cache** — re-allocates/re-formats every refresh; the WPF host added `StatusBarViewModelCache`, the Avalonia path didn't (parity + allocation-churn gap).
-- **[Medium] Chart contextual handlers act on a chart reference resolved before the dialog await** — re-resolve after the await (the shape handlers already do; Core validates by id so it fails gracefully, hence not higher).
-- **[Medium] Deviation-overlay range-label merge keys on `PointIndex` only** — two series labeling the same point index collide silently (`ChartRenderer.DeviationOverlay.cs`).
-- **[Low] `DrawingObjectEffect.Opacity` defaults to 0** (fully transparent); deviation zero-test uses `double.Epsilon`; `DrawFormControlSunkenEdge` doesn't match its comment.
+- **[Low] `DrawingObjectEffect.Opacity` defaults to 0** (fully transparent — latent if a future caller/deserialization omits it); `DrawFormControlSunkenEdge` doesn't draw the highlight lines its comment promises.
 
 ## 2. Pre-existing Blocker (NOT introduced by this work)
 
