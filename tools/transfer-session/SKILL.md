@@ -10,6 +10,14 @@ One-step transfer of a Claude Code session between machines. Bundles the **conve
 
 Code itself travels via git; this skill moves the things git does NOT carry (the session transcript, the `~/.claude` memory, and gitignored/large local assets).
 
+## When invoked (what Claude should do)
+Parse the args after `/transfer-session`:
+- **`push`** (or no args) → run the push command below for the current session. This is the default.
+- **`pull [<sessionId>|latest]`** → run the pull command (default `latest` if no id given).
+- **`status`** → `rclone ls gdrive:transfer-session/` to list transferred sessions.
+
+Then RUN it yourself via the PowerShell tool (don't make the user run anything) and report the result + the next step (`claude --resume <id>` for pull). If rclone or the `gdrive` remote isn't set up, stop and walk the user through the one-time `rclone config` (the OAuth is theirs to click). Pass the script path `~/.claude/skills/transfer-session/transfer-session.ps1` (resolve `~` to `$env:USERPROFILE`). Refresh PATH first: `$env:Path = [Environment]::GetEnvironmentVariable('Path','Machine')+';'+[Environment]::GetEnvironmentVariable('Path','User')`.
+
 ## Prerequisites
 - **rclone** installed and a remote configured (default name `gdrive`): `winget install Rclone.Rclone`, then `rclone config` → new remote `gdrive` → Google Drive → finish the browser OAuth. The user must do the OAuth (it's their Google login); you cannot.
 - Run from the **repo root** (used to locate the project dir and resolve repo-relative assets).
