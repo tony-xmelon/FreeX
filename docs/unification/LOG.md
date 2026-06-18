@@ -6,7 +6,7 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ## P4b — FreeX `AppOptionsStore` on shared `JsonSettingsStore` — ✅ DONE (on `unification-program`)
 
-**Commit:** `f2bf3cd17`.
+**Commit:** `e92736d8e`.
 
 **What changed.** P4 flagged FreeX's `AppOptionsStore` (`src/FreeX.App.Services/AppOptionsStore.cs`) as duplicating the generic JSON load/serialize/atomic-write/error-capture plumbing that P4 promoted to the shared `JsonSettingsStore<T>`. This pass retires that duplication while **preserving FreeX behaviour exactly**:
 
@@ -26,7 +26,7 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ## P3b — Neutralize the two Rect-based Shell planners (now portable) — ✅ DONE (on `unification-program`)
 
-**Commit:** `2250828f3`.
+**Commit:** `653b59f9a`.
 
 **What changed.** P3 had to classify `WindowResetPositionPlanner` and `SideBySideLayoutPlanner` into `Free.Shared.Shell.Wpf` even though they are "pure geometry," because they returned `System.Windows.Rect` (a WindowsBase/WPF type). This pass finishes the job so they live in the portable tier:
 
