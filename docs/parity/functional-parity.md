@@ -10,10 +10,10 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 
 | Metric | Count |
 |---|---:|
-| Total commands | 526 |
+| Total commands | 530 |
 | PARITY (both) | 422 |
 | AVALONIA-MISSING | 48 |
-| WPF-MISSING | 44 |
+| WPF-MISSING | 48 |
 | BOTH-MISSING | 12 |
 | Intentional Linux omissions (allowlisted) | 48 |
 
@@ -284,6 +284,10 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Top and Thick Bottom Border | Font | Home | yes | yes | PARITY |
 | Underline | Font | Home | yes | yes | PARITY |
 | Accounting Number Format | Number | Home | yes | yes | PARITY |
+| Accounting Number Format British Pound | Number | Home | — | yes | WPF-MISSING |
+| Accounting Number Format Euro | Number | Home | — | yes | WPF-MISSING |
+| Accounting Number Format Japanese Yen | Number | Home | — | yes | WPF-MISSING |
+| Accounting Number Format US Dollar | Number | Home | — | yes | WPF-MISSING |
 | Comma Style | Number | Home | yes | yes | PARITY |
 | Decrease Decimal Places | Number | Home | yes | yes | PARITY |
 | Increase Decimal Places | Number | Home | yes | yes | PARITY |

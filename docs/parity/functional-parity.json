@@ -1,10 +1,10 @@
 {
   "schema": "freex.parity.functional.v1",
   "summary": {
-    "totalCommands": 526,
+    "totalCommands": 530,
     "parity": 422,
     "avaloniaMissing": 48,
-    "wpfMissing": 44,
+    "wpfMissing": 48,
     "bothMissing": 12,
     "intentionalLinuxOmissions": 48
   },
@@ -64,6 +64,10 @@
     { "id": "Accent 1", "tab": "Home", "group": "Font", "wpf": false, "avalonia": false, "status": "BOTH-MISSING" },
     { "id": "Accent 2", "tab": "Home", "group": "Font", "wpf": false, "avalonia": false, "status": "BOTH-MISSING" },
     { "id": "Accounting Number Format", "tab": "Home", "group": "Number", "wpf": true, "avalonia": true, "status": "PARITY" },
+    { "id": "Accounting Number Format British Pound", "tab": "Home", "group": "Number", "wpf": false, "avalonia": true, "status": "WPF-MISSING" },
+    { "id": "Accounting Number Format Euro", "tab": "Home", "group": "Number", "wpf": false, "avalonia": true, "status": "WPF-MISSING" },
+    { "id": "Accounting Number Format Japanese Yen", "tab": "Home", "group": "Number", "wpf": false, "avalonia": true, "status": "WPF-MISSING" },
+    { "id": "Accounting Number Format US Dollar", "tab": "Home", "group": "Number", "wpf": false, "avalonia": true, "status": "WPF-MISSING" },
     { "id": "Advanced", "tab": "Data", "group": "Sort Filter", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Align Left", "tab": "Home", "group": "Alignment", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Align Right", "tab": "Home", "group": "Alignment", "wpf": true, "avalonia": true, "status": "PARITY" },
