@@ -2,7 +2,7 @@
 
 Branch: `codex/review-iterate-20260619-4`
 
-Base reviewed: `origin/main` at `e63d90023`; final verification after merging `origin/main` at `ff2bd16ea`.
+Base reviewed: `origin/main` at `e63d90023`; final verification after merging `origin/main` at `fe95d02d6`.
 
 Scope: fourth review/fix cycle across FreeW DOCX import/export fidelity, FreeW editor/view round-trips, Avalonia file-operation safety, ribbon command routing, and native-menu localization.
 
@@ -56,6 +56,12 @@ The Accounting Number Format dropdown exposed US Dollar, Euro, British Pound, an
 
 Fix: the ribbon menu definitions now assign distinct command ids for US Dollar, Euro, British Pound, and Japanese Yen, and the Avalonia command map routes each one to the matching symbol.
 
+### P2 - Avalonia parity catalog misses new accounting command IDs
+
+After merging the new functional parity matrix, its raw canonical Avalonia command catalog did not include the four newly distinct accounting command IDs. The parity hygiene test caught the drift because `MainWindow` wired those commands but the catalog could not account for them.
+
+Fix: `AvaloniaExtraCommandIds.RawCanonical` now includes the US Dollar, Euro, British Pound, and Japanese Yen accounting command IDs, keeping the parity matrix in lock-step with the shell wiring.
+
 ### P3 - High-visibility Avalonia native menu labels bypass localization
 
 The native File/Sheet menu setup used raw English labels for common commands such as New Workbook, Open, Save, Export to PDF, Share Workbook, Workbook Statistics, Close Workbook, and New Sheet.
@@ -67,10 +73,11 @@ Fix: those native menu labels now use `UiText` resource keys, with neutral and F
 - `dotnet test freew\FreeW.Core.IO.Tests\FreeW.Core.IO.Tests.csproj --configuration Release --filter "FullyQualifiedName~DocxRoundTripTests|FullyQualifiedName~BibliographyRoundTripTests" --logger "trx;LogFileName=freew-io-cycle4.trx" -v:minimal` - passed, 161 tests.
 - `dotnet test freew\FreeW.App.Host.Tests\FreeW.App.Host.Tests.csproj --configuration Release --filter "FullyQualifiedName~DocumentViewRoundTripTests" --logger "trx;LogFileName=freew-host-cycle4.trx" -v:minimal` - passed, 18 tests.
 - `dotnet test tests\FreeX.App.Services.Tests\FreeX.App.Services.Tests.csproj --configuration Release --filter "FullyQualifiedName~AvaloniaShellSourceTests" --logger "trx;LogFileName=avalonia-source-cycle4.trx" -v:minimal` - passed, 69 tests.
+- `dotnet test tests\FreeX.App.Avalonia.Tests\FreeX.App.Avalonia.Tests.csproj --configuration Release --filter "FullyQualifiedName~AvaloniaExtraCommandIdsHygieneTests|FullyQualifiedName~FunctionalParityMatrixTests" --logger "trx;LogFileName=avalonia-parity-cycle4.trx" -v:minimal` - passed, 4 tests.
 
 ## Full Verification
 
 - `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - passed.
 - `dotnet build FreeX.slnx --configuration Release` - passed with 0 warnings and 0 errors.
 - `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` - timed out after 10 minutes with no product failure and left stale test processes in this worktree.
-- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx" --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1` - passed with 15,817 passed, 129 skipped, and 0 failed after clearing the stale worktree test processes.
+- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx" --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1` - passed with 15,821 passed, 129 skipped, and 0 failed after clearing the stale worktree test processes.
