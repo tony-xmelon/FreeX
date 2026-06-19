@@ -1,8 +1,29 @@
 # Code Review Findings
 
-Last updated: 2026-06-18
+Last updated: 2026-06-19
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
+
+## 2026-06-19 Comprehensive Review
+
+Full report: [reviews/comprehensive-code-review-2026-06-19.md](comprehensive-code-review-2026-06-19.md).
+
+Review/fix cycle on `codex/review-cycle-20260619` at `main` HEAD `546f687e`, focused on calc dependency correctness, XLSX load/save/package hardening, update metadata drift, solution preflight coverage, WPF shutdown resilience, and build readiness.
+
+Resolution update: all findings from this cycle were fixed in the same branch and covered by focused calc, IO, app-services, app-host, and Excel-open smoke verification. Repository preflight and full Release build passed; the default test projects passed when run directly after the solution-level runner hung hosting the Avalonia test assembly.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P1 | Calc / named formulas | Fixed: named formulas now contribute their cell references and volatile state to dependency tracking. |
+| P1 | Calc / dynamic arrays | Fixed: spill target values now participate in used-range discovery and full-column aggregates. |
+| P2 | XLSX load warnings | Fixed: per-item data-validation and named-range mapping failures are surfaced through `LoadWithWarnings`. |
+| P2 | XLSX package health | Fixed: encoded relationship path separators are preserved during internal target resolution. |
+| P2 | XLSX smoke tooling | Fixed: package XML loads use the hardened shared XML reader settings. |
+| P2 | Release/update metadata | Fixed: Avalonia update policy uses shared app release channel and release URL metadata. |
+| P2 | Solution preflight | Fixed: shared projects are included in solution membership preflight. |
+| P3 | WPF shutdown | Fixed: early-exit shutdown no longer assumes DI services were initialized. |
+| P3 | XLSX full save | Fixed: caller-provided write-only seekable full-save streams are truncated after package copy. |
+| P3 | Build readiness | Fixed: stale macOS readiness marker, missing `Free.Shared.Ribbon.Wpf` solution entry, and FreeW Windows Forms/GDI+ build metadata. |
 
 ## 2026-06-18 Comprehensive Review Iteration 6
 
