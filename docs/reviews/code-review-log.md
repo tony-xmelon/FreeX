@@ -4,6 +4,19 @@ Last updated: 2026-06-19
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
 
+## 2026-06-19 Comprehensive Review Iteration 5
+
+Full report: [reviews/comprehensive-code-review-2026-06-19-iter5.md](comprehensive-code-review-2026-06-19-iter5.md).
+
+Review/fix cycle on `codex/review-iterate-20260619-5`, focused on FreeW DOCX complex-field recursion, the new LibreOffice format cross-check harness, shared PDF readiness wiring, and the new FreeP scaffold.
+
+Resolution update: findings in this cycle are fixed in the branch. Focused FreeW IO complex-field tests passed, and the `FreeX.FormatCrossCheck` project builds cleanly. Repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed with 15,881 passed, 129 not executed/skipped, and 0 failed.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P1 | FreeW DOCX | Fixed: complex fields nested inside inline containers now preserve field instructions/results plus inherited metadata instead of flattening to cached text. |
+| P2 | FormatCrossCheck | Fixed: missing requested source workbooks now make the tool exit with infrastructure failure instead of succeeding after validating zero sources. |
+
 ## 2026-06-19 Comprehensive Review Iteration 4
 
 Full report: [reviews/comprehensive-code-review-2026-06-19-iter4.md](comprehensive-code-review-2026-06-19-iter4.md).
