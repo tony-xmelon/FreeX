@@ -4,6 +4,22 @@ Last updated: 2026-06-19
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
 
+## 2026-06-19 Comprehensive Review Iteration 2
+
+Full report: [reviews/comprehensive-code-review-2026-06-19-iter2.md](comprehensive-code-review-2026-06-19-iter2.md).
+
+Review/fix cycle on `codex/review-iterate-20260619-2` from `origin/main` HEAD `adc7c90e`, focused on Avalonia save/edit concurrency, XLSX save warning propagation in tools, structural command affected-cell contracts, and structured-table totals formula materialization.
+
+Resolution update: all findings in this cycle were fixed in the same branch. Focused calc/model/IO/Avalonia source-guard tests passed, repository preflight passed, the normal full Release build timed out without a product error, the documented single-node/no-shared-compiler fallback full build passed with zero warnings/errors, and `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` passed.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P1 | Avalonia save/edit | Fixed: formula-box commits now respect the opening/saving guard before mutating the live workbook. |
+| P1 | Command recalc | Fixed: structural formula rewrites now add rewritten formula cells to `CommandOutcome.AffectedCells`. |
+| P2 | Avalonia save warnings | Fixed: Avalonia captures XLSX save warnings and reports warning count in save completion status. |
+| P2 | XLSX tooling | Fixed: Excel-open smoke and SheetFidelity save through `SaveWithWarnings` and surface warnings. |
+| P2 | Structured tables | Fixed: explicit totals-row formulas materialize as formula cells and report affected totals cells. |
+
 ## 2026-06-19 Comprehensive Review
 
 Full report: [reviews/comprehensive-code-review-2026-06-19.md](comprehensive-code-review-2026-06-19.md).
