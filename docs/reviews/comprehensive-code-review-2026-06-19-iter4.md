@@ -2,7 +2,7 @@
 
 Branch: `codex/review-iterate-20260619-4`
 
-Base reviewed: `origin/main` at `e63d90023`; final verification after syncing with `origin/main` at `df9dd1355`.
+Base reviewed: `origin/main` at `e63d90023`; final verification after merging `origin/main` at `1885901bb`.
 
 Scope: fourth review/fix cycle across FreeW DOCX import/export fidelity, FreeW editor/view round-trips, Avalonia file-operation safety, ribbon command routing, and native-menu localization.
 
@@ -73,4 +73,4 @@ Fix: those native menu labels now use `UiText` resource keys, with neutral and F
 - `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - passed.
 - `dotnet build FreeX.slnx --configuration Release` - passed with 0 warnings and 0 errors.
 - `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` - timed out after 10 minutes with no product failure and left stale test processes in this worktree.
-- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx" --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1` - passed with 15,744 passed, 129 skipped, and 0 failed after clearing the stale worktree test processes.
+- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx" --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1` - passed with 15,816 passed, 129 skipped, and 0 failed after clearing the stale worktree test processes.
