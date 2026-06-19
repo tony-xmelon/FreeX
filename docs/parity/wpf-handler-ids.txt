@@ -1,0 +1,544 @@
++/- Buttons
+100% Stacked Bar Chart
+100% Stacked Column Chart
+100%#Zoom100Btn_Click
+100%#ZoomPresetMenuItem_Click
+20% - Accent 1
+20% - Accent 2
+20% - Accent 3
+20% - Accent 4
+20% - Accent 5
+20% - Accent 6
+200%
+25%
+3-D Rotation
+3D Area Chart
+3D Bar Chart
+3D Column Chart
+3D Line Chart
+3D Pie Chart
+3D Surface Chart
+40% - Accent 1
+40% - Accent 2
+40% - Accent 3
+40% - Accent 4
+40% - Accent 5
+40% - Accent 6
+50%
+60% - Accent 1
+60% - Accent 2
+60% - Accent 3
+60% - Accent 4
+60% - Accent 5
+60% - Accent 6
+75%
+A3
+A4
+A5
+Accounting Number Format
+Accounting Number Format#AccountingSymbolMenuItem_Click
+Accounting Number Format#CurrencyBtn_Click
+Advanced
+Align Left
+Align Right
+All Borders
+Allow Users to Edit Ranges
+Alt Text
+Angle Clockwise
+Angle Counterclockwise
+Area Chart
+Arial
+Arrange All
+AutoFit Column Width
+AutoFit Row Height
+AutoSum
+AutoSum#AutoSumPickerBtn_Click
+AutoSum#FormulasAutoSumPickerBtn_Click
+Automatic
+Automatic Except Data Tables
+Average
+Axis Title Color
+Axis Title Size
+B4 (JIS)
+B5 (JIS)
+Background
+Bad
+Banded Columns#PivotBandedColumnsBtn_Click
+Banded Columns#TableDesignBandedColumnsBtn_Click
+Banded Rows#PivotBandedRowsBtn_Click
+Banded Rows#TableDesignBandedRowsBtn_Click
+Bar Chart
+Bevel
+Blank Rows
+Bold
+Borders
+Bottom Align
+Bottom Border
+Bottom Double Border
+Box and Whisker Chart
+Breaks
+Bring Forward
+Bubble Chart
+Calculate Now
+Calculate Sheet
+Calculated Field
+Calculated Item
+Calculation
+Calculation Options
+Cascade
+Category Name
+Cell Styles
+Center
+Change Chart Type#ChangeChartTypeBtn_Click
+Change Chart Type#PivotChartChangeTypeBtn_Click
+Change Data Source
+Chart Area Fill
+Chart Styles
+Chart Title Color
+Chart Title Size
+Chart Titles
+Check Accessibility
+Check Cell
+Choose Background
+Circle Invalid Data
+Clear
+Clear All
+Clear Comments and Notes
+Clear Contents
+Clear Formats
+Clear Hyperlinks
+Clear Outline
+Clear Print Area
+Clear Rules
+Clear Validation Circles
+Clear#ClearFilterButton_Click
+Clear#ClearPickerBtn_Click
+Clear#FilterClearMenuItem_Click
+Clear#PivotTableClearBtn_Click
+Column Chart
+Column Headers
+Column Sparkline
+Column Width
+Combo Chart
+Combo Chart Series
+Comma Style
+Comment
+Conditional Formatting
+Conditional Formatting#CfPickerBtn_Click
+Conditional Formatting#FindConditionalFormattingMenuItem_Click
+Consolidate
+Constants
+Convert to Range
+Copy
+Count All
+Count Numbers
+Create from Selection
+Crop
+Crop Picture
+Custom Margins
+Custom Sort
+Custom Views
+Customize
+Customize Colors
+Customize Effects
+Customize Fonts
+Cut
+Data Callout
+Data Label Angle
+Data Label Border
+Data Label Fill
+Data Label Position
+Data Label Size
+Data Label Text
+Data Labels
+Data Table
+Data Validation
+Data Validation#FindDataValidationMenuItem_Click
+Data Validation#ValidationButton_Click
+Date & Time
+Decrease Decimal Places
+Decrease Font Size
+Decrease Indent
+Define Name
+Delete
+Delete Background
+Delete Cells
+Delete Comment
+Delete Note
+Delete Sheet
+Delete Sheet Columns
+Delete Sheet Rows
+Double Underline
+Doughnut Chart
+Doughnut Hole Size
+Down
+Draw Border
+Draw Border Grid
+Edit Note
+Erase Border
+Error Bars
+Error Checking
+Error Checking Options
+Evaluate Formula
+Executive
+Explanatory Text
+Explode Slice
+Field Headers
+Field List
+Field Settings
+Fill
+Fill Color
+Filter
+Filter Button
+Filter#FilterButton_Click
+Filter#FilterToggleMenuItem_Click
+Financial
+Find
+Find & Select
+First Column
+First Slice Angle
+Flash Fill
+Font Color
+Forecast Sheet
+Format
+Format Bar/Column
+Format Bubble Chart
+Format Cells
+Format Chart Area
+Format Data Point Label
+Format Painter
+Format Picture
+Format Pie/Doughnut
+Format Stock Chart
+Format as Table
+Formula Bar
+Formulas
+FreeX Colorful#ThemeColorfulMenuItem_Click
+FreeX Colorful#ThemeColorsColorfulMenuItem_Click
+Freeze First Column
+Freeze Panes#FreezeAtSelectionMenuItem_Click
+Freeze Panes#FreezePanesPickerBtn_Click
+Freeze Top Row
+Funnel Chart
+Get Data
+Glow
+Go To
+Go To Special
+Goal Seek
+Good
+Grand Totals
+Grayscale#ThemeColorsGrayscaleMenuItem_Click
+Grayscale#ThemeGrayscaleMenuItem_Click
+Gridlines
+Group Field
+Group#GroupRowsBtn_Click
+Group#GroupRowsMenuItem_Click
+Header & Footer
+Heading 1
+Heading 2
+Headings
+Hide
+Hide Columns
+Hide Detail
+Hide Rows
+Hide Sheet
+Histogram Chart
+Horizontal
+Horizontal#ArrangeAllMenuItem_Click
+Horizontal#OrientHorizMenuItem_Click
+Increase Decimal Places
+Increase Font Size
+Increase Indent
+Inner Shadow
+Input
+Insert
+Insert Cells
+Insert Link
+Insert Page Break
+Insert Sheet
+Insert Sheet Columns
+Insert Sheet Rows
+Insert Slicer
+Insert Timeline
+Inside Borders
+Italic
+Keep Source Column Widths
+Label Number Format
+Label Separator
+Landscape
+Last Column
+Left
+Left Border
+Legal
+Legend Border
+Legend Fill
+Legend Font Size
+Legend Overlay
+Legend Text
+Letter
+Line Chart
+Line Sparkline
+Linked Cell
+Linked Picture
+Lock Cell
+Logical Functions
+Lookup & Reference
+Manage Rules
+Manual
+Margins
+Marker Size
+Math & Trig
+Max
+Merge & Center
+Merge & Center#MergeCenterBtn_Click
+Merge & Center#MergeCenterMenuItem_Click
+Merge Across
+Merge Cells
+Middle Align
+Min
+More
+More Accounting Formats
+More Borders
+More Functions
+More Functions#AutoSumMoreMenuItem_Click
+More Functions#FormulaMoreBtn_Click
+Move Chart
+Move PivotTable
+Moving Average Period
+Name Manager
+Narrow
+Neutral
+New Comment
+New Formula Rule
+New Note
+New Rule
+New Window
+Next Comment
+Next Note
+No Border
+No Effect
+Normal
+Normal#CellStyleNormalMenuItem_Click
+Normal#MarginNormalMenuItem_Click
+Normal#NormalViewBtn_Click
+Note
+Notes
+Object Outline
+Object Size
+Office#ThemeColorsOfficeMenuItem_Click
+Office#ThemeEffectsOfficeMenuItem_Click
+Office#ThemeFontsOfficeMenuItem_Click
+Office#ThemeOfficeMenuItem_Click
+Orientation
+Output
+Outside Borders
+Page Break Preview
+Page Layout
+Page Orientation
+Page Setup
+Page Setup dialog
+Paper Size
+Pareto Chart
+Paste
+Paste Formatting
+Paste Formulas
+Paste Link
+Paste Special
+Paste Values
+Paste#PasteBtn_Click
+Paste#PasteMenuItem_Click
+Percent Style
+Percentage
+Picture
+Pictures
+Pie Chart
+PivotChart
+PivotChart Options
+PivotTable
+PivotTable Name
+PivotTable Options
+PivotTable Styles
+Plot Area Border
+Plot Area Fill
+Polynomial Order
+Portrait
+Previous Comment
+Previous Note
+Print Area
+Print Gridlines
+Print Headings
+Print Titles
+Protect Sheet
+Protect Sheet#FormatProtectSheetMenuItem_Click
+Protect Sheet#ProtectSheetBtn_Click
+Protect Workbook
+R-squared
+Radar Chart
+Reapply
+Recently Used
+Recommended Charts
+Refined
+Reflection
+Refresh
+Refresh All
+Remove Arrows#RemoveAllArrowsMenuItem_Click
+Remove Arrows#RemoveArrowsBtn_Click
+Remove Dependent Arrows
+Remove Duplicates#RemoveDuplicatesBtn_Click
+Remove Duplicates#TableDesignRemoveDuplicatesBtn_Click
+Remove Page Break
+Remove Precedent Arrows
+Rename Sheet
+Replace
+Report Layout
+Reset All Page Breaks
+Reset Crop
+Reset Window Position
+Resize Table
+Right
+Right Border
+Rotate Object
+Rotate Text Down
+Rotate Text Up
+Row Headers
+Row Height
+Ruler
+Scale to Fit
+Scatter Chart
+Scenario Manager
+Secondary Axis
+Secondary Axis Series
+Select
+Select Data Source
+Select Objects
+Selection Pane
+Selection Pane#FindSelectionPaneMenuItem_Click
+Selection Pane#SelectionPaneBtn_Click
+Send Backward
+Series
+Series Color
+Series Dash
+Series Marker
+Series Name
+Series Width
+Set Print Area
+Shadow
+Shape Effects
+Shape Fill
+Shape Gradient
+Shapes
+Share
+Show Comments
+Show Detail
+Show Details
+Show Formulas
+Show Notes
+Soft Edges
+Sort
+Sort & Filter
+Sort A to Z
+Sort A to Z#SortAZMenuItem_Click
+Sort A to Z#SortAscButton_Click
+Sort Z to A
+Sort Z to A#SortDescButton_Click
+Sort Z to A#SortZAMenuItem_Click
+Spelling
+Split
+Stacked Bar Chart
+Stacked Column Chart
+Statement
+Stock Chart
+Strikethrough
+Subtle
+Subtotal
+Subtotals
+Sum
+Summarize with PivotTable
+Sunburst Chart
+Surface Chart
+Switch Windows
+Symbol
+Synchronous Scrolling
+Tab Color
+Table
+Table Name
+Table Styles
+Tabloid
+Text Box
+Text Functions
+Text to Columns
+Theme Colors
+Theme Effects
+Theme Fonts
+Themes
+Thick Bottom Border
+Thick Outside Borders
+Tiled
+Times New Roman
+Top Align
+Top Border
+Top and Bottom Border
+Top and Double Bottom Border
+Top and Thick Bottom Border
+Total
+Total Row
+Trace Dependents
+Trace Precedents
+Transpose Paste
+Treemap Chart
+Trendline
+Trendline Color
+Trendline Dash
+Trendline Equation
+Trendline Type
+Trendline Width
+Underline
+Underline#UnderlineButton_Click
+Underline#UnderlineMenuItem_Click
+Unfreeze Panes
+Ungroup#PivotUngroupFieldBtn_Click
+Ungroup#UngroupRowsBtn_Click
+Ungroup#UngroupRowsMenuItem_Click
+Unhide
+Unhide Columns
+Unhide Rows
+Unhide Sheet
+Unmerge Cells
+Up
+Use in Formula
+Values & Source Formatting
+Vertical
+Vertical Text
+View Gridlines
+View Headings
+View Side by Side
+Warning Text
+Watch Window
+Waterfall Chart
+What-If Analysis
+Wide
+Win/Loss Sparkline
+Workbook Statistics
+Wrap Text
+X Axis Bounds
+X Axis Gridlines
+X Axis Label Angle
+X Axis Label Font
+X Axis Labels
+X Axis Line
+X Axis Number Format
+X Axis Ticks
+X Gridline Style
+X Log Scale
+Y Axis Bounds
+Y Axis Gridlines
+Y Axis Label Angle
+Y Axis Label Font
+Y Axis Labels
+Y Axis Line
+Y Axis Number Format
+Y Axis Ticks
+Y Gridline Style
+Y Log Scale
+Zoom
+Zoom to Selection
