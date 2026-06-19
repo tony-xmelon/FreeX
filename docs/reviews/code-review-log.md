@@ -10,7 +10,7 @@ Full report: [reviews/comprehensive-code-review-2026-06-19-iter3.md](comprehensi
 
 Review/fix cycle on `codex/review-iterate-20260619-3`, focused on FreeW DOCX/editor outline behavior, Avalonia print fallback and CUPS integration, and the `FreeX.FormatFidelity` harness.
 
-Resolution update: findings in this cycle are fixed in the branch. Focused FreeW model/IO/host, Avalonia source-guard, and Core.IO source-guard tests passed. Full repository verification is pending after syncing with the latest `origin/main`.
+Resolution update: findings in this cycle are fixed in the branch. Focused FreeW model/IO/host, Avalonia source-guard, and Core.IO source-guard tests passed. After syncing with `origin/main` at `a2fdeead6`, repository preflight passed, the full Release build passed with 0 warnings/errors, and `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` passed.
 
 | Priority | Area | Finding |
 |---|---|---|

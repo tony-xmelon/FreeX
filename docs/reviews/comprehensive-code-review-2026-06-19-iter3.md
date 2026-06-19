@@ -2,7 +2,7 @@
 
 Branch: `codex/review-iterate-20260619-3`
 
-Base reviewed: `origin/main` at `1f9961fb` before sync; refreshed against later `origin/main` before final verification.
+Base reviewed: `origin/main` at `1f9961fb` before sync; final verification after syncing with `origin/main` at `a2fdeead6`.
 
 Scope: third review/fix cycle across FreeW DOCX/editor outline behavior, Avalonia print fallback and CUPS integration, and the `FreeX.FormatFidelity` harness.
 
@@ -64,4 +64,8 @@ Fix: the helper now inserts at the actual `TextPointer`, splitting a WPF text ru
 - `dotnet test tests\FreeX.App.Services.Tests\FreeX.App.Services.Tests.csproj --configuration Release --filter "FullyQualifiedName~MainWindow_PrintFallbackGuardsNormalizedPdfOverwriteAndCupsTimeouts" -v:minimal`
 - `dotnet test tests\FreeX.Core.IO.Tests\FreeX.Core.IO.Tests.csproj --configuration Release --filter "FullyQualifiedName~FormatFidelityHarnessSourceTests" -v:minimal`
 
-Full repository verification is pending after syncing this branch with the latest `origin/main`.
+## Full Verification
+
+- `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - passed.
+- `dotnet build FreeX.slnx --configuration Release` - passed with 0 warnings and 0 errors.
+- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` - passed.
