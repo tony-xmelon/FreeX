@@ -2,7 +2,7 @@
 
 Branch: `codex/review-iterate-20260619-4`
 
-Base reviewed: `origin/main` at `e63d90023`; final verification after merging `origin/main` at `3e442d308`.
+Base reviewed: `origin/main` at `e63d90023`; final verification after merging `origin/main` at `d3c2d7561`.
 
 Scope: fourth review/fix cycle across FreeW DOCX import/export fidelity, FreeW editor/view round-trips, Avalonia file-operation safety, ribbon command routing, native-menu localization, and integration guard coverage.
 
@@ -76,7 +76,7 @@ Fix: those native menu labels now use `UiText` resource keys, with neutral and F
 
 ## Focused Verification
 
-- `dotnet test freew\FreeW.Core.IO.Tests\FreeW.Core.IO.Tests.csproj --configuration Release --filter "FullyQualifiedName~DocxRoundTripTests|FullyQualifiedName~BibliographyRoundTripTests" --logger "trx;LogFileName=freew-io-cycle4.trx" -v:minimal` - passed, 170 tests.
+- `dotnet test freew\FreeW.Core.IO.Tests\FreeW.Core.IO.Tests.csproj --configuration Release --filter "FullyQualifiedName~DocxRoundTripTests|FullyQualifiedName~BibliographyRoundTripTests|FullyQualifiedName~ComplexFieldRoundTripTests|FullyQualifiedName~FormatRevisionRoundTripTests|FullyQualifiedName~StyleRoundTripTests" --logger "trx;LogFileName=freew-io-cycle4-postmerge.trx" -v:minimal` - passed, 190 tests.
 - `dotnet test freew\FreeW.App.Host.Tests\FreeW.App.Host.Tests.csproj --configuration Release --filter "FullyQualifiedName~DocumentViewRoundTripTests" --logger "trx;LogFileName=freew-host-cycle4.trx" -v:minimal` - passed, 18 tests.
 - `dotnet test tests\FreeX.App.Services.Tests\FreeX.App.Services.Tests.csproj --configuration Release --filter "FullyQualifiedName~AvaloniaShellSourceTests" --logger "trx;LogFileName=avalonia-source-cycle4.trx" -v:minimal` - passed, 69 tests.
 - `dotnet test tests\FreeX.App.Avalonia.Tests\FreeX.App.Avalonia.Tests.csproj --configuration Release --filter "FullyQualifiedName~AvaloniaExtraCommandIdsHygieneTests|FullyQualifiedName~FunctionalParityMatrixTests" --logger "trx;LogFileName=avalonia-parity-cycle4.trx" -v:minimal` - passed, 4 tests.
@@ -86,4 +86,4 @@ Fix: those native menu labels now use `UiText` resource keys, with neutral and F
 
 - `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - passed.
 - `dotnet build FreeX.slnx --configuration Release` - passed with 0 warnings and 0 errors.
-- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` - passed with 15,866 passed, 129 not executed/skipped, and 0 failed.
+- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` - passed with 15,881 passed, 129 not executed/skipped, and 0 failed.

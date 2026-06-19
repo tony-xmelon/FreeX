@@ -10,7 +10,7 @@ Full report: [reviews/comprehensive-code-review-2026-06-19-iter4.md](comprehensi
 
 Review/fix cycle on `codex/review-iterate-20260619-4`, focused on FreeW DOCX import/export fidelity, FreeW editor/view rich inline round-trips, Avalonia file-operation safety, ribbon accounting command routing, native-menu localization, and integration guard coverage.
 
-Resolution update: findings in this cycle are fixed in the branch. Focused FreeW IO/host and Avalonia source/parity/portability guard tests passed. After merging `origin/main` at `3e442d308`, repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed normally with 15,866 passed, 129 not executed/skipped, and 0 failed.
+Resolution update: findings in this cycle are fixed in the branch. Focused FreeW IO/host and Avalonia source/parity/portability guard tests passed. After merging `origin/main` at `d3c2d7561`, repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed normally with 15,881 passed, 129 not executed/skipped, and 0 failed.
 
 | Priority | Area | Finding |
 |---|---|---|
