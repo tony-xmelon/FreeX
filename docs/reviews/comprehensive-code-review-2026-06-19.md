@@ -2,7 +2,7 @@
 
 ## Scope And Method
 
-Review and fix cycle performed on branch `codex/review-cycle-20260619` from `main` HEAD `546f687e98976d39a154a1c9e38dca56736d723f`.
+Review and fix cycle performed on branch `codex/review-cycle-20260619` from `main` HEAD `546f687e98976d39a154a1c9e38dca56736d723f`, then synced with `origin/main` HEAD `59f99d2cfc3a2da6f9d092738d4309711859be04` before final verification.
 
 This pass focused on code paths with high data-fidelity or release-risk surface:
 
@@ -58,6 +58,6 @@ Focused verification passed during the cycle:
 
 Full repository verification:
 
-- `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1`: passed. Validated 3 JSON files, 97 XML-backed files, 29 PowerShell scripts, 8 GitHub workflows, SDK `10.0.100` readiness across 52 projects, 52 project references, 42 solution entries, macOS readiness, generated docs, and 4245 text files for conflict markers.
+- `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1`: passed. Validated 4 JSON files, 101 XML-backed files, 29 PowerShell scripts, 8 GitHub workflows, SDK readiness across 55 projects, 55 project references, 45 solution entries, macOS readiness, generated docs, and 4376 text files for conflict markers.
 - `dotnet build FreeX.slnx --configuration Release`: passed with 0 warnings and 0 errors.
-- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"`: attempted twice after fixes, but the solution-level test runner hung while hosting `FreeX.App.Avalonia.Tests`. The same default test projects were then run directly one by one with `--configuration Release --no-build` and the same TRX logger. Result: 15,050 passed, 129 skipped, 0 failed; `FreeX.Fixtures` produced no test run output because it is a fixtures project.
+- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"`: attempted twice after fixes, but the solution-level test runner hung while hosting `FreeX.App.Avalonia.Tests`. The same default test projects were then run directly one by one with `--configuration Release --no-build` and the same TRX logger after syncing with `origin/main`. Result: 15,555 passed, 129 skipped, 0 failed; `FreeX.Fixtures` produced no test run output because it is a fixtures project.
