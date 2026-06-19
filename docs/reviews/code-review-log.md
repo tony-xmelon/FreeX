@@ -4,6 +4,26 @@ Last updated: 2026-06-19
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
 
+## 2026-06-19 Comprehensive Review Iteration 4
+
+Full report: [reviews/comprehensive-code-review-2026-06-19-iter4.md](comprehensive-code-review-2026-06-19-iter4.md).
+
+Review/fix cycle on `codex/review-iterate-20260619-4`, focused on FreeW DOCX import/export fidelity, FreeW editor/view rich inline round-trips, Avalonia file-operation safety, ribbon accounting command routing, and native-menu localization.
+
+Resolution update: findings in this cycle are fixed in the branch. Focused FreeW IO/host and Avalonia source-guard tests passed. After syncing with `origin/main` at `df9dd1355`, repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed in the documented single-node/no-build-server fallback after the first run timed out with stale worktree test processes.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P1 | FreeW DOCX | Fixed: block-level body/table-cell content controls now import their contained paragraphs and tables. |
+| P1 | FreeW DOCX | Fixed: content controls with nested hyperlinks and tracked revisions now preserve link, revision, comment, and control metadata. |
+| P1 | Avalonia save/export | Fixed: Save As, PDF export, workbook PDF export, and print-to-PDF fallback are gated before pickers open. |
+| P1 | Avalonia Save As | Fixed: normalized `.fxl` overwrite targets now get a second confirmation prompt. |
+| P2 | FreeW bibliography | Fixed: Word-style structured `b:NameList/b:Person` authors import as readable names. |
+| P2 | FreeW editor | Fixed: rich inline objects preserve hyperlinks through the WPF `DocumentView` round-trip. |
+| P2 | Avalonia accounting | Fixed: Euro, British Pound, and Japanese Yen accounting menu items use distinct command ids and symbols. |
+| P3 | FreeW DOCX | Fixed: dormant hyphenation sub-options are preserved when source settings contained them. |
+| P3 | Avalonia localization | Fixed: high-visibility native menu labels now use localized `UiText` resources. |
+
 ## 2026-06-19 Comprehensive Review Iteration 3
 
 Full report: [reviews/comprehensive-code-review-2026-06-19-iter3.md](comprehensive-code-review-2026-06-19-iter3.md).
