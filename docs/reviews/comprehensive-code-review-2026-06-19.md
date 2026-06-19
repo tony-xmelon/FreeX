@@ -2,7 +2,7 @@
 
 ## Scope And Method
 
-Review and fix cycle performed on branch `codex/review-cycle-20260619` from `main` HEAD `546f687e98976d39a154a1c9e38dca56736d723f`, then integrated into `main` and synced with `origin/main` HEAD `ec9a65d1021318b83509df43e6b3e576b3d2b76f` before final verification.
+Review and fix cycle performed on branch `codex/review-cycle-20260619` from `main` HEAD `546f687e98976d39a154a1c9e38dca56736d723f`, then integrated into `main` and synced with `origin/main` HEAD `ece81198d928d2e16b5803ac9acdd4ccfab1553b` before final verification.
 
 This pass focused on code paths with high data-fidelity or release-risk surface:
 
@@ -58,6 +58,6 @@ Focused verification passed during the cycle:
 
 Full repository verification:
 
-- `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1`: passed. Validated 4 JSON files, 101 XML-backed files, 29 PowerShell scripts, 8 GitHub workflows, SDK `10.0.301` readiness across 55 projects, 55 project references, 45 solution entries, macOS readiness across 415 source files, generated docs, and 4384 text files for conflict markers.
-- `dotnet build FreeX.slnx --configuration Release`: initial run hit a stale `testhost` lock in `tests/FreeX.App.Host.Tests`; after stopping that stale process, rerun passed with 0 warnings and 0 errors.
-- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"`: attempted twice after fixes, but the solution-level test runner hung while hosting `FreeX.App.Avalonia.Tests`. The same default test projects were then run directly one by one with `--configuration Release --no-build` and the same TRX logger after syncing with `origin/main`; `FreeX.App.Avalonia.Tests` was rerun serially with xUnit parallelization disabled after the normal no-build run left the host idle. Result: 15,583 passed, 129 skipped, 0 failed; `FreeX.Fixtures` produced no test run output because it is a fixtures project.
+- `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1`: passed. Validated 4 JSON files, 103 XML-backed files, 29 PowerShell scripts, 8 GitHub workflows, SDK `10.0.301` readiness across 55 projects, 55 project references, 45 solution entries, macOS readiness across 436 source files, generated docs, and 4422 text files for conflict markers.
+- `dotnet build FreeX.slnx --configuration Release`: passed with 0 warnings and 0 errors after the final `origin/main` sync.
+- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"`: attempted twice after fixes, but the solution-level test runner hung while hosting `FreeX.App.Avalonia.Tests`. The same default test projects were then run directly one by one with `--configuration Release --no-build` and the same TRX logger after syncing with `origin/main`; `FreeX.App.Avalonia.Tests` was rerun serially with xUnit parallelization disabled after the normal no-build run left the host idle. Result: 15,583 passed, 129 skipped, 0 failed; `FreeX.Fixtures` produced no test run output because it is a fixtures project. A later final `origin/main` sync touched only `freew/` files, so repository preflight and full solution build were rerun on the final tree.
