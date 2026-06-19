@@ -27,7 +27,7 @@ Generated: 2026-06-18
 4. Fill Review comment icons: delete, previous, next, and show comments.
 5. Compare the final rendered ribbon tabs after SVG asset coverage is complete.
 
-Open `freex-icon-audit-2026-06-18.html` for the full command table and the SVG asset inventory, both with 20px and 32px renderings.
+This Markdown report is the committed summary. Regenerate the local HTML/JSON audit artifacts when the full command table or SVG inventory is needed.
 
 ## Inconsistent Rows
 
