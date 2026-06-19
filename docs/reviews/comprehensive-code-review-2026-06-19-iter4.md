@@ -2,9 +2,9 @@
 
 Branch: `codex/review-iterate-20260619-4`
 
-Base reviewed: `origin/main` at `e63d90023`; final verification after merging `origin/main` at `fe95d02d6`.
+Base reviewed: `origin/main` at `e63d90023`; final verification after merging `origin/main` at `3e442d308`.
 
-Scope: fourth review/fix cycle across FreeW DOCX import/export fidelity, FreeW editor/view round-trips, Avalonia file-operation safety, ribbon command routing, and native-menu localization.
+Scope: fourth review/fix cycle across FreeW DOCX import/export fidelity, FreeW editor/view round-trips, Avalonia file-operation safety, ribbon command routing, native-menu localization, and integration guard coverage.
 
 ## Findings
 
@@ -62,6 +62,12 @@ After merging the new functional parity matrix, its raw canonical Avalonia comma
 
 Fix: `AvaloniaExtraCommandIds.RawCanonical` now includes the US Dollar, Euro, British Pound, and Japanese Yen accounting command IDs, keeping the parity matrix in lock-step with the shell wiring.
 
+### P2 - Shared PDF refactor outpaces macOS readiness guards
+
+After merging the shared PDF tier, the macOS readiness preflight still scoped portable source hygiene and source-wiring markers around the older app-services PDF exporter shape. The new `Free.Shared.Pdf` and `Free.Shared.Pdf.Skia` projects could therefore drift outside the macOS portability/readiness guard, and the old exporter markers no longer described the current implementation split.
+
+Fix: `Test-MacOsAppReadiness.ps1` now treats the shared PDF projects as portable source roots, allows them in the Avalonia project-reference boundary, and validates the current `PortablePdfDocumentExporter`/`WorkbookPdfContentBuilder` source-wiring markers.
+
 ### P3 - High-visibility Avalonia native menu labels bypass localization
 
 The native File/Sheet menu setup used raw English labels for common commands such as New Workbook, Open, Save, Export to PDF, Share Workbook, Workbook Statistics, Close Workbook, and New Sheet.
@@ -70,14 +76,14 @@ Fix: those native menu labels now use `UiText` resource keys, with neutral and F
 
 ## Focused Verification
 
-- `dotnet test freew\FreeW.Core.IO.Tests\FreeW.Core.IO.Tests.csproj --configuration Release --filter "FullyQualifiedName~DocxRoundTripTests|FullyQualifiedName~BibliographyRoundTripTests" --logger "trx;LogFileName=freew-io-cycle4.trx" -v:minimal` - passed, 161 tests.
+- `dotnet test freew\FreeW.Core.IO.Tests\FreeW.Core.IO.Tests.csproj --configuration Release --filter "FullyQualifiedName~DocxRoundTripTests|FullyQualifiedName~BibliographyRoundTripTests" --logger "trx;LogFileName=freew-io-cycle4.trx" -v:minimal` - passed, 170 tests.
 - `dotnet test freew\FreeW.App.Host.Tests\FreeW.App.Host.Tests.csproj --configuration Release --filter "FullyQualifiedName~DocumentViewRoundTripTests" --logger "trx;LogFileName=freew-host-cycle4.trx" -v:minimal` - passed, 18 tests.
 - `dotnet test tests\FreeX.App.Services.Tests\FreeX.App.Services.Tests.csproj --configuration Release --filter "FullyQualifiedName~AvaloniaShellSourceTests" --logger "trx;LogFileName=avalonia-source-cycle4.trx" -v:minimal` - passed, 69 tests.
 - `dotnet test tests\FreeX.App.Avalonia.Tests\FreeX.App.Avalonia.Tests.csproj --configuration Release --filter "FullyQualifiedName~AvaloniaExtraCommandIdsHygieneTests|FullyQualifiedName~FunctionalParityMatrixTests" --logger "trx;LogFileName=avalonia-parity-cycle4.trx" -v:minimal` - passed, 4 tests.
+- `dotnet test tests\FreeX.App.Services.Tests\FreeX.App.Services.Tests.csproj --configuration Release --filter "FullyQualifiedName~AvaloniaProjectPortabilityGuardTests" --logger "trx;LogFileName=avalonia-portability-cycle4.trx" -v:minimal` - passed, 4 tests.
 
 ## Full Verification
 
 - `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - passed.
 - `dotnet build FreeX.slnx --configuration Release` - passed with 0 warnings and 0 errors.
-- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` - timed out after 10 minutes with no product failure and left stale test processes in this worktree.
-- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx" --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1` - passed with 15,821 passed, 129 skipped, and 0 failed after clearing the stale worktree test processes.
+- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` - passed with 15,866 passed, 129 not executed/skipped, and 0 failed.

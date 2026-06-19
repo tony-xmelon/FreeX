@@ -8,9 +8,9 @@ This file tracks concrete review findings after the function and command parity 
 
 Full report: [reviews/comprehensive-code-review-2026-06-19-iter4.md](comprehensive-code-review-2026-06-19-iter4.md).
 
-Review/fix cycle on `codex/review-iterate-20260619-4`, focused on FreeW DOCX import/export fidelity, FreeW editor/view rich inline round-trips, Avalonia file-operation safety, ribbon accounting command routing, and native-menu localization.
+Review/fix cycle on `codex/review-iterate-20260619-4`, focused on FreeW DOCX import/export fidelity, FreeW editor/view rich inline round-trips, Avalonia file-operation safety, ribbon accounting command routing, native-menu localization, and integration guard coverage.
 
-Resolution update: findings in this cycle are fixed in the branch. Focused FreeW IO/host and Avalonia source-guard tests passed. After merging `origin/main` at `fe95d02d6`, repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed in the documented single-node/no-build-server fallback after the first run timed out with stale worktree test processes.
+Resolution update: findings in this cycle are fixed in the branch. Focused FreeW IO/host and Avalonia source/parity/portability guard tests passed. After merging `origin/main` at `3e442d308`, repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed normally with 15,866 passed, 129 not executed/skipped, and 0 failed.
 
 | Priority | Area | Finding |
 |---|---|---|
@@ -22,6 +22,7 @@ Resolution update: findings in this cycle are fixed in the branch. Focused FreeW
 | P2 | FreeW editor | Fixed: rich inline objects preserve hyperlinks through the WPF `DocumentView` round-trip. |
 | P2 | Avalonia accounting | Fixed: Euro, British Pound, and Japanese Yen accounting menu items use distinct command ids and symbols. |
 | P2 | Avalonia parity | Fixed: the raw canonical parity catalog now includes the distinct accounting command ids. |
+| P2 | macOS readiness | Fixed: shared PDF projects and current portable PDF source-wiring are covered by the macOS readiness preflight. |
 | P3 | FreeW DOCX | Fixed: dormant hyphenation sub-options are preserved when source settings contained them. |
 | P3 | Avalonia localization | Fixed: high-visibility native menu labels now use localized `UiText` resources. |
 
