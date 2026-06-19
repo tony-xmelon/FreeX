@@ -1,6 +1,6 @@
 # FreeX Documentation
 
-**Last updated:** 2026-06-12
+**Last updated:** 2026-06-19
 
 Use this index as the current documentation map. Point-in-time material lives under `history/` and `archive/`; prefer the newest status snapshot plus the current planning docs when making product or release decisions.
 
@@ -64,6 +64,8 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [formats/charts-excel-freex-comparison-2026-06-01.md](formats/charts-excel-freex-comparison-2026-06-01.md) - current chart interop evidence.
 - [formats/native-json-schema.md](formats/native-json-schema.md) - FreeX native JSON format.
 - [formats/ods-open-support-research.md](formats/ods-open-support-research.md) - parked ODS research; not active implementation scope.
+- [fidelity/README.md](fidelity/README.md) - current fidelity workstream summary, harness list, deferred items, and artifact hygiene rules.
+- [fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md](fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md) - latest XLSX chart/PivotTable corpus expansion note.
 
 ## Architecture And Performance
 
@@ -82,6 +84,8 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [reviews/comprehensive-code-review-2026-06-03.md](reviews/comprehensive-code-review-2026-06-03.md) - June 3 full-codebase review and resolved follow-up.
 - [reviews/comprehensive-code-review-2026-06-11.md](reviews/comprehensive-code-review-2026-06-11.md) - June 11 full-workspace review: save-pipeline data-integrity risks, command shift gaps, formula parity, performance, and consolidation backlog.
 - [reviews/comprehensive-code-review-2026-06-12.md](reviews/comprehensive-code-review-2026-06-12.md) - June 12 full-workspace review: fix-campaign regression audit (close-flow and multi-window P1s), protection-guard omissions, chart/pivot/fxl round-trip fidelity, recovery-flow holes, Avalonia-port gap, and carry-forward status.
+- [reviews/comprehensive-code-review-2026-06-18.md](reviews/comprehensive-code-review-2026-06-18.md) - June 18 full-source static review plus same-day high-severity fix summary and deferred follow-ups.
+- [reviews/comprehensive-code-review-2026-06-18-iter6.md](reviews/comprehensive-code-review-2026-06-18-iter6.md) - final June 18 review iteration covering spill cleanup, save warnings, autosave path-provider wiring, and package XML validation.
 - [reviews/command-icon-audit-2026-05-30.md](reviews/command-icon-audit-2026-05-30.md) - proposal-only command icon audit.
 - [reviews/command-icon-review-2026-05-29.md](reviews/command-icon-review-2026-05-29.md) - prior SVG command-icon audit.
 - [reviews/command-icon-visual-consistency-2026-05-30.md](reviews/command-icon-visual-consistency-2026-05-30.md) - visual-consistency review for command artwork.
@@ -115,5 +119,6 @@ Use this index as the current documentation map. Point-in-time material lives un
 ## Visual Assets
 
 - Current runtime command artwork lives in `src/FreeX.App.Host/Resources/CommandIconsSvg/`.
+- [icon-audit/freex-icon-audit-2026-06-18.md](icon-audit/freex-icon-audit-2026-06-18.md) is the durable generated icon-audit summary; generated HTML/JSON tables are local artifacts and should be regenerated, not committed.
 - Historical UI screenshot evidence is no longer checked in under `docs/ui-test-artifacts`; keep new screenshots there only when they are current review evidence and referenced by [testing/ui-test-catalog.md](testing/ui-test-catalog.md).
 - The obsolete generated PNG icon review set was removed. Use the SVG command-icon reviews and source assets above for future icon work.

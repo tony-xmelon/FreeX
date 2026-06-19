@@ -95,6 +95,12 @@ Resolution update: all four findings were fixed on branch `codex/repo-review-fin
 | P2 | Autosave | Fixed: `AutosaveSnapshotStore.CreateDefault` now uses the injected `IApplicationDataPathProvider`. |
 | P3 | XLSX tooling | Fixed: `XlsxPackageHealthValidator` now routes package XML through the hardened XML reader settings used elsewhere. |
 
+Earlier June 18 iteration scratch reports were consolidated during documentation cleanup. Durable outcomes kept here:
+
+- Iteration 2 fixed guarded async contextual-tab command launching, Equation dialog close behavior, hidden-window cleanup, proofing commit re-entrancy checks, and backstage progress clamping; it also recorded the WPF UI-lane blocker as pre-existing.
+- Iteration 4 delivered Chart "Value From Cells" range-label round-trip support and kept the non-superseded UpdateReadyIndicator localization/accessibility fix after the active ribbon refactor superseded the broader UI-lane patch.
+- Iteration 5 fixed drawing-object layer cache invalidation for sub-cell offsets, Pivot slicer available-item de-duplication, and ordinal slicer selection matching; it left slicer ordering and drag-commit offset behavior to the owning workstreams.
+
 ## 2026-06-12 Comprehensive Review
 
 Full report: [reviews/comprehensive-code-review-2026-06-12.md](comprehensive-code-review-2026-06-12.md).
