@@ -8,9 +8,9 @@ This file tracks concrete review findings after the function and command parity 
 
 Full report: [reviews/comprehensive-code-review-2026-06-19.md](comprehensive-code-review-2026-06-19.md).
 
-Review/fix cycle on `codex/review-cycle-20260619` from `main` HEAD `546f687e`, then synced with `origin/main` HEAD `6ce2d72`, focused on calc dependency correctness, XLSX load/save/package hardening, update metadata drift, solution preflight coverage, WPF shutdown resilience, and build readiness.
+Review/fix cycle on `codex/review-cycle-20260619` from `main` HEAD `546f687e`, then integrated into `main` and synced with `origin/main` HEAD `ece8119`, focused on calc dependency correctness, XLSX load/save/package hardening, update metadata drift, solution preflight coverage, WPF shutdown resilience, and build readiness.
 
-Resolution update: all findings from this cycle were fixed in the same branch and covered by focused calc, IO, app-services, app-host, and Excel-open smoke verification. Repository preflight and full Release build passed after syncing with `origin/main`; the default test projects passed when run directly after the solution-level runner hung hosting the Avalonia test assembly.
+Resolution update: all findings from this cycle were fixed in the same branch and covered by focused calc, IO, app-services, app-host, and Excel-open smoke verification. Repository preflight and full Release build passed after syncing with `origin/main`; the default test projects passed when run directly after the solution-level runner hung hosting the Avalonia test assembly, with the Avalonia project rerun serially after a stale no-build host hang. A final FreeW-only remote sync was covered by preflight and full solution build.
 
 | Priority | Area | Finding |
 |---|---|---|

@@ -29,6 +29,37 @@ Generated: 2026-06-18
 
 This Markdown report is the committed summary. Regenerate the local HTML/JSON audit artifacts when the full command table or SVG inventory is needed.
 
+## App Visual Validation - 2026-06-19
+
+Result: pass for SVG wiring and display. The FreeX WPF app was built and run in screenshot-tour mode from `codex/icon-visual-validation-20260619`; generated PNGs show visible, nonblank icons on the rendered ribbon and worksheet context menu at the expected small and large sizes.
+
+Evidence:
+
+- `screenshots/icon-visual-validation-20260619/main-ribbon/`: 27 top-level ribbon captures covering Home, Insert, Draw, Page Layout, Formulas, Data, Review, View, and Help at `max`, `1100`, and `900` widths, plus `ribbon_screenshot_tour_manifest.json`.
+- `screenshots/icon-visual-validation-20260619/contextual-table/`: `900_Table_Design.png` plus manifest.
+- `screenshots/icon-visual-validation-20260619/contextual-chart/`: `900_Chart_Design.png`, `900_Chart_Format.png`, plus manifest.
+- `screenshots/icon-visual-validation-20260619/context-menus/worksheet-context-menu-tour/`: `freex_context_menu_worksheet_cell_opened.png` plus manifest, validating small context-menu icon display.
+- `screenshots/ribbon-declarative/home_live.png`: declarative ribbon capture validating the Home tab uses the SVG-backed declarative renderer.
+- `screenshots/icon-visual-validation-20260619/contact-sheet.png`: scan sheet for the app-run captures above.
+
+Visual assertion: no broken-image placeholders, blank glyph slots, or missing SVG render failures were observed in the generated app screenshots. The contextual Chart/Table icons remain marked for stylistic review where they do not yet match Excel's denser contextual-tab language, but the current validation did not find a new wiring/display discrepancy requiring a separate fix agent.
+
+Commands:
+
+```powershell
+dotnet build src\FreeX.App.Host\FreeX.App.Host.csproj --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 /v:minimal
+
+$env:FREEX_SS_TOUR='1'; $env:FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER='1'; $env:FREEX_SS_TOUR_WIDTHS='max,1100,900'; $env:FREEX_SS_TOUR_OUTPUT_SUBDIR='icon-visual-validation-20260619/main-ribbon'; .\src\FreeX.App.Host\bin\Release\net10.0-windows10.0.19041.0\FreeX.App.Host.exe
+
+$env:FREEX_SS_TOUR='1'; $env:FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER='1'; $env:FREEX_SS_TOUR_WIDTHS='900'; $env:FREEX_SS_TOUR_CONTEXT='table'; $env:FREEX_SS_TOUR_TABS='Table Design'; $env:FREEX_SS_TOUR_OUTPUT_SUBDIR='icon-visual-validation-20260619/contextual-table'; .\src\FreeX.App.Host\bin\Release\net10.0-windows10.0.19041.0\FreeX.App.Host.exe
+
+$env:FREEX_SS_TOUR='1'; $env:FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER='1'; $env:FREEX_SS_TOUR_WIDTHS='900'; $env:FREEX_SS_TOUR_CONTEXT='chart'; $env:FREEX_SS_TOUR_TABS='Chart Design,Format'; $env:FREEX_SS_TOUR_OUTPUT_SUBDIR='icon-visual-validation-20260619/contextual-chart'; .\src\FreeX.App.Host\bin\Release\net10.0-windows10.0.19041.0\FreeX.App.Host.exe
+
+$env:FREEX_WORKSHEET_CONTEXT_MENU_TOUR='1'; $env:FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER='1'; $env:FREEX_SS_TOUR_OUTPUT_SUBDIR='icon-visual-validation-20260619/context-menus'; .\src\FreeX.App.Host\bin\Release\net10.0-windows10.0.19041.0\FreeX.App.Host.exe
+
+$env:FREEX_RIBBON_DECLARATIVE='1'; $env:FREEX_RIBBON_DECLARATIVE_CAPTURE='1'; $env:FREEX_RIBBON_DECLARATIVE_WIDTH='1200'; .\src\FreeX.App.Host\bin\Release\net10.0-windows10.0.19041.0\FreeX.App.Host.exe
+```
+
 ## Inconsistent Rows
 
 | Tab | Group | Command | Runtime source | Suggested action |
