@@ -2,7 +2,7 @@
 
 Branch: `codex/review-iterate-20260619-4`
 
-Base reviewed: `origin/main` at `e63d90023`; final verification after merging `origin/main` at `d3c2d7561`.
+Base reviewed: `origin/main` at `e63d90023`; final verification after merging `origin/main` at `048f3bf4a`.
 
 Scope: fourth review/fix cycle across FreeW DOCX import/export fidelity, FreeW editor/view round-trips, Avalonia file-operation safety, ribbon command routing, native-menu localization, and integration guard coverage.
 
