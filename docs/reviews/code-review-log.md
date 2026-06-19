@@ -4,6 +4,25 @@ Last updated: 2026-06-19
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
 
+## 2026-06-19 Comprehensive Review Iteration 3
+
+Full report: [reviews/comprehensive-code-review-2026-06-19-iter3.md](comprehensive-code-review-2026-06-19-iter3.md).
+
+Review/fix cycle on `codex/review-iterate-20260619-3`, focused on FreeW DOCX/editor outline behavior, Avalonia print fallback and CUPS integration, and the `FreeX.FormatFidelity` harness.
+
+Resolution update: findings in this cycle are fixed in the branch. Focused FreeW model/IO/host, Avalonia source-guard, and Core.IO source-guard tests passed. After syncing with `origin/main` at `a2fdeead6`, repository preflight passed, the full Release build passed with 0 warnings/errors, and `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` passed.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P1 | FreeW DOCX | Fixed: content controls nested inside tracked insert/delete wrappers now reopen with both content-control and revision metadata. |
+| P1 | FormatFidelity preflight | Fixed: `FreeX.FormatFidelity` is included in `FreeX.slnx`. |
+| P1 | FormatFidelity XLSX rebuild | Fixed: the `xlsx-rebuilt` chain explicitly detaches source packages before save so it cannot use patch/source-copy paths. |
+| P2 | FormatFidelity reporting | Fixed: VBA presence is captured from XLSX packages, and lossy count drops report `ExpectedLoss` instead of disappearing as `Ok`. |
+| P2 | Avalonia print fallback | Fixed: normalized print-to-PDF overwrite prompts reuse the main PDF export guard. |
+| P2 | Avalonia CUPS | Fixed: CUPS enumeration/submission commands have bounded timeouts and process cleanup. |
+| P2 | FreeW outline | Fixed: nested heading moves require a same-level sibling in the same parent scope. |
+| P2 | FreeW editor | Fixed: content-control insert commands now insert at the caret and split text runs instead of appending. |
+
 ## 2026-06-19 Comprehensive Review Iteration 2
 
 Full report: [reviews/comprehensive-code-review-2026-06-19-iter2.md](comprehensive-code-review-2026-06-19-iter2.md).
@@ -55,6 +74,12 @@ Resolution update: all four findings were fixed on branch `codex/repo-review-fin
 | P2 | XLSX save | Fixed: `SaveWithWarnings` now reports comment and hyperlink serialization failures instead of silently returning clean. |
 | P2 | Autosave | Fixed: `AutosaveSnapshotStore.CreateDefault` now uses the injected `IApplicationDataPathProvider`. |
 | P3 | XLSX tooling | Fixed: `XlsxPackageHealthValidator` now routes package XML through the hardened XML reader settings used elsewhere. |
+
+Earlier June 18 iteration scratch reports were consolidated during documentation cleanup. Durable outcomes kept here:
+
+- Iteration 2 fixed guarded async contextual-tab command launching, Equation dialog close behavior, hidden-window cleanup, proofing commit re-entrancy checks, and backstage progress clamping; it also recorded the WPF UI-lane blocker as pre-existing.
+- Iteration 4 delivered Chart "Value From Cells" range-label round-trip support and kept the non-superseded UpdateReadyIndicator localization/accessibility fix after the active ribbon refactor superseded the broader UI-lane patch.
+- Iteration 5 fixed drawing-object layer cache invalidation for sub-cell offsets, Pivot slicer available-item de-duplication, and ordinal slicer selection matching; it left slicer ordering and drag-commit offset behavior to the owning workstreams.
 
 ## 2026-06-12 Comprehensive Review
 
