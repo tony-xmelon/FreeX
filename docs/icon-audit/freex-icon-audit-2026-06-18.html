@@ -39,6 +39,17 @@
     <span class="pill">Review: 100</span>
     <span class="pill">Inconsistent: 0</span>
   </div>
+  <h2>App Visual Validation - 2026-06-19</h2>
+  <p><b>Result:</b> pass for SVG wiring and display. The FreeX WPF app was built and run in screenshot-tour mode from <code>codex/icon-visual-validation-20260619</code>; generated PNGs show visible, nonblank icons on the rendered ribbon and worksheet context menu at the expected small and large sizes.</p>
+  <ul>
+    <li><code>screenshots/icon-visual-validation-20260619/main-ribbon/</code>: 27 top-level ribbon captures covering Home, Insert, Draw, Page Layout, Formulas, Data, Review, View, and Help at <code>max</code>, <code>1100</code>, and <code>900</code> widths, plus manifest.</li>
+    <li><code>screenshots/icon-visual-validation-20260619/contextual-table/</code>: Table Design contextual tab capture plus manifest.</li>
+    <li><code>screenshots/icon-visual-validation-20260619/contextual-chart/</code>: Chart Design and Chart Format contextual tab captures plus manifest.</li>
+    <li><code>screenshots/icon-visual-validation-20260619/context-menus/worksheet-context-menu-tour/</code>: worksheet context-menu capture plus manifest, validating small context-menu icon display.</li>
+    <li><code>screenshots/ribbon-declarative/home_live.png</code>: declarative ribbon capture validating the Home tab uses the SVG-backed declarative renderer.</li>
+  </ul>
+  <p><b>Visual assertion:</b> no broken-image placeholders, blank glyph slots, or missing SVG render failures were observed. The contextual Chart/Table icons remain marked for stylistic review where they do not yet match Excel's denser contextual-tab language, but this validation found no new wiring/display discrepancy requiring a separate fix agent.</p>
+  <p><a href="../../screenshots/icon-visual-validation-20260619/contact-sheet.png">Open the 2026-06-19 app-run contact sheet</a>.</p>
   <h2>Highest Priority Findings</h2>
   <ol></ol>
   

@@ -1,0 +1,53 @@
+{
+  "Tool": "FREEX_WORKSHEET_CONTEXT_MENU_TOUR",
+  "EvidenceFamily": "context-menu",
+  "EvidenceSubject": "freex",
+  "EvidenceApp": "FreeX",
+  "ScenarioId": "context-menu:worksheet-cell",
+  "OutputDirectory": "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\codex-icon-visual-validation-20260619\\screenshots\\icon-visual-validation-20260619\\context-menus\\worksheet-context-menu-tour",
+  "OutputNaming": "freex_context_menu_worksheet_cell_opened.png",
+  "CatalogEvidenceTarget": "docs/testing/ui-test-catalog.md",
+  "SelectedCell": "A1",
+  "EntryPath": "keyboard-context-menu-point",
+  "MenuHeaders": [
+    "Cu_t",
+    "_Copy",
+    "_Paste",
+    "_Paste Options",
+    "_Insert and Delete",
+    "Sort and _Filter",
+    "_Quick Analysis",
+    "Data _Tools",
+    "_Rows and Columns",
+    "Co_mments and Notes",
+    "_Hyperlink...",
+    "_Format Cells...",
+    "C_lear"
+  ],
+  "CaptureStatus": "complete",
+  "CaptureMethod": "RenderTargetBitmap-worksheet-context-menu",
+  "Pairing": {
+    "PairKeyPattern": "interactive:worksheet-cell-context-menu:\u003CState\u003E",
+    "CounterpartSubject": "excel",
+    "CounterpartTool": "screenshot_excel.ps1",
+    "CounterpartOutputNaming": "interactive_worksheet_cell_context_menu_opened.png"
+  },
+  "Captures": [
+    {
+      "CaptureKey": "interactive:worksheet-cell-context-menu:opened",
+      "PairKey": "interactive:worksheet-cell-context-menu:opened",
+      "ScenarioId": "context-menu:worksheet-cell",
+      "State": "opened",
+      "FileName": "freex_context_menu_worksheet_cell_opened",
+      "OutputFileName": "freex_context_menu_worksheet_cell_opened.png",
+      "CounterpartFileName": "interactive_worksheet_cell_context_menu_opened.png",
+      "CaptureLogicalWidth": 212,
+      "CaptureLogicalHeight": 312
+    }
+  ],
+  "Limitations": [
+    "This in-app tour opens the production worksheet-cell ContextMenu and captures the live WPF menu without global mouse or keyboard input.",
+    "The paired Microsoft Excel transient capture remains a separate foreground-guarded capture.",
+    "The scenario captures the default worksheet-cell context menu for A1."
+  ]
+}
