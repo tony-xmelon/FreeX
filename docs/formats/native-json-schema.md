@@ -33,6 +33,7 @@ The root object stores workbook-wide state:
 | `Scenarios` | object[] | Scenario Manager definitions. |
 | `CustomViews` | object[] | Workbook custom views. |
 | `CellStyles` | object[]/null | Workbook-level cell style table. Cell and style-only entries may reference this table by zero-based `StyleId`. |
+| `DefaultStyle` | object/null | The customized default style (style 0) when it differs from the built-in Calibri default — e.g. an XLSX whose workbook default font is "Aptos Narrow" with `FontScheme=Minor`. Restored into slot 0 on load so style-0 cells keep their font. Absent when the workbook uses the built-in default. |
 | `Sheets` | object[] | Worksheet payloads. |
 
 ## Workbook Theme
@@ -104,6 +105,8 @@ Loaders validate row and column bounds, skip malformed ranges, clamp invalid num
 ## Charts
 
 `Charts` entries store object placement, chart type, data range, title, legend/axis/data-label settings, gridline state, trendlines, secondary-axis state, combo-line overlay state, per-series formats, per-point label formats, and optional pivot chart metadata. Load sanitization drops unsupported combinations and clamps invalid dimensions or label angles.
+
+A chart is hosted on the sheet whose `Charts` array contains it, independent of where its data range lives. When the data range references a different sheet (a cross-sheet chart), `DataRangeSheetName` records that source sheet's name so the range rebinds to the correct sheet on load instead of the host sheet; it is absent for same-sheet charts.
 
 ## Pictures, Text Boxes, And Drawing Shapes
 

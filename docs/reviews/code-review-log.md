@@ -1,8 +1,132 @@
 # Code Review Findings
 
-Last updated: 2026-06-12
+Last updated: 2026-06-19
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
+
+## 2026-06-19 Comprehensive Review Iteration 6
+
+Full report: [reviews/comprehensive-code-review-2026-06-19-iter6.md](comprehensive-code-review-2026-06-19-iter6.md).
+
+Final clean-pass review on `codex/review-iterate-20260619-6`, focused on the just-fixed FreeW DOCX complex-field recursion, the LibreOffice format cross-check harness, shared PDF readiness wiring, FreeP scaffold code, and broad conflict/placeholder/success-path hygiene scans.
+
+Resolution update: no new actionable findings were identified. Repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed with 15,881 passed, 129 not executed/skipped, and 0 failed.
+
+| Priority | Area | Finding |
+|---|---|---|
+| None | Final pass | No new actionable findings. |
+
+## 2026-06-19 Comprehensive Review Iteration 5
+
+Full report: [reviews/comprehensive-code-review-2026-06-19-iter5.md](comprehensive-code-review-2026-06-19-iter5.md).
+
+Review/fix cycle on `codex/review-iterate-20260619-5`, focused on FreeW DOCX complex-field recursion, the new LibreOffice format cross-check harness, shared PDF readiness wiring, and the new FreeP scaffold.
+
+Resolution update: findings in this cycle are fixed in the branch. Focused FreeW IO complex-field tests passed, and the `FreeX.FormatCrossCheck` project builds cleanly. Repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed with 15,881 passed, 129 not executed/skipped, and 0 failed.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P1 | FreeW DOCX | Fixed: complex fields nested inside inline containers now preserve field instructions/results plus inherited metadata instead of flattening to cached text. |
+| P2 | FormatCrossCheck | Fixed: missing requested source workbooks now make the tool exit with infrastructure failure instead of succeeding after validating zero sources. |
+
+## 2026-06-19 Comprehensive Review Iteration 4
+
+Full report: [reviews/comprehensive-code-review-2026-06-19-iter4.md](comprehensive-code-review-2026-06-19-iter4.md).
+
+Review/fix cycle on `codex/review-iterate-20260619-4`, focused on FreeW DOCX import/export fidelity, FreeW editor/view rich inline round-trips, Avalonia file-operation safety, ribbon accounting command routing, native-menu localization, and integration guard coverage.
+
+Resolution update: findings in this cycle are fixed in the branch. Focused FreeW IO/host and Avalonia source/parity/portability guard tests passed. After merging `origin/main` at `048f3bf4a`, repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed normally with 15,881 passed, 129 not executed/skipped, and 0 failed.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P1 | FreeW DOCX | Fixed: block-level body/table-cell content controls now import their contained paragraphs and tables. |
+| P1 | FreeW DOCX | Fixed: content controls with nested hyperlinks and tracked revisions now preserve link, revision, comment, and control metadata. |
+| P1 | Avalonia save/export | Fixed: Save As, PDF export, workbook PDF export, and print-to-PDF fallback are gated before pickers open. |
+| P1 | Avalonia Save As | Fixed: normalized `.fxl` overwrite targets now get a second confirmation prompt. |
+| P2 | FreeW bibliography | Fixed: Word-style structured `b:NameList/b:Person` authors import as readable names. |
+| P2 | FreeW editor | Fixed: rich inline objects preserve hyperlinks through the WPF `DocumentView` round-trip. |
+| P2 | Avalonia accounting | Fixed: Euro, British Pound, and Japanese Yen accounting menu items use distinct command ids and symbols. |
+| P2 | Avalonia parity | Fixed: the raw canonical parity catalog now includes the distinct accounting command ids. |
+| P2 | macOS readiness | Fixed: shared PDF projects and current portable PDF source-wiring are covered by the macOS readiness preflight. |
+| P3 | FreeW DOCX | Fixed: dormant hyphenation sub-options are preserved when source settings contained them. |
+| P3 | Avalonia localization | Fixed: high-visibility native menu labels now use localized `UiText` resources. |
+
+## 2026-06-19 Comprehensive Review Iteration 3
+
+Full report: [reviews/comprehensive-code-review-2026-06-19-iter3.md](comprehensive-code-review-2026-06-19-iter3.md).
+
+Review/fix cycle on `codex/review-iterate-20260619-3`, focused on FreeW DOCX/editor outline behavior, Avalonia print fallback and CUPS integration, and the `FreeX.FormatFidelity` harness.
+
+Resolution update: findings in this cycle are fixed in the branch. Focused FreeW model/IO/host, Avalonia source-guard, and Core.IO source-guard tests passed. After syncing with `origin/main` at `a2fdeead6`, repository preflight passed, the full Release build passed with 0 warnings/errors, and `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` passed.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P1 | FreeW DOCX | Fixed: content controls nested inside tracked insert/delete wrappers now reopen with both content-control and revision metadata. |
+| P1 | FormatFidelity preflight | Fixed: `FreeX.FormatFidelity` is included in `FreeX.slnx`. |
+| P1 | FormatFidelity XLSX rebuild | Fixed: the `xlsx-rebuilt` chain explicitly detaches source packages before save so it cannot use patch/source-copy paths. |
+| P2 | FormatFidelity reporting | Fixed: VBA presence is captured from XLSX packages, and lossy count drops report `ExpectedLoss` instead of disappearing as `Ok`. |
+| P2 | Avalonia print fallback | Fixed: normalized print-to-PDF overwrite prompts reuse the main PDF export guard. |
+| P2 | Avalonia CUPS | Fixed: CUPS enumeration/submission commands have bounded timeouts and process cleanup. |
+| P2 | FreeW outline | Fixed: nested heading moves require a same-level sibling in the same parent scope. |
+| P2 | FreeW editor | Fixed: content-control insert commands now insert at the caret and split text runs instead of appending. |
+
+## 2026-06-19 Comprehensive Review Iteration 2
+
+Full report: [reviews/comprehensive-code-review-2026-06-19-iter2.md](comprehensive-code-review-2026-06-19-iter2.md).
+
+Review/fix cycle on `codex/review-iterate-20260619-2` from `origin/main` HEAD `adc7c90e`, focused on Avalonia save/edit concurrency, XLSX save warning propagation in tools, structural command affected-cell contracts, and structured-table totals formula materialization.
+
+Resolution update: all findings in this cycle were fixed in the same branch. Focused calc/model/IO/Avalonia source-guard tests passed, repository preflight passed, the normal full Release build timed out without a product error, the documented single-node/no-shared-compiler fallback full build passed with zero warnings/errors, and `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` passed.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P1 | Avalonia save/edit | Fixed: formula-box commits now respect the opening/saving guard before mutating the live workbook. |
+| P1 | Command recalc | Fixed: structural formula rewrites now add rewritten formula cells to `CommandOutcome.AffectedCells`. |
+| P2 | Avalonia save warnings | Fixed: Avalonia captures XLSX save warnings and reports warning count in save completion status. |
+| P2 | XLSX tooling | Fixed: Excel-open smoke and SheetFidelity save through `SaveWithWarnings` and surface warnings. |
+| P2 | Structured tables | Fixed: explicit totals-row formulas materialize as formula cells and report affected totals cells. |
+
+## 2026-06-19 Comprehensive Review
+
+Full report: [reviews/comprehensive-code-review-2026-06-19.md](comprehensive-code-review-2026-06-19.md).
+
+Review/fix cycle on `codex/review-cycle-20260619` from `main` HEAD `546f687e`, then integrated into `main` and synced with `origin/main` HEAD `ece8119`, focused on calc dependency correctness, XLSX load/save/package hardening, update metadata drift, solution preflight coverage, WPF shutdown resilience, and build readiness.
+
+Resolution update: all findings from this cycle were fixed in the same branch and covered by focused calc, IO, app-services, app-host, and Excel-open smoke verification. Repository preflight and full Release build passed after syncing with `origin/main`; the default test projects passed when run directly after the solution-level runner hung hosting the Avalonia test assembly, with the Avalonia project rerun serially after a stale no-build host hang. A final FreeW-only remote sync was covered by preflight and full solution build.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P1 | Calc / named formulas | Fixed: named formulas now contribute their cell references and volatile state to dependency tracking. |
+| P1 | Calc / dynamic arrays | Fixed: spill target values now participate in used-range discovery and full-column aggregates. |
+| P2 | XLSX load warnings | Fixed: per-item data-validation and named-range mapping failures are surfaced through `LoadWithWarnings`. |
+| P2 | XLSX package health | Fixed: encoded relationship path separators are preserved during internal target resolution. |
+| P2 | XLSX smoke tooling | Fixed: package XML loads use the hardened shared XML reader settings. |
+| P2 | Release/update metadata | Fixed: Avalonia update policy uses shared app release channel and release URL metadata. |
+| P2 | Solution preflight | Fixed: shared projects are included in solution membership preflight. |
+| P3 | WPF shutdown | Fixed: early-exit shutdown no longer assumes DI services were initialized. |
+| P3 | XLSX full save | Fixed: caller-provided write-only seekable full-save streams are truncated after package copy. |
+| P3 | Build readiness | Fixed: stale macOS readiness marker, missing `Free.Shared.Ribbon.Wpf` solution entry, and FreeW Windows Forms/GDI+ build metadata. |
+
+## 2026-06-18 Comprehensive Review Iteration 6
+
+Full report: [reviews/comprehensive-code-review-2026-06-18-iter6.md](comprehensive-code-review-2026-06-18-iter6.md).
+
+Documentation-only review at `main` HEAD `06d173eac`, focused on recalc spill cleanup, XLSX save warning fidelity, app-services path-provider wiring, and XLSX package XML validation.
+
+Resolution update: all four findings were fixed on branch `codex/repo-review-findings` after installing .NET SDK `10.0.100` locally. Focused tests passed for the affected calc, IO, and app-services areas. Full preflight/build/default-test verification is still blocked by unrelated repository issues documented in the full report.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P1 | Calc / dynamic arrays | Fixed: evaluator-error catch paths now clear stale spill target values after a formerly successful dynamic-array formula starts returning an error. |
+| P2 | XLSX save | Fixed: `SaveWithWarnings` now reports comment and hyperlink serialization failures instead of silently returning clean. |
+| P2 | Autosave | Fixed: `AutosaveSnapshotStore.CreateDefault` now uses the injected `IApplicationDataPathProvider`. |
+| P3 | XLSX tooling | Fixed: `XlsxPackageHealthValidator` now routes package XML through the hardened XML reader settings used elsewhere. |
+
+Earlier June 18 iteration scratch reports were consolidated during documentation cleanup. Durable outcomes kept here:
+
+- Iteration 2 fixed guarded async contextual-tab command launching, Equation dialog close behavior, hidden-window cleanup, proofing commit re-entrancy checks, and backstage progress clamping; it also recorded the WPF UI-lane blocker as pre-existing.
+- Iteration 4 delivered Chart "Value From Cells" range-label round-trip support and kept the non-superseded UpdateReadyIndicator localization/accessibility fix after the active ribbon refactor superseded the broader UI-lane patch.
+- Iteration 5 fixed drawing-object layer cache invalidation for sub-cell offsets, Pivot slicer available-item de-duplication, and ordinal slicer selection matching; it left slicer ordering and drag-commit offset behavior to the owning workstreams.
 
 ## 2026-06-12 Comprehensive Review
 
