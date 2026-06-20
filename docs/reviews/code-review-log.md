@@ -1,8 +1,26 @@
 # Code Review Findings
 
-Last updated: 2026-06-19
+Last updated: 2026-06-21
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
+
+## 2026-06-21 Comprehensive Review Iteration 1
+
+Full report: [reviews/comprehensive-code-review-2026-06-21-iter1.md](comprehensive-code-review-2026-06-21-iter1.md).
+
+Restarted review/fix cycle on `codex/review-iterate-20260621-1`, focused on the high-churn range after the 2026-06-19 clean pass: legacy XLS import fidelity, FreeW HTML/MHTML adapters, the LibreOffice format cross-check harness, and GitHub workflow coverage for direct `main` merges.
+
+Resolution update: findings in this cycle are fixed in the branch. Focused FreeW IO, FreeX Core IO, Host workflow/source, FormatCrossCheck build, and workflow preflight checks passed. After syncing with `origin/main` at `92ec5e1d6`, repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed with 15,927 passed, 131 not executed/skipped, and 0 failed.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P1 | GitHub workflows | Fixed: primary CI now runs for direct pushes to `main`, matching the repo's merge/push workflow. |
+| P1 | FormatCrossCheck | Fixed: hard FreeX write/reload errors and LibreOffice open failures now fail the tool instead of exiting green. |
+| P2 | FormatCrossCheck | Fixed: invalid `--format` filters that validate zero format rows now return infrastructure failure. |
+| P2 | FreeW HTML | Fixed: vertical table merges now write the true `rowspan` and import combined `rowspan`/`colspan` without shifting later cells. |
+| P2 | XLS/XLSX IO | Fixed: native multi-range selections survive save when no modeled active cell exists. |
+| P2 | XLS protection | Fixed: legacy window protection is preserved as native metadata without enabling structure protection. |
+| P2 | FreeW/FreeP workflows | Fixed: direct-push path filters now include central build/package props. |
 
 ## 2026-06-19 Comprehensive Review Iteration 6
 
