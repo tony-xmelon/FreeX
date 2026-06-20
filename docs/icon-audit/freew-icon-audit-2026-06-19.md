@@ -32,7 +32,7 @@ Generated: 2026-06-19
 4. Create image-specific align/size/alt-text icons instead of leaning on text alignment and generic sizing metaphors.
 5. Add a rendered FreeW ribbon visual validation lane mirroring the FreeX screenshot evidence once the app host can run reliably in this branch.
 
-Open `freew-icon-audit-2026-06-19.html` for the full command table and SVG inventory.
+Regenerate local HTML/JSON tables from the audit tooling when a sortable command table or machine-readable inventory is needed; those generated files are ignored and should not be committed.
 
 ## Inconsistent Rows
 

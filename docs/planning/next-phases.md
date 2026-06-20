@@ -1,7 +1,9 @@
 # FreeX Next Development Phases
 
-**Last updated:** 2026-06-03
-**Current state:** Formula engine at 488/488 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (87/87), XLSX round-trip and corpus coverage at a current 180-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, UIA accessibility peers, a 43-culture localization resource foundation, and a chart interop harness with a latest-complete 28/28 openability/export plus visual-gate pass, 0 known-gap chart allowances, and 28/28 byte-identical Excel-native/FreeX-round-trip packages. The active focus is broader XLSX fidelity proof, package-preserving save validation, release packaging/trust validation, localization review/pseudo-localization/package metadata, performance hardening, and the explicitly documented native-Excel pivot edge cases.
+**Last updated:** 2026-06-21
+**Current state:** This is a June 3 development-phase snapshot retained as historical sequencing. The current status source is [../history/status-2026-06-21.md](../history/status-2026-06-21.md); it records the v0.8.127 tester release, current workbook/document file-format adapters, active fidelity/corpus workstreams, and remaining public-preview promotion blockers.
+
+The June 3 baseline below is preserved for context: formula engine at 488/488 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (87/87), XLSX round-trip and corpus coverage at a 180-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, UIA accessibility peers, a 43-culture localization resource foundation, and a chart interop harness with a latest-complete 28/28 openability/export plus visual-gate pass, 0 known-gap chart allowances, and 28/28 byte-identical Excel-native/FreeX-round-trip packages.
 
 ---
 

@@ -1,5 +1,12 @@
 # FreeW Roadmap — build the full word processor, reuse FreeX
 
+**Last reviewed:** 2026-06-21
+
+**Current note:** this file is now the historical construction log for the FreeW feature build. Current
+file-format status lives in [freew-file-formats.md](freew-file-formats.md), current corpus status lives
+in [../fidelity/2026-06-19-freew-corpus-feature-growth.md](../fidelity/2026-06-19-freew-corpus-feature-growth.md),
+and current icon status lives in [../icon-audit/freew-icon-audit-2026-06-19.md](../icon-audit/freew-icon-audit-2026-06-19.md).
+
 **Goal:** grow the FreeW scaffold into a real word processor (`.docx`, rich editing,
 ribbon, file lifecycle, print), reusing as much of FreeX / the `Free.Shared.*` tier as
 possible. Build it as a continuous series of small, verified, pushed increments.

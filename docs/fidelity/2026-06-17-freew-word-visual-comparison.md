@@ -1,5 +1,9 @@
 # FreeW vs MS Word — visual fidelity comparison (2026-06-17)
 
+**Current-state note (2026-06-21):** this remains a 26-file visual baseline, not a current
+134-row corpus visual baseline. Reusable render/compare tooling now lives under `tools/FreeW.RenderCompare/`;
+run outputs under `freew-fidelity-corpus/runs/` remain ignored local artifacts.
+
 Companion to [`2026-06-17-freew-corpus-roundtrip.md`](2026-06-17-freew-corpus-roundtrip.md), which
 established that all 26 `freew-fidelity-corpus` documents **open and round-trip** through
 `DocxReader`/`DocxWriter` with no modeled-content loss, but deferred the **visual** pixel-diff against
@@ -12,11 +16,12 @@ rendering, page by page, with SSIM + pixel-delta heatmaps.
 ## Method
 
 1. **Word ground truth.** Each corpus `.docx` → PDF via Word COM `ExportAsFixedFormat`, then rasterized
-   to per-page PNG at 150 DPI (`pypdfium2`). Scripts: `freew-fidelity-corpus/runs/export-word.ps1`.
+   to per-page PNG at 150 DPI (`pypdfium2`). Reusable tooling lives under `tools/FreeW.RenderCompare/`;
+   run-specific helper copies and outputs stay under ignored `freew-fidelity-corpus/runs/`.
 2. **FreeW rendering.** A headless WPF harness (`tools/FreeW.RenderCompare`) loads each `.docx` through
    `DocxReader`, hosts it in the real `DocumentView`, and rasterizes every page through the app's actual
    print paginator (`HeaderFooterPaginator` over the live FlowDocument) to PNG at 150 DPI.
-3. **Diff.** `freew-fidelity-corpus/runs/compare.py` aligns FreeW vs Word page-for-page, computes SSIM and
+3. **Diff.** `tools/FreeW.RenderCompare` and run-local comparison helpers align FreeW vs Word page-for-page, compute SSIM and
    mean pixel delta, and writes a FreeW | Word | heatmap triptych per page under `runs/diff/`.
 
 Run artifacts (PDFs, PNGs, triptychs, `scores.csv`) live under the **git-ignored**

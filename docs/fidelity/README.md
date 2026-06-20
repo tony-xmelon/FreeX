@@ -1,6 +1,6 @@
 # Fidelity Workstream Summary
 
-**Last updated:** 2026-06-19
+**Last updated:** 2026-06-21
 
 This folder holds point-in-time XLSX and FreeW fidelity findings. Keep durable summaries here and avoid committing temporary handoff notes, downloaded sample workbooks, generated comparison outputs, or Excel ground-truth images. Local workbook binaries belong in ignored corpus folders such as `fidelity-corpus/files/`, `fidelity-corpus/runs/`, `freew-fidelity-corpus/files/`, or `freew-fidelity-corpus/runs/`.
 
@@ -12,7 +12,18 @@ The June 17-18 fidelity sweep covered three major workbook groups:
 - Contextures samples: pivots, slicers, charts, conditional formatting, tables, dynamic arrays, comments, advanced filter, and form-control rendering.
 - tealeg-xlsx fixtures: 25 edge-case workbooks, including chartsheet support and invalid-source pass-through documentation.
 
-Durable outcome notes live in the dated files in this folder. The current corpus expansion note is [2026-06-18-xlsx-chart-pivot-corpus-growth.md](2026-06-18-xlsx-chart-pivot-corpus-growth.md).
+Durable outcome notes live in the dated files in this folder. Current workbook-format coverage is summarized by [2026-06-19-file-format-support-audit.md](2026-06-19-file-format-support-audit.md), with focused June 19 notes for ODS rebuild triage, LibreOffice cross-checking, and legacy XLS/XLSB handling. The current chart/PivotTable corpus expansion note is [2026-06-18-xlsx-chart-pivot-corpus-growth.md](2026-06-18-xlsx-chart-pivot-corpus-growth.md).
+
+## Current FreeW Coverage
+
+FreeW fidelity uses the on-demand corpus in [../../freew-fidelity-corpus/README.md](../../freew-fidelity-corpus/README.md). The committed manifest currently has 134 redistributable rows and is guarded by `freew/FreeW.Core.IO.Tests/FreeWFidelityCorpusManifestTests.cs`; downloaded document binaries and run outputs stay ignored.
+
+Durable FreeW notes:
+
+- [2026-06-19-freew-corpus-feature-growth.md](2026-06-19-freew-corpus-feature-growth.md) - current corpus expansion note and feature coverage summary.
+- [2026-06-17-freew-corpus-roundtrip.md](2026-06-17-freew-corpus-roundtrip.md) - historical 26-file round-trip baseline, now superseded by the corpus-gated test path.
+- [2026-06-17-freew-word-visual-comparison.md](2026-06-17-freew-word-visual-comparison.md) - historical 26-file Word/LibreOffice visual comparison baseline.
+- [2026-06-17-freew-corpus-growth-scout.md](2026-06-17-freew-corpus-growth-scout.md) - historical 26-to-48 growth scout, superseded by the June 19 134-row manifest.
 
 ## Deferred Fidelity Items
 

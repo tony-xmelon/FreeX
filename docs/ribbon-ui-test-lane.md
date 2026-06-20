@@ -7,11 +7,11 @@ needs its own fast, targeted regression coverage separate from the broad UI lane
 ## How to run
 
 ```sh
-# Functional ribbon lane (runs by default — fast, deterministic):
-dotnet test FreeX.RibbonTests.slnx -c Release --filter Category=RibbonUiLane
+# Functional ribbon lane (runs by default - fast, deterministic):
+dotnet test FreeX.RibbonTests.slnx --configuration Release --filter Category=RibbonUiLane
 
 # Performance benchmarks (opt-in: timing is reported and asserted against a generous ceiling):
-FREEX_RUN_BENCHMARK_TESTS=1 dotnet test FreeX.RibbonTests.slnx -c Release --filter Category=RibbonUiLanePerf
+FREEX_RUN_BENCHMARK_TESTS=1 dotnet test FreeX.RibbonTests.slnx --configuration Release --filter Category=RibbonUiLanePerf
 ```
 
 `FreeX.RibbonTests.slnx` scopes the build to `FreeX.App.Host.Tests` (where the lane lives); the

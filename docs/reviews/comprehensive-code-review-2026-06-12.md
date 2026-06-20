@@ -44,7 +44,7 @@ Fix: apply the dirty re-check only when `confirmation == Continue` (a save actua
 
 ### P1 - Multi-window: sibling windows never dirty → silent data loss
 
-Evidence: [`RefreshFromSharedWorkbook`](../../src/FreeX.App.Host/MainWindow.MultiWindow.cs#L65) updates viewport/title only — no `MarkWorkbookDirty()`. Each window owns a Transient [`WorkbookDocumentState`](../../src/FreeX.App.Services/WorkbookDocumentState.cs); the workbook is shared. Edit in window A → B's `IsDirty` stays false; close A (prompt, maybe discard), then close B → line-62 fast path (`!_workbookDirty`) → `PrepareActiveWorkbookForFinalClose()` with no prompt → all unsaved edits discarded.
+Evidence: [`RefreshFromSharedWorkbook`](../../src/FreeX.App.Host/MainWindow.MultiWindow.cs#L65) updates viewport/title only — no `MarkWorkbookDirty()`. Each window owns a Transient [`WorkbookDocumentState`](../../shared/Free.Shared.AppServices/WorkbookDocumentState.cs); the workbook is shared. Edit in window A → B's `IsDirty` stays false; close A (prompt, maybe discard), then close B → line-62 fast path (`!_workbookDirty`) → `PrepareActiveWorkbookForFinalClose()` with no prompt → all unsaved edits discarded.
 
 Root cause is architectural: dirty state is a property of the *document*, not the window. Fix: share one `WorkbookDocumentState` per workbook (scoped like `WorkbookRef`), or broadcast `MarkDirty` in `NotifyWorkbookChanged`. Related P2s in the same cluster:
 

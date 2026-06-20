@@ -1,6 +1,6 @@
 # FreeX Documentation
 
-**Last updated:** 2026-06-19
+**Last updated:** 2026-06-21
 
 Use this index as the current documentation map. Point-in-time material lives under `history/` and `archive/`; prefer the newest status snapshot plus the current planning docs when making product or release decisions.
 
@@ -10,13 +10,16 @@ Use this index as the current documentation map. Point-in-time material lives un
 
 ## Start Here
 
-- [planning/outstanding-build.md](planning/outstanding-build.md) - source-of-truth backlog for outstanding build work.
-- [history/status-2026-06-12.md](history/status-2026-06-12.md) - current project status snapshot covering the June 12 stable latest tester release at `d3efaa6c`, v0.8.114, the failed run 113 hosted UI source-contract gate, the 95% `v0.8.<run>` release stream, release validation, localization review/package metadata, and XLSX fidelity proof.
-- [planning/next-phases.md](planning/next-phases.md) - next development phases and priority sequencing.
+- [history/status-2026-06-21.md](history/status-2026-06-21.md) - current project status snapshot covering the v0.8.127 tester release, current workbook/document file-format surface, release posture, and hygiene rules.
+- [planning/outstanding-build.md](planning/outstanding-build.md) - historical backlog plus current 2026-06-21 status note for outstanding build work.
+- [planning/next-phases.md](planning/next-phases.md) - next development phases and priority sequencing, retained as a June 3 planning snapshot unless superseded by newer status docs.
 - [planning/multiplatform-macos-port.md](planning/multiplatform-macos-port.md) - preparation plan for a future multiplatform port, starting with macOS and a portable GitHub Actions lane.
 - [planning/multiplatform-linux-port.md](planning/multiplatform-linux-port.md) - Linux port plan: Avalonia shell reuse, freedesktop/XDG packaging, hosted Ubuntu CI lane, and readiness tooling.
 - [planning/macos-port-dependency-backlog.md](planning/macos-port-dependency-backlog.md) - concise inventory of Windows/WPF-only dependencies that block or shape the Avalonia/macOS port.
-- [planning/freew-linux-port.md](planning/freew-linux-port.md) - FreeW (word processor) Linux port: Avalonia editing surface, ribbon, freedesktop packaging (tarball/.deb/AppImage), freew-linux CI lane, and feature coverage.
+- [planning/freew-linux-port.md](planning/freew-linux-port.md) - FreeW (word processor) Linux port: Avalonia editing surface, ribbon, catalog-backed document formats, freedesktop packaging (tarball/.deb/AppImage), freew-linux CI lane, and feature coverage.
+- [planning/freew-roadmap.md](planning/freew-roadmap.md) - historical FreeW construction log through the current file-format, corpus, icon, and platform slices.
+- [planning/freew-command-inventory.md](planning/freew-command-inventory.md) - FreeW command inventory; defer current icon status to the June 19 FreeW icon audit.
+- [planning/freew-file-formats.md](planning/freew-file-formats.md) - FreeW document-format adapter status matrix and remaining format gaps.
 - [performance/backlog-2026-06-04.md](performance/backlog-2026-06-04.md) - current performance backlog and active XLSX open/save IO priority.
 
 ## User
@@ -63,9 +66,11 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [formats/excel-open-smoke.md](formats/excel-open-smoke.md) - real desktop Excel XLSX open/save/reopen smoke-tool instructions.
 - [formats/charts-excel-freex-comparison-2026-06-01.md](formats/charts-excel-freex-comparison-2026-06-01.md) - current chart interop evidence.
 - [formats/native-json-schema.md](formats/native-json-schema.md) - FreeX native JSON format.
-- [formats/ods-open-support-research.md](formats/ods-open-support-research.md) - parked ODS research; not active implementation scope.
+- [formats/ods-open-support-research.md](formats/ods-open-support-research.md) - historical ODS research superseded by the in-house ODS adapter now registered in the workbook adapter catalog.
 - [fidelity/README.md](fidelity/README.md) - current fidelity workstream summary, harness list, deferred items, and artifact hygiene rules.
-- [fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md](fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md) - latest XLSX chart/PivotTable corpus expansion note.
+- [fidelity/2026-06-19-file-format-support-audit.md](fidelity/2026-06-19-file-format-support-audit.md) - current spreadsheet file-format adapter support audit and follow-up plan.
+- [fidelity/2026-06-19-freew-corpus-feature-growth.md](fidelity/2026-06-19-freew-corpus-feature-growth.md) - current FreeW DOCX corpus expansion note.
+- [fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md](fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md) - XLSX chart/PivotTable corpus expansion note.
 
 ## Architecture And Performance
 
@@ -86,6 +91,8 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [reviews/comprehensive-code-review-2026-06-12.md](reviews/comprehensive-code-review-2026-06-12.md) - June 12 full-workspace review: fix-campaign regression audit (close-flow and multi-window P1s), protection-guard omissions, chart/pivot/fxl round-trip fidelity, recovery-flow holes, Avalonia-port gap, and carry-forward status.
 - [reviews/comprehensive-code-review-2026-06-18.md](reviews/comprehensive-code-review-2026-06-18.md) - June 18 full-source static review plus same-day high-severity fix summary and deferred follow-ups.
 - [reviews/comprehensive-code-review-2026-06-18-iter6.md](reviews/comprehensive-code-review-2026-06-18-iter6.md) - final June 18 review iteration covering spill cleanup, save warnings, autosave path-provider wiring, and package XML validation.
+- [reviews/comprehensive-code-review-2026-06-19-iter5.md](reviews/comprehensive-code-review-2026-06-19-iter5.md) - June 19 review iteration covering document package fidelity, corpus validation, and format cross-check hardening.
+- [reviews/comprehensive-code-review-2026-06-19-iter6.md](reviews/comprehensive-code-review-2026-06-19-iter6.md) - final June 19 review iteration; use with the cumulative review log for current review status.
 - [reviews/command-icon-audit-2026-05-30.md](reviews/command-icon-audit-2026-05-30.md) - proposal-only command icon audit.
 - [reviews/command-icon-review-2026-05-29.md](reviews/command-icon-review-2026-05-29.md) - prior SVG command-icon audit.
 - [reviews/command-icon-visual-consistency-2026-05-30.md](reviews/command-icon-visual-consistency-2026-05-30.md) - visual-consistency review for command artwork.
@@ -93,7 +100,8 @@ Use this index as the current documentation map. Point-in-time material lives un
 
 ## History
 
-- [history/status-2026-06-12.md](history/status-2026-06-12.md) - current status snapshot covering the June 12 stable latest `origin/main` release, v0.8.114, prior failed run 113 hosted UI source-contract gate, and current release blockers.
+- [history/status-2026-06-21.md](history/status-2026-06-21.md) - current status snapshot covering the v0.8.127 tester release, current format support, promotion blockers, and hygiene rules.
+- [history/status-2026-06-12.md](history/status-2026-06-12.md) - prior status snapshot covering the June 12 stable latest `origin/main` release, v0.8.114, prior failed run 113 hosted UI source-contract gate, and release blockers as of that date.
 - [history/status-2026-06-11.md](history/status-2026-06-11.md) - prior status snapshot covering the June 11 stable latest `origin/main` release, v0.8.112, prior failed run 111 hosted UI gate, and current release blockers.
 - [history/status-2026-06-10.md](history/status-2026-06-10.md) - prior status snapshot covering the June 10 branch-neutral `origin/main` release, v0.8.110 tester pre-release, prior failed run 109 hosted UI gate, and current release blockers.
 - [history/status-2026-06-08.md](history/status-2026-06-08.md) - prior status snapshot covering the June 8 corpus, v0.8.108 tester pre-release, release-readiness, and outstanding-work alignment.
@@ -111,8 +119,8 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [history/status-2026-05-24.md](history/status-2026-05-24.md) - prior status snapshot.
 - [history/status-2026-05-21.md](history/status-2026-05-21.md) - prior status snapshot.
 - [history/status-2026-05-19.md](history/status-2026-05-19.md) - prior status snapshot.
-- [history/build-history-metrics.md](history/build-history-metrics.md) - generated build-history and provider-log metrics through 2026-06-06.
-- [history/thread-commit-timing.md](history/thread-commit-timing.md) - generated first-parent thread timing report with commit counts, discovery offsets, implementation spans, and integration lags.
+- [history/build-history-metrics.md](history/build-history-metrics.md) - historical generated build-history and provider-log metrics through 2026-06-06.
+- [history/thread-commit-timing.md](history/thread-commit-timing.md) - historical generated first-parent thread timing report with commit counts, discovery offsets, implementation spans, and integration lags.
 - [history/implementation-plan.md](history/implementation-plan.md) - historical formula/XLSX implementation plan retained for context.
 - [archive/superpowers/](archive/superpowers/) - historical implementation plans and specs; not current build-status documentation.
 
@@ -120,5 +128,6 @@ Use this index as the current documentation map. Point-in-time material lives un
 
 - Current runtime command artwork lives in `src/FreeX.App.Host/Resources/CommandIconsSvg/`.
 - [icon-audit/freex-icon-audit-2026-06-18.md](icon-audit/freex-icon-audit-2026-06-18.md) is the durable generated icon-audit summary; generated HTML/JSON tables are local artifacts and should be regenerated, not committed.
+- [icon-audit/freew-icon-audit-2026-06-19.md](icon-audit/freew-icon-audit-2026-06-19.md) is the durable FreeW generated icon-audit summary; generated HTML/JSON tables are local artifacts and should be regenerated, not committed.
 - Historical UI screenshot evidence is no longer checked in under `docs/ui-test-artifacts`; keep new screenshots there only when they are current review evidence and referenced by [testing/ui-test-catalog.md](testing/ui-test-catalog.md).
 - The obsolete generated PNG icon review set was removed. Use the SVG command-icon reviews and source assets above for future icon work.
