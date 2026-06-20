@@ -1,5 +1,11 @@
 # FreeW DOCX fidelity — real-world corpus round-trip (2026-06-17)
 
+**Current-state note (2026-06-21):** this is a historical 26-file baseline. The current
+`freew-fidelity-corpus/manifest.csv` has 134 rows, and repeatable corpus validation is now guarded by
+`freew/FreeW.Core.IO.Tests/FreeWFidelityCorpusRoundTripTests.cs`. Use
+[2026-06-19-freew-corpus-feature-growth.md](2026-06-19-freew-corpus-feature-growth.md) for the current
+corpus expansion summary.
+
 Ran FreeW's `DocxReader`/`DocxWriter` against the **26-file `freew-fidelity-corpus`** (Apache POI
 `test-data/document` + `integration` fixtures: rich formatting, tables, comments, tracked changes,
 footnotes/endnotes, multi-section headers/footers, images/drawings/charts, embedded documents,

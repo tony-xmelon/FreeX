@@ -1,13 +1,13 @@
 # Phase 3 ODS Open Support Research
 
-**Status:** Parked; do not implement until ODS support is explicitly resumed.
-**Last reviewed:** 2026-05-27
+**Status:** Historical research; superseded by the in-house ODS adapter now registered in `WorkbookFileAdapterCatalog`.
+**Last reviewed:** 2026-06-21
 
 ## Recommendation
 
-Keep `.ods` support out of the active File formats implementation for now. FreeX should continue hardening `.xlsx/.xlsm/.xltx/.xltm`, delimited text, and read-only `.xls` before taking an ODS dependency.
+Retain this document as the original May 2026 decision record and dependency survey. It is no longer the active product position: current FreeX mainline includes an in-house ODS adapter with read/write support and test coverage. New ODS work should extend that adapter, corpus coverage, and documented known-gap rows rather than revisit a proprietary dependency proof by default.
 
-If `.ods` is resumed, the preferred path is a small proof-of-concept adapter using GemBox.Spreadsheet behind an optional commercial dependency gate. That proof should validate basic values, dates, formulas-as-text/formulas-with-cached-results, merged cells, sheet names, and style loss expectations before any product integration. Avoid adding ODF Toolkit directly because it is Java-based, and avoid building an in-house ODS parser until there is a clear requirement for permissive licensing over fidelity and implementation speed.
+The options below remain useful only as historical context if a future ODF-fidelity effort needs to compare the in-house path against commercial or external ODF libraries.
 
 ## Options Reviewed
 

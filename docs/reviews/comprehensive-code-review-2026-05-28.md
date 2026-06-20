@@ -558,7 +558,7 @@ A grep finds zero `// TODO`, `// FIXME`, `// HACK`, or `// XXX` comments. This i
 
 `DateTime.Now` is timezone- and DST-sensitive. For recent-files lists and UI timestamps this is fine; for any serialized timestamp it is a bug waiting for a daylight-savings switch.
 
-**Recommendation:** Audit the 10 call sites ([BackstageRecentFileListPlanner.cs](../../src/FreeX.App.Host/BackstageRecentFileListPlanner.cs), [PrintRenderer.HeaderFooterDrawing.cs](../../src/FreeX.App.Host/PrintRenderer.HeaderFooterDrawing.cs), [RecentFilesStore.cs](../../src/FreeX.App.Host/RecentFilesStore.cs), and others). Switch serialized timestamps to `DateTimeOffset.UtcNow`. Header-footer "date" tokens should follow Excel's behavior, which is locale-formatted local time — keep `.Now` there.
+**Recommendation:** Audit the 10 call sites ([BackstageRecentFileListPlanner.cs](../../shared/Free.Shared.Shell/BackstageRecentFileListPlanner.cs), [PrintRenderer.HeaderFooterDrawing.cs](../../src/FreeX.App.Host/PrintRenderer.HeaderFooterDrawing.cs), [RecentFilesStore.cs](../../shared/Free.Shared.AppServices/RecentFilesStore.cs), and others). Switch serialized timestamps to `DateTimeOffset.UtcNow`. Header-footer "date" tokens should follow Excel's behavior, which is locale-formatted local time — keep `.Now` there.
 
 ---
 

@@ -27,7 +27,7 @@ Each row was confirmed in the current source, not taken on trust.
 | Prior § | Finding | Evidence it is fixed |
 |---|---|---|
 | 5.1 | `CellStyle.Equals`/`GetHashCode` excluded native dxf attrs | three `NativeDifferential*` fields now compared (PR #33) |
-| 7.1 | Protection passwords stored plaintext | `NativePasswordHelper` stores `sha256:<HEX>` ([NativePasswordHelper.cs](../../src/FreeX.Core.IO/NativePasswordHelper.cs)) |
+| 7.1 | Protection passwords stored plaintext | `NativePasswordHelper` stores `sha256:<HEX>` ([NativePasswordHelper.cs](../../shared/Free.Shared.Opc/NativePasswordHelper.cs)) |
 | 4.1 | `XlsxFileAdapter` swallowed load exceptions to `Debug.WriteLine` | replaced by `XlsxLoadResult.Warnings` ([XlsxLoadResult.cs](../../src/FreeX.Core.IO/XlsxLoadResult.cs)); zero `Debug.WriteLine` left in the adapter |
 | 2.6 | `WriteIndented` + per-call `JsonSerializerOptions` | static `SaveOptions`, indentation off (PR #34) |
 | 3.1 / 8.4 | Per-frame brush/pen/typeface dictionaries | promoted to class-level fields ([GridView.cs:158-161](../../src/FreeX.App.UI/GridView.cs#L158-L161)) |
@@ -101,7 +101,7 @@ The native-preservation bag exists specifically to round-trip OOXML parts FreeX 
 `RecalculateSheetFormulas` and `RecalculateAllFormulas` both call `RebuildFormulaDependencies(workbook)`, which re-parses and re-registers *every* formula in *every* sheet on each invocation ([RecalcEngine.cs:216-236](../../src/FreeX.Core.Calc/RecalcEngine.cs#L216-L236)). The incremental `Recalculate(changedCells)` path is already efficient; these two whole-workbook entry points are O(all formulas) even for a single-sheet refresh. *Recommend:* keep the full rebuild only for explicit "Calculate Now (full)"; drive sheet/edit refreshes through the delta path.
 
 ### F5 — Non-critical IO failures only logged to `Debug.WriteLine` (reliability, **P3 / low**)
-`RecentFilesStore` load/save failures are written to `Debug.WriteLine` ([RecentFilesStore.cs:39,93](../../src/FreeX.App.Host/RecentFilesStore.cs#L39)), which is stripped from Release — the same class of silent failure that PR #35 removed elsewhere. Impact is minor (the recent-files list is non-critical), but it is inconsistent with the now-standard diagnostic approach. *Recommend:* route through the app diagnostics channel; consider write-temp-then-atomic-rename for the store file.
+`RecentFilesStore` load/save failures are written to `Debug.WriteLine` ([RecentFilesStore.cs:39,93](../../shared/Free.Shared.AppServices/RecentFilesStore.cs#L39)), which is stripped from Release — the same class of silent failure that PR #35 removed elsewhere. Impact is minor (the recent-files list is non-critical), but it is inconsistent with the now-standard diagnostic approach. *Recommend:* route through the app diagnostics channel; consider write-temp-then-atomic-rename for the store file.
 
 ---
 
@@ -184,7 +184,7 @@ Test suite (`dotnet test`) was not executed as part of this read-only review; th
 After landing F1/F2/F3/F5/O3 on `main` (and syncing through four merges of concurrent `codex/*` work), a third read swept the *current* `main` — including the code merged from the parallel sessions during the cycle.
 
 ### 7.1 Fresh scan — clean
-- **Security/XML:** every `XmlReader.Create` in `Core.IO`/`Core.Formula` sets `DtdProcessing.Prohibit` + `XmlResolver = null` (XXE-safe), and the newly-merged `XsltWorkbookTransform` is a model secure XSLT host — `XsltSettings(enableDocumentFunction: false, enableScript: false)`, null stylesheet/document resolvers, `MaxCharactersInDocument` cap, and a `BoundedMemoryStream` output limit ([XsltWorkbookTransform.cs](../../src/FreeX.Core.IO/XsltWorkbookTransform.cs)). No new injection/SSRF/DoS surface.
+- **Security/XML:** every `XmlReader.Create` in `Core.IO`/`Core.Formula` sets `DtdProcessing.Prohibit` + `XmlResolver = null` (XXE-safe), and the newly-merged `XsltWorkbookTransform` is a model secure XSLT host — `XsltSettings(enableDocumentFunction: false, enableScript: false)`, null stylesheet/document resolvers, `MaxCharactersInDocument` cap, and a `BoundedMemoryStream` output limit ([XsltWorkbookTransform.cs](../../shared/Free.Shared.Opc/XsltWorkbookTransform.cs)). No new injection/SSRF/DoS surface.
 - **Error handling / disposal / threading:** unchanged discipline (broad catches still ~23; only `RecentFilesStore` uses `Debug.WriteLine`, now atomic-write-backed; no new unguarded `Process.Start` — the only URL launch path is the guarded `ExternalUrlLauncher`).
 - Full solution build green at `f7807b70f`; `Core.IO` 1286/1286, `Core.Calc` 553/553, `DocumentationIndexTests` 13/13, and all new F1–F5 unit tests pass.
 

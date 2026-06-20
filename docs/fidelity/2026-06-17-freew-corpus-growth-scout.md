@@ -1,5 +1,9 @@
 # FreeW DOCX corpus growth scout - 2026-06-17
 
+**Current-state note (2026-06-21):** this 26-to-48 scout is historical. The current corpus
+expansion summary is [2026-06-19-freew-corpus-feature-growth.md](2026-06-19-freew-corpus-feature-growth.md),
+and the committed manifest now has 134 rows.
+
 Added 22 download-on-demand DOCX rows to `freew-fidelity-corpus/manifest.csv`, growing the
 corpus from 26 to 48 files while keeping third-party binaries out of the repo.
 

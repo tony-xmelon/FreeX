@@ -30,16 +30,12 @@ Every supported command should eventually have evidence for each applicable laye
 | Check | Command | Result |
 |---|---|---|
 | Git state | `git status --short --branch` | Record the active session branch and leave unrelated modified files untouched. |
-| Worktrees | `git worktree list --porcelain` | Current checkout is an active session branch; no nested worktree created. |
-| Build | `dotnet build FreeX.slnx -m:1` | Passed, 0 warnings, 0 errors. |
-| Rebuild after worktree changed | `dotnet build FreeX.slnx -m:1` | Passed, 0 warnings, 0 errors. |
-| Focused finding regression tests | `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --filter "FullyQualifiedName~MainWindowXamlKeyTipTests\|FullyQualifiedName~KeyboardShortcutMatcherTests\|FullyQualifiedName~WorksheetContextMenuPlannerTests"` | Passed, 194 tests, 0 failures. |
-| UIA dialog entry regression tests | `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --filter "FullyQualifiedName~MainWindowXamlKeyTipTests"` | Passed, 68 tests, 0 failures. |
-| UIA dialog entry regression recheck | `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --filter "FullyQualifiedName~MainWindowXamlKeyTipTests" -m:1 /nodeReuse:false -p:UseSharedCompilation=false` | Passed, 74 tests, 0 failures. |
-| Host regression suite | `dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj` | Passed, 847 tests, 0 failures. |
-| Current build | `dotnet build FreeX.slnx -m:1` | Passed, 0 warnings, 0 errors. |
-| Continuation UIA/mouse dialog pass | Fresh Debug build launched via `src\FreeX.App.Host\bin\Debug\net10.0-windows10.0.19041.0\FreeX.App.Host.exe`; UIA activation plus guarded mouse clicks where foreground was verified. | Account and About opened by foreground-confirmed mouse clicks. UIA `InvokePattern` still returned success for Insert Function/About without opening a dialog before the fix. |
-| Catalog branch build baseline | `dotnet build FreeX.slnx -m:1 /nodeReuse:false -p:UseSharedCompilation=false` | Passed on 2026-05-21 from latest fetched `origin/main`. |
+| Worktrees | `git worktree list --porcelain` | Confirm work happens in one isolated session worktree. |
+| Current routine repository lane | `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` | Required before claiming a routine branch ready. |
+| Current routine build lane | `dotnet build FreeX.slnx --configuration Release` | Required before claiming a routine branch ready. |
+| Current routine non-UI test lane | `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` | Required before claiming a routine branch ready. |
+| UI lane | `dotnet test FreeX.UiTests.slnx --configuration Release --no-build --logger "trx;LogFileName=ui-tests.trx"` | Run only for WPF app/host behavior, UI infrastructure, UI docs/inventory, or tester-release/public-preview candidates. |
+| Historical catalog evidence | Earlier May/June focused builds, Debug foreground probes, and host regression passes below are retained as point-in-time UI coverage evidence, not the current merge-gate baseline. |
 
 ## Coverage Model
 
