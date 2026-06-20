@@ -8,6 +8,20 @@ available rather than deleting earlier fixed-cycle reports.
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
 
+## 2026-06-21 Comprehensive Review Iteration 3
+
+Full report: [reviews/comprehensive-code-review-2026-06-21-iter3.md](comprehensive-code-review-2026-06-21-iter3.md).
+
+Follow-up review/fix cycle on `codex/review-iterate-20260621-3`, focused on workflow guard bypasses, the Avalonia Move or Copy Sheet copy path, and FreeW DOCX package metadata preservation.
+
+Resolution update: findings in this cycle are fixed in the branch. Focused Host workflow, Presentation planner, and FreeW DOCX preserved-parts tests passed. After syncing with `origin/main` at `e922b4e9f`, repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed with 15,933 passed, 131 skipped, and 0 failed.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P2 | GitHub workflows | Fixed: `pull_request_target` guard now catches quoted scalar/list and inline-map `on:` syntax. |
+| P2 | Avalonia sheet tabs | Fixed: copied sheets now land before the selected later sheet instead of one slot too far right. |
+| P2 | FreeW DOCX | Fixed: package extended properties and arbitrary custom properties survive DOCX round-trip while FreeW-owned custom properties are overlaid. |
+
 ## 2026-06-21 Comprehensive Review Iteration 2
 
 Full report: [reviews/comprehensive-code-review-2026-06-21-iter2.md](comprehensive-code-review-2026-06-21-iter2.md).
