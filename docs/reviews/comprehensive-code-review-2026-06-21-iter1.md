@@ -2,9 +2,9 @@
 
 Branch: `codex/review-iterate-20260621-1`
 
-Base reviewed: `origin/main` at `537ac1e3c`.
+Base reviewed: `origin/main` at `92ec5e1d6`.
 
-Scope: restarted review/fix cycle after the 2026-06-19 clean pass, focused on the high-churn range from `bce588455..537ac1e3c`: legacy XLS import fidelity, FreeW HTML/MHTML and document-format adapters, LibreOffice-backed format cross-checking, GitHub workflow coverage, and recently changed verification/docs hygiene.
+Scope: restarted review/fix cycle after the 2026-06-19 clean pass, focused on the high-churn range from `bce588455..92ec5e1d6`: legacy XLS import fidelity, FreeW HTML/MHTML and document-format adapters, LibreOffice-backed format cross-checking, GitHub workflow coverage, and recently changed verification/docs hygiene.
 
 ## Findings
 
@@ -68,4 +68,4 @@ Fix: both push filters now include the central props, and workflow preflight enf
 
 - `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - passed.
 - `dotnet build FreeX.slnx --configuration Release` - passed with 0 warnings and 0 errors.
-- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` - passed with 15,925 passed, 131 not executed/skipped, and 0 failed.
+- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` - passed with 15,927 passed, 131 not executed/skipped, and 0 failed.

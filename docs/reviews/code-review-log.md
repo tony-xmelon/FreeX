@@ -10,7 +10,7 @@ Full report: [reviews/comprehensive-code-review-2026-06-21-iter1.md](comprehensi
 
 Restarted review/fix cycle on `codex/review-iterate-20260621-1`, focused on the high-churn range after the 2026-06-19 clean pass: legacy XLS import fidelity, FreeW HTML/MHTML adapters, the LibreOffice format cross-check harness, and GitHub workflow coverage for direct `main` merges.
 
-Resolution update: findings in this cycle are fixed in the branch. Focused FreeW IO, FreeX Core IO, Host workflow/source, FormatCrossCheck build, and workflow preflight checks passed. Repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed with 15,925 passed, 131 not executed/skipped, and 0 failed.
+Resolution update: findings in this cycle are fixed in the branch. Focused FreeW IO, FreeX Core IO, Host workflow/source, FormatCrossCheck build, and workflow preflight checks passed. After syncing with `origin/main` at `92ec5e1d6`, repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed with 15,927 passed, 131 not executed/skipped, and 0 failed.
 
 | Priority | Area | Finding |
 |---|---|---|
