@@ -63,8 +63,8 @@ Each surface is tracked with these states:
 | Top-level ribbon/backstage tabs | 10 | File, Home, Insert, Draw, Page Layout, Formulas, Data, Review, View, Help. |
 | Contextual ribbon tab declarations | 7 | Shape Format, Picture Format, Chart Design, Format, Table Design, PivotTable Analyze, Design from collapsed `MainWindow.xaml` tab declarations. |
 | Dialog source classes | 118 | Unique `*Dialog` class/x:Class names in `src/FreeX.App.Host`. |
-| XAML click-wired controls | 39 | `Click="..."` occurrences in `MainWindow.xaml` on latest synced `origin/main`. |
-| Explicit UIA automation ids | 36 | `AutomationProperties.AutomationId="..."` declarations in `MainWindow.xaml`. |
+| XAML click-wired controls | 40 | `Click="..."` occurrences in `MainWindow.xaml` on latest synced `origin/main`. |
+| Explicit UIA automation ids | 37 | `AutomationProperties.AutomationId="..."` declarations in `MainWindow.xaml`. |
 | Ribbon keytip metadata declarations | 33 | `RibbonTooltip.KeyTip="..."` declarations in `MainWindow.xaml`. |
 | Keyboard command shortcut usages | 75 | 75 matcher rules / 74 dispatcher targets |
 | Documented shortcut rows | 88 | From `parity/shortcuts.md`: 88 parity, 0 partial. |
