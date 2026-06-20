@@ -1,9 +1,9 @@
 # FreeW Linux Port
 
-**Last updated:** 2026-06-17
+**Last updated:** 2026-06-20
 
-FreeW is the word-processor sibling of FreeX. This document describes its **Linux port** —
-the Avalonia shell, packaging, CI lane, and feature coverage — mirroring the FreeX Linux port.
+FreeW is the word-processor sibling of FreeX. This document describes its Linux port:
+the Avalonia shell, packaging, CI lane, and feature coverage, mirroring the FreeX Linux port.
 
 > FreeW is not affiliated with, endorsed by, or sponsored by Microsoft. Microsoft Word is a
 > trademark of Microsoft Corporation. FreeW reads/writes the Word `.docx` format for interoperability.
@@ -22,31 +22,32 @@ FreeW mirrors FreeX's layering:
   replaces the WPF host on Linux (and runs anywhere Avalonia does). It consumes the portable core +
   shared tiers; it does **not** reference the WPF `Free.Shared.Shell`.
 
-### The editing surface
+### The Editing Surface
 
 Avalonia has no `FlowDocument`, so `Editing/DocumentView.cs` is a custom `Control`:
 
-- A **per-character layout engine** (word wrap, paragraph alignment, mixed-run formatting), caret +
+- A per-character layout engine (word wrap, paragraph alignment, mixed-run formatting), caret +
   selection + click hit-testing.
 - All edits (type/Backspace/Delete/Enter, bold/italic/underline, alignment, font size, paste) route
-  through the shared `DocumentCommandBus`, so **undo/redo come for free**.
-- Renders **bullet/numbered lists** (markers in a hanging-indent gutter), **tables** (a real grid:
-  per-column widths, wrapped cell text, header/banded fills, borders), and **inline images** (PNG
-  decoded to a bitmap, crash-proof with a placeholder fallback).
-- **Named-style resolution**: a paragraph's `StyleId` cascades the document style's run + paragraph
-  formatting under the runs for display, while the model runs stay raw so the style link round-trips.
+  through the shared `DocumentCommandBus`, so undo/redo come from the shared command stack.
+- Renders bullet/numbered lists (markers in a hanging-indent gutter), tables (a real grid:
+  per-column widths, wrapped cell text, header/banded fills, borders; double-click opens a modal cell
+  text editor), and inline images (PNG decoded to a bitmap, crash-proof with a placeholder fallback).
+- Named-style resolution cascades a paragraph's `StyleId` through the document style's BasedOn chain,
+  run formatting, and paragraph formatting for display, while model runs stay raw so the style link
+  round-trips.
 
-### The ribbon
+### The Ribbon
 
 `Ribbon/FreeWRibbon.cs` authors a portable `Free.Shared.Ribbon.RibbonDefinition` (File, Home with
 Clipboard / Font / Paragraph / Styles / Editing groups) and wires command ids to the `DocumentView` /
 shell. `Ribbon/AvaloniaRibbonRenderer.cs` renders the definition into an Avalonia `TabControl`,
 dispatching through the `RibbonCommandRegistry`.
 
-## Packaging & install
+## Packaging & Install
 
 `freew/FreeW.App.Avalonia/Packaging/linux/` produces three install formats from a self-contained
-publish (freedesktop/XDG layout — `.desktop`, hicolor icon, AppStream metainfo):
+publish (freedesktop/XDG layout: `.desktop`, hicolor icon, AppStream metainfo):
 
 - **Tarball** (`package-linux-app.sh`) with `install.sh`/`uninstall.sh` (per-user `~/.local` by default).
 - **Debian package** (`build-deb.sh`, `dpkg-deb`, amd64/arm64).
@@ -63,28 +64,28 @@ self-contained app, validates the desktop assets, builds the tarball + `.deb` (+
 SHA-256 checksums, runs the headless `--packaging-smoke` (DOCX round-trip) and the Xvfb `--launch-smoke`
 (window-shown + glyphs laid out, hard-gated), captures a screenshot, and uploads the bundle.
 
-## Feature coverage
+## Feature Coverage
 
 | Area | Status |
 | --- | --- |
-| Rich-text editing (type/caret/selection/undo-redo) | ✅ |
-| Bold / italic / underline, alignment, font size | ✅ |
-| Bullet / numbered lists (render + edit; Enter continues the list) | ✅ |
-| Tables | ✅ render (read-only); cell editing pending |
-| Inline images | ✅ render |
-| Named paragraph styles + quick styles (Normal/Heading/Title) | ✅ |
-| DOCX open / save | ✅ |
-| OS clipboard cut / copy / paste | ✅ |
-| Word-style ribbon | ✅ |
-| Packaging: tarball / .deb / AppImage | ✅ |
+| Rich-text editing (type/caret/selection/undo-redo) | Done |
+| Bold / italic / underline, alignment, font size | Done |
+| Bullet / numbered lists (render + edit; Enter continues the list) | Done |
+| Tables | Render + modal cell text editing; in-cell caret editing pending |
+| Inline images | Render |
+| Named paragraph styles + quick styles (Normal/Heading/Title) | Done, including BasedOn chains |
+| DOCX open / save | Done |
+| OS clipboard cut / copy / paste | Done |
+| Word-style ribbon | Done |
+| Packaging: tarball / .deb / AppImage | Done |
+| Headless DocumentView layout tests | Done |
 
 ## Pending
 
-- **Table-cell editing** — the caret model is currently `(block, offset)`; editing inside table cells
-  needs a richer `(block → cell → paragraph → offset)` model. Tables render read-only today.
-- BasedOn style chains (style resolution is one level deep).
-- Real ribbon icons (buttons are text today).
-- Headless layout tests (Avalonia.Headless) for `DocumentView` rendering/edit paths.
+- **In-cell table editing**: double-click modal text editing is supported, but the caret model is still
+  `(block, offset)`; rich in-place editing inside table cells needs a richer
+  `(block -> cell -> paragraph -> offset)` model.
+- Real Avalonia ribbon icons (buttons are text today).
 
 ## Coordination
 
