@@ -8,6 +8,23 @@ available rather than deleting earlier fixed-cycle reports.
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
 
+## 2026-06-21 Comprehensive Review Iteration 2
+
+Full report: [reviews/comprehensive-code-review-2026-06-21-iter2.md](comprehensive-code-review-2026-06-21-iter2.md).
+
+Follow-up review/fix cycle on `codex/review-iterate-20260621-2`, focused on sibling issues after iteration 1: XLSX workbook protection metadata, FreeW HTML/MHTML import fidelity, repository workflow/preflight coverage, and Avalonia Move or Copy Sheet positioning.
+
+Resolution update: findings in this cycle are fixed in the branch. Focused Host workflow/preflight, FreeW IO, FreeX Core IO, and Presentation planner tests passed. After syncing with `origin/main` at `c07ef5276`, repository preflight passed, the full Release build passed with 0 warnings/errors after clearing stale `testhost` PID 1488, and the default test lane passed with 15,932 passed, 131 not executed/skipped, and 0 failed.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P2 | XLSX protection | Fixed: `lockWindows` and revision-only protection no longer model as workbook structure protection. |
+| P2 | Solution preflight | Fixed: repository preflight now validates FreeW and FreeP project membership in their dedicated solutions. |
+| P2 | GitHub workflows | Fixed: `pull_request_target` guard now catches block, scalar, and inline-list workflow syntax. |
+| P2 | FreeW MHTML | Fixed: embedded images referenced by `Content-Location` or filename now load. |
+| P2 | FreeW HTML | Fixed: nested table rows no longer become outer-table rows, while nested table text is preserved in the containing cell. |
+| P2 | Avalonia sheet tabs | Fixed: copied sheets now land at the selected later destination or end position. |
+
 ## 2026-06-21 Comprehensive Review Iteration 1
 
 Full report: [reviews/comprehensive-code-review-2026-06-21-iter1.md](comprehensive-code-review-2026-06-21-iter1.md).
