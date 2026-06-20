@@ -6,7 +6,7 @@ FreeW is the word-processor sibling of FreeX. This document describes its Linux 
 the Avalonia shell, packaging, CI lane, and feature coverage, mirroring the FreeX Linux port.
 
 > FreeW is not affiliated with, endorsed by, or sponsored by Microsoft. Microsoft Word is a
-> trademark of Microsoft Corporation. FreeW reads/writes the Word `.docx` format for interoperability.
+> trademark of Microsoft Corporation. FreeW reads/writes WordprocessingML and related document formats for interoperability.
 
 ## Architecture
 
@@ -14,7 +14,8 @@ FreeW mirrors FreeX's layering:
 
 - **Portable core** (`freew/FreeW.Core.Model`, `freew/FreeW.Core.IO`, `net10.0`): the `TextDocument`
   model (paragraphs, runs, tables, styles, images), a `DocumentCommandBus` + `IDocumentCommand`
-  undo/redo engine (over the shared `Free.Shared.Commands.UndoRedoStack`), and `DocxReader`/`DocxWriter`.
+  undo/redo engine (over the shared `Free.Shared.Commands.UndoRedoStack`), `DocxReader`/`DocxWriter`,
+  and the catalog-backed document file adapters.
 - **Shared portable tiers** (`shared/Free.Shared.{AppServices,Commands,Opc,Ribbon}`, `net10.0`, WPF-free):
   app identity/storage, the command engine, OPC/XML helpers, and the ribbon definition model.
 - **Windows shell** (`freew/FreeW.App.Host`, WPF, `net10.0-windows`): the Windows-only host. Not used on Linux.
@@ -53,7 +54,8 @@ publish (freedesktop/XDG layout: `.desktop`, hicolor icon, AppStream metainfo):
 - **Debian package** (`build-deb.sh`, `dpkg-deb`, amd64/arm64).
 - **AppImage** (`build-appimage.sh`).
 
-FreeW opens standard Word `.docx`, so it relies on `shared-mime-info` rather than registering a custom
+FreeW opens the catalog-backed formats documented in [freew-file-formats.md](freew-file-formats.md).
+For Linux packaging it relies on standard document MIME registrations rather than a custom app-only
 MIME type. No system .NET runtime is required.
 
 ## CI
@@ -74,7 +76,7 @@ SHA-256 checksums, runs the headless `--packaging-smoke` (DOCX round-trip) and t
 | Tables | Render + modal cell text editing; in-cell caret editing pending |
 | Inline images | Render |
 | Named paragraph styles + quick styles (Normal/Heading/Title) | Done, including BasedOn chains |
-| DOCX open / save | Done |
+| Catalog-backed document open / save | Done for DOCX family, Word XML, RTF, HTML/MHTML, plain text, PDF import, and legacy DOC/DOT import; see [freew-file-formats.md](freew-file-formats.md) |
 | OS clipboard cut / copy / paste | Done |
 | Word-style ribbon | Done |
 | Packaging: tarball / .deb / AppImage | Done |

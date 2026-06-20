@@ -1,6 +1,11 @@
 # FreeW Microsoft Word Command Inventory
 
-Last updated: 2026-06-18
+Last updated: 2026-06-21
+
+Current note: this inventory remains the broad Microsoft Word command-prioritization source. For
+current FreeW runtime icon coverage, use [../icon-audit/freew-icon-audit-2026-06-19.md](../icon-audit/freew-icon-audit-2026-06-19.md),
+which audited 169 commands, 168 local FreeW SVG assets, 390 linked shared SVGs, 119 OK rows, 50
+Review rows, and 0 Inconsistent rows.
 
 ## Sources And Scope
 

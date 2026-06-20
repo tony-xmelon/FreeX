@@ -1,15 +1,16 @@
 # FreeX Outstanding Build List
 
-**Last updated:** 2026-06-03
-**Basis:** reviewed the repository Markdown files, cross-checked the active codebase under `src/` and `tests/`, confirmed `release/progress.json`, and refreshed the current documentation/status metrics after the June 3 main-line reassessment, including PDF chart text overlays, chart dialog/source coverage, metadata fixture repair, content-type override validation, tester release automation hardening, import/export accessibility fixes, and the latest test split/perf-tail integrations. This follows the production-readiness pass and the 2026-05-30 comprehensive source review ([reviews/comprehensive-code-review-2026-05-30.md](../reviews/comprehensive-code-review-2026-05-30.md)), which verified the source tree, confirmed all 17 findings from the 2026-05-28 review are resolved, and recorded a small residual code-quality backlog (see below).
+**Last updated:** 2026-06-21
+**Basis:** originally reviewed on 2026-06-03 from repository Markdown, active code under `src/` and `tests/`, and release metadata. Refreshed on 2026-06-21 for current status pointers, release state, and major file-format deltas; see [../history/status-2026-06-21.md](../history/status-2026-06-21.md) for the current snapshot.
 
-This is the current source-of-truth backlog for features still outstanding to build. Older planning docs are useful historical context, but several items they list as future work are now implemented.
+This remains the long-form backlog and historical implementation ledger. Older rows are preserved when useful for context, but the current status snapshot and dated fidelity/release docs should win when they disagree with a June 3 metric.
 
 ## Current Code Baseline
 
 Confirmed present in code and tests:
 
 - Core spreadsheet shell, command bus, undo/redo, virtualized WPF grid, multi-sheet UI, native/CSV/XLSX adapters.
+- Current workbook format adapters cover XLSX read/write, XLSM/XLTM open, XLTX templates, legacy XLS/XLSB/XLT open, ODS read/write, SpreadsheetML 2003, CSV variants, tabular text, SYLK, DIF, DBF open, HTML tables, and FreeX native `.fxl`.
 - Formula engine at 488/488 in-scope functions with catalog guards and category-focused Excel parity tests. This includes modern lookup/dynamic-array functions (`XLOOKUP`, `XMATCH`, `SEQUENCE`, `RANDARRAY`, `FILTER`, `SORT`, `SORTBY`, `UNIQUE`, `TAKE`, `DROP`, `CHOOSEROWS`, `CHOOSECOLS`, `VSTACK`, `HSTACK`, `TOROW`, `TOCOL`, `WRAPROWS`, `WRAPCOLS`, `EXPAND`, `SINGLE`), higher-order formulas (`LET`, `LAMBDA`, `MAP`, `REDUCE`, `SCAN`, `BYROW`, `BYCOL`, `MAKEARRAY`), statistical distributions, financial bond/depreciation helpers, database functions, `HYPERLINK`, discrete engineering base/bit functions, locale-specific text helpers (`ASC`, `DBCS`, `PHONETIC`, `BAHTTEXT`), regex/text helpers, and local web-text helpers (`ENCODEURL`, `FILTERXML`). Formula hardening now includes Excel cached-result fixtures, inverse/round-trip property tests, dynamic-array error/volatility edge guards, and structured-reference current-row/spaced-header coverage; remaining formula work is ongoing parity proof as new edge cases are discovered (see `docs/parity/functions.md`).
 - Spill infrastructure and formula AST caching in recalculation.
 - Formula reference rewriting for insert/delete/paste/autofill paths.

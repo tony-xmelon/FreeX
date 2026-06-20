@@ -1,10 +1,6 @@
-I now have all the code-grounded details I need: `Cell.Value` (ScalarValue), `Cell.FormulaText`/`HasFormula`, `Cell.StyleId`, `Workbook.GetStyle(StyleId)` returning `CellStyle` with `NumberFormat`, `BorderTop/Right/Bottom/Left`, plus `Sheet.MergedRegions`, `DefaultColumnWidth/RowHeight`, `StyleOnly` runs, `ConditionalFormats`, `DataValidations`, `Charts`, `Workbook.NamedRanges`. This is enough to write a buildable design document.
-
----
-
 # FreeX File-Format Support — Audit, Gap Plan, and Format-Fidelity Test Harness Design
 
-**Repo:** `C:/Users/anton/OneDrive/Documents/FreeX/FreeX`
+**Repo:** FreeX repository root
 **Scope:** spreadsheet file-format adapters in `src/FreeX.App.Services/WorkbookFileAdapterCatalog.cs` + `src/FreeX.Core.IO/*FileAdapter.cs`, the PDF/XPS export pipeline, and a new round-trip fidelity harness `tools/FreeX.FormatFidelity`.
 **Status legend:** round-trip fidelity is `lossless` / `lossy-expected` (format ceiling) / `lossy-bug` (FreeX drops what the format can hold) / `n/a` (read-only or export-only).
 
@@ -12,7 +8,7 @@ I now have all the code-grounded details I need: `Cell.Value` (ScalarValue), `Ce
 
 ## 1. Current Support Matrix
 
-Every format FreeX touches today, grouped by adapter. Resolution is purely extension-keyed, first-match-wins, in catalog order `[Xlsx, LegacyXls, Csv, DelimitedText(.txt/.tsv/.tab), SpreadsheetXml, NativeJson]` (`WorkbookFileAdapterCatalog.CreateDefaultAdapters()`), via `FileFormatResolver.FindOpenAdapter/FindSaveAdapter`. No content sniffing.
+Every format FreeX touches today, grouped by adapter. Resolution is extension-keyed through `WorkbookFileAdapterCatalog.CreateDefaultAdapters()` and `FileFormatResolver.FindOpenAdapter/FindSaveAdapter`. Current catalog order is XLSX/XLTX, legacy XLS, CSV variants, tabular text, SpreadsheetML, ODS, SYLK, DIF, DBF, HTML, and native JSON. No content sniffing is used.
 
 | Format (ext) | Read | Write | Round-trip fidelity | Key gaps | Robustness risks |
 |---|---|---|---|---|---|
@@ -298,9 +294,9 @@ Phases for follow-up workflows. **Build the harness first** so every subsequent 
 ---
 
 **Key files referenced (all absolute):**
-- `C:/Users/anton/OneDrive/Documents/FreeX/FreeX/src/FreeX.App.Services/WorkbookFileAdapterCatalog.cs` — adapter registry (one-line add for new formats)
-- `C:/Users/anton/OneDrive/Documents/FreeX/FreeX/src/FreeX.Core.IO/IFileAdapter.cs` — `Load(Stream)`/`Save(Workbook,Stream)` + `FileFormatDescriptor` (`CanOpen`/`CanSave`/`OpensAsTemplate`)
-- `C:/Users/anton/OneDrive/Documents/FreeX/FreeX/src/FreeX.Core.IO/FileFormatResolver.cs` — `FindOpenAdapter`/`FindSaveAdapter` (extension resolution)
-- `C:/Users/anton/OneDrive/Documents/FreeX/FreeX/src/FreeX.Core.Model/Cell.cs`, `CellStyle.cs`, `Sheet.cs`, `Workbook.cs` — comparison extraction APIs (`GetOccupiedCellMap`, `Value`, `FormulaText`, `StyleId`, `GetStyle().NumberFormat`/borders, `MergedRegions`, `NamedRanges`, `GetStyleOnlyEntries`)
-- `C:/Users/anton/OneDrive/Documents/FreeX/FreeX/tools/FreeX.SheetFidelity/Program.cs` — harness template + reusable `NumbersMatch`/`TryNumeric`/`ValuesMatch`/`ColToLetter` helpers
-- **New:** `C:/Users/anton/OneDrive/Documents/FreeX/FreeX/tools/FreeX.FormatFidelity/{FreeX.FormatFidelity.csproj,Program.cs}` — the proposed harness
+- `src/FreeX.App.Services/WorkbookFileAdapterCatalog.cs` — adapter registry (one-line add for new formats)
+- `src/FreeX.Core.IO/IFileAdapter.cs` — `Load(Stream)`/`Save(Workbook,Stream)` + `FileFormatDescriptor` (`CanOpen`/`CanSave`/`OpensAsTemplate`)
+- `src/FreeX.Core.IO/FileFormatResolver.cs` — `FindOpenAdapter`/`FindSaveAdapter` (extension resolution)
+- `src/FreeX.Core.Model/Cell.cs`, `CellStyle.cs`, `Sheet.cs`, `Workbook.cs` — comparison extraction APIs (`GetOccupiedCellMap`, `Value`, `FormulaText`, `StyleId`, `GetStyle().NumberFormat`/borders, `MergedRegions`, `NamedRanges`, `GetStyleOnlyEntries`)
+- `tools/FreeX.SheetFidelity/Program.cs` — harness template + reusable `NumbersMatch`/`TryNumeric`/`ValuesMatch`/`ColToLetter` helpers
+- **New:** `tools/FreeX.FormatFidelity/{FreeX.FormatFidelity.csproj,Program.cs}` — the proposed harness

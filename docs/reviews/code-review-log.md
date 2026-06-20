@@ -2,6 +2,10 @@
 
 Last updated: 2026-06-21
 
+2026-06-21 documentation refresh note: review iteration reports remain historical durable records
+because this log links to each cycle. Current documentation cleanup keeps the full iteration history
+available rather than deleting earlier fixed-cycle reports.
+
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
 
 ## 2026-06-21 Comprehensive Review Iteration 1
