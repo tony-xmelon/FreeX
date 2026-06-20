@@ -62,7 +62,7 @@ Two decisions fixed at brainstorming:
 - **`FreeX.Ribbon`** — `net10.0` (no `-windows`, no `UseWPF`/`UseWindowsForms`), BCL only.
   References nothing in `FreeX.App.*`. NuGet-extractable.
 - **`FreeX.Ribbon.Serialization`** — optional JSON loader; isolates `System.Text.Json` from the pure core.
-- Renderers (`FreeX.Ribbon.Wpf`, `FreeX.Ribbon.Avalonia`) are out of scope for SP1 (SP2/SP3).
+- Renderers (`FreeX.Ribbon.Wpf`, `Free.Shared.Ribbon.Avalonia`) are out of scope for SP1 (SP2/SP3).
 - **`FreeX.Ribbon.Tests`** — pure-logic xUnit tests (mirrors the existing `*.Logic.Tests` style).
 
 ### 1. Definition model (source of truth)

@@ -10,7 +10,7 @@ structure** so it merges cleanly.
 - `shared/Free.Shared.Ribbon` (net10.0) — neutral ribbon core (definition records, builder,
   `RibbonCommandRegistry` + `IRibbonCommand`/`IRibbonStatefulCommand`, icon geometry). ≈ the old
   branch's `FreeX.Ribbon`, enhanced.
-- `src/FreeX.Ribbon.Avalonia` (net10.0) — `AvaloniaRibbonRenderer` + `AvaloniaRibbonIcons`. ≈ the
+- `shared/Free.Shared.Ribbon.Avalonia` (net10.0) — `AvaloniaRibbonRenderer` + `AvaloniaRibbonIcons`. ≈ the
   old branch's `RibbonAvaloniaControlFactory`.
 - `shared/Free.Shared.AppServices` + `src/FreeX.App.Services` — portable app logic / planners.
 - `src/FreeX.App.Avalonia` — the shell; ribbon is **default**, built via `AvaloniaRibbonHost` +
@@ -30,7 +30,7 @@ structure** so it merges cleanly.
 
 ## What to DROP (duplicates of on-main work)
 - The old `FreeX.Ribbon` / `FreeX.Ribbon.Definitions` projects and `RibbonAvaloniaControlFactory`
-  → use `Free.Shared.Ribbon` + `FreeX.Ribbon.Avalonia`.
+  → use `Free.Shared.Ribbon` + `Free.Shared.Ribbon.Avalonia`.
 - Duplicate dialogs already on main: Format Cells, Data Validation, Find/Replace/Go To, Goal Seek,
   Scenario Manager, Data Table, Forecast Sheet, Subtotal, Advanced Filter, Remove Duplicates,
   drawing-object editing.
