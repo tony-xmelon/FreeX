@@ -216,7 +216,7 @@ Avoids the WPF-ribbon-renderer / shell the other session churns. L1/L2 touch the
 - [x] L1. Page borders + watermark. `PageSettings.PageBorder` (`PageBorder` record) + `Watermark`;
       writer emits `sectPr/w:pgBorders` + persists the watermark as a `docProps/custom.xml` custom property;
       reader recovers both; editor + print preview render the border frame + faint rotated watermark;
-      Layout > Page Background. 3 tests.
+      Design > Page Background. 3 tests.
 - [x] L2. Citations & bibliography. `Source` + `TextDocument.Sources`; pure `Citations` helpers (in-text
       `(Author, Year)`, APA-flavoured bibliography entries, `BuildBibliography` sorted by author); Insert >
       Citation (pick/add source) + Insert > Bibliography (reversible). Persists as ordinary text/paragraphs. 15 tests.
@@ -270,8 +270,8 @@ Avoids the WPF-ribbon-renderer / shell the other session churns. O1 touches the 
       (paragraph anchors + word-level token diff) marking Inserted/Deleted runs; Review > Compare opens a
       second .docx and loads the tracked-changes comparison. Deterministic, no DateTime.Now. ~6 tests.
 - [x] O3. Mail merge. Pure `MailMerge` (field discovery, `MergeData.FromCsv`, `Substitute`, `MergeRecord`,
-      `MergeAll`); fields are `«Field»` (plain text, round-trips); Mailings tab: Set Data / Insert Field /
-      Preview Record (next-prev) / Finish & Merge (records concatenated, page-broken). 19 tests.
+      `MergeAll`); fields are `«Field»` (plain text, round-trips); Mailings tab: Select Recipients / Insert Merge Field /
+      Preview Results / Finish & Merge (records concatenated, page-broken). 19 tests.
 - [x] O4. Sort + Convert text↔table. Pure `ParagraphSort` (paragraphs + table rows, stable, asc/desc +
       case) + `TextTableConvert` (text→table with ragged padding, table→text); `ReplaceBlocksCommand`
       (reversible); Layout > Data: Sort + Convert to Table + Convert to Text. 13 tests.

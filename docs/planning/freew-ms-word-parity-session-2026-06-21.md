@@ -13,6 +13,7 @@ Current implementation wave:
 - Expand Review > Comments with real Delete, Previous, and Next thread actions, matching Word's visible comment workflow.
 - Split implemented table tools into Word-style contextual Table Design and Table Layout tabs, while keeping Insert focused on creating tables.
 - Move implemented content controls to a Word-style Developer > Controls surface instead of Insert.
+- Move Watermark into Design > Page Background with Page Color/Page Borders, and rename the Mailings entry point to Select Recipients.
 
 ## Live Word Comparison Notes
 
@@ -21,8 +22,8 @@ Microsoft Word is installed at `C:\Program Files\Microsoft Office\Root\Office16\
 ## Prioritized Parity Backlog
 
 1. Decide whether Draw and Help should appear only after real backing commands exist, or with disabled explanatory affordances.
-2. Improve Design with visible style-set/theme color/font/effects surfaces; the smallest backed slice is adding Watermark to Design > Page Background.
-3. Bring Mailings names closer to Word: Select Recipients, Insert Merge Field, Preview Results, Finish & Merge, plus Envelopes/Labels if implemented.
+2. Improve Design with visible style-set/theme color/font/effects surfaces.
+3. Add more Mailings surfaces only when backed: Envelopes/Labels, Address Block, Greeting Line, and Start Mail Merge variants.
 4. Decide a first interactive ruler slice: draggable indents or tab stops.
 5. Improve Backstage Save a Copy/export presentation.
 6. Formalize rendered shell evidence using `freew/tools/FreeW.RibbonShot` and document the output manifest.
