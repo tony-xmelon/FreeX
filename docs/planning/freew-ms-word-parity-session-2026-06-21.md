@@ -12,6 +12,7 @@ Current implementation wave:
 - Normalize implemented top-level tabs to Word's visible flow: Home, Insert, Design, Layout, References, Mailings, Review, View.
 - Expand Review > Comments with real Delete, Previous, and Next thread actions, matching Word's visible comment workflow.
 - Split implemented table tools into Word-style contextual Table Design and Table Layout tabs, while keeping Insert focused on creating tables.
+- Move implemented content controls to a Word-style Developer > Controls surface instead of Insert.
 
 ## Live Word Comparison Notes
 
@@ -19,13 +20,12 @@ Microsoft Word is installed at `C:\Program Files\Microsoft Office\Root\Office16\
 
 ## Prioritized Parity Backlog
 
-1. Decide whether Draw, Developer, and Help should appear only after real backing commands exist, or with disabled explanatory affordances.
-2. Move content controls toward a Developer-style surface or document why FreeW keeps them in Insert.
-3. Improve Design with visible style-set/theme color/font/effects surfaces.
-4. Bring Mailings names closer to Word: Select Recipients, Insert Merge Field, Preview Results, Finish & Merge, plus Envelopes/Labels if implemented.
-5. Decide a first interactive ruler slice: draggable indents or tab stops.
-6. Improve Backstage Save a Copy/export presentation.
-7. Formalize rendered shell evidence using `freew/tools/FreeW.RibbonShot` and document the output manifest.
+1. Decide whether Draw and Help should appear only after real backing commands exist, or with disabled explanatory affordances.
+2. Improve Design with visible style-set/theme color/font/effects surfaces; the smallest backed slice is adding Watermark to Design > Page Background.
+3. Bring Mailings names closer to Word: Select Recipients, Insert Merge Field, Preview Results, Finish & Merge, plus Envelopes/Labels if implemented.
+4. Decide a first interactive ruler slice: draggable indents or tab stops.
+5. Improve Backstage Save a Copy/export presentation.
+6. Formalize rendered shell evidence using `freew/tools/FreeW.RibbonShot` and document the output manifest.
 
 ## Non-Goals For This Session
 
