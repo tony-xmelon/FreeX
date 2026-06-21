@@ -8,6 +8,18 @@ available rather than deleting earlier fixed-cycle reports.
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
 
+## 2026-06-21 Comprehensive Review Iteration 8
+
+Full report: [reviews/comprehensive-code-review-2026-06-21-iter8.md](comprehensive-code-review-2026-06-21-iter8.md).
+
+Final no-findings validation on `codex/review-iterate-20260621-8`, focused on workflow/documentation guards, FreeW DOCX allocator coverage, and WPF sheet-tab Move or Copy evidence wording.
+
+Resolution update: no actionable findings were found. Focused FreeW IO, Host workflow/documentation guard, and sheet-tab evidence tests passed. Repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed with 15,940 passed, 131 skipped, and 0 failed across 13 TRX files.
+
+| Priority | Area | Finding |
+|---|---|---|
+| None | Review cycle | No actionable findings. |
+
 ## 2026-06-21 Comprehensive Review Iteration 7
 
 Full report: [reviews/comprehensive-code-review-2026-06-21-iter7.md](comprehensive-code-review-2026-06-21-iter7.md).
