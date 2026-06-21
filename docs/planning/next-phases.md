@@ -133,7 +133,7 @@ June 1 status: `tools/FreeX.ChartInteropCompare` now provides repeatable Excel C
 
 ## Phase 9: XLSX Corpus Expansion (ongoing)
 
-- Continue expanding beyond the current 180-row manifest baseline
+- Continue expanding beyond the current 182-row manifest baseline
 - Add public/open-license workbooks covering every feature bucket (charts, CF, pivot, validation, named ranges, shared formulas, etc.)
 - Graduate per-workbook smoke tests to per-feature structural comparisons (cell values, styles, chart series counts, CF rules, etc.)
 - Track and publish pass/fail rate by feature bucket; target 95% of supported features passing before any public release claim

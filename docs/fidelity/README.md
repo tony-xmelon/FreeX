@@ -12,7 +12,7 @@ The June 17-18 fidelity sweep covered three major workbook groups:
 - Contextures samples: pivots, slicers, charts, conditional formatting, tables, dynamic arrays, comments, advanced filter, and form-control rendering.
 - tealeg-xlsx fixtures: 25 edge-case workbooks, including chartsheet support and invalid-source pass-through documentation.
 
-Durable outcome notes live in the dated files in this folder. Current workbook-format coverage is summarized by [2026-06-19-file-format-support-audit.md](2026-06-19-file-format-support-audit.md), with focused June 19 notes for ODS rebuild triage, LibreOffice cross-checking, and legacy XLS/XLSB handling. The current chart/PivotTable corpus expansion note is [2026-06-18-xlsx-chart-pivot-corpus-growth.md](2026-06-18-xlsx-chart-pivot-corpus-growth.md).
+Durable outcome notes live in the dated files in this folder. Current workbook-format coverage is summarized by [2026-06-19-file-format-support-audit.md](2026-06-19-file-format-support-audit.md), with focused June 19 notes for ODS rebuild triage, LibreOffice cross-checking, and legacy XLS/XLSB handling. Current chart/PivotTable corpus expansion notes are [2026-06-18-xlsx-chart-pivot-corpus-growth.md](2026-06-18-xlsx-chart-pivot-corpus-growth.md) and [2026-06-21-chart-fidelity-corpus-coverage.md](2026-06-21-chart-fidelity-corpus-coverage.md).
 
 ## Current FreeW Coverage
 
@@ -27,7 +27,7 @@ Durable FreeW notes:
 
 ## Deferred Fidelity Items
 
-- ChartEx families such as funnel, treemap, sunburst, histogram, and box-and-whisker need representative non-degenerate workbook drivers before a broad renderer implementation is worth taking on.
+- ChartEx families now have deterministic generated workbook drivers in `generated-charts-chartex-004`; the remaining work is to add real-world samples when open-license or user-approved workbooks surface chart layouts the synthetic driver does not exercise.
 - Form-control interactivity is intentionally separate from rendering fidelity and needs explicit product scope before wiring linked-cell behavior.
 - Color emoji chart-label rendering remains an approximation in the WPF text stack.
 - Dropdown list-cell number/date formatting needs a sample workbook with formatted list values.
