@@ -8,6 +8,30 @@ available rather than deleting earlier fixed-cycle reports.
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
 
+## 2026-06-21 Comprehensive Review Iteration 6
+
+Full report: [reviews/comprehensive-code-review-2026-06-21-iter6.md](comprehensive-code-review-2026-06-21-iter6.md).
+
+Clean-pass follow-up review/fix cycle on `codex/review-iterate-20260621-6`, focused on the iteration 5 guard hardening and recently touched FreeW DOCX and WPF sheet-tab surfaces.
+
+Resolution update: findings in this cycle are fixed in the branch. Focused FreeW IO and Host workflow/documentation guard tests passed. Repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed with 15,940 passed, 131 skipped, and 0 failed across 13 TRX files.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P2 | GitHub workflows | Fixed: `pull_request_target` guard now catches YAML block-list trigger syntax under `on:`. |
+| P3 | Documentation index | Fixed: every comprehensive review report must also be linked from the cumulative code-review log. |
+| P3 | FreeW DOCX | Fixed: allocator collision tests now cover chart workbooks, OLE payloads/icons, header images, and comment images. |
+| P3 | WPF sheet tabs | Fixed: UI test catalog wording now names the single composite Move or Copy route. |
+
+## Historical Review Snapshots
+
+Earlier durable review reports predating this cumulative log:
+
+- [reviews/comprehensive-code-review-2026-05-28.md](comprehensive-code-review-2026-05-28.md)
+- [reviews/comprehensive-code-review-2026-05-30.md](comprehensive-code-review-2026-05-30.md)
+- [reviews/comprehensive-code-review-2026-06-01.md](comprehensive-code-review-2026-06-01.md)
+- [reviews/comprehensive-code-review-2026-06-18.md](comprehensive-code-review-2026-06-18.md)
+
 ## 2026-06-21 Comprehensive Review Iteration 5
 
 Full report: [reviews/comprehensive-code-review-2026-06-21-iter5.md](comprehensive-code-review-2026-06-21-iter5.md).
