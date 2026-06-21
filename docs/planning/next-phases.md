@@ -3,7 +3,7 @@
 **Last updated:** 2026-06-21
 **Current state:** This is a June 3 development-phase snapshot retained as historical sequencing. The current status source is [../history/status-2026-06-21.md](../history/status-2026-06-21.md); it records the v0.8.127 tester release, current workbook/document file-format adapters, active fidelity/corpus workstreams, and remaining public-preview promotion blockers.
 
-The June 3 baseline below is preserved for context: formula engine at 488/488 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (87/87), XLSX round-trip and corpus coverage at a 180-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, UIA accessibility peers, a 43-culture localization resource foundation, and a chart interop harness with a latest-complete 28/28 openability/export plus visual-gate pass, 0 known-gap chart allowances, and 28/28 byte-identical Excel-native/FreeX-round-trip packages.
+The June 3 baseline below is preserved for context: formula engine at 488/488 in-scope functions (100%), command surface at 100% of in-scope commands, shortcut parity at 100% (88/88), XLSX round-trip and corpus coverage at a 180-row manifest baseline, virtualized WPF UI, JSON-driven tester-release versioning, unsigned local MSIX packaging, deep PivotTable/PivotChart fidelity, UIA accessibility peers, a 43-culture localization resource foundation, and a chart interop harness with a latest-complete 28/28 openability/export plus visual-gate pass, 0 known-gap chart allowances, and 28/28 byte-identical Excel-native/FreeX-round-trip packages.
 
 ---
 
@@ -54,7 +54,7 @@ The production readiness pass hardened accessibility, test corpus quality, dialo
 - **Accessibility gate**: `SheetGrid` (`GridView`) has worksheet automation metadata plus grid, selection, visible cell grid-item, value, and selection-item provider coverage; `TabChrome` sheet-tab grid `AutomationProperties.Name` is bound to sheet name; `MainWindowUiaPropertiesTests` and `GridViewAutomationPeerTests` guard the current UIA contracts.
 - **#46 XLSX corpus**: Manifest expanded from 144 to 175 rows; 3 per-feature XML structural comparisons (CF rules, chart series, DV counts) added; 6 round-trip bugs fixed.
 - **#47 Dialog parity**: All remaining `MessageBox.Show` calls in dialog classes replaced with `IUserMessageService`; access keys and `IsDefault`/`IsCancel` audited across all dialogs.
-- **#48 Shortcut parity**: AutoFilter shortcut improvements; shortcut parity now at 100% (87/87, 0 partial).
+- **#48 Shortcut parity**: AutoFilter shortcut improvements; shortcut parity now at 100% (88/88, 0 partial).
 - **#49 Docs**: status and outstanding-build docs updated; `overallCompletion` raised to 95.
 
 ### May 31 and June 1 Integration and Localization Foundation
