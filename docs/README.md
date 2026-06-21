@@ -96,6 +96,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [reviews/comprehensive-code-review-2026-06-21-iter1.md](reviews/comprehensive-code-review-2026-06-21-iter1.md) - June 21 review iteration covering CI/main push coverage, format cross-check failure behavior, FreeW HTML vertical merges, and XLS metadata preservation.
 - [reviews/comprehensive-code-review-2026-06-21-iter2.md](reviews/comprehensive-code-review-2026-06-21-iter2.md) - June 21 review iteration covering XLSX protection metadata, solution/workflow preflight coverage, FreeW MHTML/HTML import fidelity, and copy-sheet positioning.
 - [reviews/comprehensive-code-review-2026-06-21-iter3.md](reviews/comprehensive-code-review-2026-06-21-iter3.md) - June 21 review iteration covering quoted workflow-trigger guards, FreeW DOCX package metadata preservation, and copy-sheet no-op follow-up scope.
+- [reviews/comprehensive-code-review-2026-06-21-iter4.md](reviews/comprehensive-code-review-2026-06-21-iter4.md) - June 21 review iteration covering quoted YAML trigger-key guards, default test lane coverage, FreeW MHTML image metadata, and sheet-move no-op handling.
 - [reviews/command-icon-audit-2026-05-30.md](reviews/command-icon-audit-2026-05-30.md) - proposal-only command icon audit.
 - [reviews/command-icon-review-2026-05-29.md](reviews/command-icon-review-2026-05-29.md) - prior SVG command-icon audit.
 - [reviews/command-icon-visual-consistency-2026-05-30.md](reviews/command-icon-visual-consistency-2026-05-30.md) - visual-consistency review for command artwork.

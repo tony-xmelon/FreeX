@@ -8,6 +8,22 @@ available rather than deleting earlier fixed-cycle reports.
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
 
+## 2026-06-21 Comprehensive Review Iteration 4
+
+Full report: [reviews/comprehensive-code-review-2026-06-21-iter4.md](comprehensive-code-review-2026-06-21-iter4.md).
+
+Follow-up review/fix cycle on `codex/review-iterate-20260621-4`, focused on workflow guard edge cases, default test lane coverage, review documentation indexing, FreeW MHTML image reuse, and workbook command no-op behavior.
+
+Resolution update: findings in this cycle are fixed in the branch. Focused Core Model, FreeW IO, and Host workflow/preflight tests passed. Repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed with 15,939 passed, 131 skipped, and 0 failed across 13 TRX files after the lane-membership guard was updated for the newly included shared PDF tests.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P2 | GitHub workflows | Fixed: `pull_request_target` guard now catches quoted YAML `on` keys. |
+| P2 | Default test lane | Fixed: `Free.Shared.Pdf.Tests` is included in `FreeX.DefaultTests.slnx`, and preflight validates non-UI test project membership. |
+| P2 | Documentation index | Fixed: `docs/README.md` links the current June 21 review reports. |
+| P2 | FreeW MHTML | Fixed: reused image parts clone per `<img>` use so width, height, and alt text do not overwrite sibling references. |
+| P2 | WPF sheet tabs | Fixed: unchanged sheet moves are successful no-ops that do not dirty the workbook or create undo history. |
+
 ## 2026-06-21 Comprehensive Review Iteration 3
 
 Full report: [reviews/comprehensive-code-review-2026-06-21-iter3.md](comprehensive-code-review-2026-06-21-iter3.md).
