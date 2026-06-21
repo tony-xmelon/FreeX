@@ -9,6 +9,7 @@ Current implementation wave:
 - Promote implemented reference tools to a top-level References tab.
 - Add Home > Font > Strikethrough because the editor/model already preserve strikethrough formatting.
 - Add Home > Editing with Find, Replace, and Select, reusing the existing Find & Replace dialog and WPF Select All.
+- Normalize implemented top-level tabs to Word's visible flow: Home, Insert, Design, Layout, References, Mailings, Review, View.
 
 ## Live Word Comparison Notes
 
@@ -16,7 +17,7 @@ Microsoft Word is installed at `C:\Program Files\Microsoft Office\Root\Office16\
 
 ## Prioritized Parity Backlog
 
-1. Normalize top-level tab order toward Word's flow: Home, Insert, Design, Layout, References, Mailings, Review, View, with explicit decisions for Draw, Developer, and Help.
+1. Decide whether Draw, Developer, and Help should appear only after real backing commands exist, or with disabled explanatory affordances.
 2. Split table editing out of Insert into contextual Table Layout/Table Design surfaces.
 3. Move content controls toward a Developer-style surface or document why FreeW keeps them in Insert.
 4. Improve Design with visible style-set/theme color/font/effects surfaces.
