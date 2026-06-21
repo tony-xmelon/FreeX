@@ -10,6 +10,7 @@ Current implementation wave:
 - Add Home > Font > Strikethrough because the editor/model already preserve strikethrough formatting.
 - Add Home > Editing with Find, Replace, and Select, reusing the existing Find & Replace dialog and WPF Select All.
 - Normalize implemented top-level tabs to Word's visible flow: Home, Insert, Design, Layout, References, Mailings, Review, View.
+- Expand Review > Comments with real Delete, Previous, and Next thread actions, matching Word's visible comment workflow.
 
 ## Live Word Comparison Notes
 
@@ -22,10 +23,9 @@ Microsoft Word is installed at `C:\Program Files\Microsoft Office\Root\Office16\
 3. Move content controls toward a Developer-style surface or document why FreeW keeps them in Insert.
 4. Improve Design with visible style-set/theme color/font/effects surfaces.
 5. Bring Mailings names closer to Word: Select Recipients, Insert Merge Field, Preview Results, Finish & Merge, plus Envelopes/Labels if implemented.
-6. Add Review comment navigation/delete surfaces around the existing threaded comments support.
-7. Decide a first interactive ruler slice: draggable indents or tab stops.
-8. Improve Backstage Save a Copy/export presentation.
-9. Formalize rendered shell evidence using `freew/tools/FreeW.RibbonShot` and document the output manifest.
+6. Decide a first interactive ruler slice: draggable indents or tab stops.
+7. Improve Backstage Save a Copy/export presentation.
+8. Formalize rendered shell evidence using `freew/tools/FreeW.RibbonShot` and document the output manifest.
 
 ## Non-Goals For This Session
 
