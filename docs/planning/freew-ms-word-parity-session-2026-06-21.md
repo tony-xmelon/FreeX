@@ -14,6 +14,7 @@ Current implementation wave:
 - Split implemented table tools into Word-style contextual Table Design and Table Layout tabs, while keeping Insert focused on creating tables.
 - Move implemented content controls to a Word-style Developer > Controls surface instead of Insert.
 - Move Watermark into Design > Page Background with Page Color/Page Borders, and rename the Mailings entry point to Select Recipients.
+- Make Design > Document Formatting expose a labelled, backed Colors surface beside Themes, and persist applied theme choices into the saved DOCX theme state.
 
 ## Live Word Comparison Notes
 
@@ -22,7 +23,7 @@ Microsoft Word is installed at `C:\Program Files\Microsoft Office\Root\Office16\
 ## Prioritized Parity Backlog
 
 1. Decide whether Draw and Help should appear only after real backing commands exist, or with disabled explanatory affordances.
-2. Improve Design with visible style-set/theme color/font/effects surfaces.
+2. Improve Design with visible style-set/font/effects surfaces once those can be backed independently; Colors is now exposed through the existing theme palette model.
 3. Add more Mailings surfaces only when backed: Envelopes/Labels, Address Block, Greeting Line, and Start Mail Merge variants.
 4. Decide a first interactive ruler slice: draggable indents or tab stops.
 5. Improve Backstage Save a Copy/export presentation.
