@@ -8,6 +8,23 @@ available rather than deleting earlier fixed-cycle reports.
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
 
+## 2026-06-21 Comprehensive Review Iteration 5
+
+Full report: [reviews/comprehensive-code-review-2026-06-21-iter5.md](comprehensive-code-review-2026-06-21-iter5.md).
+
+Follow-up review/fix cycle on `codex/review-iterate-20260621-5`, focused on workflow guard edge cases, durable review-doc indexing, FreeW HTML/DOCX preservation fidelity, and WPF sheet-tab command execution/undo behavior.
+
+Resolution update: findings in this cycle are fixed in the branch. Focused FreeW IO, Host workflow/documentation/source-guard, and Core Model sheet-tab tests passed. Repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed with 15,940 passed, 131 skipped, and 0 failed across 13 TRX files.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P2 | GitHub workflows | Fixed: `pull_request_target` guard now catches quoted nested workflow trigger keys. |
+| P2 | Documentation index | Fixed: every comprehensive review report must be linked from `docs/README.md`, and review-log markdown links are resolved by tests. |
+| P2 | FreeW HTML | Fixed: mixed inline table-cell content imports as one formatted paragraph instead of splitting into sibling paragraphs. |
+| P2 | FreeW DOCX | Fixed: new modelled chart/media/embedding names reserve preserved package parts before allocation. |
+| P2 | WPF sheet tabs | Fixed: insert, rename, delete, and move handlers route through host command execution helpers so dirty state, caches, and sibling windows update. |
+| P2 | WPF sheet tabs | Fixed: Move or Copy create-copy-with-move is one composite undoable command. |
+
 ## 2026-06-21 Comprehensive Review Iteration 4
 
 Full report: [reviews/comprehensive-code-review-2026-06-21-iter4.md](comprehensive-code-review-2026-06-21-iter4.md).
