@@ -1,16 +1,10 @@
 using FluentAssertions;
-
 using FreeX.App.Services;
 using FreeX.Core.Commands;
 using FreeX.Core.Model;
 
-namespace FreeX.App.Avalonia.Tests;
+namespace FreeX.App.Services.Tests;
 
-/// <summary>
-/// Unit tests for the UI-free <see cref="InsertPictureCommandFactory"/>: extension → content-type mapping,
-/// the supported-image predicate, default size clamping, and that the built command adds a picture to the
-/// sheet on apply. No running shell or image decoder required.
-/// </summary>
 public sealed class InsertPictureCommandFactoryTests
 {
     private sealed class TestCommandContext(Workbook workbook) : ICommandContext
@@ -53,13 +47,12 @@ public sealed class InsertPictureCommandFactoryTests
         var workbook = new Workbook("Pics");
         var sheet = workbook.AddSheet("Sheet1");
         var anchor = new CellAddress(sheet.Id, 1, 1);
-        var bytes = new byte[] { 1, 2, 3, 4 };
 
-        var command = InsertPictureCommandFactory.Build(sheet.Id, anchor, bytes, "image/png", width: 0, height: -5);
+        var command = InsertPictureCommandFactory.Build(
+            sheet.Id, anchor, [1, 2, 3, 4], "image/png", width: 0, height: -5);
 
         command.Apply(new TestCommandContext(workbook)).Success.Should().BeTrue();
-        sheet.Pictures.Should().ContainSingle();
-        var picture = sheet.Pictures[0];
+        var picture = sheet.Pictures.Should().ContainSingle().Subject;
         picture.Width.Should().Be(InsertPictureCommandFactory.DefaultWidth);
         picture.Height.Should().Be(InsertPictureCommandFactory.DefaultHeight);
         picture.ContentType.Should().Be("image/png");
@@ -73,7 +66,7 @@ public sealed class InsertPictureCommandFactoryTests
         var anchor = new CellAddress(sheet.Id, 2, 3);
 
         var command = InsertPictureCommandFactory.Build(
-            sheet.Id, anchor, new byte[] { 9 }, "image/jpeg", width: 320, height: 200);
+            sheet.Id, anchor, [9], "image/jpeg", width: 320, height: 200);
         command.Apply(new TestCommandContext(workbook)).Success.Should().BeTrue();
 
         sheet.Pictures[0].Width.Should().Be(320);
