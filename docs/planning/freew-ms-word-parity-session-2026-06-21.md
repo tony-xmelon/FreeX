@@ -15,6 +15,7 @@ Current implementation wave:
 - Move implemented content controls to a Word-style Developer > Controls surface instead of Insert.
 - Move Watermark into Design > Page Background with Page Color/Page Borders, and rename the Mailings entry point to Select Recipients.
 - Make Design > Document Formatting expose a labelled, backed Colors surface beside Themes, and persist applied theme choices into the saved DOCX theme state.
+- Surface the existing Save a Copy command in Word-style Backstage between Save As and Print.
 
 ## Live Word Comparison Notes
 
@@ -26,7 +27,7 @@ Microsoft Word is installed at `C:\Program Files\Microsoft Office\Root\Office16\
 2. Improve Design with visible style-set/font/effects surfaces once those can be backed independently; Colors is now exposed through the existing theme palette model.
 3. Add more Mailings surfaces only when backed: Envelopes/Labels, Address Block, Greeting Line, and Start Mail Merge variants.
 4. Decide a first interactive ruler slice: draggable indents or tab stops.
-5. Improve Backstage Save a Copy/export presentation.
+5. Improve Backstage Open / Save As / Export presentation: Open places/recovery affordances, Save As places/file types, and Export Create PDF/XPS + Change File Type grouping.
 6. Formalize rendered shell evidence using `freew/tools/FreeW.RibbonShot` and document the output manifest.
 
 ## Non-Goals For This Session
