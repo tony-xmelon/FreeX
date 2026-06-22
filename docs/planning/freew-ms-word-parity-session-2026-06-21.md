@@ -26,6 +26,7 @@ Current implementation wave:
 - Convert Backstage Print from an immediate command into a Word-style pane backed by FreeW's existing Print and Print Preview paths plus current document page setup details.
 - Expand Backstage Export > Change File Type from a single Word Document row to the backed writable FreeW catalog: Word document/template variants, Word XML, web pages, MHTML, RTF, and plain-text formats.
 - Add Word-style Recent Documents directly to the Backstage Open pane, backed by FreeW's existing local recent-files store and OpenPath flow.
+- Add Word-style Backstage Share rail placement with FreeW's backed local subset: saved-file folder reveal, Save As when sharing is not ready, Save a Copy, and Create PDF/XPS.
 
 ## Live Word Comparison Notes
 
@@ -46,6 +47,7 @@ Relevant Word Backstage details from that pass:
 - Print is a Backstage page in Word, not just an immediate command. FreeW now opens a Print pane with backed Print and Print Preview actions and a summary of the current document's paper size, orientation, margins, and columns.
 - Export > Change File Type lists multiple document types in Word. FreeW now mirrors its backed local subset from the writable adapter catalog instead of exposing only a hard-coded Word Document row.
 - Open shows recently edited documents inside Word's Open page. FreeW now mirrors the local subset by showing recent documents directly in File > Open when the local recent-files store has entries, while retaining Browse and Recover Unsaved Documents.
+- Share appears between Open and Info in Word's Backstage rail. FreeW now mirrors that placement with backed local actions: saved local documents can reveal their containing folder for sharing, unsaved or missing-path documents route to Save As first, and the pane also offers Save a Copy plus Create PDF/XPS without adding fake cloud sharing.
 
 ## Prioritized Parity Backlog
 
@@ -53,7 +55,7 @@ Relevant Word Backstage details from that pass:
 2. Improve Design with visible style-set/font/effects surfaces once those can be backed independently; Colors is now exposed through the existing theme palette model.
 3. Add more Mailings surfaces only when backed: Envelopes/Labels, Address Block, Greeting Line, and Start Mail Merge variants.
 4. Decide a first interactive ruler slice: draggable indents or tab stops.
-5. Continue Backstage parity beyond the local places slice: Share rail decisions, cloud/add-place affordances, and richer Save As inline filename/type controls.
+5. Continue Backstage parity beyond the local places slice: cloud/add-place affordances, and richer Save As inline filename/type controls.
 6. Formalize rendered shell evidence using `freew/tools/FreeW.RibbonShot` and document the output manifest.
 
 ## Non-Goals For This Session
