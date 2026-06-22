@@ -25,6 +25,7 @@ Current implementation wave:
 - Add Word-style File > Info document-safety actions backed by FreeW's existing Mark as Final, Restrict Editing, Inspect Document, and Check Accessibility commands.
 - Convert Backstage Print from an immediate command into a Word-style pane backed by FreeW's existing Print and Print Preview paths plus current document page setup details.
 - Expand Backstage Export > Change File Type from a single Word Document row to the backed writable FreeW catalog: Word document/template variants, Word XML, web pages, MHTML, RTF, and plain-text formats.
+- Add Word-style Recent Documents directly to the Backstage Open pane, backed by FreeW's existing local recent-files store and OpenPath flow.
 
 ## Live Word Comparison Notes
 
@@ -44,6 +45,7 @@ Relevant Word Backstage details from that pass:
 - Info exposes document protection and inspection affordances in Word. FreeW now mirrors the backed local subset in File > Info: Protect Document actions for Mark as Final and Restrict Editing, plus Inspect Document actions for metadata/revision inspection and accessibility checks.
 - Print is a Backstage page in Word, not just an immediate command. FreeW now opens a Print pane with backed Print and Print Preview actions and a summary of the current document's paper size, orientation, margins, and columns.
 - Export > Change File Type lists multiple document types in Word. FreeW now mirrors its backed local subset from the writable adapter catalog instead of exposing only a hard-coded Word Document row.
+- Open shows recently edited documents inside Word's Open page. FreeW now mirrors the local subset by showing recent documents directly in File > Open when the local recent-files store has entries, while retaining Browse and Recover Unsaved Documents.
 
 ## Prioritized Parity Backlog
 
