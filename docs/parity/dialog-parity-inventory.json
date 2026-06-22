@@ -7,7 +7,7 @@
                     "totalRoutes":  57,
                     "wpfCaptures":  53,
                     "avaloniaCaptures":  0,
-                    "avaloniaHarnessRoutes":  30,
+                    "avaloniaHarnessRoutes":  34,
                     "sharedOrPresentationBacked":  47
                 },
     "rows":  [
@@ -973,12 +973,12 @@
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\CustomViews\\CustomViewsPlanner.cs"
                                                ],
                      "notes":  [
-
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
@@ -1102,12 +1102,12 @@
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\Protection\\AllowEditRangePlanner.cs"
                                                ],
                      "notes":  [
-
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
@@ -1122,7 +1122,7 @@
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\Protection\\AllowEditRangePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectionPassword.cs",
@@ -1133,7 +1133,7 @@
                                                    "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOptions.cs"
                                                ],
                      "notes":  [
-
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
@@ -1148,7 +1148,7 @@
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\Protection\\AllowEditRangePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectionPassword.cs",
@@ -1159,7 +1159,7 @@
                                                    "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOptions.cs"
                                                ],
                      "notes":  [
-
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
