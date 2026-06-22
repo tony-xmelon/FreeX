@@ -12,6 +12,7 @@ Current implementation wave:
 - Normalize implemented top-level tabs to Word's visible flow: Home, Insert, Design, Layout, References, Mailings, Review, View.
 - Regroup the implemented Insert commands into Word-style command geography: Illustrations, Links, Header & Footer, Text, and Symbols.
 - Expand Review > Comments with real Delete, Previous, and Next thread actions, matching Word's visible comment workflow.
+- Regroup the backed Review tab into Word-style command geography by splitting Accessibility out from Inspect, keeping Tracking focused on Track Changes/Reviewing Pane, and moving Accept All/Reject All under Changes dropdowns.
 - Split implemented table tools into Word-style contextual Table Design and Table Layout tabs, while keeping Insert focused on creating tables.
 - Move implemented content controls to a Word-style Developer > Controls surface instead of Insert.
 - Move Watermark into Design > Page Background with Page Color/Page Borders, and rename the Mailings entry point to Select Recipients.
@@ -62,6 +63,7 @@ Relevant Word Backstage details from that pass:
 - Design > Document Formatting includes Paragraph Spacing in Word. FreeW now mirrors the backed subset with No Paragraph Space, Compact, Tight, Open, Relaxed, and Double presets that update document/default style paragraph spacing while preserving fonts, colours, style IDs, custom styles, and direct paragraph overrides.
 - Mailings exposes Start Mail Merge and Edit Recipient List in Word. FreeW now mirrors the backed local subset by offering Letters output, Directory output, Normal Word Document reset, Select Recipients, and Edit Recipient List over the existing mail-merge session and CSV recipient dialog. E-mail messages, envelopes, labels, rules, Address Block, Greeting Line, and recipient filtering/sorting remain out of scope until backed by dedicated generation or field-matching behavior.
 - Insert in Word groups creation commands by geography: Illustrations holds pictures, shapes, SmartArt, chart, and screenshot; Header & Footer holds header/footer/page-number; Text holds text box, Quick Parts, WordArt, Drop Cap, Date & Time, Object, Text from File, and fields; Symbols holds Equation and Symbol. FreeW now mirrors that backed subset while keeping selected-picture editing commands on the contextual Picture Format tab. Unbacked Word surfaces such as Online Pictures, Icons, 3D Models, Add-ins, Online Video, Comments, and Signature Line remain out of scope until they have local behavior.
+- Review in Word separates Accessibility, Tracking, Changes, Compare, and Protect into distinct command regions. FreeW now mirrors the backed subset by moving Check Accessibility into its own Accessibility group, keeping Tracking to Track Changes and Reviewing Pane, and exposing Accept This/Accept All plus Reject This/Reject All through Changes dropdowns. Language/Translate, Editor-style cloud proofing, and ink remain out of scope until backed locally.
 
 ## Prioritized Parity Backlog
 
