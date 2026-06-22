@@ -495,9 +495,10 @@ cloud/proprietary (VBA, IRM, online services, 3D models).
       (incl. defaults-unchanged regression + combined-feature CT_RPr ordering check).
 - [x] Z2. Real theme part. `TextDocument.Theme` (persisted `DocumentTheme`, default Office) + `DocumentTheme.ColorScheme`
       (`ThemeColorScheme` 12-slot record) + `InferPreset`. Writer unconditionally emits `word/theme/theme1.xml`
-      (`a:clrScheme` + `a:fontScheme` + minimal stock `a:fmtScheme`) with content-type Override + `theme` relationship
-      (mirrors how real Word docs always carry a theme); reader parses clrScheme/fontScheme and infers the preset
-      (foreign themes fall back to Office). fmtScheme is stock-but-valid, not read back (noted). Per-preset round-trip + zip-part tests.
+      (`a:clrScheme` + `a:fontScheme` + backed `a:fmtScheme` effect-set selection) with content-type Override +
+      `theme` relationship (mirrors how real Word docs always carry a theme); reader parses clrScheme/fontScheme/fmtScheme
+      and infers the preset. Foreign colour/font themes become Custom; unrecognised effect-set names fall back to Office.
+      Per-preset, effect-set, and zip-part tests cover the round-trip.
 - [x] Z3. Different odd/even pages + page background. `PageSettings.DifferentOddEvenPages` + `BackgroundColorHex`;
       `TextDocument.EvenHeader`/`EvenFooter` (mirror Header/Footer). Writer emits `w:evenAndOddHeaders` (settings) +
       `header2.xml`/`footer2.xml` parts (+ Overrides + rels) with `w:type="even"` references, and `w:background`/@color
