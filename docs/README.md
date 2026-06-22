@@ -71,6 +71,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [fidelity/2026-06-19-file-format-support-audit.md](fidelity/2026-06-19-file-format-support-audit.md) - current spreadsheet file-format adapter support audit and follow-up plan.
 - [fidelity/2026-06-22-pivottable-excel-parity.md](fidelity/2026-06-22-pivottable-excel-parity.md) - PivotTable Excel parity checkpoint covering generated, Excel-authored, and real-world PivotTable harness results.
 - [fidelity/2026-06-22-pivottable-local-coverage.md](fidelity/2026-06-22-pivottable-local-coverage.md) - PivotTable local coverage expansion covering native Excel-authored corpus generation, visual range comparison, and the unskipped real-world batch.
+- [fidelity/2026-06-22-pivottable-complete-local-progress.md](fidelity/2026-06-22-pivottable-complete-local-progress.md) - PivotTable complete-local-fidelity progress note covering Excel-authoritative visual ranges, refreshed native fixtures, and remaining non-external gaps.
 - [fidelity/2026-06-19-freew-corpus-feature-growth.md](fidelity/2026-06-19-freew-corpus-feature-growth.md) - current FreeW DOCX corpus expansion note.
 - [fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md](fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md) - XLSX chart/PivotTable corpus expansion note.
 
