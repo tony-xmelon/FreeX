@@ -1,6 +1,6 @@
 # Fidelity Workstream Summary
 
-**Last updated:** 2026-06-21
+**Last updated:** 2026-06-22
 
 This folder holds point-in-time XLSX and FreeW fidelity findings. Keep durable summaries here and avoid committing temporary handoff notes, downloaded sample workbooks, generated comparison outputs, or Excel ground-truth images. Local workbook binaries belong in ignored corpus folders such as `fidelity-corpus/files/`, `fidelity-corpus/runs/`, `freew-fidelity-corpus/files/`, or `freew-fidelity-corpus/runs/`.
 
@@ -12,7 +12,7 @@ The June 17-18 fidelity sweep covered three major workbook groups:
 - Contextures samples: pivots, slicers, charts, conditional formatting, tables, dynamic arrays, comments, advanced filter, and form-control rendering.
 - tealeg-xlsx fixtures: 25 edge-case workbooks, including chartsheet support and invalid-source pass-through documentation.
 
-Durable outcome notes live in the dated files in this folder. Current workbook-format coverage is summarized by [2026-06-19-file-format-support-audit.md](2026-06-19-file-format-support-audit.md), with focused June 19 notes for ODS rebuild triage, LibreOffice cross-checking, and legacy XLS/XLSB handling. Current chart/PivotTable corpus expansion notes are [2026-06-18-xlsx-chart-pivot-corpus-growth.md](2026-06-18-xlsx-chart-pivot-corpus-growth.md), [2026-06-21-chart-fidelity-corpus-coverage.md](2026-06-21-chart-fidelity-corpus-coverage.md), and [2026-06-22-pivottable-local-coverage.md](2026-06-22-pivottable-local-coverage.md).
+Durable outcome notes live in the dated files in this folder. Current workbook-format coverage is summarized by [2026-06-19-file-format-support-audit.md](2026-06-19-file-format-support-audit.md), with focused June 19 notes for ODS rebuild triage, LibreOffice cross-checking, and legacy XLS/XLSB handling. Current chart/PivotTable corpus expansion notes are [2026-06-18-xlsx-chart-pivot-corpus-growth.md](2026-06-18-xlsx-chart-pivot-corpus-growth.md), [2026-06-21-chart-fidelity-corpus-coverage.md](2026-06-21-chart-fidelity-corpus-coverage.md), [2026-06-22-pivottable-local-coverage.md](2026-06-22-pivottable-local-coverage.md), and [2026-06-22-pivottable-complete-local-progress.md](2026-06-22-pivottable-complete-local-progress.md).
 
 ## Current FreeW Coverage
 
