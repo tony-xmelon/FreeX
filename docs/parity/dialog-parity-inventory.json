@@ -1,0 +1,1246 @@
+﻿{
+    "schema":  "freex.dialog-parity-inventory.v1",
+    "sourceCommit":  "eae254d8e5f3",
+    "generatedBy":  "tools/Generate-DialogParityInventory.ps1",
+    "scope":  "Current-main dialog parity inventory slice. Capture booleans mean current checked-in evidence exists; they do not imply functional parity.",
+    "summary":  {
+                    "totalRoutes":  57,
+                    "wpfCaptures":  53,
+                    "avaloniaCaptures":  0,
+                    "avaloniaHarnessRoutes":  9,
+                    "sharedOrPresentationBacked":  24
+                },
+    "rows":  [
+                 {
+                     "routeId":  "dialog.FormatCells",
+                     "displayName":  "Format Cells",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\home-alignment-number-tour\\freex_home_alignment_format_cells_dialog.png",
+                                         "screenshots\\home-alignment-number-tour\\freex_home_number_format_cells_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\FormatCells\\FormatCellsInputParser.cs"
+                                               ],
+                     "notes":  [
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.FindReplace",
+                     "displayName":  "Find and Replace",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_find_dialog.png",
+                                         "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_replace_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Dialogs\\FindReplaceOptions.cs"
+                                               ],
+                     "notes":  [
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.GoTo",
+                     "displayName":  "Go To",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_go_to_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found.",
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.GoToSpecial",
+                     "displayName":  "Go To Special",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_go_to_special_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.Sort",
+                     "displayName":  "Sort",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_sort_dialog.png",
+                                         "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_custom_sort_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found.",
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.SortOptions",
+                     "displayName":  "Sort Options",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_sort_options_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.AutoFilter",
+                     "displayName":  "AutoFilter",
+                     "wpfCaptureExists":  false,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\AutoFilter\\AutoFilterRangeResolver.cs",
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterChecklistPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterDialogCriteriaPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterDialogModel.cs",
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuModel.cs"
+                                               ],
+                     "notes":  [
+                                   "No current checked-in WPF capture asset was found by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.DataValidation",
+                     "displayName":  "Data Validation",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_validation_error_alert_tab.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_validation_input_message_tab.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_validation_settings_tab.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Dialogs\\DataValidationDialogModel.cs"
+                                               ],
+                     "notes":  [
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.TextToColumns",
+                     "displayName":  "Text to Columns",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_text_to_columns_step1_original_data_type.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_text_to_columns_step2_delimited.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_text_to_columns_step2_fixed_width.png",
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_text_to_columns_step3_column_format_destination.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\CellReferenceInputParser.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDelimiters.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogResult.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogState.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsOptions.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsResult.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsSplitter.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsValueConverter.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.AdvancedFilter",
+                     "displayName":  "Advanced Filter",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_advanced_filter_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.Consolidate",
+                     "displayName":  "Consolidate",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_consolidate_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateAggregation.cs",
+                                                   "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateCellValue.cs",
+                                                   "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateModels.cs",
+                                                   "src\\FreeX.App.Presentation\\Consolidate\\ConsolidatePlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.RemoveDuplicates",
+                     "displayName":  "Remove Duplicates",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_remove_duplicates_headers_columns.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.GoalSeek",
+                     "displayName":  "Goal Seek",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_goal_seek_dialog.png",
+                                         "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_goal_seek_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.GoalSeekStatus",
+                     "displayName":  "Goal Seek Status",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_goal_seek_status_dialog.png",
+                                         "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_goal_seek_status_success.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.DataTable",
+                     "displayName":  "Data Table",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_table_dialog.png",
+                                         "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_data_table_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ScenarioManager",
+                     "displayName":  "Scenario Manager",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_scenario_manager_dialog.png",
+                                         "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_scenario_manager_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ForecastSheet",
+                     "displayName":  "Forecast Sheet",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\data-tools-dialogs-tour\\freex_data_tools_forecast_sheet_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.Subtotal",
+                     "displayName":  "Subtotal",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_subtotal_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.CreateTable",
+                     "displayName":  "Create Table",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_create_table_dialog.png",
+                                         "screenshots\\table-workflows-tour\\freex_table_workflows_create_table_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.RecommendedPivotTables",
+                     "displayName":  "Recommended PivotTables",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_recommended_pivottables_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.Sparkline",
+                     "displayName":  "Sparkline",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_sparkline_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Sparklines\\SparklineLayoutEngine.cs",
+                                                   "src\\FreeX.App.Presentation\\Sparklines\\SparklineSeriesReader.cs",
+                                                   "src\\FreeX.App.Presentation\\SparklineUI\\SparklinePlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.InsertHyperlink",
+                     "displayName":  "Insert Hyperlink",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\insert-objects-links-tour\\freex_insert_hyperlink_dialog_address_focus.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.SymbolPicker",
+                     "displayName":  "Symbol Picker",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\insert-objects-links-tour\\freex_insert_symbol_picker_opened.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ErrorChecking",
+                     "displayName":  "Error Checking",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_error_checking_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.EvaluateFormula",
+                     "displayName":  "Evaluate Formula",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_evaluate_after_step.png",
+                                         "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_evaluate_default.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.WatchWindow",
+                     "displayName":  "Watch Window",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_window_after_delete.png",
+                                         "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_window_after_refresh.png",
+                                         "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_window_list.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.AddWatch",
+                     "displayName":  "Add Watch",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_add_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.PageSetup",
+                     "displayName":  "Page Setup",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_dialog_margins_tab.png",
+                                         "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_dialog_page_tab.png",
+                                         "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_dialog_sheet_tab_print_titles.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageLayoutInputParser.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupCommandFactory.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupDialogModel.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeParser.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeSelectionFormatter.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeSelectionTarget.cs"
+                                               ],
+                     "notes":  [
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.SelectionPane",
+                     "displayName":  "Selection Pane",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_arrange_selection_pane_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPaneViewPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.InsertSlicer",
+                     "displayName":  "Insert Slicer",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\pivot-options-slicer-tour\\freex_pivot_insert_slicer_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.InsertTimeline",
+                     "displayName":  "Insert Timeline",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\pivot-options-slicer-tour\\freex_pivot_insert_timeline_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.PivotTableOptions",
+                     "displayName":  "PivotTable Options",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\pivot-options-slicer-tour\\freex_pivot_options_dialog_display_style_options.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\PivotUI\\PivotOptionsPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.PivotFieldFilter",
+                     "displayName":  "Pivot Field Filter",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\pivot-field-list-context-tour\\freex_pivot_field_filter_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\PivotUI\\PivotFieldFilterPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.PivotValueFieldSettings",
+                     "displayName":  "Value Field Settings",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\pivot-advanced-workflows-tour\\freex_pivot_advanced_value_field_settings_dialog.png",
+                                         "screenshots\\pivot-field-list-context-tour\\freex_pivot_value_field_settings_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\PivotUI\\PivotValueFieldPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ChangeChartType",
+                     "displayName":  "Change Chart Type",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\chart-data-layout-tour\\freex_chart_data_layout_change_chart_type_dialog.png",
+                                         "screenshots\\chart-object-selection-tour\\freex_chart_object_selection_change_chart_type_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Charts\\Editing\\ChartTypeChangePlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.SelectDataSource",
+                     "displayName":  "Select Data Source",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\chart-data-layout-tour\\freex_chart_data_layout_select_data_dialog.png",
+                                         "screenshots\\chart-object-selection-tour\\freex_chart_object_selection_select_data_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.FormatChartArea",
+                     "displayName":  "Format Chart Area",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\chart-data-layout-tour\\freex_chart_data_layout_format_chart_area_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Charts\\Editing\\ChartAreaFormatPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ShapeEffects",
+                     "displayName":  "Shape Effects",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\draw-object-formatting-tour\\freex_draw_object_formatting_shape_effects_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\DrawingUI\\ShapeEffectsPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ShapeGradient",
+                     "displayName":  "Shape Gradient",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\draw-object-formatting-tour\\freex_draw_object_formatting_shape_gradient_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\DrawingUI\\ShapeGradientPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.Options",
+                     "displayName":  "Options",
+                     "wpfCaptureExists":  false,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found.",
+                                   "No current checked-in WPF capture asset was found by this inventory slice.",
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ConditionalFormatNewRule",
+                     "displayName":  "New Conditional Formatting Rule",
+                     "wpfCaptureExists":  false,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalDataBarLayoutPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatEvaluator.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatIconSetCatalog.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatInputParser.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRangeSelector.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatStatistics.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormattingResults.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconCellLayoutPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphGeometry.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphResolver.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\PresentationRgb.cs",
+                                                   "src\\FreeX.App.Presentation\\Dialogs\\ConditionalFormatRuleSchema.cs"
+                                               ],
+                     "notes":  [
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found.",
+                                   "No current checked-in WPF capture asset was found by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ConditionalFormatManage",
+                     "displayName":  "Conditional Formatting Rules Manager",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\home-styles-cf-tour\\freex_home_styles_cf_manage_rules_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  true,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalDataBarLayoutPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatEvaluator.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatIconSetCatalog.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatInputParser.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRangeSelector.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatStatistics.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormattingResults.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconCellLayoutPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphGeometry.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphResolver.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\PresentationRgb.cs",
+                                                   "src\\FreeX.App.Presentation\\Dialogs\\ConditionalFormatRuleSchema.cs"
+                                               ],
+                     "notes":  [
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.Zoom",
+                     "displayName":  "Zoom",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\status-footer-interactions-tour\\freex_status_footer_interactions_zoom_dialog_close_focus_return.png",
+                                         "screenshots\\view-panes-zoom-tour\\freex_view_panes_zoom_dialog_custom_125.png",
+                                         "tools\\foreground-captures\\freex-status-zoom-text-dialog-click\\freex-status-zoom-text-dialog-click_20260611_002303.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.CustomViews",
+                     "displayName":  "Custom Views",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\view-panes-zoom-tour\\freex_view_panes_zoom_custom_views_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\CustomViews\\CustomViewsPlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.PrintPreview",
+                     "displayName":  "Print Preview / Print",
+                     "wpfCaptureExists":  false,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No current checked-in WPF capture asset was found by this inventory slice.",
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.OpenWorkbook",
+                     "displayName":  "Open Workbook",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png",
+                                         "tools\\foreground-captures\\freex-open-dialog\\freex-open-dialog_20260610_142532.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.SaveAsWorkbook",
+                     "displayName":  "Save As Workbook",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png",
+                                         "tools\\foreground-captures\\freex-save-as-dialog\\freex-save-as-dialog_20260610_142550.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ExportOptions",
+                     "displayName":  "Export Options",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\file-io-import-smoke-tour\\freex_file_io_import_smoke_export_pdf_options.png",
+                                         "screenshots\\file-io-import-smoke-tour\\freex_file_io_import_smoke_export_xps_options.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.AccessibilityChecker",
+                     "displayName":  "Accessibility Checker",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\review-comments-protection-tour\\freex_review_accessibility_checker_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.AllowEditRanges",
+                     "displayName":  "Allow Edit Ranges",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\review-comments-protection-tour\\freex_review_allow_edit_ranges_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Protection\\AllowEditRangePlanner.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ProtectSheet",
+                     "displayName":  "Protect Sheet",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\review-comments-protection-tour\\freex_review_protect_sheet_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Protection\\AllowEditRangePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionPassword.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionStateProjector.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectSheetOptions.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectWorkbookOptions.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOption.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOptions.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.ProtectWorkbook",
+                     "displayName":  "Protect Workbook",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "wpfEvidence":  [
+                                         "screenshots\\review-comments-protection-tour\\freex_review_protect_workbook_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Protection\\AllowEditRangePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionPassword.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionStateProjector.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectSheetOptions.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectWorkbookOptions.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOption.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOptions.cs"
+                                               ],
+                     "notes":  [
+
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.WorkbookStatistics",
+                     "displayName":  "Workbook Statistics",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\review-stats-share-tour\\freex_review_workbook_statistics_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.RenameSheet",
+                     "displayName":  "Rename Sheet",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\sheet-tabs-tour\\freex_sheet_tabs_rename_dialog_opened.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.UnhideSheet",
+                     "displayName":  "Unhide Sheet",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\sheet-tabs-tour\\freex_sheet_tabs_unhide_dialog_opened.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.About",
+                     "displayName":  "About",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\help-about-legal-tour\\freex_about_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 },
+                 {
+                     "routeId":  "dialog.LegalNotices",
+                     "displayName":  "Legal Notices",
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  false,
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "wpfEvidence":  [
+                                         "screenshots\\help-about-legal-tour\\freex_legal_notices_dialog.png"
+                                     ],
+                     "avaloniaEvidence":  [
+
+                                          ],
+                     "avaloniaCaptureHarnessRoute":  false,
+                     "sharedBackingEvidence":  [
+
+                                               ],
+                     "notes":  [
+                                   "No shared/presentation backing file was inferred by this inventory slice."
+                               ]
+                 }
+             ]
+}
