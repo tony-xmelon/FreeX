@@ -7,8 +7,8 @@
                     "totalRoutes":  57,
                     "wpfCaptures":  53,
                     "avaloniaCaptures":  0,
-                    "avaloniaHarnessRoutes":  9,
-                    "sharedOrPresentationBacked":  25
+                    "avaloniaHarnessRoutes":  10,
+                    "sharedOrPresentationBacked":  27
                 },
     "rows":  [
                  {
@@ -99,7 +99,7 @@
                      "displayName":  "Sort",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_sort_dialog.png",
                                          "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_custom_sort_dialog.png"
@@ -109,11 +109,10 @@
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Services\\SortDialogPlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found.",
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
@@ -121,19 +120,19 @@
                      "displayName":  "Sort Options",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_sort_options_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Services\\SortDialogPlanner.cs"
                                                ],
                      "notes":  [
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
