@@ -10,6 +10,7 @@ Current implementation wave:
 - Add Home > Font > Strikethrough because the editor/model already preserve strikethrough formatting.
 - Add Home > Editing with Find, Replace, and Select, reusing the existing Find & Replace dialog and WPF Select All.
 - Normalize implemented top-level tabs to Word's visible flow: Home, Insert, Design, Layout, References, Mailings, Review, View.
+- Regroup the implemented Insert commands into Word-style command geography: Illustrations, Links, Header & Footer, Text, and Symbols.
 - Expand Review > Comments with real Delete, Previous, and Next thread actions, matching Word's visible comment workflow.
 - Split implemented table tools into Word-style contextual Table Design and Table Layout tabs, while keeping Insert focused on creating tables.
 - Move implemented content controls to a Word-style Developer > Controls surface instead of Insert.
@@ -60,6 +61,7 @@ Relevant Word Backstage details from that pass:
 - Design > Document Formatting includes Fonts in Word. FreeW now mirrors the backed subset with Office, Cambria, Georgia, and Trebuchet heading/body font-pair presets that update built-in style inheritance while preserving current colours; custom font-pair authoring, script-specific font mappings, and font availability checks remain out of scope.
 - Design > Document Formatting includes Paragraph Spacing in Word. FreeW now mirrors the backed subset with No Paragraph Space, Compact, Tight, Open, Relaxed, and Double presets that update document/default style paragraph spacing while preserving fonts, colours, style IDs, custom styles, and direct paragraph overrides.
 - Mailings exposes Start Mail Merge and Edit Recipient List in Word. FreeW now mirrors the backed local subset by offering Letters output, Directory output, Normal Word Document reset, Select Recipients, and Edit Recipient List over the existing mail-merge session and CSV recipient dialog. E-mail messages, envelopes, labels, rules, Address Block, Greeting Line, and recipient filtering/sorting remain out of scope until backed by dedicated generation or field-matching behavior.
+- Insert in Word groups creation commands by geography: Illustrations holds pictures, shapes, SmartArt, chart, and screenshot; Header & Footer holds header/footer/page-number; Text holds text box, Quick Parts, WordArt, Drop Cap, Date & Time, Object, Text from File, and fields; Symbols holds Equation and Symbol. FreeW now mirrors that backed subset while keeping selected-picture editing commands on the contextual Picture Format tab. Unbacked Word surfaces such as Online Pictures, Icons, 3D Models, Add-ins, Online Video, Comments, and Signature Line remain out of scope until they have local behavior.
 
 ## Prioritized Parity Backlog
 
