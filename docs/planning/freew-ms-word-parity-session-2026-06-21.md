@@ -30,6 +30,9 @@ Current implementation wave:
 - Add Word-style View > Show > Ruler as a stateful toggle over FreeW's existing passive page ruler chrome.
 - Add Word-style Design > Document Formatting > Style Sets as backed preset rewrites of FreeW's built-in style catalog, with live preview and DOCX style round-trip through `styles.xml`.
 - Add Word-style Design > Document Formatting > Fonts as backed heading/body font-pair presets that preserve the current colour palette and round-trip through the DOCX theme font scheme plus style catalog.
+- Add Word-style Design > Document Formatting > Paragraph Spacing as backed spacing presets over FreeW's document default and built-in paragraph style catalog, with live preview and DOCX style round-trip through `styles.xml`.
+- Continue Word-style View > Show > Ruler parity by making the horizontal ruler interactive for backed indent markers and simple left tab stops, using FreeW's existing undoable paragraph formatting and tab-stop model paths.
+- Expand Word-style Mailings with backed Start Mail Merge modes for Letters and Directory output, a Normal Word Document session reset, and a visible Edit Recipient List command over FreeW's existing CSV recipient dialog.
 
 ## Live Word Comparison Notes
 
@@ -51,16 +54,18 @@ Relevant Word Backstage details from that pass:
 - Export > Change File Type lists multiple document types in Word. FreeW now mirrors its backed local subset from the writable adapter catalog instead of exposing only a hard-coded Word Document row.
 - Open shows recently edited documents inside Word's Open page. FreeW now mirrors the local subset by showing recent documents directly in File > Open when the local recent-files store has entries, while retaining Browse and Recover Unsaved Documents.
 - Share appears between Open and Info in Word's Backstage rail. FreeW now mirrors that placement with backed local actions: saved local documents can reveal their containing folder for sharing, unsaved or missing-path documents route to Save As first, and the pane also offers Save a Copy plus Create PDF/XPS without adding fake cloud sharing.
-- View > Show includes a Ruler toggle in Word. FreeW now mirrors the backed subset by showing a Ruler command in the View > Show group, wired to the existing passive horizontal and vertical ruler chrome without claiming draggable ruler editing yet.
-- Design > Document Formatting includes Style Sets in Word. FreeW now mirrors the backed subset with Office, Simple, Elegant, and Formal presets that rewrite built-in paragraph styles while preserving style IDs and custom styles; Fonts, Paragraph Spacing, and Effects remain out of scope until backed independently.
+- View > Show includes a Ruler toggle in Word. FreeW now mirrors the backed subset by showing a Ruler command in the View > Show group and letting the horizontal ruler add/move simple left tab stops plus drag first-line, left, and right indent markers through existing paragraph formatting commands. Deeper Word ruler surfaces such as the tab selector, default tab interval editing, and vertical ruler editing remain out of scope.
+- Design > Document Formatting includes Style Sets in Word. FreeW now mirrors the backed subset with Office, Simple, Elegant, and Formal presets that rewrite built-in paragraph styles while preserving style IDs and custom styles; Effects remains out of scope until backed independently.
 - Design > Document Formatting includes Fonts in Word. FreeW now mirrors the backed subset with Office, Cambria, Georgia, and Trebuchet heading/body font-pair presets that update built-in style inheritance while preserving current colours; custom font-pair authoring, script-specific font mappings, and font availability checks remain out of scope.
+- Design > Document Formatting includes Paragraph Spacing in Word. FreeW now mirrors the backed subset with No Paragraph Space, Compact, Tight, Open, Relaxed, and Double presets that update document/default style paragraph spacing while preserving fonts, colours, style IDs, custom styles, and direct paragraph overrides.
+- Mailings exposes Start Mail Merge and Edit Recipient List in Word. FreeW now mirrors the backed local subset by offering Letters output, Directory output, Normal Word Document reset, Select Recipients, and Edit Recipient List over the existing mail-merge session and CSV recipient dialog. E-mail messages, envelopes, labels, rules, Address Block, Greeting Line, and recipient filtering/sorting remain out of scope until backed by dedicated generation or field-matching behavior.
 
 ## Prioritized Parity Backlog
 
 1. Decide whether Draw and Help should appear only after real backing commands exist, or with disabled explanatory affordances.
-2. Improve Design with independently backed Paragraph Spacing and Effects surfaces; Colors, Style Sets, and Fonts now have backed local models.
-3. Add more Mailings surfaces only when backed: Envelopes/Labels, Address Block, Greeting Line, and Start Mail Merge variants.
-4. Continue ruler parity beyond the visibility toggle: draggable indents or tab stops.
+2. Improve Design with an independently backed Effects surface; Colors, Style Sets, Fonts, and Paragraph Spacing now have backed local models.
+3. Add more Mailings surfaces only when backed: recipient filtering/sorting, Rules, Address Block/Greeting Line with robust field matching, E-mail Messages, Envelopes, and Labels.
+4. Continue ruler parity beyond the backed horizontal subset: tab selector variants, default tab interval editing, removal gestures, and vertical ruler editing.
 5. Continue Backstage parity beyond the local places slice: cloud/add-place affordances, and richer Save As inline filename/type controls.
 6. Formalize rendered shell evidence using `freew/tools/FreeW.RibbonShot` and document the output manifest.
 
