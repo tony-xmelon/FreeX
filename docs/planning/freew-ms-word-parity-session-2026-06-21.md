@@ -16,10 +16,17 @@ Current implementation wave:
 - Move Watermark into Design > Page Background with Page Color/Page Borders, and rename the Mailings entry point to Select Recipients.
 - Make Design > Document Formatting expose a labelled, backed Colors surface beside Themes, and persist applied theme choices into the saved DOCX theme state.
 - Surface the existing Save a Copy command in Word-style Backstage between Save As and Print.
+- Convert Backstage Open and Save As from immediate rail commands into Word-style place panes for local browsing, and regroup Export into Create PDF/XPS Document plus Change File Type sections.
 
 ## Live Word Comparison Notes
 
-Microsoft Word is installed at `C:\Program Files\Microsoft Office\Root\Office16\WINWORD.EXE`. Direct launch is reachable from this environment, but UI Automation exposed only a sparse start-window tree during this pass (`Help`, `File`, and `Home` names were visible). Use RibbonShot/visual capture for FreeW and manual or richer UIA/Office inspection for future Word shell evidence.
+Microsoft Word is installed at `C:\Program Files\Microsoft Office\Root\Office16\WINWORD.EXE`. Direct launch is reachable from this environment. A live Word 16.0 / build 16.0.20026 Backstage inspection on 2026-06-22 found this rail order: Home, New, Open, Share, Info, Save, Save As, Print, Export, Close, Account, Options.
+
+Relevant Word Backstage details from that pass:
+
+- Open is place-driven: Recent, shared/cloud locations, Quick access, This PC, Add a Place, Browse, plus a main pane with search, Documents/Folders tabs, recent documents, and Recover Unsaved Documents.
+- Save As is place-driven: Recent, OneDrive, Quick access, share options, This PC, Add a Place, Browse, plus filename/type controls and a broad file-type dropdown.
+- Export groups Publishing Features into Create PDF/XPS Document and Change File Type, with document-file and other-file-type choices.
 
 ## Prioritized Parity Backlog
 
@@ -27,7 +34,7 @@ Microsoft Word is installed at `C:\Program Files\Microsoft Office\Root\Office16\
 2. Improve Design with visible style-set/font/effects surfaces once those can be backed independently; Colors is now exposed through the existing theme palette model.
 3. Add more Mailings surfaces only when backed: Envelopes/Labels, Address Block, Greeting Line, and Start Mail Merge variants.
 4. Decide a first interactive ruler slice: draggable indents or tab stops.
-5. Improve Backstage Open / Save As / Export presentation: Open places/recovery affordances, Save As places/file types, and Export Create PDF/XPS + Change File Type grouping.
+5. Continue Backstage parity beyond the local places slice: Home/Share/Account rail decisions, cloud/add-place affordances, Recover Unsaved Documents as an explicit command, richer Save As inline filename/type controls, and broader format choices when backed.
 6. Formalize rendered shell evidence using `freew/tools/FreeW.RibbonShot` and document the output manifest.
 
 ## Non-Goals For This Session
