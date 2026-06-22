@@ -38,25 +38,25 @@ Visual comparison:
 
 ```powershell
 $base='C:\Users\ali\freex-xlsx-verify\excel-smoke\pivot-native-corpus-final-gaps-20260622a\generated-excel-pivots'
-$out='C:\Users\ali\freex-xlsx-verify\visual\pivot-native-corpus-final-gaps-dimwarn-20260622a'
+$out='C:\Users\ali\freex-xlsx-verify\visual\pivot-native-corpus-exact-dimensions-20260622a'
 Get-ChildItem $base -Filter '*.xlsx' | ForEach-Object {
-  dotnet run --project tools\FreeX.SheetGridImageCompare\FreeX.SheetGridImageCompare.csproj -c Release -- $_.FullName --pivot-ranges --export-excel-pngs --out (Join-Path $out $_.BaseName) --threshold 25
+  dotnet run --project tools\FreeX.SheetGridImageCompare\FreeX.SheetGridImageCompare.csproj -c Release -- $_.FullName --pivot-ranges --export-excel-pngs --fail-on-dimension-mismatch --out (Join-Path $out $_.BaseName) --threshold 25
 }
 ```
 
-Outcome: all eight workbooks passed; nine PivotTable ranges were compared using Excel `TableRange2`. The report now emits `DIM_WARN` for Excel-vs-FreeX native PNG dimension differences by default, while `--fail-on-dimension-mismatch` keeps strict dimension failures available for targeted renderer work.
+Outcome: all eight workbooks passed; nine PivotTable ranges were compared using Excel `TableRange2`. With Excel reference PNG dimensions loaded before FreeX rendering, the strict `--fail-on-dimension-mismatch` gate now passes with exact Excel-vs-FreeX PNG dimensions.
 
-- `Pivot Basic!A3:E9`: diff `6.2%`, dimensions `Excel 610x170; FreeX 777x230`
-- `Pivot Sort Filter!A3:D6`: diff `4.1%`, dimensions `Excel 671x135; FreeX 842x150`
-- `Pivot Buckets!A3:E9`: diff `3.3%`, dimensions `Excel 685x170; FreeX 864x230`
-- `Pivot Layout!A3:F13`: diff `5.0%`, dimensions `Excel 713x266; FreeX 905x344`
-- `Pivot Shared Cache!A3:B8`: diff `8.2%`, dimensions `Excel 448x146; FreeX 566x201`
-- `Pivot Shared Cache!F3:G7`: diff `14.5%`, dimensions `Excel 228x135; FreeX 309x173`
-- `Pivot Filters!A3:E8`: diff `4.7%`, dimensions `Excel 740x146; FreeX 929x201`
-- `Pivot Date Group!A3:B9`: diff `9.8%`, dimensions `Excel 371x170; FreeX 476x230`
-- `Pivot Calculations!A3:I11`: diff `2.2%`, dimensions `Excel 1427x218; FreeX 1761x287`
+- `Pivot Basic!A3:E9`: diff `7.9%`, dimensions `Excel 610x170; FreeX 610x170`
+- `Pivot Sort Filter!A3:D6`: diff `5.1%`, dimensions `Excel 671x135; FreeX 671x135`
+- `Pivot Buckets!A3:E9`: diff `3.4%`, dimensions `Excel 685x170; FreeX 685x170`
+- `Pivot Layout!A3:F13`: diff `5.1%`, dimensions `Excel 713x266; FreeX 713x266`
+- `Pivot Shared Cache!A3:B8`: diff `6.6%`, dimensions `Excel 448x146; FreeX 448x146`
+- `Pivot Shared Cache!F3:G7`: diff `17.6%`, dimensions `Excel 228x135; FreeX 228x135`
+- `Pivot Filters!A3:E8`: diff `4.7%`, dimensions `Excel 740x146; FreeX 740x146`
+- `Pivot Date Group!A3:B9`: diff `9.3%`, dimensions `Excel 371x170; FreeX 371x170`
+- `Pivot Calculations!A3:I11`: diff `2.0%`, dimensions `Excel 1427x218; FreeX 1427x218`
 
 ## Still Open
 
-- Exact PNG pixel dimensions are not yet at parity across the Excel `CopyPicture` path and the FreeX GridView renderer, so the current visual lane reports dimension differences as warnings unless `--fail-on-dimension-mismatch` is supplied.
-- Pixel comparison still uses a thresholded normalized comparison rather than a pixel-perfect acceptance gate.
+- The visual lane now passes strict Excel-vs-FreeX PNG dimension checks for the native PivotTable corpus.
+- Pixel comparison still uses a thresholded mean-diff comparison rather than a pixel-perfect acceptance gate.
