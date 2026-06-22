@@ -20,7 +20,7 @@ Scope: Windows-only FreeX vs desktop Microsoft Excel PivotTable parity for local
 Generated native corpus:
 
 ```powershell
-dotnet run --project tools\FreeX.ExcelOpenSmoke\FreeX.ExcelOpenSmoke.csproj -c Release -- --save-reopen --generate-excel-pivot-corpus-fixtures --out C:\Users\ali\freex-xlsx-verify\excel-smoke\pivot-native-corpus-gaps2-20260622a
+dotnet run --project tools\FreeX.ExcelOpenSmoke\FreeX.ExcelOpenSmoke.csproj -c Release -- --save-reopen --generate-excel-pivot-corpus-fixtures --out C:\Users\ali\freex-xlsx-verify\excel-smoke\pivot-native-corpus-integrated-20260622a
 ```
 
 Outcome: `PASS: Excel validated 6/6 workbook(s).`
@@ -33,8 +33,8 @@ Package inspection confirmed:
 Visual comparison:
 
 ```powershell
-$base='C:\Users\ali\freex-xlsx-verify\excel-smoke\pivot-native-corpus-gaps2-20260622a\generated-excel-pivots'
-$out='C:\Users\ali\freex-xlsx-verify\visual\pivot-native-corpus-gaps2-20260622a'
+$base='C:\Users\ali\freex-xlsx-verify\excel-smoke\pivot-native-corpus-integrated-20260622a\generated-excel-pivots'
+$out='C:\Users\ali\freex-xlsx-verify\visual\pivot-native-corpus-integrated-20260622a'
 Get-ChildItem $base -Filter '*.xlsx' | ForEach-Object {
   dotnet run --project tools\FreeX.SheetGridImageCompare\FreeX.SheetGridImageCompare.csproj -c Release -- $_.FullName --pivot-ranges --export-excel-pngs --out (Join-Path $out $_.BaseName) --threshold 25
 }
@@ -42,7 +42,7 @@ Get-ChildItem $base -Filter '*.xlsx' | ForEach-Object {
 
 Outcome: all six workbooks passed; seven PivotTable ranges were compared using Excel `TableRange2`.
 
-- `Pivot Basic!A3:E9`: diff `9.3%`
+- `Pivot Basic!A3:E9`: diff `6.2%`
 - `Pivot Sort Filter!A3:D6`: diff `4.7%`
 - `Pivot Buckets!A3:E9`: diff `5.1%`
 - `Pivot Layout!A3:F13`: diff `5.0%`
