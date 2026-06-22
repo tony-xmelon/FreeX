@@ -16,16 +16,20 @@ Scope: Windows-only FreeX vs desktop Microsoft Excel PivotTable parity for local
   - disabled default subtotals on row fields
 - `Excel_native_pivot_date_grouping_003.xlsx` adds an Excel-authored PivotTable grouped by months and years through Excel's native grouping command, producing `fieldGroup` metadata.
 - `Excel_native_pivot_calculated_field_item_003.xlsx` adds an Excel-authored calculated field (`Sales Bonus`) and calculated item (`North South`) in the native PivotCache/PivotTable XML shape.
+- `Excel_native_pivot_report_filters_001.xlsx` adds an Excel-authored PivotTable with native report filters/page fields:
+  - single-select Region report filter set to `North`
+  - multi-select Channel report filter with one hidden page item
+  - Excel page-field layout metadata (`pageWrap="2"` and `pageOverThenDown="1"`)
 
 ## Evidence
 
 Generated native corpus:
 
 ```powershell
-dotnet run --project tools\FreeX.ExcelOpenSmoke\FreeX.ExcelOpenSmoke.csproj -c Release -- --save-reopen --generate-excel-pivot-corpus-fixtures --out C:\Users\ali\freex-xlsx-verify\excel-smoke\pivot-native-corpus-final-gaps-20260622a
+dotnet run --project tools\FreeX.ExcelOpenSmoke\FreeX.ExcelOpenSmoke.csproj -c Release -- --save-reopen --generate-excel-pivot-corpus-fixtures --out C:\Users\ali\freex-xlsx-verify\excel-smoke\pivot-native-corpus-report-filters-20260622a
 ```
 
-Outcome: `PASS: Excel validated 8/8 workbook(s).`
+Outcome: Excel generated, FreeX saved, and Excel reopened 9/9 workbook(s).
 
 Package inspection confirmed:
 
@@ -33,18 +37,19 @@ Package inspection confirmed:
 - `Excel_native_pivot_layout_options_002.xlsx` contains `showHeaders="0"`, `compact="0"`, `compactData="0"`, `defaultSubtotal="0"`, and `fillDownLabels` extension metadata.
 - `Excel_native_pivot_date_grouping_003.xlsx` contains `fieldGroup` metadata in the PivotCache definition.
 - `Excel_native_pivot_calculated_field_item_003.xlsx` contains `cacheField name="Sales Bonus" ... formula="Sales*0.1"` and a native `calculatedItems` block for `North South`.
+- `Excel_native_pivot_report_filters_001.xlsx` contains `<pageFields count="2">`, `multipleItemSelectionAllowed="1"`, a hidden page item (`h="1"`), `pageWrap="2"`, and `pageOverThenDown="1"`.
 
 Visual comparison:
 
 ```powershell
-$base='C:\Users\ali\freex-xlsx-verify\excel-smoke\pivot-native-corpus-final-gaps-20260622a\generated-excel-pivots'
-$out='C:\Users\ali\freex-xlsx-verify\visual\pivot-native-corpus-excel-reference-style-fixed-20260622b'
+$base='C:\Users\ali\freex-xlsx-verify\excel-smoke\pivot-native-corpus-report-filters-20260622a\generated-excel-pivots'
+$out='C:\Users\ali\freex-xlsx-verify\visual\pivot-native-corpus-report-filters-expanded-20260622a'
 Get-ChildItem $base -Filter '*.xlsx' | ForEach-Object {
   dotnet run --project tools\FreeX.SheetGridImageCompare\FreeX.SheetGridImageCompare.csproj -c Release -- $_.FullName --pivot-ranges --export-excel-pngs --fail-on-dimension-mismatch --out (Join-Path $out $_.BaseName) --threshold 25
 }
 ```
 
-Outcome: all eight workbooks passed; nine PivotTable ranges were compared using Excel `TableRange2`. With Excel reference PNG dimensions loaded before FreeX rendering, the strict `--fail-on-dimension-mismatch` gate passes with exact Excel-vs-FreeX PNG dimensions. The Excel reference exporter now rejects transparent/blank-looking clipboard images, falls back through bitmap and enhanced-metafile extraction, and preserves the same target canvas for FreeX rendering.
+Outcome: all nine workbooks passed; ten PivotTable ranges were compared using Excel `TableRange2`. With Excel reference PNG dimensions loaded before FreeX rendering, the strict `--fail-on-dimension-mismatch` gate passes with exact Excel-vs-FreeX PNG dimensions. The Excel reference exporter now rejects transparent/blank-looking clipboard images, falls back through bitmap and enhanced-metafile extraction, and preserves the same target canvas for FreeX rendering.
 
 - `Pivot Basic!A3:E9`: diff `9.6%`, dimensions `Excel 610x170; FreeX 610x170`
 - `Pivot Sort Filter!A3:D6`: diff `4.6%`, dimensions `Excel 671x98; FreeX 671x98`
@@ -52,6 +57,7 @@ Outcome: all eight workbooks passed; nine PivotTable ranges were compared using 
 - `Pivot Layout!A3:F13`: diff `10.7%`, dimensions `Excel 713x266; FreeX 713x266`
 - `Pivot Shared Cache!A3:B8`: diff `12.9%`, dimensions `Excel 448x146; FreeX 448x146`
 - `Pivot Shared Cache!F3:G7`: diff `16.6%`, dimensions `Excel 228x122; FreeX 228x122`
+- `Pivot Report Filters!A2:E8`: diff `7.6%`, dimensions `Excel 681x170; FreeX 681x170`
 - `Pivot Filters!A3:E8`: diff `7.3%`, dimensions `Excel 740x146; FreeX 740x146`
 - `Pivot Date Group!A3:B9`: diff `10.3%`, dimensions `Excel 371x170; FreeX 371x170`
 - `Pivot Calculations!A3:I11`: diff `6.1%`, dimensions `Excel 1427x218; FreeX 1427x218`
