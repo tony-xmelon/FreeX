@@ -2,8 +2,8 @@
   "schema": "freex.parity.functional.v1",
   "summary": {
     "totalCommands": 530,
-    "parity": 422,
-    "avaloniaMissing": 48,
+    "parity": 423,
+    "avaloniaMissing": 47,
     "wpfMissing": 48,
     "bothMissing": 12,
     "intentionalLinuxOmissions": 48
@@ -322,7 +322,7 @@
     { "id": "Merge Cells", "tab": "Home", "group": "Alignment", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Middle Align", "tab": "Home", "group": "Alignment", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Min", "tab": "Home", "group": "Editing", "wpf": true, "avalonia": true, "status": "PARITY" },
-    { "id": "More", "tab": "View", "group": "Zoom", "wpf": true, "avalonia": false, "status": "AVALONIA-MISSING" },
+    { "id": "More", "tab": "View", "group": "Zoom", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "More Accounting Formats", "tab": "Home", "group": "Number", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "More Borders", "tab": "Home", "group": "Font", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "More Functions", "tab": "Home", "group": "Editing", "wpf": true, "avalonia": true, "status": "PARITY" },
