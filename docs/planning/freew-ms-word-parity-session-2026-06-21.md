@@ -18,6 +18,7 @@ Current implementation wave:
 - Surface the existing Save a Copy command in Word-style Backstage between Save As and Print.
 - Convert Backstage Open and Save As from immediate rail commands into Word-style place panes for local browsing, and regroup Export into Create PDF/XPS Document plus Change File Type sections.
 - Make Backstage Home the Word-style landing pane and promote New to the backed template pane, removing the duplicate New from template rail entry for FreeW.
+- Move Backstage Close into the main Word-style rail order and wire it to the real dirty-gated window close path.
 
 ## Live Word Comparison Notes
 
@@ -30,6 +31,7 @@ Relevant Word Backstage details from that pass:
 - Export groups Publishing Features into Create PDF/XPS Document and Change File Type, with document-file and other-file-type choices.
 - Home combines New and Open regions: Blank document and template tiles, More templates, Recent/Favorites/Shared with Me, search, and recent rows. FreeW now backs the local subset with Blank document, Browse, and Recent instead of adding nonfunctional cloud/search/template placeholders.
 - New is a first-class template page in Word with Blank document, online template search, Office/tenant tabs, category chips, and template pins. FreeW now routes New to its backed Blank document template pane and leaves online/template catalog work in the backlog.
+- Close is a main rail command in Word, above Account and Options, and closes the current document/window. FreeW now wires Close to the existing WPF window close path so the save-before-close prompt is preserved.
 
 ## Prioritized Parity Backlog
 
