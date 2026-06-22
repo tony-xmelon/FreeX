@@ -11,8 +11,8 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Metric | Count |
 |---|---:|
 | Total commands | 530 |
-| PARITY (both) | 422 |
-| AVALONIA-MISSING | 48 |
+| PARITY (both) | 423 |
+| AVALONIA-MISSING | 47 |
 | WPF-MISSING | 48 |
 | BOTH-MISSING | 12 |
 | Intentional Linux omissions (allowlisted) | 48 |
@@ -548,6 +548,6 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | 25% | Zoom | View | yes | yes | PARITY |
 | 50% | Zoom | View | yes | yes | PARITY |
 | 75% | Zoom | View | yes | yes | PARITY |
-| More | Zoom | View | yes | — | AVALONIA-MISSING |
+| More | Zoom | View | yes | yes | PARITY |
 | Zoom | Zoom | View | yes | yes | PARITY |
 | Zoom to Selection | Zoom | View | yes | yes | PARITY |
