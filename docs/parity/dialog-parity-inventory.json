@@ -7,8 +7,8 @@
                     "totalRoutes":  57,
                     "wpfCaptures":  53,
                     "avaloniaCaptures":  0,
-                    "avaloniaHarnessRoutes":  19,
-                    "sharedOrPresentationBacked":  37
+                    "avaloniaHarnessRoutes":  27,
+                    "sharedOrPresentationBacked":  44
                 },
     "rows":  [
                  {
@@ -473,19 +473,20 @@
                      "displayName":  "Insert Hyperlink",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\insert-objects-links-tour\\freex_insert_hyperlink_dialog_address_focus.png"
                                      ],
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Services\\HyperlinkDialogPlanner.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookSession.cs"
                                                ],
                      "notes":  [
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
@@ -541,11 +542,12 @@
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
 
                                                ],
                      "notes":  [
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found.",
                                    "No shared/presentation backing file was inferred by this inventory slice."
                                ]
                  },
@@ -554,7 +556,7 @@
                      "displayName":  "Watch Window",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_window_after_delete.png",
                                          "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_window_after_refresh.png",
@@ -563,12 +565,12 @@
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.Core.Commands\\WatchWindowService.cs"
                                                ],
                      "notes":  [
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
@@ -1150,19 +1152,20 @@
                      "displayName":  "Workbook Statistics",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\review-stats-share-tour\\freex_review_workbook_statistics_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Services\\WorkbookStatisticsFormatter.cs",
+                                                   "src\\FreeX.Core.Commands\\WorkbookStatisticsService.cs"
                                                ],
                      "notes":  [
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
@@ -1170,19 +1173,19 @@
                      "displayName":  "Rename Sheet",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\sheet-tabs-tour\\freex_sheet_tabs_rename_dialog_opened.png"
                                      ],
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Services\\WorkbookSession.cs"
                                                ],
                      "notes":  [
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
@@ -1190,19 +1193,20 @@
                      "displayName":  "Unhide Sheet",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\sheet-tabs-tour\\freex_sheet_tabs_unhide_dialog_opened.png"
                                      ],
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Services\\WorkbookSession.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookSheetSelectionService.cs"
                                                ],
                      "notes":  [
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
@@ -1210,19 +1214,19 @@
                      "displayName":  "About",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\help-about-legal-tour\\freex_about_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Services\\AppHelpInfo.cs"
                                                ],
                      "notes":  [
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
@@ -1230,19 +1234,19 @@
                      "displayName":  "Legal Notices",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\help-about-legal-tour\\freex_legal_notices_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Services\\LegalNoticeProvider.cs"
                                                ],
                      "notes":  [
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  }
              ]
