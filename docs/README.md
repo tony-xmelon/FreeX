@@ -80,6 +80,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [fidelity/2026-06-22-pivottable-tabular-adornments.md](fidelity/2026-06-22-pivottable-tabular-adornments.md) - PivotTable tabular/outline row-label adornment pass covering native expand/collapse boxes outside compact layout.
 - [fidelity/2026-06-22-pivottable-strict-visual-metrics.md](fidelity/2026-06-22-pivottable-strict-visual-metrics.md) - PivotTable strict visual metrics pass adding exact same-size pixel metrics alongside normalized visual diffs.
 - [fidelity/2026-06-22-pivottable-native-style-offsets.md](fidelity/2026-06-22-pivottable-native-style-offsets.md) - PivotTable native style offset pass covering Excel `firstDataRow`/`firstDataCol` header and stripe footprint fidelity.
+- [fidelity/2026-06-23-pivottable-theme-font-fidelity.md](fidelity/2026-06-23-pivottable-theme-font-fidelity.md) - PivotTable theme font and style fidelity pass covering loaded style font identity, shared-cache style ownership, `PivotStyleMedium2`/`PivotStyleDark3` palette correction, and local `Aptos Narrow` fallback rendering evidence.
 - [fidelity/2026-06-19-freew-corpus-feature-growth.md](fidelity/2026-06-19-freew-corpus-feature-growth.md) - current FreeW DOCX corpus expansion note.
 - [fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md](fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md) - XLSX chart/PivotTable corpus expansion note.
 
