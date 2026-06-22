@@ -28,6 +28,7 @@ Current implementation wave:
 - Add Word-style Recent Documents directly to the Backstage Open pane, backed by FreeW's existing local recent-files store and OpenPath flow.
 - Add Word-style Backstage Share rail placement with FreeW's backed local subset: saved-file folder reveal, Save As when sharing is not ready, Save a Copy, and Create PDF/XPS.
 - Add Word-style View > Show > Ruler as a stateful toggle over FreeW's existing passive page ruler chrome.
+- Add Word-style Design > Document Formatting > Style Sets as backed preset rewrites of FreeW's built-in style catalog, with live preview and DOCX style round-trip through `styles.xml`.
 
 ## Live Word Comparison Notes
 
@@ -50,11 +51,12 @@ Relevant Word Backstage details from that pass:
 - Open shows recently edited documents inside Word's Open page. FreeW now mirrors the local subset by showing recent documents directly in File > Open when the local recent-files store has entries, while retaining Browse and Recover Unsaved Documents.
 - Share appears between Open and Info in Word's Backstage rail. FreeW now mirrors that placement with backed local actions: saved local documents can reveal their containing folder for sharing, unsaved or missing-path documents route to Save As first, and the pane also offers Save a Copy plus Create PDF/XPS without adding fake cloud sharing.
 - View > Show includes a Ruler toggle in Word. FreeW now mirrors the backed subset by showing a Ruler command in the View > Show group, wired to the existing passive horizontal and vertical ruler chrome without claiming draggable ruler editing yet.
+- Design > Document Formatting includes Style Sets in Word. FreeW now mirrors the backed subset with Office, Simple, Elegant, and Formal presets that rewrite built-in paragraph styles while preserving style IDs and custom styles; Fonts, Paragraph Spacing, and Effects remain out of scope until backed independently.
 
 ## Prioritized Parity Backlog
 
 1. Decide whether Draw and Help should appear only after real backing commands exist, or with disabled explanatory affordances.
-2. Improve Design with visible style-set/font/effects surfaces once those can be backed independently; Colors is now exposed through the existing theme palette model.
+2. Improve Design with independently backed Fonts, Paragraph Spacing, and Effects surfaces; Colors and Style Sets now have backed local models.
 3. Add more Mailings surfaces only when backed: Envelopes/Labels, Address Block, Greeting Line, and Start Mail Merge variants.
 4. Continue ruler parity beyond the visibility toggle: draggable indents or tab stops.
 5. Continue Backstage parity beyond the local places slice: cloud/add-place affordances, and richer Save As inline filename/type controls.
