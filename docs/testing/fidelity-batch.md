@@ -45,10 +45,10 @@ do not auto-fail (COM counting methodology varies). **Every** individual value m
 Output lands in a timestamped run folder: `results.csv` (per-file metrics), `mismatches.txt` (sampled
 diffs), and `README.md` (summary table).
 
-> Visual (pixel) comparison is a planned **next phase**. FreeX has no headless worksheet→image API yet
-> (only `ChartRenderer` for charts), so whole-sheet rendering needs the WPF grid hosted headlessly or a
-> PDF-export + rasterizer, then a perceptual-hash diff (the machinery in `FreeX.ChartInteropCompare`'s
-> visual-evidence code is reusable for that step).
+Visual (pixel) comparison is handled by `tools/FreeX.SheetGridImageCompare`. For PivotTable-focused
+coverage, use `--pivot-ranges --export-excel-pngs` to export matching Excel range PNGs and compare them
+against FreeX GridView renders. Excel COM capture should be serialized because `CopyPicture` uses shared
+machine resources.
 
 ## Running it
 
@@ -63,6 +63,12 @@ pwsh tools/Run-FidelityBatch.ps1 -SkipFetch      # skip the download step
 ```
 
 Or directly: `tools/FreeX.FidelityCompare.exe [--filter <substr>] [--out <dir>] [--tolerance <pct>] [--recalc]`.
+
+PivotTable visual range comparison example:
+
+```powershell
+dotnet run --project tools/FreeX.SheetGridImageCompare\FreeX.SheetGridImageCompare.csproj -c Release -- <workbook.xlsx> --pivot-ranges --export-excel-pngs --out <run-dir> --threshold 25
+```
 
 ## The corpus
 

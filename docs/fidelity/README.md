@@ -12,7 +12,7 @@ The June 17-18 fidelity sweep covered three major workbook groups:
 - Contextures samples: pivots, slicers, charts, conditional formatting, tables, dynamic arrays, comments, advanced filter, and form-control rendering.
 - tealeg-xlsx fixtures: 25 edge-case workbooks, including chartsheet support and invalid-source pass-through documentation.
 
-Durable outcome notes live in the dated files in this folder. Current workbook-format coverage is summarized by [2026-06-19-file-format-support-audit.md](2026-06-19-file-format-support-audit.md), with focused June 19 notes for ODS rebuild triage, LibreOffice cross-checking, and legacy XLS/XLSB handling. Current chart/PivotTable corpus expansion notes are [2026-06-18-xlsx-chart-pivot-corpus-growth.md](2026-06-18-xlsx-chart-pivot-corpus-growth.md) and [2026-06-21-chart-fidelity-corpus-coverage.md](2026-06-21-chart-fidelity-corpus-coverage.md).
+Durable outcome notes live in the dated files in this folder. Current workbook-format coverage is summarized by [2026-06-19-file-format-support-audit.md](2026-06-19-file-format-support-audit.md), with focused June 19 notes for ODS rebuild triage, LibreOffice cross-checking, and legacy XLS/XLSB handling. Current chart/PivotTable corpus expansion notes are [2026-06-18-xlsx-chart-pivot-corpus-growth.md](2026-06-18-xlsx-chart-pivot-corpus-growth.md), [2026-06-21-chart-fidelity-corpus-coverage.md](2026-06-21-chart-fidelity-corpus-coverage.md), and [2026-06-22-pivottable-local-coverage.md](2026-06-22-pivottable-local-coverage.md).
 
 ## Current FreeW Coverage
 
@@ -35,7 +35,7 @@ Durable FreeW notes:
 ## Harnesses
 
 - `tools/FreeX.SheetFidelity`: functional workbook gate for load warnings, unsupported features, formula parity, round-trip validation, and source-file validation.
-- `tools/FreeX.SheetGridImageCompare`: headless GridView sheet rendering and optional Excel ground-truth comparison.
+- `tools/FreeX.SheetGridImageCompare`: headless GridView sheet rendering and optional Excel ground-truth comparison, including PivotTable range mode with `--pivot-ranges --export-excel-pngs`.
 - `tools/FreeX.ExcelExamplesCharts`: chart census, Excel-COM ground-truth comparison, and round-trip checks.
 
 Excel COM capture should be serialized because `CopyPicture` and the clipboard are shared machine resources. Agents can fan out `--no-excel` comparisons against pre-captured PNGs once ground truth exists.
