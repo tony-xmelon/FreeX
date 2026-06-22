@@ -7,8 +7,8 @@
                     "totalRoutes":  57,
                     "wpfCaptures":  53,
                     "avaloniaCaptures":  0,
-                    "avaloniaHarnessRoutes":  13,
-                    "sharedOrPresentationBacked":  31
+                    "avaloniaHarnessRoutes":  15,
+                    "sharedOrPresentationBacked":  33
                 },
     "rows":  [
                  {
@@ -281,7 +281,7 @@
                      "displayName":  "Goal Seek",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_goal_seek_dialog.png",
                                          "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_goal_seek_dialog.png"
@@ -289,12 +289,13 @@
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Services\\GoalSeekRequestParser.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookSession.cs"
                                                ],
                      "notes":  [
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
@@ -302,7 +303,7 @@
                      "displayName":  "Goal Seek Status",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_goal_seek_status_dialog.png",
                                          "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_goal_seek_status_success.png"
@@ -310,12 +311,12 @@
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Services\\WorkbookGoalSeekResult.cs"
                                                ],
                      "notes":  [
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
