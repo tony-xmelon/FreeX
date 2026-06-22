@@ -73,6 +73,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [fidelity/2026-06-22-pivottable-local-coverage.md](fidelity/2026-06-22-pivottable-local-coverage.md) - PivotTable local coverage expansion covering native Excel-authored corpus generation, visual range comparison, and the unskipped real-world batch.
 - [fidelity/2026-06-22-pivottable-complete-local-progress.md](fidelity/2026-06-22-pivottable-complete-local-progress.md) - PivotTable complete-local-fidelity progress note covering Excel-authoritative visual ranges, refreshed native fixtures, and remaining non-external gaps.
 - [fidelity/2026-06-22-pivottable-native-corpus-expansion.md](fidelity/2026-06-22-pivottable-native-corpus-expansion.md) - PivotTable native corpus expansion covering Excel-authored filters, value filters, sort materialization, and layout/display metadata.
+- [fidelity/2026-06-22-pivottable-style-fidelity.md](fidelity/2026-06-22-pivottable-style-fidelity.md) - PivotTable style fidelity pass covering modern Office theme style materialization, matrix header styling, visual harness dropdown rendering, and remaining visual disparities.
 - [fidelity/2026-06-19-freew-corpus-feature-growth.md](fidelity/2026-06-19-freew-corpus-feature-growth.md) - current FreeW DOCX corpus expansion note.
 - [fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md](fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md) - XLSX chart/PivotTable corpus expansion note.
 
