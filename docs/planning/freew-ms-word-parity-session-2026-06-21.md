@@ -22,6 +22,7 @@ Current implementation wave:
 - Expand Backstage Save As file-type choices from the writable FreeW adapter catalog, with each row opening Save As preselected to that format.
 - Add a Word-style Open > Recover Unsaved Documents command backed by FreeW's existing autosave recovery snapshots.
 - Add a Word-style Account rail pane backed by local FreeW product, version, Windows user, device, and data-folder details.
+- Add Word-style File > Info document-safety actions backed by FreeW's existing Mark as Final, Restrict Editing, Inspect Document, and Check Accessibility commands.
 
 ## Live Word Comparison Notes
 
@@ -38,6 +39,7 @@ Relevant Word Backstage details from that pass:
 - Save As exposes a broad file-type picker in Word. FreeW now mirrors the backed subset from its writable adapter catalog: Word document/template variants, Word XML, web page/single-file web page, RTF, and plain-text formats; PDF/XPS remain in Export because those are backed by export actions rather than Save As adapters.
 - Open exposes Recover Unsaved Documents. FreeW now surfaces a matching local command backed by its autosave recovery snapshot store; it does not add cloud or account places that are not backed locally.
 - Account sits above Options in Word's Backstage rail. FreeW now exposes a backed local Account pane there with product/user/device/storage information and a link into the existing Options dialog, without fake Microsoft account or cloud sign-in surfaces.
+- Info exposes document protection and inspection affordances in Word. FreeW now mirrors the backed local subset in File > Info: Protect Document actions for Mark as Final and Restrict Editing, plus Inspect Document actions for metadata/revision inspection and accessibility checks.
 
 ## Prioritized Parity Backlog
 
