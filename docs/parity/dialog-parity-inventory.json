@@ -1,6 +1,6 @@
 ﻿{
     "schema":  "freex.dialog-parity-inventory.v1",
-    "sourceCommit":  "eae254d8e5f3",
+    "sourceSnapshot":  "repository files at generation time",
     "generatedBy":  "tools/Generate-DialogParityInventory.ps1",
     "scope":  "Current-main dialog parity inventory slice. Capture booleans mean current checked-in evidence exists; they do not imply functional parity.",
     "summary":  {
