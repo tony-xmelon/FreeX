@@ -8,7 +8,7 @@
                     "wpfCaptures":  53,
                     "avaloniaCaptures":  0,
                     "avaloniaHarnessRoutes":  9,
-                    "sharedOrPresentationBacked":  24
+                    "sharedOrPresentationBacked":  25
                 },
     "rows":  [
                  {
@@ -844,7 +844,7 @@
                      "displayName":  "Options",
                      "wpfCaptureExists":  false,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
 
                                      ],
@@ -853,12 +853,11 @@
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Services\\OptionsDialogPlanner.cs"
                                                ],
                      "notes":  [
                                    "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found.",
-                                   "No current checked-in WPF capture asset was found by this inventory slice.",
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "No current checked-in WPF capture asset was found by this inventory slice."
                                ]
                  },
                  {
