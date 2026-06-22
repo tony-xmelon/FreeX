@@ -7,8 +7,8 @@
                     "totalRoutes":  57,
                     "wpfCaptures":  53,
                     "avaloniaCaptures":  0,
-                    "avaloniaHarnessRoutes":  12,
-                    "sharedOrPresentationBacked":  30
+                    "avaloniaHarnessRoutes":  13,
+                    "sharedOrPresentationBacked":  31
                 },
     "rows":  [
                  {
@@ -261,19 +261,19 @@
                      "displayName":  "Remove Duplicates",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_remove_duplicates_headers_columns.png"
                                      ],
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Services\\RemoveDuplicatesPlanner.cs"
                                                ],
                      "notes":  [
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
