@@ -20,6 +20,7 @@ Current implementation wave:
 - Make Backstage Home the Word-style landing pane and promote New to the backed template pane, removing the duplicate New from template rail entry for FreeW.
 - Move Backstage Close into the main Word-style rail order and wire it to the real dirty-gated window close path.
 - Expand Backstage Save As file-type choices from the writable FreeW adapter catalog, with each row opening Save As preselected to that format.
+- Add a Word-style Open > Recover Unsaved Documents command backed by FreeW's existing autosave recovery snapshots.
 
 ## Live Word Comparison Notes
 
@@ -34,6 +35,7 @@ Relevant Word Backstage details from that pass:
 - New is a first-class template page in Word with Blank document, online template search, Office/tenant tabs, category chips, and template pins. FreeW now routes New to its backed Blank document template pane and leaves online/template catalog work in the backlog.
 - Close is a main rail command in Word, above Account and Options, and closes the current document/window. FreeW now wires Close to the existing WPF window close path so the save-before-close prompt is preserved.
 - Save As exposes a broad file-type picker in Word. FreeW now mirrors the backed subset from its writable adapter catalog: Word document/template variants, Word XML, web page/single-file web page, RTF, and plain-text formats; PDF/XPS remain in Export because those are backed by export actions rather than Save As adapters.
+- Open exposes Recover Unsaved Documents. FreeW now surfaces a matching local command backed by its autosave recovery snapshot store; it does not add cloud or account places that are not backed locally.
 
 ## Prioritized Parity Backlog
 
@@ -41,7 +43,7 @@ Relevant Word Backstage details from that pass:
 2. Improve Design with visible style-set/font/effects surfaces once those can be backed independently; Colors is now exposed through the existing theme palette model.
 3. Add more Mailings surfaces only when backed: Envelopes/Labels, Address Block, Greeting Line, and Start Mail Merge variants.
 4. Decide a first interactive ruler slice: draggable indents or tab stops.
-5. Continue Backstage parity beyond the local places slice: Share/Account rail decisions, cloud/add-place affordances, Recover Unsaved Documents as an explicit command, and richer Save As inline filename/type controls.
+5. Continue Backstage parity beyond the local places slice: Share/Account rail decisions, cloud/add-place affordances, and richer Save As inline filename/type controls.
 6. Formalize rendered shell evidence using `freew/tools/FreeW.RibbonShot` and document the output manifest.
 
 ## Non-Goals For This Session
