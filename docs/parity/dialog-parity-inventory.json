@@ -7,8 +7,8 @@
                     "totalRoutes":  57,
                     "wpfCaptures":  53,
                     "avaloniaCaptures":  0,
-                    "avaloniaHarnessRoutes":  52,
-                    "sharedOrPresentationBacked":  53
+                    "avaloniaHarnessRoutes":  53,
+                    "sharedOrPresentationBacked":  54
                 },
     "rows":  [
                  {
@@ -991,20 +991,26 @@
                      "displayName":  "Print Preview / Print",
                      "wpfCaptureExists":  false,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
 
                                      ],
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewDialogPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewInstructionBuilder.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewNavigationState.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewPaginationContext.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewToolbarStatePlanner.cs",
+                                                   "src\\FreeX.App.Services\\PrintJobPlanner.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookExportPrintPlanner.cs"
                                                ],
                      "notes":  [
-                                   "No current checked-in WPF capture asset was found by this inventory slice.",
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found.",
+                                   "No current checked-in WPF capture asset was found by this inventory slice."
                                ]
                  },
                  {
