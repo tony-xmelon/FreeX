@@ -42,6 +42,7 @@ Current implementation wave:
 - Add Word-style Mailings > Preview Results record navigation buttons backed by FreeW's existing mail-merge preview session.
 - Add Word-style Review > Comments > Show Comments backed by FreeW's actual threaded-comment store.
 - Remove FreeW's duplicate Backstage Recent rail item now that Word-style Home and Open carry backed recent-document flows.
+- Add Word-style horizontal ruler tab selector variants for Left, Center, Right, and Decimal tab stops over FreeW's existing tab-stop model.
 
 ## Live Word Comparison Notes
 
@@ -63,7 +64,7 @@ Relevant Word Backstage details from that pass:
 - Export > Change File Type lists multiple document types in Word. FreeW now mirrors its backed local subset from the writable adapter catalog instead of exposing only a hard-coded Word Document row.
 - Open shows recently edited documents inside Word's Open page. FreeW now mirrors the local subset by showing recent documents directly in File > Open when the local recent-files store has entries, while retaining Browse and Recover Unsaved Documents.
 - Share appears between Open and Info in Word's Backstage rail. FreeW now mirrors that placement with backed local actions: saved local documents can reveal their containing folder for sharing, unsaved or missing-path documents route to Save As first, and the pane also offers Save a Copy plus Create PDF/XPS without adding fake cloud sharing.
-- View > Show includes a Ruler toggle in Word. FreeW now mirrors the backed subset by showing a Ruler command in the View > Show group and letting the horizontal ruler add, move, and remove simple left tab stops plus drag first-line, left, and right indent markers through existing paragraph formatting commands. Deeper Word ruler surfaces such as the tab selector, default tab interval editing, and vertical ruler editing remain out of scope.
+- View > Show includes a Ruler toggle in Word. FreeW now mirrors the backed subset by showing a Ruler command in the View > Show group and letting the horizontal ruler add, move, and remove Left, Center, Right, and Decimal tab stops from a Word-style corner tab selector, plus drag first-line, left, and right indent markers through existing paragraph formatting commands. Deeper Word ruler surfaces such as default tab interval editing and vertical ruler editing remain out of scope.
 - Design > Document Formatting includes Style Sets in Word. FreeW now mirrors the backed subset with Office, Simple, Elegant, and Formal presets that rewrite built-in paragraph styles while preserving style IDs and custom styles.
 - Design > Document Formatting includes Effects in Word. FreeW now mirrors the backed subset with Office, Subtle, Moderate, and Intense effect-set presets that update the document theme's `a:fmtScheme`, round-trip through DOCX, and visibly affect FreeW-authored shapes, charts, SmartArt, and WordArt in the live editing surface with heavier object strokes plus Word-style shadow/soft-edge cues.
 - Design > Document Formatting includes Fonts in Word. FreeW now mirrors the backed subset with Office, Cambria, Georgia, and Trebuchet heading/body font-pair presets that update built-in style inheritance while preserving current colours; custom font-pair authoring, script-specific font mappings, and font availability checks remain out of scope.
@@ -83,7 +84,7 @@ Relevant Word Backstage details from that pass:
 
 1. Keep Draw hidden until real ink backing exists; do not add placeholder pen, eraser, lasso, ink replay, ink-to-shape, or ink-to-math commands.
 2. Add more Mailings surfaces only when backed: recipient filtering/sorting, Rules, Address Block/Greeting Line with robust field matching, E-mail Messages, Envelopes, and Labels.
-3. Continue ruler parity beyond the backed horizontal subset: tab selector variants, default tab interval editing, and vertical ruler editing.
+3. Continue ruler parity beyond the backed horizontal subset: default tab interval editing and vertical ruler editing.
 4. Continue Backstage parity beyond the local places, inline Save As, and local Open recent-search slices: cloud/add-place affordances, richer account-backed locations, and online/shared location search.
 5. Keep rendered shell evidence fresh by recapturing manifest-backed `FreeW.RibbonShot` outputs after future Backstage, ribbon, dialog, or Word-parity shell changes.
 
