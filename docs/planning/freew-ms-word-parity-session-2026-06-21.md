@@ -38,6 +38,7 @@ Current implementation wave:
 - Formalize rendered shell evidence by making `freew/tools/FreeW.RibbonShot` write a `freew_ribbonshot_manifest.json` file beside generated PNG captures.
 - Add Word-style Backstage Save As inline filename and file-type controls backed by FreeW's existing writable adapter catalog and native Save dialog path.
 - Add Word-style Backstage Open recent-document search plus Documents/Folders views backed by FreeW's local recent-files store and native Open dialog path.
+- Add Word-style Backstage Home recent-document rows backed by FreeW's local recent-files store and dirty-gated OpenPath flow.
 
 ## Live Word Comparison Notes
 
@@ -48,7 +49,7 @@ Relevant Word Backstage details from that pass:
 - Open is place-driven: Recent, shared/cloud locations, Quick access, This PC, Add a Place, Browse, plus a main pane with search, Documents/Folders tabs, recent documents, and Recover Unsaved Documents.
 - Save As is place-driven: Recent, OneDrive, Quick access, share options, This PC, Add a Place, Browse, plus filename/type controls and a broad file-type dropdown.
 - Export groups Publishing Features into Create PDF/XPS Document and Change File Type, with document-file and other-file-type choices.
-- Home combines New and Open regions: Blank document and template tiles, More templates, Recent/Favorites/Shared with Me, search, and recent rows. FreeW now backs the local subset with Blank document, Browse, and Recent instead of adding nonfunctional cloud/search/template placeholders.
+- Home combines New and Open regions: Blank document and template tiles, More templates, Recent/Favorites/Shared with Me, search, and recent rows. FreeW now backs the local subset with Blank document, direct recent local document rows, Browse, and a route into the richer Open page instead of adding nonfunctional cloud/search/template placeholders.
 - New is a first-class template page in Word with Blank document, online template search, Office/tenant tabs, category chips, and template pins. FreeW now routes New to its backed Blank document template pane and leaves online/template catalog work in the backlog.
 - Close is a main rail command in Word, above Account and Options, and closes the current document/window. FreeW now wires Close to the existing WPF window close path so the save-before-close prompt is preserved.
 - Save As exposes a broad file-type picker in Word. FreeW now mirrors the backed subset from its writable adapter catalog: Word document/template variants, Word XML, web page/single-file web page, RTF, and plain-text formats; PDF/XPS remain in Export because those are backed by export actions rather than Save As adapters.
@@ -72,6 +73,7 @@ Relevant Word Backstage details from that pass:
 - Rendered FreeW shell evidence is now manifest-backed. `FreeW.RibbonShot <outDir> all 1500 300`, `FreeW.RibbonShot <outDir> backstage 1500 900`, `FreeW.RibbonShot <outDir> backstage:<entry label> 1500 900`, and `FreeW.RibbonShot <outDir> dialog 700 520` each write `freew_ribbonshot_manifest.json` with schema version 1, requested mode, render size, capture count, and per-PNG entries for ribbon tabs, Backstage panes, or the dialog probe.
 - Save As in Word keeps filename and file-type controls visible in Backstage before the native save picker. FreeW now mirrors that backed local subset with a File name textbox, Save as type dropdown sourced from writable adapters, and a Save button that seeds the existing native Save dialog with the chosen name/type before the normal adapter-backed save runs. Cloud locations and Add a Place remain out of scope.
 - Open in Word keeps recent-document search and Documents/Folders views visible in Backstage. FreeW now mirrors that backed local subset with a searchable recent list, a Folders tab derived from recent local document locations, dirty-gated recent-document opening, and a folder row that opens the native file picker rooted at that folder. Cloud/shared locations, Add a Place, and online search remain out of scope.
+- Home in Word shows recent documents on the landing page. FreeW now mirrors the backed local subset by listing recent local documents directly on File > Home, capping the row count so Browse and Open More Documents stay reachable, and routing each row through the same dirty-gated OpenPath flow used by File > Open.
 
 ## Prioritized Parity Backlog
 
