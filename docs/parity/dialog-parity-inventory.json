@@ -7,8 +7,8 @@
                     "totalRoutes":  57,
                     "wpfCaptures":  53,
                     "avaloniaCaptures":  0,
-                    "avaloniaHarnessRoutes":  50,
-                    "sharedOrPresentationBacked":  51
+                    "avaloniaHarnessRoutes":  51,
+                    "sharedOrPresentationBacked":  52
                 },
     "rows":  [
                  {
@@ -432,19 +432,19 @@
                      "displayName":  "Recommended PivotTables",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_recommended_pivottables_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Services\\RecommendedPivotTablesDialogPlanner.cs"
                                                ],
                      "notes":  [
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
