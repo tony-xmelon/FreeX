@@ -7,8 +7,8 @@
                     "totalRoutes":  57,
                     "wpfCaptures":  53,
                     "avaloniaCaptures":  0,
-                    "avaloniaHarnessRoutes":  54,
-                    "sharedOrPresentationBacked":  55
+                    "avaloniaHarnessRoutes":  56,
+                    "sharedOrPresentationBacked":  57
                 },
     "rows":  [
                  {
@@ -1018,7 +1018,7 @@
                      "displayName":  "Open Workbook",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png",
                                          "tools\\foreground-captures\\freex-open-dialog\\freex-open-dialog_20260610_142532.png"
@@ -1026,12 +1026,14 @@
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Services\\WorkbookFileDialogSurfacePlanner.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookFilePickerPlanner.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookOpenIngressPlanner.cs"
                                                ],
                      "notes":  [
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
@@ -1039,7 +1041,7 @@
                      "displayName":  "Save As Workbook",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png",
                                          "tools\\foreground-captures\\freex-save-as-dialog\\freex-save-as-dialog_20260610_142550.png"
@@ -1047,12 +1049,14 @@
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Services\\WorkbookFileDialogSurfacePlanner.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookFilePickerPlanner.cs",
+                                                   "src\\FreeX.App.Services\\WorkbookSaveService.cs"
                                                ],
                      "notes":  [
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
