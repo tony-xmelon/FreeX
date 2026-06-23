@@ -49,6 +49,7 @@ Current implementation wave:
 - Add backed Increase/Decrease List Level choices to Home > Paragraph > Multilevel List.
 - Expand Layout > Line Numbers from a cycle button into a Word-style dropdown with backed None, Continuous, Restart Each Page, and Line Numbering Options entries.
 - Add Word-style Picture Format > Arrange > Wrap Text choices for selected images over FreeW's backed image wrapping model.
+- Add Word-style View > Zoom quick controls for 100%, One Page, and Page Width over FreeW's existing zoom and page-fit paths.
 
 ## Live Word Comparison Notes
 
@@ -76,6 +77,7 @@ Relevant Word Backstage details from that pass:
 - Word exposes list-level changes from Home > Paragraph > Multilevel List. FreeW now surfaces the existing backed Decrease List Level and Increase List Level commands in that dropdown instead of leaving the menu empty.
 - Word exposes concrete line-numbering choices from Layout > Line Numbers instead of a cycling-only command. FreeW now mirrors the backed local subset with None, Continuous, Restart Each Page, and Line Numbering Options entries over the existing page settings, live adorner, print preview, and DOCX round-trip paths.
 - Word exposes selected-picture text wrapping from Picture Format > Arrange > Wrap Text. FreeW now mirrors the backed local subset with In Line with Text, Square, Tight, Top and Bottom, Behind Text, and In Front of Text over the existing image wrapping model and DOCX round-trip paths.
+- Word exposes View > Zoom quick controls beside the Zoom dialog. FreeW now mirrors the backed local subset with Zoom, 100%, One Page, and Page Width over the existing status-bar zoom factor and page-fit math; Multiple Pages remains out of scope until backed by a real multi-page layout mode.
 - Design > Document Formatting includes Style Sets in Word. FreeW now mirrors the backed subset with Office, Simple, Elegant, and Formal presets that rewrite built-in paragraph styles while preserving style IDs and custom styles.
 - Design > Document Formatting includes Effects in Word. FreeW now mirrors the backed subset with Office, Subtle, Moderate, and Intense effect-set presets that update the document theme's `a:fmtScheme`, round-trip through DOCX, and visibly affect FreeW-authored shapes, charts, SmartArt, and WordArt in the live editing surface with heavier object strokes plus Word-style shadow/soft-edge cues.
 - Design > Document Formatting includes Fonts in Word. FreeW now mirrors the backed subset with Office, Cambria, Georgia, and Trebuchet heading/body font-pair presets that update built-in style inheritance while preserving current colours; custom font-pair authoring, script-specific font mappings, and font availability checks remain out of scope.
@@ -98,6 +100,17 @@ Relevant Word Backstage details from that pass:
 3. Continue ruler parity beyond the backed horizontal subset: vertical ruler editing.
 4. Continue Backstage parity beyond the local places, inline Save As, and local Open recent-search slices: cloud/add-place affordances, richer account-backed locations, and online/shared location search.
 5. Keep rendered shell evidence fresh by recapturing manifest-backed `FreeW.RibbonShot` outputs after future Backstage, ribbon, dialog, or Word-parity shell changes.
+
+## Pause Handoff - 2026-06-23
+
+This MS Word parity session landed four focused, backed FreeW UI slices after live Word comparison: Home > Paragraph > Multilevel List level commands, Layout > Line Numbers dropdown modes, Picture Format > Arrange > Wrap Text modes, and View > Zoom quick controls for Zoom, 100%, One Page, and Page Width. The View > Zoom slice also filled direct app-local SVG assets for the visible command families added during this wave so the ribbon does not fall back to generic glyphs.
+
+Useful resume points:
+
+- Re-run a live Word comparison sweep against `C:\Program Files\Microsoft Office\Root\Office16\WINWORD.EXE` and choose the next highest-value backed surface, preferring already-implemented behavior that is hidden or underexposed in FreeW.
+- Keep `Multiple Pages` out of View > Zoom until FreeW has a real multi-page layout mode behind it.
+- Keep fake cloud/account/ink placeholders out of scope; parity work should expose backed local behavior or explicitly document the deferral.
+- Use `freew/tools/FreeW.RibbonShot` for visual evidence after ribbon, Backstage, dialog, or shell changes, and inspect the PNGs for actual rendered layout/overlap.
 
 ## Non-Goals For This Session
 
