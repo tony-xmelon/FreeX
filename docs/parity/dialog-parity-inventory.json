@@ -198,7 +198,7 @@
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-                                                   "src\\FreeX.App.Presentation\\TextToColumns\\CellReferenceInputParser.cs",
+                                                   "src\\FreeX.App.Presentation\\CellReferenceInputParser.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDelimiters.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogResult.cs",
