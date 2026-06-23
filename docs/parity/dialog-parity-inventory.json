@@ -7,8 +7,8 @@
                     "totalRoutes":  57,
                     "wpfCaptures":  53,
                     "avaloniaCaptures":  0,
-                    "avaloniaHarnessRoutes":  47,
-                    "sharedOrPresentationBacked":  48
+                    "avaloniaHarnessRoutes":  48,
+                    "sharedOrPresentationBacked":  49
                 },
     "rows":  [
                  {
@@ -577,19 +577,20 @@
                      "displayName":  "Add Watch",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_add_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Services\\AddWatchDialogPlanner.cs",
+                                                   "src\\FreeX.Core.Commands\\WatchWindowService.cs"
                                                ],
                      "notes":  [
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
@@ -613,7 +614,8 @@
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupDialogModel.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeParser.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeSelectionFormatter.cs",
-                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeSelectionTarget.cs"
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeSelectionTarget.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupSubmissionPlanner.cs"
                                                ],
                      "notes":  [
                                    "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
