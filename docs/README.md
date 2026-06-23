@@ -1,6 +1,6 @@
 # FreeX Documentation
 
-**Last updated:** 2026-06-21
+**Last updated:** 2026-06-23
 
 Use this index as the current documentation map. Point-in-time material lives under `history/` and `archive/`; prefer the newest status snapshot plus the current planning docs when making product or release decisions.
 
@@ -82,6 +82,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [fidelity/2026-06-22-pivottable-native-style-offsets.md](fidelity/2026-06-22-pivottable-native-style-offsets.md) - PivotTable native style offset pass covering Excel `firstDataRow`/`firstDataCol` header and stripe footprint fidelity.
 - [fidelity/2026-06-23-pivottable-theme-font-fidelity.md](fidelity/2026-06-23-pivottable-theme-font-fidelity.md) - PivotTable theme font and style fidelity pass covering loaded style font identity, shared-cache style ownership, `PivotStyleMedium2`/`PivotStyleDark3` palette correction, and local `Aptos Narrow` fallback rendering evidence.
 - [fidelity/2026-06-23-pivottable-layout-group-visual-fidelity.md](fidelity/2026-06-23-pivottable-layout-group-visual-fidelity.md) - PivotTable layout/group visual pass covering repeated row-label gutter alignment, `PivotStyleMedium6` compact group fill, scale-once visual harness rendering, regenerated native Excel corpus evidence, and remaining geometry/text gaps.
+- [fidelity/2026-06-23-pivottable-pause-resume.md](fidelity/2026-06-23-pivottable-pause-resume.md) - PivotTable pause/resume note covering the pushed native corpus baseline, read-only agent findings, remaining visual gaps, and restart checklist.
 - [fidelity/2026-06-19-freew-corpus-feature-growth.md](fidelity/2026-06-19-freew-corpus-feature-growth.md) - current FreeW DOCX corpus expansion note.
 - [fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md](fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md) - XLSX chart/PivotTable corpus expansion note.
 
