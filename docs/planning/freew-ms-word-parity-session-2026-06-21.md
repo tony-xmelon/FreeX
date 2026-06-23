@@ -35,6 +35,7 @@ Current implementation wave:
 - Add Word-style Design > Document Formatting > Paragraph Spacing as backed spacing presets over FreeW's document default and built-in paragraph style catalog, with live preview and DOCX style round-trip through `styles.xml`.
 - Continue Word-style View > Show > Ruler parity by making the horizontal ruler interactive for backed indent markers and simple left tab stops, including Word-style drag-off-ruler tab-stop removal, using FreeW's existing undoable paragraph formatting and tab-stop model paths.
 - Expand Word-style Mailings with backed Start Mail Merge modes for Letters and Directory output, a Normal Word Document session reset, and a visible Edit Recipient List command over FreeW's existing CSV recipient dialog.
+- Formalize rendered shell evidence by making `freew/tools/FreeW.RibbonShot` write a `freew_ribbonshot_manifest.json` file beside generated PNG captures.
 
 ## Live Word Comparison Notes
 
@@ -66,6 +67,7 @@ Relevant Word Backstage details from that pass:
 - Review in Word separates Accessibility, Tracking, Changes, Compare, and Protect into distinct command regions. FreeW now mirrors the backed subset by moving Check Accessibility into its own Accessibility group, keeping Tracking to Track Changes and Reviewing Pane, and exposing Accept This/Accept All plus Reject This/Reject All through Changes dropdowns. Language/Translate, Editor-style cloud proofing, and ink remain out of scope until backed locally.
 - Help in Word exposes product support, feedback, update, About, and legal surfaces. FreeW now mirrors the backed local subset with a FreeW-branded Help tab: guarded Help Online, Feedback, Copy Diagnostics, Check for Updates to the FreeW release workflow, About FreeW, and offline Legal Notices. Microsoft account sign-in, cloud training, Contact Support, and fake updater behavior remain out of scope.
 - Draw in Word is centered on ink tools such as pens, eraser, lasso selection, and ink conversion. FreeW has backed drawing-object creation through Insert for pictures, shapes, text boxes, WordArt, SmartArt, charts, screenshots, equations, and OLE objects, but no backed ink model or pen/eraser/lasso commands yet. Keep those object commands in Insert/contextual tabs and do not add a top-level Draw tab until real ink behavior exists.
+- Rendered FreeW shell evidence is now manifest-backed. `FreeW.RibbonShot <outDir> all 1500 300`, `FreeW.RibbonShot <outDir> backstage 1500 900`, `FreeW.RibbonShot <outDir> backstage:<entry label> 1500 900`, and `FreeW.RibbonShot <outDir> dialog 700 520` each write `freew_ribbonshot_manifest.json` with schema version 1, requested mode, render size, capture count, and per-PNG entries for ribbon tabs, Backstage panes, or the dialog probe.
 
 ## Prioritized Parity Backlog
 
@@ -73,7 +75,7 @@ Relevant Word Backstage details from that pass:
 2. Add more Mailings surfaces only when backed: recipient filtering/sorting, Rules, Address Block/Greeting Line with robust field matching, E-mail Messages, Envelopes, and Labels.
 3. Continue ruler parity beyond the backed horizontal subset: tab selector variants, default tab interval editing, and vertical ruler editing.
 4. Continue Backstage parity beyond the local places slice: cloud/add-place affordances, and richer Save As inline filename/type controls.
-5. Formalize rendered shell evidence using `freew/tools/FreeW.RibbonShot` and document the output manifest.
+5. Keep rendered shell evidence fresh by recapturing manifest-backed `FreeW.RibbonShot` outputs after future Backstage, ribbon, dialog, or Word-parity shell changes.
 
 ## Non-Goals For This Session
 
