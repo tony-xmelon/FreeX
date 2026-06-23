@@ -47,6 +47,7 @@ Current implementation wave:
 - Move backed Show ¶ and Reveal Formatting commands out of View > Show into Word-style Home formatting geography.
 - Compact the status-bar view shortcuts into Word-style icon buttons while preserving tooltips and accessibility names.
 - Add backed Increase/Decrease List Level choices to Home > Paragraph > Multilevel List.
+- Expand Layout > Line Numbers from a cycle button into a Word-style dropdown with backed None, Continuous, Restart Each Page, and Line Numbering Options entries.
 
 ## Live Word Comparison Notes
 
@@ -72,6 +73,7 @@ Relevant Word Backstage details from that pass:
 - Word keeps the paragraph mark toggle with Home > Paragraph rather than View > Show. FreeW now moves Show ¶ to Home > Paragraph and keeps the backed Shift+F1 Reveal Formatting pane visible in the Home formatting area, leaving View > Show focused on Ruler and Navigation Pane.
 - Word's status bar uses compact view shortcut icons instead of full text buttons. FreeW now renders the backed Read Mode, Print Layout, Web Layout, and Draft status-bar shortcuts as fixed-width icon buttons with tooltips and automation names, keeping the View ribbon and status bar state in sync.
 - Word exposes list-level changes from Home > Paragraph > Multilevel List. FreeW now surfaces the existing backed Decrease List Level and Increase List Level commands in that dropdown instead of leaving the menu empty.
+- Word exposes concrete line-numbering choices from Layout > Line Numbers instead of a cycling-only command. FreeW now mirrors the backed local subset with None, Continuous, Restart Each Page, and Line Numbering Options entries over the existing page settings, live adorner, print preview, and DOCX round-trip paths.
 - Design > Document Formatting includes Style Sets in Word. FreeW now mirrors the backed subset with Office, Simple, Elegant, and Formal presets that rewrite built-in paragraph styles while preserving style IDs and custom styles.
 - Design > Document Formatting includes Effects in Word. FreeW now mirrors the backed subset with Office, Subtle, Moderate, and Intense effect-set presets that update the document theme's `a:fmtScheme`, round-trip through DOCX, and visibly affect FreeW-authored shapes, charts, SmartArt, and WordArt in the live editing surface with heavier object strokes plus Word-style shadow/soft-edge cues.
 - Design > Document Formatting includes Fonts in Word. FreeW now mirrors the backed subset with Office, Cambria, Georgia, and Trebuchet heading/body font-pair presets that update built-in style inheritance while preserving current colours; custom font-pair authoring, script-specific font mappings, and font availability checks remain out of scope.
