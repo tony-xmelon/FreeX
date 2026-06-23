@@ -58,7 +58,7 @@ Relevant Word Backstage details from that pass:
 - Share appears between Open and Info in Word's Backstage rail. FreeW now mirrors that placement with backed local actions: saved local documents can reveal their containing folder for sharing, unsaved or missing-path documents route to Save As first, and the pane also offers Save a Copy plus Create PDF/XPS without adding fake cloud sharing.
 - View > Show includes a Ruler toggle in Word. FreeW now mirrors the backed subset by showing a Ruler command in the View > Show group and letting the horizontal ruler add/move simple left tab stops plus drag first-line, left, and right indent markers through existing paragraph formatting commands. Deeper Word ruler surfaces such as the tab selector, default tab interval editing, and vertical ruler editing remain out of scope.
 - Design > Document Formatting includes Style Sets in Word. FreeW now mirrors the backed subset with Office, Simple, Elegant, and Formal presets that rewrite built-in paragraph styles while preserving style IDs and custom styles.
-- Design > Document Formatting includes Effects in Word. FreeW now mirrors the backed subset with Office, Subtle, Moderate, and Intense effect-set presets that update the document theme's `a:fmtScheme` and round-trip through DOCX; applying the selected effect scheme to every future shape/SmartArt/WordArt rendering path remains a follow-up.
+- Design > Document Formatting includes Effects in Word. FreeW now mirrors the backed subset with Office, Subtle, Moderate, and Intense effect-set presets that update the document theme's `a:fmtScheme`, round-trip through DOCX, and visibly affect FreeW-authored shapes, charts, SmartArt, and WordArt in the live editing surface with heavier object strokes plus Word-style shadow/soft-edge cues.
 - Design > Document Formatting includes Fonts in Word. FreeW now mirrors the backed subset with Office, Cambria, Georgia, and Trebuchet heading/body font-pair presets that update built-in style inheritance while preserving current colours; custom font-pair authoring, script-specific font mappings, and font availability checks remain out of scope.
 - Design > Document Formatting includes Paragraph Spacing in Word. FreeW now mirrors the backed subset with No Paragraph Space, Compact, Tight, Open, Relaxed, and Double presets that update document/default style paragraph spacing while preserving fonts, colours, style IDs, custom styles, and direct paragraph overrides.
 - Mailings exposes Start Mail Merge and Edit Recipient List in Word. FreeW now mirrors the backed local subset by offering Letters output, Directory output, Normal Word Document reset, Select Recipients, and Edit Recipient List over the existing mail-merge session and CSV recipient dialog. E-mail messages, envelopes, labels, rules, Address Block, Greeting Line, and recipient filtering/sorting remain out of scope until backed by dedicated generation or field-matching behavior.
@@ -68,11 +68,10 @@ Relevant Word Backstage details from that pass:
 ## Prioritized Parity Backlog
 
 1. Decide whether Draw and Help should appear only after real backing commands exist, or with disabled explanatory affordances.
-2. Consume the selected Design Effects scheme in future shape/SmartArt/WordArt/chart rendering paths.
-3. Add more Mailings surfaces only when backed: recipient filtering/sorting, Rules, Address Block/Greeting Line with robust field matching, E-mail Messages, Envelopes, and Labels.
-4. Continue ruler parity beyond the backed horizontal subset: tab selector variants, default tab interval editing, removal gestures, and vertical ruler editing.
-5. Continue Backstage parity beyond the local places slice: cloud/add-place affordances, and richer Save As inline filename/type controls.
-6. Formalize rendered shell evidence using `freew/tools/FreeW.RibbonShot` and document the output manifest.
+2. Add more Mailings surfaces only when backed: recipient filtering/sorting, Rules, Address Block/Greeting Line with robust field matching, E-mail Messages, Envelopes, and Labels.
+3. Continue ruler parity beyond the backed horizontal subset: tab selector variants, default tab interval editing, removal gestures, and vertical ruler editing.
+4. Continue Backstage parity beyond the local places slice: cloud/add-place affordances, and richer Save As inline filename/type controls.
+5. Formalize rendered shell evidence using `freew/tools/FreeW.RibbonShot` and document the output manifest.
 
 ## Non-Goals For This Session
 
