@@ -614,7 +614,8 @@
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupDialogModel.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeParser.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeSelectionFormatter.cs",
-                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeSelectionTarget.cs"
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeSelectionTarget.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupSubmissionPlanner.cs"
                                                ],
                      "notes":  [
                                    "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
