@@ -41,6 +41,7 @@ Current implementation wave:
 - Add Word-style Backstage Home recent-document rows backed by FreeW's local recent-files store and dirty-gated OpenPath flow.
 - Add Word-style Mailings > Preview Results record navigation buttons backed by FreeW's existing mail-merge preview session.
 - Add Word-style Review > Comments > Show Comments backed by FreeW's actual threaded-comment store.
+- Remove FreeW's duplicate Backstage Recent rail item now that Word-style Home and Open carry backed recent-document flows.
 
 ## Live Word Comparison Notes
 
@@ -76,6 +77,7 @@ Relevant Word Backstage details from that pass:
 - Save As in Word keeps filename and file-type controls visible in Backstage before the native save picker. FreeW now mirrors that backed local subset with a File name textbox, Save as type dropdown sourced from writable adapters, and a Save button that seeds the existing native Save dialog with the chosen name/type before the normal adapter-backed save runs. Cloud locations and Add a Place remain out of scope.
 - Open in Word keeps recent-document search and Documents/Folders views visible in Backstage. FreeW now mirrors that backed local subset with a searchable recent list, a Folders tab derived from recent local document locations, dirty-gated recent-document opening, and a folder row that opens the native file picker rooted at that folder. Cloud/shared locations, Add a Place, and online search remain out of scope.
 - Home in Word shows recent documents on the landing page. FreeW now mirrors the backed local subset by listing recent local documents directly on File > Home, capping the row count so Browse and Open More Documents stay reachable, and routing each row through the same dirty-gated OpenPath flow used by File > Open.
+- Word does not expose a separate Recent rail item in Backstage. FreeW now removes that duplicate rail entry while retaining the legacy shared Recent pane for sibling apps that do not yet have Word-style Home/Open recent-document panes.
 
 ## Prioritized Parity Backlog
 
