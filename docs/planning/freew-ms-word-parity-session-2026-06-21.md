@@ -45,6 +45,7 @@ Current implementation wave:
 - Add Word-style horizontal ruler tab selector variants for Left, Center, Right, and Decimal tab stops over FreeW's existing tab-stop model.
 - Add Word-style default tab-stop interval editing to the Tabs dialog, backed by the document settings model and DOCX `w:defaultTabStop` round-trip.
 - Move backed Show ¶ and Reveal Formatting commands out of View > Show into Word-style Home formatting geography.
+- Compact the status-bar view shortcuts into Word-style icon buttons while preserving tooltips and accessibility names.
 
 ## Live Word Comparison Notes
 
@@ -68,6 +69,7 @@ Relevant Word Backstage details from that pass:
 - Share appears between Open and Info in Word's Backstage rail. FreeW now mirrors that placement with backed local actions: saved local documents can reveal their containing folder for sharing, unsaved or missing-path documents route to Save As first, and the pane also offers Save a Copy plus Create PDF/XPS without adding fake cloud sharing.
 - View > Show includes a Ruler toggle in Word. FreeW now mirrors the backed subset by showing a Ruler command in the View > Show group, letting the horizontal ruler add/move/remove Left, Center, Right, and Decimal tab stops from a Word-style corner tab selector, letting the Tabs dialog edit the document default tab-stop interval, and letting users drag first-line, left, and right indent markers through existing paragraph formatting commands. Deeper Word ruler surfaces such as vertical ruler editing remain out of scope.
 - Word keeps the paragraph mark toggle with Home > Paragraph rather than View > Show. FreeW now moves Show ¶ to Home > Paragraph and keeps the backed Shift+F1 Reveal Formatting pane visible in the Home formatting area, leaving View > Show focused on Ruler and Navigation Pane.
+- Word's status bar uses compact view shortcut icons instead of full text buttons. FreeW now renders the backed Read Mode, Print Layout, Web Layout, and Draft status-bar shortcuts as fixed-width icon buttons with tooltips and automation names, keeping the View ribbon and status bar state in sync.
 - Design > Document Formatting includes Style Sets in Word. FreeW now mirrors the backed subset with Office, Simple, Elegant, and Formal presets that rewrite built-in paragraph styles while preserving style IDs and custom styles.
 - Design > Document Formatting includes Effects in Word. FreeW now mirrors the backed subset with Office, Subtle, Moderate, and Intense effect-set presets that update the document theme's `a:fmtScheme`, round-trip through DOCX, and visibly affect FreeW-authored shapes, charts, SmartArt, and WordArt in the live editing surface with heavier object strokes plus Word-style shadow/soft-edge cues.
 - Design > Document Formatting includes Fonts in Word. FreeW now mirrors the backed subset with Office, Cambria, Georgia, and Trebuchet heading/body font-pair presets that update built-in style inheritance while preserving current colours; custom font-pair authoring, script-specific font mappings, and font availability checks remain out of scope.
