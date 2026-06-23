@@ -8,7 +8,7 @@
                     "wpfCaptures":  53,
                     "avaloniaCaptures":  0,
                     "avaloniaHarnessRoutes":  47,
-                    "sharedOrPresentationBacked":  47
+                    "sharedOrPresentationBacked":  48
                 },
     "rows":  [
                  {
@@ -198,7 +198,7 @@
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-                                                   "src\\FreeX.App.Presentation\\TextToColumns\\CellReferenceInputParser.cs",
+                                                   "src\\FreeX.App.Presentation\\CellReferenceInputParser.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDelimiters.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogResult.cs",
@@ -534,7 +534,7 @@
                      "displayName":  "Evaluate Formula",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_evaluate_after_step.png",
                                          "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_evaluate_default.png"
@@ -544,11 +544,10 @@
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Services\\EvaluateFormulaDialogPlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found.",
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
@@ -634,7 +633,8 @@
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-                                                   "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPaneViewPlanner.cs"
+                                                   "src\\FreeX.App.Services\\SelectionPaneGroupedCommandPlanner.cs",
+                                                   "src\\FreeX.App.Services\\SelectionPanePlanner.cs"
                                                ],
                      "notes":  [
                                    "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
