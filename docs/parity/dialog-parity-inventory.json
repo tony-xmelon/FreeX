@@ -634,7 +634,8 @@
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-                                                   "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPaneViewPlanner.cs"
+                                                   "src\\FreeX.App.Services\\SelectionPaneGroupedCommandPlanner.cs",
+                                                   "src\\FreeX.App.Services\\SelectionPanePlanner.cs"
                                                ],
                      "notes":  [
                                    "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
