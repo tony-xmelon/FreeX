@@ -49,6 +49,14 @@ Current implementation wave:
 - Add backed Increase/Decrease List Level choices to Home > Paragraph > Multilevel List.
 - Expand Layout > Line Numbers from a cycle button into a Word-style dropdown with backed None, Continuous, Restart Each Page, and Line Numbering Options entries.
 - Add Word-style Picture Format > Arrange > Wrap Text choices for selected images over FreeW's backed image wrapping model.
+- Add Word-style View > Zoom quick controls for 100%, One Page, and Page Width over FreeW's existing zoom and page-fit paths.
+- Expand Layout > Columns from a dialog-only command into a Word-style preset dropdown with backed One, Two, Three, Left, Right, and More Columns entries.
+- Back Insert > Pages > Blank Page with a real Word-style blank page insertion instead of leaving the visible command unregistered.
+- Duplicate the backed Cross-reference command into Insert > Links so it appears in Word's Insert command geography as well as References > Captions.
+- Add Layout > Paragraph as a Word-style backed surface for indentation, line spacing, paragraph spacing toggles, Paragraph Settings, and Tabs.
+- Add References > Table of Contents > Add Text as backed TOC level commands over FreeW's existing paragraph style and TOC generation paths.
+- Add References > Index > Update Index as a backed refresh command over FreeW's generated index marker styles.
+- Add References > Citations & Bibliography > Manage Sources as a backed document-local source manager over FreeW's existing bibliography source store and Insert Citation source editor paths.
 
 ## Live Word Comparison Notes
 
@@ -76,6 +84,14 @@ Relevant Word Backstage details from that pass:
 - Word exposes list-level changes from Home > Paragraph > Multilevel List. FreeW now surfaces the existing backed Decrease List Level and Increase List Level commands in that dropdown instead of leaving the menu empty.
 - Word exposes concrete line-numbering choices from Layout > Line Numbers instead of a cycling-only command. FreeW now mirrors the backed local subset with None, Continuous, Restart Each Page, and Line Numbering Options entries over the existing page settings, live adorner, print preview, and DOCX round-trip paths.
 - Word exposes selected-picture text wrapping from Picture Format > Arrange > Wrap Text. FreeW now mirrors the backed local subset with In Line with Text, Square, Tight, Top and Bottom, Behind Text, and In Front of Text over the existing image wrapping model and DOCX round-trip paths.
+- Word exposes View > Zoom quick controls beside the Zoom dialog. FreeW now mirrors the backed local subset with Zoom, 100%, One Page, and Page Width over the existing status-bar zoom factor and page-fit math; Multiple Pages remains out of scope until backed by a real multi-page layout mode.
+- Word exposes Layout > Columns as a preset dropdown. FreeW now mirrors the backed local subset with One, Two, Three, Left, Right, and More Columns entries over the existing multi-column `PageSettings`, live layout, and DOCX `w:cols` round-trip paths.
+- Word exposes Insert > Pages > Blank Page as a sibling of Cover Page and Page Break. FreeW now backs the already-visible Blank Page command by inserting a page-bounded empty span through the existing undoable document block path.
+- Word exposes Cross-reference from Insert > Links. FreeW now duplicates the existing backed `freew.cross-reference` command there while preserving its References > Captions placement.
+- Word exposes a Paragraph group on Layout. FreeW now mirrors the backed local subset there by reusing existing paragraph indentation, line spacing, spacing-before/after, Paragraph Settings, and Tabs commands.
+- Word exposes Add Text beside Table of Contents and Update Table in References. FreeW now mirrors the backed local subset with Do Not Show in Table of Contents plus Level 1, Level 2, and Level 3 commands that apply Normal, Heading 1, Heading 2, or Heading 3 through the same reversible paragraph-style path used by Home > Styles.
+- Word exposes Update Index beside Mark Entry and Insert Index in References. FreeW now mirrors that backed local subset by rebuilding the generated index in place from the existing marked-entry store and `IndexHeading` / `IndexEntry` marker styles.
+- Word exposes Manage Sources between Insert Citation and Style in References > Citations & Bibliography. FreeW now mirrors that placement with a backed current-document source manager for Add, Edit, and Delete over the existing `TextDocument.Sources` list and DOCX bibliography source persistence. Word's global master source list remains out of scope until FreeW has a real app-level source library.
 - Design > Document Formatting includes Style Sets in Word. FreeW now mirrors the backed subset with Office, Simple, Elegant, and Formal presets that rewrite built-in paragraph styles while preserving style IDs and custom styles.
 - Design > Document Formatting includes Effects in Word. FreeW now mirrors the backed subset with Office, Subtle, Moderate, and Intense effect-set presets that update the document theme's `a:fmtScheme`, round-trip through DOCX, and visibly affect FreeW-authored shapes, charts, SmartArt, and WordArt in the live editing surface with heavier object strokes plus Word-style shadow/soft-edge cues.
 - Design > Document Formatting includes Fonts in Word. FreeW now mirrors the backed subset with Office, Cambria, Georgia, and Trebuchet heading/body font-pair presets that update built-in style inheritance while preserving current colours; custom font-pair authoring, script-specific font mappings, and font availability checks remain out of scope.
@@ -99,8 +115,42 @@ Relevant Word Backstage details from that pass:
 4. Continue Backstage parity beyond the local places, inline Save As, and local Open recent-search slices: cloud/add-place affordances, richer account-backed locations, and online/shared location search.
 5. Keep rendered shell evidence fresh by recapturing manifest-backed `FreeW.RibbonShot` outputs after future Backstage, ribbon, dialog, or Word-parity shell changes.
 
+## Pause Handoff - 2026-06-23
+
+This MS Word parity session landed eleven focused, backed FreeW UI slices after live Word comparison: Home > Paragraph > Multilevel List level commands, Layout > Line Numbers dropdown modes, Picture Format > Arrange > Wrap Text modes, View > Zoom quick controls for Zoom, 100%, One Page, and Page Width, Layout > Columns presets for One, Two, Three, Left, Right, and More Columns, Insert > Pages > Blank Page backing, Insert > Links > Cross-reference placement, Layout > Paragraph placement, References > Table of Contents > Add Text level commands, References > Index > Update Index refresh, and References > Citations & Bibliography > Manage Sources. The View > Zoom and Layout > Columns slices also filled direct app-local SVG assets for the visible command families added during this wave so the ribbon does not fall back to generic glyphs.
+
+Two read-only comparison agents completed live Word sweeps before the pause:
+
+- References/Review sweep: Word exposes References > Table of Contents > Add Text, References > Citations & Bibliography > Manage Sources, Footnotes navigation via Next Footnote and Show Notes, Index > Update Index, and Review tracking display controls. FreeW has backing for several adjacent models or commands but lacks these Word-shaped entry points.
+- Insert/Layout/contextual sweep: Word exposes Insert > Pages > Blank Page, Insert > Links > Cross-reference, Layout > Paragraph, Quick Parts as a compact dropdown, and contextual object tabs. FreeW already has some related command/model backing, but several visible surfaces are missing, misplaced, or not yet Word-shaped.
+
+Useful resume points:
+
+- Re-run a live Word comparison sweep against `C:\Program Files\Microsoft Office\Root\Office16\WINWORD.EXE` and choose the next highest-value backed surface, preferring already-implemented behavior that is hidden or underexposed in FreeW.
+- Good next backed candidates are adding References > Footnotes > Next Footnote / Show Notes over the existing note stores, adding Review > Tracking display controls over the existing revision display paths, expanding Layout > Paragraph toward Word's exact numeric indent/spacing boxes when those controls are backed, and continuing Citations & Bibliography beyond the current-document Manage Sources subset only after FreeW has a real app-level source library.
+- Keep `Multiple Pages` out of View > Zoom until FreeW has a real multi-page layout mode behind it.
+- Keep fake cloud/account/ink placeholders out of scope; parity work should expose backed local behavior or explicitly document the deferral.
+- Use `freew/tools/FreeW.RibbonShot` for visual evidence after ribbon, Backstage, dialog, or shell changes, and inspect the PNGs for actual rendered layout/overlap.
+
 ## Non-Goals For This Session
 
 - Do not absorb the other feature-completion session's branch or worktree.
 - Do not rewrite the document rendering engine for true editable pagination in this wave.
 - Do not add placeholder commands that cannot execute or provide useful feedback.
+
+## Pause Checkpoint - 2026-06-23
+
+The final pause cleanup integrated and pushed two additional backed References slices to `main`:
+
+- `08e5c96b4 Add FreeW TOC Add Text surface` exposes References > Table of Contents > Add Text with Do Not Show in Table of Contents plus Level 1, Level 2, and Level 3 commands backed by FreeW's paragraph style path.
+- `1022a772c Add FreeW Update Index surface` exposes References > Index > Update Index, backed by rebuilding the generated index from the existing marked-entry store.
+
+Verification completed for each landed slice before merge. The most recent full lane on the Update Index slice passed repository preflight, `dotnet build FreeX.slnx --configuration Release`, and `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` with 16,635 passing tests after rerunning one noisy perf-threshold failure.
+
+The next slice was only staged for exploration, not implemented. The temporary `codex/freew-manage-sources` worktree was created from `1022a772c`, and a read-only agent was started to compare Word's References > Citations & Bibliography > Manage Sources surface with FreeW's bibliography source model. The pause request arrived before that agent returned useful findings, so no Manage Sources code should be assumed to exist.
+
+Resume by starting from clean `main` at or after `1022a772c`, then create a fresh isolated worktree. The highest-value next backed candidates remain:
+
+- References > Footnotes > Next Footnote / Show Notes over the existing note stores.
+- Review > Tracking display controls over the existing revision display paths.
+- Layout > Paragraph numeric indent and spacing boxes, provided they are wired to real paragraph formatting state.

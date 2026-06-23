@@ -4,9 +4,10 @@ Scope: Windows-only local PivotTable parity against desktop Microsoft Excel. Ext
 
 ## Current integrated state
 
-- `main` is integrated through merge commit `4ac5a45f7` (`Merge native PivotTable corpus gaps`) and was pushed to `origin/main`.
+- `main` is integrated through commit `344232324` (`Improve PivotTable Medium13 tabular styling`) and was pushed to `origin/main`.
 - The native Excel-authored PivotTable corpus is expanded from 10 to 16 workbooks.
 - The expanded corpus generated, saved, reopened, and visually compared successfully.
+- The visual harness now writes machine-readable `metrics.json` files next to the existing report text.
 - The current result is not 100% visual fidelity. It is a strong structural baseline: all 16 generated native PivotTable workbooks rendered with exact Excel-vs-FreeX image dimensions and the visual compare tool returned exit code `0` for every case.
 
 ## Integrated corpus growth
@@ -22,6 +23,20 @@ The committed corpus now covers:
 
 The generator keeps `show_items_no_data_004` Excel-authored, then patches `xl/pivotTables/pivotTable1.xml` to add `showEmptyRow="1"` because Office COM did not expose a reliable `ShowItemsWithNoDataOnRows` setter in this environment.
 
+## Integrated fidelity work since the first pause note
+
+- `4ce2982fe` (`Add PivotTable visual metrics JSON`): added `metrics.json` output to `FreeX.SheetGridImageCompare`, guarded the smoke-report schema, and produced a 16-case metrics baseline.
+- `e1e7171be` (`Improve PivotTable compact row labels`): reserved Excel-style expand/collapse gutter space for compact child row labels without drawing child buttons.
+- `344232324` (`Improve PivotTable Medium13 tabular styling`): applied `PivotStyleMedium13` body grid rules and loaded tabular outer row-label styling for repeated first row-field labels.
+
+Evidence roots:
+
+```text
+C:\Users\ali\freex-xlsx-verify\visual\pivot-metrics-json-20260623\full
+C:\Users\ali\freex-xlsx-verify\visual\pivot-compact-label-fidelity-20260623\full
+C:\Users\ali\freex-xlsx-verify\visual\pivot-loaded-style-text-20260623\full
+```
+
 ## Last verified evidence
 
 Excel smoke generation and save/reopen:
@@ -32,22 +47,48 @@ dotnet run --project tools\FreeX.ExcelOpenSmoke\FreeX.ExcelOpenSmoke.csproj -c R
 
 Outcome: `PASS: Excel validated 16/16 workbook(s)`.
 
-Visual evidence root:
+Original corpus-growth visual evidence root:
 
 ```text
 C:\Users\ali\freex-xlsx-verify\visual\pivot-native-corpus-gaps-20260623b\full
 ```
 
-Visual outcome: 16/16 comparisons exited `0`; every case had exact Excel-vs-FreeX PNG dimensions.
+Latest visual evidence root:
 
-Largest remaining diffs:
+```text
+C:\Users\ali\freex-xlsx-verify\visual\pivot-loaded-style-text-20260623\full
+```
 
-| Case | Diff | Exact dimensions | Exact pixel metrics |
-| --- | ---: | --- | --- |
-| `subtotal_grand_totals_004` | 8.7% | 747x530 | mean 9.691%, changed>8 50.61% |
-| `show_items_no_data_004` | 7.9% | 512x482 | mean 10.602%, changed>8 39.31% |
-| `date_grouping_003` | 7.0% | 371x218 | mean 9.572%, changed>8 22.34% |
-| `layout_options_002` | 6.6% | 713x314 | mean 12.128%, changed>8 73.89% |
+Latest visual outcome: 16/16 comparisons exited `0`; every case had exact Excel-vs-FreeX PNG dimensions.
+
+Latest ranked visual metrics:
+
+| Case | Fallback mean diff | Exact mean diff | Changed pixels | Dimension mismatches |
+| --- | ---: | ---: | ---: | ---: |
+| `subtotal_grand_totals_004` | 7.2025% | 8.0647% | 31.88% | 0 |
+| `layout_options_002` | 6.4298% | 12.0053% | 73.82% | 0 |
+| `date_grouping_003` | 6.4129% | 8.8561% | 19.84% | 0 |
+| `show_items_no_data_004` | 6.1368% | 8.2908% | 18.66% | 0 |
+| `named_range_source_004` | 5.9830% | 14.3672% | 48.26% | 0 |
+| `basic_row_column_001` | 5.4726% | 12.3692% | 23.29% | 0 |
+| `chrome_style_flags_004` | 5.4038% | 14.6442% | 58.03% | 0 |
+| `layout_matrix_004` | 4.7904% | 11.6374% | 40.77% | 0 |
+| `table_source_filters_001` | 4.3522% | 13.2684% | 33.92% | 0 |
+| `grouping_show_values_001` | 4.1474% | 10.5120% | 47.92% | 0 |
+| `report_filters_001` | 3.6842% | 10.3939% | 23.45% | 0 |
+| `filters_sorts_002` | 3.2170% | 11.9698% | 36.27% | 0 |
+| `show_values_as_variants_004` | 2.5840% | 9.8219% | 22.70% | 0 |
+| `slicer_timeline_001` | 2.3562% | 8.3122% | 38.54% | 0 |
+| `calculated_field_item_003` | 2.1645% | 9.4053% | 24.77% | 0 |
+| `multiple_pivots_one_cache_001` | 1.9556% | 7.2527% | 22.22% | 0 |
+
+Measured improvements from the latest two fidelity slices:
+
+| Case | Baseline fallback mean | Current fallback mean | Baseline exact mean | Current exact mean |
+| --- | ---: | ---: | ---: | ---: |
+| `date_grouping_003` | 6.8965% | 6.4129% | 9.4397% | 8.8561% |
+| `layout_options_002` | 6.6075% | 6.4298% | 12.1284% | 12.0053% |
+| `layout_matrix_004` | 4.8986% | 4.7904% | 11.8461% | 11.6374% |
 
 Focused checks that passed before integration:
 
@@ -59,7 +100,14 @@ dotnet build FreeX.slnx --configuration Release
 dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"
 ```
 
-Default test aggregate at integration time: `files=13 total=16769 executed=16638 passed=16638 failed=0 notExecuted=0`.
+Latest default-lane aggregate at integration time: `Total=16766 Executed=16635 Passed=16635 Failed=0 NotExecuted=0`.
+
+Note: one aggregate default-lane run hit the known `CommentNavigationPlannerTests.NextComment_UsesIndexedLookupForLargeOrderedLists` timing flake by 4 ms. The exact focused test passed in 95 ms, then the full default lane passed cleanly on rerun.
+
+## Reverted experiments
+
+- A compact text-metrics experiment was reverted before integration because it did not produce a durable visual win.
+- A `PivotStyleMedium12` grand-total fill/border adjustment was reverted before integration because it worsened `subtotal_grand_totals_004` from 7.2025% to 7.3813% fallback mean diff.
 
 ## Read-only agent findings preserved for resume
 
@@ -86,13 +134,20 @@ Specific likely files:
 ## Resume checklist
 
 1. Start a fresh isolated worktree from current `origin/main`.
-2. Re-open the visual evidence for `subtotal_grand_totals_004`:
+2. Re-open the latest visual evidence for `subtotal_grand_totals_004`:
 
 ```text
-C:\Users\ali\freex-xlsx-verify\visual\pivot-native-corpus-gaps-20260623b\full\subtotal_grand_totals_004
+C:\Users\ali\freex-xlsx-verify\visual\pivot-loaded-style-text-20260623\full\subtotal_grand_totals_004
 ```
 
 3. Compare `excel\excel_01_Pivot_Totals_NativePivotSubtotalGrandTotals.png`, `freex\freex_01_Pivot_Totals_NativePivotSubtotalGrandTotals.png`, and `freex\worst_01.png`.
 4. Implement one focused visual fix and rerun `FreeX.SheetGridImageCompare` for that workbook first.
 5. Broaden to the 16-workbook native corpus only after the focused case improves without regressions.
 6. Keep external connections, Data Model, and OLAP excluded from this goal.
+
+Preferred next targets:
+
+- `subtotal_grand_totals_004`: text weight/rasterization, subtotal/grand-total chrome, and field-button details.
+- `date_grouping_003`: compact date-grouping geometry/text and button chrome.
+- `show_items_no_data_004` and `named_range_source_004`: loaded native style/chrome and typography differences.
+- `layout_options_002`: remaining font rasterization, field-button chrome, and residual grid/fill details.
