@@ -129,6 +129,11 @@ Outcome: passed.
 - A compact text-metrics experiment was reverted before integration because it did not produce a durable visual win.
 - A `PivotStyleMedium12` grand-total fill/border adjustment was reverted before integration because it worsened `subtotal_grand_totals_004`.
 - A trial preference for `Arial Narrow` as the missing `Aptos Narrow` fallback worsened the focused `subtotal_grand_totals_004` evidence and was not kept.
+- A `PivotStyleLight14`/header-flag experiment was reverted on the `chrome_style_flags_004` resume slice. It added an Office green Light14 palette and applied bold/border styling to headers whose fill flags were disabled; focused style tests passed (`157` passed, `1` skipped), but the visual compare worsened `chrome_style_flags_004` from `5.4038%` fallback mean / `14.6442%` exact mean to `5.9980%` fallback mean / `16.0801%` exact mean. Evidence:
+
+```text
+C:\Users\ali\freex-xlsx-verify\visual\pivot-light14-chrome-20260623\focused
+```
 
 ## Read-only investigation findings preserved for resume
 
@@ -138,6 +143,7 @@ No read-only agent made code changes; agents were closed after reporting finding
 - Current WPF fallback for `ResolveCellFontForDisplay("Aptos Narrow")` is `Calibri` with condensed stretch. That is better than the rejected `Arial Narrow` experiment for the latest focused case.
 - Pivot field buttons are overlay rectangles/glyphs, not normal cell style fills. Residual chrome differences are concentrated in dropdown geometry, glyph size, and text padding.
 - `chrome_style_flags_004` remains the largest exact-mean residual, while `layout_options_002`, `date_grouping_003`, and `subtotal_grand_totals_004` remain the highest fallback-mean residuals.
+- The rejected Light14 experiment showed that simply matching the obvious green palette is not enough: it reduced changed-pixel coverage for `chrome_style_flags_004` but increased mean color error, because the remaining mismatch is a combined style/font/line-weight problem. Resume should isolate one layer at a time, preferably with a small harness or image crop around `A3:E9`.
 
 Likely files:
 
