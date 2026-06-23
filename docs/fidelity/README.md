@@ -16,6 +16,8 @@ Durable outcome notes live in the dated files in this folder. Current workbook-f
 
 Latest PivotTable slice: [2026-06-23-pivottable-outline-parent-style-fidelity.md](2026-06-23-pivottable-outline-parent-style-fidelity.md) records loaded native outline parent-row group-band fidelity and the current 16-case visual ranking.
 
+Latest Linux dialog parity handoff: [2026-06-23-linux-dialog-parity-pause-handoff.md](2026-06-23-linux-dialog-parity-pause-handoff.md) records the 57/57 dialog deduplication state, the 9 landed visual-alignment batches, validation evidence, and the next dialog targets.
+
 ## Current FreeW Coverage
 
 FreeW fidelity uses the on-demand corpus in [../../freew-fidelity-corpus/README.md](../../freew-fidelity-corpus/README.md). The committed manifest currently has 134 redistributable rows and is guarded by `freew/FreeW.Core.IO.Tests/FreeWFidelityCorpusManifestTests.cs`; downloaded document binaries and run outputs stay ignored.
