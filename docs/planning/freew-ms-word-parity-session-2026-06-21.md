@@ -105,11 +105,17 @@ Relevant Word Backstage details from that pass:
 
 ## Pause Handoff - 2026-06-23
 
-This MS Word parity session landed four focused, backed FreeW UI slices after live Word comparison: Home > Paragraph > Multilevel List level commands, Layout > Line Numbers dropdown modes, Picture Format > Arrange > Wrap Text modes, and View > Zoom quick controls for Zoom, 100%, One Page, and Page Width. The View > Zoom slice also filled direct app-local SVG assets for the visible command families added during this wave so the ribbon does not fall back to generic glyphs.
+This MS Word parity session landed five focused, backed FreeW UI slices after live Word comparison: Home > Paragraph > Multilevel List level commands, Layout > Line Numbers dropdown modes, Picture Format > Arrange > Wrap Text modes, View > Zoom quick controls for Zoom, 100%, One Page, and Page Width, and Layout > Columns presets for One, Two, Three, Left, Right, and More Columns. The View > Zoom and Layout > Columns slices also filled direct app-local SVG assets for the visible command families added during this wave so the ribbon does not fall back to generic glyphs.
+
+Two read-only comparison agents completed live Word sweeps before the pause:
+
+- References/Review sweep: Word exposes References > Table of Contents > Add Text, References > Citations & Bibliography > Manage Sources, Footnotes navigation via Next Footnote and Show Notes, Index > Update Index, and Review tracking display controls. FreeW has backing for several adjacent models or commands but lacks these Word-shaped entry points.
+- Insert/Layout/contextual sweep: Word exposes Insert > Pages > Blank Page, Insert > Links > Cross-reference, Layout > Paragraph, Quick Parts as a compact dropdown, and contextual object tabs. FreeW already has some related command/model backing, but several visible surfaces are missing, misplaced, or not yet Word-shaped.
 
 Useful resume points:
 
 - Re-run a live Word comparison sweep against `C:\Program Files\Microsoft Office\Root\Office16\WINWORD.EXE` and choose the next highest-value backed surface, preferring already-implemented behavior that is hidden or underexposed in FreeW.
+- Good next backed candidates are Insert > Pages > Blank Page command registration, duplicating backed Cross-reference into Insert > Links, adding References > Table of Contents > Add Text as style-level commands, adding Layout > Paragraph using existing indent/spacing/tabs paths, and adding References > Index > Update Index over the existing generated index model.
 - Keep `Multiple Pages` out of View > Zoom until FreeW has a real multi-page layout mode behind it.
 - Keep fake cloud/account/ink placeholders out of scope; parity work should expose backed local behavior or explicitly document the deferral.
 - Use `freew/tools/FreeW.RibbonShot` for visual evidence after ribbon, Backstage, dialog, or shell changes, and inspect the PNGs for actual rendered layout/overlap.
