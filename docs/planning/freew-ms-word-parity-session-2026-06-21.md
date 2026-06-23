@@ -135,3 +135,21 @@ Useful resume points:
 - Do not absorb the other feature-completion session's branch or worktree.
 - Do not rewrite the document rendering engine for true editable pagination in this wave.
 - Do not add placeholder commands that cannot execute or provide useful feedback.
+
+## Pause Checkpoint - 2026-06-23
+
+The final pause cleanup integrated and pushed two additional backed References slices to `main`:
+
+- `08e5c96b4 Add FreeW TOC Add Text surface` exposes References > Table of Contents > Add Text with Do Not Show in Table of Contents plus Level 1, Level 2, and Level 3 commands backed by FreeW's paragraph style path.
+- `1022a772c Add FreeW Update Index surface` exposes References > Index > Update Index, backed by rebuilding the generated index from the existing marked-entry store.
+
+Verification completed for each landed slice before merge. The most recent full lane on the Update Index slice passed repository preflight, `dotnet build FreeX.slnx --configuration Release`, and `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` with 16,635 passing tests after rerunning one noisy perf-threshold failure.
+
+The next slice was only staged for exploration, not implemented. The temporary `codex/freew-manage-sources` worktree was created from `1022a772c`, and a read-only agent was started to compare Word's References > Citations & Bibliography > Manage Sources surface with FreeW's bibliography source model. The pause request arrived before that agent returned useful findings, so no Manage Sources code should be assumed to exist.
+
+Resume by starting from clean `main` at or after `1022a772c`, then create a fresh isolated worktree. The highest-value next backed candidates remain:
+
+- References > Citations & Bibliography > Manage Sources over the existing source model and Insert Citation source editor paths.
+- References > Footnotes > Next Footnote / Show Notes over the existing note stores.
+- Review > Tracking display controls over the existing revision display paths.
+- Layout > Paragraph numeric indent and spacing boxes, provided they are wired to real paragraph formatting state.
