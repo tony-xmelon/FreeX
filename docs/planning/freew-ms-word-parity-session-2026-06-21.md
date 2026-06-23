@@ -37,6 +37,7 @@ Current implementation wave:
 - Expand Word-style Mailings with backed Start Mail Merge modes for Letters and Directory output, a Normal Word Document session reset, and a visible Edit Recipient List command over FreeW's existing CSV recipient dialog.
 - Formalize rendered shell evidence by making `freew/tools/FreeW.RibbonShot` write a `freew_ribbonshot_manifest.json` file beside generated PNG captures.
 - Add Word-style Backstage Save As inline filename and file-type controls backed by FreeW's existing writable adapter catalog and native Save dialog path.
+- Add Word-style Backstage Open recent-document search plus Documents/Folders views backed by FreeW's local recent-files store and native Open dialog path.
 
 ## Live Word Comparison Notes
 
@@ -70,13 +71,14 @@ Relevant Word Backstage details from that pass:
 - Draw in Word is centered on ink tools such as pens, eraser, lasso selection, and ink conversion. FreeW has backed drawing-object creation through Insert for pictures, shapes, text boxes, WordArt, SmartArt, charts, screenshots, equations, and OLE objects, but no backed ink model or pen/eraser/lasso commands yet. Keep those object commands in Insert/contextual tabs and do not add a top-level Draw tab until real ink behavior exists.
 - Rendered FreeW shell evidence is now manifest-backed. `FreeW.RibbonShot <outDir> all 1500 300`, `FreeW.RibbonShot <outDir> backstage 1500 900`, `FreeW.RibbonShot <outDir> backstage:<entry label> 1500 900`, and `FreeW.RibbonShot <outDir> dialog 700 520` each write `freew_ribbonshot_manifest.json` with schema version 1, requested mode, render size, capture count, and per-PNG entries for ribbon tabs, Backstage panes, or the dialog probe.
 - Save As in Word keeps filename and file-type controls visible in Backstage before the native save picker. FreeW now mirrors that backed local subset with a File name textbox, Save as type dropdown sourced from writable adapters, and a Save button that seeds the existing native Save dialog with the chosen name/type before the normal adapter-backed save runs. Cloud locations and Add a Place remain out of scope.
+- Open in Word keeps recent-document search and Documents/Folders views visible in Backstage. FreeW now mirrors that backed local subset with a searchable recent list, a Folders tab derived from recent local document locations, dirty-gated recent-document opening, and a folder row that opens the native file picker rooted at that folder. Cloud/shared locations, Add a Place, and online search remain out of scope.
 
 ## Prioritized Parity Backlog
 
 1. Keep Draw hidden until real ink backing exists; do not add placeholder pen, eraser, lasso, ink replay, ink-to-shape, or ink-to-math commands.
 2. Add more Mailings surfaces only when backed: recipient filtering/sorting, Rules, Address Block/Greeting Line with robust field matching, E-mail Messages, Envelopes, and Labels.
 3. Continue ruler parity beyond the backed horizontal subset: tab selector variants, default tab interval editing, and vertical ruler editing.
-4. Continue Backstage parity beyond the local places and inline Save As slice: cloud/add-place affordances, richer recent/location search, and any future account-backed save locations.
+4. Continue Backstage parity beyond the local places, inline Save As, and local Open recent-search slices: cloud/add-place affordances, richer account-backed locations, and online/shared location search.
 5. Keep rendered shell evidence fresh by recapturing manifest-backed `FreeW.RibbonShot` outputs after future Backstage, ribbon, dialog, or Word-parity shell changes.
 
 ## Non-Goals For This Session
