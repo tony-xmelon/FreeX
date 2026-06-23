@@ -50,6 +50,7 @@ Current implementation wave:
 - Expand Layout > Line Numbers from a cycle button into a Word-style dropdown with backed None, Continuous, Restart Each Page, and Line Numbering Options entries.
 - Add Word-style Picture Format > Arrange > Wrap Text choices for selected images over FreeW's backed image wrapping model.
 - Add Word-style View > Zoom quick controls for 100%, One Page, and Page Width over FreeW's existing zoom and page-fit paths.
+- Expand Layout > Columns from a dialog-only command into a Word-style preset dropdown with backed One, Two, Three, Left, Right, and More Columns entries.
 
 ## Live Word Comparison Notes
 
@@ -78,6 +79,7 @@ Relevant Word Backstage details from that pass:
 - Word exposes concrete line-numbering choices from Layout > Line Numbers instead of a cycling-only command. FreeW now mirrors the backed local subset with None, Continuous, Restart Each Page, and Line Numbering Options entries over the existing page settings, live adorner, print preview, and DOCX round-trip paths.
 - Word exposes selected-picture text wrapping from Picture Format > Arrange > Wrap Text. FreeW now mirrors the backed local subset with In Line with Text, Square, Tight, Top and Bottom, Behind Text, and In Front of Text over the existing image wrapping model and DOCX round-trip paths.
 - Word exposes View > Zoom quick controls beside the Zoom dialog. FreeW now mirrors the backed local subset with Zoom, 100%, One Page, and Page Width over the existing status-bar zoom factor and page-fit math; Multiple Pages remains out of scope until backed by a real multi-page layout mode.
+- Word exposes Layout > Columns as a preset dropdown. FreeW now mirrors the backed local subset with One, Two, Three, Left, Right, and More Columns entries over the existing multi-column `PageSettings`, live layout, and DOCX `w:cols` round-trip paths.
 - Design > Document Formatting includes Style Sets in Word. FreeW now mirrors the backed subset with Office, Simple, Elegant, and Formal presets that rewrite built-in paragraph styles while preserving style IDs and custom styles.
 - Design > Document Formatting includes Effects in Word. FreeW now mirrors the backed subset with Office, Subtle, Moderate, and Intense effect-set presets that update the document theme's `a:fmtScheme`, round-trip through DOCX, and visibly affect FreeW-authored shapes, charts, SmartArt, and WordArt in the live editing surface with heavier object strokes plus Word-style shadow/soft-edge cues.
 - Design > Document Formatting includes Fonts in Word. FreeW now mirrors the backed subset with Office, Cambria, Georgia, and Trebuchet heading/body font-pair presets that update built-in style inheritance while preserving current colours; custom font-pair authoring, script-specific font mappings, and font availability checks remain out of scope.
