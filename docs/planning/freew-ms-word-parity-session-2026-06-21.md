@@ -55,6 +55,7 @@ Current implementation wave:
 - Duplicate the backed Cross-reference command into Insert > Links so it appears in Word's Insert command geography as well as References > Captions.
 - Add Layout > Paragraph as a Word-style backed surface for indentation, line spacing, paragraph spacing toggles, Paragraph Settings, and Tabs.
 - Add References > Table of Contents > Add Text as backed TOC level commands over FreeW's existing paragraph style and TOC generation paths.
+- Add References > Index > Update Index as a backed refresh command over FreeW's generated index marker styles.
 
 ## Live Word Comparison Notes
 
@@ -88,6 +89,7 @@ Relevant Word Backstage details from that pass:
 - Word exposes Cross-reference from Insert > Links. FreeW now duplicates the existing backed `freew.cross-reference` command there while preserving its References > Captions placement.
 - Word exposes a Paragraph group on Layout. FreeW now mirrors the backed local subset there by reusing existing paragraph indentation, line spacing, spacing-before/after, Paragraph Settings, and Tabs commands.
 - Word exposes Add Text beside Table of Contents and Update Table in References. FreeW now mirrors the backed local subset with Do Not Show in Table of Contents plus Level 1, Level 2, and Level 3 commands that apply Normal, Heading 1, Heading 2, or Heading 3 through the same reversible paragraph-style path used by Home > Styles.
+- Word exposes Update Index beside Mark Entry and Insert Index in References. FreeW now mirrors that backed local subset by rebuilding the generated index in place from the existing marked-entry store and `IndexHeading` / `IndexEntry` marker styles.
 - Design > Document Formatting includes Style Sets in Word. FreeW now mirrors the backed subset with Office, Simple, Elegant, and Formal presets that rewrite built-in paragraph styles while preserving style IDs and custom styles.
 - Design > Document Formatting includes Effects in Word. FreeW now mirrors the backed subset with Office, Subtle, Moderate, and Intense effect-set presets that update the document theme's `a:fmtScheme`, round-trip through DOCX, and visibly affect FreeW-authored shapes, charts, SmartArt, and WordArt in the live editing surface with heavier object strokes plus Word-style shadow/soft-edge cues.
 - Design > Document Formatting includes Fonts in Word. FreeW now mirrors the backed subset with Office, Cambria, Georgia, and Trebuchet heading/body font-pair presets that update built-in style inheritance while preserving current colours; custom font-pair authoring, script-specific font mappings, and font availability checks remain out of scope.
@@ -113,7 +115,7 @@ Relevant Word Backstage details from that pass:
 
 ## Pause Handoff - 2026-06-23
 
-This MS Word parity session landed nine focused, backed FreeW UI slices after live Word comparison: Home > Paragraph > Multilevel List level commands, Layout > Line Numbers dropdown modes, Picture Format > Arrange > Wrap Text modes, View > Zoom quick controls for Zoom, 100%, One Page, and Page Width, Layout > Columns presets for One, Two, Three, Left, Right, and More Columns, Insert > Pages > Blank Page backing, Insert > Links > Cross-reference placement, Layout > Paragraph placement, and References > Table of Contents > Add Text level commands. The View > Zoom and Layout > Columns slices also filled direct app-local SVG assets for the visible command families added during this wave so the ribbon does not fall back to generic glyphs.
+This MS Word parity session landed ten focused, backed FreeW UI slices after live Word comparison: Home > Paragraph > Multilevel List level commands, Layout > Line Numbers dropdown modes, Picture Format > Arrange > Wrap Text modes, View > Zoom quick controls for Zoom, 100%, One Page, and Page Width, Layout > Columns presets for One, Two, Three, Left, Right, and More Columns, Insert > Pages > Blank Page backing, Insert > Links > Cross-reference placement, Layout > Paragraph placement, References > Table of Contents > Add Text level commands, and References > Index > Update Index refresh. The View > Zoom and Layout > Columns slices also filled direct app-local SVG assets for the visible command families added during this wave so the ribbon does not fall back to generic glyphs.
 
 Two read-only comparison agents completed live Word sweeps before the pause:
 
@@ -123,7 +125,7 @@ Two read-only comparison agents completed live Word sweeps before the pause:
 Useful resume points:
 
 - Re-run a live Word comparison sweep against `C:\Program Files\Microsoft Office\Root\Office16\WINWORD.EXE` and choose the next highest-value backed surface, preferring already-implemented behavior that is hidden or underexposed in FreeW.
-- Good next backed candidates are adding References > Index > Update Index over the existing generated index model, adding References > Citations & Bibliography > Manage Sources over the existing source model, adding References > Footnotes > Next Footnote / Show Notes over the existing note stores, and expanding Layout > Paragraph toward Word's exact numeric indent/spacing boxes when those controls are backed.
+- Good next backed candidates are adding References > Citations & Bibliography > Manage Sources over the existing source model, adding References > Footnotes > Next Footnote / Show Notes over the existing note stores, adding Review > Tracking display controls over the existing revision display paths, and expanding Layout > Paragraph toward Word's exact numeric indent/spacing boxes when those controls are backed.
 - Keep `Multiple Pages` out of View > Zoom until FreeW has a real multi-page layout mode behind it.
 - Keep fake cloud/account/ink placeholders out of scope; parity work should expose backed local behavior or explicitly document the deferral.
 - Use `freew/tools/FreeW.RibbonShot` for visual evidence after ribbon, Backstage, dialog, or shell changes, and inspect the PNGs for actual rendered layout/overlap.
