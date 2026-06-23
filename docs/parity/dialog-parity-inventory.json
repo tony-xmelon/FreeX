@@ -782,6 +782,8 @@
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\Charts\\AxisScale.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\ChartDialogValueParser.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\ChartInputParser.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\ChartInsertionPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\ChartLayout.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\ChartLayoutEngine.cs",
