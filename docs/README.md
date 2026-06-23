@@ -87,6 +87,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [fidelity/2026-06-23-pivottable-outline-parent-style-fidelity.md](fidelity/2026-06-23-pivottable-outline-parent-style-fidelity.md) - PivotTable outline parent-row style pass covering loaded native outline group bands, 16-case visual evidence, and remaining text/chrome gaps.
 - [fidelity/2026-06-23-pivottable-text-metrics-experiment-handoff.md](fidelity/2026-06-23-pivottable-text-metrics-experiment-handoff.md) - PivotTable pause handoff after reverted compact text-metrics and Medium13 border experiments, with resume targets and exact visual evidence paths.
 - [fidelity/2026-06-23-pivottable-visual-metrics-json.md](fidelity/2026-06-23-pivottable-visual-metrics-json.md) - PivotTable visual harness pass adding machine-readable `metrics.json` output and a current 16-case native PivotTable metrics ranking.
+- [fidelity/2026-06-23-pivottable-compact-label-fidelity.md](fidelity/2026-06-23-pivottable-compact-label-fidelity.md) - PivotTable compact row-label fidelity pause note covering child-label gutter reservation, 16-case visual deltas, evidence roots, verification, and remaining non-external gaps.
 - [fidelity/2026-06-19-freew-corpus-feature-growth.md](fidelity/2026-06-19-freew-corpus-feature-growth.md) - current FreeW DOCX corpus expansion note.
 - [fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md](fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md) - XLSX chart/PivotTable corpus expansion note.
 
