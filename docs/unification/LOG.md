@@ -4,6 +4,34 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
+## FreeX/Avalonia picture insertion placement planner — ✅ DONE (dedup slice)
+
+**Branch:** `codex/picture-insertion-placement-dedup-20260623`; implementation commit message: `Share picture insertion placement planning`.
+
+**Goal.** Make picture/object insertion placement a shared application-service decision instead of keeping one WPF-only planner plus an Avalonia-local copy of the same width/height fallback and command-building rules. The renderer should only decode native image dimensions; command placement should be common.
+
+**What changed.**
+
+- **New shared `PictureInsertionPlacementPlanner`** in `FreeX.App.Services`: normalizes optional native image dimensions, preserves the existing default picture size fallback, and delegates the final `InsertPictureCommandFactory.Build(...)` call. This makes "where and how large should this inserted picture be?" a shared rule for WPF, Avalonia, and future workareas.
+- **WPF is now a thin renderer adapter.** `MainWindow.Drawing.cs` and screenshot-tour insert-object persistence keep the WPF-specific `ImageDimensionDecoder` boundary, then pass the decoded `PictureInsertionSize` into the shared planner. The WPF-only `InsertObjectPlacementPlanner` was removed.
+- **Avalonia now uses the same planner.** `MainWindow.InsertObjects.cs` returns the same shared `PictureInsertionSize` model from its decoder and routes both Insert Picture and object placeholder/image flows through `PictureInsertionPlacementPlanner`, removing the Avalonia-local fallback/build duplication.
+- **Tests moved to the shared layer.** The WPF-only planner tests became `FreeX.App.Services.Tests/PictureInsertionPlacementPlannerTests.cs`; the duplicate Avalonia `InsertPictureCommandFactory` tests were removed because the shared factory is already covered in `FreeX.App.Services.Tests`.
+
+**What deliberately stayed platform/app-specific.** Native image dimension decoding, file/object picker UI, screenshot-tour orchestration, and command execution/refresh remain in their owning WPF or Avalonia layers. The shared planner owns only portable placement decisions and command construction.
+
+**Verification.**
+
+- `dotnet build FreeX.slnx --configuration Release`
+- `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1`
+- `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests-picture-placement-cd72.trx"`
+- `dotnet test FreeX.UiTests.slnx --configuration Release --no-build --logger "trx;LogFileName=ui-tests-picture-placement-cd72-rerun.trx"`
+- Combined current-main gate: 22,248 total / 22,062 passed / 0 failed / 186 skipped.
+- WPF parity-capture comparison against the current `main` build before merge: 77 PNGs plus `manifest.json` on each side, 0 missing files, 0 hash differences.
+
+**Decision / note.** This slice intentionally shares the command-planning rule without pulling renderer image APIs into shared code. That keeps the future sister-app contract narrow: provide optional native dimensions and the selected sheet/cell, then let shared services produce the insert command.
+
+---
+
 ## P5 — Shared test-support (parameterized source/locator helpers) + screenshot-tour render primitives — ✅ DONE (on `unification-program`)
 
 **Commits:** `a3b388ee8` (Part 1 — shared test-support), `de1040b57` (Part 2 — screenshot-tour render primitives).
