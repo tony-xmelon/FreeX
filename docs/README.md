@@ -85,6 +85,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [fidelity/2026-06-23-pivottable-pause-resume.md](fidelity/2026-06-23-pivottable-pause-resume.md) - PivotTable pause/resume note covering the pushed native corpus baseline, read-only agent findings, remaining visual gaps, and restart checklist.
 - [fidelity/2026-06-23-pivottable-loaded-body-adornments.md](fidelity/2026-06-23-pivottable-loaded-body-adornments.md) - PivotTable loaded native body-surface and outline adornment pass covering white body materialization, `LastRenderedRange` adornment scans, 16-case visual evidence, and remaining typography/chrome gaps.
 - [fidelity/2026-06-23-pivottable-outline-parent-style-fidelity.md](fidelity/2026-06-23-pivottable-outline-parent-style-fidelity.md) - PivotTable outline parent-row style pass covering loaded native outline group bands, 16-case visual evidence, and remaining text/chrome gaps.
+- [fidelity/2026-06-23-pivottable-text-metrics-experiment-handoff.md](fidelity/2026-06-23-pivottable-text-metrics-experiment-handoff.md) - PivotTable pause handoff after reverted compact text-metrics and Medium13 border experiments, with resume targets and exact visual evidence paths.
 - [fidelity/2026-06-19-freew-corpus-feature-growth.md](fidelity/2026-06-19-freew-corpus-feature-growth.md) - current FreeW DOCX corpus expansion note.
 - [fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md](fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md) - XLSX chart/PivotTable corpus expansion note.
 
