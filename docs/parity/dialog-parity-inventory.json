@@ -7,8 +7,8 @@
                     "totalRoutes":  57,
                     "wpfCaptures":  53,
                     "avaloniaCaptures":  0,
-                    "avaloniaHarnessRoutes":  48,
-                    "sharedOrPresentationBacked":  49
+                    "avaloniaHarnessRoutes":  49,
+                    "sharedOrPresentationBacked":  50
                 },
     "rows":  [
                  {
@@ -410,7 +410,7 @@
                      "displayName":  "Create Table",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
+                     "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_create_table_dialog.png",
                                          "screenshots\\table-workflows-tour\\freex_table_workflows_create_table_dialog.png"
@@ -418,12 +418,13 @@
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-
+                                                   "src\\FreeX.App.Presentation\\TableUI\\TableCreationPlanner.cs",
+                                                   "src\\FreeX.App.Services\\CreateTableDialogPlanner.cs"
                                                ],
                      "notes":  [
-                                   "No shared/presentation backing file was inferred by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
