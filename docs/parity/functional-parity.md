@@ -11,11 +11,11 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Metric | Count |
 |---|---:|
 | Total commands | 530 |
-| PARITY (both) | 465 |
-| AVALONIA-MISSING | 5 |
+| PARITY (both) | 466 |
+| AVALONIA-MISSING | 4 |
 | WPF-MISSING | 48 |
 | BOTH-MISSING | 12 |
-| Intentional Linux omissions (allowlisted) | 5 |
+| Intentional Linux omissions (allowlisted) | 4 |
 
 ## Matrix
 
@@ -256,7 +256,7 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Decrease Font Size | Font | Home | yes | yes | PARITY |
 | Dotted | Font | Home | — | — | BOTH-MISSING |
 | Double | Font | Home | — | — | BOTH-MISSING |
-| Draw Border | Font | Home | yes | — | AVALONIA-MISSING |
+| Draw Border | Font | Home | yes | yes | PARITY |
 | Draw Border Grid | Font | Home | yes | yes | PARITY |
 | Erase Border | Font | Home | yes | yes | PARITY |
 | Fill Color | Font | Home | yes | yes | PARITY |
