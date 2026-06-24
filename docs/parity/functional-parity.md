@@ -11,11 +11,11 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Metric | Count |
 |---|---:|
 | Total commands | 530 |
-| PARITY (both) | 423 |
-| AVALONIA-MISSING | 47 |
+| PARITY (both) | 465 |
+| AVALONIA-MISSING | 5 |
 | WPF-MISSING | 48 |
 | BOTH-MISSING | 12 |
-| Intentional Linux omissions (allowlisted) | 48 |
+| Intentional Linux omissions (allowlisted) | 5 |
 
 ## Matrix
 
@@ -76,7 +76,7 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Ungroup#UngroupRowsMenuItem_Click | Outline | Data | yes | yes | PARITY |
 | Refresh All | Queries Connections | Data | yes | yes | PARITY |
 | Advanced | Sort Filter | Data | yes | yes | PARITY |
-| Clear#ClearFilterButton_Click | Sort Filter | Data | yes | — | AVALONIA-MISSING |
+| Clear#ClearFilterButton_Click | Sort Filter | Data | yes | yes | PARITY |
 | Filter#FilterButton_Click | Sort Filter | Data | yes | yes | PARITY |
 | Sort | Sort Filter | Data | yes | yes | PARITY |
 | Sort A to Z#SortAscButton_Click | Sort Filter | Data | yes | yes | PARITY |
@@ -92,21 +92,21 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Rotate Object | Arrange | Draw | yes | yes | PARITY |
 | Selection Pane#SelectionPaneBtn_Click | Arrange | Draw | yes | yes | PARITY |
 | Send Backward | Arrange | Draw | yes | yes | PARITY |
-| 3-D Rotation | Format | Draw | yes | — | AVALONIA-MISSING |
-| Bevel | Format | Draw | yes | — | AVALONIA-MISSING |
-| Crop | Format | Draw | yes | — | AVALONIA-MISSING |
+| 3-D Rotation | Format | Draw | yes | yes | PARITY |
+| Bevel | Format | Draw | yes | yes | PARITY |
+| Crop | Format | Draw | yes | yes | PARITY |
 | Crop Picture | Format | Draw | yes | yes | PARITY |
-| Glow | Format | Draw | yes | — | AVALONIA-MISSING |
-| Inner Shadow | Format | Draw | yes | — | AVALONIA-MISSING |
+| Glow | Format | Draw | yes | yes | PARITY |
+| Inner Shadow | Format | Draw | yes | yes | PARITY |
 | No Effect | Format | Draw | yes | yes | PARITY |
 | Object Outline | Format | Draw | yes | yes | PARITY |
-| Reflection | Format | Draw | yes | — | AVALONIA-MISSING |
-| Reset Crop | Format | Draw | yes | — | AVALONIA-MISSING |
+| Reflection | Format | Draw | yes | yes | PARITY |
+| Reset Crop | Format | Draw | yes | yes | PARITY |
 | Shadow | Format | Draw | yes | yes | PARITY |
 | Shape Effects | Format | Draw | yes | yes | PARITY |
 | Shape Fill | Format | Draw | yes | yes | PARITY |
 | Shape Gradient | Format | Draw | yes | yes | PARITY |
-| Soft Edges | Format | Draw | yes | — | AVALONIA-MISSING |
+| Soft Edges | Format | Draw | yes | yes | PARITY |
 | Pictures | Illustrations | Draw | yes | yes | PARITY |
 | Shapes | Illustrations | Draw | yes | yes | PARITY |
 | Automatic | Calculation | Formulas | yes | yes | PARITY |
@@ -122,7 +122,7 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Error Checking | Formula Auditing | Formulas | yes | yes | PARITY |
 | Error Checking Options | Formula Auditing | Formulas | yes | yes | PARITY |
 | Evaluate Formula | Formula Auditing | Formulas | yes | yes | PARITY |
-| Remove Arrows#RemoveAllArrowsMenuItem_Click | Formula Auditing | Formulas | yes | — | AVALONIA-MISSING |
+| Remove Arrows#RemoveAllArrowsMenuItem_Click | Formula Auditing | Formulas | yes | yes | PARITY |
 | Remove Arrows#RemoveArrowsBtn_Click | Formula Auditing | Formulas | yes | yes | PARITY |
 | Remove Dependent Arrows | Formula Auditing | Formulas | yes | yes | PARITY |
 | Remove Precedent Arrows | Formula Auditing | Formulas | yes | yes | PARITY |
@@ -136,7 +136,7 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Logical Functions | Function Library | Formulas | yes | yes | PARITY |
 | Lookup & Reference | Function Library | Formulas | yes | yes | PARITY |
 | Math & Trig | Function Library | Formulas | yes | yes | PARITY |
-| More Functions#AutoSumMoreMenuItem_Click | Function Library | Formulas | yes | — | AVALONIA-MISSING |
+| More Functions#AutoSumMoreMenuItem_Click | Function Library | Formulas | yes | yes | PARITY |
 | More Functions#FormulaMoreBtn_Click | Function Library | Formulas | yes | yes | PARITY |
 | Recently Used | Function Library | Formulas | yes | yes | PARITY |
 | Text Functions | Function Library | Formulas | yes | yes | PARITY |
@@ -195,17 +195,17 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Copy | Clipboard | Home | yes | yes | PARITY |
 | Cut | Clipboard | Home | yes | yes | PARITY |
 | Format Painter | Clipboard | Home | yes | yes | PARITY |
-| Keep Source Column Widths | Clipboard | Home | yes | — | AVALONIA-MISSING |
+| Keep Source Column Widths | Clipboard | Home | yes | yes | PARITY |
 | Linked Picture | Clipboard | Home | yes | yes | PARITY |
 | Paste | Clipboard | Home | yes | yes | PARITY |
 | Paste Formatting | Clipboard | Home | yes | yes | PARITY |
 | Paste Formulas | Clipboard | Home | yes | yes | PARITY |
-| Paste Link | Clipboard | Home | yes | — | AVALONIA-MISSING |
+| Paste Link | Clipboard | Home | yes | yes | PARITY |
 | Paste Special | Clipboard | Home | yes | yes | PARITY |
 | Paste Values | Clipboard | Home | yes | yes | PARITY |
 | Picture | Clipboard | Home | yes | yes | PARITY |
 | Transpose Paste | Clipboard | Home | yes | yes | PARITY |
-| Values & Source Formatting | Clipboard | Home | yes | — | AVALONIA-MISSING |
+| Values & Source Formatting | Clipboard | Home | yes | yes | PARITY |
 | AutoSum | Editing | Home | yes | yes | PARITY |
 | Average | Editing | Home | yes | yes | PARITY |
 | Clear | Editing | Home | yes | yes | PARITY |
@@ -239,7 +239,7 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Select Objects | Editing | Home | yes | yes | PARITY |
 | Selection Pane | Editing | Home | yes | yes | PARITY |
 | Series | Editing | Home | yes | yes | PARITY |
-| Sort & Filter | Editing | Home | yes | — | AVALONIA-MISSING |
+| Sort & Filter | Editing | Home | yes | yes | PARITY |
 | Sort A to Z | Editing | Home | yes | yes | PARITY |
 | Sort Z to A | Editing | Home | yes | yes | PARITY |
 | Sum | Editing | Home | yes | yes | PARITY |
@@ -407,22 +407,22 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Custom Margins | Page Setup | Page Layout | yes | yes | PARITY |
 | Delete Background | Page Setup | Page Layout | yes | yes | PARITY |
 | Executive | Page Setup | Page Layout | yes | yes | PARITY |
-| Insert Page Break | Page Setup | Page Layout | yes | — | AVALONIA-MISSING |
+| Insert Page Break | Page Setup | Page Layout | yes | yes | PARITY |
 | Landscape | Page Setup | Page Layout | yes | yes | PARITY |
 | Legal | Page Setup | Page Layout | yes | yes | PARITY |
 | Letter | Page Setup | Page Layout | yes | yes | PARITY |
 | Margins | Page Setup | Page Layout | yes | yes | PARITY |
 | Narrow | Page Setup | Page Layout | yes | yes | PARITY |
-| Normal#MarginNormalMenuItem_Click | Page Setup | Page Layout | yes | — | AVALONIA-MISSING |
+| Normal#MarginNormalMenuItem_Click | Page Setup | Page Layout | yes | yes | PARITY |
 | Page Orientation | Page Setup | Page Layout | yes | yes | PARITY |
-| Page Setup | Page Setup | Page Layout | yes | — | AVALONIA-MISSING |
-| Page Setup dialog | Page Setup | Page Layout | yes | — | AVALONIA-MISSING |
+| Page Setup | Page Setup | Page Layout | yes | yes | PARITY |
+| Page Setup dialog | Page Setup | Page Layout | yes | yes | PARITY |
 | Paper Size | Page Setup | Page Layout | yes | yes | PARITY |
 | Portrait | Page Setup | Page Layout | yes | yes | PARITY |
 | Print Area | Page Setup | Page Layout | yes | yes | PARITY |
 | Print Titles | Page Setup | Page Layout | yes | yes | PARITY |
-| Remove Page Break | Page Setup | Page Layout | yes | — | AVALONIA-MISSING |
-| Reset All Page Breaks | Page Setup | Page Layout | yes | — | AVALONIA-MISSING |
+| Remove Page Break | Page Setup | Page Layout | yes | yes | PARITY |
+| Reset All Page Breaks | Page Setup | Page Layout | yes | yes | PARITY |
 | Set Print Area | Page Setup | Page Layout | yes | yes | PARITY |
 | Statement | Page Setup | Page Layout | yes | yes | PARITY |
 | Tabloid | Page Setup | Page Layout | yes | yes | PARITY |
@@ -430,31 +430,31 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Scale Height | Scale To Fit | Page Layout | — | yes | WPF-MISSING |
 | Scale Percent | Scale To Fit | Page Layout | — | yes | WPF-MISSING |
 | Scale Width | Scale To Fit | Page Layout | — | yes | WPF-MISSING |
-| Scale to Fit | Scale To Fit | Page Layout | yes | — | AVALONIA-MISSING |
-| Print Gridlines | Sheet Options | Page Layout | yes | — | AVALONIA-MISSING |
-| Print Headings | Sheet Options | Page Layout | yes | — | AVALONIA-MISSING |
+| Scale to Fit | Scale To Fit | Page Layout | yes | yes | PARITY |
+| Print Gridlines | Sheet Options | Page Layout | yes | yes | PARITY |
+| Print Headings | Sheet Options | Page Layout | yes | yes | PARITY |
 | View Gridlines | Sheet Options | Page Layout | yes | yes | PARITY |
 | View Headings | Sheet Options | Page Layout | yes | yes | PARITY |
-| Arial | Themes | Page Layout | yes | — | AVALONIA-MISSING |
-| Customize | Themes | Page Layout | yes | — | AVALONIA-MISSING |
-| Customize Colors | Themes | Page Layout | yes | — | AVALONIA-MISSING |
-| Customize Effects | Themes | Page Layout | yes | — | AVALONIA-MISSING |
-| Customize Fonts | Themes | Page Layout | yes | — | AVALONIA-MISSING |
-| FreeX Colorful#ThemeColorfulMenuItem_Click | Themes | Page Layout | yes | — | AVALONIA-MISSING |
-| FreeX Colorful#ThemeColorsColorfulMenuItem_Click | Themes | Page Layout | yes | — | AVALONIA-MISSING |
-| Grayscale#ThemeColorsGrayscaleMenuItem_Click | Themes | Page Layout | yes | — | AVALONIA-MISSING |
-| Grayscale#ThemeGrayscaleMenuItem_Click | Themes | Page Layout | yes | — | AVALONIA-MISSING |
-| Office#ThemeColorsOfficeMenuItem_Click | Themes | Page Layout | yes | — | AVALONIA-MISSING |
-| Office#ThemeEffectsOfficeMenuItem_Click | Themes | Page Layout | yes | — | AVALONIA-MISSING |
-| Office#ThemeFontsOfficeMenuItem_Click | Themes | Page Layout | yes | — | AVALONIA-MISSING |
-| Office#ThemeOfficeMenuItem_Click | Themes | Page Layout | yes | — | AVALONIA-MISSING |
-| Refined | Themes | Page Layout | yes | — | AVALONIA-MISSING |
-| Subtle | Themes | Page Layout | yes | — | AVALONIA-MISSING |
+| Arial | Themes | Page Layout | yes | yes | PARITY |
+| Customize | Themes | Page Layout | yes | yes | PARITY |
+| Customize Colors | Themes | Page Layout | yes | yes | PARITY |
+| Customize Effects | Themes | Page Layout | yes | yes | PARITY |
+| Customize Fonts | Themes | Page Layout | yes | yes | PARITY |
+| FreeX Colorful#ThemeColorfulMenuItem_Click | Themes | Page Layout | yes | yes | PARITY |
+| FreeX Colorful#ThemeColorsColorfulMenuItem_Click | Themes | Page Layout | yes | yes | PARITY |
+| Grayscale#ThemeColorsGrayscaleMenuItem_Click | Themes | Page Layout | yes | yes | PARITY |
+| Grayscale#ThemeGrayscaleMenuItem_Click | Themes | Page Layout | yes | yes | PARITY |
+| Office#ThemeColorsOfficeMenuItem_Click | Themes | Page Layout | yes | yes | PARITY |
+| Office#ThemeEffectsOfficeMenuItem_Click | Themes | Page Layout | yes | yes | PARITY |
+| Office#ThemeFontsOfficeMenuItem_Click | Themes | Page Layout | yes | yes | PARITY |
+| Office#ThemeOfficeMenuItem_Click | Themes | Page Layout | yes | yes | PARITY |
+| Refined | Themes | Page Layout | yes | yes | PARITY |
+| Subtle | Themes | Page Layout | yes | yes | PARITY |
 | Theme Colors | Themes | Page Layout | yes | yes | PARITY |
 | Theme Effects | Themes | Page Layout | yes | yes | PARITY |
 | Theme Fonts | Themes | Page Layout | yes | yes | PARITY |
 | Themes | Themes | Page Layout | yes | yes | PARITY |
-| Times New Roman | Themes | Page Layout | yes | — | AVALONIA-MISSING |
+| Times New Roman | Themes | Page Layout | yes | yes | PARITY |
 | Format Picture | Format | Picture Format | yes | yes | PARITY |
 | Clear#PivotTableClearBtn_Click | Actions | PivotTable Analyze | yes | yes | PARITY |
 | Move PivotTable | Actions | PivotTable Analyze | yes | yes | PARITY |
@@ -495,8 +495,8 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Delete Note | Notes | Review | yes | yes | PARITY |
 | Edit Note | Notes | Review | yes | yes | PARITY |
 | New Note | Notes | Review | yes | yes | PARITY |
-| Next Note | Notes | Review | yes | — | AVALONIA-MISSING |
-| Previous Note | Notes | Review | yes | — | AVALONIA-MISSING |
+| Next Note | Notes | Review | yes | yes | PARITY |
+| Previous Note | Notes | Review | yes | yes | PARITY |
 | Show Notes | Notes | Review | yes | yes | PARITY |
 | Spelling | Proofing | Review | yes | yes | PARITY |
 | Workbook Statistics | Proofing | Review | yes | yes | PARITY |
