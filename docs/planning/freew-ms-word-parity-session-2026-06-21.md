@@ -225,3 +225,23 @@ Final verification after Wave 9: FreeW.App.Host.Tests 446, FreeW.Core.IO.Tests 6
 - **Split window / Side-to-Side / Multiple-Pages zoom** — need a real multi-page layout engine (FreeW renders one continuous flow).
 - **Character border/shading**, **set Proofing Language** — need run-level model fields + IO.
 - Out of scope by direction: cloud/account, Developer/macros, ink/Draw, e-mail merge send.
+
+## Architectural Tier - 2026-06-24 Waves 10-12 (Floating Objects, Page Views, Editable Panes)
+
+The user directed expansion into the architectural tier (excluding cloud/Developer). Three read-only architecture scouts produced phased, risk-ranked plans; sonnet sub-agents implemented the low-and-medium-risk phases, deliberately avoiding the one rewrite both the scouts and this project's non-goals flag as out of scope (full editable multi-page pagination). All merged to `origin/main`, verified green.
+
+**Wave 10:**
+- **Floating images + z-order (Phase 1-2)** — `InlineImage.ZOrderIndex` added; floating images now render on a transparent overlay `Canvas` over the page (a zero-width `AnchorMarker` placeholder run keeps `CommitToModel` round-tripping), are click-selectable (existing Picture-Format commands work on them unchanged), and z-order commands (Bring to Front/Back, Forward/Backward) are wired; `wp:anchor/@relativeHeight` round-trips. Inline images are untouched (guarded on `IsFloating`).
+- **Pagination view modes** — Multiple Pages and Side to Side render a read-only paginated view by reusing the existing `PrintLayout.BuildPaginatedSource` paginator in an embedded `DocumentViewer`; Split window shows the live editor plus a debounced read-only snapshot pane. The edit/commit path (`DocumentView`/`Render`/`CommitToModel`/Tags) is completely untouched — zero risk to the test suite.
+
+**Wave 11:**
+- **Editable Notes pane + docked Header/Footer editor** — `ShowNotes` now toggles a docked pane with an embedded `DocumentView` sub-editor (over a wrapper `TextDocument`) that edits real footnote/endnote bodies (add/edit/delete), preserving run formatting; the Wave 9 plain-text header/footer slot dialog is replaced by a docked sub-editor that preserves formatted runs across all six slots. Both commit back to the model and round-trip.
+- **Floating shapes/charts/SmartArt/WordArt (Phase 3)** — a shared `FloatingPlacement` (wrapping/offsets/anchors/z-order) extends floating to all object types with `wp:anchor` round-trip, a generalized overlay-canvas render + selection, generalized z-order, and an inline↔floating conversion command.
+
+**Wave 12:**
+- **Floating Group/Ungroup + multi-select (Phase 4)** — a `DrawingGroup` model (children + per-child offsets + group placement) serialized as `wpg:wgp`; shift/ctrl multi-selection of floating objects; Group builds a group from the selection, Ungroup restores members; rendered/selectable as a unit on the overlay canvas; round-trips.
+
+Final verification after Wave 12: FreeW.App.Host.Tests 492, FreeW.Core.Model.Tests 1045, FreeW.Core.IO.Tests 667 — all green; full-solution `dotnet build FreeX.slnx` 0/0.
+
+### Explicitly deferred (the one architectural item kept out of scope)
+- **Full editable multi-page pagination** (editing directly across discrete page boxes) and the **in-document WYSIWYG header/footer region** that depends on it. The pagination scout assessed this as a 6-12 week rewrite of `DocumentView` (sharding the FlowDocument across pages, cross-page caret/selection/commit) with high regression risk to the whole test suite, for benefit that Print Preview + the new read-only paginated view modes + the docked header/footer editor already largely deliver. It remains a deliberate non-goal pending a planned full rendering-engine rework, not an incremental add.
