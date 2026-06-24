@@ -1,6 +1,6 @@
 # FreeX Documentation
 
-**Last updated:** 2026-06-23
+**Last updated:** 2026-06-24
 
 Use this index as the current documentation map. Point-in-time material lives under `history/` and `archive/`; prefer the newest status snapshot plus the current planning docs when making product or release decisions.
 
@@ -10,7 +10,8 @@ Use this index as the current documentation map. Point-in-time material lives un
 
 ## Start Here
 
-- [history/status-2026-06-21.md](history/status-2026-06-21.md) - current project status snapshot covering the v0.8.127 tester release, current workbook/document file-format surface, release posture, and hygiene rules.
+- [history/status-2026-06-24.md](history/status-2026-06-24.md) - current status snapshot covering the next tester release candidate off main, current workbook/document file-format surface, and release posture.
+- [history/status-2026-06-21.md](history/status-2026-06-21.md) - prior status snapshot covering the v0.8.127 tester release, current workbook/document file-format surface, release posture, and hygiene rules.
 - [planning/outstanding-build.md](planning/outstanding-build.md) - historical backlog plus current 2026-06-21 status note for outstanding build work.
 - [planning/next-phases.md](planning/next-phases.md) - next development phases and priority sequencing, retained as a June 3 planning snapshot unless superseded by newer status docs.
 - [planning/multiplatform-macos-port.md](planning/multiplatform-macos-port.md) - preparation plan for a future multiplatform port, starting with macOS and a portable GitHub Actions lane.
@@ -91,6 +92,16 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [fidelity/2026-06-23-pivottable-medium13-tabular-style-fidelity.md](fidelity/2026-06-23-pivottable-medium13-tabular-style-fidelity.md) - PivotTable Medium13 tabular style pass covering loaded outer row-label bold/stripe styling, Medium13 body grid rules, 16-case visual deltas, and remaining non-external gaps.
 - [fidelity/2026-06-23-pivottable-expand-collapse-chrome-fidelity.md](fidelity/2026-06-23-pivottable-expand-collapse-chrome-fidelity.md) - PivotTable expand/collapse chrome pass covering the 8 px outline box adjustment, 16-case visual deltas, rejected experiments, agent findings, and remaining non-external gaps.
 - [fidelity/2026-06-23-pivottable-medium12-outline-style-fidelity.md](fidelity/2026-06-23-pivottable-medium12-outline-style-fidelity.md) - PivotTable Medium12 outline style pass covering loaded native outline parent, subtotal, and grand-total surfaces, 16-case visual deltas, and remaining typography/chrome gaps.
+- [fidelity/2026-06-23-pivottable-medium13-body-fill-fidelity.md](fidelity/2026-06-23-pivottable-medium13-body-fill-fidelity.md) - PivotTable Medium13 body-fill fidelity pass covering banding stripe fill tint materialization and grand-total column fill behavior.
+- [fidelity/2026-06-23-pivottable-aptos-narrow-font-fidelity.md](fidelity/2026-06-23-pivottable-aptos-narrow-font-fidelity.md) - PivotTable Aptos Narrow font fidelity pass covering Windows CloudFonts cache loading and per-style font identity alignment.
+- [fidelity/2026-06-23-pivottable-aptos-narrow-fallback-metrics.md](fidelity/2026-06-23-pivottable-aptos-narrow-fallback-metrics.md) - PivotTable Aptos Narrow fallback metrics pass covering visual delta measurements with and without the CloudFonts font available.
+- [fidelity/2026-06-23-pivottable-chrome-font-layer-fidelity.md](fidelity/2026-06-23-pivottable-chrome-font-layer-fidelity.md) - PivotTable chrome and font layer fidelity pass covering header chrome sizing, label layer rendering, and 16-case visual evidence.
+- [fidelity/2026-06-23-pivottable-timeline-source-sheet-layout.md](fidelity/2026-06-23-pivottable-timeline-source-sheet-layout.md) - PivotTable timeline source-sheet layout pass covering timeline cache source sheet rendering and layout fidelity against native Excel corpus.
+- [fidelity/2026-06-23-pivottable-timeline-visual-anchor-fidelity.md](fidelity/2026-06-23-pivottable-timeline-visual-anchor-fidelity.md) - PivotTable timeline visual anchor fidelity pass covering timeline slicer overlay placement and scroll anchor alignment.
+- [fidelity/2026-06-23-pivottable-parity-session-results.md](fidelity/2026-06-23-pivottable-parity-session-results.md) - PivotTable parity session results covering completed style/chrome fixes, 16-case visual metrics ranking, and remaining non-external gaps.
+- [fidelity/2026-06-23-pivottable-corpus-gap-pause-handoff.md](fidelity/2026-06-23-pivottable-corpus-gap-pause-handoff.md) - PivotTable corpus gap handoff covering remaining visual-corpus gaps, pushed state, and resume checklist.
+- [fidelity/2026-06-23-linux-dialog-parity-pause-handoff.md](fidelity/2026-06-23-linux-dialog-parity-pause-handoff.md) - Linux/Avalonia dialog parity pause handoff covering chrome-alignment wave progress, pushed state, and outstanding dialog gaps.
+- [fidelity/2026-06-24-pivottable-parity-continued.md](fidelity/2026-06-24-pivottable-parity-continued.md) - PivotTable parity continuation (waves 1–4, 2026-06-24) covering further style/chrome fixes against the 16-workbook native corpus and remaining non-external gaps.
 - [fidelity/2026-06-19-freew-corpus-feature-growth.md](fidelity/2026-06-19-freew-corpus-feature-growth.md) - current FreeW DOCX corpus expansion note.
 - [fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md](fidelity/2026-06-18-xlsx-chart-pivot-corpus-growth.md) - XLSX chart/PivotTable corpus expansion note.
 
@@ -134,7 +145,8 @@ Use this index as the current documentation map. Point-in-time material lives un
 
 ## History
 
-- [history/status-2026-06-21.md](history/status-2026-06-21.md) - current status snapshot covering the v0.8.127 tester release, current format support, promotion blockers, and hygiene rules.
+- [history/status-2026-06-24.md](history/status-2026-06-24.md) - current status snapshot covering the next tester release candidate off main, current workbook/document file-format surface, and release posture.
+- [history/status-2026-06-21.md](history/status-2026-06-21.md) - prior status snapshot covering the v0.8.127 tester release, current format support, promotion blockers, and hygiene rules.
 - [history/status-2026-06-12.md](history/status-2026-06-12.md) - prior status snapshot covering the June 12 stable latest `origin/main` release, v0.8.114, prior failed run 113 hosted UI source-contract gate, and release blockers as of that date.
 - [history/status-2026-06-11.md](history/status-2026-06-11.md) - prior status snapshot covering the June 11 stable latest `origin/main` release, v0.8.112, prior failed run 111 hosted UI gate, and current release blockers.
 - [history/status-2026-06-10.md](history/status-2026-06-10.md) - prior status snapshot covering the June 10 branch-neutral `origin/main` release, v0.8.110 tester pre-release, prior failed run 109 hosted UI gate, and current release blockers.
