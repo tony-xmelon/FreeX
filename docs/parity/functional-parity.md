@@ -10,11 +10,11 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 
 | Metric | Count |
 |---|---:|
-| Total commands | 530 |
+| Total commands | 531 |
 | PARITY (both) | 466 |
 | AVALONIA-MISSING | 4 |
 | WPF-MISSING | 48 |
-| BOTH-MISSING | 12 |
+| BOTH-MISSING | 13 |
 | Intentional Linux omissions (allowlisted) | 4 |
 
 ## Matrix
@@ -492,6 +492,7 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Next Comment | Comments | Review | yes | yes | PARITY |
 | Previous Comment | Comments | Review | yes | yes | PARITY |
 | Show Comments | Comments | Review | yes | yes | PARITY |
+| Convert to Comments | Notes | Review | — | — | BOTH-MISSING |
 | Delete Note | Notes | Review | yes | yes | PARITY |
 | Edit Note | Notes | Review | yes | yes | PARITY |
 | New Note | Notes | Review | yes | yes | PARITY |

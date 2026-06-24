@@ -419,6 +419,7 @@
     { "id": "Previous Note", "tab": "Review", "group": "Notes", "display": "Previous Note", "keyTip": "PN", "contextual": false, "menuItem": false },
     { "id": "Next Note", "tab": "Review", "group": "Notes", "display": "Next Note", "keyTip": "N", "contextual": false, "menuItem": false },
     { "id": "Show Notes", "tab": "Review", "group": "Notes", "display": "Show Notes", "keyTip": "H", "contextual": false, "menuItem": false },
+    { "id": "Convert to Comments", "tab": "Review", "group": "Notes", "display": "Convert to Comments", "keyTip": "CV", "contextual": false, "menuItem": false },
     { "id": "Protect Sheet#ProtectSheetBtn_Click", "tab": "Review", "group": "Protect", "display": "Protect Sheet", "keyTip": "PS", "contextual": false, "menuItem": false },
     { "id": "Protect Workbook", "tab": "Review", "group": "Protect", "display": "Protect Workbook", "keyTip": "PW", "contextual": false, "menuItem": false },
     { "id": "Allow Users to Edit Ranges", "tab": "Review", "group": "Protect", "display": "Allow Users to Edit Ranges", "keyTip": "AR", "contextual": false, "menuItem": false },
