@@ -2,11 +2,11 @@
   "schema": "freex.parity.functional.v1",
   "summary": {
     "totalCommands": 530,
-    "parity": 465,
-    "avaloniaMissing": 5,
+    "parity": 466,
+    "avaloniaMissing": 4,
     "wpfMissing": 48,
     "bothMissing": 12,
-    "intentionalLinuxOmissions": 5
+    "intentionalLinuxOmissions": 4
   },
   "commands": [
     { "id": "+/- Buttons", "tab": "PivotTable Analyze", "group": "Show", "wpf": true, "avalonia": true, "status": "PARITY" },
@@ -201,7 +201,7 @@
     { "id": "Double", "tab": "Home", "group": "Font", "wpf": false, "avalonia": false, "status": "BOTH-MISSING" },
     { "id": "Doughnut Chart", "tab": "Insert", "group": "Charts", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Down", "tab": "Home", "group": "Editing", "wpf": true, "avalonia": true, "status": "PARITY" },
-    { "id": "Draw Border", "tab": "Home", "group": "Font", "wpf": true, "avalonia": false, "status": "AVALONIA-MISSING" },
+    { "id": "Draw Border", "tab": "Home", "group": "Font", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Draw Border Grid", "tab": "Home", "group": "Font", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Duplicate Values", "tab": "Home", "group": "Styles", "wpf": false, "avalonia": true, "status": "WPF-MISSING" },
     { "id": "Edit Note", "tab": "Review", "group": "Notes", "wpf": true, "avalonia": true, "status": "PARITY" },
