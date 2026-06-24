@@ -53,3 +53,32 @@ These roles differ between WPF and Avalonia, or exist only on one platform. They
 - **10 roles documented as discrepancies / platform-only:** title bar workbook name, Avalonia toolbar title/detail, app icon glyph, system buttons, zoom button font.
 
 Tokenized+wired roles are byte/pixel-identical on both renderers by construction (token values == captured current values). Heights were intentionally NOT force-applied where the platform was auto-sizing, to avoid masking or breaking the real cross-platform parity this baseline exists to protect.
+
+---
+
+## FreeX-Avalonia chrome divergences (Win/Linux fidelity gaps)
+
+**Captured: 2026-06-25 — WS-G round 11**
+
+This section documents Avalonia chrome color literals that do NOT byte-match the corresponding WPF/BrandThemes.FreeX token value. These are candidates for a future convergence decision; they were NOT changed in this round.
+
+| Role | WPF / BrandThemes.FreeX token | Avalonia literal | Delta | Site |
+|---|---|---|---|---|
+| Window background | *(no direct role — closest: ChromeSurface #F7F8F8, SheetSurface #F3F3F3)* | `#F6F7F9` (246,247,249) | Neither role matches | `src/FreeX.App.Avalonia/MainWindow.cs:344` `WindowBackground` |
+| Toolbar border | `Border` #DADCE0 (218,220,224) | `#DADES4` (218,222,228) | G: 220→222, B: 224→228 | `src/FreeX.App.Avalonia/MainWindow.cs:348` `ToolbarBorder` |
+| Primary ink (title text, formula bar, glyph rules) | `Text` #1F1F1F (31,31,31) | `#191F28` (25,31,40) | R: 31→25, B: 31→40 | `src/FreeX.App.Avalonia/MainWindow.cs:387` `PrimaryInk` |
+| Secondary ink (detail text) | `MutedText` #5F6368 (95,99,104) | `#5E6774` (94,103,116) | R: 95→94, G: 99→103, B: 104→116 | `src/FreeX.App.Avalonia/MainWindow.cs:388` `SecondaryInk` |
+| Dialog control border | *(no matching token role — between Border #DADCE0 and BorderStrong #C8CCD0)* | `#ABABAB` (171,171,171) | Much lighter than any border token | `src/FreeX.App.Avalonia/DialogControlStyles.cs:44` `BorderBrush` |
+| Dialog selection brush | *(derived: AccentSoft @ alpha 0x40 — no standalone token role)* | `AccentSoft`@40% opacity (0x40,0x0F,0x6D,0x8C) | Derived, not a distinct role | `src/FreeX.App.Avalonia/DialogControlStyles.cs:49` `SelectionBrush` |
+
+### Notes
+
+- **WindowBackground** — the Avalonia window background (`#F6F7F9`) sits between the `ChromeSurface` (#F7F8F8) and `SheetSurface` (#F3F3F3) tokens and matches neither. It colors the OS-level window background behind all content (visible only when the window is partially transparent or during resize). On WPF the equivalent is the native window chrome background; no direct token role exists. Convergence decision deferred.
+
+- **ToolbarBorder** — the Avalonia formula-bar bottom border uses (218,222,228); the WPF `Border` token is (218,220,224). A 2-point difference in G and B channels — likely the source artist used a slightly different gray for the horizontal rule. Small visual difference; converging would require a new token role or overriding the `Border` token value.
+
+- **PrimaryInk / SecondaryInk** — the Avalonia toolbar/chrome uses a warmer dark navy (#191F28, #5E6774) distinct from the WPF text neutrals (#1F1F1F, #5F6368). These serve the Avalonia-only toolbar (title + detail text below the native OS title bar) which has no WPF equivalent; the colors were chosen for contrast on the ChromeSurface background, not to match WPF text ink. Convergence would require confirming the same contrast ratios hold.
+
+- **DialogControlBorderBrush** — the dialog checkbox/radio/listbox border (#ABABAB) is a mid-gray chosen for compact WPF-like dialog styling. The FreeX `Border` (#DADCE0) and `BorderStrong` (#C8CCD0) tokens are both lighter. This is a dialog-specific design choice, not a shared chrome surface.
+
+- **SelectionBrush** — derived from `Accent` at 25% opacity. A dedicated token role (e.g. `AccentGhost`) would be needed to tokenize this; out of scope for this round.
