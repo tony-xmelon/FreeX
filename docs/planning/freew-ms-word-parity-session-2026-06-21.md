@@ -273,3 +273,23 @@ The phased rewrite was completed and PagedEdit promoted to a production opt-in V
 Final verification (Release): `dotnet build FreeX.slnx` 0/0; FreeW.App.Host.Tests **568**, FreeW.Core.IO.Tests **667**, FreeW.Core.Model.Tests **1045**; ribbon UI lane (`FreeX.RibbonTests.slnx` RibbonUiLane) **25/25** — all green, paged-edit suite now part of the shipped Release lane.
 
 Remaining (smaller, optional, behind no flag now): per-section header/footer COMMIT (write edits back to `Section.HeadersFooters` rather than the document-level slots — display already section-aware); inter-page-gap selection highlight adorner; overflow-break adorner Y could use the paginator's exact per-page heights instead of the uniform approximation. Full editable pagination itself is now shipped as the opt-in Page Edit mode.
+
+## Deferred Feature Builds - 2026-06-24 Waves 20-21 (new-engine features)
+
+Resumed the previously-deferred "needs new engine/model" items. All merged to `origin/main`, verified (Release build 0/0; FreeW Host/Core.Model/Core.IO green; recurring cold-start STA flakes confirmed transient on isolated rerun).
+
+**Wave 20:**
+- **Mailings conditional Rules** — a `MergeRuleEvaluator` over `MergeData`: If…Then…Else (9 operators), Skip Record If, Next Record If, Merge Record #/Sequence #, Fill-in, Ask, Set/Ref Bookmark; resolved in Preview/Finish via `MergeAllWithRules`; a Rules dropdown in the Mailings tab.
+- **Character border/shading + proofing language** — `RunFormatting` gains character border (`w:bdr`), character shading (`w:shd`), and language (`w:lang`); DOCX + render→commit round-trip (the render→commit path required carrying the fields through the WPF `RunMarkers` tag — fixed during integration); Home + Review commands.
+- **Insert > Icons** — a bundled 61-icon categorized library + searchable picker that inserts via the existing SVG→PNG rasterizer (no new model type).
+- **Image pixel adjustments** — brightness/contrast/saturation/transparency on `InlineImage` with a non-destructive `WriteableBitmap` color-matrix render pipeline and DrawingML (`a:lum`/`a:satMod`/`a:alphaModFix`) round-trip; Picture Format > Adjust (Corrections/Color/Transparency). Artistic-effect filters deferred (heavy filter pipeline).
+
+**Wave 21:**
+- **Table Styles gallery** — a 20-style catalog (Grid/Plain/List variants) with a `Table.TableStyleId`, render honoring header/banding/emphasis per `tblLook`, and `w:tblStyle` + styles.xml round-trip; Table Design gallery with live preview.
+- **Chart Quick Layout / Chart Styles / Change Colors galleries** — style/color-scheme/quick-layout catalogs on `Chart`, render honoring them, `c:style` + FreeW-extension round-trip; three Chart Design galleries.
+- **SmartArt Layout / Change Colors / Styles galleries** — an 11-layout catalog (with real geometry incl. rendered hierarchy children), color schemes, and styles; diagram-part extension round-trip; three SmartArt Design galleries.
+- **Label cell population + per-section header commit** — a reversible table-cell content-write API used to populate Mailings Labels with per-record merged content (honoring Skip/Next Record), and a section-aware PagedEdit header/footer commit (writes edits to the owning `Section.HeadersFooters`).
+
+Final verification: Release build 0/0; FreeW.App.Host.Tests 620, FreeW.Core.Model.Tests 1146, FreeW.Core.IO.Tests 721 — all green.
+
+Now exhausted: the deferred new-engine backlog. Genuinely-remaining minor items: artistic image-effect filters (blur/glow/paint), `SectionBreak` preservation through the PagedEdit body-reassembly path (`ReadBlocksInto`), and stabilizing the cold-start WPF/STA test flakiness (a warm-up fixture). Out of scope by direction: cloud/account, Developer/macros, ink/Draw, e-mail-send.
