@@ -201,3 +201,27 @@ Now genuinely exhausted: the backed-or-small-addition parity surface for trackin
 - **E-mail Messages** — needs an SMTP/send path.
 - **Backstage cloud/add-place/online search** — needs account/cloud backing.
 - **Balloon-style markup** — needs a margin balloon affordance the FlowDocument stack lacks.
+
+## Fidelity Expansion - 2026-06-24 Waves 7-9 (Tables, Objects, Document Depth)
+
+After the backed-command surface was confirmed complete (275/275 registered commands surfaced), the program expanded toward full Word fidelity across everything except cloud and Developer. Four read-only discovery scouts mapped Tables, Drawing-objects, Charts/SmartArt, and document-feature depth; sonnet sub-agents then implemented the backed slices in isolated `codex/` worktrees, integrated through the session branch to `origin/main`. All verified (`dotnet build FreeX.slnx` 0/0; FreeW Host/Core.Model/Core.IO green; one cold-start STA flake confirmed transient).
+
+**Wave 7** (merged to main): Tables Layout/Design completion (9-way cell alignment, cell-size spinners + Distribute + AutoFit, directional Insert/Delete, Select Table/Row/Col/Cell, Delete Table, View Gridlines, Split Table, Last-Row/First-Col/Last-Col/Banded-Cols `w:tblLook` flags); Charts (real Insert Chart type+data dialog, chart selection detection, Chart Design + Chart Format contextual tabs — Change Chart Type, Add Chart Element, Edit Data, Size/Arrange); Picture Format depth (rotate/flip, position, reset, W×H + lock-aspect size, crop via `a:srcRect`, picture border via `a:ln`, all DOCX round-tripped); Layout Breaks dropdown (section + column breaks), Format Painter double-click lock, Word Count lines/footnotes, Page Number gallery, Cover Page presets.
+
+**Wave 8** (merged to main): Drawing/Shape + Text Box Format contextual tabs (Change Shape, Shape Fill, Shape Outline `a:ln`, Alt Text, Text Direction, WordArt style gallery, Arrange/Size — model + round-trip); SmartArt picker dialog + SmartArt Design contextual tab (Add/Remove Shape, Promote/Demote, Move Up/Down, Edit Text); SVG-aware Insert Picture (SharpVectors rasterize-on-import); Find Advanced (Word wildcards → regex + Special-character picker); Reviewing Pane sort (author/type/date); page Gridlines adorner toggle; Custom Watermark options (text/font/color/layout/opacity, option round-trip); Restrict-Editing password (OOXML legacy SHA-1 salted `w:documentProtection` hash, round-tripped).
+
+**Wave 9** (merged to main): Header & Footer Design contextual tab over the ready `SectionHeadersFooters` model — per-slot editing of all six slots (default/first/even × header/footer), Different First Page + Different Odd/Even toggles, Header-from-Top / Footer-from-Bottom numerics, insert Page Number / Date & Time / Document-Info fields into the active slot, Go to Header/Footer, Close. Dialog-based editing chosen as the honest approach (FreeW's single continuous FlowDocument has no in-document header region).
+
+Final verification after Wave 9: FreeW.App.Host.Tests 446, FreeW.Core.IO.Tests 647, FreeW.Core.Model.Tests 1010 — all green; full-solution build 0/0.
+
+### Remaining gaps (all require NEW engine primitives, not backed exposure — deferred under parity discipline)
+- **Image pixel adjustments** (Corrections/Color/Transparency/Artistic Effects) — needs a pixel-processing pipeline.
+- **Floating shapes + z-order + Group/Ungroup** — needs an anchored (non-inline) drawing model.
+- **Chart/SmartArt style galleries + Change Layout/Colors** — needs a style/preset model + 40+ SmartArt layouts.
+- **Insert > Icons library** — needs an icon content library + SVG graphic model + Graphics Format tab.
+- **Table Styles gallery + per-cell/per-edge borders + cell text direction** — needs a table-style catalog + per-cell border model.
+- **Mailings conditional Rules** (If/Then/Else, Skip Record If, Fill-in, Ask) — needs a merge-field expression evaluator. **Label per-cell merge population** — needs a table-cell content-write API.
+- **Editable footnote/endnote pane**; **Header/Footer preset galleries + WYSIWYG in-document header region** — need a dedicated note/header editing surface.
+- **Split window / Side-to-Side / Multiple-Pages zoom** — need a real multi-page layout engine (FreeW renders one continuous flow).
+- **Character border/shading**, **set Proofing Language** — need run-level model fields + IO.
+- Out of scope by direction: cloud/account, Developer/macros, ink/Draw, e-mail merge send.
