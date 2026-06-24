@@ -20,7 +20,7 @@ Values were read directly from source files:
 | Status bar text font size | `FreeXStatusBarTextFontSize` | 12.0 pt | 12.0 pt | MATCH | `MainWindow.xaml:1134` | `MainWindow.cs:3291` |
 | Status bar text font weight | `FreeXStatusBarTextFontWeight` | Normal | Normal | MATCH | `MainWindow.xaml:1134` (no weight set) | `MainWindow.cs:3291` (no weight set) |
 | Status bar text font family | `FreeXStatusBarTextFontFamily` | (inherited — empty) | (inherited — empty) | MATCH | `MainWindow.xaml:1134` (no FontFamily) | `MainWindow.cs:3291` (no FontFamily) |
-| Status bar height | `FreeXStatusBarHeight` | 28 px (implicit: Padding="8,3" + FontSize=12) | 28 px | MATCH | `MainWindow.xaml:1119` | `MainWindow.cs:3388` |
+| Status bar height | `FreeXStatusBarHeight` | content-auto (Padding="8,3", no explicit Height) | 28 px (explicit) | SOFT-DIFF | `MainWindow.xaml:1119` | `MainWindow.cs:3388` |
 | Title bar caption height | `FreeXTitleBarCaptionHeight` | 34 px | N/A — native OS title bar | See note | `MainWindow.xaml:25 WindowChrome.CaptionHeight` | n/a |
 
 **Note on TitleBarCaptionHeight:** WPF has a custom title bar driven by `WindowChrome.CaptionHeight=34`. Avalonia uses the **native OS title bar** with no corresponding custom chrome value. The token value (34) reflects WPF only; the Avalonia applier emits the resource for key-set symmetry but the Avalonia window does not consume it. This is documented here rather than being left as a discrepancy — it is an architectural difference, not a visual difference.
@@ -48,7 +48,8 @@ These roles differ between WPF and Avalonia, or exist only on one platform. They
 
 ## Summary
 
-- **5 roles tokenized:** StatusBarText (family/size/weight) + StatusBarHeight + TitleBarCaptionHeight (WPF-captured, Avalonia-symmetric)
-- **10 roles documented as discrepancies / platform-only:** title bar workbook name, Avalonia toolbar title/detail, app icon glyph, system buttons, zoom button font
+- **Tokenized + WIRED (byte/pixel-identical, default unchanged):** StatusBarText font size/weight/family (WPF + Avalonia, both 12pt/Normal/inherited); StatusBarHeight on **Avalonia only** (it had an explicit 28px → token 28px, identical).
+- **Token defined but deliberately NOT wired on WPF:** `FreeXStatusBarHeight` — WPF's status bar is **content-auto** (no explicit Height; `Padding="8,3"`). Forcing an explicit 28px would change auto→fixed (a potential DPI/content pixel shift), so the WPF status bar is left auto-sized. The 28px is Avalonia's actual value; whether WPF's content-auto height equals 28px in all DPI/content cases is an open parity question (left for a real rendered-capture comparison, not assumed). `FreeXTitleBarCaptionHeight` (34) reflects WPF's `WindowChrome.CaptionHeight`; Avalonia uses the native OS title bar (architectural difference, not consumed).
+- **10 roles documented as discrepancies / platform-only:** title bar workbook name, Avalonia toolbar title/detail, app icon glyph, system buttons, zoom button font.
 
-The tokenized roles are byte/pixel-identical on both renderers by construction (token values == captured current values).
+Tokenized+wired roles are byte/pixel-identical on both renderers by construction (token values == captured current values). Heights were intentionally NOT force-applied where the platform was auto-sizing, to avoid masking or breaking the real cross-platform parity this baseline exists to protect.
