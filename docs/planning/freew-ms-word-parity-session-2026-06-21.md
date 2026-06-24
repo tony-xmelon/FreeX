@@ -261,3 +261,15 @@ Remaining pagination phases (all still behind the flag until stable):
 - **Phase 3b-2** — cross-page selection highlighting across the gap, cross-page clipboard (cut/copy/paste), shared cross-page undo.
 - **Phase 4** — WYSIWYG header/footer editing regions inside the page boxes (supersedes the docked editor in PagedEdit mode).
 - **Flag exposure** — once 3b-2 + Phase 4 are stable, expose PagedEdit as a production View mode and run the UI lane before release.
+
+## Editable Pagination Program - 2026-06-24 Waves 16-19 (COMPLETE + shipped)
+
+The phased rewrite was completed and PagedEdit promoted to a production opt-in View mode.
+- **Phase 3b-2 (Wave 16, `4817997fc`)** — cross-page selection, clipboard (cut/copy/paste), shared cross-page undo coordinator.
+- **Phase 4 (Wave 17, `7b742b3d2`)** — WYSIWYG in-page header/footer editing regions (default/first/even slot resolution per page; DOCX round-trip preserving formatted runs).
+- **Polish (Wave 18, `b7cc18d06` + `ce2477499`)** — live page-number/NUMPAGES rendering per page (round-trip-safe display substitution); per-section header/footer display routing (reads `Section.HeadersFooters`, document-level fallback; per-section commit deferred); cross-page selection drag-drop move/copy; column-aware page-box bodies.
+- **Exposure (Wave 19, `9ad0514c9`)** — removed the `#if DEBUG` gating across the whole paged-edit subsystem and its tests; added a production View > Views command `freew.paged-edit-view` ("Page Edit") + a status-bar toggle; the continuous Print Layout editor remains the startup default. Entering PagedEdit commits the continuous editor first; exiting runs the commit coordinator + reloads — round-trip lossless across the switch.
+
+Final verification (Release): `dotnet build FreeX.slnx` 0/0; FreeW.App.Host.Tests **568**, FreeW.Core.IO.Tests **667**, FreeW.Core.Model.Tests **1045**; ribbon UI lane (`FreeX.RibbonTests.slnx` RibbonUiLane) **25/25** — all green, paged-edit suite now part of the shipped Release lane.
+
+Remaining (smaller, optional, behind no flag now): per-section header/footer COMMIT (write edits back to `Section.HeadersFooters` rather than the document-level slots — display already section-aware); inter-page-gap selection highlight adorner; overflow-break adorner Y could use the paginator's exact per-page heights instead of the uniform approximation. Full editable pagination itself is now shipped as the opt-in Page Edit mode.
