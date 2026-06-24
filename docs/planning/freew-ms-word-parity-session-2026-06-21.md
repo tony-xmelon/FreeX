@@ -245,3 +245,19 @@ Final verification after Wave 12: FreeW.App.Host.Tests 492, FreeW.Core.Model.Tes
 
 ### Explicitly deferred (the one architectural item kept out of scope)
 - **Full editable multi-page pagination** (editing directly across discrete page boxes) and the **in-document WYSIWYG header/footer region** that depends on it. The pagination scout assessed this as a 6-12 week rewrite of `DocumentView` (sharding the FlowDocument across pages, cross-page caret/selection/commit) with high regression risk to the whole test suite, for benefit that Print Preview + the new read-only paginated view modes + the docked header/footer editor already largely deliver. It remains a deliberate non-goal pending a planned full rendering-engine rework, not an incremental add.
+
+## Editable Pagination Program - 2026-06-24 Waves 13-15 (in progress)
+
+The user opted to begin the full editable multi-page pagination rewrite as a heavily-phased, green-gated program. A detailed design pass established the phase plan; the genuinely-risky surface (a discrete page-box editor) is isolated behind a DEV-only `#if DEBUG` `DocumentViewMode.PagedEdit` flag so the continuous editor stays the untouched production default. WPF verdict (confirmed): true in-document pagination is NOT possible with a single RichTextBox (a FlowDocument binds to one container; TextPointer can't cross documents) — it requires a custom page-box host, which is exactly what the flagged path builds.
+
+Landed (merged to `origin/main`, verified):
+- **Phase 1-2 (Wave 13, `5bc618acd`)** — `PaginationEngine` reuses the existing print paginator (`PrintLayout.BuildPaginatedDocument` → WPF `DocumentPaginator`) to compute authoritative page boundaries; the `PageBreakAdorner` is now driven by it, so explicit page breaks and Next/Even/Odd section breaks render at correct positions (overflow breaks keep the uniform approximation — a noted refinement). Pure/additive; zero edit-path change.
+- **Phase 3a (Wave 14, `35bbf87f9`)** — feature-flagged paged-edit INFRASTRUCTURE: `PaginatedEditorPanel` (stack of `PageBox` RichTextBoxes), `PaginatedCommitCoordinator` reassembling page boxes via the existing `ReadParagraph/List/Table` helpers, Tag-preserving block moves. Round-trip through PagedEdit proven lossless (styles/tables/lists/footnotes/images).
+- **Phase 3b-1 (Wave 15, `670e8b992`)** — engine-driven accurate block→page sharding, cross-page caret keyboard routing (Up/Down at page boundaries), and live debounced repagination on edit (re-shard preserving Tags + caret). Navigable, reflows while typing.
+
+Verification each wave: Release build 0/0 with PagedEdit compiled out (default path unchanged, Release host tests ~508); Debug build 0/0 with PagedEdit tests green (Debug host 530, Core.Model 1045).
+
+Remaining pagination phases (all still behind the flag until stable):
+- **Phase 3b-2** — cross-page selection highlighting across the gap, cross-page clipboard (cut/copy/paste), shared cross-page undo.
+- **Phase 4** — WYSIWYG header/footer editing regions inside the page boxes (supersedes the docked editor in PagedEdit mode).
+- **Flag exposure** — once 3b-2 + Phase 4 are stable, expose PagedEdit as a production View mode and run the UI lane before release.
