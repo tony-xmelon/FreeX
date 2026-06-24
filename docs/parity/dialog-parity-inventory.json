@@ -657,6 +657,7 @@
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotFieldItemsReader.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
                                                ],
@@ -678,6 +679,7 @@
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotFieldItemsReader.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
                                                ],
