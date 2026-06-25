@@ -2,11 +2,11 @@
   "schema": "freex.parity.functional.v1",
   "summary": {
     "totalCommands": 531,
-    "parity": 466,
-    "avaloniaMissing": 4,
+    "parity": 468,
+    "avaloniaMissing": 2,
     "wpfMissing": 48,
     "bothMissing": 13,
-    "intentionalLinuxOmissions": 4
+    "intentionalLinuxOmissions": 2
   },
   "commands": [
     { "id": "+/- Buttons", "tab": "PivotTable Analyze", "group": "Show", "wpf": true, "avalonia": true, "status": "PARITY" },
@@ -474,7 +474,7 @@
     { "id": "Summarize with PivotTable", "tab": "Table Design", "group": "Tools", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Switch Windows", "tab": "View", "group": "Window", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Symbol", "tab": "Insert", "group": "Symbols", "wpf": true, "avalonia": true, "status": "PARITY" },
-    { "id": "Synchronous Scrolling", "tab": "View", "group": "Window", "wpf": true, "avalonia": false, "status": "AVALONIA-MISSING" },
+    { "id": "Synchronous Scrolling", "tab": "View", "group": "Window", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Tab Color", "tab": "Home", "group": "Cells", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Table", "tab": "Insert", "group": "Tables", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Table Name", "tab": "Table Design", "group": "Properties", "wpf": true, "avalonia": true, "status": "PARITY" },
@@ -524,7 +524,7 @@
     { "id": "Vertical Text", "tab": "Home", "group": "Alignment", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "View Gridlines", "tab": "Page Layout", "group": "Sheet Options", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "View Headings", "tab": "Page Layout", "group": "Sheet Options", "wpf": true, "avalonia": true, "status": "PARITY" },
-    { "id": "View Side by Side", "tab": "View", "group": "Window", "wpf": true, "avalonia": false, "status": "AVALONIA-MISSING" },
+    { "id": "View Side by Side", "tab": "View", "group": "Window", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Warning Text", "tab": "Home", "group": "Styles", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Watch Window", "tab": "Formulas", "group": "Formula Auditing", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "What-If Analysis", "tab": "Data", "group": "Forecast", "wpf": true, "avalonia": true, "status": "PARITY" },
