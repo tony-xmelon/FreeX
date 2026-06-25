@@ -122,6 +122,16 @@ Multiple sessions run in parallel over one OneDrive-shared `.git`. Division of l
 The **safe, non-colliding dedup frontier is currently processed/empty** — remaining real dedup is owned by
 active sessions and resumes as those fields clear.
 
+## Deferred alignment items (do when already touching the area)
+
+- **Test message-box suppression — align FreeW/FreeP onto FreeX's DI pattern.** FreeX injects
+  `IUserMessageService` per test via `NullUserMessageService` (clean, per-instance); FreeW/FreeP instead use a
+  process-global static `HeadlessMessageBox.Handler` installed by `[ModuleInitializer]` in
+  `TestMessageBoxBootstrap.cs`, because their `FileCommands` calls the static `FileCommandMessageBox` helper
+  directly. When next in the shell layer: add an `IUserMessageService` ctor param to
+  `freew/FreeW.App.Host/FileCommands.cs` + `freep/FreeP.App.Host/FileCommands.cs` (mirror FreeX), then delete
+  `TestMessageBoxBootstrap.cs` in both test assemblies. Not urgent — the static seam works correctly.
+
 ## Contention discipline
 
 The repo is under OneDrive; many parallel worktrees share one `.git`. Always: work in a **fresh** worktree
