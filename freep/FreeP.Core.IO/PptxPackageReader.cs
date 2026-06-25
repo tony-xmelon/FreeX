@@ -1,7 +1,9 @@
 using System.Globalization;
 using System.IO.Compression;
+using System.Xml;
 using System.Xml.Linq;
 using Free.Shared.Drawing;
+using Free.Shared.Opc;
 using FreeP.Core.Model;
 
 namespace FreeP.Core.IO;
@@ -30,6 +32,7 @@ public static class PptxPackageReader
     private const string CorePropsRelType     = "http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties";
     private const string TableStylesRelType   = "http://schemas.openxmlformats.org/officeDocument/2006/relationships/tableStyles";
     private const string ChartRelType         = "http://schemas.openxmlformats.org/officeDocument/2006/relationships/chart";
+    private const string NotesSlideRelType    = "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide";
 
     // ── Public API ───────────────────────────────────────────────────────────────
 
@@ -407,7 +410,62 @@ public static class PptxPackageReader
         if (timingEl is not null)
             ReadAnimations(timingEl, slide);
 
+        // Speaker notes — follow notesSlide relationship if present
+        var notesTarget = GetRelTarget(slideRels, NotesSlideRelType);
+        if (notesTarget is not null)
+        {
+            var notesPath = ResolvePath(GetDirectory(slidePath), notesTarget);
+            slide.Notes = ReadNotesSlide(archive, notesPath, scheme);
+        }
+
         return slide;
+    }
+
+    // ── Notes slide ──────────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Reads the body placeholder txBody from a ppt/notesSlides/notesSlideN.xml part.
+    /// Returns null when the part is missing or contains no body placeholder.
+    /// Tolerates slides with no notes by returning null without throwing.
+    /// </summary>
+    private static TextBody? ReadNotesSlide(ZipArchive archive, string notesPath, PresentationColorScheme scheme)
+    {
+        var xml = LoadXml(archive, notesPath);
+        if (xml?.Root is null) return null;
+
+        // p:notes/p:cSld/p:spTree contains shape elements.
+        // The body placeholder (p:ph type="body") holds the notes text.
+        var spTree = xml.Root.Element(P + "cSld")?.Element(P + "spTree");
+        if (spTree is null) return null;
+
+        foreach (var spEl in spTree.Elements(P + "sp"))
+        {
+            var ph = spEl.Element(P + "nvSpPr")?.Element(P + "nvPr")?.Element(P + "ph");
+            if (ph is null) continue;
+
+            var phType = ph.Attribute("type")?.Value;
+            // body placeholder: type="body" or omitted (idx defaults to body placeholder when idx > 0 is absent)
+            // We match explicitly on "body" or absent-type with idx != 0 (slide-image is usually idx=0).
+            if (phType is null or "body")
+            {
+                // Skip the slide-image placeholder (idx="0" without type or type="sldImg").
+                var idxStr = ph.Attribute("idx")?.Value;
+                if (string.IsNullOrEmpty(idxStr) && phType is null) continue; // slide-image: no type, no idx or idx=0
+
+                var txBody = spEl.Element(P + "txBody");
+                if (txBody is null) continue;
+
+                var body = ReadTxBody(txBody, scheme);
+                // Only treat as notes if there is actual text (ignore fully empty bodies).
+                if (body.Paragraphs.Count == 0 ||
+                    body.Paragraphs.All(para => para.Runs.Count == 0 || para.Runs.All(r => string.IsNullOrEmpty(r.Text))))
+                    return null;
+
+                return body;
+            }
+        }
+
+        return null;
     }
 
     /// <summary>
@@ -797,6 +855,190 @@ public static class PptxPackageReader
 
         shape.Fill = PptxColorReader.TryReadFill(spPr, scheme);
         shape.Outline = PptxColorReader.TryReadOutline(spPr.Element(A + "ln"), scheme);
+
+        // Custom geometry
+        var custGeom = spPr.Element(A + "custGeom");
+        if (custGeom is not null)
+            ReadCustGeom(custGeom, shape);
+
+        // Shape effects
+        var effectLst = spPr.Element(A + "effectLst");
+        if (effectLst is not null)
+            shape.Effects = ReadEffectLst(effectLst, scheme);
+    }
+
+    private static void ReadCustGeom(XElement custGeom, SlideShape shape)
+    {
+        var pathLst = custGeom.Element(A + "pathLst");
+        if (pathLst is null) return;
+
+        foreach (var pathEl in pathLst.Elements(A + "path"))
+        {
+            var cgp = new CustomGeometryPath
+            {
+                PathW  = ParseLong(pathEl.Attribute("w")?.Value),
+                PathH  = ParseLong(pathEl.Attribute("h")?.Value),
+                Fill   = pathEl.Attribute("fill")?.Value   is not ("none" or "0"),
+                Stroke = pathEl.Attribute("stroke")?.Value is not ("0" or "false")
+            };
+
+            foreach (var segEl in pathEl.Elements())
+            {
+                switch (segEl.Name.LocalName)
+                {
+                    case "moveTo":
+                    {
+                        var pt = segEl.Element(A + "pt");
+                        cgp.Segments.Add(new CustomSegment(CustomSegmentKind.MoveTo,
+                            X: ParseLong(pt?.Attribute("x")?.Value),
+                            Y: ParseLong(pt?.Attribute("y")?.Value)));
+                        break;
+                    }
+                    case "lnTo":
+                    {
+                        var pt = segEl.Element(A + "pt");
+                        cgp.Segments.Add(new CustomSegment(CustomSegmentKind.LineTo,
+                            X: ParseLong(pt?.Attribute("x")?.Value),
+                            Y: ParseLong(pt?.Attribute("y")?.Value)));
+                        break;
+                    }
+                    case "cubicBezTo":
+                    {
+                        var pts = segEl.Elements(A + "pt").ToList();
+                        if (pts.Count >= 3)
+                            cgp.Segments.Add(new CustomSegment(CustomSegmentKind.CubicBezTo,
+                                X:  ParseLong(pts[0].Attribute("x")?.Value),
+                                Y:  ParseLong(pts[0].Attribute("y")?.Value),
+                                X1: ParseLong(pts[1].Attribute("x")?.Value),
+                                Y1: ParseLong(pts[1].Attribute("y")?.Value),
+                                X2: ParseLong(pts[2].Attribute("x")?.Value),
+                                Y2: ParseLong(pts[2].Attribute("y")?.Value)));
+                        break;
+                    }
+                    case "quadBezTo":
+                    {
+                        var pts = segEl.Elements(A + "pt").ToList();
+                        if (pts.Count >= 2)
+                            cgp.Segments.Add(new CustomSegment(CustomSegmentKind.QuadBezTo,
+                                X:  ParseLong(pts[0].Attribute("x")?.Value),
+                                Y:  ParseLong(pts[0].Attribute("y")?.Value),
+                                X1: ParseLong(pts[1].Attribute("x")?.Value),
+                                Y1: ParseLong(pts[1].Attribute("y")?.Value)));
+                        break;
+                    }
+                    case "arcTo":
+                    {
+                        // arcTo attributes wR, hR, stAng, swAng are in 1/60000 degrees
+                        cgp.Segments.Add(new CustomSegment(CustomSegmentKind.ArcTo,
+                            WR:    ParseDouble(segEl.Attribute("wR")?.Value),
+                            HR:    ParseDouble(segEl.Attribute("hR")?.Value),
+                            StAng: ParseDouble(segEl.Attribute("stAng")?.Value) / 60000.0,
+                            SwAng: ParseDouble(segEl.Attribute("swAng")?.Value) / 60000.0));
+                        break;
+                    }
+                    case "close":
+                        cgp.Segments.Add(new CustomSegment(CustomSegmentKind.Close));
+                        break;
+                }
+            }
+
+            if (cgp.Segments.Count > 0)
+                shape.CustomGeometry.Add(cgp);
+        }
+    }
+
+    private static ShapeEffects? ReadEffectLst(XElement effectLst, PresentationColorScheme scheme)
+    {
+        var fx = new ShapeEffects();
+        bool any = false;
+
+        // a:outerShdw
+        var outerShdw = effectLst.Element(A + "outerShdw");
+        if (outerShdw is not null)
+        {
+            fx.HasOuterShadow = true; any = true;
+            fx.OuterShadowBlurRadEmu = ParseLong(outerShdw.Attribute("blurRad")?.Value);
+            fx.OuterShadowDistEmu    = ParseLong(outerShdw.Attribute("dist")?.Value);
+            fx.OuterShadowDirDeg     = ParseDouble(outerShdw.Attribute("dir")?.Value) / 60000.0;
+            var colorEl = outerShdw.Elements().FirstOrDefault();
+            if (colorEl is not null)
+            {
+                var tac = PptxColorReader.TryReadColor(outerShdw, scheme);
+                if (tac is not null)
+                {
+                    fx.OuterShadowColor = tac.Resolved;
+                    fx.OuterShadowAlpha = ReadAlphaFromColorEl(colorEl);
+                }
+            }
+        }
+
+        // a:innerShdw
+        var innerShdw = effectLst.Element(A + "innerShdw");
+        if (innerShdw is not null)
+        {
+            fx.HasInnerShadow = true; any = true;
+            fx.InnerShadowBlurRadEmu = ParseLong(innerShdw.Attribute("blurRad")?.Value);
+            fx.InnerShadowDistEmu    = ParseLong(innerShdw.Attribute("dist")?.Value);
+            fx.InnerShadowDirDeg     = ParseDouble(innerShdw.Attribute("dir")?.Value) / 60000.0;
+            var colorEl = innerShdw.Elements().FirstOrDefault();
+            if (colorEl is not null)
+            {
+                var tac = PptxColorReader.TryReadColor(innerShdw, scheme);
+                if (tac is not null)
+                {
+                    fx.InnerShadowColor = tac.Resolved;
+                    fx.InnerShadowAlpha = ReadAlphaFromColorEl(colorEl);
+                }
+            }
+        }
+
+        // a:glow
+        var glow = effectLst.Element(A + "glow");
+        if (glow is not null)
+        {
+            fx.HasGlow = true; any = true;
+            fx.GlowRadiusEmu = ParseLong(glow.Attribute("rad")?.Value);
+            var colorEl = glow.Elements().FirstOrDefault();
+            if (colorEl is not null)
+            {
+                var tac = PptxColorReader.TryReadColor(glow, scheme);
+                if (tac is not null)
+                {
+                    fx.GlowColor = tac.Resolved;
+                    fx.GlowAlpha = ReadAlphaFromColorEl(colorEl);
+                }
+            }
+        }
+
+        // a:softEdge
+        var softEdge = effectLst.Element(A + "softEdge");
+        if (softEdge is not null)
+        {
+            fx.HasSoftEdge = true; any = true;
+            fx.SoftEdgeRadEmu = ParseLong(softEdge.Attribute("rad")?.Value);
+        }
+
+        // a:sp3d (bevel — best-effort flag)
+        var sp3d = effectLst.Element(A + "sp3d");
+        if (sp3d is not null) { fx.HasBevel = true; any = true; }
+
+        return any ? fx : null;
+    }
+
+    private static byte ReadAlphaFromColorEl(XElement colorEl)
+    {
+        // Look for a:alpha child directly on the color element
+        var alphaEl = colorEl.Element(A + "alpha");
+        if (alphaEl is not null && long.TryParse(alphaEl.Attribute("val")?.Value, NumberStyles.Integer, CultureInfo.InvariantCulture, out var alpha100k))
+            return (byte)(alpha100k * 255 / 100000);
+        return 0x80; // default ~50% opacity
+    }
+
+    private static double ParseDouble(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value)) return 0;
+        return double.TryParse(value, NumberStyles.Float,
+            CultureInfo.InvariantCulture, out var v) ? v : 0;
     }
 
     // ── TextBody ─────────────────────────────────────────────────────────────────
@@ -1258,7 +1500,8 @@ public static class PptxPackageReader
         try
         {
             using var stream = entry.Open();
-            var doc = XDocument.Load(stream);
+            using var reader = XmlReader.Create(stream, SecureXmlReaderSettings.Create());
+            var doc = XDocument.Load(reader);
             return doc.Root?
                 .Elements(Pkgr + "Relationship")
                 .Select(r => (
@@ -1281,7 +1524,8 @@ public static class PptxPackageReader
         try
         {
             using var stream = entry.Open();
-            return XDocument.Load(stream);
+            using var reader = XmlReader.Create(stream, SecureXmlReaderSettings.Create());
+            return XDocument.Load(reader);
         }
         catch { return null; }
     }

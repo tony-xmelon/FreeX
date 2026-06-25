@@ -35,6 +35,8 @@ public static class PptxPackageWriter
     private const string ViewPropsRelType   = "http://schemas.openxmlformats.org/officeDocument/2006/relationships/viewProps";
     private const string TableStylesRelType = "http://schemas.openxmlformats.org/officeDocument/2006/relationships/tableStyles";
     private const string ChartRelType       = PptxChartWriter.ChartRelType;
+    private const string NotesSlideRelType  = "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide";
+    private const string NotesMasterRelType = "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesMaster";
 
     // ── Content types ─────────────────────────────────────────────────────────────
     private const string PresentationCT  = "application/vnd.openxmlformats-officedocument.presentationml.presentation.main+xml";
@@ -48,6 +50,8 @@ public static class PptxPackageWriter
     private const string CorePropsCT     = "application/vnd.openxmlformats-package.core-properties+xml";
     private const string RelsCT          = "application/vnd.openxmlformats-package.relationships+xml";
     private const string ChartCT         = PptxChartWriter.ChartCT;
+    private const string NotesSlideCT    = "application/vnd.openxmlformats-officedocument.presentationml.notesSlide+xml";
+    private const string NotesMasterCT   = "application/vnd.openxmlformats-officedocument.presentationml.notesMaster+xml";
 
     // ── Public API ────────────────────────────────────────────────────────────────
 
@@ -176,6 +180,17 @@ public static class PptxPackageWriter
         var sldIdElements = new List<XElement>();
         uint sldIdCounter = 256;
 
+        // Emit a single minimal notesMaster if any slide has notes.
+        bool hasSomeNotes = presentation.Slides.Any(s => s.Notes is not null);
+        if (hasSomeNotes)
+        {
+            WriteEntry(archive, "ppt/notesMasters/notesMaster1.xml", BuildNotesMasterXml());
+            // notesMaster rels: -> theme (reuse the same theme1.xml)
+            var nmRels = new RelsDoc();
+            nmRels.Add("rId1", ThemeRelType, "../theme/theme1.xml");
+            WriteRels(archive, "ppt/notesMasters/notesMaster1.xml", nmRels);
+        }
+
         int globalChartIndex = 1; // monotonically increasing across all slides
         for (int si = 0; si < presentation.Slides.Count; si++)
         {
@@ -201,13 +216,30 @@ public static class PptxPackageWriter
             // Slide xml
             WriteEntry(archive, slidePath, BuildSlideXml(slide, presentation.Theme.ColorScheme, mediaById));
 
-            // Slide rels: rId1=layout, images, charts
+            // Slide rels: rId1=layout, images, charts, optional notesSlide
             var slideRels = new RelsDoc();
             slideRels.Add("rId1", SlideLayoutRelType, $"../slideLayouts/{layoutPath.Split('/').Last()}");
             foreach (var (_, mediaRelId, mediaPath) in mediaRelIds)
                 slideRels.Add(mediaRelId, ImageRelType, $"../media/{mediaPath.Split('/').Last()}");
             foreach (var (_, chartRelId, chartPath) in chartRelIds)
                 slideRels.Add(chartRelId, ChartRelType, $"../charts/{chartPath.Split('/').Last()}");
+
+            // Write notes slide and add rel when the slide has speaker notes
+            if (slide.Notes is not null)
+            {
+                var notesPath = $"ppt/notesSlides/notesSlide{si + 1}.xml";
+                var notesRelId = $"rIdNotes{si + 1}";
+                WriteEntry(archive, notesPath, BuildNotesSlideXml(slide.Notes, slidePath));
+
+                // notesSlide rels: -> slide + notesMaster
+                var notesRels = new RelsDoc();
+                notesRels.Add("rId1", SlideRelType,       $"../slides/slide{si + 1}.xml");
+                notesRels.Add("rId2", NotesMasterRelType, "../notesMasters/notesMaster1.xml");
+                WriteRels(archive, notesPath, notesRels);
+
+                slideRels.Add(notesRelId, NotesSlideRelType, $"../notesSlides/notesSlide{si + 1}.xml");
+            }
+
             WriteRels(archive, slidePath, slideRels);
 
             presRels.Add(slideRelId, SlideRelType, $"slides/slide{si + 1}.xml");
@@ -226,6 +258,8 @@ public static class PptxPackageWriter
         }
         presRels.Add($"rId{masterRelIdStart + masters.Count}", ViewPropsRelType, "viewProps.xml");
         presRels.Add($"rId{masterRelIdStart + masters.Count + 1}", TableStylesRelType, "tableStyles.xml");
+        if (hasSomeNotes)
+            presRels.Add($"rId{masterRelIdStart + masters.Count + 2}", NotesMasterRelType, "notesMasters/notesMaster1.xml");
 
         WriteRels(archive, "ppt/presentation.xml", presRels);
 
@@ -294,6 +328,19 @@ public static class PptxPackageWriter
 
         for (int si = 0; si < p.Slides.Count; si++)
             overrides.Add(Override(CT, $"/ppt/slides/slide{si + 1}.xml", SlideCT));
+
+        // Collect notes-slide content types (only slides with non-null Notes)
+        bool hasSomeNotes = false;
+        for (int si = 0; si < p.Slides.Count; si++)
+        {
+            if (p.Slides[si].Notes is not null)
+            {
+                overrides.Add(Override(CT, $"/ppt/notesSlides/notesSlide{si + 1}.xml", NotesSlideCT));
+                hasSomeNotes = true;
+            }
+        }
+        if (hasSomeNotes)
+            overrides.Add(Override(CT, "/ppt/notesMasters/notesMaster1.xml", NotesMasterCT));
 
         // Collect chart content types
         int chartGlobalIdx = 1;
@@ -369,6 +416,87 @@ public static class PptxPackageWriter
                 BuildTransitionEl(slide.Transition),
                 BuildTimingEl(slide.Animations)));
     }
+
+    // ── notesSlide.xml ────────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Builds a minimal but spec-valid ppt/notesSlides/notesSlideN.xml containing the notes
+    /// text in the body placeholder (p:ph type="body" idx="1") and a slide-image placeholder
+    /// (p:ph type="sldImg" idx="0") required by the schema.
+    /// </summary>
+    private static XDocument BuildNotesSlideXml(TextBody notes, string _slidePath)
+    {
+        // Slide-image placeholder (required by the notes slide schema)
+        var slideImgSp = new XElement(P + "sp",
+            new XElement(P + "nvSpPr",
+                new XElement(P + "cNvPr", new XAttribute("id", "1"), new XAttribute("name", "Slide Image Placeholder 1")),
+                new XElement(P + "cNvSpPr", new XElement(A + "spLocks", new XAttribute("noGrp", "1"), new XAttribute("noRot", "1"), new XAttribute("noChangeAspect", "1"))),
+                new XElement(P + "nvPr", new XElement(P + "ph", new XAttribute("type", "sldImg")))),
+            new XElement(P + "spPr"));
+
+        // Body placeholder (carries the notes text)
+        var notesTxBody = BuildNotesTxBodyEl(notes);
+        var notesBodySp = new XElement(P + "sp",
+            new XElement(P + "nvSpPr",
+                new XElement(P + "cNvPr", new XAttribute("id", "2"), new XAttribute("name", "Content Placeholder 2")),
+                new XElement(P + "cNvSpPr", new XElement(A + "spLocks", new XAttribute("noGrp", "1"))),
+                new XElement(P + "nvPr", new XElement(P + "ph", new XAttribute("type", "body"), new XAttribute("idx", "1")))),
+            new XElement(P + "spPr"),
+            notesTxBody);
+
+        return new XDocument(
+            new XDeclaration("1.0", "UTF-8", "yes"),
+            new XElement(P + "notes",
+                NsAttr("p", P), NsAttr("a", A), NsAttr("r", R),
+                new XAttribute("showMasterSp", "1"),
+                new XElement(P + "cSld",
+                    new XElement(P + "spTree",
+                        GrpSpHeader(),
+                        slideImgSp,
+                        notesBodySp))));
+    }
+
+    /// <summary>
+    /// Converts a <see cref="TextBody"/> into the p:txBody element suitable for a notes placeholder.
+    /// Re-uses the existing <see cref="BuildTxBodyEl"/> but wraps it in a P: element (not A:).
+    /// </summary>
+    private static XElement BuildNotesTxBodyEl(TextBody notes)
+    {
+        var bodyPr = new XElement(A + "bodyPr");
+        return new XElement(P + "txBody",
+            bodyPr,
+            new XElement(A + "lstStyle"),
+            notes.Paragraphs.Select(p => BuildParaEl(p)));
+    }
+
+    /// <summary>
+    /// Builds a minimal ppt/notesMasters/notesMaster1.xml. Contains no shapes — PowerPoint
+    /// accepts a virtually empty master and derives defaults from the theme.
+    /// </summary>
+    private static XDocument BuildNotesMasterXml() =>
+        new XDocument(
+            new XDeclaration("1.0", "UTF-8", "yes"),
+            new XElement(P + "notesMaster",
+                NsAttr("p", P), NsAttr("a", A), NsAttr("r", R),
+                new XElement(P + "cSld",
+                    new XElement(P + "spTree",
+                        new XElement(P + "nvGrpSpPr",
+                            new XElement(P + "cNvPr", new XAttribute("id", "1"), new XAttribute("name", "")),
+                            new XElement(P + "cNvGrpSpPr"),
+                            new XElement(P + "nvPr")),
+                        new XElement(P + "grpSpPr",
+                            new XElement(A + "xfrm",
+                                new XElement(A + "off", new XAttribute("x", "0"), new XAttribute("y", "0")),
+                                new XElement(A + "ext", new XAttribute("cx", "0"), new XAttribute("cy", "0")),
+                                new XElement(A + "chOff", new XAttribute("x", "0"), new XAttribute("y", "0")),
+                                new XElement(A + "chExt", new XAttribute("cx", "0"), new XAttribute("cy", "0")))))),
+                new XElement(P + "clrMap",
+                    new XAttribute("bg1", "lt1"),   new XAttribute("tx1", "dk1"),
+                    new XAttribute("bg2", "lt2"),   new XAttribute("tx2", "dk2"),
+                    new XAttribute("accent1", "accent1"), new XAttribute("accent2", "accent2"),
+                    new XAttribute("accent3", "accent3"), new XAttribute("accent4", "accent4"),
+                    new XAttribute("accent5", "accent5"), new XAttribute("accent6", "accent6"),
+                    new XAttribute("hlink", "hlink"), new XAttribute("folHlink", "folHlink"))));
 
     // ── p:transition ─────────────────────────────────────────────────────────────
 
@@ -860,13 +988,125 @@ public static class PptxPackageWriter
         xfrm.Add(new XElement(A + "off", new XAttribute("x", shape.OffsetXEmu), new XAttribute("y", shape.OffsetYEmu)));
         xfrm.Add(new XElement(A + "ext", new XAttribute("cx", shape.ExtentCxEmu), new XAttribute("cy", shape.ExtentCyEmu)));
 
+        // Geometry: custom or preset
+        XElement geomEl;
+        if (forcePrst is null && shape.CustomGeometry.Count > 0)
+            geomEl = BuildCustGeomEl(shape.CustomGeometry);
+        else
+            geomEl = new XElement(A + "prstGeom",
+                new XAttribute("prst", forcePrst ?? PptxShapeKindMap.ToPreset(shape.AutoShapeKind)),
+                new XElement(A + "avLst"));
+
         return new XElement(P + "spPr",
             xfrm,
-            new XElement(A + "prstGeom",
-                new XAttribute("prst", forcePrst ?? PptxShapeKindMap.ToPreset(shape.AutoShapeKind)),
-                new XElement(A + "avLst")),
+            geomEl,
             shape.Fill is not null ? BuildFillEl(shape.Fill, scheme) : null,
-            shape.Outline is not null ? BuildOutlineEl(shape.Outline) : null);
+            shape.Outline is not null ? BuildOutlineEl(shape.Outline) : null,
+            shape.Effects is not null ? BuildEffectLstEl(shape.Effects) : null);
+    }
+
+    private static XElement BuildCustGeomEl(List<CustomGeometryPath> paths)
+    {
+        var pathEls = new List<XElement>();
+        foreach (var path in paths)
+        {
+            var pathEl = new XElement(A + "path");
+            if (path.PathW > 0) pathEl.Add(new XAttribute("w", path.PathW));
+            if (path.PathH > 0) pathEl.Add(new XAttribute("h", path.PathH));
+            if (!path.Fill)   pathEl.Add(new XAttribute("fill", "none"));
+            if (!path.Stroke) pathEl.Add(new XAttribute("stroke", "0"));
+
+            foreach (var seg in path.Segments)
+            {
+                switch (seg.Kind)
+                {
+                    case CustomSegmentKind.MoveTo:
+                        pathEl.Add(new XElement(A + "moveTo",
+                            new XElement(A + "pt", new XAttribute("x", (long)seg.X), new XAttribute("y", (long)seg.Y))));
+                        break;
+                    case CustomSegmentKind.LineTo:
+                        pathEl.Add(new XElement(A + "lnTo",
+                            new XElement(A + "pt", new XAttribute("x", (long)seg.X), new XAttribute("y", (long)seg.Y))));
+                        break;
+                    case CustomSegmentKind.CubicBezTo:
+                        pathEl.Add(new XElement(A + "cubicBezTo",
+                            new XElement(A + "pt", new XAttribute("x", (long)seg.X),  new XAttribute("y", (long)seg.Y)),
+                            new XElement(A + "pt", new XAttribute("x", (long)seg.X1), new XAttribute("y", (long)seg.Y1)),
+                            new XElement(A + "pt", new XAttribute("x", (long)seg.X2), new XAttribute("y", (long)seg.Y2))));
+                        break;
+                    case CustomSegmentKind.QuadBezTo:
+                        pathEl.Add(new XElement(A + "quadBezTo",
+                            new XElement(A + "pt", new XAttribute("x", (long)seg.X),  new XAttribute("y", (long)seg.Y)),
+                            new XElement(A + "pt", new XAttribute("x", (long)seg.X1), new XAttribute("y", (long)seg.Y1))));
+                        break;
+                    case CustomSegmentKind.ArcTo:
+                        pathEl.Add(new XElement(A + "arcTo",
+                            new XAttribute("wR",    (long)seg.WR),
+                            new XAttribute("hR",    (long)seg.HR),
+                            new XAttribute("stAng", (long)Math.Round(seg.StAng * 60000)),
+                            new XAttribute("swAng", (long)Math.Round(seg.SwAng * 60000))));
+                        break;
+                    case CustomSegmentKind.Close:
+                        pathEl.Add(new XElement(A + "close"));
+                        break;
+                }
+            }
+            pathEls.Add(pathEl);
+        }
+
+        return new XElement(A + "custGeom",
+            new XElement(A + "avLst"),
+            new XElement(A + "gdLst"),
+            new XElement(A + "ahLst"),
+            new XElement(A + "cxnLst"),
+            new XElement(A + "rect",
+                new XAttribute("l", "0"), new XAttribute("t", "0"),
+                new XAttribute("r", "r"), new XAttribute("b", "b")),
+            new XElement(A + "pathLst", pathEls));
+    }
+
+    private static XElement BuildEffectLstEl(ShapeEffects fx)
+    {
+        var effectLst = new XElement(A + "effectLst");
+
+        if (fx.HasOuterShadow)
+        {
+            long alpha100k = fx.OuterShadowAlpha * 100000L / 255;
+            effectLst.Add(new XElement(A + "outerShdw",
+                new XAttribute("blurRad", fx.OuterShadowBlurRadEmu),
+                new XAttribute("dist",    fx.OuterShadowDistEmu),
+                new XAttribute("dir",     (long)Math.Round(fx.OuterShadowDirDeg * 60000)),
+                new XElement(A + "srgbClr",
+                    new XAttribute("val", FmtColor(fx.OuterShadowColor)),
+                    new XElement(A + "alpha", new XAttribute("val", alpha100k)))));
+        }
+
+        if (fx.HasInnerShadow)
+        {
+            long alpha100k = fx.InnerShadowAlpha * 100000L / 255;
+            effectLst.Add(new XElement(A + "innerShdw",
+                new XAttribute("blurRad", fx.InnerShadowBlurRadEmu),
+                new XAttribute("dist",    fx.InnerShadowDistEmu),
+                new XAttribute("dir",     (long)Math.Round(fx.InnerShadowDirDeg * 60000)),
+                new XElement(A + "srgbClr",
+                    new XAttribute("val", FmtColor(fx.InnerShadowColor)),
+                    new XElement(A + "alpha", new XAttribute("val", alpha100k)))));
+        }
+
+        if (fx.HasGlow)
+        {
+            long alpha100k = fx.GlowAlpha * 100000L / 255;
+            effectLst.Add(new XElement(A + "glow",
+                new XAttribute("rad", fx.GlowRadiusEmu),
+                new XElement(A + "srgbClr",
+                    new XAttribute("val", FmtColor(fx.GlowColor)),
+                    new XElement(A + "alpha", new XAttribute("val", alpha100k)))));
+        }
+
+        if (fx.HasSoftEdge)
+            effectLst.Add(new XElement(A + "softEdge", new XAttribute("rad", fx.SoftEdgeRadEmu)));
+
+        return effectLst;
     }
 
     // ── Table / graphicFrame elements ─────────────────────────────────────────────
