@@ -4,6 +4,47 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
+## Session 2026-06-24/25 — theming, localization convergence, dedup waves, FreeW Avalonia parity — ✅ DONE
+
+A large multi-track session (all landed on `main`, gated green). Summary; details in memory + per-commit messages.
+
+**Theming (WS-G) — built end-to-end.** New `Free.Shared.Theme` (token contract: `ThemeColor` ARGB, 21 semantic
+color roles, typography, metrics) + `Free.Shared.Theme.Wpf`/`.Avalonia` appliers + `BrandThemes.FreeX/FreeW/FreeP`
+(+`FreeXMidnight` demo). Rounds: foundation → title bar + status bar token-driven (one source → both renderers)
+→ typography/metrics + **Win/Linux chrome parity baseline** (`docs/parity/theme-token-baseline.md`) → all FreeX
+WPF chrome to `DynamicResource` → FreeW + FreeP apply themes + chrome consumes tokens → shared ribbon neutral
+colors (byte-identical cross-app) → shared ribbon **accent per-app** (FreeP ribbon adopts brick brand). Reskin =
+swap the `Theme` object (`FREEX_THEME=midnight`). Default look byte-identical throughout (verified by tests +
+headless render PNGs).
+
+**Localization convergence — the Win = Linux fidelity fix.** Host-WPF (5,077 keys, 43 locales) and Avalonia/Loc
+(1,701 keys, 1 locale) were divergent catalogs. Converged onto ONE shared superset in `FreeX.App.Localization`
+(6,401 keys + 43 satellites); Host `UiText` reads it; **Windows byte-identical (test-verified), Linux gained
+~3,376 keys + 42 locales**; mnemonic `_` stays canonical (Avalonia strips). Dead duplicate Host `.resx` removed.
+
+**Dedup waves.** Cross-app audit confirmed the shared tier already captures most non-rendering code. Landed:
+`ConditionalFormat.Clone()` → Core.Model; `PivotFieldItemsReader` → Presentation + RibbonIcon perf guard;
+shared help dialogs (`SharedAboutDialog`/`SharedLegalNoticesDialog`); `AppVersionFormatter` +
+`SkiaPdfAvailabilityHelper`; `FileFormatDescriptor` → `Free.Shared.IO`; OPC property constants/W3CDTF →
+`Free.Shared.Opc` (both slash conventions); **`DrawingMlUnits`** (EMU/dxa/points) → `Free.Shared.Opc`; FreeX
+options onto shared `INormalizableApplicationOptions`; FreeW Avalonia `SidePaneBase`. Investigated + correctly
+**declined** UiText→Loc collapse and RibbonMetadata collapse (genuine architectural divergence — NOT-DEDUP).
+
+**FreeW Avalonia ↔ WPF parity (R1–R8).** Took FreeW's Avalonia shell from a 2.8k stub to a real shell, all as
+thin views over the portable `FreeW.App.Presentation` planners + `FreeW.Core.Model` (no Host/Core edits):
+file lifecycle (3-way save prompt + recent files + autosave w/ recovery), backstage File screen (8 planner-driven
+panes), navigation pane (heading outline + search), reviewing pane (tracked changes + accept/reject), reveal-
+formatting pane + full find/replace dialog, **print-layout chrome + multi-page pagination + Print/Web/Draft view
+modes** (visually verified via a `FreeW.PageLayoutShot` headless render tool).
+
+**Decisions/gotchas.** Dual-thin-renderer strategy confirmed. Adding a `freew.*` Avalonia ribbon command requires
+a matching `{slug}.svg` asset + the Host `RibbonCommandIconAssetTests` gate (not in the Avalonia test run; asset
+copy needs a non-incremental rebuild). Safe-dedup discipline: with many parallel sessions hot, the safe frontier
+is processed/empty — remaining real dedup is owned by active sessions (shapes → Geometry; FreeP → DrawingML/OPC;
+FreeW parity → ribbon/doc-props) and resumes as those fields clear.
+
+---
+
 ## FreeX/Avalonia picture insertion placement planner — ✅ DONE (dedup slice)
 
 **Branch:** `codex/picture-insertion-placement-dedup-20260623`; implementation commit message: `Share picture insertion placement planning`.
