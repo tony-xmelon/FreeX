@@ -114,13 +114,14 @@ Multiple sessions run in parallel over one OneDrive-shared `.git`. Division of l
 1. **FreeP's presentation domain** — the family's biggest gap; **actively owned** by the FreeP-foundation
    session (do not collide). The FreeP *Avalonia* renderer is the natural unification contribution once their
    compositor API stabilizes.
-2. **Resume gated dedup as fields clear**: Geometry/ShapeGeometry consolidation (when shapes session finishes),
-   the cross-app DrawingML/OPC/color substrate (when FreeP settles), ribbon centralization +
-   `CoreDocumentProperties` (when FreeW Host quiets).
+2. **Resume gated dedup as fields clear** — see `DEDUP-BACKLOG.md` for the verified, file:line-ranked
+   candidates with per-item unlock conditions. Headliners: the OPC path/rels/content-type substrate (B1) and
+   shared `CoreDocumentProperties` (B2) across all three `Core.IO` layers; finishing the `Free.Shared.Drawing`
+   migration by deleting the un-deleted FreeX geometry originals (B3, ~633 LOC); cross-app color/EMU (B4).
 3. **FreeW Avalonia polish** (incremental): rulers, deeper formatting fidelity.
 
 The **safe, non-colliding dedup frontier is currently processed/empty** — remaining real dedup is owned by
-active sessions and resumes as those fields clear.
+active sessions and resumes as those fields clear (`DEDUP-BACKLOG.md` is staged to execute on the moment one does).
 
 ## Deferred alignment items (do when already touching the area)
 
