@@ -11,11 +11,11 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Metric | Count |
 |---|---:|
 | Total commands | 531 |
-| PARITY (both) | 466 |
-| AVALONIA-MISSING | 4 |
+| PARITY (both) | 468 |
+| AVALONIA-MISSING | 2 |
 | WPF-MISSING | 48 |
 | BOTH-MISSING | 13 |
-| Intentional Linux omissions (allowlisted) | 4 |
+| Intentional Linux omissions (allowlisted) | 2 |
 
 ## Matrix
 
@@ -533,12 +533,12 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Reset Window Position | Window | View | yes | yes | PARITY |
 | Split | Window | View | yes | yes | PARITY |
 | Switch Windows | Window | View | yes | yes | PARITY |
-| Synchronous Scrolling | Window | View | yes | — | AVALONIA-MISSING |
+| Synchronous Scrolling | Window | View | yes | yes | PARITY |
 | Tiled | Window | View | yes | yes | PARITY |
 | Unfreeze Panes | Window | View | yes | yes | PARITY |
 | Unhide | Window | View | yes | yes | PARITY |
 | Vertical | Window | View | yes | yes | PARITY |
-| View Side by Side | Window | View | yes | — | AVALONIA-MISSING |
+| View Side by Side | Window | View | yes | yes | PARITY |
 | Custom Views | Workbook Views | View | yes | yes | PARITY |
 | Normal#NormalViewBtn_Click | Workbook Views | View | yes | yes | PARITY |
 | Page Break Preview | Workbook Views | View | yes | yes | PARITY |
