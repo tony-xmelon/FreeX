@@ -293,3 +293,17 @@ Resumed the previously-deferred "needs new engine/model" items. All merged to `o
 Final verification: Release build 0/0; FreeW.App.Host.Tests 620, FreeW.Core.Model.Tests 1146, FreeW.Core.IO.Tests 721 — all green.
 
 Now exhausted: the deferred new-engine backlog. Genuinely-remaining minor items: artistic image-effect filters (blur/glow/paint), `SectionBreak` preservation through the PagedEdit body-reassembly path (`ReadBlocksInto`), and stabilizing the cold-start WPF/STA test flakiness (a warm-up fixture). Out of scope by direction: cloud/account, Developer/macros, ink/Draw, e-mail-send.
+
+## Parity Exhaustion - 2026-06-24/25 Waves 23-26 (WPF FreeW in-scope parity complete)
+
+After the deferred-feature backlog, a comprehensive read-only sweep enumerated every remaining in-scope gap; Waves 23-26 cleared them. All merged to `origin/main`, verified (Release build 0/0; FreeW Host/Core.Model/Core.IO green). The cold-start STA flakiness was eliminated by a warm-up fixture (keeper STA thread + ribbon pre-construction).
+
+- **Wave 23** — SectionBreak preservation through commit/PagedEdit reassembly; Home depth (Font Advanced dialog, Paragraph Line&Page-Breaks tab, Paste Special, Sort options, Manage Styles, Define New Multilevel List); Insert depth (document-property fields, Field dialog, Date&Time field, Text Box gallery, Drop Cap options); Design depth (more Style Sets, Custom Paragraph Spacing, Customize Colors/Fonts, Page Border art, Picture Watermark).
+- **Wave 24** — References (Table of Authorities depth, cross-reference insert-as breadth, citation styles IEEE/Turabian/Harvard/Vancouver/GOST/ISO-690, Compare show-source settings); Layout/View (Line Numbers options, object Align/Distribute, Outline level combo, Read Mode options, New Window/Arrange All); Picture effects (Picture Styles gallery, shadow/reflection/glow/soft-edge/bevel, recolor/duotone/color-tone); Shape+WordArt (shape effects, gradient/pattern fill, Shape Styles gallery, full WordArt gallery + Transform/Warp).
+- **Wave 25** — Table per-cell/per-edge borders + cell text direction; artistic image-effect filters + shape edit-points (custom geometry); local Thesaurus + Review Show-Markup Balloons + the warm-up fixture; bibliography master source list + Draw Table/Eraser + PagedEdit polish (exact overflow-break heights, inter-page gap highlight).
+- **Wave 26** — Drawing Format > Arrange completion: z-order, Wrap Text, Position, and shape Rotate/Flip (new shape model fields + a:xfrm round-trip + render).
+
+A final confirmation sweep verified that the only WPF FreeW Word surfaces still absent are out-of-scope by directive (cloud/account, Developer/macros/VBA/XML-mapping, ink/Draw, e-mail-send merge, online media/templates, cloud Translate) plus open-ended polish. **In-scope WPF FreeW parity is exhausted.**
+
+### Known cross-shell divergence (WPF vs Avalonia)
+This entire program targeted the **WPF** app (`FreeW.App.Host`). The shared `FreeW.Core.Model` + `FreeW.Core.IO` tiers (model fields + DOCX round-trip) benefit both shells, but the **Avalonia** FreeW shell (`FreeW.App.Avalonia`, a custom non-FlowDocument `Control`) was NOT updated: its ribbon exposes ~22 command ids vs the WPF shell's ~585. Per direction, **WPF is the parity reference**; bringing Avalonia FreeW to parity (render-heavy features — floating objects, galleries, effects, PagedEdit — need Avalonia-native reimplementation) is a separate, large, deliberately-deferred program.
