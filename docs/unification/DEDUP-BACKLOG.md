@@ -69,15 +69,16 @@ Each app has its own document-properties model + hand-rolled core/app/custom XML
 
 ---
 
-## D. Dev-tooling dedup — `tools/FreeX.*` fidelity/compare harnesses  ·  confidence: HIGH (real dup), but NOT currently safe
-Large duplication across the FreeX fidelity tools, BUT these are the **parity session's active measurement
-instruments** (half touched 11-12h ago) — consolidating them risks colliding with or breaking the parity
-workflow. Execute only when the parity tooling quiets.
-- Value-equivalence helpers (`ValuesMatch`/`TryNumeric`/`NumbersMatch`/`ScalarStr`/`ColToLetter`, ~90 LOC): `FreeX.SheetFidelity/Program.cs`, `FreeX.FormatFidelity/FidelityCompare.cs`, `FreeX.FormatCrossCheck/FidelityCompare.cs` (the latter two say "lifted verbatim").
-- WPF pixel-diff utils (`LoadBitmap`/`ResizeTo`/`CreateWhite`/`GetBgra32Pixels`/`ComputeMeanPixelDiff`, ~75 ×3): `FreeX.SheetImageCompare`, `FreeX.ChartFileCompare`, `FreeX.SheetGridImageCompare` (+ `FreeX.ParityCompare.Core/ImageDiff.cs`, `FreeP.RenderCompare/ImageDiff.cs`).
-- `WriteSideBySide` composite PNG (~35 ×3); `SanitizeFileName` (~11 ×4); `ColToLetter` (~8 ×4); Excel COM bootstrap/retry (`GetOrCreateExcel`/`TrySet…`/RPC-HResult retry, ~50-80): `FreeX.FidelityCompare/ExcelInspector.cs`, `FreeX.ChartInteropCompare/…ExcelInterop.cs`, `FreeX.ExcelOpenSmoke/ExcelSmokeCom.cs`.
+## D. Dev-tooling dedup — `tools/FreeX.*` fidelity/compare harnesses  ·  confidence: HIGH (real dup)
+Large duplication across the FreeX fidelity tools. CAUTION: these are the parity sessions' measurement
+instruments and live in `FreeX.slnx`, so only consolidate files that are COLD (>24h since last commit) and
+keep every move **behavior-preserving / verbatim** (a changed tolerance silently corrupts parity numbers).
 
-**Destination:** a `tools/FreeX.ToolsShared` assembly (split portable value helpers from windows-targeted WPF/COM). **Unlock:** parity tooling quiets (these tools are in `FreeX.slnx`, so changes hit the parity build/test surface). Leave `FreeP.RenderCompare`/`FreeW.RenderCompare` to their owners.
+- ✅ **DONE 2026-06-26 (`1d34ffa79`)** — Value-equivalence helpers (`ValuesMatch`/`TryNumeric`/`NumbersMatch`/`ScalarStr`/`ColToLetter`/`DisplayString`) → new portable `tools/FreeX.ToolsShared/FidelityValueCompare.cs`. Repointed `FreeX.SheetFidelity`, `FreeX.FormatFidelity`; `FreeX.FormatCrossCheck` delegates the identical ones but **keeps its newline-normalizing `ValuesMatch`/`DisplayMatch` override** (genuine local divergence — not flattened). All three were 7d cold. Full `FreeX.slnx` build green.
+- ⬜ WPF pixel-diff utils (`LoadBitmap`/`ResizeTo`/`CreateWhite`/`GetBgra32Pixels`/`ComputeMeanPixelDiff`, ~75 ×3): `FreeX.SheetImageCompare` (11d cold), `FreeX.ChartFileCompare` (11d cold), `FreeX.SheetGridImageCompare` (warm) (+ `FreeX.ParityCompare.Core/ImageDiff.cs`, `FreeP.RenderCompare/ImageDiff.cs`). NOTE canvas-size divergence (800×600 vs 600×400) — parameterize, don't assume identical. The two 11d-cold ones are the next safe slice → `FreeX.ToolsShared` (windows-targeted partner assembly).
+- ⬜ `WriteSideBySide` composite PNG (~35 ×3); `SanitizeFileName` (~11 ×4); Excel COM bootstrap/retry (`GetOrCreateExcel`/`TrySet…`/RPC-HResult retry, ~50-80): `FreeX.FidelityCompare/ExcelInspector.cs`, `FreeX.ChartInteropCompare/…ExcelInterop.cs`, `FreeX.ExcelOpenSmoke/ExcelSmokeCom.cs` — several touched <24h; wait for cold.
+
+**Destination:** `tools/FreeX.ToolsShared` (portable helpers landed; add a windows-targeted partner for WPF/COM). Leave `FreeP.RenderCompare`/`FreeW.RenderCompare` to their owners.
 
 ---
 
@@ -89,7 +90,7 @@ workflow. Execute only when the parity tooling quiets.
 | FreeP domain stabilizes | **C1, C3, C4**; FreeP half of **B1/B2/B4** |
 | FreeX `Core.IO` quiets | **C2**; FreeX half of **B1/B2**; **B4** color |
 | FreeW `Core.IO` quiets | FreeW half of **B1/B2** |
-| Parity tooling quiets | **D** (tools/FreeX.ToolsShared) |
+| Cold fidelity tools (>24h) | **D** — value helpers DONE (`1d34ffa79`); pixel-diff (2× 11d-cold) is the next safe slice |
 
 When two+ of these clear together, the full cross-app extraction (B1/B2) lands in one pass. Highest strategic
 value: **B1** (OPC substrate) and **B2** (core-properties) — the genuinely-shared document plumbing all three
