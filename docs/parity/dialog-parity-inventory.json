@@ -659,6 +659,7 @@
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotFieldItemsReader.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineHitDateResolver.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
                                                ],
                      "notes":  [
@@ -681,6 +682,7 @@
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotFieldItemsReader.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineHitDateResolver.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
                                                ],
                      "notes":  [
