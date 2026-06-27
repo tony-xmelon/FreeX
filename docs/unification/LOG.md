@@ -4,6 +4,38 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
+## FreeW/FreeP Avalonia shared shell frame - DONE (dedup slice)
+
+**Branch:** `codex/dedup-avalonia-shell-frame-20260627`.
+
+**Goal.** Create the first shared Avalonia shell/frame extraction for the simpler sister apps without touching
+FreeX's larger Avalonia host.
+
+**What changed.**
+
+- Added `Free.Shared.Shell.Avalonia`, a small `net10.0` Avalonia-coupled shared project with
+  `SisterAppClientFrameBuilder` and `SisterAppStatusBarChrome`.
+- FreeW Avalonia now supplies its ribbon, document workarea, find bar, and status controls to the shared frame.
+  The shared frame owns top-ribbon, bottom-status/find, and fill-workarea docking.
+- FreeP Avalonia now supplies its ribbon, slide workarea, and status text to the same shared frame.
+- Added focused FreeW/FreeP Avalonia guards proving the shell frame is used and preserving the headless
+  MainWindow/ribbon/status construction shape.
+- Solution wiring now lists the new shared shell project; preflight also required listing existing tracked
+  FreeP rendering/generate-fixture projects and refreshing the generated dialog parity inventory.
+
+**Deliberately left for a later slice.** No Avalonia startup runner was added; the current startup paths stay
+app-owned. FreeX Avalonia remains untouched until a dedicated adoption pass can map its larger host surface.
+
+**Validation.**
+
+- `dotnet build FreeW.slnx --configuration Release` - clean, 0 warnings / 0 errors.
+- `dotnet build FreeP.slnx --configuration Release` - clean, 0 warnings / 0 errors.
+- `dotnet test freew/FreeW.App.Avalonia.Tests/FreeW.App.Avalonia.Tests.csproj --configuration Release --no-build --filter "FullyQualifiedName~MainWindowShellFrameTests|FullyQualifiedName~RibbonAndDocumentTests" --logger "trx;LogFileName=freew-avalonia-shell-frame.trx"` - 9/9 passed.
+- `dotnet test freep/FreeP.App.Avalonia.Tests/FreeP.App.Avalonia.Tests.csproj --configuration Release --no-build --filter "FullyQualifiedName~MainWindowHeadlessTests" --logger "trx;LogFileName=freep-avalonia-mainwindow-shell-frame.trx"` - 17/17 passed.
+- `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Test-RepositoryPreflight.ps1` - clean.
+
+---
+
 ## Session 2026-06-24/25 — theming, localization convergence, dedup waves, FreeW Avalonia parity — ✅ DONE
 
 A large multi-track session (all landed on `main`, gated green). Summary; details in memory + per-commit messages.
