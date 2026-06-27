@@ -199,15 +199,18 @@
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\CellReferenceInputParser.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsApplyPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDelimiters.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogResult.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogState.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsFixedWidthRulerPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsOptions.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsResult.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsSplitter.cs",
-                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsValueConverter.cs"
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsValueConverter.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsWizardSurfacePlanner.cs"
                                                ],
                      "notes":  [
                                    "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
