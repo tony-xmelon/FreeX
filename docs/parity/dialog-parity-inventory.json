@@ -795,6 +795,7 @@
                                                    "src\\FreeX.App.Presentation\\Charts\\ChartLayoutEngine.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\ChartLayoutRequest.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\ChartLayoutRequestBuilder.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\ChartStylePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\Geometry.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\LegendLayoutBuilder.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\TrendlineCalculator.cs",
