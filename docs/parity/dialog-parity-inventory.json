@@ -154,8 +154,10 @@
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterDialogCriteriaPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterDialogModel.cs",
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterDropdownMenuPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterHeaderButtonPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuCatalog.cs",
-                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuModel.cs"
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuModel.cs",
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterToggleRangePlanner.cs"
                                                ],
                      "notes":  [
                                    "No current checked-in WPF capture asset was found by this inventory slice."
