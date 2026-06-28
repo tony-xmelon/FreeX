@@ -206,6 +206,7 @@
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogResult.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogState.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsFixedWidthBreakPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsFixedWidthRulerPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsOptions.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsPlanner.cs",
