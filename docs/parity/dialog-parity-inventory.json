@@ -673,6 +673,7 @@
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineHitDateResolver.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineInteractionPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelinePanePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
                                                ],
                      "notes":  [
@@ -697,6 +698,7 @@
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineHitDateResolver.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineInteractionPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelinePanePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
                                                ],
                      "notes":  [
