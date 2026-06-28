@@ -472,7 +472,8 @@
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\Sparklines\\SparklineLayoutEngine.cs",
                                                    "src\\FreeX.App.Presentation\\Sparklines\\SparklineSeriesReader.cs",
-                                                   "src\\FreeX.App.Presentation\\SparklineUI\\SparklinePlanner.cs"
+                                                   "src\\FreeX.App.Presentation\\SparklineUI\\SparklinePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\SparklineUI\\SparklineRenderPlanner.cs"
                                                ],
                      "notes":  [
                                    "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
@@ -670,6 +671,7 @@
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotFieldItemsReader.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineHitDateResolver.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineInteractionPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
                                                ],
                      "notes":  [
@@ -693,6 +695,7 @@
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotFieldItemsReader.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineHitDateResolver.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineInteractionPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
                                                ],
                      "notes":  [
