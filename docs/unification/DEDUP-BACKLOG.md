@@ -75,7 +75,7 @@ instruments and live in `FreeX.slnx`, so only consolidate files that are COLD (>
 keep every move **behavior-preserving / verbatim** (a changed tolerance silently corrupts parity numbers).
 
 - ✅ **DONE 2026-06-26 (`1d34ffa79`)** — Value-equivalence helpers (`ValuesMatch`/`TryNumeric`/`NumbersMatch`/`ScalarStr`/`ColToLetter`/`DisplayString`) → new portable `tools/FreeX.ToolsShared/FidelityValueCompare.cs`. Repointed `FreeX.SheetFidelity`, `FreeX.FormatFidelity`; `FreeX.FormatCrossCheck` delegates the identical ones but **keeps its newline-normalizing `ValuesMatch`/`DisplayMatch` override** (genuine local divergence — not flattened). All three were 7d cold. Full `FreeX.slnx` build green.
-- ⬜ WPF pixel-diff utils (`LoadBitmap`/`ResizeTo`/`CreateWhite`/`GetBgra32Pixels`/`ComputeMeanPixelDiff`, ~75 ×3): `FreeX.SheetImageCompare` (11d cold), `FreeX.ChartFileCompare` (11d cold), `FreeX.SheetGridImageCompare` (warm) (+ `FreeX.ParityCompare.Core/ImageDiff.cs`, `FreeP.RenderCompare/ImageDiff.cs`). NOTE canvas-size divergence (800×600 vs 600×400) — parameterize, don't assume identical. The two 11d-cold ones are the next safe slice → `FreeX.ToolsShared` (windows-targeted partner assembly).
+- ✅ **DONE 2026-06-28** — FreeX WPF pixel-diff utils (`LoadBitmap`/`ResizeTo`/`CreateWhite`/`GetBgra32Pixels`/`ComputeMeanPixelDiff`) → `tools/FreeX.ToolsShared.Wpf/WpfImageDiff.cs`. Repointed `FreeX.SheetImageCompare` (800×600), `FreeX.ChartFileCompare` (600×400), and `FreeX.SheetGridImageCompare` (800×600; exact-pixel tolerance path kept local). `FreeX.ParityCompare.Core/ImageDiff.cs` and `FreeP.RenderCompare/ImageDiff.cs` remain separate owner/surface decisions.
 - ⬜ `WriteSideBySide` composite PNG (~35 ×3); `SanitizeFileName` (~11 ×4); Excel COM bootstrap/retry (`GetOrCreateExcel`/`TrySet…`/RPC-HResult retry, ~50-80): `FreeX.FidelityCompare/ExcelInspector.cs`, `FreeX.ChartInteropCompare/…ExcelInterop.cs`, `FreeX.ExcelOpenSmoke/ExcelSmokeCom.cs` — several touched <24h; wait for cold.
 
 **Destination:** `tools/FreeX.ToolsShared` (portable helpers landed; add a windows-targeted partner for WPF/COM). Leave `FreeP.RenderCompare`/`FreeW.RenderCompare` to their owners.
@@ -90,7 +90,7 @@ keep every move **behavior-preserving / verbatim** (a changed tolerance silently
 | FreeP domain stabilizes | **C1, C3, C4**; FreeP half of **B1/B2/B4** |
 | FreeX `Core.IO` quiets | **C2**; FreeX half of **B1/B2**; **B4** color |
 | FreeW `Core.IO` quiets | FreeW half of **B1/B2** |
-| Cold fidelity tools (>24h) | **D** — value helpers DONE (`1d34ffa79`); pixel-diff (2× 11d-cold) is the next safe slice |
+| Cold fidelity tools (>24h) | **D** — value helpers DONE (`1d34ffa79`); FreeX WPF pixel-diff helpers DONE; remaining compare helpers are owner/surface-specific |
 
 When two+ of these clear together, the full cross-app extraction (B1/B2) lands in one pass. Highest strategic
 value: **B1** (OPC substrate) and **B2** (core-properties) — the genuinely-shared document plumbing all three
