@@ -202,6 +202,7 @@
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\CellReferenceInputParser.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsApplyPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsCommandPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDelimiters.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogResult.cs",
