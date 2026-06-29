@@ -8,7 +8,7 @@
                     "wpfCaptures":  53,
                     "avaloniaCaptures":  0,
                     "avaloniaHarnessRoutes":  56,
-                    "sharedOrPresentationBacked":  57
+                    "sharedOrPresentationBacked":  55
                 },
     "rows":  [
                  {
@@ -847,7 +847,7 @@
                      "displayName":  "Shape Effects",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
                      "wpfEvidence":  [
                                          "screenshots\\draw-object-formatting-tour\\freex_draw_object_formatting_shape_effects_dialog.png"
                                      ],
@@ -856,10 +856,11 @@
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-                                                   "src\\FreeX.App.Presentation\\DrawingUI\\ShapeEffectsPlanner.cs"
+
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found.",
+                                   "No shared/presentation backing file was inferred by this inventory slice."
                                ]
                  },
                  {
@@ -867,7 +868,7 @@
                      "displayName":  "Shape Gradient",
                      "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
-                     "sharedBackingStatus":  "shared-or-presentation-backed",
+                     "sharedBackingStatus":  "wpf-only-or-not-inferred",
                      "wpfEvidence":  [
                                          "screenshots\\draw-object-formatting-tour\\freex_draw_object_formatting_shape_gradient_dialog.png"
                                      ],
@@ -876,10 +877,11 @@
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-                                                   "src\\FreeX.App.Presentation\\DrawingUI\\ShapeGradientPlanner.cs"
+
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found.",
+                                   "No shared/presentation backing file was inferred by this inventory slice."
                                ]
                  },
                  {
