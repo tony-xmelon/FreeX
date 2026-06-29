@@ -626,6 +626,7 @@
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupCommandFactory.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupDialogModel.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupDialogPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupInitialFocusTarget.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeParser.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeSelectionFormatter.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeSelectionTarget.cs",
