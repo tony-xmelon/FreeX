@@ -1,7 +1,6 @@
 using System.Collections;
-using FluentAssertions;
 
-namespace FreeX.App.Host.Tests;
+namespace Free.Shared.Ribbon.Tests;
 
 public sealed class RibbonResizeThresholdGateTests
 {
@@ -62,26 +61,7 @@ public sealed class RibbonResizeThresholdGateTests
             .Should()
             .BeFalse();
 
-        Console.WriteLine(
-            "PERF RIBBON_RESIZE_THRESHOLD_GATE_SAME_BAND " +
-            $"thresholds={thresholds.Count} item_accesses={thresholds.ItemAccessCount} " +
-            $"linear_baseline_accesses={thresholds.Count}");
         thresholds.ItemAccessCount.Should().BeLessThan(32);
-    }
-
-    [Fact]
-    public void CrossedAnyThreshold_SourceDelegatesPolicyToSharedRibbon()
-    {
-        var hostSource = DialogSourceTestSupport.ReadHostSources("RibbonResizeThresholdGate.cs");
-        var sharedSource = WorkspaceFileLocator.ReadAllText(
-            "shared",
-            "Free.Shared.Ribbon",
-            "Layout",
-            "RibbonResizeThresholdGate.cs");
-
-        hostSource.Should().Contain("Free.Shared.Ribbon.RibbonResizeThresholdGate.CrossedAnyThreshold(");
-        hostSource.Should().NotContain("CountThresholdsBelowWidth(");
-        sharedSource.Should().Contain("CountThresholdsBelowWidth(");
     }
 
     private sealed class CountingThresholdList(IReadOnlyList<double> thresholds) : IReadOnlyList<double>
