@@ -1044,6 +1044,7 @@
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewNavigationState.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewPaginationContext.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewSettingsPanelPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewSurfacePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewToolbarStatePlanner.cs",
                                                    "src\\FreeX.App.Services\\PrintJobPlanner.cs",
                                                    "src\\FreeX.App.Services\\WorkbookExportPrintPlanner.cs"
