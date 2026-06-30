@@ -57,16 +57,16 @@ Focused guards now cover the migration: `DrawingShapeSharedDrawingTests`, `Shape
 
 ### B4. Cross-app color model + EMU units  ·  apps: FreeP + FreeX  ·  confidence: MEDIUM
 - RGB value struct: `freep/FreeP.Core.Model/PresentationTheme.cs:7-20` (`SrgbColor`) ≈ `src/FreeX.Core.Model/CellStyle.cs:20-33` (`CellColor`). Theme-slot enum: `PresentationTheme.cs:26-40` (`ThemeColorSlot`) ≈ `WorkbookTheme.cs:454-469` (`WorkbookThemeColorSlot`, 12 ECMA-376 slots, name variants).
-- EMU constants: FreeP IO inlines `/ 12700.0` / `* 12700` ~20 sites (`PptxPackageReader/Writer`, `PptxColorReader.cs:145`) instead of `Free.Shared.Opc.DrawingMlUnits`; `WorkbookTheme.cs:431` notes it can't take the shared-opc dep. **Destination:** shared color value-types in `Free.Shared.Drawing`; add `DrawingMlUnits` ref to FreeP IO. **Unlock:** FreeP + FreeX Core settle; needs a small interface for the name-variant divergence.
+- EMU constants: **DONE 2026-06-30 for the FreeP Core.IO/App.Presentation unit half**. FreeP package IO now routes point/inch defaults through `Free.Shared.Opc.DrawingMlUnits`, and FreeP presentation geometry/planner code routes inch and 96-DPI DIP constants through `Free.Shared.Drawing.DrawingMlCoordinateUnits`. The remaining B4 cross-app work is the RGB/theme-slot model decision; do not flatten that blindly because FreeP/FreeX still encode different slot names and ownership semantics.
 
 ---
 
 ## C. Intra-app cleanups — flag to the owning session (not cross-app)
 
-- **C1. FreeP HLS color math duplicated within FreeP** (~100 LOC): `freep/FreeP.Core.IO/PptxColorReader.cs:205-298` (`ApplyLumModOff`/`ApplyTint`/`ApplyShade`/`RgbToHls`/`HlsToRgb`) ≈ `freep/FreeP.App.Presentation/ThemeColorResolver.cs:36-137`. Same app — extract to one internal helper. **Owner:** FreeP session.
+- **C1. DONE 2026-06-30 - FreeP HLS color math**: current FreeP readers/resolvers both call `FreeP.Core.Model.ThemeColorTransform`, which adapts to `Free.Shared.Drawing.DrawingMlColorTransform`; `ThemeColorTransformTests` guards against local `RgbToHls`/`HlsToRgb`/private tint/shade copies returning.
 - **C2. FreeX IO `ApplyTint` repeated**: identical `ApplyTint(XElement,double,XNamespace)` in `XlsxChartXmlWriter.Format.cs:187-200`, `XlsxWorkbookThemeWriter.cs:343-356`, `XlsxWorksheetDrawingObjectWriter.cs:715-728` (~13 LOC ×3); plus `ApplyTint(byte,double)` in `XlsxColorReader.cs:171-177` ≈ `WorkbookTheme.cs:139-145`. **Owner:** FreeX session.
-- **C3. FreeP inline EMU → `DrawingMlUnits`** (see B4 units half). **Owner:** FreeP session.
-- **C4. SECURITY — FreeP XML reader not hardened**: `freep/FreeP.Core.IO/PptxPackageReader.cs` `LoadXml` calls `XDocument.Load(stream)` directly, bypassing `Free.Shared.Opc.SecureXmlReaderSettings` (DtdProcessing.Prohibit, 64 MB cap, no resolver) that FreeX (`XlsxPackageXmlEditor.cs:31`) and FreeW (`DocxReader.cs:1066`) both use. XXE/DTD-bomb exposure on untrusted .pptx. **Owner:** FreeP session — flagged separately.
+- **C3. DONE 2026-06-30 - FreeP inline EMU units**: owned Core.IO/App.Presentation call sites now use `DrawingMlUnits`/`DrawingMlCoordinateUnits` with a focused source guard. Deferred by design: `SlideSizeDialogPlanner.EmuPerCm` remains local because the shared DrawingML helper has no centimeter API and the value is UI-unit conversion, not an OOXML primitive; `SlideCanvas`/`ChartRenderPlanner` renderer files were left untouched for the parallel chart-rendering lane.
+- **C4. DONE 2026-06-30 - FreeP XML package loading hardened**: current `PptxPackageReader`/`PptxChartReader` product XML loads use `Free.Shared.Opc.OpcXml`, which flows through `SecureXmlReaderSettings`; `PptxPackageReaderSourceTests` covers package and SmartArt/DSP XML loading plus a DTD rejection scenario.
 
 ---
 
