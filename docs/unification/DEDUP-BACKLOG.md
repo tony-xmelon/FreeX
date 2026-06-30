@@ -22,23 +22,17 @@ per-shell glue, not duplication:
 - **Recent files** — `Free.Shared.AppServices.RecentFilesStore` + `FileCommandWorkflow` + `Free.Shared.Shell.BackstageRecentFileListPlanner`; caps in `ApplicationOptionsSupport`. (Per-app `MaxRecentDocuments` 6 vs 8 is intentional UI.)
 - **Autosave/recovery** — `Free.Shared.AppServices.AutosaveSnapshotStore` + `AutosaveSnapshotCoordinator` ("shared by FreeX and FreeW"). Per-app `AutosaveCoordinator`/`AutosaveAdapter`/`MainWindow.Autosave` are thin host bindings.
 - **Status bar** — `Free.Shared.AppServices.StatusBarViewModel`/`StatusBarDisplayModelBuilder` + `Free.Shared.Ribbon.Wpf.SisterAppStatusBarChrome`.
-- **User-message service** — `Free.Shared.AppServices.IUserMessageService` + `Free.Shared.Shell.Wpf.WpfUserMessageService`/`DialogMessageHelper`. (FreeW/FreeP static `FileCommandMessageBox` test seam is the separately-logged deferred item — see ROADMAP "Deferred alignment items".)
+- **User-message service** — `Free.Shared.AppServices.IUserMessageService` + `Free.Shared.Shell.Wpf.WpfUserMessageService`/`DialogMessageHelper`. FreeX, FreeW, and FreeP file-command hosts now accept the service through constructor injection; the remaining `HeadlessMessageBox.Handler` sites are WPF dialog/test helper seams, not file-command lifecycle duplication.
 - **Ribbon command registry** — `Free.Shared.Ribbon.Commands.RibbonCommandRegistry` + WPF/Avalonia renderers. Per-app `BuildRegistry` is genuine command wiring.
 
 ---
 
 ## B. High-value gated targets (app code — wait for the owning session)
 
-### B1. Shared OPC path / rels / content-type helpers  ·  apps: FreeP + FreeX + FreeW  ·  confidence: HIGH
-All three hand-roll the same OPC plumbing in their IO layers:
-- Zip-entry → `XDocument` loader: `freep/FreeP.Core.IO/PptxPackageReader.cs:1253-1287`, `src/FreeX.Core.IO/XlsxPackageXmlEditor.cs:23-33`, `freew/FreeW.Core.IO/DocxReader.cs:1060-1068`.
-- Rels-path calc (`GetRelsPath`): `PptxPackageReader.cs:1300-1307` + `PptxPackageWriter.cs:1351-1358`, `XlsxPackagePath.cs:17-24`, `DocxWriter.cs:1352-1357` (inlined).
-- Path normalizer (`ResolvePath`/`NormalizeZipPath`, dot-segment collapse): `PptxPackageReader.cs:1309-1322`, `XlsxPackagePath.cs:97-115` + `26-38`.
-- `GetDirectory`: `PptxPackageReader.cs:1294-1297` + `PptxPackageWriter.cs:1362-1365`, `XlsxPackagePath.cs:34-36`, `DocxWriter.cs:1362-1365`.
-- Content-type ↔ extension map: `PptxPackageReader.cs:1326-1340` + `PptxPackageWriter.cs:1404-1415`, `XlsxPackagePath.cs:134-162`, `OoxmlWordprocessing.cs:328-337`.
-- Rels XDocument builder (`RelsDoc`): `PptxPackageWriter.cs:1446-1466` (FreeW inlines at 5+ sites).
+### B1. Shared OPC path / rels / content-type helpers  ·  apps: FreeP + FreeX + FreeW  ·  mostly done / audit adoption
+The shared destination exists on `main`: `Free.Shared.Opc.OpcPathHelper`, `OpcMediaTypes`, `OpcRelationships`, and `OpcXml` now cover package path normalization, relationship-part paths, content-type maps, relationship document creation/loading, and secure XML loading.
 
-**Destination:** `shared/Free.Shared.Opc` — `OpcPathHelper` (paths/rels/dir/normalize, ~35 LOC), `OpcMediaTypes` (content-type map, fixes FreeP's missing tiff/emf/wmf), `OpcRelationships` (rels read+write). Pure string/XML, no app types — clean extract. **Unlock:** Core.IO settles (all three IO layers hot).
+**Current remaining work:** do not create a second helper layer. Re-audit app-local call sites and replace only proven residual clones with the existing shared APIs. Likely residuals are thin app compatibility wrappers such as `XlsxPackagePath` and any local content-type extension maps that still carry workbook-specific behavior. Keep app-specific package semantics local where they encode real XLSX/DOCX/PPTX differences.
 
 ### B2. CoreDocumentProperties model + core.xml/app.xml read-write  ·  apps: all three  ·  confidence: HIGH
 Each app has its own document-properties model + hand-rolled core/app/custom XML parsing:
