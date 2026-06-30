@@ -27,25 +27,24 @@ per-shell glue, not duplication:
 
 ---
 
-## B. High-value gated targets (app code — wait for the owning session)
+## B. High-value gated targets (app code)
 
-### B1. Shared OPC path / rels / content-type helpers  ·  apps: FreeP + FreeX + FreeW  ·  mostly done / audit adoption
+### B1. DONE / monitor - Shared OPC path / rels / content-type helpers  ·  apps: FreeP + FreeX + FreeW
 The shared destination exists on `main`: `Free.Shared.Opc.OpcPathHelper`, `OpcMediaTypes`, `OpcRelationships`, and `OpcXml` now cover package path normalization, relationship-part paths, content-type maps, relationship document creation/loading, and secure XML loading.
 
-**Current remaining work:** do not create a second helper layer. Re-audit app-local call sites and replace only proven residual clones with the existing shared APIs. Likely residuals are thin app compatibility wrappers such as `XlsxPackagePath` and any local content-type extension maps that still carry workbook-specific behavior. Keep app-specific package semantics local where they encode real XLSX/DOCX/PPTX differences.
+2026-07-01 audit: do not create a second helper layer. Current app-local call sites are either already routed through the shared APIs or are thin compatibility wrappers / package-specific semantics. Keep XLSX/DOCX/PPTX differences local where they encode real package behavior.
 
-### B2. CoreDocumentProperties model + core.xml/app.xml read-write  ·  apps: all three  ·  confidence: HIGH
+### B2. DONE / preservation-only decision - CoreDocumentProperties model + core.xml/app.xml read-write  ·  apps: all three
 Current audit: the core-properties destination is now mostly landed on `main`. `Free.Shared.Opc`
 owns `DocumentProperties`, `CoreDocumentProperties`, and core-property read/write helpers; FreeW and
 FreeP root models use the shared mutable model; FreeW/FreeP package readers and writers use the
 shared reader/writer; and FreeX's `XlsxDocumentPropertiesPreserver` uses the shared stable-property
 preservation helper for core/app package metadata.
 
-Remaining B2 work is not a safe blind extraction: `docProps/app.xml` is preserved/stabilized in the
-package layer but is not yet an app-neutral FreeW/FreeP model, and `docProps/custom.xml` carries
-format-specific behavior such as FreeW watermark and Mark-as-Final properties. Treat the next slice
-as an explicit `ExtendedDocumentProperties` ownership decision per app, with IO tests, rather than
-recreating core-property helpers.
+2026-07-01 decision: `docProps/app.xml` remains preservation-only for now. `docProps/custom.xml`
+is intentionally format-specific where it carries FreeW watermark / Mark-as-Final data or other
+app-owned metadata. Do not recreate core-property helpers or force an app-neutral extended-properties
+model without a concrete product requirement and IO tests.
 
 ### B3. DONE 2026-06-30 - Free.Shared.Drawing migration (FreeX originals deleted)
 Current `main` now consumes the shared drawing substrate:
@@ -55,18 +54,21 @@ Current `main` now consumes the shared drawing substrate:
 
 Focused guards now cover the migration: `DrawingShapeSharedDrawingTests`, `ShapeGeometryBuilderTests.PresentationShapeGeometrySources_RemainNeutralized`, and `ChartGeometrySharedDrawingTests`.
 
-### B4. Cross-app color model + EMU units  ·  apps: FreeP + FreeX  ·  confidence: MEDIUM
-- RGB value struct: `freep/FreeP.Core.Model/PresentationTheme.cs:7-20` (`SrgbColor`) ≈ `src/FreeX.Core.Model/CellStyle.cs:20-33` (`CellColor`). Theme-slot enum: `PresentationTheme.cs:26-40` (`ThemeColorSlot`) ≈ `WorkbookTheme.cs:454-469` (`WorkbookThemeColorSlot`, 12 ECMA-376 slots, name variants).
-- EMU constants: **DONE 2026-06-30 for the FreeP Core.IO/App.Presentation unit half**. FreeP package IO now routes point/inch defaults through `Free.Shared.Opc.DrawingMlUnits`, and FreeP presentation geometry/planner code routes inch and 96-DPI DIP constants through `Free.Shared.Drawing.DrawingMlCoordinateUnits`. The remaining B4 cross-app work is the RGB/theme-slot model decision; do not flatten that blindly because FreeP/FreeX still encode different slot names and ownership semantics.
+### B4. DONE / semantic boundary - Cross-app color model + EMU units  ·  apps: FreeP + FreeX + FreeW
+- EMU constants: **DONE 2026-06-30 for the FreeP Core.IO/App.Presentation unit half**. FreeP package IO routes point/inch defaults through `Free.Shared.Opc.DrawingMlUnits`, and FreeP presentation geometry/planner code routes inch and 96-DPI DIP constants through `Free.Shared.Drawing.DrawingMlCoordinateUnits`.
+- DrawingML RGB/theme helpers: **DONE 2026-07-01**. `Free.Shared.Drawing.DrawingMlRgbColor`, `DrawingMlColorTransform`, and `DrawingMlThemeColorSlotMapper` are consumed by FreeX and FreeP for strict DrawingML `srgbClr` / theme-slot paths; `XlsxDrawingColorTintSourceGuardTests` and FreeP theme-color tests guard against local tint/RGB mapper drift.
+- Preset geometry map: **DONE 2026-07-01**. `Free.Shared.Drawing.DrawingMlPresetGeometryMap` now owns canonical preset names and aliases for FreeX/FreeP readers and writers.
+- FreeW color/hex normalization: **CLOSED 2026-07-01 as app/format-specific**. DOCX WordprocessingML has `auto`, named highlight tokens, watermark UI shorthand/alpha text, accessibility fallback, and theme palette contracts that are not strict DrawingML RGB parsing. `ColorHexNormalizationBoundaryTests`, `DocxColorHexNormalizationBoundaryTests`, and `ColorHexDialogBoundaryTests` guard that boundary.
 
 ---
 
 ## C. Intra-app cleanups — flag to the owning session (not cross-app)
 
 - **C1. DONE 2026-06-30 - FreeP HLS color math**: current FreeP readers/resolvers both call `FreeP.Core.Model.ThemeColorTransform`, which adapts to `Free.Shared.Drawing.DrawingMlColorTransform`; `ThemeColorTransformTests` guards against local `RgbToHls`/`HlsToRgb`/private tint/shade copies returning.
-- **C2. FreeX IO `ApplyTint` repeated**: identical `ApplyTint(XElement,double,XNamespace)` in `XlsxChartXmlWriter.Format.cs:187-200`, `XlsxWorkbookThemeWriter.cs:343-356`, `XlsxWorksheetDrawingObjectWriter.cs:715-728` (~13 LOC ×3); plus `ApplyTint(byte,double)` in `XlsxColorReader.cs:171-177` ≈ `WorkbookTheme.cs:139-145`. **Owner:** FreeX session.
+- **C2. DONE 2026-07-01 - FreeX IO `ApplyTint` repeated**: current FreeX theme and DrawingML color paths route through `Free.Shared.Drawing.DrawingMlColorTransform`; `XlsxDrawingColorTintSourceGuardTests` rejects local `ApplyTint` helpers returning to chart/theme/drawing writers.
 - **C3. DONE 2026-06-30 - FreeP inline EMU units**: owned Core.IO/App.Presentation call sites now use `DrawingMlUnits`/`DrawingMlCoordinateUnits` with a focused source guard. Deferred by design: `SlideSizeDialogPlanner.EmuPerCm` remains local because the shared DrawingML helper has no centimeter API and the value is UI-unit conversion, not an OOXML primitive; `SlideCanvas`/`ChartRenderPlanner` renderer files were left untouched for the parallel chart-rendering lane.
 - **C4. DONE 2026-06-30 - FreeP XML package loading hardened**: current `PptxPackageReader`/`PptxChartReader` product XML loads use `Free.Shared.Opc.OpcXml`, which flows through `SecureXmlReaderSettings`; `PptxPackageReaderSourceTests` covers package and SmartArt/DSP XML loading plus a DTD rejection scenario.
+- **C5. DONE 2026-07-01 - FreeX drawing/textbox interaction tail**: `TextBoxInlineEditPlanner` now owns inline text-box key, commit, and lost-focus policy; `SelectionPanePlanner.PlanKeyboardAction` owns selection-pane keyboard policy. WPF remains a renderer/event adapter. Guarded by `TextBoxInlineEditPlannerTests`, `SelectionPanePlannerTests`, and drawing source hygiene tests.
 
 ---
 
@@ -77,9 +79,10 @@ keep every move **behavior-preserving / verbatim** (a changed tolerance silently
 
 - ✅ **DONE 2026-06-26 (`1d34ffa79`)** — Value-equivalence helpers (`ValuesMatch`/`TryNumeric`/`NumbersMatch`/`ScalarStr`/`ColToLetter`/`DisplayString`) → new portable `tools/FreeX.ToolsShared/FidelityValueCompare.cs`. Repointed `FreeX.SheetFidelity`, `FreeX.FormatFidelity`; `FreeX.FormatCrossCheck` delegates the identical ones but **keeps its newline-normalizing `ValuesMatch`/`DisplayMatch` override** (genuine local divergence — not flattened). All three were 7d cold. Full `FreeX.slnx` build green.
 - ✅ **DONE 2026-06-28** — FreeX WPF pixel-diff utils (`LoadBitmap`/`ResizeTo`/`CreateWhite`/`GetBgra32Pixels`/`ComputeMeanPixelDiff`) → `tools/FreeX.ToolsShared.Wpf/WpfImageDiff.cs`. Repointed `FreeX.SheetImageCompare` (800×600), `FreeX.ChartFileCompare` (600×400), and `FreeX.SheetGridImageCompare` (800×600; exact-pixel tolerance path kept local). `FreeX.ParityCompare.Core/ImageDiff.cs` and `FreeP.RenderCompare/ImageDiff.cs` remain separate owner/surface decisions.
-- ⬜ `WriteSideBySide` composite PNG (~35 ×3); `SanitizeFileName` (~11 ×4); Excel COM bootstrap/retry (`GetOrCreateExcel`/`TrySet…`/RPC-HResult retry, ~50-80): `FreeX.FidelityCompare/ExcelInspector.cs`, `FreeX.ChartInteropCompare/…ExcelInterop.cs`, `FreeX.ExcelOpenSmoke/ExcelSmokeCom.cs` — several touched <24h; wait for cold.
+- ✅ **DONE 2026-07-01 (`5dcbe733c`)** - Remaining FreeX tooling harness helpers. `FreeX.ExcelExamplesCharts` now uses `WpfImageDiff`, `WpfSideBySidePng.WriteHeaderOnly`, `ExcelComAutomation.CreateExcelApplicationWithRetry`, `GetNewExcelProcessIds`, `KillExcelProcesses`, and `ToolFileNameSanitizer`. `FreeX.FormatFidelity` and `FreeX.FormatCrossCheck` use the shared sanitizer. `ToolHarnessDedupSourceTests` guards the helper adoption.
+- **Left local by design:** `freew/tools/FreeW.RibbonShot` still has a tiny `SanitizeFileName`. Do not consume `tools/FreeX.ToolsShared` from FreeW for this: that package currently has a FreeX model dependency via `FidelityValueCompare`, and pulling it into a FreeW-only tool would create product coupling for a filename helper. A future neutral `Free.ToolsShared` package could absorb this if more cross-suite tool helpers appear.
 
-**Destination:** `tools/FreeX.ToolsShared` (portable helpers landed; add a windows-targeted partner for WPF/COM). Leave `FreeP.RenderCompare`/`FreeW.RenderCompare` to their owners.
+**Destination:** `tools/FreeX.ToolsShared` for portable helpers and `tools/FreeX.ToolsShared.Wpf` for WPF/COM helpers. Leave `FreeP.RenderCompare`/`FreeW.RenderCompare` to their owners unless a future neutral tool package is created.
 
 ---
 
@@ -87,12 +90,12 @@ keep every move **behavior-preserving / verbatim** (a changed tolerance silently
 
 | When this clears | These items become safe |
 |---|---|
-| Shapes session finishes `Free.Shared.Drawing` | **B3 is done**; keep the existing source guards green |
-| FreeP domain stabilizes | **C1, C3, C4**; FreeP half of **B1/B2/B4** |
-| FreeX `Core.IO` quiets | **C2**; FreeX half of **B1/B2**; **B4** color |
-| FreeW `Core.IO` quiets | FreeW half of **B1/B2** |
-| Cold fidelity tools (>24h) | **D** — value helpers DONE (`1d34ffa79`); FreeX WPF pixel-diff helpers DONE; remaining compare helpers are owner/surface-specific |
+| Shapes session finishes `Free.Shared.Drawing` | Cleared: **B3**, shared DrawingML preset geometry, and FreeX drawing/textbox interaction tail are done; keep guards green. |
+| FreeP domain stabilizes | Cleared for current dedup scope: FreeP HLS/color, EMU, XML loading, RGB/theme-slot adapters, and preset geometry are done. |
+| FreeX `Core.IO` quiets | Cleared for current dedup scope: `ApplyTint`, DrawingML RGB/preset helpers, OPC/core property helper adoption, and tooling helper tails are done. |
+| FreeW `Core.IO` quiets | Cleared for current dedup scope: OPC/doc-property guard adoption is done; color/hex normalization is explicitly app/format-specific. |
+| Cold fidelity tools (>24h) | Cleared for FreeX tools: value helpers, WPF pixel diff, side-by-side PNG, Excel COM helpers, and sanitizer adoption are done. |
 
-When two+ of these clear together, the full cross-app extraction (B1/B2) lands in one pass. Highest strategic
-value: **B1** (OPC substrate) and **B2** (core-properties) — the genuinely-shared document plumbing all three
-apps need.
+Current dedup follow-up is validation/documentation only: keep the guards green, run the standard repo gates,
+and retain FreeX visual evidence against the pre-dedup/current baseline. New extraction should start from a
+fresh audit, not this now-closed backlog.
