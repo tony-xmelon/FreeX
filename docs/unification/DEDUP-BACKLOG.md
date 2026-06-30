@@ -35,8 +35,17 @@ The shared destination exists on `main`: `Free.Shared.Opc.OpcPathHelper`, `OpcMe
 **Current remaining work:** do not create a second helper layer. Re-audit app-local call sites and replace only proven residual clones with the existing shared APIs. Likely residuals are thin app compatibility wrappers such as `XlsxPackagePath` and any local content-type extension maps that still carry workbook-specific behavior. Keep app-specific package semantics local where they encode real XLSX/DOCX/PPTX differences.
 
 ### B2. CoreDocumentProperties model + core.xml/app.xml read-write  ·  apps: all three  ·  confidence: HIGH
-Each app has its own document-properties model + hand-rolled core/app/custom XML parsing:
-`freew/FreeW.Core.Model/TextDocument.cs:1872` (`DocumentProperties`) + `DocxReader.ReadCoreProperties/ReadCustomProperties` (`:4467`,`:4494`) + `DocxWriter.BuildCoreProperties` (`:938`); `freep/FreeP.Core.Model/PresentationProperties.cs` + `PptxPackageReader.ReadCoreProperties:145`; `src/FreeX.Core.IO/XlsxDocumentPropertiesPreserver.cs`. Shared has only the **constants** (`OpcPackageProperties`) and the **UI planner** (`BackstageCorePropertiesPlanner`), not the model or read/write. **Destination:** shared `CoreDocumentProperties` record + reader/writer over `OpcPackageProperties`. **Unlock:** Core.IO + Core.Model settle. (This is the WS-C deferred item.)
+Current audit: the core-properties destination is now mostly landed on `main`. `Free.Shared.Opc`
+owns `DocumentProperties`, `CoreDocumentProperties`, and core-property read/write helpers; FreeW and
+FreeP root models use the shared mutable model; FreeW/FreeP package readers and writers use the
+shared reader/writer; and FreeX's `XlsxDocumentPropertiesPreserver` uses the shared stable-property
+preservation helper for core/app package metadata.
+
+Remaining B2 work is not a safe blind extraction: `docProps/app.xml` is preserved/stabilized in the
+package layer but is not yet an app-neutral FreeW/FreeP model, and `docProps/custom.xml` carries
+format-specific behavior such as FreeW watermark and Mark-as-Final properties. Treat the next slice
+as an explicit `ExtendedDocumentProperties` ownership decision per app, with IO tests, rather than
+recreating core-property helpers.
 
 ### B3. Finish the Free.Shared.Drawing migration (delete FreeX originals)  ·  confidence: HIGH  ·  ~633 LOC live dup
 `Free.Shared.Drawing` was created to host these, with "Ported from…" comments, but the FreeX originals were never deleted — both copies compile and coexist:
