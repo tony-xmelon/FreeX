@@ -47,15 +47,13 @@ format-specific behavior such as FreeW watermark and Mark-as-Final properties. T
 as an explicit `ExtendedDocumentProperties` ownership decision per app, with IO tests, rather than
 recreating core-property helpers.
 
-### B3. Finish the Free.Shared.Drawing migration (delete FreeX originals)  ·  confidence: HIGH  ·  ~633 LOC live dup
-`Free.Shared.Drawing` was created to host these, with "Ported from…" comments, but the FreeX originals were never deleted — both copies compile and coexist:
-- `ShapeGeometryBuilder` (44-preset geometry math, ~430 LOC): `src/FreeX.App.Presentation/Shapes/ShapeGeometryBuilder.cs` vs `shared/Free.Shared.Drawing/ShapeGeometryBuilder.cs` (diff = 26 ns/comment lines).
-- `ShapeGeometry`/`ShapeSegment`/`ShapeContour` (~66): `…/Shapes/ShapeGeometry.cs` vs shared.
-- `DrawingShapeKind` enum (~50): `src/FreeX.Core.Model/DrawingShapeModel.cs` vs `shared/Free.Shared.Drawing/DrawingShapeKind.cs`.
-- `DrawingShapeKindSupport` (~59): `src/FreeX.Core.Model/DrawingShapeKindSupport.cs` vs shared.
-- `LayoutPoint`/`LayoutRect` (~28): `src/FreeX.App.Presentation/Charts/Geometry.cs` vs `shared/Free.Shared.Drawing/Geometry.cs`.
+### B3. DONE 2026-06-30 - Free.Shared.Drawing migration (FreeX originals deleted)
+Current `main` now consumes the shared drawing substrate:
+- `ShapeGeometryBuilder`, `ShapeGeometry`, `ShapeSegment`, and `ShapeContour` are owned by `shared/Free.Shared.Drawing`; `src/FreeX.App.Presentation/Shapes` no longer carries shape-geometry copies.
+- `DrawingShapeKind` and `DrawingShapeKindSupport` are owned by `shared/Free.Shared.Drawing`; `src/FreeX.Core.Model` keeps only FreeX-specific shape model/effect/text metadata.
+- `LayoutPoint` and `LayoutRect` are owned by `shared/Free.Shared.Drawing`; `src/FreeX.App.Presentation/Charts/Geometry.cs` keeps only chart-specific `PlotRect` and `LayoutArc`.
 
-**Action:** delete FreeX originals, repoint consumers at `Free.Shared.Drawing` (keep FreeX-only `PlotRect`/`LayoutArc`, `DrawingShapeEffectPreset`/`GradientDirection` which weren't ported). **Unlock:** the **shapes session** (actively porting `Free.Shared.Drawing`, touched ~hours ago) finishes — likely doing exactly this. Coordinate; don't race it.
+Focused guards now cover the migration: `DrawingShapeSharedDrawingTests`, `ShapeGeometryBuilderTests.PresentationShapeGeometrySources_RemainNeutralized`, and `ChartGeometrySharedDrawingTests`.
 
 ### B4. Cross-app color model + EMU units  ·  apps: FreeP + FreeX  ·  confidence: MEDIUM
 - RGB value struct: `freep/FreeP.Core.Model/PresentationTheme.cs:7-20` (`SrgbColor`) ≈ `src/FreeX.Core.Model/CellStyle.cs:20-33` (`CellColor`). Theme-slot enum: `PresentationTheme.cs:26-40` (`ThemeColorSlot`) ≈ `WorkbookTheme.cs:454-469` (`WorkbookThemeColorSlot`, 12 ECMA-376 slots, name variants).
@@ -89,7 +87,7 @@ keep every move **behavior-preserving / verbatim** (a changed tolerance silently
 
 | When this clears | These items become safe |
 |---|---|
-| Shapes session finishes `Free.Shared.Drawing` | **B3** (delete FreeX geometry originals) — likely they do it |
+| Shapes session finishes `Free.Shared.Drawing` | **B3 is done**; keep the existing source guards green |
 | FreeP domain stabilizes | **C1, C3, C4**; FreeP half of **B1/B2/B4** |
 | FreeX `Core.IO` quiets | **C2**; FreeX half of **B1/B2**; **B4** color |
 | FreeW `Core.IO` quiets | FreeW half of **B1/B2** |
