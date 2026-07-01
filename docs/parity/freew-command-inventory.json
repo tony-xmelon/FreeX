@@ -55,19 +55,19 @@
   ],
   "summary": {
     "totalCommands": 798,
-    "both": 224,
-    "wpfOnly": 400,
+    "both": 230,
+    "wpfOnly": 394,
     "avaloniaOnly": 174,
     "missingWpf": 174,
-    "missingAvalonia": 400,
+    "missingAvalonia": 394,
     "actionableMissingWpf": 9,
-    "actionableMissingAvalonia": 51,
-    "sharedProfile": 224,
+    "actionableMissingAvalonia": 45,
+    "sharedProfile": 230,
     "profileShapeOnly": 443,
     "commandIdAliases": 15,
     "platformOnly": 13,
     "deferred": 43,
-    "actionableGaps": 60
+    "actionableGaps": 54
   },
   "commands": [
     {
@@ -712,13 +712,13 @@
       "commandId": "freew.borders-shading",
       "label": "Borders and Shading…",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -731,12 +731,23 @@
           "layout": "Small"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Borders and Shading...",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -15427,13 +15438,13 @@
       "commandId": "freew.para-border",
       "label": "Borders",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -15446,25 +15457,36 @@
           "layout": "Small"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Borders",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.para-shading",
       "label": "Shading",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -15477,12 +15499,23 @@
           "layout": "Small"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Shading",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -20977,13 +21010,13 @@
       "commandId": "freew.sort",
       "label": "Sort",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -21006,12 +21039,33 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Sort",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "table-layout",
+          "tab": "Table Layout",
+          "groupId": "table-data",
+          "group": "Data",
+          "label": "Sort",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -25002,13 +25056,13 @@
       "commandId": "freew.tabs-dialog",
       "label": "Tabs",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -25031,12 +25085,23 @@
           "layout": "Small"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Tabs",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -26679,13 +26744,13 @@
       "commandId": "freew.widow-control",
       "label": "Widow/Orphan Control",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -26698,12 +26763,23 @@
           "layout": "Small"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Widow/Orphan Control",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
