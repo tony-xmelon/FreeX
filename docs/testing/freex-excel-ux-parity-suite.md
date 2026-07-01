@@ -70,6 +70,7 @@ The batch runner uses `tools/FreeX.ForegroundCapture` to run matching Excel and 
 Suites:
 
 - `smoke`: Format Cells dialog and sheet-tab context-menu pairs.
+- `core`: smoke coverage plus worksheet context-menu Format Cells and sheet-tab overflow Activate dialog pairs.
 - `dialogs`: Format Cells and native Open/Save dialog pairs.
 - `all`: all currently paired foreground scenarios.
 
