@@ -1,207 +1,210 @@
-# Avalonia vs WPF Parity Scope - 2026-06-27
+# Avalonia vs WPF Parity Scope - Updated 2026-07-01
 
 ## Purpose
 
-This document refocuses the thread from a narrow FreeX Linux dialog-parity lane to a repo-wide WPF vs Avalonia parity program across:
+This document tracks the repo-wide WPF vs Avalonia parity program across:
 
 - FreeX - spreadsheet app.
 - FreeW - word-processing app.
 - FreeP - presentation app.
-- Shared infrastructure, render/capture tools, and guardrails.
+- Shared infrastructure, render/capture tools, generated evidence, and guardrails.
 
-The immediate goal is not to claim parity. The goal is to make the current WPF/Avalonia gap map explicit, avoid overlapping active worktrees, and choose the next implementation slices from evidence.
+The target is 100% practical parity: shared policy where the platforms should behave the same, explicit platform-specific adapters where the UI stack requires them, and current evidence for any claim of visual or functional parity.
+
+This update replaces the 2026-06-27 pre-dedup snapshot. The extensive dedup session has landed many items that were previously blockers; the remaining work is now mostly evidence, command-depth, renderer-edge fidelity, and app-specific workflow completion.
 
 ## Current Evidence
 
 - Primary repo root: `C:\Users\anton\OneDrive\Documents\FreeX\FreeX`.
-- `main` was clean and synced with `origin/main` at `a2153c106` during this audit.
+- Audit worktree: `.worktrees/avalonia-wpf-parity-report-refresh-20260701`.
+- `main` was clean and synced with `origin/main` at `9c8991f2d` during this update.
 - `AGENTS.md` requires isolated worktrees, no implementation in `main`, frequent sync, subagents for independent work, and merge/push/cleanup after completed slices.
-- This scope was produced from read-only subagent audits plus local orchestration inspection. No product code was edited for the audit.
+- This report was produced from four read-only subagent audits plus local orchestration inspection. The only intended edit in this slice is this report.
 
-## Active Worktrees To Avoid Overlapping
+## Worktree State
 
-The following 2026-06-27 lanes already exist and should be treated as owned until they land or are explicitly abandoned:
+Several worktrees from the 2026-06-27 parity/dedup wave still exist locally, but their branches are merged into `main` and are not blockers. The old FreeP worktrees are cleanup candidates, not active owners:
 
-| Worktree/branch | Observed purpose | Coordination risk |
+- `.worktrees/freep-wpf-pptx-lifecycle-20260627`
+- `.worktrees/freep-pptx-package-retention-20260627`
+- `.worktrees/freep-render-harness-trust-20260627`
+- `.worktrees/freep-avalonia-command-surface-20260627`
+- `.worktrees/freep-parity-*`
+
+The detached `dedup-visual-*` worktrees look like visual baseline snapshots.
+
+Currently active or dirty lanes to coordinate with:
+
+| Worktree/branch | Current status | Coordination note |
 | --- | --- | --- |
-| `.worktrees/dedup-avalonia-shell-frame-20260627` | Adds `shared/Free.Shared.Shell.Avalonia` and touches FreeW/FreeP Avalonia shells. | Do not start parallel shell-frame extraction. |
-| `.worktrees/dedup-guardrails-20260627` | Extracts shared portability guard logic into `tests/SharedTestInfrastructure/PortableBoundaryGuard.cs`. | Land this before adding new source-boundary guardrails. |
-| `.worktrees/dedup-ribbon-adaptive-policy-20260627` | Moves WPF/Avalonia adaptive ribbon behavior toward shared policy. | Do not edit ribbon adaptive policy/renderers in parallel. |
-| `.worktrees/dedup-shared-drawing-adoption-20260627` | Repoints FreeX-local drawing geometry toward `shared/Free.Shared.Drawing`. | Avoid drawing model/geometry churn until resolved. |
-| `.worktrees/freep-wpf-pptx-lifecycle-20260627` | Makes WPF FreeP PPTX the primary file lifecycle. | Blocks FreeP file-lifecycle parity work on main. |
-| `.worktrees/freep-pptx-package-retention-20260627` | Preserves unmodeled PPTX package parts. | Blocks PPTX package-retention follow-up on main. |
-| `.worktrees/freep-avalonia-command-surface-20260627` | Adds Avalonia FreeP command surface. | Coordinate before expanding FreeP Avalonia ribbon commands. |
-| `.worktrees/freep-render-harness-trust-20260627` | Hardens `tools/FreeP.RenderCompare`. | Coordinate before render-compare dedup/trust work. |
-| `FreeX-linux` on `codex/linux-port-20260616` | Broad dirty FreeW/Linux parity lane. | Inspect as evidence source, but do not mix new dedup edits there. |
+| `FreeX-linux` / `codex/linux-port-20260616` | Dirty broad FreeW/Linux lane with many FreeW app, IO, model, dialog, packaging, and PDF changes. | Inspect before making final FreeW/Linux claims or touching overlapping FreeW Avalonia files. |
+| `.worktrees/tester-release-20260627-r1` / `codex/daily-tester-release-20260627-r1` | Dirty tester-release lane touching workflow and generated FreeX parity artifacts. | Avoid staging its generated artifact state into unrelated report work. |
 
-## Shared Spine Already In Place
+## Shared Spine Now In Place
 
-The repo already has a substantial cross-host/shared tier:
+The high-leverage pattern is established: neutral model/planner/policy plus thin WPF/Avalonia realizers.
 
-- `shared/Free.Shared.Ribbon`
-- `shared/Free.Shared.Ribbon.Wpf`
-- `shared/Free.Shared.Ribbon.Avalonia`
-- `shared/Free.Shared.Shell`
-- `shared/Free.Shared.Shell.Wpf`
-- `shared/Free.Shared.Theme`
-- `shared/Free.Shared.Theme.Wpf`
-- `shared/Free.Shared.Theme.Avalonia`
+Current shared infrastructure:
+
 - `shared/Free.Shared.AppServices`
+- `shared/Free.Shared.AppServices.Windows`
+- `shared/Free.Shared.Commands`
+- `shared/Free.Shared.Drawing`
 - `shared/Free.Shared.IO`
+- `shared/Free.Shared.Localization`
 - `shared/Free.Shared.Opc`
 - `shared/Free.Shared.Pdf`
-- `shared/Free.Shared.Pdf.Wpf`
 - `shared/Free.Shared.Pdf.Skia`
-- `shared/Free.Shared.Drawing`
-- `shared/Free.Shared.Localization`
-- `shared/Free.Shared.Commands`
+- `shared/Free.Shared.Pdf.Wpf`
+- `shared/Free.Shared.Ribbon`
+- `shared/Free.Shared.Ribbon.Avalonia`
+- `shared/Free.Shared.Ribbon.Wpf`
+- `shared/Free.Shared.Shell`
+- `shared/Free.Shared.Shell.Avalonia`
+- `shared/Free.Shared.Shell.Wpf`
+- `shared/Free.Shared.Theme`
+- `shared/Free.Shared.Theme.Avalonia`
+- `shared/Free.Shared.Theme.Wpf`
+- `tests/SharedTestInfrastructure`
+- `tools/FreeX.ToolsShared`
+- `tools/FreeX.ToolsShared.Wpf`
 
-The high-leverage pattern is already established: neutral planner/model plus thin WPF/Avalonia renderer.
+Dedup items that were blockers in the prior report are now landed or intentionally closed:
+
+- Shared Avalonia shell frame for sister apps: `shared/Free.Shared.Shell.Avalonia`.
+- Shared drawing migration: `shared/Free.Shared.Drawing` owns shape geometry, shape kinds, DrawingML units/color/theme/preset helpers, and interaction planners.
+- Shared ribbon policy/rendering spine: `shared/Free.Shared.Ribbon`, `.Wpf`, `.Avalonia`.
+- Shared OPC/docprops substrate: `shared/Free.Shared.Opc`.
+- Shared Avalonia file picker/workflow services.
+- FreeP `.pptx` lifecycle, PPTX package snapshot/retention, and render-harness pixel-diversity trust checks.
+- FreeX tooling helper dedup for value comparison, WPF image diff, side-by-side PNG, Excel COM helpers, and filename sanitizing.
 
 ## FreeX Status
 
 ### Covered
 
-- Ribbon definitions and command registry are heavily shared via `src/FreeX.Ribbon.Definitions`, `shared/Free.Shared.Ribbon`, `shared/Free.Shared.Ribbon.Wpf`, and `shared/Free.Shared.Ribbon.Avalonia`.
-- Command binding parity is strong at the matrix level:
+- Ribbon definitions and command registry are heavily shared through `src/FreeX.Ribbon.Definitions`, `shared/Free.Shared.Ribbon`, `shared/Free.Shared.Ribbon.Wpf`, and `shared/Free.Shared.Ribbon.Avalonia`.
+- Command-binding parity remains strong:
   - `docs/parity/functional-parity.json`
   - `docs/parity/functional-parity.md`
-  - Reported snapshot: 531 commands, 468 parity, 2 Avalonia-missing, 48 WPF-missing, 13 both-missing.
-  - The 2 Avalonia-missing commands were allowlisted JIS commands.
-- Dialog routes are mostly backed by shared service/presentation planners:
-  - `docs/parity/dialog-parity-inventory.md`
-  - `src/FreeX.App.Services`
-  - `src/FreeX.App.Presentation`
-- Status-bar planning is already shared through `Free.Shared.AppServices.StatusBarViewModel` and related planners.
+  - Current snapshot: 531 commands, 468 parity, 2 Avalonia-missing, 48 WPF-missing, 13 both-missing.
+  - The 2 Avalonia-missing commands are allowlisted JIS commands.
+- Dialog route inventory is generated and current:
+  - 57 total routes.
+  - 53 WPF captures.
+  - 0 committed Avalonia captures.
+  - 56 Avalonia harness routes.
+  - 55 shared-or-presentation-backed routes.
+- Much of the spreadsheet behavior now flows through shared or presentation planners:
+  - Workbook lifecycle/open target: `src/FreeX.App.Services/WorkbookFileLifecycleCoordinator.cs`, `WorkbookOpenTargetPlanner.cs`.
+  - Viewport/scroll planning: `src/FreeX.App.Services/WorkbookViewportScrollPlanner.cs`.
+  - Backstage projection: `src/FreeX.App.Presentation/Backstage`.
+  - Print render planning: `src/FreeX.App.Presentation/PageLayout/WorksheetPrintRenderPlanner.cs`.
+  - Drawing and selection-pane policy: `src/FreeX.App.Presentation/DrawingUI`, `shared/Free.Shared.Drawing`.
+  - Status bar and file workflow services: `shared/Free.Shared.AppServices`.
 
 ### Main Gaps
 
-1. Dialog visual parity remains the largest proven gap. The inventory has 57 dialog routes, shared backing, and Avalonia harness routes, but committed visual evidence is incomplete and prior Linux dialog work only landed 9 first-pass visual batches.
-2. Shell chrome is still split:
-   - WPF: `src/FreeX.App.Host/MainWindow.xaml` plus WPF partials.
-   - Avalonia: `src/FreeX.App.Avalonia/MainWindow.cs`, including `BuildContent`, `BuildToolbar`, `BuildSheetTabsChrome`, `BuildStatusBar`, and `BuildWorksheetViewportChrome`.
-3. Backstage differs:
-   - WPF: `src/FreeX.App.Host/MainWindow.Backstage.cs`, `src/FreeX.App.Host/MainWindow.BackstageFrame.cs`.
-   - Avalonia: `src/FreeX.App.Avalonia/MainWindow.Backstage.cs`.
-4. Print preview/export differs:
-   - WPF: `src/FreeX.App.Host/PrintRenderer*.cs`, `src/FreeX.App.Host/PrintPreviewDialog.cs`, `src/FreeX.App.Host/MainWindow.PrintExport.cs`.
-   - Avalonia: `src/FreeX.App.Avalonia/MainWindow.PrintPreview.cs`.
-5. Keyboard routing remains platform-local:
-   - WPF: `src/FreeX.App.Host/KeyboardShortcutMatcher*.cs`, `src/FreeX.App.Host/MainWindow.KeyboardCommands.cs`.
-   - Avalonia: native menu/key paths largely inside `src/FreeX.App.Avalonia/MainWindow.cs`.
+1. Dialog visual evidence is the largest proven gap. The Avalonia harness can route 56 dialogs, but there are still 0 committed Avalonia capture assets in the generated inventory.
+2. Two dialog routes still need shared-backing classification or implementation work: `dialog.ShapeEffects` and `dialog.ShapeGradient`.
+3. Shell, backstage, and print/export are partly deduped at the policy layer but still have host-local renderer edges:
+   - WPF keeps `MainWindow.xaml`, `PrintRenderer*`, and native `PrintDialog` behavior.
+   - Avalonia keeps substantial `MainWindow.cs`, custom print/preview, Skia/PDF, and capture glue.
+4. Keyboard routing remains split:
+   - WPF: `src/FreeX.App.Host/KeyboardShortcutMatcher*.cs`.
+   - Avalonia: `NativeMenuCatalog` plus local key handling.
+5. Contextual chart/table/pivot/drawing commands have strong command binding coverage, but still need visual and workflow evidence across WPF and Avalonia.
 
 ### FreeX Next Slices
 
-1. Continue dialog visual parity from the latest report, starting with `dialog.SelectDataSource` unless a fresh report changes ranking.
-2. Extract/consume shared shell-frame/QAT/status model after the active shell-frame lane settles.
-3. Move keyboard shortcut matching into a portable service and gate both hosts from one matrix.
-4. Close print preview parity around drawing/chart content and platform print/export affordances.
-5. Deduplicate contextual-tab state/action routing for chart/table/pivot/drawing surfaces.
+1. Generate and commit Avalonia dialog captures for the highest-value dialog routes, starting with the already-harnessed dialogs and including visual comparison evidence.
+2. Classify or shared-back `dialog.ShapeEffects` and `dialog.ShapeGradient`.
+3. Consolidate keyboard shortcut matching into a portable service and gate both hosts from one matrix.
+4. Add print/export/render parity evidence around drawing/chart content and native print/export affordances.
+5. Continue renderer-edge shell/backstage polish only after capture evidence identifies concrete diffs.
 
 ## FreeW Status
 
 ### Covered
 
-- Strong shared document core:
+- The shared project spine is now explicit in both WPF and Avalonia hosts:
   - `freew/FreeW.Core.Model`
   - `freew/FreeW.Core.IO`
   - `freew/FreeW.App.Presentation`
-- Both hosts consume shared ribbon/app-service/PDF/theme infrastructure.
-- File lifecycle is partly shared through `Free.Shared.AppServices.FileCommandWorkflow`.
-- Avalonia `DocumentView` is now substantial, not just a stub:
-  - WPF: `freew/FreeW.App.Host/Editing/DocumentView.cs`
-  - Avalonia: `freew/FreeW.App.Avalonia/Editing/DocumentView.cs`
+  - `freew/FreeW.Ribbon.Definitions`
+  - `Free.Shared.*`
+- Ribbon definitions are capability-profiled through `freew/FreeW.Ribbon.Definitions`; tests assert WPF/Avalonia tabs, contextual keys, and allowed command deltas.
+- Avalonia ribbon construction delegates to the shared definition layer, with structured registry wiring in `freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs`.
+- Recent dedup work moved shared behavior into planners/services:
+  - `DocumentViewLayoutPlanner`
+  - `BackstagePaneSurfacePlanner`
+  - `DocumentPersistenceWorkflow`
+  - dialog chrome
+  - editor status planning
+  - floating-object layout and z-order
+  - color normalization boundaries
 
 ### Main Gaps
 
-1. WPF command surface remains broader. Audit estimate:
-   - WPF: roughly 622 unique `freew.*` command ids.
-   - Avalonia: roughly 275.
-2. Avalonia Backstage actions are incomplete:
-   - WPF: `freew/FreeW.App.Host/Backstage/BackstageView.cs`.
-   - Avalonia: `freew/FreeW.App.Avalonia/Backstage/BackstageView.cs`.
-   - Gaps include Print actions, Info safety actions, Options, and Save Copy behavior.
-3. Print/export parity is incomplete:
-   - WPF: `freew/FreeW.App.Host/PrintPreviewWindow.cs`, `PdfExport.cs`, `XpsExport.cs`.
-   - Avalonia: `freew/FreeW.App.Avalonia/Pdf/FreeWAvaloniaPdfExport.cs`.
-4. Proofing/help is shallow in Avalonia:
-   - WPF has spellcheck, thesaurus, read aloud, custom dictionary, proofing language, About, Legal Notices, and update/help flows.
-   - Avalonia mainly has Word Count plus partial help/proofing surface.
-5. Dialog depth differs:
-   - WPF has mature dialog files across `freew/FreeW.App.Host`.
-   - Avalonia has partial equivalents such as `FontDialog.cs`, `ParagraphDialog.cs`, `PageSetupDialog.cs`, `DesignDialogs.cs`, `InsertDialogs.cs`, and `MailMergeDialogs.cs`.
-6. Object/image/chart commands and rich formatting are still uneven. Some Avalonia commands are explicit no-op/deferred placeholders in `freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs`.
+1. Command surface remains much wider in WPF than Avalonia. A live regex inventory found roughly 549 WPF registry ids vs roughly 244 Avalonia ids. This is approximate and must become a generated command inventory before it is used as a gate.
+2. Registered or visible commands are not proof of parity-complete behavior. Some Avalonia routes are placeholders, disabled, or deferred.
+3. WPF-only command clusters remain around images, shapes, WordArt, mail merge, tables, headers/footers, equations, SmartArt, charts, page/view modes, TOC/references, proofing, and help.
+4. Avalonia Backstage is partially wired but still has deferred/placeholder actions, including Options, Print actions, and Info safety actions.
+5. Print/export parity is incomplete. Avalonia PDF export is text-position based and explicitly lacks tables/images/decorations plus full print-pipeline pagination.
+6. Rich rendering is improving, but SmartArt and other DrawingML-heavy surfaces are still simplified compared with WPF/Word.
+7. Proofing/help, source/cross-reference pickers, full track-change recording, header/footer in-region caret editing, picture watermark, and split view remain incomplete or deferred.
+8. The dirty `FreeX-linux` lane contains broad FreeW/Linux changes and should be reconciled before final FreeW parity claims.
 
 ### FreeW Next Slices
 
-1. Generate a fresh WPF-vs-Avalonia FreeW command inventory and classify every missing Avalonia command as backed, deferred, platform-only, or obsolete.
-2. Enable Avalonia Backstage Print/Export/SaveCopy/Info actions using existing shared planners and callbacks.
-3. Close proofing/help basics in Avalonia: About, Legal Notices, Copy Diagnostics, spell toggle/status, and honest service stubs where native capability is absent.
-4. Convert one high-value dialog family to shared planning plus Avalonia UI. Good candidates: Cross Reference and Manage Sources.
-5. Add one render/print parity lane that exercises WPF and Avalonia on the same DOCX fixture.
+1. Build a generated WPF-vs-Avalonia FreeW command inventory and classify each gap as implemented, placeholder, deferred, platform-only, or obsolete.
+2. Reconcile or land the active `FreeX-linux` FreeW work before duplicating effort in the same files.
+3. Enable or truthfully disable Avalonia Backstage Print/Export/SaveCopy/Info/Options actions using shared planners and callbacks.
+4. Close one high-value dialog family with shared planning plus Avalonia UI, such as Cross Reference, Manage Sources, or Table Properties.
+5. Add a WPF/Avalonia render or print evidence lane using the same DOCX fixture and a documented tolerance model.
 
 ## FreeP Status
 
 ### Covered
 
-- Shared domain and presentation spine:
-  - `freep/FreeP.Core.Model/Presentation.cs`
-  - `freep/FreeP.Core.Model/Slide.cs`
+- FreeP is no longer blocked on foundational file lifecycle work:
+  - `.pptx` is the shared/default lifecycle path.
+  - `.fxp` remains legacy-compatible.
+  - `freep/FreeP.App.Presentation/PresentationFilePersistenceWorkflow.cs` owns shared persistence decisions.
+- PPTX package snapshot/retention is on `main`:
+  - `freep/FreeP.Core.Model/PptxPackageSnapshot.cs`
   - `freep/FreeP.Core.IO/PptxPackageReader.cs`
   - `freep/FreeP.Core.IO/PptxPackageWriter.cs`
-  - `freep/FreeP.App.Presentation/SlideCompositor.cs`
-  - `freep/FreeP.App.Presentation/EditingSession.cs`
-  - `freep/FreeP.App.Presentation/SnapEngine.cs`
-  - `freep/FreeP.App.Presentation/SlideShowController.cs`
-- WPF and Avalonia both have canvas/rendering projects:
-  - `freep/FreeP.App.Rendering.Wpf`
-  - `freep/FreeP.App.Rendering.Avalonia`
-- `tools/FreeP.RenderCompare` exists and can compare WPF/Avalonia/PowerPoint evidence, but its trust-hardening work is active in a separate worktree.
+- WPF/Avalonia ribbon definitions are now single-sourced through `freep/FreeP.Ribbon.Definitions`.
+- Renderer-neutral planners now cover slide pane, canvas geometry/gestures, text layout, chart primitives, picture effects, slideshow host/playback, dialogs, insertion, and persistence under `freep/FreeP.App.Presentation`.
+- `tools/FreeP.RenderCompare` now includes pixel-diversity checks so blank or single-color output cannot silently pass as valid evidence.
 
 ### Main Gaps
 
-1. File lifecycle is split on `main`:
-   - WPF still uses `.fxp` in `freep/FreeP.App.Host/FileCommands.cs`.
-   - Avalonia uses `.pptx` directly in `freep/FreeP.App.Avalonia/MainWindow.cs`.
-   - Active branch `freep-wpf-pptx-lifecycle-20260627` likely addresses this but is not on `main`.
-2. Ribbon/command parity is a major gap:
-   - WPF: `freep/FreeP.App.Host/FreePRibbon.cs`, `freep/FreeP.App.Host/FreePRibbonCommands.cs`.
-   - Avalonia: `freep/FreeP.App.Avalonia/FreePRibbonAvalonia.cs`, currently much thinner.
-3. Slide thumbnails are not equivalent:
-   - WPF: `freep/FreeP.App.Host/SlidePane.cs` has richer thumbnails, sections, context menu, and drag reorder.
-   - Avalonia rebuilds a basic `ListBox` inline in `freep/FreeP.App.Avalonia/MainWindow.cs`.
-4. Renderer duplication remains:
-   - WPF: `freep/FreeP.App.Rendering.Wpf/SlideCanvas.cs`.
-   - Avalonia: `freep/FreeP.App.Rendering.Avalonia/SlideCanvas.cs`.
-   - Both consume `SlideCompositor`, but duplicate chart/text/picture/effects realization.
-5. Selection/editing parity is incomplete:
-   - WPF has `InCanvasTextEditor.cs` and `InCanvasTableCellEditor.cs`.
-   - Avalonia has `AvaloniaInCanvasTextEditor.cs` with rich per-run editing deferred.
-6. PPTX package retention is not yet on `main`; active branch `freep-pptx-package-retention-20260627` owns it.
-7. Slideshow/media/presenter-view depth is incomplete; Avalonia `SlideShowWindow.cs` defers transition sound/media.
+1. Avalonia ribbon remains intentionally smaller than WPF. A quick source scan found about 87 WPF command ids vs 23 Avalonia ids in definition source. A real generated FreeP command matrix is still needed.
+2. Slide pane parity is partial:
+   - WPF owns drag reorder, context menus, richer thumbnails, and section behavior in `freep/FreeP.App.Host/SlidePane.cs`.
+   - Avalonia still has a simpler `ListBox` surface in `freep/FreeP.App.Avalonia/MainWindow.cs`.
+3. Editing parity remains uneven:
+   - WPF has rich text and table-cell editors.
+   - Avalonia has simpler text editing and the rendering canvas still documents viewer-only interactive adorners.
+4. Renderer duplication remains at the WPF/Avalonia realization edge even though many planners are now neutral.
+5. PowerPoint-authoritative baselines cannot be claimed from this machine because `PowerPoint.Application` COM is not registered.
+6. Fidelity gaps remain for PDF export, SmartArt/modern object editing, chart layout, OMML math layout, connector precision, media/presenter view depth, text effects, and true PowerPoint visual parity.
 
 ### FreeP Next Slices
 
-1. Land or finish WPF `.pptx` primary lifecycle, then align Avalonia dirty gate, recent files, Save As, and open/save semantics.
-2. Land package-retention snapshot coverage so unknown PPTX parts, relationships, and content types survive round-trip.
-3. Build a shared FreeP command/ribbon catalog, then close Avalonia ribbon gaps by tab group: Insert, Design, Transitions, Animations.
-4. Extract a shared slide-pane planner and port WPF thumbnail sorter/context behavior to Avalonia.
-5. Harden `tools/FreeP.RenderCompare` with blank/diversity checks before using it as a parity gate.
+1. Build a generated WPF-vs-Avalonia FreeP command matrix and classify missing Avalonia commands by tab/group.
+2. Expand the Avalonia ribbon profile by high-value tab: Home, Insert, Design, Transitions, Animations.
+3. Port WPF slide-pane interactions to Avalonia through the existing shared planner layer.
+4. Close Avalonia rich editing and table-cell editing parity against WPF.
+5. Run PowerPoint-backed render-compare baselines on a machine with PowerPoint COM installed, then use the harness for visual fidelity waves.
 
 ## Shared/Infrastructure Status
 
-### Top Dedup Gaps
+### Current Dashboard Assets
 
-1. `shared/Free.Shared.Shell.Avalonia` should become the Avalonia equivalent of `shared/Free.Shared.Shell.Wpf`. Active shell-frame lane owns this.
-2. Finish `shared/Free.Shared.Drawing` adoption and remove FreeX-local drawing clones. Active drawing lane owns this.
-3. Centralize adaptive ribbon collapse policy so WPF and Avalonia renderers are thin realizers over one policy. Active ribbon-adaptive lane owns this.
-4. Promote OPC path/rels/content-type helpers and core document properties into `shared/Free.Shared.Opc`.
-5. Extend FreeX's command parity matrix pattern to FreeW and FreeP.
-6. Consolidate render-compare primitives across `tools/FreeX.*Compare`, `tools/FreeW.RenderCompare`, and `tools/FreeP.RenderCompare` while preserving app-specific tolerances.
-
-### Core Dashboard Assets
-
-Use these as the initial parity dashboard inputs:
+Use these as the current parity dashboard inputs:
 
 - `docs/parity/functional-parity.json`
 - `docs/parity/functional-parity.md`
@@ -210,6 +213,12 @@ Use these as the initial parity dashboard inputs:
 - `docs/parity/surface-catalog.json`
 - `docs/parity/command-inventory.json`
 - `docs/testing/ui-test-catalog.md`
+- `docs/unification/DEDUP-BACKLOG.md`
+- `docs/unification/LOG.md`
+- `tools/Generate-DialogParityInventory.ps1`
+- `tools/Generate-CommandInventoryDocs.ps1`
+- `tools/Test-GeneratedDocs.ps1`
+- `tools/Test-RepositoryPreflight.ps1`
 - `tools/FreeX.ParityCompare`
 - `tools/FreeX.ParityCompare.Core`
 - `tools/FreeW.RenderCompare`
@@ -218,43 +227,45 @@ Use these as the initial parity dashboard inputs:
 - `freew/tools/FreeW.PageLayoutShot`
 - `freew/tools/FreeW.RibbonShot`
 
-### Guardrails To Add
+### Remaining Shared Work
 
-1. Shared `PortableBoundaryGuard` contract under `tests/SharedTestInfrastructure` after the active guardrails lane lands.
-2. Contract tests in:
+1. Extend the FreeX command matrix pattern to FreeW and FreeP.
+2. Add a unified rendered-evidence summary across FreeX, FreeW, and FreeP render/compare tools.
+3. Keep shared boundary guards green:
+   - `tests/SharedTestInfrastructure/PortableBoundaryGuard.cs`
    - `tests/Free.Shared.Ribbon.Tests`
    - `tests/Free.Shared.Theme.Tests`
    - `tests/Free.Shared.Pdf.Tests`
-   - future Shell/Opc shared test projects once APIs are authoritative.
-3. Per-app command matrix emitters for FreeW and FreeP, modeled after FreeX's WPF/Avalonia command-binding matrix.
-4. Rendered evidence summary ingestion from FreeX/FreeW/FreeP render-compare tools into one dashboard artifact.
+4. Add shared Shell/Opc test projects only when those APIs become broad enough to justify dedicated test assemblies.
+5. Avoid forcing `tools/FreeX.ToolsShared` into FreeW/FreeP just to reuse tiny helpers. Create a neutral cross-suite tools package only if more shared tool helpers appear.
 
 ## Recommended Orchestration Order
 
-1. Land guardrails first. This is low product risk and makes later cross-host drift visible.
-2. Land ribbon adaptive policy next, with focused WPF/Avalonia renderer tests.
-3. Land Avalonia shell-frame extraction after guardrails; it introduces a new shared project and touches FreeW/FreeP shell startup.
-4. Land shared drawing adoption after checking FreeP render-harness branches.
-5. Land FreeP file lifecycle and package-retention branches before expanding FreeP Avalonia command/ribbon work on main.
-6. Build a cross-app parity dashboard from stable `main`:
+1. Reconcile dirty lanes:
+   - `FreeX-linux` for FreeW/Linux work.
+   - `tester-release-20260627-r1` for generated FreeX parity artifacts.
+2. Refresh the parity dashboard from stable `main`:
    - FreeX command/dialog/surface evidence.
-   - FreeW WPF-vs-Avalonia command inventory and render evidence.
-   - FreeP WPF-vs-Avalonia command inventory and render evidence.
+   - FreeW WPF-vs-Avalonia command inventory.
+   - FreeP WPF-vs-Avalonia command inventory.
    - Active deferred/platform-only allowlists.
-7. Resume targeted implementation slices from the dashboard. Prefer small branches, one owned surface at a time, with preflight/build/default-test validation before merging.
+   - Render/capture evidence availability.
+3. Use dashboard gaps to choose implementation slices. Prefer small branches with one owned surface at a time.
+4. For FreeX, start with Avalonia dialog captures and print/render evidence.
+5. For FreeW, start with command inventory plus reconciliation of the dirty Linux lane.
+6. For FreeP, start with command inventory and Avalonia ribbon/profile expansion.
+7. Keep merging verified slices quickly to `main`, then sync active branches from updated `main`.
 
 ## Immediate Next Action
 
-Do not start new implementation in shell, ribbon adaptive policy, drawing, or FreeP file lifecycle until the active worktrees above are reconciled.
+The safest next implementation slice is not another dedup extraction. The obvious extraction backlog is largely closed. The next slice should be evidence infrastructure:
 
-The safest next orchestration slice is:
+1. Generate FreeW and FreeP WPF-vs-Avalonia command inventories modeled after FreeX.
+2. Add a compact cross-app parity dashboard document or generated JSON summary.
+3. Use that dashboard to rank the next code work for the 100% parity goal.
 
-1. Check which active worktrees are merge-ready.
-2. Integrate completed guardrail and shared-policy lanes first.
-3. Then create the cross-app parity dashboard generator/summary from stable `main`.
+If the next slice must be app-specific, choose one of:
 
-If implementation must start before those land, choose a non-overlapping documentation or inventory slice:
-
-- FreeW command inventory generator.
-- FreeP command inventory generator.
-- FreeX dialog visual parity continuation on a single dialog route, avoiding shared shell/ribbon/drawing files.
+- FreeX Avalonia dialog capture evidence.
+- FreeW command inventory and dirty-lane reconciliation.
+- FreeP command inventory plus Avalonia ribbon profile expansion.
