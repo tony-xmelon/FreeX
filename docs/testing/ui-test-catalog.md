@@ -9,6 +9,8 @@ This is the comprehensive and append-only UI test catalog for FreeX. It translat
 
 Do not append new UI testing work to a separate coverage log. Every pass should update this catalog with which rows were exercised, what target was used, which command was expected, and which model/UI state proved the action worked.
 
+For the Excel-vs-FreeX paired user-testing breadth checklist, use `docs/testing/ux-parity-coverage-backlog.md`; keep run evidence and blockers in this catalog or the active UX parity suite artifacts.
+
 ## Coverage Contract
 
 Every supported command should eventually have evidence for each applicable layer:
