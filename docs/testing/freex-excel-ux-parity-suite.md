@@ -88,11 +88,11 @@ Foreground paired batch status:
 | `tools/ux-parity-runs/20260701-214833/ux-scenario-batch.json` | First paired smoke batch captured Excel and FreeX Format Cells dialogs successfully, producing PNG evidence for both. Sheet-tab context-menu pair blocked on UIA lookup for `Sheet1` in both apps. |
 | `tools/ux-parity-runs/20260701-215137/ux-scenario-batch.json` | Retry-enabled smoke batch captured FreeX Format Cells, but Excel Format Cells hit repeated transient foreground-guard failures; sheet-tab context-menu remained blocked on `Sheet1` UIA lookup in both apps. |
 | `tools/ux-parity-runs/20260701-215944/ux-scenario-batch.json` | Report-enabled smoke batch captured Excel and FreeX Format Cells dialogs successfully and wrote `ux-scenario-report.html` with side-by-side images. Sheet-tab context-menu remained blocked on `Sheet1` UIA lookup in both apps. |
+| `tools/ux-parity-runs/20260701-220538/ux-scenario-batch.json` | Sheet-tab fallback hardening run completed 2/2 paired smoke scenarios. `ux-scenario-report.html` includes side-by-side Excel/FreeX screenshots for Format Cells and sheet-tab context menus. |
 
 The current actionable harness gaps are:
 
-- Harden Excel foreground ownership reacquisition between repeated COM-driven scenarios.
-- Make sheet-tab scenarios discover sheet tabs by role/position/fallback names instead of requiring a visible `Sheet1` UIA element.
+- Continue hardening Excel foreground ownership reacquisition between repeated COM-driven scenarios.
 - Promote the HTML report into a richer contact sheet once the paired capture set is stable.
 
 ## Evidence Contract
@@ -124,7 +124,7 @@ Every UX parity scenario should append or link evidence in the run folder:
 
 ## Next Work
 
-1. Harden paired foreground batch reliability for Excel focus reacquisition and sheet-tab UIA discovery.
+1. Harden paired foreground batch reliability for repeated Excel focus reacquisition.
 2. Promote the HTML report into a richer image contact sheet once the paired capture set is stable.
 3. Expand the corpus generator from seed sheets into per-feature sheets for every supported command family and every documented formula category.
 4. Add a disparity log schema and a reducer that summarizes open gaps by command family.
