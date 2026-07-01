@@ -1,6 +1,6 @@
 # FreeX Documentation
 
-**Last updated:** 2026-06-24
+**Last updated:** 2026-07-01
 
 Use this index as the current documentation map. Point-in-time material lives under `history/` and `archive/`; prefer the newest status snapshot plus the current planning docs when making product or release decisions.
 
@@ -56,6 +56,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [parity/command-surface.md](parity/command-surface.md) - command and ribbon parity scope.
 - [parity/menu-toolbar.md](parity/menu-toolbar.md) - menu/toolbar parity scope generated from the shared command inventory.
 - [parity/shortcuts.md](parity/shortcuts.md) - keyboard shortcut and keytip parity tracking.
+- [parity/2026-07-01-freex-excel-wpf-avalonia-parity-plan.md](parity/2026-07-01-freex-excel-wpf-avalonia-parity-plan.md) - FreeX Excel parity gap plan for WPF and Avalonia after the shared-code dedup wave.
 - [parity/functions.md](parity/functions.md) - formula function coverage and hardening notes.
 - [parity/command-inventory.json](parity/command-inventory.json) - generated command inventory source.
 - [testing/ui-test-catalog.md](testing/ui-test-catalog.md) - append-only UI command/interaction catalog, coverage log, findings log, and smoke evidence index.
