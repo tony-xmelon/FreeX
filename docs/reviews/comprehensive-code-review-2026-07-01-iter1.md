@@ -138,6 +138,13 @@ Suggested fix/test: update both docs/snippets to v7 and include the current arti
   - `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-DotNetProjectReferences.ps1` - passed, 107 project files validated.
   - `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - passed end-to-end.
 
+## Fix Verification
+
+- `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - passed after all fixes were integrated, validating 152 JSON files, 194 XML-backed files, 37 PowerShell tool scripts, 9 workflow files, 108 .NET project files, 82 solution entries, and generated documentation.
+- `dotnet build FreeX.slnx --configuration Release` - passed with 0 warnings and 0 errors.
+- Initial `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` timed out after one hour with a stale `FreeP.App.Rendering.Avalonia.Tests` testhost. The stale test processes were stopped and generated parity-doc line-ending noise was restored.
+- Fallback `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx" --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1` - passed with 22,328 passed, 132 skipped, and 0 failed across 19 TRX files.
+
 ## Follow-Up
 
-Run the full default verification lane on the integrated branch, then start a follow-up no-findings review over the touched Core, WPF window, FreeW Save As/corpus, and preflight surfaces.
+Start a follow-up no-findings review over the touched Core, WPF window, FreeW Save As/corpus, and preflight surfaces.
