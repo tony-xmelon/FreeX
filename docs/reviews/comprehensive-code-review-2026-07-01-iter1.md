@@ -140,10 +140,10 @@ Suggested fix/test: update both docs/snippets to v7 and include the current arti
 
 ## Fix Verification
 
-- `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - passed after all fixes were integrated, validating 152 JSON files, 194 XML-backed files, 37 PowerShell tool scripts, 9 workflow files, 108 .NET project files, 82 solution entries, and generated documentation.
+- `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Test-RepositoryPreflight.ps1` - passed after all fixes and the latest `origin/main` were integrated, validating 153 JSON files, 194 XML-backed files, 38 PowerShell tool scripts, 9 workflow files, 108 .NET project files, 82 solution entries, and generated documentation.
 - `dotnet build FreeX.slnx --configuration Release` - passed with 0 warnings and 0 errors.
 - Initial `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` timed out after one hour with a stale `FreeP.App.Rendering.Avalonia.Tests` testhost. The stale test processes were stopped and generated parity-doc line-ending noise was restored.
-- Fallback `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx" --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1` - passed with 22,328 passed, 132 skipped, and 0 failed across 19 TRX files.
+- Fallback `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx" --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1` - passed with 22,354 passed, 132 skipped, and 0 failed across 19 TRX files after merging the latest `origin/main`.
 
 ## Follow-Up
 
