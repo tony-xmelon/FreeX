@@ -246,6 +246,97 @@
                          "png":  "dialog.RecommendedPivotTables.png",
                          "captured":  true,
                          "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Sparkline",
+                         "kind":  "dialog",
+                         "png":  "dialog.Sparkline.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.InsertHyperlink",
+                         "kind":  "dialog",
+                         "png":  "dialog.InsertHyperlink.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.SymbolPicker",
+                         "kind":  "dialog",
+                         "png":  "dialog.SymbolPicker.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ErrorChecking",
+                         "kind":  "dialog",
+                         "png":  "dialog.ErrorChecking.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.EvaluateFormula",
+                         "kind":  "dialog",
+                         "png":  "dialog.EvaluateFormula.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.WatchWindow",
+                         "kind":  "dialog",
+                         "png":  "dialog.WatchWindow.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.AddWatch",
+                         "kind":  "dialog",
+                         "png":  "dialog.AddWatch.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.SelectionPane",
+                         "kind":  "dialog",
+                         "png":  "dialog.SelectionPane.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Zoom",
+                         "kind":  "dialog",
+                         "png":  "dialog.Zoom.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.CustomViews",
+                         "kind":  "dialog",
+                         "png":  "dialog.CustomViews.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.WorkbookStatistics",
+                         "kind":  "dialog",
+                         "png":  "dialog.WorkbookStatistics.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.RenameSheet",
+                         "kind":  "dialog",
+                         "png":  "dialog.RenameSheet.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.UnhideSheet",
+                         "kind":  "dialog",
+                         "png":  "dialog.UnhideSheet.png",
+                         "captured":  true,
+                         "note":  ""
                      }
                  ]
 }
