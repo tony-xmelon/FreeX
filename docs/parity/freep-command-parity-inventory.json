@@ -3,17 +3,17 @@
   "generatedBy": "tools/Generate-FreePCommandParityInventory.ps1",
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "summary": {
-    "totalCommands": 94,
-    "both": 86,
-    "wpfOnly": 1,
-    "avaloniaOnly": 7,
-    "missingWpf": 7,
-    "missingAvalonia": 1,
-    "shared": 86,
+    "totalCommands": 93,
+    "both": 87,
+    "wpfOnly": 0,
+    "avaloniaOnly": 6,
+    "missingWpf": 6,
+    "missingAvalonia": 0,
+    "shared": 87,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 6,
-    "commandIdAliases": 2
+    "commandIdAliases": 0
   },
   "commands": [
     {
@@ -2274,37 +2274,14 @@
       ]
     },
     {
-      "commandId": "freep.slideshow.from-current",
-      "label": "From Current Slide",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "surface": "avalonia-only",
-      "missingSide": "WPF",
-      "classification": "command-id-alias",
-      "notes": "Profile uses 'freep.slideshow.from-current-slide' for the opposite surface.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "slideshow",
-          "group": "Slide Show",
-          "label": "From Current Slide",
-          "controlType": "RibbonButton",
-          "layout": "Large"
-        }
-      ]
-    },
-    {
       "commandId": "freep.slideshow.from-current-slide",
       "label": "From Current Slide",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "command-id-alias",
-      "notes": "Profile uses 'freep.slideshow.from-current' for the opposite surface.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -2317,7 +2294,18 @@
           "layout": "Large"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "slideshow",
+          "group": "Slide Show",
+          "label": "From Current Slide",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
     },
     {
       "commandId": "freep.text-box",
