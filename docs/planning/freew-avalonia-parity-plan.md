@@ -16,7 +16,7 @@ The old snapshot that described Avalonia as a 22-command shell with no registry 
 - Shared shell, IO, drawing, theme, PDF, and OPC infrastructure from the dedup work.
 - A substantial Avalonia command surface that already covers more than the old five-tab starter shell.
 
-A lightweight July 1 source scan in this worktree found 574 unique `freew.*` command-like ids in `freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs`, 226 in `freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs`, and 225 in `freew/FreeW.Ribbon.Definitions/FreeWAvaloniaRibbonDefinition.cs`. These are approximate regex counts, not gates. Before implementation, generate a real WPF/Avalonia ribbon parity matrix and classify command ids from definitions plus registries.
+The authoritative July 1 WPF/Avalonia command topology is the generated matrix in [../parity/freew-command-inventory.md](../parity/freew-command-inventory.md). It is built from compiled `FreeWRibbon.Build(FreeWRibbonCapabilities.Wpf/Avalonia)` profiles, including menu children. Source literal registry/definition hits are retained only as evidence columns and must not be treated as behavior proof or topology gates.
 
 ## Architecture Rule
 
