@@ -24,6 +24,12 @@
                                "screenshotExists":  false,
                                "retentionStatus":  "blocked-or-incomplete",
                                "blockReason":  "exception: Excel.Application COM ProgID is not available.",
+                               "blockerCategory":  "excel-com-unavailable",
+                               "nextCaptureAction":  "Rerun .\\tools\\Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery on a Windows desktop where Microsoft Excel COM is installed and registered.",
+                               "lastAttemptedAtUtc":  "2026-07-01T22:45:12.2008793+00:00",
+                               "manifestSubject":  "excel",
+                               "manifestScenario":  "excel-conditional-formatting-gallery",
+                               "manifestMatchesTarget":  true,
                                "fallbackEvidence":  [
 
                                                     ],
@@ -42,6 +48,12 @@
                                "screenshotExists":  false,
                                "retentionStatus":  "blocked-or-incomplete",
                                "blockReason":  "foreground-guard-failed: Foreground guard failed during before-input.",
+                               "blockerCategory":  "foreground-focus-unavailable",
+                               "nextCaptureAction":  "Rerun .\\tools\\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe \u003cRelease FreeX.App.Host.exe\u003e from an unlocked interactive desktop where the launched window can become foreground.",
+                               "lastAttemptedAtUtc":  "2026-07-01T22:41:21.9587418+00:00",
+                               "manifestSubject":  "freex",
+                               "manifestScenario":  "freex-conditional-formatting-gallery",
+                               "manifestMatchesTarget":  true,
                                "fallbackEvidence":  [
 
                                                     ],
@@ -55,17 +67,33 @@
                                "runnerCommand":  ".\\tools\\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe \u003cRelease FreeX.exe\u003e",
                                "requiredEnvironment":  "Windows desktop session with built Release Avalonia app and foreground focus allowed.",
                                "manifestPath":  "tools\\foreground-captures\\avalonia-conditional-formatting-gallery\\avalonia-conditional-formatting-gallery_manifest.json",
-                               "captureStatus":  "missing-manifest",
+                               "captureStatus":  "blocked",
                                "screenshotPath":  "",
                                "screenshotExists":  false,
-                               "retentionStatus":  "needs-capture",
-                               "blockReason":  "No committed foreground capture manifest exists for this opened-state target.",
+                               "retentionStatus":  "blocked-or-incomplete",
+                               "blockReason":  "foreground-guard-failed: Foreground guard failed during before-input.",
+                               "blockerCategory":  "foreground-focus-unavailable",
+                               "nextCaptureAction":  "Rerun .\\tools\\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe \u003cRelease FreeX.exe\u003e from an unlocked interactive desktop where the launched window can become foreground.",
+                               "lastAttemptedAtUtc":  "2026-07-01T22:41:42.8534076+00:00",
+                               "manifestSubject":  "avalonia",
+                               "manifestScenario":  "avalonia-conditional-formatting-gallery",
+                               "manifestMatchesTarget":  true,
                                "fallbackEvidence":  [
                                                         "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ConditionalFormatNewRule.png"
                                                     ],
                                "fallbackEvidenceNote":  "Existing Avalonia dialog route evidence is retained for dialog parity, but it is not opened popup/gallery evidence."
                            }
                        ],
+    "blockerCategories":  [
+                              {
+                                  "category":  "excel-com-unavailable",
+                                  "count":  1
+                              },
+                              {
+                                  "category":  "foreground-focus-unavailable",
+                                  "count":  2
+                              }
+                          ],
     "rows":  [
                  {
                      "id":  "3 Arrows",

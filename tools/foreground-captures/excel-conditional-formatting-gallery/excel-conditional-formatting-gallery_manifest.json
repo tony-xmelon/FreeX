@@ -4,6 +4,6 @@
   "CaptureStatus": "blocked",
   "CaptureMode": "foreground-guarded-uia-win32",
   "BlockReason": "exception: Excel.Application COM ProgID is not available.",
-  "CapturedAtUtc": "2026-07-01T21:48:49.8281966+00:00",
-  "ManifestPath": "C:\\Users\\anton\\OneDrive\\Documents\\FreeX\\FreeX\\.worktrees\\freex-cf-opened-capture-wave3-20260702\\tools\\foreground-captures\\excel-conditional-formatting-gallery\\excel-conditional-formatting-gallery_manifest.json"
+  "CapturedAtUtc": "2026-07-01T22:45:12.2008793+00:00",
+  "ManifestPath": "C:\\Users\\anton\\OneDrive\\Documents\\FreeX\\FreeX\\.worktrees\\freex-cf-opened-state-evidence-20260702\\tools\\foreground-captures\\excel-conditional-formatting-gallery\\excel-conditional-formatting-gallery_manifest.json"
 }
