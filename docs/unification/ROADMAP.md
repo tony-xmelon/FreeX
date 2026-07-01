@@ -115,9 +115,10 @@ Multiple sessions run in parallel over one OneDrive-shared `.git`. Division of l
    session (do not collide). The FreeP *Avalonia* renderer is the natural unification contribution once their
    compositor API stabilizes.
 2. **Resume gated dedup as fields clear** — see `DEDUP-BACKLOG.md` for the verified, file:line-ranked
-   candidates with per-item unlock conditions. Headliners: the OPC path/rels/content-type substrate (B1) and
-   shared `CoreDocumentProperties` (B2) across all three `Core.IO` layers; finishing the `Free.Shared.Drawing`
-   migration by deleting the un-deleted FreeX geometry originals (B3, ~633 LOC); cross-app color/EMU (B4).
+   candidates with per-item unlock conditions. Headliners: shared `CoreDocumentProperties` (B2) across all
+   three `Core.IO` layers; finishing the `Free.Shared.Drawing` migration by deleting the un-deleted FreeX
+   geometry originals (B3, ~633 LOC); cross-app color/EMU (B4); and residual adoption of the already-landed
+   OPC helper substrate (B1) where app-local wrappers still duplicate `Free.Shared.Opc`.
 3. **FreeW Avalonia polish** (incremental): rulers, deeper formatting fidelity.
 
 The **safe, non-colliding dedup frontier is currently processed/empty** — remaining real dedup is owned by
@@ -125,13 +126,11 @@ active sessions and resumes as those fields clear (`DEDUP-BACKLOG.md` is staged 
 
 ## Deferred alignment items (do when already touching the area)
 
-- **Test message-box suppression — align FreeW/FreeP onto FreeX's DI pattern.** FreeX injects
-  `IUserMessageService` per test via `NullUserMessageService` (clean, per-instance); FreeW/FreeP instead use a
-  process-global static `HeadlessMessageBox.Handler` installed by `[ModuleInitializer]` in
-  `TestMessageBoxBootstrap.cs`, because their `FileCommands` calls the static `FileCommandMessageBox` helper
-  directly. When next in the shell layer: add an `IUserMessageService` ctor param to
-  `freew/FreeW.App.Host/FileCommands.cs` + `freep/FreeP.App.Host/FileCommands.cs` (mirror FreeX), then delete
-  `TestMessageBoxBootstrap.cs` in both test assemblies. Not urgent — the static seam works correctly.
+- **Headless WPF dialog suppression audit.** File-command prompts are already service-injected in FreeX,
+  FreeW, and FreeP through `IUserMessageService`; do not chase the old FreeW/FreeP file-command DI item.
+  Remaining `HeadlessMessageBox.Handler` usage belongs to shared WPF dialog/test infrastructure and should be
+  reduced only when a dialog-specific slice can prove a per-instance seam is cleaner than the current global
+  test hook.
 
 ## Contention discipline
 

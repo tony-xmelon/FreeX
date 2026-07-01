@@ -4,7 +4,24 @@
 
 This session targets visible MS Word alignment in the WPF FreeW app, not the separate feature-completion branch. The work should prefer UI surfaces that expose already-implemented FreeW behavior before starting deeper document-model features.
 
-Current implementation wave:
+## Current Status - 2026-07-01
+
+WPF FreeW vs Microsoft Word is in-scope exhausted/complete. The June 24/25 waves cleared the remaining backed command, new-engine, and architectural backlog for the WPF shell, and the final sweep found no remaining in-scope WPF-vs-Word surface that should be treated as a product blocker.
+
+Explicitly out of scope remain: cloud/account locations, Developer/macros/VBA/XML mapping, ink/Draw, e-mail-send merge, online media/templates, cloud Translate, and open-ended polish/evidence work. Visual and fidelity work now belongs to the evidence loop described in [../fidelity/README.md](../fidelity/README.md), not to the WPF in-scope parity verdict.
+
+The stale cross-shell note that described Avalonia as a 22-command shell with no command registry is obsolete. Current Avalonia source has `freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs`, shared `freew/FreeW.Ribbon.Definitions`, shared renderer/shell infrastructure, and a substantial command surface. Treat WPF as the Word-parity reference and verification oracle, but re-audit WPF-vs-Avalonia command counts with a generated matrix before each implementation slice instead of carrying forward old snapshot numbers.
+
+Shared-first implementation rule for every remaining cross-shell gap:
+
+1. `FreeW.Core.Model` for semantic document state and commands.
+2. `FreeW.Core.IO` for file-format behavior and round-trip semantics.
+3. `FreeW.App.Presentation` for host-neutral planners, policies, workflows, and view models.
+4. `FreeW.Ribbon.Definitions` for command topology and capability profiles.
+5. `Free.Shared.*` only for cross-app infrastructure, never Word-only semantics.
+6. WPF/Avalonia renderer or shell realization last.
+
+Historical implementation wave (started 2026-06-21):
 
 - Promote implemented reference tools to a top-level References tab.
 - Add Home > Font > Strikethrough because the editor/model already preserve strikethrough formatting.
@@ -305,5 +322,22 @@ After the deferred-feature backlog, a comprehensive read-only sweep enumerated e
 
 A final confirmation sweep verified that the only WPF FreeW Word surfaces still absent are out-of-scope by directive (cloud/account, Developer/macros/VBA/XML-mapping, ink/Draw, e-mail-send merge, online media/templates, cloud Translate) plus open-ended polish. **In-scope WPF FreeW parity is exhausted.**
 
-### Known cross-shell divergence (WPF vs Avalonia)
+### Known cross-shell divergence (WPF vs Avalonia) - historical snapshot superseded 2026-07-01
+
+Current correction: this session remains the WPF-vs-Word parity record. Do not reinterpret it as a claim that Avalonia FreeW is already Word-parity complete. WPF is the reference implementation and verification oracle for Microsoft Word behavior; when new work touches WPF-local behavior, pay that behavior down into `FreeW.Core.*`, `FreeW.App.Presentation`, or `FreeW.Ribbon.Definitions` before adding another host-local path.
+
+The old Avalonia snapshot below is retained only as historical context and must not be used for planning. Current Avalonia now uses `FreeWAvaloniaRibbonCommands.cs`, shared `FreeW.Ribbon.Definitions`, `Free.Shared.Ribbon.Avalonia`, `Free.Shared.Shell.Avalonia`, and the broader shared codebase produced by the dedup effort. A July 1 source scan found hundreds of Avalonia command ids rather than the old 22-command surface, but those counts are approximate until replaced by a generated WPF/Avalonia ribbon parity matrix.
+
+Remaining implementation planning belongs in [freew-avalonia-parity-plan.md](freew-avalonia-parity-plan.md) and should proceed shared-first. The priority slices are:
+
+1. Generate a WPF/Avalonia FreeW ribbon parity matrix and classify every delta as implemented, placeholder, deferred, platform-only, or obsolete.
+2. Make Backstage Options/Info safety actions honest in both shells through shared planners and thin shell callbacks.
+3. Move print preview and print planning into host-neutral policy, with WPF as the behavior oracle and Avalonia realizing the same contract.
+4. Close References/source-management/table-of-authorities gaps through `FreeW.Core.Model`, `FreeW.Core.IO`, and `FreeW.App.Presentation` before renderer work.
+5. Shared-first Review depth: proofing, thesaurus, protection, compare/combine, and tracked-change policies.
+6. Shared-first View depth: read, split, and window behaviors, with WPF-only implementation details folded into planners where practical.
+7. Build visual parity capture for pagination, tables, floating objects, headers/footers, charts, SmartArt, and WordArt/watermark.
+
+Historical snapshot:
+The next paragraph is obsolete chronology only. Do not use its command counts or "not updated" claim for current planning.
 This entire program targeted the **WPF** app (`FreeW.App.Host`). The shared `FreeW.Core.Model` + `FreeW.Core.IO` tiers (model fields + DOCX round-trip) benefit both shells, but the **Avalonia** FreeW shell (`FreeW.App.Avalonia`, a custom non-FlowDocument `Control`) was NOT updated: its ribbon exposes ~22 command ids vs the WPF shell's ~585. Per direction, **WPF is the parity reference**; bringing Avalonia FreeW to parity (render-heavy features — floating objects, galleries, effects, PagedEdit — need Avalonia-native reimplementation) is a separate, large, deliberately-deferred program.

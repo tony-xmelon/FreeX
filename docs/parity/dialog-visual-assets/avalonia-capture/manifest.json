@@ -1,0 +1,657 @@
+﻿{
+    "platform":  "windows",
+    "shell":  "avalonia",
+    "surfaces":  [
+                     {
+                         "id":  "dialog.GoTo",
+                         "kind":  "dialog",
+                         "png":  "dialog.GoTo.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.GoToSpecial",
+                         "kind":  "dialog",
+                         "png":  "dialog.GoToSpecial.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Sort",
+                         "kind":  "dialog",
+                         "png":  "dialog.Sort.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.SortOptions",
+                         "kind":  "dialog",
+                         "png":  "dialog.SortOptions.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.AutoFilter",
+                         "kind":  "dialog",
+                         "png":  "dialog.AutoFilter.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.About",
+                         "kind":  "dialog",
+                         "png":  "dialog.About.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.LegalNotices",
+                         "kind":  "dialog",
+                         "png":  "dialog.LegalNotices.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.DataValidation",
+                         "kind":  "dialog",
+                         "png":  "dialog.DataValidation.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FormatCells",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Number",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Number.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Alignment",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Alignment.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Font",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Font.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Fill",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Fill.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Border",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Border.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Protection",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Protection.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PageSetup",
+                         "kind":  "dialog",
+                         "png":  "dialog.PageSetup.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PageSetup.Page",
+                         "kind":  "dialog",
+                         "png":  "dialog.PageSetup.Page.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PageSetup.Margins",
+                         "kind":  "dialog",
+                         "png":  "dialog.PageSetup.Margins.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PageSetup.HeaderFooter",
+                         "kind":  "dialog",
+                         "png":  "dialog.PageSetup.HeaderFooter.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PageSetup.Sheet",
+                         "kind":  "dialog",
+                         "png":  "dialog.PageSetup.Sheet.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FindReplace",
+                         "kind":  "dialog",
+                         "png":  "dialog.FindReplace.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FindReplace.Find",
+                         "kind":  "dialog",
+                         "png":  "dialog.FindReplace.Find.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FindReplace.Replace",
+                         "kind":  "dialog",
+                         "png":  "dialog.FindReplace.Replace.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.TextToColumns",
+                         "kind":  "dialog",
+                         "png":  "dialog.TextToColumns.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.AdvancedFilter",
+                         "kind":  "dialog",
+                         "png":  "dialog.AdvancedFilter.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Consolidate",
+                         "kind":  "dialog",
+                         "png":  "dialog.Consolidate.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.RemoveDuplicates",
+                         "kind":  "dialog",
+                         "png":  "dialog.RemoveDuplicates.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.GoalSeek",
+                         "kind":  "dialog",
+                         "png":  "dialog.GoalSeek.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.GoalSeekStatus",
+                         "kind":  "dialog",
+                         "png":  "dialog.GoalSeekStatus.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.DataTable",
+                         "kind":  "dialog",
+                         "png":  "dialog.DataTable.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ScenarioManager",
+                         "kind":  "dialog",
+                         "png":  "dialog.ScenarioManager.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ForecastSheet",
+                         "kind":  "dialog",
+                         "png":  "dialog.ForecastSheet.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Subtotal",
+                         "kind":  "dialog",
+                         "png":  "dialog.Subtotal.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.CreateTable",
+                         "kind":  "dialog",
+                         "png":  "dialog.CreateTable.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.RecommendedPivotTables",
+                         "kind":  "dialog",
+                         "png":  "dialog.RecommendedPivotTables.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Sparkline",
+                         "kind":  "dialog",
+                         "png":  "dialog.Sparkline.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.InsertHyperlink",
+                         "kind":  "dialog",
+                         "png":  "dialog.InsertHyperlink.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.SymbolPicker",
+                         "kind":  "dialog",
+                         "png":  "dialog.SymbolPicker.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ErrorChecking",
+                         "kind":  "dialog",
+                         "png":  "dialog.ErrorChecking.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.EvaluateFormula",
+                         "kind":  "dialog",
+                         "png":  "dialog.EvaluateFormula.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.WatchWindow",
+                         "kind":  "dialog",
+                         "png":  "dialog.WatchWindow.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.AddWatch",
+                         "kind":  "dialog",
+                         "png":  "dialog.AddWatch.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.OpenWorkbook",
+                         "kind":  "dialog",
+                         "png":  "dialog.OpenWorkbook.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.SaveAsWorkbook",
+                         "kind":  "dialog",
+                         "png":  "dialog.SaveAsWorkbook.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ExportOptions",
+                         "kind":  "dialog",
+                         "png":  "dialog.ExportOptions.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.SelectionPane",
+                         "kind":  "dialog",
+                         "png":  "dialog.SelectionPane.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Zoom",
+                         "kind":  "dialog",
+                         "png":  "dialog.Zoom.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.CustomViews",
+                         "kind":  "dialog",
+                         "png":  "dialog.CustomViews.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.WorkbookStatistics",
+                         "kind":  "dialog",
+                         "png":  "dialog.WorkbookStatistics.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.RenameSheet",
+                         "kind":  "dialog",
+                         "png":  "dialog.RenameSheet.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.UnhideSheet",
+                         "kind":  "dialog",
+                         "png":  "dialog.UnhideSheet.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.InsertSlicer",
+                         "kind":  "dialog",
+                         "png":  "dialog.InsertSlicer.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.InsertTimeline",
+                         "kind":  "dialog",
+                         "png":  "dialog.InsertTimeline.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.LayoutAndFormat",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.LayoutAndFormat.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.TotalsAndFilters",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.TotalsAndFilters.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.Display",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.Display.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.Printing",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.Printing.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.Data",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.Data.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.AltText",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.AltText.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotFieldFilter",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotFieldFilter.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotFieldFilter.SelectItems",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotFieldFilter.SelectItems.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotFieldFilter.LabelFilters",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotFieldFilter.LabelFilters.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotFieldFilter.ValueFilters",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotFieldFilter.ValueFilters.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotValueFieldSettings",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotValueFieldSettings.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotValueFieldSettings.SummarizeValuesBy",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotValueFieldSettings.SummarizeValuesBy.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotValueFieldSettings.ShowValuesAs",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotValueFieldSettings.ShowValuesAs.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotValueFieldSettings.NumberFormat",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotValueFieldSettings.NumberFormat.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ChangeChartType",
+                         "kind":  "dialog",
+                         "png":  "dialog.ChangeChartType.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.SelectDataSource",
+                         "kind":  "dialog",
+                         "png":  "dialog.SelectDataSource.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FormatChartArea",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatChartArea.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ShapeEffects",
+                         "kind":  "dialog",
+                         "png":  "dialog.ShapeEffects.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ShapeGradient",
+                         "kind":  "dialog",
+                         "png":  "dialog.ShapeGradient.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ConditionalFormatManage",
+                         "kind":  "dialog",
+                         "png":  "dialog.ConditionalFormatManage.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.AccessibilityChecker",
+                         "kind":  "dialog",
+                         "png":  "dialog.AccessibilityChecker.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.AllowEditRanges",
+                         "kind":  "dialog",
+                         "png":  "dialog.AllowEditRanges.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ProtectSheet",
+                         "kind":  "dialog",
+                         "png":  "dialog.ProtectSheet.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ProtectWorkbook",
+                         "kind":  "dialog",
+                         "png":  "dialog.ProtectWorkbook.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.General",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.General.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.Formulas",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.Formulas.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.Proofing",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.Proofing.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.Save",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.Save.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.Language",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.Language.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.EaseOfAccess",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.EaseOfAccess.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.Advanced",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.Advanced.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.CustomizeRibbon",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.CustomizeRibbon.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.QuickAccessToolbar",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.QuickAccessToolbar.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.AddIns",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.AddIns.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.TrustCenter",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.TrustCenter.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.View",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.View.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ConditionalFormatNewRule",
+                         "kind":  "dialog",
+                         "png":  "dialog.ConditionalFormatNewRule.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PrintPreview",
+                         "kind":  "dialog",
+                         "png":  "dialog.PrintPreview.png",
+                         "captured":  true,
+                         "note":  ""
+                     }
+                 ]
+}

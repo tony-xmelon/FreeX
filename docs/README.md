@@ -1,6 +1,6 @@
 # FreeX Documentation
 
-**Last updated:** 2026-06-24
+**Last updated:** 2026-07-01
 
 Use this index as the current documentation map. Point-in-time material lives under `history/` and `archive/`; prefer the newest status snapshot plus the current planning docs when making product or release decisions.
 
@@ -21,6 +21,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [planning/freew-roadmap.md](planning/freew-roadmap.md) - historical FreeW construction log through the current file-format, corpus, icon, and platform slices.
 - [planning/freew-command-inventory.md](planning/freew-command-inventory.md) - FreeW command inventory; defer current icon status to the June 19 FreeW icon audit.
 - [planning/freew-file-formats.md](planning/freew-file-formats.md) - FreeW document-format adapter status matrix and remaining format gaps.
+- [planning/freep-powerpoint-parity-status-2026-06-27.md](planning/freep-powerpoint-parity-status-2026-06-27.md) - current FreeP PowerPoint parity status, remaining gaps, and first-wave worker orchestration map.
 - [performance/backlog-2026-06-04.md](performance/backlog-2026-06-04.md) - current performance backlog and active XLSX open/save IO priority.
 
 ## User
@@ -55,6 +56,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [parity/command-surface.md](parity/command-surface.md) - command and ribbon parity scope.
 - [parity/menu-toolbar.md](parity/menu-toolbar.md) - menu/toolbar parity scope generated from the shared command inventory.
 - [parity/shortcuts.md](parity/shortcuts.md) - keyboard shortcut and keytip parity tracking.
+- [parity/2026-07-01-freex-excel-wpf-avalonia-parity-plan.md](parity/2026-07-01-freex-excel-wpf-avalonia-parity-plan.md) - FreeX Excel parity gap plan for WPF and Avalonia after the shared-code dedup wave.
 - [parity/functions.md](parity/functions.md) - formula function coverage and hardening notes.
 - [parity/command-inventory.json](parity/command-inventory.json) - generated command inventory source.
 - [testing/ui-test-catalog.md](testing/ui-test-catalog.md) - append-only UI command/interaction catalog, coverage log, findings log, and smoke evidence index.
@@ -138,6 +140,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [reviews/comprehensive-code-review-2026-06-21-iter6.md](reviews/comprehensive-code-review-2026-06-21-iter6.md) - June 21 review iteration covering block-list workflow triggers, review-log completeness, FreeW DOCX allocator guard coverage, and sheet-tab evidence wording.
 - [reviews/comprehensive-code-review-2026-06-21-iter7.md](reviews/comprehensive-code-review-2026-06-21-iter7.md) - June 21 review iteration covering final workflow/docs and FreeW DOCX clean passes plus sheet-tab evidence wording cleanup.
 - [reviews/comprehensive-code-review-2026-06-21-iter8.md](reviews/comprehensive-code-review-2026-06-21-iter8.md) - final June 21 no-findings validation for workflow/docs guards, FreeW DOCX allocator coverage, and sheet-tab evidence wording.
+- [reviews/comprehensive-code-review-2026-07-01-iter1.md](reviews/comprehensive-code-review-2026-07-01-iter1.md) - July 1 subagent-assisted review covering core XLSX/ODS/formula data integrity, WPF workbook-window workflows, FreeW Save As format selection, corpus provenance, and preflight coverage.
 - [reviews/command-icon-audit-2026-05-30.md](reviews/command-icon-audit-2026-05-30.md) - proposal-only command icon audit.
 - [reviews/command-icon-review-2026-05-29.md](reviews/command-icon-review-2026-05-29.md) - prior SVG command-icon audit.
 - [reviews/command-icon-visual-consistency-2026-05-30.md](reviews/command-icon-visual-consistency-2026-05-30.md) - visual-consistency review for command artwork.
