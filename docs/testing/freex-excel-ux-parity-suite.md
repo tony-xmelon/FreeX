@@ -63,9 +63,11 @@ Run paired foreground evidence after the bootstrap has built the Release host:
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenarioBatch.ps1 -Suite smoke
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenarioBatch.ps1 -Suite core -MinimizeForeignForeground
 ```
 
 The batch runner uses `tools/FreeX.ForegroundCapture` to run matching Excel and FreeX scenarios, stores per-subject manifests/screenshots under `tools/ux-parity-runs/<timestamp>/foreground-captures/`, writes `ux-scenario-batch.json` with pair status and the next review action, and generates `ux-scenario-report.html` for side-by-side visual review.
+`-MinimizeForeignForeground` is intentionally narrow: it only minimizes the known Media Player foreground blocker seen on this machine during desktop automation.
 
 Suites:
 
@@ -90,10 +92,12 @@ Foreground paired batch status:
 | `tools/ux-parity-runs/20260701-215137/ux-scenario-batch.json` | Retry-enabled smoke batch captured FreeX Format Cells, but Excel Format Cells hit repeated transient foreground-guard failures; sheet-tab context-menu remained blocked on `Sheet1` UIA lookup in both apps. |
 | `tools/ux-parity-runs/20260701-215944/ux-scenario-batch.json` | Report-enabled smoke batch captured Excel and FreeX Format Cells dialogs successfully and wrote `ux-scenario-report.html` with side-by-side images. Sheet-tab context-menu remained blocked on `Sheet1` UIA lookup in both apps. |
 | `tools/ux-parity-runs/20260701-220538/ux-scenario-batch.json` | Sheet-tab fallback hardening run completed 2/2 paired smoke scenarios. `ux-scenario-report.html` includes side-by-side Excel/FreeX screenshots for Format Cells and sheet-tab context menus. |
+| `tools/ux-parity-runs/20260702-000404/ux-scenario-batch.json` | Expanded `core` run completed 3/4 paired scenarios with side-by-side evidence for Format Cells, worksheet context-menu Format Cells, and sheet-tab context menus. Sheet-tab overflow Activate dialog remains blocked on both sides and is the next harness target. |
 
 The current actionable harness gaps are:
 
 - Continue hardening Excel foreground ownership reacquisition between repeated COM-driven scenarios.
+- Harden the paired sheet-tab overflow Activate dialog route; the latest `core` run blocks on Excel Activate dialog detection and FreeX foreground acquisition after seeding overflow tabs.
 - Promote the HTML report into a richer contact sheet once the paired capture set is stable.
 
 ## Evidence Contract
