@@ -2,11 +2,11 @@
   "schema": "freex.parity.functional.v1",
   "summary": {
     "totalCommands": 531,
-    "parity": 468,
-    "avaloniaMissing": 2,
+    "parity": 470,
+    "avaloniaMissing": 0,
     "wpfMissing": 48,
     "bothMissing": 13,
-    "intentionalLinuxOmissions": 2
+    "intentionalLinuxOmissions": 0
   },
   "commands": [
     { "id": "+/- Buttons", "tab": "PivotTable Analyze", "group": "Show", "wpf": true, "avalonia": true, "status": "PARITY" },
@@ -88,8 +88,8 @@
     { "id": "Average", "tab": "Home", "group": "Editing", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Axis Title Color", "tab": "Chart Format", "group": "Text", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Axis Title Size", "tab": "Chart Format", "group": "Text", "wpf": true, "avalonia": true, "status": "PARITY" },
-    { "id": "B4 (JIS)", "tab": "Page Layout", "group": "Page Setup", "wpf": true, "avalonia": false, "status": "AVALONIA-MISSING" },
-    { "id": "B5 (JIS)", "tab": "Page Layout", "group": "Page Setup", "wpf": true, "avalonia": false, "status": "AVALONIA-MISSING" },
+    { "id": "B4 (JIS)", "tab": "Page Layout", "group": "Page Setup", "wpf": true, "avalonia": true, "status": "PARITY" },
+    { "id": "B5 (JIS)", "tab": "Page Layout", "group": "Page Setup", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Background", "tab": "Page Layout", "group": "Page Setup", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Bad", "tab": "Home", "group": "Styles", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Banded Columns#PivotBandedColumnsBtn_Click", "tab": "PivotTable Design", "group": "Style Options", "wpf": true, "avalonia": true, "status": "PARITY" },

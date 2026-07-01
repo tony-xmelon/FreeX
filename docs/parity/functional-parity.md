@@ -11,11 +11,11 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Metric | Count |
 |---|---:|
 | Total commands | 531 |
-| PARITY (both) | 468 |
-| AVALONIA-MISSING | 2 |
+| PARITY (both) | 470 |
+| AVALONIA-MISSING | 0 |
 | WPF-MISSING | 48 |
 | BOTH-MISSING | 13 |
-| Intentional Linux omissions (allowlisted) | 2 |
+| Intentional Linux omissions (allowlisted) | 0 |
 
 ## Matrix
 
@@ -398,8 +398,8 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | A3 | Page Setup | Page Layout | yes | yes | PARITY |
 | A4 | Page Setup | Page Layout | yes | yes | PARITY |
 | A5 | Page Setup | Page Layout | yes | yes | PARITY |
-| B4 (JIS) | Page Setup | Page Layout | yes | — | AVALONIA-MISSING |
-| B5 (JIS) | Page Setup | Page Layout | yes | — | AVALONIA-MISSING |
+| B4 (JIS) | Page Setup | Page Layout | yes | yes | PARITY |
+| B5 (JIS) | Page Setup | Page Layout | yes | yes | PARITY |
 | Background | Page Setup | Page Layout | yes | yes | PARITY |
 | Breaks | Page Setup | Page Layout | yes | yes | PARITY |
 | Choose Background | Page Setup | Page Layout | yes | yes | PARITY |
