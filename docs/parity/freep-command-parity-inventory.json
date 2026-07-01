@@ -4,13 +4,13 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "summary": {
     "totalCommands": 94,
-    "both": 38,
-    "wpfOnly": 49,
+    "both": 43,
+    "wpfOnly": 44,
     "avaloniaOnly": 7,
     "missingWpf": 7,
-    "missingAvalonia": 49,
-    "shared": 38,
-    "avaloniaGaps": 5,
+    "missingAvalonia": 44,
+    "shared": 43,
+    "avaloniaGaps": 0,
     "knownDeferred": 43,
     "platformOnly": 6,
     "commandIdAliases": 2
@@ -1229,11 +1229,11 @@
       "commandId": "freep.find",
       "label": "Find",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1246,7 +1246,18 @@
           "layout": "Large"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "editing",
+          "group": "Editing",
+          "label": "Find",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
     },
     {
       "commandId": "freep.font-family",
@@ -1456,11 +1467,11 @@
       "commandId": "freep.insert-link",
       "label": "Hyperlink",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1473,7 +1484,18 @@
           "layout": "Large"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "links",
+          "group": "Links",
+          "label": "Hyperlink",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
     },
     {
       "commandId": "freep.insert-table-2x2",
@@ -1615,11 +1637,11 @@
       "commandId": "freep.layout",
       "label": "Layout",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1632,7 +1654,18 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "slides",
+          "group": "Slides",
+          "label": "Layout",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.new-slide",
@@ -1763,11 +1796,11 @@
       "commandId": "freep.remove-link",
       "label": "Remove Link",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1780,17 +1813,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "links",
+          "group": "Links",
+          "label": "Remove Link",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.replace",
       "label": "Replace",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1803,7 +1847,18 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "editing",
+          "group": "Editing",
+          "label": "Replace",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.shape-ellipse",
