@@ -20,7 +20,7 @@ Latest Linux dialog parity handoff: [2026-06-23-linux-dialog-parity-pause-handof
 
 ## Current FreeW Coverage
 
-FreeW fidelity uses the on-demand corpus in [../../freew-fidelity-corpus/README.md](../../freew-fidelity-corpus/README.md). The committed manifest currently has 134 redistributable rows and is guarded by `freew/FreeW.Core.IO.Tests/FreeWFidelityCorpusManifestTests.cs`; downloaded document binaries and run outputs stay ignored.
+FreeW fidelity uses the on-demand corpus in [../../freew-fidelity-corpus/README.md](../../freew-fidelity-corpus/README.md). The committed manifest currently has 157 rows: 134 redistributable on-demand rows plus 23 repo-generated local fixtures under `freew-fidelity-corpus/files/review/` and `freew-fidelity-corpus/files/tables/`. The manifest is guarded by `freew/FreeW.Core.IO.Tests/FreeWFidelityCorpusManifestTests.cs`; downloaded third-party document binaries and run outputs stay ignored.
 
 The 2026-06-25/26 FreeW visual reports are the current WPF visual evidence baseline. They should be read as the remaining visual/fidelity evidence loop after WPF in-scope Word parity, not as blockers to the WPF parity verdict in [../planning/freew-ms-word-parity-session-2026-06-21.md](../planning/freew-ms-word-parity-session-2026-06-21.md). The June 26 verification pass specifically separates harness blind spots from genuine app gaps, so future work should extend the capture/composite evidence instead of reopening stale "missing" findings.
 
