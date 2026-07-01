@@ -5,9 +5,9 @@
     "scope":  "Current-main dialog parity inventory slice. Capture booleans mean current checked-in evidence exists; they do not imply functional parity.",
     "summary":  {
                     "totalRoutes":  57,
-                    "wpfCaptures":  53,
+                    "wpfCaptures":  54,
                     "avaloniaCaptures":  0,
-                    "avaloniaHarnessRoutes":  56,
+                    "avaloniaHarnessRoutes":  57,
                     "sharedOrPresentationBacked":  57
                 },
     "rows":  [
@@ -138,16 +138,16 @@
                  {
                      "routeId":  "dialog.AutoFilter",
                      "displayName":  "AutoFilter",
-                     "wpfCaptureExists":  false,
+                     "wpfCaptureExists":  true,
                      "avaloniaCaptureExists":  false,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
-
+                                         "screenshots\\autofilter-flyout-tour\\freex_table_autofilter_dropdown.png"
                                      ],
                      "avaloniaEvidence":  [
 
                                           ],
-                     "avaloniaCaptureHarnessRoute":  false,
+                     "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterChecklistPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterDialogCriteriaPlanner.cs",
@@ -155,10 +155,11 @@
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterDropdownMenuPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterHeaderButtonPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuCatalog.cs",
-                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuModel.cs"
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuModel.cs",
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterParityFixturePlanner.cs"
                                                ],
                      "notes":  [
-                                   "No current checked-in WPF capture asset was found by this inventory slice."
+                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
                                ]
                  },
                  {
