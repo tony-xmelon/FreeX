@@ -16,13 +16,20 @@ Completion contract: run the target command in a foreground-capable Windows desk
 | Complete opened-state capture targets | 0 |
 | Missing or incomplete opened-state capture targets | 3 |
 
+## Blocker Categories
+
+| Category | Count |
+|---|---:|
+| excel-com-unavailable | 1 |
+| foreground-focus-unavailable | 2 |
+
 ## Capture Targets
 
-| Target | Subject | Scenario | Status | PNG | Blocker |
-|---|---|---|---|---|---|
-| excel.conditional-formatting-gallery.opened | excel | excel-conditional-formatting-gallery | blocked-or-incomplete |  | exception: Excel.Application COM ProgID is not available. |
-| wpf.conditional-formatting-gallery.opened | wpf | freex-conditional-formatting-gallery | blocked-or-incomplete |  | foreground-guard-failed: Foreground guard failed during before-input. |
-| avalonia.conditional-formatting-gallery.opened | avalonia | avalonia-conditional-formatting-gallery | needs-capture |  | No committed foreground capture manifest exists for this opened-state target. |
+| Target | Subject | Scenario | Status | Category | Last attempt UTC | PNG | Blocker | Next action |
+|---|---|---|---|---|---|---|---|---|
+| excel.conditional-formatting-gallery.opened | excel | excel-conditional-formatting-gallery | blocked-or-incomplete | excel-com-unavailable | 2026-07-01T22:45:12.2008793+00:00 |  | exception: Excel.Application COM ProgID is not available. | Rerun .\tools\Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery on a Windows desktop where Microsoft Excel COM is installed and registered. |
+| wpf.conditional-formatting-gallery.opened | wpf | freex-conditional-formatting-gallery | blocked-or-incomplete | foreground-focus-unavailable | 2026-07-01T22:41:21.9587418+00:00 |  | foreground-guard-failed: Foreground guard failed during before-input. | Rerun .\tools\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe> from an unlocked interactive desktop where the launched window can become foreground. |
+| avalonia.conditional-formatting-gallery.opened | avalonia | avalonia-conditional-formatting-gallery | blocked-or-incomplete | foreground-focus-unavailable | 2026-07-01T22:41:42.8534076+00:00 |  | foreground-guard-failed: Foreground guard failed during before-input. | Rerun .\tools\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe> from an unlocked interactive desktop where the launched window can become foreground. |
 
 ## Capture Commands
 
