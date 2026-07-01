@@ -1,0 +1,71 @@
+﻿{
+    "schema":  "freex.parity.cross-app-dashboard.v1",
+    "sources":  [
+                    "docs/parity/command-inventory.json",
+                    "docs/parity/functional-parity.json",
+                    "docs/parity/functional-parity-classification.json",
+                    "docs/parity/dialog-parity-inventory.json",
+                    "docs/parity/freew-command-inventory.json",
+                    "docs/parity/freep-command-parity-inventory.json"
+                ],
+    "apps":  [
+                 {
+                     "app":  "FreeX",
+                     "commandSurface":  {
+                                            "implemented":  176,
+                                            "partial":  31,
+                                            "notImplemented":  0,
+                                            "deferred":  0,
+                                            "excluded":  23
+                                        },
+                     "functionalMatrix":  {
+                                              "totalCommands":  531,
+                                              "parity":  473,
+                                              "avaloniaMissing":  0,
+                                              "wpfMissing":  48,
+                                              "bothMissing":  10,
+                                              "intentionalLinuxOmissions":  0,
+                                              "realBehaviorGaps":  0,
+                                              "nonClickControlInventoryRows":  10,
+                                              "pseudoCommandGalleryItems":  48
+                                          },
+                     "dialogRoutes":  {
+                                          "totalRoutes":  57,
+                                          "wpfCaptures":  57,
+                                          "avaloniaCaptures":  57,
+                                          "avaloniaHarnessRoutes":  57,
+                                          "sharedOrPresentationBacked":  57
+                                      },
+                     "nextSlice":  "AutoFilter/popup parity: enrich the shared popup model and paired WPF/Avalonia evidence."
+                 },
+                 {
+                     "app":  "FreeW",
+                     "commandInventory":  {
+                                              "totalCommands":  814,
+                                              "bothProfiles":  161,
+                                              "wpfProfileOnly":  463,
+                                              "avaloniaProfileOnly":  190,
+                                              "missingWpfProfile":  190,
+                                              "missingAvaloniaProfile":  463,
+                                              "classifiedRows":  false
+                                          },
+                     "nextSlice":  "Classify one-sided command rows; safest product slice is Avalonia Backstage Info/Options safety parity."
+                 },
+                 {
+                     "app":  "FreeP",
+                     "commandInventory":  {
+                                              "totalCommands":  93,
+                                              "bothProfiles":  87,
+                                              "wpfOnly":  0,
+                                              "avaloniaOnly":  6,
+                                              "actionableMissingWpf":  0,
+                                              "actionableMissingAvalonia":  0,
+                                              "avaloniaGaps":  0,
+                                              "knownDeferred":  0,
+                                              "platformOnly":  6,
+                                              "commandIdAliases":  0
+                                          },
+                     "nextSlice":  "Command-profile parity is green; move to slide-pane/editing/workflow evidence depth."
+                 }
+             ]
+}

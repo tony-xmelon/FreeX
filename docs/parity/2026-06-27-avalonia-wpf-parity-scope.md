@@ -17,7 +17,7 @@ This update replaces the 2026-06-27 pre-dedup snapshot. The extensive dedup sess
 
 - Primary repo root: `C:\Users\anton\OneDrive\Documents\FreeX\FreeX`.
 - Audit worktree: `.worktrees/avalonia-wpf-parity-report-refresh-20260701`.
-- `main` was clean and synced with `origin/main` at `9c8991f2d` during this update.
+- `main` was clean and synced with `origin/main` at `11495483a` during this update.
 - `AGENTS.md` requires isolated worktrees, no implementation in `main`, frequent sync, subagents for independent work, and merge/push/cleanup after completed slices.
 - This report was produced from four read-only subagent audits plus local orchestration inspection. The only intended edit in this slice is this report.
 
@@ -134,6 +134,10 @@ Dedup items that were blockers in the prior report are now landed or intentional
   - `Free.Shared.*`
 - Ribbon definitions are capability-profiled through `freew/FreeW.Ribbon.Definitions`; tests assert WPF/Avalonia tabs, contextual keys, and allowed command deltas.
 - Avalonia ribbon construction delegates to the shared definition layer, with structured registry wiring in `freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs`.
+- The generated FreeW WPF/Avalonia command inventory is now present:
+  - `docs/parity/freew-command-inventory.json`
+  - `docs/parity/freew-command-inventory.md`
+  - Current snapshot: 814 total commands, 161 shared-profile rows, 463 WPF-profile-only rows, and 190 Avalonia-profile-only rows.
 - Recent dedup work moved shared behavior into planners/services:
   - `DocumentViewLayoutPlanner`
   - `BackstagePaneSurfacePlanner`
@@ -145,9 +149,9 @@ Dedup items that were blockers in the prior report are now landed or intentional
 
 ### Main Gaps
 
-1. Command surface remains much wider in WPF than Avalonia. A live regex inventory found roughly 549 WPF registry ids vs roughly 244 Avalonia ids. This is approximate and must become a generated command inventory before it is used as a gate.
-2. Registered or visible commands are not proof of parity-complete behavior. Some Avalonia routes are placeholders, disabled, or deferred.
-3. WPF-only command clusters remain around images, shapes, WordArt, mail merge, tables, headers/footers, equations, SmartArt, charts, page/view modes, TOC/references, proofing, and help.
+1. Command surface remains much wider in WPF than Avalonia, but this is now measured by the generated inventory rather than a rough source scan. The current snapshot has 463 WPF-profile-only rows and 190 Avalonia-profile-only rows.
+2. The FreeW inventory is a profile-surface inventory, not a behavior-completeness proof. It still needs classification that separates true missing behavior from menu-shape differences, platform-only file/backstage commands, aliases, placeholders, and intentionally deferred commands.
+3. WPF-only command clusters remain around images, shapes, WordArt, tables, headers/footers, equations, SmartArt, charts, page/view modes, TOC/references, proofing, and help. Avalonia-only clusters include shell/file/backstage routes and some chart/mailings profile choices that need WPF/profile normalization or classification.
 4. Avalonia Backstage is partially wired but still has deferred/placeholder actions, including Options, Print actions, and Info safety actions.
 5. Print/export parity is incomplete. Avalonia PDF export is text-position based and explicitly lacks tables/images/decorations plus full print-pipeline pagination.
 6. Rich rendering is improving, but SmartArt and other DrawingML-heavy surfaces are still simplified compared with WPF/Word.
@@ -156,7 +160,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 
 ### FreeW Next Slices
 
-1. Build a generated WPF-vs-Avalonia FreeW command inventory and classify each gap as implemented, placeholder, deferred, platform-only, or obsolete.
+1. Add classification to the generated FreeW command inventory so each one-sided row is marked implemented, placeholder, deferred, platform-only, profile-shape-only, alias, obsolete, or actionable gap.
 2. Reconcile or land the active `FreeX-linux` FreeW work before duplicating effort in the same files.
 3. Enable or truthfully disable Avalonia Backstage Print/Export/SaveCopy/Info/Options actions using shared planners and callbacks.
 4. Close one high-value dialog family with shared planning plus Avalonia UI, such as Cross Reference, Manage Sources, or Table Properties.
@@ -175,12 +179,16 @@ Dedup items that were blockers in the prior report are now landed or intentional
   - `freep/FreeP.Core.IO/PptxPackageReader.cs`
   - `freep/FreeP.Core.IO/PptxPackageWriter.cs`
 - WPF/Avalonia ribbon definitions are now single-sourced through `freep/FreeP.Ribbon.Definitions`.
+- The generated FreeP WPF/Avalonia command inventory is now present:
+  - `docs/parity/freep-command-parity-inventory.json`
+  - `docs/parity/freep-command-parity-inventory.md`
+  - Current snapshot: 93 total commands, 87 shared, 0 raw WPF-only rows, 6 raw Avalonia-only shell rows, 0 actionable WPF/Avalonia missing commands, 0 explicit Avalonia gaps, 0 known-deferred commands, 6 platform-only commands, and 0 command-id aliases.
 - Renderer-neutral planners now cover slide pane, canvas geometry/gestures, text layout, chart primitives, picture effects, slideshow host/playback, dialogs, insertion, and persistence under `freep/FreeP.App.Presentation`.
 - `tools/FreeP.RenderCompare` now includes pixel-diversity checks so blank or single-color output cannot silently pass as valid evidence.
 
 ### Main Gaps
 
-1. Avalonia ribbon remains intentionally smaller than WPF. A quick source scan found about 87 WPF command ids vs 23 Avalonia ids in definition source. A real generated FreeP command matrix is still needed.
+1. Command-profile parity is no longer the leading FreeP WPF/Avalonia gap. The generated inventory reports 0 actionable WPF/Avalonia missing commands; the six raw Avalonia-only rows are platform-only shell commands.
 2. Slide pane parity is partial:
    - WPF owns drag reorder, context menus, richer thumbnails, and section behavior in `freep/FreeP.App.Host/SlidePane.cs`.
    - Avalonia still has a simpler `ListBox` surface in `freep/FreeP.App.Avalonia/MainWindow.cs`.
@@ -193,10 +201,10 @@ Dedup items that were blockers in the prior report are now landed or intentional
 
 ### FreeP Next Slices
 
-1. Build a generated WPF-vs-Avalonia FreeP command matrix and classify missing Avalonia commands by tab/group.
-2. Expand the Avalonia ribbon profile by high-value tab: Home, Insert, Design, Transitions, Animations.
-3. Port WPF slide-pane interactions to Avalonia through the existing shared planner layer.
-4. Close Avalonia rich editing and table-cell editing parity against WPF.
+1. Keep the generated FreeP command matrix green while implementation work deepens the command bodies behind shared planner intents.
+2. Port WPF slide-pane interactions to Avalonia through the existing shared planner layer.
+3. Close Avalonia rich editing and table-cell editing parity against WPF.
+4. Add WPF/Avalonia evidence for export/backstage, presenter, comments/review/accessibility, and animation-pane workflows now that command-surface parity is green.
 5. Run PowerPoint-backed render-compare baselines on a machine with PowerPoint COM installed, then use the harness for visual fidelity waves.
 
 ## Shared/Infrastructure Status
@@ -228,7 +236,7 @@ Use these as the current parity dashboard inputs:
 
 ### Remaining Shared Work
 
-1. Extend the FreeX command matrix pattern to FreeW and FreeP.
+1. Extend the generated inventory classifiers beyond raw command presence, especially for FreeW one-sided rows and shared planner-backed command bodies.
 2. Add a unified rendered-evidence summary across FreeX, FreeW, and FreeP render/compare tools.
 3. Keep shared boundary guards green:
    - `tests/SharedTestInfrastructure/PortableBoundaryGuard.cs`
@@ -245,26 +253,26 @@ Use these as the current parity dashboard inputs:
    - `tester-release-20260627-r1` for generated FreeX parity artifacts.
 2. Refresh the parity dashboard from stable `main`:
    - FreeX command/dialog/surface evidence.
-   - FreeW WPF-vs-Avalonia command inventory.
-   - FreeP WPF-vs-Avalonia command inventory.
+   - FreeW WPF-vs-Avalonia command inventory classification.
+   - FreeP WPF-vs-Avalonia command body/evidence depth.
    - Active deferred/platform-only allowlists.
    - Render/capture evidence availability.
 3. Use dashboard gaps to choose implementation slices. Prefer small branches with one owned surface at a time.
 4. For FreeX, start with qualitative dialog capture review and print/render evidence.
-5. For FreeW, start with command inventory plus reconciliation of the dirty Linux lane.
-6. For FreeP, start with command inventory and Avalonia ribbon/profile expansion.
+5. For FreeW, start with command-inventory classification plus reconciliation of the dirty Linux lane.
+6. For FreeP, start with slide-pane/editing/evidence depth rather than command-profile expansion.
 7. Keep merging verified slices quickly to `main`, then sync active branches from updated `main`.
 
 ## Immediate Next Action
 
-The safest next implementation slice is not another dedup extraction. The obvious extraction backlog is largely closed. The next slice should be evidence infrastructure:
+The safest next implementation slice is not another dedup extraction. The obvious extraction backlog and the first FreeW/FreeP generated command inventories are closed. The next slice should be evidence and classification infrastructure:
 
-1. Generate FreeW and FreeP WPF-vs-Avalonia command inventories modeled after FreeX.
-2. Add a compact cross-app parity dashboard document or generated JSON summary.
+1. Add a compact cross-app parity dashboard document or generated JSON summary that reads the existing FreeX, FreeW, and FreeP generated evidence.
+2. Classify FreeW one-sided command rows so workers can distinguish real missing Avalonia behavior from profile-shape/platform-only noise.
 3. Use that dashboard to rank the next code work for the 100% parity goal.
 
 If the next slice must be app-specific, choose one of:
 
 - FreeX qualitative dialog capture review.
-- FreeW command inventory and dirty-lane reconciliation.
-- FreeP command inventory plus Avalonia ribbon profile expansion.
+- FreeW command-inventory classification, plus the safe product slice of Avalonia Backstage Info/Options safety parity.
+- FreeP slide-pane/editing parity or workflow evidence depth.
