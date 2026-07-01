@@ -184,6 +184,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
   - `docs/parity/freep-command-parity-inventory.md`
   - Current snapshot: 93 total commands, 87 shared, 0 raw WPF-only rows, 6 raw Avalonia-only shell rows, 0 actionable WPF/Avalonia missing commands, 0 explicit Avalonia gaps, 0 known-deferred commands, 6 platform-only commands, and 0 command-id aliases.
 - Renderer-neutral planners now cover slide pane, canvas geometry/gestures, text layout, chart primitives, picture effects, slideshow host/playback, dialogs, insertion, and persistence under `freep/FreeP.App.Presentation`.
+- `freep.layout` is no longer a silent command stub: both WPF and Avalonia route it through the shared `PresentationDesignCommandPlanner` layout-picker host intent. The remaining work is the actual picker UI/model selection flow.
 - `tools/FreeP.RenderCompare` now includes pixel-diversity checks so blank or single-color output cannot silently pass as valid evidence.
 
 ### Main Gaps
