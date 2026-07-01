@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "generatedBy": "tools/Generate-FreePCommandParityInventory.ps1",
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
+  "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell commands are not reported as WPF or Avalonia implementation gaps.",
   "summary": {
     "totalCommands": 93,
     "both": 87,
@@ -9,6 +10,8 @@
     "avaloniaOnly": 6,
     "missingWpf": 6,
     "missingAvalonia": 0,
+    "actionableMissingWpf": 0,
+    "actionableMissingAvalonia": 0,
     "shared": 87,
     "avaloniaGaps": 0,
     "knownDeferred": 0,

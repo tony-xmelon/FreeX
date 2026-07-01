@@ -140,6 +140,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [reviews/comprehensive-code-review-2026-06-21-iter6.md](reviews/comprehensive-code-review-2026-06-21-iter6.md) - June 21 review iteration covering block-list workflow triggers, review-log completeness, FreeW DOCX allocator guard coverage, and sheet-tab evidence wording.
 - [reviews/comprehensive-code-review-2026-06-21-iter7.md](reviews/comprehensive-code-review-2026-06-21-iter7.md) - June 21 review iteration covering final workflow/docs and FreeW DOCX clean passes plus sheet-tab evidence wording cleanup.
 - [reviews/comprehensive-code-review-2026-06-21-iter8.md](reviews/comprehensive-code-review-2026-06-21-iter8.md) - final June 21 no-findings validation for workflow/docs guards, FreeW DOCX allocator coverage, and sheet-tab evidence wording.
+- [reviews/comprehensive-code-review-2026-07-01-iter1.md](reviews/comprehensive-code-review-2026-07-01-iter1.md) - July 1 subagent-assisted review covering core XLSX/ODS/formula data integrity, WPF workbook-window workflows, FreeW Save As format selection, corpus provenance, and preflight coverage.
 - [reviews/command-icon-audit-2026-05-30.md](reviews/command-icon-audit-2026-05-30.md) - proposal-only command icon audit.
 - [reviews/command-icon-review-2026-05-29.md](reviews/command-icon-review-2026-05-29.md) - prior SVG command-icon audit.
 - [reviews/command-icon-visual-consistency-2026-05-30.md](reviews/command-icon-visual-consistency-2026-05-30.md) - visual-consistency review for command artwork.

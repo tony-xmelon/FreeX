@@ -1,12 +1,33 @@
 # Code Review Findings
 
-Last updated: 2026-06-21
+Last updated: 2026-07-01
 
 2026-06-21 documentation refresh note: review iteration reports remain historical durable records
 because this log links to each cycle. Current documentation cleanup keeps the full iteration history
 available rather than deleting earlier fixed-cycle reports.
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
+
+## 2026-07-01 Comprehensive Review Iteration 1
+
+Full report: [reviews/comprehensive-code-review-2026-07-01-iter1.md](comprehensive-code-review-2026-07-01-iter1.md).
+
+Subagent-assisted review on `codex/review-orchestration-20260701`, focused on spreadsheet core/model/IO/formula behavior, WPF host/ribbon/window workflows, FreeW/shared document workflows, and build/CI/preflight hygiene.
+
+Resolution update: findings in this cycle are fixed in `codex/review-orchestration-20260701` and merged to `main`. Scoped worker branches fixed the Core XLSX/ODS/date-system issues, WPF workbook-window visibility state, FreeW duplicate-extension Save As flow, FreeW corpus provenance guard, and repository preflight/doc hygiene. After syncing the latest `origin/main` into `main`, repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed on the no-build-server fallback with 22,360 passed, 132 skipped, and 0 failed across 19 TRX files.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P2 | Core XLSX IO | Fixed: model-created named formulas and sheet-scoped defined names are emitted by XLSX save. |
+| P2 | Core formulas | Fixed: `date1904` workbook context is honored by formula date conversion. |
+| P2 | Core ODS IO | Fixed: cross-sheet range conversion preserves the right endpoint sheet. |
+| P2 | WPF workbook windows | Fixed: Switch Windows cycles visible windows only and does not re-show hidden windows. |
+| P2 | WPF workbook windows | Fixed: hiding a side-by-side partner clears side-by-side and synchronous scrolling state. |
+| P2 | FreeW Save As | Fixed: duplicate-extension Save-As choices carry selected format identity to adapter resolution. |
+| P2 | Repository preflight | Fixed: XML/JSON validators enumerate tracked repo files with build/worktree exclusions. |
+| P3 | Repository preflight | Fixed: nested PowerShell tools are covered by tool-script validation. |
+| P3 | FreeW corpus | Fixed: tracked DOCX corpus fixtures are represented in the manifest and guarded by tests. |
+| P3 | Documentation | Fixed: upload-artifact guidance now uses v7. |
 
 ## 2026-06-21 Comprehensive Review Iteration 8
 
