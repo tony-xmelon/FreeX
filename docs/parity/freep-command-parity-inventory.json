@@ -4,13 +4,13 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "summary": {
     "totalCommands": 94,
-    "both": 30,
-    "wpfOnly": 57,
+    "both": 34,
+    "wpfOnly": 53,
     "avaloniaOnly": 7,
     "missingWpf": 7,
-    "missingAvalonia": 57,
-    "shared": 30,
-    "avaloniaGaps": 13,
+    "missingAvalonia": 53,
+    "shared": 34,
+    "avaloniaGaps": 9,
     "knownDeferred": 43,
     "platformOnly": 6,
     "commandIdAliases": 2
@@ -990,11 +990,11 @@
       "commandId": "freep.copy",
       "label": "Copy",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1007,17 +1007,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "clipboard",
+          "group": "Clipboard",
+          "label": "Copy",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.cut",
       "label": "Cut",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1030,7 +1041,18 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "clipboard",
+          "group": "Clipboard",
+          "label": "Cut",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.delete-slide",
@@ -1242,11 +1264,11 @@
       "commandId": "freep.format-painter",
       "label": "Format Painter",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1259,7 +1281,18 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "clipboard",
+          "group": "Clipboard",
+          "label": "Format Painter",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.insert-chart-bar",
@@ -1606,11 +1639,11 @@
       "commandId": "freep.paste",
       "label": "Paste",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1623,7 +1656,18 @@
           "layout": "Large"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "clipboard",
+          "group": "Clipboard",
+          "label": "Paste",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
     },
     {
       "commandId": "freep.picture",
