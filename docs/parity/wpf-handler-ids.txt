@@ -128,8 +128,10 @@ Conditional Formatting#CfPickerBtn_Click
 Conditional Formatting#FindConditionalFormattingMenuItem_Click
 Consolidate
 Constants
+Convert to Comments
 Convert to Range
 Copy
+Copy Diagnostics#CopyDiagnosticsBtn_Click
 Count All
 Count Numbers
 Create from Selection
@@ -270,6 +272,7 @@ Last Column
 Left
 Left Border
 Legal
+Legal Notices#LegalNoticesBtn_Click
 Legend Border
 Legend Fill
 Legend Font Size

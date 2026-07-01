@@ -3,12 +3,12 @@
   "sourceSchema": "freex.parity.functional.v1",
   "summary": {
     "totalCommands": 531,
-    "nonParityCommands": 61,
+    "nonParityCommands": 58,
     "avaloniaMissing": 0,
     "wpfMissing": 48,
-    "bothMissing": 13,
+    "bothMissing": 10,
     "intentionalLinuxOmissions": 0,
-    "real-behavior-gap": 3,
+    "real-behavior-gap": 0,
     "non-click-control-inventory-row": 10,
     "pseudo-command-gallery-item": 48,
     "platform-only": 0,
@@ -16,14 +16,8 @@
     "excluded": 0
   },
   "prioritizedImplementationList": [
-    { "id": "Copy Diagnostics#CopyDiagnosticsBtn_Click", "tab": "Help", "group": "Help", "status": "BOTH-MISSING", "priority": "P1", "implementationRank": 1, "rationale": "The shared Help ribbon exposes this as a real diagnostic action, but the functional binding matrix has no counted WPF/Avalonia route for it.", "nextAction": "Introduce a shared Help diagnostic command descriptor, bind it through both host command catalogs, and refresh the WPF handler snapshot." },
-    { "id": "Legal Notices#LegalNoticesBtn_Click", "tab": "Help", "group": "Help", "status": "BOTH-MISSING", "priority": "P2", "implementationRank": 2, "rationale": "Legal notices exist in both hosts through other surfaces, but the shared Help ribbon command is not counted as a functional binding.", "nextAction": "Route the Help ribbon command through the shared Legal Notices action and include it in both binding inventories." },
-    { "id": "Convert to Comments", "tab": "Review", "group": "Notes", "status": "BOTH-MISSING", "priority": "P2", "implementationRank": 3, "rationale": "WPF has a live Convert Notes to Comments handler, but the cross-host functional matrix does not count a paired Avalonia command binding.", "nextAction": "Add the Avalonia Review ribbon route through the shared comments command model, then refresh the matrix inputs." }
   ],
   "rows": [
-    { "id": "Copy Diagnostics#CopyDiagnosticsBtn_Click", "tab": "Help", "group": "Help", "status": "BOTH-MISSING", "classification": "real-behavior-gap", "priority": "P1", "implementationRank": 1, "rationale": "The shared Help ribbon exposes this as a real diagnostic action, but the functional binding matrix has no counted WPF/Avalonia route for it.", "nextAction": "Introduce a shared Help diagnostic command descriptor, bind it through both host command catalogs, and refresh the WPF handler snapshot." },
-    { "id": "Legal Notices#LegalNoticesBtn_Click", "tab": "Help", "group": "Help", "status": "BOTH-MISSING", "classification": "real-behavior-gap", "priority": "P2", "implementationRank": 2, "rationale": "Legal notices exist in both hosts through other surfaces, but the shared Help ribbon command is not counted as a functional binding.", "nextAction": "Route the Help ribbon command through the shared Legal Notices action and include it in both binding inventories." },
-    { "id": "Convert to Comments", "tab": "Review", "group": "Notes", "status": "BOTH-MISSING", "classification": "real-behavior-gap", "priority": "P2", "implementationRank": 3, "rationale": "WPF has a live Convert Notes to Comments handler, but the cross-host functional matrix does not count a paired Avalonia command binding.", "nextAction": "Add the Avalonia Review ribbon route through the shared comments command model, then refresh the matrix inputs." },
     { "id": "About FreeX#AboutBtn_Click", "tab": "Help", "group": "Help", "status": "WPF-MISSING", "classification": "non-click-control-inventory-row", "priority": "P3", "implementationRank": 300, "rationale": "Handler-qualified Help command; WPF binds the #method route outside the legacy handler snapshot, and Avalonia maps it through the Help command adapter.", "nextAction": "Keep behavior tests on the concrete Help route; do not prioritize this as product work unless the binding inventory source changes." },
     { "id": "Check for Updates#CheckForUpdatesBtn_Click", "tab": "Help", "group": "Help", "status": "WPF-MISSING", "classification": "non-click-control-inventory-row", "priority": "P3", "implementationRank": 300, "rationale": "Handler-qualified Help command; WPF binds the #method route outside the legacy handler snapshot, and Avalonia maps it through the Help command adapter.", "nextAction": "Keep behavior tests on the concrete Help route; do not prioritize this as product work unless the binding inventory source changes." },
     { "id": "Feedback#FeedbackBtn_Click", "tab": "Help", "group": "Help", "status": "WPF-MISSING", "classification": "non-click-control-inventory-row", "priority": "P3", "implementationRank": 300, "rationale": "Handler-qualified Help command; WPF binds the #method route outside the legacy handler snapshot, and Avalonia maps it through the Help command adapter.", "nextAction": "Keep behavior tests on the concrete Help route; do not prioritize this as product work unless the binding inventory source changes." },

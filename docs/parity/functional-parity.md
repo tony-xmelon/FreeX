@@ -11,17 +11,17 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Metric | Count |
 |---|---:|
 | Total commands | 531 |
-| PARITY (both) | 470 |
+| PARITY (both) | 473 |
 | AVALONIA-MISSING | 0 |
 | WPF-MISSING | 48 |
-| BOTH-MISSING | 13 |
+| BOTH-MISSING | 10 |
 | Intentional Linux omissions (allowlisted) | 0 |
 
 ## Non-parity classification summary
 
 | Classification | Count |
 |---|---:|
-| Real behavior gap | 3 |
+| Real behavior gap | 0 |
 | Non-Click/control inventory row | 10 |
 | Pseudo-command/gallery item | 48 |
 | Platform-only | 0 |
@@ -155,10 +155,10 @@ See `functional-parity-classification.md` for the prioritized implementation lis
 | Text Functions | Function Library | Formulas | yes | yes | PARITY |
 | About FreeX#AboutBtn_Click | Help | Help | — | yes | WPF-MISSING |
 | Check for Updates#CheckForUpdatesBtn_Click | Help | Help | — | yes | WPF-MISSING |
-| Copy Diagnostics#CopyDiagnosticsBtn_Click | Help | Help | — | — | BOTH-MISSING |
+| Copy Diagnostics#CopyDiagnosticsBtn_Click | Help | Help | yes | yes | PARITY |
 | Feedback#FeedbackBtn_Click | Help | Help | — | yes | WPF-MISSING |
 | Help Online#HelpOnlineBtn_Click | Help | Help | — | yes | WPF-MISSING |
-| Legal Notices#LegalNoticesBtn_Click | Help | Help | — | — | BOTH-MISSING |
+| Legal Notices#LegalNoticesBtn_Click | Help | Help | yes | yes | PARITY |
 | Align Left | Alignment | Home | yes | yes | PARITY |
 | Align Right | Alignment | Home | yes | yes | PARITY |
 | Angle Clockwise | Alignment | Home | yes | yes | PARITY |
@@ -505,7 +505,7 @@ See `functional-parity-classification.md` for the prioritized implementation lis
 | Next Comment | Comments | Review | yes | yes | PARITY |
 | Previous Comment | Comments | Review | yes | yes | PARITY |
 | Show Comments | Comments | Review | yes | yes | PARITY |
-| Convert to Comments | Notes | Review | — | — | BOTH-MISSING |
+| Convert to Comments | Notes | Review | yes | yes | PARITY |
 | Delete Note | Notes | Review | yes | yes | PARITY |
 | Edit Note | Notes | Review | yes | yes | PARITY |
 | New Note | Notes | Review | yes | yes | PARITY |

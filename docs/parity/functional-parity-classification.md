@@ -9,10 +9,10 @@ This companion classifies every `WPF-MISSING`, `AVALONIA-MISSING`, and `BOTH-MIS
 | Metric | Count |
 |---|---:|
 | Total commands | 531 |
-| Non-parity rows classified | 61 |
+| Non-parity rows classified | 58 |
 | AVALONIA-MISSING | 0 |
 | Intentional Linux omissions | 0 |
-| Real behavior gap | 3 |
+| Real behavior gap | 0 |
 | Non-Click/control inventory row | 10 |
 | Pseudo-command/gallery item | 48 |
 | Platform-only | 0 |
@@ -21,17 +21,13 @@ This companion classifies every `WPF-MISSING`, `AVALONIA-MISSING`, and `BOTH-MIS
 
 ## Prioritized implementation list
 
-| Priority | Command | Status | Why | Next action |
-|---|---|---|---|---|
-| P1 | Copy Diagnostics#CopyDiagnosticsBtn_Click | BOTH-MISSING | The shared Help ribbon exposes this as a real diagnostic action, but the functional binding matrix has no counted WPF/Avalonia route for it. | Introduce a shared Help diagnostic command descriptor, bind it through both host command catalogs, and refresh the WPF handler snapshot. |
-| P2 | Legal Notices#LegalNoticesBtn_Click | BOTH-MISSING | Legal notices exist in both hosts through other surfaces, but the shared Help ribbon command is not counted as a functional binding. | Route the Help ribbon command through the shared Legal Notices action and include it in both binding inventories. |
-| P2 | Convert to Comments | BOTH-MISSING | WPF has a live Convert Notes to Comments handler, but the cross-host functional matrix does not count a paired Avalonia command binding. | Add the Avalonia Review ribbon route through the shared comments command model, then refresh the matrix inputs. |
+No real behavior gaps are classified in the current functional matrix.
 
 ## Classification buckets
 
 | Classification | Count | Meaning |
 |---|---:|---|
-| Real behavior gap | 3 | Implement or normalize a real host/shared behavior route. |
+| Real behavior gap | 0 | Implement or normalize a real host/shared behavior route. |
 | Non-Click/control inventory row | 10 | Behavior is driven by non-Click controls or handler-qualified routes outside the current snapshot source. |
 | Pseudo-command/gallery item | 48 | Visible menu, swatch, or gallery entry that should be tracked through popup/gallery evidence. |
 | Platform-only | 0 | Intentional platform-specific surface. |
@@ -44,10 +40,8 @@ This companion classifies every `WPF-MISSING`, `AVALONIA-MISSING`, and `BOTH-MIS
 |---|---|---|---|---|---|---|---|
 | About FreeX#AboutBtn_Click | Help | Help | WPF-MISSING | Non-Click/control inventory row | P3 | Handler-qualified Help command; WPF binds the #method route outside the legacy handler snapshot, and Avalonia maps it through the Help command adapter. | Keep behavior tests on the concrete Help route; do not prioritize this as product work unless the binding inventory source changes. |
 | Check for Updates#CheckForUpdatesBtn_Click | Help | Help | WPF-MISSING | Non-Click/control inventory row | P3 | Handler-qualified Help command; WPF binds the #method route outside the legacy handler snapshot, and Avalonia maps it through the Help command adapter. | Keep behavior tests on the concrete Help route; do not prioritize this as product work unless the binding inventory source changes. |
-| Copy Diagnostics#CopyDiagnosticsBtn_Click | Help | Help | BOTH-MISSING | Real behavior gap | P1 | The shared Help ribbon exposes this as a real diagnostic action, but the functional binding matrix has no counted WPF/Avalonia route for it. | Introduce a shared Help diagnostic command descriptor, bind it through both host command catalogs, and refresh the WPF handler snapshot. |
 | Feedback#FeedbackBtn_Click | Help | Help | WPF-MISSING | Non-Click/control inventory row | P3 | Handler-qualified Help command; WPF binds the #method route outside the legacy handler snapshot, and Avalonia maps it through the Help command adapter. | Keep behavior tests on the concrete Help route; do not prioritize this as product work unless the binding inventory source changes. |
 | Help Online#HelpOnlineBtn_Click | Help | Help | WPF-MISSING | Non-Click/control inventory row | P3 | Handler-qualified Help command; WPF binds the #method route outside the legacy handler snapshot, and Avalonia maps it through the Help command adapter. | Keep behavior tests on the concrete Help route; do not prioritize this as product work unless the binding inventory source changes. |
-| Legal Notices#LegalNoticesBtn_Click | Help | Help | BOTH-MISSING | Real behavior gap | P2 | Legal notices exist in both hosts through other surfaces, but the shared Help ribbon command is not counted as a functional binding. | Route the Help ribbon command through the shared Legal Notices action and include it in both binding inventories. |
 | Accent 1 | Font | Home | BOTH-MISSING | Pseudo-command/gallery item | P3 | Font color or border-style choice row is a swatch/menu selection inside a split-button gallery, not an independent command on either host. | Keep this in the gallery-classification bucket until shared color/border catalogs expose per-choice evidence. |
 | Accent 2 | Font | Home | BOTH-MISSING | Pseudo-command/gallery item | P3 | Font color or border-style choice row is a swatch/menu selection inside a split-button gallery, not an independent command on either host. | Keep this in the gallery-classification bucket until shared color/border catalogs expose per-choice evidence. |
 | Black | Font | Home | BOTH-MISSING | Pseudo-command/gallery item | P3 | Font color or border-style choice row is a swatch/menu selection inside a split-button gallery, not an independent command on either host. | Keep this in the gallery-classification bucket until shared color/border catalogs expose per-choice evidence. |
@@ -102,4 +96,3 @@ This companion classifies every `WPF-MISSING`, `AVALONIA-MISSING`, and `BOTH-MIS
 | Scale Height | Scale To Fit | Page Layout | WPF-MISSING | Non-Click/control inventory row | P3 | Editable ribbon control driven through selection/text-change events instead of a Click handler, so the binding matrix overstates this as missing. | Keep this classified unless the matrix grows a first-class control-binding signal for combo boxes. |
 | Scale Percent | Scale To Fit | Page Layout | WPF-MISSING | Non-Click/control inventory row | P3 | Editable ribbon control driven through selection/text-change events instead of a Click handler, so the binding matrix overstates this as missing. | Keep this classified unless the matrix grows a first-class control-binding signal for combo boxes. |
 | Scale Width | Scale To Fit | Page Layout | WPF-MISSING | Non-Click/control inventory row | P3 | Editable ribbon control driven through selection/text-change events instead of a Click handler, so the binding matrix overstates this as missing. | Keep this classified unless the matrix grows a first-class control-binding signal for combo boxes. |
-| Convert to Comments | Notes | Review | BOTH-MISSING | Real behavior gap | P2 | WPF has a live Convert Notes to Comments handler, but the cross-host functional matrix does not count a paired Avalonia command binding. | Add the Avalonia Review ribbon route through the shared comments command model, then refresh the matrix inputs. |
