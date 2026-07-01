@@ -35,6 +35,7 @@ Every supported command should eventually have evidence for each applicable laye
 | Current routine build lane | `dotnet build FreeX.slnx --configuration Release` | Required before claiming a routine branch ready. |
 | Current routine non-UI test lane | `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build --logger "trx;LogFileName=default-tests.trx"` | Required before claiming a routine branch ready. |
 | UI lane | `dotnet test FreeX.UiTests.slnx --configuration Release --no-build --logger "trx;LogFileName=ui-tests.trx"` | Run only for WPF app/host behavior, UI infrastructure, UI docs/inventory, or tester-release/public-preview candidates. |
+| Excel/FreeX UX parity bootstrap | `powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParitySuite.ps1` | Creates the Excel-authored UX corpus, launches Excel and FreeX against it, and writes the run manifest described in `docs/testing/freex-excel-ux-parity-suite.md`. |
 | Historical catalog evidence | Earlier May/June focused builds, Debug foreground probes, and host regression passes below are retained as point-in-time UI coverage evidence, not the current merge-gate baseline. |
 
 ## Coverage Model
