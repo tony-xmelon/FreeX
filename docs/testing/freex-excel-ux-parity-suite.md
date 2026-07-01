@@ -65,7 +65,7 @@ Run paired foreground evidence after the bootstrap has built the Release host:
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenarioBatch.ps1 -Suite smoke
 ```
 
-The batch runner uses `tools/FreeX.ForegroundCapture` to run matching Excel and FreeX scenarios, stores per-subject manifests/screenshots under `tools/ux-parity-runs/<timestamp>/foreground-captures/`, and writes `ux-scenario-batch.json` with pair status and the next review action.
+The batch runner uses `tools/FreeX.ForegroundCapture` to run matching Excel and FreeX scenarios, stores per-subject manifests/screenshots under `tools/ux-parity-runs/<timestamp>/foreground-captures/`, writes `ux-scenario-batch.json` with pair status and the next review action, and generates `ux-scenario-report.html` for side-by-side visual review.
 
 Suites:
 
@@ -87,12 +87,13 @@ Foreground paired batch status:
 |---|---|
 | `tools/ux-parity-runs/20260701-214833/ux-scenario-batch.json` | First paired smoke batch captured Excel and FreeX Format Cells dialogs successfully, producing PNG evidence for both. Sheet-tab context-menu pair blocked on UIA lookup for `Sheet1` in both apps. |
 | `tools/ux-parity-runs/20260701-215137/ux-scenario-batch.json` | Retry-enabled smoke batch captured FreeX Format Cells, but Excel Format Cells hit repeated transient foreground-guard failures; sheet-tab context-menu remained blocked on `Sheet1` UIA lookup in both apps. |
+| `tools/ux-parity-runs/20260701-215944/ux-scenario-batch.json` | Report-enabled smoke batch captured Excel and FreeX Format Cells dialogs successfully and wrote `ux-scenario-report.html` with side-by-side images. Sheet-tab context-menu remained blocked on `Sheet1` UIA lookup in both apps. |
 
 The current actionable harness gaps are:
 
 - Harden Excel foreground ownership reacquisition between repeated COM-driven scenarios.
 - Make sheet-tab scenarios discover sheet tabs by role/position/fallback names instead of requiring a visible `Sheet1` UIA element.
-- Add side-by-side/contact-sheet generation for paired PNGs so visual review can happen without manually opening individual captures.
+- Promote the HTML report into a richer contact sheet once the paired capture set is stable.
 
 ## Evidence Contract
 
@@ -124,7 +125,7 @@ Every UX parity scenario should append or link evidence in the run folder:
 ## Next Work
 
 1. Harden paired foreground batch reliability for Excel focus reacquisition and sheet-tab UIA discovery.
-2. Add side-by-side/contact-sheet generation for paired foreground screenshots.
+2. Promote the HTML report into a richer image contact sheet once the paired capture set is stable.
 3. Expand the corpus generator from seed sheets into per-feature sheets for every supported command family and every documented formula category.
 4. Add a disparity log schema and a reducer that summarizes open gaps by command family.
 5. Run the foreground walkthrough in batches, serializing Excel COM and clipboard-sensitive steps.
