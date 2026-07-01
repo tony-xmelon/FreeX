@@ -27,7 +27,9 @@
                                               "intentionalLinuxOmissions":  0,
                                               "realBehaviorGaps":  0,
                                               "nonClickControlInventoryRows":  10,
-                                              "pseudoCommandGalleryItems":  48
+                                              "pseudoCommandGalleryItems":  48,
+                                              "conditionalFormatPopupGalleryRows":  34,
+                                              "conditionalFormatPopupCatalogItems":  38
                                           },
                      "dialogRoutes":  {
                                           "totalRoutes":  57,
@@ -36,24 +38,24 @@
                                           "avaloniaHarnessRoutes":  57,
                                           "sharedOrPresentationBacked":  57
                                       },
-                     "nextSlice":  "Font color/border swatch popup parity: expose shared swatch catalogs and paired WPF/Avalonia evidence."
+                     "nextSlice":  "Command/dialog parity is green; conditional-format popup/gallery classifier evidence now links 34 rows to 38 shared runtime catalog items. Next evidence gap is paired opened-state WPF/Avalonia/Excel captures, while 48 total pseudo-gallery rows and 10 non-click inventory rows remain tracked separately."
                  },
                  {
                      "app":  "FreeW",
                      "commandInventory":  {
                                               "totalCommands":  798,
-                                              "bothProfiles":  203,
-                                              "wpfProfileOnly":  421,
+                                              "bothProfiles":  224,
+                                              "wpfProfileOnly":  400,
                                               "avaloniaProfileOnly":  174,
                                               "missingWpfProfile":  174,
-                                              "missingAvaloniaProfile":  421,
+                                              "missingAvaloniaProfile":  400,
                                               "actionableMissingWpf":  9,
-                                              "actionableMissingAvalonia":  70,
+                                              "actionableMissingAvalonia":  51,
                                               "profileShapeOnly":  443,
-                                              "commandIdAliases":  17,
+                                              "commandIdAliases":  15,
                                               "platformOnly":  13,
                                               "deferred":  43,
-                                              "actionableGaps":  79,
+                                              "actionableGaps":  60,
                                               "classifiedRows":  true
                                           },
                      "nextSlice":  "Use actionable FreeW command rows for product slices; deepen Backstage safety/print/export evidence next."
