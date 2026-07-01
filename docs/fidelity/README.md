@@ -1,6 +1,6 @@
 # Fidelity Workstream Summary
 
-**Last updated:** 2026-06-23
+**Last updated:** 2026-07-01
 
 This folder holds point-in-time XLSX and FreeW fidelity findings. Keep durable summaries here and avoid committing temporary handoff notes, downloaded sample workbooks, generated comparison outputs, or Excel ground-truth images. Local workbook binaries belong in ignored corpus folders such as `fidelity-corpus/files/`, `fidelity-corpus/runs/`, `freew-fidelity-corpus/files/`, or `freew-fidelity-corpus/runs/`.
 
@@ -22,8 +22,15 @@ Latest Linux dialog parity handoff: [2026-06-23-linux-dialog-parity-pause-handof
 
 FreeW fidelity uses the on-demand corpus in [../../freew-fidelity-corpus/README.md](../../freew-fidelity-corpus/README.md). The committed manifest currently has 134 redistributable rows and is guarded by `freew/FreeW.Core.IO.Tests/FreeWFidelityCorpusManifestTests.cs`; downloaded document binaries and run outputs stay ignored.
 
+The 2026-06-25/26 FreeW visual reports are the current WPF visual evidence baseline. They should be read as the remaining visual/fidelity evidence loop after WPF in-scope Word parity, not as blockers to the WPF parity verdict in [../planning/freew-ms-word-parity-session-2026-06-21.md](../planning/freew-ms-word-parity-session-2026-06-21.md). The June 26 verification pass specifically separates harness blind spots from genuine app gaps, so future work should extend the capture/composite evidence instead of reopening stale "missing" findings.
+
 Durable FreeW notes:
 
+- [2026-06-26-freew-visual-verification-summary.md](2026-06-26-freew-visual-verification-summary.md) - current visual verification summary separating confirmed renders, harness limitations, and genuine remaining fidelity gaps.
+- [2026-06-26-freew-visual-verify-objects.md](2026-06-26-freew-visual-verify-objects.md) - object/chrome/column visual verification detail.
+- [2026-06-26-freew-visual-verify-flow.md](2026-06-26-freew-visual-verify-flow.md) - flow/pagination visual verification detail.
+- [2026-06-25-freew-visual-fidelity-summary.md](2026-06-25-freew-visual-fidelity-summary.md) - consolidated WPF visual-fidelity triage that the June 26 pass refined.
+- [2026-06-25-freew-render-text.md](2026-06-25-freew-render-text.md), [2026-06-25-freew-render-tables.md](2026-06-25-freew-render-tables.md), [2026-06-25-freew-render-drawing.md](2026-06-25-freew-render-drawing.md), [2026-06-25-freew-render-charts.md](2026-06-25-freew-render-charts.md), and [2026-06-25-freew-render-review.md](2026-06-25-freew-render-review.md) - per-area render triage for text/layout, tables, drawing, charts/SmartArt, and review/reference/header surfaces.
 - [2026-06-19-freew-corpus-feature-growth.md](2026-06-19-freew-corpus-feature-growth.md) - current corpus expansion note and feature coverage summary.
 - [2026-06-17-freew-corpus-roundtrip.md](2026-06-17-freew-corpus-roundtrip.md) - historical 26-file round-trip baseline, now superseded by the corpus-gated test path.
 - [2026-06-17-freew-word-visual-comparison.md](2026-06-17-freew-word-visual-comparison.md) - historical 26-file Word/LibreOffice visual comparison baseline.
