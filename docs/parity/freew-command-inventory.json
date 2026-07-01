@@ -27,12 +27,12 @@
     }
   ],
   "summary": {
-    "totalCommands": 831,
-    "both": 121,
-    "wpfOnly": 503,
-    "avaloniaOnly": 207,
-    "missingWpf": 207,
-    "missingAvalonia": 503
+    "totalCommands": 822,
+    "both": 131,
+    "wpfOnly": 493,
+    "avaloniaOnly": 198,
+    "missingWpf": 198,
+    "missingAvalonia": 493
   },
   "commands": [
     {
@@ -4090,35 +4090,6 @@
       }
     },
     {
-      "commandId": "freew.decrease-indent",
-      "label": "←",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "paragraph",
-          "group": "Paragraph",
-          "label": "←",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
       "commandId": "freew.delete-comment",
       "label": "Delete",
       "wpfPresent": true,
@@ -5557,11 +5528,11 @@
       "commandId": "freew.find",
       "label": "Find",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -5574,24 +5545,6 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.find-replace-dialog",
-      "label": "Find & Replace",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -5599,15 +5552,15 @@
           "tab": "Home",
           "groupId": "editing",
           "group": "Editing",
-          "label": "Find & Replace",
+          "label": "Find",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       }
     },
@@ -6250,11 +6203,11 @@
       "commandId": "freew.formatting-marks",
       "label": "Show ¶",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -6267,12 +6220,23 @@
           "layout": "Small"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Show Formatting Marks",
+          "controlType": "RibbonToggleButton",
+          "layout": "Small"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -10731,15 +10695,36 @@
       }
     },
     {
-      "commandId": "freew.increase-indent",
-      "label": "→",
-      "wpfPresent": false,
+      "commandId": "freew.indent-decrease",
+      "label": "Decrease Indent",
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Decrease Indent",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        },
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Decrease Indent",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -10747,66 +10732,27 @@
           "tab": "Home",
           "groupId": "paragraph",
           "group": "Paragraph",
-          "label": "→",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.indent-decrease",
-      "label": "Decrease Indent",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "paragraph",
-          "group": "Paragraph",
-          "label": "Decrease Indent",
-          "controlType": "RibbonButton",
-          "layout": "Small"
-        },
-        {
-          "profile": "WPF",
-          "tabId": "layout",
-          "tab": "Layout",
-          "groupId": "paragraph",
-          "group": "Paragraph",
           "label": "Decrease Indent",
           "controlType": "RibbonButton",
           "layout": "Small"
         }
       ],
-      "avaloniaLocations": [],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.indent-increase",
       "label": "Increase Indent",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -10829,12 +10775,23 @@
           "layout": "Small"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Increase Indent",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -11664,11 +11621,11 @@
       "commandId": "freew.line-spacing",
       "label": "Line and Paragraph Spacing",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -11691,127 +11648,22 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Line and Paragraph Spacing",
+          "controlType": "RibbonComboBox",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.line-spacing-1",
-      "label": "1×",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "paragraph",
-          "group": "Paragraph",
-          "label": "1×",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.line-spacing-115",
-      "label": "1.15×",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "paragraph",
-          "group": "Paragraph",
-          "label": "1.15×",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.line-spacing-15",
-      "label": "1.5×",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "paragraph",
-          "group": "Paragraph",
-          "label": "1.5×",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.line-spacing-2",
-      "label": "2×",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "paragraph",
-          "group": "Paragraph",
-          "label": "2×",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
       }
     },
@@ -12855,11 +12707,11 @@
       "commandId": "freew.multilevel-demote",
       "label": "Increase List Level",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12872,23 +12724,34 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Increase List Level",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.multilevel-list",
       "label": "Multilevel List",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12901,12 +12764,23 @@
           "layout": "Small"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Multilevel List",
+          "controlType": "RibbonDropdown",
+          "layout": "Small"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -13000,11 +12874,11 @@
       "commandId": "freew.multilevel-promote",
       "label": "Decrease List Level",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -13017,12 +12891,23 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Decrease List Level",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -15829,11 +15714,11 @@
       "commandId": "freew.replace",
       "label": "Replace",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -15846,12 +15731,23 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "editing",
+          "group": "Editing",
+          "label": "Replace",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -16353,11 +16249,11 @@
       "commandId": "freew.select",
       "label": "Select",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -16370,24 +16266,6 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.select-all",
-      "label": "Select All",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -16395,15 +16273,15 @@
           "tab": "Home",
           "groupId": "editing",
           "group": "Editing",
-          "label": "Select All",
+          "label": "Select",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       }
     },
@@ -18726,35 +18604,6 @@
       }
     },
     {
-      "commandId": "freew.show-hide-para",
-      "label": "¶",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "paragraph",
-          "group": "Paragraph",
-          "label": "¶",
-          "controlType": "RibbonToggleButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
       "commandId": "freew.show-markup",
       "label": "Show Markup",
       "wpfPresent": true,
@@ -19775,11 +19624,11 @@
       "commandId": "freew.space-after",
       "label": "Spacing After",
       "wpfPresent": true,
-      "avaloniaPresent": true,
-      "profileSurface": "both",
-      "missingProfile": "none",
-      "classification": "shared-profile",
-      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "avaloniaPresent": false,
+      "profileSurface": "wpf-only",
+      "missingProfile": "Avalonia",
+      "classification": "wpf-profile-only",
+      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -19792,21 +19641,10 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "paragraph",
-          "group": "Paragraph",
-          "label": "Space After",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
+      "avaloniaLocations": [],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       }
@@ -19815,11 +19653,11 @@
       "commandId": "freew.space-after-toggle",
       "label": "Add Space After Paragraph",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -19842,23 +19680,34 @@
           "layout": "Small"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Add Space After Paragraph",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.space-before",
       "label": "Spacing Before",
       "wpfPresent": true,
-      "avaloniaPresent": true,
-      "profileSurface": "both",
-      "missingProfile": "none",
-      "classification": "shared-profile",
-      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "avaloniaPresent": false,
+      "profileSurface": "wpf-only",
+      "missingProfile": "Avalonia",
+      "classification": "wpf-profile-only",
+      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -19871,21 +19720,10 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "paragraph",
-          "group": "Paragraph",
-          "label": "Space Before",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
+      "avaloniaLocations": [],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       }
@@ -19894,11 +19732,11 @@
       "commandId": "freew.space-before-toggle",
       "label": "Add Space Before Paragraph",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -19921,12 +19759,23 @@
           "layout": "Small"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Add Space Before Paragraph",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
