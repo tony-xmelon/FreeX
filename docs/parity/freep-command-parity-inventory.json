@@ -4,13 +4,13 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "summary": {
     "totalCommands": 94,
-    "both": 34,
-    "wpfOnly": 53,
+    "both": 38,
+    "wpfOnly": 49,
     "avaloniaOnly": 7,
     "missingWpf": 7,
-    "missingAvalonia": 53,
-    "shared": 34,
-    "avaloniaGaps": 9,
+    "missingAvalonia": 49,
+    "shared": 38,
+    "avaloniaGaps": 5,
     "knownDeferred": 43,
     "platformOnly": 6,
     "commandIdAliases": 2
@@ -933,11 +933,11 @@
       "commandId": "freep.bold",
       "label": "Bold",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -950,7 +950,18 @@
           "layout": "Small"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Bold",
+          "controlType": "RibbonToggleButton",
+          "layout": "Small"
+        }
+      ]
     },
     {
       "commandId": "freep.chart.edit-data",
@@ -1241,11 +1252,11 @@
       "commandId": "freep.font-family",
       "label": "Font",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1258,7 +1269,18 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Font",
+          "controlType": "RibbonComboBox",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.format-painter",
@@ -1559,11 +1581,11 @@
       "commandId": "freep.italic",
       "label": "Italic",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1576,7 +1598,18 @@
           "layout": "Small"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Italic",
+          "controlType": "RibbonToggleButton",
+          "layout": "Small"
+        }
+      ]
     },
     {
       "commandId": "freep.layout",
@@ -2510,11 +2543,11 @@
       "commandId": "freep.underline",
       "label": "Underline",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -2527,7 +2560,18 @@
           "layout": "Small"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Underline",
+          "controlType": "RibbonToggleButton",
+          "layout": "Small"
+        }
+      ]
     },
     {
       "commandId": "freep.undo",
