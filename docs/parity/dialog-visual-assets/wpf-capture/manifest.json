@@ -1,0 +1,111 @@
+﻿{
+    "platform":  "windows",
+    "shell":  "wpf",
+    "surfaces":  [
+                     {
+                         "id":  "dialog.Options",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.General",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.General.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.Formulas",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.Formulas.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.Proofing",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.Proofing.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.Save",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.Save.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.Language",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.Language.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.EaseOfAccess",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.EaseOfAccess.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.Advanced",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.Advanced.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.CustomizeRibbon",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.CustomizeRibbon.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.QuickAccessToolbar",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.QuickAccessToolbar.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.AddIns",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.AddIns.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.TrustCenter",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.TrustCenter.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Options.View",
+                         "kind":  "dialog",
+                         "png":  "dialog.Options.View.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ConditionalFormatNewRule",
+                         "kind":  "dialog",
+                         "png":  "dialog.ConditionalFormatNewRule.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PrintPreview",
+                         "kind":  "dialog",
+                         "png":  "dialog.PrintPreview.png",
+                         "captured":  true,
+                         "note":  ""
+                     }
+                 ]
+}

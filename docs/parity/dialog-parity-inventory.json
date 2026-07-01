@@ -5,8 +5,8 @@
     "scope":  "Current-main dialog parity inventory slice. Capture booleans mean current checked-in evidence exists; they do not imply functional parity.",
     "summary":  {
                     "totalRoutes":  57,
-                    "wpfCaptures":  54,
-                    "avaloniaCaptures":  54,
+                    "wpfCaptures":  57,
+                    "avaloniaCaptures":  57,
                     "avaloniaHarnessRoutes":  57,
                     "sharedOrPresentationBacked":  57
                 },
@@ -887,35 +887,34 @@
                  {
                      "routeId":  "dialog.Options",
                      "displayName":  "Options",
-                     "wpfCaptureExists":  false,
-                     "avaloniaCaptureExists":  false,
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
-
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Options.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Options.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Services\\OptionsDialogPlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found.",
-                                   "No current checked-in WPF capture asset was found by this inventory slice."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.ConditionalFormatNewRule",
                      "displayName":  "New Conditional Formatting Rule",
-                     "wpfCaptureExists":  false,
-                     "avaloniaCaptureExists":  false,
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
-
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ConditionalFormatNewRule.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ConditionalFormatNewRule.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
@@ -940,8 +939,7 @@
                                                    "src\\FreeX.App.Presentation\\Dialogs\\ConditionalFormatRuleSchema.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found.",
-                                   "No current checked-in WPF capture asset was found by this inventory slice."
+
                                ]
                  },
                  {
@@ -1028,14 +1026,14 @@
                  {
                      "routeId":  "dialog.PrintPreview",
                      "displayName":  "Print Preview / Print",
-                     "wpfCaptureExists":  false,
-                     "avaloniaCaptureExists":  false,
+                     "wpfCaptureExists":  true,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
-
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PrintPreview.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PrintPreview.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
@@ -1050,8 +1048,7 @@
                                                    "src\\FreeX.App.Services\\WorkbookExportPrintPlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found.",
-                                   "No current checked-in WPF capture asset was found by this inventory slice."
+
                                ]
                  },
                  {
