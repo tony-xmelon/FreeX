@@ -1,12 +1,33 @@
 # Code Review Findings
 
-Last updated: 2026-06-21
+Last updated: 2026-07-01
 
 2026-06-21 documentation refresh note: review iteration reports remain historical durable records
 because this log links to each cycle. Current documentation cleanup keeps the full iteration history
 available rather than deleting earlier fixed-cycle reports.
 
 This file tracks concrete review findings after the function and command parity sweeps. Items marked fixed include the verification that covered them; open items are intentionally scoped for future slices.
+
+## 2026-07-01 Comprehensive Review Iteration 1
+
+Full report: [reviews/comprehensive-code-review-2026-07-01-iter1.md](comprehensive-code-review-2026-07-01-iter1.md).
+
+Subagent-assisted review on `codex/review-orchestration-20260701`, focused on spreadsheet core/model/IO/formula behavior, WPF host/ribbon/window workflows, FreeW/shared document workflows, and build/CI/preflight hygiene.
+
+Resolution update: findings are open and not yet fixed. The FreeW reviewer reran focused tests after clearing stale compiler state, and the build/CI reviewer passed repository preflight, workflow, solution, and project-reference checks. Product fixes were intentionally left for follow-up iterations.
+
+| Priority | Area | Finding |
+|---|---|---|
+| P2 | Core XLSX IO | Open: model-created named formulas and sheet-scoped defined names are loaded but not emitted by XLSX save. |
+| P2 | Core formulas | Open: `date1904` round-trips as metadata while formula date conversion still uses the 1900/OA system. |
+| P2 | Core ODS IO | Open: cross-sheet range conversion strips the right endpoint sheet. |
+| P2 | WPF workbook windows | Open: Switch Windows cycles through hidden windows and can re-show them outside Unhide. |
+| P2 | WPF workbook windows | Open: hiding a side-by-side partner leaves side-by-side and synchronous scrolling active. |
+| P2 | FreeW Save As | Open: duplicate-extension Save-As choices collapse to the first adapter. |
+| P2 | Repository preflight | Open: XML/JSON validators cover only a subset of tracked artifacts. |
+| P3 | Repository preflight | Open: nested PowerShell tools are skipped by tool-script validation. |
+| P3 | FreeW corpus | Open: tracked DOCX corpus fixtures bypass the manifest/provenance contract. |
+| P3 | Documentation | Open: docs still show `actions/upload-artifact@v4` even though workflow validation requires v7. |
 
 ## 2026-06-21 Comprehensive Review Iteration 8
 
