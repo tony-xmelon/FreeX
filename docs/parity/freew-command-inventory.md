@@ -8,7 +8,7 @@ Rows are created only from `FreeWRibbon.Build(FreeWRibbonCapabilities.Wpf)` and 
 
 | Total | Both profiles | WPF profile only | Avalonia profile only | Missing WPF profile | Missing Avalonia profile |
 |---:|---:|---:|---:|---:|---:|
-| 818 | 139 | 485 | 194 | 194 | 485 |
+| 815 | 143 | 481 | 191 | 191 | 481 |
 
 ## Matrix
 
@@ -149,8 +149,7 @@ Rows are created only from `FreeWRibbon.Build(FreeWRibbonCapabilities.Wpf)` and 
 | `freew.docprop-keywords` | Document Property: Keywords | Yes | No | Avalonia | wpf-profile-only | insert/text (RibbonMenuItem; Menu) | - | WPF definition source | Command is present only in the compiled WPF FreeW ribbon profile. |
 | `freew.docprop-subject` | Document Property: Subject | Yes | No | Avalonia | wpf-profile-only | insert/text (RibbonMenuItem; Menu) | - | WPF definition source | Command is present only in the compiled WPF FreeW ribbon profile. |
 | `freew.docprop-title` | Document Property: Title | Yes | No | Avalonia | wpf-profile-only | insert/text (RibbonMenuItem; Menu) | - | WPF definition source | Command is present only in the compiled WPF FreeW ribbon profile. |
-| `freew.draft-view` | Draft | Yes | No | Avalonia | wpf-profile-only | view/views (RibbonToggleButton; Medium) | - | WPF definition source<br>WPF registry source | Command is present only in the compiled WPF FreeW ribbon profile. |
-| `freew.draftview` | Draft | No | Yes | WPF | avalonia-profile-only | - | view/views (RibbonButton; Medium) | Avalonia definition source<br>Avalonia registry source | Command is present only in the compiled Avalonia FreeW ribbon profile. |
+| `freew.draft-view` | Draft | Yes | Yes | none | shared-profile | view/views (RibbonToggleButton; Medium) | view/views (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.draw-table` | Draw Table | Yes | No | Avalonia | wpf-profile-only | table-design/draw-borders (RibbonButton; Medium) | - | WPF definition source<br>WPF registry source | Command is present only in the compiled WPF FreeW ribbon profile. |
 | `freew.drop-cap` | Drop Cap | Yes | Yes | none | shared-profile | insert/text (RibbonDropdown; Small) | insert/text (RibbonDropdown; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.drop-cap-dropped` | Dropped | Yes | No | Avalonia | wpf-profile-only | insert/text (RibbonMenuItem; Menu) | - | WPF definition source<br>WPF registry source | Command is present only in the compiled WPF FreeW ribbon profile. |
@@ -490,9 +489,8 @@ Rows are created only from `FreeWRibbon.Build(FreeWRibbonCapabilities.Wpf)` and 
 | `freew.previous-comment` | Previous | Yes | No | Avalonia | wpf-profile-only | review/comments (RibbonButton; Medium) | - | WPF definition source<br>WPF registry source | Command is present only in the compiled WPF FreeW ribbon profile. |
 | `freew.previous-endnote` | Previous Endnote | Yes | No | Avalonia | wpf-profile-only | references/footnotes (RibbonMenuItem; Menu) | - | WPF definition source<br>WPF registry source | Command is present only in the compiled WPF FreeW ribbon profile. |
 | `freew.previous-footnote` | Previous Footnote | Yes | No | Avalonia | wpf-profile-only | references/footnotes (RibbonMenuItem; Menu) | - | WPF definition source<br>WPF registry source | Command is present only in the compiled WPF FreeW ribbon profile. |
-| `freew.print-layout` | Print Layout | Yes | No | Avalonia | wpf-profile-only | view/views (RibbonToggleButton; Medium) | - | WPF definition source<br>WPF registry source | Command is present only in the compiled WPF FreeW ribbon profile. |
-| `freew.print-preview` | Print Preview | Yes | No | Avalonia | wpf-profile-only | layout/preview (RibbonButton; Large) | - | WPF definition source<br>WPF registry source | Command is present only in the compiled WPF FreeW ribbon profile. |
-| `freew.printlayout` | Print Layout | No | Yes | WPF | avalonia-profile-only | - | view/views (RibbonButton; Medium) | Avalonia definition source<br>Avalonia registry source | Command is present only in the compiled Avalonia FreeW ribbon profile. |
+| `freew.print-layout` | Print Layout | Yes | Yes | none | shared-profile | view/views (RibbonToggleButton; Medium) | view/views (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
+| `freew.print-preview` | Print Preview | Yes | Yes | none | shared-profile | layout/preview (RibbonButton; Large) | layout/preview (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.quick-parts` | Quick Parts | No | Yes | WPF | avalonia-profile-only | - | insert/text (RibbonDropdown; Medium) | Avalonia definition source<br>Avalonia registry source | Command is present only in the compiled Avalonia FreeW ribbon profile. |
 | `freew.quick-parts.author` | Document Property — Author | No | Yes | WPF | avalonia-profile-only | - | insert/text (RibbonMenuItem; Menu) | Avalonia definition source<br>Avalonia registry source | Command is present only in the compiled Avalonia FreeW ribbon profile. |
 | `freew.quick-parts.date` | Field — Date | No | Yes | WPF | avalonia-profile-only | - | insert/text (RibbonMenuItem; Menu) | Avalonia definition source<br>Avalonia registry source | Command is present only in the compiled Avalonia FreeW ribbon profile. |
@@ -789,8 +787,7 @@ Rows are created only from `FreeWRibbon.Build(FreeWRibbonCapabilities.Wpf)` and 
 | `freew.watermark.draft` | DRAFT | No | Yes | WPF | avalonia-profile-only | - | design/page-background (RibbonMenuItem; Menu) | Avalonia definition source<br>Avalonia registry source | Command is present only in the compiled Avalonia FreeW ribbon profile. |
 | `freew.watermark.none` | Remove Watermark | No | Yes | WPF | avalonia-profile-only | - | design/page-background (RibbonMenuItem; Menu) | Avalonia definition source<br>Avalonia registry source | Command is present only in the compiled Avalonia FreeW ribbon profile. |
 | `freew.watermark.urgent` | URGENT | No | Yes | WPF | avalonia-profile-only | - | design/page-background (RibbonMenuItem; Menu) | Avalonia definition source<br>Avalonia registry source | Command is present only in the compiled Avalonia FreeW ribbon profile. |
-| `freew.web-layout` | Web Layout | Yes | No | Avalonia | wpf-profile-only | view/views (RibbonToggleButton; Medium) | - | WPF definition source<br>WPF registry source | Command is present only in the compiled WPF FreeW ribbon profile. |
-| `freew.weblayout` | Web Layout | No | Yes | WPF | avalonia-profile-only | - | view/views (RibbonButton; Medium) | Avalonia definition source<br>Avalonia registry source | Command is present only in the compiled Avalonia FreeW ribbon profile. |
+| `freew.web-layout` | Web Layout | Yes | Yes | none | shared-profile | view/views (RibbonToggleButton; Medium) | view/views (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.widow-control` | Widow/Orphan Control | Yes | No | Avalonia | wpf-profile-only | home/paragraph (RibbonButton; Small) | - | WPF definition source<br>WPF registry source | Command is present only in the compiled WPF FreeW ribbon profile. |
 | `freew.wordart` | WordArt | Yes | No | Avalonia | wpf-profile-only | insert/text (RibbonButton; Small) | - | WPF definition source<br>WPF registry source | Command is present only in the compiled WPF FreeW ribbon profile. |
 | `freew.wordart-style` | WordArt Style | Yes | No | Avalonia | wpf-profile-only | drawing-format/drawing-wordart (RibbonDropdown; Medium) | - | WPF definition source<br>WPF registry source | Command is present only in the compiled WPF FreeW ribbon profile. |

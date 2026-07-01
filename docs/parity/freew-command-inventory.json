@@ -27,12 +27,12 @@
     }
   ],
   "summary": {
-    "totalCommands": 818,
-    "both": 139,
-    "wpfOnly": 485,
-    "avaloniaOnly": 194,
-    "missingWpf": 194,
-    "missingAvalonia": 485
+    "totalCommands": 815,
+    "both": 143,
+    "wpfOnly": 481,
+    "avaloniaOnly": 191,
+    "missingWpf": 191,
+    "missingAvalonia": 481
   },
   "commands": [
     {
@@ -4445,11 +4445,11 @@
       "commandId": "freew.draft-view",
       "label": "Draft",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -4462,24 +4462,6 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.draftview",
-      "label": "Draft",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -4493,9 +4475,9 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       }
     },
@@ -15070,11 +15052,11 @@
       "commandId": "freew.print-layout",
       "label": "Print Layout",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -15087,53 +15069,6 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.print-preview",
-      "label": "Print Preview",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "layout",
-          "tab": "Layout",
-          "groupId": "preview",
-          "group": "Preview",
-          "label": "Print Preview",
-          "controlType": "RibbonButton",
-          "layout": "Large"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.printlayout",
-      "label": "Print Layout",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -15147,9 +15082,49 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.print-preview",
+      "label": "Print Preview",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "preview",
+          "group": "Preview",
+          "label": "Print Preview",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "preview",
+          "group": "Preview",
+          "label": "Print Preview",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       }
     },
@@ -24751,11 +24726,11 @@
       "commandId": "freew.web-layout",
       "label": "Web Layout",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -24768,24 +24743,6 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.weblayout",
-      "label": "Web Layout",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -24799,9 +24756,9 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       }
     },
