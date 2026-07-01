@@ -25,7 +25,7 @@ Snapshot used for this report:
 | Excel command surface | `173` Implemented, `26` Partial, `0` Not Implemented, `0` Deferred, `25` Excluded | The supported visible Excel command surface is fully covered at the command-scope level, but `Partial` rows remain the practical parity backlog. |
 | Menu/toolbar row surface | `174` Implemented, `26` Partial, `0` Not Implemented, `0` Deferred, `25` Excluded | Counts one Draw menu row separately; this is a counting-policy difference from `command-surface.md`, not evidence drift. |
 | Shortcuts and keytips | `93` Parity, `0` Partial | Visible shortcut/keytip inventory is green. Future keytip work should preserve Excel sequences, including multi-key Alt continuations such as `Alt,D,F,F`. |
-| WPF/Avalonia functional matrix | `531` commands, `468` parity, `2` Avalonia-missing, `48` WPF-missing, `13` both-missing | This is a command-binding matrix, not an Excel parity claim. The two Avalonia-missing rows are `B4 (JIS)` and `B5 (JIS)`. Many WPF-missing rows are non-Click control or gallery inventory issues. |
+| WPF/Avalonia functional matrix | `531` commands, `470` parity, `0` Avalonia-missing, `48` WPF-missing, `13` both-missing | This is a command-binding matrix, not an Excel parity claim. `AVALONIA-MISSING` and intentional Linux omissions are now zero. The generated classifier reduces the remaining WPF/BOTH noise to `3` real behavior gaps, `10` non-Click/control inventory rows, and `48` pseudo-command/gallery items. |
 | Dialog route inventory | `57` routes, `53` WPF captures, `0` Avalonia captures, `56` Avalonia harness routes, `55` shared/presentation-backed routes | Dialog route plumbing is mostly shared, but Avalonia has no committed dialog capture assets yet. |
 
 ## Shared-First Baseline
@@ -67,11 +67,12 @@ These are not all equal priority. The highest-value practical gaps are the ones 
 
 ### 2. WPF/Avalonia Command Binding and Classification
 
-The generated WPF/Avalonia functional matrix is close, but not clean enough to drive work without classification:
+The generated WPF/Avalonia functional matrix is close, and the command/keytip slice has cleared the previous Avalonia paper-size gaps:
 
-- Avalonia has two real allowlisted binding gaps: `B4 (JIS)` and `B5 (JIS)`.
-- Many WPF-missing rows are combo boxes, gallery pseudo-items, Help-tab buttons, or controls driven through non-Click paths. These should be classified before workers treat them as missing behavior.
-- Both-missing rows include command-like pseudo-items or low-priority actions such as some Home border/color rows, Help copy/legal actions, and Review convert-to-comments. Each needs either implementation, classification, or an explicit exclusion/deferral decision.
+- `AVALONIA-MISSING` is `0`.
+- Intentional Linux omissions are `0`.
+- Many WPF-missing rows are combo boxes, gallery pseudo-items, Help-tab buttons, or controls driven through non-Click paths. The generated classification dashboard should be the first stop before workers treat them as missing behavior.
+- The remaining prioritized real behavior gaps are Help `Copy Diagnostics`, Help `Legal Notices`, and Review `Convert to Comments`; the other WPF/BOTH rows are inventory or gallery classification noise.
 
 ### 3. Dialog and Native Surface Evidence
 
@@ -121,9 +122,9 @@ Primary owners: `src/FreeX.App.Presentation`, `src/FreeX.App.Services`, `shared/
 
 Goal: clear real command binding gaps and stop noisy false gaps.
 
-- Add shared page-size catalog support for `B4 (JIS)` and `B5 (JIS)` so Avalonia no longer needs an allowlist.
+- Keep page-size commands such as `B4 (JIS)` and `B5 (JIS)` covered in both hosts so Avalonia remains at zero missing rows.
 - Normalize WPF non-Click controls and gallery pseudo-items in the functional matrix instead of reporting them as missing handlers.
-- Decide and implement or classify Help copy diagnostics, Legal Notices, Review convert-to-comments, and Home border/color pseudo-items.
+- Implement or normalize Help copy diagnostics, Legal Notices, and Review convert-to-comments; keep Home border/color pseudo-items in the gallery evidence lane unless shared catalogs expose per-choice behavior.
 - Keep Excel keyboard adoption protected while doing this. The shortcut/keytip suite must continue to cover direct shortcuts, shifted/controlled variants, Alt keytips, and multi-key continuations such as Data > Filter.
 
 Primary owners: ribbon definitions, command registry/adapters, functional parity tests, shortcut/keytip tests.
@@ -205,7 +206,7 @@ Use separate worktrees and subagents for implementation. Suggested first lanes:
 | Lane | Ownership | First deliverable |
 | --- | --- | --- |
 | Dashboard/classifier | `docs/parity`, generated-doc tools, functional matrix tests | Matrix rows classified without changing product behavior. |
-| Command/keytip cleanup | ribbon definitions, shortcut/keytip services, WPF/Avalonia command adapters | `B4/B5 (JIS)` closed and Excel Alt continuations protected. |
+| Command/keytip cleanup | ribbon definitions, shortcut/keytip services, WPF/Avalonia command adapters | Keep `B4/B5 (JIS)` parity covered, protect Excel Alt continuations, and close the remaining real functional-binding rows. |
 | Avalonia dialog captures | Avalonia parity capture harness, dialog planners, generated dialog inventory | First committed Avalonia capture batch plus inventory update. |
 | AutoFilter/popup parity | filtering planners, popup/gallery renderers, foreground evidence | AutoFilter route/capture plus richer shared popup model. |
 | Pivot/chart/drawing scene plans | presentation planners, shared drawing, host renderers | One high-value shared scene plan proven in both hosts. |
