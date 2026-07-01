@@ -1,6 +1,6 @@
 # FreeX / Excel UX Parity Suite
 
-**Status:** active bootstrap  
+**Status:** active bootstrap plus paired foreground smoke  
 **Started:** 2026-07-01  
 **Scope:** local Windows desktop UX parity between Microsoft Excel and FreeX.
 
@@ -57,6 +57,43 @@ The corpus workbook currently seeds the paired walkthrough with:
 
 `Function Inventory` is generated from `docs/parity/functions.md` and records every in-scope implemented function as needing paired UX evidence. Executable formula edge cases remain covered by the existing formula parity corpus; this suite adds the user-facing editing, entry, display, calculation, and interaction layer.
 
+## Paired Scenario Batch
+
+Run paired foreground evidence after the bootstrap has built the Release host:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenarioBatch.ps1 -Suite smoke
+```
+
+The batch runner uses `tools/FreeX.ForegroundCapture` to run matching Excel and FreeX scenarios, stores per-subject manifests/screenshots under `tools/ux-parity-runs/<timestamp>/foreground-captures/`, and writes `ux-scenario-batch.json` with pair status and the next review action.
+
+Suites:
+
+- `smoke`: Format Cells dialog and sheet-tab context-menu pairs.
+- `dialogs`: Format Cells and native Open/Save dialog pairs.
+- `all`: all currently paired foreground scenarios.
+
+## Current Evidence
+
+Latest bootstrap run retained locally under ignored artifacts:
+
+| Run | Result |
+|---|---|
+| `tools/ux-parity-runs/20260701-195022/ux-parity-run.json` | `ready-for-walkthrough`; Excel 16.0 launched, FreeX launched, both opened the generated corpus workbook, and the workbook included all 488 in-scope implemented functions from `docs/parity/functions.md`. |
+
+Foreground paired batch status:
+
+| Run | Result |
+|---|---|
+| `tools/ux-parity-runs/20260701-214833/ux-scenario-batch.json` | First paired smoke batch captured Excel and FreeX Format Cells dialogs successfully, producing PNG evidence for both. Sheet-tab context-menu pair blocked on UIA lookup for `Sheet1` in both apps. |
+| `tools/ux-parity-runs/20260701-215137/ux-scenario-batch.json` | Retry-enabled smoke batch captured FreeX Format Cells, but Excel Format Cells hit repeated transient foreground-guard failures; sheet-tab context-menu remained blocked on `Sheet1` UIA lookup in both apps. |
+
+The current actionable harness gaps are:
+
+- Harden Excel foreground ownership reacquisition between repeated COM-driven scenarios.
+- Make sheet-tab scenarios discover sheet tabs by role/position/fallback names instead of requiring a visible `Sheet1` UIA element.
+- Add side-by-side/contact-sheet generation for paired PNGs so visual review can happen without manually opening individual captures.
+
 ## Evidence Contract
 
 Every UX parity scenario should append or link evidence in the run folder:
@@ -86,8 +123,9 @@ Every UX parity scenario should append or link evidence in the run folder:
 
 ## Next Work
 
-1. Add paired Excel/FreeX scenario execution on top of `tools/FreeX.ForegroundCapture` so one logical UX scenario can run both subjects and write one comparison record.
-2. Expand the corpus generator from seed sheets into per-feature sheets for every supported command family and every documented formula category.
-3. Add a disparity log schema and a reducer that summarizes open gaps by command family.
-4. Run the foreground walkthrough in batches, serializing Excel COM and clipboard-sensitive steps.
-5. Spawn implementation agents only after a disparity has a narrow non-overlapping owner area and evidence.
+1. Harden paired foreground batch reliability for Excel focus reacquisition and sheet-tab UIA discovery.
+2. Add side-by-side/contact-sheet generation for paired foreground screenshots.
+3. Expand the corpus generator from seed sheets into per-feature sheets for every supported command family and every documented formula category.
+4. Add a disparity log schema and a reducer that summarizes open gaps by command family.
+5. Run the foreground walkthrough in batches, serializing Excel COM and clipboard-sensitive steps.
+6. Spawn implementation agents only after a disparity has a narrow non-overlapping owner area and evidence.
