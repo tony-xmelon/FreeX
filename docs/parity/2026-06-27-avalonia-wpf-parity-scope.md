@@ -91,10 +91,11 @@ Dedup items that were blockers in the prior report are now landed or intentional
   - The 2 Avalonia-missing commands are allowlisted JIS commands.
 - Dialog route inventory is generated and current:
   - 57 total routes.
-  - 53 WPF captures.
-  - 0 committed Avalonia captures.
-  - 56 Avalonia harness routes.
-  - 55 shared-or-presentation-backed routes.
+  - 57 WPF captures.
+  - 57 committed Avalonia captures.
+  - 57 Avalonia harness routes.
+  - 57 shared-or-presentation-backed routes.
+  - `docs/parity/dialog-visual-evidence-summary.md` compares the committed WPF/Avalonia capture manifests: 15 WPF manifest surfaces all have Avalonia pairs, and Avalonia carries 78 additional captured variant surfaces.
 - Much of the spreadsheet behavior now flows through shared or presentation planners:
   - Workbook lifecycle/open target: `src/FreeX.App.Services/WorkbookFileLifecycleCoordinator.cs`, `WorkbookOpenTargetPlanner.cs`.
   - Viewport/scroll planning: `src/FreeX.App.Services/WorkbookViewportScrollPlanner.cs`.
@@ -105,23 +106,21 @@ Dedup items that were blockers in the prior report are now landed or intentional
 
 ### Main Gaps
 
-1. Dialog visual evidence is the largest proven gap. The Avalonia harness can route 56 dialogs, but there are still 0 committed Avalonia capture assets in the generated inventory.
-2. Two dialog routes still need shared-backing classification or implementation work: `dialog.ShapeEffects` and `dialog.ShapeGradient`.
-3. Shell, backstage, and print/export are partly deduped at the policy layer but still have host-local renderer edges:
+1. Dialog route evidence is no longer the leading inventory gap: the generated inventory is 57/57 for WPF captures, Avalonia captures, Avalonia harness routes, and shared/presentation-backed routes. Remaining work is qualitative visual review, foreground workflow proof, and pixel/interaction diffs rather than missing route assets.
+2. Shell, backstage, and print/export are partly deduped at the policy layer but still have host-local renderer edges:
    - WPF keeps `MainWindow.xaml`, `PrintRenderer*`, and native `PrintDialog` behavior.
    - Avalonia keeps substantial `MainWindow.cs`, custom print/preview, Skia/PDF, and capture glue.
-4. Keyboard routing remains split:
+3. Keyboard routing remains split:
    - WPF: `src/FreeX.App.Host/KeyboardShortcutMatcher*.cs`.
    - Avalonia: `NativeMenuCatalog` plus local key handling.
-5. Contextual chart/table/pivot/drawing commands have strong command binding coverage, but still need visual and workflow evidence across WPF and Avalonia.
+4. Contextual chart/table/pivot/drawing commands have strong command binding coverage, but still need workflow evidence across WPF and Avalonia.
 
 ### FreeX Next Slices
 
-1. Generate and commit Avalonia dialog captures for the highest-value dialog routes, starting with the already-harnessed dialogs and including visual comparison evidence.
-2. Classify or shared-back `dialog.ShapeEffects` and `dialog.ShapeGradient`.
-3. Consolidate keyboard shortcut matching into a portable service and gate both hosts from one matrix.
-4. Add print/export/render parity evidence around drawing/chart content and native print/export affordances.
-5. Continue renderer-edge shell/backstage polish only after capture evidence identifies concrete diffs.
+1. Review the paired WPF/Avalonia dialog assets for qualitative visual diffs and record any concrete follow-up bugs.
+2. Consolidate keyboard shortcut matching into a portable service and gate both hosts from one matrix.
+3. Add print/export/render parity evidence around drawing/chart content and native print/export affordances.
+4. Continue renderer-edge shell/backstage polish only after capture evidence identifies concrete diffs.
 
 ## FreeW Status
 
