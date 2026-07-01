@@ -87,8 +87,8 @@ Dedup items that were blockers in the prior report are now landed or intentional
 - Command-binding parity remains strong:
   - `docs/parity/functional-parity.json`
   - `docs/parity/functional-parity.md`
-  - Current snapshot: 531 commands, 468 parity, 2 Avalonia-missing, 48 WPF-missing, 13 both-missing.
-  - The 2 Avalonia-missing commands are allowlisted JIS commands.
+  - Current snapshot: 531 commands, 473 parity, 0 Avalonia-missing, 48 WPF-missing, 10 both-missing.
+  - Avalonia-missing commands and intentional Linux omissions are currently zero in the generated matrix.
 - Dialog route inventory is generated and current:
   - 57 total routes.
   - 57 WPF captures.
@@ -250,7 +250,7 @@ Use these as the current parity dashboard inputs:
    - Active deferred/platform-only allowlists.
    - Render/capture evidence availability.
 3. Use dashboard gaps to choose implementation slices. Prefer small branches with one owned surface at a time.
-4. For FreeX, start with Avalonia dialog captures and print/render evidence.
+4. For FreeX, start with qualitative dialog capture review and print/render evidence.
 5. For FreeW, start with command inventory plus reconciliation of the dirty Linux lane.
 6. For FreeP, start with command inventory and Avalonia ribbon/profile expansion.
 7. Keep merging verified slices quickly to `main`, then sync active branches from updated `main`.
@@ -265,6 +265,6 @@ The safest next implementation slice is not another dedup extraction. The obviou
 
 If the next slice must be app-specific, choose one of:
 
-- FreeX Avalonia dialog capture evidence.
+- FreeX qualitative dialog capture review.
 - FreeW command inventory and dirty-lane reconciliation.
 - FreeP command inventory plus Avalonia ribbon profile expansion.

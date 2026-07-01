@@ -14,8 +14,8 @@ The implementation rule for the next waves is:
 Snapshot used for this report:
 
 - Primary repo root: `C:\Users\anton\OneDrive\Documents\FreeX\FreeX`.
-- Base `main`: `0602c2fa0` (`docs: refresh avalonia wpf parity scope`).
-- Report branch: `codex/freex-excel-wpf-avalonia-parity-report-20260701`.
+- Refreshed from `origin/main`: `8c40670e6` (`test(freew): cover linux package metadata`).
+- Report branch: `codex/freex-parity-dashboard-refresh-20260701`.
 - Inputs: `docs/parity/command-surface.md`, `docs/parity/menu-toolbar.md`, `docs/parity/shortcuts.md`, `docs/parity/functional-parity.md`, `docs/parity/dialog-parity-inventory.md`, `docs/testing/ui-test-catalog.md`, and read-only WPF/Avalonia source audits.
 
 ## Current Dashboard
@@ -25,8 +25,8 @@ Snapshot used for this report:
 | Excel command surface | `173` Implemented, `26` Partial, `0` Not Implemented, `0` Deferred, `25` Excluded | The supported visible Excel command surface is fully covered at the command-scope level, but `Partial` rows remain the practical parity backlog. |
 | Menu/toolbar row surface | `174` Implemented, `26` Partial, `0` Not Implemented, `0` Deferred, `25` Excluded | Counts one Draw menu row separately; this is a counting-policy difference from `command-surface.md`, not evidence drift. |
 | Shortcuts and keytips | `93` Parity, `0` Partial | Visible shortcut/keytip inventory is green. Future keytip work should preserve Excel sequences, including multi-key Alt continuations such as `Alt,D,F,F`. |
-| WPF/Avalonia functional matrix | `531` commands, `470` parity, `0` Avalonia-missing, `48` WPF-missing, `13` both-missing | This is a command-binding matrix, not an Excel parity claim. `AVALONIA-MISSING` and intentional Linux omissions are now zero. The generated classifier reduces the remaining WPF/BOTH noise to `3` real behavior gaps, `10` non-Click/control inventory rows, and `48` pseudo-command/gallery items. |
-| Dialog route inventory | `57` routes, `53` WPF captures, `0` Avalonia captures, `56` Avalonia harness routes, `55` shared/presentation-backed routes | Dialog route plumbing is mostly shared, but Avalonia has no committed dialog capture assets yet. |
+| WPF/Avalonia functional matrix | `531` commands, `473` parity, `0` Avalonia-missing, `48` WPF-missing, `10` both-missing | This is a command-binding matrix, not an Excel parity claim. `AVALONIA-MISSING` and intentional Linux omissions are now zero. The generated classifier should be the first stop before workers treat WPF/BOTH rows as missing behavior. |
+| Dialog route inventory | `57` routes, `57` WPF captures, `57` Avalonia captures, `57` Avalonia harness routes, `57` shared/presentation-backed routes | Dialog route evidence is no longer the leading inventory gap; remaining work is qualitative visual review, foreground workflow proof, and pixel/interaction diffs. |
 
 ## Shared-First Baseline
 
@@ -76,12 +76,12 @@ The generated WPF/Avalonia functional matrix is close, and the command/keytip sl
 
 ### 3. Dialog and Native Surface Evidence
 
-Dialog route plumbing is mostly present, but evidence is not balanced:
+Dialog route plumbing and committed route evidence are now balanced:
 
-- WPF has `53` committed dialog captures.
-- Avalonia has `56` harness routes but `0` committed capture assets.
-- `dialog.AutoFilter` has shared backing evidence but no WPF capture, Avalonia capture, or Avalonia harness route in the generated inventory.
-- `dialog.ShapeEffects` and `dialog.ShapeGradient` are still classified as `wpf-only-or-not-inferred` even though the broader drawing stack has been deduped.
+- WPF has `57` committed dialog captures.
+- Avalonia has `57` committed dialog captures and `57` harness routes.
+- All `57` dialog routes are classified as shared/presentation-backed.
+- The committed manifest comparison has `15` paired WPF/Avalonia surface ids, `0` WPF manifest ids without an Avalonia pair, and `78` additional Avalonia captured surface ids across `54` route families.
 - Native file, Save As, export, and print surfaces still need foreground-sensitive evidence on both hosts.
 
 ### 4. Visual and Workflow Fidelity
@@ -131,12 +131,12 @@ Primary owners: ribbon definitions, command registry/adapters, functional parity
 
 ### Wave 3 - Dialog Capture Parity
 
-Goal: convert route availability into visual proof.
+Goal: convert route and capture availability into qualitative visual proof.
 
 - Create shared dialog capture descriptors so WPF and Avalonia use the same route ID, initial state, workbook fixture, and expected assertions.
-- Commit Avalonia captures for the highest-value already-harnessed dialogs first: Format Cells, Find/Go To, Sort, Data Validation, Page Setup, Pivot dialogs, chart dialogs, Options, Open/Save/Export, Print Preview, protection, accessibility, About, and Legal Notices.
-- Add or repair the Avalonia AutoFilter capture route.
-- Reclassify or shared-back `dialog.ShapeEffects` and `dialog.ShapeGradient`.
+- Review the paired WPF/Avalonia dialog captures for concrete layout, focus, keyboard, and interaction diffs.
+- Promote the `78` additional Avalonia captured surface ids into paired WPF evidence where those surfaces represent in-scope desktop parity claims.
+- Add foreground workflow proof for native file, Save As, export, and print surfaces that cannot be reduced to static route captures.
 
 Primary owners: dialog planners, Avalonia parity capture harness, WPF capture references, generated dialog inventory.
 
@@ -207,8 +207,8 @@ Use separate worktrees and subagents for implementation. Suggested first lanes:
 | --- | --- | --- |
 | Dashboard/classifier | `docs/parity`, generated-doc tools, functional matrix tests | Matrix rows classified without changing product behavior. |
 | Command/keytip cleanup | ribbon definitions, shortcut/keytip services, WPF/Avalonia command adapters | Keep `B4/B5 (JIS)` parity covered, protect Excel Alt continuations, and close the remaining real functional-binding rows. |
-| Avalonia dialog captures | Avalonia parity capture harness, dialog planners, generated dialog inventory | First committed Avalonia capture batch plus inventory update. |
-| AutoFilter/popup parity | filtering planners, popup/gallery renderers, foreground evidence | AutoFilter route/capture plus richer shared popup model. |
+| Dialog visual review | WPF/Avalonia capture assets, dialog planners, generated dialog inventory | Qualitative diff notes for paired captures plus WPF pairs for high-value additional Avalonia surfaces. |
+| AutoFilter/popup parity | filtering planners, popup/gallery renderers, foreground evidence | Richer shared popup model plus keyboard/foreground evidence beyond the now-present route capture. |
 | Pivot/chart/drawing scene plans | presentation planners, shared drawing, host renderers | One high-value shared scene plan proven in both hosts. |
 | Print/export fidelity | print/export planners, PDF/XPS exporters, native dialog services | Shared print/export evidence and PDF/XPS partials reduced. |
 
