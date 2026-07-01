@@ -10,13 +10,13 @@ Gap classifications are generated from explicit rule order: shared-profile, prof
 
 | Total | Both profiles | WPF profile only | Avalonia profile only | Missing WPF profile | Missing Avalonia profile | Actionable missing WPF | Actionable missing Avalonia |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 798 | 209 | 415 | 174 | 174 | 415 | 9 | 66 |
+| 798 | 213 | 411 | 174 | 174 | 411 | 9 | 62 |
 
 ## Classification Counts
 
 | Shared profile | Profile-shape only | Command-id aliases | Platform-only | Deferred | Actionable gaps |
 |---:|---:|---:|---:|---:|---:|
-| 209 | 443 | 15 | 13 | 43 | 75 |
+| 213 | 443 | 15 | 13 | 43 | 71 |
 
 ## Classification Rules
 
@@ -826,8 +826,8 @@ Gap classifications are generated from explicit rule order: shared-profile, prof
 | `freew.zoom-100` | 100% | Yes | Yes | none | shared-profile | shared-profile | shared-profile | view/zoom (RibbonButton; Medium) | view/zoom (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.zoom-dialog` | Zoom | Yes | Yes | none | shared-profile | shared-profile | shared-profile | view/zoom (RibbonButton; Large) | view/zoom (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.zoom-in` | Zoom In | No | Yes | WPF | avalonia-profile-only | actionable-gap | actionable-gap | - | view/zoom (RibbonButton; Medium) | Avalonia definition source<br>Avalonia registry source | Shared Word command is present in only one compiled profile and needs follow-up. |
-| `freew.zoom-multiple-pages` | Multiple Pages | Yes | No | Avalonia | wpf-profile-only | actionable-gap | actionable-gap | view/zoom (RibbonToggleButton; Medium) | - | WPF definition source<br>WPF registry source | Shared Word command is present in only one compiled profile and needs follow-up. |
-| `freew.zoom-one-page` | One Page | Yes | No | Avalonia | wpf-profile-only | actionable-gap | actionable-gap | view/zoom (RibbonButton; Medium) | - | WPF definition source<br>WPF registry source | Shared Word command is present in only one compiled profile and needs follow-up. |
+| `freew.zoom-multiple-pages` | Multiple Pages | Yes | Yes | none | shared-profile | shared-profile | shared-profile | view/zoom (RibbonToggleButton; Medium) | view/zoom (RibbonToggleButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
+| `freew.zoom-one-page` | One Page | Yes | Yes | none | shared-profile | shared-profile | shared-profile | view/zoom (RibbonButton; Medium) | view/zoom (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.zoom-out` | Zoom Out | No | Yes | WPF | avalonia-profile-only | actionable-gap | actionable-gap | - | view/zoom (RibbonButton; Medium) | Avalonia definition source<br>Avalonia registry source | Shared Word command is present in only one compiled profile and needs follow-up. |
-| `freew.zoom-page-width` | Page Width | Yes | No | Avalonia | wpf-profile-only | actionable-gap | actionable-gap | view/zoom (RibbonButton; Medium) | - | WPF definition source<br>WPF registry source | Shared Word command is present in only one compiled profile and needs follow-up. |
-| `freew.zoom-side-to-side` | Side to Side | Yes | No | Avalonia | wpf-profile-only | actionable-gap | actionable-gap | view/zoom (RibbonToggleButton; Medium) | - | WPF definition source<br>WPF registry source | Shared Word command is present in only one compiled profile and needs follow-up. |
+| `freew.zoom-page-width` | Page Width | Yes | Yes | none | shared-profile | shared-profile | shared-profile | view/zoom (RibbonButton; Medium) | view/zoom (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
+| `freew.zoom-side-to-side` | Side to Side | Yes | Yes | none | shared-profile | shared-profile | shared-profile | view/zoom (RibbonToggleButton; Medium) | view/zoom (RibbonToggleButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
