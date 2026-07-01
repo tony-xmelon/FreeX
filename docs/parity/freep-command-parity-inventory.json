@@ -4,13 +4,13 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "summary": {
     "totalCommands": 94,
-    "both": 16,
-    "wpfOnly": 71,
+    "both": 30,
+    "wpfOnly": 57,
     "avaloniaOnly": 7,
     "missingWpf": 7,
-    "missingAvalonia": 71,
-    "shared": 16,
-    "avaloniaGaps": 27,
+    "missingAvalonia": 57,
+    "shared": 30,
+    "avaloniaGaps": 13,
     "knownDeferred": 43,
     "platformOnly": 6,
     "commandIdAliases": 2
@@ -457,11 +457,11 @@
       "commandId": "freep.arrange.align-bottom",
       "label": "Align Bottom",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -474,17 +474,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Align Bottom",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.arrange.align-center-h",
       "label": "Center Horiz.",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -497,17 +508,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Center Horiz.",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.arrange.align-left",
       "label": "Align Left",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -520,17 +542,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Align Left",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.arrange.align-middle",
       "label": "Center Vert.",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -543,17 +576,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Center Vert.",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.arrange.align-right",
       "label": "Align Right",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -566,17 +610,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Align Right",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.arrange.align-top",
       "label": "Align Top",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -589,17 +644,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Align Top",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.arrange.bring-forward",
       "label": "Bring Forward",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -612,17 +678,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Bring Forward",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.arrange.bring-to-front",
       "label": "Bring to Front",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -635,17 +712,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Bring to Front",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.arrange.distribute-h",
       "label": "Distribute Horiz.",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -658,17 +746,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Distribute Horiz.",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.arrange.distribute-v",
       "label": "Distribute Vert.",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -681,17 +780,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Distribute Vert.",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.arrange.group",
       "label": "Group",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -704,17 +814,28 @@
           "layout": "Large"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Group",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
     },
     {
       "commandId": "freep.arrange.send-backward",
       "label": "Send Backward",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -727,17 +848,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Send Backward",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.arrange.send-to-back",
       "label": "Send to Back",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -750,17 +882,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Send to Back",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.arrange.ungroup",
       "label": "Ungroup",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "avalonia-gap",
-      "notes": "Shared WPF command is missing from the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -773,7 +916,18 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Ungroup",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.bold",
