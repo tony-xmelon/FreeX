@@ -39,6 +39,17 @@ Completion contract: run the target command in a foreground-capable Windows desk
 | wpf.conditional-formatting-gallery.opened | `.\tools\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe>` | Windows desktop session with built Release WPF host and foreground focus allowed. |
 | avalonia.conditional-formatting-gallery.opened | `.\tools\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe>` | Windows desktop session with built Release Avalonia app and foreground focus allowed. |
 
+## Operator Checklist
+
+| Phase | Command | Purpose |
+|---|---|---|
+| build | `dotnet build FreeX.slnx --configuration Release` | Produces the Release WPF and Avalonia executables referenced by the FreeX capture commands. |
+| preflight | `Test-Path .\src\FreeX.App.Host\bin\Release\net10.0-windows10.0.19041.0\FreeX.App.Host.exe; Test-Path .\src\FreeX.App.Avalonia\bin\Release\net10.0\FreeX.exe; $excel = New-Object -ComObject Excel.Application; $excel.Quit(); [Runtime.InteropServices.Marshal]::ReleaseComObject($excel) \| Out-Null` | Confirms the two FreeX executables resolve and Microsoft Excel COM can start and quit before foreground input. |
+| capture:excel | `.\tools\Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery` | Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG. |
+| capture:wpf | `.\tools\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe>` | Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG. |
+| capture:avalonia | `.\tools\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe>` | Run from an unlocked foreground desktop; keep blocked manifests if the environment cannot produce a real opened-state PNG. |
+| refresh | `.\tools\Generate-ConditionalFormatOpenedStateEvidence.ps1; .\tools\Generate-ConditionalFormatOpenedStateEvidence.ps1 -Check` | Refreshes and verifies this report after the real manifests and PNGs are committed under tools/foreground-captures/<scenario>/. |
+
 ## Classifier Rows
 
 All rows below remain runtime-catalog backed and await the paired Excel/WPF/Avalonia opened-state capture set before the lane can claim opened-state evidence.

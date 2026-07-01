@@ -10,13 +10,13 @@ Gap classifications are generated from explicit rule order: shared-profile, prof
 
 | Total | Both profiles | WPF profile only | Avalonia profile only | Missing WPF profile | Missing Avalonia profile | Actionable missing WPF | Actionable missing Avalonia |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 797 | 279 | 350 | 168 | 168 | 350 | 0 | 2 |
+| 797 | 281 | 348 | 168 | 168 | 348 | 0 | 0 |
 
 ## Classification Counts
 
 | Shared profile | Profile-shape only | Command-id aliases | Platform-only | Deferred | Actionable gaps |
 |---:|---:|---:|---:|---:|---:|
-| 279 | 442 | 19 | 12 | 43 | 2 |
+| 281 | 442 | 19 | 12 | 43 | 0 |
 
 ## Classification Rules
 
@@ -395,7 +395,7 @@ Gap classifications are generated from explicit rule order: shared-profile, prof
 | `freew.line-spacing` | Line and Paragraph Spacing | Yes | Yes | none | shared-profile | shared-profile | shared-profile | home/paragraph (RibbonComboBox; Medium)<br>layout/paragraph (RibbonComboBox; Medium) | home/paragraph (RibbonComboBox; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.link-bookmark` | Link to Bookmark | Yes | Yes | none | shared-profile | shared-profile | shared-profile | insert/links (RibbonButton; Small) | insert/links (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.manage-sources` | Manage Sources | Yes | Yes | none | shared-profile | shared-profile | shared-profile | references/citations (RibbonButton; Medium) | references/citations (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
-| `freew.manage-styles` | Manage Styles | Yes | No | Avalonia | wpf-profile-only | actionable-gap | actionable-gap | home/styles (RibbonButton; Medium) | - | WPF definition source<br>WPF registry source | Shared Word command is present in only one compiled profile and needs follow-up. |
+| `freew.manage-styles` | Manage Styles | Yes | Yes | none | shared-profile | shared-profile | shared-profile | home/styles (RibbonButton; Medium) | home/styles (RibbonButton; Small) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.margins` | Margins | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/page-setup (RibbonDropdown; Large)<br>layout/page-setup (RibbonMenuItem; Menu) | layout/page-setup (RibbonDropdown; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.mark-as-final` | Mark as Final | Yes | Yes | none | shared-profile | shared-profile | shared-profile | review/protect (RibbonToggleButton; Medium) | review/protect (RibbonToggleButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.mark-citation` | Mark Citation | Yes | Yes | none | shared-profile | shared-profile | shared-profile | references/authorities (RibbonButton; Medium) | references/authorities (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
@@ -437,7 +437,7 @@ Gap classifications are generated from explicit rule order: shared-profile, prof
 | `freew.nav-pane` | Navigation Pane | Yes | Yes | none | shared-profile | shared-profile | shared-profile | view/show (RibbonToggleButton; Medium) | view/show (RibbonToggleButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.new` | New | No | Yes | WPF | avalonia-profile-only | platform-only | platform-only | - | file/document (RibbonButton; Medium) | Avalonia definition source<br>Avalonia registry source | Host, shell, or desktop-only command; track separately from shared Word behavior gaps. |
 | `freew.new-comment` | New Comment | Yes | Yes | none | shared-profile | shared-profile | shared-profile | review/comments (RibbonButton; Medium) | review/comments (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
-| `freew.new-style` | New Style | Yes | No | Avalonia | wpf-profile-only | actionable-gap | actionable-gap | home/styles (RibbonButton; Medium) | - | WPF definition source<br>WPF registry source | Shared Word command is present in only one compiled profile and needs follow-up. |
+| `freew.new-style` | New Style | Yes | Yes | none | shared-profile | shared-profile | shared-profile | home/styles (RibbonButton; Medium) | home/styles (RibbonButton; Small) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.new-window` | New Window | Yes | Yes | none | shared-profile | shared-profile | shared-profile | view/window (RibbonButton; Medium) | view/window (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.next-change` | Next | Yes | Yes | none | shared-profile | shared-profile | shared-profile | review/changes (RibbonButton; Medium) | review/changes (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.next-comment` | Next | Yes | Yes | none | shared-profile | shared-profile | shared-profile | review/comments (RibbonButton; Medium) | review/comments (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
