@@ -24,6 +24,13 @@ FreeW fidelity uses the on-demand corpus in [../../freew-fidelity-corpus/README.
 
 The 2026-06-25/26 FreeW visual reports are the current WPF visual evidence baseline. They should be read as the remaining visual/fidelity evidence loop after WPF in-scope Word parity, not as blockers to the WPF parity verdict in [../planning/freew-ms-word-parity-session-2026-06-21.md](../planning/freew-ms-word-parity-session-2026-06-21.md). The June 26 verification pass specifically separates harness blind spots from genuine app gaps, so future work should extend the capture/composite evidence instead of reopening stale "missing" findings.
 
+For a no-Word repeatable smoke pass, run
+`pwsh freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus/runs/visual-evidence-smoke`.
+It generates F2 DOCX fixtures, WPF composite captures, Avalonia page-layout captures, and raw
+`freew_visual_evidence_manifest.json` files under ignored `freew-fidelity-corpus/runs/`, then retains
+small normalized JSON/Markdown summaries with relative paths, hashes, pixel stats, and trust status.
+Do not commit generated DOCX/PNG/PDF files or raw absolute-path manifests from those runs.
+
 Durable FreeW notes:
 
 - [2026-06-26-freew-visual-verification-summary.md](2026-06-26-freew-visual-verification-summary.md) - current visual verification summary separating confirmed renders, harness limitations, and genuine remaining fidelity gaps.
