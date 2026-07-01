@@ -46,7 +46,7 @@ full corpus, so confirmed bugs below are rooted to source rather than pixel-diff
 - **Reflection has no fade** — flipped copy uses flat opacity instead of a gradient OpacityMask.
 - **Shape pattern presets all render as diagCross**; picture top border edge clipped (minor).
 - **Drop cap not actually dropped** — large/bold letter renders inline, not sunk into the body text.
-- **Em-dash mojibake** — `—` renders as `â€"` (UTF-8 mis-decode) in the text render/writer path.
+- **Em-dash mojibake** - an em dash renders as garbled UTF-8 bytes in the text render/writer path.
 
 ### Possible interop gap (not just render)
 - **Built-in styles not seeded by the writer** — a `TextDocument` authored without an explicit style
