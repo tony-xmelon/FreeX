@@ -4,14 +4,14 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "summary": {
     "totalCommands": 94,
-    "both": 67,
-    "wpfOnly": 20,
+    "both": 86,
+    "wpfOnly": 1,
     "avaloniaOnly": 7,
     "missingWpf": 7,
-    "missingAvalonia": 20,
-    "shared": 67,
+    "missingAvalonia": 1,
+    "shared": 86,
     "avaloniaGaps": 0,
-    "knownDeferred": 19,
+    "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 2
   },
@@ -20,11 +20,11 @@
       "commandId": "freep.anim.delay",
       "label": "Delay",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Shared typed timing intent; applies when a selected value and selected-shape animation are available.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -37,17 +37,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-timing",
+          "group": "Timing",
+          "label": "Delay",
+          "controlType": "RibbonComboBox",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.duration",
       "label": "Duration",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Shared typed timing intent; applies when a selected value and selected-shape animation are available.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -60,17 +71,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-timing",
+          "group": "Timing",
+          "label": "Duration",
+          "controlType": "RibbonComboBox",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.emphasis.grow-shrink",
       "label": "Grow/Shrink",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -83,17 +105,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Grow/Shrink",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.emphasis.pulse",
       "label": "Pulse",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -106,17 +139,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Pulse",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.emphasis.spin",
       "label": "Spin",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -129,17 +173,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Spin",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.entrance.appear",
       "label": "Appear",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -152,17 +207,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Appear",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.entrance.fade",
       "label": "Fade In",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -175,17 +241,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Fade In",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.entrance.fly-in",
       "label": "Fly In",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -198,17 +275,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Fly In",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.entrance.split",
       "label": "Split",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -221,17 +309,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Split",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.entrance.wipe",
       "label": "Wipe",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -244,17 +343,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Wipe",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.entrance.zoom",
       "label": "Zoom In",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -267,17 +377,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Zoom In",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.exit.disappear",
       "label": "Disappear",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -290,17 +411,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Disappear",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.exit.fade-out",
       "label": "Fade Out",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -313,17 +445,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Fade Out",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.exit.fly-out",
       "label": "Fly Out",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -336,17 +479,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Fly Out",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.move-earlier",
       "label": "Move Earlier",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -359,17 +513,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-timing",
+          "group": "Timing",
+          "label": "Move Earlier",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.move-later",
       "label": "Move Later",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -382,17 +547,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-timing",
+          "group": "Timing",
+          "label": "Move Later",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.none",
       "label": "No Animation",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -405,17 +581,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "No Animation",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.pane",
       "label": "Animation Pane",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Shared callback intent; pane UI remains host-local.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -428,17 +615,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-pane",
+          "group": "Advanced Animation",
+          "label": "Animation Pane",
+          "controlType": "RibbonToggleButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.anim.trigger",
       "label": "Start",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Shared typed timing intent; applies when a selected value and selected-shape animation are available.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -451,7 +649,18 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-timing",
+          "group": "Timing",
+          "label": "Start",
+          "controlType": "RibbonComboBox",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.arrange.align-bottom",
