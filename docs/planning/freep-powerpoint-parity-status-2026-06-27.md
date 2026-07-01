@@ -2,19 +2,19 @@
 
 Status owner: FreeP parity orchestration. This report supersedes the 2026-06-27 pre-dedup FreeP snapshot. It is still a worker handoff and implementation plan, not a claim of full Microsoft PowerPoint parity.
 
-Branch/worktree context for this update: `codex/freep-parity-report-final-refresh-20260701` at `origin/main` commit `6463fa189d8e12339a0b1098579a232e9343aa3a`. The update is docs-only and is based on local inspection plus the 2026-07-01 FreeP parity implementation wave.
+Branch/worktree context for this update: `codex/freep-parity-report-export-transition-refresh-20260701` at `origin/main` commit `bdc091eaa`. The update is docs-only and is based on local inspection plus the 2026-07-01 FreeP parity implementation wave.
 
 ## Current Evidence
 
 - Primary repo root: `C:\Users\anton\OneDrive\Documents\FreeX\FreeX`.
-- `main` was clean and synced with `origin/main` at `6463fa189` before this report branch was created.
+- `main` was clean and synced with `origin/main` at `bdc091eaa` before this report branch was created.
 - `AGENTS.md` still requires isolated worktrees, no feature edits in `main`, frequent sync, subagents for independent work, and concrete validation before integration.
 - `PowerPoint.Application` COM is not registered on this machine, so PowerPoint-authoritative visual baselines cannot be generated locally.
 - The repo-wide parity scope at `docs/parity/2026-06-27-avalonia-wpf-parity-scope.md` has already been refreshed for the large dedup wave.
 
 ## 2026-07-01 Integration Checkpoint
 
-The first post-dedup FreeP parity implementation wave is integrated on `main` through `6463fa189`. It closed the initial evidence and shared-planning gates that were blocking reliable WPF/Avalonia parity work:
+The first post-dedup FreeP parity implementation wave is integrated on `main` through `bdc091eaa`. It closed the initial evidence and shared-planning gates that were blocking reliable WPF/Avalonia parity work:
 
 - Added a generated FreeP WPF/Avalonia command inventory at `docs/parity/freep-command-parity-inventory.md` and `.json`.
 - Added 20-deck PPTX corpus retention contract tests for package-preservation evidence.
@@ -22,6 +22,8 @@ The first post-dedup FreeP parity implementation wave is integrated on `main` th
 - Moved chart legend planning, text render route planning, and canvas drag reduction into shared FreeP presentation-layer planners consumed by WPF and Avalonia.
 - Expanded the Avalonia ribbon profile from the initial small surface to 43 shared command ids. The generated command inventory currently reports 94 total commands, 43 shared, 0 explicit Avalonia gaps, 43 known deferred commands, 6 platform-only commands, and 2 command-id aliases.
 - Added shared presenter/slideshow state for current slide, next slide, notes text, start time, elapsed time, fullscreen intent, and monitor intent, with thin WPF and Avalonia slideshow-window adapters.
+- Added a shared export planner for PDF/image/print descriptors, PDF dialog/picker plans, command IDs, and Backstage export plan; WPF and Avalonia now consume the same PDF export route with thin native file-picker/write adapters.
+- Added a shared transition command planner that maps transition gallery, timing, advance, and apply-to-all command IDs to typed intents before future WPF/Avalonia command exposure work.
 
 PowerPoint baseline anchors used for current scope: Microsoft documents PowerPoint File > Export paths including PDF, video, and handouts, Presenter View with current/next slide and notes, recording narration/timings, print layouts for slides/handouts/notes, and modern comments. Those remain parity targets for FreeP:
 
@@ -47,7 +49,7 @@ FreeP is now a real shared-first implementation, not a stub shell. Several gaps 
 | Avalonia app | `freep/FreeP.App.Avalonia/**`, `freep/FreeP.App.Rendering.Avalonia/**`, `freep/FreeP.App.Avalonia.Tests/**`, `freep/FreeP.App.Rendering.Avalonia.Tests/**`. | Cross-platform shell and renderer exist. Avalonia consumes shared file workflow, ribbon definitions, slide pane planning, rendering planners, and shared presenter state. No explicit Avalonia command gaps remain in the generated inventory; larger Design/Transitions/Animations slices are intentionally classified as deferred. |
 | PPTX lifecycle | `freep/FreeP.App.Presentation/PresentationFilePersistenceWorkflow.cs`, `freep/FreeP.App.Host/FileCommands.cs`, `shared/Free.Shared.Shell.Avalonia/SisterAvaloniaFileCommandWorkflow.cs`. | `.pptx` is now the default lifecycle path; `.fxp` remains legacy-compatible. The old WPF `.pptx` lifecycle gap is no longer a foundational blocker. |
 | Package retention | `freep/FreeP.Core.Model/PptxPackageSnapshot.cs`, `PptxPackageReader.cs`, `PptxPackageWriter.cs`, `freep/FreeP.App.Host.Tests/PptxPackageRetentionTests.cs`. | Preservation machinery exists and the 20 tracked corpus decks now have a retention contract test. It still needs broader semantic proof after writer-owned edits. |
-| Render comparison | `tools/FreeP.RenderCompare/**`, `tools/FreeP.RenderCompare.Tests/**`, `tools/FreeP.RenderCompare/corpus/*.pptx`, `tools/FreeP.RenderCompare/PixelDiversity.cs`. | Harness supports WPF, Avalonia, PowerPoint, diff, pixel-diversity guards, explicit COM-unavailable reporting, and full-corpus summaries. Local PowerPoint COM is unavailable, so authoritative references for decks 06-20 still need another machine. |
+| Render comparison | `tools/FreeP.RenderCompare/**`, `tools/FreeP.RenderCompare.Tests/**`, `tools/FreeP.RenderCompare/corpus/*.pptx`, `tools/FreeP.RenderCompare/PixelDiversity.cs`. | Harness supports WPF, Avalonia, PowerPoint, diff, pixel-diversity guards, explicit COM-unavailable reporting, and full-corpus summaries. Local PowerPoint COM is unavailable; the current local corpus summary is 20 decks total, 5 reference-ready, and 15 missing references. |
 
 ## Shared-First Boundary
 
@@ -69,7 +71,7 @@ These are the current gaps after the large dedup effort. They are ordered by wha
 | Gap | Why it matters | Shared-first owner | Thin renderer/host owner | Evidence/gates |
 | --- | --- | --- | --- | --- |
 | FreeP WPF-vs-Avalonia command matrix | The generated matrix now exists and is the source of truth for command-surface work. Current state: 94 total, 43 shared, 0 explicit Avalonia gaps, 43 known deferred, 6 platform-only, 2 command-id aliases. | Keep `tools/Generate-FreePCommandParityInventory.ps1` and generated docs current as command slices land. | WPF/Avalonia only classify adapter-only or platform-only commands. | `tools/Test-GeneratedDocs.ps1`; `FreePRibbonDefinitionProfileTests.cs`. |
-| Ribbon depth and stubs | The explicit Avalonia command gaps are closed, but Design, Transitions, Animations, Review/View/Accessibility/Recording, layout controls, and timing controls remain incomplete or deferred. | Shared ribbon definitions, command planners, layout/timing/animation models in `FreeP.App.Presentation`. | Host adapters render galleries, combo boxes, and dialogs. | Command inventory deltas; `RibbonEditorCompleteness5BTests.cs`; `RibbonTransitionsAnimationsTests.cs`; new stub-failure tests. |
+| Ribbon depth and stubs | The explicit Avalonia command gaps are closed, and transition command IDs now have shared typed intents. Design, Animations, Review/View/Accessibility/Recording, layout controls, and full transition host exposure remain incomplete or deferred. | Shared ribbon definitions, command planners, layout/timing/animation models in `FreeP.App.Presentation`. | Host adapters render galleries, combo boxes, and dialogs. | Command inventory deltas; `RibbonEditorCompleteness5BTests.cs`; `RibbonTransitionsAnimationsTests.cs`; new stub-failure tests. |
 | Render harness references | Pixel-diversity guards and trust reporting are in place. Only decks 01-05 have tracked PowerPoint PNG refs; decks 06-20 lack refs because local PowerPoint COM is unavailable. | `tools/FreeP.RenderCompare` reference freshness checks, corpus manifest, full-corpus summary. | WPF/Avalonia renderers only provide images. | Run refs on a PowerPoint COM machine; compare all 20 decks. |
 | Package fidelity corpus contract | The 20 tracked decks now have a package-retention contract, but semantic edit coverage is still thin for charts, SmartArt, embedded workbooks, notes, comments, media, custom XML, and view/print settings. | `FreeP.Core.IO` package classification and writer merge rules; shared OPC helpers stay generic. | Hosts do not own package semantics. | Expand corpus open-save-reopen tests with targeted ZIP/OpenXML assertions after writer-owned edits. |
 | Renderer orchestration duplication | Chart legend planning, text route planning, and drag reduction are now shared. Deeper chart/text/effects sequencing, axis/label realization, placeholder inheritance, and edit-state planning still need shared-core work. | Continue moving chart scene plans, text route decisions, and gesture/edit reducers into `FreeP.App.Presentation`. | Renderers map plans to WPF/Avalonia primitives. | `RendererNeutralDedupPlannerTests.cs`; `ChartRenderPlannerTests.cs`; `TextLayoutPlannerTests.cs`; `CanvasGesturePlannerTests.cs`; render tests. |
@@ -77,7 +79,7 @@ These are the current gaps after the large dedup effort. They are ordered by wha
 | Charts fidelity | Chart read/write and primitive planning exist, but PowerPoint chart layout, axes, labels, series styles, embedded workbook/caches, and type-specific visuals remain high risk. | `ChartShape`, `PptxChartReader/Writer`, `ChartRenderPlanner`, package retention. | Draw primitives only. | `ChartDataCommandTests.cs`; `ChartRenderPlannerTests.cs`; `ChartTests.cs`; `ChartDataLabelsTests.cs`; corpus decks 06, 18, 19. |
 | SmartArt and modern object fidelity | SmartArt parsing/layout/fallback exists, but live SmartArt data/style/color parts and editing/rendering are not PowerPoint-complete. Modern/OLE/math objects still rely on fallback previews or placeholders. | Core model/IO package semantics, `SmartArtLayoutEngine`, modern object fallback policy. | Render previews/placeholders only. | `SmartArtTests.cs`; `SmartArtLayoutTests.cs`; `ModernObjectsRoundTripTests.cs`; `OleMathRoundTripTests.cs`; corpus deck 09/14. |
 | Effects, media, connectors, and pictures | Effects/3D/crop/motion-path support is modeled, but visual parity needs PowerPoint-backed evidence and more shared planning where renderers still diverge. Avalonia slideshow sound is deferred/no-op. | Shared effects/media/connector/picture planners and PresentationML IO. | Platform media playback, image decoding, and drawing. | `PictureCropEffectsTests.cs`; `MotionPathTriggerTests.cs`; `Bevel3dTests.cs`; render corpus decks 07, 08, 10, 11, 12, 15, 16. |
-| PDF/export/print/backstage | PowerPoint supports File > Export to PDF/video/handouts and print layouts for slides/handouts/notes. FreeP `PresentationPdfExporter` is explicitly text-only/limited today. Backstage is deduped but shallow. | Shared export/backstage/print planners; `PresentationPdfExporter` should consume compositor/draw ops over time. | Native print dialogs, owner windows, platform file pickers. | `PresentationPdfExporterTests.cs`; new export/print/backstage tests; PDF/render inspection. |
+| PDF/export/print/backstage | PowerPoint supports File > Export to PDF/video/handouts and print layouts for slides/handouts/notes. FreeP now has shared export descriptors, PDF dialog/picker plans, and Backstage export plan, plus WPF/Avalonia PDF export routes. PDF output includes basic slide background and shape rectangle draw ops, but full compositor/vector fidelity, image export, print layouts, video, and handouts remain open. | Shared export/backstage/print planners; `PresentationPdfExporter` should continue moving toward compositor/draw-op-backed slide export. | Native print dialogs, owner windows, platform file pickers. | `PresentationPdfExporterTests.cs`; new export/print/backstage tests; PDF/render inspection. |
 | Slide pane and editing parity | WPF has richer slide pane context menus/drag reorder and table-cell editor. Avalonia still has a simpler list surface and no table-cell editor equivalent. | `SlidePanePlanner`, editing/session/table-cell planners, gesture reducer. | WPF/Avalonia list/control realization and input wiring. | `SlidePanePolicySourceGuardTests.cs`; `SlidePaneTests.cs`; new Avalonia slide-pane/table-cell tests. |
 | Slideshow and presenter workflows | Shared presenter state now covers current slide, next slide, notes, elapsed time, fullscreen intent, and monitor intent, with thin WPF/Avalonia adapters. PowerPoint-grade Presenter View UI, rehearse/record timings, narration, laser/pen/highlighter, subtitles, and custom shows remain missing or shallow. | Shared slideshow/presenter/timing/recording/ink models and planners. | Fullscreen windows, monitor APIs, media element, cursor/input capture. | `SlideShowHostPlannerTests.cs`; `SlideShowPlaybackPlannerTests.cs`; `SlideShowTests.cs`; new presenter/recording tests. |
 | Comments, accessibility, proofing, and alt text | PowerPoint includes modern comments, accessibility/alt text workflows, proofing, and review surfaces. FreeP has comment model pieces but not full UI/workflow parity. | Comments/review/accessibility planners, model/IO for comments and alt text. | Pane/dialog realization and focus/UIA. | `SectionsCommentsTests.cs`; new modern comments/accessibility/alt-text matrix and UI tests. |
@@ -110,8 +112,8 @@ Goal: remove the remaining behavior duplication before adding large parity surfa
 Goal: close visible WPF/Avalonia command gaps while keeping semantics shared.
 
 1. Done: add the generated FreeP command matrix and classify gaps as shared, explicit Avalonia gaps, known deferred, platform-only, or command-id aliases.
-2. Done for explicit gaps: expand Avalonia ribbon profile so Home clipboard/font/arrange/editing/slides and Insert shapes/tables/charts/links are shared. Design, Transitions, and Animations remain known-deferred slices.
-3. Replace WPF stubs for layout and timing controls with shared planners before exposing the same commands in Avalonia.
+2. Done for explicit gaps: expand Avalonia ribbon profile so Home clipboard/font/arrange/editing/slides and Insert shapes/tables/charts/links are shared. Design and Animations remain known-deferred slices; Transitions now have shared command-intent planning but still need host exposure.
+3. Continue replacing WPF stubs for layout and timing controls with shared planners before exposing the same commands in Avalonia.
 4. Add shared backstage/export descriptors before adding platform panes.
 
 ### Phase 3 - Visual Fidelity Waves
@@ -128,7 +130,7 @@ Goal: reduce measured PowerPoint diff one deck family at a time.
 
 Goal: close PowerPoint workflows beyond static slide editing.
 
-1. Shared presenter model: current/next slide, notes, timer, monitor selection, custom shows.
+1. Done for first presenter state: current/next slide, notes, timer, fullscreen intent, and monitor intent are shared; custom shows remain open.
 2. Shared recording/timing/narration model and persistence.
 3. Shared comments/review/accessibility/alt-text workflow planning.
 4. Thin WPF/Avalonia panes/windows for presenter, comments, accessibility, and alt text.
@@ -137,8 +139,8 @@ Goal: close PowerPoint workflows beyond static slide editing.
 
 Goal: graduate from text-only export to PowerPoint-shaped output workflows.
 
-1. Promote `PresentationPdfExporter` toward compositor/draw-op-backed slide export.
-2. Add export descriptors for PDF, video placeholder/status, image export, and handouts where feasible.
+1. In progress: promote `PresentationPdfExporter` toward compositor/draw-op-backed slide export. Basic background and shape rectangle draw ops are now included.
+2. Done for descriptors: add export descriptors for PDF, image, and print. Video, handouts, and full implementations remain open.
 3. Add print layout planning for slides, notes pages, and handouts.
 4. Keep native print/file dialogs platform-specific.
 
@@ -147,13 +149,13 @@ Goal: graduate from text-only export to PowerPoint-shaped output workflows.
 | Priority | Worker lane | Owned write scope | First success criteria | Suggested gates |
 | --- | --- | --- | --- | --- |
 | 1 | PowerPoint reference generation | `tools/FreeP.RenderCompare/**`, checked-in refs or documented external artifact path | Deck refs 06-20 are generated on a PowerPoint COM machine and full-corpus compare can distinguish visual diff from missing baseline. | `tools/FreeP.RenderCompare --corpus-summary`; full render compare on COM-capable machine. |
-| 2 | Design/Transitions/Animations shared planners | `FreeP.App.Presentation`, `FreeP.Ribbon.Definitions`, WPF/Avalonia host adapters/tests | Deferred WPF-only Design/Transitions/Animations controls gain shared timing/theme/transition planners before Avalonia exposure. | `RibbonTransitionsAnimationsTests`; new planner tests; command inventory delta. |
+| 2 | Design/Animations shared planners and transition host exposure | `FreeP.App.Presentation`, `FreeP.Ribbon.Definitions`, WPF/Avalonia host adapters/tests | Deferred WPF-only Design/Animations controls gain shared planners; transition intents are routed through WPF/Avalonia thin adapters and then exposed where appropriate. | `RibbonTransitionsAnimationsTests`; new planner tests; command inventory delta. |
 | 3 | Package semantic edit corpus | `freep/FreeP.Core.IO/**`, `freep/FreeP.App.Host.Tests/**`, corpus assertions | Corpus decks preserve parts/rels/content types after writer-owned edits, not only no-op retention. | Focused `PptxPackageRetentionTests`, `PptxRoundTripTests`, ZIP/OpenXML assertions. |
 | 4 | Deep text and placeholder fidelity | `freep/FreeP.App.Presentation/**`, model/IO text defaults, WPF/Avalonia text render adapters/tests | Bullets, autofit, columns, vertical text, placeholders, tabs, effects, and default fonts route through shared plans. | `TextLayoutPlannerTests`; `BulletsAutofitTests`; `WordArtTests`; render-compare text decks. |
 | 5 | Deep chart scene fidelity | `freep/FreeP.App.Presentation/**`, `freep/FreeP.Core.IO/**`, WPF/Avalonia rendering adapters/tests | Axis, label, data table, series-style, embedded workbook/cache, and type-specific chart decisions are shared. | `ChartRenderPlannerTests`; `ChartDataCommandTests`; `ChartTests`; selected render-compare decks. |
 | 6 | Slide pane and table editing parity | `FreeP.App.Presentation`, `FreeP.App.Avalonia`, renderer adapters/tests | Avalonia gains WPF-equivalent slide pane interactions and table-cell editing through shared planners. | `SlidePane*` tests; new Avalonia table-cell tests. |
 | 7 | Presenter recording and ink tools | `FreeP.App.Presentation`, WPF/Avalonia slideshow windows/tests | Existing shared presenter state grows into rehearse/record timings, narration intent, laser/pen/highlighter state, subtitles, and custom shows. | `SlideShowHostPlannerTests`; `SlideShowPlaybackPlannerTests`; WPF/Avalonia slideshow tests. |
-| 8 | Export/print/backstage | `FreeP.App.Presentation`, `FreeP.Core.IO`, WPF/Avalonia host adapters/tests | PDF/export/print/backstage workflows become shared descriptors with thin host realization. | `PresentationPdfExporterTests`; new print/export/backstage tests; PDF/render inspection. |
+| 8 | Export/print/backstage depth | `FreeP.App.Presentation`, `FreeP.Core.IO`, WPF/Avalonia host adapters/tests | Existing shared export descriptors grow into full image export, print layouts, handouts, and stronger compositor-backed PDF fidelity. | `PresentationPdfExporterTests`; new print/export/backstage tests; PDF/render inspection. |
 
 ## Validation Strategy
 
@@ -166,4 +168,4 @@ Recommended gates by lane:
 - Host/render lane: focused WPF/Avalonia tests plus render harness smoke.
 - PowerPoint visual lane: run `tools/FreeP.RenderCompare` on a PowerPoint COM machine; do not claim authoritative parity from this machine.
 
-Current integration stance: FreeP has a substantial shared codebase, generated command inventory with zero explicit Avalonia command gaps, 20-deck package-retention contracts, trustworthy render-harness failure reporting, initial shared chart/text/gesture planners, and shared presenter/slideshow state consumed by WPF and Avalonia. It is not PowerPoint-parity complete. The next work should generate missing PowerPoint refs on a COM-capable machine, then continue deeper shared planner work for Design/Transitions/Animations, text, charts, export/print, presenter recording/ink tools, slide-pane/table editing, and review/accessibility surfaces.
+Current integration stance: FreeP has a substantial shared codebase, generated command inventory with zero explicit Avalonia command gaps, 20-deck package-retention contracts, trustworthy render-harness failure reporting, initial shared chart/text/gesture planners, shared presenter/slideshow state consumed by WPF and Avalonia, shared export/backstage planning with WPF/Avalonia PDF export routes, and shared transition command intents. It is not PowerPoint-parity complete. The next work should generate missing PowerPoint refs on a COM-capable machine, then continue deeper shared planner work for Design/Animations, transition host exposure, text, charts, export/print depth, presenter recording/ink tools, slide-pane/table editing, and review/accessibility surfaces.
