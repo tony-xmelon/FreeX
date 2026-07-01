@@ -64,9 +64,10 @@ Run paired foreground evidence after the bootstrap has built the Release host:
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenarioBatch.ps1 -Suite smoke
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenarioBatch.ps1 -Suite core -MinimizeForeignForeground
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenarioBatch.ps1 -Suite status -MinimizeForeignForeground
 ```
 
-The batch runner uses `tools/FreeX.ForegroundCapture` to run matching Excel and FreeX scenarios, stores per-subject manifests/screenshots under `tools/ux-parity-runs/<timestamp>/foreground-captures/`, writes `ux-scenario-batch.json` with pair status and the next review action, and generates `ux-scenario-report.html` for side-by-side visual review.
+The batch runner uses `tools/FreeX.ForegroundCapture` to run matching Excel and FreeX scenarios, stores per-subject manifests/screenshots under `tools/ux-parity-runs/<timestamp>/foreground-captures/`, writes `ux-scenario-batch.json` with pair status and the next review action, and generates `ux-scenario-report.html` plus `ux-scenario-contact-sheet.png` for side-by-side visual review.
 `-MinimizeForeignForeground` is intentionally narrow: it only minimizes the known Media Player foreground blocker seen on this machine during desktop automation.
 
 Suites:
@@ -74,6 +75,7 @@ Suites:
 - `smoke`: Format Cells dialog and sheet-tab context-menu pairs.
 - `core`: smoke coverage plus worksheet context-menu Format Cells and sheet-tab overflow Activate dialog pairs.
 - `dialogs`: Format Cells and native Open/Save dialog pairs.
+- `status`: Excel and FreeX status/footer reference with selected numeric cells and validated Average/Count/Sum readouts.
 - `all`: all currently paired foreground scenarios.
 
 ## Current Evidence
@@ -99,13 +101,15 @@ Foreground paired batch status:
 | `tools/ux-parity-runs/20260702-015812/ux-scenario-batch.json` | Strict `core` run completed 4/4 paired captures with zero partial/blocked records, but visual review found the Excel overflow Activate screenshot was the workbook/window Activate fallback listing `Book1`. This run is superseded for overflow Activate closeout. |
 | `tools/ux-parity-runs/manual-excel-overflow-activate-strict-sheet-list-v2/` | Targeted Excel rerun completed with the real sheet-list Activate dialog through Workbook Tabs > More Sheets; the screenshot lists `Sheet1` onward and passes OK/Cancel sheet-list validation. |
 | `tools/ux-parity-runs/20260702-021746/ux-scenario-batch.json` | Current strict `core` baseline completed 4/4 paired captures with zero partial/blocked records and wrote `ux-scenario-report.html`. The strict contact sheet is `tools/ux-parity-runs/20260702-021746/ux-core-contact-sheet-strict.png`. |
+| `tools/ux-parity-runs/20260702-status-footer-reference-v2/ux-scenario-batch.json` | Dedicated `status` suite completed 1/1 paired capture with zero partial/blocked records after the Excel scenario validated Average/Count/Sum through the native status-bar context menu. Review artifact: `ux-scenario-contact-sheet.png`. |
 
 The current actionable harness gaps are:
 
 - Keep `20260702-021746` as the strict `core` baseline; `20260702-012034` is superseded by the FreeX worksheet-menu false positive and `20260702-015812` is superseded by the Excel workbook/window Activate false positive.
 - Triage the strict contact-sheet findings before marking the covered cases as parity-equivalent: FreeX Format Cells is visually/layout-wise larger than Excel, exposes extra Number-tab controls while General is selected, orders Fill before Border, and uses a fixed numeric sample. The corrected Activate pair now compares real sheet-list dialogs; remaining differences are dialog dimensions/chrome and initial selection/list framing.
+- Triage the `status` contact-sheet findings before closing the status bar surface: both apps show Average 5, Count 4, and Sum 20 for the same numeric selection, while FreeX also exposes Numerical Count, Min, and Max in the footer and uses a much larger capture geometry than the Excel reference.
 - Continue hardening foreground ownership reacquisition while expanding beyond `core`; repeated desktop-driven scenarios can still produce transient foreground failures on this machine.
-- Promote the generated strict contact sheet into a first-class report artifact if this evidence format becomes the standard review path.
+- Continue using `ux-scenario-contact-sheet.png` as the first-pass visual review artifact for paired scenario batches.
 
 ## Evidence Contract
 
