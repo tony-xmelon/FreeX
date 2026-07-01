@@ -6,7 +6,7 @@
     "summary":  {
                     "totalRoutes":  57,
                     "wpfCaptures":  54,
-                    "avaloniaCaptures":  36,
+                    "avaloniaCaptures":  51,
                     "avaloniaHarnessRoutes":  57,
                     "sharedOrPresentationBacked":  57
                 },
@@ -662,13 +662,13 @@
                      "routeId":  "dialog.InsertSlicer",
                      "displayName":  "Insert Slicer",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\pivot-options-slicer-tour\\freex_pivot_insert_slicer_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.InsertSlicer.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
@@ -680,20 +680,20 @@
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.InsertTimeline",
                      "displayName":  "Insert Timeline",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\pivot-options-slicer-tour\\freex_pivot_insert_timeline_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.InsertTimeline.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
@@ -705,103 +705,103 @@
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.PivotTableOptions",
                      "displayName":  "PivotTable Options",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\pivot-options-slicer-tour\\freex_pivot_options_dialog_display_style_options.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\PivotUI\\PivotOptionsPlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.PivotFieldFilter",
                      "displayName":  "Pivot Field Filter",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\pivot-field-list-context-tour\\freex_pivot_field_filter_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\PivotUI\\PivotFieldFilterPlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.PivotValueFieldSettings",
                      "displayName":  "Value Field Settings",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\pivot-advanced-workflows-tour\\freex_pivot_advanced_value_field_settings_dialog.png",
                                          "screenshots\\pivot-field-list-context-tour\\freex_pivot_value_field_settings_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotValueFieldSettings.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\PivotUI\\PivotValueFieldPlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.ChangeChartType",
                      "displayName":  "Change Chart Type",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\chart-data-layout-tour\\freex_chart_data_layout_change_chart_type_dialog.png",
                                          "screenshots\\chart-object-selection-tour\\freex_chart_object_selection_change_chart_type_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ChangeChartType.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\Charts\\Editing\\ChartTypeChangePlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.SelectDataSource",
                      "displayName":  "Select Data Source",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\chart-data-layout-tour\\freex_chart_data_layout_select_data_dialog.png",
                                          "screenshots\\chart-object-selection-tour\\freex_chart_object_selection_select_data_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.SelectDataSource.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
@@ -821,67 +821,67 @@
                                                    "src\\FreeX.Core.Commands\\ChartCommands.Mutate.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.FormatChartArea",
                      "displayName":  "Format Chart Area",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\chart-data-layout-tour\\freex_chart_data_layout_format_chart_area_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatChartArea.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\Charts\\Editing\\ChartAreaFormatPlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.ShapeEffects",
                      "displayName":  "Shape Effects",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\draw-object-formatting-tour\\freex_draw_object_formatting_shape_effects_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ShapeEffects.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Services\\ShapeEffectsPlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.ShapeGradient",
                      "displayName":  "Shape Gradient",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\draw-object-formatting-tour\\freex_draw_object_formatting_shape_gradient_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ShapeGradient.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Services\\ShapeGradientPlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
@@ -948,13 +948,13 @@
                      "routeId":  "dialog.ConditionalFormatManage",
                      "displayName":  "Conditional Formatting Rules Manager",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\home-styles-cf-tour\\freex_home_styles_cf_manage_rules_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ConditionalFormatManage.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
@@ -979,7 +979,7 @@
                                                    "src\\FreeX.App.Presentation\\Dialogs\\ConditionalFormatRuleSchema.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
@@ -1127,13 +1127,13 @@
                      "routeId":  "dialog.AccessibilityChecker",
                      "displayName":  "Accessibility Checker",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\review-comments-protection-tour\\freex_review_accessibility_checker_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AccessibilityChecker.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
@@ -1145,40 +1145,40 @@
                                                    "src\\FreeX.Core.Commands\\AccessibilityCheckerService.Tables.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.AllowEditRanges",
                      "displayName":  "Allow Edit Ranges",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\review-comments-protection-tour\\freex_review_allow_edit_ranges_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AllowEditRanges.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\Protection\\AllowEditRangePlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.ProtectSheet",
                      "displayName":  "Protect Sheet",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\review-comments-protection-tour\\freex_review_protect_sheet_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ProtectSheet.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
@@ -1194,20 +1194,20 @@
                                                    "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOptions.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.ProtectWorkbook",
                      "displayName":  "Protect Workbook",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\review-comments-protection-tour\\freex_review_protect_workbook_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ProtectWorkbook.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
@@ -1223,7 +1223,7 @@
                                                    "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOptions.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {

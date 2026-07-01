@@ -337,6 +337,195 @@
                          "png":  "dialog.UnhideSheet.png",
                          "captured":  true,
                          "note":  ""
+                     },
+                     {
+                         "id":  "dialog.InsertSlicer",
+                         "kind":  "dialog",
+                         "png":  "dialog.InsertSlicer.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.InsertTimeline",
+                         "kind":  "dialog",
+                         "png":  "dialog.InsertTimeline.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.LayoutAndFormat",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.LayoutAndFormat.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.TotalsAndFilters",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.TotalsAndFilters.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.Display",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.Display.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.Printing",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.Printing.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.Data",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.Data.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.AltText",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.AltText.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotFieldFilter",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotFieldFilter.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotFieldFilter.SelectItems",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotFieldFilter.SelectItems.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotFieldFilter.LabelFilters",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotFieldFilter.LabelFilters.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotFieldFilter.ValueFilters",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotFieldFilter.ValueFilters.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotValueFieldSettings",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotValueFieldSettings.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotValueFieldSettings.SummarizeValuesBy",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotValueFieldSettings.SummarizeValuesBy.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotValueFieldSettings.ShowValuesAs",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotValueFieldSettings.ShowValuesAs.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotValueFieldSettings.NumberFormat",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotValueFieldSettings.NumberFormat.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ChangeChartType",
+                         "kind":  "dialog",
+                         "png":  "dialog.ChangeChartType.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.SelectDataSource",
+                         "kind":  "dialog",
+                         "png":  "dialog.SelectDataSource.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FormatChartArea",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatChartArea.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ShapeEffects",
+                         "kind":  "dialog",
+                         "png":  "dialog.ShapeEffects.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ShapeGradient",
+                         "kind":  "dialog",
+                         "png":  "dialog.ShapeGradient.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ConditionalFormatManage",
+                         "kind":  "dialog",
+                         "png":  "dialog.ConditionalFormatManage.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.AccessibilityChecker",
+                         "kind":  "dialog",
+                         "png":  "dialog.AccessibilityChecker.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.AllowEditRanges",
+                         "kind":  "dialog",
+                         "png":  "dialog.AllowEditRanges.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ProtectSheet",
+                         "kind":  "dialog",
+                         "png":  "dialog.ProtectSheet.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ProtectWorkbook",
+                         "kind":  "dialog",
+                         "png":  "dialog.ProtectWorkbook.png",
+                         "captured":  true,
+                         "note":  ""
                      }
                  ]
 }
