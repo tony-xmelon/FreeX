@@ -138,6 +138,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
   - `docs/parity/freew-command-inventory.json`
   - `docs/parity/freew-command-inventory.md`
   - Current snapshot: 814 total commands, 161 shared-profile rows, 463 WPF-profile-only rows, and 190 Avalonia-profile-only rows.
+- Avalonia Options now uses shared option section/choice planning and a WPF-like grouped dialog surface instead of the earlier compact placeholder shape.
 - Recent dedup work moved shared behavior into planners/services:
   - `DocumentViewLayoutPlanner`
   - `BackstagePaneSurfacePlanner`
