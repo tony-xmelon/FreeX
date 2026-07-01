@@ -41,12 +41,12 @@
                  {
                      "app":  "FreeW",
                      "commandInventory":  {
-                                              "totalCommands":  814,
-                                              "bothProfiles":  161,
-                                              "wpfProfileOnly":  463,
-                                              "avaloniaProfileOnly":  190,
-                                              "missingWpfProfile":  190,
-                                              "missingAvaloniaProfile":  463,
+                                              "totalCommands":  808,
+                                              "bothProfiles":  167,
+                                              "wpfProfileOnly":  457,
+                                              "avaloniaProfileOnly":  184,
+                                              "missingWpfProfile":  184,
+                                              "missingAvaloniaProfile":  457,
                                               "classifiedRows":  false
                                           },
                      "nextSlice":  "Avalonia Options parity improved; next classify one-sided command rows and deepen Backstage safety/print/export actions."

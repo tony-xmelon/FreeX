@@ -27,12 +27,12 @@
     }
   ],
   "summary": {
-    "totalCommands": 814,
-    "both": 161,
-    "wpfOnly": 463,
-    "avaloniaOnly": 190,
-    "missingWpf": 190,
-    "missingAvalonia": 463
+    "totalCommands": 808,
+    "both": 167,
+    "wpfOnly": 457,
+    "avaloniaOnly": 184,
+    "missingWpf": 184,
+    "missingAvalonia": 457
   },
   "commands": [
     {
@@ -778,11 +778,11 @@
       "commandId": "freew.caption",
       "label": "Insert Caption",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -795,12 +795,23 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "references",
+          "tab": "References",
+          "groupId": "captions",
+          "group": "Captions",
+          "label": "Insert Caption",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -3191,11 +3202,11 @@
       "commandId": "freew.citation",
       "label": "Insert Citation",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -3208,12 +3219,23 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "references",
+          "tab": "References",
+          "groupId": "citations",
+          "group": "Citations & Bibliography",
+          "label": "Insert Citation",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -4885,11 +4907,11 @@
       "commandId": "freew.endnote",
       "label": "Insert Endnote",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -4902,12 +4924,23 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "references",
+          "tab": "References",
+          "groupId": "footnotes",
+          "group": "Footnotes",
+          "label": "Insert Endnote",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -6190,11 +6223,11 @@
       "commandId": "freew.footnote",
       "label": "Insert Footnote",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -6207,12 +6240,23 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "references",
+          "tab": "References",
+          "groupId": "footnotes",
+          "group": "Footnotes",
+          "label": "Insert Footnote",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -11072,35 +11116,6 @@
       }
     },
     {
-      "commandId": "freew.insert-caption",
-      "label": "Insert Caption",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "references",
-          "tab": "References",
-          "groupId": "captions",
-          "group": "Captions",
-          "label": "Insert Caption",
-          "controlType": "RibbonDropdown",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
       "commandId": "freew.insert-caption.figure",
       "label": "Figure",
       "wpfPresent": false,
@@ -11159,64 +11174,6 @@
       }
     },
     {
-      "commandId": "freew.insert-citation",
-      "label": "Insert Citation",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "references",
-          "tab": "References",
-          "groupId": "citations",
-          "group": "Citations & Bibliography",
-          "label": "Insert Citation",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.insert-endnote",
-      "label": "Insert Endnote",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "references",
-          "tab": "References",
-          "groupId": "footnotes",
-          "group": "Footnotes",
-          "label": "Insert Endnote",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
       "commandId": "freew.insert-file",
       "label": "Text from File",
       "wpfPresent": true,
@@ -11243,35 +11200,6 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.insert-footnote",
-      "label": "Insert Footnote",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "references",
-          "tab": "References",
-          "groupId": "footnotes",
-          "group": "Footnotes",
-          "label": "Insert Footnote",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
       }
     },
     {
@@ -11379,35 +11307,6 @@
           "groupId": "tables",
           "group": "Tables",
           "label": "Table",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.insert-toc",
-      "label": "Table of Contents",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "references",
-          "tab": "References",
-          "groupId": "toc",
-          "group": "Table of Contents",
-          "label": "Table of Contents",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -24176,11 +24075,11 @@
       "commandId": "freew.toc",
       "label": "Table of Contents",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -24193,12 +24092,23 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "references",
+          "tab": "References",
+          "groupId": "toc",
+          "group": "Table of Contents",
+          "label": "Table of Contents",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -24350,11 +24260,11 @@
       "commandId": "freew.toc-refresh",
       "label": "Update Table",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "notes": "Command is present only in the compiled WPF FreeW ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -24367,12 +24277,23 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "references",
+          "tab": "References",
+          "groupId": "toc",
+          "group": "Table of Contents",
+          "label": "Update Table",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -24598,35 +24519,6 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.update-toc",
-      "label": "Update Table",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "references",
-          "tab": "References",
-          "groupId": "toc",
-          "group": "Table of Contents",
-          "label": "Update Table",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
       }
     },
     {
