@@ -4,14 +4,14 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "summary": {
     "totalCommands": 94,
-    "both": 59,
-    "wpfOnly": 28,
+    "both": 67,
+    "wpfOnly": 20,
     "avaloniaOnly": 7,
     "missingWpf": 7,
-    "missingAvalonia": 28,
-    "shared": 59,
+    "missingAvalonia": 20,
+    "shared": 67,
     "avaloniaGaps": 0,
-    "knownDeferred": 27,
+    "knownDeferred": 19,
     "platformOnly": 6,
     "commandIdAliases": 2
   },
@@ -1932,11 +1932,11 @@
       "commandId": "freep.slide-size-16x9",
       "label": "Widescreen (16:9)",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1949,17 +1949,28 @@
           "layout": "Large"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "customize",
+          "group": "Customize",
+          "label": "Widescreen (16:9)",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
     },
     {
       "commandId": "freep.slide-size-4x3",
       "label": "Standard (4:3)",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1972,17 +1983,28 @@
           "layout": "Large"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "customize",
+          "group": "Customize",
+          "label": "Standard (4:3)",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
     },
     {
       "commandId": "freep.slide-size-custom",
       "label": "Slide Size…",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1995,7 +2017,18 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "customize",
+          "group": "Customize",
+          "label": "Slide Size…",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.slideshow.from-beginning",
@@ -2115,11 +2148,11 @@
       "commandId": "freep.theme.berlin",
       "label": "Berlin",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -2132,17 +2165,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "themes",
+          "group": "Themes",
+          "label": "Berlin",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.theme.facet",
       "label": "Facet",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -2155,17 +2199,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "themes",
+          "group": "Themes",
+          "label": "Facet",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.theme.ion",
       "label": "Ion",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -2178,17 +2233,28 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "themes",
+          "group": "Themes",
+          "label": "Ion",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.theme.office",
       "label": "Office",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -2201,17 +2267,28 @@
           "layout": "Large"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "themes",
+          "group": "Themes",
+          "label": "Office",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ]
     },
     {
       "commandId": "freep.theme.slice",
       "label": "Slice",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "surface": "wpf-only",
-      "missingSide": "Avalonia",
-      "classification": "known-deferred",
-      "notes": "WPF-only profile slice not yet present in the generated Avalonia profile.",
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -2224,7 +2301,18 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": []
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "themes",
+          "group": "Themes",
+          "label": "Slice",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
     },
     {
       "commandId": "freep.transition.advance-after",
