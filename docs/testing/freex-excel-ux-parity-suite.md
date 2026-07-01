@@ -1,6 +1,6 @@
 # FreeX / Excel UX Parity Suite
 
-**Status:** active bootstrap plus paired foreground core  
+**Status:** active bootstrap plus strict paired foreground core hardening  
 **Started:** 2026-07-01  
 **Scope:** local Windows desktop UX parity between Microsoft Excel and FreeX.
 
@@ -93,13 +93,16 @@ Foreground paired batch status:
 | `tools/ux-parity-runs/20260701-215944/ux-scenario-batch.json` | Report-enabled smoke batch captured Excel and FreeX Format Cells dialogs successfully and wrote `ux-scenario-report.html` with side-by-side images. Sheet-tab context-menu remained blocked on `Sheet1` UIA lookup in both apps. |
 | `tools/ux-parity-runs/20260701-220538/ux-scenario-batch.json` | Sheet-tab fallback hardening run completed 2/2 paired smoke scenarios. `ux-scenario-report.html` includes side-by-side Excel/FreeX screenshots for Format Cells and sheet-tab context menus. |
 | `tools/ux-parity-runs/20260702-000404/ux-scenario-batch.json` | Expanded `core` run completed 3/4 paired scenarios with side-by-side evidence for Format Cells, worksheet context-menu Format Cells, and sheet-tab context menus. Sheet-tab overflow Activate dialog remains blocked on both sides and is the next harness target. |
-| `tools/ux-parity-runs/20260702-012034/ux-scenario-batch.json` | Expanded `core` run completed 4/4 paired scenarios and is `ready-for-visual-review`. Evidence now includes Format Cells by shortcut, worksheet context-menu Format Cells, sheet-tab context menus, and sheet-tab overflow Activate dialogs for both Excel and FreeX. |
+| `tools/ux-parity-runs/20260702-012034/ux-scenario-batch.json` | Expanded `core` run completed 4/4 paired scenarios, but visual review superseded this as a closeout artifact because the FreeX sheet-tab context-menu screenshot was actually the worksheet cell context menu. Keep the Format Cells and overflow Activate evidence; rerun sheet-tab context under the stricter validator. |
+| `tools/ux-parity-runs/manual-sheet-tab-context-check4/` and `tools/ux-parity-runs/manual-overflow-check4/` | Targeted strict FreeX reruns completed after hardening: sheet-tab context-menu validation now requires sheet-tab-specific menu items, and overflow Activate completes after stable window sizing. |
+| `tools/ux-parity-runs/20260702-014815/ux-scenario-batch.json` and `tools/ux-parity-runs/20260702-015039/ux-scenario-batch.json` | Strict `core` reruns still need attention. The harness no longer false-passes the wrong FreeX menu, but the desktop foreground slot later returned `No foreground window detected` for both Excel and FreeX, blocking official paired closeout. |
 
 The current actionable harness gaps are:
 
-- Review the 4/4 `core` side-by-side screenshots and log any visual or behavioral disparities before marking the covered cases as parity-equivalent.
-- Continue hardening Excel foreground ownership reacquisition while expanding beyond `core`; repeated COM-driven scenarios can still produce transient foreground failures on this machine.
-- Promote the HTML report into a richer image contact sheet now that the paired `core` capture set is stable.
+- Rerun the strict `core` batch once the desktop foreground slot is available again; do not count `20260702-012034` as a full closeout because visual review found a FreeX sheet-tab context-menu false positive.
+- Review the strict paired screenshots and log any visual or behavioral disparities before marking the covered cases as parity-equivalent.
+- Continue hardening foreground ownership reacquisition while expanding beyond `core`; repeated desktop-driven scenarios can still produce transient foreground failures on this machine.
+- Promote the HTML report into a richer image contact sheet after a strict paired `core` run is stable.
 
 ## Evidence Contract
 
