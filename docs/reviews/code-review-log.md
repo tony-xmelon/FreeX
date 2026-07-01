@@ -14,7 +14,7 @@ Full report: [reviews/comprehensive-code-review-2026-07-01-iter1.md](comprehensi
 
 Subagent-assisted review on `codex/review-orchestration-20260701`, focused on spreadsheet core/model/IO/formula behavior, WPF host/ribbon/window workflows, FreeW/shared document workflows, and build/CI/preflight hygiene.
 
-Resolution update: findings in this cycle are fixed in `codex/review-orchestration-20260701`. Scoped worker branches fixed the Core XLSX/ODS/date-system issues, WPF workbook-window visibility state, FreeW duplicate-extension Save As flow, FreeW corpus provenance guard, and repository preflight/doc hygiene. After syncing the latest `origin/main`, repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed on the no-build-server fallback with 22,355 passed, 132 skipped, and 0 failed across 19 TRX files.
+Resolution update: findings in this cycle are fixed in `codex/review-orchestration-20260701` and merged to `main`. Scoped worker branches fixed the Core XLSX/ODS/date-system issues, WPF workbook-window visibility state, FreeW duplicate-extension Save As flow, FreeW corpus provenance guard, and repository preflight/doc hygiene. After syncing the latest `origin/main` into `main`, repository preflight passed, the full Release build passed with 0 warnings/errors, and the default test lane passed on the no-build-server fallback with 22,360 passed, 132 skipped, and 0 failed across 19 TRX files.
 
 | Priority | Area | Finding |
 |---|---|---|
