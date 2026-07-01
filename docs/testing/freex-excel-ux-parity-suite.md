@@ -96,13 +96,14 @@ Foreground paired batch status:
 | `tools/ux-parity-runs/20260702-012034/ux-scenario-batch.json` | Expanded `core` run completed 4/4 paired scenarios, but visual review superseded this as a closeout artifact because the FreeX sheet-tab context-menu screenshot was actually the worksheet cell context menu. Keep the Format Cells and overflow Activate evidence; rerun sheet-tab context under the stricter validator. |
 | `tools/ux-parity-runs/manual-sheet-tab-context-check4/` and `tools/ux-parity-runs/manual-overflow-check4/` | Targeted strict FreeX reruns completed after hardening: sheet-tab context-menu validation now requires sheet-tab-specific menu items, and overflow Activate completes after stable window sizing. |
 | `tools/ux-parity-runs/20260702-014815/ux-scenario-batch.json` and `tools/ux-parity-runs/20260702-015039/ux-scenario-batch.json` | Strict `core` reruns still need attention. The harness no longer false-passes the wrong FreeX menu, but the desktop foreground slot later returned `No foreground window detected` for both Excel and FreeX, blocking official paired closeout. |
+| `tools/ux-parity-runs/20260702-015812/ux-scenario-batch.json` | Current strict `core` run completed 4/4 paired captures with zero partial/blocked records and wrote `ux-scenario-report.html`. The strict contact sheet is `tools/ux-parity-runs/20260702-015812/ux-core-contact-sheet-strict.png`. |
 
 The current actionable harness gaps are:
 
-- Rerun the strict `core` batch once the desktop foreground slot is available again; do not count `20260702-012034` as a full closeout because visual review found a FreeX sheet-tab context-menu false positive.
-- Review the strict paired screenshots and log any visual or behavioral disparities before marking the covered cases as parity-equivalent.
+- Keep `20260702-015812` as the strict `core` baseline, not `20260702-012034`; the latter is superseded by visual review.
+- Triage the strict contact-sheet findings before marking the covered cases as parity-equivalent: FreeX Format Cells is visually/layout-wise larger than Excel and exposes extra controls in the Number tab, and the Excel overflow Activate reference appears to be a workbook/window Activate fallback while FreeX lists sheets.
 - Continue hardening foreground ownership reacquisition while expanding beyond `core`; repeated desktop-driven scenarios can still produce transient foreground failures on this machine.
-- Promote the HTML report into a richer image contact sheet after a strict paired `core` run is stable.
+- Promote the generated strict contact sheet into a first-class report artifact if this evidence format becomes the standard review path.
 
 ## Evidence Contract
 
