@@ -6,7 +6,7 @@
     "summary":  {
                     "totalRoutes":  57,
                     "wpfCaptures":  54,
-                    "avaloniaCaptures":  51,
+                    "avaloniaCaptures":  54,
                     "avaloniaHarnessRoutes":  57,
                     "sharedOrPresentationBacked":  57
                 },
@@ -1058,14 +1058,14 @@
                      "routeId":  "dialog.OpenWorkbook",
                      "displayName":  "Open Workbook",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png",
                                          "tools\\foreground-captures\\freex-open-dialog\\freex-open-dialog_20260610_142532.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.OpenWorkbook.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
@@ -1074,21 +1074,21 @@
                                                    "src\\FreeX.App.Services\\WorkbookOpenIngressPlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.SaveAsWorkbook",
                      "displayName":  "Save As Workbook",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png",
                                          "tools\\foreground-captures\\freex-save-as-dialog\\freex-save-as-dialog_20260610_142550.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.SaveAsWorkbook.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
@@ -1097,21 +1097,21 @@
                                                    "src\\FreeX.App.Services\\WorkbookSaveService.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.ExportOptions",
                      "displayName":  "Export Options",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\file-io-import-smoke-tour\\freex_file_io_import_smoke_export_pdf_options.png",
                                          "screenshots\\file-io-import-smoke-tour\\freex_file_io_import_smoke_export_xps_options.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ExportOptions.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
@@ -1120,7 +1120,7 @@
                                                    "src\\FreeX.Core.Model\\ExportPathPlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {

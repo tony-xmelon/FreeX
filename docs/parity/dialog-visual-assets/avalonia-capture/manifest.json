@@ -297,6 +297,27 @@
                          "note":  ""
                      },
                      {
+                         "id":  "dialog.OpenWorkbook",
+                         "kind":  "dialog",
+                         "png":  "dialog.OpenWorkbook.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.SaveAsWorkbook",
+                         "kind":  "dialog",
+                         "png":  "dialog.SaveAsWorkbook.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.ExportOptions",
+                         "kind":  "dialog",
+                         "png":  "dialog.ExportOptions.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
                          "id":  "dialog.SelectionPane",
                          "kind":  "dialog",
                          "png":  "dialog.SelectionPane.png",
