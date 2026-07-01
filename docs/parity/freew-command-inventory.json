@@ -54,20 +54,20 @@
     }
   ],
   "summary": {
-    "totalCommands": 808,
-    "both": 167,
-    "wpfOnly": 457,
-    "avaloniaOnly": 184,
-    "missingWpf": 184,
-    "missingAvalonia": 457,
-    "actionableMissingWpf": 19,
-    "actionableMissingAvalonia": 105,
-    "sharedProfile": 167,
+    "totalCommands": 801,
+    "both": 174,
+    "wpfOnly": 450,
+    "avaloniaOnly": 177,
+    "missingWpf": 177,
+    "missingAvalonia": 450,
+    "actionableMissingWpf": 12,
+    "actionableMissingAvalonia": 98,
+    "sharedProfile": 174,
     "profileShapeOnly": 444,
     "commandIdAliases": 17,
     "platformOnly": 13,
     "deferred": 43,
-    "actionableGaps": 124
+    "actionableGaps": 110
   },
   "commands": [
     {
@@ -224,37 +224,6 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.address-block",
-      "label": "Address Block",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "mailings",
-          "tab": "Mailings",
-          "groupId": "write-insert",
-          "group": "Write & Insert Fields",
-          "label": "Address Block",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
       }
     },
     {
@@ -6049,37 +6018,6 @@
       }
     },
     {
-      "commandId": "freew.finish-merge",
-      "label": "Finish & Merge",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "mailings",
-          "tab": "Mailings",
-          "groupId": "finish",
-          "group": "Finish",
-          "label": "Finish & Merge",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
       "commandId": "freew.font-color",
       "label": "Font Colour",
       "wpfPresent": true,
@@ -6773,37 +6711,6 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.greeting-line",
-      "label": "Greeting Line",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "mailings",
-          "tab": "Mailings",
-          "groupId": "write-insert",
-          "group": "Write & Insert Fields",
-          "label": "Greeting Line",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
       }
     },
@@ -12663,13 +12570,13 @@
       "commandId": "freew.merge-address-block",
       "label": "Address Block",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12682,12 +12589,23 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "mailings",
+          "tab": "Mailings",
+          "groupId": "write-insert",
+          "group": "Write & Insert Fields",
+          "label": "Address Block",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -12725,13 +12643,13 @@
       "commandId": "freew.merge-data",
       "label": "Select Recipients",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12744,12 +12662,23 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "mailings",
+          "tab": "Mailings",
+          "groupId": "start-merge",
+          "group": "Start Mail Merge",
+          "label": "Select Recipients",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -12780,7 +12709,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -12891,13 +12820,13 @@
       "commandId": "freew.merge-finish",
       "label": "Finish & Merge",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12910,25 +12839,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "mailings",
+          "tab": "Mailings",
+          "groupId": "finish",
+          "group": "Finish",
+          "label": "Finish & Merge",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.merge-greeting-line",
       "label": "Greeting Line",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12941,12 +12881,23 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "mailings",
+          "tab": "Mailings",
+          "groupId": "write-insert",
+          "group": "Write & Insert Fields",
+          "label": "Greeting Line",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -13046,13 +12997,13 @@
       "commandId": "freew.merge-preview",
       "label": "Preview Results",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -13065,12 +13016,23 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "mailings",
+          "tab": "Mailings",
+          "groupId": "preview-results",
+          "group": "Preview Results",
+          "label": "Preview Results",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -13139,13 +13101,13 @@
       "commandId": "freew.merge-preview-next",
       "label": "Next Record",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -13158,25 +13120,36 @@
           "layout": "Small"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "mailings",
+          "tab": "Mailings",
+          "groupId": "preview-results",
+          "group": "Preview Results",
+          "label": "Next ▶",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.merge-preview-previous",
       "label": "Previous Record",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -13189,12 +13162,23 @@
           "layout": "Small"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "mailings",
+          "tab": "Mailings",
+          "groupId": "preview-results",
+          "group": "Preview Results",
+          "label": "◀ Previous",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -14139,37 +14123,6 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.next-record",
-      "label": "Next ▶",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "mailings",
-          "tab": "Mailings",
-          "groupId": "preview-results",
-          "group": "Preview Results",
-          "label": "Next ▶",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
       }
     },
     {
@@ -15859,68 +15812,6 @@
       }
     },
     {
-      "commandId": "freew.prev-record",
-      "label": "◀ Previous",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "mailings",
-          "tab": "Mailings",
-          "groupId": "preview-results",
-          "group": "Preview Results",
-          "label": "◀ Previous",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.preview-results",
-      "label": "Preview Results",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "mailings",
-          "tab": "Mailings",
-          "groupId": "preview-results",
-          "group": "Preview Results",
-          "label": "Preview Results",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
       "commandId": "freew.previous-change",
       "label": "Previous",
       "wpfPresent": true,
@@ -17361,37 +17252,6 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.select-recipients",
-      "label": "Select Recipients",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "mailings",
-          "tab": "Mailings",
-          "groupId": "start-merge",
-          "group": "Start Mail Merge",
-          "label": "Select Recipients",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
       }
     },
