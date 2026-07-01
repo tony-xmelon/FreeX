@@ -14,20 +14,20 @@ Full report: [reviews/comprehensive-code-review-2026-07-01-iter1.md](comprehensi
 
 Subagent-assisted review on `codex/review-orchestration-20260701`, focused on spreadsheet core/model/IO/formula behavior, WPF host/ribbon/window workflows, FreeW/shared document workflows, and build/CI/preflight hygiene.
 
-Resolution update: findings are open and not yet fixed. The FreeW reviewer reran focused tests after clearing stale compiler state, and the build/CI reviewer passed repository preflight, workflow, solution, and project-reference checks. Product fixes were intentionally left for follow-up iterations.
+Resolution update: findings in this cycle are fixed in `codex/review-orchestration-20260701`. Scoped worker branches fixed the Core XLSX/ODS/date-system issues, WPF workbook-window visibility state, FreeW duplicate-extension Save As flow, FreeW corpus provenance guard, and repository preflight/doc hygiene. Focused worker tests passed, and combined verification is tracked on the integration branch.
 
 | Priority | Area | Finding |
 |---|---|---|
-| P2 | Core XLSX IO | Open: model-created named formulas and sheet-scoped defined names are loaded but not emitted by XLSX save. |
-| P2 | Core formulas | Open: `date1904` round-trips as metadata while formula date conversion still uses the 1900/OA system. |
-| P2 | Core ODS IO | Open: cross-sheet range conversion strips the right endpoint sheet. |
-| P2 | WPF workbook windows | Open: Switch Windows cycles through hidden windows and can re-show them outside Unhide. |
-| P2 | WPF workbook windows | Open: hiding a side-by-side partner leaves side-by-side and synchronous scrolling active. |
-| P2 | FreeW Save As | Open: duplicate-extension Save-As choices collapse to the first adapter. |
-| P2 | Repository preflight | Open: XML/JSON validators cover only a subset of tracked artifacts. |
-| P3 | Repository preflight | Open: nested PowerShell tools are skipped by tool-script validation. |
-| P3 | FreeW corpus | Open: tracked DOCX corpus fixtures bypass the manifest/provenance contract. |
-| P3 | Documentation | Open: docs still show `actions/upload-artifact@v4` even though workflow validation requires v7. |
+| P2 | Core XLSX IO | Fixed: model-created named formulas and sheet-scoped defined names are emitted by XLSX save. |
+| P2 | Core formulas | Fixed: `date1904` workbook context is honored by formula date conversion. |
+| P2 | Core ODS IO | Fixed: cross-sheet range conversion preserves the right endpoint sheet. |
+| P2 | WPF workbook windows | Fixed: Switch Windows cycles visible windows only and does not re-show hidden windows. |
+| P2 | WPF workbook windows | Fixed: hiding a side-by-side partner clears side-by-side and synchronous scrolling state. |
+| P2 | FreeW Save As | Fixed: duplicate-extension Save-As choices carry selected format identity to adapter resolution. |
+| P2 | Repository preflight | Fixed: XML/JSON validators enumerate tracked repo files with build/worktree exclusions. |
+| P3 | Repository preflight | Fixed: nested PowerShell tools are covered by tool-script validation. |
+| P3 | FreeW corpus | Fixed: tracked DOCX corpus fixtures are represented in the manifest and guarded by tests. |
+| P3 | Documentation | Fixed: upload-artifact guidance now uses v7. |
 
 ## 2026-06-21 Comprehensive Review Iteration 8
 

@@ -8,18 +8,20 @@ Scope: comprehensive subagent-assisted review of spreadsheet core/model/IO/formu
 
 ## Findings
 
+Resolution update: all findings in this iteration are fixed in `codex/review-orchestration-20260701`. The fixes were implemented through scoped Core, WPF workbook-window, FreeW/shared document, and repository preflight worker branches, then merged back into the orchestration branch for combined verification.
+
 | Priority | Area | Finding |
 |---|---|---|
-| P2 | Core XLSX IO | Model-created named formulas and sheet-scoped defined names are loaded into the workbook model but are not emitted by XLSX save. |
-| P2 | Core formulas | The `date1904` workbook flag round-trips as metadata, but formula date conversion still uses the 1900/OA date system. |
-| P2 | Core ODS IO | ODS cross-sheet range conversion strips the right endpoint sheet and can point formulas at the wrong cells. |
-| P2 | WPF workbook windows | Switch Windows cycles through hidden windows and can re-show them outside the explicit Unhide workflow. |
-| P2 | WPF workbook windows | Hiding a side-by-side partner leaves side-by-side and synchronous scrolling state active against a hidden window. |
-| P2 | FreeW Save As | Save-As type selection collapses duplicate-extension formats, so selected formats can be saved through the wrong adapter. |
-| P2 | Repository preflight | XML/JSON preflight defaults parse only a subset of tracked artifacts, so malformed repo files can escape the default hygiene lane. |
-| P3 | Repository preflight | Nested PowerShell tools are skipped by the tool-script preflight. |
-| P3 | FreeW corpus | Tracked DOCX corpus files bypass the manifest/provenance contract while docs say those binaries are not committed. |
-| P3 | Documentation | FreeW/Linux live-test docs still recommend `actions/upload-artifact@v4` while workflow validation requires v7. |
+| P2 | Core XLSX IO | Fixed: model-created named formulas and sheet-scoped defined names are emitted during XLSX save. |
+| P2 | Core formulas | Fixed: formula date conversion now honors `Workbook.Uses1904DateSystem`. |
+| P2 | Core ODS IO | Fixed: ODS cross-sheet range conversion preserves the right endpoint sheet when endpoints differ. |
+| P2 | WPF workbook windows | Fixed: Switch Windows cycles only visible windows and cannot re-show hidden windows outside Unhide. |
+| P2 | WPF workbook windows | Fixed: hiding a side-by-side partner clears side-by-side and synchronous scrolling state. |
+| P2 | FreeW Save As | Fixed: Save-As format identity is carried through duplicate-extension choices to the selected adapter. |
+| P2 | Repository preflight | Fixed: XML/JSON preflight defaults enumerate tracked repo files with build/worktree exclusions. |
+| P3 | Repository preflight | Fixed: PowerShell tool-script preflight recurses into nested tools. |
+| P3 | FreeW corpus | Fixed: committed local DOCX corpus fixtures are manifest-covered with provenance guards. |
+| P3 | Documentation | Fixed: FreeW/Linux live-test upload-artifact guidance now uses v7. |
 
 ## Details
 
@@ -138,4 +140,4 @@ Suggested fix/test: update both docs/snippets to v7 and include the current arti
 
 ## Follow-Up
 
-The next review/fix iteration should address the P2 findings first, then rerun a targeted no-findings review over the touched areas before the full default verification lane.
+Run the full default verification lane on the integrated branch, then start a follow-up no-findings review over the touched Core, WPF window, FreeW Save As/corpus, and preflight surfaces.
