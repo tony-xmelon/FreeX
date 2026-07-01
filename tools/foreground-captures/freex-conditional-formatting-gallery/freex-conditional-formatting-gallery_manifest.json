@@ -1,0 +1,15 @@
+{
+  "Scenario": "freex-conditional-formatting-gallery",
+  "Subject": "freex",
+  "CaptureStatus": "blocked",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ForegroundGuard": {
+    "Success": false,
+    "ExpectedProcessId": 32308,
+    "ExpectedHandle": 10423346,
+    "Reason": "No foreground window detected."
+  },
+  "BlockReason": "foreground-guard-failed: Foreground guard failed during before-input.",
+  "CapturedAtUtc": "2026-07-01T21:49:14.4572608+00:00",
+  "ManifestPath": "C:\\Users\\anton\\OneDrive\\Documents\\FreeX\\FreeX\\.worktrees\\freex-cf-opened-capture-wave3-20260702\\tools\\foreground-captures\\freex-conditional-formatting-gallery\\freex-conditional-formatting-gallery_manifest.json"
+}

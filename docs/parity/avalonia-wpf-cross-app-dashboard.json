@@ -44,18 +44,18 @@
                      "app":  "FreeW",
                      "commandInventory":  {
                                               "totalCommands":  798,
-                                              "bothProfiles":  224,
-                                              "wpfProfileOnly":  400,
+                                              "bothProfiles":  235,
+                                              "wpfProfileOnly":  389,
                                               "avaloniaProfileOnly":  174,
                                               "missingWpfProfile":  174,
-                                              "missingAvaloniaProfile":  400,
+                                              "missingAvaloniaProfile":  389,
                                               "actionableMissingWpf":  9,
-                                              "actionableMissingAvalonia":  51,
+                                              "actionableMissingAvalonia":  40,
                                               "profileShapeOnly":  443,
                                               "commandIdAliases":  15,
                                               "platformOnly":  13,
                                               "deferred":  43,
-                                              "actionableGaps":  60,
+                                              "actionableGaps":  49,
                                               "classifiedRows":  true
                                           },
                      "nextSlice":  "Use actionable FreeW command rows for product slices; deepen Backstage safety/print/export evidence next."
