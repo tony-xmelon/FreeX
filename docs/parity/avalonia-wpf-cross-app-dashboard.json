@@ -36,24 +36,24 @@
                                           "avaloniaHarnessRoutes":  57,
                                           "sharedOrPresentationBacked":  57
                                       },
-                     "nextSlice":  "AutoFilter/popup parity: enrich the shared popup model and paired WPF/Avalonia evidence."
+                     "nextSlice":  "Font color/border swatch popup parity: expose shared swatch catalogs and paired WPF/Avalonia evidence."
                  },
                  {
                      "app":  "FreeW",
                      "commandInventory":  {
                                               "totalCommands":  798,
-                                              "bothProfiles":  183,
-                                              "wpfProfileOnly":  441,
+                                              "bothProfiles":  203,
+                                              "wpfProfileOnly":  421,
                                               "avaloniaProfileOnly":  174,
                                               "missingWpfProfile":  174,
-                                              "missingAvaloniaProfile":  441,
+                                              "missingAvaloniaProfile":  421,
                                               "actionableMissingWpf":  9,
-                                              "actionableMissingAvalonia":  89,
-                                              "profileShapeOnly":  444,
+                                              "actionableMissingAvalonia":  70,
+                                              "profileShapeOnly":  443,
                                               "commandIdAliases":  17,
                                               "platformOnly":  13,
                                               "deferred":  43,
-                                              "actionableGaps":  98,
+                                              "actionableGaps":  79,
                                               "classifiedRows":  true
                                           },
                      "nextSlice":  "Use actionable FreeW command rows for product slices; deepen Backstage safety/print/export evidence next."
