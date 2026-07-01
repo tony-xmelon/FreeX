@@ -47,9 +47,16 @@
                                               "avaloniaProfileOnly":  184,
                                               "missingWpfProfile":  184,
                                               "missingAvaloniaProfile":  457,
-                                              "classifiedRows":  false
+                                              "actionableMissingWpf":  19,
+                                              "actionableMissingAvalonia":  105,
+                                              "profileShapeOnly":  444,
+                                              "commandIdAliases":  17,
+                                              "platformOnly":  13,
+                                              "deferred":  43,
+                                              "actionableGaps":  124,
+                                              "classifiedRows":  true
                                           },
-                     "nextSlice":  "Avalonia Options parity improved; next classify one-sided command rows and deepen Backstage safety/print/export actions."
+                     "nextSlice":  "Use actionable FreeW command rows for product slices; deepen Backstage safety/print/export evidence next."
                  },
                  {
                      "app":  "FreeP",
