@@ -27,11 +27,11 @@
     }
   ],
   "summary": {
-    "totalCommands": 815,
+    "totalCommands": 816,
     "both": 143,
     "wpfOnly": 481,
-    "avaloniaOnly": 191,
-    "missingWpf": 191,
+    "avaloniaOnly": 192,
+    "missingWpf": 192,
     "missingAvalonia": 481
   },
   "commands": [
@@ -10667,6 +10667,35 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.import-pdf-text",
+      "label": "Import PDF (text only)",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "notes": "Command is present only in the compiled Avalonia FreeW ribbon profile.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "file",
+          "tab": "File",
+          "groupId": "document",
+          "group": "Document",
+          "label": "Import PDF (text only)",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
       }
     },
     {

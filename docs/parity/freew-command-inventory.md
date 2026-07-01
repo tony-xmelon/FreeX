@@ -8,7 +8,7 @@ Rows are created only from `FreeWRibbon.Build(FreeWRibbonCapabilities.Wpf)` and 
 
 | Total | Both profiles | WPF profile only | Avalonia profile only | Missing WPF profile | Missing Avalonia profile |
 |---:|---:|---:|---:|---:|---:|
-| 815 | 143 | 481 | 191 | 191 | 481 |
+| 816 | 143 | 481 | 192 | 192 | 481 |
 
 ## Matrix
 
@@ -350,6 +350,7 @@ Rows are created only from `FreeWRibbon.Build(FreeWRibbonCapabilities.Wpf)` and 
 | `freew.image-wrap-square` | Square | Yes | Yes | none | shared-profile | picture-format/picture-arrange (RibbonMenuItem; Menu) | picture-format/picture-arrange (RibbonMenuItem; Menu) | WPF definition source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.image-wrap-tight` | Tight | Yes | Yes | none | shared-profile | picture-format/picture-arrange (RibbonMenuItem; Menu) | picture-format/picture-arrange (RibbonMenuItem; Menu) | WPF definition source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.image-wrap-top-bottom` | Top and Bottom | Yes | Yes | none | shared-profile | picture-format/picture-arrange (RibbonMenuItem; Menu) | picture-format/picture-arrange (RibbonMenuItem; Menu) | WPF definition source | Command is present in both compiled FreeW ribbon profiles. |
+| `freew.import-pdf-text` | Import PDF (text only) | No | Yes | WPF | avalonia-profile-only | - | file/document (RibbonButton; Medium) | Avalonia definition source<br>Avalonia registry source | Command is present only in the compiled Avalonia FreeW ribbon profile. |
 | `freew.indent-decrease` | Decrease Indent | Yes | Yes | none | shared-profile | home/paragraph (RibbonButton; Small)<br>layout/paragraph (RibbonButton; Small) | home/paragraph (RibbonButton; Small) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.indent-increase` | Increase Indent | Yes | Yes | none | shared-profile | home/paragraph (RibbonButton; Small)<br>layout/paragraph (RibbonButton; Small) | home/paragraph (RibbonButton; Small) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.indent-left` | Indent Left | Yes | No | Avalonia | wpf-profile-only | layout/paragraph (RibbonComboBox; Medium) | - | WPF definition source<br>WPF registry source | Command is present only in the compiled WPF FreeW ribbon profile. |
