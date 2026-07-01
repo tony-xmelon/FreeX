@@ -1,0 +1,167 @@
+﻿{
+    "platform":  "windows",
+    "shell":  "avalonia",
+    "surfaces":  [
+                     {
+                         "id":  "dialog.GoTo",
+                         "kind":  "dialog",
+                         "png":  "dialog.GoTo.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.GoToSpecial",
+                         "kind":  "dialog",
+                         "png":  "dialog.GoToSpecial.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.Sort",
+                         "kind":  "dialog",
+                         "png":  "dialog.Sort.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.SortOptions",
+                         "kind":  "dialog",
+                         "png":  "dialog.SortOptions.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.AutoFilter",
+                         "kind":  "dialog",
+                         "png":  "dialog.AutoFilter.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.About",
+                         "kind":  "dialog",
+                         "png":  "dialog.About.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.LegalNotices",
+                         "kind":  "dialog",
+                         "png":  "dialog.LegalNotices.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.DataValidation",
+                         "kind":  "dialog",
+                         "png":  "dialog.DataValidation.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FormatCells",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Number",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Number.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Alignment",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Alignment.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Font",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Font.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Fill",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Fill.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Border",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Border.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Protection",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Protection.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PageSetup",
+                         "kind":  "dialog",
+                         "png":  "dialog.PageSetup.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PageSetup.Page",
+                         "kind":  "dialog",
+                         "png":  "dialog.PageSetup.Page.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PageSetup.Margins",
+                         "kind":  "dialog",
+                         "png":  "dialog.PageSetup.Margins.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PageSetup.HeaderFooter",
+                         "kind":  "dialog",
+                         "png":  "dialog.PageSetup.HeaderFooter.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PageSetup.Sheet",
+                         "kind":  "dialog",
+                         "png":  "dialog.PageSetup.Sheet.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FindReplace",
+                         "kind":  "dialog",
+                         "png":  "dialog.FindReplace.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FindReplace.Find",
+                         "kind":  "dialog",
+                         "png":  "dialog.FindReplace.Find.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.FindReplace.Replace",
+                         "kind":  "dialog",
+                         "png":  "dialog.FindReplace.Replace.png",
+                         "captured":  true,
+                         "note":  ""
+                     }
+                 ]
+}

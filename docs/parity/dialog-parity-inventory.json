@@ -6,7 +6,7 @@
     "summary":  {
                     "totalRoutes":  57,
                     "wpfCaptures":  54,
-                    "avaloniaCaptures":  0,
+                    "avaloniaCaptures":  11,
                     "avaloniaHarnessRoutes":  57,
                     "sharedOrPresentationBacked":  57
                 },
@@ -15,55 +15,55 @@
                      "routeId":  "dialog.FormatCells",
                      "displayName":  "Format Cells",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\home-alignment-number-tour\\freex_home_alignment_format_cells_dialog.png",
                                          "screenshots\\home-alignment-number-tour\\freex_home_number_format_cells_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\FormatCells\\FormatCellsInputParser.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.FindReplace",
                      "displayName":  "Find and Replace",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_find_dialog.png",
                                          "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_replace_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FindReplace.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\Dialogs\\FindReplaceOptions.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.GoTo",
                      "displayName":  "Go To",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_go_to_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.GoTo.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
@@ -71,81 +71,81 @@
                                                    "src\\FreeX.App.Services\\WorkbookReferenceNavigator.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.GoToSpecial",
                      "displayName":  "Go To Special",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_go_to_special_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.GoToSpecial.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Services\\GoToDialogPlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.Sort",
                      "displayName":  "Sort",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_sort_dialog.png",
                                          "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_custom_sort_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Sort.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Services\\SortDialogPlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.SortOptions",
                      "displayName":  "Sort Options",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_sort_options_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.SortOptions.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Services\\SortDialogPlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.AutoFilter",
                      "displayName":  "AutoFilter",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\autofilter-flyout-tour\\freex_table_autofilter_dropdown.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AutoFilter.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
@@ -159,14 +159,14 @@
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterParityFixturePlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.DataValidation",
                      "displayName":  "Data Validation",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_validation_error_alert_tab.png",
@@ -174,14 +174,14 @@
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_validation_settings_tab.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.DataValidation.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\Dialogs\\DataValidationDialogModel.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
@@ -611,7 +611,7 @@
                      "routeId":  "dialog.PageSetup",
                      "displayName":  "Page Setup",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_dialog_margins_tab.png",
@@ -619,7 +619,7 @@
                                          "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_dialog_sheet_tab_print_titles.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PageSetup.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
@@ -634,7 +634,7 @@
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupSubmissionPlanner.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
@@ -1292,40 +1292,40 @@
                      "routeId":  "dialog.About",
                      "displayName":  "About",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\help-about-legal-tour\\freex_about_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.About.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Services\\AppHelpInfo.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  },
                  {
                      "routeId":  "dialog.LegalNotices",
                      "displayName":  "Legal Notices",
                      "wpfCaptureExists":  true,
-                     "avaloniaCaptureExists":  false,
+                     "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
                                          "screenshots\\help-about-legal-tour\\freex_legal_notices_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
-
+                                              "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.LegalNotices.png"
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Services\\LegalNoticeProvider.cs"
                                                ],
                      "notes":  [
-                                   "Avalonia capture route exists in MainWindow.ParityCapture.cs, but no committed Avalonia capture asset was found."
+
                                ]
                  }
              ]
