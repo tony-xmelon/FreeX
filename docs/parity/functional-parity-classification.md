@@ -12,6 +12,8 @@ This companion classifies every `WPF-MISSING`, `AVALONIA-MISSING`, and `BOTH-MIS
 | Non-parity rows classified | 58 |
 | AVALONIA-MISSING | 0 |
 | Intentional Linux omissions | 0 |
+| Conditional-format popup/gallery rows backed by runtime catalog | 34 |
+| Conditional-format popup runtime catalog items | 38 |
 | Real behavior gap | 0 |
 | Non-Click/control inventory row | 10 |
 | Pseudo-command/gallery item | 48 |

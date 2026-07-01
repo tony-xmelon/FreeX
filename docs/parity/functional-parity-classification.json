@@ -8,6 +8,8 @@
     "wpfMissing": 48,
     "bothMissing": 10,
     "intentionalLinuxOmissions": 0,
+    "conditional-format-popup-gallery-row": 34,
+    "conditional-format-popup-catalog-item": 38,
     "real-behavior-gap": 0,
     "non-click-control-inventory-row": 10,
     "pseudo-command-gallery-item": 48,
