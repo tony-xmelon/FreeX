@@ -29,7 +29,11 @@
                                               "nonClickControlInventoryRows":  10,
                                               "pseudoCommandGalleryItems":  48,
                                               "conditionalFormatPopupGalleryRows":  34,
-                                              "conditionalFormatPopupCatalogItems":  38
+                                              "conditionalFormatPopupCatalogItems":  38,
+                                              "accountingSymbolPopupGalleryRows":  4,
+                                              "accountingSymbolPopupCatalogItems":  4,
+                                              "fontBorderPopupGalleryRows":  10,
+                                              "fontBorderPopupCatalogItems":  10
                                           },
                      "dialogRoutes":  {
                                           "totalRoutes":  57,
@@ -38,7 +42,7 @@
                                           "avaloniaHarnessRoutes":  57,
                                           "sharedOrPresentationBacked":  57
                                       },
-                     "nextSlice":  "Command/dialog parity is green; conditional-format popup/gallery classifier evidence now links 34 rows to 38 shared runtime catalog items. Next evidence gap is paired opened-state WPF/Avalonia/Excel captures, while 48 total pseudo-gallery rows and 10 non-click inventory rows remain tracked separately."
+                     "nextSlice":  "Command/dialog parity is green; all 48 pseudo-gallery rows are catalog-backed in classifier evidence (34 conditional-format rows over 38 runtime catalog items, 10 font/border rows, and 4 accounting-symbol rows). The remaining classifier-noise bucket is 10 non-click inventory rows; foreground opened-state captures remain environment-blocked."
                  },
                  {
                      "app":  "FreeW",
