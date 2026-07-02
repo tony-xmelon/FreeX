@@ -156,7 +156,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 4. Avalonia Backstage is partially wired but still has deferred/placeholder actions, including Options, Print actions, and Info safety actions.
 5. Print/export parity is incomplete. Avalonia PDF export is text-position based and explicitly lacks tables/images/decorations plus full print-pipeline pagination.
 6. Rich rendering is improving, but SmartArt and other DrawingML-heavy surfaces are still simplified compared with WPF/Word.
-7. Proofing/help, source/cross-reference pickers, full track-change recording, header/footer in-region caret editing, picture watermark, and split view remain incomplete or deferred.
+7. Proofing/help, source/cross-reference pickers, full track-change recording, header/footer in-region caret editing, and split view remain incomplete or deferred. Avalonia picture-watermark UI is now covered by the shared Custom Watermark planner, with picture selection, scale, layout, and washout options wired through the FreeW dialog.
 8. The dirty `FreeX-linux` lane contains broad FreeW/Linux changes and should be reconciled before final FreeW parity claims.
 
 ### FreeW Next Slices
