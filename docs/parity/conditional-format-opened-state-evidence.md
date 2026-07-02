@@ -22,16 +22,16 @@ Manifest validation contract: every committed manifest must match the expected S
 
 | Category | Count |
 |---|---:|
-| app-window-unavailable | 2 |
 | excel-com-unavailable | 1 |
+| foreground-focus-unavailable | 2 |
 
 ## Capture Targets
 
 | Target | Subject | Scenario | Status | Category | Manifest validation | Environment snapshot | Last attempt UTC | PNG | Blocker | Next action |
 |---|---|---|---|---|---|---|---|---|---|---|
 | excel.conditional-formatting-gallery.opened | excel | excel-conditional-formatting-gallery | blocked-or-incomplete | excel-com-unavailable | valid | windows=True; interactive=True; session=1; arch=X64 | 2026-07-02T10:24:18.0743536+00:00 |  | exception: Excel.Application COM ProgID is not available. | Rerun .\tools\Invoke-ForegroundCapture.ps1 -Scenario excel-conditional-formatting-gallery on a Windows desktop where Microsoft Excel COM is installed and registered. |
-| wpf.conditional-formatting-gallery.opened | wpf | freex-conditional-formatting-gallery | blocked-or-incomplete | app-window-unavailable | valid | windows=True; interactive=True; session=1; arch=X64 | 2026-07-02T10:24:47.6193639+00:00 |  | window-not-found: FreeX process 40172 did not expose a visible main window. | Rerun .\tools\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe> after verifying the Release app starts manually in the same desktop session and exposes a visible main window. |
-| avalonia.conditional-formatting-gallery.opened | avalonia | avalonia-conditional-formatting-gallery | blocked-or-incomplete | app-window-unavailable | valid | windows=True; interactive=True; session=1; arch=X64 | 2026-07-02T10:25:19.7629493+00:00 |  | window-not-found: FreeX process 29300 did not expose a visible main window. | Rerun .\tools\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe> after verifying the Release app starts manually in the same desktop session and exposes a visible main window. |
+| wpf.conditional-formatting-gallery.opened | wpf | freex-conditional-formatting-gallery | blocked-or-incomplete | foreground-focus-unavailable | valid | windows=True; interactive=True; session=1; arch=X64 | 2026-07-02T11:17:01.3075269+00:00 |  | foreground-guard-failed: Foreground guard failed during before-input. | Rerun .\tools\Invoke-ForegroundCapture.ps1 -Scenario freex-conditional-formatting-gallery -FreeXExe <Release FreeX.App.Host.exe> from an unlocked interactive desktop where the launched window can become foreground. |
+| avalonia.conditional-formatting-gallery.opened | avalonia | avalonia-conditional-formatting-gallery | blocked-or-incomplete | foreground-focus-unavailable | valid | windows=True; interactive=True; session=1; arch=X64 | 2026-07-02T11:17:16.3684841+00:00 |  | foreground-guard-failed: Foreground guard failed during before-input. | Rerun .\tools\Invoke-ForegroundCapture.ps1 -Scenario avalonia-conditional-formatting-gallery -AvaloniaExe <Release FreeX.exe> from an unlocked interactive desktop where the launched window can become foreground. |
 
 ## Capture Commands
 
