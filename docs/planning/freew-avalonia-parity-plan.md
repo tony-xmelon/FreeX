@@ -26,6 +26,8 @@ The July 2 implementation wave also landed the last ready command-functional sal
 
 The same wave closed the style-management planner gap by moving New Style / Modify Style / Manage Styles option planning, validation, row sorting, and reversible style-catalog mutation into shared layers (`StyleDialogPlanner` in presentation and `StyleCatalogCommand` in core model). WPF and Avalonia now act as thin dialog/rendering shells over the shared behavior.
 
+Status 2026-07-03: the Review > Compare group now has model-backed Avalonia execution for Compare and Combine. Avalonia collects the source document paths and reviewer labels through thin shell dialogs, then runs the shared presentation workflow over `DocumentCompare` / `DocumentCombine`, loads the resulting blackline/combined document, and marks it as a new unsaved result.
+
 The next parity work should therefore avoid command-count chasing. Remaining value is in deeper proof: Word-baseline visual comparison, broader fixture coverage beyond the current mixed-section/table/floating object/chart/SmartArt/WordArt evidence set, and behavior evidence where a command exists but Word-like results are still only weakly proven. The Word-baseline summary path now reports baseline ids, candidate paths, status counts, skip reasons, tolerance limits, and changed-pixel metrics when comparison PNGs are available.
 
 ## Architecture Rule
@@ -118,6 +120,8 @@ Close the references family by separating semantic document data from UI:
 Treat Review features as policy first. Shared planners should own available actions, state, document mutations, conflict messages, and allowlists. Host shells should provide only the UI realization, file pickers, and visual markers.
 
 Prioritize proofing/thesaurus/protection/compare-combine where WPF already proves user-facing behavior and Avalonia can reuse the semantic/planner contract.
+
+Status 2026-07-03: Compare/Combine execution is implemented for Avalonia through `ReviewCompareCombineWorkflow` plus thin file-picker/dialog callbacks. Remaining Review-depth work should focus on proofing/protection evidence and any behavior still not proven by focused tests, not on these two command callbacks.
 
 ### 6. Read, Split, and Window Behaviors
 

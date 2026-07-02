@@ -31,6 +31,8 @@ Latest July 2 evidence-path update: Word-baseline comparison reporting is now ex
 
 A later July 2 shared-style slice moved New Style / Modify Style / Manage Styles option planning, validation, row sorting, and style-catalog undo behavior into shared FreeW layers: `FreeW.App.Presentation.Dialogs.StyleDialogPlanner` and `FreeW.Core.Model.StyleCatalogCommand`. WPF and Avalonia now keep only thin dialog/shell realization over that shared behavior.
 
+July 3 Review-depth update: Avalonia Review > Compare / Combine now routes through a shared `ReviewCompareCombineWorkflow` over the existing `DocumentCompare` and `DocumentCombine` model engines. Avalonia owns only the source-document file pickers, reviewer-label dialogs, result loading, and unsaved-result state.
+
 The next Word-parity evidence work is no longer command exposure; it is stronger visual/behavior proof, especially evaluating real Word PNG comparisons from the strengthened baseline/tolerance report and broadening fixture coverage for remaining open-ended polish cases beyond the current mixed-section and WordArt/watermark fixtures.
 
 Historical implementation wave (started 2026-06-21):
