@@ -150,6 +150,8 @@ Goal: close the adoption gaps users hit while working quickly.
 - Context menus: shared model plus WPF/Avalonia sizing, focus return, enabled-state, and keyboard proof.
 - Keytips: preserve Excel Alt navigation and continuation chains through shared descriptors, then thin WPF/Avalonia display and routing layers.
 
+Progress note, 2026-07-02: AutoFilter popup row presentation state is now shared through `AutoFilterMenuEntryPresentation`, covering icon kind, focus role, search participation, and continuation hints for sort, clear, filter-by-color, filter-family, search, select-all, and checklist rows. WPF and Avalonia keep thin adapter coverage over the shared plan; remaining evidence work is foreground visual capture and richer opened-state screenshots.
+
 Primary owners: popup planners, shortcut/keytip services, ribbon renderers, foreground capture harness.
 
 ### Wave 5 - Pivot, Table, Chart, and Drawing Shared Render Plans
