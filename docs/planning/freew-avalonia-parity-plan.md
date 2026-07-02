@@ -102,7 +102,7 @@ Make Backstage Options and Info safety actions honest in both shells. Classify e
 
 Avoid fake Microsoft account, cloud location, or online service placeholders.
 
-Status 2026-07-03: Backstage Options and Info safety are implemented through shared planners and thin Avalonia callbacks. The remaining Backstage print gap is direct native printer selection in Avalonia, not Options/Info safety.
+Status 2026-07-03: Backstage Options and Info safety are implemented through shared planners and thin Avalonia callbacks. The Info safety rows now read live document state from the shared model, including Mark as Final, protection mode, inspector metadata counts, and accessibility issue counts. The remaining Backstage print gap is direct native printer selection in Avalonia, not Options/Info safety.
 
 ### 3. Print Preview and Print Planning
 
