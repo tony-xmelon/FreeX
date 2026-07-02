@@ -1,0 +1,76 @@
+{
+  "Scenario": "freex-sheet-tab-context-menu",
+  "Subject": "freex",
+  "CaptureStatus": "blocked",
+  "CaptureMode": "foreground-guarded-uia-win32",
+  "ForegroundGuard": {
+    "Success": true,
+    "ExpectedProcessId": 40368,
+    "ExpectedHandle": 14815132,
+    "ForegroundWindow": {
+      "Handle": 14815132,
+      "ProcessId": 40368,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;96ccde33-2535-4bf9-926d-a8826423e66a]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 128,
+          "Y": 128
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "X": 128,
+        "Y": 128,
+        "Width": 1280,
+        "Height": 720,
+        "Left": 128,
+        "Top": 128,
+        "Right": 1408,
+        "Bottom": 848,
+        "IsEmpty": false
+      }
+    }
+  },
+  "BlockReason": "uia-target-not-found: Could not find element named \u0027Sheet1\u0027.",
+  "CapturedAtUtc": "2026-07-02T18:13:06.2985017+00:00",
+  "EnvironmentSnapshot": {
+    "OperatingSystem": "Microsoft Windows 10.0.26200",
+    "IsWindows": true,
+    "UserInteractive": true,
+    "SessionId": 1,
+    "ProcessId": 28652,
+    "ProcessArchitecture": "X64",
+    "ForegroundWindowAtCapture": {
+      "Handle": 14815132,
+      "ProcessId": 40368,
+      "Title": "Book1 - FreeX",
+      "ClassName": "HwndWrapper[FreeX.App.Host;;96ccde33-2535-4bf9-926d-a8826423e66a]",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 160,
+          "Y": 160
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1600,
+          "Height": 900
+        },
+        "X": 160,
+        "Y": 160,
+        "Width": 1600,
+        "Height": 900,
+        "Left": 160,
+        "Top": 160,
+        "Right": 1760,
+        "Bottom": 1060,
+        "IsEmpty": false
+      }
+    }
+  },
+  "ManifestPath": "C:\\Users\\ali\\Documents\\GitHub\\FreeX\\.worktrees\\sheet-tab-context-menu-parity\\tools\\foreground-captures\\sheet-tab-context-menu-parity\\freex-sheet-tab-context-menu\\freex-sheet-tab-context-menu_manifest.json"
+}
