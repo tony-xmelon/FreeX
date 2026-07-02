@@ -2,6 +2,8 @@
 
 Later status, 2026-07-02: the shared WPF/Avalonia visual evidence contract is now implemented in `FreeW.App.Presentation`, with WPF `FreeW.FidelityRender`, Avalonia `FreeW.PageLayoutShot`, and `FreeW.VisualEvidenceSummary` producing a common manifest/summary. The current smoke lane generates 15 F2/page-composition DOCX fixtures, WPF renders 32 PNGs, Avalonia renders 13 PNGs, and the combined summary reports 45 trusted evidence rows, including table layout, drawing objects, and chart/SmartArt composition coverage. Treat the sections below as the June 26 historical triage; current follow-up should extend the shared manifest toward Word-baseline comparison and tolerance reporting.
 
+Runner status, 2026-07-02: `tools/Run-FreeWWordBaselineEvidence.ps1` is the bounded Word-baseline path for this contract. It regenerates the 15 fixture DOCX corpus, renders WPF/Avalonia evidence, checks `Word.Application` COM availability before launching Word, exports Word PDFs/raster PNGs when available, and calls `FreeW.VisualEvidenceSummary` with `--word-baseline-scope generated-corpus` so baseline comparison is limited to the generated Word-comparable scenarios. CI or local machines without Word can run it with `-AllowMissingWord` to prove the no-Word summary path without opening Word.
+
 The 2026-06-25 fidelity pass flagged a set of features as "missing", but those were blind spots of the
 old bare-FlowDocument `FreeW.FidelityRender`. We (1) gave the renderer a **composite mode** that draws the
 overlay/chrome/column/header layers the live app shows, then (2) re-rendered and re-triaged each flagged
