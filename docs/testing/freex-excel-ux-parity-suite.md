@@ -66,6 +66,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenar
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenarioBatch.ps1 -Suite core -MinimizeForeignForeground
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenarioBatch.ps1 -Suite status -MinimizeForeignForeground
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenarioBatch.ps1 -Suite formula -MinimizeForeignForeground
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenarioBatch.ps1 -Suite filtering -MinimizeForeignForeground
 ```
 
 The batch runner uses `tools/FreeX.ForegroundCapture` to run matching Excel and FreeX scenarios, stores per-subject manifests/screenshots under `tools/ux-parity-runs/<timestamp>/foreground-captures/`, writes `ux-scenario-batch.json` with pair status and the next review action, and generates `ux-scenario-report.html` plus `ux-scenario-contact-sheet.png` for side-by-side visual review.
@@ -78,6 +79,7 @@ Suites:
 - `dialogs`: Format Cells and native Open/Save dialog pairs.
 - `status`: Excel and FreeX status/footer reference with selected numeric cells and validated Average/Count/Sum readouts.
 - `formula`: Excel and FreeX formula bar/name box reference with the same selected formula cell and validated FreeX UIA readback.
+- `filtering`: Excel and FreeX AutoFilter opened-state reference with the same A1:D6 seeded range; FreeX seeds the range through foreground paste, toggles AutoFilter with `Ctrl+Shift+L`, opens the score-column dropdown with `Alt+Down`, and validates the Text Filters checklist surface before capture.
 - `all`: all currently paired foreground scenarios.
 
 ## Current Evidence
@@ -116,6 +118,7 @@ The current actionable harness gaps are:
 - Triage the current strict contact-sheet findings before marking the covered cases as parity-equivalent: FreeX Format Cells now matches Excel tab ordering and selected-cell General preview behavior and has closer Number-tab density/button sizing, but still needs visual tuning for right-pane whitespace/framing and DPI/capture geometry. The corrected Activate pair now compares real sheet-list dialogs with matching bounds, row count, label, default buttons, and context help; the remaining Activate difference is selected-row highlight tone/framing.
 - Triage the `status` contact-sheet findings before closing the status bar surface: both apps show Average 5, Count 4, and Sum 20 for the same numeric selection, while FreeX also exposes Numerical Count, Min, and Max in the footer and uses a much larger capture geometry than the Excel reference.
 - Triage the `formula` contact-sheet findings before closing the formula bar/name box surface: both apps now have paired B4/formula-bar visual proof, while expand/collapse, `fx` Insert Function, edit commit/cancel, reference highlighting, and invalid formula handling still need paired foreground coverage.
+- Run the `filtering` suite as the next AutoFilter foreground-evidence checkpoint. It pairs the existing Excel AutoFilter opened-state scenario with the new FreeX `freex-autofilter` counterpart so filter flyouts can produce side-by-side screenshots and manifests instead of remaining only a backlog row.
 - Continue hardening foreground ownership reacquisition while expanding beyond `core`; repeated desktop-driven scenarios can still produce transient foreground failures on this machine.
 - Continue using `ux-scenario-contact-sheet.png` as the first-pass visual review artifact for paired scenario batches.
 
