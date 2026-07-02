@@ -28,7 +28,7 @@ The same wave closed the style-management planner gap by moving New Style / Modi
 
 Status 2026-07-03: the Review > Compare group now has model-backed Avalonia execution for Compare and Combine. Avalonia collects the source document paths and reviewer labels through thin shell dialogs, then runs the shared presentation workflow over `DocumentCompare` / `DocumentCombine`, loads the resulting blackline/combined document, and marks it as a new unsaved result.
 
-Status 2026-07-03: View-depth toggles for Split, Multiple Pages, and Side to Side now use a shared `FreeWViewDepthPlanner` plus thin Avalonia workspace realization. Split shows the live editor above a read-only paginated snapshot. Multiple Pages and Side to Side swap the workspace to read-only paginated previews; Side to Side uses a two-page-fit scale over the current vertical paginated renderer, so true horizontal page turning remains an explicit limitation rather than fake parity.
+Status 2026-07-03: View-depth toggles for Split, Multiple Pages, and Side to Side now use a shared `FreeWViewDepthPlanner` policy in both WPF and Avalonia, with thin host workspace realization. Split shows the live editor above a read-only paginated snapshot. Multiple Pages and Side to Side swap the workspace to read-only paginated previews with a shared two-page-fit target; true dual-live split editing, responsive editable multi-page grids, and horizontal Side-to-Side page turning remain explicit renderer limitations rather than fake parity.
 
 The next parity work should therefore avoid command-count chasing. Remaining value is in deeper proof: Word-baseline visual comparison, broader fixture coverage beyond the current mixed-section/table/floating object/chart/SmartArt/WordArt evidence set, and behavior evidence where a command exists but Word-like results are still only weakly proven. The Word-baseline summary path now reports baseline ids, candidate paths, status counts, skip reasons, tolerance limits, and changed-pixel metrics when comparison PNGs are available.
 
@@ -133,7 +133,7 @@ Status 2026-07-03: Compare/Combine execution is implemented for Avalonia through
 
 Classify view/window behavior carefully because some WPF implementation details are UI-stack-specific. Put durable policy in `FreeW.App.Presentation`: mode availability, pane relationships, zoom/read-state decisions, split-window lifecycle, and window-management intent. Let WPF and Avalonia realize those intents through host adapters.
 
-Status 2026-07-03: first Avalonia View-depth slice landed for the backed subset. `FreeW.App.Presentation.Shell.FreeWViewDepthPlanner` owns mode exclusivity and preview intent; `MainWindow` only swaps the workspace. Remaining limitation: the secondary split pane and page-preview modes are read-only snapshots, and Side to Side does not yet implement horizontal page-turn navigation.
+Status 2026-07-03: first View-depth shared-policy slice landed for the backed subset. `FreeW.App.Presentation.Shell.FreeWViewDepthPlanner` owns mode exclusivity, preview intent, read-only limitations, and the two-page-fit target for WPF and Avalonia; each `MainWindow` only swaps the host workspace. Remaining limitation: the secondary split pane and page-preview modes are read-only snapshots, Multiple Pages is not yet an editable responsive page grid, and Side to Side does not yet implement horizontal page-turn navigation.
 
 ### 7. Visual Parity Capture
 
