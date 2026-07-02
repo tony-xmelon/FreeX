@@ -22,7 +22,9 @@ The authoritative July 1 WPF/Avalonia command topology is the generated matrix i
 
 The command-surface phase is now exhausted for actionable WPF/Avalonia deltas. The generated FreeW command inventory reports `797` total commands with `0` actionable WPF gaps, `0` actionable Avalonia gaps, and `0` total actionable gaps. Raw `wpfOnly` / `avaloniaOnly` counts still include profile-shape, alias, deferred, and platform-specific rows; they are not implementation targets by themselves.
 
-The July 2 implementation wave also landed the last ready command-functional salvage slice (`freew.edit-hyperlink`, `freew.remove-hyperlink`, `freew.hyperlink-tooltip`, and `freew.link-bookmark`) and the first shared WPF/Avalonia visual evidence contract. `FreeW.App.Presentation` now owns visual evidence scenario identity, schema, expected output names, page geometry, section ownership, columns, page border, watermark, header/footer and notes expectations, and the nonblank/pixel-diversity trust contract. WPF `FreeW.FidelityRender` and Avalonia `FreeW.PageLayoutShot` now emit the same manifest shape while keeping renderer code host-thin.
+The July 2 implementation wave also landed the last ready command-functional salvage slice (`freew.edit-hyperlink`, `freew.remove-hyperlink`, `freew.hyperlink-tooltip`, and `freew.link-bookmark`) and expanded the shared WPF/Avalonia visual evidence contract. `FreeW.App.Presentation` now owns visual evidence scenario identity, schema, expected output names, page geometry, section ownership, columns, page border, watermark, header/footer and notes expectations, table/drawing/chart/SmartArt expectations, and the nonblank/pixel-diversity trust contract. WPF `FreeW.FidelityRender` and Avalonia `FreeW.PageLayoutShot` now emit the same manifest shape while keeping renderer code host-thin.
+
+The same wave closed the style-management planner gap by moving New Style / Modify Style / Manage Styles option planning, validation, row sorting, and reversible style-catalog mutation into shared layers (`StyleDialogPlanner` in presentation and `StyleCatalogCommand` in core model). WPF and Avalonia now act as thin dialog/rendering shells over the shared behavior.
 
 The next parity work should therefore avoid command-count chasing. Remaining value is in deeper proof: Word-baseline visual comparison, broader fixture coverage for tables/floating objects/charts/SmartArt/WordArt, and behavior evidence where a command exists but Word-like results are still only weakly proven.
 
@@ -135,7 +137,7 @@ Create an evidence loop for the remaining visual/fidelity work. The minimum capt
 
 Prefer a small fixture matrix with WPF and Avalonia output side by side, plus source-backed notes for expected differences. The 2026-06-25/26 FreeW visual reports in `docs/fidelity` are the current WPF evidence baseline; extend from there instead of treating their old harness blind spots as product blockers.
 
-Status 2026-07-02: first shared contract landed. The current smoke path generates 10 F2/page-composition DOCX fixtures, WPF renders 21 PNGs, Avalonia renders 6 PNGs, and `FreeW.VisualEvidenceSummary` combines them into 27 trusted evidence rows. The next increment should attach Word-baseline comparison and tolerance reporting to this manifest rather than inventing a parallel harness.
+Status 2026-07-02: shared contract expanded. The current smoke path generates 15 F2/page-composition DOCX fixtures, WPF renders 32 PNGs, Avalonia renders 13 PNGs, and `FreeW.VisualEvidenceSummary` combines them into 45 trusted evidence rows. It now includes table layout, drawing objects, and chart/SmartArt composition evidence. The next increment should attach Word-baseline comparison and tolerance reporting to this manifest rather than inventing a parallel harness.
 
 ## WPF Work Rule
 
