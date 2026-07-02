@@ -18,6 +18,14 @@ The old snapshot that described Avalonia as a 22-command shell with no registry 
 
 The authoritative July 1 WPF/Avalonia command topology is the generated matrix in [../parity/freew-command-inventory.md](../parity/freew-command-inventory.md). It is built from compiled `FreeWRibbon.Build(FreeWRibbonCapabilities.Wpf/Avalonia)` profiles, including menu children. Source literal registry/definition hits are retained only as evidence columns and must not be treated as behavior proof or topology gates.
 
+## Current July 2 Update
+
+The command-surface phase is now exhausted for actionable WPF/Avalonia deltas. The generated FreeW command inventory reports `797` total commands with `0` actionable WPF gaps, `0` actionable Avalonia gaps, and `0` total actionable gaps. Raw `wpfOnly` / `avaloniaOnly` counts still include profile-shape, alias, deferred, and platform-specific rows; they are not implementation targets by themselves.
+
+The July 2 implementation wave also landed the last ready command-functional salvage slice (`freew.edit-hyperlink`, `freew.remove-hyperlink`, `freew.hyperlink-tooltip`, and `freew.link-bookmark`) and the first shared WPF/Avalonia visual evidence contract. `FreeW.App.Presentation` now owns visual evidence scenario identity, schema, expected output names, page geometry, section ownership, columns, page border, watermark, header/footer and notes expectations, and the nonblank/pixel-diversity trust contract. WPF `FreeW.FidelityRender` and Avalonia `FreeW.PageLayoutShot` now emit the same manifest shape while keeping renderer code host-thin.
+
+The next parity work should therefore avoid command-count chasing. Remaining value is in deeper proof: Word-baseline visual comparison, broader fixture coverage for tables/floating objects/charts/SmartArt/WordArt, and behavior evidence where a command exists but Word-like results are still only weakly proven.
+
 ## Architecture Rule
 
 Every gap must be classified in this order:
@@ -75,6 +83,8 @@ Build the FreeW equivalent of the FreeX generated command dashboard. The matrix 
 
 Use it to rank every later slice. Do not start by manually porting a long list from `FreeWRibbonCommands.cs`.
 
+Status 2026-07-02: done for actionable command topology. Continue to run the generator as a guard, but do not open new implementation slices from profile-shape-only rows.
+
 ### 2. Backstage Options and Info Safety
 
 Make Backstage Options and Info safety actions honest in both shells. Classify each action through the shared order:
@@ -124,6 +134,8 @@ Create an evidence loop for the remaining visual/fidelity work. The minimum capt
 - WordArt and watermark.
 
 Prefer a small fixture matrix with WPF and Avalonia output side by side, plus source-backed notes for expected differences. The 2026-06-25/26 FreeW visual reports in `docs/fidelity` are the current WPF evidence baseline; extend from there instead of treating their old harness blind spots as product blockers.
+
+Status 2026-07-02: first shared contract landed. The current smoke path generates 10 F2/page-composition DOCX fixtures, WPF renders 21 PNGs, Avalonia renders 6 PNGs, and `FreeW.VisualEvidenceSummary` combines them into 27 trusted evidence rows. The next increment should attach Word-baseline comparison and tolerance reporting to this manifest rather than inventing a parallel harness.
 
 ## WPF Work Rule
 
