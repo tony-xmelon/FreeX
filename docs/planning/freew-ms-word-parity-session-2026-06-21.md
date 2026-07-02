@@ -33,6 +33,8 @@ A later July 2 shared-style slice moved New Style / Modify Style / Manage Styles
 
 July 3 Review-depth update: Avalonia Review > Compare / Combine now routes through a shared `ReviewCompareCombineWorkflow` over the existing `DocumentCompare` and `DocumentCombine` model engines. Avalonia owns only the source-document file pickers, reviewer-label dialogs, result loading, and unsaved-result state.
 
+July 3 View-depth update: Avalonia now backs View > Window > Split and View > Zoom > Multiple Pages / Side to Side with shared `FreeWViewDepthPlanner` policy and thin workspace swapping. Split keeps the live editor in the top pane and renders a read-only paginated snapshot below it. Multiple Pages and Side to Side enter read-only paginated previews instead of status-only deferrals; Side to Side is honestly limited to a two-page-fit view over the current vertical paginated renderer, with horizontal page turning still deferred.
+
 The next Word-parity evidence work is no longer command exposure; it is stronger visual/behavior proof, especially evaluating real Word PNG comparisons from the strengthened baseline/tolerance report and broadening fixture coverage for remaining open-ended polish cases beyond the current mixed-section and WordArt/watermark fixtures.
 
 Historical implementation wave (started 2026-06-21):
