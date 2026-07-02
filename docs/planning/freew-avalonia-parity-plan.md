@@ -102,11 +102,15 @@ Make Backstage Options and Info safety actions honest in both shells. Classify e
 
 Avoid fake Microsoft account, cloud location, or online service placeholders.
 
+Status 2026-07-03: Backstage Options and Info safety are implemented through shared planners and thin Avalonia callbacks. The remaining Backstage print gap is direct native printer selection in Avalonia, not Options/Info safety.
+
 ### 3. Print Preview and Print Planning
 
 Use WPF as the behavior oracle, then move print preview and print decisions into host-neutral presentation policy where possible: page setup summaries, preview mode state, export vs print routing, safety prompts, and evidence fixture selection.
 
 Avalonia should implement the same policy through its Skia/PDF and print surfaces. Do not bury print behavior in `DocumentView.cs` unless it is strictly renderer geometry.
+
+Status 2026-07-03: Print pane capability/status is now shared through `BackstageDirectPrintCapability`. WPF's native `PrintDialog` path is classified as host-backed by the shared planner. Avalonia has backed Print Preview plus a clearly labeled Create PDF fallback from the preview toolbar, while direct native printer selection remains deferred because the current Avalonia target exposes no native `PrintDialog` or printer service.
 
 ### 4. References, Source Management, and Table of Authorities
 
