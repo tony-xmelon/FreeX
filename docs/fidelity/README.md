@@ -30,6 +30,12 @@ It generates F2 DOCX fixtures, WPF composite captures, Avalonia page-layout capt
 `freew_visual_evidence_manifest.json` files under ignored `freew-fidelity-corpus/runs/`, then retains
 small normalized JSON/Markdown summaries with relative paths, hashes, pixel stats, and trust status.
 Do not commit generated DOCX/PNG/PDF files or raw absolute-path manifests from those runs.
+When MS Word PNG baselines are available, add `-WordBaselineDir <baseline-png-root>` and optional
+`-BaselineTolerance word-png-default` to the same command; the summary then records WPF and Avalonia
+Word-baseline comparisons together instead of requiring a parallel report.
+On machines with Word COM installed, add `-IncludeWordBaseline` to render Word PNGs from the same
+generated fixtures before normalization. The shared comparison policy aliases comparable Avalonia
+rows to F2 Word baselines and marks unmapped rows as skipped rather than false failures.
 
 Durable FreeW notes:
 
