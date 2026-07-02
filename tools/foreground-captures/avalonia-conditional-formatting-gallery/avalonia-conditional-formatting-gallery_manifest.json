@@ -3,13 +3,15 @@
   "Subject": "avalonia",
   "CaptureStatus": "blocked",
   "CaptureMode": "foreground-guarded-uia-win32",
-  "ForegroundGuard": {
-    "Success": false,
-    "ExpectedProcessId": 18216,
-    "ExpectedHandle": 317983044,
-    "Reason": "No foreground window detected."
+  "BlockReason": "window-not-found: FreeX process 29300 did not expose a visible main window.",
+  "CapturedAtUtc": "2026-07-02T10:25:19.7629493+00:00",
+  "EnvironmentSnapshot": {
+    "OperatingSystem": "Microsoft Windows 10.0.26200",
+    "IsWindows": true,
+    "UserInteractive": true,
+    "SessionId": 1,
+    "ProcessId": 24928,
+    "ProcessArchitecture": "X64"
   },
-  "BlockReason": "foreground-guard-failed: Foreground guard failed during before-input.",
-  "CapturedAtUtc": "2026-07-01T22:41:42.8534076+00:00",
-  "ManifestPath": "C:\\Users\\anton\\OneDrive\\Documents\\FreeX\\FreeX\\.worktrees\\freex-cf-opened-state-evidence-20260702\\tools\\foreground-captures\\avalonia-conditional-formatting-gallery\\avalonia-conditional-formatting-gallery_manifest.json"
+  "ManifestPath": "C:\\Users\\anton\\OneDrive\\Documents\\FreeX\\FreeX\\.worktrees\\freex-foreground-capture-evidence-20260702\\tools\\foreground-captures\\avalonia-conditional-formatting-gallery\\avalonia-conditional-formatting-gallery_manifest.json"
 }
