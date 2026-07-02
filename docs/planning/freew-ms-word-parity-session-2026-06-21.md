@@ -21,6 +21,12 @@ Shared-first implementation rule for every remaining cross-shell gap:
 5. `Free.Shared.*` only for cross-app infrastructure, never Word-only semantics.
 6. WPF/Avalonia renderer or shell realization last.
 
+## Current Status - 2026-07-02
+
+The cross-shell command-surface catch-up has now reached zero actionable generated gaps. `docs/parity/freew-command-inventory.json` currently reports `797` commands with `0` actionable WPF gaps, `0` actionable Avalonia gaps, and `0` total actionable gaps. The remaining raw WPF-only/Avalonia-only rows are profile shape, aliases, deferred, or platform-specific rows unless the generated `gapClassification` says otherwise.
+
+July 2 also landed the last ready Insert > Links functional salvage for Avalonia hyperlink/bookmark actions and the first shared WPF/Avalonia visual evidence contract. WPF remains the Microsoft Word behavior oracle, but both WPF `FreeW.FidelityRender` and Avalonia `FreeW.PageLayoutShot` now emit a shared visual manifest for F2/page-composition scenarios through `FreeW.App.Presentation` planners and trust checks. The next Word-parity evidence work is no longer command exposure; it is stronger visual/behavior proof, especially Word-baseline pixel comparison and broader fixture coverage for tables, floating objects, charts, SmartArt, WordArt, and watermark/layout cases.
+
 Historical implementation wave (started 2026-06-21):
 
 - Promote implemented reference tools to a top-level References tab.

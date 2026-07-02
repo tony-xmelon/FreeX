@@ -1,5 +1,7 @@
 # FreeW visual verification — closing the §B gap (2026-06-26)
 
+Later status, 2026-07-02: the first shared WPF/Avalonia visual evidence contract is now implemented in `FreeW.App.Presentation`, with WPF `FreeW.FidelityRender`, Avalonia `FreeW.PageLayoutShot`, and `FreeW.VisualEvidenceSummary` producing a common manifest/summary. The current smoke lane generates 10 F2/page-composition DOCX fixtures, WPF renders 21 PNGs, Avalonia renders 6 PNGs, and the combined summary reports 27 trusted evidence rows. Treat the sections below as the June 26 historical triage; current follow-up should extend the shared manifest toward Word-baseline comparison and broader fixture coverage.
+
 The 2026-06-25 fidelity pass flagged a set of features as "missing", but those were blind spots of the
 old bare-FlowDocument `FreeW.FidelityRender`. We (1) gave the renderer a **composite mode** that draws the
 overlay/chrome/column/header layers the live app shows, then (2) re-rendered and re-triaged each flagged
