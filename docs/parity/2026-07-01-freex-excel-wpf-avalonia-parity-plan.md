@@ -72,7 +72,7 @@ The generated WPF/Avalonia functional matrix is close, and the command/keytip sl
 - `AVALONIA-MISSING` is `0`.
 - Intentional Linux omissions are `0`.
 - Many WPF-missing rows are combo boxes, gallery pseudo-items, Help-tab buttons, or controls driven through non-Click paths. The generated classification dashboard should be the first stop before workers treat them as missing behavior.
-- The remaining prioritized real behavior gaps are Help `Copy Diagnostics`, Help `Legal Notices`, and Review `Convert to Comments`; the other WPF/BOTH rows are inventory or gallery classification noise.
+- Current generated matrix refresh now counts Help `Copy Diagnostics`, Help `Legal Notices`, and Review `Convert to Comments` as `PARITY` in both WPF and Avalonia. These three previously prioritized real behavior gaps are guarded by `PrioritizedCommandCleanupRows_RemainBoundInBothHosts`; the remaining WPF/BOTH rows are inventory or gallery classification noise.
 
 ### 3. Dialog and Native Surface Evidence
 
@@ -124,7 +124,7 @@ Goal: clear real command binding gaps and stop noisy false gaps.
 
 - Keep page-size commands such as `B4 (JIS)` and `B5 (JIS)` covered in both hosts so Avalonia remains at zero missing rows.
 - Normalize WPF non-Click controls and gallery pseudo-items in the functional matrix instead of reporting them as missing handlers.
-- Implement or normalize Help copy diagnostics, Legal Notices, and Review convert-to-comments; keep Home border/color pseudo-items in the gallery evidence lane unless shared catalogs expose per-choice behavior.
+- Preserve the Help copy diagnostics, Legal Notices, and Review convert-to-comments bindings in both hosts; keep Home border/color pseudo-items in the gallery evidence lane unless shared catalogs expose per-choice behavior.
 - Keep Excel keyboard adoption protected while doing this. The shortcut/keytip suite must continue to cover direct shortcuts, shifted/controlled variants, Alt keytips, and multi-key continuations such as Data > Filter.
 
 Primary owners: ribbon definitions, command registry/adapters, functional parity tests, shortcut/keytip tests.
