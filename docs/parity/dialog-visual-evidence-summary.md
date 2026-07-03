@@ -67,8 +67,8 @@ These expected-size mismatches are known promoted fallback screenshots, not dire
 
 | Surface id | Stale shell | Current PNG size | Expected size | Promoted source PNG | Recapture status | Next action |
 | --- | --- | ---: | ---: | --- | --- | --- |
-| dialog.OpenWorkbook | WPF | 1280x800 | 640x420 | screenshots\open-workbook-dialog-tour\freex_open_workbook_dialog_opened.png | blocked-transparent-direct-parity-capture | Recapture WPF direct parity evidence at planner size after transparent offscreen capture is fixed. |
-| dialog.SaveAsWorkbook | WPF | 1280x800 | 640x420 | screenshots\save-as-workbook-dialog-tour\freex_save_as_workbook_dialog_opened.png | blocked-transparent-direct-parity-capture | Recapture WPF direct parity evidence at planner size after transparent offscreen capture is fixed. |
+| dialog.OpenWorkbook | WPF | 1280x800 | 640x420 | screenshots\open-workbook-dialog-tour\freex_open_workbook_dialog_opened.png | blocked-blank-wpf-direct-surface-frame-capture | Fix the WPF WorkbookFileDialogSurfacePlanner direct-surface frame render so the 640x420 capture produces nonblank pixels; then replace the promoted PNG. |
+| dialog.SaveAsWorkbook | WPF | 1280x800 | 640x420 | screenshots\save-as-workbook-dialog-tour\freex_save_as_workbook_dialog_opened.png | blocked-blank-wpf-direct-surface-frame-capture | Fix the WPF WorkbookFileDialogSurfacePlanner direct-surface frame render so the 640x420 capture produces nonblank pixels; then replace the promoted PNG. |
 
 ## Paired manifest surfaces
 

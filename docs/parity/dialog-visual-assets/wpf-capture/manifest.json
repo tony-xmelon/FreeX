@@ -527,10 +527,10 @@
                           "captured":  true,
                           "evidenceSource":  "promoted-foreground-tour",
                           "sourcePng":  "screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png",
-                          "recaptureStatus":  "blocked-transparent-direct-parity-capture",
+                          "recaptureStatus":  "blocked-blank-wpf-direct-surface-frame-capture",
                           "expectedWidth":  640,
                           "expectedHeight":  420,
-                          "note":  "Promoted from open-workbook-dialog-tour committed WPF screenshot evidence (screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                          "note":  "Promoted from open-workbook-dialog-tour committed WPF screenshot evidence (screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png) because FreeX.App.Host --parity-capture WorkbookFileDialogSurfacePlanner direct-surface frame capture at 640x420 is still rejected by the nonblank PNG guard"
                        },
                      {
                          "id":  "dialog.ProtectWorkbook",
@@ -553,10 +553,10 @@
                           "captured":  true,
                           "evidenceSource":  "promoted-foreground-tour",
                           "sourcePng":  "screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png",
-                          "recaptureStatus":  "blocked-transparent-direct-parity-capture",
+                          "recaptureStatus":  "blocked-blank-wpf-direct-surface-frame-capture",
                           "expectedWidth":  640,
                           "expectedHeight":  420,
-                          "note":  "Promoted from save-as-workbook-dialog-tour committed WPF screenshot evidence (screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                          "note":  "Promoted from save-as-workbook-dialog-tour committed WPF screenshot evidence (screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png) because FreeX.App.Host --parity-capture WorkbookFileDialogSurfacePlanner direct-surface frame capture at 640x420 is still rejected by the nonblank PNG guard"
                        },
                      {
                          "id":  "dialog.ScenarioManager",
