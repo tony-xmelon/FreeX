@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 100 | 92 | 0 | 8 | 8 | 0 | 0 | 0 | 92 | 0 | 0 | 8 | 0 |
+| 102 | 94 | 0 | 8 | 8 | 0 | 0 | 0 | 94 | 0 | 0 | 8 | 0 |
 
 ## Matrix
 
@@ -112,5 +112,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.transition.zoom` | Zoom | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.underline` | Underline | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.undo` | Undo | No | Yes | WPF | platform-only | - | home/edit (RibbonButton) | Avalonia shell or backed profile command exposed by its generated profile. |
+| `freep.view.fit-to-window` | Fit to Window | Yes | Yes | none | shared | view/zoom (RibbonButton) | view/zoom (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.show.gridlines` | Gridlines | Yes | Yes | none | shared | view/show (RibbonToggleButton) | view/show (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.show.guides` | Guides | Yes | Yes | none | shared | view/show (RibbonToggleButton) | view/show (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.view.zoom` | Zoom... | Yes | Yes | none | shared | view/zoom (RibbonButton) | view/zoom (RibbonButton) | Available in both generated FreeP ribbon profiles. |
