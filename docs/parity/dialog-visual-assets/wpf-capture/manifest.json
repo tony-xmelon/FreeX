@@ -101,6 +101,27 @@
                          "note":  ""
                      },
                      {
+                         "id":  "dialog.FindReplace",
+                         "kind":  "dialog",
+                         "png":  "dialog.FindReplace.png",
+                         "captured":  true,
+                         "note":  "Captured from FreeX.App.Host --parity-capture Find/Replace default tab surface"
+                     },
+                     {
+                         "id":  "dialog.FindReplace.Find",
+                         "kind":  "dialog",
+                         "png":  "dialog.FindReplace.Find.png",
+                         "captured":  true,
+                         "note":  "Captured from FreeX.App.Host --parity-capture Find/Replace Find tab surface"
+                     },
+                     {
+                         "id":  "dialog.FindReplace.Replace",
+                         "kind":  "dialog",
+                         "png":  "dialog.FindReplace.Replace.png",
+                         "captured":  true,
+                         "note":  "Captured from FreeX.App.Host --parity-capture Find/Replace Replace tab surface"
+                     },
+                     {
                          "id":  "dialog.PageSetup",
                          "kind":  "dialog",
                          "png":  "dialog.PageSetup.png",
