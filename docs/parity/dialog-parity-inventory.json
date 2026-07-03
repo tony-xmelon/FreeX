@@ -703,6 +703,7 @@
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotFieldItemsReader.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotSlicerTimelineDialogContract.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineHitDateResolver.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineInteractionPlanner.cs",
@@ -729,6 +730,7 @@
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotFieldItemsReader.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotSlicerTimelineDialogContract.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineHitDateResolver.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineInteractionPlanner.cs",
