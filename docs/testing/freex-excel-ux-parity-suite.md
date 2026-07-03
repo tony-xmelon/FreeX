@@ -68,6 +68,9 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenar
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenarioBatch.ps1 -Suite formula -MinimizeForeignForeground
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenarioBatch.ps1 -Suite filtering -MinimizeForeignForeground
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenarioBatch.ps1 -Suite grid -MinimizeForeignForeground
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenarioBatch.ps1 -Suite native-output -ListScenarios
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenarioBatch.ps1 -Suite native-output -AssertScenarioCoverage
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-UxParityScenarioBatch.ps1 -Suite native-output -MinimizeForeignForeground
 ```
 
 The batch runner uses `tools/FreeX.ForegroundCapture` to run matching Excel and FreeX scenarios, stores per-subject manifests/screenshots under `tools/ux-parity-runs/<timestamp>/foreground-captures/`, writes `ux-scenario-batch.json` with pair status and the next review action, and generates `ux-scenario-report.html` plus `ux-scenario-contact-sheet.png` for side-by-side visual review.
@@ -82,6 +85,7 @@ Suites:
 - `formula`: Excel and FreeX formula bar/name box reference with the same selected formula cell and validated FreeX UIA readback.
 - `filtering`: Excel and FreeX AutoFilter opened-state reference with the same A1:D6 seeded range; FreeX seeds the range through foreground paste, toggles AutoFilter with `Ctrl+Shift+L`, opens the score-column dropdown with `Alt+Down`, and validates the Text Filters checklist surface before capture.
 - `grid`: FreeX-only foreground capture for grid pointer mechanics: row/column resize and wheel scrolling. This suite is intentionally runnable when Excel COM is unavailable; it produces FreeX workflow evidence and should be paired with Excel reference captures later on a COM-capable desktop before final parity closeout. Drag selection, autofill handle drag, and double-click autofit remain individual foreground scenarios pending screenshot-capture hardening before joining the default grid suite.
+- `native-output`: guarded native Open/Save references plus FreeX WPF Save As invalid path, export cancel/overwrite/XPS, and native PrintDialog proof. Use `-ListScenarios` to emit the JSON evidence contract without building or launching foreground capture, and `-AssertScenarioCoverage` to verify the native-output catalog still declares required artifacts and explicit pending Avalonia baselines before spending an interactive desktop slot.
 - `all`: all currently paired foreground scenarios.
 
 ## Current Evidence
@@ -122,6 +126,7 @@ The current actionable harness gaps are:
 - Triage the `formula` contact-sheet findings before closing the formula bar/name box surface: both apps now have paired B4/formula-bar visual proof, while expand/collapse, `fx` Insert Function, edit commit/cancel, reference highlighting, and invalid formula handling still need paired foreground coverage.
 - Run the `filtering` suite as the next AutoFilter foreground-evidence checkpoint. It pairs the existing Excel AutoFilter opened-state scenario with the new FreeX `freex-autofilter` counterpart so filter flyouts can produce side-by-side screenshots and manifests instead of remaining only a backlog row.
 - Run the `grid` suite as the next COM-independent foreground-evidence checkpoint. It exposes the reliable FreeX row/column resize and wheel-scroll validations through the batch manifest/contact-sheet flow so grid mechanics evidence can be collected even when Microsoft Excel automation is blocked.
+- Before rerunning `native-output`, run `tools\Run-UxParityScenarioBatch.ps1 -Suite native-output -ListScenarios` and `-AssertScenarioCoverage` to confirm the seven native-output rows still have declared artifact expectations and visible pending Avalonia foreground-baseline debt. The foreground run remains necessary for actual screenshots/manifests.
 - Continue hardening foreground ownership reacquisition while expanding beyond `core`; repeated desktop-driven scenarios can still produce transient foreground failures on this machine.
 - Continue using `ux-scenario-contact-sheet.png` as the first-pass visual review artifact for paired scenario batches.
 
