@@ -25,13 +25,13 @@ Sources:
 
 | Metric | Count |
 | --- | ---: |
-| WPF captured manifest surfaces with committed PNGs | 56 |
+| WPF captured manifest surfaces with committed PNGs | 60 |
 | Avalonia captured manifest surfaces with committed PNGs | 93 |
-| Paired captured surface ids | 56 |
+| Paired captured surface ids | 60 |
 | WPF manifest ids without Avalonia pair | 0 |
-| Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 37 |
+| Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 33 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches | 36 |
+| Paired dimension mismatches | 40 |
 
 ## Top paired visual outliers
 
@@ -39,16 +39,16 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF size | Avalonia size | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| dialog.AutoFilter | 468x655 | 312x323 | 0.923 | 0.050 | 0.014 | 0.019 |
+| dialog.ChangeChartType | 960x585 | 624x381 | 0.891 | 0.096 | 0.043 | 0.054 |
 | dialog.GoalSeekStatus | 380x219 | 380x190 | 0.872 | 0.268 | 0.220 | 0.252 |
+| dialog.AllowEditRanges | 645x540 | 430x360 | 0.853 | 0.039 | 0.002 | 0.145 |
 | dialog.FormatCells.Alignment | 620x540 | 690x660 | 0.768 | 0.134 | 0.110 | 0.188 |
 | dialog.FormatCells.Fill | 620x598 | 690x660 | 0.762 | 0.133 | 0.135 | 0.277 |
 | dialog.AddWatch | 540x255 | 360x170 | 0.754 | 0.054 | 0.000 | 0.033 |
 | dialog.FormatCells.Border | 620x540 | 690x660 | 0.754 | 0.162 | 0.115 | 0.142 |
 | dialog.About | 840x630 | 560x420 | 0.751 | 0.055 | 0.009 | 0.020 |
 | dialog.FormatCells.Font | 620x540 | 690x660 | 0.733 | 0.144 | 0.110 | 0.144 |
-| dialog.GoalSeek | 380x210 | 380x210 | 0.725 | 0.258 | 0.220 | 0.247 |
-| dialog.AdvancedFilter | 630x510 | 420x340 | 0.723 | 0.032 | 0.004 | 0.021 |
-| dialog.ExportOptions | 645x813 | 430x552 | 0.723 | 0.039 | 0.003 | 0.027 |
 
 ## Paired manifest surfaces
 
@@ -58,7 +58,11 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.AccessibilityChecker | dialog.AccessibilityChecker.png | 780x540 | True | dialog.AccessibilityChecker.png | 360x520 | True | 0.666 |
 | dialog.AddWatch | dialog.AddWatch.png | 540x255 | True | dialog.AddWatch.png | 360x170 | True | 0.754 |
 | dialog.AdvancedFilter | dialog.AdvancedFilter.png | 630x510 | True | dialog.AdvancedFilter.png | 420x340 | True | 0.723 |
+| dialog.AllowEditRanges | dialog.AllowEditRanges.png | 645x540 | True | dialog.AllowEditRanges.png | 430x360 | True | 0.853 |
+| dialog.AutoFilter | dialog.AutoFilter.png | 468x655 | True | dialog.AutoFilter.png | 312x323 | True | 0.923 |
+| dialog.ChangeChartType | dialog.ChangeChartType.png | 960x585 | True | dialog.ChangeChartType.png | 624x381 | True | 0.891 |
 | dialog.ConditionalFormatNewRule | dialog.ConditionalFormatNewRule.png | 634x334 | True | dialog.ConditionalFormatNewRule.png | 640x380 | True | 0.336 |
+| dialog.Consolidate | dialog.Consolidate.png | 570x630 | True | dialog.Consolidate.png | 420x450 | True | 0.675 |
 | dialog.ExportOptions | dialog.ExportOptions.png | 645x813 | True | dialog.ExportOptions.png | 430x552 | True | 0.723 |
 | dialog.FindReplace | dialog.FindReplace.png | 720x430 | True | dialog.FindReplace.png | 720x440 | True | 0.418 |
 | dialog.FindReplace.Find | dialog.FindReplace.Find.png | 720x430 | True | dialog.FindReplace.Find.png | 720x440 | True | 0.418 |
@@ -113,15 +117,11 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 ## Avalonia-Manifest-Only Screenshot Surfaces
 
-Avalonia has 37 committed PNG manifest surface ids across 37 dialog route families with no exact WPF manifest PNG id pair. This describes screenshot evidence coverage, not whether a WPF dialog implementation exists.
+Avalonia has 33 committed PNG manifest surface ids across 33 dialog route families with no exact WPF manifest PNG id pair. This describes screenshot evidence coverage, not whether a WPF dialog implementation exists.
 
 | Route family | Count | Additional surface ids |
 | --- | ---: | --- |
-| dialog.AllowEditRanges | 1 | dialog.AllowEditRanges |
-| dialog.AutoFilter | 1 | dialog.AutoFilter |
-| dialog.ChangeChartType | 1 | dialog.ChangeChartType |
 | dialog.ConditionalFormatManage | 1 | dialog.ConditionalFormatManage |
-| dialog.Consolidate | 1 | dialog.Consolidate |
 | dialog.CreateTable | 1 | dialog.CreateTable |
 | dialog.CustomViews | 1 | dialog.CustomViews |
 | dialog.DataTable | 1 | dialog.DataTable |
@@ -159,11 +159,7 @@ Avalonia has 37 committed PNG manifest surface ids across 37 dialog route famili
 
 | Surface id | PNG | Size | Nonblank | Distinct colors | Non-bg ratio |
 | --- | --- | ---: | --- | ---: | ---: |
-| dialog.AllowEditRanges | dialog.AllowEditRanges.png | 430x360 | True | 627 | 0.095 |
-| dialog.AutoFilter | dialog.AutoFilter.png | 312x323 | True | 149 | 0.128 |
-| dialog.ChangeChartType | dialog.ChangeChartType.png | 624x381 | True | 1310 | 0.126 |
 | dialog.ConditionalFormatManage | dialog.ConditionalFormatManage.png | 560x420 | True | 802 | 0.146 |
-| dialog.Consolidate | dialog.Consolidate.png | 420x450 | True | 385 | 0.048 |
 | dialog.CreateTable | dialog.CreateTable.png | 360x190 | True | 151 | 0.068 |
 | dialog.CustomViews | dialog.CustomViews.png | 640x360 | True | 320 | 0.149 |
 | dialog.DataTable | dialog.DataTable.png | 380x260 | True | 136 | 0.051 |
