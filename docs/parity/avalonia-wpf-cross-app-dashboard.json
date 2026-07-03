@@ -69,15 +69,15 @@
                  {
                      "app":  "FreeP",
                      "commandInventory":  {
-                                              "totalCommands":  93,
+                                              "totalCommands":  95,
                                               "bothProfiles":  87,
                                               "wpfOnly":  0,
-                                              "avaloniaOnly":  6,
+                                              "avaloniaOnly":  8,
                                               "actionableMissingWpf":  0,
                                               "actionableMissingAvalonia":  0,
                                               "avaloniaGaps":  0,
                                               "knownDeferred":  0,
-                                              "platformOnly":  6,
+                                              "platformOnly":  8,
                                               "commandIdAliases":  0
                                           },
                      "nextSlice":  "Layout picker, table picker, slide-pane reorder, and the bottom New Slide affordance now have WPF/Avalonia evidence. Continue workflow-depth slices in notes-page preview/rendering, rich inline table/text editing, modern comments/review, and presenter recording/ink execution."

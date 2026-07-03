@@ -18,7 +18,7 @@
                     "wpfManifestIdsWithoutAvaloniaPair":  0,
                     "additionalAvaloniaCapturedSurfaceIds":  73,
                     "nonBlankPngFailures":  0,
-                    "pairedDimensionMismatches":  15
+                    "pairedDimensionMismatches":  14
                 },
     "pairedSurfaces":  [
                            {
@@ -748,15 +748,15 @@
                                "routeFamily":  "dialog.PrintPreview",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PrintPreview.png",
-                                           "fileBytes":  45429,
-                                           "width":  1104,
-                                           "height":  661,
-                                           "pixels":  729744,
-                                           "distinctColors":  1045,
-                                           "opaqueRatio":  1,
-                                           "nonBackgroundRatio":  0.326414,
+                                           "fileBytes":  58299,
+                                           "width":  1120,
+                                           "height":  700,
+                                           "pixels":  784000,
+                                           "distinctColors":  1100,
+                                           "opaqueRatio":  0.930796,
+                                           "nonBackgroundRatio":  0.373029,
                                            "isNonBlank":  true,
-                                           "meanLuma":  245.866011
+                                           "meanLuma":  228.847886
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PrintPreview.png",
@@ -771,24 +771,24 @@
                                                 "meanLuma":  233.170709
                                             },
                                "comparison":  {
-                                                  "dimensionMatch":  false,
-                                                  "widthDelta":  16,
-                                                  "heightDelta":  39,
-                                                  "dimensionDeltaRatio":  0.073494,
-                                                  "sampleMeanDelta":  0.085824,
-                                                  "lumaDelta":  0.049785,
-                                                  "nonBackgroundDelta":  0.399939,
-                                                  "triageScore":  0.609042
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0,
+                                                  "heightDelta":  0,
+                                                  "dimensionDeltaRatio":  0,
+                                                  "sampleMeanDelta":  0.141411,
+                                                  "lumaDelta":  0.016952,
+                                                  "nonBackgroundDelta":  0.353324,
+                                                  "triageScore":  0.511687
                                               }
                            }
                        ],
     "topPairedOutliers":  [
                               {
                                   "id":  "dialog.PrintPreview",
-                                  "triageScore":  0.609042,
-                                  "sampleMeanDelta":  0.085824,
-                                  "dimension":  "1104x661 vs 1120x700",
-                                  "nonBackgroundDelta":  0.399939
+                                  "triageScore":  0.511687,
+                                  "sampleMeanDelta":  0.141411,
+                                  "dimension":  "1120x700 vs 1120x700",
+                                  "nonBackgroundDelta":  0.353324
                               },
                               {
                                   "id":  "dialog.Options.Formulas",
