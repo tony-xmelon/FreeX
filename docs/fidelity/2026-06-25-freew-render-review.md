@@ -107,10 +107,10 @@
 | In-text citation text | PASS | `(Smith, John, 2020)` and `(Jones, Alice, 2022)` rendered inline as plain text |
 | "References" heading | PASS | Blue styled heading renders |
 | Bibliography entries | PASS | Both entries render with correct author, year, title, journal data in APA format |
-| Citation formatting style | MINOR | APA renders author full-name rather than surname-only: `(Smith, John, 2020)` vs Word's `(Smith, 2020)` |
+| Citation formatting style | RESOLVED 2026-07-03 | Original review found APA full-name output `(Smith, John, 2020)` vs Word's `(Smith, 2020)`; shared `Citations.FormatInText` now renders clear personal authors by family name. |
 
 **Issues:**
-- **[MINOR] M2** — `citation-bibliography`: APA in-text citation includes full author name `Smith, John` rather than surname only `Smith`. Suspected location: `FreeW.Core.Model/Citations.cs`, `FormatInText(Source, CitationStyle)` — author string is used verbatim without extracting the surname. **VS-WORD: yes** — Word's APA style uses surname only for in-text citations.
+- **[RESOLVED 2026-07-03] M2** — `citation-bibliography`: APA in-text citation originally included full author name `Smith, John` rather than surname only `Smith`. Resolved by `ed973aa4` / merge `419eeb8ea`: shared `FreeW.Core.Model.Citations.FormatInText` now renders clear personal authors by family name for in-text citations while preserving corporate or ambiguous author strings. **VS-WORD: yes** — Word's APA style uses surname only for in-text citations.
 
 ---
 
@@ -200,7 +200,7 @@
 | 4 | B3 | BLOCKER | Endnotes | Endnote content not appended at document end; reference superscripts present in body | 5 |
 | 5 | MA1 | MAJOR | Tracked change balloons | No right-margin balloons; inline ins/del markup renders correctly (underline/strikethrough) but no author/date balloon | 9, 11 |
 | 6 | M1 | MINOR | TOC dot leaders | No dot leaders between TOC entry text and page number; tab is plain, not right-aligned with period leader | 6 |
-| 7 | M2 | MINOR | APA citation format | Full author name used inline rather than surname only `(Smith, John, 2020)` vs `(Smith, 2020)` | 7 |
+| 7 | M2 | RESOLVED 2026-07-03 | APA citation format | Shared in-text formatter now uses family-name display for clear personal authors; original review showed full author name inline `(Smith, John, 2020)` vs `(Smith, 2020)` | 7 |
 | 8 | M3 | MINOR | Tracked change colour-per-author | All revision markup is same red colour; no per-author colour differentiation | 9, 11 |
 
 ---
