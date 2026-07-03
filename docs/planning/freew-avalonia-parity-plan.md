@@ -122,6 +122,8 @@ Status 2026-07-03: Print pane capability/status is now shared through `Backstage
 
 Status 2026-07-03: Backstage print evidence contracts are hardened on `origin/main` (`1d6df5241`, worker `8a13d769f`). The evidence checks now assert the shared direct-print capability/status contract and the honest Avalonia fallback shape, so future Backstage print changes should update that contract rather than reintroducing host-local status drift.
 
+Status 2026-07-03: Backstage print/export visual evidence now requires real capture-source metadata in the normalized summary path. `FreeW.VisualEvidenceSummary` rejects metadata-only Backstage rows even when the PNG file exists: WPF Backstage rows must declare either the composite renderer or the explicit software renderer capture source, Avalonia Backstage rows must declare the Avalonia render-target capture source, and placeholder/fallback capture metadata remains a failed row that removes the page from trusted pair coverage. This keeps the dashboard claim honest: missing real captures fail the summary instead of being inferred from manifest shape alone.
+
 ### 4. References, Source Management, and Table of Authorities
 
 Close the references family by separating semantic document data from UI:
