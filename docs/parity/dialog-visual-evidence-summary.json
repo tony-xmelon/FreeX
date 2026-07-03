@@ -18,9 +18,9 @@
                     "wpfManifestIdsWithoutAvaloniaPair":  0,
                     "additionalAvaloniaCapturedSurfaceIds":  0,
                     "nonBlankPngFailures":  0,
-                    "pairedDimensionMismatches":  73,
-                    "pairedExpectedSizeMismatches":  2,
-                    "stalePromotedExpectedSizeEvidence":  2
+                    "pairedDimensionMismatches":  71,
+                    "pairedExpectedSizeMismatches":  0,
+                    "stalePromotedExpectedSizeEvidence":  0
                 },
     "pairedSurfaces":  [
                            {
@@ -1656,21 +1656,15 @@
                                "routeFamily":  "dialog.OpenWorkbook",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.OpenWorkbook.png",
-                                           "fileBytes":  85801,
-                                           "width":  1280,
-                                           "height":  800,
-                                           "pixels":  1024000,
-                                           "distinctColors":  2770,
+                                           "fileBytes":  12412,
+                                           "width":  640,
+                                           "height":  420,
+                                           "pixels":  268800,
+                                           "distinctColors":  136,
                                            "opaqueRatio":  1,
-                                           "nonBackgroundRatio":  0.998011,
+                                           "nonBackgroundRatio":  0.222827,
                                            "isNonBlank":  true,
-                                           "meanLuma":  243.000472,
-                                           "manifestNote":  "Promoted from open-workbook-dialog-tour committed WPF screenshot evidence (screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png) because FreeX.App.Host --parity-capture WorkbookFileDialogSurfacePlanner direct-surface frame capture at 640x420 is still rejected by the nonblank PNG guard",
-                                           "evidenceSource":  "promoted-foreground-tour",
-                                           "sourcePng":  "screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png",
-                                           "recaptureStatus":  "blocked-blank-wpf-direct-surface-frame-capture",
-                                           "expectedWidth":  640,
-                                           "expectedHeight":  420
+                                           "meanLuma":  249.325358
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.OpenWorkbook.png",
@@ -1685,19 +1679,19 @@
                                                 "meanLuma":  248.882387
                                             },
                                "comparison":  {
-                                                  "dimensionMatch":  false,
-                                                  "widthDelta":  640,
-                                                  "heightDelta":  380,
-                                                  "dimensionDeltaRatio":  0.975,
-                                                  "sampleMeanDelta":  0.08606,
-                                                  "lumaDelta":  0.023066,
-                                                  "nonBackgroundDelta":  0.779238,
-                                                  "triageScore":  1.863365,
-                                                  "expectedSizeMismatch":  true,
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0,
+                                                  "heightDelta":  0,
+                                                  "dimensionDeltaRatio":  0,
+                                                  "sampleMeanDelta":  0.027923,
+                                                  "lumaDelta":  0.001737,
+                                                  "nonBackgroundDelta":  0.004055,
+                                                  "triageScore":  0.033715,
+                                                  "expectedSizeMismatch":  false,
                                                   "expectedWidth":  640,
                                                   "expectedHeight":  420,
                                                   "expectedSizeSource":  "WorkbookFileDialogSurfacePlanner.Width/Height",
-                                                  "wpfExpectedSizeMatch":  false,
+                                                  "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true
                                               }
                            },
@@ -3422,21 +3416,15 @@
                                "routeFamily":  "dialog.SaveAsWorkbook",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SaveAsWorkbook.png",
-                                           "fileBytes":  72707,
-                                           "width":  1280,
-                                           "height":  800,
-                                           "pixels":  1024000,
-                                           "distinctColors":  2712,
+                                           "fileBytes":  12399,
+                                           "width":  640,
+                                           "height":  420,
+                                           "pixels":  268800,
+                                           "distinctColors":  122,
                                            "opaqueRatio":  1,
-                                           "nonBackgroundRatio":  0.99836,
+                                           "nonBackgroundRatio":  0.224338,
                                            "isNonBlank":  true,
-                                           "meanLuma":  243.078979,
-                                           "manifestNote":  "Promoted from save-as-workbook-dialog-tour committed WPF screenshot evidence (screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png) because FreeX.App.Host --parity-capture WorkbookFileDialogSurfacePlanner direct-surface frame capture at 640x420 is still rejected by the nonblank PNG guard",
-                                           "evidenceSource":  "promoted-foreground-tour",
-                                           "sourcePng":  "screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png",
-                                           "recaptureStatus":  "blocked-blank-wpf-direct-surface-frame-capture",
-                                           "expectedWidth":  640,
-                                           "expectedHeight":  420
+                                           "meanLuma":  249.396061
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.SaveAsWorkbook.png",
@@ -3451,19 +3439,19 @@
                                                 "meanLuma":  249.045976
                                             },
                                "comparison":  {
-                                                  "dimensionMatch":  false,
-                                                  "widthDelta":  640,
-                                                  "heightDelta":  380,
-                                                  "dimensionDeltaRatio":  0.975,
-                                                  "sampleMeanDelta":  0.08935,
-                                                  "lumaDelta":  0.0234,
-                                                  "nonBackgroundDelta":  0.781091,
-                                                  "triageScore":  1.868841,
-                                                  "expectedSizeMismatch":  true,
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0,
+                                                  "heightDelta":  0,
+                                                  "dimensionDeltaRatio":  0,
+                                                  "sampleMeanDelta":  0.02761,
+                                                  "lumaDelta":  0.001373,
+                                                  "nonBackgroundDelta":  0.007068,
+                                                  "triageScore":  0.036051,
+                                                  "expectedSizeMismatch":  false,
                                                   "expectedWidth":  640,
                                                   "expectedHeight":  420,
                                                   "expectedSizeSource":  "WorkbookFileDialogSurfacePlanner.Width/Height",
-                                                  "wpfExpectedSizeMatch":  false,
+                                                  "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true
                                               }
                            },
@@ -4130,20 +4118,6 @@
                        ],
     "topPairedOutliers":  [
                               {
-                                  "id":  "dialog.SaveAsWorkbook",
-                                  "triageScore":  1.868841,
-                                  "sampleMeanDelta":  0.08935,
-                                  "dimension":  "1280x800 vs 640x420",
-                                  "nonBackgroundDelta":  0.781091
-                              },
-                              {
-                                  "id":  "dialog.OpenWorkbook",
-                                  "triageScore":  1.863365,
-                                  "sampleMeanDelta":  0.08606,
-                                  "dimension":  "1280x800 vs 640x420",
-                                  "nonBackgroundDelta":  0.779238
-                              },
-                              {
                                   "id":  "dialog.SelectDataSource",
                                   "triageScore":  0.988344,
                                   "sampleMeanDelta":  0.108816,
@@ -4198,6 +4172,20 @@
                                   "sampleMeanDelta":  0.268013,
                                   "dimension":  "380x219 vs 380x190",
                                   "nonBackgroundDelta":  0.251798
+                              },
+                              {
+                                  "id":  "dialog.AllowEditRanges",
+                                  "triageScore":  0.853141,
+                                  "sampleMeanDelta":  0.039337,
+                                  "dimension":  "645x540 vs 430x360",
+                                  "nonBackgroundDelta":  0.145119
+                              },
+                              {
+                                  "id":  "dialog.InsertTimeline",
+                                  "triageScore":  0.835388,
+                                  "sampleMeanDelta":  0.038296,
+                                  "dimension":  "615x405 vs 410x225",
+                                  "nonBackgroundDelta":  0.012526
                               }
                           ],
     "additionalAvaloniaSurfacesNeedingWpfPair":  [

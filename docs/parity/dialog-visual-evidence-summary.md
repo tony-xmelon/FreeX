@@ -31,9 +31,9 @@ Sources:
 | WPF manifest ids without Avalonia pair | 0 |
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches | 73 |
-| Paired expected-size evidence mismatches | 2 |
-| Stale promoted expected-size evidence | 2 |
+| Paired dimension mismatches | 71 |
+| Paired expected-size evidence mismatches | 0 |
+| Stale promoted expected-size evidence | 0 |
 
 ## Top paired visual outliers
 
@@ -41,8 +41,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF size | Avalonia size | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | ---: | ---: | ---: | ---: |
-| dialog.SaveAsWorkbook | 1280x800 | 640x420 | Expected 640x420 via WorkbookFileDialogSurfacePlanner.Width/Height | 1.869 | 0.089 | 0.023 | 0.781 |
-| dialog.OpenWorkbook | 1280x800 | 640x420 | Expected 640x420 via WorkbookFileDialogSurfacePlanner.Width/Height | 1.863 | 0.086 | 0.023 | 0.779 |
 | dialog.SelectDataSource | 930x750 | 468x499 |  | 0.988 | 0.109 | 0.046 | 0.002 |
 | dialog.Sparkline | 570x360 | 372x230 |  | 0.952 | 0.055 | 0.018 | 0.171 |
 | dialog.AutoFilter | 468x655 | 312x323 |  | 0.923 | 0.050 | 0.014 | 0.019 |
@@ -51,6 +49,8 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.ChangeChartType | 960x585 | 624x381 |  | 0.891 | 0.096 | 0.043 | 0.054 |
 | dialog.ShapeEffects | 570x285 | 380x190 |  | 0.882 | 0.031 | 0.021 | 0.163 |
 | dialog.GoalSeekStatus | 380x219 | 380x190 |  | 0.872 | 0.268 | 0.220 | 0.252 |
+| dialog.AllowEditRanges | 645x540 | 430x360 |  | 0.853 | 0.039 | 0.002 | 0.145 |
+| dialog.InsertTimeline | 615x405 | 410x225 |  | 0.835 | 0.038 | 0.007 | 0.013 |
 
 ## Expected-Size Evidence Mismatches
 
@@ -58,17 +58,6 @@ These rows have a checked-in PNG size that disagrees with the dialog planner's e
 
 | Surface id | Expected size | Source | WPF size | WPF matches | Avalonia size | Avalonia matches |
 | --- | ---: | --- | ---: | --- | ---: | --- |
-| dialog.OpenWorkbook | 640x420 | WorkbookFileDialogSurfacePlanner.Width/Height | 1280x800 | False | 640x420 | True |
-| dialog.SaveAsWorkbook | 640x420 | WorkbookFileDialogSurfacePlanner.Width/Height | 1280x800 | False | 640x420 | True |
-
-## Stale Promoted Expected-Size Evidence
-
-These expected-size mismatches are known promoted fallback screenshots, not direct same-harness parity captures. Recapture or replace only with a nonblank WPF parity-capture PNG at the planner size; do not compare their raw dimension delta as product layout evidence.
-
-| Surface id | Stale shell | Current PNG size | Expected size | Promoted source PNG | Recapture status | Next action |
-| --- | --- | ---: | ---: | --- | --- | --- |
-| dialog.OpenWorkbook | WPF | 1280x800 | 640x420 | screenshots\open-workbook-dialog-tour\freex_open_workbook_dialog_opened.png | blocked-blank-wpf-direct-surface-frame-capture | Fix the WPF WorkbookFileDialogSurfacePlanner direct-surface frame render so the 640x420 capture produces nonblank pixels; then replace the promoted PNG. |
-| dialog.SaveAsWorkbook | WPF | 1280x800 | 640x420 | screenshots\save-as-workbook-dialog-tour\freex_save_as_workbook_dialog_opened.png | blocked-blank-wpf-direct-surface-frame-capture | Fix the WPF WorkbookFileDialogSurfacePlanner direct-surface frame render so the 640x420 capture produces nonblank pixels; then replace the promoted PNG. |
 
 ## Paired manifest surfaces
 
@@ -111,7 +100,7 @@ These expected-size mismatches are known promoted fallback screenshots, not dire
 | dialog.InsertSlicer | dialog.InsertSlicer.png | 615x405 | True | dialog.InsertSlicer.png | 410x233 | True | 0.905 |
 | dialog.InsertTimeline | dialog.InsertTimeline.png | 615x405 | True | dialog.InsertTimeline.png | 410x225 | True | 0.835 |
 | dialog.LegalNotices | dialog.LegalNotices.png | 1260x930 | True | dialog.LegalNotices.png | 840x620 | True | 0.696 |
-| dialog.OpenWorkbook | dialog.OpenWorkbook.png | 1280x800 | True | dialog.OpenWorkbook.png | 640x420 | True | 1.863 |
+| dialog.OpenWorkbook | dialog.OpenWorkbook.png | 640x420 | True | dialog.OpenWorkbook.png | 640x420 | True | 0.034 |
 | dialog.Options | dialog.Options.png | 744x521 | True | dialog.Options.png | 760x560 | True | 0.219 |
 | dialog.Options.AddIns | dialog.Options.AddIns.png | 744x521 | True | dialog.Options.AddIns.png | 760x560 | True | 0.201 |
 | dialog.Options.Advanced | dialog.Options.Advanced.png | 744x521 | True | dialog.Options.Advanced.png | 760x560 | True | 0.223 |
@@ -151,7 +140,7 @@ These expected-size mismatches are known promoted fallback screenshots, not dire
 | dialog.RecommendedPivotTables | dialog.RecommendedPivotTables.png | 840x510 | True | dialog.RecommendedPivotTables.png | 560x340 | True | 0.710 |
 | dialog.RemoveDuplicates | dialog.RemoveDuplicates.png | 360x360 | True | dialog.RemoveDuplicates.png | 360x360 | True | 0.515 |
 | dialog.RenameSheet | dialog.RenameSheet.png | 510x225 | True | dialog.RenameSheet.png | 380x190 | True | 0.467 |
-| dialog.SaveAsWorkbook | dialog.SaveAsWorkbook.png | 1280x800 | True | dialog.SaveAsWorkbook.png | 640x420 | True | 1.869 |
+| dialog.SaveAsWorkbook | dialog.SaveAsWorkbook.png | 640x420 | True | dialog.SaveAsWorkbook.png | 640x420 | True | 0.036 |
 | dialog.ScenarioManager | dialog.ScenarioManager.png | 540x630 | True | dialog.ScenarioManager.png | 500x740 | True | 0.397 |
 | dialog.SelectDataSource | dialog.SelectDataSource.png | 930x750 | True | dialog.SelectDataSource.png | 468x499 | True | 0.988 |
 | dialog.SelectionPane | dialog.SelectionPane.png | 570x540 | True | dialog.SelectionPane.png | 520x440 | True | 0.533 |
