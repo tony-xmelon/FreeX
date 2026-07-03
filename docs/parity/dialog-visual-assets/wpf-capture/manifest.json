@@ -162,6 +162,55 @@
                          "png":  "dialog.PrintPreview.png",
                          "captured":  true,
                          "note":  "Recaptured from FreeX.App.Host --parity-capture dialog.PrintPreview using PrintPreviewDialogPlanner 1120x700 and the parity fixture printer"
+                     },
+                     {
+                         "id":  "dialog.FormatCells",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.png",
+                         "captured":  true,
+                         "note":  "Captured from FreeX.App.Host --parity-capture Format Cells dialog surface"
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Number",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Number.png",
+                         "captured":  true,
+                         "note":  "Captured from FreeX.App.Host --parity-capture Format Cells dialog surface"
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Alignment",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Alignment.png",
+                         "captured":  true,
+                         "note":  "Captured from FreeX.App.Host --parity-capture Format Cells dialog surface"
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Font",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Font.png",
+                         "captured":  true,
+                         "note":  "Captured from FreeX.App.Host --parity-capture Format Cells dialog surface"
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Border",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Border.png",
+                         "captured":  true,
+                         "note":  "Captured from FreeX.App.Host --parity-capture Format Cells dialog surface"
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Fill",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Fill.png",
+                         "captured":  true,
+                         "note":  "Captured from FreeX.App.Host --parity-capture Format Cells dialog surface"
+                     },
+                     {
+                         "id":  "dialog.FormatCells.Protection",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatCells.Protection.png",
+                         "captured":  true,
+                         "note":  "Captured from FreeX.App.Host --parity-capture Format Cells dialog surface"
                      }
                  ]
 }

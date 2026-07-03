@@ -12,13 +12,13 @@
                     "avaloniaCaptureEvidence":  57,
                     "avaloniaHarnessRoutes":  57,
                     "sharedOrPresentationBackedRoutes":  57,
-                    "wpfCapturedManifestSurfaces":  23,
+                    "wpfCapturedManifestSurfaces":  30,
                     "avaloniaCapturedManifestSurfaces":  93,
-                    "pairedCapturedSurfaceIds":  23,
+                    "pairedCapturedSurfaceIds":  30,
                     "wpfManifestIdsWithoutAvaloniaPair":  0,
-                    "additionalAvaloniaCapturedSurfaceIds":  70,
+                    "additionalAvaloniaCapturedSurfaceIds":  63,
                     "nonBlankPngFailures":  0,
-                    "pairedDimensionMismatches":  17
+                    "pairedDimensionMismatches":  24
                 },
     "pairedSurfaces":  [
                            {
@@ -171,6 +171,272 @@
                                                   "lumaDelta":  0.123578,
                                                   "nonBackgroundDelta":  0.184675,
                                                   "triageScore":  0.467144
+                                              }
+                           },
+                           {
+                               "id":  "dialog.FormatCells",
+                               "routeFamily":  "dialog.FormatCells",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FormatCells.png",
+                                           "fileBytes":  16195,
+                                           "width":  620,
+                                           "height":  540,
+                                           "pixels":  334800,
+                                           "distinctColors":  248,
+                                           "opaqueRatio":  0.903835,
+                                           "nonBackgroundRatio":  0.14733,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  225.67505
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.png",
+                                                "fileBytes":  25840,
+                                                "width":  690,
+                                                "height":  660,
+                                                "pixels":  455400,
+                                                "distinctColors":  1353,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.108259,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  248.391555
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  70,
+                                                  "heightDelta":  120,
+                                                  "dimensionDeltaRatio":  0.335125,
+                                                  "sampleMeanDelta":  0.147535,
+                                                  "lumaDelta":  0.089084,
+                                                  "nonBackgroundDelta":  0.039071,
+                                                  "triageScore":  0.610816
+                                              }
+                           },
+                           {
+                               "id":  "dialog.FormatCells.Alignment",
+                               "routeFamily":  "dialog.FormatCells",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FormatCells.Alignment.png",
+                                           "fileBytes":  17165,
+                                           "width":  620,
+                                           "height":  540,
+                                           "pixels":  334800,
+                                           "distinctColors":  257,
+                                           "opaqueRatio":  0.903835,
+                                           "nonBackgroundRatio":  0.223492,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  224.488269
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.Alignment.png",
+                                                "fileBytes":  15277,
+                                                "width":  690,
+                                                "height":  660,
+                                                "pixels":  455400,
+                                                "distinctColors":  733,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.035,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  252.544088
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  70,
+                                                  "heightDelta":  120,
+                                                  "dimensionDeltaRatio":  0.335125,
+                                                  "sampleMeanDelta":  0.134351,
+                                                  "lumaDelta":  0.110023,
+                                                  "nonBackgroundDelta":  0.188492,
+                                                  "triageScore":  0.767991
+                                              }
+                           },
+                           {
+                               "id":  "dialog.FormatCells.Border",
+                               "routeFamily":  "dialog.FormatCells",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FormatCells.Border.png",
+                                           "fileBytes":  19608,
+                                           "width":  620,
+                                           "height":  540,
+                                           "pixels":  334800,
+                                           "distinctColors":  321,
+                                           "opaqueRatio":  0.903835,
+                                           "nonBackgroundRatio":  0.226514,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  218.828172
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.Border.png",
+                                                "fileBytes":  31742,
+                                                "width":  690,
+                                                "height":  660,
+                                                "pixels":  455400,
+                                                "distinctColors":  1249,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.084903,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  248.180185
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  70,
+                                                  "heightDelta":  120,
+                                                  "dimensionDeltaRatio":  0.335125,
+                                                  "sampleMeanDelta":  0.161786,
+                                                  "lumaDelta":  0.115106,
+                                                  "nonBackgroundDelta":  0.141611,
+                                                  "triageScore":  0.753628
+                                              }
+                           },
+                           {
+                               "id":  "dialog.FormatCells.Fill",
+                               "routeFamily":  "dialog.FormatCells",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FormatCells.Fill.png",
+                                           "fileBytes":  27249,
+                                           "width":  620,
+                                           "height":  598,
+                                           "pixels":  370760,
+                                           "distinctColors":  294,
+                                           "opaqueRatio":  0.910659,
+                                           "nonBackgroundRatio":  0.306551,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  218.81713
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.Fill.png",
+                                                "fileBytes":  15200,
+                                                "width":  690,
+                                                "height":  660,
+                                                "pixels":  455400,
+                                                "distinctColors":  779,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.029886,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  253.362472
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  70,
+                                                  "heightDelta":  62,
+                                                  "dimensionDeltaRatio":  0.216582,
+                                                  "sampleMeanDelta":  0.132918,
+                                                  "lumaDelta":  0.135472,
+                                                  "nonBackgroundDelta":  0.276666,
+                                                  "triageScore":  0.761637
+                                              }
+                           },
+                           {
+                               "id":  "dialog.FormatCells.Font",
+                               "routeFamily":  "dialog.FormatCells",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FormatCells.Font.png",
+                                           "fileBytes":  20707,
+                                           "width":  620,
+                                           "height":  540,
+                                           "pixels":  334800,
+                                           "distinctColors":  332,
+                                           "opaqueRatio":  0.903835,
+                                           "nonBackgroundRatio":  0.196126,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  223.610816
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.Font.png",
+                                                "fileBytes":  19304,
+                                                "width":  690,
+                                                "height":  660,
+                                                "pixels":  455400,
+                                                "distinctColors":  867,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.051658,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  251.565804
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  70,
+                                                  "heightDelta":  120,
+                                                  "dimensionDeltaRatio":  0.335125,
+                                                  "sampleMeanDelta":  0.144241,
+                                                  "lumaDelta":  0.109627,
+                                                  "nonBackgroundDelta":  0.144468,
+                                                  "triageScore":  0.733462
+                                              }
+                           },
+                           {
+                               "id":  "dialog.FormatCells.Number",
+                               "routeFamily":  "dialog.FormatCells",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FormatCells.Number.png",
+                                           "fileBytes":  16195,
+                                           "width":  620,
+                                           "height":  540,
+                                           "pixels":  334800,
+                                           "distinctColors":  248,
+                                           "opaqueRatio":  0.903835,
+                                           "nonBackgroundRatio":  0.14733,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  225.67505
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.Number.png",
+                                                "fileBytes":  25840,
+                                                "width":  690,
+                                                "height":  660,
+                                                "pixels":  455400,
+                                                "distinctColors":  1353,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.108259,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  248.391555
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  70,
+                                                  "heightDelta":  120,
+                                                  "dimensionDeltaRatio":  0.335125,
+                                                  "sampleMeanDelta":  0.147535,
+                                                  "lumaDelta":  0.089084,
+                                                  "nonBackgroundDelta":  0.039071,
+                                                  "triageScore":  0.610816
+                                              }
+                           },
+                           {
+                               "id":  "dialog.FormatCells.Protection",
+                               "routeFamily":  "dialog.FormatCells",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FormatCells.Protection.png",
+                                           "fileBytes":  10999,
+                                           "width":  620,
+                                           "height":  540,
+                                           "pixels":  334800,
+                                           "distinctColors":  234,
+                                           "opaqueRatio":  0.903835,
+                                           "nonBackgroundRatio":  0.132981,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  227.942066
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.Protection.png",
+                                                "fileBytes":  13759,
+                                                "width":  690,
+                                                "height":  660,
+                                                "pixels":  455400,
+                                                "distinctColors":  938,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.026493,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  253.566416
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  70,
+                                                  "heightDelta":  120,
+                                                  "dimensionDeltaRatio":  0.335125,
+                                                  "sampleMeanDelta":  0.127353,
+                                                  "lumaDelta":  0.100488,
+                                                  "nonBackgroundDelta":  0.106488,
+                                                  "triageScore":  0.669454
                                               }
                            },
                            {
@@ -898,6 +1164,55 @@
                        ],
     "topPairedOutliers":  [
                               {
+                                  "id":  "dialog.FormatCells.Alignment",
+                                  "triageScore":  0.767991,
+                                  "sampleMeanDelta":  0.134351,
+                                  "dimension":  "620x540 vs 690x660",
+                                  "nonBackgroundDelta":  0.188492
+                              },
+                              {
+                                  "id":  "dialog.FormatCells.Fill",
+                                  "triageScore":  0.761637,
+                                  "sampleMeanDelta":  0.132918,
+                                  "dimension":  "620x598 vs 690x660",
+                                  "nonBackgroundDelta":  0.276666
+                              },
+                              {
+                                  "id":  "dialog.FormatCells.Border",
+                                  "triageScore":  0.753628,
+                                  "sampleMeanDelta":  0.161786,
+                                  "dimension":  "620x540 vs 690x660",
+                                  "nonBackgroundDelta":  0.141611
+                              },
+                              {
+                                  "id":  "dialog.FormatCells.Font",
+                                  "triageScore":  0.733462,
+                                  "sampleMeanDelta":  0.144241,
+                                  "dimension":  "620x540 vs 690x660",
+                                  "nonBackgroundDelta":  0.144468
+                              },
+                              {
+                                  "id":  "dialog.FormatCells.Protection",
+                                  "triageScore":  0.669454,
+                                  "sampleMeanDelta":  0.127353,
+                                  "dimension":  "620x540 vs 690x660",
+                                  "nonBackgroundDelta":  0.106488
+                              },
+                              {
+                                  "id":  "dialog.FormatCells",
+                                  "triageScore":  0.610816,
+                                  "sampleMeanDelta":  0.147535,
+                                  "dimension":  "620x540 vs 690x660",
+                                  "nonBackgroundDelta":  0.039071
+                              },
+                              {
+                                  "id":  "dialog.FormatCells.Number",
+                                  "triageScore":  0.610816,
+                                  "sampleMeanDelta":  0.147535,
+                                  "dimension":  "620x540 vs 690x660",
+                                  "nonBackgroundDelta":  0.039071
+                              },
+                              {
                                   "id":  "dialog.PrintPreview",
                                   "triageScore":  0.511687,
                                   "sampleMeanDelta":  0.141411,
@@ -917,55 +1232,6 @@
                                   "sampleMeanDelta":  0.026343,
                                   "dimension":  "744x777 vs 760x560",
                                   "nonBackgroundDelta":  0.075934
-                              },
-                              {
-                                  "id":  "dialog.FindReplace",
-                                  "triageScore":  0.417804,
-                                  "sampleMeanDelta":  0.131782,
-                                  "dimension":  "720x430 vs 720x440",
-                                  "nonBackgroundDelta":  0.148821
-                              },
-                              {
-                                  "id":  "dialog.FindReplace.Find",
-                                  "triageScore":  0.417804,
-                                  "sampleMeanDelta":  0.131782,
-                                  "dimension":  "720x430 vs 720x440",
-                                  "nonBackgroundDelta":  0.148821
-                              },
-                              {
-                                  "id":  "dialog.ConditionalFormatNewRule",
-                                  "triageScore":  0.335673,
-                                  "sampleMeanDelta":  0.042375,
-                                  "dimension":  "634x334 vs 640x380",
-                                  "nonBackgroundDelta":  0.130767
-                              },
-                              {
-                                  "id":  "dialog.Options.QuickAccessToolbar",
-                                  "triageScore":  0.243432,
-                                  "sampleMeanDelta":  0.023995,
-                                  "dimension":  "744x521 vs 760x560",
-                                  "nonBackgroundDelta":  0.104365
-                              },
-                              {
-                                  "id":  "dialog.Options.Proofing",
-                                  "triageScore":  0.230512,
-                                  "sampleMeanDelta":  0.026847,
-                                  "dimension":  "744x521 vs 760x560",
-                                  "nonBackgroundDelta":  0.094042
-                              },
-                              {
-                                  "id":  "dialog.Options.Advanced",
-                                  "triageScore":  0.222504,
-                                  "sampleMeanDelta":  0.029454,
-                                  "dimension":  "744x521 vs 760x560",
-                                  "nonBackgroundDelta":  0.087315
-                              },
-                              {
-                                  "id":  "dialog.Options",
-                                  "triageScore":  0.218961,
-                                  "sampleMeanDelta":  0.029215,
-                                  "dimension":  "744x521 vs 760x560",
-                                  "nonBackgroundDelta":  0.083575
                               }
                           ],
     "additionalAvaloniaSurfacesNeedingWpfPair":  [
@@ -1239,118 +1505,6 @@
                                                                           "nonBackgroundRatio":  0.062184,
                                                                           "isNonBlank":  true,
                                                                           "meanLuma":  247.55347
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.FormatCells",
-                                                         "routeFamily":  "dialog.FormatCells",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.png",
-                                                                          "fileBytes":  25840,
-                                                                          "width":  690,
-                                                                          "height":  660,
-                                                                          "pixels":  455400,
-                                                                          "distinctColors":  1353,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.108259,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  248.391555
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.FormatCells.Alignment",
-                                                         "routeFamily":  "dialog.FormatCells",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.Alignment.png",
-                                                                          "fileBytes":  15277,
-                                                                          "width":  690,
-                                                                          "height":  660,
-                                                                          "pixels":  455400,
-                                                                          "distinctColors":  733,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.035,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  252.544088
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.FormatCells.Border",
-                                                         "routeFamily":  "dialog.FormatCells",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.Border.png",
-                                                                          "fileBytes":  31742,
-                                                                          "width":  690,
-                                                                          "height":  660,
-                                                                          "pixels":  455400,
-                                                                          "distinctColors":  1249,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.084903,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  248.180185
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.FormatCells.Fill",
-                                                         "routeFamily":  "dialog.FormatCells",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.Fill.png",
-                                                                          "fileBytes":  15200,
-                                                                          "width":  690,
-                                                                          "height":  660,
-                                                                          "pixels":  455400,
-                                                                          "distinctColors":  779,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.029886,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  253.362472
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.FormatCells.Font",
-                                                         "routeFamily":  "dialog.FormatCells",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.Font.png",
-                                                                          "fileBytes":  19304,
-                                                                          "width":  690,
-                                                                          "height":  660,
-                                                                          "pixels":  455400,
-                                                                          "distinctColors":  867,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.051658,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  251.565804
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.FormatCells.Number",
-                                                         "routeFamily":  "dialog.FormatCells",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.Number.png",
-                                                                          "fileBytes":  25840,
-                                                                          "width":  690,
-                                                                          "height":  660,
-                                                                          "pixels":  455400,
-                                                                          "distinctColors":  1353,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.108259,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  248.391555
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.FormatCells.Protection",
-                                                         "routeFamily":  "dialog.FormatCells",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.Protection.png",
-                                                                          "fileBytes":  13759,
-                                                                          "width":  690,
-                                                                          "height":  660,
-                                                                          "pixels":  455400,
-                                                                          "distinctColors":  938,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.026493,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  253.566416
                                                                       }
                                                      },
                                                      {
@@ -2208,19 +2362,6 @@
                                                 "count":  1,
                                                 "ids":  [
                                                             "dialog.ForecastSheet"
-                                                        ]
-                                            },
-                                            {
-                                                "routeFamily":  "dialog.FormatCells",
-                                                "count":  7,
-                                                "ids":  [
-                                                            "dialog.FormatCells",
-                                                            "dialog.FormatCells.Alignment",
-                                                            "dialog.FormatCells.Border",
-                                                            "dialog.FormatCells.Fill",
-                                                            "dialog.FormatCells.Font",
-                                                            "dialog.FormatCells.Number",
-                                                            "dialog.FormatCells.Protection"
                                                         ]
                                             },
                                             {
