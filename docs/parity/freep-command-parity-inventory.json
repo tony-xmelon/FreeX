@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps.",
   "summary": {
-    "totalCommands": 100,
-    "both": 92,
+    "totalCommands": 102,
+    "both": 94,
     "wpfOnly": 0,
     "avaloniaOnly": 8,
     "missingWpf": 8,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 92,
+    "shared": 94,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 8,
@@ -3264,6 +3264,40 @@
       ]
     },
     {
+      "commandId": "freep.view.fit-to-window",
+      "label": "Fit to Window",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "zoom",
+          "group": "Zoom",
+          "label": "Fit to Window",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "zoom",
+          "group": "Zoom",
+          "label": "Fit to Window",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.view.show.gridlines",
       "label": "Gridlines",
       "wpfPresent": true,
@@ -3328,6 +3362,40 @@
           "label": "Guides",
           "controlType": "RibbonToggleButton",
           "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.view.zoom",
+      "label": "Zoom...",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "zoom",
+          "group": "Zoom",
+          "label": "Zoom...",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "zoom",
+          "group": "Zoom",
+          "label": "Zoom...",
+          "controlType": "RibbonButton",
+          "layout": "Large"
         }
       ]
     }
