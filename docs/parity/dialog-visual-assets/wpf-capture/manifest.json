@@ -211,6 +211,55 @@
                          "png":  "dialog.FormatCells.Protection.png",
                          "captured":  true,
                          "note":  "Captured from FreeX.App.Host --parity-capture Format Cells dialog surface"
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.LayoutAndFormat",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.LayoutAndFormat.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.TotalsAndFilters",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.TotalsAndFilters.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.Display",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.Display.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.Printing",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.Printing.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.Data",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.Data.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotTableOptions.AltText",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotTableOptions.AltText.png",
+                         "captured":  true,
+                         "note":  ""
                      }
                  ]
 }
