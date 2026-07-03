@@ -21,13 +21,13 @@
                     "pairedDimensionMismatches":  47,
                     "pairedRawPixelDimensionMismatches":  71,
                     "pairedCaptureScaleNormalizedDimensionMatches":  24,
-                    "pairedExpectedSizeMismatches":  0,
+                    "pairedExpectedSizeMismatches":  3,
                     "stalePromotedExpectedSizeEvidence":  0,
                     "dimensionMismatchBuckets":  {
                                                      "content/visual mismatch":  14,
-                                                     "evidence limitation":  2,
+                                                     "evidence limitation":  5,
                                                      "expected platform/native difference":  19,
-                                                     "real logical-size mismatch":  12
+                                                     "real logical-size mismatch":  9
                                                  }
                 },
     "pairedSurfaces":  [
@@ -2099,15 +2099,15 @@
                                                   "lumaDelta":  0.126896,
                                                   "nonBackgroundDelta":  0.138231,
                                                   "triageScore":  0.635814,
-                                                  "expectedSizeMismatch":  false,
-                                                  "expectedWidth":  null,
-                                                  "expectedHeight":  null,
-                                                  "expectedSizeSource":  null,
+                                                  "expectedSizeMismatch":  true,
+                                                  "expectedWidth":  430,
+                                                  "expectedHeight":  438,
+                                                  "expectedSizeSource":  "GoToSpecialDialogPlanner.Width/Height",
                                                   "wpfExpectedSizeMatch":  true,
-                                                  "avaloniaExpectedSizeMatch":  true,
-                                                  "dimensionMismatchBucket":  "real logical-size mismatch",
-                                                  "dimensionMismatchReason":  "The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption.",
-                                                  "dimensionMismatchNextAction":  "Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract."
+                                                  "avaloniaExpectedSizeMatch":  false,
+                                                  "dimensionMismatchBucket":  "evidence limitation",
+                                                  "dimensionMismatchReason":  "The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence.",
+                                                  "dimensionMismatchNextAction":  "Recapture or replace the stale evidence before treating this as a product layout mismatch."
                                               }
                            },
                            {
@@ -2162,15 +2162,15 @@
                                                   "lumaDelta":  0.008866,
                                                   "nonBackgroundDelta":  0.057026,
                                                   "triageScore":  0.307243,
-                                                  "expectedSizeMismatch":  false,
-                                                  "expectedWidth":  null,
-                                                  "expectedHeight":  null,
-                                                  "expectedSizeSource":  null,
+                                                  "expectedSizeMismatch":  true,
+                                                  "expectedWidth":  560,
+                                                  "expectedHeight":  300,
+                                                  "expectedSizeSource":  "HyperlinkDialogPlanner.Width/Height",
                                                   "wpfExpectedSizeMatch":  true,
-                                                  "avaloniaExpectedSizeMatch":  true,
-                                                  "dimensionMismatchBucket":  "real logical-size mismatch",
-                                                  "dimensionMismatchReason":  "The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption.",
-                                                  "dimensionMismatchNextAction":  "Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract."
+                                                  "avaloniaExpectedSizeMatch":  false,
+                                                  "dimensionMismatchBucket":  "evidence limitation",
+                                                  "dimensionMismatchReason":  "The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence.",
+                                                  "dimensionMismatchNextAction":  "Recapture or replace the stale evidence before treating this as a product layout mismatch."
                                               }
                            },
                            {
@@ -4619,15 +4619,15 @@
                                                   "lumaDelta":  0.004946,
                                                   "nonBackgroundDelta":  0.024625,
                                                   "triageScore":  0.126252,
-                                                  "expectedSizeMismatch":  false,
-                                                  "expectedWidth":  null,
-                                                  "expectedHeight":  null,
-                                                  "expectedSizeSource":  null,
+                                                  "expectedSizeMismatch":  true,
+                                                  "expectedWidth":  430,
+                                                  "expectedHeight":  540,
+                                                  "expectedSizeSource":  "ProtectionDialogPlanner.ProtectSheetWidth/Height",
                                                   "wpfExpectedSizeMatch":  true,
-                                                  "avaloniaExpectedSizeMatch":  true,
-                                                  "dimensionMismatchBucket":  "real logical-size mismatch",
-                                                  "dimensionMismatchReason":  "The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption.",
-                                                  "dimensionMismatchNextAction":  "Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract."
+                                                  "avaloniaExpectedSizeMatch":  false,
+                                                  "dimensionMismatchBucket":  "evidence limitation",
+                                                  "dimensionMismatchReason":  "The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence.",
+                                                  "dimensionMismatchNextAction":  "Recapture or replace the stale evidence before treating this as a product layout mismatch."
                                               }
                            },
                            {
@@ -5988,10 +5988,13 @@
                                             },
                                             {
                                                 "bucket":  "evidence limitation",
-                                                "count":  2,
+                                                "count":  5,
                                                 "topSurfaceIds":  [
                                                                       "dialog.GoalSeekStatus",
-                                                                      "dialog.PivotTableOptions.Display"
+                                                                      "dialog.GoToSpecial",
+                                                                      "dialog.PivotTableOptions.Display",
+                                                                      "dialog.InsertHyperlink",
+                                                                      "dialog.ProtectSheet"
                                                                   ],
                                                 "nextAction":  "Recapture or tighten the WPF status crop before treating the height delta as a product bug."
                                             },
@@ -6009,13 +6012,13 @@
                                             },
                                             {
                                                 "bucket":  "real logical-size mismatch",
-                                                "count":  12,
+                                                "count":  9,
                                                 "topSurfaceIds":  [
-                                                                      "dialog.GoToSpecial",
                                                                       "dialog.Sort",
                                                                       "dialog.PivotTableOptions",
                                                                       "dialog.PivotTableOptions.LayoutAndFormat",
-                                                                      "dialog.WatchWindow"
+                                                                      "dialog.WatchWindow",
+                                                                      "dialog.ShapeGradient"
                                                                   ],
                                                 "nextAction":  "Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract."
                                             }
@@ -6221,9 +6224,9 @@
                                      },
                                      {
                                          "id":  "dialog.GoToSpecial",
-                                         "bucket":  "real logical-size mismatch",
-                                         "reason":  "The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption.",
-                                         "nextAction":  "Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract.",
+                                         "bucket":  "evidence limitation",
+                                         "reason":  "The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence.",
+                                         "nextAction":  "Recapture or replace the stale evidence before treating this as a product layout mismatch.",
                                          "wpfLogicalSize":  "430x438",
                                          "avaloniaLogicalSize":  "430x520",
                                          "logicalWidthDelta":  0.06,
@@ -6232,9 +6235,9 @@
                                      },
                                      {
                                          "id":  "dialog.InsertHyperlink",
-                                         "bucket":  "real logical-size mismatch",
-                                         "reason":  "The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption.",
-                                         "nextAction":  "Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract.",
+                                         "bucket":  "evidence limitation",
+                                         "reason":  "The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence.",
+                                         "nextAction":  "Recapture or replace the stale evidence before treating this as a product layout mismatch.",
                                          "wpfLogicalSize":  "560x300",
                                          "avaloniaLogicalSize":  "560x360",
                                          "logicalWidthDelta":  0.029,
@@ -6419,9 +6422,9 @@
                                      },
                                      {
                                          "id":  "dialog.ProtectSheet",
-                                         "bucket":  "real logical-size mismatch",
-                                         "reason":  "The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption.",
-                                         "nextAction":  "Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract.",
+                                         "bucket":  "evidence limitation",
+                                         "reason":  "The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence.",
+                                         "nextAction":  "Recapture or replace the stale evidence before treating this as a product layout mismatch.",
                                          "wpfLogicalSize":  "430x540",
                                          "avaloniaLogicalSize":  "430x580",
                                          "logicalWidthDelta":  0.022,
