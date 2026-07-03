@@ -452,6 +452,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.RecommendedPivotTables.png",
                                          "screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_recommended_pivottables_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -1114,6 +1115,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ExportOptions.png",
                                          "screenshots\\file-io-import-smoke-tour\\freex_file_io_import_smoke_export_pdf_options.png",
                                          "screenshots\\file-io-import-smoke-tour\\freex_file_io_import_smoke_export_xps_options.png"
                                      ],
@@ -1182,6 +1184,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ProtectSheet.png",
                                          "screenshots\\review-comments-protection-tour\\freex_review_protect_sheet_dialog.png"
                                      ],
                      "avaloniaEvidence":  [

@@ -12,13 +12,13 @@
                     "avaloniaCaptureEvidence":  57,
                     "avaloniaHarnessRoutes":  57,
                     "sharedOrPresentationBackedRoutes":  57,
-                    "wpfCapturedManifestSurfaces":  49,
+                    "wpfCapturedManifestSurfaces":  52,
                     "avaloniaCapturedManifestSurfaces":  93,
-                    "pairedCapturedSurfaceIds":  49,
+                    "pairedCapturedSurfaceIds":  52,
                     "wpfManifestIdsWithoutAvaloniaPair":  0,
-                    "additionalAvaloniaCapturedSurfaceIds":  44,
+                    "additionalAvaloniaCapturedSurfaceIds":  41,
                     "nonBlankPngFailures":  0,
-                    "pairedDimensionMismatches":  29
+                    "pairedDimensionMismatches":  32
                 },
     "pairedSurfaces":  [
                            {
@@ -57,6 +57,44 @@
                                                   "lumaDelta":  0.015343,
                                                   "nonBackgroundDelta":  0.130767,
                                                   "triageScore":  0.335673
+                                              }
+                           },
+                           {
+                               "id":  "dialog.ExportOptions",
+                               "routeFamily":  "dialog.ExportOptions",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ExportOptions.png",
+                                           "fileBytes":  55944,
+                                           "width":  645,
+                                           "height":  813,
+                                           "pixels":  524385,
+                                           "distinctColors":  268,
+                                           "opaqueRatio":  1,
+                                           "nonBackgroundRatio":  0.125206,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  245.989418
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ExportOptions.png",
+                                                "fileBytes":  37925,
+                                                "width":  430,
+                                                "height":  552,
+                                                "pixels":  237360,
+                                                "distinctColors":  1742,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.097915,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  246.680483
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  215,
+                                                  "heightDelta":  261,
+                                                  "dimensionDeltaRatio":  0.654367,
+                                                  "sampleMeanDelta":  0.03896,
+                                                  "lumaDelta":  0.00271,
+                                                  "nonBackgroundDelta":  0.027291,
+                                                  "triageScore":  0.723328
                                               }
                            },
                            {
@@ -1846,6 +1884,82 @@
                                               }
                            },
                            {
+                               "id":  "dialog.ProtectSheet",
+                               "routeFamily":  "dialog.ProtectSheet",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ProtectSheet.png",
+                                           "fileBytes":  40451,
+                                           "width":  645,
+                                           "height":  810,
+                                           "pixels":  522450,
+                                           "distinctColors":  373,
+                                           "opaqueRatio":  1,
+                                           "nonBackgroundRatio":  0.079112,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  247.924754
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ProtectSheet.png",
+                                                "fileBytes":  19508,
+                                                "width":  430,
+                                                "height":  580,
+                                                "pixels":  249400,
+                                                "distinctColors":  445,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.054487,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  249.186105
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  215,
+                                                  "heightDelta":  230,
+                                                  "dimensionDeltaRatio":  0.617284,
+                                                  "sampleMeanDelta":  0.02261,
+                                                  "lumaDelta":  0.004946,
+                                                  "nonBackgroundDelta":  0.024625,
+                                                  "triageScore":  0.669466
+                                              }
+                           },
+                           {
+                               "id":  "dialog.RecommendedPivotTables",
+                               "routeFamily":  "dialog.RecommendedPivotTables",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.RecommendedPivotTables.png",
+                                           "fileBytes":  27492,
+                                           "width":  840,
+                                           "height":  510,
+                                           "pixels":  428400,
+                                           "distinctColors":  275,
+                                           "opaqueRatio":  1,
+                                           "nonBackgroundRatio":  0.060749,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  248.485817
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.RecommendedPivotTables.png",
+                                                "fileBytes":  15024,
+                                                "width":  560,
+                                                "height":  340,
+                                                "pixels":  190400,
+                                                "distinctColors":  1198,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.07125,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  248.685831
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  280,
+                                                  "heightDelta":  170,
+                                                  "dimensionDeltaRatio":  0.666667,
+                                                  "sampleMeanDelta":  0.032123,
+                                                  "lumaDelta":  0.000784,
+                                                  "nonBackgroundDelta":  0.010501,
+                                                  "triageScore":  0.710075
+                                              }
+                           },
+                           {
                                "id":  "dialog.RemoveDuplicates",
                                "routeFamily":  "dialog.RemoveDuplicates",
                                "wpf":  {
@@ -1928,32 +2042,32 @@
                                   "nonBackgroundDelta":  0.246905
                               },
                               {
+                                  "id":  "dialog.ExportOptions",
+                                  "triageScore":  0.723328,
+                                  "sampleMeanDelta":  0.03896,
+                                  "dimension":  "645x813 vs 430x552",
+                                  "nonBackgroundDelta":  0.027291
+                              },
+                              {
+                                  "id":  "dialog.RecommendedPivotTables",
+                                  "triageScore":  0.710075,
+                                  "sampleMeanDelta":  0.032123,
+                                  "dimension":  "840x510 vs 560x340",
+                                  "nonBackgroundDelta":  0.010501
+                              },
+                              {
+                                  "id":  "dialog.ProtectSheet",
+                                  "triageScore":  0.669466,
+                                  "sampleMeanDelta":  0.02261,
+                                  "dimension":  "645x810 vs 430x580",
+                                  "nonBackgroundDelta":  0.024625
+                              },
+                              {
                                   "id":  "dialog.FormatCells.Protection",
                                   "triageScore":  0.669454,
                                   "sampleMeanDelta":  0.127353,
                                   "dimension":  "620x540 vs 690x660",
                                   "nonBackgroundDelta":  0.106488
-                              },
-                              {
-                                  "id":  "dialog.GoToSpecial",
-                                  "triageScore":  0.63584,
-                                  "sampleMeanDelta":  0.183499,
-                                  "dimension":  "430x438 vs 430x520",
-                                  "nonBackgroundDelta":  0.138231
-                              },
-                              {
-                                  "id":  "dialog.FormatCells",
-                                  "triageScore":  0.610816,
-                                  "sampleMeanDelta":  0.147535,
-                                  "dimension":  "620x540 vs 690x660",
-                                  "nonBackgroundDelta":  0.039071
-                              },
-                              {
-                                  "id":  "dialog.FormatCells.Number",
-                                  "triageScore":  0.610816,
-                                  "sampleMeanDelta":  0.147535,
-                                  "dimension":  "620x540 vs 690x660",
-                                  "nonBackgroundDelta":  0.039071
                               }
                           ],
     "additionalAvaloniaSurfacesNeedingWpfPair":  [
@@ -2198,22 +2312,6 @@
                                                                       }
                                                      },
                                                      {
-                                                         "id":  "dialog.ExportOptions",
-                                                         "routeFamily":  "dialog.ExportOptions",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ExportOptions.png",
-                                                                          "fileBytes":  37925,
-                                                                          "width":  430,
-                                                                          "height":  552,
-                                                                          "pixels":  237360,
-                                                                          "distinctColors":  1742,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.097915,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  246.680483
-                                                                      }
-                                                     },
-                                                     {
                                                          "id":  "dialog.ForecastSheet",
                                                          "routeFamily":  "dialog.ForecastSheet",
                                                          "avalonia":  {
@@ -2342,22 +2440,6 @@
                                                                       }
                                                      },
                                                      {
-                                                         "id":  "dialog.ProtectSheet",
-                                                         "routeFamily":  "dialog.ProtectSheet",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ProtectSheet.png",
-                                                                          "fileBytes":  19508,
-                                                                          "width":  430,
-                                                                          "height":  580,
-                                                                          "pixels":  249400,
-                                                                          "distinctColors":  445,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.054487,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  249.186105
-                                                                      }
-                                                     },
-                                                     {
                                                          "id":  "dialog.ProtectWorkbook",
                                                          "routeFamily":  "dialog.ProtectWorkbook",
                                                          "avalonia":  {
@@ -2371,22 +2453,6 @@
                                                                           "nonBackgroundRatio":  0.059309,
                                                                           "isNonBlank":  true,
                                                                           "meanLuma":  248.822917
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.RecommendedPivotTables",
-                                                         "routeFamily":  "dialog.RecommendedPivotTables",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.RecommendedPivotTables.png",
-                                                                          "fileBytes":  15024,
-                                                                          "width":  560,
-                                                                          "height":  340,
-                                                                          "pixels":  190400,
-                                                                          "distinctColors":  1198,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.07125,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  248.685831
                                                                       }
                                                      },
                                                      {
@@ -2769,13 +2835,6 @@
                                                         ]
                                             },
                                             {
-                                                "routeFamily":  "dialog.ExportOptions",
-                                                "count":  1,
-                                                "ids":  [
-                                                            "dialog.ExportOptions"
-                                                        ]
-                                            },
-                                            {
                                                 "routeFamily":  "dialog.ForecastSheet",
                                                 "count":  1,
                                                 "ids":  [
@@ -2832,24 +2891,10 @@
                                                         ]
                                             },
                                             {
-                                                "routeFamily":  "dialog.ProtectSheet",
-                                                "count":  1,
-                                                "ids":  [
-                                                            "dialog.ProtectSheet"
-                                                        ]
-                                            },
-                                            {
                                                 "routeFamily":  "dialog.ProtectWorkbook",
                                                 "count":  1,
                                                 "ids":  [
                                                             "dialog.ProtectWorkbook"
-                                                        ]
-                                            },
-                                            {
-                                                "routeFamily":  "dialog.RecommendedPivotTables",
-                                                "count":  1,
-                                                "ids":  [
-                                                            "dialog.RecommendedPivotTables"
                                                         ]
                                             },
                                             {
