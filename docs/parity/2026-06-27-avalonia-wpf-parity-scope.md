@@ -137,9 +137,11 @@ Dedup items that were blockers in the prior report are now landed or intentional
 - The generated FreeW WPF/Avalonia command inventory is now present:
   - `docs/parity/freew-command-inventory.json`
   - `docs/parity/freew-command-inventory.md`
-  - Current snapshot: 814 total commands, 161 shared-profile rows, 463 WPF-profile-only rows, and 190 Avalonia-profile-only rows.
+  - Current snapshot: 798 total commands, 0 actionable WPF gaps, 0 actionable Avalonia gaps, and 0 total actionable gaps. Raw WPF-only/Avalonia-only rows are profile-shape, alias, deferred, or platform-specific unless the generated classification says otherwise.
 - Avalonia Options now uses shared option section/choice planning and a WPF-like grouped dialog surface instead of the earlier compact placeholder shape.
 - Avalonia Backstage Info safety actions are now backed by shared planners and thin callbacks, and Backstage Print uses a shared direct-print capability/status policy.
+- Review > Thesaurus now has shared presentation planning for lookup, selection, and replacement intent. Avalonia supports synonym Replace over that shared plan, while WPF keeps the fuller Insert/Copy pane actions.
+- View > Side to Side now has read-only page-pair navigation in the shared paginated preview path; editable horizontal page view remains deferred.
 - Recent dedup work moved shared behavior into planners/services:
   - `DocumentViewLayoutPlanner`
   - `BackstagePaneSurfacePlanner`
@@ -151,22 +153,22 @@ Dedup items that were blockers in the prior report are now landed or intentional
 
 ### Main Gaps
 
-1. Command surface remains much wider in WPF than Avalonia, but this is now measured by the generated inventory rather than a rough source scan. The current snapshot has 463 WPF-profile-only rows and 190 Avalonia-profile-only rows.
-2. The FreeW inventory is a profile-surface inventory, not a behavior-completeness proof. It still needs classification that separates true missing behavior from menu-shape differences, platform-only file/backstage commands, aliases, placeholders, and intentionally deferred commands.
-3. WPF-only command clusters remain around images, shapes, WordArt, tables, headers/footers, equations, SmartArt, charts, page/view modes, TOC/references, proofing, and help. Avalonia-only clusters include shell/file/backstage routes and some chart/mailings profile choices that need WPF/profile normalization or classification.
+1. Command-count chasing is exhausted for the generated WPF/Avalonia matrix; new FreeW work should start from behavior, evidence, or renderer gaps rather than raw one-sided rows.
+2. The FreeW inventory is a profile-surface inventory, not a behavior-completeness proof. Keep classification current when commands move, but do not treat classified profile-shape/platform-only rows as implementation targets.
+3. Remaining behavior/evidence work should focus on Word-like results that are weakly proven, especially proofing/protection depth, source/cross-reference workflows, rich rendering, and visual evidence.
 4. Avalonia Backstage Options and Info safety are now wired through shared planners. The remaining Backstage print limitation is direct native printer selection: WPF is host-backed through `PrintDialog`, while Avalonia exposes Print Preview and Create PDF because the current Avalonia target has no native printer dialog/service API.
 5. Print/export parity is incomplete. Avalonia PDF export and preview fallback are backed, but direct native print remains deferred and renderer-fidelity evidence still needs broader print-pipeline coverage.
 6. Rich rendering is improving, but SmartArt and other DrawingML-heavy surfaces are still simplified compared with WPF/Word.
-7. Proofing/help, source/cross-reference pickers, full track-change recording, header/footer in-region caret editing, and split view remain incomplete or deferred. Avalonia picture-watermark UI is now covered by the shared Custom Watermark planner, with picture selection, scale, layout, and washout options wired through the FreeW dialog.
-8. The dirty `FreeX-linux` lane contains broad FreeW/Linux changes and should be reconciled before final FreeW parity claims.
+7. Split and page-preview modes are backed as read-only snapshots, and Side-to-Side page-pair navigation is implemented for that read-only path. True dual-live split editing, editable responsive multi-page grids, and editable horizontal Side-to-Side page view remain deferred.
+8. Full MS Word visual parity is not proven locally. Real Word PNG comparison remains limited by Word COM availability on this machine, so no-Word fallback evidence must not be read as an authoritative Word visual match.
 
 ### FreeW Next Slices
 
-1. Add classification to the generated FreeW command inventory so each one-sided row is marked implemented, placeholder, deferred, platform-only, profile-shape-only, alias, obsolete, or actionable gap.
+1. Keep the generated FreeW command inventory current as command slices move, but use it as a guard rather than a command-count backlog.
 2. Reconcile or land the active `FreeX-linux` FreeW work before duplicating effort in the same files.
 3. Continue the Avalonia Backstage print lane by adding real native print only if the target exposes a printer API; otherwise keep the shared capability/status policy, Print Preview, and Create PDF fallback honest while broadening print/export evidence.
-4. Close one high-value dialog family with shared planning plus Avalonia UI, such as Cross Reference, Manage Sources, or Table Properties.
-5. Add a WPF/Avalonia render or print evidence lane using the same DOCX fixture and a documented tolerance model.
+4. Close one high-value behavior family with shared planning plus Avalonia UI where Word-like results are still weakly proven.
+5. Add a WPF/Avalonia render or print evidence lane using the same DOCX fixture and a documented tolerance model, then run real Word PNG baselines on a machine with Word COM installed.
 
 ## FreeP Status
 
