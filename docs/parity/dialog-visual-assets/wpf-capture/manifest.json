@@ -213,6 +213,34 @@
                          "note":  "Captured from FreeX.App.Host --parity-capture Format Cells dialog surface"
                      },
                      {
+                         "id":  "dialog.PivotFieldFilter",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotFieldFilter.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotFieldFilter.SelectItems",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotFieldFilter.SelectItems.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotFieldFilter.LabelFilters",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotFieldFilter.LabelFilters.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
+                         "id":  "dialog.PivotFieldFilter.ValueFilters",
+                         "kind":  "dialog",
+                         "png":  "dialog.PivotFieldFilter.ValueFilters.png",
+                         "captured":  true,
+                         "note":  ""
+                     },
+                     {
                          "id":  "dialog.PivotTableOptions",
                          "kind":  "dialog",
                          "png":  "dialog.PivotTableOptions.png",
