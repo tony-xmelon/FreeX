@@ -83,6 +83,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.GoToSpecial.png",
                                          "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_go_to_special_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -277,6 +278,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.RemoveDuplicates.png",
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_remove_duplicates_headers_columns.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -297,6 +299,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.GoalSeek.png",
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_goal_seek_dialog.png",
                                          "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_goal_seek_dialog.png"
                                      ],
@@ -319,6 +322,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.GoalSeekStatus.png",
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_goal_seek_status_dialog.png",
                                          "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_goal_seek_status_success.png"
                                      ],
