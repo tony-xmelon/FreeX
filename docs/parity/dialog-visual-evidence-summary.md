@@ -32,23 +32,33 @@ Sources:
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
 | Paired dimension mismatches | 73 |
+| Paired expected-size evidence mismatches | 2 |
 
 ## Top paired visual outliers
 
-Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sample delta, mean-luma delta, non-background coverage delta, and normalized dimension delta. Higher scores deserve earlier human review.
+Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sample delta, mean-luma delta, non-background coverage delta, and normalized dimension delta. Higher scores deserve earlier human review. Rows with expected-size evidence mismatches are stale or suspect capture evidence, not an Avalonia product layout verdict.
 
-| Surface id | WPF size | Avalonia size | Score | Sample delta | Luma delta | Non-bg delta |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| dialog.SaveAsWorkbook | 1280x800 | 640x420 | 1.869 | 0.089 | 0.023 | 0.781 |
-| dialog.OpenWorkbook | 1280x800 | 640x420 | 1.863 | 0.086 | 0.023 | 0.779 |
-| dialog.SelectDataSource | 930x750 | 468x499 | 0.988 | 0.109 | 0.046 | 0.002 |
-| dialog.Sparkline | 570x360 | 372x230 | 0.952 | 0.055 | 0.018 | 0.171 |
-| dialog.AutoFilter | 468x655 | 312x323 | 0.923 | 0.050 | 0.014 | 0.019 |
-| dialog.InsertSlicer | 615x405 | 410x233 | 0.905 | 0.094 | 0.038 | 0.014 |
-| dialog.SortOptions | 495x390 | 330x260 | 0.904 | 0.047 | 0.028 | 0.162 |
-| dialog.ChangeChartType | 960x585 | 624x381 | 0.891 | 0.096 | 0.043 | 0.054 |
-| dialog.ShapeEffects | 570x285 | 380x190 | 0.882 | 0.031 | 0.021 | 0.163 |
-| dialog.GoalSeekStatus | 380x219 | 380x190 | 0.872 | 0.268 | 0.220 | 0.252 |
+| Surface id | WPF size | Avalonia size | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
+| --- | ---: | ---: | --- | ---: | ---: | ---: | ---: |
+| dialog.SaveAsWorkbook | 1280x800 | 640x420 | Expected 640x420 via WorkbookFileDialogSurfacePlanner.Width/Height | 1.869 | 0.089 | 0.023 | 0.781 |
+| dialog.OpenWorkbook | 1280x800 | 640x420 | Expected 640x420 via WorkbookFileDialogSurfacePlanner.Width/Height | 1.863 | 0.086 | 0.023 | 0.779 |
+| dialog.SelectDataSource | 930x750 | 468x499 |  | 0.988 | 0.109 | 0.046 | 0.002 |
+| dialog.Sparkline | 570x360 | 372x230 |  | 0.952 | 0.055 | 0.018 | 0.171 |
+| dialog.AutoFilter | 468x655 | 312x323 |  | 0.923 | 0.050 | 0.014 | 0.019 |
+| dialog.InsertSlicer | 615x405 | 410x233 |  | 0.905 | 0.094 | 0.038 | 0.014 |
+| dialog.SortOptions | 495x390 | 330x260 |  | 0.904 | 0.047 | 0.028 | 0.162 |
+| dialog.ChangeChartType | 960x585 | 624x381 |  | 0.891 | 0.096 | 0.043 | 0.054 |
+| dialog.ShapeEffects | 570x285 | 380x190 |  | 0.882 | 0.031 | 0.021 | 0.163 |
+| dialog.GoalSeekStatus | 380x219 | 380x190 |  | 0.872 | 0.268 | 0.220 | 0.252 |
+
+## Expected-Size Evidence Mismatches
+
+These rows have a checked-in PNG size that disagrees with the dialog planner's expected capture size. Treat their raw paired dimension delta as stale or suspect evidence until that shell can be recaptured nonblank at the expected size.
+
+| Surface id | Expected size | Source | WPF size | WPF matches | Avalonia size | Avalonia matches |
+| --- | ---: | --- | ---: | --- | ---: | --- |
+| dialog.OpenWorkbook | 640x420 | WorkbookFileDialogSurfacePlanner.Width/Height | 1280x800 | False | 640x420 | True |
+| dialog.SaveAsWorkbook | 640x420 | WorkbookFileDialogSurfacePlanner.Width/Height | 1280x800 | False | 640x420 | True |
 
 ## Paired manifest surfaces
 
