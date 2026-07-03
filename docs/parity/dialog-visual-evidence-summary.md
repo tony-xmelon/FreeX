@@ -31,22 +31,22 @@ Sources:
 | WPF manifest ids without Avalonia pair | 0 |
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches (scale-aware logical units) | 54 |
+| Paired dimension mismatches (scale-aware logical units) | 53 |
 | Raw PNG pixel dimension mismatches | 71 |
-| Raw PNG mismatches normalized by capture DPI | 17 |
+| Raw PNG mismatches normalized by capture DPI | 18 |
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
 
 ## Scale-Aware Dimension Mismatch Classification
 
-The 54 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept expected platform/native control differences, or refresh limited evidence.
+The 53 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept expected platform/native control differences, or refresh limited evidence.
 
 | Bucket | Count | Top surface ids | Top next action |
 | --- | ---: | --- | --- |
 | content/visual mismatch | 14 | dialog.ScenarioManager<br>dialog.SelectionPane<br>dialog.AccessibilityChecker<br>dialog.SymbolPicker<br>dialog.FormatCells.Alignment | Align the seeded harness state before judging the remaining Scenario Manager dimensions. |
 | evidence limitation | 2 | dialog.GoalSeekStatus<br>dialog.PivotTableOptions.Display | Recapture or tighten the WPF status crop before treating the height delta as a product bug. |
 | expected platform/native difference | 19 | dialog.FindReplace.Replace<br>dialog.FindReplace<br>dialog.FindReplace.Find<br>dialog.Sparkline<br>dialog.Options.QuickAccessToolbar | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
-| real logical-size mismatch | 19 | dialog.ForecastSheet<br>dialog.Subtotal<br>dialog.GoToSpecial<br>dialog.Sort<br>dialog.TextToColumns | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
+| real logical-size mismatch | 18 | dialog.ForecastSheet<br>dialog.Subtotal<br>dialog.GoToSpecial<br>dialog.Sort<br>dialog.TextToColumns | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
 
 ## Top paired visual outliers
 
@@ -74,7 +74,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.ChangeChartType | expected platform/native difference | 640x390 | 624x381 | 16x9 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.ConditionalFormatNewRule | real logical-size mismatch | 634x334 | 640x380 | 6x46 | The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption. | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
 | dialog.Consolidate | real logical-size mismatch | 380x420 | 420x450 | 40x30 | The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption. | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
-| dialog.DataTable | real logical-size mismatch | 360x210 | 380x260 | 20x50 | The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption. | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
 | dialog.ExportOptions | expected platform/native difference | 430x542 | 430x552 | 0x10 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.FindReplace | expected platform/native difference | 720x430 | 720x440 | 0x10 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.FindReplace.Find | expected platform/native difference | 720x430 | 720x440 | 0x10 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
@@ -147,7 +146,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.Consolidate | dialog.Consolidate.png | 380x420 | 570x630 px @ 144 DPI | True | dialog.Consolidate.png | 420x450 | 420x450 px @ 96 DPI | True | False | 0.303 |
 | dialog.CreateTable | dialog.CreateTable.png | 360x190 | 540x285 px @ 144 DPI | True | dialog.CreateTable.png | 360x190 | 360x190 px @ 96 DPI | True | True | 0.086 |
 | dialog.CustomViews | dialog.CustomViews.png | 640x360 | 960x540 px @ 144 DPI | True | dialog.CustomViews.png | 640x360 | 640x360 px @ 96 DPI | True | True | 0.058 |
-| dialog.DataTable | dialog.DataTable.png | 360x210 | 540x315 px @ 144 DPI | True | dialog.DataTable.png | 380x260 | 380x260 px @ 96 DPI | True | False | 0.373 |
+| dialog.DataTable | dialog.DataTable.png | 360x210 | 540x315 px @ 144 DPI | True | dialog.DataTable.png | 360x210 | 360x210 px @ 96 DPI | True | True | 0.068 |
 | dialog.DataValidation | dialog.DataValidation.png | 520x560 | 780x840 px @ 144 DPI | True | dialog.DataValidation.png | 520x560 | 520x560 px @ 96 DPI | True | True | 0.059 |
 | dialog.ErrorChecking | dialog.ErrorChecking.png | 720x420 | 1080x630 px @ 144 DPI | True | dialog.ErrorChecking.png | 720x420 | 720x420 px @ 96 DPI | True | True | 0.103 |
 | dialog.EvaluateFormula | dialog.EvaluateFormula.png | 600x360 | 900x540 px @ 144 DPI | True | dialog.EvaluateFormula.png | 600x360 | 600x360 px @ 96 DPI | True | True | 0.090 |
