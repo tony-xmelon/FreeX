@@ -17,6 +17,23 @@ The existing summary already failed the run for missing backstage pairs, placeho
 
 ## Remaining blockers for real capture production
 
-- Real WPF/Avalonia backstage evidence still needs the paired runner to produce both required pages for each backstage scenario under `freew-fidelity-corpus/runs/...`.
+- The paired runner now produces trusted WPF/Avalonia backstage evidence rows locally under `freew-fidelity-corpus/runs/...`; keep that runner output as the required artifact before claiming a Backstage print/export visual slice ready.
 - MS Word baseline comparison still depends on Word COM availability when using `tools/Run-FreeWWordBaselineEvidence.ps1` without `-AllowMissingWord`.
 - Native printer selection remains host-specific; the authoritative cross-host evidence path is still Print Preview plus PDF export raster evidence.
+
+## Current paired runner evidence
+
+Verified on 2026-07-03 with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\backstage-real-evidence-20260703-smoke -MaxPages 3
+```
+
+Outcome:
+
+- Summary trust: `passed`.
+- Evidence rows: `70`.
+- Backstage readiness: `8` required rows trusted for `backstage-print-preview-fidelity` and `backstage-pdf-export-fidelity` across WPF/Avalonia pages 1-2.
+- Summary files: `freew-fidelity-corpus/runs/backstage-real-evidence-20260703-smoke/freew_visual_evidence_summary.{json,md}`.
+
+The runner now has an explicit Backstage readiness gate after summary normalization. If a required Backstage row is missing, failed, placeholder-backed, fallback-backed, or otherwise not trusted, the runner fails with the exact scenario/host/page plus the normalized output and notes.
