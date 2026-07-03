@@ -16,10 +16,10 @@ This update replaces the 2026-06-27 pre-dedup snapshot. The extensive dedup sess
 ## Current Evidence
 
 - Primary repo root: `C:\Users\anton\OneDrive\Documents\FreeX\FreeX`.
-- Audit worktree: `.worktrees/avalonia-wpf-parity-report-refresh-20260701`.
-- `main` was clean and synced with `origin/main` at `11495483a` during this update.
+- Audit worktree: `.worktrees/parity-scope-refresh-20260703`.
+- `main` was clean and synced with `origin/main` at `1df19d6cb` during this update.
 - `AGENTS.md` requires isolated worktrees, no implementation in `main`, frequent sync, subagents for independent work, and merge/push/cleanup after completed slices.
-- This report was produced from four read-only subagent audits plus local orchestration inspection. The only intended edit in this slice is this report.
+- This report was refreshed from the generated parity inventories and dialog visual evidence after the WPF workbook-dialog direct capture fix. The only intended edit in this slice is this report.
 
 ## Worktree State
 
@@ -95,7 +95,8 @@ Dedup items that were blockers in the prior report are now landed or intentional
   - 57 committed Avalonia captures.
   - 57 Avalonia harness routes.
   - 57 shared-or-presentation-backed routes.
-  - `docs/parity/dialog-visual-evidence-summary.md` compares the committed WPF/Avalonia capture manifests: 15 WPF manifest surfaces all have Avalonia pairs, and Avalonia carries 78 additional captured variant surfaces.
+  - `docs/parity/dialog-visual-evidence-summary.md` compares the committed WPF/Avalonia capture manifests: 93 WPF manifest surfaces, 93 Avalonia manifest surfaces, 93 paired surface ids, 0 WPF-only ids, 0 Avalonia-only ids, and 0 nonblank failures.
+  - The stale promoted WPF workbook-dialog evidence is closed: `dialog.OpenWorkbook` and `dialog.SaveAsWorkbook` now have direct 640x420 WPF captures paired with the 640x420 Avalonia captures.
 - Much of the spreadsheet behavior now flows through shared or presentation planners:
   - Workbook lifecycle/open target: `src/FreeX.App.Services/WorkbookFileLifecycleCoordinator.cs`, `WorkbookOpenTargetPlanner.cs`.
   - Viewport/scroll planning: `src/FreeX.App.Services/WorkbookViewportScrollPlanner.cs`.
@@ -106,7 +107,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 
 ### Main Gaps
 
-1. Dialog route evidence is no longer the leading inventory gap: the generated inventory is 57/57 for WPF captures, Avalonia captures, Avalonia harness routes, and shared/presentation-backed routes. Remaining work is qualitative visual review, foreground workflow proof, and pixel/interaction diffs rather than missing route assets.
+1. Dialog route evidence is no longer the leading inventory gap: the generated inventory is 57/57 for WPF captures, Avalonia captures, Avalonia harness routes, and shared/presentation-backed routes, and the committed manifest PNGs are 93/93 paired with no stale expected-size evidence. Remaining work is qualitative visual review, scale-aware pixel comparison, foreground workflow proof, and interaction diffs rather than missing route assets.
 2. Shell, backstage, and print/export are partly deduped at the policy layer but still have host-local renderer edges:
    - WPF keeps `MainWindow.xaml`, `PrintRenderer*`, and native `PrintDialog` behavior.
    - Avalonia keeps substantial `MainWindow.cs`, custom print/preview, Skia/PDF, and capture glue.
@@ -117,7 +118,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 
 ### FreeX Next Slices
 
-1. Review the paired WPF/Avalonia dialog assets for qualitative visual diffs and record any concrete follow-up bugs.
+1. Finish scale-aware review of the 71 remaining paired dialog dimension/visual outliers so capture-DPI noise is separated from real product layout differences.
 2. Consolidate keyboard shortcut matching into a portable service and gate both hosts from one matrix.
 3. Add print/export/render parity evidence around drawing/chart content and native print/export affordances.
 4. Continue renderer-edge shell/backstage polish only after capture evidence identifies concrete diffs.
@@ -191,7 +192,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 - The generated FreeP WPF/Avalonia command inventory is now present:
   - `docs/parity/freep-command-parity-inventory.json`
   - `docs/parity/freep-command-parity-inventory.md`
-  - Current snapshot: 93 total commands, 87 shared, 0 raw WPF-only rows, 6 raw Avalonia-only shell rows, 0 actionable WPF/Avalonia missing commands, 0 explicit Avalonia gaps, 0 known-deferred commands, 6 platform-only commands, and 0 command-id aliases.
+  - Current snapshot: 102 total commands, 94 shared, 0 raw WPF-only rows, 8 raw Avalonia-only shell/profile rows, 0 actionable WPF/Avalonia missing commands, 0 explicit Avalonia gaps, 0 known-deferred commands, 8 platform-only commands, and 0 command-id aliases.
 - Renderer-neutral planners now cover slide pane, canvas geometry/gestures, text layout, chart primitives, picture effects, slideshow host/playback, dialogs, insertion, and persistence under `freep/FreeP.App.Presentation`.
 - `freep.layout` is no longer a silent command stub: both WPF and Avalonia route it through the shared `PresentationDesignCommandPlanner` layout-picker host intent. The remaining work is the actual picker UI/model selection flow.
 - `tools/FreeP.RenderCompare` now includes pixel-diversity checks so blank or single-color output cannot silently pass as valid evidence.
