@@ -25,11 +25,11 @@ Sources:
 
 | Metric | Count |
 | --- | ---: |
-| WPF captured manifest surfaces with committed PNGs | 37 |
+| WPF captured manifest surfaces with committed PNGs | 41 |
 | Avalonia captured manifest surfaces with committed PNGs | 93 |
-| Paired captured surface ids | 37 |
+| Paired captured surface ids | 41 |
 | WPF manifest ids without Avalonia pair | 0 |
-| Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 56 |
+| Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 52 |
 | Nonblank PNG check failures | 0 |
 | Paired dimension mismatches | 27 |
 
@@ -83,6 +83,10 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.PageSetup.Margins | dialog.PageSetup.Margins.png | 600x560 | True | dialog.PageSetup.Margins.png | 600x560 | True | 0.041 |
 | dialog.PageSetup.Page | dialog.PageSetup.Page.png | 600x560 | True | dialog.PageSetup.Page.png | 600x560 | True | 0.091 |
 | dialog.PageSetup.Sheet | dialog.PageSetup.Sheet.png | 600x560 | True | dialog.PageSetup.Sheet.png | 600x560 | True | 0.117 |
+| dialog.PivotFieldFilter | dialog.PivotFieldFilter.png | 380x470 | True | dialog.PivotFieldFilter.png | 380x470 | True | 0.423 |
+| dialog.PivotFieldFilter.LabelFilters | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | True | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | True | 0.453 |
+| dialog.PivotFieldFilter.SelectItems | dialog.PivotFieldFilter.SelectItems.png | 380x470 | True | dialog.PivotFieldFilter.SelectItems.png | 380x470 | True | 0.423 |
+| dialog.PivotFieldFilter.ValueFilters | dialog.PivotFieldFilter.ValueFilters.png | 380x470 | True | dialog.PivotFieldFilter.ValueFilters.png | 380x470 | True | 0.452 |
 | dialog.PivotTableOptions | dialog.PivotTableOptions.png | 520x676 | True | dialog.PivotTableOptions.png | 520x610 | True | 0.463 |
 | dialog.PivotTableOptions.AltText | dialog.PivotTableOptions.AltText.png | 520x500 | True | dialog.PivotTableOptions.AltText.png | 520x500 | True | 0.470 |
 | dialog.PivotTableOptions.Data | dialog.PivotTableOptions.Data.png | 520x500 | True | dialog.PivotTableOptions.Data.png | 520x500 | True | 0.548 |
@@ -94,7 +98,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 ## Avalonia-Manifest-Only Screenshot Surfaces
 
-Avalonia has 56 committed PNG manifest surface ids across 50 dialog route families with no exact WPF manifest PNG id pair. This describes screenshot evidence coverage, not whether a WPF dialog implementation exists.
+Avalonia has 52 committed PNG manifest surface ids across 49 dialog route families with no exact WPF manifest PNG id pair. This describes screenshot evidence coverage, not whether a WPF dialog implementation exists.
 
 | Route family | Count | Additional surface ids |
 | --- | ---: | --- |
@@ -125,7 +129,6 @@ Avalonia has 56 committed PNG manifest surface ids across 50 dialog route famili
 | dialog.InsertTimeline | 1 | dialog.InsertTimeline |
 | dialog.LegalNotices | 1 | dialog.LegalNotices |
 | dialog.OpenWorkbook | 1 | dialog.OpenWorkbook |
-| dialog.PivotFieldFilter | 4 | dialog.PivotFieldFilter<br>dialog.PivotFieldFilter.LabelFilters<br>dialog.PivotFieldFilter.SelectItems<br>dialog.PivotFieldFilter.ValueFilters |
 | dialog.PivotValueFieldSettings | 4 | dialog.PivotValueFieldSettings<br>dialog.PivotValueFieldSettings.NumberFormat<br>dialog.PivotValueFieldSettings.ShowValuesAs<br>dialog.PivotValueFieldSettings.SummarizeValuesBy |
 | dialog.ProtectSheet | 1 | dialog.ProtectSheet |
 | dialog.ProtectWorkbook | 1 | dialog.ProtectWorkbook |
@@ -180,10 +183,6 @@ Avalonia has 56 committed PNG manifest surface ids across 50 dialog route famili
 | dialog.InsertTimeline | dialog.InsertTimeline.png | 410x225 | True | 626 | 0.067 |
 | dialog.LegalNotices | dialog.LegalNotices.png | 840x620 | True | 862 | 0.044 |
 | dialog.OpenWorkbook | dialog.OpenWorkbook.png | 640x420 | True | 1389 | 0.219 |
-| dialog.PivotFieldFilter | dialog.PivotFieldFilter.png | 380x470 | True | 301 | 0.080 |
-| dialog.PivotFieldFilter.LabelFilters | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | True | 245 | 0.053 |
-| dialog.PivotFieldFilter.SelectItems | dialog.PivotFieldFilter.SelectItems.png | 380x470 | True | 301 | 0.080 |
-| dialog.PivotFieldFilter.ValueFilters | dialog.PivotFieldFilter.ValueFilters.png | 380x470 | True | 246 | 0.053 |
 | dialog.PivotValueFieldSettings | dialog.PivotValueFieldSettings.png | 430x430 | True | 136 | 0.055 |
 | dialog.PivotValueFieldSettings.NumberFormat | dialog.PivotValueFieldSettings.NumberFormat.png | 430x430 | True | 131 | 0.057 |
 | dialog.PivotValueFieldSettings.ShowValuesAs | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | True | 140 | 0.058 |

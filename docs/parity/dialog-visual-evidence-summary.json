@@ -12,11 +12,11 @@
                     "avaloniaCaptureEvidence":  57,
                     "avaloniaHarnessRoutes":  57,
                     "sharedOrPresentationBackedRoutes":  57,
-                    "wpfCapturedManifestSurfaces":  37,
+                    "wpfCapturedManifestSurfaces":  41,
                     "avaloniaCapturedManifestSurfaces":  93,
-                    "pairedCapturedSurfaceIds":  37,
+                    "pairedCapturedSurfaceIds":  41,
                     "wpfManifestIdsWithoutAvaloniaPair":  0,
-                    "additionalAvaloniaCapturedSurfaceIds":  56,
+                    "additionalAvaloniaCapturedSurfaceIds":  52,
                     "nonBlankPngFailures":  0,
                     "pairedDimensionMismatches":  27
                 },
@@ -1124,6 +1124,158 @@
                                               }
                            },
                            {
+                               "id":  "dialog.PivotFieldFilter",
+                               "routeFamily":  "dialog.PivotFieldFilter",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotFieldFilter.png",
+                                           "fileBytes":  12676,
+                                           "width":  380,
+                                           "height":  470,
+                                           "pixels":  178600,
+                                           "distinctColors":  236,
+                                           "opaqueRatio":  0.87841,
+                                           "nonBackgroundRatio":  0.215487,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  217.762942
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.png",
+                                                "fileBytes":  11837,
+                                                "width":  380,
+                                                "height":  470,
+                                                "pixels":  178600,
+                                                "distinctColors":  301,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.079574,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  249.364923
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0,
+                                                  "heightDelta":  0,
+                                                  "dimensionDeltaRatio":  0,
+                                                  "sampleMeanDelta":  0.163139,
+                                                  "lumaDelta":  0.123929,
+                                                  "nonBackgroundDelta":  0.135913,
+                                                  "triageScore":  0.422981
+                                              }
+                           },
+                           {
+                               "id":  "dialog.PivotFieldFilter.LabelFilters",
+                               "routeFamily":  "dialog.PivotFieldFilter",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotFieldFilter.LabelFilters.png",
+                                           "fileBytes":  11268,
+                                           "width":  380,
+                                           "height":  470,
+                                           "pixels":  178600,
+                                           "distinctColors":  223,
+                                           "opaqueRatio":  0.87841,
+                                           "nonBackgroundRatio":  0.220179,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  218.072711
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.LabelFilters.png",
+                                                "fileBytes":  8514,
+                                                "width":  380,
+                                                "height":  470,
+                                                "pixels":  178600,
+                                                "distinctColors":  245,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.053124,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  251.036903
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0,
+                                                  "heightDelta":  0,
+                                                  "dimensionDeltaRatio":  0,
+                                                  "sampleMeanDelta":  0.156305,
+                                                  "lumaDelta":  0.129271,
+                                                  "nonBackgroundDelta":  0.167055,
+                                                  "triageScore":  0.452631
+                                              }
+                           },
+                           {
+                               "id":  "dialog.PivotFieldFilter.SelectItems",
+                               "routeFamily":  "dialog.PivotFieldFilter",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotFieldFilter.SelectItems.png",
+                                           "fileBytes":  12676,
+                                           "width":  380,
+                                           "height":  470,
+                                           "pixels":  178600,
+                                           "distinctColors":  236,
+                                           "opaqueRatio":  0.87841,
+                                           "nonBackgroundRatio":  0.215487,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  217.762942
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.SelectItems.png",
+                                                "fileBytes":  11837,
+                                                "width":  380,
+                                                "height":  470,
+                                                "pixels":  178600,
+                                                "distinctColors":  301,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.079574,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  249.364923
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0,
+                                                  "heightDelta":  0,
+                                                  "dimensionDeltaRatio":  0,
+                                                  "sampleMeanDelta":  0.163139,
+                                                  "lumaDelta":  0.123929,
+                                                  "nonBackgroundDelta":  0.135913,
+                                                  "triageScore":  0.422981
+                                              }
+                           },
+                           {
+                               "id":  "dialog.PivotFieldFilter.ValueFilters",
+                               "routeFamily":  "dialog.PivotFieldFilter",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotFieldFilter.ValueFilters.png",
+                                           "fileBytes":  11427,
+                                           "width":  380,
+                                           "height":  470,
+                                           "pixels":  178600,
+                                           "distinctColors":  225,
+                                           "opaqueRatio":  0.87841,
+                                           "nonBackgroundRatio":  0.220728,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  218.075981
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.ValueFilters.png",
+                                                "fileBytes":  8522,
+                                                "width":  380,
+                                                "height":  470,
+                                                "pixels":  178600,
+                                                "distinctColors":  246,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.053203,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  251.04903
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0,
+                                                  "heightDelta":  0,
+                                                  "dimensionDeltaRatio":  0,
+                                                  "sampleMeanDelta":  0.155317,
+                                                  "lumaDelta":  0.129306,
+                                                  "nonBackgroundDelta":  0.167525,
+                                                  "triageScore":  0.452148
+                                              }
+                           },
+                           {
                                "id":  "dialog.PivotTableOptions",
                                "routeFamily":  "dialog.PivotTableOptions",
                                "wpf":  {
@@ -1934,70 +2086,6 @@
                                                                       }
                                                      },
                                                      {
-                                                         "id":  "dialog.PivotFieldFilter",
-                                                         "routeFamily":  "dialog.PivotFieldFilter",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.png",
-                                                                          "fileBytes":  11837,
-                                                                          "width":  380,
-                                                                          "height":  470,
-                                                                          "pixels":  178600,
-                                                                          "distinctColors":  301,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.079574,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  249.364923
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.PivotFieldFilter.LabelFilters",
-                                                         "routeFamily":  "dialog.PivotFieldFilter",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.LabelFilters.png",
-                                                                          "fileBytes":  8514,
-                                                                          "width":  380,
-                                                                          "height":  470,
-                                                                          "pixels":  178600,
-                                                                          "distinctColors":  245,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.053124,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  251.036903
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.PivotFieldFilter.SelectItems",
-                                                         "routeFamily":  "dialog.PivotFieldFilter",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.SelectItems.png",
-                                                                          "fileBytes":  11837,
-                                                                          "width":  380,
-                                                                          "height":  470,
-                                                                          "pixels":  178600,
-                                                                          "distinctColors":  301,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.079574,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  249.364923
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.PivotFieldFilter.ValueFilters",
-                                                         "routeFamily":  "dialog.PivotFieldFilter",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.ValueFilters.png",
-                                                                          "fileBytes":  8522,
-                                                                          "width":  380,
-                                                                          "height":  470,
-                                                                          "pixels":  178600,
-                                                                          "distinctColors":  246,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.053203,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  251.04903
-                                                                      }
-                                                     },
-                                                     {
                                                          "id":  "dialog.PivotValueFieldSettings",
                                                          "routeFamily":  "dialog.PivotValueFieldSettings",
                                                          "avalonia":  {
@@ -2586,16 +2674,6 @@
                                                 "count":  1,
                                                 "ids":  [
                                                             "dialog.OpenWorkbook"
-                                                        ]
-                                            },
-                                            {
-                                                "routeFamily":  "dialog.PivotFieldFilter",
-                                                "count":  4,
-                                                "ids":  [
-                                                            "dialog.PivotFieldFilter",
-                                                            "dialog.PivotFieldFilter.LabelFilters",
-                                                            "dialog.PivotFieldFilter.SelectItems",
-                                                            "dialog.PivotFieldFilter.ValueFilters"
                                                         ]
                                             },
                                             {
