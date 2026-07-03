@@ -11,6 +11,8 @@ Both outputs cover the required WPF/Avalonia host pairs for:
 
 Each required host/page row reports `trusted`, `failed`, or `missing`, plus the normalized output path and the row-level failure reason when a capture exists but cannot be trusted.
 
+The 2026-07-04 evidence-depth update tightened the same summary contract: Backstage print/export rows must also declare scenario-specific `backstageWorkflow` metadata. `backstage-print-preview-fidelity` rows must report `print-preview`, and `backstage-pdf-export-fidelity` rows must report `pdf-export`, so a real capture cannot be accidentally cross-wired between Print Preview and Create PDF evidence.
+
 ## Why this matters
 
 The existing summary already failed the run for missing backstage pairs, placeholder captures, fallback capture sources, and missing required pages. The new structured field lets automation and planners check readiness without parsing Markdown, while the Markdown table makes the same failures directly actionable for reviewers.
