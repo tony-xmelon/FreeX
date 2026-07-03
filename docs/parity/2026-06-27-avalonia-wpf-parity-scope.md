@@ -144,6 +144,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 - Review > Proofing Language now has shared-first caret behavior and dialog planning: selected ranges apply through the shared run-formatting path, while no-selection apply updates caret/typing language state instead of mutating the preceding run.
 - View > Side to Side now has read-only page-pair navigation in the shared paginated preview path; editable horizontal page view remains deferred.
 - The latest local no-Word baseline evidence run covers 19 DOCX fixtures / 31 WPF outputs and reports 60 trusted evidence rows plus 60 baseline comparison rows. Status remains no-Word fallback only on this machine (`skipped=14`, `word-baseline-unavailable=46`); no real Word PNGs were generated.
+- The note-region visual planner is integrated on `origin/main` (`6e7c6f6ac`): shared `DocumentNoteRegionPlanner` owns footnote/endnote note-region rows, WPF `PageBox` / `FreeW.FidelityRender` and Avalonia `FreeW.PageLayoutShot` use the shared plan, and Avalonia F2 footnote/endnote captures now draw visible note rows instead of metadata-only note flags.
 - Recent dedup work moved shared behavior into planners/services:
   - `DocumentViewLayoutPlanner`
   - `BackstagePaneSurfacePlanner`
@@ -162,7 +163,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 5. Print/export parity is incomplete. Avalonia PDF export and preview fallback are backed and evidence-contracted, but direct native print remains deferred and renderer-fidelity evidence still needs broader print-pipeline coverage.
 6. Rich rendering is improving, but SmartArt and other DrawingML-heavy surfaces are still simplified compared with WPF/Word.
 7. Split and page-preview modes are backed as read-only snapshots, and Side-to-Side page-pair navigation is implemented for that read-only path. True dual-live split editing, editable responsive multi-page grids, and editable horizontal Side-to-Side page view remain deferred.
-8. Full MS Word visual parity is not proven locally. Real Word PNG comparison remains limited by Word COM availability on this machine, so no-Word fallback evidence must not be read as an authoritative Word visual match.
+8. Full MS Word visual parity is not proven locally. Real Word PNG comparison remains limited by Word COM availability on this machine, so no-Word fallback evidence, including the new visible note-region rows, must not be read as an authoritative Word visual match.
 
 ### FreeW Next Slices
 
@@ -170,7 +171,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 2. Reconcile or land the active `FreeX-linux` FreeW work before duplicating effort in the same files.
 3. Continue the Avalonia Backstage print lane by adding real native print only if the target exposes a printer API; otherwise keep the shared capability/status policy, evidence contract, Print Preview, and Create PDF fallback honest while broadening print/export evidence.
 4. Close one high-value behavior family with shared planning plus Avalonia UI where Word-like results are still weakly proven.
-5. Extend the WPF/Avalonia render or print evidence lane from the current 19-fixture / 31-WPF-output baseline, then run real Word PNG baselines on a machine with Word COM installed.
+5. Extend the WPF/Avalonia render or print evidence lane from the current 19-fixture / 31-WPF-output baseline, keeping the shared note-region rows covered in both renderers, then run real Word PNG baselines on a machine with Word COM installed.
 
 ## FreeP Status
 
