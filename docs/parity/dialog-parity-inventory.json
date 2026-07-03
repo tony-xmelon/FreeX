@@ -18,6 +18,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FormatCells.png",
                                          "screenshots\\home-alignment-number-tour\\freex_home_alignment_format_cells_dialog.png",
                                          "screenshots\\home-alignment-number-tour\\freex_home_number_format_cells_dialog.png"
                                      ],
