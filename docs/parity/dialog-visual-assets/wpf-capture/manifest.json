@@ -344,6 +344,27 @@
                          "png":  "dialog.RemoveDuplicates.png",
                          "captured":  true,
                          "note":  "Captured from FreeX.App.Host --parity-capture Remove Duplicates dialog surface"
+                     },
+                     {
+                         "id":  "dialog.RecommendedPivotTables",
+                         "kind":  "dialog",
+                         "png":  "dialog.RecommendedPivotTables.png",
+                         "captured":  true,
+                         "note":  "Promoted from FREEX_INSERT_TABLES_CHARTS_TOUR recommended-pivottables dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.ExportOptions",
+                         "kind":  "dialog",
+                         "png":  "dialog.ExportOptions.png",
+                         "captured":  true,
+                         "note":  "Promoted from FREEX_FILE_IO_IMPORT_SMOKE_TOUR PDF export-options dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.ProtectSheet",
+                         "kind":  "dialog",
+                         "png":  "dialog.ProtectSheet.png",
+                         "captured":  true,
+                         "note":  "Promoted from FREEX_REVIEW_COMMENTS_PROTECTION_TOUR protect-sheet dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
                      }
                  ]
 }

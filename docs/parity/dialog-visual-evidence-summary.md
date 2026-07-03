@@ -25,13 +25,13 @@ Sources:
 
 | Metric | Count |
 | --- | ---: |
-| WPF captured manifest surfaces with committed PNGs | 49 |
+| WPF captured manifest surfaces with committed PNGs | 52 |
 | Avalonia captured manifest surfaces with committed PNGs | 93 |
-| Paired captured surface ids | 49 |
+| Paired captured surface ids | 52 |
 | WPF manifest ids without Avalonia pair | 0 |
-| Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 44 |
+| Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 41 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches | 29 |
+| Paired dimension mismatches | 32 |
 
 ## Top paired visual outliers
 
@@ -45,16 +45,17 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.FormatCells.Border | 620x540 | 690x660 | 0.754 | 0.162 | 0.115 | 0.142 |
 | dialog.FormatCells.Font | 620x540 | 690x660 | 0.733 | 0.144 | 0.110 | 0.144 |
 | dialog.GoalSeek | 380x210 | 380x210 | 0.725 | 0.258 | 0.220 | 0.247 |
+| dialog.ExportOptions | 645x813 | 430x552 | 0.723 | 0.039 | 0.003 | 0.027 |
+| dialog.RecommendedPivotTables | 840x510 | 560x340 | 0.710 | 0.032 | 0.001 | 0.011 |
+| dialog.ProtectSheet | 645x810 | 430x580 | 0.669 | 0.023 | 0.005 | 0.025 |
 | dialog.FormatCells.Protection | 620x540 | 690x660 | 0.669 | 0.127 | 0.100 | 0.106 |
-| dialog.GoToSpecial | 430x438 | 430x520 | 0.636 | 0.183 | 0.127 | 0.138 |
-| dialog.FormatCells | 620x540 | 690x660 | 0.611 | 0.148 | 0.089 | 0.039 |
-| dialog.FormatCells.Number | 620x540 | 690x660 | 0.611 | 0.148 | 0.089 | 0.039 |
 
 ## Paired manifest surfaces
 
 | Surface id | WPF PNG | WPF size | WPF nonblank | Avalonia PNG | Avalonia size | Avalonia nonblank | Score |
 | --- | --- | ---: | --- | --- | ---: | --- | ---: |
 | dialog.ConditionalFormatNewRule | dialog.ConditionalFormatNewRule.png | 634x334 | True | dialog.ConditionalFormatNewRule.png | 640x380 | True | 0.336 |
+| dialog.ExportOptions | dialog.ExportOptions.png | 645x813 | True | dialog.ExportOptions.png | 430x552 | True | 0.723 |
 | dialog.FindReplace | dialog.FindReplace.png | 720x430 | True | dialog.FindReplace.png | 720x440 | True | 0.418 |
 | dialog.FindReplace.Find | dialog.FindReplace.Find.png | 720x430 | True | dialog.FindReplace.Find.png | 720x440 | True | 0.418 |
 | dialog.FindReplace.Replace | dialog.FindReplace.Replace.png | 720x430 | True | dialog.FindReplace.Replace.png | 720x440 | True | 0.467 |
@@ -102,11 +103,13 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.PivotValueFieldSettings.ShowValuesAs | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | True | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | True | 0.469 |
 | dialog.PivotValueFieldSettings.SummarizeValuesBy | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | True | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | True | 0.472 |
 | dialog.PrintPreview | dialog.PrintPreview.png | 1120x700 | True | dialog.PrintPreview.png | 1120x700 | True | 0.512 |
+| dialog.ProtectSheet | dialog.ProtectSheet.png | 645x810 | True | dialog.ProtectSheet.png | 430x580 | True | 0.669 |
+| dialog.RecommendedPivotTables | dialog.RecommendedPivotTables.png | 840x510 | True | dialog.RecommendedPivotTables.png | 560x340 | True | 0.710 |
 | dialog.RemoveDuplicates | dialog.RemoveDuplicates.png | 360x360 | True | dialog.RemoveDuplicates.png | 360x360 | True | 0.515 |
 
 ## Avalonia-Manifest-Only Screenshot Surfaces
 
-Avalonia has 44 committed PNG manifest surface ids across 44 dialog route families with no exact WPF manifest PNG id pair. This describes screenshot evidence coverage, not whether a WPF dialog implementation exists.
+Avalonia has 41 committed PNG manifest surface ids across 41 dialog route families with no exact WPF manifest PNG id pair. This describes screenshot evidence coverage, not whether a WPF dialog implementation exists.
 
 | Route family | Count | Additional surface ids |
 | --- | ---: | --- |
@@ -125,7 +128,6 @@ Avalonia has 44 committed PNG manifest surface ids across 44 dialog route famili
 | dialog.DataValidation | 1 | dialog.DataValidation |
 | dialog.ErrorChecking | 1 | dialog.ErrorChecking |
 | dialog.EvaluateFormula | 1 | dialog.EvaluateFormula |
-| dialog.ExportOptions | 1 | dialog.ExportOptions |
 | dialog.ForecastSheet | 1 | dialog.ForecastSheet |
 | dialog.FormatChartArea | 1 | dialog.FormatChartArea |
 | dialog.GoTo | 1 | dialog.GoTo |
@@ -134,9 +136,7 @@ Avalonia has 44 committed PNG manifest surface ids across 44 dialog route famili
 | dialog.InsertTimeline | 1 | dialog.InsertTimeline |
 | dialog.LegalNotices | 1 | dialog.LegalNotices |
 | dialog.OpenWorkbook | 1 | dialog.OpenWorkbook |
-| dialog.ProtectSheet | 1 | dialog.ProtectSheet |
 | dialog.ProtectWorkbook | 1 | dialog.ProtectWorkbook |
-| dialog.RecommendedPivotTables | 1 | dialog.RecommendedPivotTables |
 | dialog.RenameSheet | 1 | dialog.RenameSheet |
 | dialog.SaveAsWorkbook | 1 | dialog.SaveAsWorkbook |
 | dialog.ScenarioManager | 1 | dialog.ScenarioManager |
@@ -174,7 +174,6 @@ Avalonia has 44 committed PNG manifest surface ids across 44 dialog route famili
 | dialog.DataValidation | dialog.DataValidation.png | 520x560 | True | 1120 | 0.053 |
 | dialog.ErrorChecking | dialog.ErrorChecking.png | 720x420 | True | 631 | 0.126 |
 | dialog.EvaluateFormula | dialog.EvaluateFormula.png | 600x360 | True | 450 | 0.030 |
-| dialog.ExportOptions | dialog.ExportOptions.png | 430x552 | True | 1742 | 0.098 |
 | dialog.ForecastSheet | dialog.ForecastSheet.png | 360x220 | True | 158 | 0.062 |
 | dialog.FormatChartArea | dialog.FormatChartArea.png | 432x760 | True | 401 | 0.065 |
 | dialog.GoTo | dialog.GoTo.png | 420x320 | True | 339 | 0.042 |
@@ -183,9 +182,7 @@ Avalonia has 44 committed PNG manifest surface ids across 44 dialog route famili
 | dialog.InsertTimeline | dialog.InsertTimeline.png | 410x225 | True | 626 | 0.067 |
 | dialog.LegalNotices | dialog.LegalNotices.png | 840x620 | True | 862 | 0.044 |
 | dialog.OpenWorkbook | dialog.OpenWorkbook.png | 640x420 | True | 1389 | 0.219 |
-| dialog.ProtectSheet | dialog.ProtectSheet.png | 430x580 | True | 445 | 0.054 |
 | dialog.ProtectWorkbook | dialog.ProtectWorkbook.png | 380x240 | True | 131 | 0.059 |
-| dialog.RecommendedPivotTables | dialog.RecommendedPivotTables.png | 560x340 | True | 1198 | 0.071 |
 | dialog.RenameSheet | dialog.RenameSheet.png | 380x190 | True | 622 | 0.103 |
 | dialog.SaveAsWorkbook | dialog.SaveAsWorkbook.png | 640x420 | True | 1339 | 0.217 |
 | dialog.ScenarioManager | dialog.ScenarioManager.png | 500x740 | True | 379 | 0.064 |
