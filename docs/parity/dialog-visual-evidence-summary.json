@@ -18,7 +18,8 @@
                     "wpfManifestIdsWithoutAvaloniaPair":  0,
                     "additionalAvaloniaCapturedSurfaceIds":  0,
                     "nonBlankPngFailures":  0,
-                    "pairedDimensionMismatches":  73
+                    "pairedDimensionMismatches":  73,
+                    "pairedExpectedSizeMismatches":  2
                 },
     "pairedSurfaces":  [
                            {
@@ -56,7 +57,13 @@
                                                   "sampleMeanDelta":  0.055308,
                                                   "lumaDelta":  0.009343,
                                                   "nonBackgroundDelta":  0.019862,
-                                                  "triageScore":  0.751179
+                                                  "triageScore":  0.751179,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -94,7 +101,13 @@
                                                   "sampleMeanDelta":  0.05707,
                                                   "lumaDelta":  0.026317,
                                                   "nonBackgroundDelta":  0.00667,
-                                                  "triageScore":  0.665555
+                                                  "triageScore":  0.665555,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -132,7 +145,13 @@
                                                   "sampleMeanDelta":  0.054369,
                                                   "lumaDelta":  0.000136,
                                                   "nonBackgroundDelta":  0.033272,
-                                                  "triageScore":  0.754443
+                                                  "triageScore":  0.754443,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -170,7 +189,13 @@
                                                   "sampleMeanDelta":  0.031621,
                                                   "lumaDelta":  0.004399,
                                                   "nonBackgroundDelta":  0.020733,
-                                                  "triageScore":  0.723419
+                                                  "triageScore":  0.723419,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -208,7 +233,13 @@
                                                   "sampleMeanDelta":  0.039337,
                                                   "lumaDelta":  0.002018,
                                                   "nonBackgroundDelta":  0.145119,
-                                                  "triageScore":  0.853141
+                                                  "triageScore":  0.853141,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -246,7 +277,13 @@
                                                   "sampleMeanDelta":  0.049627,
                                                   "lumaDelta":  0.013788,
                                                   "nonBackgroundDelta":  0.01928,
-                                                  "triageScore":  0.922898
+                                                  "triageScore":  0.922898,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -284,7 +321,13 @@
                                                   "sampleMeanDelta":  0.095594,
                                                   "lumaDelta":  0.04265,
                                                   "nonBackgroundDelta":  0.053786,
-                                                  "triageScore":  0.890748
+                                                  "triageScore":  0.890748,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -322,7 +365,13 @@
                                                   "sampleMeanDelta":  0.045425,
                                                   "lumaDelta":  0.000498,
                                                   "nonBackgroundDelta":  0.027958,
-                                                  "triageScore":  0.740546
+                                                  "triageScore":  0.740546,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -360,7 +409,13 @@
                                                   "sampleMeanDelta":  0.042375,
                                                   "lumaDelta":  0.015343,
                                                   "nonBackgroundDelta":  0.130767,
-                                                  "triageScore":  0.335673
+                                                  "triageScore":  0.335673,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -398,7 +453,13 @@
                                                   "sampleMeanDelta":  0.023079,
                                                   "lumaDelta":  0.011019,
                                                   "nonBackgroundDelta":  0.092468,
-                                                  "triageScore":  0.675438
+                                                  "triageScore":  0.675438,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -436,7 +497,13 @@
                                                   "sampleMeanDelta":  0.03998,
                                                   "lumaDelta":  0.0044,
                                                   "nonBackgroundDelta":  0.041296,
-                                                  "triageScore":  0.752343
+                                                  "triageScore":  0.752343,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -474,7 +541,13 @@
                                                   "sampleMeanDelta":  0.040238,
                                                   "lumaDelta":  0.002038,
                                                   "nonBackgroundDelta":  0.015346,
-                                                  "triageScore":  0.724289
+                                                  "triageScore":  0.724289,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -512,7 +585,13 @@
                                                   "sampleMeanDelta":  0.033037,
                                                   "lumaDelta":  0.001922,
                                                   "nonBackgroundDelta":  0.044665,
-                                                  "triageScore":  0.550523
+                                                  "triageScore":  0.550523,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -550,7 +629,13 @@
                                                   "sampleMeanDelta":  0.019981,
                                                   "lumaDelta":  0.002809,
                                                   "nonBackgroundDelta":  0.035929,
-                                                  "triageScore":  0.725386
+                                                  "triageScore":  0.725386,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -588,7 +673,13 @@
                                                   "sampleMeanDelta":  0.030367,
                                                   "lumaDelta":  0.006296,
                                                   "nonBackgroundDelta":  0.066375,
-                                                  "triageScore":  0.769705
+                                                  "triageScore":  0.769705,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -626,7 +717,13 @@
                                                   "sampleMeanDelta":  0.030305,
                                                   "lumaDelta":  0.006939,
                                                   "nonBackgroundDelta":  0.052262,
-                                                  "triageScore":  0.756172
+                                                  "triageScore":  0.756172,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -664,7 +761,13 @@
                                                   "sampleMeanDelta":  0.03896,
                                                   "lumaDelta":  0.00271,
                                                   "nonBackgroundDelta":  0.027291,
-                                                  "triageScore":  0.723328
+                                                  "triageScore":  0.723328,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -702,7 +805,13 @@
                                                   "sampleMeanDelta":  0.131782,
                                                   "lumaDelta":  0.113944,
                                                   "nonBackgroundDelta":  0.148821,
-                                                  "triageScore":  0.417804
+                                                  "triageScore":  0.417804,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -740,7 +849,13 @@
                                                   "sampleMeanDelta":  0.131782,
                                                   "lumaDelta":  0.113944,
                                                   "nonBackgroundDelta":  0.148821,
-                                                  "triageScore":  0.417804
+                                                  "triageScore":  0.417804,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -778,7 +893,13 @@
                                                   "sampleMeanDelta":  0.135635,
                                                   "lumaDelta":  0.123578,
                                                   "nonBackgroundDelta":  0.184675,
-                                                  "triageScore":  0.467144
+                                                  "triageScore":  0.467144,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -816,7 +937,13 @@
                                                   "sampleMeanDelta":  0.039267,
                                                   "lumaDelta":  0.0043,
                                                   "nonBackgroundDelta":  0.051103,
-                                                  "triageScore":  0.366892
+                                                  "triageScore":  0.366892,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -854,7 +981,13 @@
                                                   "sampleMeanDelta":  0.147535,
                                                   "lumaDelta":  0.089084,
                                                   "nonBackgroundDelta":  0.039071,
-                                                  "triageScore":  0.610816
+                                                  "triageScore":  0.610816,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -892,7 +1025,13 @@
                                                   "sampleMeanDelta":  0.134351,
                                                   "lumaDelta":  0.110023,
                                                   "nonBackgroundDelta":  0.188492,
-                                                  "triageScore":  0.767991
+                                                  "triageScore":  0.767991,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -930,7 +1069,13 @@
                                                   "sampleMeanDelta":  0.161786,
                                                   "lumaDelta":  0.115106,
                                                   "nonBackgroundDelta":  0.141611,
-                                                  "triageScore":  0.753628
+                                                  "triageScore":  0.753628,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -968,7 +1113,13 @@
                                                   "sampleMeanDelta":  0.132918,
                                                   "lumaDelta":  0.135472,
                                                   "nonBackgroundDelta":  0.276666,
-                                                  "triageScore":  0.761637
+                                                  "triageScore":  0.761637,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1006,7 +1157,13 @@
                                                   "sampleMeanDelta":  0.144241,
                                                   "lumaDelta":  0.109627,
                                                   "nonBackgroundDelta":  0.144468,
-                                                  "triageScore":  0.733462
+                                                  "triageScore":  0.733462,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1044,7 +1201,13 @@
                                                   "sampleMeanDelta":  0.147535,
                                                   "lumaDelta":  0.089084,
                                                   "nonBackgroundDelta":  0.039071,
-                                                  "triageScore":  0.610816
+                                                  "triageScore":  0.610816,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1082,7 +1245,13 @@
                                                   "sampleMeanDelta":  0.127353,
                                                   "lumaDelta":  0.100488,
                                                   "nonBackgroundDelta":  0.106488,
-                                                  "triageScore":  0.669454
+                                                  "triageScore":  0.669454,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1120,7 +1289,13 @@
                                                   "sampleMeanDelta":  0.030104,
                                                   "lumaDelta":  0.004733,
                                                   "nonBackgroundDelta":  0.039183,
-                                                  "triageScore":  0.529548
+                                                  "triageScore":  0.529548,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1158,7 +1333,13 @@
                                                   "sampleMeanDelta":  0.257546,
                                                   "lumaDelta":  0.220057,
                                                   "nonBackgroundDelta":  0.246905,
-                                                  "triageScore":  0.724508
+                                                  "triageScore":  0.724508,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1196,7 +1377,13 @@
                                                   "sampleMeanDelta":  0.268013,
                                                   "lumaDelta":  0.22016,
                                                   "nonBackgroundDelta":  0.251798,
-                                                  "triageScore":  0.872391
+                                                  "triageScore":  0.872391,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1234,7 +1421,13 @@
                                                   "sampleMeanDelta":  0.018564,
                                                   "lumaDelta":  0.003198,
                                                   "nonBackgroundDelta":  0.088619,
-                                                  "triageScore":  0.777048
+                                                  "triageScore":  0.777048,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1272,7 +1465,13 @@
                                                   "sampleMeanDelta":  0.183499,
                                                   "lumaDelta":  0.126896,
                                                   "nonBackgroundDelta":  0.138231,
-                                                  "triageScore":  0.63584
+                                                  "triageScore":  0.63584,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1310,7 +1509,13 @@
                                                   "sampleMeanDelta":  0.041361,
                                                   "lumaDelta":  0.008866,
                                                   "nonBackgroundDelta":  0.057026,
-                                                  "triageScore":  0.640586
+                                                  "triageScore":  0.640586,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1348,7 +1553,13 @@
                                                   "sampleMeanDelta":  0.094436,
                                                   "lumaDelta":  0.038404,
                                                   "nonBackgroundDelta":  0.01383,
-                                                  "triageScore":  0.904694
+                                                  "triageScore":  0.904694,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1386,7 +1597,13 @@
                                                   "sampleMeanDelta":  0.038296,
                                                   "lumaDelta":  0.006789,
                                                   "nonBackgroundDelta":  0.012526,
-                                                  "triageScore":  0.835388
+                                                  "triageScore":  0.835388,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1424,7 +1641,13 @@
                                                   "sampleMeanDelta":  0.015345,
                                                   "lumaDelta":  0.000468,
                                                   "nonBackgroundDelta":  0.013672,
-                                                  "triageScore":  0.696152
+                                                  "triageScore":  0.696152,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1462,7 +1685,13 @@
                                                   "sampleMeanDelta":  0.08606,
                                                   "lumaDelta":  0.023066,
                                                   "nonBackgroundDelta":  0.779238,
-                                                  "triageScore":  1.863365
+                                                  "triageScore":  1.863365,
+                                                  "expectedSizeMismatch":  true,
+                                                  "expectedWidth":  640,
+                                                  "expectedHeight":  420,
+                                                  "expectedSizeSource":  "WorkbookFileDialogSurfacePlanner.Width/Height",
+                                                  "wpfExpectedSizeMatch":  false,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1500,7 +1729,13 @@
                                                   "sampleMeanDelta":  0.029215,
                                                   "lumaDelta":  0.009809,
                                                   "nonBackgroundDelta":  0.083575,
-                                                  "triageScore":  0.218961
+                                                  "triageScore":  0.218961,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1538,7 +1773,13 @@
                                                   "sampleMeanDelta":  0.01857,
                                                   "lumaDelta":  0.006962,
                                                   "nonBackgroundDelta":  0.079134,
-                                                  "triageScore":  0.201028
+                                                  "triageScore":  0.201028,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1576,7 +1817,13 @@
                                                   "sampleMeanDelta":  0.029454,
                                                   "lumaDelta":  0.009373,
                                                   "nonBackgroundDelta":  0.087315,
-                                                  "triageScore":  0.222504
+                                                  "triageScore":  0.222504,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1614,7 +1861,13 @@
                                                   "sampleMeanDelta":  0.020866,
                                                   "lumaDelta":  0.007505,
                                                   "nonBackgroundDelta":  0.078742,
-                                                  "triageScore":  0.203474
+                                                  "triageScore":  0.203474,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1652,7 +1905,13 @@
                                                   "sampleMeanDelta":  0.019864,
                                                   "lumaDelta":  0.008773,
                                                   "nonBackgroundDelta":  0.078177,
-                                                  "triageScore":  0.203176
+                                                  "triageScore":  0.203176,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1690,7 +1949,13 @@
                                                   "sampleMeanDelta":  0.026343,
                                                   "lumaDelta":  0.017127,
                                                   "nonBackgroundDelta":  0.075934,
-                                                  "triageScore":  0.420189
+                                                  "triageScore":  0.420189,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1728,7 +1993,13 @@
                                                   "sampleMeanDelta":  0.029215,
                                                   "lumaDelta":  0.009809,
                                                   "nonBackgroundDelta":  0.083575,
-                                                  "triageScore":  0.218961
+                                                  "triageScore":  0.218961,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1766,7 +2037,13 @@
                                                   "sampleMeanDelta":  0.018976,
                                                   "lumaDelta":  0.005418,
                                                   "nonBackgroundDelta":  0.083603,
-                                                  "triageScore":  0.204359
+                                                  "triageScore":  0.204359,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1804,7 +2081,13 @@
                                                   "sampleMeanDelta":  0.026847,
                                                   "lumaDelta":  0.013261,
                                                   "nonBackgroundDelta":  0.094042,
-                                                  "triageScore":  0.230512
+                                                  "triageScore":  0.230512,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1842,7 +2125,13 @@
                                                   "sampleMeanDelta":  0.023995,
                                                   "lumaDelta":  0.01871,
                                                   "nonBackgroundDelta":  0.104365,
-                                                  "triageScore":  0.243432
+                                                  "triageScore":  0.243432,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1880,7 +2169,13 @@
                                                   "sampleMeanDelta":  0.01891,
                                                   "lumaDelta":  0.007199,
                                                   "nonBackgroundDelta":  0.08428,
-                                                  "triageScore":  0.20675
+                                                  "triageScore":  0.20675,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1918,7 +2213,13 @@
                                                   "sampleMeanDelta":  0.03279,
                                                   "lumaDelta":  0.0067,
                                                   "nonBackgroundDelta":  0.075982,
-                                                  "triageScore":  0.211834
+                                                  "triageScore":  0.211834,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1956,7 +2257,13 @@
                                                   "sampleMeanDelta":  0.021266,
                                                   "lumaDelta":  0.006757,
                                                   "nonBackgroundDelta":  0.079555,
-                                                  "triageScore":  0.20394
+                                                  "triageScore":  0.20394,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -1994,7 +2301,13 @@
                                                   "sampleMeanDelta":  0.025114,
                                                   "lumaDelta":  0.006908,
                                                   "nonBackgroundDelta":  0.058729,
-                                                  "triageScore":  0.090751
+                                                  "triageScore":  0.090751,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2032,7 +2345,13 @@
                                                   "sampleMeanDelta":  0.039639,
                                                   "lumaDelta":  0.011856,
                                                   "nonBackgroundDelta":  0.07567,
-                                                  "triageScore":  0.127164
+                                                  "triageScore":  0.127164,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2070,7 +2389,13 @@
                                                   "sampleMeanDelta":  0.03586,
                                                   "lumaDelta":  0.001613,
                                                   "nonBackgroundDelta":  0.003494,
-                                                  "triageScore":  0.040967
+                                                  "triageScore":  0.040967,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2108,7 +2433,13 @@
                                                   "sampleMeanDelta":  0.025114,
                                                   "lumaDelta":  0.006908,
                                                   "nonBackgroundDelta":  0.058729,
-                                                  "triageScore":  0.090751
+                                                  "triageScore":  0.090751,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2146,7 +2477,13 @@
                                                   "sampleMeanDelta":  0.035297,
                                                   "lumaDelta":  0.008159,
                                                   "nonBackgroundDelta":  0.073095,
-                                                  "triageScore":  0.116551
+                                                  "triageScore":  0.116551,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2184,7 +2521,13 @@
                                                   "sampleMeanDelta":  0.163139,
                                                   "lumaDelta":  0.123929,
                                                   "nonBackgroundDelta":  0.135913,
-                                                  "triageScore":  0.422981
+                                                  "triageScore":  0.422981,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2222,7 +2565,13 @@
                                                   "sampleMeanDelta":  0.156305,
                                                   "lumaDelta":  0.129271,
                                                   "nonBackgroundDelta":  0.167055,
-                                                  "triageScore":  0.452631
+                                                  "triageScore":  0.452631,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2260,7 +2609,13 @@
                                                   "sampleMeanDelta":  0.163139,
                                                   "lumaDelta":  0.123929,
                                                   "nonBackgroundDelta":  0.135913,
-                                                  "triageScore":  0.422981
+                                                  "triageScore":  0.422981,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2298,7 +2653,13 @@
                                                   "sampleMeanDelta":  0.155317,
                                                   "lumaDelta":  0.129306,
                                                   "nonBackgroundDelta":  0.167525,
-                                                  "triageScore":  0.452148
+                                                  "triageScore":  0.452148,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2336,7 +2697,13 @@
                                                   "sampleMeanDelta":  0.123568,
                                                   "lumaDelta":  0.092704,
                                                   "nonBackgroundDelta":  0.149567,
-                                                  "triageScore":  0.463472
+                                                  "triageScore":  0.463472,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2374,7 +2741,13 @@
                                                   "sampleMeanDelta":  0.136744,
                                                   "lumaDelta":  0.122663,
                                                   "nonBackgroundDelta":  0.210377,
-                                                  "triageScore":  0.469783
+                                                  "triageScore":  0.469783,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2412,7 +2785,13 @@
                                                   "sampleMeanDelta":  0.164065,
                                                   "lumaDelta":  0.131068,
                                                   "nonBackgroundDelta":  0.253285,
-                                                  "triageScore":  0.548418
+                                                  "triageScore":  0.548418,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2450,7 +2829,13 @@
                                                   "sampleMeanDelta":  0.152397,
                                                   "lumaDelta":  0.119021,
                                                   "nonBackgroundDelta":  0.172813,
-                                                  "triageScore":  0.446228
+                                                  "triageScore":  0.446228,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2488,7 +2873,13 @@
                                                   "sampleMeanDelta":  0.123568,
                                                   "lumaDelta":  0.092704,
                                                   "nonBackgroundDelta":  0.149567,
-                                                  "triageScore":  0.463472
+                                                  "triageScore":  0.463472,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2526,7 +2917,13 @@
                                                   "sampleMeanDelta":  0.146562,
                                                   "lumaDelta":  0.133562,
                                                   "nonBackgroundDelta":  0.280258,
-                                                  "triageScore":  0.560381
+                                                  "triageScore":  0.560381,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2564,7 +2961,13 @@
                                                   "sampleMeanDelta":  0.147292,
                                                   "lumaDelta":  0.122037,
                                                   "nonBackgroundDelta":  0.219173,
-                                                  "triageScore":  0.488503
+                                                  "triageScore":  0.488503,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2602,7 +3005,13 @@
                                                   "sampleMeanDelta":  0.160532,
                                                   "lumaDelta":  0.133271,
                                                   "nonBackgroundDelta":  0.178161,
-                                                  "triageScore":  0.471964
+                                                  "triageScore":  0.471964,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2640,7 +3049,13 @@
                                                   "sampleMeanDelta":  0.162201,
                                                   "lumaDelta":  0.136874,
                                                   "nonBackgroundDelta":  0.191898,
-                                                  "triageScore":  0.490973
+                                                  "triageScore":  0.490973,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2678,7 +3093,13 @@
                                                   "sampleMeanDelta":  0.159346,
                                                   "lumaDelta":  0.133293,
                                                   "nonBackgroundDelta":  0.176209,
-                                                  "triageScore":  0.468848
+                                                  "triageScore":  0.468848,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2716,7 +3137,13 @@
                                                   "sampleMeanDelta":  0.160532,
                                                   "lumaDelta":  0.133271,
                                                   "nonBackgroundDelta":  0.178161,
-                                                  "triageScore":  0.471964
+                                                  "triageScore":  0.471964,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2754,7 +3181,13 @@
                                                   "sampleMeanDelta":  0.141411,
                                                   "lumaDelta":  0.016952,
                                                   "nonBackgroundDelta":  0.353324,
-                                                  "triageScore":  0.511687
+                                                  "triageScore":  0.511687,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2792,7 +3225,13 @@
                                                   "sampleMeanDelta":  0.02261,
                                                   "lumaDelta":  0.004946,
                                                   "nonBackgroundDelta":  0.024625,
-                                                  "triageScore":  0.669466
+                                                  "triageScore":  0.669466,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2830,7 +3269,13 @@
                                                   "sampleMeanDelta":  0.039685,
                                                   "lumaDelta":  0.003104,
                                                   "nonBackgroundDelta":  0.026918,
-                                                  "triageScore":  0.726003
+                                                  "triageScore":  0.726003,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2868,7 +3313,13 @@
                                                   "sampleMeanDelta":  0.032123,
                                                   "lumaDelta":  0.000784,
                                                   "nonBackgroundDelta":  0.010501,
-                                                  "triageScore":  0.710075
+                                                  "triageScore":  0.710075,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2906,7 +3357,13 @@
                                                   "sampleMeanDelta":  0.196204,
                                                   "lumaDelta":  0.151418,
                                                   "nonBackgroundDelta":  0.167693,
-                                                  "triageScore":  0.515314
+                                                  "triageScore":  0.515314,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2944,7 +3401,13 @@
                                                   "sampleMeanDelta":  0.035447,
                                                   "lumaDelta":  0.002201,
                                                   "nonBackgroundDelta":  0.019074,
-                                                  "triageScore":  0.46718
+                                                  "triageScore":  0.46718,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -2982,7 +3445,13 @@
                                                   "sampleMeanDelta":  0.08935,
                                                   "lumaDelta":  0.0234,
                                                   "nonBackgroundDelta":  0.781091,
-                                                  "triageScore":  1.868841
+                                                  "triageScore":  1.868841,
+                                                  "expectedSizeMismatch":  true,
+                                                  "expectedWidth":  640,
+                                                  "expectedHeight":  420,
+                                                  "expectedSizeSource":  "WorkbookFileDialogSurfacePlanner.Width/Height",
+                                                  "wpfExpectedSizeMatch":  false,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -3020,7 +3489,13 @@
                                                   "sampleMeanDelta":  0.044896,
                                                   "lumaDelta":  0.017683,
                                                   "nonBackgroundDelta":  0.085669,
-                                                  "triageScore":  0.39692499999999997
+                                                  "triageScore":  0.39692499999999997,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -3058,7 +3533,13 @@
                                                   "sampleMeanDelta":  0.108816,
                                                   "lumaDelta":  0.04593,
                                                   "nonBackgroundDelta":  0.002157,
-                                                  "triageScore":  0.988344
+                                                  "triageScore":  0.988344,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -3096,7 +3577,13 @@
                                                   "sampleMeanDelta":  0.051186,
                                                   "lumaDelta":  0.02287,
                                                   "nonBackgroundDelta":  0.186178,
-                                                  "triageScore":  0.533139
+                                                  "triageScore":  0.533139,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -3134,7 +3621,13 @@
                                                   "sampleMeanDelta":  0.030626,
                                                   "lumaDelta":  0.021463,
                                                   "nonBackgroundDelta":  0.162787,
-                                                  "triageScore":  0.881543
+                                                  "triageScore":  0.881543,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -3172,7 +3665,13 @@
                                                   "sampleMeanDelta":  0.084468,
                                                   "lumaDelta":  0.035546,
                                                   "nonBackgroundDelta":  0.011547,
-                                                  "triageScore":  0.623624
+                                                  "triageScore":  0.623624,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -3210,7 +3709,13 @@
                                                   "sampleMeanDelta":  0.046764,
                                                   "lumaDelta":  0.010546,
                                                   "nonBackgroundDelta":  0.057103,
-                                                  "triageScore":  0.529095
+                                                  "triageScore":  0.529095,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -3248,7 +3753,13 @@
                                                   "sampleMeanDelta":  0.046706,
                                                   "lumaDelta":  0.028103,
                                                   "nonBackgroundDelta":  0.162062,
-                                                  "triageScore":  0.903538
+                                                  "triageScore":  0.903538,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -3286,7 +3797,13 @@
                                                   "sampleMeanDelta":  0.054641,
                                                   "lumaDelta":  0.018339,
                                                   "nonBackgroundDelta":  0.170769,
-                                                  "triageScore":  0.952228
+                                                  "triageScore":  0.952228,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -3324,7 +3841,13 @@
                                                   "sampleMeanDelta":  0.0271,
                                                   "lumaDelta":  0.020949,
                                                   "nonBackgroundDelta":  0.150161,
-                                                  "triageScore":  0.570679
+                                                  "triageScore":  0.570679,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -3362,7 +3885,13 @@
                                                   "sampleMeanDelta":  0.029732,
                                                   "lumaDelta":  0.025049,
                                                   "nonBackgroundDelta":  0.154981,
-                                                  "triageScore":  0.47987
+                                                  "triageScore":  0.47987,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -3400,7 +3929,13 @@
                                                   "sampleMeanDelta":  0.02309,
                                                   "lumaDelta":  0.00333,
                                                   "nonBackgroundDelta":  0.019721,
-                                                  "triageScore":  0.431257
+                                                  "triageScore":  0.431257,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -3438,7 +3973,13 @@
                                                   "sampleMeanDelta":  0.037512,
                                                   "lumaDelta":  0.001072,
                                                   "nonBackgroundDelta":  0.055149,
-                                                  "triageScore":  0.471185
+                                                  "triageScore":  0.471185,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -3476,7 +4017,13 @@
                                                   "sampleMeanDelta":  0.032228,
                                                   "lumaDelta":  0.026745,
                                                   "nonBackgroundDelta":  0.130656,
-                                                  "triageScore":  0.686941
+                                                  "triageScore":  0.686941,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -3514,7 +4061,13 @@
                                                   "sampleMeanDelta":  0.029396,
                                                   "lumaDelta":  0.001389,
                                                   "nonBackgroundDelta":  0.020898,
-                                                  "triageScore":  0.527467
+                                                  "triageScore":  0.527467,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            },
                            {
@@ -3552,7 +4105,13 @@
                                                   "sampleMeanDelta":  0.03215,
                                                   "lumaDelta":  0.004998,
                                                   "nonBackgroundDelta":  0.000476,
-                                                  "triageScore":  0.576513
+                                                  "triageScore":  0.576513,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true
                                               }
                            }
                        ],
