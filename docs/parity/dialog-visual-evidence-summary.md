@@ -31,22 +31,22 @@ Sources:
 | WPF manifest ids without Avalonia pair | 0 |
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches (scale-aware logical units) | 56 |
+| Paired dimension mismatches (scale-aware logical units) | 54 |
 | Raw PNG pixel dimension mismatches | 71 |
-| Raw PNG mismatches normalized by capture DPI | 15 |
+| Raw PNG mismatches normalized by capture DPI | 17 |
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
 
 ## Scale-Aware Dimension Mismatch Classification
 
-The 56 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept expected platform/native control differences, or refresh limited evidence.
+The 54 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept expected platform/native control differences, or refresh limited evidence.
 
 | Bucket | Count | Top surface ids | Top next action |
 | --- | ---: | --- | --- |
 | content/visual mismatch | 14 | dialog.ScenarioManager<br>dialog.SelectionPane<br>dialog.AccessibilityChecker<br>dialog.SymbolPicker<br>dialog.FormatCells.Alignment | Align the seeded harness state before judging the remaining Scenario Manager dimensions. |
 | evidence limitation | 2 | dialog.GoalSeekStatus<br>dialog.PivotTableOptions.Display | Recapture or tighten the WPF status crop before treating the height delta as a product bug. |
 | expected platform/native difference | 19 | dialog.FindReplace.Replace<br>dialog.FindReplace<br>dialog.FindReplace.Find<br>dialog.Sparkline<br>dialog.Options.QuickAccessToolbar | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
-| real logical-size mismatch | 21 | dialog.ForecastSheet<br>dialog.Subtotal<br>dialog.GoToSpecial<br>dialog.UnhideSheet<br>dialog.Sort | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
+| real logical-size mismatch | 19 | dialog.ForecastSheet<br>dialog.Subtotal<br>dialog.GoToSpecial<br>dialog.Sort<br>dialog.TextToColumns | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
 
 ## Top paired visual outliers
 
@@ -111,7 +111,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.PivotTableOptions.LayoutAndFormat | real logical-size mismatch | 520x676 | 520x610 | 0x66 | The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption. | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
 | dialog.ProtectSheet | real logical-size mismatch | 430x540 | 430x580 | 0x40 | The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption. | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
 | dialog.ProtectWorkbook | expected platform/native difference | 360x250 | 380x240 | 20x10 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
-| dialog.RenameSheet | real logical-size mismatch | 340x150 | 380x190 | 40x40 | The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption. | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
 | dialog.ScenarioManager | content/visual mismatch | 360x420 | 500x740 | 140x320 | The committed WPF PNG shows a selected seeded scenario while the Avalonia PNG shows an empty/no-scenario state. | Align the seeded harness state before judging the remaining Scenario Manager dimensions. |
 | dialog.SelectDataSource | content/visual mismatch | 620x500 | 468x499 | 152x1 | The committed PNGs show different dialog content/state, so the size delta is not isolated layout evidence. | Align the harness data/state first, then reclassify any residual logical-size delta. |
 | dialog.SelectionPane | content/visual mismatch | 380x360 | 520x440 | 140x80 | The committed PNGs use different sample objects and selected rows. | Align the sample worksheet objects and selection state, then re-rank the surface. |
@@ -121,7 +120,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.Subtotal | real logical-size mismatch | 380x390 | 460x480 | 80x90 | The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption. | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
 | dialog.SymbolPicker | content/visual mismatch | 620x500 | 840x620 | 220x120 | The committed PNGs show different symbol-picker presentations, including Avalonia search/detail content absent from WPF. | Decide the target symbol-picker contract, then align either WPF evidence state or Avalonia layout. |
 | dialog.TextToColumns | real logical-size mismatch | 500x430 | 560x560 | 60x130 | The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption. | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
-| dialog.UnhideSheet | real logical-size mismatch | 340x160 | 360x220 | 20x60 | The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption. | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
 | dialog.WatchWindow | real logical-size mismatch | 620x320 | 700x360 | 80x40 | The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption. | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
 | dialog.WorkbookStatistics | real logical-size mismatch | 360x260 | 380x320 | 20x60 | The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption. | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
 | dialog.Zoom | real logical-size mismatch | 300x240 | 300x286 | 0x46 | The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption. | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
@@ -213,7 +211,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.ProtectWorkbook | dialog.ProtectWorkbook.png | 360x250 | 540x375 px @ 144 DPI | True | dialog.ProtectWorkbook.png | 380x240 | 380x240 px @ 96 DPI | True | False | 0.165 |
 | dialog.RecommendedPivotTables | dialog.RecommendedPivotTables.png | 560x340 | 840x510 px @ 144 DPI | True | dialog.RecommendedPivotTables.png | 560x340 | 560x340 px @ 96 DPI | True | True | 0.044 |
 | dialog.RemoveDuplicates | dialog.RemoveDuplicates.png | 360x360 | 360x360 px @ 96 DPI | True | dialog.RemoveDuplicates.png | 360x360 | 360x360 px @ 96 DPI | True | True | 0.516 |
-| dialog.RenameSheet | dialog.RenameSheet.png | 340x150 | 510x225 px @ 144 DPI | True | dialog.RenameSheet.png | 380x190 | 380x190 px @ 96 DPI | True | False | 0.441 |
+| dialog.RenameSheet | dialog.RenameSheet.png | 340x150 | 510x225 px @ 144 DPI | True | dialog.RenameSheet.png | 340x150 | 340x150 px @ 96 DPI | True | True | 0.062 |
 | dialog.SaveAsWorkbook | dialog.SaveAsWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | dialog.SaveAsWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | True | 0.036 |
 | dialog.ScenarioManager | dialog.ScenarioManager.png | 360x420 | 540x630 px @ 144 DPI | True | dialog.ScenarioManager.png | 500x740 | 500x740 px @ 96 DPI | True | False | 1.299 |
 | dialog.SelectDataSource | dialog.SelectDataSource.png | 620x500 | 930x750 px @ 144 DPI | True | dialog.SelectDataSource.png | 468x499 | 468x499 px @ 96 DPI | True | False | 0.404 |
@@ -226,7 +224,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.Subtotal | dialog.Subtotal.png | 380x390 | 570x585 px @ 144 DPI | True | dialog.Subtotal.png | 460x480 | 460x480 px @ 96 DPI | True | False | 0.639 |
 | dialog.SymbolPicker | dialog.SymbolPicker.png | 620x500 | 930x750 px @ 144 DPI | True | dialog.SymbolPicker.png | 840x620 | 840x620 px @ 96 DPI | True | False | 0.804 |
 | dialog.TextToColumns | dialog.TextToColumns.png | 500x430 | 750x645 px @ 144 DPI | True | dialog.TextToColumns.png | 560x560 | 560x560 px @ 96 DPI | True | False | 0.468 |
-| dialog.UnhideSheet | dialog.UnhideSheet.png | 340x160 | 510x240 px @ 144 DPI | True | dialog.UnhideSheet.png | 360x220 | 360x220 px @ 96 DPI | True | False | 0.527 |
+| dialog.UnhideSheet | dialog.UnhideSheet.png | 340x160 | 510x240 px @ 144 DPI | True | dialog.UnhideSheet.png | 340x160 | 340x160 px @ 96 DPI | True | True | 0.041 |
 | dialog.WatchWindow | dialog.WatchWindow.png | 620x320 | 930x480 px @ 144 DPI | True | dialog.WatchWindow.png | 700x360 | 700x360 px @ 96 DPI | True | False | 0.444 |
 | dialog.WorkbookStatistics | dialog.WorkbookStatistics.png | 360x260 | 540x390 px @ 144 DPI | True | dialog.WorkbookStatistics.png | 380x320 | 380x320 px @ 96 DPI | True | False | 0.338 |
 | dialog.Zoom | dialog.Zoom.png | 300x240 | 450x360 px @ 144 DPI | True | dialog.Zoom.png | 300x286 | 300x286 px @ 96 DPI | True | False | 0.229 |
