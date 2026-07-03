@@ -365,6 +365,34 @@
                          "png":  "dialog.ProtectSheet.png",
                          "captured":  true,
                          "note":  "Promoted from FREEX_REVIEW_COMMENTS_PROTECTION_TOUR protect-sheet dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.About",
+                         "kind":  "dialog",
+                         "png":  "dialog.About.png",
+                         "captured":  true,
+                         "note":  "Promoted from FREEX_HELP_ABOUT_LEGAL_TOUR about dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.AccessibilityChecker",
+                         "kind":  "dialog",
+                         "png":  "dialog.AccessibilityChecker.png",
+                         "captured":  true,
+                         "note":  "Promoted from FREEX_REVIEW_COMMENTS_PROTECTION_TOUR accessibility-checker dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.AddWatch",
+                         "kind":  "dialog",
+                         "png":  "dialog.AddWatch.png",
+                         "captured":  true,
+                         "note":  "Promoted from FREEX_FORMULA_DIAGNOSTICS_TOUR add-watch dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.AdvancedFilter",
+                         "kind":  "dialog",
+                         "png":  "dialog.AdvancedFilter.png",
+                         "captured":  true,
+                         "note":  "Promoted from FREEX_DATA_TOOLS_DIALOGS_TOUR advanced-filter dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
                      }
                  ]
 }
