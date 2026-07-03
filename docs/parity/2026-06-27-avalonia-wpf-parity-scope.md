@@ -146,6 +146,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 - The latest local no-Word baseline evidence run covers 19 DOCX fixtures / 31 WPF outputs and reports 60 trusted evidence rows plus 60 baseline comparison rows. Status remains no-Word fallback only on this machine (`skipped=14`, `word-baseline-unavailable=46`); no real Word PNGs were generated.
 - The drawing-effects evidence contract is integrated on `origin/main` (`006988bfe`): WPF/Avalonia summaries and manifests now prove top-level effect-bearing objects for `drawing-objects-complex` (3 effect objects: shape shadow, image shadow/glow/reflection/artistic effect, WordArt glow) and `wordart-watermark-stress` (2 effect objects: shape shadow, WordArt glow). Grouped child effects remain planned by `DrawingObjectVisualPlanner`, but host evidence summaries intentionally do not claim them because WPF DOCX evidence and Avalonia direct-fixture evidence do not surface grouped child effects identically.
 - The note-region visual planner is integrated on `origin/main` (`6e7c6f6ac`): shared `DocumentNoteRegionPlanner` owns footnote/endnote note-region rows, WPF `PageBox` / `FreeW.FidelityRender` and Avalonia `FreeW.PageLayoutShot` use the shared plan, and Avalonia F2 footnote/endnote captures now draw visible note rows instead of metadata-only note flags.
+- The table cell-border visual planner is integrated on `origin/main` (`6e8532452`): shared `TableCellBorderVisualPlanner` owns per-edge brush, thickness, dash, dotted, double, and mixed-color decisions; WPF renders through a thin `TableCellBorderChrome` overlay and Avalonia draws from the same plan.
 - Recent dedup work moved shared behavior into planners/services:
   - `DocumentViewLayoutPlanner`
   - `BackstagePaneSurfacePlanner`
@@ -162,9 +163,9 @@ Dedup items that were blockers in the prior report are now landed or intentional
 3. Remaining behavior/evidence work should focus on Word-like results that are weakly proven, especially protection depth, source/cross-reference workflows, rich rendering, and visual evidence. Proofing language apply now has shared caret/range behavior and dialog planning, so new proofing work should target unproven behavior or evidence rather than duplicating that contract.
 4. Avalonia Backstage Options and Info safety are now wired through shared planners. The remaining Backstage print limitation is direct native printer selection: WPF is host-backed through `PrintDialog`, while Avalonia exposes Print Preview and Create PDF because the current Avalonia target has no native printer dialog/service API.
 5. Print/export parity is incomplete. Avalonia PDF export and preview fallback are backed and evidence-contracted, but direct native print remains deferred and renderer-fidelity evidence still needs broader print-pipeline coverage.
-6. Rich rendering is improving, and the drawing-effects evidence contract now covers top-level effect-bearing shape/image/WordArt objects, but SmartArt and grouped-child DrawingML-heavy surfaces are still simplified or intentionally unclaimed compared with WPF/Word.
+6. Rich rendering is improving: drawing-effects evidence now covers top-level effect-bearing shape/image/WordArt objects, and table cell-border rendering now shares the same per-edge visual plan across WPF/Avalonia. SmartArt and grouped-child DrawingML-heavy surfaces are still simplified or intentionally unclaimed compared with WPF/Word.
 7. Split and page-preview modes are backed as read-only snapshots, and Side-to-Side page-pair navigation is implemented for that read-only path. True dual-live split editing, editable responsive multi-page grids, and editable horizontal Side-to-Side page view remain deferred.
-8. Full MS Word visual parity is not proven locally. Real Word PNG comparison remains limited by Word COM availability on this machine, so no-Word fallback evidence, including the new visible note-region and drawing-effects rows, must not be read as an authoritative Word visual match.
+8. Full MS Word visual parity is not proven locally. Real Word PNG comparison remains limited by Word COM availability on this machine, so no-Word fallback evidence, including the new visible note-region, drawing-effects, and table cell-border rows, must not be read as an authoritative Word visual match.
 
 ### FreeW Next Slices
 
@@ -172,7 +173,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 2. Reconcile or land the active `FreeX-linux` FreeW work before duplicating effort in the same files.
 3. Continue the Avalonia Backstage print lane by adding real native print only if the target exposes a printer API; otherwise keep the shared capability/status policy, evidence contract, Print Preview, and Create PDF fallback honest while broadening print/export evidence.
 4. Close one high-value behavior family with shared planning plus Avalonia UI where Word-like results are still weakly proven.
-5. Extend the WPF/Avalonia render or print evidence lane from the current 19-fixture / 31-WPF-output baseline, keeping the shared note-region and top-level drawing-effects rows covered in both renderers, then run real Word PNG baselines on a machine with Word COM installed.
+5. Extend the WPF/Avalonia render or print evidence lane from the current 19-fixture / 31-WPF-output baseline, keeping the shared note-region, top-level drawing-effects, and table cell-border rows covered in both renderers, then run real Word PNG baselines on a machine with Word COM installed.
 
 ## FreeP Status
 
