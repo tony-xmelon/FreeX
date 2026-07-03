@@ -393,6 +393,34 @@
                          "png":  "dialog.AdvancedFilter.png",
                          "captured":  true,
                          "note":  "Promoted from FREEX_DATA_TOOLS_DIALOGS_TOUR advanced-filter dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.AllowEditRanges",
+                         "kind":  "dialog",
+                         "png":  "dialog.AllowEditRanges.png",
+                         "captured":  true,
+                         "note":  "Promoted from FREEX_REVIEW_COMMENTS_PROTECTION_TOUR allow-edit-ranges dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.AutoFilter",
+                         "kind":  "dialog",
+                         "png":  "dialog.AutoFilter.png",
+                         "captured":  true,
+                         "note":  "Promoted from FREEX_AUTOFILTER_FLYOUT_TOUR autofilter dropdown capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.ChangeChartType",
+                         "kind":  "dialog",
+                         "png":  "dialog.ChangeChartType.png",
+                         "captured":  true,
+                         "note":  "Promoted from FREEX_CHART_DATA_LAYOUT_TOUR change-chart-type dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.Consolidate",
+                         "kind":  "dialog",
+                         "png":  "dialog.Consolidate.png",
+                         "captured":  true,
+                         "note":  "Promoted from FREEX_DATA_TOOLS_DIALOGS_TOUR consolidate dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
                      }
                  ]
 }
