@@ -12,13 +12,13 @@
                     "avaloniaCaptureEvidence":  57,
                     "avaloniaHarnessRoutes":  57,
                     "sharedOrPresentationBackedRoutes":  57,
-                    "wpfCapturedManifestSurfaces":  56,
+                    "wpfCapturedManifestSurfaces":  60,
                     "avaloniaCapturedManifestSurfaces":  93,
-                    "pairedCapturedSurfaceIds":  56,
+                    "pairedCapturedSurfaceIds":  60,
                     "wpfManifestIdsWithoutAvaloniaPair":  0,
-                    "additionalAvaloniaCapturedSurfaceIds":  37,
+                    "additionalAvaloniaCapturedSurfaceIds":  33,
                     "nonBlankPngFailures":  0,
-                    "pairedDimensionMismatches":  36
+                    "pairedDimensionMismatches":  40
                 },
     "pairedSurfaces":  [
                            {
@@ -174,6 +174,120 @@
                                               }
                            },
                            {
+                               "id":  "dialog.AllowEditRanges",
+                               "routeFamily":  "dialog.AllowEditRanges",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AllowEditRanges.png",
+                                           "fileBytes":  36043,
+                                           "width":  645,
+                                           "height":  540,
+                                           "pixels":  348300,
+                                           "distinctColors":  640,
+                                           "opaqueRatio":  1,
+                                           "nonBackgroundRatio":  0.240339,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  245.773619
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AllowEditRanges.png",
+                                                "fileBytes":  14757,
+                                                "width":  430,
+                                                "height":  360,
+                                                "pixels":  154800,
+                                                "distinctColors":  627,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.09522,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  246.288157
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  215,
+                                                  "heightDelta":  180,
+                                                  "dimensionDeltaRatio":  0.666667,
+                                                  "sampleMeanDelta":  0.039337,
+                                                  "lumaDelta":  0.002018,
+                                                  "nonBackgroundDelta":  0.145119,
+                                                  "triageScore":  0.853141
+                                              }
+                           },
+                           {
+                               "id":  "dialog.AutoFilter",
+                               "routeFamily":  "dialog.AutoFilter",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AutoFilter.png",
+                                           "fileBytes":  17502,
+                                           "width":  468,
+                                           "height":  655,
+                                           "pixels":  306540,
+                                           "distinctColors":  181,
+                                           "opaqueRatio":  1,
+                                           "nonBackgroundRatio":  0.109173,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  249.501839
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AutoFilter.png",
+                                                "fileBytes":  5676,
+                                                "width":  312,
+                                                "height":  323,
+                                                "pixels":  100776,
+                                                "distinctColors":  149,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.128453,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  245.985872
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  156,
+                                                  "heightDelta":  332,
+                                                  "dimensionDeltaRatio":  0.840204,
+                                                  "sampleMeanDelta":  0.049627,
+                                                  "lumaDelta":  0.013788,
+                                                  "nonBackgroundDelta":  0.01928,
+                                                  "triageScore":  0.922898
+                                              }
+                           },
+                           {
+                               "id":  "dialog.ChangeChartType",
+                               "routeFamily":  "dialog.ChangeChartType",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ChangeChartType.png",
+                                           "fileBytes":  37945,
+                                           "width":  960,
+                                           "height":  585,
+                                           "pixels":  561600,
+                                           "distinctColors":  451,
+                                           "opaqueRatio":  1,
+                                           "nonBackgroundRatio":  0.072295,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  248.185384
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ChangeChartType.png",
+                                                "fileBytes":  23180,
+                                                "width":  624,
+                                                "height":  381,
+                                                "pixels":  237744,
+                                                "distinctColors":  1310,
+                                                "opaqueRatio":  0.966451,
+                                                "nonBackgroundRatio":  0.126081,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  237.309611
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  336,
+                                                  "heightDelta":  204,
+                                                  "dimensionDeltaRatio":  0.698718,
+                                                  "sampleMeanDelta":  0.095594,
+                                                  "lumaDelta":  0.04265,
+                                                  "nonBackgroundDelta":  0.053786,
+                                                  "triageScore":  0.890748
+                                              }
+                           },
+                           {
                                "id":  "dialog.ConditionalFormatNewRule",
                                "routeFamily":  "dialog.ConditionalFormatNewRule",
                                "wpf":  {
@@ -209,6 +323,44 @@
                                                   "lumaDelta":  0.015343,
                                                   "nonBackgroundDelta":  0.130767,
                                                   "triageScore":  0.335673
+                                              }
+                           },
+                           {
+                               "id":  "dialog.Consolidate",
+                               "routeFamily":  "dialog.Consolidate",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Consolidate.png",
+                                           "fileBytes":  28070,
+                                           "width":  570,
+                                           "height":  630,
+                                           "pixels":  359100,
+                                           "distinctColors":  450,
+                                           "opaqueRatio":  1,
+                                           "nonBackgroundRatio":  0.140727,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  247.291121
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Consolidate.png",
+                                                "fileBytes":  11874,
+                                                "width":  420,
+                                                "height":  450,
+                                                "pixels":  189000,
+                                                "distinctColors":  385,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.048259,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  250.100934
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  150,
+                                                  "heightDelta":  180,
+                                                  "dimensionDeltaRatio":  0.548872,
+                                                  "sampleMeanDelta":  0.023079,
+                                                  "lumaDelta":  0.011019,
+                                                  "nonBackgroundDelta":  0.092468,
+                                                  "triageScore":  0.675438
                                               }
                            },
                            {
@@ -2152,11 +2304,32 @@
                        ],
     "topPairedOutliers":  [
                               {
+                                  "id":  "dialog.AutoFilter",
+                                  "triageScore":  0.922898,
+                                  "sampleMeanDelta":  0.049627,
+                                  "dimension":  "468x655 vs 312x323",
+                                  "nonBackgroundDelta":  0.01928
+                              },
+                              {
+                                  "id":  "dialog.ChangeChartType",
+                                  "triageScore":  0.890748,
+                                  "sampleMeanDelta":  0.095594,
+                                  "dimension":  "960x585 vs 624x381",
+                                  "nonBackgroundDelta":  0.053786
+                              },
+                              {
                                   "id":  "dialog.GoalSeekStatus",
                                   "triageScore":  0.872391,
                                   "sampleMeanDelta":  0.268013,
                                   "dimension":  "380x219 vs 380x190",
                                   "nonBackgroundDelta":  0.251798
+                              },
+                              {
+                                  "id":  "dialog.AllowEditRanges",
+                                  "triageScore":  0.853141,
+                                  "sampleMeanDelta":  0.039337,
+                                  "dimension":  "645x540 vs 430x360",
+                                  "nonBackgroundDelta":  0.145119
                               },
                               {
                                   "id":  "dialog.FormatCells.Alignment",
@@ -2199,78 +2372,9 @@
                                   "sampleMeanDelta":  0.144241,
                                   "dimension":  "620x540 vs 690x660",
                                   "nonBackgroundDelta":  0.144468
-                              },
-                              {
-                                  "id":  "dialog.GoalSeek",
-                                  "triageScore":  0.724508,
-                                  "sampleMeanDelta":  0.257546,
-                                  "dimension":  "380x210 vs 380x210",
-                                  "nonBackgroundDelta":  0.246905
-                              },
-                              {
-                                  "id":  "dialog.AdvancedFilter",
-                                  "triageScore":  0.723419,
-                                  "sampleMeanDelta":  0.031621,
-                                  "dimension":  "630x510 vs 420x340",
-                                  "nonBackgroundDelta":  0.020733
-                              },
-                              {
-                                  "id":  "dialog.ExportOptions",
-                                  "triageScore":  0.723328,
-                                  "sampleMeanDelta":  0.03896,
-                                  "dimension":  "645x813 vs 430x552",
-                                  "nonBackgroundDelta":  0.027291
                               }
                           ],
     "additionalAvaloniaSurfacesNeedingWpfPair":  [
-                                                     {
-                                                         "id":  "dialog.AllowEditRanges",
-                                                         "routeFamily":  "dialog.AllowEditRanges",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AllowEditRanges.png",
-                                                                          "fileBytes":  14757,
-                                                                          "width":  430,
-                                                                          "height":  360,
-                                                                          "pixels":  154800,
-                                                                          "distinctColors":  627,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.09522,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  246.288157
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.AutoFilter",
-                                                         "routeFamily":  "dialog.AutoFilter",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AutoFilter.png",
-                                                                          "fileBytes":  5676,
-                                                                          "width":  312,
-                                                                          "height":  323,
-                                                                          "pixels":  100776,
-                                                                          "distinctColors":  149,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.128453,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  245.985872
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.ChangeChartType",
-                                                         "routeFamily":  "dialog.ChangeChartType",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ChangeChartType.png",
-                                                                          "fileBytes":  23180,
-                                                                          "width":  624,
-                                                                          "height":  381,
-                                                                          "pixels":  237744,
-                                                                          "distinctColors":  1310,
-                                                                          "opaqueRatio":  0.966451,
-                                                                          "nonBackgroundRatio":  0.126081,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  237.309611
-                                                                      }
-                                                     },
                                                      {
                                                          "id":  "dialog.ConditionalFormatManage",
                                                          "routeFamily":  "dialog.ConditionalFormatManage",
@@ -2285,22 +2389,6 @@
                                                                           "nonBackgroundRatio":  0.146424,
                                                                           "isNonBlank":  true,
                                                                           "meanLuma":  245.87259
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.Consolidate",
-                                                         "routeFamily":  "dialog.Consolidate",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Consolidate.png",
-                                                                          "fileBytes":  11874,
-                                                                          "width":  420,
-                                                                          "height":  450,
-                                                                          "pixels":  189000,
-                                                                          "distinctColors":  385,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.048259,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  250.100934
                                                                       }
                                                      },
                                                      {
@@ -2818,38 +2906,10 @@
                                                  ],
     "additionalAvaloniaRouteFamilies":  [
                                             {
-                                                "routeFamily":  "dialog.AllowEditRanges",
-                                                "count":  1,
-                                                "ids":  [
-                                                            "dialog.AllowEditRanges"
-                                                        ]
-                                            },
-                                            {
-                                                "routeFamily":  "dialog.AutoFilter",
-                                                "count":  1,
-                                                "ids":  [
-                                                            "dialog.AutoFilter"
-                                                        ]
-                                            },
-                                            {
-                                                "routeFamily":  "dialog.ChangeChartType",
-                                                "count":  1,
-                                                "ids":  [
-                                                            "dialog.ChangeChartType"
-                                                        ]
-                                            },
-                                            {
                                                 "routeFamily":  "dialog.ConditionalFormatManage",
                                                 "count":  1,
                                                 "ids":  [
                                                             "dialog.ConditionalFormatManage"
-                                                        ]
-                                            },
-                                            {
-                                                "routeFamily":  "dialog.Consolidate",
-                                                "count":  1,
-                                                "ids":  [
-                                                            "dialog.Consolidate"
                                                         ]
                                             },
                                             {

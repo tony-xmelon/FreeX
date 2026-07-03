@@ -145,6 +145,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AutoFilter.png",
                                          "screenshots\\autofilter-flyout-tour\\freex_table_autofilter_dropdown.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -252,6 +253,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Consolidate.png",
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_consolidate_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -789,6 +791,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ChangeChartType.png",
                                          "screenshots\\chart-data-layout-tour\\freex_chart_data_layout_change_chart_type_dialog.png",
                                          "screenshots\\chart-object-selection-tour\\freex_chart_object_selection_change_chart_type_dialog.png"
                                      ],
@@ -1167,6 +1170,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AllowEditRanges.png",
                                          "screenshots\\review-comments-protection-tour\\freex_review_allow_edit_ranges_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
