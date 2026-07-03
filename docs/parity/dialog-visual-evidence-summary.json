@@ -12,13 +12,13 @@
                     "avaloniaCaptureEvidence":  57,
                     "avaloniaHarnessRoutes":  57,
                     "sharedOrPresentationBackedRoutes":  57,
-                    "wpfCapturedManifestSurfaces":  20,
+                    "wpfCapturedManifestSurfaces":  23,
                     "avaloniaCapturedManifestSurfaces":  93,
-                    "pairedCapturedSurfaceIds":  20,
+                    "pairedCapturedSurfaceIds":  23,
                     "wpfManifestIdsWithoutAvaloniaPair":  0,
-                    "additionalAvaloniaCapturedSurfaceIds":  73,
+                    "additionalAvaloniaCapturedSurfaceIds":  70,
                     "nonBlankPngFailures":  0,
-                    "pairedDimensionMismatches":  14
+                    "pairedDimensionMismatches":  17
                 },
     "pairedSurfaces":  [
                            {
@@ -57,6 +57,120 @@
                                                   "lumaDelta":  0.015343,
                                                   "nonBackgroundDelta":  0.130767,
                                                   "triageScore":  0.335673
+                                              }
+                           },
+                           {
+                               "id":  "dialog.FindReplace",
+                               "routeFamily":  "dialog.FindReplace",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FindReplace.png",
+                                           "fileBytes":  11903,
+                                           "width":  720,
+                                           "height":  430,
+                                           "pixels":  309600,
+                                           "distinctColors":  273,
+                                           "opaqueRatio":  0.889096,
+                                           "nonBackgroundRatio":  0.185481,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  222.223868
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FindReplace.png",
+                                                "fileBytes":  12372,
+                                                "width":  720,
+                                                "height":  440,
+                                                "pixels":  316800,
+                                                "distinctColors":  794,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.03666,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  251.279714
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  0,
+                                                  "heightDelta":  10,
+                                                  "dimensionDeltaRatio":  0.023256,
+                                                  "sampleMeanDelta":  0.131782,
+                                                  "lumaDelta":  0.113944,
+                                                  "nonBackgroundDelta":  0.148821,
+                                                  "triageScore":  0.417804
+                                              }
+                           },
+                           {
+                               "id":  "dialog.FindReplace.Find",
+                               "routeFamily":  "dialog.FindReplace",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FindReplace.Find.png",
+                                           "fileBytes":  11903,
+                                           "width":  720,
+                                           "height":  430,
+                                           "pixels":  309600,
+                                           "distinctColors":  273,
+                                           "opaqueRatio":  0.889096,
+                                           "nonBackgroundRatio":  0.185481,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  222.223868
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FindReplace.Find.png",
+                                                "fileBytes":  12372,
+                                                "width":  720,
+                                                "height":  440,
+                                                "pixels":  316800,
+                                                "distinctColors":  794,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.03666,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  251.279714
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  0,
+                                                  "heightDelta":  10,
+                                                  "dimensionDeltaRatio":  0.023256,
+                                                  "sampleMeanDelta":  0.131782,
+                                                  "lumaDelta":  0.113944,
+                                                  "nonBackgroundDelta":  0.148821,
+                                                  "triageScore":  0.417804
+                                              }
+                           },
+                           {
+                               "id":  "dialog.FindReplace.Replace",
+                               "routeFamily":  "dialog.FindReplace",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FindReplace.Replace.png",
+                                           "fileBytes":  15506,
+                                           "width":  720,
+                                           "height":  430,
+                                           "pixels":  309600,
+                                           "distinctColors":  292,
+                                           "opaqueRatio":  0.889096,
+                                           "nonBackgroundRatio":  0.218776,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  220.215731
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FindReplace.Replace.png",
+                                                "fileBytes":  11745,
+                                                "width":  720,
+                                                "height":  440,
+                                                "pixels":  316800,
+                                                "distinctColors":  778,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.0341,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  251.728159
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  0,
+                                                  "heightDelta":  10,
+                                                  "dimensionDeltaRatio":  0.023256,
+                                                  "sampleMeanDelta":  0.135635,
+                                                  "lumaDelta":  0.123578,
+                                                  "nonBackgroundDelta":  0.184675,
+                                                  "triageScore":  0.467144
                                               }
                            },
                            {
@@ -791,11 +905,32 @@
                                   "nonBackgroundDelta":  0.353324
                               },
                               {
+                                  "id":  "dialog.FindReplace.Replace",
+                                  "triageScore":  0.467144,
+                                  "sampleMeanDelta":  0.135635,
+                                  "dimension":  "720x430 vs 720x440",
+                                  "nonBackgroundDelta":  0.184675
+                              },
+                              {
                                   "id":  "dialog.Options.Formulas",
                                   "triageScore":  0.420189,
                                   "sampleMeanDelta":  0.026343,
                                   "dimension":  "744x777 vs 760x560",
                                   "nonBackgroundDelta":  0.075934
+                              },
+                              {
+                                  "id":  "dialog.FindReplace",
+                                  "triageScore":  0.417804,
+                                  "sampleMeanDelta":  0.131782,
+                                  "dimension":  "720x430 vs 720x440",
+                                  "nonBackgroundDelta":  0.148821
+                              },
+                              {
+                                  "id":  "dialog.FindReplace.Find",
+                                  "triageScore":  0.417804,
+                                  "sampleMeanDelta":  0.131782,
+                                  "dimension":  "720x430 vs 720x440",
+                                  "nonBackgroundDelta":  0.148821
                               },
                               {
                                   "id":  "dialog.ConditionalFormatNewRule",
@@ -831,27 +966,6 @@
                                   "sampleMeanDelta":  0.029215,
                                   "dimension":  "744x521 vs 760x560",
                                   "nonBackgroundDelta":  0.083575
-                              },
-                              {
-                                  "id":  "dialog.Options.General",
-                                  "triageScore":  0.218961,
-                                  "sampleMeanDelta":  0.029215,
-                                  "dimension":  "744x521 vs 760x560",
-                                  "nonBackgroundDelta":  0.083575
-                              },
-                              {
-                                  "id":  "dialog.Options.TrustCenter",
-                                  "triageScore":  0.211834,
-                                  "sampleMeanDelta":  0.03279,
-                                  "dimension":  "744x521 vs 760x560",
-                                  "nonBackgroundDelta":  0.075982
-                              },
-                              {
-                                  "id":  "dialog.Options.Save",
-                                  "triageScore":  0.20675,
-                                  "sampleMeanDelta":  0.01891,
-                                  "dimension":  "744x521 vs 760x560",
-                                  "nonBackgroundDelta":  0.08428
                               }
                           ],
     "additionalAvaloniaSurfacesNeedingWpfPair":  [
@@ -1109,54 +1223,6 @@
                                                                           "nonBackgroundRatio":  0.097915,
                                                                           "isNonBlank":  true,
                                                                           "meanLuma":  246.680483
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.FindReplace",
-                                                         "routeFamily":  "dialog.FindReplace",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FindReplace.png",
-                                                                          "fileBytes":  12372,
-                                                                          "width":  720,
-                                                                          "height":  440,
-                                                                          "pixels":  316800,
-                                                                          "distinctColors":  794,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.03666,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  251.279714
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.FindReplace.Find",
-                                                         "routeFamily":  "dialog.FindReplace",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FindReplace.Find.png",
-                                                                          "fileBytes":  12372,
-                                                                          "width":  720,
-                                                                          "height":  440,
-                                                                          "pixels":  316800,
-                                                                          "distinctColors":  794,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.03666,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  251.279714
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.FindReplace.Replace",
-                                                         "routeFamily":  "dialog.FindReplace",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FindReplace.Replace.png",
-                                                                          "fileBytes":  11745,
-                                                                          "width":  720,
-                                                                          "height":  440,
-                                                                          "pixels":  316800,
-                                                                          "distinctColors":  778,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.0341,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  251.728159
                                                                       }
                                                      },
                                                      {
@@ -2135,15 +2201,6 @@
                                                 "count":  1,
                                                 "ids":  [
                                                             "dialog.ExportOptions"
-                                                        ]
-                                            },
-                                            {
-                                                "routeFamily":  "dialog.FindReplace",
-                                                "count":  3,
-                                                "ids":  [
-                                                            "dialog.FindReplace",
-                                                            "dialog.FindReplace.Find",
-                                                            "dialog.FindReplace.Replace"
                                                         ]
                                             },
                                             {
