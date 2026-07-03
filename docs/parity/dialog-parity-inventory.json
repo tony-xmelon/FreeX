@@ -62,6 +62,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.GoTo.png",
                                          "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_go_to_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -104,6 +105,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Sort.png",
                                          "screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_sort_dialog.png",
                                          "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_custom_sort_dialog.png"
                                      ],
@@ -125,6 +127,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SortOptions.png",
                                          "screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_sort_options_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -173,6 +176,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.DataValidation.png",
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_validation_error_alert_tab.png",
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_validation_input_message_tab.png",
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_validation_settings_tab.png"
@@ -195,6 +199,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.TextToColumns.png",
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_text_to_columns_step1_original_data_type.png",
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_text_to_columns_step2_delimited.png",
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_text_to_columns_step2_fixed_width.png",
@@ -347,6 +352,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.DataTable.png",
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_table_dialog.png",
                                          "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_data_table_dialog.png"
                                      ],
@@ -369,6 +375,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ScenarioManager.png",
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_scenario_manager_dialog.png",
                                          "screenshots\\data-what-if-workflows-tour\\freex_data_what_if_workflows_scenario_manager_dialog.png"
                                      ],
@@ -391,6 +398,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ForecastSheet.png",
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_forecast_sheet_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -412,6 +420,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Subtotal.png",
                                          "screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_subtotal_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -433,6 +442,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.CreateTable.png",
                                          "screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_create_table_dialog.png",
                                          "screenshots\\table-workflows-tour\\freex_table_workflows_create_table_dialog.png"
                                      ],
@@ -476,6 +486,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Sparkline.png",
                                          "screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_sparkline_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -499,6 +510,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.InsertHyperlink.png",
                                          "screenshots\\insert-objects-links-tour\\freex_insert_hyperlink_dialog_address_focus.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -520,6 +532,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SymbolPicker.png",
                                          "screenshots\\insert-objects-links-tour\\freex_insert_symbol_picker_opened.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -540,6 +553,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ErrorChecking.png",
                                          "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_error_checking_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -560,6 +574,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.EvaluateFormula.png",
                                          "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_evaluate_after_step.png",
                                          "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_evaluate_default.png"
                                      ],
@@ -581,6 +596,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.WatchWindow.png",
                                          "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_window_after_delete.png",
                                          "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_window_after_refresh.png",
                                          "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_window_list.png"
@@ -656,6 +672,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SelectionPane.png",
                                          "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_arrange_selection_pane_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -677,6 +694,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.InsertSlicer.png",
                                          "screenshots\\pivot-options-slicer-tour\\freex_pivot_insert_slicer_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -702,6 +720,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.InsertTimeline.png",
                                          "screenshots\\pivot-options-slicer-tour\\freex_pivot_insert_timeline_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -813,6 +832,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SelectDataSource.png",
                                          "screenshots\\chart-data-layout-tour\\freex_chart_data_layout_select_data_dialog.png",
                                          "screenshots\\chart-object-selection-tour\\freex_chart_object_selection_select_data_dialog.png"
                                      ],
@@ -847,6 +867,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FormatChartArea.png",
                                          "screenshots\\chart-data-layout-tour\\freex_chart_data_layout_format_chart_area_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -867,6 +888,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ShapeEffects.png",
                                          "screenshots\\draw-object-formatting-tour\\freex_draw_object_formatting_shape_effects_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -887,6 +909,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ShapeGradient.png",
                                          "screenshots\\draw-object-formatting-tour\\freex_draw_object_formatting_shape_gradient_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -965,6 +988,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ConditionalFormatManage.png",
                                          "screenshots\\home-styles-cf-tour\\freex_home_styles_cf_manage_rules_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -1003,6 +1027,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Zoom.png",
                                          "screenshots\\status-footer-interactions-tour\\freex_status_footer_interactions_zoom_dialog_close_focus_return.png",
                                          "screenshots\\view-panes-zoom-tour\\freex_view_panes_zoom_dialog_custom_125.png",
                                          "tools\\foreground-captures\\freex-status-zoom-text-dialog-click\\freex-status-zoom-text-dialog-click_20260611_002303.png"
@@ -1026,6 +1051,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.CustomViews.png",
                                          "screenshots\\view-panes-zoom-tour\\freex_view_panes_zoom_custom_views_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -1074,6 +1100,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.OpenWorkbook.png",
                                          "screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png",
                                          "tools\\foreground-captures\\freex-open-dialog\\freex-open-dialog_20260610_142532.png"
                                      ],
@@ -1097,6 +1124,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SaveAsWorkbook.png",
                                          "screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png",
                                          "tools\\foreground-captures\\freex-save-as-dialog\\freex-save-as-dialog_20260610_142550.png"
                                      ],
@@ -1221,6 +1249,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ProtectWorkbook.png",
                                          "screenshots\\review-comments-protection-tour\\freex_review_protect_workbook_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -1250,6 +1279,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.WorkbookStatistics.png",
                                          "screenshots\\review-stats-share-tour\\freex_review_workbook_statistics_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -1271,6 +1301,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.RenameSheet.png",
                                          "screenshots\\sheet-tabs-tour\\freex_sheet_tabs_rename_dialog_opened.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -1291,6 +1322,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.UnhideSheet.png",
                                          "screenshots\\sheet-tabs-tour\\freex_sheet_tabs_unhide_dialog_opened.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -1333,6 +1365,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.LegalNotices.png",
                                          "screenshots\\help-about-legal-tour\\freex_legal_notices_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
