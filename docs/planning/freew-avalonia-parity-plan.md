@@ -36,6 +36,8 @@ Status 2026-07-03: character border/shading render parity is integrated on `orig
 
 Status 2026-07-03: the Word-baseline evidence fallback is integrated on `origin/main` (`e20690704`, worker `a503f396cd434960382d6caaf534f7caac03fd7a`). The baseline runner now uses an explicit WPF software-render fallback and keeps the no-Word path trustworthy instead of silently dropping baseline rows.
 
+Status 2026-07-03: post-field evidence updates are integrated on `origin/main`. Proofing language caret behavior now follows the shared-first model (`2081a0dc0`, worker `60c24b8d9`): applying Set Proofing Language with no selection writes the language to caret/typing state rather than mutating the previous run, while selected ranges still apply through the shared formatting path. The proofing language dialog planner is also present (`373714b9e`, worker `22f78afc3`), keeping dialog choices and apply intent in shared presentation planning. The field page-number visual evidence scenario is integrated (`11e7c74ee`, worker `ddba30497`) and extends the manifest-backed evidence set with page-number field rendering.
+
 The next parity work should therefore avoid command-count chasing. Remaining value is in stronger visual proof: real Word-baseline PNG comparison on a machine with Word COM, broader fixture coverage beyond the current mixed-section/table/floating object/chart/SmartArt/WordArt/run-decoration evidence set, and behavior evidence where a command exists but Word-like results are still only weakly proven. The Word-baseline summary path now reports baseline ids, candidate paths, status counts, skip reasons, tolerance limits, and changed-pixel metrics when comparison PNGs are available. On this machine Word COM remains unavailable, so the latest integrated `-AllowMissingWord` run produced no real Word PNGs and must not be read as full MS Word visual parity.
 
 ## Architecture Rule
@@ -118,6 +120,8 @@ Avalonia should implement the same policy through its Skia/PDF and print surface
 
 Status 2026-07-03: Print pane capability/status is now shared through `BackstageDirectPrintCapability`. WPF's native `PrintDialog` path is classified as host-backed by the shared planner. Avalonia has backed Print Preview plus a clearly labeled Create PDF fallback from the preview toolbar, while direct native printer selection remains deferred because the current Avalonia target exposes no native `PrintDialog` or printer service.
 
+Status 2026-07-03: Backstage print evidence contracts are hardened on `origin/main` (`1d6df5241`, worker `8a13d769f`). The evidence checks now assert the shared direct-print capability/status contract and the honest Avalonia fallback shape, so future Backstage print changes should update that contract rather than reintroducing host-local status drift.
+
 ### 4. References, Source Management, and Table of Authorities
 
 Close the references family by separating semantic document data from UI:
@@ -136,6 +140,8 @@ Prioritize proofing/thesaurus/protection/compare-combine where WPF already prove
 Status 2026-07-03: Compare/Combine execution is implemented for Avalonia through `ReviewCompareCombineWorkflow` plus thin file-picker/dialog callbacks. Remaining Review-depth work should focus on proofing/protection evidence and any behavior still not proven by focused tests, not on these two command callbacks.
 
 Status 2026-07-03: Thesaurus behavior parity is implemented through shared presentation planning plus thin host realization. Avalonia supports synonym Replace from the shared planner, and WPF retains the richer Insert/Copy pane actions. Integrated validation observed: presentation 3/3, WPF 15/15, Avalonia 41/41.
+
+Status 2026-07-03: Proofing language behavior has moved further into shared presentation policy. The caret/no-selection path now preserves Word-like typing intent by updating caret language state, selected ranges still apply through the shared run-formatting path, and the proofing language dialog planner records the backed dialog options/apply intent for both hosts. Remaining Review-depth proofing work should focus on evidence and behavior not yet proven by those shared contracts, not on duplicating language-apply logic in host code.
 
 ### 6. Read, Split, and Window Behaviors
 
@@ -157,7 +163,7 @@ Create an evidence loop for the remaining visual/fidelity work. The minimum capt
 
 Prefer a small fixture matrix with WPF and Avalonia output side by side, plus source-backed notes for expected differences. The 2026-06-25/26 FreeW visual reports in `docs/fidelity` are the current WPF evidence baseline; extend from there instead of treating their old harness blind spots as product blockers.
 
-Status 2026-07-03: shared contract expanded and the fallback path is integrated. The latest integrated `tools/Run-FreeWWordBaselineEvidence.ps1 -AllowMissingWord` pass rendered 18 DOCX fixtures / 28 WPF outputs through the explicit software fallback and `FreeW.VisualEvidenceSummary` reported 54 trusted evidence rows plus 54 baseline comparison rows. Because Word COM is unavailable on this machine, comparison status was `skipped=8` and `word-baseline-unavailable=46`; no real Word PNGs were generated. The evidence set includes the existing paired footnote/endnote placement, section geometry, table layout, drawing objects, chart/SmartArt composition, WordArt/watermark stress coverage, and the integrated run-decoration border/shading scenarios. WPF has true `f2-section-landscape` portrait/landscape page dimensions; Avalonia renders that scenario through shared section-surface page slices, so its evidence rows carry mixed portrait/landscape capture dimensions, section ownership, and section-page-surface metadata. The next visual increment should use that oracle to prioritize real Word-baseline pixel comparison rather than inventing a parallel harness.
+Status 2026-07-03: shared contract expanded and the fallback path is integrated. The latest local `tools/Run-FreeWWordBaselineEvidence.ps1 -AllowMissingWord` pass rendered 19 DOCX fixtures / 31 WPF outputs through the explicit software fallback and `FreeW.VisualEvidenceSummary` reported 60 trusted evidence rows plus 60 baseline comparison rows. Because Word COM is unavailable on this machine, comparison status was `skipped=14` and `word-baseline-unavailable=46`; no real Word PNGs were generated. The evidence set includes the existing paired footnote/endnote placement, section geometry, table layout, drawing objects, chart/SmartArt composition, WordArt/watermark stress coverage, run-decoration border/shading scenarios, and the integrated field page-number visual scenario. WPF has true `f2-section-landscape` portrait/landscape page dimensions; Avalonia renders that scenario through shared section-surface page slices, so its evidence rows carry mixed portrait/landscape capture dimensions, section ownership, and section-page-surface metadata. The next visual increment should use that oracle to prioritize real Word-baseline pixel comparison rather than inventing a parallel harness.
 
 ## WPF Work Rule
 
