@@ -421,6 +421,237 @@
                          "png":  "dialog.Consolidate.png",
                          "captured":  true,
                          "note":  "Promoted from FREEX_DATA_TOOLS_DIALOGS_TOUR consolidate dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.ConditionalFormatManage",
+                         "kind":  "dialog",
+                         "png":  "dialog.ConditionalFormatManage.png",
+                         "captured":  true,
+                         "note":  "Promoted from home-styles-cf-tour committed WPF screenshot evidence (screenshots\\home-styles-cf-tour\\freex_home_styles_cf_manage_rules_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.CreateTable",
+                         "kind":  "dialog",
+                         "png":  "dialog.CreateTable.png",
+                         "captured":  true,
+                         "note":  "Promoted from insert-tables-charts-tour committed WPF screenshot evidence (screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_create_table_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.CustomViews",
+                         "kind":  "dialog",
+                         "png":  "dialog.CustomViews.png",
+                         "captured":  true,
+                         "note":  "Promoted from view-panes-zoom-tour committed WPF screenshot evidence (screenshots\\view-panes-zoom-tour\\freex_view_panes_zoom_custom_views_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.DataTable",
+                         "kind":  "dialog",
+                         "png":  "dialog.DataTable.png",
+                         "captured":  true,
+                         "note":  "Promoted from data-tools-dialogs-tour committed WPF screenshot evidence (screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_table_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.DataValidation",
+                         "kind":  "dialog",
+                         "png":  "dialog.DataValidation.png",
+                         "captured":  true,
+                         "note":  "Promoted from data-tools-dialogs-tour committed WPF screenshot evidence (screenshots\\data-tools-dialogs-tour\\freex_data_tools_data_validation_settings_tab.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.ErrorChecking",
+                         "kind":  "dialog",
+                         "png":  "dialog.ErrorChecking.png",
+                         "captured":  true,
+                         "note":  "Promoted from formula-diagnostics-tour committed WPF screenshot evidence (screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_error_checking_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.EvaluateFormula",
+                         "kind":  "dialog",
+                         "png":  "dialog.EvaluateFormula.png",
+                         "captured":  true,
+                         "note":  "Promoted from formula-diagnostics-tour committed WPF screenshot evidence (screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_evaluate_default.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.ForecastSheet",
+                         "kind":  "dialog",
+                         "png":  "dialog.ForecastSheet.png",
+                         "captured":  true,
+                         "note":  "Promoted from data-tools-dialogs-tour committed WPF screenshot evidence (screenshots\\data-tools-dialogs-tour\\freex_data_tools_forecast_sheet_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.FormatChartArea",
+                         "kind":  "dialog",
+                         "png":  "dialog.FormatChartArea.png",
+                         "captured":  true,
+                         "note":  "Promoted from chart-data-layout-tour committed WPF screenshot evidence (screenshots\\chart-data-layout-tour\\freex_chart_data_layout_format_chart_area_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.GoTo",
+                         "kind":  "dialog",
+                         "png":  "dialog.GoTo.png",
+                         "captured":  true,
+                         "note":  "Promoted from home-clipboard-cells-editing-tour committed WPF screenshot evidence (screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_go_to_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.InsertHyperlink",
+                         "kind":  "dialog",
+                         "png":  "dialog.InsertHyperlink.png",
+                         "captured":  true,
+                         "note":  "Promoted from insert-objects-links-tour committed WPF screenshot evidence (screenshots\\insert-objects-links-tour\\freex_insert_hyperlink_dialog_address_focus.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.InsertSlicer",
+                         "kind":  "dialog",
+                         "png":  "dialog.InsertSlicer.png",
+                         "captured":  true,
+                         "note":  "Promoted from pivot-options-slicer-tour committed WPF screenshot evidence (screenshots\\pivot-options-slicer-tour\\freex_pivot_insert_slicer_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.InsertTimeline",
+                         "kind":  "dialog",
+                         "png":  "dialog.InsertTimeline.png",
+                         "captured":  true,
+                         "note":  "Promoted from pivot-options-slicer-tour committed WPF screenshot evidence (screenshots\\pivot-options-slicer-tour\\freex_pivot_insert_timeline_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.LegalNotices",
+                         "kind":  "dialog",
+                         "png":  "dialog.LegalNotices.png",
+                         "captured":  true,
+                         "note":  "Promoted from help-about-legal-tour committed WPF screenshot evidence (screenshots\\help-about-legal-tour\\freex_legal_notices_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.OpenWorkbook",
+                         "kind":  "dialog",
+                         "png":  "dialog.OpenWorkbook.png",
+                         "captured":  true,
+                         "note":  "Promoted from open-workbook-dialog-tour committed WPF screenshot evidence (screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.ProtectWorkbook",
+                         "kind":  "dialog",
+                         "png":  "dialog.ProtectWorkbook.png",
+                         "captured":  true,
+                         "note":  "Promoted from review-comments-protection-tour committed WPF screenshot evidence (screenshots\\review-comments-protection-tour\\freex_review_protect_workbook_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.RenameSheet",
+                         "kind":  "dialog",
+                         "png":  "dialog.RenameSheet.png",
+                         "captured":  true,
+                         "note":  "Promoted from sheet-tabs-tour committed WPF screenshot evidence (screenshots\\sheet-tabs-tour\\freex_sheet_tabs_rename_dialog_opened.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.SaveAsWorkbook",
+                         "kind":  "dialog",
+                         "png":  "dialog.SaveAsWorkbook.png",
+                         "captured":  true,
+                         "note":  "Promoted from save-as-workbook-dialog-tour committed WPF screenshot evidence (screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.ScenarioManager",
+                         "kind":  "dialog",
+                         "png":  "dialog.ScenarioManager.png",
+                         "captured":  true,
+                         "note":  "Promoted from data-tools-dialogs-tour committed WPF screenshot evidence (screenshots\\data-tools-dialogs-tour\\freex_data_tools_scenario_manager_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.SelectDataSource",
+                         "kind":  "dialog",
+                         "png":  "dialog.SelectDataSource.png",
+                         "captured":  true,
+                         "note":  "Promoted from chart-data-layout-tour committed WPF screenshot evidence (screenshots\\chart-data-layout-tour\\freex_chart_data_layout_select_data_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.SelectionPane",
+                         "kind":  "dialog",
+                         "png":  "dialog.SelectionPane.png",
+                         "captured":  true,
+                         "note":  "Promoted from page-layout-setup-tour committed WPF screenshot evidence (screenshots\\page-layout-setup-tour\\freex_page_layout_setup_arrange_selection_pane_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.ShapeEffects",
+                         "kind":  "dialog",
+                         "png":  "dialog.ShapeEffects.png",
+                         "captured":  true,
+                         "note":  "Promoted from draw-object-formatting-tour committed WPF screenshot evidence (screenshots\\draw-object-formatting-tour\\freex_draw_object_formatting_shape_effects_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.ShapeGradient",
+                         "kind":  "dialog",
+                         "png":  "dialog.ShapeGradient.png",
+                         "captured":  true,
+                         "note":  "Promoted from draw-object-formatting-tour committed WPF screenshot evidence (screenshots\\draw-object-formatting-tour\\freex_draw_object_formatting_shape_gradient_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.Sort",
+                         "kind":  "dialog",
+                         "png":  "dialog.Sort.png",
+                         "captured":  true,
+                         "note":  "Promoted from data-sort-filter-outline-tour committed WPF screenshot evidence (screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_sort_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.SortOptions",
+                         "kind":  "dialog",
+                         "png":  "dialog.SortOptions.png",
+                         "captured":  true,
+                         "note":  "Promoted from data-sort-filter-outline-tour committed WPF screenshot evidence (screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_sort_options_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.Sparkline",
+                         "kind":  "dialog",
+                         "png":  "dialog.Sparkline.png",
+                         "captured":  true,
+                         "note":  "Promoted from insert-tables-charts-tour committed WPF screenshot evidence (screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_sparkline_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.Subtotal",
+                         "kind":  "dialog",
+                         "png":  "dialog.Subtotal.png",
+                         "captured":  true,
+                         "note":  "Promoted from data-sort-filter-outline-tour committed WPF screenshot evidence (screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_subtotal_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.SymbolPicker",
+                         "kind":  "dialog",
+                         "png":  "dialog.SymbolPicker.png",
+                         "captured":  true,
+                         "note":  "Promoted from insert-objects-links-tour committed WPF screenshot evidence (screenshots\\insert-objects-links-tour\\freex_insert_symbol_picker_opened.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.TextToColumns",
+                         "kind":  "dialog",
+                         "png":  "dialog.TextToColumns.png",
+                         "captured":  true,
+                         "note":  "Promoted from data-tools-dialogs-tour committed WPF screenshot evidence (screenshots\\data-tools-dialogs-tour\\freex_data_tools_text_to_columns_step1_original_data_type.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.UnhideSheet",
+                         "kind":  "dialog",
+                         "png":  "dialog.UnhideSheet.png",
+                         "captured":  true,
+                         "note":  "Promoted from sheet-tabs-tour committed WPF screenshot evidence (screenshots\\sheet-tabs-tour\\freex_sheet_tabs_unhide_dialog_opened.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.WatchWindow",
+                         "kind":  "dialog",
+                         "png":  "dialog.WatchWindow.png",
+                         "captured":  true,
+                         "note":  "Promoted from formula-diagnostics-tour committed WPF screenshot evidence (screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_window_list.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.WorkbookStatistics",
+                         "kind":  "dialog",
+                         "png":  "dialog.WorkbookStatistics.png",
+                         "captured":  true,
+                         "note":  "Promoted from review-stats-share-tour committed WPF screenshot evidence (screenshots\\review-stats-share-tour\\freex_review_workbook_statistics_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                     },
+                     {
+                         "id":  "dialog.Zoom",
+                         "kind":  "dialog",
+                         "png":  "dialog.Zoom.png",
+                         "captured":  true,
+                         "note":  "Promoted from view-panes-zoom-tour committed WPF screenshot evidence (screenshots\\view-panes-zoom-tour\\freex_view_panes_zoom_dialog_custom_125.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
                      }
                  ]
 }

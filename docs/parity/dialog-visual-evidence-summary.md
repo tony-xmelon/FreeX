@@ -25,13 +25,13 @@ Sources:
 
 | Metric | Count |
 | --- | ---: |
-| WPF captured manifest surfaces with committed PNGs | 60 |
+| WPF captured manifest surfaces with committed PNGs | 93 |
 | Avalonia captured manifest surfaces with committed PNGs | 93 |
-| Paired captured surface ids | 60 |
+| Paired captured surface ids | 93 |
 | WPF manifest ids without Avalonia pair | 0 |
-| Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 33 |
+| Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches | 40 |
+| Paired dimension mismatches | 73 |
 
 ## Top paired visual outliers
 
@@ -39,16 +39,16 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF size | Avalonia size | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| dialog.SaveAsWorkbook | 1280x800 | 640x420 | 1.869 | 0.089 | 0.023 | 0.781 |
+| dialog.OpenWorkbook | 1280x800 | 640x420 | 1.863 | 0.086 | 0.023 | 0.779 |
+| dialog.SelectDataSource | 930x750 | 468x499 | 0.988 | 0.109 | 0.046 | 0.002 |
+| dialog.Sparkline | 570x360 | 372x230 | 0.952 | 0.055 | 0.018 | 0.171 |
 | dialog.AutoFilter | 468x655 | 312x323 | 0.923 | 0.050 | 0.014 | 0.019 |
+| dialog.InsertSlicer | 615x405 | 410x233 | 0.905 | 0.094 | 0.038 | 0.014 |
+| dialog.SortOptions | 495x390 | 330x260 | 0.904 | 0.047 | 0.028 | 0.162 |
 | dialog.ChangeChartType | 960x585 | 624x381 | 0.891 | 0.096 | 0.043 | 0.054 |
+| dialog.ShapeEffects | 570x285 | 380x190 | 0.882 | 0.031 | 0.021 | 0.163 |
 | dialog.GoalSeekStatus | 380x219 | 380x190 | 0.872 | 0.268 | 0.220 | 0.252 |
-| dialog.AllowEditRanges | 645x540 | 430x360 | 0.853 | 0.039 | 0.002 | 0.145 |
-| dialog.FormatCells.Alignment | 620x540 | 690x660 | 0.768 | 0.134 | 0.110 | 0.188 |
-| dialog.FormatCells.Fill | 620x598 | 690x660 | 0.762 | 0.133 | 0.135 | 0.277 |
-| dialog.AddWatch | 540x255 | 360x170 | 0.754 | 0.054 | 0.000 | 0.033 |
-| dialog.FormatCells.Border | 620x540 | 690x660 | 0.754 | 0.162 | 0.115 | 0.142 |
-| dialog.About | 840x630 | 560x420 | 0.751 | 0.055 | 0.009 | 0.020 |
-| dialog.FormatCells.Font | 620x540 | 690x660 | 0.733 | 0.144 | 0.110 | 0.144 |
 
 ## Paired manifest surfaces
 
@@ -61,12 +61,20 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.AllowEditRanges | dialog.AllowEditRanges.png | 645x540 | True | dialog.AllowEditRanges.png | 430x360 | True | 0.853 |
 | dialog.AutoFilter | dialog.AutoFilter.png | 468x655 | True | dialog.AutoFilter.png | 312x323 | True | 0.923 |
 | dialog.ChangeChartType | dialog.ChangeChartType.png | 960x585 | True | dialog.ChangeChartType.png | 624x381 | True | 0.891 |
+| dialog.ConditionalFormatManage | dialog.ConditionalFormatManage.png | 840x630 | True | dialog.ConditionalFormatManage.png | 560x420 | True | 0.741 |
 | dialog.ConditionalFormatNewRule | dialog.ConditionalFormatNewRule.png | 634x334 | True | dialog.ConditionalFormatNewRule.png | 640x380 | True | 0.336 |
 | dialog.Consolidate | dialog.Consolidate.png | 570x630 | True | dialog.Consolidate.png | 420x450 | True | 0.675 |
+| dialog.CreateTable | dialog.CreateTable.png | 540x285 | True | dialog.CreateTable.png | 360x190 | True | 0.752 |
+| dialog.CustomViews | dialog.CustomViews.png | 960x540 | True | dialog.CustomViews.png | 640x360 | True | 0.724 |
+| dialog.DataTable | dialog.DataTable.png | 540x315 | True | dialog.DataTable.png | 380x260 | True | 0.551 |
+| dialog.DataValidation | dialog.DataValidation.png | 780x840 | True | dialog.DataValidation.png | 520x560 | True | 0.725 |
+| dialog.ErrorChecking | dialog.ErrorChecking.png | 1080x630 | True | dialog.ErrorChecking.png | 720x420 | True | 0.770 |
+| dialog.EvaluateFormula | dialog.EvaluateFormula.png | 900x540 | True | dialog.EvaluateFormula.png | 600x360 | True | 0.756 |
 | dialog.ExportOptions | dialog.ExportOptions.png | 645x813 | True | dialog.ExportOptions.png | 430x552 | True | 0.723 |
 | dialog.FindReplace | dialog.FindReplace.png | 720x430 | True | dialog.FindReplace.png | 720x440 | True | 0.418 |
 | dialog.FindReplace.Find | dialog.FindReplace.Find.png | 720x430 | True | dialog.FindReplace.Find.png | 720x440 | True | 0.418 |
 | dialog.FindReplace.Replace | dialog.FindReplace.Replace.png | 720x430 | True | dialog.FindReplace.Replace.png | 720x440 | True | 0.467 |
+| dialog.ForecastSheet | dialog.ForecastSheet.png | 480x225 | True | dialog.ForecastSheet.png | 360x220 | True | 0.367 |
 | dialog.FormatCells | dialog.FormatCells.png | 620x540 | True | dialog.FormatCells.png | 690x660 | True | 0.611 |
 | dialog.FormatCells.Alignment | dialog.FormatCells.Alignment.png | 620x540 | True | dialog.FormatCells.Alignment.png | 690x660 | True | 0.768 |
 | dialog.FormatCells.Border | dialog.FormatCells.Border.png | 620x540 | True | dialog.FormatCells.Border.png | 690x660 | True | 0.754 |
@@ -74,9 +82,16 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.FormatCells.Font | dialog.FormatCells.Font.png | 620x540 | True | dialog.FormatCells.Font.png | 690x660 | True | 0.733 |
 | dialog.FormatCells.Number | dialog.FormatCells.Number.png | 620x540 | True | dialog.FormatCells.Number.png | 690x660 | True | 0.611 |
 | dialog.FormatCells.Protection | dialog.FormatCells.Protection.png | 620x540 | True | dialog.FormatCells.Protection.png | 690x660 | True | 0.669 |
+| dialog.FormatChartArea | dialog.FormatChartArea.png | 630x885 | True | dialog.FormatChartArea.png | 432x760 | True | 0.530 |
 | dialog.GoalSeek | dialog.GoalSeek.png | 380x210 | True | dialog.GoalSeek.png | 380x210 | True | 0.725 |
 | dialog.GoalSeekStatus | dialog.GoalSeekStatus.png | 380x219 | True | dialog.GoalSeekStatus.png | 380x190 | True | 0.872 |
+| dialog.GoTo | dialog.GoTo.png | 630x480 | True | dialog.GoTo.png | 420x320 | True | 0.777 |
 | dialog.GoToSpecial | dialog.GoToSpecial.png | 430x438 | True | dialog.GoToSpecial.png | 430x520 | True | 0.636 |
+| dialog.InsertHyperlink | dialog.InsertHyperlink.png | 840x450 | True | dialog.InsertHyperlink.png | 560x360 | True | 0.641 |
+| dialog.InsertSlicer | dialog.InsertSlicer.png | 615x405 | True | dialog.InsertSlicer.png | 410x233 | True | 0.905 |
+| dialog.InsertTimeline | dialog.InsertTimeline.png | 615x405 | True | dialog.InsertTimeline.png | 410x225 | True | 0.835 |
+| dialog.LegalNotices | dialog.LegalNotices.png | 1260x930 | True | dialog.LegalNotices.png | 840x620 | True | 0.696 |
+| dialog.OpenWorkbook | dialog.OpenWorkbook.png | 1280x800 | True | dialog.OpenWorkbook.png | 640x420 | True | 1.863 |
 | dialog.Options | dialog.Options.png | 744x521 | True | dialog.Options.png | 760x560 | True | 0.219 |
 | dialog.Options.AddIns | dialog.Options.AddIns.png | 744x521 | True | dialog.Options.AddIns.png | 760x560 | True | 0.201 |
 | dialog.Options.Advanced | dialog.Options.Advanced.png | 744x521 | True | dialog.Options.Advanced.png | 760x560 | True | 0.223 |
@@ -112,83 +127,35 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.PivotValueFieldSettings.SummarizeValuesBy | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | True | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | True | 0.472 |
 | dialog.PrintPreview | dialog.PrintPreview.png | 1120x700 | True | dialog.PrintPreview.png | 1120x700 | True | 0.512 |
 | dialog.ProtectSheet | dialog.ProtectSheet.png | 645x810 | True | dialog.ProtectSheet.png | 430x580 | True | 0.669 |
+| dialog.ProtectWorkbook | dialog.ProtectWorkbook.png | 540x375 | True | dialog.ProtectWorkbook.png | 380x240 | True | 0.726 |
 | dialog.RecommendedPivotTables | dialog.RecommendedPivotTables.png | 840x510 | True | dialog.RecommendedPivotTables.png | 560x340 | True | 0.710 |
 | dialog.RemoveDuplicates | dialog.RemoveDuplicates.png | 360x360 | True | dialog.RemoveDuplicates.png | 360x360 | True | 0.515 |
+| dialog.RenameSheet | dialog.RenameSheet.png | 510x225 | True | dialog.RenameSheet.png | 380x190 | True | 0.467 |
+| dialog.SaveAsWorkbook | dialog.SaveAsWorkbook.png | 1280x800 | True | dialog.SaveAsWorkbook.png | 640x420 | True | 1.869 |
+| dialog.ScenarioManager | dialog.ScenarioManager.png | 540x630 | True | dialog.ScenarioManager.png | 500x740 | True | 0.397 |
+| dialog.SelectDataSource | dialog.SelectDataSource.png | 930x750 | True | dialog.SelectDataSource.png | 468x499 | True | 0.988 |
+| dialog.SelectionPane | dialog.SelectionPane.png | 570x540 | True | dialog.SelectionPane.png | 520x440 | True | 0.533 |
+| dialog.ShapeEffects | dialog.ShapeEffects.png | 570x285 | True | dialog.ShapeEffects.png | 380x190 | True | 0.882 |
+| dialog.ShapeGradient | dialog.ShapeGradient.png | 630x420 | True | dialog.ShapeGradient.png | 500x300 | True | 0.624 |
+| dialog.Sort | dialog.Sort.png | 960x630 | True | dialog.Sort.png | 760x500 | True | 0.529 |
+| dialog.SortOptions | dialog.SortOptions.png | 495x390 | True | dialog.SortOptions.png | 330x260 | True | 0.904 |
+| dialog.Sparkline | dialog.Sparkline.png | 570x360 | True | dialog.Sparkline.png | 372x230 | True | 0.952 |
+| dialog.Subtotal | dialog.Subtotal.png | 570x585 | True | dialog.Subtotal.png | 460x480 | True | 0.571 |
+| dialog.SymbolPicker | dialog.SymbolPicker.png | 930x750 | True | dialog.SymbolPicker.png | 840x620 | True | 0.480 |
+| dialog.TextToColumns | dialog.TextToColumns.png | 750x645 | True | dialog.TextToColumns.png | 560x560 | True | 0.431 |
+| dialog.UnhideSheet | dialog.UnhideSheet.png | 510x240 | True | dialog.UnhideSheet.png | 360x220 | True | 0.471 |
+| dialog.WatchWindow | dialog.WatchWindow.png | 930x480 | True | dialog.WatchWindow.png | 700x360 | True | 0.687 |
+| dialog.WorkbookStatistics | dialog.WorkbookStatistics.png | 540x390 | True | dialog.WorkbookStatistics.png | 380x320 | True | 0.527 |
+| dialog.Zoom | dialog.Zoom.png | 450x360 | True | dialog.Zoom.png | 300x286 | True | 0.577 |
 
 ## Avalonia-Manifest-Only Screenshot Surfaces
 
-Avalonia has 33 committed PNG manifest surface ids across 33 dialog route families with no exact WPF manifest PNG id pair. This describes screenshot evidence coverage, not whether a WPF dialog implementation exists.
+Avalonia has 0 committed PNG manifest surface ids across 0 dialog route families with no exact WPF manifest PNG id pair. This describes screenshot evidence coverage, not whether a WPF dialog implementation exists.
 
 | Route family | Count | Additional surface ids |
 | --- | ---: | --- |
-| dialog.ConditionalFormatManage | 1 | dialog.ConditionalFormatManage |
-| dialog.CreateTable | 1 | dialog.CreateTable |
-| dialog.CustomViews | 1 | dialog.CustomViews |
-| dialog.DataTable | 1 | dialog.DataTable |
-| dialog.DataValidation | 1 | dialog.DataValidation |
-| dialog.ErrorChecking | 1 | dialog.ErrorChecking |
-| dialog.EvaluateFormula | 1 | dialog.EvaluateFormula |
-| dialog.ForecastSheet | 1 | dialog.ForecastSheet |
-| dialog.FormatChartArea | 1 | dialog.FormatChartArea |
-| dialog.GoTo | 1 | dialog.GoTo |
-| dialog.InsertHyperlink | 1 | dialog.InsertHyperlink |
-| dialog.InsertSlicer | 1 | dialog.InsertSlicer |
-| dialog.InsertTimeline | 1 | dialog.InsertTimeline |
-| dialog.LegalNotices | 1 | dialog.LegalNotices |
-| dialog.OpenWorkbook | 1 | dialog.OpenWorkbook |
-| dialog.ProtectWorkbook | 1 | dialog.ProtectWorkbook |
-| dialog.RenameSheet | 1 | dialog.RenameSheet |
-| dialog.SaveAsWorkbook | 1 | dialog.SaveAsWorkbook |
-| dialog.ScenarioManager | 1 | dialog.ScenarioManager |
-| dialog.SelectDataSource | 1 | dialog.SelectDataSource |
-| dialog.SelectionPane | 1 | dialog.SelectionPane |
-| dialog.ShapeEffects | 1 | dialog.ShapeEffects |
-| dialog.ShapeGradient | 1 | dialog.ShapeGradient |
-| dialog.Sort | 1 | dialog.Sort |
-| dialog.SortOptions | 1 | dialog.SortOptions |
-| dialog.Sparkline | 1 | dialog.Sparkline |
-| dialog.Subtotal | 1 | dialog.Subtotal |
-| dialog.SymbolPicker | 1 | dialog.SymbolPicker |
-| dialog.TextToColumns | 1 | dialog.TextToColumns |
-| dialog.UnhideSheet | 1 | dialog.UnhideSheet |
-| dialog.WatchWindow | 1 | dialog.WatchWindow |
-| dialog.WorkbookStatistics | 1 | dialog.WorkbookStatistics |
-| dialog.Zoom | 1 | dialog.Zoom |
 
 ## Avalonia-Manifest-Only PNG Checks
 
 | Surface id | PNG | Size | Nonblank | Distinct colors | Non-bg ratio |
 | --- | --- | ---: | --- | ---: | ---: |
-| dialog.ConditionalFormatManage | dialog.ConditionalFormatManage.png | 560x420 | True | 802 | 0.146 |
-| dialog.CreateTable | dialog.CreateTable.png | 360x190 | True | 151 | 0.068 |
-| dialog.CustomViews | dialog.CustomViews.png | 640x360 | True | 320 | 0.149 |
-| dialog.DataTable | dialog.DataTable.png | 380x260 | True | 136 | 0.051 |
-| dialog.DataValidation | dialog.DataValidation.png | 520x560 | True | 1120 | 0.053 |
-| dialog.ErrorChecking | dialog.ErrorChecking.png | 720x420 | True | 631 | 0.126 |
-| dialog.EvaluateFormula | dialog.EvaluateFormula.png | 600x360 | True | 450 | 0.030 |
-| dialog.ForecastSheet | dialog.ForecastSheet.png | 360x220 | True | 158 | 0.062 |
-| dialog.FormatChartArea | dialog.FormatChartArea.png | 432x760 | True | 401 | 0.065 |
-| dialog.GoTo | dialog.GoTo.png | 420x320 | True | 339 | 0.042 |
-| dialog.InsertHyperlink | dialog.InsertHyperlink.png | 560x360 | True | 1149 | 0.057 |
-| dialog.InsertSlicer | dialog.InsertSlicer.png | 410x233 | True | 585 | 0.093 |
-| dialog.InsertTimeline | dialog.InsertTimeline.png | 410x225 | True | 626 | 0.067 |
-| dialog.LegalNotices | dialog.LegalNotices.png | 840x620 | True | 862 | 0.044 |
-| dialog.OpenWorkbook | dialog.OpenWorkbook.png | 640x420 | True | 1389 | 0.219 |
-| dialog.ProtectWorkbook | dialog.ProtectWorkbook.png | 380x240 | True | 131 | 0.059 |
-| dialog.RenameSheet | dialog.RenameSheet.png | 380x190 | True | 622 | 0.103 |
-| dialog.SaveAsWorkbook | dialog.SaveAsWorkbook.png | 640x420 | True | 1339 | 0.217 |
-| dialog.ScenarioManager | dialog.ScenarioManager.png | 500x740 | True | 379 | 0.064 |
-| dialog.SelectDataSource | dialog.SelectDataSource.png | 468x499 | True | 1397 | 0.156 |
-| dialog.SelectionPane | dialog.SelectionPane.png | 520x440 | True | 461 | 0.053 |
-| dialog.ShapeEffects | dialog.ShapeEffects.png | 380x190 | True | 415 | 0.040 |
-| dialog.ShapeGradient | dialog.ShapeGradient.png | 500x300 | True | 411 | 0.174 |
-| dialog.Sort | dialog.Sort.png | 760x500 | True | 1404 | 0.132 |
-| dialog.SortOptions | dialog.SortOptions.png | 330x260 | True | 680 | 0.055 |
-| dialog.Sparkline | dialog.Sparkline.png | 372x230 | True | 77 | 0.057 |
-| dialog.Subtotal | dialog.Subtotal.png | 460x480 | True | 1041 | 0.041 |
-| dialog.SymbolPicker | dialog.SymbolPicker.png | 840x620 | True | 1269 | 0.042 |
-| dialog.TextToColumns | dialog.TextToColumns.png | 560x560 | True | 938 | 0.047 |
-| dialog.UnhideSheet | dialog.UnhideSheet.png | 360x220 | True | 374 | 0.115 |
-| dialog.WatchWindow | dialog.WatchWindow.png | 700x360 | True | 382 | 0.076 |
-| dialog.WorkbookStatistics | dialog.WorkbookStatistics.png | 380x320 | True | 837 | 0.067 |
-| dialog.Zoom | dialog.Zoom.png | 300x286 | True | 902 | 0.086 |
