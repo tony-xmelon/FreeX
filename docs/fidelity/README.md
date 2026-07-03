@@ -1,6 +1,6 @@
 # Fidelity Workstream Summary
 
-**Last updated:** 2026-07-01
+**Last updated:** 2026-07-03
 
 This folder holds point-in-time XLSX and FreeW fidelity findings. Keep durable summaries here and avoid committing temporary handoff notes, downloaded sample workbooks, generated comparison outputs, or Excel ground-truth images. Local workbook binaries belong in ignored corpus folders such as `fidelity-corpus/files/`, `fidelity-corpus/runs/`, `freew-fidelity-corpus/files/`, or `freew-fidelity-corpus/runs/`.
 
@@ -24,6 +24,8 @@ FreeW fidelity uses the on-demand corpus in [../../freew-fidelity-corpus/README.
 
 The 2026-06-25/26 FreeW visual reports are the current WPF visual evidence baseline. They should be read as the remaining visual/fidelity evidence loop after WPF in-scope Word parity, not as blockers to the WPF parity verdict in [../planning/freew-ms-word-parity-session-2026-06-21.md](../planning/freew-ms-word-parity-session-2026-06-21.md). The June 26 verification pass specifically separates harness blind spots from genuine app gaps, so future work should extend the capture/composite evidence instead of reopening stale "missing" findings.
 
+Current 2026-07-03 evidence-runner status: the Word-baseline fallback path is integrated, including explicit WPF software rendering for machines without Word COM. The latest integrated `tools/Run-FreeWWordBaselineEvidence.ps1 -AllowMissingWord` pass rendered 18 DOCX fixtures / 28 WPF outputs, produced 54 trusted evidence rows and 54 baseline comparison rows, and reported `skipped=8, word-baseline-unavailable=46`. Word COM is unavailable on this machine, so that run generated no real Word PNG baselines and should be treated as fallback/trust evidence, not full Word visual parity.
+
 For a no-Word repeatable smoke pass, run
 `pwsh freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus/runs/visual-evidence-smoke`.
 It generates F2 DOCX fixtures, WPF composite captures, Avalonia page-layout captures, and raw
@@ -36,6 +38,7 @@ Word-baseline comparisons together instead of requiring a parallel report.
 On machines with Word COM installed, add `-IncludeWordBaseline` to render Word PNGs from the same
 generated fixtures before normalization. The shared comparison policy aliases comparable Avalonia
 rows to F2 Word baselines and marks unmapped rows as skipped rather than false failures.
+On machines without Word COM, run `powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\Run-FreeWWordBaselineEvidence.ps1 -AllowMissingWord -RunRoot <ignored-run-root>` to prove the no-Word fallback path while preserving explicit `word-baseline-unavailable` rows.
 
 Durable FreeW notes:
 
