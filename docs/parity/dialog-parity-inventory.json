@@ -614,6 +614,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PageSetup.png",
                                          "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_dialog_margins_tab.png",
                                          "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_dialog_page_tab.png",
                                          "screenshots\\page-layout-setup-tour\\freex_page_layout_setup_dialog_sheet_tab_print_titles.png"
