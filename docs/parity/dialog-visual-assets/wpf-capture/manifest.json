@@ -140,7 +140,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.PrintPreview.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Recaptured from FreeX.App.Host --parity-capture dialog.PrintPreview using PrintPreviewDialogPlanner 1120x700 and the parity fixture printer"
                      }
                  ]
 }

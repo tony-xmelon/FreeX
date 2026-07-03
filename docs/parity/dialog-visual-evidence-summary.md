@@ -31,7 +31,7 @@ Sources:
 | WPF manifest ids without Avalonia pair | 0 |
 | Additional Avalonia captured surface ids needing WPF pair | 73 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches | 15 |
+| Paired dimension mismatches | 14 |
 
 ## Top paired visual outliers
 
@@ -39,7 +39,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF size | Avalonia size | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| dialog.PrintPreview | 1104x661 | 1120x700 | 0.609 | 0.086 | 0.050 | 0.400 |
+| dialog.PrintPreview | 1120x700 | 1120x700 | 0.512 | 0.141 | 0.017 | 0.353 |
 | dialog.Options.Formulas | 744x777 | 760x560 | 0.420 | 0.026 | 0.017 | 0.076 |
 | dialog.ConditionalFormatNewRule | 634x334 | 640x380 | 0.336 | 0.042 | 0.015 | 0.131 |
 | dialog.Options.QuickAccessToolbar | 744x521 | 760x560 | 0.243 | 0.024 | 0.019 | 0.104 |
@@ -73,7 +73,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.PageSetup.Margins | dialog.PageSetup.Margins.png | 600x560 | True | dialog.PageSetup.Margins.png | 600x560 | True | 0.041 |
 | dialog.PageSetup.Page | dialog.PageSetup.Page.png | 600x560 | True | dialog.PageSetup.Page.png | 600x560 | True | 0.091 |
 | dialog.PageSetup.Sheet | dialog.PageSetup.Sheet.png | 600x560 | True | dialog.PageSetup.Sheet.png | 600x560 | True | 0.117 |
-| dialog.PrintPreview | dialog.PrintPreview.png | 1104x661 | True | dialog.PrintPreview.png | 1120x700 | True | 0.609 |
+| dialog.PrintPreview | dialog.PrintPreview.png | 1120x700 | True | dialog.PrintPreview.png | 1120x700 | True | 0.512 |
 
 ## Additional Avalonia manifest surfaces needing WPF pair
 
