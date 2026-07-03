@@ -19,3 +19,18 @@ Two recapture attempts were made from this worktree.
 - A temporary Avalonia headless runner using `MainWindow.CaptureParitySurfacesAsync` could invoke the three modal surfaces, but `RenderVisualToPng` produced zero-byte files for `dialog.GoToSpecial.png`, `dialog.InsertHyperlink.png`, and `dialog.ProtectSheet.png` while the returned `ParitySurfaceResult` values still reported `Captured: true`.
 
 Do not promote those zero-byte outputs. The capture path needs a follow-up guard that rejects zero-byte PNGs before marking a surface captured.
+
+## Follow-up capture guard
+
+Branch `codex/freex-avalonia-capture-zero-byte-20260704-c` adds the capture guard described above: a parity surface can only report `captured: true` after the referenced PNG file exists, is non-empty, and has the PNG signature. Missing, zero-byte, or non-PNG outputs are now recorded as `captured: false` with the exact path in the note.
+
+Validation from the branch:
+
+- `dotnet test tests\FreeX.App.Avalonia.Tests\FreeX.App.Avalonia.Tests.csproj --configuration Release --filter FullyQualifiedName~ParityCaptureTests --logger "trx;LogFileName=parity-capture-zero-byte.trx"` passed `2/2`.
+- `dotnet run --no-build --configuration Release --project src\FreeX.App.Avalonia\FreeX.App.Avalonia.csproj -- --parity-capture <temp>` exited `0`.
+- The no-build capture produced non-empty PNGs for the three stale expected-size dialogs:
+  - `dialog.GoToSpecial.png`: 23069 bytes
+  - `dialog.InsertHyperlink.png`: 15870 bytes
+  - `dialog.ProtectSheet.png`: 20670 bytes
+
+The committed parity summary still treats the current repository PNG evidence for those three surfaces as stale until the Linux/Avalonia evidence set is regenerated and promoted from the parity lane.
