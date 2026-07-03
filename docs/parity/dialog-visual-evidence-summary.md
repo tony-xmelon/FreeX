@@ -25,13 +25,13 @@ Sources:
 
 | Metric | Count |
 | --- | ---: |
-| WPF captured manifest surfaces with committed PNGs | 18 |
+| WPF captured manifest surfaces with committed PNGs | 20 |
 | Avalonia captured manifest surfaces with committed PNGs | 93 |
-| Paired captured surface ids | 18 |
+| Paired captured surface ids | 20 |
 | WPF manifest ids without Avalonia pair | 0 |
-| Additional Avalonia captured surface ids needing WPF pair | 75 |
+| Additional Avalonia captured surface ids needing WPF pair | 73 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches | 18 |
+| Paired dimension mismatches | 15 |
 
 ## Top paired visual outliers
 
@@ -39,9 +39,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF size | Avalonia size | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| dialog.PageSetup.Sheet | 900x840 | 600x560 | 0.782 | 0.034 | 0.006 | 0.076 |
-| dialog.PageSetup.Page | 900x840 | 600x560 | 0.758 | 0.022 | 0.005 | 0.064 |
-| dialog.PageSetup.Margins | 900x840 | 600x560 | 0.701 | 0.024 | 0.000 | 0.010 |
 | dialog.PrintPreview | 1104x661 | 1120x700 | 0.609 | 0.086 | 0.050 | 0.400 |
 | dialog.Options.Formulas | 744x777 | 760x560 | 0.420 | 0.026 | 0.017 | 0.076 |
 | dialog.ConditionalFormatNewRule | 634x334 | 640x380 | 0.336 | 0.042 | 0.015 | 0.131 |
@@ -49,6 +46,9 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.Options.Proofing | 744x521 | 760x560 | 0.231 | 0.027 | 0.013 | 0.094 |
 | dialog.Options.Advanced | 744x521 | 760x560 | 0.223 | 0.029 | 0.009 | 0.087 |
 | dialog.Options | 744x521 | 760x560 | 0.219 | 0.029 | 0.010 | 0.084 |
+| dialog.Options.General | 744x521 | 760x560 | 0.219 | 0.029 | 0.010 | 0.084 |
+| dialog.Options.TrustCenter | 744x521 | 760x560 | 0.212 | 0.033 | 0.007 | 0.076 |
+| dialog.Options.Save | 744x521 | 760x560 | 0.207 | 0.019 | 0.007 | 0.084 |
 
 ## Paired manifest surfaces
 
@@ -68,14 +68,16 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.Options.Save | dialog.Options.Save.png | 744x521 | True | dialog.Options.Save.png | 760x560 | True | 0.207 |
 | dialog.Options.TrustCenter | dialog.Options.TrustCenter.png | 744x521 | True | dialog.Options.TrustCenter.png | 760x560 | True | 0.212 |
 | dialog.Options.View | dialog.Options.View.png | 744x521 | True | dialog.Options.View.png | 760x560 | True | 0.204 |
-| dialog.PageSetup.Margins | dialog.PageSetup.Margins.png | 900x840 | True | dialog.PageSetup.Margins.png | 600x560 | True | 0.701 |
-| dialog.PageSetup.Page | dialog.PageSetup.Page.png | 900x840 | True | dialog.PageSetup.Page.png | 600x560 | True | 0.758 |
-| dialog.PageSetup.Sheet | dialog.PageSetup.Sheet.png | 900x840 | True | dialog.PageSetup.Sheet.png | 600x560 | True | 0.782 |
+| dialog.PageSetup | dialog.PageSetup.png | 600x560 | True | dialog.PageSetup.png | 600x560 | True | 0.091 |
+| dialog.PageSetup.HeaderFooter | dialog.PageSetup.HeaderFooter.png | 600x560 | True | dialog.PageSetup.HeaderFooter.png | 600x560 | True | 0.127 |
+| dialog.PageSetup.Margins | dialog.PageSetup.Margins.png | 600x560 | True | dialog.PageSetup.Margins.png | 600x560 | True | 0.041 |
+| dialog.PageSetup.Page | dialog.PageSetup.Page.png | 600x560 | True | dialog.PageSetup.Page.png | 600x560 | True | 0.091 |
+| dialog.PageSetup.Sheet | dialog.PageSetup.Sheet.png | 600x560 | True | dialog.PageSetup.Sheet.png | 600x560 | True | 0.117 |
 | dialog.PrintPreview | dialog.PrintPreview.png | 1104x661 | True | dialog.PrintPreview.png | 1120x700 | True | 0.609 |
 
 ## Additional Avalonia manifest surfaces needing WPF pair
 
-Avalonia has 75 additional captured manifest surface ids across 54 dialog route families. These are committed Avalonia PNGs with no matching WPF manifest surface id.
+Avalonia has 73 additional captured manifest surface ids across 53 dialog route families. These are committed Avalonia PNGs with no matching WPF manifest surface id.
 
 | Route family | Count | Additional surface ids |
 | --- | ---: | --- |
@@ -108,7 +110,6 @@ Avalonia has 75 additional captured manifest surface ids across 54 dialog route 
 | dialog.InsertTimeline | 1 | dialog.InsertTimeline |
 | dialog.LegalNotices | 1 | dialog.LegalNotices |
 | dialog.OpenWorkbook | 1 | dialog.OpenWorkbook |
-| dialog.PageSetup | 2 | dialog.PageSetup<br>dialog.PageSetup.HeaderFooter |
 | dialog.PivotFieldFilter | 4 | dialog.PivotFieldFilter<br>dialog.PivotFieldFilter.LabelFilters<br>dialog.PivotFieldFilter.SelectItems<br>dialog.PivotFieldFilter.ValueFilters |
 | dialog.PivotTableOptions | 7 | dialog.PivotTableOptions<br>dialog.PivotTableOptions.AltText<br>dialog.PivotTableOptions.Data<br>dialog.PivotTableOptions.Display<br>dialog.PivotTableOptions.LayoutAndFormat<br>dialog.PivotTableOptions.Printing<br>dialog.PivotTableOptions.TotalsAndFilters |
 | dialog.PivotValueFieldSettings | 4 | dialog.PivotValueFieldSettings<br>dialog.PivotValueFieldSettings.NumberFormat<br>dialog.PivotValueFieldSettings.ShowValuesAs<br>dialog.PivotValueFieldSettings.SummarizeValuesBy |
@@ -175,8 +176,6 @@ Avalonia has 75 additional captured manifest surface ids across 54 dialog route 
 | dialog.InsertTimeline | dialog.InsertTimeline.png | 410x225 | True | 626 | 0.067 |
 | dialog.LegalNotices | dialog.LegalNotices.png | 840x620 | True | 862 | 0.044 |
 | dialog.OpenWorkbook | dialog.OpenWorkbook.png | 640x420 | True | 1389 | 0.219 |
-| dialog.PageSetup | dialog.PageSetup.png | 600x560 | True | 703 | 0.066 |
-| dialog.PageSetup.HeaderFooter | dialog.PageSetup.HeaderFooter.png | 600x560 | True | 727 | 0.063 |
 | dialog.PivotFieldFilter | dialog.PivotFieldFilter.png | 380x470 | True | 301 | 0.080 |
 | dialog.PivotFieldFilter.LabelFilters | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | True | 245 | 0.053 |
 | dialog.PivotFieldFilter.SelectItems | dialog.PivotFieldFilter.SelectItems.png | 380x470 | True | 301 | 0.080 |
