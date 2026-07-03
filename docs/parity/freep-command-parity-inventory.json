@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell commands are not reported as WPF or Avalonia implementation gaps.",
   "summary": {
-    "totalCommands": 93,
-    "both": 87,
+    "totalCommands": 96,
+    "both": 90,
     "wpfOnly": 0,
     "avaloniaOnly": 6,
     "missingWpf": 6,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 87,
+    "shared": 90,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 6,
@@ -1278,6 +1278,40 @@
       ]
     },
     {
+      "commandId": "freep.date-time",
+      "label": "Date & Time",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Date & Time",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Date & Time",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.delete-slide",
       "label": "Delete Slide",
       "wpfPresent": true,
@@ -1534,6 +1568,40 @@
           "groupId": "clipboard",
           "group": "Clipboard",
           "label": "Format Painter",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.header-footer",
+      "label": "Header & Footer",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Header & Footer",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Header & Footer",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -2135,6 +2203,40 @@
           "groupId": "illustrations",
           "group": "Illustrations",
           "label": "Rectangle",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.slide-number",
+      "label": "Slide Number",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Slide Number",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Slide Number",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
