@@ -118,7 +118,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 
 ### FreeX Next Slices
 
-1. Finish scale-aware review of the 71 remaining paired dialog dimension/visual outliers so capture-DPI noise is separated from real product layout differences.
+1. Continue visual review of the 56 remaining scale-aware paired dialog dimension/visual outliers; 15 raw PNG size mismatches are now normalized by capture DPI and should not be treated as product layout differences.
 2. Consolidate keyboard shortcut matching into a portable service and gate both hosts from one matrix.
 3. Add print/export/render parity evidence around drawing/chart content and native print/export affordances.
 4. Continue renderer-edge shell/backstage polish only after capture evidence identifies concrete diffs.
