@@ -101,25 +101,39 @@
                          "note":  ""
                      },
                      {
+                         "id":  "dialog.PageSetup",
+                         "kind":  "dialog",
+                         "png":  "dialog.PageSetup.png",
+                         "captured":  true,
+                         "note":  "Promoted from FREEX_PAGE_LAYOUT_SETUP_TOUR page-setup-dialog capture"
+                     },
+                     {
                          "id":  "dialog.PageSetup.Page",
                          "kind":  "dialog",
                          "png":  "dialog.PageSetup.Page.png",
                          "captured":  true,
-                         "note":  "Promoted from screenshots/page-layout-setup-tour/freex_page_layout_setup_dialog_page_tab.png"
+                         "note":  "Refreshed from FREEX_PAGE_LAYOUT_SETUP_TOUR page-setup-dialog-page-tab capture"
                      },
                      {
                          "id":  "dialog.PageSetup.Margins",
                          "kind":  "dialog",
                          "png":  "dialog.PageSetup.Margins.png",
                          "captured":  true,
-                         "note":  "Promoted from screenshots/page-layout-setup-tour/freex_page_layout_setup_dialog_margins_tab.png"
+                         "note":  "Refreshed from FREEX_PAGE_LAYOUT_SETUP_TOUR page-setup-dialog-margins-tab capture"
+                     },
+                     {
+                         "id":  "dialog.PageSetup.HeaderFooter",
+                         "kind":  "dialog",
+                         "png":  "dialog.PageSetup.HeaderFooter.png",
+                         "captured":  true,
+                         "note":  "Promoted from FREEX_PAGE_LAYOUT_SETUP_TOUR page-setup-dialog-header-footer-tab capture"
                      },
                      {
                          "id":  "dialog.PageSetup.Sheet",
                          "kind":  "dialog",
                          "png":  "dialog.PageSetup.Sheet.png",
                          "captured":  true,
-                         "note":  "Promoted from screenshots/page-layout-setup-tour/freex_page_layout_setup_dialog_sheet_tab_print_titles.png"
+                         "note":  "Refreshed from FREEX_PAGE_LAYOUT_SETUP_TOUR page-setup-dialog-sheet-tab-print-titles capture"
                      },
                      {
                          "id":  "dialog.PrintPreview",
