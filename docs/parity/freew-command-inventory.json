@@ -54,15 +54,15 @@
     }
   ],
   "summary": {
-    "totalCommands": 797,
-    "both": 307,
+    "totalCommands": 798,
+    "both": 308,
     "wpfOnly": 322,
     "avaloniaOnly": 168,
     "missingWpf": 168,
     "missingAvalonia": 322,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 307,
+    "sharedProfile": 308,
     "profileShapeOnly": 416,
     "commandIdAliases": 19,
     "platformOnly": 12,
@@ -13152,6 +13152,48 @@
           "groupId": "merge-data",
           "group": "Start Mail Merge",
           "label": "Edit Recipient List",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.merge-email",
+      "label": "Send E-mail Messages",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "mailings",
+          "tab": "Mailings",
+          "groupId": "merge-finish",
+          "group": "Finish",
+          "label": "Send E-mail Messages",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "mailings",
+          "tab": "Mailings",
+          "groupId": "merge-finish",
+          "group": "Finish",
+          "label": "Send E-mail Messages",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }

@@ -10,13 +10,13 @@ Gap classifications are generated from explicit rule order: shared-profile, prof
 
 | Total | Both profiles | WPF profile only | Avalonia profile only | Missing WPF profile | Missing Avalonia profile | Actionable missing WPF | Actionable missing Avalonia |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 797 | 307 | 322 | 168 | 168 | 322 | 0 | 0 |
+| 798 | 308 | 322 | 168 | 168 | 322 | 0 | 0 |
 
 ## Classification Counts
 
 | Shared profile | Profile-shape only | Command-id aliases | Platform-only | Deferred | Actionable gaps |
 |---:|---:|---:|---:|---:|---:|
-| 307 | 416 | 19 | 12 | 43 | 0 |
+| 308 | 416 | 19 | 12 | 43 | 0 |
 
 ## Classification Rules
 
@@ -403,6 +403,7 @@ Gap classifications are generated from explicit rule order: shared-profile, prof
 | `freew.merge-cells` | Merge Cells | Yes | No | Avalonia | wpf-profile-only | command-id-alias | command-id-alias | table-layout/table-merge (RibbonButton; Medium) | - | WPF definition source<br>WPF registry source | Other profile exposes the same or closest command intent under a different generated command id. |
 | `freew.merge-data` | Select Recipients | Yes | Yes | none | shared-profile | shared-profile | shared-profile | mailings/merge-data (RibbonButton; Medium) | mailings/merge-data (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.merge-edit-recipients` | Edit Recipient List | Yes | Yes | none | shared-profile | shared-profile | shared-profile | mailings/merge-data (RibbonButton; Medium) | mailings/merge-data (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
+| `freew.merge-email` | Send E-mail Messages | Yes | Yes | none | shared-profile | shared-profile | shared-profile | mailings/merge-finish (RibbonButton; Medium) | mailings/merge-finish (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.merge-envelopes` | Envelopes | Yes | Yes | none | shared-profile | shared-profile | shared-profile | mailings/create (RibbonButton; Medium) | mailings/create (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.merge-field` | Insert Merge Field | Yes | Yes | none | shared-profile | shared-profile | shared-profile | mailings/merge-write (RibbonButton; Medium) | mailings/merge-write (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.merge-filter-sort` | Filter & Sort Recipients | Yes | Yes | none | shared-profile | shared-profile | shared-profile | mailings/merge-data (RibbonButton; Medium) | mailings/merge-data (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Command is present in both compiled FreeW ribbon profiles. |
