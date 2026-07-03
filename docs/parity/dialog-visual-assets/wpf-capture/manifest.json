@@ -101,6 +101,27 @@
                          "note":  ""
                      },
                      {
+                         "id":  "dialog.PageSetup.Page",
+                         "kind":  "dialog",
+                         "png":  "dialog.PageSetup.Page.png",
+                         "captured":  true,
+                         "note":  "Promoted from screenshots/page-layout-setup-tour/freex_page_layout_setup_dialog_page_tab.png"
+                     },
+                     {
+                         "id":  "dialog.PageSetup.Margins",
+                         "kind":  "dialog",
+                         "png":  "dialog.PageSetup.Margins.png",
+                         "captured":  true,
+                         "note":  "Promoted from screenshots/page-layout-setup-tour/freex_page_layout_setup_dialog_margins_tab.png"
+                     },
+                     {
+                         "id":  "dialog.PageSetup.Sheet",
+                         "kind":  "dialog",
+                         "png":  "dialog.PageSetup.Sheet.png",
+                         "captured":  true,
+                         "note":  "Promoted from screenshots/page-layout-setup-tour/freex_page_layout_setup_dialog_sheet_tab_print_titles.png"
+                     },
+                     {
                          "id":  "dialog.PrintPreview",
                          "kind":  "dialog",
                          "png":  "dialog.PrintPreview.png",

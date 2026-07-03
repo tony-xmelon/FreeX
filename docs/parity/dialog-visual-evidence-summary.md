@@ -24,11 +24,11 @@ Sources:
 
 | Metric | Count |
 | --- | ---: |
-| WPF captured manifest surfaces | 15 |
+| WPF captured manifest surfaces | 18 |
 | Avalonia captured manifest surfaces | 93 |
-| Paired captured surface ids | 15 |
+| Paired captured surface ids | 18 |
 | WPF manifest ids without Avalonia pair | 0 |
-| Additional Avalonia captured surface ids | 78 |
+| Additional Avalonia captured surface ids | 75 |
 
 ## Paired manifest surfaces
 
@@ -48,17 +48,20 @@ Sources:
 | dialog.Options.Save | dialog.Options.Save.png | dialog.Options.Save.png |
 | dialog.Options.TrustCenter | dialog.Options.TrustCenter.png | dialog.Options.TrustCenter.png |
 | dialog.Options.View | dialog.Options.View.png | dialog.Options.View.png |
+| dialog.PageSetup.Margins | dialog.PageSetup.Margins.png | dialog.PageSetup.Margins.png |
+| dialog.PageSetup.Page | dialog.PageSetup.Page.png | dialog.PageSetup.Page.png |
+| dialog.PageSetup.Sheet | dialog.PageSetup.Sheet.png | dialog.PageSetup.Sheet.png |
 | dialog.PrintPreview | dialog.PrintPreview.png | dialog.PrintPreview.png |
 
 ## Additional Avalonia manifest surfaces
 
-Avalonia has 78 additional captured manifest surface ids across 54 dialog route families. 48 families have a single additional surface; multi-surface families are listed below.
+Avalonia has 75 additional captured manifest surface ids across 54 dialog route families. 48 families have a single additional surface; multi-surface families are listed below.
 
 | Route family | Additional surface ids |
 | --- | --- |
 | dialog.FindReplace | dialog.FindReplace<br>dialog.FindReplace.Find<br>dialog.FindReplace.Replace |
 | dialog.FormatCells | dialog.FormatCells<br>dialog.FormatCells.Alignment<br>dialog.FormatCells.Border<br>dialog.FormatCells.Fill<br>dialog.FormatCells.Font<br>dialog.FormatCells.Number<br>dialog.FormatCells.Protection |
-| dialog.PageSetup | dialog.PageSetup<br>dialog.PageSetup.HeaderFooter<br>dialog.PageSetup.Margins<br>dialog.PageSetup.Page<br>dialog.PageSetup.Sheet |
+| dialog.PageSetup | dialog.PageSetup<br>dialog.PageSetup.HeaderFooter |
 | dialog.PivotFieldFilter | dialog.PivotFieldFilter<br>dialog.PivotFieldFilter.LabelFilters<br>dialog.PivotFieldFilter.SelectItems<br>dialog.PivotFieldFilter.ValueFilters |
 | dialog.PivotTableOptions | dialog.PivotTableOptions<br>dialog.PivotTableOptions.AltText<br>dialog.PivotTableOptions.Data<br>dialog.PivotTableOptions.Display<br>dialog.PivotTableOptions.LayoutAndFormat<br>dialog.PivotTableOptions.Printing<br>dialog.PivotTableOptions.TotalsAndFilters |
 | dialog.PivotValueFieldSettings | dialog.PivotValueFieldSettings<br>dialog.PivotValueFieldSettings.NumberFormat<br>dialog.PivotValueFieldSettings.ShowValuesAs<br>dialog.PivotValueFieldSettings.SummarizeValuesBy |
