@@ -231,6 +231,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AdvancedFilter.png",
                                          "screenshots\\data-tools-dialogs-tour\\freex_data_tools_advanced_filter_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -600,6 +601,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AddWatch.png",
                                          "screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_add_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -1139,6 +1141,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AccessibilityChecker.png",
                                          "screenshots\\review-comments-protection-tour\\freex_review_accessibility_checker_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
@@ -1305,6 +1308,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.About.png",
                                          "screenshots\\help-about-legal-tour\\freex_about_dialog.png"
                                      ],
                      "avaloniaEvidence":  [
