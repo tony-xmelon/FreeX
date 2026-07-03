@@ -28,7 +28,9 @@ The same wave closed the style-management planner gap by moving New Style / Modi
 
 Status 2026-07-03: the Review > Compare group now has model-backed Avalonia execution for Compare and Combine. Avalonia collects the source document paths and reviewer labels through thin shell dialogs, then runs the shared presentation workflow over `DocumentCompare` / `DocumentCombine`, loads the resulting blackline/combined document, and marks it as a new unsaved result.
 
-Status 2026-07-03: View-depth toggles for Split, Multiple Pages, and Side to Side now use a shared `FreeWViewDepthPlanner` policy in both WPF and Avalonia, with thin host workspace realization. Split shows the live editor above a read-only paginated snapshot. Multiple Pages and Side to Side swap the workspace to read-only paginated previews with a shared two-page-fit target; true dual-live split editing, responsive editable multi-page grids, and horizontal Side-to-Side page turning remain explicit renderer limitations rather than fake parity.
+Status 2026-07-03: Review > Thesaurus parity actions are integrated on `origin/main` (`6185e426d`, worker `cae248011a4203465215bc2c88c6919ace1fbf18`). Shared presentation planning now owns the thesaurus lookup, candidate selection, and replacement intent. Avalonia realizes synonym Replace over that shared plan, while WPF keeps the fuller pane host with Insert and Copy actions.
+
+Status 2026-07-03: View-depth toggles for Split, Multiple Pages, and Side to Side now use a shared `FreeWViewDepthPlanner` policy in both WPF and Avalonia, with thin host workspace realization. Split shows the live editor above a read-only paginated snapshot. Multiple Pages and Side to Side swap the workspace to read-only paginated previews with a shared two-page-fit target. Side to Side also has read-only page-pair navigation on `origin/main` (`95146e749`, worker `baf46131a8dfc75dd76959deb64b08548a367764`); true dual-live split editing, responsive editable multi-page grids, and editable horizontal Side-to-Side page view remain explicit renderer limitations rather than fake parity.
 
 Status 2026-07-03: character border/shading render parity is integrated on `origin/main` (`358180a07`, worker `a1ccee4f98a3e997525e480687a38d88a19b2a31`). Run-level decoration planning now flows through shared `FreeW.App.Presentation` policy with WPF/Avalonia render coverage; the integrated focused lane also covered the related character border/shading/language apply and round-trip tests.
 
@@ -133,11 +135,13 @@ Prioritize proofing/thesaurus/protection/compare-combine where WPF already prove
 
 Status 2026-07-03: Compare/Combine execution is implemented for Avalonia through `ReviewCompareCombineWorkflow` plus thin file-picker/dialog callbacks. Remaining Review-depth work should focus on proofing/protection evidence and any behavior still not proven by focused tests, not on these two command callbacks.
 
+Status 2026-07-03: Thesaurus behavior parity is implemented through shared presentation planning plus thin host realization. Avalonia supports synonym Replace from the shared planner, and WPF retains the richer Insert/Copy pane actions. Integrated validation observed: presentation 3/3, WPF 15/15, Avalonia 41/41.
+
 ### 6. Read, Split, and Window Behaviors
 
 Classify view/window behavior carefully because some WPF implementation details are UI-stack-specific. Put durable policy in `FreeW.App.Presentation`: mode availability, pane relationships, zoom/read-state decisions, split-window lifecycle, and window-management intent. Let WPF and Avalonia realize those intents through host adapters.
 
-Status 2026-07-03: first View-depth shared-policy slice landed for the backed subset. `FreeW.App.Presentation.Shell.FreeWViewDepthPlanner` owns mode exclusivity, preview intent, read-only limitations, and the two-page-fit target for WPF and Avalonia; each `MainWindow` only swaps the host workspace. Remaining limitation: the secondary split pane and page-preview modes are read-only snapshots, Multiple Pages is not yet an editable responsive page grid, and Side to Side does not yet implement horizontal page-turn navigation.
+Status 2026-07-03: View-depth shared policy now covers the backed subset plus Side-to-Side page-pair navigation. `FreeW.App.Presentation.Shell.FreeWViewDepthPlanner` owns mode exclusivity, preview intent, read-only limitations, the two-page-fit target, and read-only pair navigation for WPF and Avalonia; each `MainWindow` only swaps the host workspace. Integrated validation observed: presentation 15/15, WPF 21/21, Avalonia 21/21. Remaining limitation: the secondary split pane and page-preview modes are read-only snapshots, Multiple Pages is not yet an editable responsive page grid, and editable horizontal Side-to-Side page view remains deferred.
 
 ### 7. Visual Parity Capture
 
