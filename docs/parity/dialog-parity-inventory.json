@@ -39,6 +39,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FindReplace.png",
                                          "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_find_dialog.png",
                                          "screenshots\\home-clipboard-cells-editing-tour\\freex_home_clipboard_cells_editing_replace_dialog.png"
                                      ],
