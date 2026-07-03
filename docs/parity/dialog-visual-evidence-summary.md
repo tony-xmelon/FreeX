@@ -25,13 +25,13 @@ Sources:
 
 | Metric | Count |
 | --- | ---: |
-| WPF captured manifest surfaces with committed PNGs | 45 |
+| WPF captured manifest surfaces with committed PNGs | 49 |
 | Avalonia captured manifest surfaces with committed PNGs | 93 |
-| Paired captured surface ids | 45 |
+| Paired captured surface ids | 49 |
 | WPF manifest ids without Avalonia pair | 0 |
-| Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 48 |
+| Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 44 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches | 27 |
+| Paired dimension mismatches | 29 |
 
 ## Top paired visual outliers
 
@@ -39,16 +39,16 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF size | Avalonia size | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| dialog.GoalSeekStatus | 380x219 | 380x190 | 0.872 | 0.268 | 0.220 | 0.252 |
 | dialog.FormatCells.Alignment | 620x540 | 690x660 | 0.768 | 0.134 | 0.110 | 0.188 |
 | dialog.FormatCells.Fill | 620x598 | 690x660 | 0.762 | 0.133 | 0.135 | 0.277 |
 | dialog.FormatCells.Border | 620x540 | 690x660 | 0.754 | 0.162 | 0.115 | 0.142 |
 | dialog.FormatCells.Font | 620x540 | 690x660 | 0.733 | 0.144 | 0.110 | 0.144 |
+| dialog.GoalSeek | 380x210 | 380x210 | 0.725 | 0.258 | 0.220 | 0.247 |
 | dialog.FormatCells.Protection | 620x540 | 690x660 | 0.669 | 0.127 | 0.100 | 0.106 |
+| dialog.GoToSpecial | 430x438 | 430x520 | 0.636 | 0.183 | 0.127 | 0.138 |
 | dialog.FormatCells | 620x540 | 690x660 | 0.611 | 0.148 | 0.089 | 0.039 |
 | dialog.FormatCells.Number | 620x540 | 690x660 | 0.611 | 0.148 | 0.089 | 0.039 |
-| dialog.PivotTableOptions.Printing | 520x500 | 520x500 | 0.560 | 0.147 | 0.134 | 0.280 |
-| dialog.PivotTableOptions.Data | 520x500 | 520x500 | 0.548 | 0.164 | 0.131 | 0.253 |
-| dialog.PrintPreview | 1120x700 | 1120x700 | 0.512 | 0.141 | 0.017 | 0.353 |
 
 ## Paired manifest surfaces
 
@@ -65,6 +65,9 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.FormatCells.Font | dialog.FormatCells.Font.png | 620x540 | True | dialog.FormatCells.Font.png | 690x660 | True | 0.733 |
 | dialog.FormatCells.Number | dialog.FormatCells.Number.png | 620x540 | True | dialog.FormatCells.Number.png | 690x660 | True | 0.611 |
 | dialog.FormatCells.Protection | dialog.FormatCells.Protection.png | 620x540 | True | dialog.FormatCells.Protection.png | 690x660 | True | 0.669 |
+| dialog.GoalSeek | dialog.GoalSeek.png | 380x210 | True | dialog.GoalSeek.png | 380x210 | True | 0.725 |
+| dialog.GoalSeekStatus | dialog.GoalSeekStatus.png | 380x219 | True | dialog.GoalSeekStatus.png | 380x190 | True | 0.872 |
+| dialog.GoToSpecial | dialog.GoToSpecial.png | 430x438 | True | dialog.GoToSpecial.png | 430x520 | True | 0.636 |
 | dialog.Options | dialog.Options.png | 744x521 | True | dialog.Options.png | 760x560 | True | 0.219 |
 | dialog.Options.AddIns | dialog.Options.AddIns.png | 744x521 | True | dialog.Options.AddIns.png | 760x560 | True | 0.201 |
 | dialog.Options.Advanced | dialog.Options.Advanced.png | 744x521 | True | dialog.Options.Advanced.png | 760x560 | True | 0.223 |
@@ -99,10 +102,11 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.PivotValueFieldSettings.ShowValuesAs | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | True | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | True | 0.469 |
 | dialog.PivotValueFieldSettings.SummarizeValuesBy | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | True | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | True | 0.472 |
 | dialog.PrintPreview | dialog.PrintPreview.png | 1120x700 | True | dialog.PrintPreview.png | 1120x700 | True | 0.512 |
+| dialog.RemoveDuplicates | dialog.RemoveDuplicates.png | 360x360 | True | dialog.RemoveDuplicates.png | 360x360 | True | 0.515 |
 
 ## Avalonia-Manifest-Only Screenshot Surfaces
 
-Avalonia has 48 committed PNG manifest surface ids across 48 dialog route families with no exact WPF manifest PNG id pair. This describes screenshot evidence coverage, not whether a WPF dialog implementation exists.
+Avalonia has 44 committed PNG manifest surface ids across 44 dialog route families with no exact WPF manifest PNG id pair. This describes screenshot evidence coverage, not whether a WPF dialog implementation exists.
 
 | Route family | Count | Additional surface ids |
 | --- | ---: | --- |
@@ -124,10 +128,7 @@ Avalonia has 48 committed PNG manifest surface ids across 48 dialog route famili
 | dialog.ExportOptions | 1 | dialog.ExportOptions |
 | dialog.ForecastSheet | 1 | dialog.ForecastSheet |
 | dialog.FormatChartArea | 1 | dialog.FormatChartArea |
-| dialog.GoalSeek | 1 | dialog.GoalSeek |
-| dialog.GoalSeekStatus | 1 | dialog.GoalSeekStatus |
 | dialog.GoTo | 1 | dialog.GoTo |
-| dialog.GoToSpecial | 1 | dialog.GoToSpecial |
 | dialog.InsertHyperlink | 1 | dialog.InsertHyperlink |
 | dialog.InsertSlicer | 1 | dialog.InsertSlicer |
 | dialog.InsertTimeline | 1 | dialog.InsertTimeline |
@@ -136,7 +137,6 @@ Avalonia has 48 committed PNG manifest surface ids across 48 dialog route famili
 | dialog.ProtectSheet | 1 | dialog.ProtectSheet |
 | dialog.ProtectWorkbook | 1 | dialog.ProtectWorkbook |
 | dialog.RecommendedPivotTables | 1 | dialog.RecommendedPivotTables |
-| dialog.RemoveDuplicates | 1 | dialog.RemoveDuplicates |
 | dialog.RenameSheet | 1 | dialog.RenameSheet |
 | dialog.SaveAsWorkbook | 1 | dialog.SaveAsWorkbook |
 | dialog.ScenarioManager | 1 | dialog.ScenarioManager |
@@ -177,10 +177,7 @@ Avalonia has 48 committed PNG manifest surface ids across 48 dialog route famili
 | dialog.ExportOptions | dialog.ExportOptions.png | 430x552 | True | 1742 | 0.098 |
 | dialog.ForecastSheet | dialog.ForecastSheet.png | 360x220 | True | 158 | 0.062 |
 | dialog.FormatChartArea | dialog.FormatChartArea.png | 432x760 | True | 401 | 0.065 |
-| dialog.GoalSeek | dialog.GoalSeek.png | 380x210 | True | 118 | 0.056 |
-| dialog.GoalSeekStatus | dialog.GoalSeekStatus.png | 380x190 | True | 67 | 0.047 |
 | dialog.GoTo | dialog.GoTo.png | 420x320 | True | 339 | 0.042 |
-| dialog.GoToSpecial | dialog.GoToSpecial.png | 430x520 | True | 641 | 0.046 |
 | dialog.InsertHyperlink | dialog.InsertHyperlink.png | 560x360 | True | 1149 | 0.057 |
 | dialog.InsertSlicer | dialog.InsertSlicer.png | 410x233 | True | 585 | 0.093 |
 | dialog.InsertTimeline | dialog.InsertTimeline.png | 410x225 | True | 626 | 0.067 |
@@ -189,7 +186,6 @@ Avalonia has 48 committed PNG manifest surface ids across 48 dialog route famili
 | dialog.ProtectSheet | dialog.ProtectSheet.png | 430x580 | True | 445 | 0.054 |
 | dialog.ProtectWorkbook | dialog.ProtectWorkbook.png | 380x240 | True | 131 | 0.059 |
 | dialog.RecommendedPivotTables | dialog.RecommendedPivotTables.png | 560x340 | True | 1198 | 0.071 |
-| dialog.RemoveDuplicates | dialog.RemoveDuplicates.png | 360x360 | True | 119 | 0.043 |
 | dialog.RenameSheet | dialog.RenameSheet.png | 380x190 | True | 622 | 0.103 |
 | dialog.SaveAsWorkbook | dialog.SaveAsWorkbook.png | 640x420 | True | 1339 | 0.217 |
 | dialog.ScenarioManager | dialog.ScenarioManager.png | 500x740 | True | 379 | 0.064 |

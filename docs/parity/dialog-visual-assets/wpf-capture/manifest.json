@@ -316,6 +316,34 @@
                          "png":  "dialog.PivotTableOptions.AltText.png",
                          "captured":  true,
                          "note":  ""
+                     },
+                     {
+                         "id":  "dialog.GoalSeek",
+                         "kind":  "dialog",
+                         "png":  "dialog.GoalSeek.png",
+                         "captured":  true,
+                         "note":  "Captured from FreeX.App.Host --parity-capture Goal Seek dialog surface"
+                     },
+                     {
+                         "id":  "dialog.GoalSeekStatus",
+                         "kind":  "dialog",
+                         "png":  "dialog.GoalSeekStatus.png",
+                         "captured":  true,
+                         "note":  "Captured from FreeX.App.Host --parity-capture Goal Seek Status dialog surface"
+                     },
+                     {
+                         "id":  "dialog.GoToSpecial",
+                         "kind":  "dialog",
+                         "png":  "dialog.GoToSpecial.png",
+                         "captured":  true,
+                         "note":  "Captured from FreeX.App.Host --parity-capture Go To Special dialog surface"
+                     },
+                     {
+                         "id":  "dialog.RemoveDuplicates",
+                         "kind":  "dialog",
+                         "png":  "dialog.RemoveDuplicates.png",
+                         "captured":  true,
+                         "note":  "Captured from FreeX.App.Host --parity-capture Remove Duplicates dialog surface"
                      }
                  ]
 }
