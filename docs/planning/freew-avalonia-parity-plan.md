@@ -40,6 +40,10 @@ Status 2026-07-03: post-field evidence updates are integrated on `origin/main`. 
 
 Status 2026-07-03: table cell-border visual planning is integrated on `origin/main` (`6e8532452`, worker `19311c25e`). Shared `TableCellBorderVisualPlanner` now owns per-edge brush, thickness, dash, dotted, double, and mixed-color decisions. WPF renders the shared plan through a thin `TableCellBorderChrome` overlay instead of collapsing explicit borders to one brush/thickness, while Avalonia stores and draws the same `TableCellBorderVisualPlan` rather than remapping raw cell borders locally. Integrated validation observed in the parent thread: presentation table/evidence tests 83/83, WPF source/round-trip tests 2/2, Avalonia table/evidence tests 136/136, `dotnet build FreeW.slnx --configuration Release --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -v:minimal` clean, and `tools\Run-FreeWWordBaselineEvidence.ps1 -RunRoot artifacts\freew-table-border-evidence -AllowMissingWord` trust passed with 60 evidence rows / 60 baseline rows.
 
+Status 2026-07-03: protection history enforcement is integrated on `origin/main` (`6a21f6ff`). Shared `RestrictEditingEnforcementPolicy` now classifies `HistoryUndo` and `HistoryRedo`; WPF and Avalonia both gate `CanUndo` / `CanRedo` / `Undo()` / `Redo()` through that shared policy, and WPF also intercepts Ctrl+Z/Ctrl+Y when the document is protected or marked final. Integrated validation observed in the parent thread: presentation policy tests 27/27, Avalonia protection tests 6/6, WPF protection tests 9/9, and `FreeW.slnx` Release build clean.
+
+Status 2026-07-03: cross-reference field refresh is integrated on `origin/main` (`abc9fb224`, merge `beae7616f`). `CrossReferences` in `FreeW.Core.Model` now owns shared recomputation of `REF`, `PAGEREF`, and `NOTEREF` cached display text for Update Fields. WPF and Avalonia `DocumentView.UpdateFields` are thin consumers of that shared resolver, so stale cross-reference text updates after target headings, bookmarks, or notes change while dangling targets preserve their prior cached text. Integrated validation observed in the parent thread: core model cross-reference tests 32/32, core IO round-trip tests 7/7, WPF cross-reference/complex-field tests 8/8, Avalonia cross-reference/update-fields tests 2/2, and `FreeW.slnx` Release build clean.
+
 The next parity work should therefore avoid command-count chasing. Remaining value is in stronger visual proof: real Word-baseline PNG comparison on a machine with Word COM, broader fixture coverage beyond the current mixed-section/table-cell-border/floating object/chart/SmartArt/WordArt/run-decoration evidence set, and behavior evidence where a command exists but Word-like results are still only weakly proven. The Word-baseline summary path now reports baseline ids, candidate paths, status counts, skip reasons, tolerance limits, and changed-pixel metrics when comparison PNGs are available. On this machine Word COM remains unavailable, so the latest integrated `-AllowMissingWord` run produced no real Word PNGs and must not be read as full MS Word visual parity.
 
 ## Architecture Rule
@@ -135,6 +139,8 @@ Close the references family by separating semantic document data from UI:
 - `FreeW.App.Presentation` for source-management, cross-reference, citation style, table-of-authorities, and update planners.
 - WPF/Avalonia dialogs as thin views over those planners.
 
+Status 2026-07-03: cross-reference Update Fields behavior is now shared through `FreeW.Core.Model.CrossReferences` and consumed by both WPF and Avalonia document views. Remaining references depth should focus on source-management breadth, table-of-authorities workflow polish, citation-style breadth, and real visual/round-trip evidence for references-heavy documents rather than reimplementing cross-reference refresh in host code.
+
 ### 5. Review Depth: Proofing, Thesaurus, Protection, Compare/Combine
 
 Treat Review features as policy first. Shared planners should own available actions, state, document mutations, conflict messages, and allowlists. Host shells should provide only the UI realization, file pickers, and visual markers.
@@ -146,6 +152,8 @@ Status 2026-07-03: Compare/Combine execution is implemented for Avalonia through
 Status 2026-07-03: Thesaurus behavior parity is implemented through shared presentation planning plus thin host realization. Avalonia supports synonym Replace from the shared planner, and WPF retains the richer Insert/Copy pane actions. Integrated validation observed: presentation 3/3, WPF 15/15, Avalonia 41/41.
 
 Status 2026-07-03: Proofing language behavior has moved further into shared presentation policy. The caret/no-selection path now preserves Word-like typing intent by updating caret language state, selected ranges still apply through the shared run-formatting path, and the proofing language dialog planner records the backed dialog options/apply intent for both hosts. Remaining Review-depth proofing work should focus on evidence and behavior not yet proven by those shared contracts, not on duplicating language-apply logic in host code.
+
+Status 2026-07-03: protection now guards undo/redo history mutation through shared policy in both hosts. The remaining protection limitation is finer-grained history classification: comments-only protection blocks generic undo/redo instead of distinguishing comment-only history entries from body-edit history entries.
 
 ### 6. Read, Split, and Window Behaviors
 
