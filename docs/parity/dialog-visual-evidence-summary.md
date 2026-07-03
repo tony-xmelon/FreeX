@@ -33,6 +33,7 @@ Sources:
 | Nonblank PNG check failures | 0 |
 | Paired dimension mismatches | 73 |
 | Paired expected-size evidence mismatches | 2 |
+| Stale promoted expected-size evidence | 2 |
 
 ## Top paired visual outliers
 
@@ -59,6 +60,15 @@ These rows have a checked-in PNG size that disagrees with the dialog planner's e
 | --- | ---: | --- | ---: | --- | ---: | --- |
 | dialog.OpenWorkbook | 640x420 | WorkbookFileDialogSurfacePlanner.Width/Height | 1280x800 | False | 640x420 | True |
 | dialog.SaveAsWorkbook | 640x420 | WorkbookFileDialogSurfacePlanner.Width/Height | 1280x800 | False | 640x420 | True |
+
+## Stale Promoted Expected-Size Evidence
+
+These expected-size mismatches are known promoted fallback screenshots, not direct same-harness parity captures. Recapture or replace only with a nonblank WPF parity-capture PNG at the planner size; do not compare their raw dimension delta as product layout evidence.
+
+| Surface id | Stale shell | Current PNG size | Expected size | Promoted source PNG | Recapture status | Next action |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| dialog.OpenWorkbook | WPF | 1280x800 | 640x420 | screenshots\open-workbook-dialog-tour\freex_open_workbook_dialog_opened.png | blocked-transparent-direct-parity-capture | Recapture WPF direct parity evidence at planner size after transparent offscreen capture is fixed. |
+| dialog.SaveAsWorkbook | WPF | 1280x800 | 640x420 | screenshots\save-as-workbook-dialog-tour\freex_save_as_workbook_dialog_opened.png | blocked-transparent-direct-parity-capture | Recapture WPF direct parity evidence at planner size after transparent offscreen capture is fixed. |
 
 ## Paired manifest surfaces
 

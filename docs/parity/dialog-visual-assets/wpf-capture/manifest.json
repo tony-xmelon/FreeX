@@ -521,12 +521,17 @@
                          "note":  "Promoted from help-about-legal-tour committed WPF screenshot evidence (screenshots\\help-about-legal-tour\\freex_legal_notices_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
                      },
                      {
-                         "id":  "dialog.OpenWorkbook",
-                         "kind":  "dialog",
-                         "png":  "dialog.OpenWorkbook.png",
-                         "captured":  true,
-                         "note":  "Promoted from open-workbook-dialog-tour committed WPF screenshot evidence (screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
-                     },
+                          "id":  "dialog.OpenWorkbook",
+                          "kind":  "dialog",
+                          "png":  "dialog.OpenWorkbook.png",
+                          "captured":  true,
+                          "evidenceSource":  "promoted-foreground-tour",
+                          "sourcePng":  "screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png",
+                          "recaptureStatus":  "blocked-transparent-direct-parity-capture",
+                          "expectedWidth":  640,
+                          "expectedHeight":  420,
+                          "note":  "Promoted from open-workbook-dialog-tour committed WPF screenshot evidence (screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                       },
                      {
                          "id":  "dialog.ProtectWorkbook",
                          "kind":  "dialog",
@@ -542,12 +547,17 @@
                          "note":  "Promoted from sheet-tabs-tour committed WPF screenshot evidence (screenshots\\sheet-tabs-tour\\freex_sheet_tabs_rename_dialog_opened.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
                      },
                      {
-                         "id":  "dialog.SaveAsWorkbook",
-                         "kind":  "dialog",
-                         "png":  "dialog.SaveAsWorkbook.png",
-                         "captured":  true,
-                         "note":  "Promoted from save-as-workbook-dialog-tour committed WPF screenshot evidence (screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
-                     },
+                          "id":  "dialog.SaveAsWorkbook",
+                          "kind":  "dialog",
+                          "png":  "dialog.SaveAsWorkbook.png",
+                          "captured":  true,
+                          "evidenceSource":  "promoted-foreground-tour",
+                          "sourcePng":  "screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png",
+                          "recaptureStatus":  "blocked-transparent-direct-parity-capture",
+                          "expectedWidth":  640,
+                          "expectedHeight":  420,
+                          "note":  "Promoted from save-as-workbook-dialog-tour committed WPF screenshot evidence (screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                       },
                      {
                          "id":  "dialog.ScenarioManager",
                          "kind":  "dialog",

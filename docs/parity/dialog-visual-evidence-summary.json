@@ -19,7 +19,8 @@
                     "additionalAvaloniaCapturedSurfaceIds":  0,
                     "nonBlankPngFailures":  0,
                     "pairedDimensionMismatches":  73,
-                    "pairedExpectedSizeMismatches":  2
+                    "pairedExpectedSizeMismatches":  2,
+                    "stalePromotedExpectedSizeEvidence":  2
                 },
     "pairedSurfaces":  [
                            {
@@ -1663,7 +1664,13 @@
                                            "opaqueRatio":  1,
                                            "nonBackgroundRatio":  0.998011,
                                            "isNonBlank":  true,
-                                           "meanLuma":  243.000472
+                                           "meanLuma":  243.000472,
+                                           "manifestNote":  "Promoted from open-workbook-dialog-tour committed WPF screenshot evidence (screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG",
+                                           "evidenceSource":  "promoted-foreground-tour",
+                                           "sourcePng":  "screenshots\\open-workbook-dialog-tour\\freex_open_workbook_dialog_opened.png",
+                                           "recaptureStatus":  "blocked-transparent-direct-parity-capture",
+                                           "expectedWidth":  640,
+                                           "expectedHeight":  420
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.OpenWorkbook.png",
@@ -3423,7 +3430,13 @@
                                            "opaqueRatio":  1,
                                            "nonBackgroundRatio":  0.99836,
                                            "isNonBlank":  true,
-                                           "meanLuma":  243.078979
+                                           "meanLuma":  243.078979,
+                                           "manifestNote":  "Promoted from save-as-workbook-dialog-tour committed WPF screenshot evidence (screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG",
+                                           "evidenceSource":  "promoted-foreground-tour",
+                                           "sourcePng":  "screenshots\\save-as-workbook-dialog-tour\\freex_save_as_workbook_dialog_opened.png",
+                                           "recaptureStatus":  "blocked-transparent-direct-parity-capture",
+                                           "expectedWidth":  640,
+                                           "expectedHeight":  420
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.SaveAsWorkbook.png",
