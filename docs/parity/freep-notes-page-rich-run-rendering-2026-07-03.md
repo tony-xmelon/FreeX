@@ -11,7 +11,8 @@ Scope: bounded FreeP notes-page preview/rendering workflow-depth slice after not
 ## Improvement
 
 - `PresentationNotesPagePreviewPlan` now carries `StyledNoteLines` beside the existing plain `NoteLines`, preserving per-run bold, italic metadata, and resolved sRGB color while keeping current callers compatible.
-- `PresentationNotesPagePdfExporter` renders each styled speaker-note run as its own `PdfText` operation, including bold face selection and run color.
+- `PresentationNotesPagePdfExporter` renders each styled speaker-note run as its own `PdfText` operation, including bold, italic, bold-italic face selection and run color.
+- `PortablePdfWriter` now maps italic and bold-italic `PdfText` operations to the built-in `/Helvetica-Oblique` and `/Helvetica-BoldOblique` Type1 faces when those faces are used, keeping regular/bold output on the legacy `/F1` and `/F2` resources.
 - Existing plain note text, list prefixes, wrapping, placeholder handling, and overflow continuation behavior remain shared and host-neutral for WPF and Avalonia.
 
 ## Focused Evidence
@@ -20,6 +21,5 @@ Scope: bounded FreeP notes-page preview/rendering workflow-depth slice after not
 
 ## Remaining FreeP Notes-Page Gaps
 
-- The portable PDF layer currently exposes regular and bold Helvetica faces only, so italic metadata is carried in the shared plan but not yet rendered as an italic PDF face.
 - PowerPoint-authoritative visual baselines still require a machine with `PowerPoint.Application` COM registered.
 - Exact font-family metrics, theme re-resolution for notes-page run colors, precise bullet hanging-indent geometry, notes master styling, native print preview, and PowerPoint-measured PDF fidelity remain outside this slice.
