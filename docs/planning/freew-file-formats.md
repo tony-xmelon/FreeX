@@ -1,8 +1,9 @@
 # FreeW File-Format Adapter Status
 
-**Last updated:** 2026-06-21
+**Last updated:** 2026-07-03
 
 FreeW no longer hardcodes a DOCX-only file lifecycle. Current mainline uses `IDocumentFileAdapter`, `DocumentFileAdapterCatalog`, catalog-derived format resolution, and host/Avalonia picker filters so adding or changing a format is a catalog/adapter/test change instead of command string surgery.
+Backstage Save As / Export rows are planned from the same catalog-derived capability view so import-only, export-only, template, and compatibility formats are described explicitly.
 
 ## Current Architecture
 
@@ -27,16 +28,23 @@ FreeW no longer hardcodes a DOCX-only file lifecycle. Current mainline uses `IDo
 | Rich Text Format | `.rtf` | Yes | Yes | Text and supported formatting are mapped through `TextDocument`. |
 | HTML | `.html`, `.htm` | Yes | Yes | Document HTML import/export path. |
 | MHTML | `.mhtml`, `.mht` | Yes | Yes | Web archive document path. |
-| PDF | `.pdf` | Yes | No | Import-only text extraction path; export remains a host/export concern. |
-| Legacy Word | `.doc`, `.dot` | Yes | No | Import-only legacy adapter. |
+| PDF | `.pdf` | Yes | No | Import-only text extraction path through the explicit PDF import command; PDF export is a separate fixed-layout output, not editable round-trip support. |
+| Legacy Word | `.doc`, `.dot` | Yes | Yes | Compatibility adapter for Word 97-2003 binary formats. Save is available, but unsupported modern features may be simplified. `.dot` opens as a template/new document. |
+| OpenDocument Text | `.odt`, `.ott` | Yes | Yes | Native ODF text package adapter. `.ott` opens as a template/new document. Unsupported ODF constructs are skipped rather than implied as fully round-trippable. |
 | Plain text | `.txt`, `.text`, `.log` | Yes | Yes | Encoding/EOL choices stay adapter-owned, not model-owned. |
+
+## Fixed-Layout Export Formats
+
+| Format | Extensions | Open | Save | Export | Notes |
+|---|---|---:|---:|---:|---|
+| PDF | `.pdf` | Import command only | No | Yes | Export creates a fixed-layout copy for sharing/printing; it is separate from PDF text import. |
+| XPS | `.xps` | No | No | Yes | Export-only fixed-layout copy when the host provides an XPS export action. |
 
 ## Not Currently Registered
 
 | Format | Status |
 |---|---|
-| OpenDocument Text | `.odt`, `.ott`, and `.fodt` are not registered in the current catalog. Add only with explicit adapter, corpus rows, and known-gap documentation. |
-| XPS | Export remains separate from document-file open/save adapters. |
+| Flat OpenDocument Text | `.fodt` is not registered in the current catalog. Add only with explicit adapter, corpus rows, and known-gap documentation. |
 | WordPerfect or other legacy formats | Out of current scope unless a redistributable corpus and importer strategy are approved. |
 
 ## Maintenance Rules
