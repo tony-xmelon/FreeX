@@ -88,6 +88,8 @@ Suites:
 - `native-output`: guarded native Open/Save references plus FreeX WPF Save As invalid path, export cancel/overwrite/XPS, and native PrintDialog proof. Use `-ListScenarios` to emit the JSON evidence contract without building or launching foreground capture, and `-AssertScenarioCoverage` to verify the native-output catalog still declares required artifacts and explicit pending Avalonia baselines before spending an interactive desktop slot.
 - `all`: all currently paired foreground scenarios.
 
+`native-output -ListScenarios` also validates retained artifact files under `tools/foreground-captures/<scenario>/`. The catalog reports `evidenceStatus`, `nextMissingArtifact`, `missingArtifacts`, and per-subject `artifactStatuses` so stale manifests, absent screenshots, missing native output files, and pending Avalonia foreground baselines are visible before anyone treats a catalog row as parity evidence.
+
 ## Current Evidence
 
 Latest bootstrap run retained locally under ignored artifacts:
@@ -126,7 +128,7 @@ The current actionable harness gaps are:
 - Triage the `formula` contact-sheet findings before closing the formula bar/name box surface: both apps now have paired B4/formula-bar visual proof, while expand/collapse, `fx` Insert Function, edit commit/cancel, reference highlighting, and invalid formula handling still need paired foreground coverage.
 - Run the `filtering` suite as the next AutoFilter foreground-evidence checkpoint. It pairs the existing Excel AutoFilter opened-state scenario with the new FreeX `freex-autofilter` counterpart so filter flyouts can produce side-by-side screenshots and manifests instead of remaining only a backlog row.
 - Run the `grid` suite as the next COM-independent foreground-evidence checkpoint. It exposes the reliable FreeX row/column resize and wheel-scroll validations through the batch manifest/contact-sheet flow so grid mechanics evidence can be collected even when Microsoft Excel automation is blocked.
-- Before rerunning `native-output`, run `tools\Run-UxParityScenarioBatch.ps1 -Suite native-output -ListScenarios` and `-AssertScenarioCoverage` to confirm the seven native-output rows still have declared artifact expectations and visible pending Avalonia foreground-baseline debt. The foreground run remains necessary for actual screenshots/manifests.
+- Before rerunning `native-output`, run `tools\Run-UxParityScenarioBatch.ps1 -Suite native-output -ListScenarios` and `-AssertScenarioCoverage` to confirm the seven native-output rows still have declared artifact expectations, visible pending Avalonia foreground-baseline debt, and explicit `nextMissingArtifact` values for any retained WPF/Excel artifact gaps. The foreground run remains necessary for actual screenshots/manifests.
 - Continue hardening foreground ownership reacquisition while expanding beyond `core`; repeated desktop-driven scenarios can still produce transient foreground failures on this machine.
 - Continue using `ux-scenario-contact-sheet.png` as the first-pass visual review artifact for paired scenario batches.
 
