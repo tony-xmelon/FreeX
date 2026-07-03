@@ -12,13 +12,13 @@
                     "avaloniaCaptureEvidence":  57,
                     "avaloniaHarnessRoutes":  57,
                     "sharedOrPresentationBackedRoutes":  57,
-                    "wpfCapturedManifestSurfaces":  30,
+                    "wpfCapturedManifestSurfaces":  37,
                     "avaloniaCapturedManifestSurfaces":  93,
-                    "pairedCapturedSurfaceIds":  30,
+                    "pairedCapturedSurfaceIds":  37,
                     "wpfManifestIdsWithoutAvaloniaPair":  0,
-                    "additionalAvaloniaCapturedSurfaceIds":  63,
+                    "additionalAvaloniaCapturedSurfaceIds":  56,
                     "nonBlankPngFailures":  0,
-                    "pairedDimensionMismatches":  24
+                    "pairedDimensionMismatches":  27
                 },
     "pairedSurfaces":  [
                            {
@@ -1124,6 +1124,272 @@
                                               }
                            },
                            {
+                               "id":  "dialog.PivotTableOptions",
+                               "routeFamily":  "dialog.PivotTableOptions",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotTableOptions.png",
+                                           "fileBytes":  29712,
+                                           "width":  520,
+                                           "height":  676,
+                                           "pixels":  351520,
+                                           "distinctColors":  303,
+                                           "opaqueRatio":  0.913314,
+                                           "nonBackgroundRatio":  0.201821,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  225.664362
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.png",
+                                                "fileBytes":  23950,
+                                                "width":  520,
+                                                "height":  610,
+                                                "pixels":  317200,
+                                                "distinctColors":  440,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.052254,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  249.303911
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  0,
+                                                  "heightDelta":  66,
+                                                  "dimensionDeltaRatio":  0.097633,
+                                                  "sampleMeanDelta":  0.123568,
+                                                  "lumaDelta":  0.092704,
+                                                  "nonBackgroundDelta":  0.149567,
+                                                  "triageScore":  0.463472
+                                              }
+                           },
+                           {
+                               "id":  "dialog.PivotTableOptions.AltText",
+                               "routeFamily":  "dialog.PivotTableOptions",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotTableOptions.AltText.png",
+                                           "fileBytes":  9793,
+                                           "width":  520,
+                                           "height":  500,
+                                           "pixels":  260000,
+                                           "distinctColors":  233,
+                                           "opaqueRatio":  0.893631,
+                                           "nonBackgroundRatio":  0.230319,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  221.717809
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.AltText.png",
+                                                "fileBytes":  7780,
+                                                "width":  520,
+                                                "height":  500,
+                                                "pixels":  260000,
+                                                "distinctColors":  212,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.019942,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  252.996821
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0,
+                                                  "heightDelta":  0,
+                                                  "dimensionDeltaRatio":  0,
+                                                  "sampleMeanDelta":  0.136744,
+                                                  "lumaDelta":  0.122663,
+                                                  "nonBackgroundDelta":  0.210377,
+                                                  "triageScore":  0.469783
+                                              }
+                           },
+                           {
+                               "id":  "dialog.PivotTableOptions.Data",
+                               "routeFamily":  "dialog.PivotTableOptions",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotTableOptions.Data.png",
+                                           "fileBytes":  19787,
+                                           "width":  520,
+                                           "height":  500,
+                                           "pixels":  260000,
+                                           "distinctColors":  281,
+                                           "opaqueRatio":  0.893631,
+                                           "nonBackgroundRatio":  0.279842,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  218.833274
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.Data.png",
+                                                "fileBytes":  12962,
+                                                "width":  520,
+                                                "height":  500,
+                                                "pixels":  260000,
+                                                "distinctColors":  286,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.026558,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  252.255493
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0,
+                                                  "heightDelta":  0,
+                                                  "dimensionDeltaRatio":  0,
+                                                  "sampleMeanDelta":  0.164065,
+                                                  "lumaDelta":  0.131068,
+                                                  "nonBackgroundDelta":  0.253285,
+                                                  "triageScore":  0.548418
+                                              }
+                           },
+                           {
+                               "id":  "dialog.PivotTableOptions.Display",
+                               "routeFamily":  "dialog.PivotTableOptions",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotTableOptions.Display.png",
+                                           "fileBytes":  30056,
+                                           "width":  520,
+                                           "height":  501,
+                                           "pixels":  260520,
+                                           "distinctColors":  262,
+                                           "opaqueRatio":  0.893782,
+                                           "nonBackgroundRatio":  0.224121,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  219.065865
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.Display.png",
+                                                "fileBytes":  23016,
+                                                "width":  520,
+                                                "height":  500,
+                                                "pixels":  260000,
+                                                "distinctColors":  411,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.051308,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  249.416266
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  0,
+                                                  "heightDelta":  1,
+                                                  "dimensionDeltaRatio":  0.001996,
+                                                  "sampleMeanDelta":  0.152397,
+                                                  "lumaDelta":  0.119021,
+                                                  "nonBackgroundDelta":  0.172813,
+                                                  "triageScore":  0.446228
+                                              }
+                           },
+                           {
+                               "id":  "dialog.PivotTableOptions.LayoutAndFormat",
+                               "routeFamily":  "dialog.PivotTableOptions",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotTableOptions.LayoutAndFormat.png",
+                                           "fileBytes":  29712,
+                                           "width":  520,
+                                           "height":  676,
+                                           "pixels":  351520,
+                                           "distinctColors":  303,
+                                           "opaqueRatio":  0.913314,
+                                           "nonBackgroundRatio":  0.201821,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  225.664362
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.LayoutAndFormat.png",
+                                                "fileBytes":  23950,
+                                                "width":  520,
+                                                "height":  610,
+                                                "pixels":  317200,
+                                                "distinctColors":  440,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.052254,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  249.303911
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  false,
+                                                  "widthDelta":  0,
+                                                  "heightDelta":  66,
+                                                  "dimensionDeltaRatio":  0.097633,
+                                                  "sampleMeanDelta":  0.123568,
+                                                  "lumaDelta":  0.092704,
+                                                  "nonBackgroundDelta":  0.149567,
+                                                  "triageScore":  0.463472
+                                              }
+                           },
+                           {
+                               "id":  "dialog.PivotTableOptions.Printing",
+                               "routeFamily":  "dialog.PivotTableOptions",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotTableOptions.Printing.png",
+                                           "fileBytes":  12599,
+                                           "width":  520,
+                                           "height":  500,
+                                           "pixels":  260000,
+                                           "distinctColors":  253,
+                                           "opaqueRatio":  0.893631,
+                                           "nonBackgroundRatio":  0.300492,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  218.917932
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.Printing.png",
+                                                "fileBytes":  9498,
+                                                "width":  520,
+                                                "height":  500,
+                                                "pixels":  260000,
+                                                "distinctColors":  252,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.020235,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  252.976134
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0,
+                                                  "heightDelta":  0,
+                                                  "dimensionDeltaRatio":  0,
+                                                  "sampleMeanDelta":  0.146562,
+                                                  "lumaDelta":  0.133562,
+                                                  "nonBackgroundDelta":  0.280258,
+                                                  "triageScore":  0.560381
+                                              }
+                           },
+                           {
+                               "id":  "dialog.PivotTableOptions.TotalsAndFilters",
+                               "routeFamily":  "dialog.PivotTableOptions",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotTableOptions.TotalsAndFilters.png",
+                                           "fileBytes":  17041,
+                                           "width":  520,
+                                           "height":  500,
+                                           "pixels":  260000,
+                                           "distinctColors":  284,
+                                           "opaqueRatio":  0.893631,
+                                           "nonBackgroundRatio":  0.266992,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  220.002299
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.TotalsAndFilters.png",
+                                                "fileBytes":  13589,
+                                                "width":  520,
+                                                "height":  500,
+                                                "pixels":  260000,
+                                                "distinctColors":  464,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.047819,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  251.12185
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0,
+                                                  "heightDelta":  0,
+                                                  "dimensionDeltaRatio":  0,
+                                                  "sampleMeanDelta":  0.147292,
+                                                  "lumaDelta":  0.122037,
+                                                  "nonBackgroundDelta":  0.219173,
+                                                  "triageScore":  0.488503
+                                              }
+                           },
+                           {
                                "id":  "dialog.PrintPreview",
                                "routeFamily":  "dialog.PrintPreview",
                                "wpf":  {
@@ -1213,25 +1479,25 @@
                                   "nonBackgroundDelta":  0.039071
                               },
                               {
+                                  "id":  "dialog.PivotTableOptions.Printing",
+                                  "triageScore":  0.560381,
+                                  "sampleMeanDelta":  0.146562,
+                                  "dimension":  "520x500 vs 520x500",
+                                  "nonBackgroundDelta":  0.280258
+                              },
+                              {
+                                  "id":  "dialog.PivotTableOptions.Data",
+                                  "triageScore":  0.548418,
+                                  "sampleMeanDelta":  0.164065,
+                                  "dimension":  "520x500 vs 520x500",
+                                  "nonBackgroundDelta":  0.253285
+                              },
+                              {
                                   "id":  "dialog.PrintPreview",
                                   "triageScore":  0.511687,
                                   "sampleMeanDelta":  0.141411,
                                   "dimension":  "1120x700 vs 1120x700",
                                   "nonBackgroundDelta":  0.353324
-                              },
-                              {
-                                  "id":  "dialog.FindReplace.Replace",
-                                  "triageScore":  0.467144,
-                                  "sampleMeanDelta":  0.135635,
-                                  "dimension":  "720x430 vs 720x440",
-                                  "nonBackgroundDelta":  0.184675
-                              },
-                              {
-                                  "id":  "dialog.Options.Formulas",
-                                  "triageScore":  0.420189,
-                                  "sampleMeanDelta":  0.026343,
-                                  "dimension":  "744x777 vs 760x560",
-                                  "nonBackgroundDelta":  0.075934
                               }
                           ],
     "additionalAvaloniaSurfacesNeedingWpfPair":  [
@@ -1729,118 +1995,6 @@
                                                                           "nonBackgroundRatio":  0.053203,
                                                                           "isNonBlank":  true,
                                                                           "meanLuma":  251.04903
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.PivotTableOptions",
-                                                         "routeFamily":  "dialog.PivotTableOptions",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.png",
-                                                                          "fileBytes":  23950,
-                                                                          "width":  520,
-                                                                          "height":  610,
-                                                                          "pixels":  317200,
-                                                                          "distinctColors":  440,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.052254,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  249.303911
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.PivotTableOptions.AltText",
-                                                         "routeFamily":  "dialog.PivotTableOptions",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.AltText.png",
-                                                                          "fileBytes":  7780,
-                                                                          "width":  520,
-                                                                          "height":  500,
-                                                                          "pixels":  260000,
-                                                                          "distinctColors":  212,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.019942,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  252.996821
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.PivotTableOptions.Data",
-                                                         "routeFamily":  "dialog.PivotTableOptions",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.Data.png",
-                                                                          "fileBytes":  12962,
-                                                                          "width":  520,
-                                                                          "height":  500,
-                                                                          "pixels":  260000,
-                                                                          "distinctColors":  286,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.026558,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  252.255493
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.PivotTableOptions.Display",
-                                                         "routeFamily":  "dialog.PivotTableOptions",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.Display.png",
-                                                                          "fileBytes":  23016,
-                                                                          "width":  520,
-                                                                          "height":  500,
-                                                                          "pixels":  260000,
-                                                                          "distinctColors":  411,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.051308,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  249.416266
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.PivotTableOptions.LayoutAndFormat",
-                                                         "routeFamily":  "dialog.PivotTableOptions",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.LayoutAndFormat.png",
-                                                                          "fileBytes":  23950,
-                                                                          "width":  520,
-                                                                          "height":  610,
-                                                                          "pixels":  317200,
-                                                                          "distinctColors":  440,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.052254,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  249.303911
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.PivotTableOptions.Printing",
-                                                         "routeFamily":  "dialog.PivotTableOptions",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.Printing.png",
-                                                                          "fileBytes":  9498,
-                                                                          "width":  520,
-                                                                          "height":  500,
-                                                                          "pixels":  260000,
-                                                                          "distinctColors":  252,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.020235,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  252.976134
-                                                                      }
-                                                     },
-                                                     {
-                                                         "id":  "dialog.PivotTableOptions.TotalsAndFilters",
-                                                         "routeFamily":  "dialog.PivotTableOptions",
-                                                         "avalonia":  {
-                                                                          "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.TotalsAndFilters.png",
-                                                                          "fileBytes":  13589,
-                                                                          "width":  520,
-                                                                          "height":  500,
-                                                                          "pixels":  260000,
-                                                                          "distinctColors":  464,
-                                                                          "opaqueRatio":  1,
-                                                                          "nonBackgroundRatio":  0.047819,
-                                                                          "isNonBlank":  true,
-                                                                          "meanLuma":  251.12185
                                                                       }
                                                      },
                                                      {
@@ -2442,19 +2596,6 @@
                                                             "dialog.PivotFieldFilter.LabelFilters",
                                                             "dialog.PivotFieldFilter.SelectItems",
                                                             "dialog.PivotFieldFilter.ValueFilters"
-                                                        ]
-                                            },
-                                            {
-                                                "routeFamily":  "dialog.PivotTableOptions",
-                                                "count":  7,
-                                                "ids":  [
-                                                            "dialog.PivotTableOptions",
-                                                            "dialog.PivotTableOptions.AltText",
-                                                            "dialog.PivotTableOptions.Data",
-                                                            "dialog.PivotTableOptions.Display",
-                                                            "dialog.PivotTableOptions.LayoutAndFormat",
-                                                            "dialog.PivotTableOptions.Printing",
-                                                            "dialog.PivotTableOptions.TotalsAndFilters"
                                                         ]
                                             },
                                             {

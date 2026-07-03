@@ -718,6 +718,7 @@
                      "avaloniaCaptureExists":  true,
                      "sharedBackingStatus":  "shared-or-presentation-backed",
                      "wpfEvidence":  [
+                                         "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PivotTableOptions.png",
                                          "screenshots\\pivot-options-slicer-tour\\freex_pivot_options_dialog_display_style_options.png"
                                      ],
                      "avaloniaEvidence":  [
