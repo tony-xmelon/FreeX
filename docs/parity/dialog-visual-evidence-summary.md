@@ -34,7 +34,7 @@ Sources:
 | Paired dimension mismatches (scale-aware logical units) | 44 |
 | Raw PNG pixel dimension mismatches | 70 |
 | Raw PNG mismatches normalized by capture DPI | 26 |
-| Paired expected-size evidence mismatches | 7 |
+| Paired expected-size evidence mismatches | 9 |
 | Stale promoted expected-size evidence | 4 |
 
 ## Scale-Aware Dimension Mismatch Classification
@@ -44,9 +44,8 @@ The 44 scale-aware logical dimension mismatches are bucketed from committed PNG 
 | Bucket | Count | Top surface ids | Top next action |
 | --- | ---: | --- | --- |
 | content/visual mismatch | 14 | dialog.ScenarioManager<br>dialog.SelectionPane<br>dialog.AccessibilityChecker<br>dialog.SymbolPicker<br>dialog.FormatCells.Alignment | Align the seeded harness state before judging the remaining Scenario Manager dimensions. |
-| evidence limitation | 9 | dialog.GoalSeekStatus<br>dialog.Sort<br>dialog.PivotTableOptions.Display<br>dialog.WatchWindow<br>dialog.ShapeGradient | Recapture or tighten the WPF status crop before treating the height delta as a product bug. |
+| evidence limitation | 11 | dialog.GoalSeekStatus<br>dialog.Sort<br>dialog.PivotTableOptions<br>dialog.PivotTableOptions.LayoutAndFormat<br>dialog.PivotTableOptions.Display | Recapture or tighten the WPF status crop before treating the height delta as a product bug. |
 | expected platform/native difference | 19 | dialog.FindReplace.Replace<br>dialog.FindReplace<br>dialog.FindReplace.Find<br>dialog.Sparkline<br>dialog.Options.QuickAccessToolbar | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
-| real logical-size mismatch | 2 | dialog.PivotTableOptions<br>dialog.PivotTableOptions.LayoutAndFormat | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
 
 ## Top paired visual outliers
 
@@ -100,9 +99,9 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.Options.Save | expected platform/native difference | 744x521 | 760x560 | 16x39 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.Options.TrustCenter | expected platform/native difference | 744x521 | 760x560 | 16x39 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.Options.View | expected platform/native difference | 744x521 | 760x560 | 16x39 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
-| dialog.PivotTableOptions | real logical-size mismatch | 520x676 | 520x610 | 0x66 | The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption. | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
+| dialog.PivotTableOptions | evidence limitation | 520x676 | 520x610 | 0x66 | The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence. | Recapture or replace the stale evidence before treating this as a product layout mismatch. |
 | dialog.PivotTableOptions.Display | evidence limitation | 520x501 | 520x500 | 0x1 | Only a near-one-DIP height delta remains, consistent with border or capture rounding. | Leave below the product-action threshold unless a future recapture widens the delta. |
-| dialog.PivotTableOptions.LayoutAndFormat | real logical-size mismatch | 520x676 | 520x610 | 0x66 | The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption. | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
+| dialog.PivotTableOptions.LayoutAndFormat | evidence limitation | 520x676 | 520x610 | 0x66 | The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence. | Recapture or replace the stale evidence before treating this as a product layout mismatch. |
 | dialog.ProtectWorkbook | expected platform/native difference | 360x250 | 380x240 | 20x10 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.ScenarioManager | content/visual mismatch | 360x420 | 500x740 | 140x320 | The committed WPF PNG shows a selected seeded scenario while the Avalonia PNG shows an empty/no-scenario state. | Align the seeded harness state before judging the remaining Scenario Manager dimensions. |
 | dialog.SelectDataSource | content/visual mismatch | 620x500 | 468x499 | 152x1 | The committed PNGs show different dialog content/state, so the size delta is not isolated layout evidence. | Align the harness data/state first, then reclassify any residual logical-size delta. |
@@ -123,6 +122,8 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.ConditionalFormatNewRule | 634x334 | ConditionalFormatDialogCatalog.RuleEditorCaptureWidth/Height | 634x334 | 634x334 px @ 96 DPI | True | 640x380 | 640x380 px @ 96 DPI | False |
 | dialog.Consolidate | 380x420 | ConsolidateDialogPlanner.CaptureWidth/Height | 380x420 | 570x630 px @ 144 DPI | True | 420x450 | 420x450 px @ 96 DPI | False |
 | dialog.FormatChartArea | 420x590 | ChartAreaFormatPlanner.DialogWidth/DialogHeight | 420x590 | 630x885 px @ 144 DPI | True | 432x760 | 432x760 px @ 96 DPI | False |
+| dialog.PivotTableOptions | 520x676 | PivotOptionsPlanner.DialogWidth/LayoutAndFormatCaptureHeight | 520x676 | 520x676 px @ 96 DPI | True | 520x610 | 520x610 px @ 96 DPI | False |
+| dialog.PivotTableOptions.LayoutAndFormat | 520x676 | PivotOptionsPlanner.DialogWidth/LayoutAndFormatCaptureHeight | 520x676 | 520x676 px @ 96 DPI | True | 520x610 | 520x610 px @ 96 DPI | False |
 | dialog.ShapeGradient | 500x300 | ShapeGradientPlanner.DialogWidth/DialogHeight | 420x280 | 630x420 px @ 144 DPI | False | 500x300 | 500x300 px @ 96 DPI | True |
 | dialog.Sort | 760x500 | SortDialog.DialogDefaultWidth/DialogDefaultHeight | 640x420 | 960x630 px @ 144 DPI | False | 760x500 | 760x500 px @ 96 DPI | True |
 | dialog.WatchWindow | 760x320 | WatchWindowDialogPlanner.Width/Height | 620x320 | 930x480 px @ 144 DPI | False | 700x360 | 700x360 px @ 96 DPI | False |
