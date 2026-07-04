@@ -97,8 +97,8 @@ Dedup items that were blockers in the prior report are now landed or intentional
   - 57 shared-or-presentation-backed routes.
   - `docs/parity/dialog-visual-evidence-summary.md` compares the committed WPF/Avalonia capture manifests: 93 WPF manifest surfaces, 93 Avalonia manifest surfaces, 93 paired surface ids, 0 WPF-only ids, 0 Avalonia-only ids, and 0 nonblank failures.
   - The stale promoted WPF workbook-dialog evidence is closed: `dialog.OpenWorkbook` and `dialog.SaveAsWorkbook` now have direct 640x420 WPF captures paired with the 640x420 Avalonia captures.
-  - Current scale-aware dialog triage is 44 paired dimension mismatches: 14 content/visual mismatches, 6 evidence limitations, 19 expected platform/native differences, and 5 real logical-size mismatches.
-  - The three current stale promoted expected-size evidence rows are `dialog.ShapeGradient`, `dialog.Sort`, and `dialog.WorkbookStatistics`; their WPF promoted fallback screenshots should be recaptured through direct parity capture before their dimensions are treated as product layout evidence.
+  - Current scale-aware dialog triage is 44 paired dimension mismatches: 14 content/visual mismatches, 7 evidence limitations, 19 expected platform/native differences, and 4 real logical-size mismatches.
+  - The four current stale promoted expected-size evidence rows are `dialog.ShapeGradient`, `dialog.Sort`, `dialog.WatchWindow`, and `dialog.WorkbookStatistics`; their mismatched shell screenshots should be recaptured through direct parity capture before their dimensions are treated as product layout evidence.
 - Much of the spreadsheet behavior now flows through shared or presentation planners:
   - Workbook lifecycle/open target: `src/FreeX.App.Services/WorkbookFileLifecycleCoordinator.cs`, `WorkbookOpenTargetPlanner.cs`.
   - Viewport/scroll planning: `src/FreeX.App.Services/WorkbookViewportScrollPlanner.cs`.
@@ -109,7 +109,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 
 ### Main Gaps
 
-1. Dialog route evidence is no longer the leading inventory gap: the generated inventory is 57/57 for WPF captures, Avalonia captures, Avalonia harness routes, and shared/presentation-backed routes, and the committed manifest PNGs are 93/93 paired. Remaining work is qualitative visual review, scale-aware pixel comparison, foreground workflow proof, interaction diffs, five real logical-size mismatches, and stale expected-size evidence rows rather than missing route assets.
+1. Dialog route evidence is no longer the leading inventory gap: the generated inventory is 57/57 for WPF captures, Avalonia captures, Avalonia harness routes, and shared/presentation-backed routes, and the committed manifest PNGs are 93/93 paired. Remaining work is qualitative visual review, scale-aware pixel comparison, foreground workflow proof, interaction diffs, four real logical-size mismatches, and stale expected-size evidence rows rather than missing route assets.
 2. Shell, backstage, and print/export are partly deduped at the policy layer but still have host-local renderer edges:
    - WPF keeps `MainWindow.xaml`, `PrintRenderer*`, and native `PrintDialog` behavior.
    - Avalonia keeps substantial `MainWindow.cs`, custom print/preview, Skia/PDF, and capture glue.
@@ -120,7 +120,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 
 ### FreeX Next Slices
 
-1. Continue visual review of the 44 scale-aware paired dialog dimension/visual outliers. Prioritize the 5 real logical-size mismatches (`dialog.PivotTableOptions`, `dialog.PivotTableOptions.LayoutAndFormat`, `dialog.WatchWindow`, `dialog.ConditionalFormatNewRule`, and `dialog.Consolidate`) and keep the 70 raw PNG pixel mismatches separate from product layout work because 26 of those normalize away by capture DPI. `dialog.FormatChartArea` now uses a shared WPF/Avalonia size contract and awaits an Avalonia recapture at the planner size.
+1. Continue visual review of the 44 scale-aware paired dialog dimension/visual outliers. Prioritize the 4 real logical-size mismatches (`dialog.PivotTableOptions`, `dialog.PivotTableOptions.LayoutAndFormat`, `dialog.ConditionalFormatNewRule`, and `dialog.Consolidate`) and keep the 70 raw PNG pixel mismatches separate from product layout work because 26 of those normalize away by capture DPI. `dialog.FormatChartArea` and `dialog.WatchWindow` now use shared WPF/Avalonia size contracts and await recapture at their planner sizes.
 2. Consolidate keyboard shortcut matching into a portable service and gate both hosts from one matrix.
 3. Add print/export/render parity evidence around drawing/chart content and native print/export affordances.
 4. Continue renderer-edge shell/backstage polish only after capture evidence identifies concrete diffs.
@@ -298,6 +298,6 @@ The safest next implementation slice is not another dedup extraction. The obviou
 
 If the next slice must be app-specific, choose one of:
 
-- FreeX one of the five remaining real dialog logical-size mismatches, or direct recapture for stale/stale-sized evidence such as `dialog.FormatChartArea` or `dialog.WorkbookStatistics`.
+- FreeX one of the four remaining real dialog logical-size mismatches, or direct recapture for stale/stale-sized evidence such as `dialog.FormatChartArea`, `dialog.WatchWindow`, or `dialog.WorkbookStatistics`.
 - FreeW comments-only protection history classification or another weakly proven shared behavior family.
 - FreeP slide-pane thumbnail evidence no-COM success policy or richer editing evidence.
