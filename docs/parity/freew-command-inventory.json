@@ -69,7 +69,7 @@
     "platformOnly": 12,
     "deferred": 25,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 6
+    "behaviorEvidenceRows": 7
   },
   "commands": [
     {
@@ -2992,6 +2992,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart.shared-behavior",
+        "slice": "Chart command behavior",
+        "summary": "Applies the selected chart style gallery item through the WPF and Avalonia ribbon command registries and keeps the style change undoable in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.ChartDesign_StyleGalleryCommandMutatesSelectedChartAndUndoRestoresIt"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ChartSmartArtContextualTabTests.cs",
+          "test": "ChartSmartArtContextualTabTests.SetChartStyle_command_changes_style_id_and_reverts_on_undo"
+        }
       }
     },
     {
