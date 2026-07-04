@@ -69,7 +69,7 @@
     "platformOnly": 12,
     "deferred": 21,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 18
+    "behaviorEvidenceRows": 25
   },
   "commands": [
     {
@@ -551,6 +551,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.references-fields.shared-behavior",
+        "slice": "References fields and generated regions",
+        "summary": "Builds generated bibliography/reference-list paragraphs from document sources and keeps insertion undoable in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/CitationEditorTests.cs",
+          "test": "CitationEditorTests.InsertBibliography_BuildsBlockFromSourcesAndUndoReverts"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ReferencesTabTests.cs",
+          "test": "ReferencesTabTests.InsertBibliography_builds_block_from_sources_and_undo_reverts"
+        }
       }
     },
     {
@@ -3754,6 +3767,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.references-fields.shared-behavior",
+        "slice": "References fields and generated regions",
+        "summary": "Inserts tagged Word-like CITATION complex-field runs and proves Update Fields renumbers source-order numeric citations in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/CitationEditorTests.cs",
+          "test": "CitationEditorTests.InsertCitation_TaggedSourceWithQuotedFieldArgument_RenumbersOnUpdateFields"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ReferencesTabTests.cs",
+          "test": "ReferencesTabTests.InsertCitation_tagged_source_with_quoted_field_argument_renumbers_on_update_fields"
+        }
       }
     },
     {
@@ -13348,6 +13374,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.references-fields.shared-behavior",
+        "slice": "References fields and generated regions",
+        "summary": "Replaces the current document source list through backed source-management flow and keeps replacement undoable in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.ReferencesCitations_ExposesBackedWordStyleManageSources"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ReferencesTabTests.cs",
+          "test": "ReferencesTabTests.ReplaceSources_replaces_source_list_and_undo_reverts"
+        }
       }
     },
     {
@@ -13526,6 +13565,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.references-fields.shared-behavior",
+        "slice": "References fields and generated regions",
+        "summary": "Creates durable hidden Word-style TA citation marks with category/short-citation data in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/MarkCitationEditorTests.cs",
+          "test": "MarkCitationEditorTests.MarkCitation_DropsAHiddenCitationMarkThatSurvivesCommit"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ReferencesTabTests.cs",
+          "test": "ReferencesTabTests.MarkCitation_accepts_full_citation_dialog_result"
+        }
       }
     },
     {
@@ -25933,6 +25985,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.references-fields.shared-behavior",
+        "slice": "References fields and generated regions",
+        "summary": "Builds a generated Table of Authorities from body citation marks and preserves grouped legal-authority output in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/MarkCitationEditorTests.cs",
+          "test": "MarkCitationEditorTests.InsertTableOfAuthorities_BuildsAGroupedTableFromTheMarks"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ReferencesTabTests.cs",
+          "test": "ReferencesTabTests.MarkCitation_body_mark_builds_table_and_survives_docx_roundtrip"
+        }
       }
     },
     {
@@ -25975,6 +26040,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.references-fields.shared-behavior",
+        "slice": "References fields and generated regions",
+        "summary": "Refreshes an existing Table of Authorities region through shared region planning without duplicating stale generated paragraphs in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/MarkCitationEditorTests.cs",
+          "test": "MarkCitationEditorTests.RefreshTableOfAuthorities_ReplacesThePriorRegionInPlaceWithoutDuplicating"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ReferencesTabTests.cs",
+          "test": "ReferencesTabTests.UpdateFields_refreshes_existing_table_of_authorities_with_explicit_break_page_references"
+        }
       }
     },
     {
@@ -27869,6 +27947,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.references-fields.shared-behavior",
+        "slice": "References fields and generated regions",
+        "summary": "Refreshes stale generated references in one field-update pass, including TOC, bibliography, citation fields, and Table of Authorities coverage.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/NumericCitationEditorTests.cs",
+          "test": "NumericCitationEditorTests.UpdateFields_CitationFieldAndBibliographyRefresh_DoNotOverwriteCitationFromStaleView"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ReferencesTabTests.cs",
+          "test": "ReferencesTabTests.UpdateFields_refreshes_toc_and_bibliography_in_same_pass"
+        }
       }
     },
     {
