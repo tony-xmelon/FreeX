@@ -581,14 +581,14 @@
                          "kind":  "dialog",
                          "png":  "dialog.ShapeGradient.png",
                          "captured":  true,
-                         "note":  "Promoted from draw-object-formatting-tour committed WPF screenshot evidence (screenshots\\draw-object-formatting-tour\\freex_draw_object_formatting_shape_gradient_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                         "note":  "Recaptured from FreeX.App.Host --parity-capture direct WPF dialog evidence on 2026-07-04"
                      },
                      {
                          "id":  "dialog.Sort",
                          "kind":  "dialog",
                          "png":  "dialog.Sort.png",
                          "captured":  true,
-                         "note":  "Promoted from data-sort-filter-outline-tour committed WPF screenshot evidence (screenshots\\data-sort-filter-outline-tour\\freex_data_sort_filter_outline_sort_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                         "note":  "Recaptured from FreeX.App.Host --parity-capture direct WPF dialog evidence on 2026-07-04"
                      },
                      {
                          "id":  "dialog.SortOptions",
@@ -616,7 +616,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.SymbolPicker.png",
                          "captured":  true,
-                         "note":  "Promoted from insert-objects-links-tour committed WPF screenshot evidence (screenshots\\insert-objects-links-tour\\freex_insert_symbol_picker_opened.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                         "note":  "Recaptured from FreeX.App.Host --parity-capture direct WPF dialog evidence on 2026-07-04"
                      },
                      {
                          "id":  "dialog.TextToColumns",
@@ -637,14 +637,14 @@
                          "kind":  "dialog",
                          "png":  "dialog.WatchWindow.png",
                          "captured":  true,
-                         "note":  "Promoted from formula-diagnostics-tour committed WPF screenshot evidence (screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_watch_window_list.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                         "note":  "Recaptured from FreeX.App.Host --parity-capture direct WPF dialog evidence on 2026-07-04"
                      },
                      {
                          "id":  "dialog.WorkbookStatistics",
                          "kind":  "dialog",
                          "png":  "dialog.WorkbookStatistics.png",
                          "captured":  true,
-                         "note":  "Promoted from review-stats-share-tour committed WPF screenshot evidence (screenshots\\review-stats-share-tour\\freex_review_workbook_statistics_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                         "note":  "Recaptured from FreeX.App.Host --parity-capture direct WPF dialog evidence on 2026-07-04"
                      },
                      {
                          "id":  "dialog.Zoom",
