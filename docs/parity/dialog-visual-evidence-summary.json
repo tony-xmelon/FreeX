@@ -18,14 +18,14 @@
                     "wpfManifestIdsWithoutAvaloniaPair":  0,
                     "additionalAvaloniaCapturedSurfaceIds":  0,
                     "nonBlankPngFailures":  0,
-                    "pairedDimensionMismatches":  37,
-                    "pairedRawPixelDimensionMismatches":  64,
+                    "pairedDimensionMismatches":  36,
+                    "pairedRawPixelDimensionMismatches":  63,
                     "pairedCaptureScaleNormalizedDimensionMatches":  27,
-                    "pairedExpectedSizeMismatches":  8,
+                    "pairedExpectedSizeMismatches":  7,
                     "stalePromotedExpectedSizeEvidence":  0,
                     "dimensionMismatchBuckets":  {
                                                      "content/visual mismatch":  10,
-                                                     "evidence limitation":  8,
+                                                     "evidence limitation":  7,
                                                      "expected platform/native difference":  19
                                                  }
                 },
@@ -5796,46 +5796,46 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.WorkbookStatistics.png",
-                                                "fileBytes":  13398,
-                                                "width":  380,
-                                                "height":  320,
+                                                "fileBytes":  47455,
+                                                "width":  500,
+                                                "height":  560,
                                                 "dpiX":  96,
                                                 "dpiY":  96,
-                                                "logicalWidth":  380,
-                                                "logicalHeight":  320,
-                                                "pixels":  121600,
-                                                "distinctColors":  837,
+                                                "logicalWidth":  500,
+                                                "logicalHeight":  560,
+                                                "pixels":  280000,
+                                                "distinctColors":  1116,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.0669,
+                                                "nonBackgroundRatio":  0.077068,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  248.964727
+                                                "meanLuma":  247.44648
                                             },
                                "comparison":  {
-                                                  "dimensionMatch":  false,
-                                                  "widthDelta":  120.07,
-                                                  "heightDelta":  240.078,
-                                                  "logicalDimensionMatch":  false,
-                                                  "logicalWidthDelta":  120.07,
-                                                  "logicalHeightDelta":  240.078,
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0.07,
+                                                  "heightDelta":  0.078,
+                                                  "logicalDimensionMatch":  true,
+                                                  "logicalWidthDelta":  0.07,
+                                                  "logicalHeightDelta":  0.078,
                                                   "logicalDimensionTolerance":  0.5,
-                                                  "rawPixelDimensionMatch":  false,
-                                                  "rawPixelWidthDelta":  120,
-                                                  "rawPixelHeightDelta":  240,
+                                                  "rawPixelDimensionMatch":  true,
+                                                  "rawPixelWidthDelta":  0,
+                                                  "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
-                                                  "dimensionDeltaRatio":  0.668757,
-                                                  "sampleMeanDelta":  0.039192,
-                                                  "lumaDelta":  0.007015,
-                                                  "nonBackgroundDelta":  0.012704,
-                                                  "triageScore":  0.727668,
-                                                  "expectedSizeMismatch":  true,
+                                                  "dimensionDeltaRatio":  0.000279,
+                                                  "sampleMeanDelta":  0.045985,
+                                                  "lumaDelta":  0.001061,
+                                                  "nonBackgroundDelta":  0.002536,
+                                                  "triageScore":  0.04986,
+                                                  "expectedSizeMismatch":  false,
                                                   "expectedWidth":  500,
                                                   "expectedHeight":  560,
                                                   "expectedSizeSource":  "WorkbookStatisticsDialogPlanner.Width/Height",
                                                   "wpfExpectedSizeMatch":  true,
-                                                  "avaloniaExpectedSizeMatch":  false,
-                                                  "dimensionMismatchBucket":  "evidence limitation",
-                                                  "dimensionMismatchReason":  "The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence.",
-                                                  "dimensionMismatchNextAction":  "Recapture or replace the stale evidence before treating this as a product layout mismatch."
+                                                  "avaloniaExpectedSizeMatch":  true,
+                                                  "dimensionMismatchBucket":  null,
+                                                  "dimensionMismatchReason":  null,
+                                                  "dimensionMismatchNextAction":  null
                                               }
                            },
                            {
@@ -5903,14 +5903,6 @@
                            }
                        ],
     "topPairedOutliers":  [
-                              {
-                                  "id":  "dialog.WorkbookStatistics",
-                                  "triageScore":  0.727668,
-                                  "sampleMeanDelta":  0.039192,
-                                  "dimension":  "500.07x560.078 vs 380x320 logical; 500x560 vs 380x320 px",
-                                  "dimensionMismatchBucket":  "evidence limitation",
-                                  "nonBackgroundDelta":  0.012704
-                              },
                               {
                                   "id":  "dialog.GoalSeek",
                                   "triageScore":  0.724788,
@@ -5982,6 +5974,14 @@
                                   "dimension":  "430.06x430.06 vs 430x430 logical; 430x430 vs 430x430 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.178161
+                              },
+                              {
+                                  "id":  "dialog.PivotValueFieldSettings.SummarizeValuesBy",
+                                  "triageScore":  0.472243,
+                                  "sampleMeanDelta":  0.160532,
+                                  "dimension":  "430.06x430.06 vs 430x430 logical; 430x430 vs 430x430 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.178161
                               }
                           ],
     "dimensionMismatchClassification":  [
@@ -5999,13 +5999,13 @@
                                             },
                                             {
                                                 "bucket":  "evidence limitation",
-                                                "count":  8,
+                                                "count":  7,
                                                 "topSurfaceIds":  [
-                                                                      "dialog.WorkbookStatistics",
                                                                       "dialog.PivotTableOptions",
                                                                       "dialog.PivotTableOptions.LayoutAndFormat",
                                                                       "dialog.FormatChartArea",
-                                                                      "dialog.ConditionalFormatNewRule"
+                                                                      "dialog.ConditionalFormatNewRule",
+                                                                      "dialog.Consolidate"
                                                                   ],
                                                 "nextAction":  "Recapture or replace the stale evidence before treating this as a product layout mismatch."
                                             },
@@ -6418,17 +6418,6 @@
                                          "logicalWidthDelta":  60.106,
                                          "logicalHeightDelta":  39.955,
                                          "triageScore":  0.279024
-                                     },
-                                     {
-                                         "id":  "dialog.WorkbookStatistics",
-                                         "bucket":  "evidence limitation",
-                                         "reason":  "The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence.",
-                                         "nextAction":  "Recapture or replace the stale evidence before treating this as a product layout mismatch.",
-                                         "wpfLogicalSize":  "500x560",
-                                         "avaloniaLogicalSize":  "380x320",
-                                         "logicalWidthDelta":  120.07,
-                                         "logicalHeightDelta":  240.078,
-                                         "triageScore":  0.727668
                                      }
                                  ],
     "additionalAvaloniaSurfacesNeedingWpfPair":  [

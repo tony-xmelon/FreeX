@@ -31,20 +31,20 @@ Sources:
 | WPF manifest ids without Avalonia pair | 0 |
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches (scale-aware logical units) | 37 |
-| Raw PNG pixel dimension mismatches | 64 |
+| Paired dimension mismatches (scale-aware logical units) | 36 |
+| Raw PNG pixel dimension mismatches | 63 |
 | Raw PNG mismatches normalized by capture DPI | 27 |
-| Paired expected-size evidence mismatches | 8 |
+| Paired expected-size evidence mismatches | 7 |
 | Stale promoted expected-size evidence | 0 |
 
 ## Scale-Aware Dimension Mismatch Classification
 
-The 37 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept expected platform/native control differences, or refresh limited evidence.
+The 36 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept expected platform/native control differences, or refresh limited evidence.
 
 | Bucket | Count | Top surface ids | Top next action |
 | --- | ---: | --- | --- |
 | content/visual mismatch | 10 | dialog.FormatCells.Fill<br>dialog.FormatCells.Alignment<br>dialog.FormatCells<br>dialog.FormatCells.Number<br>dialog.FormatCells.Border | Review the Format Cells tab model, tab order, and target frame size together. |
-| evidence limitation | 8 | dialog.WorkbookStatistics<br>dialog.PivotTableOptions<br>dialog.PivotTableOptions.LayoutAndFormat<br>dialog.FormatChartArea<br>dialog.ConditionalFormatNewRule | Recapture or replace the stale evidence before treating this as a product layout mismatch. |
+| evidence limitation | 7 | dialog.PivotTableOptions<br>dialog.PivotTableOptions.LayoutAndFormat<br>dialog.FormatChartArea<br>dialog.ConditionalFormatNewRule<br>dialog.Consolidate | Recapture or replace the stale evidence before treating this as a product layout mismatch. |
 | expected platform/native difference | 19 | dialog.FindReplace.Replace<br>dialog.FindReplace<br>dialog.FindReplace.Find<br>dialog.Sparkline<br>dialog.Options.QuickAccessToolbar | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 
 ## Top paired visual outliers
@@ -53,7 +53,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.WorkbookStatistics | 500x560 | 380x320 | 500x560 px @ 96 DPI vs 380x320 px @ 96 DPI | evidence limitation | Expected 500x560 via WorkbookStatisticsDialogPlanner.Width/Height | 0.728 | 0.039 | 0.007 | 0.013 |
 | dialog.GoalSeek | 380x210 | 380x210 | 380x210 px @ 96 DPI vs 380x210 px @ 96 DPI |  |  | 0.725 | 0.258 | 0.220 | 0.247 |
 | dialog.PivotTableOptions.Printing | 520x500 | 520x500 | 520x500 px @ 96 DPI vs 520x500 px @ 96 DPI |  |  | 0.561 | 0.147 | 0.134 | 0.280 |
 | dialog.PivotTableOptions.Data | 520x500 | 520x500 | 520x500 px @ 96 DPI vs 520x500 px @ 96 DPI |  |  | 0.549 | 0.164 | 0.131 | 0.253 |
@@ -63,6 +62,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.PivotValueFieldSettings.NumberFormat | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.491 | 0.162 | 0.137 | 0.192 |
 | dialog.PivotTableOptions.TotalsAndFilters | 520x500 | 520x500 | 520x500 px @ 96 DPI vs 520x500 px @ 96 DPI |  |  | 0.489 | 0.147 | 0.122 | 0.219 |
 | dialog.PivotValueFieldSettings | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.472 | 0.161 | 0.133 | 0.178 |
+| dialog.PivotValueFieldSettings.SummarizeValuesBy | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.472 | 0.161 | 0.133 | 0.178 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -104,7 +104,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.ShapeGradient | evidence limitation | 500x333 | 500x300 | 0x33 | The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence. | Recapture or replace the stale evidence before treating this as a product layout mismatch. |
 | dialog.Sparkline | expected platform/native difference | 380x240 | 372x230 | 8x10 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.WatchWindow | evidence limitation | 760x320 | 700x360 | 60x40 | The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence. | Recapture or replace the stale evidence before treating this as a product layout mismatch. |
-| dialog.WorkbookStatistics | evidence limitation | 500x560 | 380x320 | 120x240 | The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence. | Recapture or replace the stale evidence before treating this as a product layout mismatch. |
 
 ## Expected-Size Evidence Mismatches
 
@@ -119,7 +118,6 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.PivotTableOptions.LayoutAndFormat | 520x676 | PivotOptionsPlanner.DialogWidth/LayoutAndFormatCaptureHeight | 520x676 | 520x676 px @ 96 DPI | True | 520x610 | 520x610 px @ 96 DPI | False |
 | dialog.ShapeGradient | 500x300 | ShapeGradientPlanner.DialogWidth/DialogHeight | 500x333 | 500x333 px @ 96 DPI | False | 500x300 | 500x300 px @ 96 DPI | True |
 | dialog.WatchWindow | 760x320 | WatchWindowDialogPlanner.Width/Height | 760x320 | 760x320 px @ 96 DPI | True | 700x360 | 700x360 px @ 96 DPI | False |
-| dialog.WorkbookStatistics | 500x560 | WorkbookStatisticsDialogPlanner.Width/Height | 500x560 | 500x560 px @ 96 DPI | True | 380x320 | 380x320 px @ 96 DPI | False |
 
 ## Paired manifest surfaces
 
@@ -216,7 +214,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.TextToColumns | dialog.TextToColumns.png | 500x430 | 750x645 px @ 144 DPI | True | dialog.TextToColumns.png | 500x430 | 500x430 px @ 96 DPI | True | True | 0.089 |
 | dialog.UnhideSheet | dialog.UnhideSheet.png | 340x160 | 510x240 px @ 144 DPI | True | dialog.UnhideSheet.png | 340x160 | 340x160 px @ 96 DPI | True | True | 0.041 |
 | dialog.WatchWindow | dialog.WatchWindow.png | 760x320 | 760x320 px @ 96 DPI | True | dialog.WatchWindow.png | 700x360 | 700x360 px @ 96 DPI | True | False | 0.279 |
-| dialog.WorkbookStatistics | dialog.WorkbookStatistics.png | 500x560 | 500x560 px @ 96 DPI | True | dialog.WorkbookStatistics.png | 380x320 | 380x320 px @ 96 DPI | True | False | 0.728 |
+| dialog.WorkbookStatistics | dialog.WorkbookStatistics.png | 500x560 | 500x560 px @ 96 DPI | True | dialog.WorkbookStatistics.png | 500x560 | 500x560 px @ 96 DPI | True | True | 0.050 |
 | dialog.Zoom | dialog.Zoom.png | 300x240 | 450x360 px @ 144 DPI | True | dialog.Zoom.png | 300x240 | 300x240 px @ 96 DPI | True | True | 0.093 |
 
 ## Avalonia-Manifest-Only Screenshot Surfaces
