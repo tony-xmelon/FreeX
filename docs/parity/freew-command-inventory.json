@@ -55,18 +55,18 @@
   ],
   "summary": {
     "totalCommands": 798,
-    "both": 330,
-    "wpfOnly": 300,
+    "both": 336,
+    "wpfOnly": 294,
     "avaloniaOnly": 168,
     "missingWpf": 168,
-    "missingAvalonia": 300,
+    "missingAvalonia": 294,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 330,
+    "sharedProfile": 336,
     "profileShapeOnly": 402,
     "commandIdAliases": 19,
     "platformOnly": 12,
-    "deferred": 35,
+    "deferred": 29,
     "actionableGaps": 0
   },
   "commands": [
@@ -932,13 +932,13 @@
       "commandId": "freew.cc-checkbox",
       "label": "Check Box",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -951,25 +951,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "developer",
+          "tab": "Developer",
+          "groupId": "controls",
+          "group": "Controls",
+          "label": "Check Box",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.cc-combo",
       "label": "Combo Box",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -982,25 +993,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "developer",
+          "tab": "Developer",
+          "groupId": "controls",
+          "group": "Controls",
+          "label": "Combo Box",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.cc-date",
       "label": "Date Picker",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1013,25 +1035,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "developer",
+          "tab": "Developer",
+          "groupId": "controls",
+          "group": "Controls",
+          "label": "Date Picker",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.cc-dropdown",
       "label": "Drop-Down List",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1044,25 +1077,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "developer",
+          "tab": "Developer",
+          "groupId": "controls",
+          "group": "Controls",
+          "label": "Drop-Down List",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.cc-richtext",
       "label": "Rich Text",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1075,25 +1119,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "developer",
+          "tab": "Developer",
+          "groupId": "controls",
+          "group": "Controls",
+          "label": "Rich Text",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.cc-text",
       "label": "Text Control",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -1106,12 +1161,23 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "developer",
+          "tab": "Developer",
+          "groupId": "controls",
+          "group": "Controls",
+          "label": "Text Control",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
