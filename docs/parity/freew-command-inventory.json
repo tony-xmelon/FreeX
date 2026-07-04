@@ -56,20 +56,20 @@
   ],
   "summary": {
     "totalCommands": 794,
-    "both": 337,
-    "wpfOnly": 293,
+    "both": 338,
+    "wpfOnly": 292,
     "avaloniaOnly": 164,
     "missingWpf": 164,
-    "missingAvalonia": 293,
+    "missingAvalonia": 292,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 337,
+    "sharedProfile": 338,
     "profileShapeOnly": 402,
     "commandIdAliases": 19,
     "platformOnly": 12,
-    "deferred": 24,
+    "deferred": 23,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 10
+    "behaviorEvidenceRows": 11
   },
   "commands": [
     {
@@ -3187,13 +3187,13 @@
       "commandId": "freew.chart-title",
       "label": "Chart Title",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -3206,12 +3206,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "chart-design",
+          "tab": "Chart Design",
+          "groupId": "chart-elements",
+          "group": "Chart Elements",
+          "label": "Chart Title",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart.shared-behavior",
+        "slice": "Chart command behavior",
+        "summary": "Sets or clears the selected chart title through the shared chart edit command, clears quick-layout overrides, and keeps the change undoable in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.ChartDesign_TitleSetterMutatesSelectedChartAndUndoRestoresIt"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ChartSmartArtContextualTabTests.cs",
+          "test": "ChartSmartArtContextualTabTests.ToggleChartTitle_command_sets_default_title_and_reverts_on_undo"
+        }
       }
     },
     {
