@@ -56,18 +56,18 @@
   ],
   "summary": {
     "totalCommands": 794,
-    "both": 338,
-    "wpfOnly": 292,
+    "both": 340,
+    "wpfOnly": 290,
     "avaloniaOnly": 164,
     "missingWpf": 164,
-    "missingAvalonia": 292,
+    "missingAvalonia": 290,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 338,
+    "sharedProfile": 340,
     "profileShapeOnly": 402,
     "commandIdAliases": 19,
     "platformOnly": 12,
-    "deferred": 23,
+    "deferred": 21,
     "actionableGaps": 0,
     "behaviorEvidenceRows": 18
   },
@@ -15498,13 +15498,13 @@
       "commandId": "freew.object-group",
       "label": "Group",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -15527,25 +15527,46 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Group",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-arrange",
+          "group": "Arrange",
+          "label": "Group",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.object-ungroup",
       "label": "Ungroup",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -15568,12 +15589,33 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Ungroup",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-arrange",
+          "group": "Arrange",
+          "label": "Ungroup",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
