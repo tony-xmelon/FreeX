@@ -294,7 +294,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.PivotTableOptions.Display.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "corrected-direct-parity-capture",
+                         "recaptureStatus":  "tightened-bottom-black-capture-artifact",
+                         "expectedWidth":  520,
+                         "expectedHeight":  500,
+                         "note":  "Tightened from WPF direct parity capture by removing the bottom black capture artifact after row 462 and preserving the dialog background to 520x500."
                      },
                      {
                          "id":  "dialog.PivotTableOptions.Printing",
@@ -329,7 +333,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.GoalSeekStatus.png",
                          "captured":  true,
-                         "note":  "Captured from FreeX.App.Host --parity-capture Goal Seek Status dialog surface"
+                         "evidenceSource":  "corrected-direct-parity-capture",
+                         "recaptureStatus":  "tightened-bottom-black-capture-artifact",
+                         "expectedWidth":  380,
+                         "expectedHeight":  190,
+                         "note":  "Tightened from FreeX.App.Host --parity-capture Goal Seek Status dialog surface by removing the bottom black capture artifact after row 180 and preserving the dialog background to 380x190."
                      },
                      {
                          "id":  "dialog.GoToSpecial",
