@@ -208,6 +208,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 - `freep.layout` is no longer a silent command stub: both WPF and Avalonia route it through the shared `PresentationDesignCommandPlanner` layout-picker host intent. The remaining work is the actual picker UI/model selection flow.
 - `tools/FreeP.RenderCompare` now includes pixel-diversity checks so blank or single-color output cannot silently pass as valid evidence.
 - `tools/FreeP.RenderCompare --slide-pane-thumbnail-compare` now creates WPF/Avalonia/PowerPoint slide-pane thumbnail evidence directories, emits WPF-vs-Avalonia and PowerPoint-backed diff rows, and reports PowerPoint rows as `n/a` when `PowerPoint.Application` COM is unavailable.
+- `tools/FreeP.RenderCompare --notes-page-preview-evidence` now writes a shared notes-page preview PDF plus CSV evidence rows for WPF/Avalonia from the common notes-page render plan without requiring PowerPoint COM.
 
 ### Main Gaps
 
@@ -228,7 +229,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 1. Keep the generated FreeP command matrix green while implementation work deepens the command bodies behind shared planner intents.
 2. Port WPF slide-pane interactions to Avalonia through the existing shared planner layer.
 3. Close Avalonia rich editing and table-cell editing parity against WPF.
-4. Add WPF/Avalonia evidence for export/backstage, presenter, comments/review/accessibility, and animation-pane workflows now that command-surface parity is green.
+4. Add WPF/Avalonia evidence for export/backstage surfaces beyond notes-page PDF, presenter, comments/review/accessibility, and animation-pane workflows now that command-surface parity is green.
 5. Run PowerPoint-backed render-compare baselines on a machine with PowerPoint COM installed, then use the harness for visual fidelity waves.
 
 ## Shared/Infrastructure Status
