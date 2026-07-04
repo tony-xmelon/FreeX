@@ -66,18 +66,18 @@
                  {
                      "app":  "FreeW",
                      "commandInventory":  {
-                                              "totalCommands":  798,
+                                              "totalCommands":  794,
                                               "bothProfiles":  336,
                                               "wpfProfileOnly":  294,
-                                              "avaloniaProfileOnly":  168,
-                                              "missingWpfProfile":  168,
+                                              "avaloniaProfileOnly":  164,
+                                              "missingWpfProfile":  164,
                                               "missingAvaloniaProfile":  294,
                                               "actionableMissingWpf":  0,
                                               "actionableMissingAvalonia":  0,
                                               "profileShapeOnly":  402,
                                               "commandIdAliases":  19,
                                               "platformOnly":  12,
-                                              "deferred":  29,
+                                              "deferred":  25,
                                               "actionableGaps":  0,
                                               "classifiedRows":  true
                                           },
