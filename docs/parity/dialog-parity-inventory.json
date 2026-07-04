@@ -628,6 +628,7 @@
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Services\\AddWatchDialogPlanner.cs",
+                                                   "src\\FreeX.App.Services\\WatchWindowDialogPlanner.cs",
                                                    "src\\FreeX.Core.Commands\\WatchWindowService.cs"
                                                ],
                      "notes":  [
