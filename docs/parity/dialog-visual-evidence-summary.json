@@ -18,16 +18,15 @@
                     "wpfManifestIdsWithoutAvaloniaPair":  0,
                     "additionalAvaloniaCapturedSurfaceIds":  0,
                     "nonBlankPngFailures":  0,
-                    "pairedDimensionMismatches":  43,
+                    "pairedDimensionMismatches":  42,
                     "pairedRawPixelDimensionMismatches":  69,
-                    "pairedCaptureScaleNormalizedDimensionMatches":  26,
+                    "pairedCaptureScaleNormalizedDimensionMatches":  27,
                     "pairedExpectedSizeMismatches":  10,
                     "stalePromotedExpectedSizeEvidence":  5,
                     "dimensionMismatchBuckets":  {
                                                      "content/visual mismatch":  11,
                                                      "evidence limitation":  12,
-                                                     "expected platform/native difference":  19,
-                                                     "real logical-size mismatch":  1
+                                                     "expected platform/native difference":  19
                                                  }
                 },
     "pairedSurfaces":  [
@@ -4966,46 +4965,46 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ScenarioManager.png",
-                                                "fileBytes":  23052,
-                                                "width":  500,
-                                                "height":  640,
+                                                "fileBytes":  13876,
+                                                "width":  360,
+                                                "height":  420,
                                                 "dpiX":  96,
                                                 "dpiY":  96,
-                                                "logicalWidth":  500,
-                                                "logicalHeight":  640,
-                                                "pixels":  320000,
-                                                "distinctColors":  405,
+                                                "logicalWidth":  360,
+                                                "logicalHeight":  420,
+                                                "pixels":  151200,
+                                                "distinctColors":  380,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.083278,
+                                                "nonBackgroundRatio":  0.104993,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  248.158819
+                                                "meanLuma":  246.488158
                                             },
                                "comparison":  {
-                                                  "dimensionMatch":  false,
-                                                  "widthDelta":  139.981,
-                                                  "heightDelta":  219.978,
-                                                  "logicalDimensionMatch":  false,
-                                                  "logicalWidthDelta":  139.981,
-                                                  "logicalHeightDelta":  219.978,
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0.019,
+                                                  "heightDelta":  0.022,
+                                                  "logicalDimensionMatch":  true,
+                                                  "logicalWidthDelta":  0.019,
+                                                  "logicalHeightDelta":  0.022,
                                                   "logicalDimensionTolerance":  0.5,
                                                   "rawPixelDimensionMatch":  false,
-                                                  "rawPixelWidthDelta":  40,
-                                                  "rawPixelHeightDelta":  10,
-                                                  "captureScaleNormalizedDimensionMatch":  false,
-                                                  "dimensionDeltaRatio":  0.912549,
-                                                  "sampleMeanDelta":  0.038677,
-                                                  "lumaDelta":  0.012711,
-                                                  "nonBackgroundDelta":  0.065931,
-                                                  "triageScore":  1.029868,
+                                                  "rawPixelWidthDelta":  180,
+                                                  "rawPixelHeightDelta":  210,
+                                                  "captureScaleNormalizedDimensionMatch":  true,
+                                                  "dimensionDeltaRatio":  0.000103,
+                                                  "sampleMeanDelta":  0.053045,
+                                                  "lumaDelta":  0.006159,
+                                                  "nonBackgroundDelta":  0.044216,
+                                                  "triageScore":  0.103523,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
                                                   "expectedSizeSource":  null,
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
-                                                  "dimensionMismatchBucket":  "real logical-size mismatch",
-                                                  "dimensionMismatchReason":  "The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption.",
-                                                  "dimensionMismatchNextAction":  "Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract."
+                                                  "dimensionMismatchBucket":  null,
+                                                  "dimensionMismatchReason":  null,
+                                                  "dimensionMismatchNextAction":  null
                                               }
                            },
                            {
@@ -5893,14 +5892,6 @@
                        ],
     "topPairedOutliers":  [
                               {
-                                  "id":  "dialog.ScenarioManager",
-                                  "triageScore":  1.029868,
-                                  "sampleMeanDelta":  0.038677,
-                                  "dimension":  "360.019x420.022 vs 500x640 logical; 540x630 vs 500x640 px",
-                                  "dimensionMismatchBucket":  "real logical-size mismatch",
-                                  "nonBackgroundDelta":  0.065931
-                              },
-                              {
                                   "id":  "dialog.GoalSeekStatus",
                                   "triageScore":  0.872652,
                                   "sampleMeanDelta":  0.268013,
@@ -5971,6 +5962,14 @@
                                   "dimension":  "620.087x540.075 vs 690x660 logical; 620x540 vs 690x660 px",
                                   "dimensionMismatchBucket":  "content/visual mismatch",
                                   "nonBackgroundDelta":  0.106488
+                              },
+                              {
+                                  "id":  "dialog.FormatCells",
+                                  "triageScore":  0.610489,
+                                  "sampleMeanDelta":  0.147535,
+                                  "dimension":  "620.087x540.075 vs 690x660 logical; 620x540 vs 690x660 px",
+                                  "dimensionMismatchBucket":  "content/visual mismatch",
+                                  "nonBackgroundDelta":  0.039071
                               }
                           ],
     "dimensionMismatchClassification":  [
@@ -6009,14 +6008,6 @@
                                                                       "dialog.Options.QuickAccessToolbar"
                                                                   ],
                                                 "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
-                                            },
-                                            {
-                                                "bucket":  "real logical-size mismatch",
-                                                "count":  1,
-                                                "topSurfaceIds":  [
-                                                                      "dialog.ScenarioManager"
-                                                                  ],
-                                                "nextAction":  "Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract."
                                             }
                                         ],
     "dimensionMismatchDetails":  [
@@ -6404,17 +6395,6 @@
                                          "logicalWidthDelta":  19.981,
                                          "logicalHeightDelta":  10.013,
                                          "triageScore":  0.165257
-                                     },
-                                     {
-                                         "id":  "dialog.ScenarioManager",
-                                         "bucket":  "real logical-size mismatch",
-                                         "reason":  "The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption.",
-                                         "nextAction":  "Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract.",
-                                         "wpfLogicalSize":  "360x420",
-                                         "avaloniaLogicalSize":  "500x640",
-                                         "logicalWidthDelta":  139.981,
-                                         "logicalHeightDelta":  219.978,
-                                         "triageScore":  1.029868
                                      },
                                      {
                                          "id":  "dialog.SelectDataSource",
