@@ -23,6 +23,10 @@ clone/mutation paths.
   generated identities for new FreeP-authored reviewers.
 - `SlideCloner` and shared comment mutation plans preserve the modern identity
   fields during duplicate/edit/reply/resolve/reopen workflows.
+- Shared reply planning now reuses an existing imported PowerPoint modern author
+  identity when the reply author and initials match a known comment or reply
+  author, keeping WPF and Avalonia reply mutations aligned with the package
+  identity already present in the deck.
 
 ## Verification
 
@@ -34,6 +38,10 @@ clone/mutation paths.
   `ppt/comments/comment1.xml`.
 - Existing modern comment round-trip coverage now verifies explicit preserved
   ids and provider metadata for FreeP-authored modern comment packages.
+- `PresentationReviewWorkflowPlannerTests`,
+  `ReviewWorkflowAdapterTests`, and Avalonia `MainWindowHeadlessTests` prove
+  the reply workflow reuses the matching PowerPoint author id, user id, and
+  provider id in the shared plan and both shells.
 
 ## Remaining Work
 
