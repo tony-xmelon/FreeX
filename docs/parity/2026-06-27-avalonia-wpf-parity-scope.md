@@ -1,4 +1,4 @@
-# Avalonia vs WPF Parity Scope - Updated 2026-07-01
+# Avalonia vs WPF Parity Scope - Updated 2026-07-04
 
 ## Purpose
 
@@ -16,10 +16,10 @@ This update replaces the 2026-06-27 pre-dedup snapshot. The extensive dedup sess
 ## Current Evidence
 
 - Primary repo root: `C:\Users\anton\OneDrive\Documents\FreeX\FreeX`.
-- Audit worktree: `.worktrees/parity-scope-refresh-20260703`.
-- `main` was clean and synced with `origin/main` at `1df19d6cb` during this update.
+- Audit worktree: `.worktrees/parity-scope-current-20260704`.
+- `main` was clean and synced with `origin/main` at `f69136829` during this update.
 - `AGENTS.md` requires isolated worktrees, no implementation in `main`, frequent sync, subagents for independent work, and merge/push/cleanup after completed slices.
-- This report was refreshed from the generated parity inventories and dialog visual evidence after the WPF workbook-dialog direct capture fix. The only intended edit in this slice is this report.
+- This report was refreshed from the generated parity inventories and dialog visual evidence after the FreeX sort-dialog evidence classification, FreeP slide-pane thumbnail evidence mode, and FreeW TOA evidence-blocker tracking slices landed. The only intended edit in this slice is this report.
 
 ## Worktree State
 
@@ -97,6 +97,8 @@ Dedup items that were blockers in the prior report are now landed or intentional
   - 57 shared-or-presentation-backed routes.
   - `docs/parity/dialog-visual-evidence-summary.md` compares the committed WPF/Avalonia capture manifests: 93 WPF manifest surfaces, 93 Avalonia manifest surfaces, 93 paired surface ids, 0 WPF-only ids, 0 Avalonia-only ids, and 0 nonblank failures.
   - The stale promoted WPF workbook-dialog evidence is closed: `dialog.OpenWorkbook` and `dialog.SaveAsWorkbook` now have direct 640x420 WPF captures paired with the 640x420 Avalonia captures.
+  - Current scale-aware dialog triage is 44 paired dimension mismatches: 14 content/visual mismatches, 4 evidence limitations, 19 expected platform/native differences, and 7 real logical-size mismatches.
+  - The two current stale promoted expected-size evidence rows are `dialog.ShapeGradient` and `dialog.Sort`; both are WPF promoted fallback screenshots that should be recaptured through direct parity capture before their dimensions are treated as product layout evidence.
 - Much of the spreadsheet behavior now flows through shared or presentation planners:
   - Workbook lifecycle/open target: `src/FreeX.App.Services/WorkbookFileLifecycleCoordinator.cs`, `WorkbookOpenTargetPlanner.cs`.
   - Viewport/scroll planning: `src/FreeX.App.Services/WorkbookViewportScrollPlanner.cs`.
@@ -107,7 +109,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 
 ### Main Gaps
 
-1. Dialog route evidence is no longer the leading inventory gap: the generated inventory is 57/57 for WPF captures, Avalonia captures, Avalonia harness routes, and shared/presentation-backed routes, and the committed manifest PNGs are 93/93 paired with no stale expected-size evidence. Remaining work is qualitative visual review, scale-aware pixel comparison, foreground workflow proof, and interaction diffs rather than missing route assets.
+1. Dialog route evidence is no longer the leading inventory gap: the generated inventory is 57/57 for WPF captures, Avalonia captures, Avalonia harness routes, and shared/presentation-backed routes, and the committed manifest PNGs are 93/93 paired. Remaining work is qualitative visual review, scale-aware pixel comparison, foreground workflow proof, interaction diffs, seven real logical-size mismatches, and two stale promoted WPF evidence rows rather than missing route assets.
 2. Shell, backstage, and print/export are partly deduped at the policy layer but still have host-local renderer edges:
    - WPF keeps `MainWindow.xaml`, `PrintRenderer*`, and native `PrintDialog` behavior.
    - Avalonia keeps substantial `MainWindow.cs`, custom print/preview, Skia/PDF, and capture glue.
@@ -118,7 +120,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 
 ### FreeX Next Slices
 
-1. Continue visual review of the 56 remaining scale-aware paired dialog dimension/visual outliers; 15 raw PNG size mismatches are now normalized by capture DPI and should not be treated as product layout differences.
+1. Continue visual review of the 44 scale-aware paired dialog dimension/visual outliers. Prioritize the 7 real logical-size mismatches (`dialog.PivotTableOptions`, `dialog.PivotTableOptions.LayoutAndFormat`, `dialog.WatchWindow`, `dialog.FormatChartArea`, `dialog.WorkbookStatistics`, `dialog.ConditionalFormatNewRule`, and `dialog.Consolidate`) and keep the 70 raw PNG pixel mismatches separate from product layout work because 26 of those normalize away by capture DPI.
 2. Consolidate keyboard shortcut matching into a portable service and gate both hosts from one matrix.
 3. Add print/export/render parity evidence around drawing/chart content and native print/export affordances.
 4. Continue renderer-edge shell/backstage polish only after capture evidence identifies concrete diffs.
@@ -144,7 +146,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 - Review > Thesaurus now has shared presentation planning for lookup, selection, and replacement intent. Avalonia supports synonym Replace over that shared plan, while WPF keeps the fuller Insert/Copy pane actions.
 - Review > Proofing Language now has shared-first caret behavior and dialog planning: selected ranges apply through the shared run-formatting path, while no-selection apply updates caret/typing language state instead of mutating the preceding run.
 - View > Side to Side now has read-only page-pair navigation in the shared paginated preview path; editable horizontal page view remains deferred.
-- The latest local no-Word baseline evidence run covers 19 DOCX fixtures / 31 WPF outputs and reports 60 trusted evidence rows plus 60 baseline comparison rows. Status remains no-Word fallback only on this machine (`skipped=14`, `word-baseline-unavailable=46`); no real Word PNGs were generated.
+- The latest local no-Word baseline evidence run covers 20 DOCX fixtures including `references-heavy-fields`, reports 80 trusted WPF/Avalonia evidence rows, and the Word-baseline runner reports 80 baseline comparison rows. Status remains no-Word fallback only on this machine (`skipped=4`, `word-baseline-unavailable=76`); no real Word PNGs were generated.
 - The drawing-effects evidence contract is integrated on `origin/main` (`006988bfe`) and now promotes the `drawing-objects-complex` grouped child shape glow (`GroupChild0:Shape:glow`) to paired trusted WPF/Avalonia rendered evidence when both host manifests report the same child summary. Top-level effect-bearing objects remain separately reported for `drawing-objects-complex` (3 effect objects: shape shadow, image shadow/glow/reflection/artistic effect, WordArt glow) and `wordart-watermark-stress` (2 effect objects: shape shadow, WordArt glow). This is renderer-parity evidence only on this machine; the real Word COM PNG baseline is still unavailable in the local no-Word fallback run.
 - The note-region visual planner is integrated on `origin/main` (`6e7c6f6ac`): shared `DocumentNoteRegionPlanner` owns footnote/endnote note-region rows, WPF `PageBox` / `FreeW.FidelityRender` and Avalonia `FreeW.PageLayoutShot` use the shared plan, and Avalonia F2 footnote/endnote captures now draw visible note rows instead of metadata-only note flags.
 - The table cell-border visual planner is integrated on `origin/main` (`6e8532452`): shared `TableCellBorderVisualPlanner` owns per-edge brush, thickness, dash, dotted, double, and mixed-color decisions; WPF renders through a thin `TableCellBorderChrome` overlay and Avalonia draws from the same plan.
@@ -156,6 +158,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 - Structured source-author persistence is now shared-first for the modeled Book, Journal Article, and Web Site source types: `Source` keeps Word-style `b:NameList/b:Person` rows alongside the flat display author, DOCX read/write preserves personal authors as `NameList/Person`, and corporate or ambiguous legacy strings continue to serialize as `b:Corporate`. WPF and Avalonia source dialogs route author projection through `SourceManagementDialogPlanner`.
 - Table of Authorities region planning is integrated on `origin/main`: shared `TableOfAuthoritiesRegionPlanner` owns generated paragraph insertion position, stale generated-region deletion order, option flow, and style registration. WPF and Avalonia now share the Word-like fallback where Refresh Table of Authorities inserts at the document end when no prior TOA region exists.
 - Numeric citation numbering is implemented in shared core: IEEE/Vancouver in-text citations now use source-order markers such as `[1]` / `[2]` in both WPF and Avalonia insertion paths, repeated source tags reuse the same number, and numeric bibliography/reference-list output keeps source order with numbered entries.
+- References-heavy visual evidence and TOA evidence-blocker tracking are integrated on `origin/main`: `references-heavy-fields` is part of the generated visual evidence contract, and `freew_visual_evidence_summary.json` schema v16 emits `remainingEvidenceBlockers` for `references-heavy-toa-page-number-fidelity` when real MS Word PNG baselines are unavailable or missing.
 - Recent dedup work moved shared behavior into planners/services:
   - `DocumentViewLayoutPlanner`
   - `BackstagePaneSurfacePlanner`
@@ -182,7 +185,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 2. Reconcile or land the active `FreeX-linux` FreeW work before duplicating effort in the same files.
 3. Continue the Avalonia Backstage print lane by adding real native print only if the target exposes a printer API; otherwise keep the shared capability/status policy, evidence contract, Print Preview, and Create PDF fallback honest while broadening print/export evidence.
 4. Close one high-value behavior family with shared planning plus Avalonia UI where Word-like results are still weakly proven.
-5. Extend the WPF/Avalonia render or print evidence lane from the current 19-fixture / 31-WPF-output baseline, keeping the shared note-region, top-level drawing-effects, table cell-border, protection-history, and cross-reference-refresh rows covered in both renderers, then run real Word PNG baselines on a machine with Word COM installed.
+5. Extend the WPF/Avalonia render or print evidence lane from the current 20-fixture / 80-row no-Word baseline, keeping the shared note-region, top-level drawing-effects, table cell-border, protection-history, cross-reference-refresh, and references-heavy rows covered in both renderers, then run real Word PNG baselines on a machine with Word COM installed.
 
 ## FreeP Status
 
@@ -204,13 +207,15 @@ Dedup items that were blockers in the prior report are now landed or intentional
 - Renderer-neutral planners now cover slide pane, canvas geometry/gestures, text layout, chart primitives, picture effects, slideshow host/playback, dialogs, insertion, and persistence under `freep/FreeP.App.Presentation`.
 - `freep.layout` is no longer a silent command stub: both WPF and Avalonia route it through the shared `PresentationDesignCommandPlanner` layout-picker host intent. The remaining work is the actual picker UI/model selection flow.
 - `tools/FreeP.RenderCompare` now includes pixel-diversity checks so blank or single-color output cannot silently pass as valid evidence.
+- `tools/FreeP.RenderCompare --slide-pane-thumbnail-compare` now creates WPF/Avalonia/PowerPoint slide-pane thumbnail evidence directories, emits WPF-vs-Avalonia and PowerPoint-backed diff rows, and reports PowerPoint rows as `n/a` when `PowerPoint.Application` COM is unavailable.
 
 ### Main Gaps
 
-1. Command-profile parity is no longer the leading FreeP WPF/Avalonia gap. The generated inventory reports 0 actionable WPF/Avalonia missing commands; the six raw Avalonia-only rows are platform-only shell commands.
+1. Command-profile parity is no longer the leading FreeP WPF/Avalonia gap. The generated inventory reports 0 actionable WPF/Avalonia missing commands; the eight raw Avalonia-only rows are platform-only shell/profile commands.
 2. Slide pane parity is partial:
    - WPF owns drag reorder, context menus, richer thumbnails, and section behavior in `freep/FreeP.App.Host/SlidePane.cs`.
    - Avalonia still has a simpler `ListBox` surface in `freep/FreeP.App.Avalonia/MainWindow.cs`.
+   - The focused thumbnail evidence mode can now generate WPF/Avalonia bitmap comparisons, but PowerPoint-authoritative thumbnail baselines still need a COM-capable machine and a no-COM success policy for local evidence loops.
 3. Editing parity remains uneven:
    - WPF has rich text and table-cell editors.
    - Avalonia has simpler text editing and the rendering canvas still documents viewer-only interactive adorners.
@@ -270,7 +275,7 @@ Use these as the current parity dashboard inputs:
 1. Reconcile dirty lanes:
    - `FreeX-linux` for FreeW/Linux work.
    - `tester-release-20260627-r1` for generated FreeX parity artifacts.
-2. Refresh the parity dashboard from stable `main`:
+2. Refresh the parity dashboard from stable `main` when generated inventories or evidence summaries change:
    - FreeX command/dialog/surface evidence.
    - FreeW WPF-vs-Avalonia command inventory classification.
    - FreeP WPF-vs-Avalonia command body/evidence depth.
@@ -278,20 +283,20 @@ Use these as the current parity dashboard inputs:
    - Render/capture evidence availability.
 3. Use dashboard gaps to choose implementation slices. Prefer small branches with one owned surface at a time.
 4. For FreeX, start with qualitative dialog capture review and print/render evidence.
-5. For FreeW, start with command-inventory classification plus reconciliation of the dirty Linux lane.
-6. For FreeP, start with slide-pane/editing/evidence depth rather than command-profile expansion.
+5. For FreeW, start with behavior/evidence gaps such as comments-only protection history classification or stronger render evidence, not command-count expansion.
+6. For FreeP, start with slide-pane/editing/evidence depth and no-COM evidence hygiene rather than command-profile expansion.
 7. Keep merging verified slices quickly to `main`, then sync active branches from updated `main`.
 
 ## Immediate Next Action
 
-The safest next implementation slice is not another dedup extraction. The obvious extraction backlog and the first FreeW/FreeP generated command inventories are closed. The next slice should be evidence and classification infrastructure:
+The safest next implementation slice is not another dedup extraction. The obvious extraction backlog and the first FreeW/FreeP generated command inventories are closed. The next slice should be evidence, classification, or one narrow behavior family:
 
-1. Add a compact cross-app parity dashboard document or generated JSON summary that reads the existing FreeX, FreeW, and FreeP generated evidence.
-2. Classify FreeW one-sided command rows so workers can distinguish real missing Avalonia behavior from profile-shape/platform-only noise.
-3. Use that dashboard to rank the next code work for the 100% parity goal.
+1. Keep this cross-app dashboard current from generated evidence rather than hand-counted command rows.
+2. Reduce FreeX dialog visual mismatches by aligning one real layout target or explicitly classifying stale evidence.
+3. Keep no-COM evidence paths honest for FreeW and FreeP so local WPF/Avalonia work is green without implying Microsoft Word/PowerPoint visual parity.
 
 If the next slice must be app-specific, choose one of:
 
-- FreeX qualitative dialog capture review.
-- FreeW command-inventory classification, plus the safe product slice of Avalonia Backstage Info/Options safety parity.
-- FreeP slide-pane/editing parity or workflow evidence depth.
+- FreeX `dialog.WorkbookStatistics` or another real dialog logical-size mismatch.
+- FreeW comments-only protection history classification or another weakly proven shared behavior family.
+- FreeP slide-pane thumbnail evidence no-COM success policy or richer editing evidence.
