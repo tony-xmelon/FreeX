@@ -69,7 +69,7 @@
     "platformOnly": 12,
     "deferred": 23,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 16
+    "behaviorEvidenceRows": 17
   },
   "commands": [
     {
@@ -17436,6 +17436,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.backstage-print-export.shared-behavior",
+        "slice": "Backstage print/export evidence",
+        "summary": "Routes the shared Print Preview command to host-backed WPF and Avalonia preview callbacks while the Backstage evidence contract retains paired fixed-layout renderer rows.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.PrintPreviewRibbonCommandInvokesHostCallback"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ViewTabDepthTests.cs",
+          "test": "ViewTabDepthTests.Print_preview_command_invokes_host_callback"
+        }
       }
     },
     {
