@@ -54,14 +54,14 @@
                                                   "pairedDimensionMismatches":  44,
                                                   "pairedRawPixelDimensionMismatches":  70,
                                                   "pairedCaptureScaleNormalizedDimensionMatches":  26,
-                                                  "pairedExpectedSizeMismatches":  3,
+                                                  "pairedExpectedSizeMismatches":  4,
                                                   "stalePromotedExpectedSizeEvidence":  3,
                                                   "contentVisualMismatches":  14,
-                                                  "evidenceLimitations":  5,
+                                                  "evidenceLimitations":  6,
                                                   "expectedPlatformNativeDifferences":  19,
-                                                  "realLogicalSizeMismatches":  6
+                                                  "realLogicalSizeMismatches":  5
                                               },
-                     "nextSlice":  "Command/dialog route coverage is green; all 48 pseudo-gallery rows are catalog-backed in classifier evidence (34 conditional-format rows over 38 runtime catalog items, 10 font/border rows, and 4 accounting-symbol rows), and dialog screenshot evidence has 93 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. Keep the 70 raw PNG pixel mismatches separate from missing-pair status: 26 normalize away by capture DPI, while 44 scale-aware paired mismatches remain for visual review, including 6 real logical-size mismatches and 3 stale promoted expected-size evidence rows."
+                     "nextSlice":  "Command/dialog route coverage is green; all 48 pseudo-gallery rows are catalog-backed in classifier evidence (34 conditional-format rows over 38 runtime catalog items, 10 font/border rows, and 4 accounting-symbol rows), and dialog screenshot evidence has 93 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. Keep the 70 raw PNG pixel mismatches separate from missing-pair status: 26 normalize away by capture DPI, while 44 scale-aware paired mismatches remain for visual review, including 5 real logical-size mismatches and 3 stale promoted expected-size evidence rows."
                  },
                  {
                      "app":  "FreeW",
