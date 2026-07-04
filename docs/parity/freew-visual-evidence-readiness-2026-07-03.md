@@ -13,6 +13,8 @@ Each required host/page row reports `trusted`, `failed`, or `missing`, plus the 
 
 The 2026-07-04 evidence-depth update tightened the same summary contract: Backstage print/export rows must also declare scenario-specific `backstageWorkflow` metadata. `backstage-print-preview-fidelity` rows must report `print-preview`, and `backstage-pdf-export-fidelity` rows must report `pdf-export`, so a real capture cannot be accidentally cross-wired between Print Preview and Create PDF evidence.
 
+The follow-up 2026-07-04 renderer-contract update extends compiled pair validation beyond backstage, section, review, drawing-object, and chart/SmartArt rows. Table scenarios now compare WPF/Avalonia table layout and pagination signatures, and field/reference scenarios now compare WPF/Avalonia field counts, field kinds, complex-field keywords, and header/footer field slots. This keeps shared visual evidence from passing on row counts when the semantic renderer contract has drifted between hosts.
+
 ## Why this matters
 
 The existing summary already failed the run for missing backstage pairs, placeholder captures, fallback capture sources, and missing required pages. The new structured field lets automation and planners check readiness without parsing Markdown, while the Markdown table makes the same failures directly actionable for reviewers.
