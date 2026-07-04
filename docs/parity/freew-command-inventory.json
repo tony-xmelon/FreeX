@@ -69,7 +69,7 @@
     "platformOnly": 12,
     "deferred": 25,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 5
+    "behaviorEvidenceRows": 6
   },
   "commands": [
     {
@@ -3319,6 +3319,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart.shared-behavior",
+        "slice": "Chart command behavior",
+        "summary": "Changes the selected chart from column to bar through the WPF and Avalonia ribbon command registries and keeps the change undoable in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.ChartDesign_ChangeTypeRibbonCommandMutatesSelectedChartAndUndoRestoresIt"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ChartSmartArtContextualTabTests.cs",
+          "test": "ChartSmartArtContextualTabTests.SetChartType_command_changes_chart_kind_and_reverts_on_undo"
+        }
       }
     },
     {
