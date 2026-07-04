@@ -16,7 +16,7 @@ Gap classifications are generated from explicit rule order: shared-profile, prof
 
 | Shared profile | Profile-shape only | Command-id aliases | Platform-only | Deferred | Actionable gaps | Behavior evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|
-| 336 | 402 | 19 | 12 | 25 | 0 | 6 |
+| 336 | 402 | 19 | 12 | 25 | 0 | 7 |
 
 ## Classification Rules
 
@@ -110,7 +110,7 @@ Gap classifications are generated from explicit rule order: shared-profile, prof
 | `freew.chart-style-2` | Style 2 | Yes | Yes | none | shared-profile | shared-profile | shared-profile | chart-design/chart-style (RibbonButton; Medium) | chart-design/chart-styles (RibbonMenuItem; Menu) | - | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.chart-style-3` | Style 3 | Yes | Yes | none | shared-profile | shared-profile | shared-profile | chart-design/chart-style (RibbonButton; Medium) | chart-design/chart-styles (RibbonMenuItem; Menu) | - | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.chart-style-4` | Style 4 | Yes | Yes | none | shared-profile | shared-profile | shared-profile | chart-design/chart-style (RibbonButton; Medium) | chart-design/chart-styles (RibbonMenuItem; Menu) | - | - | Command is present in both compiled FreeW ribbon profiles. |
-| `freew.chart-style-5` | Style 5 | Yes | Yes | none | shared-profile | shared-profile | shared-profile | chart-design/chart-style (RibbonButton; Medium) | chart-design/chart-styles (RibbonMenuItem; Menu) | - | - | Command is present in both compiled FreeW ribbon profiles. |
+| `freew.chart-style-5` | Style 5 | Yes | Yes | none | shared-profile | shared-profile | shared-profile | chart-design/chart-style (RibbonButton; Medium) | chart-design/chart-styles (RibbonMenuItem; Menu) | - | Chart command behavior: FreeWRibbonParityTests.ChartDesign_StyleGalleryCommandMutatesSelectedChartAndUndoRestoresIt<br>ChartSmartArtContextualTabTests.SetChartStyle_command_changes_style_id_and_reverts_on_undo | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.chart-style-6` | Style 6 | Yes | Yes | none | shared-profile | shared-profile | shared-profile | chart-design/chart-style (RibbonButton; Medium) | chart-design/chart-styles (RibbonMenuItem; Menu) | - | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.chart-style-7` | Style 7 | Yes | Yes | none | shared-profile | shared-profile | shared-profile | chart-design/chart-style (RibbonButton; Medium) | chart-design/chart-styles (RibbonMenuItem; Menu) | - | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.chart-style-8` | Style 8 | Yes | Yes | none | shared-profile | shared-profile | shared-profile | chart-design/chart-style (RibbonButton; Medium) | chart-design/chart-styles (RibbonMenuItem; Menu) | - | - | Command is present in both compiled FreeW ribbon profiles. |
