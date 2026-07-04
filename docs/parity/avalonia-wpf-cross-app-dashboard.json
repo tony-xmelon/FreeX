@@ -95,9 +95,10 @@
                                               "avaloniaGaps":  0,
                                               "knownDeferred":  0,
                                               "platformOnly":  8,
-                                              "commandIdAliases":  0
+                                              "commandIdAliases":  0,
+                                              "workflowEvidenceRows":  3
                                           },
-                     "nextSlice":  "Layout picker, table picker, slide-pane reorder, bottom New Slide, and notes-page preview/PDF rendering now have WPF/Avalonia no-COM evidence paths. Continue workflow-depth slices in rich inline table/text editing, modern comments/review, and presenter recording/ink execution."
+                     "nextSlice":  "Layout picker, table picker, slide-pane reorder, bottom New Slide, notes-page preview/PDF rendering, and presenter recording/ink execution now have WPF/Avalonia no-COM evidence paths. Continue workflow-depth slices in rich inline table/text editing, modern comments/review, real narration/camera capture backends, deeper ink/custom-show persistence workflows, and PowerPoint baselines."
                  }
              ]
 }
