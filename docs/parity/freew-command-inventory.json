@@ -54,11 +54,11 @@
     }
   ],
   "summary": {
-    "totalCommands": 798,
+    "totalCommands": 794,
     "both": 336,
     "wpfOnly": 294,
-    "avaloniaOnly": 168,
-    "missingWpf": 168,
+    "avaloniaOnly": 164,
+    "missingWpf": 164,
     "missingAvalonia": 294,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
@@ -66,7 +66,7 @@
     "profileShapeOnly": 402,
     "commandIdAliases": 19,
     "platformOnly": 12,
-    "deferred": 29,
+    "deferred": 25,
     "actionableGaps": 0
   },
   "commands": [
@@ -9379,6 +9379,26 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
+          "tabId": "chart-format",
+          "tab": "Chart Format",
+          "groupId": "chart-arrange",
+          "group": "Arrange",
+          "label": "Bring Forward",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Bring Forward",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
           "tabId": "picture-format",
           "tab": "Picture Format",
           "groupId": "picture-arrange",
@@ -9431,9 +9451,39 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
+          "tabId": "chart-format",
+          "tab": "Chart Format",
+          "groupId": "chart-arrange",
+          "group": "Arrange",
+          "label": "Bring to Front",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Bring to Front",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
           "tabId": "picture-format",
           "tab": "Picture Format",
           "groupId": "picture-arrange",
+          "group": "Arrange",
+          "label": "Bring to Front",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-arrange",
           "group": "Arrange",
           "label": "Bring to Front",
           "controlType": "RibbonButton",
@@ -10747,6 +10797,26 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
+          "tabId": "chart-format",
+          "tab": "Chart Format",
+          "groupId": "chart-arrange",
+          "group": "Arrange",
+          "label": "Send Backward",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Send Backward",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
           "tabId": "picture-format",
           "tab": "Picture Format",
           "groupId": "picture-arrange",
@@ -10799,9 +10869,39 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
+          "tabId": "chart-format",
+          "tab": "Chart Format",
+          "groupId": "chart-arrange",
+          "group": "Arrange",
+          "label": "Send to Back",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Send to Back",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
           "tabId": "picture-format",
           "tab": "Picture Format",
           "groupId": "picture-arrange",
+          "group": "Arrange",
+          "label": "Send to Back",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-arrange",
           "group": "Arrange",
           "label": "Send to Back",
           "controlType": "RibbonButton",
@@ -18744,98 +18844,6 @@
       }
     },
     {
-      "commandId": "freew.shape-bring-forward",
-      "label": "Bring Forward",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "chart-format",
-          "tab": "Chart Format",
-          "groupId": "chart-arrange",
-          "group": "Arrange",
-          "label": "Bring Forward",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        },
-        {
-          "profile": "Avalonia",
-          "tabId": "drawing-format",
-          "tab": "Drawing Format",
-          "groupId": "drawing-arrange",
-          "group": "Arrange",
-          "label": "Bring Forward",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.shape-bring-to-front",
-      "label": "Bring to Front",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "chart-format",
-          "tab": "Chart Format",
-          "groupId": "chart-arrange",
-          "group": "Arrange",
-          "label": "Bring to Front",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        },
-        {
-          "profile": "Avalonia",
-          "tabId": "drawing-format",
-          "tab": "Drawing Format",
-          "groupId": "drawing-arrange",
-          "group": "Arrange",
-          "label": "Bring to Front",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        },
-        {
-          "profile": "Avalonia",
-          "tabId": "smartart-design",
-          "tab": "SmartArt Design",
-          "groupId": "smartart-arrange",
-          "group": "Arrange",
-          "label": "Bring to Front",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
       "commandId": "freew.shape-change",
       "label": "Change Shape",
       "wpfPresent": true,
@@ -20045,98 +20053,6 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.shape-send-backward",
-      "label": "Send Backward",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "chart-format",
-          "tab": "Chart Format",
-          "groupId": "chart-arrange",
-          "group": "Arrange",
-          "label": "Send Backward",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        },
-        {
-          "profile": "Avalonia",
-          "tabId": "drawing-format",
-          "tab": "Drawing Format",
-          "groupId": "drawing-arrange",
-          "group": "Arrange",
-          "label": "Send Backward",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.shape-send-to-back",
-      "label": "Send to Back",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "chart-format",
-          "tab": "Chart Format",
-          "groupId": "chart-arrange",
-          "group": "Arrange",
-          "label": "Send to Back",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        },
-        {
-          "profile": "Avalonia",
-          "tabId": "drawing-format",
-          "tab": "Drawing Format",
-          "groupId": "drawing-arrange",
-          "group": "Arrange",
-          "label": "Send to Back",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        },
-        {
-          "profile": "Avalonia",
-          "tabId": "smartart-design",
-          "tab": "SmartArt Design",
-          "groupId": "smartart-arrange",
-          "group": "Arrange",
-          "label": "Send to Back",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
