@@ -682,6 +682,7 @@
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPaneGroupedCommandPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPaneParityFixture.cs",
                                                    "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPanePlanner.cs"
                                                ],
                      "notes":  [
