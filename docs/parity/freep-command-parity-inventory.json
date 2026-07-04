@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 8,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 3
+    "workflowEvidenceRows": 5
   },
   "workflowEvidence": [
     {
@@ -67,6 +67,43 @@
         "freep/FreeP.App.Avalonia.Tests/SlideShowWindowHeadlessTests.cs"
       ],
       "remainingWork": "PowerPoint-authoritative recording studio/session-summary baselines and capture-backed transcript evidence remain deferred."
+    },
+    {
+      "evidenceId": "freep.review.comments.thread-depth",
+      "area": "Modern comments mention, reply, filter, navigation, and action-state depth",
+      "status": "shared-planner-and-host-evidence",
+      "hostCoverage": "WPF/Avalonia shared review planner plus thin WPF adapter and Avalonia headless consumers",
+      "evidenceDocs": [
+        "docs/parity/freep-comments-review-navigation-2026-07-03.md",
+        "docs/parity/freep-modern-comments-anchor-fidelity-2026-07-03.md",
+        "docs/parity/freep-modern-comment-author-identity-2026-07-04.md",
+        "docs/parity/freep-comment-mention-detail-2026-07-04.md",
+        "docs/parity/freep-comment-thread-filter-depth-2026-07-04.md",
+        "docs/parity/freep-comments-review-accessibility-evidence-inventory-2026-07-05.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/PresentationReviewWorkflowPlannerTests.cs",
+        "freep/FreeP.App.Host.Tests/ReviewWorkflowAdapterTests.cs",
+        "freep/FreeP.App.Host.Tests/SectionsCommentsTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
+      ],
+      "remainingWork": "PowerPoint-authoritative review-pane visual baselines, people-picker mention insertion, coauthor presence, and notification routing remain deferred."
+    },
+    {
+      "evidenceId": "freep.review.accessibility.proofing-depth",
+      "area": "Accessibility checker remediation, reading order, and proofing action depth",
+      "status": "shared-planner-and-host-evidence",
+      "hostCoverage": "WPF/Avalonia shared review planner with host row-action, reading-order, and proofing adapters",
+      "evidenceDocs": [
+        "docs/parity/freep-accessibility-table-header-depth-2026-07-03.md",
+        "docs/parity/freep-comments-review-accessibility-evidence-inventory-2026-07-05.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/PresentationReviewWorkflowPlannerTests.cs",
+        "freep/FreeP.App.Host.Tests/ReviewWorkflowAdapterTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
+      ],
+      "remainingWork": "PowerPoint-authoritative accessibility checker baselines, grammar-scale proofing, richer remediation panes, and full reading-order visual parity remain deferred."
     }
   ],
   "commands": [
