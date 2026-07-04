@@ -21,13 +21,13 @@
                     "pairedDimensionMismatches":  44,
                     "pairedRawPixelDimensionMismatches":  70,
                     "pairedCaptureScaleNormalizedDimensionMatches":  26,
-                    "pairedExpectedSizeMismatches":  6,
+                    "pairedExpectedSizeMismatches":  7,
                     "stalePromotedExpectedSizeEvidence":  4,
                     "dimensionMismatchBuckets":  {
                                                      "content/visual mismatch":  14,
-                                                     "evidence limitation":  8,
+                                                     "evidence limitation":  9,
                                                      "expected platform/native difference":  19,
-                                                     "real logical-size mismatch":  3
+                                                     "real logical-size mismatch":  2
                                                  }
                 },
     "pairedSurfaces":  [
@@ -650,15 +650,15 @@
                                                   "lumaDelta":  0.011019,
                                                   "nonBackgroundDelta":  0.092468,
                                                   "triageScore":  0.303146,
-                                                  "expectedSizeMismatch":  false,
-                                                  "expectedWidth":  null,
-                                                  "expectedHeight":  null,
-                                                  "expectedSizeSource":  null,
+                                                  "expectedSizeMismatch":  true,
+                                                  "expectedWidth":  380,
+                                                  "expectedHeight":  420,
+                                                  "expectedSizeSource":  "ConsolidateDialogPlanner.CaptureWidth/Height",
                                                   "wpfExpectedSizeMatch":  true,
-                                                  "avaloniaExpectedSizeMatch":  true,
-                                                  "dimensionMismatchBucket":  "real logical-size mismatch",
-                                                  "dimensionMismatchReason":  "The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption.",
-                                                  "dimensionMismatchNextAction":  "Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract."
+                                                  "avaloniaExpectedSizeMatch":  false,
+                                                  "dimensionMismatchBucket":  "evidence limitation",
+                                                  "dimensionMismatchReason":  "The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence.",
+                                                  "dimensionMismatchNextAction":  "Recapture or replace the stale evidence before treating this as a product layout mismatch."
                                               }
                            },
                            {
@@ -5988,7 +5988,7 @@
                                             },
                                             {
                                                 "bucket":  "evidence limitation",
-                                                "count":  8,
+                                                "count":  9,
                                                 "topSurfaceIds":  [
                                                                       "dialog.GoalSeekStatus",
                                                                       "dialog.Sort",
@@ -6012,11 +6012,10 @@
                                             },
                                             {
                                                 "bucket":  "real logical-size mismatch",
-                                                "count":  3,
+                                                "count":  2,
                                                 "topSurfaceIds":  [
                                                                       "dialog.PivotTableOptions",
-                                                                      "dialog.PivotTableOptions.LayoutAndFormat",
-                                                                      "dialog.Consolidate"
+                                                                      "dialog.PivotTableOptions.LayoutAndFormat"
                                                                   ],
                                                 "nextAction":  "Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract."
                                             }
@@ -6068,9 +6067,9 @@
                                      },
                                      {
                                          "id":  "dialog.Consolidate",
-                                         "bucket":  "real logical-size mismatch",
-                                         "reason":  "The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption.",
-                                         "nextAction":  "Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract.",
+                                         "bucket":  "evidence limitation",
+                                         "reason":  "The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence.",
+                                         "nextAction":  "Recapture or replace the stale evidence before treating this as a product layout mismatch.",
                                          "wpfLogicalSize":  "380x420",
                                          "avaloniaLogicalSize":  "420x450",
                                          "logicalWidthDelta":  39.98,
