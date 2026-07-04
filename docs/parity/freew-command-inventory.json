@@ -1,9 +1,10 @@
 ﻿{
-  "schema": "freew.command-inventory.v3",
-  "schemaVersion": 3,
+  "schema": "freew.command-inventory.v4",
+  "schemaVersion": 4,
   "generatedBy": "tools/Generate-FreeWCommandInventory.ps1",
   "topologySource": "freew/FreeW.Ribbon.Definitions FreeWRibbon.Build(FreeWRibbonCapabilities.Wpf/Avalonia)",
   "sourceLiteralEvidenceNote": "Source literal evidence records exact command-id text in source files only; it is not behavior proof and never creates inventory rows.",
+  "behaviorEvidenceNote": "Behavior evidence links a bounded command row to focused WPF and Avalonia tests; it strengthens parity confidence but does not create inventory rows or change gap classification.",
   "classificationNote": "Gap classifications are generated from explicit rule order: shared-profile, profile-shape-only, command-id-alias, platform-only, deferred, then actionable-gap.",
   "classificationRules": [
     {
@@ -67,7 +68,8 @@
     "commandIdAliases": 19,
     "platformOnly": 12,
     "deferred": 25,
-    "actionableGaps": 0
+    "actionableGaps": 0,
+    "behaviorEvidenceRows": 4
   },
   "commands": [
     {
@@ -4746,6 +4748,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-comments.shared-behavior",
+        "slice": "Review comments",
+        "summary": "Deletes the comment thread at the caret, clears anchor/reference runs, and keeps the operation undoable in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ThreadedCommentCommandTests.cs",
+          "test": "ThreadedCommentCommandTests.DeleteCommentAtCaret_RemovesThreadRangeAndReference"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.DeleteCommentAtCaret_removes_the_comment"
+        }
       }
     },
     {
@@ -15182,6 +15197,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-comments.shared-behavior",
+        "slice": "Review comments",
+        "summary": "Moves to the next comment thread in document order, including wraparound and table-cell comment anchors in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ThreadedCommentCommandTests.cs",
+          "test": "ThreadedCommentCommandTests.CommentNavigation_MovesBetweenThreadsInDocumentOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewCommentTests.cs",
+          "test": "DocumentViewCommentTests.NextPreviousComment_moves_caret_in_document_order_and_wraps"
+        }
       }
     },
     {
@@ -17123,6 +17151,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-comments.shared-behavior",
+        "slice": "Review comments",
+        "summary": "Moves to the previous comment thread in document order, including wraparound behavior in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ThreadedCommentCommandTests.cs",
+          "test": "ThreadedCommentCommandTests.CommentNavigation_WrapsAndNoOpsWithoutComments"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewCommentTests.cs",
+          "test": "DocumentViewCommentTests.NextPreviousComment_moves_caret_in_document_order_and_wraps"
+        }
       }
     },
     {
@@ -18060,6 +18101,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-comments.shared-behavior",
+        "slice": "Review comments",
+        "summary": "Toggles the resolved state for the comment thread at the caret through WPF editor behavior and Avalonia registry execution.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ThreadedCommentCommandTests.cs",
+          "test": "ThreadedCommentCommandTests.ToggleResolveCommentAtCaret_TogglesResolved"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.ResolveComment_registry_command_toggles_the_comment_at_the_caret"
+        }
       }
     },
     {
