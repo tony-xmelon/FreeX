@@ -34,8 +34,8 @@ Sources:
 | Paired dimension mismatches (scale-aware logical units) | 44 |
 | Raw PNG pixel dimension mismatches | 70 |
 | Raw PNG mismatches normalized by capture DPI | 26 |
-| Paired expected-size evidence mismatches | 2 |
-| Stale promoted expected-size evidence | 2 |
+| Paired expected-size evidence mismatches | 3 |
+| Stale promoted expected-size evidence | 3 |
 
 ## Scale-Aware Dimension Mismatch Classification
 
@@ -44,9 +44,9 @@ The 44 scale-aware logical dimension mismatches are bucketed from committed PNG 
 | Bucket | Count | Top surface ids | Top next action |
 | --- | ---: | --- | --- |
 | content/visual mismatch | 14 | dialog.ScenarioManager<br>dialog.SelectionPane<br>dialog.AccessibilityChecker<br>dialog.SymbolPicker<br>dialog.FormatCells.Alignment | Align the seeded harness state before judging the remaining Scenario Manager dimensions. |
-| evidence limitation | 4 | dialog.GoalSeekStatus<br>dialog.Sort<br>dialog.PivotTableOptions.Display<br>dialog.ShapeGradient | Recapture or tighten the WPF status crop before treating the height delta as a product bug. |
+| evidence limitation | 5 | dialog.GoalSeekStatus<br>dialog.Sort<br>dialog.PivotTableOptions.Display<br>dialog.ShapeGradient<br>dialog.WorkbookStatistics | Recapture or tighten the WPF status crop before treating the height delta as a product bug. |
 | expected platform/native difference | 19 | dialog.FindReplace.Replace<br>dialog.FindReplace<br>dialog.FindReplace.Find<br>dialog.Sparkline<br>dialog.Options.QuickAccessToolbar | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
-| real logical-size mismatch | 7 | dialog.PivotTableOptions<br>dialog.PivotTableOptions.LayoutAndFormat<br>dialog.WatchWindow<br>dialog.FormatChartArea<br>dialog.WorkbookStatistics | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
+| real logical-size mismatch | 6 | dialog.PivotTableOptions<br>dialog.PivotTableOptions.LayoutAndFormat<br>dialog.WatchWindow<br>dialog.FormatChartArea<br>dialog.ConditionalFormatNewRule | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
 
 ## Top paired visual outliers
 
@@ -112,7 +112,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.Sparkline | expected platform/native difference | 380x240 | 372x230 | 8x10 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.SymbolPicker | content/visual mismatch | 620x500 | 840x620 | 220x120 | The committed PNGs show different symbol-picker presentations, including Avalonia search/detail content absent from WPF. | Decide the target symbol-picker contract, then align either WPF evidence state or Avalonia layout. |
 | dialog.WatchWindow | real logical-size mismatch | 620x320 | 700x360 | 80x40 | The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption. | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
-| dialog.WorkbookStatistics | real logical-size mismatch | 360x260 | 380x320 | 20x60 | The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption. | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
+| dialog.WorkbookStatistics | evidence limitation | 360x260 | 380x320 | 20x60 | The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence. | Recapture or replace the stale evidence before treating this as a product layout mismatch. |
 
 ## Expected-Size Evidence Mismatches
 
@@ -122,6 +122,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | --- | ---: | --- | ---: | ---: | --- | ---: | ---: | --- |
 | dialog.ShapeGradient | 500x300 | ShapeGradientPlanner.DialogWidth/DialogHeight | 420x280 | 630x420 px @ 144 DPI | False | 500x300 | 500x300 px @ 96 DPI | True |
 | dialog.Sort | 760x500 | SortDialog.DialogDefaultWidth/DialogDefaultHeight | 640x420 | 960x630 px @ 144 DPI | False | 760x500 | 760x500 px @ 96 DPI | True |
+| dialog.WorkbookStatistics | 500x560 | WorkbookStatisticsDialogPlanner.Width/Height | 360x260 | 540x390 px @ 144 DPI | False | 380x320 | 380x320 px @ 96 DPI | False |
 
 ## Stale Promoted Expected-Size Evidence
 
@@ -131,6 +132,7 @@ These expected-size mismatches are known promoted fallback screenshots, not dire
 | --- | --- | ---: | ---: | --- | --- | --- |
 | dialog.ShapeGradient | WPF | 420x280 logical (630x420 px @ 144 DPI) | 500x300 | screenshots\draw-object-formatting-tour\freex_draw_object_formatting_shape_gradient_dialog.png | blocked-transparent-direct-parity-capture | Recapture WPF direct parity evidence at planner size after transparent offscreen capture is fixed. |
 | dialog.Sort | WPF | 640x420 logical (960x630 px @ 144 DPI) | 760x500 | screenshots\data-sort-filter-outline-tour\freex_data_sort_filter_outline_sort_dialog.png | blocked-transparent-direct-parity-capture | Recapture WPF direct parity evidence at planner size after transparent offscreen capture is fixed. |
+| dialog.WorkbookStatistics | WPF | 360x260 logical (540x390 px @ 144 DPI) | 500x560 | screenshots\review-stats-share-tour\freex_review_workbook_statistics_dialog.png | blocked-transparent-direct-parity-capture | Recapture WPF direct parity evidence at planner size after transparent offscreen capture is fixed. |
 
 ## Paired manifest surfaces
 
