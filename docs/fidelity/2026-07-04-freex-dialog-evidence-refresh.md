@@ -33,4 +33,16 @@ Validation from the branch:
   - `dialog.InsertHyperlink.png`: 15870 bytes
   - `dialog.ProtectSheet.png`: 20670 bytes
 
-The committed parity summary still treats the current repository PNG evidence for those three surfaces as stale until the Linux/Avalonia evidence set is regenerated and promoted from the parity lane.
+## Follow-up evidence promotion
+
+Branch `codex/freex-promote-dialog-captures-20260704-d` regenerated the Avalonia parity capture after the zero-byte output guard landed and promoted only the three expected-size dialog PNGs from that valid capture:
+
+- `dialog.GoToSpecial.png`: 23069 bytes, 430x438 px @ 96 DPI
+- `dialog.InsertHyperlink.png`: 15870 bytes, 560x300 px @ 96 DPI
+- `dialog.ProtectSheet.png`: 20670 bytes, 430x540 px @ 96 DPI
+
+The regenerated committed parity summary now reports:
+
+- Paired expected-size evidence mismatches: 0
+- Stale promoted expected-size evidence: 0
+- Real logical-size mismatches: 9
