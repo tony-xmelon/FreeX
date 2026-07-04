@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 102 | 94 | 0 | 8 | 8 | 0 | 0 | 0 | 94 | 0 | 0 | 8 | 0 | 5 |
+| 103 | 95 | 0 | 8 | 8 | 0 | 0 | 0 | 95 | 0 | 0 | 8 | 0 | 5 |
 
 ## Workflow Evidence
 
@@ -96,6 +96,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.slide-size-16x9` | Widescreen (16:9) | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slide-size-4x3` | Standard (4:3) | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slide-size-custom` | Slide Size… | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.slideshow.custom-shows` | Custom Shows | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | home/slideshow (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slideshow.from-beginning` | From Beginning | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | home/slideshow (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slideshow.from-current-slide` | From Current Slide | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | home/slideshow (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.text-box` | Text Box | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
