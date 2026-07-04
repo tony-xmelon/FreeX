@@ -21,11 +21,11 @@
                     "pairedDimensionMismatches":  44,
                     "pairedRawPixelDimensionMismatches":  70,
                     "pairedCaptureScaleNormalizedDimensionMatches":  26,
-                    "pairedExpectedSizeMismatches":  9,
-                    "stalePromotedExpectedSizeEvidence":  4,
+                    "pairedExpectedSizeMismatches":  10,
+                    "stalePromotedExpectedSizeEvidence":  5,
                     "dimensionMismatchBuckets":  {
-                                                     "content/visual mismatch":  14,
-                                                     "evidence limitation":  11,
+                                                     "content/visual mismatch":  13,
+                                                     "evidence limitation":  12,
                                                      "expected platform/native difference":  19
                                                  }
                 },
@@ -5563,15 +5563,15 @@
                                                   "lumaDelta":  0.025049,
                                                   "nonBackgroundDelta":  0.154981,
                                                   "triageScore":  0.804467,
-                                                  "expectedSizeMismatch":  false,
-                                                  "expectedWidth":  null,
-                                                  "expectedHeight":  null,
-                                                  "expectedSizeSource":  null,
-                                                  "wpfExpectedSizeMatch":  true,
+                                                  "expectedSizeMismatch":  true,
+                                                  "expectedWidth":  840,
+                                                  "expectedHeight":  620,
+                                                  "expectedSizeSource":  "SymbolPickerCatalogPlanner.DialogWidth/DialogHeight",
+                                                  "wpfExpectedSizeMatch":  false,
                                                   "avaloniaExpectedSizeMatch":  true,
-                                                  "dimensionMismatchBucket":  "content/visual mismatch",
-                                                  "dimensionMismatchReason":  "The committed PNGs show different symbol-picker presentations, including Avalonia search/detail content absent from WPF.",
-                                                  "dimensionMismatchNextAction":  "Decide the target symbol-picker contract, then align either WPF evidence state or Avalonia layout."
+                                                  "dimensionMismatchBucket":  "evidence limitation",
+                                                  "dimensionMismatchReason":  "The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence.",
+                                                  "dimensionMismatchNextAction":  "Recapture or replace the stale evidence before treating this as a product layout mismatch."
                                               }
                            },
                            {
@@ -5928,7 +5928,7 @@
                                   "triageScore":  0.804467,
                                   "sampleMeanDelta":  0.029732,
                                   "dimension":  "620.032x500.026 vs 840x620 logical; 930x750 vs 840x620 px",
-                                  "dimensionMismatchBucket":  "content/visual mismatch",
+                                  "dimensionMismatchBucket":  "evidence limitation",
                                   "nonBackgroundDelta":  0.154981
                               },
                               {
@@ -5975,25 +5975,25 @@
     "dimensionMismatchClassification":  [
                                             {
                                                 "bucket":  "content/visual mismatch",
-                                                "count":  14,
+                                                "count":  13,
                                                 "topSurfaceIds":  [
                                                                       "dialog.ScenarioManager",
                                                                       "dialog.SelectionPane",
                                                                       "dialog.AccessibilityChecker",
-                                                                      "dialog.SymbolPicker",
-                                                                      "dialog.FormatCells.Alignment"
+                                                                      "dialog.FormatCells.Alignment",
+                                                                      "dialog.FormatCells.Fill"
                                                                   ],
                                                 "nextAction":  "Align the seeded harness state before judging the remaining Scenario Manager dimensions."
                                             },
                                             {
                                                 "bucket":  "evidence limitation",
-                                                "count":  11,
+                                                "count":  12,
                                                 "topSurfaceIds":  [
                                                                       "dialog.GoalSeekStatus",
+                                                                      "dialog.SymbolPicker",
                                                                       "dialog.Sort",
                                                                       "dialog.PivotTableOptions",
-                                                                      "dialog.PivotTableOptions.LayoutAndFormat",
-                                                                      "dialog.PivotTableOptions.Display"
+                                                                      "dialog.PivotTableOptions.LayoutAndFormat"
                                                                   ],
                                                 "nextAction":  "Recapture or tighten the WPF status crop before treating the height delta as a product bug."
                                             },
@@ -6464,9 +6464,9 @@
                                      },
                                      {
                                          "id":  "dialog.SymbolPicker",
-                                         "bucket":  "content/visual mismatch",
-                                         "reason":  "The committed PNGs show different symbol-picker presentations, including Avalonia search/detail content absent from WPF.",
-                                         "nextAction":  "Decide the target symbol-picker contract, then align either WPF evidence state or Avalonia layout.",
+                                         "bucket":  "evidence limitation",
+                                         "reason":  "The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence.",
+                                         "nextAction":  "Recapture or replace the stale evidence before treating this as a product layout mismatch.",
                                          "wpfLogicalSize":  "620x500",
                                          "avaloniaLogicalSize":  "840x620",
                                          "logicalWidthDelta":  219.968,
