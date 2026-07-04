@@ -69,7 +69,7 @@
     "platformOnly": 12,
     "deferred": 23,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 17
+    "behaviorEvidenceRows": 18
   },
   "commands": [
     {
@@ -17394,6 +17394,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.print-family-view.shared-behavior",
+        "slice": "Print-family view behavior",
+        "summary": "Routes the shared Print Layout command through WPF stateful view-mode commands and the Avalonia host callback so the Word-style page surface can be restored from print-family view changes.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/WebLayoutDraftCommandTests.cs",
+          "test": "WebLayoutDraftCommandTests.ViewToggles_AreMutuallyExclusive_InCheckedState"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ViewTabDepthTests.cs",
+          "test": "ViewTabDepthTests.Print_layout_command_invokes_host_callback"
+        }
       }
     },
     {
