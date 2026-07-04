@@ -56,20 +56,20 @@
   ],
   "summary": {
     "totalCommands": 794,
-    "both": 340,
-    "wpfOnly": 290,
+    "both": 350,
+    "wpfOnly": 280,
     "avaloniaOnly": 164,
     "missingWpf": 164,
-    "missingAvalonia": 290,
+    "missingAvalonia": 280,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 340,
+    "sharedProfile": 350,
     "profileShapeOnly": 402,
     "commandIdAliases": 19,
     "platformOnly": 12,
-    "deferred": 21,
+    "deferred": 11,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 25
+    "behaviorEvidenceRows": 27
   },
   "commands": [
     {
@@ -2479,13 +2479,13 @@
       "commandId": "freew.chart-edit-data",
       "label": "Edit Data",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -2498,12 +2498,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "chart-design",
+          "tab": "Chart Design",
+          "groupId": "chart-data",
+          "group": "Data",
+          "label": "Edit Data",
+          "controlType": "RibbonComboBox",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart.shared-behavior",
+        "slice": "Chart command behavior",
+        "summary": "Replaces the selected chart's editable category and series data through the shared chart model route and keeps the change undoable in Avalonia.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.ChartDesign_ReplaceChartDataMutatesModel"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ChartSmartArtContextualTabTests.cs",
+          "test": "ChartSmartArtContextualTabTests.EditChartData_command_replaces_chart_data_and_reverts_on_undo"
+        }
       }
     },
     {
@@ -2789,13 +2813,13 @@
       "commandId": "freew.chart-size",
       "label": "Size",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -2808,12 +2832,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "chart-format",
+          "tab": "Chart Format",
+          "groupId": "chart-size",
+          "group": "Size",
+          "label": "Size",
+          "controlType": "RibbonComboBox",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart.shared-behavior",
+        "slice": "Chart command behavior",
+        "summary": "Resizes the selected chart through the shared floating-object size route and keeps the size change undoable in Avalonia.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.ChartDesign_SetSizeMutatesWidthAndHeight"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ChartSmartArtContextualTabTests.cs",
+          "test": "ChartSmartArtContextualTabTests.ChartSize_command_resizes_selected_chart_and_reverts_on_undo"
+        }
       }
     },
     {
@@ -8602,13 +8650,13 @@
       "commandId": "freew.image-align-to-margin",
       "label": "Align to Margin",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -8621,25 +8669,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-arrange",
+          "group": "Arrange",
+          "label": "Align to Margin",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.image-align-to-page",
       "label": "Align to Page",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -8652,12 +8711,23 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-arrange",
+          "group": "Arrange",
+          "label": "Align to Page",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -9934,13 +10004,13 @@
       "commandId": "freew.image-distribute-h",
       "label": "Distribute Horizontally",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -9953,25 +10023,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-arrange",
+          "group": "Arrange",
+          "label": "Distribute Horizontally",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.image-distribute-v",
       "label": "Distribute Vertically",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -9984,12 +10065,23 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-arrange",
+          "group": "Arrange",
+          "label": "Distribute Vertically",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -19093,13 +19185,13 @@
       "commandId": "freew.shape-align-to-margin",
       "label": "Align to Margin",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -19112,25 +19204,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Align to Margin",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.shape-align-to-page",
       "label": "Align to Page",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -19143,12 +19246,23 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Align to Page",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -19341,13 +19455,13 @@
       "commandId": "freew.shape-distribute-h",
       "label": "Distribute Horizontally",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -19360,25 +19474,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Distribute Horizontally",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.shape-distribute-v",
       "label": "Distribute Vertically",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "deferred",
-      "gapClassificationRule": "deferred",
-      "notes": "Known richer Word slice that is intentionally outside the current generated Avalonia profile surface.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -19391,12 +19516,23 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Distribute Vertically",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
