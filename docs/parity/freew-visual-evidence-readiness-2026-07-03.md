@@ -15,6 +15,8 @@ The 2026-07-04 evidence-depth update tightened the same summary contract: Backst
 
 The follow-up 2026-07-04 renderer-contract update extends compiled pair validation beyond backstage, section, review, drawing-object, and chart/SmartArt rows. Table scenarios now compare WPF/Avalonia table layout and pagination signatures, and field/reference scenarios now compare WPF/Avalonia field counts, field kinds, complex-field keywords, and header/footer field slots. This keeps shared visual evidence from passing on row counts when the semantic renderer contract has drifted between hosts.
 
+The 2026-07-04 WordArt watermark contract-depth slice adds paired semantic validation for `wordart-picture-watermark-layout`. The normalizer now compares WPF/Avalonia page feature signatures for columns, page border, and picture watermark metadata, plus floating object and drawing-effect signatures, before trusting the paired visual evidence row.
+
 ## Why this matters
 
 The existing summary already failed the run for missing backstage pairs, placeholder captures, fallback capture sources, and missing required pages. The new structured field lets automation and planners check readiness without parsing Markdown, while the Markdown table makes the same failures directly actionable for reviewers.
