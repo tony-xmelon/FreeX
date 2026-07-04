@@ -31,22 +31,21 @@ Sources:
 | WPF manifest ids without Avalonia pair | 0 |
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches (scale-aware logical units) | 43 |
+| Paired dimension mismatches (scale-aware logical units) | 42 |
 | Raw PNG pixel dimension mismatches | 69 |
-| Raw PNG mismatches normalized by capture DPI | 26 |
+| Raw PNG mismatches normalized by capture DPI | 27 |
 | Paired expected-size evidence mismatches | 10 |
 | Stale promoted expected-size evidence | 5 |
 
 ## Scale-Aware Dimension Mismatch Classification
 
-The 43 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept expected platform/native control differences, or refresh limited evidence.
+The 42 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept expected platform/native control differences, or refresh limited evidence.
 
 | Bucket | Count | Top surface ids | Top next action |
 | --- | ---: | --- | --- |
 | content/visual mismatch | 11 | dialog.AccessibilityChecker<br>dialog.FormatCells.Alignment<br>dialog.FormatCells.Fill<br>dialog.FormatCells.Border<br>dialog.FormatCells.Font | Compare the Accessibility Checker data model and decide whether the grouped Avalonia presentation is intentional. |
 | evidence limitation | 12 | dialog.GoalSeekStatus<br>dialog.SymbolPicker<br>dialog.Sort<br>dialog.PivotTableOptions<br>dialog.PivotTableOptions.LayoutAndFormat | Recapture or tighten the WPF status crop before treating the height delta as a product bug. |
 | expected platform/native difference | 19 | dialog.FindReplace.Replace<br>dialog.FindReplace<br>dialog.FindReplace.Find<br>dialog.Sparkline<br>dialog.Options.QuickAccessToolbar | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
-| real logical-size mismatch | 1 | dialog.ScenarioManager | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
 
 ## Top paired visual outliers
 
@@ -54,7 +53,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.ScenarioManager | 360x420 | 500x640 | 540x630 px @ 144 DPI vs 500x640 px @ 96 DPI | real logical-size mismatch |  | 1.030 | 0.039 | 0.013 | 0.066 |
 | dialog.GoalSeekStatus | 380x219 | 380x190 | 380x219 px @ 96 DPI vs 380x190 px @ 96 DPI | evidence limitation |  | 0.873 | 0.268 | 0.220 | 0.252 |
 | dialog.AccessibilityChecker | 520x360 | 360x520 | 780x540 px @ 144 DPI vs 360x520 px @ 96 DPI | content/visual mismatch |  | 0.842 | 0.057 | 0.026 | 0.007 |
 | dialog.SymbolPicker | 620x500 | 840x620 | 930x750 px @ 144 DPI vs 840x620 px @ 96 DPI | evidence limitation | Expected 840x620 via SymbolPickerCatalogPlanner.DialogWidth/DialogHeight | 0.804 | 0.030 | 0.025 | 0.155 |
@@ -64,6 +62,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.FormatCells.Font | 620x540 | 690x660 | 620x540 px @ 96 DPI vs 690x660 px @ 96 DPI | content/visual mismatch |  | 0.733 | 0.144 | 0.110 | 0.144 |
 | dialog.GoalSeek | 380x210 | 380x210 | 380x210 px @ 96 DPI vs 380x210 px @ 96 DPI |  |  | 0.725 | 0.258 | 0.220 | 0.247 |
 | dialog.FormatCells.Protection | 620x540 | 690x660 | 620x540 px @ 96 DPI vs 690x660 px @ 96 DPI | content/visual mismatch |  | 0.669 | 0.127 | 0.100 | 0.106 |
+| dialog.FormatCells | 620x540 | 690x660 | 620x540 px @ 96 DPI vs 690x660 px @ 96 DPI | content/visual mismatch |  | 0.610 | 0.148 | 0.089 | 0.039 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -104,7 +103,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.PivotTableOptions.Display | evidence limitation | 520x501 | 520x500 | 0x1 | Only a near-one-DIP height delta remains, consistent with border or capture rounding. | Leave below the product-action threshold unless a future recapture widens the delta. |
 | dialog.PivotTableOptions.LayoutAndFormat | evidence limitation | 520x676 | 520x610 | 0x66 | The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence. | Recapture or replace the stale evidence before treating this as a product layout mismatch. |
 | dialog.ProtectWorkbook | expected platform/native difference | 360x250 | 380x240 | 20x10 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
-| dialog.ScenarioManager | real logical-size mismatch | 360x420 | 500x640 | 140x220 | The paired surface has a DPI-normalized logical size delta above tolerance with no known evidence-only exemption. | Review the WPF/Avalonia planner or layout target, then align the size or document an intentional size contract. |
 | dialog.SelectDataSource | content/visual mismatch | 620x500 | 468x499 | 152x1 | The committed PNGs show different dialog content/state, so the size delta is not isolated layout evidence. | Align the harness data/state first, then reclassify any residual logical-size delta. |
 | dialog.ShapeGradient | evidence limitation | 420x280 | 500x300 | 80x20 | The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence. | Recapture or replace the stale evidence before treating this as a product layout mismatch. |
 | dialog.Sort | evidence limitation | 640x420 | 760x500 | 120x80 | The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence. | Recapture or replace the stale evidence before treating this as a product layout mismatch. |
@@ -224,7 +222,7 @@ These expected-size mismatches are known promoted fallback screenshots, not dire
 | dialog.RemoveDuplicates | dialog.RemoveDuplicates.png | 360x360 | 360x360 px @ 96 DPI | True | dialog.RemoveDuplicates.png | 360x360 | 360x360 px @ 96 DPI | True | True | 0.516 |
 | dialog.RenameSheet | dialog.RenameSheet.png | 340x150 | 510x225 px @ 144 DPI | True | dialog.RenameSheet.png | 340x150 | 340x150 px @ 96 DPI | True | True | 0.062 |
 | dialog.SaveAsWorkbook | dialog.SaveAsWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | dialog.SaveAsWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | True | 0.036 |
-| dialog.ScenarioManager | dialog.ScenarioManager.png | 360x420 | 540x630 px @ 144 DPI | True | dialog.ScenarioManager.png | 500x640 | 500x640 px @ 96 DPI | True | False | 1.030 |
+| dialog.ScenarioManager | dialog.ScenarioManager.png | 360x420 | 540x630 px @ 144 DPI | True | dialog.ScenarioManager.png | 360x420 | 360x420 px @ 96 DPI | True | True | 0.104 |
 | dialog.SelectDataSource | dialog.SelectDataSource.png | 620x500 | 930x750 px @ 144 DPI | True | dialog.SelectDataSource.png | 468x499 | 468x499 px @ 96 DPI | True | False | 0.404 |
 | dialog.SelectionPane | dialog.SelectionPane.png | 520x440 | 520x440 px @ 96 DPI | True | dialog.SelectionPane.png | 520x440 | 520x440 px @ 96 DPI | True | True | 0.122 |
 | dialog.ShapeEffects | dialog.ShapeEffects.png | 380x190 | 570x285 px @ 144 DPI | True | dialog.ShapeEffects.png | 380x190 | 380x190 px @ 96 DPI | True | True | 0.215 |
