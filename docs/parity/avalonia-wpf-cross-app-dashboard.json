@@ -51,33 +51,33 @@
                                                   "pairedCapturedSurfaceIds":  93,
                                                   "wpfManifestIdsWithoutAvaloniaPair":  0,
                                                   "additionalAvaloniaCapturedSurfaceIds":  0,
-                                                  "pairedDimensionMismatches":  43,
+                                                  "pairedDimensionMismatches":  42,
                                                   "pairedRawPixelDimensionMismatches":  69,
-                                                  "pairedCaptureScaleNormalizedDimensionMatches":  26,
+                                                  "pairedCaptureScaleNormalizedDimensionMatches":  27,
                                                   "pairedExpectedSizeMismatches":  10,
                                                   "stalePromotedExpectedSizeEvidence":  5,
                                                   "contentVisualMismatches":  11,
                                                   "evidenceLimitations":  12,
                                                   "expectedPlatformNativeDifferences":  19,
-                                                  "realLogicalSizeMismatches":  1
+                                                  "realLogicalSizeMismatches":  0
                                               },
-                     "nextSlice":  "Command/dialog route coverage is green; all 48 pseudo-gallery rows are catalog-backed in classifier evidence (34 conditional-format rows over 38 runtime catalog items, 10 font/border rows, and 4 accounting-symbol rows), and dialog screenshot evidence has 93 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. Keep the 69 raw PNG pixel mismatches separate from missing-pair status: 26 normalize away by capture DPI, while 43 scale-aware paired mismatches remain for visual review, including 1 real logical-size mismatches and 5 stale promoted expected-size evidence rows."
+                     "nextSlice":  "Command/dialog route coverage is green; all 48 pseudo-gallery rows are catalog-backed in classifier evidence (34 conditional-format rows over 38 runtime catalog items, 10 font/border rows, and 4 accounting-symbol rows), and dialog screenshot evidence has 93 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. Keep the 69 raw PNG pixel mismatches separate from missing-pair status: 27 normalize away by capture DPI, while 42 scale-aware paired mismatches remain for visual review, including 0 real logical-size mismatches and 5 stale promoted expected-size evidence rows."
                  },
                  {
                      "app":  "FreeW",
                      "commandInventory":  {
                                               "totalCommands":  794,
-                                              "bothProfiles":  336,
-                                              "wpfProfileOnly":  294,
+                                              "bothProfiles":  337,
+                                              "wpfProfileOnly":  293,
                                               "avaloniaProfileOnly":  164,
                                               "missingWpfProfile":  164,
-                                              "missingAvaloniaProfile":  294,
+                                              "missingAvaloniaProfile":  293,
                                               "actionableMissingWpf":  0,
                                               "actionableMissingAvalonia":  0,
                                               "profileShapeOnly":  402,
                                               "commandIdAliases":  19,
                                               "platformOnly":  12,
-                                              "deferred":  25,
+                                              "deferred":  24,
                                               "actionableGaps":  0,
                                               "classifiedRows":  true
                                           },
