@@ -18,13 +18,13 @@
                     "wpfManifestIdsWithoutAvaloniaPair":  0,
                     "additionalAvaloniaCapturedSurfaceIds":  0,
                     "nonBlankPngFailures":  0,
-                    "pairedDimensionMismatches":  40,
-                    "pairedRawPixelDimensionMismatches":  67,
+                    "pairedDimensionMismatches":  39,
+                    "pairedRawPixelDimensionMismatches":  66,
                     "pairedCaptureScaleNormalizedDimensionMatches":  27,
                     "pairedExpectedSizeMismatches":  8,
                     "stalePromotedExpectedSizeEvidence":  0,
                     "dimensionMismatchBuckets":  {
-                                                     "content/visual mismatch":  11,
+                                                     "content/visual mismatch":  10,
                                                      "evidence limitation":  10,
                                                      "expected platform/native difference":  19
                                                  }
@@ -98,19 +98,19 @@
                                "routeFamily":  "dialog.AccessibilityChecker",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.AccessibilityChecker.png",
-                                           "fileBytes":  26668,
-                                           "width":  780,
-                                           "height":  540,
-                                           "dpiX":  143.992599,
-                                           "dpiY":  143.992599,
-                                           "logicalWidth":  520.027,
-                                           "logicalHeight":  360.019,
-                                           "pixels":  421200,
-                                           "distinctColors":  586,
+                                           "fileBytes":  15983,
+                                           "width":  360,
+                                           "height":  520,
+                                           "dpiX":  95.986595,
+                                           "dpiY":  95.986595,
+                                           "logicalWidth":  360.05,
+                                           "logicalHeight":  520.073,
+                                           "pixels":  187200,
+                                           "distinctColors":  175,
                                            "opaqueRatio":  1,
-                                           "nonBackgroundRatio":  0.146339,
+                                           "nonBackgroundRatio":  0.103985,
                                            "isNonBlank":  true,
-                                           "meanLuma":  246.153484
+                                           "meanLuma":  245.383121
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AccessibilityChecker.png",
@@ -129,31 +129,31 @@
                                                 "meanLuma":  239.44262
                                             },
                                "comparison":  {
-                                                  "dimensionMatch":  false,
-                                                  "widthDelta":  160.027,
-                                                  "heightDelta":  159.981,
-                                                  "logicalDimensionMatch":  false,
-                                                  "logicalWidthDelta":  160.027,
-                                                  "logicalHeightDelta":  159.981,
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0.05,
+                                                  "heightDelta":  0.073,
+                                                  "logicalDimensionMatch":  true,
+                                                  "logicalWidthDelta":  0.05,
+                                                  "logicalHeightDelta":  0.073,
                                                   "logicalDimensionTolerance":  0.5,
-                                                  "rawPixelDimensionMatch":  false,
-                                                  "rawPixelWidthDelta":  420,
-                                                  "rawPixelHeightDelta":  20,
+                                                  "rawPixelDimensionMatch":  true,
+                                                  "rawPixelWidthDelta":  0,
+                                                  "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
-                                                  "dimensionDeltaRatio":  0.752098,
-                                                  "sampleMeanDelta":  0.05707,
-                                                  "lumaDelta":  0.026317,
-                                                  "nonBackgroundDelta":  0.00667,
-                                                  "triageScore":  0.842155,
+                                                  "dimensionDeltaRatio":  0.000279,
+                                                  "sampleMeanDelta":  0.039611,
+                                                  "lumaDelta":  0.023296,
+                                                  "nonBackgroundDelta":  0.035684,
+                                                  "triageScore":  0.09887,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
                                                   "expectedSizeSource":  null,
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
-                                                  "dimensionMismatchBucket":  "content/visual mismatch",
-                                                  "dimensionMismatchReason":  "The committed PNGs show different issue models: a compact WPF list versus an Avalonia grouped inspection tree.",
-                                                  "dimensionMismatchNextAction":  "Compare the Accessibility Checker data model and decide whether the grouped Avalonia presentation is intentional."
+                                                  "dimensionMismatchBucket":  null,
+                                                  "dimensionMismatchReason":  null,
+                                                  "dimensionMismatchNextAction":  null
                                               }
                            },
                            {
@@ -5900,14 +5900,6 @@
                                   "nonBackgroundDelta":  0.251798
                               },
                               {
-                                  "id":  "dialog.AccessibilityChecker",
-                                  "triageScore":  0.842155,
-                                  "sampleMeanDelta":  0.05707,
-                                  "dimension":  "520.027x360.019 vs 360x520 logical; 780x540 vs 360x520 px",
-                                  "dimensionMismatchBucket":  "content/visual mismatch",
-                                  "nonBackgroundDelta":  0.00667
-                              },
-                              {
                                   "id":  "dialog.FormatCells.Alignment",
                                   "triageScore":  0.767665,
                                   "sampleMeanDelta":  0.134351,
@@ -5970,20 +5962,28 @@
                                   "dimension":  "620.087x540.075 vs 690x660 logical; 620x540 vs 690x660 px",
                                   "dimensionMismatchBucket":  "content/visual mismatch",
                                   "nonBackgroundDelta":  0.039071
+                              },
+                              {
+                                  "id":  "dialog.FormatCells.Number",
+                                  "triageScore":  0.610489,
+                                  "sampleMeanDelta":  0.147535,
+                                  "dimension":  "620.087x540.075 vs 690x660 logical; 620x540 vs 690x660 px",
+                                  "dimensionMismatchBucket":  "content/visual mismatch",
+                                  "nonBackgroundDelta":  0.039071
                               }
                           ],
     "dimensionMismatchClassification":  [
                                             {
                                                 "bucket":  "content/visual mismatch",
-                                                "count":  11,
+                                                "count":  10,
                                                 "topSurfaceIds":  [
-                                                                      "dialog.AccessibilityChecker",
                                                                       "dialog.FormatCells.Alignment",
                                                                       "dialog.FormatCells.Fill",
                                                                       "dialog.FormatCells.Border",
-                                                                      "dialog.FormatCells.Font"
+                                                                      "dialog.FormatCells.Font",
+                                                                      "dialog.FormatCells.Protection"
                                                                   ],
-                                                "nextAction":  "Compare the Accessibility Checker data model and decide whether the grouped Avalonia presentation is intentional."
+                                                "nextAction":  "Review the Format Cells tab model, tab order, and target frame size together."
                                             },
                                             {
                                                 "bucket":  "evidence limitation",
@@ -6011,17 +6011,6 @@
                                             }
                                         ],
     "dimensionMismatchDetails":  [
-                                     {
-                                         "id":  "dialog.AccessibilityChecker",
-                                         "bucket":  "content/visual mismatch",
-                                         "reason":  "The committed PNGs show different issue models: a compact WPF list versus an Avalonia grouped inspection tree.",
-                                         "nextAction":  "Compare the Accessibility Checker data model and decide whether the grouped Avalonia presentation is intentional.",
-                                         "wpfLogicalSize":  "520x360",
-                                         "avaloniaLogicalSize":  "360x520",
-                                         "logicalWidthDelta":  160.027,
-                                         "logicalHeightDelta":  159.981,
-                                         "triageScore":  0.842155
-                                     },
                                      {
                                          "id":  "dialog.AutoFilter",
                                          "bucket":  "content/visual mismatch",

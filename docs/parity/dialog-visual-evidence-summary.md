@@ -31,19 +31,19 @@ Sources:
 | WPF manifest ids without Avalonia pair | 0 |
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches (scale-aware logical units) | 40 |
-| Raw PNG pixel dimension mismatches | 67 |
+| Paired dimension mismatches (scale-aware logical units) | 39 |
+| Raw PNG pixel dimension mismatches | 66 |
 | Raw PNG mismatches normalized by capture DPI | 27 |
 | Paired expected-size evidence mismatches | 8 |
 | Stale promoted expected-size evidence | 0 |
 
 ## Scale-Aware Dimension Mismatch Classification
 
-The 40 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept expected platform/native control differences, or refresh limited evidence.
+The 39 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept expected platform/native control differences, or refresh limited evidence.
 
 | Bucket | Count | Top surface ids | Top next action |
 | --- | ---: | --- | --- |
-| content/visual mismatch | 11 | dialog.AccessibilityChecker<br>dialog.FormatCells.Alignment<br>dialog.FormatCells.Fill<br>dialog.FormatCells.Border<br>dialog.FormatCells.Font | Compare the Accessibility Checker data model and decide whether the grouped Avalonia presentation is intentional. |
+| content/visual mismatch | 10 | dialog.FormatCells.Alignment<br>dialog.FormatCells.Fill<br>dialog.FormatCells.Border<br>dialog.FormatCells.Font<br>dialog.FormatCells.Protection | Review the Format Cells tab model, tab order, and target frame size together. |
 | evidence limitation | 10 | dialog.GoalSeekStatus<br>dialog.WorkbookStatistics<br>dialog.PivotTableOptions<br>dialog.PivotTableOptions.LayoutAndFormat<br>dialog.PivotTableOptions.Display | Recapture or tighten the WPF status crop before treating the height delta as a product bug. |
 | expected platform/native difference | 19 | dialog.FindReplace.Replace<br>dialog.FindReplace<br>dialog.FindReplace.Find<br>dialog.Sparkline<br>dialog.Options.QuickAccessToolbar | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 
@@ -54,7 +54,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
 | dialog.GoalSeekStatus | 380x219 | 380x190 | 380x219 px @ 96 DPI vs 380x190 px @ 96 DPI | evidence limitation |  | 0.873 | 0.268 | 0.220 | 0.252 |
-| dialog.AccessibilityChecker | 520x360 | 360x520 | 780x540 px @ 144 DPI vs 360x520 px @ 96 DPI | content/visual mismatch |  | 0.842 | 0.057 | 0.026 | 0.007 |
 | dialog.FormatCells.Alignment | 620x540 | 690x660 | 620x540 px @ 96 DPI vs 690x660 px @ 96 DPI | content/visual mismatch |  | 0.768 | 0.134 | 0.110 | 0.188 |
 | dialog.FormatCells.Fill | 620x598 | 690x660 | 620x598 px @ 96 DPI vs 690x660 px @ 96 DPI | content/visual mismatch |  | 0.761 | 0.133 | 0.135 | 0.277 |
 | dialog.FormatCells.Border | 620x540 | 690x660 | 620x540 px @ 96 DPI vs 690x660 px @ 96 DPI | content/visual mismatch |  | 0.753 | 0.162 | 0.115 | 0.142 |
@@ -63,12 +62,12 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.GoalSeek | 380x210 | 380x210 | 380x210 px @ 96 DPI vs 380x210 px @ 96 DPI |  |  | 0.725 | 0.258 | 0.220 | 0.247 |
 | dialog.FormatCells.Protection | 620x540 | 690x660 | 620x540 px @ 96 DPI vs 690x660 px @ 96 DPI | content/visual mismatch |  | 0.669 | 0.127 | 0.100 | 0.106 |
 | dialog.FormatCells | 620x540 | 690x660 | 620x540 px @ 96 DPI vs 690x660 px @ 96 DPI | content/visual mismatch |  | 0.610 | 0.148 | 0.089 | 0.039 |
+| dialog.FormatCells.Number | 620x540 | 690x660 | 620x540 px @ 96 DPI vs 690x660 px @ 96 DPI | content/visual mismatch |  | 0.610 | 0.148 | 0.089 | 0.039 |
 
 ## Scale-Aware Dimension Mismatch Details
 
 | Surface id | Bucket | WPF logical size | Avalonia logical size | Logical delta | Reason | Next action |
 | --- | --- | ---: | ---: | ---: | --- | --- |
-| dialog.AccessibilityChecker | content/visual mismatch | 520x360 | 360x520 | 160x160 | The committed PNGs show different issue models: a compact WPF list versus an Avalonia grouped inspection tree. | Compare the Accessibility Checker data model and decide whether the grouped Avalonia presentation is intentional. |
 | dialog.AutoFilter | content/visual mismatch | 312x436.689 | 312x323 | 0x113.644 | The committed PNGs show different dialog content/state, so the size delta is not isolated layout evidence. | Align the harness data/state first, then reclassify any residual logical-size delta. |
 | dialog.ChangeChartType | expected platform/native difference | 640x390 | 624x381 | 16x9 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.ConditionalFormatNewRule | evidence limitation | 634x334 | 640x380 | 6x46 | The checked-in PNG disagrees with an explicit expected capture size, so the dimension delta is suspect evidence. | Recapture or replace the stale evidence before treating this as a product layout mismatch. |
@@ -129,7 +128,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | Surface id | WPF PNG | WPF logical size | WPF raw PNG | WPF nonblank | Avalonia PNG | Avalonia logical size | Avalonia raw PNG | Avalonia nonblank | Dimension match | Score |
 | --- | --- | ---: | ---: | --- | --- | ---: | ---: | --- | --- | ---: |
 | dialog.About | dialog.About.png | 560x420 | 840x630 px @ 144 DPI | True | dialog.About.png | 560x420 | 560x420 px @ 96 DPI | True | True | 0.085 |
-| dialog.AccessibilityChecker | dialog.AccessibilityChecker.png | 520x360 | 780x540 px @ 144 DPI | True | dialog.AccessibilityChecker.png | 360x520 | 360x520 px @ 96 DPI | True | False | 0.842 |
+| dialog.AccessibilityChecker | dialog.AccessibilityChecker.png | 360x520 | 360x520 px @ 96 DPI | True | dialog.AccessibilityChecker.png | 360x520 | 360x520 px @ 96 DPI | True | True | 0.099 |
 | dialog.AddWatch | dialog.AddWatch.png | 360x170 | 540x255 px @ 144 DPI | True | dialog.AddWatch.png | 360x170 | 360x170 px @ 96 DPI | True | True | 0.088 |
 | dialog.AdvancedFilter | dialog.AdvancedFilter.png | 420x340 | 630x510 px @ 144 DPI | True | dialog.AdvancedFilter.png | 420x340 | 420x340 px @ 96 DPI | True | True | 0.057 |
 | dialog.AllowEditRanges | dialog.AllowEditRanges.png | 430x360 | 645x540 px @ 144 DPI | True | dialog.AllowEditRanges.png | 430x360 | 430x360 px @ 96 DPI | True | True | 0.187 |

@@ -378,7 +378,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.AccessibilityChecker.png",
                          "captured":  true,
-                         "note":  "Promoted from FREEX_REVIEW_COMMENTS_PROTECTION_TOUR accessibility-checker dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                         "note":  "Captured from FreeX.App.Host --parity-capture-target dialog.AccessibilityChecker planner-backed direct surface at 360x520"
                      },
                      {
                          "id":  "dialog.AddWatch",
