@@ -18,13 +18,13 @@
                     "wpfManifestIdsWithoutAvaloniaPair":  0,
                     "additionalAvaloniaCapturedSurfaceIds":  0,
                     "nonBlankPngFailures":  0,
-                    "pairedDimensionMismatches":  44,
-                    "pairedRawPixelDimensionMismatches":  70,
+                    "pairedDimensionMismatches":  43,
+                    "pairedRawPixelDimensionMismatches":  69,
                     "pairedCaptureScaleNormalizedDimensionMatches":  26,
                     "pairedExpectedSizeMismatches":  10,
                     "stalePromotedExpectedSizeEvidence":  5,
                     "dimensionMismatchBuckets":  {
-                                                     "content/visual mismatch":  13,
+                                                     "content/visual mismatch":  12,
                                                      "evidence limitation":  12,
                                                      "expected platform/native difference":  19
                                                  }
@@ -5075,19 +5075,19 @@
                                "routeFamily":  "dialog.SelectionPane",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SelectionPane.png",
-                                           "fileBytes":  30863,
-                                           "width":  570,
-                                           "height":  540,
-                                           "dpiX":  143.992599,
-                                           "dpiY":  143.992599,
-                                           "logicalWidth":  380.02,
-                                           "logicalHeight":  360.019,
-                                           "pixels":  307800,
-                                           "distinctColors":  506,
+                                           "fileBytes":  12872,
+                                           "width":  520,
+                                           "height":  440,
+                                           "dpiX":  95.986595,
+                                           "dpiY":  95.986595,
+                                           "logicalWidth":  520.073,
+                                           "logicalHeight":  440.061,
+                                           "pixels":  228800,
+                                           "distinctColors":  214,
                                            "opaqueRatio":  1,
-                                           "nonBackgroundRatio":  0.239032,
+                                           "nonBackgroundRatio":  0.149913,
                                            "isNonBlank":  true,
-                                           "meanLuma":  244.635828
+                                           "meanLuma":  249.003254
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.SelectionPane.png",
@@ -5106,31 +5106,31 @@
                                                 "meanLuma":  250.467719
                                             },
                                "comparison":  {
-                                                  "dimensionMatch":  false,
-                                                  "widthDelta":  139.98,
-                                                  "heightDelta":  79.981,
-                                                  "logicalDimensionMatch":  false,
-                                                  "logicalWidthDelta":  139.98,
-                                                  "logicalHeightDelta":  79.981,
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0.073,
+                                                  "heightDelta":  0.061,
+                                                  "logicalDimensionMatch":  true,
+                                                  "logicalWidthDelta":  0.073,
+                                                  "logicalHeightDelta":  0.061,
                                                   "logicalDimensionTolerance":  0.5,
-                                                  "rawPixelDimensionMatch":  false,
-                                                  "rawPixelWidthDelta":  50,
-                                                  "rawPixelHeightDelta":  100,
+                                                  "rawPixelDimensionMatch":  true,
+                                                  "rawPixelWidthDelta":  0,
+                                                  "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
-                                                  "dimensionDeltaRatio":  0.59051,
-                                                  "sampleMeanDelta":  0.051186,
-                                                  "lumaDelta":  0.02287,
-                                                  "nonBackgroundDelta":  0.186178,
-                                                  "triageScore":  0.850744,
+                                                  "dimensionDeltaRatio":  0.000279,
+                                                  "sampleMeanDelta":  0.019126,
+                                                  "lumaDelta":  0.005743,
+                                                  "nonBackgroundDelta":  0.097059,
+                                                  "triageScore":  0.122207,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
                                                   "expectedSizeSource":  null,
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
-                                                  "dimensionMismatchBucket":  "content/visual mismatch",
-                                                  "dimensionMismatchReason":  "The committed PNGs use different sample objects and selected rows.",
-                                                  "dimensionMismatchNextAction":  "Align the sample worksheet objects and selection state, then re-rank the surface."
+                                                  "dimensionMismatchBucket":  null,
+                                                  "dimensionMismatchReason":  null,
+                                                  "dimensionMismatchNextAction":  null
                                               }
                            },
                            {
@@ -5908,14 +5908,6 @@
                                   "nonBackgroundDelta":  0.251798
                               },
                               {
-                                  "id":  "dialog.SelectionPane",
-                                  "triageScore":  0.850744,
-                                  "sampleMeanDelta":  0.051186,
-                                  "dimension":  "380.02x360.019 vs 520x440 logical; 570x540 vs 520x440 px",
-                                  "dimensionMismatchBucket":  "content/visual mismatch",
-                                  "nonBackgroundDelta":  0.186178
-                              },
-                              {
                                   "id":  "dialog.AccessibilityChecker",
                                   "triageScore":  0.842155,
                                   "sampleMeanDelta":  0.05707,
@@ -5970,18 +5962,26 @@
                                   "dimension":  "380.053x210.029 vs 380x210 logical; 380x210 vs 380x210 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.246905
+                              },
+                              {
+                                  "id":  "dialog.FormatCells.Protection",
+                                  "triageScore":  0.669128,
+                                  "sampleMeanDelta":  0.127353,
+                                  "dimension":  "620.087x540.075 vs 690x660 logical; 620x540 vs 690x660 px",
+                                  "dimensionMismatchBucket":  "content/visual mismatch",
+                                  "nonBackgroundDelta":  0.106488
                               }
                           ],
     "dimensionMismatchClassification":  [
                                             {
                                                 "bucket":  "content/visual mismatch",
-                                                "count":  13,
+                                                "count":  12,
                                                 "topSurfaceIds":  [
                                                                       "dialog.ScenarioManager",
-                                                                      "dialog.SelectionPane",
                                                                       "dialog.AccessibilityChecker",
                                                                       "dialog.FormatCells.Alignment",
-                                                                      "dialog.FormatCells.Fill"
+                                                                      "dialog.FormatCells.Fill",
+                                                                      "dialog.FormatCells.Border"
                                                                   ],
                                                 "nextAction":  "Align the seeded harness state before judging the remaining Scenario Manager dimensions."
                                             },
@@ -6417,17 +6417,6 @@
                                          "logicalWidthDelta":  151.967,
                                          "logicalHeightDelta":  0.956,
                                          "triageScore":  0.403909
-                                     },
-                                     {
-                                         "id":  "dialog.SelectionPane",
-                                         "bucket":  "content/visual mismatch",
-                                         "reason":  "The committed PNGs use different sample objects and selected rows.",
-                                         "nextAction":  "Align the sample worksheet objects and selection state, then re-rank the surface.",
-                                         "wpfLogicalSize":  "380x360",
-                                         "avaloniaLogicalSize":  "520x440",
-                                         "logicalWidthDelta":  139.98,
-                                         "logicalHeightDelta":  79.981,
-                                         "triageScore":  0.850744
                                      },
                                      {
                                          "id":  "dialog.ShapeGradient",
