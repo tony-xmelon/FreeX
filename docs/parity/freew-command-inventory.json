@@ -69,7 +69,7 @@
     "platformOnly": 12,
     "deferred": 25,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 7
+    "behaviorEvidenceRows": 9
   },
   "commands": [
     {
@@ -2100,6 +2100,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart.shared-behavior",
+        "slice": "Chart command behavior",
+        "summary": "Applies the monochromatic blue chart color palette through the WPF chart-color command and the Avalonia chart-colors alias, keeping the change undoable in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.ChartDesign_ColorSchemeRibbonCommandMutatesSelectedChartAndUndoRestoresIt"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ChartSmartArtContextualTabTests.cs",
+          "test": "ChartSmartArtContextualTabTests.SetChartColorScheme_command_changes_scheme_and_reverts_on_undo"
+        }
       }
     },
     {
@@ -2348,6 +2361,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.chart.shared-behavior",
+        "slice": "Chart command behavior",
+        "summary": "Applies the monochromatic blue chart color palette through the WPF chart-color command and the Avalonia chart-colors alias, keeping the change undoable in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.ChartDesign_ColorSchemeRibbonCommandMutatesSelectedChartAndUndoRestoresIt"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ChartSmartArtContextualTabTests.cs",
+          "test": "ChartSmartArtContextualTabTests.SetChartColorScheme_command_changes_scheme_and_reverts_on_undo"
+        }
       }
     },
     {
