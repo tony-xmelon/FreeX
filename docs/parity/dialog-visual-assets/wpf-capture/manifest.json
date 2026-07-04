@@ -567,7 +567,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.SelectionPane.png",
                          "captured":  true,
-                         "note":  "Promoted from page-layout-setup-tour committed WPF screenshot evidence (screenshots\\page-layout-setup-tour\\freex_page_layout_setup_arrange_selection_pane_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                         "note":  ""
                      },
                      {
                          "id":  "dialog.ShapeEffects",
