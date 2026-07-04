@@ -15143,19 +15143,19 @@
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       },
-        "behaviorEvidence": {
-          "evidenceId": "freew.comments-only-protection-history.shared-behavior",
-          "slice": "Comments-only protection history",
-          "summary": "Creates a comment under comments-only protection and keeps the classified comment-history entry undoable and redoable in both shells.",
-          "wpfEvidence": {
-            "path": "freew/FreeW.App.Host.Tests/ProtectionEnforcementTests.cs",
-            "test": "ProtectionEnforcementTests.CommentsOnlyProtection_AllowsEachClassifiedCommentHistoryEntry"
-          },
-          "avaloniaEvidence": {
-            "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewProtectionTests.cs",
-            "test": "DocumentViewProtectionTests.CommentsOnly_allows_each_classified_comment_history_entry"
-          }
+      "behaviorEvidence": {
+        "evidenceId": "freew.comments-only-protection-history.shared-behavior",
+        "slice": "Comments-only protection history",
+        "summary": "Creates a comment under comments-only protection and keeps the classified comment-history entry undoable and redoable in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ProtectionEnforcementTests.cs",
+          "test": "ProtectionEnforcementTests.CommentsOnlyProtection_AllowsEachClassifiedCommentHistoryEntry"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewProtectionTests.cs",
+          "test": "DocumentViewProtectionTests.CommentsOnly_allows_each_classified_comment_history_entry"
         }
+      }
     },
     {
       "commandId": "freew.new-style",
@@ -17924,19 +17924,19 @@
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       },
-        "behaviorEvidence": {
-          "evidenceId": "freew.comments-only-protection-history.shared-behavior",
-          "slice": "Comments-only protection history",
-          "summary": "Allows Redo for classified comment mutations under comments-only protection while continuing to block body-history history replay in both shells.",
-          "wpfEvidence": {
-            "path": "freew/FreeW.App.Host.Tests/ProtectionEnforcementTests.cs",
-            "test": "ProtectionEnforcementTests.CommentsOnlyProtection_AllowsEachClassifiedCommentHistoryEntry"
-          },
-          "avaloniaEvidence": {
-            "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewProtectionTests.cs",
-            "test": "DocumentViewProtectionTests.CommentsOnly_allows_each_classified_comment_history_entry"
-          }
+      "behaviorEvidence": {
+        "evidenceId": "freew.comments-only-protection-history.shared-behavior",
+        "slice": "Comments-only protection history",
+        "summary": "Allows Redo for classified comment mutations under comments-only protection while continuing to block body-history history replay in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ProtectionEnforcementTests.cs",
+          "test": "ProtectionEnforcementTests.CommentsOnlyProtection_AllowsEachClassifiedCommentHistoryEntry"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewProtectionTests.cs",
+          "test": "DocumentViewProtectionTests.CommentsOnly_allows_each_classified_comment_history_entry"
         }
+      }
     },
     {
       "commandId": "freew.reject-all",
@@ -18157,19 +18157,19 @@
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       },
-        "behaviorEvidence": {
-          "evidenceId": "freew.comments-only-protection-history.shared-behavior",
-          "slice": "Comments-only protection history",
-          "summary": "Replies to an existing comment under comments-only protection and keeps the classified comment-history entry undoable and redoable in both shells.",
-          "wpfEvidence": {
-            "path": "freew/FreeW.App.Host.Tests/ProtectionEnforcementTests.cs",
-            "test": "ProtectionEnforcementTests.CommentsOnlyProtection_AllowsEachClassifiedCommentHistoryEntry"
-          },
-          "avaloniaEvidence": {
-            "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewProtectionTests.cs",
-            "test": "DocumentViewProtectionTests.CommentsOnly_allows_each_classified_comment_history_entry"
-          }
+      "behaviorEvidence": {
+        "evidenceId": "freew.comments-only-protection-history.shared-behavior",
+        "slice": "Comments-only protection history",
+        "summary": "Replies to an existing comment under comments-only protection and keeps the classified comment-history entry undoable and redoable in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ProtectionEnforcementTests.cs",
+          "test": "ProtectionEnforcementTests.CommentsOnlyProtection_AllowsEachClassifiedCommentHistoryEntry"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewProtectionTests.cs",
+          "test": "DocumentViewProtectionTests.CommentsOnly_allows_each_classified_comment_history_entry"
         }
+      }
     },
     {
       "commandId": "freew.reset-style-set",
@@ -18309,19 +18309,19 @@
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       },
-        "behaviorEvidence": {
-          "evidenceId": "freew.comments-only-protection-history.shared-behavior",
-          "slice": "Comments-only protection history",
-          "summary": "Applies comments-only Restrict Editing policy through shared enforcement so comment history remains available while body history is blocked in both shells.",
-          "wpfEvidence": {
-            "path": "freew/FreeW.App.Host.Tests/ProtectionEnforcementTests.cs",
-            "test": "ProtectionEnforcementTests.CommentsOnlyProtection_AllowsEachClassifiedCommentHistoryEntry"
-          },
-          "avaloniaEvidence": {
-            "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewProtectionTests.cs",
-            "test": "DocumentViewProtectionTests.CommentsOnly_allows_each_classified_comment_history_entry"
-          }
+      "behaviorEvidence": {
+        "evidenceId": "freew.comments-only-protection-history.shared-behavior",
+        "slice": "Comments-only protection history",
+        "summary": "Applies comments-only Restrict Editing policy through shared enforcement so comment history remains available while body history is blocked in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ProtectionEnforcementTests.cs",
+          "test": "ProtectionEnforcementTests.CommentsOnlyProtection_AllowsEachClassifiedCommentHistoryEntry"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewProtectionTests.cs",
+          "test": "DocumentViewProtectionTests.CommentsOnly_allows_each_classified_comment_history_entry"
         }
+      }
     },
     {
       "commandId": "freew.reveal-formatting",
@@ -27747,19 +27747,19 @@
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
       },
-        "behaviorEvidence": {
-          "evidenceId": "freew.comments-only-protection-history.shared-behavior",
-          "slice": "Comments-only protection history",
-          "summary": "Allows Undo for classified comment mutations under comments-only protection while blocking body-history Undo in both shells.",
-          "wpfEvidence": {
-            "path": "freew/FreeW.App.Host.Tests/ProtectionEnforcementTests.cs",
-            "test": "ProtectionEnforcementTests.CommentsOnlyProtection_AllowsEachClassifiedCommentHistoryEntry"
-          },
-          "avaloniaEvidence": {
-            "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewProtectionTests.cs",
-            "test": "DocumentViewProtectionTests.CommentsOnly_allows_each_classified_comment_history_entry"
-          }
+      "behaviorEvidence": {
+        "evidenceId": "freew.comments-only-protection-history.shared-behavior",
+        "slice": "Comments-only protection history",
+        "summary": "Allows Undo for classified comment mutations under comments-only protection while blocking body-history Undo in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ProtectionEnforcementTests.cs",
+          "test": "ProtectionEnforcementTests.CommentsOnlyProtection_AllowsEachClassifiedCommentHistoryEntry"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewProtectionTests.cs",
+          "test": "DocumentViewProtectionTests.CommentsOnly_allows_each_classified_comment_history_entry"
         }
+      }
     },
     {
       "commandId": "freew.update-fields",
