@@ -855,6 +855,7 @@
                                                    "src\\FreeX.App.Presentation\\Charts\\ChartStylePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\Geometry.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\LegendLayoutBuilder.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\TrendlineAnnotationFormatter.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\TrendlineCalculator.cs",
                                                    "src\\FreeX.Core.Commands\\ChartCommands.Mutate.cs"
                                                ],
