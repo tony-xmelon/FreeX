@@ -20,7 +20,7 @@
 | Category | Implemented | Partial | Not Implemented | Excluded | In-scope Total | **Coverage** |
 |---|---:|---:|---:|---:|---:|---:|
 | Math / Trig | 78 | 0 | 0 | 0 | 78 | **100%** |
-| Statistical | 136 | 0 | 0 | 0 | 136 | **100%** |
+| Statistical | 138 | 0 | 0 | 0 | 138 | **100%** |
 | Logical | 11 | 0 | 0 | 0 | 11 | **100%** |
 | Lookup / Reference | 39 | 0 | 0 | 0 | 39 | **100%** |
 | Text | 51 | 0 | 0 | 0 | 51 | **100%** |
@@ -30,7 +30,7 @@
 | Lambda / Advanced | 9 | 0 | 0 | 0 | 9 | **100%** |
 | Database | 12 | 0 | 0 | 0 | 12 | **100%** |
 | Engineering / Cube / Cloud | 53 | 0 | 0 | 7 | 53 | **100%** |
-| **TOTAL** | **488** | **0** | **0** | **7** | **488** | **100%** |
+| **TOTAL** | **490** | **0** | **0** | **7** | **490** | **100%** |
 
 Coverage = (Implemented + Partial) / In-scope Total. Excluded functions are not counted in the in-scope total.
 
@@ -150,7 +150,7 @@ Post-sweep hardening also pins `ASC`, `DBCS`, and `JIS` to Excel's non-DBCS lang
 
 ## Statistical
 
-**Coverage: 136/136 (100%)**
+**Coverage: 138/138 (100%)**
 
 | Function | Status |
 |---|---|
@@ -225,9 +225,11 @@ Post-sweep hardening also pins `ASC`, `DBCS`, and `JIS` to Excel's non-DBCS lang
 | LOGNORMDIST | Implemented |
 | MAX | Implemented |
 | MAXA | Implemented |
+| MAXIFS | Implemented |
 | MEDIAN | Implemented |
 | MIN | Implemented |
 | MINA | Implemented |
+| MINIFS | Implemented |
 | MODE | Implemented |
 | MODE.SNGL | Implemented |
 | NEGBINOM.DIST | Implemented |
