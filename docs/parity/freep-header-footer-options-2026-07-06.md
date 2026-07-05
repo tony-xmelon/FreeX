@@ -14,6 +14,8 @@ WPF and Avalonia remain thin option collectors over `HeaderFooterCommandPlanner`
 - Date/time options now distinguish auto-updating date fields from fixed literal
   date text. Auto mode writes a selected shared `datetimeN` field type; fixed
   mode writes literal text without a field run.
+- Created header/footer placeholders now stamp inherited layout/master geometry
+  in the shared planner before falling back to computed bottom-row slots.
 - WPF and Avalonia expose the same shared option shape and route application
   through the existing shared command path.
 
@@ -26,5 +28,4 @@ WPF and Avalonia remain thin option collectors over `HeaderFooterCommandPlanner`
 ## Remaining
 
 - PowerPoint-authoritative header/footer visual baselines remain deferred.
-- Exact fallback layout heuristics and theme-specific visual tuning remain
-  deferred.
+- Theme-specific visual tuning remains deferred.
