@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 8
+    "workflowEvidenceRows": 9
   },
   "workflowEvidence": [
     {
@@ -145,6 +145,22 @@
         "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
       ],
       "remainingWork": "WPF/Avalonia now share picture-bullet picker payload execution, paragraph authoring, and PPTX media-part persistence. Avalonia still lacks a true editable rich-text widget equivalent to WPF RichTextBox; PowerPoint-authoritative list-gallery/rich-editor visual baselines remain deferred."
+    },
+    {
+      "evidenceId": "freep.header-footer.placeholder-creation",
+      "area": "Header/Footer date, footer, and slide-number placeholder creation",
+      "status": "shared-planner-and-host-evidence",
+      "hostCoverage": "WPF/Avalonia route Header & Footer options into the shared planner; no renderer-local placeholder policy",
+      "evidenceDocs": [
+        "docs/parity/freep-header-footer-placeholder-creation-2026-07-05.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/HeaderFooterCommandPlannerTests.cs",
+        "freep/FreeP.App.Host.Tests/RibbonEditorCompleteness5BTests.cs",
+        "freep/FreeP.App.Host.Tests/HeaderFooterDialogTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/HeaderFooterCommandRoutingTests.cs"
+      ],
+      "remainingWork": "Shared Header/Footer application now creates missing date, footer, and slide-number placeholders with inherited layout/master geometry when available and shared fallback geometry otherwise. PowerPoint-authoritative header/footer visual baselines, title-slide suppression UX, fixed/auto date-format choices, and exact fallback layout heuristics remain deferred."
     },
     {
       "evidenceId": "freep.chart.number-format-rendering",
