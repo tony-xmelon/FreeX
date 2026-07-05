@@ -69,7 +69,7 @@
     "platformOnly": 12,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 42
+    "behaviorEvidenceRows": 59
   },
   "commands": [
     {
@@ -156,6 +156,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-bulk-changes.shared-behavior",
+        "slice": "Review bulk changes",
+        "summary": "Accepts every tracked insertion/deletion through the shared model and clears the document's revision list.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.Core.Model.Tests/TrackChangesTests.cs",
+          "test": "TrackChangesTests.AcceptAll_NormalizesInsertions_AndRemovesDeletions"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.AcceptAll_clears_every_revision"
+        }
       }
     },
     {
@@ -208,6 +221,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-changes.shared-behavior",
+        "slice": "Review changes",
+        "summary": "Accepts the selected/current insertion as ordinary text while leaving unrelated tracked changes pending.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ReviewingPaneTests.cs",
+          "test": "ReviewingPaneTests.AcceptRevision_ResolvesOnlyTheSelectedChange"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.AcceptCurrent_clears_insertion_mark_keeping_text"
+        }
       }
     },
     {
@@ -5097,6 +5123,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-display.shared-behavior",
+        "slice": "Review display modes",
+        "summary": "Keeps tracked revision data intact while returning the display policy to All Markup in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/TrackingDisplayControlTests.cs",
+          "test": "TrackingDisplayControlTests.DisplayForReview_TogglingBackToAllMarkup_RestoresNormalRenderingAndLosesNothing"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.DisplayForReview_AllMarkup_shows_and_styles_insertions_and_deletions"
+        }
       }
     },
     {
@@ -5139,6 +5178,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-display.shared-behavior",
+        "slice": "Review display modes",
+        "summary": "Applies All Markup without mutating the document model while rendering tracked insertions and deletions in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/TrackingDisplayControlTests.cs",
+          "test": "TrackingDisplayControlTests.DisplayForReview_SetToAllMarkup_DoesNotAffectModel"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.DisplayForReview_AllMarkup_shows_and_styles_insertions_and_deletions"
+        }
       }
     },
     {
@@ -5181,6 +5233,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-display.shared-behavior",
+        "slice": "Review display modes",
+        "summary": "Hides deleted text in No Markup while preserving deleted-run revision data in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/TrackingDisplayControlTests.cs",
+          "test": "TrackingDisplayControlTests.DisplayForReview_NoMarkup_DeletedRunSurvivesCommitWithKindAndText"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.DisplayForReview_NoMarkup_hides_deleted_text_without_losing_revision_data"
+        }
       }
     },
     {
@@ -5223,6 +5288,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-display.shared-behavior",
+        "slice": "Review display modes",
+        "summary": "Hides inserted text in Original view while preserving inserted-run revision data in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/TrackingDisplayControlTests.cs",
+          "test": "TrackingDisplayControlTests.DisplayForReview_Original_InsertedRunSurvivesCommitWithKindAndText"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.DisplayForReview_Original_hides_inserted_text_without_losing_revision_data"
+        }
       }
     },
     {
@@ -5265,6 +5343,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-display.shared-behavior",
+        "slice": "Review display modes",
+        "summary": "Uses Simple Markup/final inline text while preserving tracked revision metadata across the display-mode round trip.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/TrackingDisplayControlTests.cs",
+          "test": "TrackingDisplayControlTests.DisplayForReview_SimpleMarkup_InsertedRunSurvivesCommitWithKindAndText"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.DisplayForReview_SimpleMarkup_uses_final_inline_text_and_change_bar"
+        }
       }
     },
     {
@@ -15762,6 +15853,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-change-navigation.shared-behavior",
+        "slice": "Review change navigation",
+        "summary": "Routes the Next Change command to the host-owned Reviewing Pane navigation callback in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.ReviewTrackingAndChanges_CommandRoutesExecuteBackedActions"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.Review_change_navigation_commands_route_to_host_callbacks"
+        }
       }
     },
     {
@@ -17771,6 +17875,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-change-navigation.shared-behavior",
+        "slice": "Review change navigation",
+        "summary": "Routes the Previous Change command to the host-owned Reviewing Pane navigation callback in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.ReviewTrackingAndChanges_CommandRoutesExecuteBackedActions"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.Review_change_navigation_commands_route_to_host_callbacks"
+        }
       }
     },
     {
@@ -18540,6 +18657,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-bulk-changes.shared-behavior",
+        "slice": "Review bulk changes",
+        "summary": "Rejects every tracked insertion/deletion through the shared model and clears the document's revision list.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.Core.Model.Tests/TrackChangesTests.cs",
+          "test": "TrackChangesTests.RejectAll_RemovesInsertions_AndNormalizesDeletions"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.RejectAll_clears_every_revision_and_drops_insertions"
+        }
       }
     },
     {
@@ -18592,6 +18722,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-changes.shared-behavior",
+        "slice": "Review changes",
+        "summary": "Rejects the selected/current insertion by removing inserted text while leaving unrelated tracked changes pending.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ReviewingPaneTests.cs",
+          "test": "ReviewingPaneTests.RejectRevision_ResolvesOnlyTheSelectedChange_AndRemovesInsertedText"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.RejectCurrent_removes_inserted_text"
+        }
       }
     },
     {
@@ -18977,6 +19120,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.reviewing-pane.shared-behavior",
+        "slice": "Reviewing Pane",
+        "summary": "Surfaces tracked revisions in the Reviewing Pane data path and resolves pane entries through the shared revision list behavior.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ReviewingPaneTests.cs",
+          "test": "ReviewingPaneTests.ListRevisions_SurfacesEveryTrackedChangeInReadingOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ReviewingPaneTests.cs",
+          "test": "ReviewingPaneTests.AcceptEntry_Insertion_Keeps_Run_As_Ordinary_Text"
+        }
       }
     },
     {
@@ -23450,6 +23606,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-balloons.shared-behavior",
+        "slice": "Review balloons",
+        "summary": "Renders comment and tracked-change balloons with shared card metadata and anchored revision/comment data in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ThesaurusAndBalloonsTests.cs",
+          "test": "ThesaurusAndBalloonsTests.BalloonOverlay_Enable_RendersSharedCardMetadata"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.Review_balloons_pane_renders_revisions_and_comments_from_model_data"
+        }
       }
     },
     {
@@ -23492,6 +23661,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-show-markup.shared-behavior",
+        "slice": "Review Show Markup",
+        "summary": "Toggles comment markup visibility without dropping comment anchors from the model.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/TrackingDisplayControlTests.cs",
+          "test": "TrackingDisplayControlTests.ShowMarkupComments_WhenToggedOff_CommentIdSurvivesCommit"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.ShowMarkup_toggles_hide_visual_chrome_but_preserve_model_data"
+        }
       }
     },
     {
@@ -23534,6 +23716,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-show-markup.shared-behavior",
+        "slice": "Review Show Markup",
+        "summary": "Toggles tracked-formatting chrome while preserving FormatRevision metadata through commit.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/TrackingDisplayControlTests.cs",
+          "test": "TrackingDisplayControlTests.ShowMarkupFormatting_WhenOff_FormatRevisionSurvivesCommit"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.ShowMarkup_toggles_hide_visual_chrome_but_preserve_model_data"
+        }
       }
     },
     {
@@ -23576,6 +23771,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-show-markup.shared-behavior",
+        "slice": "Review Show Markup",
+        "summary": "Toggles Insertions and Deletions visual chrome without dropping tracked revision markers from the model.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/TrackingDisplayControlTests.cs",
+          "test": "TrackingDisplayControlTests.ShowMarkupInsertionsDeletions_WhenToggedOff_RevisionMarkerSurvivesCommit"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.ShowMarkup_toggles_hide_visual_chrome_but_preserve_model_data"
+        }
       }
     },
     {
@@ -29996,6 +30204,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-tracking.shared-behavior",
+        "slice": "Review tracking",
+        "summary": "Toggles the WPF Track Changes state through the ribbon command and proves Avalonia records typed edits as tracked insertions while Track Changes is enabled.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.ReviewTrackingAndChanges_CommandRoutesExecuteBackedActions"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewTrackEditTests.cs",
+          "test": "DocumentViewTrackEditTests.Typing_with_TrackChanges_on_records_a_tracked_insertion"
+        }
       }
     },
     {
