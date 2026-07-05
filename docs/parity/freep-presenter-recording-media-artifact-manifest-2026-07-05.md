@@ -9,10 +9,11 @@ Parity improved:
 - Recording review rows now generate package-ready WebVTT narration/camera caption payloads under `ppt/media/recording-captions/` when the backing narration/camera artifact is captured.
 - `PptxPackageWriter` writes the manifest to `ppt/media/recordingArtifacts.xml`, materializes captured payload bytes at their declared `ppt/media/...` package paths, and `PptxPackageReader` reloads both metadata and payload bytes without requiring local PowerPoint COM.
 - WPF and Avalonia slideshow teardown both call the shared planner. Their current deferred capture adapters still do not claim fake persisted media artifacts.
+- PowerPoint-native media caption package coverage is tracked separately in `docs/parity/freep-powerpoint-native-media-caption-package-baseline-2026-07-05.md`; this manifest remains the FreeP-generated recording artifact contract.
 
 Remaining gaps:
 
 - Real OS microphone/camera adapters are still needed.
-- PowerPoint-native caption relationship baselines are still needed for recorded narration/video review workflows.
+- PowerPoint COM-backed recording capture baselines are still needed for recorded narration/video review workflows.
 - PowerPoint-authoritative recording media baselines still require a COM-capable PowerPoint lane.
 - Real microphone/camera adapters remain deferred; the covered path is package authoring for captured backend payloads.
