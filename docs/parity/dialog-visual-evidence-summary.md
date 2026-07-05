@@ -31,19 +31,19 @@ Sources:
 | WPF manifest ids without Avalonia pair | 0 |
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches (scale-aware logical units) | 28 |
-| Raw PNG pixel dimension mismatches | 58 |
+| Paired dimension mismatches (scale-aware logical units) | 21 |
+| Raw PNG pixel dimension mismatches | 51 |
 | Raw PNG mismatches normalized by capture DPI | 30 |
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
 
 ## Scale-Aware Dimension Mismatch Classification
 
-The 28 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept expected platform/native control differences, or refresh limited evidence.
+The 21 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept expected platform/native control differences, or refresh limited evidence.
 
 | Bucket | Count | Top surface ids | Top next action |
 | --- | ---: | --- | --- |
-| content/visual mismatch | 9 | dialog.FormatCells.Fill<br>dialog.FormatCells.Alignment<br>dialog.FormatCells<br>dialog.FormatCells.Number<br>dialog.FormatCells.Border | Review the Format Cells tab model, tab order, and target frame size together. |
+| content/visual mismatch | 2 | dialog.Options.Formulas<br>dialog.SelectDataSource | Review the Formulas page content height and scrolling contract before changing dialog dimensions. |
 | expected platform/native difference | 19 | dialog.FindReplace.Replace<br>dialog.FindReplace<br>dialog.FindReplace.Find<br>dialog.Sparkline<br>dialog.Options.QuickAccessToolbar | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 
 ## Top paired visual outliers
@@ -57,11 +57,11 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.PivotTableOptions.Data | 520x500 | 520x500 | 520x500 px @ 96 DPI vs 520x500 px @ 96 DPI |  |  | 0.549 | 0.164 | 0.131 | 0.253 |
 | dialog.RemoveDuplicates | 360x360 | 360x360 | 360x360 px @ 96 DPI vs 360x360 px @ 96 DPI |  |  | 0.516 | 0.196 | 0.151 | 0.168 |
 | dialog.PrintPreview | 1120x700 | 1120x700 | 1120x700 px @ 96 DPI vs 1120x700 px @ 96 DPI |  |  | 0.512 | 0.141 | 0.017 | 0.353 |
-| dialog.FormatCells.Fill | 620x540 | 690x660 | 620x540 px @ 96 DPI vs 690x660 px @ 96 DPI | content/visual mismatch |  | 0.505 | 0.030 | 0.039 | 0.101 |
 | dialog.PivotValueFieldSettings.NumberFormat | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.491 | 0.162 | 0.137 | 0.192 |
 | dialog.PivotTableOptions.TotalsAndFilters | 520x500 | 520x500 | 520x500 px @ 96 DPI vs 520x500 px @ 96 DPI |  |  | 0.489 | 0.147 | 0.122 | 0.219 |
 | dialog.PivotValueFieldSettings | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.472 | 0.161 | 0.133 | 0.178 |
 | dialog.PivotValueFieldSettings.SummarizeValuesBy | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.472 | 0.161 | 0.133 | 0.178 |
+| dialog.PivotTableOptions.AltText | 520x500 | 520x500 | 520x500 px @ 96 DPI vs 520x500 px @ 96 DPI |  |  | 0.470 | 0.137 | 0.123 | 0.210 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -72,13 +72,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.FindReplace | expected platform/native difference | 720x430 | 720x440 | 0x10 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.FindReplace.Find | expected platform/native difference | 720x430 | 720x440 | 0x10 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.FindReplace.Replace | expected platform/native difference | 720x430 | 720x440 | 0x10 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
-| dialog.FormatCells | content/visual mismatch | 620x540 | 690x660 | 70x120 | The Format Cells captures differ in tab/control presentation and content density in addition to size. | Review the Format Cells tab model, tab order, and target frame size together. |
-| dialog.FormatCells.Alignment | content/visual mismatch | 620x540 | 690x660 | 70x120 | The Format Cells captures differ in tab/control presentation and content density in addition to size. | Review the Format Cells tab model, tab order, and target frame size together. |
-| dialog.FormatCells.Border | content/visual mismatch | 620x597 | 690x660 | 70x63 | The Format Cells captures differ in tab/control presentation and content density in addition to size. | Review the Format Cells tab model, tab order, and target frame size together. |
-| dialog.FormatCells.Fill | content/visual mismatch | 620x540 | 690x660 | 70x120 | The Format Cells captures differ in tab/control presentation and content density in addition to size. | Review the Format Cells tab model, tab order, and target frame size together. |
-| dialog.FormatCells.Font | content/visual mismatch | 620x540 | 690x660 | 70x120 | The Format Cells captures differ in tab/control presentation and content density in addition to size. | Review the Format Cells tab model, tab order, and target frame size together. |
-| dialog.FormatCells.Number | content/visual mismatch | 620x540 | 690x660 | 70x120 | The Format Cells captures differ in tab/control presentation and content density in addition to size. | Review the Format Cells tab model, tab order, and target frame size together. |
-| dialog.FormatCells.Protection | content/visual mismatch | 620x540 | 690x660 | 70x120 | The Format Cells captures differ in tab/control presentation and content density in addition to size. | Review the Format Cells tab model, tab order, and target frame size together. |
 | dialog.Options | expected platform/native difference | 744x521 | 760x560 | 16x39 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.Options.AddIns | expected platform/native difference | 744x521 | 760x560 | 16x39 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.Options.Advanced | expected platform/native difference | 744x521 | 760x560 | 16x39 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
@@ -128,13 +121,13 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.FindReplace.Find | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Find.png | 720x440 | 720x440 px @ 96 DPI | True | False | 0.418 |
 | dialog.FindReplace.Replace | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Replace.png | 720x440 | 720x440 px @ 96 DPI | True | False | 0.467 |
 | dialog.ForecastSheet | dialog.ForecastSheet.png | 320x150 | 480x225 px @ 144 DPI | True | dialog.ForecastSheet.png | 320x150 | 320x150 px @ 96 DPI | True | True | 0.057 |
-| dialog.FormatCells | dialog.FormatCells.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.png | 690x660 | 690x660 px @ 96 DPI | True | False | 0.424 |
-| dialog.FormatCells.Alignment | dialog.FormatCells.Alignment.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Alignment.png | 690x660 | 690x660 px @ 96 DPI | True | False | 0.453 |
-| dialog.FormatCells.Border | dialog.FormatCells.Border.png | 620x597 | 620x597 px @ 96 DPI | True | dialog.FormatCells.Border.png | 690x660 | 690x660 px @ 96 DPI | True | False | 0.422 |
-| dialog.FormatCells.Fill | dialog.FormatCells.Fill.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Fill.png | 690x660 | 690x660 px @ 96 DPI | True | False | 0.505 |
-| dialog.FormatCells.Font | dialog.FormatCells.Font.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Font.png | 690x660 | 690x660 px @ 96 DPI | True | False | 0.417 |
-| dialog.FormatCells.Number | dialog.FormatCells.Number.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Number.png | 690x660 | 690x660 px @ 96 DPI | True | False | 0.424 |
-| dialog.FormatCells.Protection | dialog.FormatCells.Protection.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Protection.png | 690x660 | 690x660 px @ 96 DPI | True | False | 0.354 |
+| dialog.FormatCells | dialog.FormatCells.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.029 |
+| dialog.FormatCells.Alignment | dialog.FormatCells.Alignment.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Alignment.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.090 |
+| dialog.FormatCells.Border | dialog.FormatCells.Border.png | 620x597 | 620x597 px @ 96 DPI | True | dialog.FormatCells.Border.png | 620x597 | 620x597 px @ 96 DPI | True | True | 0.186 |
+| dialog.FormatCells.Fill | dialog.FormatCells.Fill.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Fill.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.159 |
+| dialog.FormatCells.Font | dialog.FormatCells.Font.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Font.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.059 |
+| dialog.FormatCells.Number | dialog.FormatCells.Number.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Number.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.029 |
+| dialog.FormatCells.Protection | dialog.FormatCells.Protection.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Protection.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.015 |
 | dialog.FormatChartArea | dialog.FormatChartArea.png | 420x590 | 630x885 px @ 144 DPI | True | dialog.FormatChartArea.png | 420x590 | 420x590 px @ 96 DPI | True | True | 0.060 |
 | dialog.GoalSeek | dialog.GoalSeek.png | 380x210 | 380x210 px @ 96 DPI | True | dialog.GoalSeek.png | 380x210 | 380x210 px @ 96 DPI | True | True | 0.725 |
 | dialog.GoalSeekStatus | dialog.GoalSeekStatus.png | 380x190 | 380x190 px @ 96 DPI | True | dialog.GoalSeekStatus.png | 380x190 | 380x190 px @ 96 DPI | True | True | 0.089 |
