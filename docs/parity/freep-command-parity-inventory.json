@@ -36,7 +36,7 @@
         "freep/FreeP.App.Host.Tests/SlideShowTests.cs",
         "freep/FreeP.App.Avalonia.Tests/SlideShowWindowHeadlessTests.cs"
       ],
-      "remainingWork": "Shared recording capture backend contracts, deterministic no-device artifact evidence, review rows, and session-summary persistable counts are covered. Real microphone/camera adapters, PPTX media-part authoring, subtitles, and PowerPoint COM recording baselines remain deferred."
+      "remainingWork": "Shared recording capture backend contracts, deterministic no-device artifact evidence, review rows, session-summary persistable counts, and captured PPTX media-part payload authoring are covered. Real microphone/camera adapters, subtitles, and PowerPoint COM recording baselines remain deferred."
     },
     {
       "evidenceId": "freep.presenter.ink.execution",
