@@ -13,6 +13,8 @@ Each required host/page row reports `trusted`, `failed`, or `missing`, plus the 
 
 The 2026-07-04 evidence-depth update tightened the same summary contract: Backstage print/export rows must also declare scenario-specific `backstageWorkflow` metadata. `backstage-print-preview-fidelity` rows must report `print-preview`, and `backstage-pdf-export-fidelity` rows must report `pdf-export`, so a real capture cannot be accidentally cross-wired between Print Preview and Create PDF evidence.
 
+The 2026-07-05 print/export evidence hardening also requires real renderer capture sources for trusted backstage rows: WPF rows must declare `captureSource=wpf-composite-renderer`, and Avalonia rows must declare `captureSource=avalonia-render-target`. Software fallback, placeholder, or fallback capture metadata now fails the normalized row and produces an explicit `missing-real-captures` blocker instead of being counted as trusted print/export evidence.
+
 The follow-up 2026-07-04 renderer-contract update extends compiled pair validation beyond backstage, section, review, drawing-object, and chart/SmartArt rows. Table scenarios now compare WPF/Avalonia table layout and pagination signatures, and field/reference scenarios now compare WPF/Avalonia field counts, field kinds, complex-field keywords, and header/footer field slots. This keeps shared visual evidence from passing on row counts when the semantic renderer contract has drifted between hosts.
 
 The 2026-07-04 WordArt watermark contract-depth slice adds paired semantic validation for `wordart-picture-watermark-layout`. The normalizer now compares WPF/Avalonia page feature signatures for columns, page border, and picture watermark metadata, plus floating object and drawing-effect signatures, before trusting the paired visual evidence row.
@@ -25,6 +27,7 @@ The existing summary already failed the run for missing backstage pairs, placeho
 
 - The paired runner now produces trusted WPF/Avalonia backstage evidence rows locally under `freew-fidelity-corpus/runs/...`; keep that runner output as the required artifact before claiming a Backstage print/export visual slice ready.
 - MS Word baseline comparison still depends on Word COM availability when using `tools/Run-FreeWWordBaselineEvidence.ps1` without `-AllowMissingWord`.
+- `tools/Run-FreeWWordBaselineEvidence.ps1` can still document Word COM unavailability with software-rendered WPF fallback output, but that fallback output is no longer trusted as backstage print/export visual evidence.
 - Native printer selection remains host-specific; the authoritative cross-host evidence path is still Print Preview plus PDF export raster evidence.
 
 ## Current paired runner evidence
