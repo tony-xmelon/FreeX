@@ -12,6 +12,7 @@ Scope: bounded FreeP visible paragraph-list UI slice for table-cell text editing
 - PPTX import now resolves paragraph `a:buBlip/a:blip r:embed` image bullets from slide relationships into a shared `Paragraph.BulletImage` payload.
 - `SlideCompositor` and `TextLayoutPlanner` carry imported image bullets into renderer-neutral `TextBulletPlacement` plans, while WPF and Avalonia only decode/draw the shared image placement through thin host helpers.
 - WPF and Avalonia picture-bullet commands now feed picked image bytes/content type into `PresentationPictureBulletAuthoringPlanner` and `TableCellEditPlanner`, applying image bullets through the shared undoable table-cell paragraph command path.
+- Shared table-cell list preset/toggle planning now clears stale image-bullet payloads when switching image bullets back to character, numbering, or suppressed list states, and the rich-edit paragraph metadata reports the active image-bullet payload for WPF/Avalonia adapters.
 - PPTX writer serialization now emits authored image bullets as slide `a:buBlip` relationships plus `ppt/media/slideN_bulletM.*` parts that round-trip through the existing reader.
 
 ## Remaining
@@ -26,11 +27,14 @@ Scope: bounded FreeP visible paragraph-list UI slice for table-cell text editing
 - `PresentationListGalleryPlannerTests.NumberingGallery_UsesSharedTableCellPresetDescriptors`
 - `PresentationListGalleryPlannerTests.TryGetPresetCommand_MapsVisibleMenuCommandsToMutationPreset`
 - `TableCellEditPlannerTests.PlanParagraphPictureBullet_SelectionBuildsUndoableSharedCommand`
+- `TableCellEditPlannerTests.PlanRichTextEdit_ImageBulletParagraph_ReportsImageBulletMetadata`
+- `TableCellEditPlannerTests.PlanParagraphListPreset_CharacterPresetClearsExistingPictureBulletPayload`
 - `FreePRibbonDefinitionProfileTests.Home_paragraph_group_exposes_shared_visible_list_gallery_in_both_profiles`
 - `RibbonEditorCompleteness5BTests.Cmd_Bullets_VisibleGalleryPresetCommand_AppliesSharedTableCellPreset`
 - `RibbonEditorCompleteness5BTests.Cmd_PictureBullet_WithInjectedPicker_AppliesSharedTableCellImageBullet`
 - `MainWindowHeadlessTests.Ribbon_visible_bullet_gallery_preset_command_routes_to_active_table_cell`
 - `MainWindowHeadlessTests.Ribbon_picture_bullet_command_routes_picked_payload_to_active_table_cell`
+- `SlideCanvasAvaloniaTests.TableCellEditAdapter_PlanParagraphPictureBullet_ReportsSharedImageMetadata`
 - `PptxRoundTripTests.RoundTrip_AuthoredPictureBullet_WritesAndReadsBuBlipMedia`
 - `BulletsAutofitTests.PptxImport_BuBlip_ResolvesImageBulletIntoSharedRenderPlan`
 - `TextLayoutPlannerTests.PlanBodyText_ImageBullet_PlansImagePlacementFromIndentAndHanging`
