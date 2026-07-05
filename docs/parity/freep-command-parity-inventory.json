@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 103,
-    "both": 97,
+    "totalCommands": 122,
+    "both": 116,
     "wpfOnly": 0,
     "avaloniaOnly": 6,
     "missingWpf": 6,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 97,
+    "shared": 116,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 6,
@@ -130,6 +130,7 @@
       "hostCoverage": "WPF/Avalonia shared TableCellEditPlanner routes with thin WPF RichTextBox and Avalonia overlay adapters",
       "evidenceDocs": [
         "docs/parity/freep-table-cell-rich-editor-fidelity-2026-07-03.md",
+        "docs/parity/freep-list-gallery-image-bullet-ui-2026-07-05.md",
         "docs/planning/freep-powerpoint-parity-status-2026-06-27.md"
       ],
       "verification": [
@@ -140,7 +141,7 @@
         "freep/FreeP.App.Rendering.Avalonia.Tests/SlideCanvasAvaloniaTests.cs",
         "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
       ],
-      "remainingWork": "Avalonia still lacks a true editable rich-text widget equivalent to WPF RichTextBox; visible PowerPoint-style list galleries, image bullets, and PowerPoint-authoritative rich-editor visual baselines remain deferred."
+      "remainingWork": "Avalonia still lacks a true editable rich-text widget equivalent to WPF RichTextBox; picture-bullet import/rendering and PowerPoint-authoritative list-gallery/rich-editor visual baselines remain deferred."
     }
   ],
   "commands": [
@@ -1301,6 +1302,244 @@
       ]
     },
     {
+      "commandId": "freep.bullets",
+      "label": "Bullets",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Bullets",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Bullets",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.bullets.bullet.check",
+      "label": "✓  Check Bullet",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "✓  Check Bullet",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "✓  Check Bullet",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.bullets.bullet.dash",
+      "label": "–  Dash Bullet",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "–  Dash Bullet",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "–  Dash Bullet",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.bullets.bullet.disc",
+      "label": "•  Disc Bullet",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "•  Disc Bullet",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "•  Disc Bullet",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.bullets.bullet.hollow-circle",
+      "label": "◦  Hollow Circle Bullet",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "◦  Hollow Circle Bullet",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "◦  Hollow Circle Bullet",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.bullets.bullet.square",
+      "label": "▪  Square Bullet",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "▪  Square Bullet",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "▪  Square Bullet",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.bullets.picture",
+      "label": "[image]",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "[image]",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "[image]",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
       "commandId": "freep.chart.edit-data",
       "label": "Edit Data",
       "wpfPresent": true,
@@ -1801,6 +2040,74 @@
       ]
     },
     {
+      "commandId": "freep.indent-decrease",
+      "label": "Decrease Indent",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Decrease Indent",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Decrease Indent",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.indent-increase",
+      "label": "Increase Indent",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Increase Indent",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Increase Indent",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ]
+    },
+    {
       "commandId": "freep.insert-chart-bar",
       "label": "Bar",
       "wpfPresent": true,
@@ -2171,6 +2478,346 @@
           "label": "New Slide",
           "controlType": "RibbonButton",
           "layout": "Large"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.numbering",
+      "label": "Numbering",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Numbering",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Numbering",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.numbering.number.alpha-lower-period",
+      "label": "a.  Alpha a.",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "a.  Alpha a.",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "a.  Alpha a.",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.numbering.number.alpha-upper-period",
+      "label": "A.  Alpha A.",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "A.  Alpha A.",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "A.  Alpha A.",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.numbering.number.arabic-period",
+      "label": "1.  Arabic 1.",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "1.  Arabic 1.",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "1.  Arabic 1.",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.numbering.number.roman-lower-period",
+      "label": "i.  Roman i.",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "i.  Roman i.",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "i.  Roman i.",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.numbering.number.roman-upper-period",
+      "label": "I.  Roman I.",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "I.  Roman I.",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "I.  Roman I.",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.paragraph.align-center",
+      "label": "Center",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Center",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Center",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.paragraph.align-justify",
+      "label": "Justify",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Justify",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Justify",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.paragraph.align-left",
+      "label": "Align Left",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Align Left",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Align Left",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.paragraph.align-right",
+      "label": "Align Right",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Align Right",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Align Right",
+          "controlType": "RibbonButton",
+          "layout": "Small"
         }
       ]
     },
