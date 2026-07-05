@@ -69,7 +69,7 @@
     "platformOnly": 12,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 27
+    "behaviorEvidenceRows": 39
   },
   "commands": [
     {
@@ -82,7 +82,7 @@
       "classification": "wpf-profile-only",
       "gapClassification": "platform-only",
       "gapClassificationRule": "platform-only",
-      "notes": "Host, shell, or desktop-only command; track separately from shared Word behavior gaps.",
+      "notes": "Accepted host variance: WPF desktop Help/Product command backed by local About dialog; Avalonia compact shell omits the desktop Help tab.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -101,6 +101,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.platform-only.wpf-help-shell",
+        "slice": "WPF Help shell variance",
+        "summary": "WPF exposes About FreeW on the desktop Help/Product tab; Avalonia intentionally omits that desktop Help tab from its compact portable shell profile.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.HelpTab_ExposesOnlyBackedFreeWLocalSupportCommands"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/RibbonAndDocumentTests.cs",
+          "test": "RibbonAndDocumentTests.Avalonia_file_shell_commands_are_backed_and_desktop_help_arrange_commands_are_absent"
+        }
       }
     },
     {
@@ -459,7 +472,7 @@
       "classification": "wpf-profile-only",
       "gapClassification": "platform-only",
       "gapClassificationRule": "platform-only",
-      "notes": "Host, shell, or desktop-only command; track separately from shared Word behavior gaps.",
+      "notes": "Accepted host variance: WPF desktop multi-window tiling command; Avalonia portable shell intentionally exposes New Window and Split without Arrange All tiling.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -478,6 +491,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.platform-only.window-shell",
+        "slice": "Window-management shell variance",
+        "summary": "WPF exposes Arrange All for desktop multi-window tiling; Avalonia keeps the portable View > Window profile to New Window and Split only.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.View_Window_NewWindowAndArrangeAll_AreBacked"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/RibbonAndDocumentTests.cs",
+          "test": "RibbonAndDocumentTests.Avalonia_file_shell_commands_are_backed_and_desktop_help_arrange_commands_are_absent"
+        }
       }
     },
     {
@@ -490,7 +516,7 @@
       "classification": "avalonia-profile-only",
       "gapClassification": "platform-only",
       "gapClassificationRule": "platform-only",
-      "notes": "Host, shell, or desktop-only command; track separately from shared Word behavior gaps.",
+      "notes": "Accepted host variance: Avalonia compact File entry opens its portable shell file surface; WPF uses the Backstage/File surface instead of this generated command id.",
       "wpfLocations": [],
       "avaloniaLocations": [
         {
@@ -509,6 +535,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.platform-only.avalonia-file-shell",
+        "slice": "Avalonia compact File shell variance",
+        "summary": "Avalonia exposes a compact File entry for the portable shell; WPF routes file lifecycle through its Backstage/File surface instead of this generated command id.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.Wpf_profile_uses_backstage_shell_instead_of_avalonia_file_command_strip"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/RibbonAndDocumentTests.cs",
+          "test": "RibbonAndDocumentTests.Avalonia_file_shell_commands_are_backed_and_desktop_help_arrange_commands_are_absent"
+        }
       }
     },
     {
@@ -3754,7 +3793,7 @@
       "classification": "wpf-profile-only",
       "gapClassification": "platform-only",
       "gapClassificationRule": "platform-only",
-      "notes": "Host, shell, or desktop-only command; track separately from shared Word behavior gaps.",
+      "notes": "Accepted host variance: WPF desktop Help/Product update command; Avalonia compact shell omits update orchestration from the ribbon profile.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -3773,6 +3812,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.platform-only.wpf-help-shell",
+        "slice": "WPF Help shell variance",
+        "summary": "WPF exposes Check for Updates on the desktop Help/Product tab; Avalonia intentionally omits update orchestration from its compact portable shell profile.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.HelpTab_ExposesOnlyBackedFreeWLocalSupportCommands"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/RibbonAndDocumentTests.cs",
+          "test": "RibbonAndDocumentTests.Avalonia_file_shell_commands_are_backed_and_desktop_help_arrange_commands_are_absent"
+        }
       }
     },
     {
@@ -4375,7 +4427,7 @@
       "classification": "wpf-profile-only",
       "gapClassification": "platform-only",
       "gapClassificationRule": "platform-only",
-      "notes": "Host, shell, or desktop-only command; track separately from shared Word behavior gaps.",
+      "notes": "Accepted host variance: WPF desktop diagnostics shortcut on Help; Avalonia compact shell omits the desktop Help tab.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -4394,6 +4446,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.platform-only.wpf-help-shell",
+        "slice": "WPF Help shell variance",
+        "summary": "WPF exposes Copy Diagnostics on the desktop Help tab; Avalonia intentionally omits that desktop diagnostics shortcut from its compact portable shell profile.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.HelpTab_ExposesOnlyBackedFreeWLocalSupportCommands"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/RibbonAndDocumentTests.cs",
+          "test": "RibbonAndDocumentTests.Avalonia_file_shell_commands_are_backed_and_desktop_help_arrange_commands_are_absent"
+        }
       }
     },
     {
@@ -6445,7 +6510,7 @@
       "classification": "wpf-profile-only",
       "gapClassification": "platform-only",
       "gapClassificationRule": "platform-only",
-      "notes": "Host, shell, or desktop-only command; track separately from shared Word behavior gaps.",
+      "notes": "Accepted host variance: WPF desktop support shortcut on Help; Avalonia compact shell omits the desktop Help tab.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -6464,6 +6529,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.platform-only.wpf-help-shell",
+        "slice": "WPF Help shell variance",
+        "summary": "WPF exposes Feedback on the desktop Help tab; Avalonia intentionally omits that desktop support shortcut from its compact portable shell profile.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.HelpTab_ExposesOnlyBackedFreeWLocalSupportCommands"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/RibbonAndDocumentTests.cs",
+          "test": "RibbonAndDocumentTests.Avalonia_file_shell_commands_are_backed_and_desktop_help_arrange_commands_are_absent"
+        }
       }
     },
     {
@@ -7404,7 +7482,7 @@
       "classification": "wpf-profile-only",
       "gapClassification": "platform-only",
       "gapClassificationRule": "platform-only",
-      "notes": "Host, shell, or desktop-only command; track separately from shared Word behavior gaps.",
+      "notes": "Accepted host variance: WPF desktop Help shortcut; Avalonia compact shell omits the desktop Help tab.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -7423,6 +7501,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.platform-only.wpf-help-shell",
+        "slice": "WPF Help shell variance",
+        "summary": "WPF exposes Help Online on the desktop Help tab; Avalonia intentionally omits that desktop Help tab from its compact portable shell profile.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.HelpTab_ExposesOnlyBackedFreeWLocalSupportCommands"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/RibbonAndDocumentTests.cs",
+          "test": "RibbonAndDocumentTests.Avalonia_file_shell_commands_are_backed_and_desktop_help_arrange_commands_are_absent"
+        }
       }
     },
     {
@@ -12563,7 +12654,7 @@
       "classification": "avalonia-profile-only",
       "gapClassification": "platform-only",
       "gapClassificationRule": "platform-only",
-      "notes": "Host, shell, or desktop-only command; track separately from shared Word behavior gaps.",
+      "notes": "Accepted host variance: Avalonia compact File command makes PDF text import explicit; WPF covers PDF/import through file workflow and document-persistence evidence.",
       "wpfLocations": [],
       "avaloniaLocations": [
         {
@@ -12582,6 +12673,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.platform-only.pdf-import-shell",
+        "slice": "PDF import shell variance",
+        "summary": "Avalonia exposes PDF text import as an explicit portable File command; WPF carries PDF/import support through file workflow and document-persistence evidence rather than this generated command id.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DocumentPersistenceWorkflowTests.cs",
+          "test": "DocumentPersistenceWorkflowTests.ImportPdfText_UsesExplicitImportAdaptersOutsideNormalOpenSaveCatalog"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/RibbonAndDocumentTests.cs",
+          "test": "RibbonAndDocumentTests.Import_pdf_ribbon_command_invokes_host_route"
+        }
       }
     },
     {
@@ -13324,7 +13428,7 @@
       "classification": "wpf-profile-only",
       "gapClassification": "platform-only",
       "gapClassificationRule": "platform-only",
-      "notes": "Host, shell, or desktop-only command; track separately from shared Word behavior gaps.",
+      "notes": "Accepted host variance: WPF desktop Help/Product legal dialog; Avalonia compact shell omits the desktop Help tab.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -13343,6 +13447,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.platform-only.wpf-help-shell",
+        "slice": "WPF Help shell variance",
+        "summary": "WPF exposes Legal Notices on the desktop Help/Product tab; Avalonia intentionally omits that desktop Help tab from its compact portable shell profile.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.HelpTab_ExposesOnlyBackedFreeWLocalSupportCommands"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/RibbonAndDocumentTests.cs",
+          "test": "RibbonAndDocumentTests.Avalonia_file_shell_commands_are_backed_and_desktop_help_arrange_commands_are_absent"
+        }
       }
     },
     {
@@ -15393,7 +15510,7 @@
       "classification": "avalonia-profile-only",
       "gapClassification": "platform-only",
       "gapClassificationRule": "platform-only",
-      "notes": "Host, shell, or desktop-only command; track separately from shared Word behavior gaps.",
+      "notes": "Accepted host variance: Avalonia compact File command; WPF routes New through Backstage/File lifecycle workflow instead of this generated command id.",
       "wpfLocations": [],
       "avaloniaLocations": [
         {
@@ -15412,6 +15529,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.platform-only.avalonia-file-shell",
+        "slice": "Avalonia compact File shell variance",
+        "summary": "Avalonia exposes New as a compact File command; WPF routes the same lifecycle through its Backstage/File workflow rather than this generated command id.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.Wpf_profile_uses_backstage_shell_instead_of_avalonia_file_command_strip"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/RibbonAndDocumentTests.cs",
+          "test": "RibbonAndDocumentTests.Avalonia_file_shell_commands_are_backed_and_desktop_help_arrange_commands_are_absent"
+        }
       }
     },
     {
@@ -15940,7 +16070,7 @@
       "classification": "avalonia-profile-only",
       "gapClassification": "platform-only",
       "gapClassificationRule": "platform-only",
-      "notes": "Host, shell, or desktop-only command; track separately from shared Word behavior gaps.",
+      "notes": "Accepted host variance: Avalonia compact File command; WPF routes Open through Backstage/File lifecycle workflow instead of this generated command id.",
       "wpfLocations": [],
       "avaloniaLocations": [
         {
@@ -15959,6 +16089,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.platform-only.avalonia-file-shell",
+        "slice": "Avalonia compact File shell variance",
+        "summary": "Avalonia exposes Open as a compact File command; WPF routes the same lifecycle through its Backstage/File workflow rather than this generated command id.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.Wpf_profile_uses_backstage_shell_instead_of_avalonia_file_command_strip"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/RibbonAndDocumentTests.cs",
+          "test": "RibbonAndDocumentTests.Avalonia_file_shell_commands_are_backed_and_desktop_help_arrange_commands_are_absent"
+        }
       }
     },
     {
@@ -18849,7 +18992,7 @@
       "classification": "avalonia-profile-only",
       "gapClassification": "platform-only",
       "gapClassificationRule": "platform-only",
-      "notes": "Host, shell, or desktop-only command; track separately from shared Word behavior gaps.",
+      "notes": "Accepted host variance: Avalonia compact File command; WPF routes Save through Backstage/File lifecycle workflow instead of this generated command id.",
       "wpfLocations": [],
       "avaloniaLocations": [
         {
@@ -18868,6 +19011,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.platform-only.avalonia-file-shell",
+        "slice": "Avalonia compact File shell variance",
+        "summary": "Avalonia exposes Save as a compact File command; WPF routes the same lifecycle through its Backstage/File workflow rather than this generated command id.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.Wpf_profile_uses_backstage_shell_instead_of_avalonia_file_command_strip"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/RibbonAndDocumentTests.cs",
+          "test": "RibbonAndDocumentTests.Avalonia_file_shell_commands_are_backed_and_desktop_help_arrange_commands_are_absent"
+        }
       }
     },
     {
