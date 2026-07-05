@@ -589,7 +589,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.ShapeGradient.png",
                          "captured":  true,
-                         "note":  "Recaptured from FreeX.App.Host --parity-capture direct WPF dialog evidence on 2026-07-04"
+                         "evidenceSource":  "corrected-direct-parity-capture",
+                         "recaptureStatus":  "tightened-bottom-whitespace-to-planner-height",
+                         "expectedWidth":  500,
+                         "expectedHeight":  300,
+                         "note":  "Tightened from WPF direct parity capture by removing bottom whitespace after row 300 and preserving the ShapeGradient planner dialog area at 500x300."
                      },
                      {
                          "id":  "dialog.Sort",
