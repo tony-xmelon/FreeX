@@ -43,6 +43,7 @@
       "status": "shared-executable-evidence",
       "hostCoverage": "WPF/Avalonia shared planner, overlay render primitives, and retention planning",
       "evidenceDocs": [
+        "docs/parity/freep-presenter-ink-custom-show-persistence-2026-07-05.md",
         "docs/planning/freep-powerpoint-parity-status-2026-06-27.md"
       ],
       "verification": [
@@ -51,7 +52,7 @@
         "freep/FreeP.App.Host.Tests/SlideShowTests.cs",
         "freep/FreeP.App.Avalonia.Tests/SlideShowWindowHeadlessTests.cs"
       ],
-      "remainingWork": "Authored PPTX ink package baselines, PowerPoint-authoritative presenter UI baselines, and PowerPoint visual baselines remain deferred."
+      "remainingWork": "Retained presenter ink now carries source slide and custom-show route metadata through the shared WPF/Avalonia planner. Authored PPTX ink package baselines, PowerPoint-authoritative presenter UI baselines, and PowerPoint visual baselines remain deferred."
     },
     {
       "evidenceId": "freep.presenter.session.summary",
