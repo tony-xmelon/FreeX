@@ -31,19 +31,19 @@ Sources:
 | WPF manifest ids without Avalonia pair | 0 |
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches (scale-aware logical units) | 29 |
+| Paired dimension mismatches (scale-aware logical units) | 28 |
 | Raw PNG pixel dimension mismatches | 58 |
-| Raw PNG mismatches normalized by capture DPI | 29 |
+| Raw PNG mismatches normalized by capture DPI | 30 |
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
 
 ## Scale-Aware Dimension Mismatch Classification
 
-The 29 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept expected platform/native control differences, or refresh limited evidence.
+The 28 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept expected platform/native control differences, or refresh limited evidence.
 
 | Bucket | Count | Top surface ids | Top next action |
 | --- | ---: | --- | --- |
-| content/visual mismatch | 10 | dialog.FormatCells.Fill<br>dialog.FormatCells.Alignment<br>dialog.FormatCells<br>dialog.FormatCells.Number<br>dialog.FormatCells.Border | Review the Format Cells tab model, tab order, and target frame size together. |
+| content/visual mismatch | 9 | dialog.FormatCells.Fill<br>dialog.FormatCells.Alignment<br>dialog.FormatCells<br>dialog.FormatCells.Number<br>dialog.FormatCells.Border | Review the Format Cells tab model, tab order, and target frame size together. |
 | expected platform/native difference | 19 | dialog.FindReplace.Replace<br>dialog.FindReplace<br>dialog.FindReplace.Find<br>dialog.Sparkline<br>dialog.Options.QuickAccessToolbar | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 
 ## Top paired visual outliers
@@ -67,7 +67,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | Bucket | WPF logical size | Avalonia logical size | Logical delta | Reason | Next action |
 | --- | --- | ---: | ---: | ---: | --- | --- |
-| dialog.AutoFilter | content/visual mismatch | 312x436.689 | 312x323 | 0x113.644 | The committed PNGs show different dialog content/state, so the size delta is not isolated layout evidence. | Align the harness data/state first, then reclassify any residual logical-size delta. |
 | dialog.ChangeChartType | expected platform/native difference | 640x390 | 624x381 | 16x9 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.ExportOptions | expected platform/native difference | 430x542 | 430x552 | 0x10 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.FindReplace | expected platform/native difference | 720x430 | 720x440 | 0x10 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
@@ -113,7 +112,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.AddWatch | dialog.AddWatch.png | 360x170 | 540x255 px @ 144 DPI | True | dialog.AddWatch.png | 360x170 | 360x170 px @ 96 DPI | True | True | 0.088 |
 | dialog.AdvancedFilter | dialog.AdvancedFilter.png | 420x340 | 630x510 px @ 144 DPI | True | dialog.AdvancedFilter.png | 420x340 | 420x340 px @ 96 DPI | True | True | 0.057 |
 | dialog.AllowEditRanges | dialog.AllowEditRanges.png | 430x360 | 645x540 px @ 144 DPI | True | dialog.AllowEditRanges.png | 430x360 | 430x360 px @ 96 DPI | True | True | 0.187 |
-| dialog.AutoFilter | dialog.AutoFilter.png | 312x436.689 | 468x655 px @ 144 DPI | True | dialog.AutoFilter.png | 312x323 | 312x323 px @ 96 DPI | True | False | 0.343 |
+| dialog.AutoFilter | dialog.AutoFilter.png | 312x436.689 | 468x655 px @ 144 DPI | True | dialog.AutoFilter.png | 312x437 | 312x437 px @ 96 DPI | True | True | 0.054 |
 | dialog.ChangeChartType | dialog.ChangeChartType.png | 640x390 | 960x585 px @ 144 DPI | True | dialog.ChangeChartType.png | 624x381 | 624x381 px @ 96 DPI | True | False | 0.240 |
 | dialog.ConditionalFormatManage | dialog.ConditionalFormatManage.png | 560x420 | 840x630 px @ 144 DPI | True | dialog.ConditionalFormatManage.png | 560x420 | 560x420 px @ 96 DPI | True | True | 0.074 |
 | dialog.ConditionalFormatNewRule | dialog.ConditionalFormatNewRule.png | 634x334 | 634x334 px @ 96 DPI | True | dialog.ConditionalFormatNewRule.png | 634x334 | 634x334 px @ 96 DPI | True | True | 0.176 |
