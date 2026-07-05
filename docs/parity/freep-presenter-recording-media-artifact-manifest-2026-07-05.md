@@ -12,6 +12,6 @@ Parity improved:
 Remaining gaps:
 
 - Real OS microphone/camera adapters are still needed.
-- The manifest records package-ready metadata, but captured narration/video bytes are still not authored as PPTX media parts.
+- PowerPoint-native subtitle/caption authoring is still needed for recorded narration/video review workflows.
 - PowerPoint-authoritative recording media baselines still require a COM-capable PowerPoint lane.
 - Real microphone/camera adapters remain deferred; the covered path is package authoring for captured backend payloads.
