@@ -5,17 +5,17 @@
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
     "totalCommands": 103,
-    "both": 95,
+    "both": 97,
     "wpfOnly": 0,
-    "avaloniaOnly": 8,
-    "missingWpf": 8,
+    "avaloniaOnly": 6,
+    "missingWpf": 6,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 95,
+    "shared": 97,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
-    "platformOnly": 8,
+    "platformOnly": 6,
     "commandIdAliases": 0,
     "workflowEvidenceRows": 5
   },
@@ -1475,7 +1475,7 @@
       "surface": "avalonia-only",
       "missingSide": "WPF",
       "classification": "platform-only",
-      "notes": "Avalonia shell or backed profile command exposed by its generated profile.",
+      "notes": "Intended shell/profile variance: Avalonia exposes document lifecycle in its generated Home/File ribbon group; WPF routes New through ApplicationCommands.New, Backstage chrome, and FileCommands rather than a generated ribbon control.",
       "wpfLocations": [],
       "avaloniaLocations": [
         {
@@ -1498,7 +1498,7 @@
       "surface": "avalonia-only",
       "missingSide": "WPF",
       "classification": "platform-only",
-      "notes": "Avalonia shell or backed profile command exposed by its generated profile.",
+      "notes": "Intended shell/profile variance: Avalonia exposes document lifecycle in its generated Home/File ribbon group; WPF routes Open through ApplicationCommands.Open, Backstage chrome, and FileCommands rather than a generated ribbon control.",
       "wpfLocations": [],
       "avaloniaLocations": [
         {
@@ -1521,7 +1521,7 @@
       "surface": "avalonia-only",
       "missingSide": "WPF",
       "classification": "platform-only",
-      "notes": "Avalonia shell or backed profile command exposed by its generated profile.",
+      "notes": "Intended shell/profile variance: Avalonia exposes document lifecycle in its generated Home/File ribbon group; WPF routes Save through ApplicationCommands.Save, Backstage chrome, and FileCommands rather than a generated ribbon control.",
       "wpfLocations": [],
       "avaloniaLocations": [
         {
@@ -1544,7 +1544,7 @@
       "surface": "avalonia-only",
       "missingSide": "WPF",
       "classification": "platform-only",
-      "notes": "Avalonia shell or backed profile command exposed by its generated profile.",
+      "notes": "Intended shell/profile variance: Avalonia exposes document lifecycle in its generated Home/File ribbon group; WPF routes Save As through ApplicationCommands.SaveAs, Backstage chrome, and FileCommands rather than a generated ribbon control.",
       "wpfLocations": [],
       "avaloniaLocations": [
         {
@@ -1596,13 +1596,24 @@
     {
       "commandId": "freep.font-color",
       "label": "Font Color",
-      "wpfPresent": false,
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "surface": "avalonia-only",
-      "missingSide": "WPF",
-      "classification": "platform-only",
-      "notes": "Avalonia shell or backed profile command exposed by its generated profile.",
-      "wpfLocations": [],
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Font Color",
+          "controlType": "RibbonComboBox",
+          "layout": "Medium"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -1653,13 +1664,24 @@
     {
       "commandId": "freep.font-size",
       "label": "Size",
-      "wpfPresent": false,
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "surface": "avalonia-only",
-      "missingSide": "WPF",
-      "classification": "platform-only",
-      "notes": "Avalonia shell or backed profile command exposed by its generated profile.",
-      "wpfLocations": [],
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Size",
+          "controlType": "RibbonComboBox",
+          "layout": "Medium"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -2191,7 +2213,7 @@
       "surface": "avalonia-only",
       "missingSide": "WPF",
       "classification": "platform-only",
-      "notes": "Avalonia shell or backed profile command exposed by its generated profile.",
+      "notes": "Intended shell/profile variance: Avalonia exposes Redo in its generated Home/Edit ribbon group; WPF routes Redo through a routed command, keyboard bindings, and Backstage/QAT chrome rather than a generated ribbon control.",
       "wpfLocations": [],
       "avaloniaLocations": [
         {
@@ -3370,7 +3392,7 @@
       "surface": "avalonia-only",
       "missingSide": "WPF",
       "classification": "platform-only",
-      "notes": "Avalonia shell or backed profile command exposed by its generated profile.",
+      "notes": "Intended shell/profile variance: Avalonia exposes Undo in its generated Home/Edit ribbon group; WPF routes Undo through ApplicationCommands.Undo, keyboard bindings, and Backstage/QAT chrome rather than a generated ribbon control.",
       "wpfLocations": [],
       "avaloniaLocations": [
         {
