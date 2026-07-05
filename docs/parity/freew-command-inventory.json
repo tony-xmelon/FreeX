@@ -69,7 +69,7 @@
     "platformOnly": 12,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 39
+    "behaviorEvidenceRows": 42
   },
   "commands": [
     {
@@ -14490,6 +14490,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mailings-rules.shared-behavior",
+        "slice": "Mailings merge rule fields",
+        "summary": "Inserts the Word-style NEXT RECORD mail-merge rule field through both ribbon registries so record advancement survives as a model placeholder.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.MailingsRulesSpecialFields_InsertSharedInstructionsThroughRegistry"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/MailingsTabTests.cs",
+          "test": "MailingsTabTests.Rules_commands_insert_shared_rule_instructions_via_registry"
+        }
       }
     },
     {
@@ -14742,6 +14755,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mailings-rules.shared-behavior",
+        "slice": "Mailings merge rule fields",
+        "summary": "Inserts the Word-style MERGE RECORD # mail-merge rule field through both ribbon registries so record numbering survives as a model placeholder.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.MailingsRulesSpecialFields_InsertSharedInstructionsThroughRegistry"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/MailingsTabTests.cs",
+          "test": "MailingsTabTests.Rules_commands_insert_shared_rule_instructions_via_registry"
+        }
       }
     },
     {
@@ -15120,6 +15146,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mailings-rules.shared-behavior",
+        "slice": "Mailings merge rule fields",
+        "summary": "Inserts the Word-style MERGE SEQUENCE # mail-merge rule field through both ribbon registries so merge sequence numbering survives as a model placeholder.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.MailingsRulesSpecialFields_InsertSharedInstructionsThroughRegistry"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/MailingsTabTests.cs",
+          "test": "MailingsTabTests.Rules_commands_insert_shared_rule_instructions_via_registry"
+        }
       }
     },
     {
