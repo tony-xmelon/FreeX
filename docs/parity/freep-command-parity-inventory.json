@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 6
+    "workflowEvidenceRows": 7
   },
   "workflowEvidence": [
     {
@@ -106,6 +106,22 @@
         "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
       ],
       "remainingWork": "PowerPoint-authoritative accessibility checker baselines, grammar-scale proofing, remediation-pane baselines, and reading-order pane visual baselines remain deferred."
+    },
+    {
+      "evidenceId": "freep.export.backstage.package-handoff",
+      "area": "Backstage export and print package-handoff depth beyond notes-page PDF",
+      "status": "shared-planner-and-tool-evidence",
+      "hostCoverage": "WPF/Avalonia shared Backstage export, print package, image export, and video frame-package planners with PowerPoint COM rows n/a/deferred",
+      "evidenceDocs": [
+        "docs/parity/freep-export-backstage-evidence-2026-07-05.md",
+        "docs/parity/2026-06-27-avalonia-wpf-parity-scope.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/PresentationExportBackstageEvidencePlannerTests.cs",
+        "tools/FreeP.RenderCompare.Tests/ExportBackstageEvidenceTests.cs",
+        "tools/FreeP.RenderCompare --export-backstage-evidence <deck.pptx> <outDir>"
+      ],
+      "remainingWork": "PowerPoint-authoritative fixed-layout, image, video, print, and Backstage visual baselines still require a PowerPoint COM-capable machine; local WPF/Avalonia evidence does not claim Microsoft PowerPoint visual parity."
     },
     {
       "evidenceId": "freep.table.inline-text.workflow-depth",
