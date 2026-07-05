@@ -69,7 +69,7 @@
     "platformOnly": 12,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 59
+    "behaviorEvidenceRows": 64
   },
   "commands": [
     {
@@ -276,6 +276,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-proofing.shared-behavior",
+        "slice": "Review proofing",
+        "summary": "Adds the current proofing word to the custom dictionary so the shared proofing planner suppresses that diagnostic on subsequent passes.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.Core.Model.Tests/CustomDictionaryTests.cs",
+          "test": "CustomDictionaryTests.Add_ThenContains_FindsWord"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.Proofing_commands_toggle_state_dictionary_thesaurus_and_language"
+        }
       }
     },
     {
@@ -19574,6 +19587,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-proofing-language.shared-behavior",
+        "slice": "Review proofing language",
+        "summary": "Applies proofing language metadata to selected text ranges in both shells while keeping multi-paragraph language changes reversible.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/CharacterBorderShadingLanguageApplyTests.cs",
+          "test": "CharacterBorderShadingLanguageApplyTests.SetProofingLanguage_MultiParagraphSelection_IsReversibleWithSingleUndo"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.Proofing_language_applies_only_to_the_selected_range_across_paragraphs"
+        }
       }
     },
     {
@@ -24987,6 +25013,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-proofing.shared-behavior",
+        "slice": "Review proofing",
+        "summary": "Toggles spellcheck diagnostics through the shared proofing planner and the Avalonia review command registry without mutating document content.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.Core.Model.Tests/ProofingDiagnosticPlannerTests.cs",
+          "test": "ProofingDiagnosticPlannerTests.Build_suppresses_diagnostics_when_spellcheck_disabled"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.Proofing_commands_toggle_state_dictionary_thesaurus_and_language"
+        }
       }
     },
     {
@@ -25332,6 +25371,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-proofing-statistics.shared-behavior",
+        "slice": "Review proofing statistics",
+        "summary": "Computes Review > Proofing statistics from the shared document model, including paragraphs nested inside table cells, and routes the Avalonia review command to the host statistics callback.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.Core.Model.Tests/WordCountTests.cs",
+          "test": "WordCountTests.Of_IncludesTableCellParagraphs"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.Review_safety_commands_route_to_host_callbacks"
+        }
       }
     },
     {
@@ -29797,6 +29849,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.review-thesaurus.shared-behavior",
+        "slice": "Review thesaurus",
+        "summary": "Loads bundled thesaurus senses for known words and lets the Avalonia review surface replace the current proofing word with the chosen synonym.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ThesaurusAndBalloonsTests.cs",
+          "test": "ThesaurusAndBalloonsTests.ThesaurusLookup_KnownWord_ReturnsSensesWithSynonyms"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
+          "test": "DocumentViewReviewTests.Thesaurus_replace_current_proofing_word_replaces_caret_word"
+        }
       }
     },
     {
