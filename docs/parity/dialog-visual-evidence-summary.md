@@ -31,19 +31,18 @@ Sources:
 | WPF manifest ids without Avalonia pair | 0 |
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches (scale-aware logical units) | 21 |
-| Raw PNG pixel dimension mismatches | 51 |
-| Raw PNG mismatches normalized by capture DPI | 30 |
+| Paired dimension mismatches (scale-aware logical units) | 19 |
+| Raw PNG pixel dimension mismatches | 50 |
+| Raw PNG mismatches normalized by capture DPI | 31 |
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
 
 ## Scale-Aware Dimension Mismatch Classification
 
-The 21 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept expected platform/native control differences, or refresh limited evidence.
+The 19 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept expected platform/native control differences, or refresh limited evidence.
 
 | Bucket | Count | Top surface ids | Top next action |
 | --- | ---: | --- | --- |
-| content/visual mismatch | 2 | dialog.Options.Formulas<br>dialog.SelectDataSource | Review the Formulas page content height and scrolling contract before changing dialog dimensions. |
 | expected platform/native difference | 19 | dialog.FindReplace.Replace<br>dialog.FindReplace<br>dialog.FindReplace.Find<br>dialog.Sparkline<br>dialog.Options.QuickAccessToolbar | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 
 ## Top paired visual outliers
@@ -77,7 +76,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.Options.Advanced | expected platform/native difference | 744x521 | 760x560 | 16x39 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.Options.CustomizeRibbon | expected platform/native difference | 744x521 | 760x560 | 16x39 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.Options.EaseOfAccess | expected platform/native difference | 744x521 | 760x560 | 16x39 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
-| dialog.Options.Formulas | content/visual mismatch | 744x777 | 760x560 | 16x217 | The WPF capture exposes a much taller Formulas options page than the fixed-height Avalonia Options frame. | Review the Formulas page content height and scrolling contract before changing dialog dimensions. |
 | dialog.Options.General | expected platform/native difference | 744x521 | 760x560 | 16x39 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.Options.Language | expected platform/native difference | 744x521 | 760x560 | 16x39 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.Options.Proofing | expected platform/native difference | 744x521 | 760x560 | 16x39 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
@@ -86,7 +84,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.Options.TrustCenter | expected platform/native difference | 744x521 | 760x560 | 16x39 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.Options.View | expected platform/native difference | 744x521 | 760x560 | 16x39 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 | dialog.ProtectWorkbook | expected platform/native difference | 360x250 | 380x240 | 20x10 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
-| dialog.SelectDataSource | content/visual mismatch | 620x500 | 468x499 | 152x1 | The committed PNGs show different dialog content/state, so the size delta is not isolated layout evidence. | Align the harness data/state first, then reclassify any residual logical-size delta. |
 | dialog.Sparkline | expected platform/native difference | 380x240 | 372x230 | 8x10 | The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences. | Keep as expected platform/native variance unless parity policy later requires exact control metrics. |
 
 ## Expected-Size Evidence Mismatches
@@ -143,7 +140,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.Options.Advanced | dialog.Options.Advanced.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Advanced.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.222 |
 | dialog.Options.CustomizeRibbon | dialog.Options.CustomizeRibbon.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.CustomizeRibbon.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.203 |
 | dialog.Options.EaseOfAccess | dialog.Options.EaseOfAccess.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.EaseOfAccess.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.203 |
-| dialog.Options.Formulas | dialog.Options.Formulas.png | 744x777 | 744x777 px @ 96 DPI | True | dialog.Options.Formulas.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.420 |
+| dialog.Options.Formulas | dialog.Options.Formulas.png | 744x777 | 744x777 px @ 96 DPI | True | dialog.Options.Formulas.png | 744x777 | 744x777 px @ 96 DPI | True | True | 0.092 |
 | dialog.Options.General | dialog.Options.General.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.General.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.219 |
 | dialog.Options.Language | dialog.Options.Language.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Language.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.204 |
 | dialog.Options.Proofing | dialog.Options.Proofing.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Proofing.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.230 |
@@ -179,7 +176,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.RenameSheet | dialog.RenameSheet.png | 340x150 | 510x225 px @ 144 DPI | True | dialog.RenameSheet.png | 340x150 | 340x150 px @ 96 DPI | True | True | 0.062 |
 | dialog.SaveAsWorkbook | dialog.SaveAsWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | dialog.SaveAsWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | True | 0.036 |
 | dialog.ScenarioManager | dialog.ScenarioManager.png | 360x420 | 540x630 px @ 144 DPI | True | dialog.ScenarioManager.png | 360x420 | 360x420 px @ 96 DPI | True | True | 0.104 |
-| dialog.SelectDataSource | dialog.SelectDataSource.png | 620x500 | 930x750 px @ 144 DPI | True | dialog.SelectDataSource.png | 468x499 | 468x499 px @ 96 DPI | True | False | 0.404 |
+| dialog.SelectDataSource | dialog.SelectDataSource.png | 620x500 | 930x750 px @ 144 DPI | True | dialog.SelectDataSource.png | 620x500 | 620x500 px @ 96 DPI | True | True | 0.075 |
 | dialog.SelectionPane | dialog.SelectionPane.png | 520x440 | 520x440 px @ 96 DPI | True | dialog.SelectionPane.png | 520x440 | 520x440 px @ 96 DPI | True | True | 0.122 |
 | dialog.ShapeEffects | dialog.ShapeEffects.png | 380x190 | 570x285 px @ 144 DPI | True | dialog.ShapeEffects.png | 380x190 | 380x190 px @ 96 DPI | True | True | 0.215 |
 | dialog.ShapeGradient | dialog.ShapeGradient.png | 500x300 | 500x300 px @ 96 DPI | True | dialog.ShapeGradient.png | 500x300 | 500x300 px @ 96 DPI | True | True | 0.082 |
