@@ -87,14 +87,14 @@
                      "app":  "FreeP",
                      "commandInventory":  {
                                               "totalCommands":  103,
-                                              "bothProfiles":  95,
+                                              "bothProfiles":  97,
                                               "wpfOnly":  0,
-                                              "avaloniaOnly":  8,
+                                              "avaloniaOnly":  6,
                                               "actionableMissingWpf":  0,
                                               "actionableMissingAvalonia":  0,
                                               "avaloniaGaps":  0,
                                               "knownDeferred":  0,
-                                              "platformOnly":  8,
+                                              "platformOnly":  6,
                                               "commandIdAliases":  0,
                                               "workflowEvidenceRows":  5
                                           },

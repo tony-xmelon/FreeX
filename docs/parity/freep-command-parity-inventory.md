@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 103 | 95 | 0 | 8 | 8 | 0 | 0 | 0 | 95 | 0 | 0 | 8 | 0 | 5 |
+| 103 | 97 | 0 | 6 | 6 | 0 | 0 | 0 | 97 | 0 | 0 | 6 | 0 | 5 |
 
 ## Workflow Evidence
 
@@ -64,14 +64,14 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.date-time` | Date & Time | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.delete-slide` | Delete Slide | Yes | Yes | none | shared | home/slides (RibbonButton) | home/slides (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.duplicate-slide` | Duplicate Slide | Yes | Yes | none | shared | home/slides (RibbonButton) | home/slides (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.file.new` | New | No | Yes | WPF | platform-only | - | home/file (RibbonButton) | Avalonia shell or backed profile command exposed by its generated profile. |
-| `freep.file.open` | Open | No | Yes | WPF | platform-only | - | home/file (RibbonButton) | Avalonia shell or backed profile command exposed by its generated profile. |
-| `freep.file.save` | Save | No | Yes | WPF | platform-only | - | home/file (RibbonButton) | Avalonia shell or backed profile command exposed by its generated profile. |
-| `freep.file.save-as` | Save As | No | Yes | WPF | platform-only | - | home/file (RibbonButton) | Avalonia shell or backed profile command exposed by its generated profile. |
+| `freep.file.new` | New | No | Yes | WPF | platform-only | - | home/file (RibbonButton) | Intended shell/profile variance: Avalonia exposes document lifecycle in its generated Home/File ribbon group; WPF routes New through ApplicationCommands.New, Backstage chrome, and FileCommands rather than a generated ribbon control. |
+| `freep.file.open` | Open | No | Yes | WPF | platform-only | - | home/file (RibbonButton) | Intended shell/profile variance: Avalonia exposes document lifecycle in its generated Home/File ribbon group; WPF routes Open through ApplicationCommands.Open, Backstage chrome, and FileCommands rather than a generated ribbon control. |
+| `freep.file.save` | Save | No | Yes | WPF | platform-only | - | home/file (RibbonButton) | Intended shell/profile variance: Avalonia exposes document lifecycle in its generated Home/File ribbon group; WPF routes Save through ApplicationCommands.Save, Backstage chrome, and FileCommands rather than a generated ribbon control. |
+| `freep.file.save-as` | Save As | No | Yes | WPF | platform-only | - | home/file (RibbonButton) | Intended shell/profile variance: Avalonia exposes document lifecycle in its generated Home/File ribbon group; WPF routes Save As through ApplicationCommands.SaveAs, Backstage chrome, and FileCommands rather than a generated ribbon control. |
 | `freep.find` | Find | Yes | Yes | none | shared | home/editing (RibbonButton) | home/editing (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.font-color` | Font Color | No | Yes | WPF | platform-only | - | home/font (RibbonComboBox) | Avalonia shell or backed profile command exposed by its generated profile. |
+| `freep.font-color` | Font Color | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.font-family` | Font | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
-| `freep.font-size` | Size | No | Yes | WPF | platform-only | - | home/font (RibbonComboBox) | Avalonia shell or backed profile command exposed by its generated profile. |
+| `freep.font-size` | Size | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.format-painter` | Format Painter | Yes | Yes | none | shared | home/clipboard (RibbonButton) | home/clipboard (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.header-footer` | Header & Footer | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-bar` | Bar | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
@@ -87,7 +87,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.new-slide` | New Slide | Yes | Yes | none | shared | home/slides (RibbonButton) | home/slides (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.paste` | Paste | Yes | Yes | none | shared | home/clipboard (RibbonButton) | home/clipboard (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.picture` | Picture | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.redo` | Redo | No | Yes | WPF | platform-only | - | home/edit (RibbonButton) | Avalonia shell or backed profile command exposed by its generated profile. |
+| `freep.redo` | Redo | No | Yes | WPF | platform-only | - | home/edit (RibbonButton) | Intended shell/profile variance: Avalonia exposes Redo in its generated Home/Edit ribbon group; WPF routes Redo through a routed command, keyboard bindings, and Backstage/QAT chrome rather than a generated ribbon control. |
 | `freep.remove-link` | Remove Link | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.replace` | Replace | Yes | Yes | none | shared | home/editing (RibbonButton) | home/editing (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-ellipse` | Ellipse | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
@@ -122,7 +122,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.transition.wipe` | Wipe | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.zoom` | Zoom | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.underline` | Underline | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.undo` | Undo | No | Yes | WPF | platform-only | - | home/edit (RibbonButton) | Avalonia shell or backed profile command exposed by its generated profile. |
+| `freep.undo` | Undo | No | Yes | WPF | platform-only | - | home/edit (RibbonButton) | Intended shell/profile variance: Avalonia exposes Undo in its generated Home/Edit ribbon group; WPF routes Undo through ApplicationCommands.Undo, keyboard bindings, and Backstage/QAT chrome rather than a generated ribbon control. |
 | `freep.view.fit-to-window` | Fit to Window | Yes | Yes | none | shared | view/zoom (RibbonButton) | view/zoom (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.show.gridlines` | Gridlines | Yes | Yes | none | shared | view/show (RibbonToggleButton) | view/show (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.show.guides` | Guides | Yes | Yes | none | shared | view/show (RibbonToggleButton) | view/show (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
