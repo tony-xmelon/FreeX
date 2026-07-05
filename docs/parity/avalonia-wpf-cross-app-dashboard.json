@@ -51,17 +51,17 @@
                                                   "pairedCapturedSurfaceIds":  93,
                                                   "wpfManifestIdsWithoutAvaloniaPair":  0,
                                                   "additionalAvaloniaCapturedSurfaceIds":  0,
-                                                  "pairedDimensionMismatches":  28,
-                                                  "pairedRawPixelDimensionMismatches":  58,
+                                                  "pairedDimensionMismatches":  21,
+                                                  "pairedRawPixelDimensionMismatches":  51,
                                                   "pairedCaptureScaleNormalizedDimensionMatches":  30,
                                                   "pairedExpectedSizeMismatches":  0,
                                                   "stalePromotedExpectedSizeEvidence":  0,
-                                                  "contentVisualMismatches":  9,
+                                                  "contentVisualMismatches":  2,
                                                   "evidenceLimitations":  0,
                                                   "expectedPlatformNativeDifferences":  19,
                                                   "realLogicalSizeMismatches":  0
                                               },
-                     "nextSlice":  "Command/dialog route coverage is green; all 48 pseudo-gallery rows are catalog-backed in classifier evidence (34 conditional-format rows over 38 runtime catalog items, 10 font/border rows, and 4 accounting-symbol rows), and dialog screenshot evidence has 93 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. Keep the 58 raw PNG pixel mismatches separate from missing-pair status: 30 normalize away by capture DPI, while 28 scale-aware paired mismatches remain for visual review, including 0 real logical-size mismatches and 0 stale promoted expected-size evidence rows."
+                     "nextSlice":  "Command/dialog route coverage is green; all 48 pseudo-gallery rows are catalog-backed in classifier evidence (34 conditional-format rows over 38 runtime catalog items, 10 font/border rows, and 4 accounting-symbol rows), and dialog screenshot evidence has 93 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. Keep the 51 raw PNG pixel mismatches separate from missing-pair status: 30 normalize away by capture DPI, while 21 scale-aware paired mismatches remain for visual review, including 0 real logical-size mismatches and 0 stale promoted expected-size evidence rows."
                  },
                  {
                      "app":  "FreeW",
