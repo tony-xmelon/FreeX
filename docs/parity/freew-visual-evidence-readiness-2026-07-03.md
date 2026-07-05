@@ -19,6 +19,8 @@ The follow-up 2026-07-04 renderer-contract update extends compiled pair validati
 
 The 2026-07-04 WordArt watermark contract-depth slice adds paired semantic validation for `wordart-picture-watermark-layout`. The normalizer now compares WPF/Avalonia page feature signatures for columns, page border, and picture watermark metadata, plus floating object and drawing-effect signatures, before trusting the paired visual evidence row.
 
+The 2026-07-05 table signature triage update keeps the table pair-signature failure intact but makes it actionable. When WPF/Avalonia table plan signatures differ, the summary now includes bounded field-level details such as table style drift, `HasCellShading` drift, and exact cell coordinates like `r0c0g0 shading color` before the raw signatures. Current paired evidence shows the table family failing on header-cell shading metadata, while broader drawing and SmartArt mismatches remain separate lanes.
+
 ## Why this matters
 
 The existing summary already failed the run for missing backstage pairs, placeholder captures, fallback capture sources, and missing required pages. The new structured field lets automation and planners check readiness without parsing Markdown, while the Markdown table makes the same failures directly actionable for reviewers.
