@@ -23,6 +23,7 @@
                     "pairedCaptureScaleNormalizedDimensionMatches":  31,
                     "pairedExpectedSizeMismatches":  0,
                     "stalePromotedExpectedSizeEvidence":  0,
+                    "policyAcceptedNativeDifferences":  19,
                     "dimensionMismatchBuckets":  {
                                                      "expected platform/native difference":  19
                                                  }
@@ -88,7 +89,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -151,7 +153,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -214,7 +217,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -277,7 +281,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -340,7 +345,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -403,7 +409,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -465,8 +472,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same chart-type list and preview state; the remaining delta is default list, preview, and dialog chrome metrics.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Chart type picker controls",
+                                                                           "rationale":  "The paired screenshots show the same chart-type list and preview state; the remaining delta is default list, preview, and dialog chrome metrics.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -529,7 +543,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -592,7 +607,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -655,7 +671,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -718,7 +735,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -781,7 +799,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -844,7 +863,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -907,7 +927,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -970,7 +991,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -1033,7 +1055,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -1095,8 +1118,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same export-option choices; the remaining height delta is platform label/control spacing.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Export options native spacing",
+                                                                           "rationale":  "The paired screenshots show the same export-option choices; the remaining height delta is platform label/control spacing.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -1158,8 +1188,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Find/Replace native control stack",
+                                                                           "rationale":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -1221,8 +1258,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Find/Replace native control stack",
+                                                                           "rationale":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -1284,8 +1328,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Find/Replace native control stack",
+                                                                           "rationale":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -1348,7 +1399,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -1411,7 +1463,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -1474,7 +1527,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -1537,7 +1591,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -1600,7 +1655,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -1663,7 +1719,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -1726,7 +1783,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -1789,7 +1847,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -1852,7 +1911,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -1915,7 +1975,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -1984,7 +2045,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -2047,7 +2109,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -2110,7 +2173,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -2173,7 +2237,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -2236,7 +2301,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -2299,7 +2365,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -2362,7 +2429,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -2425,7 +2493,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -2487,8 +2556,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Options host frame",
+                                                                           "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -2550,8 +2626,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Options host frame",
+                                                                           "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -2613,8 +2696,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Options host frame",
+                                                                           "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -2676,8 +2766,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Options host frame",
+                                                                           "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -2739,8 +2836,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Options host frame",
+                                                                           "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -2803,7 +2907,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -2865,8 +2970,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Options host frame",
+                                                                           "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -2928,8 +3040,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Options host frame",
+                                                                           "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -2991,8 +3110,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Options host frame",
+                                                                           "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -3054,8 +3180,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Options host frame",
+                                                                           "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -3117,8 +3250,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Options host frame",
+                                                                           "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -3180,8 +3320,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Options host frame",
+                                                                           "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -3243,8 +3390,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Options host frame",
+                                                                           "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -3307,7 +3461,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -3370,7 +3525,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -3433,7 +3589,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -3496,7 +3653,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -3559,7 +3717,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -3622,7 +3781,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -3685,7 +3845,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -3748,7 +3909,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -3811,7 +3973,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -3874,7 +4037,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -3937,7 +4101,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -4000,7 +4165,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -4069,7 +4235,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -4132,7 +4299,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -4195,7 +4363,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -4258,7 +4427,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -4321,7 +4491,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -4384,7 +4555,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -4447,7 +4619,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -4510,7 +4683,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -4573,7 +4747,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -4636,7 +4811,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -4698,8 +4874,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same password/confirmation workflow; the residual size delta is native password-box and button-row metrics.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Protection password prompt",
+                                                                           "rationale":  "The paired screenshots show the same password/confirmation workflow; the residual size delta is native password-box and button-row metrics.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -4762,7 +4945,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -4825,7 +5009,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -4888,7 +5073,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -4951,7 +5137,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -5014,7 +5201,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -5077,7 +5265,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -5140,7 +5329,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -5203,7 +5393,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -5272,7 +5463,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -5335,7 +5527,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -5398,7 +5591,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -5460,8 +5654,15 @@
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                                  "dimensionMismatchNextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                  "dimensionMismatchReason":  "The paired screenshots show the same Sparkline range/location inputs and type selection; the residual delta is native text input, combo, and button spacing.",
+                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                  "policyAcceptance":  {
+                                                                           "status":  "policy-accepted",
+                                                                           "policy":  "expected platform/native control variance",
+                                                                           "family":  "Sparkline range picker controls",
+                                                                           "rationale":  "The paired screenshots show the same Sparkline range/location inputs and type selection; the residual delta is native text input, combo, and button spacing.",
+                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                                       }
                                               }
                            },
                            {
@@ -5524,7 +5725,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -5587,7 +5789,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -5650,7 +5853,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -5713,7 +5917,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -5776,7 +5981,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -5839,7 +6045,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -5902,7 +6109,8 @@
                                                   "avaloniaExpectedSizeMatch":  true,
                                                   "dimensionMismatchBucket":  null,
                                                   "dimensionMismatchReason":  null,
-                                                  "dimensionMismatchNextAction":  null
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            }
                        ],
@@ -5999,15 +6207,92 @@
                                                                       "dialog.Sparkline",
                                                                       "dialog.Options.QuickAccessToolbar"
                                                                   ],
-                                                "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics."
+                                                "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                                "policyAccepted":  true
                                             }
                                         ],
+    "policyAcceptedNativeDifferenceFamilies":  [
+                                                   {
+                                                       "family":  "Chart type picker controls",
+                                                       "count":  1,
+                                                       "surfaceIds":  [
+                                                                          "dialog.ChangeChartType"
+                                                                      ],
+                                                       "rationale":  "The paired screenshots show the same chart-type list and preview state; the remaining delta is default list, preview, and dialog chrome metrics.",
+                                                       "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                   },
+                                                   {
+                                                       "family":  "Export options native spacing",
+                                                       "count":  1,
+                                                       "surfaceIds":  [
+                                                                          "dialog.ExportOptions"
+                                                                      ],
+                                                       "rationale":  "The paired screenshots show the same export-option choices; the remaining height delta is platform label/control spacing.",
+                                                       "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                   },
+                                                   {
+                                                       "family":  "Find/Replace native control stack",
+                                                       "count":  3,
+                                                       "surfaceIds":  [
+                                                                          "dialog.FindReplace",
+                                                                          "dialog.FindReplace.Find",
+                                                                          "dialog.FindReplace.Replace"
+                                                                      ],
+                                                       "rationale":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
+                                                       "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                   },
+                                                   {
+                                                       "family":  "Options host frame",
+                                                       "count":  12,
+                                                       "surfaceIds":  [
+                                                                          "dialog.Options",
+                                                                          "dialog.Options.AddIns",
+                                                                          "dialog.Options.Advanced",
+                                                                          "dialog.Options.CustomizeRibbon",
+                                                                          "dialog.Options.EaseOfAccess",
+                                                                          "dialog.Options.General",
+                                                                          "dialog.Options.Language",
+                                                                          "dialog.Options.Proofing",
+                                                                          "dialog.Options.QuickAccessToolbar",
+                                                                          "dialog.Options.Save",
+                                                                          "dialog.Options.TrustCenter",
+                                                                          "dialog.Options.View"
+                                                                      ],
+                                                       "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                       "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                   },
+                                                   {
+                                                       "family":  "Protection password prompt",
+                                                       "count":  1,
+                                                       "surfaceIds":  [
+                                                                          "dialog.ProtectWorkbook"
+                                                                      ],
+                                                       "rationale":  "The paired screenshots show the same password/confirmation workflow; the residual size delta is native password-box and button-row metrics.",
+                                                       "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                   },
+                                                   {
+                                                       "family":  "Sparkline range picker controls",
+                                                       "count":  1,
+                                                       "surfaceIds":  [
+                                                                          "dialog.Sparkline"
+                                                                      ],
+                                                       "rationale":  "The paired screenshots show the same Sparkline range/location inputs and type selection; the residual delta is native text input, combo, and button spacing.",
+                                                       "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                   }
+                                               ],
     "dimensionMismatchDetails":  [
                                      {
                                          "id":  "dialog.ChangeChartType",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same chart-type list and preview state; the remaining delta is default list, preview, and dialog chrome metrics.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Chart type picker controls",
+                                                                  "rationale":  "The paired screenshots show the same chart-type list and preview state; the remaining delta is default list, preview, and dialog chrome metrics.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "640x390",
                                          "avaloniaLogicalSize":  "624x381",
                                          "logicalWidthDelta":  15.946,
@@ -6017,8 +6302,15 @@
                                      {
                                          "id":  "dialog.ExportOptions",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same export-option choices; the remaining height delta is platform label/control spacing.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Export options native spacing",
+                                                                  "rationale":  "The paired screenshots show the same export-option choices; the remaining height delta is platform label/control spacing.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "430x542",
                                          "avaloniaLogicalSize":  "430x552",
                                          "logicalWidthDelta":  0.022,
@@ -6028,8 +6320,15 @@
                                      {
                                          "id":  "dialog.FindReplace",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Find/Replace native control stack",
+                                                                  "rationale":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "720x430",
                                          "avaloniaLogicalSize":  "720x440",
                                          "logicalWidthDelta":  0.101,
@@ -6039,8 +6338,15 @@
                                      {
                                          "id":  "dialog.FindReplace.Find",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Find/Replace native control stack",
+                                                                  "rationale":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "720x430",
                                          "avaloniaLogicalSize":  "720x440",
                                          "logicalWidthDelta":  0.101,
@@ -6050,8 +6356,15 @@
                                      {
                                          "id":  "dialog.FindReplace.Replace",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Find/Replace native control stack",
+                                                                  "rationale":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "720x430",
                                          "avaloniaLogicalSize":  "720x440",
                                          "logicalWidthDelta":  0.101,
@@ -6061,8 +6374,15 @@
                                      {
                                          "id":  "dialog.Options",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Options host frame",
+                                                                  "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "744x521",
                                          "avaloniaLogicalSize":  "760x560",
                                          "logicalWidthDelta":  15.896,
@@ -6072,8 +6392,15 @@
                                      {
                                          "id":  "dialog.Options.AddIns",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Options host frame",
+                                                                  "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "744x521",
                                          "avaloniaLogicalSize":  "760x560",
                                          "logicalWidthDelta":  15.896,
@@ -6083,8 +6410,15 @@
                                      {
                                          "id":  "dialog.Options.Advanced",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Options host frame",
+                                                                  "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "744x521",
                                          "avaloniaLogicalSize":  "760x560",
                                          "logicalWidthDelta":  15.896,
@@ -6094,8 +6428,15 @@
                                      {
                                          "id":  "dialog.Options.CustomizeRibbon",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Options host frame",
+                                                                  "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "744x521",
                                          "avaloniaLogicalSize":  "760x560",
                                          "logicalWidthDelta":  15.896,
@@ -6105,8 +6446,15 @@
                                      {
                                          "id":  "dialog.Options.EaseOfAccess",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Options host frame",
+                                                                  "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "744x521",
                                          "avaloniaLogicalSize":  "760x560",
                                          "logicalWidthDelta":  15.896,
@@ -6116,8 +6464,15 @@
                                      {
                                          "id":  "dialog.Options.General",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Options host frame",
+                                                                  "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "744x521",
                                          "avaloniaLogicalSize":  "760x560",
                                          "logicalWidthDelta":  15.896,
@@ -6127,8 +6482,15 @@
                                      {
                                          "id":  "dialog.Options.Language",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Options host frame",
+                                                                  "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "744x521",
                                          "avaloniaLogicalSize":  "760x560",
                                          "logicalWidthDelta":  15.896,
@@ -6138,8 +6500,15 @@
                                      {
                                          "id":  "dialog.Options.Proofing",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Options host frame",
+                                                                  "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "744x521",
                                          "avaloniaLogicalSize":  "760x560",
                                          "logicalWidthDelta":  15.896,
@@ -6149,8 +6518,15 @@
                                      {
                                          "id":  "dialog.Options.QuickAccessToolbar",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Options host frame",
+                                                                  "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "744x521",
                                          "avaloniaLogicalSize":  "760x560",
                                          "logicalWidthDelta":  15.896,
@@ -6160,8 +6536,15 @@
                                      {
                                          "id":  "dialog.Options.Save",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Options host frame",
+                                                                  "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "744x521",
                                          "avaloniaLogicalSize":  "760x560",
                                          "logicalWidthDelta":  15.896,
@@ -6171,8 +6554,15 @@
                                      {
                                          "id":  "dialog.Options.TrustCenter",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Options host frame",
+                                                                  "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "744x521",
                                          "avaloniaLogicalSize":  "760x560",
                                          "logicalWidthDelta":  15.896,
@@ -6182,8 +6572,15 @@
                                      {
                                          "id":  "dialog.Options.View",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Options host frame",
+                                                                  "rationale":  "The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "744x521",
                                          "avaloniaLogicalSize":  "760x560",
                                          "logicalWidthDelta":  15.896,
@@ -6193,8 +6590,15 @@
                                      {
                                          "id":  "dialog.ProtectWorkbook",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same password/confirmation workflow; the residual size delta is native password-box and button-row metrics.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Protection password prompt",
+                                                                  "rationale":  "The paired screenshots show the same password/confirmation workflow; the residual size delta is native password-box and button-row metrics.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "360x250",
                                          "avaloniaLogicalSize":  "380x240",
                                          "logicalWidthDelta":  19.981,
@@ -6204,8 +6608,15 @@
                                      {
                                          "id":  "dialog.Sparkline",
                                          "bucket":  "expected platform/native difference",
-                                         "reason":  "The PNGs show the same paired surface with small WPF/Avalonia control, chrome, or default-spacing differences.",
-                                         "nextAction":  "Keep as expected platform/native variance unless parity policy later requires exact control metrics.",
+                                         "reason":  "The paired screenshots show the same Sparkline range/location inputs and type selection; the residual delta is native text input, combo, and button spacing.",
+                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
+                                         "policyAcceptance":  {
+                                                                  "status":  "policy-accepted",
+                                                                  "policy":  "expected platform/native control variance",
+                                                                  "family":  "Sparkline range picker controls",
+                                                                  "rationale":  "The paired screenshots show the same Sparkline range/location inputs and type selection; the residual delta is native text input, combo, and button spacing.",
+                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
+                                                              },
                                          "wpfLogicalSize":  "380x240",
                                          "avaloniaLogicalSize":  "372x230",
                                          "logicalWidthDelta":  8.02,
