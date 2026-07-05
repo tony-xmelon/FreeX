@@ -11,11 +11,11 @@ Parity improved:
 
 Current adapter policy:
 
-- WPF and Avalonia slideshow windows still register deferred host capabilities, so they do not claim real device capture.
-- The shared backend contract is ready for thin host adapters to plug in actual microphone/camera capture and PPTX media authoring without duplicating presenter policy.
+- WPF and Avalonia slideshow windows still register deferred host capabilities by default, so normal app launch does not claim real device capture.
+- Both slideshow hosts can now consume an injected `ISlideShowRecordingCaptureBackend`; paired host tests use the deterministic backend to prove captured narration/camera payloads flow through review and persistence.
+- The shared backend contract is ready for thin OS adapters to plug in actual microphone/camera capture without duplicating presenter policy.
 
 Remaining gaps:
 
 - Real OS microphone/camera backend adapters are still needed.
-- Captured narration/video bytes are not yet authored into PPTX media parts by the package writer.
 - PowerPoint COM-backed recording baselines still require a COM-capable machine.
