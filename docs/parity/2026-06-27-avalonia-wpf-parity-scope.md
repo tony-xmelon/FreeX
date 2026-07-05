@@ -210,13 +210,15 @@ Dedup items that were blockers in the prior report are now landed or intentional
 - `tools/FreeP.RenderCompare --slide-pane-thumbnail-compare` now creates WPF/Avalonia/PowerPoint slide-pane thumbnail evidence directories, emits WPF-vs-Avalonia and PowerPoint-backed diff rows, and reports PowerPoint rows as `n/a` when `PowerPoint.Application` COM is unavailable.
 - `tools/FreeP.RenderCompare --notes-page-preview-evidence` now writes a shared notes-page preview PDF plus CSV evidence rows for WPF/Avalonia from the common notes-page render plan without requiring PowerPoint COM.
 - Modern comments/review now has paired WPF and Avalonia execution evidence for shared reply mutation, pane refresh, dirty-state propagation, and PowerPoint modern author identity reuse through `PresentationReviewWorkflowPlanner`.
+- Slide-pane drag reorder now uses a shared drag-session planner for start thresholding, insertion target projection, drop completion, and cancellation. WPF and Avalonia remain thin pointer adapters, and Avalonia headless tests cover drag preview feedback plus completed reorder.
 
 ### Main Gaps
 
 1. Command-profile parity is no longer the leading FreeP WPF/Avalonia gap. The generated inventory reports 0 actionable WPF/Avalonia missing commands; the eight raw Avalonia-only rows are platform-only shell/profile commands.
 2. Slide pane parity is partial:
-   - WPF owns drag reorder, context menus, richer thumbnails, and section behavior in `freep/FreeP.App.Host/SlidePane.cs`.
-   - Avalonia still has a simpler `ListBox` surface in `freep/FreeP.App.Avalonia/MainWindow.cs`.
+   - Drag reorder and context actions now flow through shared planner contracts in both hosts.
+   - WPF still owns richer thumbnail rendering and deeper section behavior in `freep/FreeP.App.Host/SlidePane.cs`.
+   - Avalonia still has a simpler `ListBox` realization in `freep/FreeP.App.Avalonia/MainWindow.cs`.
    - The focused thumbnail evidence mode can now generate WPF/Avalonia bitmap comparisons, but PowerPoint-authoritative thumbnail baselines still need a COM-capable machine and a no-COM success policy for local evidence loops.
 3. Editing parity remains uneven:
    - WPF has rich text and table-cell editors.
