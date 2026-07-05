@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 7
+    "workflowEvidenceRows": 8
   },
   "workflowEvidence": [
     {
@@ -145,6 +145,23 @@
         "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
       ],
       "remainingWork": "WPF/Avalonia now share picture-bullet picker payload execution, paragraph authoring, and PPTX media-part persistence. Avalonia still lacks a true editable rich-text widget equivalent to WPF RichTextBox; PowerPoint-authoritative list-gallery/rich-editor visual baselines remain deferred."
+    },
+    {
+      "evidenceId": "freep.chart.number-format-rendering",
+      "area": "Chart axis number/date format rendering",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume shared ChartRenderPlanner text plans with no renderer-local number-format policy",
+      "evidenceDocs": [
+        "docs/parity/freep-chart-number-format-rendering-2026-07-05.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/ChartRenderPlannerTests.cs",
+        "freep/FreeP.App.Presentation.Tests/RendererNeutralDedupPlannerTests.cs",
+        "freep/FreeP.App.Host.Tests/ChartTests.cs",
+        "freep/FreeP.App.Host.Tests/ChartDataLabelsTests.cs",
+        "freep/FreeP.App.Rendering.Avalonia.Tests/SlideCanvasAvaloniaTests.cs"
+      ],
+      "remainingWork": "Shared chart label planning now applies preserved PowerPoint-style number/date format codes for common axis and category label cases. Full Excel custom number-format semantics, exact locale behavior, and PowerPoint-authoritative chart visual baselines remain deferred."
     }
   ],
   "commands": [
