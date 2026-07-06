@@ -217,7 +217,8 @@ Goal: remove the remaining behavior duplication before adding large parity surfa
 6. Done for first bullet placement and typography-source slices: shared text planning now returns bullet text/font/color/size and X/Y placement for body and column layouts, including paragraph/list-level `buSzPts`, `buSzTx`, `buFontTx`, and `buClrTx` resolution before WPF and Avalonia consume the shared plan.
 7. Done for first tab-stop slice: shared `TextLayoutPlanner` now returns explicit/default left/right/center/decimal tab segment placement consumed by WPF and Avalonia renderers.
 8. Done for first chart gridline renderer slice: WPF and Avalonia now consume `ChartMajorGridLinePrimitivePlan.GridLineStroke` when constructing gridline pens.
-9. Continue expanding source guards so WPF/Avalonia cannot reintroduce duplicated chart/text/gesture math.
+9. Done for first chart manual-layout slice: shared `ChartRenderPlanner` now applies bounded factor-mode plot manual layout, legend overlay plot-space behavior, and manual legend item bounds while WPF/Avalonia stay thin.
+10. Continue expanding source guards so WPF/Avalonia cannot reintroduce duplicated chart/text/gesture math.
 
 ### Phase 2 - Command And Workflow Breadth
 
