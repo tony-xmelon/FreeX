@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 19
+    "workflowEvidenceRows": 20
   },
   "workflowEvidence": [
     {
@@ -310,6 +310,20 @@
         "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
       ],
       "remainingWork": "basicCycle now uses the bounded shared cycle-family live-layout path for parsed nodes while unsupported cycle siblings remain on cached drawing fallback. Broader SmartArt geometry families, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.radial-cycle",
+      "area": "SmartArt radial cycle live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume ordinary shared slide shape and connector ops emitted by the SmartArt cycle-family layout planner; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/freep-smartart-radial-cycle-2026-07-07.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
+      ],
+      "remainingWork": "radialCycle now uses the bounded shared cycle-family live-layout path for parsed nodes while other unsupported cycle siblings remain on cached drawing fallback. Broader SmartArt geometry families, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
     },
     {
       "evidenceId": "freep.smartart.basic-hierarchy",
