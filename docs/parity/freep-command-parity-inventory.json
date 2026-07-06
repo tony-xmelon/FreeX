@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 12
+    "workflowEvidenceRows": 13
   },
   "workflowEvidence": [
     {
@@ -226,6 +226,20 @@
         "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
       ],
       "remainingWork": "continuousBlockProcess now uses the bounded shared process live-layout path for parsed nodes while unsupported process variants still fall back to cached drawing. Broader SmartArt geometry families, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.basic-process",
+      "area": "SmartArt basic process live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume ordinary shared slide shape and connector ops emitted by the SmartArt layout planner; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/freep-smartart-basic-process-2026-07-06.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
+      ],
+      "remainingWork": "basicProcess now uses the bounded shared process live-layout path for parsed nodes while segmentedProcess remains an unsupported sibling that falls back to cached drawing. Broader SmartArt geometry families, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
     }
   ],
   "commands": [
