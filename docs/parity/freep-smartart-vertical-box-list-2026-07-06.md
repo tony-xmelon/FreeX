@@ -25,8 +25,7 @@ fallback.
   boxes without connectors, prefers live layout over cached fallback, and keeps
   unsupported list siblings on cached drawing.
 - `SmartArtTests` proves the PPTX reader enables live layout for
-  `verticalBoxList`, keeps `stackedList` disabled as the unsupported list
-  sibling, and composes the selected layout through shared draw ops.
+  `verticalBoxList` and composes the selected layout through shared draw ops.
 
 ## Residual Limitations
 
