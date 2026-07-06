@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 24
+    "workflowEvidenceRows": 25
   },
   "workflowEvidence": [
     {
@@ -212,6 +212,22 @@
         "freep/FreeP.App.Presentation.Tests/ChartRenderPlannerTests.cs"
       ],
       "remainingWork": "Shared chart planning now resolves edge and mixed factor/edge manual layout modes for plot-area and legend rectangles, clamping non-negative bounds inside the chart base rectangle. PowerPoint-authoritative chart visual baselines and nuanced layoutTarget tuning remain deferred."
+    },
+    {
+      "evidenceId": "freep.omml.transparent-phantom-spacing",
+      "area": "OMML transparent phantom spacing classes",
+      "status": "shared-layout-evidence",
+      "hostCoverage": "WPF/Avalonia consume shared MathLayoutEngine row advances and MathBoxRenderPlanner draw ops with no renderer-local math policy",
+      "evidenceDocs": [
+        "docs/planning/freep-powerpoint-parity-status-2026-06-27.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/MathLayoutEngineTests.cs",
+        "freep/FreeP.App.Presentation.Tests/OmmlParserTests.cs",
+        "freep/FreeP.App.Host.Tests/SlideCanvasMathBaselineTests.cs",
+        "freep/FreeP.App.Rendering.Avalonia.Tests/SlideCanvasMathBaselineTests.cs"
+      ],
+      "remainingWork": "Shared row layout now consumes m:phantPr/m:transp for bounded single-token binary, relation, large-operator, and punctuation spacing classes while ambiguous multi-character and structured phantom bases stay packed. PowerPoint-authoritative visual baselines and full OfficeMath spacing-table typography remain deferred."
     },
     {
       "evidenceId": "freep.smartart.continuous-block-process",
