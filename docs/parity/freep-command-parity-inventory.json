@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 10
+    "workflowEvidenceRows": 11
   },
   "workflowEvidence": [
     {
@@ -199,6 +199,19 @@
         "freep/FreeP.App.Rendering.Avalonia.Tests/SlideCanvasAvaloniaTests.cs"
       ],
       "remainingWork": "Shared chart label planning now applies preserved PowerPoint-style number/date format codes for common axis and category label cases, including conditional threshold sections and scaled display-unit commas. Broader Excel custom-format semantics, exact locale behavior, and PowerPoint-authoritative chart visual baselines remain deferred."
+    },
+    {
+      "evidenceId": "freep.chart.edge-manual-layout",
+      "area": "Chart manual plot and legend edge layout rendering",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume shared ChartRenderPlanner bounds with no renderer-local manual-layout policy",
+      "evidenceDocs": [
+        "docs/parity/freep-chart-edge-manual-layout-2026-07-06.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/ChartRenderPlannerTests.cs"
+      ],
+      "remainingWork": "Shared chart planning now resolves edge and mixed factor/edge manual layout modes for plot-area and legend rectangles, clamping non-negative bounds inside the chart base rectangle. PowerPoint-authoritative chart visual baselines and nuanced layoutTarget tuning remain deferred."
     }
   ],
   "commands": [
