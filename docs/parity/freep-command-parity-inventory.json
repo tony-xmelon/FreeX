@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 16
+    "workflowEvidenceRows": 17
   },
   "workflowEvidence": [
     {
@@ -254,6 +254,20 @@
         "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
       ],
       "remainingWork": "basicBlockList now uses the bounded shared list-family live-layout path for parsed nodes while unsupported list siblings remain on cached drawing fallback. Broader SmartArt geometry families, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.vertical-box-list",
+      "area": "SmartArt vertical box list live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume ordinary shared slide shape ops emitted by the SmartArt list-family layout planner; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/freep-smartart-vertical-box-list-2026-07-06.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
+      ],
+      "remainingWork": "verticalBoxList now uses the bounded shared list-family live-layout path for parsed nodes while stackedList remains an unsupported list sibling that falls back to cached drawing. Broader SmartArt geometry families, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
     },
     {
       "evidenceId": "freep.smartart.basic-cycle",
