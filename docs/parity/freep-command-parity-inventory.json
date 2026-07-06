@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 22
+    "workflowEvidenceRows": 24
   },
   "workflowEvidence": [
     {
@@ -340,6 +340,20 @@
       "remainingWork": "radialCycle now uses the bounded shared cycle-family live-layout path for parsed nodes while other unsupported cycle siblings remain on cached drawing fallback. Broader SmartArt geometry families, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
     },
     {
+      "evidenceId": "freep.smartart.gear-cycle",
+      "area": "SmartArt gear cycle live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume ordinary shared slide shape and connector ops emitted by the SmartArt cycle-family layout planner; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/freep-smartart-gear-cycle-2026-07-07.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
+      ],
+      "remainingWork": "gearCycle now uses the bounded shared cycle-family live-layout path for parsed nodes as a renderer-neutral rounded-box/connector approximation, not true gear-tooth geometry. Other unsupported cycle siblings remain on cached drawing fallback. Broader SmartArt geometry families, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
+    },
+    {
       "evidenceId": "freep.smartart.vertical-bullet-list",
       "area": "SmartArt vertical bullet list live layout",
       "status": "shared-render-planner-evidence",
@@ -366,6 +380,20 @@
         "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
       ],
       "remainingWork": "basicHierarchy now uses the bounded shared hierarchy-family live-layout path for parsed root/child nodes while unsupported hierarchy siblings remain on cached drawing fallback. Broader SmartArt geometry families, assistant/org-chart nuance, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.org-chart",
+      "area": "SmartArt orgChart live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume ordinary shared slide shape and connector ops emitted by the SmartArt hierarchy-family layout planner; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/freep-smartart-org-chart-2026-07-07.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
+      ],
+      "remainingWork": "orgChart now uses the bounded shared hierarchy-family live-layout path for parsed root/child nodes as a generic organization tree approximation. Unsupported hierarchy siblings remain on cached drawing fallback. Assistant placement, special org-chart branch styling, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
     }
   ],
   "commands": [
