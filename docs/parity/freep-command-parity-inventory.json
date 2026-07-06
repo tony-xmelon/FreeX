@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 25
+    "workflowEvidenceRows": 26
   },
   "workflowEvidence": [
     {
@@ -326,6 +326,20 @@
         "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
       ],
       "remainingWork": "stackedList now uses the bounded shared list-family live-layout path for parsed nodes while other unsupported list siblings remain on cached drawing fallback. Broader SmartArt geometry families, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.picture-caption-list",
+      "area": "SmartArt pictureCaptionList bounded live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume ordinary shared picture and caption shape ops emitted by the SmartArt layout planner; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/freep-smartart-picture-caption-list-2026-07-07.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
+      ],
+      "remainingWork": "pictureCaptionList now uses a bounded shared live-layout path only when reader-imported node images are deterministically mapped one-to-one from the cached diagram drawing. Missing or ambiguous image mapping keeps cached drawing fallback. PowerPoint-authored visual baselines, broader SmartArt picture layouts, and SmartArt authoring/editing remain deferred."
     },
     {
       "evidenceId": "freep.smartart.basic-cycle",
