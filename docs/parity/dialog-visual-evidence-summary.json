@@ -4954,7 +4954,7 @@
                                "routeFamily":  "dialog.RemoveDuplicates",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.RemoveDuplicates.png",
-                                           "fileBytes":  7978,
+                                           "fileBytes":  7774,
                                            "width":  360,
                                            "height":  360,
                                            "dpiX":  95.986595,
@@ -4962,15 +4962,15 @@
                                            "logicalWidth":  360.05,
                                            "logicalHeight":  360.05,
                                            "pixels":  129600,
-                                           "distinctColors":  166,
-                                           "opaqueRatio":  0.852037,
-                                           "nonBackgroundRatio":  0.210563,
+                                           "distinctColors":  146,
+                                           "opaqueRatio":  1,
+                                           "nonBackgroundRatio":  0.062585,
                                            "isNonBlank":  true,
-                                           "meanLuma":  212.676497
+                                           "meanLuma":  250.282446
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.RemoveDuplicates.png",
-                                                "fileBytes":  7596,
+                                                "fileBytes":  8292,
                                                 "width":  360,
                                                 "height":  360,
                                                 "dpiX":  96,
@@ -4978,11 +4978,11 @@
                                                 "logicalWidth":  360,
                                                 "logicalHeight":  360,
                                                 "pixels":  129600,
-                                                "distinctColors":  119,
+                                                "distinctColors":  190,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.04287,
+                                                "nonBackgroundRatio":  0.041435,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  251.287984
+                                                "meanLuma":  251.668261
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -4997,10 +4997,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.196204,
-                                                  "lumaDelta":  0.151418,
-                                                  "nonBackgroundDelta":  0.167693,
-                                                  "triageScore":  0.515594,
+                                                  "sampleMeanDelta":  0.029712,
+                                                  "lumaDelta":  0.005435,
+                                                  "nonBackgroundDelta":  0.02115,
+                                                  "triageScore":  0.056576,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6116,14 +6116,6 @@
                        ],
     "topPairedOutliers":  [
                               {
-                                  "id":  "dialog.RemoveDuplicates",
-                                  "triageScore":  0.515594,
-                                  "sampleMeanDelta":  0.196204,
-                                  "dimension":  "360.05x360.05 vs 360x360 logical; 360x360 vs 360x360 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.167693
-                              },
-                              {
                                   "id":  "dialog.PrintPreview",
                                   "triageScore":  0.511967,
                                   "sampleMeanDelta":  0.141411,
@@ -6189,6 +6181,14 @@
                               },
                               {
                                   "id":  "dialog.PivotFieldFilter",
+                                  "triageScore":  0.42326,
+                                  "sampleMeanDelta":  0.163139,
+                                  "dimension":  "380.053x470.066 vs 380x470 logical; 380x470 vs 380x470 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.135913
+                              },
+                              {
+                                  "id":  "dialog.PivotFieldFilter.SelectItems",
                                   "triageScore":  0.42326,
                                   "sampleMeanDelta":  0.163139,
                                   "dimension":  "380.053x470.066 vs 380x470 logical; 380x470 vs 380x470 px",

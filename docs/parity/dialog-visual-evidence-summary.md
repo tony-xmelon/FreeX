@@ -65,7 +65,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.RemoveDuplicates | 360x360 | 360x360 | 360x360 px @ 96 DPI vs 360x360 px @ 96 DPI |  |  | 0.516 | 0.196 | 0.151 | 0.168 |
 | dialog.PrintPreview | 1120x700 | 1120x700 | 1120x700 px @ 96 DPI vs 1120x700 px @ 96 DPI |  |  | 0.512 | 0.141 | 0.017 | 0.353 |
 | dialog.PivotValueFieldSettings.NumberFormat | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.491 | 0.162 | 0.137 | 0.192 |
 | dialog.PivotValueFieldSettings | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.472 | 0.161 | 0.133 | 0.178 |
@@ -75,6 +74,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.PivotFieldFilter.LabelFilters | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.453 | 0.156 | 0.129 | 0.167 |
 | dialog.PivotFieldFilter.ValueFilters | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.452 | 0.155 | 0.129 | 0.168 |
 | dialog.PivotFieldFilter | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.423 | 0.163 | 0.124 | 0.136 |
+| dialog.PivotFieldFilter.SelectItems | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.423 | 0.163 | 0.124 | 0.136 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -186,7 +186,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.ProtectSheet | dialog.ProtectSheet.png | 430x540 | 645x810 px @ 144 DPI | True | dialog.ProtectSheet.png | 430x540 | 430x540 px @ 96 DPI | True | True | 0.045 |
 | dialog.ProtectWorkbook | dialog.ProtectWorkbook.png | 360x250 | 540x375 px @ 144 DPI | True | dialog.ProtectWorkbook.png | 380x240 | 380x240 px @ 96 DPI | True | False | 0.165 |
 | dialog.RecommendedPivotTables | dialog.RecommendedPivotTables.png | 560x340 | 840x510 px @ 144 DPI | True | dialog.RecommendedPivotTables.png | 560x340 | 560x340 px @ 96 DPI | True | True | 0.044 |
-| dialog.RemoveDuplicates | dialog.RemoveDuplicates.png | 360x360 | 360x360 px @ 96 DPI | True | dialog.RemoveDuplicates.png | 360x360 | 360x360 px @ 96 DPI | True | True | 0.516 |
+| dialog.RemoveDuplicates | dialog.RemoveDuplicates.png | 360x360 | 360x360 px @ 96 DPI | True | dialog.RemoveDuplicates.png | 360x360 | 360x360 px @ 96 DPI | True | True | 0.057 |
 | dialog.RenameSheet | dialog.RenameSheet.png | 340x150 | 510x225 px @ 144 DPI | True | dialog.RenameSheet.png | 340x150 | 340x150 px @ 96 DPI | True | True | 0.062 |
 | dialog.SaveAsWorkbook | dialog.SaveAsWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | dialog.SaveAsWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | True | 0.036 |
 | dialog.ScenarioManager | dialog.ScenarioManager.png | 360x420 | 540x630 px @ 144 DPI | True | dialog.ScenarioManager.png | 360x420 | 360x420 px @ 96 DPI | True | True | 0.104 |
