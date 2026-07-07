@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 26
+    "workflowEvidenceRows": 27
   },
   "workflowEvidence": [
     {
@@ -212,6 +212,25 @@
         "freep/FreeP.App.Presentation.Tests/ChartRenderPlannerTests.cs"
       ],
       "remainingWork": "Shared chart planning now resolves edge and mixed factor/edge manual layout modes for plot-area and legend rectangles, clamping non-negative bounds inside the chart base rectangle. PowerPoint-authoritative chart visual baselines and nuanced layoutTarget tuning remain deferred."
+    },
+    {
+      "evidenceId": "freep.chart.pie-first-slice-angle",
+      "area": "Chart pie and doughnut first-slice angle preservation",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume shared ChartPieSlicePrimitive angles from ChartRenderPlanner with no renderer-local pie or doughnut angle policy",
+      "evidenceDocs": [
+        "docs/parity/freep-chart-pie-first-slice-angle-2026-07-07.md"
+      ],
+      "verification": [
+        "freep/FreeP.Core.Model/ChartShape.cs",
+        "freep/FreeP.Core.Model/SlideCloner.cs",
+        "freep/FreeP.Core.IO/PptxChartReader.cs",
+        "freep/FreeP.Core.IO/PptxChartWriter.cs",
+        "freep/FreeP.App.Presentation/ChartRenderPlanner.cs",
+        "freep/FreeP.App.Presentation.Tests/ChartRenderPlannerTests.cs",
+        "freep/FreeP.App.Host.Tests/ChartTests.cs"
+      ],
+      "remainingWork": "Pie and doughnut c:firstSliceAng now round-trips through the model and PPTX package and drives shared slice primitive planning. PowerPoint-authoritative visual baselines, pie3D behavior, and broader chart visual fidelity remain deferred."
     },
     {
       "evidenceId": "freep.omml.transparent-phantom-spacing",
