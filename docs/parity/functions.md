@@ -29,8 +29,8 @@
 | Information | 19 | 0 | 0 | 0 | 19 | **100%** |
 | Lambda / Advanced | 9 | 0 | 0 | 0 | 9 | **100%** |
 | Database | 12 | 0 | 0 | 0 | 12 | **100%** |
-| Engineering / Cube / Cloud | 53 | 0 | 0 | 7 | 53 | **100%** |
-| **TOTAL** | **491** | **0** | **0** | **7** | **491** | **100%** |
+| Engineering / Cube / Cloud | 53 | 0 | 0 | 9 | 53 | **100%** |
+| **TOTAL** | **491** | **0** | **0** | **9** | **491** | **100%** |
 
 Coverage = (Implemented + Partial) / In-scope Total. Excluded functions are not counted in the in-scope total.
 
@@ -591,7 +591,7 @@ Post-sweep hardening also pins `ASC`, `DBCS`, and `JIS` to Excel's non-DBCS lang
 
 ## Engineering / Cube / Cloud
 
-**Coverage: 53/53 in-scope functions (100%); cloud/cube functions excluded**
+**Coverage: 53/53 in-scope functions (100%); cloud/cube/live-data functions excluded**
 
 | Function | Status |
 |---|---|
@@ -626,6 +626,7 @@ Post-sweep hardening also pins `ASC`, `DBCS`, and `JIS` to Excel's non-DBCS lang
 | HEX2DEC | Implemented |
 | HEX2OCT | Implemented |
 | IMABS | Implemented |
+| IMAGE | Excluded from scope |
 | IMARGUMENT | Implemented |
 | IMAGINARY | Implemented |
 | IMCONJUGATE | Implemented |
@@ -654,6 +655,7 @@ Post-sweep hardening also pins `ASC`, `DBCS`, and `JIS` to Excel's non-DBCS lang
 | OCT2DEC | Implemented |
 | OCT2HEX | Implemented |
 | RTD | Excluded from scope |
+| STOCKHISTORY | Excluded from scope |
 | WEBSERVICE | Excluded from scope |
 
 > Note: `CONVERT` handles unit conversion. The discrete base-conversion and bit-manipulation engineering functions are implemented separately.
