@@ -227,4 +227,21 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\to
 
 Outcome: summary trust `passed`, evidence rows `41`, core-layout readiness `22` trusted WPF/Avalonia scenario rows. The generated summary showed both hosts reporting `4 proofing visual adornment(s)` for both review proofing scenarios, with `grammar-squiggle wavy #2B579A` and `spelling-squiggle wavy #D13438`. The run folder was deleted after validation.
 
-Remaining caveat: these rows are machine-checkable FreeW WPF/Avalonia shared proofing-detail evidence. They still do not claim external MS Word PNG parity because `review-proofing-visual-depth` has no direct Word PNG baseline mapping on this no-Word host.
+## Review proofing Word-baseline-ready proof
+
+The 2026-07-13 proofing baseline-readiness slice adds the named `ReviewProofingVisualProof` scenario set for:
+
+- `review-proofing-visual-depth`
+- `review-protection-proofing-comments-only`
+
+Both scenarios now have direct Word-baseline policy rows in the shared visual-evidence summary. The runner guard requires trusted WPF and Avalonia rows, proofing diagnostic/adornment metadata, stable `spelling-squiggle` and `grammar-squiggle` signatures, direct baseline policy rows, and explicit `word-baseline-unavailable` blockers when Word COM is not available.
+
+Verified on 2026-07-13 with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\review-proofing-proof-20260713-worker -MaxPages 3 -ScenarioSet ReviewProofingVisualProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+Outcome: summary trust `passed`, evidence rows `4`, baseline comparisons `4`, all `word-baseline-unavailable`. The readiness guard verified `4` trusted WPF/Avalonia scenario rows, `4` proofing semantic rows, `4` Word-baseline policy rows, and `2` explicit proofing unavailable blockers.
+
+Remaining caveat: this proves paired FreeW renderer evidence and Word-baseline readiness only. Because Word COM is unavailable on this host, it does not claim authoritative Microsoft Word PNG parity.
