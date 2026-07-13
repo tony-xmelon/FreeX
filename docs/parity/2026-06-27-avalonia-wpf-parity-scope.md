@@ -223,7 +223,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
    - The focused thumbnail evidence mode can now generate WPF/Avalonia bitmap comparisons, but PowerPoint-authoritative thumbnail baselines still need a COM-capable machine and a no-COM success policy for local evidence loops.
 3. Editing parity remains uneven:
    - WPF has rich text and table-cell editors.
-   - Avalonia has simpler text editing and the rendering canvas still documents viewer-only interactive adorners.
+   - Avalonia now shares table-cell rich edit selection/result metadata and selected bullet/numbering preset state with WPF through `TableCellEditPlanner`, but its editor widget remains simpler than WPF's native rich editor.
 4. Renderer duplication remains at the WPF/Avalonia realization edge even though many planners are now neutral.
 5. PowerPoint-authoritative baselines cannot be claimed from this machine because `PowerPoint.Application` COM is not registered.
 6. Fidelity gaps remain for PDF export, SmartArt/modern object editing, chart layout, OMML math layout, connector precision, media/presenter view depth, text effects, and true PowerPoint visual parity.
