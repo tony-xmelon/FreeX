@@ -102,3 +102,27 @@ Verified on 2026-07-13 with the command above:
 - Core layout readiness: `22` trusted WPF/Avalonia scenario rows.
 - Backstage readiness: skipped by scenario filter.
 - Summary files: `freew-fidelity-corpus/runs/core-layout-proof-20260713-smoke/freew_visual_evidence_summary.{json,md}`.
+
+## Current Page Composition no-Word evidence path
+
+The 2026-07-13 page-composition runner slice adds a named `PageCompositionProof` scenario set to `freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1`. It broadens the no-Word paired evidence beyond Core Layout by proving the stable columns and border/watermark family without pulling in the known all-up table, drawing-object, SmartArt, or WordArt drift lanes:
+
+- WPF `f2-columns` paired with Avalonia `page-composition-columns`, both mapped to the `f2-columns` Word-baseline scenario.
+- WPF `f2-border-watermark` paired with Avalonia `page-composition-border-watermark`, both mapped to the `f2-border-watermark` Word-baseline scenario.
+
+Run it on a no-Word host with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\page-composition-proof-20260713-smoke -MaxPages 2 -ScenarioSet PageCompositionProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+The runner now checks that the four host/scenario rows are trusted and that the WPF and Avalonia sides use the same Word-baseline policy mapping. It still reports `word-baseline-unavailable` when Word COM is missing, so the slice proves paired renderer evidence and baseline readiness, not authoritative MS Word PNG parity.
+
+Verified on 2026-07-13 with the command above:
+
+- Summary trust: `passed`.
+- Evidence rows: `5`.
+- Word baseline comparisons: `5`, all `word-baseline-unavailable`.
+- Page composition readiness: `4` trusted host/scenario rows and `5` verified Word-baseline policy rows.
+- Backstage readiness: skipped by scenario filter.
+- Summary files: `freew-fidelity-corpus/runs/page-composition-proof-20260713-smoke/freew_visual_evidence_summary.{json,md}`.
