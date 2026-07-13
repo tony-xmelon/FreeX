@@ -23,6 +23,8 @@ The 2026-07-04 WordArt watermark contract-depth slice adds paired semantic valid
 
 The 2026-07-05 table signature triage update keeps the table pair-signature failure intact but makes it actionable. When WPF/Avalonia table plan signatures differ, the summary now includes bounded field-level details such as table style drift, `HasCellShading` drift, and exact cell coordinates like `r0c0g0 shading color` before the raw signatures. Current paired evidence shows the table family failing on header-cell shading metadata, while broader drawing and SmartArt mismatches remain separate lanes.
 
+The 2026-07-13 equation geometry evidence slice adds a shared, no-Word equation contract for `equation-structures`. `FreeWVisualEvidencePlanner` now emits `Equations` metadata for each page expectation, including equation/element/segment counts, element-kind counts, segment-role counts, baseline-role counts, nested slot counts/max depth, and deterministic segment, element, and slot geometry signatures. The signatures cover scripts, fractions, radicals with degree/radicand, n-ary limits/operand, matrix and equation-array cells, decorators, delimiters, group characters, and function application. `FreeWVisualEvidenceManifestNormalizer` surfaces the same facts in summary JSON and the `Equation Geometry Evidence` Markdown table, and the WPF/Avalonia pair validator fails if either host omits the metadata or if any count/signature drifts. This remains shared FreeW renderer evidence only; it does not claim authoritative Microsoft Word PNG equation parity when Word COM is unavailable.
+
 ## Why this matters
 
 The existing summary already failed the run for missing backstage pairs, placeholder captures, fallback capture sources, and missing required pages. The new structured field lets automation and planners check readiness without parsing Markdown, while the Markdown table makes the same failures directly actionable for reviewers.
@@ -126,6 +128,30 @@ Verified on 2026-07-13 with the command above:
 - Page composition readiness: `4` trusted host/scenario rows and `5` verified Word-baseline policy rows.
 - Backstage readiness: skipped by scenario filter.
 - Summary files: `freew-fidelity-corpus/runs/page-composition-proof-20260713-smoke/freew_visual_evidence_summary.{json,md}`.
+
+## Current Table Layout no-Word evidence path
+
+The 2026-07-13 table-layout runner slice adds a named `TableLayoutProof` scenario set to `freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1`. It broadens the no-Word paired evidence beyond Core Layout and Page Composition by proving the stable table renderer family without pulling in the wider all-up drawing-object, SmartArt, or WordArt drift lanes:
+
+- `table-layout-complex`
+- `table-pagination-repeat-header`
+- `table-page-composition-stress`
+
+Run it on a no-Word host with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\table-layout-proof-20260713-smoke -MaxPages 2 -ScenarioSet TableLayoutProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+The runner checks that all three table scenarios have trusted WPF and Avalonia normalized scenario rows, that the repeat-header and table-composition scenarios each produce at least two trusted outputs per host, and that every row has a direct Word-baseline policy mapping. On no-Word hosts those rows report `word-baseline-unavailable`; the slice proves paired renderer evidence and Word-baseline readiness, not authoritative MS Word PNG parity.
+
+Verified on 2026-07-13 with the command above:
+
+- Summary trust: `passed`.
+- Evidence rows: `11`.
+- Word baseline comparisons: `11`, all `word-baseline-unavailable`.
+- Table layout readiness: `6` trusted WPF/Avalonia scenario rows and `11` verified Word-baseline policy rows.
+- Backstage readiness: skipped by scenario filter.
 
 ## Review proofing visual details
 
