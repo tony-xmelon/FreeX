@@ -215,6 +215,30 @@ Verified on 2026-07-14 with the command above:
 - Backstage readiness: skipped by scenario filter.
 - Summary files: `freew-fidelity-corpus/runs/wordart-watermark-proof-20260714-worker/freew_visual_evidence_summary.{json,md}`.
 
+## Current SmartArt Polygon no-Word Evidence Path
+
+The 2026-07-14 SmartArt polygon runner slice adds a focused verified use of the existing `SmartArtPolygonVisualProof` scenario set in `freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1`. It proves the stable SmartArt polygon geometry subset without pulling in unrelated drawing-object, chart, WordArt, watermark, table, or review rows:
+
+- `chart-smartart-complex`
+
+Run it on a no-Word host with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\smartart-polygon-proof-20260714-worker -MaxPages 2 -ScenarioSet SmartArtPolygonVisualProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+The runner checks trusted WPF and Avalonia rows for `chart-smartart-complex`, SmartArt visual signatures for both hierarchy and pyramid layouts, Basic Pyramid polygon geometry, direct Word-baseline policy rows, and the explicit `chart-smartart-complex-word-baseline-fidelity` blocker when Word COM is unavailable. This remains paired renderer evidence and Word-baseline readiness only; it does not claim authoritative Microsoft Word PNG SmartArt parity.
+
+Verified on 2026-07-14 with the command above:
+
+- Summary trust: `passed`.
+- Evidence rows: `3`.
+- Word baseline comparisons: `3`, all `word-baseline-unavailable`.
+- Drawing/object readiness: `2` trusted scenario rows, `3` semantic rows, and `3` verified Word-baseline policy rows.
+- SmartArt polygon readiness: `3` trusted semantic rows, `3` verified Word-baseline policy rows, and the Word-baseline-unavailable blocker verified.
+- Backstage readiness: skipped by scenario filter.
+- Summary files: `freew-fidelity-corpus/runs/smartart-polygon-proof-20260714-worker/freew_visual_evidence_summary.{json,md}`.
+
 ## Field page-number display evidence
 
 The 2026-07-13 field page-number depth slice extends the existing `field-page-number-variants` scenario with shared resolved PAGE/NUMPAGES header/footer evidence. The fixture now enables Page Number Format dialog chapter numbering with Heading 1 and a hyphen separator, so the shared header/footer plan records deterministic PAGE display signatures such as `1-1`, `1-2`, and `1-3` across the first, even, and default page slots.
