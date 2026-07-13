@@ -17,4 +17,4 @@ Verification:
 Remaining blockers:
 
 - PowerPoint-authoritative animation-pane UI baselines still require a machine with desktop Microsoft PowerPoint COM registered.
-- Advanced effect playback visuals and unsupported imported effect families remain deferred until their playback contracts and baseline corpus are added.
+- Exact PowerPoint-authoritative advanced effect playback visuals remain deferred until their baseline corpus is added on a COM-capable machine.
