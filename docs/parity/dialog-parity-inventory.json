@@ -1188,6 +1188,7 @@
                                                    "src\\FreeX.App.Services\\ReviewWorkflowPlanner.cs",
                                                    "src\\FreeX.Core.Commands\\AccessibilityCheckerService.Charts.cs",
                                                    "src\\FreeX.Core.Commands\\AccessibilityCheckerService.Contrast.cs",
+                                                   "src\\FreeX.Core.Commands\\AccessibilityCheckerService.CoreFormulaFinancialDelegation.cs",
                                                    "src\\FreeX.Core.Commands\\AccessibilityCheckerService.cs",
                                                    "src\\FreeX.Core.Commands\\AccessibilityCheckerService.HiddenContent.cs",
                                                    "src\\FreeX.Core.Commands\\AccessibilityCheckerService.Tables.cs"
