@@ -18,7 +18,7 @@ Bounded PowerPoint chart parity for `c:firstSliceAng` on `c:pieChart` and `c:dou
 - `ChartTests.RoundTrip_PieChart_FirstSliceAnglePreservedInPackageAndModel`
 - `ChartTests.RoundTrip_PieChart_AbsentFirstSliceAngleStaysAbsentAndDefault`
 - `ChartTests.RoundTrip_DoughnutChart_FirstSliceAnglePreservedInPackageAndModel`
-- `ChartTests.SlideCloner_ChartPreservesFirstSliceAngle`
+- `ChartTests.SlideCloner_ChartPreservesTypeSpecificChartMetadata`
 
 ## Limitations
 
