@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 28
+    "workflowEvidenceRows": 29
   },
   "workflowEvidence": [
     {
@@ -233,6 +233,24 @@
         "freep/FreeP.App.Host.Tests/ChartTests.cs"
       ],
       "remainingWork": "Bar and column c:gapWidth/c:overlap now round-trip through the model/package and drive shared primitive and data-label spacing for WPF/Avalonia. PowerPoint-authoritative chart visual baselines, 3-D bar/column spacing, and broader type-specific visual fidelity remain deferred."
+    },
+    {
+      "evidenceId": "freep.chart.bubble-sizing-semantics",
+      "area": "Chart bubble authored sizing semantics",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume shared ChartBubblePrimitive radii with no renderer-local bubble sizing policy",
+      "evidenceDocs": [
+        "docs/parity/freep-chart-bubble-sizing-semantics-2026-07-13.md"
+      ],
+      "verification": [
+        "freep/FreeP.Core.Model/ChartShape.cs",
+        "freep/FreeP.Core.IO/PptxChartReader.cs",
+        "freep/FreeP.Core.IO/PptxChartWriter.cs",
+        "freep/FreeP.App.Presentation/ChartRenderPlanner.cs",
+        "freep/FreeP.App.Presentation.Tests/ChartRenderPlannerTests.cs",
+        "freep/FreeP.App.Host.Tests/ChartTests.cs"
+      ],
+      "remainingWork": "Shared bubble primitive planning now consumes c:bubbleScale, c:sizeRepresents, and c:showNegBubbles metadata before WPF/Avalonia rendering. PowerPoint-authoritative bubble chart visual baselines and broader chart fidelity remain deferred."
     },
     {
       "evidenceId": "freep.chart.pie-first-slice-angle",
