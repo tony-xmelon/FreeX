@@ -10,6 +10,7 @@ Implemented evidence:
 - Area primitives keep `gap` as separate contiguous filled area primitives, render `zero` as a zero-valued point in one filled area, and render `span` as one filled area connecting the neighboring nonblank points.
 - Scatter line primitives preserve missing X values as gaps, but when X exists they honor blank Y values for `zero` and `span` through the same shared point/segment planner.
 - Radar primitives now use a renderer-neutral path-list contract for null points: absent or explicit `gap` emits deterministic open segments around blanks, `zero` materializes the blank spoke at chart center, and `span` bridges the neighboring nonblank spokes. Both WPF and Avalonia consume the same `primitive.Paths` list.
+- Pie and doughnut primitives now make the conservative no-sweep policy explicit for null, zero, and negative values while preserving original point identity for visible slices. This keeps point colors, point styles, and pie data labels aligned with their authored category indexes after skipped points.
 
 Verification coverage:
 
@@ -18,11 +19,14 @@ Verification coverage:
 - `ChartRenderPlannerTests.BuildRadarPrimitivePlan_DefaultDisplayBlanksAsGap_BreaksSegmentsAroundBlankPoint`
 - `ChartRenderPlannerTests.BuildRadarPrimitivePlan_DisplayBlanksAsZero_MaterializesBlankPointAtCenter`
 - `ChartRenderPlannerTests.BuildRadarPrimitivePlan_DisplayBlanksAsSpan_BridgesBlankPoint`
+- `ChartRenderPlannerTests.BuildPieSlicePrimitives_NullAndNonpositiveValuesHaveNoSweepAndPreservePointIdentity`
+- `ChartRenderPlannerTests.BuildPieSlicePrimitives_AllNullOrNonpositiveValuesReturnNoVisibleSlices`
+- `ChartRenderPlannerTests.BuildDoughnutSlicePrimitives_NullAndNonpositiveValuesHaveNoSweepPerRing`
+- `ChartRenderPlannerTests.BuildDataLabelPlans_PieLabelsPreserveOriginalCategoriesAfterNoSweepPoints`
 - `RendererNeutralDedupPlannerTests.WpfAndAvaloniaSlideCanvases_UseRendererNeutralAreaScatterBubbleAndRadarPlanning`
 - `dotnet test freep\FreeP.App.Presentation.Tests\FreeP.App.Presentation.Tests.csproj --configuration Release --filter "FullyQualifiedName~ChartRenderPlannerTests" --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -v:minimal`
 
 Remaining work:
 
-- Pie and doughnut charts continue to ignore null and nonpositive values as no-sweep slices. This matches the conservative existing primitive model and avoids inventing a visible wedge for a blank point.
 - Bubble charts still require authored X/Y coordinates before a bubble can be planned; this slice does not infer missing X coordinates or broaden bubble-size fallback semantics.
-- PowerPoint-authoritative bitmap baselines for radar blank-point cases remain deferred to a machine with registered `PowerPoint.Application` COM. This lane is shared render-planning and renderer-consumption evidence, not a COM-backed visual baseline.
+- PowerPoint-authoritative bitmap baselines for radar and pie/doughnut blank-point cases remain deferred to a machine with registered `PowerPoint.Application` COM. This lane is shared render-planning and renderer-consumption evidence, not a COM-backed visual baseline.
