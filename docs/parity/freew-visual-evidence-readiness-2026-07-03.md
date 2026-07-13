@@ -176,6 +176,30 @@ Verified on 2026-07-13 with the command above:
 - Shape/object readiness: `4` trusted WPF/Avalonia scenario rows and `5` verified Word-baseline policy rows.
 - Backstage readiness: skipped by scenario filter.
 
+## Current WordArt/Watermark no-Word evidence path
+
+The 2026-07-14 WordArt/watermark runner slice adds a named `WordArtWatermarkVisualProof` scenario set to `freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1`. It proves the focused WordArt and watermark family without pulling in unrelated drawing-object, chart, or SmartArt rows:
+
+- `wordart-watermark-stress`
+- `wordart-picture-watermark-layout`
+
+Run it on a no-Word host with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\wordart-watermark-proof-20260714-worker -MaxPages 2 -ScenarioSet WordArtWatermarkVisualProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+The runner reuses the drawing/object readiness gate for only the selected WordArt/watermark subset. It checks trusted WPF and Avalonia normalized scenario rows, WordArt object/effect metadata, text watermark and page-border metadata, picture-watermark metadata, and direct Word-baseline policy rows. On no-Word hosts those rows report `word-baseline-unavailable`; the slice proves paired renderer evidence and Word-baseline readiness, not authoritative MS Word PNG parity.
+
+Verified on 2026-07-14 with the command above:
+
+- Summary trust: `passed`.
+- Evidence rows: `5`.
+- Word baseline comparisons: `5`, all `word-baseline-unavailable`.
+- WordArt/watermark readiness: `4` trusted WPF/Avalonia scenario rows, `5` semantic rows, and `5` verified Word-baseline policy rows.
+- Backstage readiness: skipped by scenario filter.
+- Summary files: `freew-fidelity-corpus/runs/wordart-watermark-proof-20260714-worker/freew_visual_evidence_summary.{json,md}`.
+
 ## Field page-number display evidence
 
 The 2026-07-13 field page-number depth slice extends the existing `field-page-number-variants` scenario with shared resolved PAGE/NUMPAGES header/footer evidence. The fixture now enables Page Number Format dialog chapter numbering with Heading 1 and a hyphen separator, so the shared header/footer plan records deterministic PAGE display signatures such as `1-1`, `1-2`, and `1-3` across the first, even, and default page slots.
