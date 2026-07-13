@@ -185,7 +185,7 @@ Dedup items that were blockers in the prior report are now landed or intentional
 2. Reconcile or land the active `FreeX-linux` FreeW work before duplicating effort in the same files.
 3. Continue the Avalonia Backstage print lane by adding real native print only if the target exposes a printer API; otherwise keep the shared capability/status policy, evidence contract, Print Preview, and Create PDF fallback honest while broadening print/export evidence.
 4. Close one high-value behavior family with shared planning plus Avalonia UI where Word-like results are still weakly proven.
-5. Extend the WPF/Avalonia render or print evidence lane from the current 20-fixture / 80-row no-Word baseline, keeping the shared note-region, top-level drawing-effects, table cell-border, protection-history, cross-reference-refresh, and references-heavy rows covered in both renderers, then run real Word PNG baselines on a machine with Word COM installed.
+5. Extend the WPF/Avalonia render or print evidence lane from the current no-Word baseline, keeping the shared note-region, top-level drawing-effects, table cell-border, protection-history, cross-reference-refresh, references-heavy, and generated review compare/combine retained-model safety rows covered in both renderers, then run real Word PNG baselines on a machine with Word COM installed.
 
 ## FreeP Status
 
