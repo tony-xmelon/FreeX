@@ -153,6 +153,14 @@ Verified on 2026-07-13 with the command above:
 - Table layout readiness: `6` trusted WPF/Avalonia scenario rows and `11` verified Word-baseline policy rows.
 - Backstage readiness: skipped by scenario filter.
 
+## Field page-number display evidence
+
+The 2026-07-13 field page-number depth slice extends the existing `field-page-number-variants` scenario with shared resolved PAGE/NUMPAGES header/footer evidence. The fixture now enables Page Number Format dialog chapter numbering with Heading 1 and a hyphen separator, so the shared header/footer plan records deterministic PAGE display signatures such as `1-1`, `1-2`, and `1-3` across the first, even, and default page slots.
+
+`HeaderFooterVisualPlanner` resolves PAGE and NUMPAGES field-run text through the shared `PageNumberFormatDialogPlanner.BuildDisplayPlans` output before the evidence manifest is written. `FreeWVisualEvidencePlanner` exposes those values as `HeaderFooterResolvedFieldSignatures`, and the normalizer requires WPF/Avalonia rows for `field-page-number-variants` to agree on the resolved signatures.
+
+This is shared FreeW WPF/Avalonia semantic evidence only. If Word COM is unavailable, the summary may report trusted FreeW evidence and `word-baseline-unavailable`; it does not claim authoritative Microsoft Word PNG parity.
+
 ## Legal/reference section page-number evidence
 
 The 2026-07-13 legal/reference page-number slice adds `legal-reference-section-page-numbers` to the shared visual evidence contract and the `CoreLayoutProof` runner set. The fixture proves TOA page-reference evidence where the same authority appears on physical page 1 with displayed page `i` in front matter and on physical page 2 with displayed page `1` after the main section restarts numbering.
