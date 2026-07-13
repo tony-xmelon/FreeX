@@ -19,10 +19,13 @@ Focused regression coverage:
 
 - `tests/Free.Shared.Pdf.Tests/PortablePdfWriterTests.cs`
   - `Write_EmitsSourceCroppedImagePlacementWithDestinationClip`
+- `tests/Free.Shared.Pdf.Tests/SkiaPdfWriterTests.cs`
+  - `TryGetSourceRect_MapsPdfImageCropToSkiaSourceRectangle`
+  - `Write_AcceptsSourceCroppedImages`
 - `freep/FreeP.App.Host.Tests/PresentationPdfExporterTests.cs`
   - `BuildDocument_CarriesPictureCropToPdfImageSourceCrop`
 
-These tests prove that modeled FreeP picture source crop reaches the shared PDF draw-op model and is serialized into concrete PDF clip/transform operators without requiring PowerPoint COM.
+These tests prove that modeled FreeP picture source crop reaches the shared PDF draw-op model and is serialized through both the dependency-free portable writer and the Skia shared writer without requiring PowerPoint COM.
 
 ## Remaining Work
 
