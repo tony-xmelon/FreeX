@@ -173,6 +173,18 @@ Expected semantic signature:
 
 This is shared FreeW WPF/Avalonia semantic evidence only. It keeps the no-Word baseline policy honest: when Word COM is unavailable, the summary may report trusted FreeW evidence and `word-baseline-unavailable`, but it does not claim authoritative Microsoft Word PNG parity.
 
+## References-heavy Word-baseline-ready proof
+
+The 2026-07-13 references-heavy proof slice adds a named runner set for the `references-heavy-fields` scenario only:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\references-heavy-word-baseline-proof-20260713-smoke -MaxPages 3 -ScenarioSet ReferencesHeavyWordBaselineProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+The runner guard requires trusted WPF and Avalonia rows for `references-heavy-fields`, verifies the shared semantic evidence for `CITATION`, `BIBLIOGRAPHY`, cached `TOA` page-reference results, and generated TOA signatures for the Cases and Statutes entries, and requires direct Word-baseline policy rows for the scenario. On no-Word hosts, it also requires the explicit `references-heavy-toa-page-number-fidelity` blocker with `word-baseline-unavailable`, so the run proves baseline readiness and records the missing external Word PNG step without claiming authoritative MS Word visual parity.
+
+An IO round-trip proof also covers the compact references-heavy package shape: DOCX output retains `word/bibliography/sources.xml`, CITATION/BIBLIOGRAPHY/TOA complex fields, hidden TA marks, generated TOA entries, and reopened page-number evidence for `Example v. FreeW` (`1, 2`) and `Free Software Evidence Act` (`1`).
+
 ## Review proofing visual details
 
 The 2026-07-13 proofing-detail slice moves the `review-proofing-visual-depth` and
