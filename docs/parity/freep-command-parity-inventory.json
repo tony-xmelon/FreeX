@@ -458,6 +458,20 @@
       "remainingWork": "gearCycle now uses the bounded shared cycle-family live-layout path for parsed nodes as a renderer-neutral rounded-box/connector approximation, not true gear-tooth geometry. Other unsupported cycle siblings remain on cached drawing fallback. Broader SmartArt geometry families, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
     },
     {
+      "evidenceId": "freep.smartart.text-cycle",
+      "area": "SmartArt text cycle live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume ordinary shared slide shape and connector ops emitted by the SmartArt cycle-family layout planner; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/freep-smartart-text-cycle-2026-07-13.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
+      ],
+      "remainingWork": "textCycle now uses the bounded shared cycle-family live-layout path for parsed nodes as a renderer-neutral rounded-box/connector approximation. Other unsupported cycle siblings remain on cached drawing fallback. Exact PowerPoint text-cycle placement, richer cycle geometry, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
+    },
+    {
       "evidenceId": "freep.smartart.vertical-bullet-list",
       "area": "SmartArt vertical bullet list live layout",
       "status": "shared-render-planner-evidence",
