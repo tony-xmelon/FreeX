@@ -313,6 +313,17 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\to
 
 The runner guard requires trusted WPF and Avalonia rows for `legal-reference-section-page-numbers`, verifies the cached `TOA` field sentinel, generated TOA signatures for both Cases and Statutes, and the section-formatted distinction between physical pages `1,2` and displayed pages `i, 1`. On no-Word hosts, it also requires the explicit `legal-reference-section-page-number-fidelity` blocker with `word-baseline-unavailable`, so the run proves shared renderer readiness while recording the missing external Word PNG baseline step.
 
+Verified on 2026-07-14 with the command above, using run root `freew-fidelity-corpus/runs/legal-reference-section-page-proof-20260714-depth5`:
+
+- Summary trust: `passed`.
+- Evidence rows: `4`.
+- Word baseline comparisons: `4`, all `word-baseline-unavailable`.
+- Legal-reference section page-number readiness: `2` trusted WPF/Avalonia scenario rows, `4` verified semantic rows, `4` verified Word-baseline policy rows, and the legal-reference Word-baseline-unavailable blocker verified.
+- Backstage readiness: skipped by scenario filter.
+- Summary files: `freew-fidelity-corpus/runs/legal-reference-section-page-proof-20260714-depth5/freew_visual_evidence_summary.{json,md}`.
+
+This remains paired FreeW renderer evidence and Word-baseline readiness only. Because Word COM is unavailable on this host, it does not claim authoritative Microsoft Word PNG legal-reference page-number parity.
+
 ## References-heavy Word-baseline-ready proof
 
 The 2026-07-13 references-heavy proof slice adds a named runner set for the `references-heavy-fields` scenario only:
