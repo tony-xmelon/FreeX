@@ -50,3 +50,22 @@ Outcome:
 - Summary files: `freew-fidelity-corpus/runs/backstage-real-evidence-20260703-smoke/freew_visual_evidence_summary.{json,md}`.
 
 The runner now has an explicit Backstage readiness gate after summary normalization. If a required Backstage row is missing, failed, placeholder-backed, fallback-backed, or otherwise not trusted, the runner fails with the exact scenario/host/page plus the normalized output and notes.
+
+## Current Backstage-only no-Word evidence
+
+Verified on 2026-07-13 with Word COM unavailable:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\backstage-real-evidence-20260713-smoke -MaxPages 3 -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered" -ScenarioId backstage-print-preview-fidelity,backstage-pdf-export-fidelity
+```
+
+Outcome:
+
+- Summary trust: `passed`.
+- Evidence rows: `10`.
+- Word baseline comparisons: `10`, all `word-baseline-unavailable`.
+- Backstage readiness: `8` required rows trusted for `backstage-print-preview-fidelity` and `backstage-pdf-export-fidelity` across WPF/Avalonia pages 1-2.
+- Backstage capture routes: `8` required rows verified with `backstage-print-preview-fixed-layout-capture` or `backstage-pdf-export-raster-capture`.
+- Summary files: `freew-fidelity-corpus/runs/backstage-real-evidence-20260713-smoke/freew_visual_evidence_summary.{json,md}`.
+
+The Backstage-only path uses the same real WPF/Avalonia renderer captures and manifest files, but filters summary validation to the two Backstage scenarios so unrelated drawing-object or WordArt contract drift cannot block print/export evidence readiness. It does not claim authoritative MS Word PNG parity when Word COM is unavailable.
