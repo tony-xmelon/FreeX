@@ -220,6 +220,14 @@ Expected semantic signature:
 
 This is shared FreeW WPF/Avalonia semantic evidence only. It keeps the no-Word baseline policy honest: when Word COM is unavailable, the summary may report trusted FreeW evidence and `word-baseline-unavailable`, but it does not claim authoritative Microsoft Word PNG parity.
 
+The 2026-07-14 focused legal-reference proof slice adds a named runner set for this scenario only:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\legal-reference-section-page-proof-20260714-worker -MaxPages 2 -ScenarioSet LegalReferenceSectionPageProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+The runner guard requires trusted WPF and Avalonia rows for `legal-reference-section-page-numbers`, verifies the cached `TOA` field sentinel, generated TOA signatures for both Cases and Statutes, and the section-formatted distinction between physical pages `1,2` and displayed pages `i, 1`. On no-Word hosts, it also requires the explicit `legal-reference-section-page-number-fidelity` blocker with `word-baseline-unavailable`, so the run proves shared renderer readiness while recording the missing external Word PNG baseline step.
+
 ## References-heavy Word-baseline-ready proof
 
 The 2026-07-13 references-heavy proof slice adds a named runner set for the `references-heavy-fields` scenario only:
