@@ -153,6 +153,29 @@ Verified on 2026-07-13 with the command above:
 - Table layout readiness: `6` trusted WPF/Avalonia scenario rows and `11` verified Word-baseline policy rows.
 - Backstage readiness: skipped by scenario filter.
 
+## Current Shape/Object no-Word evidence path
+
+The 2026-07-13 shape/object runner slice adds a named `ShapeObjectVisualProof` scenario set to `freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1`. It broadens the no-Word paired evidence beyond table and page composition by proving the stable drawing/object subset without pulling in the wider chart, SmartArt, or WordArt rows:
+
+- `drawing-objects-complex`
+- `object-format-position-size-style`
+
+Run it on a no-Word host with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\shape-object-proof-20260713-smoke -MaxPages 2 -ScenarioSet ShapeObjectVisualProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+The runner reuses the drawing/object readiness gate for only the selected shape/object subset. It checks trusted WPF and Avalonia normalized scenario rows, grouped drawing object semantics for `drawing-objects-complex`, object-format alt text/effects/z-order semantics for `object-format-position-size-style`, and direct Word-baseline policy rows. On no-Word hosts those rows report `word-baseline-unavailable`; the slice proves paired renderer evidence and Word-baseline readiness, not authoritative MS Word PNG parity.
+
+Verified on 2026-07-13 with the command above:
+
+- Summary trust: `passed`.
+- Evidence rows: `5`.
+- Word baseline comparisons: `5`, all `word-baseline-unavailable`.
+- Shape/object readiness: `4` trusted WPF/Avalonia scenario rows and `5` verified Word-baseline policy rows.
+- Backstage readiness: skipped by scenario filter.
+
 ## Field page-number display evidence
 
 The 2026-07-13 field page-number depth slice extends the existing `field-page-number-variants` scenario with shared resolved PAGE/NUMPAGES header/footer evidence. The fixture now enables Page Number Format dialog chapter numbering with Heading 1 and a hyphen separator, so the shared header/footer plan records deterministic PAGE display signatures such as `1-1`, `1-2`, and `1-3` across the first, even, and default page slots.
