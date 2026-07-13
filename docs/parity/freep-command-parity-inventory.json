@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 31
+    "workflowEvidenceRows": 32
   },
   "workflowEvidence": [
     {
@@ -159,6 +159,20 @@
         "freep/FreeP.App.Presentation.Tests/PresentationExportPlannerTests.cs"
       ],
       "remainingWork": "Axis-aligned oval/ellipse fixed-layout output is covered through shared WPF/Avalonia PDF paths. Broader freeform/custom geometry, crop masks, transparency, effects, and PowerPoint-authoritative PDF visual baselines remain deferred."
+    },
+    {
+      "evidenceId": "freep.export.pdf-picture-frame-clips",
+      "area": "Fixed-layout PDF picture frame clipping",
+      "status": "shared-fixed-layout-evidence",
+      "hostCoverage": "WPF/Avalonia share the same FreeP PDF exporter and shared portable/Skia PDF draw-op model; picture frame geometry is mapped before host-specific PDF emission",
+      "evidenceDocs": [
+        "docs/parity/freep-pdf-picture-frame-export-2026-07-13.md"
+      ],
+      "verification": [
+        "tests/Free.Shared.Pdf.Tests/PortablePdfWriterTests.cs",
+        "freep/FreeP.App.Host.Tests/PresentationPdfExporterTests.cs"
+      ],
+      "remainingWork": "Ellipse and roundRect picture-frame masks now export through shared WPF/Avalonia PDF paths. Source-image crop rectangles, picture alpha/color effects, arbitrary custom/freeform geometry clipping, richer shape effects, and PowerPoint-authoritative PDF visual baselines remain deferred."
     },
     {
       "evidenceId": "freep.table.inline-text.workflow-depth",
