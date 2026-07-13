@@ -19,3 +19,12 @@ Example focused run:
 ```powershell
 pwsh freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus/runs/drawing-object-proof -ScenarioSet DrawingObjectVisualProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
 ```
+
+Validated on 2026-07-13 with the same no-Word mode:
+
+- Summary trust: `passed`.
+- Evidence rows: `12`.
+- Word baseline comparisons: `12`, all `word-baseline-unavailable`.
+- Drawing object visual proof readiness: `10` trusted WPF/Avalonia scenario rows, `12` verified semantic rows, and `12` verified Word-baseline policy rows.
+- Backstage readiness was skipped by scenario filter.
+- The generated run folder was deleted after validation.
