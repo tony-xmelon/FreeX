@@ -8,6 +8,7 @@ Covered:
 - PowerPoint-authored caption relationship ids are reused when they do not collide with writer-owned slide relationships, including non-FreeP ids such as `rIdPowerPointCaption42`.
 - Nested native caption sidecar paths such as `ppt/media/captionTracks/en-US/native-captions.vtt` are preserved, and slide relationships target them with the correct relative OPC path.
 - Caption `p20media:caption` metadata keeps the original embed relationship id, language, and label.
+- PowerPoint-authored caption sidecar content-type overrides are preserved for retained native caption parts, instead of being flattened to only generated extension defaults.
 - Saved packages continue to exclude FreeP recording artifact manifests for native PowerPoint caption tracks.
 - Reopened packages still feed `PresentationMediaTranscriptPlanner`, proving transcript descriptors are available from preserved native sidecar bytes.
 
@@ -17,6 +18,7 @@ Validation:
 - Test: `Media_PowerPointNativeCaptionPackage_ReadSaveReopen_PreservesBytesAndRelationshipContract`
 - Test: `Media_PowerPointNativeCaptionPackage_WithMultipleCaptionTracks_PreservesCorpusRelationshipSet`
 - Test: `Media_PowerPointNativeCaptionPackage_NestedSidecar_PreservesOriginalPathRelationshipIdAndTranscript`
+- Test: `Media_PowerPointNativeCaptionPackage_PreservesCaptionSidecarContentTypeOverride`
 
 Remaining:
 
