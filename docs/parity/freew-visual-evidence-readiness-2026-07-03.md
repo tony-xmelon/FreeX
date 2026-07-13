@@ -69,3 +69,36 @@ Outcome:
 - Summary files: `freew-fidelity-corpus/runs/backstage-real-evidence-20260713-smoke/freew_visual_evidence_summary.{json,md}`.
 
 The Backstage-only path uses the same real WPF/Avalonia renderer captures and manifest files, but filters summary validation to the two Backstage scenarios so unrelated drawing-object or WordArt contract drift cannot block print/export evidence readiness. It does not claim authoritative MS Word PNG parity when Word COM is unavailable.
+
+## Current Core Layout no-Word evidence path
+
+The 2026-07-13 core-layout runner slice adds a named `CoreLayoutProof` scenario set to `freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1`. It broadens paired WPF/Avalonia proof beyond Backstage print/export while avoiding known all-up drawing/table/WordArt drift:
+
+- `f2-hf-images`
+- `field-page-number-variants`
+- `references-heavy-fields`
+- `equation-structures`
+- `f2-footnotes`
+- `f2-endnotes`
+- `f2-section-landscape`
+- `f2-tracked-changes`
+- `f2-comments`
+- `review-proofing-visual-depth`
+- `review-protection-proofing-comments-only`
+
+Run it on a no-Word host with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\core-layout-proof-20260713-smoke -MaxPages 3 -ScenarioSet CoreLayoutProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+The runner now skips the Backstage readiness assertion when the active scenario filter does not include Backstage print/export rows, then checks that every selected core-layout scenario has trusted WPF and Avalonia normalized scenario rows. It still does not claim authoritative MS Word PNG parity when Word COM is unavailable.
+
+Verified on 2026-07-13 with the command above:
+
+- Summary trust: `passed`.
+- Evidence rows: `41`.
+- Word baseline comparisons: `41`, with `37` `word-baseline-unavailable` rows and `4` skipped rows.
+- Core layout readiness: `22` trusted WPF/Avalonia scenario rows.
+- Backstage readiness: skipped by scenario filter.
+- Summary files: `freew-fidelity-corpus/runs/core-layout-proof-20260713-smoke/freew_visual_evidence_summary.{json,md}`.
