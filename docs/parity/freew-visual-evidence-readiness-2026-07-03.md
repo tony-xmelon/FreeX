@@ -126,3 +126,24 @@ Verified on 2026-07-13 with the command above:
 - Page composition readiness: `4` trusted host/scenario rows and `5` verified Word-baseline policy rows.
 - Backstage readiness: skipped by scenario filter.
 - Summary files: `freew-fidelity-corpus/runs/page-composition-proof-20260713-smoke/freew_visual_evidence_summary.{json,md}`.
+
+## Review proofing visual details
+
+The 2026-07-13 proofing-detail slice moves the `review-proofing-visual-depth` and
+`review-protection-proofing-comments-only` scenarios beyond command counts and diagnostic signatures. The shared
+visual-evidence contract now emits proofing visual adornment details for each diagnostic:
+
+- spelling and grammar adornment counts must match their diagnostic counts;
+- spelling evidence records `spelling-squiggle`, `wavy`, `#D13438`, and paragraph/run ranges;
+- grammar evidence records `grammar-squiggle`, `wavy`, `#2B579A`, and paragraph/run ranges;
+- WPF and Avalonia normalized summaries must agree on the adornment signatures for each review proofing page.
+
+Verified on 2026-07-13 with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\proofing-pixel-evidence-20260713-worker -MaxPages 3 -ScenarioSet CoreLayoutProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+Outcome: summary trust `passed`, evidence rows `41`, core-layout readiness `22` trusted WPF/Avalonia scenario rows. The generated summary showed both hosts reporting `4 proofing visual adornment(s)` for both review proofing scenarios, with `grammar-squiggle wavy #2B579A` and `spelling-squiggle wavy #D13438`. The run folder was deleted after validation.
+
+Remaining caveat: these rows are machine-checkable FreeW WPF/Avalonia shared proofing-detail evidence. They still do not claim external MS Word PNG parity because `review-proofing-visual-depth` has no direct Word PNG baseline mapping on this no-Word host.
