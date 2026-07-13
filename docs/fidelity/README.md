@@ -42,6 +42,7 @@ On machines without Word COM, run `powershell -NoProfile -ExecutionPolicy Bypass
 
 Durable FreeW notes:
 
+- [2026-07-14-freew-word-com-baseline-attempt.md](2026-07-14-freew-word-com-baseline-attempt.md) - Word COM takeover attempt: generated WPF/Avalonia evidence succeeded, but Word `ExportAsFixedFormat` hung before any PDF/PNG baseline; records the exact run root, fallback summary, and resume checklist.
 - [2026-06-26-freew-visual-verification-summary.md](2026-06-26-freew-visual-verification-summary.md) - current visual verification summary separating confirmed renders, harness limitations, and genuine remaining fidelity gaps.
 - [2026-07-14-freew-equation-structure-visual-proof.md](2026-07-14-freew-equation-structure-visual-proof.md) - focused no-Word WPF/Avalonia equation/OfficeMath semantic visual proof and remaining Word-baseline blocker.
 - [2026-07-14-freew-chart-visual-proof.md](2026-07-14-freew-chart-visual-proof.md) - focused no-Word WPF/Avalonia chart/SmartArt semantic visual proof and remaining Word-baseline blocker.
