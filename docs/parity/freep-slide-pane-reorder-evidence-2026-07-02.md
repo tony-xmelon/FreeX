@@ -24,5 +24,5 @@ Scope: bounded FreeP WPF/Avalonia workflow-depth slice for slide-pane editing pa
 ## Remaining FreeP Workflow-Depth Gaps
 
 - Avalonia slide-pane reorder still needs foreground pointer evidence and richer thumbnail/section visual comparison against WPF and PowerPoint.
-- The Avalonia pane still lacks the WPF bottom `+ New Slide` affordance and broader sorter-pane polish.
+- The WPF/Avalonia bottom `+ New Slide` affordance gap is addressed by `docs/parity/freep-slide-pane-new-slide-affordance-evidence-2026-07-13.md`; broader sorter-pane polish remains.
 - Rich inline text/table editing parity, presenter recording/ink execution, modern comments/review UI, full rendered alt-text pane UX, proofing/accessibility execution, and PowerPoint-authoritative visual baselines remain outside this slice.
