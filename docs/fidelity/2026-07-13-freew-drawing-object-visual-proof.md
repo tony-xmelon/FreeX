@@ -12,6 +12,8 @@ This slice adds a bounded FreeW drawing/object visual-proof readiness layer to t
 
 The summary now emits `drawingObjectProofReadiness` rows and a Markdown section named `Drawing/Object Visual Proof Readiness`. Each row records paired WPF and Avalonia outputs, semantic drawing/object evidence, Word-baseline status, and whether the row is ready for a real Word PNG baseline comparison.
 
+The WPF/Avalonia pair validator preserves horizontal placement checks by comparing floating object `XDip` values after normalizing each host's renderer-origin offset. A uniform page-origin shift is accepted, but relative object movement still fails. Grouped child visual signatures keep stable child visual semantics: image state excluding byte-count noise, shape/WordArt geometry and effects, chart kind/geometry/gridline/marker facts, and SmartArt child presence. Full chart and SmartArt visual signatures continue to be validated in the standalone `chart-smartart-complex` proof row.
+
 If Word COM or baseline generation is unavailable, the runner can be invoked with `-WordBaselineUnavailableReason`. In that mode the readiness rows remain trusted when paired WPF/Avalonia evidence is present, but the baseline status is explicit: no authoritative Word PNG parity is claimed until a COM-capable machine supplies real Word baselines.
 
 Example focused run:
