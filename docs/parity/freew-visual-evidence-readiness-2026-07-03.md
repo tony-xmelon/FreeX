@@ -153,6 +153,21 @@ Verified on 2026-07-13 with the command above:
 - Table layout readiness: `6` trusted WPF/Avalonia scenario rows and `11` verified Word-baseline policy rows.
 - Backstage readiness: skipped by scenario filter.
 
+## Current Table Pagination/Page Composition no-Word evidence path
+
+The 2026-07-14 table pagination/page composition slice adds a focused `TablePaginationPageCompositionProof` scenario set to `freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1`. It isolates the two multi-page table scenarios from the broader table-layout set:
+
+- `table-pagination-repeat-header`
+- `table-page-composition-stress`
+
+Run it on a no-Word host with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\table-pagination-page-composition-proof-20260714-smoke -MaxPages 2 -ScenarioSet TablePaginationPageCompositionProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+The normalized summary now emits `tablePaginationProofReadiness` rows and a `Table Pagination/Page Composition Proof Readiness` Markdown table. The runner checks trusted WPF/Avalonia rows for both pages, repeated-header pagination semantics, keep-together row evidence, and the page-border/watermark/header-footer field evidence for `table-page-composition-stress`. It also requires direct Word-baseline policy mappings and, on no-Word hosts, a `word-baseline-unavailable` blocker for each focused table scenario. This remains paired renderer evidence and Word-baseline readiness only; it does not claim authoritative MS Word PNG table parity when Word COM is unavailable.
+
 ## Current Shape/Object no-Word evidence path
 
 The 2026-07-13 shape/object runner slice adds a named `ShapeObjectVisualProof` scenario set to `freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1`. It broadens the no-Word paired evidence beyond table and page composition by proving the stable drawing/object subset without pulling in the wider chart, SmartArt, or WordArt rows:
