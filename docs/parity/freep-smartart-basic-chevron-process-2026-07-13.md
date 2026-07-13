@@ -16,8 +16,8 @@ FreeP SmartArt process-family live layout path.
 planner: ordered stage text becomes left-to-right rounded boxes with connector
 ops. This improves shared live-layout fidelity for a common process variant, but
 it does not claim exact PowerPoint chevron polygon geometry or spacing.
-Unsupported process-family siblings such as `closedChevronProcess` still fall
-back to cached drawing until their geometry is modeled explicitly.
+Unsupported process-family siblings outside the bounded reader allow-list still
+fall back to cached drawing until their geometry is modeled explicitly.
 
 ## Evidence
 
