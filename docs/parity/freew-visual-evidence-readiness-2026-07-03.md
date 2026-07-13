@@ -153,6 +153,18 @@ Verified on 2026-07-13 with the command above:
 - Table layout readiness: `6` trusted WPF/Avalonia scenario rows and `11` verified Word-baseline policy rows.
 - Backstage readiness: skipped by scenario filter.
 
+## Legal/reference section page-number evidence
+
+The 2026-07-13 legal/reference page-number slice adds `legal-reference-section-page-numbers` to the shared visual evidence contract and the `CoreLayoutProof` runner set. The fixture proves TOA page-reference evidence where the same authority appears on physical page 1 with displayed page `i` in front matter and on physical page 2 with displayed page `1` after the main section restarts numbering.
+
+The shared `PageNumberFormatDialogPlanner` citation page-reference resolver records both physical page numbers and displayed page text, and `FreeWVisualEvidencePlanner` emits that distinction through Table of Authorities metadata. WPF and Avalonia only consume the shared fixture/evidence artifacts.
+
+Expected semantic signature:
+
+- `category=Cases|entry=Matter of Sectioned Pages, 101 F. Supp. 3d 2026 (D. FreeW)|kind=section-formatted-page-numbers|pages=1,2|text=i, 1`
+
+This is shared FreeW WPF/Avalonia semantic evidence only. It keeps the no-Word baseline policy honest: when Word COM is unavailable, the summary may report trusted FreeW evidence and `word-baseline-unavailable`, but it does not claim authoritative Microsoft Word PNG parity.
+
 ## Review proofing visual details
 
 The 2026-07-13 proofing-detail slice moves the `review-proofing-visual-depth` and
