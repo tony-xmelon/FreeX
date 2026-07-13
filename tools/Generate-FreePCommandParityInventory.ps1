@@ -172,10 +172,11 @@ internal static class FreePCommandInventory
             [
                 "freep/FreeP.App.Presentation.Tests/SlideShowRecordingExecutionPlannerTests.cs",
                 "freep/FreeP.App.Presentation.Tests/SlideShowRecordingReviewPlannerTests.cs",
+                "freep/FreeP.App.Host.Tests/MediaFieldsTests.cs",
                 "freep/FreeP.App.Host.Tests/SlideShowTests.cs",
                 "freep/FreeP.App.Avalonia.Tests/SlideShowWindowHeadlessTests.cs"
             ],
-            RemainingWork: "Shared recording capture adapter readiness contracts, paired WPF/Avalonia backend injection, deterministic captured-artifact host evidence, review rows, session-summary persistable counts, captured PPTX media-part payload authoring, generated WebVTT recording-caption artifact persistence, and focused single-track plus multi-track PowerPoint-native media caption relationship/package baselines are covered. Real OS microphone/camera capture implementations, broader real-deck PowerPoint-native media/caption corpus baselines, and PowerPoint COM recording baselines remain deferred."),
+            RemainingWork: "Shared recording capture adapter readiness contracts, paired WPF/Avalonia backend injection, deterministic captured-artifact host evidence, review rows, session-summary persistable counts, captured PPTX media-part payload authoring, generated WebVTT recording-caption artifact persistence, and focused single-track, external-link, plus multi-track PowerPoint-native media caption relationship/package baselines are covered. Real OS microphone/camera capture implementations, broader real-deck PowerPoint-native media/caption corpus baselines, and PowerPoint COM recording baselines remain deferred."),
         new(
             EvidenceId: "freep.presenter.ink.execution",
             Area: "Presenter ink, laser, and persistence execution",
@@ -293,6 +294,7 @@ internal static class FreePCommandInventory
             [
                 "docs/parity/freep-table-cell-rich-editor-fidelity-2026-07-03.md",
                 "docs/parity/freep-list-gallery-image-bullet-ui-2026-07-05.md",
+                "docs/parity/freep-table-cell-tab-navigation-2026-07-13.md",
                 "docs/planning/freep-powerpoint-parity-status-2026-06-27.md"
             ],
             Verification:
@@ -306,7 +308,7 @@ internal static class FreePCommandInventory
                 "freep/FreeP.App.Rendering.Avalonia.Tests/SlideCanvasAvaloniaTests.cs",
                 "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
             ],
-            RemainingWork: "WPF/Avalonia now share picture-bullet picker payload execution, paragraph authoring, and PPTX media-part persistence. Avalonia still lacks a true editable rich-text widget equivalent to WPF RichTextBox; PowerPoint-authoritative list-gallery/rich-editor visual baselines remain deferred."),
+            RemainingWork: "WPF/Avalonia now share picture-bullet picker payload execution, paragraph authoring, PPTX media-part persistence, and Tab/Shift+Tab navigation between editable table-cell anchors. Avalonia still lacks a true editable rich-text widget equivalent to WPF RichTextBox; PowerPoint-authoritative list-gallery/rich-editor visual baselines remain deferred."),
         new(
             EvidenceId: "freep.header-footer.placeholder-creation",
             Area: "Header/Footer date, footer, and slide-number placeholder creation",
