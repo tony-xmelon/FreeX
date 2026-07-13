@@ -239,6 +239,29 @@ Verified on 2026-07-14 with the command above:
 - Backstage readiness: skipped by scenario filter.
 - Summary files: `freew-fidelity-corpus/runs/smartart-polygon-proof-20260714-worker/freew_visual_evidence_summary.{json,md}`.
 
+## Current Chart Visual no-Word Evidence Path
+
+The 2026-07-14 chart visual runner slice adds a focused `ChartVisualProof` scenario set in `freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1`. It uses the existing `chart-smartart-complex` fixture but verifies the chart-specific half of the shared visual contract: multiple chart plans, stable chart visual signatures, the styled column chart signature, the marker scatter chart signature, direct Word-baseline policy rows, and the explicit `chart-smartart-complex-word-baseline-fidelity` blocker when Word COM is unavailable.
+
+Run it on a no-Word host with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\chart-visual-proof-20260714-worker -MaxPages 2 -ScenarioSet ChartVisualProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+Because `chart-smartart-complex` is a shared chart/SmartArt fixture, the runner also keeps the existing SmartArt polygon guard active for that scenario. The new slice adds chart-specific proof rather than weakening or replacing the SmartArt polygon proof. This remains paired WPF/Avalonia renderer evidence and Word-baseline readiness only; it does not claim authoritative Microsoft Word PNG chart parity when Word COM is unavailable.
+
+Verified on 2026-07-14 with the command above:
+
+- Summary trust: `passed`.
+- Evidence rows: `3`.
+- Word baseline comparisons: `3`, all `word-baseline-unavailable`.
+- Drawing/object readiness: `2` trusted scenario rows, `3` semantic rows, and `3` verified Word-baseline policy rows.
+- SmartArt polygon readiness: `3` trusted semantic rows, `3` verified Word-baseline policy rows, and the Word-baseline-unavailable blocker verified.
+- Chart visual readiness: `3` trusted semantic rows, `3` verified Word-baseline policy rows, and the Word-baseline-unavailable blocker verified.
+- Backstage readiness: skipped by scenario filter.
+- Summary files: `freew-fidelity-corpus/runs/chart-visual-proof-20260714-worker/freew_visual_evidence_summary.{json,md}`.
+
 ## Current Equation Structure no-Word Evidence Path
 
 The 2026-07-14 equation-structure runner slice adds a focused verified use of the existing `EquationStructureVisualProof` scenario set in `freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1`. It proves the shared equation geometry contract without pulling in unrelated table, drawing-object, SmartArt, WordArt, watermark, or review rows:
