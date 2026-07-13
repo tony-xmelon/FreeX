@@ -1,14 +1,16 @@
 # FreeW SmartArt Basic Pyramid - 2026-07-13
 
-This slice adds the Word-common `pyramid1` / Basic Pyramid layout to the FreeW SmartArt preset catalog and shared visual planner.
+This slice upgrades the Word-common `pyramid1` / Basic Pyramid layout from centered rectangle-band semantics to shared renderer-neutral polygon band geometry.
+
+The shared `SmartArtLayoutGeometryPlan` now keeps usable text/layout bounds for every pyramid node while also exposing deterministic trapezoid/polygon points for the pyramid band fill/stroke. WPF and Avalonia consume those same shared points instead of inventing renderer-local pyramid shape math.
 
 ## Evidence
 
 - `SmartArtPresetsTests` proves the curated `pyramid1` catalog entry resolves as Basic Pyramid.
-- `ChartSmartArtVisualPlannerTests` proves `pyramid1` emits deterministic shared `Pyramid` layout geometry: four centered bands, no connectors, and stable natural dimensions.
-- `SmartArtRenderingTests` proves WPF consumes the shared plan for the same widening-band approximation.
-- `DocumentViewInlineFO4Tests` proves Avalonia carries the shared `Pyramid` geometry snapshot for inline SmartArt.
+- `ChartSmartArtVisualPlannerTests` proves `pyramid1` emits deterministic shared `Pyramid` layout geometry: four centered text bounds, no connectors, stable natural dimensions, and polygon points for every pyramid band.
+- `SmartArtRenderingTests` proves WPF consumes the shared polygon points by rendering WPF `Polygon` bands while preserving clean text placement.
+- `DocumentViewInlineFO4Tests` proves Avalonia carries enough shared `Pyramid` polygon geometry evidence for inline SmartArt to prevent silent regression.
 
 ## Caveat
 
-This is not MS Word pixel parity and does not implement Word's true trapezoid/polygon pyramid bands. FreeW currently represents Basic Pyramid as centered widening rectangles so WPF and Avalonia share deterministic renderer-neutral geometry. Word-authoritative visual baselines, exact trapezoid band geometry, richer SmartArt editing, and broader pyramid-family layouts remain deferred.
+This improves FreeW's shared Basic Pyramid shape geometry, but it does not claim authoritative MS Word pixel parity or external Word PNG baselines. Word-authoritative visual baselines, richer SmartArt editing, and broader pyramid-family layouts remain deferred.
