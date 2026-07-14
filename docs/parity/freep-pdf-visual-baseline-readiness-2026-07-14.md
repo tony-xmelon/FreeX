@@ -9,6 +9,7 @@ This slice advances the broader PowerPoint-authoritative PDF visual-baseline lan
 - `PresentationPdfVisualBaselineReadinessPlanner` emits one host-neutral readiness contract for portable slide PDF, full-page raster PDF, 3-up handout PDF, and notes-page PDF output.
 - Each row records the shared planner, shared route, PDF content type, page count, slide range summary, and a stable manifest fingerprint.
 - Each row now records source-normalized manifest, WPF PDF, Avalonia PDF, PowerPoint PDF, and PowerPoint slide-PNG artifact paths. This gives a later COM-capable baseline host a deterministic capture layout without changing local no-COM behavior.
+- Each row also records WPF/Avalonia page-PNG raster artifact patterns and paired diff-report paths, with the raster DPI and threshold profile pinned in the shared manifest fingerprint.
 - WPF and Avalonia receive identical manifest fingerprints for every row, proving they share the same PDF/export package contract before any host captures a baseline.
 - Every row marks PowerPoint PDF/PNG baselines as `n/a/deferred-powerpoint-com-pdf-and-png-baseline`; local readiness does not claim Microsoft PowerPoint visual parity.
 
@@ -21,6 +22,8 @@ Focused regression coverage:
   - `RequiresPowerPointComForLocalEvidence == false`.
   - `RequiresPowerPointComForAuthoritativeBaseline == true`.
   - Source names are normalized into artifact stems, for example `Quarter Review.pptx` -> `Quarter-Review`, so `manifest/{sourceStem}/{evidenceId}.json`, `wpf-pdf/{sourceStem}/{evidenceId}.pdf`, `avalonia-pdf/{sourceStem}/{evidenceId}.pdf`, `powerpoint-pdf/{sourceStem}/{evidenceId}.pdf`, and `powerpoint-png/{sourceStem}/{evidenceId}/slide-NN.png` are stable.
+  - WPF/Avalonia raster outputs use `wpf-png/{sourceStem}/{evidenceId}/page-NN.png` and `avalonia-png/{sourceStem}/{evidenceId}/page-NN.png`, while deferred diff reports use `diff/wpf-vs-avalonia/{sourceStem}/{evidenceId}.json`, `diff/powerpoint-vs-wpf/{sourceStem}/{evidenceId}.json`, and `diff/powerpoint-vs-avalonia/{sourceStem}/{evidenceId}.json`.
+  - Rasterization is pinned at `144` DPI with threshold profile `pdf-visual-baseline-readiness-v1/manual-calibration-required`.
 - `freep/FreeP.App.Presentation.Tests/PresentationPdfVisualBaselineReadinessPlannerTests.cs`
   - Normal deck coverage pins source-name normalization, source-bound artifact paths, route order, matching WPF/Avalonia fingerprints, full-page page counts, handout pagination, notes-page PDF routing, and deferred PowerPoint baselines.
   - Empty-deck coverage keeps the portable placeholder page explicit while package-backed rows correctly report no slides.
@@ -29,4 +32,4 @@ Focused regression coverage:
 
 ## Remaining Work
 
-Authoritative PowerPoint PDF and PNG baseline capture still requires a COM-capable host with `PowerPoint.Application` registered. The next PDF/export fidelity work is to run the readiness manifest against representative real decks on that host, save PowerPoint-exported PDFs/PNGs beside WPF/Avalonia outputs, and add actual visual diffs for slide PDF, handout PDF, notes-page PDF, transparency/effects, gradients, clipping, picture rendering, and text metrics.
+Authoritative PowerPoint PDF and PNG baseline capture still requires a COM-capable host with `PowerPoint.Application` registered. The next PDF/export fidelity work is to run the readiness manifest against representative real decks on that host, save PowerPoint-exported PDFs/PNGs beside WPF/Avalonia outputs, rasterize the host outputs using the pinned page patterns, calibrate thresholds, and add actual visual diffs for slide PDF, handout PDF, notes-page PDF, transparency/effects, gradients, clipping, picture rendering, and text metrics.
