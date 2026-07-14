@@ -31,20 +31,20 @@ Sources:
 | WPF manifest ids without Avalonia pair | 0 |
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches (scale-aware logical units) | 18 |
-| Raw PNG pixel dimension mismatches | 50 |
+| Paired dimension mismatches (scale-aware logical units) | 15 |
+| Raw PNG pixel dimension mismatches | 47 |
 | Raw PNG mismatches normalized by capture DPI | 32 |
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
-| Policy-accepted native/control differences | 18 |
+| Policy-accepted native/control differences | 15 |
 
 ## Scale-Aware Dimension Mismatch Classification
 
-The 18 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept policy-approved platform/native control differences, or refresh limited evidence. Policy-accepted native/control rows are explicit accepted variance, not incomplete parity work.
+The 15 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept policy-approved platform/native control differences, or refresh limited evidence. Policy-accepted native/control rows are explicit accepted variance, not incomplete parity work.
 
 | Bucket | Count | Policy accepted | Top surface ids | Top next action |
 | --- | ---: | --- | --- | --- |
-| expected platform/native difference | 18 | True | dialog.FindReplace.Replace<br>dialog.FindReplace<br>dialog.FindReplace.Find<br>dialog.Sparkline<br>dialog.Options.QuickAccessToolbar | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
+| expected platform/native difference | 15 | True | dialog.Sparkline<br>dialog.Options.QuickAccessToolbar<br>dialog.Options.Proofing<br>dialog.Options.Advanced<br>dialog.Options | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
 
 ## Policy-Accepted Native/Control Differences
 
@@ -53,7 +53,6 @@ These rows were reviewed against the committed WPF/Avalonia PNG pairs and are re
 | Family | Count | Surface ids | Rationale | Clear criteria |
 | --- | ---: | --- | --- | --- |
 | Export options native spacing | 1 | dialog.ExportOptions | The paired screenshots show the same export-option choices; the remaining height delta is platform label/control spacing. | Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent. |
-| Find/Replace native control stack | 3 | dialog.FindReplace<br>dialog.FindReplace.Find<br>dialog.FindReplace.Replace | The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome. | Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent. |
 | Options host frame | 12 | dialog.Options<br>dialog.Options.AddIns<br>dialog.Options.Advanced<br>dialog.Options.CustomizeRibbon<br>dialog.Options.EaseOfAccess<br>dialog.Options.General<br>dialog.Options.Language<br>dialog.Options.Proofing<br>dialog.Options.QuickAccessToolbar<br>dialog.Options.Save<br>dialog.Options.TrustCenter<br>dialog.Options.View | The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing. | Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent. |
 | Protection password prompt | 1 | dialog.ProtectWorkbook | The paired screenshots show the same password/confirmation workflow; the residual size delta is native password-box and button-row metrics. | Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent. |
 | Sparkline range picker controls | 1 | dialog.Sparkline | The paired screenshots show the same Sparkline range/location inputs and type selection; the residual delta is native text input, combo, and button spacing. | Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent. |
@@ -69,20 +68,17 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.PivotValueFieldSettings | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.472 | 0.161 | 0.133 | 0.178 |
 | dialog.PivotValueFieldSettings.SummarizeValuesBy | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.472 | 0.161 | 0.133 | 0.178 |
 | dialog.PivotValueFieldSettings.ShowValuesAs | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.469 | 0.159 | 0.133 | 0.176 |
-| dialog.FindReplace.Replace | 720x430 | 720x440 | 720x430 px @ 96 DPI vs 720x440 px @ 96 DPI | expected platform/native difference |  | 0.467 | 0.136 | 0.124 | 0.185 |
+| dialog.FindReplace.Find | 720x430 | 720x430 | 720x430 px @ 96 DPI vs 720x430 px @ 96 DPI |  |  | 0.463 | 0.034 | 0.025 | 0.403 |
+| dialog.FindReplace | 720x430 | 720x430 | 720x430 px @ 96 DPI vs 720x430 px @ 96 DPI |  |  | 0.463 | 0.034 | 0.025 | 0.403 |
 | dialog.PivotFieldFilter.LabelFilters | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.453 | 0.156 | 0.129 | 0.167 |
 | dialog.PivotFieldFilter.ValueFilters | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.452 | 0.155 | 0.129 | 0.168 |
 | dialog.PivotFieldFilter | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.423 | 0.163 | 0.124 | 0.136 |
-| dialog.PivotFieldFilter.SelectItems | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.423 | 0.163 | 0.124 | 0.136 |
 
 ## Scale-Aware Dimension Mismatch Details
 
 | Surface id | Bucket | Policy family | WPF logical size | Avalonia logical size | Logical delta | Reason | Next action |
 | --- | --- | --- | ---: | ---: | ---: | --- | --- |
 | dialog.ExportOptions | expected platform/native difference | Export options native spacing | 430x542 | 430x552 | 0x10 | The paired screenshots show the same export-option choices; the remaining height delta is platform label/control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-| dialog.FindReplace | expected platform/native difference | Find/Replace native control stack | 720x430 | 720x440 | 0x10 | The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-| dialog.FindReplace.Find | expected platform/native difference | Find/Replace native control stack | 720x430 | 720x440 | 0x10 | The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-| dialog.FindReplace.Replace | expected platform/native difference | Find/Replace native control stack | 720x430 | 720x440 | 0x10 | The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
 | dialog.Options | expected platform/native difference | Options host frame | 744x521 | 760x560 | 16x39 | The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
 | dialog.Options.AddIns | expected platform/native difference | Options host frame | 744x521 | 760x560 | 16x39 | The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
 | dialog.Options.Advanced | expected platform/native difference | Options host frame | 744x521 | 760x560 | 16x39 | The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
@@ -126,9 +122,9 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.ErrorChecking | dialog.ErrorChecking.png | 720x420 | 1080x630 px @ 144 DPI | True | dialog.ErrorChecking.png | 720x420 | 720x420 px @ 96 DPI | True | True | 0.103 |
 | dialog.EvaluateFormula | dialog.EvaluateFormula.png | 600x360 | 900x540 px @ 144 DPI | True | dialog.EvaluateFormula.png | 600x360 | 600x360 px @ 96 DPI | True | True | 0.090 |
 | dialog.ExportOptions | dialog.ExportOptions.png | 430x542 | 645x813 px @ 144 DPI | True | dialog.ExportOptions.png | 430x552 | 430x552 px @ 96 DPI | True | False | 0.087 |
-| dialog.FindReplace | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.png | 720x440 | 720x440 px @ 96 DPI | True | False | 0.418 |
-| dialog.FindReplace.Find | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Find.png | 720x440 | 720x440 px @ 96 DPI | True | False | 0.418 |
-| dialog.FindReplace.Replace | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Replace.png | 720x440 | 720x440 px @ 96 DPI | True | False | 0.467 |
+| dialog.FindReplace | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.463 |
+| dialog.FindReplace.Find | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.463 |
+| dialog.FindReplace.Replace | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.422 |
 | dialog.ForecastSheet | dialog.ForecastSheet.png | 320x150 | 480x225 px @ 144 DPI | True | dialog.ForecastSheet.png | 320x150 | 320x150 px @ 96 DPI | True | True | 0.057 |
 | dialog.FormatCells | dialog.FormatCells.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.029 |
 | dialog.FormatCells.Alignment | dialog.FormatCells.Alignment.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Alignment.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.090 |

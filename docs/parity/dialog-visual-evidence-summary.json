@@ -18,14 +18,14 @@
                     "wpfManifestIdsWithoutAvaloniaPair":  0,
                     "additionalAvaloniaCapturedSurfaceIds":  0,
                     "nonBlankPngFailures":  0,
-                    "pairedDimensionMismatches":  18,
-                    "pairedRawPixelDimensionMismatches":  50,
+                    "pairedDimensionMismatches":  15,
+                    "pairedRawPixelDimensionMismatches":  47,
                     "pairedCaptureScaleNormalizedDimensionMatches":  32,
                     "pairedExpectedSizeMismatches":  0,
                     "stalePromotedExpectedSizeEvidence":  0,
-                    "policyAcceptedNativeDifferences":  18,
+                    "policyAcceptedNativeDifferences":  15,
                     "dimensionMismatchBuckets":  {
-                                                     "expected platform/native difference":  18
+                                                     "expected platform/native difference":  15
                                                  }
                 },
     "pairedSurfaces":  [
@@ -1128,7 +1128,7 @@
                                "routeFamily":  "dialog.FindReplace",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FindReplace.png",
-                                           "fileBytes":  11903,
+                                           "fileBytes":  11750,
                                            "width":  720,
                                            "height":  430,
                                            "dpiX":  95.986595,
@@ -1136,61 +1136,55 @@
                                            "logicalWidth":  720.101,
                                            "logicalHeight":  430.06,
                                            "pixels":  309600,
-                                           "distinctColors":  273,
-                                           "opaqueRatio":  0.889096,
-                                           "nonBackgroundRatio":  0.185481,
+                                           "distinctColors":  225,
+                                           "opaqueRatio":  1,
+                                           "nonBackgroundRatio":  0.451835,
                                            "isNonBlank":  true,
-                                           "meanLuma":  222.223868
+                                           "meanLuma":  244.765446
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FindReplace.png",
-                                                "fileBytes":  12372,
+                                                "fileBytes":  12481,
                                                 "width":  720,
-                                                "height":  440,
+                                                "height":  430,
                                                 "dpiX":  96,
                                                 "dpiY":  96,
                                                 "logicalWidth":  720,
-                                                "logicalHeight":  440,
-                                                "pixels":  316800,
-                                                "distinctColors":  794,
+                                                "logicalHeight":  430,
+                                                "pixels":  309600,
+                                                "distinctColors":  893,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.03666,
+                                                "nonBackgroundRatio":  0.048637,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  251.279714
+                                                "meanLuma":  251.171993
                                             },
                                "comparison":  {
-                                                  "dimensionMatch":  false,
+                                                  "dimensionMatch":  true,
                                                   "widthDelta":  0.101,
-                                                  "heightDelta":  9.94,
-                                                  "logicalDimensionMatch":  false,
+                                                  "heightDelta":  0.06,
+                                                  "logicalDimensionMatch":  true,
                                                   "logicalWidthDelta":  0.101,
-                                                  "logicalHeightDelta":  9.94,
+                                                  "logicalHeightDelta":  0.06,
                                                   "logicalDimensionTolerance":  0.5,
-                                                  "rawPixelDimensionMatch":  false,
+                                                  "rawPixelDimensionMatch":  true,
                                                   "rawPixelWidthDelta":  0,
-                                                  "rawPixelHeightDelta":  10,
+                                                  "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
-                                                  "dimensionDeltaRatio":  0.023253,
-                                                  "sampleMeanDelta":  0.131782,
-                                                  "lumaDelta":  0.113944,
-                                                  "nonBackgroundDelta":  0.148821,
-                                                  "triageScore":  0.4178,
+                                                  "dimensionDeltaRatio":  0.000279,
+                                                  "sampleMeanDelta":  0.034041,
+                                                  "lumaDelta":  0.025124,
+                                                  "nonBackgroundDelta":  0.403198,
+                                                  "triageScore":  0.462642,
                                                   "expectedSizeMismatch":  false,
-                                                  "expectedWidth":  null,
-                                                  "expectedHeight":  null,
-                                                  "expectedSizeSource":  null,
+                                                  "expectedWidth":  720,
+                                                  "expectedHeight":  430,
+                                                  "expectedSizeSource":  "FindReplaceDialogPlanner.Width/Height",
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
-                                                  "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
-                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
-                                                  "policyAcceptance":  {
-                                                                           "status":  "policy-accepted",
-                                                                           "policy":  "expected platform/native control variance",
-                                                                           "family":  "Find/Replace native control stack",
-                                                                           "rationale":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
-                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                                       }
+                                                  "dimensionMismatchBucket":  null,
+                                                  "dimensionMismatchReason":  null,
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -1198,7 +1192,7 @@
                                "routeFamily":  "dialog.FindReplace",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FindReplace.Find.png",
-                                           "fileBytes":  11903,
+                                           "fileBytes":  11750,
                                            "width":  720,
                                            "height":  430,
                                            "dpiX":  95.986595,
@@ -1206,61 +1200,55 @@
                                            "logicalWidth":  720.101,
                                            "logicalHeight":  430.06,
                                            "pixels":  309600,
-                                           "distinctColors":  273,
-                                           "opaqueRatio":  0.889096,
-                                           "nonBackgroundRatio":  0.185481,
+                                           "distinctColors":  225,
+                                           "opaqueRatio":  1,
+                                           "nonBackgroundRatio":  0.451835,
                                            "isNonBlank":  true,
-                                           "meanLuma":  222.223868
+                                           "meanLuma":  244.765446
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FindReplace.Find.png",
-                                                "fileBytes":  12372,
+                                                "fileBytes":  12446,
                                                 "width":  720,
-                                                "height":  440,
+                                                "height":  430,
                                                 "dpiX":  96,
                                                 "dpiY":  96,
                                                 "logicalWidth":  720,
-                                                "logicalHeight":  440,
-                                                "pixels":  316800,
-                                                "distinctColors":  794,
+                                                "logicalHeight":  430,
+                                                "pixels":  309600,
+                                                "distinctColors":  891,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.03666,
+                                                "nonBackgroundRatio":  0.048585,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  251.279714
+                                                "meanLuma":  251.184344
                                             },
                                "comparison":  {
-                                                  "dimensionMatch":  false,
+                                                  "dimensionMatch":  true,
                                                   "widthDelta":  0.101,
-                                                  "heightDelta":  9.94,
-                                                  "logicalDimensionMatch":  false,
+                                                  "heightDelta":  0.06,
+                                                  "logicalDimensionMatch":  true,
                                                   "logicalWidthDelta":  0.101,
-                                                  "logicalHeightDelta":  9.94,
+                                                  "logicalHeightDelta":  0.06,
                                                   "logicalDimensionTolerance":  0.5,
-                                                  "rawPixelDimensionMatch":  false,
+                                                  "rawPixelDimensionMatch":  true,
                                                   "rawPixelWidthDelta":  0,
-                                                  "rawPixelHeightDelta":  10,
+                                                  "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
-                                                  "dimensionDeltaRatio":  0.023253,
-                                                  "sampleMeanDelta":  0.131782,
-                                                  "lumaDelta":  0.113944,
-                                                  "nonBackgroundDelta":  0.148821,
-                                                  "triageScore":  0.4178,
+                                                  "dimensionDeltaRatio":  0.000279,
+                                                  "sampleMeanDelta":  0.034041,
+                                                  "lumaDelta":  0.025172,
+                                                  "nonBackgroundDelta":  0.403249,
+                                                  "triageScore":  0.462742,
                                                   "expectedSizeMismatch":  false,
-                                                  "expectedWidth":  null,
-                                                  "expectedHeight":  null,
-                                                  "expectedSizeSource":  null,
+                                                  "expectedWidth":  720,
+                                                  "expectedHeight":  430,
+                                                  "expectedSizeSource":  "FindReplaceDialogPlanner.Width/Height",
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
-                                                  "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
-                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
-                                                  "policyAcceptance":  {
-                                                                           "status":  "policy-accepted",
-                                                                           "policy":  "expected platform/native control variance",
-                                                                           "family":  "Find/Replace native control stack",
-                                                                           "rationale":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
-                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                                       }
+                                                  "dimensionMismatchBucket":  null,
+                                                  "dimensionMismatchReason":  null,
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -1268,7 +1256,7 @@
                                "routeFamily":  "dialog.FindReplace",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FindReplace.Replace.png",
-                                           "fileBytes":  15506,
+                                           "fileBytes":  15258,
                                            "width":  720,
                                            "height":  430,
                                            "dpiX":  95.986595,
@@ -1276,61 +1264,55 @@
                                            "logicalWidth":  720.101,
                                            "logicalHeight":  430.06,
                                            "pixels":  309600,
-                                           "distinctColors":  292,
-                                           "opaqueRatio":  0.889096,
-                                           "nonBackgroundRatio":  0.218776,
+                                           "distinctColors":  235,
+                                           "opaqueRatio":  1,
+                                           "nonBackgroundRatio":  0.410578,
                                            "isNonBlank":  true,
-                                           "meanLuma":  220.215731
+                                           "meanLuma":  243.835729
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FindReplace.Replace.png",
-                                                "fileBytes":  11745,
+                                                "fileBytes":  11827,
                                                 "width":  720,
-                                                "height":  440,
+                                                "height":  430,
                                                 "dpiX":  96,
                                                 "dpiY":  96,
                                                 "logicalWidth":  720,
-                                                "logicalHeight":  440,
-                                                "pixels":  316800,
-                                                "distinctColors":  778,
+                                                "logicalHeight":  430,
+                                                "pixels":  309600,
+                                                "distinctColors":  827,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.0341,
+                                                "nonBackgroundRatio":  0.046444,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  251.728159
+                                                "meanLuma":  251.451486
                                             },
                                "comparison":  {
-                                                  "dimensionMatch":  false,
+                                                  "dimensionMatch":  true,
                                                   "widthDelta":  0.101,
-                                                  "heightDelta":  9.94,
-                                                  "logicalDimensionMatch":  false,
+                                                  "heightDelta":  0.06,
+                                                  "logicalDimensionMatch":  true,
                                                   "logicalWidthDelta":  0.101,
-                                                  "logicalHeightDelta":  9.94,
+                                                  "logicalHeightDelta":  0.06,
                                                   "logicalDimensionTolerance":  0.5,
-                                                  "rawPixelDimensionMatch":  false,
+                                                  "rawPixelDimensionMatch":  true,
                                                   "rawPixelWidthDelta":  0,
-                                                  "rawPixelHeightDelta":  10,
+                                                  "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
-                                                  "dimensionDeltaRatio":  0.023253,
-                                                  "sampleMeanDelta":  0.135635,
-                                                  "lumaDelta":  0.123578,
-                                                  "nonBackgroundDelta":  0.184675,
-                                                  "triageScore":  0.467141,
+                                                  "dimensionDeltaRatio":  0.000279,
+                                                  "sampleMeanDelta":  0.027821,
+                                                  "lumaDelta":  0.029866,
+                                                  "nonBackgroundDelta":  0.364134,
+                                                  "triageScore":  0.4221,
                                                   "expectedSizeMismatch":  false,
-                                                  "expectedWidth":  null,
-                                                  "expectedHeight":  null,
-                                                  "expectedSizeSource":  null,
+                                                  "expectedWidth":  720,
+                                                  "expectedHeight":  430,
+                                                  "expectedSizeSource":  "FindReplaceDialogPlanner.Width/Height",
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
-                                                  "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
-                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
-                                                  "policyAcceptance":  {
-                                                                           "status":  "policy-accepted",
-                                                                           "policy":  "expected platform/native control variance",
-                                                                           "family":  "Find/Replace native control stack",
-                                                                           "rationale":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
-                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                                       }
+                                                  "dimensionMismatchBucket":  null,
+                                                  "dimensionMismatchReason":  null,
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -6150,12 +6132,20 @@
                                   "nonBackgroundDelta":  0.176209
                               },
                               {
-                                  "id":  "dialog.FindReplace.Replace",
-                                  "triageScore":  0.467141,
-                                  "sampleMeanDelta":  0.135635,
-                                  "dimension":  "720.101x430.06 vs 720x440 logical; 720x430 vs 720x440 px",
-                                  "dimensionMismatchBucket":  "expected platform/native difference",
-                                  "nonBackgroundDelta":  0.184675
+                                  "id":  "dialog.FindReplace.Find",
+                                  "triageScore":  0.462742,
+                                  "sampleMeanDelta":  0.034041,
+                                  "dimension":  "720.101x430.06 vs 720x430 logical; 720x430 vs 720x430 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.403249
+                              },
+                              {
+                                  "id":  "dialog.FindReplace",
+                                  "triageScore":  0.462642,
+                                  "sampleMeanDelta":  0.034041,
+                                  "dimension":  "720.101x430.06 vs 720x430 logical; 720x430 vs 720x430 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.403198
                               },
                               {
                                   "id":  "dialog.PivotFieldFilter.LabelFilters",
@@ -6180,26 +6170,18 @@
                                   "dimension":  "380.053x470.066 vs 380x470 logical; 380x470 vs 380x470 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.135913
-                              },
-                              {
-                                  "id":  "dialog.PivotFieldFilter.SelectItems",
-                                  "triageScore":  0.42326,
-                                  "sampleMeanDelta":  0.163139,
-                                  "dimension":  "380.053x470.066 vs 380x470 logical; 380x470 vs 380x470 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.135913
                               }
                           ],
     "dimensionMismatchClassification":  [
                                             {
                                                 "bucket":  "expected platform/native difference",
-                                                "count":  18,
+                                                "count":  15,
                                                 "topSurfaceIds":  [
-                                                                      "dialog.FindReplace.Replace",
-                                                                      "dialog.FindReplace",
-                                                                      "dialog.FindReplace.Find",
                                                                       "dialog.Sparkline",
-                                                                      "dialog.Options.QuickAccessToolbar"
+                                                                      "dialog.Options.QuickAccessToolbar",
+                                                                      "dialog.Options.Proofing",
+                                                                      "dialog.Options.Advanced",
+                                                                      "dialog.Options"
                                                                   ],
                                                 "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
                                                 "policyAccepted":  true
@@ -6213,17 +6195,6 @@
                                                                           "dialog.ExportOptions"
                                                                       ],
                                                        "rationale":  "The paired screenshots show the same export-option choices; the remaining height delta is platform label/control spacing.",
-                                                       "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                   },
-                                                   {
-                                                       "family":  "Find/Replace native control stack",
-                                                       "count":  3,
-                                                       "surfaceIds":  [
-                                                                          "dialog.FindReplace",
-                                                                          "dialog.FindReplace.Find",
-                                                                          "dialog.FindReplace.Replace"
-                                                                      ],
-                                                       "rationale":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
                                                        "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
                                                    },
                                                    {
@@ -6283,60 +6254,6 @@
                                          "logicalWidthDelta":  0.022,
                                          "logicalHeightDelta":  9.972,
                                          "triageScore":  0.087411
-                                     },
-                                     {
-                                         "id":  "dialog.FindReplace",
-                                         "bucket":  "expected platform/native difference",
-                                         "reason":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
-                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
-                                         "policyAcceptance":  {
-                                                                  "status":  "policy-accepted",
-                                                                  "policy":  "expected platform/native control variance",
-                                                                  "family":  "Find/Replace native control stack",
-                                                                  "rationale":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
-                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                              },
-                                         "wpfLogicalSize":  "720x430",
-                                         "avaloniaLogicalSize":  "720x440",
-                                         "logicalWidthDelta":  0.101,
-                                         "logicalHeightDelta":  9.94,
-                                         "triageScore":  0.4178
-                                     },
-                                     {
-                                         "id":  "dialog.FindReplace.Find",
-                                         "bucket":  "expected platform/native difference",
-                                         "reason":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
-                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
-                                         "policyAcceptance":  {
-                                                                  "status":  "policy-accepted",
-                                                                  "policy":  "expected platform/native control variance",
-                                                                  "family":  "Find/Replace native control stack",
-                                                                  "rationale":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
-                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                              },
-                                         "wpfLogicalSize":  "720x430",
-                                         "avaloniaLogicalSize":  "720x440",
-                                         "logicalWidthDelta":  0.101,
-                                         "logicalHeightDelta":  9.94,
-                                         "triageScore":  0.4178
-                                     },
-                                     {
-                                         "id":  "dialog.FindReplace.Replace",
-                                         "bucket":  "expected platform/native difference",
-                                         "reason":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
-                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
-                                         "policyAcceptance":  {
-                                                                  "status":  "policy-accepted",
-                                                                  "policy":  "expected platform/native control variance",
-                                                                  "family":  "Find/Replace native control stack",
-                                                                  "rationale":  "The paired screenshots show the same Find/Replace fields and actions; the remaining height delta is native textbox/button spacing and tab-host chrome.",
-                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                              },
-                                         "wpfLogicalSize":  "720x430",
-                                         "avaloniaLogicalSize":  "720x440",
-                                         "logicalWidthDelta":  0.101,
-                                         "logicalHeightDelta":  9.94,
-                                         "triageScore":  0.467141
                                      },
                                      {
                                          "id":  "dialog.Options",
