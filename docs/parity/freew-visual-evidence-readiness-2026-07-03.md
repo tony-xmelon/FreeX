@@ -420,3 +420,27 @@ Verified on 2026-07-14 with the command above:
 - Summary files: `freew-fidelity-corpus/runs/review-compare-combine-proof-20260714-worker/freew_visual_evidence_summary.{json,md}`.
 
 This remains paired FreeW renderer evidence and Word-baseline readiness only. Because Word COM is unavailable on this host, it does not claim authoritative Microsoft Word PNG compare/combine parity.
+
+## Current Review Markup no-Word Evidence Path
+
+The 2026-07-14 review markup evidence-depth slice promotes a focused `ReviewMarkupVisualProof` scenario set for the two original review renderer fixtures that sit just before the compare/combine family:
+
+- `f2-tracked-changes`
+- `f2-comments`
+
+Run it on a no-Word host with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\review-markup-proof-20260714-worker -MaxPages 2 -ScenarioSet ReviewMarkupVisualProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+The normalized summary now emits `reviewMarkupProofReadiness` rows and a `Review Markup Visual Proof Readiness` Markdown table. The runner guard requires trusted WPF and Avalonia rows for both scenarios, tracked-change insertion/deletion/authorship metadata for `f2-tracked-changes`, comment anchor/reference metadata for `f2-comments`, direct Word-baseline policy rows, and explicit `word-baseline-unavailable` blockers for both scenarios when Word COM is unavailable. This proves paired renderer evidence and Word-baseline readiness only; it does not claim authoritative Microsoft Word PNG review-markup parity.
+
+Verified on 2026-07-14 with the command above:
+
+- Summary trust: `passed`.
+- Evidence rows: `6`.
+- Word baseline comparisons: `6`, all `word-baseline-unavailable`.
+- Review markup readiness: `4` trusted WPF/Avalonia scenario rows, `6` verified semantic rows, `6` verified Word-baseline policy rows, and `2` verified Word-baseline-unavailable blockers.
+- Backstage readiness: skipped by scenario filter.
+- Summary files: `freew-fidelity-corpus/runs/review-markup-proof-20260714-worker/freew_visual_evidence_summary.{json,md}`.
