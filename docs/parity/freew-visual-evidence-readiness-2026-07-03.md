@@ -235,6 +235,31 @@ Verified on 2026-07-13 with the command above:
 - Shape/object readiness: `4` trusted WPF/Avalonia scenario rows and `5` verified Word-baseline policy rows.
 - Backstage readiness: skipped by scenario filter.
 
+## Current Grouped Drawing/Object no-Word evidence path
+
+The 2026-07-14 grouped drawing/object slice adds a focused `GroupedDrawingObjectVisualProof` scenario set to `freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1`:
+
+- `drawing-objects-complex`
+
+Use this when the goal is to prove grouped drawing/object fidelity without pulling in the broader chart/SmartArt scenario, WordArt/watermark scenarios, object-format rows, or table layout/pagination rows. The runner still verifies the grouped fixture's own mixed child metadata, including image, shape, chart, WordArt, and SmartArt children inside the group, but it does not require the separate chart/SmartArt or WordArt watermark proof paths to pass.
+
+Run it on a no-Word host with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\grouped-drawing-object-proof-20260714-worker -MaxPages 1 -ScenarioSet GroupedDrawingObjectVisualProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+The runner guard requires trusted paired WPF/Avalonia rows, mixed grouped child kind metadata, grouped child visual signatures, rendered grouped child shape and WordArt effects, direct Word-baseline policy rows, and the explicit `drawing-objects-complex-word-baseline-fidelity` blocker when Word COM is unavailable. The readiness summary now includes grouped child kind and visual-signature counts in the drawing/object semantic evidence. This remains paired FreeW renderer evidence and Word-baseline readiness only; it does not claim authoritative Microsoft Word PNG grouped drawing/object parity until a COM-capable machine captures and compares real Word PNG baselines.
+
+Verified on 2026-07-14 with the command above:
+
+- Summary trust: `passed`.
+- Evidence rows: `2`.
+- Word baseline comparisons: `2`, both `word-baseline-unavailable`.
+- Grouped drawing readiness: `1` readiness row, `2` verified semantic rows, `2` verified Word-baseline policy rows, and the Word-baseline-unavailable blocker verified.
+- Backstage readiness: skipped by scenario filter.
+- Summary files: `freew-fidelity-corpus/runs/grouped-drawing-object-proof-20260714-worker/freew_visual_evidence_summary.{json,md}`.
+
 ## Current Object Format no-Word evidence path
 
 The 2026-07-14 object-format runner cleanup adds a focused `ObjectFormatVisualProof` scenario set to `freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1`:
