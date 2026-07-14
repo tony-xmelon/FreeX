@@ -115,3 +115,42 @@ The next pass should focus on making Word fixed-format export complete on this m
 2. Fix or regenerate the four Word-rejected fixtures so Microsoft Word can open them, or mark them as non-Word-comparable in the evidence contract.
 3. Revisit the `word-png-default` comparison tolerance and page-size normalization: many real Word baselines are 816x1056 while Avalonia evidence is emitted at larger page surfaces such as 960x1200, 960x1400, or 960x1800.
 4. Rerun the summary after fixture and normalization work; expect a failing trust result until the renderer deltas are intentionally triaged or fixed.
+
+## Follow-up - DOCX Schema Fix and Full Word UI Export
+
+After the DOCX schema fix branch was rebased onto current `origin/main`, the generated corpus was refreshed under the same ignored run root with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-FreeWWordBaselineEvidence.ps1 -RunRoot freew-fidelity-corpus\runs\word-com-baseline-20260714 -NoWord
+```
+
+That refresh generated 30 DOCX fixtures and 89 baseline comparison rows. The four previously Word-rejected drawing/WordArt/object-format fixtures now pass the Open XML schema guard and opened/published in Microsoft Word. The current `main` corpus also added `f2-01-float-wrap.docx`; Word rejected it until `wp:wrapTight` was fixed to include the required rectangular `wp:wrapPolygon`.
+
+The visible Word UI publish workaround then exported every refreshed fixture:
+
+| Artifact | Count |
+| --- | ---: |
+| Generated DOCX fixtures | 30 |
+| Word PDFs generated through UI publish | 30 |
+| Word baseline PNGs rasterized | 64 |
+| Word-open failures | 0 |
+
+The refreshed real-Word summary was written to:
+
+- `freew-fidelity-corpus\runs\word-com-baseline-20260714\freew_visual_evidence_summary.real-word.json`
+- `freew-fidelity-corpus\runs\word-com-baseline-20260714\freew_visual_evidence_summary.real-word.md`
+
+Summary result:
+
+| Metric | Value |
+| --- | ---: |
+| Trust | failed |
+| Evidence rows | 89 |
+| Baseline comparisons | 89 |
+| Failed comparisons | 85 |
+| Missing baseline rows | 1 |
+| Skipped/unmapped rows | 3 |
+
+The remaining missing baseline is `f2-endnotes_p3`: the Avalonia evidence emits a third page, while Microsoft Word produced a two-page PDF for that fixture. The other failures are comparison/tolerance or page-geometry deltas, plus WPF software-renderer trust failures for backstage rows. They are no longer DOCX-open/export blockers.
+
+Next work should focus on formalizing the visible-dialog Word exporter (or fixing direct `ExportAsFixedFormat` automation), then triaging renderer/page-size/page-count deltas from the real Word summary.
