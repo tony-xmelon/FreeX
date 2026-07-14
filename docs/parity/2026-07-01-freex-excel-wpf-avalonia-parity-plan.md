@@ -50,6 +50,8 @@ Post-dedup source inspection shows these areas are already shared-first:
 
 Progress note, 2026-07-14: print/export drawing evidence now has a host-neutral summary over the same `PageContentLayout` model consumed by print preview and export renderers. `PrintExportDrawingEvidencePlanner` reports printable chart blocks, selectable chart text overlays, text boxes, and text-box text runs page-by-page, with focused tests proving visible chart/text-box content is included and hidden/off-page drawing content is filtered by the render model before WPF or Avalonia realize it.
 
+Progress note, 2026-07-14: export publish option rejection now has a host-neutral evidence summary after the drawing-evidence slice. `ExportPublishOptionEvidencePlanner` proves rendered page-range rejection for empty, start-after-last, and end-after-last output, PDF/A and tagged-PDF rejection for PDF, and XPS normalization that clears PDF-only choices before either host paints or writes the final output.
+
 ## Remaining Gap Map
 
 ### 1. Supported Excel Command Surface Partials
@@ -93,7 +95,7 @@ The remaining Excel adoption risk is mostly visual/workflow fidelity:
 - AutoFilter, number format, borders, conditional formatting, and context-menu popups need Excel-like richness and paired evidence.
 - PivotTable, slicer, timeline, table, and chart workflows need shared render plans and paired WPF/Avalonia evidence.
 - Chart/drawing object editing needs hit-testing, selection, handles, gradients/effects, layering, print/export, and XLSX persistence proof.
-- Print/export now has shared printed-page drawing/chart evidence for chart blocks, selectable chart text overlays, and text-box text runs, but still needs stronger final PDF/XPS vector graphics, full chart text coverage, PDF/A/tagged-PDF handling, XPS parity claims, and native dialog continuation evidence.
+- Print/export now has shared printed-page drawing/chart evidence for chart blocks, selectable chart text overlays, and text-box text runs, plus shared evidence that invalid rendered page ranges, PDF/A, tagged PDF, and XPS PDF-only option leakage are rejected or normalized before output. It still needs stronger final PDF/XPS vector graphics, full chart text coverage, PDF/A/tagged-PDF output support, XPS parity claims beyond option normalization, and native dialog continuation evidence.
 - Comments, threaded comments, proofing, spell check, accessibility, and protection need shared models/planners with thin host UI.
 
 ## Implementation Plan
@@ -173,7 +175,7 @@ Primary owners: `src/FreeX.App.Presentation`, `shared/Free.Shared.Drawing`, char
 Goal: make parity claims survive open/save/export and printed output.
 
 - Continue package-preserving XLSX save and unsupported-feature warning coverage for partial Excel features.
-- Improve PDF/XPS export around vector graphics, chart text, annotations, document metadata, page ranges, and unsupported option rejection.
+- Improve PDF/XPS export around vector graphics, chart text, annotations, document metadata, page ranges, and unsupported option rejection. The first unsupported-option proof slice is covered by `ExportPublishOptionEvidencePlannerTests`, which verifies rendered page-range rejection, PDF/A/tagged-PDF rejection for PDF, and XPS clearing of PDF-only choices before either host paints the result.
 - Pair WPF and Avalonia print/export behavior through shared planners and platform print/file-picker bridges. The first drawing/chart proof slice is covered by `PrintExportDrawingEvidencePlannerTests`, which verifies shared printed-page evidence for chart text overlays and text-box text before either host paints the result.
 - Add Excel-authored corpus fixtures for the gaps this wave claims to close.
 
