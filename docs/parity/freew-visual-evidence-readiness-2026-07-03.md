@@ -235,6 +235,22 @@ Verified on 2026-07-13 with the command above:
 - Shape/object readiness: `4` trusted WPF/Avalonia scenario rows and `5` verified Word-baseline policy rows.
 - Backstage readiness: skipped by scenario filter.
 
+## Current Object Format no-Word evidence path
+
+The 2026-07-14 object-format runner cleanup adds a focused `ObjectFormatVisualProof` scenario set to `freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1`:
+
+- `object-format-position-size-style`
+
+Use this when the goal is to prove object-format position, size, style, alt-text, effects, and z-order readiness without pulling in the grouped drawing-object scenario or any chart, SmartArt, WordArt, watermark, table, or review rows. This removes unrelated all-up visual runner drift from the object-format readiness signal.
+
+Run it on a no-Word host with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\object-format-proof-20260714-worker -MaxPages 2 -ScenarioSet ObjectFormatVisualProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+The runner reuses the drawing/object readiness gate for only the selected object-format scenario. On no-Word hosts it records `word-baseline-unavailable` and proves paired FreeW WPF/Avalonia renderer readiness plus Word-baseline policy readiness, not authoritative Microsoft Word PNG parity.
+
 ## Current WordArt/Watermark no-Word evidence path
 
 The 2026-07-14 WordArt/watermark runner slice adds a named `WordArtWatermarkVisualProof` scenario set to `freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1`. It proves the focused WordArt and watermark family without pulling in unrelated drawing-object, chart, or SmartArt rows:
