@@ -18,14 +18,14 @@
                     "wpfManifestIdsWithoutAvaloniaPair":  0,
                     "additionalAvaloniaCapturedSurfaceIds":  0,
                     "nonBlankPngFailures":  0,
-                    "pairedDimensionMismatches":  19,
+                    "pairedDimensionMismatches":  18,
                     "pairedRawPixelDimensionMismatches":  50,
-                    "pairedCaptureScaleNormalizedDimensionMatches":  31,
+                    "pairedCaptureScaleNormalizedDimensionMatches":  32,
                     "pairedExpectedSizeMismatches":  0,
                     "stalePromotedExpectedSizeEvidence":  0,
-                    "policyAcceptedNativeDifferences":  19,
+                    "policyAcceptedNativeDifferences":  18,
                     "dimensionMismatchBuckets":  {
-                                                     "expected platform/native difference":  19
+                                                     "expected platform/native difference":  18
                                                  }
                 },
     "pairedSurfaces":  [
@@ -434,53 +434,47 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ChangeChartType.png",
-                                                "fileBytes":  23180,
-                                                "width":  624,
-                                                "height":  381,
-                                                "dpiX":  95.986595,
-                                                "dpiY":  95.986595,
-                                                "logicalWidth":  624.087,
-                                                "logicalHeight":  381.053,
-                                                "pixels":  237744,
+                                                "fileBytes":  23011,
+                                                "width":  640,
+                                                "height":  390,
+                                                "dpiX":  96,
+                                                "dpiY":  96,
+                                                "logicalWidth":  640,
+                                                "logicalHeight":  390,
+                                                "pixels":  249600,
                                                 "distinctColors":  1310,
-                                                "opaqueRatio":  0.966451,
-                                                "nonBackgroundRatio":  0.126081,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.097007,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  237.309611
+                                                "meanLuma":  246.053575
                                             },
                                "comparison":  {
-                                                  "dimensionMatch":  false,
-                                                  "widthDelta":  15.946,
-                                                  "heightDelta":  8.967,
-                                                  "logicalDimensionMatch":  false,
-                                                  "logicalWidthDelta":  15.946,
-                                                  "logicalHeightDelta":  8.967,
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0.033,
+                                                  "heightDelta":  0.02,
+                                                  "logicalDimensionMatch":  true,
+                                                  "logicalWidthDelta":  0.033,
+                                                  "logicalHeightDelta":  0.02,
                                                   "logicalDimensionTolerance":  0.5,
                                                   "rawPixelDimensionMatch":  false,
-                                                  "rawPixelWidthDelta":  336,
-                                                  "rawPixelHeightDelta":  204,
-                                                  "captureScaleNormalizedDimensionMatch":  false,
-                                                  "dimensionDeltaRatio":  0.047905,
-                                                  "sampleMeanDelta":  0.095594,
-                                                  "lumaDelta":  0.04265,
-                                                  "nonBackgroundDelta":  0.053786,
-                                                  "triageScore":  0.239934,
+                                                  "rawPixelWidthDelta":  320,
+                                                  "rawPixelHeightDelta":  195,
+                                                  "captureScaleNormalizedDimensionMatch":  true,
+                                                  "dimensionDeltaRatio":  0.000103,
+                                                  "sampleMeanDelta":  0.03641,
+                                                  "lumaDelta":  0.00836,
+                                                  "nonBackgroundDelta":  0.024712,
+                                                  "triageScore":  0.069584,
                                                   "expectedSizeMismatch":  false,
-                                                  "expectedWidth":  null,
-                                                  "expectedHeight":  null,
-                                                  "expectedSizeSource":  null,
+                                                  "expectedWidth":  640,
+                                                  "expectedHeight":  390,
+                                                  "expectedSizeSource":  "ChartTypeChangePlanner.DialogWidth/DialogHeight",
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
-                                                  "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The paired screenshots show the same chart-type list and preview state; the remaining delta is default list, preview, and dialog chrome metrics.",
-                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
-                                                  "policyAcceptance":  {
-                                                                           "status":  "policy-accepted",
-                                                                           "policy":  "expected platform/native control variance",
-                                                                           "family":  "Chart type picker controls",
-                                                                           "rationale":  "The paired screenshots show the same chart-type list and preview state; the remaining delta is default list, preview, and dialog chrome metrics.",
-                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                                       }
+                                                  "dimensionMismatchBucket":  null,
+                                                  "dimensionMismatchReason":  null,
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -6199,7 +6193,7 @@
     "dimensionMismatchClassification":  [
                                             {
                                                 "bucket":  "expected platform/native difference",
-                                                "count":  19,
+                                                "count":  18,
                                                 "topSurfaceIds":  [
                                                                       "dialog.FindReplace.Replace",
                                                                       "dialog.FindReplace",
@@ -6212,15 +6206,6 @@
                                             }
                                         ],
     "policyAcceptedNativeDifferenceFamilies":  [
-                                                   {
-                                                       "family":  "Chart type picker controls",
-                                                       "count":  1,
-                                                       "surfaceIds":  [
-                                                                          "dialog.ChangeChartType"
-                                                                      ],
-                                                       "rationale":  "The paired screenshots show the same chart-type list and preview state; the remaining delta is default list, preview, and dialog chrome metrics.",
-                                                       "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                   },
                                                    {
                                                        "family":  "Export options native spacing",
                                                        "count":  1,
@@ -6281,24 +6266,6 @@
                                                    }
                                                ],
     "dimensionMismatchDetails":  [
-                                     {
-                                         "id":  "dialog.ChangeChartType",
-                                         "bucket":  "expected platform/native difference",
-                                         "reason":  "The paired screenshots show the same chart-type list and preview state; the remaining delta is default list, preview, and dialog chrome metrics.",
-                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
-                                         "policyAcceptance":  {
-                                                                  "status":  "policy-accepted",
-                                                                  "policy":  "expected platform/native control variance",
-                                                                  "family":  "Chart type picker controls",
-                                                                  "rationale":  "The paired screenshots show the same chart-type list and preview state; the remaining delta is default list, preview, and dialog chrome metrics.",
-                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                              },
-                                         "wpfLogicalSize":  "640x390",
-                                         "avaloniaLogicalSize":  "624x381",
-                                         "logicalWidthDelta":  15.946,
-                                         "logicalHeightDelta":  8.967,
-                                         "triageScore":  0.239934
-                                     },
                                      {
                                          "id":  "dialog.ExportOptions",
                                          "bucket":  "expected platform/native difference",
