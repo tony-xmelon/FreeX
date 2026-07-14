@@ -156,3 +156,28 @@ The remaining missing baseline is `f2-endnotes_p3`: the Avalonia evidence emits 
 The visible-dialog exporter is now formalized through `tools\FreeW.RenderCompare\Export-WordPdfsVisible.ps1` and the `tools\Run-FreeWWordBaselineEvidence.ps1 -UseVisibleWordPublish` switch. A wrapper verification with `-SkipEvidenceRender -UseVisibleWordPublish` exported all 30 PDFs and rasterized Word baselines through the supported path, then exited nonzero only when `FreeW.VisualEvidenceSummary` reported the known failing real-Word comparison trust. Direct `ExportAsFixedFormat` still remains useful to fix later, but the Word-capable baseline lane no longer depends on an ignored scratch script.
 
 Next work should focus on triaging renderer/page-size/page-count deltas from the real Word summary.
+
+## Follow-up - Endnote Page-Count Normalization
+
+The first real Word summary left one false missing-baseline blocker: `f2-endnotes_p3`. Microsoft Word and the WPF proof should both expose `f2-endnotes` as two comparable pages, with page 2 carrying the synthetic endnote evidence. The Avalonia PageLayoutShot path and WPF composite renderer now follow that two-page contract instead of appending a Word-incomparable third PNG.
+
+Focused verification:
+
+```powershell
+dotnet test freew\FreeW.App.Presentation.Tests\FreeW.App.Presentation.Tests.csproj --configuration Release --filter "FullyQualifiedName~VisualEvidencePlannerTests|FullyQualifiedName~VisualEvidenceRunnerScriptTests|FullyQualifiedName~VisualEvidenceBaselinePolicyTests"
+dotnet build freew\tools\FreeW.FidelityRender\FreeW.FidelityRender.csproj --configuration Release
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\note-placement-word-baseline-20260715 -ScenarioSet NotePlacementVisualProof -WordBaselineDir freew-fidelity-corpus\runs\word-com-baseline-20260714\word-baseline -BaselineTolerance word-png-default
+```
+
+The focused evidence run still exits nonzero because the real Word PNG comparisons fail render tolerances, but the false missing-baseline row is gone:
+
+| Metric | Value |
+| --- | ---: |
+| Note-placement evidence rows | 8 |
+| Baseline comparisons | 8 |
+| Failed comparisons | 8 |
+| Missing baseline rows | 0 |
+| `f2-endnotes` WPF outputs | 2/2 |
+| `f2-endnotes` Avalonia outputs | 2/2 |
+
+Remaining `f2-endnotes` work is now real render fidelity: WPF page 2 is close but still above tolerance, while Avalonia still needs page-size/page-surface normalization before it is directly comparable to the 816x1056 Word baseline.

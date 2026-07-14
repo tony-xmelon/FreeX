@@ -1,6 +1,6 @@
 # Fidelity Workstream Summary
 
-**Last updated:** 2026-07-14
+**Last updated:** 2026-07-15
 
 This folder holds point-in-time XLSX and FreeW fidelity findings. Keep durable summaries here and avoid committing temporary handoff notes, downloaded sample workbooks, generated comparison outputs, or Excel ground-truth images. Local workbook binaries belong in ignored corpus folders such as `fidelity-corpus/files/`, `fidelity-corpus/runs/`, `freew-fidelity-corpus/files/`, or `freew-fidelity-corpus/runs/`.
 
@@ -42,7 +42,7 @@ On machines without Word COM, run `powershell -NoProfile -ExecutionPolicy Bypass
 
 Durable FreeW notes:
 
-- [2026-07-14-freew-word-com-baseline-attempt.md](2026-07-14-freew-word-com-baseline-attempt.md) - Word COM takeover attempt and retry: direct `ExportAsFixedFormat` hung, visible Word publish-dialog automation first produced partial real Word baselines, and after the DOCX schema fixes a refreshed run exported all 30 generated fixtures to 30 PDFs / 64 Word PNGs with zero Word-open failures; `Run-FreeWWordBaselineEvidence.ps1 -UseVisibleWordPublish` now formalizes that fallback path, and the real-Word summary now fails only on renderer/page geometry/page-count deltas.
+- [2026-07-14-freew-word-com-baseline-attempt.md](2026-07-14-freew-word-com-baseline-attempt.md) - Word COM takeover attempt and retry: direct `ExportAsFixedFormat` hung, visible Word publish-dialog automation first produced partial real Word baselines, and after the DOCX schema fixes a refreshed run exported all 30 generated fixtures to 30 PDFs / 64 Word PNGs with zero Word-open failures; `Run-FreeWWordBaselineEvidence.ps1 -UseVisibleWordPublish` now formalizes that fallback path, the false `f2-endnotes_p3` missing-baseline blocker is fixed by normalizing WPF/Avalonia endnote evidence to Word's two-page contract, and the real-Word summary now fails only on renderer/page geometry deltas.
 - [2026-06-26-freew-visual-verification-summary.md](2026-06-26-freew-visual-verification-summary.md) - current visual verification summary separating confirmed renders, harness limitations, and genuine remaining fidelity gaps.
 - [2026-07-14-freew-equation-structure-visual-proof.md](2026-07-14-freew-equation-structure-visual-proof.md) - focused no-Word WPF/Avalonia equation/OfficeMath semantic visual proof and remaining Word-baseline blocker.
 - [2026-07-14-freew-chart-visual-proof.md](2026-07-14-freew-chart-visual-proof.md) - focused no-Word WPF/Avalonia chart/SmartArt semantic visual proof and remaining Word-baseline blocker.
