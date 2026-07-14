@@ -129,6 +129,27 @@ Verified on 2026-07-13 with the command above:
 - Backstage readiness: skipped by scenario filter.
 - Summary files: `freew-fidelity-corpus/runs/page-composition-proof-20260713-smoke/freew_visual_evidence_summary.{json,md}`.
 
+## Current Floating/Wrapping no-Word evidence path
+
+The 2026-07-14 floating/wrapping evidence-depth slice promotes the existing `FloatingWrappingVisualProof` scenario set as the focused no-Word paired proof for Word-like floating object wrapping. It pairs the WPF composite-renderer `f2-01-float-wrap` fixture with the Avalonia page-layout-shot `page-composition-floating-image` fixture, then requires the normalized summary's `floatingWrappingProofReadiness` row to verify the Square/Tight WPF wrap evidence, Behind/InFront/TopAndBottom Avalonia placement evidence, direct Word-baseline policy rows, and honest `word-baseline-unavailable` results when Word COM is missing.
+
+Run it on a no-Word host with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\floating-wrapping-proof-20260714-worker -MaxPages 2 -ScenarioSet FloatingWrappingVisualProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+Verified on 2026-07-14 with the command above:
+
+- Summary trust: `passed`.
+- Evidence rows: `2`.
+- Word baseline comparisons: `2`, all `word-baseline-unavailable`.
+- Floating/wrapping readiness: `1` trusted paired row and `2` verified Word-baseline policy rows.
+- Backstage readiness: skipped by scenario filter.
+- Summary files: `freew-fidelity-corpus/runs/floating-wrapping-proof-20260714-worker/freew_visual_evidence_summary.{json,md}`.
+
+This remains paired FreeW WPF/Avalonia renderer evidence and Word-baseline readiness only. Because Word COM is unavailable on this host, it does not claim authoritative Microsoft Word PNG floating-wrap parity.
+
 ## Current Table Layout no-Word evidence path
 
 The 2026-07-13 table-layout runner slice adds a named `TableLayoutProof` scenario set to `freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1`. It broadens the no-Word paired evidence beyond Core Layout and Page Composition by proving the stable table renderer family without pulling in the wider all-up drawing-object, SmartArt, or WordArt drift lanes:
