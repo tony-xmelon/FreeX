@@ -45,6 +45,7 @@ regeneration of layout/style/color parts.
 ## Remaining Work
 
 PowerPoint-authored authoring baselines, real host text-pane controls, keyboard
-shortcut routing, richer assistant/org-chart editing nuance, broader
-picture/media-backed cache regeneration, exact PowerPoint layout/style/color
-regeneration, and PowerPoint-authoritative visual baselines remain deferred.
+shortcut parity beyond the shared planner, richer assistant/org-chart editing
+nuance, broader picture/media-backed cache regeneration, exact PowerPoint
+layout/style/color regeneration, and PowerPoint-authoritative visual baselines
+remain deferred.
