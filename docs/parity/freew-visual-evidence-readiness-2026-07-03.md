@@ -248,16 +248,17 @@ Run it on a no-Word host with:
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\wordart-watermark-proof-20260714-worker -MaxPages 2 -ScenarioSet WordArtWatermarkVisualProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
 ```
 
-The runner reuses the drawing/object readiness gate for only the selected WordArt/watermark subset. It checks trusted WPF and Avalonia normalized scenario rows, WordArt object/effect metadata, text watermark and page-border metadata, picture-watermark metadata, and direct Word-baseline policy rows. On no-Word hosts those rows report `word-baseline-unavailable`; the slice proves paired renderer evidence and Word-baseline readiness, not authoritative MS Word PNG parity.
+The normalized summary now emits first-class `wordArtWatermarkProofReadiness` rows and a `WordArt/Watermark Visual Proof Readiness` Markdown table. The runner checks trusted WPF and Avalonia normalized scenario rows, WordArt object/effect metadata, text watermark and page-border metadata, picture-watermark metadata, direct Word-baseline policy rows, and explicit `word-baseline-unavailable` blockers for both WordArt/watermark scenarios when Word COM is unavailable. On no-Word hosts those rows report `word-baseline-unavailable`; the slice proves paired renderer evidence and Word-baseline readiness, not authoritative MS Word PNG parity.
 
-Verified on 2026-07-14 with the command above:
+Verified on 2026-07-14 with the command above, using run root `freew-fidelity-corpus/runs/wordart-watermark-proof-20260714-codex2`:
 
 - Summary trust: `passed`.
 - Evidence rows: `5`.
 - Word baseline comparisons: `5`, all `word-baseline-unavailable`.
-- WordArt/watermark readiness: `4` trusted WPF/Avalonia scenario rows, `5` semantic rows, and `5` verified Word-baseline policy rows.
+- Drawing/object readiness: `4` trusted WPF/Avalonia scenario rows, `5` semantic rows, and `5` verified Word-baseline policy rows.
+- WordArt/watermark readiness: `4` trusted WPF/Avalonia scenario rows, `5` semantic rows, `5` verified Word-baseline policy rows, and `2` verified Word-baseline-unavailable blockers.
 - Backstage readiness: skipped by scenario filter.
-- Summary files: `freew-fidelity-corpus/runs/wordart-watermark-proof-20260714-worker/freew_visual_evidence_summary.{json,md}`.
+- Summary files: `freew-fidelity-corpus/runs/wordart-watermark-proof-20260714-codex2/freew_visual_evidence_summary.{json,md}`.
 
 ## Current SmartArt Polygon no-Word Evidence Path
 
