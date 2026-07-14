@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 35
+    "workflowEvidenceRows": 36
   },
   "workflowEvidence": [
     {
@@ -576,7 +576,21 @@
         "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
         "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
       ],
-      "remainingWork": "orgChart now uses the bounded shared hierarchy-family live-layout path for parsed root/child nodes plus assistant side-slot geometry when imported nodes carry dgm:pt type=\"asst\". Unsupported hierarchy siblings remain on cached drawing fallback. Exact PowerPoint assistant connector routing, special org-chart branch styling, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
+      "remainingWork": "orgChart now uses the bounded shared hierarchy-family live-layout path for parsed root/child nodes plus assistant side-slot geometry when imported nodes carry dgm:pt type=\"asst\". Unsupported hierarchy siblings remain on cached drawing fallback. Exact PowerPoint assistant connector routing, special org-chart branch styling, PowerPoint-authoritative visual baselines, and deeper SmartArt authoring/editing remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.outline-editing",
+      "area": "SmartArt outline reorder, promote, and demote editing",
+      "status": "shared-model-planner-evidence",
+      "hostCoverage": "WPF/Avalonia can consume the same SmartArtEditingPlanner model mutations and live-layout refreshes; no renderer-local SmartArt editing policy",
+      "evidenceDocs": [
+        "docs/parity/freep-smartart-outline-editing-2026-07-14.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation/SmartArtEditingPlanner.cs",
+        "freep/FreeP.App.Presentation.Tests/SmartArtEditingPlannerTests.cs"
+      ],
+      "remainingWork": "Shared SmartArt outline editing now covers text change, add/remove, reorder, promote, and demote model operations with deterministic outline selection and live-layout refresh evidence. PowerPoint-authored data-part rewrite, richer UI affordances, keyboard shortcuts, and PowerPoint-authoritative authoring baselines remain deferred."
     }
   ],
   "commands": [
