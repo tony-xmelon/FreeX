@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 66
+    "workflowEvidenceRows": 67
   },
   "workflowEvidence": [
     {
@@ -491,6 +491,23 @@
         "freep/FreeP.App.Rendering.Avalonia.Tests/SlideCanvasMathBaselineTests.cs"
       ],
       "remainingWork": "Shared row layout now consumes m:phantPr/m:transp for bounded single-token binary, relation, large-operator, and punctuation spacing classes while ambiguous multi-character and structured phantom bases stay packed. PowerPoint-authoritative visual baselines and full OfficeMath spacing-table typography remain deferred."
+    },
+    {
+      "evidenceId": "freep.omml.accent-bar-render-plan",
+      "area": "OMML accent-bar render-plan semantics",
+      "status": "shared-layout-evidence",
+      "hostCoverage": "WPF/Avalonia consume shared MathNode.Acc overbar metadata and MathBoxRenderPlanner horizontal-rule ops with no renderer-local accent-bar policy",
+      "evidenceDocs": [
+        "docs/parity/freep-omml-accent-bar-render-plan-2026-07-14.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation/Math/MathLayoutEngine.cs",
+        "freep/FreeP.App.Presentation.Tests/OmmlParserTests.cs",
+        "freep/FreeP.App.Presentation.Tests/MathLayoutEngineTests.cs",
+        "freep/FreeP.App.Host.Tests/SlideCanvasMathBaselineTests.cs",
+        "freep/FreeP.App.Rendering.Avalonia.Tests/SlideCanvasMathBaselineTests.cs"
+      ],
+      "remainingWork": "Shared OMML layout now maps PowerPoint-authored m:accPr/m:chr macron and overline accents to renderer-neutral horizontal-rule draw ops above the base expression before WPF or Avalonia draw. PowerPoint-authoritative math visual baselines, exact Cambria Math accent placement, stretched accent typography, and complete OfficeMath accent semantics remain deferred."
     },
     {
       "evidenceId": "freep.omml.manual-break-alignment",
