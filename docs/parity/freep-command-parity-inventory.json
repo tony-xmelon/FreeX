@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 34
+    "workflowEvidenceRows": 35
   },
   "workflowEvidence": [
     {
@@ -319,6 +319,23 @@
         "freep/FreeP.App.Presentation.Tests/ChartRenderPlannerTests.cs"
       ],
       "remainingWork": "Shared stacked-area planning now scales primary value axes from category totals and emits cumulative band baselines before WPF/Avalonia renderers draw the same area primitives. PowerPoint-authoritative chart visual baselines, mixed positive/negative corpus coverage, and broader type-specific chart visual fidelity remain deferred."
+    },
+    {
+      "evidenceId": "freep.chart.surface-grid-rendering",
+      "area": "Chart surface grid rendering",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume shared ChartSurfaceCellPrimitive rectangles with no renderer-local surface grid policy",
+      "evidenceDocs": [
+        "docs/parity/freep-chart-surface-grid-rendering-2026-07-14.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Rendering.Wpf/SlideCanvas.cs",
+        "freep/FreeP.App.Rendering.Avalonia/SlideCanvas.cs",
+        "freep/FreeP.App.Presentation/ChartRenderPlanner.cs",
+        "freep/FreeP.App.Presentation.Tests/ChartRenderPlannerTests.cs",
+        "freep/FreeP.App.Presentation.Tests/RendererNeutralDedupPlannerTests.cs"
+      ],
+      "remainingWork": "Surface and 3-D surface charts now render through the shared surface-cell primitive plan on both WPF and Avalonia. PowerPoint-authoritative surface chart visual baselines, true contour/3-D surface geometry, wireframe styling, and broader real-deck corpus coverage remain deferred."
     },
     {
       "evidenceId": "freep.omml.transparent-phantom-spacing",
