@@ -329,6 +329,21 @@ Verified on 2026-07-14 with the command above:
 - Backstage readiness: skipped by scenario filter.
 - Summary files: `freew-fidelity-corpus/runs/equation-structure-proof-20260714-worker/freew_visual_evidence_summary.{json,md}`.
 
+## Current Note Placement no-Word Evidence Path
+
+The 2026-07-14 note-placement evidence-depth slice adds a focused `NotePlacementVisualProof` scenario set for the stable footnote/endnote family without pulling in review markup or header/footer image proof rows:
+
+- `f2-footnotes`
+- `f2-endnotes`
+
+Run it on a no-Word host with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\note-placement-proof-20260714-worker -MaxPages 3 -ScenarioSet NotePlacementVisualProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+The normalized summary now emits `notePlacementProofReadiness` rows and a `Note Placement Visual Proof Readiness` Markdown table. The runner guard requires trusted WPF and Avalonia rows for both footnote pages and the synthetic endnote page, verifies footnote/endnote placement metadata, direct Word-baseline policy rows, and explicit `word-baseline-unavailable` blockers for both scenarios when Word COM is unavailable. This remains paired renderer evidence and Word-baseline readiness only; it does not claim authoritative Microsoft Word PNG note-placement parity.
+
 ## Field page-number display evidence
 
 The 2026-07-13 field page-number depth slice extends the existing `field-page-number-variants` scenario with shared resolved PAGE/NUMPAGES header/footer evidence. The fixture now enables Page Number Format dialog chapter numbering with Heading 1 and a hyphen separator, so the shared header/footer plan records deterministic PAGE display signatures such as `1-1`, `1-2`, and `1-3` across the first, even, and default page slots.
