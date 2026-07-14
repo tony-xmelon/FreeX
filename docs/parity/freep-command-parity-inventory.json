@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 43
+    "workflowEvidenceRows": 44
   },
   "workflowEvidence": [
     {
@@ -452,6 +452,24 @@
         "freep/FreeP.App.Rendering.Avalonia.Tests/SlideCanvasMathBaselineTests.cs"
       ],
       "remainingWork": "Shared OMML parsing and layout now preserve m:mPr/m:plcHide, emit renderer-neutral placeholders for authored empty matrix cells by default, and suppress those placeholders when plcHide is set. PowerPoint-authoritative math visual baselines, exact OfficeMath placeholder chrome, full spacing-table typography, additional equation constructs, and remaining alignment semantics remain deferred."
+    },
+    {
+      "evidenceId": "freep.omml.literal-run-style",
+      "area": "OMML literal math run style",
+      "status": "shared-layout-evidence",
+      "hostCoverage": "WPF/Avalonia consume shared MathNode.Run literal metadata and MathBoxRenderPlanner glyph style with no renderer-local literal policy",
+      "evidenceDocs": [
+        "docs/parity/freep-omml-literal-run-style-2026-07-14.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation/Math/MathNode.cs",
+        "freep/FreeP.App.Presentation/Math/OmmlParser.cs",
+        "freep/FreeP.App.Presentation.Tests/OmmlParserTests.cs",
+        "freep/FreeP.App.Presentation.Tests/MathLayoutEngineTests.cs",
+        "freep/FreeP.App.Host.Tests/SlideCanvasMathBaselineTests.cs",
+        "freep/FreeP.App.Rendering.Avalonia.Tests/SlideCanvasMathBaselineTests.cs"
+      ],
+      "remainingWork": "Shared OMML parsing now preserves m:rPr/m:lit as literal run metadata and resolves the bounded no-style literal case to an upright renderer-neutral glyph plan consumed by WPF and Avalonia. PowerPoint-authoritative math visual baselines, full OfficeMath linear-build-up semantics, and exact Cambria Math typography remain deferred."
     },
     {
       "evidenceId": "freep.smartart.continuous-block-process",
