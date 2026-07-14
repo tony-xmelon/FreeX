@@ -6,8 +6,9 @@ What is now proved:
 
 - WPF and Avalonia both route default Windows camera capture through the shared recording planner and host recording adapters.
 - Both default no-COM camera engines reach camera device handoff and preserve stable `video/mp4` package targets under `ppt/media/freep-recordings/{host}/slide-###-camera.mp4`.
-- The shared `SlideShowRecordingCameraEncodingReadinessEvidence` contract records the paired handoff as readiness evidence only when the row has no encoded payload and does not require or claim PowerPoint COM.
-- Existing deterministic host-engine tests continue to prove package-ready `.mp4` persistence when a capture engine supplies bytes, while this default-engine slice keeps local real camera encoding separate.
+- The shared `SlideShowRecordingCameraEncodingReadinessEvidence` contract records paired handoff-only rows only when the row has no encoded payload and does not require or claim PowerPoint COM.
+- The same evidence contract now separately identifies paired deterministic encoded-payload rows, proving the package/persistence path without treating an injected engine as real default-camera hardware encoding.
+- Existing deterministic host-engine tests continue to prove package-ready `.mp4` persistence when a capture engine supplies bytes, while this default-engine slice keeps local real camera encoding separate and still deferred.
 
 Focused evidence:
 
@@ -15,6 +16,7 @@ Focused evidence:
 - `freep/FreeP.App.Presentation.Tests/SlideShowRecordingHostAdapterParityPlannerTests.cs`
 - `freep/FreeP.App.Host.Tests/WpfWindowsRecordingCaptureBackendTests.cs`
 - `freep/FreeP.App.Avalonia.Tests/AvaloniaWindowsRecordingCaptureBackendTests.cs`
+- `tools/Generate-FreePCommandParityInventory.ps1`
 
 Explicitly deferred:
 
