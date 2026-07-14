@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 65
+    "workflowEvidenceRows": 66
   },
   "workflowEvidence": [
     {
@@ -812,6 +812,21 @@
         "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
       ],
       "remainingWork": "circleProcess now uses a bounded shared process live-layout path for parsed ordered-stage nodes as clockwise rounded boxes around an ellipse with loop-closing connector ops. Exact PowerPoint circular-arrow artwork, segment contours, effects, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.arrow-ribbon",
+      "area": "SmartArt arrowRibbon live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume ordinary shared ribbon segment and connector ops emitted by the SmartArt process-family planner; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/freep-smartart-arrow-ribbon-2026-07-14.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
+      ],
+      "remainingWork": "arrowRibbon now uses a bounded shared process live-layout path for parsed ordered-stage nodes as left-to-right ribbon segments with connector ops. Exact PowerPoint folded-ribbon contours, arrow tails, effects, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
     },
     {
       "evidenceId": "freep.smartart.basic-block-list",
