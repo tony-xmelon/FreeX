@@ -153,4 +153,6 @@ Summary result:
 
 The remaining missing baseline is `f2-endnotes_p3`: the Avalonia evidence emits a third page, while Microsoft Word produced a two-page PDF for that fixture. The other failures are comparison/tolerance or page-geometry deltas, plus WPF software-renderer trust failures for backstage rows. They are no longer DOCX-open/export blockers.
 
-Next work should focus on formalizing the visible-dialog Word exporter (or fixing direct `ExportAsFixedFormat` automation), then triaging renderer/page-size/page-count deltas from the real Word summary.
+The visible-dialog exporter is now formalized through `tools\FreeW.RenderCompare\Export-WordPdfsVisible.ps1` and the `tools\Run-FreeWWordBaselineEvidence.ps1 -UseVisibleWordPublish` switch. A wrapper verification with `-SkipEvidenceRender -UseVisibleWordPublish` exported all 30 PDFs and rasterized Word baselines through the supported path, then exited nonzero only when `FreeW.VisualEvidenceSummary` reported the known failing real-Word comparison trust. Direct `ExportAsFixedFormat` still remains useful to fix later, but the Word-capable baseline lane no longer depends on an ignored scratch script.
+
+Next work should focus on triaging renderer/page-size/page-count deltas from the real Word summary.
