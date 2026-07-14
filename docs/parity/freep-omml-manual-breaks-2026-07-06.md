@@ -25,7 +25,12 @@ The implementation is renderer-neutral. It lives in the shared OMML parser and m
 - `OmmlParserTests.Parse_DirectManualBreak_DoesNotCreateUnknownNode`
 - `MathLayoutEngineTests.OmmlManualBreak_LayoutsAsStackedEquationArrayRows`
 - `MathLayoutEngineTests.EmptyFallbackGlyph_DoesNotThrowOrReserveWidth`
+- `SlideCanvasMathBaselineTests.RenderParaWithMath_ManualBreakAlignment_UsesSharedMathBoxPlan_DoesNotThrow` in WPF and Avalonia test projects.
+
+## Command Inventory
+
+Tracked as workflow evidence row `freep.omml.manual-break-alignment` in the generated FreeP command/evidence inventory.
 
 ## Remaining
 
-This is not a full PowerPoint math baseline. Remaining OMML parity still includes broader structure/layout coverage and PowerPoint-authored visual baselines for complex equations.
+This is not a full PowerPoint math baseline. Remaining OMML parity still includes broader break-distribution heuristics, OfficeMath paragraph alignment, broader structure/layout coverage, and PowerPoint-authored visual baselines for complex equations.
