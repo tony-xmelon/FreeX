@@ -344,6 +344,29 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\to
 
 The normalized summary now emits `notePlacementProofReadiness` rows and a `Note Placement Visual Proof Readiness` Markdown table. The runner guard requires trusted WPF and Avalonia rows for both footnote pages and the synthetic endnote page, verifies footnote/endnote placement metadata, direct Word-baseline policy rows, and explicit `word-baseline-unavailable` blockers for both scenarios when Word COM is unavailable. This remains paired renderer evidence and Word-baseline readiness only; it does not claim authoritative Microsoft Word PNG note-placement parity.
 
+## Current Section Geometry no-Word Evidence Path
+
+The 2026-07-14 section-geometry evidence-depth slice adds a focused `SectionGeometryVisualProof` scenario set for the mixed portrait/landscape section fixture without pulling in broader page-composition, table, drawing-object, or review rows:
+
+- `f2-section-landscape`
+
+Run it on a no-Word host with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\section-geometry-proof-20260714-worker -MaxPages 2 -ScenarioSet SectionGeometryVisualProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+The normalized summary now emits `sectionGeometryProofReadiness` rows and a `Section Geometry Visual Proof Readiness` Markdown table. The runner guard requires trusted WPF and Avalonia rows for portrait page 1 and landscape page 2, verifies section owner/ordinal/section-relative-page metadata, direct Word-baseline policy rows, and the explicit `f2-section-landscape-word-baseline-fidelity` blocker when Word COM is unavailable. This remains paired renderer evidence and Word-baseline readiness only; it does not claim authoritative Microsoft Word PNG section-geometry parity.
+
+Verified on 2026-07-14 with the command above:
+
+- Summary trust: `passed`.
+- Evidence rows: `4`.
+- Word baseline comparisons: `4`, all `word-baseline-unavailable`.
+- Section geometry readiness: `2` trusted WPF/Avalonia scenario rows, `2` verified semantic rows, `4` verified Word-baseline policy rows, and the Word-baseline-unavailable blocker verified.
+- Backstage readiness: skipped by scenario filter.
+- Summary files: `freew-fidelity-corpus/runs/section-geometry-proof-20260714-worker/freew_visual_evidence_summary.{json,md}`.
+
 ## Field page-number display evidence
 
 The 2026-07-13 field page-number depth slice extends the existing `field-page-number-variants` scenario with shared resolved PAGE/NUMPAGES header/footer evidence. The fixture now enables Page Number Format dialog chapter numbering with Heading 1 and a hyphen separator, so the shared header/footer plan records deterministic PAGE display signatures such as `1-1`, `1-2`, and `1-3` across the first, even, and default page slots.
