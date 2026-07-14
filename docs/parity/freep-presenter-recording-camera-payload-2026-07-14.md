@@ -6,7 +6,7 @@ This slice proves the bounded no-COM camera media payload path for FreeP present
 - The shared recording execution planner carries those bytes as `CameraVideo` media artifacts with host-specific package paths under `ppt/media/freep-recordings/wpf/` and `ppt/media/freep-recordings/avalonia/`.
 - The shared recording review planner applies those persistable artifacts into `Presentation.RecordingMediaArtifacts`.
 - The PPTX writer emits the `.mp4` payload entries plus `ppt/media/recordingArtifacts.xml`, and the PPTX reader reloads matching bytes, content type, length, SHA-256, and package paths.
-- The shared readiness planner separately reports paired deterministic encoded-payload evidence from handoff-only default-engine rows, so this package proof does not claim real camera hardware encoding.
+- The shared readiness planner separately reports paired deterministic injected encoded-payload evidence from handoff-only default-engine rows and future actual default-engine payload rows, so this package proof does not claim real camera hardware encoding.
 
 Focused evidence:
 
