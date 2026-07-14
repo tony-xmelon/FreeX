@@ -31,20 +31,20 @@ Sources:
 | WPF manifest ids without Avalonia pair | 0 |
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches (scale-aware logical units) | 15 |
-| Raw PNG pixel dimension mismatches | 47 |
+| Paired dimension mismatches (scale-aware logical units) | 3 |
+| Raw PNG pixel dimension mismatches | 35 |
 | Raw PNG mismatches normalized by capture DPI | 32 |
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
-| Policy-accepted native/control differences | 15 |
+| Policy-accepted native/control differences | 3 |
 
 ## Scale-Aware Dimension Mismatch Classification
 
-The 15 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept policy-approved platform/native control differences, or refresh limited evidence. Policy-accepted native/control rows are explicit accepted variance, not incomplete parity work.
+The 3 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept policy-approved platform/native control differences, or refresh limited evidence. Policy-accepted native/control rows are explicit accepted variance, not incomplete parity work.
 
 | Bucket | Count | Policy accepted | Top surface ids | Top next action |
 | --- | ---: | --- | --- | --- |
-| expected platform/native difference | 15 | True | dialog.Sparkline<br>dialog.Options.QuickAccessToolbar<br>dialog.Options.Proofing<br>dialog.Options.Advanced<br>dialog.Options | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
+| expected platform/native difference | 3 | True | dialog.Sparkline<br>dialog.ProtectWorkbook<br>dialog.ExportOptions | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
 
 ## Policy-Accepted Native/Control Differences
 
@@ -53,7 +53,6 @@ These rows were reviewed against the committed WPF/Avalonia PNG pairs and are re
 | Family | Count | Surface ids | Rationale | Clear criteria |
 | --- | ---: | --- | --- | --- |
 | Export options native spacing | 1 | dialog.ExportOptions | The paired screenshots show the same export-option choices; the remaining height delta is platform label/control spacing. | Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent. |
-| Options host frame | 12 | dialog.Options<br>dialog.Options.AddIns<br>dialog.Options.Advanced<br>dialog.Options.CustomizeRibbon<br>dialog.Options.EaseOfAccess<br>dialog.Options.General<br>dialog.Options.Language<br>dialog.Options.Proofing<br>dialog.Options.QuickAccessToolbar<br>dialog.Options.Save<br>dialog.Options.TrustCenter<br>dialog.Options.View | The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing. | Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent. |
 | Protection password prompt | 1 | dialog.ProtectWorkbook | The paired screenshots show the same password/confirmation workflow; the residual size delta is native password-box and button-row metrics. | Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent. |
 | Sparkline range picker controls | 1 | dialog.Sparkline | The paired screenshots show the same Sparkline range/location inputs and type selection; the residual delta is native text input, combo, and button spacing. | Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent. |
 
@@ -79,18 +78,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | Surface id | Bucket | Policy family | WPF logical size | Avalonia logical size | Logical delta | Reason | Next action |
 | --- | --- | --- | ---: | ---: | ---: | --- | --- |
 | dialog.ExportOptions | expected platform/native difference | Export options native spacing | 430x542 | 430x552 | 0x10 | The paired screenshots show the same export-option choices; the remaining height delta is platform label/control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-| dialog.Options | expected platform/native difference | Options host frame | 744x521 | 760x560 | 16x39 | The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-| dialog.Options.AddIns | expected platform/native difference | Options host frame | 744x521 | 760x560 | 16x39 | The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-| dialog.Options.Advanced | expected platform/native difference | Options host frame | 744x521 | 760x560 | 16x39 | The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-| dialog.Options.CustomizeRibbon | expected platform/native difference | Options host frame | 744x521 | 760x560 | 16x39 | The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-| dialog.Options.EaseOfAccess | expected platform/native difference | Options host frame | 744x521 | 760x560 | 16x39 | The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-| dialog.Options.General | expected platform/native difference | Options host frame | 744x521 | 760x560 | 16x39 | The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-| dialog.Options.Language | expected platform/native difference | Options host frame | 744x521 | 760x560 | 16x39 | The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-| dialog.Options.Proofing | expected platform/native difference | Options host frame | 744x521 | 760x560 | 16x39 | The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-| dialog.Options.QuickAccessToolbar | expected platform/native difference | Options host frame | 744x521 | 760x560 | 16x39 | The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-| dialog.Options.Save | expected platform/native difference | Options host frame | 744x521 | 760x560 | 16x39 | The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-| dialog.Options.TrustCenter | expected platform/native difference | Options host frame | 744x521 | 760x560 | 16x39 | The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-| dialog.Options.View | expected platform/native difference | Options host frame | 744x521 | 760x560 | 16x39 | The paired screenshots show the same Options navigation/content contract; the remaining delta is the WPF options host frame versus the Avalonia host frame and default control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
 | dialog.ProtectWorkbook | expected platform/native difference | Protection password prompt | 360x250 | 380x240 | 20x10 | The paired screenshots show the same password/confirmation workflow; the residual size delta is native password-box and button-row metrics. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
 | dialog.Sparkline | expected platform/native difference | Sparkline range picker controls | 380x240 | 372x230 | 8x10 | The paired screenshots show the same Sparkline range/location inputs and type selection; the residual delta is native text input, combo, and button spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
 
@@ -143,19 +130,19 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.InsertTimeline | dialog.InsertTimeline.png | 410x270 | 615x405 px @ 144 DPI | True | dialog.InsertTimeline.png | 410x270 | 410x270 px @ 96 DPI | True | True | 0.040 |
 | dialog.LegalNotices | dialog.LegalNotices.png | 840x620 | 1260x930 px @ 144 DPI | True | dialog.LegalNotices.png | 840x620 | 840x620 px @ 96 DPI | True | True | 0.030 |
 | dialog.OpenWorkbook | dialog.OpenWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | dialog.OpenWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | True | 0.034 |
-| dialog.Options | dialog.Options.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.219 |
-| dialog.Options.AddIns | dialog.Options.AddIns.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.AddIns.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.201 |
-| dialog.Options.Advanced | dialog.Options.Advanced.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Advanced.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.222 |
-| dialog.Options.CustomizeRibbon | dialog.Options.CustomizeRibbon.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.CustomizeRibbon.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.203 |
-| dialog.Options.EaseOfAccess | dialog.Options.EaseOfAccess.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.EaseOfAccess.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.203 |
-| dialog.Options.Formulas | dialog.Options.Formulas.png | 744x777 | 744x777 px @ 96 DPI | True | dialog.Options.Formulas.png | 744x777 | 744x777 px @ 96 DPI | True | True | 0.092 |
-| dialog.Options.General | dialog.Options.General.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.General.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.219 |
-| dialog.Options.Language | dialog.Options.Language.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Language.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.204 |
-| dialog.Options.Proofing | dialog.Options.Proofing.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Proofing.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.230 |
-| dialog.Options.QuickAccessToolbar | dialog.Options.QuickAccessToolbar.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.QuickAccessToolbar.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.243 |
-| dialog.Options.Save | dialog.Options.Save.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Save.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.206 |
-| dialog.Options.TrustCenter | dialog.Options.TrustCenter.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.TrustCenter.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.212 |
-| dialog.Options.View | dialog.Options.View.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.View.png | 760x560 | 760x560 px @ 96 DPI | True | False | 0.204 |
+| dialog.Options | dialog.Options.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.111 |
+| dialog.Options.AddIns | dialog.Options.AddIns.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.AddIns.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.097 |
+| dialog.Options.Advanced | dialog.Options.Advanced.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Advanced.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.122 |
+| dialog.Options.CustomizeRibbon | dialog.Options.CustomizeRibbon.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.CustomizeRibbon.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.100 |
+| dialog.Options.EaseOfAccess | dialog.Options.EaseOfAccess.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.EaseOfAccess.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.098 |
+| dialog.Options.Formulas | dialog.Options.Formulas.png | 744x777 | 744x777 px @ 96 DPI | True | dialog.Options.Formulas.png | 744x777 | 744x777 px @ 96 DPI | True | True | 0.093 |
+| dialog.Options.General | dialog.Options.General.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.General.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.111 |
+| dialog.Options.Language | dialog.Options.Language.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Language.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.104 |
+| dialog.Options.Proofing | dialog.Options.Proofing.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Proofing.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.124 |
+| dialog.Options.QuickAccessToolbar | dialog.Options.QuickAccessToolbar.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.QuickAccessToolbar.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.139 |
+| dialog.Options.Save | dialog.Options.Save.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Save.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.105 |
+| dialog.Options.TrustCenter | dialog.Options.TrustCenter.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.TrustCenter.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.101 |
+| dialog.Options.View | dialog.Options.View.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.View.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.099 |
 | dialog.PageSetup | dialog.PageSetup.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.091 |
 | dialog.PageSetup.HeaderFooter | dialog.PageSetup.HeaderFooter.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.HeaderFooter.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.127 |
 | dialog.PageSetup.Margins | dialog.PageSetup.Margins.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Margins.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.041 |
