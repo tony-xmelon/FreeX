@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 33
+    "workflowEvidenceRows": 34
   },
   "workflowEvidence": [
     {
@@ -305,6 +305,20 @@
         "freep/FreeP.App.Host.Tests/ChartTests.cs"
       ],
       "remainingWork": "Pie and doughnut c:firstSliceAng now round-trips through the model and PPTX package and drives shared slice primitive planning. PowerPoint-authoritative visual baselines, pie3D behavior, and broader chart visual fidelity remain deferred."
+    },
+    {
+      "evidenceId": "freep.chart.stacked-area-bands",
+      "area": "Chart stacked area band geometry",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume shared ChartAreaSeriesPrimitive baseline polygons with no renderer-local stacked-area policy",
+      "evidenceDocs": [
+        "docs/parity/freep-chart-stacked-area-render-planning-2026-07-14.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation/ChartRenderPlanner.cs",
+        "freep/FreeP.App.Presentation.Tests/ChartRenderPlannerTests.cs"
+      ],
+      "remainingWork": "Shared stacked-area planning now scales primary value axes from category totals and emits cumulative band baselines before WPF/Avalonia renderers draw the same area primitives. PowerPoint-authoritative chart visual baselines, mixed positive/negative corpus coverage, and broader type-specific chart visual fidelity remain deferred."
     },
     {
       "evidenceId": "freep.omml.transparent-phantom-spacing",
