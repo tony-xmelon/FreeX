@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 58
+    "workflowEvidenceRows": 59
   },
   "workflowEvidence": [
     {
@@ -708,6 +708,21 @@
         "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
       ],
       "remainingWork": "chevronProcess now uses the bounded shared process live-layout path for parsed ordered-stage nodes. The shared planner intentionally represents this as renderer-neutral rounded boxes plus connector ops, not exact PowerPoint chevron polygon geometry; other unsupported process variants remain on cached drawing fallback. Broader SmartArt geometry families, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.funnel-process",
+      "area": "SmartArt funnel process live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume ordinary shared trapezoid stage and connector ops emitted by the SmartArt process-family planner; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/freep-smartart-funnel-process-2026-07-14.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
+      ],
+      "remainingWork": "funnelProcess now uses a bounded shared process live-layout path for parsed ordered-stage nodes as top-to-bottom trapezoid segments that narrow toward the bottom with centered connector ops. Exact PowerPoint funnel contours, effects, segment overlap, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
     },
     {
       "evidenceId": "freep.smartart.basic-block-list",
