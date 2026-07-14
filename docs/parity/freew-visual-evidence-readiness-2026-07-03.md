@@ -288,6 +288,8 @@ Verified on 2026-07-14 with the command above:
 
 The 2026-07-14 chart visual runner slice adds a focused `ChartVisualProof` scenario set in `freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1`. It uses the existing `chart-smartart-complex` fixture but verifies the chart-specific half of the shared visual contract: multiple chart plans, stable chart visual signatures, the styled column chart signature, the marker scatter chart signature, direct Word-baseline policy rows, and the explicit `chart-smartart-complex-word-baseline-fidelity` blocker when Word COM is unavailable.
 
+The broader visual-proof follow-up on 2026-07-14 adds chart data-shape evidence to the same shared contract. `ChartSmartArtVisualPlanner` now carries normalized category labels and per-series values in each shared chart plan, `FreeWVisualEvidencePlanner` emits stable `chartDataSignatures`, and `FreeWVisualEvidenceManifestNormalizer` validates both self-consistency and WPF/Avalonia pair equality. The focused runner now requires the styled column chart data signature (`Q1`-`Q4`, Revenue values `1.4,1.8,1.6,2.2`) and the marker scatter chart data signature (`155,160,165,170`, Sample values `52,58,62,66`) before accepting `ChartVisualProof`.
+
 Run it on a no-Word host with:
 
 ```powershell
@@ -306,6 +308,16 @@ Verified on 2026-07-14 with the command above:
 - Chart visual readiness: `3` trusted semantic rows, `3` verified Word-baseline policy rows, and the Word-baseline-unavailable blocker verified.
 - Backstage readiness: skipped by scenario filter.
 - Summary files: `freew-fidelity-corpus/runs/chart-visual-proof-20260714-worker/freew_visual_evidence_summary.{json,md}`.
+
+Verified the chart data-shape follow-up on 2026-07-14 with the same command pattern and run root `freew-fidelity-corpus/runs/chart-data-visual-proof-20260714-worker`:
+
+- Summary schema: `48`.
+- Summary trust: `passed`.
+- Evidence rows: `3`.
+- Word baseline comparisons: `3`, all `word-baseline-unavailable`.
+- Drawing/object readiness for `chart-smartart-complex`: `paired-renderer-proof-ready` with `chart signatures=2` and `chart data signatures=2` for both WPF and Avalonia.
+- Chart visual readiness: `3` trusted semantic rows, `3` verified Word-baseline policy rows, and the Word-baseline-unavailable blocker verified.
+- Backstage readiness: skipped by scenario filter.
 
 ## Current Equation Structure no-Word Evidence Path
 
