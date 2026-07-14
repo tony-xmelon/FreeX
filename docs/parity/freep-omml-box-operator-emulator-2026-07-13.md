@@ -19,7 +19,7 @@ This slice adds bounded shared FreeP support for OMML `m:boxPr/m:opEmu`:
 
 ## Command Inventory
 
-No generated FreeP command inventory update was made. This slice is shared OMML parsing/layout/render planning, not a command workflow surface.
+Promoted into generated FreeP workflow evidence as `freep.omml.box-operator-emulator-spacing`. The row records shared parser/layout/render-plan evidence rather than a user-facing ribbon command.
 
 ## Remaining Work
 
