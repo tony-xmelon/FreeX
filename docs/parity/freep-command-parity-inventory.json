@@ -221,15 +221,16 @@
       "evidenceId": "freep.export.pdf-visual-baseline-readiness",
       "area": "PowerPoint-authoritative PDF visual baseline readiness",
       "status": "shared-baseline-readiness-evidence",
-      "hostCoverage": "WPF/Avalonia share one PDF/export package contract with source-bound manifest, WPF/Avalonia artifact, and deferred PowerPoint PDF/PNG artifact paths; no local PowerPoint COM visual baseline is claimed",
+      "hostCoverage": "WPF/Avalonia share one PDF/export package contract with source-bound manifest, WPF/Avalonia PDF and page-raster artifact patterns, paired diff-report paths, and deferred PowerPoint PDF/PNG artifact paths; no local PowerPoint COM visual baseline is claimed",
       "evidenceDocs": [
-        "docs/parity/freep-pdf-visual-baseline-readiness-2026-07-14.md"
+        "docs/parity/freep-pdf-visual-baseline-readiness-2026-07-14.md",
+        "docs/parity/freep-pdf-baseline-diff-readiness-2026-07-14.md"
       ],
       "verification": [
         "freep/FreeP.App.Presentation/PresentationPdfVisualBaselineReadinessPlanner.cs",
         "freep/FreeP.App.Presentation.Tests/PresentationPdfVisualBaselineReadinessPlannerTests.cs"
       ],
-      "remainingWork": "No-COM readiness now covers portable slide PDF, full-page raster PDF, 3-up handout PDF, and notes-page PDF rows with source-normalized manifest paths, matching WPF/Avalonia fingerprints, and explicit PowerPoint PDF/PNG artifact targets for a COM-capable baseline machine. Actual PowerPoint-exported PDFs/PNGs, visual diffs, thresholds, and representative real-deck capture still require PowerPoint.Application COM on a baseline host."
+      "remainingWork": "No-COM readiness now covers portable slide PDF, full-page raster PDF, 3-up handout PDF, and notes-page PDF rows with source-normalized manifest paths, matching WPF/Avalonia fingerprints, WPF/Avalonia page-raster artifact patterns, paired WPF-vs-Avalonia and deferred PowerPoint diff report targets, pinned raster DPI, and explicit PowerPoint PDF/PNG artifact targets for a COM-capable baseline machine. Actual PowerPoint-exported PDFs/PNGs, calibrated visual diffs, thresholds, and representative real-deck capture still require PowerPoint.Application COM on a baseline host."
     },
     {
       "evidenceId": "freep.export.pdf-ellipse-fixed-layout",
