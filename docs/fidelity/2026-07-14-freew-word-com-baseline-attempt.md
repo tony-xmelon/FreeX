@@ -63,9 +63,55 @@ Owned `WINWORD.EXE` and PowerShell child processes from these probes were stoppe
 
 ## Resume Notes
 
+## Retry - Word UI Export Path
+
+After Word was opened interactively and confirmed functional, direct COM `ExportAsFixedFormat` still did not visibly drive Word and continued to hang. A visible COM ping did work: Codex could attach to the running `Word.Application`, activate Word, and type into the open scratch document. The working export route was therefore:
+
+1. Open each generated fixture in the running Word instance.
+2. Invoke Word's built-in `FileSaveAsPdfOrXps` command.
+3. Drive the visible `Publish as PDF or XPS` dialog.
+4. Move the generated PDF into `word-pdf`.
+5. Rasterize each PDF with `FreeW.PdfRasterize`.
+
+Retry output under `freew-fidelity-corpus\runs\word-com-baseline-20260714`:
+
+| Artifact | Count |
+| --- | ---: |
+| Generated DOCX fixtures | 29 |
+| Word PDFs generated through UI publish | 25 |
+| Word baseline PNGs rasterized | 59 |
+| Word-open failures | 4 |
+
+The four fixtures Word still rejected, even with `OpenAndRepair`, were:
+
+- `drawing-objects-complex.docx`
+- `object-format-position-size-style.docx`
+- `wordart-picture-watermark-layout.docx`
+- `wordart-watermark-stress.docx`
+
+`chart-smartart-complex.docx` also failed normal Word open, but `OpenAndRepair` produced a repaired document that could be published to PDF through the visible dialog.
+
+The real-Word summary was written to:
+
+- `freew-fidelity-corpus\runs\word-com-baseline-20260714\freew_visual_evidence_summary.real-word.json`
+- `freew-fidelity-corpus\runs\word-com-baseline-20260714\freew_visual_evidence_summary.real-word.md`
+
+Summary result:
+
+| Metric | Value |
+| --- | ---: |
+| Trust | failed |
+| Evidence rows | 88 |
+| Baseline comparisons | 88 |
+| Failed comparisons | 75 |
+| Missing baseline rows | 10 |
+| Skipped/unmapped rows | 3 |
+
+The failed summary is expected useful evidence, not an export failure: it records actual Word PNG baseline mismatches and the remaining Word-rejected fixture gaps. The current summary authority is `word-baseline-missing`, not `word-baseline-unavailable`.
+
 The next pass should focus on making Word fixed-format export complete on this machine before rerunning the full baseline:
 
-1. Open Word interactively once as the logged-in user and dismiss first-run, privacy, recovery, add-in, printer, or PDF-export prompts.
-2. Run a trivial manual or PowerShell COM `ExportAsFixedFormat` probe from an unlocked desktop and confirm that it creates any PDF.
-3. If manual export works but COM still hangs, consider changing the Word-baseline runner to emit per-operation progress before `Documents.Open`, after open, before export, and after export, then isolate whether the hang is Word startup, document open, or PDF export.
-4. Once PDF export works, rerun `tools\Run-FreeWWordBaselineEvidence.ps1 -RunRoot freew-fidelity-corpus\runs\word-com-baseline-<stamp>` and expect the summary authority to change from `word-baseline-unavailable` to real Word PNG comparison rows.
+1. Promote or formalize the visible-dialog export workaround if direct `ExportAsFixedFormat` remains unreliable from Codex automation.
+2. Fix or regenerate the four Word-rejected fixtures so Microsoft Word can open them, or mark them as non-Word-comparable in the evidence contract.
+3. Revisit the `word-png-default` comparison tolerance and page-size normalization: many real Word baselines are 816x1056 while Avalonia evidence is emitted at larger page surfaces such as 960x1200, 960x1400, or 960x1800.
+4. Rerun the summary after fixture and normalization work; expect a failing trust result until the renderer deltas are intentionally triaged or fixed.
