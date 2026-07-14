@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 79
+    "workflowEvidenceRows": 80
   },
   "workflowEvidence": [
     {
@@ -570,6 +570,25 @@
         "freep/FreeP.App.Rendering.Avalonia.Tests/SlideCanvasMathBaselineTests.cs"
       ],
       "remainingWork": "Shared OMML layout now maps PowerPoint-authored m:accPr/m:chr macron and overline accents to renderer-neutral horizontal-rule draw ops above the base expression before WPF or Avalonia draw. PowerPoint-authoritative math visual baselines, exact Cambria Math accent placement, stretched accent typography, and complete OfficeMath accent semantics remain deferred."
+    },
+    {
+      "evidenceId": "freep.omml.radical-degree-layout",
+      "area": "OMML radical degree layout and baseline",
+      "status": "shared-layout-evidence",
+      "hostCoverage": "WPF/Avalonia consume shared MathNode.Rad degree metadata and MathBoxRenderPlanner radical/glyph ops with no renderer-local radical-degree policy",
+      "evidenceDocs": [
+        "docs/parity/freep-omml-radical-degree-layout-2026-07-14.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation/Math/MathNode.cs",
+        "freep/FreeP.App.Presentation/Math/OmmlParser.cs",
+        "freep/FreeP.App.Presentation/Math/MathLayoutEngine.cs",
+        "freep/FreeP.App.Presentation.Tests/OmmlParserTests.cs",
+        "freep/FreeP.App.Presentation.Tests/MathLayoutEngineTests.cs",
+        "freep/FreeP.App.Host.Tests/SlideCanvasMathBaselineTests.cs",
+        "freep/FreeP.App.Rendering.Avalonia.Tests/SlideCanvasMathBaselineTests.cs"
+      ],
+      "remainingWork": "Shared OMML parsing and layout now proves default visible radical degrees, hidden m:radPr/m:degHide no-draw/no-gutter behavior, script-sized degree placement left of the radical sign, and paired WPF/Avalonia consumption of the same renderer-neutral radical/glyph draw ops. PowerPoint-authoritative math visual baselines, exact Cambria Math radical glyph metrics, radical-degree kerning, overline/check-mark shape tuning, and broader OfficeMath radical variants remain deferred."
     },
     {
       "evidenceId": "freep.omml.fraction-type",
