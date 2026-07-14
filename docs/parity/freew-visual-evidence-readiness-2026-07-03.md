@@ -416,7 +416,26 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\to
 
 The runner guard requires trusted WPF and Avalonia rows for `references-heavy-fields`, verifies the shared semantic evidence for `CITATION`, `BIBLIOGRAPHY`, cached `TOA` page-reference results, and generated TOA signatures for the Cases and Statutes entries, and requires direct Word-baseline policy rows for the scenario. On no-Word hosts, it also requires the explicit `references-heavy-toa-page-number-fidelity` blocker with `word-baseline-unavailable`, so the run proves baseline readiness and records the missing external Word PNG step without claiming authoritative MS Word visual parity.
 
+The 2026-07-14 readiness-row update promotes the same proof from runner-only checks into the normalized summary contract. `freew_visual_evidence_summary.json` schema v46 now emits `referencesHeavyProofReadiness`, and the Markdown view includes a `References-Heavy Field/TOA Proof Readiness` table. Each row must prove a trusted WPF/Avalonia page pair, shared field/TOA semantic metadata, direct Word-baseline policy status, and the no-Word `references-heavy-toa-page-number-fidelity` blocker when Word COM is unavailable.
+
 An IO round-trip proof also covers the compact references-heavy package shape: DOCX output retains `word/bibliography/sources.xml`, CITATION/BIBLIOGRAPHY/TOA complex fields, hidden TA marks, generated TOA entries, and reopened page-number evidence for `Example v. FreeW` (`1, 2`) and `Free Software Evidence Act` (`1`).
+
+Run the focused path on this no-Word host with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\references-heavy-proof-readiness-20260714-worker -MaxPages 2 -ScenarioSet ReferencesHeavyWordBaselineProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+Verified on 2026-07-14 with the command above, using run root `freew-fidelity-corpus/runs/references-heavy-proof-readiness-20260714-worker`:
+
+- Summary trust: `passed`.
+- Evidence rows: `4`.
+- Word baseline comparisons: `4`, all `word-baseline-unavailable`.
+- References-heavy readiness: `2` readiness rows, `2` trusted WPF/Avalonia scenario rows, `4` semantic field/TOA rows, `4` Word-baseline policy rows, and the Word-baseline-unavailable blocker verified.
+- Backstage readiness: skipped by scenario filter.
+- Summary files: `freew-fidelity-corpus/runs/references-heavy-proof-readiness-20260714-worker/freew_visual_evidence_summary.{json,md}`.
+
+This remains paired FreeW renderer evidence and Word-baseline readiness only. Because Word COM is unavailable on this host, it does not claim authoritative Microsoft Word PNG references-heavy TOA parity.
 
 ## Review proofing visual details
 
