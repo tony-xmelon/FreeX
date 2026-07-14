@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 57
+    "workflowEvidenceRows": 58
   },
   "workflowEvidence": [
     {
@@ -175,6 +175,20 @@
         "tools/FreeP.RenderCompare --export-backstage-evidence <deck.pptx> <outDir>"
       ],
       "remainingWork": "PowerPoint-authoritative fixed-layout, image, video, print, and Backstage visual baselines still require a PowerPoint COM-capable machine; local WPF/Avalonia evidence does not claim Microsoft PowerPoint visual parity."
+    },
+    {
+      "evidenceId": "freep.export.pdf-visual-baseline-readiness",
+      "area": "PowerPoint-authoritative PDF visual baseline readiness",
+      "status": "shared-baseline-readiness-evidence",
+      "hostCoverage": "WPF/Avalonia share one PDF/export package contract with source-bound manifest, WPF/Avalonia artifact, and deferred PowerPoint PDF/PNG artifact paths; no local PowerPoint COM visual baseline is claimed",
+      "evidenceDocs": [
+        "docs/parity/freep-pdf-visual-baseline-readiness-2026-07-14.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation/PresentationPdfVisualBaselineReadinessPlanner.cs",
+        "freep/FreeP.App.Presentation.Tests/PresentationPdfVisualBaselineReadinessPlannerTests.cs"
+      ],
+      "remainingWork": "No-COM readiness now covers portable slide PDF, full-page raster PDF, 3-up handout PDF, and notes-page PDF rows with source-normalized manifest paths, matching WPF/Avalonia fingerprints, and explicit PowerPoint PDF/PNG artifact targets for a COM-capable baseline machine. Actual PowerPoint-exported PDFs/PNGs, visual diffs, thresholds, and representative real-deck capture still require PowerPoint.Application COM on a baseline host."
     },
     {
       "evidenceId": "freep.export.pdf-ellipse-fixed-layout",
