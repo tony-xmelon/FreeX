@@ -105,6 +105,29 @@ Verified on 2026-07-13 with the command above:
 - Backstage readiness: skipped by scenario filter.
 - Summary files: `freew-fidelity-corpus/runs/core-layout-proof-20260713-smoke/freew_visual_evidence_summary.{json,md}`.
 
+## Current Header/Footer Image no-Word evidence path
+
+The 2026-07-14 header/footer image evidence-depth slice adds a focused `HeaderFooterImageVisualProof` scenario set for:
+
+- `f2-hf-images`
+
+Run it on a no-Word host with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\header-footer-image-proof-20260714-worker -MaxPages 2 -ScenarioSet HeaderFooterImageVisualProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+The normalized summary now emits `headerFooterImageProofReadiness` rows and a `Header/Footer Image Visual Proof Readiness` Markdown table. The runner guard requires trusted WPF and Avalonia rows for both pages, header/footer image-slot metadata for the multi-section letterhead fixture, direct Word-baseline policy rows, and the explicit `f2-hf-images-word-baseline-fidelity` blocker when Word COM is unavailable. This remains paired renderer evidence and Word-baseline readiness only; it does not claim authoritative Microsoft Word PNG header/footer image parity.
+
+Verified on 2026-07-14 with the command above:
+
+- Summary trust: `passed`.
+- Evidence rows: `4`.
+- Word baseline comparisons: `4`, all `word-baseline-unavailable`.
+- Header/footer image readiness: `2` trusted WPF/Avalonia page rows, `2` verified semantic rows, `4` verified Word-baseline policy rows, and the Word-baseline-unavailable blocker verified.
+- Backstage readiness: skipped by scenario filter.
+- Summary files: `freew-fidelity-corpus/runs/header-footer-image-proof-20260714-worker/freew_visual_evidence_summary.{json,md}`.
+
 ## Current Page Composition no-Word evidence path
 
 The 2026-07-13 page-composition runner slice adds a named `PageCompositionProof` scenario set to `freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1`. It broadens the no-Word paired evidence beyond Core Layout by proving the stable columns and border/watermark family without pulling in the known all-up table, drawing-object, SmartArt, or WordArt drift lanes:
