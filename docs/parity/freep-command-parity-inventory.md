@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 122 | 116 | 0 | 6 | 6 | 0 | 0 | 0 | 116 | 0 | 0 | 6 | 0 | 57 |
+| 122 | 116 | 0 | 6 | 6 | 0 | 0 | 0 | 116 | 0 | 0 | 6 | 0 | 58 |
 
 ## Workflow Evidence
 
