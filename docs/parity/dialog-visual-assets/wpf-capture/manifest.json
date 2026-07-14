@@ -365,7 +365,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.ExportOptions.png",
                          "captured":  true,
-                         "note":  "Promoted from FREEX_FILE_IO_IMPORT_SMOKE_TOUR PDF export-options dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                          "note":  ""
                      },
                      {
                          "id":  "dialog.ProtectSheet",
@@ -540,7 +540,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.ProtectWorkbook.png",
                          "captured":  true,
-                         "note":  "Promoted from review-comments-protection-tour committed WPF screenshot evidence (screenshots\\review-comments-protection-tour\\freex_review_protect_workbook_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                          "note":  ""
                      },
                      {
                          "id":  "dialog.RenameSheet",
@@ -614,7 +614,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.Sparkline.png",
                          "captured":  true,
-                         "note":  "Promoted from insert-tables-charts-tour committed WPF screenshot evidence (screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_sparkline_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                          "note":  ""
                      },
                      {
                          "id":  "dialog.Subtotal",

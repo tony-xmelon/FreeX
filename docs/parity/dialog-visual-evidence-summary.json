@@ -18,14 +18,14 @@
                     "wpfManifestIdsWithoutAvaloniaPair":  0,
                     "additionalAvaloniaCapturedSurfaceIds":  0,
                     "nonBlankPngFailures":  0,
-                    "pairedDimensionMismatches":  3,
-                    "pairedRawPixelDimensionMismatches":  35,
+                    "pairedDimensionMismatches":  0,
+                    "pairedRawPixelDimensionMismatches":  32,
                     "pairedCaptureScaleNormalizedDimensionMatches":  32,
                     "pairedExpectedSizeMismatches":  0,
                     "stalePromotedExpectedSizeEvidence":  0,
-                    "policyAcceptedNativeDifferences":  3,
+                    "policyAcceptedNativeDifferences":  0,
                     "dimensionMismatchBuckets":  {
-                                                     "expected platform/native difference":  3
+
                                                  }
                 },
     "pairedSurfaces":  [
@@ -1058,23 +1058,23 @@
                                "routeFamily":  "dialog.ExportOptions",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ExportOptions.png",
-                                           "fileBytes":  55944,
-                                           "width":  645,
-                                           "height":  813,
-                                           "dpiX":  143.992599,
-                                           "dpiY":  143.992599,
-                                           "logicalWidth":  430.022,
-                                           "logicalHeight":  542.028,
-                                           "pixels":  524385,
-                                           "distinctColors":  268,
+                                           "fileBytes":  30043,
+                                           "width":  430,
+                                           "height":  552,
+                                           "dpiX":  95.986595,
+                                           "dpiY":  95.986595,
+                                           "logicalWidth":  430.06,
+                                           "logicalHeight":  552.077,
+                                           "pixels":  237360,
+                                           "distinctColors":  240,
                                            "opaqueRatio":  1,
-                                           "nonBackgroundRatio":  0.125206,
+                                           "nonBackgroundRatio":  0.115938,
                                            "isNonBlank":  true,
-                                           "meanLuma":  245.989418
+                                           "meanLuma":  245.857213
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ExportOptions.png",
-                                                "fileBytes":  37925,
+                                                "fileBytes":  40383,
                                                 "width":  430,
                                                 "height":  552,
                                                 "dpiX":  96,
@@ -1082,45 +1082,39 @@
                                                 "logicalWidth":  430,
                                                 "logicalHeight":  552,
                                                 "pixels":  237360,
-                                                "distinctColors":  1742,
+                                                "distinctColors":  1812,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.097915,
+                                                "nonBackgroundRatio":  0.103914,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  246.680483
+                                                "meanLuma":  246.357483
                                             },
                                "comparison":  {
-                                                  "dimensionMatch":  false,
-                                                  "widthDelta":  0.022,
-                                                  "heightDelta":  9.972,
-                                                  "logicalDimensionMatch":  false,
-                                                  "logicalWidthDelta":  0.022,
-                                                  "logicalHeightDelta":  9.972,
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0.06,
+                                                  "heightDelta":  0.077,
+                                                  "logicalDimensionMatch":  true,
+                                                  "logicalWidthDelta":  0.06,
+                                                  "logicalHeightDelta":  0.077,
                                                   "logicalDimensionTolerance":  0.5,
-                                                  "rawPixelDimensionMatch":  false,
-                                                  "rawPixelWidthDelta":  215,
-                                                  "rawPixelHeightDelta":  261,
+                                                  "rawPixelDimensionMatch":  true,
+                                                  "rawPixelWidthDelta":  0,
+                                                  "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
-                                                  "dimensionDeltaRatio":  0.018449,
-                                                  "sampleMeanDelta":  0.03896,
-                                                  "lumaDelta":  0.00271,
-                                                  "nonBackgroundDelta":  0.027291,
-                                                  "triageScore":  0.087411,
+                                                  "dimensionDeltaRatio":  0.000279,
+                                                  "sampleMeanDelta":  0.043602,
+                                                  "lumaDelta":  0.001962,
+                                                  "nonBackgroundDelta":  0.012024,
+                                                  "triageScore":  0.057867,
                                                   "expectedSizeMismatch":  false,
-                                                  "expectedWidth":  null,
-                                                  "expectedHeight":  null,
-                                                  "expectedSizeSource":  null,
+                                                  "expectedWidth":  430,
+                                                  "expectedHeight":  552,
+                                                  "expectedSizeSource":  "ExportOptionsDialogSurfacePlanner.CaptureWidth/CaptureHeight",
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
-                                                  "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The paired screenshots show the same export-option choices; the remaining height delta is platform label/control spacing.",
-                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
-                                                  "policyAcceptance":  {
-                                                                           "status":  "policy-accepted",
-                                                                           "policy":  "expected platform/native control variance",
-                                                                           "family":  "Export options native spacing",
-                                                                           "rationale":  "The paired screenshots show the same export-option choices; the remaining height delta is platform label/control spacing.",
-                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                                       }
+                                                  "dimensionMismatchBucket":  null,
+                                                  "dimensionMismatchReason":  null,
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -4724,69 +4718,63 @@
                                "routeFamily":  "dialog.ProtectWorkbook",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ProtectWorkbook.png",
-                                           "fileBytes":  22848,
-                                           "width":  540,
-                                           "height":  375,
-                                           "dpiX":  143.992599,
-                                           "dpiY":  143.992599,
-                                           "logicalWidth":  360.019,
-                                           "logicalHeight":  250.013,
-                                           "pixels":  202500,
-                                           "distinctColors":  314,
+                                           "fileBytes":  7919,
+                                           "width":  380,
+                                           "height":  250,
+                                           "dpiX":  95.986595,
+                                           "dpiY":  95.986595,
+                                           "logicalWidth":  380.053,
+                                           "logicalHeight":  250.035,
+                                           "pixels":  95000,
+                                           "distinctColors":  160,
                                            "opaqueRatio":  1,
-                                           "nonBackgroundRatio":  0.086227,
+                                           "nonBackgroundRatio":  0.074379,
                                            "isNonBlank":  true,
-                                           "meanLuma":  248.031416
+                                           "meanLuma":  247.966479
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ProtectWorkbook.png",
-                                                "fileBytes":  7237,
+                                                "fileBytes":  7799,
                                                 "width":  380,
-                                                "height":  240,
+                                                "height":  250,
                                                 "dpiX":  96,
                                                 "dpiY":  96,
                                                 "logicalWidth":  380,
-                                                "logicalHeight":  240,
-                                                "pixels":  91200,
-                                                "distinctColors":  131,
+                                                "logicalHeight":  250,
+                                                "pixels":  95000,
+                                                "distinctColors":  168,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.059309,
+                                                "nonBackgroundRatio":  0.075716,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  248.822917
+                                                "meanLuma":  248.420017
                                             },
                                "comparison":  {
-                                                  "dimensionMatch":  false,
-                                                  "widthDelta":  19.981,
-                                                  "heightDelta":  10.013,
-                                                  "logicalDimensionMatch":  false,
-                                                  "logicalWidthDelta":  19.981,
-                                                  "logicalHeightDelta":  10.013,
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0.053,
+                                                  "heightDelta":  0.035,
+                                                  "logicalDimensionMatch":  true,
+                                                  "logicalWidthDelta":  0.053,
+                                                  "logicalHeightDelta":  0.035,
                                                   "logicalDimensionTolerance":  0.5,
-                                                  "rawPixelDimensionMatch":  false,
-                                                  "rawPixelWidthDelta":  160,
-                                                  "rawPixelHeightDelta":  135,
+                                                  "rawPixelDimensionMatch":  true,
+                                                  "rawPixelWidthDelta":  0,
+                                                  "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
-                                                  "dimensionDeltaRatio":  0.095551,
-                                                  "sampleMeanDelta":  0.039685,
-                                                  "lumaDelta":  0.003104,
-                                                  "nonBackgroundDelta":  0.026918,
-                                                  "triageScore":  0.165257,
+                                                  "dimensionDeltaRatio":  0.000279,
+                                                  "sampleMeanDelta":  0.038702,
+                                                  "lumaDelta":  0.001779,
+                                                  "nonBackgroundDelta":  0.001337,
+                                                  "triageScore":  0.042096,
                                                   "expectedSizeMismatch":  false,
-                                                  "expectedWidth":  null,
-                                                  "expectedHeight":  null,
-                                                  "expectedSizeSource":  null,
+                                                  "expectedWidth":  380,
+                                                  "expectedHeight":  250,
+                                                  "expectedSizeSource":  "ProtectionDialogPlanner.ProtectWorkbookCaptureWidth/CaptureHeight",
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
-                                                  "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The paired screenshots show the same password/confirmation workflow; the residual size delta is native password-box and button-row metrics.",
-                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
-                                                  "policyAcceptance":  {
-                                                                           "status":  "policy-accepted",
-                                                                           "policy":  "expected platform/native control variance",
-                                                                           "family":  "Protection password prompt",
-                                                                           "rationale":  "The paired screenshots show the same password/confirmation workflow; the residual size delta is native password-box and button-row metrics.",
-                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                                       }
+                                                  "dimensionMismatchBucket":  null,
+                                                  "dimensionMismatchReason":  null,
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -5504,69 +5492,63 @@
                                "routeFamily":  "dialog.Sparkline",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Sparkline.png",
-                                           "fileBytes":  18924,
-                                           "width":  570,
-                                           "height":  360,
-                                           "dpiX":  143.992599,
-                                           "dpiY":  143.992599,
-                                           "logicalWidth":  380.02,
-                                           "logicalHeight":  240.012,
-                                           "pixels":  205200,
-                                           "distinctColors":  352,
+                                           "fileBytes":  9869,
+                                           "width":  380,
+                                           "height":  280,
+                                           "dpiX":  95.986595,
+                                           "dpiY":  95.986595,
+                                           "logicalWidth":  380.053,
+                                           "logicalHeight":  280.039,
+                                           "pixels":  106400,
+                                           "distinctColors":  166,
                                            "opaqueRatio":  1,
-                                           "nonBackgroundRatio":  0.22729,
+                                           "nonBackgroundRatio":  0.191852,
                                            "isNonBlank":  true,
-                                           "meanLuma":  243.167475
+                                           "meanLuma":  243.409546
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Sparkline.png",
-                                                "fileBytes":  7050,
-                                                "width":  372,
-                                                "height":  230,
+                                                "fileBytes":  8997,
+                                                "width":  380,
+                                                "height":  280,
                                                 "dpiX":  96,
                                                 "dpiY":  96,
-                                                "logicalWidth":  372,
-                                                "logicalHeight":  230,
-                                                "pixels":  85560,
-                                                "distinctColors":  77,
+                                                "logicalWidth":  380,
+                                                "logicalHeight":  280,
+                                                "pixels":  106400,
+                                                "distinctColors":  140,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.056522,
+                                                "nonBackgroundRatio":  0.075197,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  247.843941
+                                                "meanLuma":  247.524763
                                             },
                                "comparison":  {
-                                                  "dimensionMatch":  false,
-                                                  "widthDelta":  8.02,
-                                                  "heightDelta":  10.012,
-                                                  "logicalDimensionMatch":  false,
-                                                  "logicalWidthDelta":  8.02,
-                                                  "logicalHeightDelta":  10.012,
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0.053,
+                                                  "heightDelta":  0.039,
+                                                  "logicalDimensionMatch":  true,
+                                                  "logicalWidthDelta":  0.053,
+                                                  "logicalHeightDelta":  0.039,
                                                   "logicalDimensionTolerance":  0.5,
-                                                  "rawPixelDimensionMatch":  false,
-                                                  "rawPixelWidthDelta":  198,
-                                                  "rawPixelHeightDelta":  130,
+                                                  "rawPixelDimensionMatch":  true,
+                                                  "rawPixelWidthDelta":  0,
+                                                  "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
-                                                  "dimensionDeltaRatio":  0.062819,
-                                                  "sampleMeanDelta":  0.054641,
-                                                  "lumaDelta":  0.018339,
-                                                  "nonBackgroundDelta":  0.170769,
-                                                  "triageScore":  0.306567,
+                                                  "dimensionDeltaRatio":  0.000279,
+                                                  "sampleMeanDelta":  0.054221,
+                                                  "lumaDelta":  0.016138,
+                                                  "nonBackgroundDelta":  0.116654,
+                                                  "triageScore":  0.187293,
                                                   "expectedSizeMismatch":  false,
-                                                  "expectedWidth":  null,
-                                                  "expectedHeight":  null,
-                                                  "expectedSizeSource":  null,
+                                                  "expectedWidth":  380,
+                                                  "expectedHeight":  280,
+                                                  "expectedSizeSource":  "SparklinePlanner.InsertDialogCaptureWidth/CaptureHeight",
                                                   "wpfExpectedSizeMatch":  true,
                                                   "avaloniaExpectedSizeMatch":  true,
-                                                  "dimensionMismatchBucket":  "expected platform/native difference",
-                                                  "dimensionMismatchReason":  "The paired screenshots show the same Sparkline range/location inputs and type selection; the residual delta is native text input, combo, and button spacing.",
-                                                  "dimensionMismatchNextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
-                                                  "policyAcceptance":  {
-                                                                           "status":  "policy-accepted",
-                                                                           "policy":  "expected platform/native control variance",
-                                                                           "family":  "Sparkline range picker controls",
-                                                                           "rationale":  "The paired screenshots show the same Sparkline range/location inputs and type selection; the residual delta is native text input, combo, and button spacing.",
-                                                                           "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                                       }
+                                                  "dimensionMismatchBucket":  null,
+                                                  "dimensionMismatchReason":  null,
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
                                               }
                            },
                            {
@@ -6101,102 +6083,13 @@
                               }
                           ],
     "dimensionMismatchClassification":  [
-                                            {
-                                                "bucket":  "expected platform/native difference",
-                                                "count":  3,
-                                                "topSurfaceIds":  [
-                                                                      "dialog.Sparkline",
-                                                                      "dialog.ProtectWorkbook",
-                                                                      "dialog.ExportOptions"
-                                                                  ],
-                                                "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
-                                                "policyAccepted":  true
-                                            }
+
                                         ],
     "policyAcceptedNativeDifferenceFamilies":  [
-                                                   {
-                                                       "family":  "Export options native spacing",
-                                                       "count":  1,
-                                                       "surfaceIds":  [
-                                                                          "dialog.ExportOptions"
-                                                                      ],
-                                                       "rationale":  "The paired screenshots show the same export-option choices; the remaining height delta is platform label/control spacing.",
-                                                       "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                   },
-                                                   {
-                                                       "family":  "Protection password prompt",
-                                                       "count":  1,
-                                                       "surfaceIds":  [
-                                                                          "dialog.ProtectWorkbook"
-                                                                      ],
-                                                       "rationale":  "The paired screenshots show the same password/confirmation workflow; the residual size delta is native password-box and button-row metrics.",
-                                                       "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                   },
-                                                   {
-                                                       "family":  "Sparkline range picker controls",
-                                                       "count":  1,
-                                                       "surfaceIds":  [
-                                                                          "dialog.Sparkline"
-                                                                      ],
-                                                       "rationale":  "The paired screenshots show the same Sparkline range/location inputs and type selection; the residual delta is native text input, combo, and button spacing.",
-                                                       "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                   }
+
                                                ],
     "dimensionMismatchDetails":  [
-                                     {
-                                         "id":  "dialog.ExportOptions",
-                                         "bucket":  "expected platform/native difference",
-                                         "reason":  "The paired screenshots show the same export-option choices; the remaining height delta is platform label/control spacing.",
-                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
-                                         "policyAcceptance":  {
-                                                                  "status":  "policy-accepted",
-                                                                  "policy":  "expected platform/native control variance",
-                                                                  "family":  "Export options native spacing",
-                                                                  "rationale":  "The paired screenshots show the same export-option choices; the remaining height delta is platform label/control spacing.",
-                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                              },
-                                         "wpfLogicalSize":  "430x542",
-                                         "avaloniaLogicalSize":  "430x552",
-                                         "logicalWidthDelta":  0.022,
-                                         "logicalHeightDelta":  9.972,
-                                         "triageScore":  0.087411
-                                     },
-                                     {
-                                         "id":  "dialog.ProtectWorkbook",
-                                         "bucket":  "expected platform/native difference",
-                                         "reason":  "The paired screenshots show the same password/confirmation workflow; the residual size delta is native password-box and button-row metrics.",
-                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
-                                         "policyAcceptance":  {
-                                                                  "status":  "policy-accepted",
-                                                                  "policy":  "expected platform/native control variance",
-                                                                  "family":  "Protection password prompt",
-                                                                  "rationale":  "The paired screenshots show the same password/confirmation workflow; the residual size delta is native password-box and button-row metrics.",
-                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                              },
-                                         "wpfLogicalSize":  "360x250",
-                                         "avaloniaLogicalSize":  "380x240",
-                                         "logicalWidthDelta":  19.981,
-                                         "logicalHeightDelta":  10.013,
-                                         "triageScore":  0.165257
-                                     },
-                                     {
-                                         "id":  "dialog.Sparkline",
-                                         "bucket":  "expected platform/native difference",
-                                         "reason":  "The paired screenshots show the same Sparkline range/location inputs and type selection; the residual delta is native text input, combo, and button spacing.",
-                                         "nextAction":  "Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches.",
-                                         "policyAcceptance":  {
-                                                                  "status":  "policy-accepted",
-                                                                  "policy":  "expected platform/native control variance",
-                                                                  "family":  "Sparkline range picker controls",
-                                                                  "rationale":  "The paired screenshots show the same Sparkline range/location inputs and type selection; the residual delta is native text input, combo, and button spacing.",
-                                                                  "clearCriteria":  "Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent."
-                                                              },
-                                         "wpfLogicalSize":  "380x240",
-                                         "avaloniaLogicalSize":  "372x230",
-                                         "logicalWidthDelta":  8.02,
-                                         "logicalHeightDelta":  10.012,
-                                         "triageScore":  0.306567
-                                     }
+
                                  ],
     "additionalAvaloniaSurfacesNeedingWpfPair":  [
 

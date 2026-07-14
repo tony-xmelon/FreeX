@@ -31,30 +31,19 @@ Sources:
 | WPF manifest ids without Avalonia pair | 0 |
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
-| Paired dimension mismatches (scale-aware logical units) | 3 |
-| Raw PNG pixel dimension mismatches | 35 |
+| Paired dimension mismatches (scale-aware logical units) | 0 |
+| Raw PNG pixel dimension mismatches | 32 |
 | Raw PNG mismatches normalized by capture DPI | 32 |
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
-| Policy-accepted native/control differences | 3 |
+| Policy-accepted native/control differences | 0 |
 
 ## Scale-Aware Dimension Mismatch Classification
 
-The 3 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept policy-approved platform/native control differences, or refresh limited evidence. Policy-accepted native/control rows are explicit accepted variance, not incomplete parity work.
+The 0 scale-aware logical dimension mismatches are bucketed from committed PNG evidence and deterministic surface-id rules. Buckets describe the next review posture: align real layout sizes, fix content/state drift before comparing, accept policy-approved platform/native control differences, or refresh limited evidence. Policy-accepted native/control rows are explicit accepted variance, not incomplete parity work.
 
 | Bucket | Count | Policy accepted | Top surface ids | Top next action |
 | --- | ---: | --- | --- | --- |
-| expected platform/native difference | 3 | True | dialog.Sparkline<br>dialog.ProtectWorkbook<br>dialog.ExportOptions | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-
-## Policy-Accepted Native/Control Differences
-
-These rows were reviewed against the committed WPF/Avalonia PNG pairs and are retained as intentional platform/native control variance. They do not count as content/visual mismatches, evidence limitations, or real logical-size mismatches.
-
-| Family | Count | Surface ids | Rationale | Clear criteria |
-| --- | ---: | --- | --- | --- |
-| Export options native spacing | 1 | dialog.ExportOptions | The paired screenshots show the same export-option choices; the remaining height delta is platform label/control spacing. | Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent. |
-| Protection password prompt | 1 | dialog.ProtectWorkbook | The paired screenshots show the same password/confirmation workflow; the residual size delta is native password-box and button-row metrics. | Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent. |
-| Sparkline range picker controls | 1 | dialog.Sparkline | The paired screenshots show the same Sparkline range/location inputs and type selection; the residual delta is native text input, combo, and button spacing. | Clear only if both shells adopt an explicit shared fixed capture size and the paired screenshots remain content-equivalent. |
 
 ## Top paired visual outliers
 
@@ -77,9 +66,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | Bucket | Policy family | WPF logical size | Avalonia logical size | Logical delta | Reason | Next action |
 | --- | --- | --- | ---: | ---: | ---: | --- | --- |
-| dialog.ExportOptions | expected platform/native difference | Export options native spacing | 430x542 | 430x552 | 0x10 | The paired screenshots show the same export-option choices; the remaining height delta is platform label/control spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-| dialog.ProtectWorkbook | expected platform/native difference | Protection password prompt | 360x250 | 380x240 | 20x10 | The paired screenshots show the same password/confirmation workflow; the residual size delta is native password-box and button-row metrics. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
-| dialog.Sparkline | expected platform/native difference | Sparkline range picker controls | 380x240 | 372x230 | 8x10 | The paired screenshots show the same Sparkline range/location inputs and type selection; the residual delta is native text input, combo, and button spacing. | Policy accepted as native/control variance; keep tracked separately from content, evidence, or real logical-size mismatches. |
 
 ## Expected-Size Evidence Mismatches
 
@@ -108,7 +94,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.DataValidation | dialog.DataValidation.png | 520x560 | 780x840 px @ 144 DPI | True | dialog.DataValidation.png | 520x560 | 520x560 px @ 96 DPI | True | True | 0.059 |
 | dialog.ErrorChecking | dialog.ErrorChecking.png | 720x420 | 1080x630 px @ 144 DPI | True | dialog.ErrorChecking.png | 720x420 | 720x420 px @ 96 DPI | True | True | 0.103 |
 | dialog.EvaluateFormula | dialog.EvaluateFormula.png | 600x360 | 900x540 px @ 144 DPI | True | dialog.EvaluateFormula.png | 600x360 | 600x360 px @ 96 DPI | True | True | 0.090 |
-| dialog.ExportOptions | dialog.ExportOptions.png | 430x542 | 645x813 px @ 144 DPI | True | dialog.ExportOptions.png | 430x552 | 430x552 px @ 96 DPI | True | False | 0.087 |
+| dialog.ExportOptions | dialog.ExportOptions.png | 430x552 | 430x552 px @ 96 DPI | True | dialog.ExportOptions.png | 430x552 | 430x552 px @ 96 DPI | True | True | 0.058 |
 | dialog.FindReplace | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.463 |
 | dialog.FindReplace.Find | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.463 |
 | dialog.FindReplace.Replace | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.422 |
@@ -165,7 +151,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.PivotValueFieldSettings.SummarizeValuesBy | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.472 |
 | dialog.PrintPreview | dialog.PrintPreview.png | 1120x700 | 1120x700 px @ 96 DPI | True | dialog.PrintPreview.png | 1120x700 | 1120x700 px @ 96 DPI | True | True | 0.512 |
 | dialog.ProtectSheet | dialog.ProtectSheet.png | 430x540 | 645x810 px @ 144 DPI | True | dialog.ProtectSheet.png | 430x540 | 430x540 px @ 96 DPI | True | True | 0.045 |
-| dialog.ProtectWorkbook | dialog.ProtectWorkbook.png | 360x250 | 540x375 px @ 144 DPI | True | dialog.ProtectWorkbook.png | 380x240 | 380x240 px @ 96 DPI | True | False | 0.165 |
+| dialog.ProtectWorkbook | dialog.ProtectWorkbook.png | 380x250 | 380x250 px @ 96 DPI | True | dialog.ProtectWorkbook.png | 380x250 | 380x250 px @ 96 DPI | True | True | 0.042 |
 | dialog.RecommendedPivotTables | dialog.RecommendedPivotTables.png | 560x340 | 840x510 px @ 144 DPI | True | dialog.RecommendedPivotTables.png | 560x340 | 560x340 px @ 96 DPI | True | True | 0.044 |
 | dialog.RemoveDuplicates | dialog.RemoveDuplicates.png | 360x360 | 360x360 px @ 96 DPI | True | dialog.RemoveDuplicates.png | 360x360 | 360x360 px @ 96 DPI | True | True | 0.057 |
 | dialog.RenameSheet | dialog.RenameSheet.png | 340x150 | 510x225 px @ 144 DPI | True | dialog.RenameSheet.png | 340x150 | 340x150 px @ 96 DPI | True | True | 0.062 |
@@ -177,7 +163,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.ShapeGradient | dialog.ShapeGradient.png | 500x300 | 500x300 px @ 96 DPI | True | dialog.ShapeGradient.png | 500x300 | 500x300 px @ 96 DPI | True | True | 0.082 |
 | dialog.Sort | dialog.Sort.png | 760x500 | 760x500 px @ 96 DPI | True | dialog.Sort.png | 760x500 | 760x500 px @ 96 DPI | True | True | 0.042 |
 | dialog.SortOptions | dialog.SortOptions.png | 330x260 | 495x390 px @ 144 DPI | True | dialog.SortOptions.png | 330x260 | 330x260 px @ 96 DPI | True | True | 0.237 |
-| dialog.Sparkline | dialog.Sparkline.png | 380x240 | 570x360 px @ 144 DPI | True | dialog.Sparkline.png | 372x230 | 372x230 px @ 96 DPI | True | False | 0.307 |
+| dialog.Sparkline | dialog.Sparkline.png | 380x280 | 380x280 px @ 96 DPI | True | dialog.Sparkline.png | 380x280 | 380x280 px @ 96 DPI | True | True | 0.187 |
 | dialog.Subtotal | dialog.Subtotal.png | 380x390 | 570x585 px @ 144 DPI | True | dialog.Subtotal.png | 380x390 | 380x390 px @ 96 DPI | True | True | 0.166 |
 | dialog.SymbolPicker | dialog.SymbolPicker.png | 840x620 | 840x620 px @ 96 DPI | True | dialog.SymbolPicker.png | 840x620 | 840x620 px @ 96 DPI | True | True | 0.036 |
 | dialog.TextToColumns | dialog.TextToColumns.png | 500x430 | 750x645 px @ 144 DPI | True | dialog.TextToColumns.png | 500x430 | 500x430 px @ 96 DPI | True | True | 0.089 |
