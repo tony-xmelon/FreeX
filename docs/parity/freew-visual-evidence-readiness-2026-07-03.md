@@ -394,3 +394,29 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\to
 Outcome: summary trust `passed`, evidence rows `4`, baseline comparisons `4`, all `word-baseline-unavailable`. The readiness guard verified `4` trusted WPF/Avalonia scenario rows, `4` proofing semantic rows, `4` Word-baseline policy rows, and `2` explicit proofing unavailable blockers.
 
 Remaining caveat: this proves paired FreeW renderer evidence and Word-baseline readiness only. Because Word COM is unavailable on this host, it does not claim authoritative Microsoft Word PNG parity.
+
+## Review compare/combine Word-baseline-ready proof
+
+The 2026-07-14 compare/combine visual evidence-depth slice promotes the existing `ReviewCompareCombineVisualProof` scenario set for:
+
+- `review-compare-visual-proof`
+- `review-combine-visual-proof`
+
+The normalized summary now emits honest remaining-evidence blockers for this family when Word COM is unavailable. The runner guard requires trusted WPF and Avalonia rows, compare/combine revision metadata, single-author compare evidence for Riley, multi-author combine evidence for Alice and Bob, direct Word-baseline policy rows, and explicit `word-baseline-unavailable` blockers for both review scenarios.
+
+Run it on a no-Word host with:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\review-compare-combine-proof-20260714-worker -MaxPages 2 -ScenarioSet ReviewCompareCombineVisualProof -WordBaselineUnavailableReason "COM ProgID 'Word.Application' is not registered"
+```
+
+Verified on 2026-07-14 with the command above:
+
+- Summary trust: `passed`.
+- Evidence rows: `4`.
+- Word baseline comparisons: `4`, all `word-baseline-unavailable`.
+- Review compare/combine readiness: `4` trusted WPF/Avalonia scenario rows, `4` verified semantic rows, `4` verified Word-baseline policy rows, and `2` verified Word-baseline-unavailable blockers.
+- Backstage readiness: skipped by scenario filter.
+- Summary files: `freew-fidelity-corpus/runs/review-compare-combine-proof-20260714-worker/freew_visual_evidence_summary.{json,md}`.
+
+This remains paired FreeW renderer evidence and Word-baseline readiness only. Because Word COM is unavailable on this host, it does not claim authoritative Microsoft Word PNG compare/combine parity.
