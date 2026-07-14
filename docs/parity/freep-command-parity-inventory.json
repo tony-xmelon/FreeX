@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 59
+    "workflowEvidenceRows": 60
   },
   "workflowEvidence": [
     {
@@ -723,6 +723,21 @@
         "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
       ],
       "remainingWork": "funnelProcess now uses a bounded shared process live-layout path for parsed ordered-stage nodes as top-to-bottom trapezoid segments that narrow toward the bottom with centered connector ops. Exact PowerPoint funnel contours, effects, segment overlap, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.circle-process",
+      "area": "SmartArt circle process live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume ordinary shared circular stage and connector ops emitted by the SmartArt process-family planner; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/freep-smartart-circle-process-2026-07-14.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
+      ],
+      "remainingWork": "circleProcess now uses a bounded shared process live-layout path for parsed ordered-stage nodes as clockwise rounded boxes around an ellipse with loop-closing connector ops. Exact PowerPoint circular-arrow artwork, segment contours, effects, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
     },
     {
       "evidenceId": "freep.smartart.basic-block-list",
