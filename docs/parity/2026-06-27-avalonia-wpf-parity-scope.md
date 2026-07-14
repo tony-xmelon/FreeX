@@ -19,7 +19,8 @@ This update replaces the 2026-06-27 pre-dedup snapshot. The extensive dedup sess
 - Audit worktree: `.worktrees/parity-scope-current-20260704`.
 - `main` was clean and synced with `origin/main` at `f69136829` during this update.
 - `AGENTS.md` requires isolated worktrees, no implementation in `main`, frequent sync, subagents for independent work, and merge/push/cleanup after completed slices.
-- This report was refreshed from the generated parity inventories and dialog visual evidence after the FreeX sort-dialog evidence classification, FreeP slide-pane thumbnail evidence mode, and FreeW TOA evidence-blocker tracking slices landed. The only intended edit in this slice is this report.
+- This report was refreshed from the generated parity inventories and dialog visual evidence after the FreeX sort-dialog evidence classification, FreeP slide-pane thumbnail evidence mode, and FreeW TOA evidence-blocker tracking slices landed.
+- 2026-07-14 keyboard routing update: FreeX catalog-backed workbook shortcuts now have executable WPF matcher evidence plus Avalonia resolver/native-menu evidence from the shared `WorkbookKeyboardShortcutCatalog` route matrix.
 
 ## Worktree State
 
@@ -89,6 +90,10 @@ Dedup items that were blockers in the prior report are now landed or intentional
   - `docs/parity/functional-parity.md`
   - Current snapshot: 531 commands, 473 parity, 0 Avalonia-missing, 48 WPF-missing, 10 both-missing.
   - Avalonia-missing commands and intentional Linux omissions are currently zero in the generated matrix.
+- Keyboard route parity is now proven for the shared workbook shortcut matrix:
+  - `src/FreeX.App.Presentation/Shell/WorkbookKeyboardShortcutCatalog.cs` owns the catalog-backed route matrix.
+  - WPF matcher tests verify every catalog command/font/number-format/border/paste-special Windows chord reaches the expected `KeyboardShortcutMatcher` path.
+  - Avalonia tests verify every catalog Windows chord and every native-menu chord resolves through the real `MainWindow` workbook shortcut resolver.
 - Dialog route inventory is generated and current:
   - 57 total routes.
   - 57 WPF captures.
@@ -113,15 +118,13 @@ Dedup items that were blockers in the prior report are now landed or intentional
 2. Shell, backstage, and print/export are partly deduped at the policy layer but still have host-local renderer edges:
    - WPF keeps `MainWindow.xaml`, `PrintRenderer*`, and native `PrintDialog` behavior.
    - Avalonia keeps substantial `MainWindow.cs`, custom print/preview, Skia/PDF, and capture glue.
-3. Keyboard routing remains split:
-   - WPF: `src/FreeX.App.Host/KeyboardShortcutMatcher*.cs`.
-   - Avalonia: `NativeMenuCatalog` plus local key handling.
+3. Catalog-backed keyboard routing is no longer an unproven split: WPF and Avalonia are both gated by `WorkbookKeyboardShortcutCatalog` for the shared workbook shortcut matrix. Remaining keyboard work is limited to host-local non-catalog gestures, keytip continuations, and deeper workflow proof where the route is already known.
 4. Contextual chart/table/pivot/drawing commands have strong command binding coverage, but still need workflow evidence across WPF and Avalonia.
 
 ### FreeX Next Slices
 
 1. Continue visual review of the 19 scale-aware paired dialog dimension outliers, all currently policy-classified as expected platform/native differences. Keep raw PNG pixel mismatches separate from product layout work because many normalize away by capture DPI; the resolved shared-size rows (`dialog.PivotTableOptions`, `dialog.PivotTableOptions.LayoutAndFormat`, `dialog.ConditionalFormatNewRule`, and `dialog.Consolidate`) should stay guarded by generator/tests instead of reappearing as next-slice product layout work.
-2. Consolidate keyboard shortcut matching into a portable service and gate both hosts from one matrix.
+2. Extend non-catalog keyboard/keytip workflow evidence now that catalog-backed workbook shortcut matching is proven from one matrix.
 3. Add print/export/render parity evidence around drawing/chart content and native print/export affordances.
 4. Continue renderer-edge shell/backstage polish only after capture evidence identifies concrete diffs.
 
