@@ -9,7 +9,9 @@ Current integration context: `origin/main` now includes the post-dedup FreeP imp
 - Primary repo root: `C:\Users\anton\OneDrive\Documents\FreeX\FreeX`.
 - This report was refreshed from the current FreeP parity integration wave after syncing `main` with `origin/main`.
 - `AGENTS.md` still requires isolated worktrees, no feature edits in `main`, frequent sync, subagents for independent work, and concrete validation before integration.
-- `PowerPoint.Application` COM is not registered on this machine, so PowerPoint-authoritative visual baselines cannot be generated locally.
+- 2026-07-14 takeover branch `codex/freep-powerpoint-com-takeover-20260714` ran on a Windows machine with Microsoft PowerPoint COM available. The previous worker machine still lacked `PowerPoint.Application`, but this branch repaired the invalid generated packages, exported PowerPoint-authoritative PNG refs for corpus decks 06-22, and now reports `total=22; refs-ready=22; refs-incomplete=0; refs-missing=0; slide-count-unknown=0` with `--require-complete-refs`.
+- Package repairs in the takeover branch cover invalid animation timing nesting in `10-motionpath.pptx`, duplicate notes-slide non-visual ids in `21-comments-notes.pptx`, invalid theme/table-style XML, SmartArt drawing cache retention/inference for `14-smartart-live.pptx`, and the invalid chart `serAx` label-offset child in `22-chart-baseline-depth.pptx`.
+- PowerPoint COM reference export now uses process-ownership tracking so a pre-existing user PowerPoint session is released instead of being quit by the fixture/export helpers.
 - 2026-07-04 worker branch `codex/freep-stacked-vertical-text-20260704` adds shared `TextLayoutPlanner` stacked upright glyph placement for `eaVert`, `wordArtVert`, and `wordArtVertRtl`, with WPF/Avalonia renderers consuming the shared placements. `Vertical` and `Vertical270` remain on the existing whole-block rotation route. `wordArtVertRtl` keeps logical single-column top-to-bottom ordering pending a PowerPoint COM visual baseline.
 - 2026-07-04 worker branch `codex/freep-omml-box-borderbox-20260704` adds shared OMML `m:box` and `m:borderBox` parsing/layout/render-planning so transparent boxes preserve nested math and border boxes emit neutral visible-side line ops consumed by WPF and Avalonia. Follow-up branch `codex/freep-omml-borderbox-strikes-20260704` carries `m:borderBoxPr` horizontal, vertical, BLTR, and TLBR strike variants into the same shared line plan. PowerPoint COM visual baselines remain deferred.
 - 2026-07-13 worker branch `codex/freep-omml-structure-depth-20260713` strengthens the shared `m:borderBox` geometry contract for hidden horizontal edges plus TLBR strike endpoints. WPF and Avalonia consume the same neutral `MathBoxRenderPlanner` line coordinates; PowerPoint COM math baselines remain deferred.
@@ -208,8 +210,8 @@ Goal: make parity measurable before widening feature work. The first three evide
 
 1. Done: fix `tools/FreeP.RenderCompare --avalonia-compare` so PowerPoint export failure returns failure.
 2. Done: add machine prerequisite output that clearly separates "PowerPoint COM unavailable" from "FreeP parity failed".
-3. Done: add a corpus manifest/full-corpus summary for the 21 tracked decks.
-4. Generate missing PowerPoint reference PNGs for decks 06-21 on a machine with PowerPoint COM installed.
+3. Done: add a corpus manifest/full-corpus summary for the tracked decks.
+4. Done on 2026-07-14 takeover branch: generated missing PowerPoint reference PNGs for decks 06-22 on a machine with PowerPoint COM installed, after repairing invalid package XML in decks 10, 14, 21, and 22.
 5. Done: add a generated FreeP WPF-vs-Avalonia command inventory modeled after the FreeX parity inventory.
 
 ### Phase 1 - Shared Planning Cleanup
