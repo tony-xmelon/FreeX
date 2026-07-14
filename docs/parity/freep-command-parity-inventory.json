@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 66
+    "workflowEvidenceRows": 67
   },
   "workflowEvidence": [
     {
@@ -883,6 +883,21 @@
         "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
       ],
       "remainingWork": "descendingBlockList now uses the bounded shared list-family live-layout path for parsed nodes as top-to-bottom right-aligned blocks that narrow toward the bottom. Unsupported list siblings remain on cached drawing fallback. Exact PowerPoint spacing/effects, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.basic-pyramid",
+      "area": "SmartArt basicPyramid live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume ordinary shared pyramid segment shape ops emitted by the SmartArt list-family layout planner; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/freep-smartart-basic-pyramid-2026-07-14.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
+      ],
+      "remainingWork": "basicPyramid uses the bounded shared list-family live-layout path for parsed nodes as centered top-to-bottom pyramid segments that widen toward the base. Unsupported pyramid siblings remain on cached drawing fallback. Exact PowerPoint pyramid contours, bevels/effects, merged segment borders, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
     },
     {
       "evidenceId": "freep.smartart.picture-caption-list",
