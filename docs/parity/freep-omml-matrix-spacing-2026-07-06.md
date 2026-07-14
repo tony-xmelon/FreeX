@@ -15,6 +15,9 @@ presentation surfaces.
   matrix row and column spacing.
 - `m:cSp` now contributes a minimum shared matrix column width.
 - Missing matrix properties retain the previous default centered layout path.
+- WPF and Avalonia render smoke tests now prove the same shared
+  `MathBoxRenderPlanner` glyph coordinates and matrix baseline metrics reach
+  both hosts without renderer-local matrix spacing policy.
 
 ## Evidence
 
@@ -28,10 +31,14 @@ presentation surfaces.
 ## Verification
 
 - `dotnet test freep\FreeP.App.Presentation.Tests\FreeP.App.Presentation.Tests.csproj --configuration Release --disable-build-servers --filter "FullyQualifiedName~OmmlParserTests|FullyQualifiedName~MathLayoutEngineTests" -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1`
+- WPF renderer coverage:
+  `SlideCanvasMathBaselineTests.RenderParaWithMath_MatrixSpacingAndBaseJustification_UsesSharedCellPlan_DoesNotThrow`
+- Avalonia renderer coverage:
+  `SlideCanvasMathBaselineTests.RenderParaWithMath_MatrixSpacingAndBaseJustification_UsesSharedCellPlan_DoesNotThrow`
 
 ## Remaining
 
 - PowerPoint-authoritative rendered equation baselines still require a machine
   with PowerPoint COM available.
-- Additional OMML structures such as border boxes, phantom runs, n-ary forms,
-  radicals, and fraction variants remain separate bounded slices.
+- Exact OfficeMath spacing metrics, Cambria Math typography, and broader
+  matrix visual baselines remain separate bounded slices.
