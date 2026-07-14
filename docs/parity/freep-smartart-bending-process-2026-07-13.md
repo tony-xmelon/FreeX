@@ -18,8 +18,8 @@ improves shared live-layout coverage for a common process variant, but it does
 not claim exact PowerPoint bending/turning geometry, polygon contours, overlap,
 or spacing.
 
-Other unsupported process-family siblings, such as `alternatingProcess`, still
-fall back to cached drawing until their geometry is modeled explicitly.
+Unsupported process-family siblings outside the bounded allow-list still fall
+back to cached drawing until their geometry is modeled explicitly.
 
 ## Evidence
 
@@ -28,6 +28,8 @@ fall back to cached drawing until their geometry is modeled explicitly.
   sibling.
 - `SmartArtTests` proves the PPTX reader enables live layout for
   `bendingProcess` and emits shared connector draw ops consumed by both hosts.
+- `MainWindowHeadlessTests` proves the Avalonia host consumes the same shared
+  bending-process draw ops without COM or renderer-local SmartArt policy.
 - PowerPoint COM visual-baseline capture remains unavailable on this machine, so
   this note records deterministic no-COM model/import/compositor evidence rather
   than a PowerPoint-authored pixel baseline.
