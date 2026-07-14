@@ -15,6 +15,6 @@ Focused evidence:
 Deferred honestly:
 
 - Live unavailable-hardware capture UX and permission/error evidence.
-- Local real camera device encoding from the default no-COM adapters.
+- Default no-COM WPF/Avalonia camera encoding readiness is covered as handoff-only evidence in `docs/parity/freep-presenter-recording-default-camera-encoding-readiness-2026-07-14.md`; actual local real camera device encoding that produces non-empty `.mp4` payload bytes remains deferred.
 - PowerPoint COM recording baselines.
 - Broader real-deck PowerPoint-native media/caption corpus baselines.
