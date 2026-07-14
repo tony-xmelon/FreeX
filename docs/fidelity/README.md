@@ -1,6 +1,6 @@
 # Fidelity Workstream Summary
 
-**Last updated:** 2026-07-07
+**Last updated:** 2026-07-14
 
 This folder holds point-in-time XLSX and FreeW fidelity findings. Keep durable summaries here and avoid committing temporary handoff notes, downloaded sample workbooks, generated comparison outputs, or Excel ground-truth images. Local workbook binaries belong in ignored corpus folders such as `fidelity-corpus/files/`, `fidelity-corpus/runs/`, `freew-fidelity-corpus/files/`, or `freew-fidelity-corpus/runs/`.
 
@@ -24,7 +24,7 @@ FreeW fidelity uses the on-demand corpus in [../../freew-fidelity-corpus/README.
 
 The 2026-06-25/26 FreeW visual reports are the current WPF visual evidence baseline. They should be read as the remaining visual/fidelity evidence loop after WPF in-scope Word parity, not as blockers to the WPF parity verdict in [../planning/freew-ms-word-parity-session-2026-06-21.md](../planning/freew-ms-word-parity-session-2026-06-21.md). The June 26 verification pass specifically separates harness blind spots from genuine app gaps, so future work should extend the capture/composite evidence instead of reopening stale "missing" findings.
 
-Current 2026-07-13 evidence-runner status: the Word-baseline fallback path is integrated, including explicit WPF software rendering for machines without Word COM. The generated visual evidence corpus includes the `equation-structures` scenario from the shared equation planner work, and the shared visual evidence contract now records deterministic equation geometry facts for that scenario: equation/element/segment counts, role and baseline counts, nested slot depth, and stable geometry signatures for scripts, fractions, radicals, n-ary operators, matrices, equation arrays, decorators, delimiters, group characters, and function application. Equation evidence is shared-first: WPF and Avalonia consume the same `FreeW.App.Presentation` visual plan, and the normalizer pair-validates their equation geometry metadata. Word COM is unavailable on this machine, so no local run has produced real Word PNG equation baselines; these runs should be treated as fallback/trust evidence, not full Word visual parity.
+Current 2026-07-14 evidence-runner status: the Word-baseline fallback path is integrated, including explicit WPF software rendering for machines without Word COM. The generated visual evidence corpus includes the `equation-structures` scenario from the shared equation planner work, and the shared visual evidence contract now records deterministic equation geometry facts for that scenario: equation/element/segment counts, role and baseline counts, stable geometry signatures, and spacing signatures for scripts, fractions, radicals, n-ary operators, matrices, equation arrays, decorators, delimiters, group characters, and function application. The focused equation no-Word proof is documented in [2026-07-14-freew-equation-structure-visual-proof.md](2026-07-14-freew-equation-structure-visual-proof.md). Equation evidence is shared-first: WPF and Avalonia consume the same `FreeW.App.Presentation` visual plan, and the normalizer pair-validates their equation geometry metadata. Word COM is unavailable on this machine, so no local run has produced real Word PNG equation baselines; these runs should be treated as fallback/trust evidence, not full Word visual parity.
 
 For a no-Word repeatable smoke pass, run
 `pwsh freew-fidelity-corpus/tools/Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus/runs/visual-evidence-smoke`.
@@ -43,6 +43,7 @@ On machines without Word COM, run `powershell -NoProfile -ExecutionPolicy Bypass
 Durable FreeW notes:
 
 - [2026-06-26-freew-visual-verification-summary.md](2026-06-26-freew-visual-verification-summary.md) - current visual verification summary separating confirmed renders, harness limitations, and genuine remaining fidelity gaps.
+- [2026-07-14-freew-equation-structure-visual-proof.md](2026-07-14-freew-equation-structure-visual-proof.md) - focused no-Word WPF/Avalonia equation/OfficeMath semantic visual proof and remaining Word-baseline blocker.
 - [2026-06-26-freew-visual-verify-objects.md](2026-06-26-freew-visual-verify-objects.md) - object/chrome/column visual verification detail.
 - [2026-06-26-freew-visual-verify-flow.md](2026-06-26-freew-visual-verify-flow.md) - flow/pagination visual verification detail.
 - [2026-06-25-freew-visual-fidelity-summary.md](2026-06-25-freew-visual-fidelity-summary.md) - consolidated WPF visual-fidelity triage that the June 26 pass refined.
