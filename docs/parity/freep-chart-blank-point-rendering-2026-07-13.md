@@ -23,7 +23,8 @@ Verification coverage:
 - `ChartRenderPlannerTests.BuildPieSlicePrimitives_AllNullOrNonpositiveValuesReturnNoVisibleSlices`
 - `ChartRenderPlannerTests.BuildDoughnutSlicePrimitives_NullAndNonpositiveValuesHaveNoSweepPerRing`
 - `ChartRenderPlannerTests.BuildDataLabelPlans_PieLabelsPreserveOriginalCategoriesAfterNoSweepPoints`
-- `RendererNeutralDedupPlannerTests.WpfAndAvaloniaSlideCanvases_UseRendererNeutralAreaScatterBubbleAndRadarPlanning`
+- `RendererNeutralDedupPlannerTests.WpfAndAvaloniaSlideCanvases_UseRendererNeutralAreaScatterBubbleRadarAndStockPlanning`
+- Generated workflow evidence row `freep.chart.blank-point-rendering` in `docs/parity/freep-command-parity-inventory.{json,md}`
 - `dotnet test freep\FreeP.App.Presentation.Tests\FreeP.App.Presentation.Tests.csproj --configuration Release --filter "FullyQualifiedName~ChartRenderPlannerTests" --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -v:minimal`
 
 Remaining work:

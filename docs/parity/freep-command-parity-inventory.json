@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 44
+    "workflowEvidenceRows": 45
   },
   "workflowEvidence": [
     {
@@ -340,6 +340,21 @@
         "freep/FreeP.App.Host.Tests/ChartTests.cs"
       ],
       "remainingWork": "Pie and doughnut c:firstSliceAng now round-trips through the model and PPTX package and drives shared slice primitive planning. PowerPoint-authoritative visual baselines, pie3D behavior, and broader chart visual fidelity remain deferred."
+    },
+    {
+      "evidenceId": "freep.chart.blank-point-rendering",
+      "area": "Chart blank-point rendering decisions",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume shared ChartRenderPlanner null-point policies for bar, column, line, area, scatter, radar, pie, and doughnut charts",
+      "evidenceDocs": [
+        "docs/parity/freep-chart-blank-point-rendering-2026-07-13.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation/ChartRenderPlanner.cs",
+        "freep/FreeP.App.Presentation.Tests/ChartRenderPlannerTests.cs",
+        "freep/FreeP.App.Presentation.Tests/RendererNeutralDedupPlannerTests.cs"
+      ],
+      "remainingWork": "Shared chart planning now applies PowerPoint-style c:dispBlanksAs decisions for gap, zero, and span cases across renderer-neutral primitives, including radar path-list contracts and pie/doughnut no-sweep point identity. PowerPoint-authoritative radar/pie/doughnut blank-point visual baselines and bubble charts with missing coordinate inputs remain deferred."
     },
     {
       "evidenceId": "freep.chart.stacked-area-bands",
