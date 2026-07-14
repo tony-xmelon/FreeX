@@ -1,26 +1,32 @@
-# FreeP OMML Math Alphabet Style Variants - 2026-07-14
+# FreeP OMML Math Alphabet Style - 2026-07-14
 
-Scope: bounded shared FreeP math-rendering slice for PowerPoint-authored OMML runs that combine `m:rPr/m:scr` with `m:rPr/m:sty`.
+## Scope
+
+This bounded FreeP slice promotes the existing shared WPF/Avalonia render-plan evidence for PowerPoint-authored OMML math runs that combine `m:rPr/m:scr` alphabet selection with `m:rPr/m:sty` bold, italic, and bold-italic style requests.
 
 ## Coverage
 
-- `script` plus bold style maps ASCII letters to mathematical bold script glyphs.
-- `fraktur` plus bold style maps ASCII letters to mathematical bold fraktur glyphs.
-- `sans-serif` plus italic, bold, or bold-italic style maps ASCII letters to the matching mathematical sans-serif variant.
-- Sans-serif bold digits map to mathematical sans-serif bold digits; styled alphabet variants with no Unicode digit block keep ordinary digits.
-- Styled mathematical alphabet glyphs still clear renderer-local italic/bold metadata so WPF and Avalonia consume the same explicit Unicode glyph plan.
-- Existing regular script, fraktur, double-struck, sans-serif, monospace, and roman behavior stays covered.
+- Parses known `m:scr` values into `MathNode.MathAlphabet` metadata for roman, script, fraktur, double-struck, sans-serif, and monospace alphabets.
+- Preserves `m:sty` plain, italic, bold, and bold-italic requests on math runs.
+- Resolves supported styled alphabet combinations into mathematical Unicode glyphs in the shared `MathLayoutEngine` draw plan.
+- Keeps unsupported styled alphabet combinations on ordinary glyphs with renderer-neutral style metadata instead of adding host-specific math policy.
+- Carries the resulting `MathBoxRenderPlanner` glyph operations to both WPF and Avalonia baseline tests, so both hosts consume the same shared math layout.
 
 ## Verification
 
-- `MathLayoutEngineTests.Run_WithMathAlphabet_MapsAsciiGlyphsInSharedDrawPlan`
-- `MathLayoutEngineTests.OmmlScrWithStyVariant_RenderPlanUsesStyledUnicodeMathGlyphs`
-- `SlideCanvasMathBaselineTests.RenderParaWithMath_MathAlphabetStyleVariants_UseSharedUnicodeGlyphPlan_DoesNotThrow` in WPF and Avalonia test projects.
-
-## Command Inventory
-
-No generated FreeP command inventory update was made. This slice is shared OMML parsing/layout/render planning, not a command workflow surface.
+- Parser coverage: `OmmlParserTests.Run_WithScr_MapsKnownMathAlphabet`
+- Parser coverage: `OmmlParserTests.Run_WithUnknownScr_UsesDefaultAlphabet`
+- Parser coverage: `OmmlParserTests.Run_WithStyPlain_IsUprightAndNotBold`
+- Parser coverage: `OmmlParserTests.Run_WithStyItalic_IsItalicAndNotBold`
+- Parser coverage: `OmmlParserTests.Run_WithStyBold_IsUprightAndBold`
+- Parser coverage: `OmmlParserTests.Run_WithStyBoldItalic_IsItalicAndBold`
+- Layout/render-plan coverage: `MathLayoutEngineTests.Run_WithMathAlphabet_MapsAsciiGlyphsInSharedDrawPlan`
+- Layout/render-plan coverage: `MathLayoutEngineTests.OmmlScrWithStyVariant_RenderPlanUsesStyledUnicodeMathGlyphs`
+- Layout/render-plan coverage: `MathLayoutEngineTests.OmmlScrDoubleStruck_RenderPlanUsesUnicodeMathGlyphs`
+- Layout/render-plan coverage: `MathLayoutEngineTests.Run_WithRomanAlphabet_PreservesExistingItalicAndBoldBehavior`
+- WPF renderer coverage: `SlideCanvasMathBaselineTests.RenderParaWithMath_MathAlphabetStyleVariants_UseSharedUnicodeGlyphPlan_DoesNotThrow`
+- Avalonia renderer coverage: `SlideCanvasMathBaselineTests.RenderParaWithMath_MathAlphabetStyleVariants_UseSharedUnicodeGlyphPlan_DoesNotThrow`
 
 ## Remaining
 
-This does not add PowerPoint COM visual baselines, exact font metric parity, or styled variants for math alphabet families that do not have distinct Unicode mathematical alphanumeric blocks.
+This is shared parser/layout/render-plan evidence only. It does not claim PowerPoint-authoritative math visual parity, exact Cambria Math glyph metrics, full mathematical alphabet coverage beyond the bounded Unicode mappings, or broader OfficeMath typography without COM-backed PowerPoint baselines.
