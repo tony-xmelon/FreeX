@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 89
+    "workflowEvidenceRows": 90
   },
   "workflowEvidence": [
     {
@@ -1275,6 +1275,20 @@
         "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
       ],
       "remainingWork": "blockCycle now uses the bounded shared cycle-family live-layout path for parsed nodes as a renderer-neutral rounded-box/connector approximation. Other unsupported cycle siblings remain on cached drawing fallback. Exact PowerPoint block-cycle segment geometry, richer cycle spacing/effects, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.nondirectional-cycle",
+      "area": "SmartArt nonDirectionalCycle live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume ordinary shared slide shape and connector ops emitted by the SmartArt cycle-family layout planner; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/freep-smartart-nondirectional-cycle-2026-07-14.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
+      ],
+      "remainingWork": "nonDirectionalCycle now uses the bounded shared cycle-family live-layout path for parsed nodes as a renderer-neutral rounded-box/connector approximation. Other unsupported cycle siblings remain on cached drawing fallback. Exact PowerPoint non-directional-cycle segment geometry, richer cycle spacing/effects, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
     },
     {
       "evidenceId": "freep.smartart.basic-matrix",
