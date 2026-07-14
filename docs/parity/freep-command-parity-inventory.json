@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 6,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 87
+    "workflowEvidenceRows": 88
   },
   "workflowEvidence": [
     {
@@ -774,6 +774,22 @@
         "freep/FreeP.App.Rendering.Avalonia.Tests/SlideCanvasMathBaselineTests.cs"
       ],
       "remainingWork": "Shared OMML parsing and layout now preserve m:sPre base, pre-subscript, and pre-superscript children, place the reduced script stack to the left of the base, and carry parsed draw-plan coordinates to both hosts. PowerPoint-authoritative math visual baselines and exact OfficeMath script metrics remain deferred."
+    },
+    {
+      "evidenceId": "freep.omml.script-align-argument-size",
+      "area": "OMML script alignment and argument size",
+      "status": "shared-layout-evidence",
+      "hostCoverage": "WPF/Avalonia consume shared MathNode.SubSup alignment and MathNode.ArgSize glyph plans with no renderer-local script or argument-size policy",
+      "evidenceDocs": [
+        "docs/parity/freep-omml-script-align-argsize-2026-07-14.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/OmmlParserTests.cs",
+        "freep/FreeP.App.Presentation.Tests/MathLayoutEngineTests.cs",
+        "freep/FreeP.App.Host.Tests/SlideCanvasMathBaselineTests.cs",
+        "freep/FreeP.App.Rendering.Avalonia.Tests/SlideCanvasMathBaselineTests.cs"
+      ],
+      "remainingWork": "Shared OMML parsing and layout now preserve PowerPoint-authored m:sSubSupPr/m:alnScr script-column alignment and m:argPr/m:argSz argument script-size adjustments, carrying renderer-neutral glyph coordinates and font-size metadata to both WPF and Avalonia. PowerPoint-authoritative math visual baselines, exact Cambria Math script metrics, and broader OfficeMath script-spacing table parity remain deferred."
     },
     {
       "evidenceId": "freep.omml.matrix-spacing-base-justification",
