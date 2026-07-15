@@ -1,6 +1,6 @@
 # Fidelity Workstream Summary
 
-**Last updated:** 2026-07-15
+**Last updated:** 2026-07-16
 
 This folder holds point-in-time XLSX and FreeW fidelity findings. Keep durable summaries here and avoid committing temporary handoff notes, downloaded sample workbooks, generated comparison outputs, or Excel ground-truth images. Local workbook binaries belong in ignored corpus folders such as `fidelity-corpus/files/`, `fidelity-corpus/runs/`, `freew-fidelity-corpus/files/`, or `freew-fidelity-corpus/runs/`.
 
@@ -47,6 +47,7 @@ Durable FreeW notes:
 - [2026-07-14-freew-equation-structure-visual-proof.md](2026-07-14-freew-equation-structure-visual-proof.md) - focused no-Word WPF/Avalonia equation/OfficeMath semantic visual proof and remaining Word-baseline blocker.
 - [2026-07-14-freew-chart-visual-proof.md](2026-07-14-freew-chart-visual-proof.md) - focused no-Word WPF/Avalonia chart/SmartArt semantic visual proof and remaining Word-baseline blocker.
 - [2026-07-15-freew-word-chart-renderer-triage.md](2026-07-15-freew-word-chart-renderer-triage.md) - Word-capable-machine chart renderer parity slice, focused tests, measured improvement, and the stale SmartArt baseline boundary.
+- [2026-07-16-freew-wordart-column-anchor.md](2026-07-16-freew-wordart-column-anchor.md) - WPF two-column floating WordArt anchor correction, focused regression, and measured cached-Word improvement.
 - [2026-07-14-freew-table-pagination-page-composition-visual-proof.md](2026-07-14-freew-table-pagination-page-composition-visual-proof.md) - focused no-Word WPF/Avalonia table pagination/page-composition semantic visual proof and remaining Word-baseline blocker.
 - [2026-07-14-freew-object-format-visual-proof.md](2026-07-14-freew-object-format-visual-proof.md) - focused no-Word WPF/Avalonia object-format position, size, style, alt-text, and effect semantic visual proof and remaining Word-baseline blocker.
 - [2026-07-14-freew-wordart-watermark-visual-proof.md](2026-07-14-freew-wordart-watermark-visual-proof.md) - focused no-Word WPF/Avalonia WordArt, text/picture watermark, page border, effect, and alt-text semantic visual proof and remaining Word-baseline blocker.
