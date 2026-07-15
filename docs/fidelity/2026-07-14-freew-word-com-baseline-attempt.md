@@ -464,3 +464,13 @@ at `freew-fidelity-corpus\runs\wordart-page-surface-word-baseline-20260715` redu
 pixels from `63.794%` to `23.238%` for picture-watermark layout and from `64.994%` to `15.961%` for the
 WordArt watermark. Remaining strict failures are real WordArt/watermark rendering differences, not desk
 or canvas geometry.
+
+## Follow-up - Fixed DOCX Table Layout
+
+The native Word baseline exposed a document-format defect in the table fixtures: FreeW wrote the correct
+`w:tblGrid` widths but omitted `w:tblLayout`. Word consequently auto-fitted the cells, collapsing the
+first two columns and assigning the remaining width to the final column even though the model requested
+fixed layout. FreeW now emits `w:tblLayout w:type="fixed"` in schema order for its default fixed mode,
+and reads explicit `autofit` back into the model. The generated repeat-header fixture contains the fixed
+layout element, and the focused table OOXML lane passes 25 tests. A renewed Word PDF export is still
+needed to measure the resulting visual improvement once the live export route is available.
