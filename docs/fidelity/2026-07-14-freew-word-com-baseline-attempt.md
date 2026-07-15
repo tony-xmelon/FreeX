@@ -216,4 +216,19 @@ Focused composite evidence was captured under `freew-fidelity-corpus\runs\footno
 | WPF footnotes p1 | 17.1389 | 16.8848 | 10.368 % | 10.180 % |
 | WPF footnotes p2 | 6.6974 | 6.4723 | 4.765 % | 4.773 % |
 
-The small p2 changed-pixel increase is retained as an honest metric. The next renderer target remains Avalonia's continuous print-layout capture, which still needs true page segmentation rather than the fixed screenshot offset used by its evidence tool.
+The small p2 changed-pixel increase is retained as an honest metric. The next renderer target was Avalonia's Word-comparable page capture, which is corrected in the follow-up below.
+
+## Follow-up - Avalonia Physical Page-Origin Capture
+
+Avalonia's document surface was already paginated, including its per-page footnote reservation. The remaining capture defect was narrower: the Word-comparable crop always began at viewport Y=0, which included the Print Layout desk padding above page 1 and discarded the last 24 DIP of the white page. Page 2 happened to be correct only because its viewport offset started at that physical page's top.
+
+`FreeW.PageLayoutShot` now passes the requested page number and viewport offset into its crop routine and derives the page top from the shared `DocumentViewLayoutPlanner` surface plan. The Word comparator therefore receives the actual 816x1056 paper rectangle for every captured note-placement page, without duplicating Avalonia's desk and inter-page geometry.
+
+Focused comparison under `freew-fidelity-corpus\runs\avalonia-page-origin-word-baseline-20260715` still fails strict `word-png-default`, but improves both affected Avalonia page-one artifacts while leaving page 2 unchanged:
+
+| Renderer / page | Previous mean delta | Current mean delta | Previous changed pixels | Current changed pixels |
+| --- | ---: | ---: | ---: | ---: |
+| Avalonia endnotes p1 | 16.7526 | 15.7620 | 14.019 % | 11.875 % |
+| Avalonia footnotes p1 | 17.9395 | 16.8364 | 15.089 % | 12.859 % |
+
+The next render-fidelity target is actual Avalonia text and note geometry relative to Word, rather than page chrome or a missing physical page boundary.
