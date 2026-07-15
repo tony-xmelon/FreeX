@@ -510,3 +510,8 @@ The generated WordArt OOXML has size properties but no bold run property. The sh
 that non-bold contract instead of forcing every WordArt preset bold. Cached evidence at
 `freew-fidelity-corpus\runs\wordart-unbold-native-baseline-20260715` improves Avalonia stress from `15.8688`
 to `15.6377` mean channel delta and improves the WPF stress render from `33.8467` to `33.1119`.
+
+## Follow-up - WordArt Theme Font
+
+The emitted document theme resolves WordArt's major Latin font to Calibri. Avalonia now uses Calibri for
+floating WordArt, improving cached stress evidence from `15.6377` to `15.6367` mean channel delta.
