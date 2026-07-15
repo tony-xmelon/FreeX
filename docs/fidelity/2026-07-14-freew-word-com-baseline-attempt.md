@@ -415,3 +415,18 @@ The cached note comparison at `freew-fidelity-corpus\\runs\\note-placement-avalo
 | Footnotes p2 | 6.0126 | 5.5144 | 5.616 % | 4.455 % |
 
 The strict equation proof remains green against the cached real-Word PNG at `freew-fidelity-corpus\\runs\\equation-structure-avalonia-grayscale-word-baseline-20260715`: Avalonia improves from `1.9067` mean channel delta and `1.9881%` changed pixels to `1.7195` and `1.5733%`; WPF remains at `2.6924` and `1.9108%`. Note placement remains outside strict tolerance because of remaining glyph and line-cadence differences, not coloured subpixel fringes. Fresh Word COM exports remain deferred while the live export call is unresponsive.
+
+## Follow-up - Avalonia Note Content Origin
+
+After removing coloured subpixel fringes, a text-mask comparison showed that Avalonia's note-page body lines were generally one pixel below the cached Word page after the first paragraph. The note overlay is separately anchored, so reducing the body capture offset does not disturb the calibrated separator and note-band placement.
+
+The Word-comparable capture now uses a one-DIP content offset for both footnote pages and endnotes page one. Equation evidence retains its independently calibrated two-DIP offset, and endnotes page two retains zero because the same adjustment regresses that page. The cached comparison at `freew-fidelity-corpus\\runs\\note-placement-avalonia-content-origin-1px-20260715` improves the affected Avalonia rows:
+
+| Page | Previous mean delta | Current mean delta | Previous changed pixels | Current changed pixels |
+| --- | ---: | ---: | ---: | ---: |
+| Endnotes p1 | 8.2054 | 2.5797 | 6.467 % | 4.009 % |
+| Endnotes p2 | 3.7172 | 3.7172 | 3.780 % | 3.780 % |
+| Footnotes p1 | 8.8588 | 3.5681 | 7.016 % | 4.652 % |
+| Footnotes p2 | 5.5144 | 1.8872 | 4.455 % | 2.819 % |
+
+The equation structure proof at `freew-fidelity-corpus\\runs\\equation-structure-note-content-origin-word-baseline-20260715` remains strictly trusted for both renderers. Footnotes page two now meets both mean thresholds and misses only the `2.000%` changed-pixel threshold; endnotes page one misses only that changed-pixel threshold. The remaining note differences are now localized to glyph rasterization, body line cadence, and note-region rendering rather than physical-page capture origin.
