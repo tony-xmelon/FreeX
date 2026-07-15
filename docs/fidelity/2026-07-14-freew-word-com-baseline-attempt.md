@@ -485,4 +485,13 @@ selects text contrast from the field luminance, and does not turn glow into an o
 Cached WordArt evidence at `freew-fidelity-corpus\runs\wordart-clean-chrome-native-baseline-20260715`
 improves the Avalonia watermark-stress page from `18.2309` mean channel delta and `15.949%` changed
 pixels to `15.9988` and `14.070%`. The remaining visible gap is real WordArt deformation/effect fidelity,
-especially `Wave1` and `ArchUp`, rather than field and text-colour semantics.
+especially `Wave1`, font selection, and close-to-glyph effects, rather than field and text-colour semantics.
+
+## Follow-up - Avalonia ArchUp WordArt
+
+Avalonia now places floating `ArchUp` WordArt glyphs along a symmetric curved baseline with tangent
+rotation, fitting the glyph run into its field before drawing it. The isolated cached Word picture-watermark
+fixture at `freew-fidelity-corpus\runs\avalonia-archup-fit-native-baseline-20260715` improves from
+`26.5314` mean channel delta and `23.234%` changed pixels to `26.4651` and `23.221%`; the WordArt stress
+page improves from `15.9988` to `15.9610`. This is deliberately only the `ArchUp` path. `Wave1`, font
+selection, and close-to-glyph effect rendering remain separate fidelity work.
