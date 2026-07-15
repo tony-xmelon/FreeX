@@ -315,3 +315,11 @@ Focused build and test verification passed with 49 tests. Live Word COM evidence
 | Avalonia footnotes p2 | 7.0421 | 6.9432 | 6.344 % | 6.403 % |
 
 The page-two changed-pixel ratio increases by 0.059 points despite its lower mean deltas, an expected raster tradeoff from adding the previously missing final body row. Endnote and WPF artifacts are unchanged by this footnote-only correction.
+
+## Follow-up - Equation Physical-Page Evidence
+
+The equation-structure PageLayoutShot was emitted as the entire 960x1200 Avalonia viewport while the real Word baseline was the physical 816x1056 Letter page. That forced the comparator to report a large, non-rendering dimension mismatch. Equation evidence now takes the same shared page-surface crop as the Word-comparable note scenarios.
+
+The focused PageLayoutShot build and 49 source/layout tests pass. The regenerated Avalonia PNG is 816x1056, matching Word, and the cached real-Word comparison under `freew-fidelity-corpus\runs\equation-structure-word-baseline-20260715` reduces the Avalonia mean delta from 15.5202 to 3.0948 and the changed-pixel ratio from 27.970% to 2.881%.
+
+The strict `word-png-default` threshold still fails: the remaining evidence is a real feature difference. Word lays out the fraction, radical, n-ary operator, matrix, equation array, accents, delimiters, and function application as OfficeMath structures, while Avalonia's current page renderer renders the equation content as flattened inline text. That equation rendering capability is the next functional parity slice; the baseline comparison itself is now geometrically valid.
