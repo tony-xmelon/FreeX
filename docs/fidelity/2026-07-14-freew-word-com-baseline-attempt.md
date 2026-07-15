@@ -503,3 +503,10 @@ tangent rotation. Cached Word evidence at `freew-fidelity-corpus\runs\avalonia-w
 improves its Avalonia stress-page mean channel delta from `15.9610` to `15.8688` and changed pixels from
 `14.068%` to `14.025%`. Other WordArt warps remain on the existing readable fallback until their separate
 paths are implemented.
+
+## Follow-up - WordArt Weight Contract
+
+The generated WordArt OOXML has size properties but no bold run property. The shared visual planner now preserves
+that non-bold contract instead of forcing every WordArt preset bold. Cached evidence at
+`freew-fidelity-corpus\runs\wordart-unbold-native-baseline-20260715` improves Avalonia stress from `15.8688`
+to `15.6377` mean channel delta and improves the WPF stress render from `33.8467` to `33.1119`.
