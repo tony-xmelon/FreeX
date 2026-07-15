@@ -365,3 +365,16 @@ The focused WPF equation round-trip suite passes all 32 tests. Against the cache
 Word's structured OfficeMath lines use a tighter line box than WPF's default 1.05 multiplier. The WPF structured equation text now uses a 0.85 multiplier, which keeps the fraction, n-ary limits, and matrix grid from accumulating vertical drift across the evidence page. Accents, bars, and group characters receive the small top offsets needed to align their overhanging marks with Word without disturbing the preceding structures.
 
 The 32 focused WPF equation round-trip tests pass. The cached real-Word comparison at `freew-fidelity-corpus\\runs\\equation-structure-wpf-tail-cadence-word-baseline-20260715` now passes the strict `word-png-default` tolerance for WPF: 2.6924 mean channel delta, 2.7012 grayscale delta, and 1.9108% changed pixels. Avalonia's dimensions and mean deltas remain compliant, but its changed-pixel ratio is 2.794%, so it is the sole remaining equation evidence failure.
+
+## Follow-up - Avalonia Word-Comparable Equation Surface
+
+The Avalonia equation PNG originally began at the print-layout editor's chrome border, while Word's PNG begins at the physical white paper surface. The evidence capture now applies the measured two-DIP physical-page origin correction for the equation scenario and removes the editor-only page outline from that capture. This affects only the Word-comparable equation evidence artifact; it does not change the document renderer or the note-placement capture path.
+
+The focused PageLayoutShot/equation source suite passes all 42 tests. The cached real-Word run at `freew-fidelity-corpus\\runs\\equation-structure-avalonia-clean-page-surface-word-baseline-20260715` now passes the strict `word-png-default` tolerance for both renderers:
+
+| Renderer | Mean channel delta | Mean grayscale delta | Changed pixels |
+| --- | ---: | ---: | ---: |
+| Avalonia | 1.9067 | 1.7655 | 1.9881 % |
+| WPF | 2.6924 | 2.7012 | 1.9108 % |
+
+The comparison has exact 816x1056 dimensions against the cached Word page in both cases. This closes the equation-structure visual proof with real Word PNG evidence; fresh live COM exports remain deferred while Word's export call is unresponsive.
