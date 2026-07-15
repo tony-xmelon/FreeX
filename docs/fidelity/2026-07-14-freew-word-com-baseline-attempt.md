@@ -337,3 +337,5 @@ The DOCX writer correctly emits an `m:func` with `m:fName` and `m:e`; the synthe
 ## Follow-up - Compact N-ary Limits
 
 Avalonia's first structured n-ary layout reserved the full height of upper limit, operator, and lower limit in sequence. Word overlaps the smaller limit glyphs into the operator's vertical extent. The native n-ary measurement now reserves the operator plus compact overlapping limit bands, while the draw path centers the operator between those bands. The rebuilt PageLayoutShot evidence moves the following matrix and remaining equation rows upward toward their Word positions without flattening the limits.
+
+The next calibration separates that visual extent from pagination reservation: Word keeps the limit glyphs visually attached above and below the operator while advancing the paragraph by the compact operator line box. Avalonia now follows that rule, which moves the subsequent matrix, equation array, and decorator rows upward again while preserving the visible limits.
