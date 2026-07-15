@@ -202,3 +202,18 @@ Focused Word-baseline comparison under `freew-fidelity-corpus\runs\note-placemen
 | WPF footnotes p2 | 12.1204 | 6.6974 | 7.136 % | 4.765 % |
 
 The next targeted fixes are the remaining Avalonia page-body pagination offset and note-placement geometry, followed by WPF p1 text/raster differences. The baseline export and schema lane remain healthy: all 30 corpus documents open and export through Word's visible publish path.
+
+## Follow-up - Footnote Body Reservation
+
+The WPF composite renderer was laying out the full body page and then drawing its footnote region over that body. Word reserves the footnote region while it paginates, so the earlier WPF output retained two extra body paragraphs on `f2-footnotes` page 1 and put its separator too close to the physical page edge.
+
+The renderer now probes the PageBox footnote assignment, measures the largest note block, reserves that height in the body paginator's bottom padding, and places the rendered note block above the page's bottom margin. In the live Word comparison fixture, WPF page 1 now ends with `More filler 1`, the same boundary as Word, and page 2 begins with `More filler 2`.
+
+Focused composite evidence was captured under `freew-fidelity-corpus\runs\footnote-reserve-composite-smoke-20260715` and compared against the existing visible-Word baseline. The strict tolerance remains unmet, but the structural correction improved both WPF mean deltas:
+
+| Renderer / page | Previous mean delta | Current mean delta | Previous changed pixels | Current changed pixels |
+| --- | ---: | ---: | ---: | ---: |
+| WPF footnotes p1 | 17.1389 | 16.8848 | 10.368 % | 10.180 % |
+| WPF footnotes p2 | 6.6974 | 6.4723 | 4.765 % | 4.773 % |
+
+The small p2 changed-pixel increase is retained as an honest metric. The next renderer target remains Avalonia's continuous print-layout capture, which still needs true page segmentation rather than the fixed screenshot offset used by its evidence tool.
