@@ -24,6 +24,12 @@ Focused validation:
 
 The same fresh run isolated the remaining chart/SmartArt boundary. Word opens and exports the chart pair, but its PDF leaves both the `orgChart1` hierarchy and `pyramid1` SmartArt graphics blank while retaining their paragraphs; FreeW's WPF/Avalonia captures render the corresponding hierarchy and four polygon bands. A live Word-created SmartArt probe confirmed that the cached `dsp:drawing` shapes carry their node text, so the writer now includes node text in the hierarchy/pyramid cached shapes and emits `wp:cNvGraphicFramePr` on SmartArt frames. The focused package tests pass, but the visual Word export remains blank after this structural correction and is still an open DOCX SmartArt compatibility gap.
 
-Evidence: the refreshed run under `freew-fidelity-corpus/runs/word-baseline-refresh-20260716-r2` exported the full corpus without COM failures; the focused chart/SmartArt comparison measured `9.5%` changed pixels for Avalonia page 1 and `10.2%` for WPF page 1 before this follow-up. The next SmartArt slice should compare a Word-authored hierarchy/pyramid package against the generated data/layout/drawing parts and repair the remaining diagram-package validity issue without changing inline document flow.
+Evidence: the refreshed run under `freew-fidelity-corpus/runs/word-baseline-refresh-20260716-r2` exported the full corpus without COM failures; the focused chart/SmartArt comparison measured `9.5%` changed pixels for Avalonia page 1 and `10.2%` for WPF page 1 before this follow-up.
+
+## SmartArt package repair
+
+The native Word probes under `freew-fidelity-corpus/runs/native-word-smartart-20260715` showed two package rules that the writer missed: the `diagramDrawing` relationship belongs in `word/_rels/document.xml.rels` rather than `word/diagrams/_rels/dataN.xml.rels`, and the quick-style/colors parts must contain the gallery labels referenced by the presentation graph. FreeW now follows both rules. The focused `SmartArtRoundTripTests` lane passes `24/24`.
+
+A fresh fixture generated after the repair was exported by visible Word and rasterized successfully. Word now renders the FreeW pyramid geometry and the hierarchy geometry instead of leaving both SmartArt objects blank. The remaining visual gap is text/style fidelity inside those Word-rendered SmartArt shapes; the cached FreeW drawing still supplies node text and explicit geometry for FreeW's own renderers.
 
 Generated PDFs and PNGs remain ignored under `freew-fidelity-corpus/runs/` and are not part of the commit.
