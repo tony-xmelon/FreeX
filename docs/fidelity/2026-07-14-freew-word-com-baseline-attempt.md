@@ -249,3 +249,25 @@ Focused comparison under `freew-fidelity-corpus\runs\avalonia-default-run-word-b
 | Avalonia footnotes p2 | 13.2723 | 11.1364 | 10.556 % | 8.662 % |
 
 The native page-one body now reaches the second footnote reference, close to Word's final page-one boundary. Remaining work is note-band positioning and glyph-raster fidelity rather than default-format inheritance or omitted line-spacing semantics.
+
+## Follow-up - Avalonia Footnote Bottom-Margin Anchor
+
+Avalonia previously anchored its native footnote band at the footer distance. For the ordinary 36pt footer distance in this fixture, that placed the band 48 DIP too low, in the lower part of the physical bottom margin. Microsoft Word places the band at the body bottom-margin edge, except when a footer begins higher. The native `DocumentView` now uses the earlier of those two bounds and clips only within that usable note region.
+
+The note-render regression test now asserts that the separator and note text do not extend below the body bottom-margin edge, rather than accepting the old footer-distance strip.
+
+Focused verification:
+
+```powershell
+dotnet build freew\tools\FreeW.PageLayoutShot\FreeW.PageLayoutShot.csproj --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false
+dotnet test freew\FreeW.App.Avalonia.Tests\FreeW.App.Avalonia.Tests.csproj --configuration Release --filter "FullyQualifiedName~DocumentViewHeadlessTests|FullyQualifiedName~VisualEvidencePageLayoutShotSourceTests|FullyQualifiedName~DocumentViewNoteRenderTests" --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File freew-fidelity-corpus\tools\Run-FreeWVisualEvidence.ps1 -OutDir freew-fidelity-corpus\runs\avalonia-footnote-margin-word-baseline-20260715 -ScenarioSet NotePlacementVisualProof -WordBaselineDir freew-fidelity-corpus\runs\word-com-baseline-20260714\word-baseline -BaselineTolerance word-png-default
+```
+
+The build and 46 focused tests pass. The live-Word evidence run deliberately still returns nonzero at the strict `word-png-default` threshold, but has no missing comparison rows. The new Avalonia p1 footnote band is visually aligned with Word's bottom-margin boundary and improves the measured page-one result slightly:
+
+| Renderer / page | Previous mean delta | Current mean delta | Previous changed pixels | Current changed pixels |
+| --- | ---: | ---: | ---: | ---: |
+| Avalonia footnotes p1 | 14.6441 | 14.5454 | 11.631 % | 11.561 % |
+
+Word still fits `More filler 1` above the note band on page 1, while Avalonia stops after `Filler paragraph 22`; the remaining body-flow difference is one short paragraph. Endnote and page-two metrics are unchanged by this footnote-only placement correction. The next targeted work is Avalonia text measurement/pagination fidelity, followed by glyph-raster differences.
