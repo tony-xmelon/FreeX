@@ -353,3 +353,9 @@ Avalonia now uses Word-calibrated matrix column spacing and draws matrix delimit
 ## Follow-up - Compact Matrix and Array Rows
 
 The shared matrix row gap is now 0.08em rather than 0.28em. This aligns both matrices and equation arrays to Word's compact row cadence and brings the subsequent accent, delimiter, and function rows into the same vertical neighborhood as their Word baseline counterparts.
+
+## Follow-up - WPF Unboxed OfficeMath Surface
+
+The WPF host previously placed every equation inside a padded pale-blue rounded Border. That decoration is useful for an editor placeholder but is not part of Word's document surface, and it dominated the equation baseline difference. The WPF equation host now remains an unadorned Border solely to retain its Equation model Tag for CommitToModel round-tripping; the shared planned mathematical content sits directly on the page.
+
+The focused WPF equation round-trip suite passes all 32 tests. Against the cached real-Word equation PNG at `freew-fidelity-corpus\\runs\\word-com-baseline-20260714\\word-baseline`, the WPF changed-pixel ratio improves from 4.477% to 2.146%, and mean channel delta improves from 3.4210 to 3.2357. The strict 2.000% changed-pixel tolerance still fails, along with the two 3.000 mean thresholds, so remaining work is WPF structure sizing and vertical cadence rather than editor-chrome removal.
