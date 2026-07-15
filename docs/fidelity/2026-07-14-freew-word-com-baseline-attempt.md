@@ -436,3 +436,31 @@ The equation structure proof at `freew-fidelity-corpus\\runs\\equation-structure
 The WPF fidelity renderer obtains its footnote separator from the shared note-region planner. That planner still specified a 60-DIP rule, even though the native Avalonia renderer and the cached Word page use a two-inch, 192-DIP separator. The mismatch was visible directly in the Word baseline: Word's rule spans rows `x=96..287`, while WPF's old rule ended at `x=155`.
 
 The shared planner now specifies the measured 192-DIP Word width, protected by an explicit planner test. The cached comparison at `freew-fidelity-corpus\\runs\\note-placement-wpf-separator-192-word-baseline-20260715` improves WPF footnotes page one from `9.4641` to `9.4250` mean channel delta and from `6.954%` to `6.939%` changed pixels. Other WPF and Avalonia note pages are unchanged; their remaining gap is text layout and glyph rasterization rather than separator geometry.
+## Follow-up - Preserve Word PDF Page Geometry
+
+The cached Word baseline renderer forced every exported PDF page to an `816x1056` raster surface. That
+silently stretched the authored `612x396` point table fixtures from `816x528` to Letter dimensions,
+making their strict Word comparisons report false layout failures. `Render-WordBaseline.ps1` now retains
+each PDF page's native 96-DPI dimensions unless a caller explicitly supplies both `-Width` and `-Height`.
+`FreeW.PdfRasterize` has the same native-size default, so regenerated Word table baselines will match the
+FreeW page surface rather than a resized surrogate.
+
+The cached Word PDF smoke test now emits `816x528` for both repeat-header pages in native mode, while
+an explicit `816x1056` request still emits that exact fixed surface. This confirms the compatibility
+override and the parity default independently, without issuing a new Word COM export.
+
+## Follow-up - Table Row Height and Word Page-Surface Capture
+
+WPF represented an authored table-row height by appending a separate spacer after the cell's content.
+That made every explicit-height row consume content height plus requested height, so the repeat-header
+fixture split into four WPF pages while the cached real Word PDF has two. The cell now uses one min-height
+content host instead. The focused table proof at
+`freew-fidelity-corpus\runs\table-height-content-host-word-baseline-20260715` emits two WPF pages for
+the repeat-header fixture and three for the page-composition fixture, matching their Word PDF page counts.
+
+The same capture-contract issue affected three Avalonia object scenarios: they compared the full editor
+scene against Word's page surface. They now reuse the existing document-page crop. Cached WordArt evidence
+at `freew-fidelity-corpus\runs\wordart-page-surface-word-baseline-20260715` reduces Avalonia changed
+pixels from `63.794%` to `23.238%` for picture-watermark layout and from `64.994%` to `15.961%` for the
+WordArt watermark. Remaining strict failures are real WordArt/watermark rendering differences, not desk
+or canvas geometry.
