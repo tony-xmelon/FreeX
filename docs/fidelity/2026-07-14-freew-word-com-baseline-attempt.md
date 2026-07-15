@@ -430,3 +430,9 @@ The Word-comparable capture now uses a one-DIP content offset for both footnote 
 | Footnotes p2 | 5.5144 | 1.8872 | 4.455 % | 2.819 % |
 
 The equation structure proof at `freew-fidelity-corpus\\runs\\equation-structure-note-content-origin-word-baseline-20260715` remains strictly trusted for both renderers. Footnotes page two now meets both mean thresholds and misses only the `2.000%` changed-pixel threshold; endnotes page one misses only that changed-pixel threshold. The remaining note differences are now localized to glyph rasterization, body line cadence, and note-region rendering rather than physical-page capture origin.
+
+## Follow-up - Shared Footnote Separator Width
+
+The WPF fidelity renderer obtains its footnote separator from the shared note-region planner. That planner still specified a 60-DIP rule, even though the native Avalonia renderer and the cached Word page use a two-inch, 192-DIP separator. The mismatch was visible directly in the Word baseline: Word's rule spans rows `x=96..287`, while WPF's old rule ended at `x=155`.
+
+The shared planner now specifies the measured 192-DIP Word width, protected by an explicit planner test. The cached comparison at `freew-fidelity-corpus\\runs\\note-placement-wpf-separator-192-word-baseline-20260715` improves WPF footnotes page one from `9.4641` to `9.4250` mean channel delta and from `6.954%` to `6.939%` changed pixels. Other WPF and Avalonia note pages are unchanged; their remaining gap is text layout and glyph rasterization rather than separator geometry.
