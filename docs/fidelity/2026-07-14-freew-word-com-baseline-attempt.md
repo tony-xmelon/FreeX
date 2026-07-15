@@ -232,3 +232,20 @@ Focused comparison under `freew-fidelity-corpus\runs\avalonia-page-origin-word-b
 | Avalonia footnotes p1 | 17.9395 | 16.8364 | 15.089 % | 12.859 % |
 
 The next render-fidelity target is actual Avalonia text and note geometry relative to Word, rather than page chrome or a missing physical page boundary.
+
+## Follow-up - Avalonia Default Run and Natural Line Spacing
+
+Avalonia's paragraph layout applied the document's resolved run formatting only when a paragraph had a named style. Ordinary body paragraphs therefore bypassed the DOCX default run and rendered with Avalonia's platform default font instead of the document's Calibri 11pt. It also treated the model's convenience `1.15` line-spacing default as an explicit Word line rule even when the DOCX omitted `w:spacing/@w:line`; Word uses natural single-line height in that case.
+
+The display cascade now always applies document defaults, styles, then direct run formatting, and the natural-line branch matches the existing WPF interpretation. Successful Avalonia captures also no longer add a second shared-plan note overlay over notes that `DocumentView` already rendered; that overlay remains only for the explicit fallback route.
+
+Focused comparison under `freew-fidelity-corpus\runs\avalonia-default-run-word-baseline-20260715` remains outside strict `word-png-default`, but substantially improves every Avalonia Word comparison:
+
+| Renderer / page | Previous mean delta | Current mean delta | Previous changed pixels | Current changed pixels |
+| --- | ---: | ---: | ---: | ---: |
+| Avalonia endnotes p1 | 15.7620 | 13.9101 | 11.875 % | 10.918 % |
+| Avalonia endnotes p2 | 10.6354 | 9.0747 | 8.434 % | 6.880 % |
+| Avalonia footnotes p1 | 16.6897 | 14.6441 | 12.743 % | 11.631 % |
+| Avalonia footnotes p2 | 13.2723 | 11.1364 | 10.556 % | 8.662 % |
+
+The native page-one body now reaches the second footnote reference, close to Word's final page-one boundary. Remaining work is note-band positioning and glyph-raster fidelity rather than default-format inheritance or omitted line-spacing semantics.
