@@ -495,3 +495,11 @@ fixture at `freew-fidelity-corpus\runs\avalonia-archup-fit-native-baseline-20260
 `26.5314` mean channel delta and `23.234%` changed pixels to `26.4651` and `23.221%`; the WordArt stress
 page improves from `15.9988` to `15.9610`. This is deliberately only the `ArchUp` path. `Wave1`, font
 selection, and close-to-glyph effect rendering remain separate fidelity work.
+
+## Follow-up - Avalonia Wave1 WordArt
+
+The primary WordArt stress object now uses one fitted sinusoidal glyph baseline for `Wave1`, including
+tangent rotation. Cached Word evidence at `freew-fidelity-corpus\runs\avalonia-wave1-native-baseline-20260715`
+improves its Avalonia stress-page mean channel delta from `15.9610` to `15.8688` and changed pixels from
+`14.068%` to `14.025%`. Other WordArt warps remain on the existing readable fallback until their separate
+paths are implemented.
