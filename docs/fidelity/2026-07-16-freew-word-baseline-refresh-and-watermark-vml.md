@@ -33,3 +33,11 @@ The native Word probes under `freew-fidelity-corpus/runs/native-word-smartart-20
 A fresh fixture generated after the repair was exported by visible Word and rasterized successfully. Word now renders the FreeW pyramid geometry and the hierarchy geometry instead of leaving both SmartArt objects blank. The remaining visual gap is text/style fidelity inside those Word-rendered SmartArt shapes; the cached FreeW drawing still supplies node text and explicit geometry for FreeW's own renderers.
 
 Generated PDFs and PNGs remain ignored under `freew-fidelity-corpus/runs/` and are not part of the commit.
+
+## SmartArt text and native drawing follow-up
+
+The next native Word probe showed that pyramid semantic nodes use `phldrT="[Text]"`, while each pyramid presentation level carries its ordinal `presStyleIdx` and a shared `presStyleCnt`. FreeW now emits those values, so Word retains all four pyramid labels (`Top`, `Middle`, `Lower`, `Base`) in a fresh visible export. The cached pyramid drawing also follows the native `adj=68182`, proportional band heights, text margins, paragraph spacing, and size-scaled run conventions.
+
+FreeW color IDs that are catalog aliases (`accent1`, `accent2`, and `accent3`) now resolve to Word's concrete stock suffixes in both `dataN.xml` and `colorsN.xml`, with `freewColorId` preserving lossless FreeW round-trip behavior. A controlled Word export confirmed that gallery-ID normalization alone does not repair the remaining black hierarchy boxes; that presentation/layout semantic mismatch remains the next SmartArt target.
+
+Verification for this follow-up: `SmartArtRoundTripTests` 26/26, full `FreeW.Core.IO.Tests` 1026/1026, FidelityRender build green, and a fresh `chart-smartart-complex.docx` visible Word export with a two-page PDF rasterized under `freew-fidelity-corpus/runs/current-fixed-20260716/after-native-scaffold-word/`.
