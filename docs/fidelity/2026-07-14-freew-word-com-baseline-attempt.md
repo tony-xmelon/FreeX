@@ -333,3 +333,7 @@ The native equation evidence now visibly represents the Word structures. Focused
 ## Follow-up - OfficeMath Function Application
 
 The DOCX writer correctly emits an `m:func` with `m:fName` and `m:e`; the synthetic parentheses existed only in FreeW's visual planner. The shared planner now exposes the function name and argument as the two OfficeMath display parts, and Avalonia measures/draws them as one atomic function form with a small inter-part gap. The regenerated native evidence matches Word's `sin x + y + log n` notation rather than `sin(x + y) + log(n)`. Focused verification passed: 39 Avalonia equation command/source-guard tests and 33 shared equation-planner tests.
+
+## Follow-up - Compact N-ary Limits
+
+Avalonia's first structured n-ary layout reserved the full height of upper limit, operator, and lower limit in sequence. Word overlaps the smaller limit glyphs into the operator's vertical extent. The native n-ary measurement now reserves the operator plus compact overlapping limit bands, while the draw path centers the operator between those bands. The rebuilt PageLayoutShot evidence moves the following matrix and remaining equation rows upward toward their Word positions without flattening the limits.
