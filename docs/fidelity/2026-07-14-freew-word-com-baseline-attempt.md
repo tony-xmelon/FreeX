@@ -298,3 +298,20 @@ The live COM comparison is recorded at `freew-fidelity-corpus\runs\avalonia-body
 | Avalonia footnotes p2 | 11.1364 | 7.0421 | 8.662 % | 6.344 % |
 
 The remaining delta is principally glyph raster and final note/body geometry rather than a lost body paragraph or an unformatted reference marker.
+
+## Follow-up - Avalonia Footnote Band Spacing
+
+After the body cadence correction, aligned Word and Avalonia page-one bands showed that body rows were within one DIP, but Avalonia compressed two short footnotes into a 16-DIP step. Word uses a 28-DIP step for this fixture: its separator is at row 895, the first note begins at 907, and the second note begins at 935. Avalonia's old band placed those elements at 915, 924, and 940 respectively.
+
+The native footnote renderer now treats the separator-to-first-note gap, inter-note spacing, and trailing reserve as explicit band geometry. The same geometry is used during the pre-layout reservation pass and final rendering, so pagination cannot reclaim the extra note space. The focused note renderer test now verifies a 27-29 DIP vertical advance between two short footnote markers.
+
+The regenerated native capture lands at separator rows 895-896, first-note rows 907-918, and second-note marker/text rows 935/938-949. It also restores the final Word-visible body row on page 2 (`613-625`) rather than ending one line early.
+
+Focused build and test verification passed with 49 tests. Live Word COM evidence at `freew-fidelity-corpus\runs\avalonia-footnote-spacing-word-baseline-20260715` remains outside the strict `word-png-default` threshold but improves the footnote mean deltas:
+
+| Renderer / page | Previous mean delta | Current mean delta | Previous changed pixels | Current changed pixels |
+| --- | ---: | ---: | ---: | ---: |
+| Avalonia footnotes p1 | 11.0157 | 10.4802 | 9.864 % | 9.453 % |
+| Avalonia footnotes p2 | 7.0421 | 6.9432 | 6.344 % | 6.403 % |
+
+The page-two changed-pixel ratio increases by 0.059 points despite its lower mean deltas, an expected raster tradeoff from adding the previously missing final body row. Endnote and WPF artifacts are unchanged by this footnote-only correction.
