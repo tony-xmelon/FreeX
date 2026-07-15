@@ -345,3 +345,7 @@ The focused live comparison before this final reservation trim improved Avalonia
 ## Follow-up - Compact Decorator Lines
 
 Accent, bar, and group-character forms now reserve the base text line only. Their marks and rules are drawn into the same visible overhang area that Word uses, rather than creating a second stacked line. The rebuilt native page closes the remaining accumulated row drift through the accent, delimiter/group-character, and function paragraphs while preserving all of the structural marks.
+
+## Follow-up - Matrix Grid Primitives
+
+Avalonia now uses Word-calibrated matrix column spacing and draws matrix delimiters as brackets spanning the full row grid rather than ordinary one-line text glyphs. The matrix grid in the native page therefore reads as a two-row OfficeMath matrix, with its columns and brackets aligned to the visual structure Word renders.
