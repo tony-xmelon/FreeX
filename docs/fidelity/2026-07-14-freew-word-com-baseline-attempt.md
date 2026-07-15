@@ -359,3 +359,9 @@ The shared matrix row gap is now 0.08em rather than 0.28em. This aligns both mat
 The WPF host previously placed every equation inside a padded pale-blue rounded Border. That decoration is useful for an editor placeholder but is not part of Word's document surface, and it dominated the equation baseline difference. The WPF equation host now remains an unadorned Border solely to retain its Equation model Tag for CommitToModel round-tripping; the shared planned mathematical content sits directly on the page.
 
 The focused WPF equation round-trip suite passes all 32 tests. Against the cached real-Word equation PNG at `freew-fidelity-corpus\\runs\\word-com-baseline-20260714\\word-baseline`, the WPF changed-pixel ratio improves from 4.477% to 2.146%, and mean channel delta improves from 3.4210 to 3.2357. The strict 2.000% changed-pixel tolerance still fails, along with the two 3.000 mean thresholds, so remaining work is WPF structure sizing and vertical cadence rather than editor-chrome removal.
+
+## Follow-up - WPF OfficeMath Cadence Calibration
+
+Word's structured OfficeMath lines use a tighter line box than WPF's default 1.05 multiplier. The WPF structured equation text now uses a 0.85 multiplier, which keeps the fraction, n-ary limits, and matrix grid from accumulating vertical drift across the evidence page. Accents, bars, and group characters receive the small top offsets needed to align their overhanging marks with Word without disturbing the preceding structures.
+
+The 32 focused WPF equation round-trip tests pass. The cached real-Word comparison at `freew-fidelity-corpus\\runs\\equation-structure-wpf-tail-cadence-word-baseline-20260715` now passes the strict `word-png-default` tolerance for WPF: 2.6924 mean channel delta, 2.7012 grayscale delta, and 1.9108% changed pixels. Avalonia's dimensions and mean deltas remain compliant, but its changed-pixel ratio is 2.794%, so it is the sole remaining equation evidence failure.
