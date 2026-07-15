@@ -341,3 +341,7 @@ Avalonia's first structured n-ary layout reserved the full height of upper limit
 The next calibration separates that visual extent from pagination reservation: Word keeps the limit glyphs visually attached above and below the operator while advancing the paragraph by the compact operator line box. Avalonia now follows that rule, which moves the subsequent matrix, equation array, and decorator rows upward again while preserving the visible limits.
 
 The focused live comparison before this final reservation trim improved Avalonia equation evidence to mean delta 3.1592 and changed pixels 2.923%, from 3.1982 and 2.942% after function application. The trimmed native page places the matrix nearly on Word's row; the next local source of drift is the decorator and group-character line reservation.
+
+## Follow-up - Compact Decorator Lines
+
+Accent, bar, and group-character forms now reserve the base text line only. Their marks and rules are drawn into the same visible overhang area that Word uses, rather than creating a second stacked line. The rebuilt native page closes the remaining accumulated row drift through the accent, delimiter/group-character, and function paragraphs while preserving all of the structural marks.
