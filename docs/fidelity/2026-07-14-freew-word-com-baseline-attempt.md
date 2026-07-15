@@ -378,3 +378,11 @@ The focused PageLayoutShot/equation source suite passes all 42 tests. The cached
 | WPF | 2.6924 | 2.7012 | 1.9108 % |
 
 The comparison has exact 816x1056 dimensions against the cached Word page in both cases. This closes the equation-structure visual proof with real Word PNG evidence; fresh live COM exports remain deferred while Word's export call is unresponsive.
+
+## Follow-up - WPF Footnote Printable-Frame Anchor
+
+The current note-placement rebaseline confirmed that WPF's page-one footnote band remained the largest WPF note discrepancy. Its composite renderer anchored the measured note bitmap directly at the bottom margin. The cached Word page instead places the separator at row 895. WPF placed it at row 910 before calibration.
+
+The WPF composite now reserves a measured 15 DIP below its note bitmap. This is intentionally distinct from the Avalonia evidence overlay's 36 DIP reserve because the two renderers produce different measured note-region heights. The WPF separator now lands at row 895, its first note begins at row 908 versus Word row 907, and its second note begins at row 932 versus Word row 935.
+
+The cached comparison at `freew-fidelity-corpus\\runs\\note-placement-wpf-calibrated-reserve-20260715b` improves WPF footnotes page one from 16.8848 to 16.4904 mean channel delta and from 10.180% to 9.988% changed pixels. The scenario remains outside the strict tolerance because WPF body glyph and paragraph cadence differences, as well as the broader Avalonia note-layout gap, are still substantial. The exact band geometry is now correct and protected by the WPF evidence source guard.
