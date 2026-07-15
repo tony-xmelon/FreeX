@@ -20,4 +20,10 @@ Focused validation:
 - A fresh `f2-border-watermark.docx` export through visible Word produced a PDF with the VML text watermark visible in Word's own output.
 - The picture watermark package contract is covered by the header relationship/media test. Word's filled-VML picture rendering remains a follow-up visual target; the non-destructive text watermark path is the validated portion of this slice.
 
+## Chart and SmartArt follow-up
+
+The same fresh run isolated the remaining chart/SmartArt boundary. Word opens and exports the chart pair, but its PDF leaves both the `orgChart1` hierarchy and `pyramid1` SmartArt graphics blank while retaining their paragraphs; FreeW's WPF/Avalonia captures render the corresponding hierarchy and four polygon bands. A live Word-created SmartArt probe confirmed that the cached `dsp:drawing` shapes carry their node text, so the writer now includes node text in the hierarchy/pyramid cached shapes and emits `wp:cNvGraphicFramePr` on SmartArt frames. The focused package tests pass, but the visual Word export remains blank after this structural correction and is still an open DOCX SmartArt compatibility gap.
+
+Evidence: the refreshed run under `freew-fidelity-corpus/runs/word-baseline-refresh-20260716-r2` exported the full corpus without COM failures; the focused chart/SmartArt comparison measured `9.5%` changed pixels for Avalonia page 1 and `10.2%` for WPF page 1 before this follow-up. The next SmartArt slice should compare a Word-authored hierarchy/pyramid package against the generated data/layout/drawing parts and repair the remaining diagram-package validity issue without changing inline document flow.
+
 Generated PDFs and PNGs remain ignored under `freew-fidelity-corpus/runs/` and are not part of the commit.
