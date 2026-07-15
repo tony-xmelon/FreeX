@@ -159,7 +159,7 @@ Next work should focus on triaging renderer/page-size/page-count deltas from the
 
 ## Follow-up - Endnote Page-Count Normalization
 
-The first real Word summary left one false missing-baseline blocker: `f2-endnotes_p3`. Microsoft Word and the WPF proof should both expose `f2-endnotes` as two comparable pages, with page 2 carrying the synthetic endnote evidence. The Avalonia PageLayoutShot path and WPF composite renderer now follow that two-page contract instead of appending a Word-incomparable third PNG.
+The first real Word summary left one false missing-baseline blocker: `f2-endnotes_p3`. Microsoft Word and the WPF proof should both expose `f2-endnotes` as two comparable pages, with page 2 carrying final-body-page endnote evidence. The Avalonia PageLayoutShot path and WPF composite renderer now follow that two-page contract instead of appending a Word-incomparable third PNG.
 
 Focused verification:
 
@@ -181,3 +181,24 @@ The focused evidence run still exits nonzero because the real Word PNG compariso
 | `f2-endnotes` Avalonia outputs | 2/2 |
 
 Remaining `f2-endnotes` work is now real render fidelity: WPF page 2 is close but still above tolerance, while Avalonia still needs page-size/page-surface normalization before it is directly comparable to the 816x1056 Word baseline.
+
+## Follow-up - Final-Page Endnote Flow and Page-Surface Capture
+
+The Word PDFs show that the fixture's endnotes follow the final body content on page 2; they are not a separate blank endnote page. The WPF composite renderer now retains both body pages, appends the endnote rule and rows after the final paginator content when they fit, and records the result as normal final-body-page evidence. The shared evidence contract and the evidence-runner check now reject a synthetic endnote page for this Word-comparable fixture.
+
+The same pass corrected WPF's implicit line-spacing interpretation. When DOCX omits `w:spacing/@w:line`, Word uses its natural single-line layout; FreeW no longer forces the model's convenience `1.15` default into WPF. Explicit line-spacing values and styles continue to use the existing natural-line-height calculation. The final WPF pages now have the same line-band count as the Word pages for `f2-endnotes` (30 on p1, 17 including the endnote rule/rows on p2).
+
+Avalonia PageLayoutShot continues to capture the interactive print-layout surface, but the Word-comparable note-placement artifacts now crop the centered white page from that surface before they are compared. This removes the grey desk/chrome from the document-render metric while retaining the ordinary interactive screenshots for other scenarios.
+
+Focused Word-baseline comparison under `freew-fidelity-corpus\runs\note-placement-word-baseline-20260715d` still fails the strict `word-png-default` tolerance, but reports no missing baselines and no Avalonia dimension mismatch:
+
+| Renderer / page | Previous mean delta | Current mean delta | Previous changed pixels | Current changed pixels |
+| --- | ---: | ---: | ---: | ---: |
+| Avalonia endnotes p1 | 23.8764 | 16.7526 | 28.995 % | 14.019 % |
+| Avalonia endnotes p2 | 22.5636 | 11.4280 | 32.741 % | 8.985 % |
+| Avalonia footnotes p1 | 24.4580 | 17.9395 | 29.659 % | 15.089 % |
+| Avalonia footnotes p2 | 25.0436 | 13.5370 | 34.780 % | 10.739 % |
+| WPF endnotes p2 | 6.2729 | 5.9996 | 3.834 % | 4.181 % |
+| WPF footnotes p2 | 12.1204 | 6.6974 | 7.136 % | 4.765 % |
+
+The next targeted fixes are the remaining Avalonia page-body pagination offset and note-placement geometry, followed by WPF p1 text/raster differences. The baseline export and schema lane remain healthy: all 30 corpus documents open and export through Word's visible publish path.
