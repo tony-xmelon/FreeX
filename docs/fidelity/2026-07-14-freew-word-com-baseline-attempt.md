@@ -271,3 +271,30 @@ The build and 46 focused tests pass. The live-Word evidence run deliberately sti
 | Avalonia footnotes p1 | 14.6441 | 14.5454 | 11.631 % | 11.561 % |
 
 Word still fits `More filler 1` above the note band on page 1, while Avalonia stops after `Filler paragraph 22`; the remaining body-flow difference is one short paragraph. Endnote and page-two metrics are unchanged by this footnote-only placement correction. The next targeted work is Avalonia text measurement/pagination fidelity, followed by glyph-raster differences.
+
+## Follow-up - Avalonia Non-Editable Run Formatting and Body Cadence
+
+The paged Avalonia layout used a plain-text fallback for non-editable paragraphs. That included paragraphs with footnote or endnote references, so their per-run formatting was silently discarded during measurement and placement. In particular, Word's superscript reference markers were measured at full font size even though the renderer drew them at its 0.583 scale.
+
+`DisplayCells` now preserves each run's formatting, revision, comment, and hyperlink information for non-editable paragraphs. Its layout measurement applies the same superscript/subscript scale as rendering. The new regression test creates a footnote-reference run and asserts that its placed width is 0.583 of its otherwise identical body glyph.
+
+The live Word measurements then identified the remaining pagination drift: an unstyled Calibri 11 body paragraph advanced by about 29.71 DIP in Avalonia versus about 28.57 DIP in Word. Avalonia now applies a 0.94 natural-line-height scale only to unstyled or Normal Calibri 11 paragraphs with no explicit line spacing. Named styles, direct font formatting, and explicit line-height rules retain their existing metrics. A second headless regression test fixes this Word-calibrated body cadence.
+
+The native first-page capture now includes `More filler 1` and `More filler 2` above the bottom-margin note band, matching Word's page-one body flow. Focused verification passed:
+
+```powershell
+dotnet build freew\FreeW.App.Avalonia.Tests\FreeW.App.Avalonia.Tests.csproj --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false
+dotnet test freew\FreeW.App.Avalonia.Tests\FreeW.App.Avalonia.Tests.csproj --configuration Release --no-build --filter "FullyQualifiedName~DocumentViewHeadlessTests|FullyQualifiedName~DocumentViewNoteRenderTests|FullyQualifiedName~VisualEvidencePageLayoutShotSourceTests" --logger "trx;LogFileName=word-body-cadence-tests.trx"
+dotnet build freew\tools\FreeW.PageLayoutShot\FreeW.PageLayoutShot.csproj --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false
+```
+
+The live COM comparison is recorded at `freew-fidelity-corpus\runs\avalonia-body-cadence-word-baseline-20260715`. It still intentionally fails the strict `word-png-default` threshold, but has no missing rows and improves every Avalonia note-placement artifact from the preceding published baseline:
+
+| Renderer / page | Previous mean delta | Current mean delta | Previous changed pixels | Current changed pixels |
+| --- | ---: | ---: | ---: | ---: |
+| Avalonia endnotes p1 | 13.9101 | 9.8187 | 10.918 % | 8.862 % |
+| Avalonia endnotes p2 | 9.0747 | 3.9535 | 6.880 % | 4.379 % |
+| Avalonia footnotes p1 | 14.5454 | 11.0157 | 11.561 % | 9.864 % |
+| Avalonia footnotes p2 | 11.1364 | 7.0421 | 8.662 % | 6.344 % |
+
+The remaining delta is principally glyph raster and final note/body geometry rather than a lost body paragraph or an unformatted reference marker.
