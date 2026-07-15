@@ -474,3 +474,15 @@ fixed layout. FreeW now emits `w:tblLayout w:type="fixed"` in schema order for i
 and reads explicit `autofit` back into the model. The generated repeat-header fixture contains the fixed
 layout element, and the focused table OOXML lane passes 25 tests. A renewed Word PDF export is still
 needed to measure the resulting visual improvement once the live export route is available.
+
+## Follow-up - Avalonia WordArt Fill Semantics
+
+The cached Word WordArt page showed that Avalonia treated the WordArt fill as the text colour and used
+large translucent rectangles for glow. Word renders the fill as the object field, uses contrasting text,
+and keeps effects close to the text. Avalonia now paints solid, gradient, and pattern fills as the field,
+selects text contrast from the field luminance, and does not turn glow into an oversized rectangle.
+
+Cached WordArt evidence at `freew-fidelity-corpus\runs\wordart-clean-chrome-native-baseline-20260715`
+improves the Avalonia watermark-stress page from `18.2309` mean channel delta and `15.949%` changed
+pixels to `15.9988` and `14.070%`. The remaining visible gap is real WordArt deformation/effect fidelity,
+especially `Wave1` and `ArchUp`, rather than field and text-colour semantics.
