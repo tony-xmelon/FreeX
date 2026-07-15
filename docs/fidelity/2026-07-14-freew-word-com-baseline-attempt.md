@@ -349,3 +349,7 @@ Accent, bar, and group-character forms now reserve the base text line only. Thei
 ## Follow-up - Matrix Grid Primitives
 
 Avalonia now uses Word-calibrated matrix column spacing and draws matrix delimiters as brackets spanning the full row grid rather than ordinary one-line text glyphs. The matrix grid in the native page therefore reads as a two-row OfficeMath matrix, with its columns and brackets aligned to the visual structure Word renders.
+
+## Follow-up - Compact Matrix and Array Rows
+
+The shared matrix row gap is now 0.08em rather than 0.28em. This aligns both matrices and equation arrays to Word's compact row cadence and brings the subsequent accent, delimiter, and function rows into the same vertical neighborhood as their Word baseline counterparts.
