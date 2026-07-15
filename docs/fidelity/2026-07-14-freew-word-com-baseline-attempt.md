@@ -398,3 +398,20 @@ WPF now renders note markers at the existing 0.65 scale with a 5 DIP upward text
 The Avalonia body text on the cached Word note pages began one to two pixels above the corresponding Word surface, while the separately composited note region already had the correct physical-page anchor. The existing equation capture had the same two-DIP page-origin correction, but applying it indiscriminately to every note page regressed endnotes page two.
 
 The capture now applies the two-DIP physical-page correction to both footnote pages and to endnotes page one only. The final cached comparison at `freew-fidelity-corpus\\runs\\note-placement-avalonia-page-origin-final-20260715` improves Avalonia endnotes page one from 9.8187 to 8.8705 mean channel delta and footnotes page one from 10.4802 to 9.5917; footnotes page two improves from 6.9432 to 6.0126, while endnotes page two retains its prior 4.2406 result. The source test protects this page-aware capture rule. Strict tolerance still fails because the residual is renderer text and note rasterization fidelity, not capture geometry.
+
+## Follow-up - Avalonia Grayscale Document Text
+
+The cached Word pages and WPF evidence use grayscale antialiasing for text, whereas the Avalonia document surface was using subpixel LCD rendering. A representative body-text crop contained 1,718 coloured fringe pixels in Avalonia and none in either Word or WPF. That rasterization difference inflated every Word comparison without representing a document-formatting difference.
+
+`DocumentView` now explicitly uses Avalonia's grayscale `Antialias` text rendering mode, which also keeps captured document pages device-independent. The focused headless document-view suite passes all 32 tests.
+
+The cached note comparison at `freew-fidelity-corpus\\runs\\note-placement-avalonia-grayscale-20260715` improves all four Avalonia pages while retaining their established physical-page geometry:
+
+| Page | Previous mean delta | Current mean delta | Previous changed pixels | Current changed pixels |
+| --- | ---: | ---: | ---: | ---: |
+| Endnotes p1 | 8.8705 | 8.2054 | 8.028 % | 6.467 % |
+| Endnotes p2 | 4.2406 | 3.7172 | 4.809 % | 3.780 % |
+| Footnotes p1 | 9.5917 | 8.8588 | 8.699 % | 7.016 % |
+| Footnotes p2 | 6.0126 | 5.5144 | 5.616 % | 4.455 % |
+
+The strict equation proof remains green against the cached real-Word PNG at `freew-fidelity-corpus\\runs\\equation-structure-avalonia-grayscale-word-baseline-20260715`: Avalonia improves from `1.9067` mean channel delta and `1.9881%` changed pixels to `1.7195` and `1.5733%`; WPF remains at `2.6924` and `1.9108%`. Note placement remains outside strict tolerance because of remaining glyph and line-cadence differences, not coloured subpixel fringes. Fresh Word COM exports remain deferred while the live export call is unresponsive.
