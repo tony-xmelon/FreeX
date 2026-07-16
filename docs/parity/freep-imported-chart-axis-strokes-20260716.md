@@ -17,9 +17,10 @@ combo charts continue to use the existing black stroke; authored-chart
 defaults remain unchanged.
 
 The PowerPoint reference was sampled directly at the aligned axis ticks and
-returned RGB `137,137,137`. Gridline placement is still a separate residual:
-the FreeP grid is currently one pixel above the PowerPoint grid in this corpus,
-so this slice intentionally leaves its `#D9D9D9` default unchanged.
+returned RGB `137,137,137`. At the time of this slice, gridline placement and
+the `#D9D9D9` default remained a separate residual. That residual was closed
+by the follow-up `freep-imported-cartesian-grid-stroke-fidelity-20260716.md`,
+which applies the measured full-width grid stroke and pixel offset.
 
 ## Verification
 
