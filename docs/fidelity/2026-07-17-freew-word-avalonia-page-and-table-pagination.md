@@ -32,6 +32,20 @@ The strict PNG comparison remains outside tolerance because typography, watermar
 table border/cell geometry still differ. The remaining delta is now a renderer-fidelity problem rather than
 a capture-size or page-break problem.
 
+## Watermark Interoperability Follow-up
+
+The live Word probe exposed one additional DOCX-format defect in the table fixture: its VML
+`fillcolor` and `v:fill/@color` values omitted the CSS `#` prefix. Word therefore interpreted the
+configured gray text watermark as white (`Fill.ForeColor.RGB = 16777215`), making it nearly invisible
+in the PDF, while FreeW rendered the model's intended gray. The writer now emits `#RRGGBB` VML colors.
+A regenerated fixture reports Word's configured gray (`8355711`) through COM and produces a visible
+watermark in the visible-publish PDF.
+
+Avalonia also now uses the same fixed `468pt x 117pt` VML text-path box that FreeW writes, centered
+relative to the page/margin frame, with Word's non-bold text effect and `fitshape`-style width fitting.
+This removes the prior small bold-label approximation. The remaining strict raster delta still includes
+header/body typography and table-cell vertical geometry, so this did not claim a full visual pass.
+
 ## Verification
 
 - `dotnet test freew\\FreeW.App.Presentation.Tests\\FreeW.App.Presentation.Tests.csproj --configuration Release --no-restore --filter "FullyQualifiedName~DocumentViewLayoutPlannerTests"`
@@ -41,3 +55,7 @@ a capture-size or page-break problem.
 - Re-ran `FreeW.PageLayoutShot` and `FreeW.VisualEvidenceSummary` against the fresh visible-Word PNG baseline.
   - The overall strict summary remains nonzero by design; this slice fixed structural pagination and preserved
     the remaining visual deltas for follow-up work.
+- `WatermarkOptionsRoundTripTests`: 12 passed.
+- Live Word COM probe of the regenerated `table-page-composition-stress.docx`:
+  - `Fill.ForeColor.RGB = 8355711`, `Transparency = 0.7799988`, and `Text = TABLE REVIEW`.
+- `TextWatermarkLayoutPlanner`: passed, plus the Avalonia table/evidence source lane (35 passed).
