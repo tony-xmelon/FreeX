@@ -28,6 +28,10 @@ FreeW now writes both levels for scatter charts:
 The fresh Word PNG shows four independent markers with no connecting line. The generated
 package contains four `c:dPt` elements and four matching per-point `a:noFill` elements.
 
+The live Style 4 scatter baseline also has a clean white plot area and reserves a slightly
+wider value-axis band than the generic Cartesian layout. FreeW now suppresses gridlines for
+that scatter style and uses the measured scatter plot-left reserve.
+
 ## Verification
 
 - `ChartRoundTripTests.ScatterChart_EmitsScatterChartWithXValAndYVal`: passed.
