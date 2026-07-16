@@ -51,3 +51,20 @@ Additional verification:
 
 - `ChartSmartArtVisualPlannerTests`: 40/40
 - `ChartRenderingTests`: 18/18
+
+## Follow-up: standard palette and Word-sized columns
+
+The next live Word comparison found two remaining chart-page deltas. FreeW's
+single-series columns occupied about 80% of each category slot while Word used
+about 40%, and Word ignored the FreeW-only colour-scheme extension. The shared
+chart scene now uses the Word-sized 30% category inset. The writer also emits
+standard `c:ser/c:spPr` or per-point `c:dPt` colour overrides, with the series
+property elements ordered before the category/value caches so Word's chart and
+SmartArt parts remain stable across repeated visible-publish exports.
+
+A fresh COM export from the current fixture is retained under
+`freew-fidelity-corpus/runs/word-orgchart-render-next-20260716-orgchart/`.
+Against the matching FreeW page, page 1 improved from mean channel delta
+`6.50` to `5.72`; page 2 remained `3.05`. Repeated Word exports consistently
+render the four pyramid bands, and the chart page now preserves the selected
+mono-blue per-category palette.
