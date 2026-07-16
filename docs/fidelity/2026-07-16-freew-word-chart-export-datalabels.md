@@ -31,3 +31,23 @@ present. That is the next chart-renderer target.
 - `ChartRoundTripTests`: 23/23
 - `ChartSmartArtVisualPlannerTests`: 38/38
 - fresh visible Word export: 1/1
+
+## Renderer follow-up
+
+The shared chart scene now follows the Word baseline's compact plot layout when
+axis titles are visible, positions the category title and legend in the same
+annotation band, and uses the resolved major unit for value-axis labels. The
+scatter scene also pads its numeric category axis and emits minor/major axis
+geometry from the Word-shaped range, including the small intermediate scatter
+axis ticks.
+
+Inline object paragraphs in the WPF host keep their caption text with the
+chart, SmartArt, WordArt, or image when the object crosses a page boundary. In
+the refreshed `chart-smartart-complex` proof, the page means against Word are
+`6.50` (chart page) and `3.05` (pyramid page); the pyramid caption and bands
+now begin together on page 2.
+
+Additional verification:
+
+- `ChartSmartArtVisualPlannerTests`: 40/40
+- `ChartRenderingTests`: 18/18
