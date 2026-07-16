@@ -13,6 +13,7 @@ Word also ignored FreeW text watermarks whose emitted VML text path lacked activ
 
 - `DocxReader` now filters only FreeW's stable watermark shape IDs from header/footer paragraph enumeration, preserving ordinary Word VML and image paragraphs;
 - `FreeW.FidelityRender` reserves a 25 DIP header band and places header/footer overlays in the document margins, matching the Word baseline's body origin;
+- the multi-column compositor uses a fresh single-column diagnostic paginator to identify short paragraphs that would leave a one-line widow at a same-page column boundary, then keeps only those paragraphs intact;
 - `DocxWriter` emits `on="t"` and `fitshape="t"` on the actual VML watermark text path.
 
 ## Evidence
@@ -21,8 +22,13 @@ The refreshed backstage page now places the header at the top margin, starts the
 
 The backstage sample still differs where Word's visible PDF output omits the very-low-opacity (`0.18`) `PRINT COPY` watermark; the custom opacity value is retained rather than silently changed.
 
+The sampled four-page mean delta for the refreshed FreeW render dropped from
+`69.20` to `54.74` after the column-boundary correction. The remaining score is
+dominated by cross-application glyph rasterization and the watermark layer.
+
 ## Verification
 
 - `WatermarkOptionsRoundTripTests`: 12/12
+- `FidelityRenderCompositeTests` + `ColumnLayoutTests`: 14/14
 - fresh FreeW backstage render: 4 pages
 - fresh visible Word export: 1/1 for the watermark probe
