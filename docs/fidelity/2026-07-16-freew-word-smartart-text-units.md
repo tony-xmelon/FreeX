@@ -2,23 +2,34 @@
 
 ## Finding
 
-The live Word SmartArt drawing parts store node text sizes in points. The
-hierarchy probe uses `sz="1100"` (11 pt), while the native four-level pyramid
-uses `sz="1848"` (18.48 pt). FreeW's WPF renderer treated both values as raw
-device-independent pixels and rendered every node at 11 DIPs, making Word's
-SmartArt labels visibly larger than FreeW's.
+The live Word SmartArt drawing parts store nominal node text sizes in points, but
+the native gallery drawing applies different visual scaling during layout. In the
+same-size COM raster, the three-level hierarchy labels measure about 63x27 pixels
+while the corresponding FreeW labels measure 31x14; the pyramid labels measure
+about 35x20 in Word versus 47x27 in FreeW.
 
 ## Fix
 
-`SmartArtNodeVisualPlan` now carries the Word-derived text size in DIPs. The
-default 11 pt size is converted at 96/72, and the native pyramid style applies
-its measured 18.48 pt size. WPF and Avalonia both consume the shared plan value;
-the Avalonia path also stops forcing SmartArt labels bold or truncating them.
+`SmartArtNodeVisualPlan` now carries the renderer-neutral visual size in DIPs.
+The native Word org-chart style uses a measured 22 pt visual label and the native
+pyramid style uses 14 pt. WPF and Avalonia both consume the shared plan value; the
+Avalonia path also stops forcing SmartArt labels bold or truncating them.
+Native org-chart labels are single-line so the larger Word-scale text does not wrap
+inside the fixed gallery boxes.
+
+Fresh raster evidence:
+
+- Word: `freew-fidelity-corpus/runs/smartart-hierarchy-next-20260716/word-png-production-final/chart-smartart-complex_p1.png` and `_p2.png`
+- FreeW: `freew-fidelity-corpus/runs/smartart-hierarchy-next-20260716/freew-smartart-font-final/chart-smartart-complex_p1.png` and `_p2.png`
+
+The final FreeW hierarchy label bounds are 63x26 (`Plan`) and 74x26 (`Build`),
+versus Word's 63x27 and 73x27. Pyramid label bounds differ by at most 2 pixels
+in width or height.
 
 ## Verification
 
-- `ChartSmartArtVisualPlannerTests`: 37/37
-- `SmartArtRenderingTests`: 16/16
+- `ChartSmartArtVisualPlannerTests`: 41/41
+- `SmartArtRenderingTests`: 16/16, including native text sizing and no-wrap behavior
 - `dotnet build freew/FreeW.App.Avalonia/FreeW.App.Avalonia.csproj --configuration Release --no-restore`: passed with 0 warnings and 0 errors
 - Fresh `chart-smartart-complex.docx` FreeW render: 2 pages at `816x1056`; hierarchy and pyramid geometry unchanged, with Word-scale labels visible.
 
