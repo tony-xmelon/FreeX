@@ -46,6 +46,16 @@ relative to the page/margin frame, with Word's non-bold text effect and `fitshap
 This removes the prior small bold-label approximation. The remaining strict raster delta still includes
 header/body typography and table-cell vertical geometry, so this did not claim a full visual pass.
 
+Picture watermarks need a different OOXML representation. Word did not reliably display the old VML
+`v:fill` image watermark, and its VML image fallback ignored the model opacity. The writer now emits the
+watermark image as a centered, behind-document DrawingML header anchor. It derives the image aspect ratio
+from PNG, GIF, BMP, or JPEG bytes, applies the model scale with the same page-size bounds as the Avalonia
+planner, and writes the requested opacity as `a:alphaModFix`. A fresh visible-Word PDF of
+`wordart-picture-watermark-layout.docx` shows the translucent generated image behind the body text and
+below the foreground WordArt. The strict whole-page channel delta improved from `38.564` to `36.851`;
+remaining difference is dominated by the known renderer typography and pagination variance rather than a
+missing or opaque DOCX watermark.
+
 ## Verification
 
 - `dotnet test freew\\FreeW.App.Presentation.Tests\\FreeW.App.Presentation.Tests.csproj --configuration Release --no-restore --filter "FullyQualifiedName~DocumentViewLayoutPlannerTests"`
@@ -59,3 +69,8 @@ header/body typography and table-cell vertical geometry, so this did not claim a
 - Live Word COM probe of the regenerated `table-page-composition-stress.docx`:
   - `Fill.ForeColor.RGB = 8355711`, `Transparency = 0.7799988`, and `Text = TABLE REVIEW`.
 - `TextWatermarkLayoutPlanner`: passed, plus the Avalonia table/evidence source lane (35 passed).
+- `WatermarkOptionsRoundTripTests`: 12 passed, including the behind-document DrawingML anchor, calculated
+  extent, centered alignment, and `alphaModFix` opacity assertions for a picture watermark.
+- `VisualEvidenceDocxSchemaTests|WatermarkVisualPlanner`: 5 passed.
+- Regenerated the 30-file corpus, exported `wordart-picture-watermark-layout.docx` through the running
+  visible Word instance, and rasterized its PDF for the visual confirmation above.
