@@ -17,14 +17,15 @@ gradient outline shape.
 
 | Metric | Before | After |
 | --- | ---: | ---: |
-| WPF vs PowerPoint | 1.2081% | 1.1606% |
-| WPF vs Avalonia | 0.8644% | 0.9375% |
+| WPF vs PowerPoint | 1.2081% | 1.1286% |
+| WPF vs Avalonia | 0.8644% | 0.9487% |
 | Avalonia vs PowerPoint | 1.0888% | 0.9432% |
 
-The PowerPoint reference now has the same continuous-flow behavior as FreeP for
-the corpus text box, including the final line crossing into column 2. The small
-WPF/Avalonia delta increase is the expected renderer-specific text rasterization
-difference; both renderers move closer to the PowerPoint reference.
+The WPF renderer is closer to the PowerPoint reference after switching the
+continuous-flow measurement and placement path to display metrics. Avalonia
+remains unchanged. The final line still crosses into column 2 in both renders,
+although PowerPoint breaks an earlier paragraph at a different word boundary;
+that residual is now isolated to text metrics rather than column placement.
 
 ## Verification
 
