@@ -15,10 +15,10 @@ At 1280x720 with a fresh PowerPoint COM export:
 | Render | Before | After |
 | --- | ---: | ---: |
 | FreeP WPF vs PowerPoint | 3.1236% | 3.1232% |
+| FreeP WPF vs Avalonia | 0.9706% | 0.9706% |
 | FreeP Avalonia vs PowerPoint | 3.0412% | 3.0408% |
-| Avalonia internal comparison | 0.9706% | 0.9706% |
 
-The axis-tick candidate was discarded separately because it regressed WPF to `3.1250%` and Avalonia to `0.9708%`.
+The axis-tick candidate was discarded separately because it regressed WPF vs PowerPoint to `3.1250%` and WPF vs Avalonia to `0.9708%`.
 
 ## Boundary
 
