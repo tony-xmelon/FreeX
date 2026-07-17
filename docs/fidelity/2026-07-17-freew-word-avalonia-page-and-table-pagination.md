@@ -69,6 +69,18 @@ while `wordart-picture-watermark-layout` retains its correctly sized ArchUp labe
 channel delta improved from `25.553` to `25.441`; the whole-page comparator remains dominated by typography,
 body flow, and other drawing differences.
 
+## Landscape Table Baseline
+
+The Word baseline rasterizer had been forcing every PDF page into the dimensions of the first FreeW evidence
+image. That stretched the landscape table fixture into a portrait PNG. It now accepts a width-only mode that
+derives each PDF page height from its native aspect ratio; the baseline runner uses that mode, producing the
+correct `816 x 528` Word surfaces for the table fixture.
+
+The fixture is now explicitly three pages in its expected-output contract and Avalonia publishes page three.
+A fresh visible-Word export confirmed that both engines place rows 7-8, the caption, and closing paragraph on
+page three. `GridTable1Light` was also corrected to use Word's pale `#D9E2F3` header fill rather than the
+incorrect saturated accent blue used by the on-screen catalog.
+
 ## Verification
 
 - `dotnet test freew\\FreeW.App.Presentation.Tests\\FreeW.App.Presentation.Tests.csproj --configuration Release --no-restore --filter "FullyQualifiedName~DocumentViewLayoutPlannerTests"`
