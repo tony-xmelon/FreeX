@@ -20,7 +20,7 @@
 | Category | Implemented | Partial | Not Implemented | Excluded | In-scope Total | **Coverage** |
 |---|---:|---:|---:|---:|---:|---:|
 | Math / Trig | 78 | 0 | 0 | 0 | 78 | **100%** |
-| Statistical | 139 | 0 | 0 | 0 | 139 | **100%** |
+| Statistical | 140 | 0 | 0 | 0 | 140 | **100%** |
 | Logical | 11 | 0 | 0 | 0 | 11 | **100%** |
 | Lookup / Reference | 39 | 0 | 0 | 0 | 39 | **100%** |
 | Text | 51 | 0 | 0 | 0 | 51 | **100%** |
@@ -30,7 +30,7 @@
 | Lambda / Advanced | 9 | 0 | 0 | 0 | 9 | **100%** |
 | Database | 12 | 0 | 0 | 0 | 12 | **100%** |
 | Engineering / Cube / Cloud | 53 | 0 | 0 | 9 | 53 | **100%** |
-| **TOTAL** | **491** | **0** | **0** | **9** | **491** | **100%** |
+| **TOTAL** | **492** | **0** | **0** | **9** | **492** | **100%** |
 
 Coverage = (Implemented + Partial) / In-scope Total. Excluded functions are not counted in the in-scope total.
 
@@ -150,7 +150,7 @@ Post-sweep hardening also pins `ASC`, `DBCS`, and `JIS` to Excel's non-DBCS lang
 
 ## Statistical
 
-**Coverage: 138/138 (100%)**
+**Coverage: 139/139 (100%)**
 
 | Function | Status |
 |---|---|
@@ -282,6 +282,7 @@ Post-sweep hardening also pins `ASC`, `DBCS`, and `JIS` to Excel's non-DBCS lang
 | T.TEST | Implemented |
 | TDIST | Implemented |
 | TINV | Implemented |
+| TRIMMEAN | Implemented |
 | TTEST | Implemented |
 | VAR | Implemented |
 | VAR.P | Implemented |
