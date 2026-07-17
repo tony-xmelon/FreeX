@@ -120,6 +120,19 @@ pages. The focused normalizer now records eight matched Word comparisons (four W
 missing-page or cross-renderer field-signature failure. Strict raster deltas remain, including `11.3028` for
 Avalonia page four and `5.9292` for WPF page four, and remain renderer typography/layout follow-up work.
 
+## Word Chapter-Numbered PAGE Fields
+
+The same field fixture exposed a DOCX interoperability defect that was hidden by FreeW's own live field
+resolver. FreeW wrote `w:pgNumType/@w:chapStyle`, but its built-in heading style had neither an outline level
+nor a style-owned link to the multilevel numbering definition. Word therefore rendered `PAGE` as `2`, while
+FreeW correctly resolved its model as `1-2`.
+
+For an explicitly chapter-numbered document, the writer now emits the built-in heading's `w:outlineLvl`,
+style-level `w:numPr`, and a matching `w:lvl/w:pStyle` association in `word/numbering.xml`. The link is scoped
+to the configured Heading 1-3 chapter style, so ordinary multilevel lists retain their existing definitions.
+A regenerated fixture exported through the visible running Word instance now shows `Even header page 1-2 of 4`,
+matching WPF's four-page composite output.
+
 ## WPF Page Border Calibration
 
 The focused WordArt/picture-watermark comparison exposed a WPF evidence-capture conversion error: the page
@@ -204,6 +217,9 @@ Against the visible Word table-composition baseline, WPF mean channel deltas imp
 - `VisualEvidencePageLayoutShotSourceTests`: 4 passed, including the page-four capture guard.
 - Rebuilt `FreeW.PageLayoutShot`, regenerated the focused fixture, and exported
   `field-page-number-variants.docx` through the running visible Word process: 4 PDF/PNG pages.
+- `PageNumberFormatRoundTripTests`: 3 passed, including the chapter-heading outline, style-numbering, and
+  numbering-level association guards. A regenerated field fixture exported through the visible Word instance
+  renders `Even header page 1-2 of 4`, matching the WPF composite output.
 - `VisualEvidenceFidelityRenderSourceTests|FidelityRenderCompositeTests`: 11 passed after the WPF point-to-DIP
   and double-border guards.
 - Regenerated `wordart-picture-watermark-layout` through `FreeW.FidelityRender` and compared it with the
