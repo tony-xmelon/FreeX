@@ -46,6 +46,17 @@ relative to the page/margin frame, with Word's non-bold text effect and `fitshap
 This removes the prior small bold-label approximation. The remaining strict raster delta still includes
 header/body typography and table-cell vertical geometry, so this did not claim a full visual pass.
 
+The follow-up visible-Word probe found that the VML watermark anchor paragraph itself was part of the
+remaining page-flow drift. The writer had placed it before real header content, which gave Word a leading
+empty line; even after ordering it last, the floating anchor still reserved a normal header line and pushed
+the first table row down. The writer now emits the visible header paragraphs first and gives both VML and
+DrawingML watermark anchors an exact one-twip line. This keeps the watermark floating while removing its
+unwanted contribution to Word's body flow. Avalonia also now aligns a footer's line-box bottom, rather
+than its text origin, with `w:pgMar/@w:footer`. Fresh visible-Word comparisons for the table fixture
+improved the Avalonia mean channel deltas to `25.1964`, `34.2953`, and `26.5139` on pages 1-3. The strict
+comparison remains intentionally failing for renderer typography and fine table geometry, not DOCX header
+or watermark flow.
+
 Picture watermarks need a different OOXML representation. Word did not reliably display the old VML
 `v:fill` image watermark, and its VML image fallback ignored the model opacity. The writer now emits the
 watermark image as a centered, behind-document DrawingML header anchor. It derives the image aspect ratio
@@ -96,6 +107,8 @@ an additional table-plan or fill-signature mismatch between the two FreeW render
   - The overall strict summary remains nonzero by design; this slice fixed structural pagination and preserved
     the remaining visual deltas for follow-up work.
 - `WatermarkOptionsRoundTripTests`: 12 passed.
+- `WatermarkOptionsRoundTripTests`: 13 passed after the anchor-order/one-twip regression guard.
+- `DocumentViewHeaderFooterTests`: 11 passed, including footer line-box anchoring.
 - Live Word COM probe of the regenerated `table-page-composition-stress.docx`:
   - `Fill.ForeColor.RGB = 8355711`, `Transparency = 0.7799988`, and `Text = TABLE REVIEW`.
 - `TextWatermarkLayoutPlanner`: passed, plus the Avalonia table/evidence source lane (35 passed).
