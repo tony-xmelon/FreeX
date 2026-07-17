@@ -56,6 +56,19 @@ below the foreground WordArt. The strict whole-page channel delta improved from 
 remaining difference is dominated by the known renderer typography and pagination variance rather than a
 missing or opaque DOCX watermark.
 
+## Floating WordArt Calibration
+
+The refreshed visible-Word corpus also isolated a renderer gap in the floating WordArt fixtures. Avalonia
+had recorded glow metadata but never drew it for WordArt, and it used a single 80% text-width fit for every
+DrawingML warp. Word uses a wider fill for the `Wave1` text path while retaining the narrower side margins
+for `ArchUp` and straight text. Avalonia now draws the same two-pass blue/gold glow used for floating shapes
+and uses a 94% text-box target only for `Wave1`; the existing 80% target remains for the other paths.
+
+The fresh `wordart-watermark-stress` capture visibly matches Word's filled Wave1 label and halo more closely,
+while `wordart-picture-watermark-layout` retains its correctly sized ArchUp label. The strict WordArt stress
+channel delta improved from `25.553` to `25.441`; the whole-page comparator remains dominated by typography,
+body flow, and other drawing differences.
+
 ## Verification
 
 - `dotnet test freew\\FreeW.App.Presentation.Tests\\FreeW.App.Presentation.Tests.csproj --configuration Release --no-restore --filter "FullyQualifiedName~DocumentViewLayoutPlannerTests"`
@@ -74,3 +87,7 @@ missing or opaque DOCX watermark.
 - `VisualEvidenceDocxSchemaTests|WatermarkVisualPlanner`: 5 passed.
 - Regenerated the 30-file corpus, exported `wordart-picture-watermark-layout.docx` through the running
   visible Word instance, and rasterized its PDF for the visual confirmation above.
+- `DocumentViewFloatingFO3Tests`: 49 passed, including a headless capture proving `GlowBlue` WordArt paints
+  the expected blue halo.
+- Regenerated the Avalonia page-shot corpus and compared it against the fresh visible-Word 30-document PNG
+  baseline after the floating WordArt calibration.
