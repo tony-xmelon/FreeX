@@ -57,6 +57,13 @@ improved the Avalonia mean channel deltas to `25.1964`, `34.2953`, and `26.5139`
 comparison remains intentionally failing for renderer typography and fine table geometry, not DOCX header
 or watermark flow.
 
+A follow-up COM inspection established the remaining header/footer renderer boundary precisely: Word reads
+the fixture's `18pt` header/footer distances, `42pt` top/bottom margins, and the model-default `8pt`
+paragraph after-spacing in both stories. Avalonia now applies `SpaceBefore`/`SpaceAfter` while flowing
+header/footer paragraphs and anchors the entire footer story (including trailing spacing) at the configured
+bottom distance. This makes multi-paragraph header/footer geometry and footer placement model-correct;
+reserving the corresponding header collision extent for body pagination remains the next renderer task.
+
 Picture watermarks need a different OOXML representation. Word did not reliably display the old VML
 `v:fill` image watermark, and its VML image fallback ignored the model opacity. The writer now emits the
 watermark image as a centered, behind-document DrawingML header anchor. It derives the image aspect ratio
@@ -109,6 +116,8 @@ an additional table-plan or fill-signature mismatch between the two FreeW render
 - `WatermarkOptionsRoundTripTests`: 12 passed.
 - `WatermarkOptionsRoundTripTests`: 13 passed after the anchor-order/one-twip regression guard.
 - `DocumentViewHeaderFooterTests`: 11 passed, including footer line-box anchoring.
+- `DocumentViewHeaderFooterTests`: 13 passed after header/footer paragraph spacing and trailing-footer
+  extent coverage.
 - Live Word COM probe of the regenerated `table-page-composition-stress.docx`:
   - `Fill.ForeColor.RGB = 8355711`, `Transparency = 0.7799988`, and `Text = TABLE REVIEW`.
 - `TextWatermarkLayoutPlanner`: passed, plus the Avalonia table/evidence source lane (35 passed).
