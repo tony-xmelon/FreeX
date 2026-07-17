@@ -147,6 +147,19 @@ from `23.0846`, `36.2661`, and `27.7128` to `21.3800`, `34.5094`, and `25.9561` 
 comparison remains outside tolerance because the remaining table text, row height, and page-flow differences
 are independent of the header/footer placement correction.
 
+## WPF Multilevel Outline Indentation
+
+The visible-Word field fixture showed that WPF's synthetic multilevel marker was using the default `ListItem`
+gutter and did not inherit its heading run's colour and weight. The generated DOCX establishes the intended
+numbering geometry explicitly: level zero is `720` twips left with `360` twips hanging, then each deeper level
+adds `720` twips. WPF now collapses the unused built-in marker gutter, compensates for its retained `36 DIP`
+content inset, and applies that hanging-indent geometry to each synthetic-marker paragraph. The marker also
+inherits the leading run's font family, size, stretch, style, weight, and foreground.
+
+On `field-page-number-variants` page one, the first blue heading pixel now lands at `x=121` in both Word and
+WPF. The whole-page mean channel delta improved from `26.6138` to `26.4073`; the remaining page-scale
+difference is largely body typography and line-flow outside the corrected list heading.
+
 ## Verification
 
 - `dotnet test freew\\FreeW.App.Presentation.Tests\\FreeW.App.Presentation.Tests.csproj --configuration Release --no-restore --filter "FullyQualifiedName~DocumentViewLayoutPlannerTests"`
@@ -189,3 +202,7 @@ are independent of the header/footer placement correction.
   guards; `FreeW.FidelityRender` rebuilt successfully.
 - Regenerated `table-page-composition-stress` through `FreeW.FidelityRender` and compared all three pages
   with the existing visible-Word PNG baseline: `21.3800`, `34.5094`, and `25.9561` mean channel deltas.
+- `MultiLevelMarkerTests`: 12 passed, including the Word outline hanging-indent and marker-style regression
+  guard; `FreeW.FidelityRender` rebuilt successfully.
+- Regenerated the four-page `field-page-number-variants` fixture through `FreeW.FidelityRender`: its page-one
+  first blue heading pixel matched Word at `x=121`, and its mean channel delta was `26.4073`.
