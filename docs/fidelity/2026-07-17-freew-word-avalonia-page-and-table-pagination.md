@@ -198,6 +198,18 @@ an experiment using `Table.BreakPageBefore` alone stranded each repeated header 
 Against the visible Word table-composition baseline, WPF mean channel deltas improved from `21.3800`,
 `34.5094`, and `25.9561` to `20.7051`, `34.4349`, and `25.6809` across pages 1-3.
 
+## WPF Continuation Page Body Origin
+
+The WPF paginator already positioned planned table continuations at the page body origin. The fidelity
+compositor then added an extra `36 DIP` header band only when the editable page panel had no shard for that
+physical page. A multi-page table is represented by one model block, so pages two and three followed that
+fallback and were pushed down despite already carrying the FlowDocument page padding. The compositor now draws
+the paginator page directly on every physical page and composes header/footer stories independently.
+
+In the visible Word table baseline, the continuation table top moved from `y=92` to `y=56`, matching the
+Word body origin. Mean channel deltas improved to `29.2002` on page two and `21.7219` on page three; remaining
+differences are table-cell typography, sizing, watermark, and broader WPF text flow rather than page placement.
+
 ## Verification
 
 - `dotnet test freew\\FreeW.App.Presentation.Tests\\FreeW.App.Presentation.Tests.csproj --configuration Release --no-restore --filter "FullyQualifiedName~DocumentViewLayoutPlannerTests"`
@@ -255,3 +267,5 @@ Against the visible Word table-composition baseline, WPF mean channel deltas imp
   `TablePageCompositionStress_RendersWordLikePhysicalSegments`: 3 passed.
 - Regenerated `table-page-composition-stress` through `FreeW.FidelityRender`: Word-baselined WPF deltas were
   `20.7051`, `34.4349`, and `25.6809` across pages 1-3.
+- Rebuilt and regenerated `table-page-composition-stress` after removing the continuation-page compositor
+  offset: the visible Word comparison measured `20.7051`, `29.2002`, and `21.7219` across pages 1-3.
