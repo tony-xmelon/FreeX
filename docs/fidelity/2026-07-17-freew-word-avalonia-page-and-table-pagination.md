@@ -133,6 +133,20 @@ Word. Its whole-page mean channel delta for `wordart-picture-watermark-layout` i
 `17.4986`; it remains outside the strict threshold because body text, floating WordArt placement, and image
 composition still differ at page scale. This is a renderer calibration change only, not a DOCX validity issue.
 
+## WPF Explicit Header and Footer Distances
+
+The table-composition fixture revealed a second WPF evidence-capture anchor error. When a document specified
+`HeaderDistancePt` or `FooterDistancePt`, the capture compositor used the page margins instead of Word's
+page-edge distance. Its page-one header therefore overprinted the title, and its footer was too close to the
+bottom edge. The compositor now anchors explicit headers at `HeaderDistancePt` from the page top and reserves
+the header/footer band above the configured footer distance; the existing margin-based fallback is retained
+for implicit distances.
+
+On the fresh visible-Word comparison for `table-page-composition-stress`, WPF mean channel deltas improved
+from `23.0846`, `36.2661`, and `27.7128` to `21.3800`, `34.5094`, and `25.9561` across pages 1-3. The strict
+comparison remains outside tolerance because the remaining table text, row height, and page-flow differences
+are independent of the header/footer placement correction.
+
 ## Verification
 
 - `dotnet test freew\\FreeW.App.Presentation.Tests\\FreeW.App.Presentation.Tests.csproj --configuration Release --no-restore --filter "FullyQualifiedName~DocumentViewLayoutPlannerTests"`
@@ -171,3 +185,7 @@ composition still differ at page scale. This is a renderer calibration change on
 - Regenerated `wordart-picture-watermark-layout` through `FreeW.FidelityRender` and compared it with the
   existing visible-Word PNG baseline: mean channel delta `17.4986` (strict comparison remains expected to
   fail for the known typography and drawing differences).
+- `VisualEvidenceFidelityRenderSourceTests`: 2 passed after the explicit header/footer page-edge-distance
+  guards; `FreeW.FidelityRender` rebuilt successfully.
+- Regenerated `table-page-composition-stress` through `FreeW.FidelityRender` and compared all three pages
+  with the existing visible-Word PNG baseline: `21.3800`, `34.5094`, and `25.9561` mean channel deltas.
