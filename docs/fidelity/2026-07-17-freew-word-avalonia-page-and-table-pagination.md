@@ -48,14 +48,17 @@ header/body typography and table-cell vertical geometry, so this did not claim a
 
 The follow-up visible-Word probe found that the VML watermark anchor paragraph itself was part of the
 remaining page-flow drift. The writer had placed it before real header content, which gave Word a leading
-empty line; even after ordering it last, the floating anchor still reserved a normal header line and pushed
-the first table row down. The writer now emits the visible header paragraphs first and gives both VML and
-DrawingML watermark anchors an exact one-twip line. This keeps the watermark floating while removing its
-unwanted contribution to Word's body flow. Avalonia also now aligns a footer's line-box bottom, rather
-than its text origin, with `w:pgMar/@w:footer`. Fresh visible-Word comparisons for the table fixture
-improved the Avalonia mean channel deltas to `25.1964`, `34.2953`, and `26.5139` on pages 1-3. The strict
-comparison remains intentionally failing for renderer typography and fine table geometry, not DOCX header
-or watermark flow.
+empty line; even after ordering it last and constraining it to one twip, Word still reserved a header line
+for its separate paragraph. The writer now appends the VML or DrawingML watermark run to the final visible
+header paragraph. Watermark-only headers retain a minimal one-twip anchor paragraph. The reader strips only
+FreeW's recognized watermark run, so visible header text and ordinary header images survive the round trip.
+
+A fresh visible-Word export confirms one header paragraph rather than two, keeps the watermark visible, and
+moves the repeated table's page-2/page-3 first row from `90.6pt` to `84.6pt`. Avalonia also now aligns a
+footer's line-box bottom, rather than its text origin, with `w:pgMar/@w:footer`. Against this corrected
+Word baseline, the Avalonia mean channel deltas are `27.0948`, `32.9496`, and `25.7533` on pages 1-3. The
+strict comparison remains intentionally failing for renderer typography and fine table geometry, not DOCX
+header or watermark flow.
 
 A follow-up COM inspection established the remaining header/footer renderer boundary precisely: Word reads
 the fixture's `18pt` header/footer distances, `42pt` top/bottom margins, and the model-default `8pt`
@@ -115,11 +118,14 @@ an additional table-plan or fill-signature mismatch between the two FreeW render
     the remaining visual deltas for follow-up work.
 - `WatermarkOptionsRoundTripTests`: 12 passed.
 - `WatermarkOptionsRoundTripTests`: 13 passed after the anchor-order/one-twip regression guard.
+- `WatermarkOptionsRoundTripTests`: 14 passed after the inline-anchor and picture-watermark header-content
+  regression guards.
 - `DocumentViewHeaderFooterTests`: 11 passed, including footer line-box anchoring.
 - `DocumentViewHeaderFooterTests`: 13 passed after header/footer paragraph spacing and trailing-footer
   extent coverage.
 - Live Word COM probe of the regenerated `table-page-composition-stress.docx`:
   - `Fill.ForeColor.RGB = 8355711`, `Transparency = 0.7799988`, and `Text = TABLE REVIEW`.
+  - Default header paragraph count is `1`; repeated table rows begin at `84.6pt` on pages 2 and 3.
 - `TextWatermarkLayoutPlanner`: passed, plus the Avalonia table/evidence source lane (35 passed).
 - `WatermarkOptionsRoundTripTests`: 12 passed, including the behind-document DrawingML anchor, calculated
   extent, centered alignment, and `alphaModFix` opacity assertions for a picture watermark.
