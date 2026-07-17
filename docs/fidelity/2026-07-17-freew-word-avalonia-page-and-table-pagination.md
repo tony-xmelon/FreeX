@@ -81,6 +81,11 @@ A fresh visible-Word export confirmed that both engines place rows 7-8, the capt
 page three. `GridTable1Light` was also corrected to use Word's pale `#D9E2F3` header fill rather than the
 incorrect saturated accent blue used by the on-screen catalog.
 
+Finally, the DOCX reader recognizes the writer's generated `#D9E2F3` header and `#F2F2F2` band fills as
+style-derived when reading a named table style. That keeps the serialized WPF evidence and direct Avalonia
+evidence semantically aligned. The refreshed normalizer now reports only strict Word PNG deltas, rather than
+an additional table-plan or fill-signature mismatch between the two FreeW renderers.
+
 ## Verification
 
 - `dotnet test freew\\FreeW.App.Presentation.Tests\\FreeW.App.Presentation.Tests.csproj --configuration Release --no-restore --filter "FullyQualifiedName~DocumentViewLayoutPlannerTests"`
