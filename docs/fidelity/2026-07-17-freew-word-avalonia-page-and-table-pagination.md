@@ -133,6 +133,20 @@ to the configured Heading 1-3 chapter style, so ordinary multilevel lists retain
 A regenerated fixture exported through the visible running Word instance now shows `Even header page 1-2 of 4`,
 matching WPF's four-page composite output.
 
+## Reference Page-Break Fidelity
+
+The references fixture uncovered a reader normalization that contradicted the live Word baseline. An empty
+`w:pageBreakBefore` paragraph after the citation/authority run was being moved onto the first preceding
+`CITATION` paragraph. Word keeps the citations on page one, then starts the following authority paragraph on
+page two. The reader now preserves the serialized break location, which also keeps regenerated table-of-
+authorities page references at Word's physical pages (`1, 2` for the case and `1` for the statute).
+
+WPF additionally collapses a truly empty page-break paragraph to zero height, unlike Word's normal blank line
+box at the top of the new page. The editor now places a transparent, tagged non-breaking-space layout spacer
+only in that case and drops it again during commit. In the focused visible-Word comparison,
+`references-heavy-fields` page two improved from `28.3193` to `20.035` mean channel delta and page three from
+`14.7141` to `6.8075`; page one now passes the strict baseline.
+
 ## WPF Page Border Calibration
 
 The focused WordArt/picture-watermark comparison exposed a WPF evidence-capture conversion error: the page
@@ -220,6 +234,9 @@ Against the visible Word table-composition baseline, WPF mean channel deltas imp
 - `PageNumberFormatRoundTripTests`: 3 passed, including the chapter-heading outline, style-numbering, and
   numbering-level association guards. A regenerated field fixture exported through the visible Word instance
   renders `Even header page 1-2 of 4`, matching the WPF composite output.
+- `ReferencePageBreakRoundTripTests`: passed, preserving an empty page-break-before paragraph after a
+  `CITATION` field. `PageBreakRenderTests`: 3 passed, including the invisible layout spacer and edit/commit
+  round-trip guard. The full Core IO suite passed: 1,039 tests.
 - `VisualEvidenceFidelityRenderSourceTests|FidelityRenderCompositeTests`: 11 passed after the WPF point-to-DIP
   and double-border guards.
 - Regenerated `wordart-picture-watermark-layout` through `FreeW.FidelityRender` and compared it with the
