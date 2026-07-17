@@ -107,6 +107,19 @@ style-derived when reading a named table style. That keeps the serialized WPF ev
 evidence semantically aligned. The refreshed normalizer now reports only strict Word PNG deltas, rather than
 an additional table-plan or fill-signature mismatch between the two FreeW renderers.
 
+## Field Page Count Correction
+
+The fresh full-corpus Word capture found that `field-page-number-variants.docx` is four pages, while the
+shared evidence contract and Avalonia capture had been capped at three. WPF had already produced the fourth
+page, so the capped Avalonia run emitted `NUMPAGES=3` and silently omitted the final even-page header/footer.
+
+The field fixture now caches `NUMPAGES=4`, the shared scenario requires four outputs, the Avalonia shot
+captures page four at the next document-surface offset, and the Word baseline planner captures up to four
+pages per generated fixture. A regenerated DOCX exported through the running Word process as four PDF/PNG
+pages. The focused normalizer now records eight matched Word comparisons (four WPF and four Avalonia) with no
+missing-page or cross-renderer field-signature failure. Strict raster deltas remain, including `11.3028` for
+Avalonia page four and `5.9292` for WPF page four, and remain renderer typography/layout follow-up work.
+
 ## Verification
 
 - `dotnet test freew\\FreeW.App.Presentation.Tests\\FreeW.App.Presentation.Tests.csproj --configuration Release --no-restore --filter "FullyQualifiedName~DocumentViewLayoutPlannerTests"`
@@ -136,3 +149,7 @@ an additional table-plan or fill-signature mismatch between the two FreeW render
   the expected blue halo.
 - Regenerated the Avalonia page-shot corpus and compared it against the fresh visible-Word 30-document PNG
   baseline after the floating WordArt calibration.
+- `VisualEvidencePlannerTests`: 122 passed after the four-page field contract update.
+- `VisualEvidencePageLayoutShotSourceTests`: 4 passed, including the page-four capture guard.
+- Rebuilt `FreeW.PageLayoutShot`, regenerated the focused fixture, and exported
+  `field-page-number-variants.docx` through the running visible Word process: 4 PDF/PNG pages.
