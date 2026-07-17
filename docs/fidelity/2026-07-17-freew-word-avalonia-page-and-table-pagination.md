@@ -120,6 +120,19 @@ pages. The focused normalizer now records eight matched Word comparisons (four W
 missing-page or cross-renderer field-signature failure. Strict raster deltas remain, including `11.3028` for
 Avalonia page four and `5.9292` for WPF page four, and remain renderer typography/layout follow-up work.
 
+## WPF Page Border Calibration
+
+The focused WordArt/picture-watermark comparison exposed a WPF evidence-capture conversion error: the page
+border thickness converted points to DIPs twice. A `2.25pt` Word border was therefore painted as `4 DIP`
+instead of the expected `3 DIP`. The capture path now uses the shared `PageLayout.PointsToDip` conversion and
+also paints the inner stroke for the model's `Double` page-border style, matching the existing Avalonia
+preview behavior.
+
+The refreshed visible-Word comparison keeps the page-edge inset and two-stroke border visually aligned with
+Word. Its whole-page mean channel delta for `wordart-picture-watermark-layout` improved from `18.2110` to
+`17.4986`; it remains outside the strict threshold because body text, floating WordArt placement, and image
+composition still differ at page scale. This is a renderer calibration change only, not a DOCX validity issue.
+
 ## Verification
 
 - `dotnet test freew\\FreeW.App.Presentation.Tests\\FreeW.App.Presentation.Tests.csproj --configuration Release --no-restore --filter "FullyQualifiedName~DocumentViewLayoutPlannerTests"`
@@ -153,3 +166,8 @@ Avalonia page four and `5.9292` for WPF page four, and remain renderer typograph
 - `VisualEvidencePageLayoutShotSourceTests`: 4 passed, including the page-four capture guard.
 - Rebuilt `FreeW.PageLayoutShot`, regenerated the focused fixture, and exported
   `field-page-number-variants.docx` through the running visible Word process: 4 PDF/PNG pages.
+- `VisualEvidenceFidelityRenderSourceTests|FidelityRenderCompositeTests`: 11 passed after the WPF point-to-DIP
+  and double-border guards.
+- Regenerated `wordart-picture-watermark-layout` through `FreeW.FidelityRender` and compared it with the
+  existing visible-Word PNG baseline: mean channel delta `17.4986` (strict comparison remains expected to
+  fail for the known typography and drawing differences).
