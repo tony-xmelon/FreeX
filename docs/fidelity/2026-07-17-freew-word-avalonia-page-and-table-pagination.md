@@ -160,6 +160,17 @@ On `field-page-number-variants` page one, the first blue heading pixel now lands
 WPF. The whole-page mean channel delta improved from `26.6138` to `26.4073`; the remaining page-scale
 difference is largely body typography and line-flow outside the corrected list heading.
 
+## WPF Paginated Table Cell Spacing
+
+The table pagination planner already accounted for Word's `tblCellSpacing` as a leading and trailing gap
+around every row, but the WPF renderer discarded that authored spacing on every physical table segment. The
+rendered WPF tables now preserve the model's cell-spacing value, including repeated-header segments, so their
+visible cell gaps and planned occupied row height agree. The page-breaking `Section` wrapper remains required:
+an experiment using `Table.BreakPageBefore` alone stranded each repeated header at the preceding page's bottom.
+
+Against the visible Word table-composition baseline, WPF mean channel deltas improved from `21.3800`,
+`34.5094`, and `25.9561` to `20.7051`, `34.4349`, and `25.6809` across pages 1-3.
+
 ## Verification
 
 - `dotnet test freew\\FreeW.App.Presentation.Tests\\FreeW.App.Presentation.Tests.csproj --configuration Release --no-restore --filter "FullyQualifiedName~DocumentViewLayoutPlannerTests"`
@@ -206,3 +217,8 @@ difference is largely body typography and line-flow outside the corrected list h
   guard; `FreeW.FidelityRender` rebuilt successfully.
 - Regenerated the four-page `field-page-number-variants` fixture through `FreeW.FidelityRender`: its page-one
   first blue heading pixel matched Word at `x=121`, and its mean channel delta was `26.4073`.
+- `TableRepeatHeader_RenderedRows_DoNotRoundTripIntoModel`,
+  `TablePagination_WithoutRepeatHeader_RendersPlannedPageBreakSegments`, and
+  `TablePageCompositionStress_RendersWordLikePhysicalSegments`: 3 passed.
+- Regenerated `table-page-composition-stress` through `FreeW.FidelityRender`: Word-baselined WPF deltas were
+  `20.7051`, `34.4349`, and `25.6809` across pages 1-3.
