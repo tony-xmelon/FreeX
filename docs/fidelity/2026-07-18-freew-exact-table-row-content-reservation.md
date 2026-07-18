@@ -17,6 +17,15 @@ WPF composites for `table-pagination-repeat-header.docx`:
 | 1 | `5.1924% -> 4.6486%` | `7.9717% -> 7.0493%` |
 | 2 | `4.5939% -> 3.7978%` | `6.9466% -> 5.3814%` |
 
+The same current-main WPF artifact improved all three pages of the independent
+exact-row composition-stress fixture (`table-page-composition-stress.docx`):
+
+| Page | Whole page | Table ROI `(60,55)-(755,440)` |
+| --- | --- | --- |
+| 1 | `8.4124% -> 7.1167%` | `11.6843% -> 9.5974%` |
+| 2 | `11.1179% -> 9.1889%` | `16.8849% -> 13.7622%` |
+| 3 | `8.2834% -> 7.0188%` | `12.3089% -> 10.2832%` |
+
 The complex-table control (`table-layout-complex.docx`) was rendered from a
 fresh same-main baseline and candidate: its complete 816x1056 PNG was
 byte-identical (`563A12F8...5151`) and its whole page / table ROI remained
