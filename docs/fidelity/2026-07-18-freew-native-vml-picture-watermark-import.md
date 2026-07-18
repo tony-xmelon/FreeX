@@ -21,7 +21,7 @@ Both common VML image encodings are accepted:
 
 ## Verification
 
-`WatermarkOptionsRoundTripTests` passes 17/17. The native-picture test writes a
-picture watermark, removes `docProps/custom.xml`, and verifies that `DocxReader`
+`WatermarkOptionsRoundTripTests` passes 18/18. The native-picture tests write
+picture watermarks, remove `docProps/custom.xml`, and verify that `DocxReader`
 rehydrates the original bytes from `word/_rels/header1.xml.rels`, along with
-the VML opacity and rotation.
+the VML opacity and rotation for both relationship encodings.
