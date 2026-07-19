@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 122,
-    "both": 116,
+    "totalCommands": 125,
+    "both": 119,
     "wpfOnly": 0,
     "avaloniaOnly": 6,
     "missingWpf": 6,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 116,
+    "shared": 119,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 6,
@@ -2006,6 +2006,108 @@
           "groupId": "animation-effects",
           "group": "Animation",
           "label": "Fly Out",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.exit.split",
+      "label": "Split Out",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Split Out",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Split Out",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.exit.wipe",
+      "label": "Wipe Out",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Wipe Out",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Wipe Out",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.exit.zoom-out",
+      "label": "Zoom Out",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Zoom Out",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Zoom Out",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
