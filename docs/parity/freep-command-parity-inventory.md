@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 158 | 152 | 0 | 6 | 6 | 0 | 0 | 0 | 152 | 0 | 0 | 6 | 0 | 91 |
+| 186 | 180 | 0 | 6 | 6 | 0 | 0 | 0 | 180 | 0 | 0 | 6 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -235,30 +235,58 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.theme.slice` | Slice | Yes | Yes | none | shared | design/themes (RibbonButton) | design/themes (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.advance-after` | After | Yes | Yes | none | shared | transitions/transition-timing (RibbonComboBox) | transitions/transition-timing (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.advance-on-click` | On Mouse Click | Yes | Yes | none | shared | transitions/transition-timing (RibbonToggleButton) | transitions/transition-timing (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.airplane` | Airplane | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.apply-all` | Apply To All | Yes | Yes | none | shared | transitions/transition-timing (RibbonButton) | transitions/transition-timing (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.blinds` | Blinds | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.box` | Box | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.comb` | Comb | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.conveyor` | Conveyor | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.cover` | Cover | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.crush` | Crush | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.cube` | Cube | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.curtains` | Curtains | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.cut` | Cut | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.dissolve` | Dissolve | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.doors` | Doors | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.drape` | Drape | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.duration` | Duration | Yes | Yes | none | shared | transitions/transition-timing (RibbonComboBox) | transitions/transition-timing (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.fade` | Fade | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.ferris` | Ferris | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.flash` | Flash | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.flip` | Flip | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.fly` | Fly | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.flythrough` | Fly Through | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.fracture` | Fracture | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.gallery` | Gallery | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.glitter` | Glitter | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.honeycomb` | Honeycomb | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.more` | More | Yes | Yes | none | shared | transitions/transition-more (RibbonDropdown) | transitions/transition-more (RibbonDropdown) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.morph` | Morph | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.none` | None | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.orbit` | Orbit | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.origami` | Origami | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.page-curl-double` | Page Curl Double | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.page-curl-single` | Page Curl Single | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.pan` | Pan | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.peel-off` | Peel Off | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.prestige` | Prestige | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.prism` | Prism | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.push` | Push | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.random` | Random | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.random-bars` | Random Bars | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.reveal` | Reveal | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.ripple` | Ripple | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.rotate` | Rotate | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.shred` | Shred | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.split` | Split | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.strips` | Strips | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.switch` | Switch | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.uncover` | Uncover | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.vortex` | Vortex | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.warp` | Warp | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.wheel` | Wheel | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.wheel-reverse` | Wheel Reverse | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.wind` | Wind | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.window` | Window | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.wipe` | Wipe | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.zoom` | Zoom | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
