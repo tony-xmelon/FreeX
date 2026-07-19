@@ -29,8 +29,8 @@
 | Information | 19 | 0 | 0 | 0 | 19 | **100%** |
 | Lambda / Advanced | 9 | 0 | 0 | 0 | 9 | **100%** |
 | Database | 12 | 0 | 0 | 0 | 12 | **100%** |
-| Engineering / Cube / Cloud | 53 | 0 | 0 | 9 | 53 | **100%** |
-| **TOTAL** | **492** | **0** | **0** | **9** | **492** | **100%** |
+| Engineering / Cube / Cloud | 57 | 0 | 0 | 9 | 57 | **100%** |
+| **TOTAL** | **496** | **0** | **0** | **9** | **496** | **100%** |
 
 Coverage = (Implemented + Partial) / In-scope Total. Excluded functions are not counted in the in-scope total.
 
@@ -592,11 +592,15 @@ Post-sweep hardening also pins `ASC`, `DBCS`, and `JIS` to Excel's non-DBCS lang
 
 ## Engineering / Cube / Cloud
 
-**Coverage: 53/53 in-scope functions (100%); cloud/cube/live-data functions excluded**
+**Coverage: 57/57 in-scope functions (100%); cloud/cube/live-data functions excluded**
 
 | Function | Status |
 |---|---|
 | BASE | Implemented |
+| BESSELI | Implemented |
+| BESSELJ | Implemented |
+| BESSELK | Implemented |
+| BESSELY | Implemented |
 | BIN2DEC | Implemented |
 | BIN2HEX | Implemented |
 | BIN2OCT | Implemented |
