@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 145 | 139 | 0 | 6 | 6 | 0 | 0 | 0 | 139 | 0 | 0 | 6 | 0 | 91 |
+| 146 | 140 | 0 | 6 | 6 | 0 | 0 | 0 | 140 | 0 | 0 | 6 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -237,6 +237,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.transition.advance-on-click` | On Mouse Click | Yes | Yes | none | shared | transitions/transition-timing (RibbonToggleButton) | transitions/transition-timing (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.apply-all` | Apply To All | Yes | Yes | none | shared | transitions/transition-timing (RibbonButton) | transitions/transition-timing (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.blinds` | Blinds | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.comb` | Comb | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.cover` | Cover | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.cut` | Cut | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.dissolve` | Dissolve | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
