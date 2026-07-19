@@ -48,8 +48,19 @@ chart. Gate value-label, pie-label, combo-axis, and complete-sequence ROIs
 independently; a local raster or one-slide gain is insufficient when the
 shared chart planner owns several chart families.
 
+## Additional current-artifact probe
+
+A WPF data-label-only TextFormattingMode Display-to-Ideal probe was built and
+rendered from the consuming FreeP.RenderCompare Release artifact. The fresh
+sequence moved from 1.5195% / 0.6240% / 1.6685% to 1.5266% / 0.6263% /
+1.6728% on slides 1-3. The label-only owner did not improve the PowerPoint
+raster and was reverted; axes, legends, plots, and pie controls were not
+changed.
+
 ## Verification
 
 - `FreeP.RenderCompare` Release probe builds: 0 warnings, 0 errors.
 - Focused chart presentation tests remain the required post-restore check.
 - Product source restored to the accepted label/frame/grid baseline.
+- The data-label raster probe was built and rendered from the consuming
+  FreeP.RenderCompare Release artifact before scoring.
