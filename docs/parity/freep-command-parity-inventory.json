@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 125,
-    "both": 119,
+    "totalCommands": 145,
+    "both": 139,
     "wpfOnly": 0,
     "avaloniaOnly": 6,
     "missingWpf": 6,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 119,
+    "shared": 139,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 6,
@@ -1740,6 +1740,176 @@
       ]
     },
     {
+      "commandId": "freep.anim.entrance.blinds",
+      "label": "Blinds In",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Blinds In",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Blinds In",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.entrance.box",
+      "label": "Box In",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Box In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Box In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.entrance.checkerboard",
+      "label": "Checkerboard In",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Checkerboard In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Checkerboard In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.entrance.circle",
+      "label": "Circle In",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Circle In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Circle In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.entrance.diamond",
+      "label": "Diamond In",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Diamond In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Diamond In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
       "commandId": "freep.anim.entrance.fade",
       "label": "Fade In",
       "wpfPresent": true,
@@ -1808,6 +1978,74 @@
       ]
     },
     {
+      "commandId": "freep.anim.entrance.plus",
+      "label": "Plus In",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Plus In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Plus In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.entrance.random-bars",
+      "label": "Random Bars In",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Random Bars In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Random Bars In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
       "commandId": "freep.anim.entrance.split",
       "label": "Split",
       "wpfPresent": true,
@@ -1838,6 +2076,108 @@
           "label": "Split",
           "controlType": "RibbonButton",
           "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.entrance.strips",
+      "label": "Strips In",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Strips In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Strips In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.entrance.wedge",
+      "label": "Wedge In",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Wedge In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Wedge In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.entrance.wheel",
+      "label": "Wheel In",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Wheel In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Wheel In",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ]
     },
@@ -1906,6 +2246,176 @@
           "label": "Zoom In",
           "controlType": "RibbonButton",
           "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.exit.blinds",
+      "label": "Blinds Out",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Blinds Out",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Blinds Out",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.exit.box",
+      "label": "Box Out",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Box Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Box Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.exit.checkerboard",
+      "label": "Checkerboard Out",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Checkerboard Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Checkerboard Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.exit.circle",
+      "label": "Circle Out",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Circle Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Circle Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.exit.diamond",
+      "label": "Diamond Out",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Diamond Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Diamond Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ]
     },
@@ -2012,6 +2522,74 @@
       ]
     },
     {
+      "commandId": "freep.anim.exit.plus",
+      "label": "Plus Out",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Plus Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Plus Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.exit.random-bars",
+      "label": "Random Bars Out",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Random Bars Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Random Bars Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
       "commandId": "freep.anim.exit.split",
       "label": "Split Out",
       "wpfPresent": true,
@@ -2042,6 +2620,108 @@
           "label": "Split Out",
           "controlType": "RibbonButton",
           "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.exit.strips",
+      "label": "Strips Out",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Strips Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Strips Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.exit.wedge",
+      "label": "Wedge Out",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Wedge Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Wedge Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.exit.wheel",
+      "label": "Wheel Out",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Wheel Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Wheel Out",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ]
     },
