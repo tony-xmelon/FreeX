@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 145,
-    "both": 139,
+    "totalCommands": 186,
+    "both": 180,
     "wpfOnly": 0,
     "avaloniaOnly": 6,
     "missingWpf": 6,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 139,
+    "shared": 180,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 6,
@@ -5731,6 +5731,40 @@
       ]
     },
     {
+      "commandId": "freep.transition.airplane",
+      "label": "Airplane",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Airplane",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Airplane",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
       "commandId": "freep.transition.apply-all",
       "label": "Apply To All",
       "wpfPresent": true,
@@ -5799,6 +5833,108 @@
       ]
     },
     {
+      "commandId": "freep.transition.box",
+      "label": "Box",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Box",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Box",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.comb",
+      "label": "Comb",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Comb",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Comb",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.conveyor",
+      "label": "Conveyor",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Conveyor",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Conveyor",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.transition.cover",
       "label": "Cover",
       "wpfPresent": true,
@@ -5829,6 +5965,108 @@
           "label": "Cover",
           "controlType": "RibbonButton",
           "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.crush",
+      "label": "Crush",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Crush",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Crush",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.cube",
+      "label": "Cube",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Cube",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Cube",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.curtains",
+      "label": "Curtains",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Curtains",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Curtains",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ]
     },
@@ -5901,6 +6139,74 @@
       ]
     },
     {
+      "commandId": "freep.transition.doors",
+      "label": "Doors",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Doors",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Doors",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.drape",
+      "label": "Drape",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Drape",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Drape",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
       "commandId": "freep.transition.duration",
       "label": "Duration",
       "wpfPresent": true,
@@ -5969,6 +6275,380 @@
       ]
     },
     {
+      "commandId": "freep.transition.ferris",
+      "label": "Ferris",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Ferris",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Ferris",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.flash",
+      "label": "Flash",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Flash",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Flash",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.flip",
+      "label": "Flip",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Flip",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Flip",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.fly",
+      "label": "Fly",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Fly",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Fly",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.flythrough",
+      "label": "Fly Through",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Fly Through",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Fly Through",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.fracture",
+      "label": "Fracture",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Fracture",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Fracture",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.gallery",
+      "label": "Gallery",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Gallery",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Gallery",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.glitter",
+      "label": "Glitter",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Glitter",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Glitter",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.honeycomb",
+      "label": "Honeycomb",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Honeycomb",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Honeycomb",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.more",
+      "label": "More",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "More",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "More",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.morph",
+      "label": "Morph",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Morph",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Morph",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.transition.none",
       "label": "None",
       "wpfPresent": true,
@@ -5999,6 +6679,278 @@
           "label": "None",
           "controlType": "RibbonButton",
           "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.orbit",
+      "label": "Orbit",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Orbit",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Orbit",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.origami",
+      "label": "Origami",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Origami",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Origami",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.page-curl-double",
+      "label": "Page Curl Double",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Page Curl Double",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Page Curl Double",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.page-curl-single",
+      "label": "Page Curl Single",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Page Curl Single",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Page Curl Single",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.pan",
+      "label": "Pan",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Pan",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Pan",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.peel-off",
+      "label": "Peel Off",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Peel Off",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Peel Off",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.prestige",
+      "label": "Prestige",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Prestige",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Prestige",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.prism",
+      "label": "Prism",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Prism",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Prism",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ]
     },
@@ -6037,6 +6989,210 @@
       ]
     },
     {
+      "commandId": "freep.transition.random",
+      "label": "Random",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Random",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Random",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.random-bars",
+      "label": "Random Bars",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Random Bars",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Random Bars",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.reveal",
+      "label": "Reveal",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Reveal",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Reveal",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.ripple",
+      "label": "Ripple",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Ripple",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Ripple",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.rotate",
+      "label": "Rotate",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Rotate",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Rotate",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.shred",
+      "label": "Shred",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Shred",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Shred",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
       "commandId": "freep.transition.split",
       "label": "Split",
       "wpfPresent": true,
@@ -6067,6 +7223,74 @@
           "label": "Split",
           "controlType": "RibbonButton",
           "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.strips",
+      "label": "Strips",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Strips",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Strips",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.switch",
+      "label": "Switch",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Switch",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Switch",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ]
     },
@@ -6105,6 +7329,74 @@
       ]
     },
     {
+      "commandId": "freep.transition.vortex",
+      "label": "Vortex",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Vortex",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Vortex",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.warp",
+      "label": "Warp",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Warp",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Warp",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
       "commandId": "freep.transition.wheel",
       "label": "Wheel",
       "wpfPresent": true,
@@ -6133,6 +7425,108 @@
           "groupId": "transition-gallery",
           "group": "Transition to This Slide",
           "label": "Wheel",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.wheel-reverse",
+      "label": "Wheel Reverse",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Wheel Reverse",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Wheel Reverse",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.wind",
+      "label": "Wind",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Wind",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-more",
+          "group": "More Transitions",
+          "label": "Wind",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.transition.window",
+      "label": "Window",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Window",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "transition-gallery",
+          "group": "Transition to This Slide",
+          "label": "Window",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
