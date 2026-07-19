@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 150 | 144 | 0 | 6 | 6 | 0 | 0 | 0 | 144 | 0 | 0 | 6 | 0 | 91 |
+| 158 | 152 | 0 | 6 | 6 | 0 | 0 | 0 | 152 | 0 | 0 | 6 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -237,20 +237,28 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.transition.advance-on-click` | On Mouse Click | Yes | Yes | none | shared | transitions/transition-timing (RibbonToggleButton) | transitions/transition-timing (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.apply-all` | Apply To All | Yes | Yes | none | shared | transitions/transition-timing (RibbonButton) | transitions/transition-timing (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.blinds` | Blinds | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.box` | Box | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.comb` | Comb | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.conveyor` | Conveyor | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.cover` | Cover | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.cut` | Cut | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.dissolve` | Dissolve | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.doors` | Doors | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.duration` | Duration | Yes | Yes | none | shared | transitions/transition-timing (RibbonComboBox) | transitions/transition-timing (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.fade` | Fade | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.flash` | Flash | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.gallery` | Gallery | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.morph` | Morph | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.none` | None | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.pan` | Pan | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.push` | Push | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.random-bars` | Random Bars | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.reveal` | Reveal | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.split` | Split | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.strips` | Strips | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.uncover` | Uncover | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.wheel` | Wheel | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.wheel-reverse` | Wheel Reverse | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.window` | Window | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.wipe` | Wipe | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.zoom` | Zoom | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
