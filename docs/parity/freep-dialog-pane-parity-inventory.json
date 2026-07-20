@@ -7,9 +7,9 @@
                     "behaviorAligned":  20,
                     "behaviorAlignedHostShapeDiffers":  1,
                     "productGaps":  0,
-                    "routesWithExistingEvidence":  13,
-                    "routesWithCommittedPairedScreenshots":  0,
-                    "residualVisualOnlyWorkItems":  5
+                    "routesWithExistingEvidence":  19,
+                    "routesWithCommittedPairedScreenshots":  19,
+                    "residualVisualOnlyWorkItems":  1
                 },
     "routes":  [
                    {
@@ -42,9 +42,10 @@
                        "existingVisualEvidence":  [
                                                       "docs/parity/freep-slide-pane-thumbnail-render-evidence-2026-07-04.md",
                                                       "docs/parity/freep-slide-pane-thumbnail-chrome-evidence-2026-07-04.md",
-                                                      "tools/FreeP.RenderCompare/SlidePaneThumbnailEvidence.cs"
+                                                      "tools/FreeP.RenderCompare/SlidePaneThumbnailEvidence.cs",
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "generated-render-evidence-capable; no committed paired app-window screenshot",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -73,9 +74,10 @@
                                      "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
                                  ],
                        "existingVisualEvidence":  [
-                                                      "docs/parity/freep-comments-review-accessibility-evidence-inventory-2026-07-05.md"
+                                                      "docs/parity/freep-comments-review-accessibility-evidence-inventory-2026-07-05.md",
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "semantic evidence only",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -104,9 +106,10 @@
                                      "freep/FreeP.App.Presentation.Tests/TableInsertionPickerPlannerTests.cs"
                                  ],
                        "existingVisualEvidence":  [
-                                                      "docs/parity/freep-table-picker-workflow-2026-07-02.md"
+                                                      "docs/parity/freep-table-picker-workflow-2026-07-02.md",
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "semantic evidence only",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -136,9 +139,9 @@
                                      "freep/FreeP.App.Presentation.Tests/PresentationDesignCommandPlannerTests.cs"
                                  ],
                        "existingVisualEvidence":  [
-
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "none",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -170,9 +173,9 @@
                                      "freep/FreeP.App.Presentation.Tests/SlideSizeDialogPlannerTests.cs"
                                  ],
                        "existingVisualEvidence":  [
-
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "none; paired screenshots remain",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -207,9 +210,10 @@
                                  ],
                        "existingVisualEvidence":  [
                                                       "docs/parity/freep-header-footer-options-2026-07-06.md",
-                                                      "docs/parity/freep-header-footer-placeholder-creation-2026-07-05.md"
+                                                      "docs/parity/freep-header-footer-placeholder-creation-2026-07-05.md",
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "semantic evidence only; paired screenshots remain",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -245,9 +249,9 @@
                                      "freep/FreeP.App.Avalonia.Tests/KeyboardContextParityTests.cs"
                                  ],
                        "existingVisualEvidence":  [
-
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "none; Find and Replace mode screenshots remain",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -278,9 +282,9 @@
                                      "freep/FreeP.App.Presentation.Tests/HyperlinkDialogPlannerTests.cs"
                                  ],
                        "existingVisualEvidence":  [
-
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "none",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -311,9 +315,9 @@
                                      "freep/FreeP.App.Presentation.Tests/ChartDataDialogPlannerTests.cs"
                                  ],
                        "existingVisualEvidence":  [
-
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "none",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -345,9 +349,10 @@
                                  ],
                        "existingVisualEvidence":  [
                                                       "docs/parity/freep-custom-show-drag-reorder-2026-07-13.md",
-                                                      "docs/parity/freep-custom-show-launch-plan-2026-07-04.md"
+                                                      "docs/parity/freep-custom-show-launch-plan-2026-07-04.md",
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "semantic evidence only",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -379,9 +384,10 @@
                                  ],
                        "existingVisualEvidence":  [
                                                       "docs/parity/freep-comments-review-accessibility-evidence-inventory-2026-07-05.md",
-                                                      "docs/parity/freep-comments-review-navigation-2026-07-03.md"
+                                                      "docs/parity/freep-comments-review-navigation-2026-07-03.md",
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "semantic evidence only",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -410,9 +416,10 @@
                                  ],
                        "existingVisualEvidence":  [
                                                       "docs/parity/freep-accessibility-checker-navigation-2026-07-14.md",
-                                                      "docs/parity/freep-accessibility-table-structure-review-2026-07-13.md"
+                                                      "docs/parity/freep-accessibility-table-structure-review-2026-07-13.md",
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "semantic evidence only",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -442,9 +449,10 @@
                                      "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
                                  ],
                        "existingVisualEvidence":  [
-                                                      "docs/parity/freep-comments-review-accessibility-evidence-inventory-2026-07-05.md"
+                                                      "docs/parity/freep-comments-review-accessibility-evidence-inventory-2026-07-05.md",
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "semantic evidence only",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -472,9 +480,9 @@
                                      "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
                                  ],
                        "existingVisualEvidence":  [
-
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "none",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -503,9 +511,10 @@
                                  ],
                        "existingVisualEvidence":  [
                                                       "docs/parity/freep-proofing-ignore-actions-2026-07-13.md",
-                                                      "docs/parity/freep-proofing-add-to-dictionary-2026-07-13.md"
+                                                      "docs/parity/freep-proofing-add-to-dictionary-2026-07-13.md",
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "semantic evidence only",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -535,9 +544,10 @@
                                  ],
                        "existingVisualEvidence":  [
                                                       "docs/parity/freep-visible-media-caption-authoring-2026-07-13.md",
-                                                      "docs/parity/freep-media-caption-ttml-sidecar-retention-2026-07-14.md"
+                                                      "docs/parity/freep-media-caption-ttml-sidecar-retention-2026-07-14.md",
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "semantic evidence only",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -567,9 +577,10 @@
                                  ],
                        "existingVisualEvidence":  [
                                                       "docs/parity/freep-smartart-text-pane-hosts-2026-07-14.md",
-                                                      "docs/parity/freep-smartart-text-pane-keyboard-routing-2026-07-14.md"
+                                                      "docs/parity/freep-smartart-text-pane-keyboard-routing-2026-07-14.md",
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "semantic evidence only",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -600,9 +611,10 @@
                                  ],
                        "existingVisualEvidence":  [
                                                       "docs/parity/freep-animation-pane-workflow-depth-2026-07-06.md",
-                                                      "docs/parity/freep-animation-pane-playback-workflow-evidence-2026-07-14.md"
+                                                      "docs/parity/freep-animation-pane-playback-workflow-evidence-2026-07-14.md",
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "workflow evidence only; paired pane screenshots remain",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned",
                        "notes":  ""
                    },
@@ -636,9 +648,10 @@
                                  ],
                        "existingVisualEvidence":  [
                                                       "docs/parity/freep-print-output-option-choice-ui-2026-07-03.md",
-                                                      "docs/parity/freep-export-backstage-evidence-2026-07-05.md"
+                                                      "docs/parity/freep-export-backstage-evidence-2026-07-05.md",
+                                                      "docs/parity/freep-dialog-pane-visual-evidence/report.md"
                                                   ],
-                       "visualEvidenceStatus":  "package/workflow evidence only; paired app-pane screenshots remain",
+                       "visualEvidenceStatus":  "committed real paired app-owned 96-DPI target capture; pixel and semantic thresholds pass",
                        "status":  "behavior-aligned-host-shape-differs",
                        "notes":  "Avalonia has an additional compact print-options pane for direct command/keyboard routing; shared option and result policy is the same."
                    },
@@ -712,49 +725,6 @@
                    }
                ],
     "residualVisualOnlyWork":  [
-                                   {
-                                       "id":  "freep-dialogs-primary-paired-capture",
-                                       "routes":  [
-                                                      "design.slide-size",
-                                                      "insert.header-footer",
-                                                      "home.find-replace"
-                                                  ],
-                                       "exactWork":  "Add WPF/Avalonia 96-DPI app-owned captures for Slide Size initial/invalid states, Header/Footer Date-Time and Apply-to-All states, and Find versus Replace modes; compare dimensions, focus, enabled state, button order, and nonblank pixels."
-                                   },
-                                   {
-                                       "id":  "freep-dialogs-secondary-paired-capture",
-                                       "routes":  [
-                                                      "insert.hyperlink",
-                                                      "chart.edit-data",
-                                                      "slideshow.custom-shows"
-                                                  ],
-                                       "exactWork":  "Add paired initial, validation, and populated-state captures for the remaining app-owned modal dialogs."
-                                   },
-                                   {
-                                       "id":  "freep-panes-paired-capture",
-                                       "routes":  [
-                                                      "startup.slide-pane",
-                                                      "startup.notes-pane",
-                                                      "review.comments-pane",
-                                                      "review.accessibility-pane",
-                                                      "review.alt-text-pane",
-                                                      "review.reading-order-pane",
-                                                      "review.proofing-pane",
-                                                      "accessibility.media-caption-pane",
-                                                      "context.smartart-text-pane",
-                                                      "animations.animation-pane",
-                                                      "file.print-options"
-                                                  ],
-                                       "exactWork":  "Capture the same seeded presentation and selected object in both hosts for every docked pane; compare pane width, row ordering, selected/disabled states, overflow, and close affordance."
-                                   },
-                                   {
-                                       "id":  "freep-choice-overlays-paired-capture",
-                                       "routes":  [
-                                                      "insert.table-picker",
-                                                      "design.layout-picker"
-                                                  ],
-                                       "exactWork":  "Capture open overlays with default/current/disabled choices and verify dismissal plus no preselection mutation."
-                                   },
                                    {
                                        "id":  "freep-native-picker-human-evidence",
                                        "routes":  [

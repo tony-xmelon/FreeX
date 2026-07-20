@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-07-20T00:00:00Z",
+  "scope": "FreeP native Open and Save As pickers",
+  "classification": "manual-evidence-required",
+  "pixelEqualityPolicy": "not-applicable",
+  "reason": "WPF uses native Windows dialogs and Avalonia uses the platform storage provider. OS-owned picker chrome is not an app-owned cross-host pixel-parity surface.",
+  "routes": [
+    {
+      "routeId": "file.open-picker",
+      "hosts": ["wpf", "avalonia"],
+      "checks": [
+        { "id": "cancel", "expected": "Cancel leaves the current presentation, path, and dirty state unchanged.", "status": "manual-required" },
+        { "id": "extension", "expected": "The picker exposes supported PPTX and FXP extensions and rejects unsupported input through the app workflow.", "status": "manual-required" },
+        { "id": "error", "expected": "A missing, unreadable, or invalid presentation reports an error without replacing the current presentation.", "status": "manual-required" },
+        { "id": "focus-return", "expected": "After cancel or error, focus returns to the owning FreeP window.", "status": "manual-required" }
+      ]
+    },
+    {
+      "routeId": "file.save-as-picker",
+      "hosts": ["wpf", "avalonia"],
+      "checks": [
+        { "id": "cancel", "expected": "Cancel preserves the current path and dirty state.", "status": "manual-required" },
+        { "id": "extension", "expected": "The selected PPTX or FXP extension controls the saved format; missing extension follows the selected filter/default.", "status": "manual-required" },
+        { "id": "overwrite", "expected": "Existing-file overwrite requires the native confirmation path and a declined overwrite leaves the file and document state unchanged.", "status": "manual-required" },
+        { "id": "error", "expected": "Write or permission failure is reported without claiming a successful save or clearing dirty state.", "status": "manual-required" },
+        { "id": "focus-return", "expected": "After cancel, declined overwrite, or error, focus returns to the owning FreeP window.", "status": "manual-required" }
+      ]
+    }
+  ]
+}
