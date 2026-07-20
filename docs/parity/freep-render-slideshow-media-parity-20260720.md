@@ -1,7 +1,7 @@
 # FreeP Renderer, Slideshow, Media, Presenter, and Export Parity Evidence
 
-Generated: `2026-07-20T07:34:12.0775532+00:00`
-Commit: `77a0904ff42786aa7136479af4c333b0872ef543`
+Generated: `2026-07-20T07:37:34.7580628+00:00`
+Commit: `42d5dcbeba66b6e6c4eb42a0b07034e5a948cedb`
 Branch: `codex/freep-render-slideshow-media-parity-20260720`
 Freshness check: **PASS**
 Source snapshot SHA-256: `04fbad5bd537d59e477a5f87c996185c4881debcd76be3d8132964d62c9e7798`
