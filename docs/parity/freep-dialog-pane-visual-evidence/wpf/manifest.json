@@ -1,0 +1,3321 @@
+{
+  "schemaVersion": 1,
+  "host": "wpf",
+  "captureMode": "visible-app-owned-render-target; scenario-isolated-processes",
+  "targetDpi": 96,
+  "logicalShellWidth": 1280,
+  "logicalShellHeight": 760,
+  "generatedAtUtc": "2026-07-20T06:19:05.3367985\u002B00:00",
+  "captures": [
+    {
+      "scenarioId": "design.slide-size.initial",
+      "routeId": "design.slide-size",
+      "stateId": "initial",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/design.slide-size.initial.png",
+      "logicalWidth": 365.3333333333333,
+      "logicalHeight": 222.66666666666666,
+      "pixelWidth": 366,
+      "pixelHeight": 223,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 19029,
+      "focusedRole": "combobox",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "ok",
+          "label": "OK",
+          "isEnabled": true,
+          "isDefault": true,
+          "isCancel": false
+        },
+        {
+          "actionId": "cancel",
+          "label": "Cancel",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": true
+        }
+      ],
+      "controls": [
+        {
+          "role": "radio",
+          "label": "Inches",
+          "isEnabled": true,
+          "isChecked": true,
+          "isSelected": null
+        },
+        {
+          "role": "radio",
+          "label": "Centimeters",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "ok",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "cancel",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/design.slide-size.initial.png",
+      "pixelComparisonLogicalWidth": 365.3333333333333,
+      "pixelComparisonLogicalHeight": 222.66666666666666
+    },
+    {
+      "scenarioId": "design.slide-size.invalid",
+      "routeId": "design.slide-size",
+      "stateId": "invalid",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/design.slide-size.invalid.png",
+      "logicalWidth": 365.3333333333333,
+      "logicalHeight": 222.66666666666666,
+      "pixelWidth": 366,
+      "pixelHeight": 223,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 19042,
+      "focusedRole": "textbox",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "ok",
+          "label": "OK",
+          "isEnabled": true,
+          "isDefault": true,
+          "isCancel": false
+        },
+        {
+          "actionId": "cancel",
+          "label": "Cancel",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": true
+        }
+      ],
+      "controls": [
+        {
+          "role": "radio",
+          "label": "Inches",
+          "isEnabled": true,
+          "isChecked": true,
+          "isSelected": null
+        },
+        {
+          "role": "radio",
+          "label": "Centimeters",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "ok",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "cancel",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        },
+        {
+          "id": "validation-visible",
+          "passed": true,
+          "detail": "Please enter valid positive numbers for width and height."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/design.slide-size.invalid.png",
+      "pixelComparisonLogicalWidth": 365.3333333333333,
+      "pixelComparisonLogicalHeight": 222.66666666666666
+    },
+    {
+      "scenarioId": "insert.header-footer.date-time",
+      "routeId": "insert.header-footer",
+      "stateId": "date-time",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/insert.header-footer.date-time.png",
+      "logicalWidth": 345.3333333333333,
+      "logicalHeight": 260.6666666666667,
+      "pixelWidth": 346,
+      "pixelHeight": 261,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 14383,
+      "focusedRole": "checkbox",
+      "focusedLabel": "Date and time",
+      "buttons": [
+        {
+          "actionId": "apply",
+          "label": "Apply",
+          "isEnabled": true,
+          "isDefault": true,
+          "isCancel": false
+        },
+        {
+          "actionId": "apply-to-all",
+          "label": "Apply to All",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "cancel",
+          "label": "Cancel",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": true
+        }
+      ],
+      "controls": [
+        {
+          "role": "checkbox",
+          "label": "Date and time",
+          "isEnabled": true,
+          "isChecked": true,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Fixed",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Footer",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Slide number",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Don\u0027t show on title slide",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "apply",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "apply-to-all",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "cancel",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/insert.header-footer.date-time.png",
+      "pixelComparisonLogicalWidth": 345.3333333333333,
+      "pixelComparisonLogicalHeight": 260.6666666666667
+    },
+    {
+      "scenarioId": "insert.header-footer.apply-to-all",
+      "routeId": "insert.header-footer",
+      "stateId": "apply-to-all",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/insert.header-footer.apply-to-all.png",
+      "logicalWidth": 345.3333333333333,
+      "logicalHeight": 260.6666666666667,
+      "pixelWidth": 346,
+      "pixelHeight": 261,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 15569,
+      "focusedRole": "textbox",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "apply",
+          "label": "Apply",
+          "isEnabled": true,
+          "isDefault": true,
+          "isCancel": false
+        },
+        {
+          "actionId": "apply-to-all",
+          "label": "Apply to All",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "cancel",
+          "label": "Cancel",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": true
+        }
+      ],
+      "controls": [
+        {
+          "role": "checkbox",
+          "label": "Date and time",
+          "isEnabled": true,
+          "isChecked": true,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Fixed",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Footer",
+          "isEnabled": true,
+          "isChecked": true,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Slide number",
+          "isEnabled": true,
+          "isChecked": true,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Don\u0027t show on title slide",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "apply",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "apply-to-all",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "cancel",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/insert.header-footer.apply-to-all.png",
+      "pixelComparisonLogicalWidth": 345.3333333333333,
+      "pixelComparisonLogicalHeight": 260.6666666666667
+    },
+    {
+      "scenarioId": "home.find-replace.find",
+      "routeId": "home.find-replace",
+      "stateId": "find",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/home.find-replace.find.png",
+      "logicalWidth": 425.3333333333333,
+      "logicalHeight": 134,
+      "pixelWidth": 426,
+      "pixelHeight": 134,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 5228,
+      "focusedRole": "textbox",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "replace",
+          "label": "Replace",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "replace-all",
+          "label": "Replace All",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "find-next",
+          "label": "Find Next",
+          "isEnabled": true,
+          "isDefault": true,
+          "isCancel": false
+        },
+        {
+          "actionId": "find-previous",
+          "label": "Find Previous",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "close",
+          "label": "Close",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": true
+        }
+      ],
+      "controls": [
+        {
+          "role": "checkbox",
+          "label": "Match case",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Whole word",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "replace",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "replace-all",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "find-next",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "find-previous",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "close",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/home.find-replace.find.png",
+      "pixelComparisonLogicalWidth": 425.3333333333333,
+      "pixelComparisonLogicalHeight": 134
+    },
+    {
+      "scenarioId": "home.find-replace.replace",
+      "routeId": "home.find-replace",
+      "stateId": "replace",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/home.find-replace.replace.png",
+      "logicalWidth": 425.3333333333333,
+      "logicalHeight": 198.66666666666666,
+      "pixelWidth": 426,
+      "pixelHeight": 199,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 10575,
+      "focusedRole": "textbox",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "replace",
+          "label": "Replace",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "replace-all",
+          "label": "Replace All",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "find-next",
+          "label": "Find Next",
+          "isEnabled": true,
+          "isDefault": true,
+          "isCancel": false
+        },
+        {
+          "actionId": "find-previous",
+          "label": "Find Previous",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "close",
+          "label": "Close",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": true
+        }
+      ],
+      "controls": [
+        {
+          "role": "checkbox",
+          "label": "Match case",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Whole word",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "replace",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "replace-all",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "find-next",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "find-previous",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "close",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/home.find-replace.replace.png",
+      "pixelComparisonLogicalWidth": 425.3333333333333,
+      "pixelComparisonLogicalHeight": 198.66666666666666
+    },
+    {
+      "scenarioId": "insert.hyperlink.initial",
+      "routeId": "insert.hyperlink",
+      "stateId": "initial",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/insert.hyperlink.initial.png",
+      "logicalWidth": 405.3333333333333,
+      "logicalHeight": 216,
+      "pixelWidth": 406,
+      "pixelHeight": 216,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 12671,
+      "focusedRole": "textbox",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "ok",
+          "label": "OK",
+          "isEnabled": true,
+          "isDefault": true,
+          "isCancel": false
+        },
+        {
+          "actionId": "cancel",
+          "label": "Cancel",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": true
+        }
+      ],
+      "controls": [
+        {
+          "role": "radio",
+          "label": "Web address",
+          "isEnabled": true,
+          "isChecked": true,
+          "isSelected": null
+        },
+        {
+          "role": "radio",
+          "label": "Slide in this presentation",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "ok",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "cancel",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/insert.hyperlink.initial.png",
+      "pixelComparisonLogicalWidth": 405.3333333333333,
+      "pixelComparisonLogicalHeight": 216
+    },
+    {
+      "scenarioId": "insert.hyperlink.validation",
+      "routeId": "insert.hyperlink",
+      "stateId": "validation",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/insert.hyperlink.validation.png",
+      "logicalWidth": 405.3333333333333,
+      "logicalHeight": 216,
+      "pixelWidth": 406,
+      "pixelHeight": 216,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 14693,
+      "focusedRole": "textbox",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "ok",
+          "label": "OK",
+          "isEnabled": true,
+          "isDefault": true,
+          "isCancel": false
+        },
+        {
+          "actionId": "cancel",
+          "label": "Cancel",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": true
+        }
+      ],
+      "controls": [
+        {
+          "role": "radio",
+          "label": "Web address",
+          "isEnabled": true,
+          "isChecked": true,
+          "isSelected": null
+        },
+        {
+          "role": "radio",
+          "label": "Slide in this presentation",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "ok",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "cancel",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        },
+        {
+          "id": "validation-visible",
+          "passed": true,
+          "detail": "Invalid URL remains open with inline validation."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/insert.hyperlink.validation.png",
+      "pixelComparisonLogicalWidth": 405.3333333333333,
+      "pixelComparisonLogicalHeight": 216
+    },
+    {
+      "scenarioId": "insert.hyperlink.populated",
+      "routeId": "insert.hyperlink",
+      "stateId": "populated",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/insert.hyperlink.populated.png",
+      "logicalWidth": 405.3333333333333,
+      "logicalHeight": 216,
+      "pixelWidth": 406,
+      "pixelHeight": 216,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 13709,
+      "focusedRole": "textbox",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "ok",
+          "label": "OK",
+          "isEnabled": true,
+          "isDefault": true,
+          "isCancel": false
+        },
+        {
+          "actionId": "cancel",
+          "label": "Cancel",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": true
+        }
+      ],
+      "controls": [
+        {
+          "role": "radio",
+          "label": "Web address",
+          "isEnabled": true,
+          "isChecked": true,
+          "isSelected": null
+        },
+        {
+          "role": "radio",
+          "label": "Slide in this presentation",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "ok",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "cancel",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/insert.hyperlink.populated.png",
+      "pixelComparisonLogicalWidth": 405.3333333333333,
+      "pixelComparisonLogicalHeight": 216
+    },
+    {
+      "scenarioId": "chart.edit-data.initial",
+      "routeId": "chart.edit-data",
+      "stateId": "initial",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/chart.edit-data.initial.png",
+      "logicalWidth": 625.3333333333334,
+      "logicalHeight": 402.6666666666667,
+      "pixelWidth": 626,
+      "pixelHeight": 403,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 65115,
+      "focusedRole": "textbox",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "add-series",
+          "label": "\u002B Series",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "remove-series",
+          "label": "- Series",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "add-category",
+          "label": "\u002B Category",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "remove-category",
+          "label": "- Category",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "ok",
+          "label": "OK",
+          "isEnabled": true,
+          "isDefault": true,
+          "isCancel": false
+        },
+        {
+          "actionId": "cancel",
+          "label": "Cancel",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": true
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "add-series",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "remove-series",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "add-category",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "remove-category",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "ok",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "cancel",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 20."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/chart.edit-data.initial.png",
+      "pixelComparisonLogicalWidth": 625.3333333333334,
+      "pixelComparisonLogicalHeight": 402.6666666666667
+    },
+    {
+      "scenarioId": "chart.edit-data.validation",
+      "routeId": "chart.edit-data",
+      "stateId": "validation",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/chart.edit-data.validation.png",
+      "logicalWidth": 625.3333333333334,
+      "logicalHeight": 402.6666666666667,
+      "pixelWidth": 626,
+      "pixelHeight": 403,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 66466,
+      "focusedRole": "textbox",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "add-series",
+          "label": "\u002B Series",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "remove-series",
+          "label": "- Series",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "add-category",
+          "label": "\u002B Category",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "remove-category",
+          "label": "- Category",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "ok",
+          "label": "OK",
+          "isEnabled": true,
+          "isDefault": true,
+          "isCancel": false
+        },
+        {
+          "actionId": "cancel",
+          "label": "Cancel",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": true
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "add-series",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "remove-series",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "add-category",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "remove-category",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "ok",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "cancel",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 20."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        },
+        {
+          "id": "validation-visible",
+          "passed": true,
+          "detail": "Invalid chart value remains open with inline validation: Enter a valid number or leave the value blank."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/chart.edit-data.validation.png",
+      "pixelComparisonLogicalWidth": 625.3333333333334,
+      "pixelComparisonLogicalHeight": 402.6666666666667
+    },
+    {
+      "scenarioId": "chart.edit-data.populated",
+      "routeId": "chart.edit-data",
+      "stateId": "populated",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/chart.edit-data.populated.png",
+      "logicalWidth": 625.3333333333334,
+      "logicalHeight": 402.6666666666667,
+      "pixelWidth": 626,
+      "pixelHeight": 403,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 65115,
+      "focusedRole": "textbox",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "add-series",
+          "label": "\u002B Series",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "remove-series",
+          "label": "- Series",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "add-category",
+          "label": "\u002B Category",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "remove-category",
+          "label": "- Category",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "ok",
+          "label": "OK",
+          "isEnabled": true,
+          "isDefault": true,
+          "isCancel": false
+        },
+        {
+          "actionId": "cancel",
+          "label": "Cancel",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": true
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "add-series",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "remove-series",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "add-category",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "remove-category",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "ok",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "cancel",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 20."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/chart.edit-data.populated.png",
+      "pixelComparisonLogicalWidth": 625.3333333333334,
+      "pixelComparisonLogicalHeight": 402.6666666666667
+    },
+    {
+      "scenarioId": "slideshow.custom-shows.initial",
+      "routeId": "slideshow.custom-shows",
+      "stateId": "initial",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/slideshow.custom-shows.initial.png",
+      "logicalWidth": 625.3333333333334,
+      "logicalHeight": 402.6666666666667,
+      "pixelWidth": 626,
+      "pixelHeight": 403,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 136123,
+      "focusedRole": "textbox",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "move-up",
+          "label": "Move Up",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "move-down",
+          "label": "Move Down",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "create",
+          "label": "Create",
+          "isEnabled": true,
+          "isDefault": true,
+          "isCancel": false
+        },
+        {
+          "actionId": "rename",
+          "label": "Rename",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "update-slides",
+          "label": "Update Slides",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "delete",
+          "label": "Delete",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "start-show",
+          "label": "Start Show",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "close",
+          "label": "Close",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": true
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "move-up",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "move-down",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Slide 1: Quarterly Review",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Slide 2: Next Steps",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Slide 3: Appendix",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "create",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "rename",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "update-slides",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "delete",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "start-show",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "close",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/slideshow.custom-shows.initial.png",
+      "pixelComparisonLogicalWidth": 625.3333333333334,
+      "pixelComparisonLogicalHeight": 402.6666666666667
+    },
+    {
+      "scenarioId": "slideshow.custom-shows.validation",
+      "routeId": "slideshow.custom-shows",
+      "stateId": "validation",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/slideshow.custom-shows.validation.png",
+      "logicalWidth": 625.3333333333334,
+      "logicalHeight": 402.6666666666667,
+      "pixelWidth": 626,
+      "pixelHeight": 403,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 136892,
+      "focusedRole": "textbox",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "move-up",
+          "label": "Move Up",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "move-down",
+          "label": "Move Down",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "create",
+          "label": "Create",
+          "isEnabled": true,
+          "isDefault": true,
+          "isCancel": false
+        },
+        {
+          "actionId": "rename",
+          "label": "Rename",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "update-slides",
+          "label": "Update Slides",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "delete",
+          "label": "Delete",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "start-show",
+          "label": "Start Show",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "close",
+          "label": "Close",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": true
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "move-up",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "move-down",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Slide 1: Quarterly Review",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Slide 2: Next Steps",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Slide 3: Appendix",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "create",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "rename",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "update-slides",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "delete",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "start-show",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "close",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/slideshow.custom-shows.validation.png",
+      "pixelComparisonLogicalWidth": 625.3333333333334,
+      "pixelComparisonLogicalHeight": 402.6666666666667
+    },
+    {
+      "scenarioId": "slideshow.custom-shows.populated",
+      "routeId": "slideshow.custom-shows",
+      "stateId": "populated",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/slideshow.custom-shows.populated.png",
+      "logicalWidth": 625.3333333333334,
+      "logicalHeight": 402.6666666666667,
+      "pixelWidth": 626,
+      "pixelHeight": 403,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 133494,
+      "focusedRole": "textbox",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "move-up",
+          "label": "Move Up",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "move-down",
+          "label": "Move Down",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "create",
+          "label": "Create",
+          "isEnabled": true,
+          "isDefault": true,
+          "isCancel": false
+        },
+        {
+          "actionId": "rename",
+          "label": "Rename",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "update-slides",
+          "label": "Update Slides",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "delete",
+          "label": "Delete",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "start-show",
+          "label": "Start Show",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "close",
+          "label": "Close",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": true
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "move-up",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "move-down",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Slide 1: Quarterly Review",
+          "isEnabled": true,
+          "isChecked": true,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Slide 2: Next Steps",
+          "isEnabled": true,
+          "isChecked": true,
+          "isSelected": null
+        },
+        {
+          "role": "checkbox",
+          "label": "Slide 3: Appendix",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "create",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "rename",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "update-slides",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "delete",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "start-show",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "close",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/slideshow.custom-shows.populated.png",
+      "pixelComparisonLogicalWidth": 625.3333333333334,
+      "pixelComparisonLogicalHeight": 402.6666666666667
+    },
+    {
+      "scenarioId": "startup.slide-pane.seeded",
+      "routeId": "startup.slide-pane",
+      "stateId": "seeded",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/startup.slide-pane.seeded.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 891522,
+      "focusedRole": "",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "new-slide",
+          "label": "New Slide",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "new-slide",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/targets/startup.slide-pane.seeded.png",
+      "pixelComparisonLogicalWidth": 180,
+      "pixelComparisonLogicalHeight": 578
+    },
+    {
+      "scenarioId": "startup.notes-pane.seeded",
+      "routeId": "startup.notes-pane",
+      "stateId": "seeded",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/startup.notes-pane.seeded.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 891522,
+      "focusedRole": "",
+      "focusedLabel": "",
+      "buttons": [],
+      "controls": [],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/targets/startup.notes-pane.seeded.png",
+      "pixelComparisonLogicalWidth": 1100,
+      "pixelComparisonLogicalHeight": 60
+    },
+    {
+      "scenarioId": "review.comments-pane.seeded",
+      "routeId": "review.comments-pane",
+      "stateId": "seeded",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/review.comments-pane.seeded.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 891522,
+      "focusedRole": "",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "close",
+          "label": "Close",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "new-comment",
+          "label": "New Comment",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "alex-morgan",
+          "label": "@Alex.Morgan",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "save",
+          "label": "Save",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "alex-morgan",
+          "label": "@Alex.Morgan",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "reply",
+          "label": "Reply",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "close",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "new-comment",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "alex-morgan",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "save",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "alex-morgan",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "reply",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/targets/review.comments-pane.seeded.png",
+      "pixelComparisonLogicalWidth": 1100,
+      "pixelComparisonLogicalHeight": 100
+    },
+    {
+      "scenarioId": "review.accessibility-pane.seeded",
+      "routeId": "review.accessibility-pane",
+      "stateId": "seeded",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/review.accessibility-pane.seeded.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 891834,
+      "focusedRole": "",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "open-alt-text",
+          "label": "Open Alt Text",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "open-alt-text",
+          "label": "Open Alt Text",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "open-alt-text",
+          "label": "Open Alt Text",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "open-alt-text",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "open-alt-text",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "open-alt-text",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/targets/review.accessibility-pane.seeded.png",
+      "pixelComparisonLogicalWidth": 320,
+      "pixelComparisonLogicalHeight": 578
+    },
+    {
+      "scenarioId": "review.alt-text-pane.seeded",
+      "routeId": "review.alt-text-pane",
+      "stateId": "seeded",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/review.alt-text-pane.seeded.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 891814,
+      "focusedRole": "",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "apply",
+          "label": "Apply",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "close",
+          "label": "Close",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        }
+      ],
+      "controls": [
+        {
+          "role": "checkbox",
+          "label": "Mark as Decorative",
+          "isEnabled": true,
+          "isChecked": false,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "apply",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "close",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/targets/review.alt-text-pane.seeded.png",
+      "pixelComparisonLogicalWidth": 292,
+      "pixelComparisonLogicalHeight": 578
+    },
+    {
+      "scenarioId": "review.reading-order-pane.seeded",
+      "routeId": "review.reading-order-pane",
+      "stateId": "seeded",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/review.reading-order-pane.seeded.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 891830,
+      "focusedRole": "",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "move-earlier",
+          "label": "Move Earlier",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "move-later",
+          "label": "Move Later",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "move-earlier",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "move-later",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/targets/review.reading-order-pane.seeded.png",
+      "pixelComparisonLogicalWidth": 320,
+      "pixelComparisonLogicalHeight": 578
+    },
+    {
+      "scenarioId": "review.proofing-pane.seeded",
+      "routeId": "review.proofing-pane",
+      "stateId": "seeded",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/review.proofing-pane.seeded.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 891842,
+      "focusedRole": "",
+      "focusedLabel": "",
+      "buttons": [],
+      "controls": [],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/targets/review.proofing-pane.seeded.png",
+      "pixelComparisonLogicalWidth": 320,
+      "pixelComparisonLogicalHeight": 578
+    },
+    {
+      "scenarioId": "accessibility.media-caption-pane.seeded",
+      "routeId": "accessibility.media-caption-pane",
+      "stateId": "seeded",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/accessibility.media-caption-pane.seeded.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 891842,
+      "focusedRole": "",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "create",
+          "label": "Create",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "replace",
+          "label": "Replace",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "delete",
+          "label": "Delete",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "close",
+          "label": "Close",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "create",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "replace",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "delete",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "close",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 30."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/targets/accessibility.media-caption-pane.seeded.png",
+      "pixelComparisonLogicalWidth": 320,
+      "pixelComparisonLogicalHeight": 578
+    },
+    {
+      "scenarioId": "context.smartart-text-pane.seeded",
+      "routeId": "context.smartart-text-pane",
+      "stateId": "seeded",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/context.smartart-text-pane.seeded.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 891479,
+      "focusedRole": "",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "apply",
+          "label": "Apply",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "close",
+          "label": "Close",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "apply",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "close",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 40."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/targets/context.smartart-text-pane.seeded.png",
+      "pixelComparisonLogicalWidth": 320,
+      "pixelComparisonLogicalHeight": 578
+    },
+    {
+      "scenarioId": "animations.animation-pane.seeded",
+      "routeId": "animations.animation-pane",
+      "stateId": "seeded",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/animations.animation-pane.seeded.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 888226,
+      "focusedRole": "",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "preview",
+          "label": "Preview",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "play-from-selected",
+          "label": "Play From Selected",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "play-all",
+          "label": "Play All",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "stop",
+          "label": "Stop",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "preview",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "play-from-selected",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "play-all",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "stop",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/targets/animations.animation-pane.seeded.png",
+      "pixelComparisonLogicalWidth": 240,
+      "pixelComparisonLogicalHeight": 578
+    },
+    {
+      "scenarioId": "file.print-options.seeded",
+      "routeId": "file.print-options",
+      "stateId": "seeded",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/file.print-options.seeded.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 805170,
+      "focusedRole": "",
+      "focusedLabel": "",
+      "buttons": [],
+      "controls": [],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/targets/file.print-options.seeded.png",
+      "pixelComparisonLogicalWidth": 1010,
+      "pixelComparisonLogicalHeight": 578
+    },
+    {
+      "scenarioId": "insert.table-picker.open",
+      "routeId": "insert.table-picker",
+      "stateId": "open",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/insert.table-picker.open.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 891596,
+      "focusedRole": "",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "table-1x1",
+          "label": "1 x 1 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-1x2",
+          "label": "1 x 2 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-1x3",
+          "label": "1 x 3 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-1x4",
+          "label": "1 x 4 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-1x5",
+          "label": "1 x 5 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-2x1",
+          "label": "2 x 1 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-2x2",
+          "label": "2 x 2 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-2x3",
+          "label": "2 x 3 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-2x4",
+          "label": "2 x 4 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-2x5",
+          "label": "2 x 5 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-3x1",
+          "label": "3 x 1 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-3x2",
+          "label": "3 x 2 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-3x3",
+          "label": "3 x 3 Table (default)",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-3x4",
+          "label": "3 x 4 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-3x5",
+          "label": "3 x 5 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-4x1",
+          "label": "4 x 1 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-4x2",
+          "label": "4 x 2 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-4x3",
+          "label": "4 x 3 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-4x4",
+          "label": "4 x 4 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-4x5",
+          "label": "4 x 5 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-5x1",
+          "label": "5 x 1 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-5x2",
+          "label": "5 x 2 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-5x3",
+          "label": "5 x 3 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-5x4",
+          "label": "5 x 4 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "table-5x5",
+          "label": "5 x 5 Table",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "table-1x1",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-1x2",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-1x3",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-1x4",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-1x5",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-2x1",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-2x2",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-2x3",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-2x4",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-2x5",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-3x1",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-3x2",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-3x3",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-3x4",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-3x5",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-4x1",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-4x2",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-4x3",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-4x4",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-4x5",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-5x1",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-5x2",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-5x3",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-5x4",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "table-5x5",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        },
+        {
+          "id": "dismissal",
+          "passed": true,
+          "detail": "Choice overlay is hidden after dismissal."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/targets/insert.table-picker.open.png",
+      "pixelComparisonLogicalWidth": 1100,
+      "pixelComparisonLogicalHeight": 192
+    },
+    {
+      "scenarioId": "design.layout-picker.open",
+      "routeId": "design.layout-picker",
+      "stateId": "open",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/design.layout-picker.open.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 891464,
+      "focusedRole": "",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "layout-rId1",
+          "label": "Current - Title Slide\nMaster 1 - 0 placeholders",
+          "isEnabled": false,
+          "isDefault": false,
+          "isCancel": false
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "layout-rId1",
+          "isEnabled": false,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        },
+        {
+          "id": "dismissal",
+          "passed": true,
+          "detail": "Choice overlay is hidden after dismissal."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/targets/design.layout-picker.open.png",
+      "pixelComparisonLogicalWidth": 1100,
+      "pixelComparisonLogicalHeight": 181
+    }
+  ],
+  "limitations": []
+}
