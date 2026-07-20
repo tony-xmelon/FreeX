@@ -4,9 +4,9 @@ Date: 2026-07-21
 
 ## Scope
 
-Imported DrawingML run properties now preserve `a:rPr/@baseline` through the FreeP model, PPTX read/write, presentation cloning, text-edit run splitting/merging, and resolved WPF/Avalonia run state. Positive values raise a run and negative values lower it; values use DrawingML `ST_Percentage` units (one thousandth of a percent).
+Imported DrawingML run properties now preserve `a:rPr/@baseline` through the FreeP model, PPTX read/write, presentation cloning, text-edit run splitting/merging, auto-fit/column clones, and resolved WPF/Avalonia run state. Positive values raise a run and negative values lower it; values use DrawingML `ST_Percentage` units (one thousandth of a percent).
 
-The edit planners compare the token when coalescing adjacent runs, so a superscript/subscript boundary cannot be erased by a later text edit.
+The edit planners compare the token when coalescing adjacent runs, so a superscript/subscript boundary cannot be erased by a later text edit. Plain-text paragraphs with baseline tokens now use a host-local shared-line-baseline route in both WPF and Avalonia; the signed token is converted to a percentage of the resolved run font size.
 
 ## Evidence
 
@@ -14,4 +14,4 @@ The edit planners compare the token when coalescing adjacent runs, so a superscr
 
 ## Deliberate limitation
 
-This slice does not change WPF or Avalonia glyph placement. The resolved run state carries the authored token so a dedicated renderer contract can consume it later; no visual parity claim is made for superscript or subscript rasterization yet.
+The host route is deliberately bounded to plain, non-wrapping runs. Tabs, OMML math, and text-effect paragraphs retain their existing renderer owners; a baseline-bearing paragraph that would wrap falls back to the existing paragraph renderer until fragment-level baseline layout is measured. No PowerPoint-authoritative raster score is claimed for baseline placement yet; a dedicated COM fixture is still needed to validate exact glyph geometry and downstream line-height behavior.
