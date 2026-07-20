@@ -1,6 +1,6 @@
 # FreeP Dialog/Pane Paired Visual Evidence
 
-Generated `2026-07-20T06:20:07.3762263+00:00` from real app-owned WPF and Avalonia render targets. Semantic route coverage is not treated as visual parity.
+Generated `2026-07-20T06:30:10.9006190+00:00` from real app-owned WPF and Avalonia render targets. Semantic route coverage is not treated as visual parity.
 
 - Scenarios: 28
 - Paired captures: 28

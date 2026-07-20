@@ -1,7 +1,7 @@
 {
     "schemaVersion":  1,
     "generatedBy":  "tools/Generate-FreePDialogPaneVisualEvidenceManifest.ps1",
-    "evidenceGeneratedAtUtc":  "2026-07-20T06:20:07.3762263+00:00",
+    "evidenceGeneratedAtUtc":  "2026-07-20T06:30:10.9006190+00:00",
     "scenarioCount":  28,
     "routeCount":  19,
     "pairedCaptureCount":  28,
@@ -428,18 +428,18 @@
                   },
                   {
                       "path":  "report.html",
-                      "bytes":  35678,
-                      "sha256":  "76bcacbae2f91a3d8064d6c218c370d8afcaa8b652db537b0bb1d2e32a0fbb69"
+                      "bytes":  35773,
+                      "sha256":  "68cc0679416057f996250cc2fbc3f4a603bc6531809385aee359e831167c6962"
                   },
                   {
                       "path":  "report.md",
                       "bytes":  16888,
-                      "sha256":  "912e3919f0ddb9c1bc3845c6d7af35d65bc7eefa325dfd4b588787d45b35f613"
+                      "sha256":  "9dba8a87fdff0d920e1ae60623e1f17a5f45722ff517a8f5a4b44cc315c40569"
                   },
                   {
                       "path":  "summary.json",
                       "bytes":  269811,
-                      "sha256":  "2386423be7f111bd9e5081368e15f7e0d0b996bf5b3bd1573d8434d52d1e0fd2"
+                      "sha256":  "3ca1fcf13c7526563409cb05fc1fb5a80f277caf96f4739b05e59706086f79af"
                   },
                   {
                       "path":  "wpf/accessibility.media-caption-pane.seeded.png",
