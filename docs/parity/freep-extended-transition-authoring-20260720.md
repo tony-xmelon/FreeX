@@ -34,3 +34,8 @@ compositor continue through the established shared fallback playback path.
   consuming Release artifact and remained SHA-256 byte-identical to the prior
   accepted artifact; its existing matched-reference diff remains **2.6082%**.
 - No new PowerPoint COM export was issued for this authoring-only slice.
+
+Morph playback is now a separate object-aware action; see
+`freep-morph-transition-playback-20260720.md`. The other extended effects
+listed above still use the established fallback playback path until their
+render surfaces can support dedicated semantics.
