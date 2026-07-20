@@ -56,33 +56,33 @@
   ],
   "summary": {
     "totalCommands": 860,
-    "both": 445,
-    "wpfOnly": 194,
+    "both": 446,
+    "wpfOnly": 193,
     "avaloniaOnly": 221,
     "missingWpf": 221,
-    "missingAvalonia": 194,
+    "missingAvalonia": 193,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 445,
+    "sharedProfile": 446,
     "profileShapeOnly": 361,
     "commandIdAliases": 43,
-    "platformOnly": 11,
+    "platformOnly": 10,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 106
+    "behaviorEvidenceRows": 105
   },
   "commands": [
     {
       "commandId": "freew.about",
       "label": "About FreeW",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "platform-only",
-      "gapClassificationRule": "platform-only",
-      "notes": "Accepted host variance: WPF desktop Help/Product command backed by local About dialog; Avalonia compact shell omits the desktop Help tab.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -95,25 +95,23 @@
           "layout": "Large"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "help",
+          "tab": "Help",
+          "groupId": "product",
+          "group": "Product",
+          "label": "About FreeW",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      },
-      "behaviorEvidence": {
-        "evidenceId": "freew.platform-only.wpf-help-shell",
-        "slice": "WPF Help shell variance",
-        "summary": "WPF exposes About FreeW on the desktop Help/Product tab; Avalonia intentionally omits that desktop Help tab from its compact portable shell profile.",
-        "wpfEvidence": {
-          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
-          "test": "FreeWRibbonParityTests.HelpTab_ExposesOnlyBackedFreeWLocalSupportCommands"
-        },
-        "avaloniaEvidence": {
-          "path": "freew/FreeW.App.Avalonia.Tests/RibbonAndDocumentTests.cs",
-          "test": "RibbonAndDocumentTests.Avalonia_file_shell_and_WPF_authority_legal_notice_commands_are_backed"
-        }
+        "avaloniaRegistrySource": true
       }
     },
     {
