@@ -1,30 +1,29 @@
 # FreeP Paired Whole-Window Visual Evidence
 
-Generated `2026-07-20T08:44:06.0044930+00:00` from independently activated WPF and Avalonia app processes.
+Generated `2026-07-20T09:08:36.0398011+00:00` from independently activated WPF and Avalonia app processes.
 
-- Scenarios: 36
-- Paired captures: 36
+- Scenarios: 31
+- Paired captures: 31
 - Pass: 0
-- Mismatch: 36
+- Mismatch: 31
 - Limitation: 0
-- Duplicate-image scenarios: 4
+- Duplicate-image scenarios: 0
 - Declared contextual tabs observed: 0
 - Environment: All pixel gates use the complete 1280x760 app-owned client at logical 96 DPI.
 - Environment: The app-owned titlebar, QAT, ribbon, Backstage, workspace, notes, panes, status bar, and zoom/view state are included in the gate.
 - Environment: Native OS caption buttons, window-manager shadows, and other non-client decoration are excluded on both hosts; no app-owned client region is masked.
 - Environment: WPF capture mode: visible-app-owned-full-client-render-target; native-non-client-excluded; scenario-isolated-processes; Avalonia capture mode: visible-app-owned-full-client-render-target; native-non-client-excluded; scenario-isolated-processes.
-- Environment: FreeP currently declares zero contextual ribbon tabs; selected shape/chart/media/SmartArt probes remain explicit mismatches instead of false passes.
+- Environment: FreeP currently declares zero contextual ribbon tabs, so the evidence contract contains no invented contextual-tab scenarios.
+- Environment: Gridline/guide scenarios use the runtime ribbon command path; both current canvas renderers apply those flags to snapping and do not paint gridline/guide canvas raster.
 
 ## Mismatch Categories
 
 | Category | Scenarios |
 |---|---:|
 | app-owned-titlebar-raster | 1 |
-| contextual-tab-unavailable | 4 |
-| duplicate-capture | 4 |
 | full-client-pixel-threshold | 1 |
-| ribbon-geometry | 36 |
-| workspace-geometry | 36 |
+| ribbon-geometry | 31 |
+| workspace-geometry | 31 |
 
 ## Scenarios
 
@@ -36,11 +35,9 @@ Generated `2026-07-20T08:44:06.0044930+00:00` from independently activated WPF a
 | startup.notes | Startup | mismatch | ribbon-geometry, workspace-geometry | 12.59 % | 8.15 | 4 | [WPF full](wpf/full/startup.notes.png) / [Avalonia full](avalonia/full/startup.notes.png) / [WPF client](wpf/client/startup.notes.png) / [Avalonia client](avalonia/client/startup.notes.png) / [diff](diff/startup.notes.png) |
 |  | Detail |  |  |  |  |  | Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0. |
 |  | Detail |  |  |  |  |  | Slide pane, canvas, or notes-pane bounds differ. |
-| ribbon.home | StaticRibbonTab | mismatch | duplicate-capture, ribbon-geometry, workspace-geometry | 15.19 % | 10.53 | 4 | [WPF full](wpf/full/ribbon.home.png) / [Avalonia full](avalonia/full/ribbon.home.png) / [WPF client](wpf/client/ribbon.home.png) / [Avalonia client](avalonia/client/ribbon.home.png) / [diff](diff/ribbon.home.png) |
+| ribbon.home | StaticRibbonTab | mismatch | ribbon-geometry, workspace-geometry | 15.19 % | 10.53 | 4 | [WPF full](wpf/full/ribbon.home.png) / [Avalonia full](avalonia/full/ribbon.home.png) / [WPF client](wpf/client/ribbon.home.png) / [Avalonia client](avalonia/client/ribbon.home.png) / [diff](diff/ribbon.home.png) |
 |  | Detail |  |  |  |  |  | Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0. |
 |  | Detail |  |  |  |  |  | Slide pane, canvas, or notes-pane bounds differ. |
-|  | Detail |  |  |  |  |  | WPF client PNG is byte-identical to: status.slide-1. |
-|  | Detail |  |  |  |  |  | Avalonia client PNG is byte-identical to: status.slide-1. |
 | ribbon.insert | StaticRibbonTab | mismatch | ribbon-geometry, workspace-geometry | 14.89 % | 10.41 | 3 | [WPF full](wpf/full/ribbon.insert.png) / [Avalonia full](avalonia/full/ribbon.insert.png) / [WPF client](wpf/client/ribbon.insert.png) / [Avalonia client](avalonia/client/ribbon.insert.png) / [diff](diff/ribbon.insert.png) |
 |  | Detail |  |  |  |  |  | Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0. |
 |  | Detail |  |  |  |  |  | Slide pane, canvas, or notes-pane bounds differ. |
@@ -55,22 +52,6 @@ Generated `2026-07-20T08:44:06.0044930+00:00` from independently activated WPF a
 |  | Detail |  |  |  |  |  | Slide pane, canvas, or notes-pane bounds differ. |
 | ribbon.view | StaticRibbonTab | mismatch | ribbon-geometry, workspace-geometry | 11.81 % | 8.26 | 2 | [WPF full](wpf/full/ribbon.view.png) / [Avalonia full](avalonia/full/ribbon.view.png) / [WPF client](wpf/client/ribbon.view.png) / [Avalonia client](avalonia/client/ribbon.view.png) / [diff](diff/ribbon.view.png) |
 |  | Detail |  |  |  |  |  | Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x128.7. |
-|  | Detail |  |  |  |  |  | Slide pane, canvas, or notes-pane bounds differ. |
-| contextual.shape | ContextualSelection | mismatch | contextual-tab-unavailable, ribbon-geometry, workspace-geometry | 15.63 % | 10.84 | 4 | [WPF full](wpf/full/contextual.shape.png) / [Avalonia full](avalonia/full/contextual.shape.png) / [WPF client](wpf/client/contextual.shape.png) / [Avalonia client](avalonia/client/contextual.shape.png) / [diff](diff/contextual.shape.png) |
-|  | Detail |  |  |  |  |  | contextual-tab-visible: Expected contextual tab 'ShapeFormatTab', but FreeP declares no contextual ribbon tabs. |
-|  | Detail |  |  |  |  |  | Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0. |
-|  | Detail |  |  |  |  |  | Slide pane, canvas, or notes-pane bounds differ. |
-| contextual.chart | ContextualSelection | mismatch | contextual-tab-unavailable, ribbon-geometry, workspace-geometry | 15.87 % | 11.00 | 4 | [WPF full](wpf/full/contextual.chart.png) / [Avalonia full](avalonia/full/contextual.chart.png) / [WPF client](wpf/client/contextual.chart.png) / [Avalonia client](avalonia/client/contextual.chart.png) / [diff](diff/contextual.chart.png) |
-|  | Detail |  |  |  |  |  | contextual-tab-visible: Expected contextual tab 'ChartDesignTab', but FreeP declares no contextual ribbon tabs. |
-|  | Detail |  |  |  |  |  | Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0. |
-|  | Detail |  |  |  |  |  | Slide pane, canvas, or notes-pane bounds differ. |
-| contextual.media | ContextualSelection | mismatch | contextual-tab-unavailable, ribbon-geometry, workspace-geometry | 15.53 % | 10.71 | 4 | [WPF full](wpf/full/contextual.media.png) / [Avalonia full](avalonia/full/contextual.media.png) / [WPF client](wpf/client/contextual.media.png) / [Avalonia client](avalonia/client/contextual.media.png) / [diff](diff/contextual.media.png) |
-|  | Detail |  |  |  |  |  | contextual-tab-visible: Expected contextual tab 'MediaFormatTab', but FreeP declares no contextual ribbon tabs. |
-|  | Detail |  |  |  |  |  | Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0. |
-|  | Detail |  |  |  |  |  | Slide pane, canvas, or notes-pane bounds differ. |
-| contextual.smartart | ContextualSelection | mismatch | contextual-tab-unavailable, ribbon-geometry, workspace-geometry | 15.61 % | 10.81 | 4 | [WPF full](wpf/full/contextual.smartart.png) / [Avalonia full](avalonia/full/contextual.smartart.png) / [WPF client](wpf/client/contextual.smartart.png) / [Avalonia client](avalonia/client/contextual.smartart.png) / [diff](diff/contextual.smartart.png) |
-|  | Detail |  |  |  |  |  | contextual-tab-visible: Expected contextual tab 'SmartArtDesignTab', but FreeP declares no contextual ribbon tabs. |
-|  | Detail |  |  |  |  |  | Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0. |
 |  | Detail |  |  |  |  |  | Slide pane, canvas, or notes-pane bounds differ. |
 | backstage.info | BackstagePane | mismatch | ribbon-geometry, workspace-geometry | 1.75 % | 1.69 | 0 | [WPF full](wpf/full/backstage.info.png) / [Avalonia full](avalonia/full/backstage.info.png) / [WPF client](wpf/client/backstage.info.png) / [Avalonia client](avalonia/client/backstage.info.png) / [diff](diff/backstage.info.png) |
 |  | Detail |  |  |  |  |  | Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0. |
@@ -90,27 +71,18 @@ Generated `2026-07-20T08:44:06.0044930+00:00` from independently activated WPF a
 | backstage.options | BackstagePane | mismatch | ribbon-geometry, workspace-geometry | 2.20 % | 2.07 | 0 | [WPF full](wpf/full/backstage.options.png) / [Avalonia full](avalonia/full/backstage.options.png) / [WPF client](wpf/client/backstage.options.png) / [Avalonia client](avalonia/client/backstage.options.png) / [diff](diff/backstage.options.png) |
 |  | Detail |  |  |  |  |  | Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0. |
 |  | Detail |  |  |  |  |  | Slide pane, canvas, or notes-pane bounds differ. |
-| backstage.account | BackstagePane | mismatch | ribbon-geometry, workspace-geometry | 3.39 % | 3.25 | 1 | [WPF full](wpf/full/backstage.account.png) / [Avalonia full](avalonia/full/backstage.account.png) / [WPF client](wpf/client/backstage.account.png) / [Avalonia client](avalonia/client/backstage.account.png) / [diff](diff/backstage.account.png) |
+| backstage.account | BackstagePane | mismatch | ribbon-geometry, workspace-geometry | 3.39 % | 3.26 | 1 | [WPF full](wpf/full/backstage.account.png) / [Avalonia full](avalonia/full/backstage.account.png) / [WPF client](wpf/client/backstage.account.png) / [Avalonia client](avalonia/client/backstage.account.png) / [diff](diff/backstage.account.png) |
 |  | Detail |  |  |  |  |  | Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0. |
 |  | Detail |  |  |  |  |  | Slide pane, canvas, or notes-pane bounds differ. |
-| status.slide-1 | StatusBar | mismatch | duplicate-capture, ribbon-geometry, workspace-geometry | 15.19 % | 10.53 | 4 | [WPF full](wpf/full/status.slide-1.png) / [Avalonia full](avalonia/full/status.slide-1.png) / [WPF client](wpf/client/status.slide-1.png) / [Avalonia client](avalonia/client/status.slide-1.png) / [diff](diff/status.slide-1.png) |
-|  | Detail |  |  |  |  |  | Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0. |
-|  | Detail |  |  |  |  |  | Slide pane, canvas, or notes-pane bounds differ. |
-|  | Detail |  |  |  |  |  | WPF client PNG is byte-identical to: ribbon.home. |
-|  | Detail |  |  |  |  |  | Avalonia client PNG is byte-identical to: ribbon.home. |
 | status.slide-2 | StatusBar | mismatch | ribbon-geometry, workspace-geometry | 12.22 % | 7.21 | 4 | [WPF full](wpf/full/status.slide-2.png) / [Avalonia full](avalonia/full/status.slide-2.png) / [WPF client](wpf/client/status.slide-2.png) / [Avalonia client](avalonia/client/status.slide-2.png) / [diff](diff/status.slide-2.png) |
 |  | Detail |  |  |  |  |  | Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0. |
 |  | Detail |  |  |  |  |  | Slide pane, canvas, or notes-pane bounds differ. |
-| view.gridlines-guides | ViewState | mismatch | duplicate-capture, ribbon-geometry, workspace-geometry | 12.24 % | 8.57 | 2 | [WPF full](wpf/full/view.gridlines-guides.png) / [Avalonia full](avalonia/full/view.gridlines-guides.png) / [WPF client](wpf/client/view.gridlines-guides.png) / [Avalonia client](avalonia/client/view.gridlines-guides.png) / [diff](diff/view.gridlines-guides.png) |
+| view.gridlines-guides | ViewState | mismatch | ribbon-geometry, workspace-geometry | 12.24 % | 8.57 | 2 | [WPF full](wpf/full/view.gridlines-guides.png) / [Avalonia full](avalonia/full/view.gridlines-guides.png) / [WPF client](wpf/client/view.gridlines-guides.png) / [Avalonia client](avalonia/client/view.gridlines-guides.png) / [diff](diff/view.gridlines-guides.png) |
 |  | Detail |  |  |  |  |  | Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x128.7. |
 |  | Detail |  |  |  |  |  | Slide pane, canvas, or notes-pane bounds differ. |
-|  | Detail |  |  |  |  |  | WPF client PNG is byte-identical to: view.clean-canvas. |
-|  | Detail |  |  |  |  |  | Avalonia client PNG is byte-identical to: view.clean-canvas. |
-| view.clean-canvas | ViewState | mismatch | duplicate-capture, ribbon-geometry, workspace-geometry | 12.24 % | 8.57 | 2 | [WPF full](wpf/full/view.clean-canvas.png) / [Avalonia full](avalonia/full/view.clean-canvas.png) / [WPF client](wpf/client/view.clean-canvas.png) / [Avalonia client](avalonia/client/view.clean-canvas.png) / [diff](diff/view.clean-canvas.png) |
+| view.clean-canvas | ViewState | mismatch | ribbon-geometry, workspace-geometry | 12.10 % | 8.47 | 2 | [WPF full](wpf/full/view.clean-canvas.png) / [Avalonia full](avalonia/full/view.clean-canvas.png) / [WPF client](wpf/client/view.clean-canvas.png) / [Avalonia client](avalonia/client/view.clean-canvas.png) / [diff](diff/view.clean-canvas.png) |
 |  | Detail |  |  |  |  |  | Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x128.7. |
 |  | Detail |  |  |  |  |  | Slide pane, canvas, or notes-pane bounds differ. |
-|  | Detail |  |  |  |  |  | WPF client PNG is byte-identical to: view.gridlines-guides. |
-|  | Detail |  |  |  |  |  | Avalonia client PNG is byte-identical to: view.gridlines-guides. |
 | view.zoom-fit | ViewState | mismatch | ribbon-geometry, workspace-geometry | 12.39 % | 8.72 | 2 | [WPF full](wpf/full/view.zoom-fit.png) / [Avalonia full](avalonia/full/view.zoom-fit.png) / [WPF client](wpf/client/view.zoom-fit.png) / [Avalonia client](avalonia/client/view.zoom-fit.png) / [diff](diff/view.zoom-fit.png) |
 |  | Detail |  |  |  |  |  | Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x128.7. |
 |  | Detail |  |  |  |  |  | Slide pane, canvas, or notes-pane bounds differ. |
