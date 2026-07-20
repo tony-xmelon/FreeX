@@ -24,6 +24,10 @@ shared playback actions and matching WPF/Avalonia centered two-surface
 projections. The projections preserve direction, scale collapse/rotation, and
 outgoing-surface participation without pretending to be a full 3-D camera.
 
+Wind now has a dedicated shared staggered swept-band mask in both hosts; its
+bands preserve direction and use a skewed leading edge rather than reducing
+the transition to a fade.
+
 Morph is a separate object-aware action. The remaining effects listed above
 are the shape-deforming families; they do not yet have dedicated frame-by-frame
 playback and continue through the
