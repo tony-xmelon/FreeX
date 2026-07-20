@@ -1,7 +1,37 @@
 {
   "schema": "freew.dialog-route-inventory.v1",
-  "generatedFromSha256": "31a270aff0c861909d776554bc1e45742f6d7207d8607a519108586ac0696f21",
+  "generatedFromSha256": "00b4c87ed6f534664d0143d31d346aa8261b0a3a139ee507e35703419151c5ad",
   "scenarios": [
+    {
+      "id": "avalonia.about.initial",
+      "host": "avalonia",
+      "routeId": "about",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.about.populated",
+      "host": "avalonia",
+      "routeId": "about",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.about.validation-error",
+      "host": "avalonia",
+      "routeId": "about",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
     {
       "id": "avalonia.accessibility-report.initial",
       "host": "avalonia",
@@ -9,7 +39,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.accessibility-report.populated",
@@ -18,7 +49,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.accessibility-report.validation-error",
@@ -27,385 +59,138 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
-      "id": "avalonia.avalonia-save-changes.initial",
-      "host": "avalonia",
-      "routeId": "avalonia-save-changes",
-      "state": "initial",
-      "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.avalonia-save-changes.populated",
-      "host": "avalonia",
-      "routeId": "avalonia-save-changes",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.avalonia-save-changes.validation-error",
-      "host": "avalonia",
-      "routeId": "avalonia-save-changes",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-account.initial",
+      "id": "avalonia.backstage-account.open",
       "host": "avalonia",
       "routeId": "backstage-account",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "avalonia.backstage-account.populated",
-      "host": "avalonia",
-      "routeId": "backstage-account",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-account.validation-error",
-      "host": "avalonia",
-      "routeId": "backstage-account",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-close.initial",
+      "id": "avalonia.backstage-close.open",
       "host": "avalonia",
       "routeId": "backstage-close",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "avalonia.backstage-close.populated",
-      "host": "avalonia",
-      "routeId": "backstage-close",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-close.validation-error",
-      "host": "avalonia",
-      "routeId": "backstage-close",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-export.initial",
+      "id": "avalonia.backstage-export.open",
       "host": "avalonia",
       "routeId": "backstage-export",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "avalonia.backstage-export.populated",
-      "host": "avalonia",
-      "routeId": "backstage-export",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-export.validation-error",
-      "host": "avalonia",
-      "routeId": "backstage-export",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-home.initial",
+      "id": "avalonia.backstage-home.open",
       "host": "avalonia",
       "routeId": "backstage-home",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "avalonia.backstage-home.populated",
-      "host": "avalonia",
-      "routeId": "backstage-home",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-home.validation-error",
-      "host": "avalonia",
-      "routeId": "backstage-home",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-info.initial",
+      "id": "avalonia.backstage-info.open",
       "host": "avalonia",
       "routeId": "backstage-info",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "avalonia.backstage-info.populated",
-      "host": "avalonia",
-      "routeId": "backstage-info",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-info.validation-error",
-      "host": "avalonia",
-      "routeId": "backstage-info",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-new.initial",
+      "id": "avalonia.backstage-new.open",
       "host": "avalonia",
       "routeId": "backstage-new",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "avalonia.backstage-new.populated",
-      "host": "avalonia",
-      "routeId": "backstage-new",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-new.validation-error",
-      "host": "avalonia",
-      "routeId": "backstage-new",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-open.initial",
+      "id": "avalonia.backstage-open.open",
       "host": "avalonia",
       "routeId": "backstage-open",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": "native-picker-platform-limitation"
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": "native-picker-platform-limitation",
+      "surfaceKind": "backstage"
     },
     {
-      "id": "avalonia.backstage-open.populated",
-      "host": "avalonia",
-      "routeId": "backstage-open",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": "native-picker-platform-limitation"
-    },
-    {
-      "id": "avalonia.backstage-open.validation-error",
-      "host": "avalonia",
-      "routeId": "backstage-open",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": "native-picker-platform-limitation"
-    },
-    {
-      "id": "avalonia.backstage-options.initial",
+      "id": "avalonia.backstage-options.open",
       "host": "avalonia",
       "routeId": "backstage-options",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "avalonia.backstage-options.populated",
-      "host": "avalonia",
-      "routeId": "backstage-options",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-options.validation-error",
-      "host": "avalonia",
-      "routeId": "backstage-options",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-print.initial",
+      "id": "avalonia.backstage-print.open",
       "host": "avalonia",
       "routeId": "backstage-print",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": "native-picker-platform-limitation"
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": "native-picker-platform-limitation",
+      "surfaceKind": "backstage"
     },
     {
-      "id": "avalonia.backstage-print.populated",
-      "host": "avalonia",
-      "routeId": "backstage-print",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": "native-picker-platform-limitation"
-    },
-    {
-      "id": "avalonia.backstage-print.validation-error",
-      "host": "avalonia",
-      "routeId": "backstage-print",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": "native-picker-platform-limitation"
-    },
-    {
-      "id": "avalonia.backstage-save.initial",
+      "id": "avalonia.backstage-save.open",
       "host": "avalonia",
       "routeId": "backstage-save",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "avalonia.backstage-save.populated",
-      "host": "avalonia",
-      "routeId": "backstage-save",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-save.validation-error",
-      "host": "avalonia",
-      "routeId": "backstage-save",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-save-a-copy.initial",
+      "id": "avalonia.backstage-save-a-copy.open",
       "host": "avalonia",
       "routeId": "backstage-save-a-copy",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "avalonia.backstage-save-a-copy.populated",
-      "host": "avalonia",
-      "routeId": "backstage-save-a-copy",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-save-a-copy.validation-error",
-      "host": "avalonia",
-      "routeId": "backstage-save-a-copy",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-save-as.initial",
+      "id": "avalonia.backstage-save-as.open",
       "host": "avalonia",
       "routeId": "backstage-save-as",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": "native-picker-platform-limitation"
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": "native-picker-platform-limitation",
+      "surfaceKind": "backstage"
     },
     {
-      "id": "avalonia.backstage-save-as.populated",
-      "host": "avalonia",
-      "routeId": "backstage-save-as",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": "native-picker-platform-limitation"
-    },
-    {
-      "id": "avalonia.backstage-save-as.validation-error",
-      "host": "avalonia",
-      "routeId": "backstage-save-as",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": "native-picker-platform-limitation"
-    },
-    {
-      "id": "avalonia.backstage-share.initial",
+      "id": "avalonia.backstage-share.open",
       "host": "avalonia",
       "routeId": "backstage-share",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-share.populated",
-      "host": "avalonia",
-      "routeId": "backstage-share",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.backstage-share.validation-error",
-      "host": "avalonia",
-      "routeId": "backstage-share",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
       "id": "avalonia.bookmark.initial",
@@ -414,7 +199,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.bookmark.populated",
@@ -423,7 +209,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.bookmark.validation-error",
@@ -432,7 +219,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.bookmark-manager.initial",
@@ -441,7 +229,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.bookmark-manager.populated",
@@ -450,7 +239,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.bookmark-manager.validation-error",
@@ -459,7 +249,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.borders-and-shading.initial",
@@ -468,7 +259,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.borders-and-shading.populated",
@@ -477,7 +269,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.borders-and-shading.validation-error",
@@ -486,7 +279,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.building-blocks-organizer.initial",
@@ -495,7 +289,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.building-blocks-organizer.populated",
@@ -504,7 +299,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.building-blocks-organizer.validation-error",
@@ -513,7 +309,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.cell-edit.initial",
@@ -522,7 +319,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.cell-edit.populated",
@@ -531,7 +329,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.cell-edit.validation-error",
@@ -540,7 +339,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.chart-axis-titles.initial",
@@ -549,7 +349,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.chart-axis-titles.populated",
@@ -558,7 +359,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.chart-axis-titles.validation-error",
@@ -567,7 +369,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.chart-size.initial",
@@ -576,7 +379,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.chart-size.populated",
@@ -585,7 +389,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.chart-size.validation-error",
@@ -594,7 +399,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.chart-title.initial",
@@ -603,7 +409,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.chart-title.populated",
@@ -612,7 +419,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.chart-title.validation-error",
@@ -621,7 +429,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.citation-source-picker.initial",
@@ -630,7 +439,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.citation-source-picker.populated",
@@ -639,7 +449,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.citation-source-picker.validation-error",
@@ -648,7 +459,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.columns.initial",
@@ -657,7 +469,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.columns.populated",
@@ -666,7 +479,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.columns.validation-error",
@@ -675,7 +489,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.comment-list.initial",
@@ -684,7 +499,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.comment-list.populated",
@@ -693,7 +509,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.comment-list.validation-error",
@@ -702,7 +519,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.comment-reply.initial",
@@ -711,7 +529,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.comment-reply.populated",
@@ -720,7 +539,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.comment-reply.validation-error",
@@ -729,7 +549,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.cross-reference.initial",
@@ -738,7 +559,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.cross-reference.populated",
@@ -747,7 +569,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.cross-reference.validation-error",
@@ -756,7 +579,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.custom-paragraph-spacing.initial",
@@ -765,7 +589,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.custom-paragraph-spacing.populated",
@@ -774,7 +599,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.custom-paragraph-spacing.validation-error",
@@ -783,7 +609,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.customize-theme-colors.initial",
@@ -792,7 +619,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.customize-theme-colors.populated",
@@ -801,7 +629,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.customize-theme-colors.validation-error",
@@ -810,7 +639,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.customize-theme-fonts.initial",
@@ -819,7 +649,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.customize-theme-fonts.populated",
@@ -828,7 +659,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.customize-theme-fonts.validation-error",
@@ -837,7 +669,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.date-time.initial",
@@ -846,7 +679,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.date-time.populated",
@@ -855,7 +689,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.date-time.validation-error",
@@ -864,7 +699,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.document-inspector.initial",
@@ -873,7 +709,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.document-inspector.populated",
@@ -882,7 +719,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.document-inspector.validation-error",
@@ -891,7 +729,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.draw-table-dimension.initial",
@@ -900,7 +739,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.draw-table-dimension.populated",
@@ -909,7 +749,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.draw-table-dimension.validation-error",
@@ -918,7 +759,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.drop-cap-options.initial",
@@ -927,7 +769,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.drop-cap-options.populated",
@@ -936,7 +779,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.drop-cap-options.validation-error",
@@ -945,7 +789,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.field-picker.initial",
@@ -954,7 +799,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.field-picker.populated",
@@ -963,7 +809,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.field-picker.validation-error",
@@ -972,7 +819,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.find-replace.initial",
@@ -981,7 +829,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.find-replace.populated",
@@ -990,7 +839,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.find-replace.validation-error",
@@ -999,7 +849,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.font.initial",
@@ -1008,7 +859,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.font.populated",
@@ -1017,7 +869,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.font.validation-error",
@@ -1026,7 +879,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.footnote-endnote-options.initial",
@@ -1035,7 +889,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.footnote-endnote-options.populated",
@@ -1044,7 +899,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.footnote-endnote-options.validation-error",
@@ -1053,34 +909,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.free-winfo.initial",
-      "host": "avalonia",
-      "routeId": "free-winfo",
-      "state": "initial",
-      "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.free-winfo.populated",
-      "host": "avalonia",
-      "routeId": "free-winfo",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.free-winfo.validation-error",
-      "host": "avalonia",
-      "routeId": "free-winfo",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.hyperlink.initial",
@@ -1089,7 +919,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.hyperlink.populated",
@@ -1098,7 +929,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.hyperlink.validation-error",
@@ -1107,7 +939,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.hyphenation-options.initial",
@@ -1116,7 +949,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.hyphenation-options.populated",
@@ -1125,7 +959,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.hyphenation-options.validation-error",
@@ -1134,7 +969,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.icon-picker.initial",
@@ -1143,7 +979,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.icon-picker.populated",
@@ -1152,7 +989,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.icon-picker.validation-error",
@@ -1161,7 +999,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-adjust.initial",
@@ -1170,7 +1009,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-adjust.populated",
@@ -1179,7 +1019,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-adjust.validation-error",
@@ -1188,7 +1029,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-alt-text.initial",
@@ -1197,7 +1039,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-alt-text.populated",
@@ -1206,7 +1049,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-alt-text.validation-error",
@@ -1215,7 +1059,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-border.initial",
@@ -1224,7 +1069,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-border.populated",
@@ -1233,7 +1079,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-border.validation-error",
@@ -1242,7 +1089,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-crop.initial",
@@ -1251,7 +1099,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-crop.populated",
@@ -1260,7 +1109,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-crop.validation-error",
@@ -1269,7 +1119,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-position.initial",
@@ -1278,7 +1129,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-position.populated",
@@ -1287,7 +1139,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-position.validation-error",
@@ -1296,7 +1149,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-size.initial",
@@ -1305,7 +1159,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-size.populated",
@@ -1314,7 +1169,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.image-size.validation-error",
@@ -1323,7 +1179,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.insert-chart.initial",
@@ -1332,7 +1189,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.insert-chart.populated",
@@ -1341,7 +1199,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.insert-chart.validation-error",
@@ -1350,7 +1209,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.insert-smart-art.initial",
@@ -1359,7 +1219,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.insert-smart-art.populated",
@@ -1368,7 +1229,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.insert-smart-art.validation-error",
@@ -1377,7 +1239,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.line-number-options.initial",
@@ -1386,7 +1249,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.line-number-options.populated",
@@ -1395,7 +1259,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.line-number-options.validation-error",
@@ -1404,7 +1269,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.link-bookmark.initial",
@@ -1413,7 +1279,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.link-bookmark.populated",
@@ -1422,7 +1289,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.link-bookmark.validation-error",
@@ -1431,7 +1299,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.manage-sources.initial",
@@ -1440,7 +1309,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.manage-sources.populated",
@@ -1449,7 +1319,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.manage-sources.validation-error",
@@ -1458,7 +1329,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.manage-styles.initial",
@@ -1467,7 +1339,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.manage-styles.populated",
@@ -1476,7 +1349,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.manage-styles.validation-error",
@@ -1485,7 +1359,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.mark-citation.initial",
@@ -1494,7 +1369,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.mark-citation.populated",
@@ -1503,7 +1379,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.mark-citation.validation-error",
@@ -1512,7 +1389,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.multilevel-list.initial",
@@ -1521,7 +1399,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.multilevel-list.populated",
@@ -1530,7 +1409,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.multilevel-list.validation-error",
@@ -1539,7 +1419,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.note-text.initial",
@@ -1548,7 +1429,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.note-text.populated",
@@ -1557,7 +1439,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.note-text.validation-error",
@@ -1566,34 +1449,18 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
-      "id": "avalonia.notes-pane.initial",
+      "id": "avalonia.notes-pane.seeded",
       "host": "avalonia",
       "routeId": "notes-pane",
-      "state": "initial",
+      "state": "seeded",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.notes-pane.populated",
-      "host": "avalonia",
-      "routeId": "notes-pane",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "avalonia.notes-pane.validation-error",
-      "host": "avalonia",
-      "routeId": "notes-pane",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "description": "Seeded app-owned pane state after the route is opened.",
+      "limitation": null,
+      "surfaceKind": "pane"
     },
     {
       "id": "avalonia.options.initial",
@@ -1602,7 +1469,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.options.populated",
@@ -1611,7 +1479,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.options.validation-error",
@@ -1620,7 +1489,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.options.tab-general",
@@ -1629,7 +1499,8 @@
       "state": "relevant-tab",
       "tab": "General",
       "description": "Selected tab: General.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.options.tab-auto-correct",
@@ -1638,7 +1509,8 @@
       "state": "relevant-tab",
       "tab": "AutoCorrect",
       "description": "Selected tab: AutoCorrect.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.options.tab-auto-format-as-you-type",
@@ -1647,7 +1519,8 @@
       "state": "relevant-tab",
       "tab": "AutoFormat As You Type",
       "description": "Selected tab: AutoFormat As You Type.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.page-borders.initial",
@@ -1656,7 +1529,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.page-borders.populated",
@@ -1665,7 +1539,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.page-borders.validation-error",
@@ -1674,7 +1549,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.page-color.initial",
@@ -1683,7 +1559,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.page-color.populated",
@@ -1692,7 +1569,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.page-color.validation-error",
@@ -1701,7 +1579,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.page-number-format.initial",
@@ -1710,7 +1589,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.page-number-format.populated",
@@ -1719,7 +1599,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.page-number-format.validation-error",
@@ -1728,7 +1609,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.page-setup.initial",
@@ -1737,7 +1619,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.page-setup.populated",
@@ -1746,7 +1629,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.page-setup.validation-error",
@@ -1755,7 +1639,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.page-setup.tab-margins",
@@ -1764,7 +1649,8 @@
       "state": "relevant-tab",
       "tab": "Margins",
       "description": "Selected tab: Margins.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.page-setup.tab-paper",
@@ -1773,7 +1659,8 @@
       "state": "relevant-tab",
       "tab": "Paper",
       "description": "Selected tab: Paper.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.page-setup.tab-layout",
@@ -1782,7 +1669,8 @@
       "state": "relevant-tab",
       "tab": "Layout",
       "description": "Selected tab: Layout.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.paragraph.initial",
@@ -1791,7 +1679,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.paragraph.populated",
@@ -1800,7 +1689,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.paragraph.validation-error",
@@ -1809,7 +1699,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.paragraph.tab-indents-and-spacing",
@@ -1818,7 +1709,8 @@
       "state": "relevant-tab",
       "tab": "Indents and Spacing",
       "description": "Selected tab: Indents and Spacing.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.paragraph.tab-line-and-page-breaks",
@@ -1827,7 +1719,8 @@
       "state": "relevant-tab",
       "tab": "Line and Page Breaks",
       "description": "Selected tab: Line and Page Breaks.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.paste-special.initial",
@@ -1836,7 +1729,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.paste-special.populated",
@@ -1845,7 +1739,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.paste-special.validation-error",
@@ -1854,7 +1749,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.print-preview.initial",
@@ -1863,7 +1759,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.print-preview.populated",
@@ -1872,7 +1769,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.print-preview.validation-error",
@@ -1881,7 +1779,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.proofing-language.initial",
@@ -1890,7 +1789,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.proofing-language.populated",
@@ -1899,7 +1799,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.proofing-language.validation-error",
@@ -1908,7 +1809,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.properties.initial",
@@ -1917,7 +1819,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.properties.populated",
@@ -1926,7 +1829,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.properties.validation-error",
@@ -1935,7 +1839,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.quick-part.initial",
@@ -1944,7 +1849,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.quick-part.populated",
@@ -1953,7 +1859,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.quick-part.validation-error",
@@ -1962,7 +1869,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.quick-part-name.initial",
@@ -1971,7 +1879,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.quick-part-name.populated",
@@ -1980,7 +1889,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.quick-part-name.validation-error",
@@ -1989,7 +1899,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.restrict-editing.initial",
@@ -1998,7 +1909,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.restrict-editing.populated",
@@ -2007,7 +1919,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.restrict-editing.validation-error",
@@ -2016,7 +1929,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.save-compatibility-warning.initial",
@@ -2025,7 +1939,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.save-compatibility-warning.populated",
@@ -2034,7 +1949,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.save-compatibility-warning.validation-error",
@@ -2043,7 +1959,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.screen-tip.initial",
@@ -2052,7 +1969,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.screen-tip.populated",
@@ -2061,7 +1979,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.screen-tip.validation-error",
@@ -2070,7 +1989,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.set-as-default-confirmation.initial",
@@ -2079,7 +1999,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.set-as-default-confirmation.populated",
@@ -2088,7 +2009,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.set-as-default-confirmation.validation-error",
@@ -2097,7 +2019,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.smart-art-edit.initial",
@@ -2106,7 +2029,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.smart-art-edit.populated",
@@ -2115,7 +2039,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.smart-art-edit.validation-error",
@@ -2124,7 +2049,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.sort.initial",
@@ -2133,7 +2059,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.sort.populated",
@@ -2142,7 +2069,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.sort.validation-error",
@@ -2151,7 +2079,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.source-author-editor.initial",
@@ -2160,7 +2089,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.source-author-editor.populated",
@@ -2169,7 +2099,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.source-author-editor.validation-error",
@@ -2178,7 +2109,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.source-conflict-resolution.initial",
@@ -2187,7 +2119,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.source-conflict-resolution.populated",
@@ -2196,7 +2129,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.source-conflict-resolution.validation-error",
@@ -2205,7 +2139,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.source-entry.initial",
@@ -2214,7 +2149,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.source-entry.populated",
@@ -2223,7 +2159,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.source-entry.validation-error",
@@ -2232,7 +2169,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.style.initial",
@@ -2241,7 +2179,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.style.populated",
@@ -2250,7 +2189,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.style.validation-error",
@@ -2259,7 +2199,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.style-set.initial",
@@ -2268,7 +2209,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.style-set.populated",
@@ -2277,7 +2219,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.style-set.validation-error",
@@ -2286,7 +2229,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.table-of-authorities.initial",
@@ -2295,7 +2239,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.table-of-authorities.populated",
@@ -2304,7 +2249,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.table-of-authorities.validation-error",
@@ -2313,7 +2259,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.table-text-conversion.initial",
@@ -2322,7 +2269,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.table-text-conversion.populated",
@@ -2331,7 +2279,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.table-text-conversion.validation-error",
@@ -2340,7 +2289,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.tabs.initial",
@@ -2349,7 +2299,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.tabs.populated",
@@ -2358,7 +2309,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.tabs.validation-error",
@@ -2367,7 +2319,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.theme-effects.initial",
@@ -2376,7 +2329,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.theme-effects.populated",
@@ -2385,7 +2339,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.theme-effects.validation-error",
@@ -2394,7 +2349,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.thesaurus.initial",
@@ -2403,7 +2359,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.thesaurus.populated",
@@ -2412,7 +2369,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.thesaurus.validation-error",
@@ -2421,7 +2379,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.watermark.initial",
@@ -2430,7 +2389,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.watermark.populated",
@@ -2439,7 +2399,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.watermark.validation-error",
@@ -2448,7 +2409,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.word-count.initial",
@@ -2457,7 +2419,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.word-count.populated",
@@ -2466,7 +2429,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.word-count.validation-error",
@@ -2475,7 +2439,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.zoom.initial",
@@ -2484,7 +2449,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.zoom.populated",
@@ -2493,7 +2459,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "avalonia.zoom.validation-error",
@@ -2502,7 +2469,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.about.initial",
@@ -2511,7 +2479,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.about.populated",
@@ -2520,7 +2489,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.about.validation-error",
@@ -2529,7 +2499,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.accessibility-report.initial",
@@ -2538,7 +2509,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.accessibility-report.populated",
@@ -2547,7 +2519,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.accessibility-report.validation-error",
@@ -2556,358 +2529,138 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.backstage-account.initial",
+      "id": "wpf.backstage-account.open",
       "host": "wpf",
       "routeId": "backstage-account",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "wpf.backstage-account.populated",
-      "host": "wpf",
-      "routeId": "backstage-account",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-account.validation-error",
-      "host": "wpf",
-      "routeId": "backstage-account",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-close.initial",
+      "id": "wpf.backstage-close.open",
       "host": "wpf",
       "routeId": "backstage-close",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "wpf.backstage-close.populated",
-      "host": "wpf",
-      "routeId": "backstage-close",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-close.validation-error",
-      "host": "wpf",
-      "routeId": "backstage-close",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-export.initial",
+      "id": "wpf.backstage-export.open",
       "host": "wpf",
       "routeId": "backstage-export",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "wpf.backstage-export.populated",
-      "host": "wpf",
-      "routeId": "backstage-export",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-export.validation-error",
-      "host": "wpf",
-      "routeId": "backstage-export",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-home.initial",
+      "id": "wpf.backstage-home.open",
       "host": "wpf",
       "routeId": "backstage-home",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "wpf.backstage-home.populated",
-      "host": "wpf",
-      "routeId": "backstage-home",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-home.validation-error",
-      "host": "wpf",
-      "routeId": "backstage-home",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-info.initial",
+      "id": "wpf.backstage-info.open",
       "host": "wpf",
       "routeId": "backstage-info",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "wpf.backstage-info.populated",
-      "host": "wpf",
-      "routeId": "backstage-info",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-info.validation-error",
-      "host": "wpf",
-      "routeId": "backstage-info",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-new.initial",
+      "id": "wpf.backstage-new.open",
       "host": "wpf",
       "routeId": "backstage-new",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "wpf.backstage-new.populated",
-      "host": "wpf",
-      "routeId": "backstage-new",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-new.validation-error",
-      "host": "wpf",
-      "routeId": "backstage-new",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-open.initial",
+      "id": "wpf.backstage-open.open",
       "host": "wpf",
       "routeId": "backstage-open",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": "native-picker-platform-limitation"
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": "native-picker-platform-limitation",
+      "surfaceKind": "backstage"
     },
     {
-      "id": "wpf.backstage-open.populated",
-      "host": "wpf",
-      "routeId": "backstage-open",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": "native-picker-platform-limitation"
-    },
-    {
-      "id": "wpf.backstage-open.validation-error",
-      "host": "wpf",
-      "routeId": "backstage-open",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": "native-picker-platform-limitation"
-    },
-    {
-      "id": "wpf.backstage-options.initial",
+      "id": "wpf.backstage-options.open",
       "host": "wpf",
       "routeId": "backstage-options",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "wpf.backstage-options.populated",
-      "host": "wpf",
-      "routeId": "backstage-options",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-options.validation-error",
-      "host": "wpf",
-      "routeId": "backstage-options",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-print.initial",
+      "id": "wpf.backstage-print.open",
       "host": "wpf",
       "routeId": "backstage-print",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": "native-picker-platform-limitation"
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": "native-picker-platform-limitation",
+      "surfaceKind": "backstage"
     },
     {
-      "id": "wpf.backstage-print.populated",
-      "host": "wpf",
-      "routeId": "backstage-print",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": "native-picker-platform-limitation"
-    },
-    {
-      "id": "wpf.backstage-print.validation-error",
-      "host": "wpf",
-      "routeId": "backstage-print",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": "native-picker-platform-limitation"
-    },
-    {
-      "id": "wpf.backstage-save.initial",
+      "id": "wpf.backstage-save.open",
       "host": "wpf",
       "routeId": "backstage-save",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "wpf.backstage-save.populated",
-      "host": "wpf",
-      "routeId": "backstage-save",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-save.validation-error",
-      "host": "wpf",
-      "routeId": "backstage-save",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-save-a-copy.initial",
+      "id": "wpf.backstage-save-a-copy.open",
       "host": "wpf",
       "routeId": "backstage-save-a-copy",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
-      "id": "wpf.backstage-save-a-copy.populated",
-      "host": "wpf",
-      "routeId": "backstage-save-a-copy",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-save-a-copy.validation-error",
-      "host": "wpf",
-      "routeId": "backstage-save-a-copy",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-save-as.initial",
+      "id": "wpf.backstage-save-as.open",
       "host": "wpf",
       "routeId": "backstage-save-as",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": "native-picker-platform-limitation"
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": "native-picker-platform-limitation",
+      "surfaceKind": "backstage"
     },
     {
-      "id": "wpf.backstage-save-as.populated",
-      "host": "wpf",
-      "routeId": "backstage-save-as",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": "native-picker-platform-limitation"
-    },
-    {
-      "id": "wpf.backstage-save-as.validation-error",
-      "host": "wpf",
-      "routeId": "backstage-save-as",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": "native-picker-platform-limitation"
-    },
-    {
-      "id": "wpf.backstage-share.initial",
+      "id": "wpf.backstage-share.open",
       "host": "wpf",
       "routeId": "backstage-share",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-share.populated",
-      "host": "wpf",
-      "routeId": "backstage-share",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.backstage-share.validation-error",
-      "host": "wpf",
-      "routeId": "backstage-share",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "backstage"
     },
     {
       "id": "wpf.bookmark-manager.initial",
@@ -2916,7 +2669,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.bookmark-manager.populated",
@@ -2925,7 +2679,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.bookmark-manager.validation-error",
@@ -2934,7 +2689,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.borders-and-shading.initial",
@@ -2943,7 +2699,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.borders-and-shading.populated",
@@ -2952,7 +2709,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.borders-and-shading.validation-error",
@@ -2961,7 +2719,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.borders-and-shading.tab-borders",
@@ -2970,7 +2729,8 @@
       "state": "relevant-tab",
       "tab": "Borders",
       "description": "Selected tab: Borders.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.borders-and-shading.tab-page-border",
@@ -2979,7 +2739,8 @@
       "state": "relevant-tab",
       "tab": "Page Border",
       "description": "Selected tab: Page Border.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.borders-and-shading.tab-shading",
@@ -2988,7 +2749,8 @@
       "state": "relevant-tab",
       "tab": "Shading",
       "description": "Selected tab: Shading.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.building-blocks-organizer.initial",
@@ -2997,7 +2759,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.building-blocks-organizer.populated",
@@ -3006,7 +2769,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.building-blocks-organizer.validation-error",
@@ -3015,7 +2779,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.chart-axis-titles.initial",
@@ -3024,7 +2789,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.chart-axis-titles.populated",
@@ -3033,7 +2799,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.chart-axis-titles.validation-error",
@@ -3042,7 +2809,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.chart-size.initial",
@@ -3051,7 +2819,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.chart-size.populated",
@@ -3060,7 +2829,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.chart-size.validation-error",
@@ -3069,7 +2839,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.chart-title.initial",
@@ -3078,7 +2849,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.chart-title.populated",
@@ -3087,7 +2859,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.chart-title.validation-error",
@@ -3096,7 +2869,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.columns.initial",
@@ -3105,7 +2879,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.columns.populated",
@@ -3114,7 +2889,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.columns.validation-error",
@@ -3123,7 +2899,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.compare-documents.initial",
@@ -3132,7 +2909,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.compare-documents.populated",
@@ -3141,7 +2919,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.compare-documents.validation-error",
@@ -3150,7 +2929,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.compare-documents.tab-more",
@@ -3159,7 +2939,8 @@
       "state": "relevant-tab",
       "tab": "More",
       "description": "Selected tab: More.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.cross-reference.initial",
@@ -3168,7 +2949,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.cross-reference.populated",
@@ -3177,7 +2959,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.cross-reference.validation-error",
@@ -3186,7 +2969,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.custom-paragraph-spacing.initial",
@@ -3195,7 +2979,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.custom-paragraph-spacing.populated",
@@ -3204,7 +2989,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.custom-paragraph-spacing.validation-error",
@@ -3213,7 +2999,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.customize-theme-colors.initial",
@@ -3222,7 +3009,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.customize-theme-colors.populated",
@@ -3231,7 +3019,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.customize-theme-colors.validation-error",
@@ -3240,7 +3029,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.customize-theme-fonts.initial",
@@ -3249,7 +3039,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.customize-theme-fonts.populated",
@@ -3258,7 +3049,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.customize-theme-fonts.validation-error",
@@ -3267,7 +3059,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.date-time.initial",
@@ -3276,7 +3069,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.date-time.populated",
@@ -3285,7 +3079,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.date-time.validation-error",
@@ -3294,7 +3089,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.document-inspector.initial",
@@ -3303,7 +3099,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.document-inspector.populated",
@@ -3312,7 +3109,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.document-inspector.validation-error",
@@ -3321,7 +3119,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.drop-cap-options.initial",
@@ -3330,7 +3129,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.drop-cap-options.populated",
@@ -3339,7 +3139,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.drop-cap-options.validation-error",
@@ -3348,34 +3149,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.filter-sort-recipients.initial",
-      "host": "wpf",
-      "routeId": "filter-sort-recipients",
-      "state": "initial",
-      "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.filter-sort-recipients.populated",
-      "host": "wpf",
-      "routeId": "filter-sort-recipients",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.filter-sort-recipients.validation-error",
-      "host": "wpf",
-      "routeId": "filter-sort-recipients",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.find-replace.initial",
@@ -3384,7 +3159,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.find-replace.populated",
@@ -3393,7 +3169,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.find-replace.validation-error",
@@ -3402,7 +3179,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.font.initial",
@@ -3411,7 +3189,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.font.populated",
@@ -3420,7 +3199,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.font.validation-error",
@@ -3429,7 +3209,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.font.tab-font",
@@ -3438,7 +3219,8 @@
       "state": "relevant-tab",
       "tab": "Font",
       "description": "Selected tab: Font.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.font.tab-advanced",
@@ -3447,7 +3229,8 @@
       "state": "relevant-tab",
       "tab": "Advanced",
       "description": "Selected tab: Advanced.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.footnote-endnote-options.initial",
@@ -3456,7 +3239,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.footnote-endnote-options.populated",
@@ -3465,7 +3249,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.footnote-endnote-options.validation-error",
@@ -3474,7 +3259,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.hyphenation-options.initial",
@@ -3483,7 +3269,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.hyphenation-options.populated",
@@ -3492,7 +3279,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.hyphenation-options.validation-error",
@@ -3501,7 +3289,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.icon-picker.initial",
@@ -3510,7 +3299,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.icon-picker.populated",
@@ -3519,7 +3309,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.icon-picker.validation-error",
@@ -3528,7 +3319,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.image-adjust.initial",
@@ -3537,7 +3329,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.image-adjust.populated",
@@ -3546,7 +3339,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.image-adjust.validation-error",
@@ -3555,7 +3349,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.image-border.initial",
@@ -3564,7 +3359,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.image-border.populated",
@@ -3573,7 +3369,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.image-border.validation-error",
@@ -3582,7 +3379,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.image-crop.initial",
@@ -3591,7 +3389,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.image-crop.populated",
@@ -3600,7 +3399,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.image-crop.validation-error",
@@ -3609,7 +3409,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.image-position.initial",
@@ -3618,7 +3419,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.image-position.populated",
@@ -3627,7 +3429,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.image-position.validation-error",
@@ -3636,7 +3439,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.image-size.initial",
@@ -3645,7 +3449,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.image-size.populated",
@@ -3654,7 +3459,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.image-size.validation-error",
@@ -3663,7 +3469,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.insert-chart.initial",
@@ -3672,7 +3479,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.insert-chart.populated",
@@ -3681,7 +3489,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.insert-chart.validation-error",
@@ -3690,7 +3499,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.insert-chart.tab-category",
@@ -3699,7 +3509,8 @@
       "state": "relevant-tab",
       "tab": "Category",
       "description": "Selected tab: Category.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.insert-smart-art.initial",
@@ -3708,7 +3519,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.insert-smart-art.populated",
@@ -3717,7 +3529,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.insert-smart-art.validation-error",
@@ -3726,7 +3539,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.legal-notices.initial",
@@ -3735,7 +3549,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.legal-notices.populated",
@@ -3744,7 +3559,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.legal-notices.validation-error",
@@ -3753,7 +3569,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.line-number-options.initial",
@@ -3762,7 +3579,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.line-number-options.populated",
@@ -3771,7 +3589,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.line-number-options.validation-error",
@@ -3780,7 +3599,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.manage-styles.initial",
@@ -3789,7 +3609,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.manage-styles.populated",
@@ -3798,7 +3619,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.manage-styles.validation-error",
@@ -3807,7 +3629,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.mark-citation.initial",
@@ -3816,7 +3639,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.mark-citation.populated",
@@ -3825,7 +3649,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.mark-citation.validation-error",
@@ -3834,34 +3659,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.match-fields.initial",
-      "host": "wpf",
-      "routeId": "match-fields",
-      "state": "initial",
-      "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.match-fields.populated",
-      "host": "wpf",
-      "routeId": "match-fields",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.match-fields.validation-error",
-      "host": "wpf",
-      "routeId": "match-fields",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.multilevel-list.initial",
@@ -3870,7 +3669,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.multilevel-list.populated",
@@ -3879,7 +3679,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.multilevel-list.validation-error",
@@ -3888,7 +3689,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.options.initial",
@@ -3897,7 +3699,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.options.populated",
@@ -3906,7 +3709,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.options.validation-error",
@@ -3915,7 +3719,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.options.tab-general",
@@ -3924,7 +3729,8 @@
       "state": "relevant-tab",
       "tab": "General",
       "description": "Selected tab: General.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.options.tab-auto-correct",
@@ -3933,7 +3739,8 @@
       "state": "relevant-tab",
       "tab": "AutoCorrect",
       "description": "Selected tab: AutoCorrect.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.options.tab-auto-format-as-you-type",
@@ -3942,7 +3749,8 @@
       "state": "relevant-tab",
       "tab": "AutoFormat As You Type",
       "description": "Selected tab: AutoFormat As You Type.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.options.tab-replace",
@@ -3951,7 +3759,8 @@
       "state": "relevant-tab",
       "tab": "Replace",
       "description": "Selected tab: Replace.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.options.tab-with",
@@ -3960,34 +3769,8 @@
       "state": "relevant-tab",
       "tab": "With",
       "description": "Selected tab: With.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.page-color.initial",
-      "host": "wpf",
-      "routeId": "page-color",
-      "state": "initial",
-      "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.page-color.populated",
-      "host": "wpf",
-      "routeId": "page-color",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.page-color.validation-error",
-      "host": "wpf",
-      "routeId": "page-color",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.page-setup.initial",
@@ -3996,7 +3779,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.page-setup.populated",
@@ -4005,7 +3789,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.page-setup.validation-error",
@@ -4014,7 +3799,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.page-setup.tab-margins",
@@ -4023,7 +3809,8 @@
       "state": "relevant-tab",
       "tab": "Margins",
       "description": "Selected tab: Margins.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.page-setup.tab-paper",
@@ -4032,7 +3819,8 @@
       "state": "relevant-tab",
       "tab": "Paper",
       "description": "Selected tab: Paper.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.page-setup.tab-layout",
@@ -4041,79 +3829,58 @@
       "state": "relevant-tab",
       "tab": "Layout",
       "description": "Selected tab: Layout.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.paragraph-breaks.initial",
+      "id": "wpf.paragraph.initial",
       "host": "wpf",
-      "routeId": "paragraph-breaks",
+      "routeId": "paragraph",
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.paragraph-breaks.populated",
+      "id": "wpf.paragraph.populated",
       "host": "wpf",
-      "routeId": "paragraph-breaks",
+      "routeId": "paragraph",
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.paragraph-breaks.validation-error",
+      "id": "wpf.paragraph.validation-error",
       "host": "wpf",
-      "routeId": "paragraph-breaks",
+      "routeId": "paragraph",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.paragraph-breaks.tab-indents-and-spacing",
+      "id": "wpf.paragraph.tab-indents-and-spacing",
       "host": "wpf",
-      "routeId": "paragraph-breaks",
+      "routeId": "paragraph",
       "state": "relevant-tab",
       "tab": "Indents and Spacing",
       "description": "Selected tab: Indents and Spacing.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.paragraph-breaks.tab-line-and-page-breaks",
+      "id": "wpf.paragraph.tab-line-and-page-breaks",
       "host": "wpf",
-      "routeId": "paragraph-breaks",
+      "routeId": "paragraph",
       "state": "relevant-tab",
       "tab": "Line and Page Breaks",
       "description": "Selected tab: Line and Page Breaks.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.paragraph-indent.initial",
-      "host": "wpf",
-      "routeId": "paragraph-indent",
-      "state": "initial",
-      "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.paragraph-indent.populated",
-      "host": "wpf",
-      "routeId": "paragraph-indent",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.paragraph-indent.validation-error",
-      "host": "wpf",
-      "routeId": "paragraph-indent",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.password-prompt.initial",
@@ -4122,7 +3889,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.password-prompt.populated",
@@ -4131,7 +3899,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.password-prompt.validation-error",
@@ -4140,7 +3909,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.paste-special.initial",
@@ -4149,7 +3919,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.paste-special.populated",
@@ -4158,7 +3929,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.paste-special.validation-error",
@@ -4167,7 +3939,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.properties.initial",
@@ -4176,7 +3949,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.properties.populated",
@@ -4185,7 +3959,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.properties.validation-error",
@@ -4194,7 +3969,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.restrict-editing.initial",
@@ -4203,7 +3979,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.restrict-editing.populated",
@@ -4212,7 +3989,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.restrict-editing.validation-error",
@@ -4221,61 +3999,18 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.screen-clip-overlay.initial",
+      "id": "wpf.screen-clip-overlay.open",
       "host": "wpf",
       "routeId": "screen-clip-overlay",
-      "state": "initial",
+      "state": "open",
       "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.screen-clip-overlay.populated",
-      "host": "wpf",
-      "routeId": "screen-clip-overlay",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.screen-clip-overlay.validation-error",
-      "host": "wpf",
-      "routeId": "screen-clip-overlay",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.set-as-default-confirmation.initial",
-      "host": "wpf",
-      "routeId": "set-as-default-confirmation",
-      "state": "initial",
-      "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.set-as-default-confirmation.populated",
-      "host": "wpf",
-      "routeId": "set-as-default-confirmation",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.set-as-default-confirmation.validation-error",
-      "host": "wpf",
-      "routeId": "set-as-default-confirmation",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "overlay"
     },
     {
       "id": "wpf.sort.initial",
@@ -4284,7 +4019,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.sort.populated",
@@ -4293,7 +4029,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.sort.validation-error",
@@ -4302,34 +4039,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.statistics.initial",
-      "host": "wpf",
-      "routeId": "statistics",
-      "state": "initial",
-      "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.statistics.populated",
-      "host": "wpf",
-      "routeId": "statistics",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
-    },
-    {
-      "id": "wpf.statistics.validation-error",
-      "host": "wpf",
-      "routeId": "statistics",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.style.initial",
@@ -4338,7 +4049,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.style.populated",
@@ -4347,7 +4059,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.style.validation-error",
@@ -4356,7 +4069,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.symbol-picker.initial",
@@ -4365,7 +4079,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.symbol-picker.populated",
@@ -4374,7 +4089,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.symbol-picker.validation-error",
@@ -4383,7 +4099,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.table-formula.initial",
@@ -4392,7 +4109,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.table-formula.populated",
@@ -4401,7 +4119,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.table-formula.validation-error",
@@ -4410,7 +4129,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.table-of-authorities.initial",
@@ -4419,7 +4139,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.table-of-authorities.populated",
@@ -4428,7 +4149,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.table-of-authorities.validation-error",
@@ -4437,7 +4159,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.table-properties.initial",
@@ -4446,7 +4169,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.table-properties.populated",
@@ -4455,7 +4179,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.table-properties.validation-error",
@@ -4464,7 +4189,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.table-properties.tab-table",
@@ -4473,7 +4199,8 @@
       "state": "relevant-tab",
       "tab": "Table",
       "description": "Selected tab: Table.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.table-properties.tab-row",
@@ -4482,7 +4209,8 @@
       "state": "relevant-tab",
       "tab": "Row",
       "description": "Selected tab: Row.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.table-properties.tab-column",
@@ -4491,7 +4219,8 @@
       "state": "relevant-tab",
       "tab": "Column",
       "description": "Selected tab: Column.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.table-properties.tab-cell",
@@ -4500,7 +4229,8 @@
       "state": "relevant-tab",
       "tab": "Cell",
       "description": "Selected tab: Cell.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.tabs.initial",
@@ -4509,7 +4239,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.tabs.populated",
@@ -4518,7 +4249,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.tabs.validation-error",
@@ -4527,34 +4259,68 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.watermark-options.initial",
+      "id": "wpf.watermark.initial",
       "host": "wpf",
-      "routeId": "watermark-options",
+      "routeId": "watermark",
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.watermark-options.populated",
+      "id": "wpf.watermark.populated",
       "host": "wpf",
-      "routeId": "watermark-options",
+      "routeId": "watermark",
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.watermark-options.validation-error",
+      "id": "wpf.watermark.validation-error",
       "host": "wpf",
-      "routeId": "watermark-options",
+      "routeId": "watermark",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.word-count.initial",
+      "host": "wpf",
+      "routeId": "word-count",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.word-count.populated",
+      "host": "wpf",
+      "routeId": "word-count",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.word-count.validation-error",
+      "host": "wpf",
+      "routeId": "word-count",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.zoom.initial",
@@ -4563,7 +4329,8 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.zoom.populated",
@@ -4572,7 +4339,8 @@
       "state": "populated",
       "tab": null,
       "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.zoom.validation-error",
@@ -4581,7 +4349,8 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     },
     {
       "id": "wpf.zoom.tab-zoom-to",
@@ -4590,7 +4359,8 @@
       "state": "relevant-tab",
       "tab": "Zoom to",
       "description": "Selected tab: Zoom to.",
-      "limitation": null
+      "limitation": null,
+      "surfaceKind": "dialog"
     }
   ]
 }
