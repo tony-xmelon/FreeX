@@ -1,0 +1,4382 @@
+{
+  "schemaVersion": 1,
+  "host": "avalonia",
+  "captureMode": "visible-app-owned-full-client-render-target; native-non-client-excluded; scenario-isolated-processes",
+  "targetDpi": 96,
+  "logicalClientWidth": 1280,
+  "logicalClientHeight": 760,
+  "generatedAtUtc": "2026-07-20T08:27:01.4930178\u002B00:00",
+  "captures": [
+    {
+      "scenarioId": "startup.slide",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/startup.slide.png",
+      "clientImagePath": "avalonia/client/startup.slide.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893925,
+      "fullImageSha256": "c95a73ea41a9378c206066e6f0163ed943909b3d56c5e919c4c95e368c65427a",
+      "clientImageSha256": "c95a73ea41a9378c206066e6f0163ed943909b3d56c5e919c4c95e368c65427a",
+      "semanticState": {
+        "scenarioId": "startup.slide",
+        "host": "avalonia",
+        "activationId": "slide",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "startup.notes",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/startup.notes.png",
+      "clientImagePath": "avalonia/client/startup.notes.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 894061,
+      "fullImageSha256": "0f4ec0ea35fadba0b68a2cda8bfdbc8b8daab331a5ab57414a0668c38848464a",
+      "clientImageSha256": "0f4ec0ea35fadba0b68a2cda8bfdbc8b8daab331a5ab57414a0668c38848464a",
+      "semanticState": {
+        "scenarioId": "startup.notes",
+        "host": "avalonia",
+        "activationId": "notes",
+        "currentSlideIndex": 1,
+        "currentSlideTitle": "Next Steps",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "textbox",
+        "focusedLabel": "",
+        "statusText": "Slide 2 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 1; expected 1."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "ribbon.home",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/ribbon.home.png",
+      "clientImagePath": "avalonia/client/ribbon.home.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893925,
+      "fullImageSha256": "bab325618c521ff766c418c3d995790ab463026de42c674b0b51a23041800e57",
+      "clientImageSha256": "bab325618c521ff766c418c3d995790ab463026de42c674b0b51a23041800e57",
+      "semanticState": {
+        "scenarioId": "ribbon.home",
+        "host": "avalonia",
+        "activationId": "home",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "ribbon.insert",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/ribbon.insert.png",
+      "clientImagePath": "avalonia/client/ribbon.insert.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893931,
+      "fullImageSha256": "8f27152e65b57f8d440727d9c3c954916db86c4649e797625e247d6facb7aa13",
+      "clientImageSha256": "8f27152e65b57f8d440727d9c3c954916db86c4649e797625e247d6facb7aa13",
+      "semanticState": {
+        "scenarioId": "ribbon.insert",
+        "host": "avalonia",
+        "activationId": "insert",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "insert",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027insert\u0027; expected \u0027insert\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "ribbon.design",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/ribbon.design.png",
+      "clientImagePath": "avalonia/client/ribbon.design.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893910,
+      "fullImageSha256": "6945237471141c2e5842cd43b8bd98f8916ae19b3f2c101d50b4ebe6102bf02b",
+      "clientImageSha256": "6945237471141c2e5842cd43b8bd98f8916ae19b3f2c101d50b4ebe6102bf02b",
+      "semanticState": {
+        "scenarioId": "ribbon.design",
+        "host": "avalonia",
+        "activationId": "design",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "design",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027design\u0027; expected \u0027design\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "ribbon.transitions",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/ribbon.transitions.png",
+      "clientImagePath": "avalonia/client/ribbon.transitions.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893847,
+      "fullImageSha256": "9fd27586aaa9a467d02a605a6129cac10bf66ea59171384d6cc16093b279e7b3",
+      "clientImageSha256": "9fd27586aaa9a467d02a605a6129cac10bf66ea59171384d6cc16093b279e7b3",
+      "semanticState": {
+        "scenarioId": "ribbon.transitions",
+        "host": "avalonia",
+        "activationId": "transitions",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "transitions",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027transitions\u0027; expected \u0027transitions\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "ribbon.animations",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/ribbon.animations.png",
+      "clientImagePath": "avalonia/client/ribbon.animations.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893844,
+      "fullImageSha256": "73c7047856d9a66b273e6773ea3485e9e92d15e60cbdf962830d99fa97192740",
+      "clientImageSha256": "73c7047856d9a66b273e6773ea3485e9e92d15e60cbdf962830d99fa97192740",
+      "semanticState": {
+        "scenarioId": "ribbon.animations",
+        "host": "avalonia",
+        "activationId": "animations",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "animations",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027animations\u0027; expected \u0027animations\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "ribbon.view",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/ribbon.view.png",
+      "clientImagePath": "avalonia/client/ribbon.view.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893863,
+      "fullImageSha256": "711d9a24ed447e131a6a51f1b79068e0a193c08970be797161682a68ea78090e",
+      "clientImageSha256": "711d9a24ed447e131a6a51f1b79068e0a193c08970be797161682a68ea78090e",
+      "semanticState": {
+        "scenarioId": "ribbon.view",
+        "host": "avalonia",
+        "activationId": "view",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "view",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 128.66666666666666,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 162.66666666666666,
+          "width": 180,
+          "height": 571.3333333333334,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 186.66666666666666,
+          "width": 1052,
+          "height": 459.3333333333333,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "contextual.shape",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/contextual.shape.png",
+      "clientImagePath": "avalonia/client/contextual.shape.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893925,
+      "fullImageSha256": "c95a73ea41a9378c206066e6f0163ed943909b3d56c5e919c4c95e368c65427a",
+      "clientImageSha256": "c95a73ea41a9378c206066e6f0163ed943909b3d56c5e919c4c95e368c65427a",
+      "semanticState": {
+        "scenarioId": "contextual.shape",
+        "host": "avalonia",
+        "activationId": "shape",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          },
+          {
+            "id": "contextual-tab-visible",
+            "passed": false,
+            "detail": "Expected contextual tab \u0027ShapeFormatTab\u0027, but FreeP declares no contextual ribbon tabs."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "contextual.chart",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/contextual.chart.png",
+      "clientImagePath": "avalonia/client/contextual.chart.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893925,
+      "fullImageSha256": "55dabf965c96f5fd547114ba3f49896931b03b2808f0c15a8a81bb78f3081364",
+      "clientImageSha256": "55dabf965c96f5fd547114ba3f49896931b03b2808f0c15a8a81bb78f3081364",
+      "semanticState": {
+        "scenarioId": "contextual.chart",
+        "host": "avalonia",
+        "activationId": "chart",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          20
+        ],
+        "selectedShapeKind": "Chart",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 20."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          },
+          {
+            "id": "contextual-tab-visible",
+            "passed": false,
+            "detail": "Expected contextual tab \u0027ChartDesignTab\u0027, but FreeP declares no contextual ribbon tabs."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "contextual.media",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/contextual.media.png",
+      "clientImagePath": "avalonia/client/contextual.media.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893925,
+      "fullImageSha256": "c4c8fd1aed8747646e1952f823cfaff8ab193ae2360e5a058605e9a81cb9749f",
+      "clientImageSha256": "c4c8fd1aed8747646e1952f823cfaff8ab193ae2360e5a058605e9a81cb9749f",
+      "semanticState": {
+        "scenarioId": "contextual.media",
+        "host": "avalonia",
+        "activationId": "media",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          30
+        ],
+        "selectedShapeKind": "Media",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 30."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          },
+          {
+            "id": "contextual-tab-visible",
+            "passed": false,
+            "detail": "Expected contextual tab \u0027MediaFormatTab\u0027, but FreeP declares no contextual ribbon tabs."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "contextual.smartart",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/contextual.smartart.png",
+      "clientImagePath": "avalonia/client/contextual.smartart.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893925,
+      "fullImageSha256": "aeabca46d175ae3128c6c40a71db7496b10c925ffd75f3ff263026101bf3c898",
+      "clientImageSha256": "aeabca46d175ae3128c6c40a71db7496b10c925ffd75f3ff263026101bf3c898",
+      "semanticState": {
+        "scenarioId": "contextual.smartart",
+        "host": "avalonia",
+        "activationId": "smartart",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          40
+        ],
+        "selectedShapeKind": "SmartArt",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 40."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          },
+          {
+            "id": "contextual-tab-visible",
+            "passed": false,
+            "detail": "Expected contextual tab \u0027SmartArtDesignTab\u0027, but FreeP declares no contextual ribbon tabs."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "backstage.info",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/backstage.info.png",
+      "clientImagePath": "avalonia/client/backstage.info.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 805254,
+      "fullImageSha256": "e0935a9a7a5f9ceca667782f45f6aa14ef5b8e0d119704bf5f7af111cf711546",
+      "clientImageSha256": "e0935a9a7a5f9ceca667782f45f6aa14ef5b8e0d119704bf5f7af111cf711546",
+      "semanticState": {
+        "scenarioId": "backstage.info",
+        "host": "avalonia",
+        "activationId": "Info",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": true,
+        "backstagePane": "Info",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "backstage-pane-activated",
+            "passed": true,
+            "detail": "Backstage pane is \u0027Info\u0027; expected \u0027Info\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "backstage.recent",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/backstage.recent.png",
+      "clientImagePath": "avalonia/client/backstage.recent.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 805105,
+      "fullImageSha256": "ae69428b141685cd11b2219e3e78c8054fd324078d338d26140e1e5eb9238fcd",
+      "clientImageSha256": "ae69428b141685cd11b2219e3e78c8054fd324078d338d26140e1e5eb9238fcd",
+      "semanticState": {
+        "scenarioId": "backstage.recent",
+        "host": "avalonia",
+        "activationId": "Recent",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": true,
+        "backstagePane": "Recent",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "backstage-pane-activated",
+            "passed": true,
+            "detail": "Backstage pane is \u0027Recent\u0027; expected \u0027Recent\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "backstage.new-from-template",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/backstage.new-from-template.png",
+      "clientImagePath": "avalonia/client/backstage.new-from-template.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 804599,
+      "fullImageSha256": "52a5513cf25d461da6536ca08517399ff565ef23909705139826967ece6a6dfa",
+      "clientImageSha256": "52a5513cf25d461da6536ca08517399ff565ef23909705139826967ece6a6dfa",
+      "semanticState": {
+        "scenarioId": "backstage.new-from-template",
+        "host": "avalonia",
+        "activationId": "New from template",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": true,
+        "backstagePane": "New from template",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "backstage-pane-activated",
+            "passed": true,
+            "detail": "Backstage pane is \u0027New from template\u0027; expected \u0027New from template\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "backstage.print",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/backstage.print.png",
+      "clientImagePath": "avalonia/client/backstage.print.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 805226,
+      "fullImageSha256": "bf608726b4540bf915fb11e16ecd3cdfae0c711a3ac3ebe336dcfb1ab825ccb8",
+      "clientImageSha256": "bf608726b4540bf915fb11e16ecd3cdfae0c711a3ac3ebe336dcfb1ab825ccb8",
+      "semanticState": {
+        "scenarioId": "backstage.print",
+        "host": "avalonia",
+        "activationId": "Print",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": true,
+        "backstagePane": "Print",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "backstage-pane-activated",
+            "passed": true,
+            "detail": "Backstage pane is \u0027Print\u0027; expected \u0027Print\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "backstage.export",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/backstage.export.png",
+      "clientImagePath": "avalonia/client/backstage.export.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 805244,
+      "fullImageSha256": "a3c45c22cb99d906b197d8256480826605ef5dceae96fdc80c5cd0ab969a8a2e",
+      "clientImageSha256": "a3c45c22cb99d906b197d8256480826605ef5dceae96fdc80c5cd0ab969a8a2e",
+      "semanticState": {
+        "scenarioId": "backstage.export",
+        "host": "avalonia",
+        "activationId": "Export",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": true,
+        "backstagePane": "Export",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "backstage-pane-activated",
+            "passed": true,
+            "detail": "Backstage pane is \u0027Export\u0027; expected \u0027Export\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "backstage.options",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/backstage.options.png",
+      "clientImagePath": "avalonia/client/backstage.options.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 805119,
+      "fullImageSha256": "25117c324a4b8dc5b959eabf4a31520cf87307ec9351b13974a0d77b1d703680",
+      "clientImageSha256": "25117c324a4b8dc5b959eabf4a31520cf87307ec9351b13974a0d77b1d703680",
+      "semanticState": {
+        "scenarioId": "backstage.options",
+        "host": "avalonia",
+        "activationId": "Options",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": true,
+        "backstagePane": "Options",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "backstage-pane-activated",
+            "passed": true,
+            "detail": "Backstage pane is \u0027Options\u0027; expected \u0027Options\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "backstage.account",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/backstage.account.png",
+      "clientImagePath": "avalonia/client/backstage.account.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 805109,
+      "fullImageSha256": "08cad0371ce94290f156d614d93e1151fff02d1f023d03fb88b84e22afe3a34a",
+      "clientImageSha256": "08cad0371ce94290f156d614d93e1151fff02d1f023d03fb88b84e22afe3a34a",
+      "semanticState": {
+        "scenarioId": "backstage.account",
+        "host": "avalonia",
+        "activationId": "Account",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": true,
+        "backstagePane": "Account",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "backstage-pane-activated",
+            "passed": true,
+            "detail": "Backstage pane is \u0027Account\u0027; expected \u0027Account\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "status.slide-1",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/status.slide-1.png",
+      "clientImagePath": "avalonia/client/status.slide-1.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893925,
+      "fullImageSha256": "bab325618c521ff766c418c3d995790ab463026de42c674b0b51a23041800e57",
+      "clientImageSha256": "bab325618c521ff766c418c3d995790ab463026de42c674b0b51a23041800e57",
+      "semanticState": {
+        "scenarioId": "status.slide-1",
+        "host": "avalonia",
+        "activationId": "slide-1",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "status.slide-2",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/status.slide-2.png",
+      "clientImagePath": "avalonia/client/status.slide-2.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 894061,
+      "fullImageSha256": "c7570509ab8c000d74bbf66fa3be8af1d413eebfa54bf03c1bc2badf12e00db8",
+      "clientImageSha256": "c7570509ab8c000d74bbf66fa3be8af1d413eebfa54bf03c1bc2badf12e00db8",
+      "semanticState": {
+        "scenarioId": "status.slide-2",
+        "host": "avalonia",
+        "activationId": "slide-2",
+        "currentSlideIndex": 1,
+        "currentSlideTitle": "Next Steps",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 2 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 1; expected 1."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "view.gridlines-guides",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/view.gridlines-guides.png",
+      "clientImagePath": "avalonia/client/view.gridlines-guides.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893863,
+      "fullImageSha256": "12dd5d436b51fd4938d50a3ed1fa5663ba413aa04e73d8d0d85cee2dfaa09817",
+      "clientImageSha256": "12dd5d436b51fd4938d50a3ed1fa5663ba413aa04e73d8d0d85cee2dfaa09817",
+      "semanticState": {
+        "scenarioId": "view.gridlines-guides",
+        "host": "avalonia",
+        "activationId": "gridlines-guides",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "view",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 128.66666666666666,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 162.66666666666666,
+          "width": 180,
+          "height": 571.3333333333334,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 186.66666666666666,
+          "width": 1052,
+          "height": 459.3333333333333,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "view.clean-canvas",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/view.clean-canvas.png",
+      "clientImagePath": "avalonia/client/view.clean-canvas.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893863,
+      "fullImageSha256": "12dd5d436b51fd4938d50a3ed1fa5663ba413aa04e73d8d0d85cee2dfaa09817",
+      "clientImageSha256": "12dd5d436b51fd4938d50a3ed1fa5663ba413aa04e73d8d0d85cee2dfaa09817",
+      "semanticState": {
+        "scenarioId": "view.clean-canvas",
+        "host": "avalonia",
+        "activationId": "clean-canvas",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "view",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": false,
+        "showGuides": false,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 128.66666666666666,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 162.66666666666666,
+          "width": 180,
+          "height": 571.3333333333334,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 186.66666666666666,
+          "width": 1052,
+          "height": 459.3333333333333,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "view.zoom-fit",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/view.zoom-fit.png",
+      "clientImagePath": "avalonia/client/view.zoom-fit.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893863,
+      "fullImageSha256": "30fa18652ec674909e1636c6ad20f5b29628f5b897fccad363bc7a948a388c52",
+      "clientImageSha256": "30fa18652ec674909e1636c6ad20f5b29628f5b897fccad363bc7a948a388c52",
+      "semanticState": {
+        "scenarioId": "view.zoom-fit",
+        "host": "avalonia",
+        "activationId": "zoom-fit",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          20
+        ],
+        "selectedShapeKind": "Chart",
+        "activeRibbonTabId": "view",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 128.66666666666666,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 162.66666666666666,
+          "width": 180,
+          "height": 571.3333333333334,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 186.66666666666666,
+          "width": 1052,
+          "height": 459.3333333333333,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 20."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "view.zoom-200",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/view.zoom-200.png",
+      "clientImagePath": "avalonia/client/view.zoom-200.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 970923,
+      "fullImageSha256": "71f712a0c552df8f16fb111278ebcb55cb570c97df673d7b948a4b89a41547d0",
+      "clientImageSha256": "71f712a0c552df8f16fb111278ebcb55cb570c97df673d7b948a4b89a41547d0",
+      "semanticState": {
+        "scenarioId": "view.zoom-200",
+        "host": "avalonia",
+        "activationId": "zoom-200",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          20
+        ],
+        "selectedShapeKind": "Chart",
+        "activeRibbonTabId": "view",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "Percent",
+        "zoomPercent": 200,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 128.66666666666666,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 162.66666666666666,
+          "width": 180,
+          "height": 571.3333333333334,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 186.66666666666666,
+          "width": 1052,
+          "height": 459.3333333333333,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 20."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "workspace.slide-pane",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/workspace.slide-pane.png",
+      "clientImagePath": "avalonia/client/workspace.slide-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 894067,
+      "fullImageSha256": "6b92caa839d9284f3d94d64baa39eb827542e9cbcd108207ef6380727fe6d6fc",
+      "clientImageSha256": "6b92caa839d9284f3d94d64baa39eb827542e9cbcd108207ef6380727fe6d6fc",
+      "semanticState": {
+        "scenarioId": "workspace.slide-pane",
+        "host": "avalonia",
+        "activationId": "slide-pane",
+        "currentSlideIndex": 1,
+        "currentSlideTitle": "Next Steps",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "insert",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 2 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 1; expected 1."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027insert\u0027; expected \u0027insert\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "workspace.notes-pane",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/workspace.notes-pane.png",
+      "clientImagePath": "avalonia/client/workspace.notes-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893685,
+      "fullImageSha256": "4da32fc178d3ced87b11367feb1d551cae0064374f562c17877d02f77ce50169",
+      "clientImageSha256": "4da32fc178d3ced87b11367feb1d551cae0064374f562c17877d02f77ce50169",
+      "semanticState": {
+        "scenarioId": "workspace.notes-pane",
+        "host": "avalonia",
+        "activationId": "notes-pane",
+        "currentSlideIndex": 1,
+        "currentSlideTitle": "Next Steps",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "view",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "textbox",
+        "focusedLabel": "",
+        "statusText": "Slide 2 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 128.66666666666666,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 162.66666666666666,
+          "width": 180,
+          "height": 571.3333333333334,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 186.66666666666666,
+          "width": 1052,
+          "height": 459.3333333333333,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 1; expected 1."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "workspace.canvas",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/workspace.canvas.png",
+      "clientImagePath": "avalonia/client/workspace.canvas.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893910,
+      "fullImageSha256": "946af250aea58ad231c9d6a25843cc73688abef6c7ee087271fb72ad5ab179b7",
+      "clientImageSha256": "946af250aea58ad231c9d6a25843cc73688abef6c7ee087271fb72ad5ab179b7",
+      "semanticState": {
+        "scenarioId": "workspace.canvas",
+        "host": "avalonia",
+        "activationId": "canvas",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          20
+        ],
+        "selectedShapeKind": "Chart",
+        "activeRibbonTabId": "design",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 20."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027design\u0027; expected \u0027design\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "review.comments-pane",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/review.comments-pane.png",
+      "clientImagePath": "avalonia/client/review.comments-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 892264,
+      "fullImageSha256": "4596748bb3555c129b3a86a5e8caaced2dc63144594533db540e90aaf6453f41",
+      "clientImageSha256": "4596748bb3555c129b3a86a5e8caaced2dc63144594533db540e90aaf6453f41",
+      "semanticState": {
+        "scenarioId": "review.comments-pane",
+        "host": "avalonia",
+        "activationId": "comments",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 1052,
+          "height": 356,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 1100,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [
+          "review.comments-pane"
+        ],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "review.accessibility-pane",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/review.accessibility-pane.png",
+      "clientImagePath": "avalonia/client/review.accessibility-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893179,
+      "fullImageSha256": "4d259169c853010f59e156f0a40747f884c9122ee74a088cf26a9962d00e0c9c",
+      "clientImageSha256": "4d259169c853010f59e156f0a40747f884c9122ee74a088cf26a9962d00e0c9c",
+      "semanticState": {
+        "scenarioId": "review.accessibility-pane",
+        "host": "avalonia",
+        "activationId": "accessibility",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          20
+        ],
+        "selectedShapeKind": "Chart",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 732,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 780,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [
+          "review.accessibility-pane"
+        ],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 20."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "review.alt-text-pane",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/review.alt-text-pane.png",
+      "clientImagePath": "avalonia/client/review.alt-text-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893925,
+      "fullImageSha256": "d14f94f7505d9e009220c4aac2a19e84028a8d8fc9644029abac6b2b5e4e0dbf",
+      "clientImageSha256": "d14f94f7505d9e009220c4aac2a19e84028a8d8fc9644029abac6b2b5e4e0dbf",
+      "semanticState": {
+        "scenarioId": "review.alt-text-pane",
+        "host": "avalonia",
+        "activationId": "alt-text",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 760,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 808,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [
+          "review.alt-text-pane"
+        ],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "review.reading-order-pane",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/review.reading-order-pane.png",
+      "clientImagePath": "avalonia/client/review.reading-order-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893179,
+      "fullImageSha256": "1f26dd0003dfbbee21a4222cbc91cea1d2a74f0600b2a0990fff1f99e6822e31",
+      "clientImageSha256": "1f26dd0003dfbbee21a4222cbc91cea1d2a74f0600b2a0990fff1f99e6822e31",
+      "semanticState": {
+        "scenarioId": "review.reading-order-pane",
+        "host": "avalonia",
+        "activationId": "reading-order",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 732,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 780,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [
+          "review.reading-order-pane"
+        ],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "review.proofing-pane",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/review.proofing-pane.png",
+      "clientImagePath": "avalonia/client/review.proofing-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893925,
+      "fullImageSha256": "508b2439bfe08755ce550e9f16d25a841586594088c6b370e7b63cd998c30ec6",
+      "clientImageSha256": "508b2439bfe08755ce550e9f16d25a841586594088c6b370e7b63cd998c30ec6",
+      "semanticState": {
+        "scenarioId": "review.proofing-pane",
+        "host": "avalonia",
+        "activationId": "proofing",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 732,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 780,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [
+          "review.proofing-pane"
+        ],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "accessibility.media-caption-pane",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/accessibility.media-caption-pane.png",
+      "clientImagePath": "avalonia/client/accessibility.media-caption-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 893925,
+      "fullImageSha256": "0c377ec96ebc45d449fb09cc5da6deb0bae5ef858fc88e714fb0cef0e06272e8",
+      "clientImageSha256": "0c377ec96ebc45d449fb09cc5da6deb0bae5ef858fc88e714fb0cef0e06272e8",
+      "semanticState": {
+        "scenarioId": "accessibility.media-caption-pane",
+        "host": "avalonia",
+        "activationId": "media-caption",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          30
+        ],
+        "selectedShapeKind": "Media",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 732,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 780,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [
+          "accessibility.media-caption-pane"
+        ],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 30."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "context.smartart-text-pane",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/context.smartart-text-pane.png",
+      "clientImagePath": "avalonia/client/context.smartart-text-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 892990,
+      "fullImageSha256": "370b42406ad327a66342329ade34afa56ff22970bc993ad4831a9dece244b571",
+      "clientImageSha256": "370b42406ad327a66342329ade34afa56ff22970bc993ad4831a9dece244b571",
+      "semanticState": {
+        "scenarioId": "context.smartart-text-pane",
+        "host": "avalonia",
+        "activationId": "smartart-text",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          40
+        ],
+        "selectedShapeKind": "SmartArt",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 732,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 780,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [
+          "context.smartart-text-pane"
+        ],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 40."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "animations.animation-pane",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/animations.animation-pane.png",
+      "clientImagePath": "avalonia/client/animations.animation-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 890039,
+      "fullImageSha256": "80be76bbbaee88178cd3db22a9c2d5eb56df66ff9553277201b91ac10b56f8fd",
+      "clientImageSha256": "80be76bbbaee88178cd3db22a9c2d5eb56df66ff9553277201b91ac10b56f8fd",
+      "semanticState": {
+        "scenarioId": "animations.animation-pane",
+        "host": "avalonia",
+        "activationId": "animation",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "animations",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3   C:\\Users\\anton\\AppData\\Local\\FreeP\\options.json",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled * \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 132,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 166,
+          "width": 180,
+          "height": 568,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 204,
+          "y": 190,
+          "width": 812,
+          "height": 456,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 670,
+          "width": 860,
+          "height": 64,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [
+          "animations.animation-pane"
+        ],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027animations\u0027; expected \u0027animations\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    }
+  ],
+  "limitations": []
+}
