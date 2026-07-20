@@ -372,7 +372,9 @@
                                            ],
                        "tests":  [
                                      "freep/FreeP.App.Host.Tests/SectionsCommentsTests.cs",
+                                     "freep/FreeP.App.Host.Tests/DialogLifecycleParityTests.cs",
                                      "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs",
+                                     "freep/FreeP.App.Avalonia.Tests/DialogLifecycleParityTests.cs",
                                      "freep/FreeP.App.Presentation.Tests/PresentationReviewWorkflowSessionTests.cs"
                                  ],
                        "existingVisualEvidence":  [
