@@ -19,14 +19,14 @@ slide when the menu button itself is invoked.
 
 This slice closes the authoring and package-function gap for these existing
 PresentationML transition elements. Cube, Flip, Rotate, Honeycomb, Switch,
-Orbit, Ferris, Flythrough, and Page Curl Single now have dedicated
+Orbit, Ferris, Flythrough, Page Curl Double, and Page Curl Single now have dedicated
 shared playback actions and matching WPF/Avalonia centered two-surface
 projections. The projections preserve direction, scale collapse/rotation, and
 outgoing-surface participation without pretending to be a full 3-D camera.
 
-Morph is a separate object-aware action. The remaining effects listed above,
-including Page Curl Double and the shape-deforming families, do not yet have
-dedicated frame-by-frame playback and continue through the
+Morph is a separate object-aware action. The remaining effects listed above
+are the shape-deforming families; they do not yet have dedicated frame-by-frame
+playback and continue through the
 established shared fallback path.
 
 ## Verification
