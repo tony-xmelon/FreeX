@@ -10,8 +10,9 @@ the writer or clone path to preserve them.
 The chart model now retains the authored values as `ChartAxis.CrossBetween`,
 `ChartAxis.AutoCrossing`, `ChartAxis.LabelAlignment`, `ChartAxis.Crosses`,
 `ChartAxis.CrossesAt`, `ChartAxis.MajorUnit`, and `ChartAxis.MinorUnit`.
-The DOCX-equivalent package path is unchanged: this is a PPTX read/write and
-clone parity slice, and the renderer does not reinterpret the token yet.
+The renderer now consumes authored value-axis units when present: major units
+control automatic range/tick cadence, and minor units add minor ticks when the
+source enables minor tick marks. Omitted units retain the existing auto path.
 
 ## Evidence
 
@@ -22,6 +23,8 @@ clone parity slice, and the renderer does not reinterpret the token yet.
   numeric `crossesAt` value.
 - Host round-trip coverage preserves authored major and minor value-axis
   intervals without inventing units for axes that omit them.
+- Presentation planner tests prove authored major-unit range snapping and
+  minor-tick generation, while existing auto-axis tests remain unchanged.
 - Host chart round-trip coverage writes and reopens `midCat`.
 - The existing chart rendering corpus remains the visual control because the
   change only preserves metadata and does not alter scene planning.
