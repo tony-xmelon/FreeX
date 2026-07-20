@@ -18,9 +18,15 @@ slide when the menu button itself is invoked.
 ## Parity boundary
 
 This slice closes the authoring and package-function gap for these existing
-PresentationML transition elements. It does not claim dedicated WPF/Avalonia
-frame-by-frame playback for every effect: kinds without a specialized
-compositor continue through the established shared fallback playback path.
+PresentationML transition elements. Cube, Flip, and Rotate now have dedicated
+shared playback actions and matching WPF/Avalonia centered two-surface
+projections. The projections preserve direction, scale collapse/rotation, and
+outgoing-surface participation without pretending to be a full 3-D camera.
+
+Morph is a separate object-aware action. The remaining effects listed above,
+including Orbit, Flythrough, Page Curl, and the shape-deforming families, do
+not yet have dedicated frame-by-frame playback and continue through the
+established shared fallback path.
 
 ## Verification
 
@@ -35,7 +41,7 @@ compositor continue through the established shared fallback playback path.
   accepted artifact; its existing matched-reference diff remains **2.6082%**.
 - No new PowerPoint COM export was issued for this authoring-only slice.
 
-Morph playback is now a separate object-aware action; see
-`freep-morph-transition-playback-20260720.md`. The other extended effects
-listed above still use the established fallback playback path until their
-render surfaces can support dedicated semantics.
+Morph playback is an object-aware action; see
+`freep-morph-transition-playback-20260720.md`. The Cube/Flip/Rotate projection
+details and focused verification are recorded in
+`freep-perspective-transition-playback-20260720.md`.
