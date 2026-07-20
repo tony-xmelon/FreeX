@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 186 | 180 | 0 | 6 | 6 | 0 | 0 | 0 | 180 | 0 | 0 | 6 | 0 | 91 |
+| 182 | 180 | 0 | 2 | 2 | 0 | 0 | 0 | 180 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -180,10 +180,6 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.date-time` | Date & Time | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.delete-slide` | Delete Slide | Yes | Yes | none | shared | home/slides (RibbonButton) | home/slides (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.duplicate-slide` | Duplicate Slide | Yes | Yes | none | shared | home/slides (RibbonButton) | home/slides (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.file.new` | New | No | Yes | WPF | platform-only | - | home/file (RibbonButton) | Intended shell/profile variance: Avalonia exposes document lifecycle in its generated Home/File ribbon group; WPF routes New through ApplicationCommands.New, Backstage chrome, and FileCommands.New rather than a generated ribbon control. |
-| `freep.file.open` | Open | No | Yes | WPF | platform-only | - | home/file (RibbonButton) | Intended shell/profile variance: Avalonia exposes document lifecycle in its generated Home/File ribbon group; WPF routes Open through ApplicationCommands.Open, Backstage chrome, and FileCommands.Open rather than a generated ribbon control. |
-| `freep.file.save` | Save | No | Yes | WPF | platform-only | - | home/file (RibbonButton) | Intended shell/profile variance: Avalonia exposes document lifecycle in its generated Home/File ribbon group; WPF routes Save through ApplicationCommands.Save, Backstage chrome, and FileCommands.Save rather than a generated ribbon control. |
-| `freep.file.save-as` | Save As | No | Yes | WPF | platform-only | - | home/file (RibbonButton) | Intended shell/profile variance: Avalonia exposes document lifecycle in its generated Home/File ribbon group; WPF routes Save As through ApplicationCommands.SaveAs, Backstage chrome, and FileCommands.SaveAs rather than a generated ribbon control. |
 | `freep.find` | Find | Yes | Yes | none | shared | home/editing (RibbonButton) | home/editing (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.font-color` | Font Color | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.font-family` | Font | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
@@ -224,9 +220,9 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.slide-size-16x9` | Widescreen (16:9) | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slide-size-4x3` | Standard (4:3) | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slide-size-custom` | Slide Size… | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.slideshow.custom-shows` | Custom Shows | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | home/slideshow (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.slideshow.from-beginning` | From Beginning | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | home/slideshow (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.slideshow.from-current-slide` | From Current Slide | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | home/slideshow (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.slideshow.custom-shows` | Custom Shows | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | transitions/slideshow-from-transitions (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.slideshow.from-beginning` | From Beginning | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | transitions/slideshow-from-transitions (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.slideshow.from-current-slide` | From Current Slide | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | transitions/slideshow-from-transitions (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.text-box` | Text Box | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.theme.berlin` | Berlin | Yes | Yes | none | shared | design/themes (RibbonButton) | design/themes (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.theme.facet` | Facet | Yes | Yes | none | shared | design/themes (RibbonButton) | design/themes (RibbonButton) | Available in both generated FreeP ribbon profiles. |
