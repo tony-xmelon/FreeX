@@ -10,13 +10,13 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 
 | Total | Both profiles | WPF profile only | Avalonia profile only | Missing WPF profile | Missing Avalonia profile | Actionable missing WPF | Actionable missing Avalonia |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 860 | 442 | 194 | 224 | 224 | 194 | 3 | 0 |
+| 860 | 443 | 193 | 224 | 224 | 193 | 3 | 0 |
 
 ## Classification Counts
 
 | Shared profile | Profile-shape only | Command-id aliases | Platform-only | Deferred | Actionable gaps | Behavior evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|
-| 442 | 361 | 43 | 11 | 0 | 3 | 103 |
+| 443 | 361 | 43 | 10 | 0 | 3 | 102 |
 
 ## Classification Rules
 
@@ -33,7 +33,7 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 
 | Command ID | Label | WPF profile | Avalonia profile | Missing profile | Profile classification | Gap classification | Rule | WPF locations | Avalonia locations | Source literal evidence | Behavior evidence | Notes |
 |---|---|---:|---:|---|---|---|---|---|---|---|---|---|
-| `freew.about` | About FreeW | Yes | No | Avalonia | wpf-profile-only | platform-only | platform-only | help/product (RibbonButton; Large) | - | WPF definition source<br>WPF registry source | WPF Help shell variance: FreeWRibbonParityTests.HelpTab_ExposesOnlyBackedFreeWLocalSupportCommands<br>RibbonAndDocumentTests.Avalonia_file_shell_and_WPF_authority_legal_notice_commands_are_backed | Accepted host variance: WPF desktop Help/Product command backed by local About dialog; Avalonia compact shell omits the desktop Help tab. |
+| `freew.about` | About FreeW | Yes | Yes | none | shared-profile | shared-profile | shared-profile | help/product (RibbonButton; Large) | help/product (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.accept-all` | Accept All Changes | Yes | Yes | none | shared-profile | shared-profile | shared-profile | review/changes (RibbonMenuItem; Menu) | review/changes (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Review bulk changes: TrackChangesTests.AcceptAll_NormalizesInsertions_AndRemovesDeletions<br>DocumentViewReviewTests.AcceptAll_clears_every_revision | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.accept-this` | Accept | Yes | Yes | none | shared-profile | shared-profile | shared-profile | review/changes (RibbonDropdown; Medium)<br>review/changes (RibbonMenuItem; Menu) | review/changes (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Review changes: ReviewingPaneTests.AcceptRevision_ResolvesOnlyTheSelectedChange<br>DocumentViewReviewTests.AcceptCurrent_clears_insertion_mark_keeping_text | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.add-to-dictionary` | Add to Dictionary | Yes | Yes | none | shared-profile | shared-profile | shared-profile | review/proofing (RibbonButton; Medium) | review/proofing (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Review proofing: CustomDictionaryTests.Add_ThenContains_FindsWord<br>DocumentViewReviewTests.Proofing_commands_toggle_state_dictionary_thesaurus_and_language | Command is present in both compiled FreeW ribbon profiles. |

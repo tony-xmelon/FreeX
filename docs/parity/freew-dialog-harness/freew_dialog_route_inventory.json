@@ -1,14 +1,14 @@
 {
   "schema": "freew.dialog-route-inventory.v1",
   "schemaVersion": 1,
-  "generatedFromSha256": "50e56e286b1382dd9bc077f770940f2f85ccd50289abec5029b15342a15a24fc",
+  "generatedFromSha256": "759e2adaf6af163c55a25de75fd9ce41fe34d5473d7ec2e4e0b7109f486b2817",
   "routes": [
     {
       "host": "avalonia",
       "routeId": "about",
-      "typeName": "FreeWInfoDialog",
-      "sourcePath": "freew/FreeW.App.Avalonia/FinalCommandParityDialogs.cs",
-      "modalMode": "modal",
+      "typeName": "AboutDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/AboutDialog.cs",
+      "modalMode": "modal-or-modeless",
       "tabs": [],
       "limitation": null,
       "surfaceKind": "dialog",
@@ -17,7 +17,7 @@
         "populated",
         "validation-error"
       ],
-      "sourceRouteId": "free-winfo"
+      "sourceRouteId": "about"
     },
     {
       "host": "avalonia",
