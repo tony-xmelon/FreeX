@@ -10,13 +10,13 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 
 | Total | Both profiles | WPF profile only | Avalonia profile only | Missing WPF profile | Missing Avalonia profile | Actionable missing WPF | Actionable missing Avalonia |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 861 | 442 | 194 | 225 | 225 | 194 | 3 | 0 |
+| 860 | 442 | 194 | 224 | 224 | 194 | 3 | 0 |
 
 ## Classification Counts
 
 | Shared profile | Profile-shape only | Command-id aliases | Platform-only | Deferred | Actionable gaps | Behavior evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|
-| 442 | 362 | 43 | 11 | 0 | 3 | 103 |
+| 442 | 361 | 43 | 11 | 0 | 3 | 103 |
 
 ## Classification Rules
 
@@ -489,7 +489,6 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 | `freew.page-color.light-gray` | Light Gray | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | design/page-background (RibbonMenuItem; Menu) | Avalonia registry source | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
 | `freew.page-color.light-green` | Light Green | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | design/page-background (RibbonMenuItem; Menu) | Avalonia registry source | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
 | `freew.page-color.light-yellow` | Light Yellow | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | design/page-background (RibbonMenuItem; Menu) | Avalonia registry source | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
-| `freew.page-color.more` | More Colors... | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | design/page-background (RibbonMenuItem; Menu) | Avalonia definition source<br>Avalonia registry source | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
 | `freew.page-color.none` | No Color | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | design/page-background (RibbonMenuItem; Menu) | Avalonia registry source | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
 | `freew.page-color.rose` | Rose | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | design/page-background (RibbonMenuItem; Menu) | Avalonia registry source | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
 | `freew.page-color.tan` | Tan | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | design/page-background (RibbonMenuItem; Menu) | Avalonia registry source | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
