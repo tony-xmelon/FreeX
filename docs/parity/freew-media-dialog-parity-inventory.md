@@ -1,26 +1,26 @@
 ﻿# FreeW Media Dialog Parity Inventory
 
-Generated: 2026-07-20T05:23:03.0966421Z
+Generated: 2026-07-20T06:45:17.4341533Z
 
-Routes: 14 | Shell-wired: 6 | Shell follow-ups: 8
+Routes: 14 | Shell-wired: 14 | Shell follow-ups: 0
 
 | Route | WPF authority | Avalonia surface | Status | Follow-up |
 |---|---|---|---|---|
-| Picture adjust | `ImageAdjustDialog.cs` | `MediaDialogParity.cs` | implemented-awaiting-shell-wiring | Wire freew.image-adjust-dialog in the Avalonia command callback; shell-owned. |
+| Picture adjust | `ImageAdjustDialog.cs` | `MediaDialogParity.cs` | implemented-and-wired |  |
 | Picture border | `ImageBorderDialog.cs` | `PictureFormattingDialogs.cs` | implemented-and-wired |  |
 | Picture crop | `ImageCropDialog.cs` | `ImageAndTableConversionDialogs.cs` | implemented-and-wired |  |
-| Picture position | `ImagePositionDialog.cs` | `MediaDialogParity.cs` | implemented-awaiting-shell-wiring | Wire freew.image-position in the Avalonia command callback; shell-owned. |
+| Picture position | `ImagePositionDialog.cs` | `MediaDialogParity.cs` | implemented-and-wired |  |
 | Picture size | `ImageSizeDialog.cs` | `PictureFormattingDialogs.cs` | implemented-and-wired |  |
 | Image Alt Text | `Ribbon/FreeWRibbonCommands.cs` | `PictureFormattingDialogs.cs` | implemented-and-wired | Keep the existing WPF TextPrompt and Avalonia ImageAltTextDialog launchers under shell ownership. |
 | Image/table conversion | `Ribbon/FreeWRibbonCommands.cs` | `ImageAndTableConversionDialogs.cs` | implemented-and-wired | Keep the existing Avalonia conversion launchers under MainWindow ownership. |
-| Insert Chart | `InsertChartDialog.cs` | `MediaDialogParity.cs` | implemented-awaiting-shell-wiring | Add the Avalonia Insert Chart callback and result application in shell-owned files. |
-| Chart title | `ChartTitleDialog.cs` | `MediaDialogParity.cs` | implemented-awaiting-shell-wiring | Add the Avalonia chart-title callback and result application in shell-owned files. |
-| Chart axis titles | `ChartAxisTitlesDialog.cs` | `MediaDialogParity.cs` | implemented-awaiting-shell-wiring | Add the Avalonia axis-title callback and result application in shell-owned files. |
-| Chart size | `ChartSizeDialog.cs` | `MediaDialogParity.cs` | implemented-awaiting-shell-wiring | Add the Avalonia chart-size callback and result application in shell-owned files. |
-| Insert SmartArt | `InsertSmartArtDialog.cs` | `MediaDialogParity.cs` | implemented-awaiting-shell-wiring | Add the Avalonia Insert SmartArt callback and result application in shell-owned files. |
+| Insert Chart | `InsertChartDialog.cs` | `MediaDialogParity.cs` | implemented-and-wired |  |
+| Chart title | `ChartTitleDialog.cs` | `MediaDialogParity.cs` | implemented-and-wired |  |
+| Chart axis titles | `ChartAxisTitlesDialog.cs` | `MediaDialogParity.cs` | implemented-and-wired |  |
+| Chart size | `ChartSizeDialog.cs` | `MediaDialogParity.cs` | implemented-and-wired |  |
+| Insert SmartArt | `InsertSmartArtDialog.cs` | `MediaDialogParity.cs` | implemented-and-wired |  |
 | SmartArt edit text | `InsertSmartArtDialog.cs` | `SmartArtEditDialog.cs` | implemented-and-wired |  |
-| Icon picker | `IconPickerDialog.cs` | `IconPickerDialog.cs` | selection-surface-only | Wire the picker in shell-owned files and provide the platform rasterizer/result application; Avalonia currently returns IconPickerSelection. |
+| Icon picker | `IconPickerDialog.cs` | `IconPickerDialog.cs` | implemented-and-wired |  |
 
-Ownership boundary: this inventory intentionally records shell-owned wiring gaps without changing MainWindow, ribbon, Backstage, page-layout, or shared-shell files.
+Ownership boundary: MainWindow, ribbon, Backstage, page-layout, and shared-shell routes are included in the completed integration.
 
 Run ``powershell -File tools/Generate-FreeWMediaDialogParityEvidence.ps1 -Check`` to verify source fingerprints are fresh.

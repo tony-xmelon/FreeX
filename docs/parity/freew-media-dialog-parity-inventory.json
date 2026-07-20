@@ -9,9 +9,9 @@
                               "shared shell files"
                           ],
     "routeCount":  14,
-    "wiredCount":  6,
-    "shellFollowUpCount":  8,
-    "generatedAtUtc":  "2026-07-20T05:23:03.0966421Z",
+    "wiredCount":  14,
+    "shellFollowUpCount":  0,
+    "generatedAtUtc":  "2026-07-20T06:45:17.4341533Z",
     "routes":  [
                    {
                        "id":  "image-adjust",
@@ -20,11 +20,11 @@
                        "avaloniaSurface":  "MediaDialogParity.cs",
                        "wpfPresent":  true,
                        "avaloniaPresent":  true,
-                       "status":  "implemented-awaiting-shell-wiring",
-                       "shellWired":  false,
-                       "followUp":  "Wire freew.image-adjust-dialog in the Avalonia command callback; shell-owned.",
+                       "status":  "implemented-and-wired",
+                       "shellWired":  true,
+                       "followUp":  "",
                        "wpfSha256":  "C7B5556C9547C615366E3265A4AAC0818E02E123C863C4FB10362253F7A5D48C",
-                       "avaloniaSha256":  "64D922B6B5295A9C8ACB19AC126C62E8CA5A6C1C11D307C29B62475806A2B00C"
+                       "avaloniaSha256":  "021C4DBD501029252F1DC3FD2F6BE0DF405A4552657CDA24AA652884D28DAD86"
                    },
                    {
                        "id":  "image-border",
@@ -59,11 +59,11 @@
                        "avaloniaSurface":  "MediaDialogParity.cs",
                        "wpfPresent":  true,
                        "avaloniaPresent":  true,
-                       "status":  "implemented-awaiting-shell-wiring",
-                       "shellWired":  false,
-                       "followUp":  "Wire freew.image-position in the Avalonia command callback; shell-owned.",
+                       "status":  "implemented-and-wired",
+                       "shellWired":  true,
+                       "followUp":  "",
                        "wpfSha256":  "F8518CAE078FC4BF622CDE1A8AE6EC2714AA909549E347CC546671ABB114262E",
-                       "avaloniaSha256":  "64D922B6B5295A9C8ACB19AC126C62E8CA5A6C1C11D307C29B62475806A2B00C"
+                       "avaloniaSha256":  "021C4DBD501029252F1DC3FD2F6BE0DF405A4552657CDA24AA652884D28DAD86"
                    },
                    {
                        "id":  "image-size",
@@ -88,7 +88,7 @@
                        "status":  "implemented-and-wired",
                        "shellWired":  true,
                        "followUp":  "Keep the existing WPF TextPrompt and Avalonia ImageAltTextDialog launchers under shell ownership.",
-                       "wpfSha256":  "BB1C4A6F5719868A587A3F6692720565B854C2A288DADEBE4C19D3E37EFB6835",
+                       "wpfSha256":  "61DAB3C16E5E5637BB5D69D0116144F3969F076691EE0664E723BBC0D6E05FC3",
                        "avaloniaSha256":  "BFE8C14881DCA53335C6D9B8B97F15952F447258A19984D97109929A4228A598"
                    },
                    {
@@ -101,7 +101,7 @@
                        "status":  "implemented-and-wired",
                        "shellWired":  true,
                        "followUp":  "Keep the existing Avalonia conversion launchers under MainWindow ownership.",
-                       "wpfSha256":  "BB1C4A6F5719868A587A3F6692720565B854C2A288DADEBE4C19D3E37EFB6835",
+                       "wpfSha256":  "61DAB3C16E5E5637BB5D69D0116144F3969F076691EE0664E723BBC0D6E05FC3",
                        "avaloniaSha256":  "52FE6CAA13819F57D61A306231A89819DD5F78544E8157E5B262880206B5249A"
                    },
                    {
@@ -111,11 +111,11 @@
                        "avaloniaSurface":  "MediaDialogParity.cs",
                        "wpfPresent":  true,
                        "avaloniaPresent":  true,
-                       "status":  "implemented-awaiting-shell-wiring",
-                       "shellWired":  false,
-                       "followUp":  "Add the Avalonia Insert Chart callback and result application in shell-owned files.",
-                       "wpfSha256":  "804F4EB8564AD52EDF04A5D84809EFF32BA81A165607ED36BA679015053FA4E0",
-                       "avaloniaSha256":  "64D922B6B5295A9C8ACB19AC126C62E8CA5A6C1C11D307C29B62475806A2B00C"
+                       "status":  "implemented-and-wired",
+                       "shellWired":  true,
+                       "followUp":  "",
+                       "wpfSha256":  "152A4870F1D8FC70AC69C4D49E4260870A18A3B58A2AB9CE436C527484CF485A",
+                       "avaloniaSha256":  "021C4DBD501029252F1DC3FD2F6BE0DF405A4552657CDA24AA652884D28DAD86"
                    },
                    {
                        "id":  "chart-title",
@@ -124,11 +124,11 @@
                        "avaloniaSurface":  "MediaDialogParity.cs",
                        "wpfPresent":  true,
                        "avaloniaPresent":  true,
-                       "status":  "implemented-awaiting-shell-wiring",
-                       "shellWired":  false,
-                       "followUp":  "Add the Avalonia chart-title callback and result application in shell-owned files.",
-                       "wpfSha256":  "640BC95ED4215912DB7C7F199D10637A18DB869B1945BAABD0B71852449F5230",
-                       "avaloniaSha256":  "64D922B6B5295A9C8ACB19AC126C62E8CA5A6C1C11D307C29B62475806A2B00C"
+                       "status":  "implemented-and-wired",
+                       "shellWired":  true,
+                       "followUp":  "",
+                       "wpfSha256":  "71229968E12A1C764C5B6AB2CAFFD4309981777E149D8288B026C2BD86B27C72",
+                       "avaloniaSha256":  "021C4DBD501029252F1DC3FD2F6BE0DF405A4552657CDA24AA652884D28DAD86"
                    },
                    {
                        "id":  "chart-axis-titles",
@@ -137,11 +137,11 @@
                        "avaloniaSurface":  "MediaDialogParity.cs",
                        "wpfPresent":  true,
                        "avaloniaPresent":  true,
-                       "status":  "implemented-awaiting-shell-wiring",
-                       "shellWired":  false,
-                       "followUp":  "Add the Avalonia axis-title callback and result application in shell-owned files.",
-                       "wpfSha256":  "1F5F1EB40CEE96C95EA49E6D597F5AF9746804CFC52B98DFB6EB8E62AF940875",
-                       "avaloniaSha256":  "64D922B6B5295A9C8ACB19AC126C62E8CA5A6C1C11D307C29B62475806A2B00C"
+                       "status":  "implemented-and-wired",
+                       "shellWired":  true,
+                       "followUp":  "",
+                       "wpfSha256":  "508BD4F06C4D245D7BD93AB218457056C29FD9B76F5B053245EA367434E5F8FE",
+                       "avaloniaSha256":  "021C4DBD501029252F1DC3FD2F6BE0DF405A4552657CDA24AA652884D28DAD86"
                    },
                    {
                        "id":  "chart-size",
@@ -150,11 +150,11 @@
                        "avaloniaSurface":  "MediaDialogParity.cs",
                        "wpfPresent":  true,
                        "avaloniaPresent":  true,
-                       "status":  "implemented-awaiting-shell-wiring",
-                       "shellWired":  false,
-                       "followUp":  "Add the Avalonia chart-size callback and result application in shell-owned files.",
+                       "status":  "implemented-and-wired",
+                       "shellWired":  true,
+                       "followUp":  "",
                        "wpfSha256":  "B034E97CD2416ECD65FE1582A913ABD2CB92065EBA398B6984B865500BB94AF6",
-                       "avaloniaSha256":  "64D922B6B5295A9C8ACB19AC126C62E8CA5A6C1C11D307C29B62475806A2B00C"
+                       "avaloniaSha256":  "021C4DBD501029252F1DC3FD2F6BE0DF405A4552657CDA24AA652884D28DAD86"
                    },
                    {
                        "id":  "insert-smartart",
@@ -163,11 +163,11 @@
                        "avaloniaSurface":  "MediaDialogParity.cs",
                        "wpfPresent":  true,
                        "avaloniaPresent":  true,
-                       "status":  "implemented-awaiting-shell-wiring",
-                       "shellWired":  false,
-                       "followUp":  "Add the Avalonia Insert SmartArt callback and result application in shell-owned files.",
-                       "wpfSha256":  "75B2F3637B8874C203B128146F3A093A3CEBFD8B370645BD4047A5690C9F4A09",
-                       "avaloniaSha256":  "64D922B6B5295A9C8ACB19AC126C62E8CA5A6C1C11D307C29B62475806A2B00C"
+                       "status":  "implemented-and-wired",
+                       "shellWired":  true,
+                       "followUp":  "",
+                       "wpfSha256":  "21C75399EAED8281ECB1201A76EAFD66FE84F5D415A23C8CE4A34392EB540029",
+                       "avaloniaSha256":  "021C4DBD501029252F1DC3FD2F6BE0DF405A4552657CDA24AA652884D28DAD86"
                    },
                    {
                        "id":  "smartart-edit",
@@ -179,8 +179,8 @@
                        "status":  "implemented-and-wired",
                        "shellWired":  true,
                        "followUp":  "",
-                       "wpfSha256":  "75B2F3637B8874C203B128146F3A093A3CEBFD8B370645BD4047A5690C9F4A09",
-                       "avaloniaSha256":  "B8445F3D2950AFA565339F30A4184956C77FE8E3F18E3AAF7F9A531BE9749C94"
+                       "wpfSha256":  "21C75399EAED8281ECB1201A76EAFD66FE84F5D415A23C8CE4A34392EB540029",
+                       "avaloniaSha256":  "64B8F3D2D5383A4062D58665D4BB7EB80CA561E51F229BD1FC14806451E44978"
                    },
                    {
                        "id":  "icon-picker",
@@ -189,11 +189,11 @@
                        "avaloniaSurface":  "IconPickerDialog.cs",
                        "wpfPresent":  true,
                        "avaloniaPresent":  true,
-                       "status":  "selection-surface-only",
-                       "shellWired":  false,
-                       "followUp":  "Wire the picker in shell-owned files and provide the platform rasterizer/result application; Avalonia currently returns IconPickerSelection.",
+                       "status":  "implemented-and-wired",
+                       "shellWired":  true,
+                       "followUp":  "",
                        "wpfSha256":  "43D4966F46CE70DDDB9B53194E22FAC802A2CCFD5D8557C52B958012DE19451B",
-                       "avaloniaSha256":  "E85A0C70E242E5A0DD2C150FC76F68F95A22065A519C14AA34CE7063D9074C24"
+                       "avaloniaSha256":  "618B48CDEA1E0406D5F3D6E9FA4F73E318FC90F36FB54668EE0B6C22D597AEAC"
                    }
                ]
 }

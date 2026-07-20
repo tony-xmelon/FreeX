@@ -4,6 +4,9 @@
     "generatedInputs":  [
                             "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
                             "freew/FreeW.App.Avalonia/MailMergeDialogs.cs",
+                            "freew/FreeW.App.Avalonia/MainWindow.cs",
+                            "freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs",
+                            "freew/FreeW.Ribbon.Definitions/FreeWAvaloniaRibbonDefinition.cs",
                             "freew/FreeW.App.Presentation/Ribbon/MailMergeDialogPlanners.cs",
                             "freew/FreeW.App.Presentation/Ribbon/MailMergeFinishPlanner.cs",
                             "freew/FreeW.App.Presentation/Ribbon/MailingsEnvelopeLabelPlanner.cs",
@@ -14,22 +17,23 @@
                             "freew/FreeW.App.Avalonia.Tests/MailMergeDialogSurfaceTests.cs"
                         ],
     "sourceSha256":  {
-                         "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs":  "bb1c4a6f5719868a587a3f6692720565b854c2a288dadebe4c19d3e37efb6835",
-                         "freew/FreeW.App.Avalonia/MailMergeDialogs.cs":  "2ad2155e546b0cd1209d760a6c614aec7568977769e9e3e48a558b301aab2b1d",
-                         "freew/FreeW.App.Presentation/Ribbon/MailMergeDialogPlanners.cs":  "8702a7fa30eed0d902757781ecd03b1123d3ecb2a446c79c7de74f7abc586497",
-                         "freew/FreeW.App.Presentation/Ribbon/MailMergeFinishPlanner.cs":  "d25a6b2e93a63eca4e280bc6017542c80188ef5cc9491283a26f927e1247797e",
-                         "freew/FreeW.App.Presentation/Ribbon/MailingsEnvelopeLabelPlanner.cs":  "49d1dc7f67a9156afa80dc05d96850e5d549bb0b961f3b6836b99a214124ad64",
+                         "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs":  "61dab3c16e5e5637bb5d69d0116144f3969f076691ee0664e723bbc0d6e05fc3",
+                         "freew/FreeW.App.Avalonia/MailMergeDialogs.cs":  "c9bf74ba09033b18ec28ff7fc74acf8385c6a05740052c81c09d0487886c9d9c",
+                         "freew/FreeW.App.Avalonia/MainWindow.cs":  "fff207e3a56c7de6c2149d3cb97982e7f524ee04b2807ecf11175cca39854ee4",
+                         "freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs":  "af37003f87eea6fc1d03403efb34ff67f0cac5933bc71b8ea1ad60e1bf149690",
+                         "freew/FreeW.Ribbon.Definitions/FreeWAvaloniaRibbonDefinition.cs":  "7db9c365f6c2ed0ed8939e8c2456d9238e4c270ca538cd39299cc4e928aee375",
+                         "freew/FreeW.App.Presentation/Ribbon/MailMergeDialogPlanners.cs":  "d2ca6dc98a27922994747116d53b348ea4492b3015b134577666dfb54c99861c",
+                         "freew/FreeW.App.Presentation/Ribbon/MailMergeFinishPlanner.cs":  "22c5a7652dcb9d7ccad08191328d7c295ee133c57522ebc70badade2199e050b",
+                         "freew/FreeW.App.Presentation/Ribbon/MailingsEnvelopeLabelPlanner.cs":  "f44192c488c6f25a5953e3b0f9cd396c8a70c0566073ec82191f5c880d6be1ec",
                          "freew/FreeW.App.Presentation/Ribbon/MailMergeMatchFieldsDialogPlanner.cs":  "6fd1ba5b49969cfed8f687cb94aa2c35d03058a4bbc942f9d3de9818e4818c8f",
                          "freew/FreeW.App.Presentation/Ribbon/MailMergeRecipientFilterSortPlanner.cs":  "010f0c2037748b411cd32baee49589bcbbb8c5e744788eb6ae1340f0a8278391",
                          "freew/FreeW.App.Presentation/Ribbon/MailMergePreviewNavigationPlanner.cs":  "8dadd71762b5fd19902d1cee534bd78f02ec02431c970a53994c03ec370177c2",
-                         "freew/FreeW.App.Presentation.Tests/MailMergeDialogPlannerTests.cs":  "acf926396d06d4e2c1da6dde3a102085cd087bdae02e9cd6098f43d4279c9e23",
-                         "freew/FreeW.App.Avalonia.Tests/MailMergeDialogSurfaceTests.cs":  "33f4267771a0b8c5e859d192afefb73f0f5d27d69165eb4304e5053a558757b1"
+                         "freew/FreeW.App.Presentation.Tests/MailMergeDialogPlannerTests.cs":  "096a029e481e3657cfbf8a4d6f240f3368277a7e2fc179cbf44e56e1bf645aec",
+                         "freew/FreeW.App.Avalonia.Tests/MailMergeDialogSurfaceTests.cs":  "7eebb93a95e8e8e11cd7b558e0d4909f686ef75c9d93b2add263e3c276015763"
                      },
     "ownershipBoundary":  [
-                              "Do not edit MainWindow files.",
-                              "Do not edit ribbon construction, command registry, or profile files.",
-                              "Do not edit Backstage, page-layout/media/design, or shared shell files.",
-                              "Record shell-wiring gaps exactly instead of changing forbidden files."
+                              "MainWindow and ribbon command/definition routes are included in the integration fingerprints.",
+                              "Backstage, page-layout/media/design, and shared shell routes remain outside this mail-merge inventory."
                           ],
     "surfaces":  [
                      {
@@ -38,7 +42,7 @@
                          "avaloniaSurface":  "AskEnvelopeAsync",
                          "sharedPolicy":  "CreateEnvelopeDialogPlan/PlanEnvelope",
                          "status":  "implemented",
-                         "shellWiringGap":  "MainWindow and ribbon command files are ownership-forbidden; dialog route is recorded but not connected in this slice."
+                         "shellWiringGap":  ""
                      },
                      {
                          "name":  "Labels",
@@ -46,7 +50,7 @@
                          "avaloniaSurface":  "AskLabelsAsync",
                          "sharedPolicy":  "CreateLabelDialogPlan/PlanLabel",
                          "status":  "implemented",
-                         "shellWiringGap":  "MainWindow and ribbon command files are ownership-forbidden; dialog route is recorded but not connected in this slice."
+                         "shellWiringGap":  ""
                      },
                      {
                          "name":  "Start Mail Merge/type selection",
@@ -54,7 +58,7 @@
                          "avaloniaSurface":  "AskStartMailMergeAsync",
                          "sharedPolicy":  "MailMergeStartDialogPlanner",
                          "status":  "implemented",
-                         "shellWiringGap":  "FreeWAvaloniaRibbonCommands.cs is command-registry-owned and cannot be edited here."
+                         "shellWiringGap":  ""
                      },
                      {
                          "name":  "Select/Edit Recipients",
@@ -62,7 +66,7 @@
                          "avaloniaSurface":  "AskRecipientCsvAsync",
                          "sharedPolicy":  "MailMergeRecipientDialogPlanner",
                          "status":  "implemented",
-                         "shellWiringGap":  "Existing callback wiring remains in forbidden MainWindow.cs."
+                         "shellWiringGap":  ""
                      },
                      {
                          "name":  "Address Block",
@@ -70,7 +74,7 @@
                          "avaloniaSurface":  "MailMergeInsertionPlanner plus existing engine action",
                          "sharedPolicy":  "MailMergeInsertionPlanner",
                          "status":  "implemented",
-                         "shellWiringGap":  "Existing shell command route is outside the ownership boundary."
+                         "shellWiringGap":  ""
                      },
                      {
                          "name":  "Greeting Line",
@@ -78,7 +82,7 @@
                          "avaloniaSurface":  "MailMergeInsertionPlanner plus existing engine action",
                          "sharedPolicy":  "MailMergeInsertionPlanner",
                          "status":  "implemented",
-                         "shellWiringGap":  "Existing shell command route is outside the ownership boundary."
+                         "shellWiringGap":  ""
                      },
                      {
                          "name":  "Insert Merge Field",
@@ -86,7 +90,7 @@
                          "avaloniaSurface":  "AskMergeFieldNameAsync",
                          "sharedPolicy":  "MailMergeInsertionPlanner",
                          "status":  "implemented",
-                         "shellWiringGap":  "Existing callback wiring remains in forbidden MainWindow.cs."
+                         "shellWiringGap":  ""
                      },
                      {
                          "name":  "Rules",
@@ -94,7 +98,7 @@
                          "avaloniaSurface":  "AskMergeRuleIfAsync/AskMergeRuleConditionAsync/AskMergeRulePromptAsync/AskMergeRuleNameValueAsync",
                          "sharedPolicy":  "MailMergeRuleDialogPlanner",
                          "status":  "implemented",
-                         "shellWiringGap":  "Existing rule callbacks are supplied by forbidden MainWindow.cs."
+                         "shellWiringGap":  ""
                      },
                      {
                          "name":  "Match Fields",
@@ -102,7 +106,7 @@
                          "avaloniaSurface":  "AskMatchFieldsAsync",
                          "sharedPolicy":  "MailMergeMatchFieldsDialogPlanner",
                          "status":  "implemented",
-                         "shellWiringGap":  "FreeWAvaloniaRibbonCommands.cs and MainWindow.cs are command/shell-owned and cannot be edited here."
+                         "shellWiringGap":  ""
                      },
                      {
                          "name":  "Filter and Sort Recipients",
@@ -110,15 +114,15 @@
                          "avaloniaSurface":  "AskFilterSortRecipientsAsync",
                          "sharedPolicy":  "MailMergeFilterSortDialogPlanner",
                          "status":  "implemented",
-                         "shellWiringGap":  "FreeWAvaloniaRibbonCommands.cs and MainWindow.cs are command/shell-owned and cannot be edited here."
+                         "shellWiringGap":  ""
                      },
                      {
                          "name":  "Update Labels",
                          "wpfAuthority":  "LabelsCommand label-cell population",
                          "avaloniaSurface":  "Existing engine ApplyDefaultLabels",
                          "sharedPolicy":  "MailingsEnvelopeLabelPlanner",
-                         "status":  "implemented-policy-only",
-                         "shellWiringGap":  "Ribbon update-label command construction is forbidden; no new Avalonia callback was added."
+                         "status":  "implemented",
+                         "shellWiringGap":  ""
                      },
                      {
                          "name":  "Preview Results",
@@ -126,7 +130,7 @@
                          "avaloniaSurface":  "AskPreviewNavigationAsync",
                          "sharedPolicy":  "MailMergePreviewDialogPlanner",
                          "status":  "implemented",
-                         "shellWiringGap":  "Preview action routing lives in forbidden MainWindow.cs/ribbon files."
+                         "shellWiringGap":  ""
                      },
                      {
                          "name":  "Find Recipient",
@@ -134,7 +138,7 @@
                          "avaloniaSurface":  "AskFindRecipientAsync",
                          "sharedPolicy":  "MailMergeFindRecipientPlanner",
                          "status":  "implemented",
-                         "shellWiringGap":  "Find action routing is shell-owned and intentionally not edited."
+                         "shellWiringGap":  ""
                      },
                      {
                          "name":  "Check for Errors",
@@ -142,23 +146,23 @@
                          "avaloniaSurface":  "AskCheckForErrorsAsync",
                          "sharedPolicy":  "MailMergeCheckForErrorsPlanner",
                          "status":  "implemented",
-                         "shellWiringGap":  "No Avalonia command callback was added because command registry/MainWindow files are forbidden."
+                         "shellWiringGap":  ""
                      },
                      {
                          "name":  "Finish and Merge destination/options",
                          "wpfAuthority":  "FinishMergeCommand plus MailMergeFinishPlanner",
                          "avaloniaSurface":  "AskFinishMergeAsync",
                          "sharedPolicy":  "MailMergeFinishPlanner.CreateDialogPlan/Plan",
-                         "status":  "implemented-policy-only",
-                         "shellWiringGap":  "Existing engine finishes to a new document; destination dialog wiring and printer/email routes are shell-owned."
+                         "status":  "implemented",
+                         "shellWiringGap":  ""
                      },
                      {
                          "name":  "Send E-mail Messages",
                          "wpfAuthority":  "EmailMergeDialog",
                          "avaloniaSurface":  "AskEmailMergeDeliveryAsync",
                          "sharedPolicy":  "MailMergeEmailDeliveryPlanner",
-                         "status":  "implemented-policy-only",
-                         "shellWiringGap":  "Existing route plans only and deliberately sends no mail."
+                         "status":  "implemented",
+                         "shellWiringGap":  ""
                      }
                  ],
     "freshnessCheck":  "Run tools/Generate-FreeWMailMergeDialogParityEvidence.ps1 -Check; nonzero means generated JSON/Markdown no longer matches current source hashes."
