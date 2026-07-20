@@ -18,13 +18,14 @@ slide when the menu button itself is invoked.
 ## Parity boundary
 
 This slice closes the authoring and package-function gap for these existing
-PresentationML transition elements. Cube, Flip, Rotate, and Honeycomb now have dedicated
+PresentationML transition elements. Cube, Flip, Rotate, Honeycomb, Switch,
+Orbit, and Ferris now have dedicated
 shared playback actions and matching WPF/Avalonia centered two-surface
 projections. The projections preserve direction, scale collapse/rotation, and
 outgoing-surface participation without pretending to be a full 3-D camera.
 
 Morph is a separate object-aware action. The remaining effects listed above,
-including Orbit, Flythrough, Page Curl, and the shape-deforming families, do
+including Flythrough, Page Curl, and the shape-deforming families, do
 not yet have dedicated frame-by-frame playback and continue through the
 established shared fallback path.
 
@@ -40,7 +41,7 @@ established shared fallback path.
 - The unchanged `22-chart-baseline-depth` WPF render was rebuilt from the
   consuming Release artifact and remained SHA-256 byte-identical to the prior
   accepted artifact; its existing matched-reference diff remains **2.6082%**.
-- No new PowerPoint COM export was issued for this authoring-only slice.
+- No new PowerPoint COM export was issued for this transition-function slice.
 
 Morph playback is an object-aware action; see
 `freep-morph-transition-playback-20260720.md`. The Cube/Flip/Rotate projection
