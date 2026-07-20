@@ -56,20 +56,20 @@
   ],
   "summary": {
     "totalCommands": 854,
-    "both": 378,
-    "wpfOnly": 258,
+    "both": 390,
+    "wpfOnly": 246,
     "avaloniaOnly": 218,
     "missingWpf": 218,
-    "missingAvalonia": 258,
+    "missingAvalonia": 246,
     "actionableMissingWpf": 0,
-    "actionableMissingAvalonia": 34,
-    "sharedProfile": 378,
+    "actionableMissingAvalonia": 22,
+    "sharedProfile": 390,
     "profileShapeOnly": 387,
     "commandIdAliases": 43,
     "platformOnly": 12,
     "deferred": 0,
-    "actionableGaps": 34,
-    "behaviorEvidenceRows": 70
+    "actionableGaps": 22,
+    "behaviorEvidenceRows": 82
   },
   "commands": [
     {
@@ -12020,13 +12020,13 @@
       "commandId": "freew.image-style-1",
       "label": "Simple Frame, White",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12039,25 +12039,49 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-styles",
+          "group": "Picture Styles",
+          "label": "Simple Frame, White",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.command-host-parity.shared-behavior",
+        "slice": "Command host parity",
+        "summary": "Picture Style 'Simple Frame, White' uses the shared PictureStyleCatalog and SetImageStyleCommand in both hosts, including selected-image enablement, complete bundled mutation, selection refresh, and undo restoration.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
+          "test": "ImageAndTableConversionParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/PictureStyleCommandParityTests.cs",
+          "test": "PictureStyleCommandParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        }
       }
     },
     {
       "commandId": "freew.image-style-10",
       "label": "Reflected Rounded Rectangle",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12070,25 +12094,49 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-styles",
+          "group": "Picture Styles",
+          "label": "Reflected Rounded Rectangle",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.command-host-parity.shared-behavior",
+        "slice": "Command host parity",
+        "summary": "Picture Style 'Reflected Rounded Rectangle' uses the shared PictureStyleCatalog and SetImageStyleCommand in both hosts, including selected-image enablement, complete bundled mutation, selection refresh, and undo restoration.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
+          "test": "ImageAndTableConversionParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/PictureStyleCommandParityTests.cs",
+          "test": "PictureStyleCommandParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        }
       }
     },
     {
       "commandId": "freew.image-style-11",
       "label": "Reflected Bevel, White",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12101,25 +12149,49 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-styles",
+          "group": "Picture Styles",
+          "label": "Reflected Bevel, White",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.command-host-parity.shared-behavior",
+        "slice": "Command host parity",
+        "summary": "Picture Style 'Reflected Bevel, White' uses the shared PictureStyleCatalog and SetImageStyleCommand in both hosts, including selected-image enablement, complete bundled mutation, selection refresh, and undo restoration.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
+          "test": "ImageAndTableConversionParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/PictureStyleCommandParityTests.cs",
+          "test": "PictureStyleCommandParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        }
       }
     },
     {
       "commandId": "freew.image-style-12",
       "label": "Metal Rounded Rectangle",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12132,25 +12204,49 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-styles",
+          "group": "Picture Styles",
+          "label": "Metal Rounded Rectangle",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.command-host-parity.shared-behavior",
+        "slice": "Command host parity",
+        "summary": "Picture Style 'Metal Rounded Rectangle' uses the shared PictureStyleCatalog and SetImageStyleCommand in both hosts, including selected-image enablement, complete bundled mutation, selection refresh, and undo restoration.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
+          "test": "ImageAndTableConversionParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/PictureStyleCommandParityTests.cs",
+          "test": "PictureStyleCommandParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        }
       }
     },
     {
       "commandId": "freew.image-style-2",
       "label": "Simple Frame, Black",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12163,25 +12259,49 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-styles",
+          "group": "Picture Styles",
+          "label": "Simple Frame, Black",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.command-host-parity.shared-behavior",
+        "slice": "Command host parity",
+        "summary": "Picture Style 'Simple Frame, Black' uses the shared PictureStyleCatalog and SetImageStyleCommand in both hosts, including selected-image enablement, complete bundled mutation, selection refresh, and undo restoration.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
+          "test": "ImageAndTableConversionParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/PictureStyleCommandParityTests.cs",
+          "test": "PictureStyleCommandParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        }
       }
     },
     {
       "commandId": "freew.image-style-3",
       "label": "Thick Matte, Black",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12194,25 +12314,49 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-styles",
+          "group": "Picture Styles",
+          "label": "Thick Matte, Black",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.command-host-parity.shared-behavior",
+        "slice": "Command host parity",
+        "summary": "Picture Style 'Thick Matte, Black' uses the shared PictureStyleCatalog and SetImageStyleCommand in both hosts, including selected-image enablement, complete bundled mutation, selection refresh, and undo restoration.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
+          "test": "ImageAndTableConversionParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/PictureStyleCommandParityTests.cs",
+          "test": "PictureStyleCommandParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        }
       }
     },
     {
       "commandId": "freew.image-style-4",
       "label": "Double Frame, Black",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12225,25 +12369,49 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-styles",
+          "group": "Picture Styles",
+          "label": "Double Frame, Black",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.command-host-parity.shared-behavior",
+        "slice": "Command host parity",
+        "summary": "Picture Style 'Double Frame, Black' uses the shared PictureStyleCatalog and SetImageStyleCommand in both hosts, including selected-image enablement, complete bundled mutation, selection refresh, and undo restoration.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
+          "test": "ImageAndTableConversionParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/PictureStyleCommandParityTests.cs",
+          "test": "PictureStyleCommandParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        }
       }
     },
     {
       "commandId": "freew.image-style-5",
       "label": "Soft Edge Rectangle",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12256,25 +12424,49 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-styles",
+          "group": "Picture Styles",
+          "label": "Soft Edge Rectangle",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.command-host-parity.shared-behavior",
+        "slice": "Command host parity",
+        "summary": "Picture Style 'Soft Edge Rectangle' uses the shared PictureStyleCatalog and SetImageStyleCommand in both hosts, including selected-image enablement, complete bundled mutation, selection refresh, and undo restoration.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
+          "test": "ImageAndTableConversionParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/PictureStyleCommandParityTests.cs",
+          "test": "PictureStyleCommandParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        }
       }
     },
     {
       "commandId": "freew.image-style-6",
       "label": "Soft Edge Oval",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12287,25 +12479,49 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-styles",
+          "group": "Picture Styles",
+          "label": "Soft Edge Oval",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.command-host-parity.shared-behavior",
+        "slice": "Command host parity",
+        "summary": "Picture Style 'Soft Edge Oval' uses the shared PictureStyleCatalog and SetImageStyleCommand in both hosts, including selected-image enablement, complete bundled mutation, selection refresh, and undo restoration.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
+          "test": "ImageAndTableConversionParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/PictureStyleCommandParityTests.cs",
+          "test": "PictureStyleCommandParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        }
       }
     },
     {
       "commandId": "freew.image-style-7",
       "label": "Drop Shadow Rectangle",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12318,25 +12534,49 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-styles",
+          "group": "Picture Styles",
+          "label": "Drop Shadow Rectangle",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.command-host-parity.shared-behavior",
+        "slice": "Command host parity",
+        "summary": "Picture Style 'Drop Shadow Rectangle' uses the shared PictureStyleCatalog and SetImageStyleCommand in both hosts, including selected-image enablement, complete bundled mutation, selection refresh, and undo restoration.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
+          "test": "ImageAndTableConversionParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/PictureStyleCommandParityTests.cs",
+          "test": "PictureStyleCommandParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        }
       }
     },
     {
       "commandId": "freew.image-style-8",
       "label": "Drop Shadow White",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12349,25 +12589,49 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-styles",
+          "group": "Picture Styles",
+          "label": "Drop Shadow White",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.command-host-parity.shared-behavior",
+        "slice": "Command host parity",
+        "summary": "Picture Style 'Drop Shadow White' uses the shared PictureStyleCatalog and SetImageStyleCommand in both hosts, including selected-image enablement, complete bundled mutation, selection refresh, and undo restoration.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
+          "test": "ImageAndTableConversionParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/PictureStyleCommandParityTests.cs",
+          "test": "PictureStyleCommandParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        }
       }
     },
     {
       "commandId": "freew.image-style-9",
       "label": "Perspective Shadow",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -12380,12 +12644,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-styles",
+          "group": "Picture Styles",
+          "label": "Perspective Shadow",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.command-host-parity.shared-behavior",
+        "slice": "Command host parity",
+        "summary": "Picture Style 'Perspective Shadow' uses the shared PictureStyleCatalog and SetImageStyleCommand in both hosts, including selected-image enablement, complete bundled mutation, selection refresh, and undo restoration.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
+          "test": "ImageAndTableConversionParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/PictureStyleCommandParityTests.cs",
+          "test": "PictureStyleCommandParityTests.PictureStyleRegistryRoutes_ApplySharedCatalogPresetAndUndo"
+        }
       }
     },
     {
