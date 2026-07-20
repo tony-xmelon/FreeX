@@ -19,7 +19,7 @@ slide when the menu button itself is invoked.
 
 This slice closes the authoring and package-function gap for these existing
 PresentationML transition elements. Cube, Flip, Rotate, Honeycomb, Switch,
-Orbit, Ferris, Flythrough, Page Curl Double, and Page Curl Single now have dedicated
+Orbit, Ferris, Flythrough, Glitter, Page Curl Double, and Page Curl Single now have dedicated
 shared playback actions and matching WPF/Avalonia centered two-surface
 projections. The projections preserve direction, scale collapse/rotation, and
 outgoing-surface participation without pretending to be a full 3-D camera.
