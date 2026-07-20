@@ -1,7 +1,7 @@
 {
   "schema": "freew.dialog-route-inventory.v1",
   "schemaVersion": 1,
-  "generatedFromSha256": "9fa82df2b05b530b0e5559247fb7b2a45c7b5987a6f763482c6ba51d0ea49d27",
+  "generatedFromSha256": "fd0a78b448a211a1417fcc4ff328f8343e1ca94baf90ccc4fc84975f8dee5739",
   "routes": [
     {
       "host": "avalonia",
@@ -373,13 +373,16 @@
       "typeName": "CompareDocumentsDialog",
       "sourcePath": "freew/FreeW.App.Avalonia/ReviewCompareCombineDialogs.cs",
       "modalMode": "modal",
-      "tabs": [],
+      "tabs": [
+        "More"
+      ],
       "limitation": null,
       "surfaceKind": "dialog",
       "states": [
         "initial",
         "populated",
-        "validation-error"
+        "validation-error",
+        "tab-more"
       ],
       "sourceRouteId": "compare-documents"
     },
@@ -769,6 +772,31 @@
     },
     {
       "host": "avalonia",
+      "routeId": "legal-notices",
+      "typeName": "LegalNoticesDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/LegalNoticesDialog.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [
+        "Project License",
+        "Legal Notices",
+        "Privacy Notice",
+        "Third-Party Notices",
+        "Third-Party License Texts"
+      ],
+      "limitation": null,
+      "surfaceKind": "dialog",
+      "states": [
+        "initial",
+        "tab-project-license",
+        "tab-legal-notices",
+        "tab-privacy-notice",
+        "tab-third-party-notices",
+        "tab-third-party-license-texts"
+      ],
+      "sourceRouteId": "legal-notices"
+    },
+    {
+      "host": "avalonia",
       "routeId": "line-number-options",
       "typeName": "LineNumberOptionsDialog",
       "sourcePath": "freew/FreeW.App.Avalonia/PageLayoutDialogs.cs",
@@ -1010,6 +1038,21 @@
     },
     {
       "host": "avalonia",
+      "routeId": "password-prompt",
+      "typeName": "PasswordPromptDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/PasswordPromptDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null,
+      "surfaceKind": "dialog",
+      "states": [
+        "initial",
+        "populated"
+      ],
+      "sourceRouteId": "password-prompt"
+    },
+    {
+      "host": "avalonia",
       "routeId": "paste-special",
       "typeName": "PasteSpecialDialog",
       "sourcePath": "freew/FreeW.App.Avalonia/PasteSpecialDialog.cs",
@@ -1135,6 +1178,20 @@
         "validation-error"
       ],
       "sourceRouteId": "save-compatibility-warning"
+    },
+    {
+      "host": "avalonia",
+      "routeId": "screen-clip-overlay",
+      "typeName": "ScreenClipOverlay",
+      "sourcePath": "freew/FreeW.App.Avalonia/Editing/ScreenClipOverlay.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null,
+      "surfaceKind": "overlay",
+      "states": [
+        "open"
+      ],
+      "sourceRouteId": "screen-clip-overlay"
     },
     {
       "host": "avalonia",
@@ -1282,6 +1339,36 @@
     },
     {
       "host": "avalonia",
+      "routeId": "symbol-picker",
+      "typeName": "SymbolPickerDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/SymbolPickerDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null,
+      "surfaceKind": "dialog",
+      "states": [
+        "initial"
+      ],
+      "sourceRouteId": "symbol-picker"
+    },
+    {
+      "host": "avalonia",
+      "routeId": "table-formula",
+      "typeName": "TableFormulaDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/TableDialogs.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null,
+      "surfaceKind": "dialog",
+      "states": [
+        "initial",
+        "populated",
+        "validation-error"
+      ],
+      "sourceRouteId": "table-formula"
+    },
+    {
+      "host": "avalonia",
       "routeId": "table-of-authorities",
       "typeName": "TableOfAuthoritiesDialog",
       "sourcePath": "freew/FreeW.App.Avalonia/TableOfAuthoritiesDialog.cs",
@@ -1295,6 +1382,31 @@
         "validation-error"
       ],
       "sourceRouteId": "table-of-authorities"
+    },
+    {
+      "host": "avalonia",
+      "routeId": "table-properties",
+      "typeName": "TablePropertiesDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/TableDialogs.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [
+        "Table",
+        "Row",
+        "Column",
+        "Cell"
+      ],
+      "limitation": null,
+      "surfaceKind": "dialog",
+      "states": [
+        "initial",
+        "populated",
+        "validation-error",
+        "tab-table",
+        "tab-row",
+        "tab-column",
+        "tab-cell"
+      ],
+      "sourceRouteId": "table-properties"
     },
     {
       "host": "avalonia",
@@ -2036,13 +2148,22 @@
       "typeName": "LegalNoticesDialog",
       "sourcePath": "freew/FreeW.App.Host/LegalNoticesDialog.cs",
       "modalMode": "modal-or-modeless",
-      "tabs": [],
+      "tabs": [
+        "Project License",
+        "Legal Notices",
+        "Privacy Notice",
+        "Third-Party Notices",
+        "Third-Party License Texts"
+      ],
       "limitation": null,
       "surfaceKind": "dialog",
       "states": [
         "initial",
-        "populated",
-        "validation-error"
+        "tab-project-license",
+        "tab-legal-notices",
+        "tab-privacy-notice",
+        "tab-third-party-notices",
+        "tab-third-party-license-texts"
       ],
       "sourceRouteId": "legal-notices"
     },
@@ -2192,8 +2313,7 @@
       "surfaceKind": "dialog",
       "states": [
         "initial",
-        "populated",
-        "validation-error"
+        "populated"
       ],
       "sourceRouteId": "password-prompt"
     },
@@ -2301,9 +2421,7 @@
       "limitation": null,
       "surfaceKind": "dialog",
       "states": [
-        "initial",
-        "populated",
-        "validation-error"
+        "initial"
       ],
       "sourceRouteId": "symbol-picker"
     },
@@ -2980,6 +3098,16 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.compare-documents.tab-more",
+      "host": "avalonia",
+      "routeId": "compare-documents",
+      "state": "relevant-tab",
+      "tab": "More",
+      "description": "Selected tab: More.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
@@ -3704,6 +3832,66 @@
       "surfaceKind": "dialog"
     },
     {
+      "id": "avalonia.legal-notices.initial",
+      "host": "avalonia",
+      "routeId": "legal-notices",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.legal-notices.tab-project-license",
+      "host": "avalonia",
+      "routeId": "legal-notices",
+      "state": "relevant-tab",
+      "tab": "Project License",
+      "description": "Selected tab: Project License.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.legal-notices.tab-legal-notices",
+      "host": "avalonia",
+      "routeId": "legal-notices",
+      "state": "relevant-tab",
+      "tab": "Legal Notices",
+      "description": "Selected tab: Legal Notices.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.legal-notices.tab-privacy-notice",
+      "host": "avalonia",
+      "routeId": "legal-notices",
+      "state": "relevant-tab",
+      "tab": "Privacy Notice",
+      "description": "Selected tab: Privacy Notice.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.legal-notices.tab-third-party-notices",
+      "host": "avalonia",
+      "routeId": "legal-notices",
+      "state": "relevant-tab",
+      "tab": "Third-Party Notices",
+      "description": "Selected tab: Third-Party Notices.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.legal-notices.tab-third-party-license-texts",
+      "host": "avalonia",
+      "routeId": "legal-notices",
+      "state": "relevant-tab",
+      "tab": "Third-Party License Texts",
+      "description": "Selected tab: Third-Party License Texts.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
       "id": "avalonia.line-number-options.initial",
       "host": "avalonia",
       "routeId": "line-number-options",
@@ -4184,6 +4372,26 @@
       "surfaceKind": "dialog"
     },
     {
+      "id": "avalonia.password-prompt.initial",
+      "host": "avalonia",
+      "routeId": "password-prompt",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.password-prompt.populated",
+      "host": "avalonia",
+      "routeId": "password-prompt",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
       "id": "avalonia.paste-special.initial",
       "host": "avalonia",
       "routeId": "paste-special",
@@ -4422,6 +4630,16 @@
       "description": "Representative validation or error state after invalid input.",
       "limitation": null,
       "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.screen-clip-overlay.open",
+      "host": "avalonia",
+      "routeId": "screen-clip-overlay",
+      "state": "open",
+      "tab": null,
+      "description": "Opened app-owned overlay or Backstage pane state.",
+      "limitation": null,
+      "surfaceKind": "overlay"
     },
     {
       "id": "avalonia.screen-tip.initial",
@@ -4694,6 +4912,46 @@
       "surfaceKind": "dialog"
     },
     {
+      "id": "avalonia.symbol-picker.initial",
+      "host": "avalonia",
+      "routeId": "symbol-picker",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.table-formula.initial",
+      "host": "avalonia",
+      "routeId": "table-formula",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.table-formula.populated",
+      "host": "avalonia",
+      "routeId": "table-formula",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.table-formula.validation-error",
+      "host": "avalonia",
+      "routeId": "table-formula",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
       "id": "avalonia.table-of-authorities.initial",
       "host": "avalonia",
       "routeId": "table-of-authorities",
@@ -4720,6 +4978,76 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.table-properties.initial",
+      "host": "avalonia",
+      "routeId": "table-properties",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.table-properties.populated",
+      "host": "avalonia",
+      "routeId": "table-properties",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.table-properties.validation-error",
+      "host": "avalonia",
+      "routeId": "table-properties",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.table-properties.tab-table",
+      "host": "avalonia",
+      "routeId": "table-properties",
+      "state": "relevant-tab",
+      "tab": "Table",
+      "description": "Selected tab: Table.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.table-properties.tab-row",
+      "host": "avalonia",
+      "routeId": "table-properties",
+      "state": "relevant-tab",
+      "tab": "Row",
+      "description": "Selected tab: Row.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.table-properties.tab-column",
+      "host": "avalonia",
+      "routeId": "table-properties",
+      "state": "relevant-tab",
+      "tab": "Column",
+      "description": "Selected tab: Column.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.table-properties.tab-cell",
+      "host": "avalonia",
+      "routeId": "table-properties",
+      "state": "relevant-tab",
+      "tab": "Cell",
+      "description": "Selected tab: Cell.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
@@ -5984,22 +6312,52 @@
       "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.legal-notices.populated",
+      "id": "wpf.legal-notices.tab-project-license",
       "host": "wpf",
       "routeId": "legal-notices",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
+      "state": "relevant-tab",
+      "tab": "Project License",
+      "description": "Selected tab: Project License.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.legal-notices.validation-error",
+      "id": "wpf.legal-notices.tab-legal-notices",
       "host": "wpf",
       "routeId": "legal-notices",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
+      "state": "relevant-tab",
+      "tab": "Legal Notices",
+      "description": "Selected tab: Legal Notices.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.legal-notices.tab-privacy-notice",
+      "host": "wpf",
+      "routeId": "legal-notices",
+      "state": "relevant-tab",
+      "tab": "Privacy Notice",
+      "description": "Selected tab: Privacy Notice.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.legal-notices.tab-third-party-notices",
+      "host": "wpf",
+      "routeId": "legal-notices",
+      "state": "relevant-tab",
+      "tab": "Third-Party Notices",
+      "description": "Selected tab: Third-Party Notices.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.legal-notices.tab-third-party-license-texts",
+      "host": "wpf",
+      "routeId": "legal-notices",
+      "state": "relevant-tab",
+      "tab": "Third-Party License Texts",
+      "description": "Selected tab: Third-Party License Texts.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
@@ -6334,16 +6692,6 @@
       "surfaceKind": "dialog"
     },
     {
-      "id": "wpf.password-prompt.validation-error",
-      "host": "wpf",
-      "routeId": "password-prompt",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
       "id": "wpf.paste-special.initial",
       "host": "wpf",
       "routeId": "paste-special",
@@ -6510,26 +6858,6 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "wpf.symbol-picker.populated",
-      "host": "wpf",
-      "routeId": "symbol-picker",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "wpf.symbol-picker.validation-error",
-      "host": "wpf",
-      "routeId": "symbol-picker",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
