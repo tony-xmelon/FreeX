@@ -56,20 +56,20 @@
   ],
   "summary": {
     "totalCommands": 854,
-    "both": 374,
-    "wpfOnly": 262,
+    "both": 378,
+    "wpfOnly": 258,
     "avaloniaOnly": 218,
     "missingWpf": 218,
-    "missingAvalonia": 262,
+    "missingAvalonia": 258,
     "actionableMissingWpf": 0,
-    "actionableMissingAvalonia": 38,
-    "sharedProfile": 374,
+    "actionableMissingAvalonia": 34,
+    "sharedProfile": 378,
     "profileShapeOnly": 387,
     "commandIdAliases": 43,
     "platformOnly": 12,
     "deferred": 0,
-    "actionableGaps": 38,
-    "behaviorEvidenceRows": 66
+    "actionableGaps": 34,
+    "behaviorEvidenceRows": 70
   },
   "commands": [
     {
@@ -8962,13 +8962,13 @@
       "commandId": "freew.image-alt-text",
       "label": "Alt Text",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -8981,12 +8981,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-size",
+          "group": "Size",
+          "label": "Alt Text",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.command-host-parity.shared-behavior",
+        "slice": "Command host parity",
+        "summary": "Picture Alt Text uses the current description as its prompt seed and SetImageAltTextCommand in both hosts, including selected-image enablement, cancel no-op, normalization, and undo restoration.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
+          "test": "ImageAndTableConversionParityTests.PictureCoreHostRoutes_MutateSelectedImageAndUndoRestoreIt"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/PictureCoreCommandParityTests.cs",
+          "test": "PictureCoreCommandParityTests.ImageAltTextRegistryRoute_MatchesSelectionMutationCancelAndUndo"
+        }
       }
     },
     {
@@ -9644,13 +9668,13 @@
       "commandId": "freew.image-border",
       "label": "Picture Border",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -9663,12 +9687,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-adjust",
+          "group": "Adjust",
+          "label": "Picture Border",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.command-host-parity.shared-behavior",
+        "slice": "Command host parity",
+        "summary": "Picture Border uses the shared ImageBorderDialogPlanner and SetImageBorderCommand in both hosts, including selected-image enablement, current-value defaults, cancel no-op, and undo restoration.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
+          "test": "ImageAndTableConversionParityTests.PictureCoreHostRoutes_MutateSelectedImageAndUndoRestoreIt"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/PictureCoreCommandParityTests.cs",
+          "test": "PictureCoreCommandParityTests.ImageBorderRegistryRoute_MatchesSelectionMutationCancelAndUndo"
+        }
       }
     },
     {
@@ -11148,13 +11196,13 @@
       "commandId": "freew.image-reset",
       "label": "Reset Picture",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -11167,12 +11215,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-adjust",
+          "group": "Adjust",
+          "label": "Reset Picture",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.command-host-parity.shared-behavior",
+        "slice": "Command host parity",
+        "summary": "Reset Picture uses one shared natural-size policy and ResetImageSizeCommand in both hosts, including selected-image enablement and complete undo restoration.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
+          "test": "ImageAndTableConversionParityTests.PictureCoreHostRoutes_MutateSelectedImageAndUndoRestoreIt"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/PictureCoreCommandParityTests.cs",
+          "test": "PictureCoreCommandParityTests.ImageResetRegistryRoute_MatchesNaturalSizeMutationAndUndo"
+        }
       }
     },
     {
@@ -11738,13 +11810,13 @@
       "commandId": "freew.image-size",
       "label": "Size",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -11757,12 +11829,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-size",
+          "group": "Size",
+          "label": "Size",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.command-host-parity.shared-behavior",
+        "slice": "Command host parity",
+        "summary": "Picture Size uses the shared ImageSizeDialogPlanner and SetImageSizeCommand in both hosts, including selected-image enablement, current-value defaults, cancel no-op, and undo restoration.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/ImageAndTableConversionParityTests.cs",
+          "test": "ImageAndTableConversionParityTests.PictureCoreHostRoutes_MutateSelectedImageAndUndoRestoreIt"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/PictureCoreCommandParityTests.cs",
+          "test": "PictureCoreCommandParityTests.ImageSizeRegistryRoute_MatchesSelectionMutationCancelAndUndo"
+        }
       }
     },
     {
