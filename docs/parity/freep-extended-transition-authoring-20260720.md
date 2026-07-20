@@ -18,7 +18,7 @@ slide when the menu button itself is invoked.
 ## Parity boundary
 
 This slice closes the authoring and package-function gap for these existing
-PresentationML transition elements. Cube, Flip, and Rotate now have dedicated
+PresentationML transition elements. Cube, Flip, Rotate, and Honeycomb now have dedicated
 shared playback actions and matching WPF/Avalonia centered two-surface
 projections. The projections preserve direction, scale collapse/rotation, and
 outgoing-surface participation without pretending to be a full 3-D camera.
@@ -33,7 +33,8 @@ established shared fallback path.
 - `RibbonTransitionsAnimationsTests`: **109/109** compile-first and no-build.
 - `LocTests`: **11/11**.
 - `FreePRibbonDefinitionProfileTests`: **18/18**.
-- `TransitionCompletenessTests`: **120/120**.
+- `TransitionCompletenessTests`: **124/124** for the focused transition and
+  host-policy filter.
 - FreeP command inventory generator: up to date; current inventory is **186**
   commands with **180** shared-profile commands.
 - The unchanged `22-chart-baseline-depth` WPF render was rebuilt from the
@@ -44,4 +45,5 @@ established shared fallback path.
 Morph playback is an object-aware action; see
 `freep-morph-transition-playback-20260720.md`. The Cube/Flip/Rotate projection
 details and focused verification are recorded in
-`freep-perspective-transition-playback-20260720.md`.
+`freep-perspective-transition-playback-20260720.md`; Honeycomb is recorded in
+`freep-honeycomb-transition-playback-20260720.md`.
