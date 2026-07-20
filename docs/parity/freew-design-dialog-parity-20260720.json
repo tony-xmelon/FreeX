@@ -1,7 +1,7 @@
 ﻿{
     "Schema":  "freew.design-dialog-parity.v1",
-    "GeneratedAtUtc":  "2026-07-20T06:45:18.0578224Z",
-    "Commit":  "a8cb7e474adf18c7e1a3f58df24a6ebb7ba1e871",
+    "GeneratedAtUtc":  "2026-07-20T07:03:05.4046465Z",
+    "Commit":  "b6babad309e68003fd71a6dc2fd148cf109be677",
     "RouteCounts":  {
                         "Total":  11,
                         "Complete":  10,
@@ -118,7 +118,7 @@
                          "freew/FreeW.App.Avalonia/DesignDialogs.cs":  "da52f17927afff1138cced9ca93414cca23c5ed29829ddeab47a07e25a570ada",
                          "freew/FreeW.App.Avalonia/MainWindow.cs":  "fff207e3a56c7de6c2149d3cb97982e7f524ee04b2807ecf11175cca39854ee4",
                          "freew/FreeW.App.Avalonia/PageLayoutDialogs.cs":  "5521a16a1eae56c6f02d8f779a29c6f5eaac166d98e1d7898fdd108501f7e900",
-                         "freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs":  "af37003f87eea6fc1d03403efb34ff67f0cac5933bc71b8ea1ad60e1bf149690",
+                         "freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs":  "77d97789c9f76ffdaf9804be7c7bafa63f8c687647dcca80496da3f280069992",
                          "freew/FreeW.App.Host.Tests/DesignDialogParitySourceTests.cs":  "5d4947ddfad1c13e669655ecc73871f405f678c8683d5070adf8d7287abd613c",
                          "freew/FreeW.App.Host.Tests/DocumentEffectRenderingTests.cs":  "c2a5787dec308aa987236facc571ccd24f5149d209632e84ca63569e643c2ecf",
                          "freew/FreeW.App.Host/BordersAndShadingDialog.cs":  "521607d92464e2d784a643be5f6cccd5f761be932fca2b7fe5cc892e6665cc9c",
