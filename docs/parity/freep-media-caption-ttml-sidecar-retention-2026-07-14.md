@@ -8,10 +8,15 @@ Evidence added:
 - The fixture carries an explicit `application/ttml+xml` content-type override and TTML payload bytes.
 - After a modeled slide edit, FreeP preserves the original sidecar path, bytes, relationship id, relationship target, `p20media:caption` metadata, and content-type override.
 - The sidecar remains separate from FreeP generated recording artifacts: no `ppt/media/recordingArtifacts.xml` and no `ppt/media/recording-captions/` entries are written.
-- The shared transcript planner surfaces the track as `UnsupportedFormat` with no cues instead of misclassifying the TTML payload as WebVTT/SRT.
+- The shared transcript planner recognizes basic TTML/DFXP sidecars, parses authored paragraph cues with clock or unit timing, and preserves the native package payload unchanged.
+
+Update 2026-07-20:
+
+- Focused planner coverage proves clock timing, `dur` timing, nested-span text flattening, and whitespace normalization for imported TTML cues.
+- The host package round-trip test proves a PowerPoint-style native TTML caption remains byte-identical while planning as an available one-cue transcript after load and save.
 
 Remaining gaps:
 
 - No local PowerPoint COM caption/playback baseline is available on this machine.
 - Real-deck PowerPoint-native media/caption corpus breadth is still deferred.
-- TTML transcript parsing/rendering remains intentionally unsupported; this slice only proves package retention and honest presenter metadata.
+- TTML visual rendering, playback integration, advanced timing (frame/tick rates and inherited timing contexts), styling/layout semantics, and authoring remain deferred; FreeP authoring continues to emit WebVTT.
