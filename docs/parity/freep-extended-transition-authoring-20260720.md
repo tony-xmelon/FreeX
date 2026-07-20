@@ -29,7 +29,8 @@ bands preserve direction and use a skewed leading edge rather than reducing
 the transition to a fade. Curtains now has a dedicated center-out panel mask
 with shared pleat geometry in both hosts. Shred now has a dedicated
 interleaved fragment mask with diagonal torn edges. Peel Off now uses the
-shared single-fold page-peel projection.
+shared single-fold page-peel projection. Drape now has a dedicated segmented
+wave-front mask.
 
 Morph is a separate object-aware action. The remaining effects listed above
 are the shape-deforming families; they do not yet have dedicated frame-by-frame
