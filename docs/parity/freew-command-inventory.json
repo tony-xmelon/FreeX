@@ -55,16 +55,16 @@
     }
   ],
   "summary": {
-    "totalCommands": 861,
+    "totalCommands": 860,
     "both": 442,
     "wpfOnly": 194,
-    "avaloniaOnly": 225,
-    "missingWpf": 225,
+    "avaloniaOnly": 224,
+    "missingWpf": 224,
     "missingAvalonia": 194,
     "actionableMissingWpf": 3,
     "actionableMissingAvalonia": 0,
     "sharedProfile": 442,
-    "profileShapeOnly": 362,
+    "profileShapeOnly": 361,
     "commandIdAliases": 43,
     "platformOnly": 11,
     "deferred": 0,
@@ -18489,37 +18489,6 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.page-color.more",
-      "label": "More Colors...",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "design",
-          "tab": "Design",
-          "groupId": "page-background",
-          "group": "Page Background",
-          "label": "More Colors...",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
       }
