@@ -1,0 +1,132 @@
+﻿{
+    "Schema":  "freew.design-dialog-parity.v1",
+    "GeneratedAtUtc":  "2026-07-20T05:32:54.1493171Z",
+    "Commit":  "bc946b2db52672a3410249e55d6773238e2661c7",
+    "RouteCounts":  {
+                        "Total":  11,
+                        "Complete":  10,
+                        "RemainingOwnedRoutes":  0,
+                        "RecordedShellGaps":  9
+                    },
+    "Routes":  [
+                   {
+                       "Id":  "design.themes",
+                       "DisplayName":  "Themes gallery",
+                       "Status":  "complete",
+                       "Authority":  "freew/FreeW.App.Host/Ribbon/ThemeGallery.cs",
+                       "Implementation":  "freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs",
+                       "Tests":  "freew/FreeW.App.Avalonia.Tests/DesignTabTests.cs",
+                       "Gap":  "Avalonia gallery rendering remains owned by the forbidden ribbon construction surface."
+                   },
+                   {
+                       "Id":  "design.colors",
+                       "DisplayName":  "Colors and Customize Colors",
+                       "Status":  "complete",
+                       "Authority":  "freew/FreeW.App.Host/CustomizeThemeColorsDialog.cs",
+                       "Implementation":  "freew/FreeW.App.Avalonia/DesignDialogParity.cs",
+                       "Tests":  "freew/FreeW.App.Presentation.Tests/DesignDialogPlannerTests.cs;freew/FreeW.App.Avalonia.Tests/DesignDialogParityTests.cs;freew/FreeW.App.Host.Tests/DesignDialogParitySourceTests.cs",
+                       "Gap":  "Avalonia freew.customize-colors registration is owned by the forbidden ribbon command registry."
+                   },
+                   {
+                       "Id":  "design.fonts",
+                       "DisplayName":  "Fonts and Customize Fonts",
+                       "Status":  "complete",
+                       "Authority":  "freew/FreeW.App.Host/CustomizeThemeFontsDialog.cs",
+                       "Implementation":  "freew/FreeW.App.Avalonia/DesignDialogParity.cs",
+                       "Tests":  "freew/FreeW.App.Presentation.Tests/DesignDialogPlannerTests.cs;freew/FreeW.App.Avalonia.Tests/DesignDialogParityTests.cs;freew/FreeW.App.Host.Tests/DesignDialogParitySourceTests.cs",
+                       "Gap":  "Avalonia freew.customize-fonts registration is owned by the forbidden ribbon command registry."
+                   },
+                   {
+                       "Id":  "design.paragraph-spacing",
+                       "DisplayName":  "Custom Paragraph Spacing",
+                       "Status":  "complete",
+                       "Authority":  "freew/FreeW.App.Host/CustomParagraphSpacingDialog.cs",
+                       "Implementation":  "freew/FreeW.App.Avalonia/DesignDialogParity.cs",
+                       "Tests":  "freew/FreeW.App.Presentation.Tests/DesignDialogPlannerTests.cs;freew/FreeW.App.Avalonia.Tests/DesignDialogParityTests.cs",
+                       "Gap":  "Avalonia freew.custom-paragraph-spacing registration is owned by the forbidden ribbon command registry."
+                   },
+                   {
+                       "Id":  "design.effects",
+                       "DisplayName":  "Effects gallery / selector",
+                       "Status":  "complete",
+                       "Authority":  "freew/FreeW.App.Host/Ribbon/ThemeGallery.cs",
+                       "Implementation":  "freew/FreeW.App.Avalonia/DesignDialogParity.cs",
+                       "Tests":  "freew/FreeW.App.Avalonia.Tests/DesignDialogParityTests.cs;freew/FreeW.App.Host.Tests/DocumentEffectRenderingTests.cs",
+                       "Gap":  "Avalonia gallery opener and command construction remain owned by the forbidden ribbon construction surface."
+                   },
+                   {
+                       "Id":  "design.style-sets",
+                       "DisplayName":  "Style Sets gallery",
+                       "Status":  "complete",
+                       "Authority":  "freew/FreeW.App.Host/Ribbon/ThemeGallery.cs",
+                       "Implementation":  "freew/FreeW.App.Avalonia/DesignDialogParity.cs",
+                       "Tests":  "freew/FreeW.App.Avalonia.Tests/DesignDialogParityTests.cs;freew/FreeW.App.Avalonia.Tests/DesignTabTests.cs",
+                       "Gap":  "Avalonia gallery rendering and value-command construction remain owned by the forbidden ribbon construction surface."
+                   },
+                   {
+                       "Id":  "design.default",
+                       "DisplayName":  "Reset / Set as Default confirmation",
+                       "Status":  "complete",
+                       "Authority":  "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
+                       "Implementation":  "freew/FreeW.App.Avalonia/DesignDialogParity.cs",
+                       "Tests":  "freew/FreeW.App.Presentation.Tests/DesignDialogPlannerTests.cs;freew/FreeW.App.Avalonia.Tests/DesignDialogParityTests.cs",
+                       "Gap":  "WPF authority uses a direct Reset to Default Style Set command; no shell-owned confirmation route exists to wire without changing forbidden registry files."
+                   },
+                   {
+                       "Id":  "design.watermark",
+                       "DisplayName":  "Custom Watermark",
+                       "Status":  "complete",
+                       "Authority":  "freew/FreeW.App.Host/WatermarkOptionsDialog.cs",
+                       "Implementation":  "freew/FreeW.App.Avalonia/DesignDialogs.cs",
+                       "Tests":  "freew/FreeW.App.Avalonia.Tests/WatermarkDialogTests.cs;freew/FreeW.App.Avalonia.Tests/DesignTabTests.cs",
+                       "Gap":  "OpenWatermarkDialog is an optional callback; the forbidden Avalonia shell integration does not supply it."
+                   },
+                   {
+                       "Id":  "design.page-color",
+                       "DisplayName":  "Page Color / More Colors",
+                       "Status":  "complete",
+                       "Authority":  "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
+                       "Implementation":  "freew/FreeW.App.Avalonia/DesignDialogParity.cs",
+                       "Tests":  "freew/FreeW.App.Presentation.Tests/DesignDialogPlannerTests.cs;freew/FreeW.App.Avalonia.Tests/DesignDialogParityTests.cs;freew/FreeW.App.Avalonia.Tests/DesignTabTests.cs",
+                       "Gap":  "Avalonia page-color palette registration is present, but the More Colors launcher is shell-owned and forbidden to edit here."
+                   },
+                   {
+                       "Id":  "design.page-borders",
+                       "DisplayName":  "Page Borders",
+                       "Status":  "complete",
+                       "Authority":  "freew/FreeW.App.Host/BordersAndShadingDialog.cs",
+                       "Implementation":  "freew/FreeW.App.Avalonia/DesignDialogs.cs",
+                       "Tests":  "freew/FreeW.App.Presentation.Tests/DesignDialogPlannerTests.cs;freew/FreeW.App.Avalonia.Tests/DesignTabTests.cs",
+                       "Gap":  "OpenPageBordersDialog is an optional callback; the forbidden Avalonia shell integration does not supply it."
+                   },
+                   {
+                       "Id":  "design.borders-shading",
+                       "DisplayName":  "Combined Borders and Shading",
+                       "Status":  "authority-complete",
+                       "Authority":  "freew/FreeW.App.Host/BordersAndShadingDialog.cs",
+                       "Implementation":  "freew/FreeW.App.Presentation/Dialogs/BordersAndShadingDialogPlanner.cs",
+                       "Tests":  "freew/FreeW.App.Presentation.Tests/BordersAndShadingDialogPlannerTests.cs",
+                       "Gap":  "Avalonia combined paragraph/shading launcher is outside this branch\u0027s allowed ownership boundary."
+                   }
+               ],
+    "SourceHashes":  {
+                         "freew/FreeW.App.Avalonia.Tests/DesignDialogParityTests.cs":  "27425b625d8efd0e93e76dd516657e4c209ab7a4d57245faa3c5daacef74bb69",
+                         "freew/FreeW.App.Avalonia.Tests/DesignTabTests.cs":  "48074f93f0151ce08d4f08c85375d8dfee652f8ac36f381d9718a19f1271b4ac",
+                         "freew/FreeW.App.Avalonia.Tests/WatermarkDialogTests.cs":  "832492d3075f13214c561fd33e998feef2d154197482d3db146124d17bc4e449",
+                         "freew/FreeW.App.Avalonia/DesignDialogParity.cs":  "6ccf2e1a586106039b1084d3f4835cee6b819e117c65ed0d53ed58fc6563099d",
+                         "freew/FreeW.App.Avalonia/DesignDialogs.cs":  "4b5d5adabca1ee46bce74792678eebb702e32e9148ab0606cbc441e2cfa26c67",
+                         "freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs":  "54d58be6ab9fb5b403448e09d52e89c8cfb398c090509b60f7f79a0bc0c144d2",
+                         "freew/FreeW.App.Host.Tests/DesignDialogParitySourceTests.cs":  "24031353a41f4dc24469f70bc9f2c654f98de877c062f2ce21e24393b4fedec8",
+                         "freew/FreeW.App.Host.Tests/DocumentEffectRenderingTests.cs":  "c2a5787dec308aa987236facc571ccd24f5149d209632e84ca63569e643c2ecf",
+                         "freew/FreeW.App.Host/BordersAndShadingDialog.cs":  "521607d92464e2d784a643be5f6cccd5f761be932fca2b7fe5cc892e6665cc9c",
+                         "freew/FreeW.App.Host/CustomizeThemeColorsDialog.cs":  "bd28675846fb52802d52c181a7240f291e5c0691b447b781214c37162fafc6de",
+                         "freew/FreeW.App.Host/CustomizeThemeFontsDialog.cs":  "50ae9bd4205411248e43f40731229017785fe667ad5b071de9d106604c0aeb6c",
+                         "freew/FreeW.App.Host/CustomParagraphSpacingDialog.cs":  "20afb847c38092f3fedd03a2a4f7d530d6311b962729790dcd74edc50647297f",
+                         "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs":  "bb1c4a6f5719868a587a3f6692720565b854c2a288dadebe4c19d3e37efb6835",
+                         "freew/FreeW.App.Host/Ribbon/ThemeGallery.cs":  "c190ac2a56ad4f373319f27b4140e4be309d901032fcc7e6cf5fe026b96815e9",
+                         "freew/FreeW.App.Host/WatermarkOptionsDialog.cs":  "03f4a60b77482836ef7b99933f86ab57c0cbca4b42192358754e14519a509611",
+                         "freew/FreeW.App.Presentation.Tests/BordersAndShadingDialogPlannerTests.cs":  "67b81c58af54ee31e5b34eef1039dfb3c9c153daf6ae8f88f8e0ff2c952536c3",
+                         "freew/FreeW.App.Presentation.Tests/DesignDialogPlannerTests.cs":  "8ff3670cdfa6c5f71cbf10b213df14140b88366d6f5bf37f8521007031bb5425",
+                         "freew/FreeW.App.Presentation/Dialogs/BordersAndShadingDialogPlanner.cs":  "7ce9b8fbda22ac3bee1aaf1cc1ccbc0203af355094ccbfc4e5f7bc1d52792350"
+                     }
+}
