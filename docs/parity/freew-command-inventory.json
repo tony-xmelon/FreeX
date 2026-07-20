@@ -56,20 +56,20 @@
   ],
   "summary": {
     "totalCommands": 860,
-    "both": 443,
+    "both": 446,
     "wpfOnly": 193,
-    "avaloniaOnly": 224,
-    "missingWpf": 224,
+    "avaloniaOnly": 221,
+    "missingWpf": 221,
     "missingAvalonia": 193,
-    "actionableMissingWpf": 3,
+    "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 443,
+    "sharedProfile": 446,
     "profileShapeOnly": 361,
     "commandIdAliases": 43,
     "platformOnly": 10,
     "deferred": 0,
-    "actionableGaps": 3,
-    "behaviorEvidenceRows": 102
+    "actionableGaps": 0,
+    "behaviorEvidenceRows": 105
   },
   "commands": [
     {
@@ -3193,15 +3193,26 @@
     {
       "commandId": "freew.chart-size-dialog",
       "label": "More Size Options...",
-      "wpfPresent": false,
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "chart-format",
+          "tab": "Chart Format",
+          "groupId": "chart-size",
+          "group": "Size",
+          "label": "More Size Options...",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -3215,10 +3226,23 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.final-command-profile-routing.shared-behavior",
+        "slice": "Final command profile routing",
+        "summary": "Routes More Size Options to the existing owner-modal chart size behavior in WPF and the selected-chart dialog callback in Avalonia.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.FinalCommandProfileAsymmetries_RouteToBackedWpfCommands"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/ChartSmartArtContextualTabTests.cs",
+          "test": "ChartSmartArtContextualTabTests.Chart_size_dialog_command_routes_selected_chart_to_owner_modal_callback"
+        }
       }
     },
     {
@@ -15910,15 +15934,26 @@
     {
       "commandId": "freew.merge-check-errors",
       "label": "Check for Errors",
-      "wpfPresent": false,
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "mailings",
+          "tab": "Mailings",
+          "groupId": "merge-preview",
+          "group": "Preview Results",
+          "label": "Check for Errors",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -15932,10 +15967,23 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.final-command-profile-routing.shared-behavior",
+        "slice": "Final command profile routing",
+        "summary": "Routes Check for Errors through the shared Word-order mode planner in WPF and the owner-modal Avalonia mailings host route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.MailingsFindRecipientAndCheckErrors_UseSharedPlannersThroughWpfCommands"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/MailMergeDialogSurfaceTests.cs",
+          "test": "MailMergeDialogSurfaceTests.MailingsCommandHost_RoutesFindAndErrorChecksThroughDialogsAndSharedPlanners"
+        }
       }
     },
     {
@@ -16193,15 +16241,26 @@
     {
       "commandId": "freew.merge-find-recipient",
       "label": "Find Recipient",
-      "wpfPresent": false,
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "mailings",
+          "tab": "Mailings",
+          "groupId": "merge-preview",
+          "group": "Preview Results",
+          "label": "Find Recipient",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -16215,10 +16274,23 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.final-command-profile-routing.shared-behavior",
+        "slice": "Final command profile routing",
+        "summary": "Routes Find Recipient through the shared wraparound recipient planner in WPF and the owner-modal Avalonia mailings host route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FreeWRibbonParityTests.cs",
+          "test": "FreeWRibbonParityTests.MailingsFindRecipientAndCheckErrors_UseSharedPlannersThroughWpfCommands"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/MailMergeDialogSurfaceTests.cs",
+          "test": "MailMergeDialogSurfaceTests.MailingsCommandHost_RoutesFindAndErrorChecksThroughDialogsAndSharedPlanners"
+        }
       }
     },
     {
