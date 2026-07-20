@@ -1,0 +1,5880 @@
+{
+  "schema": "freew.dialog-route-inventory.v1",
+  "schemaVersion": 1,
+  "generatedFromSha256": "700fd5fb2bffb64b175bbc70995eba96dd6a5d2374ba6b972c325af7b2dc3487",
+  "routes": [
+    {
+      "host": "avalonia",
+      "routeId": "accessibility-report",
+      "typeName": "AccessibilityReportDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/SafetyDialogs.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "avalonia-save-changes",
+      "typeName": "AvaloniaSaveChangesDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia.Tests/SharedSaveChangesDialogTests.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "backstage-account",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Avalonia/Backstage/BackstageView.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "backstage-close",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Avalonia/Backstage/BackstageView.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "backstage-export",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Avalonia/Backstage/BackstageView.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "backstage-home",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Avalonia/Backstage/BackstageView.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "backstage-info",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Avalonia/Backstage/BackstageView.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "backstage-new",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Avalonia/Backstage/BackstageView.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "backstage-open",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Avalonia/Backstage/BackstageView.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "host": "avalonia",
+      "routeId": "backstage-options",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Avalonia/Backstage/BackstageView.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "backstage-print",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Avalonia/Backstage/BackstageView.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "host": "avalonia",
+      "routeId": "backstage-save",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Avalonia/Backstage/BackstageView.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "backstage-save-a-copy",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Avalonia/Backstage/BackstageView.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "backstage-save-as",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Avalonia/Backstage/BackstageView.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "host": "avalonia",
+      "routeId": "backstage-share",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Avalonia/Backstage/BackstageView.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "bookmark",
+      "typeName": "BookmarkDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/InsertDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "bookmark-manager",
+      "typeName": "BookmarkManagerDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/BookmarkManagerDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "borders-and-shading",
+      "typeName": "BordersAndShadingDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/ParagraphCommandDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "building-blocks-organizer",
+      "typeName": "BuildingBlocksOrganizerDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/FinalCommandParityDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "cell-edit",
+      "typeName": "CellEditDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/CellEditDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "chart-axis-titles",
+      "typeName": "ChartAxisTitlesDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/MediaDialogParity.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "chart-size",
+      "typeName": "ChartSizeDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/MediaDialogParity.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "chart-title",
+      "typeName": "ChartTitleDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/MediaDialogParity.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "citation-source-picker",
+      "typeName": "CitationSourcePickerDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/ReferencesDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "comment-list",
+      "typeName": "CommentListDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/CommentDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "comment-reply",
+      "typeName": "CommentReplyDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/CommentDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "cross-reference",
+      "typeName": "CrossReferenceDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/ReferencesDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "custom-paragraph-spacing",
+      "typeName": "CustomParagraphSpacingDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/DesignDialogParity.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "customize-theme-colors",
+      "typeName": "CustomizeThemeColorsDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/DesignDialogParity.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "customize-theme-fonts",
+      "typeName": "CustomizeThemeFontsDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/DesignDialogParity.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "date-time",
+      "typeName": "DateTimeDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/DateTimeDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "document-inspector",
+      "typeName": "DocumentInspectorDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/SafetyDialogs.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "draw-table-dimension",
+      "typeName": "DrawTableDimensionDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/FinalCommandParityDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "field-picker",
+      "typeName": "FieldPickerDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/FinalCommandParityDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "find-replace",
+      "typeName": "FindReplaceDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/FindReplaceDialog.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "font",
+      "typeName": "FontDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/FontDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "footnote-endnote-options",
+      "typeName": "FootnoteEndnoteOptionsDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/FootnoteEndnoteOptionsDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "free-winfo",
+      "typeName": "FreeWInfoDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/FinalCommandParityDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "hyperlink",
+      "typeName": "HyperlinkDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/InsertDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "icon-picker",
+      "typeName": "IconPickerDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/IconPickerDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "image-adjust",
+      "typeName": "ImageAdjustDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/MediaDialogParity.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "image-alt-text",
+      "typeName": "ImageAltTextDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/PictureFormattingDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "image-border",
+      "typeName": "ImageBorderDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/PictureFormattingDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "image-crop",
+      "typeName": "ImageCropDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/ImageAndTableConversionDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "image-position",
+      "typeName": "ImagePositionDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/MediaDialogParity.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "image-size",
+      "typeName": "ImageSizeDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/PictureFormattingDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "insert-chart",
+      "typeName": "InsertChartDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/MediaDialogParity.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "insert-smart-art",
+      "typeName": "InsertSmartArtDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/MediaDialogParity.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "link-bookmark",
+      "typeName": "LinkBookmarkDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/InsertDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "manage-sources",
+      "typeName": "ManageSourcesDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/ReferencesDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "manage-styles",
+      "typeName": "ManageStylesDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/StyleDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "mark-citation",
+      "typeName": "MarkCitationDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/ReferencesDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "multilevel-list",
+      "typeName": "MultilevelListDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/MultilevelListDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "note-text",
+      "typeName": "NoteTextDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/NotesPane.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "notes-pane",
+      "typeName": "NotesPane",
+      "sourcePath": "freew/FreeW.App.Avalonia/NotesPane.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "options",
+      "typeName": "OptionsDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/OptionsDialog.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [
+        "General",
+        "AutoCorrect",
+        "AutoFormat As You Type"
+      ],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "page-borders",
+      "typeName": "PageBordersDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/DesignDialogs.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "page-color",
+      "typeName": "PageColorDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/DesignDialogParity.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "page-number-format",
+      "typeName": "PageNumberFormatDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/PageNumberFormatDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "page-setup",
+      "typeName": "PageSetupDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/PageSetupDialog.cs",
+      "modalMode": "modal",
+      "tabs": [
+        "Margins",
+        "Paper",
+        "Layout"
+      ],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "paragraph",
+      "typeName": "ParagraphDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/ParagraphDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "paste-special",
+      "typeName": "PasteSpecialDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/PasteSpecialDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "print-preview",
+      "typeName": "PrintPreviewDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/PrintPreviewDialog.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "proofing-language",
+      "typeName": "ProofingLanguageDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/ProofingDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "properties",
+      "typeName": "PropertiesDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/PropertiesDialog.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "quick-part",
+      "typeName": "QuickPartDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/InsertDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "quick-part-name",
+      "typeName": "QuickPartNameDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/FinalCommandParityDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "restrict-editing",
+      "typeName": "RestrictEditingDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/SafetyDialogs.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "save-compatibility-warning",
+      "typeName": "SaveCompatibilityWarningDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/SaveCompatibilityWarningDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "screen-tip",
+      "typeName": "ScreenTipDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/InsertDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "set-as-default-confirmation",
+      "typeName": "SetAsDefaultConfirmationDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/DesignDialogParity.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "smart-art-edit",
+      "typeName": "SmartArtEditDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/SmartArtEditDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "sort",
+      "typeName": "SortDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/ParagraphCommandDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "source-author-editor",
+      "typeName": "SourceAuthorEditorDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/ReferencesDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "source-conflict-resolution",
+      "typeName": "SourceConflictResolutionDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/ReferencesDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "source-entry",
+      "typeName": "SourceEntryDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/ReferencesDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "style",
+      "typeName": "StyleDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/StyleDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "style-set",
+      "typeName": "StyleSetDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/DesignDialogParity.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "table-of-authorities",
+      "typeName": "TableOfAuthoritiesDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/TableOfAuthoritiesDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "table-text-conversion",
+      "typeName": "TableTextConversionDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/ImageAndTableConversionDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "tabs",
+      "typeName": "TabsDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/ParagraphCommandDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "theme-effects",
+      "typeName": "ThemeEffectsDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/DesignDialogParity.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "thesaurus",
+      "typeName": "ThesaurusDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/ProofingDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "watermark",
+      "typeName": "WatermarkDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/DesignDialogs.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "word-count",
+      "typeName": "WordCountDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/WordCountDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "zoom",
+      "typeName": "ZoomDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/ZoomDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "about",
+      "typeName": "AboutDialog",
+      "sourcePath": "freew/FreeW.App.Host/AboutDialog.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "accessibility-report",
+      "typeName": "AccessibilityReportDialog",
+      "sourcePath": "freew/FreeW.App.Host/AccessibilityReportDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "backstage-account",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Host/MainWindow.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "backstage-close",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Host/MainWindow.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "backstage-export",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Host/MainWindow.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "backstage-home",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Host/MainWindow.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "backstage-info",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Host/MainWindow.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "backstage-new",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Host/MainWindow.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "backstage-open",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Host/MainWindow.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "host": "wpf",
+      "routeId": "backstage-options",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Host/MainWindow.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "backstage-print",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Host/MainWindow.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "host": "wpf",
+      "routeId": "backstage-save",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Host/MainWindow.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "backstage-save-a-copy",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Host/MainWindow.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "backstage-save-as",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Host/MainWindow.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "host": "wpf",
+      "routeId": "backstage-share",
+      "typeName": "BackstageView",
+      "sourcePath": "freew/FreeW.App.Host/MainWindow.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "bookmark-manager",
+      "typeName": "BookmarkManagerDialog",
+      "sourcePath": "freew/FreeW.App.Host/BookmarkManagerDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "borders-and-shading",
+      "typeName": "BordersAndShadingDialog",
+      "sourcePath": "freew/FreeW.App.Host/BordersAndShadingDialog.cs",
+      "modalMode": "modal",
+      "tabs": [
+        "Borders",
+        "Page Border",
+        "Shading"
+      ],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "building-blocks-organizer",
+      "typeName": "BuildingBlocksOrganizerDialog",
+      "sourcePath": "freew/FreeW.App.Host/BuildingBlocksOrganizerDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "chart-axis-titles",
+      "typeName": "ChartAxisTitlesDialog",
+      "sourcePath": "freew/FreeW.App.Host/ChartAxisTitlesDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "chart-size",
+      "typeName": "ChartSizeDialog",
+      "sourcePath": "freew/FreeW.App.Host/ChartSizeDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "chart-title",
+      "typeName": "ChartTitleDialog",
+      "sourcePath": "freew/FreeW.App.Host/ChartTitleDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "columns",
+      "typeName": "ColumnsDialog",
+      "sourcePath": "freew/FreeW.App.Host/ColumnsDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "compare-documents",
+      "typeName": "CompareDocumentsDialog",
+      "sourcePath": "freew/FreeW.App.Host/CompareDocumentsDialog.cs",
+      "modalMode": "modal",
+      "tabs": [
+        "More"
+      ],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "cross-reference",
+      "typeName": "CrossReferenceDialog",
+      "sourcePath": "freew/FreeW.App.Host/CrossReferenceDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "custom-paragraph-spacing",
+      "typeName": "CustomParagraphSpacingDialog",
+      "sourcePath": "freew/FreeW.App.Host.Tests/DesignDialogParitySourceTests.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "customize-theme-colors",
+      "typeName": "CustomizeThemeColorsDialog",
+      "sourcePath": "freew/FreeW.App.Host.Tests/DesignDialogParitySourceTests.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "customize-theme-fonts",
+      "typeName": "CustomizeThemeFontsDialog",
+      "sourcePath": "freew/FreeW.App.Host.Tests/DesignDialogParitySourceTests.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "date-time",
+      "typeName": "DateTimeDialog",
+      "sourcePath": "freew/FreeW.App.Host/DateTimeDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "document-inspector",
+      "typeName": "DocumentInspectorDialog",
+      "sourcePath": "freew/FreeW.App.Host/DocumentInspectorDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "filter-sort-recipients",
+      "typeName": "FilterSortRecipientsDialog",
+      "sourcePath": "freew/FreeW.App.Host.Tests/MailMergeMatchFieldsDialogSourceTests.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "find-replace",
+      "typeName": "FindReplaceDialog",
+      "sourcePath": "freew/FreeW.App.Host/FindReplaceDialog.cs",
+      "modalMode": "modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "font",
+      "typeName": "FontDialog",
+      "sourcePath": "freew/FreeW.App.Host/FontDialog.cs",
+      "modalMode": "modal",
+      "tabs": [
+        "Font",
+        "Advanced"
+      ],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "footnote-endnote-options",
+      "typeName": "FootnoteEndnoteOptionsDialog",
+      "sourcePath": "freew/FreeW.App.Host/FootnoteEndnoteOptionsDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "hyphenation-options",
+      "typeName": "HyphenationOptionsDialog",
+      "sourcePath": "freew/FreeW.App.Host/HyphenationOptionsDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "icon-picker",
+      "typeName": "IconPickerDialog",
+      "sourcePath": "freew/FreeW.App.Host/IconPickerDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "image-adjust",
+      "typeName": "ImageAdjustDialog",
+      "sourcePath": "freew/FreeW.App.Host/ImageAdjustDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "image-border",
+      "typeName": "ImageBorderDialog",
+      "sourcePath": "freew/FreeW.App.Host/ImageBorderDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "image-crop",
+      "typeName": "ImageCropDialog",
+      "sourcePath": "freew/FreeW.App.Host/ImageCropDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "image-position",
+      "typeName": "ImagePositionDialog",
+      "sourcePath": "freew/FreeW.App.Host/ImagePositionDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "image-size",
+      "typeName": "ImageSizeDialog",
+      "sourcePath": "freew/FreeW.App.Host/ImageSizeDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "insert-chart",
+      "typeName": "InsertChartDialog",
+      "sourcePath": "freew/FreeW.App.Host/InsertChartDialog.cs",
+      "modalMode": "modal",
+      "tabs": [
+        "Category"
+      ],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "insert-smart-art",
+      "typeName": "InsertSmartArtDialog",
+      "sourcePath": "freew/FreeW.App.Host/InsertSmartArtDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "legal-notices",
+      "typeName": "LegalNoticesDialog",
+      "sourcePath": "freew/FreeW.App.Host/LegalNoticesDialog.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "line-number-options",
+      "typeName": "LineNumberOptionsDialog",
+      "sourcePath": "freew/FreeW.App.Host/LineNumberOptionsDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "manage-styles",
+      "typeName": "ManageStylesDialog",
+      "sourcePath": "freew/FreeW.App.Host/StyleDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "mark-citation",
+      "typeName": "MarkCitationDialog",
+      "sourcePath": "freew/FreeW.App.Host/MarkCitationDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "match-fields",
+      "typeName": "MatchFieldsDialog",
+      "sourcePath": "freew/FreeW.App.Host.Tests/MailMergeMatchFieldsDialogSourceTests.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "multilevel-list",
+      "typeName": "MultilevelListDialog",
+      "sourcePath": "freew/FreeW.App.Host/MultilevelListDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "options",
+      "typeName": "OptionsDialog",
+      "sourcePath": "freew/FreeW.App.Host/OptionsDialog.cs",
+      "modalMode": "modal",
+      "tabs": [
+        "General",
+        "AutoCorrect",
+        "AutoFormat As You Type",
+        "Replace",
+        "With"
+      ],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "page-color",
+      "typeName": "PageColorDialog",
+      "sourcePath": "freew/FreeW.App.Host.Tests/DesignDialogParitySourceTests.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "page-setup",
+      "typeName": "PageSetupDialog",
+      "sourcePath": "freew/FreeW.App.Host/PageSetupDialog.cs",
+      "modalMode": "modal",
+      "tabs": [
+        "Margins",
+        "Paper",
+        "Layout"
+      ],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "paragraph-breaks",
+      "typeName": "ParagraphBreaksDialog",
+      "sourcePath": "freew/FreeW.App.Host/ParagraphBreaksDialog.cs",
+      "modalMode": "modal",
+      "tabs": [
+        "Indents and Spacing",
+        "Line and Page Breaks"
+      ],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "paragraph-indent",
+      "typeName": "ParagraphIndentDialog",
+      "sourcePath": "freew/FreeW.App.Host/ParagraphIndentDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "password-prompt",
+      "typeName": "PasswordPromptDialog",
+      "sourcePath": "freew/FreeW.App.Host/PasswordPromptDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "paste-special",
+      "typeName": "PasteSpecialDialog",
+      "sourcePath": "freew/FreeW.App.Host/PasteSpecialDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "properties",
+      "typeName": "PropertiesDialog",
+      "sourcePath": "freew/FreeW.App.Host/PropertiesDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "restrict-editing",
+      "typeName": "RestrictEditingDialog",
+      "sourcePath": "freew/FreeW.App.Host/RestrictEditingDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "screen-clip-overlay",
+      "typeName": "ScreenClipOverlay",
+      "sourcePath": "freew/FreeW.App.Host/Editing/ScreenClipOverlay.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "set-as-default-confirmation",
+      "typeName": "SetAsDefaultConfirmationDialog",
+      "sourcePath": "freew/FreeW.App.Host.Tests/DesignDialogParitySourceTests.cs",
+      "modalMode": "modal-or-modeless",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "sort",
+      "typeName": "SortDialog",
+      "sourcePath": "freew/FreeW.App.Host/SortDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "statistics",
+      "typeName": "StatisticsDialog",
+      "sourcePath": "freew/FreeW.App.Host/StatisticsDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "style",
+      "typeName": "StyleDialog",
+      "sourcePath": "freew/FreeW.App.Host/StyleDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "symbol-picker",
+      "typeName": "SymbolPickerDialog",
+      "sourcePath": "freew/FreeW.App.Host/SymbolPickerDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "table-formula",
+      "typeName": "TableFormulaDialog",
+      "sourcePath": "freew/FreeW.App.Host/TableFormulaDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "table-of-authorities",
+      "typeName": "TableOfAuthoritiesDialog",
+      "sourcePath": "freew/FreeW.App.Host/TableOfAuthoritiesDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "table-properties",
+      "typeName": "TablePropertiesDialog",
+      "sourcePath": "freew/FreeW.App.Host/TablePropertiesDialog.cs",
+      "modalMode": "modal",
+      "tabs": [
+        "Table",
+        "Row",
+        "Column",
+        "Cell"
+      ],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "tabs",
+      "typeName": "TabsDialog",
+      "sourcePath": "freew/FreeW.App.Host/TabsDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "watermark-options",
+      "typeName": "WatermarkOptionsDialog",
+      "sourcePath": "freew/FreeW.App.Host/WatermarkOptionsDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "zoom",
+      "typeName": "ZoomDialog",
+      "sourcePath": "freew/FreeW.App.Host/ZoomDialog.cs",
+      "modalMode": "modal",
+      "tabs": [
+        "Zoom to"
+      ],
+      "limitation": null
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "avalonia.accessibility-report.initial",
+      "host": "avalonia",
+      "routeId": "accessibility-report",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.accessibility-report.populated",
+      "host": "avalonia",
+      "routeId": "accessibility-report",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.accessibility-report.validation-error",
+      "host": "avalonia",
+      "routeId": "accessibility-report",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.avalonia-save-changes.initial",
+      "host": "avalonia",
+      "routeId": "avalonia-save-changes",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.avalonia-save-changes.populated",
+      "host": "avalonia",
+      "routeId": "avalonia-save-changes",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.avalonia-save-changes.validation-error",
+      "host": "avalonia",
+      "routeId": "avalonia-save-changes",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-account.initial",
+      "host": "avalonia",
+      "routeId": "backstage-account",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-account.populated",
+      "host": "avalonia",
+      "routeId": "backstage-account",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-account.validation-error",
+      "host": "avalonia",
+      "routeId": "backstage-account",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-close.initial",
+      "host": "avalonia",
+      "routeId": "backstage-close",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-close.populated",
+      "host": "avalonia",
+      "routeId": "backstage-close",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-close.validation-error",
+      "host": "avalonia",
+      "routeId": "backstage-close",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-export.initial",
+      "host": "avalonia",
+      "routeId": "backstage-export",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-export.populated",
+      "host": "avalonia",
+      "routeId": "backstage-export",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-export.validation-error",
+      "host": "avalonia",
+      "routeId": "backstage-export",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-home.initial",
+      "host": "avalonia",
+      "routeId": "backstage-home",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-home.populated",
+      "host": "avalonia",
+      "routeId": "backstage-home",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-home.validation-error",
+      "host": "avalonia",
+      "routeId": "backstage-home",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-info.initial",
+      "host": "avalonia",
+      "routeId": "backstage-info",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-info.populated",
+      "host": "avalonia",
+      "routeId": "backstage-info",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-info.validation-error",
+      "host": "avalonia",
+      "routeId": "backstage-info",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-new.initial",
+      "host": "avalonia",
+      "routeId": "backstage-new",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-new.populated",
+      "host": "avalonia",
+      "routeId": "backstage-new",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-new.validation-error",
+      "host": "avalonia",
+      "routeId": "backstage-new",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-open.initial",
+      "host": "avalonia",
+      "routeId": "backstage-open",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "avalonia.backstage-open.populated",
+      "host": "avalonia",
+      "routeId": "backstage-open",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "avalonia.backstage-open.validation-error",
+      "host": "avalonia",
+      "routeId": "backstage-open",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "avalonia.backstage-options.initial",
+      "host": "avalonia",
+      "routeId": "backstage-options",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-options.populated",
+      "host": "avalonia",
+      "routeId": "backstage-options",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-options.validation-error",
+      "host": "avalonia",
+      "routeId": "backstage-options",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-print.initial",
+      "host": "avalonia",
+      "routeId": "backstage-print",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "avalonia.backstage-print.populated",
+      "host": "avalonia",
+      "routeId": "backstage-print",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "avalonia.backstage-print.validation-error",
+      "host": "avalonia",
+      "routeId": "backstage-print",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "avalonia.backstage-save.initial",
+      "host": "avalonia",
+      "routeId": "backstage-save",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-save.populated",
+      "host": "avalonia",
+      "routeId": "backstage-save",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-save.validation-error",
+      "host": "avalonia",
+      "routeId": "backstage-save",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-save-a-copy.initial",
+      "host": "avalonia",
+      "routeId": "backstage-save-a-copy",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-save-a-copy.populated",
+      "host": "avalonia",
+      "routeId": "backstage-save-a-copy",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-save-a-copy.validation-error",
+      "host": "avalonia",
+      "routeId": "backstage-save-a-copy",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-save-as.initial",
+      "host": "avalonia",
+      "routeId": "backstage-save-as",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "avalonia.backstage-save-as.populated",
+      "host": "avalonia",
+      "routeId": "backstage-save-as",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "avalonia.backstage-save-as.validation-error",
+      "host": "avalonia",
+      "routeId": "backstage-save-as",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "avalonia.backstage-share.initial",
+      "host": "avalonia",
+      "routeId": "backstage-share",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-share.populated",
+      "host": "avalonia",
+      "routeId": "backstage-share",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.backstage-share.validation-error",
+      "host": "avalonia",
+      "routeId": "backstage-share",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.bookmark.initial",
+      "host": "avalonia",
+      "routeId": "bookmark",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.bookmark.populated",
+      "host": "avalonia",
+      "routeId": "bookmark",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.bookmark.validation-error",
+      "host": "avalonia",
+      "routeId": "bookmark",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.bookmark-manager.initial",
+      "host": "avalonia",
+      "routeId": "bookmark-manager",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.bookmark-manager.populated",
+      "host": "avalonia",
+      "routeId": "bookmark-manager",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.bookmark-manager.validation-error",
+      "host": "avalonia",
+      "routeId": "bookmark-manager",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.borders-and-shading.initial",
+      "host": "avalonia",
+      "routeId": "borders-and-shading",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.borders-and-shading.populated",
+      "host": "avalonia",
+      "routeId": "borders-and-shading",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.borders-and-shading.validation-error",
+      "host": "avalonia",
+      "routeId": "borders-and-shading",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.building-blocks-organizer.initial",
+      "host": "avalonia",
+      "routeId": "building-blocks-organizer",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.building-blocks-organizer.populated",
+      "host": "avalonia",
+      "routeId": "building-blocks-organizer",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.building-blocks-organizer.validation-error",
+      "host": "avalonia",
+      "routeId": "building-blocks-organizer",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.cell-edit.initial",
+      "host": "avalonia",
+      "routeId": "cell-edit",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.cell-edit.populated",
+      "host": "avalonia",
+      "routeId": "cell-edit",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.cell-edit.validation-error",
+      "host": "avalonia",
+      "routeId": "cell-edit",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.chart-axis-titles.initial",
+      "host": "avalonia",
+      "routeId": "chart-axis-titles",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.chart-axis-titles.populated",
+      "host": "avalonia",
+      "routeId": "chart-axis-titles",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.chart-axis-titles.validation-error",
+      "host": "avalonia",
+      "routeId": "chart-axis-titles",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.chart-size.initial",
+      "host": "avalonia",
+      "routeId": "chart-size",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.chart-size.populated",
+      "host": "avalonia",
+      "routeId": "chart-size",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.chart-size.validation-error",
+      "host": "avalonia",
+      "routeId": "chart-size",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.chart-title.initial",
+      "host": "avalonia",
+      "routeId": "chart-title",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.chart-title.populated",
+      "host": "avalonia",
+      "routeId": "chart-title",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.chart-title.validation-error",
+      "host": "avalonia",
+      "routeId": "chart-title",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.citation-source-picker.initial",
+      "host": "avalonia",
+      "routeId": "citation-source-picker",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.citation-source-picker.populated",
+      "host": "avalonia",
+      "routeId": "citation-source-picker",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.citation-source-picker.validation-error",
+      "host": "avalonia",
+      "routeId": "citation-source-picker",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.comment-list.initial",
+      "host": "avalonia",
+      "routeId": "comment-list",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.comment-list.populated",
+      "host": "avalonia",
+      "routeId": "comment-list",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.comment-list.validation-error",
+      "host": "avalonia",
+      "routeId": "comment-list",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.comment-reply.initial",
+      "host": "avalonia",
+      "routeId": "comment-reply",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.comment-reply.populated",
+      "host": "avalonia",
+      "routeId": "comment-reply",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.comment-reply.validation-error",
+      "host": "avalonia",
+      "routeId": "comment-reply",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.cross-reference.initial",
+      "host": "avalonia",
+      "routeId": "cross-reference",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.cross-reference.populated",
+      "host": "avalonia",
+      "routeId": "cross-reference",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.cross-reference.validation-error",
+      "host": "avalonia",
+      "routeId": "cross-reference",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.custom-paragraph-spacing.initial",
+      "host": "avalonia",
+      "routeId": "custom-paragraph-spacing",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.custom-paragraph-spacing.populated",
+      "host": "avalonia",
+      "routeId": "custom-paragraph-spacing",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.custom-paragraph-spacing.validation-error",
+      "host": "avalonia",
+      "routeId": "custom-paragraph-spacing",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.customize-theme-colors.initial",
+      "host": "avalonia",
+      "routeId": "customize-theme-colors",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.customize-theme-colors.populated",
+      "host": "avalonia",
+      "routeId": "customize-theme-colors",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.customize-theme-colors.validation-error",
+      "host": "avalonia",
+      "routeId": "customize-theme-colors",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.customize-theme-fonts.initial",
+      "host": "avalonia",
+      "routeId": "customize-theme-fonts",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.customize-theme-fonts.populated",
+      "host": "avalonia",
+      "routeId": "customize-theme-fonts",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.customize-theme-fonts.validation-error",
+      "host": "avalonia",
+      "routeId": "customize-theme-fonts",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.date-time.initial",
+      "host": "avalonia",
+      "routeId": "date-time",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.date-time.populated",
+      "host": "avalonia",
+      "routeId": "date-time",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.date-time.validation-error",
+      "host": "avalonia",
+      "routeId": "date-time",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.document-inspector.initial",
+      "host": "avalonia",
+      "routeId": "document-inspector",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.document-inspector.populated",
+      "host": "avalonia",
+      "routeId": "document-inspector",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.document-inspector.validation-error",
+      "host": "avalonia",
+      "routeId": "document-inspector",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.draw-table-dimension.initial",
+      "host": "avalonia",
+      "routeId": "draw-table-dimension",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.draw-table-dimension.populated",
+      "host": "avalonia",
+      "routeId": "draw-table-dimension",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.draw-table-dimension.validation-error",
+      "host": "avalonia",
+      "routeId": "draw-table-dimension",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.field-picker.initial",
+      "host": "avalonia",
+      "routeId": "field-picker",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.field-picker.populated",
+      "host": "avalonia",
+      "routeId": "field-picker",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.field-picker.validation-error",
+      "host": "avalonia",
+      "routeId": "field-picker",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.find-replace.initial",
+      "host": "avalonia",
+      "routeId": "find-replace",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.find-replace.populated",
+      "host": "avalonia",
+      "routeId": "find-replace",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.find-replace.validation-error",
+      "host": "avalonia",
+      "routeId": "find-replace",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.font.initial",
+      "host": "avalonia",
+      "routeId": "font",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.font.populated",
+      "host": "avalonia",
+      "routeId": "font",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.font.validation-error",
+      "host": "avalonia",
+      "routeId": "font",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.footnote-endnote-options.initial",
+      "host": "avalonia",
+      "routeId": "footnote-endnote-options",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.footnote-endnote-options.populated",
+      "host": "avalonia",
+      "routeId": "footnote-endnote-options",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.footnote-endnote-options.validation-error",
+      "host": "avalonia",
+      "routeId": "footnote-endnote-options",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.free-winfo.initial",
+      "host": "avalonia",
+      "routeId": "free-winfo",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.free-winfo.populated",
+      "host": "avalonia",
+      "routeId": "free-winfo",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.free-winfo.validation-error",
+      "host": "avalonia",
+      "routeId": "free-winfo",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.hyperlink.initial",
+      "host": "avalonia",
+      "routeId": "hyperlink",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.hyperlink.populated",
+      "host": "avalonia",
+      "routeId": "hyperlink",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.hyperlink.validation-error",
+      "host": "avalonia",
+      "routeId": "hyperlink",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.icon-picker.initial",
+      "host": "avalonia",
+      "routeId": "icon-picker",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.icon-picker.populated",
+      "host": "avalonia",
+      "routeId": "icon-picker",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.icon-picker.validation-error",
+      "host": "avalonia",
+      "routeId": "icon-picker",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-adjust.initial",
+      "host": "avalonia",
+      "routeId": "image-adjust",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-adjust.populated",
+      "host": "avalonia",
+      "routeId": "image-adjust",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-adjust.validation-error",
+      "host": "avalonia",
+      "routeId": "image-adjust",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-alt-text.initial",
+      "host": "avalonia",
+      "routeId": "image-alt-text",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-alt-text.populated",
+      "host": "avalonia",
+      "routeId": "image-alt-text",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-alt-text.validation-error",
+      "host": "avalonia",
+      "routeId": "image-alt-text",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-border.initial",
+      "host": "avalonia",
+      "routeId": "image-border",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-border.populated",
+      "host": "avalonia",
+      "routeId": "image-border",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-border.validation-error",
+      "host": "avalonia",
+      "routeId": "image-border",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-crop.initial",
+      "host": "avalonia",
+      "routeId": "image-crop",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-crop.populated",
+      "host": "avalonia",
+      "routeId": "image-crop",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-crop.validation-error",
+      "host": "avalonia",
+      "routeId": "image-crop",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-position.initial",
+      "host": "avalonia",
+      "routeId": "image-position",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-position.populated",
+      "host": "avalonia",
+      "routeId": "image-position",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-position.validation-error",
+      "host": "avalonia",
+      "routeId": "image-position",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-size.initial",
+      "host": "avalonia",
+      "routeId": "image-size",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-size.populated",
+      "host": "avalonia",
+      "routeId": "image-size",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.image-size.validation-error",
+      "host": "avalonia",
+      "routeId": "image-size",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.insert-chart.initial",
+      "host": "avalonia",
+      "routeId": "insert-chart",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.insert-chart.populated",
+      "host": "avalonia",
+      "routeId": "insert-chart",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.insert-chart.validation-error",
+      "host": "avalonia",
+      "routeId": "insert-chart",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.insert-smart-art.initial",
+      "host": "avalonia",
+      "routeId": "insert-smart-art",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.insert-smart-art.populated",
+      "host": "avalonia",
+      "routeId": "insert-smart-art",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.insert-smart-art.validation-error",
+      "host": "avalonia",
+      "routeId": "insert-smart-art",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.link-bookmark.initial",
+      "host": "avalonia",
+      "routeId": "link-bookmark",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.link-bookmark.populated",
+      "host": "avalonia",
+      "routeId": "link-bookmark",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.link-bookmark.validation-error",
+      "host": "avalonia",
+      "routeId": "link-bookmark",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.manage-sources.initial",
+      "host": "avalonia",
+      "routeId": "manage-sources",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.manage-sources.populated",
+      "host": "avalonia",
+      "routeId": "manage-sources",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.manage-sources.validation-error",
+      "host": "avalonia",
+      "routeId": "manage-sources",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.manage-styles.initial",
+      "host": "avalonia",
+      "routeId": "manage-styles",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.manage-styles.populated",
+      "host": "avalonia",
+      "routeId": "manage-styles",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.manage-styles.validation-error",
+      "host": "avalonia",
+      "routeId": "manage-styles",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.mark-citation.initial",
+      "host": "avalonia",
+      "routeId": "mark-citation",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.mark-citation.populated",
+      "host": "avalonia",
+      "routeId": "mark-citation",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.mark-citation.validation-error",
+      "host": "avalonia",
+      "routeId": "mark-citation",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.multilevel-list.initial",
+      "host": "avalonia",
+      "routeId": "multilevel-list",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.multilevel-list.populated",
+      "host": "avalonia",
+      "routeId": "multilevel-list",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.multilevel-list.validation-error",
+      "host": "avalonia",
+      "routeId": "multilevel-list",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.note-text.initial",
+      "host": "avalonia",
+      "routeId": "note-text",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.note-text.populated",
+      "host": "avalonia",
+      "routeId": "note-text",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.note-text.validation-error",
+      "host": "avalonia",
+      "routeId": "note-text",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.notes-pane.initial",
+      "host": "avalonia",
+      "routeId": "notes-pane",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.notes-pane.populated",
+      "host": "avalonia",
+      "routeId": "notes-pane",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.notes-pane.validation-error",
+      "host": "avalonia",
+      "routeId": "notes-pane",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.options.initial",
+      "host": "avalonia",
+      "routeId": "options",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.options.populated",
+      "host": "avalonia",
+      "routeId": "options",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.options.validation-error",
+      "host": "avalonia",
+      "routeId": "options",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.options.tab-general",
+      "host": "avalonia",
+      "routeId": "options",
+      "state": "relevant-tab",
+      "tab": "General",
+      "description": "Selected tab: General.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.options.tab-auto-correct",
+      "host": "avalonia",
+      "routeId": "options",
+      "state": "relevant-tab",
+      "tab": "AutoCorrect",
+      "description": "Selected tab: AutoCorrect.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.options.tab-auto-format-as-you-type",
+      "host": "avalonia",
+      "routeId": "options",
+      "state": "relevant-tab",
+      "tab": "AutoFormat As You Type",
+      "description": "Selected tab: AutoFormat As You Type.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.page-borders.initial",
+      "host": "avalonia",
+      "routeId": "page-borders",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.page-borders.populated",
+      "host": "avalonia",
+      "routeId": "page-borders",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.page-borders.validation-error",
+      "host": "avalonia",
+      "routeId": "page-borders",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.page-color.initial",
+      "host": "avalonia",
+      "routeId": "page-color",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.page-color.populated",
+      "host": "avalonia",
+      "routeId": "page-color",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.page-color.validation-error",
+      "host": "avalonia",
+      "routeId": "page-color",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.page-number-format.initial",
+      "host": "avalonia",
+      "routeId": "page-number-format",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.page-number-format.populated",
+      "host": "avalonia",
+      "routeId": "page-number-format",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.page-number-format.validation-error",
+      "host": "avalonia",
+      "routeId": "page-number-format",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.page-setup.initial",
+      "host": "avalonia",
+      "routeId": "page-setup",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.page-setup.populated",
+      "host": "avalonia",
+      "routeId": "page-setup",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.page-setup.validation-error",
+      "host": "avalonia",
+      "routeId": "page-setup",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.page-setup.tab-margins",
+      "host": "avalonia",
+      "routeId": "page-setup",
+      "state": "relevant-tab",
+      "tab": "Margins",
+      "description": "Selected tab: Margins.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.page-setup.tab-paper",
+      "host": "avalonia",
+      "routeId": "page-setup",
+      "state": "relevant-tab",
+      "tab": "Paper",
+      "description": "Selected tab: Paper.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.page-setup.tab-layout",
+      "host": "avalonia",
+      "routeId": "page-setup",
+      "state": "relevant-tab",
+      "tab": "Layout",
+      "description": "Selected tab: Layout.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.paragraph.initial",
+      "host": "avalonia",
+      "routeId": "paragraph",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.paragraph.populated",
+      "host": "avalonia",
+      "routeId": "paragraph",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.paragraph.validation-error",
+      "host": "avalonia",
+      "routeId": "paragraph",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.paste-special.initial",
+      "host": "avalonia",
+      "routeId": "paste-special",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.paste-special.populated",
+      "host": "avalonia",
+      "routeId": "paste-special",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.paste-special.validation-error",
+      "host": "avalonia",
+      "routeId": "paste-special",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.print-preview.initial",
+      "host": "avalonia",
+      "routeId": "print-preview",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.print-preview.populated",
+      "host": "avalonia",
+      "routeId": "print-preview",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.print-preview.validation-error",
+      "host": "avalonia",
+      "routeId": "print-preview",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.proofing-language.initial",
+      "host": "avalonia",
+      "routeId": "proofing-language",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.proofing-language.populated",
+      "host": "avalonia",
+      "routeId": "proofing-language",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.proofing-language.validation-error",
+      "host": "avalonia",
+      "routeId": "proofing-language",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.properties.initial",
+      "host": "avalonia",
+      "routeId": "properties",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.properties.populated",
+      "host": "avalonia",
+      "routeId": "properties",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.properties.validation-error",
+      "host": "avalonia",
+      "routeId": "properties",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.quick-part.initial",
+      "host": "avalonia",
+      "routeId": "quick-part",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.quick-part.populated",
+      "host": "avalonia",
+      "routeId": "quick-part",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.quick-part.validation-error",
+      "host": "avalonia",
+      "routeId": "quick-part",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.quick-part-name.initial",
+      "host": "avalonia",
+      "routeId": "quick-part-name",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.quick-part-name.populated",
+      "host": "avalonia",
+      "routeId": "quick-part-name",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.quick-part-name.validation-error",
+      "host": "avalonia",
+      "routeId": "quick-part-name",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.restrict-editing.initial",
+      "host": "avalonia",
+      "routeId": "restrict-editing",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.restrict-editing.populated",
+      "host": "avalonia",
+      "routeId": "restrict-editing",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.restrict-editing.validation-error",
+      "host": "avalonia",
+      "routeId": "restrict-editing",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.save-compatibility-warning.initial",
+      "host": "avalonia",
+      "routeId": "save-compatibility-warning",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.save-compatibility-warning.populated",
+      "host": "avalonia",
+      "routeId": "save-compatibility-warning",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.save-compatibility-warning.validation-error",
+      "host": "avalonia",
+      "routeId": "save-compatibility-warning",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.screen-tip.initial",
+      "host": "avalonia",
+      "routeId": "screen-tip",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.screen-tip.populated",
+      "host": "avalonia",
+      "routeId": "screen-tip",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.screen-tip.validation-error",
+      "host": "avalonia",
+      "routeId": "screen-tip",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.set-as-default-confirmation.initial",
+      "host": "avalonia",
+      "routeId": "set-as-default-confirmation",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.set-as-default-confirmation.populated",
+      "host": "avalonia",
+      "routeId": "set-as-default-confirmation",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.set-as-default-confirmation.validation-error",
+      "host": "avalonia",
+      "routeId": "set-as-default-confirmation",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.smart-art-edit.initial",
+      "host": "avalonia",
+      "routeId": "smart-art-edit",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.smart-art-edit.populated",
+      "host": "avalonia",
+      "routeId": "smart-art-edit",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.smart-art-edit.validation-error",
+      "host": "avalonia",
+      "routeId": "smart-art-edit",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.sort.initial",
+      "host": "avalonia",
+      "routeId": "sort",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.sort.populated",
+      "host": "avalonia",
+      "routeId": "sort",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.sort.validation-error",
+      "host": "avalonia",
+      "routeId": "sort",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.source-author-editor.initial",
+      "host": "avalonia",
+      "routeId": "source-author-editor",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.source-author-editor.populated",
+      "host": "avalonia",
+      "routeId": "source-author-editor",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.source-author-editor.validation-error",
+      "host": "avalonia",
+      "routeId": "source-author-editor",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.source-conflict-resolution.initial",
+      "host": "avalonia",
+      "routeId": "source-conflict-resolution",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.source-conflict-resolution.populated",
+      "host": "avalonia",
+      "routeId": "source-conflict-resolution",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.source-conflict-resolution.validation-error",
+      "host": "avalonia",
+      "routeId": "source-conflict-resolution",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.source-entry.initial",
+      "host": "avalonia",
+      "routeId": "source-entry",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.source-entry.populated",
+      "host": "avalonia",
+      "routeId": "source-entry",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.source-entry.validation-error",
+      "host": "avalonia",
+      "routeId": "source-entry",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.style.initial",
+      "host": "avalonia",
+      "routeId": "style",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.style.populated",
+      "host": "avalonia",
+      "routeId": "style",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.style.validation-error",
+      "host": "avalonia",
+      "routeId": "style",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.style-set.initial",
+      "host": "avalonia",
+      "routeId": "style-set",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.style-set.populated",
+      "host": "avalonia",
+      "routeId": "style-set",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.style-set.validation-error",
+      "host": "avalonia",
+      "routeId": "style-set",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.table-of-authorities.initial",
+      "host": "avalonia",
+      "routeId": "table-of-authorities",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.table-of-authorities.populated",
+      "host": "avalonia",
+      "routeId": "table-of-authorities",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.table-of-authorities.validation-error",
+      "host": "avalonia",
+      "routeId": "table-of-authorities",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.table-text-conversion.initial",
+      "host": "avalonia",
+      "routeId": "table-text-conversion",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.table-text-conversion.populated",
+      "host": "avalonia",
+      "routeId": "table-text-conversion",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.table-text-conversion.validation-error",
+      "host": "avalonia",
+      "routeId": "table-text-conversion",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.tabs.initial",
+      "host": "avalonia",
+      "routeId": "tabs",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.tabs.populated",
+      "host": "avalonia",
+      "routeId": "tabs",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.tabs.validation-error",
+      "host": "avalonia",
+      "routeId": "tabs",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.theme-effects.initial",
+      "host": "avalonia",
+      "routeId": "theme-effects",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.theme-effects.populated",
+      "host": "avalonia",
+      "routeId": "theme-effects",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.theme-effects.validation-error",
+      "host": "avalonia",
+      "routeId": "theme-effects",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.thesaurus.initial",
+      "host": "avalonia",
+      "routeId": "thesaurus",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.thesaurus.populated",
+      "host": "avalonia",
+      "routeId": "thesaurus",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.thesaurus.validation-error",
+      "host": "avalonia",
+      "routeId": "thesaurus",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.watermark.initial",
+      "host": "avalonia",
+      "routeId": "watermark",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.watermark.populated",
+      "host": "avalonia",
+      "routeId": "watermark",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.watermark.validation-error",
+      "host": "avalonia",
+      "routeId": "watermark",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.word-count.initial",
+      "host": "avalonia",
+      "routeId": "word-count",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.word-count.populated",
+      "host": "avalonia",
+      "routeId": "word-count",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.word-count.validation-error",
+      "host": "avalonia",
+      "routeId": "word-count",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.zoom.initial",
+      "host": "avalonia",
+      "routeId": "zoom",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.zoom.populated",
+      "host": "avalonia",
+      "routeId": "zoom",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.zoom.validation-error",
+      "host": "avalonia",
+      "routeId": "zoom",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.about.initial",
+      "host": "wpf",
+      "routeId": "about",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.about.populated",
+      "host": "wpf",
+      "routeId": "about",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.about.validation-error",
+      "host": "wpf",
+      "routeId": "about",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.accessibility-report.initial",
+      "host": "wpf",
+      "routeId": "accessibility-report",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.accessibility-report.populated",
+      "host": "wpf",
+      "routeId": "accessibility-report",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.accessibility-report.validation-error",
+      "host": "wpf",
+      "routeId": "accessibility-report",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-account.initial",
+      "host": "wpf",
+      "routeId": "backstage-account",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-account.populated",
+      "host": "wpf",
+      "routeId": "backstage-account",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-account.validation-error",
+      "host": "wpf",
+      "routeId": "backstage-account",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-close.initial",
+      "host": "wpf",
+      "routeId": "backstage-close",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-close.populated",
+      "host": "wpf",
+      "routeId": "backstage-close",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-close.validation-error",
+      "host": "wpf",
+      "routeId": "backstage-close",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-export.initial",
+      "host": "wpf",
+      "routeId": "backstage-export",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-export.populated",
+      "host": "wpf",
+      "routeId": "backstage-export",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-export.validation-error",
+      "host": "wpf",
+      "routeId": "backstage-export",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-home.initial",
+      "host": "wpf",
+      "routeId": "backstage-home",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-home.populated",
+      "host": "wpf",
+      "routeId": "backstage-home",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-home.validation-error",
+      "host": "wpf",
+      "routeId": "backstage-home",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-info.initial",
+      "host": "wpf",
+      "routeId": "backstage-info",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-info.populated",
+      "host": "wpf",
+      "routeId": "backstage-info",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-info.validation-error",
+      "host": "wpf",
+      "routeId": "backstage-info",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-new.initial",
+      "host": "wpf",
+      "routeId": "backstage-new",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-new.populated",
+      "host": "wpf",
+      "routeId": "backstage-new",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-new.validation-error",
+      "host": "wpf",
+      "routeId": "backstage-new",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-open.initial",
+      "host": "wpf",
+      "routeId": "backstage-open",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "wpf.backstage-open.populated",
+      "host": "wpf",
+      "routeId": "backstage-open",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "wpf.backstage-open.validation-error",
+      "host": "wpf",
+      "routeId": "backstage-open",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "wpf.backstage-options.initial",
+      "host": "wpf",
+      "routeId": "backstage-options",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-options.populated",
+      "host": "wpf",
+      "routeId": "backstage-options",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-options.validation-error",
+      "host": "wpf",
+      "routeId": "backstage-options",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-print.initial",
+      "host": "wpf",
+      "routeId": "backstage-print",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "wpf.backstage-print.populated",
+      "host": "wpf",
+      "routeId": "backstage-print",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "wpf.backstage-print.validation-error",
+      "host": "wpf",
+      "routeId": "backstage-print",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "wpf.backstage-save.initial",
+      "host": "wpf",
+      "routeId": "backstage-save",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-save.populated",
+      "host": "wpf",
+      "routeId": "backstage-save",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-save.validation-error",
+      "host": "wpf",
+      "routeId": "backstage-save",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-save-a-copy.initial",
+      "host": "wpf",
+      "routeId": "backstage-save-a-copy",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-save-a-copy.populated",
+      "host": "wpf",
+      "routeId": "backstage-save-a-copy",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-save-a-copy.validation-error",
+      "host": "wpf",
+      "routeId": "backstage-save-a-copy",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-save-as.initial",
+      "host": "wpf",
+      "routeId": "backstage-save-as",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "wpf.backstage-save-as.populated",
+      "host": "wpf",
+      "routeId": "backstage-save-as",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "wpf.backstage-save-as.validation-error",
+      "host": "wpf",
+      "routeId": "backstage-save-as",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": "native-picker-platform-limitation"
+    },
+    {
+      "id": "wpf.backstage-share.initial",
+      "host": "wpf",
+      "routeId": "backstage-share",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-share.populated",
+      "host": "wpf",
+      "routeId": "backstage-share",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.backstage-share.validation-error",
+      "host": "wpf",
+      "routeId": "backstage-share",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.bookmark-manager.initial",
+      "host": "wpf",
+      "routeId": "bookmark-manager",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.bookmark-manager.populated",
+      "host": "wpf",
+      "routeId": "bookmark-manager",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.bookmark-manager.validation-error",
+      "host": "wpf",
+      "routeId": "bookmark-manager",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.borders-and-shading.initial",
+      "host": "wpf",
+      "routeId": "borders-and-shading",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.borders-and-shading.populated",
+      "host": "wpf",
+      "routeId": "borders-and-shading",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.borders-and-shading.validation-error",
+      "host": "wpf",
+      "routeId": "borders-and-shading",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.borders-and-shading.tab-borders",
+      "host": "wpf",
+      "routeId": "borders-and-shading",
+      "state": "relevant-tab",
+      "tab": "Borders",
+      "description": "Selected tab: Borders.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.borders-and-shading.tab-page-border",
+      "host": "wpf",
+      "routeId": "borders-and-shading",
+      "state": "relevant-tab",
+      "tab": "Page Border",
+      "description": "Selected tab: Page Border.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.borders-and-shading.tab-shading",
+      "host": "wpf",
+      "routeId": "borders-and-shading",
+      "state": "relevant-tab",
+      "tab": "Shading",
+      "description": "Selected tab: Shading.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.building-blocks-organizer.initial",
+      "host": "wpf",
+      "routeId": "building-blocks-organizer",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.building-blocks-organizer.populated",
+      "host": "wpf",
+      "routeId": "building-blocks-organizer",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.building-blocks-organizer.validation-error",
+      "host": "wpf",
+      "routeId": "building-blocks-organizer",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.chart-axis-titles.initial",
+      "host": "wpf",
+      "routeId": "chart-axis-titles",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.chart-axis-titles.populated",
+      "host": "wpf",
+      "routeId": "chart-axis-titles",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.chart-axis-titles.validation-error",
+      "host": "wpf",
+      "routeId": "chart-axis-titles",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.chart-size.initial",
+      "host": "wpf",
+      "routeId": "chart-size",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.chart-size.populated",
+      "host": "wpf",
+      "routeId": "chart-size",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.chart-size.validation-error",
+      "host": "wpf",
+      "routeId": "chart-size",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.chart-title.initial",
+      "host": "wpf",
+      "routeId": "chart-title",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.chart-title.populated",
+      "host": "wpf",
+      "routeId": "chart-title",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.chart-title.validation-error",
+      "host": "wpf",
+      "routeId": "chart-title",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.columns.initial",
+      "host": "wpf",
+      "routeId": "columns",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.columns.populated",
+      "host": "wpf",
+      "routeId": "columns",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.columns.validation-error",
+      "host": "wpf",
+      "routeId": "columns",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.compare-documents.initial",
+      "host": "wpf",
+      "routeId": "compare-documents",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.compare-documents.populated",
+      "host": "wpf",
+      "routeId": "compare-documents",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.compare-documents.validation-error",
+      "host": "wpf",
+      "routeId": "compare-documents",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.compare-documents.tab-more",
+      "host": "wpf",
+      "routeId": "compare-documents",
+      "state": "relevant-tab",
+      "tab": "More",
+      "description": "Selected tab: More.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.cross-reference.initial",
+      "host": "wpf",
+      "routeId": "cross-reference",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.cross-reference.populated",
+      "host": "wpf",
+      "routeId": "cross-reference",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.cross-reference.validation-error",
+      "host": "wpf",
+      "routeId": "cross-reference",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.custom-paragraph-spacing.initial",
+      "host": "wpf",
+      "routeId": "custom-paragraph-spacing",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.custom-paragraph-spacing.populated",
+      "host": "wpf",
+      "routeId": "custom-paragraph-spacing",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.custom-paragraph-spacing.validation-error",
+      "host": "wpf",
+      "routeId": "custom-paragraph-spacing",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.customize-theme-colors.initial",
+      "host": "wpf",
+      "routeId": "customize-theme-colors",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.customize-theme-colors.populated",
+      "host": "wpf",
+      "routeId": "customize-theme-colors",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.customize-theme-colors.validation-error",
+      "host": "wpf",
+      "routeId": "customize-theme-colors",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.customize-theme-fonts.initial",
+      "host": "wpf",
+      "routeId": "customize-theme-fonts",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.customize-theme-fonts.populated",
+      "host": "wpf",
+      "routeId": "customize-theme-fonts",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.customize-theme-fonts.validation-error",
+      "host": "wpf",
+      "routeId": "customize-theme-fonts",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.date-time.initial",
+      "host": "wpf",
+      "routeId": "date-time",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.date-time.populated",
+      "host": "wpf",
+      "routeId": "date-time",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.date-time.validation-error",
+      "host": "wpf",
+      "routeId": "date-time",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.document-inspector.initial",
+      "host": "wpf",
+      "routeId": "document-inspector",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.document-inspector.populated",
+      "host": "wpf",
+      "routeId": "document-inspector",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.document-inspector.validation-error",
+      "host": "wpf",
+      "routeId": "document-inspector",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.filter-sort-recipients.initial",
+      "host": "wpf",
+      "routeId": "filter-sort-recipients",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.filter-sort-recipients.populated",
+      "host": "wpf",
+      "routeId": "filter-sort-recipients",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.filter-sort-recipients.validation-error",
+      "host": "wpf",
+      "routeId": "filter-sort-recipients",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.find-replace.initial",
+      "host": "wpf",
+      "routeId": "find-replace",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.find-replace.populated",
+      "host": "wpf",
+      "routeId": "find-replace",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.find-replace.validation-error",
+      "host": "wpf",
+      "routeId": "find-replace",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.font.initial",
+      "host": "wpf",
+      "routeId": "font",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.font.populated",
+      "host": "wpf",
+      "routeId": "font",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.font.validation-error",
+      "host": "wpf",
+      "routeId": "font",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.font.tab-font",
+      "host": "wpf",
+      "routeId": "font",
+      "state": "relevant-tab",
+      "tab": "Font",
+      "description": "Selected tab: Font.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.font.tab-advanced",
+      "host": "wpf",
+      "routeId": "font",
+      "state": "relevant-tab",
+      "tab": "Advanced",
+      "description": "Selected tab: Advanced.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.footnote-endnote-options.initial",
+      "host": "wpf",
+      "routeId": "footnote-endnote-options",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.footnote-endnote-options.populated",
+      "host": "wpf",
+      "routeId": "footnote-endnote-options",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.footnote-endnote-options.validation-error",
+      "host": "wpf",
+      "routeId": "footnote-endnote-options",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.hyphenation-options.initial",
+      "host": "wpf",
+      "routeId": "hyphenation-options",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.hyphenation-options.populated",
+      "host": "wpf",
+      "routeId": "hyphenation-options",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.hyphenation-options.validation-error",
+      "host": "wpf",
+      "routeId": "hyphenation-options",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.icon-picker.initial",
+      "host": "wpf",
+      "routeId": "icon-picker",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.icon-picker.populated",
+      "host": "wpf",
+      "routeId": "icon-picker",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.icon-picker.validation-error",
+      "host": "wpf",
+      "routeId": "icon-picker",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.image-adjust.initial",
+      "host": "wpf",
+      "routeId": "image-adjust",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.image-adjust.populated",
+      "host": "wpf",
+      "routeId": "image-adjust",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.image-adjust.validation-error",
+      "host": "wpf",
+      "routeId": "image-adjust",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.image-border.initial",
+      "host": "wpf",
+      "routeId": "image-border",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.image-border.populated",
+      "host": "wpf",
+      "routeId": "image-border",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.image-border.validation-error",
+      "host": "wpf",
+      "routeId": "image-border",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.image-crop.initial",
+      "host": "wpf",
+      "routeId": "image-crop",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.image-crop.populated",
+      "host": "wpf",
+      "routeId": "image-crop",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.image-crop.validation-error",
+      "host": "wpf",
+      "routeId": "image-crop",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.image-position.initial",
+      "host": "wpf",
+      "routeId": "image-position",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.image-position.populated",
+      "host": "wpf",
+      "routeId": "image-position",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.image-position.validation-error",
+      "host": "wpf",
+      "routeId": "image-position",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.image-size.initial",
+      "host": "wpf",
+      "routeId": "image-size",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.image-size.populated",
+      "host": "wpf",
+      "routeId": "image-size",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.image-size.validation-error",
+      "host": "wpf",
+      "routeId": "image-size",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.insert-chart.initial",
+      "host": "wpf",
+      "routeId": "insert-chart",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.insert-chart.populated",
+      "host": "wpf",
+      "routeId": "insert-chart",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.insert-chart.validation-error",
+      "host": "wpf",
+      "routeId": "insert-chart",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.insert-chart.tab-category",
+      "host": "wpf",
+      "routeId": "insert-chart",
+      "state": "relevant-tab",
+      "tab": "Category",
+      "description": "Selected tab: Category.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.insert-smart-art.initial",
+      "host": "wpf",
+      "routeId": "insert-smart-art",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.insert-smart-art.populated",
+      "host": "wpf",
+      "routeId": "insert-smart-art",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.insert-smart-art.validation-error",
+      "host": "wpf",
+      "routeId": "insert-smart-art",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.legal-notices.initial",
+      "host": "wpf",
+      "routeId": "legal-notices",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.legal-notices.populated",
+      "host": "wpf",
+      "routeId": "legal-notices",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.legal-notices.validation-error",
+      "host": "wpf",
+      "routeId": "legal-notices",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.line-number-options.initial",
+      "host": "wpf",
+      "routeId": "line-number-options",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.line-number-options.populated",
+      "host": "wpf",
+      "routeId": "line-number-options",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.line-number-options.validation-error",
+      "host": "wpf",
+      "routeId": "line-number-options",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.manage-styles.initial",
+      "host": "wpf",
+      "routeId": "manage-styles",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.manage-styles.populated",
+      "host": "wpf",
+      "routeId": "manage-styles",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.manage-styles.validation-error",
+      "host": "wpf",
+      "routeId": "manage-styles",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.mark-citation.initial",
+      "host": "wpf",
+      "routeId": "mark-citation",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.mark-citation.populated",
+      "host": "wpf",
+      "routeId": "mark-citation",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.mark-citation.validation-error",
+      "host": "wpf",
+      "routeId": "mark-citation",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.match-fields.initial",
+      "host": "wpf",
+      "routeId": "match-fields",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.match-fields.populated",
+      "host": "wpf",
+      "routeId": "match-fields",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.match-fields.validation-error",
+      "host": "wpf",
+      "routeId": "match-fields",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.multilevel-list.initial",
+      "host": "wpf",
+      "routeId": "multilevel-list",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.multilevel-list.populated",
+      "host": "wpf",
+      "routeId": "multilevel-list",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.multilevel-list.validation-error",
+      "host": "wpf",
+      "routeId": "multilevel-list",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.options.initial",
+      "host": "wpf",
+      "routeId": "options",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.options.populated",
+      "host": "wpf",
+      "routeId": "options",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.options.validation-error",
+      "host": "wpf",
+      "routeId": "options",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.options.tab-general",
+      "host": "wpf",
+      "routeId": "options",
+      "state": "relevant-tab",
+      "tab": "General",
+      "description": "Selected tab: General.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.options.tab-auto-correct",
+      "host": "wpf",
+      "routeId": "options",
+      "state": "relevant-tab",
+      "tab": "AutoCorrect",
+      "description": "Selected tab: AutoCorrect.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.options.tab-auto-format-as-you-type",
+      "host": "wpf",
+      "routeId": "options",
+      "state": "relevant-tab",
+      "tab": "AutoFormat As You Type",
+      "description": "Selected tab: AutoFormat As You Type.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.options.tab-replace",
+      "host": "wpf",
+      "routeId": "options",
+      "state": "relevant-tab",
+      "tab": "Replace",
+      "description": "Selected tab: Replace.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.options.tab-with",
+      "host": "wpf",
+      "routeId": "options",
+      "state": "relevant-tab",
+      "tab": "With",
+      "description": "Selected tab: With.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.page-color.initial",
+      "host": "wpf",
+      "routeId": "page-color",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.page-color.populated",
+      "host": "wpf",
+      "routeId": "page-color",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.page-color.validation-error",
+      "host": "wpf",
+      "routeId": "page-color",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.page-setup.initial",
+      "host": "wpf",
+      "routeId": "page-setup",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.page-setup.populated",
+      "host": "wpf",
+      "routeId": "page-setup",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.page-setup.validation-error",
+      "host": "wpf",
+      "routeId": "page-setup",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.page-setup.tab-margins",
+      "host": "wpf",
+      "routeId": "page-setup",
+      "state": "relevant-tab",
+      "tab": "Margins",
+      "description": "Selected tab: Margins.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.page-setup.tab-paper",
+      "host": "wpf",
+      "routeId": "page-setup",
+      "state": "relevant-tab",
+      "tab": "Paper",
+      "description": "Selected tab: Paper.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.page-setup.tab-layout",
+      "host": "wpf",
+      "routeId": "page-setup",
+      "state": "relevant-tab",
+      "tab": "Layout",
+      "description": "Selected tab: Layout.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.paragraph-breaks.initial",
+      "host": "wpf",
+      "routeId": "paragraph-breaks",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.paragraph-breaks.populated",
+      "host": "wpf",
+      "routeId": "paragraph-breaks",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.paragraph-breaks.validation-error",
+      "host": "wpf",
+      "routeId": "paragraph-breaks",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.paragraph-breaks.tab-indents-and-spacing",
+      "host": "wpf",
+      "routeId": "paragraph-breaks",
+      "state": "relevant-tab",
+      "tab": "Indents and Spacing",
+      "description": "Selected tab: Indents and Spacing.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.paragraph-breaks.tab-line-and-page-breaks",
+      "host": "wpf",
+      "routeId": "paragraph-breaks",
+      "state": "relevant-tab",
+      "tab": "Line and Page Breaks",
+      "description": "Selected tab: Line and Page Breaks.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.paragraph-indent.initial",
+      "host": "wpf",
+      "routeId": "paragraph-indent",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.paragraph-indent.populated",
+      "host": "wpf",
+      "routeId": "paragraph-indent",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.paragraph-indent.validation-error",
+      "host": "wpf",
+      "routeId": "paragraph-indent",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.password-prompt.initial",
+      "host": "wpf",
+      "routeId": "password-prompt",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.password-prompt.populated",
+      "host": "wpf",
+      "routeId": "password-prompt",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.password-prompt.validation-error",
+      "host": "wpf",
+      "routeId": "password-prompt",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.paste-special.initial",
+      "host": "wpf",
+      "routeId": "paste-special",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.paste-special.populated",
+      "host": "wpf",
+      "routeId": "paste-special",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.paste-special.validation-error",
+      "host": "wpf",
+      "routeId": "paste-special",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.properties.initial",
+      "host": "wpf",
+      "routeId": "properties",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.properties.populated",
+      "host": "wpf",
+      "routeId": "properties",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.properties.validation-error",
+      "host": "wpf",
+      "routeId": "properties",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.restrict-editing.initial",
+      "host": "wpf",
+      "routeId": "restrict-editing",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.restrict-editing.populated",
+      "host": "wpf",
+      "routeId": "restrict-editing",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.restrict-editing.validation-error",
+      "host": "wpf",
+      "routeId": "restrict-editing",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.screen-clip-overlay.initial",
+      "host": "wpf",
+      "routeId": "screen-clip-overlay",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.screen-clip-overlay.populated",
+      "host": "wpf",
+      "routeId": "screen-clip-overlay",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.screen-clip-overlay.validation-error",
+      "host": "wpf",
+      "routeId": "screen-clip-overlay",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.set-as-default-confirmation.initial",
+      "host": "wpf",
+      "routeId": "set-as-default-confirmation",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.set-as-default-confirmation.populated",
+      "host": "wpf",
+      "routeId": "set-as-default-confirmation",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.set-as-default-confirmation.validation-error",
+      "host": "wpf",
+      "routeId": "set-as-default-confirmation",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.sort.initial",
+      "host": "wpf",
+      "routeId": "sort",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.sort.populated",
+      "host": "wpf",
+      "routeId": "sort",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.sort.validation-error",
+      "host": "wpf",
+      "routeId": "sort",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.statistics.initial",
+      "host": "wpf",
+      "routeId": "statistics",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.statistics.populated",
+      "host": "wpf",
+      "routeId": "statistics",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.statistics.validation-error",
+      "host": "wpf",
+      "routeId": "statistics",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.style.initial",
+      "host": "wpf",
+      "routeId": "style",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.style.populated",
+      "host": "wpf",
+      "routeId": "style",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.style.validation-error",
+      "host": "wpf",
+      "routeId": "style",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.symbol-picker.initial",
+      "host": "wpf",
+      "routeId": "symbol-picker",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.symbol-picker.populated",
+      "host": "wpf",
+      "routeId": "symbol-picker",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.symbol-picker.validation-error",
+      "host": "wpf",
+      "routeId": "symbol-picker",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.table-formula.initial",
+      "host": "wpf",
+      "routeId": "table-formula",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.table-formula.populated",
+      "host": "wpf",
+      "routeId": "table-formula",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.table-formula.validation-error",
+      "host": "wpf",
+      "routeId": "table-formula",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.table-of-authorities.initial",
+      "host": "wpf",
+      "routeId": "table-of-authorities",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.table-of-authorities.populated",
+      "host": "wpf",
+      "routeId": "table-of-authorities",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.table-of-authorities.validation-error",
+      "host": "wpf",
+      "routeId": "table-of-authorities",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.table-properties.initial",
+      "host": "wpf",
+      "routeId": "table-properties",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.table-properties.populated",
+      "host": "wpf",
+      "routeId": "table-properties",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.table-properties.validation-error",
+      "host": "wpf",
+      "routeId": "table-properties",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.table-properties.tab-table",
+      "host": "wpf",
+      "routeId": "table-properties",
+      "state": "relevant-tab",
+      "tab": "Table",
+      "description": "Selected tab: Table.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.table-properties.tab-row",
+      "host": "wpf",
+      "routeId": "table-properties",
+      "state": "relevant-tab",
+      "tab": "Row",
+      "description": "Selected tab: Row.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.table-properties.tab-column",
+      "host": "wpf",
+      "routeId": "table-properties",
+      "state": "relevant-tab",
+      "tab": "Column",
+      "description": "Selected tab: Column.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.table-properties.tab-cell",
+      "host": "wpf",
+      "routeId": "table-properties",
+      "state": "relevant-tab",
+      "tab": "Cell",
+      "description": "Selected tab: Cell.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.tabs.initial",
+      "host": "wpf",
+      "routeId": "tabs",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.tabs.populated",
+      "host": "wpf",
+      "routeId": "tabs",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.tabs.validation-error",
+      "host": "wpf",
+      "routeId": "tabs",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.watermark-options.initial",
+      "host": "wpf",
+      "routeId": "watermark-options",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.watermark-options.populated",
+      "host": "wpf",
+      "routeId": "watermark-options",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.watermark-options.validation-error",
+      "host": "wpf",
+      "routeId": "watermark-options",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.zoom.initial",
+      "host": "wpf",
+      "routeId": "zoom",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.zoom.populated",
+      "host": "wpf",
+      "routeId": "zoom",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.zoom.validation-error",
+      "host": "wpf",
+      "routeId": "zoom",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.zoom.tab-zoom-to",
+      "host": "wpf",
+      "routeId": "zoom",
+      "state": "relevant-tab",
+      "tab": "Zoom to",
+      "description": "Selected tab: Zoom to.",
+      "limitation": null
+    }
+  ]
+}

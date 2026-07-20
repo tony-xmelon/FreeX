@@ -1,0 +1,2995 @@
+{
+  "schema": "freew.dialog-visual-comparison.v1",
+  "generatedFromSha256": "472e97fc040be2490dcaacd00b32bb3609e2960bfedb4d9fd8bef1648648b59e",
+  "targetDpi": 96,
+  "inventoryScenarioCount": 493,
+  "wpfCaptureCount": 14,
+  "avaloniaCaptureCount": 0,
+  "rows": [
+    {
+      "scenarioId": "about.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "about.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "about.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "accessibility-report.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "accessibility-report.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "accessibility-report.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "avalonia-save-changes.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "avalonia-save-changes.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "avalonia-save-changes.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "backstage-account.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-account.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-account.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-close.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-close.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-close.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-export.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-export.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-export.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-home.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-home.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-home.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-info.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-info.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-info.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-new.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-new.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-new.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-open.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "native-picker-platform-limitation",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-open.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "native-picker-platform-limitation",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-open.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "native-picker-platform-limitation",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-options.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-options.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-options.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-print.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "native-picker-platform-limitation",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-print.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "native-picker-platform-limitation",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-print.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "native-picker-platform-limitation",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-save-a-copy.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-save-a-copy.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-save-a-copy.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-save-as.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "native-picker-platform-limitation",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-save-as.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "native-picker-platform-limitation",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-save-as.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "native-picker-platform-limitation",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-save.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-save.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-save.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-share.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-share.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "backstage-share.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "bookmark-manager.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "bookmark-manager.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "bookmark-manager.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "bookmark.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "bookmark.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "bookmark.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "borders-and-shading.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "borders-and-shading.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "borders-and-shading.tab-borders",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "borders-and-shading.tab-page-border",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "borders-and-shading.tab-shading",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "borders-and-shading.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "building-blocks-organizer.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "building-blocks-organizer.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "building-blocks-organizer.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "cell-edit.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "cell-edit.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "cell-edit.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "chart-axis-titles.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "chart-axis-titles.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "chart-axis-titles.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "chart-size.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "chart-size.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "chart-size.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "chart-title.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "chart-title.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "chart-title.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "citation-source-picker.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "citation-source-picker.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "citation-source-picker.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "columns.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "columns.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "columns.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "comment-list.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "comment-list.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "comment-list.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "comment-reply.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "comment-reply.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "comment-reply.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "compare-documents.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "compare-documents.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "compare-documents.tab-more",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "compare-documents.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "cross-reference.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "cross-reference.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "cross-reference.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "custom-paragraph-spacing.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "custom-paragraph-spacing.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "custom-paragraph-spacing.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "customize-theme-colors.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "customize-theme-colors.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "customize-theme-colors.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "customize-theme-fonts.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "customize-theme-fonts.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "customize-theme-fonts.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "date-time.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "date-time.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "date-time.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "document-inspector.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "document-inspector.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "document-inspector.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "draw-table-dimension.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "draw-table-dimension.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "draw-table-dimension.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "field-picker.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "field-picker.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "field-picker.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "filter-sort-recipients.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "filter-sort-recipients.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "filter-sort-recipients.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "find-replace.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "find-replace.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "find-replace.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "font.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "font.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "font.tab-advanced",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "font.tab-font",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "font.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "footnote-endnote-options.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "footnote-endnote-options.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "footnote-endnote-options.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "free-winfo.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "free-winfo.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "free-winfo.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "hyperlink.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "hyperlink.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "hyperlink.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "hyphenation-options.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "hyphenation-options.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "hyphenation-options.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "icon-picker.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "icon-picker.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "icon-picker.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "image-adjust.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "image-adjust.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "image-adjust.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "image-alt-text.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "image-alt-text.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "image-alt-text.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "image-border.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "image-border.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "image-border.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "image-crop.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "image-crop.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "image-crop.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "image-position.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "image-position.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "image-position.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "image-size.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "image-size.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "image-size.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "insert-chart.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "insert-chart.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "insert-chart.tab-category",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "insert-chart.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "insert-smart-art.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "insert-smart-art.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "insert-smart-art.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "legal-notices.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "legal-notices.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "legal-notices.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "line-number-options.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "line-number-options.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "line-number-options.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "link-bookmark.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "link-bookmark.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "link-bookmark.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "manage-sources.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "manage-sources.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "manage-sources.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "manage-styles.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "manage-styles.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "manage-styles.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "mark-citation.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "mark-citation.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "mark-citation.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "match-fields.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "match-fields.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "match-fields.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "multilevel-list.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "multilevel-list.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "multilevel-list.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "note-text.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "note-text.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "note-text.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "notes-pane.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "notes-pane.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "notes-pane.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "options.initial",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
+    },
+    {
+      "scenarioId": "options.populated",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
+    },
+    {
+      "scenarioId": "options.tab-auto-correct",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
+    },
+    {
+      "scenarioId": "options.tab-auto-format-as-you-type",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
+    },
+    {
+      "scenarioId": "options.tab-general",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
+    },
+    {
+      "scenarioId": "options.tab-replace",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "options.tab-with",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "options.validation-error",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
+    },
+    {
+      "scenarioId": "page-borders.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "page-borders.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "page-borders.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "page-color.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "page-color.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "page-color.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "page-number-format.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "page-number-format.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "page-number-format.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "page-setup.initial",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
+    },
+    {
+      "scenarioId": "page-setup.populated",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
+    },
+    {
+      "scenarioId": "page-setup.tab-layout",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
+    },
+    {
+      "scenarioId": "page-setup.tab-margins",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
+    },
+    {
+      "scenarioId": "page-setup.tab-paper",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
+    },
+    {
+      "scenarioId": "page-setup.validation-error",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
+    },
+    {
+      "scenarioId": "paragraph-breaks.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "paragraph-breaks.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "paragraph-breaks.tab-indents-and-spacing",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "paragraph-breaks.tab-line-and-page-breaks",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "paragraph-breaks.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "paragraph-indent.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "paragraph-indent.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "paragraph-indent.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "paragraph.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "paragraph.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "paragraph.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "password-prompt.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "password-prompt.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "password-prompt.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "paste-special.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "paste-special.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "paste-special.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "print-preview.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "print-preview.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "print-preview.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "proofing-language.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "proofing-language.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "proofing-language.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "properties.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "properties.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "properties.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "quick-part-name.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "quick-part-name.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "quick-part-name.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "quick-part.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "quick-part.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "quick-part.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "restrict-editing.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "restrict-editing.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "restrict-editing.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "save-compatibility-warning.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "save-compatibility-warning.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "save-compatibility-warning.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "screen-clip-overlay.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "screen-clip-overlay.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "screen-clip-overlay.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "screen-tip.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "screen-tip.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "screen-tip.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "set-as-default-confirmation.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "set-as-default-confirmation.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "set-as-default-confirmation.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "smart-art-edit.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "smart-art-edit.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "smart-art-edit.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "sort.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "sort.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "sort.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "source-author-editor.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "source-author-editor.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "source-author-editor.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "source-conflict-resolution.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "source-conflict-resolution.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "source-conflict-resolution.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "source-entry.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "source-entry.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "source-entry.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "statistics.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "statistics.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "statistics.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "style-set.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "style-set.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "style-set.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "style.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "style.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "style.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "symbol-picker.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "symbol-picker.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "symbol-picker.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "table-formula.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "table-formula.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "table-formula.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "table-of-authorities.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "table-of-authorities.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "table-of-authorities.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "table-properties.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "table-properties.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "table-properties.tab-cell",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "table-properties.tab-column",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "table-properties.tab-row",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "table-properties.tab-table",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "table-properties.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "table-text-conversion.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "table-text-conversion.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "table-text-conversion.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "tabs.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "tabs.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "tabs.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "theme-effects.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "theme-effects.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "theme-effects.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "thesaurus.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "thesaurus.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "thesaurus.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "watermark-options.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "watermark-options.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "watermark-options.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "watermark.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "watermark.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "watermark.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "word-count.initial",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "word-count.populated",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "word-count.validation-error",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "zoom.initial",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "zoom.populated",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    },
+    {
+      "scenarioId": "zoom.tab-zoom-to",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No Avalonia route/state row was generated."
+    },
+    {
+      "scenarioId": "zoom.validation-error",
+      "captureStatus": "unsupported/unsupported",
+      "classification": "capture-hook-required",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+    }
+  ],
+  "counts": {
+    "not-implemented-on-host": 169,
+    "capture-hook-required": 141,
+    "native-picker-platform-limitation": 9,
+    "avalonia-headless-render-unavailable": 12
+  }
+}
