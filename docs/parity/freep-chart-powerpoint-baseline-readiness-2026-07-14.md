@@ -15,7 +15,16 @@ Verification:
 - `freep/FreeP.App.Presentation.Tests/ChartBaselineCorpusTests.cs` loads `tools/FreeP.RenderCompare/corpus/22-chart-baseline-depth.pptx` and covers the PowerPoint/WPF/Avalonia capture matrix, stable capture IDs, COM-required flags, and chart-family decision summaries.
 - The radar style-specific test builds filled and marker radar models in memory, asserts their shared primitive plans, and verifies that WPF/Avalonia capture requests do not require PowerPoint COM while the paired PowerPoint request remains an explicit COM-required readiness row.
 
-Remaining blockers:
+Follow-up COM evidence:
 
-- This slice does not capture Microsoft PowerPoint screenshots locally; the PowerPoint rows are readiness contracts for a COM-capable baseline host.
-- Exact Microsoft PowerPoint visual baselines, pixel-diff thresholds, broader real-deck radar coverage, and remaining chart-type-specific rendering decisions beyond the stock, 3-D surface, smooth scatter, 100% stacked-column, and radar style-specific planner coverage still require the authoritative capture run.
+- Fresh PowerPoint exports now cover `22-chart-baseline-depth.pptx` (1/1),
+  `18-chart-types.pptx` (4/4), and `19-chart-labels.pptx` (3/3) at 1280x720.
+- Current mean WPF/Avalonia diffs are 2.6046%/1.0906% for the baseline-depth
+  deck, 0.7585%/0.3122% for chart-types, and 1.2707%/0.6103% for chart-labels.
+- Detailed provenance and residual ownership are recorded in
+  `docs/parity/freep-chart-powerpoint-com-baseline-20260720.md`.
+
+Remaining blockers are now narrower: exact Surface3D mesh/camera/facet
+ownership, WPF chart-label rasterization, broader real-deck radar/stock/
+doughnut/bubble coverage, and family-specific pixel-diff thresholds still
+require additional authoritative captures and scoped renderer work.
