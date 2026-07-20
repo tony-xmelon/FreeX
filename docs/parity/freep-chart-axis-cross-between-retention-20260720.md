@@ -2,18 +2,22 @@
 
 ## Scope
 
-PowerPoint-authored value axes can include `c:crossBetween/@val` with either
-`between` or `midCat`. FreeP previously dropped this token during import and
-there was no model state for the writer or clone path to preserve.
+PowerPoint-authored chart axes can include `c:crossBetween/@val` with either
+`between` or `midCat`, plus category-axis `c:auto/@val` and `c:lblAlgn/@val`.
+FreeP previously dropped these tokens during import and had no model state for
+the writer or clone path to preserve them.
 
-The chart model now retains the authored value as `ChartAxis.CrossBetween`.
+The chart model now retains the authored values as `ChartAxis.CrossBetween`,
+`ChartAxis.AutoCrossing`, and `ChartAxis.LabelAlignment`.
 The DOCX-equivalent package path is unchanged: this is a PPTX read/write and
 clone parity slice, and the renderer does not reinterpret the token yet.
 
 ## Evidence
 
 - `19-chart-labels.pptx` contains `crossBetween="between"` on its primary
-  value axes; the reader assertion covers the imported token.
+- `19-chart-labels.pptx` contains `crossBetween="between"`, `auto="1"`, and
+  `lblAlgn="ctr"` on its primary axes; reader assertions cover the imported
+  tokens.
 - Host chart round-trip coverage writes and reopens `midCat`.
 - The existing chart rendering corpus remains the visual control because the
   change only preserves metadata and does not alter scene planning.
