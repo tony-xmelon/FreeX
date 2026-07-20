@@ -26,11 +26,19 @@ select the slide thumbnail as the notes text region.
 
 The rebuilt `21-comments-notes.pptx` was exported through PowerPoint COM using
 `ppPrintOutputNotesPages`, then rasterized at 96 DPI alongside the FreeP notes
-PDF. Both artifacts emitted two pages. Mean channel differences were 1.1455%
-(page 1) and 0.9536% (page 2), average 1.0496%; slide-image regions measured
-1.3350% and 2.3119%, while notes-body regions measured 4.0334% and 2.2746%.
+PDF. Both artifacts emitted two pages. The initial geometry-only comparison
+had mean channel differences of 1.1455% (page 1) and 0.9536% (page 2), average
+1.0496%; slide-image regions measured 1.3350% and 2.3119%, while notes-body
+regions measured 4.0334% and 2.2746%.
 The ordinary slide control remained 0.0738% WPF and 0.0914% Avalonia against
 the same PowerPoint export.
+
+The follow-up notes-text metric correction matches PowerPoint's native
+45720-EMU (3.6 pt) body insets and approximately 15 pt line advance. On the
+same paired 720x960 PNGs, whole-page mean channel difference fell to 0.9286%
+(page 1) and 0.8478% (page 2), while the notes-body ROI fell to 2.8638% and
+1.6786%. Raw note ink now begins on the same y bands as PowerPoint; remaining
+error is primarily host glyph rasterization rather than notes-master geometry.
 
 The slice improves package/function parity and bounded notes-page geometry; it
 does not claim pixel-identical notes text rasterization.
