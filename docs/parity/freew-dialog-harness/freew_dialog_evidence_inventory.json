@@ -1,6 +1,6 @@
 {
   "schema": "freew.dialog-route-inventory.v1",
-  "generatedFromSha256": "00b4c87ed6f534664d0143d31d346aa8261b0a3a139ee507e35703419151c5ad",
+  "generatedFromSha256": "9fa82df2b05b530b0e5559247fb7b2a45c7b5987a6f763482c6ba51d0ea49d27",
   "scenarios": [
     {
       "id": "avalonia.about.initial",
@@ -73,16 +73,6 @@
       "surfaceKind": "backstage"
     },
     {
-      "id": "avalonia.backstage-close.open",
-      "host": "avalonia",
-      "routeId": "backstage-close",
-      "state": "open",
-      "tab": null,
-      "description": "Opened app-owned overlay or Backstage pane state.",
-      "limitation": null,
-      "surfaceKind": "backstage"
-    },
-    {
       "id": "avalonia.backstage-export.open",
       "host": "avalonia",
       "routeId": "backstage-export",
@@ -129,7 +119,7 @@
       "state": "open",
       "tab": null,
       "description": "Opened app-owned overlay or Backstage pane state.",
-      "limitation": "native-picker-platform-limitation",
+      "limitation": null,
       "surfaceKind": "backstage"
     },
     {
@@ -149,26 +139,6 @@
       "state": "open",
       "tab": null,
       "description": "Opened app-owned overlay or Backstage pane state.",
-      "limitation": "native-picker-platform-limitation",
-      "surfaceKind": "backstage"
-    },
-    {
-      "id": "avalonia.backstage-save.open",
-      "host": "avalonia",
-      "routeId": "backstage-save",
-      "state": "open",
-      "tab": null,
-      "description": "Opened app-owned overlay or Backstage pane state.",
-      "limitation": null,
-      "surfaceKind": "backstage"
-    },
-    {
-      "id": "avalonia.backstage-save-a-copy.open",
-      "host": "avalonia",
-      "routeId": "backstage-save-a-copy",
-      "state": "open",
-      "tab": null,
-      "description": "Opened app-owned overlay or Backstage pane state.",
       "limitation": null,
       "surfaceKind": "backstage"
     },
@@ -179,7 +149,7 @@
       "state": "open",
       "tab": null,
       "description": "Opened app-owned overlay or Backstage pane state.",
-      "limitation": "native-picker-platform-limitation",
+      "limitation": null,
       "surfaceKind": "backstage"
     },
     {
@@ -553,6 +523,36 @@
       "surfaceKind": "dialog"
     },
     {
+      "id": "avalonia.compare-documents.initial",
+      "host": "avalonia",
+      "routeId": "compare-documents",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.compare-documents.populated",
+      "host": "avalonia",
+      "routeId": "compare-documents",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.compare-documents.validation-error",
+      "host": "avalonia",
+      "routeId": "compare-documents",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
       "id": "avalonia.cross-reference.initial",
       "host": "avalonia",
       "routeId": "cross-reference",
@@ -576,6 +576,36 @@
       "id": "avalonia.cross-reference.validation-error",
       "host": "avalonia",
       "routeId": "cross-reference",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.cups-print.initial",
+      "host": "avalonia",
+      "routeId": "cups-print",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.cups-print.populated",
+      "host": "avalonia",
+      "routeId": "cups-print",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.cups-print.validation-error",
+      "host": "avalonia",
+      "routeId": "cups-print",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
@@ -2543,16 +2573,6 @@
       "surfaceKind": "backstage"
     },
     {
-      "id": "wpf.backstage-close.open",
-      "host": "wpf",
-      "routeId": "backstage-close",
-      "state": "open",
-      "tab": null,
-      "description": "Opened app-owned overlay or Backstage pane state.",
-      "limitation": null,
-      "surfaceKind": "backstage"
-    },
-    {
       "id": "wpf.backstage-export.open",
       "host": "wpf",
       "routeId": "backstage-export",
@@ -2599,7 +2619,7 @@
       "state": "open",
       "tab": null,
       "description": "Opened app-owned overlay or Backstage pane state.",
-      "limitation": "native-picker-platform-limitation",
+      "limitation": null,
       "surfaceKind": "backstage"
     },
     {
@@ -2619,26 +2639,6 @@
       "state": "open",
       "tab": null,
       "description": "Opened app-owned overlay or Backstage pane state.",
-      "limitation": "native-picker-platform-limitation",
-      "surfaceKind": "backstage"
-    },
-    {
-      "id": "wpf.backstage-save.open",
-      "host": "wpf",
-      "routeId": "backstage-save",
-      "state": "open",
-      "tab": null,
-      "description": "Opened app-owned overlay or Backstage pane state.",
-      "limitation": null,
-      "surfaceKind": "backstage"
-    },
-    {
-      "id": "wpf.backstage-save-a-copy.open",
-      "host": "wpf",
-      "routeId": "backstage-save-a-copy",
-      "state": "open",
-      "tab": null,
-      "description": "Opened app-owned overlay or Backstage pane state.",
       "limitation": null,
       "surfaceKind": "backstage"
     },
@@ -2649,7 +2649,7 @@
       "state": "open",
       "tab": null,
       "description": "Opened app-owned overlay or Backstage pane state.",
-      "limitation": "native-picker-platform-limitation",
+      "limitation": null,
       "surfaceKind": "backstage"
     },
     {
