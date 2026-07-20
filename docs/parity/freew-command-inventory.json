@@ -56,20 +56,20 @@
   ],
   "summary": {
     "totalCommands": 854,
-    "both": 407,
-    "wpfOnly": 229,
+    "both": 412,
+    "wpfOnly": 224,
     "avaloniaOnly": 218,
     "missingWpf": 218,
-    "missingAvalonia": 229,
+    "missingAvalonia": 224,
     "actionableMissingWpf": 0,
-    "actionableMissingAvalonia": 5,
-    "sharedProfile": 407,
+    "actionableMissingAvalonia": 0,
+    "sharedProfile": 412,
     "profileShapeOnly": 387,
     "commandIdAliases": 43,
     "platformOnly": 12,
     "deferred": 0,
-    "actionableGaps": 5,
-    "behaviorEvidenceRows": 99
+    "actionableGaps": 0,
+    "behaviorEvidenceRows": 104
   },
   "commands": [
     {
@@ -900,13 +900,13 @@
       "commandId": "freew.building-blocks-organizer",
       "label": "Building Blocks Organizer",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -929,12 +929,46 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Building Blocks Organizer",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Building Blocks Organizer…",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.final-five-command-parity.shared-behavior",
+        "slice": "Final command parity",
+        "summary": "Both shells use the shared Quick Part library and insert the selected building block through their undoable text-edit path.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FinalFiveCommandParityTests.cs",
+          "test": "FinalFiveCommandParityTests.InsertTextCommands_UseSharedQuickPartAndFieldBehavior"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/FinalFiveCommandParityTests.cs",
+          "test": "FinalFiveCommandParityTests.InsertTextCommands_UseSharedQuickPartAndFieldBehavior"
+        }
       }
     },
     {
@@ -5788,13 +5822,13 @@
       "commandId": "freew.draw-table",
       "label": "Draw Table",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -5807,12 +5841,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "table-design",
+          "tab": "Table Design",
+          "groupId": "draw-borders",
+          "group": "Draw Borders",
+          "label": "Draw Table",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.final-five-command-parity.shared-behavior",
+        "slice": "Final command parity",
+        "summary": "Both shells normalize the dimension dialog through one planner and insert the resulting table through the undoable block command path.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FinalFiveCommandParityTests.cs",
+          "test": "FinalFiveCommandParityTests.TableDrawingCommands_MutateAndUndo"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/FinalFiveCommandParityTests.cs",
+          "test": "FinalFiveCommandParityTests.TableDrawingCommands_MutateAndUndo"
+        }
       }
     },
     {
@@ -6793,13 +6851,13 @@
       "commandId": "freew.eraser",
       "label": "Eraser",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -6812,12 +6870,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "table-design",
+          "tab": "Table Design",
+          "groupId": "draw-borders",
+          "group": "Draw Borders",
+          "label": "Eraser",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.final-five-command-parity.shared-behavior",
+        "slice": "Final command parity",
+        "summary": "Both shells use the shared eraser plan to remove the caret cell's right border by an undoable horizontal merge, while preserving explicit selection merges.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FinalFiveCommandParityTests.cs",
+          "test": "FinalFiveCommandParityTests.TableDrawingCommands_MutateAndUndo"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/FinalFiveCommandParityTests.cs",
+          "test": "FinalFiveCommandParityTests.TableDrawingCommands_MutateAndUndo"
+        }
       }
     },
     {
@@ -6868,13 +6950,13 @@
       "commandId": "freew.field",
       "label": "Field",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -6897,12 +6979,46 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Field",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Field…",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.final-five-command-parity.shared-behavior",
+        "slice": "Final command parity",
+        "summary": "The shared field catalog drives both pickers and both editors insert a structural complex-field run at the caret through undoable document mutation.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FinalFiveCommandParityTests.cs",
+          "test": "FinalFiveCommandParityTests.InsertTextCommands_UseSharedQuickPartAndFieldBehavior"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/FinalFiveCommandParityTests.cs",
+          "test": "FinalFiveCommandParityTests.InsertTextCommands_UseSharedQuickPartAndFieldBehavior"
+        }
       }
     },
     {
@@ -19981,13 +20097,13 @@
       "commandId": "freew.save-quickpart",
       "label": "Save Selection",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "actionable-gap",
-      "gapClassificationRule": "actionable-gap",
-      "notes": "Shared Word command is present in only one compiled profile and needs follow-up.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -20010,12 +20126,46 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Save Selection",
+          "controlType": "RibbonButton",
+          "layout": "Small"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Save Selection to Quick Part Gallery…",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.final-five-command-parity.shared-behavior",
+        "slice": "Final command parity",
+        "summary": "Both shells capture selected text through the shared Quick Part planner and persist paragraph lines through the same cross-platform library.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/FinalFiveCommandParityTests.cs",
+          "test": "FinalFiveCommandParityTests.InsertTextCommands_UseSharedQuickPartAndFieldBehavior"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/FinalFiveCommandParityTests.cs",
+          "test": "FinalFiveCommandParityTests.InsertTextCommands_UseSharedQuickPartAndFieldBehavior"
+        }
       }
     },
     {
