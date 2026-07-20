@@ -1,8 +1,8 @@
 ﻿# FreeW Design Dialog Parity Evidence
 
-Generated at UTC: 2026-07-20T05:28:37.1617645Z  
-Source commit: `e565b7513a01bc2f1a3da5926e52bc13542ed095`  
-Schema: `freew.design-dialog-parity.v1`  
+Generated at UTC: 2026-07-20T05:32:54.1493171Z
+Source commit: `bc946b2db52672a3410249e55d6773238e2661c7`
+Schema: `freew.design-dialog-parity.v1`
 
 Routes: 11 total; 10 complete; 0 remaining in the owned dialog/planner scope; 9 shell gaps recorded.
 
