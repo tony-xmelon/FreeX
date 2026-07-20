@@ -1,10 +1,10 @@
 {
   "SchemaVersion": 1,
-  "GeneratedAtUtc": "2026-07-20T07:06:48.5748321+00:00",
-  "Commit": "326e0697aaa48cff1588b332853f79b39978cfc5",
+  "GeneratedAtUtc": "2026-07-20T07:24:53.3166449+00:00",
+  "Commit": "6f48ed2beccdc6a7039348ae6e98ab15874e8b50",
   "Branch": "codex/freep-render-slideshow-media-parity-20260720",
   "FreshnessRule": "Fresh when every authoritative source id, relative path, byte length, UTC write time, and SHA-256 matches this report.",
-  "SourceSnapshotSha256": "05ac34d6c3fccbb95f66e56405a34c914421f09870e18eafc206fb3491370c9e",
+  "SourceSnapshotSha256": "44f175916de28fd67e7988ede19d78774b03d282cfc24cd757046cb04fbb1346",
   "Sources": [
     {
       "Id": "wpf-host/slideshow",
@@ -66,7 +66,7 @@
       "Id": "media/libvlc-backend",
       "RelativePath": "freep/FreeP.App.Media/LibVlcMediaPlaybackBackend.cs",
       "LengthBytes": 8903,
-      "LastWriteTimeUtc": "2026-07-20T06:26:54.0576291Z",
+      "LastWriteTimeUtc": "2026-07-20T07:17:52.2613325Z",
       "Sha256": "23fdd1d39edbf93b1da788aa11c00227e64ebefb9a1238abdf7b0be9e84ca24e"
     },
     {
@@ -75,6 +75,20 @@
       "LengthBytes": 4300,
       "LastWriteTimeUtc": "2026-07-20T06:24:34.4426239Z",
       "Sha256": "212dde440fb61d69fa8a28440e16f8344576e972724692769504b28872adb4dd"
+    },
+    {
+      "Id": "linux-harness/media-runtime",
+      "RelativePath": "tools/LinuxInteractiveDocker/Dockerfile",
+      "LengthBytes": 1252,
+      "LastWriteTimeUtc": "2026-07-20T07:17:52.2601022Z",
+      "Sha256": "e287ec017219c446fef56b3ff2430823a9ca4c56bec27f47d43e77dc6d9f4503"
+    },
+    {
+      "Id": "linux-harness/media-runtime-probe",
+      "RelativePath": "tools/FreeP.MediaRuntimeProbe/Program.cs",
+      "LengthBytes": 3816,
+      "LastWriteTimeUtc": "2026-07-20T07:21:38.8525172Z",
+      "Sha256": "87eb66e0082a7a10971220f286b055c89f1a6abb8d08c86b42e866654dbafc4c"
     },
     {
       "Id": "avalonia-renderer/slide-canvas",
@@ -215,7 +229,7 @@
       "Id": "slideshow.media-playback-backend",
       "Domain": "Slideshow/media",
       "Classification": "closed-platform-parity",
-      "Evidence": "WPF retains native playback and Avalonia now uses the shared LibVLCSharp engine with runtime capability detection, audio/video sessions, native VideoView surfaces, and transition-sound playback."
+      "Evidence": "WPF retains native playback and Avalonia now uses the shared LibVLCSharp engine with runtime capability detection, audio/video sessions, native VideoView surfaces, transition-sound playback, and a real Ubuntu interactive-harness WAV lifecycle probe."
     }
   ],
   "Residuals": [

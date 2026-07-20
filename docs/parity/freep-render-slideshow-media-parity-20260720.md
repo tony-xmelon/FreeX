@@ -1,16 +1,16 @@
 # FreeP Renderer, Slideshow, Media, Presenter, and Export Parity Evidence
 
-Generated: `2026-07-20T07:06:48.5748321+00:00`
-Commit: `326e0697aaa48cff1588b332853f79b39978cfc5`
+Generated: `2026-07-20T07:24:53.3166449+00:00`
+Commit: `6f48ed2beccdc6a7039348ae6e98ab15874e8b50`
 Branch: `codex/freep-render-slideshow-media-parity-20260720`
 Freshness check: **PASS**
-Source snapshot SHA-256: `05ac34d6c3fccbb95f66e56405a34c914421f09870e18eafc206fb3491370c9e`
+Source snapshot SHA-256: `44f175916de28fd67e7988ede19d78774b03d282cfc24cd757046cb04fbb1346`
 
 ## Counts
 
 - `closed-platform-parity`: **7**
 - `shared-product-limitation`: **1**
-- `authoritative-sources`: **23**
+- `authoritative-sources`: **25**
 - `explicit-residuals`: **3**
 
 ## Area Classification
@@ -24,7 +24,7 @@ Source snapshot SHA-256: `05ac34d6c3fccbb95f66e56405a34c914421f09870e18eafc206fb
 | `media.caption-package-authoring` | Media/captions | `closed-platform-parity` | Caption/transcript package planning and visible authoring contracts are shared across WPF and Avalonia. |
 | `export.preview.fixed-layout` | Export/preview | `closed-platform-parity` | PDF, image, notes-page, print-preview, and video-frame-package policy is shared; hosts provide render/file adapters. |
 | `export.native-print-and-mp4` | Export/preview | `shared-product-limitation` | Native printer handoff and MP4 encoder execution are deferred by the shared product contract; both hosts report the same package-ready boundary. |
-| `slideshow.media-playback-backend` | Slideshow/media | `closed-platform-parity` | WPF retains native playback and Avalonia now uses the shared LibVLCSharp engine with runtime capability detection, audio/video sessions, native VideoView surfaces, and transition-sound playback. |
+| `slideshow.media-playback-backend` | Slideshow/media | `closed-platform-parity` | WPF retains native playback and Avalonia now uses the shared LibVLCSharp engine with runtime capability detection, audio/video sessions, native VideoView surfaces, transition-sound playback, and a real Ubuntu interactive-harness WAV lifecycle probe. |
 
 ## Residuals
 
@@ -46,8 +46,10 @@ Source snapshot SHA-256: `05ac34d6c3fccbb95f66e56405a34c914421f09870e18eafc206fb
 | `avalonia-host/slideshow` | `freep/FreeP.App.Avalonia/SlideShowWindow.cs` | 208639 | `2026-07-20T07:04:40.8189518Z` | `2b936417f3f4ee7238b79bd3dec3a1394519de1ca903ad69351262aaeda72a9c` |
 | `avalonia-host/media-adapter` | `freep/FreeP.App.Avalonia/AvaloniaSlideShowMediaController.cs` | 7866 | `2026-07-20T07:04:40.8189518Z` | `bd56f3039c6de40b22ca87b172ddc3a368702db634c8297ac19b50d46b2d6fea` |
 | `media/backend-contracts` | `freep/FreeP.App.Media/MediaPlaybackContracts.cs` | 5299 | `2026-07-20T06:27:57.0029228Z` | `35fbc405715aab099a23fd122dbfae21d6bc552b360441fb9c9a1f06b1d78f9d` |
-| `media/libvlc-backend` | `freep/FreeP.App.Media/LibVlcMediaPlaybackBackend.cs` | 8903 | `2026-07-20T06:26:54.0576291Z` | `23fdd1d39edbf93b1da788aa11c00227e64ebefb9a1238abdf7b0be9e84ca24e` |
+| `media/libvlc-backend` | `freep/FreeP.App.Media/LibVlcMediaPlaybackBackend.cs` | 8903 | `2026-07-20T07:17:52.2613325Z` | `23fdd1d39edbf93b1da788aa11c00227e64ebefb9a1238abdf7b0be9e84ca24e` |
 | `dependencies/media-packages` | `Directory.Packages.props` | 4300 | `2026-07-20T06:24:34.4426239Z` | `212dde440fb61d69fa8a28440e16f8344576e972724692769504b28872adb4dd` |
+| `linux-harness/media-runtime` | `tools/LinuxInteractiveDocker/Dockerfile` | 1252 | `2026-07-20T07:17:52.2601022Z` | `e287ec017219c446fef56b3ff2430823a9ca4c56bec27f47d43e77dc6d9f4503` |
+| `linux-harness/media-runtime-probe` | `tools/FreeP.MediaRuntimeProbe/Program.cs` | 3816 | `2026-07-20T07:21:38.8525172Z` | `87eb66e0082a7a10971220f286b055c89f1a6abb8d08c86b42e866654dbafc4c` |
 | `avalonia-renderer/slide-canvas` | `freep/FreeP.App.Rendering.Avalonia/SlideCanvas.cs` | 127136 | `2026-07-20T06:01:53.7440234Z` | `0ff9291a5edc072755361b814a761ba1e57ed31a0ad7e53cb22bb78cfa46324d` |
 | `avalonia-renderer/offscreen-renderer` | `freep/FreeP.App.Rendering.Avalonia/SlideRenderer.cs` | 3440 | `2026-07-20T05:52:43.1408466Z` | `a2527f50b72b05ec329a79c5911943f63069ded79073c92b3dfbaf37f09a4017` |
 | `shared/shape-material-planner` | `freep/FreeP.App.Presentation/ShapeMaterialRenderPlanner.cs` | 7903 | `2026-07-20T06:01:12.2392564Z` | `215ee2a2e388e32208f26bcfab324006edbf24d0074b2b3c7df2275caa5b308d` |
