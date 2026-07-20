@@ -1,11 +1,20 @@
 {
   "SchemaVersion": 1,
-  "GeneratedAtUtc": "2026-07-20T07:24:53.3166449+00:00",
-  "Commit": "6f48ed2beccdc6a7039348ae6e98ab15874e8b50",
+  "GeneratedAtUtc": "2026-07-20T07:34:12.0775532+00:00",
+  "Commit": "77a0904ff42786aa7136479af4c333b0872ef543",
   "Branch": "codex/freep-render-slideshow-media-parity-20260720",
   "FreshnessRule": "Fresh when every authoritative source id, relative path, byte length, UTC write time, and SHA-256 matches this report.",
-  "SourceSnapshotSha256": "44f175916de28fd67e7988ede19d78774b03d282cfc24cd757046cb04fbb1346",
+  "SourceSnapshotSha256": "04fbad5bd537d59e477a5f87c996185c4881debcd76be3d8132964d62c9e7798",
+  "RuntimeArtifactPath": "docs/parity/freep-libvlc-linux-runtime-20260720.json",
+  "RuntimeArtifactSha256": "b521547c35c79640e2b4f8b6c90659a0a3c9c5272154d9465e107236a09a2ef2",
   "Sources": [
+    {
+      "Id": "linux-harness/runtime-artifact",
+      "RelativePath": "docs/parity/freep-libvlc-linux-runtime-20260720.json",
+      "LengthBytes": 3033,
+      "LastWriteTimeUtc": "2026-07-20T07:33:55.8534579Z",
+      "Sha256": "b521547c35c79640e2b4f8b6c90659a0a3c9c5272154d9465e107236a09a2ef2"
+    },
     {
       "Id": "wpf-host/slideshow",
       "RelativePath": "freep/FreeP.App.Host/SlideShowWindow.cs",

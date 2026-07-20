@@ -1,16 +1,22 @@
 # FreeP Renderer, Slideshow, Media, Presenter, and Export Parity Evidence
 
-Generated: `2026-07-20T07:24:53.3166449+00:00`
-Commit: `6f48ed2beccdc6a7039348ae6e98ab15874e8b50`
+Generated: `2026-07-20T07:34:12.0775532+00:00`
+Commit: `77a0904ff42786aa7136479af4c333b0872ef543`
 Branch: `codex/freep-render-slideshow-media-parity-20260720`
 Freshness check: **PASS**
-Source snapshot SHA-256: `44f175916de28fd67e7988ede19d78774b03d282cfc24cd757046cb04fbb1346`
+Source snapshot SHA-256: `04fbad5bd537d59e477a5f87c996185c4881debcd76be3d8132964d62c9e7798`
+
+## Runtime Artifact
+
+- `path`: `docs/parity/freep-libvlc-linux-runtime-20260720.json`
+- `sha256`: `b521547c35c79640e2b4f8b6c90659a0a3c9c5272154d9465e107236a09a2ef2`
+- `validation`: **PASS** (the evidence generator validated native availability and the required WAV session lifecycle fields)
 
 ## Counts
 
 - `closed-platform-parity`: **7**
 - `shared-product-limitation`: **1**
-- `authoritative-sources`: **25**
+- `authoritative-sources`: **26**
 - `explicit-residuals`: **3**
 
 ## Area Classification
@@ -38,6 +44,7 @@ Source snapshot SHA-256: `44f175916de28fd67e7988ede19d78774b03d282cfc24cd757046c
 
 | Id | Relative path | Bytes | Last write UTC | SHA-256 |
 | --- | --- | ---: | --- | --- |
+| `linux-harness/runtime-artifact` | `docs/parity/freep-libvlc-linux-runtime-20260720.json` | 3033 | `2026-07-20T07:33:55.8534579Z` | `b521547c35c79640e2b4f8b6c90659a0a3c9c5272154d9465e107236a09a2ef2` |
 | `wpf-host/slideshow` | `freep/FreeP.App.Host/SlideShowWindow.cs` | 228311 | `2026-07-20T05:52:43.0422944Z` | `1838aa76377a3d6d1da22d644de68e9caaeb67d26fb14758c7a2dedddb77bab3` |
 | `wpf-host/media-adapter` | `freep/FreeP.App.Host/SlideShowMediaController.cs` | 16194 | `2026-07-20T06:05:36.0315800Z` | `c2997de7036bb3b827c3b5f28b473804c63a407ef85d3d5e115addd5cd6170e7` |
 | `wpf-host/slide-image-renderer` | `freep/FreeP.App.Host/WpfPresentationSlideImageRenderer.cs` | 2048 | `2026-07-20T05:52:43.0422944Z` | `e1d8da7c4036a1409bab32c9b465a3d9f4f0bc0c5dc7bd39011b68db7fcd1a7a` |
