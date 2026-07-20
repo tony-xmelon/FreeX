@@ -12,9 +12,10 @@ WPF animates the shared clip polygons with discrete storyboard keyframes.
 Avalonia applies the same polygons from a render-priority timer. Both hosts
 restore the normal slide-layer ownership when the fold completes.
 
-`PageCurlDouble` remains a fallback until its two simultaneous fold regions
-are modeled independently; it is intentionally not routed through the single
-fold implementation.
+`TransitionKind.PageCurlDouble` now shares the same action and owns two
+opposing fold polygons. It is intentionally modeled separately from the
+single-fold geometry so the center reveal and two outgoing page wings remain
+distinct.
 
 ## Verification
 
