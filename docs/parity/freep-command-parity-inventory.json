@@ -4,18 +4,18 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 186,
+    "totalCommands": 182,
     "both": 180,
     "wpfOnly": 0,
-    "avaloniaOnly": 6,
-    "missingWpf": 6,
+    "avaloniaOnly": 2,
+    "missingWpf": 2,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
     "shared": 180,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
-    "platformOnly": 6,
+    "platformOnly": 2,
     "commandIdAliases": 0,
     "workflowEvidenceRows": 91
   },
@@ -3916,98 +3916,6 @@
       ]
     },
     {
-      "commandId": "freep.file.new",
-      "label": "New",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "surface": "avalonia-only",
-      "missingSide": "WPF",
-      "classification": "platform-only",
-      "notes": "Intended shell/profile variance: Avalonia exposes document lifecycle in its generated Home/File ribbon group; WPF routes New through ApplicationCommands.New, Backstage chrome, and FileCommands.New rather than a generated ribbon control.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "file",
-          "group": "File",
-          "label": "New",
-          "controlType": "RibbonButton",
-          "layout": "Large"
-        }
-      ]
-    },
-    {
-      "commandId": "freep.file.open",
-      "label": "Open",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "surface": "avalonia-only",
-      "missingSide": "WPF",
-      "classification": "platform-only",
-      "notes": "Intended shell/profile variance: Avalonia exposes document lifecycle in its generated Home/File ribbon group; WPF routes Open through ApplicationCommands.Open, Backstage chrome, and FileCommands.Open rather than a generated ribbon control.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "file",
-          "group": "File",
-          "label": "Open",
-          "controlType": "RibbonButton",
-          "layout": "Large"
-        }
-      ]
-    },
-    {
-      "commandId": "freep.file.save",
-      "label": "Save",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "surface": "avalonia-only",
-      "missingSide": "WPF",
-      "classification": "platform-only",
-      "notes": "Intended shell/profile variance: Avalonia exposes document lifecycle in its generated Home/File ribbon group; WPF routes Save through ApplicationCommands.Save, Backstage chrome, and FileCommands.Save rather than a generated ribbon control.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "file",
-          "group": "File",
-          "label": "Save",
-          "controlType": "RibbonButton",
-          "layout": "Large"
-        }
-      ]
-    },
-    {
-      "commandId": "freep.file.save-as",
-      "label": "Save As",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "surface": "avalonia-only",
-      "missingSide": "WPF",
-      "classification": "platform-only",
-      "notes": "Intended shell/profile variance: Avalonia exposes document lifecycle in its generated Home/File ribbon group; WPF routes Save As through ApplicationCommands.SaveAs, Backstage chrome, and FileCommands.SaveAs rather than a generated ribbon control.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "file",
-          "group": "File",
-          "label": "Save As",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ]
-    },
-    {
       "commandId": "freep.find",
       "label": "Find",
       "wpfPresent": true,
@@ -5380,9 +5288,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "slideshow",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "slideshow-from-transitions",
           "group": "Slide Show",
           "label": "Custom Shows",
           "controlType": "RibbonButton",
@@ -5414,9 +5322,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "slideshow",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "slideshow-from-transitions",
           "group": "Slide Show",
           "label": "From Beginning",
           "controlType": "RibbonButton",
@@ -5448,9 +5356,9 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
-          "tabId": "home",
-          "tab": "Home",
-          "groupId": "slideshow",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "slideshow-from-transitions",
           "group": "Slide Show",
           "label": "From Current Slide",
           "controlType": "RibbonButton",
