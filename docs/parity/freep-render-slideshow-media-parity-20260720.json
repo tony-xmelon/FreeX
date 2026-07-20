@@ -1,0 +1,264 @@
+{
+  "SchemaVersion": 1,
+  "GeneratedAtUtc": "2026-07-20T07:37:34.7580628+00:00",
+  "Commit": "42d5dcbeba66b6e6c4eb42a0b07034e5a948cedb",
+  "Branch": "codex/freep-render-slideshow-media-parity-20260720",
+  "FreshnessRule": "Fresh when every authoritative source id, relative path, byte length, UTC write time, and SHA-256 matches this report.",
+  "SourceSnapshotSha256": "04fbad5bd537d59e477a5f87c996185c4881debcd76be3d8132964d62c9e7798",
+  "RuntimeArtifactPath": "docs/parity/freep-libvlc-linux-runtime-20260720.json",
+  "RuntimeArtifactSha256": "b521547c35c79640e2b4f8b6c90659a0a3c9c5272154d9465e107236a09a2ef2",
+  "Sources": [
+    {
+      "Id": "linux-harness/runtime-artifact",
+      "RelativePath": "docs/parity/freep-libvlc-linux-runtime-20260720.json",
+      "LengthBytes": 3033,
+      "LastWriteTimeUtc": "2026-07-20T07:33:55.8534579Z",
+      "Sha256": "b521547c35c79640e2b4f8b6c90659a0a3c9c5272154d9465e107236a09a2ef2"
+    },
+    {
+      "Id": "wpf-host/slideshow",
+      "RelativePath": "freep/FreeP.App.Host/SlideShowWindow.cs",
+      "LengthBytes": 228311,
+      "LastWriteTimeUtc": "2026-07-20T05:52:43.0422944Z",
+      "Sha256": "1838aa76377a3d6d1da22d644de68e9caaeb67d26fb14758c7a2dedddb77bab3"
+    },
+    {
+      "Id": "wpf-host/media-adapter",
+      "RelativePath": "freep/FreeP.App.Host/SlideShowMediaController.cs",
+      "LengthBytes": 16194,
+      "LastWriteTimeUtc": "2026-07-20T06:05:36.03158Z",
+      "Sha256": "c2997de7036bb3b827c3b5f28b473804c63a407ef85d3d5e115addd5cd6170e7"
+    },
+    {
+      "Id": "wpf-host/slide-image-renderer",
+      "RelativePath": "freep/FreeP.App.Host/WpfPresentationSlideImageRenderer.cs",
+      "LengthBytes": 2048,
+      "LastWriteTimeUtc": "2026-07-20T05:52:43.0422944Z",
+      "Sha256": "e1d8da7c4036a1409bab32c9b465a3d9f4f0bc0c5dc7bd39011b68db7fcd1a7a"
+    },
+    {
+      "Id": "wpf-host/shape-renderer",
+      "RelativePath": "freep/FreeP.App.Host/WpfShapeRenderer.cs",
+      "LengthBytes": 4533,
+      "LastWriteTimeUtc": "2026-07-20T05:52:43.0422944Z",
+      "Sha256": "5e245dc828e34a4613fd619ec8e5c4beec2ef1783db45f1daf95554915118c2a"
+    },
+    {
+      "Id": "wpf-renderer/slide-canvas",
+      "RelativePath": "freep/FreeP.App.Rendering.Wpf/SlideCanvas.cs",
+      "LengthBytes": 154931,
+      "LastWriteTimeUtc": "2026-07-20T06:11:33.9889051Z",
+      "Sha256": "a53b286e11a122925f45e5c728b4f0017a76a6b715e66a6f958f55c882b98f5f"
+    },
+    {
+      "Id": "avalonia-host/slideshow",
+      "RelativePath": "freep/FreeP.App.Avalonia/SlideShowWindow.cs",
+      "LengthBytes": 208639,
+      "LastWriteTimeUtc": "2026-07-20T07:04:40.8189518Z",
+      "Sha256": "2b936417f3f4ee7238b79bd3dec3a1394519de1ca903ad69351262aaeda72a9c"
+    },
+    {
+      "Id": "avalonia-host/media-adapter",
+      "RelativePath": "freep/FreeP.App.Avalonia/AvaloniaSlideShowMediaController.cs",
+      "LengthBytes": 7866,
+      "LastWriteTimeUtc": "2026-07-20T07:04:40.8189518Z",
+      "Sha256": "bd56f3039c6de40b22ca87b172ddc3a368702db634c8297ac19b50d46b2d6fea"
+    },
+    {
+      "Id": "media/backend-contracts",
+      "RelativePath": "freep/FreeP.App.Media/MediaPlaybackContracts.cs",
+      "LengthBytes": 5299,
+      "LastWriteTimeUtc": "2026-07-20T06:27:57.0029228Z",
+      "Sha256": "35fbc405715aab099a23fd122dbfae21d6bc552b360441fb9c9a1f06b1d78f9d"
+    },
+    {
+      "Id": "media/libvlc-backend",
+      "RelativePath": "freep/FreeP.App.Media/LibVlcMediaPlaybackBackend.cs",
+      "LengthBytes": 8903,
+      "LastWriteTimeUtc": "2026-07-20T07:17:52.2613325Z",
+      "Sha256": "23fdd1d39edbf93b1da788aa11c00227e64ebefb9a1238abdf7b0be9e84ca24e"
+    },
+    {
+      "Id": "dependencies/media-packages",
+      "RelativePath": "Directory.Packages.props",
+      "LengthBytes": 4300,
+      "LastWriteTimeUtc": "2026-07-20T06:24:34.4426239Z",
+      "Sha256": "212dde440fb61d69fa8a28440e16f8344576e972724692769504b28872adb4dd"
+    },
+    {
+      "Id": "linux-harness/media-runtime",
+      "RelativePath": "tools/LinuxInteractiveDocker/Dockerfile",
+      "LengthBytes": 1252,
+      "LastWriteTimeUtc": "2026-07-20T07:17:52.2601022Z",
+      "Sha256": "e287ec017219c446fef56b3ff2430823a9ca4c56bec27f47d43e77dc6d9f4503"
+    },
+    {
+      "Id": "linux-harness/media-runtime-probe",
+      "RelativePath": "tools/FreeP.MediaRuntimeProbe/Program.cs",
+      "LengthBytes": 3816,
+      "LastWriteTimeUtc": "2026-07-20T07:21:38.8525172Z",
+      "Sha256": "87eb66e0082a7a10971220f286b055c89f1a6abb8d08c86b42e866654dbafc4c"
+    },
+    {
+      "Id": "avalonia-renderer/slide-canvas",
+      "RelativePath": "freep/FreeP.App.Rendering.Avalonia/SlideCanvas.cs",
+      "LengthBytes": 127136,
+      "LastWriteTimeUtc": "2026-07-20T06:01:53.7440234Z",
+      "Sha256": "0ff9291a5edc072755361b814a761ba1e57ed31a0ad7e53cb22bb78cfa46324d"
+    },
+    {
+      "Id": "avalonia-renderer/offscreen-renderer",
+      "RelativePath": "freep/FreeP.App.Rendering.Avalonia/SlideRenderer.cs",
+      "LengthBytes": 3440,
+      "LastWriteTimeUtc": "2026-07-20T05:52:43.1408466Z",
+      "Sha256": "a2527f50b72b05ec329a79c5911943f63069ded79073c92b3dfbaf37f09a4017"
+    },
+    {
+      "Id": "shared/shape-material-planner",
+      "RelativePath": "freep/FreeP.App.Presentation/ShapeMaterialRenderPlanner.cs",
+      "LengthBytes": 7903,
+      "LastWriteTimeUtc": "2026-07-20T06:01:12.2392564Z",
+      "Sha256": "215ee2a2e388e32208f26bcfab324006edbf24d0074b2b3c7df2275caa5b308d"
+    },
+    {
+      "Id": "shared/media-interaction-planner",
+      "RelativePath": "freep/FreeP.App.Presentation/SlideShowMediaInteractionPlanner.cs",
+      "LengthBytes": 3832,
+      "LastWriteTimeUtc": "2026-07-20T06:28:03.457977Z",
+      "Sha256": "51713c05118a8c65d1199d1f12deb38823ec27a6eee381ae6ee4113f2b61ed03"
+    },
+    {
+      "Id": "shared/slideshow-playback-planner",
+      "RelativePath": "freep/FreeP.App.Presentation/SlideShowPlaybackPlanner.cs",
+      "LengthBytes": 22657,
+      "LastWriteTimeUtc": "2026-07-20T05:52:43.1085015Z",
+      "Sha256": "306eea0ae85d177393d72fef76debaf3fccc7125e7b0a3aa1f76e395ed4d614b"
+    },
+    {
+      "Id": "shared/slideshow-host-planner",
+      "RelativePath": "freep/FreeP.App.Presentation/SlideShowHostPlanner.cs",
+      "LengthBytes": 22708,
+      "LastWriteTimeUtc": "2026-07-20T05:52:43.1085015Z",
+      "Sha256": "030bc1fd12b1ecdfa5f6a207193151e1052a6cdbf880b231d2bd2ecff69d0c0c"
+    },
+    {
+      "Id": "shared/presenter-tools",
+      "RelativePath": "freep/FreeP.App.Presentation/SlideShowPresenterToolPlanner.cs",
+      "LengthBytes": 17499,
+      "LastWriteTimeUtc": "2026-07-20T05:52:43.1085015Z",
+      "Sha256": "73ef86d4e39304b7cb028446de0aa1788689b28b5df7c821a7010015906f46f9"
+    },
+    {
+      "Id": "shared/recording-adapter-parity",
+      "RelativePath": "freep/FreeP.App.Presentation/SlideShowRecordingHostAdapterParityPlanner.cs",
+      "LengthBytes": 13876,
+      "LastWriteTimeUtc": "2026-07-20T05:52:43.1085015Z",
+      "Sha256": "e31b24609805e41b1ab21e7549d3c4b7a77a01e8c1af230ed837330da8f5d8ab"
+    },
+    {
+      "Id": "shared/media-transcript",
+      "RelativePath": "freep/FreeP.App.Presentation/PresentationMediaTranscriptPlanner.cs",
+      "LengthBytes": 40144,
+      "LastWriteTimeUtc": "2026-07-20T05:52:43.0899029Z",
+      "Sha256": "9d295884faac81d48cf9a6585d1b230179c5ee037b15d2f14c474e157cd3590c"
+    },
+    {
+      "Id": "shared/export-planner",
+      "RelativePath": "freep/FreeP.App.Presentation/PresentationExportPlanner.cs",
+      "LengthBytes": 37355,
+      "LastWriteTimeUtc": "2026-07-20T05:52:43.0899029Z",
+      "Sha256": "eddc67e41c3f1050bcdc4b2cfbd7371a7e47f194693c9afe00799772c663ad14"
+    },
+    {
+      "Id": "shared/print-backstage-planner",
+      "RelativePath": "freep/FreeP.App.Presentation/PresentationPrintBackstagePlanner.cs",
+      "LengthBytes": 13911,
+      "LastWriteTimeUtc": "2026-07-20T05:52:43.0899029Z",
+      "Sha256": "1aeb463fcb5adbeab0f9518c4a049a2fea02ff16e6d8e7d4ab50db57f1848013"
+    },
+    {
+      "Id": "shared/notes-preview-planner",
+      "RelativePath": "freep/FreeP.App.Presentation/PresentationNotesPagePreviewPlanner.cs",
+      "LengthBytes": 32540,
+      "LastWriteTimeUtc": "2026-07-20T05:52:43.0899029Z",
+      "Sha256": "4bed98e2125dda94e90e6356c2b144d8d2eee332f92687144243dd33b767b314"
+    },
+    {
+      "Id": "shared/video-package-executor",
+      "RelativePath": "freep/FreeP.App.Presentation/PresentationVideoFramePackageExecutor.cs",
+      "LengthBytes": 24917,
+      "LastWriteTimeUtc": "2026-07-20T05:52:43.0899029Z",
+      "Sha256": "01c84e1a434535e8b0c1379ec709e3ff710bf6194642e4b69c26ab3f3e7d85a1"
+    }
+  ],
+  "Areas": [
+    {
+      "Id": "renderer.imported-3d-material",
+      "Domain": "Renderer",
+      "Classification": "closed-platform-parity",
+      "Evidence": "Shared ShapeMaterialRenderPlanner supplies all four imported WPF material/depth routes to both native canvases."
+    },
+    {
+      "Id": "slideshow.media-click-routing",
+      "Domain": "Slideshow/media",
+      "Classification": "closed-platform-parity",
+      "Evidence": "WPF and Avalonia consume the shared letterboxed media bounds and handle media clicks before normal advance."
+    },
+    {
+      "Id": "slideshow.transitions-and-animation",
+      "Domain": "Slideshow/playback",
+      "Classification": "closed-platform-parity",
+      "Evidence": "Both hosts consume shared transition, animation-step, mask, and playback-frame planners; native animation timing remains host rendering."
+    },
+    {
+      "Id": "presenter.timing-ink-tools",
+      "Domain": "Presenter",
+      "Classification": "closed-platform-parity",
+      "Evidence": "Both hosts route presenter timing, pointer/ink state, session summaries, and recording readiness through shared planners."
+    },
+    {
+      "Id": "media.caption-package-authoring",
+      "Domain": "Media/captions",
+      "Classification": "closed-platform-parity",
+      "Evidence": "Caption/transcript package planning and visible authoring contracts are shared across WPF and Avalonia."
+    },
+    {
+      "Id": "export.preview.fixed-layout",
+      "Domain": "Export/preview",
+      "Classification": "closed-platform-parity",
+      "Evidence": "PDF, image, notes-page, print-preview, and video-frame-package policy is shared; hosts provide render/file adapters."
+    },
+    {
+      "Id": "export.native-print-and-mp4",
+      "Domain": "Export/preview",
+      "Classification": "shared-product-limitation",
+      "Evidence": "Native printer handoff and MP4 encoder execution are deferred by the shared product contract; both hosts report the same package-ready boundary."
+    },
+    {
+      "Id": "slideshow.media-playback-backend",
+      "Domain": "Slideshow/media",
+      "Classification": "closed-platform-parity",
+      "Evidence": "WPF retains native playback and Avalonia now uses the shared LibVLCSharp engine with runtime capability detection, audio/video sessions, native VideoView surfaces, transition-sound playback, and a real Ubuntu interactive-harness WAV lifecycle probe."
+    }
+  ],
+  "Residuals": [
+    {
+      "Id": "external-powerpoint-baseline",
+      "Classification": "external-powerpoint-evidence",
+      "Description": "Exact PowerPoint slideshow/render/export/preview visual baselines are not claimed without fresh COM artifacts.",
+      "ArtifactStatus": "No PowerPoint COM artifacts are generated by this tool."
+    },
+    {
+      "Id": "real-recording-hardware",
+      "Classification": "real-hardware-evidence",
+      "Description": "Live microphone/camera capture, permission prompts, and encoded camera payloads require real devices.",
+      "ArtifactStatus": "No hardware capture artifacts are generated by this tool."
+    },
+    {
+      "Id": "native-output-backends",
+      "Classification": "shared-product-limitation",
+      "Description": "Native printer handoff and MP4 encoding remain the documented shared deferred boundary.",
+      "ArtifactStatus": "Frame/package planning and materialization remain shared and testable."
+    }
+  ]
+}
