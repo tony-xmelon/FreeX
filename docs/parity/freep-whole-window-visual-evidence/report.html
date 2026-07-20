@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FreeP paired whole-window visual evidence</title>
+<style>
+body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#202124;background:#f7f8fa}main{max-width:1600px;margin:auto}.summary{display:flex;gap:18px;flex-wrap:wrap;margin:16px 0}.pair{background:white;border:1px solid #cfd4dc;border-left:5px solid #2e7d32;margin:14px 0;padding:16px}.pair.mismatch{border-left-color:#c62828}.pair.limitation{border-left-color:#8a5a00}h2{font-size:18px;margin:0 0 8px}h2 span{font-size:13px;text-transform:uppercase;margin-left:10px}.images{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:12px}figure{margin:0}img{width:100%;border:1px solid #b8bec7;background:white}figcaption{font-weight:600;margin-bottom:6px}@media(max-width:900px){.images{grid-template-columns:1fr}}
+</style></head><body><main>
+<h1>FreeP Paired Whole-Window Visual Evidence</h1>
+<p>Every row is an independently activated 1280x760 logical-96-DPI app-owned client capture. App titlebar/QAT, ribbon, Backstage, workspace, panes, notes, status, and view state are part of the decision.</p>
+<div class="summary"><b>Scenarios 31</b><b>Paired 31</b><b>Pass 0</b><b>Mismatch 31</b><b>Limitation 0</b><b>Duplicate 0</b></div>
+<h2>Mismatch categories</h2><ul><li>app-owned-titlebar-raster: 1</li><li>full-client-pixel-threshold: 1</li><li>ribbon-geometry: 31</li><li>workspace-geometry: 31</li></ul>
+<section class="pair mismatch">
+  <h2>startup.slide <span>Mismatch</span></h2>
+  <p><b>Startup</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 11.21 %; mean delta 6.32; perceptual distance 2.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/startup.slide.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/startup.slide.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/startup.slide.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/startup.slide.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/startup.slide.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>startup.notes <span>Mismatch</span></h2>
+  <p><b>Startup</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 12.59 %; mean delta 8.15; perceptual distance 4.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/startup.notes.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/startup.notes.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/startup.notes.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/startup.notes.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/startup.notes.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>ribbon.home <span>Mismatch</span></h2>
+  <p><b>StaticRibbonTab</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 15.19 %; mean delta 10.53; perceptual distance 4.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/ribbon.home.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/ribbon.home.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/ribbon.home.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/ribbon.home.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/ribbon.home.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>ribbon.insert <span>Mismatch</span></h2>
+  <p><b>StaticRibbonTab</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 14.89 %; mean delta 10.41; perceptual distance 3.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/ribbon.insert.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/ribbon.insert.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/ribbon.insert.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/ribbon.insert.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/ribbon.insert.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>ribbon.design <span>Mismatch</span></h2>
+  <p><b>StaticRibbonTab</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 13.03 %; mean delta 8.96; perceptual distance 3.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/ribbon.design.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/ribbon.design.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/ribbon.design.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/ribbon.design.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/ribbon.design.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>ribbon.transitions <span>Mismatch</span></h2>
+  <p><b>StaticRibbonTab</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 17.08 %; mean delta 11.55; perceptual distance 5.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/ribbon.transitions.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/ribbon.transitions.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/ribbon.transitions.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/ribbon.transitions.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/ribbon.transitions.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>ribbon.animations <span>Mismatch</span></h2>
+  <p><b>StaticRibbonTab</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 15.55 %; mean delta 10.73; perceptual distance 4.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/ribbon.animations.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/ribbon.animations.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/ribbon.animations.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/ribbon.animations.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/ribbon.animations.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>ribbon.view <span>Mismatch</span></h2>
+  <p><b>StaticRibbonTab</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 11.81 %; mean delta 8.26; perceptual distance 2.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x128.7.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/ribbon.view.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/ribbon.view.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/ribbon.view.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/ribbon.view.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/ribbon.view.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>backstage.info <span>Mismatch</span></h2>
+  <p><b>BackstagePane</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 1.75 %; mean delta 1.69; perceptual distance 0.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/backstage.info.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/backstage.info.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/backstage.info.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/backstage.info.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/backstage.info.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>backstage.recent <span>Mismatch</span></h2>
+  <p><b>BackstagePane</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 7.41 %; mean delta 6.94; perceptual distance 3.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/backstage.recent.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/backstage.recent.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/backstage.recent.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/backstage.recent.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/backstage.recent.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>backstage.new-from-template <span>Mismatch</span></h2>
+  <p><b>BackstagePane</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 2.22 %; mean delta 1.62; perceptual distance 0.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/backstage.new-from-template.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/backstage.new-from-template.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/backstage.new-from-template.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/backstage.new-from-template.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/backstage.new-from-template.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>backstage.print <span>Mismatch</span></h2>
+  <p><b>BackstagePane</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 6.75 %; mean delta 5.83; perceptual distance 4.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/backstage.print.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/backstage.print.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/backstage.print.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/backstage.print.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/backstage.print.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>backstage.export <span>Mismatch</span></h2>
+  <p><b>BackstagePane</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 3.08 %; mean delta 2.65; perceptual distance 1.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/backstage.export.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/backstage.export.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/backstage.export.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/backstage.export.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/backstage.export.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>backstage.options <span>Mismatch</span></h2>
+  <p><b>BackstagePane</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 2.20 %; mean delta 2.07; perceptual distance 0.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/backstage.options.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/backstage.options.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/backstage.options.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/backstage.options.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/backstage.options.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>backstage.account <span>Mismatch</span></h2>
+  <p><b>BackstagePane</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 3.39 %; mean delta 3.26; perceptual distance 1.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/backstage.account.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/backstage.account.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/backstage.account.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/backstage.account.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/backstage.account.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>status.slide-2 <span>Mismatch</span></h2>
+  <p><b>StatusBar</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 12.22 %; mean delta 7.21; perceptual distance 4.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/status.slide-2.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/status.slide-2.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/status.slide-2.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/status.slide-2.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/status.slide-2.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>view.gridlines-guides <span>Mismatch</span></h2>
+  <p><b>ViewState</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 12.24 %; mean delta 8.57; perceptual distance 2.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x128.7.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/view.gridlines-guides.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/view.gridlines-guides.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/view.gridlines-guides.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/view.gridlines-guides.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/view.gridlines-guides.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>view.clean-canvas <span>Mismatch</span></h2>
+  <p><b>ViewState</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 12.10 %; mean delta 8.47; perceptual distance 2.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x128.7.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/view.clean-canvas.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/view.clean-canvas.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/view.clean-canvas.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/view.clean-canvas.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/view.clean-canvas.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>view.zoom-fit <span>Mismatch</span></h2>
+  <p><b>ViewState</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 12.39 %; mean delta 8.72; perceptual distance 2.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x128.7.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/view.zoom-fit.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/view.zoom-fit.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/view.zoom-fit.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/view.zoom-fit.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/view.zoom-fit.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>view.zoom-200 <span>Mismatch</span></h2>
+  <p><b>ViewState</b> | categories: app-owned-titlebar-raster, full-client-pixel-threshold, ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 26.03 %; mean delta 35.42; perceptual distance 11.</p>
+  <ul><li>WPF titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.0%).</li><li>Avalonia titlebar accent is not visibly present in its declared raster bounds (accent ratio 0.0%).</li><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x128.7.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li><li>Full-client threshold failed: changed 26.03 % (max 20 %), mean channel delta 35.42 (max 18.00), perceptual hash distance 11 (max 18).</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/view.zoom-200.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/view.zoom-200.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/view.zoom-200.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/view.zoom-200.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/view.zoom-200.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>workspace.slide-pane <span>Mismatch</span></h2>
+  <p><b>WorkspaceRegion</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 11.92 %; mean delta 7.09; perceptual distance 3.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/workspace.slide-pane.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/workspace.slide-pane.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/workspace.slide-pane.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/workspace.slide-pane.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/workspace.slide-pane.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>workspace.notes-pane <span>Mismatch</span></h2>
+  <p><b>WorkspaceRegion</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 9.08 %; mean delta 5.71; perceptual distance 1.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x128.7.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/workspace.notes-pane.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/workspace.notes-pane.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/workspace.notes-pane.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/workspace.notes-pane.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/workspace.notes-pane.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>workspace.canvas <span>Mismatch</span></h2>
+  <p><b>WorkspaceRegion</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 13.70 %; mean delta 9.43; perceptual distance 3.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/workspace.canvas.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/workspace.canvas.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/workspace.canvas.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/workspace.canvas.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/workspace.canvas.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>review.comments-pane <span>Mismatch</span></h2>
+  <p><b>AuxiliaryPane</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 16.45 %; mean delta 12.24; perceptual distance 3.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/review.comments-pane.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/review.comments-pane.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/review.comments-pane.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/review.comments-pane.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/review.comments-pane.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>review.accessibility-pane <span>Mismatch</span></h2>
+  <p><b>AuxiliaryPane</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 17.57 %; mean delta 13.15; perceptual distance 10.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/review.accessibility-pane.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/review.accessibility-pane.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/review.accessibility-pane.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/review.accessibility-pane.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/review.accessibility-pane.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>review.alt-text-pane <span>Mismatch</span></h2>
+  <p><b>AuxiliaryPane</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 16.69 %; mean delta 12.39; perceptual distance 7.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/review.alt-text-pane.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/review.alt-text-pane.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/review.alt-text-pane.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/review.alt-text-pane.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/review.alt-text-pane.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>review.reading-order-pane <span>Mismatch</span></h2>
+  <p><b>AuxiliaryPane</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 18.15 %; mean delta 13.55; perceptual distance 11.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/review.reading-order-pane.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/review.reading-order-pane.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/review.reading-order-pane.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/review.reading-order-pane.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/review.reading-order-pane.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>review.proofing-pane <span>Mismatch</span></h2>
+  <p><b>AuxiliaryPane</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 15.03 %; mean delta 10.82; perceptual distance 7.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/review.proofing-pane.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/review.proofing-pane.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/review.proofing-pane.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/review.proofing-pane.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/review.proofing-pane.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>accessibility.media-caption-pane <span>Mismatch</span></h2>
+  <p><b>AuxiliaryPane</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 17.26 %; mean delta 13.29; perceptual distance 8.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/accessibility.media-caption-pane.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/accessibility.media-caption-pane.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/accessibility.media-caption-pane.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/accessibility.media-caption-pane.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/accessibility.media-caption-pane.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>context.smartart-text-pane <span>Mismatch</span></h2>
+  <p><b>AuxiliaryPane</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 15.52 %; mean delta 11.53; perceptual distance 7.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/context.smartart-text-pane.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/context.smartart-text-pane.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/context.smartart-text-pane.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/context.smartart-text-pane.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/context.smartart-text-pane.png" alt="Whole-client diff"></figure></div>
+</section><section class="pair mismatch">
+  <h2>animations.animation-pane <span>Mismatch</span></h2>
+  <p><b>AuxiliaryPane</b> | categories: ribbon-geometry, workspace-geometry</p>
+  <p>Changed pixels 17.35 %; mean delta 12.38; perceptual distance 5.</p>
+  <ul><li>Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.</li><li>Slide pane, canvas, or notes-pane bounds differ.</li></ul>
+  <div class="images"><figure><figcaption>WPF full client</figcaption><img loading="lazy" src="wpf/full/animations.animation-pane.png" alt="WPF full client"></figure><figure><figcaption>Avalonia full client</figcaption><img loading="lazy" src="avalonia/full/animations.animation-pane.png" alt="Avalonia full client"></figure><figure><figcaption>WPF normalized client crop</figcaption><img loading="lazy" src="wpf/client/animations.animation-pane.png" alt="WPF normalized client crop"></figure><figure><figcaption>Avalonia normalized client crop</figcaption><img loading="lazy" src="avalonia/client/animations.animation-pane.png" alt="Avalonia normalized client crop"></figure><figure><figcaption>Whole-client diff</figcaption><img loading="lazy" src="diff/animations.animation-pane.png" alt="Whole-client diff"></figure></div>
+</section>
+</main></body></html>

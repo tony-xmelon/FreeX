@@ -1,0 +1,3777 @@
+{
+  "schemaVersion": 1,
+  "host": "wpf",
+  "captureMode": "visible-app-owned-full-client-render-target; native-non-client-excluded; scenario-isolated-processes",
+  "targetDpi": 96,
+  "logicalClientWidth": 1280,
+  "logicalClientHeight": 760,
+  "generatedAtUtc": "2026-07-20T09:07:24.6240211\u002B00:00",
+  "captures": [
+    {
+      "scenarioId": "startup.slide",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/startup.slide.png",
+      "clientImagePath": "wpf/client/startup.slide.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890658,
+      "fullImageSha256": "4a720efb78e909aba6ba60a87e7ae70ec92c9abe178fcc20ee6e1e495756ee26",
+      "clientImageSha256": "4a720efb78e909aba6ba60a87e7ae70ec92c9abe178fcc20ee6e1e495756ee26",
+      "semanticState": {
+        "scenarioId": "startup.slide",
+        "host": "wpf",
+        "activationId": "slide",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Slide 1",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 1",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Captured the clean startup document with 1 slide."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "startup.notes",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/startup.notes.png",
+      "clientImagePath": "wpf/client/startup.notes.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890829,
+      "fullImageSha256": "712247341fd5aa19ede5328d9fe46bb916120172ef05489ff76d53a9a51ac340",
+      "clientImageSha256": "712247341fd5aa19ede5328d9fe46bb916120172ef05489ff76d53a9a51ac340",
+      "semanticState": {
+        "scenarioId": "startup.notes",
+        "host": "wpf",
+        "activationId": "notes",
+        "currentSlideIndex": 1,
+        "currentSlideTitle": "Next Steps",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "textbox",
+        "focusedLabel": "",
+        "statusText": "Slide 2 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 1; expected 1."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "ribbon.home",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/ribbon.home.png",
+      "clientImagePath": "wpf/client/ribbon.home.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890584,
+      "fullImageSha256": "89a520305712d549b2786bb48830e175d27336c8eddae7b2dfef0f4252fe4c0c",
+      "clientImageSha256": "89a520305712d549b2786bb48830e175d27336c8eddae7b2dfef0f4252fe4c0c",
+      "semanticState": {
+        "scenarioId": "ribbon.home",
+        "host": "wpf",
+        "activationId": "home",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "ribbon.insert",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/ribbon.insert.png",
+      "clientImagePath": "wpf/client/ribbon.insert.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890590,
+      "fullImageSha256": "3ac35f010adc4b42c89c65d9924a94d467e9520b5f9b192424fd8968116b082b",
+      "clientImageSha256": "3ac35f010adc4b42c89c65d9924a94d467e9520b5f9b192424fd8968116b082b",
+      "semanticState": {
+        "scenarioId": "ribbon.insert",
+        "host": "wpf",
+        "activationId": "insert",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "insert",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027insert\u0027; expected \u0027insert\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "ribbon.design",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/ribbon.design.png",
+      "clientImagePath": "wpf/client/ribbon.design.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890569,
+      "fullImageSha256": "147203dd0b95edfadeffb904cd65d290501dc57d4be22add0d86617b216bccb3",
+      "clientImageSha256": "147203dd0b95edfadeffb904cd65d290501dc57d4be22add0d86617b216bccb3",
+      "semanticState": {
+        "scenarioId": "ribbon.design",
+        "host": "wpf",
+        "activationId": "design",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "design",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027design\u0027; expected \u0027design\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "ribbon.transitions",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/ribbon.transitions.png",
+      "clientImagePath": "wpf/client/ribbon.transitions.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890509,
+      "fullImageSha256": "1036ffdd9bef3008a714363507cfcffd45227f50fe71129b57e10d6444c03bb8",
+      "clientImageSha256": "1036ffdd9bef3008a714363507cfcffd45227f50fe71129b57e10d6444c03bb8",
+      "semanticState": {
+        "scenarioId": "ribbon.transitions",
+        "host": "wpf",
+        "activationId": "transitions",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "transitions",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027transitions\u0027; expected \u0027transitions\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "ribbon.animations",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/ribbon.animations.png",
+      "clientImagePath": "wpf/client/ribbon.animations.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890500,
+      "fullImageSha256": "a84fb681748046635bd13e2f6abe37e5d3f9ba041e66660b7c3c1d4828c9bd1a",
+      "clientImageSha256": "a84fb681748046635bd13e2f6abe37e5d3f9ba041e66660b7c3c1d4828c9bd1a",
+      "semanticState": {
+        "scenarioId": "ribbon.animations",
+        "host": "wpf",
+        "activationId": "animations",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "animations",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027animations\u0027; expected \u0027animations\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "ribbon.view",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/ribbon.view.png",
+      "clientImagePath": "wpf/client/ribbon.view.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890602,
+      "fullImageSha256": "ece69d789cf6ad487a0c923146e20e57dabf949fcfa54b89431cb84220282fa7",
+      "clientImageSha256": "ece69d789cf6ad487a0c923146e20e57dabf949fcfa54b89431cb84220282fa7",
+      "semanticState": {
+        "scenarioId": "ribbon.view",
+        "host": "wpf",
+        "activationId": "view",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "view",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "backstage.info",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/backstage.info.png",
+      "clientImagePath": "wpf/client/backstage.info.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 803483,
+      "fullImageSha256": "3cad3f8328b045c59f8ac679855760c263348e74d934cc9784fc023576cb9bc1",
+      "clientImageSha256": "3cad3f8328b045c59f8ac679855760c263348e74d934cc9784fc023576cb9bc1",
+      "semanticState": {
+        "scenarioId": "backstage.info",
+        "host": "wpf",
+        "activationId": "Info",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": true,
+        "backstagePane": "Info",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "backstage-pane-activated",
+            "passed": true,
+            "detail": "Backstage pane is \u0027Info\u0027; expected \u0027Info\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "backstage.recent",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/backstage.recent.png",
+      "clientImagePath": "wpf/client/backstage.recent.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 796128,
+      "fullImageSha256": "2b9e2c05db3a27538b7ba79ad7f4840dde46b972a26383b374670d2efdd5c851",
+      "clientImageSha256": "2b9e2c05db3a27538b7ba79ad7f4840dde46b972a26383b374670d2efdd5c851",
+      "semanticState": {
+        "scenarioId": "backstage.recent",
+        "host": "wpf",
+        "activationId": "Recent",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": true,
+        "backstagePane": "Recent",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "backstage-pane-activated",
+            "passed": true,
+            "detail": "Backstage pane is \u0027Recent\u0027; expected \u0027Recent\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "backstage.new-from-template",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/backstage.new-from-template.png",
+      "clientImagePath": "wpf/client/backstage.new-from-template.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 803090,
+      "fullImageSha256": "8e294b78500f8e53b0d5a0a3c7fd7f6b77df60b345e403ca5ec1f09773f858ef",
+      "clientImageSha256": "8e294b78500f8e53b0d5a0a3c7fd7f6b77df60b345e403ca5ec1f09773f858ef",
+      "semanticState": {
+        "scenarioId": "backstage.new-from-template",
+        "host": "wpf",
+        "activationId": "New from template",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": true,
+        "backstagePane": "New from template",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "backstage-pane-activated",
+            "passed": true,
+            "detail": "Backstage pane is \u0027New from template\u0027; expected \u0027New from template\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "backstage.print",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/backstage.print.png",
+      "clientImagePath": "wpf/client/backstage.print.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 803447,
+      "fullImageSha256": "fbd46b3ab68cba95d3b3569079b9d09f41f4c36c3625f3152034028f56ab2ab6",
+      "clientImageSha256": "fbd46b3ab68cba95d3b3569079b9d09f41f4c36c3625f3152034028f56ab2ab6",
+      "semanticState": {
+        "scenarioId": "backstage.print",
+        "host": "wpf",
+        "activationId": "Print",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": true,
+        "backstagePane": "Print",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "backstage-pane-activated",
+            "passed": true,
+            "detail": "Backstage pane is \u0027Print\u0027; expected \u0027Print\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "backstage.export",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/backstage.export.png",
+      "clientImagePath": "wpf/client/backstage.export.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 803208,
+      "fullImageSha256": "855400a719cda2b0f21c7391b94a85b14b743dc3959560d8c0350ffafc9ee115",
+      "clientImageSha256": "855400a719cda2b0f21c7391b94a85b14b743dc3959560d8c0350ffafc9ee115",
+      "semanticState": {
+        "scenarioId": "backstage.export",
+        "host": "wpf",
+        "activationId": "Export",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": true,
+        "backstagePane": "Export",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "backstage-pane-activated",
+            "passed": true,
+            "detail": "Backstage pane is \u0027Export\u0027; expected \u0027Export\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "backstage.options",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/backstage.options.png",
+      "clientImagePath": "wpf/client/backstage.options.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 803418,
+      "fullImageSha256": "e93a90fa52d2d715cbc90b068a78bf0ca0fbfdce781ab95c56ef8437dc505482",
+      "clientImageSha256": "e93a90fa52d2d715cbc90b068a78bf0ca0fbfdce781ab95c56ef8437dc505482",
+      "semanticState": {
+        "scenarioId": "backstage.options",
+        "host": "wpf",
+        "activationId": "Options",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": true,
+        "backstagePane": "Options",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "backstage-pane-activated",
+            "passed": true,
+            "detail": "Backstage pane is \u0027Options\u0027; expected \u0027Options\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "backstage.account",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/backstage.account.png",
+      "clientImagePath": "wpf/client/backstage.account.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 803294,
+      "fullImageSha256": "def6eba62c6484a0f3ec4d998d2585b8caae6f8df326cf471c299c99e42dd56f",
+      "clientImageSha256": "def6eba62c6484a0f3ec4d998d2585b8caae6f8df326cf471c299c99e42dd56f",
+      "semanticState": {
+        "scenarioId": "backstage.account",
+        "host": "wpf",
+        "activationId": "Account",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": true,
+        "backstagePane": "Account",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "backstage-pane-activated",
+            "passed": true,
+            "detail": "Backstage pane is \u0027Account\u0027; expected \u0027Account\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "status.slide-2",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/status.slide-2.png",
+      "clientImagePath": "wpf/client/status.slide-2.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890829,
+      "fullImageSha256": "8e7ff7dd3f42a8ca4b37fd3beee791d7c996bf352ac9477d663c40ef43a7fb4a",
+      "clientImageSha256": "8e7ff7dd3f42a8ca4b37fd3beee791d7c996bf352ac9477d663c40ef43a7fb4a",
+      "semanticState": {
+        "scenarioId": "status.slide-2",
+        "host": "wpf",
+        "activationId": "slide-2",
+        "currentSlideIndex": 1,
+        "currentSlideTitle": "Next Steps",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 2 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 1; expected 1."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "view.gridlines-guides",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/view.gridlines-guides.png",
+      "clientImagePath": "wpf/client/view.gridlines-guides.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890602,
+      "fullImageSha256": "3a322a834f88b8edde834dc5a44845453f7607b5c7575a1faa9d121c2efc378b",
+      "clientImageSha256": "3a322a834f88b8edde834dc5a44845453f7607b5c7575a1faa9d121c2efc378b",
+      "semanticState": {
+        "scenarioId": "view.gridlines-guides",
+        "host": "wpf",
+        "activationId": "gridlines-guides",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "view",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "view-state-activated-via-command",
+            "passed": true,
+            "detail": "Activated view state \u0027gridlines-guides\u0027 through the runtime ribbon command path."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "view.clean-canvas",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/view.clean-canvas.png",
+      "clientImagePath": "wpf/client/view.clean-canvas.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890602,
+      "fullImageSha256": "4c2ce265aa3618ef10058a8ad79dfd0a550eb6a6c612e245a6ab0dbcf9b854d9",
+      "clientImageSha256": "4c2ce265aa3618ef10058a8ad79dfd0a550eb6a6c612e245a6ab0dbcf9b854d9",
+      "semanticState": {
+        "scenarioId": "view.clean-canvas",
+        "host": "wpf",
+        "activationId": "clean-canvas",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "view",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": false,
+        "showGuides": false,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "view-state-activated-via-command",
+            "passed": true,
+            "detail": "Activated view state \u0027clean-canvas\u0027 through the runtime ribbon command path."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "view.zoom-fit",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/view.zoom-fit.png",
+      "clientImagePath": "wpf/client/view.zoom-fit.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890602,
+      "fullImageSha256": "ace0412fab1e5ce3bfbddc3331195212d5aabaff46e37fe83a92bd63250ca802",
+      "clientImageSha256": "ace0412fab1e5ce3bfbddc3331195212d5aabaff46e37fe83a92bd63250ca802",
+      "semanticState": {
+        "scenarioId": "view.zoom-fit",
+        "host": "wpf",
+        "activationId": "zoom-fit",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          20
+        ],
+        "selectedShapeKind": "Chart",
+        "activeRibbonTabId": "view",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 20."
+          },
+          {
+            "id": "view-state-activated-via-command",
+            "passed": true,
+            "detail": "Activated view state \u0027zoom-fit\u0027 through the runtime ribbon command path."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "view.zoom-200",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/view.zoom-200.png",
+      "clientImagePath": "wpf/client/view.zoom-200.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 222046,
+      "fullImageSha256": "cd8bae3e5b8e301a10a1db73d6bfacc9ea1a1e7f0b4db49653d8bb8ce92a8c4f",
+      "clientImageSha256": "cd8bae3e5b8e301a10a1db73d6bfacc9ea1a1e7f0b4db49653d8bb8ce92a8c4f",
+      "semanticState": {
+        "scenarioId": "view.zoom-200",
+        "host": "wpf",
+        "activationId": "zoom-200",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          20
+        ],
+        "selectedShapeKind": "Chart",
+        "activeRibbonTabId": "view",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "Percent",
+        "zoomPercent": 200,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 20."
+          },
+          {
+            "id": "view-state-activated-via-command",
+            "passed": true,
+            "detail": "Activated view state \u0027zoom-200\u0027 through the runtime ribbon command path."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "workspace.slide-pane",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/workspace.slide-pane.png",
+      "clientImagePath": "wpf/client/workspace.slide-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890835,
+      "fullImageSha256": "a76d39e8523be1f33381526f1d705cc7575be9134189895ec8bec071ebb6019d",
+      "clientImageSha256": "a76d39e8523be1f33381526f1d705cc7575be9134189895ec8bec071ebb6019d",
+      "semanticState": {
+        "scenarioId": "workspace.slide-pane",
+        "host": "wpf",
+        "activationId": "slide-pane",
+        "currentSlideIndex": 1,
+        "currentSlideTitle": "Next Steps",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "insert",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 2 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 1; expected 1."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027insert\u0027; expected \u0027insert\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "workspace.notes-pane",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/workspace.notes-pane.png",
+      "clientImagePath": "wpf/client/workspace.notes-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890847,
+      "fullImageSha256": "df09730b2349d73589f1d179a8450afd00f49b0e22691586a376a082d4af4d57",
+      "clientImageSha256": "df09730b2349d73589f1d179a8450afd00f49b0e22691586a376a082d4af4d57",
+      "semanticState": {
+        "scenarioId": "workspace.notes-pane",
+        "host": "wpf",
+        "activationId": "notes-pane",
+        "currentSlideIndex": 1,
+        "currentSlideTitle": "Next Steps",
+        "selectedShapeIds": [],
+        "selectedShapeKind": "",
+        "activeRibbonTabId": "view",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "textbox",
+        "focusedLabel": "",
+        "statusText": "Slide 2 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 1; expected 1."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: ."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "workspace.canvas",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/workspace.canvas.png",
+      "clientImagePath": "wpf/client/workspace.canvas.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890569,
+      "fullImageSha256": "1952ad04e59568c0c953f4a2e858d81d806f713d909813bb01edc2c10a3f19f9",
+      "clientImageSha256": "1952ad04e59568c0c953f4a2e858d81d806f713d909813bb01edc2c10a3f19f9",
+      "semanticState": {
+        "scenarioId": "workspace.canvas",
+        "host": "wpf",
+        "activationId": "canvas",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          20
+        ],
+        "selectedShapeKind": "Chart",
+        "activeRibbonTabId": "design",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 20."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027design\u0027; expected \u0027design\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "review.comments-pane",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/review.comments-pane.png",
+      "clientImagePath": "wpf/client/review.comments-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 889195,
+      "fullImageSha256": "f5b04cc89ed6b78598b7429c64e7ed8cda69ac28fe713add1c1da1e31d65dc73",
+      "clientImageSha256": "f5b04cc89ed6b78598b7429c64e7ed8cda69ac28fe713add1c1da1e31d65dc73",
+      "semanticState": {
+        "scenarioId": "review.comments-pane",
+        "host": "wpf",
+        "activationId": "comments",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 1100,
+          "height": 417.03999999999996,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [
+          "review.comments-pane"
+        ],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "review.accessibility-pane",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/review.accessibility-pane.png",
+      "clientImagePath": "wpf/client/review.accessibility-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890272,
+      "fullImageSha256": "9e1374ff6ca50104c2039ef1542222a98910928aa4dfa18b0d5db4bdafe836bb",
+      "clientImageSha256": "9e1374ff6ca50104c2039ef1542222a98910928aa4dfa18b0d5db4bdafe836bb",
+      "semanticState": {
+        "scenarioId": "review.accessibility-pane",
+        "host": "wpf",
+        "activationId": "accessibility",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          20
+        ],
+        "selectedShapeKind": "Chart",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 780,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 780,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [
+          "review.accessibility-pane"
+        ],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 20."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "review.alt-text-pane",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/review.alt-text-pane.png",
+      "clientImagePath": "wpf/client/review.alt-text-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890586,
+      "fullImageSha256": "bd70bcac91db2ba6370a0742c988761f7764a9bd618069046ee210dcb9533d03",
+      "clientImageSha256": "bd70bcac91db2ba6370a0742c988761f7764a9bd618069046ee210dcb9533d03",
+      "semanticState": {
+        "scenarioId": "review.alt-text-pane",
+        "host": "wpf",
+        "activationId": "alt-text",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 808,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 808,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [
+          "review.alt-text-pane"
+        ],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "review.reading-order-pane",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/review.reading-order-pane.png",
+      "clientImagePath": "wpf/client/review.reading-order-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890352,
+      "fullImageSha256": "fae8c740d54929f791a0091b0c3e5b9d1fe1e88b19220d27293a829c85336c03",
+      "clientImageSha256": "fae8c740d54929f791a0091b0c3e5b9d1fe1e88b19220d27293a829c85336c03",
+      "semanticState": {
+        "scenarioId": "review.reading-order-pane",
+        "host": "wpf",
+        "activationId": "reading-order",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 780,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 780,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [
+          "review.reading-order-pane"
+        ],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "review.proofing-pane",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/review.proofing-pane.png",
+      "clientImagePath": "wpf/client/review.proofing-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890586,
+      "fullImageSha256": "f5f9018293e6b1a2dcc09bab99715dc7bf020446fb7f0f1f8abf7444922869d4",
+      "clientImageSha256": "f5f9018293e6b1a2dcc09bab99715dc7bf020446fb7f0f1f8abf7444922869d4",
+      "semanticState": {
+        "scenarioId": "review.proofing-pane",
+        "host": "wpf",
+        "activationId": "proofing",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 780,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 780,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [
+          "review.proofing-pane"
+        ],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "accessibility.media-caption-pane",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/accessibility.media-caption-pane.png",
+      "clientImagePath": "wpf/client/accessibility.media-caption-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 890586,
+      "fullImageSha256": "4a8ffb135350175dd8df71b76e067cd57754ba4b60b478dbd37cb2002d3b38dd",
+      "clientImageSha256": "4a8ffb135350175dd8df71b76e067cd57754ba4b60b478dbd37cb2002d3b38dd",
+      "semanticState": {
+        "scenarioId": "accessibility.media-caption-pane",
+        "host": "wpf",
+        "activationId": "media-caption",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          30
+        ],
+        "selectedShapeKind": "Media",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 780,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 780,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [
+          "accessibility.media-caption-pane"
+        ],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 30."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "context.smartart-text-pane",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/context.smartart-text-pane.png",
+      "clientImagePath": "wpf/client/context.smartart-text-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 889318,
+      "fullImageSha256": "c552336cfbb518d59d43e86c59a6c1a1f7e200d471a9cd01ff6754a672d1a3ee",
+      "clientImageSha256": "c552336cfbb518d59d43e86c59a6c1a1f7e200d471a9cd01ff6754a672d1a3ee",
+      "semanticState": {
+        "scenarioId": "context.smartart-text-pane",
+        "host": "wpf",
+        "activationId": "smartart-text",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          40
+        ],
+        "selectedShapeKind": "SmartArt",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 780,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 780,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [
+          "context.smartart-text-pane"
+        ],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 40."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "animations.animation-pane",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "fullImagePath": "wpf/full/animations.animation-pane.png",
+      "clientImagePath": "wpf/client/animations.animation-pane.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "nonBackgroundPixelCount": 886237,
+      "fullImageSha256": "5c019e26aa02b9966a604e17d7d663419006fb11016079e8b91a991959ee06c4",
+      "clientImageSha256": "5c019e26aa02b9966a604e17d7d663419006fb11016079e8b91a991959ee06c4",
+      "semanticState": {
+        "scenarioId": "animations.animation-pane",
+        "host": "wpf",
+        "activationId": "animation",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "animations",
+        "visibleRibbonTabIds": [
+          "file",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 122.96000000000001,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 156.96,
+          "width": 180,
+          "height": 577.04,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 156.96,
+          "width": 860,
+          "height": 517.04,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 860,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [
+          "animations.animation-pane"
+        ],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027animations\u0027; expected \u0027animations\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    }
+  ],
+  "limitations": []
+}
