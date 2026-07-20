@@ -2,8 +2,8 @@
 
 ## Scope
 
-FreeP now maps `TransitionKind.Flip`, `Cube`, `Rotate`, `Switch`, `Orbit`, and
-`Ferris` to dedicated renderer-neutral playback actions. The shared
+FreeP now maps `TransitionKind.Flip`, `Cube`, `Rotate`, `Switch`, `Orbit`,
+`Ferris`, and `Flythrough` to dedicated renderer-neutral playback actions. The shared
 `SlideShowPerspectiveTransitionPlanner` preserves direction and chooses a
 host-neutral projection:
 
@@ -13,6 +13,8 @@ host-neutral projection:
 - Switch: reduced uniform scale with a 90-degree directional exchange.
 - Orbit: deeper scale reduction with a 180-degree orbit projection.
 - Ferris: a lighter rotating-panel projection with shorter travel.
+- Flythrough: a reduced incoming panel that travels along the chosen axis while
+  the outgoing snapshot recedes and fades.
 
 WPF uses centered `ScaleTransform`/`RotateTransform`/`TranslateTransform`
 storyboard groups. Avalonia uses the corresponding centered matrix transforms
@@ -26,7 +28,7 @@ semantics have a suitable surface model.
 
 ## Verification
 
-- `SlideShowHostPlannerTests` + `SlideShowPlaybackPlannerTests`: **127/127**
+- `SlideShowHostPlannerTests` + `SlideShowPlaybackPlannerTests`: **132/132**
   compile-first and no-build.
 - WPF and Avalonia Release application builds: **0 warnings, 0 errors**.
 - WPF `SlideShowHostPolicySourceTests`: **2/2** compile-first and no-build.
