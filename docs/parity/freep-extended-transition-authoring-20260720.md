@@ -36,6 +36,7 @@ Vortex now has a dedicated radial-spiral sector mask.
 Warp now has a dedicated segmented elastic-front mask.
 Fracture now has a dedicated center-first shard-grid mask.
 Crush now has a dedicated center-compressing aperture mask.
+Prism now has a dedicated three-facet angled mask.
 
 Morph is a separate object-aware action. The remaining effects listed above
 are the shape-deforming families; they do not yet have dedicated frame-by-frame
