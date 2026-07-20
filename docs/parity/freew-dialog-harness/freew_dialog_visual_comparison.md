@@ -2,7 +2,7 @@
 
 > Target: 96 DPI logical pixels. Semantic checks and nonblank checks are reported separately from image parity.
 
-Inventory scenarios: **493**. Captured WPF: **14**. Captured Avalonia: **0**.
+Inventory scenarios: **510**. Captured WPF: **29**. Captured Avalonia: **0**.
 
 | Scenario | Capture | Classification | Changed ratio | Mean channel delta | Semantic diff | Heatmap |
 | --- | --- | --- | ---: | ---: | --- | --- |
@@ -84,9 +84,9 @@ Inventory scenarios: **493**. Captured WPF: **14**. Captured Avalonia: **0**.
 | `citation-source-picker.initial` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `citation-source-picker.populated` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `citation-source-picker.validation-error` | host-missing | **not-implemented-on-host** |  |  |  |  |
-| `columns.initial` | host-missing | **not-implemented-on-host** |  |  |  |  |
-| `columns.populated` | host-missing | **not-implemented-on-host** |  |  |  |  |
-| `columns.validation-error` | host-missing | **not-implemented-on-host** |  |  |  |  |
+| `columns.initial` | captured/unsupported | **avalonia-headless-render-unavailable** |  |  |  |  |
+| `columns.populated` | captured/unsupported | **avalonia-headless-render-unavailable** |  |  |  |  |
+| `columns.validation-error` | captured/unsupported | **avalonia-headless-render-unavailable** |  |  |  |  |
 | `comment-list.initial` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `comment-list.populated` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `comment-list.validation-error` | host-missing | **not-implemented-on-host** |  |  |  |  |
@@ -100,9 +100,9 @@ Inventory scenarios: **493**. Captured WPF: **14**. Captured Avalonia: **0**.
 | `cross-reference.initial` | unsupported/unsupported | **capture-hook-required** |  |  |  |  |
 | `cross-reference.populated` | unsupported/unsupported | **capture-hook-required** |  |  |  |  |
 | `cross-reference.validation-error` | unsupported/unsupported | **capture-hook-required** |  |  |  |  |
-| `custom-paragraph-spacing.initial` | unsupported/unsupported | **capture-hook-required** |  |  |  |  |
-| `custom-paragraph-spacing.populated` | unsupported/unsupported | **capture-hook-required** |  |  |  |  |
-| `custom-paragraph-spacing.validation-error` | unsupported/unsupported | **capture-hook-required** |  |  |  |  |
+| `custom-paragraph-spacing.initial` | captured/unsupported | **avalonia-headless-render-unavailable** |  |  |  |  |
+| `custom-paragraph-spacing.populated` | captured/unsupported | **avalonia-headless-render-unavailable** |  |  |  |  |
+| `custom-paragraph-spacing.validation-error` | captured/unsupported | **avalonia-headless-render-unavailable** |  |  |  |  |
 | `customize-theme-colors.initial` | unsupported/unsupported | **capture-hook-required** |  |  |  |  |
 | `customize-theme-colors.populated` | unsupported/unsupported | **capture-hook-required** |  |  |  |  |
 | `customize-theme-colors.validation-error` | unsupported/unsupported | **capture-hook-required** |  |  |  |  |
@@ -118,6 +118,9 @@ Inventory scenarios: **493**. Captured WPF: **14**. Captured Avalonia: **0**.
 | `draw-table-dimension.initial` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `draw-table-dimension.populated` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `draw-table-dimension.validation-error` | host-missing | **not-implemented-on-host** |  |  |  |  |
+| `drop-cap-options.initial` | captured/unsupported | **avalonia-headless-render-unavailable** |  |  |  |  |
+| `drop-cap-options.populated` | captured/unsupported | **avalonia-headless-render-unavailable** |  |  |  |  |
+| `drop-cap-options.validation-error` | captured/unsupported | **avalonia-headless-render-unavailable** |  |  |  |  |
 | `field-picker.initial` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `field-picker.populated` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `field-picker.validation-error` | host-missing | **not-implemented-on-host** |  |  |  |  |
@@ -141,9 +144,9 @@ Inventory scenarios: **493**. Captured WPF: **14**. Captured Avalonia: **0**.
 | `hyperlink.initial` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `hyperlink.populated` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `hyperlink.validation-error` | host-missing | **not-implemented-on-host** |  |  |  |  |
-| `hyphenation-options.initial` | host-missing | **not-implemented-on-host** |  |  |  |  |
-| `hyphenation-options.populated` | host-missing | **not-implemented-on-host** |  |  |  |  |
-| `hyphenation-options.validation-error` | host-missing | **not-implemented-on-host** |  |  |  |  |
+| `hyphenation-options.initial` | captured/unsupported | **avalonia-headless-render-unavailable** |  |  |  |  |
+| `hyphenation-options.populated` | captured/unsupported | **avalonia-headless-render-unavailable** |  |  |  |  |
+| `hyphenation-options.validation-error` | captured/unsupported | **avalonia-headless-render-unavailable** |  |  |  |  |
 | `icon-picker.initial` | unsupported/unsupported | **capture-hook-required** |  |  |  |  |
 | `icon-picker.populated` | unsupported/unsupported | **capture-hook-required** |  |  |  |  |
 | `icon-picker.validation-error` | unsupported/unsupported | **capture-hook-required** |  |  |  |  |
@@ -175,9 +178,9 @@ Inventory scenarios: **493**. Captured WPF: **14**. Captured Avalonia: **0**.
 | `legal-notices.initial` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `legal-notices.populated` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `legal-notices.validation-error` | host-missing | **not-implemented-on-host** |  |  |  |  |
-| `line-number-options.initial` | host-missing | **not-implemented-on-host** |  |  |  |  |
-| `line-number-options.populated` | host-missing | **not-implemented-on-host** |  |  |  |  |
-| `line-number-options.validation-error` | host-missing | **not-implemented-on-host** |  |  |  |  |
+| `line-number-options.initial` | captured/unsupported | **avalonia-headless-render-unavailable** |  |  |  |  |
+| `line-number-options.populated` | captured/unsupported | **avalonia-headless-render-unavailable** |  |  |  |  |
+| `line-number-options.validation-error` | captured/unsupported | **avalonia-headless-render-unavailable** |  |  |  |  |
 | `link-bookmark.initial` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `link-bookmark.populated` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `link-bookmark.validation-error` | host-missing | **not-implemented-on-host** |  |  |  |  |
@@ -235,6 +238,8 @@ Inventory scenarios: **493**. Captured WPF: **14**. Captured Avalonia: **0**.
 | `paragraph-indent.validation-error` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `paragraph.initial` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `paragraph.populated` | host-missing | **not-implemented-on-host** |  |  |  |  |
+| `paragraph.tab-indents-and-spacing` | host-missing | **not-implemented-on-host** |  |  |  |  |
+| `paragraph.tab-line-and-page-breaks` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `paragraph.validation-error` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `password-prompt.initial` | host-missing | **not-implemented-on-host** |  |  |  |  |
 | `password-prompt.populated` | host-missing | **not-implemented-on-host** |  |  |  |  |

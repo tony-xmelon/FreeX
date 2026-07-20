@@ -1,9 +1,9 @@
 {
   "schema": "freew.dialog-visual-comparison.v1",
-  "generatedFromSha256": "472e97fc040be2490dcaacd00b32bb3609e2960bfedb4d9fd8bef1648648b59e",
+  "generatedFromSha256": "50db577ddc06d8b5d17d1fd669935450e396598a9cb376e720085c9b4a61e196",
   "targetDpi": 96,
-  "inventoryScenarioCount": 493,
-  "wpfCaptureCount": 14,
+  "inventoryScenarioCount": 510,
+  "wpfCaptureCount": 29,
   "avaloniaCaptureCount": 0,
   "rows": [
     {
@@ -40,7 +40,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "accessibility-report.populated",
@@ -49,7 +49,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "accessibility-report.validation-error",
@@ -58,7 +58,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "avalonia-save-changes.initial",
@@ -94,7 +94,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-account.populated",
@@ -103,7 +103,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-account.validation-error",
@@ -112,7 +112,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-close.initial",
@@ -121,7 +121,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-close.populated",
@@ -130,7 +130,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-close.validation-error",
@@ -139,7 +139,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-export.initial",
@@ -148,7 +148,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-export.populated",
@@ -157,7 +157,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-export.validation-error",
@@ -166,7 +166,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-home.initial",
@@ -175,7 +175,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-home.populated",
@@ -184,7 +184,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-home.validation-error",
@@ -193,7 +193,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-info.initial",
@@ -202,7 +202,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-info.populated",
@@ -211,7 +211,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-info.validation-error",
@@ -220,7 +220,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-new.initial",
@@ -229,7 +229,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-new.populated",
@@ -238,7 +238,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-new.validation-error",
@@ -247,7 +247,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-open.initial",
@@ -256,7 +256,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-open.populated",
@@ -265,7 +265,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-open.validation-error",
@@ -274,7 +274,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-options.initial",
@@ -283,7 +283,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-options.populated",
@@ -292,7 +292,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-options.validation-error",
@@ -301,7 +301,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-print.initial",
@@ -310,7 +310,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-print.populated",
@@ -319,7 +319,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-print.validation-error",
@@ -328,7 +328,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-save-a-copy.initial",
@@ -337,7 +337,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-save-a-copy.populated",
@@ -346,7 +346,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-save-a-copy.validation-error",
@@ -355,7 +355,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-save-as.initial",
@@ -364,7 +364,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-save-as.populated",
@@ -373,7 +373,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-save-as.validation-error",
@@ -382,7 +382,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-save.initial",
@@ -391,7 +391,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-save.populated",
@@ -400,7 +400,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-save.validation-error",
@@ -409,7 +409,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-share.initial",
@@ -418,7 +418,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-share.populated",
@@ -427,7 +427,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "backstage-share.validation-error",
@@ -436,7 +436,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "bookmark-manager.initial",
@@ -445,7 +445,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "bookmark-manager.populated",
@@ -454,7 +454,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "bookmark-manager.validation-error",
@@ -463,7 +463,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "bookmark.initial",
@@ -499,7 +499,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "borders-and-shading.populated",
@@ -508,7 +508,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "borders-and-shading.tab-borders",
@@ -544,7 +544,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "building-blocks-organizer.initial",
@@ -553,7 +553,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "building-blocks-organizer.populated",
@@ -562,7 +562,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "building-blocks-organizer.validation-error",
@@ -571,7 +571,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "cell-edit.initial",
@@ -607,7 +607,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "chart-axis-titles.populated",
@@ -616,7 +616,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "chart-axis-titles.validation-error",
@@ -625,7 +625,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "chart-size.initial",
@@ -634,7 +634,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "chart-size.populated",
@@ -643,7 +643,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "chart-size.validation-error",
@@ -652,7 +652,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "chart-title.initial",
@@ -661,7 +661,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "chart-title.populated",
@@ -670,7 +670,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "chart-title.validation-error",
@@ -679,7 +679,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "citation-source-picker.initial",
@@ -710,30 +710,30 @@
     },
     {
       "scenarioId": "columns.initial",
-      "captureStatus": "host-missing",
-      "classification": "not-implemented-on-host",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "No Avalonia route/state row was generated."
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
     },
     {
       "scenarioId": "columns.populated",
-      "captureStatus": "host-missing",
-      "classification": "not-implemented-on-host",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "No Avalonia route/state row was generated."
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
     },
     {
       "scenarioId": "columns.validation-error",
-      "captureStatus": "host-missing",
-      "classification": "not-implemented-on-host",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "No Avalonia route/state row was generated."
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
     },
     {
       "scenarioId": "comment-list.initial",
@@ -832,7 +832,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "cross-reference.populated",
@@ -841,7 +841,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "cross-reference.validation-error",
@@ -850,34 +850,34 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "custom-paragraph-spacing.initial",
-      "captureStatus": "unsupported/unsupported",
-      "classification": "capture-hook-required",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
     },
     {
       "scenarioId": "custom-paragraph-spacing.populated",
-      "captureStatus": "unsupported/unsupported",
-      "classification": "capture-hook-required",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
     },
     {
       "scenarioId": "custom-paragraph-spacing.validation-error",
-      "captureStatus": "unsupported/unsupported",
-      "classification": "capture-hook-required",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
     },
     {
       "scenarioId": "customize-theme-colors.initial",
@@ -886,7 +886,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "customize-theme-colors.populated",
@@ -895,7 +895,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "customize-theme-colors.validation-error",
@@ -904,7 +904,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "customize-theme-fonts.initial",
@@ -913,7 +913,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "customize-theme-fonts.populated",
@@ -922,7 +922,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "customize-theme-fonts.validation-error",
@@ -931,7 +931,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "date-time.initial",
@@ -940,7 +940,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "date-time.populated",
@@ -949,7 +949,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "date-time.validation-error",
@@ -958,7 +958,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "document-inspector.initial",
@@ -967,7 +967,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "document-inspector.populated",
@@ -976,7 +976,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "document-inspector.validation-error",
@@ -985,7 +985,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "draw-table-dimension.initial",
@@ -1013,6 +1013,33 @@
       "semanticDifference": null,
       "heatmapPath": null,
       "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "drop-cap-options.initial",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
+    },
+    {
+      "scenarioId": "drop-cap-options.populated",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
+    },
+    {
+      "scenarioId": "drop-cap-options.validation-error",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
     },
     {
       "scenarioId": "field-picker.initial",
@@ -1075,7 +1102,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "find-replace.populated",
@@ -1084,7 +1111,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "find-replace.validation-error",
@@ -1093,7 +1120,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "font.initial",
@@ -1102,7 +1129,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "font.populated",
@@ -1111,7 +1138,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "font.tab-advanced",
@@ -1138,7 +1165,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "footnote-endnote-options.initial",
@@ -1147,7 +1174,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "footnote-endnote-options.populated",
@@ -1156,7 +1183,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "footnote-endnote-options.validation-error",
@@ -1165,7 +1192,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "free-winfo.initial",
@@ -1223,30 +1250,30 @@
     },
     {
       "scenarioId": "hyphenation-options.initial",
-      "captureStatus": "host-missing",
-      "classification": "not-implemented-on-host",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "No Avalonia route/state row was generated."
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
     },
     {
       "scenarioId": "hyphenation-options.populated",
-      "captureStatus": "host-missing",
-      "classification": "not-implemented-on-host",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "No Avalonia route/state row was generated."
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
     },
     {
       "scenarioId": "hyphenation-options.validation-error",
-      "captureStatus": "host-missing",
-      "classification": "not-implemented-on-host",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "No Avalonia route/state row was generated."
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
     },
     {
       "scenarioId": "icon-picker.initial",
@@ -1255,7 +1282,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "icon-picker.populated",
@@ -1264,7 +1291,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "icon-picker.validation-error",
@@ -1273,7 +1300,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "image-adjust.initial",
@@ -1282,7 +1309,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "image-adjust.populated",
@@ -1291,7 +1318,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "image-adjust.validation-error",
@@ -1300,7 +1327,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "image-alt-text.initial",
@@ -1336,7 +1363,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "image-border.populated",
@@ -1345,7 +1372,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "image-border.validation-error",
@@ -1354,7 +1381,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "image-crop.initial",
@@ -1363,7 +1390,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "image-crop.populated",
@@ -1372,7 +1399,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "image-crop.validation-error",
@@ -1381,7 +1408,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "image-position.initial",
@@ -1390,7 +1417,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "image-position.populated",
@@ -1399,7 +1426,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "image-position.validation-error",
@@ -1408,7 +1435,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "image-size.initial",
@@ -1417,7 +1444,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "image-size.populated",
@@ -1426,7 +1453,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "image-size.validation-error",
@@ -1435,7 +1462,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "insert-chart.initial",
@@ -1444,7 +1471,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "insert-chart.populated",
@@ -1453,7 +1480,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "insert-chart.tab-category",
@@ -1471,7 +1498,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "insert-smart-art.initial",
@@ -1480,7 +1507,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "insert-smart-art.populated",
@@ -1489,7 +1516,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "insert-smart-art.validation-error",
@@ -1498,7 +1525,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "legal-notices.initial",
@@ -1529,30 +1556,30 @@
     },
     {
       "scenarioId": "line-number-options.initial",
-      "captureStatus": "host-missing",
-      "classification": "not-implemented-on-host",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "No Avalonia route/state row was generated."
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
     },
     {
       "scenarioId": "line-number-options.populated",
-      "captureStatus": "host-missing",
-      "classification": "not-implemented-on-host",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "No Avalonia route/state row was generated."
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
     },
     {
       "scenarioId": "line-number-options.validation-error",
-      "captureStatus": "host-missing",
-      "classification": "not-implemented-on-host",
+      "captureStatus": "captured/unsupported",
+      "classification": "avalonia-headless-render-unavailable",
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "No Avalonia route/state row was generated."
+      "note": "Real app-owned WPF dialog rendered through RenderTargetBitmap."
     },
     {
       "scenarioId": "link-bookmark.initial",
@@ -1615,7 +1642,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "manage-styles.populated",
@@ -1624,7 +1651,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "manage-styles.validation-error",
@@ -1633,7 +1660,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "mark-citation.initial",
@@ -1642,7 +1669,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "mark-citation.populated",
@@ -1651,7 +1678,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "mark-citation.validation-error",
@@ -1660,7 +1687,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "match-fields.initial",
@@ -1696,7 +1723,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "multilevel-list.populated",
@@ -1705,7 +1732,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "multilevel-list.validation-error",
@@ -1714,7 +1741,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "note-text.initial",
@@ -1876,7 +1903,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "page-color.populated",
@@ -1885,7 +1912,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "page-color.validation-error",
@@ -1894,7 +1921,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "page-number-format.initial",
@@ -2068,6 +2095,24 @@
       "note": "No WPF route/state row was generated."
     },
     {
+      "scenarioId": "paragraph.tab-indents-and-spacing",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
+      "scenarioId": "paragraph.tab-line-and-page-breaks",
+      "captureStatus": "host-missing",
+      "classification": "not-implemented-on-host",
+      "metrics": null,
+      "semanticDifference": null,
+      "heatmapPath": null,
+      "note": "No WPF route/state row was generated."
+    },
+    {
       "scenarioId": "paragraph.validation-error",
       "captureStatus": "host-missing",
       "classification": "not-implemented-on-host",
@@ -2110,7 +2155,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "paste-special.populated",
@@ -2119,7 +2164,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "paste-special.validation-error",
@@ -2128,7 +2173,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "print-preview.initial",
@@ -2191,7 +2236,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "properties.populated",
@@ -2200,7 +2245,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "properties.validation-error",
@@ -2209,7 +2254,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "quick-part-name.initial",
@@ -2272,7 +2317,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "restrict-editing.populated",
@@ -2281,7 +2326,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "restrict-editing.validation-error",
@@ -2290,7 +2335,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "save-compatibility-warning.initial",
@@ -2380,7 +2425,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "set-as-default-confirmation.populated",
@@ -2389,7 +2434,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "set-as-default-confirmation.validation-error",
@@ -2398,7 +2443,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "smart-art-edit.initial",
@@ -2434,7 +2479,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "sort.populated",
@@ -2443,7 +2488,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "sort.validation-error",
@@ -2452,7 +2497,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "source-author-editor.initial",
@@ -2596,7 +2641,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "style.populated",
@@ -2605,7 +2650,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "style.validation-error",
@@ -2614,7 +2659,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "symbol-picker.initial",
@@ -2677,7 +2722,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "table-of-authorities.populated",
@@ -2686,7 +2731,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "table-of-authorities.validation-error",
@@ -2695,7 +2740,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "table-properties.initial",
@@ -2794,7 +2839,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "tabs.populated",
@@ -2803,7 +2848,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "tabs.validation-error",
@@ -2812,7 +2857,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "theme-effects.initial",
@@ -2956,7 +3001,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "zoom.populated",
@@ -2965,7 +3010,7 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     },
     {
       "scenarioId": "zoom.tab-zoom-to",
@@ -2983,13 +3028,13 @@
       "metrics": null,
       "semanticDifference": null,
       "heatmapPath": null,
-      "note": "The WPF adapter currently captures the page-setup and options families; other families remain in the generated inventory until an app-owned route adapter is added."
+      "note": "The WPF adapter currently captures the options, page-setup, and page-layout families; other families remain in the generated inventory until an app-owned route adapter is added."
     }
   ],
   "counts": {
-    "not-implemented-on-host": 169,
-    "capture-hook-required": 141,
+    "not-implemented-on-host": 162,
+    "capture-hook-required": 138,
     "native-picker-platform-limitation": 9,
-    "avalonia-headless-render-unavailable": 12
+    "avalonia-headless-render-unavailable": 27
   }
 }

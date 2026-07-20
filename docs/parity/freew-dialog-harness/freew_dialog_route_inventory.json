@@ -1,7 +1,7 @@
 {
   "schema": "freew.dialog-route-inventory.v1",
   "schemaVersion": 1,
-  "generatedFromSha256": "700fd5fb2bffb64b175bbc70995eba96dd6a5d2374ba6b972c325af7b2dc3487",
+  "generatedFromSha256": "31a270aff0c861909d776554bc1e45742f6d7207d8607a519108586ac0696f21",
   "routes": [
     {
       "host": "avalonia",
@@ -221,6 +221,15 @@
     },
     {
       "host": "avalonia",
+      "routeId": "columns",
+      "typeName": "ColumnsDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/PageLayoutDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
       "routeId": "comment-list",
       "typeName": "CommentListDialog",
       "sourcePath": "freew/FreeW.App.Avalonia/CommentDialogs.cs",
@@ -250,7 +259,7 @@
       "host": "avalonia",
       "routeId": "custom-paragraph-spacing",
       "typeName": "CustomParagraphSpacingDialog",
-      "sourcePath": "freew/FreeW.App.Avalonia/DesignDialogParity.cs",
+      "sourcePath": "freew/FreeW.App.Avalonia/PageLayoutDialogs.cs",
       "modalMode": "modal",
       "tabs": [],
       "limitation": null
@@ -296,6 +305,15 @@
       "routeId": "draw-table-dimension",
       "typeName": "DrawTableDimensionDialog",
       "sourcePath": "freew/FreeW.App.Avalonia/FinalCommandParityDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "drop-cap-options",
+      "typeName": "DropCapOptionsDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/PageLayoutDialogs.cs",
       "modalMode": "modal",
       "tabs": [],
       "limitation": null
@@ -350,6 +368,15 @@
       "routeId": "hyperlink",
       "typeName": "HyperlinkDialog",
       "sourcePath": "freew/FreeW.App.Avalonia/InsertDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "hyphenation-options",
+      "typeName": "HyphenationOptionsDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/PageLayoutDialogs.cs",
       "modalMode": "modal",
       "tabs": [],
       "limitation": null
@@ -431,6 +458,15 @@
       "routeId": "insert-smart-art",
       "typeName": "InsertSmartArtDialog",
       "sourcePath": "freew/FreeW.App.Avalonia/MediaDialogParity.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "avalonia",
+      "routeId": "line-number-options",
+      "typeName": "LineNumberOptionsDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/PageLayoutDialogs.cs",
       "modalMode": "modal",
       "tabs": [],
       "limitation": null
@@ -557,7 +593,10 @@
       "typeName": "ParagraphDialog",
       "sourcePath": "freew/FreeW.App.Avalonia/ParagraphDialog.cs",
       "modalMode": "modal",
-      "tabs": [],
+      "tabs": [
+        "Indents and Spacing",
+        "Line and Page Breaks"
+      ],
       "limitation": null
     },
     {
@@ -1048,6 +1087,15 @@
       "routeId": "document-inspector",
       "typeName": "DocumentInspectorDialog",
       "sourcePath": "freew/FreeW.App.Host/DocumentInspectorDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null
+    },
+    {
+      "host": "wpf",
+      "routeId": "drop-cap-options",
+      "typeName": "DropCapOptionsDialog",
+      "sourcePath": "freew/FreeW.App.Host.Tests/PageLayoutDialogParityTests.cs",
       "modalMode": "modal",
       "tabs": [],
       "limitation": null
@@ -2088,6 +2136,33 @@
       "limitation": null
     },
     {
+      "id": "avalonia.columns.initial",
+      "host": "avalonia",
+      "routeId": "columns",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.columns.populated",
+      "host": "avalonia",
+      "routeId": "columns",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.columns.validation-error",
+      "host": "avalonia",
+      "routeId": "columns",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
       "id": "avalonia.comment-list.initial",
       "host": "avalonia",
       "routeId": "comment-list",
@@ -2331,6 +2406,33 @@
       "limitation": null
     },
     {
+      "id": "avalonia.drop-cap-options.initial",
+      "host": "avalonia",
+      "routeId": "drop-cap-options",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.drop-cap-options.populated",
+      "host": "avalonia",
+      "routeId": "drop-cap-options",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.drop-cap-options.validation-error",
+      "host": "avalonia",
+      "routeId": "drop-cap-options",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
       "id": "avalonia.field-picker.initial",
       "host": "avalonia",
       "routeId": "field-picker",
@@ -2487,6 +2589,33 @@
       "id": "avalonia.hyperlink.validation-error",
       "host": "avalonia",
       "routeId": "hyperlink",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.hyphenation-options.initial",
+      "host": "avalonia",
+      "routeId": "hyphenation-options",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.hyphenation-options.populated",
+      "host": "avalonia",
+      "routeId": "hyphenation-options",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.hyphenation-options.validation-error",
+      "host": "avalonia",
+      "routeId": "hyphenation-options",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
@@ -2730,6 +2859,33 @@
       "id": "avalonia.insert-smart-art.validation-error",
       "host": "avalonia",
       "routeId": "insert-smart-art",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.line-number-options.initial",
+      "host": "avalonia",
+      "routeId": "line-number-options",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.line-number-options.populated",
+      "host": "avalonia",
+      "routeId": "line-number-options",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.line-number-options.validation-error",
+      "host": "avalonia",
+      "routeId": "line-number-options",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
@@ -3138,6 +3294,24 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.paragraph.tab-indents-and-spacing",
+      "host": "avalonia",
+      "routeId": "paragraph",
+      "state": "relevant-tab",
+      "tab": "Indents and Spacing",
+      "description": "Selected tab: Indents and Spacing.",
+      "limitation": null
+    },
+    {
+      "id": "avalonia.paragraph.tab-line-and-page-breaks",
+      "host": "avalonia",
+      "routeId": "paragraph",
+      "state": "relevant-tab",
+      "tab": "Line and Page Breaks",
+      "description": "Selected tab: Line and Page Breaks.",
       "limitation": null
     },
     {
@@ -4629,6 +4803,33 @@
       "id": "wpf.document-inspector.validation-error",
       "host": "wpf",
       "routeId": "document-inspector",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.drop-cap-options.initial",
+      "host": "wpf",
+      "routeId": "drop-cap-options",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.drop-cap-options.populated",
+      "host": "wpf",
+      "routeId": "drop-cap-options",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null
+    },
+    {
+      "id": "wpf.drop-cap-options.validation-error",
+      "host": "wpf",
+      "routeId": "drop-cap-options",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",

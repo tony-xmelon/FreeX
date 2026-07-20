@@ -15,13 +15,13 @@ dotnet run --project freew/tools/FreeW.DialogVisualHarness -- compare --inventor
 
 ## Current Run
 
-- Inventory: 155 routes and 493 host-specific scenario states.
-- WPF: 14 real app-owned PNGs from `Page Setup` and `Options`, including initial, populated, validation/error, and tab states.
-- Avalonia: no PNG claimed. The machine's Avalonia headless renderer returned zero-byte output for the six shared target states; no placeholder was substituted.
-- Comparison: 12 `avalonia-headless-render-unavailable`, 141 `capture-hook-required`, 9 `native-picker-platform-limitation`, and 169 `not-implemented-on-host` rows. There are no visual parity passes or genuine visual mismatches because no pair has two real PNGs.
+- Inventory: 160 routes and 510 host-specific scenario states, including `Columns`, `Custom Paragraph Spacing`, `Drop Cap Options`, `Hyphenation Options`, and `Line Numbering Options` on both hosts.
+- WPF: 29 real app-owned PNGs from `Page Setup`, `Options`, and all five page-layout families, including initial, populated, validation/error, and tab states.
+- Avalonia: no PNG claimed. The machine's Avalonia headless renderer returned zero-byte output for all 27 shared target states; no placeholder was substituted.
+- Comparison: 27 `avalonia-headless-render-unavailable`, 138 `capture-hook-required`, 9 `native-picker-platform-limitation`, and 162 `not-implemented-on-host` rows. There are no visual parity passes or genuine visual mismatches because no pair has two real PNGs.
 
 ## Exact Hook Handoff
 
-No existing app-owned file was modified for capture. To unlock the six shared Avalonia captures, a temporary test-only adapter hook is needed after the dialog `Show()` plus layout pass: expose the rendered top-level surface to the adapter so an active desktop/headless backend can return a non-zero PNG at the fixed 560x600 logical target. The hook must also expose the target subtree bounds for panes/overlays and preserve focus/default/cancel/action-order metadata. The adapter must fail closed on zero bytes and must not synthesize a placeholder. The hook should be removed or replaced when the foreground capture path lands.
+No existing app-owned file was modified for capture. To unlock the 27 shared Avalonia captures, a temporary test-only adapter hook is needed after the dialog `Show()` plus layout pass: expose the rendered top-level surface to the adapter so an active desktop/headless backend can return a non-zero PNG at the fixed 560x600 logical target. The hook must also expose the target subtree bounds for panes/overlays and preserve focus/default/cancel/action-order metadata. The adapter must fail closed on zero bytes and must not synthesize a placeholder. The hook should be removed or replaced when the foreground capture path lands.
 
 The remaining `capture-hook-required` rows need route-specific app-owned constructors or command callbacks, especially dialogs that depend on a live shell/editor. Native file/printer pickers remain platform evidence and are not inferred from semantic checks. Page-layout-owned files were not changed.
