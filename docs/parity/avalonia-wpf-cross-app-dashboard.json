@@ -68,18 +68,18 @@
                      "app":  "FreeW",
                      "commandInventory":  {
                                               "totalCommands":  854,
-                                              "bothProfiles":  390,
-                                              "wpfProfileOnly":  246,
+                                              "bothProfiles":  399,
+                                              "wpfProfileOnly":  237,
                                               "avaloniaProfileOnly":  218,
                                               "missingWpfProfile":  218,
-                                              "missingAvaloniaProfile":  246,
+                                              "missingAvaloniaProfile":  237,
                                               "actionableMissingWpf":  0,
-                                              "actionableMissingAvalonia":  22,
+                                              "actionableMissingAvalonia":  13,
                                               "profileShapeOnly":  387,
                                               "commandIdAliases":  43,
                                               "platformOnly":  12,
                                               "deferred":  0,
-                                              "actionableGaps":  22,
+                                              "actionableGaps":  13,
                                               "classifiedRows":  true
                                           },
                      "nextSlice":  "Backstage print/export, WordArt/watermark, table/page-composition, shape/object, SmartArt polygon, and chart visual proof now have paired WPF/Avalonia renderer contracts plus no-Word real-capture smoke runs; chart proof also validates shared chart data signatures across hosts. All-up no-Word runner fallback drift is classified as runner evidence hygiene, and the standalone no-Word runner now writes a post-summary readiness manifest with comparable scenario IDs, candidate Word PNG baseline paths, remaining blocker IDs, and an explicit no-authoritative-Word-PNG-parity claim. Next FreeW evidence slices are the same runs with real Word PNG baselines on a Word-capable host and broader Word-authoritative drawing/object/chart/table comparisons."
