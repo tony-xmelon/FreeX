@@ -1,30 +1,27 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-07-20T08:44:06.0044930\u002B00:00",
-  "scenarioCount": 36,
-  "pairedCaptureCount": 36,
+  "generatedAtUtc": "2026-07-20T09:08:36.0398011\u002B00:00",
+  "scenarioCount": 31,
+  "pairedCaptureCount": 31,
   "passCount": 0,
-  "mismatchCount": 36,
+  "mismatchCount": 31,
   "limitationCount": 0,
-  "duplicateCaptureCount": 4,
+  "duplicateCaptureCount": 0,
   "declaredContextualTabCount": 0,
   "scenarioKindCounts": {
     "Startup": 2,
     "StaticRibbonTab": 6,
-    "ContextualSelection": 4,
     "BackstagePane": 7,
-    "StatusBar": 2,
+    "StatusBar": 1,
     "ViewState": 4,
     "WorkspaceRegion": 3,
     "AuxiliaryPane": 8
   },
   "mismatchCategoryCounts": {
     "app-owned-titlebar-raster": 1,
-    "contextual-tab-unavailable": 4,
-    "duplicate-capture": 4,
     "full-client-pixel-threshold": 1,
-    "ribbon-geometry": 36,
-    "workspace-geometry": 36
+    "ribbon-geometry": 31,
+    "workspace-geometry": 31
   },
   "wpf": {
     "schemaVersion": 1,
@@ -33,7 +30,7 @@
     "targetDpi": 96,
     "logicalClientWidth": 1280,
     "logicalClientHeight": 760,
-    "generatedAtUtc": "2026-07-20T08:42:40.3333813\u002B00:00",
+    "generatedAtUtc": "2026-07-20T09:07:24.6240211\u002B00:00",
     "captures": [
       {
         "scenarioId": "startup.slide",
@@ -988,510 +985,6 @@
         "limitations": []
       },
       {
-        "scenarioId": "contextual.shape",
-        "host": "wpf",
-        "captureStatus": "complete",
-        "fullImagePath": "wpf/full/contextual.shape.png",
-        "clientImagePath": "wpf/client/contextual.shape.png",
-        "logicalWidth": 1280,
-        "logicalHeight": 760,
-        "pixelWidth": 1280,
-        "pixelHeight": 760,
-        "dpiX": 96,
-        "dpiY": 96,
-        "sourceDpiX": 144,
-        "sourceDpiY": 144,
-        "nonBackgroundPixelCount": 890584,
-        "fullImageSha256": "622f902339fb9e2392c95cb87cd1f1cbf9abc9ff0c710a6ba1dac392d283c124",
-        "clientImageSha256": "622f902339fb9e2392c95cb87cd1f1cbf9abc9ff0c710a6ba1dac392d283c124",
-        "semanticState": {
-          "scenarioId": "contextual.shape",
-          "host": "wpf",
-          "activationId": "shape",
-          "currentSlideIndex": 0,
-          "currentSlideTitle": "Quarterly Review",
-          "selectedShapeIds": [
-            10
-          ],
-          "selectedShapeKind": "AutoShape",
-          "activeRibbonTabId": "home",
-          "visibleRibbonTabIds": [
-            "file",
-            "home",
-            "insert",
-            "design",
-            "transitions",
-            "animations",
-            "view"
-          ],
-          "visibleContextualTabIds": [],
-          "backstageOpen": false,
-          "backstagePane": "",
-          "focusedRole": "",
-          "focusedLabel": "",
-          "statusText": "Slide 1 / 3",
-          "showGridlines": true,
-          "showGuides": true,
-          "zoomMode": "FitToWindow",
-          "zoomPercent": 100,
-          "appOwnedTitleBarVisible": true,
-          "quickAccessButtonCount": 3,
-          "appIconIdentity": "shared-shell:FreeP",
-          "windowTitle": "Untitled \u2014 FreeP",
-          "statusViewModeControlCount": 0,
-          "statusZoomControlVisible": false,
-          "titleBarBounds": {
-            "x": 0,
-            "y": 0,
-            "width": 1280,
-            "height": 34,
-            "isVisible": true
-          },
-          "ribbonBounds": {
-            "x": 0,
-            "y": 34,
-            "width": 1280,
-            "height": 122.96000000000001,
-            "isVisible": true
-          },
-          "slidePaneBounds": {
-            "x": 0,
-            "y": 156.96,
-            "width": 180,
-            "height": 577.04,
-            "isVisible": true
-          },
-          "canvasBounds": {
-            "x": 180,
-            "y": 156.96,
-            "width": 1100,
-            "height": 517.04,
-            "isVisible": true
-          },
-          "notesPaneBounds": {
-            "x": 180,
-            "y": 674,
-            "width": 1100,
-            "height": 60,
-            "isVisible": true
-          },
-          "statusBarBounds": {
-            "x": 0,
-            "y": 734,
-            "width": 1280,
-            "height": 26,
-            "isVisible": true
-          },
-          "visibleAuxiliaryPanes": [],
-          "assertions": [
-            {
-              "id": "fixture-loaded",
-              "passed": true,
-              "detail": "Loaded 3 seeded slides."
-            },
-            {
-              "id": "slide-activated",
-              "passed": true,
-              "detail": "Activated slide index 0; expected 0."
-            },
-            {
-              "id": "selection-activated",
-              "passed": true,
-              "detail": "Selected shape ids: 10."
-            },
-            {
-              "id": "active-ribbon-tab",
-              "passed": true,
-              "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
-            },
-            {
-              "id": "contextual-tab-visible",
-              "passed": false,
-              "detail": "Expected contextual tab \u0027ShapeFormatTab\u0027, but FreeP declares no contextual ribbon tabs."
-            }
-          ]
-        },
-        "limitations": []
-      },
-      {
-        "scenarioId": "contextual.chart",
-        "host": "wpf",
-        "captureStatus": "complete",
-        "fullImagePath": "wpf/full/contextual.chart.png",
-        "clientImagePath": "wpf/client/contextual.chart.png",
-        "logicalWidth": 1280,
-        "logicalHeight": 760,
-        "pixelWidth": 1280,
-        "pixelHeight": 760,
-        "dpiX": 96,
-        "dpiY": 96,
-        "sourceDpiX": 144,
-        "sourceDpiY": 144,
-        "nonBackgroundPixelCount": 890584,
-        "fullImageSha256": "28c8fc04390486fee21ca260457018f43ec99cd7bf9a57a570f730d7cfd023b6",
-        "clientImageSha256": "28c8fc04390486fee21ca260457018f43ec99cd7bf9a57a570f730d7cfd023b6",
-        "semanticState": {
-          "scenarioId": "contextual.chart",
-          "host": "wpf",
-          "activationId": "chart",
-          "currentSlideIndex": 0,
-          "currentSlideTitle": "Quarterly Review",
-          "selectedShapeIds": [
-            20
-          ],
-          "selectedShapeKind": "Chart",
-          "activeRibbonTabId": "home",
-          "visibleRibbonTabIds": [
-            "file",
-            "home",
-            "insert",
-            "design",
-            "transitions",
-            "animations",
-            "view"
-          ],
-          "visibleContextualTabIds": [],
-          "backstageOpen": false,
-          "backstagePane": "",
-          "focusedRole": "",
-          "focusedLabel": "",
-          "statusText": "Slide 1 / 3",
-          "showGridlines": true,
-          "showGuides": true,
-          "zoomMode": "FitToWindow",
-          "zoomPercent": 100,
-          "appOwnedTitleBarVisible": true,
-          "quickAccessButtonCount": 3,
-          "appIconIdentity": "shared-shell:FreeP",
-          "windowTitle": "Untitled \u2014 FreeP",
-          "statusViewModeControlCount": 0,
-          "statusZoomControlVisible": false,
-          "titleBarBounds": {
-            "x": 0,
-            "y": 0,
-            "width": 1280,
-            "height": 34,
-            "isVisible": true
-          },
-          "ribbonBounds": {
-            "x": 0,
-            "y": 34,
-            "width": 1280,
-            "height": 122.96000000000001,
-            "isVisible": true
-          },
-          "slidePaneBounds": {
-            "x": 0,
-            "y": 156.96,
-            "width": 180,
-            "height": 577.04,
-            "isVisible": true
-          },
-          "canvasBounds": {
-            "x": 180,
-            "y": 156.96,
-            "width": 1100,
-            "height": 517.04,
-            "isVisible": true
-          },
-          "notesPaneBounds": {
-            "x": 180,
-            "y": 674,
-            "width": 1100,
-            "height": 60,
-            "isVisible": true
-          },
-          "statusBarBounds": {
-            "x": 0,
-            "y": 734,
-            "width": 1280,
-            "height": 26,
-            "isVisible": true
-          },
-          "visibleAuxiliaryPanes": [],
-          "assertions": [
-            {
-              "id": "fixture-loaded",
-              "passed": true,
-              "detail": "Loaded 3 seeded slides."
-            },
-            {
-              "id": "slide-activated",
-              "passed": true,
-              "detail": "Activated slide index 0; expected 0."
-            },
-            {
-              "id": "selection-activated",
-              "passed": true,
-              "detail": "Selected shape ids: 20."
-            },
-            {
-              "id": "active-ribbon-tab",
-              "passed": true,
-              "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
-            },
-            {
-              "id": "contextual-tab-visible",
-              "passed": false,
-              "detail": "Expected contextual tab \u0027ChartDesignTab\u0027, but FreeP declares no contextual ribbon tabs."
-            }
-          ]
-        },
-        "limitations": []
-      },
-      {
-        "scenarioId": "contextual.media",
-        "host": "wpf",
-        "captureStatus": "complete",
-        "fullImagePath": "wpf/full/contextual.media.png",
-        "clientImagePath": "wpf/client/contextual.media.png",
-        "logicalWidth": 1280,
-        "logicalHeight": 760,
-        "pixelWidth": 1280,
-        "pixelHeight": 760,
-        "dpiX": 96,
-        "dpiY": 96,
-        "sourceDpiX": 144,
-        "sourceDpiY": 144,
-        "nonBackgroundPixelCount": 890584,
-        "fullImageSha256": "ca2d63c045eb46a921e285cd8a2f6dee3f1a0a9747cc25e14cab09a8b730a0a7",
-        "clientImageSha256": "ca2d63c045eb46a921e285cd8a2f6dee3f1a0a9747cc25e14cab09a8b730a0a7",
-        "semanticState": {
-          "scenarioId": "contextual.media",
-          "host": "wpf",
-          "activationId": "media",
-          "currentSlideIndex": 0,
-          "currentSlideTitle": "Quarterly Review",
-          "selectedShapeIds": [
-            30
-          ],
-          "selectedShapeKind": "Media",
-          "activeRibbonTabId": "home",
-          "visibleRibbonTabIds": [
-            "file",
-            "home",
-            "insert",
-            "design",
-            "transitions",
-            "animations",
-            "view"
-          ],
-          "visibleContextualTabIds": [],
-          "backstageOpen": false,
-          "backstagePane": "",
-          "focusedRole": "",
-          "focusedLabel": "",
-          "statusText": "Slide 1 / 3",
-          "showGridlines": true,
-          "showGuides": true,
-          "zoomMode": "FitToWindow",
-          "zoomPercent": 100,
-          "appOwnedTitleBarVisible": true,
-          "quickAccessButtonCount": 3,
-          "appIconIdentity": "shared-shell:FreeP",
-          "windowTitle": "Untitled \u2014 FreeP",
-          "statusViewModeControlCount": 0,
-          "statusZoomControlVisible": false,
-          "titleBarBounds": {
-            "x": 0,
-            "y": 0,
-            "width": 1280,
-            "height": 34,
-            "isVisible": true
-          },
-          "ribbonBounds": {
-            "x": 0,
-            "y": 34,
-            "width": 1280,
-            "height": 122.96000000000001,
-            "isVisible": true
-          },
-          "slidePaneBounds": {
-            "x": 0,
-            "y": 156.96,
-            "width": 180,
-            "height": 577.04,
-            "isVisible": true
-          },
-          "canvasBounds": {
-            "x": 180,
-            "y": 156.96,
-            "width": 1100,
-            "height": 517.04,
-            "isVisible": true
-          },
-          "notesPaneBounds": {
-            "x": 180,
-            "y": 674,
-            "width": 1100,
-            "height": 60,
-            "isVisible": true
-          },
-          "statusBarBounds": {
-            "x": 0,
-            "y": 734,
-            "width": 1280,
-            "height": 26,
-            "isVisible": true
-          },
-          "visibleAuxiliaryPanes": [],
-          "assertions": [
-            {
-              "id": "fixture-loaded",
-              "passed": true,
-              "detail": "Loaded 3 seeded slides."
-            },
-            {
-              "id": "slide-activated",
-              "passed": true,
-              "detail": "Activated slide index 0; expected 0."
-            },
-            {
-              "id": "selection-activated",
-              "passed": true,
-              "detail": "Selected shape ids: 30."
-            },
-            {
-              "id": "active-ribbon-tab",
-              "passed": true,
-              "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
-            },
-            {
-              "id": "contextual-tab-visible",
-              "passed": false,
-              "detail": "Expected contextual tab \u0027MediaFormatTab\u0027, but FreeP declares no contextual ribbon tabs."
-            }
-          ]
-        },
-        "limitations": []
-      },
-      {
-        "scenarioId": "contextual.smartart",
-        "host": "wpf",
-        "captureStatus": "complete",
-        "fullImagePath": "wpf/full/contextual.smartart.png",
-        "clientImagePath": "wpf/client/contextual.smartart.png",
-        "logicalWidth": 1280,
-        "logicalHeight": 760,
-        "pixelWidth": 1280,
-        "pixelHeight": 760,
-        "dpiX": 96,
-        "dpiY": 96,
-        "sourceDpiX": 144,
-        "sourceDpiY": 144,
-        "nonBackgroundPixelCount": 890584,
-        "fullImageSha256": "608a80e8c302e441af66dfd1b91ea57091a58d8fc1706f619b00d038824c975d",
-        "clientImageSha256": "608a80e8c302e441af66dfd1b91ea57091a58d8fc1706f619b00d038824c975d",
-        "semanticState": {
-          "scenarioId": "contextual.smartart",
-          "host": "wpf",
-          "activationId": "smartart",
-          "currentSlideIndex": 0,
-          "currentSlideTitle": "Quarterly Review",
-          "selectedShapeIds": [
-            40
-          ],
-          "selectedShapeKind": "SmartArt",
-          "activeRibbonTabId": "home",
-          "visibleRibbonTabIds": [
-            "file",
-            "home",
-            "insert",
-            "design",
-            "transitions",
-            "animations",
-            "view"
-          ],
-          "visibleContextualTabIds": [],
-          "backstageOpen": false,
-          "backstagePane": "",
-          "focusedRole": "",
-          "focusedLabel": "",
-          "statusText": "Slide 1 / 3",
-          "showGridlines": true,
-          "showGuides": true,
-          "zoomMode": "FitToWindow",
-          "zoomPercent": 100,
-          "appOwnedTitleBarVisible": true,
-          "quickAccessButtonCount": 3,
-          "appIconIdentity": "shared-shell:FreeP",
-          "windowTitle": "Untitled \u2014 FreeP",
-          "statusViewModeControlCount": 0,
-          "statusZoomControlVisible": false,
-          "titleBarBounds": {
-            "x": 0,
-            "y": 0,
-            "width": 1280,
-            "height": 34,
-            "isVisible": true
-          },
-          "ribbonBounds": {
-            "x": 0,
-            "y": 34,
-            "width": 1280,
-            "height": 122.96000000000001,
-            "isVisible": true
-          },
-          "slidePaneBounds": {
-            "x": 0,
-            "y": 156.96,
-            "width": 180,
-            "height": 577.04,
-            "isVisible": true
-          },
-          "canvasBounds": {
-            "x": 180,
-            "y": 156.96,
-            "width": 1100,
-            "height": 517.04,
-            "isVisible": true
-          },
-          "notesPaneBounds": {
-            "x": 180,
-            "y": 674,
-            "width": 1100,
-            "height": 60,
-            "isVisible": true
-          },
-          "statusBarBounds": {
-            "x": 0,
-            "y": 734,
-            "width": 1280,
-            "height": 26,
-            "isVisible": true
-          },
-          "visibleAuxiliaryPanes": [],
-          "assertions": [
-            {
-              "id": "fixture-loaded",
-              "passed": true,
-              "detail": "Loaded 3 seeded slides."
-            },
-            {
-              "id": "slide-activated",
-              "passed": true,
-              "detail": "Activated slide index 0; expected 0."
-            },
-            {
-              "id": "selection-activated",
-              "passed": true,
-              "detail": "Selected shape ids: 40."
-            },
-            {
-              "id": "active-ribbon-tab",
-              "passed": true,
-              "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
-            },
-            {
-              "id": "contextual-tab-visible",
-              "passed": false,
-              "detail": "Expected contextual tab \u0027SmartArtDesignTab\u0027, but FreeP declares no contextual ribbon tabs."
-            }
-          ]
-        },
-        "limitations": []
-      },
-      {
         "scenarioId": "backstage.info",
         "host": "wpf",
         "captureStatus": "complete",
@@ -2232,8 +1725,8 @@
         "sourceDpiX": 144,
         "sourceDpiY": 144,
         "nonBackgroundPixelCount": 803294,
-        "fullImageSha256": "309fba0e6192ef9373d0c430f703c822c73d58f8989813bef5aebf2ab9b4dc0e",
-        "clientImageSha256": "309fba0e6192ef9373d0c430f703c822c73d58f8989813bef5aebf2ab9b4dc0e",
+        "fullImageSha256": "def6eba62c6484a0f3ec4d998d2585b8caae6f8df326cf471c299c99e42dd56f",
+        "clientImageSha256": "def6eba62c6484a0f3ec4d998d2585b8caae6f8df326cf471c299c99e42dd56f",
         "semanticState": {
           "scenarioId": "backstage.account",
           "host": "wpf",
@@ -2333,125 +1826,6 @@
               "id": "backstage-pane-activated",
               "passed": true,
               "detail": "Backstage pane is \u0027Account\u0027; expected \u0027Account\u0027."
-            }
-          ]
-        },
-        "limitations": []
-      },
-      {
-        "scenarioId": "status.slide-1",
-        "host": "wpf",
-        "captureStatus": "complete",
-        "fullImagePath": "wpf/full/status.slide-1.png",
-        "clientImagePath": "wpf/client/status.slide-1.png",
-        "logicalWidth": 1280,
-        "logicalHeight": 760,
-        "pixelWidth": 1280,
-        "pixelHeight": 760,
-        "dpiX": 96,
-        "dpiY": 96,
-        "sourceDpiX": 144,
-        "sourceDpiY": 144,
-        "nonBackgroundPixelCount": 890584,
-        "fullImageSha256": "89a520305712d549b2786bb48830e175d27336c8eddae7b2dfef0f4252fe4c0c",
-        "clientImageSha256": "89a520305712d549b2786bb48830e175d27336c8eddae7b2dfef0f4252fe4c0c",
-        "semanticState": {
-          "scenarioId": "status.slide-1",
-          "host": "wpf",
-          "activationId": "slide-1",
-          "currentSlideIndex": 0,
-          "currentSlideTitle": "Quarterly Review",
-          "selectedShapeIds": [],
-          "selectedShapeKind": "",
-          "activeRibbonTabId": "home",
-          "visibleRibbonTabIds": [
-            "file",
-            "home",
-            "insert",
-            "design",
-            "transitions",
-            "animations",
-            "view"
-          ],
-          "visibleContextualTabIds": [],
-          "backstageOpen": false,
-          "backstagePane": "",
-          "focusedRole": "",
-          "focusedLabel": "",
-          "statusText": "Slide 1 / 3",
-          "showGridlines": true,
-          "showGuides": true,
-          "zoomMode": "FitToWindow",
-          "zoomPercent": 100,
-          "appOwnedTitleBarVisible": true,
-          "quickAccessButtonCount": 3,
-          "appIconIdentity": "shared-shell:FreeP",
-          "windowTitle": "Untitled \u2014 FreeP",
-          "statusViewModeControlCount": 0,
-          "statusZoomControlVisible": false,
-          "titleBarBounds": {
-            "x": 0,
-            "y": 0,
-            "width": 1280,
-            "height": 34,
-            "isVisible": true
-          },
-          "ribbonBounds": {
-            "x": 0,
-            "y": 34,
-            "width": 1280,
-            "height": 122.96000000000001,
-            "isVisible": true
-          },
-          "slidePaneBounds": {
-            "x": 0,
-            "y": 156.96,
-            "width": 180,
-            "height": 577.04,
-            "isVisible": true
-          },
-          "canvasBounds": {
-            "x": 180,
-            "y": 156.96,
-            "width": 1100,
-            "height": 517.04,
-            "isVisible": true
-          },
-          "notesPaneBounds": {
-            "x": 180,
-            "y": 674,
-            "width": 1100,
-            "height": 60,
-            "isVisible": true
-          },
-          "statusBarBounds": {
-            "x": 0,
-            "y": 734,
-            "width": 1280,
-            "height": 26,
-            "isVisible": true
-          },
-          "visibleAuxiliaryPanes": [],
-          "assertions": [
-            {
-              "id": "fixture-loaded",
-              "passed": true,
-              "detail": "Loaded 3 seeded slides."
-            },
-            {
-              "id": "slide-activated",
-              "passed": true,
-              "detail": "Activated slide index 0; expected 0."
-            },
-            {
-              "id": "selection-activated",
-              "passed": true,
-              "detail": "Selected shape ids: ."
-            },
-            {
-              "id": "active-ribbon-tab",
-              "passed": true,
-              "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
             }
           ]
         },
@@ -2689,6 +2063,11 @@
               "detail": "Selected shape ids: 10."
             },
             {
+              "id": "view-state-activated-via-command",
+              "passed": true,
+              "detail": "Activated view state \u0027gridlines-guides\u0027 through the runtime ribbon command path."
+            },
+            {
               "id": "active-ribbon-tab",
               "passed": true,
               "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
@@ -2712,8 +2091,8 @@
         "sourceDpiX": 144,
         "sourceDpiY": 144,
         "nonBackgroundPixelCount": 890602,
-        "fullImageSha256": "3a322a834f88b8edde834dc5a44845453f7607b5c7575a1faa9d121c2efc378b",
-        "clientImageSha256": "3a322a834f88b8edde834dc5a44845453f7607b5c7575a1faa9d121c2efc378b",
+        "fullImageSha256": "4c2ce265aa3618ef10058a8ad79dfd0a550eb6a6c612e245a6ab0dbcf9b854d9",
+        "clientImageSha256": "4c2ce265aa3618ef10058a8ad79dfd0a550eb6a6c612e245a6ab0dbcf9b854d9",
         "semanticState": {
           "scenarioId": "view.clean-canvas",
           "host": "wpf",
@@ -2808,6 +2187,11 @@
               "id": "selection-activated",
               "passed": true,
               "detail": "Selected shape ids: 10."
+            },
+            {
+              "id": "view-state-activated-via-command",
+              "passed": true,
+              "detail": "Activated view state \u0027clean-canvas\u0027 through the runtime ribbon command path."
             },
             {
               "id": "active-ribbon-tab",
@@ -2931,6 +2315,11 @@
               "detail": "Selected shape ids: 20."
             },
             {
+              "id": "view-state-activated-via-command",
+              "passed": true,
+              "detail": "Activated view state \u0027zoom-fit\u0027 through the runtime ribbon command path."
+            },
+            {
               "id": "active-ribbon-tab",
               "passed": true,
               "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
@@ -3050,6 +2439,11 @@
               "id": "selection-activated",
               "passed": true,
               "detail": "Selected shape ids: 20."
+            },
+            {
+              "id": "view-state-activated-via-command",
+              "passed": true,
+              "detail": "Activated view state \u0027zoom-200\u0027 through the runtime ribbon command path."
             },
             {
               "id": "active-ribbon-tab",
@@ -4413,7 +3807,7 @@
     "targetDpi": 96,
     "logicalClientWidth": 1280,
     "logicalClientHeight": 760,
-    "generatedAtUtc": "2026-07-20T08:43:46.5484084\u002B00:00",
+    "generatedAtUtc": "2026-07-20T09:08:27.7928178\u002B00:00",
     "captures": [
       {
         "scenarioId": "startup.slide",
@@ -5368,510 +4762,6 @@
         "limitations": []
       },
       {
-        "scenarioId": "contextual.shape",
-        "host": "avalonia",
-        "captureStatus": "complete",
-        "fullImagePath": "avalonia/full/contextual.shape.png",
-        "clientImagePath": "avalonia/client/contextual.shape.png",
-        "logicalWidth": 1280,
-        "logicalHeight": 760,
-        "pixelWidth": 1280,
-        "pixelHeight": 760,
-        "dpiX": 96,
-        "dpiY": 96,
-        "sourceDpiX": 96,
-        "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 892183,
-        "fullImageSha256": "5d032e9635fbbc2eb97000e40af26a996df9ad67481cc10e2f565a3af9ef264f",
-        "clientImageSha256": "5d032e9635fbbc2eb97000e40af26a996df9ad67481cc10e2f565a3af9ef264f",
-        "semanticState": {
-          "scenarioId": "contextual.shape",
-          "host": "avalonia",
-          "activationId": "shape",
-          "currentSlideIndex": 0,
-          "currentSlideTitle": "Quarterly Review",
-          "selectedShapeIds": [
-            10
-          ],
-          "selectedShapeKind": "AutoShape",
-          "activeRibbonTabId": "home",
-          "visibleRibbonTabIds": [
-            "FileTab",
-            "home",
-            "insert",
-            "design",
-            "transitions",
-            "animations",
-            "view"
-          ],
-          "visibleContextualTabIds": [],
-          "backstageOpen": false,
-          "backstagePane": "",
-          "focusedRole": "",
-          "focusedLabel": "",
-          "statusText": "Slide 1 / 3",
-          "showGridlines": true,
-          "showGuides": true,
-          "zoomMode": "FitToWindow",
-          "zoomPercent": 100,
-          "appOwnedTitleBarVisible": true,
-          "quickAccessButtonCount": 3,
-          "appIconIdentity": "shared-shell:FreeP",
-          "windowTitle": "Untitled \u2014 FreeP",
-          "statusViewModeControlCount": 0,
-          "statusZoomControlVisible": false,
-          "titleBarBounds": {
-            "x": 0,
-            "y": 0,
-            "width": 1280,
-            "height": 34,
-            "isVisible": true
-          },
-          "ribbonBounds": {
-            "x": 0,
-            "y": 34,
-            "width": 1280,
-            "height": 132,
-            "isVisible": true
-          },
-          "slidePaneBounds": {
-            "x": 0,
-            "y": 166,
-            "width": 180,
-            "height": 568,
-            "isVisible": true
-          },
-          "canvasBounds": {
-            "x": 204,
-            "y": 190,
-            "width": 1052,
-            "height": 456,
-            "isVisible": true
-          },
-          "notesPaneBounds": {
-            "x": 180,
-            "y": 670,
-            "width": 1100,
-            "height": 64,
-            "isVisible": true
-          },
-          "statusBarBounds": {
-            "x": 0,
-            "y": 734,
-            "width": 1280,
-            "height": 26,
-            "isVisible": true
-          },
-          "visibleAuxiliaryPanes": [],
-          "assertions": [
-            {
-              "id": "fixture-loaded",
-              "passed": true,
-              "detail": "Loaded 3 seeded slides."
-            },
-            {
-              "id": "slide-activated",
-              "passed": true,
-              "detail": "Activated slide index 0; expected 0."
-            },
-            {
-              "id": "selection-activated",
-              "passed": true,
-              "detail": "Selected shape ids: 10."
-            },
-            {
-              "id": "active-ribbon-tab",
-              "passed": true,
-              "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
-            },
-            {
-              "id": "contextual-tab-visible",
-              "passed": false,
-              "detail": "Expected contextual tab \u0027ShapeFormatTab\u0027, but FreeP declares no contextual ribbon tabs."
-            }
-          ]
-        },
-        "limitations": []
-      },
-      {
-        "scenarioId": "contextual.chart",
-        "host": "avalonia",
-        "captureStatus": "complete",
-        "fullImagePath": "avalonia/full/contextual.chart.png",
-        "clientImagePath": "avalonia/client/contextual.chart.png",
-        "logicalWidth": 1280,
-        "logicalHeight": 760,
-        "pixelWidth": 1280,
-        "pixelHeight": 760,
-        "dpiX": 96,
-        "dpiY": 96,
-        "sourceDpiX": 96,
-        "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 892183,
-        "fullImageSha256": "6d84db3668564df862a46ab49e7efa695232a4f820e8fd12ef855763b8286baa",
-        "clientImageSha256": "6d84db3668564df862a46ab49e7efa695232a4f820e8fd12ef855763b8286baa",
-        "semanticState": {
-          "scenarioId": "contextual.chart",
-          "host": "avalonia",
-          "activationId": "chart",
-          "currentSlideIndex": 0,
-          "currentSlideTitle": "Quarterly Review",
-          "selectedShapeIds": [
-            20
-          ],
-          "selectedShapeKind": "Chart",
-          "activeRibbonTabId": "home",
-          "visibleRibbonTabIds": [
-            "FileTab",
-            "home",
-            "insert",
-            "design",
-            "transitions",
-            "animations",
-            "view"
-          ],
-          "visibleContextualTabIds": [],
-          "backstageOpen": false,
-          "backstagePane": "",
-          "focusedRole": "",
-          "focusedLabel": "",
-          "statusText": "Slide 1 / 3",
-          "showGridlines": true,
-          "showGuides": true,
-          "zoomMode": "FitToWindow",
-          "zoomPercent": 100,
-          "appOwnedTitleBarVisible": true,
-          "quickAccessButtonCount": 3,
-          "appIconIdentity": "shared-shell:FreeP",
-          "windowTitle": "Untitled \u2014 FreeP",
-          "statusViewModeControlCount": 0,
-          "statusZoomControlVisible": false,
-          "titleBarBounds": {
-            "x": 0,
-            "y": 0,
-            "width": 1280,
-            "height": 34,
-            "isVisible": true
-          },
-          "ribbonBounds": {
-            "x": 0,
-            "y": 34,
-            "width": 1280,
-            "height": 132,
-            "isVisible": true
-          },
-          "slidePaneBounds": {
-            "x": 0,
-            "y": 166,
-            "width": 180,
-            "height": 568,
-            "isVisible": true
-          },
-          "canvasBounds": {
-            "x": 204,
-            "y": 190,
-            "width": 1052,
-            "height": 456,
-            "isVisible": true
-          },
-          "notesPaneBounds": {
-            "x": 180,
-            "y": 670,
-            "width": 1100,
-            "height": 64,
-            "isVisible": true
-          },
-          "statusBarBounds": {
-            "x": 0,
-            "y": 734,
-            "width": 1280,
-            "height": 26,
-            "isVisible": true
-          },
-          "visibleAuxiliaryPanes": [],
-          "assertions": [
-            {
-              "id": "fixture-loaded",
-              "passed": true,
-              "detail": "Loaded 3 seeded slides."
-            },
-            {
-              "id": "slide-activated",
-              "passed": true,
-              "detail": "Activated slide index 0; expected 0."
-            },
-            {
-              "id": "selection-activated",
-              "passed": true,
-              "detail": "Selected shape ids: 20."
-            },
-            {
-              "id": "active-ribbon-tab",
-              "passed": true,
-              "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
-            },
-            {
-              "id": "contextual-tab-visible",
-              "passed": false,
-              "detail": "Expected contextual tab \u0027ChartDesignTab\u0027, but FreeP declares no contextual ribbon tabs."
-            }
-          ]
-        },
-        "limitations": []
-      },
-      {
-        "scenarioId": "contextual.media",
-        "host": "avalonia",
-        "captureStatus": "complete",
-        "fullImagePath": "avalonia/full/contextual.media.png",
-        "clientImagePath": "avalonia/client/contextual.media.png",
-        "logicalWidth": 1280,
-        "logicalHeight": 760,
-        "pixelWidth": 1280,
-        "pixelHeight": 760,
-        "dpiX": 96,
-        "dpiY": 96,
-        "sourceDpiX": 96,
-        "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 892183,
-        "fullImageSha256": "fd3216f80c4df679bfa010b01e67c7274c440a473022cd0773be359f4e3863a7",
-        "clientImageSha256": "fd3216f80c4df679bfa010b01e67c7274c440a473022cd0773be359f4e3863a7",
-        "semanticState": {
-          "scenarioId": "contextual.media",
-          "host": "avalonia",
-          "activationId": "media",
-          "currentSlideIndex": 0,
-          "currentSlideTitle": "Quarterly Review",
-          "selectedShapeIds": [
-            30
-          ],
-          "selectedShapeKind": "Media",
-          "activeRibbonTabId": "home",
-          "visibleRibbonTabIds": [
-            "FileTab",
-            "home",
-            "insert",
-            "design",
-            "transitions",
-            "animations",
-            "view"
-          ],
-          "visibleContextualTabIds": [],
-          "backstageOpen": false,
-          "backstagePane": "",
-          "focusedRole": "",
-          "focusedLabel": "",
-          "statusText": "Slide 1 / 3",
-          "showGridlines": true,
-          "showGuides": true,
-          "zoomMode": "FitToWindow",
-          "zoomPercent": 100,
-          "appOwnedTitleBarVisible": true,
-          "quickAccessButtonCount": 3,
-          "appIconIdentity": "shared-shell:FreeP",
-          "windowTitle": "Untitled \u2014 FreeP",
-          "statusViewModeControlCount": 0,
-          "statusZoomControlVisible": false,
-          "titleBarBounds": {
-            "x": 0,
-            "y": 0,
-            "width": 1280,
-            "height": 34,
-            "isVisible": true
-          },
-          "ribbonBounds": {
-            "x": 0,
-            "y": 34,
-            "width": 1280,
-            "height": 132,
-            "isVisible": true
-          },
-          "slidePaneBounds": {
-            "x": 0,
-            "y": 166,
-            "width": 180,
-            "height": 568,
-            "isVisible": true
-          },
-          "canvasBounds": {
-            "x": 204,
-            "y": 190,
-            "width": 1052,
-            "height": 456,
-            "isVisible": true
-          },
-          "notesPaneBounds": {
-            "x": 180,
-            "y": 670,
-            "width": 1100,
-            "height": 64,
-            "isVisible": true
-          },
-          "statusBarBounds": {
-            "x": 0,
-            "y": 734,
-            "width": 1280,
-            "height": 26,
-            "isVisible": true
-          },
-          "visibleAuxiliaryPanes": [],
-          "assertions": [
-            {
-              "id": "fixture-loaded",
-              "passed": true,
-              "detail": "Loaded 3 seeded slides."
-            },
-            {
-              "id": "slide-activated",
-              "passed": true,
-              "detail": "Activated slide index 0; expected 0."
-            },
-            {
-              "id": "selection-activated",
-              "passed": true,
-              "detail": "Selected shape ids: 30."
-            },
-            {
-              "id": "active-ribbon-tab",
-              "passed": true,
-              "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
-            },
-            {
-              "id": "contextual-tab-visible",
-              "passed": false,
-              "detail": "Expected contextual tab \u0027MediaFormatTab\u0027, but FreeP declares no contextual ribbon tabs."
-            }
-          ]
-        },
-        "limitations": []
-      },
-      {
-        "scenarioId": "contextual.smartart",
-        "host": "avalonia",
-        "captureStatus": "complete",
-        "fullImagePath": "avalonia/full/contextual.smartart.png",
-        "clientImagePath": "avalonia/client/contextual.smartart.png",
-        "logicalWidth": 1280,
-        "logicalHeight": 760,
-        "pixelWidth": 1280,
-        "pixelHeight": 760,
-        "dpiX": 96,
-        "dpiY": 96,
-        "sourceDpiX": 96,
-        "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 892183,
-        "fullImageSha256": "eeda559b1f271f08746888c3504aa4e0a79f820e87ee2cb354e2c780e8fa8cc9",
-        "clientImageSha256": "eeda559b1f271f08746888c3504aa4e0a79f820e87ee2cb354e2c780e8fa8cc9",
-        "semanticState": {
-          "scenarioId": "contextual.smartart",
-          "host": "avalonia",
-          "activationId": "smartart",
-          "currentSlideIndex": 0,
-          "currentSlideTitle": "Quarterly Review",
-          "selectedShapeIds": [
-            40
-          ],
-          "selectedShapeKind": "SmartArt",
-          "activeRibbonTabId": "home",
-          "visibleRibbonTabIds": [
-            "FileTab",
-            "home",
-            "insert",
-            "design",
-            "transitions",
-            "animations",
-            "view"
-          ],
-          "visibleContextualTabIds": [],
-          "backstageOpen": false,
-          "backstagePane": "",
-          "focusedRole": "",
-          "focusedLabel": "",
-          "statusText": "Slide 1 / 3",
-          "showGridlines": true,
-          "showGuides": true,
-          "zoomMode": "FitToWindow",
-          "zoomPercent": 100,
-          "appOwnedTitleBarVisible": true,
-          "quickAccessButtonCount": 3,
-          "appIconIdentity": "shared-shell:FreeP",
-          "windowTitle": "Untitled \u2014 FreeP",
-          "statusViewModeControlCount": 0,
-          "statusZoomControlVisible": false,
-          "titleBarBounds": {
-            "x": 0,
-            "y": 0,
-            "width": 1280,
-            "height": 34,
-            "isVisible": true
-          },
-          "ribbonBounds": {
-            "x": 0,
-            "y": 34,
-            "width": 1280,
-            "height": 132,
-            "isVisible": true
-          },
-          "slidePaneBounds": {
-            "x": 0,
-            "y": 166,
-            "width": 180,
-            "height": 568,
-            "isVisible": true
-          },
-          "canvasBounds": {
-            "x": 204,
-            "y": 190,
-            "width": 1052,
-            "height": 456,
-            "isVisible": true
-          },
-          "notesPaneBounds": {
-            "x": 180,
-            "y": 670,
-            "width": 1100,
-            "height": 64,
-            "isVisible": true
-          },
-          "statusBarBounds": {
-            "x": 0,
-            "y": 734,
-            "width": 1280,
-            "height": 26,
-            "isVisible": true
-          },
-          "visibleAuxiliaryPanes": [],
-          "assertions": [
-            {
-              "id": "fixture-loaded",
-              "passed": true,
-              "detail": "Loaded 3 seeded slides."
-            },
-            {
-              "id": "slide-activated",
-              "passed": true,
-              "detail": "Activated slide index 0; expected 0."
-            },
-            {
-              "id": "selection-activated",
-              "passed": true,
-              "detail": "Selected shape ids: 40."
-            },
-            {
-              "id": "active-ribbon-tab",
-              "passed": true,
-              "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
-            },
-            {
-              "id": "contextual-tab-visible",
-              "passed": false,
-              "detail": "Expected contextual tab \u0027SmartArtDesignTab\u0027, but FreeP declares no contextual ribbon tabs."
-            }
-          ]
-        },
-        "limitations": []
-      },
-      {
         "scenarioId": "backstage.info",
         "host": "avalonia",
         "captureStatus": "complete",
@@ -6612,8 +5502,8 @@
         "sourceDpiX": 96,
         "sourceDpiY": 96,
         "nonBackgroundPixelCount": 805089,
-        "fullImageSha256": "02550ec9988d6bb4b3080d0d15fa9e9a6b798c30547e095525accfeb5d87ce9b",
-        "clientImageSha256": "02550ec9988d6bb4b3080d0d15fa9e9a6b798c30547e095525accfeb5d87ce9b",
+        "fullImageSha256": "43c109655bff56e6c3d359ffb5fdfec6f7d5f66fe2bc22dde0280ff43241f0bf",
+        "clientImageSha256": "43c109655bff56e6c3d359ffb5fdfec6f7d5f66fe2bc22dde0280ff43241f0bf",
         "semanticState": {
           "scenarioId": "backstage.account",
           "host": "avalonia",
@@ -6713,125 +5603,6 @@
               "id": "backstage-pane-activated",
               "passed": true,
               "detail": "Backstage pane is \u0027Account\u0027; expected \u0027Account\u0027."
-            }
-          ]
-        },
-        "limitations": []
-      },
-      {
-        "scenarioId": "status.slide-1",
-        "host": "avalonia",
-        "captureStatus": "complete",
-        "fullImagePath": "avalonia/full/status.slide-1.png",
-        "clientImagePath": "avalonia/client/status.slide-1.png",
-        "logicalWidth": 1280,
-        "logicalHeight": 760,
-        "pixelWidth": 1280,
-        "pixelHeight": 760,
-        "dpiX": 96,
-        "dpiY": 96,
-        "sourceDpiX": 96,
-        "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 892183,
-        "fullImageSha256": "c61a684b7582af699ffb7a685d0ae358ccd30d87a203c1a8873ef583126a03bc",
-        "clientImageSha256": "c61a684b7582af699ffb7a685d0ae358ccd30d87a203c1a8873ef583126a03bc",
-        "semanticState": {
-          "scenarioId": "status.slide-1",
-          "host": "avalonia",
-          "activationId": "slide-1",
-          "currentSlideIndex": 0,
-          "currentSlideTitle": "Quarterly Review",
-          "selectedShapeIds": [],
-          "selectedShapeKind": "",
-          "activeRibbonTabId": "home",
-          "visibleRibbonTabIds": [
-            "FileTab",
-            "home",
-            "insert",
-            "design",
-            "transitions",
-            "animations",
-            "view"
-          ],
-          "visibleContextualTabIds": [],
-          "backstageOpen": false,
-          "backstagePane": "",
-          "focusedRole": "",
-          "focusedLabel": "",
-          "statusText": "Slide 1 / 3",
-          "showGridlines": true,
-          "showGuides": true,
-          "zoomMode": "FitToWindow",
-          "zoomPercent": 100,
-          "appOwnedTitleBarVisible": true,
-          "quickAccessButtonCount": 3,
-          "appIconIdentity": "shared-shell:FreeP",
-          "windowTitle": "Untitled \u2014 FreeP",
-          "statusViewModeControlCount": 0,
-          "statusZoomControlVisible": false,
-          "titleBarBounds": {
-            "x": 0,
-            "y": 0,
-            "width": 1280,
-            "height": 34,
-            "isVisible": true
-          },
-          "ribbonBounds": {
-            "x": 0,
-            "y": 34,
-            "width": 1280,
-            "height": 132,
-            "isVisible": true
-          },
-          "slidePaneBounds": {
-            "x": 0,
-            "y": 166,
-            "width": 180,
-            "height": 568,
-            "isVisible": true
-          },
-          "canvasBounds": {
-            "x": 204,
-            "y": 190,
-            "width": 1052,
-            "height": 456,
-            "isVisible": true
-          },
-          "notesPaneBounds": {
-            "x": 180,
-            "y": 670,
-            "width": 1100,
-            "height": 64,
-            "isVisible": true
-          },
-          "statusBarBounds": {
-            "x": 0,
-            "y": 734,
-            "width": 1280,
-            "height": 26,
-            "isVisible": true
-          },
-          "visibleAuxiliaryPanes": [],
-          "assertions": [
-            {
-              "id": "fixture-loaded",
-              "passed": true,
-              "detail": "Loaded 3 seeded slides."
-            },
-            {
-              "id": "slide-activated",
-              "passed": true,
-              "detail": "Activated slide index 0; expected 0."
-            },
-            {
-              "id": "selection-activated",
-              "passed": true,
-              "detail": "Selected shape ids: ."
-            },
-            {
-              "id": "active-ribbon-tab",
-              "passed": true,
-              "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
             }
           ]
         },
@@ -7069,6 +5840,11 @@
               "detail": "Selected shape ids: 10."
             },
             {
+              "id": "view-state-activated-via-command",
+              "passed": true,
+              "detail": "Activated view state \u0027gridlines-guides\u0027 through the runtime ribbon command path."
+            },
+            {
               "id": "active-ribbon-tab",
               "passed": true,
               "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
@@ -7091,9 +5867,9 @@
         "dpiY": 96,
         "sourceDpiX": 96,
         "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 892121,
-        "fullImageSha256": "92b56627ed8d4d31a08df3fdfb7da444e368eba67ebb85869cc1e4db0af1b664",
-        "clientImageSha256": "92b56627ed8d4d31a08df3fdfb7da444e368eba67ebb85869cc1e4db0af1b664",
+        "nonBackgroundPixelCount": 892343,
+        "fullImageSha256": "42d00ea6af7671cdb409e7d2e6955ffc578fa7dcd603e20a7c56061cbd04a59c",
+        "clientImageSha256": "42d00ea6af7671cdb409e7d2e6955ffc578fa7dcd603e20a7c56061cbd04a59c",
         "semanticState": {
           "scenarioId": "view.clean-canvas",
           "host": "avalonia",
@@ -7188,6 +5964,11 @@
               "id": "selection-activated",
               "passed": true,
               "detail": "Selected shape ids: 10."
+            },
+            {
+              "id": "view-state-activated-via-command",
+              "passed": true,
+              "detail": "Activated view state \u0027clean-canvas\u0027 through the runtime ribbon command path."
             },
             {
               "id": "active-ribbon-tab",
@@ -7311,6 +6092,11 @@
               "detail": "Selected shape ids: 20."
             },
             {
+              "id": "view-state-activated-via-command",
+              "passed": true,
+              "detail": "Activated view state \u0027zoom-fit\u0027 through the runtime ribbon command path."
+            },
+            {
               "id": "active-ribbon-tab",
               "passed": true,
               "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
@@ -7430,6 +6216,11 @@
               "id": "selection-activated",
               "passed": true,
               "detail": "Selected shape ids: 20."
+            },
+            {
+              "id": "view-state-activated-via-command",
+              "passed": true,
+              "detail": "Activated view state \u0027zoom-200\u0027 through the runtime ribbon command path."
             },
             {
               "id": "active-ribbon-tab",
@@ -8956,15 +7747,12 @@
       "wpfClientImagePath": "wpf/client/ribbon.home.png",
       "avaloniaClientImagePath": "avalonia/client/ribbon.home.png",
       "mismatchCategories": [
-        "duplicate-capture",
         "ribbon-geometry",
         "workspace-geometry"
       ],
       "details": [
         "Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.",
-        "Slide pane, canvas, or notes-pane bounds differ.",
-        "WPF client PNG is byte-identical to: status.slide-1.",
-        "Avalonia client PNG is byte-identical to: status.slide-1."
+        "Slide pane, canvas, or notes-pane bounds differ."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -9414,334 +8202,6 @@
         "luminanceRange": 255,
         "luminanceStandardDeviation": 56.29123507317803,
         "edgePixelRatio": 0.04491673519736842,
-        "isValid": true,
-        "failures": []
-      },
-      "wpfTitleBarRasterValidation": {
-        "sampledPixelCount": 43520,
-        "accentPixelCount": 42822,
-        "accentPixelRatio": 0.9839613970588236,
-        "isValid": true
-      },
-      "avaloniaTitleBarRasterValidation": {
-        "sampledPixelCount": 43520,
-        "accentPixelCount": 42891,
-        "accentPixelRatio": 0.985546875,
-        "isValid": true
-      }
-    },
-    {
-      "scenarioId": "contextual.shape",
-      "kind": "contextualSelection",
-      "classification": "mismatch",
-      "wpfFullImagePath": "wpf/full/contextual.shape.png",
-      "avaloniaFullImagePath": "avalonia/full/contextual.shape.png",
-      "wpfClientImagePath": "wpf/client/contextual.shape.png",
-      "avaloniaClientImagePath": "avalonia/client/contextual.shape.png",
-      "mismatchCategories": [
-        "contextual-tab-unavailable",
-        "ribbon-geometry",
-        "workspace-geometry"
-      ],
-      "details": [
-        "contextual-tab-visible: Expected contextual tab \u0027ShapeFormatTab\u0027, but FreeP declares no contextual ribbon tabs.",
-        "Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.",
-        "Slide pane, canvas, or notes-pane bounds differ."
-      ],
-      "pixelMetrics": {
-        "wpfPixelWidth": 1280,
-        "wpfPixelHeight": 760,
-        "avaloniaPixelWidth": 1280,
-        "avaloniaPixelHeight": 760,
-        "normalizedWidth": 1280,
-        "normalizedHeight": 760,
-        "changedPixelRatio": 0.15633943256578947,
-        "foregroundChangedPixelRatio": 0.1701594668104736,
-        "meanChannelDelta": 10.837509251644736,
-        "maxChannelDelta": 255,
-        "perceptualHashDistance": 4,
-        "wpfPerceptualHash": "0080899580811001",
-        "avaloniaPerceptualHash": "0081819580810000",
-        "maximumChangedPixelRatio": 0.2,
-        "maximumMeanChannelDelta": 18,
-        "maximumPerceptualHashDistance": 18,
-        "thresholdPassed": true,
-        "heatmapPath": "diff/contextual.shape.png",
-        "wpfImageSha256": "622f902339fb9e2392c95cb87cd1f1cbf9abc9ff0c710a6ba1dac392d283c124",
-        "avaloniaImageSha256": "5d032e9635fbbc2eb97000e40af26a996df9ad67481cc10e2f565a3af9ef264f",
-        "heatmapSha256": "34d2cdeeed0d50e2f8fc1fc96f52c25e3fe979ca908b8f2ae8a4c68d4cc24d03"
-      },
-      "wpfContentValidation": {
-        "width": 1280,
-        "height": 760,
-        "meanAlpha": 1,
-        "opaquePixelRatio": 1,
-        "nearTransparentPixelRatio": 0,
-        "nearBlackPixelRatio": 0.002789884868421053,
-        "meanLuminance": 220.64358252977064,
-        "luminanceRange": 255,
-        "luminanceStandardDeviation": 56.503610520487975,
-        "edgePixelRatio": 0.05795641447368421,
-        "isValid": true,
-        "failures": []
-      },
-      "avaloniaContentValidation": {
-        "width": 1280,
-        "height": 760,
-        "meanAlpha": 1,
-        "opaquePixelRatio": 1,
-        "nearTransparentPixelRatio": 0,
-        "nearBlackPixelRatio": 0.0018832236842105264,
-        "meanLuminance": 222.92754882392288,
-        "luminanceRange": 255,
-        "luminanceStandardDeviation": 56.78468356035701,
-        "edgePixelRatio": 0.055469777960526316,
-        "isValid": true,
-        "failures": []
-      },
-      "wpfTitleBarRasterValidation": {
-        "sampledPixelCount": 43520,
-        "accentPixelCount": 42822,
-        "accentPixelRatio": 0.9839613970588236,
-        "isValid": true
-      },
-      "avaloniaTitleBarRasterValidation": {
-        "sampledPixelCount": 43520,
-        "accentPixelCount": 42891,
-        "accentPixelRatio": 0.985546875,
-        "isValid": true
-      }
-    },
-    {
-      "scenarioId": "contextual.chart",
-      "kind": "contextualSelection",
-      "classification": "mismatch",
-      "wpfFullImagePath": "wpf/full/contextual.chart.png",
-      "avaloniaFullImagePath": "avalonia/full/contextual.chart.png",
-      "wpfClientImagePath": "wpf/client/contextual.chart.png",
-      "avaloniaClientImagePath": "avalonia/client/contextual.chart.png",
-      "mismatchCategories": [
-        "contextual-tab-unavailable",
-        "ribbon-geometry",
-        "workspace-geometry"
-      ],
-      "details": [
-        "contextual-tab-visible: Expected contextual tab \u0027ChartDesignTab\u0027, but FreeP declares no contextual ribbon tabs.",
-        "Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.",
-        "Slide pane, canvas, or notes-pane bounds differ."
-      ],
-      "pixelMetrics": {
-        "wpfPixelWidth": 1280,
-        "wpfPixelHeight": 760,
-        "avaloniaPixelWidth": 1280,
-        "avaloniaPixelHeight": 760,
-        "normalizedWidth": 1280,
-        "normalizedHeight": 760,
-        "changedPixelRatio": 0.15866365131578947,
-        "foregroundChangedPixelRatio": 0.17268914097367283,
-        "meanChannelDelta": 10.998856565241228,
-        "maxChannelDelta": 255,
-        "perceptualHashDistance": 4,
-        "wpfPerceptualHash": "0080899580811001",
-        "avaloniaPerceptualHash": "0081819580810000",
-        "maximumChangedPixelRatio": 0.2,
-        "maximumMeanChannelDelta": 18,
-        "maximumPerceptualHashDistance": 18,
-        "thresholdPassed": true,
-        "heatmapPath": "diff/contextual.chart.png",
-        "wpfImageSha256": "28c8fc04390486fee21ca260457018f43ec99cd7bf9a57a570f730d7cfd023b6",
-        "avaloniaImageSha256": "6d84db3668564df862a46ab49e7efa695232a4f820e8fd12ef855763b8286baa",
-        "heatmapSha256": "17f6ae794d4e63cb43a42db301c9db79dd640e82f3549c2de23d31978c726b05"
-      },
-      "wpfContentValidation": {
-        "width": 1280,
-        "height": 760,
-        "meanAlpha": 1,
-        "opaquePixelRatio": 1,
-        "nearTransparentPixelRatio": 0,
-        "nearBlackPixelRatio": 0.002789884868421053,
-        "meanLuminance": 220.5519488506989,
-        "luminanceRange": 255,
-        "luminanceStandardDeviation": 56.53514521759443,
-        "edgePixelRatio": 0.05973992598684211,
-        "isValid": true,
-        "failures": []
-      },
-      "avaloniaContentValidation": {
-        "width": 1280,
-        "height": 760,
-        "meanAlpha": 1,
-        "opaquePixelRatio": 1,
-        "nearTransparentPixelRatio": 0,
-        "nearBlackPixelRatio": 0.0018832236842105264,
-        "meanLuminance": 222.83399209181226,
-        "luminanceRange": 255,
-        "luminanceStandardDeviation": 56.81278971717591,
-        "edgePixelRatio": 0.0571484375,
-        "isValid": true,
-        "failures": []
-      },
-      "wpfTitleBarRasterValidation": {
-        "sampledPixelCount": 43520,
-        "accentPixelCount": 42822,
-        "accentPixelRatio": 0.9839613970588236,
-        "isValid": true
-      },
-      "avaloniaTitleBarRasterValidation": {
-        "sampledPixelCount": 43520,
-        "accentPixelCount": 42891,
-        "accentPixelRatio": 0.985546875,
-        "isValid": true
-      }
-    },
-    {
-      "scenarioId": "contextual.media",
-      "kind": "contextualSelection",
-      "classification": "mismatch",
-      "wpfFullImagePath": "wpf/full/contextual.media.png",
-      "avaloniaFullImagePath": "avalonia/full/contextual.media.png",
-      "wpfClientImagePath": "wpf/client/contextual.media.png",
-      "avaloniaClientImagePath": "avalonia/client/contextual.media.png",
-      "mismatchCategories": [
-        "contextual-tab-unavailable",
-        "ribbon-geometry",
-        "workspace-geometry"
-      ],
-      "details": [
-        "contextual-tab-visible: Expected contextual tab \u0027MediaFormatTab\u0027, but FreeP declares no contextual ribbon tabs.",
-        "Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.",
-        "Slide pane, canvas, or notes-pane bounds differ."
-      ],
-      "pixelMetrics": {
-        "wpfPixelWidth": 1280,
-        "wpfPixelHeight": 760,
-        "avaloniaPixelWidth": 1280,
-        "avaloniaPixelHeight": 760,
-        "normalizedWidth": 1280,
-        "normalizedHeight": 760,
-        "changedPixelRatio": 0.15526932565789472,
-        "foregroundChangedPixelRatio": 0.168994764995396,
-        "meanChannelDelta": 10.71207579495614,
-        "maxChannelDelta": 255,
-        "perceptualHashDistance": 4,
-        "wpfPerceptualHash": "0080899580811001",
-        "avaloniaPerceptualHash": "0081819580810000",
-        "maximumChangedPixelRatio": 0.2,
-        "maximumMeanChannelDelta": 18,
-        "maximumPerceptualHashDistance": 18,
-        "thresholdPassed": true,
-        "heatmapPath": "diff/contextual.media.png",
-        "wpfImageSha256": "ca2d63c045eb46a921e285cd8a2f6dee3f1a0a9747cc25e14cab09a8b730a0a7",
-        "avaloniaImageSha256": "fd3216f80c4df679bfa010b01e67c7274c440a473022cd0773be359f4e3863a7",
-        "heatmapSha256": "bb77129f2421924042d2da4cdde3981d8039cbf8391ba35e8f24c9fe20ec073c"
-      },
-      "wpfContentValidation": {
-        "width": 1280,
-        "height": 760,
-        "meanAlpha": 1,
-        "opaquePixelRatio": 1,
-        "nearTransparentPixelRatio": 0,
-        "nearBlackPixelRatio": 0.002789884868421053,
-        "meanLuminance": 220.80991295739906,
-        "luminanceRange": 255,
-        "luminanceStandardDeviation": 56.33849562950876,
-        "edgePixelRatio": 0.05680715460526316,
-        "isValid": true,
-        "failures": []
-      },
-      "avaloniaContentValidation": {
-        "width": 1280,
-        "height": 760,
-        "meanAlpha": 1,
-        "opaquePixelRatio": 1,
-        "nearTransparentPixelRatio": 0,
-        "nearBlackPixelRatio": 0.0018832236842105264,
-        "meanLuminance": 223.08508887531937,
-        "luminanceRange": 255,
-        "luminanceStandardDeviation": 56.587062979628634,
-        "edgePixelRatio": 0.055291940789473686,
-        "isValid": true,
-        "failures": []
-      },
-      "wpfTitleBarRasterValidation": {
-        "sampledPixelCount": 43520,
-        "accentPixelCount": 42822,
-        "accentPixelRatio": 0.9839613970588236,
-        "isValid": true
-      },
-      "avaloniaTitleBarRasterValidation": {
-        "sampledPixelCount": 43520,
-        "accentPixelCount": 42891,
-        "accentPixelRatio": 0.985546875,
-        "isValid": true
-      }
-    },
-    {
-      "scenarioId": "contextual.smartart",
-      "kind": "contextualSelection",
-      "classification": "mismatch",
-      "wpfFullImagePath": "wpf/full/contextual.smartart.png",
-      "avaloniaFullImagePath": "avalonia/full/contextual.smartart.png",
-      "wpfClientImagePath": "wpf/client/contextual.smartart.png",
-      "avaloniaClientImagePath": "avalonia/client/contextual.smartart.png",
-      "mismatchCategories": [
-        "contextual-tab-unavailable",
-        "ribbon-geometry",
-        "workspace-geometry"
-      ],
-      "details": [
-        "contextual-tab-visible: Expected contextual tab \u0027SmartArtDesignTab\u0027, but FreeP declares no contextual ribbon tabs.",
-        "Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.",
-        "Slide pane, canvas, or notes-pane bounds differ."
-      ],
-      "pixelMetrics": {
-        "wpfPixelWidth": 1280,
-        "wpfPixelHeight": 760,
-        "avaloniaPixelWidth": 1280,
-        "avaloniaPixelHeight": 760,
-        "normalizedWidth": 1280,
-        "normalizedHeight": 760,
-        "changedPixelRatio": 0.15611019736842105,
-        "foregroundChangedPixelRatio": 0.16990996776651365,
-        "meanChannelDelta": 10.811949355811404,
-        "maxChannelDelta": 255,
-        "perceptualHashDistance": 4,
-        "wpfPerceptualHash": "0080899580811001",
-        "avaloniaPerceptualHash": "0081819580810000",
-        "maximumChangedPixelRatio": 0.2,
-        "maximumMeanChannelDelta": 18,
-        "maximumPerceptualHashDistance": 18,
-        "thresholdPassed": true,
-        "heatmapPath": "diff/contextual.smartart.png",
-        "wpfImageSha256": "608a80e8c302e441af66dfd1b91ea57091a58d8fc1706f619b00d038824c975d",
-        "avaloniaImageSha256": "eeda559b1f271f08746888c3504aa4e0a79f820e87ee2cb354e2c780e8fa8cc9",
-        "heatmapSha256": "da5e9716773a7e669fade5a9f8def36b58ec598781b44c9f408747fa05befcaa"
-      },
-      "wpfContentValidation": {
-        "width": 1280,
-        "height": 760,
-        "meanAlpha": 1,
-        "opaquePixelRatio": 1,
-        "nearTransparentPixelRatio": 0,
-        "nearBlackPixelRatio": 0.002789884868421053,
-        "meanLuminance": 220.57455754209323,
-        "luminanceRange": 255,
-        "luminanceStandardDeviation": 56.5369771731224,
-        "edgePixelRatio": 0.05903680098684211,
-        "isValid": true,
-        "failures": []
-      },
-      "avaloniaContentValidation": {
-        "width": 1280,
-        "height": 760,
-        "meanAlpha": 1,
-        "opaquePixelRatio": 1,
-        "nearTransparentPixelRatio": 0,
-        "nearBlackPixelRatio": 0.0018832236842105264,
-        "meanLuminance": 222.964308858849,
-        "luminanceRange": 255,
-        "luminanceStandardDeviation": 56.77121467461863,
-        "edgePixelRatio": 0.05564453125,
         "isValid": true,
         "failures": []
       },
@@ -10261,9 +8721,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.033851768092105265,
-        "foregroundChangedPixelRatio": 0.03385180289042238,
-        "meanChannelDelta": 3.2526031387061405,
+        "changedPixelRatio": 0.033882606907894734,
+        "foregroundChangedPixelRatio": 0.03388264173791297,
+        "meanChannelDelta": 3.2586756441885965,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 1,
         "wpfPerceptualHash": "0000000000020000",
@@ -10273,9 +8733,9 @@
         "maximumPerceptualHashDistance": 18,
         "thresholdPassed": true,
         "heatmapPath": "diff/backstage.account.png",
-        "wpfImageSha256": "309fba0e6192ef9373d0c430f703c822c73d58f8989813bef5aebf2ab9b4dc0e",
-        "avaloniaImageSha256": "02550ec9988d6bb4b3080d0d15fa9e9a6b798c30547e095525accfeb5d87ce9b",
-        "heatmapSha256": "7d8d024e13fa760b42271f2f38ad15dc7ef0a5cda5bfcc618359fed629cc47f7"
+        "wpfImageSha256": "def6eba62c6484a0f3ec4d998d2585b8caae6f8df326cf471c299c99e42dd56f",
+        "avaloniaImageSha256": "43c109655bff56e6c3d359ffb5fdfec6f7d5f66fe2bc22dde0280ff43241f0bf",
+        "heatmapSha256": "09c16bdcaa4f53ecce0dcc174827357c15f59819d43790a13b32fb6afa3cf0a4"
       },
       "wpfContentValidation": {
         "width": 1280,
@@ -10284,10 +8744,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0,
-        "meanLuminance": 225.6171260292149,
+        "meanLuminance": 225.616094984807,
         "luminanceRange": 204,
-        "luminanceStandardDeviation": 60.55697607759678,
-        "edgePixelRatio": 0.022433182565789474,
+        "luminanceStandardDeviation": 60.55895102932249,
+        "edgePixelRatio": 0.022417763157894736,
         "isValid": true,
         "failures": []
       },
@@ -10298,93 +8758,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 1.953125E-05,
-        "meanLuminance": 225.3021957845527,
+        "meanLuminance": 225.30057363200314,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 60.54668303507496,
-        "edgePixelRatio": 0.028482730263157896,
-        "isValid": true,
-        "failures": []
-      },
-      "wpfTitleBarRasterValidation": {
-        "sampledPixelCount": 43520,
-        "accentPixelCount": 42822,
-        "accentPixelRatio": 0.9839613970588236,
-        "isValid": true
-      },
-      "avaloniaTitleBarRasterValidation": {
-        "sampledPixelCount": 43520,
-        "accentPixelCount": 42891,
-        "accentPixelRatio": 0.985546875,
-        "isValid": true
-      }
-    },
-    {
-      "scenarioId": "status.slide-1",
-      "kind": "statusBar",
-      "classification": "mismatch",
-      "wpfFullImagePath": "wpf/full/status.slide-1.png",
-      "avaloniaFullImagePath": "avalonia/full/status.slide-1.png",
-      "wpfClientImagePath": "wpf/client/status.slide-1.png",
-      "avaloniaClientImagePath": "avalonia/client/status.slide-1.png",
-      "mismatchCategories": [
-        "duplicate-capture",
-        "ribbon-geometry",
-        "workspace-geometry"
-      ],
-      "details": [
-        "Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x132.0.",
-        "Slide pane, canvas, or notes-pane bounds differ.",
-        "WPF client PNG is byte-identical to: ribbon.home.",
-        "Avalonia client PNG is byte-identical to: ribbon.home."
-      ],
-      "pixelMetrics": {
-        "wpfPixelWidth": 1280,
-        "wpfPixelHeight": 760,
-        "avaloniaPixelWidth": 1280,
-        "avaloniaPixelHeight": 760,
-        "normalizedWidth": 1280,
-        "normalizedHeight": 760,
-        "changedPixelRatio": 0.15194284539473685,
-        "foregroundChangedPixelRatio": 0.165374231783493,
-        "meanChannelDelta": 10.527086759868421,
-        "maxChannelDelta": 255,
-        "perceptualHashDistance": 4,
-        "wpfPerceptualHash": "0080899580811001",
-        "avaloniaPerceptualHash": "0081819580810000",
-        "maximumChangedPixelRatio": 0.2,
-        "maximumMeanChannelDelta": 18,
-        "maximumPerceptualHashDistance": 18,
-        "thresholdPassed": true,
-        "heatmapPath": "diff/status.slide-1.png",
-        "wpfImageSha256": "89a520305712d549b2786bb48830e175d27336c8eddae7b2dfef0f4252fe4c0c",
-        "avaloniaImageSha256": "c61a684b7582af699ffb7a685d0ae358ccd30d87a203c1a8873ef583126a03bc",
-        "heatmapSha256": "7e9ba15a10bc366528b6c90a35dcd922f708af6a4dda9afaf11770ab3ad9d70e"
-      },
-      "wpfContentValidation": {
-        "width": 1280,
-        "height": 760,
-        "meanAlpha": 1,
-        "opaquePixelRatio": 1,
-        "nearTransparentPixelRatio": 0,
-        "nearBlackPixelRatio": 0.002789884868421053,
-        "meanLuminance": 220.82060528881502,
-        "luminanceRange": 255,
-        "luminanceStandardDeviation": 56.454257196963106,
-        "edgePixelRatio": 0.05527754934210526,
-        "isValid": true,
-        "failures": []
-      },
-      "avaloniaContentValidation": {
-        "width": 1280,
-        "height": 760,
-        "meanAlpha": 1,
-        "opaquePixelRatio": 1,
-        "nearTransparentPixelRatio": 0,
-        "nearBlackPixelRatio": 0.0018832236842105264,
-        "meanLuminance": 223.11104390615785,
-        "luminanceRange": 255,
-        "luminanceStandardDeviation": 56.72351637971025,
-        "edgePixelRatio": 0.05229235197368421,
+        "luminanceStandardDeviation": 60.545401147627935,
+        "edgePixelRatio": 0.02852282072368421,
         "isValid": true,
         "failures": []
       },
@@ -10490,15 +8867,12 @@
       "wpfClientImagePath": "wpf/client/view.gridlines-guides.png",
       "avaloniaClientImagePath": "avalonia/client/view.gridlines-guides.png",
       "mismatchCategories": [
-        "duplicate-capture",
         "ribbon-geometry",
         "workspace-geometry"
       ],
       "details": [
         "Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x128.7.",
-        "Slide pane, canvas, or notes-pane bounds differ.",
-        "WPF client PNG is byte-identical to: view.clean-canvas.",
-        "Avalonia client PNG is byte-identical to: view.clean-canvas."
+        "Slide pane, canvas, or notes-pane bounds differ."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -10573,15 +8947,12 @@
       "wpfClientImagePath": "wpf/client/view.clean-canvas.png",
       "avaloniaClientImagePath": "avalonia/client/view.clean-canvas.png",
       "mismatchCategories": [
-        "duplicate-capture",
         "ribbon-geometry",
         "workspace-geometry"
       ],
       "details": [
         "Ribbon bounds differ: WPF 0.0,34.0 1280.0x123.0; Avalonia 0.0,34.0 1280.0x128.7.",
-        "Slide pane, canvas, or notes-pane bounds differ.",
-        "WPF client PNG is byte-identical to: view.gridlines-guides.",
-        "Avalonia client PNG is byte-identical to: view.gridlines-guides."
+        "Slide pane, canvas, or notes-pane bounds differ."
       ],
       "pixelMetrics": {
         "wpfPixelWidth": 1280,
@@ -10590,9 +8961,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.12241879111842105,
-        "foregroundChangedPixelRatio": 0.13325582670442784,
-        "meanChannelDelta": 8.569955455043859,
+        "changedPixelRatio": 0.12099814967105263,
+        "foregroundChangedPixelRatio": 0.13170942399296398,
+        "meanChannelDelta": 8.469968475877193,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 2,
         "wpfPerceptualHash": "0080899580810001",
@@ -10602,9 +8973,9 @@
         "maximumPerceptualHashDistance": 18,
         "thresholdPassed": true,
         "heatmapPath": "diff/view.clean-canvas.png",
-        "wpfImageSha256": "3a322a834f88b8edde834dc5a44845453f7607b5c7575a1faa9d121c2efc378b",
-        "avaloniaImageSha256": "92b56627ed8d4d31a08df3fdfb7da444e368eba67ebb85869cc1e4db0af1b664",
-        "heatmapSha256": "745fe0fec545d617902b476e793821cbcc9770a358d638dfa0875825c37b6f6f"
+        "wpfImageSha256": "4c2ce265aa3618ef10058a8ad79dfd0a550eb6a6c612e245a6ab0dbcf9b854d9",
+        "avaloniaImageSha256": "42d00ea6af7671cdb409e7d2e6955ffc578fa7dcd603e20a7c56061cbd04a59c",
+        "heatmapSha256": "152d6b7521590f49a006e7ba10432c06a8ce9b2feda2833cd17026d44e815ca0"
       },
       "wpfContentValidation": {
         "width": 1280,
@@ -10613,9 +8984,9 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0.0014514802631578948,
-        "meanLuminance": 222.75131299954447,
+        "meanLuminance": 222.78970860707264,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 55.4683479429016,
+        "luminanceStandardDeviation": 55.43130024236201,
         "edgePixelRatio": 0.04546361019736842,
         "isValid": true,
         "failures": []
@@ -10627,10 +8998,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0.0011019736842105264,
-        "meanLuminance": 223.2540824166488,
+        "meanLuminance": 223.47281289362542,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 56.353851651611414,
-        "edgePixelRatio": 0.04807257401315789,
+        "luminanceStandardDeviation": 56.315143576475954,
+        "edgePixelRatio": 0.04724095394736842,
         "isValid": true,
         "failures": []
       },
@@ -11698,7 +10069,8 @@
     "The app-owned titlebar, QAT, ribbon, Backstage, workspace, notes, panes, status bar, and zoom/view state are included in the gate.",
     "Native OS caption buttons, window-manager shadows, and other non-client decoration are excluded on both hosts; no app-owned client region is masked.",
     "WPF capture mode: visible-app-owned-full-client-render-target; native-non-client-excluded; scenario-isolated-processes; Avalonia capture mode: visible-app-owned-full-client-render-target; native-non-client-excluded; scenario-isolated-processes.",
-    "FreeP currently declares zero contextual ribbon tabs; selected shape/chart/media/SmartArt probes remain explicit mismatches instead of false passes."
+    "FreeP currently declares zero contextual ribbon tabs, so the evidence contract contains no invented contextual-tab scenarios.",
+    "Gridline/guide scenarios use the runtime ribbon command path; both current canvas renderers apply those flags to snapping and do not paint gridline/guide canvas raster."
   ],
   "limitations": []
 }
