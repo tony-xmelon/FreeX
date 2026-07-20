@@ -1,0 +1,120 @@
+{
+    "schema":  "freex.freew.shell-platform-parity.v1",
+    "authority":  "FreeW WPF native PrintDialog/XpsDocumentWriter behavior, supplemented by the existing Avalonia shared PDF draw-op contract",
+    "generatedInputs":  [
+                            "freew/FreeW.App.Host/MainWindow.cs",
+                            "freew/FreeW.App.Host/XpsExport.cs",
+                            "freew/FreeW.App.Host/PrintPreviewWindow.cs",
+                            "freew/FreeW.App.Avalonia/MainWindow.cs",
+                            "freew/FreeW.App.Avalonia/PrintPreviewDialog.cs",
+                            "freew/FreeW.App.Avalonia/Pdf/FreeWAvaloniaPdfExport.cs",
+                            "freew/FreeW.App.Avalonia/Pdf/FreeWAvaloniaXpsExport.cs",
+                            "freew/FreeW.App.Avalonia/Printing/CupsPrintCommandPlanner.cs",
+                            "freew/FreeW.App.Avalonia/Printing/CupsPrintService.cs",
+                            "freew/FreeW.App.Avalonia/Editing/DocumentView.cs",
+                            "freew/FreeW.App.Avalonia.Tests/Printing/CupsPrintServiceTests.cs",
+                            "freew/FreeW.App.Avalonia.Tests/Printing/PortableXpsWriterTests.cs",
+                            "freew/FreeW.App.Presentation/Printing/PrintSelectionPlanner.cs",
+                            "freew/FreeW.App.Presentation.Tests/Printing/PrintSelectionPlannerTests.cs",
+                            "shared/Free.Shared.AppServices/Printing/PrintContracts.cs",
+                            "shared/Free.Shared.AppServices/Printing/PrintProcessContracts.cs",
+                            "shared/Free.Shared.AppServices/Printing/SystemProcessRunner.cs",
+                            "shared/Free.Shared.Pdf/PdfContentDocument.cs",
+                            "shared/Free.Shared.Pdf/PdfDrawOp.cs",
+                            "shared/Free.Shared.Pdf/PortableXpsWriter.cs"
+                        ],
+    "sourceSha256":  {
+                         "freew/FreeW.App.Host/MainWindow.cs":  "bd1f0408e91dcb56b0ca15a50bd5b9c72322cd7753793f7e9e48b86a73b67707",
+                         "freew/FreeW.App.Host/XpsExport.cs":  "a3a719c3311d2cf0011597f4cd5e9616a91a71f35a08d5fbdf892f1db8840d2b",
+                         "freew/FreeW.App.Host/PrintPreviewWindow.cs":  "9ba46a487f276e84cb6fa8dfe44cfc1432ae0483b4f3ceaefbd200e27441798c",
+                         "freew/FreeW.App.Avalonia/MainWindow.cs":  "10be081ec741f1e03e5fac5363568072aa489710f1ac97fdb93326528d38a452",
+                         "freew/FreeW.App.Avalonia/PrintPreviewDialog.cs":  "ec5a83fa78f55a60e4669eaf4aa66400a7bb12fb4b31fa7218d74534eb6d2486",
+                         "freew/FreeW.App.Avalonia/Pdf/FreeWAvaloniaPdfExport.cs":  "10725826c347c65cdce437d628ccca01e0efe946f8d48db281a723e4105332b9",
+                         "freew/FreeW.App.Avalonia/Pdf/FreeWAvaloniaXpsExport.cs":  "744eae103ab81f924a81ef93b449b39ab3c086dc8993c75c2025762efa91fe8e",
+                         "freew/FreeW.App.Avalonia/Printing/CupsPrintCommandPlanner.cs":  "cade5a756d10b64443e132fdbf279a00c89ee8cace64d3e13ef58bd700756025",
+                         "freew/FreeW.App.Avalonia/Printing/CupsPrintService.cs":  "6e13399bff8eb5274e4d717aca195b87df50e07854e5d191c0b30c126cf6bb6d",
+                         "freew/FreeW.App.Avalonia/Editing/DocumentView.cs":  "8793ecf38680864b7d2a160b0a267dfad5d83221950d3bacf364f8fe968c4a33",
+                         "freew/FreeW.App.Avalonia.Tests/Printing/CupsPrintServiceTests.cs":  "2e3cc3e0fadf26ed7f8f19f7ad6c97502ac6c53e55a7bc87fdc88cb369d8d757",
+                         "freew/FreeW.App.Avalonia.Tests/Printing/PortableXpsWriterTests.cs":  "3adeb4bb194aba01dbcd7c9d7f9e2fa7f3ec8beb59ed925f6ef04d5ea1de9574",
+                         "freew/FreeW.App.Presentation/Printing/PrintSelectionPlanner.cs":  "03943757afa56e15093c460a7c44a6b48316b69ac29bc22e1d6aa427fd607fcd",
+                         "freew/FreeW.App.Presentation.Tests/Printing/PrintSelectionPlannerTests.cs":  "4cc28f3a21b2884eeb17d695be50d42e751c53200673416b992ac4d83432c050",
+                         "shared/Free.Shared.AppServices/Printing/PrintContracts.cs":  "dd007eabeb17b6e46b2bafb162c3021274a816ca176a70bf72100d9ff0d25e22",
+                         "shared/Free.Shared.AppServices/Printing/PrintProcessContracts.cs":  "8cab3d5931d40c60c0fc1d97668b18d4acd3d2313ac958b3e99f2ac0ad336559",
+                         "shared/Free.Shared.AppServices/Printing/SystemProcessRunner.cs":  "414c3e9ab367f1efc364b13ed43847ab41d5c9e1d78f3abe80dccc24605c7d38",
+                         "shared/Free.Shared.Pdf/PdfContentDocument.cs":  "d49a5c52928ada567e242f2f530a28f41ffb0043948d7ef8f6dc57b875ef1394",
+                         "shared/Free.Shared.Pdf/PdfDrawOp.cs":  "364117550d2bd0de462dd5f72baff8862418179fd4efd5ebe86e15d842763f30",
+                         "shared/Free.Shared.Pdf/PortableXpsWriter.cs":  "26ab1a30de96032a124b3adfac8830ca17e2c2221b633b14aefa6b25d86d64af"
+                     },
+    "ownershipBoundary":  [
+                              "No FreeW MainWindow, ribbon registry/definition, Backstage view/model, page-layout/media/mail/design dialog, or shared shell UI file was edited.",
+                              "UI wiring gaps are recorded for the integration pass."
+                          ],
+    "surfaces":  [
+                     {
+                         "name":  "WPF native printing",
+                         "status":  "implemented",
+                         "authority":  "FreeW.App.Host.MainWindow.Print uses System.Windows.Controls.PrintDialog, PrintTicket, PrintLayout.BuildPaginator, and PrintDocument.",
+                         "implementation":  "Preserved unchanged; evidence hashes the authoritative source.",
+                         "tests":  "Existing WPF host print/paginator tests remain the authority."
+                     },
+                     {
+                         "name":  "WPF native XPS",
+                         "status":  "implemented",
+                         "authority":  "FreeW.App.Host.XpsExport uses System.Windows.Xps.Packaging.XpsDocument and XpsDocumentWriter on the WPF paginator.",
+                         "implementation":  "Preserved unchanged; it writes a real FixedDocumentSequence OPC package on STA.",
+                         "tests":  "Existing FreeW.App.Host.Tests.XpsExportTests cover package/page output."
+                     },
+                     {
+                         "name":  "Linux/macOS printer discovery",
+                         "status":  "implemented",
+                         "authority":  "CUPS lpstat -p and lpstat -d contract.",
+                         "implementation":  "CupsPrintService with injected IProcessRunner and explicit no-printer/unavailable/failed/cancelled results.",
+                         "tests":  "CupsPrintServiceTests parse printers/default and cancellation."
+                     },
+                     {
+                         "name":  "Linux/macOS PDF submission",
+                         "status":  "implemented",
+                         "authority":  "CUPS lp accepts -d, -n, -P, orientation-requested, and a generated PDF path.",
+                         "implementation":  "CupsPrintCommandPlanner plus CupsPrintService; arguments use ProcessStartInfo.ArgumentList, never a shell command string.",
+                         "tests":  "CupsPrintServiceTests assert exact lp arguments and no-printer short circuit."
+                     },
+                     {
+                         "name":  "Later Avalonia print dialog contract",
+                         "status":  "implemented-contract",
+                         "authority":  "WPF dialog exposes printer, copies, page range, and page orientation decisions.",
+                         "implementation":  "Shared PrintSelection, PrintPageRange, PrinterInfo, PrintDialogPlan, and PrintSelectionPlanner.",
+                         "tests":  "PrintSelectionPlannerTests cover requested/default printer, no printers, and validation."
+                     },
+                     {
+                         "name":  "Cross-platform XPS",
+                         "status":  "truthful-fixed-layout-only",
+                         "authority":  "XPS FixedPage supports vector Path content and Glyphs only with packaged font resources.",
+                         "implementation":  "PortableXpsWriter writes a real OPC XPS package for supported vector operations and analyzes unsupported text/image dependencies; FreeWAvaloniaXpsExport never relabels PDF bytes.",
+                         "tests":  "PortableXpsWriterTests validate package parts and prove text fails without an embedded font resource."
+                     }
+                 ],
+    "uiWiringGaps":  [
+                         {
+                             "file":  "freew/FreeW.App.Avalonia/MainWindow.cs",
+                             "gap":  "Current AvaloniaDirectPrintCapability is Deferred and ExportXps is null in the Backstage callback set; integration must inject CupsPrintService and later dialog selection."
+                         },
+                         {
+                             "file":  "freew/FreeW.App.Avalonia/PrintPreviewDialog.cs",
+                             "gap":  "The existing preview button chooses Print versus Create PDF from BackstageDirectPrintCapability; the integration pass must provide a real direct-print callback and cancellation/error messaging."
+                         },
+                         {
+                             "file":  "freew/FreeW.App.Avalonia/Backstage/BackstageView.cs",
+                             "gap":  "The view already accepts DirectPrintCapability and ExportXps callbacks; integration must supply the new adapter contracts without changing this owned shell UI file."
+                         },
+                         {
+                             "file":  "freew/FreeW.App.Presentation/Backstage/BackstagePaneSurfacePlanner.cs",
+                             "gap":  "Export XPS rows appear only when an ExportXps callback is supplied; the integration pass decides whether the truthful Avalonia capability is exposed after a font-resource provider exists."
+                         },
+                         {
+                             "file":  "freew/FreeW.App.Host/MainWindow.cs",
+                             "gap":  "No gap to wire in this slice: WPF PrintDialog and native XPS behavior remain intact and outside the edit boundary."
+                         }
+                     ],
+    "xpsLimitation":  "The current Avalonia PdfContentDocument/PdfDrawOp model exposes text strings and positioned draw ops, but no embedded XPS font bytes, font URI, glyph indices, subsetting metadata, or equivalent glyph-outline renderer. A normal text document therefore cannot be truthfully emitted as selectable XPS until that exact dependency is supplied.",
+    "freshnessCheck":  "Run tools/Generate-FreeWShellPlatformParityEvidence.ps1 -Check; nonzero means generated JSON/Markdown no longer match current source hashes."
+}
