@@ -215,7 +215,7 @@ Post-sweep hardening also pins `ASC`, `DBCS`, and `JIS` to Excel's non-DBCS lang
 | GEOMEAN | Implemented |
 | HARMEAN | Implemented |
 | HYPGEOMDIST | Implemented |
-| HYPERGEOM.DIST | Implemented |
+| HYPGEOM.DIST | Implemented |
 | INTERCEPT | Implemented |
 | KURT | Implemented |
 | LARGE | Implemented |
