@@ -1,7 +1,7 @@
 {
   "schema": "freew.dialog-route-inventory.v1",
   "schemaVersion": 1,
-  "generatedFromSha256": "7a269218bf2ce5337f3589dfa49cda31bc2582cf93dadc3fb62ddd73c546d282",
+  "generatedFromSha256": "b3aa698553c4afd5aac3dc8ee918b8aff039a3d2ef5e2ef034af530673127289",
   "routes": [
     {
       "host": "avalonia",
@@ -568,13 +568,18 @@
       "typeName": "FontDialog",
       "sourcePath": "freew/FreeW.App.Avalonia/FontDialog.cs",
       "modalMode": "modal",
-      "tabs": [],
+      "tabs": [
+        "Font",
+        "Advanced"
+      ],
       "limitation": null,
       "surfaceKind": "dialog",
       "states": [
         "initial",
         "populated",
-        "validation-error"
+        "validation-error",
+        "tab-font",
+        "tab-advanced"
       ],
       "sourceRouteId": "font"
     },
@@ -3468,6 +3473,26 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.font.tab-font",
+      "host": "avalonia",
+      "routeId": "font",
+      "state": "relevant-tab",
+      "tab": "Font",
+      "description": "Selected tab: Font.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.font.tab-advanced",
+      "host": "avalonia",
+      "routeId": "font",
+      "state": "relevant-tab",
+      "tab": "Advanced",
+      "description": "Selected tab: Advanced.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
