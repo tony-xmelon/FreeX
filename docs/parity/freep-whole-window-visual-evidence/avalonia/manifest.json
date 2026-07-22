@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 1280,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-07-22T22:23:54.0648245\u002B00:00",
+  "generatedAtUtc": "2026-07-22T22:54:16.9701077\u002B00:00",
   "captures": [
     {
       "scenarioId": "startup.slide",
@@ -1700,8 +1700,8 @@
       "sourceDpiX": 96,
       "sourceDpiY": 96,
       "nonBackgroundPixelCount": 805089,
-      "fullImageSha256": "71c7171fd69e6dd366018ee136efca22ddac0ae341646264e42f316c74b8b04a",
-      "clientImageSha256": "71c7171fd69e6dd366018ee136efca22ddac0ae341646264e42f316c74b8b04a",
+      "fullImageSha256": "c4464c03789e7adc91e04f1cd86af57dad506875ecb372fc7f6d3c8f79cd977a",
+      "clientImageSha256": "c4464c03789e7adc91e04f1cd86af57dad506875ecb372fc7f6d3c8f79cd977a",
       "semanticState": {
         "scenarioId": "backstage.account",
         "host": "avalonia",
@@ -3207,9 +3207,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 891723,
-      "fullImageSha256": "b3da76de91572ed7de6d5ded373e856d14efb38fcb7719ac3c850b798741d120",
-      "clientImageSha256": "b3da76de91572ed7de6d5ded373e856d14efb38fcb7719ac3c850b798741d120",
+      "nonBackgroundPixelCount": 891733,
+      "fullImageSha256": "12a3572032f12bbbcae5eb08e76b74ac35a293ab756bfeff0d0a13c5cf0e8ca8",
+      "clientImageSha256": "12a3572032f12bbbcae5eb08e76b74ac35a293ab756bfeff0d0a13c5cf0e8ca8",
       "semanticState": {
         "scenarioId": "review.accessibility-pane",
         "host": "avalonia",

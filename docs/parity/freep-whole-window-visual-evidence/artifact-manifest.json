@@ -1,7 +1,7 @@
 {
     "schemaVersion":  1,
     "generatedBy":  "tools/Generate-FreePWholeWindowVisualEvidenceManifest.ps1",
-    "evidenceGeneratedAtUtc":  "2026-07-22T22:25:17.8105603+00:00",
+    "evidenceGeneratedAtUtc":  "2026-07-22T22:54:21.5022694+00:00",
     "scenarioCount":  33,
     "pairedCaptureCount":  33,
     "passCount":  33,
@@ -15,11 +15,11 @@
     "inputs":  [
                    {
                        "path":  "freep/FreeP.App.Presentation/WholeWindowVisualEvidenceContract.cs",
-                       "sha256":  "0a8a46ddd4a440d7ff1ad286ec6840c996ed98e721fcc8bf9bfbe34a32b8b624"
+                       "sha256":  "ff23ba8de1c959b62ba0593942c83e51e40359ed8b39467ee5ebbe8a23a2622b"
                    },
                    {
                        "path":  "freep/FreeP.App.Presentation/DialogPaneVisualEvidenceFixture.cs",
-                       "sha256":  "b6049c2591b0ba2c43c7dccc221f4b4a88972be1fee7e38d22a9742e7bc99174"
+                       "sha256":  "2fb0964ad167bc8f3e03014dc3967b0ad38a314ea89145b5b9171f36041475bd"
                    },
                    {
                        "path":  "freep/FreeP.App.Presentation/FreePShellVisualMetrics.cs",
@@ -35,7 +35,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Host/MainWindow.WholeWindowVisualEvidence.cs",
-                       "sha256":  "97b669bd64c4fc87494d3291b940ef027897f28b21de4c4772d6e34b6e3a9d47"
+                       "sha256":  "7832c72e74f1b1ea07fb6c58c608d4cfda2e149027ead5def52ed1a6f27ef2e3"
                    },
                    {
                        "path":  "freep/FreeP.App.Avalonia/AvaloniaWholeWindowVisualEvidenceCapture.cs",
@@ -43,23 +43,23 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Avalonia/MainWindow.cs",
-                       "sha256":  "0e90923addd65821986b1b2ea1a843331cb9ef397d6ce8feca99134c3e7c3441"
+                       "sha256":  "b6922fd13c395f14f9bbd5a041edd336c06764aaf92cc562e0e748b7fcdfb180"
                    },
                    {
                        "path":  "freep/FreeP.App.Avalonia/MainWindow.WholeWindowVisualEvidence.cs",
-                       "sha256":  "ecd4795f6548460f978451de7cab2b1e22b4a7d07be0d202c5408740af192471"
+                       "sha256":  "3941775a0351dab9e80d4ec5a56b55b6606e64ce4452115063d976e3cced5948"
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Wpf/InCanvasTextEditor.cs",
-                       "sha256":  "02594b5531aa9110ffbc745c9ca5ac34caba58691e4a756ebc043fb6f64df691"
+                       "sha256":  "f02a6d329794c23f193e106ac8c561bf2b092e559ab0ab1e56bd2a10dc5a370a"
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaInCanvasTextEditor.cs",
-                       "sha256":  "7b6b923167b1dee17a29e1bd2a92f67e136931506bc9cb75fdc26df77135b213"
+                       "sha256":  "7db45cc0591554f35d7820a0c5279c3a112ed2fa821ac7e564614c22c63cc0d6"
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditor.cs",
-                       "sha256":  "e1fbe7d431d62ff38ad4d1ffd5b01a98449d86bc04fecde6bb224ae8d80aa003"
+                       "sha256":  "627b3ce4ac975451de396b56fa747582ac634cbb857e196e06fccc8994f43b2b"
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditingSurface.cs",
@@ -83,7 +83,7 @@
                    },
                    {
                        "path":  "tools/FreeP.RenderCompare/WholeWindowVisualEvidence.cs",
-                       "sha256":  "2bed8749942e25ecf7b67c8950a20c816419b65e5468e0f05a91e8e208b16f09"
+                       "sha256":  "d2d17addecf5c57bc852c9fa95c1dc336cc67ce3e9b6c101080d51e8d63d05fc"
                    },
                    {
                        "path":  "tools/FreeP.RenderCompare/ImageDiff.cs",
@@ -103,8 +103,8 @@
                   },
                   {
                       "path":  "avalonia/client/backstage.account.png",
-                      "bytes":  61334,
-                      "sha256":  "71c7171fd69e6dd366018ee136efca22ddac0ae341646264e42f316c74b8b04a"
+                      "bytes":  62218,
+                      "sha256":  "c4464c03789e7adc91e04f1cd86af57dad506875ecb372fc7f6d3c8f79cd977a"
                   },
                   {
                       "path":  "avalonia/client/backstage.export.png",
@@ -153,8 +153,8 @@
                   },
                   {
                       "path":  "avalonia/client/review.accessibility-pane.png",
-                      "bytes":  91096,
-                      "sha256":  "b3da76de91572ed7de6d5ded373e856d14efb38fcb7719ac3c850b798741d120"
+                      "bytes":  76166,
+                      "sha256":  "12a3572032f12bbbcae5eb08e76b74ac35a293ab756bfeff0d0a13c5cf0e8ca8"
                   },
                   {
                       "path":  "avalonia/client/review.alt-text-pane.png",
@@ -268,8 +268,8 @@
                   },
                   {
                       "path":  "avalonia/full/backstage.account.png",
-                      "bytes":  61334,
-                      "sha256":  "71c7171fd69e6dd366018ee136efca22ddac0ae341646264e42f316c74b8b04a"
+                      "bytes":  62218,
+                      "sha256":  "c4464c03789e7adc91e04f1cd86af57dad506875ecb372fc7f6d3c8f79cd977a"
                   },
                   {
                       "path":  "avalonia/full/backstage.export.png",
@@ -318,8 +318,8 @@
                   },
                   {
                       "path":  "avalonia/full/review.accessibility-pane.png",
-                      "bytes":  91096,
-                      "sha256":  "b3da76de91572ed7de6d5ded373e856d14efb38fcb7719ac3c850b798741d120"
+                      "bytes":  76166,
+                      "sha256":  "12a3572032f12bbbcae5eb08e76b74ac35a293ab756bfeff0d0a13c5cf0e8ca8"
                   },
                   {
                       "path":  "avalonia/full/review.alt-text-pane.png",
@@ -424,7 +424,7 @@
                   {
                       "path":  "avalonia/manifest.json",
                       "bytes":  122143,
-                      "sha256":  "95474f8fd3520f8c50cdde6f520468e396a3b170220f002ffce6f7eae52c5df3"
+                      "sha256":  "cd8e6f668333b4eeeb06bc7b15dc2e4a8954d1c4d2300c8541e9e4bfb7bca8b5"
                   },
                   {
                       "path":  "diff/accessibility.media-caption-pane.png",
@@ -438,8 +438,8 @@
                   },
                   {
                       "path":  "diff/backstage.account.png",
-                      "bytes":  78725,
-                      "sha256":  "06f6be8eb0427c7ad5f42492f218a9e5a6b8a6f16e9176d8ced999d9bbcf8698"
+                      "bytes":  79108,
+                      "sha256":  "19c43707568593943b90d1f31ec3090ba65c926c44f952c9fc63305ef8a2f837"
                   },
                   {
                       "path":  "diff/backstage.export.png",
@@ -488,8 +488,8 @@
                   },
                   {
                       "path":  "diff/review.accessibility-pane.png",
-                      "bytes":  130313,
-                      "sha256":  "a394f6fb68ff226f562cb2cf2d7e5e573e592355a1473d38ec6f14a209f634f8"
+                      "bytes":  112406,
+                      "sha256":  "e29c921f1be9d172834e00c5a1ec9aaf11e5ca2d76dc97eb51b9036ebda0c8f9"
                   },
                   {
                       "path":  "diff/review.alt-text-pane.png",
@@ -594,17 +594,17 @@
                   {
                       "path":  "report.html",
                       "bytes":  34689,
-                      "sha256":  "9ba00baffd658c26982686f02189199a3c6a071a08017c18aae3896b594033f6"
+                      "sha256":  "2891862f4ed7e9842e90481acb92dfbbaee0f6356626de3a9c19c7ab990f7d48"
                   },
                   {
                       "path":  "report.md",
                       "bytes":  12595,
-                      "sha256":  "804f33ceec5e113eab3957c139007eab63eaeff7e062f406b5063c83a7dd7cbd"
+                      "sha256":  "f94a81b1595e75b71273a63ccfb101c6040a3e81d1b4fe02e68fec6a49d361e3"
                   },
                   {
                       "path":  "summary.json",
-                      "bytes":  355218,
-                      "sha256":  "320901cd08baa024c7e25b718e4270fc3dcea0a9c07b9bfa36acf3bd08abe8d4"
+                      "bytes":  355232,
+                      "sha256":  "61b50cf07d6b1006cbe67a7e6b4f88a3502202cc8eed848a602125a16b8faa54"
                   },
                   {
                       "path":  "wpf/client/accessibility.media-caption-pane.png",
@@ -618,8 +618,8 @@
                   },
                   {
                       "path":  "wpf/client/backstage.account.png",
-                      "bytes":  38922,
-                      "sha256":  "ba18c8226e3d536782171b5f258f148cfdf1aa94ea80ab056d6d6a8453b49c20"
+                      "bytes":  39005,
+                      "sha256":  "7afb4655e311411b8373bc7f48c0bb0941f6f67504506fe4a84dcc239bb705e0"
                   },
                   {
                       "path":  "wpf/client/backstage.export.png",
@@ -783,8 +783,8 @@
                   },
                   {
                       "path":  "wpf/full/backstage.account.png",
-                      "bytes":  38922,
-                      "sha256":  "ba18c8226e3d536782171b5f258f148cfdf1aa94ea80ab056d6d6a8453b49c20"
+                      "bytes":  39005,
+                      "sha256":  "7afb4655e311411b8373bc7f48c0bb0941f6f67504506fe4a84dcc239bb705e0"
                   },
                   {
                       "path":  "wpf/full/backstage.export.png",
@@ -939,7 +939,7 @@
                   {
                       "path":  "wpf/manifest.json",
                       "bytes":  119907,
-                      "sha256":  "c73a8f4c875e52bde2861964f1574fcba5c704a78c820ab318f3eefe1269b415"
+                      "sha256":  "9d0a9502ff9d993e4aa957aa5348db5ca8a82ad7ce1e9345c5737fd7faef2f93"
                   }
               ]
 }
