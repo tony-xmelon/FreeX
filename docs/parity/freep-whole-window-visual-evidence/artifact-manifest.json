@@ -1,21 +1,25 @@
 {
     "schemaVersion":  1,
     "generatedBy":  "tools/Generate-FreePWholeWindowVisualEvidenceManifest.ps1",
-    "evidenceGeneratedAtUtc":  "2026-07-20T10:05:27.2836813+00:00",
-    "scenarioCount":  31,
-    "pairedCaptureCount":  31,
-    "passCount":  31,
+    "evidenceGeneratedAtUtc":  "2026-07-22T22:25:17.8105603+00:00",
+    "scenarioCount":  33,
+    "pairedCaptureCount":  33,
+    "passCount":  33,
     "mismatchCount":  0,
     "limitationCount":  0,
     "duplicateCaptureCount":  0,
-    "fullPngCount":  62,
-    "clientPngCount":  62,
-    "diffPngCount":  31,
-    "fileCount":  160,
+    "fullPngCount":  66,
+    "clientPngCount":  66,
+    "diffPngCount":  33,
+    "fileCount":  170,
     "inputs":  [
                    {
                        "path":  "freep/FreeP.App.Presentation/WholeWindowVisualEvidenceContract.cs",
-                       "sha256":  "e3a67731cee8fc495ee16edf5cb320b55df2021166a4bbdc99136a22c117464f"
+                       "sha256":  "0a8a46ddd4a440d7ff1ad286ec6840c996ed98e721fcc8bf9bfbe34a32b8b624"
+                   },
+                   {
+                       "path":  "freep/FreeP.App.Presentation/DialogPaneVisualEvidenceFixture.cs",
+                       "sha256":  "b6049c2591b0ba2c43c7dccc221f4b4a88972be1fee7e38d22a9742e7bc99174"
                    },
                    {
                        "path":  "freep/FreeP.App.Presentation/FreePShellVisualMetrics.cs",
@@ -31,7 +35,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Host/MainWindow.WholeWindowVisualEvidence.cs",
-                       "sha256":  "d6a20b1d262198d83f32bc8a25ef2747b19da4e62f50812a6d536298e1fba01b"
+                       "sha256":  "97b669bd64c4fc87494d3291b940ef027897f28b21de4c4772d6e34b6e3a9d47"
                    },
                    {
                        "path":  "freep/FreeP.App.Avalonia/AvaloniaWholeWindowVisualEvidenceCapture.cs",
@@ -39,11 +43,27 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Avalonia/MainWindow.cs",
-                       "sha256":  "b3c01e399587b141c75d213a86f811a36388e4501179b6ddc22bc198588c4e6d"
+                       "sha256":  "0e90923addd65821986b1b2ea1a843331cb9ef397d6ce8feca99134c3e7c3441"
                    },
                    {
                        "path":  "freep/FreeP.App.Avalonia/MainWindow.WholeWindowVisualEvidence.cs",
-                       "sha256":  "3245b5cf9309515cadd7d5132aa8959fdd96f83f1380300883126a71bd1d60c3"
+                       "sha256":  "ecd4795f6548460f978451de7cab2b1e22b4a7d07be0d202c5408740af192471"
+                   },
+                   {
+                       "path":  "freep/FreeP.App.Rendering.Wpf/InCanvasTextEditor.cs",
+                       "sha256":  "02594b5531aa9110ffbc745c9ca5ac34caba58691e4a756ebc043fb6f64df691"
+                   },
+                   {
+                       "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaInCanvasTextEditor.cs",
+                       "sha256":  "7b6b923167b1dee17a29e1bd2a92f67e136931506bc9cb75fdc26df77135b213"
+                   },
+                   {
+                       "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditor.cs",
+                       "sha256":  "e1fbe7d431d62ff38ad4d1ffd5b01a98449d86bc04fecde6bb224ae8d80aa003"
+                   },
+                   {
+                       "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditingSurface.cs",
+                       "sha256":  "c149502b3f181dfe6d69c2daf599dd5ffa0fac743618418532c55c5045f21fac"
                    },
                    {
                        "path":  "shared/Free.Shared.Ribbon/RibbonVisualMetrics.cs",
@@ -63,7 +83,7 @@
                    },
                    {
                        "path":  "tools/FreeP.RenderCompare/WholeWindowVisualEvidence.cs",
-                       "sha256":  "e52a538d732aad2bcccc4ea17e6d2c4822fcf9eb9769605c3b61a43ddfa5c17e"
+                       "sha256":  "2bed8749942e25ecf7b67c8950a20c816419b65e5468e0f05a91e8e208b16f09"
                    },
                    {
                        "path":  "tools/FreeP.RenderCompare/ImageDiff.cs",
@@ -83,8 +103,8 @@
                   },
                   {
                       "path":  "avalonia/client/backstage.account.png",
-                      "bytes":  61000,
-                      "sha256":  "a66dccc2eb714b000b7acc8c2b2787e1c8a595a93c2411f353ce10d4a2d31321"
+                      "bytes":  61334,
+                      "sha256":  "71c7171fd69e6dd366018ee136efca22ddac0ae341646264e42f316c74b8b04a"
                   },
                   {
                       "path":  "avalonia/client/backstage.export.png",
@@ -122,6 +142,16 @@
                       "sha256":  "6aaec204309c863fef4058348088bbfc4158e87cd5bcb4b7b10a4b853201652d"
                   },
                   {
+                      "path":  "avalonia/client/editor.rich-text-caret.png",
+                      "bytes":  63382,
+                      "sha256":  "c6fea6b664b4978ac571857591014eaede224a366c4189cbfd999ac2fe3780c1"
+                  },
+                  {
+                      "path":  "avalonia/client/editor.rich-text-selection.png",
+                      "bytes":  63416,
+                      "sha256":  "7e93da614c031edca86838b300ff3e41cb7ec1f8e380cb9653110c32dadb7c7f"
+                  },
+                  {
                       "path":  "avalonia/client/review.accessibility-pane.png",
                       "bytes":  91096,
                       "sha256":  "b3da76de91572ed7de6d5ded373e856d14efb38fcb7719ac3c850b798741d120"
@@ -143,8 +173,8 @@
                   },
                   {
                       "path":  "avalonia/client/review.reading-order-pane.png",
-                      "bytes":  98322,
-                      "sha256":  "845934ae102b2b12a69af75b34640958a8a67c6ed848dcc4efc0a83819a61a4f"
+                      "bytes":  98402,
+                      "sha256":  "d6b548778eca69f82e5b9290a5d2bf033c68b85990324627f3b33e1b2e474b1e"
                   },
                   {
                       "path":  "avalonia/client/ribbon.animations.png",
@@ -238,8 +268,8 @@
                   },
                   {
                       "path":  "avalonia/full/backstage.account.png",
-                      "bytes":  61000,
-                      "sha256":  "a66dccc2eb714b000b7acc8c2b2787e1c8a595a93c2411f353ce10d4a2d31321"
+                      "bytes":  61334,
+                      "sha256":  "71c7171fd69e6dd366018ee136efca22ddac0ae341646264e42f316c74b8b04a"
                   },
                   {
                       "path":  "avalonia/full/backstage.export.png",
@@ -277,6 +307,16 @@
                       "sha256":  "6aaec204309c863fef4058348088bbfc4158e87cd5bcb4b7b10a4b853201652d"
                   },
                   {
+                      "path":  "avalonia/full/editor.rich-text-caret.png",
+                      "bytes":  63382,
+                      "sha256":  "c6fea6b664b4978ac571857591014eaede224a366c4189cbfd999ac2fe3780c1"
+                  },
+                  {
+                      "path":  "avalonia/full/editor.rich-text-selection.png",
+                      "bytes":  63416,
+                      "sha256":  "7e93da614c031edca86838b300ff3e41cb7ec1f8e380cb9653110c32dadb7c7f"
+                  },
+                  {
                       "path":  "avalonia/full/review.accessibility-pane.png",
                       "bytes":  91096,
                       "sha256":  "b3da76de91572ed7de6d5ded373e856d14efb38fcb7719ac3c850b798741d120"
@@ -298,8 +338,8 @@
                   },
                   {
                       "path":  "avalonia/full/review.reading-order-pane.png",
-                      "bytes":  98322,
-                      "sha256":  "845934ae102b2b12a69af75b34640958a8a67c6ed848dcc4efc0a83819a61a4f"
+                      "bytes":  98402,
+                      "sha256":  "d6b548778eca69f82e5b9290a5d2bf033c68b85990324627f3b33e1b2e474b1e"
                   },
                   {
                       "path":  "avalonia/full/ribbon.animations.png",
@@ -383,8 +423,8 @@
                   },
                   {
                       "path":  "avalonia/manifest.json",
-                      "bytes":  113378,
-                      "sha256":  "6f538008b9ec991e24b242667125a84d596b9b3024451ab3decca158e213dbd0"
+                      "bytes":  122143,
+                      "sha256":  "95474f8fd3520f8c50cdde6f520468e396a3b170220f002ffce6f7eae52c5df3"
                   },
                   {
                       "path":  "diff/accessibility.media-caption-pane.png",
@@ -398,8 +438,8 @@
                   },
                   {
                       "path":  "diff/backstage.account.png",
-                      "bytes":  78791,
-                      "sha256":  "4f166f915efb9acc47e301d9dbf55ebb129c4f188d432ec251b7ed21f19648ae"
+                      "bytes":  78725,
+                      "sha256":  "06f6be8eb0427c7ad5f42492f218a9e5a6b8a6f16e9176d8ced999d9bbcf8698"
                   },
                   {
                       "path":  "diff/backstage.export.png",
@@ -437,6 +477,16 @@
                       "sha256":  "9ded721efa1c8defb0624bf40d25d11673d4a4357170b80fdb89e4f61baebb3c"
                   },
                   {
+                      "path":  "diff/editor.rich-text-caret.png",
+                      "bytes":  94741,
+                      "sha256":  "2f55635c9582e47d562e63c3a420dfb5357d0d75a7fdadbc8af33b44e853f70d"
+                  },
+                  {
+                      "path":  "diff/editor.rich-text-selection.png",
+                      "bytes":  95090,
+                      "sha256":  "a8c2cb5cbf79ecae297e2b6b0d7ce9d2db5e52342050e97ba036bcab155426c3"
+                  },
+                  {
                       "path":  "diff/review.accessibility-pane.png",
                       "bytes":  130313,
                       "sha256":  "a394f6fb68ff226f562cb2cf2d7e5e573e592355a1473d38ec6f14a209f634f8"
@@ -458,8 +508,8 @@
                   },
                   {
                       "path":  "diff/review.reading-order-pane.png",
-                      "bytes":  138734,
-                      "sha256":  "7f1cb05047288b0a7f63e12534a497d19ffe6efbdd6b6dca1656ac0253636554"
+                      "bytes":  135783,
+                      "sha256":  "dea1e887dbc909708a636afb7bb7d44889323bb0998320154ecb4035e433b149"
                   },
                   {
                       "path":  "diff/ribbon.animations.png",
@@ -543,18 +593,18 @@
                   },
                   {
                       "path":  "report.html",
-                      "bytes":  32597,
-                      "sha256":  "6751966011c602ebc5a013b7d13bf50044e64485f6bfe00cca256a2847aa1b0a"
+                      "bytes":  34689,
+                      "sha256":  "9ba00baffd658c26982686f02189199a3c6a071a08017c18aae3896b594033f6"
                   },
                   {
                       "path":  "report.md",
-                      "bytes":  11569,
-                      "sha256":  "770f6feb8bf6b82cd609e6ad27a242b35e67f93ec3b79c0b610af5557ce7dc18"
+                      "bytes":  12595,
+                      "sha256":  "804f33ceec5e113eab3957c139007eab63eaeff7e062f406b5063c83a7dd7cbd"
                   },
                   {
                       "path":  "summary.json",
-                      "bytes":  330541,
-                      "sha256":  "6af16ee5881af726e5294a82171697e26a130b5d1fc86878756d60654109ea84"
+                      "bytes":  355218,
+                      "sha256":  "320901cd08baa024c7e25b718e4270fc3dcea0a9c07b9bfa36acf3bd08abe8d4"
                   },
                   {
                       "path":  "wpf/client/accessibility.media-caption-pane.png",
@@ -568,8 +618,8 @@
                   },
                   {
                       "path":  "wpf/client/backstage.account.png",
-                      "bytes":  38954,
-                      "sha256":  "63153008b98a04c47e77e03dd18b725bcee70efaeb65c24c925fd05e40ab29bc"
+                      "bytes":  38922,
+                      "sha256":  "ba18c8226e3d536782171b5f258f148cfdf1aa94ea80ab056d6d6a8453b49c20"
                   },
                   {
                       "path":  "wpf/client/backstage.export.png",
@@ -605,6 +655,16 @@
                       "path":  "wpf/client/context.smartart-text-pane.png",
                       "bytes":  58006,
                       "sha256":  "5a07bcc9aaf79b968a5ba8a4ad59a4c69e7f1184bb82e4eff29333cdef3a3b67"
+                  },
+                  {
+                      "path":  "wpf/client/editor.rich-text-caret.png",
+                      "bytes":  60731,
+                      "sha256":  "e9b37f92ae374fcd487e3bc0db1abf2bd508a6a83b3a81267bef14e4b502c8b2"
+                  },
+                  {
+                      "path":  "wpf/client/editor.rich-text-selection.png",
+                      "bytes":  61303,
+                      "sha256":  "409c77b94b6438169a9322eff9ba71d4c167fbf5e88922553ccee280f20cc161"
                   },
                   {
                       "path":  "wpf/client/review.accessibility-pane.png",
@@ -723,8 +783,8 @@
                   },
                   {
                       "path":  "wpf/full/backstage.account.png",
-                      "bytes":  38954,
-                      "sha256":  "63153008b98a04c47e77e03dd18b725bcee70efaeb65c24c925fd05e40ab29bc"
+                      "bytes":  38922,
+                      "sha256":  "ba18c8226e3d536782171b5f258f148cfdf1aa94ea80ab056d6d6a8453b49c20"
                   },
                   {
                       "path":  "wpf/full/backstage.export.png",
@@ -760,6 +820,16 @@
                       "path":  "wpf/full/context.smartart-text-pane.png",
                       "bytes":  58006,
                       "sha256":  "5a07bcc9aaf79b968a5ba8a4ad59a4c69e7f1184bb82e4eff29333cdef3a3b67"
+                  },
+                  {
+                      "path":  "wpf/full/editor.rich-text-caret.png",
+                      "bytes":  60731,
+                      "sha256":  "e9b37f92ae374fcd487e3bc0db1abf2bd508a6a83b3a81267bef14e4b502c8b2"
+                  },
+                  {
+                      "path":  "wpf/full/editor.rich-text-selection.png",
+                      "bytes":  61303,
+                      "sha256":  "409c77b94b6438169a9322eff9ba71d4c167fbf5e88922553ccee280f20cc161"
                   },
                   {
                       "path":  "wpf/full/review.accessibility-pane.png",
@@ -868,8 +938,8 @@
                   },
                   {
                       "path":  "wpf/manifest.json",
-                      "bytes":  111308,
-                      "sha256":  "34557f7f9a16f7a3ac82bcf159c98d89da01a07f969ca655f89fa9fa6727e8e6"
+                      "bytes":  119907,
+                      "sha256":  "c73a8f4c875e52bde2861964f1574fcba5c704a78c820ab318f3eefe1269b415"
                   }
               ]
 }

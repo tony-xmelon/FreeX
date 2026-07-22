@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 1280,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-07-20T10:05:23.2203019\u002B00:00",
+  "generatedAtUtc": "2026-07-22T22:23:54.0648245\u002B00:00",
   "captures": [
     {
       "scenarioId": "startup.slide",
@@ -1700,8 +1700,8 @@
       "sourceDpiX": 96,
       "sourceDpiY": 96,
       "nonBackgroundPixelCount": 805089,
-      "fullImageSha256": "a66dccc2eb714b000b7acc8c2b2787e1c8a595a93c2411f353ce10d4a2d31321",
-      "clientImageSha256": "a66dccc2eb714b000b7acc8c2b2787e1c8a595a93c2411f353ce10d4a2d31321",
+      "fullImageSha256": "71c7171fd69e6dd366018ee136efca22ddac0ae341646264e42f316c74b8b04a",
+      "clientImageSha256": "71c7171fd69e6dd366018ee136efca22ddac0ae341646264e42f316c74b8b04a",
       "semanticState": {
         "scenarioId": "backstage.account",
         "host": "avalonia",
@@ -2789,6 +2789,288 @@
       "limitations": []
     },
     {
+      "scenarioId": "editor.rich-text-selection",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/editor.rich-text-selection.png",
+      "clientImagePath": "avalonia/client/editor.rich-text-selection.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 892186,
+      "fullImageSha256": "7e93da614c031edca86838b300ff3e41cb7ec1f8e380cb9653110c32dadb7c7f",
+      "clientImageSha256": "7e93da614c031edca86838b300ff3e41cb7ec1f8e380cb9653110c32dadb7c7f",
+      "semanticState": {
+        "scenarioId": "editor.rich-text-selection",
+        "host": "avalonia",
+        "activationId": "selection",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "textbox",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 123.33333333333333,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 157.33333333333331,
+          "width": 180,
+          "height": 576.6666666666666,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 157.33333333333331,
+          "width": 1100,
+          "height": 516.6666666666666,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "rich-editor-activated",
+            "passed": true,
+            "detail": "Active rich-editor shape id is 10; expected 10."
+          },
+          {
+            "id": "rich-editor-selection",
+            "passed": true,
+            "detail": "Selected \u0027revenue review highlights\u0027 at logical range 10..35."
+          },
+          {
+            "id": "rich-editor-focus",
+            "passed": true,
+            "detail": "The production Avalonia rich-text input owns keyboard focus."
+          },
+          {
+            "id": "rich-editor-mixed-runs",
+            "passed": true,
+            "detail": "The production overlay contains 3 model runs; expected 3 mixed-format runs."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
+      "scenarioId": "editor.rich-text-caret",
+      "host": "avalonia",
+      "captureStatus": "complete",
+      "fullImagePath": "avalonia/full/editor.rich-text-caret.png",
+      "clientImagePath": "avalonia/client/editor.rich-text-caret.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "sourceDpiX": 96,
+      "sourceDpiY": 96,
+      "nonBackgroundPixelCount": 892186,
+      "fullImageSha256": "c6fea6b664b4978ac571857591014eaede224a366c4189cbfd999ac2fe3780c1",
+      "clientImageSha256": "c6fea6b664b4978ac571857591014eaede224a366c4189cbfd999ac2fe3780c1",
+      "semanticState": {
+        "scenarioId": "editor.rich-text-caret",
+        "host": "avalonia",
+        "activationId": "caret",
+        "currentSlideIndex": 0,
+        "currentSlideTitle": "Quarterly Review",
+        "selectedShapeIds": [
+          10
+        ],
+        "selectedShapeKind": "AutoShape",
+        "activeRibbonTabId": "home",
+        "visibleRibbonTabIds": [
+          "FileTab",
+          "home",
+          "insert",
+          "design",
+          "transitions",
+          "animations",
+          "view"
+        ],
+        "visibleContextualTabIds": [],
+        "backstageOpen": false,
+        "backstagePane": "",
+        "focusedRole": "textbox",
+        "focusedLabel": "",
+        "statusText": "Slide 1 / 3",
+        "showGridlines": true,
+        "showGuides": true,
+        "zoomMode": "FitToWindow",
+        "zoomPercent": 100,
+        "appOwnedTitleBarVisible": true,
+        "quickAccessButtonCount": 3,
+        "appIconIdentity": "shared-shell:FreeP",
+        "windowTitle": "Untitled \u2014 FreeP",
+        "statusViewModeControlCount": 0,
+        "statusZoomControlVisible": false,
+        "titleBarBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 34,
+          "isVisible": true
+        },
+        "ribbonBounds": {
+          "x": 0,
+          "y": 34,
+          "width": 1280,
+          "height": 123.33333333333333,
+          "isVisible": true
+        },
+        "slidePaneBounds": {
+          "x": 0,
+          "y": 157.33333333333331,
+          "width": 180,
+          "height": 576.6666666666666,
+          "isVisible": true
+        },
+        "canvasBounds": {
+          "x": 180,
+          "y": 157.33333333333331,
+          "width": 1100,
+          "height": 516.6666666666666,
+          "isVisible": true
+        },
+        "notesPaneBounds": {
+          "x": 180,
+          "y": 674,
+          "width": 1100,
+          "height": 60,
+          "isVisible": true
+        },
+        "statusBarBounds": {
+          "x": 0,
+          "y": 734,
+          "width": 1280,
+          "height": 26,
+          "isVisible": true
+        },
+        "visibleAuxiliaryPanes": [],
+        "assertions": [
+          {
+            "id": "fixture-loaded",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "slide-activated",
+            "passed": true,
+            "detail": "Activated slide index 0; expected 0."
+          },
+          {
+            "id": "selection-activated",
+            "passed": true,
+            "detail": "Selected shape ids: 10."
+          },
+          {
+            "id": "rich-editor-activated",
+            "passed": true,
+            "detail": "Active rich-editor shape id is 10; expected 10."
+          },
+          {
+            "id": "rich-editor-selection",
+            "passed": true,
+            "detail": "Selected \u0027\u0027 at logical range 67..67."
+          },
+          {
+            "id": "rich-editor-focus",
+            "passed": true,
+            "detail": "The production Avalonia rich-text input owns keyboard focus."
+          },
+          {
+            "id": "rich-editor-mixed-runs",
+            "passed": true,
+            "detail": "The production overlay contains 3 model runs; expected 3 mixed-format runs."
+          },
+          {
+            "id": "active-ribbon-tab",
+            "passed": true,
+            "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+          }
+        ]
+      },
+      "limitations": []
+    },
+    {
       "scenarioId": "review.comments-pane",
       "host": "avalonia",
       "captureStatus": "complete",
@@ -3171,9 +3453,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892012,
-      "fullImageSha256": "845934ae102b2b12a69af75b34640958a8a67c6ed848dcc4efc0a83819a61a4f",
-      "clientImageSha256": "845934ae102b2b12a69af75b34640958a8a67c6ed848dcc4efc0a83819a61a4f",
+      "nonBackgroundPixelCount": 892010,
+      "fullImageSha256": "d6b548778eca69f82e5b9290a5d2bf033c68b85990324627f3b33e1b2e474b1e",
+      "clientImageSha256": "d6b548778eca69f82e5b9290a5d2bf033c68b85990324627f3b33e1b2e474b1e",
       "semanticState": {
         "scenarioId": "review.reading-order-pane",
         "host": "avalonia",
