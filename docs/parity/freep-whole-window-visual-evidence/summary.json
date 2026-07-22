@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-07-20T10:05:27.2836813\u002B00:00",
-  "scenarioCount": 31,
-  "pairedCaptureCount": 31,
-  "passCount": 31,
+  "generatedAtUtc": "2026-07-22T22:54:21.5022694\u002B00:00",
+  "scenarioCount": 33,
+  "pairedCaptureCount": 33,
+  "passCount": 33,
   "mismatchCount": 0,
   "limitationCount": 0,
   "duplicateCaptureCount": 0,
@@ -15,6 +15,7 @@
     "StatusBar": 1,
     "ViewState": 4,
     "WorkspaceRegion": 3,
+    "RichEditorOverlay": 2,
     "AuxiliaryPane": 8
   },
   "mismatchCategoryCounts": {},
@@ -25,7 +26,7 @@
     "targetDpi": 96,
     "logicalClientWidth": 1280,
     "logicalClientHeight": 760,
-    "generatedAtUtc": "2026-07-20T10:03:57.7853025\u002B00:00",
+    "generatedAtUtc": "2026-07-22T22:52:55.2538649\u002B00:00",
     "captures": [
       {
         "scenarioId": "startup.slide",
@@ -1720,8 +1721,8 @@
         "sourceDpiX": 144,
         "sourceDpiY": 144,
         "nonBackgroundPixelCount": 803294,
-        "fullImageSha256": "63153008b98a04c47e77e03dd18b725bcee70efaeb65c24c925fd05e40ab29bc",
-        "clientImageSha256": "63153008b98a04c47e77e03dd18b725bcee70efaeb65c24c925fd05e40ab29bc",
+        "fullImageSha256": "7afb4655e311411b8373bc7f48c0bb0941f6f67504506fe4a84dcc239bb705e0",
+        "clientImageSha256": "7afb4655e311411b8373bc7f48c0bb0941f6f67504506fe4a84dcc239bb705e0",
         "semanticState": {
           "scenarioId": "backstage.account",
           "host": "wpf",
@@ -2809,6 +2810,288 @@
         "limitations": []
       },
       {
+        "scenarioId": "editor.rich-text-selection",
+        "host": "wpf",
+        "captureStatus": "complete",
+        "fullImagePath": "wpf/full/editor.rich-text-selection.png",
+        "clientImagePath": "wpf/client/editor.rich-text-selection.png",
+        "logicalWidth": 1280,
+        "logicalHeight": 760,
+        "pixelWidth": 1280,
+        "pixelHeight": 760,
+        "dpiX": 96,
+        "dpiY": 96,
+        "sourceDpiX": 144,
+        "sourceDpiY": 144,
+        "nonBackgroundPixelCount": 890584,
+        "fullImageSha256": "409c77b94b6438169a9322eff9ba71d4c167fbf5e88922553ccee280f20cc161",
+        "clientImageSha256": "409c77b94b6438169a9322eff9ba71d4c167fbf5e88922553ccee280f20cc161",
+        "semanticState": {
+          "scenarioId": "editor.rich-text-selection",
+          "host": "wpf",
+          "activationId": "selection",
+          "currentSlideIndex": 0,
+          "currentSlideTitle": "Quarterly Review",
+          "selectedShapeIds": [
+            10
+          ],
+          "selectedShapeKind": "AutoShape",
+          "activeRibbonTabId": "home",
+          "visibleRibbonTabIds": [
+            "file",
+            "home",
+            "insert",
+            "design",
+            "transitions",
+            "animations",
+            "view"
+          ],
+          "visibleContextualTabIds": [],
+          "backstageOpen": false,
+          "backstagePane": "",
+          "focusedRole": "",
+          "focusedLabel": "",
+          "statusText": "Slide 1 / 3",
+          "showGridlines": true,
+          "showGuides": true,
+          "zoomMode": "FitToWindow",
+          "zoomPercent": 100,
+          "appOwnedTitleBarVisible": true,
+          "quickAccessButtonCount": 3,
+          "appIconIdentity": "shared-shell:FreeP",
+          "windowTitle": "Untitled \u2014 FreeP",
+          "statusViewModeControlCount": 0,
+          "statusZoomControlVisible": false,
+          "titleBarBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 34,
+            "isVisible": true
+          },
+          "ribbonBounds": {
+            "x": 0,
+            "y": 34,
+            "width": 1280,
+            "height": 122.96000000000001,
+            "isVisible": true
+          },
+          "slidePaneBounds": {
+            "x": 0,
+            "y": 156.96,
+            "width": 180,
+            "height": 577.04,
+            "isVisible": true
+          },
+          "canvasBounds": {
+            "x": 180,
+            "y": 156.96,
+            "width": 1100,
+            "height": 517.04,
+            "isVisible": true
+          },
+          "notesPaneBounds": {
+            "x": 180,
+            "y": 674,
+            "width": 1100,
+            "height": 60,
+            "isVisible": true
+          },
+          "statusBarBounds": {
+            "x": 0,
+            "y": 734,
+            "width": 1280,
+            "height": 26,
+            "isVisible": true
+          },
+          "visibleAuxiliaryPanes": [],
+          "assertions": [
+            {
+              "id": "fixture-loaded",
+              "passed": true,
+              "detail": "Loaded 3 seeded slides."
+            },
+            {
+              "id": "slide-activated",
+              "passed": true,
+              "detail": "Activated slide index 0; expected 0."
+            },
+            {
+              "id": "selection-activated",
+              "passed": true,
+              "detail": "Selected shape ids: 10."
+            },
+            {
+              "id": "rich-editor-activated",
+              "passed": true,
+              "detail": "Active rich-editor shape id is 10; expected 10."
+            },
+            {
+              "id": "rich-editor-selection",
+              "passed": true,
+              "detail": "Selected \u0027revenue review highlights\u0027 at logical range 10..35."
+            },
+            {
+              "id": "rich-editor-focus",
+              "passed": true,
+              "detail": "The production WPF RichTextBox owns keyboard focus."
+            },
+            {
+              "id": "rich-editor-mixed-runs",
+              "passed": true,
+              "detail": "The production overlay contains 3 model runs; expected 3 mixed-format runs."
+            },
+            {
+              "id": "active-ribbon-tab",
+              "passed": true,
+              "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+            }
+          ]
+        },
+        "limitations": []
+      },
+      {
+        "scenarioId": "editor.rich-text-caret",
+        "host": "wpf",
+        "captureStatus": "complete",
+        "fullImagePath": "wpf/full/editor.rich-text-caret.png",
+        "clientImagePath": "wpf/client/editor.rich-text-caret.png",
+        "logicalWidth": 1280,
+        "logicalHeight": 760,
+        "pixelWidth": 1280,
+        "pixelHeight": 760,
+        "dpiX": 96,
+        "dpiY": 96,
+        "sourceDpiX": 144,
+        "sourceDpiY": 144,
+        "nonBackgroundPixelCount": 890584,
+        "fullImageSha256": "e9b37f92ae374fcd487e3bc0db1abf2bd508a6a83b3a81267bef14e4b502c8b2",
+        "clientImageSha256": "e9b37f92ae374fcd487e3bc0db1abf2bd508a6a83b3a81267bef14e4b502c8b2",
+        "semanticState": {
+          "scenarioId": "editor.rich-text-caret",
+          "host": "wpf",
+          "activationId": "caret",
+          "currentSlideIndex": 0,
+          "currentSlideTitle": "Quarterly Review",
+          "selectedShapeIds": [
+            10
+          ],
+          "selectedShapeKind": "AutoShape",
+          "activeRibbonTabId": "home",
+          "visibleRibbonTabIds": [
+            "file",
+            "home",
+            "insert",
+            "design",
+            "transitions",
+            "animations",
+            "view"
+          ],
+          "visibleContextualTabIds": [],
+          "backstageOpen": false,
+          "backstagePane": "",
+          "focusedRole": "",
+          "focusedLabel": "",
+          "statusText": "Slide 1 / 3",
+          "showGridlines": true,
+          "showGuides": true,
+          "zoomMode": "FitToWindow",
+          "zoomPercent": 100,
+          "appOwnedTitleBarVisible": true,
+          "quickAccessButtonCount": 3,
+          "appIconIdentity": "shared-shell:FreeP",
+          "windowTitle": "Untitled \u2014 FreeP",
+          "statusViewModeControlCount": 0,
+          "statusZoomControlVisible": false,
+          "titleBarBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 34,
+            "isVisible": true
+          },
+          "ribbonBounds": {
+            "x": 0,
+            "y": 34,
+            "width": 1280,
+            "height": 122.96000000000001,
+            "isVisible": true
+          },
+          "slidePaneBounds": {
+            "x": 0,
+            "y": 156.96,
+            "width": 180,
+            "height": 577.04,
+            "isVisible": true
+          },
+          "canvasBounds": {
+            "x": 180,
+            "y": 156.96,
+            "width": 1100,
+            "height": 517.04,
+            "isVisible": true
+          },
+          "notesPaneBounds": {
+            "x": 180,
+            "y": 674,
+            "width": 1100,
+            "height": 60,
+            "isVisible": true
+          },
+          "statusBarBounds": {
+            "x": 0,
+            "y": 734,
+            "width": 1280,
+            "height": 26,
+            "isVisible": true
+          },
+          "visibleAuxiliaryPanes": [],
+          "assertions": [
+            {
+              "id": "fixture-loaded",
+              "passed": true,
+              "detail": "Loaded 3 seeded slides."
+            },
+            {
+              "id": "slide-activated",
+              "passed": true,
+              "detail": "Activated slide index 0; expected 0."
+            },
+            {
+              "id": "selection-activated",
+              "passed": true,
+              "detail": "Selected shape ids: 10."
+            },
+            {
+              "id": "rich-editor-activated",
+              "passed": true,
+              "detail": "Active rich-editor shape id is 10; expected 10."
+            },
+            {
+              "id": "rich-editor-selection",
+              "passed": true,
+              "detail": "Selected \u0027\u0027 at logical range 67..67."
+            },
+            {
+              "id": "rich-editor-focus",
+              "passed": true,
+              "detail": "The production WPF RichTextBox owns keyboard focus."
+            },
+            {
+              "id": "rich-editor-mixed-runs",
+              "passed": true,
+              "detail": "The production overlay contains 3 model runs; expected 3 mixed-format runs."
+            },
+            {
+              "id": "active-ribbon-tab",
+              "passed": true,
+              "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+            }
+          ]
+        },
+        "limitations": []
+      },
+      {
         "scenarioId": "review.comments-pane",
         "host": "wpf",
         "captureStatus": "complete",
@@ -3802,7 +4085,7 @@
     "targetDpi": 96,
     "logicalClientWidth": 1280,
     "logicalClientHeight": 760,
-    "generatedAtUtc": "2026-07-20T10:05:23.2203019\u002B00:00",
+    "generatedAtUtc": "2026-07-22T22:54:16.9701077\u002B00:00",
     "captures": [
       {
         "scenarioId": "startup.slide",
@@ -5497,8 +5780,8 @@
         "sourceDpiX": 96,
         "sourceDpiY": 96,
         "nonBackgroundPixelCount": 805089,
-        "fullImageSha256": "a66dccc2eb714b000b7acc8c2b2787e1c8a595a93c2411f353ce10d4a2d31321",
-        "clientImageSha256": "a66dccc2eb714b000b7acc8c2b2787e1c8a595a93c2411f353ce10d4a2d31321",
+        "fullImageSha256": "c4464c03789e7adc91e04f1cd86af57dad506875ecb372fc7f6d3c8f79cd977a",
+        "clientImageSha256": "c4464c03789e7adc91e04f1cd86af57dad506875ecb372fc7f6d3c8f79cd977a",
         "semanticState": {
           "scenarioId": "backstage.account",
           "host": "avalonia",
@@ -6586,6 +6869,288 @@
         "limitations": []
       },
       {
+        "scenarioId": "editor.rich-text-selection",
+        "host": "avalonia",
+        "captureStatus": "complete",
+        "fullImagePath": "avalonia/full/editor.rich-text-selection.png",
+        "clientImagePath": "avalonia/client/editor.rich-text-selection.png",
+        "logicalWidth": 1280,
+        "logicalHeight": 760,
+        "pixelWidth": 1280,
+        "pixelHeight": 760,
+        "dpiX": 96,
+        "dpiY": 96,
+        "sourceDpiX": 96,
+        "sourceDpiY": 96,
+        "nonBackgroundPixelCount": 892186,
+        "fullImageSha256": "7e93da614c031edca86838b300ff3e41cb7ec1f8e380cb9653110c32dadb7c7f",
+        "clientImageSha256": "7e93da614c031edca86838b300ff3e41cb7ec1f8e380cb9653110c32dadb7c7f",
+        "semanticState": {
+          "scenarioId": "editor.rich-text-selection",
+          "host": "avalonia",
+          "activationId": "selection",
+          "currentSlideIndex": 0,
+          "currentSlideTitle": "Quarterly Review",
+          "selectedShapeIds": [
+            10
+          ],
+          "selectedShapeKind": "AutoShape",
+          "activeRibbonTabId": "home",
+          "visibleRibbonTabIds": [
+            "FileTab",
+            "home",
+            "insert",
+            "design",
+            "transitions",
+            "animations",
+            "view"
+          ],
+          "visibleContextualTabIds": [],
+          "backstageOpen": false,
+          "backstagePane": "",
+          "focusedRole": "textbox",
+          "focusedLabel": "",
+          "statusText": "Slide 1 / 3",
+          "showGridlines": true,
+          "showGuides": true,
+          "zoomMode": "FitToWindow",
+          "zoomPercent": 100,
+          "appOwnedTitleBarVisible": true,
+          "quickAccessButtonCount": 3,
+          "appIconIdentity": "shared-shell:FreeP",
+          "windowTitle": "Untitled \u2014 FreeP",
+          "statusViewModeControlCount": 0,
+          "statusZoomControlVisible": false,
+          "titleBarBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 34,
+            "isVisible": true
+          },
+          "ribbonBounds": {
+            "x": 0,
+            "y": 34,
+            "width": 1280,
+            "height": 123.33333333333333,
+            "isVisible": true
+          },
+          "slidePaneBounds": {
+            "x": 0,
+            "y": 157.33333333333331,
+            "width": 180,
+            "height": 576.6666666666666,
+            "isVisible": true
+          },
+          "canvasBounds": {
+            "x": 180,
+            "y": 157.33333333333331,
+            "width": 1100,
+            "height": 516.6666666666666,
+            "isVisible": true
+          },
+          "notesPaneBounds": {
+            "x": 180,
+            "y": 674,
+            "width": 1100,
+            "height": 60,
+            "isVisible": true
+          },
+          "statusBarBounds": {
+            "x": 0,
+            "y": 734,
+            "width": 1280,
+            "height": 26,
+            "isVisible": true
+          },
+          "visibleAuxiliaryPanes": [],
+          "assertions": [
+            {
+              "id": "fixture-loaded",
+              "passed": true,
+              "detail": "Loaded 3 seeded slides."
+            },
+            {
+              "id": "slide-activated",
+              "passed": true,
+              "detail": "Activated slide index 0; expected 0."
+            },
+            {
+              "id": "selection-activated",
+              "passed": true,
+              "detail": "Selected shape ids: 10."
+            },
+            {
+              "id": "rich-editor-activated",
+              "passed": true,
+              "detail": "Active rich-editor shape id is 10; expected 10."
+            },
+            {
+              "id": "rich-editor-selection",
+              "passed": true,
+              "detail": "Selected \u0027revenue review highlights\u0027 at logical range 10..35."
+            },
+            {
+              "id": "rich-editor-focus",
+              "passed": true,
+              "detail": "The production Avalonia rich-text input owns keyboard focus."
+            },
+            {
+              "id": "rich-editor-mixed-runs",
+              "passed": true,
+              "detail": "The production overlay contains 3 model runs; expected 3 mixed-format runs."
+            },
+            {
+              "id": "active-ribbon-tab",
+              "passed": true,
+              "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+            }
+          ]
+        },
+        "limitations": []
+      },
+      {
+        "scenarioId": "editor.rich-text-caret",
+        "host": "avalonia",
+        "captureStatus": "complete",
+        "fullImagePath": "avalonia/full/editor.rich-text-caret.png",
+        "clientImagePath": "avalonia/client/editor.rich-text-caret.png",
+        "logicalWidth": 1280,
+        "logicalHeight": 760,
+        "pixelWidth": 1280,
+        "pixelHeight": 760,
+        "dpiX": 96,
+        "dpiY": 96,
+        "sourceDpiX": 96,
+        "sourceDpiY": 96,
+        "nonBackgroundPixelCount": 892186,
+        "fullImageSha256": "c6fea6b664b4978ac571857591014eaede224a366c4189cbfd999ac2fe3780c1",
+        "clientImageSha256": "c6fea6b664b4978ac571857591014eaede224a366c4189cbfd999ac2fe3780c1",
+        "semanticState": {
+          "scenarioId": "editor.rich-text-caret",
+          "host": "avalonia",
+          "activationId": "caret",
+          "currentSlideIndex": 0,
+          "currentSlideTitle": "Quarterly Review",
+          "selectedShapeIds": [
+            10
+          ],
+          "selectedShapeKind": "AutoShape",
+          "activeRibbonTabId": "home",
+          "visibleRibbonTabIds": [
+            "FileTab",
+            "home",
+            "insert",
+            "design",
+            "transitions",
+            "animations",
+            "view"
+          ],
+          "visibleContextualTabIds": [],
+          "backstageOpen": false,
+          "backstagePane": "",
+          "focusedRole": "textbox",
+          "focusedLabel": "",
+          "statusText": "Slide 1 / 3",
+          "showGridlines": true,
+          "showGuides": true,
+          "zoomMode": "FitToWindow",
+          "zoomPercent": 100,
+          "appOwnedTitleBarVisible": true,
+          "quickAccessButtonCount": 3,
+          "appIconIdentity": "shared-shell:FreeP",
+          "windowTitle": "Untitled \u2014 FreeP",
+          "statusViewModeControlCount": 0,
+          "statusZoomControlVisible": false,
+          "titleBarBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 34,
+            "isVisible": true
+          },
+          "ribbonBounds": {
+            "x": 0,
+            "y": 34,
+            "width": 1280,
+            "height": 123.33333333333333,
+            "isVisible": true
+          },
+          "slidePaneBounds": {
+            "x": 0,
+            "y": 157.33333333333331,
+            "width": 180,
+            "height": 576.6666666666666,
+            "isVisible": true
+          },
+          "canvasBounds": {
+            "x": 180,
+            "y": 157.33333333333331,
+            "width": 1100,
+            "height": 516.6666666666666,
+            "isVisible": true
+          },
+          "notesPaneBounds": {
+            "x": 180,
+            "y": 674,
+            "width": 1100,
+            "height": 60,
+            "isVisible": true
+          },
+          "statusBarBounds": {
+            "x": 0,
+            "y": 734,
+            "width": 1280,
+            "height": 26,
+            "isVisible": true
+          },
+          "visibleAuxiliaryPanes": [],
+          "assertions": [
+            {
+              "id": "fixture-loaded",
+              "passed": true,
+              "detail": "Loaded 3 seeded slides."
+            },
+            {
+              "id": "slide-activated",
+              "passed": true,
+              "detail": "Activated slide index 0; expected 0."
+            },
+            {
+              "id": "selection-activated",
+              "passed": true,
+              "detail": "Selected shape ids: 10."
+            },
+            {
+              "id": "rich-editor-activated",
+              "passed": true,
+              "detail": "Active rich-editor shape id is 10; expected 10."
+            },
+            {
+              "id": "rich-editor-selection",
+              "passed": true,
+              "detail": "Selected \u0027\u0027 at logical range 67..67."
+            },
+            {
+              "id": "rich-editor-focus",
+              "passed": true,
+              "detail": "The production Avalonia rich-text input owns keyboard focus."
+            },
+            {
+              "id": "rich-editor-mixed-runs",
+              "passed": true,
+              "detail": "The production overlay contains 3 model runs; expected 3 mixed-format runs."
+            },
+            {
+              "id": "active-ribbon-tab",
+              "passed": true,
+              "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
+            }
+          ]
+        },
+        "limitations": []
+      },
+      {
         "scenarioId": "review.comments-pane",
         "host": "avalonia",
         "captureStatus": "complete",
@@ -6722,9 +7287,9 @@
         "dpiY": 96,
         "sourceDpiX": 96,
         "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 891723,
-        "fullImageSha256": "b3da76de91572ed7de6d5ded373e856d14efb38fcb7719ac3c850b798741d120",
-        "clientImageSha256": "b3da76de91572ed7de6d5ded373e856d14efb38fcb7719ac3c850b798741d120",
+        "nonBackgroundPixelCount": 891733,
+        "fullImageSha256": "12a3572032f12bbbcae5eb08e76b74ac35a293ab756bfeff0d0a13c5cf0e8ca8",
+        "clientImageSha256": "12a3572032f12bbbcae5eb08e76b74ac35a293ab756bfeff0d0a13c5cf0e8ca8",
         "semanticState": {
           "scenarioId": "review.accessibility-pane",
           "host": "avalonia",
@@ -6968,9 +7533,9 @@
         "dpiY": 96,
         "sourceDpiX": 96,
         "sourceDpiY": 96,
-        "nonBackgroundPixelCount": 892012,
-        "fullImageSha256": "845934ae102b2b12a69af75b34640958a8a67c6ed848dcc4efc0a83819a61a4f",
-        "clientImageSha256": "845934ae102b2b12a69af75b34640958a8a67c6ed848dcc4efc0a83819a61a4f",
+        "nonBackgroundPixelCount": 892010,
+        "fullImageSha256": "d6b548778eca69f82e5b9290a5d2bf033c68b85990324627f3b33e1b2e474b1e",
+        "clientImageSha256": "d6b548778eca69f82e5b9290a5d2bf033c68b85990324627f3b33e1b2e474b1e",
         "semanticState": {
           "scenarioId": "review.reading-order-pane",
           "host": "avalonia",
@@ -8626,9 +9191,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.033850740131578946,
-        "foregroundChangedPixelRatio": 0.03385077492883936,
-        "meanChannelDelta": 3.2536249314692984,
+        "changedPixelRatio": 0.03382298519736842,
+        "foregroundChangedPixelRatio": 0.03382301996609783,
+        "meanChannelDelta": 3.254064555921053,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 1,
         "wpfPerceptualHash": "0000000000020000",
@@ -8638,9 +9203,9 @@
         "maximumPerceptualHashDistance": 18,
         "thresholdPassed": true,
         "heatmapPath": "diff/backstage.account.png",
-        "wpfImageSha256": "63153008b98a04c47e77e03dd18b725bcee70efaeb65c24c925fd05e40ab29bc",
-        "avaloniaImageSha256": "a66dccc2eb714b000b7acc8c2b2787e1c8a595a93c2411f353ce10d4a2d31321",
-        "heatmapSha256": "4f166f915efb9acc47e301d9dbf55ebb129c4f188d432ec251b7ed21f19648ae"
+        "wpfImageSha256": "7afb4655e311411b8373bc7f48c0bb0941f6f67504506fe4a84dcc239bb705e0",
+        "avaloniaImageSha256": "c4464c03789e7adc91e04f1cd86af57dad506875ecb372fc7f6d3c8f79cd977a",
+        "heatmapSha256": "19c43707568593943b90d1f31ec3090ba65c926c44f952c9fc63305ef8a2f837"
       },
       "wpfContentValidation": {
         "width": 1280,
@@ -8649,10 +9214,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0,
-        "meanLuminance": 225.617130141057,
+        "meanLuminance": 225.61899486145174,
         "luminanceRange": 204,
-        "luminanceStandardDeviation": 60.55359748979399,
-        "edgePixelRatio": 0.022427014802631578,
+        "luminanceStandardDeviation": 60.558522427479396,
+        "edgePixelRatio": 0.022384868421052632,
         "isValid": true,
         "failures": []
       },
@@ -8663,10 +9228,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 1.953125E-05,
-        "meanLuminance": 225.30408748993912,
+        "meanLuminance": 225.2999578774805,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 60.54173802212316,
-        "edgePixelRatio": 0.02844983552631579,
+        "luminanceStandardDeviation": 60.54679141630688,
+        "edgePixelRatio": 0.028548519736842106,
         "isValid": true,
         "failures": []
       },
@@ -9276,6 +9841,154 @@
       }
     },
     {
+      "scenarioId": "editor.rich-text-selection",
+      "kind": "richEditorOverlay",
+      "classification": "pass",
+      "wpfFullImagePath": "wpf/full/editor.rich-text-selection.png",
+      "avaloniaFullImagePath": "avalonia/full/editor.rich-text-selection.png",
+      "wpfClientImagePath": "wpf/client/editor.rich-text-selection.png",
+      "avaloniaClientImagePath": "avalonia/client/editor.rich-text-selection.png",
+      "mismatchCategories": [],
+      "details": [],
+      "pixelMetrics": {
+        "wpfPixelWidth": 1280,
+        "wpfPixelHeight": 760,
+        "avaloniaPixelWidth": 1280,
+        "avaloniaPixelHeight": 760,
+        "normalizedWidth": 1280,
+        "normalizedHeight": 760,
+        "changedPixelRatio": 0.09575041118421053,
+        "foregroundChangedPixelRatio": 0.10412586411969343,
+        "meanChannelDelta": 7.702718955592105,
+        "maxChannelDelta": 255,
+        "perceptualHashDistance": 3,
+        "wpfPerceptualHash": "0080899580811001",
+        "avaloniaPerceptualHash": "0080899583810001",
+        "maximumChangedPixelRatio": 0.2,
+        "maximumMeanChannelDelta": 18,
+        "maximumPerceptualHashDistance": 18,
+        "thresholdPassed": true,
+        "heatmapPath": "diff/editor.rich-text-selection.png",
+        "wpfImageSha256": "409c77b94b6438169a9322eff9ba71d4c167fbf5e88922553ccee280f20cc161",
+        "avaloniaImageSha256": "7e93da614c031edca86838b300ff3e41cb7ec1f8e380cb9653110c32dadb7c7f",
+        "heatmapSha256": "a8c2cb5cbf79ecae297e2b6b0d7ce9d2db5e52342050e97ba036bcab155426c3"
+      },
+      "wpfContentValidation": {
+        "width": 1280,
+        "height": 760,
+        "meanAlpha": 1,
+        "opaquePixelRatio": 1,
+        "nearTransparentPixelRatio": 0,
+        "nearBlackPixelRatio": 0.0032103207236842107,
+        "meanLuminance": 219.925869492167,
+        "luminanceRange": 255,
+        "luminanceStandardDeviation": 56.7733349939159,
+        "edgePixelRatio": 0.06548314144736841,
+        "isValid": true,
+        "failures": []
+      },
+      "avaloniaContentValidation": {
+        "width": 1280,
+        "height": 760,
+        "meanAlpha": 1,
+        "opaquePixelRatio": 1,
+        "nearTransparentPixelRatio": 0,
+        "nearBlackPixelRatio": 0.0022779605263157894,
+        "meanLuminance": 222.1935014976765,
+        "luminanceRange": 255,
+        "luminanceStandardDeviation": 55.822665258065996,
+        "edgePixelRatio": 0.060159333881578944,
+        "isValid": true,
+        "failures": []
+      },
+      "wpfTitleBarRasterValidation": {
+        "sampledPixelCount": 43520,
+        "accentPixelCount": 42822,
+        "accentPixelRatio": 0.9839613970588236,
+        "isValid": true
+      },
+      "avaloniaTitleBarRasterValidation": {
+        "sampledPixelCount": 43520,
+        "accentPixelCount": 42891,
+        "accentPixelRatio": 0.985546875,
+        "isValid": true
+      }
+    },
+    {
+      "scenarioId": "editor.rich-text-caret",
+      "kind": "richEditorOverlay",
+      "classification": "pass",
+      "wpfFullImagePath": "wpf/full/editor.rich-text-caret.png",
+      "avaloniaFullImagePath": "avalonia/full/editor.rich-text-caret.png",
+      "wpfClientImagePath": "wpf/client/editor.rich-text-caret.png",
+      "avaloniaClientImagePath": "avalonia/client/editor.rich-text-caret.png",
+      "mismatchCategories": [],
+      "details": [],
+      "pixelMetrics": {
+        "wpfPixelWidth": 1280,
+        "wpfPixelHeight": 760,
+        "avaloniaPixelWidth": 1280,
+        "avaloniaPixelHeight": 760,
+        "normalizedWidth": 1280,
+        "normalizedHeight": 760,
+        "changedPixelRatio": 0.09027240953947369,
+        "foregroundChangedPixelRatio": 0.09816869226160134,
+        "meanChannelDelta": 7.580549958881579,
+        "maxChannelDelta": 255,
+        "perceptualHashDistance": 3,
+        "wpfPerceptualHash": "0080899580811001",
+        "avaloniaPerceptualHash": "0080899583810001",
+        "maximumChangedPixelRatio": 0.2,
+        "maximumMeanChannelDelta": 18,
+        "maximumPerceptualHashDistance": 18,
+        "thresholdPassed": true,
+        "heatmapPath": "diff/editor.rich-text-caret.png",
+        "wpfImageSha256": "e9b37f92ae374fcd487e3bc0db1abf2bd508a6a83b3a81267bef14e4b502c8b2",
+        "avaloniaImageSha256": "c6fea6b664b4978ac571857591014eaede224a366c4189cbfd999ac2fe3780c1",
+        "heatmapSha256": "2f55635c9582e47d562e63c3a420dfb5357d0d75a7fdadbc8af33b44e853f70d"
+      },
+      "wpfContentValidation": {
+        "width": 1280,
+        "height": 760,
+        "meanAlpha": 1,
+        "opaquePixelRatio": 1,
+        "nearTransparentPixelRatio": 0,
+        "nearBlackPixelRatio": 0.003538240131578947,
+        "meanLuminance": 220.14083579046334,
+        "luminanceRange": 255,
+        "luminanceStandardDeviation": 56.921108417776615,
+        "edgePixelRatio": 0.06566097861842106,
+        "isValid": true,
+        "failures": []
+      },
+      "avaloniaContentValidation": {
+        "width": 1280,
+        "height": 760,
+        "meanAlpha": 1,
+        "opaquePixelRatio": 1,
+        "nearTransparentPixelRatio": 0,
+        "nearBlackPixelRatio": 0.0022779605263157894,
+        "meanLuminance": 222.31251122833254,
+        "luminanceRange": 255,
+        "luminanceStandardDeviation": 55.864225469444854,
+        "edgePixelRatio": 0.05975740131578947,
+        "isValid": true,
+        "failures": []
+      },
+      "wpfTitleBarRasterValidation": {
+        "sampledPixelCount": 43520,
+        "accentPixelCount": 42822,
+        "accentPixelRatio": 0.9839613970588236,
+        "isValid": true
+      },
+      "avaloniaTitleBarRasterValidation": {
+        "sampledPixelCount": 43520,
+        "accentPixelCount": 42891,
+        "accentPixelRatio": 0.985546875,
+        "isValid": true
+      }
+    },
+    {
       "scenarioId": "review.comments-pane",
       "kind": "auxiliaryPane",
       "classification": "pass",
@@ -9366,21 +10079,21 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.112421875,
-        "foregroundChangedPixelRatio": 0.12227078141543153,
-        "meanChannelDelta": 9.45352933114035,
+        "changedPixelRatio": 0.10056229440789474,
+        "foregroundChangedPixelRatio": 0.10937222242719195,
+        "meanChannelDelta": 8.461722861842105,
         "maxChannelDelta": 255,
-        "perceptualHashDistance": 6,
+        "perceptualHashDistance": 4,
         "wpfPerceptualHash": "0000055320231001",
-        "avaloniaPerceptualHash": "0000051b69230001",
+        "avaloniaPerceptualHash": "0000055b29230001",
         "maximumChangedPixelRatio": 0.2,
         "maximumMeanChannelDelta": 18,
         "maximumPerceptualHashDistance": 18,
         "thresholdPassed": true,
         "heatmapPath": "diff/review.accessibility-pane.png",
         "wpfImageSha256": "a55346ce3cb96a666ebc96762c549187a5fd949d21e78954e5d21d1a600224b8",
-        "avaloniaImageSha256": "b3da76de91572ed7de6d5ded373e856d14efb38fcb7719ac3c850b798741d120",
-        "heatmapSha256": "a394f6fb68ff226f562cb2cf2d7e5e573e592355a1473d38ec6f14a209f634f8"
+        "avaloniaImageSha256": "12a3572032f12bbbcae5eb08e76b74ac35a293ab756bfeff0d0a13c5cf0e8ca8",
+        "heatmapSha256": "e29c921f1be9d172834e00c5a1ec9aaf11e5ca2d76dc97eb51b9036ebda0c8f9"
       },
       "wpfContentValidation": {
         "width": 1280,
@@ -9402,11 +10115,11 @@
         "meanAlpha": 1,
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
-        "nearBlackPixelRatio": 0.0017578125,
-        "meanLuminance": 224.9347505140304,
+        "nearBlackPixelRatio": 0.001864720394736842,
+        "meanLuminance": 225.4185261657541,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 55.06414116484782,
-        "edgePixelRatio": 0.07675678453947368,
+        "luminanceStandardDeviation": 55.0473391745978,
+        "edgePixelRatio": 0.07439967105263158,
         "isValid": true,
         "failures": []
       },
@@ -9514,21 +10227,21 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.1157545230263158,
-        "foregroundChangedPixelRatio": 0.12588047358048263,
-        "meanChannelDelta": 9.646260964912281,
+        "changedPixelRatio": 0.11392475328947368,
+        "foregroundChangedPixelRatio": 0.12389022413503996,
+        "meanChannelDelta": 9.459170093201754,
         "maxChannelDelta": 255,
-        "perceptualHashDistance": 5,
+        "perceptualHashDistance": 4,
         "wpfPerceptualHash": "4000051320a31001",
-        "avaloniaPerceptualHash": "4000455323a30001",
+        "avaloniaPerceptualHash": "4000451323a30001",
         "maximumChangedPixelRatio": 0.2,
         "maximumMeanChannelDelta": 18,
         "maximumPerceptualHashDistance": 18,
         "thresholdPassed": true,
         "heatmapPath": "diff/review.reading-order-pane.png",
         "wpfImageSha256": "19ce57193f98499a1f05463217ca64fb1f2d8becfeed0945d329f701bba51dd6",
-        "avaloniaImageSha256": "845934ae102b2b12a69af75b34640958a8a67c6ed848dcc4efc0a83819a61a4f",
-        "heatmapSha256": "7f1cb05047288b0a7f63e12534a497d19ffe6efbdd6b6dca1656ac0253636554"
+        "avaloniaImageSha256": "d6b548778eca69f82e5b9290a5d2bf033c68b85990324627f3b33e1b2e474b1e",
+        "heatmapSha256": "dea1e887dbc909708a636afb7bb7d44889323bb0998320154ecb4035e433b149"
       },
       "wpfContentValidation": {
         "width": 1280,
@@ -9551,10 +10264,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0.0019171463815789475,
-        "meanLuminance": 224.610125894426,
+        "meanLuminance": 224.61313872029575,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 55.173095750755124,
-        "edgePixelRatio": 0.08204050164473685,
+        "luminanceStandardDeviation": 55.170484067531575,
+        "edgePixelRatio": 0.08197368421052631,
         "isValid": true,
         "failures": []
       },
@@ -9874,7 +10587,8 @@
     "Native OS caption buttons, window-manager shadows, and other non-client decoration are excluded on both hosts; no app-owned client region is masked.",
     "WPF capture mode: visible-app-owned-full-client-render-target; native-non-client-excluded; scenario-isolated-processes; Avalonia capture mode: visible-app-owned-full-client-render-target; native-non-client-excluded; scenario-isolated-processes.",
     "FreeP currently declares zero contextual ribbon tabs, so the evidence contract contains no invented contextual-tab scenarios.",
-    "Gridline/guide scenarios use the runtime ribbon command path; both current canvas renderers apply those flags to snapping and do not paint gridline/guide canvas raster."
+    "Gridline/guide scenarios use the runtime ribbon command path; both current canvas renderers apply those flags to snapping and do not paint gridline/guide canvas raster.",
+    "Rich-editor overlay scenarios use each host\u0027s production editor with shared mixed runs and deterministic selection/caret offsets. They prove visible layout, focus, selection, and caret state; they do not claim physical pointer hit-testing, IME, clipboard, undo, or commit behavior."
   ],
   "limitations": []
 }

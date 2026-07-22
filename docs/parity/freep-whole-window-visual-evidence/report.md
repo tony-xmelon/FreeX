@@ -1,10 +1,10 @@
 # FreeP Paired Whole-Window Visual Evidence
 
-Generated `2026-07-20T10:05:27.2836813+00:00` from independently activated WPF and Avalonia app processes.
+Generated `2026-07-22T22:54:21.5022694+00:00` from independently activated WPF and Avalonia app processes.
 
-- Scenarios: 31
-- Paired captures: 31
-- Pass: 31
+- Scenarios: 33
+- Paired captures: 33
+- Pass: 33
 - Mismatch: 0
 - Limitation: 0
 - Duplicate-image scenarios: 0
@@ -15,6 +15,7 @@ Generated `2026-07-20T10:05:27.2836813+00:00` from independently activated WPF a
 - Environment: WPF capture mode: visible-app-owned-full-client-render-target; native-non-client-excluded; scenario-isolated-processes; Avalonia capture mode: visible-app-owned-full-client-render-target; native-non-client-excluded; scenario-isolated-processes.
 - Environment: FreeP currently declares zero contextual ribbon tabs, so the evidence contract contains no invented contextual-tab scenarios.
 - Environment: Gridline/guide scenarios use the runtime ribbon command path; both current canvas renderers apply those flags to snapping and do not paint gridline/guide canvas raster.
+- Environment: Rich-editor overlay scenarios use each host's production editor with shared mixed runs and deterministic selection/caret offsets. They prove visible layout, focus, selection, and caret state; they do not claim physical pointer hit-testing, IME, clipboard, undo, or commit behavior.
 
 ## Mismatch Categories
 
@@ -39,7 +40,7 @@ Generated `2026-07-20T10:05:27.2836813+00:00` from independently activated WPF a
 | backstage.print | BackstagePane | pass | none | 6.75 % | 5.83 | 4 | [WPF full](wpf/full/backstage.print.png) / [Avalonia full](avalonia/full/backstage.print.png) / [WPF client](wpf/client/backstage.print.png) / [Avalonia client](avalonia/client/backstage.print.png) / [diff](diff/backstage.print.png) |
 | backstage.export | BackstagePane | pass | none | 3.08 % | 2.65 | 1 | [WPF full](wpf/full/backstage.export.png) / [Avalonia full](avalonia/full/backstage.export.png) / [WPF client](wpf/client/backstage.export.png) / [Avalonia client](avalonia/client/backstage.export.png) / [diff](diff/backstage.export.png) |
 | backstage.options | BackstagePane | pass | none | 2.20 % | 2.07 | 0 | [WPF full](wpf/full/backstage.options.png) / [Avalonia full](avalonia/full/backstage.options.png) / [WPF client](wpf/client/backstage.options.png) / [Avalonia client](avalonia/client/backstage.options.png) / [diff](diff/backstage.options.png) |
-| backstage.account | BackstagePane | pass | none | 3.39 % | 3.25 | 1 | [WPF full](wpf/full/backstage.account.png) / [Avalonia full](avalonia/full/backstage.account.png) / [WPF client](wpf/client/backstage.account.png) / [Avalonia client](avalonia/client/backstage.account.png) / [diff](diff/backstage.account.png) |
+| backstage.account | BackstagePane | pass | none | 3.38 % | 3.25 | 1 | [WPF full](wpf/full/backstage.account.png) / [Avalonia full](avalonia/full/backstage.account.png) / [WPF client](wpf/client/backstage.account.png) / [Avalonia client](avalonia/client/backstage.account.png) / [diff](diff/backstage.account.png) |
 | status.slide-2 | StatusBar | pass | none | 7.56 % | 6.01 | 2 | [WPF full](wpf/full/status.slide-2.png) / [Avalonia full](avalonia/full/status.slide-2.png) / [WPF client](wpf/client/status.slide-2.png) / [Avalonia client](avalonia/client/status.slide-2.png) / [diff](diff/status.slide-2.png) |
 | view.gridlines-guides | ViewState | pass | none | 4.85 % | 4.40 | 2 | [WPF full](wpf/full/view.gridlines-guides.png) / [Avalonia full](avalonia/full/view.gridlines-guides.png) / [WPF client](wpf/client/view.gridlines-guides.png) / [Avalonia client](avalonia/client/view.gridlines-guides.png) / [diff](diff/view.gridlines-guides.png) |
 | view.clean-canvas | ViewState | pass | none | 4.77 % | 4.37 | 2 | [WPF full](wpf/full/view.clean-canvas.png) / [Avalonia full](avalonia/full/view.clean-canvas.png) / [WPF client](wpf/client/view.clean-canvas.png) / [Avalonia client](avalonia/client/view.clean-canvas.png) / [diff](diff/view.clean-canvas.png) |
@@ -48,10 +49,12 @@ Generated `2026-07-20T10:05:27.2836813+00:00` from independently activated WPF a
 | workspace.slide-pane | WorkspaceRegion | pass | none | 7.22 % | 5.83 | 1 | [WPF full](wpf/full/workspace.slide-pane.png) / [Avalonia full](avalonia/full/workspace.slide-pane.png) / [WPF client](wpf/client/workspace.slide-pane.png) / [Avalonia client](avalonia/client/workspace.slide-pane.png) / [diff](diff/workspace.slide-pane.png) |
 | workspace.notes-pane | WorkspaceRegion | pass | none | 4.55 % | 4.41 | 1 | [WPF full](wpf/full/workspace.notes-pane.png) / [Avalonia full](avalonia/full/workspace.notes-pane.png) / [WPF client](wpf/client/workspace.notes-pane.png) / [Avalonia client](avalonia/client/workspace.notes-pane.png) / [diff](diff/workspace.notes-pane.png) |
 | workspace.canvas | WorkspaceRegion | pass | none | 6.44 % | 5.49 | 2 | [WPF full](wpf/full/workspace.canvas.png) / [Avalonia full](avalonia/full/workspace.canvas.png) / [WPF client](wpf/client/workspace.canvas.png) / [Avalonia client](avalonia/client/workspace.canvas.png) / [diff](diff/workspace.canvas.png) |
+| editor.rich-text-selection | RichEditorOverlay | pass | none | 9.58 % | 7.70 | 3 | [WPF full](wpf/full/editor.rich-text-selection.png) / [Avalonia full](avalonia/full/editor.rich-text-selection.png) / [WPF client](wpf/client/editor.rich-text-selection.png) / [Avalonia client](avalonia/client/editor.rich-text-selection.png) / [diff](diff/editor.rich-text-selection.png) |
+| editor.rich-text-caret | RichEditorOverlay | pass | none | 9.03 % | 7.58 | 3 | [WPF full](wpf/full/editor.rich-text-caret.png) / [Avalonia full](avalonia/full/editor.rich-text-caret.png) / [WPF client](wpf/client/editor.rich-text-caret.png) / [Avalonia client](avalonia/client/editor.rich-text-caret.png) / [diff](diff/editor.rich-text-caret.png) |
 | review.comments-pane | AuxiliaryPane | pass | none | 10.43 % | 9.12 | 3 | [WPF full](wpf/full/review.comments-pane.png) / [Avalonia full](avalonia/full/review.comments-pane.png) / [WPF client](wpf/client/review.comments-pane.png) / [Avalonia client](avalonia/client/review.comments-pane.png) / [diff](diff/review.comments-pane.png) |
-| review.accessibility-pane | AuxiliaryPane | pass | none | 11.24 % | 9.45 | 6 | [WPF full](wpf/full/review.accessibility-pane.png) / [Avalonia full](avalonia/full/review.accessibility-pane.png) / [WPF client](wpf/client/review.accessibility-pane.png) / [Avalonia client](avalonia/client/review.accessibility-pane.png) / [diff](diff/review.accessibility-pane.png) |
+| review.accessibility-pane | AuxiliaryPane | pass | none | 10.06 % | 8.46 | 4 | [WPF full](wpf/full/review.accessibility-pane.png) / [Avalonia full](avalonia/full/review.accessibility-pane.png) / [WPF client](wpf/client/review.accessibility-pane.png) / [Avalonia client](avalonia/client/review.accessibility-pane.png) / [diff](diff/review.accessibility-pane.png) |
 | review.alt-text-pane | AuxiliaryPane | pass | none | 9.90 % | 8.34 | 5 | [WPF full](wpf/full/review.alt-text-pane.png) / [Avalonia full](avalonia/full/review.alt-text-pane.png) / [WPF client](wpf/client/review.alt-text-pane.png) / [Avalonia client](avalonia/client/review.alt-text-pane.png) / [diff](diff/review.alt-text-pane.png) |
-| review.reading-order-pane | AuxiliaryPane | pass | none | 11.58 % | 9.65 | 5 | [WPF full](wpf/full/review.reading-order-pane.png) / [Avalonia full](avalonia/full/review.reading-order-pane.png) / [WPF client](wpf/client/review.reading-order-pane.png) / [Avalonia client](avalonia/client/review.reading-order-pane.png) / [diff](diff/review.reading-order-pane.png) |
+| review.reading-order-pane | AuxiliaryPane | pass | none | 11.39 % | 9.46 | 4 | [WPF full](wpf/full/review.reading-order-pane.png) / [Avalonia full](avalonia/full/review.reading-order-pane.png) / [WPF client](wpf/client/review.reading-order-pane.png) / [Avalonia client](avalonia/client/review.reading-order-pane.png) / [diff](diff/review.reading-order-pane.png) |
 | review.proofing-pane | AuxiliaryPane | pass | none | 8.81 % | 7.25 | 3 | [WPF full](wpf/full/review.proofing-pane.png) / [Avalonia full](avalonia/full/review.proofing-pane.png) / [WPF client](wpf/client/review.proofing-pane.png) / [Avalonia client](avalonia/client/review.proofing-pane.png) / [diff](diff/review.proofing-pane.png) |
 | accessibility.media-caption-pane | AuxiliaryPane | pass | none | 10.61 % | 9.22 | 2 | [WPF full](wpf/full/accessibility.media-caption-pane.png) / [Avalonia full](avalonia/full/accessibility.media-caption-pane.png) / [WPF client](wpf/client/accessibility.media-caption-pane.png) / [Avalonia client](avalonia/client/accessibility.media-caption-pane.png) / [diff](diff/accessibility.media-caption-pane.png) |
 | context.smartart-text-pane | AuxiliaryPane | pass | none | 9.22 % | 7.68 | 2 | [WPF full](wpf/full/context.smartart-text-pane.png) / [Avalonia full](avalonia/full/context.smartart-text-pane.png) / [WPF client](wpf/client/context.smartart-text-pane.png) / [Avalonia client](avalonia/client/context.smartart-text-pane.png) / [diff](diff/context.smartart-text-pane.png) |
