@@ -1,6 +1,6 @@
 # FreeP Paired Whole-Window Visual Evidence
 
-Generated `2026-07-22T22:25:17.8105603+00:00` from independently activated WPF and Avalonia app processes.
+Generated `2026-07-22T22:48:30.8940543+00:00` from independently activated WPF and Avalonia app processes.
 
 - Scenarios: 33
 - Paired captures: 33
@@ -52,7 +52,7 @@ Generated `2026-07-22T22:25:17.8105603+00:00` from independently activated WPF a
 | editor.rich-text-selection | RichEditorOverlay | pass | none | 9.58 % | 7.70 | 3 | [WPF full](wpf/full/editor.rich-text-selection.png) / [Avalonia full](avalonia/full/editor.rich-text-selection.png) / [WPF client](wpf/client/editor.rich-text-selection.png) / [Avalonia client](avalonia/client/editor.rich-text-selection.png) / [diff](diff/editor.rich-text-selection.png) |
 | editor.rich-text-caret | RichEditorOverlay | pass | none | 9.03 % | 7.58 | 3 | [WPF full](wpf/full/editor.rich-text-caret.png) / [Avalonia full](avalonia/full/editor.rich-text-caret.png) / [WPF client](wpf/client/editor.rich-text-caret.png) / [Avalonia client](avalonia/client/editor.rich-text-caret.png) / [diff](diff/editor.rich-text-caret.png) |
 | review.comments-pane | AuxiliaryPane | pass | none | 10.43 % | 9.12 | 3 | [WPF full](wpf/full/review.comments-pane.png) / [Avalonia full](avalonia/full/review.comments-pane.png) / [WPF client](wpf/client/review.comments-pane.png) / [Avalonia client](avalonia/client/review.comments-pane.png) / [diff](diff/review.comments-pane.png) |
-| review.accessibility-pane | AuxiliaryPane | pass | none | 11.24 % | 9.45 | 6 | [WPF full](wpf/full/review.accessibility-pane.png) / [Avalonia full](avalonia/full/review.accessibility-pane.png) / [WPF client](wpf/client/review.accessibility-pane.png) / [Avalonia client](avalonia/client/review.accessibility-pane.png) / [diff](diff/review.accessibility-pane.png) |
+| review.accessibility-pane | AuxiliaryPane | pass | none | 10.06 % | 8.46 | 4 | [WPF full](wpf/full/review.accessibility-pane.png) / [Avalonia full](avalonia/full/review.accessibility-pane.png) / [WPF client](wpf/client/review.accessibility-pane.png) / [Avalonia client](avalonia/client/review.accessibility-pane.png) / [diff](diff/review.accessibility-pane.png) |
 | review.alt-text-pane | AuxiliaryPane | pass | none | 9.90 % | 8.34 | 5 | [WPF full](wpf/full/review.alt-text-pane.png) / [Avalonia full](avalonia/full/review.alt-text-pane.png) / [WPF client](wpf/client/review.alt-text-pane.png) / [Avalonia client](avalonia/client/review.alt-text-pane.png) / [diff](diff/review.alt-text-pane.png) |
 | review.reading-order-pane | AuxiliaryPane | pass | none | 11.39 % | 9.46 | 4 | [WPF full](wpf/full/review.reading-order-pane.png) / [Avalonia full](avalonia/full/review.reading-order-pane.png) / [WPF client](wpf/client/review.reading-order-pane.png) / [Avalonia client](avalonia/client/review.reading-order-pane.png) / [diff](diff/review.reading-order-pane.png) |
 | review.proofing-pane | AuxiliaryPane | pass | none | 8.81 % | 7.25 | 3 | [WPF full](wpf/full/review.proofing-pane.png) / [Avalonia full](avalonia/full/review.proofing-pane.png) / [WPF client](wpf/client/review.proofing-pane.png) / [Avalonia client](avalonia/client/review.proofing-pane.png) / [diff](diff/review.proofing-pane.png) |
