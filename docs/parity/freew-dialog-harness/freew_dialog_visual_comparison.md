@@ -12,7 +12,7 @@ Inventory scenarios: **459**. Captured WPF: **186**. Captured Avalonia: **273**.
 | `accessibility-report.initial` | captured/captured | **genuine-visual-mismatch** | pass (0.9% painted) | pass (0.8% painted) | 7.61 % | 17.08 | default-button,cancel-button,action-button-order | heatmaps/accessibility-report.initial.png |
 | `accessibility-report.populated` | captured/captured | **genuine-visual-mismatch** | pass (0.9% painted) | pass (0.8% painted) | 7.61 % | 17.08 | default-button,cancel-button,action-button-order | heatmaps/accessibility-report.populated.png |
 | `accessibility-report.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (0.9% painted) | pass (0.8% painted) | 7.61 % | 17.08 | default-button,cancel-button,action-button-order | heatmaps/accessibility-report.validation-error.png |
-| `backstage-account.open` | captured/captured | **genuine-visual-mismatch** | pass (2.7% painted) | pass (30.6% painted) | 41.65 % | 79.03 | action-button-order | heatmaps/backstage-account.open.png |
+| `backstage-account.open` | captured/captured | **genuine-visual-mismatch** | pass (2.7% painted) | pass (30.6% painted) | 41.66 % | 79.04 | action-button-order | heatmaps/backstage-account.open.png |
 | `backstage-export.open` | captured/captured | **genuine-visual-mismatch** | pass (11.1% painted) | pass (30.4% painted) | 47.29 % | 80.93 | action-button-order | heatmaps/backstage-export.open.png |
 | `backstage-home.open` | captured/captured | **genuine-visual-mismatch** | pass (10.9% painted) | pass (29.5% painted) | 46.17 % | 80.77 | action-button-order | heatmaps/backstage-home.open.png |
 | `backstage-info.open` | captured/captured | **genuine-visual-mismatch** | pass (6.3% painted) | pass (32.2% painted) | 45.16 % | 80.29 | action-button-order | heatmaps/backstage-info.open.png |
@@ -142,11 +142,11 @@ Inventory scenarios: **459**. Captured WPF: **186**. Captured Avalonia: **273**.
 | `page-setup.tab-margins` | captured/captured | **genuine-visual-mismatch** | pass (13.9% painted) | pass (7.3% painted) | 16.29 % | 8.59 | action-button-order | heatmaps/page-setup.tab-margins.png |
 | `page-setup.tab-paper` | captured/captured | **genuine-visual-mismatch** | pass (6.7% painted) | pass (4.2% painted) | 8.20 % | 4.64 | action-button-order | heatmaps/page-setup.tab-paper.png |
 | `page-setup.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (14.0% painted) | pass (7.4% painted) | 16.42 % | 8.77 | action-button-order | heatmaps/page-setup.validation-error.png |
-| `paragraph.initial` | captured/captured | **genuine-visual-mismatch** | pass (14.0% painted) | pass (6.1% painted) | 38.51 % | 55.82 |  | heatmaps/paragraph.initial.png |
-| `paragraph.populated` | captured/captured | **genuine-visual-mismatch** | pass (14.0% painted) | pass (6.1% painted) | 38.51 % | 55.82 |  | heatmaps/paragraph.populated.png |
-| `paragraph.tab-indents-and-spacing` | captured/captured | **genuine-visual-mismatch** | pass (14.0% painted) | pass (6.1% painted) | 38.51 % | 55.82 |  | heatmaps/paragraph.tab-indents-and-spacing.png |
-| `paragraph.tab-line-and-page-breaks` | captured/captured | **genuine-visual-mismatch** | pass (14.0% painted) | pass (4.1% painted) | 33.71 % | 53.95 |  | heatmaps/paragraph.tab-line-and-page-breaks.png |
-| `paragraph.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (14.0% painted) | pass (6.2% painted) | 38.62 % | 55.99 |  | heatmaps/paragraph.validation-error.png |
+| `paragraph.initial` | captured/captured | **genuine-visual-mismatch** | pass (14.0% painted) | pass (15.9% painted) | 17.45 % | 14.96 |  | heatmaps/paragraph.initial.png |
+| `paragraph.populated` | captured/captured | **genuine-visual-mismatch** | pass (14.0% painted) | pass (15.9% painted) | 17.45 % | 14.96 |  | heatmaps/paragraph.populated.png |
+| `paragraph.tab-indents-and-spacing` | captured/captured | **genuine-visual-mismatch** | pass (14.0% painted) | pass (15.9% painted) | 17.45 % | 14.96 |  | heatmaps/paragraph.tab-indents-and-spacing.png |
+| `paragraph.tab-line-and-page-breaks` | captured/captured | **genuine-visual-mismatch** | pass (9.4% painted) | pass (10.4% painted) | 10.00 % | 10.67 |  | heatmaps/paragraph.tab-line-and-page-breaks.png |
+| `paragraph.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (14.2% painted) | pass (16.7% painted) | 18.34 % | 16.20 |  | heatmaps/paragraph.validation-error.png |
 | `password-prompt.initial` | captured/captured | **semantic-mismatch** | pass (1.7% painted) | pass (1.9% painted) | 1.89 % | 1.89 | focus,default-button,cancel-button,action-button-order | heatmaps/password-prompt.initial.png |
 | `password-prompt.populated` | captured/captured | **semantic-mismatch** | pass (1.8% painted) | pass (1.9% painted) | 1.93 % | 1.91 | focus,default-button,cancel-button,action-button-order | heatmaps/password-prompt.populated.png |
 | `paste-special.initial` | captured/captured | **genuine-visual-mismatch** | pass (13.3% painted) | pass (14.2% painted) | 8.85 % | 9.11 |  | heatmaps/paste-special.initial.png |
