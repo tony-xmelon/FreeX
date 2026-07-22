@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 1280,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-07-22T22:47:18.6196596\u002B00:00",
+  "generatedAtUtc": "2026-07-22T22:52:55.2538649\u002B00:00",
   "captures": [
     {
       "scenarioId": "startup.slide",
@@ -1700,8 +1700,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 803294,
-      "fullImageSha256": "7959a2267c75dfa96ffc42740f1d08a792bdb77a0c222b745edcfe8482503540",
-      "clientImageSha256": "7959a2267c75dfa96ffc42740f1d08a792bdb77a0c222b745edcfe8482503540",
+      "fullImageSha256": "7afb4655e311411b8373bc7f48c0bb0941f6f67504506fe4a84dcc239bb705e0",
+      "clientImageSha256": "7afb4655e311411b8373bc7f48c0bb0941f6f67504506fe4a84dcc239bb705e0",
       "semanticState": {
         "scenarioId": "backstage.account",
         "host": "wpf",

@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 1280,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-07-22T22:48:26.5757595\u002B00:00",
+  "generatedAtUtc": "2026-07-22T22:54:16.9701077\u002B00:00",
   "captures": [
     {
       "scenarioId": "startup.slide",
@@ -1700,8 +1700,8 @@
       "sourceDpiX": 96,
       "sourceDpiY": 96,
       "nonBackgroundPixelCount": 805089,
-      "fullImageSha256": "d5217cd338cb459ba8697eb71fa7de59db43d5630408baf1c583eb69abc4aaa9",
-      "clientImageSha256": "d5217cd338cb459ba8697eb71fa7de59db43d5630408baf1c583eb69abc4aaa9",
+      "fullImageSha256": "c4464c03789e7adc91e04f1cd86af57dad506875ecb372fc7f6d3c8f79cd977a",
+      "clientImageSha256": "c4464c03789e7adc91e04f1cd86af57dad506875ecb372fc7f6d3c8f79cd977a",
       "semanticState": {
         "scenarioId": "backstage.account",
         "host": "avalonia",

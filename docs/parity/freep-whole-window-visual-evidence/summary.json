@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-07-22T22:48:30.8940543\u002B00:00",
+  "generatedAtUtc": "2026-07-22T22:54:21.5022694\u002B00:00",
   "scenarioCount": 33,
   "pairedCaptureCount": 33,
   "passCount": 33,
@@ -26,7 +26,7 @@
     "targetDpi": 96,
     "logicalClientWidth": 1280,
     "logicalClientHeight": 760,
-    "generatedAtUtc": "2026-07-22T22:47:18.6196596\u002B00:00",
+    "generatedAtUtc": "2026-07-22T22:52:55.2538649\u002B00:00",
     "captures": [
       {
         "scenarioId": "startup.slide",
@@ -1721,8 +1721,8 @@
         "sourceDpiX": 144,
         "sourceDpiY": 144,
         "nonBackgroundPixelCount": 803294,
-        "fullImageSha256": "7959a2267c75dfa96ffc42740f1d08a792bdb77a0c222b745edcfe8482503540",
-        "clientImageSha256": "7959a2267c75dfa96ffc42740f1d08a792bdb77a0c222b745edcfe8482503540",
+        "fullImageSha256": "7afb4655e311411b8373bc7f48c0bb0941f6f67504506fe4a84dcc239bb705e0",
+        "clientImageSha256": "7afb4655e311411b8373bc7f48c0bb0941f6f67504506fe4a84dcc239bb705e0",
         "semanticState": {
           "scenarioId": "backstage.account",
           "host": "wpf",
@@ -4085,7 +4085,7 @@
     "targetDpi": 96,
     "logicalClientWidth": 1280,
     "logicalClientHeight": 760,
-    "generatedAtUtc": "2026-07-22T22:48:26.5757595\u002B00:00",
+    "generatedAtUtc": "2026-07-22T22:54:16.9701077\u002B00:00",
     "captures": [
       {
         "scenarioId": "startup.slide",
@@ -5780,8 +5780,8 @@
         "sourceDpiX": 96,
         "sourceDpiY": 96,
         "nonBackgroundPixelCount": 805089,
-        "fullImageSha256": "d5217cd338cb459ba8697eb71fa7de59db43d5630408baf1c583eb69abc4aaa9",
-        "clientImageSha256": "d5217cd338cb459ba8697eb71fa7de59db43d5630408baf1c583eb69abc4aaa9",
+        "fullImageSha256": "c4464c03789e7adc91e04f1cd86af57dad506875ecb372fc7f6d3c8f79cd977a",
+        "clientImageSha256": "c4464c03789e7adc91e04f1cd86af57dad506875ecb372fc7f6d3c8f79cd977a",
         "semanticState": {
           "scenarioId": "backstage.account",
           "host": "avalonia",
@@ -9191,9 +9191,9 @@
         "avaloniaPixelHeight": 760,
         "normalizedWidth": 1280,
         "normalizedHeight": 760,
-        "changedPixelRatio": 0.03374691611842105,
-        "foregroundChangedPixelRatio": 0.03374695080895437,
-        "meanChannelDelta": 3.2435252192982458,
+        "changedPixelRatio": 0.03382298519736842,
+        "foregroundChangedPixelRatio": 0.03382301996609783,
+        "meanChannelDelta": 3.254064555921053,
         "maxChannelDelta": 255,
         "perceptualHashDistance": 1,
         "wpfPerceptualHash": "0000000000020000",
@@ -9203,9 +9203,9 @@
         "maximumPerceptualHashDistance": 18,
         "thresholdPassed": true,
         "heatmapPath": "diff/backstage.account.png",
-        "wpfImageSha256": "7959a2267c75dfa96ffc42740f1d08a792bdb77a0c222b745edcfe8482503540",
-        "avaloniaImageSha256": "d5217cd338cb459ba8697eb71fa7de59db43d5630408baf1c583eb69abc4aaa9",
-        "heatmapSha256": "04fd62124bfcac433fa309858d65e93b5d51ef364b20663a5f82f9df9f5c3699"
+        "wpfImageSha256": "7afb4655e311411b8373bc7f48c0bb0941f6f67504506fe4a84dcc239bb705e0",
+        "avaloniaImageSha256": "c4464c03789e7adc91e04f1cd86af57dad506875ecb372fc7f6d3c8f79cd977a",
+        "heatmapSha256": "19c43707568593943b90d1f31ec3090ba65c926c44f952c9fc63305ef8a2f837"
       },
       "wpfContentValidation": {
         "width": 1280,
@@ -9214,10 +9214,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 0,
-        "meanLuminance": 225.6233729453333,
+        "meanLuminance": 225.61899486145174,
         "luminanceRange": 204,
-        "luminanceStandardDeviation": 60.55544786239564,
-        "edgePixelRatio": 0.02235094572368421,
+        "luminanceStandardDeviation": 60.558522427479396,
+        "edgePixelRatio": 0.022384868421052632,
         "isValid": true,
         "failures": []
       },
@@ -9228,10 +9228,10 @@
         "opaquePixelRatio": 1,
         "nearTransparentPixelRatio": 0,
         "nearBlackPixelRatio": 1.953125E-05,
-        "meanLuminance": 225.30542045971734,
+        "meanLuminance": 225.2999578774805,
         "luminanceRange": 255,
-        "luminanceStandardDeviation": 60.54560722031836,
-        "edgePixelRatio": 0.02847450657894737,
+        "luminanceStandardDeviation": 60.54679141630688,
+        "edgePixelRatio": 0.028548519736842106,
         "isValid": true,
         "failures": []
       },

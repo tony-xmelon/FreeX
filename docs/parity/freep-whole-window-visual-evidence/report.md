@@ -1,6 +1,6 @@
 # FreeP Paired Whole-Window Visual Evidence
 
-Generated `2026-07-22T22:48:30.8940543+00:00` from independently activated WPF and Avalonia app processes.
+Generated `2026-07-22T22:54:21.5022694+00:00` from independently activated WPF and Avalonia app processes.
 
 - Scenarios: 33
 - Paired captures: 33
@@ -40,7 +40,7 @@ Generated `2026-07-22T22:48:30.8940543+00:00` from independently activated WPF a
 | backstage.print | BackstagePane | pass | none | 6.75 % | 5.83 | 4 | [WPF full](wpf/full/backstage.print.png) / [Avalonia full](avalonia/full/backstage.print.png) / [WPF client](wpf/client/backstage.print.png) / [Avalonia client](avalonia/client/backstage.print.png) / [diff](diff/backstage.print.png) |
 | backstage.export | BackstagePane | pass | none | 3.08 % | 2.65 | 1 | [WPF full](wpf/full/backstage.export.png) / [Avalonia full](avalonia/full/backstage.export.png) / [WPF client](wpf/client/backstage.export.png) / [Avalonia client](avalonia/client/backstage.export.png) / [diff](diff/backstage.export.png) |
 | backstage.options | BackstagePane | pass | none | 2.20 % | 2.07 | 0 | [WPF full](wpf/full/backstage.options.png) / [Avalonia full](avalonia/full/backstage.options.png) / [WPF client](wpf/client/backstage.options.png) / [Avalonia client](avalonia/client/backstage.options.png) / [diff](diff/backstage.options.png) |
-| backstage.account | BackstagePane | pass | none | 3.37 % | 3.24 | 1 | [WPF full](wpf/full/backstage.account.png) / [Avalonia full](avalonia/full/backstage.account.png) / [WPF client](wpf/client/backstage.account.png) / [Avalonia client](avalonia/client/backstage.account.png) / [diff](diff/backstage.account.png) |
+| backstage.account | BackstagePane | pass | none | 3.38 % | 3.25 | 1 | [WPF full](wpf/full/backstage.account.png) / [Avalonia full](avalonia/full/backstage.account.png) / [WPF client](wpf/client/backstage.account.png) / [Avalonia client](avalonia/client/backstage.account.png) / [diff](diff/backstage.account.png) |
 | status.slide-2 | StatusBar | pass | none | 7.56 % | 6.01 | 2 | [WPF full](wpf/full/status.slide-2.png) / [Avalonia full](avalonia/full/status.slide-2.png) / [WPF client](wpf/client/status.slide-2.png) / [Avalonia client](avalonia/client/status.slide-2.png) / [diff](diff/status.slide-2.png) |
 | view.gridlines-guides | ViewState | pass | none | 4.85 % | 4.40 | 2 | [WPF full](wpf/full/view.gridlines-guides.png) / [Avalonia full](avalonia/full/view.gridlines-guides.png) / [WPF client](wpf/client/view.gridlines-guides.png) / [Avalonia client](avalonia/client/view.gridlines-guides.png) / [diff](diff/view.gridlines-guides.png) |
 | view.clean-canvas | ViewState | pass | none | 4.77 % | 4.37 | 2 | [WPF full](wpf/full/view.clean-canvas.png) / [Avalonia full](avalonia/full/view.clean-canvas.png) / [WPF client](wpf/client/view.clean-canvas.png) / [Avalonia client](avalonia/client/view.clean-canvas.png) / [diff](diff/view.clean-canvas.png) |
