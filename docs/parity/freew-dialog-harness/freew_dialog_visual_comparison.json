@@ -1,10 +1,10 @@
 {
   "schema": "freew.dialog-visual-comparison.v1",
-  "generatedFromSha256": "eafc9df44e1c9b99b2c4246e349922eb08fb4010b726a8e163f7eed2cfd7590c",
+  "generatedFromSha256": "0eb44b3a20bf1d570a8453dd4cf650b1c97bf1b711c65c1e6abf69ecd12a0296",
   "targetDpi": 96,
-  "inventoryScenarioCount": 457,
+  "inventoryScenarioCount": 459,
   "wpfCaptureCount": 186,
-  "avaloniaCaptureCount": 271,
+  "avaloniaCaptureCount": 273,
   "rows": [
     {
       "scenarioId": "about.initial",
@@ -354,11 +354,11 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 139958,
-        "changedRatio": 0.41654166666666664,
-        "meanAbsoluteChannelDelta": 79.03964781745745,
+        "changedPixels": 139952,
+        "changedRatio": 0.4165238095238095,
+        "meanAbsoluteChannelDelta": 79.02853174602886,
         "p95AbsoluteChannelDelta": 255,
-        "luminanceSimilarity": 0.4886226170316902,
+        "luminanceSimilarity": 0.48865719104640015,
         "perceptualHashDistance": 25
       },
       "semanticDifference": "action-button-order",
@@ -373,10 +373,10 @@
         "opaqueRatio": 0.911577380952381,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.9706504271335532,
+        "dominantColorRatio": 0.9706016304595345,
         "distinctColorCount": 134,
         "luminanceRange": 203.99999999999997,
-        "contentPixelRatio": 0.02669345238095238,
+        "contentPixelRatio": 0.026738095238095238,
         "contentBounds": {
           "x": 0,
           "y": 0,
@@ -2156,9 +2156,9 @@
         "comparedPixels": 336000,
         "changedPixels": 18816,
         "changedRatio": 0.056,
-        "meanAbsoluteChannelDelta": 4.500617063492192,
+        "meanAbsoluteChannelDelta": 4.500518849206478,
         "p95AbsoluteChannelDelta": 34,
-        "luminanceSimilarity": 0.9038674298661858,
+        "luminanceSimilarity": 0.9038727927116881,
         "perceptualHashDistance": 7
       },
       "semanticDifference": "focus,default-button,cancel-button,action-button-order",
@@ -2192,9 +2192,9 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.9115238095238095,
         "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 0.000571387524814544,
+        "nearBlackRatio": 0.0005844478110960192,
         "dominantColorRatio": 0.9564276198934281,
-        "distinctColorCount": 204,
+        "distinctColorCount": 202,
         "luminanceRange": 254.99999999999997,
         "contentPixelRatio": 0.03971726190476191,
         "contentBounds": {
@@ -2213,9 +2213,9 @@
         "comparedPixels": 336000,
         "changedPixels": 18922,
         "changedRatio": 0.056315476190476194,
-        "meanAbsoluteChannelDelta": 4.502125992063602,
+        "meanAbsoluteChannelDelta": 4.502164682539793,
         "p95AbsoluteChannelDelta": 34,
-        "luminanceSimilarity": 0.9043879622516184,
+        "luminanceSimilarity": 0.9043908802412893,
         "perceptualHashDistance": 7
       },
       "semanticDifference": "focus,default-button,cancel-button,action-button-order",
@@ -2249,9 +2249,9 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.9115238095238095,
         "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 0.000571387524814544,
+        "nearBlackRatio": 0.0005746525963849127,
         "dominantColorRatio": 0.9564276198934281,
-        "distinctColorCount": 203,
+        "distinctColorCount": 206,
         "luminanceRange": 254.99999999999997,
         "contentPixelRatio": 0.03971726190476191,
         "contentBounds": {
@@ -2327,9 +2327,9 @@
         "comparedPixels": 336000,
         "changedPixels": 19659,
         "changedRatio": 0.05850892857142857,
-        "meanAbsoluteChannelDelta": 4.533014880952427,
+        "meanAbsoluteChannelDelta": 4.532982142857189,
         "p95AbsoluteChannelDelta": 34,
-        "luminanceSimilarity": 0.9046065413825272,
+        "luminanceSimilarity": 0.9046041690326062,
         "perceptualHashDistance": 10
       },
       "semanticDifference": "focus,default-button,cancel-button,action-button-order",
@@ -2365,7 +2365,7 @@
         "nearTransparentRatio": 0.08847619047619047,
         "nearBlackRatio": 0.00038201337373315223,
         "dominantColorRatio": 0.956029281161843,
-        "distinctColorCount": 225,
+        "distinctColorCount": 226,
         "luminanceRange": 254.99999999999997,
         "contentPixelRatio": 0.04008035714285714,
         "contentBounds": {
@@ -3750,14 +3750,14 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 156400,
-        "changedPixels": 59077,
-        "changedRatio": 0.377730179028133,
-        "meanAbsoluteChannelDelta": 51.29506820119333,
-        "p95AbsoluteChannelDelta": 255,
-        "luminanceSimilarity": 0.5843899499603395,
-        "perceptualHashDistance": 10
+        "changedPixels": 26826,
+        "changedRatio": 0.17152173913043478,
+        "meanAbsoluteChannelDelta": 13.479437340153373,
+        "p95AbsoluteChannelDelta": 108,
+        "luminanceSimilarity": 0.8265793432734501,
+        "perceptualHashDistance": 8
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/font.initial.png",
       "note": null,
       "wpfContent": {
@@ -3783,21 +3783,21 @@
       "avaloniaContent": {
         "passesContentGate": true,
         "failure": null,
-        "width": 560,
-        "height": 600,
-        "pixelCount": 336000,
-        "opaqueRatio": 0.9115238095238095,
-        "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 0.0008750391808588444,
-        "dominantColorRatio": 0.9229834917981402,
-        "distinctColorCount": 285,
+        "width": 460,
+        "height": 340,
+        "pixelCount": 156400,
+        "opaqueRatio": 0.8601790281329923,
+        "nearTransparentRatio": 0.13982097186700768,
+        "nearBlackRatio": 0.002185353670502185,
+        "dominantColorRatio": 0.8108182439865608,
+        "distinctColorCount": 242,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.07019047619047619,
+        "contentPixelRatio": 0.162730179028133,
         "contentBounds": {
-          "x": 16,
-          "y": 20,
-          "width": 512,
-          "height": 262
+          "x": 12,
+          "y": 12,
+          "width": 420,
+          "height": 284
         }
       }
     },
@@ -3807,14 +3807,14 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 156400,
-        "changedPixels": 59077,
-        "changedRatio": 0.377730179028133,
-        "meanAbsoluteChannelDelta": 51.29506820119333,
-        "p95AbsoluteChannelDelta": 255,
-        "luminanceSimilarity": 0.5843899499603395,
-        "perceptualHashDistance": 10
+        "changedPixels": 26932,
+        "changedRatio": 0.1721994884910486,
+        "meanAbsoluteChannelDelta": 13.596135976129496,
+        "p95AbsoluteChannelDelta": 108,
+        "luminanceSimilarity": 0.8256189976575679,
+        "perceptualHashDistance": 8
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/font.populated.png",
       "note": null,
       "wpfContent": {
@@ -3825,11 +3825,11 @@
         "pixelCount": 156400,
         "opaqueRatio": 0.8564258312020461,
         "nearTransparentRatio": 0.13879795396419436,
-        "nearBlackRatio": 0.0046402161969530484,
-        "dominantColorRatio": 0.8554999554539245,
+        "nearBlackRatio": 0.004818400498916045,
+        "dominantColorRatio": 0.854816915629733,
         "distinctColorCount": 200,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.12400895140664962,
+        "contentPixelRatio": 0.12459718670076726,
         "contentBounds": {
           "x": 0,
           "y": 0,
@@ -3840,61 +3840,96 @@
       "avaloniaContent": {
         "passesContentGate": true,
         "failure": null,
-        "width": 560,
-        "height": 600,
-        "pixelCount": 336000,
-        "opaqueRatio": 0.9115238095238095,
-        "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 0.0008750391808588444,
-        "dominantColorRatio": 0.9229834917981402,
-        "distinctColorCount": 285,
+        "width": 460,
+        "height": 340,
+        "pixelCount": 156400,
+        "opaqueRatio": 0.8601790281329923,
+        "nearTransparentRatio": 0.13982097186700768,
+        "nearBlackRatio": 0.0022225195492522223,
+        "dominantColorRatio": 0.8104094193203104,
+        "distinctColorCount": 243,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.07019047619047619,
+        "contentPixelRatio": 0.16308184143222507,
         "contentBounds": {
-          "x": 16,
-          "y": 20,
-          "width": 512,
-          "height": 262
+          "x": 12,
+          "y": 12,
+          "width": 420,
+          "height": 284
         }
       }
     },
     {
       "scenarioId": "font.tab-advanced",
-      "captureStatus": "state-not-applicable",
-      "classification": "state-not-applicable",
-      "metrics": null,
+      "captureStatus": "captured/captured",
+      "classification": "genuine-visual-mismatch",
+      "metrics": {
+        "comparedPixels": 211140,
+        "changedPixels": 33648,
+        "changedRatio": 0.1593634555271384,
+        "meanAbsoluteChannelDelta": 12.142917811247049,
+        "p95AbsoluteChannelDelta": 97.66666666666667,
+        "luminanceSimilarity": 0.844925719474483,
+        "perceptualHashDistance": 1
+      },
       "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "The equivalent Avalonia route exists, but this WPF authority tab/state is not applicable on Avalonia.",
-      "wpfContent": null,
-      "avaloniaContent": null
+      "heatmapPath": "heatmaps/font.tab-advanced.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 460,
+        "height": 459,
+        "pixelCount": 211140,
+        "opaqueRatio": 0.8873022639007294,
+        "nearTransparentRatio": 0.10859145590603392,
+        "nearBlackRatio": 0.004441799672709498,
+        "dominantColorRatio": 0.8005493804858351,
+        "distinctColorCount": 134,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.17775409680780524,
+        "contentBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 446,
+          "height": 422
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 460,
+        "height": 459,
+        "pixelCount": 211140,
+        "opaqueRatio": 0.887411196362603,
+        "nearTransparentRatio": 0.11258880363739698,
+        "nearBlackRatio": 0.000784552324836685,
+        "dominantColorRatio": 0.8171619486785363,
+        "distinctColorCount": 211,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.16225253386378707,
+        "contentBounds": {
+          "x": 12,
+          "y": 12,
+          "width": 420,
+          "height": 398
+        }
+      }
     },
     {
       "scenarioId": "font.tab-font",
-      "captureStatus": "state-not-applicable",
-      "classification": "state-not-applicable",
-      "metrics": null,
-      "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "The equivalent Avalonia route exists, but this WPF authority tab/state is not applicable on Avalonia.",
-      "wpfContent": null,
-      "avaloniaContent": null
-    },
-    {
-      "scenarioId": "font.validation-error",
       "captureStatus": "captured/captured",
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 156400,
-        "changedPixels": 59077,
-        "changedRatio": 0.377730179028133,
-        "meanAbsoluteChannelDelta": 51.29506820119333,
-        "p95AbsoluteChannelDelta": 255,
-        "luminanceSimilarity": 0.5843899499603395,
-        "perceptualHashDistance": 10
+        "changedPixels": 26826,
+        "changedRatio": 0.17152173913043478,
+        "meanAbsoluteChannelDelta": 13.479437340153373,
+        "p95AbsoluteChannelDelta": 108,
+        "luminanceSimilarity": 0.8265793432734501,
+        "perceptualHashDistance": 8
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
-      "heatmapPath": "heatmaps/font.validation-error.png",
+      "semanticDifference": null,
+      "heatmapPath": "heatmaps/font.tab-font.png",
       "note": null,
       "wpfContent": {
         "passesContentGate": true,
@@ -3919,21 +3954,78 @@
       "avaloniaContent": {
         "passesContentGate": true,
         "failure": null,
-        "width": 560,
-        "height": 600,
-        "pixelCount": 336000,
-        "opaqueRatio": 0.9115238095238095,
-        "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 0.0008750391808588444,
-        "dominantColorRatio": 0.9229834917981402,
-        "distinctColorCount": 285,
+        "width": 460,
+        "height": 340,
+        "pixelCount": 156400,
+        "opaqueRatio": 0.8601790281329923,
+        "nearTransparentRatio": 0.13982097186700768,
+        "nearBlackRatio": 0.002185353670502185,
+        "dominantColorRatio": 0.8108182439865608,
+        "distinctColorCount": 242,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.07019047619047619,
+        "contentPixelRatio": 0.162730179028133,
         "contentBounds": {
-          "x": 16,
-          "y": 20,
-          "width": 512,
-          "height": 262
+          "x": 12,
+          "y": 12,
+          "width": 420,
+          "height": 284
+        }
+      }
+    },
+    {
+      "scenarioId": "font.validation-error",
+      "captureStatus": "captured/captured",
+      "classification": "genuine-visual-mismatch",
+      "metrics": {
+        "comparedPixels": 156400,
+        "changedPixels": 27274,
+        "changedRatio": 0.174386189258312,
+        "meanAbsoluteChannelDelta": 13.868305626598417,
+        "p95AbsoluteChannelDelta": 109.33333333333333,
+        "luminanceSimilarity": 0.8234385567826602,
+        "perceptualHashDistance": 8
+      },
+      "semanticDifference": null,
+      "heatmapPath": "heatmaps/font.validation-error.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 460,
+        "height": 340,
+        "pixelCount": 156400,
+        "opaqueRatio": 0.8564258312020461,
+        "nearTransparentRatio": 0.13879795396419436,
+        "nearBlackRatio": 0.00511537433552104,
+        "dominantColorRatio": 0.8535547768241618,
+        "distinctColorCount": 213,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.12565217391304348,
+        "contentBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 446,
+          "height": 302
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 460,
+        "height": 340,
+        "pixelCount": 156400,
+        "opaqueRatio": 0.8601790281329923,
+        "nearTransparentRatio": 0.13982097186700768,
+        "nearBlackRatio": 0.002415782118752416,
+        "dominantColorRatio": 0.8085288258555585,
+        "distinctColorCount": 242,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.1646994884910486,
+        "contentBounds": {
+          "x": 12,
+          "y": 12,
+          "width": 420,
+          "height": 284
         }
       }
     },
@@ -13016,9 +13108,9 @@
     }
   ],
   "counts": {
-    "genuine-visual-mismatch": 170,
+    "genuine-visual-mismatch": 172,
     "pass": 2,
-    "state-not-applicable": 9,
+    "state-not-applicable": 7,
     "semantic-mismatch": 5,
     "avalonia-extension": 94
   }

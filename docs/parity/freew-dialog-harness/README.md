@@ -20,11 +20,13 @@ Paste Special, Style, and Manage Styles are content-sized WPF static prompts rat
 
 ## Current Run
 
-- Inventory: 156 routes and 457 host-specific scenarios: 186 WPF authority states and 271 Avalonia states.
+- Inventory: 156 routes and 459 host-specific scenarios: 186 WPF authority states and 273 Avalonia states.
 - WPF: 186/186 app-owned captures, with 186 full PNGs and 186 target crops.
-- Avalonia: 271/271 app-owned Skia captures, with 271 full PNGs and 271 target crops; all 542 images pass pixel-content validation.
+- Avalonia: 273/273 app-owned Skia captures, with 273 full PNGs and 273 target crops; all 546 images pass pixel-content validation.
 - Seven WPF-authority product routes: 24/24 Avalonia states captured across Compare Documents, Legal Notices, Password Prompt, Screen Clip Overlay, Symbol Picker, Table Formula, and Table Properties.
-- Comparison: 170 genuine visual mismatches, 2 visual passes, 5 semantic-only mismatches, 94 Avalonia extensions, and 9 state-not-applicable rows. There are zero host-missing, product-gap, invalid-content, hook-required, or surface-level native-picker limitation rows.
+- Comparison: 172 genuine visual mismatches, 2 visual passes, 5 semantic-only mismatches, 94 Avalonia extensions, and 7 state-not-applicable rows. There are zero host-missing, product-gap, invalid-content, hook-required, or surface-level native-picker limitation rows.
+- Font now has five paired WPF/Avalonia states, including truthful Font and Advanced tab captures. Across the three previously paired states, average changed pixels fell from 37.77% to 17.27%, and average mean channel delta fell from 51.30 to 13.65. Across all five current states, the averages are 16.98% and 13.31. All five remain genuine visual mismatches because framework tab-pane geometry, typography rasterization, and control templates still differ.
+- The WPF static-prompt adapter now applies populated, validation, and requested-tab state before capture; it no longer labels a Font-tab bitmap as the Advanced state.
 - About and Legal Notices content/structure delta: the average changed-pixel ratio across the nine affected paired states fell from 21.04% to 15.00% (28.7% relative), and average mean channel delta fell from 28.32 to 16.64 (41.2% relative).
 - About now renders the complete WPF-authority product, license, privacy, and source information. Its initial/populated mean channel delta fell from about 32.06 to 16.73; the synthetic validation state is a visual pass at 1.71% changed pixels and 2.00 mean delta.
 - Legal Notices keeps all five WPF-authority tabs visible with direct read-only text fields. Initial/project-license mean channel delta is 11.39, while the four long-document tabs remain between 20.03 and 24.05 because the host frameworks wrap and rasterize the same content differently.

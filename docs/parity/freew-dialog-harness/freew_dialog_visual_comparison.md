@@ -2,7 +2,7 @@
 
 > Target: 96 DPI logical pixels. Semantic checks and nonblank checks are reported separately from image parity.
 
-Inventory scenarios: **457**. Captured WPF: **186**. Captured Avalonia: **271**.
+Inventory scenarios: **459**. Captured WPF: **186**. Captured Avalonia: **273**.
 
 | Scenario | Capture | Classification | WPF content | Avalonia content | Changed ratio | Mean channel delta | Semantic diff | Heatmap |
 | --- | --- | --- | --- | --- | ---: | ---: | --- | --- |
@@ -12,7 +12,7 @@ Inventory scenarios: **457**. Captured WPF: **186**. Captured Avalonia: **271**.
 | `accessibility-report.initial` | captured/captured | **genuine-visual-mismatch** | pass (0.9% painted) | pass (0.8% painted) | 7.61 % | 17.08 | default-button,cancel-button,action-button-order | heatmaps/accessibility-report.initial.png |
 | `accessibility-report.populated` | captured/captured | **genuine-visual-mismatch** | pass (0.9% painted) | pass (0.8% painted) | 7.61 % | 17.08 | default-button,cancel-button,action-button-order | heatmaps/accessibility-report.populated.png |
 | `accessibility-report.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (0.9% painted) | pass (0.8% painted) | 7.61 % | 17.08 | default-button,cancel-button,action-button-order | heatmaps/accessibility-report.validation-error.png |
-| `backstage-account.open` | captured/captured | **genuine-visual-mismatch** | pass (2.7% painted) | pass (30.6% painted) | 41.65 % | 79.04 | action-button-order | heatmaps/backstage-account.open.png |
+| `backstage-account.open` | captured/captured | **genuine-visual-mismatch** | pass (2.7% painted) | pass (30.6% painted) | 41.65 % | 79.03 | action-button-order | heatmaps/backstage-account.open.png |
 | `backstage-export.open` | captured/captured | **genuine-visual-mismatch** | pass (11.1% painted) | pass (30.4% painted) | 47.29 % | 80.93 | action-button-order | heatmaps/backstage-export.open.png |
 | `backstage-home.open` | captured/captured | **genuine-visual-mismatch** | pass (10.9% painted) | pass (29.5% painted) | 46.17 % | 80.77 | action-button-order | heatmaps/backstage-home.open.png |
 | `backstage-info.open` | captured/captured | **genuine-visual-mismatch** | pass (6.3% painted) | pass (32.2% painted) | 45.16 % | 80.29 | action-button-order | heatmaps/backstage-info.open.png |
@@ -74,11 +74,11 @@ Inventory scenarios: **457**. Captured WPF: **186**. Captured Avalonia: **271**.
 | `find-replace.initial` | captured/captured | **genuine-visual-mismatch** | pass (8.6% painted) | pass (7.0% painted) | 14.89 % | 7.51 |  | heatmaps/find-replace.initial.png |
 | `find-replace.populated` | captured/captured | **genuine-visual-mismatch** | pass (8.6% painted) | pass (6.8% painted) | 14.79 % | 7.51 |  | heatmaps/find-replace.populated.png |
 | `find-replace.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (8.6% painted) | pass (7.0% painted) | 14.98 % | 7.68 |  | heatmaps/find-replace.validation-error.png |
-| `font.initial` | captured/captured | **genuine-visual-mismatch** | pass (12.4% painted) | pass (7.0% painted) | 37.77 % | 51.30 | default-button,cancel-button,action-button-order | heatmaps/font.initial.png |
-| `font.populated` | captured/captured | **genuine-visual-mismatch** | pass (12.4% painted) | pass (7.0% painted) | 37.77 % | 51.30 | default-button,cancel-button,action-button-order | heatmaps/font.populated.png |
-| `font.tab-advanced` | state-not-applicable | **state-not-applicable** |  |  |  |  |  |  |
-| `font.tab-font` | state-not-applicable | **state-not-applicable** |  |  |  |  |  |  |
-| `font.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (12.4% painted) | pass (7.0% painted) | 37.77 % | 51.30 | default-button,cancel-button,action-button-order | heatmaps/font.validation-error.png |
+| `font.initial` | captured/captured | **genuine-visual-mismatch** | pass (12.4% painted) | pass (16.3% painted) | 17.15 % | 13.48 |  | heatmaps/font.initial.png |
+| `font.populated` | captured/captured | **genuine-visual-mismatch** | pass (12.5% painted) | pass (16.3% painted) | 17.22 % | 13.60 |  | heatmaps/font.populated.png |
+| `font.tab-advanced` | captured/captured | **genuine-visual-mismatch** | pass (17.8% painted) | pass (16.2% painted) | 15.94 % | 12.14 |  | heatmaps/font.tab-advanced.png |
+| `font.tab-font` | captured/captured | **genuine-visual-mismatch** | pass (12.4% painted) | pass (16.3% painted) | 17.15 % | 13.48 |  | heatmaps/font.tab-font.png |
+| `font.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (12.6% painted) | pass (16.5% painted) | 17.44 % | 13.87 |  | heatmaps/font.validation-error.png |
 | `footnote-endnote-options.initial` | captured/captured | **genuine-visual-mismatch** | pass (14.9% painted) | pass (5.3% painted) | 19.63 % | 8.39 | default-button,cancel-button,action-button-order | heatmaps/footnote-endnote-options.initial.png |
 | `footnote-endnote-options.populated` | captured/captured | **genuine-visual-mismatch** | pass (14.9% painted) | pass (5.3% painted) | 19.63 % | 8.39 | default-button,cancel-button,action-button-order | heatmaps/footnote-endnote-options.populated.png |
 | `footnote-endnote-options.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (15.0% painted) | pass (5.4% painted) | 19.76 % | 8.55 | default-button,cancel-button,action-button-order | heatmaps/footnote-endnote-options.validation-error.png |
