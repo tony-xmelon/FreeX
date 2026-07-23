@@ -25,4 +25,4 @@ Fresh paired run from this branch:
 
 The previous stacked Avalonia layout measured about 21% changed pixels for the paired default states. The remaining delta is a genuine Avalonia/WPF framework rendering difference in control templates, text rasterization, and tab-pane geometry; it remains classified as a visual mismatch.
 
-Evidence outputs are in the ignored branch-local directories `artifacts/freew-borders-round2-wpf-final`, `artifacts/freew-borders-round2-avalonia-final2`, and `artifacts/freew-borders-round2-compare-final2`.
+The original pre-sync evidence is preserved in the ignored branch-local directories `artifacts/freew-borders-round2-wpf-final`, `artifacts/freew-borders-round2-avalonia-final2`, and `artifacts/freew-borders-round2-compare-final2`. The post-sync paired evidence is in `artifacts/freew-borders-round2-synced-wpf`, `artifacts/freew-borders-round2-synced-avalonia`, and `artifacts/freew-borders-round2-synced-compare`; its freshness check passes against the regenerated inventory. The post-sync counts and metrics are unchanged.
