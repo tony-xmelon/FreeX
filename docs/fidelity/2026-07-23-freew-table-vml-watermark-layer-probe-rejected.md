@@ -27,6 +27,11 @@ The local layer order was correct, but WPF's reusable text-path geometry remaine
 than Word's visible VML `TABLE REVIEW` glyph path. It only added a small central fragment of the
 watermark to the cells. Page 1 and its table ROI regressed, so the candidate was reverted.
 
+A second probe consumed imported `fitshape="t"` metadata and removed the historical half-scale only
+for the width-constrained `TABLE REVIEW` run. It also regressed every affected page: page 1 7.1167% to
+7.1479%, page 2 9.1889% to 9.2400%, and page 3 7.0188% to 7.0529%. The larger fragments still did not
+match Word's path registration, so width-vs-height fitting alone is not a sufficient VML text-path model.
+
 ## Conclusion
 
 The remaining defect is not safely solved by compositing alone. A future slice must first model or
