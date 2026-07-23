@@ -52,7 +52,7 @@
         "freep/FreeP.App.Host.Tests/SlideShowTests.cs",
         "freep/FreeP.App.Avalonia.Tests/SlideShowWindowHeadlessTests.cs"
       ],
-      "remainingWork": "Shared recording capture adapter readiness contracts, paired WPF/Avalonia backend injection, paired real Windows microphone narration handoff evidence, paired Windows camera handoff readiness, paired default no-COM camera handoff/package-target readiness without encoded-payload or PowerPoint-baseline claims, paired deterministic injected encoded camera media payload artifacts through host-specific PPTX package paths, explicit planner evidence-source tagging that separates injected payload packaging, default-engine handoff, future default-engine payload rows, and PowerPoint COM baselines, paired OS-backed unavailable-hardware/no-device evidence, deterministic captured-artifact host evidence, review rows, session-summary persistable counts, captured PPTX media-part payload authoring, generated WebVTT recording-caption artifact persistence, focused single-track, external-link, multi-track, original-path/relationship-id, relationship-id collision remapping, content-type override, shared-sidecar, and basic TTML/DFXP cue parsing/package retention baselines are covered. Live capture on real microphone/camera hardware, actual local default no-COM camera video encoding that produces non-empty mp4 payload bytes, broader real-deck PowerPoint-native media/caption corpus baselines, PowerPoint COM recording baselines, TTML visual rendering/playback, and advanced TTML timing/style semantics remain deferred."
+      "remainingWork": "Shared recording capture adapter readiness contracts, paired WPF/Avalonia backend injection, paired real Windows microphone narration handoff evidence, paired Windows camera handoff readiness, paired default no-COM camera handoff/package-target readiness without encoded-payload or PowerPoint-baseline claims, paired deterministic injected encoded camera media payload artifacts through host-specific PPTX package paths, explicit planner evidence-source tagging that separates injected payload packaging, default-engine handoff, future default-engine payload rows, and PowerPoint COM baselines, paired OS-backed unavailable-hardware/no-device evidence, deterministic captured-artifact host evidence, review rows, session-summary persistable counts, captured PPTX media-part payload authoring, generated WebVTT recording-caption artifact persistence, focused single-track, external-link, multi-track, original-path/relationship-id, relationship-id collision remapping, content-type override, shared-sidecar, and basic TTML/DFXP cue parsing/package retention baselines are covered. Live capture on real microphone/camera hardware, actual local default no-COM camera video encoding that produces non-empty mp4 payload bytes, broader real-deck PowerPoint-native media/caption corpus baselines, and PowerPoint COM recording baselines remain deferred."
     },
     {
       "evidenceId": "freep.presenter.recording.default-camera-encoding-readiness",
@@ -107,7 +107,7 @@
         "freep/FreeP.App.Host.Tests/MediaFieldsTests.cs",
         "freep/FreeP.App.Presentation.Tests/PresentationMediaTranscriptPlannerTests.cs"
       ],
-      "remainingWork": "Imported embedded media now retains original ppt/media package paths, matching package-snapshot bytes save back to the authored media path, nested caption sidecars keep package entries plus relationship targets after semantic slide edits, colliding native caption relationship ids remap away from writer-owned poster/media ids while retargeting p20media:caption metadata, and basic TTML/DFXP caption sidecars retain package bytes/content-type overrides while the transcript planner parses paragraph cues with clock or unit timing. Broader real-deck PowerPoint-native media/caption baselines, PowerPoint COM baselines, TTML visual rendering/playback, advanced timing/style semantics, and real microphone/camera/playback/capture-device behavior remain deferred."
+      "remainingWork": "Imported embedded media now retains original ppt/media package paths, matching package-snapshot bytes save back to the authored media path, nested caption sidecars keep package entries plus relationship targets after semantic slide edits, colliding native caption relationship ids remap away from writer-owned poster/media ids while retargeting p20media:caption metadata, and basic TTML/DFXP caption sidecars retain package bytes/content-type overrides while the shared planner parses paragraph cues with clock or unit timing. Broader real-deck PowerPoint-native media/caption baselines, PowerPoint COM baselines, TTML visual rendering/playback, advanced timing/style semantics, and real microphone/camera/playback/capture-device behavior remain deferred."
     },
     {
       "evidenceId": "freep.presenter.ink.execution",
@@ -497,13 +497,14 @@
       "status": "shared-baseline-readiness-evidence",
       "hostCoverage": "WPF/Avalonia consume shared chart-surface capture requests from ChartRenderPlanner while PowerPoint rows are explicit COM-required baseline contracts",
       "evidenceDocs": [
-        "docs/parity/freep-chart-powerpoint-baseline-readiness-2026-07-14.md"
+        "docs/parity/freep-chart-powerpoint-baseline-readiness-2026-07-14.md",
+        "docs/parity/freep-chart-powerpoint-com-baseline-20260720.md"
       ],
       "verification": [
         "freep/FreeP.App.Presentation/ChartVisualBaselineReadinessPlanner.cs",
         "freep/FreeP.App.Presentation.Tests/ChartBaselineCorpusTests.cs"
       ],
-      "remainingWork": "The chart baseline-depth corpus now projects stable PowerPoint/WPF/Avalonia capture requests for stock high-low/open-close ticks, 3-D surface facets/wireframe/contours, smooth scatter paths, and 100% stacked normalized extents; the no-COM radar planner slice also distinguishes standard, marker, and filled radar capture decisions for WPF/Avalonia shared-host rows. Real Microsoft PowerPoint PNG captures, pixel-diff thresholds, broader real-deck radar coverage, and broader chart-type authoritative baselines remain deferred to a COM-capable baseline host."
+      "remainingWork": "The chart baseline-depth corpus now projects stable PowerPoint/WPF/Avalonia capture requests for stock high-low/open-close ticks, 3-D surface facets/wireframe/contours, smooth scatter paths, and 100% stacked normalized extents; fresh COM PNGs now cover the baseline-depth, chart-types, and chart-label corpora. Remaining work is exact Surface3D mesh/camera/facet ownership, WPF chart-label rasterization, broader real-deck radar/stock/doughnut/bubble coverage, and family-specific acceptance thresholds."
     },
     {
       "evidenceId": "freep.chart.stock-ohlc-baseline-readiness",
