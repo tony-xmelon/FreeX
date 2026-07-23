@@ -1,7 +1,7 @@
 {
   "schema": "freew.dialog-route-inventory.v1",
   "schemaVersion": 1,
-  "generatedFromSha256": "802476c9febdbbd88531ee448da14ddf697697b7f94413b2bc241efafc4451ca",
+  "generatedFromSha256": "0e071d6178aa0529f67eed7e374a322f740243e64b17a6188f88fb9d4fc6e662",
   "routes": [
     {
       "host": "avalonia",
@@ -213,13 +213,20 @@
       "typeName": "BordersAndShadingDialog",
       "sourcePath": "freew/FreeW.App.Avalonia/ParagraphCommandDialogs.cs",
       "modalMode": "modal",
-      "tabs": [],
+      "tabs": [
+        "Borders",
+        "Page Border",
+        "Shading"
+      ],
       "limitation": null,
       "surfaceKind": "dialog",
       "states": [
         "initial",
         "populated",
-        "validation-error"
+        "validation-error",
+        "tab-borders",
+        "tab-page-border",
+        "tab-shading"
       ],
       "sourceRouteId": "borders-and-shading"
     },
@@ -2803,6 +2810,36 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.borders-and-shading.tab-borders",
+      "host": "avalonia",
+      "routeId": "borders-and-shading",
+      "state": "relevant-tab",
+      "tab": "Borders",
+      "description": "Selected tab: Borders.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.borders-and-shading.tab-page-border",
+      "host": "avalonia",
+      "routeId": "borders-and-shading",
+      "state": "relevant-tab",
+      "tab": "Page Border",
+      "description": "Selected tab: Page Border.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.borders-and-shading.tab-shading",
+      "host": "avalonia",
+      "routeId": "borders-and-shading",
+      "state": "relevant-tab",
+      "tab": "Shading",
+      "description": "Selected tab: Shading.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
