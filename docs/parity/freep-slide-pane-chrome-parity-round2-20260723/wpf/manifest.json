@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "host": "wpf",
+  "captureMode": "visible-app-owned-render-target",
+  "targetDpi": 96,
+  "logicalShellWidth": 1280,
+  "logicalShellHeight": 760,
+  "generatedAtUtc": "2026-07-23T01:22:36.8605705\u002B00:00",
+  "captures": [
+    {
+      "scenarioId": "startup.slide-pane.seeded",
+      "routeId": "startup.slide-pane",
+      "stateId": "seeded",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/startup.slide-pane.seeded.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 891230,
+      "focusedRole": "",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "new-slide",
+          "label": "New Slide",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "new-slide",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/targets/startup.slide-pane.seeded.png",
+      "pixelComparisonLogicalWidth": 180,
+      "pixelComparisonLogicalHeight": 578
+    }
+  ],
+  "limitations": []
+}
