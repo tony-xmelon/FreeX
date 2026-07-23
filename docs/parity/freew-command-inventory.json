@@ -56,17 +56,17 @@
   ],
   "summary": {
     "totalCommands": 860,
-    "both": 450,
-    "wpfOnly": 189,
+    "both": 451,
+    "wpfOnly": 188,
     "avaloniaOnly": 221,
     "missingWpf": 221,
-    "missingAvalonia": 189,
+    "missingAvalonia": 188,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 450,
+    "sharedProfile": 451,
     "profileShapeOnly": 361,
     "commandIdAliases": 43,
-    "platformOnly": 6,
+    "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
     "behaviorEvidenceRows": 105
@@ -503,13 +503,13 @@
       "commandId": "freew.arrange-all",
       "label": "Arrange All",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "platform-only",
-      "gapClassificationRule": "platform-only",
-      "notes": "Accepted host variance: WPF desktop multi-window tiling command; Avalonia portable shell intentionally exposes New Window and Split without Arrange All tiling.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -522,12 +522,23 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "window",
+          "group": "Window",
+          "label": "Arrange All",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       },
       "behaviorEvidence": {
         "evidenceId": "freew.platform-only.window-shell",

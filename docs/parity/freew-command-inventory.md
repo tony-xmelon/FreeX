@@ -10,13 +10,13 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 
 | Total | Both profiles | WPF profile only | Avalonia profile only | Missing WPF profile | Missing Avalonia profile | Actionable missing WPF | Actionable missing Avalonia |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 860 | 450 | 189 | 221 | 221 | 189 | 0 | 0 |
+| 860 | 451 | 188 | 221 | 221 | 188 | 0 | 0 |
 
 ## Classification Counts
 
 | Shared profile | Profile-shape only | Command-id aliases | Platform-only | Deferred | Actionable gaps | Behavior evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|
-| 450 | 361 | 43 | 6 | 0 | 0 | 105 |
+| 451 | 361 | 43 | 5 | 0 | 0 | 105 |
 
 ## Classification Rules
 
@@ -42,7 +42,7 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 | `freew.align-left` | Align Left | Yes | Yes | none | shared-profile | shared-profile | shared-profile | home/paragraph (RibbonButton; Small) | home/paragraph (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.align-right` | Align Right | Yes | Yes | none | shared-profile | shared-profile | shared-profile | home/paragraph (RibbonButton; Small) | home/paragraph (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.allcaps` | All Caps | Yes | Yes | none | shared-profile | shared-profile | shared-profile | home/font (RibbonButton; Small) | home/font (RibbonToggleButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | - | Command is present in both compiled FreeW ribbon profiles. |
-| `freew.arrange-all` | Arrange All | Yes | No | Avalonia | wpf-profile-only | platform-only | platform-only | view/window (RibbonButton; Medium) | - | WPF definition source<br>WPF registry source | Window-management shell variance: FreeWRibbonParityTests.View_Window_NewWindowAndArrangeAll_AreBacked<br>RibbonAndDocumentTests.Avalonia_file_shell_and_WPF_authority_legal_notice_commands_are_backed | Accepted host variance: WPF desktop multi-window tiling command; Avalonia portable shell intentionally exposes New Window and Split without Arrange All tiling. |
+| `freew.arrange-all` | Arrange All | Yes | Yes | none | shared-profile | shared-profile | shared-profile | view/window (RibbonButton; Medium) | view/window (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Window-management shell variance: FreeWRibbonParityTests.View_Window_NewWindowAndArrangeAll_AreBacked<br>RibbonAndDocumentTests.Avalonia_file_shell_and_WPF_authority_legal_notice_commands_are_backed | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.backstage` | File... | No | Yes | WPF | avalonia-profile-only | platform-only | platform-only | - | file/document (RibbonButton; Medium) | Avalonia definition source<br>Avalonia registry source | Avalonia compact File shell variance: FreeWRibbonParityTests.Wpf_profile_uses_backstage_shell_instead_of_avalonia_file_command_strip<br>RibbonAndDocumentTests.Avalonia_file_shell_and_WPF_authority_legal_notice_commands_are_backed | Accepted host variance: Avalonia compact File entry opens its portable shell file surface; WPF uses the Backstage/File surface instead of this generated command id. |
 | `freew.bibliography` | Bibliography | Yes | Yes | none | shared-profile | shared-profile | shared-profile | references/citations (RibbonButton; Medium) | references/citations (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | References fields and generated regions: CitationEditorTests.InsertBibliography_BuildsBlockFromSourcesAndUndoReverts<br>ReferencesTabTests.InsertBibliography_builds_block_from_sources_and_undo_reverts | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.blank-page` | Blank Page | Yes | Yes | none | shared-profile | shared-profile | shared-profile | insert/pages (RibbonButton; Medium) | insert/pages (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | - | Command is present in both compiled FreeW ribbon profiles. |
