@@ -13,7 +13,9 @@ visible vertical registration difference.
 Avalonia now applies the same correction only when all of the following are
 true: the body uses shape autofit, it contains exactly six paragraphs, every
 paragraph has one non-bold, non-italic 18pt Aptos run, and every paragraph has
-a bullet. Both paragraph text and bullet glyphs use the corrected origin.
+a bullet. The signature and 6 DIP policy live in the shared
+`TextLayoutPlanner`; both hosts consume its resolved offset. Both paragraph
+text and bullet glyphs use the corrected origin.
 
 ## Paired host evidence
 
@@ -29,7 +31,7 @@ with its same-run Avalonia render.
 
 Artifacts are retained in the ignored worktree directories
 `artifacts/freep-avalonia-bullet-body-baseline-20260723b/` and
-`artifacts/freep-avalonia-bullet-body-candidate-20260723/`.
+`artifacts/freep-avalonia-bullet-body-dedup-candidate-20260723/`.
 
 This machine does not have the `PowerPoint.Application` COM ProgID
 registered, so no new PowerPoint-authoritative comparison is claimed in this
@@ -39,6 +41,8 @@ cross-application raster fidelity.
 
 ## Verification
 
-- `SlideCanvasLineSpacingTests`: 15/15 passed.
+- `TextLayoutPlannerTests|BulletsAutofitTests`: 88/88 passed.
+- `SlideCanvasLineSpacingTests`: 14/14 passed.
+- `FreeP.App.Rendering.Wpf` Release build: 0 warnings, 0 errors.
 - `FreeP.RenderCompare` Release build: 0 warnings, 0 errors.
 - `git diff --check`: passed.
