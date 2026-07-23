@@ -22,4 +22,28 @@ The PowerPoint export completed 3/3 slides. Slide 2 and the non-column chart rou
 ## Verification
 
 - RenderCompare Release build: 0 warnings, 0 errors.
-- Focused chart planner tests: pending final integration verification.
+- Focused chart planner tests: 8/8 `ChartLabelsCorpus` tests, including the WPF grid hint contract.
+- Focused WPF host chart tests: 2/2 `ChartGridLinePen` tests.
+
+## Follow-up Grid Raster Slice, 2026-07-23
+
+The planner already carried the correct imported `#898989` grid stroke and
+half-pixel geometry. WPF's stroked `DrawingContext.DrawLine` rasterized most
+of those rows as blended gray bands, while PowerPoint emitted solid one-pixel
+rows. The exact labeled-column signature now uses a WPF-only one-pixel filled
+band for horizontal grid lines; Avalonia and all other chart routes retain the
+shared line primitive.
+
+Fresh 1280x720 comparison against PowerPoint COM:
+
+| Slide | Before | After | Change |
+| --- | ---: | ---: | ---: |
+| 1 | 1.3784% | 1.3504% | -0.0280 pp |
+| 2 | 0.6240% | 0.6240% | 0.0000 pp |
+| 3 | 1.6479% | 1.5106% | -0.1373 pp |
+| Mean | 1.2168% | 1.1616% | -0.0552 pp |
+
+The PowerPoint export completed 3/3 slides. A fresh Avalonia companion render
+was unchanged by the WPF-only flag (0.6646%, 0.4838%, 0.9511%). Current-main
+control renders for `18-chart-types` and `22-chart-baseline-depth` were
+byte-identical to the candidate.
