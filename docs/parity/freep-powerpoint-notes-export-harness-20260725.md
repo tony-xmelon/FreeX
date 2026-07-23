@@ -25,6 +25,8 @@ Fresh PowerPoint COM output:
 - page count: 3
 - output size: 88,605 bytes
 
-The local FreeP notes preview for the same package remains 540 x 720 pt but emits 2 pages. PowerPoint includes the slide thumbnail and the complete notes block on the first page, then continues the overflowing notes onto a second page; the second slide occupies the third page. This establishes a concrete remaining notes-pagination gap and supplies an authoritative PDF baseline for future ROI work.
+The current FreeP notes export for the same package is also 540 x 720 pt and emits 3 pages. Fresh raster comparisons against the native PDF are `0.1587%`, `0.2218%`, and `0.1637%` mean channel delta for pages 1-3. PowerPoint and FreeP both place the first slide's two note lines on pages 1-2 and the second slide on page 3. The remaining small delta is primarily PDF font realization/width, not missing notes pagination or slide content.
+
+The corpus cardinality is protected by `NotesSlideTests.Corpus_CommentsNotes_ReportsImportedSlidesAndNotesPageCardinality`, which asserts the imported note-line counts (`2`, `1`) and rendered page counts (`2`, `1`).
 
 Renderer source and controls were unchanged by this harness slice.
