@@ -107,6 +107,8 @@ page range; unsupported or non-exported internal targets are skipped rather than
 | Account | Partial | Local Account backstage action shows FreeX user name, Windows account, device, app version, options file, current workbook save/path status, Windows Share readiness, local PDF/XPS export readiness, and explicit Microsoft 365 sign-in/cloud-link/coauthoring exclusion; no Microsoft account integration |
 <!-- command-inventory:command-surface:file-backstage:end -->
 
+Backstage key tips are prefix-free for exact-first routing in both WPF and Avalonia: Share=`R`, Save=`S`, Save As=`A`, Account=`D`, and Options=`T` (under the File prefix, `FR`, `FS`, `FA`, `FD`, and `FT`).
+
 **PDF export reassessment (2026-06-04):** the partial PDF/XPS status now includes selectable/searchable PDF text overlays for fully visible embedded chart titles, X/Y axis titles including rotated Y-axis title metadata, legend entries, category and value-axis tick labels, and data labels for classic embedded category charts, slice legend entries plus value/percentage data labels for embedded pie-family charts (pie, 3-D pie, and doughnut), and direct internal workbook PDF destinations for exported target cells. Still deferred for parity: vector chart graphics, full chart text coverage, chart-sheet pagination, full drawing-object z-order fidelity, PDF/A, and tagged PDF.
 
 ## Quick Access Toolbar
