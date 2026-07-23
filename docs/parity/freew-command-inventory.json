@@ -56,17 +56,17 @@
   ],
   "summary": {
     "totalCommands": 860,
-    "both": 446,
-    "wpfOnly": 193,
+    "both": 450,
+    "wpfOnly": 189,
     "avaloniaOnly": 221,
     "missingWpf": 221,
-    "missingAvalonia": 193,
+    "missingAvalonia": 189,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 446,
+    "sharedProfile": 450,
     "profileShapeOnly": 361,
     "commandIdAliases": 43,
-    "platformOnly": 10,
+    "platformOnly": 6,
     "deferred": 0,
     "actionableGaps": 0,
     "behaviorEvidenceRows": 105
@@ -4129,13 +4129,13 @@
       "commandId": "freew.check-updates",
       "label": "Check for Updates",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "platform-only",
-      "gapClassificationRule": "platform-only",
-      "notes": "Accepted host variance: WPF desktop Help/Product update command; Avalonia compact shell omits update orchestration from the ribbon profile.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -4148,12 +4148,23 @@
           "layout": "Large"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "help",
+          "tab": "Help",
+          "groupId": "product",
+          "group": "Product",
+          "label": "Check for Updates",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       },
       "behaviorEvidence": {
         "evidenceId": "freew.platform-only.wpf-help-shell",
@@ -5549,13 +5560,13 @@
       "commandId": "freew.copy-diagnostics",
       "label": "Copy Diagnostics",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "platform-only",
-      "gapClassificationRule": "platform-only",
-      "notes": "Accepted host variance: WPF desktop diagnostics shortcut on Help; Avalonia compact shell omits the desktop Help tab.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -5568,12 +5579,23 @@
           "layout": "Large"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "help",
+          "tab": "Help",
+          "groupId": "help",
+          "group": "Help",
+          "label": "Copy Diagnostics",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       },
       "behaviorEvidence": {
         "evidenceId": "freew.platform-only.wpf-help-shell",
@@ -7729,13 +7751,13 @@
       "commandId": "freew.feedback",
       "label": "Feedback",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "platform-only",
-      "gapClassificationRule": "platform-only",
-      "notes": "Accepted host variance: WPF desktop support shortcut on Help; Avalonia compact shell omits the desktop Help tab.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -7748,12 +7770,23 @@
           "layout": "Large"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "help",
+          "tab": "Help",
+          "groupId": "help",
+          "group": "Help",
+          "label": "Feedback",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       },
       "behaviorEvidence": {
         "evidenceId": "freew.platform-only.wpf-help-shell",
@@ -8735,13 +8768,13 @@
       "commandId": "freew.help-online",
       "label": "Help Online",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "platform-only",
-      "gapClassificationRule": "platform-only",
-      "notes": "Accepted host variance: WPF desktop Help shortcut; Avalonia compact shell omits the desktop Help tab.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -8754,12 +8787,23 @@
           "layout": "Large"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "help",
+          "tab": "Help",
+          "groupId": "help",
+          "group": "Help",
+          "label": "Help Online",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       },
       "behaviorEvidence": {
         "evidenceId": "freew.platform-only.wpf-help-shell",
