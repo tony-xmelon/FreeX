@@ -65,21 +65,21 @@
                                                   "visualReviewTriageThreshold":  0.4,
                                                   "visualReviewTriageThresholdRationale":  "This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.",
                                                   "visualReviewCandidateCount":  1,
-                                                  "highestTriageScore":  0.408822,
+                                                  "highestTriageScore":  0.409516,
                                                   "visualReviewCandidateSurfaceIds":  [
                                                                                           "dialog.GoToSpecial"
                                                                                       ],
                                                   "visualReviewCandidates":  [
                                                                                  {
                                                                                      "id":  "dialog.GoToSpecial",
-                                                                                     "triageScore":  0.408822,
+                                                                                     "triageScore":  0.409516,
                                                                                      "reviewStatus":  "unresolved visual review candidate",
                                                                                      "logicalDimensionMatch":  true,
                                                                                      "dimensionMismatchBucket":  null
                                                                                  }
                                                                              ]
                                               },
-                     "nextSlice":  "Command/dialog route coverage is complete for the generated inputs: all 48 pseudo-gallery rows are catalog-backed in classifier evidence (34 conditional-format rows over 38 runtime catalog items, 10 font/border rows, and 4 accounting-symbol rows), and dialog screenshot evidence has 93 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. This is coverage and size-comparability evidence, not visual parity. The paired screenshots retain 1 unresolved high-delta visual review candidates at triage score \u003e= 0.4 (highest 0.408822); keep those candidates separate from 0 scale-aware dimension mismatch rows and 32 raw PNG pixel dimension mismatches."
+                     "nextSlice":  "Command/dialog route coverage is complete for the generated inputs: all 48 pseudo-gallery rows are catalog-backed in classifier evidence (34 conditional-format rows over 38 runtime catalog items, 10 font/border rows, and 4 accounting-symbol rows), and dialog screenshot evidence has 93 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. This is coverage and size-comparability evidence, not visual parity. The paired screenshots retain 1 unresolved high-delta visual review candidates at triage score \u003e= 0.4 (highest 0.409516); keep those candidates separate from 0 scale-aware dimension mismatch rows and 32 raw PNG pixel dimension mismatches."
                  },
                  {
                      "app":  "FreeW",
