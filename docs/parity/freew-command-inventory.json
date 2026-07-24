@@ -55,16 +55,16 @@
     }
   ],
   "summary": {
-    "totalCommands": 860,
+    "totalCommands": 870,
     "both": 451,
     "wpfOnly": 188,
-    "avaloniaOnly": 221,
-    "missingWpf": 221,
+    "avaloniaOnly": 231,
+    "missingWpf": 231,
     "missingAvalonia": 188,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
     "sharedProfile": 451,
-    "profileShapeOnly": 361,
+    "profileShapeOnly": 371,
     "commandIdAliases": 43,
     "platformOnly": 5,
     "deferred": 0,
@@ -17838,8 +17838,8 @@
           "test": "FreeWRibbonParityTests.ReviewTrackingAndChanges_CommandRoutesExecuteBackedActions"
         },
         "avaloniaEvidence": {
-          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
-          "test": "DocumentViewReviewTests.Review_change_navigation_commands_route_to_host_callbacks"
+          "path": "freew/FreeW.App.Avalonia.Tests/ReviewChangeNavigationTests.cs",
+          "test": "ReviewChangeNavigationTests.Production_MainWindow_step_opens_hidden_pane_and_navigates"
         }
       }
     },
@@ -19947,8 +19947,8 @@
           "test": "FreeWRibbonParityTests.ReviewTrackingAndChanges_CommandRoutesExecuteBackedActions"
         },
         "avaloniaEvidence": {
-          "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewReviewTests.cs",
-          "test": "DocumentViewReviewTests.Review_change_navigation_commands_route_to_host_callbacks"
+          "path": "freew/FreeW.App.Avalonia.Tests/ReviewChangeNavigationTests.cs",
+          "test": "ReviewChangeNavigationTests.Production_MainWindow_step_opens_hidden_pane_and_navigates"
         }
       }
     },
@@ -26363,8 +26363,8 @@
       }
     },
     {
-      "commandId": "freew.smartart-colors-colorful1",
-      "label": "Colorful Palette 1",
+      "commandId": "freew.smartart-colors-accent1",
+      "label": "Dark 1",
       "wpfPresent": false,
       "avaloniaPresent": true,
       "profileSurface": "avalonia-only",
@@ -26381,7 +26381,131 @@
           "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
-          "label": "Colorful Palette 1",
+          "label": "Dark 1",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.smartart-colors-accent1g",
+      "label": "Gradient Loop",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Gradient Loop",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.smartart-colors-accent2",
+      "label": "Dark 2",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Dark 2",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.smartart-colors-accent3",
+      "label": "Dark 3",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Dark 3",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.smartart-colors-colorful1",
+      "label": "Colorful Range",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Colorful Range",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
         }
@@ -26395,7 +26519,7 @@
     },
     {
       "commandId": "freew.smartart-colors-colorful2",
-      "label": "Colorful Palette 2",
+      "label": "Colorful Accent",
       "wpfPresent": false,
       "avaloniaPresent": true,
       "profileSurface": "avalonia-only",
@@ -26412,7 +26536,7 @@
           "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
-          "label": "Colorful Palette 2",
+          "label": "Colorful Accent",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
         }
@@ -26425,8 +26549,8 @@
       }
     },
     {
-      "commandId": "freew.smartart-colors-colorful3",
-      "label": "Colorful Palette 3",
+      "commandId": "freew.smartart-colors-mono1",
+      "label": "Monochrome",
       "wpfPresent": false,
       "avaloniaPresent": true,
       "profileSurface": "avalonia-only",
@@ -26443,7 +26567,7 @@
           "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
-          "label": "Colorful Palette 3",
+          "label": "Monochrome",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
         }
@@ -26456,8 +26580,8 @@
       }
     },
     {
-      "commandId": "freew.smartart-colors-colorful4",
-      "label": "Colorful Palette 4",
+      "commandId": "freew.smartart-colors-mono2",
+      "label": "Dark Outline",
       "wpfPresent": false,
       "avaloniaPresent": true,
       "profileSurface": "avalonia-only",
@@ -26474,100 +26598,7 @@
           "tab": "SmartArt Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
-          "label": "Colorful Palette 4",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.smartart-colors-mono-blue",
-      "label": "Monochromatic Blue",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "smartart-design",
-          "tab": "SmartArt Design",
-          "groupId": "smartart-styles",
-          "group": "SmartArt Styles",
-          "label": "Monochromatic Blue",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.smartart-colors-mono-grey",
-      "label": "Monochromatic Grey",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "smartart-design",
-          "tab": "SmartArt Design",
-          "groupId": "smartart-styles",
-          "group": "SmartArt Styles",
-          "label": "Monochromatic Grey",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.smartart-colors-mono-orange",
-      "label": "Monochromatic Orange",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "smartart-design",
-          "tab": "SmartArt Design",
-          "groupId": "smartart-styles",
-          "group": "SmartArt Styles",
-          "label": "Monochromatic Orange",
+          "label": "Dark Outline",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
         }
@@ -26721,8 +26752,8 @@
       }
     },
     {
-      "commandId": "freew.smartart-layout-cycle",
-      "label": "Cycle",
+      "commandId": "freew.smartart-layout-continuousBlockProcess",
+      "label": "Continuous Block Process",
       "wpfPresent": false,
       "avaloniaPresent": true,
       "profileSurface": "avalonia-only",
@@ -26739,21 +26770,21 @@
           "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "Layouts",
-          "label": "Cycle",
+          "label": "Continuous Block Process",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
         }
       ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
-      "commandId": "freew.smartart-layout-hierarchy",
-      "label": "Hierarchy",
+      "commandId": "freew.smartart-layout-cycle1",
+      "label": "Basic Cycle",
       "wpfPresent": false,
       "avaloniaPresent": true,
       "profileSurface": "avalonia-only",
@@ -26770,21 +26801,21 @@
           "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "Layouts",
-          "label": "Hierarchy",
+          "label": "Basic Cycle",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
         }
       ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
-      "commandId": "freew.smartart-layout-list",
-      "label": "List",
+      "commandId": "freew.smartart-layout-hierarchy1",
+      "label": "Basic Hierarchy",
       "wpfPresent": false,
       "avaloniaPresent": true,
       "profileSurface": "avalonia-only",
@@ -26801,21 +26832,21 @@
           "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "Layouts",
-          "label": "List",
+          "label": "Basic Hierarchy",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
         }
       ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
-      "commandId": "freew.smartart-layout-process",
-      "label": "Process",
+      "commandId": "freew.smartart-layout-horizbullet1",
+      "label": "Horizontal Bullet List",
       "wpfPresent": false,
       "avaloniaPresent": true,
       "profileSurface": "avalonia-only",
@@ -26832,16 +26863,295 @@
           "tab": "SmartArt Design",
           "groupId": "smartart-layouts",
           "group": "Layouts",
-          "label": "Process",
+          "label": "Horizontal Bullet List",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
         }
       ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": false,
-        "avaloniaDefinitionSource": true,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.smartart-layout-list1",
+      "label": "Basic List",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-layouts",
+          "group": "Layouts",
+          "label": "Basic List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.smartart-layout-matrix1",
+      "label": "Basic Matrix",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-layouts",
+          "group": "Layouts",
+          "label": "Basic Matrix",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.smartart-layout-orgchart1",
+      "label": "Org Chart",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-layouts",
+          "group": "Layouts",
+          "label": "Org Chart",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.smartart-layout-process1",
+      "label": "Basic Process",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-layouts",
+          "group": "Layouts",
+          "label": "Basic Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.smartart-layout-pyramid1",
+      "label": "Basic Pyramid",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-layouts",
+          "group": "Layouts",
+          "label": "Basic Pyramid",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.smartart-layout-radial1",
+      "label": "Basic Radial",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-layouts",
+          "group": "Layouts",
+          "label": "Basic Radial",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.smartart-layout-stepdown1",
+      "label": "Step Down Process",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-layouts",
+          "group": "Layouts",
+          "label": "Step Down Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.smartart-layout-stepup1",
+      "label": "Step Up Process",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-layouts",
+          "group": "Layouts",
+          "label": "Step Up Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.smartart-layout-vertbullet1",
+      "label": "Vertical Bullet List",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-layouts",
+          "group": "Layouts",
+          "label": "Vertical Bullet List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
