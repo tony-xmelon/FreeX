@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 245 | 243 | 0 | 2 | 2 | 0 | 0 | 0 | 243 | 0 | 0 | 2 | 0 | 91 |
+| 246 | 244 | 0 | 2 | 2 | 0 | 0 | 0 | 244 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -176,6 +176,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.bullets.bullet.square` | ▪  Square Bullet | Yes | Yes | none | shared | home/paragraph (RibbonMenuItem) | home/paragraph (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.bullets.picture` | [image] | Yes | Yes | none | shared | home/paragraph (RibbonMenuItem) | home/paragraph (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.axis-options` | Axis Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.data-table-options` | Data Table | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.edit-data` | Edit Data | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.format-options` | Chart Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.layout-options` | Layout Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
