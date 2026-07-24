@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 187 | 185 | 0 | 2 | 2 | 0 | 0 | 0 | 185 | 0 | 0 | 2 | 0 | 91 |
+| 190 | 188 | 0 | 2 | 2 | 0 | 0 | 0 | 188 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -227,6 +227,9 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.smartart.colors.grayscale` | Grayscale | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.colors.single-accent` | Single Accent | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.colors.theme-accents` | Theme Accents | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.basic-cycle` | Basic Cycle | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.basic-process` | Basic Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.vertical-box-list` | Vertical List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.text-box` | Text Box | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.theme.berlin` | Berlin | Yes | Yes | none | shared | design/themes (RibbonButton) | design/themes (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.theme.facet` | Facet | Yes | Yes | none | shared | design/themes (RibbonButton) | design/themes (RibbonButton) | Available in both generated FreeP ribbon profiles. |
