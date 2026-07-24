@@ -17,11 +17,19 @@ application window, and retains a screenshot plus a machine-readable manifest fo
 - switching a ribbon tab by key tip (`I` for FreeW, `N` for FreeP);
 - opening and dismissing the app's File surface.
 
-FreeW additionally runs a seven-row physical editing slice: it clicks the real
-document editor, replaces the selection with a sentinel, proves exact X11
-clipboard text, proves Ctrl+Z and Ctrl+Y restore the exact clipboard states, and
-opens/dismisses the real editor context menu through both Shift+F10 and a
-pointer right-click. These rows are intentionally FreeW-only. FreeP runs a
+FreeW additionally runs a seventeen-row physical editing slice for an exact
+twenty-five-row contract: it clicks the real document editor, replaces the
+selection with a sentinel, proves exact X11 clipboard text, proves Ctrl+Z and
+Ctrl+Y restore the exact clipboard states, proves Ctrl+X followed by Ctrl+Z
+restores the exact selected content, and exercises Ctrl+Shift+V with an exact
+plain-text clipboard. The text-only route records that a plain-text X11
+clipboard cannot distinguish rich-format stripping, so it does not claim that
+semantic distinction. The slice also opens and dismisses Find and Replace as
+separate keyboard routes, with Ctrl+F and Ctrl+H focusing different fields,
+then opens and dismisses Reveal Formatting and Thesaurus through their shared
+shortcuts. Finally it opens/dismisses the real editor context menu through both
+Shift+F10 and a pointer right-click. These rows are intentionally FreeW-only.
+FreeP runs a
 fourteen-row slide-pane slice for an exact twenty-two-row contract: it clicks
 the real bottom `+ New Slide` affordance, proves the changed thumbnail-pane
 evidence, retains the calibrated main-view frame as contextual evidence, proves
@@ -62,8 +70,8 @@ JSON Schema engine.
 
 The `coverage.exhaustive` field is always `false`. This is a deterministic baseline,
 not exhaustive command, dialog, context-menu, shortcut, or visual parity coverage.
-The FreeW editing rows are physical evidence for the editor path only, not a
-claim that every editing command has been exercised.
+The FreeW editing rows are physical evidence for the listed editor paths only,
+not a claim that every editing command or every shortcut has been exercised.
 FreeX remains covered by `tools/Run-FreeXLinuxInteractionValidation.ps1`; future
 family work can extend this runner with additional parameterized probes without
 copying the FreeX-specific calibration and grid workflow.
