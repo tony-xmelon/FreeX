@@ -68,3 +68,24 @@ signature probes were rejected against the same manual PDF:
 `Review Copy` was byte-stable for both probes. The residual is therefore a
 WordArt text-path/effect rasterization model gap; do not retry a generic
 vertical scale or font-size multiplier for this payload.
+
+## Rejected Surface-Fit Probe
+
+The raw PDF mask provides a useful geometry constraint but not an affine paint
+model. The Word glyph ink is `(333,236)-(788,291)` while the current WPF path
+is `(329,250)-(791,274)`. A WPF-only exact-signature probe reserved the
+measured 10-DIP horizontal inset and applied a 2.24 vertical glyph scale around
+each glyph centre. It moved the candidate ink bounds to `(339,236)-(782,292)`,
+matching the target height, but it over-painted the glyph surface and regressed
+all material metrics:
+
+| Region | Baseline | Surface-fit candidate |
+| --- | ---: | ---: |
+| Whole page | 6.7963% | 7.0367% |
+| Primary panel | 16.6362% | 21.3339% |
+| Primary glyph crop | 19.1488% | 26.6038% |
+
+`Review Copy` remained byte-stable. The probe was reverted. The target needs a
+real WordArt text-path glyph/raster model, rather than a scaled WPF `TextBlock`
+surface; use the mask bounds only to validate a future model that also matches
+ink density and character outlines.
