@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 251 | 249 | 0 | 2 | 2 | 0 | 0 | 0 | 249 | 0 | 0 | 2 | 0 | 91 |
+| 252 | 250 | 0 | 2 | 2 | 0 | 0 | 0 | 250 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -162,6 +162,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.arrange.bring-to-front` | Bring to Front | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.distribute-h` | Distribute Horiz. | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.distribute-v` | Distribute Vert. | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.edit-points` | Edit Points | Yes | Yes | none | shared | home/arrange (RibbonToggleButton) | home/arrange (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.group` | Group | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.send-backward` | Send Backward | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.send-to-back` | Send to Back | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
