@@ -1,16 +1,16 @@
 # FreeP shared shape edit-point planning
 
-The presentation layer now exposes a renderer-neutral edit-point plan for the
-`Chord` preset shape. The plan reads the authored DrawingML `adj1` and `adj2`
-angle guides, projects them onto the rendered ellipse bounds, and reduces a
-drag position back to DrawingML angle units (`degrees * 60000`). The existing
-`SetShapeGeometryAdjustmentCommand` remains the mutation and undo boundary.
+The presentation layer exposes a renderer-neutral edit-point plan for authored
+`Chord` and `Rounded Rectangle` preset guides, plus imported custom-geometry
+`MoveTo`/`LineTo` vertices. Preset handles read their DrawingML guide values and
+reduce drag positions back to the source units. Custom handles map slide-space
+pointer positions back to each path's authored coordinate space.
 
 This gives WPF and Avalonia the same handle labels, positions, bounds, and
-pointer-to-value conversion. It intentionally supports only `Chord` today;
-other presets report a disabled plan until their shared compositor geometry is
-understood. Host adorner interaction still needs to consume this plan and
-commit through the existing editing session command API.
+pointer-to-value conversion. Preset mutations use
+`SetShapeGeometryAdjustmentCommand`; custom vertices use
+`SetCustomGeometryPointCommand`, each as one undoable operation. Curve control
+points and insertion/deletion of vertices remain separate follow-up work.
 
 Focused planner tests and the full FreeP Release build are the verification
 gate for this functional slice. No visual calibration is included.
