@@ -24,6 +24,10 @@
                     "pairedExpectedSizeMismatches":  0,
                     "stalePromotedExpectedSizeEvidence":  0,
                     "policyAcceptedNativeDifferences":  0,
+                    "visualReviewTriageThreshold":  0.4,
+                    "visualReviewTriageThresholdRationale":  "This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.",
+                    "visualReviewCandidateCount":  13,
+                    "highestTriageScore":  0.511967,
                     "dimensionMismatchBuckets":  {
 
                                                  }
@@ -6082,6 +6086,125 @@
                                   "nonBackgroundDelta":  0.135913
                               }
                           ],
+    "visualReviewCandidates":  [
+                                   {
+                                       "id":  "dialog.PrintPreview",
+                                       "triageScore":  0.511967,
+                                       "reviewStatus":  "unresolved visual review candidate",
+                                       "logicalDimensionMatch":  true,
+                                       "dimensionMismatchBucket":  null,
+                                       "expectedSizeMismatch":  false,
+                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
+                                   },
+                                   {
+                                       "id":  "dialog.PivotValueFieldSettings.NumberFormat",
+                                       "triageScore":  0.491252,
+                                       "reviewStatus":  "unresolved visual review candidate",
+                                       "logicalDimensionMatch":  true,
+                                       "dimensionMismatchBucket":  null,
+                                       "expectedSizeMismatch":  false,
+                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
+                                   },
+                                   {
+                                       "id":  "dialog.PivotValueFieldSettings",
+                                       "triageScore":  0.472243,
+                                       "reviewStatus":  "unresolved visual review candidate",
+                                       "logicalDimensionMatch":  true,
+                                       "dimensionMismatchBucket":  null,
+                                       "expectedSizeMismatch":  false,
+                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
+                                   },
+                                   {
+                                       "id":  "dialog.PivotValueFieldSettings.SummarizeValuesBy",
+                                       "triageScore":  0.472243,
+                                       "reviewStatus":  "unresolved visual review candidate",
+                                       "logicalDimensionMatch":  true,
+                                       "dimensionMismatchBucket":  null,
+                                       "expectedSizeMismatch":  false,
+                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
+                                   },
+                                   {
+                                       "id":  "dialog.PivotValueFieldSettings.ShowValuesAs",
+                                       "triageScore":  0.469127,
+                                       "reviewStatus":  "unresolved visual review candidate",
+                                       "logicalDimensionMatch":  true,
+                                       "dimensionMismatchBucket":  null,
+                                       "expectedSizeMismatch":  false,
+                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
+                                   },
+                                   {
+                                       "id":  "dialog.FindReplace.Find",
+                                       "triageScore":  0.462742,
+                                       "reviewStatus":  "unresolved visual review candidate",
+                                       "logicalDimensionMatch":  true,
+                                       "dimensionMismatchBucket":  null,
+                                       "expectedSizeMismatch":  false,
+                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
+                                   },
+                                   {
+                                       "id":  "dialog.FindReplace",
+                                       "triageScore":  0.462642,
+                                       "reviewStatus":  "unresolved visual review candidate",
+                                       "logicalDimensionMatch":  true,
+                                       "dimensionMismatchBucket":  null,
+                                       "expectedSizeMismatch":  false,
+                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
+                                   },
+                                   {
+                                       "id":  "dialog.PivotFieldFilter.LabelFilters",
+                                       "triageScore":  0.45291,
+                                       "reviewStatus":  "unresolved visual review candidate",
+                                       "logicalDimensionMatch":  true,
+                                       "dimensionMismatchBucket":  null,
+                                       "expectedSizeMismatch":  false,
+                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
+                                   },
+                                   {
+                                       "id":  "dialog.PivotFieldFilter.ValueFilters",
+                                       "triageScore":  0.452427,
+                                       "reviewStatus":  "unresolved visual review candidate",
+                                       "logicalDimensionMatch":  true,
+                                       "dimensionMismatchBucket":  null,
+                                       "expectedSizeMismatch":  false,
+                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
+                                   },
+                                   {
+                                       "id":  "dialog.PivotFieldFilter",
+                                       "triageScore":  0.42326,
+                                       "reviewStatus":  "unresolved visual review candidate",
+                                       "logicalDimensionMatch":  true,
+                                       "dimensionMismatchBucket":  null,
+                                       "expectedSizeMismatch":  false,
+                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
+                                   },
+                                   {
+                                       "id":  "dialog.PivotFieldFilter.SelectItems",
+                                       "triageScore":  0.42326,
+                                       "reviewStatus":  "unresolved visual review candidate",
+                                       "logicalDimensionMatch":  true,
+                                       "dimensionMismatchBucket":  null,
+                                       "expectedSizeMismatch":  false,
+                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
+                                   },
+                                   {
+                                       "id":  "dialog.FindReplace.Replace",
+                                       "triageScore":  0.4221,
+                                       "reviewStatus":  "unresolved visual review candidate",
+                                       "logicalDimensionMatch":  true,
+                                       "dimensionMismatchBucket":  null,
+                                       "expectedSizeMismatch":  false,
+                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
+                                   },
+                                   {
+                                       "id":  "dialog.GoToSpecial",
+                                       "triageScore":  0.418497,
+                                       "reviewStatus":  "unresolved visual review candidate",
+                                       "logicalDimensionMatch":  true,
+                                       "dimensionMismatchBucket":  null,
+                                       "expectedSizeMismatch":  false,
+                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
+                                   }
+                               ],
     "dimensionMismatchClassification":  [
 
                                         ],

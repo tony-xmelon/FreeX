@@ -1,6 +1,6 @@
 ﻿{
-    "schema":  "freex.parity.cross-app-dashboard.v1",
-    "scopeBoundary":  "Generated counts prove command/profile routing and evidence-pair coverage only. They do not prove that every end-to-end workflow or pixel-level visual comparison is complete.",
+    "schema":  "freex.parity.cross-app-dashboard.v2",
+    "scopeBoundary":  "Generated counts prove command/profile routing, screenshot manifest coverage, and DPI-normalized size comparability only. They do not prove visual parity, workflow completeness, or pixel-level equivalence. High-delta paired screenshot candidates remain explicitly listed for human visual review.",
     "sources":  [
                     "docs/parity/command-inventory.json",
                     "docs/parity/functional-parity.json",
@@ -57,13 +57,125 @@
                                                   "pairedCaptureScaleNormalizedDimensionMatches":  32,
                                                   "pairedExpectedSizeMismatches":  0,
                                                   "stalePromotedExpectedSizeEvidence":  0,
-                                                  "contentVisualMismatches":  0,
-                                                  "evidenceLimitations":  0,
-                                                  "expectedPlatformNativeDifferences":  0,
-                                                  "realLogicalSizeMismatches":  0,
-                                                  "policyAcceptedNativeDifferences":  0
+                                                  "contentVisualDimensionMismatchRows":  0,
+                                                  "evidenceLimitationDimensionMismatchRows":  0,
+                                                  "expectedPlatformNativeDimensionMismatchRows":  0,
+                                                  "realLogicalSizeMismatchRows":  0,
+                                                  "policyAcceptedNativeDifferences":  0,
+                                                  "visualReviewTriageThreshold":  0.4,
+                                                  "visualReviewTriageThresholdRationale":  "This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.",
+                                                  "visualReviewCandidateCount":  13,
+                                                  "highestTriageScore":  0.511967,
+                                                  "visualReviewCandidateSurfaceIds":  [
+                                                                                          "dialog.PrintPreview",
+                                                                                          "dialog.PivotValueFieldSettings.NumberFormat",
+                                                                                          "dialog.PivotValueFieldSettings",
+                                                                                          "dialog.PivotValueFieldSettings.SummarizeValuesBy",
+                                                                                          "dialog.PivotValueFieldSettings.ShowValuesAs",
+                                                                                          "dialog.FindReplace.Find",
+                                                                                          "dialog.FindReplace",
+                                                                                          "dialog.PivotFieldFilter.LabelFilters",
+                                                                                          "dialog.PivotFieldFilter.ValueFilters",
+                                                                                          "dialog.PivotFieldFilter",
+                                                                                          "dialog.PivotFieldFilter.SelectItems",
+                                                                                          "dialog.FindReplace.Replace",
+                                                                                          "dialog.GoToSpecial"
+                                                                                      ],
+                                                  "visualReviewCandidates":  [
+                                                                                 {
+                                                                                     "id":  "dialog.PrintPreview",
+                                                                                     "triageScore":  0.511967,
+                                                                                     "reviewStatus":  "unresolved visual review candidate",
+                                                                                     "logicalDimensionMatch":  true,
+                                                                                     "dimensionMismatchBucket":  null
+                                                                                 },
+                                                                                 {
+                                                                                     "id":  "dialog.PivotValueFieldSettings.NumberFormat",
+                                                                                     "triageScore":  0.491252,
+                                                                                     "reviewStatus":  "unresolved visual review candidate",
+                                                                                     "logicalDimensionMatch":  true,
+                                                                                     "dimensionMismatchBucket":  null
+                                                                                 },
+                                                                                 {
+                                                                                     "id":  "dialog.PivotValueFieldSettings",
+                                                                                     "triageScore":  0.472243,
+                                                                                     "reviewStatus":  "unresolved visual review candidate",
+                                                                                     "logicalDimensionMatch":  true,
+                                                                                     "dimensionMismatchBucket":  null
+                                                                                 },
+                                                                                 {
+                                                                                     "id":  "dialog.PivotValueFieldSettings.SummarizeValuesBy",
+                                                                                     "triageScore":  0.472243,
+                                                                                     "reviewStatus":  "unresolved visual review candidate",
+                                                                                     "logicalDimensionMatch":  true,
+                                                                                     "dimensionMismatchBucket":  null
+                                                                                 },
+                                                                                 {
+                                                                                     "id":  "dialog.PivotValueFieldSettings.ShowValuesAs",
+                                                                                     "triageScore":  0.469127,
+                                                                                     "reviewStatus":  "unresolved visual review candidate",
+                                                                                     "logicalDimensionMatch":  true,
+                                                                                     "dimensionMismatchBucket":  null
+                                                                                 },
+                                                                                 {
+                                                                                     "id":  "dialog.FindReplace.Find",
+                                                                                     "triageScore":  0.462742,
+                                                                                     "reviewStatus":  "unresolved visual review candidate",
+                                                                                     "logicalDimensionMatch":  true,
+                                                                                     "dimensionMismatchBucket":  null
+                                                                                 },
+                                                                                 {
+                                                                                     "id":  "dialog.FindReplace",
+                                                                                     "triageScore":  0.462642,
+                                                                                     "reviewStatus":  "unresolved visual review candidate",
+                                                                                     "logicalDimensionMatch":  true,
+                                                                                     "dimensionMismatchBucket":  null
+                                                                                 },
+                                                                                 {
+                                                                                     "id":  "dialog.PivotFieldFilter.LabelFilters",
+                                                                                     "triageScore":  0.45291,
+                                                                                     "reviewStatus":  "unresolved visual review candidate",
+                                                                                     "logicalDimensionMatch":  true,
+                                                                                     "dimensionMismatchBucket":  null
+                                                                                 },
+                                                                                 {
+                                                                                     "id":  "dialog.PivotFieldFilter.ValueFilters",
+                                                                                     "triageScore":  0.452427,
+                                                                                     "reviewStatus":  "unresolved visual review candidate",
+                                                                                     "logicalDimensionMatch":  true,
+                                                                                     "dimensionMismatchBucket":  null
+                                                                                 },
+                                                                                 {
+                                                                                     "id":  "dialog.PivotFieldFilter",
+                                                                                     "triageScore":  0.42326,
+                                                                                     "reviewStatus":  "unresolved visual review candidate",
+                                                                                     "logicalDimensionMatch":  true,
+                                                                                     "dimensionMismatchBucket":  null
+                                                                                 },
+                                                                                 {
+                                                                                     "id":  "dialog.PivotFieldFilter.SelectItems",
+                                                                                     "triageScore":  0.42326,
+                                                                                     "reviewStatus":  "unresolved visual review candidate",
+                                                                                     "logicalDimensionMatch":  true,
+                                                                                     "dimensionMismatchBucket":  null
+                                                                                 },
+                                                                                 {
+                                                                                     "id":  "dialog.FindReplace.Replace",
+                                                                                     "triageScore":  0.4221,
+                                                                                     "reviewStatus":  "unresolved visual review candidate",
+                                                                                     "logicalDimensionMatch":  true,
+                                                                                     "dimensionMismatchBucket":  null
+                                                                                 },
+                                                                                 {
+                                                                                     "id":  "dialog.GoToSpecial",
+                                                                                     "triageScore":  0.418497,
+                                                                                     "reviewStatus":  "unresolved visual review candidate",
+                                                                                     "logicalDimensionMatch":  true,
+                                                                                     "dimensionMismatchBucket":  null
+                                                                                 }
+                                                                             ]
                                               },
-                     "nextSlice":  "Command/dialog route coverage is green; all 48 pseudo-gallery rows are catalog-backed in classifier evidence (34 conditional-format rows over 38 runtime catalog items, 10 font/border rows, and 4 accounting-symbol rows), and dialog screenshot evidence has 93 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. Keep the 32 raw PNG pixel mismatches separate from missing-pair status: 32 normalize away by capture DPI, while 0 scale-aware paired mismatches remain, with 0 policy-accepted native/control rows, 0 content/visual mismatches, 0 evidence limitations, 0 real logical-size mismatches, and 0 stale promoted expected-size evidence rows."
+                     "nextSlice":  "Command/dialog route coverage is complete for the generated inputs: all 48 pseudo-gallery rows are catalog-backed in classifier evidence (34 conditional-format rows over 38 runtime catalog items, 10 font/border rows, and 4 accounting-symbol rows), and dialog screenshot evidence has 93 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. This is coverage and size-comparability evidence, not visual parity. The paired screenshots retain 13 unresolved high-delta visual review candidates at triage score \u003e= 0.4 (highest 0.511967); keep those candidates separate from 0 scale-aware dimension mismatch rows and 32 raw PNG pixel dimension mismatches."
                  },
                  {
                      "app":  "FreeW",

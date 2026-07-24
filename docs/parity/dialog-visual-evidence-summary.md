@@ -37,6 +37,30 @@ Sources:
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
 | Policy-accepted native/control differences | 0 |
+| High-delta visual review candidates | 13 |
+| Visual review triage threshold | 0.4 |
+
+## Visual Review Queue
+
+This queue is a deterministic prioritization aid, not a pass/fail result. The threshold is 0.4: This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.
+
+Equal logical dimensions, nonblank PNGs, and paired manifest ids establish evidence coverage and size comparability only; they do not establish visual parity. The 13 rows below remain unresolved high-delta candidates.
+
+| Surface id | Score | Logical dimensions match | Dimension bucket | Expected-size mismatch | Review status | Review reason |
+| --- | ---: | --- | --- | --- | --- | --- |
+| dialog.PrintPreview | 0.512 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
+| dialog.PivotValueFieldSettings.NumberFormat | 0.491 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
+| dialog.PivotValueFieldSettings | 0.472 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
+| dialog.PivotValueFieldSettings.SummarizeValuesBy | 0.472 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
+| dialog.PivotValueFieldSettings.ShowValuesAs | 0.469 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
+| dialog.FindReplace.Find | 0.463 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
+| dialog.FindReplace | 0.463 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
+| dialog.PivotFieldFilter.LabelFilters | 0.453 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
+| dialog.PivotFieldFilter.ValueFilters | 0.452 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
+| dialog.PivotFieldFilter | 0.423 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
+| dialog.PivotFieldFilter.SelectItems | 0.423 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
+| dialog.FindReplace.Replace | 0.422 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
+| dialog.GoToSpecial | 0.418 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
 
 ## Scale-Aware Dimension Mismatch Classification
 
