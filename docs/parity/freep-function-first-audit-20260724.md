@@ -53,6 +53,9 @@ is complete.
 - Chart data editing now also changes the selected chart type in both WPF and Avalonia.
   The same batch command preserves the type change in PPTX output, creates valid X/value
   payloads when moving to Scatter or Bubble, and restores those coordinates on undo.
+- Chart data editing now exposes Scatter X/Y values and Bubble X/Y/size values in the
+  shared grid on both WPF and Avalonia. Coordinate edits use the same single undo batch,
+  regenerate the embedded workbook, and round-trip through the native chart payload.
 - Chart authoring now also exposes a shared Chart Options dialog in both hosts. Title,
   legend placement, value-label placement/visibility, and category/value major gridlines
   commit through one undoable command and round-trip through the existing chart package
