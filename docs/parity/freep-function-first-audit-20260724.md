@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 241 command IDs total.
-- 239 shared across WPF and Avalonia.
+- 245 command IDs total.
+- 243 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 2 intentional shell/profile variances: Undo and Redo are routed through WPF
@@ -68,6 +68,10 @@ is complete.
   series/category point can edit fill, outline color/width, marker symbol, and marker size
   through one undoable command; existing point-style and point-color payloads round-trip through
   the PPTX reader and writer.
+- Chart authoring now also exposes a shared Chart Layout Options dialog in both hosts. Plot-area
+  and legend manual layouts can edit the layout target, factor/edge modes, and x/y/width/height
+  through one undoable command; existing manual-layout values round-trip through the PPTX reader
+  and writer.
 - SmartArt authoring now exposes the specialized layouts already supported by the live
   shared layout engine: alternating process, arrow ribbon, circle process, funnel process,
   vertical process, segmented process, chevron process, basic/closed-chevron process,
@@ -89,8 +93,8 @@ The remaining gaps are depth and application compatibility, not missing ribbon I
 - the remaining long tail of SmartArt layout families and full PowerPoint-authoritative
   SmartArt regeneration/style editing beyond the now-expanded live preset catalog;
 - advanced chart authoring/layout semantics beyond the current supported model, including
-  richer chart data editing beyond the shared grid and PowerPoint-specific chart area/plot-area
-  formatting dialogs;
+  richer chart data editing beyond the shared grid and PowerPoint-specific chart-area styling
+  beyond manual layout geometry;
 - deeper presenter/review/accessibility workflows and application-specific dialog
   behavior;
 - broader media/presenter integration and platform-specific capture/export behavior, including
