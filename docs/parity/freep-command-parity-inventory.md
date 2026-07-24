@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 214 | 212 | 0 | 2 | 2 | 0 | 0 | 0 | 212 | 0 | 0 | 2 | 0 | 91 |
+| 223 | 221 | 0 | 2 | 2 | 0 | 0 | 0 | 221 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -241,16 +241,25 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.smartart.colors.grayscale` | Grayscale | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.colors.single-accent` | Single Accent | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.colors.theme-accents` | Theme Accents | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.smartart.layout.basic-block-list` | [[Ribbon_Command_SmartArtBasicBlockList_Label]] | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.alternating-process` | Alternating Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.arrow-ribbon` | Arrow Ribbon | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.basic-block-list` | Basic Block List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.basic-cycle` | Basic Cycle | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.smartart.layout.basic-hierarchy` | [[Ribbon_Command_SmartArtBasicHierarchy_Label]] | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.smartart.layout.basic-matrix` | [[Ribbon_Command_SmartArtBasicMatrix_Label]] | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.basic-hierarchy` | Basic Hierarchy | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.basic-matrix` | Basic Matrix | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.basic-process` | Basic Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.smartart.layout.basic-pyramid` | [[Ribbon_Command_SmartArtBasicPyramid_Label]] | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.smartart.layout.basic-venn` | [[Ribbon_Command_SmartArtBasicVenn_Label]] | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.smartart.layout.radial-cycle` | [[Ribbon_Command_SmartArtRadialCycle_Label]] | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.smartart.layout.stacked-list` | [[Ribbon_Command_SmartArtStackedList_Label]] | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.basic-pyramid` | Basic Pyramid | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.basic-venn` | Basic Venn | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.circle-process` | Circle Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.descending-block-list` | Descending Block List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.funnel-process` | Funnel Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.radial-cycle` | Radial Cycle | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.radial-venn` | Radial Venn | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.stacked-list` | Stacked List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.stacked-venn` | Stacked Venn | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.target-list` | Target List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.vertical-box-list` | Vertical List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.vertical-process` | Vertical Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.style.intense` | Intense | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.style.moderate` | Moderate | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.style.simple` | Simple | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |

@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 214 command IDs total.
-- 212 shared across WPF and Avalonia.
+- 223 command IDs total.
+- 221 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 2 intentional shell/profile variances: Undo and Redo are routed through WPF
@@ -46,13 +46,18 @@ is complete.
 - Chart insertion now exposes every modeled chart family through the shared insertion
   planner and both host ribbons, including stacked and 100% stacked variants, line
   markers, area, scatter, doughnut, radar, bubble, stock, surface, and 3-D surface.
+- SmartArt authoring now exposes the specialized layouts already supported by the live
+  shared layout engine: alternating process, arrow ribbon, circle process, funnel process,
+  vertical process, descending block list, radial Venn, target list, and stacked Venn.
+  Each route updates the native diagram layout part and the live model, then remains
+  undoable through the shared editing session in both hosts.
 
 ## Remaining function scope
 
 The remaining gaps are depth and application compatibility, not missing ribbon IDs:
 
-- the long tail of SmartArt layout families and full PowerPoint-authoritative SmartArt
-  regeneration/style editing beyond the shared preset catalog;
+- the remaining long tail of SmartArt layout families and full PowerPoint-authoritative
+  SmartArt regeneration/style editing beyond the now-expanded live preset catalog;
 - advanced chart authoring/layout semantics beyond the current supported model, including
   richer chart data editing and PowerPoint-specific formatting dialogs;
 - deeper presenter/review/accessibility workflows and application-specific dialog
