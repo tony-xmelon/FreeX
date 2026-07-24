@@ -5,10 +5,14 @@ shared SmartArt compositor but previously available only when importing an autho
 
 - Horizontal Hierarchy
 - Organization Chart
+- Labeled Hierarchy
+- Table Hierarchy
 
 The shared authoring planner updates `dgm:layoutDef/@uniqueId`, sets the hierarchy family,
 clears stale fallback shapes, and commits the mutation through the normal undo/redo bus.
 WPF and Avalonia register the same commands and contextual gallery controls.
 
 This is a functional and package-round-trip slice. PowerPoint-COM visual baseline capture
-for the authoring transition remains separate evidence work.
+for the authoring transition remains separate evidence work; the two latter variants use
+the existing shared generic hierarchy geometry rather than claiming exact PowerPoint label
+or table-grid geometry.
