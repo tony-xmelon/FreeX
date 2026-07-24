@@ -64,6 +64,10 @@ is complete.
   can edit smooth-line state, secondary-axis assignment, line width, marker symbol, and marker
   size through one undoable command; the existing chart reader and writer preserve those values
   through PPTX round-trip.
+- Chart authoring now also exposes a shared Point Options dialog in both hosts. A selected
+  series/category point can edit fill, outline color/width, marker symbol, and marker size
+  through one undoable command; existing point-style and point-color payloads round-trip through
+  the PPTX reader and writer.
 - SmartArt authoring now exposes the specialized layouts already supported by the live
   shared layout engine: alternating process, arrow ribbon, circle process, funnel process,
   vertical process, segmented process, chevron process, basic/closed-chevron process,
@@ -85,8 +89,8 @@ The remaining gaps are depth and application compatibility, not missing ribbon I
 - the remaining long tail of SmartArt layout families and full PowerPoint-authoritative
   SmartArt regeneration/style editing beyond the now-expanded live preset catalog;
 - advanced chart authoring/layout semantics beyond the current supported model, including
-  richer chart data editing beyond the shared grid, per-point formatting, and PowerPoint-specific
-  chart area/plot-area formatting dialogs;
+  richer chart data editing beyond the shared grid and PowerPoint-specific chart area/plot-area
+  formatting dialogs;
 - deeper presenter/review/accessibility workflows and application-specific dialog
   behavior;
 - broader media/presenter integration and platform-specific capture/export behavior, including
