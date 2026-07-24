@@ -46,6 +46,9 @@ is complete.
 - Chart insertion now exposes every modeled chart family through the shared insertion
   planner and both host ribbons, including stacked and 100% stacked variants, line
   markers, area, scatter, doughnut, radar, bubble, stock, surface, and 3-D surface.
+- Chart data editing now also supports PowerPoint's Switch Row/Column operation in both
+  WPF and Avalonia. The shared planner transposes category labels, series names, and
+  nullable value gaps before the existing single-step ReplaceChartData undo command.
 - SmartArt authoring now exposes the specialized layouts already supported by the live
   shared layout engine: alternating process, arrow ribbon, circle process, funnel process,
   vertical process, segmented process, chevron process, basic/closed-chevron process,
@@ -67,7 +70,7 @@ The remaining gaps are depth and application compatibility, not missing ribbon I
 - the remaining long tail of SmartArt layout families and full PowerPoint-authoritative
   SmartArt regeneration/style editing beyond the now-expanded live preset catalog;
 - advanced chart authoring/layout semantics beyond the current supported model, including
-  richer chart data editing and PowerPoint-specific formatting dialogs;
+  richer chart data editing beyond the shared grid and PowerPoint-specific formatting dialogs;
 - deeper presenter/review/accessibility workflows and application-specific dialog
   behavior;
 - broader media/presenter integration and platform-specific capture/export behavior, including
