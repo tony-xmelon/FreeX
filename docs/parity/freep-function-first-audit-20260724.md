@@ -72,6 +72,10 @@ is complete.
   and legend manual layouts can edit the layout target, factor/edge modes, and x/y/width/height
   through one undoable command; existing manual-layout values round-trip through the PPTX reader
   and writer.
+- Chart display options now expose the full modeled chart-level data-label components in both
+  hosts: values, percentages, category names, series names, legend keys, placement, number format,
+  and separator. The same undoable command creates or updates the `c:dLbls` payload and preserves
+  it through PPTX round-trip.
 - SmartArt authoring now exposes the specialized layouts already supported by the live
   shared layout engine: alternating process, arrow ribbon, circle process, funnel process,
   vertical process, segmented process, chevron process, basic/closed-chevron process,
