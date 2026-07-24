@@ -49,6 +49,9 @@ is complete.
 - Chart data editing now also supports PowerPoint's Switch Row/Column operation in both
   WPF and Avalonia. The shared planner transposes category labels, series names, and
   nullable value gaps before the existing single-step ReplaceChartData undo command.
+- Chart data editing now also changes the selected chart type in both WPF and Avalonia.
+  The same batch command preserves the type change in PPTX output, creates valid X/value
+  payloads when moving to Scatter or Bubble, and restores those coordinates on undo.
 - SmartArt authoring now exposes the specialized layouts already supported by the live
   shared layout engine: alternating process, arrow ribbon, circle process, funnel process,
   vertical process, segmented process, chevron process, basic/closed-chevron process,
