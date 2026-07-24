@@ -34,6 +34,10 @@ is complete.
 - Recent function slices cover hidden-slide state, notes export, media capture and
   insertion, accessibility/review panes, printing, and grouped DrawingML package
   round-trip behavior.
+- The print Backstage path now accepts a shared custom slide-range string such as
+  `2,4-6` (including validation, hidden-slide filtering, and package disabled reasons)
+  through both WPF and Avalonia host adapters. The hosts consume the shared parser;
+  neither owns a divergent range grammar.
 
 ## Remaining function scope
 
