@@ -69,7 +69,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 105
+    "behaviorEvidenceRows": 106
   },
   "commands": [
     {
@@ -18326,6 +18326,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.outline-view.shared-behavior",
+        "slice": "Outline view",
+        "summary": "Shows a dedicated outline surface with shared-model rows, level filtering, first-line mode, caret navigation, undoable heading actions, and mutually exclusive production view-mode transitions in both shells.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Host.Tests/OutlineViewTests.cs",
+          "test": "OutlineViewTests.Entering_ShowsHeadingsAndBodyInStructureOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Avalonia.Tests/OutlineViewParityTests.cs",
+          "test": "OutlineViewParityTests.Production_outline_callback_swaps_workspace_and_is_mutually_exclusive_with_view_modes"
+        }
       }
     },
     {
