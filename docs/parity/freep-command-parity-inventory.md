@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 257 | 255 | 0 | 2 | 2 | 0 | 0 | 0 | 255 | 0 | 0 | 2 | 0 | 91 |
+| 258 | 256 | 0 | 2 | 2 | 0 | 0 | 0 | 256 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -277,6 +277,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.smartart.layout.funnel-process` | Funnel Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.gear-cycle` | Gear Cycle | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.grid-matrix` | Grid Matrix | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.hierarchy-3` | Hierarchy 3 | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.horizontal-hierarchy` | Horizontal Hierarchy | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.labeled-hierarchy` | Labeled Hierarchy | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.non-directional-cycle` | Non-Directional Cycle | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
