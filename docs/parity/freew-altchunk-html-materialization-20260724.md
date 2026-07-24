@@ -1,17 +1,17 @@
-# HTML altChunk Materialization
+# HTML and MHTML altChunk Materialization
 
 ## Scope
 
-Word materializes package-local body-level `w:altChunk` HTML into editable document content when it opens a document. FreeW now follows that behavior for `text/html` chunks: HTML is imported through the existing HTML adapter into native paragraphs, tables, and inline images.
+Word materializes supported package-local body-level `w:altChunk` payloads into editable document content when it opens a document. FreeW now follows that behavior for `text/html` HTML and `message/rfc822` MHTML chunks, importing them through the existing HTML and MHTML adapters into native paragraphs, tables, and inline images.
 
-Chunk-local image relationships and relative image paths resolve within the chunk part. Once materialized, saving the document writes ordinary WordprocessingML content and no longer retains the consumed HTML chunk marker or part.
+HTML chunk-local image relationships and relative image paths resolve within the chunk part. MHTML resolves its own CID and content-location image resources from the MIME payload, independently of the Open Packaging Convention relationship graph. Once materialized, saving the document writes ordinary WordprocessingML content and no longer retains the consumed chunk marker or part.
 
-Non-HTML chunks, malformed HTML, nested Word packages, and unknown payloads remain `AltChunkBlock` instances so their original relationship graph is preserved verbatim.
+RTF, nested Word packages, malformed supported payloads, and unknown MIME types remain `AltChunkBlock` instances so their original relationship graph is preserved verbatim.
 
 ## Verification
 
-- `AltChunkRoundTripTests`: 2/2 passed.
-- Existing HTML/MHTML IO tests: 16/16 passed.
+- `AltChunkRoundTripTests`: 3/3 passed.
+- Existing HTML/MHTML IO tests: 17/17 passed.
 - `FreeW.FidelityRender` Release build: 0 warnings, 0 errors.
 - `FreeW.App.Avalonia` Release build: 0 warnings, 0 errors.
 
