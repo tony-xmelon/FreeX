@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 238 | 236 | 0 | 2 | 2 | 0 | 0 | 0 | 236 | 0 | 0 | 2 | 0 | 91 |
+| 240 | 238 | 0 | 2 | 2 | 0 | 0 | 0 | 238 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -273,7 +273,9 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.smartart.layout.table-hierarchy` | Table Hierarchy | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.target-list` | Target List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.text-cycle` | Text Cycle | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.titled-matrix` | Titled Matrix | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.vertical-box-list` | Vertical List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.vertical-bullet-list` | Vertical Bullet List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.vertical-process` | Vertical Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.style.intense` | Intense | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.style.moderate` | Moderate | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
