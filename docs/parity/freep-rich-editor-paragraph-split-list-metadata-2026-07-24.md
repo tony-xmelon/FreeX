@@ -25,5 +25,9 @@ The planner copies numbering type/start, bullet kind/character/image, level, ind
 - `FreeP.App.Host.Tests`: `RichTextEditorTests` - 39 passed, including the same WPF FlowDocument cases.
 - `FreeP.App.Rendering.Avalonia.Tests`: `AvaloniaRichTextEditorTests` - 7 passed, including the host-buffer Enter-split path.
 
-This slice intentionally does not change deeper list editing such as list continuation numbering
-policy or native WPF/Avalonia list-marker rendering.
+List continuation numbering and explicit marker restart semantics are covered
+by the follow-up slice documented in
+`freep-rich-editor-list-continuation-2026-07-24.md`. Native WPF/Avalonia
+editable overlays still keep markers out of logical editor text because that
+matches the WPF authority; shared slide layout remains responsible for marker
+rendering.
