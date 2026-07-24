@@ -38,6 +38,9 @@ is complete.
   `2,4-6` (including validation, hidden-slide filtering, and package disabled reasons)
   through both WPF and Avalonia host adapters. The hosts consume the shared parser;
   neither owns a divergent range grammar.
+- WPF Backstage and both Avalonia print projections expose an Apply-range input. The
+  selected range rebuilds the shared preview/package plan, and the native print handoff
+  retains that same request instead of falling back to all slides.
 
 ## Remaining function scope
 
