@@ -26,8 +26,8 @@
                     "policyAcceptedNativeDifferences":  0,
                     "visualReviewTriageThreshold":  0.4,
                     "visualReviewTriageThresholdRationale":  "This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.",
-                    "visualReviewCandidateCount":  13,
-                    "highestTriageScore":  0.511967,
+                    "visualReviewCandidateCount":  7,
+                    "highestTriageScore":  0.491252,
                     "dimensionMismatchBuckets":  {
 
                                                  }
@@ -1142,7 +1142,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FindReplace.png",
-                                                "fileBytes":  12481,
+                                                "fileBytes":  13819,
                                                 "width":  720,
                                                 "height":  430,
                                                 "dpiX":  96,
@@ -1150,11 +1150,11 @@
                                                 "logicalWidth":  720,
                                                 "logicalHeight":  430,
                                                 "pixels":  309600,
-                                                "distinctColors":  893,
+                                                "distinctColors":  971,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.048637,
+                                                "nonBackgroundRatio":  0.096893,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  251.171993
+                                                "meanLuma":  250.301278
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -1169,10 +1169,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.034041,
-                                                  "lumaDelta":  0.025124,
-                                                  "nonBackgroundDelta":  0.403198,
-                                                  "triageScore":  0.462642,
+                                                  "sampleMeanDelta":  0.029485,
+                                                  "lumaDelta":  0.021709,
+                                                  "nonBackgroundDelta":  0.354942,
+                                                  "triageScore":  0.406416,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  720,
                                                   "expectedHeight":  430,
@@ -1206,7 +1206,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FindReplace.Find.png",
-                                                "fileBytes":  12446,
+                                                "fileBytes":  13784,
                                                 "width":  720,
                                                 "height":  430,
                                                 "dpiX":  96,
@@ -1214,11 +1214,11 @@
                                                 "logicalWidth":  720,
                                                 "logicalHeight":  430,
                                                 "pixels":  309600,
-                                                "distinctColors":  891,
+                                                "distinctColors":  970,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.048585,
+                                                "nonBackgroundRatio":  0.096841,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  251.184344
+                                                "meanLuma":  250.309414
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -1233,10 +1233,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.034041,
-                                                  "lumaDelta":  0.025172,
-                                                  "nonBackgroundDelta":  0.403249,
-                                                  "triageScore":  0.462742,
+                                                  "sampleMeanDelta":  0.029485,
+                                                  "lumaDelta":  0.021741,
+                                                  "nonBackgroundDelta":  0.354994,
+                                                  "triageScore":  0.406499,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  720,
                                                   "expectedHeight":  430,
@@ -1270,7 +1270,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FindReplace.Replace.png",
-                                                "fileBytes":  11827,
+                                                "fileBytes":  17393,
                                                 "width":  720,
                                                 "height":  430,
                                                 "dpiX":  96,
@@ -1278,11 +1278,11 @@
                                                 "logicalWidth":  720,
                                                 "logicalHeight":  430,
                                                 "pixels":  309600,
-                                                "distinctColors":  827,
+                                                "distinctColors":  1070,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.046444,
+                                                "nonBackgroundRatio":  0.108947,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  251.451486
+                                                "meanLuma":  248.907478
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -1297,10 +1297,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.027821,
-                                                  "lumaDelta":  0.029866,
-                                                  "nonBackgroundDelta":  0.364134,
-                                                  "triageScore":  0.4221,
+                                                  "sampleMeanDelta":  0.030615,
+                                                  "lumaDelta":  0.019889,
+                                                  "nonBackgroundDelta":  0.301631,
+                                                  "triageScore":  0.352415,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  720,
                                                   "expectedHeight":  430,
@@ -3644,7 +3644,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.png",
-                                                "fileBytes":  11837,
+                                                "fileBytes":  13231,
                                                 "width":  380,
                                                 "height":  470,
                                                 "dpiX":  96,
@@ -3652,11 +3652,11 @@
                                                 "logicalWidth":  380,
                                                 "logicalHeight":  470,
                                                 "pixels":  178600,
-                                                "distinctColors":  301,
+                                                "distinctColors":  440,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.079574,
+                                                "nonBackgroundRatio":  0.138024,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  249.364923
+                                                "meanLuma":  247.037053
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -3671,10 +3671,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.163139,
-                                                  "lumaDelta":  0.123929,
-                                                  "nonBackgroundDelta":  0.135913,
-                                                  "triageScore":  0.42326,
+                                                  "sampleMeanDelta":  0.171763,
+                                                  "lumaDelta":  0.1148,
+                                                  "nonBackgroundDelta":  0.077464,
+                                                  "triageScore":  0.364306,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -3708,7 +3708,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.LabelFilters.png",
-                                                "fileBytes":  8514,
+                                                "fileBytes":  10526,
                                                 "width":  380,
                                                 "height":  470,
                                                 "dpiX":  96,
@@ -3716,11 +3716,11 @@
                                                 "logicalWidth":  380,
                                                 "logicalHeight":  470,
                                                 "pixels":  178600,
-                                                "distinctColors":  245,
+                                                "distinctColors":  388,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.053124,
+                                                "nonBackgroundRatio":  0.13453,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  251.036903
+                                                "meanLuma":  248.104747
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -3735,10 +3735,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.156305,
-                                                  "lumaDelta":  0.129271,
-                                                  "nonBackgroundDelta":  0.167055,
-                                                  "triageScore":  0.45291,
+                                                  "sampleMeanDelta":  0.156399,
+                                                  "lumaDelta":  0.117773,
+                                                  "nonBackgroundDelta":  0.085649,
+                                                  "triageScore":  0.360101,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -3772,7 +3772,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.SelectItems.png",
-                                                "fileBytes":  11837,
+                                                "fileBytes":  13199,
                                                 "width":  380,
                                                 "height":  470,
                                                 "dpiX":  96,
@@ -3780,11 +3780,11 @@
                                                 "logicalWidth":  380,
                                                 "logicalHeight":  470,
                                                 "pixels":  178600,
-                                                "distinctColors":  301,
+                                                "distinctColors":  434,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.079574,
+                                                "nonBackgroundRatio":  0.137951,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  249.364923
+                                                "meanLuma":  247.050944
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -3799,10 +3799,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.163139,
-                                                  "lumaDelta":  0.123929,
-                                                  "nonBackgroundDelta":  0.135913,
-                                                  "triageScore":  0.42326,
+                                                  "sampleMeanDelta":  0.171763,
+                                                  "lumaDelta":  0.114855,
+                                                  "nonBackgroundDelta":  0.077536,
+                                                  "triageScore":  0.364434,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -3836,7 +3836,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.ValueFilters.png",
-                                                "fileBytes":  8522,
+                                                "fileBytes":  10804,
                                                 "width":  380,
                                                 "height":  470,
                                                 "dpiX":  96,
@@ -3844,11 +3844,11 @@
                                                 "logicalWidth":  380,
                                                 "logicalHeight":  470,
                                                 "pixels":  178600,
-                                                "distinctColors":  246,
+                                                "distinctColors":  405,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.053203,
+                                                "nonBackgroundRatio":  0.13411,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  251.04903
+                                                "meanLuma":  248.136725
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -3863,10 +3863,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.155317,
-                                                  "lumaDelta":  0.129306,
-                                                  "nonBackgroundDelta":  0.167525,
-                                                  "triageScore":  0.452427,
+                                                  "sampleMeanDelta":  0.154736,
+                                                  "lumaDelta":  0.117885,
+                                                  "nonBackgroundDelta":  0.086618,
+                                                  "triageScore":  0.359519,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -4610,7 +4610,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PrintPreview.png",
-                                                "fileBytes":  49304,
+                                                "fileBytes":  55777,
                                                 "width":  1120,
                                                 "height":  700,
                                                 "dpiX":  96,
@@ -4618,11 +4618,11 @@
                                                 "logicalWidth":  1120,
                                                 "logicalHeight":  700,
                                                 "pixels":  784000,
-                                                "distinctColors":  1537,
+                                                "distinctColors":  2006,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.726353,
+                                                "nonBackgroundRatio":  0.563948,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  233.170709
+                                                "meanLuma":  244.48335
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -4637,10 +4637,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.141411,
-                                                  "lumaDelta":  0.016952,
-                                                  "nonBackgroundDelta":  0.353324,
-                                                  "triageScore":  0.511967,
+                                                  "sampleMeanDelta":  0.125941,
+                                                  "lumaDelta":  0.061316,
+                                                  "nonBackgroundDelta":  0.190918,
+                                                  "triageScore":  0.378454,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6006,14 +6006,6 @@
                        ],
     "topPairedOutliers":  [
                               {
-                                  "id":  "dialog.PrintPreview",
-                                  "triageScore":  0.511967,
-                                  "sampleMeanDelta":  0.141411,
-                                  "dimension":  "1120.156x700.098 vs 1120x700 logical; 1120x700 vs 1120x700 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.353324
-                              },
-                              {
                                   "id":  "dialog.PivotValueFieldSettings.NumberFormat",
                                   "triageScore":  0.491252,
                                   "sampleMeanDelta":  0.162201,
@@ -6046,56 +6038,55 @@
                                   "nonBackgroundDelta":  0.176209
                               },
                               {
+                                  "id":  "dialog.GoToSpecial",
+                                  "triageScore":  0.418497,
+                                  "sampleMeanDelta":  0.170346,
+                                  "dimension":  "430.06x438.061 vs 430x438 logical; 430x438 vs 430x438 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.121631
+                              },
+                              {
                                   "id":  "dialog.FindReplace.Find",
-                                  "triageScore":  0.462742,
-                                  "sampleMeanDelta":  0.034041,
+                                  "triageScore":  0.406499,
+                                  "sampleMeanDelta":  0.029485,
                                   "dimension":  "720.101x430.06 vs 720x430 logical; 720x430 vs 720x430 px",
                                   "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.403249
+                                  "nonBackgroundDelta":  0.354994
                               },
                               {
                                   "id":  "dialog.FindReplace",
-                                  "triageScore":  0.462642,
-                                  "sampleMeanDelta":  0.034041,
+                                  "triageScore":  0.406416,
+                                  "sampleMeanDelta":  0.029485,
                                   "dimension":  "720.101x430.06 vs 720x430 logical; 720x430 vs 720x430 px",
                                   "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.403198
+                                  "nonBackgroundDelta":  0.354942
                               },
                               {
-                                  "id":  "dialog.PivotFieldFilter.LabelFilters",
-                                  "triageScore":  0.45291,
-                                  "sampleMeanDelta":  0.156305,
-                                  "dimension":  "380.053x470.066 vs 380x470 logical; 380x470 vs 380x470 px",
+                                  "id":  "dialog.PrintPreview",
+                                  "triageScore":  0.378454,
+                                  "sampleMeanDelta":  0.125941,
+                                  "dimension":  "1120.156x700.098 vs 1120x700 logical; 1120x700 vs 1120x700 px",
                                   "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.167055
+                                  "nonBackgroundDelta":  0.190918
                               },
                               {
-                                  "id":  "dialog.PivotFieldFilter.ValueFilters",
-                                  "triageScore":  0.452427,
-                                  "sampleMeanDelta":  0.155317,
+                                  "id":  "dialog.PivotFieldFilter.SelectItems",
+                                  "triageScore":  0.364434,
+                                  "sampleMeanDelta":  0.171763,
                                   "dimension":  "380.053x470.066 vs 380x470 logical; 380x470 vs 380x470 px",
                                   "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.167525
+                                  "nonBackgroundDelta":  0.077536
                               },
                               {
                                   "id":  "dialog.PivotFieldFilter",
-                                  "triageScore":  0.42326,
-                                  "sampleMeanDelta":  0.163139,
+                                  "triageScore":  0.364306,
+                                  "sampleMeanDelta":  0.171763,
                                   "dimension":  "380.053x470.066 vs 380x470 logical; 380x470 vs 380x470 px",
                                   "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.135913
+                                  "nonBackgroundDelta":  0.077464
                               }
                           ],
     "visualReviewCandidates":  [
-                                   {
-                                       "id":  "dialog.PrintPreview",
-                                       "triageScore":  0.511967,
-                                       "reviewStatus":  "unresolved visual review candidate",
-                                       "logicalDimensionMatch":  true,
-                                       "dimensionMismatchBucket":  null,
-                                       "expectedSizeMismatch":  false,
-                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
-                                   },
                                    {
                                        "id":  "dialog.PivotValueFieldSettings.NumberFormat",
                                        "triageScore":  0.491252,
@@ -6133,8 +6124,17 @@
                                        "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
                                    },
                                    {
+                                       "id":  "dialog.GoToSpecial",
+                                       "triageScore":  0.418497,
+                                       "reviewStatus":  "unresolved visual review candidate",
+                                       "logicalDimensionMatch":  true,
+                                       "dimensionMismatchBucket":  null,
+                                       "expectedSizeMismatch":  false,
+                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
+                                   },
+                                   {
                                        "id":  "dialog.FindReplace.Find",
-                                       "triageScore":  0.462742,
+                                       "triageScore":  0.406499,
                                        "reviewStatus":  "unresolved visual review candidate",
                                        "logicalDimensionMatch":  true,
                                        "dimensionMismatchBucket":  null,
@@ -6143,61 +6143,7 @@
                                    },
                                    {
                                        "id":  "dialog.FindReplace",
-                                       "triageScore":  0.462642,
-                                       "reviewStatus":  "unresolved visual review candidate",
-                                       "logicalDimensionMatch":  true,
-                                       "dimensionMismatchBucket":  null,
-                                       "expectedSizeMismatch":  false,
-                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
-                                   },
-                                   {
-                                       "id":  "dialog.PivotFieldFilter.LabelFilters",
-                                       "triageScore":  0.45291,
-                                       "reviewStatus":  "unresolved visual review candidate",
-                                       "logicalDimensionMatch":  true,
-                                       "dimensionMismatchBucket":  null,
-                                       "expectedSizeMismatch":  false,
-                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
-                                   },
-                                   {
-                                       "id":  "dialog.PivotFieldFilter.ValueFilters",
-                                       "triageScore":  0.452427,
-                                       "reviewStatus":  "unresolved visual review candidate",
-                                       "logicalDimensionMatch":  true,
-                                       "dimensionMismatchBucket":  null,
-                                       "expectedSizeMismatch":  false,
-                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
-                                   },
-                                   {
-                                       "id":  "dialog.PivotFieldFilter",
-                                       "triageScore":  0.42326,
-                                       "reviewStatus":  "unresolved visual review candidate",
-                                       "logicalDimensionMatch":  true,
-                                       "dimensionMismatchBucket":  null,
-                                       "expectedSizeMismatch":  false,
-                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
-                                   },
-                                   {
-                                       "id":  "dialog.PivotFieldFilter.SelectItems",
-                                       "triageScore":  0.42326,
-                                       "reviewStatus":  "unresolved visual review candidate",
-                                       "logicalDimensionMatch":  true,
-                                       "dimensionMismatchBucket":  null,
-                                       "expectedSizeMismatch":  false,
-                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
-                                   },
-                                   {
-                                       "id":  "dialog.FindReplace.Replace",
-                                       "triageScore":  0.4221,
-                                       "reviewStatus":  "unresolved visual review candidate",
-                                       "logicalDimensionMatch":  true,
-                                       "dimensionMismatchBucket":  null,
-                                       "expectedSizeMismatch":  false,
-                                       "reviewReason":  "High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it."
-                                   },
-                                   {
-                                       "id":  "dialog.GoToSpecial",
-                                       "triageScore":  0.418497,
+                                       "triageScore":  0.406416,
                                        "reviewStatus":  "unresolved visual review candidate",
                                        "logicalDimensionMatch":  true,
                                        "dimensionMismatchBucket":  null,

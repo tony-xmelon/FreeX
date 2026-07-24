@@ -37,30 +37,24 @@ Sources:
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
 | Policy-accepted native/control differences | 0 |
-| High-delta visual review candidates | 13 |
+| High-delta visual review candidates | 7 |
 | Visual review triage threshold | 0.4 |
 
 ## Visual Review Queue
 
 This queue is a deterministic prioritization aid, not a pass/fail result. The threshold is 0.4: This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.
 
-Equal logical dimensions, nonblank PNGs, and paired manifest ids establish evidence coverage and size comparability only; they do not establish visual parity. The 13 rows below remain unresolved high-delta candidates.
+Equal logical dimensions, nonblank PNGs, and paired manifest ids establish evidence coverage and size comparability only; they do not establish visual parity. The 7 rows below remain unresolved high-delta candidates.
 
 | Surface id | Score | Logical dimensions match | Dimension bucket | Expected-size mismatch | Review status | Review reason |
 | --- | ---: | --- | --- | --- | --- | --- |
-| dialog.PrintPreview | 0.512 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
 | dialog.PivotValueFieldSettings.NumberFormat | 0.491 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
 | dialog.PivotValueFieldSettings | 0.472 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
 | dialog.PivotValueFieldSettings.SummarizeValuesBy | 0.472 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
 | dialog.PivotValueFieldSettings.ShowValuesAs | 0.469 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
-| dialog.FindReplace.Find | 0.463 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
-| dialog.FindReplace | 0.463 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
-| dialog.PivotFieldFilter.LabelFilters | 0.453 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
-| dialog.PivotFieldFilter.ValueFilters | 0.452 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
-| dialog.PivotFieldFilter | 0.423 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
-| dialog.PivotFieldFilter.SelectItems | 0.423 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
-| dialog.FindReplace.Replace | 0.422 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
 | dialog.GoToSpecial | 0.418 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
+| dialog.FindReplace.Find | 0.406 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
+| dialog.FindReplace | 0.406 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
 
 ## Scale-Aware Dimension Mismatch Classification
 
@@ -75,16 +69,16 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.PrintPreview | 1120x700 | 1120x700 | 1120x700 px @ 96 DPI vs 1120x700 px @ 96 DPI |  |  | 0.512 | 0.141 | 0.017 | 0.353 |
 | dialog.PivotValueFieldSettings.NumberFormat | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.491 | 0.162 | 0.137 | 0.192 |
 | dialog.PivotValueFieldSettings | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.472 | 0.161 | 0.133 | 0.178 |
 | dialog.PivotValueFieldSettings.SummarizeValuesBy | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.472 | 0.161 | 0.133 | 0.178 |
 | dialog.PivotValueFieldSettings.ShowValuesAs | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.469 | 0.159 | 0.133 | 0.176 |
-| dialog.FindReplace.Find | 720x430 | 720x430 | 720x430 px @ 96 DPI vs 720x430 px @ 96 DPI |  |  | 0.463 | 0.034 | 0.025 | 0.403 |
-| dialog.FindReplace | 720x430 | 720x430 | 720x430 px @ 96 DPI vs 720x430 px @ 96 DPI |  |  | 0.463 | 0.034 | 0.025 | 0.403 |
-| dialog.PivotFieldFilter.LabelFilters | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.453 | 0.156 | 0.129 | 0.167 |
-| dialog.PivotFieldFilter.ValueFilters | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.452 | 0.155 | 0.129 | 0.168 |
-| dialog.PivotFieldFilter | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.423 | 0.163 | 0.124 | 0.136 |
+| dialog.GoToSpecial | 430x438 | 430x438 | 430x438 px @ 96 DPI vs 430x438 px @ 96 DPI |  |  | 0.418 | 0.170 | 0.126 | 0.122 |
+| dialog.FindReplace.Find | 720x430 | 720x430 | 720x430 px @ 96 DPI vs 720x430 px @ 96 DPI |  |  | 0.406 | 0.029 | 0.022 | 0.355 |
+| dialog.FindReplace | 720x430 | 720x430 | 720x430 px @ 96 DPI vs 720x430 px @ 96 DPI |  |  | 0.406 | 0.029 | 0.022 | 0.355 |
+| dialog.PrintPreview | 1120x700 | 1120x700 | 1120x700 px @ 96 DPI vs 1120x700 px @ 96 DPI |  |  | 0.378 | 0.126 | 0.061 | 0.191 |
+| dialog.PivotFieldFilter.SelectItems | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.364 | 0.172 | 0.115 | 0.078 |
+| dialog.PivotFieldFilter | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.364 | 0.172 | 0.115 | 0.077 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -119,9 +113,9 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.ErrorChecking | dialog.ErrorChecking.png | 720x420 | 1080x630 px @ 144 DPI | True | dialog.ErrorChecking.png | 720x420 | 720x420 px @ 96 DPI | True | True | 0.103 |
 | dialog.EvaluateFormula | dialog.EvaluateFormula.png | 600x360 | 900x540 px @ 144 DPI | True | dialog.EvaluateFormula.png | 600x360 | 600x360 px @ 96 DPI | True | True | 0.090 |
 | dialog.ExportOptions | dialog.ExportOptions.png | 430x552 | 430x552 px @ 96 DPI | True | dialog.ExportOptions.png | 430x552 | 430x552 px @ 96 DPI | True | True | 0.058 |
-| dialog.FindReplace | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.463 |
-| dialog.FindReplace.Find | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.463 |
-| dialog.FindReplace.Replace | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.422 |
+| dialog.FindReplace | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.406 |
+| dialog.FindReplace.Find | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.406 |
+| dialog.FindReplace.Replace | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.352 |
 | dialog.ForecastSheet | dialog.ForecastSheet.png | 320x150 | 480x225 px @ 144 DPI | True | dialog.ForecastSheet.png | 320x150 | 320x150 px @ 96 DPI | True | True | 0.057 |
 | dialog.FormatCells | dialog.FormatCells.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.029 |
 | dialog.FormatCells.Alignment | dialog.FormatCells.Alignment.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Alignment.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.090 |
@@ -158,10 +152,10 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.PageSetup.Margins | dialog.PageSetup.Margins.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Margins.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.041 |
 | dialog.PageSetup.Page | dialog.PageSetup.Page.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Page.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.091 |
 | dialog.PageSetup.Sheet | dialog.PageSetup.Sheet.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Sheet.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.117 |
-| dialog.PivotFieldFilter | dialog.PivotFieldFilter.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.423 |
-| dialog.PivotFieldFilter.LabelFilters | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.453 |
-| dialog.PivotFieldFilter.SelectItems | dialog.PivotFieldFilter.SelectItems.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.SelectItems.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.423 |
-| dialog.PivotFieldFilter.ValueFilters | dialog.PivotFieldFilter.ValueFilters.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.ValueFilters.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.452 |
+| dialog.PivotFieldFilter | dialog.PivotFieldFilter.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.364 |
+| dialog.PivotFieldFilter.LabelFilters | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.360 |
+| dialog.PivotFieldFilter.SelectItems | dialog.PivotFieldFilter.SelectItems.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.SelectItems.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.364 |
+| dialog.PivotFieldFilter.ValueFilters | dialog.PivotFieldFilter.ValueFilters.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.ValueFilters.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.360 |
 | dialog.PivotTableOptions | dialog.PivotTableOptions.png | 520x676 | 520x676 px @ 96 DPI | True | dialog.PivotTableOptions.png | 520x676 | 520x676 px @ 96 DPI | True | True | 0.093 |
 | dialog.PivotTableOptions.AltText | dialog.PivotTableOptions.AltText.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.AltText.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.061 |
 | dialog.PivotTableOptions.Data | dialog.PivotTableOptions.Data.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.Data.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.125 |
@@ -173,7 +167,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.PivotValueFieldSettings.NumberFormat | dialog.PivotValueFieldSettings.NumberFormat.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.NumberFormat.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.491 |
 | dialog.PivotValueFieldSettings.ShowValuesAs | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.469 |
 | dialog.PivotValueFieldSettings.SummarizeValuesBy | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.472 |
-| dialog.PrintPreview | dialog.PrintPreview.png | 1120x700 | 1120x700 px @ 96 DPI | True | dialog.PrintPreview.png | 1120x700 | 1120x700 px @ 96 DPI | True | True | 0.512 |
+| dialog.PrintPreview | dialog.PrintPreview.png | 1120x700 | 1120x700 px @ 96 DPI | True | dialog.PrintPreview.png | 1120x700 | 1120x700 px @ 96 DPI | True | True | 0.378 |
 | dialog.ProtectSheet | dialog.ProtectSheet.png | 430x540 | 645x810 px @ 144 DPI | True | dialog.ProtectSheet.png | 430x540 | 430x540 px @ 96 DPI | True | True | 0.045 |
 | dialog.ProtectWorkbook | dialog.ProtectWorkbook.png | 380x250 | 380x250 px @ 96 DPI | True | dialog.ProtectWorkbook.png | 380x250 | 380x250 px @ 96 DPI | True | True | 0.042 |
 | dialog.RecommendedPivotTables | dialog.RecommendedPivotTables.png | 560x340 | 840x510 px @ 144 DPI | True | dialog.RecommendedPivotTables.png | 560x340 | 560x340 px @ 96 DPI | True | True | 0.044 |
