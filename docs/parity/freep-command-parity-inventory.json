@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 252,
-    "both": 250,
+    "totalCommands": 254,
+    "both": 252,
     "wpfOnly": 0,
     "avaloniaOnly": 2,
     "missingWpf": 2,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 250,
+    "shared": 252,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 2,
@@ -5730,6 +5730,74 @@
           "label": "Picture",
           "controlType": "RibbonButton",
           "layout": "Large"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.picture.crop-inset",
+      "label": "Crop Inset",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Crop Inset",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Crop Inset",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.picture.crop-reset",
+      "label": "Reset Crop",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Reset Crop",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Reset Crop",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
         }
       ]
     },
