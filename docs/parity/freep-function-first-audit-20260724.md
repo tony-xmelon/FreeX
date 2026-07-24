@@ -79,6 +79,9 @@ is complete.
   hosts: values, percentages, category names, series names, legend keys, placement, number format,
   and separator. The same undoable command creates or updates the `c:dLbls` payload and preserves
   it through PPTX round-trip.
+- Chart display options now also expose bar/column gap width (0-500%) and overlap (-100% to 100%)
+  in both hosts. Blank values preserve automatic chart behavior; explicit values share one undoable
+  command and round-trip through `c:gapWidth` and `c:overlap`.
 - SmartArt authoring now exposes the specialized layouts already supported by the live
   shared layout engine: alternating process, arrow ribbon, circle process, funnel process,
   vertical process, segmented process, chevron process, basic/closed-chevron process,
