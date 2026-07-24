@@ -14,6 +14,7 @@
                             "freew/FreeW.App.Avalonia/Printing/CupsPrintService.cs",
                             "freew/FreeW.App.Avalonia/Editing/DocumentView.cs",
                             "freew/FreeW.App.Avalonia.Tests/Printing/CupsPrintServiceTests.cs",
+                            "freew/FreeW.App.Avalonia.Tests/Printing/PrintLifecycleTests.cs",
                             "freew/FreeW.App.Avalonia.Tests/Printing/PortableXpsWriterTests.cs",
                             "freew/FreeW.App.Presentation/Printing/PrintSelectionPlanner.cs",
                             "freew/FreeW.App.Presentation.Tests/Printing/PrintSelectionPlannerTests.cs",
@@ -26,31 +27,32 @@
                             "shared/Free.Shared.Pdf.Skia/SkiaPdfWriter.cs"
                         ],
     "sourceSha256":  {
-                         "freew/FreeW.App.Host/MainWindow.cs":  "bd1f0408e91dcb56b0ca15a50bd5b9c72322cd7753793f7e9e48b86a73b67707",
+                         "freew/FreeW.App.Host/MainWindow.cs":  "2c543e660bfd97ba8346e3fdf3265c2fae06302cc4e4d654ca179e525201e940",
                          "freew/FreeW.App.Host/XpsExport.cs":  "a3a719c3311d2cf0011597f4cd5e9616a91a71f35a08d5fbdf892f1db8840d2b",
                          "freew/FreeW.App.Host/PrintPreviewWindow.cs":  "9ba46a487f276e84cb6fa8dfe44cfc1432ae0483b4f3ceaefbd200e27441798c",
-                         "freew/FreeW.App.Avalonia/MainWindow.cs":  "fff207e3a56c7de6c2149d3cb97982e7f524ee04b2807ecf11175cca39854ee4",
-                         "freew/FreeW.App.Avalonia/PrintPreviewDialog.cs":  "8359ff7047f8376b92f500b7d6d578abc0d0a7ab4aafcd9d63ea4dd4e00480cf",
-                         "freew/FreeW.App.Avalonia/Printing/CupsPrintDialog.cs":  "1157f17b4132009bd11592991cb1e3d71c8b01412d08316fe10c5547760379c4",
+                         "freew/FreeW.App.Avalonia/MainWindow.cs":  "874f63dd3f29832279186ebf6a1871491071726b1a7a3699e5cd6062be943b70",
+                         "freew/FreeW.App.Avalonia/PrintPreviewDialog.cs":  "5bb353aa735962fa567f2a0921b8ee4d16d70dc6bd981ea2992a60a4e9508ca1",
+                         "freew/FreeW.App.Avalonia/Printing/CupsPrintDialog.cs":  "b4dcc599bf5f8a284ee7a23786db5e69143196b22e90ff758768b9853f36134d",
                          "freew/FreeW.App.Avalonia/Pdf/FreeWAvaloniaPdfExport.cs":  "10725826c347c65cdce437d628ccca01e0efe946f8d48db281a723e4105332b9",
-                         "freew/FreeW.App.Avalonia/Pdf/FreeWAvaloniaXpsExport.cs":  "c6eb37bcfd30d2c6173ab2b8ba5dc40c6eecdfd395f5c19337489eb1bec8c7c6",
+                         "freew/FreeW.App.Avalonia/Pdf/FreeWAvaloniaXpsExport.cs":  "6fac475280159a92c99b5b34decb0dcf11f1b3ff5ef9c855814d9fa14440bc17",
                          "freew/FreeW.App.Avalonia/Printing/CupsPrintCommandPlanner.cs":  "ad507a11f60a4a8c377be4e7e762860ea3f78f5926756bde00fc32a5c42fb7f8",
-                         "freew/FreeW.App.Avalonia/Printing/CupsPrintService.cs":  "24df43d40a6ccf4ce667f1d72debf9cc17b92b8e7a3faecc599694c20ae6b8c7",
-                         "freew/FreeW.App.Avalonia/Editing/DocumentView.cs":  "17b2790308b5c2bd4314151813879b4e14ec087054b9854e740303dd13e40f18",
-                         "freew/FreeW.App.Avalonia.Tests/Printing/CupsPrintServiceTests.cs":  "54abcb07cf54ae5c5bec3c8dc458630c404e573c40a0bf8cdf4c6572395b9594",
-                         "freew/FreeW.App.Avalonia.Tests/Printing/PortableXpsWriterTests.cs":  "01bd6bfcf0b144547f8071908bcce27361eb63d52879a90442a0cd1d1aa42a08",
+                         "freew/FreeW.App.Avalonia/Printing/CupsPrintService.cs":  "a8fcc0b40b4525f1590eaff696439502f51ef94fdb3a3d6bef908f669a360281",
+                         "freew/FreeW.App.Avalonia/Editing/DocumentView.cs":  "b588bcf1850fe13eaa0446db26fede682b9076d95a1445bbee8fd003f694a934",
+                         "freew/FreeW.App.Avalonia.Tests/Printing/CupsPrintServiceTests.cs":  "49287250c5e15d2e8b8d48ba67010f98872f67c21cc1aeb2cc38f381d1b8f138",
+                         "freew/FreeW.App.Avalonia.Tests/Printing/PrintLifecycleTests.cs":  "2d60ddd799a9be5ea52ac98cd64931a8810ca2959060aefbe31b3c94cf801411",
+                         "freew/FreeW.App.Avalonia.Tests/Printing/PortableXpsWriterTests.cs":  "91925f6e6a917a6f7939485bf7ddaa766cb547df8288d73456f259344a2e6e95",
                          "freew/FreeW.App.Presentation/Printing/PrintSelectionPlanner.cs":  "f5eadc26985a61aeb8a867d0f809beda8d31d985743a32343a0c55caf859b499",
                          "freew/FreeW.App.Presentation.Tests/Printing/PrintSelectionPlannerTests.cs":  "8e6220551ef13934af956cac5af7fc9878335b1e959217636ba448b5388f25c4",
-                         "shared/Free.Shared.AppServices/Printing/PrintContracts.cs":  "08d82c723839586b584fa1df3a0aeb29a5e2af40dfca2ae46eb338d0df044c26",
+                         "shared/Free.Shared.AppServices/Printing/PrintContracts.cs":  "799dddb9a3526183cf2da454387bd5a11e25d5e9b802c4acc66639c4fc791253",
                          "shared/Free.Shared.AppServices/Printing/PrintProcessContracts.cs":  "3c8b18479c126134677e910c11ecf24cd17909f1415fda7762b09a9a73cc3dc3",
                          "shared/Free.Shared.AppServices/Printing/SystemProcessRunner.cs":  "741c1f32ef35ca1715c5d56ca19b00f818cb9362fb3ed9beb06adff960990e47",
                          "shared/Free.Shared.Pdf/PdfContentDocument.cs":  "d49a5c52928ada567e242f2f530a28f41ffb0043948d7ef8f6dc57b875ef1394",
                          "shared/Free.Shared.Pdf/PdfDrawOp.cs":  "364117550d2bd0de462dd5f72baff8862418179fd4efd5ebe86e15d842763f30",
-                         "shared/Free.Shared.Pdf/PortableXpsWriter.cs":  "b7af372b0a094361f0d0c51a2358668a9c90e671f3ca93394522d0a5a5fdfd95",
-                         "shared/Free.Shared.Pdf.Skia/SkiaPdfWriter.cs":  "1684058284c43282fb99a223905000ea6bc0e494d26de2449c1b25a34ddff371"
+                         "shared/Free.Shared.Pdf/PortableXpsWriter.cs":  "5d0da8fb43486bb60623495ea128550e8c76be80015adfadfa2dcb2a8047f74e",
+                         "shared/Free.Shared.Pdf.Skia/SkiaPdfWriter.cs":  "3dd04a2072a952f1dae04a8dddfcbfbeeec024140e1f22e145f6d59f67147945"
                      },
     "ownershipBoundary":  [
-                              "MainWindow, ribbon registry/definition, Backstage callback, and shared print/XPS adapter routes are included in the integration."
+                              "MainWindow, ribbon registry/definition, Backstage callback, and the shared print-selection/platform boundary are included in the integration."
                           ],
     "surfaces":  [
                      {
@@ -82,23 +84,23 @@
                          "tests":  "CupsPrintServiceTests assert exact lp arguments and no-printer short circuit."
                      },
                      {
-                         "name":  "Later Avalonia print dialog contract",
+                         "name":  "Avalonia native print lifecycle",
                          "status":  "implemented",
-                         "authority":  "WPF dialog exposes printer, copies, page range, and page orientation decisions.",
-                         "implementation":  "CupsPrintDialog applies PrintSelectionPlanner output and submits the generated PDF through CupsPrintService.",
-                         "tests":  "PrintSelectionPlannerTests and CupsPrintServiceTests cover selection, no printers, validation, and submission."
+                         "authority":  "WPF native printing remains the semantic authority; the existing Avalonia CUPS route is capability-gated and must preserve cancellation and owner focus.",
+                         "implementation":  "IPlatformPrintService is the non-WPF platform boundary. MainWindow routes supported Backstage print commands through injected discovery/dialog/submission services, cancels in-flight work on close, and restores prior focus.",
+                         "tests":  "PrintLifecycleTests cover capability gating, command routing, cancellation, and focus restoration; CupsPrintServiceTests cover CUPS cancellation and injected process behavior."
                      },
                      {
-                         "name":  "Cross-platform XPS",
-                         "status":  "implemented-raster-fallback",
-                         "authority":  "XPS FixedPage supports vector Path content and Glyphs only with packaged font resources.",
-                         "implementation":  "PortableXpsWriter writes vector XPS when possible; otherwise Skia renders each laid-out page to PNG and PortableXpsWriter embeds those images in a real OPC XPS package. PDF bytes are never relabeled.",
-                         "tests":  "PortableXpsWriterTests validate package parts and unsupported vector text; Avalonia export exercises the raster fallback."
+                         "name":  "Avalonia XPS export route",
+                         "status":  "not-exposed-platform-limitation",
+                         "authority":  "XPS is a WPF-only user-facing capability through System.Windows.Xps.Packaging and XpsDocumentWriter.",
+                         "implementation":  "Backstage ExportXps is omitted from Avalonia. The portable writer remains available as shared/internal code and is not presented as an Avalonia platform capability.",
+                         "tests":  "BackstageViewTests assert the Avalonia XPS callback is absent; WPF XpsExportTests remain the authority for XPS output."
                      }
                  ],
     "uiWiringGaps":  [
 
                      ],
-    "xpsLimitation":  "Normal documents use a standards-compliant raster-page fallback when XPS glyph/font resources are unavailable. The fallback is fixed-layout XPS with embedded PNG page images; the vector writer still preserves embedded-font/glyph output when an XpsFontResource is supplied.",
+    "xpsLimitation":  "XPS remains WPF-only at the application surface. Avalonia does not expose an XPS export action because the native XPS stack is Windows/WPF-specific; the portable writer is retained as shared/internal code and is not a claim of Avalonia parity.",
     "freshnessCheck":  "Run tools/Generate-FreeWShellPlatformParityEvidence.ps1 -Check; nonzero means generated JSON/Markdown no longer match current source hashes."
 }

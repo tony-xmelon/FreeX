@@ -40,7 +40,7 @@ WPF is the semantic authority. `Import PDF (text only)` is included because the 
 
 | Capability | WPF | Avalonia |
 | --- | --- | --- |
-| Print pane | Native `PrintDialog` plus print preview | Print preview available; direct native print explicitly deferred |
+| Print pane | Native `PrintDialog` plus print preview | Capability-gated CUPS printer discovery/submission plus print preview fallback |
 | PDF export | Host-backed | Host-backed |
 | XPS export | Native WPF XPS writer | Not exposed; no false XPS action is rendered |
 | Import PDF text | Direct current-authority command | Host-backed direct command |
@@ -50,10 +50,11 @@ WPF is the semantic authority. `Import PDF (text only)` is included because the 
 - WPF `SisterBackstageEntryBuilderTests` locks exact order, entry kind, and docking.
 - WPF `FileLifecycleTests` locks Save a Copy path/dirty preservation and the close dirty gate.
 - Avalonia `BackstageViewTests` locks the realized rail, pane/direct state, Back/Escape, callbacks, Properties, and platform capability truthfulness.
+- Avalonia `CupsPrintServiceTests` and `PrintLifecycleTests` lock the existing CUPS route's capability gate, cancellation results, command routing, and owner-focus restoration.
 
 ## Remaining Platform Gaps
 
-- Avalonia has no native printer-selection service in the current target; direct print remains deferred while preview and PDF are available.
-- Avalonia has no XPS writer; XPS remains WPF-only and is omitted from the Avalonia Export pane.
+- On Linux/macOS hosts without a supported CUPS service, direct print remains deferred while preview and PDF remain available.
+- Avalonia has no user-facing XPS export route; XPS remains WPF-only at the application surface and the portable writer remains internal/shared code.
 - Foreground OS validation of printer dialogs, file pickers, modal focus restoration, and accessibility announcement order remains platform-runner evidence, not headless proof.
 - Cloud places, account-backed sharing, and online template/search services remain outside this local Backstage slice.

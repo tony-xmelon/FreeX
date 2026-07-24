@@ -4,7 +4,7 @@ Generated from WPF authority, Avalonia adapters, shared contracts, and focused-t
 
 - Schema: `freex.freew.shell-platform-parity.v1`
 - Authority: FreeW WPF native PrintDialog/XpsDocumentWriter behavior, supplemented by the existing Avalonia shared PDF draw-op contract
-- Owned shell/UI wiring is complete; only external printer availability remains host-dependent.
+- Owned shell/UI wiring is complete; only external printer availability and the WPF-only XPS boundary remain platform-dependent.
 
 ## Capability Matrix
 
@@ -14,8 +14,8 @@ Generated from WPF authority, Avalonia adapters, shared contracts, and focused-t
 | WPF native XPS | implemented | Preserved unchanged; it writes a real FixedDocumentSequence OPC package on STA. | Existing FreeW.App.Host.Tests.XpsExportTests cover package/page output. |
 | Linux/macOS printer discovery | implemented | CupsPrintService with injected IProcessRunner and explicit no-printer/unavailable/failed/cancelled results. | CupsPrintServiceTests parse printers/default and cancellation. |
 | Linux/macOS PDF submission | implemented | CupsPrintCommandPlanner plus CupsPrintService; arguments use ProcessStartInfo.ArgumentList, never a shell command string. | CupsPrintServiceTests assert exact lp arguments and no-printer short circuit. |
-| Later Avalonia print dialog contract | implemented | CupsPrintDialog applies PrintSelectionPlanner output and submits the generated PDF through CupsPrintService. | PrintSelectionPlannerTests and CupsPrintServiceTests cover selection, no printers, validation, and submission. |
-| Cross-platform XPS | implemented-raster-fallback | PortableXpsWriter writes vector XPS when possible; otherwise Skia renders each laid-out page to PNG and PortableXpsWriter embeds those images in a real OPC XPS package. PDF bytes are never relabeled. | PortableXpsWriterTests validate package parts and unsupported vector text; Avalonia export exercises the raster fallback. |
+| Avalonia native print lifecycle | implemented | IPlatformPrintService is the non-WPF platform boundary. MainWindow routes supported Backstage print commands through injected discovery/dialog/submission services, cancels in-flight work on close, and restores prior focus. | PrintLifecycleTests cover capability gating, command routing, cancellation, and focus restoration; CupsPrintServiceTests cover CUPS cancellation and injected process behavior. |
+| Avalonia XPS export route | not-exposed-platform-limitation | Backstage ExportXps is omitted from Avalonia. The portable writer remains available as shared/internal code and is not presented as an Avalonia platform capability. | BackstageViewTests assert the Avalonia XPS callback is absent; WPF XpsExportTests remain the authority for XPS output. |
 
 ## Exact UI Wiring Gaps
 
@@ -25,9 +25,9 @@ Generated from WPF authority, Avalonia adapters, shared contracts, and focused-t
 
 ## XPS Boundary
 
-Normal documents use a standards-compliant raster-page fallback when XPS glyph/font resources are unavailable. The fallback is fixed-layout XPS with embedded PNG page images; the vector writer still preserves embedded-font/glyph output when an XpsFontResource is supplied.
+XPS remains WPF-only at the application surface. Avalonia does not expose an XPS export action because the native XPS stack is Windows/WPF-specific; the portable writer is retained as shared/internal code and is not a claim of Avalonia parity.
 
-The shared writer emits a real OPC package with `FixedDocSeq.fdseq`, `FixedDocument.fdoc`, and `.fpage` parts for representable vector content. It does not write PDF bytes with an XPS extension.
+The shared writer can emit a real OPC package with `FixedDocSeq.fdseq`, `FixedDocument.fdoc`, and `.fpage` parts for representable vector content, but this does not make XPS an Avalonia application capability. It does not write PDF bytes with an XPS extension.
 
 ## Freshness
 
