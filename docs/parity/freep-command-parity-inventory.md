@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 193 | 191 | 0 | 2 | 2 | 0 | 0 | 0 | 191 | 0 | 0 | 2 | 0 | 91 |
+| 214 | 212 | 0 | 2 | 2 | 0 | 0 | 0 | 212 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -189,10 +189,24 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.header-footer` | Header & Footer | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.indent-decrease` | Decrease Indent | Yes | Yes | none | shared | home/paragraph (RibbonButton) | home/paragraph (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.indent-increase` | Increase Indent | Yes | Yes | none | shared | home/paragraph (RibbonButton) | home/paragraph (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-area` | Area | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-area-stacked` | Stacked Area | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-bar` | Bar | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-bar-stacked` | Stacked Bar | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-bar-stacked-100` | 100% Stacked Bar | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-bubble` | Bubble | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-column` | Column | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-column-stacked` | Stacked Column | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-column-stacked-100` | 100% Stacked Column | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-doughnut` | Doughnut | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-line` | Line | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-line-markers` | Line with Markers | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-pie` | Pie | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-radar` | Radar | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-scatter` | Scatter | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-stock` | Stock | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-surface` | Surface | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-surface-3d` | 3-D Surface | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-link` | Hyperlink | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-table-2x2` | 2x2 | Yes | Yes | none | shared | insert/tables (RibbonButton) | insert/tables (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-table-3x3` | Table | Yes | Yes | none | shared | insert/tables (RibbonButton) | insert/tables (RibbonButton) | Available in both generated FreeP ribbon profiles. |
@@ -227,8 +241,15 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.smartart.colors.grayscale` | Grayscale | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.colors.single-accent` | Single Accent | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.colors.theme-accents` | Theme Accents | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.basic-block-list` | [[Ribbon_Command_SmartArtBasicBlockList_Label]] | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.basic-cycle` | Basic Cycle | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.basic-hierarchy` | [[Ribbon_Command_SmartArtBasicHierarchy_Label]] | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.basic-matrix` | [[Ribbon_Command_SmartArtBasicMatrix_Label]] | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.basic-process` | Basic Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.basic-pyramid` | [[Ribbon_Command_SmartArtBasicPyramid_Label]] | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.basic-venn` | [[Ribbon_Command_SmartArtBasicVenn_Label]] | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.radial-cycle` | [[Ribbon_Command_SmartArtRadialCycle_Label]] | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.stacked-list` | [[Ribbon_Command_SmartArtStackedList_Label]] | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.vertical-box-list` | Vertical List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.style.intense` | Intense | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.style.moderate` | Moderate | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |

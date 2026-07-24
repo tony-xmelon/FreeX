@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 187 command IDs total.
-- 185 shared across WPF and Avalonia.
+- 214 command IDs total.
+- 212 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 2 intentional shell/profile variances: Undo and Redo are routed through WPF
@@ -43,6 +43,9 @@ is complete.
 - WPF Backstage and both Avalonia print projections expose an Apply-range input. The
   selected range rebuilds the shared preview/package plan, and the native print handoff
   retains that same request instead of falling back to all slides.
+- Chart insertion now exposes every modeled chart family through the shared insertion
+  planner and both host ribbons, including stacked and 100% stacked variants, line
+  markers, area, scatter, doughnut, radar, bubble, stock, surface, and 3-D surface.
 
 ## Remaining function scope
 
@@ -50,7 +53,8 @@ The remaining gaps are depth and application compatibility, not missing ribbon I
 
 - the long tail of SmartArt layout families and full PowerPoint-authoritative SmartArt
   regeneration/style editing beyond the shared preset catalog;
-- advanced chart authoring/layout semantics beyond the current supported model;
+- advanced chart authoring/layout semantics beyond the current supported model, including
+  richer chart data editing and PowerPoint-specific formatting dialogs;
 - deeper presenter/review/accessibility workflows and application-specific dialog
   behavior;
 - broader media/presenter integration and platform-specific capture/export behavior;
