@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 252 | 250 | 0 | 2 | 2 | 0 | 0 | 0 | 250 | 0 | 0 | 2 | 0 | 91 |
+| 257 | 255 | 0 | 2 | 2 | 0 | 0 | 0 | 255 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -233,6 +233,10 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.paragraph.align-right` | Align Right | Yes | Yes | none | shared | home/paragraph (RibbonButton) | home/paragraph (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.paste` | Paste | Yes | Yes | none | shared | home/clipboard (RibbonButton) | home/clipboard (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.picture` | Picture | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.picture.crop-inset` | Crop Inset | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.picture.crop-reset` | Reset Crop | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.picture.effects-reset` | Reset Effects | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.picture.grayscale` | Grayscale | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.redo` | Redo | No | Yes | WPF | platform-only | - | home/edit (RibbonButton) | Intended shell/profile variance: Avalonia exposes Redo in its generated Home/Edit ribbon group; WPF routes Redo through a routed command, keyboard bindings, and Editor.Redo rather than a generated ribbon control. |
 | `freep.remove-link` | Remove Link | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.replace` | Replace | Yes | Yes | none | shared | home/editing (RibbonButton) | home/editing (RibbonButton) | Available in both generated FreeP ribbon profiles. |
@@ -272,6 +276,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.smartart.layout.descending-block-list` | Descending Block List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.funnel-process` | Funnel Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.gear-cycle` | Gear Cycle | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.grid-matrix` | Grid Matrix | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.horizontal-hierarchy` | Horizontal Hierarchy | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.labeled-hierarchy` | Labeled Hierarchy | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.non-directional-cycle` | Non-Directional Cycle | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
