@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 184 | 182 | 0 | 2 | 2 | 0 | 0 | 0 | 182 | 0 | 0 | 2 | 0 | 91 |
+| 187 | 185 | 0 | 2 | 2 | 0 | 0 | 0 | 185 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -224,6 +224,9 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.slideshow.custom-shows` | Custom Shows | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | transitions/slideshow-from-transitions (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slideshow.from-beginning` | From Beginning | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | transitions/slideshow-from-transitions (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slideshow.from-current-slide` | From Current Slide | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | transitions/slideshow-from-transitions (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.colors.grayscale` | Grayscale | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.colors.single-accent` | Single Accent | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.colors.theme-accents` | Theme Accents | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.text-box` | Text Box | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.theme.berlin` | Berlin | Yes | Yes | none | shared | design/themes (RibbonButton) | design/themes (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.theme.facet` | Facet | Yes | Yes | none | shared | design/themes (RibbonButton) | design/themes (RibbonButton) | Available in both generated FreeP ribbon profiles. |

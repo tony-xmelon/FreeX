@@ -3,6 +3,7 @@
 FreeP now exposes a functional SmartArt Change Colors workflow in both WPF and Avalonia.
 
 - Theme Accents, Single Accent, and Grayscale presets are registered as ribbon commands.
+- The shared Design ribbon now exposes those commands with localized labels in both profiles.
 - The shared authoring planner updates the live `SmartArtColorMetadata.Palette` and the native
   `diagramColors` XML part, so the change is preserved through save/reopen.
 - The edit is committed through `EditingSession.EditSmartArt` and `ReplaceSmartArtCommand`, giving
