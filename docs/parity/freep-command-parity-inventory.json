@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 225,
-    "both": 223,
+    "totalCommands": 226,
+    "both": 224,
     "wpfOnly": 0,
     "avaloniaOnly": 2,
     "missingWpf": 2,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 223,
+    "shared": 224,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 2,
@@ -1219,13 +1219,16 @@
       "status": "shared-render-planner-evidence",
       "hostCoverage": "WPF/Avalonia consume ordinary shared picture and caption shape ops emitted by the SmartArt layout planner; no renderer-local SmartArt policy",
       "evidenceDocs": [
-        "docs/parity/freep-smartart-picture-caption-list-2026-07-07.md"
+        "docs/parity/freep-smartart-picture-caption-list-2026-07-07.md",
+        "docs/parity/freep-smartart-picture-caption-authoring-20260724.md"
       ],
       "verification": [
         "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
-        "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
+        "freep/FreeP.App.Presentation.Tests/SmartArtEditingPlannerTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
       ],
-      "remainingWork": "pictureCaptionList now uses a bounded shared live-layout path only when reader-imported node images are deterministically mapped one-to-one from the cached diagram drawing. Missing or ambiguous image mapping keeps cached drawing fallback. PowerPoint-authored visual baselines, broader SmartArt picture layouts, and SmartArt authoring/editing remain deferred."
+      "remainingWork": "pictureCaptionList now supports bounded shared live layout plus an undoable authoring command when every node has image bytes. Missing or ambiguous image mapping keeps cached drawing fallback. PowerPoint-authored visual baselines, broader SmartArt picture layouts, and richer image-payload authoring remain deferred."
     },
     {
       "evidenceId": "freep.smartart.basic-cycle",
@@ -6451,6 +6454,40 @@
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Organization Chart",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.layout.picture-caption-list",
+      "label": "Picture Caption List",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Picture Caption List",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Picture Caption List",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
