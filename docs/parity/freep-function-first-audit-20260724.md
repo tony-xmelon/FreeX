@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 245 command IDs total.
-- 243 shared across WPF and Avalonia.
+- 246 command IDs total.
+- 244 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 2 intentional shell/profile variances: Undo and Redo are routed through WPF
@@ -72,6 +72,9 @@ is complete.
   and legend manual layouts can edit the layout target, factor/edge modes, and x/y/width/height
   through one undoable command; existing manual-layout values round-trip through the PPTX reader
   and writer.
+- Chart authoring now also exposes a shared Data Table dialog in both hosts. It can show or hide
+  the chart data table and edit horizontal, vertical, outline, and legend-key settings through one
+  undoable command; existing `c:dTable` payloads and authored chart styling survive the update.
 - Chart display options now expose the full modeled chart-level data-label components in both
   hosts: values, percentages, category names, series names, legend keys, placement, number format,
   and separator. The same undoable command creates or updates the `c:dLbls` payload and preserves
