@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 261 | 259 | 0 | 2 | 2 | 0 | 0 | 0 | 259 | 0 | 0 | 2 | 0 | 91 |
+| 266 | 264 | 0 | 2 | 2 | 0 | 0 | 0 | 264 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -298,9 +298,14 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.smartart.layout.vertical-box-list` | Vertical List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.vertical-bullet-list` | Vertical Bullet List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.vertical-process` | Vertical Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.style.cartoon` | Cartoon | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.style.insert` | Insert | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.style.intense` | Intense | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.style.moderate` | Moderate | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.style.powder` | Powder | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.style.simple` | Simple | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.style.soft-edge` | Soft Edge | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.style.subtle` | Subtle | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.text-box` | Text Box | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.theme.berlin` | Berlin | Yes | Yes | none | shared | design/themes (RibbonButton) | design/themes (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.theme.facet` | Facet | Yes | Yes | none | shared | design/themes (RibbonButton) | design/themes (RibbonButton) | Available in both generated FreeP ribbon profiles. |
