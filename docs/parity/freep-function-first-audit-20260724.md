@@ -60,6 +60,10 @@ is complete.
   value axes can edit titles, automatic or explicit minimum/maximum scale, major/minor units,
   number formats, and major gridline visibility through one undoable command. The values
   round-trip through the existing chart axis reader/writer.
+- Chart authoring now also exposes a shared Series Options dialog in both hosts. Each series
+  can edit smooth-line state, secondary-axis assignment, line width, marker symbol, and marker
+  size through one undoable command; the existing chart reader and writer preserve those values
+  through PPTX round-trip.
 - SmartArt authoring now exposes the specialized layouts already supported by the live
   shared layout engine: alternating process, arrow ribbon, circle process, funnel process,
   vertical process, segmented process, chevron process, basic/closed-chevron process,
@@ -81,8 +85,8 @@ The remaining gaps are depth and application compatibility, not missing ribbon I
 - the remaining long tail of SmartArt layout families and full PowerPoint-authoritative
   SmartArt regeneration/style editing beyond the now-expanded live preset catalog;
 - advanced chart authoring/layout semantics beyond the current supported model, including
-  richer chart data editing beyond the shared grid, per-series/point formatting dialogs, and
-  PowerPoint-specific chart area/plot-area formatting dialogs;
+  richer chart data editing beyond the shared grid, per-point formatting, and PowerPoint-specific
+  chart area/plot-area formatting dialogs;
 - deeper presenter/review/accessibility workflows and application-specific dialog
   behavior;
 - broader media/presenter integration and platform-specific capture/export behavior, including
