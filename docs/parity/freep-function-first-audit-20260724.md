@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 225 command IDs total.
-- 223 shared across WPF and Avalonia.
+- 228 command IDs total.
+- 226 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 2 intentional shell/profile variances: Undo and Redo are routed through WPF
@@ -54,6 +54,9 @@ is complete.
 - Hierarchy authoring now also exposes Horizontal Hierarchy and Organization Chart, using
   the existing shared tree layout paths rather than leaving those PowerPoint layout choices
   as import-only behavior.
+- WPF and Avalonia slideshow playback now surface parsed media caption cues from the active
+  playback clock; the shared planner owns cue interval semantics and both host controllers
+  retain their own native overlay lifecycle.
 
 ## Remaining function scope
 
@@ -65,7 +68,8 @@ The remaining gaps are depth and application compatibility, not missing ribbon I
   richer chart data editing and PowerPoint-specific formatting dialogs;
 - deeper presenter/review/accessibility workflows and application-specific dialog
   behavior;
-- broader media/presenter integration and platform-specific capture/export behavior;
+- broader media/presenter integration and platform-specific capture/export behavior, including
+  real-device capture and PowerPoint-authoritative media/caption baselines;
 - PowerPoint COM-backed workflow validation on a machine where that comparison path is
   available.
 

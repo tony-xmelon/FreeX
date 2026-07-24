@@ -7,17 +7,18 @@ FreeP already retained PowerPoint media caption tracks and parsed WebVTT, SRT, a
 ## Implemented
 
 - `PresentationMediaTranscriptPlanner.FindActiveCue` uses normalized half-open cue intervals (`start <= position < end`).
-- Avalonia slideshow media slots select the matching available track by media shape id.
-- A non-interactive caption surface is positioned at the lower edge of the media bounds and refreshes from `IMediaPlaybackSession.Position` on a short dispatcher interval.
+- WPF and Avalonia slideshow media slots select the matching available track by media shape id.
+- Each host positions a non-interactive caption surface at the lower edge of the media bounds and refreshes from its playback clock on a short dispatcher interval.
 - Slide entry passes only caption tracks belonging to the current physical slide.
-- The injected playback test proves activation inside a cue and removal at its end boundary without LibVLC or a real media file.
+- Injected playback tests prove activation inside a cue and removal at its end boundary without LibVLC or a real media file; the WPF controller test also proves caption-surface teardown.
 
 ## Boundaries
 
-This is functional playback coverage, not a PowerPoint pixel-baseline claim. WPF has no equivalent native media playback surface in this slice, and PowerPoint-authoritative caption styling, positioning, accessibility, and advanced timing semantics remain deferred.
+This is functional playback coverage, not a PowerPoint pixel-baseline claim. PowerPoint-authoritative caption styling, positioning, accessibility, and advanced timing semantics remain deferred.
 
 ## Verification
 
 - `PresentationMediaTranscriptPlannerTests.FindActiveCue_UsesHalfOpenTimeIntervals`
 - `AvaloniaMediaPlaybackAdapterTests.Controller_RefreshesCaptionOverlayFromPlaybackPosition`
+- `SlideShowMediaControllerTests.EnterSlide_WithCaptionTrack_CreatesAndTearsDownCaptionSurface`
 - Release compilation of the affected Presentation and Avalonia test dependency graphs
