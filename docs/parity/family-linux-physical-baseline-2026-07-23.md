@@ -21,18 +21,27 @@ FreeW additionally runs a seven-row physical editing slice: it clicks the real
 document editor, replaces the selection with a sentinel, proves exact X11
 clipboard text, proves Ctrl+Z and Ctrl+Y restore the exact clipboard states, and
 opens/dismisses the real editor context menu through both Shift+F10 and a
-pointer right-click. These rows are intentionally FreeW-only. FreeP now runs a
-parallel seven-row slide-pane slice for an exact fifteen-row contract: it clicks
+pointer right-click. These rows are intentionally FreeW-only. FreeP runs a
+fourteen-row slide-pane slice for an exact twenty-two-row contract: it clicks
 the real bottom `+ New Slide` affordance, proves the changed thumbnail-pane
 evidence, retains the calibrated main-view frame as contextual evidence, proves
 that Ctrl+Z and Ctrl+Y restore the exact calibrated pre-create and created
 states, and opens/dismisses the real slide-thumbnail context menu through
 both Shift+F10 and a pointer right-click. The screenshot regions and calibration
-artifact are retained with each physical run. The required IDs are
+artifact are retained with each physical run. From that proven two-slide,
+first-selected state, the lane then selects slide 2 by pointer, returns to slide
+1 with Up, duplicates to three slides with Ctrl+D, proves Ctrl+Z/Ctrl+Y, deletes
+the selected slide, and proves Ctrl+Z restores the exact three-slide state.
+Every later row is gated on its predecessor and retains calibrated thumbnail
+and status crops. The required FreeP IDs are
 `slide-pane-new-slide-create`, `slide-pane-new-slide-undo`,
 `slide-pane-new-slide-redo`, `slide-pane-keyboard-context-open`,
 `slide-pane-keyboard-context-dismissal`, `slide-pane-pointer-context-open`, and
-`slide-pane-pointer-context-dismissal`.
+`slide-pane-pointer-context-dismissal`, followed by
+`slide-pane-pointer-select-second`, `slide-pane-keyboard-up-first`,
+`slide-pane-duplicate-create`, `slide-pane-duplicate-undo`,
+`slide-pane-duplicate-redo`, `slide-pane-delete-selected`, and
+`slide-pane-delete-undo`.
 
 FreeW's File key tip is expected to open its separate top-level `BackstageView`
 window. FreeP's File key tip is expected to open the in-window
