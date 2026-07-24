@@ -10,14 +10,20 @@ The Avalonia `InCanvasRichTextEditBuffer` preserves the current paragraph templa
 
 - splitting one source paragraph clones its paragraph/list metadata to every resulting paragraph;
 - joining paragraphs keeps the leading paragraph's metadata;
-- existing multi-paragraph edits retain index-based metadata mapping.
+- WPF round-trip recovery uses ordered exact paragraph-text anchors, so duplicate source
+  paragraphs remain distinct and unmatched fragments inherit only the source paragraph in
+  their aligned gap;
+- Avalonia keeps the paragraph templates already carried by its token lineage and does not
+  run a metadata post-pass over the rebuilt paragraphs.
 
 The planner copies numbering type/start, bullet kind/character/image, level, indentation, bullet styling, spacing, and tab-stop metadata while leaving edited runs intact.
 
 ## Verification
 
-- `FreeP.App.Presentation.Tests`: `InCanvasRichTextEditBufferTests` - 11 passed.
-- `FreeP.App.Host.Tests`: `RichTextEditorTests` - 31 passed, including a WPF FlowDocument Enter-split reproduction.
+- `FreeP.App.Presentation.Tests`: `InCanvasRichTextEditBufferTests` - 19 passed, including first/middle
+  splits, duplicate paragraphs, empty split lines, and rewritten fragments.
+- `FreeP.App.Host.Tests`: `RichTextEditorTests` - 39 passed, including the same WPF FlowDocument cases.
 - `FreeP.App.Rendering.Avalonia.Tests`: `AvaloniaRichTextEditorTests` - 7 passed, including the host-buffer Enter-split path.
 
-This slice intentionally does not change deeper list editing such as splitting inside an existing multi-paragraph list, list continuation numbering policy, or native WPF/Avalonia list-marker rendering.
+This slice intentionally does not change deeper list editing such as list continuation numbering
+policy or native WPF/Avalonia list-marker rendering.
