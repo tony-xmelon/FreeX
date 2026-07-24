@@ -10,8 +10,9 @@ coordinate space.
 This gives WPF and Avalonia the same handle labels, positions, bounds, and
 pointer-to-value conversion. Preset mutations use
 `SetShapeGeometryAdjustmentCommand`; custom vertices use
-`SetCustomGeometryPointCommand`, each as one undoable operation. Arc control
-editing remains separate follow-up work. WPF and Avalonia keyboard adapters expose
+`SetCustomGeometryPointCommand`, each as one undoable operation. ArcTo start/end
+angle and horizontal/vertical radius handles use the same shared command path.
+WPF and Avalonia keyboard adapters expose
 `Insert` for midpoint vertex creation and `Delete`/`Backspace` for valid line-vertex
 removal through the shared command bus.
 

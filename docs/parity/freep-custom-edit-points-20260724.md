@@ -16,7 +16,10 @@ Edit Points mode in WPF and Avalonia.
   are shared WPF/Avalonia undoable commands.
 - The existing custom-geometry writer/read path preserves the edited coordinates on save and
   reopen.
-- Arc control editing remains deferred to a later Edit Points slice.
+- Custom ArcTo geometry exposes four handles per arc: start angle, end angle,
+  horizontal radius, and vertical radius. Pointer edits reduce in path coordinates
+  and commit through the shared undoable command bus; WPF and Avalonia use the same
+  mutation plan.
 
 ## Verification
 
