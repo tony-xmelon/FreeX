@@ -51,3 +51,20 @@ The top halo crop was byte-identical, which shows that the edited ring extent
 does not own that visible edge on the composite path. The probe was reverted.
 Future work should inspect the transformed text/effect composition rather than
 broaden the ring or apply a generic glyph scale.
+
+## Rejected Glyph Models
+
+The source payload is explicit: Calibri 32pt, `textWave1`, and no additional
+text-fit metadata. Word's glyph ink is taller than the WPF glyph ink, but that
+raw bounding-box difference did not identify an affine owner. Two exact
+signature probes were rejected against the same manual PDF:
+
+| Model | Whole page | Primary panel | Primary glyph crop |
+| --- | ---: | ---: | ---: |
+| Baseline | 17.3305 | 28.1496 | 42.6430 |
+| 1.5x baseline-centered vertical glyph transform | 17.3867 | 28.4186 | 44.1259 |
+| 1.5x Calibri em size with existing horizontal frame fit | 18.0427 | 33.6774 | 61.4432 |
+
+`Review Copy` was byte-stable for both probes. The residual is therefore a
+WordArt text-path/effect rasterization model gap; do not retry a generic
+vertical scale or font-size multiplier for this payload.
