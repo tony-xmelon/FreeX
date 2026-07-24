@@ -9,14 +9,17 @@ Edit Points mode in WPF and Avalonia.
 - `MoveTo` and `LineTo` vertices receive draggable handles in the shared planner.
 - Pointer coordinates are converted from slide DIP space into the path's authored `w`/`h`
   coordinate space and committed through `SetCustomGeometryPointCommand`.
+- Cubic and quadratic segments expose their authored control points and endpoints as
+  separate handles; each drag remains one undoable command.
 - The existing custom-geometry writer/read path preserves the edited coordinates on save and
   reopen.
-- Curved-segment control points and vertex insertion/deletion remain deferred to a later
-  Edit Points slice.
+- Arc control editing and vertex insertion/deletion remain deferred to a later Edit Points
+  slice.
 
 ## Verification
 
 - Shared custom-vertex planner and mutation tests pass.
 - Presentation command tests cover apply, undo, and redo.
 - Existing custom-geometry package round-trip tests retain exact segment coordinates.
+- Curve control coordinates are covered by package round-trip tests.
 - WPF host and Avalonia adorner routes compile and focused interaction tests remain green.
