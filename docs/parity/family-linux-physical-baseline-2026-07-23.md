@@ -21,8 +21,18 @@ FreeW additionally runs a seven-row physical editing slice: it clicks the real
 document editor, replaces the selection with a sentinel, proves exact X11
 clipboard text, proves Ctrl+Z and Ctrl+Y restore the exact clipboard states, and
 opens/dismisses the real editor context menu through both Shift+F10 and a
-pointer right-click. These rows are intentionally FreeW-only; the FreeP family
-baseline remains an exact eight-row contract.
+pointer right-click. These rows are intentionally FreeW-only. FreeP now runs a
+parallel seven-row slide-pane slice for an exact fifteen-row contract: it clicks
+the real bottom `+ New Slide` affordance, proves the changed thumbnail-pane
+evidence, retains the calibrated main-view frame as contextual evidence, proves
+that Ctrl+Z and Ctrl+Y restore the exact calibrated pre-create and created
+states, and opens/dismisses the real slide-thumbnail context menu through
+both Shift+F10 and a pointer right-click. The screenshot regions and calibration
+artifact are retained with each physical run. The required IDs are
+`slide-pane-new-slide-create`, `slide-pane-new-slide-undo`,
+`slide-pane-new-slide-redo`, `slide-pane-keyboard-context-open`,
+`slide-pane-keyboard-context-dismissal`, `slide-pane-pointer-context-open`, and
+`slide-pane-pointer-context-dismissal`.
 
 FreeW's File key tip is expected to open its separate top-level `BackstageView`
 window. FreeP's File key tip is expected to open the in-window
