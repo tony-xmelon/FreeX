@@ -89,3 +89,18 @@ all material metrics:
 real WordArt text-path glyph/raster model, rather than a scaled WPF `TextBlock`
 surface; use the mask bounds only to validate a future model that also matches
 ink density and character outlines.
+
+## Rejected Display Raster Mode
+
+The exact primary `FreeW CONFIDENTIAL` / `GlowBlue` / `Wave1` / 32pt WPF glyph
+path was also tested with WPF `TextFormattingMode.Display`, leaving every other
+WordArt signature on the default path. The consuming Release FidelityRender
+artifact was rebuilt and compared to the same `816x1056` manual Word PDF
+reference. It regressed whole-page normalized delta from `6.7963%` to `6.8085%`,
+the primary panel from `16.6362%` to `16.8748%`, and the primary glyph crop from
+`17.1900%` to `17.5020%`. The independent `Review Copy` crop was byte-stable.
+
+The display-metrics path is therefore not the owner of the missing taller,
+materially richer glyph surface. Keep the exact WordArt target on the default
+WPF text raster path until a source-faithful text-path/material renderer can be
+validated with both primary and whole-page gains.
