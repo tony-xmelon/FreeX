@@ -39,4 +39,4 @@ This is not PowerPoint-authoritative visual parity. The geometry is a bounded
 renderer-neutral picture-plus-caption list, and the fixture is synthetic rather
 than PowerPoint-authored. Broader SmartArt picture layouts, ambiguous cached
 drawing to data-node mapping, PowerPoint-authored visual baselines, and
-SmartArt authoring/editing remain deferred.
+richer picture-payload authoring remains deferred.
