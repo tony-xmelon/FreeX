@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 228 command IDs total.
-- 226 shared across WPF and Avalonia.
+- 233 command IDs total.
+- 231 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 2 intentional shell/profile variances: Undo and Redo are routed through WPF
@@ -48,7 +48,8 @@ is complete.
   markers, area, scatter, doughnut, radar, bubble, stock, surface, and 3-D surface.
 - SmartArt authoring now exposes the specialized layouts already supported by the live
   shared layout engine: alternating process, arrow ribbon, circle process, funnel process,
-  vertical process, descending block list, radial Venn, target list, and stacked Venn.
+  vertical process, segmented process, chevron process, descending block list, radial Venn,
+  target list, stacked Venn, gear cycle, and text cycle.
   Each route updates the native diagram layout part and the live model, then remains
   undoable through the shared editing session in both hosts.
 - Hierarchy authoring now also exposes Horizontal Hierarchy and Organization Chart, using
