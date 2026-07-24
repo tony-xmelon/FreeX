@@ -20,9 +20,9 @@ The planner copies numbering type/start, bullet kind/character/image, level, ind
 
 ## Verification
 
-- `FreeP.App.Presentation.Tests`: `InCanvasRichTextEditTests` - 16 passed, including first/middle
+- `FreeP.App.Presentation.Tests`: `InCanvasRichTextEditBufferTests` - 19 passed, including first/middle
   splits, duplicate paragraphs, empty split lines, and rewritten fragments.
-- `FreeP.App.Host.Tests`: `RichTextEditorTests` - 36 passed, including the same WPF FlowDocument cases.
+- `FreeP.App.Host.Tests`: `RichTextEditorTests` - 39 passed, including the same WPF FlowDocument cases.
 - `FreeP.App.Rendering.Avalonia.Tests`: `AvaloniaRichTextEditorTests` - 7 passed, including the host-buffer Enter-split path.
 
 This slice intentionally does not change deeper list editing such as list continuation numbering
