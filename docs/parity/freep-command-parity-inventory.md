@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 246 | 244 | 0 | 2 | 2 | 0 | 0 | 0 | 244 | 0 | 0 | 2 | 0 | 91 |
+| 251 | 249 | 0 | 2 | 2 | 0 | 0 | 0 | 249 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -245,6 +245,11 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.slideshow.from-beginning` | From Beginning | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | transitions/slideshow-from-transitions (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slideshow.from-current-slide` | From Current Slide | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | transitions/slideshow-from-transitions (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.colors.grayscale` | Grayscale | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.colors.monochromatic-accent-2` | Monochromatic Accent 2 | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.colors.monochromatic-accent-3` | Monochromatic Accent 3 | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.colors.monochromatic-accent-4` | Monochromatic Accent 4 | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.colors.monochromatic-accent-5` | Monochromatic Accent 5 | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.colors.monochromatic-accent-6` | Monochromatic Accent 6 | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.colors.single-accent` | Single Accent | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.colors.theme-accents` | Theme Accents | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.alternating-process` | Alternating Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |

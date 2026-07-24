@@ -2,7 +2,7 @@
 
 FreeP now exposes a functional SmartArt Change Colors workflow in both WPF and Avalonia.
 
-- Theme Accents, Single Accent, and Grayscale presets are registered as ribbon commands.
+- Theme Accents, Monochromatic Accent 1-6, and Grayscale presets are registered as ribbon commands.
 - The shared Design ribbon now exposes those commands with localized labels in both profiles.
 - When an imported SmartArt package omits `diagramColors`, Change Colors now creates a
   deterministic native colors part and relationship so the edit survives save/reopen.
@@ -14,4 +14,7 @@ FreeP now exposes a functional SmartArt Change Colors workflow in both WPF and A
   this change is limited to the PowerPoint Change Colors behavior.
 
 Verification covers the shared planner, WPF host, and Avalonia host, including native-part mutation
-and undo/redo restoration.
+and undo/redo restoration. The planner color-preset tests pass **6/6**, WPF SmartArt tests pass
+**145/145**, Avalonia SmartArt/ribbon tests pass **30/30**, and the ribbon definition profile passes
+**22/22**. The generated command inventory now reports **251 total / 249 shared** commands with
+zero actionable host gaps.
