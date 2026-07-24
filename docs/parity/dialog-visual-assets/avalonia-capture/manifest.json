@@ -14,7 +14,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.GoToSpecial.png",
                          "captured":  true,
-                         "note":  "Recaptured from current origin/main Avalonia source in Linux Docker on 2026-07-24; exact-size nonblank evidence"
+                         "note":  "Recaptured from current origin/main Avalonia source on 2026-07-24 after Go To Special WPF visual-parity alignment; exact-size nonblank evidence"
                      },
                      {
                          "id":  "dialog.Sort",
