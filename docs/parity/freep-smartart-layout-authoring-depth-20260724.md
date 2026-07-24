@@ -1,17 +1,32 @@
-# FreeP SmartArt layout authoring depth
+# FreeP SmartArt Layout Authoring Depth - 2026-07-24
 
-## Scope
+This slice connects the specialized SmartArt geometry already implemented by the shared
+`SmartArtLayoutEngine` to real authoring commands in both FreeP hosts.
 
-FreeP now exposes ten SmartArt layout presets through the ribbon, WPF host command registry, and Avalonia command registry. The original Process, Vertical Box List, and Basic Cycle choices are joined by Basic Block List, Stacked List, Basic Pyramid, Radial Cycle, Basic Matrix, Basic Venn, and Basic Hierarchy.
+## Added authoring routes
 
-Each command updates the live `SmartArtData` family and native `dgm:layoutDef` unique ID together. The existing layout engine already owns these layout paths, so authoring and reopening a presentation use the same native layout identity rather than a renderer-only approximation.
+- Alternating Process
+- Arrow Ribbon
+- Circle Process
+- Funnel Process
+- Vertical Process
+- Descending Block List
+- Radial Venn
+- Target List
+- Stacked Venn
+
+Each command updates the native `dgm:layoutDef/@uniqueId`, the shared `SmartArtData`
+family/layout state, clears stale fallback shapes, and is committed through the existing
+editing-session command bus so undo/redo remains one semantic operation.
 
 ## Verification
 
-- Presentation planner coverage exercises all ten presets and checks the native layout part.
-- Host package round-trip coverage exercises all ten presets and checks the reread family and native layout identity.
-- The command IDs are registered in both WPF and Avalonia hosts and surfaced in the SmartArt layouts ribbon group.
+- Presentation planner: 50/50 focused tests.
+- WPF SmartArt/package tests: 126/126.
+- Avalonia SmartArt command-route tests: 2/2.
+- Ribbon profile/key-tip tests: 22/22.
+- Localization tests: 11/11.
+- Generated command inventory: 223 total, 221 shared, zero actionable host gaps.
 
-## Remaining depth
-
-This slice does not claim full PowerPoint SmartArt gallery coverage. Additional long-tail layout IDs, SmartArt text-pane editing, per-node promotion/demotion, and richer layout-specific constraints remain future work.
+This is a function/package slice. It does not claim PowerPoint-COM visual equivalence for
+the new layouts; that requires the matching PowerPoint baseline corpus.

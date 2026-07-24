@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 214,
-    "both": 212,
+    "totalCommands": 223,
+    "both": 221,
     "wpfOnly": 0,
     "avaloniaOnly": 2,
     "missingWpf": 2,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 212,
+    "shared": 221,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 2,
@@ -5981,8 +5981,8 @@
       ]
     },
     {
-      "commandId": "freep.smartart.layout.basic-block-list",
-      "label": "[[Ribbon_Command_SmartArtBasicBlockList_Label]]",
+      "commandId": "freep.smartart.layout.alternating-process",
+      "label": "Alternating Process",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -5996,7 +5996,7 @@
           "tab": "Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtBasicBlockList_Label]]",
+          "label": "Alternating Process",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -6008,7 +6008,75 @@
           "tab": "Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtBasicBlockList_Label]]",
+          "label": "Alternating Process",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.layout.arrow-ribbon",
+      "label": "Arrow Ribbon",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Arrow Ribbon",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Arrow Ribbon",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.layout.basic-block-list",
+      "label": "Basic Block List",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Basic Block List",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Basic Block List",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -6050,7 +6118,7 @@
     },
     {
       "commandId": "freep.smartart.layout.basic-hierarchy",
-      "label": "[[Ribbon_Command_SmartArtBasicHierarchy_Label]]",
+      "label": "Basic Hierarchy",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -6064,7 +6132,7 @@
           "tab": "Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtBasicHierarchy_Label]]",
+          "label": "Basic Hierarchy",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -6076,7 +6144,7 @@
           "tab": "Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtBasicHierarchy_Label]]",
+          "label": "Basic Hierarchy",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -6084,7 +6152,7 @@
     },
     {
       "commandId": "freep.smartart.layout.basic-matrix",
-      "label": "[[Ribbon_Command_SmartArtBasicMatrix_Label]]",
+      "label": "Basic Matrix",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -6098,7 +6166,7 @@
           "tab": "Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtBasicMatrix_Label]]",
+          "label": "Basic Matrix",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -6110,7 +6178,7 @@
           "tab": "Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtBasicMatrix_Label]]",
+          "label": "Basic Matrix",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -6152,7 +6220,7 @@
     },
     {
       "commandId": "freep.smartart.layout.basic-pyramid",
-      "label": "[[Ribbon_Command_SmartArtBasicPyramid_Label]]",
+      "label": "Basic Pyramid",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -6166,7 +6234,7 @@
           "tab": "Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtBasicPyramid_Label]]",
+          "label": "Basic Pyramid",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -6178,7 +6246,7 @@
           "tab": "Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtBasicPyramid_Label]]",
+          "label": "Basic Pyramid",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -6186,7 +6254,7 @@
     },
     {
       "commandId": "freep.smartart.layout.basic-venn",
-      "label": "[[Ribbon_Command_SmartArtBasicVenn_Label]]",
+      "label": "Basic Venn",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -6200,7 +6268,7 @@
           "tab": "Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtBasicVenn_Label]]",
+          "label": "Basic Venn",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -6212,7 +6280,109 @@
           "tab": "Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtBasicVenn_Label]]",
+          "label": "Basic Venn",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.layout.circle-process",
+      "label": "Circle Process",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Circle Process",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Circle Process",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.layout.descending-block-list",
+      "label": "Descending Block List",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Descending Block List",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Descending Block List",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.layout.funnel-process",
+      "label": "Funnel Process",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Funnel Process",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Funnel Process",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -6220,7 +6390,7 @@
     },
     {
       "commandId": "freep.smartart.layout.radial-cycle",
-      "label": "[[Ribbon_Command_SmartArtRadialCycle_Label]]",
+      "label": "Radial Cycle",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -6234,7 +6404,7 @@
           "tab": "Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtRadialCycle_Label]]",
+          "label": "Radial Cycle",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -6246,7 +6416,41 @@
           "tab": "Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtRadialCycle_Label]]",
+          "label": "Radial Cycle",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.layout.radial-venn",
+      "label": "Radial Venn",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Radial Venn",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Radial Venn",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -6254,7 +6458,7 @@
     },
     {
       "commandId": "freep.smartart.layout.stacked-list",
-      "label": "[[Ribbon_Command_SmartArtStackedList_Label]]",
+      "label": "Stacked List",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -6268,7 +6472,7 @@
           "tab": "Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtStackedList_Label]]",
+          "label": "Stacked List",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -6280,7 +6484,75 @@
           "tab": "Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "[[Ribbon_Command_SmartArtStackedList_Label]]",
+          "label": "Stacked List",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.layout.stacked-venn",
+      "label": "Stacked Venn",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Stacked Venn",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Stacked Venn",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.layout.target-list",
+      "label": "Target List",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Target List",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Target List",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -6315,6 +6587,40 @@
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Vertical List",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.layout.vertical-process",
+      "label": "Vertical Process",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Vertical Process",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Vertical Process",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
