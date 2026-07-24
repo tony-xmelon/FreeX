@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 246 command IDs total.
-- 244 shared across WPF and Avalonia.
+- 258 command IDs total.
+- 256 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 2 intentional shell/profile variances: Undo and Redo are routed through WPF
@@ -83,7 +83,8 @@ is complete.
   shared layout engine: alternating process, arrow ribbon, circle process, funnel process,
   vertical process, segmented process, chevron process, basic/closed-chevron process,
   bending process, descending block list, radial Venn, target list, stacked Venn, gear cycle,
-  text cycle, block cycle, non-directional cycle, vertical bullet list, and titled matrix.
+  text cycle, block cycle, non-directional cycle, vertical bullet list, titled matrix,
+  and hierarchy3.
   Each route updates the native diagram layout part and the live model, then remains
   undoable through the shared editing session in both hosts.
 - Hierarchy authoring now also exposes Horizontal Hierarchy and Organization Chart, using
