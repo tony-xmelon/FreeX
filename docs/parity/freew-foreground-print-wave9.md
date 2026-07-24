@@ -10,18 +10,21 @@ PDF to the session evidence directory. It never reaches a host printer or physic
 ## Latest Evidence
 
 Latest manifest:
-`artifacts/linux-foreground-print/freew/sessions/20260724T022129633Z/freew-foreground-print/freew-foreground-print-wave9.json`
+`artifacts/linux-foreground-print/freew/sessions/20260724T023231487Z/freew-foreground-print/freew-foreground-print-wave9.json`
 
 | Evidence row | Result | Evidence / meaning |
 | --- | --- | --- |
 | FreeW owner visible and active | passed | Physical X11 screenshot before the route. |
 | Print dialog opens and is focused | passed | Production `CupsPrintDialog`, active after Backstage Print. |
 | Dialog owner metadata | not-proven | `ShowDialog(owner)` is present, but Xvfb did not expose `WM_TRANSIENT_FOR`. |
-| Escape restores owner focus | passed | Explicit Avalonia Escape handler closes the dialog; owner is active afterward. |
+| Cancellation restores owner focus | passed | The probe records the actual successful method (`escape`, `pointer-click`, or `tab-return`) and requires the owner to be active afterward. |
+| Escape-only cancellation | passed / not-proven | Separate row: passed only when Escape alone closes the dialog; fallback completion leaves this row not-proven. |
 | CUPS dry-run submission | passed | Non-empty generated PDF plus recorded `lp -d FreeW-DryRun ...` invocation and restored owner. |
 | Native GTK/system print chrome | not-proven | Deliberately outside this app-owned CUPS route and not claimed by headless/Xvfb evidence. |
 
-Final run count: **4 passed, 0 failed, 2 not-proven**.
+Latest run count: **5 passed, 0 failed, 2 not-proven**. The cancellation method is recorded in
+`print-cancel-method.txt` rather than inferred from the generic restoration row; this run recorded
+`method=escape`, `dialog-closed=true`, and `owner-active=true`.
 
 ## Reproduce
 
