@@ -25,7 +25,9 @@ is complete.
 - Animation pane trigger, duration, delay, effect options, reorder, and playback
   mutations route through shared typed planners in both hosts.
 - SmartArt text-pane editing has shared node mutations, outline rebuilding, and host
-  pane routes; full PowerPoint SmartArt regeneration and style authoring remain a
+  pane routes; the currently modeled layout preset catalog is now reachable through
+  both WPF and Avalonia contextual galleries. Full PowerPoint-authoritative SmartArt
+  regeneration, style authoring depth, and the long tail of layout families remain a
   separate scope.
 - On Windows, WPF and Avalonia use `FreeP.App.Recording.Windows` and WinRT
   `MediaCapture` for local camera MP4 capture. The cross-platform recording project
@@ -46,8 +48,8 @@ is complete.
 
 The remaining gaps are depth and application compatibility, not missing ribbon IDs:
 
-- broader SmartArt layout-family support and full PowerPoint-authoritative SmartArt
-  regeneration/style editing;
+- the long tail of SmartArt layout families and full PowerPoint-authoritative SmartArt
+  regeneration/style editing beyond the shared preset catalog;
 - advanced chart authoring/layout semantics beyond the current supported model;
 - deeper presenter/review/accessibility workflows and application-specific dialog
   behavior;
