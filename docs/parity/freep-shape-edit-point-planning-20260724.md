@@ -11,7 +11,9 @@ This gives WPF and Avalonia the same handle labels, positions, bounds, and
 pointer-to-value conversion. Preset mutations use
 `SetShapeGeometryAdjustmentCommand`; custom vertices use
 `SetCustomGeometryPointCommand`, each as one undoable operation. Arc control
-editing and insertion/deletion of vertices remain separate follow-up work.
+editing remains separate follow-up work. WPF and Avalonia keyboard adapters expose
+`Insert` for midpoint vertex creation and `Delete`/`Backspace` for valid line-vertex
+removal through the shared command bus.
 
 Focused planner tests and the full FreeP Release build are the verification
 gate for this functional slice. No visual calibration is included.
