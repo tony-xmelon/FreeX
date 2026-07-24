@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 226,
-    "both": 224,
+    "totalCommands": 228,
+    "both": 226,
     "wpfOnly": 0,
     "avaloniaOnly": 2,
     "missingWpf": 2,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 224,
+    "shared": 226,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 2,
@@ -1454,9 +1454,11 @@
       "verification": [
         "freep/FreeP.Core.IO/PptxPackageReader.cs",
         "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
-        "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
+        "freep/FreeP.App.Presentation.Tests/SmartArtEditingPlannerTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
       ],
-      "remainingWork": "labeledHierarchy now uses the bounded shared hierarchy-family live-layout path for parsed root/child nodes and shared connector ops, while other unsupported hierarchy siblings remain on cached drawing fallback. This is a shared hierarchy approximation, not true PowerPoint label geometry; exact label placement/effects, authoring regeneration for layout/style/color parts, and authoritative PNG baselines remain deferred."
+      "remainingWork": "labeledHierarchy now uses the bounded shared hierarchy-family live-layout path and has a shared undoable authoring command, while other unsupported hierarchy siblings remain on cached drawing fallback. This is a shared hierarchy approximation, not true PowerPoint label geometry; exact label placement/effects and authoritative PNG baselines remain deferred."
     },
     {
       "evidenceId": "freep.smartart.table-hierarchy",
@@ -1469,9 +1471,11 @@
       "verification": [
         "freep/FreeP.Core.IO/PptxPackageReader.cs",
         "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
-        "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
+        "freep/FreeP.App.Presentation.Tests/SmartArtEditingPlannerTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
       ],
-      "remainingWork": "tableHierarchy now uses the bounded shared hierarchy-family live-layout path for parsed root/child nodes and shared connector ops, while other unsupported hierarchy siblings remain on cached drawing fallback. This is a shared hierarchy approximation, not exact PowerPoint table grid geometry; exact cell/table styling, spacing/effects, authoring regeneration for layout/style/color parts, and authoritative PNG baselines remain deferred."
+      "remainingWork": "tableHierarchy now uses the bounded shared hierarchy-family live-layout path and has a shared undoable authoring command, while other unsupported hierarchy siblings remain on cached drawing fallback. This is a shared hierarchy approximation, not exact PowerPoint table grid geometry; exact cell/table styling, spacing/effects, and authoritative PNG baselines remain deferred."
     },
     {
       "evidenceId": "freep.smartart.org-chart",
@@ -6426,6 +6430,40 @@
       ]
     },
     {
+      "commandId": "freep.smartart.layout.labeled-hierarchy",
+      "label": "Labeled Hierarchy",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Labeled Hierarchy",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Labeled Hierarchy",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.smartart.layout.org-chart",
       "label": "Organization Chart",
       "wpfPresent": true,
@@ -6624,6 +6662,40 @@
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Stacked Venn",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.layout.table-hierarchy",
+      "label": "Table Hierarchy",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Table Hierarchy",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Table Hierarchy",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
