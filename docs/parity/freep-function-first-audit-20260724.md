@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 223 command IDs total.
-- 221 shared across WPF and Avalonia.
+- 225 command IDs total.
+- 223 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 2 intentional shell/profile variances: Undo and Redo are routed through WPF
@@ -51,6 +51,9 @@ is complete.
   vertical process, descending block list, radial Venn, target list, and stacked Venn.
   Each route updates the native diagram layout part and the live model, then remains
   undoable through the shared editing session in both hosts.
+- Hierarchy authoring now also exposes Horizontal Hierarchy and Organization Chart, using
+  the existing shared tree layout paths rather than leaving those PowerPoint layout choices
+  as import-only behavior.
 
 ## Remaining function scope
 
