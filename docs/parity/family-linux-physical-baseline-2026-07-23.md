@@ -17,6 +17,13 @@ application window, and retains a screenshot plus a machine-readable manifest fo
 - switching a ribbon tab by key tip (`I` for FreeW, `N` for FreeP);
 - opening and dismissing the app's File surface.
 
+FreeW additionally runs a seven-row physical editing slice: it clicks the real
+document editor, replaces the selection with a sentinel, proves exact X11
+clipboard text, proves Ctrl+Z and Ctrl+Y restore the exact clipboard states, and
+opens/dismisses the real editor context menu through both Shift+F10 and a
+pointer right-click. These rows are intentionally FreeW-only; the FreeP family
+baseline remains an exact eight-row contract.
+
 FreeW's File key tip is expected to open its separate top-level `BackstageView`
 window. FreeP's File key tip is expected to open the in-window
 `FreePBackstageOverlay`/`BackstageView` user control while retaining the owner
@@ -36,6 +43,8 @@ JSON Schema engine.
 
 The `coverage.exhaustive` field is always `false`. This is a deterministic baseline,
 not exhaustive command, dialog, context-menu, shortcut, or visual parity coverage.
+The FreeW editing rows are physical evidence for the editor path only, not a
+claim that every editing command has been exercised.
 FreeX remains covered by `tools/Run-FreeXLinuxInteractionValidation.ps1`; future
 family work can extend this runner with additional parameterized probes without
 copying the FreeX-specific calibration and grid workflow.
