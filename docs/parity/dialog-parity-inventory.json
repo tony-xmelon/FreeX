@@ -1088,6 +1088,7 @@
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewInstructionBuilder.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewNavigationState.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewPaginationContext.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewParityFixture.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewSettingsPanelPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewSurfacePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewToolbarStatePlanner.cs",
