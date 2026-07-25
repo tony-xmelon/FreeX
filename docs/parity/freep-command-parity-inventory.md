@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 271 | 269 | 0 | 2 | 2 | 0 | 0 | 0 | 269 | 0 | 0 | 2 | 0 | 91 |
+| 276 | 274 | 0 | 2 | 2 | 0 | 0 | 0 | 274 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -243,8 +243,13 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.redo` | Redo | No | Yes | WPF | platform-only | - | home/edit (RibbonButton) | Intended shell/profile variance: Avalonia exposes Redo in its generated Home/Edit ribbon group; WPF routes Redo through a routed command, keyboard bindings, and Editor.Redo rather than a generated ribbon control. |
 | `freep.remove-link` | Remove Link | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.replace` | Replace | Yes | Yes | none | shared | home/editing (RibbonButton) | home/editing (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape-diamond` | Diamond | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-ellipse` | Ellipse | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape-hexagon` | Hexagon | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-rectangle` | Rectangle | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape-right-arrow` | Right Arrow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape-star5` | 5-Point Star | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape-triangle` | Triangle | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slide-number` | Slide Number | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slide-size-16x9` | Widescreen (16:9) | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slide-size-4x3` | Standard (4:3) | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |

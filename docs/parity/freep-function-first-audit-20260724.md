@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 271 command IDs total.
-- 269 shared across WPF and Avalonia.
+- 276 command IDs total.
+- 274 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 2 intentional shell/profile variances: Undo and Redo are routed through WPF
@@ -40,6 +40,9 @@ is complete.
 - Recent function slices cover hidden-slide state, notes export, media capture and
   insertion, accessibility/review panes, printing, and grouped DrawingML package
   round-trip behavior.
+- Common Insert AutoShape presets now include Triangle, Diamond, Hexagon, Right Arrow, and
+  5-Point Star in both generated host ribbons. They use the shared insertion planner and
+  EditingSession path, so default geometry, rendering, undo, and PPTX round-trip stay aligned.
 - The print Backstage path now accepts a shared custom slide-range string such as
   `2,4-6` (including validation, hidden-slide filtering, and package disabled reasons)
   through both WPF and Avalonia host adapters. The hosts consume the shared parser;
