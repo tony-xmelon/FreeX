@@ -113,6 +113,10 @@ is complete.
   authored guides retain the established FreeP outline.
 - The same shared guide path now covers `leftArrow`, `upArrow`, and `downArrow`, with direction-
   aware handle positions and pointer reduction while preserving each legacy no-guide outline.
+- Compound arrows now expose their native `adj1` shaft-thickness and `adj2` symmetric head-depth
+  guides for `leftRightArrow` and `upDownArrow` in both hosts. Shared geometry, aspect-aware head
+  limits, undoable Edit Points mutation, and PPTX round-trip preserve the authored guides while
+  legacy no-guide outlines remain unchanged.
 - `chevron` and `homePlate` now expose their native `adj` point-depth guide in both hosts. The
   aspect-ratio-aware guide maximum, shared geometry, undoable Edit Points mutation, and PPTX
   round-trip all agree, while legacy no-guide outlines remain unchanged.
