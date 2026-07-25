@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 258 command IDs total.
-- 256 shared across WPF and Avalonia.
+- 269 command IDs total.
+- 267 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 2 intentional shell/profile variances: Undo and Redo are routed through WPF
@@ -24,6 +24,9 @@ is complete.
   Format Painter are implemented in both hosts.
 - Animation pane trigger, duration, delay, effect options, reorder, and playback
   mutations route through shared typed planners in both hosts.
+- Animation pane emphasis Spin effect amounts (Quarter Spin, Half Spin, Full Spin,
+  and Two Spins) now preserve the authored `presetSubtype` through the shared model,
+  undo path, WPF/Avalonia pane options, and PPTX read/write.
 - SmartArt text-pane editing has shared node mutations, outline rebuilding, and host
   pane routes. The modeled layout catalog and eight native Quick Style presets
   (Simple, Moderate, Intense, Subtle, Soft Edge, Insert, Cartoon, and Powder) are
