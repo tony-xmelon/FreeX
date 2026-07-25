@@ -14,7 +14,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.GoToSpecial.png",
                          "captured":  true,
-                         "note":  "Recaptured from current origin/main Avalonia source on 2026-07-24 after Go To Special WPF visual-parity alignment; exact-size nonblank evidence"
+                         "note":  "Recaptured from current Avalonia source in Linux Docker on 2026-07-25 after Go To Special WPF visual-parity geometry alignment; exact-size nonblank evidence; measured group-border bounds x13..400 y43..274"
                      },
                      {
                          "id":  "dialog.Sort",

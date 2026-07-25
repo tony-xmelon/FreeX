@@ -27,7 +27,7 @@
                     "visualReviewTriageThreshold":  0.4,
                     "visualReviewTriageThresholdRationale":  "This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.",
                     "visualReviewCandidateCount":  1,
-                    "highestTriageScore":  0.403055,
+                    "highestTriageScore":  0.41181,
                     "dimensionMismatchBuckets":  {
 
                                                  }
@@ -2108,7 +2108,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.GoToSpecial.png",
-                                                "fileBytes":  27432,
+                                                "fileBytes":  24548,
                                                 "width":  430,
                                                 "height":  438,
                                                 "dpiX":  96,
@@ -2116,11 +2116,11 @@
                                                 "logicalWidth":  430,
                                                 "logicalHeight":  438,
                                                 "pixels":  188340,
-                                                "distinctColors":  1699,
+                                                "distinctColors":  1739,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.071392,
+                                                "nonBackgroundRatio":  0.069316,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  249.572044
+                                                "meanLuma":  250.046559
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -2135,10 +2135,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.163568,
-                                                  "lumaDelta":  0.126443,
-                                                  "nonBackgroundDelta":  0.112764,
-                                                  "triageScore":  0.403055,
+                                                  "sampleMeanDelta":  0.168386,
+                                                  "lumaDelta":  0.128304,
+                                                  "nonBackgroundDelta":  0.11484,
+                                                  "triageScore":  0.41181,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  430,
                                                   "expectedHeight":  438,
@@ -6007,11 +6007,11 @@
     "topPairedOutliers":  [
                               {
                                   "id":  "dialog.GoToSpecial",
-                                  "triageScore":  0.403055,
-                                  "sampleMeanDelta":  0.163568,
+                                  "triageScore":  0.41181,
+                                  "sampleMeanDelta":  0.168386,
                                   "dimension":  "430.06x438.061 vs 430x438 logical; 430x438 vs 430x438 px",
                                   "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.112764
+                                  "nonBackgroundDelta":  0.11484
                               },
                               {
                                   "id":  "dialog.PivotValueFieldSettings",
@@ -6089,7 +6089,7 @@
     "visualReviewCandidates":  [
                                    {
                                        "id":  "dialog.GoToSpecial",
-                                       "triageScore":  0.403055,
+                                       "triageScore":  0.41181,
                                        "reviewStatus":  "unresolved visual review candidate",
                                        "logicalDimensionMatch":  true,
                                        "dimensionMismatchBucket":  null,
