@@ -120,6 +120,9 @@ is complete.
 - `chevron` and `homePlate` now expose their native `adj` point-depth guide in both hosts. The
   aspect-ratio-aware guide maximum, shared geometry, undoable Edit Points mutation, and PPTX
   round-trip all agree, while legacy no-guide outlines remain unchanged.
+- `star5` now exposes its native `adj` point-depth guide in both hosts. The shared geometry,
+  interactive edit-point mutation, undo path, and PPTX round-trip preserve authored star depth;
+  legacy stars without a guide retain the established outline.
 - SmartArt hierarchy authoring now exposes Add Assistant and Toggle Assistant actions in both
   hosts' text panes. The shared add edit inserts an assistant child before regular children,
   writes the new `dgm:pt type="asst"` semantic, regenerates the native data/cache parts, and
