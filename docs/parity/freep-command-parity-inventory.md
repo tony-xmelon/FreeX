@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 266 | 264 | 0 | 2 | 2 | 0 | 0 | 0 | 264 | 0 | 0 | 2 | 0 | 91 |
+| 267 | 265 | 0 | 2 | 2 | 0 | 0 | 0 | 265 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -373,6 +373,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.undo` | Undo | No | Yes | WPF | platform-only | - | home/edit (RibbonButton) | Intended shell/profile variance: Avalonia exposes Undo in its generated Home/Edit ribbon group; WPF routes Undo through ApplicationCommands.Undo, keyboard bindings, and Editor.Undo rather than a generated ribbon control. |
 | `freep.video` | Video | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.fit-to-window` | Fit to Window | Yes | Yes | none | shared | view/zoom (RibbonButton) | view/zoom (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.view.selection-pane` | Selection Pane | Yes | Yes | none | shared | view/show (RibbonButton) | view/show (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.show.gridlines` | Gridlines | Yes | Yes | none | shared | view/show (RibbonToggleButton) | view/show (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.show.guides` | Guides | Yes | Yes | none | shared | view/show (RibbonToggleButton) | view/show (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.zoom` | Zoom... | Yes | Yes | none | shared | view/zoom (RibbonButton) | view/zoom (RibbonButton) | Available in both generated FreeP ribbon profiles. |
