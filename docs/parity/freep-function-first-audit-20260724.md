@@ -124,6 +124,9 @@ is complete.
   authored `adj` guide is consumed by shared geometry, the live adorner, PPTX round-trip, and
   the existing undoable geometry-adjustment command; legacy triangles without a guide remain
   centered.
+- Shape Edit Points now also exposes the native `star8` point-depth guide in both hosts. The
+  shared geometry builder consumes the authored `adj` value, while legacy eight-point stars
+  without a guide retain the existing fixed-depth outline.
 - Shape Edit Points now also exposes native `rightArrow` `adj1`/`adj2` guides in both hosts.
   `adj1` edits shaft thickness and `adj2` edits head length through shared geometry, the live
   adorner, one undoable geometry-adjustment command, and PPTX round-trip; legacy arrows without
