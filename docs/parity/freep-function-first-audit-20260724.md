@@ -103,6 +103,10 @@ is complete.
 - WPF and Avalonia slideshow playback now surface parsed media caption cues from the active
   playback clock; the shared planner owns cue interval semantics and both host controllers
   retain their own native overlay lifecycle.
+- Shape Edit Points now also exposes the native Triangle apex adjustment in both hosts. The
+  authored `adj` guide is consumed by shared geometry, the live adorner, PPTX round-trip, and
+  the existing undoable geometry-adjustment command; legacy triangles without a guide remain
+  centered.
 - SmartArt hierarchy authoring now exposes Add Assistant and Toggle Assistant actions in both
   hosts' text panes. The shared add edit inserts an assistant child before regular children,
   writes the new `dgm:pt type="asst"` semantic, regenerates the native data/cache parts, and
