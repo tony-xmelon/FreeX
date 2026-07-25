@@ -25,9 +25,10 @@ The manifest contains exactly these results, in this order:
 4. `nonblank-final-page-render`
 5. `shared-plan-proof`
 
-The first four rows use category `physical-x11-table-pagination` and level
-`physical-x11-input`. The final row uses category `deterministic-shared-plan`
-and level `focused-test`. Each row is `passed` or `failed`; the promoted
+The first four rows use category `physical-x11-table-pagination` and
+`evidenceLevel` `physical-x11-input`. The final row uses category
+`deterministic-shared-plan` and `evidenceLevel` `focused-test`. Each row is
+`passed` or `failed`; the promoted
 contract requires five passed rows, zero failed rows, and total five.
 
 ## Evidence limits
