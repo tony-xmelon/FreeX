@@ -27,7 +27,7 @@
                     "visualReviewTriageThreshold":  0.4,
                     "visualReviewTriageThresholdRationale":  "This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.",
                     "visualReviewCandidateCount":  1,
-                    "highestTriageScore":  0.41181,
+                    "highestTriageScore":  0.411352,
                     "dimensionMismatchBuckets":  {
 
                                                  }
@@ -2108,7 +2108,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.GoToSpecial.png",
-                                                "fileBytes":  24548,
+                                                "fileBytes":  24550,
                                                 "width":  430,
                                                 "height":  438,
                                                 "dpiX":  96,
@@ -2135,10 +2135,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.168386,
+                                                  "sampleMeanDelta":  0.167929,
                                                   "lumaDelta":  0.128304,
                                                   "nonBackgroundDelta":  0.11484,
-                                                  "triageScore":  0.41181,
+                                                  "triageScore":  0.411352,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  430,
                                                   "expectedHeight":  438,
@@ -6007,8 +6007,8 @@
     "topPairedOutliers":  [
                               {
                                   "id":  "dialog.GoToSpecial",
-                                  "triageScore":  0.41181,
-                                  "sampleMeanDelta":  0.168386,
+                                  "triageScore":  0.411352,
+                                  "sampleMeanDelta":  0.167929,
                                   "dimension":  "430.06x438.061 vs 430x438 logical; 430x438 vs 430x438 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.11484
@@ -6089,7 +6089,7 @@
     "visualReviewCandidates":  [
                                    {
                                        "id":  "dialog.GoToSpecial",
-                                       "triageScore":  0.41181,
+                                       "triageScore":  0.411352,
                                        "reviewStatus":  "unresolved visual review candidate",
                                        "logicalDimensionMatch":  true,
                                        "dimensionMismatchBucket":  null,
