@@ -48,7 +48,7 @@ Equal logical dimensions, nonblank PNGs, and paired manifest ids establish evide
 
 | Surface id | Score | Logical dimensions match | Dimension bucket | Expected-size mismatch | Review status | Review reason |
 | --- | ---: | --- | --- | --- | --- | --- |
-| dialog.GoToSpecial | 0.403 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
+| dialog.GoToSpecial | 0.411 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
 
 ## Scale-Aware Dimension Mismatch Classification
 
@@ -63,7 +63,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.GoToSpecial | 430x438 | 430x438 | 430x438 px @ 96 DPI vs 430x438 px @ 96 DPI |  |  | 0.403 | 0.164 | 0.126 | 0.113 |
+| dialog.GoToSpecial | 430x438 | 430x438 | 430x438 px @ 96 DPI vs 430x438 px @ 96 DPI |  |  | 0.411 | 0.168 | 0.128 | 0.115 |
 | dialog.PivotValueFieldSettings | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.399 | 0.163 | 0.125 | 0.111 |
 | dialog.PivotValueFieldSettings.SummarizeValuesBy | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.399 | 0.163 | 0.125 | 0.111 |
 | dialog.PivotValueFieldSettings.ShowValuesAs | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.399 | 0.163 | 0.125 | 0.110 |
@@ -122,7 +122,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.GoalSeek | dialog.GoalSeek.png | 380x210 | 380x210 px @ 96 DPI | True | dialog.GoalSeek.png | 380x210 | 380x210 px @ 96 DPI | True | True | 0.054 |
 | dialog.GoalSeekStatus | dialog.GoalSeekStatus.png | 380x190 | 380x190 px @ 96 DPI | True | dialog.GoalSeekStatus.png | 380x190 | 380x190 px @ 96 DPI | True | True | 0.089 |
 | dialog.GoTo | dialog.GoTo.png | 420x320 | 630x480 px @ 144 DPI | True | dialog.GoTo.png | 420x320 | 420x320 px @ 96 DPI | True | True | 0.110 |
-| dialog.GoToSpecial | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | True | 0.403 |
+| dialog.GoToSpecial | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | True | 0.411 |
 | dialog.InsertHyperlink | dialog.InsertHyperlink.png | 560x300 | 840x450 px @ 144 DPI | True | dialog.InsertHyperlink.png | 560x300 | 560x300 px @ 96 DPI | True | True | 0.095 |
 | dialog.InsertSlicer | dialog.InsertSlicer.png | 410x270 | 615x405 px @ 144 DPI | True | dialog.InsertSlicer.png | 410x270 | 410x270 px @ 96 DPI | True | True | 0.046 |
 | dialog.InsertTimeline | dialog.InsertTimeline.png | 410x270 | 615x405 px @ 144 DPI | True | dialog.InsertTimeline.png | 410x270 | 410x270 px @ 96 DPI | True | True | 0.040 |
