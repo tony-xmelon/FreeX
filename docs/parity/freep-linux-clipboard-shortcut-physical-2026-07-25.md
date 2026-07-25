@@ -36,14 +36,20 @@ empty slide. The final Ctrl+V must consume the cut clipboard and create fresh
 editable IDs 1 and 2 at the two expected successive offsets. Every checkpoint
 requires zero `p:pic` and zero `p:graphicFrame` records.
 
-At the default `1280x820` geometry the probe derives the shape-center click
-from the fixed FreeP shell metrics: 180-pixel slide pane, 40-pixel canvas
-margin, 60-pixel notes pane, the fixture's 4:3 slide, and the known shape
-bounds. The resulting point is approximately `(576,312)` and scales with the
-owner geometry. This is a calibration risk if shell chrome dimensions change;
-the click and screenshots never prove selection by themselves. Selection earns
-credit only through the native clipboard payload and exact saved package
-transitions.
+The fixture slide is 16:9 (`12192000x6858000` EMU). The probe derives the
+shape-center click from the measured owner geometry and current FreeP shell
+layout: a 180-pixel slide pane, stage body top at `Y+137`, stage body height
+`HEIGHT-241`, and a 40-pixel inset on every side. It fits the 16:9 slide inside
+that box, centers it, then maps fixture shape center
+`(2286000,1371600)` EMU into the fitted slide rectangle. For the observed owner
+geometry `X=0,Y=38,WIDTH=1280,HEIGHT=801`, this derives a slide rectangle near
+`(304,215,853,480)` and click point `(464,311)`. Nonnumeric, nonpositive, or
+out-of-bounds derived geometry aborts the physical sequence honestly.
+
+The fixed shell offsets remain a calibration risk if shell chrome dimensions
+change. The click and screenshots never prove selection by themselves.
+Selection earns credit only through the native clipboard payload and exact
+saved package transitions.
 
 The manifest keeps contract validation `pending` for
 `tools/Run-FreePClipboardShortcutValidation.ps1` against
