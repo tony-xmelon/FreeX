@@ -124,6 +124,10 @@ is complete.
   `adj1` edits shaft thickness and `adj2` edits head length through shared geometry, the live
   adorner, one undoable geometry-adjustment command, and PPTX round-trip; legacy arrows without
   authored guides retain the established FreeP outline.
+- Shape Edit Points now also exposes native trapezoid and parallelogram `adj` guides in both
+  hosts. The shared geometry builder consumes authored slant/depth values, the live adorner
+  reduces pointer movement to one undoable adjustment command, and PPTX round-trip preserves
+  the guide.
 - The same shared guide path now covers `leftArrow`, `upArrow`, and `downArrow`, with direction-
   aware handle positions and pointer reduction while preserving each legacy no-guide outline.
 - Compound arrows now expose their native `adj1` shaft-thickness and `adj2` symmetric head-depth
