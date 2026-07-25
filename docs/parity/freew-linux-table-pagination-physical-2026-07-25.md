@@ -36,15 +36,24 @@ passed rows, zero failed rows, and total five.
 ## Evidence limits
 
 The physical rows prove visible-window discovery, generated-fixture hash
-integrity, a geometry-derived physical click inside the document body, and two
-stable `Ctrl+End` inputs to the deterministic three-page endpoint. The
-automated change comparison starts from the post-click page crop so the focus
-click itself cannot satisfy the navigation check. The shared-plan row proves
-both the deterministic planner contract and the Avalonia table-structure
-rendering test used by the table-page composition path.
+integrity, and a geometry-derived physical click inside the document body.
+`Ctrl+End` establishes the logical endpoint; the probe then sends at most
+eight `Page_Down` inputs until the viewport has changed materially and two
+consecutive captures are stable. The automated change comparison starts from
+the post-click page crop so the focus click itself cannot satisfy the
+navigation check. The shared-plan row proves both the deterministic planner
+contract and the Avalonia table-structure rendering test used by the
+table-page composition path.
 
 The final full screenshot and `final-status-bar-crop.png` are retained for
-manual review of the rendered status area; they are not OCR evidence.
+manual review of the stable `Page_Down` endpoint and rendered status area;
+they are not OCR evidence. Every Page Down step retains its full screenshot,
+page crop, status crop, state, and AE metrics.
+
+Focused test outputs are written as UTF-8 without a BOM before the session is
+mounted into Linux. Any failed contract row makes the probe exit nonzero and
+retains `probe-incomplete.txt`; successful host promotion requires the
+sentinel to be absent.
 
 This evidence does not include OCR and makes no Word pixel-parity claim. It
 also does not claim exhaustive table pagination or general visual parity: the
