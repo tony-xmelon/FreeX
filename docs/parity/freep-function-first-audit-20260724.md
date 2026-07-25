@@ -123,6 +123,8 @@ is complete.
 - `star5` now exposes its native `adj` point-depth guide in both hosts. The shared geometry,
   interactive edit-point mutation, undo path, and PPTX round-trip preserve authored star depth;
   legacy stars without a guide retain the established outline.
+- Connector attachment sites now follow the attached shape's authored rotation and horizontal or
+  vertical flips, while retaining the existing per-shape site tables and fallback behavior.
 - SmartArt hierarchy authoring now exposes Add Assistant and Toggle Assistant actions in both
   hosts' text panes. The shared add edit inserts an assistant child before regular children,
   writes the new `dgm:pt type="asst"` semantic, regenerates the native data/cache parts, and
