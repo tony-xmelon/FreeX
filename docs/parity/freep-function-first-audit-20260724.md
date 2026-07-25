@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 276 command IDs total.
-- 274 shared across WPF and Avalonia.
+- 277 command IDs total.
+- 275 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 2 intentional shell/profile variances: Undo and Redo are routed through WPF
@@ -43,6 +43,10 @@ is complete.
 - Common Insert AutoShape presets now include Triangle, Diamond, Hexagon, Right Arrow, and
   5-Point Star in both generated host ribbons. They use the shared insertion planner and
   EditingSession path, so default geometry, rendering, undo, and PPTX round-trip stay aligned.
+- Insert Connector now adds a shared undoable straight-connector command. With two selected
+  shapes it emits native start/end connection sites, so moving either shape can reroute the
+  connector; with no two-shape selection it inserts a free centered connector. Both host ribbons
+  use the same planner path and the existing PPTX connector reader/writer preserves attachments.
 - The print Backstage path now accepts a shared custom slide-range string such as
   `2,4-6` (including validation, hidden-slide filtering, and package disabled reasons)
   through both WPF and Avalonia host adapters. The hosts consume the shared parser;
