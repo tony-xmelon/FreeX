@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 277 command IDs total.
-- 275 shared across WPF and Avalonia.
+- 285 command IDs total.
+- 283 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 2 intentional shell/profile variances: Undo and Redo are routed through WPF
@@ -43,6 +43,10 @@ is complete.
 - Common Insert AutoShape presets now include Triangle, Diamond, Hexagon, Right Arrow, and
   5-Point Star in both generated host ribbons. They use the shared insertion planner and
   EditingSession path, so default geometry, rendering, undo, and PPTX round-trip stay aligned.
+- Change Shape now exposes Rectangle, Ellipse, Triangle, Diamond, and Right Arrow as one
+  undoable operation in both host ribbons. It preserves the selected AutoShape's text, frame,
+  and style while replacing only preset guides/custom geometry; unsupported object kinds remain
+  no-ops, and the command is covered by focused model and EditingSession tests.
 - Insert Connector now adds a shared undoable straight-connector command. With two selected
   shapes it emits native start/end connection sites, so moving either shape can reroute the
   connector; with no two-shape selection it inserts a free centered connector. Both host ribbons

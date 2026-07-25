@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 279 | 277 | 0 | 2 | 2 | 0 | 0 | 0 | 277 | 0 | 0 | 2 | 0 | 91 |
+| 285 | 283 | 0 | 2 | 2 | 0 | 0 | 0 | 283 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -160,6 +160,12 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.arrange.align-top` | Align Top | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.bring-forward` | Bring Forward | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.bring-to-front` | Bring to Front | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.change-shape` | Change Shape | Yes | Yes | none | shared | home/arrange (RibbonDropdown) | home/arrange (RibbonDropdown) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.change-shape.diamond` | Diamond | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.change-shape.ellipse` | Ellipse | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.change-shape.rectangle` | Rectangle | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.change-shape.right-arrow` | Right Arrow | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.change-shape.triangle` | Triangle | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.distribute-h` | Distribute Horiz. | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.distribute-v` | Distribute Vert. | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.edit-points` | Edit Points | Yes | Yes | none | shared | home/arrange (RibbonToggleButton) | home/arrange (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
