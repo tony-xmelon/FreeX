@@ -27,16 +27,23 @@ The manifest contains exactly these results, in this order:
 
 The first four rows use category `physical-x11-table-pagination` and
 `evidenceLevel` `physical-x11-input`. The final row uses category
-`deterministic-shared-plan` and `evidenceLevel` `focused-test`. Each row is
-`passed` or `failed`; the promoted
-contract requires five passed rows, zero failed rows, and total five.
+`deterministic-shared-plan` and `evidenceLevel` `focused-test`. Its evidence
+contains both basename-only files `shared-plan-test.txt` and
+`avalonia-table-structure-test.txt`; both focused tests must report a passing
+summary. Each row is `passed` or `failed`; the promoted contract requires five
+passed rows, zero failed rows, and total five.
 
 ## Evidence limits
 
 The physical rows prove visible-window discovery, generated-fixture hash
-integrity, physical navigation to page three, and a nonblank final-page
-render through X11 interaction. The shared-plan row proves the deterministic
-planner/test contract used by the table-page composition path.
+integrity, two stable `Ctrl+End` inputs to the deterministic three-page
+endpoint, and a nonblank endpoint render through X11 interaction. The
+shared-plan row proves both the deterministic planner contract and the
+Avalonia table-structure rendering test used by the table-page composition
+path.
+
+The final full screenshot and `final-status-bar-crop.png` are retained for
+manual review of the rendered status area; they are not OCR evidence.
 
 This evidence does not include OCR and makes no Word pixel-parity claim. It
 also does not claim exhaustive table pagination or general visual parity: the
