@@ -183,6 +183,7 @@ slice adds shared-buffer soft-break insertion and Avalonia `Shift+Enter` handlin
 both shape and table-cell editors; ordinary `Enter` paragraph splitting is unchanged.
 Focused shared, Avalonia headless, and existing WPF converter coverage assert that the
 break remains one paragraph, survives the editor body, and retains the WPF contract.
+While a shape is actively edited, both hosts suppress only that shape's base text beneath the rich overlay; table-cell ghosting remains separate.
 This does not claim parity for broader IME, RTL, or list-continuity behavior.
 
 Do not select another renderer-only calibration from stale comments such as
