@@ -127,6 +127,10 @@ is complete.
 - Shape Edit Points now also exposes the native `star8` point-depth guide in both hosts. The
   shared geometry builder consumes the authored `adj` value, while legacy eight-point stars
   without a guide retain the existing fixed-depth outline.
+- SmartArt authoring now also exposes the common Pyramid List layout in both hosts. The
+  native `pyramidList` layout ID, List family, undo path, and shared live narrowing-segment
+  regeneration are covered together; other unmodeled SmartArt families retain the cached
+  fallback path.
 - Shape Edit Points now also exposes native `rightArrow` `adj1`/`adj2` guides in both hosts.
   `adj1` edits shaft thickness and `adj2` edits head length through shared geometry, the live
   adorner, one undoable geometry-adjustment command, and PPTX round-trip; legacy arrows without
