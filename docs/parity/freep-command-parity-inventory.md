@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 285 | 283 | 0 | 2 | 2 | 0 | 0 | 0 | 283 | 0 | 0 | 2 | 0 | 91 |
+| 286 | 284 | 0 | 2 | 2 | 0 | 0 | 0 | 284 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -239,6 +239,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.numbering.number.arabic-period` | 1.  Arabic 1. | Yes | Yes | none | shared | home/paragraph (RibbonMenuItem) | home/paragraph (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.numbering.number.roman-lower-period` | i.  Roman i. | Yes | Yes | none | shared | home/paragraph (RibbonMenuItem) | home/paragraph (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.numbering.number.roman-upper-period` | I.  Roman I. | Yes | Yes | none | shared | home/paragraph (RibbonMenuItem) | home/paragraph (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.object.open-embedded` | Open Embedded Object | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.paragraph.align-center` | Center | Yes | Yes | none | shared | home/paragraph (RibbonButton) | home/paragraph (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.paragraph.align-justify` | Justify | Yes | Yes | none | shared | home/paragraph (RibbonButton) | home/paragraph (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.paragraph.align-left` | Align Left | Yes | Yes | none | shared | home/paragraph (RibbonButton) | home/paragraph (RibbonButton) | Available in both generated FreeP ribbon profiles. |
