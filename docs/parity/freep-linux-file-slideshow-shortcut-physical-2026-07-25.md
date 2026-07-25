@@ -35,8 +35,10 @@ WM_CLASS output where the window manager exposes it.
 
 - Ctrl+N is exercised after a real pointer-created slide mutation. Escape must remove
   the dirty prompt while preserving the dirty owner state and exact owner focus.
-- Ctrl+O and Ctrl+Shift+S must discover intended top-level picker windows and restore
-  the exact owner after Escape.
+- Ctrl+O and Ctrl+Shift+S must discover a new active/focused native picker surface and
+  restore the exact owner after Escape. The probe records the window-manager title and
+  visible-window counts, but does not gate on them because native portals can expose
+  the application title and nested X11 child windows inflate global counts.
 - Ctrl+S is exercised on a physically dirtied current-path presentation. The probe
   retains mounted-document SHA256 before/after files; the runner also retains source
   fixture before/after and host-mounted-after SHA256 evidence. A Save As window is
@@ -45,12 +47,15 @@ WM_CLASS output where the window manager exposes it.
   owner window remains active, then restore the owner after Escape.
 - Slideshow proof selects slide 2 by pointer and runs three calibrated captures:
   Shift+F5 from slide 1 as the slide-1 control, Shift+F5 from slide 2, and F5 from
-  slide 2. The F5 stage must pixel-match the slide-1 control (`AE == 0`) and differ
-  materially from the slide-2 capture. Thumbnail, status, owner-window, slideshow
-  window, and dismissal evidence remain attached to both slideshow rows.
-- Ctrl+F and Ctrl+H must open distinct `Find` and `Find and Replace` windows. Each
-  route types its own sentinel into the initially focused Find input, uses Ctrl+A/C,
-  and proves exact X11 clipboard text before Escape restores the owner.
+  slide 2. Each candidate-window capture must contain non-black rendered slide
+  content; the F5 stage must match the slide-1 control within a small `AE <= 1000`
+  capture tolerance and differ materially from the slide-2 capture. Thumbnail, status,
+  owner-window, slideshow window, and dismissal evidence remain attached to both rows.
+- Ctrl+F and Ctrl+H must open distinct visible Find/Replace modes. Each route keeps
+  the dialog's natural focused Find input, types its own sentinel with retry/settling,
+  uses Ctrl+A/C, and proves exact X11 clipboard text before Escape restores the owner.
+  Avalonia/X11 titles are recorded but are not the sole mode proof when a native window
+  exposes an empty or application title.
 
 The lane is physical evidence for these named workflows only. It does not claim
 exhaustive shortcut, dialog, file-format, slideshow, rendering, or parity coverage.
