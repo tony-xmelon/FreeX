@@ -125,6 +125,8 @@ is complete.
   legacy stars without a guide retain the established outline.
 - Connector attachment sites now follow the attached shape's authored rotation and horizontal or
   vertical flips, while retaining the existing per-shape site tables and fallback behavior.
+- Connector attachment sites now use the visible outline for pentagon, hexagon, octagon, cross,
+  and Star5 presets; callout, ribbon, and other irregular presets remain on the fallback path.
 - SmartArt hierarchy authoring now exposes Add Assistant and Toggle Assistant actions in both
   hosts' text panes. The shared add edit inserts an assistant child before regular children,
   writes the new `dgm:pt type="asst"` semantic, regenerates the native data/cache parts, and
