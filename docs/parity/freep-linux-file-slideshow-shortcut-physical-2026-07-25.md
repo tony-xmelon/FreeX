@@ -27,18 +27,20 @@ the exact owned container it started unless `-KeepContainer` is supplied.
 
 The probe first proves the visible, focused FreeP owner and the fixture filename in
 the X11 title. It then uses physical X11 chords and pointer input for the file,
-backstage, slideshow, and Find/Replace routes. Dialog evidence retains before/open/
-focused/dismissed screenshots, visible window lists, active/focus IDs, titles, and
-WM_CLASS output where the window manager exposes it.
+backstage, slideshow, and Find/Replace routes. `wmctrl -l` is the authoritative
+top-level lifecycle inventory; Avalonia child-window IDs from `xdotool search` remain
+diagnostic evidence. Dialog evidence retains before/open/focused/dismissed screenshots,
+both inventories, reported active/focus IDs, titles, and WM_CLASS output.
 
 ## Evidence boundaries
 
 - Ctrl+N is exercised after a real pointer-created slide mutation. Escape must remove
   the dirty prompt while preserving the dirty owner state and exact owner focus.
-- Ctrl+O and Ctrl+Shift+S must discover a new active/focused native picker surface and
-  restore the exact owner after Escape. The probe records the window-manager title and
-  visible-window counts, but does not gate on them because native portals can expose
-  the application title and nested X11 child windows inflate global counts.
+- Ctrl+O and Ctrl+Shift+S must discover a distinct `wmctrl` top-level native picker
+  surface and restore the exact owner after Escape. The probe records reported
+  active/focus IDs, the window-manager title, and child-window counts, but does not
+  gate on them because native portals can expose the application title and nested
+  X11 child windows inflate global counts.
 - Ctrl+S is exercised on a physically dirtied current-path presentation. The probe
   retains mounted-document SHA256 before/after files; the runner also retains source
   fixture before/after and host-mounted-after SHA256 evidence. A Save As window is
@@ -54,8 +56,10 @@ WM_CLASS output where the window manager exposes it.
 - Ctrl+F and Ctrl+H must open distinct visible Find/Replace modes. Each route keeps
   the dialog's natural focused Find input, types its own sentinel with retry/settling,
   uses Ctrl+A/C, and proves exact X11 clipboard text before Escape restores the owner.
-  Avalonia/X11 titles are recorded but are not the sole mode proof when a native window
-  exposes an empty or application title.
+  The distinct titled `wmctrl` top-level window is the mode/lifecycle proof. Openbox can
+  continue reporting the owner through `_NET_ACTIVE_WINDOW` and X11 focus while the
+  naturally focused Avalonia textbox receives input, so those reported IDs are retained
+  as diagnostics rather than pass/fail gates.
 
 The lane is physical evidence for these named workflows only. It does not claim
 exhaustive shortcut, dialog, file-format, slideshow, rendering, or parity coverage.
