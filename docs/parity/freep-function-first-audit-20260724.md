@@ -100,6 +100,10 @@ is complete.
 - WPF and Avalonia slideshow playback now surface parsed media caption cues from the active
   playback clock; the shared planner owns cue interval semantics and both host controllers
   retain their own native overlay lifecycle.
+- SmartArt hierarchy authoring now exposes a Toggle Assistant action in both hosts' text panes.
+  The shared edit toggles the selected node's `dgm:pt type="asst"` semantic, regenerates the
+  native data/cache parts, and remains one undoable edit; root and non-hierarchy nodes are
+  rejected rather than silently changing layout semantics.
 
 ## Remaining function scope
 
@@ -111,7 +115,7 @@ The remaining gaps are depth and application compatibility, not missing ribbon I
   richer chart data editing beyond the shared grid and PowerPoint-specific chart-area styling
   beyond manual layout geometry;
 - deeper presenter/review/accessibility workflows and application-specific dialog
-  behavior;
+  behavior, including assistant-specific hierarchy operations beyond the bounded toggle;
 - broader media/presenter integration and platform-specific capture/export behavior, including
   real-device capture and PowerPoint-authoritative media/caption baselines;
 - PowerPoint COM-backed workflow validation on a machine where that comparison path is
