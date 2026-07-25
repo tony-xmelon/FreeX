@@ -173,6 +173,18 @@ The remaining gaps are depth and application compatibility, not missing ribbon I
 
 ## Process decision
 
+### 2026-07-25 bounded rich-edit slice
+
+WPF already maps the shared model's dedicated `Run.Text == "\n"` value to a native
+`LineBreak`, and the PPTX reader/writer preserve that value. Avalonia previously sent
+both `Enter` and `Shift+Enter` through plain-text replacement, which rebuilt every
+newline as a new paragraph and made soft-line-break authoring impossible. The bounded
+slice adds shared-buffer soft-break insertion and Avalonia `Shift+Enter` handling for
+both shape and table-cell editors; ordinary `Enter` paragraph splitting is unchanged.
+Focused shared, Avalonia headless, and existing WPF converter coverage assert that the
+break remains one paragraph, survives the editor body, and retains the WPF contract.
+This does not claim parity for broader IME, RTL, or list-continuity behavior.
+
 Do not select another renderer-only calibration from stale comments such as
 “viewer-only”, “Tab navigation is not implemented”, or “animation timing is stubbed”.
 Choose the next slice from a reproducible function gap with a host workflow and
