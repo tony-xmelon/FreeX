@@ -31,11 +31,21 @@ Focused verification passed:
 - `FreeW.App.Avalonia.Tests` source guard: 4/4.
 - `FreeW.FidelityRender` Release build: clean.
 
+## Current Production Status
+
+The Avalonia production table path now passes the same shared leading-content estimate used by
+`BuildTableLayoutPlans(document)` and the WPF production path. The stress fixture's shared plan is
+therefore consumed at the real table block index, yielding source rows `[0,1,2]`, `[3,4,5,6]`, and
+`[7,8]` with repeated row `0` on pages 2 and 3 and keep-together rows `3` and `6` preserved on
+page 2. Avalonia also now honors authored `Exact`/`AtLeast` row-height semantics when measuring and
+rendering, so wrapped cell text cannot create host-only page breaks. Focused WPF and Avalonia host
+tests assert rendered content on all three pages.
+
 ## Visual Status
 
 The matched Word source baseline is retained. Current WPF mean RGB channel deltas (0-255) are
 18.1477 for page 1, 23.4317 for page 2, and 17.8980 for page 3. The former WPF pages 2-3 used a
 different serialized payload, so their lower raw deltas are not a valid before/after visual
-comparison. Remaining visual work is table cell text measurement and row-height composition; the
-shared table pagination estimator still reports two table pages while the actual WPF and Word
-documents emit three.
+comparison. Remaining physical Linux evidence is a packaged foreground capture of this three-page
+fixture and an image-level comparison against the cached WPF/Word pages. The host-level tests prove
+the page composition and nonblank third-page content, but do not replace that physical Linux capture.
