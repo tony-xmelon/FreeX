@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 269 | 267 | 0 | 2 | 2 | 0 | 0 | 0 | 267 | 0 | 0 | 2 | 0 | 91 |
+| 271 | 269 | 0 | 2 | 2 | 0 | 0 | 0 | 269 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -260,6 +260,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.smartart.colors.monochromatic-accent-6` | Monochromatic Accent 6 | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.colors.single-accent` | Single Accent | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.colors.theme-accents` | Theme Accents | Yes | Yes | none | shared | design/smartart-colors (RibbonButton) | design/smartart-colors (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.convert-to-shapes` | Convert to Shapes | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.alternating-process` | Alternating Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.arrow-ribbon` | Arrow Ribbon | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.basic-block-list` | Basic Block List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
@@ -276,6 +277,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.smartart.layout.circle-process` | Circle Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.closed-chevron-process` | Closed Chevron Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.continuous-block-process` | Continuous Block Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.continuous-cycle` | Continuous Cycle | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.descending-block-list` | Descending Block List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.funnel-process` | Funnel Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.gear-cycle` | Gear Cycle | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |

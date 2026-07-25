@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 269 command IDs total.
-- 267 shared across WPF and Avalonia.
+- 271 command IDs total.
+- 269 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 2 intentional shell/profile variances: Undo and Redo are routed through WPF
@@ -97,6 +97,9 @@ is complete.
   and hierarchy3.
   Each route updates the native diagram layout part and the live model, then remains
   undoable through the shared editing session in both hosts.
+- Continuous Cycle is now admitted through the same shared cycle-family live layout path and
+  exposed as an undoable authoring command in both hosts; other unmodeled SmartArt family
+  variants and PowerPoint-specific style/effect regeneration remain deferred.
 - Hierarchy authoring now also exposes Horizontal Hierarchy and Organization Chart, using
   the existing shared tree layout paths rather than leaving those PowerPoint layout choices
   as import-only behavior.
