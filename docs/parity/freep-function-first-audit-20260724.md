@@ -111,6 +111,8 @@ is complete.
   `adj1` edits shaft thickness and `adj2` edits head length through shared geometry, the live
   adorner, one undoable geometry-adjustment command, and PPTX round-trip; legacy arrows without
   authored guides retain the established FreeP outline.
+- The same shared guide path now covers `leftArrow`, `upArrow`, and `downArrow`, with direction-
+  aware handle positions and pointer reduction while preserving each legacy no-guide outline.
 - SmartArt hierarchy authoring now exposes Add Assistant and Toggle Assistant actions in both
   hosts' text panes. The shared add edit inserts an assistant child before regular children,
   writes the new `dgm:pt type="asst"` semantic, regenerates the native data/cache parts, and
