@@ -24,7 +24,11 @@ library `zipfile` and `xml.etree.ElementTree`.
 
 The physical sequence pointer-selects the baseline shape, copies it through
 natural X11 routing, proves the exact `freex.freep.selection.v1` target and
-plain text, and verifies that copy plus save does not alter the package. Ctrl+V
+plain text, and hashes the mounted file immediately after Ctrl+C but before
+Ctrl+S. That pre-save hash must equal the initial fixture hash, proving Copy
+itself did not mutate the package. Ctrl+S is then gated on exact parsed baseline
+semantics. Its retained saved-package hash may differ because valid ZIP
+timestamps or serialization can change without a semantic mutation. Ctrl+V
 must create editable shape ID 3 at the exact 182880-EMU offset. Ctrl+A is
 credited only when the following Ctrl+X removes both shapes and one Ctrl+Z
 restores both, proving one undoable mutation. Ctrl+Shift+Z must return to an
