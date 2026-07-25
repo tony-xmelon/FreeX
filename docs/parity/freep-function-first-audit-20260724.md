@@ -108,6 +108,10 @@ is complete.
   writes the new `dgm:pt type="asst"` semantic, regenerates the native data/cache parts, and
   remains one undoable edit; non-hierarchy data is rejected rather than silently changing
   layout semantics.
+- SmartArt now exposes PowerPoint's Convert to Shapes workflow in both hosts. The shared session
+  materializes the live layout (or cached fallback), replaces the graphic at its original z-order
+  slot with ordinary shapes using collision-free IDs, and keeps the entire conversion undoable and
+  redoable.
 
 ## Remaining function scope
 
