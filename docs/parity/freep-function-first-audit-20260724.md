@@ -113,6 +113,9 @@ is complete.
   authored guides retain the established FreeP outline.
 - The same shared guide path now covers `leftArrow`, `upArrow`, and `downArrow`, with direction-
   aware handle positions and pointer reduction while preserving each legacy no-guide outline.
+- `chevron` and `homePlate` now expose their native `adj` point-depth guide in both hosts. The
+  aspect-ratio-aware guide maximum, shared geometry, undoable Edit Points mutation, and PPTX
+  round-trip all agree, while legacy no-guide outlines remain unchanged.
 - SmartArt hierarchy authoring now exposes Add Assistant and Toggle Assistant actions in both
   hosts' text panes. The shared add edit inserts an assistant child before regular children,
   writes the new `dgm:pt type="asst"` semantic, regenerates the native data/cache parts, and
