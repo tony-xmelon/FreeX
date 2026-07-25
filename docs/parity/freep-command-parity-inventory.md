@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 277 | 275 | 0 | 2 | 2 | 0 | 0 | 0 | 275 | 0 | 0 | 2 | 0 | 91 |
+| 279 | 277 | 0 | 2 | 2 | 0 | 0 | 0 | 277 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -218,6 +218,8 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.insert-chart-surface` | Surface | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-surface-3d` | 3-D Surface | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-connector` | Connector | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-curved-connector` | Curved Connector | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-elbow-connector` | Elbow Connector | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-link` | Hyperlink | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-table-2x2` | 2x2 | Yes | Yes | none | shared | insert/tables (RibbonButton) | insert/tables (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-table-3x3` | Table | Yes | Yes | none | shared | insert/tables (RibbonButton) | insert/tables (RibbonButton) | Available in both generated FreeP ribbon profiles. |

@@ -47,6 +47,9 @@ is complete.
   shapes it emits native start/end connection sites, so moving either shape can reroute the
   connector; with no two-shape selection it inserts a free centered connector. Both host ribbons
   use the same planner path and the existing PPTX connector reader/writer preserves attachments.
+- Elbow Connector and Curved Connector now use that same insertion path. Elbow connectors retain
+  the existing Manhattan reroute behavior when attached shapes move; all three variants share
+  native attachment persistence and host registration.
 - The print Backstage path now accepts a shared custom slide-range string such as
   `2,4-6` (including validation, hidden-slide filtering, and package disabled reasons)
   through both WPF and Avalonia host adapters. The hosts consume the shared parser;
