@@ -36,11 +36,12 @@ passed rows, zero failed rows, and total five.
 ## Evidence limits
 
 The physical rows prove visible-window discovery, generated-fixture hash
-integrity, two stable `Ctrl+End` inputs to the deterministic three-page
-endpoint, and a nonblank endpoint render through X11 interaction. The
-shared-plan row proves both the deterministic planner contract and the
-Avalonia table-structure rendering test used by the table-page composition
-path.
+integrity, a geometry-derived physical click inside the document body, and two
+stable `Ctrl+End` inputs to the deterministic three-page endpoint. The
+automated change comparison starts from the post-click page crop so the focus
+click itself cannot satisfy the navigation check. The shared-plan row proves
+both the deterministic planner contract and the Avalonia table-structure
+rendering test used by the table-page composition path.
 
 The final full screenshot and `final-status-bar-crop.png` are retained for
 manual review of the rendered status area; they are not OCR evidence.
