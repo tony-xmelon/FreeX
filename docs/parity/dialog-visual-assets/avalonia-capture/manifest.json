@@ -246,7 +246,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.Subtotal.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-direct-avalonia-parity-capture",
+                         "recaptureStatus":  "fresh-linux-docker-focused-capture-subtotal-shared-windows-chrome-2026-07-27",
+                         "expectedWidth":  380,
+                         "expectedHeight":  390,
+                         "note":  "Fresh Avalonia FreeX --parity-capture --parity-capture-surface dialog.Subtotal in Linux Docker/Xvfb on 2026-07-27 using the shared SubtotalParityFixture; canonical 380x390 PNG at 96 DPI with shared Windows dialog chrome and Subtotal-specific 22px metrics."
                      },
                      {
                          "id":  "dialog.CreateTable",
