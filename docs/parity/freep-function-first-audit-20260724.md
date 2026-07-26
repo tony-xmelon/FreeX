@@ -96,18 +96,29 @@ is complete.
 - Chart authoring now also exposes a shared Data Table dialog in both hosts. It can show or hide
   the chart data table and edit horizontal, vertical, outline, and legend-key settings through one
   undoable command; existing `c:dTable` payloads and authored chart styling survive the update.
-- Chart display options now expose the full modeled chart-level data-label components in both
-  hosts: values, percentages, category names, series names, legend keys, placement, number format,
-  and separator. The same undoable command creates or updates the `c:dLbls` payload and preserves
-  it through PPTX round-trip.
+ - Chart display options now expose the full modeled chart-level data-label components in both
+   hosts: values, percentages, category names, series names, legend keys, placement, number format,
+   and separator. The same undoable command creates or updates the `c:dLbls` payload and preserves
+   it through PPTX round-trip.
+ - Chart display options now also expose chart-level data-label font family, size, color, bold, and
+   italic styling in both hosts. The same command preserves nullable inherited bold/italic state
+   through the existing chart text-properties payload and PPTX round-trip.
 - Chart Series Options now exposes series-scoped data-label overrides in both hosts, including
   value, percentage, category, series-name, and legend-key components plus position, number
-  format, and separator. The shared undo command preserves the override through `c:dLbls` while
-  disabling it restores chart-level label fallback.
+  format, separator, font family, size, color, bold, and italic. The shared undo command preserves
+  the override through `c:dLbls` while disabling it restores chart-level label fallback; nullable
+  bold/italic values retain inherited state.
 - Chart Point Options now exposes selected-point data-label overrides in both hosts, including
   value, percentage, category, series-name, and legend-key components plus position, number
   format, separator, and the native delete token. The shared point-style command preserves each
   override as a `c:dLbl` entry and undo removes it without disturbing other point formatting.
+- Point data-label authoring now also exposes the modeled font family, size, bold, italic, and
+  color fields in both hosts, preserving nullable inherited bold/italic state through PPTX
+  round-trip. PowerPoint-authoritative chart raster baselines remain a separate visual gate.
+- Chart, Series, and Point Options now expose bubble-size data labels in both hosts. The shared
+  model, `c:showBubbleSize` reader/writer, undo paths, and chart renderer preserve and format
+  the corresponding bubble datum; PowerPoint-authoritative bubble-label raster baselines remain
+  deferred.
 - Chart display options now also expose bar/column gap width (0-500%) and overlap (-100% to 100%)
   in both hosts. Blank values preserve automatic chart behavior; explicit values share one undoable
   command and round-trip through `c:gapWidth` and `c:overlap`.
@@ -198,7 +209,16 @@ PowerPoint permits a selected series to override chart-level data labels. FreeP 
 and wrote series `c:dLbls`, but the Series Options workflow could not author them. The bounded
 function slice extends the shared planner, undo command, WPF dialog, and Avalonia dialog without
 creating a second renderer or package path. Focused planner, command round-trip, and both-host
-dialog tests cover enable, edit, disable, and save/reopen behavior.
+ dialog tests cover enable, edit, disable, and save/reopen behavior.
+
+### 2026-07-26 chart-level data-label text slice
+
+PowerPoint permits chart-level data-label text styling alongside the label components. FreeP
+already parsed and wrote chart text properties, but the Chart Options workflow did not expose
+them. The bounded function slice extends the shared chart display planner, undo command, WPF
+dialog, and Avalonia dialog for font family, size, color, bold, and italic values. Focused planner,
+command round-trip, and both-host dialog tests cover edit and save/reopen behavior while preserving
+nullable inherited emphasis state.
 
 ### 2026-07-25 bounded rich-edit slice
 
