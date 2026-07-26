@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 298 | 296 | 0 | 2 | 2 | 0 | 0 | 0 | 296 | 0 | 0 | 2 | 0 | 98 |
+| 341 | 339 | 0 | 2 | 2 | 0 | 0 | 0 | 339 | 0 | 0 | 2 | 0 | 98 |
 
 ## Workflow Evidence
 
@@ -239,7 +239,50 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.insert-curved-connector` | Curved Connector | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-elbow-connector` | Elbow Connector | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-link` | Hyperlink | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.insert-smartart-basic-process` | Basic Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonButton) | insert/smartart-insert (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-alternating-process` | Alternating Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-arrow-ribbon` | Arrow Ribbon | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-basic-block-list` | Basic Block List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-basic-chevron-process` | Basic Chevron Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-basic-cycle` | Basic Cycle | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-basic-hierarchy` | Basic Hierarchy | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-basic-list` | Basic List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-basic-matrix` | Basic Matrix | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-basic-process` | Basic Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonDropdown)<br>insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonDropdown)<br>insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-basic-pyramid` | Basic Pyramid | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-basic-radial` | Basic Radial | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-basic-timeline` | Basic Timeline | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-basic-venn` | Basic Venn | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-bending-process` | Bending Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-block-cycle` | Block Cycle | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-chevron-process` | Chevron Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-circle-process` | Circle Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-closed-chevron-process` | Closed Chevron Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-continuous-block-process` | Continuous Block Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-continuous-cycle` | Continuous Cycle | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-descending-block-list` | Descending Block List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-funnel-process` | Funnel Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-gear-cycle` | Gear Cycle | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-grid-matrix` | Grid Matrix | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-hierarchy3` | Hierarchy3 | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-horizontal-hierarchy` | Horizontal Hierarchy | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-labeled-hierarchy` | Labeled Hierarchy | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-non-directional-cycle` | Non Directional Cycle | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-org-chart` | Org Chart | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-pyramid-list` | Pyramid List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-radial-cycle` | Radial Cycle | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-radial-list` | Radial List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-radial-venn` | Radial Venn | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-segmented-process` | Segmented Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-stacked-list` | Stacked List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-stacked-venn` | Stacked Venn | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-step-down-process` | Step Down Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-table-hierarchy` | Table Hierarchy | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-target-list` | Target List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-text-cycle` | Text Cycle | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-titled-matrix` | Titled Matrix | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-vertical-box-list` | Vertical Box List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-vertical-bullet-list` | Vertical Bullet List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-vertical-process` | Vertical Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-table-2x2` | 2x2 | Yes | Yes | none | shared | insert/tables (RibbonButton) | insert/tables (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-table-3x3` | Table | Yes | Yes | none | shared | insert/tables (RibbonButton) | insert/tables (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-table-4x4` | 4x4 | Yes | Yes | none | shared | insert/tables (RibbonButton) | insert/tables (RibbonButton) | Available in both generated FreeP ribbon profiles. |

@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 298,
-    "both": 296,
+    "totalCommands": 341,
+    "both": 339,
     "wpfOnly": 0,
     "avaloniaOnly": 2,
     "missingWpf": 2,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 296,
+    "shared": 339,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 2,
@@ -5837,6 +5837,278 @@
       ]
     },
     {
+      "commandId": "freep.insert-smartart-alternating-process",
+      "label": "Alternating Process",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Alternating Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Alternating Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-arrow-ribbon",
+      "label": "Arrow Ribbon",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Arrow Ribbon",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Arrow Ribbon",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-basic-block-list",
+      "label": "Basic Block List",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Block List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Block List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-basic-chevron-process",
+      "label": "Basic Chevron Process",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Chevron Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Chevron Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-basic-cycle",
+      "label": "Basic Cycle",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Cycle",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Cycle",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-basic-hierarchy",
+      "label": "Basic Hierarchy",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Hierarchy",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Hierarchy",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-basic-list",
+      "label": "Basic List",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-basic-matrix",
+      "label": "Basic Matrix",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Matrix",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Matrix",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
       "commandId": "freep.insert-smartart-basic-process",
       "label": "Basic Process",
       "wpfPresent": true,
@@ -5853,8 +6125,18 @@
           "groupId": "smartart-insert",
           "group": "SmartArt Layouts",
           "label": "Basic Process",
-          "controlType": "RibbonButton",
+          "controlType": "RibbonDropdown",
           "layout": "Large"
+        },
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ],
       "avaloniaLocations": [
@@ -5865,8 +6147,1208 @@
           "groupId": "smartart-insert",
           "group": "SmartArt Layouts",
           "label": "Basic Process",
-          "controlType": "RibbonButton",
+          "controlType": "RibbonDropdown",
           "layout": "Large"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-basic-pyramid",
+      "label": "Basic Pyramid",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Pyramid",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Pyramid",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-basic-radial",
+      "label": "Basic Radial",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Radial",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Radial",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-basic-timeline",
+      "label": "Basic Timeline",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Timeline",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Timeline",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-basic-venn",
+      "label": "Basic Venn",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Venn",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Basic Venn",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-bending-process",
+      "label": "Bending Process",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Bending Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Bending Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-block-cycle",
+      "label": "Block Cycle",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Block Cycle",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Block Cycle",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-chevron-process",
+      "label": "Chevron Process",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Chevron Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Chevron Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-circle-process",
+      "label": "Circle Process",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Circle Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Circle Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-closed-chevron-process",
+      "label": "Closed Chevron Process",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Closed Chevron Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Closed Chevron Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-continuous-block-process",
+      "label": "Continuous Block Process",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Continuous Block Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Continuous Block Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-continuous-cycle",
+      "label": "Continuous Cycle",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Continuous Cycle",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Continuous Cycle",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-descending-block-list",
+      "label": "Descending Block List",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Descending Block List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Descending Block List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-funnel-process",
+      "label": "Funnel Process",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Funnel Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Funnel Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-gear-cycle",
+      "label": "Gear Cycle",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Gear Cycle",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Gear Cycle",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-grid-matrix",
+      "label": "Grid Matrix",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Grid Matrix",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Grid Matrix",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-hierarchy3",
+      "label": "Hierarchy3",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Hierarchy3",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Hierarchy3",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-horizontal-hierarchy",
+      "label": "Horizontal Hierarchy",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Horizontal Hierarchy",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Horizontal Hierarchy",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-labeled-hierarchy",
+      "label": "Labeled Hierarchy",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Labeled Hierarchy",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Labeled Hierarchy",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-non-directional-cycle",
+      "label": "Non Directional Cycle",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Non Directional Cycle",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Non Directional Cycle",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-org-chart",
+      "label": "Org Chart",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Org Chart",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Org Chart",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-pyramid-list",
+      "label": "Pyramid List",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Pyramid List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Pyramid List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-radial-cycle",
+      "label": "Radial Cycle",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Radial Cycle",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Radial Cycle",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-radial-list",
+      "label": "Radial List",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Radial List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Radial List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-radial-venn",
+      "label": "Radial Venn",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Radial Venn",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Radial Venn",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-segmented-process",
+      "label": "Segmented Process",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Segmented Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Segmented Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-stacked-list",
+      "label": "Stacked List",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Stacked List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Stacked List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-stacked-venn",
+      "label": "Stacked Venn",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Stacked Venn",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Stacked Venn",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-step-down-process",
+      "label": "Step Down Process",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Step Down Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Step Down Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-table-hierarchy",
+      "label": "Table Hierarchy",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Table Hierarchy",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Table Hierarchy",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-target-list",
+      "label": "Target List",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Target List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Target List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-text-cycle",
+      "label": "Text Cycle",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Text Cycle",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Text Cycle",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-titled-matrix",
+      "label": "Titled Matrix",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Titled Matrix",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Titled Matrix",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-vertical-box-list",
+      "label": "Vertical Box List",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Vertical Box List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Vertical Box List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-vertical-bullet-list",
+      "label": "Vertical Bullet List",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Vertical Bullet List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Vertical Bullet List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.insert-smartart-vertical-process",
+      "label": "Vertical Process",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Vertical Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Vertical Process",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
         }
       ]
     },
