@@ -63,15 +63,15 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
 | dialog.PrintPreview | 1120x700 | 1120x700 | 1120x700 px @ 96 DPI vs 1120x700 px @ 96 DPI |  |  | 0.378 | 0.126 | 0.061 | 0.191 |
-| dialog.PivotFieldFilter.SelectItems | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.364 | 0.172 | 0.115 | 0.078 |
-| dialog.PivotFieldFilter | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.364 | 0.172 | 0.115 | 0.077 |
-| dialog.PivotFieldFilter.LabelFilters | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.360 | 0.156 | 0.118 | 0.086 |
-| dialog.PivotFieldFilter.ValueFilters | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.360 | 0.155 | 0.118 | 0.087 |
 | dialog.FindReplace.Replace | 720x430 | 720x430 | 720x430 px @ 96 DPI vs 720x430 px @ 96 DPI |  |  | 0.352 | 0.031 | 0.020 | 0.302 |
 | dialog.SortOptions | 330x260 | 330x260 | 495x390 px @ 144 DPI vs 330x260 px @ 96 DPI |  |  | 0.237 | 0.047 | 0.028 | 0.162 |
 | dialog.ShapeEffects | 380x190 | 380x190 | 570x285 px @ 144 DPI vs 380x190 px @ 96 DPI |  |  | 0.215 | 0.031 | 0.021 | 0.163 |
 | dialog.Sparkline | 380x280 | 380x280 | 380x280 px @ 96 DPI vs 380x280 px @ 96 DPI |  |  | 0.187 | 0.054 | 0.016 | 0.117 |
 | dialog.AllowEditRanges | 430x360 | 430x360 | 645x540 px @ 144 DPI vs 430x360 px @ 96 DPI |  |  | 0.187 | 0.039 | 0.002 | 0.145 |
+| dialog.FormatCells.Border | 620x597 | 620x597 | 620x597 px @ 96 DPI vs 620x597 px @ 96 DPI |  |  | 0.186 | 0.048 | 0.025 | 0.112 |
+| dialog.ConditionalFormatNewRule | 634x334 | 634x334 | 634x334 px @ 96 DPI vs 634x334 px @ 96 DPI |  |  | 0.176 | 0.053 | 0.014 | 0.109 |
+| dialog.Subtotal | 380x390 | 380x390 | 570x585 px @ 144 DPI vs 380x390 px @ 96 DPI |  |  | 0.166 | 0.032 | 0.015 | 0.119 |
+| dialog.FormatCells.Fill | 620x540 | 620x540 | 620x540 px @ 96 DPI vs 620x540 px @ 96 DPI |  |  | 0.159 | 0.031 | 0.038 | 0.090 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -145,10 +145,10 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.PageSetup.Margins | dialog.PageSetup.Margins.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Margins.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.041 |
 | dialog.PageSetup.Page | dialog.PageSetup.Page.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Page.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.091 |
 | dialog.PageSetup.Sheet | dialog.PageSetup.Sheet.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Sheet.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.117 |
-| dialog.PivotFieldFilter | dialog.PivotFieldFilter.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.364 |
-| dialog.PivotFieldFilter.LabelFilters | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.360 |
-| dialog.PivotFieldFilter.SelectItems | dialog.PivotFieldFilter.SelectItems.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.SelectItems.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.364 |
-| dialog.PivotFieldFilter.ValueFilters | dialog.PivotFieldFilter.ValueFilters.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.ValueFilters.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.360 |
+| dialog.PivotFieldFilter | dialog.PivotFieldFilter.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.040 |
+| dialog.PivotFieldFilter.LabelFilters | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.022 |
+| dialog.PivotFieldFilter.SelectItems | dialog.PivotFieldFilter.SelectItems.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.SelectItems.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.040 |
+| dialog.PivotFieldFilter.ValueFilters | dialog.PivotFieldFilter.ValueFilters.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.ValueFilters.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.020 |
 | dialog.PivotTableOptions | dialog.PivotTableOptions.png | 520x676 | 520x676 px @ 96 DPI | True | dialog.PivotTableOptions.png | 520x676 | 520x676 px @ 96 DPI | True | True | 0.093 |
 | dialog.PivotTableOptions.AltText | dialog.PivotTableOptions.AltText.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.AltText.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.061 |
 | dialog.PivotTableOptions.Data | dialog.PivotTableOptions.Data.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.Data.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.125 |

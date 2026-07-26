@@ -3656,7 +3656,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.png",
-                                                "fileBytes":  13231,
+                                                "fileBytes":  11123,
                                                 "width":  380,
                                                 "height":  470,
                                                 "dpiX":  96,
@@ -3664,11 +3664,11 @@
                                                 "logicalWidth":  380,
                                                 "logicalHeight":  470,
                                                 "pixels":  178600,
-                                                "distinctColors":  440,
-                                                "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.138024,
+                                                "distinctColors":  354,
+                                                "opaqueRatio":  0.880448,
+                                                "nonBackgroundRatio":  0.236512,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  247.037053
+                                                "meanLuma":  217.475705
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -3683,10 +3683,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.171763,
-                                                  "lumaDelta":  0.1148,
-                                                  "nonBackgroundDelta":  0.077464,
-                                                  "triageScore":  0.364306,
+                                                  "sampleMeanDelta":  0.017706,
+                                                  "lumaDelta":  0.001126,
+                                                  "nonBackgroundDelta":  0.021025,
+                                                  "triageScore":  0.040137,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -3720,7 +3720,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.LabelFilters.png",
-                                                "fileBytes":  10526,
+                                                "fileBytes":  9989,
                                                 "width":  380,
                                                 "height":  470,
                                                 "dpiX":  96,
@@ -3728,11 +3728,11 @@
                                                 "logicalWidth":  380,
                                                 "logicalHeight":  470,
                                                 "pixels":  178600,
-                                                "distinctColors":  388,
-                                                "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.13453,
+                                                "distinctColors":  357,
+                                                "opaqueRatio":  0.880448,
+                                                "nonBackgroundRatio":  0.22953,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  248.104747
+                                                "meanLuma":  218.633604
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -3747,10 +3747,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.156399,
-                                                  "lumaDelta":  0.117773,
-                                                  "nonBackgroundDelta":  0.085649,
-                                                  "triageScore":  0.360101,
+                                                  "sampleMeanDelta":  0.009925,
+                                                  "lumaDelta":  0.0022,
+                                                  "nonBackgroundDelta":  0.009351,
+                                                  "triageScore":  0.021754,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -3784,7 +3784,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.SelectItems.png",
-                                                "fileBytes":  13199,
+                                                "fileBytes":  11123,
                                                 "width":  380,
                                                 "height":  470,
                                                 "dpiX":  96,
@@ -3792,11 +3792,11 @@
                                                 "logicalWidth":  380,
                                                 "logicalHeight":  470,
                                                 "pixels":  178600,
-                                                "distinctColors":  434,
-                                                "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.137951,
+                                                "distinctColors":  354,
+                                                "opaqueRatio":  0.880448,
+                                                "nonBackgroundRatio":  0.236512,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  247.050944
+                                                "meanLuma":  217.475705
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -3811,10 +3811,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.171763,
-                                                  "lumaDelta":  0.114855,
-                                                  "nonBackgroundDelta":  0.077536,
-                                                  "triageScore":  0.364434,
+                                                  "sampleMeanDelta":  0.017706,
+                                                  "lumaDelta":  0.001126,
+                                                  "nonBackgroundDelta":  0.021025,
+                                                  "triageScore":  0.040137,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -3848,7 +3848,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotFieldFilter.ValueFilters.png",
-                                                "fileBytes":  10804,
+                                                "fileBytes":  10301,
                                                 "width":  380,
                                                 "height":  470,
                                                 "dpiX":  96,
@@ -3856,11 +3856,11 @@
                                                 "logicalWidth":  380,
                                                 "logicalHeight":  470,
                                                 "pixels":  178600,
-                                                "distinctColors":  405,
-                                                "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.13411,
+                                                "distinctColors":  377,
+                                                "opaqueRatio":  0.880448,
+                                                "nonBackgroundRatio":  0.22911,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  248.136725
+                                                "meanLuma":  218.665364
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -3875,10 +3875,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.154736,
-                                                  "lumaDelta":  0.117885,
-                                                  "nonBackgroundDelta":  0.086618,
-                                                  "triageScore":  0.359519,
+                                                  "sampleMeanDelta":  0.008789,
+                                                  "lumaDelta":  0.002311,
+                                                  "nonBackgroundDelta":  0.008382,
+                                                  "triageScore":  0.019761,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6026,38 +6026,6 @@
                                   "nonBackgroundDelta":  0.190918
                               },
                               {
-                                  "id":  "dialog.PivotFieldFilter.SelectItems",
-                                  "triageScore":  0.364434,
-                                  "sampleMeanDelta":  0.171763,
-                                  "dimension":  "380.053x470.066 vs 380x470 logical; 380x470 vs 380x470 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.077536
-                              },
-                              {
-                                  "id":  "dialog.PivotFieldFilter",
-                                  "triageScore":  0.364306,
-                                  "sampleMeanDelta":  0.171763,
-                                  "dimension":  "380.053x470.066 vs 380x470 logical; 380x470 vs 380x470 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.077464
-                              },
-                              {
-                                  "id":  "dialog.PivotFieldFilter.LabelFilters",
-                                  "triageScore":  0.360101,
-                                  "sampleMeanDelta":  0.156399,
-                                  "dimension":  "380.053x470.066 vs 380x470 logical; 380x470 vs 380x470 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.085649
-                              },
-                              {
-                                  "id":  "dialog.PivotFieldFilter.ValueFilters",
-                                  "triageScore":  0.359519,
-                                  "sampleMeanDelta":  0.154736,
-                                  "dimension":  "380.053x470.066 vs 380x470 logical; 380x470 vs 380x470 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.086618
-                              },
-                              {
                                   "id":  "dialog.FindReplace.Replace",
                                   "triageScore":  0.352415,
                                   "sampleMeanDelta":  0.030615,
@@ -6096,6 +6064,38 @@
                                   "dimension":  "430.022x360.019 vs 430x360 logical; 645x540 vs 430x360 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.145119
+                              },
+                              {
+                                  "id":  "dialog.FormatCells.Border",
+                                  "triageScore":  0.186258,
+                                  "sampleMeanDelta":  0.048498,
+                                  "dimension":  "620.087x597.083 vs 620x597 logical; 620x597 vs 620x597 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.112376
+                              },
+                              {
+                                  "id":  "dialog.ConditionalFormatNewRule",
+                                  "triageScore":  0.175727,
+                                  "sampleMeanDelta":  0.052594,
+                                  "dimension":  "634.089x334.047 vs 634x334 logical; 634x334 vs 634x334 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.108691
+                              },
+                              {
+                                  "id":  "dialog.Subtotal",
+                                  "triageScore":  0.165687,
+                                  "sampleMeanDelta":  0.031544,
+                                  "dimension":  "380.02x390.02 vs 380x390 logical; 570x585 vs 380x390 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.11911
+                              },
+                              {
+                                  "id":  "dialog.FormatCells.Fill",
+                                  "triageScore":  0.159015,
+                                  "sampleMeanDelta":  0.030604,
+                                  "dimension":  "620.087x540.075 vs 620x540 logical; 620x540 vs 620x540 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.090072
                               }
                           ],
     "visualReviewCandidates":  [
