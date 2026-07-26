@@ -578,7 +578,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.Options.Proofing.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "focused-current-avalonia-parity-capture",
+                         "recaptureStatus":  "fresh-avalonia-focused-capture-2026-07-26",
+                         "expectedWidth":  744,
+                         "expectedHeight":  521,
+                          "note":  "Fresh focused capture from current FreeX Avalonia source on the Windows desktop host on 2026-07-26 via --parity-capture --parity-capture-surface dialog.Options.Proofing; 744x521 px at 96 DPI after the persisted ProofingIgnoreUppercase state fix."
                      },
                      {
                          "id":  "dialog.Options.Save",
@@ -620,7 +624,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.Options.QuickAccessToolbar.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "focused-current-avalonia-parity-capture",
+                         "recaptureStatus":  "fresh-linux-docker-focused-capture-2026-07-26",
+                         "expectedWidth":  744,
+                         "expectedHeight":  521,
+                         "note":  "Fresh focused capture from current FreeX Avalonia source in Linux Docker/Xvfb on 2026-07-26 via --parity-capture --parity-capture-surface dialog.Options.QuickAccessToolbar; 744x521 px at 96 DPI after Proofing section-gap and QAT initial-selection fixes."
                      },
                      {
                          "id":  "dialog.Options.AddIns",

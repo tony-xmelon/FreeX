@@ -28,7 +28,14 @@
                          "kind":  "dialog",
                          "png":  "dialog.Options.Proofing.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "focused-current-wpf-parity-capture-cropped-client-frame",
+                         "recaptureStatus":  "fresh-wpf-capture-cropped-client-frame-2026-07-26",
+                         "sourceWidth":  760,
+                         "sourceHeight":  560,
+                         "crop":  { "x":  0, "y":  0, "width":  744, "height":  521 },
+                         "expectedWidth":  744,
+                         "expectedHeight":  521,
+                         "note":  "Fresh current WPF capture was 760x560; normalized deterministically to the established client frame with crop rectangle x=0,y=0,width=744,height=521. No resize or stretch was applied."
                      },
                      {
                          "id":  "dialog.Options.Save",
@@ -70,7 +77,14 @@
                          "kind":  "dialog",
                          "png":  "dialog.Options.QuickAccessToolbar.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "focused-current-wpf-parity-capture-cropped-client-frame",
+                         "recaptureStatus":  "fresh-wpf-capture-cropped-client-frame-2026-07-26",
+                         "sourceWidth":  760,
+                         "sourceHeight":  560,
+                         "crop":  { "x":  0, "y":  0, "width":  744, "height":  521 },
+                         "expectedWidth":  744,
+                         "expectedHeight":  521,
+                         "note":  "Fresh current WPF capture was 760x560; normalized deterministically to the established client frame with crop rectangle x=0,y=0,width=744,height=521. No resize or stretch was applied."
                      },
                      {
                          "id":  "dialog.Options.AddIns",
