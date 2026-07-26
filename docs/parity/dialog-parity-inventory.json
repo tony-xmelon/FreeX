@@ -273,6 +273,7 @@
                                                    "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateDialogPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateInputParser.cs",
                                                    "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateModels.cs",
+                                                   "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateParityFixture.cs",
                                                    "src\\FreeX.App.Presentation\\Consolidate\\ConsolidatePlanner.cs"
                                                ],
                      "notes":  [
@@ -846,6 +847,7 @@
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\Charts\\AxisScale.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\ChartCategoryAxisSkip.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\ChartDataLabelTextPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\ChartDialogValueParser.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\ChartInputParser.cs",

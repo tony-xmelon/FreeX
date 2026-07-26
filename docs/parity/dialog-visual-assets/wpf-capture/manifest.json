@@ -453,7 +453,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.Consolidate.png",
                          "captured":  true,
-                         "note":  "Promoted from FREEX_DATA_TOOLS_DIALOGS_TOUR consolidate dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                         "note":  "Fresh direct foreground WPF production ConsolidateDialog capture on 2026-07-27 via --parity-capture-target dialog.Consolidate; shared A1:C4/H2 fixture, canonical 380x420 px at 95.9866 DPI."
                      },
                      {
                          "id":  "dialog.ConditionalFormatManage",
