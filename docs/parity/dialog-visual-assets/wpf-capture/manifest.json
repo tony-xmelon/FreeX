@@ -98,7 +98,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.ConditionalFormatNewRule.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Fresh current-source WPF capture on 2026-07-26 after the July 22 ConditionalFormatDialog changes. The 650x371 full-window parity render was normalized to the 634x334 ConditionalFormatDialogCatalog client-area contract by retaining the x=0,y=0 client content and removing the extra 16px right/37px bottom capture area; normalized content is materially identical to the prior canonical capture."
                      },
                      {
                          "id":  "dialog.FindReplace",
