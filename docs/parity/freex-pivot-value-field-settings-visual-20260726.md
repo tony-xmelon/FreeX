@@ -1,0 +1,7 @@
+# Pivot Value Field Settings Visual Parity
+
+The Avalonia route in `src/FreeX.App.Avalonia/MainWindow.PivotFieldSettings.cs` now follows the WPF authority in `src/FreeX.App.Host/PivotValueFieldSettingsDialog.xaml` for the three tab states. Each tab content panel uses the WPF `Margin=10`, labels keep the explicit 6px bottom gap, the conditional text box stays 24px high, the dialog uses the WPF 430x430 window and 414x391 client metrics, and the shared classic tab chrome keeps the selected tab connected to the pane border. Route-owned control chrome forces square corners, compact heights, WPF colors, 12px typography, and the 78px/8px/12px action-row geometry. Automation IDs and behavior were left unchanged.
+
+Fresh single-surface evidence is preserved in `artifacts/parity/freex-pivot-value-visual-20260726/`: the manifest reports the default surface plus `SummarizeValuesBy`, `ShowValuesAs`, and `NumberFormat` as captured. Each PNG is 430x430 with the 414x391 client surface at the top-left, matching the WPF capture framing. Visual inspection against `docs/parity/dialog-visual-assets/wpf-capture/dialog.PivotValueFieldSettings*.png` confirms the inset, pane continuity, square compact controls, typography, and button row.
+
+Residuals are limited to normal cross-renderer glyph and native combo-arrow rasterization differences. The committed capture uses the default parity fixture; the conditional base-field controls are additionally guarded by the route source contract and strict 24px control tests.
