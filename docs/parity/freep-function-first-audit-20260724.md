@@ -162,6 +162,10 @@ is complete.
   hosts. The shared geometry builder consumes authored slant/depth values, the live adorner
   reduces pointer movement to one undoable adjustment command, and PPTX round-trip preserves
   the guide.
+- Shape Edit Points now also exposes the single native `adj` bar-inset guide for `cross` and
+  `plus` presets in both hosts. The shared geometry builder keeps the legacy 35% fallback when no
+  guide is authored, while the live adorner, undo command, and PPTX round-trip preserve edited bar
+  thickness.
 - The same shared guide path now covers `leftArrow`, `upArrow`, and `downArrow`, with direction-
   aware handle positions and pointer reduction while preserving each legacy no-guide outline.
 - Compound arrows now expose their native `adj1` shaft-thickness and `adj2` symmetric head-depth
