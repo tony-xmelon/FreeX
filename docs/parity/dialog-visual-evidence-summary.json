@@ -5524,7 +5524,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Sparkline.png",
-                                                "fileBytes":  8997,
+                                                "fileBytes":  8764,
                                                 "width":  380,
                                                 "height":  280,
                                                 "dpiX":  96,
@@ -5532,11 +5532,11 @@
                                                 "logicalWidth":  380,
                                                 "logicalHeight":  280,
                                                 "pixels":  106400,
-                                                "distinctColors":  140,
+                                                "distinctColors":  170,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.075197,
+                                                "nonBackgroundRatio":  0.21343,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  247.524763
+                                                "meanLuma":  243.65875
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -5551,10 +5551,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.054221,
-                                                  "lumaDelta":  0.016138,
-                                                  "nonBackgroundDelta":  0.116654,
-                                                  "triageScore":  0.187293,
+                                                  "sampleMeanDelta":  0.053716,
+                                                  "lumaDelta":  0.000977,
+                                                  "nonBackgroundDelta":  0.021579,
+                                                  "triageScore":  0.076551,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  380,
                                                   "expectedHeight":  280,
@@ -6026,14 +6026,6 @@
                                   "nonBackgroundDelta":  0.190918
                               },
                               {
-                                  "id":  "dialog.Sparkline",
-                                  "triageScore":  0.187293,
-                                  "sampleMeanDelta":  0.054221,
-                                  "dimension":  "380.053x280.039 vs 380x280 logical; 380x280 vs 380x280 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.116654
-                              },
-                              {
                                   "id":  "dialog.AllowEditRanges",
                                   "triageScore":  0.186577,
                                   "sampleMeanDelta":  0.039337,
@@ -6096,6 +6088,14 @@
                                   "dimension":  "380.02x420.022 vs 380x420 logical; 570x630 vs 380x420 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.083346
+                              },
+                              {
+                                  "id":  "dialog.PivotTableOptions.Data",
+                                  "triageScore":  0.124561,
+                                  "sampleMeanDelta":  0.035074,
+                                  "dimension":  "520.073x500.07 vs 520x500 logical; 520x500 vs 520x500 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.074431
                               }
                           ],
     "visualReviewCandidates":  [
