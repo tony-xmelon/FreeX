@@ -100,6 +100,10 @@ is complete.
   hosts: values, percentages, category names, series names, legend keys, placement, number format,
   and separator. The same undoable command creates or updates the `c:dLbls` payload and preserves
   it through PPTX round-trip.
+- Chart Series Options now exposes series-scoped data-label overrides in both hosts, including
+  value, percentage, category, series-name, and legend-key components plus position, number
+  format, and separator. The shared undo command preserves the override through `c:dLbls` while
+  disabling it restores chart-level label fallback.
 - Chart display options now also expose bar/column gap width (0-500%) and overlap (-100% to 100%)
   in both hosts. Blank values preserve automatic chart behavior; explicit values share one undoable
   command and round-trip through `c:gapWidth` and `c:overlap`.
@@ -183,6 +187,14 @@ The remaining gaps are depth and application compatibility, not missing ribbon I
   available.
 
 ## Process decision
+
+### 2026-07-26 series-scoped chart-label slice
+
+PowerPoint permits a selected series to override chart-level data labels. FreeP already parsed
+and wrote series `c:dLbls`, but the Series Options workflow could not author them. The bounded
+function slice extends the shared planner, undo command, WPF dialog, and Avalonia dialog without
+creating a second renderer or package path. Focused planner, command round-trip, and both-host
+dialog tests cover enable, edit, disable, and save/reopen behavior.
 
 ### 2026-07-25 bounded rich-edit slice
 
