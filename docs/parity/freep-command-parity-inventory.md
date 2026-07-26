@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 297 | 295 | 0 | 2 | 2 | 0 | 0 | 0 | 295 | 0 | 0 | 2 | 0 | 98 |
+| 298 | 296 | 0 | 2 | 2 | 0 | 0 | 0 | 296 | 0 | 0 | 2 | 0 | 98 |
 
 ## Workflow Evidence
 
@@ -239,6 +239,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.insert-curved-connector` | Curved Connector | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-elbow-connector` | Elbow Connector | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-link` | Hyperlink | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-basic-process` | Basic Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonButton) | insert/smartart-insert (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-table-2x2` | 2x2 | Yes | Yes | none | shared | insert/tables (RibbonButton) | insert/tables (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-table-3x3` | Table | Yes | Yes | none | shared | insert/tables (RibbonButton) | insert/tables (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-table-4x4` | 4x4 | Yes | Yes | none | shared | insert/tables (RibbonButton) | insert/tables (RibbonButton) | Available in both generated FreeP ribbon profiles. |
