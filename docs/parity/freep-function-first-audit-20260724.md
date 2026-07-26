@@ -96,10 +96,13 @@ is complete.
 - Chart authoring now also exposes a shared Data Table dialog in both hosts. It can show or hide
   the chart data table and edit horizontal, vertical, outline, and legend-key settings through one
   undoable command; existing `c:dTable` payloads and authored chart styling survive the update.
-- Chart display options now expose the full modeled chart-level data-label components in both
-  hosts: values, percentages, category names, series names, legend keys, placement, number format,
-  and separator. The same undoable command creates or updates the `c:dLbls` payload and preserves
-  it through PPTX round-trip.
+ - Chart display options now expose the full modeled chart-level data-label components in both
+   hosts: values, percentages, category names, series names, legend keys, placement, number format,
+   and separator. The same undoable command creates or updates the `c:dLbls` payload and preserves
+   it through PPTX round-trip.
+ - Chart display options now also expose chart-level data-label font family, size, color, bold, and
+   italic styling in both hosts. The same command preserves nullable inherited bold/italic state
+   through the existing chart text-properties payload and PPTX round-trip.
 - Chart Series Options now exposes series-scoped data-label overrides in both hosts, including
   value, percentage, category, series-name, and legend-key components plus position, number
   format, separator, font family, size, color, bold, and italic. The shared undo command preserves
@@ -202,7 +205,16 @@ PowerPoint permits a selected series to override chart-level data labels. FreeP 
 and wrote series `c:dLbls`, but the Series Options workflow could not author them. The bounded
 function slice extends the shared planner, undo command, WPF dialog, and Avalonia dialog without
 creating a second renderer or package path. Focused planner, command round-trip, and both-host
-dialog tests cover enable, edit, disable, and save/reopen behavior.
+ dialog tests cover enable, edit, disable, and save/reopen behavior.
+
+### 2026-07-26 chart-level data-label text slice
+
+PowerPoint permits chart-level data-label text styling alongside the label components. FreeP
+already parsed and wrote chart text properties, but the Chart Options workflow did not expose
+them. The bounded function slice extends the shared chart display planner, undo command, WPF
+dialog, and Avalonia dialog for font family, size, color, bold, and italic values. Focused planner,
+command round-trip, and both-host dialog tests cover edit and save/reopen behavior while preserving
+nullable inherited emphasis state.
 
 ### 2026-07-25 bounded rich-edit slice
 
