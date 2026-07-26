@@ -63,7 +63,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
 | dialog.PrintPreview | 1120x700 | 1120x700 | 1120x700 px @ 96 DPI vs 1120x700 px @ 96 DPI |  |  | 0.378 | 0.126 | 0.061 | 0.191 |
-| dialog.ConditionalFormatNewRule | 634x334 | 634x334 | 634x334 px @ 96 DPI vs 634x334 px @ 96 DPI |  |  | 0.176 | 0.053 | 0.014 | 0.109 |
 | dialog.Subtotal | 380x390 | 380x390 | 570x585 px @ 144 DPI vs 380x390 px @ 96 DPI |  |  | 0.166 | 0.032 | 0.015 | 0.119 |
 | dialog.FormatCells.Fill | 620x540 | 620x540 | 620x540 px @ 96 DPI vs 620x540 px @ 96 DPI |  |  | 0.159 | 0.031 | 0.038 | 0.090 |
 | dialog.Options.QuickAccessToolbar | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.139 | 0.021 | 0.018 | 0.101 |
@@ -72,6 +71,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.PivotTableOptions.Data | 520x500 | 520x500 | 520x500 px @ 96 DPI vs 520x500 px @ 96 DPI |  |  | 0.125 | 0.035 | 0.015 | 0.074 |
 | dialog.Options.Proofing | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.124 | 0.023 | 0.012 | 0.090 |
 | dialog.SelectionPane | 520x440 | 520x440 | 520x440 px @ 96 DPI vs 520x440 px @ 96 DPI |  |  | 0.122 | 0.019 | 0.006 | 0.097 |
+| dialog.Options.Advanced | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.122 | 0.031 | 0.008 | 0.083 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -97,7 +97,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.AutoFilter | dialog.AutoFilter.png | 312x436.689 | 468x655 px @ 144 DPI | True | dialog.AutoFilter.png | 312x437 | 312x437 px @ 96 DPI | True | True | 0.054 |
 | dialog.ChangeChartType | dialog.ChangeChartType.png | 640x390 | 960x585 px @ 144 DPI | True | dialog.ChangeChartType.png | 640x390 | 640x390 px @ 96 DPI | True | True | 0.070 |
 | dialog.ConditionalFormatManage | dialog.ConditionalFormatManage.png | 560x420 | 840x630 px @ 144 DPI | True | dialog.ConditionalFormatManage.png | 560x420 | 560x420 px @ 96 DPI | True | True | 0.074 |
-| dialog.ConditionalFormatNewRule | dialog.ConditionalFormatNewRule.png | 634x334 | 634x334 px @ 96 DPI | True | dialog.ConditionalFormatNewRule.png | 634x334 | 634x334 px @ 96 DPI | True | True | 0.176 |
+| dialog.ConditionalFormatNewRule | dialog.ConditionalFormatNewRule.png | 634.256x334 | 634x334 px @ 96 DPI | True | dialog.ConditionalFormatNewRule.png | 634x334 | 634x334 px @ 96 DPI | True | True | 0.046 |
 | dialog.Consolidate | dialog.Consolidate.png | 380x420 | 570x630 px @ 144 DPI | True | dialog.Consolidate.png | 380x420 | 380x420 px @ 96 DPI | True | True | 0.126 |
 | dialog.CreateTable | dialog.CreateTable.png | 360x190 | 540x285 px @ 144 DPI | True | dialog.CreateTable.png | 360x190 | 360x190 px @ 96 DPI | True | True | 0.086 |
 | dialog.CustomViews | dialog.CustomViews.png | 640x360 | 960x540 px @ 144 DPI | True | dialog.CustomViews.png | 640x360 | 640x360 px @ 96 DPI | True | True | 0.058 |

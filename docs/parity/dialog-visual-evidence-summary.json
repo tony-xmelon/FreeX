@@ -550,23 +550,23 @@
                                "routeFamily":  "dialog.ConditionalFormatNewRule",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ConditionalFormatNewRule.png",
-                                           "fileBytes":  13032,
+                                           "fileBytes":  14361,
                                            "width":  634,
                                            "height":  334,
-                                           "dpiX":  95.986595,
-                                           "dpiY":  95.986595,
-                                           "logicalWidth":  634.089,
-                                           "logicalHeight":  334.047,
+                                           "dpiX":  95.961197,
+                                           "dpiY":  95.961197,
+                                           "logicalWidth":  634.256,
+                                           "logicalHeight":  334.135,
                                            "pixels":  211756,
                                            "distinctColors":  200,
                                            "opaqueRatio":  1,
-                                           "nonBackgroundRatio":  0.20126,
+                                           "nonBackgroundRatio":  0.201581,
                                            "isNonBlank":  true,
-                                           "meanLuma":  243.687108
+                                           "meanLuma":  243.402695
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ConditionalFormatNewRule.png",
-                                                "fileBytes":  20807,
+                                                "fileBytes":  22385,
                                                 "width":  634,
                                                 "height":  334,
                                                 "dpiX":  96,
@@ -574,29 +574,29 @@
                                                 "logicalWidth":  634,
                                                 "logicalHeight":  334,
                                                 "pixels":  211756,
-                                                "distinctColors":  831,
+                                                "distinctColors":  916,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.092569,
+                                                "nonBackgroundRatio":  0.197222,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  247.298671
+                                                "meanLuma":  243.693424
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
-                                                  "widthDelta":  0.089,
-                                                  "heightDelta":  0.047,
+                                                  "widthDelta":  0.256,
+                                                  "heightDelta":  0.135,
                                                   "logicalDimensionMatch":  true,
-                                                  "logicalWidthDelta":  0.089,
-                                                  "logicalHeightDelta":  0.047,
+                                                  "logicalWidthDelta":  0.256,
+                                                  "logicalHeightDelta":  0.135,
                                                   "logicalDimensionTolerance":  0.5,
                                                   "rawPixelDimensionMatch":  true,
                                                   "rawPixelWidthDelta":  0,
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
-                                                  "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.052594,
-                                                  "lumaDelta":  0.014163,
-                                                  "nonBackgroundDelta":  0.108691,
-                                                  "triageScore":  0.175727,
+                                                  "dimensionDeltaRatio":  0.000808,
+                                                  "sampleMeanDelta":  0.03947,
+                                                  "lumaDelta":  0.00114,
+                                                  "nonBackgroundDelta":  0.004359,
+                                                  "triageScore":  0.045778,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  634,
                                                   "expectedHeight":  334,
@@ -6026,14 +6026,6 @@
                                   "nonBackgroundDelta":  0.190918
                               },
                               {
-                                  "id":  "dialog.ConditionalFormatNewRule",
-                                  "triageScore":  0.175727,
-                                  "sampleMeanDelta":  0.052594,
-                                  "dimension":  "634.089x334.047 vs 634x334 logical; 634x334 vs 634x334 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.108691
-                              },
-                              {
                                   "id":  "dialog.Subtotal",
                                   "triageScore":  0.165687,
                                   "sampleMeanDelta":  0.031544,
@@ -6096,6 +6088,14 @@
                                   "dimension":  "520.073x440.061 vs 520x440 logical; 520x440 vs 520x440 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.097059
+                              },
+                              {
+                                  "id":  "dialog.Options.Advanced",
+                                  "triageScore":  0.122002,
+                                  "sampleMeanDelta":  0.031044,
+                                  "dimension":  "744.104x521.073 vs 744x521 logical; 744x521 vs 744x521 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.082691
                               }
                           ],
     "visualReviewCandidates":  [
