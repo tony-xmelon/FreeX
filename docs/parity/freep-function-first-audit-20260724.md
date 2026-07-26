@@ -211,6 +211,15 @@ The remaining gaps are depth and application compatibility, not missing ribbon I
 
 ## Process decision
 
+### 2026-07-27 Cross/Plus authoring routes
+
+The shared geometry and Edit Points path already supported `Cross` and `PlusSign`, but the
+normal Insert Shape and Change Shape menus did not expose either preset. The bounded function
+slice adds both routes to the shared planner and both WPF/Avalonia command surfaces, with
+localization, ribbon-definition, insertion, change-shape, and host round-trip coverage. This
+keeps the function-first lane focused on reachable PowerPoint authoring rather than another
+renderer calibration.
+
 ### 2026-07-26 series-scoped chart-label slice
 
 PowerPoint permits a selected series to override chart-level data labels. FreeP already parsed
