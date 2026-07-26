@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 288 | 286 | 0 | 2 | 2 | 0 | 0 | 0 | 286 | 0 | 0 | 2 | 0 | 91 |
+| 289 | 287 | 0 | 2 | 2 | 0 | 0 | 0 | 287 | 0 | 0 | 2 | 0 | 91 |
 
 ## Workflow Evidence
 
@@ -282,6 +282,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.smartart.layout.basic-chevron-process` | Basic Chevron Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.basic-cycle` | Basic Cycle | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.basic-hierarchy` | Basic Hierarchy | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.basic-list` | [[Ribbon_Command_SmartArtBasicList_Label]] | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.basic-matrix` | Basic Matrix | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.basic-process` | Basic Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.basic-pyramid` | Basic Pyramid | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
