@@ -63,7 +63,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
 | dialog.PrintPreview | 1120x700 | 1120x700 | 1120x700 px @ 96 DPI vs 1120x700 px @ 96 DPI |  |  | 0.378 | 0.126 | 0.061 | 0.191 |
-| dialog.ShapeEffects | 380x190 | 380x190 | 570x285 px @ 144 DPI vs 380x190 px @ 96 DPI |  |  | 0.215 | 0.031 | 0.021 | 0.163 |
 | dialog.Sparkline | 380x280 | 380x280 | 380x280 px @ 96 DPI vs 380x280 px @ 96 DPI |  |  | 0.187 | 0.054 | 0.016 | 0.117 |
 | dialog.AllowEditRanges | 430x360 | 430x360 | 645x540 px @ 144 DPI vs 430x360 px @ 96 DPI |  |  | 0.187 | 0.039 | 0.002 | 0.145 |
 | dialog.FormatCells.Border | 620x597 | 620x597 | 620x597 px @ 96 DPI vs 620x597 px @ 96 DPI |  |  | 0.186 | 0.048 | 0.025 | 0.112 |
@@ -72,6 +71,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.FormatCells.Fill | 620x540 | 620x540 | 620x540 px @ 96 DPI vs 620x540 px @ 96 DPI |  |  | 0.159 | 0.031 | 0.038 | 0.090 |
 | dialog.Options.QuickAccessToolbar | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.139 | 0.021 | 0.018 | 0.101 |
 | dialog.PageSetup.HeaderFooter | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 96 DPI |  |  | 0.127 | 0.040 | 0.012 | 0.076 |
+| dialog.Consolidate | 380x420 | 380x420 | 570x630 px @ 144 DPI vs 380x420 px @ 96 DPI |  |  | 0.126 | 0.032 | 0.011 | 0.083 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -170,7 +170,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.ScenarioManager | dialog.ScenarioManager.png | 360x420 | 540x630 px @ 144 DPI | True | dialog.ScenarioManager.png | 360x420 | 360x420 px @ 96 DPI | True | True | 0.104 |
 | dialog.SelectDataSource | dialog.SelectDataSource.png | 620x500 | 930x750 px @ 144 DPI | True | dialog.SelectDataSource.png | 620x500 | 620x500 px @ 96 DPI | True | True | 0.075 |
 | dialog.SelectionPane | dialog.SelectionPane.png | 520x440 | 520x440 px @ 96 DPI | True | dialog.SelectionPane.png | 520x440 | 520x440 px @ 96 DPI | True | True | 0.122 |
-| dialog.ShapeEffects | dialog.ShapeEffects.png | 380x190 | 570x285 px @ 144 DPI | True | dialog.ShapeEffects.png | 380x190 | 380x190 px @ 96 DPI | True | True | 0.215 |
+| dialog.ShapeEffects | dialog.ShapeEffects.png | 380x190 | 570x285 px @ 144 DPI | True | dialog.ShapeEffects.png | 380x190 | 380x190 px @ 96 DPI | True | True | 0.032 |
 | dialog.ShapeGradient | dialog.ShapeGradient.png | 500x300 | 500x300 px @ 96 DPI | True | dialog.ShapeGradient.png | 500x300 | 500x300 px @ 96 DPI | True | True | 0.082 |
 | dialog.Sort | dialog.Sort.png | 760x500 | 760x500 px @ 96 DPI | True | dialog.Sort.png | 760x500 | 760x500 px @ 96 DPI | True | True | 0.042 |
 | dialog.SortOptions | dialog.SortOptions.png | 330x260 | 495x390 px @ 144 DPI | True | dialog.SortOptions.png | 330x260 | 330x260 px @ 96 DPI | True | True | 0.111 |
