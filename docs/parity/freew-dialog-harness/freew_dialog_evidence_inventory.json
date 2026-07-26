@@ -1,6 +1,6 @@
 {
   "schema": "freew.dialog-route-inventory.v1",
-  "generatedFromSha256": "d461e1ec1b2aa964b3791a23c3c0e7d02c70c1c84f91a1b41fbb090d76c9cdd4",
+  "generatedFromSha256": "d5b4496ca14ca5dda8197b8c0a926ab590630b592c0555c91a90c287f2488aa9",
   "scenarios": [
     {
       "id": "avalonia.about.initial",
@@ -336,6 +336,36 @@
       "id": "avalonia.cell-edit.validation-error",
       "host": "avalonia",
       "routeId": "cell-edit",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.cell-shading.initial",
+      "host": "avalonia",
+      "routeId": "cell-shading",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.cell-shading.populated",
+      "host": "avalonia",
+      "routeId": "cell-shading",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.cell-shading.validation-error",
+      "host": "avalonia",
+      "routeId": "cell-shading",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
