@@ -62,16 +62,16 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.PivotValueFieldSettings | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.399 | 0.163 | 0.125 | 0.111 |
-| dialog.PivotValueFieldSettings.SummarizeValuesBy | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.399 | 0.163 | 0.125 | 0.111 |
-| dialog.PivotValueFieldSettings.ShowValuesAs | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.399 | 0.163 | 0.125 | 0.110 |
-| dialog.PivotValueFieldSettings.NumberFormat | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.395 | 0.164 | 0.125 | 0.106 |
 | dialog.PrintPreview | 1120x700 | 1120x700 | 1120x700 px @ 96 DPI vs 1120x700 px @ 96 DPI |  |  | 0.378 | 0.126 | 0.061 | 0.191 |
 | dialog.PivotFieldFilter.SelectItems | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.364 | 0.172 | 0.115 | 0.078 |
 | dialog.PivotFieldFilter | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.364 | 0.172 | 0.115 | 0.077 |
 | dialog.PivotFieldFilter.LabelFilters | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.360 | 0.156 | 0.118 | 0.086 |
 | dialog.PivotFieldFilter.ValueFilters | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.360 | 0.155 | 0.118 | 0.087 |
 | dialog.FindReplace.Replace | 720x430 | 720x430 | 720x430 px @ 96 DPI vs 720x430 px @ 96 DPI |  |  | 0.352 | 0.031 | 0.020 | 0.302 |
+| dialog.SortOptions | 330x260 | 330x260 | 495x390 px @ 144 DPI vs 330x260 px @ 96 DPI |  |  | 0.237 | 0.047 | 0.028 | 0.162 |
+| dialog.ShapeEffects | 380x190 | 380x190 | 570x285 px @ 144 DPI vs 380x190 px @ 96 DPI |  |  | 0.215 | 0.031 | 0.021 | 0.163 |
+| dialog.Sparkline | 380x280 | 380x280 | 380x280 px @ 96 DPI vs 380x280 px @ 96 DPI |  |  | 0.187 | 0.054 | 0.016 | 0.117 |
+| dialog.AllowEditRanges | 430x360 | 430x360 | 645x540 px @ 144 DPI vs 430x360 px @ 96 DPI |  |  | 0.187 | 0.039 | 0.002 | 0.145 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -156,10 +156,10 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.PivotTableOptions.LayoutAndFormat | dialog.PivotTableOptions.LayoutAndFormat.png | 520x676 | 520x676 px @ 96 DPI | True | dialog.PivotTableOptions.LayoutAndFormat.png | 520x676 | 520x676 px @ 96 DPI | True | True | 0.093 |
 | dialog.PivotTableOptions.Printing | dialog.PivotTableOptions.Printing.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.Printing.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.060 |
 | dialog.PivotTableOptions.TotalsAndFilters | dialog.PivotTableOptions.TotalsAndFilters.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.TotalsAndFilters.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.080 |
-| dialog.PivotValueFieldSettings | dialog.PivotValueFieldSettings.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.399 |
-| dialog.PivotValueFieldSettings.NumberFormat | dialog.PivotValueFieldSettings.NumberFormat.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.NumberFormat.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.395 |
-| dialog.PivotValueFieldSettings.ShowValuesAs | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.399 |
-| dialog.PivotValueFieldSettings.SummarizeValuesBy | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.399 |
+| dialog.PivotValueFieldSettings | dialog.PivotValueFieldSettings.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.030 |
+| dialog.PivotValueFieldSettings.NumberFormat | dialog.PivotValueFieldSettings.NumberFormat.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.NumberFormat.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.034 |
+| dialog.PivotValueFieldSettings.ShowValuesAs | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.032 |
+| dialog.PivotValueFieldSettings.SummarizeValuesBy | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.030 |
 | dialog.PrintPreview | dialog.PrintPreview.png | 1120x700 | 1120x700 px @ 96 DPI | True | dialog.PrintPreview.png | 1120x700 | 1120x700 px @ 96 DPI | True | True | 0.378 |
 | dialog.ProtectSheet | dialog.ProtectSheet.png | 430x540 | 645x810 px @ 144 DPI | True | dialog.ProtectSheet.png | 430x540 | 430x540 px @ 96 DPI | True | True | 0.045 |
 | dialog.ProtectWorkbook | dialog.ProtectWorkbook.png | 380x250 | 380x250 px @ 96 DPI | True | dialog.ProtectWorkbook.png | 380x250 | 380x250 px @ 96 DPI | True | True | 0.042 |
