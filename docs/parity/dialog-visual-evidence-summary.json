@@ -5688,7 +5688,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Subtotal.png",
-                                                "fileBytes":  16525,
+                                                "fileBytes":  18275,
                                                 "width":  380,
                                                 "height":  390,
                                                 "dpiX":  96,
@@ -5696,11 +5696,17 @@
                                                 "logicalWidth":  380,
                                                 "logicalHeight":  390,
                                                 "pixels":  148200,
-                                                "distinctColors":  1077,
+                                                "distinctColors":  1612,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.05637,
+                                                "nonBackgroundRatio":  0.173839,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  248.79024
+                                                "meanLuma":  246.463823,
+                                                "manifestNote":  "Fresh Avalonia FreeX --parity-capture --parity-capture-surface dialog.Subtotal in Linux Docker/Xvfb on 2026-07-27 using the shared SubtotalParityFixture; canonical 380x390 PNG at 96 DPI with shared Windows dialog chrome and Subtotal-specific 22px metrics.",
+                                                "evidenceSource":  "fresh-direct-avalonia-parity-capture",
+                                                "sourcePng":  null,
+                                                "recaptureStatus":  "fresh-linux-docker-focused-capture-subtotal-shared-windows-chrome-2026-07-27",
+                                                "expectedWidth":  380,
+                                                "expectedHeight":  390
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -5715,10 +5721,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.025923,
-                                                  "lumaDelta":  0.010912,
-                                                  "nonBackgroundDelta":  0.104791,
-                                                  "triageScore":  0.141905,
+                                                  "sampleMeanDelta":  0.022875,
+                                                  "lumaDelta":  0.001788,
+                                                  "nonBackgroundDelta":  0.012679,
+                                                  "triageScore":  0.037621,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6126,14 +6132,6 @@
                                   "nonBackgroundDelta":  0.12863
                               },
                               {
-                                  "id":  "dialog.Subtotal",
-                                  "triageScore":  0.141905,
-                                  "sampleMeanDelta":  0.025923,
-                                  "dimension":  "380.053x390.054 vs 380x390 logical; 380x390 vs 380x390 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.104791
-                              },
-                              {
                                   "id":  "dialog.Options.QuickAccessToolbar",
                                   "triageScore":  0.132476,
                                   "sampleMeanDelta":  0.026894,
@@ -6191,6 +6189,14 @@
                               },
                               {
                                   "id":  "dialog.Options",
+                                  "triageScore":  0.111494,
+                                  "sampleMeanDelta":  0.026078,
+                                  "dimension":  "744.104x521.073 vs 744x521 logical; 744x521 vs 744x521 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.077689
+                              },
+                              {
+                                  "id":  "dialog.Options.General",
                                   "triageScore":  0.111494,
                                   "sampleMeanDelta":  0.026078,
                                   "dimension":  "744.104x521.073 vs 744x521 logical; 744x521 vs 744x521 px",
