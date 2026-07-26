@@ -1526,7 +1526,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.Border.png",
-                                                "fileBytes":  31911,
+                                                "fileBytes":  31470,
                                                 "width":  620,
                                                 "height":  597,
                                                 "dpiX":  96,
@@ -1534,11 +1534,11 @@
                                                 "logicalWidth":  620,
                                                 "logicalHeight":  597,
                                                 "pixels":  370140,
-                                                "distinctColors":  1414,
+                                                "distinctColors":  1150,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.104115,
+                                                "nonBackgroundRatio":  0.156781,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  248.023329
+                                                "meanLuma":  242.276698
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -1553,10 +1553,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.048498,
-                                                  "lumaDelta":  0.025104,
-                                                  "nonBackgroundDelta":  0.112376,
-                                                  "triageScore":  0.186258,
+                                                  "sampleMeanDelta":  0.036424,
+                                                  "lumaDelta":  0.002568,
+                                                  "nonBackgroundDelta":  0.05971,
+                                                  "triageScore":  0.098981,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6026,14 +6026,6 @@
                                   "nonBackgroundDelta":  0.190918
                               },
                               {
-                                  "id":  "dialog.FormatCells.Border",
-                                  "triageScore":  0.186258,
-                                  "sampleMeanDelta":  0.048498,
-                                  "dimension":  "620.087x597.083 vs 620x597 logical; 620x597 vs 620x597 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.112376
-                              },
-                              {
                                   "id":  "dialog.ConditionalFormatNewRule",
                                   "triageScore":  0.175727,
                                   "sampleMeanDelta":  0.052594,
@@ -6096,6 +6088,14 @@
                                   "dimension":  "744.104x521.073 vs 744x521 logical; 744x521 vs 744x521 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.089543
+                              },
+                              {
+                                  "id":  "dialog.SelectionPane",
+                                  "triageScore":  0.122207,
+                                  "sampleMeanDelta":  0.019126,
+                                  "dimension":  "520.073x440.061 vs 520x440 logical; 520x440 vs 520x440 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.097059
                               }
                           ],
     "visualReviewCandidates":  [
