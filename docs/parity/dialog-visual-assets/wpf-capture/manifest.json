@@ -161,7 +161,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.PageSetup.HeaderFooter.png",
                          "captured":  true,
-                         "note":  "Promoted from FREEX_PAGE_LAYOUT_SETUP_TOUR page-setup-dialog-header-footer-tab capture"
+                         "note":  "Fresh same-state capture after shared ParityDemoWorkbookFactory seeding; 600x560 client-frame capture"
                      },
                      {
                          "id":  "dialog.PageSetup.Sheet",
@@ -169,6 +169,13 @@
                          "png":  "dialog.PageSetup.Sheet.png",
                          "captured":  true,
                          "note":  "Refreshed from FREEX_PAGE_LAYOUT_SETUP_TOUR page-setup-dialog-sheet-tab-print-titles capture"
+                     },
+                     {
+                         "id":  "dialog.HeaderFooterDialog",
+                         "kind":  "dialog",
+                         "png":  "dialog.HeaderFooterDialog.png",
+                         "captured":  true,
+                         "note":  "Fresh same-state WPF dedicated Header/Footer editor capture; 760x600 at 96 DPI"
                      },
                      {
                          "id":  "dialog.PrintPreview",

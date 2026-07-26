@@ -25,9 +25,9 @@ Sources:
 
 | Metric | Count |
 | --- | ---: |
-| WPF captured manifest surfaces with committed PNGs | 93 |
-| Avalonia captured manifest surfaces with committed PNGs | 93 |
-| Paired captured surface ids | 93 |
+| WPF captured manifest surfaces with committed PNGs | 94 |
+| Avalonia captured manifest surfaces with committed PNGs | 94 |
+| Paired captured surface ids | 94 |
 | WPF manifest ids without Avalonia pair | 0 |
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
@@ -65,13 +65,13 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.PrintPreview | 1120x700 | 1120x700 | 1120x700 px @ 96 DPI vs 1120x700 px @ 96 DPI |  |  | 0.171 | 0.036 | 0.001 | 0.133 |
 | dialog.Subtotal | 380x390 | 380x390 | 380x390 px @ 96 DPI vs 380x390 px @ 96 DPI |  |  | 0.142 | 0.026 | 0.011 | 0.105 |
 | dialog.Options.QuickAccessToolbar | 744.301x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.132 | 0.027 | 0.004 | 0.100 |
-| dialog.PageSetup.HeaderFooter | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 96 DPI |  |  | 0.127 | 0.040 | 0.012 | 0.076 |
 | dialog.Consolidate | 380x420 | 380x420 | 570x630 px @ 144 DPI vs 380x420 px @ 96 DPI |  |  | 0.126 | 0.032 | 0.011 | 0.083 |
 | dialog.PivotTableOptions.Data | 520x500 | 520x500 | 520x500 px @ 96 DPI vs 520x500 px @ 96 DPI |  |  | 0.125 | 0.035 | 0.015 | 0.074 |
 | dialog.SelectionPane | 520x440 | 520x440 | 520x440 px @ 96 DPI vs 520x440 px @ 96 DPI |  |  | 0.122 | 0.019 | 0.006 | 0.097 |
 | dialog.Options.Advanced | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.122 | 0.031 | 0.008 | 0.083 |
 | dialog.Options.Proofing | 744.301x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.119 | 0.026 | 0.004 | 0.088 |
 | dialog.PageSetup.Sheet | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 96 DPI |  |  | 0.117 | 0.035 | 0.008 | 0.073 |
+| dialog.PivotTableOptions.Display | 520x500 | 520x500 | 520x500 px @ 96 DPI vs 520x500 px @ 96 DPI |  |  | 0.116 | 0.037 | 0.014 | 0.065 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -122,6 +122,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.GoalSeekStatus | dialog.GoalSeekStatus.png | 380x190 | 380x190 px @ 96 DPI | True | dialog.GoalSeekStatus.png | 380x190 | 380x190 px @ 96 DPI | True | True | 0.089 |
 | dialog.GoTo | dialog.GoTo.png | 420x320 | 630x480 px @ 144 DPI | True | dialog.GoTo.png | 420x320 | 420x320 px @ 96 DPI | True | True | 0.110 |
 | dialog.GoToSpecial | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | True | 0.034 |
+| dialog.HeaderFooterDialog | dialog.HeaderFooterDialog.png | 760x600 | 760x600 px @ 96 DPI | True | dialog.HeaderFooterDialog.png | 760x600 | 760x600 px @ 96 DPI | True | True | 0.034 |
 | dialog.InsertHyperlink | dialog.InsertHyperlink.png | 560x300 | 840x450 px @ 144 DPI | True | dialog.InsertHyperlink.png | 560x300 | 560x300 px @ 96 DPI | True | True | 0.095 |
 | dialog.InsertSlicer | dialog.InsertSlicer.png | 410x270 | 615x405 px @ 144 DPI | True | dialog.InsertSlicer.png | 410x270 | 410x270 px @ 96 DPI | True | True | 0.046 |
 | dialog.InsertTimeline | dialog.InsertTimeline.png | 410x270 | 615x405 px @ 144 DPI | True | dialog.InsertTimeline.png | 410x270 | 410x270 px @ 96 DPI | True | True | 0.040 |
@@ -141,7 +142,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.Options.TrustCenter | dialog.Options.TrustCenter.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.TrustCenter.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.101 |
 | dialog.Options.View | dialog.Options.View.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.View.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.099 |
 | dialog.PageSetup | dialog.PageSetup.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.091 |
-| dialog.PageSetup.HeaderFooter | dialog.PageSetup.HeaderFooter.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.HeaderFooter.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.127 |
+| dialog.PageSetup.HeaderFooter | dialog.PageSetup.HeaderFooter.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.HeaderFooter.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.043 |
 | dialog.PageSetup.Margins | dialog.PageSetup.Margins.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Margins.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.041 |
 | dialog.PageSetup.Page | dialog.PageSetup.Page.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Page.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.091 |
 | dialog.PageSetup.Sheet | dialog.PageSetup.Sheet.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Sheet.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.117 |

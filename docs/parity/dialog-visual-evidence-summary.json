@@ -12,9 +12,9 @@
                     "avaloniaCaptureEvidence":  57,
                     "avaloniaHarnessRoutes":  57,
                     "sharedOrPresentationBackedRoutes":  57,
-                    "wpfCapturedManifestSurfaces":  93,
-                    "avaloniaCapturedManifestSurfaces":  93,
-                    "pairedCapturedSurfaceIds":  93,
+                    "wpfCapturedManifestSurfaces":  94,
+                    "avaloniaCapturedManifestSurfaces":  94,
+                    "pairedCapturedSurfaceIds":  94,
                     "wpfManifestIdsWithoutAvaloniaPair":  0,
                     "additionalAvaloniaCapturedSurfaceIds":  0,
                     "nonBlankPngFailures":  0,
@@ -2170,6 +2170,70 @@
                                               }
                            },
                            {
+                               "id":  "dialog.HeaderFooterDialog",
+                               "routeFamily":  "dialog.HeaderFooterDialog",
+                               "wpf":  {
+                                           "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.HeaderFooterDialog.png",
+                                           "fileBytes":  23570,
+                                           "width":  760,
+                                           "height":  600,
+                                           "dpiX":  95.986595,
+                                           "dpiY":  95.986595,
+                                           "logicalWidth":  760.106,
+                                           "logicalHeight":  600.084,
+                                           "pixels":  456000,
+                                           "distinctColors":  270,
+                                           "opaqueRatio":  1,
+                                           "nonBackgroundRatio":  0.107066,
+                                           "isNonBlank":  true,
+                                           "meanLuma":  248.408623
+                                       },
+                               "avalonia":  {
+                                                "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.HeaderFooterDialog.png",
+                                                "fileBytes":  31993,
+                                                "width":  760,
+                                                "height":  600,
+                                                "dpiX":  96,
+                                                "dpiY":  96,
+                                                "logicalWidth":  760,
+                                                "logicalHeight":  600,
+                                                "pixels":  456000,
+                                                "distinctColors":  2485,
+                                                "opaqueRatio":  1,
+                                                "nonBackgroundRatio":  0.120844,
+                                                "isNonBlank":  true,
+                                                "meanLuma":  247.549533
+                                            },
+                               "comparison":  {
+                                                  "dimensionMatch":  true,
+                                                  "widthDelta":  0.106,
+                                                  "heightDelta":  0.084,
+                                                  "logicalDimensionMatch":  true,
+                                                  "logicalWidthDelta":  0.106,
+                                                  "logicalHeightDelta":  0.084,
+                                                  "logicalDimensionTolerance":  0.5,
+                                                  "rawPixelDimensionMatch":  true,
+                                                  "rawPixelWidthDelta":  0,
+                                                  "rawPixelHeightDelta":  0,
+                                                  "captureScaleNormalizedDimensionMatch":  false,
+                                                  "dimensionDeltaRatio":  0.000279,
+                                                  "sampleMeanDelta":  0.016801,
+                                                  "lumaDelta":  0.003369,
+                                                  "nonBackgroundDelta":  0.013779,
+                                                  "triageScore":  0.034227,
+                                                  "expectedSizeMismatch":  false,
+                                                  "expectedWidth":  null,
+                                                  "expectedHeight":  null,
+                                                  "expectedSizeSource":  null,
+                                                  "wpfExpectedSizeMatch":  true,
+                                                  "avaloniaExpectedSizeMatch":  true,
+                                                  "dimensionMismatchBucket":  null,
+                                                  "dimensionMismatchReason":  null,
+                                                  "dimensionMismatchNextAction":  null,
+                                                  "policyAcceptance":  null
+                                              }
+                           },
+                           {
                                "id":  "dialog.InsertHyperlink",
                                "routeFamily":  "dialog.InsertHyperlink",
                                "wpf":  {
@@ -3414,7 +3478,7 @@
                                "routeFamily":  "dialog.PageSetup",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PageSetup.HeaderFooter.png",
-                                           "fileBytes":  27278,
+                                           "fileBytes":  23073,
                                            "width":  600,
                                            "height":  560,
                                            "dpiX":  95.986595,
@@ -3422,15 +3486,15 @@
                                            "logicalWidth":  600.084,
                                            "logicalHeight":  560.078,
                                            "pixels":  336000,
-                                           "distinctColors":  376,
+                                           "distinctColors":  253,
                                            "opaqueRatio":  1,
-                                           "nonBackgroundRatio":  0.138464,
+                                           "nonBackgroundRatio":  0.125735,
                                            "isNonBlank":  true,
-                                           "meanLuma":  247.278984
+                                           "meanLuma":  247.656657
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PageSetup.HeaderFooter.png",
-                                                "fileBytes":  18766,
+                                                "fileBytes":  30725,
                                                 "width":  600,
                                                 "height":  560,
                                                 "dpiX":  96,
@@ -3438,11 +3502,11 @@
                                                 "logicalWidth":  600,
                                                 "logicalHeight":  560,
                                                 "pixels":  336000,
-                                                "distinctColors":  727,
+                                                "distinctColors":  2298,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.062795,
+                                                "nonBackgroundRatio":  0.152286,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  250.302246
+                                                "meanLuma":  247.624372
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -3457,10 +3521,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.039639,
-                                                  "lumaDelta":  0.011856,
-                                                  "nonBackgroundDelta":  0.07567,
-                                                  "triageScore":  0.127444,
+                                                  "sampleMeanDelta":  0.016004,
+                                                  "lumaDelta":  0.000127,
+                                                  "nonBackgroundDelta":  0.026551,
+                                                  "triageScore":  0.042961,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6078,14 +6142,6 @@
                                   "nonBackgroundDelta":  0.100334
                               },
                               {
-                                  "id":  "dialog.PageSetup.HeaderFooter",
-                                  "triageScore":  0.127444,
-                                  "sampleMeanDelta":  0.039639,
-                                  "dimension":  "600.084x560.078 vs 600x560 logical; 600x560 vs 600x560 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.07567
-                              },
-                              {
                                   "id":  "dialog.Consolidate",
                                   "triageScore":  0.126075,
                                   "sampleMeanDelta":  0.031875,
@@ -6132,6 +6188,14 @@
                                   "dimension":  "600.084x560.078 vs 600x560 logical; 600x560 vs 600x560 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.073095
+                              },
+                              {
+                                  "id":  "dialog.PivotTableOptions.Display",
+                                  "triageScore":  0.116482,
+                                  "sampleMeanDelta":  0.037235,
+                                  "dimension":  "520.073x500.07 vs 520x500 logical; 520x500 vs 520x500 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.065092
                               }
                           ],
     "visualReviewCandidates":  [

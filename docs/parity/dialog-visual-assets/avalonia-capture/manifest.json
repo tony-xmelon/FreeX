@@ -151,6 +151,13 @@
                          "note":  ""
                      },
                      {
+                         "id":  "dialog.HeaderFooterDialog",
+                         "kind":  "dialog",
+                         "png":  "dialog.HeaderFooterDialog.png",
+                         "captured":  true,
+                         "note":  "Fresh same-state Linux dedicated Header/Footer editor capture from self-contained linux-x64 publish; 760x600 at 96 DPI"
+                     },
+                     {
                          "id":  "dialog.FindReplace",
                          "kind":  "dialog",
                          "png":  "dialog.FindReplace.png",
