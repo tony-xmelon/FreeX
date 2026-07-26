@@ -182,7 +182,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.PrintPreview.png",
                          "captured":  true,
-                         "note":  "Fresh current-source WPF capture on 2026-07-26 via FreeX.App.Host --parity-capture full route; the focused selector is unsupported for dialog.PrintPreview. Captured PrintPreviewParityFixture with FreeX Parity Printer at 1120x700 px and 95.9866 DPI."
+                          "note":  "Fresh current-source WPF capture on 2026-07-27 via FreeX.App.Host --parity-capture full route; the focused selector is unsupported for dialog.PrintPreview. Captured PrintPreviewParityFixture with FreeX Parity Printer at 1120x700 px."
                      },
                      {
                          "id":  "dialog.FormatCells",
