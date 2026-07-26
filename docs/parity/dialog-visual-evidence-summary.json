@@ -27,7 +27,7 @@
                     "visualReviewTriageThreshold":  0.4,
                     "visualReviewTriageThresholdRationale":  "This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.",
                     "visualReviewCandidateCount":  0,
-                    "highestTriageScore":  0.378454,
+                    "highestTriageScore":  0.170675,
                     "dimensionMismatchBuckets":  {
 
                                                  }
@@ -4606,7 +4606,7 @@
                                "routeFamily":  "dialog.PrintPreview",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.PrintPreview.png",
-                                           "fileBytes":  58299,
+                                           "fileBytes":  57998,
                                            "width":  1120,
                                            "height":  700,
                                            "dpiX":  95.986595,
@@ -4614,11 +4614,11 @@
                                            "logicalWidth":  1120.156,
                                            "logicalHeight":  700.098,
                                            "pixels":  784000,
-                                           "distinctColors":  1100,
-                                           "opaqueRatio":  0.930796,
-                                           "nonBackgroundRatio":  0.373029,
+                                           "distinctColors":  1048,
+                                           "opaqueRatio":  1,
+                                           "nonBackgroundRatio":  0.43061,
                                            "isNonBlank":  true,
-                                           "meanLuma":  228.847886
+                                           "meanLuma":  244.281875
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PrintPreview.png",
@@ -4649,10 +4649,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.125941,
-                                                  "lumaDelta":  0.061316,
-                                                  "nonBackgroundDelta":  0.190918,
-                                                  "triageScore":  0.378454,
+                                                  "sampleMeanDelta":  0.036268,
+                                                  "lumaDelta":  0.00079,
+                                                  "nonBackgroundDelta":  0.133338,
+                                                  "triageScore":  0.170675,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6019,11 +6019,11 @@
     "topPairedOutliers":  [
                               {
                                   "id":  "dialog.PrintPreview",
-                                  "triageScore":  0.378454,
-                                  "sampleMeanDelta":  0.125941,
+                                  "triageScore":  0.170675,
+                                  "sampleMeanDelta":  0.036268,
                                   "dimension":  "1120.156x700.098 vs 1120x700 logical; 1120x700 vs 1120x700 px",
                                   "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.190918
+                                  "nonBackgroundDelta":  0.133338
                               },
                               {
                                   "id":  "dialog.Subtotal",
