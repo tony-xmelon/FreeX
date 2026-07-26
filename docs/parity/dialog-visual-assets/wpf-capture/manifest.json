@@ -411,7 +411,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.AllowEditRanges.png",
                          "captured":  true,
-                         "note":  "Promoted from FREEX_REVIEW_COMMENTS_PROTECTION_TOUR allow-edit-ranges dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                         "note":  "Fresh current-source full FreeX.App.Host --parity-capture on 2026-07-26; focused target lane excludes dialog.AllowEditRanges. Fixture uses existing A1:E5 and editor default Sheet1!$B$2:$D$5; 430x420 nonblank PNG."
                      },
                      {
                          "id":  "dialog.AutoFilter",
