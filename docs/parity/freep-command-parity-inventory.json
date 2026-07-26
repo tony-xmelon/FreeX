@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 2,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 94
+    "workflowEvidenceRows": 95
   },
   "workflowEvidence": [
     {
@@ -375,6 +375,27 @@
         "freep/FreeP.App.Host.Tests/ChartTests.cs"
       ],
       "remainingWork": "Bar and column c:gapWidth/c:overlap now round-trip through the model/package and drive shared primitive and data-label spacing for WPF/Avalonia. PowerPoint-authoritative chart visual baselines, 3-D bar/column spacing, and broader type-specific visual fidelity remain deferred."
+    },
+    {
+      "evidenceId": "freep.chart.series-data-labels",
+      "area": "Chart per-series data-label authoring",
+      "status": "shared-model-and-host-evidence",
+      "hostCoverage": "WPF/Avalonia consume one shared ChartSeriesOptions planner and undo command for series-scoped c:dLbls; no renderer-local chart-label policy",
+      "evidenceDocs": [
+        "docs/parity/freep-chart-series-data-labels-20260726.md"
+      ],
+      "verification": [
+        "freep/FreeP.Core.Model/ChartSeriesOptions.cs",
+        "freep/FreeP.Core.Model/PresentationCommands.ChartSeriesOptions.cs",
+        "freep/FreeP.App.Presentation/ChartSeriesOptionsPlanner.cs",
+        "freep/FreeP.Core.IO/PptxChartReader.cs",
+        "freep/FreeP.Core.IO/PptxChartWriter.cs",
+        "freep/FreeP.App.Presentation.Tests/ChartDataDialogPlannerTests.cs",
+        "freep/FreeP.App.Presentation.Tests/ChartDataCommandTests.cs",
+        "freep/FreeP.App.Host.Tests/ChartDataDialogTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
+      ],
+      "remainingWork": "Series-scoped value, percentage, category, series-name, legend-key, position, format, and separator controls now round-trip through c:dLbls and one undoable edit in both hosts. Per-point label overrides, full PowerPoint label text styling, and PowerPoint-authoritative chart visual baselines remain deferred."
     },
     {
       "evidenceId": "freep.chart.bubble-sizing-semantics",
