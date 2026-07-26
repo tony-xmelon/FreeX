@@ -104,6 +104,10 @@ is complete.
   value, percentage, category, series-name, and legend-key components plus position, number
   format, and separator. The shared undo command preserves the override through `c:dLbls` while
   disabling it restores chart-level label fallback.
+- Chart Point Options now exposes selected-point data-label overrides in both hosts, including
+  value, percentage, category, series-name, and legend-key components plus position, number
+  format, separator, and the native delete token. The shared point-style command preserves each
+  override as a `c:dLbl` entry and undo removes it without disturbing other point formatting.
 - Chart display options now also expose bar/column gap width (0-500%) and overlap (-100% to 100%)
   in both hosts. Blank values preserve automatic chart behavior; explicit values share one undoable
   command and round-trip through `c:gapWidth` and `c:overlap`.
