@@ -115,6 +115,10 @@ is complete.
 - Point data-label authoring now also exposes the modeled font family, size, bold, italic, and
   color fields in both hosts, preserving nullable inherited bold/italic state through PPTX
   round-trip. PowerPoint-authoritative chart raster baselines remain a separate visual gate.
+- Chart, Series, and Point Options now expose bubble-size data labels in both hosts. The shared
+  model, `c:showBubbleSize` reader/writer, undo paths, and chart renderer preserve and format
+  the corresponding bubble datum; PowerPoint-authoritative bubble-label raster baselines remain
+  deferred.
 - Chart display options now also expose bar/column gap width (0-500%) and overlap (-100% to 100%)
   in both hosts. Blank values preserve automatic chart behavior; explicit values share one undoable
   command and round-trip through `c:gapWidth` and `c:overlap`.
