@@ -11,7 +11,7 @@ The workflow uses one working-copy planner and one undoable command. Each host d
 
 ## Verification
 
-- Presentation planner, command, PPTX round-trip, and undo: 2/2 focused tests.
+- Presentation planner, command, Scatter/Radar PPTX round-trip, and undo: 3/3 focused tests.
 - WPF dialog and command-routing contracts: 2/2 focused tests.
 - Avalonia dialog commit: 1/1 focused test.
 - Affected Release project builds: 0 warnings, 0 errors.
