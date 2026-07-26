@@ -26,6 +26,25 @@ The host lifecycle correction is in `freew/FreeW.App.Avalonia/MainWindow.cs`: Pa
 prior continuous view, enters PrintLayout, and restores that view on exit. The shared `DocumentView`
 already performs the page layout, hit-testing, model mutation, reflow, and header/footer rendering.
 
+## Linux interactive evidence
+
+The production Linux harness was exercised at 1280x820 and 96 DPI using real X11 pointer clicks
+on the visible `View` ribbon. No test-only hooks were used. The retained session is
+`artifacts/linux-interactive-page-edit/freew/sessions/20260726T080442063Z/` and contains:
+
+- `initial-real-ui.png`: the running FreeW desktop and live editor;
+- `view-tab-real-ui.png`: the visible View ribbon with the Page Edit command;
+- `page-edit-real-ui.png`: Page Edit entered through the ribbon;
+- `web-layout-real-ui.png`: Web Layout selected through the same ribbon;
+- `page-edit-from-web-ui.png`: Page Edit entered from Web Layout;
+- `page-edit-restored-web-ui.png`: Page Edit exited and Web Layout restored.
+
+The harness demo document contains one page, so this physical pass proves the real command route,
+checked-state transitions, and restoration of Web Layout, but not multi-page pagination by sight.
+The focused headless tests above use an 80-paragraph document to cover page count, later-page caret
+routing, reflow, and undo/redo; the physical multi-page visual route remains bounded by the harness
+fixture rather than being inferred from a test-only control.
+
 ## Bounded residuals
 
 The WPF panel-specific implementation details are intentionally not ported: separate WPF `PageBox`
