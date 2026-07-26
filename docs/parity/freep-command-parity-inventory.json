@@ -4,20 +4,20 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 296,
-    "both": 294,
+    "totalCommands": 297,
+    "both": 295,
     "wpfOnly": 0,
     "avaloniaOnly": 2,
     "missingWpf": 2,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 294,
+    "shared": 295,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 2,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 91
+    "workflowEvidenceRows": 94
   },
   "workflowEvidence": [
     {
@@ -1029,6 +1029,51 @@
         "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
       ],
       "remainingWork": "basicProcess now uses the bounded shared process live-layout path for parsed nodes while other unsupported process variants still fall back to cached drawing. Broader SmartArt geometry families, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.basic-timeline",
+      "area": "SmartArt basic timeline live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume ordinary shared slide shape and connector ops emitted by the SmartArt timeline layout planner; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/freep-smartart-basic-timeline-20260726.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
+      ],
+      "remainingWork": "basicTimeline now has a shared editable rail, alternating timeline nodes, and deterministic stems while PowerPoint-authoritative artwork metrics and broader SmartArt authoring remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.step-down-process",
+      "area": "SmartArt step down process live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume ordinary shared slide shape and connector ops emitted by the SmartArt process-family planner; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/freep-smartart-step-down-process-20260726.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
+      ],
+      "remainingWork": "StepDownProcess now has a shared ordered staggered-box editing path while PowerPoint-authoritative geometry, broader SmartArt authoring, and pixel-level parity remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.basic-radial",
+      "area": "SmartArt basic radial live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume ordinary shared slide shape and connector ops emitted by the SmartArt radial layout planner; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/freep-smartart-basic-radial-20260726.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
+      ],
+      "remainingWork": "radial1 now has a shared hub-and-spoke editing path while PowerPoint-authoritative geometry, broader SmartArt authoring, and pixel-level parity remain deferred."
     },
     {
       "evidenceId": "freep.smartart.segmented-process",
@@ -7689,6 +7734,40 @@
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Basic Pyramid",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.layout.basic-radial",
+      "label": "Basic Radial",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Basic Radial",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Basic Radial",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
