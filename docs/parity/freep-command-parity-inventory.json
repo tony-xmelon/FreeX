@@ -395,7 +395,7 @@
         "freep/FreeP.App.Host.Tests/ChartDataDialogTests.cs",
         "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
       ],
-      "remainingWork": "Series-scoped value, percentage, category, series-name, legend-key, position, format, and separator controls now round-trip through c:dLbls and one undoable edit in both hosts. Per-point label text styling, full PowerPoint label text styling, and PowerPoint-authoritative chart visual baselines remain deferred."
+      "remainingWork": "Series-scoped value, percentage, category, series-name, legend-key, position, format, separator, and font styling controls now round-trip through c:dLbls and one undoable edit in both hosts. PowerPoint-authoritative chart visual baselines remain deferred."
     },
     {
       "evidenceId": "freep.chart.point-data-labels",

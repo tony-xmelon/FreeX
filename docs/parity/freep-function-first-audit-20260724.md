@@ -102,8 +102,9 @@ is complete.
   it through PPTX round-trip.
 - Chart Series Options now exposes series-scoped data-label overrides in both hosts, including
   value, percentage, category, series-name, and legend-key components plus position, number
-  format, and separator. The shared undo command preserves the override through `c:dLbls` while
-  disabling it restores chart-level label fallback.
+  format, separator, font family, size, color, bold, and italic. The shared undo command preserves
+  the override through `c:dLbls` while disabling it restores chart-level label fallback; nullable
+  bold/italic values retain inherited state.
 - Chart Point Options now exposes selected-point data-label overrides in both hosts, including
   value, percentage, category, series-name, and legend-key components plus position, number
   format, separator, and the native delete token. The shared point-style command preserves each
