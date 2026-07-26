@@ -32,8 +32,8 @@ Sources:
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
 | Paired dimension mismatches (scale-aware logical units) | 0 |
-| Raw PNG pixel dimension mismatches | 31 |
-| Raw PNG mismatches normalized by capture DPI | 31 |
+| Raw PNG pixel dimension mismatches | 30 |
+| Raw PNG mismatches normalized by capture DPI | 30 |
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
 | Policy-accepted native/control differences | 0 |
@@ -63,7 +63,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
 | dialog.PrintPreview | 1120x700 | 1120x700 | 1120x700 px @ 96 DPI vs 1120x700 px @ 96 DPI |  |  | 0.171 | 0.036 | 0.001 | 0.133 |
-| dialog.Subtotal | 380x390 | 380x390 | 570x585 px @ 144 DPI vs 380x390 px @ 96 DPI |  |  | 0.166 | 0.032 | 0.015 | 0.119 |
+| dialog.Subtotal | 380x390 | 380x390 | 380x390 px @ 96 DPI vs 380x390 px @ 96 DPI |  |  | 0.142 | 0.026 | 0.011 | 0.105 |
 | dialog.Options.QuickAccessToolbar | 744.301x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.132 | 0.027 | 0.004 | 0.100 |
 | dialog.PageSetup.HeaderFooter | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 96 DPI |  |  | 0.127 | 0.040 | 0.012 | 0.076 |
 | dialog.Consolidate | 380x420 | 380x420 | 570x630 px @ 144 DPI vs 380x420 px @ 96 DPI |  |  | 0.126 | 0.032 | 0.011 | 0.083 |
@@ -175,7 +175,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.Sort | dialog.Sort.png | 760x500 | 760x500 px @ 96 DPI | True | dialog.Sort.png | 760x500 | 760x500 px @ 96 DPI | True | True | 0.042 |
 | dialog.SortOptions | dialog.SortOptions.png | 330x260 | 495x390 px @ 144 DPI | True | dialog.SortOptions.png | 330x260 | 330x260 px @ 96 DPI | True | True | 0.111 |
 | dialog.Sparkline | dialog.Sparkline.png | 380x280 | 380x280 px @ 96 DPI | True | dialog.Sparkline.png | 380x280 | 380x280 px @ 96 DPI | True | True | 0.077 |
-| dialog.Subtotal | dialog.Subtotal.png | 380x390 | 570x585 px @ 144 DPI | True | dialog.Subtotal.png | 380x390 | 380x390 px @ 96 DPI | True | True | 0.166 |
+| dialog.Subtotal | dialog.Subtotal.png | 380x390 | 380x390 px @ 96 DPI | True | dialog.Subtotal.png | 380x390 | 380x390 px @ 96 DPI | True | True | 0.142 |
 | dialog.SymbolPicker | dialog.SymbolPicker.png | 840x620 | 840x620 px @ 96 DPI | True | dialog.SymbolPicker.png | 840x620 | 840x620 px @ 96 DPI | True | True | 0.036 |
 | dialog.TextToColumns | dialog.TextToColumns.png | 500x430 | 750x645 px @ 144 DPI | True | dialog.TextToColumns.png | 500x430 | 500x430 px @ 96 DPI | True | True | 0.089 |
 | dialog.UnhideSheet | dialog.UnhideSheet.png | 340x160 | 510x240 px @ 144 DPI | True | dialog.UnhideSheet.png | 340x160 | 340x160 px @ 96 DPI | True | True | 0.041 |
