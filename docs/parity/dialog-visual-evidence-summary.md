@@ -37,18 +37,17 @@ Sources:
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
 | Policy-accepted native/control differences | 0 |
-| High-delta visual review candidates | 1 |
+| High-delta visual review candidates | 0 |
 | Visual review triage threshold | 0.4 |
 
 ## Visual Review Queue
 
 This queue is a deterministic prioritization aid, not a pass/fail result. The threshold is 0.4: This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.
 
-Equal logical dimensions, nonblank PNGs, and paired manifest ids establish evidence coverage and size comparability only; they do not establish visual parity. The 1 rows below remain unresolved high-delta candidates.
+Equal logical dimensions, nonblank PNGs, and paired manifest ids establish evidence coverage and size comparability only; they do not establish visual parity. The 0 rows below remain unresolved high-delta candidates.
 
 | Surface id | Score | Logical dimensions match | Dimension bucket | Expected-size mismatch | Review status | Review reason |
 | --- | ---: | --- | --- | --- | --- | --- |
-| dialog.GoToSpecial | 0.411 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
 
 ## Scale-Aware Dimension Mismatch Classification
 
@@ -63,7 +62,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.GoToSpecial | 430x438 | 430x438 | 430x438 px @ 96 DPI vs 430x438 px @ 96 DPI |  |  | 0.411 | 0.168 | 0.128 | 0.115 |
 | dialog.PivotValueFieldSettings | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.399 | 0.163 | 0.125 | 0.111 |
 | dialog.PivotValueFieldSettings.SummarizeValuesBy | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.399 | 0.163 | 0.125 | 0.111 |
 | dialog.PivotValueFieldSettings.ShowValuesAs | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.399 | 0.163 | 0.125 | 0.110 |
@@ -73,6 +71,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.PivotFieldFilter | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.364 | 0.172 | 0.115 | 0.077 |
 | dialog.PivotFieldFilter.LabelFilters | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.360 | 0.156 | 0.118 | 0.086 |
 | dialog.PivotFieldFilter.ValueFilters | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.360 | 0.155 | 0.118 | 0.087 |
+| dialog.FindReplace.Replace | 720x430 | 720x430 | 720x430 px @ 96 DPI vs 720x430 px @ 96 DPI |  |  | 0.352 | 0.031 | 0.020 | 0.302 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -122,7 +121,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.GoalSeek | dialog.GoalSeek.png | 380x210 | 380x210 px @ 96 DPI | True | dialog.GoalSeek.png | 380x210 | 380x210 px @ 96 DPI | True | True | 0.054 |
 | dialog.GoalSeekStatus | dialog.GoalSeekStatus.png | 380x190 | 380x190 px @ 96 DPI | True | dialog.GoalSeekStatus.png | 380x190 | 380x190 px @ 96 DPI | True | True | 0.089 |
 | dialog.GoTo | dialog.GoTo.png | 420x320 | 630x480 px @ 144 DPI | True | dialog.GoTo.png | 420x320 | 420x320 px @ 96 DPI | True | True | 0.110 |
-| dialog.GoToSpecial | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | True | 0.411 |
+| dialog.GoToSpecial | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | True | 0.034 |
 | dialog.InsertHyperlink | dialog.InsertHyperlink.png | 560x300 | 840x450 px @ 144 DPI | True | dialog.InsertHyperlink.png | 560x300 | 560x300 px @ 96 DPI | True | True | 0.095 |
 | dialog.InsertSlicer | dialog.InsertSlicer.png | 410x270 | 615x405 px @ 144 DPI | True | dialog.InsertSlicer.png | 410x270 | 410x270 px @ 96 DPI | True | True | 0.046 |
 | dialog.InsertTimeline | dialog.InsertTimeline.png | 410x270 | 615x405 px @ 144 DPI | True | dialog.InsertTimeline.png | 410x270 | 410x270 px @ 96 DPI | True | True | 0.040 |

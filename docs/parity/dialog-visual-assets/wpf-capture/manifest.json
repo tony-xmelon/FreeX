@@ -344,7 +344,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.GoToSpecial.png",
                          "captured":  true,
-                         "note":  "Captured from FreeX.App.Host --parity-capture Go To Special dialog surface"
+                         "evidenceSource":  "corrected-direct-parity-capture",
+                         "recaptureStatus":  "fresh-focused-capture",
+                         "expectedWidth":  430,
+                         "expectedHeight":  438,
+                          "note":  "Fresh focused capture from current FreeX.App.Host --parity-capture --parity-capture-target dialog.GoToSpecial on 2026-07-26; 430x438 px at 95.9866 DPI, group border bands x13..401/y43..212 and x13..401/y233..274, default action border rows y369/y388."
                      },
                      {
                          "id":  "dialog.RemoveDuplicates",
