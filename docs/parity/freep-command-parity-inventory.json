@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 342,
-    "both": 340,
+    "totalCommands": 346,
+    "both": 344,
     "wpfOnly": 0,
     "avaloniaOnly": 2,
     "missingWpf": 2,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 340,
+    "shared": 344,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 2,
@@ -289,8 +289,9 @@
       "evidenceId": "freep.table.inline-text.workflow-depth",
       "area": "Rich inline table-cell text editing, paragraph formatting, selection, and persistence",
       "status": "shared-planner-and-host-evidence",
-      "hostCoverage": "WPF/Avalonia shared TableCellEditPlanner routes with WPF RichTextBox and an Avalonia native-input/custom-rich-surface bridge",
+      "hostCoverage": "WPF/Avalonia shared TableCellEditPlanner and renderer-neutral rich clipboard routes with WPF RichTextBox and Avalonia native-input/custom-rich-surface adapters",
       "evidenceDocs": [
+        "docs/parity/freep-rich-clipboard-wave15-20260727.md",
         "docs/parity/freep-rich-table-cell-editing-shared-visual-2026-07-27.md",
         "docs/parity/freep-table-cell-rich-editor-fidelity-2026-07-03.md",
         "docs/parity/freep-list-gallery-image-bullet-ui-2026-07-05.md",
@@ -307,11 +308,14 @@
         "freep/FreeP.App.Host.Tests/RibbonEditorCompleteness5BTests.cs",
         "freep/FreeP.App.Rendering.Avalonia.Tests/SlideCanvasAvaloniaTests.cs",
         "freep/FreeP.App.Rendering.Avalonia.Tests/AvaloniaRichTextEditorTests.cs",
+        "freep/FreeP.App.Presentation.Tests/InCanvasRichClipboardTests.cs",
         "freep/FreeP.App.Presentation.Tests/InCanvasRichTextVisualPlannerTests.cs",
         "freep/FreeP.App.Host.Tests/RichTextEditorTests.cs",
+        "freep/FreeP.App.Host.Tests/WpfRichTextClipboardAdapterTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/PresentationClipboardInteropTests.cs",
         "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
       ],
-      "remainingWork": "WPF/Avalonia now share mixed-run and paragraph-preserving table-cell edits, shared marker sequencing, selection/caret rendering, picture-bullet picker payload execution, paragraph authoring, PPTX media-part persistence, Tab/Shift+Tab navigation, focused-editor keyboard ownership, and commit/cancel transaction routing. Avalonia still uses a custom rich surface over a native TextBox rather than a framework-native RichTextBox, so rich clipboard formats, broader IME/RTL/FlowDocument behavior, advanced inline effects, and PowerPoint-authoritative list-gallery/rich-editor visual baselines remain deferred."
+      "remainingWork": "WPF/Avalonia now share mixed-run and paragraph-preserving edits, marker sequencing, selection/caret rendering, rich copy/cut/paste payloads, plain-text clipboard interoperability, picture-bullet picker payload execution, paragraph authoring, PPTX media-part persistence, Tab/Shift+Tab navigation, focused-editor keyboard ownership, and commit/cancel routing. Avalonia still uses a custom rich surface over a native TextBox rather than a framework-native RichTextBox. Arbitrary external RTF/XamlPackage import on Avalonia, broader IME/RTL/FlowDocument behavior, advanced inline effects, and PowerPoint-authoritative list-gallery/rich-editor visual baselines remain deferred."
     },
     {
       "evidenceId": "freep.header-footer.placeholder-creation",
@@ -3427,6 +3431,40 @@
       ]
     },
     {
+      "commandId": "freep.arrange.change-shape.cross",
+      "label": "Cross",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Cross",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Cross",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
       "commandId": "freep.arrange.change-shape.diamond",
       "label": "Diamond",
       "wpfPresent": true,
@@ -3523,6 +3561,40 @@
           "groupId": "arrange",
           "group": "Arrange",
           "label": "Hexagon",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.arrange.change-shape.plus-sign",
+      "label": "Plus",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Plus",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Plus",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
         }
@@ -8264,6 +8336,40 @@
       ]
     },
     {
+      "commandId": "freep.shape-cross",
+      "label": "Cross",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Cross",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Cross",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.shape-diamond",
       "label": "Diamond",
       "wpfPresent": true,
@@ -8360,6 +8466,40 @@
           "groupId": "illustrations",
           "group": "Illustrations",
           "label": "Hexagon",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.shape-plus-sign",
+      "label": "Plus",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Plus",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Plus",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
