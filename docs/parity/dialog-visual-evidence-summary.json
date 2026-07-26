@@ -1574,7 +1574,7 @@
                                "routeFamily":  "dialog.FormatCells",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.FormatCells.Fill.png",
-                                           "fileBytes":  19680,
+                                           "fileBytes":  19638,
                                            "width":  620,
                                            "height":  540,
                                            "dpiX":  95.986595,
@@ -1582,15 +1582,15 @@
                                            "logicalWidth":  620.087,
                                            "logicalHeight":  540.075,
                                            "pixels":  334800,
-                                           "distinctColors":  275,
+                                           "distinctColors":  276,
                                            "opaqueRatio":  1,
-                                           "nonBackgroundRatio":  0.131013,
+                                           "nonBackgroundRatio":  0.128524,
                                            "isNonBlank":  true,
-                                           "meanLuma":  243.394652
+                                           "meanLuma":  243.431626
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.Fill.png",
-                                                "fileBytes":  14869,
+                                                "fileBytes":  24210,
                                                 "width":  620,
                                                 "height":  540,
                                                 "dpiX":  96,
@@ -1598,11 +1598,11 @@
                                                 "logicalWidth":  620,
                                                 "logicalHeight":  540,
                                                 "pixels":  334800,
-                                                "distinctColors":  919,
+                                                "distinctColors":  1813,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.040941,
+                                                "nonBackgroundRatio":  0.125021,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  253.100153
+                                                "meanLuma":  244.163866
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -1617,10 +1617,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.030604,
-                                                  "lumaDelta":  0.038061,
-                                                  "nonBackgroundDelta":  0.090072,
-                                                  "triageScore":  0.159015,
+                                                  "sampleMeanDelta":  0.039681,
+                                                  "lumaDelta":  0.002872,
+                                                  "nonBackgroundDelta":  0.003504,
+                                                  "triageScore":  0.046335,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6058,14 +6058,6 @@
                                   "nonBackgroundDelta":  0.11911
                               },
                               {
-                                  "id":  "dialog.FormatCells.Fill",
-                                  "triageScore":  0.159015,
-                                  "sampleMeanDelta":  0.030604,
-                                  "dimension":  "620.087x540.075 vs 620x540 logical; 620x540 vs 620x540 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.090072
-                              },
-                              {
                                   "id":  "dialog.Options.QuickAccessToolbar",
                                   "triageScore":  0.132476,
                                   "sampleMeanDelta":  0.026894,
@@ -6120,6 +6112,14 @@
                                   "dimension":  "744.301x521.211 vs 744x521 logical; 744x521 vs 744x521 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.08816
+                              },
+                              {
+                                  "id":  "dialog.PageSetup.Sheet",
+                                  "triageScore":  0.11683,
+                                  "sampleMeanDelta":  0.035297,
+                                  "dimension":  "600.084x560.078 vs 600x560 logical; 600x560 vs 600x560 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.073095
                               }
                           ],
     "visualReviewCandidates":  [
