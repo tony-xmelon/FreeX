@@ -289,8 +289,9 @@
       "evidenceId": "freep.table.inline-text.workflow-depth",
       "area": "Rich inline table-cell text editing, paragraph formatting, selection, and persistence",
       "status": "shared-planner-and-host-evidence",
-      "hostCoverage": "WPF/Avalonia shared TableCellEditPlanner routes with thin WPF RichTextBox and Avalonia overlay adapters",
+      "hostCoverage": "WPF/Avalonia shared TableCellEditPlanner routes with WPF RichTextBox and an Avalonia native-input/custom-rich-surface bridge",
       "evidenceDocs": [
+        "docs/parity/freep-rich-table-cell-editing-shared-visual-2026-07-27.md",
         "docs/parity/freep-table-cell-rich-editor-fidelity-2026-07-03.md",
         "docs/parity/freep-list-gallery-image-bullet-ui-2026-07-05.md",
         "docs/parity/freep-table-cell-tab-navigation-2026-07-13.md",
@@ -305,9 +306,12 @@
         "freep/FreeP.App.Host.Tests/CanvasEditingTests.cs",
         "freep/FreeP.App.Host.Tests/RibbonEditorCompleteness5BTests.cs",
         "freep/FreeP.App.Rendering.Avalonia.Tests/SlideCanvasAvaloniaTests.cs",
+        "freep/FreeP.App.Rendering.Avalonia.Tests/AvaloniaRichTextEditorTests.cs",
+        "freep/FreeP.App.Presentation.Tests/InCanvasRichTextVisualPlannerTests.cs",
+        "freep/FreeP.App.Host.Tests/RichTextEditorTests.cs",
         "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
       ],
-      "remainingWork": "WPF/Avalonia now share picture-bullet picker payload execution, paragraph authoring, PPTX media-part persistence, Tab/Shift+Tab navigation, and focused-editor keyboard ownership between editable table-cell anchors. Avalonia still lacks a true editable rich-text widget equivalent to WPF RichTextBox; PowerPoint-authoritative list-gallery/rich-editor visual baselines remain deferred."
+      "remainingWork": "WPF/Avalonia now share mixed-run and paragraph-preserving table-cell edits, shared marker sequencing, selection/caret rendering, picture-bullet picker payload execution, paragraph authoring, PPTX media-part persistence, Tab/Shift+Tab navigation, focused-editor keyboard ownership, and commit/cancel transaction routing. Avalonia still uses a custom rich surface over a native TextBox rather than a framework-native RichTextBox, so rich clipboard formats, broader IME/RTL/FlowDocument behavior, advanced inline effects, and PowerPoint-authoritative list-gallery/rich-editor visual baselines remain deferred."
     },
     {
       "evidenceId": "freep.header-footer.placeholder-creation",

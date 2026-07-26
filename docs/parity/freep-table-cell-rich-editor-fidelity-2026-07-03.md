@@ -14,7 +14,7 @@ Scope: bounded FreeP table editing workflow-depth slice. This avoids FreeX, Free
 
 ## Remaining
 
-- Avalonia still does not have a true editable rich-text control equivalent to the WPF `RichTextBox`; mixed inline runs and selected paragraph/list state are modeled and adapter-visible, but the TextBox can only project one suggested editor style at a time and cannot render rich inline/list editing chrome itself.
+- Avalonia still does not have a framework-native rich-text control equivalent to the WPF `RichTextBox`. The production overlay now renders mixed inline runs, selected paragraph/list state, list markers, selection rectangles, and caret geometry through the shared rich visual plan while the native TextBox owns keyboard/text input. Rich clipboard formats, broader `FlowDocument`/IME/RTL behavior, advanced inline effects, and PowerPoint-authoritative rich-editor visual baselines remain unproven.
 - PowerPoint-authoritative visual baselines for rich table-cell editing were not generated on this machine.
 
 ## Evidence

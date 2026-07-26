@@ -17,4 +17,7 @@ Scope: bounded FreeP table-cell inline-editing parity for keyboard ownership and
 
 ## Remaining
 
-This does not add a native Avalonia RichTextBox equivalent, visible PowerPoint-style list galleries, or PowerPoint-authoritative rich-editor visual baselines.
+Avalonia still does not have a framework-native RichTextBox equivalent; the current production
+bridge combines native input/keyboard ownership with the shared rich model and custom visual
+surface. Visible PowerPoint-style list galleries, rich clipboard formats, broader FlowDocument
+behavior, and PowerPoint-authoritative rich-editor visual baselines remain deferred.

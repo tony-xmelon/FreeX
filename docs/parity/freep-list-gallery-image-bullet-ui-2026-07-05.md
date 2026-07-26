@@ -17,7 +17,7 @@ Scope: bounded FreeP visible paragraph-list UI slice for table-cell text editing
 
 ## Remaining
 
-- Avalonia still lacks a true editable rich-text widget equivalent to WPF `RichTextBox`.
+- Avalonia still lacks a framework-native editable rich-text widget equivalent to WPF `RichTextBox`, but its production table-cell overlay now renders the shared mixed-run/list visual plan while the native input bridge owns editing. Rich clipboard formats and the full WPF `FlowDocument` surface remain deferred.
 - PowerPoint-authoritative visual baselines for the list galleries and table-cell rich editing were not generated on this machine.
 
 ## Evidence
