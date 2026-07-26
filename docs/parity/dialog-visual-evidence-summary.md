@@ -37,18 +37,17 @@ Sources:
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
 | Policy-accepted native/control differences | 0 |
-| High-delta visual review candidates | 1 |
+| High-delta visual review candidates | 0 |
 | Visual review triage threshold | 0.4 |
 
 ## Visual Review Queue
 
 This queue is a deterministic prioritization aid, not a pass/fail result. The threshold is 0.4: This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.
 
-Equal logical dimensions, nonblank PNGs, and paired manifest ids establish evidence coverage and size comparability only; they do not establish visual parity. The 1 rows below remain unresolved high-delta candidates.
+Equal logical dimensions, nonblank PNGs, and paired manifest ids establish evidence coverage and size comparability only; they do not establish visual parity. The 0 rows below remain unresolved high-delta candidates.
 
 | Surface id | Score | Logical dimensions match | Dimension bucket | Expected-size mismatch | Review status | Review reason |
 | --- | ---: | --- | --- | --- | --- | --- |
-| dialog.GoToSpecial | 0.411 | True | none | False | unresolved visual review candidate | High image delta requires paired WPF/Avalonia visual review; equal dimensions do not resolve it. |
 
 ## Scale-Aware Dimension Mismatch Classification
 
@@ -63,16 +62,16 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.GoToSpecial | 430x438 | 430x438 | 430x438 px @ 96 DPI vs 430x438 px @ 96 DPI |  |  | 0.411 | 0.168 | 0.128 | 0.115 |
-| dialog.PivotValueFieldSettings | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.399 | 0.163 | 0.125 | 0.111 |
-| dialog.PivotValueFieldSettings.SummarizeValuesBy | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.399 | 0.163 | 0.125 | 0.111 |
-| dialog.PivotValueFieldSettings.ShowValuesAs | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.399 | 0.163 | 0.125 | 0.110 |
-| dialog.PivotValueFieldSettings.NumberFormat | 430x430 | 430x430 | 430x430 px @ 96 DPI vs 430x430 px @ 96 DPI |  |  | 0.395 | 0.164 | 0.125 | 0.106 |
 | dialog.PrintPreview | 1120x700 | 1120x700 | 1120x700 px @ 96 DPI vs 1120x700 px @ 96 DPI |  |  | 0.378 | 0.126 | 0.061 | 0.191 |
 | dialog.PivotFieldFilter.SelectItems | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.364 | 0.172 | 0.115 | 0.078 |
 | dialog.PivotFieldFilter | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.364 | 0.172 | 0.115 | 0.077 |
 | dialog.PivotFieldFilter.LabelFilters | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.360 | 0.156 | 0.118 | 0.086 |
 | dialog.PivotFieldFilter.ValueFilters | 380x470 | 380x470 | 380x470 px @ 96 DPI vs 380x470 px @ 96 DPI |  |  | 0.360 | 0.155 | 0.118 | 0.087 |
+| dialog.FindReplace.Replace | 720x430 | 720x430 | 720x430 px @ 96 DPI vs 720x430 px @ 96 DPI |  |  | 0.352 | 0.031 | 0.020 | 0.302 |
+| dialog.SortOptions | 330x260 | 330x260 | 495x390 px @ 144 DPI vs 330x260 px @ 96 DPI |  |  | 0.237 | 0.047 | 0.028 | 0.162 |
+| dialog.ShapeEffects | 380x190 | 380x190 | 570x285 px @ 144 DPI vs 380x190 px @ 96 DPI |  |  | 0.215 | 0.031 | 0.021 | 0.163 |
+| dialog.Sparkline | 380x280 | 380x280 | 380x280 px @ 96 DPI vs 380x280 px @ 96 DPI |  |  | 0.187 | 0.054 | 0.016 | 0.117 |
+| dialog.AllowEditRanges | 430x360 | 430x360 | 645x540 px @ 144 DPI vs 430x360 px @ 96 DPI |  |  | 0.187 | 0.039 | 0.002 | 0.145 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -122,7 +121,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.GoalSeek | dialog.GoalSeek.png | 380x210 | 380x210 px @ 96 DPI | True | dialog.GoalSeek.png | 380x210 | 380x210 px @ 96 DPI | True | True | 0.054 |
 | dialog.GoalSeekStatus | dialog.GoalSeekStatus.png | 380x190 | 380x190 px @ 96 DPI | True | dialog.GoalSeekStatus.png | 380x190 | 380x190 px @ 96 DPI | True | True | 0.089 |
 | dialog.GoTo | dialog.GoTo.png | 420x320 | 630x480 px @ 144 DPI | True | dialog.GoTo.png | 420x320 | 420x320 px @ 96 DPI | True | True | 0.110 |
-| dialog.GoToSpecial | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | True | 0.411 |
+| dialog.GoToSpecial | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | True | 0.034 |
 | dialog.InsertHyperlink | dialog.InsertHyperlink.png | 560x300 | 840x450 px @ 144 DPI | True | dialog.InsertHyperlink.png | 560x300 | 560x300 px @ 96 DPI | True | True | 0.095 |
 | dialog.InsertSlicer | dialog.InsertSlicer.png | 410x270 | 615x405 px @ 144 DPI | True | dialog.InsertSlicer.png | 410x270 | 410x270 px @ 96 DPI | True | True | 0.046 |
 | dialog.InsertTimeline | dialog.InsertTimeline.png | 410x270 | 615x405 px @ 144 DPI | True | dialog.InsertTimeline.png | 410x270 | 410x270 px @ 96 DPI | True | True | 0.040 |
@@ -157,10 +156,10 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.PivotTableOptions.LayoutAndFormat | dialog.PivotTableOptions.LayoutAndFormat.png | 520x676 | 520x676 px @ 96 DPI | True | dialog.PivotTableOptions.LayoutAndFormat.png | 520x676 | 520x676 px @ 96 DPI | True | True | 0.093 |
 | dialog.PivotTableOptions.Printing | dialog.PivotTableOptions.Printing.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.Printing.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.060 |
 | dialog.PivotTableOptions.TotalsAndFilters | dialog.PivotTableOptions.TotalsAndFilters.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.TotalsAndFilters.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.080 |
-| dialog.PivotValueFieldSettings | dialog.PivotValueFieldSettings.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.399 |
-| dialog.PivotValueFieldSettings.NumberFormat | dialog.PivotValueFieldSettings.NumberFormat.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.NumberFormat.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.395 |
-| dialog.PivotValueFieldSettings.ShowValuesAs | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.399 |
-| dialog.PivotValueFieldSettings.SummarizeValuesBy | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.399 |
+| dialog.PivotValueFieldSettings | dialog.PivotValueFieldSettings.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.030 |
+| dialog.PivotValueFieldSettings.NumberFormat | dialog.PivotValueFieldSettings.NumberFormat.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.NumberFormat.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.034 |
+| dialog.PivotValueFieldSettings.ShowValuesAs | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.ShowValuesAs.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.032 |
+| dialog.PivotValueFieldSettings.SummarizeValuesBy | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | 430x430 px @ 96 DPI | True | dialog.PivotValueFieldSettings.SummarizeValuesBy.png | 430x430 | 430x430 px @ 96 DPI | True | True | 0.030 |
 | dialog.PrintPreview | dialog.PrintPreview.png | 1120x700 | 1120x700 px @ 96 DPI | True | dialog.PrintPreview.png | 1120x700 | 1120x700 px @ 96 DPI | True | True | 0.378 |
 | dialog.ProtectSheet | dialog.ProtectSheet.png | 430x540 | 645x810 px @ 144 DPI | True | dialog.ProtectSheet.png | 430x540 | 430x540 px @ 96 DPI | True | True | 0.045 |
 | dialog.ProtectWorkbook | dialog.ProtectWorkbook.png | 380x250 | 380x250 px @ 96 DPI | True | dialog.ProtectWorkbook.png | 380x250 | 380x250 px @ 96 DPI | True | True | 0.042 |

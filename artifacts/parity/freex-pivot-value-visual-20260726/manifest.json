@@ -1,0 +1,10 @@
+{
+  "platform": "windows",
+  "shell": "avalonia",
+  "surfaces": [
+    { "id": "dialog.PivotValueFieldSettings", "kind": "dialog", "png": "dialog.PivotValueFieldSettings.png", "captured": true, "note": "" },
+    { "id": "dialog.PivotValueFieldSettings.SummarizeValuesBy", "kind": "dialog", "png": "dialog.PivotValueFieldSettings.SummarizeValuesBy.png", "captured": true, "note": "" },
+    { "id": "dialog.PivotValueFieldSettings.ShowValuesAs", "kind": "dialog", "png": "dialog.PivotValueFieldSettings.ShowValuesAs.png", "captured": true, "note": "" },
+    { "id": "dialog.PivotValueFieldSettings.NumberFormat", "kind": "dialog", "png": "dialog.PivotValueFieldSettings.NumberFormat.png", "captured": true, "note": "" }
+  ]
+}
