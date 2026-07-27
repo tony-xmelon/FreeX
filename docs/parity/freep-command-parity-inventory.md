@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 383 | 381 | 0 | 2 | 2 | 0 | 0 | 0 | 381 | 0 | 0 | 2 | 0 | 101 |
+| 392 | 390 | 0 | 2 | 2 | 0 | 0 | 0 | 390 | 0 | 0 | 2 | 0 | 101 |
 
 ## Workflow Evidence
 
@@ -122,9 +122,18 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 |---|---|---:|---:|---|---|---|---|---|
 | `freep.anim.delay` | Delay | Yes | Yes | none | shared | animations/animation-timing (RibbonComboBox) | animations/animation-timing (RibbonComboBox) | Shared typed timing intent; applies when a selected value and selected-shape animation are available. |
 | `freep.anim.duration` | Duration | Yes | Yes | none | shared | animations/animation-timing (RibbonComboBox) | animations/animation-timing (RibbonComboBox) | Shared typed timing intent; applies when a selected value and selected-shape animation are available. |
+| `freep.anim.emphasis.blink` | Blink | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.emphasis.bold` | Bold | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.emphasis.change-color` | Change Color | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.emphasis.color-pulse` | Color Pulse | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.emphasis.grow-shrink` | Grow/Shrink | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.emphasis.grow-with-color` | Grow With Color | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.emphasis.pulse` | Pulse | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.emphasis.shimmer` | Shimmer | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.emphasis.spin` | Spin | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.emphasis.teeter` | Teeter | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.emphasis.underline` | Underline | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.emphasis.wave` | Wave | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.appear` | Appear | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.blinds` | Blinds In | Yes | Yes | none | shared | animations/animation-effects (RibbonDropdown) | animations/animation-effects (RibbonDropdown) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.box` | Box In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
