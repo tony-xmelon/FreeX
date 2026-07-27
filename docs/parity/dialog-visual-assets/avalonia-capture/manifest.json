@@ -8,10 +8,10 @@
                          "png":  "dialog.GoTo.png",
                          "captured":  true,
                          "evidenceSource":  "fresh-direct-avalonia-parity-capture",
-                         "recaptureStatus":  "fresh-linux-docker-focused-capture-tightened-subtotal-layout-2026-07-26",
-                         "expectedWidth":  380,
-                         "expectedHeight":  390,
-                         "note":  "Fresh Avalonia FreeX --parity-capture --parity-capture-surface dialog.Subtotal in Linux Docker/Xvfb on 2026-07-26 using the shared SubtotalParityFixture; canonical 380x390 PNG at 96 DPI with tightened WPF-aligned layout."
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-focused-capture-go-to-wave25-2026-07-27",
+                         "expectedWidth":  420,
+                         "expectedHeight":  320,
+                         "note":  "Fresh Avalonia FreeX --parity-capture --parity-capture-surface dialog.GoTo in Linux Docker/Xvfb on 2026-07-27 after WPF-aligned star/auto history rows and shared compact dialog chrome; canonical 420x320 PNG at 96 DPI, nonblank."
                      },
                      {
                          "id":  "dialog.GoToSpecial",
