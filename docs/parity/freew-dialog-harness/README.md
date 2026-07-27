@@ -20,11 +20,13 @@ Paste Special, Style, and Manage Styles are content-sized WPF static prompts rat
 
 ## Current Run
 
-- Inventory: 157 routes and 465 host-specific scenarios: 186 WPF authority states and 279 Avalonia states.
-- WPF: 186/186 app-owned captures, with 186 full PNGs and 186 target crops.
-- Avalonia: 276/279 app-owned Skia captures. The remaining three Cell Shading extension states are explicitly classified as invalid capture content because that family still lacks an app-owned route constructor or temporary capture hook.
-- Seven WPF-authority product routes: 24/24 Avalonia states captured across Compare Documents, Legal Notices, Password Prompt, Screen Clip Overlay, Symbol Picker, Table Formula, and Table Properties.
-- Comparison: 171 genuine visual mismatches, 5 visual passes, 6 semantic-only mismatches, 94 Avalonia extensions, 4 state-not-applicable rows, and 3 invalid-capture-content rows. There are zero host-missing or product-gap rows.
+- Inventory: 158 routes and 466 host-specific scenarios: 187 WPF authority states and 279 Avalonia states.
+- WPF: 187/187 app-owned captures, with 187 full PNGs and 187 target crops.
+- Avalonia: 279/279 app-owned Skia captures, with zero unsupported or invalid-content rows.
+- Eight WPF-authority product routes: 25/25 Avalonia states captured across Cell Shading, Compare Documents, Legal Notices, Password Prompt, Screen Clip Overlay, Symbol Picker, Table Formula, and Table Properties.
+- Comparison: 171 genuine visual mismatches, 6 visual passes, 6 semantic-only mismatches, 96 Avalonia extensions, and 4 state-not-applicable rows. There are zero invalid-capture-content, host-missing, or product-gap rows.
+- Cell Shading is modeled with its single truthful `initial` state on both hosts. It is a palette action surface with no fields to populate and no validation path; `No Color` is an accepted clear action and Escape/window close is cancellation, so generic `populated` and `validation-error` states are intentionally not fabricated.
+- Cell Shading now uses app-owned WPF and Avalonia route constructors, shared planner geometry, and matching automation/action semantics. Its changed-pixel ratio fell from 10.10% to 1.97%, mean channel delta from 6.85 to 1.50, and pHash distance from 9 to 0; painted bounds are WPF 339x82 versus Avalonia 338x90.
 - Symbol Picker now consumes the shared catalog and layout metrics in both hosts and restores WPF-equivalent Avalonia tile chrome after shared dialog styling. Its changed-pixel ratio fell from 26.30% to 2.09%, mean channel delta fell from 10.54 to 1.72, and painted content height aligned from 212 px to 272 px. The row is now semantic-only because Avalonia deliberately focuses the first glyph for keyboard navigation while the WPF capture reports no matching automation focus.
 - Icon Picker now renders the WPF-authority SVG assets in the same compact tile geometry and exposes only OK/Cancel as action buttons. Its initial state fell from 49.54% changed pixels / 31.96 mean channel delta to 13.69% / 19.87 with no semantic difference; populated and validation states are visual passes at 1.28% / 1.28 and 1.37% / 1.40.
 - Font now has five paired WPF/Avalonia states, including truthful Font and Advanced tab captures. Across the three previously paired states, average changed pixels fell from 37.77% to 17.27%, and average mean channel delta fell from 51.30 to 13.65. Across all five current states, the averages are 16.98% and 13.31. All five remain genuine visual mismatches because framework tab-pane geometry, typography rasterization, and control templates still differ.

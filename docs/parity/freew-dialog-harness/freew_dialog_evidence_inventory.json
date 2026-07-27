@@ -1,6 +1,6 @@
 {
   "schema": "freew.dialog-route-inventory.v1",
-  "generatedFromSha256": "d5b4496ca14ca5dda8197b8c0a926ab590630b592c0555c91a90c287f2488aa9",
+  "generatedFromSha256": "55207b3f99f43740ea62ff26e6d27ca66eccc19a1141f1862214ea3979a2b25b",
   "scenarios": [
     {
       "id": "avalonia.about.initial",
@@ -349,26 +349,6 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "avalonia.cell-shading.populated",
-      "host": "avalonia",
-      "routeId": "cell-shading",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "avalonia.cell-shading.validation-error",
-      "host": "avalonia",
-      "routeId": "cell-shading",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
@@ -1329,6 +1309,26 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.insert-chart.tab-add-row",
+      "host": "avalonia",
+      "routeId": "insert-chart",
+      "state": "relevant-tab",
+      "tab": "Add Row",
+      "description": "Selected tab: Add Row.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.insert-chart.tab-remove-row",
+      "host": "avalonia",
+      "routeId": "insert-chart",
+      "state": "relevant-tab",
+      "tab": "Remove Row",
+      "description": "Selected tab: Remove Row.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
@@ -3069,6 +3069,16 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.cell-shading.initial",
+      "host": "wpf",
+      "routeId": "cell-shading",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
