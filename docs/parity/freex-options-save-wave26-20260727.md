@@ -30,4 +30,3 @@ The paired PNGs and manifests are promoted under `docs/parity/dialog-visual-asse
 ## Residuals
 
 The recent-files path text is platform-specific (`C:\Users\...` in WPF versus the Linux profile path in Avalonia), and toolkit text/control rasterization remains. WPF reports a 95.9866 DPI capture versus Avalonia's 96 DPI; the logical frame remains within the established tolerance.
-
