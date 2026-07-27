@@ -56,15 +56,15 @@
   ],
   "summary": {
     "totalCommands": 870,
-    "both": 451,
-    "wpfOnly": 188,
+    "both": 458,
+    "wpfOnly": 181,
     "avaloniaOnly": 231,
     "missingWpf": 231,
-    "missingAvalonia": 188,
+    "missingAvalonia": 181,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 451,
-    "profileShapeOnly": 371,
+    "sharedProfile": 458,
+    "profileShapeOnly": 364,
     "commandIdAliases": 43,
     "platformOnly": 5,
     "deferred": 0,
@@ -20446,13 +20446,13 @@
       "commandId": "freew.read-mode",
       "label": "Read Mode",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -20465,25 +20465,36 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "views",
+          "group": "Views",
+          "label": "Read Mode",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.read-mode-color-inverse",
       "label": "Inverse (Dark Mode)",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -20496,25 +20507,36 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "views",
+          "group": "Views",
+          "label": "Inverse (Dark Mode)",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.read-mode-color-none",
       "label": "No Color",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -20527,25 +20549,36 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "views",
+          "group": "Views",
+          "label": "No Color",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.read-mode-color-sepia",
       "label": "Sepia",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -20558,25 +20591,36 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "views",
+          "group": "Views",
+          "label": "Sepia",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.read-mode-column-default",
       "label": "Default Column Width",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -20589,25 +20633,36 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "views",
+          "group": "Views",
+          "label": "Default Column Width",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.read-mode-column-narrow",
       "label": "Narrow Column Width",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -20620,25 +20675,36 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "views",
+          "group": "Views",
+          "label": "Narrow Column Width",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
       "commandId": "freew.read-mode-column-wide",
       "label": "Wide Column Width",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -20651,12 +20717,23 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "views",
+          "group": "Views",
+          "label": "Wide Column Width",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
