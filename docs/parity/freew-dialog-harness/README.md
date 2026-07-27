@@ -20,11 +20,12 @@ Paste Special, Style, and Manage Styles are content-sized WPF static prompts rat
 
 ## Current Run
 
-- Inventory: 156 routes and 459 host-specific scenarios: 186 WPF authority states and 273 Avalonia states.
+- Inventory: 157 routes and 465 host-specific scenarios: 186 WPF authority states and 279 Avalonia states.
 - WPF: 186/186 app-owned captures, with 186 full PNGs and 186 target crops.
-- Avalonia: 273/273 app-owned Skia captures, with 273 full PNGs and 273 target crops; all 546 images pass pixel-content validation.
+- Avalonia: 276/279 app-owned Skia captures. The remaining three Cell Shading extension states are explicitly classified as invalid capture content because that family still lacks an app-owned route constructor or temporary capture hook.
 - Seven WPF-authority product routes: 24/24 Avalonia states captured across Compare Documents, Legal Notices, Password Prompt, Screen Clip Overlay, Symbol Picker, Table Formula, and Table Properties.
-- Comparison: 170 genuine visual mismatches, 4 visual passes, 5 semantic-only mismatches, 94 Avalonia extensions, and 7 state-not-applicable rows. There are zero host-missing, product-gap, invalid-content, hook-required, or surface-level native-picker limitation rows.
+- Comparison: 171 genuine visual mismatches, 5 visual passes, 6 semantic-only mismatches, 94 Avalonia extensions, 4 state-not-applicable rows, and 3 invalid-capture-content rows. There are zero host-missing or product-gap rows.
+- Symbol Picker now consumes the shared catalog and layout metrics in both hosts and restores WPF-equivalent Avalonia tile chrome after shared dialog styling. Its changed-pixel ratio fell from 26.30% to 2.09%, mean channel delta fell from 10.54 to 1.72, and painted content height aligned from 212 px to 272 px. The row is now semantic-only because Avalonia deliberately focuses the first glyph for keyboard navigation while the WPF capture reports no matching automation focus.
 - Icon Picker now renders the WPF-authority SVG assets in the same compact tile geometry and exposes only OK/Cancel as action buttons. Its initial state fell from 49.54% changed pixels / 31.96 mean channel delta to 13.69% / 19.87 with no semantic difference; populated and validation states are visual passes at 1.28% / 1.28 and 1.37% / 1.40.
 - Font now has five paired WPF/Avalonia states, including truthful Font and Advanced tab captures. Across the three previously paired states, average changed pixels fell from 37.77% to 17.27%, and average mean channel delta fell from 51.30 to 13.65. Across all five current states, the averages are 16.98% and 13.31. All five remain genuine visual mismatches because framework tab-pane geometry, typography rasterization, and control templates still differ.
 - The WPF static-prompt adapter now applies populated, validation, and requested-tab state before capture; it no longer labels a Font-tab bitmap as the Advanced state.
@@ -32,7 +33,7 @@ Paste Special, Style, and Manage Styles are content-sized WPF static prompts rat
 - About now renders the complete WPF-authority product, license, privacy, and source information. Its initial/populated mean channel delta fell from about 32.06 to 16.73; the synthetic validation state is a visual pass at 1.71% changed pixels and 2.00 mean delta.
 - Legal Notices keeps all five WPF-authority tabs visible with direct read-only text fields. Initial/project-license mean channel delta is 11.39, while the four long-document tabs remain between 20.03 and 24.05 because the host frameworks wrap and rasterize the same content differently.
 
-The affected routes retain eight genuine visual mismatches: two About states and all six Legal Notices states. These are visible framework text-rendering, wrapping, tab-template, and scrollbar differences rather than missing content or falsely labeled limitations. The five semantic-only rows remain visible on Chart Title and Password Prompt for action ordering, default/cancel metadata, and focus. Backstage and full-window surfaces are outside this dialog report. The paired report keeps every mismatch visible.
+The affected routes retain eight genuine visual mismatches: two About states and all six Legal Notices states. These are visible framework text-rendering, wrapping, tab-template, and scrollbar differences rather than missing content or falsely labeled limitations. The six semantic-only rows remain visible on Chart Title, Password Prompt, and Symbol Picker for action ordering, default/cancel metadata, and focus. Backstage and full-window surfaces are outside this dialog report. The paired report keeps every mismatch visible.
 
 The harness normalizes blank focus IDs to `null`, so `screen-clip-overlay.open` remains a visual pass rather than an unexplained semantic mismatch.
 

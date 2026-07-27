@@ -5354,7 +5354,7 @@
                                "routeFamily":  "dialog.SelectionPane",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.SelectionPane.png",
-                                           "fileBytes":  12872,
+                                           "fileBytes":  12850,
                                            "width":  520,
                                            "height":  440,
                                            "dpiX":  95.986595,
@@ -5362,15 +5362,15 @@
                                            "logicalWidth":  520.073,
                                            "logicalHeight":  440.061,
                                            "pixels":  228800,
-                                           "distinctColors":  214,
+                                           "distinctColors":  202,
                                            "opaqueRatio":  1,
-                                           "nonBackgroundRatio":  0.149913,
+                                           "nonBackgroundRatio":  0.150227,
                                            "isNonBlank":  true,
-                                           "meanLuma":  249.003254
+                                           "meanLuma":  248.537382
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.SelectionPane.png",
-                                                "fileBytes":  12748,
+                                                "fileBytes":  13958,
                                                 "width":  520,
                                                 "height":  440,
                                                 "dpiX":  96,
@@ -5378,11 +5378,11 @@
                                                 "logicalWidth":  520,
                                                 "logicalHeight":  440,
                                                 "pixels":  228800,
-                                                "distinctColors":  461,
+                                                "distinctColors":  668,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.052854,
+                                                "nonBackgroundRatio":  0.171888,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  250.467719
+                                                "meanLuma":  247.780846
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -5397,10 +5397,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.019126,
-                                                  "lumaDelta":  0.005743,
-                                                  "nonBackgroundDelta":  0.097059,
-                                                  "triageScore":  0.122207,
+                                                  "sampleMeanDelta":  0.019171,
+                                                  "lumaDelta":  0.002967,
+                                                  "nonBackgroundDelta":  0.021661,
+                                                  "triageScore":  0.044078,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6210,14 +6210,6 @@
                                   "nonBackgroundDelta":  0.12863
                               },
                               {
-                                  "id":  "dialog.SelectionPane",
-                                  "triageScore":  0.122207,
-                                  "sampleMeanDelta":  0.019126,
-                                  "dimension":  "520.073x440.061 vs 520x440 logical; 520x440 vs 520x440 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.097059
-                              },
-                              {
                                   "id":  "dialog.Options.Advanced",
                                   "triageScore":  0.122002,
                                   "sampleMeanDelta":  0.031044,
@@ -6280,6 +6272,14 @@
                                   "dimension":  "744.104x521.073 vs 744x521 logical; 744x521 vs 744x521 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.079884
+                              },
+                              {
+                                  "id":  "dialog.Options.Language",
+                                  "triageScore":  0.103708,
+                                  "sampleMeanDelta":  0.018983,
+                                  "dimension":  "744.104x521.073 vs 744x521 logical; 744x521 vs 744x521 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.080405
                               }
                           ],
     "visualReviewCandidates":  [
