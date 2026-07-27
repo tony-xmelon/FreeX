@@ -62,7 +62,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.PageSetup.Sheet | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 96 DPI |  |  | 0.117 | 0.035 | 0.008 | 0.073 |
 | dialog.Options | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.111 | 0.026 | 0.007 | 0.078 |
 | dialog.Options.General | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.111 | 0.026 | 0.007 | 0.078 |
 | dialog.SortOptions | 330x260 | 330x260 | 495x390 px @ 144 DPI vs 330x260 px @ 96 DPI |  |  | 0.111 | 0.053 | 0.010 | 0.047 |
@@ -72,6 +71,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.ScenarioManager | 360x420 | 360x420 | 540x630 px @ 144 DPI vs 360x420 px @ 96 DPI |  |  | 0.104 | 0.053 | 0.006 | 0.044 |
 | dialog.ErrorChecking | 720x420 | 720x420 | 1080x630 px @ 144 DPI vs 720x420 px @ 96 DPI |  |  | 0.103 | 0.030 | 0.006 | 0.066 |
 | dialog.Options.TrustCenter | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.101 | 0.025 | 0.005 | 0.071 |
+| dialog.Options.CustomizeRibbon | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.100 | 0.018 | 0.006 | 0.075 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -145,7 +145,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.PageSetup.HeaderFooter | dialog.PageSetup.HeaderFooter.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.HeaderFooter.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.043 |
 | dialog.PageSetup.Margins | dialog.PageSetup.Margins.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Margins.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.041 |
 | dialog.PageSetup.Page | dialog.PageSetup.Page.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Page.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.091 |
-| dialog.PageSetup.Sheet | dialog.PageSetup.Sheet.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Sheet.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.117 |
+| dialog.PageSetup.Sheet | dialog.PageSetup.Sheet.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Sheet.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.048 |
 | dialog.PivotFieldFilter | dialog.PivotFieldFilter.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.040 |
 | dialog.PivotFieldFilter.LabelFilters | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.LabelFilters.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.022 |
 | dialog.PivotFieldFilter.SelectItems | dialog.PivotFieldFilter.SelectItems.png | 380x470 | 380x470 px @ 96 DPI | True | dialog.PivotFieldFilter.SelectItems.png | 380x470 | 380x470 px @ 96 DPI | True | True | 0.040 |
