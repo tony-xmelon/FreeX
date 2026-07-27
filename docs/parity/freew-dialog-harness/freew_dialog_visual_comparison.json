@@ -1,6 +1,6 @@
 {
   "schema": "freew.dialog-visual-comparison.v1",
-  "generatedFromSha256": "9e25ecfcb8548fca6b75830be0ab3de9ded4f8229f87e19513146dcdeb4eece2",
+  "generatedFromSha256": "525cc7c09b31bcc859c2d6d3cfd220662af0356a78bb91096a1c7dd530e5e49e",
   "targetDpi": 96,
   "inventoryScenarioCount": 465,
   "wpfCaptureCount": 186,
@@ -8934,15 +8934,15 @@
     {
       "scenarioId": "symbol-picker.initial",
       "captureStatus": "captured/captured",
-      "classification": "genuine-visual-mismatch",
+      "classification": "semantic-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 88353,
-        "changedRatio": 0.2629553571428571,
-        "meanAbsoluteChannelDelta": 10.544057539682548,
-        "p95AbsoluteChannelDelta": 34,
-        "luminanceSimilarity": 0.89733894578436,
-        "perceptualHashDistance": 17
+        "changedPixels": 7009,
+        "changedRatio": 0.020860119047619047,
+        "meanAbsoluteChannelDelta": 1.7244126984127035,
+        "p95AbsoluteChannelDelta": 0,
+        "luminanceSimilarity": 0.9400641458022069,
+        "perceptualHashDistance": 0
       },
       "semanticDifference": "focus",
       "heatmapPath": "heatmaps/symbol-picker.initial.png",
@@ -8975,16 +8975,16 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.9115238095238095,
         "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 0.0006170985267997074,
-        "dominantColorRatio": 0.8843511649775363,
-        "distinctColorCount": 70,
+        "nearBlackRatio": 0.0011362449064883503,
+        "dominantColorRatio": 0.6384520948699195,
+        "distinctColorCount": 65,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.10541666666666667,
+        "contentPixelRatio": 0.3295595238095238,
         "contentBounds": {
           "x": 10,
           "y": 10,
           "width": 524,
-          "height": 212
+          "height": 272
         }
       }
     },
@@ -13279,9 +13279,9 @@
     }
   ],
   "counts": {
-    "genuine-visual-mismatch": 172,
+    "genuine-visual-mismatch": 171,
     "pass": 5,
-    "semantic-mismatch": 5,
+    "semantic-mismatch": 6,
     "state-not-applicable": 4,
     "avalonia-extension": 94,
     "invalid-capture-content": 3
