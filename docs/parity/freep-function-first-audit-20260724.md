@@ -370,3 +370,14 @@ support indexed removal, including aligned scatter X values and bubble-size rows
 the series from the selected grid column and the category from the selected row; Avalonia tracks
 the focused series/category cell and routes the same shared mutation. Focused planner, WPF, and
 Avalonia dialog coverage verifies non-tail removal and save-ready matrix alignment across hosts.
+
+### 2026-07-27 presenter view record timings
+
+The shared slideshow session already tracked per-slide elapsed time and persisted
+`SlideTransition.AdvanceAfterMs`, but neither native presenter dashboard exposed the
+PowerPoint-style Record Timings action. WPF and Avalonia now expose the same toggle,
+preserving the current media and pointer settings while routing through
+`SlideShowSessionController`; the button reflects the shared intent and can stop
+recording without introducing a UI-local timer. Focused presenter source and view-plan
+tests cover the cross-host route. Hardware capture and COM validation remain outside
+this slice.
