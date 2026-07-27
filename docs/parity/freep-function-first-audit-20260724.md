@@ -343,3 +343,14 @@ or Change Shape. Both host command surfaces now expose these eleven native kinds
 the shared insertion/editing session path, with localized labels, meaningful ribbon icons,
 and WPF/Avalonia planner and reachability coverage. The slice adds no renderer-specific
 calibration and preserves the existing native preset geometry on save/reopen.
+
+### 2026-07-27 Interlocking Rings SmartArt route
+
+PowerPoint's relationship-family SmartArt catalog includes Interlocking Rings, but FreeP
+previously admitted only the older relationship layouts and fell back to cached DrawingML for
+this native layout ID. The shared planner now preserves the `interlockingRings` DiagramML identity,
+generates bounded overlapping translucent ellipse geometry for two-to-five nodes, and exposes the
+layout through insertion and change-layout commands in WPF and Avalonia. Reader admission, native
+layout persistence, shared composition, undo-capable authoring routes, and host command reachability
+are covered by focused tests. This is a functional layout-family slice; it does not claim exact
+PowerPoint style regeneration for arbitrary Interlocking Rings packages.
