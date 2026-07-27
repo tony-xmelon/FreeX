@@ -2,34 +2,34 @@ using FreeP.App.Compositor;
 
 namespace FreeP.App.Recording;
 
-public sealed class LinuxNarrationCaptureBackend : ISlideShowRecordingCaptureBackend, IDisposable
+public sealed class LinuxCameraCaptureBackend : ISlideShowRecordingCaptureBackend, IDisposable
 {
     private readonly LinuxMediaCaptureLifecycle _lifecycle;
 
-    public LinuxNarrationCaptureBackend(LinuxRecordingHostMetadata metadata)
+    public LinuxCameraCaptureBackend(LinuxRecordingHostMetadata metadata)
         : this(
             metadata,
-            new LinuxRecordingDeviceCatalog(),
+            new LinuxCameraDeviceCatalog(),
             new LinuxRecordingProcessAdapter())
     {
     }
 
-    public LinuxNarrationCaptureBackend(
+    public LinuxCameraCaptureBackend(
         LinuxRecordingHostMetadata metadata,
-        ILinuxRecordingDeviceCatalog deviceCatalog,
+        ILinuxCameraDeviceCatalog deviceCatalog,
         ILinuxRecordingProcessAdapter processAdapter)
     {
         _ = metadata ?? throw new ArgumentNullException(nameof(metadata));
         ArgumentNullException.ThrowIfNull(deviceCatalog);
         ArgumentNullException.ThrowIfNull(processAdapter);
 
-        var discovery = Discover(deviceCatalog);
+        var discovery = deviceCatalog.Discover();
         AdapterReadiness = BuildReadiness(metadata, discovery);
         Capabilities = SlideShowRecordingCaptureAdapterPlanner.BuildCapabilities(AdapterReadiness);
         _lifecycle = new LinuxMediaCaptureLifecycle(
             metadata,
             AdapterReadiness,
-            new LinuxNarrationMediaCapturePolicy(discovery.Tool),
+            new LinuxCameraMediaCapturePolicy(discovery.Tool),
             processAdapter);
     }
 
@@ -49,29 +49,15 @@ public sealed class LinuxNarrationCaptureBackend : ISlideShowRecordingCaptureBac
 
     public void Dispose() => _lifecycle.Dispose();
 
-    private static LinuxNarrationCaptureDiscovery Discover(
-        ILinuxRecordingDeviceCatalog deviceCatalog)
-    {
-        try
-        {
-            return deviceCatalog.Discover();
-        }
-        catch (Exception ex) when (ex is not OutOfMemoryException)
-        {
-            return LinuxNarrationCaptureDiscovery.Unavailable(
-                $"Linux recording device discovery failed: {ex.Message}");
-        }
-    }
-
     private static SlideShowRecordingCaptureAdapterReadiness BuildReadiness(
         LinuxRecordingHostMetadata metadata,
-        LinuxNarrationCaptureDiscovery discovery) =>
+        LinuxCameraCaptureDiscovery discovery) =>
         SlideShowRecordingCaptureAdapterReadiness.FromDevices(
             metadata.HostName,
             metadata.AdapterName,
             discovery.Devices,
             requiresUserPermission: true,
             discovery.IsAvailable
-                ? "Linux camera recording is not available in the narration adapter."
+                ? string.Empty
                 : discovery.UnavailableReason);
 }
