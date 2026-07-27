@@ -445,3 +445,12 @@ through one undoable `SetTableColumnWidthCommand`, updates the shared grid used 
 survives PPTX save/reopen. Focused shared command, WPF context-menu, and Avalonia context-menu
 tests cover apply/undo and host reachability. This is functional package/authoring parity; it
 does not claim a new visual-fidelity calibration.
+
+### 2026-07-28 text autofit authoring
+
+Text bodies already preserved PowerPoint's three distinct DrawingML autofit modes:
+`a:noAutofit`, `a:normAutofit`, and `a:spAutoFit`. FreeP now exposes those choices in the
+shared WPF/Avalonia font ribbon and routes them through one undoable
+`SetShapeTextAutoFitCommand`. Command, profile, host-routing, and PPTX save/reopen tests cover
+the exact three-state distinction. This closes a functional authoring gap without changing
+the established text renderer or claiming a new pixel-fidelity calibration.
