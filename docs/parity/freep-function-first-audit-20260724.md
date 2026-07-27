@@ -381,3 +381,12 @@ preserving the current media and pointer settings while routing through
 recording without introducing a UI-local timer. Focused presenter source and view-plan
 tests cover the cross-host route. Hardware capture and COM validation remain outside
 this slice.
+
+### 2026-07-27 presenter view rehearse timings
+
+The shared timing recorder already distinguished rehearsal from recording and intentionally
+avoided persisting rehearsal durations, but the native presenter dashboards exposed only
+Record Timings. WPF and Avalonia now expose a separate Rehearse Timings toggle, with the
+active mode reflected from the shared presenter plan and both transitions routed through
+the same session controller. Focused view-plan and host source tests cover the distinction;
+rehearsal remains a local timing workflow and does not claim hardware or COM capture parity.
