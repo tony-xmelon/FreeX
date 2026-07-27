@@ -165,7 +165,7 @@ Inventory scenarios: **465**. Captured WPF: **186**. Captured Avalonia: **276**.
 | `style.initial` | captured/captured | **genuine-visual-mismatch** | pass (25.8% painted) | pass (26.1% painted) | 18.49 % | 11.28 |  | heatmaps/style.initial.png |
 | `style.populated` | captured/captured | **genuine-visual-mismatch** | pass (25.8% painted) | pass (26.3% painted) | 18.68 % | 11.51 |  | heatmaps/style.populated.png |
 | `style.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (25.8% painted) | pass (26.3% painted) | 18.70 % | 11.52 |  | heatmaps/style.validation-error.png |
-| `symbol-picker.initial` | captured/captured | **genuine-visual-mismatch** | pass (32.9% painted) | pass (10.5% painted) | 26.30 % | 10.54 | focus | heatmaps/symbol-picker.initial.png |
+| `symbol-picker.initial` | captured/captured | **semantic-mismatch** | pass (32.9% painted) | pass (33.0% painted) | 2.09 % | 1.72 | focus | heatmaps/symbol-picker.initial.png |
 | `table-formula.initial` | captured/captured | **genuine-visual-mismatch** | pass (6.0% painted) | pass (3.2% painted) | 6.67 % | 3.58 | focus,default-button,cancel-button,action-button-order | heatmaps/table-formula.initial.png |
 | `table-formula.populated` | captured/captured | **genuine-visual-mismatch** | pass (6.0% painted) | pass (3.6% painted) | 7.00 % | 4.15 | focus,default-button,cancel-button,action-button-order | heatmaps/table-formula.populated.png |
 | `table-formula.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (6.1% painted) | pass (3.5% painted) | 8.00 % | 4.28 | focus,default-button,cancel-button,action-button-order | heatmaps/table-formula.validation-error.png |
