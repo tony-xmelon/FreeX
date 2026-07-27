@@ -622,10 +622,10 @@
                          "png":  "dialog.Options.Proofing.png",
                          "captured":  true,
                          "evidenceSource":  "focused-current-avalonia-parity-capture",
-                         "recaptureStatus":  "fresh-avalonia-focused-capture-2026-07-26",
+                         "recaptureStatus":  "fresh-linux-docker-focused-capture-options-proofing-wave21-2026-07-27",
                          "expectedWidth":  744,
                          "expectedHeight":  521,
-                         "note":  "Fresh focused capture from current FreeX Avalonia source on the Windows desktop host on 2026-07-26 via --parity-capture --parity-capture-surface dialog.Options.Proofing; 744x521 px at 96 DPI after the persisted ProofingIgnoreUppercase state fix."
+                         "note":  "Fresh focused capture from merged FreeX Avalonia source in Ubuntu 24.04 Docker/Xvfb on 2026-07-27 via --parity-capture --parity-capture-surface dialog.Options.Proofing; 744x521 px at 96 DPI after the Wave 21 Proofing layout, focus, keyboard navigation, and shared-metrics alignment."
                      },
                      {
                          "id":  "dialog.Options.Save",

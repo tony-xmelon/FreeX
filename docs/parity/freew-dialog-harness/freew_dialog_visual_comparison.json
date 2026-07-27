@@ -1,6 +1,6 @@
 {
   "schema": "freew.dialog-visual-comparison.v1",
-  "generatedFromSha256": "9dea792c9d727bab998c00f35f863092d11da9558534dc2c7fcecd8d8883a0e3",
+  "generatedFromSha256": "07c4f307f1bcecac516142b3704b5b55a7c34f35a68a7305787ebfe4f4fe0dca",
   "targetDpi": 96,
   "inventoryScenarioCount": 466,
   "wpfCaptureCount": 187,
@@ -19,7 +19,7 @@
         "luminanceSimilarity": 0.7877358902545801,
         "perceptualHashDistance": 2
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/about.initial.png",
       "note": null,
       "wpfContent": {
@@ -76,7 +76,7 @@
         "luminanceSimilarity": 0.7877358902545801,
         "perceptualHashDistance": 2
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/about.populated.png",
       "note": null,
       "wpfContent": {
@@ -123,7 +123,7 @@
     {
       "scenarioId": "about.validation-error",
       "captureStatus": "captured/captured",
-      "classification": "semantic-mismatch",
+      "classification": "pass",
       "metrics": {
         "comparedPixels": 336000,
         "changedPixels": 5915,
@@ -133,7 +133,7 @@
         "luminanceSimilarity": 0.9282240783757916,
         "perceptualHashDistance": 0
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/about.validation-error.png",
       "note": null,
       "wpfContent": {
@@ -7965,7 +7965,7 @@
     {
       "scenarioId": "password-prompt.initial",
       "captureStatus": "captured/captured",
-      "classification": "semantic-mismatch",
+      "classification": "pass",
       "metrics": {
         "comparedPixels": 336000,
         "changedPixels": 6345,
@@ -7975,7 +7975,7 @@
         "luminanceSimilarity": 0.9313854094639847,
         "perceptualHashDistance": 0
       },
-      "semanticDifference": "focus",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/password-prompt.initial.png",
       "note": null,
       "wpfContent": {
@@ -8022,7 +8022,7 @@
     {
       "scenarioId": "password-prompt.populated",
       "captureStatus": "captured/captured",
-      "classification": "semantic-mismatch",
+      "classification": "pass",
       "metrics": {
         "comparedPixels": 336000,
         "changedPixels": 6473,
@@ -8032,7 +8032,7 @@
         "luminanceSimilarity": 0.9313027577861754,
         "perceptualHashDistance": 0
       },
-      "semanticDifference": "focus",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/password-prompt.populated.png",
       "note": null,
       "wpfContent": {
@@ -8991,7 +8991,7 @@
     {
       "scenarioId": "symbol-picker.initial",
       "captureStatus": "captured/captured",
-      "classification": "semantic-mismatch",
+      "classification": "pass",
       "metrics": {
         "comparedPixels": 336000,
         "changedPixels": 7009,
@@ -9001,7 +9001,7 @@
         "luminanceSimilarity": 0.9400641458022069,
         "perceptualHashDistance": 0
       },
-      "semanticDifference": "focus,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/symbol-picker.initial.png",
       "note": null,
       "wpfContent": {
@@ -13364,8 +13364,7 @@
   ],
   "counts": {
     "genuine-visual-mismatch": 171,
-    "semantic-mismatch": 4,
-    "pass": 8,
+    "pass": 12,
     "state-not-applicable": 4,
     "avalonia-extension": 96
   }
