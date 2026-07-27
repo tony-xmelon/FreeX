@@ -1,0 +1,184 @@
+{
+  "schema": "freew.dialog-visual-comparison.v1",
+  "generatedFromSha256": "d7a15dfab76bebdb96888d4ab67aac70a59673ea858eb76fb143476cebfb997c",
+  "targetDpi": 96,
+  "inventoryScenarioCount": 6,
+  "wpfCaptureCount": 3,
+  "avaloniaCaptureCount": 3,
+  "rows": [
+    {
+      "scenarioId": "insert-chart.initial",
+      "captureStatus": "captured/captured",
+      "classification": "genuine-visual-mismatch",
+      "metrics": {
+        "comparedPixels": 336000,
+        "changedPixels": 21602,
+        "changedRatio": 0.06429166666666666,
+        "meanAbsoluteChannelDelta": 4.943697420636289,
+        "p95AbsoluteChannelDelta": 10,
+        "luminanceSimilarity": 0.8953864464662004,
+        "perceptualHashDistance": 1
+      },
+      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "heatmapPath": "heatmaps/insert-chart.initial.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.9131994047619048,
+        "nearTransparentRatio": 0.08680059523809523,
+        "nearBlackRatio": 0.0020010754966024087,
+        "dominantColorRatio": 0.7411116723972168,
+        "distinctColorCount": 468,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.2314970238095238,
+        "contentBounds": {
+          "x": 14,
+          "y": 17,
+          "width": 517,
+          "height": 306
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.9115238095238095,
+        "nearTransparentRatio": 0.08847619047619047,
+        "nearBlackRatio": 0.00037221815902204575,
+        "dominantColorRatio": 0.7671840716748511,
+        "distinctColorCount": 219,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.2122172619047619,
+        "contentBounds": {
+          "x": 14,
+          "y": 18,
+          "width": 516,
+          "height": 305
+        }
+      }
+    },
+    {
+      "scenarioId": "insert-chart.populated",
+      "captureStatus": "captured/captured",
+      "classification": "genuine-visual-mismatch",
+      "metrics": {
+        "comparedPixels": 336000,
+        "changedPixels": 21602,
+        "changedRatio": 0.06429166666666666,
+        "meanAbsoluteChannelDelta": 4.943697420636289,
+        "p95AbsoluteChannelDelta": 10,
+        "luminanceSimilarity": 0.8953864464662004,
+        "perceptualHashDistance": 1
+      },
+      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "heatmapPath": "heatmaps/insert-chart.populated.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.9131994047619048,
+        "nearTransparentRatio": 0.08680059523809523,
+        "nearBlackRatio": 0.0020010754966024087,
+        "dominantColorRatio": 0.7411116723972168,
+        "distinctColorCount": 468,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.2314970238095238,
+        "contentBounds": {
+          "x": 14,
+          "y": 17,
+          "width": 517,
+          "height": 306
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.9115238095238095,
+        "nearTransparentRatio": 0.08847619047619047,
+        "nearBlackRatio": 0.00037221815902204575,
+        "dominantColorRatio": 0.7671840716748511,
+        "distinctColorCount": 219,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.2122172619047619,
+        "contentBounds": {
+          "x": 14,
+          "y": 18,
+          "width": 516,
+          "height": 305
+        }
+      }
+    },
+    {
+      "scenarioId": "insert-chart.validation-error",
+      "captureStatus": "captured/captured",
+      "classification": "genuine-visual-mismatch",
+      "metrics": {
+        "comparedPixels": 336000,
+        "changedPixels": 21536,
+        "changedRatio": 0.0640952380952381,
+        "meanAbsoluteChannelDelta": 4.90977281746169,
+        "p95AbsoluteChannelDelta": 10,
+        "luminanceSimilarity": 0.8958805254285733,
+        "perceptualHashDistance": 1
+      },
+      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "heatmapPath": "heatmaps/insert-chart.validation-error.png",
+      "note": null,
+      "wpfContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.9131994047619048,
+        "nearTransparentRatio": 0.08680059523809523,
+        "nearBlackRatio": 0.0019978164159890495,
+        "dominantColorRatio": 0.7413267717176985,
+        "distinctColorCount": 459,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.23132738095238095,
+        "contentBounds": {
+          "x": 14,
+          "y": 17,
+          "width": 517,
+          "height": 306
+        }
+      },
+      "avaloniaContent": {
+        "passesContentGate": true,
+        "failure": null,
+        "width": 560,
+        "height": 600,
+        "pixelCount": 336000,
+        "opaqueRatio": 0.9115238095238095,
+        "nearTransparentRatio": 0.08847619047619047,
+        "nearBlackRatio": 0.0003069167276146693,
+        "dominantColorRatio": 0.7673930362553547,
+        "distinctColorCount": 216,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.2120267857142857,
+        "contentBounds": {
+          "x": 14,
+          "y": 18,
+          "width": 516,
+          "height": 305
+        }
+      }
+    }
+  ],
+  "counts": {
+    "genuine-visual-mismatch": 3
+  }
+}
