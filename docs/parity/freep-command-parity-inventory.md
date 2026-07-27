@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 438 | 436 | 0 | 2 | 2 | 0 | 0 | 0 | 436 | 0 | 0 | 2 | 0 | 101 |
+| 442 | 440 | 0 | 2 | 2 | 0 | 0 | 0 | 440 | 0 | 0 | 2 | 0 | 101 |
 
 ## Workflow Evidence
 
@@ -231,6 +231,10 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.arrange.send-to-back` | Send to Back | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.ungroup` | Ungroup | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.audio` | Audio | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.background-black` | Black Background | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.background-blue` | Blue Background | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.background-reset` | Reset Background | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.background-white` | White Background | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.bold` | Bold | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.bullets` | Bullets | Yes | Yes | none | shared | home/paragraph (RibbonDropdown) | home/paragraph (RibbonDropdown) | Available in both generated FreeP ribbon profiles. |
 | `freep.bullets.bullet.check` | ✓  Check Bullet | Yes | Yes | none | shared | home/paragraph (RibbonMenuItem) | home/paragraph (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
