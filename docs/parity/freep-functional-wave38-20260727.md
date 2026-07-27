@@ -9,16 +9,15 @@ regressions from the Wave 37 audit.
 
 ## Findings and fixes
 
-- The Avalonia font-family key-tip failure was harness-only. At the default
-  headless width, adaptive ribbon layout collapses the Font group, and the
-  realized ComboBox is not exposed through the logical descendants used by the
-  test. The production key-tip route was already correct. The durable test now
-  renders the ribbon at a width that keeps the group visible, drains pending
-  layout jobs, and locates the rendered control through visual descendants.
-- Production combo lookup now prefers visual descendants and retains a logical
-  tree fallback. This keeps key-tip execution aligned with the control that is
-  actually rendered while preserving the existing route for non-templated
-  controls.
+- The original Avalonia font-family failure combined adaptive test setup with a
+  production lookup weakness. At the default headless width the Font group is
+  collapsed, while a rendered ComboBox inside a realized tab template is not
+  guaranteed to appear among logical descendants.
+- The durable test now renders the ribbon at a width that keeps the group
+  visible, drains pending layout jobs, and locates the rendered control through
+  visual descendants. Production combo lookup now does the same and retains a
+  logical-tree fallback, so key-tip execution targets the control that is
+  actually rendered instead of depending on incidental logical-tree exposure.
 - The unfiltered Avalonia Transitions expectation was stale. WPF/shared ribbon
   authority includes Rehearse Timings and Record Timings between the two slide
   playback commands and Custom Shows; the Avalonia definition test now asserts
