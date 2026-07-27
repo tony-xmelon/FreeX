@@ -1,6 +1,6 @@
 {
   "schema": "freew.dialog-visual-comparison.v1",
-  "generatedFromSha256": "a2452988721d81fffd353d06b5d2a3a599d8fc34e9a1a377ce4b6a559a81b80f",
+  "generatedFromSha256": "9dea792c9d727bab998c00f35f863092d11da9558534dc2c7fcecd8d8883a0e3",
   "targetDpi": 96,
   "inventoryScenarioCount": 466,
   "wpfCaptureCount": 187,
@@ -354,11 +354,11 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 13757,
-        "changedRatio": 0.04094345238095238,
-        "meanAbsoluteChannelDelta": 4.586981150793584,
+        "changedPixels": 13731,
+        "changedRatio": 0.040866071428571425,
+        "meanAbsoluteChannelDelta": 4.581509920634854,
         "p95AbsoluteChannelDelta": 0,
-        "luminanceSimilarity": 0.8948842864371438,
+        "luminanceSimilarity": 0.8949008827496839,
         "perceptualHashDistance": 0
       },
       "semanticDifference": "action-button-order",
@@ -373,10 +373,10 @@
         "opaqueRatio": 0.911577380952381,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.9706797051379644,
+        "dominantColorRatio": 0.9707610329279956,
         "distinctColorCount": 134,
         "luminanceRange": 203.99999999999997,
-        "contentPixelRatio": 0.02666666666666667,
+        "contentPixelRatio": 0.026592261904761903,
         "contentBounds": {
           "x": 0,
           "y": 0,
@@ -703,7 +703,7 @@
         "luminanceSimilarity": 0.9105679162335197,
         "perceptualHashDistance": 2
       },
-      "semanticDifference": "action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/backstage-options.open.png",
       "note": null,
       "wpfContent": {
@@ -931,7 +931,7 @@
         "luminanceSimilarity": 0.940264597949629,
         "perceptualHashDistance": 2
       },
-      "semanticDifference": "cancel-button,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/bookmark-manager.initial.png",
       "note": null,
       "wpfContent": {
@@ -988,7 +988,7 @@
         "luminanceSimilarity": 0.940264597949629,
         "perceptualHashDistance": 2
       },
-      "semanticDifference": "cancel-button,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/bookmark-manager.populated.png",
       "note": null,
       "wpfContent": {
@@ -1045,7 +1045,7 @@
         "luminanceSimilarity": 0.940264597949629,
         "perceptualHashDistance": 2
       },
-      "semanticDifference": "cancel-button,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/bookmark-manager.validation-error.png",
       "note": null,
       "wpfContent": {
@@ -1444,7 +1444,7 @@
         "luminanceSimilarity": 0.9203492421924143,
         "perceptualHashDistance": 12
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/building-blocks-organizer.initial.png",
       "note": null,
       "wpfContent": {
@@ -1501,7 +1501,7 @@
         "luminanceSimilarity": 0.9200590909219379,
         "perceptualHashDistance": 12
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/building-blocks-organizer.populated.png",
       "note": null,
       "wpfContent": {
@@ -1558,7 +1558,7 @@
         "luminanceSimilarity": 0.9194040285333018,
         "perceptualHashDistance": 12
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/building-blocks-organizer.validation-error.png",
       "note": null,
       "wpfContent": {
@@ -1605,7 +1605,7 @@
     {
       "scenarioId": "cell-shading.initial",
       "captureStatus": "captured/captured",
-      "classification": "semantic-mismatch",
+      "classification": "pass",
       "metrics": {
         "comparedPixels": 336000,
         "changedPixels": 6612,
@@ -1615,7 +1615,7 @@
         "luminanceSimilarity": 0.9446356878711453,
         "perceptualHashDistance": 0
       },
-      "semanticDifference": "action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/cell-shading.initial.png",
       "note": null,
       "wpfContent": {
@@ -3781,7 +3781,7 @@
         "luminanceSimilarity": 0.8838401163996353,
         "perceptualHashDistance": 17
       },
-      "semanticDifference": "action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/find-replace.initial.png",
       "note": null,
       "wpfContent": {
@@ -3838,7 +3838,7 @@
         "luminanceSimilarity": 0.8833456144136682,
         "perceptualHashDistance": 17
       },
-      "semanticDifference": "action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/find-replace.populated.png",
       "note": null,
       "wpfContent": {
@@ -3895,7 +3895,7 @@
         "luminanceSimilarity": 0.8816803898814894,
         "perceptualHashDistance": 17
       },
-      "semanticDifference": "action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/find-replace.validation-error.png",
       "note": null,
       "wpfContent": {
@@ -3952,7 +3952,7 @@
         "luminanceSimilarity": 0.8265793432734501,
         "perceptualHashDistance": 8
       },
-      "semanticDifference": "default-button,cancel-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/font.initial.png",
       "note": null,
       "wpfContent": {
@@ -4009,7 +4009,7 @@
         "luminanceSimilarity": 0.8256189976575679,
         "perceptualHashDistance": 8
       },
-      "semanticDifference": "default-button,cancel-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/font.populated.png",
       "note": null,
       "wpfContent": {
@@ -4066,7 +4066,7 @@
         "luminanceSimilarity": 0.844925719474483,
         "perceptualHashDistance": 1
       },
-      "semanticDifference": "default-button,cancel-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/font.tab-advanced.png",
       "note": null,
       "wpfContent": {
@@ -4123,7 +4123,7 @@
         "luminanceSimilarity": 0.8265793432734501,
         "perceptualHashDistance": 8
       },
-      "semanticDifference": "default-button,cancel-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/font.tab-font.png",
       "note": null,
       "wpfContent": {
@@ -4180,7 +4180,7 @@
         "luminanceSimilarity": 0.8234385567826602,
         "perceptualHashDistance": 8
       },
-      "semanticDifference": "default-button,cancel-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/font.validation-error.png",
       "note": null,
       "wpfContent": {
@@ -4230,14 +4230,14 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 59118,
-        "changedRatio": 0.17594642857142856,
-        "meanAbsoluteChannelDelta": 7.629138888888984,
-        "p95AbsoluteChannelDelta": 34,
-        "luminanceSimilarity": 0.8940135039752954,
-        "perceptualHashDistance": 3
+        "changedPixels": 24446,
+        "changedRatio": 0.07275595238095238,
+        "meanAbsoluteChannelDelta": 5.25115873015862,
+        "p95AbsoluteChannelDelta": 10,
+        "luminanceSimilarity": 0.9032487264490632,
+        "perceptualHashDistance": 0
       },
-      "semanticDifference": "default-button,cancel-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/footnote-endnote-options.initial.png",
       "note": null,
       "wpfContent": {
@@ -4268,16 +4268,16 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.9115238095238095,
         "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 0.00032977222860725106,
-        "dominantColorRatio": 0.9425118848605162,
-        "distinctColorCount": 363,
+        "nearBlackRatio": 0.0003754832305924146,
+        "dominantColorRatio": 0.8362762511754258,
+        "distinctColorCount": 382,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.05235416666666667,
+        "contentPixelRatio": 0.14919047619047618,
         "contentBounds": {
           "x": 14,
-          "y": 18,
-          "width": 516,
-          "height": 239
+          "y": 20,
+          "width": 517,
+          "height": 289
         }
       }
     },
@@ -4287,14 +4287,14 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 60663,
-        "changedRatio": 0.18054464285714286,
-        "meanAbsoluteChannelDelta": 8.022785714285813,
-        "p95AbsoluteChannelDelta": 34,
-        "luminanceSimilarity": 0.8889278646651201,
-        "perceptualHashDistance": 3
+        "changedPixels": 25039,
+        "changedRatio": 0.07452083333333333,
+        "meanAbsoluteChannelDelta": 5.387240079364976,
+        "p95AbsoluteChannelDelta": 15,
+        "luminanceSimilarity": 0.9014768308004402,
+        "perceptualHashDistance": 0
       },
-      "semanticDifference": "default-button,cancel-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/footnote-endnote-options.populated.png",
       "note": null,
       "wpfContent": {
@@ -4325,16 +4325,16 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.9115238095238095,
         "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 0.0006823999582070839,
-        "dominantColorRatio": 0.93599480200606,
-        "distinctColorCount": 388,
+        "nearBlackRatio": 0.0007281109601922475,
+        "dominantColorRatio": 0.8360281057360778,
+        "distinctColorCount": 407,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.05829464285714286,
+        "contentPixelRatio": 0.14941666666666667,
         "contentBounds": {
           "x": 14,
-          "y": 18,
-          "width": 516,
-          "height": 239
+          "y": 20,
+          "width": 517,
+          "height": 289
         }
       }
     },
@@ -4344,14 +4344,14 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 60522,
-        "changedRatio": 0.180125,
-        "meanAbsoluteChannelDelta": 8.517769841269748,
-        "p95AbsoluteChannelDelta": 34,
-        "luminanceSimilarity": 0.8825844702279892,
-        "perceptualHashDistance": 4
+        "changedPixels": 25610,
+        "changedRatio": 0.07622023809523809,
+        "meanAbsoluteChannelDelta": 5.737041666666628,
+        "p95AbsoluteChannelDelta": 21,
+        "luminanceSimilarity": 0.8971775709461945,
+        "perceptualHashDistance": 0
       },
-      "semanticDifference": "default-button,cancel-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/footnote-endnote-options.validation-error.png",
       "note": null,
       "wpfContent": {
@@ -4383,15 +4383,15 @@
         "opaqueRatio": 0.9115238095238095,
         "nearTransparentRatio": 0.08847619047619047,
         "nearBlackRatio": 0.00046364016299237277,
-        "dominantColorRatio": 0.9357303312088601,
+        "dominantColorRatio": 0.8324267317939609,
         "distinctColorCount": 400,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.05853571428571429,
+        "contentPixelRatio": 0.15269940476190477,
         "contentBounds": {
           "x": 14,
-          "y": 18,
-          "width": 516,
-          "height": 239
+          "y": 20,
+          "width": 517,
+          "height": 289
         }
       }
     },
@@ -4579,7 +4579,7 @@
         "luminanceSimilarity": 0.7640220472489808,
         "perceptualHashDistance": 5
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/icon-picker.initial.png",
       "note": null,
       "wpfContent": {
@@ -4626,7 +4626,7 @@
     {
       "scenarioId": "icon-picker.populated",
       "captureStatus": "captured/captured",
-      "classification": "semantic-mismatch",
+      "classification": "pass",
       "metrics": {
         "comparedPixels": 336000,
         "changedPixels": 4285,
@@ -4636,7 +4636,7 @@
         "luminanceSimilarity": 0.943718506157168,
         "perceptualHashDistance": 0
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/icon-picker.populated.png",
       "note": null,
       "wpfContent": {
@@ -4683,7 +4683,7 @@
     {
       "scenarioId": "icon-picker.validation-error",
       "captureStatus": "captured/captured",
-      "classification": "semantic-mismatch",
+      "classification": "pass",
       "metrics": {
         "comparedPixels": 336000,
         "changedPixels": 4589,
@@ -4693,7 +4693,7 @@
         "luminanceSimilarity": 0.9409463435218202,
         "perceptualHashDistance": 0
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/icon-picker.validation-error.png",
       "note": null,
       "wpfContent": {
@@ -5787,7 +5787,7 @@
         "luminanceSimilarity": 0.9000235310286215,
         "perceptualHashDistance": 8
       },
-      "semanticDifference": "action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/insert-smart-art.initial.png",
       "note": null,
       "wpfContent": {
@@ -5844,7 +5844,7 @@
         "luminanceSimilarity": 0.9000235310286215,
         "perceptualHashDistance": 8
       },
-      "semanticDifference": "action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/insert-smart-art.populated.png",
       "note": null,
       "wpfContent": {
@@ -5901,7 +5901,7 @@
         "luminanceSimilarity": 0.8988954242935266,
         "perceptualHashDistance": 8
       },
-      "semanticDifference": "action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/insert-smart-art.validation-error.png",
       "note": null,
       "wpfContent": {
@@ -6471,7 +6471,7 @@
         "luminanceSimilarity": 0.9152608137688069,
         "perceptualHashDistance": 1
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/manage-styles.initial.png",
       "note": null,
       "wpfContent": {
@@ -6528,7 +6528,7 @@
         "luminanceSimilarity": 0.9152608137688069,
         "perceptualHashDistance": 1
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/manage-styles.populated.png",
       "note": null,
       "wpfContent": {
@@ -6585,7 +6585,7 @@
         "luminanceSimilarity": 0.9152608137688069,
         "perceptualHashDistance": 1
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/manage-styles.validation-error.png",
       "note": null,
       "wpfContent": {
@@ -8089,7 +8089,7 @@
         "luminanceSimilarity": 0.8540829137853964,
         "perceptualHashDistance": 1
       },
-      "semanticDifference": "default-button,cancel-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/paste-special.initial.png",
       "note": null,
       "wpfContent": {
@@ -8146,7 +8146,7 @@
         "luminanceSimilarity": 0.8540829137853964,
         "perceptualHashDistance": 1
       },
-      "semanticDifference": "default-button,cancel-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/paste-special.populated.png",
       "note": null,
       "wpfContent": {
@@ -8203,7 +8203,7 @@
         "luminanceSimilarity": 0.8540829137853964,
         "perceptualHashDistance": 1
       },
-      "semanticDifference": "default-button,cancel-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/paste-special.validation-error.png",
       "note": null,
       "wpfContent": {
@@ -8431,7 +8431,7 @@
         "luminanceSimilarity": 0.8833503127156036,
         "perceptualHashDistance": 10
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": "default-button",
       "heatmapPath": "heatmaps/restrict-editing.initial.png",
       "note": null,
       "wpfContent": {
@@ -8488,7 +8488,7 @@
         "luminanceSimilarity": 0.883194741965368,
         "perceptualHashDistance": 10
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": "default-button",
       "heatmapPath": "heatmaps/restrict-editing.populated.png",
       "note": null,
       "wpfContent": {
@@ -8545,7 +8545,7 @@
         "luminanceSimilarity": 0.8828842204204917,
         "perceptualHashDistance": 10
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": "default-button",
       "heatmapPath": "heatmaps/restrict-editing.validation-error.png",
       "note": null,
       "wpfContent": {
@@ -8830,7 +8830,7 @@
         "luminanceSimilarity": 0.8629291576070601,
         "perceptualHashDistance": 7
       },
-      "semanticDifference": "default-button,cancel-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/style.initial.png",
       "note": null,
       "wpfContent": {
@@ -8887,7 +8887,7 @@
         "luminanceSimilarity": 0.8605734921499006,
         "perceptualHashDistance": 7
       },
-      "semanticDifference": "default-button,cancel-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/style.populated.png",
       "note": null,
       "wpfContent": {
@@ -8944,7 +8944,7 @@
         "luminanceSimilarity": 0.8605213138081333,
         "perceptualHashDistance": 7
       },
-      "semanticDifference": "default-button,cancel-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/style.validation-error.png",
       "note": null,
       "wpfContent": {
@@ -9001,7 +9001,7 @@
         "luminanceSimilarity": 0.9400641458022069,
         "perceptualHashDistance": 0
       },
-      "semanticDifference": "focus,cancel-button,action-button-order",
+      "semanticDifference": "focus,action-button-order",
       "heatmapPath": "heatmaps/symbol-picker.initial.png",
       "note": null,
       "wpfContent": {
@@ -9970,7 +9970,7 @@
         "luminanceSimilarity": 0.8884737745920486,
         "perceptualHashDistance": 0
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": "default-button,cancel-button",
       "heatmapPath": "heatmaps/watermark.initial.png",
       "note": null,
       "wpfContent": {
@@ -10027,7 +10027,7 @@
         "luminanceSimilarity": 0.8862457451878913,
         "perceptualHashDistance": 0
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": "default-button,cancel-button",
       "heatmapPath": "heatmaps/watermark.populated.png",
       "note": null,
       "wpfContent": {
@@ -10084,7 +10084,7 @@
         "luminanceSimilarity": 0.8858993223287309,
         "perceptualHashDistance": 0
       },
-      "semanticDifference": "default-button,cancel-button,action-button-order",
+      "semanticDifference": "default-button,cancel-button",
       "heatmapPath": "heatmaps/watermark.validation-error.png",
       "note": null,
       "wpfContent": {
@@ -13364,8 +13364,8 @@
   ],
   "counts": {
     "genuine-visual-mismatch": 171,
-    "semantic-mismatch": 7,
-    "pass": 5,
+    "semantic-mismatch": 4,
+    "pass": 8,
     "state-not-applicable": 4,
     "avalonia-extension": 96
   }

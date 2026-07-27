@@ -653,7 +653,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.Options.Advanced.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-direct-avalonia-parity-capture",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-focused-capture-wave20-2026-07-27",
+                         "expectedWidth":  744,
+                         "expectedHeight":  521,
+                         "note":  "Fresh FreeX Avalonia production capture from Ubuntu 24.04 Docker/Xvfb at 96 DPI using --parity-capture-surface dialog.Options.Advanced. AutoComplete and Objects display are enabled and the shared Advanced-page and footer metrics are applied."
                      },
                      {
                          "id":  "dialog.Options.CustomizeRibbon",

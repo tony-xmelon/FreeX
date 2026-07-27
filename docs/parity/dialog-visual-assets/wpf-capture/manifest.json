@@ -68,7 +68,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.Options.Advanced.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-direct-wpf-parity-capture",
+                         "recaptureStatus":  "fresh-wpf-client-frame-capture-wave20-2026-07-27",
+                         "expectedWidth":  744,
+                         "expectedHeight":  521,
+                         "note":  "Fresh direct WPF full parity capture from Wave 20 source. The harness measures native window chrome and renders the Options Advanced client frame at the shared 744x521 planner size with the 46 px footer and both action buttons visible."
                      },
                      {
                          "id":  "dialog.Options.CustomizeRibbon",
