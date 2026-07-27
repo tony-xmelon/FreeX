@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 2,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 100
+    "workflowEvidenceRows": 101
   },
   "workflowEvidence": [
     {
@@ -1433,6 +1433,22 @@
         "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
       ],
       "remainingWork": "radialCycle now uses the bounded shared cycle-family live-layout path for parsed nodes while other unsupported cycle siblings remain on cached drawing fallback. Broader SmartArt geometry families, PowerPoint-authoritative visual baselines, and SmartArt authoring/editing remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.radial-list",
+      "area": "SmartArt radial list dedicated live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume ordinary slide shape and center-spoke connector ops emitted by the dedicated radial-list planner; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/freep-smartart-radial-list-wave28-20260727.md"
+      ],
+      "verification": [
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Presentation.Tests/SmartArtEditingPlannerTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs",
+        "freep/FreeP.App.Avalonia.Tests/MainWindowHeadlessTests.cs"
+      ],
+      "remainingWork": "radialList now uses a bounded shared radial-spoke plan for up to eight parsed nodes; larger diagrams intentionally retain cached-drawing fallback. Exact PowerPoint sizing, connector attachment/routing, effects, native layout-part regeneration, and PowerPoint-authoritative visual baselines remain deferred."
     },
     {
       "evidenceId": "freep.smartart.gear-cycle",
