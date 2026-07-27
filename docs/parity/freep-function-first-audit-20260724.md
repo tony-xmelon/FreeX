@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 369 command IDs total.
-- 367 shared across WPF and Avalonia.
+- 392 command IDs total.
+- 390 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 2 intentional shell/profile variances: Undo and Redo are routed through WPF
@@ -333,3 +333,13 @@ This slice exposes Right Triangle, Minus, Multiply, Divide, Equal, Not Equal, Wa
 Rectangular Callout, Rounded Rectangular Callout, and Oval Callout through both host
 ribbons and Avalonia routes. Localization, icons, planner insertion/conversion,
 and WPF/Avalonia reachability tests cover the new commands; no renderer behavior changed.
+
+### 2026-07-27 flowchart and special AutoShape catalog expansion
+
+The shared geometry builder and DrawingML preset map already supported the remaining
+flowchart process/decision/data/predefined/document/terminator shapes plus Explosion,
+Ribbon, Line Callout, Cylinder, and Chord, but they were not reachable from Insert Shape
+or Change Shape. Both host command surfaces now expose these eleven native kinds through
+the shared insertion/editing session path, with localized labels, meaningful ribbon icons,
+and WPF/Avalonia planner and reachability coverage. The slice adds no renderer-specific
+calibration and preserves the existing native preset geometry on save/reopen.
