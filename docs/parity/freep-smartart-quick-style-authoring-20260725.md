@@ -4,7 +4,10 @@ FreeP now exposes a bounded SmartArt Change Style workflow in both WPF and Avalo
 
 ## Scope
 
-- Simple, Moderate, and Intense Quick Style presets are available from the SmartArt design ribbon.
+- All 14 PowerPoint SmartArt Quick Style gallery entries are available from the SmartArt design ribbon:
+  Simple Fill, White Outline, Subtle Effect, Moderate Effect, Intense Effect, Polished,
+  Inset, Cartoon, Powder, Brick Scene, Flat Scene, Metallic Scene, Sunset Scene, and
+  Bird's Eye Scene.
 - The shared authoring planner updates the native `dgm:styleDef/@uniqueId` and title metadata.
 - If an imported graphic has no style part, the operation creates a deterministic native
   `diagramStyle` part and `qs` relationship so the choice survives save/reopen.
@@ -17,7 +20,7 @@ cached drawing path.
 
 ## Verification
 
-- Shared SmartArt authoring planner: 34/34 focused tests.
-- WPF native style package persistence: 3/3 focused tests.
-- Avalonia command and undo routing: 1/1 focused headless test.
+- Shared SmartArt authoring planner: 14 native style identifiers/titles covered.
+- WPF native style package persistence: 14 gallery entries covered.
+- Avalonia legacy command and undo routing: Intense and Cartoon focused headless tests.
 - WPF and Avalonia Release builds: 0 warnings, 0 errors.
