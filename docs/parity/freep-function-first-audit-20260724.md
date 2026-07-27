@@ -426,3 +426,13 @@ one undoable `SetTableCellInsetCommand`; `Automatic` clears only the explicit ce
 table-style inheritance remains authoritative. Focused shared, WPF, Avalonia, ribbon-definition,
 and save/reopen tests cover the route. This is functional package/authoring parity, not a new
 visual calibration claim.
+
+### 2026-07-27 table-row height authoring
+
+Table rows already carried authored `HeightEmu` values through the shared model,
+PPTX reader/writer, and renderer paths, but neither host exposed a PowerPoint-style
+row-height workflow. WPF and Avalonia now expose a shared Row Height palette with
+Automatic and fixed inch presets. The active cell resolves its owning row and routes
+one undoable `SetTableRowHeightCommand`; save/reopen tests verify the edited height
+survives PPTX round-trip. This closes the authoring/function gap without changing
+the established table renderer or claiming a new pixel-fidelity improvement.
