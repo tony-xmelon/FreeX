@@ -416,3 +416,13 @@ Record Timings. WPF and Avalonia now expose a separate Rehearse Timings toggle, 
 active mode reflected from the shared presenter plan and both transitions routed through
 the same session controller. Focused view-plan and host source tests cover the distinction;
 rehearsal remains a local timing workflow and does not claim hardware or COM capture parity.
+
+### 2026-07-27 table-cell inset authoring
+
+Table cells already carried authored `tcMar` values through the shared model, PPTX reader/writer,
+and both renderers, but the hosts had no authoring route. WPF and Avalonia now expose a shared
+Cell Insets palette with automatic or point-valued presets for all four sides. The operation is
+one undoable `SetTableCellInsetCommand`; `Automatic` clears only the explicit cell value so
+table-style inheritance remains authoritative. Focused shared, WPF, Avalonia, ribbon-definition,
+and save/reopen tests cover the route. This is functional package/authoring parity, not a new
+visual calibration claim.
