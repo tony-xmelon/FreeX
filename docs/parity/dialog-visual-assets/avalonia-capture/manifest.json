@@ -706,7 +706,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.PrintPreview.png",
                          "captured":  true,
-                         "note":  "Fresh current-source Avalonia capture on 2026-07-27 via Docker Ubuntu 24.04/Xvfb FreeX --parity-capture --parity-capture-surface dialog.PrintPreview; captured PrintPreviewParityFixture with FreeX Parity Printer at 1120x700 px."
+                         "note":  "Fresh Wave 19 current-source Avalonia capture on 2026-07-27 via focused FreeX --parity-capture --parity-capture-surface dialog.PrintPreview; captured PrintPreviewParityFixture with FreeX Parity Printer at 1120x700 px."
                      }
                  ]
 }
