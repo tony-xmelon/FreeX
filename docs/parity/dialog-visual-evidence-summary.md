@@ -62,8 +62,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.Options | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.111 | 0.026 | 0.007 | 0.078 |
-| dialog.Options.General | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.111 | 0.026 | 0.007 | 0.078 |
 | dialog.SortOptions | 330x260 | 330x260 | 495x390 px @ 144 DPI vs 330x260 px @ 96 DPI |  |  | 0.111 | 0.053 | 0.010 | 0.047 |
 | dialog.GoTo | 420x320 | 420x320 | 630x480 px @ 144 DPI vs 420x320 px @ 96 DPI |  |  | 0.110 | 0.019 | 0.003 | 0.089 |
 | dialog.Options.Save | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.105 | 0.019 | 0.006 | 0.080 |
@@ -72,6 +70,8 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.ErrorChecking | 720x420 | 720x420 | 1080x630 px @ 144 DPI vs 720x420 px @ 96 DPI |  |  | 0.103 | 0.030 | 0.006 | 0.066 |
 | dialog.Options.TrustCenter | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.101 | 0.025 | 0.005 | 0.071 |
 | dialog.Options.CustomizeRibbon | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.100 | 0.018 | 0.006 | 0.075 |
+| dialog.FormatCells.Border | 620x597 | 620x597 | 620x597 px @ 96 DPI vs 620x597 px @ 96 DPI |  |  | 0.099 | 0.036 | 0.003 | 0.060 |
+| dialog.AccessibilityChecker | 360x520 | 360x520 | 360x520 px @ 96 DPI vs 360x520 px @ 96 DPI |  |  | 0.099 | 0.040 | 0.023 | 0.036 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -128,13 +128,13 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.InsertTimeline | dialog.InsertTimeline.png | 410x270 | 615x405 px @ 144 DPI | True | dialog.InsertTimeline.png | 410x270 | 410x270 px @ 96 DPI | True | True | 0.040 |
 | dialog.LegalNotices | dialog.LegalNotices.png | 840x620 | 1260x930 px @ 144 DPI | True | dialog.LegalNotices.png | 840x620 | 840x620 px @ 96 DPI | True | True | 0.030 |
 | dialog.OpenWorkbook | dialog.OpenWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | dialog.OpenWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | True | 0.034 |
-| dialog.Options | dialog.Options.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.111 |
+| dialog.Options | dialog.Options.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.032 |
 | dialog.Options.AddIns | dialog.Options.AddIns.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.AddIns.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.097 |
 | dialog.Options.Advanced | dialog.Options.Advanced.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Advanced.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.041 |
 | dialog.Options.CustomizeRibbon | dialog.Options.CustomizeRibbon.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.CustomizeRibbon.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.100 |
 | dialog.Options.EaseOfAccess | dialog.Options.EaseOfAccess.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.EaseOfAccess.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.098 |
 | dialog.Options.Formulas | dialog.Options.Formulas.png | 744x777 | 744x777 px @ 96 DPI | True | dialog.Options.Formulas.png | 744x777 | 744x777 px @ 96 DPI | True | True | 0.093 |
-| dialog.Options.General | dialog.Options.General.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.General.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.111 |
+| dialog.Options.General | dialog.Options.General.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.General.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.032 |
 | dialog.Options.Language | dialog.Options.Language.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Language.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.104 |
 | dialog.Options.Proofing | dialog.Options.Proofing.png | 744.301x521 | 744x521 px @ 96 DPI | True | dialog.Options.Proofing.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.042 |
 | dialog.Options.QuickAccessToolbar | dialog.Options.QuickAccessToolbar.png | 744.301x521 | 744x521 px @ 96 DPI | True | dialog.Options.QuickAccessToolbar.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.047 |

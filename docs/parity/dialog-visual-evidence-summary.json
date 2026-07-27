@@ -27,7 +27,7 @@
                     "visualReviewTriageThreshold":  0.4,
                     "visualReviewTriageThresholdRationale":  "This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.",
                     "visualReviewCandidateCount":  0,
-                    "highestTriageScore":  0.111494,
+                    "highestTriageScore":  0.110625,
                     "dimensionMismatchBuckets":  {
 
                                                  }
@@ -2574,7 +2574,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Options.png",
-                                                "fileBytes":  35942,
+                                                "fileBytes":  39592,
                                                 "width":  744,
                                                 "height":  521,
                                                 "dpiX":  96,
@@ -2582,11 +2582,17 @@
                                                 "logicalWidth":  744,
                                                 "logicalHeight":  521,
                                                 "pixels":  387624,
-                                                "distinctColors":  1749,
+                                                "distinctColors":  3329,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.753656,
+                                                "nonBackgroundRatio":  0.669136,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  248.300494
+                                                "meanLuma":  247.000978,
+                                                "manifestNote":  "Fresh FreeX Avalonia production capture from Ubuntu 24.04 Docker/Xvfb via --parity-capture --parity-capture-surface dialog.Options.General. The focused General PNG is promoted for the equivalent default Options surface so both canonical ids compare the same 744x521 client frame.",
+                                                "evidenceSource":  "fresh-direct-avalonia-parity-capture",
+                                                "sourcePng":  null,
+                                                "recaptureStatus":  "fresh-linux-docker-xvfb-focused-capture-options-general-wave23-2026-07-27",
+                                                "expectedWidth":  744,
+                                                "expectedHeight":  521
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -2601,10 +2607,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.026078,
-                                                  "lumaDelta":  0.007448,
-                                                  "nonBackgroundDelta":  0.077689,
-                                                  "triageScore":  0.111494,
+                                                  "sampleMeanDelta":  0.022684,
+                                                  "lumaDelta":  0.002352,
+                                                  "nonBackgroundDelta":  0.006831,
+                                                  "triageScore":  0.032147,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -2970,7 +2976,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Options.General.png",
-                                                "fileBytes":  35942,
+                                                "fileBytes":  39592,
                                                 "width":  744,
                                                 "height":  521,
                                                 "dpiX":  96,
@@ -2978,11 +2984,17 @@
                                                 "logicalWidth":  744,
                                                 "logicalHeight":  521,
                                                 "pixels":  387624,
-                                                "distinctColors":  1749,
+                                                "distinctColors":  3329,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.753656,
+                                                "nonBackgroundRatio":  0.669136,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  248.300494
+                                                "meanLuma":  247.000978,
+                                                "manifestNote":  "Fresh FreeX Avalonia production capture from Ubuntu 24.04 Docker/Xvfb via --parity-capture --parity-capture-surface dialog.Options.General after Wave23 General geometry, typography, control-state, and persistence alignment.",
+                                                "evidenceSource":  "fresh-direct-avalonia-parity-capture",
+                                                "sourcePng":  null,
+                                                "recaptureStatus":  "fresh-linux-docker-xvfb-focused-capture-options-general-wave23-2026-07-27",
+                                                "expectedWidth":  744,
+                                                "expectedHeight":  521
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -2997,10 +3009,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.026078,
-                                                  "lumaDelta":  0.007448,
-                                                  "nonBackgroundDelta":  0.077689,
-                                                  "triageScore":  0.111494,
+                                                  "sampleMeanDelta":  0.022684,
+                                                  "lumaDelta":  0.002352,
+                                                  "nonBackgroundDelta":  0.006831,
+                                                  "triageScore":  0.032147,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6220,22 +6232,6 @@
                        ],
     "topPairedOutliers":  [
                               {
-                                  "id":  "dialog.Options",
-                                  "triageScore":  0.111494,
-                                  "sampleMeanDelta":  0.026078,
-                                  "dimension":  "744.104x521.073 vs 744x521 logical; 744x521 vs 744x521 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.077689
-                              },
-                              {
-                                  "id":  "dialog.Options.General",
-                                  "triageScore":  0.111494,
-                                  "sampleMeanDelta":  0.026078,
-                                  "dimension":  "744.104x521.073 vs 744x521 logical; 744x521 vs 744x521 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.077689
-                              },
-                              {
                                   "id":  "dialog.SortOptions",
                                   "triageScore":  0.110625,
                                   "sampleMeanDelta":  0.052996,
@@ -6298,6 +6294,22 @@
                                   "dimension":  "744.104x521.073 vs 744x521 logical; 744x521 vs 744x521 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.075493
+                              },
+                              {
+                                  "id":  "dialog.FormatCells.Border",
+                                  "triageScore":  0.098981,
+                                  "sampleMeanDelta":  0.036424,
+                                  "dimension":  "620.087x597.083 vs 620x597 logical; 620x597 vs 620x597 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.05971
+                              },
+                              {
+                                  "id":  "dialog.AccessibilityChecker",
+                                  "triageScore":  0.09887,
+                                  "sampleMeanDelta":  0.039611,
+                                  "dimension":  "360.05x520.073 vs 360x520 logical; 360x520 vs 360x520 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.035684
                               }
                           ],
     "visualReviewCandidates":  [

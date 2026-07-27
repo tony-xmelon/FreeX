@@ -604,14 +604,22 @@
                          "kind":  "dialog",
                          "png":  "dialog.Options.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-direct-avalonia-parity-capture",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-focused-capture-options-general-wave23-2026-07-27",
+                         "expectedWidth":  744,
+                         "expectedHeight":  521,
+                         "note":  "Fresh FreeX Avalonia production capture from Ubuntu 24.04 Docker/Xvfb via --parity-capture --parity-capture-surface dialog.Options.General. The focused General PNG is promoted for the equivalent default Options surface so both canonical ids compare the same 744x521 client frame."
                      },
                      {
                          "id":  "dialog.Options.General",
                          "kind":  "dialog",
                          "png":  "dialog.Options.General.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-direct-avalonia-parity-capture",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-focused-capture-options-general-wave23-2026-07-27",
+                         "expectedWidth":  744,
+                         "expectedHeight":  521,
+                         "note":  "Fresh FreeX Avalonia production capture from Ubuntu 24.04 Docker/Xvfb via --parity-capture --parity-capture-surface dialog.Options.General after Wave23 General geometry, typography, control-state, and persistence alignment."
                      },
                      {
                          "id":  "dialog.Options.Formulas",
