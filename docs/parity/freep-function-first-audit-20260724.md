@@ -213,6 +213,16 @@ The remaining gaps are depth and application compatibility, not missing ribbon I
 - PowerPoint COM-backed workflow validation on a machine where that comparison path is
   available.
 
+### 2026-07-27 table-cell fill authoring
+
+Per-cell fills were already represented in the model, preserved by the PPTX reader/writer, and
+painted by both renderers, but there was no shared authoring operation. The function slice adds
+an undoable `SetTableCellFillCommand`, a `Table Cell Fill` palette to both host ribbons, and
+active-cell routing through `EditingSession`. Clearing the selection removes only the explicit
+cell fill so the table style can become authoritative again. Focused command, ribbon, and
+save/reopen tests cover the new route; this is a functional parity change, not a new visual
+calibration claim.
+
 ## Process decision
 
 ### 2026-07-27 Picture Grid SmartArt route
