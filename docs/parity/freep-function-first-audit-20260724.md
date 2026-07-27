@@ -314,3 +314,12 @@ UpDownArrow, Star8, Chevron, and HomePlate, but neither host exposed those shape
 Insert and Change Shape command surfaces. The shared insertion and change planners now publish the
 seven commands; Avalonia routes the Change Shape commands, WPF supplies matching ribbon icons, and
 focused planner, ribbon, and headless host tests verify creation, conversion, and command reachability.
+
+### 2026-07-27 emphasis-animation command expansion
+
+The animation model, OOXML mapping, and slideshow playback already supported Teeter, Blink,
+Color Pulse, Change Color, Grow With Color, Wave, Shimmer, Bold, and Underline emphasis effects,
+but the editor ribbon only exposed Pulse, Spin, and Grow/Shrink. The shared animation planner and
+both host ribbon surfaces now expose the nine existing presets as reachable Add Effect commands,
+with localization, icon, planner, and WPF definition coverage. This is a function/authoring slice;
+it does not alter the established playback or renderer paths.
