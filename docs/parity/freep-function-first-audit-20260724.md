@@ -232,6 +232,16 @@ palette to both ribbons, and active-cell routing through `EditingSession`. Focus
 ribbon, and save/reopen tests cover the route; this is functional parity work, not a visual
 calibration claim.
 
+### 2026-07-27 table-cell border authoring
+
+Per-cell borders were already represented by `TableCell.Borders`, preserved by the PPTX
+reader/writer, and consumed by both renderers, but there was no active-cell authoring route. The
+function slice adds an undoable per-side border command and a shared ribbon palette for
+Automatic, None, and common black solid pen widths on the left, right, top, and bottom sides.
+Both hosts route the selection through `EditingSession`; command, host, and save/reopen tests
+cover the new path. This is functional package/authoring parity, not a new visual calibration
+claim.
+
 ## Process decision
 
 ### 2026-07-27 Picture Grid SmartArt route
