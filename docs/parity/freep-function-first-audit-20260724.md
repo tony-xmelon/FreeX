@@ -35,7 +35,7 @@ was stale bookkeeping, not an active capability restriction.
   and Two Spins) now preserve the authored `presetSubtype` through the shared model,
   undo path, WPF/Avalonia pane options, and PPTX read/write.
 - SmartArt text-pane editing has shared node mutations, outline rebuilding, and host
-  pane routes. The modeled layout catalog and eight native Quick Style presets
+  pane routes. The modeled layout catalog and 14 native PowerPoint Quick Style entries
   (Simple, Moderate, Intense, Subtle, Soft Edge, Insert, Cartoon, and Powder) are
   reachable through both WPF and Avalonia contextual galleries, with native style-part
   round-trip and undo coverage. Full PowerPoint-authoritative SmartArt regeneration,

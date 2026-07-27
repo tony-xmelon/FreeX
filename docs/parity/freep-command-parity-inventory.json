@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 448,
-    "both": 446,
+    "totalCommands": 454,
+    "both": 452,
     "wpfOnly": 0,
     "avaloniaOnly": 2,
     "missingWpf": 2,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 446,
+    "shared": 452,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 2,
@@ -13977,6 +13977,74 @@
       ]
     },
     {
+      "commandId": "freep.smartart.style.birds-eye-scene",
+      "label": "Bird's Eye Scene",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Bird's Eye Scene",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Bird's Eye Scene",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.style.brick-scene",
+      "label": "Brick Scene",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Brick Scene",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Brick Scene",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.smartart.style.cartoon",
       "label": "Cartoon",
       "wpfPresent": true,
@@ -14011,8 +14079,8 @@
       ]
     },
     {
-      "commandId": "freep.smartart.style.insert",
-      "label": "Insert",
+      "commandId": "freep.smartart.style.flat-scene",
+      "label": "Flat Scene",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -14026,7 +14094,7 @@
           "tab": "Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
-          "label": "Insert",
+          "label": "Flat Scene",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -14038,7 +14106,41 @@
           "tab": "Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
-          "label": "Insert",
+          "label": "Flat Scene",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.style.insert",
+      "label": "Inset",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Inset",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Inset",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -14046,7 +14148,7 @@
     },
     {
       "commandId": "freep.smartart.style.intense",
-      "label": "Intense",
+      "label": "Intense Effect",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -14060,7 +14162,7 @@
           "tab": "Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
-          "label": "Intense",
+          "label": "Intense Effect",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -14072,7 +14174,41 @@
           "tab": "Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
-          "label": "Intense",
+          "label": "Intense Effect",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.style.metallic-scene",
+      "label": "Metallic Scene",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Metallic Scene",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Metallic Scene",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -14080,7 +14216,7 @@
     },
     {
       "commandId": "freep.smartart.style.moderate",
-      "label": "Moderate",
+      "label": "Moderate Effect",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -14094,7 +14230,7 @@
           "tab": "Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
-          "label": "Moderate",
+          "label": "Moderate Effect",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -14106,7 +14242,41 @@
           "tab": "Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
-          "label": "Moderate",
+          "label": "Moderate Effect",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.style.polished",
+      "label": "Polished",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Polished",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Polished",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -14148,7 +14318,7 @@
     },
     {
       "commandId": "freep.smartart.style.simple",
-      "label": "Simple",
+      "label": "Simple Fill",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -14162,7 +14332,7 @@
           "tab": "Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
-          "label": "Simple",
+          "label": "Simple Fill",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -14174,7 +14344,7 @@
           "tab": "Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
-          "label": "Simple",
+          "label": "Simple Fill",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -14182,7 +14352,7 @@
     },
     {
       "commandId": "freep.smartart.style.soft-edge",
-      "label": "Soft Edge",
+      "label": "White Outline",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -14196,7 +14366,7 @@
           "tab": "Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
-          "label": "Soft Edge",
+          "label": "White Outline",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -14208,7 +14378,7 @@
           "tab": "Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
-          "label": "Soft Edge",
+          "label": "White Outline",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -14216,7 +14386,7 @@
     },
     {
       "commandId": "freep.smartart.style.subtle",
-      "label": "Subtle",
+      "label": "Subtle Effect",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -14230,7 +14400,7 @@
           "tab": "Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
-          "label": "Subtle",
+          "label": "Subtle Effect",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -14242,7 +14412,41 @@
           "tab": "Design",
           "groupId": "smartart-styles",
           "group": "SmartArt Styles",
-          "label": "Subtle",
+          "label": "Subtle Effect",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.style.sunset-scene",
+      "label": "Sunset Scene",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Sunset Scene",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-styles",
+          "group": "SmartArt Styles",
+          "label": "Sunset Scene",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
