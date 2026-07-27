@@ -361,3 +361,12 @@ layout through insertion and change-layout commands in WPF and Avalonia. Reader 
 layout persistence, shared composition, undo-capable authoring routes, and host command reachability
 are covered by focused tests. This is a functional layout-family slice; it does not claim exact
 PowerPoint style regeneration for arbitrary Interlocking Rings packages.
+
+### 2026-07-27 chart data selected-entry removal
+
+PowerPoint removes the selected chart series or category, while FreeP's chart-data dialogs
+previously removed only the final entry. The shared chart grid and presentation planner now
+support indexed removal, including aligned scatter X values and bubble-size rows. WPF derives
+the series from the selected grid column and the category from the selected row; Avalonia tracks
+the focused series/category cell and routes the same shared mutation. Focused planner, WPF, and
+Avalonia dialog coverage verifies non-tail removal and save-ready matrix alignment across hosts.
