@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 392 command IDs total.
-- 390 shared across WPF and Avalonia.
+- 436 command IDs total.
+- 434 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 2 intentional shell/profile variances: Undo and Redo are routed through WPF
@@ -17,6 +17,13 @@ The generated inventory at `docs/parity/freep-command-parity-inventory.json` rep
 
 The inventory is command-surface evidence, not a claim that every PowerPoint feature
 is complete.
+
+The generated inventory is the authoritative count. The apparent nested reading-order
+gap is also closed: the shared planner enumerates group descendants with nesting depth,
+and `EditingSession.MoveSelectedShapeInReadingOrder` reorders a selected child inside
+its containing sibling list without moving it out of the group. WPF host coverage now
+exercises the move, selection refresh, and undo path. The old deferred-message constant
+was stale bookkeeping, not an active capability restriction.
 
 ## Verified function paths
 
