@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 342 command IDs total.
-- 340 shared across WPF and Avalonia.
+- 369 command IDs total.
+- 367 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 2 intentional shell/profile variances: Undo and Redo are routed through WPF
@@ -323,3 +323,13 @@ but the editor ribbon only exposed Pulse, Spin, and Grow/Shrink. The shared anim
 both host ribbon surfaces now expose the nine existing presets as reachable Add Effect commands,
 with localization, icon, planner, and WPF definition coverage. This is a function/authoring slice;
 it does not alter the established playback or renderer paths.
+
+### 2026-07-27 auto-shape catalog expansion
+
+The shared geometry, DrawingML preset map, and editing commands already supported
+right triangles, mathematical symbols, waves, and callout shapes, but the normal
+Insert Shape and Change Shape surfaces stopped at the earlier 22-shape catalog.
+This slice exposes Right Triangle, Minus, Multiply, Divide, Equal, Not Equal, Wave,
+Rectangular Callout, Rounded Rectangular Callout, and Oval Callout through both host
+ribbons and Avalonia routes. Localization, icons, planner insertion/conversion,
+and WPF/Avalonia reachability tests cover the new commands; no renderer behavior changed.
