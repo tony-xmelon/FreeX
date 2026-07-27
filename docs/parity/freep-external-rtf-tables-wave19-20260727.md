@@ -46,7 +46,7 @@ Focused verification passed:
 
 ```text
 FreeP.App.Presentation.Tests: ExternalRichTextClipboardTests, 10 passed
-FreeP.App.Host.Tests: WpfRichTextClipboardAdapterTests, 5 passed
+FreeP.App.Host.Tests: WpfRichTextClipboardAdapterTests, 6 passed
 FreeP.App.Rendering.Avalonia.Tests: ClipboardPaste, 4 passed
 ```
 
