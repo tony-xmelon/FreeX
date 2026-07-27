@@ -684,7 +684,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.Options.CustomizeRibbon.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-direct-avalonia-parity-capture",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-focused-capture-wave34-2026-07-27",
+                         "expectedWidth":  744,
+                         "expectedHeight":  521,
+                         "note":  "Fresh FreeX Avalonia targeted production capture from Ubuntu 24.04 Docker/Xvfb at 96 DPI after enabling the localized owned Import/Export deferred route."
                      },
                      {
                          "id":  "dialog.Options.QuickAccessToolbar",

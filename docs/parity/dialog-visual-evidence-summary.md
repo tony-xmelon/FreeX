@@ -64,7 +64,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
 | dialog.ScenarioManager | 360x420 | 360x420 | 540x630 px @ 144 DPI vs 360x420 px @ 96 DPI |  |  | 0.104 | 0.053 | 0.006 | 0.044 |
 | dialog.ErrorChecking | 720x420 | 720x420 | 1080x630 px @ 144 DPI vs 720x420 px @ 96 DPI |  |  | 0.103 | 0.030 | 0.006 | 0.066 |
-| dialog.Options.CustomizeRibbon | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.100 | 0.018 | 0.006 | 0.075 |
 | dialog.FormatCells.Border | 620x597 | 620x597 | 620x597 px @ 96 DPI vs 620x597 px @ 96 DPI |  |  | 0.099 | 0.036 | 0.003 | 0.060 |
 | dialog.AccessibilityChecker | 360x520 | 360x520 | 360x520 px @ 96 DPI vs 360x520 px @ 96 DPI |  |  | 0.099 | 0.040 | 0.023 | 0.036 |
 | dialog.Options.View | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.099 | 0.016 | 0.006 | 0.076 |
@@ -72,6 +71,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.Options.AddIns | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.097 | 0.015 | 0.006 | 0.076 |
 | dialog.FindReplace | 720x430 | 720x430 | 720x430 px @ 96 DPI vs 720x430 px @ 96 DPI |  |  | 0.095 | 0.015 | 0.005 | 0.075 |
 | dialog.FindReplace.Find | 720x430 | 720x430 | 720x430 px @ 96 DPI vs 720x430 px @ 96 DPI |  |  | 0.095 | 0.015 | 0.005 | 0.075 |
+| dialog.InsertHyperlink | 560x300 | 560x300 | 840x450 px @ 144 DPI vs 560x300 px @ 96 DPI |  |  | 0.095 | 0.046 | 0.008 | 0.041 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -131,7 +131,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.Options | dialog.Options.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.032 |
 | dialog.Options.AddIns | dialog.Options.AddIns.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.AddIns.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.097 |
 | dialog.Options.Advanced | dialog.Options.Advanced.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Advanced.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.041 |
-| dialog.Options.CustomizeRibbon | dialog.Options.CustomizeRibbon.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.CustomizeRibbon.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.100 |
+| dialog.Options.CustomizeRibbon | dialog.Options.CustomizeRibbon.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.CustomizeRibbon.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.024 |
 | dialog.Options.EaseOfAccess | dialog.Options.EaseOfAccess.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.EaseOfAccess.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.098 |
 | dialog.Options.Formulas | dialog.Options.Formulas.png | 744x777 | 744x777 px @ 96 DPI | True | dialog.Options.Formulas.png | 744x777 | 744x777 px @ 96 DPI | True | True | 0.093 |
 | dialog.Options.General | dialog.Options.General.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.General.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.032 |

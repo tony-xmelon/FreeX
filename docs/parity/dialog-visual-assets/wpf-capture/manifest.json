@@ -91,7 +91,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.Options.CustomizeRibbon.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-direct-wpf-parity-capture",
+                         "recaptureStatus":  "fresh-wpf-client-frame-capture-wave34-2026-07-27",
+                         "expectedWidth":  744,
+                         "expectedHeight":  521,
+                         "note":  "Fresh direct WPF targeted parity capture for Wave34. WPF remains the authority; the enabled RibbonImportExportButton is the reference state."
                      },
                      {
                          "id":  "dialog.Options.QuickAccessToolbar",
