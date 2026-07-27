@@ -73,6 +73,10 @@ is complete.
 - Chart data editing now exposes Scatter X/Y values and Bubble X/Y/size values in the
   shared grid on both WPF and Avalonia. Coordinate edits use the same single undo batch,
   regenerate the embedded workbook, and round-trip through the native chart payload.
+- Chart data editing now also moves the active series up or down in both WPF and Avalonia.
+  The shared planner moves series-owned values and scatter/bubble coordinates together, while
+  the direct command preserves the existing series object and its authored formatting for
+  undo and PPTX round-trip.
 - Chart authoring now also exposes a shared Chart Options dialog in both hosts. Title,
   legend placement, value-label placement/visibility, and category/value major gridlines
   commit through one undoable command and round-trip through the existing chart package
