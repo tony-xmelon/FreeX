@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 493 | 491 | 0 | 2 | 2 | 0 | 0 | 0 | 491 | 0 | 0 | 2 | 0 | 101 |
+| 512 | 510 | 0 | 2 | 2 | 0 | 0 | 0 | 510 | 0 | 0 | 2 | 0 | 101 |
 
 ## Workflow Evidence
 
@@ -247,6 +247,25 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.chart.area-options` | Area Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.axis-options` | Axis Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.bubble-options` | Bubble Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type` | Change Chart Type | Yes | Yes | none | shared | insert/charts (RibbonDropdown) | insert/charts (RibbonDropdown) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.area` | Area | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.areastacked` | Stacked Area | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.barclustered` | Clustered Bar | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.barstacked` | Stacked Bar | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.barstacked100` | 100% Stacked Bar | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.bubble` | Bubble | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.columnclustered` | Clustered Column | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.columnstacked` | Stacked Column | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.columnstacked100` | 100% Stacked Column | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.doughnut` | Doughnut | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.line` | Line | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.linemarkers` | Line with Markers | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.pie` | Pie | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.radar` | Radar | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.scatter` | Scatter | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.stock` | Stock | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.surface` | Surface | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.surface3d` | 3-D Surface | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.data-table-options` | Data Table | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.edit-data` | Edit Data | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.format-options` | Chart Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
