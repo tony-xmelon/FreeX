@@ -223,6 +223,15 @@ cell fill so the table style can become authoritative again. Focused command, ri
 save/reopen tests cover the new route; this is a functional parity change, not a new visual
 calibration claim.
 
+### 2026-07-27 table-cell vertical alignment authoring
+
+Table-cell vertical alignment was already represented by `TableCell.Anchor`, preserved by the
+PPTX reader/writer, and consumed by both renderers, but neither host exposed an authoring route.
+The function slice adds an undoable `SetTableCellAnchorCommand`, an Automatic/Top/Middle/Bottom
+palette to both ribbons, and active-cell routing through `EditingSession`. Focused command,
+ribbon, and save/reopen tests cover the route; this is functional parity work, not a visual
+calibration claim.
+
 ## Process decision
 
 ### 2026-07-27 Picture Grid SmartArt route
