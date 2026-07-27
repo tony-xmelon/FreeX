@@ -22,7 +22,7 @@ This wave closes the remaining bounded picture-effects rendering gap between the
 - Follow-up Avalonia `PictureCoreCommandParityTests`: 34 passed, 0 failed, 0 skipped. This adds exact PencilSketch parity, opaque-source halo pixels outside source bounds, source-geometry preservation, and expanded cache/draw metadata for inline and floating images.
 - Avalonia `DocumentViewFloatingImageTests`: 24 passed, 0 failed, 0 skipped. Reflection region coverage includes presets 1 through 5.
 - WPF `ImageAdjustHelperTests`: 12 passed, 0 failed, 0 skipped.
-- The full Avalonia suite remains 1,358 passed and 3 failed. Targeted reruns reproduce the same unrelated baseline failures: `DocumentViewReviewTests.Proofing_language_collapsed_caret_without_current_word_does_not_stage_next_typed_text`, `MainWindowShellFrameTests.MainWindow_sources_reference_the_shared_avalonia_shell_frame`, and `DialogChromeDedupSourceGuardTests.ResidualAvaloniaDialogs_DelegateCompactChromeToSharedHelper`.
+- The full Avalonia suite has 1,362 passed and 3 failed. Targeted reruns reproduce the same unrelated baseline failures: `DocumentViewReviewTests.Proofing_language_collapsed_caret_without_current_word_does_not_stage_next_typed_text`, `MainWindowShellFrameTests.MainWindow_sources_reference_the_shared_avalonia_shell_frame`, and `DialogChromeDedupSourceGuardTests.ResidualAvaloniaDialogs_DelegateCompactChromeToSharedHelper`.
 
 ## Residuals
 
