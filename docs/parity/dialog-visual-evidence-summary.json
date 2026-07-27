@@ -27,7 +27,7 @@
                     "visualReviewTriageThreshold":  0.4,
                     "visualReviewTriageThresholdRationale":  "This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.",
                     "visualReviewCandidateCount":  0,
-                    "highestTriageScore":  0.103708,
+                    "highestTriageScore":  0.103523,
                     "dimensionMismatchBuckets":  {
 
                                                  }
@@ -3036,7 +3036,7 @@
                                "routeFamily":  "dialog.Options",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Options.Language.png",
-                                           "fileBytes":  12907,
+                                           "fileBytes":  19401,
                                            "width":  744,
                                            "height":  521,
                                            "dpiX":  95.986595,
@@ -3044,15 +3044,21 @@
                                            "logicalWidth":  744.104,
                                            "logicalHeight":  521.073,
                                            "pixels":  387624,
-                                           "distinctColors":  174,
+                                           "distinctColors":  179,
                                            "opaqueRatio":  1,
-                                           "nonBackgroundRatio":  0.676227,
+                                           "nonBackgroundRatio":  0.676382,
                                            "isNonBlank":  true,
-                                           "meanLuma":  248.301473
+                                           "meanLuma":  248.294045,
+                                           "manifestNote":  "Fresh current-source WPF capture from FreeX.App.Host --parity-capture --parity-capture-target dialog.Options.Language at the canonical 744x521 client frame.",
+                                           "evidenceSource":  "fresh-current-source-wpf-targeted-parity-capture",
+                                           "sourcePng":  null,
+                                           "recaptureStatus":  "fresh-windows-current-source-targeted-capture-options-language-wave27-2026-07-27",
+                                           "expectedWidth":  744,
+                                           "expectedHeight":  521
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Options.Language.png",
-                                                "fileBytes":  26827,
+                                                "fileBytes":  27097,
                                                 "width":  744,
                                                 "height":  521,
                                                 "dpiX":  96,
@@ -3060,11 +3066,17 @@
                                                 "logicalWidth":  744,
                                                 "logicalHeight":  521,
                                                 "pixels":  387624,
-                                                "distinctColors":  1662,
+                                                "distinctColors":  2586,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.756633,
+                                                "nonBackgroundRatio":  0.672265,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  249.331925
+                                                "meanLuma":  248.593943,
+                                                "manifestNote":  "Fresh current-source Avalonia capture from the self-contained Linux app in Docker/Xvfb via --parity-capture --parity-capture-surface dialog.Options.Language at 96 DPI.",
+                                                "evidenceSource":  "fresh-current-source-avalonia-targeted-parity-capture",
+                                                "sourcePng":  null,
+                                                "recaptureStatus":  "fresh-linux-docker-xvfb-targeted-capture-options-language-wave27-2026-07-27",
+                                                "expectedWidth":  744,
+                                                "expectedHeight":  521
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -3079,10 +3091,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.018983,
-                                                  "lumaDelta":  0.004041,
-                                                  "nonBackgroundDelta":  0.080405,
-                                                  "triageScore":  0.103708,
+                                                  "sampleMeanDelta":  0.015877,
+                                                  "lumaDelta":  0.001176,
+                                                  "nonBackgroundDelta":  0.004117,
+                                                  "triageScore":  0.02145,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6250,14 +6262,6 @@
                        ],
     "topPairedOutliers":  [
                               {
-                                  "id":  "dialog.Options.Language",
-                                  "triageScore":  0.103708,
-                                  "sampleMeanDelta":  0.018983,
-                                  "dimension":  "744.104x521.073 vs 744x521 logical; 744x521 vs 744x521 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.080405
-                              },
-                              {
                                   "id":  "dialog.ScenarioManager",
                                   "triageScore":  0.103523,
                                   "sampleMeanDelta":  0.053045,
@@ -6328,6 +6332,14 @@
                                   "dimension":  "744.104x521.073 vs 744x521 logical; 744x521 vs 744x521 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.075901
+                              },
+                              {
+                                  "id":  "dialog.FindReplace",
+                                  "triageScore":  0.094953,
+                                  "sampleMeanDelta":  0.015198,
+                                  "dimension":  "720.101x430.06 vs 720x430 logical; 720x430 vs 720x430 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.074658
                               }
                           ],
     "visualReviewCandidates":  [
