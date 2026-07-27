@@ -211,6 +211,17 @@ The remaining gaps are depth and application compatibility, not missing ribbon I
 
 ## Process decision
 
+### 2026-07-27 Picture Grid SmartArt route
+
+PowerPoint's Picture Grid layout is now a distinct function path in both hosts. The shared
+authoring and insertion planners emit the native `pictureGrid` DiagramML identity, require
+source picture payloads, and keep the change undoable. The shared live engine places picture
+nodes in a two-column grid with captions, while the reader rehydrates those node images from
+the native drawing relationships so save/reopen does not silently fall back to cached artwork.
+Focused layout, authoring, insertion, WPF, and Avalonia tests cover the route. This remains
+renderer-neutral function coverage; exact PowerPoint sizing/effects are still a separate
+visual-baseline question.
+
 ### 2026-07-27 Cross/Plus authoring routes
 
 The shared geometry and Edit Points path already supported `Cross` and `PlusSign`, but the
