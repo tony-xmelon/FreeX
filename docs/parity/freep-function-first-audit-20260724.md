@@ -306,3 +306,11 @@ through its context menu, while WPF only exposed the shared table commands indir
 hit-tests the table and active cell on right-click and exposes the same guarded context actions,
 routing every mutation through `EditingSession` so undo/redo and package behavior remain shared.
 Focused WPF host coverage verifies menu parity, enabled states, merge, and split execution.
+
+### 2026-07-27 auto-shape command expansion
+
+The shared geometry and DrawingML mapping already supported Pentagon, Octagon, LeftRightArrow,
+UpDownArrow, Star8, Chevron, and HomePlate, but neither host exposed those shapes in its complete
+Insert and Change Shape command surfaces. The shared insertion and change planners now publish the
+seven commands; Avalonia routes the Change Shape commands, WPF supplies matching ribbon icons, and
+focused planner, ribbon, and headless host tests verify creation, conversion, and command reachability.
