@@ -11733,40 +11733,6 @@
       ]
     },
     {
-      "commandId": "freep.slideshow.rehearse-timings",
-      "label": "Rehearse Timings",
-      "wpfPresent": true,
-      "avaloniaPresent": true,
-      "surface": "both",
-      "missingSide": "none",
-      "classification": "shared",
-      "notes": "Available in both generated FreeP ribbon profiles.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
-          "group": "Slide Show",
-          "label": "Rehearse Timings",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "transitions",
-          "tab": "Transitions",
-          "groupId": "slideshow-from-transitions",
-          "group": "Slide Show",
-          "label": "Rehearse Timings",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ]
-    },
-    {
       "commandId": "freep.slideshow.record-timings",
       "label": "Record Timings",
       "wpfPresent": true,
@@ -11795,6 +11761,40 @@
           "groupId": "slideshow-from-transitions",
           "group": "Slide Show",
           "label": "Record Timings",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.slideshow.rehearse-timings",
+      "label": "Rehearse Timings",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "slideshow-from-transitions",
+          "group": "Slide Show",
+          "label": "Rehearse Timings",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "transitions",
+          "tab": "Transitions",
+          "groupId": "slideshow-from-transitions",
+          "group": "Slide Show",
+          "label": "Rehearse Timings",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
