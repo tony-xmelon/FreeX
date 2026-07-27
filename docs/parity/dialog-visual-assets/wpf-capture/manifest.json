@@ -32,7 +32,12 @@
                          "recaptureStatus":  "fresh-wpf-capture-cropped-client-frame-2026-07-26",
                          "sourceWidth":  760,
                          "sourceHeight":  560,
-                         "crop":  { "x":  0, "y":  0, "width":  744, "height":  521 },
+                         "crop":  {
+                                      "x":  0,
+                                      "y":  0,
+                                      "width":  744,
+                                      "height":  521
+                                  },
                          "expectedWidth":  744,
                          "expectedHeight":  521,
                          "note":  "Fresh current WPF capture was 760x560; normalized deterministically to the established client frame with crop rectangle x=0,y=0,width=744,height=521. No resize or stretch was applied."
@@ -81,7 +86,12 @@
                          "recaptureStatus":  "fresh-wpf-capture-cropped-client-frame-2026-07-26",
                          "sourceWidth":  760,
                          "sourceHeight":  560,
-                         "crop":  { "x":  0, "y":  0, "width":  744, "height":  521 },
+                         "crop":  {
+                                      "x":  0,
+                                      "y":  0,
+                                      "width":  744,
+                                      "height":  521
+                                  },
                          "expectedWidth":  744,
                          "expectedHeight":  521,
                          "note":  "Fresh current WPF capture was 760x560; normalized deterministically to the established client frame with crop rectangle x=0,y=0,width=744,height=521. No resize or stretch was applied."
@@ -182,7 +192,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.PrintPreview.png",
                          "captured":  true,
-                          "note":  "Fresh current-source WPF capture on 2026-07-27 via FreeX.App.Host --parity-capture full route; the focused selector is unsupported for dialog.PrintPreview. Captured PrintPreviewParityFixture with FreeX Parity Printer at 1120x700 px."
+                         "note":  "Fresh current-source WPF capture on 2026-07-27 via FreeX.App.Host --parity-capture full route; the focused selector is unsupported for dialog.PrintPreview. Captured PrintPreviewParityFixture with FreeX Parity Printer at 1120x700 px."
                      },
                      {
                          "id":  "dialog.FormatCells",
@@ -294,53 +304,77 @@
                          "kind":  "dialog",
                          "png":  "dialog.PivotTableOptions.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Fresh same-size WPF/Avalonia PivotTable Options capture for wave17.",
+                         "evidenceSource":  "fresh-wave17-targeted-capture",
+                         "recaptureStatus":  "wave17-2026-07-27",
+                         "expectedWidth":  520,
+                         "expectedHeight":  676
                      },
                      {
                          "id":  "dialog.PivotTableOptions.LayoutAndFormat",
                          "kind":  "dialog",
                          "png":  "dialog.PivotTableOptions.LayoutAndFormat.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Fresh same-size WPF/Avalonia PivotTable Options capture for wave17.",
+                         "evidenceSource":  "fresh-wave17-targeted-capture",
+                         "recaptureStatus":  "wave17-2026-07-27",
+                         "expectedWidth":  520,
+                         "expectedHeight":  676
                      },
                      {
                          "id":  "dialog.PivotTableOptions.TotalsAndFilters",
                          "kind":  "dialog",
                          "png":  "dialog.PivotTableOptions.TotalsAndFilters.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Fresh same-size WPF/Avalonia PivotTable Options capture for wave17.",
+                         "evidenceSource":  "fresh-wave17-targeted-capture",
+                         "recaptureStatus":  "wave17-2026-07-27",
+                         "expectedWidth":  520,
+                         "expectedHeight":  500
                      },
                      {
                          "id":  "dialog.PivotTableOptions.Display",
                          "kind":  "dialog",
                          "png":  "dialog.PivotTableOptions.Display.png",
                          "captured":  true,
-                         "evidenceSource":  "corrected-direct-parity-capture",
-                         "recaptureStatus":  "tightened-bottom-black-capture-artifact",
+                         "note":  "Fresh same-size WPF/Avalonia PivotTable Options capture for wave17.",
+                         "evidenceSource":  "fresh-wave17-targeted-capture",
+                         "recaptureStatus":  "wave17-2026-07-27",
                          "expectedWidth":  520,
-                         "expectedHeight":  500,
-                         "note":  "Tightened from WPF direct parity capture by removing the bottom black capture artifact after row 462 and preserving the dialog background to 520x500."
+                         "expectedHeight":  500
                      },
                      {
                          "id":  "dialog.PivotTableOptions.Printing",
                          "kind":  "dialog",
                          "png":  "dialog.PivotTableOptions.Printing.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Fresh same-size WPF/Avalonia PivotTable Options capture for wave17.",
+                         "evidenceSource":  "fresh-wave17-targeted-capture",
+                         "recaptureStatus":  "wave17-2026-07-27",
+                         "expectedWidth":  520,
+                         "expectedHeight":  500
                      },
                      {
                          "id":  "dialog.PivotTableOptions.Data",
                          "kind":  "dialog",
                          "png":  "dialog.PivotTableOptions.Data.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Fresh same-size WPF/Avalonia PivotTable Options capture for wave17.",
+                         "evidenceSource":  "fresh-wave17-targeted-capture",
+                         "recaptureStatus":  "wave17-2026-07-27",
+                         "expectedWidth":  520,
+                         "expectedHeight":  500
                      },
                      {
                          "id":  "dialog.PivotTableOptions.AltText",
                          "kind":  "dialog",
                          "png":  "dialog.PivotTableOptions.AltText.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Fresh same-size WPF/Avalonia PivotTable Options capture for wave17.",
+                         "evidenceSource":  "fresh-wave17-targeted-capture",
+                         "recaptureStatus":  "wave17-2026-07-27",
+                         "expectedWidth":  520,
+                         "expectedHeight":  500
                      },
                      {
                          "id":  "dialog.GoalSeek",
@@ -369,7 +403,7 @@
                          "recaptureStatus":  "fresh-focused-capture",
                          "expectedWidth":  430,
                          "expectedHeight":  438,
-                          "note":  "Fresh focused capture from current FreeX.App.Host --parity-capture --parity-capture-target dialog.GoToSpecial on 2026-07-26; 430x438 px at 95.9866 DPI, group border bands x13..401/y43..212 and x13..401/y233..274, default action border rows y369/y388."
+                         "note":  "Fresh focused capture from current FreeX.App.Host --parity-capture --parity-capture-target dialog.GoToSpecial on 2026-07-26; 430x438 px at 95.9866 DPI, group border bands x13..401/y43..212 and x13..401/y233..274, default action border rows y369/y388."
                      },
                      {
                          "id":  "dialog.RemoveDuplicates",
@@ -390,7 +424,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.ExportOptions.png",
                          "captured":  true,
-                          "note":  ""
+                         "note":  ""
                      },
                      {
                          "id":  "dialog.ProtectSheet",
@@ -565,7 +599,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.ProtectWorkbook.png",
                          "captured":  true,
-                          "note":  ""
+                         "note":  ""
                      },
                      {
                          "id":  "dialog.RenameSheet",
@@ -639,7 +673,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.Sparkline.png",
                          "captured":  true,
-                          "note":  ""
+                         "note":  ""
                      },
                      {
                          "id":  "dialog.Subtotal",
