@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 357,
-    "both": 355,
+    "totalCommands": 363,
+    "both": 361,
     "wpfOnly": 0,
     "avaloniaOnly": 2,
     "missingWpf": 2,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 355,
+    "shared": 361,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 2,
@@ -8605,6 +8605,40 @@
       ]
     },
     {
+      "commandId": "freep.shape-down-arrow",
+      "label": "Down Arrow",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Down Arrow",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Down Arrow",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.shape-ellipse",
       "label": "Ellipse",
       "wpfPresent": true,
@@ -8667,6 +8701,74 @@
           "groupId": "illustrations",
           "group": "Illustrations",
           "label": "Hexagon",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.shape-left-arrow",
+      "label": "Left Arrow",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Left Arrow",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Left Arrow",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.shape-parallelogram",
+      "label": "Parallelogram",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Parallelogram",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Parallelogram",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -8775,6 +8877,40 @@
       ]
     },
     {
+      "commandId": "freep.shape-rounded-rectangle",
+      "label": "Rounded Rectangle",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Rounded Rectangle",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Rounded Rectangle",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.shape-star5",
       "label": "5-Point Star",
       "wpfPresent": true,
@@ -8809,6 +8945,40 @@
       ]
     },
     {
+      "commandId": "freep.shape-trapezoid",
+      "label": "Trapezoid",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Trapezoid",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Trapezoid",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.shape-triangle",
       "label": "Triangle",
       "wpfPresent": true,
@@ -8837,6 +9007,40 @@
           "groupId": "illustrations",
           "group": "Illustrations",
           "label": "Triangle",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.shape-up-arrow",
+      "label": "Up Arrow",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Up Arrow",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Up Arrow",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
