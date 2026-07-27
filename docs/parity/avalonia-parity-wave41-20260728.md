@@ -50,7 +50,7 @@ to the authored shape by `ShapeId`.
   real binding gaps**; **94** paired WPF/Avalonia screenshot surface IDs.
 - FreeW: **870** commands, **0 actionable WPF-missing** and **0 actionable
   Avalonia-missing**.
-- FreeP: **454** commands, **452 shared-profile**, **0 actionable WPF-missing**
+- FreeP: **512** commands, **510 shared-profile**, **0 actionable WPF-missing**
   and **0 actionable Avalonia-missing**; the other two are platform-only.
 
 These counts prove catalog and route coverage, not complete behavioral or
