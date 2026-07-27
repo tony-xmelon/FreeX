@@ -1,6 +1,6 @@
 {
   "schema": "freew.dialog-visual-comparison.v1",
-  "generatedFromSha256": "a8c879fef200b5b1e0e003a0580fd7a4ee873e298512158b14b0c4c7328886e2",
+  "generatedFromSha256": "9e25ecfcb8548fca6b75830be0ab3de9ded4f8229f87e19513146dcdeb4eece2",
   "targetDpi": 96,
   "inventoryScenarioCount": 465,
   "wpfCaptureCount": 186,
@@ -2292,12 +2292,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 18816,
-        "changedRatio": 0.056,
-        "meanAbsoluteChannelDelta": 4.50064980158743,
-        "p95AbsoluteChannelDelta": 34,
-        "luminanceSimilarity": 0.9038691488866255,
-        "perceptualHashDistance": 7
+        "changedPixels": 16260,
+        "changedRatio": 0.04839285714285714,
+        "meanAbsoluteChannelDelta": 4.236378968254097,
+        "p95AbsoluteChannelDelta": 5,
+        "luminanceSimilarity": 0.9045090870036718,
+        "perceptualHashDistance": 6
       },
       "semanticDifference": "focus,default-button,cancel-button,action-button-order",
       "heatmapPath": "heatmaps/compare-documents.initial.png",
@@ -2330,11 +2330,11 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.9115238095238095,
         "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 0.0005779176679552815,
-        "dominantColorRatio": 0.9564276198934281,
-        "distinctColorCount": 200,
+        "nearBlackRatio": 0.000571387524814544,
+        "dominantColorRatio": 0.9653706509246682,
+        "distinctColorCount": 212,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.03971726190476191,
+        "contentPixelRatio": 0.03156547619047619,
         "contentBounds": {
           "x": 14,
           "y": 18,
@@ -2349,12 +2349,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 18922,
-        "changedRatio": 0.056315476190476194,
-        "meanAbsoluteChannelDelta": 4.502087301587412,
-        "p95AbsoluteChannelDelta": 34,
-        "luminanceSimilarity": 0.9043908156141901,
-        "perceptualHashDistance": 7
+        "changedPixels": 16366,
+        "changedRatio": 0.04870833333333333,
+        "meanAbsoluteChannelDelta": 4.237849206349317,
+        "p95AbsoluteChannelDelta": 6,
+        "luminanceSimilarity": 0.9050332903605446,
+        "perceptualHashDistance": 6
       },
       "semanticDifference": "focus,default-button,cancel-button,action-button-order",
       "heatmapPath": "heatmaps/compare-documents.populated.png",
@@ -2388,10 +2388,10 @@
         "opaqueRatio": 0.9115238095238095,
         "nearTransparentRatio": 0.08847619047619047,
         "nearBlackRatio": 0.000571387524814544,
-        "dominantColorRatio": 0.9564276198934281,
-        "distinctColorCount": 207,
+        "dominantColorRatio": 0.9653706509246682,
+        "distinctColorCount": 212,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.03971726190476191,
+        "contentPixelRatio": 0.03156547619047619,
         "contentBounds": {
           "x": 14,
           "y": 18,
@@ -2406,12 +2406,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 403200,
-        "changedPixels": 110481,
-        "changedRatio": 0.27401041666666665,
-        "meanAbsoluteChannelDelta": 10.485811838624837,
-        "p95AbsoluteChannelDelta": 55,
-        "luminanceSimilarity": 0.8644248416484628,
-        "perceptualHashDistance": 18
+        "changedPixels": 29216,
+        "changedRatio": 0.07246031746031746,
+        "meanAbsoluteChannelDelta": 7.459120370370381,
+        "p95AbsoluteChannelDelta": 37.333333333333336,
+        "luminanceSimilarity": 0.8673364325454622,
+        "perceptualHashDistance": 3
       },
       "semanticDifference": "focus,default-button,cancel-button,action-button-order",
       "heatmapPath": "heatmaps/compare-documents.tab-more.png",
@@ -2444,16 +2444,16 @@
         "pixelCount": 403200,
         "opaqueRatio": 0.9215079365079365,
         "nearTransparentRatio": 0.07849206349206349,
-        "nearBlackRatio": 0.0015664025493066919,
-        "dominantColorRatio": 0.7184377960554647,
-        "distinctColorCount": 671,
+        "nearBlackRatio": 0.0015879338558263715,
+        "dominantColorRatio": 0.948381384032383,
+        "distinctColorCount": 611,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.25946180555555554,
+        "contentPixelRatio": 0.047452876984126986,
         "contentBounds": {
           "x": 14,
           "y": 18,
           "width": 516,
-          "height": 615
+          "height": 582
         }
       }
     },
@@ -2463,12 +2463,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 19659,
-        "changedRatio": 0.05850892857142857,
-        "meanAbsoluteChannelDelta": 4.533011904761951,
-        "p95AbsoluteChannelDelta": 34,
-        "luminanceSimilarity": 0.9046057912155459,
-        "perceptualHashDistance": 10
+        "changedPixels": 17103,
+        "changedRatio": 0.05090178571428571,
+        "meanAbsoluteChannelDelta": 4.268735119047681,
+        "p95AbsoluteChannelDelta": 14,
+        "luminanceSimilarity": 0.9052515266728851,
+        "perceptualHashDistance": 9
       },
       "semanticDifference": "focus,default-button,cancel-button,action-button-order",
       "heatmapPath": "heatmaps/compare-documents.validation-error.png",
@@ -2502,10 +2502,10 @@
         "opaqueRatio": 0.9115238095238095,
         "nearTransparentRatio": 0.08847619047619047,
         "nearBlackRatio": 0.00038201337373315223,
-        "dominantColorRatio": 0.956029281161843,
-        "distinctColorCount": 225,
+        "dominantColorRatio": 0.9649723121930833,
+        "distinctColorCount": 233,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.04008035714285714,
+        "contentPixelRatio": 0.03192857142857143,
         "contentBounds": {
           "x": 14,
           "y": 18,

@@ -1,0 +1,86 @@
+{
+    "schema":  "freew.dialog-route-inventory.v1",
+    "generatedFromSha256":  "d5b4496ca14ca5dda8197b8c0a926ab590630b592c0555c91a90c287f2488aa9",
+    "scenarios":  [
+                      {
+                          "id":  "avalonia.compare-documents.initial",
+                          "host":  "avalonia",
+                          "routeId":  "compare-documents",
+                          "state":  "initial",
+                          "tab":  null,
+                          "description":  "Default constructor state with initial keyboard focus.",
+                          "limitation":  null,
+                          "surfaceKind":  "dialog"
+                      },
+                      {
+                          "id":  "avalonia.compare-documents.populated",
+                          "host":  "avalonia",
+                          "routeId":  "compare-documents",
+                          "state":  "populated",
+                          "tab":  null,
+                          "description":  "Representative populated fields, selections, and checked options.",
+                          "limitation":  null,
+                          "surfaceKind":  "dialog"
+                      },
+                      {
+                          "id":  "avalonia.compare-documents.validation-error",
+                          "host":  "avalonia",
+                          "routeId":  "compare-documents",
+                          "state":  "validation-error",
+                          "tab":  null,
+                          "description":  "Representative validation or error state after invalid input.",
+                          "limitation":  null,
+                          "surfaceKind":  "dialog"
+                      },
+                      {
+                          "id":  "avalonia.compare-documents.tab-more",
+                          "host":  "avalonia",
+                          "routeId":  "compare-documents",
+                          "state":  "relevant-tab",
+                          "tab":  "More",
+                          "description":  "Selected tab: More.",
+                          "limitation":  null,
+                          "surfaceKind":  "dialog"
+                      },
+                      {
+                          "id":  "wpf.compare-documents.initial",
+                          "host":  "wpf",
+                          "routeId":  "compare-documents",
+                          "state":  "initial",
+                          "tab":  null,
+                          "description":  "Default constructor state with initial keyboard focus.",
+                          "limitation":  null,
+                          "surfaceKind":  "dialog"
+                      },
+                      {
+                          "id":  "wpf.compare-documents.populated",
+                          "host":  "wpf",
+                          "routeId":  "compare-documents",
+                          "state":  "populated",
+                          "tab":  null,
+                          "description":  "Representative populated fields, selections, and checked options.",
+                          "limitation":  null,
+                          "surfaceKind":  "dialog"
+                      },
+                      {
+                          "id":  "wpf.compare-documents.validation-error",
+                          "host":  "wpf",
+                          "routeId":  "compare-documents",
+                          "state":  "validation-error",
+                          "tab":  null,
+                          "description":  "Representative validation or error state after invalid input.",
+                          "limitation":  null,
+                          "surfaceKind":  "dialog"
+                      },
+                      {
+                          "id":  "wpf.compare-documents.tab-more",
+                          "host":  "wpf",
+                          "routeId":  "compare-documents",
+                          "state":  "relevant-tab",
+                          "tab":  "More",
+                          "description":  "Selected tab: More.",
+                          "limitation":  null,
+                          "surfaceKind":  "dialog"
+                      }
+                  ]
+}
