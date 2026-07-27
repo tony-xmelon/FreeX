@@ -47,7 +47,13 @@
                          "kind":  "dialog",
                          "png":  "dialog.Options.Save.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-current-source-wpf-targeted-parity-capture",
+                         "recaptureStatus":  "fresh-windows-current-source-targeted-capture-options-save-wave26-2026-07-27",
+                         "sourceWidth":  760,
+                         "sourceHeight":  560,
+                         "expectedWidth":  744,
+                         "expectedHeight":  521,
+                         "note":  "Fresh current-source WPF capture from FreeX.App.Host --parity-capture --parity-capture-target dialog.Options.Save. The targeted harness rendered the canonical 744x520.5 client frame from the live OptionsDialog without resize or stretch."
                      },
                      {
                          "id":  "dialog.Options.Language",

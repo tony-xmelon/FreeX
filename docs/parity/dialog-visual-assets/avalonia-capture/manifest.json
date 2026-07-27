@@ -644,7 +644,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.Options.Save.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-current-source-avalonia-targeted-parity-capture",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-targeted-capture-options-save-wave26-2026-07-27",
+                         "expectedWidth":  744,
+                         "expectedHeight":  521,
+                         "note":  "Fresh current-source Avalonia capture from the self-contained Linux app in a Docker Ubuntu 24.04/Xvfb environment via --parity-capture --parity-capture-surface dialog.Options.Save; 744x521 px at 96 DPI."
                      },
                      {
                          "id":  "dialog.Options.Language",
