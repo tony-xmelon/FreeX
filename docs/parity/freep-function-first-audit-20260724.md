@@ -436,3 +436,12 @@ Automatic and fixed inch presets. The active cell resolves its owning row and ro
 one undoable `SetTableRowHeightCommand`; save/reopen tests verify the edited height
 survives PPTX round-trip. This closes the authoring/function gap without changing
 the established table renderer or claiming a new pixel-fidelity improvement.
+### 2026-07-27 table-column width authoring
+
+Table grid-column widths already existed in the FreeP model, PPTX reader/writer, and shared
+compositor, but existing-table column resizing had no user action. WPF and Avalonia table context
+menus now expose common PowerPoint-style width presets for the active column. Each choice routes
+through one undoable `SetTableColumnWidthCommand`, updates the shared grid used by all rows, and
+survives PPTX save/reopen. Focused shared command, WPF context-menu, and Avalonia context-menu
+tests cover apply/undo and host reachability. This is functional package/authoring parity; it
+does not claim a new visual-fidelity calibration.
