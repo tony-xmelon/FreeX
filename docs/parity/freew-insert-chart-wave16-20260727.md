@@ -10,7 +10,7 @@ Scope: `insert-chart.initial`, `insert-chart.populated`, and `insert-chart.valid
 - Matched the WPF dialog's 500px base width and compact dialog chrome.
 - Changed the Avalonia layout to stacked labels and full-width chart type/title controls.
 - Replaced the horizontal editor rows with a bordered, fixed-height data-grid-shaped surface using WPF colors, headers, cell metrics, and trailing blank grid area.
-- Kept row editing functional; Enter on the last row adds a row, and Delete removes an empty row when more than one row exists.
+- Kept row editing functional; Enter on the last row adds a row, Delete removes an empty row when more than one row exists, and each row has unobtrusive Add Row/Remove Row context commands for full row operations.
 - Kept the visible action contract to WPF's `OK` and `Cancel` buttons.
 
 ## Visual Metrics
