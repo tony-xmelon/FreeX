@@ -7,10 +7,10 @@ line positions already match Word closely, but WPF's native `FlowDocument` colum
 rasterizes a one-DIP rule across two half-covered gray pixels. Word emits one opaque
 black pixel at the gap center.
 
-The paginated print, section-aware print, and fidelity-composite paths now suppress the
-native FlowDocument rule and composite a pixel-aligned Word-style rule instead. The
-normal editable RichTextBox keeps the native rule for now; its continuous-surface overlay
-needs a separate interaction-aware validation slice.
+The paginated print, section-aware print, fidelity-composite, and continuous editable
+paths now suppress the native FlowDocument rule and use the same pixel-aligned Word-style
+rule instead. The interactive editor consumes it through a non-hit-testable adorner driven
+by the existing pagination break engine, leaving editable column flow unchanged.
 
 ## Evidence
 
@@ -32,6 +32,10 @@ gray at both `x=407` and `x=408`.
 
 - `dotnet build freew/tools/FreeW.FidelityRender/FreeW.FidelityRender.csproj --configuration Release --no-restore` -- 0 warnings, 0 errors.
 - `dotnet test freew/FreeW.App.Host.Tests/FreeW.App.Host.Tests.csproj --configuration Release --filter "FullyQualifiedName~VisualEvidenceFidelityRenderSourceTests|FullyQualifiedName~ColumnLayoutTests" --logger "trx;LogFileName=column-rule-tests.trx"` -- 20/20 passed.
+- A hosted STA regression test places a two-column `DocumentView` in an `AdornerDecorator` and
+  verifies that exactly one non-hit-testable `ColumnRuleAdorner` is active while the underlying
+  `FlowDocument.ColumnRuleWidth` remains zero; a `RenderTargetBitmap` capture verifies a black
+  divider pixel at the Word-matched `x=408, y=500` location.
 - Fresh `f2-columns.docx` composite render completed from the rebuilt Release artifact.
 
 ## Guard
