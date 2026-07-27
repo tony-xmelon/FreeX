@@ -29,7 +29,8 @@ amount authority. No checked-in PowerPoint corpus fixture currently proves a
   `from/to/by` resolution, custom-scale display, and the existing 120%/80%
   fallback for animations without an `animScale` behavior.
 - `AnimationScaleBehavior` retains authored `x`/`y` XML tokens and all three
-  legal value combinations, including unknown/custom values.
+  value fields across the four legal Office combinations (`from_to`,
+  `from_by`, `to_only`, and `by_only`), including unknown/custom values.
 - The shared Animation Pane planner exposes and mutates the four named choices
   in both WPF and Avalonia. Imported custom or unknown tokens remain visible as
   `Custom (...)` instead of being silently relabeled as a named choice.
@@ -38,6 +39,10 @@ amount authority. No checked-in PowerPoint corpus fixture currently proves a
 - PPTX read/write emits and parses `p:animScale`, infers Shrink when the
   authored effective scale is below 100%, and keeps clone/undo behavior data
   intact. Grow/Shrink `presetSubtype` is emitted as the neutral `0` value.
+
+Named amount choices are uniform on both axes. Imported asymmetric custom
+`ScaleX`/`ScaleY` values are retained, but exact asymmetric slideshow playback
+remains a follow-up because the current host playback plan has one scale track.
 
 ## Verification
 
