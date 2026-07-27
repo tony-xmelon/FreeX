@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 369 | 367 | 0 | 2 | 2 | 0 | 0 | 0 | 367 | 0 | 0 | 2 | 0 | 101 |
+| 383 | 381 | 0 | 2 | 2 | 0 | 0 | 0 | 381 | 0 | 0 | 2 | 0 | 101 |
 
 ## Workflow Evidence
 
@@ -171,21 +171,28 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.arrange.bring-forward` | Bring Forward | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.bring-to-front` | Bring to Front | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.change-shape` | Change Shape | Yes | Yes | none | shared | home/arrange (RibbonDropdown) | home/arrange (RibbonDropdown) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.change-shape.chevron` | Chevron | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.change-shape.cross` | Cross | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.change-shape.diamond` | Diamond | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.change-shape.down-arrow` | Down Arrow | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.change-shape.ellipse` | Ellipse | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.change-shape.hexagon` | Hexagon | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.change-shape.home-plate` | Home Plate | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.change-shape.left-arrow` | Left Arrow | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.change-shape.left-right-arrow` | Left-Right Arrow | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.change-shape.octagon` | Octagon | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.change-shape.parallelogram` | Parallelogram | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.change-shape.pentagon` | Pentagon | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.change-shape.plus-sign` | Plus | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.change-shape.rectangle` | Rectangle | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.change-shape.right-arrow` | Right Arrow | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.change-shape.rounded-rectangle` | Rounded Rectangle | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.change-shape.star5` | 5-Point Star | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.change-shape.star8` | 8-Point Star | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.change-shape.trapezoid` | Trapezoid | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.change-shape.triangle` | Triangle | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.change-shape.up-arrow` | Up Arrow | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.change-shape.up-down-arrow` | Up-Down Arrow | Yes | Yes | none | shared | home/arrange (RibbonMenuItem) | home/arrange (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.distribute-h` | Distribute Horiz. | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.distribute-v` | Distribute Vert. | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.edit-points` | Edit Points | Yes | Yes | none | shared | home/arrange (RibbonToggleButton) | home/arrange (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
@@ -325,21 +332,28 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.redo` | Redo | No | Yes | WPF | platform-only | - | home/edit (RibbonButton) | Intended shell/profile variance: Avalonia exposes Redo in its generated Home/Edit ribbon group; WPF routes Redo through a routed command, keyboard bindings, and Editor.Redo rather than a generated ribbon control. |
 | `freep.remove-link` | Remove Link | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.replace` | Replace | Yes | Yes | none | shared | home/editing (RibbonButton) | home/editing (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape-chevron` | Chevron | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-cross` | Cross | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-diamond` | Diamond | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-down-arrow` | Down Arrow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-ellipse` | Ellipse | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-hexagon` | Hexagon | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape-home-plate` | Home Plate | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-left-arrow` | Left Arrow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape-left-right-arrow` | Left-Right Arrow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape-octagon` | Octagon | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-parallelogram` | Parallelogram | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape-pentagon` | Pentagon | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-plus-sign` | Plus | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-rectangle` | Rectangle | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-right-arrow` | Right Arrow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-rounded-rectangle` | Rounded Rectangle | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-star5` | 5-Point Star | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape-star8` | 8-Point Star | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-trapezoid` | Trapezoid | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-triangle` | Triangle | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-up-arrow` | Up Arrow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape-up-down-arrow` | Up-Down Arrow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slide-number` | Slide Number | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slide-size-16x9` | Widescreen (16:9) | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slide-size-4x3` | Standard (4:3) | Yes | Yes | none | shared | design/customize (RibbonButton) | design/customize (RibbonButton) | Available in both generated FreeP ribbon profiles. |

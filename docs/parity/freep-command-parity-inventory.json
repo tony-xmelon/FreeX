@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia)",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 369,
-    "both": 367,
+    "totalCommands": 383,
+    "both": 381,
     "wpfOnly": 0,
     "avaloniaOnly": 2,
     "missingWpf": 2,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 367,
+    "shared": 381,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 2,
@@ -3496,6 +3496,40 @@
       ]
     },
     {
+      "commandId": "freep.arrange.change-shape.chevron",
+      "label": "Chevron",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Chevron",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Chevron",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
       "commandId": "freep.arrange.change-shape.cross",
       "label": "Cross",
       "wpfPresent": true,
@@ -3666,6 +3700,40 @@
       ]
     },
     {
+      "commandId": "freep.arrange.change-shape.home-plate",
+      "label": "Home Plate",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Home Plate",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Home Plate",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
       "commandId": "freep.arrange.change-shape.left-arrow",
       "label": "Left Arrow",
       "wpfPresent": true,
@@ -3700,6 +3768,74 @@
       ]
     },
     {
+      "commandId": "freep.arrange.change-shape.left-right-arrow",
+      "label": "Left-Right Arrow",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Left-Right Arrow",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Left-Right Arrow",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.arrange.change-shape.octagon",
+      "label": "Octagon",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Octagon",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Octagon",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
       "commandId": "freep.arrange.change-shape.parallelogram",
       "label": "Parallelogram",
       "wpfPresent": true,
@@ -3728,6 +3864,40 @@
           "groupId": "arrange",
           "group": "Arrange",
           "label": "Parallelogram",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.arrange.change-shape.pentagon",
+      "label": "Pentagon",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Pentagon",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Pentagon",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
         }
@@ -3904,6 +4074,40 @@
       ]
     },
     {
+      "commandId": "freep.arrange.change-shape.star8",
+      "label": "8-Point Star",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "8-Point Star",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "8-Point Star",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
       "commandId": "freep.arrange.change-shape.trapezoid",
       "label": "Trapezoid",
       "wpfPresent": true,
@@ -4000,6 +4204,40 @@
           "groupId": "arrange",
           "group": "Arrange",
           "label": "Up Arrow",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.arrange.change-shape.up-down-arrow",
+      "label": "Up-Down Arrow",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Up-Down Arrow",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "arrange",
+          "group": "Arrange",
+          "label": "Up-Down Arrow",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
         }
@@ -8741,6 +8979,40 @@
       ]
     },
     {
+      "commandId": "freep.shape-chevron",
+      "label": "Chevron",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Chevron",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Chevron",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.shape-cross",
       "label": "Cross",
       "wpfPresent": true,
@@ -8911,6 +9183,40 @@
       ]
     },
     {
+      "commandId": "freep.shape-home-plate",
+      "label": "Home Plate",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Home Plate",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Home Plate",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.shape-left-arrow",
       "label": "Left Arrow",
       "wpfPresent": true,
@@ -8945,6 +9251,74 @@
       ]
     },
     {
+      "commandId": "freep.shape-left-right-arrow",
+      "label": "Left-Right Arrow",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Left-Right Arrow",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Left-Right Arrow",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.shape-octagon",
+      "label": "Octagon",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Octagon",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Octagon",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.shape-parallelogram",
       "label": "Parallelogram",
       "wpfPresent": true,
@@ -8973,6 +9347,40 @@
           "groupId": "illustrations",
           "group": "Illustrations",
           "label": "Parallelogram",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.shape-pentagon",
+      "label": "Pentagon",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Pentagon",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Pentagon",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -9149,6 +9557,40 @@
       ]
     },
     {
+      "commandId": "freep.shape-star8",
+      "label": "8-Point Star",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "8-Point Star",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "8-Point Star",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.shape-trapezoid",
       "label": "Trapezoid",
       "wpfPresent": true,
@@ -9245,6 +9687,40 @@
           "groupId": "illustrations",
           "group": "Illustrations",
           "label": "Up Arrow",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.shape-up-down-arrow",
+      "label": "Up-Down Arrow",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Up-Down Arrow",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "illustrations",
+          "group": "Illustrations",
+          "label": "Up-Down Arrow",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
