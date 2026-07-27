@@ -47,6 +47,10 @@ was stale bookkeeping, not an active capability restriction.
 - Recent function slices cover hidden-slide state, notes export, media capture and
   insertion, accessibility/review panes, printing, and grouped DrawingML package
   round-trip behavior.
+- The Accessibility Checker now gives missing-chart-title findings a real
+  `Add Chart Title` action in both hosts. The action navigates to the chart and
+  opens the existing Chart Display Options editor, so the user can supply a
+  meaningful title through the normal undoable chart mutation path.
 - Common Insert AutoShape presets now include Triangle, Diamond, Hexagon, Right Arrow, and
   5-Point Star in both generated host ribbons. They use the shared insertion planner and
   EditingSession path, so default geometry, rendering, undo, and PPTX round-trip stay aligned.
