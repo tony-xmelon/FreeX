@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "host": "wpf",
+  "captureMode": "visible-app-owned-render-target",
+  "targetDpi": 96,
+  "logicalShellWidth": 1280,
+  "logicalShellHeight": 760,
+  "generatedAtUtc": "2026-07-27T13:48:33.1148659\u002B00:00",
+  "captures": [
+    {
+      "scenarioId": "review.comments-pane.seeded",
+      "routeId": "review.comments-pane",
+      "stateId": "seeded",
+      "host": "wpf",
+      "captureStatus": "complete",
+      "imagePath": "wpf/review.comments-pane.seeded.png",
+      "logicalWidth": 1280,
+      "logicalHeight": 760,
+      "pixelWidth": 1280,
+      "pixelHeight": 760,
+      "dpiX": 96,
+      "dpiY": 96,
+      "nonBackgroundPixelCount": 891230,
+      "focusedRole": "",
+      "focusedLabel": "",
+      "buttons": [
+        {
+          "actionId": "close",
+          "label": "Close",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "new-comment",
+          "label": "New Comment",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "save",
+          "label": "Save",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        },
+        {
+          "actionId": "reply",
+          "label": "Reply",
+          "isEnabled": true,
+          "isDefault": false,
+          "isCancel": false
+        }
+      ],
+      "controls": [
+        {
+          "role": "button",
+          "label": "close",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "new-comment",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "save",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        },
+        {
+          "role": "button",
+          "label": "reply",
+          "isEnabled": true,
+          "isChecked": null,
+          "isSelected": null
+        }
+      ],
+      "assertions": [
+        {
+          "id": "seeded-presentation",
+          "passed": true,
+          "detail": "Loaded 3 seeded slides."
+        },
+        {
+          "id": "seeded-selection",
+          "passed": true,
+          "detail": "Initially selected shape ids: 10."
+        },
+        {
+          "id": "no-preselection-mutation",
+          "passed": true,
+          "detail": "Opening the choice overlay did not mutate shape count or layout."
+        },
+        {
+          "id": "choice-state",
+          "passed": true,
+          "detail": "The picker exposes its expected default/current/disabled choice state."
+        }
+      ],
+      "limitations": [],
+      "sourceDpiX": 144,
+      "sourceDpiY": 144,
+      "rasterNormalization": "logical-96-dpi",
+      "pixelComparisonImagePath": "wpf/targets/review.comments-pane.seeded.png",
+      "pixelComparisonLogicalWidth": 1100,
+      "pixelComparisonLogicalHeight": 100
+    }
+  ],
+  "limitations": []
+}

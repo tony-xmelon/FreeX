@@ -1,0 +1,837 @@
+{
+  "schemaVersion": 3,
+  "generatedAtUtc": "2026-07-27T13:49:07.8977494\u002B00:00",
+  "scenarioCount": 28,
+  "routeCount": 19,
+  "pairedCaptureCount": 1,
+  "passCount": 1,
+  "mismatchCount": 0,
+  "limitationCount": 27,
+  "wpf": {
+    "schemaVersion": 1,
+    "host": "wpf",
+    "captureMode": "visible-app-owned-render-target",
+    "targetDpi": 96,
+    "logicalShellWidth": 1280,
+    "logicalShellHeight": 760,
+    "generatedAtUtc": "2026-07-27T13:48:33.1148659\u002B00:00",
+    "captures": [
+      {
+        "scenarioId": "review.comments-pane.seeded",
+        "routeId": "review.comments-pane",
+        "stateId": "seeded",
+        "host": "wpf",
+        "captureStatus": "complete",
+        "imagePath": "wpf/review.comments-pane.seeded.png",
+        "logicalWidth": 1280,
+        "logicalHeight": 760,
+        "pixelWidth": 1280,
+        "pixelHeight": 760,
+        "dpiX": 96,
+        "dpiY": 96,
+        "nonBackgroundPixelCount": 891230,
+        "focusedRole": "",
+        "focusedLabel": "",
+        "buttons": [
+          {
+            "actionId": "close",
+            "label": "Close",
+            "isEnabled": true,
+            "isDefault": false,
+            "isCancel": false
+          },
+          {
+            "actionId": "new-comment",
+            "label": "New Comment",
+            "isEnabled": true,
+            "isDefault": false,
+            "isCancel": false
+          },
+          {
+            "actionId": "save",
+            "label": "Save",
+            "isEnabled": true,
+            "isDefault": false,
+            "isCancel": false
+          },
+          {
+            "actionId": "reply",
+            "label": "Reply",
+            "isEnabled": true,
+            "isDefault": false,
+            "isCancel": false
+          }
+        ],
+        "controls": [
+          {
+            "role": "button",
+            "label": "close",
+            "isEnabled": true,
+            "isChecked": null,
+            "isSelected": null
+          },
+          {
+            "role": "button",
+            "label": "new-comment",
+            "isEnabled": true,
+            "isChecked": null,
+            "isSelected": null
+          },
+          {
+            "role": "button",
+            "label": "save",
+            "isEnabled": true,
+            "isChecked": null,
+            "isSelected": null
+          },
+          {
+            "role": "button",
+            "label": "reply",
+            "isEnabled": true,
+            "isChecked": null,
+            "isSelected": null
+          }
+        ],
+        "assertions": [
+          {
+            "id": "seeded-presentation",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "seeded-selection",
+            "passed": true,
+            "detail": "Initially selected shape ids: 10."
+          },
+          {
+            "id": "no-preselection-mutation",
+            "passed": true,
+            "detail": "Opening the choice overlay did not mutate shape count or layout."
+          },
+          {
+            "id": "choice-state",
+            "passed": true,
+            "detail": "The picker exposes its expected default/current/disabled choice state."
+          }
+        ],
+        "limitations": [],
+        "sourceDpiX": 144,
+        "sourceDpiY": 144,
+        "rasterNormalization": "logical-96-dpi",
+        "pixelComparisonImagePath": "wpf/targets/review.comments-pane.seeded.png",
+        "pixelComparisonLogicalWidth": 1100,
+        "pixelComparisonLogicalHeight": 100
+      }
+    ],
+    "limitations": []
+  },
+  "avalonia": {
+    "schemaVersion": 1,
+    "host": "avalonia",
+    "captureMode": "visible-app-owned-render-target",
+    "targetDpi": 96,
+    "logicalShellWidth": 1280,
+    "logicalShellHeight": 760,
+    "generatedAtUtc": "2026-07-27T13:48:58.5920806\u002B00:00",
+    "captures": [
+      {
+        "scenarioId": "review.comments-pane.seeded",
+        "routeId": "review.comments-pane",
+        "stateId": "seeded",
+        "host": "avalonia",
+        "captureStatus": "complete",
+        "imagePath": "avalonia/review.comments-pane.seeded.png",
+        "logicalWidth": 1280,
+        "logicalHeight": 760,
+        "pixelWidth": 1280,
+        "pixelHeight": 760,
+        "dpiX": 96,
+        "dpiY": 96,
+        "nonBackgroundPixelCount": 891425,
+        "focusedRole": "",
+        "focusedLabel": "",
+        "buttons": [
+          {
+            "actionId": "close",
+            "label": "Close",
+            "isEnabled": true,
+            "isDefault": false,
+            "isCancel": false
+          },
+          {
+            "actionId": "new-comment",
+            "label": "New Comment",
+            "isEnabled": true,
+            "isDefault": false,
+            "isCancel": false
+          },
+          {
+            "actionId": "save",
+            "label": "Save",
+            "isEnabled": true,
+            "isDefault": false,
+            "isCancel": false
+          },
+          {
+            "actionId": "reply",
+            "label": "Reply",
+            "isEnabled": true,
+            "isDefault": false,
+            "isCancel": false
+          }
+        ],
+        "controls": [
+          {
+            "role": "button",
+            "label": "close",
+            "isEnabled": true,
+            "isChecked": null,
+            "isSelected": null
+          },
+          {
+            "role": "button",
+            "label": "new-comment",
+            "isEnabled": true,
+            "isChecked": null,
+            "isSelected": null
+          },
+          {
+            "role": "button",
+            "label": "save",
+            "isEnabled": true,
+            "isChecked": null,
+            "isSelected": null
+          },
+          {
+            "role": "button",
+            "label": "reply",
+            "isEnabled": true,
+            "isChecked": null,
+            "isSelected": null
+          }
+        ],
+        "assertions": [
+          {
+            "id": "seeded-presentation",
+            "passed": true,
+            "detail": "Loaded 3 seeded slides."
+          },
+          {
+            "id": "seeded-selection",
+            "passed": true,
+            "detail": "Initially selected shape ids: 10."
+          },
+          {
+            "id": "no-preselection-mutation",
+            "passed": true,
+            "detail": "Opening the choice overlay did not mutate shape count or layout."
+          },
+          {
+            "id": "choice-state",
+            "passed": true,
+            "detail": "The picker exposes its expected default/current/disabled choice state."
+          }
+        ],
+        "limitations": [],
+        "sourceDpiX": 96,
+        "sourceDpiY": 96,
+        "rasterNormalization": "logical-96-dpi",
+        "pixelComparisonImagePath": "avalonia/targets/review.comments-pane.seeded.png",
+        "pixelComparisonLogicalWidth": 1100,
+        "pixelComparisonLogicalHeight": 100
+      }
+    ],
+    "limitations": []
+  },
+  "comparisons": [
+    {
+      "scenarioId": "design.slide-size.initial",
+      "routeId": "design.slide-size",
+      "stateId": "initial",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "design.slide-size.invalid",
+      "routeId": "design.slide-size",
+      "stateId": "invalid",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "insert.header-footer.date-time",
+      "routeId": "insert.header-footer",
+      "stateId": "date-time",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "insert.header-footer.apply-to-all",
+      "routeId": "insert.header-footer",
+      "stateId": "apply-to-all",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "home.find-replace.find",
+      "routeId": "home.find-replace",
+      "stateId": "find",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "home.find-replace.replace",
+      "routeId": "home.find-replace",
+      "stateId": "replace",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "insert.hyperlink.initial",
+      "routeId": "insert.hyperlink",
+      "stateId": "initial",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "insert.hyperlink.validation",
+      "routeId": "insert.hyperlink",
+      "stateId": "validation",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "insert.hyperlink.populated",
+      "routeId": "insert.hyperlink",
+      "stateId": "populated",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "chart.edit-data.initial",
+      "routeId": "chart.edit-data",
+      "stateId": "initial",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "chart.edit-data.validation",
+      "routeId": "chart.edit-data",
+      "stateId": "validation",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "chart.edit-data.populated",
+      "routeId": "chart.edit-data",
+      "stateId": "populated",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "slideshow.custom-shows.initial",
+      "routeId": "slideshow.custom-shows",
+      "stateId": "initial",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "slideshow.custom-shows.validation",
+      "routeId": "slideshow.custom-shows",
+      "stateId": "validation",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "slideshow.custom-shows.populated",
+      "routeId": "slideshow.custom-shows",
+      "stateId": "populated",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "startup.slide-pane.seeded",
+      "routeId": "startup.slide-pane",
+      "stateId": "seeded",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "startup.notes-pane.seeded",
+      "routeId": "startup.notes-pane",
+      "stateId": "seeded",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "review.comments-pane.seeded",
+      "routeId": "review.comments-pane",
+      "stateId": "seeded",
+      "classification": "pass",
+      "wpfImagePath": "wpf/review.comments-pane.seeded.png",
+      "avaloniaImagePath": "avalonia/review.comments-pane.seeded.png",
+      "dimensionsMatch": true,
+      "focusMatches": true,
+      "buttonOrderMatches": true,
+      "enabledStateMatches": true,
+      "wpfNonblank": true,
+      "avaloniaNonblank": true,
+      "details": [],
+      "pixelMetrics": {
+        "wpfPixelWidth": 1100,
+        "wpfPixelHeight": 100,
+        "avaloniaPixelWidth": 1100,
+        "avaloniaPixelHeight": 100,
+        "normalizedWidth": 1100,
+        "normalizedHeight": 100,
+        "comparedPixelCount": 110000,
+        "foregroundUnionPixelCount": 110000,
+        "changedPixelCount": 17857,
+        "foregroundChangedPixelCount": 17857,
+        "changedPixelRatio": 0.16233636363636364,
+        "foregroundChangedPixelRatio": 0.16233636363636364,
+        "meanChannelDelta": 14.10470606060606,
+        "maxChannelDelta": 221,
+        "changedChannelThreshold": 24,
+        "maximumChangedPixelRatio": 0.2,
+        "maximumForegroundChangedPixelRatio": 1,
+        "maximumMeanChannelDelta": 18,
+        "pixelDimensionsMatch": true,
+        "thresholdPassed": true,
+        "backgroundHandling": "alpha-composited-over-white; corner-background-estimate; high-quality-scale-to-logical-96-dpi",
+        "heatmapPath": "diff/review.comments-pane.seeded.png",
+        "wpfImageSha256": "2453bed7068f88c0b1ccb88c251fee3675cd04cc96fe2c1f0550f854fb424c5a",
+        "avaloniaImageSha256": "f3e17789fb79df6569772eb8a6659b45491be32654d5336a004f036e52069797",
+        "heatmapSha256": "e790f8c2a113ec17a935251bc182b03a85493a6d63bdd3349f8562b55607a97e"
+      },
+      "shellContextPixelMetrics": {
+        "wpfPixelWidth": 1280,
+        "wpfPixelHeight": 760,
+        "avaloniaPixelWidth": 1280,
+        "avaloniaPixelHeight": 760,
+        "normalizedWidth": 1280,
+        "normalizedHeight": 760,
+        "comparedPixelCount": 972800,
+        "foregroundUnionPixelCount": 899904,
+        "changedPixelCount": 111077,
+        "foregroundChangedPixelCount": 111077,
+        "changedPixelRatio": 0.11418277138157895,
+        "foregroundChangedPixelRatio": 0.12343205497475286,
+        "meanChannelDelta": 8.811953125,
+        "maxChannelDelta": 255,
+        "changedChannelThreshold": 24,
+        "maximumChangedPixelRatio": 0.2,
+        "maximumForegroundChangedPixelRatio": 1,
+        "maximumMeanChannelDelta": 18,
+        "pixelDimensionsMatch": true,
+        "thresholdPassed": true,
+        "backgroundHandling": "alpha-composited-over-white; corner-background-estimate; high-quality-scale-to-logical-96-dpi",
+        "heatmapPath": "diff/context/review.comments-pane.seeded.png",
+        "wpfImageSha256": "aa0a7cb3a9e60a5ed7e5cd0788e72f9fd624ba36a5ebc7d49cfac26c51f148b5",
+        "avaloniaImageSha256": "c63adc764f4f0d7878ff03c43750c8d1dee651f76f016ad5108093ede10f2d30",
+        "heatmapSha256": "a69a2f08798db6712d400418d4f3a5d72cfd31151e952e15a136637d1aa823f8"
+      }
+    },
+    {
+      "scenarioId": "review.accessibility-pane.seeded",
+      "routeId": "review.accessibility-pane",
+      "stateId": "seeded",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "review.alt-text-pane.seeded",
+      "routeId": "review.alt-text-pane",
+      "stateId": "seeded",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "review.reading-order-pane.seeded",
+      "routeId": "review.reading-order-pane",
+      "stateId": "seeded",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "review.proofing-pane.seeded",
+      "routeId": "review.proofing-pane",
+      "stateId": "seeded",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "accessibility.media-caption-pane.seeded",
+      "routeId": "accessibility.media-caption-pane",
+      "stateId": "seeded",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "context.smartart-text-pane.seeded",
+      "routeId": "context.smartart-text-pane",
+      "stateId": "seeded",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "animations.animation-pane.seeded",
+      "routeId": "animations.animation-pane",
+      "stateId": "seeded",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "file.print-options.seeded",
+      "routeId": "file.print-options",
+      "stateId": "seeded",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "insert.table-picker.open",
+      "routeId": "insert.table-picker",
+      "stateId": "open",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    },
+    {
+      "scenarioId": "design.layout-picker.open",
+      "routeId": "design.layout-picker",
+      "stateId": "open",
+      "classification": "limitation",
+      "wpfImagePath": "",
+      "avaloniaImagePath": "",
+      "dimensionsMatch": false,
+      "focusMatches": false,
+      "buttonOrderMatches": false,
+      "enabledStateMatches": false,
+      "wpfNonblank": false,
+      "avaloniaNonblank": false,
+      "details": [
+        "WPF capture is missing."
+      ],
+      "pixelMetrics": null,
+      "shellContextPixelMetrics": null
+    }
+  ],
+  "nativePickerManifestPath": "../freep-native-picker-human-evidence.json",
+  "environmentNotes": [
+    "WPF source desktop DPI was 144x144; app-owned rasters were normalized to logical 96 DPI before comparison.",
+    "Captures include app-owned client content only; native non-client title bars are outside the paired pixel gate.",
+    "WPF mode: visible-app-owned-render-target; Avalonia mode: visible-app-owned-render-target."
+  ],
+  "limitations": []
+}
