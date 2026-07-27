@@ -19,12 +19,15 @@ difference, not an evidence-only or feature-depth comparison.
   the same operation order and formulas as the WPF `ImageAdjustHelper`.
 - Cleared the Avalonia decoded-image cache on load and model changes so adjustments are
   visible immediately and undo/redo cannot display a stale bitmap.
+- Made decoded-bitmap ownership explicit, disposed cache entries on invalidation, and retained
+  the WPF premultiplied-alpha contract in the Avalonia output bitmap.
 
 ## Verification
 
-- `PictureCoreCommandParityTests`: 8 passed.
-- Existing WPF `ImageAdjustHelperTests` remain the authority coverage for the matching pixel
-  pipeline and were not duplicated with a host-only route test.
+- Avalonia `PictureCoreCommandParityTests`: **11/11 passed**, covering command registration,
+  model mutation and undo, decoded-bitmap ownership, cache replacement, WPF premultiplied
+  transparency math, and the real output alpha format.
+- WPF authority `ImageAdjustHelperTests`: **12/12 passed**.
 
 ## Residuals
 
