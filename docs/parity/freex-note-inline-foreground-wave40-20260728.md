@@ -7,6 +7,9 @@ Date: 2026-07-28
 This slice closes the foreground worksheet-anchored New Note/Edit Note residual from Wave 39.
 The WPF `GridView.CommentPreview` implementation remains the authority for popup geometry,
 chrome, focus, and viewport lifecycle.
+The platform-neutral `FreeX.App.Presentation.Comments.CommentPreviewPlacementPlanner` owns the
+rectangle, size, connector, and text-estimate math; WPF and Avalonia adapt native types only at
+their rendering boundaries.
 
 ## Changes
 
