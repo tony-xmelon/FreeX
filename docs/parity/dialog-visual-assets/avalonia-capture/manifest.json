@@ -655,7 +655,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.Options.Language.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-current-source-avalonia-targeted-parity-capture",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-targeted-capture-options-language-wave27-2026-07-27",
+                         "expectedWidth":  744,
+                         "expectedHeight":  521,
+                         "note":  "Fresh current-source Avalonia capture from the self-contained Linux app in Docker/Xvfb via --parity-capture --parity-capture-surface dialog.Options.Language at 96 DPI."
                      },
                      {
                          "id":  "dialog.Options.EaseOfAccess",
