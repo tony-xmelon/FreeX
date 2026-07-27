@@ -298,3 +298,11 @@ Do not select another renderer-only calibration from stale comments such as
 “viewer-only”, “Tab navigation is not implemented”, or “animation timing is stubbed”.
 Choose the next slice from a reproducible function gap with a host workflow and
 round-trip assertion, then add visual evidence only when the function path is proven.
+
+### 2026-07-27 WPF table structure context route
+
+Avalonia already exposed active-cell table row/column insertion, deletion, merge, and split
+through its context menu, while WPF only exposed the shared table commands indirectly. WPF now
+hit-tests the table and active cell on right-click and exposes the same guarded context actions,
+routing every mutation through `EditingSession` so undo/redo and package behavior remain shared.
+Focused WPF host coverage verifies menu parity, enabled states, merge, and split execution.
