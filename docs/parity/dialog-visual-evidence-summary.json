@@ -3168,7 +3168,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Options.QuickAccessToolbar.png",
-                                                "fileBytes":  37778,
+                                                "fileBytes":  41994,
                                                 "width":  744,
                                                 "height":  521,
                                                 "dpiX":  96,
@@ -3176,15 +3176,15 @@
                                                 "logicalWidth":  744,
                                                 "logicalHeight":  521,
                                                 "pixels":  387624,
-                                                "distinctColors":  1779,
+                                                "distinctColors":  3015,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.756367,
+                                                "nonBackgroundRatio":  0.681137,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  246.696015,
-                                                "manifestNote":  "Fresh focused capture from current FreeX Avalonia source in Linux Docker/Xvfb on 2026-07-26 via --parity-capture --parity-capture-surface dialog.Options.QuickAccessToolbar; 744x521 px at 96 DPI after Proofing section-gap and QAT initial-selection fixes.",
+                                                "meanLuma":  245.863166,
+                                                "manifestNote":  "Fresh target-only capture from current FreeX Avalonia source after merging origin/main in Linux Docker/Xvfb on 2026-07-27 via --parity-capture --parity-capture-surface dialog.Options.QuickAccessToolbar; 744x521 px at 96 DPI after shared Options chrome, WPF-matched QAT grid widths, 180px list rows, footer surface, and category selection styling.",
                                                 "evidenceSource":  "focused-current-avalonia-parity-capture",
                                                 "sourcePng":  null,
-                                                "recaptureStatus":  "fresh-linux-docker-focused-capture-2026-07-26",
+                                                "recaptureStatus":  "fresh-linux-docker-focused-capture-2026-07-27-wave16-merged-main",
                                                 "expectedWidth":  744,
                                                 "expectedHeight":  521
                                             },
@@ -3201,10 +3201,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000808,
-                                                  "sampleMeanDelta":  0.026894,
-                                                  "lumaDelta":  0.00444,
-                                                  "nonBackgroundDelta":  0.100334,
-                                                  "triageScore":  0.132476,
+                                                  "sampleMeanDelta":  0.019832,
+                                                  "lumaDelta":  0.001174,
+                                                  "nonBackgroundDelta":  0.025104,
+                                                  "triageScore":  0.046918,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6132,14 +6132,6 @@
                                   "nonBackgroundDelta":  0.12863
                               },
                               {
-                                  "id":  "dialog.Options.QuickAccessToolbar",
-                                  "triageScore":  0.132476,
-                                  "sampleMeanDelta":  0.026894,
-                                  "dimension":  "744.301x521.211 vs 744x521 logical; 744x521 vs 744x521 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.100334
-                              },
-                              {
                                   "id":  "dialog.PivotTableOptions.Data",
                                   "triageScore":  0.124561,
                                   "sampleMeanDelta":  0.035074,
@@ -6202,6 +6194,14 @@
                                   "dimension":  "744.104x521.073 vs 744x521 logical; 744x521 vs 744x521 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.077689
+                              },
+                              {
+                                  "id":  "dialog.SortOptions",
+                                  "triageScore":  0.110625,
+                                  "sampleMeanDelta":  0.052996,
+                                  "dimension":  "330.017x260.013 vs 330x260 logical; 495x390 vs 330x260 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.047236
                               }
                           ],
     "visualReviewCandidates":  [

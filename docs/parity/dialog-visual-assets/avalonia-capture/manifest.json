@@ -640,10 +640,10 @@
                          "png":  "dialog.Options.QuickAccessToolbar.png",
                          "captured":  true,
                          "evidenceSource":  "focused-current-avalonia-parity-capture",
-                         "recaptureStatus":  "fresh-linux-docker-focused-capture-2026-07-26",
+                         "recaptureStatus":  "fresh-linux-docker-focused-capture-2026-07-27-wave16-merged-main",
                          "expectedWidth":  744,
                          "expectedHeight":  521,
-                         "note":  "Fresh focused capture from current FreeX Avalonia source in Linux Docker/Xvfb on 2026-07-26 via --parity-capture --parity-capture-surface dialog.Options.QuickAccessToolbar; 744x521 px at 96 DPI after Proofing section-gap and QAT initial-selection fixes."
+                         "note":  "Fresh target-only capture from current FreeX Avalonia source after merging origin/main in Linux Docker/Xvfb on 2026-07-27 via --parity-capture --parity-capture-surface dialog.Options.QuickAccessToolbar; 744x521 px at 96 DPI after shared Options chrome, WPF-matched QAT grid widths, 180px list rows, footer surface, and category selection styling."
                      },
                      {
                          "id":  "dialog.Options.AddIns",
