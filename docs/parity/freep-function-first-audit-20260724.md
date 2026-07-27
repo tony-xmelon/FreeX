@@ -220,6 +220,32 @@ The remaining gaps are depth and application compatibility, not missing ribbon I
 - PowerPoint COM-backed workflow validation on a machine where that comparison path is
   available.
 
+### 2026-07-27 function-first checkpoint
+
+The generated command inventory now reports 444 FreeP command ids: 442 shared by WPF and
+Avalonia, with no actionable host-specific command gaps. The latest transition-sound slice
+closed an authoring hole that was easy to mistake for a visual-only concern: both hosts now
+open a native sound picker, attach the selected audio bytes/content type to the current slide
+transition, create the default Fade transition when a sound is added to a slide without one,
+clear the sound without disturbing other transition settings, and route the mutation through a
+single undoable `SetSlideTransitionCommand`. The package/model path was already authoritative;
+the missing piece was the user-facing command route and host picker adapter.
+
+This checkpoint deliberately changes the next-work rule. Do not spend the next slice on a
+small raster delta unless it also unblocks a user workflow. The active function queue is now:
+
+- deepen presenter capture where a real microphone/camera or persisted media artifact can be
+  exercised, while keeping unavailable hardware explicit rather than simulated;
+- add the next bounded advanced chart or SmartArt authoring operation only when its model and
+  package round-trip path already exists;
+- continue accessibility/review and output-dialog depth where a user action is still deferred;
+- use the PowerPoint COM-capable lane for visual claims, not as a reason to hold back functional
+  package and authoring progress.
+
+The command count is a reachability metric, not a claim that PowerPoint feature depth is
+complete. Advanced SmartArt regeneration/style semantics, richer chart editing, real capture
+backends, native output adapters, and PowerPoint-authoritative visual baselines remain open.
+
 ### 2026-07-27 table-cell fill authoring
 
 Per-cell fills were already represented in the model, preserved by the PPTX reader/writer, and
