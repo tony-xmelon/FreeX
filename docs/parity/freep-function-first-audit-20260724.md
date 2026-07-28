@@ -554,6 +554,16 @@ connectors for both hosts, while malformed or oversized input continues to use t
 cached drawing fallback. This is a functional layout-depth slice; it does not claim new Word or
 PowerPoint raster calibration.
 
+### 2026-07-29 SmartArt Bending Process node-count recovery
+
+The shared two-track `bendingProcess` geometry already scaled its gap and connector widths from
+the parsed node count, but an artificial twelve-node admission cutoff sent larger valid diagrams
+to the cached drawing path. The cutoff is removed while the malformed-text guard remains. Planner
+tests cover 13- and 20-node diagrams, and the WPF compositor test confirms all 13 boxes and 12
+connectors remain live. Avalonia consumes the same renderer-neutral shape/connector plan. This is
+functional SmartArt depth evidence only; exact PowerPoint turning geometry and raster parity remain
+deferred.
+
 ### 2026-07-29 Selection Pane z-order controls
 
 The Selection Pane already supported object selection, names, visibility, and grouped-child
