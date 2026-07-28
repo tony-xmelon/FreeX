@@ -19,10 +19,10 @@ Both hosts now apply the setting to the actual pointer gestures:
 
 ## Validation
 
-- `FreeX.App.Services.Tests` AppOptionsStore lane: 7/7 passed.
+- `FreeX.App.Services.Tests` AppOptionsStore lane: 8/8 passed.
 - `FreeX.App.Host.Tests` options/persistence lane: 70/70 passed.
 - `FreeX.App.UI.Tests` GridView autofill lane: 7/7 passed.
-- `FreeX.App.Avalonia.Tests` options/input lane: 15/15 passed.
+- `FreeX.App.Avalonia.Tests` options/input lane: 24/24 passed.
 - Release compilation completed for every focused test project with the
   low-resource foreground command policy.
 
