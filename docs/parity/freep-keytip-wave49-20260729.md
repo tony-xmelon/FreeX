@@ -31,6 +31,12 @@ an assumed logical-tree shape.
 The focused `FreeP.Ribbon.Definitions.Tests` key-tip inventory lane also passed
 4/4, covering both WPF and Avalonia profiles and their shared command inventory.
 
+The Docker/X11 family lane passed 23/23 on the integrated Wave 49 source. Its
+new physical row inserts and selects a text box, enters `Alt,A,N,B`, verifies
+that the longer `BI` sequence remains live, opens the Blinds menu with `I`, and
+uses two Escape presses to dismiss the menu and then leave key-tip mode before
+the following Backstage checks.
+
 ## Residuals
 
 No residual failures remain in this bounded key-tip and font-family slice. The
