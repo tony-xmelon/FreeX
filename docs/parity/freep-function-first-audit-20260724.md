@@ -592,3 +592,11 @@ retaining the containing-frame fallback for `outer`, omitted, and unknown values
 tests cover both plot and legend coordinate frames, and the existing host package test confirms
 the authored token remains intact after write/reopen. This is a functional chart-layout semantics
 fix with no renderer calibration claim.
+
+### 2026-07-30 Chart clone authored metadata
+
+`SlideCloner.CloneChart` omitted chart surface formatting, manual plot/legend layout, legend overlay,
+automatic-title state, vary-colors, and bubble sizing flags. Duplicate/copy workflows could therefore
+silently drop authored chart behavior. The clone now carries those fields and deep-copies mutable
+`ChartManualLayout` objects. Host regression coverage verifies the values and clone independence. This
+is a functional copy/paste parity fix with no renderer calibration claim.
