@@ -664,3 +664,13 @@ The backend now retains the source loop state and restarts the native player at 
 the session is alive; explicit stop/dispose clears the loop state so teardown cannot resurrect a
 player. The loop decision is covered independently from native-library availability. This is a
 functional playback fix; encoded media and device-specific LibVLC behavior remain separate.
+
+### 2026-07-28 transition sound loop routing
+
+The `TransitionSound.Loop` token was already retained by the PPTX reader/writer and model, but
+host playback did not forward it: Avalonia created a non-looping media source, while WPF deleted
+the temporary audio file after the first `MediaEnded` event. Both hosts now honor the source token;
+Avalonia passes it through the shared LibVLC source factory, and WPF restarts the player at the
+same file until the transition sound is replaced or the slideshow closes. Focused shared,
+Avalonia, and WPF media/transition coverage passes. This is functional presentation playback
+parity; it makes no encoded-audio or device-specific fidelity claim.
