@@ -635,3 +635,13 @@ convert its retained fallback shapes through the same undoable replacement and s
 live layout remains preferred when available. Focused coverage verifies conversion, selection, and
 undo/redo for the fallback-only case. This is a functional authoring fix with no renderer
 calibration claim.
+
+### 2026-07-28 SmartArt cached native style/color editing
+
+SmartArt Quick Style and Change Colors edits were unnecessarily blocked when the live `dgm:data`
+model was unavailable, even though the package still retained editable native style/color parts
+and a cached drawing. Those two package-owned edits now commit through the shared undo path while
+retaining the cached fallback; layout and node edits continue to require live data and fresh cache
+regeneration. Focused coverage verifies Quick Style and Change Colors mutation, metadata/part
+updates, and undo/redo in the cached-only case. This is a functional/package-authoring fix with no
+renderer calibration claim.
