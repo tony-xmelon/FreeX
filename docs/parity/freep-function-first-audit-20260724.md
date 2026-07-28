@@ -867,3 +867,14 @@ drawing cache, and prunes obsolete image relationships/media when the final pict
 Focused package, host undo/reopen, and Avalonia text-pane coverage verify one-picture and
 last-picture removal paths. This is a functional SmartArt editing/package fix with no new
 PowerPoint raster-fidelity claim.
+
+### 2026-07-30 SmartArt layout recovery without a native layout part
+
+PowerPoint can expose Change Layout for a valid SmartArt package whose data and drawing cache
+survive but whose `diagramLayout` part is absent. FreeP previously rejected that operation with
+"no native layout definition," leaving the package editable only through the cached view. The
+shared authoring planner now synthesizes a standards-shaped `diagramLayout` part when a non-empty
+native data part exists, adds the `lo` diagram relationship, and then applies the selected layout
+identity. Packages without native data still fail explicitly; existing layout parts remain
+authoritative. Planner, package-write, undo/redo, WPF host, and Avalonia host coverage passed;
+this is a functional/package recovery slice with no new PowerPoint raster-fidelity claim.
