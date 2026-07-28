@@ -231,6 +231,12 @@ delay, or trigger no longer silently turns a custom eight-spoke effect back into
 default. The regression is covered through the ribbon command path; the package and
 playback model remain unchanged.
 
+Known non-directional animation effect subtypes now also survive the package reader,
+slide clone, and writer. Previously only Spin retained its authored subtype; saving a
+known effect such as Pulse could silently emit the neutral subtype `0`. Directional
+subtypes continue to normalize through the shared direction field, and Grow/Shrink
+continue to use their authored scale behavior as the authority.
+
 The WPF slideshow host dispatches every renderer-neutral
 `SlideShowTransitionPlaybackActionKind` emitted by the shared planner. Legacy
 PowerPoint transition names that do not have a dedicated renderer family are
