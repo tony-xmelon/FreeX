@@ -39,6 +39,10 @@ accessibility depth, and real application capture/export validation.
 - Animation pane emphasis Spin effect amounts (Quarter Spin, Half Spin, Full Spin,
   and Two Spins) now preserve the authored `presetSubtype` through the shared model,
   undo path, WPF/Avalonia pane options, and PPTX read/write.
+- SmartArt Circle Accent Timeline is now a first-class layout command in the shared
+  planner, generated layout gallery, WPF registry, and Avalonia registry; its native
+  `circleAccentTimeline` layout token remains covered by the existing model round-trip
+  tests.
 - SmartArt text-pane editing has shared node mutations, outline rebuilding, and host
   pane routes. The modeled layout catalog and 14 native PowerPoint Quick Style entries
   (Simple, Moderate, Intense, Subtle, Soft Edge, Insert, Cartoon, and Powder) are
