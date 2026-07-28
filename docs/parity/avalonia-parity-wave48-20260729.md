@@ -21,8 +21,8 @@ Focused tests:
 - FreeX pivot ownership: 24 passed, 0 failed.
 - FreeW floating arrange and selection behavior: 25 passed, 0 failed.
 - FreeP Animation Pane: 10 passed, 0 failed.
-- FreeP SmartArt layout after the final upstream sync: 154 passed, 0 failed.
-- FreeP WPF host SmartArt after the final upstream sync: 203 passed, 0 failed.
+- FreeP SmartArt layout after the final upstream sync: 156 passed, 0 failed.
+- FreeP WPF host SmartArt after the final upstream sync: 204 passed, 0 failed.
 
 Repository validation:
 
