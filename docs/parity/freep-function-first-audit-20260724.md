@@ -797,3 +797,41 @@ with common physical units. The original InkML and OPC relationships remain unto
 malformed or unsupported payloads retain the existing fallback behavior. Focused presentation tests
 cover generated replay, native unit conversion, and compositor emission. This is a functional
 presentation-rendering slice; a device-captured PowerPoint raster baseline remains separate.
+
+### 2026-07-28 independent chart axis-title formatting
+
+PowerPoint permits category, value, and secondary-value axis titles to carry their own font
+family, size, bold/italic state, and color independently of chart-wide text defaults. FreeP now
+preserves that title formatting through the chart model and PPTX reader/writer, exposes it through
+the shared WPF and Avalonia axis-options workflow, restores it through undo, and feeds it into the
+renderer-neutral plan consumed by both hosts. Unspecified axis-title styles retain the existing
+renderer defaults. This closes a functional chart-authoring/package gap; no new visual-fidelity
+claim is made for raster matching.
+
+### 2026-07-28 SmartArt duplicate payload isolation
+
+SmartArt was described as a deep-cloned editable payload, but duplicate/undo snapshots still
+shared node image objects and raw diagram/relationship byte arrays with the source slide. A
+subsequent edit could therefore mutate the source package state through an alias. SmartArt
+cloning now copies node image bytes and diagram-part/relationship payloads, with a regression
+that mutates the clone and proves the source remains unchanged. Presentation SmartArt,
+WPF-host SmartArt, and Avalonia SmartArt coverage remain green; this is a functional
+duplicate/undo/package-isolation fix with no new renderer calibration claim.
+
+### 2026-07-28 OLE and preserved-object duplicate payload isolation
+
+OLE and preserved modern-object shapes had the same duplicate/undo aliasing risk: their
+embedded, Ink/3D/zoom, and relationship byte arrays were copied into a new carrier but still
+pointed at the source arrays. Cloning now copies those package payloads before a duplicate or
+undo snapshot is exposed, and a regression mutates cloned OLE, preserved-part, and part-rels
+bytes while proving the source remains unchanged. This is a functional package/editing fix;
+no new renderer calibration claim is made.
+
+### 2026-07-28 Name and Title Organization Chart
+
+PowerPoint's common `nameAndTitleOrgChart` SmartArt layout was classified as a hierarchy by
+the reader but was missing from the live-layout allow-list, authoring preset, and both host
+Change Layout command registries. FreeP now preserves the native layout identity, admits it
+through the existing organization-chart tree plan, exposes it in WPF and Avalonia, and covers
+reader/live support, package round-trip, host reachability, and renderer-neutral tree output.
+This reuses the existing hierarchy geometry and makes no new native PowerPoint raster claim.

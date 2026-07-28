@@ -1,19 +1,25 @@
 # FreeP PowerPoint COM full-corpus validation
 
 Date: 2026-07-28  
-Renderer/tool source: `main` at `8702c03b2`  
+Renderer/tool source: `main` at `6e426d353`
 PowerPoint: local `PowerPoint.Application` COM automation  
 Capture size: 1280x720
 
 ## Result
 
-The full checked-in RenderCompare corpus opened and exported successfully through
-Microsoft PowerPoint:
+The checked-in RenderCompare corpus contains 26 decks and 43 slides. Every deck
+opened and exported successfully through Microsoft PowerPoint, with no repair
+dialog or open failure. Reference matching was completed against all 43 checked-in
+PNG references. The long batch completed decks 01-24 before PowerPoint automation
+stalled; decks 25 and 26 were then rerun independently and matched successfully.
+The stall was therefore a batch automation-lifetime issue, not a deck or package
+failure.
 
 - decks: **26/26 passed**
-- slides: **50/50 exported**
+- slides: **43/43 exported and reference-matched**
 - export failures: **0**
 - repair-dialog or open failures: **0**
+- reference diffs: **0**
 
 | Deck | Slides | Result |
 | --- | ---: | --- |
@@ -50,11 +56,13 @@ Microsoft PowerPoint:
 dotnet build tools\FreeP.RenderCompare\FreeP.RenderCompare.csproj --configuration Release
 dotnet tools\FreeP.RenderCompare\bin\Release\net10.0-windows10.0.19041.0\FreeP.RenderCompare.dll `
   --powerpoint-corpus-validate tools\FreeP.RenderCompare\corpus `
-  <output-directory> --width 1280 --height 720
+  <output-directory> `
+  --refs tools\FreeP.RenderCompare\corpus\pptx-ref `
+  --width 1280 --height 720
 ```
 
-This run used no `--refs` directory, so reference matching was **not** performed.
-The result proves application open/export compatibility and provides fresh PowerPoint
-PNG surfaces; it does not by itself claim WPF/Avalonia visual parity. A subsequent
-visual comparison must pair these exports with FreeP renders and record per-deck
-and per-slide deltas.
+The batch log and isolated rerun logs are retained in the operator's temporary
+output directories. This validates PowerPoint COM open/export behavior and exact
+matching against the checked-in PowerPoint reference surfaces; it does not claim
+WPF/Avalonia visual parity. That comparison must pair these references with FreeP
+renders and record per-deck and per-slide deltas.
