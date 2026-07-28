@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 536 | 536 | 0 | 0 | 0 | 0 | 0 | 0 | 536 | 0 | 0 | 0 | 0 | 101 |
+| 537 | 537 | 0 | 0 | 0 | 0 | 0 | 0 | 537 | 0 | 0 | 0 | 0 | 101 |
 
 ## Workflow Evidence
 
@@ -518,6 +518,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.smartart.layout.bending-process` | Bending Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.block-cycle` | Block Cycle | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.chevron-process` | Chevron Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.circle-accent-timeline` | Circle Accent Timeline | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.circle-process` | Circle Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.closed-chevron-process` | Closed Chevron Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.continuous-block-process` | Continuous Block Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
