@@ -868,6 +868,16 @@ Focused package, host undo/reopen, and Avalonia text-pane coverage verify one-pi
 last-picture removal paths. This is a functional SmartArt editing/package fix with no new
 PowerPoint raster-fidelity claim.
 
+### 2026-07-30 SmartArt target-list node-count recovery
+
+The shared `targetList` geometry path previously rejected diagrams with more than five
+parsed nodes, so a valid larger target list silently reverted to its cached drawing even
+though the reader, insertion route, and both host command surfaces already supported the
+layout identity. The planner now emits one renderer-neutral concentric ellipse per parsed
+node without that artificial cutoff. Presentation and shared compositor regressions cover
+six- and twelve-node diagrams; exact PowerPoint ring clipping, label offsets, effects, and
+authoritative raster baselines remain separate visual work.
+
 ### 2026-07-30 SmartArt layout recovery without a native layout part
 
 PowerPoint can expose Change Layout for a valid SmartArt package whose data and drawing cache
