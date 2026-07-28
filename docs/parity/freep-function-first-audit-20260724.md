@@ -655,3 +655,12 @@ unknown imported IDs), applies the choice as one undoable display-options edit, 
 authoritative `c:style` token so save/reopen retains it. WPF and Avalonia use the same planner and
 dialog route. This is a functional chart-design and package round-trip fix with no new raster
 calibration claim.
+
+### 2026-07-28 media playback loop semantics
+
+`MediaPlaybackSource` already carried PowerPoint's loop intent for embedded and linked media, but
+the LibVLC session dropped that flag when opening a source and raised `Ended` after the first pass.
+The backend now retains the source loop state and restarts the native player at end-of-stream while
+the session is alive; explicit stop/dispose clears the loop state so teardown cannot resurrect a
+player. The loop decision is covered independently from native-library availability. This is a
+functional playback fix; encoded media and device-specific LibVLC behavior remain separate.
