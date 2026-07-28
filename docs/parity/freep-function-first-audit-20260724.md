@@ -888,6 +888,15 @@ nine- and sixteen-item planner coverage plus a nine-item shared compositor fixtu
 guard the behavior. Exact PowerPoint dense-list sizing, curved routing, effects,
 and authoritative raster baselines remain separate visual work.
 
+### 2026-07-29 SmartArt titled-matrix node-count recovery
+
+The shared `titledMatrix` planner already derives its body rows from the parsed node
+count, but an explicit nine-node guard caused larger valid matrices to fall back to
+their cached drawing. The guard is removed and ten- and sixteen-node planner coverage
+plus a ten-node shared compositor fixture prove that the title band and every body
+cell remain live in both hosts. Exact PowerPoint title-band metrics and richer matrix
+styling remain separate visual/depth work.
+
 ### 2026-07-30 SmartArt layout recovery without a native layout part
 
 PowerPoint can expose Change Layout for a valid SmartArt package whose data and drawing cache
