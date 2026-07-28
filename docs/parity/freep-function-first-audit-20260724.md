@@ -211,6 +211,14 @@ was stale bookkeeping, not an active capability restriction.
 
 ### 2026-07-28 transition audit checkpoint
 
+### 2026-07-28 animation metadata preservation
+
+Timing and trigger edits clone the selected animation through the shared command
+planner. That clone now retains authored Wheel spoke counts, so changing duration,
+delay, or trigger no longer silently turns a custom eight-spoke effect back into the
+default. The regression is covered through the ribbon command path; the package and
+playback model remain unchanged.
+
 The WPF slideshow host dispatches every renderer-neutral
 `SlideShowTransitionPlaybackActionKind` emitted by the shared planner. Legacy
 PowerPoint transition names that do not have a dedicated renderer family are
