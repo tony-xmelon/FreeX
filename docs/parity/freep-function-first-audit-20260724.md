@@ -506,3 +506,12 @@ equation/R-squared flags, error direction/type/value settings, and one undoable 
 `ChartErrorBarsTests`, chart-data command tests, WPF dialog tests, and PPTX round-trip coverage
 exercise that path. Do not reopen it as a visual-calibration task unless a new user workflow is
 identified.
+
+### 2026-07-29 secondary chart-axis authoring
+
+The chart model, OOXML reader/writer, series options, and renderer already supported a right-hand
+secondary value axis, but the Chart Axis dialog exposed only Category and primary Value. The shared
+axis planner and undoable command now expose Secondary Value, including creation of a missing axis
+and removal of that empty authored axis on undo. WPF and Avalonia present the same third target and
+the focused planner, command, WPF source, and Avalonia headless tests cover the route. This is a
+functional authoring slice; it does not claim new chart raster parity.
