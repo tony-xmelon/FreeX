@@ -61,11 +61,13 @@ The recorded Wave 45 full solution build used:
 dotnet build FreeX.slnx --configuration Release --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1
 ```
 
-Result: **0 warnings, 0 errors**, elapsed time **9:18**.
+At the synchronized integration head, the result was **0 warnings, 0 errors**.
 
-The current `wave45-default-tests.trx` artifacts aggregate to **32,898 passed, 17 failed, 133 not executed, 33,048 total**. The 17 failures are source/portability/guard tests concentrated in existing dialog chrome, screenshot-tour, localization catalog, presentation portability, Page Layout portability, Avalonia shell wiring, and app-services portability checks. This lane is therefore recorded as incomplete, not green. The 133 not-executed rows are also not evidence of parity.
+The final default lane aggregate is **33,076 total**, with **32,943 executed and passed**, **0 failed**, and **133 not executed**. The executed lane is green; the 133 not-executed rows remain explicitly identified coverage limitations rather than failures.
 
-The current preflight log [`wave45-final-preflight.log`](../../artifacts/wave45-final-preflight.log) shows the repository, project, solution, packaging, and earlier generated-document checks passing. Its generated-doc stage stopped after detecting that the FreeP whole-window visual-evidence manifest needed regeneration, so the log is not a final all-green preflight record.
+The final parity preflight [`wave45-final-preflight.log`](../../artifacts/wave45-final-preflight.log) passed all repository, project, solution, packaging, and generated-document checks.
+
+Eighteen stale source/portability guards were semantically updated to match the current shared implementation. One real imported `hierarchy3` SmartArt regression was fixed, with focused validation of **201/201 host tests** and **274/274 presentation tests**.
 
 ## Current Dashboard Snapshot
 
@@ -74,8 +76,8 @@ The generated dashboard is [`avalonia-wpf-cross-app-dashboard.json`](avalonia-wp
 | App | Current generated counts |
 | --- | --- |
 | FreeX | 531 command rows; 473 parity rows; 0 Avalonia-missing rows; 0 real behavior gaps; 57 WPF dialog routes and 57 Avalonia captures; 94 paired visual surface IDs; 0 high-delta triage candidates; highest triage score 0.103523. |
-| FreeW | 883 command profiles; 458 in both profiles; 0 actionable missing WPF profiles; 0 actionable missing Avalonia profiles; 377 profile-shape-only rows; 43 command ID aliases; 5 platform-only rows. |
-| FreeP | 526 command profiles; 526 in both profiles; 0 actionable missing profiles on either side; 101 workflow-evidence rows; 0 known deferred command rows. |
+| FreeW | 934 total command profiles; 458 shared; 428 profile-shape-only rows; 43 command ID aliases; 5 platform-only rows; 0 actionable gaps. |
+| FreeP | 529 command profiles; 529 shared; 0 actionable gaps; 101 workflow-evidence rows. |
 
 The FreeX dialog evidence has 28 raw PNG dimension mismatches that normalize to matching capture dimensions at the recorded scale. That is a capture-size limitation, not a visual-parity pass.
 
@@ -83,8 +85,7 @@ The FreeX dialog evidence has 28 raw PNG dimension mismatches that normalize to 
 
 ### Functional verification
 
-- Resolve or explicitly classify the 17 default-lane source/portability guard failures and rerun the complete default lane.
-- Execute the 133 currently not-executed default rows where their prerequisites permit.
+- The executed default lane is green; the 133 not-executed rows remain a bounded coverage limitation to address as their prerequisites become available.
 - Extend physical Linux validation beyond the recorded smoke families to the broader command, dialog, context-menu, keyboard, editing, pointing, and export workflows across all three applications.
 
 ### Authoritative visual and manual parity
