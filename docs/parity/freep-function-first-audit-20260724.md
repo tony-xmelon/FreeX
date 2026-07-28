@@ -835,3 +835,13 @@ Change Layout command registries. FreeP now preserves the native layout identity
 through the existing organization-chart tree plan, exposes it in WPF and Avalonia, and covers
 reader/live support, package round-trip, host reachability, and renderer-neutral tree output.
 This reuses the existing hierarchy geometry and makes no new native PowerPoint raster claim.
+
+### 2026-07-28 chart-area fill transparency
+
+PowerPoint chart and plot areas can retain a solid fill while applying independent fill
+transparency. FreeP already preserved the corresponding DrawingML alpha in `ThemeAwareColor`,
+but the shared Chart Area workflow exposed only color, no-fill, outline color, and outline width.
+The planner and both WPF/Avalonia dialogs now expose a 0-100% fill-transparency value, convert it
+to the existing alpha field, and keep the change inside the existing undoable chart-area command.
+Focused planner, WPF, Avalonia, and package round-trip coverage verifies color/alpha retention.
+This is a functional chart-authoring/package slice; it makes no new PowerPoint raster-fidelity claim.
