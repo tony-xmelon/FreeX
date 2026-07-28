@@ -744,3 +744,14 @@ host command registries and the Change Layout ribbon, admits it as a live Proces
 preserves it through the normal package round trip. The current implementation deliberately
 reuses the existing bounded process-family geometry; this closes the functional/package
 reachability gap without making a new native PowerPoint raster-fidelity claim.
+
+### 2026-07-28 PowerPoint COM corpus validation
+
+The local machine now resolves `PowerPoint.Application`, and `FreeP.RenderCompare`
+has a repeatable `--powerpoint-corpus-validate` mode that opens each selected deck,
+exports every slide through PowerPoint, and optionally compares the resulting PNG
+hashes with the stored reference set. The three historical repair-dialog decks
+(`10-motionpath`, `14-smartart-live`, and `21-comments-notes`) all passed: 3/3
+decks opened and exported, 7/7 slides matched their references, and the command
+returned exit code 0. PDF/print/handout/notes/video baselines and full WPF/Avalonia
+visual comparison remain separate open evidence surfaces.
