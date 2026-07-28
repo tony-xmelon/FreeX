@@ -807,3 +807,13 @@ the shared WPF and Avalonia axis-options workflow, restores it through undo, and
 renderer-neutral plan consumed by both hosts. Unspecified axis-title styles retain the existing
 renderer defaults. This closes a functional chart-authoring/package gap; no new visual-fidelity
 claim is made for raster matching.
+
+### 2026-07-28 SmartArt duplicate payload isolation
+
+SmartArt was described as a deep-cloned editable payload, but duplicate/undo snapshots still
+shared node image objects and raw diagram/relationship byte arrays with the source slide. A
+subsequent edit could therefore mutate the source package state through an alias. SmartArt
+cloning now copies node image bytes and diagram-part/relationship payloads, with a regression
+that mutates the clone and proves the source remains unchanged. Presentation SmartArt,
+WPF-host SmartArt, and Avalonia SmartArt coverage remain green; this is a functional
+duplicate/undo/package-isolation fix with no new renderer calibration claim.
