@@ -2,13 +2,35 @@
 
 ## Mismatch fixed
 
-Avalonia's `MainWindow` previously reselected the editor slide when slideshow playback closed. The WPF launch path keeps editor selection unchanged while the separate slideshow window plays, so Avalonia now follows the same authority for normal and named custom-show routes.
+Avalonia's `MainWindow` attached `Closed` handlers to slideshow windows that
+called `Editor.SelectSlide` for the last slide viewed. The WPF launch path in
+`freep/FreeP.App.Host/MainWindow.cs` creates the slideshow as a separate window
+and does not mutate the editor selection when playback ends. That made Avalonia
+leave the editing surface on a different slide after previewing a deck or
+named custom show.
 
-The normal slideshow route still restores owner focus, which is a window-lifecycle concern and does not change document state. Playback continues to track its own current slide independently.
+The Avalonia handlers now preserve the editor-side selection exactly as WPF
+does. The normal slideshow route still restores owner focus, which is a host
+window-lifecycle concern and does not change document state. The custom-show
+route now has the same selection behavior without a second editor mutation.
+
+## Scope and authority
+
+- WPF authority: `freep/FreeP.App.Host/MainWindow.cs`, `StartSlideShow` and
+  `TryStartCustomSlideShow` contain no editor-selection mutation on close.
+- Avalonia production route: `freep/FreeP.App.Avalonia/MainWindow.cs`.
+- Regression route: `MainWindow.StartSlideShow` is launched through the real
+  Avalonia headless window path, playback advances to another slide, and the
+  editor selection is asserted to remain at the original slide.
+- Secondary chart-axis authoring and all recording/video/export files were
+  intentionally excluded from this slice.
 
 ## Validation
 
-- Avalonia source coverage asserts both hosts leave editor selection outside playback close.
-- Headless slideshow coverage advances playback while the editor remains on its original slide.
+Focused validation is run from the isolated worker worktree and recorded with
+the exact result in the Wave 44 handoff.
 
-This slice does not claim full PowerPoint-authoritative slideshow visual fidelity or hardware-backed recording parity.
+## Residuals
+
+This slice does not claim full PowerPoint-authoritative slideshow visual
+fidelity or hardware-backed recording parity. Those remain separate scopes.
