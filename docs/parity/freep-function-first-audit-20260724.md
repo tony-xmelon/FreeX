@@ -715,3 +715,13 @@ the token through the chart model, PPTX reader/writer, clone path, and one undoa
 edit; both WPF and Avalonia expose the toggle, and both renderers consume the shared minor
 gridline plan. The default remains off, so existing charts retain their prior package and
 raster behavior. Focused presentation, WPF, and Avalonia chart/dialog coverage passes.
+
+### 2026-07-28 SmartArt Circle Accent Timeline authoring
+
+PowerPoint's common `circleAccentTimeline` SmartArt layout was not in FreeP's live-layout
+catalog, so insertion and regeneration could fall back to a cached drawing even though the
+shared Process model and deterministic timeline layout path were available. FreeP now admits
+the native layout URI as a live Process layout, exposes it through the existing WPF and Avalonia
+SmartArt insertion gallery, and preserves it through the normal package round trip. The current
+implementation intentionally reuses the shared timeline regeneration path; this closes the
+authoring/package reachability gap without making a new native PowerPoint raster-fidelity claim.
