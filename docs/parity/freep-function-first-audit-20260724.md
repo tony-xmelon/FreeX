@@ -609,7 +609,8 @@ silently drop authored chart behavior. The clone now carries those fields and de
 `ChartManualLayout` objects. It also retains series smooth-line state, rich series fills, workbook
 formula references, and point-level fill/data-label payloads. Host regression coverage verifies the
 values and clone independence. The same clone boundary now retains point-label delete state and rich
-marker fills as well. This is a functional copy/paste parity fix with no renderer calibration claim.
+marker fills as well, together with series trendlines and axis number-format/source-linked state.
+This is a functional copy/paste parity fix with no renderer calibration claim.
 
 ### 2026-07-28 SmartArt node payload preservation
 
