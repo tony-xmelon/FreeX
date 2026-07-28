@@ -645,3 +645,13 @@ retaining the cached fallback; layout and node edits continue to require live da
 regeneration. Focused coverage verifies Quick Style and Change Colors mutation, metadata/part
 updates, and undo/redo in the cached-only case. This is a functional/package-authoring fix with no
 renderer calibration claim.
+
+### 2026-07-28 chart style authoring
+
+Chart style IDs were already read, preserved in the model, and consumed by the renderer, but the
+shared Chart Options workflow did not expose them and the chart writer omitted `c:style` on newly
+written chart parts. FreeP now exposes the PowerPoint style-ID gallery (including preservation of
+unknown imported IDs), applies the choice as one undoable display-options edit, and writes the
+authoritative `c:style` token so save/reopen retains it. WPF and Avalonia use the same planner and
+dialog route. This is a functional chart-design and package round-trip fix with no new raster
+calibration claim.
