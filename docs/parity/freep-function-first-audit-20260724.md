@@ -778,3 +778,11 @@ paths can re-enable live layout after regenerating the cache. Fresh 1280x720 Pow
 comparison improved WPF from 3.6979% to 1.0508% average and Avalonia from 3.7058% to
 1.0729%; the affected slide is 1.1567% WPF and 1.2094% Avalonia. Focused SmartArt/package
 coverage passes 291/291, with the consuming RenderCompare Release build clean.
+
+### 2026-07-29 accessibility video-caption command contract
+
+The accessibility checker already opened the shared media-caption authoring pane in both
+hosts, but its `Video captions missing` finding exposed no command ID and was therefore not
+addressable by automation or other workflow clients. The finding now publishes the shared
+`freep.media-captions.open` command, while WPF and Avalonia retain the existing pane route.
+Focused planner and host tests cover the command contract and caption-pane behavior.
