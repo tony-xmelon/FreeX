@@ -786,3 +786,14 @@ hosts, but its `Video captions missing` finding exposed no command ID and was th
 addressable by automation or other workflow clients. The finding now publishes the shared
 `freep.media-captions.open` command, while WPF and Avalonia retain the existing pane route.
 Focused planner and host tests cover the command contract and caption-pane behavior.
+
+### 2026-07-28 native presenter ink slide replay
+
+PowerPoint-native presenter ink now opens and round-trips as a standard Ink Content Part, but
+the regular slide compositor previously treated `SlideShapeKind.Ink` as an opaque preserved-object
+fallback. FreeP now parses the preserved InkML trace/brush payload into renderer-neutral stroke
+operations for both FreeP-generated absolute slide coordinates and native frame-local coordinates
+with common physical units. The original InkML and OPC relationships remain untouched for save/reopen;
+malformed or unsupported payloads retain the existing fallback behavior. Focused presentation tests
+cover generated replay, native unit conversion, and compositor emission. This is a functional
+presentation-rendering slice; a device-captured PowerPoint raster baseline remains separate.
