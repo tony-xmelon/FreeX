@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 521 command IDs total.
-- 521 shared across WPF and Avalonia.
+- 537 command IDs total.
+- 537 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 0 intentional shell/profile variances.
@@ -30,6 +30,11 @@ This closes the remaining ribbon-surface gap for those workflows; deeper functio
 work remains in SmartArt regeneration, advanced chart authoring, presenter/review/
 accessibility depth, and real application capture/export validation.
 
+Avalonia nested ribbon key tips now apply the same Office prefix rule as the WPF route:
+an exact leaf remains pending only when a longer matching candidate opens a dropdown or
+split-button scope. This keeps short leaf commands reachable without stealing prefixes
+from nested menus, and the rendered-control path is covered by the focused keyboard lane.
+
 ## Verified function paths
 
 - Selection, marquee, move, resize, rotate, nudge, snapping, and source-then-target
@@ -39,6 +44,10 @@ accessibility depth, and real application capture/export validation.
 - Animation pane emphasis Spin effect amounts (Quarter Spin, Half Spin, Full Spin,
   and Two Spins) now preserve the authored `presetSubtype` through the shared model,
   undo path, WPF/Avalonia pane options, and PPTX read/write.
+- SmartArt Circle Accent Timeline is now a first-class layout command in the shared
+  planner, generated layout gallery, WPF registry, and Avalonia registry; its native
+  `circleAccentTimeline` layout token remains covered by the existing model round-trip
+  tests.
 - SmartArt text-pane editing has shared node mutations, outline rebuilding, and host
   pane routes. The modeled layout catalog and 14 native PowerPoint Quick Style entries
   (Simple, Moderate, Intense, Subtle, Soft Edge, Insert, Cartoon, and Powder) are
@@ -230,6 +239,12 @@ planner. That clone now retains authored Wheel spoke counts, so changing duratio
 delay, or trigger no longer silently turns a custom eight-spoke effect back into the
 default. The regression is covered through the ribbon command path; the package and
 playback model remain unchanged.
+
+Known non-directional animation effect subtypes now also survive the package reader,
+slide clone, and writer. Previously only Spin retained its authored subtype; saving a
+known effect such as Pulse could silently emit the neutral subtype `0`. Directional
+subtypes continue to normalize through the shared direction field, and Grow/Shrink
+continue to use their authored scale behavior as the authority.
 
 The WPF slideshow host dispatches every renderer-neutral
 `SlideShowTransitionPlaybackActionKind` emitted by the shared planner. Legacy
@@ -572,6 +587,15 @@ cached drawing path. The cutoff is removed while minimum-geometry and malformed-
 active. Planner tests cover 13- and 20-stage diagrams, and the WPF compositor test confirms all
 13 stages remain live in authored order. `basicChevronProcess` and `closedChevronProcess` continue
 to reuse the same shared route; exact PowerPoint variant geometry and raster parity remain deferred.
+
+### 2026-07-29 SmartArt Vertical Chevron List node-count recovery
+
+The shared `verticalChevronList` planner already divided the available frame into one chevron
+per parsed node and retained an independent minimum row-height guard, but an artificial twelve-node
+admission cutoff forced larger valid lists to cached drawing fallback. The cutoff is removed while
+the frame and minimum-height guards remain active. Planner tests cover 13- and 20-node lists, and
+the WPF compositor test confirms all 13 nodes remain live in order. Avalonia consumes the same
+renderer-neutral plan; exact PowerPoint chevron spacing and raster parity remain deferred.
 
 ### 2026-07-29 Selection Pane z-order controls
 
