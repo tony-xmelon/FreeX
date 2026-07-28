@@ -726,6 +726,15 @@ SmartArt insertion gallery, and preserves it through the normal package round tr
 implementation intentionally reuses the shared timeline regeneration path; this closes the
 authoring/package reachability gap without making a new native PowerPoint raster-fidelity claim.
 
+### 2026-07-28 SmartArt Vertical Chevron List authoring
+
+PowerPoint documents Vertical Chevron List as a common list layout for sequential steps and
+progression. FreeP now preserves the native `verticalChevronList` layout identity, admits it to
+the live list-family planner, exposes it through both host Change Layout and Insert SmartArt
+routes, and regenerates ordered chevron nodes through the shared geometry path. Package reader,
+layout, insertion, and host registration tests cover the route. This is a functional SmartArt
+authoring and regeneration slice; it does not claim native PowerPoint typography or raster fidelity.
+
 ### 2026-07-28 SmartArt Phased Process authoring
 
 PowerPoint's common `phasedProcess` layout was missing from FreeP's live SmartArt authoring
