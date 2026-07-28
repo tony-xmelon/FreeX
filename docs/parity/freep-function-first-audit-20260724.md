@@ -886,6 +886,19 @@ has an image assigned. FreeP's shared layout engine already emitted the authored
 placeholder for missing node media, but the authoring planner rejected the change unless every
 node already carried image bytes. Existing SmartArt layout changes now require only a non-empty
 data model; mixed real images and placeholders flow through normal cache regeneration and undo.
-New picture-SmartArt insertion keeps its separate one-image-per-node payload contract. Planner,
-package/cache refresh, undo/redo, WPF host, and Avalonia host coverage verify the route; this is
-a functional/package editing slice with no new PowerPoint raster-fidelity claim.
+New picture-SmartArt insertion now creates the same placeholder-only data/cache state when no
+image is supplied; a payload remains supported for callers that already have media. Planner,
+package/cache refresh, undo/redo, WPF host, and Avalonia host coverage verify both routes; this
+is a functional/package editing slice with no new PowerPoint raster-fidelity claim.
+
+### 2026-07-30 Empty picture-SmartArt insertion
+
+PowerPoint can insert a picture SmartArt layout before any source image is selected, leaving
+editable "Add picture" slots in the graphic. FreeP previously made every picture-layout
+insertion command stop for a file picker, so the normal empty authoring state was unreachable.
+The shared insertion planner now accepts a missing picture payload, seeds the native drawing
+cache with the shared placeholder geometry, and keeps the existing image-payload path intact.
+Both WPF and Avalonia galleries use the common undoable insertion command; replacement of an
+individual placeholder continues through the SmartArt text pane. Presentation package/cache,
+undo/redo, WPF host, and Avalonia host tests cover the behavior, with no new raster-fidelity
+claim.
