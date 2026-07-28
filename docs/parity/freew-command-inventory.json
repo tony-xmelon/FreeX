@@ -55,16 +55,16 @@
     }
   ],
   "summary": {
-    "totalCommands": 870,
+    "totalCommands": 883,
     "both": 458,
     "wpfOnly": 181,
-    "avaloniaOnly": 231,
-    "missingWpf": 231,
+    "avaloniaOnly": 244,
+    "missingWpf": 244,
     "missingAvalonia": 181,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
     "sharedProfile": 458,
-    "profileShapeOnly": 364,
+    "profileShapeOnly": 377,
     "commandIdAliases": 43,
     "platformOnly": 5,
     "deferred": 0,
@@ -19319,7 +19319,7 @@
           "groupId": "paragraph",
           "group": "Paragraph",
           "label": "Shading",
-          "controlType": "RibbonButton",
+          "controlType": "RibbonDropdown",
           "layout": "Small"
         }
       ],
@@ -19327,6 +19327,409 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.para-shading.cyan",
+      "label": "Cyan",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Cyan",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.para-shading.gold",
+      "label": "Gold",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Gold",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.para-shading.gray",
+      "label": "Gray",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Gray",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.para-shading.green",
+      "label": "Green",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Green",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.para-shading.light-blue",
+      "label": "Light Blue",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Light Blue",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.para-shading.light-gray",
+      "label": "Light Gray",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Light Gray",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.para-shading.light-green",
+      "label": "Light Green",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Light Green",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.para-shading.light-peach",
+      "label": "Light Peach",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Light Peach",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.para-shading.light-yellow",
+      "label": "Light Yellow",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Light Yellow",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.para-shading.none",
+      "label": "No Color",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "No Color",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.para-shading.red",
+      "label": "Red",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Red",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.para-shading.very-light-gray",
+      "label": "Very Light Gray",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Very Light Gray",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.para-shading.yellow",
+      "label": "Yellow",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "paragraph",
+          "group": "Paragraph",
+          "label": "Yellow",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
       }
     },
