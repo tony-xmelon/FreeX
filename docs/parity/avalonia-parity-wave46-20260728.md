@@ -31,9 +31,11 @@ Implementation commit: `01de3a99c5`.
 
 ### Test Isolation
 
-The full default lane exposed WPF clipboard state leaking between seven host tests. Those tests used a reusable STA dispatcher, so queued WPF callbacks could affect later clipboard cases. The affected tests now use a fresh, joined clipboard-isolated STA thread for each run, with dedicated regression coverage.
+The full default lane exposed WPF clipboard state leaking between host tests. Those tests used a reusable STA dispatcher, so queued WPF callbacks could affect later clipboard cases. The affected tests now use a fresh, joined clipboard-isolated STA thread for each run, with dedicated regression coverage.
 
-Test commits: `7beb862a31` and `083199cfc5`.
+The final gate also exposed an immediate-publication race: WPF could temporarily return stale or empty plain text after FreeX published its own clipboard payload, causing the paste route to misclassify that payload as external. FreeX now publishes and flushes a private per-copy ownership token and treats a matching token as the authoritative same-app signal while preserving the existing external-clipboard planner.
+
+Test and fix commits: `7beb862a31`, `083199cfc5`, and `16d1162822`.
 
 ## Focused Evidence
 
@@ -48,6 +50,7 @@ The focused Wave 46 validation recorded:
 - FreeW WPF Edit Points tests: **4/4 passed**.
 - FreeX host logic after clipboard isolation: **1,443 passed**, **4 skipped**, **0 failed**.
 - Focused clipboard sequence and isolation regression: **10/10 passed**.
+- Clipboard publication regression: **20/20 R57 repetitions**, **30/30 nearby clipboard cases**, and **1/1 opt-in Windows clipboard case** passed.
 
 ## Linux Docker Evidence
 
@@ -92,8 +95,8 @@ The full Release build completed with **0 warnings and 0 errors**.
 
 The final default test checkpoint recorded:
 
-- **33,081 total**
-- **32,948 executed and passed**
+- **33,100 total**
+- **32,967 executed and passed**
 - **0 failed**
 - **133 not executed**
 
