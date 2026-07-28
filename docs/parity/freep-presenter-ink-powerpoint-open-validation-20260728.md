@@ -23,11 +23,11 @@ The relationship and InkML requirements follow Microsoft's [Ink Content Part spe
 The probe invoked the actual shared planner with one pen stroke, wrote a real `.pptx`, and passed it to the installed PowerPoint COM exporter:
 
 ```text
-dotnet run --project tools/FreeP.InkProbe/FreeP.InkProbe.csproj --configuration Release -- <output.pptx>
+dotnet tools/FreeP.RenderCompare/bin/Release/net10.0-windows10.0.19041.0/FreeP.RenderCompare.dll --generate-presenter-ink-probe <output.pptx>
 dotnet tools/FreeP.RenderCompare/bin/Release/net10.0-windows10.0.19041.0/FreeP.RenderCompare.dll --powerpoint-export <output.pptx> <export-dir> --width 1280 --height 720
 ```
 
-Result: PowerPoint opened the generated package and exported 1/1 slide with no repair/open failure. The exported PNG was non-empty and contained the authored blue stroke. Probe package SHA-256 was `D92B9F2C1CE318C26EDD86FD60892C340FBDEF2678C911E97755262E8241151C`; exported PNG SHA-256 was `9F238A0491898C2592D1859B60D8713A4A9FE5A3577B8BD3D17ABA6050306CB1`.
+Result: PowerPoint opened the generated package and exported 1/1 slide with no repair/open failure. The exported PNG was non-empty and contained the authored blue stroke. Probe package SHA-256 was `FE63837F7E0EA9FF7B62225E2B673825D595E6E860E0D6C361BB216C217DF8E1`; exported PNG SHA-256 was `9F238A0491898C2592D1859B60D8713A4A9FE5A3577B8BD3D17ABA6050306CB1`.
 
 Focused tests:
 
