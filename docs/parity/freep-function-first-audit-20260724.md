@@ -476,7 +476,14 @@ FreeP's shared video workflow already produced a validated, duration-bearing PNG
 but Windows advertised video encoding as deferred when ffmpeg was absent. The Windows recording
 adapter now detects the built-in MediaComposition stack and encodes that package directly to MP4,
 preserving per-frame durations and deleting partial output on cancellation or invalid output.
-This is intentionally video-only: narration and camera media muxing remain unavailable on the
-native Windows path and continue to use the existing ffmpeg route where supported. Focused
+The native path also supports one narration WAV beginning at presentation time zero; camera/PIP
+and complex multi-track media continue to use the existing ffmpeg route where supported. Focused
 Windows recording plus WPF/Avalonia host coverage verifies capability detection, adapter selection,
 and host routing; no visual-parity claim is attached to the encoded video.
+
+The native path now also attaches one captured narration WAV when it begins at presentation time
+zero. Camera/PIP overlays and offset or multiple narration tracks still return an explicit
+unsupported-media result so they can use the existing ffmpeg compositor instead of being silently
+dropped. Capability detection reports narration execution as available and retains the camera and
+complex multi-track limitation in its status text. A live MediaComposition export was not run in
+this lane.
