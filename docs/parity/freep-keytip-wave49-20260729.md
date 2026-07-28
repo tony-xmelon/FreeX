@@ -40,5 +40,5 @@ the following Backstage checks.
 ## Residuals
 
 No residual failures remain in this bounded key-tip and font-family slice. The
-broader FreeP parity backlog, Linux physical validation, and unrelated SmartArt
-work remain outside this slice.
+broader FreeP parity backlog and PowerPoint-authoritative visual validation
+remain outside this slice.
