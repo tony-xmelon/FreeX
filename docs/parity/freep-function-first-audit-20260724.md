@@ -755,3 +755,14 @@ hashes with the stored reference set. The three historical repair-dialog decks
 decks opened and exported, 7/7 slides matched their references, and the command
 returned exit code 0. PDF/print/handout/notes/video baselines and full WPF/Avalonia
 visual comparison remain separate open evidence surfaces.
+
+### 2026-07-28 ordinary-shape outer-shadow authoring
+
+Shape effects were already preserved in the PPTX model and consumed by both renderers, but
+ordinary shape authoring had no shared command route for creating or removing an outer shadow.
+FreeP now exposes None, Subtle, and Offset shadow presets through the shared undoable command bus,
+with WPF and Avalonia registrations and ribbon labels. The command changes only outer-shadow
+fields, preserving other effect layers such as glow and soft edge. Focused shared command/planner
+coverage passes 3/3, the WPF ribbon route passes 1/1, and the Avalonia Release host build is clean.
+This closes a functional authoring gap; the preset values are intentionally not a new
+PowerPoint-raster calibration claim.
