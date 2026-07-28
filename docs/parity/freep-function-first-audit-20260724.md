@@ -878,6 +878,16 @@ node without that artificial cutoff. Presentation and shared compositor regressi
 six- and twelve-node diagrams; exact PowerPoint ring clipping, label offsets, effects, and
 authoritative raster baselines remain separate visual work.
 
+### 2026-07-29 SmartArt radial-list node-count recovery
+
+The dedicated `radialList` authoring path previously rejected diagrams with more
+than eight items, causing valid larger lists to fall back to their cached drawing
+despite the existing reader admission and shared WPF/Avalonia command routes. The
+planner now emits one live rounded item box and one center spoke per parsed node;
+nine- and sixteen-item planner coverage plus a nine-item shared compositor fixture
+guard the behavior. Exact PowerPoint dense-list sizing, curved routing, effects,
+and authoritative raster baselines remain separate visual work.
+
 ### 2026-07-30 SmartArt layout recovery without a native layout part
 
 PowerPoint can expose Change Layout for a valid SmartArt package whose data and drawing cache
