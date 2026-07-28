@@ -609,3 +609,11 @@ now retain that source payload while the edited `dgm:t` is regenerated from the 
 nodes continue to use the canonical form. Host package coverage verifies the metadata survives
 write/reopen alongside changed text. This is a functional SmartArt editing/package fix with no
 renderer calibration claim.
+
+### 2026-07-28 Chart extension payload preservation
+
+Chart imports previously ignored `c:chartSpace/c:extLst`, so a save or duplicate operation could
+drop compatibility or producer-specific chart extensions even when no modeled chart field changed.
+The chart model now retains that extension list verbatim, the writer re-emits it after modeled chart
+content, and slide cloning carries it forward. Host coverage verifies read/write/reopen and clone
+retention. This is a functional chart package-compatibility fix with no renderer calibration claim.
