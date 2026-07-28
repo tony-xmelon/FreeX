@@ -65,7 +65,7 @@ At the synchronized integration head, the result was **0 warnings, 0 errors**.
 
 The final default lane aggregate is **33,076 total**, with **32,943 executed and passed**, **0 failed**, and **133 not executed**. The executed lane is green; the 133 not-executed rows remain explicitly identified coverage limitations rather than failures.
 
-The final parity preflight [`wave45-final-preflight.log`](../../artifacts/wave45-final-preflight.log) passed all repository, project, solution, packaging, and generated-document checks.
+The final parity preflight [`wave45-final-preflight-r5.log`](../../artifacts/wave45-final-preflight-r5.log) passed all repository, project, solution, packaging, and generated-document checks.
 
 Eighteen stale source/portability guards were semantically updated to match the current shared implementation. One real imported `hierarchy3` SmartArt regression was fixed, with focused validation of **201/201 host tests** and **274/274 presentation tests**.
 
