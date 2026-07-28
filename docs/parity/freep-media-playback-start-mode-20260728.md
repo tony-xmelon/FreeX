@@ -13,5 +13,7 @@ where Avalonia started every media object immediately while WPF waited for a
 click.
 
 Focused evidence covers automatic timing read/write, default click-sequence
-behavior, and both-host playback tests. Looping, captions, native decoder
-availability, and device-specific playback remain separate concerns.
+behavior, and both-host playback tests. Media loop intent is also preserved
+through `repeatCount="indefinite"` timing and forwarded to both native playback
+hosts; captions, native decoder availability, and device-specific playback remain
+separate concerns.
