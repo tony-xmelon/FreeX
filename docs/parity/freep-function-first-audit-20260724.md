@@ -572,3 +572,13 @@ the native `dsp:drawing` cache writer omitted those transform attributes from ea
 the wrong direction after PowerPoint reopened the package. Cache regeneration now preserves both flip
 flags, and a host write/reopen test verifies the two bending-process connector directions survive the
 PPTX round trip. This is a functional cache/package fix with no renderer calibration claim.
+
+### 2026-07-30 SmartArt drawing-cache shell preservation
+
+SmartArt data edits regenerated `dsp:drawing` from a minimal document, which could discard
+authored cache-root attributes, extension payloads, and non-shape group metadata even when the
+new shape list was valid. Cache regeneration now preserves a valid authored drawing shell and
+replaces only stale shape elements under `dsp:spTree`; malformed or missing drawing XML still uses
+the canonical generated document. A host PPTX write/reopen test verifies authored cache metadata
+and extensions survive alongside regenerated edited text. This is a functional package fix with
+no renderer calibration claim.
