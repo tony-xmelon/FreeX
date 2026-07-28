@@ -878,3 +878,14 @@ native data part exists, adds the `lo` diagram relationship, and then applies th
 identity. Packages without native data still fail explicitly; existing layout parts remain
 authoritative. Planner, package-write, undo/redo, WPF host, and Avalonia host coverage passed;
 this is a functional/package recovery slice with no new PowerPoint raster-fidelity claim.
+
+### 2026-07-30 SmartArt picture-layout placeholders
+
+PowerPoint allows an existing SmartArt graphic to switch to a picture layout before every node
+has an image assigned. FreeP's shared layout engine already emitted the authored "Add picture"
+placeholder for missing node media, but the authoring planner rejected the change unless every
+node already carried image bytes. Existing SmartArt layout changes now require only a non-empty
+data model; mixed real images and placeholders flow through normal cache regeneration and undo.
+New picture-SmartArt insertion keeps its separate one-image-per-node payload contract. Planner,
+package/cache refresh, undo/redo, WPF host, and Avalonia host coverage verify the route; this is
+a functional/package editing slice with no new PowerPoint raster-fidelity claim.
