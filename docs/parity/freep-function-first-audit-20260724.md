@@ -563,3 +563,12 @@ extension payloads that FreeP does not model. The rewrite now preserves the exis
 shell and replaces only `dgm:ptLst` and `dgm:cxnLst`; malformed source data still uses the canonical
 generated form. A host package round-trip test verifies edited text plus authored metadata/extensions
 survive write/reopen. This is a functional/package-compatibility fix with no renderer calibration claim.
+
+### 2026-07-30 SmartArt diagonal connector cache transforms
+
+The shared live SmartArt layouts already emitted diagonal connector lines with `FlipH`/`FlipV`, but
+the native `dsp:drawing` cache writer omitted those transform attributes from each connector's
+`a:xfrm`. Editing a bending-process diagram could therefore save the line with the right bounds but
+the wrong direction after PowerPoint reopened the package. Cache regeneration now preserves both flip
+flags, and a host write/reopen test verifies the two bending-process connector directions survive the
+PPTX round trip. This is a functional cache/package fix with no renderer calibration claim.
