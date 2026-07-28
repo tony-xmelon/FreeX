@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 533 | 533 | 0 | 0 | 0 | 0 | 0 | 0 | 533 | 0 | 0 | 0 | 0 | 101 |
+| 536 | 536 | 0 | 0 | 0 | 0 | 0 | 0 | 536 | 0 | 0 | 0 | 0 | 101 |
 
 ## Workflow Evidence
 
@@ -333,6 +333,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.insert-smartart-closed-chevron-process` | Closed Chevron Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-continuous-block-process` | Continuous Block Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-continuous-cycle` | Continuous Cycle | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-continuous-picture-list` | Continuous Picture List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-converging-radial` | Converging Radial | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-descending-block-list` | Descending Block List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-funnel-process` | Funnel Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
@@ -521,6 +522,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.smartart.layout.closed-chevron-process` | Closed Chevron Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.continuous-block-process` | Continuous Block Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.continuous-cycle` | Continuous Cycle | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.continuous-picture-list` | Continuous Picture List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.converging-radial` | Converging Radial | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.descending-block-list` | Descending Block List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.funnel-process` | Funnel Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
@@ -632,6 +634,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.transition.rotate` | Rotate | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.shred` | Shred | Yes | Yes | none | shared | transitions/transition-more (RibbonMenuItem) | transitions/transition-more (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.sound` | Sound... | Yes | Yes | none | shared | transitions/transition-timing (RibbonButton) | transitions/transition-timing (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.transition.sound-loop` | Loop Sound | Yes | Yes | none | shared | transitions/transition-timing (RibbonToggleButton) | transitions/transition-timing (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.sound-none` | No Sound | Yes | Yes | none | shared | transitions/transition-timing (RibbonButton) | transitions/transition-timing (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.split` | Split | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.strips` | Strips | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
