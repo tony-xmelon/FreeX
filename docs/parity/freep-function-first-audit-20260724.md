@@ -797,3 +797,13 @@ with common physical units. The original InkML and OPC relationships remain unto
 malformed or unsupported payloads retain the existing fallback behavior. Focused presentation tests
 cover generated replay, native unit conversion, and compositor emission. This is a functional
 presentation-rendering slice; a device-captured PowerPoint raster baseline remains separate.
+
+### 2026-07-28 independent chart axis-title formatting
+
+PowerPoint permits category, value, and secondary-value axis titles to carry their own font
+family, size, bold/italic state, and color independently of chart-wide text defaults. FreeP now
+preserves that title formatting through the chart model and PPTX reader/writer, exposes it through
+the shared WPF and Avalonia axis-options workflow, restores it through undo, and feeds it into the
+renderer-neutral plan consumed by both hosts. Unspecified axis-title styles retain the existing
+renderer defaults. This closes a functional chart-authoring/package gap; no new visual-fidelity
+claim is made for raster matching.
