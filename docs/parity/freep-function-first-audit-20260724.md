@@ -606,8 +606,10 @@ fix with no renderer calibration claim.
 `SlideCloner.CloneChart` omitted chart surface formatting, manual plot/legend layout, legend overlay,
 automatic-title state, vary-colors, and bubble sizing flags. Duplicate/copy workflows could therefore
 silently drop authored chart behavior. The clone now carries those fields and deep-copies mutable
-`ChartManualLayout` objects. Host regression coverage verifies the values and clone independence. This
-is a functional copy/paste parity fix with no renderer calibration claim.
+`ChartManualLayout` objects. It also retains series smooth-line state, rich series fills, workbook
+formula references, and point-level fill/data-label payloads. Host regression coverage verifies the
+values and clone independence. This is a functional copy/paste parity fix with no renderer calibration
+claim.
 
 ### 2026-07-28 SmartArt node payload preservation
 
