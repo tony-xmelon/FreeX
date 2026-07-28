@@ -845,3 +845,25 @@ The planner and both WPF/Avalonia dialogs now expose a 0-100% fill-transparency 
 to the existing alpha field, and keep the change inside the existing undoable chart-area command.
 Focused planner, WPF, Avalonia, and package round-trip coverage verifies color/alpha retention.
 This is a functional chart-authoring/package slice; it makes no new PowerPoint raster-fidelity claim.
+
+### 2026-07-29 SmartArt Continuous Picture List authoring
+
+PowerPoint's common `continuousPictureList` SmartArt layout was missing from FreeP's live
+layout allow-list, so imported diagrams fell back to their cached drawing and neither host
+could reach the layout through Change Layout or Insert SmartArt. FreeP now preserves the
+native layout identity, requires the same one-picture-per-node payload contract as the other
+picture layouts, dispatches the shared horizontal picture/caption planner, and exposes the
+operation in both WPF and Avalonia. Reader, package round-trip, live layout, insertion, and
+host registration tests cover the route. The implementation intentionally reuses the existing
+picture-lineup geometry; this closes the functional/package reachability gap without making a
+new native PowerPoint raster-fidelity claim.
+
+### 2026-07-30 SmartArt picture removal
+
+The SmartArt text pane could replace a node picture but could not remove it and restore the
+authored picture placeholder. FreeP now exposes a shared clear-picture edit through WPF and
+Avalonia, records it through the existing undo bus, rewrites the diagram data, regenerates the
+drawing cache, and prunes obsolete image relationships/media when the final picture is removed.
+Focused package, host undo/reopen, and Avalonia text-pane coverage verify one-picture and
+last-picture removal paths. This is a functional SmartArt editing/package fix with no new
+PowerPoint raster-fidelity claim.
