@@ -554,6 +554,25 @@ connectors for both hosts, while malformed or oversized input continues to use t
 cached drawing fallback. This is a functional layout-depth slice; it does not claim new Word or
 PowerPoint raster calibration.
 
+### 2026-07-29 SmartArt Bending Process node-count recovery
+
+The shared two-track `bendingProcess` geometry already scaled its gap and connector widths from
+the parsed node count, but an artificial twelve-node admission cutoff sent larger valid diagrams
+to the cached drawing path. The cutoff is removed while the malformed-text guard remains. Planner
+tests cover 13- and 20-node diagrams, and the WPF compositor test confirms all 13 boxes and 12
+connectors remain live. Avalonia consumes the same renderer-neutral shape/connector plan. This is
+functional SmartArt depth evidence only; exact PowerPoint turning geometry and raster parity remain
+deferred.
+
+### 2026-07-29 SmartArt Chevron Process node-count recovery
+
+The shared `chevronProcess` planner already derived stage width and interlocking step from the
+parsed node count, but its twelve-node admission cutoff forced larger valid diagrams through the
+cached drawing path. The cutoff is removed while minimum-geometry and malformed-text guards stay
+active. Planner tests cover 13- and 20-stage diagrams, and the WPF compositor test confirms all
+13 stages remain live in authored order. `basicChevronProcess` and `closedChevronProcess` continue
+to reuse the same shared route; exact PowerPoint variant geometry and raster parity remain deferred.
+
 ### 2026-07-29 Selection Pane z-order controls
 
 The Selection Pane already supported object selection, names, visibility, and grouped-child
@@ -866,4 +885,80 @@ Avalonia, records it through the existing undo bus, rewrites the diagram data, r
 drawing cache, and prunes obsolete image relationships/media when the final picture is removed.
 Focused package, host undo/reopen, and Avalonia text-pane coverage verify one-picture and
 last-picture removal paths. This is a functional SmartArt editing/package fix with no new
+PowerPoint raster-fidelity claim.
+
+### 2026-07-30 SmartArt target-list node-count recovery
+
+The shared `targetList` geometry path previously rejected diagrams with more than five
+parsed nodes, so a valid larger target list silently reverted to its cached drawing even
+though the reader, insertion route, and both host command surfaces already supported the
+layout identity. The planner now emits one renderer-neutral concentric ellipse per parsed
+node without that artificial cutoff. Presentation and shared compositor regressions cover
+six- and twelve-node diagrams; exact PowerPoint ring clipping, label offsets, effects, and
+authoritative raster baselines remain separate visual work.
+
+### 2026-07-29 SmartArt radial-list node-count recovery
+
+The dedicated `radialList` authoring path previously rejected diagrams with more
+than eight items, causing valid larger lists to fall back to their cached drawing
+despite the existing reader admission and shared WPF/Avalonia command routes. The
+planner now emits one live rounded item box and one center spoke per parsed node;
+nine- and sixteen-item planner coverage plus a nine-item shared compositor fixture
+guard the behavior. Exact PowerPoint dense-list sizing, curved routing, effects,
+and authoritative raster baselines remain separate visual work.
+
+### 2026-07-29 SmartArt titled-matrix node-count recovery
+
+The shared `titledMatrix` planner already derives its body rows from the parsed node
+count, but an explicit nine-node guard caused larger valid matrices to fall back to
+their cached drawing. The guard is removed and ten- and sixteen-node planner coverage
+plus a ten-node shared compositor fixture prove that the title band and every body
+cell remain live in both hosts. Exact PowerPoint title-band metrics and richer matrix
+styling remain separate visual/depth work.
+
+### 2026-07-30 SmartArt layout recovery without a native layout part
+
+PowerPoint can expose Change Layout for a valid SmartArt package whose data and drawing cache
+survive but whose `diagramLayout` part is absent. FreeP previously rejected that operation with
+"no native layout definition," leaving the package editable only through the cached view. The
+shared authoring planner now synthesizes a standards-shaped `diagramLayout` part when a non-empty
+native data part exists, adds the `lo` diagram relationship, and then applies the selected layout
+identity. Packages without native data still fail explicitly; existing layout parts remain
+authoritative. Planner, package-write, undo/redo, WPF host, and Avalonia host coverage passed;
+this is a functional/package recovery slice with no new PowerPoint raster-fidelity claim.
+
+### 2026-07-30 SmartArt picture-layout placeholders
+
+PowerPoint allows an existing SmartArt graphic to switch to a picture layout before every node
+has an image assigned. FreeP's shared layout engine already emitted the authored "Add picture"
+placeholder for missing node media, but the authoring planner rejected the change unless every
+node already carried image bytes. Existing SmartArt layout changes now require only a non-empty
+data model; mixed real images and placeholders flow through normal cache regeneration and undo.
+New picture-SmartArt insertion now creates the same placeholder-only data/cache state when no
+image is supplied; a payload remains supported for callers that already have media. Planner,
+package/cache refresh, undo/redo, WPF host, and Avalonia host coverage verify both routes; this
+is a functional/package editing slice with no new PowerPoint raster-fidelity claim.
+
+### 2026-07-30 Empty picture-SmartArt insertion
+
+PowerPoint can insert a picture SmartArt layout before any source image is selected, leaving
+editable "Add picture" slots in the graphic. FreeP previously made every picture-layout
+insertion command stop for a file picker, so the normal empty authoring state was unreachable.
+The shared insertion planner now accepts a missing picture payload, seeds the native drawing
+cache with the shared placeholder geometry, and keeps the existing image-payload path intact.
+Both WPF and Avalonia galleries use the common undoable insertion command; replacement of an
+individual placeholder continues through the SmartArt text pane. Presentation package/cache,
+undo/redo, WPF host, and Avalonia host tests cover the behavior, with no new raster-fidelity
+claim.
+
+### 2026-07-30 SmartArt drawing-cache recovery without a native drawing part
+
+PowerPoint can retain a valid SmartArt data/layout package while its `diagramDrawing` cache is
+missing or stale. FreeP's edit path previously treated the missing cache as a hard failure, and
+picture-cache synchronization assumed that an image relationship already existed. The shared
+SmartArt editing planner now creates the sibling drawing part plus the data-part drawing
+relationship, initializes its package relationship document, and allocates fresh media
+relationships when picture nodes have no prior cache relationships. The recovered cache survives
+undo/redo and PPTX write/reopen; focused planner and WPF package tests cover plain and
+picture-backed recovery. This is a functional/package recovery slice with no new
 PowerPoint raster-fidelity claim.
