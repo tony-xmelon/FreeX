@@ -1,18 +1,21 @@
-# FreeP Chart Leader Lines
+# FreeP Chart Leader-Line Rendering - 2026-07-28
 
-## Functional Slice
+The chart option `ShowLeaderLines` already had shared model, DOCX/PPTX round-trip,
+undo, and WPF/Avalonia dialog coverage, but the renderer-neutral chart scene did not
+consume it. This slice closes that function path for pie and doughnut charts.
 
-Chart-level `c:showLeaderLines` state for pie and doughnut data labels now survives
-PPTX read/write, including an explicit disabled value. The shared chart display
-planner and undo command expose the state, and WPF/Avalonia Chart Options dialogs
-present the same three-state control, enabled for the chart families that use it.
+When the option is explicitly enabled and labels are outside the slice, the shared
+scene now emits two-segment connectors from the slice edge through a short radial
+elbow to the label edge. WPF and Avalonia consume the same line list before painting
+label text. Disabled, omitted, inside, center, and non-pie routes emit no connectors.
 
-This slice preserves authoring/package semantics only; it makes no new raster-fidelity
-claim for leader-line geometry.
+Verification:
 
-## Validation
-
-- Host chart and dialog tests: 85/85.
-- Presentation chart command and planner tests: 103/103.
-- WPF Host.Tests Release build: 0 warnings, 0 errors.
-- Avalonia Release build: 0 warnings, 0 errors.
+- `ChartRenderPlannerTests`: explicit pie opt-in emits two segments per label;
+  disabled and column routes emit none.
+- `RendererNeutralDedupPlannerTests`: both host canvases consume the shared line list.
+- `FreeP.App.Presentation.Tests`: 233 selected Release tests passed.
+- `FreeP.App.Rendering.Wpf`: Release build, 0 warnings/errors.
+- `FreeP.App.Rendering.Avalonia`: Release build, 0 warnings/errors.
+- The WPF host chart test filter exceeded the bounded 120-second run without a result;
+  its owned parent process was reaped and the build-server shutdown completed cleanly.
