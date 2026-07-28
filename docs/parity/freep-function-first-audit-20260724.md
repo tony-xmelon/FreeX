@@ -543,3 +543,14 @@ the correct sibling-list edges, preserve group containment, and refresh the proj
 each successful move or visibility toggle. The shared plan owns the edge state and the existing
 `ReorderShapeCommand` owns undo/redo; this is a function-first authoring slice with no renderer
 calibration claim.
+
+### 2026-07-29 Horizontal Bullet List SmartArt
+
+PowerPoint's common `horizontalBulletList` SmartArt layout was previously classified as a
+list but rejected by the live-layout allow-list, so FreeP could display its cached drawing
+but could not author or regenerate the layout through the shared editor path. The layout is
+now admitted as a live list, exposed through WPF and Avalonia Change Layout and Insert
+SmartArt routes, and rendered as a deterministic row-major node grid. Shared layout,
+save/reopen, insertion, and host reachability tests cover the route. This is a functional
+SmartArt authoring/depth slice; it makes no new pixel-fidelity claim for PowerPoint's native
+bullet typography or spacing.
