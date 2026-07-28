@@ -17,9 +17,9 @@ application window, and retains a screenshot plus a machine-readable manifest fo
 - switching a ribbon tab by key tip (`I` for FreeW, `N` for FreeP);
 - opening and dismissing the app's File surface.
 
-FreeW additionally runs a seventeen-row physical editing slice within the
-exact thirty-six-row contract: it clicks the real document editor, replaces the
-selection with a sentinel, proves exact X11 clipboard text, proves Ctrl+Z and
+FreeW additionally runs an eighteen-row physical editing slice within the
+exact thirty-seven-row contract: it clicks the real document editor, replaces
+the selection with a sentinel, proves exact X11 clipboard text, proves Ctrl+Z and
 Ctrl+Y restore the exact clipboard states, proves Ctrl+X followed by Ctrl+Z
 restores the exact selected content, and exercises Ctrl+Shift+V with an exact
 plain-text clipboard. The text-only route records that a plain-text X11
@@ -28,7 +28,10 @@ semantic distinction. The slice also opens and dismisses Find and Replace as
 separate keyboard routes, with Ctrl+F and Ctrl+H focusing different fields,
 then opens and dismisses Reveal Formatting and Thesaurus through their shared
 shortcuts. Finally it opens/dismisses the real editor context menu through both
-Shift+F10 and a pointer right-click. These rows are intentionally FreeW-only.
+Shift+F10 and a pointer right-click. After the undo-sensitive workflows finish,
+it types `I teh ` through real X11 key events and requires the shared
+AutoCorrect result `I the ` on the exact clipboard. These rows are intentionally
+FreeW-only.
 
 Before the sentinel edit makes the document dirty, FreeW runs four clean-document
 file-shortcut lifecycles: Ctrl+O, Ctrl+S, Ctrl+Shift+S, and Ctrl+P. Each route
@@ -36,18 +39,21 @@ discovers the newly visible top-level X11 window relative to the owner window se
 retains title and WM_CLASS evidence, proves active focus and an increased window
 count, captures the open/focused/dismissed transition, then uses Escape to prove
 removal and exact owner restoration. Ctrl+S is the untitled-document Save As
-route, not a current-path save. After the sentinel and existing editor probes,
+route, not a current-path save. Ctrl+P uses the harness-owned CUPS dry-run
+printer and proves the direct Print dialog shared with the WPF shortcut
+contract, rather than the distinct Print Preview command. After the sentinel
+and existing editor probes,
 FreeW runs Ctrl+N twice on the dirty document. The first prompt is cancelled and
 must preserve an exact clipboard sentinel; the second selects Don't save through
 physical Tab/Return navigation and must leave a removed prompt, owner restoration,
 a clean title, and a genuinely empty document proven by an unchanged unique
-clipboard marker. These eleven rows bring the FreeW contract from the prior
-twenty-five rows to exactly thirty-six while keeping coverage non-exhaustive.
+clipboard marker. These twelve rows bring the FreeW contract from the prior
+twenty-five rows to exactly thirty-seven while keeping coverage non-exhaustive.
 The required FreeW IDs are `file-open-shortcut-dialog-open`,
 `file-open-shortcut-dialog-dismissal`, `file-save-shortcut-dialog-open`,
 `file-save-shortcut-dialog-dismissal`, `file-save-as-shortcut-dialog-open`,
-`file-save-as-shortcut-dialog-dismissal`, `file-print-shortcut-preview-open`,
-`file-print-shortcut-preview-dismissal`, `file-new-shortcut-dirty-prompt-open`,
+`file-save-as-shortcut-dialog-dismissal`, `file-print-shortcut-dialog-open`,
+`file-print-shortcut-dialog-dismissal`, `file-new-shortcut-dirty-prompt-open`,
 `file-new-shortcut-cancel-preserves`, and
 `file-new-shortcut-discard-creates-clean`.
 FreeP runs a
