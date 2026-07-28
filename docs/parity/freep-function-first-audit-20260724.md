@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 436 command IDs total.
-- 434 shared across WPF and Avalonia.
+- 519 command IDs total.
+- 517 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 2 intentional shell/profile variances: Undo and Redo are routed through WPF
@@ -481,9 +481,28 @@ as bottom-right picture-in-picture overlays using the same slide start-time and 
 Windows recording plus WPF/Avalonia host coverage verifies capability detection, adapter selection,
 and host routing; no visual-parity claim is attached to the encoded video.
 
-The native path now also attaches one captured narration WAV when it begins at presentation time
-zero. Camera/PIP overlays and offset or multiple narration tracks still return an explicit
-unsupported-media result so they can use the existing ffmpeg compositor instead of being silently
-dropped. Capability detection reports narration execution as available and retains the camera and
-complex multi-track limitation in its status text. A live MediaComposition export was not run in
-this lane.
+The native path now also attaches captured camera PIP media and delayed multi-track narration WAV
+artifacts to the Windows composition. Capability and status text distinguish the native path from
+the ffmpeg fallback, while malformed or unsupported artifacts still fail explicitly. Focused
+Windows recording, host routing, and live native compositor smoke coverage now exercise delayed
+audio and camera tracks; PowerPoint-authoritative video baselines and real-device capture remain
+separate open work.
+
+### 2026-07-28 current function checkpoint
+
+The current inventory is the source of truth for command reachability; the old 436-command figure
+above was a historical checkpoint and is intentionally superseded by the 519-command inventory.
+There are no actionable WPF or Avalonia command gaps. The next function-first queue should therefore
+be selected from depth rather than ribbon discovery:
+
+- SmartArt native data-part/style regeneration beyond the bounded live layout and outline routes;
+- richer chart authoring and PowerPoint-specific chart-area semantics beyond the current dialogs;
+- deeper presenter/review/accessibility workflows and real-device media capture;
+- PowerPoint COM-backed workflow and output validation when that lane is available.
+
+Chart series trendlines and error bars are already a completed function slice: the shared Series
+Options planner and both host dialogs expose the modeled families, polynomial/average parameters,
+equation/R-squared flags, error direction/type/value settings, and one undoable command. The
+`ChartErrorBarsTests`, chart-data command tests, WPF dialog tests, and PPTX round-trip coverage
+exercise that path. Do not reopen it as a visual-calibration task unless a new user workflow is
+identified.
