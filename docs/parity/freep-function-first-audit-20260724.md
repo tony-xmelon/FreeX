@@ -8,12 +8,11 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 519 command IDs total.
-- 517 shared across WPF and Avalonia.
+- 521 command IDs total.
+- 521 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
-- 2 intentional shell/profile variances: Undo and Redo are routed through WPF
-  routed commands/keyboard bindings while Avalonia exposes generated ribbon entries.
+- 0 intentional shell/profile variances.
 
 The inventory is command-surface evidence, not a claim that every PowerPoint feature
 is complete.
@@ -24,6 +23,12 @@ and `EditingSession.MoveSelectedShapeInReadingOrder` reorders a selected child i
 its containing sibling list without moving it out of the group. WPF host coverage now
 exercises the move, selection refresh, and undo path. The old deferred-message constant
 was stale bookkeeping, not an active capability restriction.
+
+The WPF Home ribbon now exposes Undo and Redo through the shared editor command bus,
+matching the Avalonia profile and the existing WPF keyboard/routed-command behavior.
+This closes the remaining ribbon-surface gap for those workflows; deeper functional
+work remains in SmartArt regeneration, advanced chart authoring, presenter/review/
+accessibility depth, and real application capture/export validation.
 
 ## Verified function paths
 

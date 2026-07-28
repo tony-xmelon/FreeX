@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 521 | 519 | 0 | 2 | 2 | 0 | 0 | 0 | 519 | 0 | 0 | 2 | 0 | 101 |
+| 521 | 521 | 0 | 0 | 0 | 0 | 0 | 0 | 521 | 0 | 0 | 0 | 0 | 101 |
 
 ## Workflow Evidence
 
@@ -388,7 +388,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.picture.crop-reset` | Reset Crop | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.picture.effects-reset` | Reset Effects | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.picture.grayscale` | Grayscale | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.redo` | Redo | No | Yes | WPF | platform-only | - | home/edit (RibbonButton) | Intended shell/profile variance: Avalonia exposes Redo in its generated Home/Edit ribbon group; WPF routes Redo through a routed command, keyboard bindings, and Editor.Redo rather than a generated ribbon control. |
+| `freep.redo` | Redo | Yes | Yes | none | shared | home/edit (RibbonButton) | home/edit (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.remove-link` | Remove Link | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.replace` | Replace | Yes | Yes | none | shared | home/editing (RibbonButton) | home/editing (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-chevron` | Chevron | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
@@ -634,7 +634,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.transition.wipe` | Wipe | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.transition.zoom` | Zoom | Yes | Yes | none | shared | transitions/transition-gallery (RibbonButton) | transitions/transition-gallery (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.underline` | Underline | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
-| `freep.undo` | Undo | No | Yes | WPF | platform-only | - | home/edit (RibbonButton) | Intended shell/profile variance: Avalonia exposes Undo in its generated Home/Edit ribbon group; WPF routes Undo through ApplicationCommands.Undo, keyboard bindings, and Editor.Undo rather than a generated ribbon control. |
+| `freep.undo` | Undo | Yes | Yes | none | shared | home/edit (RibbonButton) | home/edit (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.video` | Video | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.fit-to-window` | Fit to Window | Yes | Yes | none | shared | view/zoom (RibbonButton) | view/zoom (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.view.selection-pane` | Selection Pane | Yes | Yes | none | shared | view/show (RibbonButton) | view/show (RibbonButton) | Available in both generated FreeP ribbon profiles. |

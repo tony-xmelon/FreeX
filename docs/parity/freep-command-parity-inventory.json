@@ -5,17 +5,17 @@
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
     "totalCommands": 521,
-    "both": 519,
+    "both": 521,
     "wpfOnly": 0,
-    "avaloniaOnly": 2,
-    "missingWpf": 2,
+    "avaloniaOnly": 0,
+    "missingWpf": 0,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 519,
+    "shared": 521,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
-    "platformOnly": 2,
+    "platformOnly": 0,
     "commandIdAliases": 0,
     "workflowEvidenceRows": 101
   },
@@ -10896,13 +10896,24 @@
     {
       "commandId": "freep.redo",
       "label": "Redo",
-      "wpfPresent": false,
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "surface": "avalonia-only",
-      "missingSide": "WPF",
-      "classification": "platform-only",
-      "notes": "Intended shell/profile variance: Avalonia exposes Redo in its generated Home/Edit ribbon group; WPF routes Redo through a routed command, keyboard bindings, and Editor.Redo rather than a generated ribbon control.",
-      "wpfLocations": [],
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "edit",
+          "group": "Edit",
+          "label": "Redo",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -19249,13 +19260,24 @@
     {
       "commandId": "freep.undo",
       "label": "Undo",
-      "wpfPresent": false,
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "surface": "avalonia-only",
-      "missingSide": "WPF",
-      "classification": "platform-only",
-      "notes": "Intended shell/profile variance: Avalonia exposes Undo in its generated Home/Edit ribbon group; WPF routes Undo through ApplicationCommands.Undo, keyboard bindings, and Editor.Undo rather than a generated ribbon control.",
-      "wpfLocations": [],
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "edit",
+          "group": "Edit",
+          "label": "Undo",
+          "controlType": "RibbonButton",
+          "layout": "Large"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
