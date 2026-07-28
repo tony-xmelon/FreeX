@@ -13,8 +13,8 @@ items radiating from one center.
 - All parsed list items remain editable rounded boxes arranged around an ellipse.
 - Each item receives a renderer-neutral connector from the shared implicit center;
   no adjacent-item loop is emitted.
-- Live geometry is bounded to eight items; larger imported diagrams intentionally
-  return to the preserved cached drawing rather than producing unreadable overlaps.
+- Live geometry derives its item radius and box size from the parsed node count;
+  larger imported diagrams no longer fall back solely because of item count.
 - Existing reader admission and `SmartArtEditingPlanner.RegenerateDrawingCache`
   consume the same plan without host-specific branches.
 - WPF and Avalonia use the same ordinary `SlideShape` and connector operations.
@@ -22,7 +22,8 @@ items radiating from one center.
 ## Evidence
 
 - `freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs` verifies radial
-  spokes and distinguishes them from a closed cycle.
+  spokes, distinguishes them from a closed cycle, and covers nine- and sixteen-
+  item live plans.
 - `freep/FreeP.App.Presentation.Tests/SmartArtEditingPlannerTests.cs` verifies
   cache regeneration persists four item boxes and four spokes.
 - `freep/FreeP.App.Host.Tests/SmartArtTests.cs` verifies reader admission and
@@ -37,5 +38,6 @@ items radiating from one center.
 This is shared functional layout evidence, not a claim of PowerPoint pixel
 parity. Exact PowerPoint radial-list node sizing, connector attachment sites,
 curved routing, effects, native layout-part regeneration, and authoritative
-PowerPoint PNG baselines remain deferred. Imported radial lists with more than
-eight visible items retain cached-drawing fallback.
+PowerPoint PNG baselines remain deferred. The node-count gate is removed; dense
+lists remain renderer-neutral geometry rather than a claim of PowerPoint's exact
+small-label sizing.
