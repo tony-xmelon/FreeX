@@ -55,16 +55,16 @@
     }
   ],
   "summary": {
-    "totalCommands": 924,
+    "totalCommands": 934,
     "both": 458,
     "wpfOnly": 181,
-    "avaloniaOnly": 285,
-    "missingWpf": 285,
+    "avaloniaOnly": 295,
+    "missingWpf": 295,
     "missingAvalonia": 181,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
     "sharedProfile": 458,
-    "profileShapeOnly": 418,
+    "profileShapeOnly": 428,
     "commandIdAliases": 43,
     "platformOnly": 5,
     "deferred": 0,
@@ -8324,6 +8324,99 @@
       }
     },
     {
+      "commandId": "freew.equation.accent",
+      "label": "Accent",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Accent",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.equation.bar",
+      "label": "Bar",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Bar",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.equation.bracket",
+      "label": "Bracket",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Bracket",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
       "commandId": "freew.equation.default",
       "label": "Insert New Equation",
       "wpfPresent": false,
@@ -8386,6 +8479,68 @@
       }
     },
     {
+      "commandId": "freew.equation.func",
+      "label": "Function",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Function",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.equation.groupchr",
+      "label": "Group Character",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Group Character",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
       "commandId": "freew.equation.integral",
       "label": "Integral  ∫",
       "wpfPresent": false,
@@ -8405,6 +8560,99 @@
           "groupId": "symbols",
           "group": "Symbols",
           "label": "Integral  ∫",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.equation.matrix",
+      "label": "Matrix",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Matrix",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.equation.nthroot",
+      "label": "Nth Root",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Nth Root",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.equation.product",
+      "label": "Product",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Product",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
         }
@@ -21951,6 +22199,37 @@
       }
     },
     {
+      "commandId": "freew.quick-parts.comments",
+      "label": "Document Property — Comments",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Document Property — Comments",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
       "commandId": "freew.quick-parts.date",
       "label": "Field — Date",
       "wpfPresent": false,
@@ -21970,6 +22249,37 @@
           "groupId": "text",
           "group": "Text",
           "label": "Field — Date",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.quick-parts.keywords",
+      "label": "Document Property — Keywords",
+      "wpfPresent": false,
+      "avaloniaPresent": true,
+      "profileSurface": "avalonia-only",
+      "missingProfile": "WPF",
+      "classification": "avalonia-profile-only",
+      "gapClassification": "profile-shape-only",
+      "gapClassificationRule": "profile-shape-only",
+      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "wpfLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "text",
+          "group": "Text",
+          "label": "Document Property — Keywords",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
         }
