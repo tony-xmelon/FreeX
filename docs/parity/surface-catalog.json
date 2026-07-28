@@ -471,6 +471,7 @@
     { "id": "Trendline", "tab": "Chart Design", "group": "Layouts", "controlKind": "Button", "display": "Trendline", "keyTip": "R", "contextual": true, "menuItem": false },
     { "id": "Error Bars", "tab": "Chart Design", "group": "Layouts", "controlKind": "Button", "display": "Error Bars", "keyTip": "E", "contextual": true, "menuItem": false },
     { "id": "Secondary Axis", "tab": "Chart Design", "group": "Layouts", "controlKind": "Button", "display": "Secondary Axis", "keyTip": "S", "contextual": true, "menuItem": false },
+    { "id": "Secondary Axis Series", "tab": "Chart Design", "group": "Layouts", "controlKind": "Button", "display": "Secondary Axis Series", "keyTip": "SS", "contextual": true, "menuItem": false },
     { "id": "Chart Styles", "tab": "Chart Design", "group": "Styles", "controlKind": "Button", "display": "Chart Styles", "keyTip": "Y", "contextual": true, "menuItem": false },
     { "id": "Select Data Source", "tab": "Chart Design", "group": "Data", "controlKind": "Button", "display": "Select Data Source", "keyTip": "A", "contextual": true, "menuItem": false },
     { "id": "Change Chart Type#ChangeChartTypeBtn_Click", "tab": "Chart Design", "group": "Type", "controlKind": "Button", "display": "Change Chart Type", "keyTip": "CT", "contextual": true, "menuItem": false },

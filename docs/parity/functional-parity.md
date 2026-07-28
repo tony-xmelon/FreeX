@@ -10,8 +10,8 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 
 | Metric | Count |
 |---|---:|
-| Total commands | 531 |
-| PARITY (both) | 473 |
+| Total commands | 532 |
+| PARITY (both) | 474 |
 | AVALONIA-MISSING | 0 |
 | WPF-MISSING | 48 |
 | BOTH-MISSING | 10 |
@@ -39,6 +39,7 @@ See `functional-parity-classification.md` for the prioritized implementation lis
 | Data Labels | Layouts | Chart Design | yes | yes | PARITY |
 | Error Bars | Layouts | Chart Design | yes | yes | PARITY |
 | Secondary Axis | Layouts | Chart Design | yes | yes | PARITY |
+| Secondary Axis Series | Layouts | Chart Design | yes | yes | PARITY |
 | Trendline | Layouts | Chart Design | yes | yes | PARITY |
 | Move Chart | Location | Chart Design | yes | yes | PARITY |
 | Chart Styles | Styles | Chart Design | yes | yes | PARITY |

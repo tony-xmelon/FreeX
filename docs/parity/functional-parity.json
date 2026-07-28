@@ -1,8 +1,8 @@
 {
   "schema": "freex.parity.functional.v1",
   "summary": {
-    "totalCommands": 531,
-    "parity": 473,
+    "totalCommands": 532,
+    "parity": 474,
     "avaloniaMissing": 0,
     "wpfMissing": 48,
     "bothMissing": 10,
@@ -430,6 +430,7 @@
     { "id": "Scatter Chart", "tab": "Insert", "group": "Charts", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Scenario Manager", "tab": "Data", "group": "Forecast", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Secondary Axis", "tab": "Chart Design", "group": "Layouts", "wpf": true, "avalonia": true, "status": "PARITY" },
+    { "id": "Secondary Axis Series", "tab": "Chart Design", "group": "Layouts", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Select", "tab": "PivotTable Analyze", "group": "Actions", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Select Data Source", "tab": "Insert", "group": "Charts", "wpf": true, "avalonia": true, "status": "PARITY" },
     { "id": "Select Objects", "tab": "Home", "group": "Editing", "wpf": true, "avalonia": true, "status": "PARITY" },
