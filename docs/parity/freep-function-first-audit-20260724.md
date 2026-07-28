@@ -554,3 +554,12 @@ SmartArt routes, and rendered as a deterministic row-major node grid. Shared lay
 save/reopen, insertion, and host reachability tests cover the route. This is a functional
 SmartArt authoring/depth slice; it makes no new pixel-fidelity claim for PowerPoint's native
 bullet typography or spacing.
+
+### 2026-07-29 SmartArt data-part preservation during edits
+
+SmartArt node and text-pane edits already regenerated the logical point/connection lists, but the
+rewrite rebuilt `dgm:dataModel` from a minimal document and could discard authored root metadata or
+extension payloads that FreeP does not model. The rewrite now preserves the existing valid data-model
+shell and replaces only `dgm:ptLst` and `dgm:cxnLst`; malformed source data still uses the canonical
+generated form. A host package round-trip test verifies edited text plus authored metadata/extensions
+survive write/reopen. This is a functional/package-compatibility fix with no renderer calibration claim.
