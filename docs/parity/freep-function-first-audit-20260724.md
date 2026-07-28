@@ -857,3 +857,13 @@ operation in both WPF and Avalonia. Reader, package round-trip, live layout, ins
 host registration tests cover the route. The implementation intentionally reuses the existing
 picture-lineup geometry; this closes the functional/package reachability gap without making a
 new native PowerPoint raster-fidelity claim.
+
+### 2026-07-30 SmartArt picture removal
+
+The SmartArt text pane could replace a node picture but could not remove it and restore the
+authored picture placeholder. FreeP now exposes a shared clear-picture edit through WPF and
+Avalonia, records it through the existing undo bus, rewrites the diagram data, regenerates the
+drawing cache, and prunes obsolete image relationships/media when the final picture is removed.
+Focused package, host undo/reopen, and Avalonia text-pane coverage verify one-picture and
+last-picture removal paths. This is a functional SmartArt editing/package fix with no new
+PowerPoint raster-fidelity claim.
