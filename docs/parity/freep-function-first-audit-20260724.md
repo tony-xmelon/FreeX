@@ -626,3 +626,12 @@ drop compatibility or producer-specific chart extensions even when no modeled ch
 The chart model now retains that extension list verbatim, the writer re-emits it after modeled chart
 content, and slide cloning carries it forward. Host coverage verifies read/write/reopen and clone
 retention. This is a functional chart package-compatibility fix with no renderer calibration claim.
+
+### 2026-07-28 SmartArt cached-fallback conversion
+
+Convert to Shapes already advertised a cached drawing fallback, but the editing session rejected
+SmartArt when its live `dgm:data` part was unavailable. Legacy or preview-backed SmartArt can now
+convert its retained fallback shapes through the same undoable replacement and selection route;
+live layout remains preferred when available. Focused coverage verifies conversion, selection, and
+undo/redo for the fallback-only case. This is a functional authoring fix with no renderer
+calibration claim.
