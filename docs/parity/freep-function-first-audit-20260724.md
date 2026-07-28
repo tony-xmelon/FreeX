@@ -573,6 +573,15 @@ active. Planner tests cover 13- and 20-stage diagrams, and the WPF compositor te
 13 stages remain live in authored order. `basicChevronProcess` and `closedChevronProcess` continue
 to reuse the same shared route; exact PowerPoint variant geometry and raster parity remain deferred.
 
+### 2026-07-29 SmartArt Vertical Chevron List node-count recovery
+
+The shared `verticalChevronList` planner already divided the available frame into one chevron
+per parsed node and retained an independent minimum row-height guard, but an artificial twelve-node
+admission cutoff forced larger valid lists to cached drawing fallback. The cutoff is removed while
+the frame and minimum-height guards remain active. Planner tests cover 13- and 20-node lists, and
+the WPF compositor test confirms all 13 nodes remain live in order. Avalonia consumes the same
+renderer-neutral plan; exact PowerPoint chevron spacing and raster parity remain deferred.
+
 ### 2026-07-29 Selection Pane z-order controls
 
 The Selection Pane already supported object selection, names, visibility, and grouped-child
