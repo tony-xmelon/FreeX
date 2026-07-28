@@ -10,8 +10,8 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 
 | Metric | Count |
 |---|---:|
-| Total commands | 532 |
-| PARITY (both) | 474 |
+| Total commands | 546 |
+| PARITY (both) | 488 |
 | AVALONIA-MISSING | 0 |
 | WPF-MISSING | 48 |
 | BOTH-MISSING | 10 |
@@ -52,6 +52,20 @@ See `functional-parity-classification.md` for the prioritized implementation lis
 | Y Axis Bounds | Axes | Chart Format | yes | yes | PARITY |
 | Y Axis Gridlines | Axes | Chart Format | yes | yes | PARITY |
 | Y Axis Labels | Axes | Chart Format | yes | yes | PARITY |
+| X Axis Label Angle | Axis Options | Chart Format | yes | yes | PARITY |
+| X Axis Label Font | Axis Options | Chart Format | yes | yes | PARITY |
+| X Axis Line | Axis Options | Chart Format | yes | yes | PARITY |
+| X Axis Number Format | Axis Options | Chart Format | yes | yes | PARITY |
+| X Axis Ticks | Axis Options | Chart Format | yes | yes | PARITY |
+| X Gridline Style | Axis Options | Chart Format | yes | yes | PARITY |
+| X Log Scale | Axis Options | Chart Format | yes | yes | PARITY |
+| Y Axis Label Angle | Axis Options | Chart Format | yes | yes | PARITY |
+| Y Axis Label Font | Axis Options | Chart Format | yes | yes | PARITY |
+| Y Axis Line | Axis Options | Chart Format | yes | yes | PARITY |
+| Y Axis Number Format | Axis Options | Chart Format | yes | yes | PARITY |
+| Y Axis Ticks | Axis Options | Chart Format | yes | yes | PARITY |
+| Y Gridline Style | Axis Options | Chart Format | yes | yes | PARITY |
+| Y Log Scale | Axis Options | Chart Format | yes | yes | PARITY |
 | Format Bar/Column | Current Selection | Chart Format | yes | yes | PARITY |
 | Format Bubble Chart | Current Selection | Chart Format | yes | yes | PARITY |
 | Format Chart Area | Current Selection | Chart Format | yes | yes | PARITY |
