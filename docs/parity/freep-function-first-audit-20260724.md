@@ -826,3 +826,12 @@ pointed at the source arrays. Cloning now copies those package payloads before a
 undo snapshot is exposed, and a regression mutates cloned OLE, preserved-part, and part-rels
 bytes while proving the source remains unchanged. This is a functional package/editing fix;
 no new renderer calibration claim is made.
+
+### 2026-07-28 Name and Title Organization Chart
+
+PowerPoint's common `nameAndTitleOrgChart` SmartArt layout was classified as a hierarchy by
+the reader but was missing from the live-layout allow-list, authoring preset, and both host
+Change Layout command registries. FreeP now preserves the native layout identity, admits it
+through the existing organization-chart tree plan, exposes it in WPF and Avalonia, and covers
+reader/live support, package round-trip, host reachability, and renderer-neutral tree output.
+This reuses the existing hierarchy geometry and makes no new native PowerPoint raster claim.
