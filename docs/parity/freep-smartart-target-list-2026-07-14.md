@@ -7,8 +7,9 @@ SmartArt live-layout path.
 
 - `PptxPackageReader` classifies `targetList` as relationship-family SmartArt
   and marks only that layout ID as live-layout supported in this slice.
-- `SmartArtLayoutEngine` emits one to five parsed nodes as concentric
-  translucent ellipse shapes using shared renderer-neutral autoshape geometry.
+- `SmartArtLayoutEngine` emits one live concentric translucent ellipse per parsed
+  node using shared renderer-neutral autoshape geometry; larger node sets no
+  longer fall back solely because of node count.
 - WPF and Avalonia consume ordinary shared compositor draw ops; no
   renderer-local SmartArt policy is added.
 
@@ -16,17 +17,18 @@ SmartArt live-layout path.
 
 The planner models deterministic nested ellipse placement for parsed nodes, not
 exact PowerPoint ring clipping, label offsets, effects, or ring-specific text
-placement. Relationship siblings outside the explicit allow-list, and
-`targetList` diagrams with more than five parsed nodes, continue to use cached
-`dsp:drawing` fallback until their geometry is modeled explicitly.
+placement. Relationship siblings outside the explicit allow-list continue to use
+cached `dsp:drawing` fallback until their geometry is modeled explicitly. The
+target-list node-count gate is removed, but the geometry remains intentionally
+renderer-neutral.
 
 ## Evidence
 
-- `SmartArtLayoutTests` covers ellipse count, text preservation,
-  translucency, concentric shrinking geometry, in-frame placement, no connector
-  emission, and bounded fallback.
-- `SmartArtTests` builds a no-COM PPTX fixture proving the reader admits
-  `targetList` and composes shared live ellipse ops consumed by both hosts.
+- `SmartArtLayoutTests` covers ellipse count and text preservation for six and
+  twelve nodes, translucency, concentric shrinking geometry, and in-frame
+  placement.
+- `SmartArtTests` builds no-COM PPTX fixtures proving the reader admits
+  `targetList` and composes all six shared live ellipse ops consumed by both hosts.
 - PowerPoint COM visual-baseline capture was not run in this lane, so this note
   records deterministic no-COM model/import/compositor evidence rather than a
   PowerPoint-authored pixel baseline.
