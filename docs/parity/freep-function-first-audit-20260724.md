@@ -525,3 +525,11 @@ the selected media intent through `ApplyPresenterToolIntent`; deferred hardware 
 the existing capture-capability status rather than being presented as a successful recording.
 Focused WPF and Avalonia presenter source/behavior tests cover the controls and preservation of
 timing and pointer state.
+
+### 2026-07-29 SmartArt Bending Process layout
+
+The exposed `bendingProcess` SmartArt preset no longer falls through to the generic horizontal
+process row. The shared live layout now emits a bounded two-track zig-zag with ordered diagonal
+connectors for both hosts, while malformed or oversized input continues to use the imported
+cached drawing fallback. This is a functional layout-depth slice; it does not claim new Word or
+PowerPoint raster calibration.
