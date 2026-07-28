@@ -515,3 +515,13 @@ axis planner and undoable command now expose Secondary Value, including creation
 and removal of that empty authored axis on undo. WPF and Avalonia present the same third target and
 the focused planner, command, WPF source, and Avalonia headless tests cover the route. This is a
 functional authoring slice; it does not claim new chart raster parity.
+
+### 2026-07-29 presenter recording media intents
+
+The shared presenter planner already exposed Narration and Narration-and-Camera intents, and the
+slideshow session already routed both through the recording capability state, but neither native
+Presenter View exposed those actions. WPF and Avalonia now show matching toggle controls and forward
+the selected media intent through `ApplyPresenterToolIntent`; deferred hardware remains reported by
+the existing capture-capability status rather than being presented as a successful recording.
+Focused WPF and Avalonia presenter source/behavior tests cover the controls and preservation of
+timing and pointer state.
