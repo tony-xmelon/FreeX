@@ -469,3 +469,14 @@ shared WPF/Avalonia font ribbon and routes them through one undoable
 `SetShapeTextAutoFitCommand`. Command, profile, host-routing, and PPTX save/reopen tests cover
 the exact three-state distinction. This closes a functional authoring gap without changing
 the established text renderer or claiming a new pixel-fidelity calibration.
+
+### 2026-07-28 Windows video export execution
+
+FreeP's shared video workflow already produced a validated, duration-bearing PNG frame package,
+but Windows advertised video encoding as deferred when ffmpeg was absent. The Windows recording
+adapter now detects the built-in MediaComposition stack and encodes that package directly to MP4,
+preserving per-frame durations and deleting partial output on cancellation or invalid output.
+This is intentionally video-only: narration and camera media muxing remain unavailable on the
+native Windows path and continue to use the existing ffmpeg route where supported. Focused
+Windows recording plus WPF/Avalonia host coverage verifies capability detection, adapter selection,
+and host routing; no visual-parity claim is attached to the encoded video.
