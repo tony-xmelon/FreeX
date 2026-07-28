@@ -725,3 +725,13 @@ the native layout URI as a live Process layout, exposes it through the existing 
 SmartArt insertion gallery, and preserves it through the normal package round trip. The current
 implementation intentionally reuses the shared timeline regeneration path; this closes the
 authoring/package reachability gap without making a new native PowerPoint raster-fidelity claim.
+
+### 2026-07-28 SmartArt Phased Process authoring
+
+PowerPoint's common `phasedProcess` layout was missing from FreeP's live SmartArt authoring
+catalog, so insertion and Change Layout could not reach it even though the shared Process model
+and live regeneration route were available. FreeP now exposes the native layout URI through both
+host command registries and the Change Layout ribbon, admits it as a live Process layout, and
+preserves it through the normal package round trip. The current implementation deliberately
+reuses the existing bounded process-family geometry; this closes the functional/package
+reachability gap without making a new native PowerPoint raster-fidelity claim.
