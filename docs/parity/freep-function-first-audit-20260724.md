@@ -674,3 +674,12 @@ Avalonia passes it through the shared LibVLC source factory, and WPF restarts th
 same file until the transition sound is replaced or the slideshow closes. Focused shared,
 Avalonia, and WPF media/transition coverage passes. This is functional presentation playback
 parity; it makes no encoded-audio or device-specific fidelity claim.
+
+### 2026-07-28 SmartArt text-body payload preservation
+
+SmartArt node edits already preserved diagram point and connection metadata, but rebuilding a
+node's `dgm:t` replaced authored DrawingML text-body properties with a bare body/paragraph/run.
+Text edits now retain the native `bodyPr`, `lstStyle`, paragraph properties, run properties, and
+end-paragraph run properties while FreeP's shared node text remains authoritative. Focused host
+SmartArt coverage passes 192/192 and presentation SmartArt coverage passes 280/280. This is a
+functional SmartArt package-authoring fix with no renderer calibration claim.
