@@ -52,7 +52,7 @@ leaving media at stale letterbox coordinates.
   real binding gaps**; **94** paired WPF/Avalonia screenshot surface ids.
 - FreeW: **870** commands, **0 actionable WPF-missing** and **0 actionable
   Avalonia-missing**.
-- FreeP: **513** commands, **511 shared-profile**, **0 actionable WPF-missing**
+- FreeP: **519** commands, **517 shared-profile**, **0 actionable WPF-missing**
   and **0 actionable Avalonia-missing**; the other two are platform-only.
 
 These generated counts prove catalog, route, and evidence coverage. They do not
