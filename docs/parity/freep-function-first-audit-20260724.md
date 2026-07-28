@@ -209,6 +209,17 @@ was stale bookkeeping, not an active capability restriction.
 
 ## Remaining function scope
 
+### 2026-07-28 transition audit checkpoint
+
+The WPF slideshow host dispatches every renderer-neutral
+`SlideShowTransitionPlaybackActionKind` emitted by the shared planner. Legacy
+PowerPoint transition names that do not have a dedicated renderer family are
+intentionally normalized by `SlideShowTransitionPlanner` to an existing family
+(for example Doors to Split and Comb to Blinds), so they remain executable
+rather than silently falling through to a host-specific no-op. A source guard in
+`WpfTransitionPlaybackParityTests` keeps this coverage aligned if the shared
+action catalog grows.
+
 The remaining gaps are depth and application compatibility, not missing ribbon IDs:
 
 - the remaining long tail of SmartArt layout families and full PowerPoint-authoritative
