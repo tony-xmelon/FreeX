@@ -533,3 +533,13 @@ process row. The shared live layout now emits a bounded two-track zig-zag with o
 connectors for both hosts, while malformed or oversized input continues to use the imported
 cached drawing fallback. This is a functional layout-depth slice; it does not claim new Word or
 PowerPoint raster calibration.
+
+### 2026-07-29 Selection Pane z-order controls
+
+The Selection Pane already supported object selection, names, visibility, and grouped-child
+addressing, but its existing undoable reading-order mutation was not reachable from the pane
+itself. Both WPF and Avalonia now expose front/back move buttons for each item, disable them at
+the correct sibling-list edges, preserve group containment, and refresh the projected pane after
+each successful move or visibility toggle. The shared plan owns the edge state and the existing
+`ReorderShapeCommand` owns undo/redo; this is a function-first authoring slice with no renderer
+calibration claim.
