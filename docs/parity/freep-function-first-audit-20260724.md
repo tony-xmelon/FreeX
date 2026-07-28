@@ -902,3 +902,15 @@ Both WPF and Avalonia galleries use the common undoable insertion command; repla
 individual placeholder continues through the SmartArt text pane. Presentation package/cache,
 undo/redo, WPF host, and Avalonia host tests cover the behavior, with no new raster-fidelity
 claim.
+
+### 2026-07-30 SmartArt drawing-cache recovery without a native drawing part
+
+PowerPoint can retain a valid SmartArt data/layout package while its `diagramDrawing` cache is
+missing or stale. FreeP's edit path previously treated the missing cache as a hard failure, and
+picture-cache synchronization assumed that an image relationship already existed. The shared
+SmartArt editing planner now creates the sibling drawing part plus the data-part drawing
+relationship, initializes its package relationship document, and allocates fresh media
+relationships when picture nodes have no prior cache relationships. The recovered cache survives
+undo/redo and PPTX write/reopen; focused planner and WPF package tests cover plain and
+picture-backed recovery. This is a functional/package recovery slice with no new
+PowerPoint raster-fidelity claim.
