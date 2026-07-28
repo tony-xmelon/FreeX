@@ -706,3 +706,12 @@ Text edits now retain the native `bodyPr`, `lstStyle`, paragraph properties, run
 end-paragraph run properties while FreeP's shared node text remains authoritative. Focused host
 SmartArt coverage passes 192/192 and presentation SmartArt coverage passes 280/280. This is a
 functional SmartArt package-authoring fix with no renderer calibration claim.
+
+### 2026-07-28 chart minor-gridline authoring
+
+Chart Axis Options already carried minor-unit and minor-tick semantics, but the authored
+`c:minorGridlines` token was dropped and neither host could create it. FreeP now preserves
+the token through the chart model, PPTX reader/writer, clone path, and one undoable axis
+edit; both WPF and Avalonia expose the toggle, and both renderers consume the shared minor
+gridline plan. The default remains off, so existing charts retain their prior package and
+raster behavior. Focused presentation, WPF, and Avalonia chart/dialog coverage passes.
