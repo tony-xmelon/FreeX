@@ -582,3 +582,13 @@ replaces only stale shape elements under `dsp:spTree`; malformed or missing draw
 the canonical generated document. A host PPTX write/reopen test verifies authored cache metadata
 and extensions survive alongside regenerated edited text. This is a functional package fix with
 no renderer calibration claim.
+
+### 2026-07-30 Chart manual-layout target semantics
+
+Chart `c:manualLayout` already preserved its `layoutTarget` token, but the shared planner
+resolved both `inner` and `outer` layouts against the containing chart frame. It now resolves
+explicit `inner` plot and legend layouts inside their automatic axis/label-aware frame while
+retaining the containing-frame fallback for `outer`, omitted, and unknown values. Shared planner
+tests cover both plot and legend coordinate frames, and the existing host package test confirms
+the authored token remains intact after write/reopen. This is a functional chart-layout semantics
+fix with no renderer calibration claim.
