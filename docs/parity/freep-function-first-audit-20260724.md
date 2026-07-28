@@ -608,8 +608,8 @@ automatic-title state, vary-colors, and bubble sizing flags. Duplicate/copy work
 silently drop authored chart behavior. The clone now carries those fields and deep-copies mutable
 `ChartManualLayout` objects. It also retains series smooth-line state, rich series fills, workbook
 formula references, and point-level fill/data-label payloads. Host regression coverage verifies the
-values and clone independence. This is a functional copy/paste parity fix with no renderer calibration
-claim.
+values and clone independence. The same clone boundary now retains point-label delete state and rich
+marker fills as well. This is a functional copy/paste parity fix with no renderer calibration claim.
 
 ### 2026-07-28 SmartArt node payload preservation
 
