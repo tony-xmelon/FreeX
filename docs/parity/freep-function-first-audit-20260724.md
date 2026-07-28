@@ -817,3 +817,12 @@ cloning now copies node image bytes and diagram-part/relationship payloads, with
 that mutates the clone and proves the source remains unchanged. Presentation SmartArt,
 WPF-host SmartArt, and Avalonia SmartArt coverage remain green; this is a functional
 duplicate/undo/package-isolation fix with no new renderer calibration claim.
+
+### 2026-07-28 OLE and preserved-object duplicate payload isolation
+
+OLE and preserved modern-object shapes had the same duplicate/undo aliasing risk: their
+embedded, Ink/3D/zoom, and relationship byte arrays were copied into a new carrier but still
+pointed at the source arrays. Cloning now copies those package payloads before a duplicate or
+undo snapshot is exposed, and a regression mutates cloned OLE, preserved-part, and part-rels
+bytes while proving the source remains unchanged. This is a functional package/editing fix;
+no new renderer calibration claim is made.
