@@ -610,6 +610,15 @@ nodes continue to use the canonical form. Host package coverage verifies the met
 write/reopen alongside changed text. This is a functional SmartArt editing/package fix with no
 renderer calibration claim.
 
+### 2026-07-28 SmartArt connection payload preservation
+
+SmartArt hierarchy edits rebuilt `dgm:cxn` elements from only the current parent/child graph,
+discarding authored connection IDs and opaque connection metadata. Matched source connections now
+retain their payload while the shared model remains authoritative for type, endpoints, and order;
+new connections receive collision-free generated IDs. Host coverage verifies the connection payload
+survives text edit and PPTX save/reopen. This is a functional SmartArt package/editing fix with no
+renderer calibration claim.
+
 ### 2026-07-28 Chart extension payload preservation
 
 Chart imports previously ignored `c:chartSpace/c:extLst`, so a save or duplicate operation could
