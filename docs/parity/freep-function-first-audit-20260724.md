@@ -600,3 +600,12 @@ automatic-title state, vary-colors, and bubble sizing flags. Duplicate/copy work
 silently drop authored chart behavior. The clone now carries those fields and deep-copies mutable
 `ChartManualLayout` objects. Host regression coverage verifies the values and clone independence. This
 is a functional copy/paste parity fix with no renderer calibration claim.
+
+### 2026-07-28 SmartArt node payload preservation
+
+SmartArt data edits already preserved the data-model root shell, but rebuilding `dgm:pt` nodes
+discarded authored point attributes and opaque child payloads such as `dgm:prSet`. Existing nodes
+now retain that source payload while the edited `dgm:t` is regenerated from the shared model; new
+nodes continue to use the canonical form. Host package coverage verifies the metadata survives
+write/reopen alongside changed text. This is a functional SmartArt editing/package fix with no
+renderer calibration claim.
