@@ -211,6 +211,13 @@ was stale bookkeeping, not an active capability restriction.
 
 ### 2026-07-28 transition audit checkpoint
 
+### 2026-07-28 transition clone metadata preservation
+
+Duplicating a slide already deep-cloned its transition, but omitted the authored split
+orientation. A duplicated Split transition could therefore reopen or play with the wrong
+horizontal/vertical axis even though the source slide remained correct. The shared clone now
+retains `SplitOrientation`, with a duplicate-slide regression covering the command path.
+
 ### 2026-07-28 animation metadata preservation
 
 Timing and trigger edits clone the selected animation through the shared command
