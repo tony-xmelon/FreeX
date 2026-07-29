@@ -43,6 +43,14 @@ Date: 2026-07-29
   Evidence: `artifacts/linux-family-interactive/freep/sessions/20260729T052254226Z/family-validation/family-x11-results.json`.
 - Every harness-owned container stopped after validation.
 
+## Repository gates
+
+- Repository preflight passed, including generated command, dialog, and visual
+  evidence checks.
+- Full serialized Release solution build passed with 0 warnings and 0 errors.
+- Default non-UI lane passed 33,067 executed tests with 0 failures; 133 existing
+  opt-in/performance tests were skipped.
+
 ## Remaining work
 
 - FreeX formula point mode still needs cross-sheet pointing and broader visual
