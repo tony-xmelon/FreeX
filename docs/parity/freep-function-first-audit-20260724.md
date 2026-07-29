@@ -1059,3 +1059,11 @@ nodes even though its ellipse diameter and overlap already scaled from the autho
 The arbitrary ceiling is removed; larger basicVenn diagrams now remain live, preserve authored
 node text, and stay inside the diagram frame for both WPF and Avalonia consumers. This is a
 functional/editability slice with no new PowerPoint raster-fidelity claim.
+
+### 2026-07-29 SmartArt relationship-family long-node live layouts
+
+Radial Venn, Stacked Venn, and Interlocking Rings each had a five-node ceiling even though
+their shared geometry formulas already scaled around the authored node count. Those ceilings are
+removed; diagrams at six and eight nodes now remain live, preserve their node text, and stay
+inside the authored frame for WPF and Avalonia consumers. Minimum-node validation remains intact;
+this is a functional/editability slice with no new PowerPoint raster-fidelity claim.
