@@ -1075,3 +1075,12 @@ node-count bounds even though their shared ellipse and two-sided arrow plans alr
 spacing from the node count. The ceilings are removed; larger diagrams now remain live, preserve
 node text, and stay inside the authored frame for both hosts. Minimum-node validation remains
 active; this is a functional/editability slice with no new PowerPoint raster-fidelity claim.
+
+### 2026-07-29 SmartArt converging-radial long-node layout
+
+Converging Radial still rejected authored diagrams above four nodes even though its shared
+relationship planner already supported the three- and four-node compass arrangements. The
+ceiling is removed; larger diagrams now use a bounded radial ring of editable cardinal-arrow
+shapes, preserve node text, and stay inside the authored frame for both hosts. The original
+three/four-node geometry remains unchanged; exact PowerPoint radial arrow orientation and
+visual metrics remain separate fidelity work.
