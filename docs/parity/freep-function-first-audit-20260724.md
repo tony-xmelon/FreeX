@@ -1051,3 +1051,11 @@ fell back to the preserved cache, making valid authored content non-live and har
 The arbitrary cutoff is removed; long node text now remains in the shared live layout consumed
 by WPF and Avalonia. Focused layout coverage covers Chevron, Basic Chevron, and Closed Chevron
 processes; this is a functional/editability slice with no new raster-fidelity claim.
+
+### 2026-07-29 SmartArt basicVenn long-node live layout
+
+The shared basicVenn relationship planner previously fell back to the cached drawing above four
+nodes even though its ellipse diameter and overlap already scaled from the authored node count.
+The arbitrary ceiling is removed; larger basicVenn diagrams now remain live, preserve authored
+node text, and stay inside the diagram frame for both WPF and Avalonia consumers. This is a
+functional/editability slice with no new PowerPoint raster-fidelity claim.
