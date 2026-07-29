@@ -23,6 +23,11 @@
     "deferred": 0,
     "excluded": 0
   },
+  "catalogs": {
+    "conditionalFormatPopupCommandIds": ["3 Arrows", "3 Arrows (Gray)", "3 Flags", "3 Signs", "3 Symbols", "3 Symbols (Uncircled)", "3 Traffic Lights", "3 Traffic Lights (Rimmed)", "4 Arrows", "4 Arrows (Gray)", "4 Ratings", "4 Red To Black", "4 Traffic Lights", "5 Arrows", "5 Arrows (Gray)", "5 Boxes", "5 Quarters", "5 Ratings", "A Date Occurring", "Above Average", "Below Average", "Between", "Bottom 10 Items", "Bottom 10%", "Clear Rules", "Color Scales", "Data Bars", "Duplicate Values", "Equal To", "Greater Than", "Less Than", "Manage Rules", "More Rules", "New Formula Rule", "New Rule", "Text that Contains", "Top 10 Items", "Top 10%"],
+    "accountingSymbolCommandIds": ["Accounting Number Format British Pound", "Accounting Number Format Euro", "Accounting Number Format Japanese Yen", "Accounting Number Format US Dollar"],
+    "fontBorderChoiceCommandIds": ["Accent 1", "Accent 2", "Black", "Dashed", "Dotted", "Double", "Gray", "Medium", "Thick", "Thin"]
+  },
   "prioritizedImplementationList": [
   ],
   "rows": [
