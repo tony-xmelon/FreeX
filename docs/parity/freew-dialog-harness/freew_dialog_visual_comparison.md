@@ -2,7 +2,7 @@
 
 > Target: 96 DPI logical pixels. Semantic checks and nonblank checks are reported separately from image parity.
 
-Inventory scenarios: **466**. Captured WPF: **3**. Captured Avalonia: **3**.
+Inventory scenarios: **466**. Captured WPF: **7**. Captured Avalonia: **7**.
 
 | Scenario | Capture | Classification | WPF content | Avalonia content | Changed ratio | Mean channel delta | Semantic diff | Heatmap |
 | --- | --- | --- | --- | --- | ---: | ---: | --- | --- |
@@ -173,13 +173,13 @@ Inventory scenarios: **466**. Captured WPF: **3**. Captured Avalonia: **3**.
 | `table-of-authorities.initial` | captured/captured | **genuine-visual-mismatch** | pass (9.0% painted) | pass (2.7% painted) | 10.64 % | 4.39 |  | heatmaps/table-of-authorities.initial.png |
 | `table-of-authorities.populated` | captured/captured | **genuine-visual-mismatch** | pass (9.0% painted) | pass (2.7% painted) | 10.64 % | 4.39 |  | heatmaps/table-of-authorities.populated.png |
 | `table-of-authorities.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (9.0% painted) | pass (2.7% painted) | 10.64 % | 4.39 |  | heatmaps/table-of-authorities.validation-error.png |
-| `table-properties.initial` | captured/captured | **genuine-visual-mismatch** | pass (11.6% painted) | pass (8.4% painted) | 13.62 % | 9.41 | focus | heatmaps/table-properties.initial.png |
-| `table-properties.populated` | captured/captured | **genuine-visual-mismatch** | pass (11.6% painted) | pass (8.5% painted) | 13.75 % | 9.61 | focus | heatmaps/table-properties.populated.png |
-| `table-properties.tab-cell` | captured/captured | **genuine-visual-mismatch** | pass (8.1% painted) | pass (6.5% painted) | 9.86 % | 7.41 | focus | heatmaps/table-properties.tab-cell.png |
-| `table-properties.tab-column` | captured/captured | **genuine-visual-mismatch** | pass (3.2% painted) | pass (3.2% painted) | 3.32 % | 2.85 | focus | heatmaps/table-properties.tab-column.png |
-| `table-properties.tab-row` | captured/captured | **genuine-visual-mismatch** | pass (6.4% painted) | pass (5.4% painted) | 7.19 % | 5.35 | focus | heatmaps/table-properties.tab-row.png |
-| `table-properties.tab-table` | captured/captured | **genuine-visual-mismatch** | pass (11.6% painted) | pass (8.4% painted) | 13.62 % | 9.41 | focus | heatmaps/table-properties.tab-table.png |
-| `table-properties.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (11.6% painted) | pass (8.9% painted) | 14.41 % | 10.14 | focus | heatmaps/table-properties.validation-error.png |
+| `table-properties.initial` | captured/captured | **genuine-visual-mismatch** | pass (11.6% painted) | pass (10.6% painted) | 9.21 % | 6.72 |  | heatmaps/table-properties.initial.png |
+| `table-properties.populated` | captured/captured | **genuine-visual-mismatch** | pass (11.6% painted) | pass (10.7% painted) | 9.28 % | 6.82 |  | heatmaps/table-properties.populated.png |
+| `table-properties.tab-cell` | captured/captured | **genuine-visual-mismatch** | pass (8.2% painted) | pass (7.4% painted) | 6.70 % | 4.86 |  | heatmaps/table-properties.tab-cell.png |
+| `table-properties.tab-column` | captured/captured | **pass** | pass (3.3% painted) | pass (3.0% painted) | 2.73 % | 2.15 |  | heatmaps/table-properties.tab-column.png |
+| `table-properties.tab-row` | captured/captured | **genuine-visual-mismatch** | pass (6.6% painted) | pass (6.3% painted) | 4.56 % | 3.78 |  | heatmaps/table-properties.tab-row.png |
+| `table-properties.tab-table` | captured/captured | **genuine-visual-mismatch** | pass (11.6% painted) | pass (10.6% painted) | 9.21 % | 6.72 |  | heatmaps/table-properties.tab-table.png |
+| `table-properties.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (11.6% painted) | pass (11.2% painted) | 10.06 % | 7.51 |  | heatmaps/table-properties.validation-error.png |
 | `tabs.initial` | captured/captured | **genuine-visual-mismatch** | pass (10.3% painted) | pass (5.6% painted) | 13.99 % | 6.67 | action-button-order | heatmaps/tabs.initial.png |
 | `tabs.populated` | captured/captured | **genuine-visual-mismatch** | pass (10.3% painted) | pass (5.7% painted) | 14.02 % | 6.71 | action-button-order | heatmaps/tabs.populated.png |
 | `tabs.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (10.4% painted) | pass (5.7% painted) | 14.13 % | 6.85 | action-button-order | heatmaps/tabs.validation-error.png |
