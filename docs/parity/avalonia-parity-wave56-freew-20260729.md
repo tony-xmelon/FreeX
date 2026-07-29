@@ -16,8 +16,10 @@ no shape-text selection anchor, selection paint, or range mutation route.
   selected range, plus Bold and other character-format transforms, now use the command bus and preserve
   text and formatting outside the selected spans.
 - Paint selected shape characters with the existing selection brush in the same transform used by shape
-  text rendering, including rotated text.
+  text rendering, including rotated text. Highlight widths use each selected run's actual font metrics.
 - Collapsed shape selections correctly after typing, deletion, caret movement, and paragraph breaks.
+- Formatting validates both endpoints and clones paragraphs before and after the selected span unchanged;
+  stale or out-of-range shape selections are a no-op rather than falling through to body-text formatting.
 
 ## Evidence
 
@@ -25,6 +27,10 @@ no shape-text selection anchor, selection paint, or range mutation route.
   covers horizontal drag selection, Bold formatting, and replacement.
 - `DocumentViewFloatingShapeTests.Rotated_shape_text_drag_selects_and_replaces_the_selected_range`
   covers both rotated directions and replacement through the shared command path.
+- `DocumentViewFloatingShapeTests.Shape_text_formatting_only_mutates_paragraphs_inside_the_selection`
+  covers a middle-paragraph-only format change across three differently formatted shape paragraphs.
+- `DocumentViewFloatingShapeTests.Shape_text_selection_highlights_use_each_runs_actual_font_metrics`
+  asserts that selection geometry follows the selected run's font size instead of a fixed 9pt metric.
 - The complete `DocumentViewFloatingShapeTests` class passes, including the preceding caret, movement,
   undo/redo, rendering, and paragraph-break coverage.
 
