@@ -341,8 +341,7 @@
         "freep/FreeP.App.Presentation.Tests/ExternalRichTextClipboardTests.cs",
         "freep/FreeP.App.Rendering.Avalonia.Tests/AvaloniaRichTextEditorTests.cs",
         "freep/FreeP.App.Rendering.Wpf/WpfRichTextClipboardAdapter.cs",
-      "freep/FreeP.App.Host.Tests/WpfRichTextClipboardAdapterTests.cs",
-      "freep/FreeP.App.Host.Tests/MediaFieldsTests.cs"
+        "freep/FreeP.App.Host.Tests/WpfRichTextClipboardAdapterTests.cs"
       ],
       "remainingWork": "The bounded subset now preserves common Word/LibreOffice list markers, nested levels, continuation/restart intent where the existing model can represent it, paragraph alignment/indent/spacing, guarded http/https/mailto/file HYPERLINK field results with remote file hosts blocked, safe non-hyperlink field tokens with cached result text, common trowd/cellx/cell/row plus nestcell/nestrow table boundaries as WPF-compatible tab-delimited cells and paragraph-delimited rows, and validated PNG/JPEG \\pict payloads as slide-level picture shapes while retaining custom-v2 > RTF > plain-text precedence. Because TextBody has no inline table node, cell widths, borders, fills, vertical alignment, merges, nested-table structure, and table geometry are flattened rather than persisted. XamlPackage objects, unsupported RTF destinations and controls, complex Word field calculation, RTL/IME nuances, complete Word list-template numbering, inline picture/object runs, and PowerPoint-authoritative external RTF visual baselines remain deferred."
     },

@@ -1,7 +1,7 @@
 # Wave 59 FreeW Table Properties Parity
 
-Date: 2026-07-29  
-Authority: WPF capture on the same 800 x 420 harness surface  
+Date: 2026-07-29
+Authority: WPF capture on the same 800 x 420 harness surface
 Base: `3e2cb12d55` (current `origin/main`, including the FreeP-only upstream change)
 
 ## Scope
