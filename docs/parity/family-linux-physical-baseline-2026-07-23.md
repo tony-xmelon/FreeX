@@ -60,8 +60,9 @@ FreeP first runs `nested-keytip-prefix-deferral`: physical `Alt,N,T,X` inserts
 and selects a text box, then `Alt,A,N,B` must retain key-tip mode because
 `Blinds In=BI` is still reachable even though `Blink=B` is an exact leaf.
 The following `I` must open the Blinds menu, and `Escape` must dismiss it.
-FreeP then runs a
-fourteen-row slide-pane slice for an exact twenty-three-row contract: it clicks
+FreeP then proves the real Animation Pane open/select/close/reopen workflow as
+`animation-pane-physical-workflow`, followed by a fourteen-row slide-pane slice
+for an exact twenty-four-row contract: it clicks
 the real bottom `+ New Slide` affordance, proves the changed thumbnail-pane
 evidence, retains the calibrated main-view frame as contextual evidence, proves
 that Ctrl+Z and Ctrl+Y restore the exact calibrated pre-create and created
