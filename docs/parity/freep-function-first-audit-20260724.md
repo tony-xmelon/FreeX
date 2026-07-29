@@ -1102,6 +1102,14 @@ External RTF paste now preserves local-file `HYPERLINK` fields through the same 
 fields at the end of a pasted document, while remote file-host targets remain unlinked. This
 keeps pasted workbook/document links activatable without widening the unsafe-scheme boundary.
 
+### 2026-07-30 SmartArt non-tree relationship preservation
+
+SmartArt data-part regeneration now retains authored non-tree `dgm:cxn` relationships such as
+`presOf` and `presParOf` when their endpoints survive an outline edit, while still regenerating
+the model-owned `parOf` hierarchy and dropping only dangling connections. This closes a package
+semantics loss in edited org-chart and presentation-relationship diagrams without making a new
+visual-fidelity claim.
+
 ### 2026-07-29 WPF recording capability truthfulness
 
 WPF MediaComposition export was previously advertised as having narration and camera capture
