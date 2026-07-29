@@ -44,6 +44,11 @@ converted from twips to EMU and carried through the clipboard payload. Matching 
 columns therefore retain authored widths; XAML tables and malformed or column-count-mismatched
 payloads use the existing equal-width fallback.
 
+The common solid-cell style subset is preserved as well: `clcbpat` becomes an explicit cell
+fill, and `clbrdrt`/`clbrdrl`/`clbrdrr`/`clbrdrb` with `brdrs`, `brdrw`, `brdrcf`, or `brdrnil`
+become per-side cell outlines. This is shared by WPF and Avalonia native-table paste; the
+existing text-editor projection remains style-safe and does not invent inline table nodes.
+
 ## Evidence
 
 - `freep/FreeP.App.Host.Tests/WpfRichTextClipboardAdapterTests.cs` verifies the native WPF
@@ -60,13 +65,13 @@ Focused verification passed:
 ```text
 FreeP.App.Presentation.Tests: ExternalRichTextClipboardTests, 16 passed (build and no-build)
 FreeP.App.Host.Tests: OsClipboardServiceTests.Paste_, 12 passed (build and no-build)
-FreeP.App.Avalonia.Tests: PresentationClipboardInteropTests, 25 passed (build and no-build)
+FreeP.App.Avalonia.Tests: PresentationClipboardInteropTests, 26 passed (build and no-build)
 ```
 
 ## Unsupported Constructs
 
 The in-canvas text model still cannot retain an inline RTF table node, and the bounded
-slide-level conversion intentionally does not yet import borders, fills, vertical alignment,
+slide-level conversion intentionally does not yet import pattern fills, vertical alignment,
 cell margins, merged-cell controls, nested table structure, or other table layout properties.
 One-column and mixed-prose projections retain the existing
 textbox fallback. Arbitrary fields, RTL/IME nuances, complete Word list-template numbering,
