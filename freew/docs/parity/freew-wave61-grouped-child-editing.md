@@ -20,10 +20,21 @@ The shared model owns undoable child position and size commands. The shared pres
 Run the focused tests with the commands recorded in the Wave 61 task report. Run the physical lane with:
 
 ```powershell
-powershell -NoProfile -File tools/Run-FreeWWave61GroupedChildValidation.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/Run-FreeWWave61GroupedChildValidation.ps1 -Port 6091 -OutputDir freew/artifacts/wave61-linux
 ```
 
 The wrapper writes the exact persisted geometry and screenshots under `freew/artifacts/wave61-linux/` and stops only the owned FreeW container when complete. The manifest is validated by `tools/LinuxInteractiveDocker/freew-group-child-validation.schema.json`.
+
+The verified physical run passed all four manifest checks. `inspect-before.txt` recorded group offset/size `180,150` / `210,130` pt and child 1 offset/size `110,55` / `65,35` pt. `inspect-after.txt` recorded unchanged group geometry `180,150` / `210,130` pt and child 1 offset/size `69.76582677165354,56.099291338582674` / `301.9988188976378,95.97937007874016` pt. The visible child selection postcondition was `childIndex=1`, `handleCount=8`, with evidence in `04-child-resized-selected.png`.
+
+Retained physical evidence:
+
+- `freew/artifacts/wave61-linux/freew-wave61-group-child-validation.json`
+- `freew/artifacts/wave61-linux/inspect-before.txt`
+- `freew/artifacts/wave61-linux/inspect-after.txt`
+- `freew/artifacts/wave61-linux/freew/sessions/20260729T231558276Z/group-child-wave61/02-child-selected.png`
+- `freew/artifacts/wave61-linux/freew/sessions/20260729T231558276Z/group-child-wave61/03-child-moved.png`
+- `freew/artifacts/wave61-linux/freew/sessions/20260729T231558276Z/group-child-wave61/04-child-resized-selected.png`
 
 ## Residuals
 
