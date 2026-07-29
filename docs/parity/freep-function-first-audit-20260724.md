@@ -1085,6 +1085,14 @@ shapes, preserve node text, and stay inside the authored frame for both hosts. T
 three/four-node geometry remains unchanged; exact PowerPoint radial arrow orientation and
 visual metrics remain separate fidelity work.
 
+### 2026-07-29 local-file hyperlink activation
+
+PowerPoint slideshow hyperlinks can target local workbooks, documents, and media files, but the
+shared launcher previously rejected every `file:` URI. Local file URIs are now accepted by the
+shared WPF/Avalonia launcher while remote UNC-style file hosts remain blocked with the existing
+unsafe schemes. This is a functional slideshow activation slice; it makes no visual or external
+document-rendering claim.
+
 ### 2026-07-29 WPF recording capability truthfulness
 
 WPF MediaComposition export was previously advertised as having narration and camera capture
