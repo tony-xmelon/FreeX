@@ -1,58 +1,87 @@
-# FreeX Avalonia Parity Wave 61
+# Avalonia parity Wave 61
 
-## Scope
+Date: 2026-07-30
 
-This slice closes the deep multi-area formula-edit residual after Wave 56's keyboard-created append path. The exercised operation edits an already-authored quoted two-area formula: `F5` is retained, `H7` is changed to `I7` through a reverse caret selection, and a plain point click replaces that existing area with `J7`.
+## Functional slices
 
-The audit used the shared `FormulaRangeEntryPlanner`, the WPF authority in `src/FreeX.App.Host/MainWindow.FormulaReferenceEditing.cs`, and the Avalonia implementation in `src/FreeX.App.Avalonia/MainWindow.cs`. WPF preserves the live span through text/caret changes. Avalonia previously cleared it during the formula-box text path and could also clear it during transient reverse-selection notifications, causing the next point click to insert a third reference.
+- **FreeX multi-area formula editing** now preserves an already-authored
+  quoted first area while a later area is edited and replaced. Avalonia keeps
+  the live reference span through reverse-selection notifications and recovers
+  the trailing quoted reference when transient TextBox state loses tracking.
+- **FreeW grouped-child editing** now routes direct-child move and resize
+  gestures through group-local coordinates. Shared commands persist position
+  and size with undo, WPF and Avalonia expose the same child selection path,
+  and Avalonia renders and hit-tests eight handles through the combined child
+  and group transforms.
+- **FreeP rotated shape-text editing** now transforms the live editor overlay
+  with the rendered shape in both WPF and Avalonia. Rotation, flips, transform
+  origin, commit, cancellation, and LostFocus lifecycle use the same shared
+  placement contract.
 
-## Implementation
+## Physical Linux evidence
 
-- Avalonia no longer unconditionally clears the formula reference span on formula-box text changes.
-- Reverse Avalonia selections are retained while their independent selection property notifications settle.
-- Ordinary Avalonia point replacement recovers the trailing authored reference through the shared quoted-reference span planner when transient input has lost tracking.
-- The managed test uses a reverse `SelectionStart`/`SelectionEnd` pair and asserts exact formula text, saved formula, result, and selected replacement area.
-- The physical selector is `formula-multi-area-edit`; it verifies the red formula-reference outline at `Revenue Data!J7` before commit, then reads the committed formula/result from `Sheet2!G10`.
+- FreeX selector `formula-multi-area-edit`: **1/1 passed**. Real X11 input
+  changed the tracked second area and committed
+  `=SUM('Revenue Data'!F5,'Revenue Data'!J7)` with result `30` and
+  `Revenue Data!J7` selected before readback.
+- FreeW grouped-child workflow: **4/4 passed**. Real X11 input selected child
+  1, moved it, resized its transformed bottom-right handle, saved the DOCX,
+  and proved exact changed child geometry while the owning group's offset and
+  size remained unchanged. Eight child handles remained visible.
+- FreeP rotated shape-text workflow: **5/5 passed**. Real X11 input entered
+  the editor through a point inside the rotated polygon but outside its
+  unrotated edge, replaced the text, committed and saved it, then proved that
+  Escape canceled a second edit. The package retained exact text, bounds, and
+  30-degree rotation.
 
-No shared cross-app files were changed.
+The detailed reports and retained artifact paths are:
 
-## Verification
+- `docs/parity/avalonia-parity-wave61-freex-formula-edit-20260730.md`
+- `freew/docs/parity/freew-wave61-grouped-child-editing.md`
+- `docs/parity/freep-rotated-shape-text-edit-wave61-20260730.md`
 
-Managed focused test:
+## Integration review
 
-`dotnet test tests/FreeX.App.Avalonia.Tests/FreeX.App.Avalonia.Tests.csproj --configuration Release --filter FullyQualifiedName~FormulaPointEdit_PreservesQuotedAreaSpanBeforeReplacingExistingArea --logger "console;verbosity=minimal"`
+- The FreeX slice deliberately did not duplicate Wave 56's F8/Shift+F8 append
+  path. It targets mutation of an existing non-final quoted area and verifies
+  the exact saved formula, result, and live reference selection.
+- FreeW's physical iterations exposed child hit-testing and selection geometry
+  that still used stale or parent-space rectangles after a command. The final
+  implementation resolves current child layout data, composes child and group
+  transforms for the visible polygon, and reran the physical workflow green.
+- FreeP source review confirmed a genuine application gap: shape rendering was
+  rotation-aware, but the editor overlay was axis-aligned. The physical lane
+  demonstrates transformed editor entry, typing, commit, and cancellation.
+- Concurrent `origin/main` work was merged repeatedly. The primary dirty
+  checkout was not modified.
 
-Result: passed, `1/1`.
+## Focused verification
 
-Focused R53 suite:
+- FreeX Avalonia R53 formula-point suite: **9 passed**.
+- FreeP shared editor/geometry suites: **19 passed**.
+- FreeP WPF rich-text editor suite: **50 passed**.
+- FreeP Avalonia slide-canvas suite: **78 passed**.
+- FreeW model grouped-drawing suite: **17 passed**.
+- FreeW shared layout planner suite: **32 passed**.
+- FreeW DOCX grouped-drawing round-trip suite: **18 passed**.
+- FreeW WPF grouped-drawing host suite: **11 passed**.
+- FreeW Avalonia floating-selection suite: **27 passed**.
 
-`dotnet test tests/FreeX.App.Avalonia.Tests/FreeX.App.Avalonia.Tests.csproj --configuration Release --no-build --filter FullyQualifiedName~R53_CrossSheetFormulaPointModeTests --logger "console;verbosity=minimal"`
+The integrated focused total is **261 passed, 0 failed**. Physical evidence
+adds **10 passed, 0 failed** across the three dedicated Linux/X11 workflows.
 
-Result: passed, `9/9`.
+## Remaining work
 
-Physical Linux/X11 lane:
-
-`powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Run-FreeXLinuxInteractionValidation.ps1 -PhysicalOnly -PhysicalProbeSelector formula-multi-area-edit -Port 6089 -TimeoutMinutes 20`
-
-Result: passed, `1/1`; owned container stopped cleanly.
-
-Exact physical postconditions:
-
-- saved formula: `=SUM('Revenue Data'!F5,'Revenue Data'!J7)`
-- calculated result: `30`
-- selection before readback: `Revenue Data!J7`
-
-Retained evidence:
-
-- `artifacts/linux-interactive/freex/sessions/20260729T224800763Z/x11-validation/formula-multi-area-edit-authored.png`
-- `artifacts/linux-interactive/freex/sessions/20260729T224800763Z/x11-validation/formula-multi-area-edit-caret.png`
-- `artifacts/linux-interactive/freex/sessions/20260729T224800763Z/x11-validation/formula-multi-area-edit-replaced.png`
-- `artifacts/linux-interactive/freex/sessions/20260729T224800763Z/x11-validation/formula-multi-area-edit-selected.png`
-- `artifacts/linux-interactive/freex/sessions/20260729T224800763Z/x11-validation/formula-multi-area-edit-committed.png`
-- `artifacts/linux-interactive/freex/sessions/20260729T224800763Z/x11-validation/formula-multi-area-edit-postcondition.txt`
-- `artifacts/linux-interactive/freex/interaction-validation/20260729T224733Z/interaction-validation.json`
-- `artifacts/linux-interactive/freex/interaction-validation/20260729T224733Z/interaction-validation.html`
-
-## Residuals
-
-The selector intentionally does not duplicate the Wave 56 F8/Shift+F8 append workflow. It covers the existing-area mutation/replacement path only. Broader formula grammar, drag-edit, and non-quoted reference variants remain outside this Wave 61 slice.
+- FreeX still needs deeper drag-edit and non-quoted multi-area formula variants
+  where those paths are not already covered by shared or physical evidence.
+- FreeW direct-child move/resize is complete for this slice. Nested child paths,
+  child formatting, child text editing, and edit-points mode remain separate
+  grouped-object workflows.
+- FreeP ordinary rotated shape text is complete for this slice. Rotated table
+  cell editors and grouped-child text editing remain separate workflows.
+- FreeW's canonical visual comparison still contains the broad visual residual
+  set reported by Waves 59 and 60. This wave closes functional input/model
+  paths and does not relabel unresolved pixel mismatches.
+- Authoritative Excel, Word, and PowerPoint application baselines remain
+  unavailable on this host. WPF remains the local platform authority where an
+  Office-level capture cannot be produced.
