@@ -10,6 +10,12 @@ The shared command is `freep.object.open-embedded`. Empty payloads remain a safe
 WPF registry exposes a callback seam so tests verify payload identity without launching an
 external application. Nested group selection uses the existing recursive shape lookup.
 
+When the registered host exits, the activation session now reads back a non-empty changed
+temporary file into the same mutable `OleObjectInfo` and deletes the temporary file. This makes
+external Excel, Word, or PowerPoint edits persist through the normal FreeP save path without
+terminating or otherwise controlling the external host process. Unchanged and empty results are
+discarded.
+
 Verification includes the WPF payload-routing test, Avalonia command registration and definition
 tests, localization coverage, OLE service tests, and the generated command parity inventory
 (286 total commands, 284 shared by both hosts, 0 actionable host gaps).
