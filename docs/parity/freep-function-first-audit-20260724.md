@@ -1093,6 +1093,11 @@ shared WPF/Avalonia launcher while remote UNC-style file hosts remain blocked wi
 unsafe schemes. This is a functional slideshow activation slice; it makes no visual or external
 document-rendering claim.
 
+The same guarded policy now flows through the shared Insert Hyperlink dialog, so local-file
+targets can be authored as well as activated. Remote UNC-style file hosts remain rejected by the
+shared URI validator; this closes the end-to-end local-file hyperlink workflow without changing
+the visual-rendering claim.
+
 ### 2026-07-29 WPF recording capability truthfulness
 
 WPF MediaComposition export was previously advertised as having narration and camera capture
