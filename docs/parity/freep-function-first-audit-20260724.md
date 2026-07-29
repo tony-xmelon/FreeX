@@ -911,6 +911,17 @@ Focused package, host undo/reopen, and Avalonia text-pane coverage verify one-pi
 last-picture removal paths. This is a functional SmartArt editing/package fix with no new
 PowerPoint raster-fidelity claim.
 
+### 2026-07-29 ordinary-shape soft-edge authoring
+
+Shape soft-edge data was already represented in the shared effects model, preserved by the
+PPTX reader/writer, cloned with shapes, and consumed by both renderers, but ordinary-shape
+authoring exposed no route for creating or removing it. FreeP now exposes None, Subtle, and
+Strong Soft Edge presets through the shared undoable command bus, with matching WPF and
+Avalonia ribbon registrations. The command changes only `HasSoftEdge` and its radius,
+preserving shadow, glow, bevel, and other effect layers. Focused planner, command undo,
+package round-trip, WPF ribbon, and Avalonia source-route coverage verify the operation;
+this is a functional/package authoring slice with no new raster-fidelity claim.
+
 ### 2026-07-30 SmartArt target-list node-count recovery
 
 The shared `targetList` geometry path previously rejected diagrams with more than five
