@@ -71,6 +71,11 @@ geometry.
 - `dotnet test FreeX.DefaultTests.slnx --configuration Release --no-build
   -m:1` passed across 19 test assemblies: 33,205 passed, 0 failed, and 133
   benchmark or environment-dependent cases intentionally not executed.
+- A final `origin/main` sync then added bounded FreeP RTF object-result handling
+  and FreeW page-shot geometry evidence. At that final tip, the affected
+  suites passed 20/20 FreeP planner tests, 44/44 WPF clipboard tests, and 9/9
+  FreeW evidence tests; the FreeW page-shot tool also rebuilt with 0 warnings
+  and 0 errors. Generated-document validation passed again after the sync.
 
 ## Remaining work
 
