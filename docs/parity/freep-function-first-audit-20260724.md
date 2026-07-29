@@ -1098,6 +1098,10 @@ targets can be authored as well as activated. Remote UNC-style file hosts remain
 shared URI validator; this closes the end-to-end local-file hyperlink workflow without changing
 the visual-rendering claim.
 
+External RTF paste now preserves local-file `HYPERLINK` fields through the same policy, including
+fields at the end of a pasted document, while remote file-host targets remain unlinked. This
+keeps pasted workbook/document links activatable without widening the unsafe-scheme boundary.
+
 ### 2026-07-29 WPF recording capability truthfulness
 
 WPF MediaComposition export was previously advertised as having narration and camera capture
