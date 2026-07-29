@@ -963,6 +963,15 @@ image is supplied; a payload remains supported for callers that already have med
 package/cache refresh, undo/redo, WPF host, and Avalonia host coverage verify both routes; this
 is a functional/package editing slice with no new PowerPoint raster-fidelity claim.
 
+### 2026-07-29 ordinary-shape glow authoring
+
+Shape glow was already represented in the shared effects model, cloned with shapes, preserved by the PPTX
+reader/writer, and consumed by both renderers, but ordinary-shape authoring exposed only outer shadow presets.
+FreeP now exposes None, Subtle, and Strong Glow presets through the shared undoable command bus, with matching
+WPF and Avalonia ribbon routes. The command changes only glow state and preserves shadow, soft-edge, bevel, and
+other effect layers. Focused planner, undo, WPF ribbon, Avalonia source-route, and generated command-inventory
+coverage verify the operation; this is a functional/package authoring slice with no new raster-fidelity claim.
+
 ### 2026-07-30 Empty picture-SmartArt insertion
 
 PowerPoint can insert a picture SmartArt layout before any source image is selected, leaving
