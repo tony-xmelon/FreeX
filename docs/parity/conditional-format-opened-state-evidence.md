@@ -12,7 +12,7 @@ Manifest validation contract: every committed manifest must match the expected S
 
 | Metric | Count |
 |---|---:|
-| Conditional-format popup/gallery classifier rows | 34 |
+| Conditional-format popup/gallery classifier rows | 0 |
 | Shared runtime popup catalog items | 38 |
 | Opened-state capture targets | 3 |
 | Complete opened-state capture targets | 0 |
@@ -82,13 +82,17 @@ All rows below remain runtime-catalog backed and await the paired Excel/WPF/Aval
 | Between | needs-paired-opened-state-capture |
 | Bottom 10 Items | needs-paired-opened-state-capture |
 | Bottom 10% | needs-paired-opened-state-capture |
+| Clear Rules | needs-paired-opened-state-capture |
 | Color Scales | needs-paired-opened-state-capture |
 | Data Bars | needs-paired-opened-state-capture |
 | Duplicate Values | needs-paired-opened-state-capture |
 | Equal To | needs-paired-opened-state-capture |
 | Greater Than | needs-paired-opened-state-capture |
 | Less Than | needs-paired-opened-state-capture |
+| Manage Rules | needs-paired-opened-state-capture |
 | More Rules | needs-paired-opened-state-capture |
+| New Formula Rule | needs-paired-opened-state-capture |
+| New Rule | needs-paired-opened-state-capture |
 | Text that Contains | needs-paired-opened-state-capture |
 | Top 10 Items | needs-paired-opened-state-capture |
 | Top 10% | needs-paired-opened-state-capture |
