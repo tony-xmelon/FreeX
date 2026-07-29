@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 543 | 543 | 0 | 0 | 0 | 0 | 0 | 0 | 543 | 0 | 0 | 0 | 0 | 101 |
+| 546 | 546 | 0 | 0 | 0 | 0 | 0 | 0 | 546 | 0 | 0 | 0 | 0 | 101 |
 
 ## Workflow Evidence
 
@@ -441,6 +441,9 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.shape-up-arrow` | Up Arrow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-up-down-arrow` | Up-Down Arrow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape-wave` | Wave | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape.bevel.none` | No Shape Bevel | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape.bevel.strong` | Strong Shape Bevel | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape.bevel.subtle` | Subtle Shape Bevel | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape.glow.none` | No Shape Glow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape.glow.strong` | Strong Shape Glow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape.glow.subtle` | Subtle Shape Glow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |

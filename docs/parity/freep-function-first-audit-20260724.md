@@ -1006,3 +1006,13 @@ relationships when picture nodes have no prior cache relationships. The recovere
 undo/redo and PPTX write/reopen; focused planner and WPF package tests cover plain and
 picture-backed recovery. This is a functional/package recovery slice with no new
 PowerPoint raster-fidelity claim.
+
+### 2026-07-29 ordinary-shape bevel authoring
+
+Bevels were already represented by the shared shape-effects model, cloned with shapes, preserved
+by the PPTX reader/writer, and consumed by both renderers, but ordinary-shape authoring exposed no
+way to create or clear them. FreeP now exposes None, Subtle, and Strong top-and-bottom bevel
+presets through the shared undoable command bus, with matching WPF and Avalonia ribbon routes.
+The command preserves unrelated effect layers and restores asymmetric prior bevel state on undo.
+Focused planner, undo, WPF ribbon, Avalonia source-route, and generated command-inventory coverage
+verify the operation; this is a functional/package authoring slice with no new raster-fidelity claim.
