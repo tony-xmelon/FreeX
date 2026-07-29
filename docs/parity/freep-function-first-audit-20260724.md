@@ -1035,3 +1035,11 @@ the label to every first-level child. This keeps labels and child nodes as edita
 shapes consumed identically by WPF and Avalonia, while malformed or empty data retains the
 existing cached-drawing fallback. Focused presentation and WPF host tests cover the geometry
 contract; no PowerPoint-raster calibration claim is made.
+
+### 2026-07-29 SmartArt text-pane Delete route
+
+The shared SmartArt edit planner already supported removing a selected node, but neither host's
+text pane mapped the Delete key to that intent. FreeP now routes Delete through the shared
+undoable remove-node path in both WPF and Avalonia, including the existing package data-part and
+drawing-cache refresh. Focused planner and Avalonia headless tests cover the route and resulting
+node removal; this is a functional editing parity slice with no new raster-fidelity claim.
