@@ -10,6 +10,9 @@ Date: 2026-07-29
 - A child click keeps the owning group as the active floating object for
   group-level arrange and ungroup behavior, while exposing the selected child
   identity and drawing the selection outline/handles around that child.
+- The child selection outline and handles are rendered through the same parent
+  group rotation/flip transform as the child, so transformed groups keep their
+  direct-selection chrome registered with the visible object.
 - `RotateSelectedFloating` and `FlipSelectedFloating` route to the selected
   child's local transform when a group child is active. The new
   `SetDrawingGroupChildRotationCommand` records the previous child transform,
