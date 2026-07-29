@@ -39,6 +39,11 @@ editable `Table` shape, preserving cell runs and using the existing undoable sha
 Mixed prose, one-column projections, and in-canvas text-editor paste retain the previous
 textbox/tab projection rather than silently dropping surrounding text.
 
+For standalone native-table paste, the first valid RTF row's increasing `cellx` edges are
+converted from twips to EMU and carried through the clipboard payload. Matching native table
+columns therefore retain authored widths; XAML tables and malformed or column-count-mismatched
+payloads use the existing equal-width fallback.
+
 ## Evidence
 
 - `freep/FreeP.App.Host.Tests/WpfRichTextClipboardAdapterTests.cs` verifies the native WPF
@@ -53,16 +58,16 @@ textbox/tab projection rather than silently dropping surrounding text.
 Focused verification passed:
 
 ```text
-FreeP.App.Presentation.Tests: ExternalRichTextClipboardTests, 10 passed
-FreeP.App.Host.Tests: WpfRichTextClipboardAdapterTests, 6 passed
-FreeP.App.Rendering.Avalonia.Tests: ClipboardPaste, 4 passed
+FreeP.App.Presentation.Tests: ExternalRichTextClipboardTests, 16 passed (build and no-build)
+FreeP.App.Host.Tests: OsClipboardServiceTests.Paste_, 12 passed (build and no-build)
+FreeP.App.Avalonia.Tests: PresentationClipboardInteropTests, 25 passed (build and no-build)
 ```
 
 ## Unsupported Constructs
 
 The in-canvas text model still cannot retain an inline RTF table node, and the bounded
-slide-level conversion intentionally does not yet import cell widths from `cellx`, borders,
-fills, vertical alignment, cell margins, merged-cell controls, nested table structure, or
-other table layout properties. One-column and mixed-prose projections retain the existing
+slide-level conversion intentionally does not yet import borders, fills, vertical alignment,
+cell margins, merged-cell controls, nested table structure, or other table layout properties.
+One-column and mixed-prose projections retain the existing
 textbox fallback. Arbitrary fields, RTL/IME nuances, complete Word list-template numbering,
 and PowerPoint-authoritative external RTF visual baselines remain deferred.
