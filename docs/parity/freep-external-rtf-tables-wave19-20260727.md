@@ -31,6 +31,14 @@ paragraph boundaries.
   authority used to define the shared logical projection; no platform-specific table parser
   was added.
 
+### 2026-07-30 slide-level native table paste
+
+The slide-level WPF clipboard route now distinguishes a standalone multi-cell RTF/Xaml table
+from ordinary rich text. It converts that bounded tab-delimited projection into a native,
+editable `Table` shape, preserving cell runs and using the existing undoable shape-add command.
+Mixed prose, one-column projections, and in-canvas text-editor paste retain the previous
+textbox/tab projection rather than silently dropping surrounding text.
+
 ## Evidence
 
 - `freep/FreeP.App.Host.Tests/WpfRichTextClipboardAdapterTests.cs` verifies the native WPF
@@ -52,9 +60,9 @@ FreeP.App.Rendering.Avalonia.Tests: ClipboardPaste, 4 passed
 
 ## Unsupported Constructs
 
-The current model cannot truthfully retain RTF table geometry or table objects. Cell widths
-from `cellx`, borders, fills, vertical alignment, cell margins, merged-cell controls, nested
-table structure, and other table layout properties are intentionally ignored after their
-text boundaries are projected. XamlPackage, objects/pictures, arbitrary fields, RTL/IME
-nuances, complete Word list-template numbering, and PowerPoint-authoritative external RTF
-visual baselines remain deferred.
+The in-canvas text model still cannot retain an inline RTF table node, and the bounded
+slide-level conversion intentionally does not yet import cell widths from `cellx`, borders,
+fills, vertical alignment, cell margins, merged-cell controls, nested table structure, or
+other table layout properties. One-column and mixed-prose projections retain the existing
+textbox fallback. Arbitrary fields, RTL/IME nuances, complete Word list-template numbering,
+and PowerPoint-authoritative external RTF visual baselines remain deferred.
