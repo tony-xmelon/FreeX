@@ -1102,6 +1102,14 @@ External RTF paste now preserves local-file `HYPERLINK` fields through the same 
 fields at the end of a pasted document, while remote file-host targets remain unlinked. This
 keeps pasted workbook/document links activatable without widening the unsafe-scheme boundary.
 
+### 2026-07-30 External RTF field-run preservation
+
+External RTF paste now retains safe non-hyperlink field tokens such as `PAGE` together with their
+cached result text in FreeP's existing `FieldRun` model, while `HYPERLINK` continues through the
+dedicated URI policy. Field font and color survive the PPTX writer/reader boundary as well. This
+closes a functional paste/package loss without inventing Word field calculation semantics or making
+a visual-fidelity claim.
+
 ### 2026-07-30 SmartArt non-tree relationship preservation
 
 SmartArt data-part regeneration now retains authored non-tree `dgm:cxn` relationships such as
