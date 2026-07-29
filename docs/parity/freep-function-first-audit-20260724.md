@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 521 command IDs total.
-- 521 shared across WPF and Avalonia.
+- 537 command IDs total.
+- 537 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 0 intentional shell/profile variances.
@@ -29,6 +29,11 @@ matching the Avalonia profile and the existing WPF keyboard/routed-command behav
 This closes the remaining ribbon-surface gap for those workflows; deeper functional
 work remains in SmartArt regeneration, advanced chart authoring, presenter/review/
 accessibility depth, and real application capture/export validation.
+
+Avalonia nested ribbon key tips now apply the same Office prefix rule as the WPF route:
+an exact leaf remains pending only when a longer matching candidate opens a dropdown or
+split-button scope. This keeps short leaf commands reachable without stealing prefixes
+from nested menus, and the rendered-control path is covered by the focused keyboard lane.
 
 ## Verified function paths
 
