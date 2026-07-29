@@ -15315,7 +15315,7 @@
     },
     {
       "commandId": "freep.smartart.layout.circle-accent-timeline",
-      "label": "Circle Accent Timeline",
+      "label": "[[Ribbon_Command_SmartArtCircleAccentTimeline_Label]]",
       "wpfPresent": true,
       "avaloniaPresent": true,
       "surface": "both",
@@ -15329,7 +15329,7 @@
           "tab": "Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "Circle Accent Timeline",
+          "label": "[[Ribbon_Command_SmartArtCircleAccentTimeline_Label]]",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
@@ -15341,7 +15341,7 @@
           "tab": "Design",
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
-          "label": "Circle Accent Timeline",
+          "label": "[[Ribbon_Command_SmartArtCircleAccentTimeline_Label]]",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
