@@ -33,6 +33,24 @@ WordArt control unchanged. Future work on the remaining primary glyph
 difference must stay in the text-path/raster owner rather than changing this
 glow calibration.
 
+## Secondary FillGold Material Surface
+
+The same direct Word reference showed that the exact secondary `Review Copy` /
+`FillGold` / `ArchUp` / 26pt object had a held gold top band and a dark lower
+material ramp. WPF already consumed that narrow material surface; Avalonia had
+fallen through to the generic gradient. Avalonia now applies the same
+three-stop material fill only for that exact signature.
+
+| Region | Before material surface | With material surface |
+| --- | ---: | ---: |
+| Whole page | 5.7947% | 5.7471% |
+| `Review Copy` ROI `(430,350)-(690,440)` | 5.8672% | 4.1150% |
+| Primary banner control `(300,210)-(810,320)` | 16.0884% | 16.0884% |
+| Green backing control `(150,270)-(400,360)` | 4.8292% | 4.8292% |
+
+This is a source-specific material correction; it does not change the
+secondary text-path or any other FillGold object.
+
 ## Verification
 
 - `VisualEvidencePageLayoutShotSourceTests`: 5/5 passed.
