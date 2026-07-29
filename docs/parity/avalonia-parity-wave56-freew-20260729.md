@@ -15,8 +15,8 @@ no shape-text selection anchor, selection paint, or range mutation route.
 - Added shared `ReplaceShapeTextParagraphsCommand` in `FreeW.Core.Model`. Replacement and deletion of a
   selected range, plus Bold and other character-format transforms, now use the command bus and preserve
   text and formatting outside the selected spans.
-- Paint selected shape characters with the existing selection brush in the same transform used by shape
-  text rendering, including rotated text. Highlight widths use each selected run's actual font metrics.
+- Paint selected shape characters with the existing selection brush and the same uniform 9pt metrics and
+  transform used by shape body rendering and caret-stop layout, including rotated text.
 - Collapsed shape selections correctly after typing, deletion, caret movement, and paragraph breaks.
 - Formatting validates both endpoints and clones paragraphs before and after the selected span unchanged;
   stale or out-of-range shape selections are a no-op rather than falling through to body-text formatting.
@@ -29,8 +29,6 @@ no shape-text selection anchor, selection paint, or range mutation route.
   covers both rotated directions and replacement through the shared command path.
 - `DocumentViewFloatingShapeTests.Shape_text_formatting_only_mutates_paragraphs_inside_the_selection`
   covers a middle-paragraph-only format change across three differently formatted shape paragraphs.
-- `DocumentViewFloatingShapeTests.Shape_text_selection_highlights_use_each_runs_actual_font_metrics`
-  asserts that selection geometry follows the selected run's font size instead of a fixed 9pt metric.
 - The complete `DocumentViewFloatingShapeTests` class passes, including the preceding caret, movement,
   undo/redo, rendering, and paragraph-break coverage.
 
@@ -38,4 +36,6 @@ no shape-text selection anchor, selection paint, or range mutation route.
 
 - Shape text remains a compact Avalonia renderer rather than a native WPF `FlowDocument`; complex inline
   objects and advanced multi-line visual selection geometry may still differ.
+- Both Avalonia and WPF currently render shape body text as uniform plain text. Rich per-run shape text
+  formatting is retained in the model for editing but is not yet reflected in visible glyph formatting.
 - Keyboard Shift+Arrow extension inside shape text and drag-selection auto-scroll remain follow-ups.
