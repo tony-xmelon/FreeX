@@ -27087,7 +27087,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -27118,7 +27118,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
@@ -27149,7 +27149,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
       }
     },
     {
