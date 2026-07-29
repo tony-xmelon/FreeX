@@ -175,8 +175,8 @@
                                                                    },
                                               "pairedEvidence":  {
                                                                      "pairedScenarioCount":  183,
-                                                                     "passCount":  12,
-                                                                     "mismatchCount":  171,
+                                                                     "passCount":  13,
+                                                                     "mismatchCount":  170,
                                                                      "limitationCount":  0,
                                                                      "avaloniaOnlyScenarioCount":  96,
                                                                      "evidenceClassification":  "paired WPF/Avalonia dialog comparison rows; mismatch classifications remain unresolved visual evidence, not a parity pass/fail"
