@@ -31,6 +31,28 @@ paragraph boundaries.
   authority used to define the shared logical projection; no platform-specific table parser
   was added.
 
+### 2026-07-30 slide-level native table paste
+
+The slide-level WPF clipboard route now distinguishes a standalone multi-cell RTF/Xaml table
+from ordinary rich text. It converts that bounded tab-delimited projection into a native,
+editable `Table` shape, preserving cell runs and using the existing undoable shape-add command.
+Mixed prose, one-column projections, and in-canvas text-editor paste retain the previous
+textbox/tab projection rather than silently dropping surrounding text.
+
+For standalone native-table paste, the first valid RTF row's increasing `cellx` edges are
+converted from twips to EMU and carried through the clipboard payload. Matching native table
+columns therefore retain authored widths; XAML tables and malformed or column-count-mismatched
+payloads use the existing equal-width fallback.
+
+The common solid-cell style subset is preserved as well: `clcbpat` becomes an explicit cell
+fill, and `clbrdrt`/`clbrdrl`/`clbrdrr`/`clbrdrb` with `brdrs`, `brdrw`, `brdrcf`, or `brdrnil`
+become per-side cell outlines. This is shared by WPF and Avalonia native-table paste; the
+existing text-editor projection remains style-safe and does not invent inline table nodes.
+
+RTF `clvertalt`/`clvertalc`/`clvertalb` now map to the native `TableCell.Anchor`, and
+`clpadl`/`clpadr`/`clpadt`/`clpadb` map from twips to the four native cell insets. XAML and
+inputs without these controls retain the existing host defaults.
+
 ## Evidence
 
 - `freep/FreeP.App.Host.Tests/WpfRichTextClipboardAdapterTests.cs` verifies the native WPF
@@ -45,16 +67,16 @@ paragraph boundaries.
 Focused verification passed:
 
 ```text
-FreeP.App.Presentation.Tests: ExternalRichTextClipboardTests, 10 passed
-FreeP.App.Host.Tests: WpfRichTextClipboardAdapterTests, 6 passed
-FreeP.App.Rendering.Avalonia.Tests: ClipboardPaste, 4 passed
+FreeP.App.Presentation.Tests: ExternalRichTextClipboardTests + InCanvasRichClipboardTests, 23 passed (build and no-build)
+FreeP.App.Host.Tests: OsClipboardServiceTests.Paste_, 13 passed (build and no-build)
+FreeP.App.Avalonia.Tests: PresentationClipboardInteropTests, 26 passed (build and no-build)
 ```
 
 ## Unsupported Constructs
 
-The current model cannot truthfully retain RTF table geometry or table objects. Cell widths
-from `cellx`, borders, fills, vertical alignment, cell margins, merged-cell controls, nested
-table structure, and other table layout properties are intentionally ignored after their
-text boundaries are projected. XamlPackage, objects/pictures, arbitrary fields, RTL/IME
-nuances, complete Word list-template numbering, and PowerPoint-authoritative external RTF
-visual baselines remain deferred.
+The in-canvas text model still cannot retain an inline RTF table node, and the bounded
+slide-level conversion intentionally does not yet import pattern fills, vertical alignment,
+merged-cell controls, nested table structure, or other table layout properties.
+One-column and mixed-prose projections retain the existing
+textbox fallback. Arbitrary fields, RTL/IME nuances, complete Word list-template numbering,
+and PowerPoint-authoritative external RTF visual baselines remain deferred.
