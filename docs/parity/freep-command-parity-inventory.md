@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 552 | 552 | 0 | 0 | 0 | 0 | 0 | 0 | 552 | 0 | 0 | 0 | 0 | 101 |
+| 553 | 553 | 0 | 0 | 0 | 0 | 0 | 0 | 553 | 0 | 0 | 0 | 0 | 101 |
 
 ## Workflow Evidence
 
@@ -274,6 +274,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.chart.pie-options` | Pie Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.plot-style-options` | Plot Style | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.point-options` | Point Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.protection-options` | Protection | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.series-options` | Series Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.text-options` | Text Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.copy` | Copy | Yes | Yes | none | shared | home/clipboard (RibbonButton) | home/clipboard (RibbonButton) | Available in both generated FreeP ribbon profiles. |
