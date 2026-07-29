@@ -1025,3 +1025,13 @@ that 3-D layer. FreeP now exposes None, Subtle, and Strong 3-D presets through a
 command, preserving bevel, glow, shadow, and other effect layers. WPF and Avalonia register the
 same routes; focused planner, undo, ribbon, and source-route tests verify the operation. This is
 a functional/package authoring slice with no new raster-fidelity claim.
+
+### 2026-07-29 SmartArt labeled-hierarchy live geometry
+
+The `labeledHierarchy` command and package identity were already reachable, but its live
+renderer fell through to the generic tree plan. The shared layout engine now emits a real
+label column for each top-level branch, places the branch hierarchy to its right, and connects
+the label to every first-level child. This keeps labels and child nodes as editable ordinary
+shapes consumed identically by WPF and Avalonia, while malformed or empty data retains the
+existing cached-drawing fallback. Focused presentation and WPF host tests cover the geometry
+contract; no PowerPoint-raster calibration claim is made.
