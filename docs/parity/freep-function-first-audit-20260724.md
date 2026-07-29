@@ -1016,3 +1016,12 @@ presets through the shared undoable command bus, with matching WPF and Avalonia 
 The command preserves unrelated effect layers and restores asymmetric prior bevel state on undo.
 Focused planner, undo, WPF ribbon, Avalonia source-route, and generated command-inventory coverage
 verify the operation; this is a functional/package authoring slice with no new raster-fidelity claim.
+
+### 2026-07-29 ordinary-shape 3-D authoring
+
+Shape scene, extrusion, material, and light-rig data already round-tripped through the PPTX model
+and was consumed by both renderers, but ordinary-shape authoring exposed no way to apply or clear
+that 3-D layer. FreeP now exposes None, Subtle, and Strong 3-D presets through a shared undoable
+command, preserving bevel, glow, shadow, and other effect layers. WPF and Avalonia register the
+same routes; focused planner, undo, ribbon, and source-route tests verify the operation. This is
+a functional/package authoring slice with no new raster-fidelity claim.
