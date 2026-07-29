@@ -4,7 +4,7 @@
 
 FreeP's existing shared accessibility contract covers 11 pane IDs in WPF and
 Avalonia. This slice adds a real Linux desktop evidence lane for the Avalonia
-host. It observes live controls for four representative panes and queries the
+host. It observes live controls for five representative panes and queries the
 running X11 application through AT-SPI for five representative panes:
 
 - Slides
@@ -26,12 +26,15 @@ the OS-visible accessible name, role, state set, and value field.
 - `tools/LinuxInteractiveDocker/run-freep-accessibility-probe.sh` starts an
   AT-SPI query in the same X11/DBus session. It recursively finds the FreeP
   titled child window below the generic `Avalonia Application` accessible,
-  then walks the application tree and reads names, roles, states, and values.
-  It only reports `passed` when all five target pane nodes are observed.
+  then walks the application tree and reads exact pane names, expected roles,
+  states, and values. It only reports `passed` when all five target pane nodes
+  satisfy their role contracts.
 - `tools/LinuxInteractiveDocker/Dockerfile` installs the AT-SPI runtime,
   Python bindings, and GDBus support required by the probe.
 - `tools/Run-FreePAccessibilityValidation.ps1` owns the full start, probe,
-  manifest validation, report, and container cleanup lifecycle.
+  manifest validation, report, and container cleanup lifecycle. It also copies
+  the branch-local probe into the running container before execution, closing
+  the stale app-image cache path.
 
 ## Evidence
 
@@ -39,18 +42,18 @@ Command:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File tools/Run-FreePAccessibilityValidation.ps1 `
-  -Port 6162 -OutputDir artifacts/a58r -SkipPublish -SkipImageBuild -Replace
+  -Port 6166 -OutputDir artifacts/a58v -Replace
 ```
 
-Result: `live controls passed (4); AT-SPI passed (5 observations)` at
+Result: `live controls passed (5); AT-SPI passed (5 observations)` at
 1280x820, 96 DPI.
 
-Committed-run report:
+Retained-run report:
 
-`artifacts/a58r/freep/accessibility-validation/report.json`
+`artifacts/a58v/freep/accessibility-validation/report.json`
 
 The session manifests are under the session directory recorded by
-`artifacts/a58r/freep/current-session.json`:
+`artifacts/a58v/freep/current-session.json`:
 
 - `accessibility-validation/live-pane-accessibility.json`
 - `accessibility-validation/atspi-result.json`
@@ -58,7 +61,8 @@ The session manifests are under the session directory recorded by
 The AT-SPI application was named `Avalonia Application`; recursive traversal
 found the child window titled `Untitled * - FreeP` and all five pane nodes. The
 probe therefore does not depend on the generic application name containing
-`FreeP`.
+`FreeP`, and it rejects a same-named label when the expected pane role is not
+present. The Slides match is the list/list-box pane, not the heading label.
 
 ## Verification
 
