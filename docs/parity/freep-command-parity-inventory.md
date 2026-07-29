@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 553 | 553 | 0 | 0 | 0 | 0 | 0 | 0 | 553 | 0 | 0 | 0 | 0 | 101 |
+| 555 | 555 | 0 | 0 | 0 | 0 | 0 | 0 | 555 | 0 | 0 | 0 | 0 | 101 |
 
 ## Workflow Evidence
 
@@ -312,6 +312,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.insert-curved-connector` | Curved Connector | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-elbow-connector` | Elbow Connector | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-link` | Hyperlink | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-accent-process` | Accent Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-alternating-process` | Alternating Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-arrow-ribbon` | Arrow Ribbon | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-basic-block-list` | Basic Block List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
@@ -515,6 +516,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.smartart.colors.transparent-gradient-range-accent-5` | Transparent Gradient Range - Accent 5 | Yes | Yes | none | shared | design/smartart-colors (RibbonMenuItem) | design/smartart-colors (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.colors.transparent-gradient-range-accent-6` | Transparent Gradient Range - Accent 6 | Yes | Yes | none | shared | design/smartart-colors (RibbonMenuItem) | design/smartart-colors (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.convert-to-shapes` | Convert to Shapes | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.accent-process` | Accent Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.alternating-process` | Alternating Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.arrow-ribbon` | Arrow Ribbon | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.basic-block-list` | Basic Block List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
