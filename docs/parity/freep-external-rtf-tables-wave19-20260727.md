@@ -49,6 +49,10 @@ fill, and `clbrdrt`/`clbrdrl`/`clbrdrr`/`clbrdrb` with `brdrs`, `brdrw`, `brdrcf
 become per-side cell outlines. This is shared by WPF and Avalonia native-table paste; the
 existing text-editor projection remains style-safe and does not invent inline table nodes.
 
+RTF `clvertalt`/`clvertalc`/`clvertalb` now map to the native `TableCell.Anchor`, and
+`clpadl`/`clpadr`/`clpadt`/`clpadb` map from twips to the four native cell insets. XAML and
+inputs without these controls retain the existing host defaults.
+
 ## Evidence
 
 - `freep/FreeP.App.Host.Tests/WpfRichTextClipboardAdapterTests.cs` verifies the native WPF
@@ -63,8 +67,8 @@ existing text-editor projection remains style-safe and does not invent inline ta
 Focused verification passed:
 
 ```text
-FreeP.App.Presentation.Tests: ExternalRichTextClipboardTests, 16 passed (build and no-build)
-FreeP.App.Host.Tests: OsClipboardServiceTests.Paste_, 12 passed (build and no-build)
+FreeP.App.Presentation.Tests: ExternalRichTextClipboardTests + InCanvasRichClipboardTests, 23 passed (build and no-build)
+FreeP.App.Host.Tests: OsClipboardServiceTests.Paste_, 13 passed (build and no-build)
 FreeP.App.Avalonia.Tests: PresentationClipboardInteropTests, 26 passed (build and no-build)
 ```
 
@@ -72,7 +76,7 @@ FreeP.App.Avalonia.Tests: PresentationClipboardInteropTests, 26 passed (build an
 
 The in-canvas text model still cannot retain an inline RTF table node, and the bounded
 slide-level conversion intentionally does not yet import pattern fills, vertical alignment,
-cell margins, merged-cell controls, nested table structure, or other table layout properties.
+merged-cell controls, nested table structure, or other table layout properties.
 One-column and mixed-prose projections retain the existing
 textbox fallback. Arbitrary fields, RTL/IME nuances, complete Word list-template numbering,
 and PowerPoint-authoritative external RTF visual baselines remain deferred.
