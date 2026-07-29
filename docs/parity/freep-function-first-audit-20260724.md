@@ -1084,3 +1084,12 @@ ceiling is removed; larger diagrams now use a bounded radial ring of editable ca
 shapes, preserve node text, and stay inside the authored frame for both hosts. The original
 three/four-node geometry remains unchanged; exact PowerPoint radial arrow orientation and
 visual metrics remain separate fidelity work.
+
+### 2026-07-29 WPF recording capability truthfulness
+
+WPF MediaComposition export was previously advertised as having narration and camera capture
+whenever Windows was present, even when no recording devices were available. Capability detection
+now derives those flags from the Windows recording-device catalog, reports the available subset in
+the host reason, and keeps FFmpeg handoff text aligned with the detected capability instead of
+claiming captured-media support it does not provide. Encoding and export behavior are unchanged;
+this is a device-backed readiness/functionality correction with focused host coverage.
