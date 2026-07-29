@@ -1043,3 +1043,11 @@ text pane mapped the Delete key to that intent. FreeP now routes Delete through 
 undoable remove-node path in both WPF and Avalonia, including the existing package data-part and
 drawing-cache refresh. Focused planner and Avalonia headless tests cover the route and resulting
 node removal; this is a functional editing parity slice with no new raster-fidelity claim.
+
+### 2026-07-29 SmartArt long-node text live layout
+
+Three shared SmartArt process paths rejected node text longer than 512 characters and silently
+fell back to the preserved cache, making valid authored content non-live and harder to edit.
+The arbitrary cutoff is removed; long node text now remains in the shared live layout consumed
+by WPF and Avalonia. Focused layout coverage covers Chevron, Basic Chevron, and Closed Chevron
+processes; this is a functional/editability slice with no new raster-fidelity claim.
