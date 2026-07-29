@@ -11,6 +11,8 @@ cross-sheet point mode:
   replacing the existing reference.
 - Appended references are qualified with the pointed sheet name when the target sheet differs from
   the formula source sheet, including names that require quoting.
+- WPF and Avalonia now use the same `FormulaRangeEntryPlanner` append calculation, preventing
+  cross-sheet qualification and tracked-span behavior from drifting between hosts.
 - A subsequent point drag continues to replace only the newly appended reference span.
 
 ## Evidence
@@ -19,8 +21,10 @@ cross-sheet point mode:
   tab selection while preserving `FormulaEditAddress`.
 - `tests/FreeX.App.Avalonia.Tests/R53_CrossSheetFormulaPointModeTests.cs` covers modifier tab
   navigation, cross-sheet qualified append, selected-range ownership, and cancel restoration.
-- WPF authority: `src/FreeX.App.Host/MainWindow.Selection.cs` appends a disjoint reference when
-  Ctrl is held and `src/FreeX.App.Host/MainWindow.SheetTabs.cs` updates grouped tabs without
+- `tests/FreeX.App.Host.Logic.Tests/FormulaRangeEntryPlannerTests.RangeSelection.cs` covers the
+  shared cross-sheet disjoint append and quoted sheet-name span.
+- WPF authority: `src/FreeX.App.Host/MainWindow.Selection.cs` routes Ctrl-point append through the
+  shared planner and `src/FreeX.App.Host/MainWindow.SheetTabs.cs` updates grouped tabs without
   committing the active formula edit.
 
 ## Remaining gaps
