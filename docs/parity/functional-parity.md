@@ -11,10 +11,10 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Metric | Count |
 |---|---:|
 | Total commands | 546 |
-| PARITY (both) | 488 |
+| PARITY (both) | 540 |
 | AVALONIA-MISSING | 0 |
-| WPF-MISSING | 48 |
-| BOTH-MISSING | 10 |
+| WPF-MISSING | 6 |
+| BOTH-MISSING | 0 |
 | Intentional Linux omissions (allowlisted) | 0 |
 
 ## Non-parity classification summary
@@ -22,8 +22,8 @@ Each row is a canonical command id the shared ribbon definition (`FreeXRibbon.Bu
 | Classification | Count |
 |---|---:|
 | Real behavior gap | 0 |
-| Non-Click/control inventory row | 10 |
-| Pseudo-command/gallery item | 48 |
+| Non-Click/control inventory row | 6 |
+| Pseudo-command/gallery item | 0 |
 | Platform-only | 0 |
 | Deferred | 0 |
 | Excluded | 0 |
@@ -168,11 +168,11 @@ See `functional-parity-classification.md` for the prioritized implementation lis
 | More Functions#FormulaMoreBtn_Click | Function Library | Formulas | yes | yes | PARITY |
 | Recently Used | Function Library | Formulas | yes | yes | PARITY |
 | Text Functions | Function Library | Formulas | yes | yes | PARITY |
-| About FreeX#AboutBtn_Click | Help | Help | — | yes | WPF-MISSING |
-| Check for Updates#CheckForUpdatesBtn_Click | Help | Help | — | yes | WPF-MISSING |
+| About FreeX#AboutBtn_Click | Help | Help | yes | yes | PARITY |
+| Check for Updates#CheckForUpdatesBtn_Click | Help | Help | yes | yes | PARITY |
 | Copy Diagnostics#CopyDiagnosticsBtn_Click | Help | Help | yes | yes | PARITY |
-| Feedback#FeedbackBtn_Click | Help | Help | — | yes | WPF-MISSING |
-| Help Online#HelpOnlineBtn_Click | Help | Help | — | yes | WPF-MISSING |
+| Feedback#FeedbackBtn_Click | Help | Help | yes | yes | PARITY |
+| Help Online#HelpOnlineBtn_Click | Help | Help | yes | yes | PARITY |
 | Legal Notices#LegalNoticesBtn_Click | Help | Help | yes | yes | PARITY |
 | Align Left | Alignment | Home | yes | yes | PARITY |
 | Align Right | Alignment | Home | yes | yes | PARITY |
@@ -272,18 +272,18 @@ See `functional-parity-classification.md` for the prioritized implementation lis
 | Sort Z to A | Editing | Home | yes | yes | PARITY |
 | Sum | Editing | Home | yes | yes | PARITY |
 | Up | Editing | Home | yes | yes | PARITY |
-| Accent 1 | Font | Home | — | — | BOTH-MISSING |
-| Accent 2 | Font | Home | — | — | BOTH-MISSING |
+| Accent 1 | Font | Home | yes | yes | PARITY |
+| Accent 2 | Font | Home | yes | yes | PARITY |
 | All Borders | Font | Home | yes | yes | PARITY |
-| Black | Font | Home | — | — | BOTH-MISSING |
+| Black | Font | Home | yes | yes | PARITY |
 | Bold | Font | Home | yes | yes | PARITY |
 | Borders | Font | Home | yes | yes | PARITY |
 | Bottom Border | Font | Home | yes | yes | PARITY |
 | Bottom Double Border | Font | Home | yes | yes | PARITY |
-| Dashed | Font | Home | — | — | BOTH-MISSING |
+| Dashed | Font | Home | yes | yes | PARITY |
 | Decrease Font Size | Font | Home | yes | yes | PARITY |
-| Dotted | Font | Home | — | — | BOTH-MISSING |
-| Double | Font | Home | — | — | BOTH-MISSING |
+| Dotted | Font | Home | yes | yes | PARITY |
+| Double | Font | Home | yes | yes | PARITY |
 | Draw Border | Font | Home | yes | yes | PARITY |
 | Draw Border Grid | Font | Home | yes | yes | PARITY |
 | Erase Border | Font | Home | yes | yes | PARITY |
@@ -291,31 +291,31 @@ See `functional-parity-classification.md` for the prioritized implementation lis
 | Font | Font | Home | — | yes | WPF-MISSING |
 | Font Color | Font | Home | yes | yes | PARITY |
 | Font Size | Font | Home | — | yes | WPF-MISSING |
-| Gray | Font | Home | — | — | BOTH-MISSING |
+| Gray | Font | Home | yes | yes | PARITY |
 | Increase Font Size | Font | Home | yes | yes | PARITY |
 | Inside Borders | Font | Home | yes | yes | PARITY |
 | Italic | Font | Home | yes | yes | PARITY |
 | Left Border | Font | Home | yes | yes | PARITY |
-| Medium | Font | Home | — | — | BOTH-MISSING |
+| Medium | Font | Home | yes | yes | PARITY |
 | More Borders | Font | Home | yes | yes | PARITY |
 | No Border | Font | Home | yes | yes | PARITY |
 | Outside Borders | Font | Home | yes | yes | PARITY |
 | Right Border | Font | Home | yes | yes | PARITY |
 | Strikethrough | Font | Home | yes | yes | PARITY |
-| Thick | Font | Home | — | — | BOTH-MISSING |
+| Thick | Font | Home | yes | yes | PARITY |
 | Thick Bottom Border | Font | Home | yes | yes | PARITY |
 | Thick Outside Borders | Font | Home | yes | yes | PARITY |
-| Thin | Font | Home | — | — | BOTH-MISSING |
+| Thin | Font | Home | yes | yes | PARITY |
 | Top Border | Font | Home | yes | yes | PARITY |
 | Top and Bottom Border | Font | Home | yes | yes | PARITY |
 | Top and Double Bottom Border | Font | Home | yes | yes | PARITY |
 | Top and Thick Bottom Border | Font | Home | yes | yes | PARITY |
 | Underline | Font | Home | yes | yes | PARITY |
 | Accounting Number Format | Number | Home | yes | yes | PARITY |
-| Accounting Number Format British Pound | Number | Home | — | yes | WPF-MISSING |
-| Accounting Number Format Euro | Number | Home | — | yes | WPF-MISSING |
-| Accounting Number Format Japanese Yen | Number | Home | — | yes | WPF-MISSING |
-| Accounting Number Format US Dollar | Number | Home | — | yes | WPF-MISSING |
+| Accounting Number Format British Pound | Number | Home | yes | yes | PARITY |
+| Accounting Number Format Euro | Number | Home | yes | yes | PARITY |
+| Accounting Number Format Japanese Yen | Number | Home | yes | yes | PARITY |
+| Accounting Number Format US Dollar | Number | Home | yes | yes | PARITY |
 | Comma Style | Number | Home | yes | yes | PARITY |
 | Decrease Decimal Places | Number | Home | yes | yes | PARITY |
 | Increase Decimal Places | Number | Home | yes | yes | PARITY |
@@ -328,72 +328,72 @@ See `functional-parity-classification.md` for the prioritized implementation lis
 | 20% - Accent 4 | Styles | Home | yes | yes | PARITY |
 | 20% - Accent 5 | Styles | Home | yes | yes | PARITY |
 | 20% - Accent 6 | Styles | Home | yes | yes | PARITY |
-| 3 Arrows | Styles | Home | — | yes | WPF-MISSING |
-| 3 Arrows (Gray) | Styles | Home | — | yes | WPF-MISSING |
-| 3 Flags | Styles | Home | — | yes | WPF-MISSING |
-| 3 Signs | Styles | Home | — | yes | WPF-MISSING |
-| 3 Symbols | Styles | Home | — | yes | WPF-MISSING |
-| 3 Symbols (Uncircled) | Styles | Home | — | yes | WPF-MISSING |
-| 3 Traffic Lights | Styles | Home | — | yes | WPF-MISSING |
-| 3 Traffic Lights (Rimmed) | Styles | Home | — | yes | WPF-MISSING |
-| 4 Arrows | Styles | Home | — | yes | WPF-MISSING |
-| 4 Arrows (Gray) | Styles | Home | — | yes | WPF-MISSING |
-| 4 Ratings | Styles | Home | — | yes | WPF-MISSING |
-| 4 Red To Black | Styles | Home | — | yes | WPF-MISSING |
-| 4 Traffic Lights | Styles | Home | — | yes | WPF-MISSING |
+| 3 Arrows | Styles | Home | yes | yes | PARITY |
+| 3 Arrows (Gray) | Styles | Home | yes | yes | PARITY |
+| 3 Flags | Styles | Home | yes | yes | PARITY |
+| 3 Signs | Styles | Home | yes | yes | PARITY |
+| 3 Symbols | Styles | Home | yes | yes | PARITY |
+| 3 Symbols (Uncircled) | Styles | Home | yes | yes | PARITY |
+| 3 Traffic Lights | Styles | Home | yes | yes | PARITY |
+| 3 Traffic Lights (Rimmed) | Styles | Home | yes | yes | PARITY |
+| 4 Arrows | Styles | Home | yes | yes | PARITY |
+| 4 Arrows (Gray) | Styles | Home | yes | yes | PARITY |
+| 4 Ratings | Styles | Home | yes | yes | PARITY |
+| 4 Red To Black | Styles | Home | yes | yes | PARITY |
+| 4 Traffic Lights | Styles | Home | yes | yes | PARITY |
 | 40% - Accent 1 | Styles | Home | yes | yes | PARITY |
 | 40% - Accent 2 | Styles | Home | yes | yes | PARITY |
 | 40% - Accent 3 | Styles | Home | yes | yes | PARITY |
 | 40% - Accent 4 | Styles | Home | yes | yes | PARITY |
 | 40% - Accent 5 | Styles | Home | yes | yes | PARITY |
 | 40% - Accent 6 | Styles | Home | yes | yes | PARITY |
-| 5 Arrows | Styles | Home | — | yes | WPF-MISSING |
-| 5 Arrows (Gray) | Styles | Home | — | yes | WPF-MISSING |
-| 5 Boxes | Styles | Home | — | yes | WPF-MISSING |
-| 5 Quarters | Styles | Home | — | yes | WPF-MISSING |
-| 5 Ratings | Styles | Home | — | yes | WPF-MISSING |
+| 5 Arrows | Styles | Home | yes | yes | PARITY |
+| 5 Arrows (Gray) | Styles | Home | yes | yes | PARITY |
+| 5 Boxes | Styles | Home | yes | yes | PARITY |
+| 5 Quarters | Styles | Home | yes | yes | PARITY |
+| 5 Ratings | Styles | Home | yes | yes | PARITY |
 | 60% - Accent 1 | Styles | Home | yes | yes | PARITY |
 | 60% - Accent 2 | Styles | Home | yes | yes | PARITY |
 | 60% - Accent 3 | Styles | Home | yes | yes | PARITY |
 | 60% - Accent 4 | Styles | Home | yes | yes | PARITY |
 | 60% - Accent 5 | Styles | Home | yes | yes | PARITY |
 | 60% - Accent 6 | Styles | Home | yes | yes | PARITY |
-| A Date Occurring | Styles | Home | — | yes | WPF-MISSING |
-| Above Average | Styles | Home | — | yes | WPF-MISSING |
+| A Date Occurring | Styles | Home | yes | yes | PARITY |
+| Above Average | Styles | Home | yes | yes | PARITY |
 | Bad | Styles | Home | yes | yes | PARITY |
-| Below Average | Styles | Home | — | yes | WPF-MISSING |
-| Between | Styles | Home | — | yes | WPF-MISSING |
-| Bottom 10 Items | Styles | Home | — | yes | WPF-MISSING |
-| Bottom 10% | Styles | Home | — | yes | WPF-MISSING |
+| Below Average | Styles | Home | yes | yes | PARITY |
+| Between | Styles | Home | yes | yes | PARITY |
+| Bottom 10 Items | Styles | Home | yes | yes | PARITY |
+| Bottom 10% | Styles | Home | yes | yes | PARITY |
 | Calculation | Styles | Home | yes | yes | PARITY |
 | Cell Styles | Styles | Home | yes | yes | PARITY |
 | Check Cell | Styles | Home | yes | yes | PARITY |
 | Clear Rules | Styles | Home | yes | yes | PARITY |
-| Color Scales | Styles | Home | — | yes | WPF-MISSING |
+| Color Scales | Styles | Home | yes | yes | PARITY |
 | Conditional Formatting | Styles | Home | yes | yes | PARITY |
-| Data Bars | Styles | Home | — | yes | WPF-MISSING |
-| Duplicate Values | Styles | Home | — | yes | WPF-MISSING |
-| Equal To | Styles | Home | — | yes | WPF-MISSING |
+| Data Bars | Styles | Home | yes | yes | PARITY |
+| Duplicate Values | Styles | Home | yes | yes | PARITY |
+| Equal To | Styles | Home | yes | yes | PARITY |
 | Explanatory Text | Styles | Home | yes | yes | PARITY |
 | Format as Table | Styles | Home | yes | yes | PARITY |
 | Good | Styles | Home | yes | yes | PARITY |
-| Greater Than | Styles | Home | — | yes | WPF-MISSING |
+| Greater Than | Styles | Home | yes | yes | PARITY |
 | Heading 1 | Styles | Home | yes | yes | PARITY |
 | Heading 2 | Styles | Home | yes | yes | PARITY |
 | Input | Styles | Home | yes | yes | PARITY |
-| Less Than | Styles | Home | — | yes | WPF-MISSING |
+| Less Than | Styles | Home | yes | yes | PARITY |
 | Linked Cell | Styles | Home | yes | yes | PARITY |
 | Manage Rules | Styles | Home | yes | yes | PARITY |
-| More Rules | Styles | Home | — | yes | WPF-MISSING |
+| More Rules | Styles | Home | yes | yes | PARITY |
 | Neutral | Styles | Home | yes | yes | PARITY |
 | New Formula Rule | Styles | Home | yes | yes | PARITY |
 | New Rule | Styles | Home | yes | yes | PARITY |
 | Normal | Styles | Home | yes | yes | PARITY |
 | Note | Styles | Home | yes | yes | PARITY |
 | Output | Styles | Home | yes | yes | PARITY |
-| Text that Contains | Styles | Home | — | yes | WPF-MISSING |
-| Top 10 Items | Styles | Home | — | yes | WPF-MISSING |
-| Top 10% | Styles | Home | — | yes | WPF-MISSING |
+| Text that Contains | Styles | Home | yes | yes | PARITY |
+| Top 10 Items | Styles | Home | yes | yes | PARITY |
+| Top 10% | Styles | Home | yes | yes | PARITY |
 | Total | Styles | Home | yes | yes | PARITY |
 | Warning Text | Styles | Home | yes | yes | PARITY |
 | 100% Stacked Bar Chart | Charts | Insert | yes | yes | PARITY |
