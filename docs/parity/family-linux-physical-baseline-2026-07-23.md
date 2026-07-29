@@ -56,8 +56,12 @@ The required FreeW IDs are `file-open-shortcut-dialog-open`,
 `file-print-shortcut-dialog-dismissal`, `file-new-shortcut-dirty-prompt-open`,
 `file-new-shortcut-cancel-preserves`, and
 `file-new-shortcut-discard-creates-clean`.
-FreeP runs a
-fourteen-row slide-pane slice for an exact twenty-two-row contract: it clicks
+FreeP first runs `nested-keytip-prefix-deferral`: physical `Alt,N,T,X` inserts
+and selects a text box, then `Alt,A,N,B` must retain key-tip mode because
+`Blinds In=BI` is still reachable even though `Blink=B` is an exact leaf.
+The following `I` must open the Blinds menu, and `Escape` must dismiss it.
+FreeP then runs a
+fourteen-row slide-pane slice for an exact twenty-three-row contract: it clicks
 the real bottom `+ New Slide` affordance, proves the changed thumbnail-pane
 evidence, retains the calibrated main-view frame as contextual evidence, proves
 that Ctrl+Z and Ctrl+Y restore the exact calibrated pre-create and created
@@ -69,7 +73,7 @@ first-selected state, the lane then selects slide 2 by pointer, returns to slide
 the selected slide, and proves Ctrl+Z restores the exact three-slide state.
 Every later row is gated on its predecessor and retains calibrated thumbnail
 and status crops. The required FreeP IDs are
-`slide-pane-new-slide-create`, `slide-pane-new-slide-undo`,
+`nested-keytip-prefix-deferral`, `slide-pane-new-slide-create`, `slide-pane-new-slide-undo`,
 `slide-pane-new-slide-redo`, `slide-pane-keyboard-context-open`,
 `slide-pane-keyboard-context-dismissal`, `slide-pane-pointer-context-open`, and
 `slide-pane-pointer-context-dismissal`, followed by
