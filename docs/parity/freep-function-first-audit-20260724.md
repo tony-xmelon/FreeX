@@ -1067,3 +1067,11 @@ their shared geometry formulas already scaled around the authored node count. Th
 removed; diagrams at six and eight nodes now remain live, preserve their node text, and stay
 inside the authored frame for WPF and Avalonia consumers. Minimum-node validation remains intact;
 this is a functional/editability slice with no new PowerPoint raster-fidelity claim.
+
+### 2026-07-29 SmartArt relationship arrow/ellipse long-node layouts
+
+Basic Relationship and Opposing Ideas still rejected authored diagrams above their small
+node-count bounds even though their shared ellipse and two-sided arrow plans already derived
+spacing from the node count. The ceilings are removed; larger diagrams now remain live, preserve
+node text, and stay inside the authored frame for both hosts. Minimum-node validation remains
+active; this is a functional/editability slice with no new PowerPoint raster-fidelity claim.
