@@ -31,7 +31,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Host/MainWindow.cs",
-                       "sha256":  "b1d67fae7a8ce60c8933aa3fac37ca1e725a12ab07a121c9c96a6148b70cce1b"
+                       "sha256":  "1e970214f6fce037a287c918b69837829b48e07f5bdbc320052f195aded58455"
                    },
                    {
                        "path":  "freep/FreeP.App.Host/MainWindow.WholeWindowVisualEvidence.cs",
@@ -43,7 +43,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Avalonia/MainWindow.cs",
-                       "sha256":  "a0319ff849a3042d926f9dda9ff9857f08e6a8dae0a17900a79b483775ff7b42"
+                       "sha256":  "82d23a67bfa65cf33aa12b5753aa7a1baf49fa8c71606cdd5b13697fda4f9584"
                    },
                    {
                        "path":  "freep/FreeP.App.Avalonia/MainWindow.WholeWindowVisualEvidence.cs",
