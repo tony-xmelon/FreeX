@@ -1084,3 +1084,45 @@ ceiling is removed; larger diagrams now use a bounded radial ring of editable ca
 shapes, preserve node text, and stay inside the authored frame for both hosts. The original
 three/four-node geometry remains unchanged; exact PowerPoint radial arrow orientation and
 visual metrics remain separate fidelity work.
+
+### 2026-07-29 local-file hyperlink activation
+
+PowerPoint slideshow hyperlinks can target local workbooks, documents, and media files, but the
+shared launcher previously rejected every `file:` URI. Local file URIs are now accepted by the
+shared WPF/Avalonia launcher while remote UNC-style file hosts remain blocked with the existing
+unsafe schemes. This is a functional slideshow activation slice; it makes no visual or external
+document-rendering claim.
+
+The same guarded policy now flows through the shared Insert Hyperlink dialog, so local-file
+targets can be authored as well as activated. Remote UNC-style file hosts remain rejected by the
+shared URI validator; this closes the end-to-end local-file hyperlink workflow without changing
+the visual-rendering claim.
+
+External RTF paste now preserves local-file `HYPERLINK` fields through the same policy, including
+fields at the end of a pasted document, while remote file-host targets remain unlinked. This
+keeps pasted workbook/document links activatable without widening the unsafe-scheme boundary.
+
+### 2026-07-30 External RTF field-run preservation
+
+External RTF paste now retains safe non-hyperlink field tokens such as `PAGE` together with their
+cached result text in FreeP's existing `FieldRun` model, while `HYPERLINK` continues through the
+dedicated URI policy. Field font and color survive the PPTX writer/reader boundary as well. This
+closes a functional paste/package loss without inventing Word field calculation semantics or making
+a visual-fidelity claim.
+
+### 2026-07-30 SmartArt non-tree relationship preservation
+
+SmartArt data-part regeneration now retains authored non-tree `dgm:cxn` relationships such as
+`presOf` and `presParOf` when their endpoints survive an outline edit, while still regenerating
+the model-owned `parOf` hierarchy and dropping only dangling connections. This closes a package
+semantics loss in edited org-chart and presentation-relationship diagrams without making a new
+visual-fidelity claim.
+
+### 2026-07-29 WPF recording capability truthfulness
+
+WPF MediaComposition export was previously advertised as having narration and camera capture
+whenever Windows was present, even when no recording devices were available. Capability detection
+now derives those flags from the Windows recording-device catalog, reports the available subset in
+the host reason, and keeps FFmpeg handoff text aligned with the detected capability instead of
+claiming captured-media support it does not provide. Encoding and export behavior are unchanged;
+this is a device-backed readiness/functionality correction with focused host coverage.
