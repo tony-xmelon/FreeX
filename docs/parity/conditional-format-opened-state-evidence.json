@@ -3,7 +3,7 @@
     "generatedBy":  "tools/Generate-ConditionalFormatOpenedStateEvidence.ps1",
     "source":  "docs/parity/functional-parity-classification.json",
     "summary":  {
-                    "conditionalFormatPopupGalleryRows":  34,
+                    "conditionalFormatPopupGalleryRows":  38,
                     "conditionalFormatPopupCatalogItems":  38,
                     "captureTargets":  3,
                     "completeOpenedStateCaptureTargets":  0,
@@ -149,7 +149,7 @@
                      "id":  "3 Arrows",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -157,7 +157,7 @@
                      "id":  "3 Arrows (Gray)",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -165,7 +165,7 @@
                      "id":  "3 Flags",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -173,7 +173,7 @@
                      "id":  "3 Signs",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -181,7 +181,7 @@
                      "id":  "3 Symbols",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -189,7 +189,7 @@
                      "id":  "3 Symbols (Uncircled)",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -197,7 +197,7 @@
                      "id":  "3 Traffic Lights",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -205,7 +205,7 @@
                      "id":  "3 Traffic Lights (Rimmed)",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -213,7 +213,7 @@
                      "id":  "4 Arrows",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -221,7 +221,7 @@
                      "id":  "4 Arrows (Gray)",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -229,7 +229,7 @@
                      "id":  "4 Ratings",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -237,7 +237,7 @@
                      "id":  "4 Red To Black",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -245,7 +245,7 @@
                      "id":  "4 Traffic Lights",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -253,7 +253,7 @@
                      "id":  "5 Arrows",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -261,7 +261,7 @@
                      "id":  "5 Arrows (Gray)",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -269,7 +269,7 @@
                      "id":  "5 Boxes",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -277,7 +277,7 @@
                      "id":  "5 Quarters",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -285,7 +285,7 @@
                      "id":  "5 Ratings",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -293,7 +293,7 @@
                      "id":  "A Date Occurring",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -301,7 +301,7 @@
                      "id":  "Above Average",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -309,7 +309,7 @@
                      "id":  "Below Average",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -317,7 +317,7 @@
                      "id":  "Between",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -325,7 +325,7 @@
                      "id":  "Bottom 10 Items",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -333,7 +333,15 @@
                      "id":  "Bottom 10%",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
+                     "runtimeCatalogBacked":  true,
+                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
+                 },
+                 {
+                     "id":  "Clear Rules",
+                     "tab":  "Home",
+                     "group":  "Styles",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -341,7 +349,7 @@
                      "id":  "Color Scales",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -349,7 +357,7 @@
                      "id":  "Data Bars",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -357,7 +365,7 @@
                      "id":  "Duplicate Values",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -365,7 +373,7 @@
                      "id":  "Equal To",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -373,7 +381,7 @@
                      "id":  "Greater Than",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -381,7 +389,15 @@
                      "id":  "Less Than",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
+                     "runtimeCatalogBacked":  true,
+                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
+                 },
+                 {
+                     "id":  "Manage Rules",
+                     "tab":  "Home",
+                     "group":  "Styles",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -389,7 +405,23 @@
                      "id":  "More Rules",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
+                     "runtimeCatalogBacked":  true,
+                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
+                 },
+                 {
+                     "id":  "New Formula Rule",
+                     "tab":  "Home",
+                     "group":  "Styles",
+                     "classification":  "runtime-catalog-item",
+                     "runtimeCatalogBacked":  true,
+                     "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
+                 },
+                 {
+                     "id":  "New Rule",
+                     "tab":  "Home",
+                     "group":  "Styles",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -397,7 +429,7 @@
                      "id":  "Text that Contains",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -405,7 +437,7 @@
                      "id":  "Top 10 Items",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  },
@@ -413,7 +445,7 @@
                      "id":  "Top 10%",
                      "tab":  "Home",
                      "group":  "Styles",
-                     "classification":  "pseudo-command-gallery-item",
+                     "classification":  "runtime-catalog-item",
                      "runtimeCatalogBacked":  true,
                      "openedStateEvidenceStatus":  "needs-paired-opened-state-capture"
                  }
