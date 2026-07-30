@@ -1136,3 +1136,14 @@ that native identity and regenerate editable centered descending bands with a te
 Change Layout, insertion, package read/reopen, undo-capable host routing, and both compositor
 consumers are covered. This is a function/package parity slice; PowerPoint-authoritative raster
 metrics remain separate visual work.
+
+### 2026-07-30 ordinary-shape fill and outline transparency authoring
+
+PowerPoint stores fill and outline transparency independently from the underlying color, theme
+reference, gradient, dash, width, and line-end geometry. FreeP now exposes opaque, 50%, and fully
+transparent presets for both ordinary-shape fills and outlines through the shared undoable command
+bus, with matching WPF and Avalonia ribbon registrations. Solid and gradient fills plus solid and
+gradient outlines preserve their authored structure while only alpha changes; focused
+Presentation, WPF, Avalonia, and generated-command-inventory coverage verifies the routes,
+undo behavior, and round-trip. This is a functional/package authoring slice and makes no new
+raster-fidelity claim.
