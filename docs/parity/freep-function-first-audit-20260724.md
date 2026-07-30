@@ -1136,3 +1136,13 @@ that native identity and regenerate editable centered descending bands with a te
 Change Layout, insertion, package read/reopen, undo-capable host routing, and both compositor
 consumers are covered. This is a function/package parity slice; PowerPoint-authoritative raster
 metrics remain separate visual work.
+
+### 2026-07-30 consolidated SmartArt live-layout integration
+
+The verified SmartArt admissions are now consolidated on current `origin/main`: picture-list
+variants, segmented and multidirectional cycles, diverging radial, radial cluster, inverted
+pyramid, Circle Arrow Process, and Vertical Arrow List. The package reader/writer, insertion
+factory, Change Layout, WPF, and Avalonia routes are covered together rather than remaining on
+separate feature branches. The regenerated command inventory reports 581/581 shared commands
+with zero actionable WPF or Avalonia gaps. This consolidates functional/package evidence only;
+PowerPoint-authoritative geometry and raster fidelity remain separately measured.
