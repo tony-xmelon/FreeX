@@ -1183,3 +1183,12 @@ attached connectors through the existing geometry path. WPF and Avalonia registe
 commands and localized ribbon entries. Focused shared command, WPF round-trip/ribbon, Avalonia
 headless-route, localization, and generated-inventory checks pass; this is functional/package
 authoring parity and makes no new PowerPoint raster-fidelity claim.
+
+### 2026-07-31 grouped Animation Pane names
+
+The Animation Pane already supported animations attached to nested group children, but its label
+resolver searched only the slide's top-level shape list. PowerPoint shows the authored child name
+in that timeline, so grouped animations previously appeared as generic `Shape <id>` rows. The
+shared planner now resolves names through the existing recursive shape hit-test path; WPF and
+Avalonia consume the same corrected timeline plan. Focused planner, WPF pane, and Avalonia pane
+tests pass. This is a functional review/editing workflow fix with no new render-fidelity claim.
