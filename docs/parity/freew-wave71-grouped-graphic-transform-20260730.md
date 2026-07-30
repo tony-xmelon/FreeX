@@ -5,3 +5,10 @@ FreeW's grouped-child command accepted local rotation and flip edits for picture
 Validation is managed-only in this slice. The previous Linux probe was removed because it had no
 deterministic authored fixture or semantic UI readback and always returned a blocked result; no physical
 Linux evidence is claimed.
+
+Managed verification passed:
+
+- Core grouped-transform model test: 1/1.
+- DOCX transform round-trip test: 1/1.
+- WPF host, ribbon route, and source-contract tests: 4/4.
+- Avalonia grouped Chart/SmartArt runtime test: 1/1.

@@ -8,10 +8,22 @@ The established Linux X11 harness now has a dedicated `formula-whole-range-point
 
 Each result requires calibrated screenshots, formula-bar clipboard text, committed cell-package formula readback where applicable, and `formula-whole-range-point-postcondition.txt`. The PowerShell runner validates the exact semantic postcondition and fails closed for missing, malformed, or failed evidence.
 
-The physical run is pending orchestrator execution. Future command, using reserved port `6711` and the unique UTC-stamped output directory produced by the runner:
+## Verification
+
+The managed source-contract guard passed 1/1.
+
+Physical Linux validation passed all three interactions:
 
 ```powershell
-pwsh -NoProfile -ExecutionPolicy Bypass -File .\tools\Run-FreeXLinuxInteractionValidation.ps1 -PhysicalOnly -PhysicalProbeSelector formula-whole-range-point -Port 6711 -TimeoutMinutes 20
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-FreeXLinuxInteractionValidation.ps1 -PhysicalOnly -PhysicalProbeSelector formula-whole-range-point -Port 6711 -TimeoutMinutes 20
 ```
 
-Expected output root: `artifacts/linux-interactive/freex/interaction-validation/<UTC timestamp>/x11-validation/`.
+The session manifest reports 3 passed, 0 failed:
+
+- Column header: formula-bar and committed-cell readback both equal `=SUM(B:B)`.
+- Row header: formula-bar and committed-cell readback both equal `=SUM(3:3)`.
+- Select-all corner: active-edit readback equals `=SUM(A1:XFD1048576)`, followed by an exact blank-cell readback after cancellation.
+
+Evidence:
+`artifacts/linux-interactive/freex/sessions/20260730T212641359Z/x11-validation/x11-input-results.json`.
+The runner removed its harness-owned container after completion.
