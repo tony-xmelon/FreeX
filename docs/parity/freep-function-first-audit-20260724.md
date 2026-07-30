@@ -1164,3 +1164,11 @@ reader/writer, insertion factory, Change Layout, and both WPF and Avalonia host 
 ordered down-arrow stages preserve editable node text and package identity instead of falling
 back to cached-only drawing content. This is a functional/package parity slice; exact PowerPoint
 arrow proportions remain separate visual work.
+
+### 2026-07-31 Inverted Pyramid SmartArt admission
+
+The native `invertedPyramid` layout now remains live and editable through the FreeP package
+reader, insertion factory, Change Layout, and both WPF and Avalonia host routes. Its ordered
+nodes render as descending editable bands rather than falling back to cached-only drawing data.
+This is a functional/package parity slice; exact PowerPoint band proportions remain separate
+visual work.

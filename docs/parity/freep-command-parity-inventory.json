@@ -9539,6 +9539,40 @@
       ]
     },
     {
+      "commandId": "freep.insert-smartart-inverted-pyramid",
+      "label": "Inverted Pyramid",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Inverted Pyramid",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Inverted Pyramid",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
       "commandId": "freep.insert-smartart-labeled-hierarchy",
       "label": "Labeled Hierarchy",
       "wpfPresent": true,
@@ -16571,6 +16605,40 @@
           "groupId": "smartart-layouts",
           "group": "SmartArt Layouts",
           "label": "Interlocking Rings",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.smartart.layout.inverted-pyramid",
+      "label": "Inverted Pyramid",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Inverted Pyramid",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Inverted Pyramid",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
