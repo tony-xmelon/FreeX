@@ -59,17 +59,17 @@ dotnet test tests/FreeX.App.Avalonia.Tests/FreeX.App.Avalonia.Tests.csproj --con
 
 Result: 2 passed, 0 failed.
 
-## Residual and physical selector
+## Physical selector
 
-The managed/headless contract is covered. A physical Linux/X11/VNC probe was not run in this slice.
-The proposed selector is `pivot-table-details-double-click`:
+The `pivot-table-details-double-click` selector extends the existing Linux/X11 runner:
 
-1. Open the deterministic pivot fixture with Category, Quarter, and Amount source columns.
-2. Double-click rendered value cell `F4` in the PivotTable.
-3. Assert that the active sheet name starts with `Detail`, detail `A1:C2` reads
-   `Category|Quarter|Amount` and `A|Q1|10`, and no inline cell editor is visible.
-4. Capture before, pointer-double-click, and after screenshots plus workbook readback.
+1. Open the deterministic `FreeX_wave50_pivot_fields.xlsx` fixture.
+2. Physically double-click rendered PivotTable value cell `F2`.
+3. Read detail `A1:C2` through X11 clipboard input and require
+   `Region|Category|Amount` plus `North|Hardware|100`.
+4. Save and inspect the OOXML package for a second sheet named `Detail` with the same values.
+5. Capture before, immediately-after-double-click, and readback screenshots plus a semantic
+   postcondition transcript.
 
-The remaining risk is framework/input delivery on the real Linux surface: the managed route is
-covered, but the selector still needs to prove that the physical double-click reaches the Avalonia
-cell event path and that the detail-sheet transition is observable through the harness.
+The managed and runner contracts are covered. The selector still needs its physical Docker run
+before the real Linux input-delivery residual can be closed.
