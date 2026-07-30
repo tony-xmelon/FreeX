@@ -1126,3 +1126,14 @@ now derives those flags from the Windows recording-device catalog, reports the a
 the host reason, and keeps FFmpeg handoff text aligned with the detected capability instead of
 claiming captured-media support it does not provide. Encoding and export behavior are unchanged;
 this is a device-backed readiness/functionality correction with focused host coverage.
+
+### 2026-07-30 SmartArt picture-list family admissions
+
+The native `trapezoidList`, `pictureStrips`, `verticalPictureList`, and `horizontalPictureList`
+SmartArt layouts now remain live and editable across the FreeP package, model, insertion, and
+Change Layout paths. Node pictures, text, ordering, and native layout identity survive the
+PPTX round trip, and both WPF and Avalonia host routes retain the same editable content instead
+of degrading these layouts to static placeholders. The generated command inventory is now
+567/567 shared commands with zero actionable WPF or Avalonia gaps. This is a functional/package
+parity admission; exact PowerPoint proportions, styling, and raster fidelity remain separate
+visual work.
