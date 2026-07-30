@@ -48,11 +48,29 @@ Added/updated focused host tests around:
 - Escape restore displaying the defined name for an exact named-range selection.
 - Go To source refresh using the same name-box selection formatter.
 
-## Remaining Gaps
+## Wave67 Completion Note - 2026-07-30
 
-- The Name Box drop-down list now has FreeX visual evidence for workbook defined names, but it is still not an Excel-like selectable list of defined names, tables, and objects.
-- Table/object names in the Name Box remain out of scope for this slice.
-- Ambiguous overlapping names are resolved deterministically by alphabetic name order; this is sufficient for stable FreeX behavior but has not been exhaustively compared against every Excel duplicate/overlap scenario.
+The dropdown residual is now implemented through the shared `NameBoxDropdownPlanner` presentation
+contract consumed by both WPF and Avalonia. It projects workbook-global names, active-sheet-scoped
+names, structured tables, and visible named drawing objects. Selection uses each host's production
+navigation/object-selection route, including sheet switching for targets on another sheet. Typed A1,
+defined-name, table-name, casing, Escape, and focus-return paths remain unchanged.
+
+Ordering is deterministic: case-insensitive display name, then DefinedName/Table/Object kind, then
+sheet id and object id. Duplicate display names are retained as separate entries rather than silently
+collapsing targets. Focused shared, WPF, and Avalonia tests cover the ordering, collisions, table body
+range, and cross-sheet object/table selection routes.
+
+The bounded X11 lane is available through `-PhysicalProbeSelector name-box-dropdown`. It seeds an
+explicit validation-only fixture and drives the Avalonia Popup with real X11 input. The completed lane
+resets to neutral `G10` before each case, records a new visible X11 popup XID in before/open snapshots,
+uses focused keyboard navigation, and verifies exact clipboard values for both `PhysicalName` (`Region`)
+and the non-defined-name `PhysicalTable` (`North\t120`). The managed Avalonia test additionally covers
+keyboard selection of the third table entry and the cross-sheet table/object production routes.
+
+Residuals are limited to the existing physical-environment dependency: the X11 lane requires Docker,
+Xvfb/VNC, xdotool, scrot, ImageMagick, and xclip. Chart object anchors use the model's chart data-range
+start because the current chart model does not expose a separate drawing anchor.
 
 ## 2026-06-10 Visual Evidence Slice
 

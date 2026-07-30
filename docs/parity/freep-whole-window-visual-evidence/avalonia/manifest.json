@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 1280,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-07-22T22:54:16.9701077\u002B00:00",
+  "generatedAtUtc": "2026-07-30T19:09:26.4132400\u002B00:00",
   "captures": [
     {
       "scenarioId": "startup.slide",
@@ -21,9 +21,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892170,
-      "fullImageSha256": "b7fe5c5d5e91bb089854747f7e14f8406ceb03db5a5704c6bac505f7a71d92a0",
-      "clientImageSha256": "b7fe5c5d5e91bb089854747f7e14f8406ceb03db5a5704c6bac505f7a71d92a0",
+      "nonBackgroundPixelCount": 892178,
+      "fullImageSha256": "cdaa5d8550eaf30138f7d0808d3ff285fcc266e5e5ac0ff74aa5f6ff3e834d58",
+      "clientImageSha256": "cdaa5d8550eaf30138f7d0808d3ff285fcc266e5e5ac0ff74aa5f6ff3e834d58",
       "semanticState": {
         "scenarioId": "startup.slide",
         "host": "avalonia",
@@ -122,7 +122,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -140,9 +153,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892198,
-      "fullImageSha256": "a837ef4101ac190af162540417edb3cbd1c6fe3e6365e2118fc2b1f5c12f1d53",
-      "clientImageSha256": "a837ef4101ac190af162540417edb3cbd1c6fe3e6365e2118fc2b1f5c12f1d53",
+      "nonBackgroundPixelCount": 892206,
+      "fullImageSha256": "2f774bee5ba4628f6a09971944b50621b17e321fec48694bbd6992c0d72d4b57",
+      "clientImageSha256": "2f774bee5ba4628f6a09971944b50621b17e321fec48694bbd6992c0d72d4b57",
       "semanticState": {
         "scenarioId": "startup.notes",
         "host": "avalonia",
@@ -165,7 +178,7 @@
         "backstageOpen": false,
         "backstagePane": "",
         "focusedRole": "textbox",
-        "focusedLabel": "",
+        "focusedLabel": "Notes",
         "statusText": "Slide 2 / 3",
         "showGridlines": true,
         "showGuides": true,
@@ -241,7 +254,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -259,9 +285,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892186,
-      "fullImageSha256": "329d4b75601877b45969a623de9529c2fa02c6c21f825ec4de24b04a2d4b68f0",
-      "clientImageSha256": "329d4b75601877b45969a623de9529c2fa02c6c21f825ec4de24b04a2d4b68f0",
+      "nonBackgroundPixelCount": 892194,
+      "fullImageSha256": "2a0890f2b615eb9a3fc9638c4571e58c4880000dc0a85d174d91a703d745c0e2",
+      "clientImageSha256": "2a0890f2b615eb9a3fc9638c4571e58c4880000dc0a85d174d91a703d745c0e2",
       "semanticState": {
         "scenarioId": "ribbon.home",
         "host": "avalonia",
@@ -360,7 +386,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -378,9 +417,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892189,
-      "fullImageSha256": "d431d7e3387d5dbbf286dc1106432808200add57f95e94196ab8839d097aff4b",
-      "clientImageSha256": "d431d7e3387d5dbbf286dc1106432808200add57f95e94196ab8839d097aff4b",
+      "nonBackgroundPixelCount": 892197,
+      "fullImageSha256": "2bba172961c109c7ec93c21ccd48466e5245e15a0a8802a24ba744013a12ee48",
+      "clientImageSha256": "2bba172961c109c7ec93c21ccd48466e5245e15a0a8802a24ba744013a12ee48",
       "semanticState": {
         "scenarioId": "ribbon.insert",
         "host": "avalonia",
@@ -479,7 +518,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027insert\u0027; expected \u0027insert\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -497,9 +549,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892174,
-      "fullImageSha256": "d5055e7810d43eef6b47c1576d43764f8045bc005d6ee262c47243d89bc9f11b",
-      "clientImageSha256": "d5055e7810d43eef6b47c1576d43764f8045bc005d6ee262c47243d89bc9f11b",
+      "nonBackgroundPixelCount": 892182,
+      "fullImageSha256": "5da15e8a7f0bd8f888bdc1102e72d077c25d71c3a7ffde045550f1bab073e7a8",
+      "clientImageSha256": "5da15e8a7f0bd8f888bdc1102e72d077c25d71c3a7ffde045550f1bab073e7a8",
       "semanticState": {
         "scenarioId": "ribbon.design",
         "host": "avalonia",
@@ -598,7 +650,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027design\u0027; expected \u0027design\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -616,9 +681,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892120,
-      "fullImageSha256": "a31c57a9761512be3baeea75977350ff782e496a7173047abb163d52f5774c2e",
-      "clientImageSha256": "a31c57a9761512be3baeea75977350ff782e496a7173047abb163d52f5774c2e",
+      "nonBackgroundPixelCount": 892128,
+      "fullImageSha256": "911f52ddf0c8db9dc2b1d2044cf43c8af07e3345ddabc56e791ff9acec6c3826",
+      "clientImageSha256": "911f52ddf0c8db9dc2b1d2044cf43c8af07e3345ddabc56e791ff9acec6c3826",
       "semanticState": {
         "scenarioId": "ribbon.transitions",
         "host": "avalonia",
@@ -717,7 +782,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027transitions\u0027; expected \u0027transitions\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -735,9 +813,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892108,
-      "fullImageSha256": "13ac5bd0a87a8a67f20042ae6c82c4fd5fcb3337db7dc1c45ac179bb70b6e4de",
-      "clientImageSha256": "13ac5bd0a87a8a67f20042ae6c82c4fd5fcb3337db7dc1c45ac179bb70b6e4de",
+      "nonBackgroundPixelCount": 892116,
+      "fullImageSha256": "20363cebe33cf2a41ec7c14532da97673dcd3779596e0c8141f1311c1da69632",
+      "clientImageSha256": "20363cebe33cf2a41ec7c14532da97673dcd3779596e0c8141f1311c1da69632",
       "semanticState": {
         "scenarioId": "ribbon.animations",
         "host": "avalonia",
@@ -836,7 +914,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027animations\u0027; expected \u0027animations\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -854,9 +945,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 891977,
-      "fullImageSha256": "c193e766aec3cdcab31a960db55594c43a95e276a2411fbca5318912a78faed0",
-      "clientImageSha256": "c193e766aec3cdcab31a960db55594c43a95e276a2411fbca5318912a78faed0",
+      "nonBackgroundPixelCount": 891985,
+      "fullImageSha256": "8ad0bc332284734420e03d2984b9c8a691865b1b870c52404e409a40a34ad027",
+      "clientImageSha256": "8ad0bc332284734420e03d2984b9c8a691865b1b870c52404e409a40a34ad027",
       "semanticState": {
         "scenarioId": "ribbon.view",
         "host": "avalonia",
@@ -955,7 +1046,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1076,7 +1180,20 @@
             "passed": true,
             "detail": "Backstage pane is \u0027Info\u0027; expected \u0027Info\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1197,7 +1314,20 @@
             "passed": true,
             "detail": "Backstage pane is \u0027Recent\u0027; expected \u0027Recent\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1318,7 +1448,20 @@
             "passed": true,
             "detail": "Backstage pane is \u0027New from template\u0027; expected \u0027New from template\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1337,8 +1480,8 @@
       "sourceDpiX": 96,
       "sourceDpiY": 96,
       "nonBackgroundPixelCount": 805206,
-      "fullImageSha256": "0070085e5349326a10770f6ebf5fb24e93b0103f560006d4a97cae9fe92e2c14",
-      "clientImageSha256": "0070085e5349326a10770f6ebf5fb24e93b0103f560006d4a97cae9fe92e2c14",
+      "fullImageSha256": "1968e07095dac2a09a80e1759e3b024328c1deb91fc106ca61a4446a5e64f5ec",
+      "clientImageSha256": "1968e07095dac2a09a80e1759e3b024328c1deb91fc106ca61a4446a5e64f5ec",
       "semanticState": {
         "scenarioId": "backstage.print",
         "host": "avalonia",
@@ -1439,7 +1582,20 @@
             "passed": true,
             "detail": "Backstage pane is \u0027Print\u0027; expected \u0027Print\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1560,7 +1716,20 @@
             "passed": true,
             "detail": "Backstage pane is \u0027Export\u0027; expected \u0027Export\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1681,7 +1850,20 @@
             "passed": true,
             "detail": "Backstage pane is \u0027Options\u0027; expected \u0027Options\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1700,8 +1882,8 @@
       "sourceDpiX": 96,
       "sourceDpiY": 96,
       "nonBackgroundPixelCount": 805089,
-      "fullImageSha256": "c4464c03789e7adc91e04f1cd86af57dad506875ecb372fc7f6d3c8f79cd977a",
-      "clientImageSha256": "c4464c03789e7adc91e04f1cd86af57dad506875ecb372fc7f6d3c8f79cd977a",
+      "fullImageSha256": "054489ce3407ec83f203217662fcc5ee15cc40bbbfe32f5313c22aeac4a07046",
+      "clientImageSha256": "054489ce3407ec83f203217662fcc5ee15cc40bbbfe32f5313c22aeac4a07046",
       "semanticState": {
         "scenarioId": "backstage.account",
         "host": "avalonia",
@@ -1802,7 +1984,20 @@
             "passed": true,
             "detail": "Backstage pane is \u0027Account\u0027; expected \u0027Account\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1820,9 +2015,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892198,
-      "fullImageSha256": "4581f7caee5adb8d67f1539092ec7874fb61ccfd6a0519f40c3d3ee662664471",
-      "clientImageSha256": "4581f7caee5adb8d67f1539092ec7874fb61ccfd6a0519f40c3d3ee662664471",
+      "nonBackgroundPixelCount": 892206,
+      "fullImageSha256": "3e2400d5f015da9690bce33f4afc9c1db01e0e6bc151412695a9ba1fe526268d",
+      "clientImageSha256": "3e2400d5f015da9690bce33f4afc9c1db01e0e6bc151412695a9ba1fe526268d",
       "semanticState": {
         "scenarioId": "status.slide-2",
         "host": "avalonia",
@@ -1921,7 +2116,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1939,9 +2147,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 891977,
-      "fullImageSha256": "6df3cc6c6b17abca8b9d45f9b8bad4073ef6483e4838d7573011d6cfa2314879",
-      "clientImageSha256": "6df3cc6c6b17abca8b9d45f9b8bad4073ef6483e4838d7573011d6cfa2314879",
+      "nonBackgroundPixelCount": 891985,
+      "fullImageSha256": "38e64f8244290f1dcaa12a3de1e5a9e74b51df40c193d32a9034a547b08b7376",
+      "clientImageSha256": "38e64f8244290f1dcaa12a3de1e5a9e74b51df40c193d32a9034a547b08b7376",
       "semanticState": {
         "scenarioId": "view.gridlines-guides",
         "host": "avalonia",
@@ -2047,7 +2255,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -2065,9 +2286,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892189,
-      "fullImageSha256": "011bca342a3888f1d0c1934db28ea90a0580557e6668eb5156a05efb9496bd61",
-      "clientImageSha256": "011bca342a3888f1d0c1934db28ea90a0580557e6668eb5156a05efb9496bd61",
+      "nonBackgroundPixelCount": 892197,
+      "fullImageSha256": "0c0991347fe732d9019e4969127aaaa8fec009d058d91a27ad7e5f8b49564728",
+      "clientImageSha256": "0c0991347fe732d9019e4969127aaaa8fec009d058d91a27ad7e5f8b49564728",
       "semanticState": {
         "scenarioId": "view.clean-canvas",
         "host": "avalonia",
@@ -2173,7 +2394,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -2191,9 +2425,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 891977,
-      "fullImageSha256": "b54c1924a2b44ef8896f82024fd25fb2683f5a26623e3eaa8fbfcdaf09935e91",
-      "clientImageSha256": "b54c1924a2b44ef8896f82024fd25fb2683f5a26623e3eaa8fbfcdaf09935e91",
+      "nonBackgroundPixelCount": 891985,
+      "fullImageSha256": "207a27d786516851e994a660df19b01e0fa2d425bfcf2ae80cc97425ee492e59",
+      "clientImageSha256": "207a27d786516851e994a660df19b01e0fa2d425bfcf2ae80cc97425ee492e59",
       "semanticState": {
         "scenarioId": "view.zoom-fit",
         "host": "avalonia",
@@ -2299,7 +2533,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -2317,9 +2564,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 891977,
-      "fullImageSha256": "89377abf1e064068b25f2cdda4a10c76e93023a33f1350b35c00b440ed12ff7a",
-      "clientImageSha256": "89377abf1e064068b25f2cdda4a10c76e93023a33f1350b35c00b440ed12ff7a",
+      "nonBackgroundPixelCount": 891985,
+      "fullImageSha256": "7d15fbc09bf296e9aa686348a8dacf4f86442ace66fb7207329ca001d729c3c7",
+      "clientImageSha256": "7d15fbc09bf296e9aa686348a8dacf4f86442ace66fb7207329ca001d729c3c7",
       "semanticState": {
         "scenarioId": "view.zoom-200",
         "host": "avalonia",
@@ -2425,7 +2672,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -2443,9 +2703,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892201,
-      "fullImageSha256": "f1397e9b9f047a6244f9cb0ea32193f5f9b25887c81f66a6d36e04b373f87c44",
-      "clientImageSha256": "f1397e9b9f047a6244f9cb0ea32193f5f9b25887c81f66a6d36e04b373f87c44",
+      "nonBackgroundPixelCount": 892209,
+      "fullImageSha256": "2415488dd41fe4f00812e23a6bb9c75207f545cea575eee64c2b88a0c25a7be8",
+      "clientImageSha256": "2415488dd41fe4f00812e23a6bb9c75207f545cea575eee64c2b88a0c25a7be8",
       "semanticState": {
         "scenarioId": "workspace.slide-pane",
         "host": "avalonia",
@@ -2544,7 +2804,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027insert\u0027; expected \u0027insert\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -2562,9 +2835,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 891989,
-      "fullImageSha256": "8422b75f335321498ee93f37560d5172806fa7059794588a6a8899fe8ffabc85",
-      "clientImageSha256": "8422b75f335321498ee93f37560d5172806fa7059794588a6a8899fe8ffabc85",
+      "nonBackgroundPixelCount": 891997,
+      "fullImageSha256": "00f33d6526399997fea174c67821b08e4d84fb01ccca61254c86ecd4ac64bc6d",
+      "clientImageSha256": "00f33d6526399997fea174c67821b08e4d84fb01ccca61254c86ecd4ac64bc6d",
       "semanticState": {
         "scenarioId": "workspace.notes-pane",
         "host": "avalonia",
@@ -2587,7 +2860,7 @@
         "backstageOpen": false,
         "backstagePane": "",
         "focusedRole": "textbox",
-        "focusedLabel": "",
+        "focusedLabel": "Notes",
         "statusText": "Slide 2 / 3",
         "showGridlines": true,
         "showGuides": true,
@@ -2663,7 +2936,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -2681,9 +2967,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892174,
-      "fullImageSha256": "2cd85ab9ed6a691d855025809d9c1e0cffe50ea353d0d43e2b1af990d53c8104",
-      "clientImageSha256": "2cd85ab9ed6a691d855025809d9c1e0cffe50ea353d0d43e2b1af990d53c8104",
+      "nonBackgroundPixelCount": 892182,
+      "fullImageSha256": "40abf2672084dfea0bd016eb3d6aa62fb4409a65671a686bf57351f001553cb6",
+      "clientImageSha256": "40abf2672084dfea0bd016eb3d6aa62fb4409a65671a686bf57351f001553cb6",
       "semanticState": {
         "scenarioId": "workspace.canvas",
         "host": "avalonia",
@@ -2784,7 +3070,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027design\u0027; expected \u0027design\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -2802,9 +3101,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892186,
-      "fullImageSha256": "7e93da614c031edca86838b300ff3e41cb7ec1f8e380cb9653110c32dadb7c7f",
-      "clientImageSha256": "7e93da614c031edca86838b300ff3e41cb7ec1f8e380cb9653110c32dadb7c7f",
+      "nonBackgroundPixelCount": 892194,
+      "fullImageSha256": "6c5a475c7f608fd31a1130e2b4296dc4c195ae2853f8bc00f100e14394d7d4e5",
+      "clientImageSha256": "6c5a475c7f608fd31a1130e2b4296dc4c195ae2853f8bc00f100e14394d7d4e5",
       "semanticState": {
         "scenarioId": "editor.rich-text-selection",
         "host": "avalonia",
@@ -2925,7 +3224,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": true,
+          "selectionStart": 10,
+          "selectionEnd": 35,
+          "selectedText": "revenue review highlights",
+          "bounds": {
+            "x": 359.75,
+            "y": 252.66666666666666,
+            "width": 261.3333333333333,
+            "height": 76.66666666666667,
+            "isVisible": true
+          }
+        }
       },
       "limitations": []
     },
@@ -2943,9 +3255,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892186,
-      "fullImageSha256": "c6fea6b664b4978ac571857591014eaede224a366c4189cbfd999ac2fe3780c1",
-      "clientImageSha256": "c6fea6b664b4978ac571857591014eaede224a366c4189cbfd999ac2fe3780c1",
+      "nonBackgroundPixelCount": 892194,
+      "fullImageSha256": "97db2e522c3c62bd8fabdd59887ac190bd2defd116e007738d881ae1161d26a4",
+      "clientImageSha256": "97db2e522c3c62bd8fabdd59887ac190bd2defd116e007738d881ae1161d26a4",
       "semanticState": {
         "scenarioId": "editor.rich-text-caret",
         "host": "avalonia",
@@ -3066,7 +3378,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -3084,9 +3409,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 890525,
-      "fullImageSha256": "fd882bcaa20014c20580ef60fcb785faaa51a0dba3c64b2a22570d96a07efe63",
-      "clientImageSha256": "fd882bcaa20014c20580ef60fcb785faaa51a0dba3c64b2a22570d96a07efe63",
+      "nonBackgroundPixelCount": 889523,
+      "fullImageSha256": "7d5f5bf92442c0293e8b5eff71086e5608c7651e2d49bab6a25449a657ea0d40",
+      "clientImageSha256": "7d5f5bf92442c0293e8b5eff71086e5608c7651e2d49bab6a25449a657ea0d40",
       "semanticState": {
         "scenarioId": "review.comments-pane",
         "host": "avalonia",
@@ -3189,7 +3514,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -3207,9 +3545,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 891733,
-      "fullImageSha256": "12a3572032f12bbbcae5eb08e76b74ac35a293ab756bfeff0d0a13c5cf0e8ca8",
-      "clientImageSha256": "12a3572032f12bbbcae5eb08e76b74ac35a293ab756bfeff0d0a13c5cf0e8ca8",
+      "nonBackgroundPixelCount": 891741,
+      "fullImageSha256": "32551d483bc81df8494bf2084bdcc22be9f844e9d09cb3e96721bf07825e4a4b",
+      "clientImageSha256": "32551d483bc81df8494bf2084bdcc22be9f844e9d09cb3e96721bf07825e4a4b",
       "semanticState": {
         "scenarioId": "review.accessibility-pane",
         "host": "avalonia",
@@ -3312,7 +3650,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -3330,9 +3681,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892186,
-      "fullImageSha256": "8378c04ad6cad828cdf7813ffffcbf94c02b11fbeb298d3c662a90cfa2d2f00b",
-      "clientImageSha256": "8378c04ad6cad828cdf7813ffffcbf94c02b11fbeb298d3c662a90cfa2d2f00b",
+      "nonBackgroundPixelCount": 892194,
+      "fullImageSha256": "78b7b323c8f57f9b233c698763cac7ad9c845e4586ac1d02ea7c5f6b49b10115",
+      "clientImageSha256": "78b7b323c8f57f9b233c698763cac7ad9c845e4586ac1d02ea7c5f6b49b10115",
       "semanticState": {
         "scenarioId": "review.alt-text-pane",
         "host": "avalonia",
@@ -3435,7 +3786,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -3453,9 +3817,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892010,
-      "fullImageSha256": "d6b548778eca69f82e5b9290a5d2bf033c68b85990324627f3b33e1b2e474b1e",
-      "clientImageSha256": "d6b548778eca69f82e5b9290a5d2bf033c68b85990324627f3b33e1b2e474b1e",
+      "nonBackgroundPixelCount": 892018,
+      "fullImageSha256": "52162e29b7bda0e4db7188f2de91c980b516c603796f6dc8211369c3c55fa203",
+      "clientImageSha256": "52162e29b7bda0e4db7188f2de91c980b516c603796f6dc8211369c3c55fa203",
       "semanticState": {
         "scenarioId": "review.reading-order-pane",
         "host": "avalonia",
@@ -3558,7 +3922,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -3576,9 +3953,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892186,
-      "fullImageSha256": "03f8daccf2e46f0a4df49345e1054306b2df75313b63e3acaa2b3b4436f2ce69",
-      "clientImageSha256": "03f8daccf2e46f0a4df49345e1054306b2df75313b63e3acaa2b3b4436f2ce69",
+      "nonBackgroundPixelCount": 892194,
+      "fullImageSha256": "85867c264a4ee9298f1f4d23db7047a67d5a7359bb4d6af65a94737d6c1d032b",
+      "clientImageSha256": "85867c264a4ee9298f1f4d23db7047a67d5a7359bb4d6af65a94737d6c1d032b",
       "semanticState": {
         "scenarioId": "review.proofing-pane",
         "host": "avalonia",
@@ -3681,7 +4058,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -3699,9 +4089,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 892186,
-      "fullImageSha256": "aab7bae2c7b9743b69d2876c98a447e47d95a37f787836e74ad9afa5eb78f6be",
-      "clientImageSha256": "aab7bae2c7b9743b69d2876c98a447e47d95a37f787836e74ad9afa5eb78f6be",
+      "nonBackgroundPixelCount": 892194,
+      "fullImageSha256": "ac341627598e1df0a32753bc35b82dfcd3a721277171f1b6111c027b5df1012b",
+      "clientImageSha256": "ac341627598e1df0a32753bc35b82dfcd3a721277171f1b6111c027b5df1012b",
       "semanticState": {
         "scenarioId": "accessibility.media-caption-pane",
         "host": "avalonia",
@@ -3804,7 +4194,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -3822,9 +4225,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 891251,
-      "fullImageSha256": "6aaec204309c863fef4058348088bbfc4158e87cd5bcb4b7b10a4b853201652d",
-      "clientImageSha256": "6aaec204309c863fef4058348088bbfc4158e87cd5bcb4b7b10a4b853201652d",
+      "nonBackgroundPixelCount": 891259,
+      "fullImageSha256": "b644e5be34a6cdc4091e01e1324253c5199c43d1dc8d682b4d87e73f8febd43f",
+      "clientImageSha256": "b644e5be34a6cdc4091e01e1324253c5199c43d1dc8d682b4d87e73f8febd43f",
       "semanticState": {
         "scenarioId": "context.smartart-text-pane",
         "host": "avalonia",
@@ -3927,7 +4330,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -3945,9 +4361,9 @@
       "dpiY": 96,
       "sourceDpiX": 96,
       "sourceDpiY": 96,
-      "nonBackgroundPixelCount": 888303,
-      "fullImageSha256": "180f903430b8892b7c1d14c489b8799cfdc5f8916c0b3818e057e21c8b9c36d2",
-      "clientImageSha256": "180f903430b8892b7c1d14c489b8799cfdc5f8916c0b3818e057e21c8b9c36d2",
+      "nonBackgroundPixelCount": 888311,
+      "fullImageSha256": "6eba9cf8e740fad8ae2303fbf663113c7987b0832f58006fa8f5ea27046c92ca",
+      "clientImageSha256": "6eba9cf8e740fad8ae2303fbf663113c7987b0832f58006fa8f5ea27046c92ca",
       "semanticState": {
         "scenarioId": "animations.animation-pane",
         "host": "avalonia",
@@ -4050,7 +4466,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027animations\u0027; expected \u0027animations\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     }

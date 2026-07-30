@@ -5,7 +5,7 @@
   "targetDpi": 96,
   "logicalClientWidth": 1280,
   "logicalClientHeight": 760,
-  "generatedAtUtc": "2026-07-22T22:52:55.2538649\u002B00:00",
+  "generatedAtUtc": "2026-07-30T19:08:20.7148785\u002B00:00",
   "captures": [
     {
       "scenarioId": "startup.slide",
@@ -22,8 +22,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890658,
-      "fullImageSha256": "b0e27ffa4408605a2eacc06a209031a06b1e0d07345355cf2f4310487ee91116",
-      "clientImageSha256": "b0e27ffa4408605a2eacc06a209031a06b1e0d07345355cf2f4310487ee91116",
+      "fullImageSha256": "5a6d9169e1f031bff5541ab4c83a480d95930200841d1595e84700e8bab32d51",
+      "clientImageSha256": "5a6d9169e1f031bff5541ab4c83a480d95930200841d1595e84700e8bab32d51",
       "semanticState": {
         "scenarioId": "startup.slide",
         "host": "wpf",
@@ -122,7 +122,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -141,8 +154,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890829,
-      "fullImageSha256": "3e148e7d412dcd6b98aaba66f1ce8a1b3cc5078617c48677e533c2dbce332c4c",
-      "clientImageSha256": "3e148e7d412dcd6b98aaba66f1ce8a1b3cc5078617c48677e533c2dbce332c4c",
+      "fullImageSha256": "1bb3b83dd0745cfc00361ef902022b2baeecfc4033bbbe215f38c40c1da01461",
+      "clientImageSha256": "1bb3b83dd0745cfc00361ef902022b2baeecfc4033bbbe215f38c40c1da01461",
       "semanticState": {
         "scenarioId": "startup.notes",
         "host": "wpf",
@@ -165,7 +178,7 @@
         "backstageOpen": false,
         "backstagePane": "",
         "focusedRole": "textbox",
-        "focusedLabel": "",
+        "focusedLabel": "Notes",
         "statusText": "Slide 2 / 3",
         "showGridlines": true,
         "showGuides": true,
@@ -241,7 +254,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -260,8 +286,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890584,
-      "fullImageSha256": "7f011eb3b1435e1c30bfa89a5fd50ae1cb993f357038d01b82454434a470914d",
-      "clientImageSha256": "7f011eb3b1435e1c30bfa89a5fd50ae1cb993f357038d01b82454434a470914d",
+      "fullImageSha256": "14acb6948a437dcdd7e2a52f0de13e82592f787ba775c2e3676e383169b9f494",
+      "clientImageSha256": "14acb6948a437dcdd7e2a52f0de13e82592f787ba775c2e3676e383169b9f494",
       "semanticState": {
         "scenarioId": "ribbon.home",
         "host": "wpf",
@@ -360,7 +386,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -379,8 +418,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890590,
-      "fullImageSha256": "692c3a0fffb77d9510b76535650c615cb66eecfc79ca83eeb6e06f35fe6a2d05",
-      "clientImageSha256": "692c3a0fffb77d9510b76535650c615cb66eecfc79ca83eeb6e06f35fe6a2d05",
+      "fullImageSha256": "507857e62765df3018804548529bb854393485c2845b3fb8cda1d6081f6cca9f",
+      "clientImageSha256": "507857e62765df3018804548529bb854393485c2845b3fb8cda1d6081f6cca9f",
       "semanticState": {
         "scenarioId": "ribbon.insert",
         "host": "wpf",
@@ -479,7 +518,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027insert\u0027; expected \u0027insert\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -498,8 +550,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890569,
-      "fullImageSha256": "372b878206d1bc2ed73a69357662e0ef09052fe0176f37164506abfee496b227",
-      "clientImageSha256": "372b878206d1bc2ed73a69357662e0ef09052fe0176f37164506abfee496b227",
+      "fullImageSha256": "2ef56cce87615ea3d59f96724b787a7beebc5cd17e3f4bead8627246ac64a5c4",
+      "clientImageSha256": "2ef56cce87615ea3d59f96724b787a7beebc5cd17e3f4bead8627246ac64a5c4",
       "semanticState": {
         "scenarioId": "ribbon.design",
         "host": "wpf",
@@ -598,7 +650,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027design\u0027; expected \u0027design\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -717,7 +782,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027transitions\u0027; expected \u0027transitions\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -736,8 +814,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890500,
-      "fullImageSha256": "e6a7735ee5aceb95228b54da0f49fb17ecbea73a77cba52b781077e216355e29",
-      "clientImageSha256": "e6a7735ee5aceb95228b54da0f49fb17ecbea73a77cba52b781077e216355e29",
+      "fullImageSha256": "9eda821e16a64e4a1700261bc6c7f13d3e8cf669d4ba549c23e7112c0e077321",
+      "clientImageSha256": "9eda821e16a64e4a1700261bc6c7f13d3e8cf669d4ba549c23e7112c0e077321",
       "semanticState": {
         "scenarioId": "ribbon.animations",
         "host": "wpf",
@@ -836,7 +914,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027animations\u0027; expected \u0027animations\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -855,8 +946,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890602,
-      "fullImageSha256": "f8db99335482e50ef125c887f9c1419dc01a86bd1e64a062fc8f8648fc7944a8",
-      "clientImageSha256": "f8db99335482e50ef125c887f9c1419dc01a86bd1e64a062fc8f8648fc7944a8",
+      "fullImageSha256": "773bb1e7000260142f10d9d46d95561057d17c78250bfec284ef5700c851febf",
+      "clientImageSha256": "773bb1e7000260142f10d9d46d95561057d17c78250bfec284ef5700c851febf",
       "semanticState": {
         "scenarioId": "ribbon.view",
         "host": "wpf",
@@ -955,7 +1046,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1076,7 +1180,20 @@
             "passed": true,
             "detail": "Backstage pane is \u0027Info\u0027; expected \u0027Info\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1094,9 +1211,9 @@
       "dpiY": 96,
       "sourceDpiX": 144,
       "sourceDpiY": 144,
-      "nonBackgroundPixelCount": 796128,
-      "fullImageSha256": "2b9e2c05db3a27538b7ba79ad7f4840dde46b972a26383b374670d2efdd5c851",
-      "clientImageSha256": "2b9e2c05db3a27538b7ba79ad7f4840dde46b972a26383b374670d2efdd5c851",
+      "nonBackgroundPixelCount": 797707,
+      "fullImageSha256": "3b696c457838887fb1e8107055be9559261291b074dc99960fe7d6a3be80ca3d",
+      "clientImageSha256": "3b696c457838887fb1e8107055be9559261291b074dc99960fe7d6a3be80ca3d",
       "semanticState": {
         "scenarioId": "backstage.recent",
         "host": "wpf",
@@ -1197,7 +1314,20 @@
             "passed": true,
             "detail": "Backstage pane is \u0027Recent\u0027; expected \u0027Recent\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1318,7 +1448,20 @@
             "passed": true,
             "detail": "Backstage pane is \u0027New from template\u0027; expected \u0027New from template\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1337,8 +1480,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 803447,
-      "fullImageSha256": "fbd46b3ab68cba95d3b3569079b9d09f41f4c36c3625f3152034028f56ab2ab6",
-      "clientImageSha256": "fbd46b3ab68cba95d3b3569079b9d09f41f4c36c3625f3152034028f56ab2ab6",
+      "fullImageSha256": "35a840be73a9b42e95d54e4d6856683b80cec25427ebb7f41566db534685f8dd",
+      "clientImageSha256": "35a840be73a9b42e95d54e4d6856683b80cec25427ebb7f41566db534685f8dd",
       "semanticState": {
         "scenarioId": "backstage.print",
         "host": "wpf",
@@ -1439,7 +1582,20 @@
             "passed": true,
             "detail": "Backstage pane is \u0027Print\u0027; expected \u0027Print\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1457,9 +1613,9 @@
       "dpiY": 96,
       "sourceDpiX": 144,
       "sourceDpiY": 144,
-      "nonBackgroundPixelCount": 803208,
-      "fullImageSha256": "855400a719cda2b0f21c7391b94a85b14b743dc3959560d8c0350ffafc9ee115",
-      "clientImageSha256": "855400a719cda2b0f21c7391b94a85b14b743dc3959560d8c0350ffafc9ee115",
+      "nonBackgroundPixelCount": 803148,
+      "fullImageSha256": "b410155aad3496e9720519d784e296cc8ef3f5b02c4534f13c21c35487908ac5",
+      "clientImageSha256": "b410155aad3496e9720519d784e296cc8ef3f5b02c4534f13c21c35487908ac5",
       "semanticState": {
         "scenarioId": "backstage.export",
         "host": "wpf",
@@ -1560,7 +1716,20 @@
             "passed": true,
             "detail": "Backstage pane is \u0027Export\u0027; expected \u0027Export\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1681,7 +1850,20 @@
             "passed": true,
             "detail": "Backstage pane is \u0027Options\u0027; expected \u0027Options\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1700,8 +1882,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 803294,
-      "fullImageSha256": "7afb4655e311411b8373bc7f48c0bb0941f6f67504506fe4a84dcc239bb705e0",
-      "clientImageSha256": "7afb4655e311411b8373bc7f48c0bb0941f6f67504506fe4a84dcc239bb705e0",
+      "fullImageSha256": "6ea16d3eeb2149321d1d044f123e965bf101b396b453a403cdf58f41be65a139",
+      "clientImageSha256": "6ea16d3eeb2149321d1d044f123e965bf101b396b453a403cdf58f41be65a139",
       "semanticState": {
         "scenarioId": "backstage.account",
         "host": "wpf",
@@ -1802,7 +1984,20 @@
             "passed": true,
             "detail": "Backstage pane is \u0027Account\u0027; expected \u0027Account\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1821,8 +2016,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890829,
-      "fullImageSha256": "614e02f0d9a3f65a49e2a4c63ae9b424fd6c3a036d029c0a394d7c7ab1e9d8ab",
-      "clientImageSha256": "614e02f0d9a3f65a49e2a4c63ae9b424fd6c3a036d029c0a394d7c7ab1e9d8ab",
+      "fullImageSha256": "11d66f762fe3836b3c5a8bf0014e9429402f0fe02484d334a30db3058e2a87d9",
+      "clientImageSha256": "11d66f762fe3836b3c5a8bf0014e9429402f0fe02484d334a30db3058e2a87d9",
       "semanticState": {
         "scenarioId": "status.slide-2",
         "host": "wpf",
@@ -1921,7 +2116,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -1940,8 +2148,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890602,
-      "fullImageSha256": "d5aab01d20979ab85f59503209fda0f3ccbc4f32b36d696f1d10ada1e1211c36",
-      "clientImageSha256": "d5aab01d20979ab85f59503209fda0f3ccbc4f32b36d696f1d10ada1e1211c36",
+      "fullImageSha256": "593fd27eb6e081c845948e3eb5c9cb9a32a04959a9873bcf09d77cc08a4f9c0c",
+      "clientImageSha256": "593fd27eb6e081c845948e3eb5c9cb9a32a04959a9873bcf09d77cc08a4f9c0c",
       "semanticState": {
         "scenarioId": "view.gridlines-guides",
         "host": "wpf",
@@ -2047,7 +2255,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -2066,8 +2287,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890602,
-      "fullImageSha256": "9f31a8d57ef1d4d6c3cd6bc5f8dd295beb684ad4010ea88039fad9a486f8683e",
-      "clientImageSha256": "9f31a8d57ef1d4d6c3cd6bc5f8dd295beb684ad4010ea88039fad9a486f8683e",
+      "fullImageSha256": "cc213a46ad3c17f75fa09b3eab79eccf14389a28ed6aca7870e506e3faf530c4",
+      "clientImageSha256": "cc213a46ad3c17f75fa09b3eab79eccf14389a28ed6aca7870e506e3faf530c4",
       "semanticState": {
         "scenarioId": "view.clean-canvas",
         "host": "wpf",
@@ -2173,7 +2394,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -2192,8 +2426,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890602,
-      "fullImageSha256": "df7c54803009f8c70e19aa3f1805aad24de578570f2eb0a7e3785e06415c8be7",
-      "clientImageSha256": "df7c54803009f8c70e19aa3f1805aad24de578570f2eb0a7e3785e06415c8be7",
+      "fullImageSha256": "41e46081442a726b3c98bbd10f032bbb55a4f468d3c12614af79cb0a2da507b6",
+      "clientImageSha256": "41e46081442a726b3c98bbd10f032bbb55a4f468d3c12614af79cb0a2da507b6",
       "semanticState": {
         "scenarioId": "view.zoom-fit",
         "host": "wpf",
@@ -2299,7 +2533,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -2318,8 +2565,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890604,
-      "fullImageSha256": "3c74a29f56568875090501e5c82a19d90d2fa39f63f575b170d369518dd550e3",
-      "clientImageSha256": "3c74a29f56568875090501e5c82a19d90d2fa39f63f575b170d369518dd550e3",
+      "fullImageSha256": "b4b5e6f1a52f1961ed28ed3b20fd1e25dd27c0100db94d0e6c55ca215eac0890",
+      "clientImageSha256": "b4b5e6f1a52f1961ed28ed3b20fd1e25dd27c0100db94d0e6c55ca215eac0890",
       "semanticState": {
         "scenarioId": "view.zoom-200",
         "host": "wpf",
@@ -2425,7 +2672,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -2444,8 +2704,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890835,
-      "fullImageSha256": "278b96c8b482c4924b310fff98427ab46e81a22a39f2424b7ca016f0dca2059b",
-      "clientImageSha256": "278b96c8b482c4924b310fff98427ab46e81a22a39f2424b7ca016f0dca2059b",
+      "fullImageSha256": "67749cc2755855e0b679deb3c80d3bf568420635931502a13bebfdd3c1a023cf",
+      "clientImageSha256": "67749cc2755855e0b679deb3c80d3bf568420635931502a13bebfdd3c1a023cf",
       "semanticState": {
         "scenarioId": "workspace.slide-pane",
         "host": "wpf",
@@ -2544,7 +2804,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027insert\u0027; expected \u0027insert\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -2563,8 +2836,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890847,
-      "fullImageSha256": "01ad12d465f4c5e03aa351b647c4a771f4844a502120ed46272d259b89c7c997",
-      "clientImageSha256": "01ad12d465f4c5e03aa351b647c4a771f4844a502120ed46272d259b89c7c997",
+      "fullImageSha256": "3b887aa0561fb6de18bb6a41849774cac1f2768de64bae4ded2bd4632e2c77aa",
+      "clientImageSha256": "3b887aa0561fb6de18bb6a41849774cac1f2768de64bae4ded2bd4632e2c77aa",
       "semanticState": {
         "scenarioId": "workspace.notes-pane",
         "host": "wpf",
@@ -2587,7 +2860,7 @@
         "backstageOpen": false,
         "backstagePane": "",
         "focusedRole": "textbox",
-        "focusedLabel": "",
+        "focusedLabel": "Notes",
         "statusText": "Slide 2 / 3",
         "showGridlines": true,
         "showGuides": true,
@@ -2663,7 +2936,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027view\u0027; expected \u0027view\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -2682,8 +2968,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890569,
-      "fullImageSha256": "1a718f98f6d45e3d67d6801cffbd53339dd6bed155903921ac9fe27c6d2bde44",
-      "clientImageSha256": "1a718f98f6d45e3d67d6801cffbd53339dd6bed155903921ac9fe27c6d2bde44",
+      "fullImageSha256": "167911bcb48a7e22e6816e140c179cb4701d05e5aa55f1eef3c1a3b1a386685b",
+      "clientImageSha256": "167911bcb48a7e22e6816e140c179cb4701d05e5aa55f1eef3c1a3b1a386685b",
       "semanticState": {
         "scenarioId": "workspace.canvas",
         "host": "wpf",
@@ -2784,7 +3070,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027design\u0027; expected \u0027design\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -2803,8 +3102,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890584,
-      "fullImageSha256": "409c77b94b6438169a9322eff9ba71d4c167fbf5e88922553ccee280f20cc161",
-      "clientImageSha256": "409c77b94b6438169a9322eff9ba71d4c167fbf5e88922553ccee280f20cc161",
+      "fullImageSha256": "77abfec4235c6f176736b8ab9613c27fe450ecb22629ead5d2566b91e6436c42",
+      "clientImageSha256": "77abfec4235c6f176736b8ab9613c27fe450ecb22629ead5d2566b91e6436c42",
       "semanticState": {
         "scenarioId": "editor.rich-text-selection",
         "host": "wpf",
@@ -2925,7 +3224,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": true,
+          "selectionStart": 10,
+          "selectionEnd": 35,
+          "selectedText": "revenue review highlights",
+          "bounds": {
+            "x": 359.792,
+            "y": 252.55055118110238,
+            "width": 261.2808398950131,
+            "height": 76.4724409448819,
+            "isVisible": true
+          }
+        }
       },
       "limitations": []
     },
@@ -2944,8 +3256,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890584,
-      "fullImageSha256": "e9b37f92ae374fcd487e3bc0db1abf2bd508a6a83b3a81267bef14e4b502c8b2",
-      "clientImageSha256": "e9b37f92ae374fcd487e3bc0db1abf2bd508a6a83b3a81267bef14e4b502c8b2",
+      "fullImageSha256": "f516787200c75a4d417aca31a387ba890f32bf00284bb64d96979d4f20edc1f0",
+      "clientImageSha256": "f516787200c75a4d417aca31a387ba890f32bf00284bb64d96979d4f20edc1f0",
       "semanticState": {
         "scenarioId": "editor.rich-text-caret",
         "host": "wpf",
@@ -3066,7 +3378,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -3085,8 +3410,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 889195,
-      "fullImageSha256": "6fe7c52a7b6b07eceef8210597143fffa02f51a7f29fe81c5ef1b6e3a44bd68a",
-      "clientImageSha256": "6fe7c52a7b6b07eceef8210597143fffa02f51a7f29fe81c5ef1b6e3a44bd68a",
+      "fullImageSha256": "7d70f1ed40d5bfbf81e5bff0ad78fe8617adb32b2b9ed1c2354d9cabdc6bf060",
+      "clientImageSha256": "7d70f1ed40d5bfbf81e5bff0ad78fe8617adb32b2b9ed1c2354d9cabdc6bf060",
       "semanticState": {
         "scenarioId": "review.comments-pane",
         "host": "wpf",
@@ -3189,7 +3514,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -3208,8 +3546,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890272,
-      "fullImageSha256": "a55346ce3cb96a666ebc96762c549187a5fd949d21e78954e5d21d1a600224b8",
-      "clientImageSha256": "a55346ce3cb96a666ebc96762c549187a5fd949d21e78954e5d21d1a600224b8",
+      "fullImageSha256": "e87a32d8cf647227930372138f9146d74c2135039e98baeeae48a21a94f2a1a1",
+      "clientImageSha256": "e87a32d8cf647227930372138f9146d74c2135039e98baeeae48a21a94f2a1a1",
       "semanticState": {
         "scenarioId": "review.accessibility-pane",
         "host": "wpf",
@@ -3312,7 +3650,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -3331,8 +3682,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890586,
-      "fullImageSha256": "eb874a7b49a318406c6ea86af0a21cdedc5c51846174f601b119d1584f1c687a",
-      "clientImageSha256": "eb874a7b49a318406c6ea86af0a21cdedc5c51846174f601b119d1584f1c687a",
+      "fullImageSha256": "db3408e94d860dc67eceb1991ce759cabaf662c178b1bff4e9804daeff0efd26",
+      "clientImageSha256": "db3408e94d860dc67eceb1991ce759cabaf662c178b1bff4e9804daeff0efd26",
       "semanticState": {
         "scenarioId": "review.alt-text-pane",
         "host": "wpf",
@@ -3435,7 +3786,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -3454,8 +3818,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890352,
-      "fullImageSha256": "19ce57193f98499a1f05463217ca64fb1f2d8becfeed0945d329f701bba51dd6",
-      "clientImageSha256": "19ce57193f98499a1f05463217ca64fb1f2d8becfeed0945d329f701bba51dd6",
+      "fullImageSha256": "ce81a31ca5422ab172f1e840595b7cb1ef1a35c969622595cd29eb5454a296a2",
+      "clientImageSha256": "ce81a31ca5422ab172f1e840595b7cb1ef1a35c969622595cd29eb5454a296a2",
       "semanticState": {
         "scenarioId": "review.reading-order-pane",
         "host": "wpf",
@@ -3558,7 +3922,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -3577,8 +3954,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890586,
-      "fullImageSha256": "57163d666e805655666f26d54c4454f99fc2c7c7d5cdb97ec57c1025d1cbdd61",
-      "clientImageSha256": "57163d666e805655666f26d54c4454f99fc2c7c7d5cdb97ec57c1025d1cbdd61",
+      "fullImageSha256": "72b7094713205246bfc59826b7868fb638eab851519145617833966f2da58da5",
+      "clientImageSha256": "72b7094713205246bfc59826b7868fb638eab851519145617833966f2da58da5",
       "semanticState": {
         "scenarioId": "review.proofing-pane",
         "host": "wpf",
@@ -3681,7 +4058,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -3700,8 +4090,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 890586,
-      "fullImageSha256": "a882ecb259fec5dc7cb7164d7cf1a2fcf7f215a705bade8b13c8acb044e397bb",
-      "clientImageSha256": "a882ecb259fec5dc7cb7164d7cf1a2fcf7f215a705bade8b13c8acb044e397bb",
+      "fullImageSha256": "f791ff1cd2f54b87458a54e4dee32e981cffa5dc930d44cf4758d26299b86d98",
+      "clientImageSha256": "f791ff1cd2f54b87458a54e4dee32e981cffa5dc930d44cf4758d26299b86d98",
       "semanticState": {
         "scenarioId": "accessibility.media-caption-pane",
         "host": "wpf",
@@ -3804,7 +4194,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -3823,8 +4226,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 889318,
-      "fullImageSha256": "5a07bcc9aaf79b968a5ba8a4ad59a4c69e7f1184bb82e4eff29333cdef3a3b67",
-      "clientImageSha256": "5a07bcc9aaf79b968a5ba8a4ad59a4c69e7f1184bb82e4eff29333cdef3a3b67",
+      "fullImageSha256": "00ceb678c1f2204fc35df9bfef84ca19c9083d27410d56f619a2daf1d8dcbb60",
+      "clientImageSha256": "00ceb678c1f2204fc35df9bfef84ca19c9083d27410d56f619a2daf1d8dcbb60",
       "semanticState": {
         "scenarioId": "context.smartart-text-pane",
         "host": "wpf",
@@ -3927,7 +4330,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027home\u0027; expected \u0027home\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     },
@@ -3946,8 +4362,8 @@
       "sourceDpiX": 144,
       "sourceDpiY": 144,
       "nonBackgroundPixelCount": 886237,
-      "fullImageSha256": "5a081c6d69a846cb40e9f10bb5f1b44aa8ff9b8b04e0578217abb5d17f5d06de",
-      "clientImageSha256": "5a081c6d69a846cb40e9f10bb5f1b44aa8ff9b8b04e0578217abb5d17f5d06de",
+      "fullImageSha256": "aaaf5f00a72b9d65cb81487f28e2f20f6aac9e8e28d10a793dfb0a922ad24501",
+      "clientImageSha256": "aaaf5f00a72b9d65cb81487f28e2f20f6aac9e8e28d10a793dfb0a922ad24501",
       "semanticState": {
         "scenarioId": "animations.animation-pane",
         "host": "wpf",
@@ -4050,7 +4466,20 @@
             "passed": true,
             "detail": "Active ribbon tab is \u0027animations\u0027; expected \u0027animations\u0027."
           }
-        ]
+        ],
+        "richEditor": {
+          "active": false,
+          "selectionStart": 0,
+          "selectionEnd": 0,
+          "selectedText": "",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "isVisible": false
+          }
+        }
       },
       "limitations": []
     }

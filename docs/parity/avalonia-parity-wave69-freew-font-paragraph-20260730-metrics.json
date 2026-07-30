@@ -1,0 +1,29 @@
+{
+  "wave": "69",
+  "app": "FreeW",
+  "scope": ["Font", "Paragraph"],
+  "baseline": {
+    "source": "WPF authority paired with pre-edit Avalonia capture",
+    "font": { "changed_pixel_ratio": 0.1296154210, "mean_delta": 11.54652889 },
+    "paragraph": { "changed_pixel_ratio": 0.0962208833, "mean_delta": 10.94811646 }
+  },
+  "after": {
+    "font": { "changed_pixel_ratio": 0.1148984086, "mean_delta": 10.30642760 },
+    "paragraph": { "changed_pixel_ratio": 0.0859424629, "mean_delta": 10.03217415 }
+  },
+  "capture_counts": { "wpf": 10, "avalonia": 10, "unsupported": 0 },
+  "classification": { "genuine_visual_mismatch": 10 },
+  "states": {
+    "font.initial": { "before_changed": 0.1293158568, "after_changed": 0.1124616368, "before_mean": 11.5743904518, "after_mean": 10.13252344, "before_phash": 2, "after_phash": 2 },
+    "font.populated": { "before_changed": 0.1304923274, "after_changed": 0.1133951407, "before_mean": 11.7376086957, "after_mean": 10.26242114, "before_phash": 2, "after_phash": 2 },
+    "font.tab-advanced": { "before_changed": 0.1265937293, "after_changed": 0.1210713271, "before_mean": 10.8307284266, "after_mean": 10.47687159, "before_phash": 1, "after_phash": 1 },
+    "font.tab-font": { "before_changed": 0.1294117647, "after_changed": 0.1124616368, "before_mean": 11.5977706735, "after_mean": 10.13252344, "before_phash": 2, "after_phash": 2 },
+    "font.validation-error": { "before_changed": 0.1322634271, "after_changed": 0.1151023018, "before_mean": 11.9921462063, "after_mean": 10.52779838, "before_phash": 2, "after_phash": 2 },
+    "paragraph.initial": { "before_changed": 0.0976887872, "after_changed": 0.0850038139, "before_mean": 10.8818103229, "after_mean": 9.58075769, "before_phash": 1, "after_phash": 2 },
+    "paragraph.populated": { "before_changed": 0.0976887872, "after_changed": 0.0850038139, "before_mean": 10.8818103229, "after_mean": 9.58075769, "before_phash": 1, "after_phash": 2 },
+    "paragraph.tab-indents-and-spacing": { "before_changed": 0.0976887872, "after_changed": 0.0850038139, "before_mean": 10.8818103229, "after_mean": 9.58075769, "before_phash": 1, "after_phash": 2 },
+    "paragraph.tab-line-and-page-breaks": { "before_changed": 0.0840334782, "after_changed": 0.0823515210, "before_mean": 10.5274370943, "after_mean": 11.02126992, "before_phash": 4, "after_phash": 5 },
+    "paragraph.validation-error": { "before_changed": 0.1040045767, "after_changed": 0.0923493520, "before_mean": 11.5677142131, "after_mean": 10.39732774, "before_phash": 1, "after_phash": 2 }
+  },
+  "residual": "paragraph.tab-line-and-page-breaks improved changed pixels but has a small mean/pHash regression; no threshold or classification was weakened."
+}
