@@ -33,17 +33,14 @@ Passed:
 
 Linux physical evidence:
 
-- The owned container started and was stopped cleanly at `1280x820`, `96 DPI` on port `6094`.
-- A manual X11 pass using the normal `Return` entry route selected the nested leaf, inserted text,
-  saved it, and produced a host-side DOCX whose nested leaf read `Nested leaf\n!`; group transforms
-  and native nested structure remained intact.
-- The dedicated scripted probe captured the selection screenshots but did not persist the insertion
-  in its click/timing path, so the exact validator remained red. The validator correctly failed rather
-  than promoting a false pass. This is now narrowed to probe focus/timing, not the managed
-  path-aware command behavior or DOCX writer/reader.
+- The owned containers started and were stopped cleanly at `1280x820`, `96 DPI` on port `6094`.
+- The deterministic probe selects the nested child once, sends one `Return` entry key, types `!`,
+  saves, stops/restarts, and captures the reopened document.
+- `Run-FreeWWave64NestedTextValidation.ps1` is green with a 4/4 manifest:
+  `Nested leaf` -> `Nested leaf!` -> `Nested leaf!` after reopen.
+- The native child path remains `0,1`, the leaf remains a `Shape`, and both outer/inner transforms are
+  unchanged.
 
 ## Residual
 
-- Align the scripted probe's focus/settling sequence with the successful manual X11 sequence, then
-  rerun the validator to obtain the saved/reopened `Nested leaf!` manifest.
-- Full end-to-end DOCX save/reopen through the physical lane is therefore not yet proven.
+- No Wave 64-specific residual remains for the bounded nested grouped-child text contract.
