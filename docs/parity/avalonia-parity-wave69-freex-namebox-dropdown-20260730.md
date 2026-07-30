@@ -80,8 +80,11 @@ pixel differences.
 
 - Managed Avalonia guard: diagnostic only, `captured:false`, no PNG.
 - Pair contract: accepts only WPF production-popup provenance plus Avalonia native-X11-root-crop provenance.
-- Native source guard: requires one new X11 window, a no-resize `208x136` crop, geometry evidence, and nonblank PNG.
+- Native source guard: requires one new X11 window, a no-resize `208x136` crop, geometry evidence, and a nonblank
+  interior rather than accepting a border-only image.
 - Wrapper guard: validates all native fields and PNG header dimensions before copying the comparison directory.
-
-Docker/X11 physical execution and final image inspection remain with the parent integration lane. No visual pass or
-pixel-diff percentage is claimed until that command produces and a reviewer inspects a fresh native pair.
+- Linux physical selector: 1 passed, 0 failed; calibrated grid geometry was `64x20` at 96 DPI.
+- WPF production capture: 1/1 captured.
+- Native pair comparison: PASS, both surfaces present, zero hard regressions.
+- Informational chrome difference: `8.4793%`, primarily platform text rasterization and the Linux scrollbar.
+- Parent inspection confirmed that both `208x136` images contain the same five rows in the same order.

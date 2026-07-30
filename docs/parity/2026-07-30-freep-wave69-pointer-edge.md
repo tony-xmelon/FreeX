@@ -29,21 +29,21 @@ bounds.
 - Avalonia Linux physical-probe source contract: 1 passed.
 - WPF native pointer parity family: 4 passed.
 
-## Physical follow-up
+## Physical verification
 
-The parent integration session should run the strict Linux lane after merging:
+The parent integration session ran the strict Linux lane after merging:
 
 ```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-FreePRichTextShortcutValidation.ps1 -PointerSelection -Port 6097 -OutputDir artifacts\p69 -SkipPublish -SkipImageBuild
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools\Run-FreePRichTextShortcutValidation.ps1 -PointerSelection -Port 6097 -OutputDir artifacts\p69
 ```
 
-The pointer probe now releases the forward drag 64 pixels below the fixture
-editor and still requires exact forward/reverse clipboard readback, screenshots,
-and an unchanged mounted fixture hash.
+Result: 5 passed, 0 failed. The pointer probe released the forward drag 64
+pixels below the fixture editor and retained exact forward/reverse clipboard
+readback, screenshots, and an unchanged mounted fixture hash.
 
 ## Residuals
 
-The physical Docker result is intentionally not claimed by this agent. Exact
-pixel comparison of the WPF native selection highlight against Avalonia's
+Exact pixel comparison of the WPF native selection highlight against Avalonia's
 custom selection surface remains a separate visual-fidelity task; this slice
-closes input capture, edge clamping, and scroll behavior.
+closes input capture, edge clamping, scroll behavior, and its Linux physical
+proof.

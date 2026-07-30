@@ -59,11 +59,11 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditor.cs",
-                       "sha256":  "872d0ff9a9e7d08b9adcf35cdb1aa8a320d874016524cdfc71e49279d839eb95"
+                       "sha256":  "0e7dbd25ac6eae2549f8c57ae79e24416c9a040f0c5461a235ff6ee3276fa306"
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditingSurface.cs",
-                       "sha256":  "aaa023a3725e7fc15b602ab7ef5bee5373cda82dff80f5751452a802b0d3d760"
+                       "sha256":  "5be2eb37dce6a5590f8f3a3c185bfe7ed5b152758789659633c030a86e30d4f2"
                    },
                    {
                        "path":  "shared/Free.Shared.Ribbon/RibbonVisualMetrics.cs",
