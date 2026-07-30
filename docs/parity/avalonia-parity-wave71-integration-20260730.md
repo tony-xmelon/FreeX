@@ -64,6 +64,21 @@ honestly; the refresh changes evidence, not acceptance thresholds.
 The cross-app dashboard was regenerated and its schema/evidence aggregation
 guard passed.
 
+## Integration verification
+
+- Repository preflight passed end to end.
+- `dotnet build FreeX.slnx --configuration Release` passed with zero warnings
+  and zero errors.
+- The default non-UI lane ran 34,060 tests: 33,926 passed, 133 skipped, and one
+  load-sensitive Text-to-Columns timing assertion failed at 1.420 seconds
+  against a 1-second budget.
+- The exact failed timing test passed in 39 ms when rerun alone.
+- Its complete `FreeX.App.Presentation.Tests` assembly then passed with 4,252
+  passed, 1 skipped, and 0 failed.
+- The preflight repair also force-tracks the three deterministic FreeP
+  rich-selection crops that the Wave70 manifest required but `.gitignore`
+  previously omitted.
+
 ## Remaining
 
 - Continue FreeW visual alignment for the 170 genuine mismatch rows.
