@@ -53,3 +53,17 @@ Detailed evidence:
   behavior.
 - Keep Microsoft Office-authoritative visual baselines explicitly separate from local WPF/Avalonia
   comparisons until fresh Excel, Word, and PowerPoint artifacts exist.
+
+## Integration verification
+
+- Repository preflight passed end to end.
+- `dotnet build FreeX.slnx --configuration Release` passed with zero warnings and zero errors.
+- The default lane ran 34,063 tests: 33,927 passed and 3 load-sensitive performance budgets failed
+  while the assemblies ran concurrently.
+- The Text-to-Columns timing test passed alone in 41 ms and the comment indexed-lookup test passed
+  alone in 59 ms.
+- The affected formula theory passed all 11 cases alone in 688 ms.
+- The complete `FreeX.App.Presentation.Tests` assembly then passed with 4,252 passed, 1 skipped, and
+  0 failed.
+- The complete `FreeX.Core.Formula.Tests` assembly then passed with 4,725 passed, 7 skipped, and
+  0 failed.
