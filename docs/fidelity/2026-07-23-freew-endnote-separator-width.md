@@ -27,3 +27,26 @@ An authored footnote paragraph-spacing probe was rejected: it worsened `f2-footn
 ## Verification
 
 `FreeW.FidelityRender` Release build completed with 0 warnings and 0 errors. The focused `VisualEvidenceFidelityRenderSourceTests` lane currently has one pre-existing failure: it expects the unrelated source token `thisPixW - 2 * ins`, which is absent from `origin/main` as well as this change.
+
+## Cross-Host Follow-Up (2026-07-30)
+
+The exact current `f2-endnotes.docx` package (`SHA-256`
+`8E475EFAE3E2176880FB983D7A6022ED05CECDA73121777207F31B286882C2CA`)
+was exported through Word COM at `816x1056`. Its page-2 separator contains 192
+dark pixels at `y=506`; the shared endnote plan and both host implementations
+were still stretching the rule to the full 624-DIP text width.
+
+`DocumentNoteRegionPlanner` now gives endnotes the same capped 192-DIP rule as
+footnotes. WPF `PageBox` and Avalonia's final-body and overflow paths consume
+that geometry.
+
+| Surface | Before | After |
+| --- | ---: | ---: |
+| WPF page 2 whole mean channel delta | 5.2228 | 5.0950 |
+| WPF endnote ROI `(90,490)-(730,570)` | 21.3952 | 19.2436 |
+| Avalonia page 2 whole mean channel delta | 5.7760 | 5.7277 |
+| WPF/Avalonia page 1 controls | byte-stable | byte-stable |
+
+Focused presentation tests passed `130/130`; focused Avalonia note/evidence
+tests passed `27/27`; `FreeW.FidelityRender` and `FreeW.PageLayoutShot` Release
+builds completed with zero warnings and errors.
