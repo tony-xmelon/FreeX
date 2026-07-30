@@ -7,8 +7,10 @@ contract in `FreeP.App.Compositor`.
 
 ## Shared visual contract
 
-- WPF `InCanvasTextEditor` sets the native selection brush to opaque WPF
-  highlight blue `#0078D7` and selection text to opaque white.
+- WPF `InCanvasTextEditor` remains the native selection authority. The shared
+  contract reproduces the standard WPF platform selection visual: opaque
+  `#0078D7` (`SystemColors.Highlight`) with opaque white
+  (`SystemColors.HighlightText`) selection text.
 - Avalonia `AvaloniaRichTextEditingSurface` uses those same shared color bytes
   for the selection background and redraws selected glyphs with the shared
   white foreground, preserving mixed runs and measured wrapping.
@@ -49,7 +51,7 @@ Run the physical Linux pointer lane through the existing orchestrated harness
 (the orchestrator owns Docker/VNC lifecycle; this slice does not run Docker):
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File tools/Run-FreePRichTextShortcutValidation.ps1 -PointerSelection -OutputRoot <output-directory> -Width 1280 -Height 820 -Dpi 96
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/Run-FreePRichTextShortcutValidation.ps1 -PointerSelection -OutputDir <output-directory> -Width 1280 -Height 820 -Dpi 96
 ```
 
 The strict Linux result must include
@@ -63,7 +65,7 @@ input selected the deterministic text before visual comparison.
 - Shared presentation project: build passed.
 - Avalonia rendering project: build passed.
 - WPF rendering project: build passed.
-- `FreeP.RenderCompare.Tests`: passed, 46/46, including the missing-crop and
+- `FreeP.RenderCompare.Tests`: passed, 47/47, including the missing-crop and
   empty rich-editor-state assertions.
 - WPF and Avalonia host projects: build passed.
 - Physical Linux pointer lane: not run here by instruction; the orchestrator
