@@ -45,26 +45,49 @@ The detailed per-state audit is in
 
 ## FreeP
 
-- WPF and Avalonia rich-text selection colors now share the standard WPF
-  selection contract: `#0078D7` background and white selected text.
+- WPF and Avalonia rich-text selection colors now share one contract for the
+  nominal WPF palette, native selection opacity, and realized 96-DPI colors.
 - Avalonia repaints selected glyphs as well as the selection background.
-- Focused managed verification passed 47/47.
+- Both editors now honor the shared `TextBody.Wrap` model policy. The physical
+  grouped-child fixture exercises wrapped pointer selection, while the
+  deterministic mixed-font visual pair explicitly exercises no-wrap clipping.
+- Avalonia matches WPF horizontal selection reveal, text origin, and fractional
+  left-edge raster placement.
+- Selection adorners render above the active text editor, matching WPF's
+  `AdornerDecorator` z-order without changing interaction coordinates.
+- Focused managed verification passed 441/441 across the shared planner and
+  visual contract, both editors, the Avalonia headless shell, harness source,
+  and paired comparison tests.
 - The physical Linux pointer-selection lane passed 5/5, including exact
   forward and reverse multiline clipboard text and byte-identical source
-  package proof.
+  package proof. Its probe now distinguishes the margined shape layer from the
+  full-stage text-editor overlay and validates under Windows PowerShell 5.1.
 - A fresh managed whole-window run captured 33/33 WPF/Avalonia pairs with zero
-  limitations. It currently reports 32 passes and one honest mismatch,
-  `editor.rich-text-selection`.
-- The complete-window pair for that state passes (`11.592%` changed pixels,
-  mean channel delta `9.658`, perceptual hash distance `2`). Its strict
-  selection crop still fails because the hosts place the editor at different
-  coordinates and the crop differs (`62.713%`, `60.195`, `12`).
+  limitations, zero duplicate captures, and 33 passes.
+- The complete-window rich-selection pair passes at `10.358%` changed pixels,
+  mean channel delta `8.102`, and perceptual hash distance `2`.
+- Its strict `263x78` selection crop also passes at `18.860%` changed pixels,
+  mean channel delta `8.612`, and perceptual hash distance `4`.
 
 Authoritative local evidence:
 
-- `artifacts/wave70-freep-selection`
-- `artifacts/wave70-freep-whole-window`
+- `artifacts/p71`
+- `artifacts/wave70-freep-whole-window-final2`
 
-The selection-crop residual remains active Wave70 work. The committed
-cross-app dashboard is not refreshed until a fresh authoritative FreeP pair
-passes or the residual is published honestly as a mismatch.
+The committed FreeP whole-window evidence and cross-app dashboard are refreshed
+from the passing pair.
+
+## Integration verification
+
+- Repository preflight passed.
+- `dotnet build FreeX.slnx --configuration Release` passed with zero warnings
+  and zero errors.
+- The default non-UI lane completed 33,997 tests: 33,864 passed, 133 skipped,
+  and zero failed.
+- The documented `FreeX.UiTests.slnx` command currently exits without
+  scheduling its two projects because those legacy project files do not set
+  `IsTestProject`. Forcing `FreeX.App.UI.Tests` to execute ran 1,042 tests:
+  1,011 passed, 27 skipped, and four unrelated existing FreeX grid/chart
+  source-contract tests failed. Wave70 changes no FreeX UI source or those
+  tests; the relevant FreeP WPF/Avalonia managed and physical lanes above are
+  green.
