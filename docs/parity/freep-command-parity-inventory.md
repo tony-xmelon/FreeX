@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 561 | 561 | 0 | 0 | 0 | 0 | 0 | 0 | 561 | 0 | 0 | 0 | 0 | 101 |
+| 574 | 574 | 0 | 0 | 0 | 0 | 0 | 0 | 574 | 0 | 0 | 0 | 0 | 101 |
 
 ## Workflow Evidence
 
@@ -172,11 +172,17 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.anim.pane` | Animation Pane | Yes | Yes | none | shared | animations/animation-pane (RibbonToggleButton) | animations/animation-pane (RibbonToggleButton) | Shared callback intent; pane UI remains host-local. |
 | `freep.anim.trigger` | Start | Yes | Yes | none | shared | animations/animation-timing (RibbonComboBox) | animations/animation-timing (RibbonComboBox) | Shared typed timing intent; applies when a selected value and selected-shape animation are available. |
 | `freep.arrange.align-bottom` | Align Bottom | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.align-bottom-to-slide` | Align Bottom to Slide | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.align-center-h` | Center Horiz. | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.align-center-h-to-slide` | Center Horiz. on Slide | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.align-left` | Align Left | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.align-left-to-slide` | Align Left to Slide | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.align-middle` | Center Vert. | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.align-middle-to-slide` | Center Vert. on Slide | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.align-right` | Align Right | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.align-right-to-slide` | Align Right to Slide | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.align-top` | Align Top | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.align-top-to-slide` | Align Top to Slide | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.bring-forward` | Bring Forward | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.bring-to-front` | Bring to Front | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.change-shape` | Change Shape | Yes | Yes | none | shared | home/arrange (RibbonDropdown) | home/arrange (RibbonDropdown) | Available in both generated FreeP ribbon profiles. |
@@ -230,6 +236,9 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.arrange.flip-horizontal` | Flip Horizontal | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.flip-vertical` | Flip Vertical | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.group` | Group | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.rotate-left-90` | Rotate Left 90 | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.rotate-right-90` | Rotate Right 90 | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.rotation-options` | More Rotation Options | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.send-backward` | Send Backward | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.send-to-back` | Send to Back | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.ungroup` | Ungroup | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
