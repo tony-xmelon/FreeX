@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 537 command IDs total.
-- 537 shared across WPF and Avalonia.
+- 561 command IDs total.
+- 561 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 0 intentional shell/profile variances.
@@ -1126,3 +1126,12 @@ now derives those flags from the Windows recording-device catalog, reports the a
 the host reason, and keeps FFmpeg handoff text aligned with the detected capability instead of
 claiming captured-media support it does not provide. Encoding and export behavior are unchanged;
 this is a device-backed readiness/functionality correction with focused host coverage.
+
+### 2026-07-30 SmartArt Picture Strips live layout
+
+PowerPoint's native `pictureStrips` layout now remains live and editable instead of falling back
+to cached artwork. The shared planner and insertion path carry node pictures, the native List
+identity is preserved through package read/write, and WPF/Avalonia expose the same Change Layout
+and insertion route. Focused Presentation, WPF, Avalonia, ribbon, and inventory coverage verifies
+picture payload admission, authored text/order, host registration, and the shared command surface.
+Exact PowerPoint picture-strip proportions remain separate visual-fidelity work.
