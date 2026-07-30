@@ -41,12 +41,19 @@ FREEX_X11_PROBE_SELECTOR=formula-3d-grip \
 The selector emits `formula-3d-grip-*.png` and
 `formula-3d-grip-postcondition.txt`, and the PowerShell runner requires the
 `formula-bar-point-mode-3d-sheet-range-grip` row when focused mode is chosen.
-Docker execution is environment-dependent and is reported separately from
-the managed/source gates.
+
+The focused Linux run passed 1/1. Physical X11 input selected `B2:C3` across
+`Sheet2:Sheet3`, resized it from the middle sheet to `B2:D4`, preserved the
+complete 3-D qualifier, calculated `171`, and crossed a clean-save boundary.
+The probe exercised a 3x3x3 grip-position matrix at 1280x820 and 96 DPI.
+
+Evidence:
+`artifacts/linux-interactive/freex/interaction-validation/20260730T074255Z/interaction-validation.json`.
 
 ## Residual
 
-The focused X11 selector must still be run in a FreeX Linux container with a
-workbook format that preserves formulas across an actual save/reopen cycle.
-The current default harness document is CSV, so the selector records the
-clean-save boundary while managed tests provide the native save/reopen proof.
+The current default harness document is CSV, so physical evidence proves the
+interactive edit and clean-save boundary while managed WPF/Avalonia tests
+provide native workbook save/reopen proof. A future native-workbook physical
+fixture can consolidate those two evidence layers; it is not a missing
+production route in this bounded slice.

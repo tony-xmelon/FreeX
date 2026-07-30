@@ -17,13 +17,20 @@ Wave 65 closes the remaining grouped-child text-direction path loss in FreeW.
   `FREEW_WAVE64_SELECTOR=nested-text-direction` route. That selector invokes the production Drawing
   Format > Text Direction dropdown through X11; its fixed-harness coordinates can be overridden by
   `FREEW_TEXT_DIRECTION_X/Y` and `FREEW_TEXT_DIRECTION_ITEM_X/Y`.
+- Nested-child selection identity now propagates through `FloatingRibbonContextSource`, and the
+  shared Avalonia renderer rebuilds active contextual-tab content on a same-context refresh. This
+  prevents controls from retaining the disabled command state captured for the owning group.
 
-## Verification target
+## Verification
 
 - Core/model nested command tests.
 - WPF host nested selection, undo/redo, and DOCX round-trip tests.
 - Avalonia headless nested selection, command route, undo/redo, and transform-preservation tests.
-- Optional Linux/X11 evidence with the Wave 65 selector and a uniquely named output directory.
+- Shared renderer same-context command-state refresh regression.
+- Linux/X11 physical result: 4 passed, 0 failed. The nested child at path `0,1` changed from
+  `Horizontal` to `Rotate90`, saved, and reopened as `Rotate90` with both group transforms intact.
+- Evidence:
+  `artifacts/freew-wave65-text-direction-20260730-run3/freew-wave65-nested-text-direction-validation.json`.
 
 ## Next residual
 
