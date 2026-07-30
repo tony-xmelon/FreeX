@@ -7,7 +7,9 @@ The current package was exported through Word COM and rasterized at `816x1056`.
 The Avalonia glyph path had the correct approximate top registration but ended
 six pixels above Word's lower ink edge. The calibration is isolated to that
 signature: scale glyphs vertically by `1.125` and compensate the glyph origin
-by `+3` DIPs on Y. It does not alter generic Wave1 or FillGold/ArchUp paths.
+by `+3` DIPs on Y. A follow-up mask measurement reduced the fitted glyph width
+from `0.970` to `0.964` and moved its origin `-1` DIP on X. It does not alter
+generic Wave1 or FillGold/ArchUp paths.
 
 ## Matched Evidence
 
@@ -26,6 +28,18 @@ Fresh Word COM export lifecycle completed `ready`, `opening`, `exporting`, and
 The white-glyph mask moved from `y=236..283` to `y=237..287`, toward Word's
 `y=236..289`. The remaining difference is transformed glyph rasterization,
 not an unregistered object frame.
+
+## Horizontal Follow-Up
+
+The first accepted vertical pass left the glyph mask at `x=333..791`; Word is
+`x=332..787`. The width/origin correction improved the same matched render:
+
+| Surface | Vertical baseline | Width/origin follow-up |
+| --- | ---: | ---: |
+| Avalonia whole page | 10.9063 | 10.4289 |
+| GlowBlue/Wave1 banner ROI | 29.8928 | 20.6596 |
+| Glyph crop `(325,230)-(795,290)` | 39.3619 | 24.7754 |
+| FillGold `Review Copy` control | 6.4801 | 6.4801 |
 
 ## Verification
 
