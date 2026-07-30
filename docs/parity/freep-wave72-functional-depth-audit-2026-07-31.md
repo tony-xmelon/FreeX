@@ -34,8 +34,25 @@ The generated command inventory at this baseline reports **559 total, 559 shared
 - `dotnet test freep/FreeP.App.Rendering.Avalonia.Tests/FreeP.App.Rendering.Avalonia.Tests.csproj --configuration Release --filter "FullyQualifiedName~SlideCanvasMathBaselineTests" --logger "console;verbosity=minimal"` -> **41/41 passed**.
 - `dotnet test freep/FreeP.App.Host.Tests/FreeP.App.Host.Tests.csproj --configuration Release --no-build --no-restore --filter "FullyQualifiedName~SlideCanvasMathBaselineTests" --logger "console;verbosity=minimal"` -> **40/40 passed**.
 
+## Physical Linux baseline
+
+After integration, the existing FreeP family X11 baseline passed **24/24**:
+
+```text
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Run-FamilyLinuxInteractionValidation.ps1 -App FreeP -Port 6723 -OutputDir artifacts/freep-wave72-family-x11
+```
+
+The run covered the seeded animation-pane workflow, keyboard and key-tip routes, context entry,
+backstage overlay, and pointer smoke checks. Its schema contract passed and the harness stopped and
+removed its task-owned container. Evidence is under
+`artifacts/freep-wave72-family-x11/freep/sessions/20260730T223922660Z/family-validation/`.
+
 ## Residual and next probe
 
-This is a managed-evidence audit, not a claim of 100% Linux parity. The remaining high-value validation is physical X11 interaction: run the existing FreeP Linux harness against a fixture containing a rich-text shape, an embedded object with a safe registered test host, a review comment thread, and an animation-pane row; assert semantic state transitions after real pointer/key-tip input. Do not use Docker in this slice. A later probe should also avoid launching real Office processes and should report OLE activation as unavailable when no registered Linux host exists.
+This is not a claim of 100% Linux parity. The remaining high-value validation is a richer physical
+fixture containing a rich-text shape, an embedded object with a safe registered test host, a review
+comment thread, and an animation-pane row, with exact semantic transitions after real pointer and
+key-tip input. A later probe should avoid launching real Office processes and report OLE activation
+as unavailable when no registered Linux host exists.
 
 PowerPoint-authoritative visual baselines, coauthor/notification behavior, and full physical parity across every ribbon/dialog remain evidence-limited and are not closed by this audit.

@@ -69,14 +69,19 @@ dotnet test freew/FreeW.App.Host.Tests/FreeW.App.Host.Tests.csproj -c Release --
   3 passed, 0 failed
 ```
 
-## Physical Linux recommendation
+## Physical Linux result
 
-After integration, rerun the existing real-dialog X11 lane:
+The existing real-dialog X11 lane was rerun after integration:
 
 ```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Run-FreeWTablePropertiesX11Validation.ps1 -Port 6084 -OutputDir artifacts/freew-wave72-table-properties-x11
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Run-FreeWTablePropertiesX11Validation.ps1 -Port 6722 -OutputDir artifacts/freew-wave72-table-properties-x11
 ```
 
-That probe should visit Table, Row, Column, and Cell, edit `IndentFromLeftPt` to `12`, click
-the real OK button, and verify the exact applied table model. This slice did not run Docker by
-request.
+Result: **passed**. The physical probe traversed Table, Row, Column, and Cell, returned to Table,
+edited `IndentFromLeftPt` to `12`, invoked the real OK button, and verified the exact applied table
+model in `artifacts/freew-wave72-table-properties-x11/`. The harness stopped and removed its
+task-owned container.
+
+The fresh seven-state WPF/Avalonia capture was also promoted into the canonical report. It retains
+one pass and six genuine visual mismatches with zero semantic differences. Average changed pixels
+improved from 7.3916% to 7.1952%, and mean channel delta improved from 5.5078 to 5.3590.

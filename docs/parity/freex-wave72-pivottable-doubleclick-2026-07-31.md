@@ -71,5 +71,23 @@ The `pivot-table-details-double-click` selector extends the existing Linux/X11 r
 5. Capture before, immediately-after-double-click, and readback screenshots plus a semantic
    postcondition transcript.
 
-The managed and runner contracts are covered. The selector still needs its physical Docker run
-before the real Linux input-delivery residual can be closed.
+## Physical Linux result
+
+The dedicated Docker/X11 lane passed **1/1**:
+
+```text
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/Run-FreeXLinuxInteractionValidation.ps1 -PhysicalOnly -PhysicalProbeSelector pivot-table-details-double-click -Port 6721 -TimeoutMinutes 20
+```
+
+Evidence:
+
+- `artifacts/linux-interactive/freex/interaction-validation/20260730T222721Z/`
+- calibration passed at 1280 x 801 with a 64 x 20 cell grid;
+- the physical double-click opened `Detail` and did not leave the PivotTable cell in inline edit;
+- X11 clipboard readback returned `Region|Category|Amount` and
+  `North|Hardware|100`;
+- the saved OOXML package contained two sheets and the same `Detail!A1:C2` values;
+- the harness stopped and removed its task-owned container.
+
+This closes the Linux input-delivery residual for the bounded PivotTable value-cell double-click
+route. It does not claim exhaustive physical coverage for every PivotTable gesture.
