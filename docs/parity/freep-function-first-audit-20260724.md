@@ -1126,3 +1126,13 @@ now derives those flags from the Windows recording-device catalog, reports the a
 the host reason, and keeps FFmpeg handoff text aligned with the detected capability instead of
 claiming captured-media support it does not provide. Encoding and export behavior are unchanged;
 this is a device-backed readiness/functionality correction with focused host coverage.
+
+### 2026-07-30 SmartArt Inverted Pyramid live layout
+
+PowerPoint's native `invertedPyramid` layout was previously absent from FreeP's live SmartArt
+allow-list and authoring gallery, so valid packages could only retain their cached drawing. The
+shared authoring planner, PPTX reader, WPF/Avalonia routes, and shared layout engine now preserve
+that native identity and regenerate editable centered descending bands with a terminal point.
+Change Layout, insertion, package read/reopen, undo-capable host routing, and both compositor
+consumers are covered. This is a function/package parity slice; PowerPoint-authoritative raster
+metrics remain separate visual work.
