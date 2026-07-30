@@ -1126,3 +1126,11 @@ now derives those flags from the Windows recording-device catalog, reports the a
 the host reason, and keeps FFmpeg handoff text aligned with the detected capability instead of
 claiming captured-media support it does not provide. Encoding and export behavior are unchanged;
 this is a device-backed readiness/functionality correction with focused host coverage.
+
+### 2026-07-30 Circle Arrow Process SmartArt admission
+
+The native `circleArrowProcess` layout now remains live and editable through the FreeP package
+reader/writer, insertion factory, Change Layout, and both WPF and Avalonia host routes. Its
+process nodes and authored ordering survive the PPTX round trip, while the new layout keeps the
+existing shared process authoring and rendering contracts. This is a functional/package parity
+slice; exact PowerPoint arrow curvature and raster proportions remain separate visual work.
