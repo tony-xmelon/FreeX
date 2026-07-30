@@ -1126,3 +1126,32 @@ now derives those flags from the Windows recording-device catalog, reports the a
 the host reason, and keeps FFmpeg handoff text aligned with the detected capability instead of
 claiming captured-media support it does not provide. Encoding and export behavior are unchanged;
 this is a device-backed readiness/functionality correction with focused host coverage.
+
+### 2026-07-30 SmartArt Inverted Pyramid live layout
+
+PowerPoint's native `invertedPyramid` layout was previously absent from FreeP's live SmartArt
+allow-list and authoring gallery, so valid packages could only retain their cached drawing. The
+shared authoring planner, PPTX reader, WPF/Avalonia routes, and shared layout engine now preserve
+that native identity and regenerate editable centered descending bands with a terminal point.
+Change Layout, insertion, package read/reopen, undo-capable host routing, and both compositor
+consumers are covered. This is a function/package parity slice; PowerPoint-authoritative raster
+metrics remain separate visual work.
+
+### 2026-07-30 ordinary-shape fill and outline transparency authoring
+
+PowerPoint stores fill and outline transparency independently from the underlying color, theme
+reference, gradient, dash, width, and line-end geometry. FreeP now exposes opaque, 50%, and fully
+transparent presets for both ordinary-shape fills and outlines through the shared undoable command
+bus, with matching WPF and Avalonia ribbon registrations. Solid and gradient fills plus solid and
+gradient outlines preserve their authored structure while only alpha changes; focused
+Presentation, WPF, Avalonia, and generated-command-inventory coverage verifies the routes,
+undo behavior, and round-trip. This is a functional/package authoring slice and makes no new
+raster-fidelity claim.
+
+### 2026-07-30 function integration handoff
+
+The verified SmartArt live-layout admissions and ordinary-shape fill/outline transparency
+authoring now coexist on one current-main integration branch. SmartArt keeps package identity,
+node editing, insertion, and Change Layout behavior live across WPF and Avalonia; transparency
+keeps fill and outline alpha independent through the shared undoable command bus and both ribbon
+profiles. The refreshed inventory reports 587/587 shared commands with zero actionable host gaps.
