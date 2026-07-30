@@ -21,7 +21,7 @@ Focused managed tests completed:
 - `NameBoxDropdownPlannerTests`: 3/3 passed.
 - `AvaloniaMainWindowNameBoxStage2Tests`: 12/12 passed.
 - `MainWindowScreenshotTour_CapturesFormulaBarNameBoxEvidence`: 1/1 passed.
-- `LinuxFreeXInteractionValidationToolTests`: 4/4 passed.
+- `LinuxFreeXInteractionValidationToolTests`: 6/6 passed.
 - `AvaloniaInteractionCoverageTests`: 8/8 passed.
 
 Static checks completed:
@@ -33,8 +33,29 @@ Static checks completed:
 
 ## Parent validation
 
-Run the physical probe sequentially from the parent worktree with the normal FreeX Linux validation command and `-PhysicalProbeSelector name-box-dropdown`. The validator now fails closed if any object row is missing, reordered, misidentified, or lacks matching neutral/selected observable state.
+The sequential Linux physical probe passed 6/6 at 1280x820 and 96 DPI:
+
+- Defined name: exact `Region` clipboard readback.
+- Structured table: exact `North<TAB>120` clipboard readback.
+- Chart, picture, shape, and text box: exact projected name, object kind, object ID,
+  selected-object state, Name Box text, and active anchor cell from neutral `J20`.
+
+The run also exposed and closed two harness defects and one product defect:
+
+- Empty JSON fields are now framed with a non-whitespace delimiter instead of
+  collapsing during Bash field splitting.
+- Neutral evidence is emitted after pointer release, when the Name Box refresh is
+  settled.
+- Avalonia now keeps the selected drawing object's name in the Name Box after
+  `RefreshShell`, matching the WPF route instead of replacing it with the anchor
+  cell address.
+
+Strict manifest:
+`artifacts/linux-interactive/freex/interaction-validation/20260730T132717Z/interaction-validation.json`.
 
 ## Limitations
 
-The agent did not run Docker physical validation, per assignment. The WPF tour provides a deterministic same-size open-dropdown baseline through the existing in-process capture at 1180x768, while the Linux harness emits its normal X11 captures and object evidence. A fully automated WPF/Avalonia composite image report remains outside this bounded slice and should be assembled by the parent validation pass.
+The WPF tour provides a deterministic same-size open-dropdown baseline through
+the existing in-process capture at 1180x768, while the Linux harness emits its
+normal X11 captures and exact object evidence. A fully automated WPF/Avalonia
+composite image report remains outside this bounded slice.

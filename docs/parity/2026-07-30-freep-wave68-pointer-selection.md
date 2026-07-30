@@ -29,13 +29,24 @@ readback. The canonical geometry artifact is
 must match the expected two-paragraph text byte-for-byte. The mounted fixture
 hash must remain unchanged because this contract does not edit the document.
 
-Docker physical execution is intentionally deferred to the parent integration
-session, as requested for this slice.
+The parent integration session ran the lane at 1280x820 and 96 DPI. Strict host
+validation passed 5/5:
+
+- the visible FreeP owner and deterministic grouped-child fixture were proven;
+- forward and reverse pointer drags copied the exact two-paragraph transcript;
+- both screenshots and the calibrated pointer geometry were retained; and
+- the fixture remained byte-identical because the pointer lane now skips the
+  unrelated save/undo/redo mutation sequence.
+
+Strict manifest:
+`artifacts/p68/freep/sessions/20260730T134045921Z/freep-rich-text-shortcut-validation/results.json`.
 
 ## Focused verification
 
 - Avalonia pointer drag test: passed, 1/1.
 - WPF native cross-paragraph pointer-selection test: passed, 1/1.
 - Shared pointer-selection planner tests: passed, 5/5.
+- Linux pointer-validation source guard: passed, 1/1.
 - Bash probe syntax, PowerShell runner syntax, JSON schema parsing, and
   deterministic fixture generation: passed.
+- Linux physical contract: passed, 5/5.
