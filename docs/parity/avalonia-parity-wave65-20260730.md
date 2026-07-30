@@ -49,6 +49,8 @@ Detail: `docs/parity/2026-07-30-freep-wave65-caret-navigation.md`
 
 Focused managed coverage:
 
+- Integrated focused matrix: 43 passed, 0 failed across 9 serialized project
+  invocations.
 - FreeX: 18 shared, Avalonia, WPF, and harness-source checks.
 - FreeW: shared command, WPF route/round-trip, Avalonia nested selection, and
   shared contextual renderer refresh checks.
@@ -69,6 +71,13 @@ Evidence:
 - `artifacts/linux-interactive/freex/interaction-validation/20260730T074255Z/interaction-validation.json`
 - `artifacts/freew-wave65-text-direction-20260730-run3/freew-wave65-nested-text-direction-validation.json`
 - `artifacts/freep-wave65-grouped-caret-20260730/freep/sessions/20260730T071559192Z/freep-rich-text-shortcut-validation/results.json`
+
+Repository-wide gates:
+
+- Repository preflight: passed after regenerating the expected FreeP
+  whole-window source-hash manifest.
+- Full `FreeX.slnx` Release build: 0 warnings, 0 errors.
+- Serialized default non-UI suite: 33,574 passed, 0 failed, 133 skipped.
 
 ## Remaining high-value slices
 
