@@ -1137,6 +1137,16 @@ shape changes, and both WPF and Avalonia expose the four Arrange commands. Focus
 localization, WPF host, and Avalonia registration coverage verifies the route; no new raster
 fidelity claim is made.
 
+### 2026-07-31 arbitrary shape rotation authoring
+
+The shared model already preserved arbitrary shape rotation and supported a single-shape
+rotation command, but the hosts exposed only the 90-degree Arrange shortcuts. FreeP now
+provides PowerPoint's More Rotation Options workflow: a shared numeric plan accepts -360 to
+360 degrees, selected editable shapes receive the normalized angle in one undoable batch, and
+attached connectors continue through the existing reroute path. WPF and Avalonia expose the
+same dialog and command id. Focused planner, WPF, Avalonia, and localization tests cover the
+route; no new raster-fidelity claim is made.
+
 ### 2026-07-31 Arrange align-to-slide authoring
 
 PowerPoint's Arrange > Align menu distinguishes aligning objects to the selection from aligning
