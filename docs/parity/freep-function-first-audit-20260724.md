@@ -1126,3 +1126,13 @@ now derives those flags from the Windows recording-device catalog, reports the a
 the host reason, and keeps FFmpeg handoff text aligned with the detected capability instead of
 claiming captured-media support it does not provide. Encoding and export behavior are unchanged;
 this is a device-backed readiness/functionality correction with focused host coverage.
+
+### 2026-07-30 Arrange shape transform authoring
+
+PowerPoint's Arrange surface includes horizontal/vertical flips and 90-degree left/right
+rotation. FreeP already preserved the authored flip flags and had a reversible rotation command,
+but the actions were not reachable from either desktop host. The shared session now batches the
+selected-shape transforms into one undoable operation, re-routes attached connectors after each
+shape changes, and both WPF and Avalonia expose the four Arrange commands. Focused presentation,
+localization, WPF host, and Avalonia registration coverage verifies the route; no new raster
+fidelity claim is made.
