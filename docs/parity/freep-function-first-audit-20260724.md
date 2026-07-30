@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 537 command IDs total.
-- 537 shared across WPF and Avalonia.
+- 561 command IDs total.
+- 561 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 0 intentional shell/profile variances.
@@ -1126,3 +1126,13 @@ now derives those flags from the Windows recording-device catalog, reports the a
 the host reason, and keeps FFmpeg handoff text aligned with the detected capability instead of
 claiming captured-media support it does not provide. Encoding and export behavior are unchanged;
 this is a device-backed readiness/functionality correction with focused host coverage.
+
+### 2026-07-30 SmartArt Vertical Arrow List live layout
+
+PowerPoint's native `verticalArrowList` layout is now admitted as live, editable List-family
+SmartArt instead of falling back to cached artwork. The shared reader, insertion factory,
+Change Layout planner, WPF/Avalonia command routes, and ribbon gallery preserve the native
+layout identity and regenerate one ordered editable down-arrow stage per authored node. Focused
+Presentation, WPF, Avalonia, and ribbon tests cover node order, family admission, insertion,
+registration, and package/cache behavior. Exact PowerPoint arrow proportions and typography remain
+separate visual-fidelity work.
