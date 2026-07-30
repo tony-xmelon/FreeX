@@ -1136,3 +1136,13 @@ selected-shape transforms into one undoable operation, re-routes attached connec
 shape changes, and both WPF and Avalonia expose the four Arrange commands. Focused presentation,
 localization, WPF host, and Avalonia registration coverage verifies the route; no new raster
 fidelity claim is made.
+
+### 2026-07-31 Arrange align-to-slide authoring
+
+PowerPoint's Arrange > Align menu distinguishes aligning objects to the selection from aligning
+them to the slide canvas. FreeP's existing six alignment actions only used the selection bounds,
+so single-shape alignment and multi-shape canvas alignment were missing. The shared model now
+provides an undoable Align-to-Slide command for left, horizontal-center, right, top, vertical-
+center, and bottom placement; WPF and Avalonia expose all six routes. Existing selection-relative
+alignment is unchanged. Focused host, localization, and Avalonia registration coverage verifies
+the route; no new raster fidelity claim is made.
