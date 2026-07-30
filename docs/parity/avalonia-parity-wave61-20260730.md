@@ -70,6 +70,27 @@ The detailed reports and retained artifact paths are:
 The integrated focused total is **261 passed, 0 failed**. Physical evidence
 adds **10 passed, 0 failed** across the three dedicated Linux/X11 workflows.
 
+## Final integration gates
+
+- Repository preflight passed across 208 JSON files, 259 XML-backed files,
+  75 PowerShell tools, 9 workflows, 123 projects, generated documentation,
+  packaging checks, visual-evidence manifests, and 9,581 conflict-marker
+  candidates.
+- `FreeX.slnx` built in Release with **0 warnings and 0 errors**.
+- `FreeX.DefaultTests.slnx` finished with **33,358 passed, 0 failed, and
+  133 skipped** across 19 test assemblies. Its twentieth solution entry is the
+  non-test `FreeX.Fixtures` project.
+- The first all-up test run exposed four concurrent FreeP regressions. Three
+  newly published SmartArt process presets were missing from the insertion
+  factory, while two source/order guards still described the pre-chart-
+  protection and pre-Unicode-PDF call shapes. The implementation and guards
+  were corrected, and the four focused failures passed **4/4**.
+- The final upstream merge exposed one FreeX clipboard regression:
+  alpha-preserving raw PNG data was rejected by `ContainsImage()` before the
+  PNG format was inspected. The gate now applies only to the flattened bitmap
+  fallback; both rich-PNG and bitmap-only focused tests passed **2/2** before
+  the green all-up rerun.
+
 ## Remaining work
 
 - FreeX still needs deeper drag-edit and non-quoted multi-area formula variants
