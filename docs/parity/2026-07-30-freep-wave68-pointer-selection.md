@@ -36,9 +36,6 @@ session, as requested for this slice.
 
 - Avalonia pointer drag test: passed, 1/1.
 - WPF native cross-paragraph pointer-selection test: passed, 1/1.
+- Shared pointer-selection planner tests: passed, 5/5.
 - Bash probe syntax, PowerShell runner syntax, JSON schema parsing, and
   deterministic fixture generation: passed.
-- Shared presentation test execution remains blocked by the existing
-  `FreeP.App.Presentation.Tests` namespace/type-resolution errors across
-  pre-existing files; this slice does not alter that unrelated test-project
-  issue.
