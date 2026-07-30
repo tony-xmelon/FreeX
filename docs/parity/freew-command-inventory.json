@@ -25137,9 +25137,29 @@
       "wpfLocations": [
         {
           "profile": "WPF",
+          "tabId": "chart-format",
+          "tab": "Chart Format",
+          "groupId": "chart-arrange",
+          "group": "Arrange",
+          "label": "Flip Horizontal",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
+        {
+          "profile": "WPF",
           "tabId": "drawing-format",
           "tab": "Drawing Format",
           "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Flip Horizontal",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
+        {
+          "profile": "WPF",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-arrange",
           "group": "Arrange",
           "label": "Flip Horizontal",
           "controlType": "RibbonMenuItem",
@@ -25149,9 +25169,29 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
+          "tabId": "chart-format",
+          "tab": "Chart Format",
+          "groupId": "chart-arrange",
+          "group": "Arrange",
+          "label": "Flip Horizontal",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
+        {
+          "profile": "Avalonia",
           "tabId": "drawing-format",
           "tab": "Drawing Format",
           "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Flip Horizontal",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-arrange",
           "group": "Arrange",
           "label": "Flip Horizontal",
           "controlType": "RibbonMenuItem",
@@ -25179,9 +25219,29 @@
       "wpfLocations": [
         {
           "profile": "WPF",
+          "tabId": "chart-format",
+          "tab": "Chart Format",
+          "groupId": "chart-arrange",
+          "group": "Arrange",
+          "label": "Flip Vertical",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
+        {
+          "profile": "WPF",
           "tabId": "drawing-format",
           "tab": "Drawing Format",
           "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Flip Vertical",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
+        {
+          "profile": "WPF",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-arrange",
           "group": "Arrange",
           "label": "Flip Vertical",
           "controlType": "RibbonMenuItem",
@@ -25191,9 +25251,29 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
+          "tabId": "chart-format",
+          "tab": "Chart Format",
+          "groupId": "chart-arrange",
+          "group": "Arrange",
+          "label": "Flip Vertical",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
+        {
+          "profile": "Avalonia",
           "tabId": "drawing-format",
           "tab": "Drawing Format",
           "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Flip Vertical",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-arrange",
           "group": "Arrange",
           "label": "Flip Vertical",
           "controlType": "RibbonMenuItem",
@@ -25679,9 +25759,29 @@
       "wpfLocations": [
         {
           "profile": "WPF",
+          "tabId": "chart-format",
+          "tab": "Chart Format",
+          "groupId": "chart-arrange",
+          "group": "Arrange",
+          "label": "Rotate",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        },
+        {
+          "profile": "WPF",
           "tabId": "drawing-format",
           "tab": "Drawing Format",
           "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Rotate",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        },
+        {
+          "profile": "WPF",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-arrange",
           "group": "Arrange",
           "label": "Rotate",
           "controlType": "RibbonDropdown",
@@ -25691,9 +25791,29 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
+          "tabId": "chart-format",
+          "tab": "Chart Format",
+          "groupId": "chart-arrange",
+          "group": "Arrange",
+          "label": "Rotate",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
           "tabId": "drawing-format",
           "tab": "Drawing Format",
           "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Rotate",
+          "controlType": "RibbonDropdown",
+          "layout": "Medium"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-arrange",
           "group": "Arrange",
           "label": "Rotate",
           "controlType": "RibbonDropdown",
@@ -25721,9 +25841,29 @@
       "wpfLocations": [
         {
           "profile": "WPF",
+          "tabId": "chart-format",
+          "tab": "Chart Format",
+          "groupId": "chart-arrange",
+          "group": "Arrange",
+          "label": "Rotate Left 90°",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
+        {
+          "profile": "WPF",
           "tabId": "drawing-format",
           "tab": "Drawing Format",
           "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Rotate Left 90°",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
+        {
+          "profile": "WPF",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-arrange",
           "group": "Arrange",
           "label": "Rotate Left 90°",
           "controlType": "RibbonMenuItem",
@@ -25733,9 +25873,29 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
+          "tabId": "chart-format",
+          "tab": "Chart Format",
+          "groupId": "chart-arrange",
+          "group": "Arrange",
+          "label": "Rotate Left 90°",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
+        {
+          "profile": "Avalonia",
           "tabId": "drawing-format",
           "tab": "Drawing Format",
           "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Rotate Left 90°",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-arrange",
           "group": "Arrange",
           "label": "Rotate Left 90°",
           "controlType": "RibbonMenuItem",
@@ -25763,9 +25923,29 @@
       "wpfLocations": [
         {
           "profile": "WPF",
+          "tabId": "chart-format",
+          "tab": "Chart Format",
+          "groupId": "chart-arrange",
+          "group": "Arrange",
+          "label": "Rotate Right 90°",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
+        {
+          "profile": "WPF",
           "tabId": "drawing-format",
           "tab": "Drawing Format",
           "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Rotate Right 90°",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
+        {
+          "profile": "WPF",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-arrange",
           "group": "Arrange",
           "label": "Rotate Right 90°",
           "controlType": "RibbonMenuItem",
@@ -25775,9 +25955,29 @@
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
+          "tabId": "chart-format",
+          "tab": "Chart Format",
+          "groupId": "chart-arrange",
+          "group": "Arrange",
+          "label": "Rotate Right 90°",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
+        {
+          "profile": "Avalonia",
           "tabId": "drawing-format",
           "tab": "Drawing Format",
           "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Rotate Right 90°",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        },
+        {
+          "profile": "Avalonia",
+          "tabId": "smartart-design",
+          "tab": "SmartArt Design",
+          "groupId": "smartart-arrange",
           "group": "Arrange",
           "label": "Rotate Right 90°",
           "controlType": "RibbonMenuItem",
