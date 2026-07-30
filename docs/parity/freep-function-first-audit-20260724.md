@@ -1126,3 +1126,11 @@ now derives those flags from the Windows recording-device catalog, reports the a
 the host reason, and keeps FFmpeg handoff text aligned with the detected capability instead of
 claiming captured-media support it does not provide. Encoding and export behavior are unchanged;
 this is a device-backed readiness/functionality correction with focused host coverage.
+
+### 2026-07-31 Inverted Pyramid SmartArt admission
+
+The native `invertedPyramid` layout now remains live and editable through the FreeP package
+reader, insertion factory, Change Layout, and both WPF and Avalonia host routes. Its ordered
+nodes render as descending editable bands rather than falling back to cached-only drawing data.
+This is a functional/package parity slice; exact PowerPoint band proportions remain separate
+visual work.
