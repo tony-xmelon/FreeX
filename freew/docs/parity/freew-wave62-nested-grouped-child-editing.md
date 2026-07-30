@@ -17,15 +17,16 @@ Wave 62 closes the nested-child residual after Wave 61. A leaf at child path `0,
 powershell -NoProfile -ExecutionPolicy Bypass -File tools/Run-FreeWWave62NestedGroupChildValidation.ps1 -Port 6092 -OutputDir freew/artifacts/wave62-linux
 ```
 
-The physical lane is intentionally FreeW-specific and stops only its owned container. Its current run reaches the nested leaf selection and move stages and captures the corresponding screenshots, but the post-move transformed-handle coordinate still enters the outer-group resize path. The saved DOCX therefore reports this exact blocker:
+The physical lane is intentionally FreeW-specific and stops only its owned container. The completed run selects the nested leaf, moves it, resizes it from the transformed bottom-right handle, saves, and reopens the DOCX through `FreeW.Core.IO`. Exact inspection proves:
 
-- outer placement changed from `180,150` to `187.5,145.5` pt;
-- inner offset/size remained `58,38` / `128,76` pt;
-- leaf path `0,1` moved from `34,21` pt to `68.31251968503938,7.438897637795276` pt;
-- leaf size remained `64,32` pt;
-- `04-nested-child-resized-selected.png` shows outer-group handles rather than leaf handles.
+- outer placement/size/transform remain `180,150` / `240,150` pt / `22deg,flipH=False,flipV=False`;
+- inner offset/size/transform remain `58,38` / `128,76` pt / `-17deg,flipH=False,flipV=True`;
+- leaf path `0,1` moves from `34,21` pt to `68.31251968503938,7.438897637795276` pt;
+- leaf size grows from `64,32` pt to `69.12858267716535,34.9048031496063` pt;
+- leaf transform remains exactly `10deg,flipH=True,flipV=False`;
+- `04-nested-child-resized-selected.png` shows the leaf ellipse with eight handles.
 
-The retained physical evidence is under `freew/artifacts/wave62-linux/freew/sessions/20260730T013154227Z/nested-group-child-wave62/`. The remaining physical residual is to derive the post-move bottom-right handle in the same document-surface coordinate space used by the X11 pointer and prove the resize/save postcondition without selecting the outer group. Managed WPF/Avalonia coverage and the exact DOCX round-trip test pass independently.
+The retained physical evidence is under `freew/artifacts/wave62-linux-followup3/freew/sessions/20260730T015844322Z/nested-group-child-wave62/`, with the exact persisted-geometry manifest at `freew/artifacts/wave62-linux-followup3/freew-wave62-nested-group-child-validation.json`.
 
 ## Residuals
 
