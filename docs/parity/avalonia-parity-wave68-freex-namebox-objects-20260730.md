@@ -9,7 +9,7 @@ The aggregate Wave68 report is intentionally unchanged.
 ## Implementation
 
 - Avalonia's opt-in physical fixture now projects `PhysicalChart`, `PhysicalPicture`, `PhysicalShape`, and `PhysicalTextBox` alongside the existing named range and table.
-- Each object probe starts from neutral cell `G10`, records a baseline event with no selected object, selects the projected dropdown item, and records observable name-box, active-cell, object-kind, and object-id state.
+- Each object probe starts from visible neutral cell `J20`, outside every fixture object, records a baseline event with no selected object, selects the projected dropdown item, and records observable name-box, active-cell, object-kind, and object-id state.
 - The Linux probe writes object rows and a strict postcondition artifact. The PowerShell host validator enforces a fixed contract for every expected ID, including exact expected and observed names, kinds, IDs, order, neutral baseline, stage, name-box text, and active-cell evidence. Status and count metadata are not trusted as identity evidence.
 - The WPF screenshot tour seeds the same four named object kinds and includes them in the existing `freex_formula_name_box_dropdown_opened` open-dropdown capture context.
 - Presentation and Avalonia tests now exercise deterministic ordering and selection of chart, picture, shape, and text-box entries.
