@@ -6,7 +6,7 @@ Wave65 closes the next FreeP residual after grouped-child rich-text formatting: 
 
 ## Production change
 
-The existing `InCanvasRichTextNavigationPlanner` had no production consumer. It now owns renderer-neutral Left/Right, Home/End, Ctrl+Home/Ctrl+End, Ctrl-word movement, and selection-anchor resolution in Avalonia. Avalonia keeps native visual-line geometry for Up/Down and unmodified visual Home/End. WPF continues to use its native `RichTextBox` route; paired tests cover the same logical contract and nested child propagation.
+The new `InCanvasRichTextNavigationPlanner` owns renderer-neutral Left/Right, Home/End, Ctrl+Home/Ctrl+End, Ctrl-word movement, and selection-anchor resolution in Avalonia. Avalonia keeps native visual-line geometry for Up/Down and unmodified visual Home/End. WPF continues to use its native `RichTextBox` route; paired tests cover the same logical contract and nested child propagation.
 
 ## Evidence
 
