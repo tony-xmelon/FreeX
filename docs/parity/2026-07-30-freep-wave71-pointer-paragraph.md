@@ -18,7 +18,7 @@ timeout, or any text mismatch fails the lane.
 
 ## Verification
 
-Focused test execution was attempted, but the worktree's Release outputs were
-locked by another process after the parallel test launch. No Docker command was
-run. The source-contract test and diff checks remain available for the next
-uncontended focused run.
+The managed source-contract guard passed 1/1 on the integration worktree,
+including the ordered probe manifest declaration and the runner's exact
+forward/reverse/paragraph transcript contract. Physical Docker validation is
+pending; no Docker command was run in this change.
