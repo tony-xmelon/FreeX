@@ -1192,3 +1192,14 @@ in that timeline, so grouped animations previously appeared as generic `Shape <i
 shared planner now resolves names through the existing recursive shape hit-test path; WPF and
 Avalonia consume the same corrected timeline plan. Focused planner, WPF pane, and Avalonia pane
 tests pass. This is a functional review/editing workflow fix with no new render-fidelity claim.
+
+### 2026-07-31 nested-group editing routes
+
+PowerPoint applies ordinary editing commands to descendants inside nested groups. FreeP's
+selection/session helpers had recursive lookup, but several command paths still searched only the
+slide root: connector insertion, copy, hyperlink and table lookup, AutoShape changes, and ungroup
+undo could therefore silently miss a selected child. Those paths now resolve the descendant and its
+containing sibling list, while the core command helper also uses recursive lookup so the command
+bus does not discard valid child edits as no-ops. Connector attachment, copy/ungroup, undo, and
+top-level behavior remain covered across WPF and Avalonia. This is functional grouped-object parity
+with no new raster-fidelity claim.
