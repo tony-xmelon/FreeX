@@ -1213,3 +1213,12 @@ picture crop, and picture color-effect routes now resolve grouped descendants th
 recursive lookup, preserving one undoable edit per operation. Focused shared, WPF, and Avalonia
 coverage passes; this is functional grouped-object authoring parity with no new raster-fidelity
 claim.
+
+### 2026-07-31 grouped table-cell editing
+
+PowerPoint keeps tables editable inside groups. FreeP's table-cell planner already handled
+selection, cell navigation, editing, and formatting, but looked only at the slide root. It now
+resolves a grouped table through `ShapeHitTester` in selection, begin-edit, navigation, text,
+paragraph, and value-formatting routes, preserving the existing cell semantics and undo paths.
+Focused shared, WPF, and Avalonia tests pass; this is functional grouped-table parity with no
+new raster claim.
