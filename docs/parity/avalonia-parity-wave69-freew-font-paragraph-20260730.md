@@ -26,7 +26,10 @@ threshold and classifications were unchanged.
 
 ## Evidence
 
-The focused bundle is under `artifacts/freew-wave69-font-paragraph-20260730`.
+The exact metrics are preserved in the tracked
+`docs/parity/avalonia-parity-wave69-freew-font-paragraph-20260730-metrics.json` metadata file.
+The focused capture bundle was generated under `artifacts/freew-wave69-font-paragraph-20260730`
+during validation.
 `baseline/wpf` is the fresh pre-edit WPF authority capture; `final-current/avalonia` is the
 post-edit Avalonia capture; `final-current/compare` is the paired report and heatmap bundle.
 
