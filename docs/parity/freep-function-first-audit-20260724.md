@@ -1156,3 +1156,11 @@ provides an undoable Align-to-Slide command for left, horizontal-center, right, 
 center, and bottom placement; WPF and Avalonia expose all six routes. Existing selection-relative
 alignment is unchanged. Focused host, localization, and Avalonia registration coverage verifies
 the route; no new raster fidelity claim is made.
+
+### 2026-07-30 Vertical Arrow List SmartArt admission
+
+The native `verticalArrowList` layout now remains live and editable through the FreeP package
+reader/writer, insertion factory, Change Layout, and both WPF and Avalonia host routes. Its
+ordered down-arrow stages preserve editable node text and package identity instead of falling
+back to cached-only drawing content. This is a functional/package parity slice; exact PowerPoint
+arrow proportions remain separate visual work.
