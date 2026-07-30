@@ -1147,3 +1147,11 @@ gradient outlines preserve their authored structure while only alpha changes; fo
 Presentation, WPF, Avalonia, and generated-command-inventory coverage verifies the routes,
 undo behavior, and round-trip. This is a functional/package authoring slice and makes no new
 raster-fidelity claim.
+
+### 2026-07-30 function integration handoff
+
+The verified SmartArt live-layout admissions and ordinary-shape fill/outline transparency
+authoring now coexist on one current-main integration branch. SmartArt keeps package identity,
+node editing, insertion, and Change Layout behavior live across WPF and Avalonia; transparency
+keeps fill and outline alpha independent through the shared undoable command bus and both ribbon
+profiles. The refreshed inventory reports 587/587 shared commands with zero actionable host gaps.
