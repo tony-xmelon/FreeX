@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 537 command IDs total.
-- 537 shared across WPF and Avalonia.
+- 561 command IDs total.
+- 561 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 0 intentional shell/profile variances.
@@ -1126,3 +1126,12 @@ now derives those flags from the Windows recording-device catalog, reports the a
 the host reason, and keeps FFmpeg handoff text aligned with the detected capability instead of
 claiming captured-media support it does not provide. Encoding and export behavior are unchanged;
 this is a device-backed readiness/functionality correction with focused host coverage.
+
+### 2026-07-30 SmartArt Trapezoid List live admission
+
+PowerPoint's native `trapezoidList` layout now remains live and editable instead of falling back
+to cached artwork. The shared planner, reader, insertion factory, Change Layout command, WPF and
+Avalonia routes, and ribbon gallery preserve the native List-family identity and reuse the
+existing trapezoid list geometry. Focused Presentation, WPF, Avalonia, ribbon, and generated
+inventory coverage verifies package identity, authored node order, host registration, and the
+two shared command IDs. Exact PowerPoint raster proportions remain separate visual-fidelity work.
