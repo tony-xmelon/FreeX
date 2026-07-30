@@ -8,8 +8,8 @@ slice is selected.
 
 The generated inventory at `docs/parity/freep-command-parity-inventory.json` reports:
 
-- 537 command IDs total.
-- 537 shared across WPF and Avalonia.
+- 565 command IDs total.
+- 565 shared across WPF and Avalonia.
 - 0 actionable missing WPF commands.
 - 0 actionable missing Avalonia commands.
 - 0 intentional shell/profile variances.
@@ -1126,3 +1126,14 @@ now derives those flags from the Windows recording-device catalog, reports the a
 the host reason, and keeps FFmpeg handoff text aligned with the detected capability instead of
 claiming captured-media support it does not provide. Encoding and export behavior are unchanged;
 this is a device-backed readiness/functionality correction with focused host coverage.
+
+### 2026-07-30 ordinary-shape fill and outline transparency authoring
+
+PowerPoint stores fill and outline transparency independently from the underlying color, theme
+reference, gradient, dash, width, and line-end geometry. FreeP now exposes opaque, 50%, and fully
+transparent presets for both ordinary-shape fills and outlines through the shared undoable command
+bus, with matching WPF and Avalonia ribbon registrations. Solid and gradient fills plus solid and
+gradient outlines preserve their authored structure while only alpha changes; the existing PPTX
+reader/writer remains authoritative for package persistence. Focused Presentation, WPF, Avalonia,
+and generated-command-inventory coverage verifies the routes, undo behavior, and round-trip. This
+is a functional/package authoring slice and makes no new raster-fidelity claim.
