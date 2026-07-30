@@ -1126,3 +1126,14 @@ now derives those flags from the Windows recording-device catalog, reports the a
 the host reason, and keeps FFmpeg handoff text aligned with the detected capability instead of
 claiming captured-media support it does not provide. Encoding and export behavior are unchanged;
 this is a device-backed readiness/functionality correction with focused host coverage.
+
+### 2026-07-30 SmartArt cycle and radial family admissions
+
+The native `segmentedCycle`, `multiDirectionalCycle`, `divergingRadial`, and `radialCluster`
+SmartArt layouts now remain live and editable through the package reader/writer, insertion
+factory, Change Layout, and both WPF and Avalonia host routes. Their node text, ordering,
+relationships, and native layout identities survive the PPTX round trip instead of degrading
+to static or generic placeholders. Together with the picture-list family, the generated command
+inventory is now 575/575 shared commands with zero actionable WPF or Avalonia gaps. This is a
+functional/package parity admission; exact PowerPoint styling and visual proportions remain
+separate fidelity work.
