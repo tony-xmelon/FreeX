@@ -227,6 +227,8 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.arrange.distribute-h` | Distribute Horiz. | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.distribute-v` | Distribute Vert. | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.edit-points` | Edit Points | Yes | Yes | none | shared | home/arrange (RibbonToggleButton) | home/arrange (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.flip-horizontal` | Flip Horizontal | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.arrange.flip-vertical` | Flip Vertical | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.group` | Group | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.send-backward` | Send Backward | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.arrange.send-to-back` | Send to Back | Yes | Yes | none | shared | home/arrange (RibbonButton) | home/arrange (RibbonButton) | Available in both generated FreeP ribbon profiles. |

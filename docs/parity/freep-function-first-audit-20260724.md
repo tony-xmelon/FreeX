@@ -1172,3 +1172,14 @@ reader, insertion factory, Change Layout, and both WPF and Avalonia host routes.
 nodes render as descending editable bands rather than falling back to cached-only drawing data.
 This is a functional/package parity slice; exact PowerPoint band proportions remain separate
 visual work.
+
+### 2026-07-31 shape flip authoring
+
+PowerPoint's Arrange surface can mirror selected shapes horizontally or vertically. FreeP already
+preserved the `FlipH` and `FlipV` DrawingML flags through its model, reader, writer, and renderers,
+but neither host exposed an undoable authoring route. The shared command bus now toggles one shape
+or batches a multi-selection into one undo step, restores the prior state on undo/redo, and reroutes
+attached connectors through the existing geometry path. WPF and Avalonia register the same Arrange
+commands and localized ribbon entries. Focused shared command, WPF round-trip/ribbon, Avalonia
+headless-route, localization, and generated-inventory checks pass; this is functional/package
+authoring parity and makes no new PowerPoint raster-fidelity claim.
