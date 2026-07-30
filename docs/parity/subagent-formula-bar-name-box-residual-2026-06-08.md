@@ -62,11 +62,11 @@ collapsing targets. Focused shared, WPF, and Avalonia tests cover the ordering, 
 range, and cross-sheet object/table selection routes.
 
 The bounded X11 lane is available through `-PhysicalProbeSelector name-box-dropdown`. It seeds an
-explicit validation-only fixture and drives the Avalonia flyout with real X11 input. The latest bounded
-run proved the defined-name entry and its resulting clipboard range; table-entry credit remains a
-narrow physical-harness residual because the table click did not yet produce the expected body range.
-The managed Avalonia test does prove the table/object production route, so this is an evidence-lane gap,
-not an unimplemented host route.
+explicit validation-only fixture and drives the Avalonia Popup with real X11 input. The completed lane
+resets to neutral `G10` before each case, records a new visible X11 popup XID in before/open snapshots,
+uses focused keyboard navigation, and verifies exact clipboard values for both `PhysicalName` (`Region`)
+and the non-defined-name `PhysicalTable` (`North\t120`). The managed Avalonia test additionally covers
+keyboard selection of the third table entry and the cross-sheet table/object production routes.
 
 Residuals are limited to the existing physical-environment dependency: the X11 lane requires Docker,
 Xvfb/VNC, xdotool, scrot, ImageMagick, and xclip. Chart object anchors use the model's chart data-range
