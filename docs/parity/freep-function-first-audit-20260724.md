@@ -1126,3 +1126,11 @@ now derives those flags from the Windows recording-device catalog, reports the a
 the host reason, and keeps FFmpeg handoff text aligned with the detected capability instead of
 claiming captured-media support it does not provide. Encoding and export behavior are unchanged;
 this is a device-backed readiness/functionality correction with focused host coverage.
+
+### 2026-07-30 Vertical Arrow List SmartArt admission
+
+The native `verticalArrowList` layout now remains live and editable through the FreeP package
+reader/writer, insertion factory, Change Layout, and both WPF and Avalonia host routes. Its
+ordered down-arrow stages preserve editable node text and package identity instead of falling
+back to cached-only drawing content. This is a functional/package parity slice; exact PowerPoint
+arrow proportions remain separate visual work.
