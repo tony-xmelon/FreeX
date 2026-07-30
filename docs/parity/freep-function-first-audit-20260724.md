@@ -1222,3 +1222,14 @@ resolves a grouped table through `ShapeHitTester` in selection, begin-edit, navi
 paragraph, and value-formatting routes, preserving the existing cell semantics and undo paths.
 Focused shared, WPF, and Avalonia tests pass; this is functional grouped-table parity with no
 new raster claim.
+
+### 2026-07-31 grouped child text and SmartArt editing
+
+PowerPoint keeps text formatting, text-frame options, z-order, and SmartArt editing available
+after entering a group. FreeP's shared selection could identify those descendants, but several
+session methods and the replacement command still searched only the slide root, causing valid
+edits to become silent no-ops. The session now resolves nested descendants for run formatting,
+text autofit/direction/columns, rotation, chart selection, local z-order, and SmartArt layout,
+picture, conversion, and package-refresh routes. Focused shared tests cover nested formatting,
+z-order, and undoable SmartArt layout replacement; this is functional grouped-object parity with
+no new raster-fidelity claim.
