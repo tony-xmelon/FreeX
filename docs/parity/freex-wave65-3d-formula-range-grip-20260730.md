@@ -52,12 +52,9 @@ including the exact formulas/results, clean-save state, physical reopen, and
 native ZIP formula/cache state.
 
 The focused Linux run passed 1/1. Physical X11 input selected `B2:C3` across
-`Sheet2:Sheet3`, resized it from the middle sheet to `B2:D4`, preserved the
-complete 3-D qualifier, calculated `171`, and crossed a clean-save boundary.
-The probe exercised a 3x3x3 grip-position matrix at 1280x820 and 96 DPI.
-
-Evidence:
-`artifacts/linux-interactive/freex/interaction-validation/20260730T074255Z/interaction-validation.json`.
+`'O''Brien Data:Revenue Data'`, resized it from the middle sheet to `B2:D4`,
+preserved the complete 3-D qualifier, calculated `234`, and crossed a
+clean-save and physical reopen boundary.
 
 ## Evidence status
 
