@@ -1203,3 +1203,13 @@ containing sibling list, while the core command helper also uses recursive looku
 bus does not discard valid child edits as no-ops. Connector attachment, copy/ungroup, undo, and
 top-level behavior remain covered across WPF and Avalonia. This is functional grouped-object parity
 with no new raster-fidelity claim.
+
+### 2026-07-31 grouped child shape and picture editing
+
+PowerPoint lets users edit a custom-geometry vertex or picture crop/effect while the object is
+nested inside a group. FreeP's model and undo commands already supported those operations, but the
+session entry points still searched only top-level shapes. Custom-geometry insertion/deletion,
+picture crop, and picture color-effect routes now resolve grouped descendants through the shared
+recursive lookup, preserving one undoable edit per operation. Focused shared, WPF, and Avalonia
+coverage passes; this is functional grouped-object authoring parity with no new raster-fidelity
+claim.
