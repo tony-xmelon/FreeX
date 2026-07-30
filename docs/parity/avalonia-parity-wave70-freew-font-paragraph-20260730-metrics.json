@@ -1,0 +1,41 @@
+{
+  "wave": "70",
+  "app": "FreeW",
+  "scope": ["Font", "Paragraph"],
+  "authority": "WPF",
+  "comparison": {
+    "target_dpi": 96,
+    "baseline_report": "artifacts/freew-wave70-font-paragraph-20260730/compare/freew_dialog_visual_comparison.json",
+    "fresh_report": "artifacts/freew-wave70-font-paragraph-20260730/compare-fresh/freew_dialog_visual_comparison.json",
+    "wpf_captures": 10,
+    "avalonia_captures": 10,
+    "classifications": { "genuine_visual_mismatch": 10 }
+  },
+  "route_averages": {
+    "font": {
+      "baseline_changed_pixel_percent": 11.488,
+      "fresh_changed_pixel_percent": 8.016,
+      "baseline_mean_absolute_channel_delta": 10.302,
+      "fresh_mean_absolute_channel_delta": 7.519
+    },
+    "paragraph": {
+      "baseline_changed_pixel_percent": 8.594,
+      "fresh_changed_pixel_percent": 8.345,
+      "baseline_mean_absolute_channel_delta": 10.032,
+      "fresh_mean_absolute_channel_delta": 9.807
+    }
+  },
+  "states": {
+    "font.initial": { "classification": "genuine-visual-mismatch", "baseline_changed_percent": 11.238, "fresh_changed_percent": 7.890, "baseline_mean": 10.112, "fresh_mean": 7.521, "baseline_phash": 7, "fresh_phash": 2 },
+    "font.populated": { "classification": "genuine-visual-mismatch", "baseline_changed_percent": 11.340, "fresh_changed_percent": 7.983, "baseline_mean": 10.262, "fresh_mean": 7.645, "baseline_phash": 7, "fresh_phash": 2 },
+    "font.tab-advanced": { "classification": "genuine-visual-mismatch", "baseline_changed_percent": 12.107, "fresh_changed_percent": 8.164, "baseline_mean": 10.477, "fresh_mean": 7.003, "baseline_phash": 1, "fresh_phash": 2 },
+    "font.tab-font": { "classification": "genuine-visual-mismatch", "baseline_changed_percent": 11.246, "fresh_changed_percent": 7.890, "baseline_mean": 10.133, "fresh_mean": 7.521, "baseline_phash": 7, "fresh_phash": 2 },
+    "font.validation-error": { "classification": "genuine-visual-mismatch", "baseline_changed_percent": 11.510, "fresh_changed_percent": 8.154, "baseline_mean": 10.528, "fresh_mean": 7.903, "baseline_phash": 7, "fresh_phash": 2 },
+    "paragraph.initial": { "classification": "genuine-visual-mismatch", "baseline_changed_percent": 8.500, "fresh_changed_percent": 8.185, "baseline_mean": 9.581, "fresh_mean": 9.365, "baseline_phash": 2, "fresh_phash": 2 },
+    "paragraph.populated": { "classification": "genuine-visual-mismatch", "baseline_changed_percent": 8.500, "fresh_changed_percent": 8.185, "baseline_mean": 9.581, "fresh_mean": 9.365, "baseline_phash": 2, "fresh_phash": 2 },
+    "paragraph.tab-indents-and-spacing": { "classification": "genuine-visual-mismatch", "baseline_changed_percent": 8.500, "fresh_changed_percent": 8.185, "baseline_mean": 9.581, "fresh_mean": 9.365, "baseline_phash": 2, "fresh_phash": 2 },
+    "paragraph.tab-line-and-page-breaks": { "classification": "genuine-visual-mismatch", "baseline_changed_percent": 8.235, "fresh_changed_percent": 8.249, "baseline_mean": 11.021, "fresh_mean": 10.759, "baseline_phash": 5, "fresh_phash": 5, "assessment": "changed-pixel regression retained honestly; mean improves and the route has a net fidelity improvement" },
+    "paragraph.validation-error": { "classification": "genuine-visual-mismatch", "baseline_changed_percent": 9.235, "fresh_changed_percent": 8.920, "baseline_mean": 10.397, "fresh_mean": 10.181, "baseline_phash": 2, "fresh_phash": 2 }
+  },
+  "residual": "All ten rows remain genuine visual mismatches because of framework text rasterization and template-level differences. The paragraph line/page-breaks changed-pixel increase is visible and not hidden."
+}
