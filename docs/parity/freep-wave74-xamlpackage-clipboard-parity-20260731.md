@@ -51,11 +51,19 @@ and `TextDecorations`) are also applied through the same catalog, including cycl
 `BasedOn` style chains; direct element properties retain precedence. Values are converted into
 the existing run-level font family, point-size, weight, decoration, and color fields, so both
 hosts retain common WPF style semantics without expanding arbitrary controls or unsupported
-style setters.
+style setters. `BaselineAlignment` is also supported as a semantic script setter.
 
 Explicit whitespace in XamlPackage inline content is now retained: `Run Text=" "` and
 `xml:space="preserve"` inline text become real run content, while pretty-printed indentation
 around paragraphs and nested elements remains structural and is ignored.
+
+XamlPackage `BaselineAlignment` now maps to the existing run-level baseline contract:
+`Superscript` uses the shared editor offset `10000`, `Subscript` uses `-10000`, and
+`Baseline`/`Normal` clears the offset. The mapping applies to direct inline elements and
+supported keyed `Style` setters, including `BasedOn` inheritance, so WPF and Avalonia retain
+script semantics without inventing a separate XamlPackage text model. XamlPackage does not
+carry a numeric baseline percentage, so this is semantic function parity rather than a new
+font-raster calibration.
 
 ## List marker semantics
 
@@ -82,6 +90,9 @@ unbulleted instead of being guessed.
   run-level hyperlink payload.
 - Shared parser coverage proves bullet, decimal, alpha, Roman, nested-level, and start-index
   semantics; paired WPF/Avalonia paste tests consume the existing paragraph list model.
+- Shared `ExternalRichTextClipboardTests.XamlPackageFlowDocument_PreservesBaselineAlignmentAndStyleInheritance`
+  proves direct, inherited, and reset baseline states; WPF and Avalonia paste tests prove the
+  same values reach each host editor.
 
 ## Deliberate residuals
 
