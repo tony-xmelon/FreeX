@@ -1234,6 +1234,14 @@ picture, conversion, and package-refresh routes. Focused shared tests cover nest
 z-order, and undoable SmartArt layout replacement; this is functional grouped-object parity with
 no new raster-fidelity claim.
 
+### 2026-07-31 grouped table command execution
+
+The table-cell planner already resolved grouped tables, but the shared table command helper still
+looked only at slide-root shapes. Table edits could therefore be presented as available while the
+command bus silently did nothing, with no undo state, for a table inside a group. The helper now
+uses the shared recursive shape resolver; grouped header-row command apply/undo coverage passes.
+This closes the model-command side of grouped table editing with no new raster-fidelity claim.
+
 ### 2026-07-31 grouped chart and shape-effect authoring
 
 PowerPoint keeps chart data, chart-area formatting, chart text formatting, and shape effects
