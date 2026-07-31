@@ -1258,6 +1258,14 @@ shapes, so imported grouped videos lost loop and automatic-start state. Timing t
 now traverses the full shape tree; grouped media loop/playback round-trip coverage passes. This is
 functional slideshow/package parity with no new raster-fidelity claim.
 
+The same grouped-media gap also existed at the WPF host boundary: the slideshow media controller
+and animation overlay looked up runtime targets only among slide-root shapes. The shared model and
+package writer could therefore preserve or edit a grouped media object while the running slideshow
+failed to create its player or animation surface. A single host shape-tree resolver now feeds media
+player creation, resize/update, animation overlay lookup, grouped table context menus, SmartArt
+pane selection, and rotation initialization. The WPF host suite and a nested grouped-media playback
+regression pass; this is runtime workflow parity, not a visual-fidelity claim.
+
 ### 2026-07-31 grouped chart and shape-effect authoring
 
 PowerPoint keeps chart data, chart-area formatting, chart text formatting, and shape effects
