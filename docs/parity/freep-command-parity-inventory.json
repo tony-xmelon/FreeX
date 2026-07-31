@@ -336,7 +336,8 @@
         "docs/parity/freep-external-rtf-file-hyperlink-20260729.md",
         "docs/parity/freep-external-rtf-field-runs-20260730.md",
         "docs/parity/freep-external-rtf-object-results-20260730.md",
-        "docs/parity/freep-external-rtf-baseline-offset-20260731.md"
+        "docs/parity/freep-external-rtf-baseline-offset-20260731.md",
+        "docs/parity/freep-external-rtf-caps-20260731.md"
       ],
       "verification": [
         "freep/FreeP.App.Presentation/ExternalRichTextClipboardPlanner.cs",
