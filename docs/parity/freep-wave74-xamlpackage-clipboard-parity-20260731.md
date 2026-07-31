@@ -27,13 +27,23 @@ slide-table model can represent. `Background` maps to the existing solid cell fi
 four existing cell borders, and `VerticalContentAlignment`/`VerticalAlignment` maps to the
 shared top, middle, or bottom cell anchor. WPF and Avalonia therefore preserve the same
 editable table semantics for XamlPackage and RTF paste. The in-canvas text projection remains
-flattened because `TextBody` has no inline-table node.
+flattened because `TextBody` has no inline-table node. XamlPackage `Image` Width/Height DIPs
+now also survive as EMU picture extents, matching the existing RTF image insertion contract;
+images without authored dimensions continue to use normal insertion bounds.
 
 XamlPackage `Hyperlink` elements and `NavigateUri` attributes now populate the existing
 `Run.Hyperlink` model, including the optional tooltip. The shared URI allowlist accepts only
 `http`, `https`, `mailto`, `ftp`, and local `file` targets, so unsupported schemes remain plain
 text. This keeps XamlPackage paste behavior aligned with the existing RTF hyperlink path and
 the shared PPTX hyperlink writer.
+
+## List marker semantics
+
+XamlPackage `List`/`ListItem` content now maps to the existing paragraph list model. Disc,
+circle, square/box, decimal, alpha, and Roman marker styles are preserved, nested lists carry
+their level, and an authored `StartIndex` applies only to the first item in that list. A list
+item's later paragraphs remain ordinary continuation text; unknown marker styles are left
+unbulleted instead of being guessed.
 
 ## Evidence added or exercised
 
@@ -50,10 +60,12 @@ the shared PPTX hyperlink writer.
 - Shared parser coverage proves valid XamlPackage hyperlinks and tooltips survive while an
   unsafe `javascript:` target is blocked; WPF and Avalonia host paste tests consume the same
   run-level hyperlink payload.
+- Shared parser coverage proves bullet, decimal, alpha, Roman, nested-level, and start-index
+  semantics; paired WPF/Avalonia paste tests consume the existing paragraph list model.
 
 ## Deliberate residuals
 
-This closes the bounded XamlPackage table/image/hyperlink import path, not full FlowDocument parity.
+This closes the bounded XamlPackage table/image/hyperlink/list import path, not full FlowDocument parity.
 Resource dictionaries, arbitrary FlowDocument controls, inline picture/object runs in the rich
 editor, nested inline tables, richer unsupported RTF/FlowDocument semantics, IME/RTL behavior,
 and PowerPoint-authoritative visual baselines remain deferred. Slide-level XamlPackage image
