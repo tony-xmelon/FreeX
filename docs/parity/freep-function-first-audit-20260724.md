@@ -1260,3 +1260,12 @@ hit-test searched only slide-root shapes, and inserted-shape IDs considered only
 grouped content could be missed or receive a duplicate ID. Slideshow media/trigger traversal and
 default ID allocation now include descendants. Focused interaction and editing tests plus the
 full Presentation suite pass; this is functional grouped-workflow parity with no new raster claim.
+
+### 2026-07-31 grouped clipboard selection
+
+PowerPoint can copy a selected descendant while editing inside a group. FreeP's clipboard factory
+looked up selected IDs only at the slide root, and the native serializer filtered a cloned slide by
+root IDs, so a grouped child could silently produce an empty native selection. Clipboard selection
+now resolves descendants recursively and serializes clones of the selected objects directly. A
+grouped-child native clipboard round-trip passes; this is functional grouped clipboard parity with
+no new raster-fidelity claim.
