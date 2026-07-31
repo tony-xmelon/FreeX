@@ -29,6 +29,10 @@ Date: 2026-07-31
   editor tests, and 31 Avalonia clipboard tests passed.
 - The regenerated FreeP command parity inventory passes its authoritative
   generator check while retaining the newer inherited TTML/DFXP caption work.
+- Repository preflight and the full 97-project Release build passed with zero
+  warnings or errors. The 20-project default non-UI test solution passed after
+  replacing a load-sensitive `Sleep(50)` assumption in the NOW idle-window
+  regression with a measured-interval retry.
 
 ## Linux Production Evidence
 
