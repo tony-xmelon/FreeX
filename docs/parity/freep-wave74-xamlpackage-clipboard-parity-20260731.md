@@ -53,6 +53,10 @@ the existing run-level font family, point-size, weight, decoration, and color fi
 hosts retain common WPF style semantics without expanding arbitrary controls or unsupported
 style setters.
 
+Explicit whitespace in XamlPackage inline content is now retained: `Run Text=" "` and
+`xml:space="preserve"` inline text become real run content, while pretty-printed indentation
+around paragraphs and nested elements remains structural and is ignored.
+
 ## List marker semantics
 
 XamlPackage `List`/`ListItem` content now maps to the existing paragraph list model. Disc,
