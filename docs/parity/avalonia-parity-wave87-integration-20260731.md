@@ -14,11 +14,11 @@ Date: 2026-07-31
 
 - Focused paired, PDF, planner, ribbon, and harness tests: **112/112 passed**.
 - Ribbon UI lane: **37/37 passed**.
-- Linux Docker physical validation: **85/85 passed** (FreeX 24, FreeW 37, FreeP 24).
+- Linux Docker physical validation: **85/85 passed** (FreeX 24, FreeW 37, FreeP 24). FreeX was rebuilt and rerun after the final `origin/main` merge.
 - The exploratory FreeX managed `ribbon-bindings` section produced **705/705 passed** rows. Its wrapper initially rejected the manifest because it still expected the older 616/73 inventory totals; the runner contract and regression assertion are now current.
-- Repository preflight: **passed**. One earlier retry encountered a transient Roslyn `csc.exe` exit `-1` in a temporary generated-inventory project; the foreground rerun passed without source changes.
-- Full Release build: **passed**, 0 warnings and 0 errors.
-- Default lane combined TRX result: **34,601 passed, 3 failed, 133 skipped** across 34,737 tests. The aggregate command reached its 30-minute orchestration timeout while `FreeX.App.Avalonia.Tests` was still running; that project then passed **1,871/1,871** alone. The three aggregate-only clipboard/allocation failures each passed on isolated rerun, leaving **no persistent failures**. The 29 WPF off-screen renderer failures seen in Waves 85-86 did not reproduce in this run.
+- Repository preflight after the final `origin/main` merge: **passed**. One earlier run encountered a transient Roslyn `csc.exe` exit `-1` in a temporary generated-inventory project; the foreground rerun passed without source changes.
+- Full Release build after the final merge: **passed**, 0 warnings and 0 errors.
+- Final default lane, serialized to avoid parallel testhost starvation: **34,636 passed, 0 failed, 133 skipped** across 34,769 tests. Earlier parallel attempts reached their orchestration guards, but retained TRX files and isolated reruns showed only clipboard/allocation contention. The authoritative serialized run completed in 9m49s with no failures; the 29 WPF off-screen renderer failures seen in Waves 85-86 did not reproduce.
 
 ## Remaining depth
 
