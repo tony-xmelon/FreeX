@@ -809,7 +809,7 @@
         {
           "name": "Interactive drag handles",
           "status": "Partial",
-          "notes": "Selected non-chart shapes, text boxes, and pictures expose interactive move/resize/rotation handles via the grid object-selection adornment layer; hidden/display-none objects are skipped and selected image crop handles remain supported. Charts remain out of scope"
+          "notes": "Selected charts, shapes, text boxes, and pictures expose interactive whole-object move/resize/rotation handles through the grid object-selection adornment layer; charts also expose eight live move/resize handles and commit through one undoable SetChartBoundsCommand, including rejected-drop and pointer-capture-cancellation overlay reset; hidden/display-none objects are skipped and selected image crop handles remain supported. Residual gaps: chart rotation is not offered; physical foreground mouse/keytip/dialog-access-key/UIA/Excel-paired proof is incomplete; chart subtarget hit-testing/context menus for chart area, plot area, series/points (except the existing Waterfall point route), axes, titles, and legends remain unsupported."
         },
         {
           "name": "Crop",
@@ -2093,7 +2093,7 @@
         {
           "name": "Interactive drag handles",
           "status": "Partial",
-          "notes": "Selected non-chart shapes, text boxes, and pictures expose interactive move/resize/rotation handles via the grid object-selection adornment layer; hidden/display-none objects are skipped and selected image crop handles remain supported. Charts remain out of scope"
+          "notes": "Selected charts, shapes, text boxes, and pictures expose interactive whole-object move/resize/rotation handles through the grid object-selection adornment layer; charts also expose eight live move/resize handles and commit through one undoable SetChartBoundsCommand, including rejected-drop and pointer-capture-cancellation overlay reset; hidden/display-none objects are skipped and selected image crop handles remain supported. Residual gaps: chart rotation is not offered; physical foreground mouse/keytip/dialog-access-key/UIA/Excel-paired proof is incomplete; chart subtarget hit-testing/context menus for chart area, plot area, series/points (except the existing Waterfall point route), axes, titles, and legends remain unsupported."
         },
         {
           "name": "Crop",
