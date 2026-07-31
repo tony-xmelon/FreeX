@@ -1234,6 +1234,15 @@ picture, conversion, and package-refresh routes. Focused shared tests cover nest
 z-order, and undoable SmartArt layout replacement; this is functional grouped-object parity with
 no new raster-fidelity claim.
 
+### 2026-07-31 TTML/DFXP caption timing depth
+
+PowerPoint-native caption sidecars can place timing on body/div containers and use
+frame- or tick-based clocks rather than direct millisecond paragraph offsets. The
+shared transcript planner now accumulates inherited container offsets, applies TTML
+frame-rate and frame-rate-multiplier metadata, and parses frame/tick clocks before
+WPF/Avalonia playback consumes the cues. DFXP inherited-offset coverage passes; this
+is functional media playback parity with no new raster-fidelity claim.
+
 ### 2026-07-31 grouped Avalonia host interactions
 
 The Avalonia host had the same root-only runtime lookups as WPF: grouped media could be
