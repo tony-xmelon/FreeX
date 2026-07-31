@@ -639,14 +639,14 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 69506,
-        "changedRatio": 0.20686309523809523,
-        "meanAbsoluteChannelDelta": 17.820049603174365,
+        "changedPixels": 70176,
+        "changedRatio": 0.20885714285714285,
+        "meanAbsoluteChannelDelta": 18.103678571428773,
         "p95AbsoluteChannelDelta": 128.33333333333334,
-        "luminanceSimilarity": 0.8212682723148901,
-        "perceptualHashDistance": 8
+        "luminanceSimilarity": 0.8196735508723996,
+        "perceptualHashDistance": 10
       },
-      "semanticDifference": "action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/backstage-open.open.png",
       "note": null,
       "wpfContent": {
@@ -658,10 +658,10 @@
         "opaqueRatio": 0.9116279761904762,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0.0003220580485234126,
-        "dominantColorRatio": 0.85921183612125,
-        "distinctColorCount": 315,
+        "dominantColorRatio": 0.8540751729028816,
+        "distinctColorCount": 330,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.12741369047619047,
+        "contentPixelRatio": 0.1316279761904762,
         "contentBounds": {
           "x": 0,
           "y": 0,
@@ -678,15 +678,15 @@
         "opaqueRatio": 0.9115238095238095,
         "nearTransparentRatio": 0.08847619047619047,
         "nearBlackRatio": 7.509664611848292E-05,
-        "dominantColorRatio": 0.8820786751645596,
-        "distinctColorCount": 753,
+        "dominantColorRatio": 0.8812493469856859,
+        "distinctColorCount": 719,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.1072827380952381,
+        "contentPixelRatio": 0.10803869047619048,
         "contentBounds": {
           "x": 0,
           "y": 10,
-          "width": 544,
-          "height": 553
+          "width": 542,
+          "height": 546
         }
       }
     },
