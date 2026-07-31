@@ -21,3 +21,6 @@ picture runs and OLE activation inside a text body remain separate work.
 
 This is a functional clipboard/package slice and makes no PowerPoint raster
 baseline claim.
+
+The adjacent bounded RTF list-level-template slice is documented in
+`freep-external-rtf-list-level-templates-20260731.md`.
