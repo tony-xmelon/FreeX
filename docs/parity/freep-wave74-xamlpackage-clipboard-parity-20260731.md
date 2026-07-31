@@ -47,10 +47,11 @@ WPF and Avalonia; unsupported style objects and resource value types remain unex
 The same bounded resource path now resolves `FontFamily` resources and numeric system
 resources used by `FontSize` references. Keyed text `Style` resources with supported
 `Setter` properties (`FontFamily`, `FontSize`, `FontWeight`, `FontStyle`, `Foreground`,
-and `TextDecorations`) are also applied through the same catalog; direct element properties
-retain precedence. Values are converted into the existing run-level font family, point-size,
-weight, decoration, and color fields, so both hosts retain common WPF style semantics without
-expanding arbitrary controls or unsupported style setters.
+and `TextDecorations`) are also applied through the same catalog, including cycle-safe
+`BasedOn` style chains; direct element properties retain precedence. Values are converted into
+the existing run-level font family, point-size, weight, decoration, and color fields, so both
+hosts retain common WPF style semantics without expanding arbitrary controls or unsupported
+style setters.
 
 ## List marker semantics
 
