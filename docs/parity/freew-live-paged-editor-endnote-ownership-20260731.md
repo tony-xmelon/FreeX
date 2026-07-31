@@ -10,10 +10,10 @@ page and creates another physical page only when the final body plus endnote
 region exceeds the available page height.
 
 The live `PaginatedEditorPanel` now consumes the same measured overflow decision
-as `HeaderFooterPaginator` for ordinary single-geometry documents. The decision
-is applied consistently during initial construction, repagination, and undo
-rebuild. Multi-section documents retain the conservative dedicated-page fallback
-until section-specific endnote measurement is available.
+as `HeaderFooterPaginator`. Its direct scratch flow applies authored section-break
+flags without entering the recursive section-aware paginator factory, so fitting
+multi-section endnotes also remain on the final body page. The decision is applied
+consistently during initial construction, repagination, and undo rebuild.
 
 ## Functional evidence
 
@@ -31,11 +31,11 @@ until section-specific endnote measurement is available.
 - Focused live-editor and print-paginator tests: 23/23 passed.
 - `FreeW.App.Host` Release build: 0 warnings, 0 errors.
 
-The follow-up final-section geometry gate passed 28/28 focused live-note,
-section-geometry, and print-paginator tests. Multi-section fit measurement remains
-conservative: those documents keep a dedicated page until the section-aware
-paginator can measure the final body region without recursively rebuilding this
-same live panel.
+The follow-up final-section geometry and section-break-aware fit gate passed 29/29
+focused live-note, section-geometry, and print-paginator tests. A short
+portrait-to-landscape document keeps its fitting endnote on the final landscape
+body page across construction, repagination, and undo rebuild; an oversized
+endnote still creates a dedicated page with that same final-section geometry.
 
 ## Fresh Word comparison
 
