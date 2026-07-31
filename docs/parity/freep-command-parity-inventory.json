@@ -332,7 +332,7 @@
     },
     {
       "evidenceId": "freep.clipboard.external-rtf-depth",
-      "area": "External RTF list, paragraph-layout, hyperlink, and field paste depth",
+      "area": "External RTF list, paragraph-layout, hyperlink, field, and tab-stop paste depth",
       "status": "shared-planner-and-host-evidence",
       "hostCoverage": "WPF/Avalonia renderer-neutral rich-text model and paste adapters consume the same bounded external RTF planner; WPF remains authoritative and no platform-specific semantic fork was added",
       "evidenceDocs": [
@@ -342,12 +342,15 @@
         "docs/parity/freep-external-rtf-list-level-templates-20260731.md",
         "docs/parity/freep-external-rtf-file-hyperlink-20260729.md",
         "docs/parity/freep-external-rtf-field-runs-20260730.md",
-        "docs/parity/freep-external-rtf-object-results-20260730.md"
+        "docs/parity/freep-external-rtf-object-results-20260730.md",
+        "docs/parity/freep-external-rtf-tab-stops-20260801.md"
       ],
       "verification": [
         "freep/FreeP.App.Presentation/ExternalRichTextClipboardPlanner.cs",
+        "freep/FreeP.App.Presentation/InCanvasRichTextVisualPlanner.cs",
         "freep/FreeP.App.Presentation/ClipboardTablePlanner.cs",
         "freep/FreeP.App.Presentation.Tests/ExternalRichTextClipboardTests.cs",
+        "freep/FreeP.App.Presentation.Tests/InCanvasRichTextVisualPlannerTests.cs",
         "freep/FreeP.App.Presentation.Tests/InCanvasRichClipboardTests.cs",
         "freep/FreeP.App.Rendering.Avalonia.Tests/AvaloniaRichTextEditorTests.cs",
         "freep/FreeP.App.Rendering.Wpf/WpfRichTextClipboardAdapter.cs",
