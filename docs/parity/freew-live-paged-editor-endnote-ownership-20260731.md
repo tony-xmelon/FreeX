@@ -42,6 +42,13 @@ width instead of recomputing it from the document's final section. A narrow
 earlier-section footnote contract verifies that its separator uses the narrow
 section width; the focused note suite passes 18/18.
 
+Dedicated live endnote pages now retain the final section's resolved header and
+footer slots, formatted logical page number, and commit owner while preserving an
+explicit synthetic-page identity for FidelityRender. A section starting at page
+7 continues to page 8 on the dedicated endnote page across construction,
+repagination, and undo rebuild. The combined live-note, section-geometry, and
+print-paginator gate passes 30/30.
+
 ## Fresh Word comparison
 
 The exact imported fixture was exported through Word COM at 816x1056. Word and
