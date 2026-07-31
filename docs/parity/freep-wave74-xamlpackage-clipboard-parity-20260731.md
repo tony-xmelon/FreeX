@@ -135,7 +135,11 @@ topology, spans, basic cell chrome, and recursively nested cell bodies. WPF mate
 bounded editable Grid and preserves unchanged nested bodies on read-back; Avalonia draws the
 same model as a drawable inline run and reserves its measured height. This closes the
 supported XamlPackage nested-table path for copy, paste, edit-buffer ownership, and host
-rendering. RTF nested-table forms remain a separate parser gap.
+rendering. The same recursive run path now also consumes bounded Word-style RTF nesting
+(`itap`, `nestcell`, and `nestrow`). Ordinary flat RTF tables retain their existing tab
+projection; only a payload that actually contains nesting is rewritten to an inline table,
+preserving surrounding text and the existing cell formatting subset. Advanced RTF table
+properties and providers that omit nesting-depth controls remain deferred.
 
 Evidence: `ExternalRichTextClipboardTests.XamlPackageFlowDocument_PreservesNestedInlineTableAsObjectReplacementRun`,
 `InCanvasRichClipboardTests.CaptureAndCodecRoundTrip_PreservesInlineTableAndNestedCellBodies`,
@@ -149,6 +153,7 @@ Resource dictionaries beyond the supported solid-color, font-family, numeric tex
 text-style resources,
 arbitrary FlowDocument controls,
 richer unsupported
-RTF/FlowDocument semantics, advanced IME/bidi behavior, and PowerPoint-authoritative visual baselines
+advanced RTF table layout beyond the bounded cell/row projection, richer unsupported
+FlowDocument semantics, advanced IME/bidi behavior, and PowerPoint-authoritative visual baselines
 remain deferred. Slide-level XamlPackage image insertion and native editable table cell styling
 are covered and are no longer residuals.
