@@ -45,9 +45,12 @@ resource dictionary when paragraph or inline `Foreground` uses a `StaticResource
 WPF and Avalonia; unsupported style objects and resource value types remain unexpanded.
 
 The same bounded resource path now resolves `FontFamily` resources and numeric system
-resources used by `FontSize` references. Values are converted into the existing run-level
-font family and point-size fields, so both hosts retain typography semantics without
-expanding arbitrary resource dictionaries.
+resources used by `FontSize` references. Keyed text `Style` resources with supported
+`Setter` properties (`FontFamily`, `FontSize`, `FontWeight`, `FontStyle`, `Foreground`,
+and `TextDecorations`) are also applied through the same catalog; direct element properties
+retain precedence. Values are converted into the existing run-level font family, point-size,
+weight, decoration, and color fields, so both hosts retain common WPF style semantics without
+expanding arbitrary controls or unsupported style setters.
 
 ## List marker semantics
 
@@ -78,7 +81,8 @@ unbulleted instead of being guessed.
 ## Deliberate residuals
 
 This closes the bounded XamlPackage table/image/hyperlink/list import path, not full FlowDocument parity.
-Resource dictionaries beyond the supported solid-color, font-family, and numeric text resources,
+Resource dictionaries beyond the supported solid-color, font-family, numeric text, and keyed
+text-style resources,
 arbitrary FlowDocument controls,
 inline picture/object runs in the rich editor, nested inline tables, richer unsupported
 RTF/FlowDocument semantics, IME/RTL behavior, and PowerPoint-authoritative visual baselines
