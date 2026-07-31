@@ -1251,3 +1251,12 @@ and undo capture scanned only slide-root connectors, leaving nested connectors s
 Connector enumeration, endpoint-rectangle lookup, and capture/revert now use the shared recursive
 shape traversal. Focused nested move/undo coverage and the full Presentation suite pass; this is
 functional grouped-connector parity with no new raster-fidelity claim.
+
+### 2026-07-31 grouped slideshow interaction and ID allocation
+
+PowerPoint keeps grouped media playable in slideshow mode, grouped animation trigger shapes
+clickable, and shape IDs unique across the entire slide tree. FreeP's media planner and trigger
+hit-test searched only slide-root shapes, and inserted-shape IDs considered only root IDs, so
+grouped content could be missed or receive a duplicate ID. Slideshow media/trigger traversal and
+default ID allocation now include descendants. Focused interaction and editing tests plus the
+full Presentation suite pass; this is functional grouped-workflow parity with no new raster claim.
