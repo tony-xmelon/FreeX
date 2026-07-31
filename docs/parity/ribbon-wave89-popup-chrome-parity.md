@@ -37,7 +37,8 @@ WPF rendered-control proof:
 
 - `RibbonWpfSplitButtonTests.CollapsedGroupPopup_UsesPlacementAndEscapeDismissalContract` inspects the
   actual `ContextMenu`, its custom placement callback, width limits, padding, border, shadow, and the
-  rendered disabled/item spacing values, then verifies Escape dismissal.
+  rendered disabled/item spacing values, then verifies Escape dismissal. The callback's shared planner
+  contract is covered by `RibbonCollapsedGroupPresentationPlannerTests.PopupPlacementPlanner_FlipsAboveAndClampsHorizontallyAtScreenEdges`.
 
 Avalonia rendered-control proof:
 
@@ -61,7 +62,8 @@ dotnet test tests\Free.Shared.Ribbon.Wpf.Tests\Free.Shared.Ribbon.Wpf.Tests.cspr
 - Avalonia's popup positioner owns the final work-area coordinates and may choose its native flip/slide
   result; the shared contract supplies the preferred below-anchor placement, gap, and enabled edge policy.
 - WPF's custom callback uses `SystemParameters.WorkArea` (the primary work area); per-monitor work-area
-  selection and native popup DPI conversion remain WPF/OS-owned.
+  selection and final native popup placement/rasterization remain WPF/OS-owned. The callback now
+  explicitly normalizes its screen anchor from device pixels into WPF DIPs before shared planning.
 - Native animation, nested-submenu chrome, menu template glyphs, and the final corner/shadow rasterization
   remain toolkit-native. The shared metrics constrain the common geometry and colors without replacing
   either toolkit's popup focus scope or menu template.
