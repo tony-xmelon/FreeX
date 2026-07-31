@@ -1435,3 +1435,12 @@ thick-line, and equal leaders. Ordinary tabs and alignment remain unchanged, and
 planner suite covers all six mappings plus both host paint routes. Provider-specific RTF controls
 outside the supported leader set remain deferred; this is a functional rendering slice with no
 new PowerPoint raster claim.
+
+### 2026-08-01 notes-page automatic fields
+
+Notes-page PDF planning now resolves uncached `datetime*`, date/time, and slide-number
+placeholder fields using the same fallback semantics as slide rendering. Previously, an
+enabled notes-page date or slide-number field with no cached text was emitted as empty even
+though the slide compositor resolved it. Cached field text and ordinary footer content remain
+authoritative. Presentation tests pass `3187/3187`; this is a functional notes-export slice
+with no new PowerPoint raster claim.
