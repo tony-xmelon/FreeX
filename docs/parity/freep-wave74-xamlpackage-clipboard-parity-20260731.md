@@ -126,13 +126,29 @@ Evidence: `ExternalRichTextClipboardTests.XamlPackageFlowDocument_PreservesInlin
 and `AvaloniaRichTextEditorTests.InlineImageRun_IsRetainedBySharedVisualPlan` plus
 `AvaloniaRichTextEditorTests.InlineImageRun_ReservesAuthoredWidthForFollowingText`.
 
+## Nested inline tables
+
+XamlPackage tables nested inside a paragraph or another table cell now become recursive
+object-replacement runs (`U+FFFC`) rather than being duplicated as block tables or flattened
+into plain text. The shared model and clipboard codec preserve column widths, row/cell
+topology, spans, basic cell chrome, and recursively nested cell bodies. WPF materializes a
+bounded editable Grid and preserves unchanged nested bodies on read-back; Avalonia draws the
+same model as a drawable inline run and reserves its measured height. This closes the
+supported XamlPackage nested-table path for copy, paste, edit-buffer ownership, and host
+rendering. RTF nested-table forms remain a separate parser gap.
+
+Evidence: `ExternalRichTextClipboardTests.XamlPackageFlowDocument_PreservesNestedInlineTableAsObjectReplacementRun`,
+`InCanvasRichClipboardTests.CaptureAndCodecRoundTrip_PreservesInlineTableAndNestedCellBodies`,
+`RichTextEditorTests.WpfInlineTableEditor_PreservesNestedCellTableWhenTextIsUnchanged`,
+and the focused Avalonia rich-editor lane.
+
 ## Deliberate residuals
 
 This closes the bounded XamlPackage table/image/hyperlink/list import path, not full FlowDocument parity.
 Resource dictionaries beyond the supported solid-color, font-family, numeric text, and keyed
 text-style resources,
 arbitrary FlowDocument controls,
-nested inline tables, richer unsupported
+richer unsupported
 RTF/FlowDocument semantics, advanced IME/bidi behavior, and PowerPoint-authoritative visual baselines
 remain deferred. Slide-level XamlPackage image insertion and native editable table cell styling
 are covered and are no longer residuals.
