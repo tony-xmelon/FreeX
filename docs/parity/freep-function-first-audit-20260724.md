@@ -1242,3 +1242,12 @@ top-level shape scans for those routes, so valid grouped selections silently bec
 Chart lookup and all five shape-effect authoring commands now use the shared recursive shape
 resolver. Focused grouped chart-data, chart-area, chart-text, and shadow undo tests pass; this is
 functional grouped-object parity with no new raster-fidelity claim.
+
+### 2026-07-31 grouped connector routing
+
+PowerPoint keeps connectors attached and rerouted when their connector and endpoint shapes are
+nested in a group. FreeP already resolved attachment endpoints recursively, but reroute discovery
+and undo capture scanned only slide-root connectors, leaving nested connectors stale after a move.
+Connector enumeration, endpoint-rectangle lookup, and capture/revert now use the shared recursive
+shape traversal. Focused nested move/undo coverage and the full Presentation suite pass; this is
+functional grouped-connector parity with no new raster-fidelity claim.
