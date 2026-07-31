@@ -12,6 +12,12 @@ This matches Avalonia's shared `BuildLargeSplitControl` behavior. The implementa
 metadata, key-tip ownership, state-store binding, and host-managed WPF dropdown-zone metadata on the
 corresponding rendered child controls.
 
+## Authority
+
+This deliberately fixes a WPF functional defect against Excel split-button semantics already
+implemented by the shared Avalonia renderer. Avalonia is the authoritative existing implementation
+for this interaction; the change does not redefine Avalonia to match WPF's former menu-only behavior.
+
 ## Evidence
 
 - `tests/Free.Shared.Ribbon.Wpf.Tests/RibbonWpfSplitButtonTests.cs` verifies expanded primary/menu
