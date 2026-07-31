@@ -35,6 +35,14 @@ XamlPackage `Hyperlink` elements and `NavigateUri` attributes now populate the e
 text. This keeps XamlPackage paste behavior aligned with the existing RTF hyperlink path and
 the shared PPTX hyperlink writer.
 
+## List marker semantics
+
+XamlPackage `List`/`ListItem` content now maps to the existing paragraph list model. Disc,
+circle, square/box, decimal, alpha, and Roman marker styles are preserved, nested lists carry
+their level, and an authored `StartIndex` applies only to the first item in that list. A list
+item's later paragraphs remain ordinary continuation text; unknown marker styles are left
+unbulleted instead of being guessed.
+
 ## Evidence added or exercised
 
 - WPF rich-editor custom-v2 precedence over XamlPackage, RTF, and plain text:
@@ -50,10 +58,12 @@ the shared PPTX hyperlink writer.
 - Shared parser coverage proves valid XamlPackage hyperlinks and tooltips survive while an
   unsafe `javascript:` target is blocked; WPF and Avalonia host paste tests consume the same
   run-level hyperlink payload.
+- Shared parser coverage proves bullet, decimal, alpha, Roman, nested-level, and start-index
+  semantics; paired WPF/Avalonia paste tests consume the existing paragraph list model.
 
 ## Deliberate residuals
 
-This closes the bounded XamlPackage table/image/hyperlink import path, not full FlowDocument parity.
+This closes the bounded XamlPackage table/image/hyperlink/list import path, not full FlowDocument parity.
 Resource dictionaries, arbitrary FlowDocument controls, inline picture/object runs in the rich
 editor, nested inline tables, richer unsupported RTF/FlowDocument semantics, IME/RTL behavior,
 and PowerPoint-authoritative visual baselines remain deferred. Slide-level XamlPackage image
