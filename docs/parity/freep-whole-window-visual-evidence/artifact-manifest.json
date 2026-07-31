@@ -80,7 +80,7 @@
                    },
                    {
                        "path":  "shared/Free.Shared.Ribbon/RibbonVisualMetrics.cs",
-                       "sha256":  "7ed303a851d78ccca6b16c107ba0a5525cbdb139273884911806dc685ed06ef2"
+                       "sha256":  "c76ce1379e58e3228002852053d4b1d0b55273fff4d072422b06ac46be0cf7c4"
                    },
                    {
                        "path":  "shared/Free.Shared.Ribbon.Wpf/RibbonTabControlFactory.cs",
@@ -92,7 +92,7 @@
                    },
                    {
                        "path":  "shared/Free.Shared.Ribbon.Avalonia/AvaloniaRibbonRenderer.cs",
-                       "sha256":  "d63e230cd8687a647d31f1cbba9b4c30221f3ccb29779e2b40eed3cdc6e9ef9d"
+                       "sha256":  "ee5f23af47993fb99ac4d0771046ca902c3d8c9e5eeec1d13b248174d0a03306"
                    },
                    {
                        "path":  "tools/FreeP.RenderCompare/WholeWindowVisualEvidence.cs",
