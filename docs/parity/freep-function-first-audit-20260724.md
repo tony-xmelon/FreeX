@@ -1382,7 +1382,10 @@ Inline embedded objects now share the slide-level OLE activation lifecycle. WPF 
 inline `U+FFFC` placeholder on double-click; Avalonia resolves the clicked marker through the
 shared edit buffer and invokes the same external activation service. Inline file-name and
 common Office class-name hints select the temporary-file extension, and changed bytes are
-written back to the live inline run when the external application closes. This closes
+written back to the live inline run when the external application closes. Activation resolves
+the payload from the live shape body rather than an edit-buffer clone, and the completion
+callback refreshes the active WPF/Avalonia snapshots so a later text commit cannot restore
+stale bytes. This closes
 external inline-object activation while deliberately leaving true in-place OLE hosting as
 future work; nested inline tables remain a separate model gap.
 
