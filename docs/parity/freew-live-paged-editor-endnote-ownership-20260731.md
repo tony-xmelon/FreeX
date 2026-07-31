@@ -37,6 +37,11 @@ portrait-to-landscape document keeps its fitting endnote on the final landscape
 body page across construction, repagination, and undo rebuild; an oversized
 endnote still creates a dedicated page with that same final-section geometry.
 
+`PageBox` note planning now also consumes the owning page's resolved content
+width instead of recomputing it from the document's final section. A narrow
+earlier-section footnote contract verifies that its separator uses the narrow
+section width; the focused note suite passes 18/18.
+
 ## Fresh Word comparison
 
 The exact imported fixture was exported through Word COM at 816x1056. Word and
