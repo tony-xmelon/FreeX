@@ -1396,3 +1396,12 @@ value, while negative heights are exact absolute values; WPF maps those rules to
 definitions and Avalonia consumes the same authored metadata. This closes one concrete
 source-semantic loss in nested rich-text tables without changing ordinary slide-table
 behavior. Rich RTF table controls beyond row height remain deferred.
+
+### 2026-07-31 SmartArt Cycle 2 authoring
+
+The shared SmartArt model, native `cycle2` layout identity, live ellipse-ring layout engine,
+and package round-trip path were already implemented and covered by focused tests, but the
+authoring command was absent from both host ribbons. FreeP now exposes a localized `Cycle 2`
+command in WPF and Avalonia, routes it through the existing undoable SmartArt layout planner,
+and includes it in both host completeness inventories. This is a functional authoring-parity
+slice; it makes no new raster-fidelity claim.
