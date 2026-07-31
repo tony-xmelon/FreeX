@@ -15,9 +15,9 @@ WPF remains the authority, and both host paths now consume the same
   `XamlPackage` platform format, while the slide-level paste service applies the shared
   paragraph, table, image, and multi-image projection.
 
-No production change was necessary in Wave 74. The bounded import behavior was already
-implemented by the shared parser and thin host adapters. This wave strengthens paired evidence
-at the host boundaries and removes stale inventory wording.
+Wave 74 started with the bounded import behavior already implemented by the shared parser and
+thin host adapters. The follow-up slices add native table-cell style and hyperlink propagation
+where the existing projection was incomplete, while keeping the host adapters shared.
 
 ## Native table cell styles
 
@@ -28,6 +28,12 @@ four existing cell borders, and `VerticalContentAlignment`/`VerticalAlignment` m
 shared top, middle, or bottom cell anchor. WPF and Avalonia therefore preserve the same
 editable table semantics for XamlPackage and RTF paste. The in-canvas text projection remains
 flattened because `TextBody` has no inline-table node.
+
+XamlPackage `Hyperlink` elements and `NavigateUri` attributes now populate the existing
+`Run.Hyperlink` model, including the optional tooltip. The shared URI allowlist accepts only
+`http`, `https`, `mailto`, `ftp`, and local `file` targets, so unsupported schemes remain plain
+text. This keeps XamlPackage paste behavior aligned with the existing RTF hyperlink path and
+the shared PPTX hyperlink writer.
 
 ## Evidence added or exercised
 
@@ -41,10 +47,13 @@ flattened because `TextBody` has no inline-table node.
   tables, one image, and ordered multi-image insertion through WPF and Avalonia.
 - WPF and Avalonia slide-level native-table coverage now asserts fill, border, inset, and
   vertical-anchor preservation through the shared `TableCellStyles` payload.
+- Shared parser coverage proves valid XamlPackage hyperlinks and tooltips survive while an
+  unsafe `javascript:` target is blocked; WPF and Avalonia host paste tests consume the same
+  run-level hyperlink payload.
 
 ## Deliberate residuals
 
-This closes the bounded XamlPackage table/image import path, not full FlowDocument parity.
+This closes the bounded XamlPackage table/image/hyperlink import path, not full FlowDocument parity.
 Resource dictionaries, arbitrary FlowDocument controls, inline picture/object runs in the rich
 editor, nested inline tables, richer unsupported RTF/FlowDocument semantics, IME/RTL behavior,
 and PowerPoint-authoritative visual baselines remain deferred. Slide-level XamlPackage image
