@@ -37,6 +37,21 @@ XamlPackage `Hyperlink` elements and `NavigateUri` attributes now populate the e
 text. This keeps XamlPackage paste behavior aligned with the existing RTF hyperlink path and
 the shared PPTX hyperlink writer.
 
+## Resource brush semantics
+
+The shared parser now resolves deterministic `SolidColorBrush` entries in a FlowDocument
+resource dictionary when paragraph or inline `Foreground` uses a `StaticResource` or
+`DynamicResource` reference. The resolved color enters the existing run model consumed by both
+WPF and Avalonia; unsupported style objects and resource value types remain unexpanded.
+
+The same bounded resource path now resolves `FontFamily` resources and numeric system
+resources used by `FontSize` references. Keyed text `Style` resources with supported
+`Setter` properties (`FontFamily`, `FontSize`, `FontWeight`, `FontStyle`, `Foreground`,
+and `TextDecorations`) are also applied through the same catalog; direct element properties
+retain precedence. Values are converted into the existing run-level font family, point-size,
+weight, decoration, and color fields, so both hosts retain common WPF style semantics without
+expanding arbitrary controls or unsupported style setters.
+
 ## List marker semantics
 
 XamlPackage `List`/`ListItem` content now maps to the existing paragraph list model. Disc,
@@ -66,7 +81,10 @@ unbulleted instead of being guessed.
 ## Deliberate residuals
 
 This closes the bounded XamlPackage table/image/hyperlink/list import path, not full FlowDocument parity.
-Resource dictionaries, arbitrary FlowDocument controls, inline picture/object runs in the rich
-editor, nested inline tables, richer unsupported RTF/FlowDocument semantics, IME/RTL behavior,
-and PowerPoint-authoritative visual baselines remain deferred. Slide-level XamlPackage image
-insertion and native editable table cell styling are covered and are no longer residuals.
+Resource dictionaries beyond the supported solid-color, font-family, numeric text, and keyed
+text-style resources,
+arbitrary FlowDocument controls,
+inline picture/object runs in the rich editor, nested inline tables, richer unsupported
+RTF/FlowDocument semantics, IME/RTL behavior, and PowerPoint-authoritative visual baselines
+remain deferred. Slide-level XamlPackage image insertion and native editable table cell styling
+are covered and are no longer residuals.
