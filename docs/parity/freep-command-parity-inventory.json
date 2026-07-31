@@ -1526,7 +1526,7 @@
         "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
         "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
       ],
-      "remainingWork": "basicMatrix and matrix1 use the bounded shared matrix-family live-layout path for parsed nodes in deterministic two-column row-major rectangles, retaining the four-node quadrant geometry; larger inputs continue into additional rows. TitledMatrix also keeps a title-only authored state live. Unsupported matrix siblings, PowerPoint-authoritative visual baselines, and broader SmartArt authoring/editing remain deferred."
+      "remainingWork": "basicMatrix and matrix1 use the bounded shared matrix-family live-layout path for parsed nodes in deterministic two-column row-major rectangles, retaining the four-node quadrant geometry; larger inputs continue into additional rows. Unsupported matrix siblings, PowerPoint-authoritative visual baselines, and broader SmartArt authoring/editing remain deferred."
     },
     {
       "evidenceId": "freep.smartart.titled-matrix",
