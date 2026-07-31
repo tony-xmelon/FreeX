@@ -17,6 +17,16 @@ The generated inventory at `docs/parity/freep-command-parity-inventory.json` rep
 The inventory is command-surface evidence, not a claim that every PowerPoint feature
 is complete.
 
+### 2026-07-31 motion-path authoring
+
+FreeP already imported, preserved, reversed, and played PowerPoint motion paths, but
+the animation command catalog had no authoring route. The shared planner now exposes
+standard right, left, up, down, and arc-right motion-path commands. WPF and Avalonia
+register those plans through their existing animation command loops; each creates an
+undoable `p:animMotion` model object using the existing writer and playback path.
+Focused planner coverage verifies command typing, path geometry, undo, and redo.
+This is a functional authoring slice and makes no new raster-fidelity claim.
+
 The generated inventory is the authoritative count. The apparent nested reading-order
 gap is also closed: the shared planner enumerates group descendants with nesting depth,
 and `EditingSession.MoveSelectedShapeInReadingOrder` reorders a selected child inside
