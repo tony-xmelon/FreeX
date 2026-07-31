@@ -53,6 +53,12 @@ the existing run-level font family, point-size, weight, decoration, and color fi
 hosts retain common WPF style semantics without expanding arbitrary controls or unsupported
 style setters. `BaselineAlignment` is also supported as a semantic script setter.
 
+WPF's inheritable `FlowDirection` now follows the same path. `RightToLeft`/`RTL` and
+`LeftToRight`/`LTR` values on the document, paragraph, inline element, or keyed style resolve
+into the existing paragraph and run direction fields; a more local value overrides its parent.
+This closes basic XamlPackage direction semantics while leaving advanced IME and bidi shaping
+behavior to the host text engines.
+
 Explicit whitespace in XamlPackage inline content is now retained: `Run Text=" "` and
 `xml:space="preserve"` inline text become real run content, while pretty-printed indentation
 around paragraphs and nested elements remains structural and is ignored.
@@ -93,6 +99,9 @@ unbulleted instead of being guessed.
 - Shared `ExternalRichTextClipboardTests.XamlPackageFlowDocument_PreservesBaselineAlignmentAndStyleInheritance`
   proves direct, inherited, and reset baseline states; WPF and Avalonia paste tests prove the
   same values reach each host editor.
+- Shared `ExternalRichTextClipboardTests.XamlPackageFlowDocument_PreservesFlowDirectionInheritanceAndOverrides`
+  proves document inheritance plus paragraph and inline LTR overrides; paired WPF/Avalonia paste
+  tests consume the same paragraph/run direction values.
 
 ## Deliberate residuals
 
@@ -101,6 +110,6 @@ Resource dictionaries beyond the supported solid-color, font-family, numeric tex
 text-style resources,
 arbitrary FlowDocument controls,
 inline picture/object runs in the rich editor, nested inline tables, richer unsupported
-RTF/FlowDocument semantics, IME/RTL behavior, and PowerPoint-authoritative visual baselines
+RTF/FlowDocument semantics, advanced IME/bidi behavior, and PowerPoint-authoritative visual baselines
 remain deferred. Slide-level XamlPackage image insertion and native editable table cell styling
 are covered and are no longer residuals.

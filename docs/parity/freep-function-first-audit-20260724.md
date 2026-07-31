@@ -1243,6 +1243,14 @@ existing run model and RTF path already represented baseline offsets. The import
 states, including cycle-safe `BasedOn` style inheritance. Shared, WPF, and Avalonia paste tests
 pass; this is function/clipboard parity with no new raster-fidelity claim.
 
+### 2026-07-31 XamlPackage FlowDirection
+
+The XamlPackage importer now resolves WPF's inheritable `FlowDirection` through document,
+paragraph, inline, and keyed-style scopes. `RightToLeft`/`RTL` maps to the existing paragraph
+and run direction fields, `LeftToRight`/`LTR` supplies an explicit false override, and the nearest
+scope wins. Paired shared, WPF, and Avalonia clipboard tests pass; advanced IME and bidi shaping
+remain host-engine concerns. This is functional clipboard parity with no raster-fidelity claim.
+
 ### 2026-07-31 TTML/DFXP caption timing depth
 
 PowerPoint-native caption sidecars can place timing on body/div containers and use
