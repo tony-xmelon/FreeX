@@ -1425,3 +1425,22 @@ shared `TabStop` model, rich clipboard codec, and renderer-neutral tab layout pl
 paragraph-reset state is scoped correctly, and both hosts receive the same resolved leader
 metadata. Native host painting of the leader glyphs and provider-specific RTF controls remain
 deferred; this closes the source-semantics/function boundary without a PowerPoint raster claim.
+
+### 2026-08-01 external RTF tab leader painting
+
+The remaining host-side gap in the external RTF tab path is now closed for the supported leader
+set. WPF and Avalonia `SlideCanvas` paint the leader glyph between the preceding text extent and
+the aligned segment, using the shared `TextLayoutPlanner` mapping for dots, hyphens, underline,
+thick-line, and equal leaders. Ordinary tabs and alignment remain unchanged, and the focused
+planner suite covers all six mappings plus both host paint routes. Provider-specific RTF controls
+outside the supported leader set remain deferred; this is a functional rendering slice with no
+new PowerPoint raster claim.
+
+### 2026-08-01 notes-page automatic fields
+
+Notes-page PDF planning now resolves uncached `datetime*`, date/time, and slide-number
+placeholder fields using the same fallback semantics as slide rendering. Previously, an
+enabled notes-page date or slide-number field with no cached text was emitted as empty even
+though the slide compositor resolved it. Cached field text and ordinary footer content remain
+authoritative. Presentation tests pass `3187/3187`; this is a functional notes-export slice
+with no new PowerPoint raster claim.
