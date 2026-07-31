@@ -1355,3 +1355,15 @@ nested inline tables remain separate gaps.
 The slide-level external-paste fallback now strips that internal image marker before creating
 the text box, while retaining the image as a separate picture shape. This keeps the editor's
 positioned inline-image contract distinct from the slide-shape fallback contract.
+
+### 2026-07-31 inline rich-text embedded objects
+
+External RTF already preserved embedded-object bytes for slide-level insertion, but the object
+was detached from the rich-text run sequence. Inline paste could therefore retain the result text
+while losing the object's position, caret marker, and edit-buffer identity. The shared `Run` model
+now carries an `InlineOleObjectInfo` behind the same `U+FFFC` replacement-character contract as
+inline images. RTF parsing, the rich clipboard codec, clone/equality paths, WPF FlowDocument, and
+Avalonia's visual plan all preserve the object bytes, file hint, and class name. Both hosts render
+an explicit inline placeholder; slide-level fallback removes only the marker and continues to
+insert the editable OLE shape separately. Focused parser/codec, WPF, and Avalonia tests pass; this
+does not claim in-place OLE activation inside a text run.
