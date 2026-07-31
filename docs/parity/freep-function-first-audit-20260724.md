@@ -1405,3 +1405,14 @@ authoring command was absent from both host ribbons. FreeP now exposes a localiz
 command in WPF and Avalonia, routes it through the existing undoable SmartArt layout planner,
 and includes it in both host completeness inventories. This is a functional authoring-parity
 slice; it makes no new raster-fidelity claim.
+
+### 2026-08-01 external RTF tab stops
+
+External RTF paragraph stops were previously dropped: the parser retained literal `\\tab`
+characters but ignored authored `\\tx` positions and `\\tq*` alignment controls. The parser
+now preserves left, center, right, and decimal stops into the shared paragraph model, resets
+them on `\\pard`, deep-copies them across RTF groups, and exposes resolved stops through the
+shared rich-text visual plan. Existing WPF/Avalonia slide text composition consumes the same
+model through the established tab-stop planner. Focused parser, rich-clipboard round-trip,
+and visual-plan tests pass 57/57. Advanced tab leaders and provider-specific controls remain
+deferred; this is a functional source-semantics slice with no PowerPoint raster claim.
