@@ -53,6 +53,24 @@ RTF `clvertalt`/`clvertalc`/`clvertalb` now map to the native `TableCell.Anchor`
 `clpadl`/`clpadr`/`clpadt`/`clpadb` map from twips to the four native cell insets. XAML and
 inputs without these controls retain the existing host defaults.
 
+### 2026-07-31 merged-cell topology
+
+The standalone slide-level RTF route now preserves the common Word merge controls
+`clmgf`/`clmrg` and `clvmgf`/`clvmrg`. The shared clipboard cell-style payload carries
+the start/continuation markers, and `ClipboardTablePlanner` reconstructs native
+`TableCell.GridSpan`, `TableCell.RowSpan`, `HMerge`, and `VMerge` topology for WPF and
+Avalonia. The in-canvas text-editor route remains the WPF-compatible tab/row projection,
+because `TextBody` still has no inline table node.
+
+### 2026-07-31 pattern shading
+
+Standalone native-table paste now retains the common RTF cell-shading controls:
+`clcbpat`/`clcfpat` colors, percentage shading, and the horizontal, vertical,
+diagonal, and cross hatch families. They map to the existing renderer-neutral
+`ShapeFill.Pattern` payload consumed by both WPF and Avalonia. Older solid-only
+payloads remain readable, and providers that omit a background color use white as
+the native pattern fallback.
+
 ## Evidence
 
 - `freep/FreeP.App.Host.Tests/WpfRichTextClipboardAdapterTests.cs` verifies the native WPF
@@ -75,8 +93,8 @@ FreeP.App.Avalonia.Tests: PresentationClipboardInteropTests, 26 passed (build an
 ## Unsupported Constructs
 
 The in-canvas text model still cannot retain an inline RTF table node, and the bounded
-slide-level conversion intentionally does not yet import pattern fills, vertical alignment,
-merged-cell controls, nested table structure, or other table layout properties.
+slide-level conversion intentionally does not yet retain nested table structure or
+other advanced table layout properties.
 One-column and mixed-prose projections retain the existing
 textbox fallback. Arbitrary fields, RTL/IME nuances, complete Word list-template numbering,
 and PowerPoint-authoritative external RTF visual baselines remain deferred.

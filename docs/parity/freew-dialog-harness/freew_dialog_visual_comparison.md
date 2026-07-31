@@ -2,7 +2,7 @@
 
 > Target: 96 DPI logical pixels. Semantic checks and nonblank checks are reported separately from image parity.
 
-Inventory scenarios: **466**. Captured WPF: **7**. Captured Avalonia: **7**.
+Inventory scenarios: **466**. Captured WPF: **187**. Captured Avalonia: **279**.
 
 | Scenario | Capture | Classification | WPF content | Avalonia content | Changed ratio | Mean channel delta | Semantic diff | Heatmap |
 | --- | --- | --- | --- | --- | ---: | ---: | --- | --- |
@@ -126,9 +126,9 @@ Inventory scenarios: **466**. Captured WPF: **7**. Captured Avalonia: **7**.
 | `mark-citation.initial` | captured/captured | **genuine-visual-mismatch** | pass (6.4% painted) | pass (4.4% painted) | 10.19 % | 4.75 |  | heatmaps/mark-citation.initial.png |
 | `mark-citation.populated` | captured/captured | **genuine-visual-mismatch** | pass (6.4% painted) | pass (4.5% painted) | 10.24 % | 4.88 |  | heatmaps/mark-citation.populated.png |
 | `mark-citation.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (6.5% painted) | pass (4.5% painted) | 10.27 % | 4.93 |  | heatmaps/mark-citation.validation-error.png |
-| `multilevel-list.initial` | captured/captured | **genuine-visual-mismatch** | pass (24.2% painted) | pass (26.7% painted) | 14.61 % | 10.16 | default-button,cancel-button,action-button-order | heatmaps/multilevel-list.initial.png |
-| `multilevel-list.populated` | captured/captured | **genuine-visual-mismatch** | pass (24.2% painted) | pass (26.7% painted) | 14.61 % | 10.16 | default-button,cancel-button,action-button-order | heatmaps/multilevel-list.populated.png |
-| `multilevel-list.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (24.2% painted) | pass (26.9% painted) | 14.79 % | 10.36 | default-button,cancel-button,action-button-order | heatmaps/multilevel-list.validation-error.png |
+| `multilevel-list.initial` | captured/captured | **genuine-visual-mismatch** | pass (24.2% painted) | pass (26.7% painted) | 14.03 % | 8.97 |  | heatmaps/multilevel-list.initial.png |
+| `multilevel-list.populated` | captured/captured | **genuine-visual-mismatch** | pass (24.2% painted) | pass (26.7% painted) | 14.03 % | 8.97 |  | heatmaps/multilevel-list.populated.png |
+| `multilevel-list.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (24.2% painted) | pass (26.9% painted) | 14.21 % | 9.18 |  | heatmaps/multilevel-list.validation-error.png |
 | `options.initial` | captured/captured | **genuine-visual-mismatch** | pass (5.4% painted) | pass (5.3% painted) | 7.41 % | 4.94 |  | heatmaps/options.initial.png |
 | `options.populated` | captured/captured | **genuine-visual-mismatch** | pass (5.4% painted) | pass (5.3% painted) | 7.44 % | 4.98 |  | heatmaps/options.populated.png |
 | `options.tab-auto-correct` | captured/captured | **genuine-visual-mismatch** | pass (9.1% painted) | pass (4.9% painted) | 11.88 % | 9.77 | action-button-order | heatmaps/options.tab-auto-correct.png |
@@ -137,12 +137,12 @@ Inventory scenarios: **466**. Captured WPF: **7**. Captured Avalonia: **7**.
 | `options.tab-replace` | state-not-applicable | **state-not-applicable** |  |  |  |  |  |  |
 | `options.tab-with` | state-not-applicable | **state-not-applicable** |  |  |  |  |  |  |
 | `options.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (5.4% painted) | pass (5.4% painted) | 7.54 % | 5.10 |  | heatmaps/options.validation-error.png |
-| `page-setup.initial` | captured/captured | **genuine-visual-mismatch** | pass (13.9% painted) | pass (7.3% painted) | 16.29 % | 8.59 | default-button,cancel-button,action-button-order | heatmaps/page-setup.initial.png |
-| `page-setup.populated` | captured/captured | **genuine-visual-mismatch** | pass (13.9% painted) | pass (7.3% painted) | 16.29 % | 8.59 | default-button,cancel-button,action-button-order | heatmaps/page-setup.populated.png |
-| `page-setup.tab-layout` | captured/captured | **genuine-visual-mismatch** | pass (10.9% painted) | pass (7.7% painted) | 15.52 % | 8.21 | default-button,cancel-button,action-button-order | heatmaps/page-setup.tab-layout.png |
-| `page-setup.tab-margins` | captured/captured | **genuine-visual-mismatch** | pass (13.9% painted) | pass (7.3% painted) | 16.29 % | 8.59 | default-button,cancel-button,action-button-order | heatmaps/page-setup.tab-margins.png |
-| `page-setup.tab-paper` | captured/captured | **genuine-visual-mismatch** | pass (6.7% painted) | pass (4.2% painted) | 8.20 % | 4.64 | default-button,cancel-button,action-button-order | heatmaps/page-setup.tab-paper.png |
-| `page-setup.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (14.0% painted) | pass (7.4% painted) | 16.42 % | 8.77 | default-button,cancel-button,action-button-order | heatmaps/page-setup.validation-error.png |
+| `page-setup.initial` | captured/captured | **genuine-visual-mismatch** | pass (13.9% painted) | pass (12.9% painted) | 13.38 % | 7.83 |  | heatmaps/page-setup.initial.png |
+| `page-setup.populated` | captured/captured | **genuine-visual-mismatch** | pass (13.9% painted) | pass (12.9% painted) | 13.38 % | 7.83 |  | heatmaps/page-setup.populated.png |
+| `page-setup.tab-layout` | captured/captured | **genuine-visual-mismatch** | pass (10.9% painted) | pass (11.2% painted) | 13.89 % | 7.19 |  | heatmaps/page-setup.tab-layout.png |
+| `page-setup.tab-margins` | captured/captured | **genuine-visual-mismatch** | pass (13.9% painted) | pass (12.9% painted) | 13.38 % | 7.83 |  | heatmaps/page-setup.tab-margins.png |
+| `page-setup.tab-paper` | captured/captured | **genuine-visual-mismatch** | pass (6.7% painted) | pass (6.2% painted) | 5.14 % | 3.54 |  | heatmaps/page-setup.tab-paper.png |
+| `page-setup.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (14.0% painted) | pass (13.0% painted) | 13.49 % | 7.96 |  | heatmaps/page-setup.validation-error.png |
 | `paragraph.initial` | captured/captured | **genuine-visual-mismatch** | pass (14.1% painted) | pass (13.4% painted) | 8.19 % | 9.36 |  | heatmaps/paragraph.initial.png |
 | `paragraph.populated` | captured/captured | **genuine-visual-mismatch** | pass (14.1% painted) | pass (13.4% painted) | 8.19 % | 9.36 |  | heatmaps/paragraph.populated.png |
 | `paragraph.tab-indents-and-spacing` | captured/captured | **genuine-visual-mismatch** | pass (14.1% painted) | pass (13.4% painted) | 8.19 % | 9.36 |  | heatmaps/paragraph.tab-indents-and-spacing.png |
@@ -180,9 +180,9 @@ Inventory scenarios: **466**. Captured WPF: **7**. Captured Avalonia: **7**.
 | `table-properties.tab-row` | captured/captured | **genuine-visual-mismatch** | pass (6.6% painted) | pass (6.3% painted) | 4.48 % | 3.76 |  | heatmaps/table-properties.tab-row.png |
 | `table-properties.tab-table` | captured/captured | **genuine-visual-mismatch** | pass (11.6% painted) | pass (10.6% painted) | 9.13 % | 6.67 |  | heatmaps/table-properties.tab-table.png |
 | `table-properties.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (11.6% painted) | pass (10.7% painted) | 9.24 % | 6.81 |  | heatmaps/table-properties.validation-error.png |
-| `tabs.initial` | captured/captured | **genuine-visual-mismatch** | pass (10.3% painted) | pass (5.6% painted) | 13.99 % | 6.67 | action-button-order | heatmaps/tabs.initial.png |
-| `tabs.populated` | captured/captured | **genuine-visual-mismatch** | pass (10.3% painted) | pass (5.7% painted) | 14.02 % | 6.71 | action-button-order | heatmaps/tabs.populated.png |
-| `tabs.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (10.4% painted) | pass (5.7% painted) | 14.13 % | 6.85 | action-button-order | heatmaps/tabs.validation-error.png |
+| `tabs.initial` | captured/captured | **genuine-visual-mismatch** | pass (10.3% painted) | pass (9.7% painted) | 4.37 % | 2.63 |  | heatmaps/tabs.initial.png |
+| `tabs.populated` | captured/captured | **genuine-visual-mismatch** | pass (10.3% painted) | pass (9.7% painted) | 4.40 % | 2.66 |  | heatmaps/tabs.populated.png |
+| `tabs.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (10.4% painted) | pass (9.8% painted) | 4.49 % | 2.77 |  | heatmaps/tabs.validation-error.png |
 | `watermark.initial` | captured/captured | **genuine-visual-mismatch** | pass (4.1% painted) | pass (4.4% painted) | 5.39 % | 5.47 | default-button,cancel-button | heatmaps/watermark.initial.png |
 | `watermark.populated` | captured/captured | **genuine-visual-mismatch** | pass (4.1% painted) | pass (4.5% painted) | 5.50 % | 5.64 | default-button,cancel-button | heatmaps/watermark.populated.png |
 | `watermark.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (4.1% painted) | pass (4.5% painted) | 5.51 % | 5.66 | default-button,cancel-button | heatmaps/watermark.validation-error.png |

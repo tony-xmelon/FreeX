@@ -34,8 +34,8 @@ application/platform aliases. Paste precedence is:
 2. External RTF parsed into `InCanvasRichClipboardPayload`.
 3. Avalonia plain text.
 
-XamlPackage is not implemented in Avalonia by this slice and is intentionally documented as a
-residual. RTF lists, images, objects, fields, full paragraph property import, and complete
+XamlPackage import is covered by the later shared bounded FlowDocument parser and host adapter
+evidence. RTF lists, images, objects, fields, full paragraph property import, and complete
 FlowDocument/RTL behavior are also outside this bounded subset.
 
 ## Evidence

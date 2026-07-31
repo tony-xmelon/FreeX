@@ -1126,3 +1126,254 @@ now derives those flags from the Windows recording-device catalog, reports the a
 the host reason, and keeps FFmpeg handoff text aligned with the detected capability instead of
 claiming captured-media support it does not provide. Encoding and export behavior are unchanged;
 this is a device-backed readiness/functionality correction with focused host coverage.
+
+### 2026-07-30 Arrange shape transform authoring
+
+PowerPoint's Arrange surface includes horizontal/vertical flips and 90-degree left/right
+rotation. FreeP already preserved the authored flip flags and had a reversible rotation command,
+but the actions were not reachable from either desktop host. The shared session now batches the
+selected-shape transforms into one undoable operation, re-routes attached connectors after each
+shape changes, and both WPF and Avalonia expose the four Arrange commands. Focused presentation,
+localization, WPF host, and Avalonia registration coverage verifies the route; no new raster
+fidelity claim is made.
+
+### 2026-07-31 arbitrary shape rotation authoring
+
+The shared model already preserved arbitrary shape rotation and supported a single-shape
+rotation command, but the hosts exposed only the 90-degree Arrange shortcuts. FreeP now
+provides PowerPoint's More Rotation Options workflow: a shared numeric plan accepts -360 to
+360 degrees, selected editable shapes receive the normalized angle in one undoable batch, and
+attached connectors continue through the existing reroute path. WPF and Avalonia expose the
+same dialog and command id. Focused planner, WPF, Avalonia, and localization tests cover the
+route; no new raster-fidelity claim is made.
+
+### 2026-07-31 Arrange align-to-slide authoring
+
+PowerPoint's Arrange > Align menu distinguishes aligning objects to the selection from aligning
+them to the slide canvas. FreeP's existing six alignment actions only used the selection bounds,
+so single-shape alignment and multi-shape canvas alignment were missing. The shared model now
+provides an undoable Align-to-Slide command for left, horizontal-center, right, top, vertical-
+center, and bottom placement; WPF and Avalonia expose all six routes. Existing selection-relative
+alignment is unchanged. Focused host, localization, and Avalonia registration coverage verifies
+the route; no new raster fidelity claim is made.
+
+### 2026-07-30 Vertical Arrow List SmartArt admission
+
+The native `verticalArrowList` layout now remains live and editable through the FreeP package
+reader/writer, insertion factory, Change Layout, and both WPF and Avalonia host routes. Its
+ordered down-arrow stages preserve editable node text and package identity instead of falling
+back to cached-only drawing content. This is a functional/package parity slice; exact PowerPoint
+arrow proportions remain separate visual work.
+
+### 2026-07-31 Inverted Pyramid SmartArt admission
+
+The native `invertedPyramid` layout now remains live and editable through the FreeP package
+reader, insertion factory, Change Layout, and both WPF and Avalonia host routes. Its ordered
+nodes render as descending editable bands rather than falling back to cached-only drawing data.
+This is a functional/package parity slice; exact PowerPoint band proportions remain separate
+visual work.
+
+### 2026-07-31 shape flip authoring
+
+PowerPoint's Arrange surface can mirror selected shapes horizontally or vertically. FreeP already
+preserved the `FlipH` and `FlipV` DrawingML flags through its model, reader, writer, and renderers,
+but neither host exposed an undoable authoring route. The shared command bus now toggles one shape
+or batches a multi-selection into one undo step, restores the prior state on undo/redo, and reroutes
+attached connectors through the existing geometry path. WPF and Avalonia register the same Arrange
+commands and localized ribbon entries. Focused shared command, WPF round-trip/ribbon, Avalonia
+headless-route, localization, and generated-inventory checks pass; this is functional/package
+authoring parity and makes no new PowerPoint raster-fidelity claim.
+
+### 2026-07-31 grouped Animation Pane names
+
+The Animation Pane already supported animations attached to nested group children, but its label
+resolver searched only the slide's top-level shape list. PowerPoint shows the authored child name
+in that timeline, so grouped animations previously appeared as generic `Shape <id>` rows. The
+shared planner now resolves names through the existing recursive shape hit-test path; WPF and
+Avalonia consume the same corrected timeline plan. Focused planner, WPF pane, and Avalonia pane
+tests pass. This is a functional review/editing workflow fix with no new render-fidelity claim.
+
+### 2026-07-31 nested-group editing routes
+
+PowerPoint applies ordinary editing commands to descendants inside nested groups. FreeP's
+selection/session helpers had recursive lookup, but several command paths still searched only the
+slide root: connector insertion, copy, hyperlink and table lookup, AutoShape changes, and ungroup
+undo could therefore silently miss a selected child. Those paths now resolve the descendant and its
+containing sibling list, while the core command helper also uses recursive lookup so the command
+bus does not discard valid child edits as no-ops. Connector attachment, copy/ungroup, undo, and
+top-level behavior remain covered across WPF and Avalonia. This is functional grouped-object parity
+with no new raster-fidelity claim.
+
+### 2026-07-31 grouped child shape and picture editing
+
+PowerPoint lets users edit a custom-geometry vertex or picture crop/effect while the object is
+nested inside a group. FreeP's model and undo commands already supported those operations, but the
+session entry points still searched only top-level shapes. Custom-geometry insertion/deletion,
+picture crop, and picture color-effect routes now resolve grouped descendants through the shared
+recursive lookup, preserving one undoable edit per operation. Focused shared, WPF, and Avalonia
+coverage passes; this is functional grouped-object authoring parity with no new raster-fidelity
+claim.
+
+### 2026-07-31 grouped table-cell editing
+
+PowerPoint keeps tables editable inside groups. FreeP's table-cell planner already handled
+selection, cell navigation, editing, and formatting, but looked only at the slide root. It now
+resolves a grouped table through `ShapeHitTester` in selection, begin-edit, navigation, text,
+paragraph, and value-formatting routes, preserving the existing cell semantics and undo paths.
+Focused shared, WPF, and Avalonia tests pass; this is functional grouped-table parity with no
+new raster claim.
+
+### 2026-07-31 grouped child text and SmartArt editing
+
+PowerPoint keeps text formatting, text-frame options, z-order, and SmartArt editing available
+after entering a group. FreeP's shared selection could identify those descendants, but several
+session methods and the replacement command still searched only the slide root, causing valid
+edits to become silent no-ops. The session now resolves nested descendants for run formatting,
+text autofit/direction/columns, rotation, chart selection, local z-order, and SmartArt layout,
+picture, conversion, and package-refresh routes. Focused shared tests cover nested formatting,
+z-order, and undoable SmartArt layout replacement; this is functional grouped-object parity with
+no new raster-fidelity claim.
+
+### 2026-07-31 XamlPackage baseline alignment
+
+WPF `XamlPackage` exposes superscript and subscript as semantic `BaselineAlignment` values on
+`Run`/`Span` elements and keyed styles. The shared importer previously discarded them, while the
+existing run model and RTF path already represented baseline offsets. The importer now maps
+`Superscript`, `Subscript`, and `Baseline`/`Normal` to the existing `10,000`, `-10,000`, and null
+states, including cycle-safe `BasedOn` style inheritance. Shared, WPF, and Avalonia paste tests
+pass; this is function/clipboard parity with no new raster-fidelity claim.
+
+### 2026-07-31 XamlPackage paragraph alignment
+
+WPF `TextAlignment` is inheritable from `FlowDocument` and keyed paragraph styles, with direct
+paragraph values taking precedence. The XamlPackage importer now resolves left, center, right,
+justify, and distributed values into the existing `Paragraph.Align` model. Shared, WPF, and
+Avalonia clipboard tests pass; this is function/clipboard parity with no raster-fidelity claim.
+
+### 2026-07-31 XamlPackage FlowDirection
+
+The XamlPackage importer now resolves WPF's inheritable `FlowDirection` through document,
+paragraph, inline, and keyed-style scopes. `RightToLeft`/`RTL` maps to the existing paragraph
+and run direction fields, `LeftToRight`/`LTR` supplies an explicit false override, and the nearest
+scope wins. Paired shared, WPF, and Avalonia clipboard tests pass; advanced IME and bidi shaping
+remain host-engine concerns. This is functional clipboard parity with no raster-fidelity claim.
+
+### 2026-07-31 TTML/DFXP caption timing depth
+
+PowerPoint-native caption sidecars can place timing on body/div containers and use
+frame- or tick-based clocks rather than direct millisecond paragraph offsets. The
+shared transcript planner now accumulates inherited container offsets, applies TTML
+frame-rate and frame-rate-multiplier metadata, and parses frame/tick clocks before
+WPF/Avalonia playback consumes the cues. DFXP inherited-offset coverage passes; this
+is functional media playback parity with no new raster-fidelity claim.
+
+### 2026-07-31 grouped Avalonia host interactions
+
+The Avalonia host had the same root-only runtime lookups as WPF: grouped media could be
+planned by the shared model but was not created or resized, while grouped animation,
+table context, SmartArt selection, rotation, and clipboard validity checks could miss
+selected descendants. The Avalonia host now uses the same recursive shape-tree resolver
+and grouped-media playback/update coverage passes. This extends the functional grouped
+workflow boundary across both presentation hosts without a new raster-fidelity claim.
+
+### 2026-07-31 grouped table command execution
+
+The table-cell planner already resolved grouped tables, but the shared table command helper still
+looked only at slide-root shapes. Table edits could therefore be presented as available while the
+command bus silently did nothing, with no undo state, for a table inside a group. The helper now
+uses the shared recursive shape resolver; grouped header-row command apply/undo coverage passes.
+This closes the model-command side of grouped table editing with no new raster-fidelity claim.
+
+### 2026-07-31 nested-group Find/Replace
+
+PowerPoint Find/Replace must be consistent for text at any group depth. FreeP's search enumerator
+already found nested descendants, but Replace One and Replace All resolved only one group level, so
+a deeply nested match could be reported yet remain unchanged and not undoable. Both replacement
+commands now use the shared recursive shape resolver; depth-two replace and undo coverage passes.
+This is functional grouped-text workflow parity with no new raster-fidelity claim.
+
+### 2026-07-31 grouped media playback import
+
+PowerPoint timing can target media nested inside a group. FreeP's writer already emitted grouped
+media timing recursively, but the reader resolved playback metadata only against slide-root
+shapes, so imported grouped videos lost loop and automatic-start state. Timing target resolution
+now traverses the full shape tree; grouped media loop/playback round-trip coverage passes. This is
+functional slideshow/package parity with no new raster-fidelity claim.
+
+The same grouped-media gap also existed at the WPF host boundary: the slideshow media controller
+and animation overlay looked up runtime targets only among slide-root shapes. The shared model and
+package writer could therefore preserve or edit a grouped media object while the running slideshow
+failed to create its player or animation surface. A single host shape-tree resolver now feeds media
+player creation, resize/update, animation overlay lookup, grouped table context menus, SmartArt
+pane selection, and rotation initialization. The WPF host suite and a nested grouped-media playback
+regression pass; this is runtime workflow parity, not a visual-fidelity claim.
+
+### 2026-07-31 grouped chart and shape-effect authoring
+
+PowerPoint keeps chart data, chart-area formatting, chart text formatting, and shape effects
+editable for objects nested inside groups. FreeP's command implementations still used direct
+top-level shape scans for those routes, so valid grouped selections silently became no-ops.
+Chart lookup and all five shape-effect authoring commands now use the shared recursive shape
+resolver. Focused grouped chart-data, chart-area, chart-text, and shadow undo tests pass; this is
+functional grouped-object parity with no new raster-fidelity claim.
+
+### 2026-07-31 grouped connector routing
+
+PowerPoint keeps connectors attached and rerouted when their connector and endpoint shapes are
+nested in a group. FreeP already resolved attachment endpoints recursively, but reroute discovery
+and undo capture scanned only slide-root connectors, leaving nested connectors stale after a move.
+Connector enumeration, endpoint-rectangle lookup, and capture/revert now use the shared recursive
+shape traversal. Focused nested move/undo coverage and the full Presentation suite pass; this is
+functional grouped-connector parity with no new raster-fidelity claim.
+
+### 2026-07-31 grouped slideshow interaction and ID allocation
+
+PowerPoint keeps grouped media playable in slideshow mode, grouped animation trigger shapes
+clickable, and shape IDs unique across the entire slide tree. FreeP's media planner and trigger
+hit-test searched only slide-root shapes, and inserted-shape IDs considered only root IDs, so
+grouped content could be missed or receive a duplicate ID. Slideshow media/trigger traversal and
+default ID allocation now include descendants. Focused interaction and editing tests plus the
+full Presentation suite pass; this is functional grouped-workflow parity with no new raster claim.
+
+### 2026-07-31 grouped clipboard selection
+
+PowerPoint can copy a selected descendant while editing inside a group. FreeP's clipboard factory
+looked up selected IDs only at the slide root, and the native serializer filtered a cloned slide by
+root IDs, so a grouped child could silently produce an empty native selection. Clipboard selection
+now resolves descendants recursively and serializes clones of the selected objects directly. A
+grouped-child native clipboard round-trip passes; this is functional grouped clipboard parity with
+no new raster-fidelity claim.
+### 2026-07-31 inline rich-text image runs
+
+External XAML and RTF readers previously accumulated paragraph images as unrelated payloads;
+rich-editor paste therefore dropped their position relative to text. The shared `Run` model and
+clipboard codec now carry an image as one logical `U+FFFC` run with source bytes and authored
+extents. WPF renders it through an inline UI container and Avalonia consumes the same visual-plan
+run. Parser, codec, WPF paste, and Avalonia visual-plan coverage pass. Embedded OLE runs and
+nested inline tables remain separate gaps.
+
+The slide-level external-paste fallback now strips that internal image marker before creating
+the text box, while retaining the image as a separate picture shape. This keeps the editor's
+positioned inline-image contract distinct from the slide-shape fallback contract.
+
+### 2026-07-31 inline rich-text OLE activation
+
+Inline embedded objects now share the slide-level OLE activation lifecycle. WPF opens an
+inline `U+FFFC` placeholder on double-click; Avalonia resolves the clicked marker through the
+shared edit buffer and invokes the same external activation service. Inline file-name and
+common Office class-name hints select the temporary-file extension, and changed bytes are
+written back to the live inline run when the external application closes. This closes
+external inline-object activation while deliberately leaving true in-place OLE hosting as
+future work; nested inline tables remain a separate model gap.
+
+### 2026-07-31 inline rich-text embedded objects
+
+External RTF already preserved embedded-object bytes for slide-level insertion, but the object
+was detached from the rich-text run sequence. Inline paste could therefore retain the result text
+while losing the object's position, caret marker, and edit-buffer identity. The shared `Run` model
+now carries an `InlineOleObjectInfo` behind the same `U+FFFC` replacement-character contract as
+inline images. RTF parsing, the rich clipboard codec, clone/equality paths, WPF FlowDocument, and
+Avalonia's visual plan all preserve the object bytes, file hint, and class name. Both hosts render
+an explicit inline placeholder; slide-level fallback removes only the marker and continues to
+insert the editable OLE shape separately. Focused parser/codec, WPF, and Avalonia tests pass; this
+does not claim in-place OLE activation inside a text run.
