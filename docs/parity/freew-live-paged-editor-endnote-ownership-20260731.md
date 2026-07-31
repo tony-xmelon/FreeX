@@ -24,8 +24,18 @@ until section-specific endnote measurement is available.
   endnote IDs 1 and 2 on the dedicated final page.
 - The fitting and overflow ownership decisions survive `Repaginate()` and
   `Rebuild()`.
+- A dedicated page in a portrait-to-landscape document now inherits the final
+  section's width, height, orientation, and four margins during construction,
+  repagination, and undo rebuild. The old path incorrectly reused a document-
+  default local despite its final-section ownership comment.
 - Focused live-editor and print-paginator tests: 23/23 passed.
 - `FreeW.App.Host` Release build: 0 warnings, 0 errors.
+
+The follow-up final-section geometry gate passed 28/28 focused live-note,
+section-geometry, and print-paginator tests. Multi-section fit measurement remains
+conservative: those documents keep a dedicated page until the section-aware
+paginator can measure the final body region without recursively rebuilding this
+same live panel.
 
 ## Fresh Word comparison
 
