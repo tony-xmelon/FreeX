@@ -59,6 +59,11 @@ into the existing paragraph and run direction fields; a more local value overrid
 This closes basic XamlPackage direction semantics while leaving advanced IME and bidi shaping
 behavior to the host text engines.
 
+WPF `TextAlignment` is now resolved through the same inheritance chain. Document-level alignment,
+paragraph-local values, and keyed style setters map to the existing `Paragraph.Align` field, with
+the nearest local value taking precedence. Center, left, right, justify, and distributed values
+are retained by both host paste paths.
+
 Explicit whitespace in XamlPackage inline content is now retained: `Run Text=" "` and
 `xml:space="preserve"` inline text become real run content, while pretty-printed indentation
 around paragraphs and nested elements remains structural and is ignored.
@@ -102,6 +107,9 @@ unbulleted instead of being guessed.
 - Shared `ExternalRichTextClipboardTests.XamlPackageFlowDocument_PreservesFlowDirectionInheritanceAndOverrides`
   proves document inheritance plus paragraph and inline LTR overrides; paired WPF/Avalonia paste
   tests consume the same paragraph/run direction values.
+- Shared `ExternalRichTextClipboardTests.XamlPackageFlowDocument_PreservesTextAlignmentInheritanceAndOverrides`
+  proves document, direct paragraph, and keyed-style alignment precedence; paired WPF/Avalonia
+  paste tests consume the resulting `Paragraph.Align` values.
 
 ## Deliberate residuals
 
