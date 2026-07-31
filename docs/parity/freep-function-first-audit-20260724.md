@@ -1243,6 +1243,13 @@ existing run model and RTF path already represented baseline offsets. The import
 states, including cycle-safe `BasedOn` style inheritance. Shared, WPF, and Avalonia paste tests
 pass; this is function/clipboard parity with no new raster-fidelity claim.
 
+### 2026-07-31 XamlPackage paragraph alignment
+
+WPF `TextAlignment` is inheritable from `FlowDocument` and keyed paragraph styles, with direct
+paragraph values taking precedence. The XamlPackage importer now resolves left, center, right,
+justify, and distributed values into the existing `Paragraph.Align` model. Shared, WPF, and
+Avalonia clipboard tests pass; this is function/clipboard parity with no raster-fidelity claim.
+
 ### 2026-07-31 XamlPackage FlowDirection
 
 The XamlPackage importer now resolves WPF's inheritable `FlowDirection` through document,
