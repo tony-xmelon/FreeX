@@ -54,6 +54,23 @@ their host-specific selection and reply-state hooks. Focused Avalonia coverage
 passed 2/2 on the integrated branch. Because this slice changes no production
 code, the prior physical Linux family baseline remains applicable.
 
+## Integration gates
+
+After merging Round 101 from `origin/main`, the full Release build completed
+with zero warnings and zero errors, repository preflight passed, and the
+focused suites passed 18/18 FreeX, 13/13 FreeW Avalonia, 3/3 FreeW WPF, and
+2/2 FreeP tests.
+
+The default solution run exposed three load-sensitive failures while assemblies
+were running concurrently. All affected cases passed in isolation: 12/12
+formula cases and 1/1 Windows clipboard case. The accumulated
+`FreeX.App.Avalonia.Tests` host then stopped making progress after 979 passing
+tests and was terminated after its wrapper timeout. A bounded rerun reproduced
+the host abort at
+`ProductionShortcutValidationCore_CompletesEntireCatalog`; that test passed
+1/1 in 20 seconds in a fresh host. This is recorded as test-host accumulation
+instability rather than a Wave 73 product failure.
+
 ## Residuals
 
 This wave does not establish whole-product or pixel-perfect parity. FreeW Page
