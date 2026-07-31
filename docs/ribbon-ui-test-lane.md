@@ -14,7 +14,8 @@ dotnet test FreeX.RibbonTests.slnx --configuration Release --filter Category=Rib
 FREEX_RUN_BENCHMARK_TESTS=1 dotnet test FreeX.RibbonTests.slnx --configuration Release --filter Category=RibbonUiLanePerf
 ```
 
-`FreeX.RibbonTests.slnx` scopes the build to `FreeX.App.Host.Tests` (where the lane lives); the
+`FreeX.RibbonTests.slnx` scopes the build to `FreeX.App.Host.Tests` and
+`Free.Shared.Ribbon.Wpf.Tests` (where the lane lives); the
 `Category=RibbonUiLane` / `RibbonUiLanePerf` trait filter selects the ribbon tests. The lane is **not** a
 substitute for the default merge-gate lane (`FreeX.DefaultTests.slnx`).
 
