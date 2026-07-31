@@ -44,6 +44,11 @@ resource dictionary when paragraph or inline `Foreground` uses a `StaticResource
 `DynamicResource` reference. The resolved color enters the existing run model consumed by both
 WPF and Avalonia; unsupported style objects and resource value types remain unexpanded.
 
+The same bounded resource path now resolves `FontFamily` resources and numeric system
+resources used by `FontSize` references. Values are converted into the existing run-level
+font family and point-size fields, so both hosts retain typography semantics without
+expanding arbitrary resource dictionaries.
+
 ## List marker semantics
 
 XamlPackage `List`/`ListItem` content now maps to the existing paragraph list model. Disc,
@@ -73,7 +78,8 @@ unbulleted instead of being guessed.
 ## Deliberate residuals
 
 This closes the bounded XamlPackage table/image/hyperlink/list import path, not full FlowDocument parity.
-Resource dictionaries beyond deterministic solid brushes, arbitrary FlowDocument controls,
+Resource dictionaries beyond the supported solid-color, font-family, and numeric text resources,
+arbitrary FlowDocument controls,
 inline picture/object runs in the rich editor, nested inline tables, richer unsupported
 RTF/FlowDocument semantics, IME/RTL behavior, and PowerPoint-authoritative visual baselines
 remain deferred. Slide-level XamlPackage image insertion and native editable table cell styling
