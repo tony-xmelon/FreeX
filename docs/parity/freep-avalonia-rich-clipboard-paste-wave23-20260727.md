@@ -22,5 +22,6 @@ the existing fallback chain.
 
 ## Remaining scope
 
-XamlPackage embedded images, resource dictionaries, and arbitrary FlowDocument controls still
-need a shape/inline-object clipboard contract in both hosts.
+XamlPackage image payloads are now preserved for slide-level picture insertion in both hosts.
+Resource dictionaries, arbitrary FlowDocument controls, and inline picture/object runs inside
+the renderer-neutral rich editor still need a richer object contract.

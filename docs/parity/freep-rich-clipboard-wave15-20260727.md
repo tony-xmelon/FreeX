@@ -25,7 +25,7 @@ All direct dotnet commands used the required single-process/no-build-server flag
 
 ## Honest residuals
 
-- Avalonia does not yet consume arbitrary external RTF, XamlPackage, or other rich clipboard formats; those inputs fall back to Unicode text. WPF continues to use its native rich paste path when no FreeP payload is present.
+- Avalonia now consumes the bounded shared external RTF and XamlPackage FlowDocument projections before falling back to Unicode text. Unsupported external controls, resource dictionaries, richer FlowDocument behavior, and inline picture/object runs remain outside the renderer-neutral rich-editor model. WPF continues to publish and consume its native rich formats when no FreeP payload is present.
 - Advanced polymorphic run effects (`TextFill`, `TextOutline`, shadow, reflection, glow, and soft-edge models) are not serialized in the bounded v1 payload.
 - IME composition, RTL editing, and platform-specific clipboard ownership remain delegated to the native Avalonia `TextBox` or WPF `RichTextBox` and are not claimed as cross-renderer parity.
 - This slice is covered by model, host, and focused renderer tests; it does not claim a new Linux/Docker visual screenshot baseline.
