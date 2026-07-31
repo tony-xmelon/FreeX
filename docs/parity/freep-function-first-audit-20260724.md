@@ -1343,3 +1343,11 @@ root IDs, so a grouped child could silently produce an empty native selection. C
 now resolves descendants recursively and serializes clones of the selected objects directly. A
 grouped-child native clipboard round-trip passes; this is functional grouped clipboard parity with
 no new raster-fidelity claim.
+### 2026-07-31 inline rich-text image runs
+
+External XAML and RTF readers previously accumulated paragraph images as unrelated payloads;
+rich-editor paste therefore dropped their position relative to text. The shared `Run` model and
+clipboard codec now carry an image as one logical `U+FFFC` run with source bytes and authored
+extents. WPF renders it through an inline UI container and Avalonia consumes the same visual-plan
+run. Parser, codec, WPF paste, and Avalonia visual-plan coverage pass. Embedded OLE runs and
+nested inline tables remain separate gaps.
