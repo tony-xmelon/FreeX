@@ -1444,3 +1444,11 @@ enabled notes-page date or slide-number field with no cached text was emitted as
 though the slide compositor resolved it. Cached field text and ordinary footer content remain
 authoritative. Presentation tests pass `3187/3187`; this is a functional notes-export slice
 with no new PowerPoint raster claim.
+
+### 2026-08-01 automatic header/footer date formats
+
+The header/footer dialog already exposed four automatic date formats, but uncached fields in
+slide composition and notes-page export all collapsed to `M/d/yyyy`. A shared formatter now
+honors `datetime1` through `datetime4` consistently while preserving cached field text as the
+source of truth. Focused coverage exercises all four formats in both consuming paths; this is
+functional presentation parity with no new PowerPoint raster claim.
