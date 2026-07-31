@@ -1234,6 +1234,15 @@ picture, conversion, and package-refresh routes. Focused shared tests cover nest
 z-order, and undoable SmartArt layout replacement; this is functional grouped-object parity with
 no new raster-fidelity claim.
 
+### 2026-07-31 grouped Avalonia host interactions
+
+The Avalonia host had the same root-only runtime lookups as WPF: grouped media could be
+planned by the shared model but was not created or resized, while grouped animation,
+table context, SmartArt selection, rotation, and clipboard validity checks could miss
+selected descendants. The Avalonia host now uses the same recursive shape-tree resolver
+and grouped-media playback/update coverage passes. This extends the functional grouped
+workflow boundary across both presentation hosts without a new raster-fidelity claim.
+
 ### 2026-07-31 grouped table command execution
 
 The table-cell planner already resolved grouped tables, but the shared table command helper still
