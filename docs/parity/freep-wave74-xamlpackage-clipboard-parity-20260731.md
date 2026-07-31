@@ -132,7 +132,7 @@ This closes the bounded XamlPackage table/image/hyperlink/list import path, not 
 Resource dictionaries beyond the supported solid-color, font-family, numeric text, and keyed
 text-style resources,
 arbitrary FlowDocument controls,
-embedded OLE runs, nested inline tables, richer unsupported
+nested inline tables, richer unsupported
 RTF/FlowDocument semantics, advanced IME/bidi behavior, and PowerPoint-authoritative visual baselines
 remain deferred. Slide-level XamlPackage image insertion and native editable table cell styling
 are covered and are no longer residuals.

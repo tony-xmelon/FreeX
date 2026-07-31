@@ -1356,6 +1356,16 @@ The slide-level external-paste fallback now strips that internal image marker be
 the text box, while retaining the image as a separate picture shape. This keeps the editor's
 positioned inline-image contract distinct from the slide-shape fallback contract.
 
+### 2026-07-31 inline rich-text OLE activation
+
+Inline embedded objects now share the slide-level OLE activation lifecycle. WPF opens an
+inline `U+FFFC` placeholder on double-click; Avalonia resolves the clicked marker through the
+shared edit buffer and invokes the same external activation service. Inline file-name and
+common Office class-name hints select the temporary-file extension, and changed bytes are
+written back to the live inline run when the external application closes. This closes
+external inline-object activation while deliberately leaving true in-place OLE hosting as
+future work; nested inline tables remain a separate model gap.
+
 ### 2026-07-31 inline rich-text embedded objects
 
 External RTF already preserved embedded-object bytes for slide-level insertion, but the object
