@@ -1363,8 +1363,8 @@ cell as a recursive `U+FFFC` run. Clone/equality and clipboard DTOs retain rows,
 basic chrome, and nested bodies. WPF provides a bounded editable Grid that keeps unchanged
 nested bodies on read-back; Avalonia renders the same shared run inline. Focused Presentation
 clipboard tests pass `60/60`, WPF rich-editor tests `55/55`, and Avalonia rich-editor/RTL tests
-`30/30`. External RTF nested tables remain deferred because the current RTF parser still
-normalizes `nestcell`/`nestrow` into its slide-table path.
+`30/30`. The core Word-style RTF `itap`/`nestcell`/`nestrow` structure now becomes a recursive
+inline-table run with clipboard codec coverage; advanced table properties remain deferred.
 
 ### 2026-07-31 inline rich-text OLE activation
 
