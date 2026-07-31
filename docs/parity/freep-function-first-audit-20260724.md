@@ -1351,3 +1351,7 @@ clipboard codec now carry an image as one logical `U+FFFC` run with source bytes
 extents. WPF renders it through an inline UI container and Avalonia consumes the same visual-plan
 run. Parser, codec, WPF paste, and Avalonia visual-plan coverage pass. Embedded OLE runs and
 nested inline tables remain separate gaps.
+
+The slide-level external-paste fallback now strips that internal image marker before creating
+the text box, while retaining the image as a separate picture shape. This keeps the editor's
+positioned inline-image contract distinct from the slide-shape fallback contract.
