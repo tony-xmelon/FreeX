@@ -1416,3 +1416,12 @@ shared rich-text visual plan. Existing WPF/Avalonia slide text composition consu
 model through the established tab-stop planner. Focused parser, rich-clipboard round-trip,
 and visual-plan tests pass 57/57. Advanced tab leaders and provider-specific controls remain
 deferred; this is a functional source-semantics slice with no PowerPoint raster claim.
+
+### 2026-08-01 external RTF tab leaders
+
+External RTF tab leaders were the remaining loss beside the newly preserved tab positions:
+`\\tlnone`, `\\tldot`, `\\tlhyph`, `\\tlul`, `\\tlth`, and `\\tleq` now survive into the
+shared `TabStop` model, rich clipboard codec, and renderer-neutral tab layout plan. Group and
+paragraph-reset state is scoped correctly, and both hosts receive the same resolved leader
+metadata. Native host painting of the leader glyphs and provider-specific RTF controls remain
+deferred; this closes the source-semantics/function boundary without a PowerPoint raster claim.
