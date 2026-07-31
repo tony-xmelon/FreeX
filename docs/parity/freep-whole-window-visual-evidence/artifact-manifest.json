@@ -32,7 +32,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Presentation/InCanvasRichTextVisualPlanner.cs",
-                       "sha256":  "eee71658253feef5789cbebeb1d35a6b03f5e90867508053d8fcd3a642a2e50b"
+                       "sha256":  "7ec959260b270ba1a74966553dc52e4b15f52718bf9239efdfa0c6d839314cc8"
                    },
                    {
                        "path":  "freep/FreeP.App.Host/WpfWholeWindowVisualEvidenceCapture.cs",
@@ -52,7 +52,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Avalonia/MainWindow.cs",
-                       "sha256":  "5901bfebe82293da4ae9d1ea405457f7e4985fd64cbd220191491c3990765735"
+                       "sha256":  "d590de6df4ceb149a6b9da1fb2ccc0c069c7f2467fcfbc9e5628bb65968b719e"
                    },
                    {
                        "path":  "freep/FreeP.App.Avalonia/MainWindow.WholeWindowVisualEvidence.cs",
@@ -64,7 +64,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Wpf/TextBodyFlowDocumentConverter.cs",
-                       "sha256":  "320aca3143ed4d2f8f2b3dbd7af4d3f2895bbe484ff380832f7386bdcb447d89"
+                       "sha256":  "543b784e8f74b9dd66b94d891f22e5ea9db39032ebb7716d7f15e038aea6498e"
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaInCanvasTextEditor.cs",
@@ -72,11 +72,11 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditor.cs",
-                       "sha256":  "52dee76d1946ea0b1cce12473270c8a530d14642a2ccde7d5c281d556f5c65d6"
+                       "sha256":  "a0fbed26dcf4bfe2246a22c2e88a89ebcb8996f0948787087fc16fa4b68c6988"
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditingSurface.cs",
-                       "sha256":  "a6bb14312d26820c2a8cdbde1a31d75377203ff5a054b86ad5423e79854a630d"
+                       "sha256":  "ba32db8ebf44ce7b3be25cb63b617fd0688f07f5652ae725363bd181376eba08"
                    },
                    {
                        "path":  "shared/Free.Shared.Ribbon/RibbonVisualMetrics.cs",
