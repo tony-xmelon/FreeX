@@ -1250,6 +1250,14 @@ a deeply nested match could be reported yet remain unchanged and not undoable. B
 commands now use the shared recursive shape resolver; depth-two replace and undo coverage passes.
 This is functional grouped-text workflow parity with no new raster-fidelity claim.
 
+### 2026-07-31 grouped media playback import
+
+PowerPoint timing can target media nested inside a group. FreeP's writer already emitted grouped
+media timing recursively, but the reader resolved playback metadata only against slide-root
+shapes, so imported grouped videos lost loop and automatic-start state. Timing target resolution
+now traverses the full shape tree; grouped media loop/playback round-trip coverage passes. This is
+functional slideshow/package parity with no new raster-fidelity claim.
+
 ### 2026-07-31 grouped chart and shape-effect authoring
 
 PowerPoint keeps chart data, chart-area formatting, chart text formatting, and shape effects
