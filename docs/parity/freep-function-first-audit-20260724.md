@@ -1242,6 +1242,14 @@ command bus silently did nothing, with no undo state, for a table inside a group
 uses the shared recursive shape resolver; grouped header-row command apply/undo coverage passes.
 This closes the model-command side of grouped table editing with no new raster-fidelity claim.
 
+### 2026-07-31 nested-group Find/Replace
+
+PowerPoint Find/Replace must be consistent for text at any group depth. FreeP's search enumerator
+already found nested descendants, but Replace One and Replace All resolved only one group level, so
+a deeply nested match could be reported yet remain unchanged and not undoable. Both replacement
+commands now use the shared recursive shape resolver; depth-two replace and undo coverage passes.
+This is functional grouped-text workflow parity with no new raster-fidelity claim.
+
 ### 2026-07-31 grouped chart and shape-effect authoring
 
 PowerPoint keeps chart data, chart-area formatting, chart text formatting, and shape effects
