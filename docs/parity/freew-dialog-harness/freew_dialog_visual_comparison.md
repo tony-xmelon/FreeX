@@ -180,9 +180,9 @@ Inventory scenarios: **466**. Captured WPF: **187**. Captured Avalonia: **279**.
 | `table-properties.tab-row` | captured/captured | **genuine-visual-mismatch** | pass (6.6% painted) | pass (6.3% painted) | 4.48 % | 3.76 |  | heatmaps/table-properties.tab-row.png |
 | `table-properties.tab-table` | captured/captured | **genuine-visual-mismatch** | pass (11.6% painted) | pass (10.6% painted) | 9.13 % | 6.67 |  | heatmaps/table-properties.tab-table.png |
 | `table-properties.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (11.6% painted) | pass (10.7% painted) | 9.24 % | 6.81 |  | heatmaps/table-properties.validation-error.png |
-| `tabs.initial` | captured/captured | **genuine-visual-mismatch** | pass (10.3% painted) | pass (5.6% painted) | 13.99 % | 6.67 | action-button-order | heatmaps/tabs.initial.png |
-| `tabs.populated` | captured/captured | **genuine-visual-mismatch** | pass (10.3% painted) | pass (5.7% painted) | 14.02 % | 6.71 | action-button-order | heatmaps/tabs.populated.png |
-| `tabs.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (10.4% painted) | pass (5.7% painted) | 14.13 % | 6.85 | action-button-order | heatmaps/tabs.validation-error.png |
+| `tabs.initial` | captured/captured | **genuine-visual-mismatch** | pass (10.3% painted) | pass (9.7% painted) | 4.37 % | 2.63 |  | heatmaps/tabs.initial.png |
+| `tabs.populated` | captured/captured | **genuine-visual-mismatch** | pass (10.3% painted) | pass (9.7% painted) | 4.40 % | 2.66 |  | heatmaps/tabs.populated.png |
+| `tabs.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (10.4% painted) | pass (9.8% painted) | 4.49 % | 2.77 |  | heatmaps/tabs.validation-error.png |
 | `watermark.initial` | captured/captured | **genuine-visual-mismatch** | pass (4.1% painted) | pass (4.4% painted) | 5.39 % | 5.47 | default-button,cancel-button | heatmaps/watermark.initial.png |
 | `watermark.populated` | captured/captured | **genuine-visual-mismatch** | pass (4.1% painted) | pass (4.5% painted) | 5.50 % | 5.64 | default-button,cancel-button | heatmaps/watermark.populated.png |
 | `watermark.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (4.1% painted) | pass (4.5% painted) | 5.51 % | 5.66 | default-button,cancel-button | heatmaps/watermark.validation-error.png |
