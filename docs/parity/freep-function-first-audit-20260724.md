@@ -1233,3 +1233,12 @@ text autofit/direction/columns, rotation, chart selection, local z-order, and Sm
 picture, conversion, and package-refresh routes. Focused shared tests cover nested formatting,
 z-order, and undoable SmartArt layout replacement; this is functional grouped-object parity with
 no new raster-fidelity claim.
+
+### 2026-07-31 grouped chart and shape-effect authoring
+
+PowerPoint keeps chart data, chart-area formatting, chart text formatting, and shape effects
+editable for objects nested inside groups. FreeP's command implementations still used direct
+top-level shape scans for those routes, so valid grouped selections silently became no-ops.
+Chart lookup and all five shape-effect authoring commands now use the shared recursive shape
+resolver. Focused grouped chart-data, chart-area, chart-text, and shadow undo tests pass; this is
+functional grouped-object parity with no new raster-fidelity claim.
