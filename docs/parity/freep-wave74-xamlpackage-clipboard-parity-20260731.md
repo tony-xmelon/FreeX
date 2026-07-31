@@ -47,10 +47,34 @@ WPF and Avalonia; unsupported style objects and resource value types remain unex
 The same bounded resource path now resolves `FontFamily` resources and numeric system
 resources used by `FontSize` references. Keyed text `Style` resources with supported
 `Setter` properties (`FontFamily`, `FontSize`, `FontWeight`, `FontStyle`, `Foreground`,
-and `TextDecorations`) are also applied through the same catalog; direct element properties
-retain precedence. Values are converted into the existing run-level font family, point-size,
-weight, decoration, and color fields, so both hosts retain common WPF style semantics without
-expanding arbitrary controls or unsupported style setters.
+and `TextDecorations`) are also applied through the same catalog, including cycle-safe
+`BasedOn` style chains; direct element properties retain precedence. Values are converted into
+the existing run-level font family, point-size, weight, decoration, and color fields, so both
+hosts retain common WPF style semantics without expanding arbitrary controls or unsupported
+style setters. `BaselineAlignment` is also supported as a semantic script setter.
+
+WPF's inheritable `FlowDirection` now follows the same path. `RightToLeft`/`RTL` and
+`LeftToRight`/`LTR` values on the document, paragraph, inline element, or keyed style resolve
+into the existing paragraph and run direction fields; a more local value overrides its parent.
+This closes basic XamlPackage direction semantics while leaving advanced IME and bidi shaping
+behavior to the host text engines.
+
+WPF `TextAlignment` is now resolved through the same inheritance chain. Document-level alignment,
+paragraph-local values, and keyed style setters map to the existing `Paragraph.Align` field, with
+the nearest local value taking precedence. Center, left, right, justify, and distributed values
+are retained by both host paste paths.
+
+Explicit whitespace in XamlPackage inline content is now retained: `Run Text=" "` and
+`xml:space="preserve"` inline text become real run content, while pretty-printed indentation
+around paragraphs and nested elements remains structural and is ignored.
+
+XamlPackage `BaselineAlignment` now maps to the existing run-level baseline contract:
+`Superscript` uses the shared editor offset `10000`, `Subscript` uses `-10000`, and
+`Baseline`/`Normal` clears the offset. The mapping applies to direct inline elements and
+supported keyed `Style` setters, including `BasedOn` inheritance, so WPF and Avalonia retain
+script semantics without inventing a separate XamlPackage text model. XamlPackage does not
+carry a numeric baseline percentage, so this is semantic function parity rather than a new
+font-raster calibration.
 
 ## List marker semantics
 
@@ -77,6 +101,15 @@ unbulleted instead of being guessed.
   run-level hyperlink payload.
 - Shared parser coverage proves bullet, decimal, alpha, Roman, nested-level, and start-index
   semantics; paired WPF/Avalonia paste tests consume the existing paragraph list model.
+- Shared `ExternalRichTextClipboardTests.XamlPackageFlowDocument_PreservesBaselineAlignmentAndStyleInheritance`
+  proves direct, inherited, and reset baseline states; WPF and Avalonia paste tests prove the
+  same values reach each host editor.
+- Shared `ExternalRichTextClipboardTests.XamlPackageFlowDocument_PreservesFlowDirectionInheritanceAndOverrides`
+  proves document inheritance plus paragraph and inline LTR overrides; paired WPF/Avalonia paste
+  tests consume the same paragraph/run direction values.
+- Shared `ExternalRichTextClipboardTests.XamlPackageFlowDocument_PreservesTextAlignmentInheritanceAndOverrides`
+  proves document, direct paragraph, and keyed-style alignment precedence; paired WPF/Avalonia
+  paste tests consume the resulting `Paragraph.Align` values.
 
 ## Deliberate residuals
 
@@ -85,6 +118,6 @@ Resource dictionaries beyond the supported solid-color, font-family, numeric tex
 text-style resources,
 arbitrary FlowDocument controls,
 inline picture/object runs in the rich editor, nested inline tables, richer unsupported
-RTF/FlowDocument semantics, IME/RTL behavior, and PowerPoint-authoritative visual baselines
+RTF/FlowDocument semantics, advanced IME/bidi behavior, and PowerPoint-authoritative visual baselines
 remain deferred. Slide-level XamlPackage image insertion and native editable table cell styling
 are covered and are no longer residuals.

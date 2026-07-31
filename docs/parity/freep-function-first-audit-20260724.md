@@ -1234,6 +1234,30 @@ picture, conversion, and package-refresh routes. Focused shared tests cover nest
 z-order, and undoable SmartArt layout replacement; this is functional grouped-object parity with
 no new raster-fidelity claim.
 
+### 2026-07-31 XamlPackage baseline alignment
+
+WPF `XamlPackage` exposes superscript and subscript as semantic `BaselineAlignment` values on
+`Run`/`Span` elements and keyed styles. The shared importer previously discarded them, while the
+existing run model and RTF path already represented baseline offsets. The importer now maps
+`Superscript`, `Subscript`, and `Baseline`/`Normal` to the existing `10,000`, `-10,000`, and null
+states, including cycle-safe `BasedOn` style inheritance. Shared, WPF, and Avalonia paste tests
+pass; this is function/clipboard parity with no new raster-fidelity claim.
+
+### 2026-07-31 XamlPackage paragraph alignment
+
+WPF `TextAlignment` is inheritable from `FlowDocument` and keyed paragraph styles, with direct
+paragraph values taking precedence. The XamlPackage importer now resolves left, center, right,
+justify, and distributed values into the existing `Paragraph.Align` model. Shared, WPF, and
+Avalonia clipboard tests pass; this is function/clipboard parity with no raster-fidelity claim.
+
+### 2026-07-31 XamlPackage FlowDirection
+
+The XamlPackage importer now resolves WPF's inheritable `FlowDirection` through document,
+paragraph, inline, and keyed-style scopes. `RightToLeft`/`RTL` maps to the existing paragraph
+and run direction fields, `LeftToRight`/`LTR` supplies an explicit false override, and the nearest
+scope wins. Paired shared, WPF, and Avalonia clipboard tests pass; advanced IME and bidi shaping
+remain host-engine concerns. This is functional clipboard parity with no raster-fidelity claim.
+
 ### 2026-07-31 TTML/DFXP caption timing depth
 
 PowerPoint-native caption sidecars can place timing on body/div containers and use
