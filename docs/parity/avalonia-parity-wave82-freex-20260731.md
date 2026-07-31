@@ -17,8 +17,9 @@ spanning merged cell therefore split that merged cell at the selection boundary,
 
 ## Change
 
-Added an Avalonia-local iterative merge expansion helper and applied it to row/column plain and
-Ctrl-add selection paths. Shift extension already funnels through these methods for the normal
+Moved the iterative merge-expansion algorithm into shared FreeX presentation logic and applied it
+to Avalonia row/column plain and Ctrl-add selection paths. WPF delegates its existing selection
+paths to the same planner. Shift extension already funnels through these methods for the normal
 header gesture; the resulting selected range now fully contains intersecting merged regions.
 
 Focused coverage is in `R99_AvaloniaHeaderMergeSelectionTests`, covering plain row/column headers
