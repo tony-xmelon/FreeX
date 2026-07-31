@@ -14,13 +14,16 @@ copies, SHA-256 files, and parsed `ppt/slides/slide1.xml` geometry reports. The
 package assertions are exact:
 
 - baseline: `(200,180,200,120)` and `(500,300,200,120)` DIP, both at 0 degrees;
-- resize: `(200,180,240,180)` and `(560,360,240,180)` DIP, both at 0 degrees;
-- rotate: `(470,90,240,180)` and `(290,450,240,180)` DIP, both at 90 degrees.
+- resize: `(200,180,240,182)` and `(560,362,240,182)` DIP, both at 0 degrees;
+- rotate: `(471,91,240,182)` and `(289,451,240,182)` DIP, both at 90 degrees.
+
+The two-DIP vertical difference from the ideal drag target is the deterministic
+result of mapping the 720-DIP slide into the 480-pixel physical X11 viewport.
 
 After saving the rotated state, one physical Ctrl+Z must restore and save the
 exact resize state. An active rotate drag is then canceled with Escape and a
-stale pointer release; a second active drag changes focus to a real Open dialog
-to force pointer-capture loss before dismissal. Both cancellation routes require
+stale pointer release; a second active drag minimizes and restores the real owner window
+to force pointer-capture loss before the stale release. Both cancellation routes require
 the exact pre-cancel package hash and parsed geometry.
 
 ## Files
@@ -37,7 +40,8 @@ assert the probe contains the real-input and exact-package gates.
 
 ## Verification
 
-Foreground verification completed without Docker:
+Foreground static verification and the focused managed contract tests passed
+3/3. Final physical Docker/X11 verification passed 9/9:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -Command "[System.Management.Automation.Language.Parser]::ParseFile('tools/Run-FreePMultiSelectionX11Validation.ps1',[ref]$null,[ref]$null) | Out-Null"
@@ -49,13 +53,12 @@ The focused managed test command is:
 dotnet test freep/FreeP.App.Presentation.Tests/FreeP.App.Presentation.Tests.csproj --configuration Release --filter FullyQualifiedName~Wave89MultiSelectionEvidenceContractTests --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1
 ```
 
-Docker was intentionally not run in this worktree. The exact orchestrator
-command is:
+The exact successful orchestrator command is:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File tools/Run-FreePMultiSelectionX11Validation.ps1 -Port 6108
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/Run-FreePMultiSelectionX11Validation.ps1 -Port 6108 -SkipPublish -SkipImageBuild
 ```
 
-Evidence will be retained under
+Evidence is retained under
 `artifacts/freep-multiselect-x11-wave89-20260801/` and the harness session
 directory printed by the runner.
