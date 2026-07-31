@@ -1387,3 +1387,12 @@ Avalonia's visual plan all preserve the object bytes, file hint, and class name.
 an explicit inline placeholder; slide-level fallback removes only the marker and continues to
 insert the editable OLE shape separately. Focused parser/codec, WPF, and Avalonia tests pass; this
 does not claim in-place OLE activation inside a text run.
+
+### 2026-07-31 RTF nested-table row heights
+
+Nested RTF tables now retain the signed `\\trrh` row-height control in the shared
+`TableRow` model and inline clipboard codec. Positive heights remain at least the authored
+value, while negative heights are exact absolute values; WPF maps those rules to its row
+definitions and Avalonia consumes the same authored metadata. This closes one concrete
+source-semantic loss in nested rich-text tables without changing ordinary slide-table
+behavior. Rich RTF table controls beyond row height remain deferred.
