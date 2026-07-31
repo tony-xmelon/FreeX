@@ -111,13 +111,28 @@ unbulleted instead of being guessed.
   proves document, direct paragraph, and keyed-style alignment precedence; paired WPF/Avalonia
   paste tests consume the resulting `Paragraph.Align` values.
 
+## Inline image runs
+
+Rich XAML and RTF images that occur inside a paragraph are now represented as a single logical
+object-replacement run (`U+FFFC`) with source bytes, content type, and authored EMU extents.
+The shared rich-text mutation and clipboard codec preserve that run in sequence with surrounding
+text. WPF materializes it as an `InlineUIContainer`; Avalonia consumes the same run as a drawable
+one-character text run, reserving its authored width for following text while painting the decoded
+image. Block-level images remain available
+through the existing image-payload fallback for sources that are not paragraph children.
+
+Evidence: `ExternalRichTextClipboardTests.XamlPackageFlowDocument_PreservesInlineImageRunOrderAndExtent`,
+`WpfRichTextClipboardAdapterTests.TryPasteDataObject_PreservesInlineXamlImageInsideTextRunSequence`,
+and `AvaloniaRichTextEditorTests.InlineImageRun_IsRetainedBySharedVisualPlan` plus
+`AvaloniaRichTextEditorTests.InlineImageRun_ReservesAuthoredWidthForFollowingText`.
+
 ## Deliberate residuals
 
 This closes the bounded XamlPackage table/image/hyperlink/list import path, not full FlowDocument parity.
 Resource dictionaries beyond the supported solid-color, font-family, numeric text, and keyed
 text-style resources,
 arbitrary FlowDocument controls,
-inline picture/object runs in the rich editor, nested inline tables, richer unsupported
+embedded OLE runs, nested inline tables, richer unsupported
 RTF/FlowDocument semantics, advanced IME/bidi behavior, and PowerPoint-authoritative visual baselines
 remain deferred. Slide-level XamlPackage image insertion and native editable table cell styling
 are covered and are no longer residuals.
