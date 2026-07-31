@@ -27,7 +27,9 @@ slide-table model can represent. `Background` maps to the existing solid cell fi
 four existing cell borders, and `VerticalContentAlignment`/`VerticalAlignment` maps to the
 shared top, middle, or bottom cell anchor. WPF and Avalonia therefore preserve the same
 editable table semantics for XamlPackage and RTF paste. The in-canvas text projection remains
-flattened because `TextBody` has no inline-table node.
+flattened because `TextBody` has no inline-table node. XamlPackage `Image` Width/Height DIPs
+now also survive as EMU picture extents, matching the existing RTF image insertion contract;
+images without authored dimensions continue to use normal insertion bounds.
 
 XamlPackage `Hyperlink` elements and `NavigateUri` attributes now populate the existing
 `Run.Hyperlink` model, including the optional tooltip. The shared URI allowlist accepts only
