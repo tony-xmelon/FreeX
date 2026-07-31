@@ -92,7 +92,7 @@
                    },
                    {
                        "path":  "shared/Free.Shared.Ribbon.Avalonia/AvaloniaRibbonRenderer.cs",
-                       "sha256":  "2fe4d4537a550a95acc3b89ec6dd7c5af793a7b333587847589ce01c7ed0cb47"
+                       "sha256":  "8c43e4e02e5a82f4dc4c2c399add76fd5f433dfce659b55de4f0a448489f88fb"
                    },
                    {
                        "path":  "tools/FreeP.RenderCompare/WholeWindowVisualEvidence.cs",
