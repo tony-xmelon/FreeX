@@ -1234,6 +1234,15 @@ picture, conversion, and package-refresh routes. Focused shared tests cover nest
 z-order, and undoable SmartArt layout replacement; this is functional grouped-object parity with
 no new raster-fidelity claim.
 
+### 2026-07-31 XamlPackage baseline alignment
+
+WPF `XamlPackage` exposes superscript and subscript as semantic `BaselineAlignment` values on
+`Run`/`Span` elements and keyed styles. The shared importer previously discarded them, while the
+existing run model and RTF path already represented baseline offsets. The importer now maps
+`Superscript`, `Subscript`, and `Baseline`/`Normal` to the existing `10,000`, `-10,000`, and null
+states, including cycle-safe `BasedOn` style inheritance. Shared, WPF, and Avalonia paste tests
+pass; this is function/clipboard parity with no new raster-fidelity claim.
+
 ### 2026-07-31 TTML/DFXP caption timing depth
 
 PowerPoint-native caption sidecars can place timing on body/div containers and use
