@@ -62,11 +62,11 @@ Each surface is tracked with these states:
 | Menu/toolbar in-scope rows | 200 | Includes the current Draw tab menu/toolbar delta. |
 | Top-level ribbon/backstage tabs | 10 | File, Home, Insert, Draw, Page Layout, Formulas, Data, Review, View, Help. |
 | Contextual ribbon tab declarations | 7 | Shape Format, Picture Format, Chart Design, Format, Table Design, PivotTable Analyze, Design from collapsed `MainWindow.xaml` tab declarations. |
-| Dialog source classes | 118 | Unique `*Dialog` class/x:Class names in `src/FreeX.App.Host`. |
+| Dialog source classes | 119 | Unique `*Dialog` class/x:Class names in `src/FreeX.App.Host`. |
 | XAML click-wired controls | 40 | `Click="..."` occurrences in `MainWindow.xaml` on latest synced `origin/main`. |
-| Explicit UIA automation ids | 33 | `AutomationProperties.AutomationId="..."` declarations in `MainWindow.xaml`. |
+| Explicit UIA automation ids | 35 | `AutomationProperties.AutomationId="..."` declarations in `MainWindow.xaml`. |
 | Ribbon keytip metadata declarations | 31 | `RibbonTooltip.KeyTip="..."` declarations in `MainWindow.xaml`. |
-| Keyboard command shortcut usages | 84 | 84 matcher rules / 83 dispatcher targets |
+| Keyboard command shortcut usages | 61 | 61 matcher rules / 84 dispatcher targets |
 | Documented shortcut rows | 93 | From `parity/shortcuts.md`: 93 parity, 0 partial. |
 | Worksheet context menu commands | 51 | From `WorksheetContextMenuPlanner.BuildCommands()`. |
 | Screenshot tool scripts | 2 | `tools/screenshot_excel.ps1`, `tools/screenshot_ribbon.ps1` documented and present. |
