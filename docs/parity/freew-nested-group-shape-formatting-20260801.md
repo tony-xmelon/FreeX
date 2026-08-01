@@ -13,6 +13,7 @@ and text commands. WPF and Avalonia detect a selected nested Shape and pass that
 - solid fill and no fill;
 - preset geometry through Change Shape;
 - trimmed or cleared alternative text;
+- exact width and height through the Shape Size dialog and gallery presets;
 - outline color, width, and dash;
 - Shape Styles gallery presets;
 - gradient, pattern, and no-fill descriptors;
