@@ -35,12 +35,14 @@ Date: 2026-08-01
 - Repository preflight: **passed** after refreshing the expected cross-app dashboard, FreeW command
   inventory, and FreeP whole-window renderer fingerprint.
 - Full post-merge Release solution build: **0 warnings**, **0 errors**.
-- Serialized post-merge default lane: **35,098 passed**, **133 skipped**, **0 failed**, **35,231
+- Serialized post-merge default lane: **35,108 passed**, **133 skipped**, **0 failed**, **35,241
   total** across 19 assemblies after focused correction and complete affected-assembly reruns. The
   initial pass exposed two missing `List2` insertion mappings, one stale shared-core-property source
   guard, and one drawing-anchor timeout whose `Task.Run` work could be starved behind the timer.
-  The fixed FreeP presentation assembly passed **3,245/3,245**; the fixed Core IO assembly passed
-  **5,115/5,115** with **56** intentional skips.
+  The final merged FreeP presentation assembly passed **3,253/3,253**; the fixed Core IO assembly
+  passed **5,115/5,115** with **56** intentional skips. A single clipboard-flavor test failed once
+  in the all-up run, then passed independently and in the complete Host Logic assembly (**1,488
+  passed**, **4 skipped**) without a source change.
 - Serialized Linux physical lanes: **94/94 passed**: FreeX **25/25**, FreeW **45/45**, and FreeP
   **24/24**. Every manifest contract passed and every harness-owned container stopped.
 
