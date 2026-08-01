@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 598 | 598 | 0 | 0 | 0 | 0 | 0 | 0 | 598 | 0 | 0 | 0 | 0 | 103 |
+| 604 | 604 | 0 | 0 | 0 | 0 | 0 | 0 | 604 | 0 | 0 | 0 | 0 | 103 |
 
 ## Workflow Evidence
 
@@ -640,6 +640,12 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.table-cell-fill` | Table Cell Fill | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.table-cell-inset` | Cell Insets | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.table-row-height` | Row Height | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.banded-columns` | Banded Columns | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.banded-rows` | Banded Rows | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.first-column` | First Column | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.first-row` | Header Row | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.last-column` | Last Column | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.last-row` | Total Row | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.merge-cells` | Merge Cells | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.split-cell` | Split Cell | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.text-autofit` | Text Autofit | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
