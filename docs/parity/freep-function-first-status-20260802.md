@@ -51,6 +51,9 @@ cell text directions instead of painting those cells horizontally. The native `t
 SmartArt route now emits editable trapezoid nodes with bounded slant geometry instead of falling
 through to rounded rectangles. A review of the proposed grouped-table follow-up found that
 behavior already exists on current `main`; no duplicate implementation was added.
+Native SmartArt quick styles `simple1` through `simple5` now resolve to distinct live profiles
+(Simple Fill, White Outline, Subtle, Moderate, and Intense) instead of allowing the generic
+`simple` identifier to collapse Moderate and Intense into the Subtle rendering path.
 
 The follow-up capability audit corrected the remaining list against current code: Avalonia already
 has Windows native printer submission, MP4 export, persisted narration muxing, and camera
