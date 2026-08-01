@@ -7,55 +7,58 @@ Scope: FreeW Avalonia Legal Notices initial state and all five notice tabs
 
 ## Change
 
-The shared Avalonia classic-tab template now forwards the styled tab item's foreground,
-font family, and font size through the themed `AccessText` header child. This restores the
-WPF black tab-label treatment for inactive and selected Legal Notices tabs while retaining
-the shared metrics, tab order, automation IDs, focus target, read-only document behavior,
-scrollbar lane, and default/cancel close semantics.
+The shared Avalonia classic-tab template forwards the styled tab item's foreground, font
+family, and font size through the themed `AccessText` header. This restores the WPF black
+tab-label treatment while retaining the shared tab order, automation IDs, focus target,
+read-only behavior, scrollbar lane, and default/cancel close semantics.
 
-The focused Avalonia contract test now opens the real Legal Notices route and verifies the
-five rendered tab headers, initial document focus, every selected-tab transition, and
-default/cancel metadata. The WPF authority was not changed.
+The deterministic initial-state delta was not rasterization. WPF leaves its document line
+box native and its shared TextBox style visually centers a short document. Avalonia had
+forced a 16 px line box while pinning the document to the top, placing the first Project
+License baseline about 102 px above WPF.
+
+Avalonia now stays top-aligned to avoid the headless layout cycle caused by direct
+`VerticalContentAlignment.Center`. After the first realized layout, a shared pure planner
+computes a fixed short-document inset from viewport and native document extents. The
+handler unsubscribes before applying the padding once, so the inset cannot feed back into
+its own plan. Overflow documents receive no inset; a fixed line-count plan retains the
+existing 16 px overflow line box only where it is needed to expose the WPF-authority Auto
+scrollbar lane. The focused headless route has a 15-second xUnit timeout regression.
 
 ## Fresh Six-State Evidence
 
-The WPF and Avalonia harnesses captured all six paired states from this worktree. The
-comparison returned exit code 2 because all six rows remain honest
-`genuine-visual-mismatch` classifications; no capture, content, or semantic row was lost.
-Raw captures and reports are retained outside the repository under
-`%TEMP%\\freex-wave98-legal`:
+Both harnesses captured all six paired states. The comparator returned exit code 2 because
+all six remain honest `genuine-visual-mismatch` rows; all captures passed their content and
+semantic gates. Evidence is retained under `%TEMP%\freex-wave98-legal`:
 
-- `inventory.json`
-- `wave98-wpf/wpf_dialog_capture_manifest.json`
-- `wave98-avalonia/avalonia_dialog_capture_manifest.json`
-- `wave98-compare/freew_dialog_visual_comparison.json`
-- `wave98-compare/heatmaps/`
+- `lineheight-wpf/wpf_dialog_capture_manifest.json`
+- `final-avalonia/avalonia_dialog_capture_manifest.json`
+- `final-compare/freew_dialog_visual_comparison.json`
+- `final-compare/heatmaps/`
 
 | State | Before changed | After changed | Delta | Before mean | After mean |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| `initial` | 10.5444% | 10.5419% | -0.0024 pp | 12.045 | 12.083 |
-| `tab-project-license` | 10.5444% | 10.5419% | -0.0024 pp | 12.045 | 12.083 |
+| `initial` | 10.5444% | 9.2290% | -1.3153 pp | 12.045 | 9.628 |
+| `tab-project-license` | 10.5444% | 9.2290% | -1.3153 pp | 12.045 | 9.628 |
 | `tab-legal-notices` | 19.3906% | 19.3911% | +0.0005 pp | 21.271 | 21.311 |
 | `tab-privacy-notice` | 16.5629% | 16.5626% | -0.0003 pp | 18.049 | 18.089 |
 | `tab-third-party-notices` | 19.6634% | 19.6645% | +0.0011 pp | 22.423 | 22.462 |
 | `tab-third-party-license-texts` | 18.6164% | 18.6137% | -0.0027 pp | 20.549 | 20.582 |
-| **Average** | **15.8870%** | **15.8860%** | **-0.0010 pp** | **17.730** | **17.768** |
+| **Average** | **15.8870%** | **15.4483%** | **-0.4387 pp** | **17.730** | **16.950** |
 
-The remaining long-document mismatch is cross-framework Consolas rasterization plus native
-scrollbar and tab-template pixels. No comparator threshold or classification was changed.
+The Project License first and last baselines now align with WPF in the paired capture, and
+long states retain their scrollbars and prior ratios. Remaining changed pixels include
+cross-framework glyph rasterization and visible one-pixel tab, panel-border, and scrollbar
+template differences; no comparator behavior or threshold changed.
 
 ## Verification
 
-Focused route tests passed 3/3:
+- Avalonia Legal Notices and common dialog chrome: 24/24 passed in 1 second. The formerly
+  spinning focused route completed in 1 second under its 15-second test timeout and the
+  runner's 20-second hang guard.
+- WPF FreeW help/legal authority tests: 9/9 passed in 4 seconds.
+- WPF capture: 6/6; Avalonia capture: 6/6; comparator: six genuine visual mismatches.
 
-```text
-dotnet test freew/FreeW.App.Avalonia.Tests/FreeW.App.Avalonia.Tests.csproj --configuration Release --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 --filter "FullyQualifiedName~LegalNoticesDialogVisualParityTests"
-```
-
-Fresh route capture commands:
-
-```text
-dotnet run --project freew/tools/FreeW.DialogVisualHarness.Wpf/FreeW.DialogVisualHarness.Wpf.csproj --configuration Release --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -- --inventory %TEMP%/freex-wave98-legal/inventory.json --output %TEMP%/freex-wave98-legal/wave98-wpf
-dotnet run --project freew/tools/FreeW.DialogVisualHarness.Avalonia/FreeW.DialogVisualHarness.Avalonia.csproj --configuration Release --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -- --inventory %TEMP%/freex-wave98-legal/inventory.json --wpf-authority %TEMP%/freex-wave98-legal/wave98-wpf/wpf_dialog_capture_manifest.json --output %TEMP%/freex-wave98-legal/wave98-avalonia
-dotnet run --project freew/tools/FreeW.DialogVisualHarness/FreeW.DialogVisualHarness.csproj --configuration Release --no-restore --disable-build-servers -p:UseSharedCompilation=false -p:NodeReuse=false /nr:false -m:1 -- compare --inventory %TEMP%/freex-wave98-legal/inventory.json --wpf %TEMP%/freex-wave98-legal/wave98-wpf/wpf_dialog_capture_manifest.json --avalonia %TEMP%/freex-wave98-legal/wave98-avalonia/avalonia_dialog_capture_manifest.json --output %TEMP%/freex-wave98-legal/wave98-compare
-```
+All test and capture commands used Release, `--no-restore`, `--disable-build-servers`,
+`-p:UseSharedCompilation=false`, `-p:NodeReuse=false`, `/nr:false`, and `-m:1`. Focused
+tests used isolated output directories under `%TEMP%\freex-wave98-legal`.
