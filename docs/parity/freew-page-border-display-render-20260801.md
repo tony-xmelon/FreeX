@@ -15,8 +15,7 @@ use it:
 - Avalonia's discrete live Print Layout pages
 - Avalonia direct PDF export
 
-`w:zOrder="behind"` is not part of this slice. It requires changing physical layer ownership relative to
-body text and must be accepted independently.
+`w:zOrder="behind"` is covered independently by `freew-page-border-zorder-render-20260801.md`.
 
 ## Verification
 
