@@ -43,7 +43,7 @@ Date: 2026-08-01
 
 ## Integration and verification
 
-- Merged 38 concurrent `origin/main` commits across two sync points, including
+- Merged 40 concurrent `origin/main` commits across three sync points, including
   FreeP slide-section, chart, and SmartArt work plus FreeW WordArt,
   document-default, and paginated table-spacing work, with no conflicts.
 - Repository preflight passed, including generated parity documents and conflict
@@ -56,6 +56,8 @@ Date: 2026-08-01
 - After the final 12-commit sync, repository preflight passed again across 10,271
   text files. Rebuilt focused lanes passed 227/227 FreeP presentation tests,
   225/225 FreeP WPF host tests, and 50/50 FreeW document-view tests.
+- The final two-commit RTF row-border sync passed 52/52 focused FreeP clipboard
+  tests, followed by another clean repository preflight across 10,272 text files.
 - The final FreeX Linux interaction run used Docker port 6098, stopped its
   container after capture, and left no Wave 98 app process running.
 
