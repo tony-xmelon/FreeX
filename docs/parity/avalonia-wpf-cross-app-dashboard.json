@@ -155,8 +155,8 @@
                                                                   "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json"
                                                               ],
                                               "routeCoverage":  {
-                                                                    "inventoryScenarioCount":  466,
-                                                                    "inventoryRouteCount":  95,
+                                                                    "inventoryScenarioCount":  475,
+                                                                    "inventoryRouteCount":  98,
                                                                     "comparisonScenarioCount":  283,
                                                                     "comparedRouteCount":  95,
                                                                     "pairedRouteCount":  63,
@@ -175,8 +175,8 @@
                                                                    },
                                               "pairedEvidence":  {
                                                                      "pairedScenarioCount":  183,
-                                                                     "passCount":  13,
-                                                                     "mismatchCount":  170,
+                                                                     "passCount":  16,
+                                                                     "mismatchCount":  167,
                                                                      "limitationCount":  0,
                                                                      "avaloniaOnlyScenarioCount":  96,
                                                                      "evidenceClassification":  "paired WPF/Avalonia dialog comparison rows; mismatch classifications remain unresolved visual evidence, not a parity pass/fail"
