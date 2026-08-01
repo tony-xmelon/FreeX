@@ -13,6 +13,8 @@ and text commands. WPF and Avalonia detect a selected nested Shape and pass that
 - solid fill and no fill;
 - preset geometry through Change Shape;
 - trimmed or cleared alternative text;
+- exact X/Y position in the owning group's local coordinate system, with page-anchor controls disabled;
+- exact width and height through the Shape Size dialog and gallery presets;
 - outline color, width, and dash;
 - Shape Styles gallery presets;
 - gradient, pattern, and no-fill descriptors;
@@ -21,7 +23,9 @@ and text commands. WPF and Avalonia detect a selected nested Shape and pass that
 Each command changes only the selected leaf, preserves siblings and owning group geometry, and remains a
 single undoable edit. The existing native DrawingML grouped-shape writer persists the result, and save/reopen
 tests verify the selected leaf's preset geometry, `docPr` description, fill, outline, dash, width, and glow
-while the sibling remains unchanged.
+while the sibling remains unchanged. Position dialogs and gallery presets now read and write the selected
+leaf's `ChildOffsets` entry rather than the floating root's page placement; tests preserve the root anchors
+and verify child-local position through Undo and DOCX save/reopen.
 
 ## Verification
 
