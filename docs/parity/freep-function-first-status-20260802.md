@@ -58,11 +58,16 @@ picture-in-picture handoff. Those are no longer classified as wholly deferred. T
 printer gap is the PowerPoint-style printer-selection dialog on Avalonia; its Windows adapter
 currently submits through the native shell handoff after the shared print plan is built.
 
+The WPF rich-text editor now upgrades an inline OLE placeholder to a native in-place OLE host
+when the registered server is available, while retaining the placeholder and external-activation
+fallback when it is not. Avalonia continues to use its cross-platform external activation path.
+
 ## What remains
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
 - Richer chart authoring/layout semantics beyond the modeled chart grid and option planners.
-- True in-place OLE hosting inside text runs; external activation is supported.
+- Cross-host in-place OLE hosting inside text runs: WPF now has the native host path, while
+  Avalonia still uses external activation until an equivalent native host is available.
 - Broader real-deck media/caption/recording persistence and PowerPoint-authoritative recording
   baselines beyond the current deterministic capture and handoff paths.
 - PowerPoint-style printer-selection dialog execution on Avalonia (Windows native queue submission
