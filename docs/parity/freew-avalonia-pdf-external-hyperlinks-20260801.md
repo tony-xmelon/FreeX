@@ -12,8 +12,9 @@ regions from FreeW's resolved `PlacedChar` layout.
 - Link geometry uses the existing top-left, y-down page-space contract shared with raster PDF pages.
 - FreeW splits regions on page, line, formatting, URL, anchor, or ScreenTip changes. Adjacent links
   with identical visual formatting therefore remain distinct annotations.
-- External URLs become PDF `/Link` annotations. Internal bookmark anchors remain visual hyperlinks;
-  cross-page named destinations are not yet part of the shared PDF model.
+- External URLs become PDF `/Link` annotations. Internal bookmark anchors now resolve through the
+  follow-up named-destination slice documented in
+  `freew-avalonia-pdf-internal-bookmark-links-20260801.md`.
 - The portable writer clips regions to the media box and converts them to PDF y-up coordinates.
 - The Skia writer uses `SKCanvas.DrawUrlAnnotation`, preserving its embedded-font content path.
 
