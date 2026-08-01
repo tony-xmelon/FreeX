@@ -21,6 +21,8 @@ finish or cancel the owner session.
 the resolver: active edit ownership, selection acceptance, source selection chrome, commit, and
 cancel. `FormulaPointModeWorkbookResolver` searches the live registry, routes selection replacement
 or append to the active owner, and routes Enter/Escape back to that owner.
+It also routes source-window F4 to the owner's reference cycler, consuming F4 only when another
+live point-mode owner exists so ordinary Repeat Last behavior remains available otherwise.
 
 WPF and Avalonia now register/expose this contract through their existing workbook-window
 registries. The source window paints its own selected range while the owner updates its live formula
@@ -34,7 +36,7 @@ Focused tests passed on branch `codex/agent-freex-cross-workbook-wave90-20260801
 
 ```text
 dotnet test tests\FreeX.App.Host.Logic.Tests\FreeX.App.Host.Logic.Tests.csproj --configuration Release --no-restore --filter "FullyQualifiedName~R90_CrossWorkbookFormulaPointModeTests"
-Passed: 4, Failed: 0
+Passed: 5, Failed: 0
 
 dotnet test tests\FreeX.App.Host.Tests\FreeX.App.Host.Tests.csproj --configuration Release --no-restore --filter "FullyQualifiedName~R90_CrossWorkbookFormulaPointModeWpfTests"
 Passed: 2, Failed: 0
@@ -44,9 +46,11 @@ Passed: 2, Failed: 0
 ```
 
 The shared tests prove owner resolution, source-chrome handoff, commit/cancel routing, external
-replacement and append formatting, and F4 preservation of the external workbook qualifier. Each
+replacement and append formatting, F4 preservation of the external workbook qualifier, and the
+no-owner F4 fall-through. Each
 host pair creates two live workbook windows with distinct identities and proves source selection,
-replacement, append, F4, commit, and Escape restoration against the real host edit session.
+replacement, source-window F4, append, commit, and Escape restoration against the real host edit
+session.
 
 Release builds also passed for `FreeX.App.Presentation`, `FreeX.App.Host`, and
 `FreeX.App.Avalonia` with `dotnet build --configuration Release --no-restore`.
