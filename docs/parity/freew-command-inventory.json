@@ -55,15 +55,15 @@
     }
   ],
   "summary": {
-    "totalCommands": 934,
-    "both": 484,
+    "totalCommands": 935,
+    "both": 485,
     "wpfOnly": 155,
     "avaloniaOnly": 295,
     "missingWpf": 295,
     "missingAvalonia": 155,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 484,
+    "sharedProfile": 485,
     "profileShapeOnly": 402,
     "commandIdAliases": 43,
     "platformOnly": 5,
@@ -17071,6 +17071,48 @@
           "groupId": "page-setup",
           "group": "Page Setup",
           "label": "Restart Each Page",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
+      }
+    },
+    {
+      "commandId": "freew.line-numbers-restart-section",
+      "label": "Restart Each Section",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "page-setup",
+          "group": "Page Setup",
+          "label": "Restart Each Section",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "layout",
+          "tab": "Layout",
+          "groupId": "page-setup",
+          "group": "Page Setup",
+          "label": "Restart Each Section",
           "controlType": "RibbonMenuItem",
           "layout": "Menu"
         }
