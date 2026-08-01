@@ -18,7 +18,10 @@ Date: 2026-08-01
   Width-aware shared layout applies the policy before the common WPF/Avalonia render planner.
 - **Concurrent mainline work:** the integration branch includes incoming FreeW manual-hyphenation
   and nested grouped-shape formatting plus FreeP SmartArt relationship repair and motion-path
-  editing. The FreeP whole-window source fingerprint was regenerated after that sync.
+  editing. A final sync also added nested grouped-shape size/position routing, repeated animation
+  checkpoint fixes, and vertical-block-list SmartArt authoring. The FreeP whole-window source
+  fingerprint and cross-app dashboard were regenerated after those syncs; FreeP now has 596/596
+  commands in both profiles with no actionable missing command.
 
 ## Verification
 
@@ -34,6 +37,8 @@ Date: 2026-08-01
 - Full serialized Release solution build: **0 warnings**, **0 errors**.
 - Serialized `FreeX.DefaultTests.slnx`: all **20 assemblies passed with 0 failures**. Intentional
   benchmark/platform skips remain skips.
+- Final incoming-change checks passed: FreeP presentation **226**, Avalonia **327**, and WPF host
+  **225**; FreeW Avalonia **29**, WPF host **19**, and Core IO **21**.
 
 ## Remaining depth
 
