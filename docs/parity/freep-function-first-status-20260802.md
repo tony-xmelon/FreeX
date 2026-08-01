@@ -46,9 +46,11 @@ package compatibility. The command inventory remained synchronized across both h
 ### 2026-08-02
 
 Nested RTF cell text direction now survives parsing, clipboard serialization, and both host
-compositors. The native `trapezoidList` SmartArt layout is now live/editable instead of
-cached-only. A review of the proposed grouped-table follow-up found that behavior already
-exists on current `main`; no duplicate implementation was added.
+compositors. The Avalonia nested inline-table editor now consumes the same parsed quarter-turn
+cell text directions instead of painting those cells horizontally. The native `trapezoidList`
+SmartArt layout is now live/editable instead of cached-only. A review of the proposed grouped-
+table follow-up found that behavior already exists on current `main`; no duplicate implementation
+was added.
 
 ## What remains
 
