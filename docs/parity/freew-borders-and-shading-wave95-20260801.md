@@ -13,6 +13,6 @@ This slice tightens the Avalonia `Borders and Shading` dialog against the WPF au
 
 ## Verification
 
-Focused verification is recorded with `BordersAndShadingDialogVisualParityTests`, covering geometry/action order, metadata, open focus/selection, invalid-width validation, and WPF source parity.
+Focused verification is recorded with `BordersAndShadingDialogVisualParityTests`, covering geometry/action order, metadata, open and tab-specific focus, invalid-width validation, and WPF source parity.
 
-The existing paired evidence remains the baseline for this family: initial/populated/Borders/validation are approximately 11.5% changed pixels, and Page Border is approximately 15.16%. Remaining visual delta is expected from Avalonia versus WPF template and text rasterization differences; no generated inventory or global theme/ribbon files were changed in this slice.
+Fresh route-scoped WPF/Avalonia captures passed the content gate for all six states and removed every semantic difference. Changed pixels improved from 11.52% to 11.28% for initial, populated, and Borders; from 15.16% to 14.15% for Page Border; from 8.20% to 7.08% for Shading; and from 11.64% to 11.38% for validation. All six remain honest visual mismatches because native tab, field, and text rendering still differ. Evidence is retained under `artifacts/freew-dialog-harness/wave95-borders`; no generated inventory or global theme/ribbon file was changed.

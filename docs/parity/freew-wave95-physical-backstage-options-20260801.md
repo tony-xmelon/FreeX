@@ -21,13 +21,14 @@ The eight new FreeW rows are:
 - `options-focus`
 - `options-close`
 
-The probe opens File with the real Alt/F route, uses the shared Backstage rail
-keyboard navigation to select Print or Export, and uses Escape to prove the
-owner window and count are restored. The Options route selects the real bottom
-rail Options entry, clicks the rendered Edit options action, verifies a new
-focused Options window, sends physical Ctrl+Tab and Tab input, then closes with
-Escape. Every result retains state text and screenshots, and every result is
-gated on the relevant window, focus, transition, and restoration checks.
+The probe opens File with the real Alt/F route, clicks the rendered Print or
+Export rail entry relative to the live Backstage window geometry, and uses
+Escape to prove the owner window and count are restored. The Options route
+clicks the real bottom rail entry, invokes the rendered Edit options action with
+physical pointer input, verifies that Backstage was replaced by a focused Options window,
+sends physical Ctrl+Tab and Tab input, then closes with Escape. Every result
+retains state text and screenshots, and every result is gated on the relevant
+window, focus, transition, and restoration checks.
 
 ## Contracts
 
