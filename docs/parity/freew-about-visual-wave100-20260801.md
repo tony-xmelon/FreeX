@@ -33,9 +33,12 @@ Change per paired row: `-3,409` changed pixels, `-1.0145833` percentage points, 
 `-2.0073393` mean channel delta. The final rows remain `genuine-visual-mismatch`; this
 slice does not claim pixel parity.
 
-Final raw evidence is outside the repository under:
+Final raw evidence was generated during validation outside the repository under:
 
 `C:\Users\anton\AppData\Local\Temp\FreeW-Wave100-about-final-compare-both`
+
+The metric table above is retained evidence; the raw temporary capture directories are
+cleanup-owned and are removed when the integration wave closes.
 
 ## Verification
 
