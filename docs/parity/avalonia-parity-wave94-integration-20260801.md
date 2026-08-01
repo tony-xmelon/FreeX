@@ -18,7 +18,7 @@ Date: 2026-08-01
 - **FreeW export:** the final branch incorporates the concurrent `origin/main` export series.
   Avalonia PDF/XPS output now retains page borders, watermarks, line numbers, inline drawing
   objects, paragraph and run surfaces, run lines, header/footer images, character borders, and
-  column rules with focused operation and raster evidence.
+  super/subscript positioning and column rules with focused operation and raster evidence.
 - **FreeW dialogs and Backstage:** Style, Legal Notices, Find/Replace, Page Setup, Backstage Open,
   and Backstage Save As received bounded WPF-authority alignment. Find/Replace also restores
   focus-and-select behavior when switching modes.
@@ -38,7 +38,7 @@ Date: 2026-08-01
 - FreeX review/comment runtime and capture lane: **30/30 passed**.
 - FreeP pane lifecycle regressions: Animation **1/1**; Comments plus planner **5/5**.
 - FreeW focused lanes: Backstage **35/35**, Style and Legal Notices **8/8**, Find/Replace **3/3**,
-  Page Setup/chrome **45/45**, Multilevel List **3/3**, and merged PDF export **31/31**.
+  Page Setup/chrome **45/45**, Multilevel List **3/3**, and merged PDF export **32/32**.
 - FreeP merged export-planning lanes: planner **73/73** and host lifecycle **19/19**.
 - WPF STA subset: **10/10 passed**.
 - Shared ribbon UI lane: **40/40 passed** (24 shared/Avalonia and 16 WPF).
