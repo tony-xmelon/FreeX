@@ -15,8 +15,8 @@ The focused `outline-nested-group` selector now:
    and the shared row context-menu Group command.
 3. Creates an outer column group (`H:L`) and inner column group (`I:K`) through physical header
    drags and the shared column context-menu Group route.
-4. Re-measures A1 after each command, requires the rendered outline gutter to reach the expected
-   26-DIP and 40-DIP depths, and verifies button chrome at the stable level centers before clicking.
+4. Derives A1 from the startup origin plus the renderer's fixed 26-DIP and 40-DIP gutter depths,
+   then verifies button chrome at the stable level centers before accepting each command or click.
 5. Proves each collapse structurally: the inner summary value must move into the first vacated
    visible slot, and a separately seeded outer summary must move into the outer group's slot.
 6. Reads every seeded detail value back through the physical formula-editor/clipboard path after
@@ -29,11 +29,12 @@ The manifest records independent `outline-nested-rows-group-physical` and
 ## Verification
 
 The source contracts cover selector dispatch, both axes, level-specific toggle sequencing,
-post-group geometry refresh, exact visible-slot transitions, exact restoration values, and
+deterministic post-group geometry, popup-stack dismissal, exact visible-slot transitions, and
 default-lane wiring. A focused Avalonia layout test also arranges both nested row and column toggle
 levels and asserts their controls have nonzero, in-bounds rendered geometry. The failed runtime
-evidence showed a probe-route defect, not an overlay defect: the former row key sequence never
-created a group, while the inner column gesture reused the pre-group header origin.
+evidence showed probe-route defects, not an overlay defect: the former row key sequence never
+created a group, and later attempts inferred A1 from arbitrary active selections after whole-header
+selection. Outline origins now come only from the calibrated startup origin and proven depth.
 
 The earlier one-level probes now use the same row-header/context-menu path and structural
 visible-slot assertions, removing their generic green-pixel and whole-screen-change assumptions.
