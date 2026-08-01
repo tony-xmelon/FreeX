@@ -13,7 +13,9 @@ layers around the same child draw operations.
 `PdfEffectGroup` is a real composable draw operation, not an effect metadata marker. It carries the
 effect family, object bounds, opacity, radius, offsets, reflection direction/gap, and optional
 highlight/shadow colors. Portable PDF emits recolored and translated silhouette passes; Skia uses
-the same passes through its raster compositor. Because the operation wraps the original vector
+the same passes through its raster compositor. In both backends, a non-null effect color is a
+solid silhouette color: Skia bypasses pattern shaders and gradient shaders on effect passes.
+Because the operation wraps the original vector
 children, effects work for ungrouped objects and recursively grouped shape/WordArt children.
 
 The planner now carries the model's reflection start alpha/distance/direction and bevel width/
@@ -25,7 +27,7 @@ highlight cue; WPF's lightweight object path does not render a true soft-edge or
 
 ```text
 dotnet test tests/Free.Shared.Pdf.Tests/Free.Shared.Pdf.Tests.csproj --configuration Release --no-restore --filter "FullyQualifiedName~PortablePdfWriterTests|FullyQualifiedName~SkiaPdfWriterTests"
-Passed: 55, Failed: 0, Skipped: 0
+Passed: 56, Failed: 0, Skipped: 0
 
 dotnet test freew/FreeW.App.Avalonia.Tests/FreeW.App.Avalonia.Tests.csproj --configuration Release --no-restore --filter "FullyQualifiedName~DocumentViewPdfExportTests"
 Passed: 13, Failed: 0, Skipped: 0
