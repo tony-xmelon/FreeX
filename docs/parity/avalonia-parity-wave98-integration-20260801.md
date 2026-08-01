@@ -43,9 +43,9 @@ Date: 2026-08-01
 
 ## Integration and verification
 
-- Merged 26 concurrent `origin/main` commits before final validation, including
-  FreeP slide-section/chart work and FreeW WordArt/document-default work, with no
-  conflicts.
+- Merged 38 concurrent `origin/main` commits across two sync points, including
+  FreeP slide-section, chart, and SmartArt work plus FreeW WordArt,
+  document-default, and paginated table-spacing work, with no conflicts.
 - Repository preflight passed, including generated parity documents and conflict
   marker checks across 10,265 text files.
 - `dotnet build FreeX.slnx -c Release` passed across 98 projects with zero
@@ -53,6 +53,9 @@ Date: 2026-08-01
 - `dotnet test FreeX.DefaultTests.slnx -c Release --no-build --no-restore`
   passed every test assembly; only explicitly skipped benchmark/stress cases were
   skipped.
+- After the final 12-commit sync, repository preflight passed again across 10,271
+  text files. Rebuilt focused lanes passed 227/227 FreeP presentation tests,
+  225/225 FreeP WPF host tests, and 50/50 FreeW document-view tests.
 - The final FreeX Linux interaction run used Docker port 6098, stopped its
   container after capture, and left no Wave 98 app process running.
 
