@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia) plus freep/FreeP.App.Presentation SmartArtLayoutPreset",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 596,
-    "both": 596,
+    "totalCommands": 604,
+    "both": 604,
     "wpfOnly": 0,
     "avaloniaOnly": 0,
     "missingWpf": 0,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 596,
+    "shared": 604,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 0,
@@ -19453,6 +19453,278 @@
           "group": "Font",
           "label": "Row Height",
           "controlType": "RibbonComboBox",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.table.banded-columns",
+      "label": "Banded Columns",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Banded Columns",
+          "controlType": "RibbonToggleButton",
+          "layout": "Small"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Banded Columns",
+          "controlType": "RibbonToggleButton",
+          "layout": "Small"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.table.banded-rows",
+      "label": "Banded Rows",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Banded Rows",
+          "controlType": "RibbonToggleButton",
+          "layout": "Small"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Banded Rows",
+          "controlType": "RibbonToggleButton",
+          "layout": "Small"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.table.first-column",
+      "label": "First Column",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "First Column",
+          "controlType": "RibbonToggleButton",
+          "layout": "Small"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "First Column",
+          "controlType": "RibbonToggleButton",
+          "layout": "Small"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.table.first-row",
+      "label": "Header Row",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Header Row",
+          "controlType": "RibbonToggleButton",
+          "layout": "Small"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Header Row",
+          "controlType": "RibbonToggleButton",
+          "layout": "Small"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.table.last-column",
+      "label": "Last Column",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Last Column",
+          "controlType": "RibbonToggleButton",
+          "layout": "Small"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Last Column",
+          "controlType": "RibbonToggleButton",
+          "layout": "Small"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.table.last-row",
+      "label": "Total Row",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Total Row",
+          "controlType": "RibbonToggleButton",
+          "layout": "Small"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Total Row",
+          "controlType": "RibbonToggleButton",
+          "layout": "Small"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.table.merge-cells",
+      "label": "Merge Cells",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Merge Cells",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Merge Cells",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.table.split-cell",
+      "label": "Split Cell",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Split Cell",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Split Cell",
+          "controlType": "RibbonButton",
           "layout": "Medium"
         }
       ]

@@ -1128,6 +1128,16 @@ the model-owned `parOf` hierarchy and dropping only dangling connections. This c
 semantics loss in edited org-chart and presentation-relationship diagrams without making a new
 visual-fidelity claim.
 
+### 2026-08-01 table merge and split ribbon reachability
+
+The shared table model already had undoable merge/split commands, and both hosts exposed
+the behavior from their context menus, but the PowerPoint-style ribbon did not. FreeP now
+publishes localized `Merge Cells` and `Split Cell` controls in both WPF and Avalonia and
+routes them through the same active-cell session methods, including no-op protection and
+undo behavior. Focused model, host, Avalonia, and ribbon-definition coverage exercises the
+adjacent-cell merge and split path. This is a functional authoring-parity slice with no new
+PowerPoint raster claim.
+
 ### 2026-08-01 function-first parity checkpoint
 
 The current FreeP audit reports 596/596 shared command IDs, zero actionable WPF/Avalonia
@@ -1500,3 +1510,12 @@ reader now preserves connector kind, line geometry, flips, stroke, and endpoint 
 the generated cache writer remains on its existing PowerPoint-compatible `dsp:sp` route. Host
 SmartArt coverage passes 226/226. This is a functional package-compatibility fix with no new
 visual-fidelity claim.
+
+### 2026-08-01 table design emphasis controls
+
+PowerPoint table-design flags were already preserved in the table model and package paths, but
+there was no authoring route for them. The shared undo bus now exposes Header Row, Total Row,
+First Column, Last Column, Banded Rows, and Banded Columns as six stable commands, with matching
+WPF and Avalonia ribbon toggles. Focused model and host coverage exercises every flag with undo;
+the command inventory was regenerated with both frontends still exposing the same command set.
+This is functional table-authoring parity with no new visual-fidelity claim.
