@@ -1128,6 +1128,16 @@ the model-owned `parOf` hierarchy and dropping only dangling connections. This c
 semantics loss in edited org-chart and presentation-relationship diagrams without making a new
 visual-fidelity claim.
 
+### 2026-08-01 table merge and split ribbon reachability
+
+The shared table model already had undoable merge/split commands, and both hosts exposed
+the behavior from their context menus, but the PowerPoint-style ribbon did not. FreeP now
+publishes localized `Merge Cells` and `Split Cell` controls in both WPF and Avalonia and
+routes them through the same active-cell session methods, including no-op protection and
+undo behavior. Focused model, host, Avalonia, and ribbon-definition coverage exercises the
+adjacent-cell merge and split path. This is a functional authoring-parity slice with no new
+PowerPoint raster claim.
+
 ### 2026-08-01 function-first parity checkpoint
 
 The current FreeP audit reports 596/596 shared command IDs, zero actionable WPF/Avalonia
