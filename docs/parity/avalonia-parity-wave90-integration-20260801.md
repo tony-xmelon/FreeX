@@ -43,11 +43,21 @@ Date: 2026-08-01
 - FreeP startup attached-window lifecycle regression: **1/1 passed**.
 - Repository preflight: **passed**, including current generated evidence and **33/33** paired FreeP
   whole-window surfaces.
+- Full Release builds passed for FreeX, FreeW, and FreeP with **0 warnings** and **0 errors**.
+- Serialized default lane: **34,857 passed**, **0 failed**, and **133 skipped** across **34,990**
+  tests in 19 test assemblies.
+- Linux Docker family interaction lanes: **85/85 passed**, with every manifest contract passing:
+  FreeX **24/24**, FreeW **37/37**, and FreeP **24/24**.
+
+The first full default-lane run exposed eight Avalonia keyboard/formula failures caused by stale,
+unshown workbook windows remaining eligible for formula-point routing. Restricting that routing to
+visible windows fixed the defect; the combined affected lane then passed 84/84 and the complete
+default lane passed on the final tip. The first FreeW physical run captured the Find dialog one
+frame before it painted even though its window, focus, typed marker, Enter transition, dismissal,
+and owner restoration all succeeded. An unchanged-payload rerun passed 37/37.
 
 ## Remaining depth
 
-- Full Release build, serialized default test lane, and Linux family interaction lanes are pending
-  for this integration tip.
 - FreeW PDF effects intentionally use visible portable/vector fallbacks rather than native blur,
   full reflection fade/skew gradients, or true 3-D bevel/material geometry.
 - FreeW Backstage and Legal Notices improved measurably but remain genuine raster mismatches.
