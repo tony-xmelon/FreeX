@@ -38,13 +38,17 @@ Date: 2026-08-01
 - Shared ribbon lane: **39/39 passed**.
 - FreeP WPF canvas-editing lane: **42/42 passed**.
 - FreeP native-picker physical X11 lane: **9/9 passed**, strict manifest contract passed.
+- FreeP startup attached-window lifecycle regression: **1/1 passed**.
+- Repository preflight: **passed**, including current generated evidence and **33/33** paired FreeP
+  whole-window surfaces.
 
 ## Remaining depth
 
-- Final repository preflight, full Release build, serialized default test lane, and Linux family
-  interaction lanes are pending for this integration tip.
+- Full Release build, serialized default test lane, and Linux family interaction lanes are pending
+  for this integration tip.
 - FreeW PDF effects intentionally use visible portable/vector fallbacks rather than native blur,
   full reflection fade/skew gradients, or true 3-D bevel/material geometry.
 - FreeW Backstage and Legal Notices improved measurably but remain genuine raster mismatches.
-- The physical FreeP run exposed a startup-document dirty-state regression after real window
-  attachment; a focused lifecycle fix is in progress and is not claimed complete here.
+- The physical FreeP run exposed a startup-document dirty marker that does not reproduce after
+  `Show()` and render/background dispatcher settling in the attached-window regression. No masking
+  workaround was added; the Docker-only residual remains open pending exact dirty-transition logs.

@@ -1,6 +1,6 @@
 # FreeP Avalonia Startup Dirty-State Investigation
 
-Date: 2026-08-01  
+Date: 2026-08-01
 Scope: FreeP Avalonia startup document lifecycle, Wave 90 sidecar
 
 ## Result
@@ -34,9 +34,8 @@ The normal Avalonia path is:
 
 The Docker launcher supplies the document as `APP_DOCUMENT=/documents/<name>`; the
 entrypoint appends that value to `APP_ARGUMENTS_B64` arguments before starting the
-published executable. The physical FreeP validation coordinator is a separate
-post-`Opened` path and intentionally mutates the model after its initial owner capture
-by inserting slides. That mutation is not part of ordinary startup.
+published executable. The native-picker probe performs no model mutation before its
+initial owner capture, so its observed dirty marker cannot be attributed to the probe.
 
 WPF uses the same saved-load ordering concept: its `FileCommands`/`LoadModel` path
 marks the loaded document saved, while its notes refresh is guarded during programmatic
