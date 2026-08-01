@@ -8,7 +8,7 @@ Branch: `codex/freew-wave95-dialog-20260801`
 
 This slice aligns the Avalonia `Options` dialog to the WPF authority. `Options` was selected as an eligible, commonly used functional dialog outside the Wave 94 exclusions. The evidence identified the largest eligible Options deltas in the AutoCorrect and AutoFormat tabs, including an action-button-order semantic mismatch.
 
-The Avalonia dialog now uses the shared WPF-equivalent OK/Cancel row contract with 84px buttons and automation names, selects the recent-files field on open, and presents AutoCorrect replacements as a keyboard-editable two-column Replace/With grid. A trailing blank row keeps the WPF DataGrid add-row workflow available; incomplete rows are ignored on commit, matching the WPF host behavior.
+The Avalonia dialog now uses the shared WPF-equivalent OK/Cancel row contract with 84px buttons and automation names, selects the recent-files field on open, and presents AutoCorrect replacements as a keyboard-editable, vertically scrollable two-column Replace/With grid. A trailing blank row keeps the WPF DataGrid add-row workflow available; incomplete rows are ignored on commit, matching the WPF host behavior.
 
 ## Paired Evidence
 
