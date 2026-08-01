@@ -1519,3 +1519,15 @@ First Column, Last Column, Banded Rows, and Banded Columns as six stable command
 WPF and Avalonia ribbon toggles. Focused model and host coverage exercises every flag with undo;
 the command inventory was regenerated with both frontends still exposing the same command set.
 This is functional table-authoring parity with no new visual-fidelity claim.
+
+### 2026-08-02 nested RTF table cell text direction
+
+The rich RTF reader already preserved nested-table cell alignment, padding, borders, merges,
+and row constraints, but dropped the supported `\\cltx*` cell text-direction controls. The
+clipboard table-cell style payload now carries horizontal, top-to-bottom, and bottom-to-top
+text orientation through nested inline-table parsing, standalone table paste, and clipboard
+serialization. The shared slide compositor propagates the orientation into the existing WPF
+and Avalonia text-orientation renderer, while older payloads and ordinary horizontal cells
+retain their previous path. Focused nested-table round-trip, shared compositor, WPF host, and
+Avalonia host coverage passes; this is functional rich-text/table parity with no new
+PowerPoint raster-fidelity claim.
