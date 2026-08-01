@@ -15,7 +15,9 @@ FreeP publish are built. The wrapper uses port `6110`, a `1280x820` Xvfb desktop
 and `96` DPI by default. It starts the existing harness through
 `Run-LinuxInteractiveDocker.ps1`, seeds `01-title-slide.pptx` and
 `03-mixed-text.pptx` in the mounted documents directory, and leaves the evidence
-under `artifacts/freep-native-picker-x11-wave90-20260801/freep/sessions/`.
+under `artifacts/fp-picker-w90/freep/sessions/`. The compact path keeps the
+physical-evidence lane below Windows PowerShell's legacy path-length boundary
+when it runs from a deep integration worktree.
 
 ## Physical contract
 
