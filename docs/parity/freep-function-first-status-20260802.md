@@ -52,14 +52,22 @@ SmartArt route now emits editable trapezoid nodes with bounded slant geometry in
 through to rounded rectangles. A review of the proposed grouped-table follow-up found that
 behavior already exists on current `main`; no duplicate implementation was added.
 
+The follow-up capability audit corrected the remaining list against current code: Avalonia already
+has Windows native printer submission, MP4 export, persisted narration muxing, and camera
+picture-in-picture handoff. Those are no longer classified as wholly deferred. The remaining
+printer gap is the PowerPoint-style printer-selection dialog on Avalonia; its Windows adapter
+currently submits through the native shell handoff after the shared print plan is built.
+
 ## What remains
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
 - Richer chart authoring/layout semantics beyond the modeled chart grid and option planners.
 - True in-place OLE hosting inside text runs; external activation is supported.
-- Real microphone/camera capture and broader native media/caption persistence.
-- Native printer-dialog execution on Avalonia and broader PowerPoint-authoritative export baselines.
-- Physical WPF/Avalonia interaction proof for richer mixed workflows, plus PowerPoint COM-backed
+- Broader real-deck media/caption/recording persistence and PowerPoint-authoritative recording
+  baselines beyond the current deterministic capture and handoff paths.
+- PowerPoint-style printer-selection dialog execution on Avalonia (Windows native queue submission
+  is already available), plus broader PowerPoint-authoritative export baselines.
+- Physical WPF/Avalonia interaction proof for richer mixed workflows and PowerPoint COM-backed
   validation where exact application behavior or visual parity is being claimed.
 
 The visual-parity lane is intentionally treated as evidence-led and bounded. Existing Word/PowerPoint
