@@ -1128,6 +1128,20 @@ the model-owned `parOf` hierarchy and dropping only dangling connections. This c
 semantics loss in edited org-chart and presentation-relationship diagrams without making a new
 visual-fidelity claim.
 
+### 2026-08-01 function-first parity checkpoint
+
+The current FreeP audit reports 596/596 shared command IDs, zero actionable WPF/Avalonia
+command gaps, and 103 workflow-evidence rows. Source and focused-test review confirms that
+the major internal workflows are already represented across both hosts, including animation
+timing/effect/repeat controls, accessibility actions, comments, SmartArt outline/data/cache
+editing, and Windows-native camera MP4 capture when the OS media stack is available.
+
+Remaining parity work is explicitly external or depth-limited: live hardware and permission
+evidence, PowerPoint COM PDF/PNG/recording baselines, broader real-deck chart/SmartArt/math
+corpora, OS printer and encoder adapters, richer provider-specific RTF/XamlPackage semantics,
+and deeper review/proofing UI. This checkpoint keeps visual calibration parked unless a
+functional feature requires it; it makes no new raster-fidelity claim.
+
 ### 2026-07-29 WPF recording capability truthfulness
 
 WPF MediaComposition export was previously advertised as having narration and camera capture
