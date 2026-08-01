@@ -55,15 +55,15 @@
     }
   ],
   "summary": {
-    "totalCommands": 935,
-    "both": 485,
+    "totalCommands": 939,
+    "both": 489,
     "wpfOnly": 155,
     "avaloniaOnly": 295,
     "missingWpf": 295,
     "missingAvalonia": 155,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 485,
+    "sharedProfile": 489,
     "profileShapeOnly": 402,
     "commandIdAliases": 43,
     "platformOnly": 5,
@@ -4058,7 +4058,7 @@
         },
         "avaloniaEvidence": {
           "path": "freew/FreeW.App.Avalonia.Tests/ChartSmartArtContextualTabTests.cs",
-          "test": "ChartSmartArtContextualTabTests.Chart_size_dialog_command_routes_selected_chart_to_owner_modal_callback"
+          "test": "ChartSmartArtContextualTabTests.Chart_size_primary_and_dialog_alias_route_selected_chart_to_owner_modal_callback"
         }
       }
     },
@@ -12641,16 +12641,6 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "drawing-format",
-          "tab": "Drawing Format",
-          "groupId": "drawing-arrange",
-          "group": "Arrange",
-          "label": "Bring Forward",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        },
-        {
-          "profile": "WPF",
           "tabId": "picture-format",
           "tab": "Picture Format",
           "groupId": "picture-arrange",
@@ -12676,16 +12666,6 @@
           "tabId": "drawing-format",
           "tab": "Drawing Format",
           "groupId": "drawing-arrange",
-          "group": "Arrange",
-          "label": "Bring Forward",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        },
-        {
-          "profile": "Avalonia",
-          "tabId": "picture-format",
-          "tab": "Picture Format",
-          "groupId": "picture-arrange",
           "group": "Arrange",
           "label": "Bring Forward",
           "controlType": "RibbonButton",
@@ -12713,16 +12693,6 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "drawing-format",
-          "tab": "Drawing Format",
-          "groupId": "drawing-arrange",
-          "group": "Arrange",
-          "label": "Bring to Front",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        },
-        {
-          "profile": "WPF",
           "tabId": "picture-format",
           "tab": "Picture Format",
           "groupId": "picture-arrange",
@@ -12748,16 +12718,6 @@
           "tabId": "drawing-format",
           "tab": "Drawing Format",
           "groupId": "drawing-arrange",
-          "group": "Arrange",
-          "label": "Bring to Front",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        },
-        {
-          "profile": "Avalonia",
-          "tabId": "picture-format",
-          "tab": "Picture Format",
-          "groupId": "picture-arrange",
           "group": "Arrange",
           "label": "Bring to Front",
           "controlType": "RibbonButton",
@@ -14274,16 +14234,6 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "drawing-format",
-          "tab": "Drawing Format",
-          "groupId": "drawing-arrange",
-          "group": "Arrange",
-          "label": "Send Backward",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        },
-        {
-          "profile": "WPF",
           "tabId": "picture-format",
           "tab": "Picture Format",
           "groupId": "picture-arrange",
@@ -14309,16 +14259,6 @@
           "tabId": "drawing-format",
           "tab": "Drawing Format",
           "groupId": "drawing-arrange",
-          "group": "Arrange",
-          "label": "Send Backward",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        },
-        {
-          "profile": "Avalonia",
-          "tabId": "picture-format",
-          "tab": "Picture Format",
-          "groupId": "picture-arrange",
           "group": "Arrange",
           "label": "Send Backward",
           "controlType": "RibbonButton",
@@ -14346,16 +14286,6 @@
       "wpfLocations": [
         {
           "profile": "WPF",
-          "tabId": "drawing-format",
-          "tab": "Drawing Format",
-          "groupId": "drawing-arrange",
-          "group": "Arrange",
-          "label": "Send to Back",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        },
-        {
-          "profile": "WPF",
           "tabId": "picture-format",
           "tab": "Picture Format",
           "groupId": "picture-arrange",
@@ -14381,16 +14311,6 @@
           "tabId": "drawing-format",
           "tab": "Drawing Format",
           "groupId": "drawing-arrange",
-          "group": "Arrange",
-          "label": "Send to Back",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        },
-        {
-          "profile": "Avalonia",
-          "tabId": "picture-format",
-          "tab": "Picture Format",
-          "groupId": "picture-arrange",
           "group": "Arrange",
           "label": "Send to Back",
           "controlType": "RibbonButton",
@@ -24253,6 +24173,90 @@
       }
     },
     {
+      "commandId": "freew.shape-bring-forward",
+      "label": "Bring Forward",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Bring Forward",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-arrange",
+          "group": "Arrange",
+          "label": "Bring Forward",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.shape-bring-to-front",
+      "label": "Bring to Front",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Bring to Front",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-arrange",
+          "group": "Arrange",
+          "label": "Bring to Front",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
       "commandId": "freew.shape-change",
       "label": "Change Shape",
       "wpfPresent": true,
@@ -26061,6 +26065,90 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": true,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.shape-send-backward",
+      "label": "Send Backward",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Send Backward",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-arrange",
+          "group": "Arrange",
+          "label": "Send Backward",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
+      }
+    },
+    {
+      "commandId": "freew.shape-send-to-back",
+      "label": "Send to Back",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "drawing-format",
+          "tab": "Drawing Format",
+          "groupId": "drawing-arrange",
+          "group": "Arrange",
+          "label": "Send to Back",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "picture-format",
+          "tab": "Picture Format",
+          "groupId": "picture-arrange",
+          "group": "Arrange",
+          "label": "Send to Back",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
