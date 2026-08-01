@@ -44,7 +44,7 @@ Date: 2026-08-01
 - Repository preflight: **passed**, including current generated evidence, **28/28** FreeP dialog
   panes, and **33/33** paired FreeP whole-window surfaces.
 - Full Release builds passed for FreeX, FreeW, and FreeP with **0 warnings** and **0 errors**.
-- Serialized default lane: **34,871 passed**, **0 failed**, and **133 skipped** across **35,004**
+- Serialized default lane: **35,006 passed**, **0 failed**, and **133 skipped** across **35,139**
   tests in 19 test assemblies.
 - Linux Docker family interaction lanes: **85/85 passed**: FreeX **24/24**, FreeW **37/37**, and
   FreeP **24/24**.
