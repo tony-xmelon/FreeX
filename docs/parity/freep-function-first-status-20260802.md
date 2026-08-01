@@ -51,6 +51,9 @@ cell text directions instead of painting those cells horizontally. The native `t
 SmartArt route now emits editable trapezoid nodes with bounded slant geometry instead of falling
 through to rounded rectangles. A review of the proposed grouped-table follow-up found that
 behavior already exists on current `main`; no duplicate implementation was added.
+Native SmartArt quick styles `simple1` through `simple5` now resolve to distinct live profiles
+(Simple Fill, White Outline, Subtle, Moderate, and Intense) instead of allowing the generic
+`simple` identifier to collapse Moderate and Intense into the Subtle rendering path.
 
 The follow-up capability audit corrected the remaining list against current code: Avalonia already
 has Windows native printer submission, MP4 export, persisted narration muxing, and camera
@@ -58,11 +61,16 @@ picture-in-picture handoff. Those are no longer classified as wholly deferred. T
 printer gap is the PowerPoint-style printer-selection dialog on Avalonia; its Windows adapter
 currently submits through the native shell handoff after the shared print plan is built.
 
+The WPF rich-text editor now upgrades an inline OLE placeholder to a native in-place OLE host
+when the registered server is available, while retaining the placeholder and external-activation
+fallback when it is not. Avalonia continues to use its cross-platform external activation path.
+
 ## What remains
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
 - Richer chart authoring/layout semantics beyond the modeled chart grid and option planners.
-- True in-place OLE hosting inside text runs; external activation is supported.
+- Cross-host in-place OLE hosting inside text runs: WPF now has the native host path, while
+  Avalonia still uses external activation until an equivalent native host is available.
 - Broader real-deck media/caption/recording persistence and PowerPoint-authoritative recording
   baselines beyond the current deterministic capture and handoff paths.
 - PowerPoint-style printer-selection dialog execution on Avalonia (Windows native queue submission
