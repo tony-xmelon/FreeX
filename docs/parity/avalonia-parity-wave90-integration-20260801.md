@@ -7,7 +7,8 @@ Date: 2026-08-01
 - **FreeX:** formula point mode now routes selections from a second workbook window to the
   workbook that owns the edit in WPF and Avalonia. Replace, disjoint append, drag extension,
   source-window selection chrome, F4 reference cycling, Enter commit, and Escape cancel preserve
-  external workbook and sheet qualifiers.
+  external workbook and sheet qualifiers. Avalonia routing considers visible workbook windows
+  only, so stale unshown/closed test or lifecycle instances cannot intercept normal keyboard input.
 - **FreeW PDF:** grouped drawing export is recursive and preserves nested transforms, clipping,
   z-order, fills, patterns, outlines, text, images, charts, SmartArt, and WordArt. Shape and
   WordArt shadow, glow, soft-edge, reflection, and bevel cues now use shared PDF effect operations
@@ -32,6 +33,7 @@ Date: 2026-08-01
 - FreeX cross-workbook resolver tests: **5/5 passed**.
 - FreeX WPF cross-workbook window tests: **2/2 passed**.
 - FreeX Avalonia cross-workbook window tests: **2/2 passed**.
+- FreeX combined Avalonia formula/keyboard lifecycle regression lane: **84/84 passed**.
 - Shared PDF tests after effect integration: **88/88 passed**.
 - FreeW Avalonia PDF export tests: **13/13 passed**.
 - FreeW Backstage and Legal Notices integrated tests: **34/34 passed**.
