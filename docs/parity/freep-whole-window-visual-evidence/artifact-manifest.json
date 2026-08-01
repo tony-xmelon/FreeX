@@ -64,7 +64,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Wpf/TextBodyFlowDocumentConverter.cs",
-                       "sha256":  "1b9eede5b7c3349bb9bc5befeb6db1ef1e10fe32d8b486b1ef912fb069c531ad"
+                       "sha256":  "a88871751f67f92e912836041f5f5a254d5e8c73fd59157dc8a3f91f40b75b5a"
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaInCanvasTextEditor.cs",
