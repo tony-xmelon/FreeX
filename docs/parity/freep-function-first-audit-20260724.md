@@ -337,6 +337,7 @@ claim.
 
 ## Process decision
 
+
 ### 2026-07-27 Picture Grid SmartArt route
 
 PowerPoint's Picture Grid layout is now a distinct function path in both hosts. The shared
@@ -1531,3 +1532,11 @@ and Avalonia text-orientation renderer, while older payloads and ordinary horizo
 retain their previous path. Focused nested-table round-trip, shared compositor, WPF host, and
 Avalonia host coverage passes; this is functional rich-text/table parity with no new
 PowerPoint raster-fidelity claim.
+
+### 2026-08-02 Trapezoid List SmartArt admission
+
+The native `trapezoidList` layout now remains live and editable through the FreeP package
+reader, insertion factory, Change Layout, and both WPF and Avalonia host routes. Its ordered
+nodes use the shared list geometry instead of falling back to cached-only drawing content.
+This is a functional/package parity slice; exact PowerPoint band proportions remain separate
+visual work.
