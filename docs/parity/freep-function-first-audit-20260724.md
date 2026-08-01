@@ -1476,3 +1476,13 @@ Backstage/command state aligned with actual execution. Shared planner coverage p
 WPF lifecycle coverage 19/19, Avalonia video-plan coverage 2/2, and the Windows native frame,
 narration, and camera-overlay export contract passes 7/7. No PowerPoint-authoritative video
 baseline claim is attached.
+
+### 2026-08-01 native SmartArt cache connectors
+
+Some PowerPoint producers emit cached SmartArt edges as native `dsp:cxnSp` elements rather
+than the more common line-shaped `dsp:sp` form. The cache reader previously ignored those
+elements, so an otherwise valid SmartArt preview could lose connector edges on import. The
+reader now preserves connector kind, line geometry, flips, stroke, and endpoint attachments;
+the generated cache writer remains on its existing PowerPoint-compatible `dsp:sp` route. Host
+SmartArt coverage passes 226/226. This is a functional package-compatibility fix with no new
+visual-fidelity claim.
