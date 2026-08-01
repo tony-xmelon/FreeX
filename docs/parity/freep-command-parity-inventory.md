@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 581 | 581 | 0 | 0 | 0 | 0 | 0 | 0 | 581 | 0 | 0 | 0 | 0 | 101 |
+| 582 | 582 | 0 | 0 | 0 | 0 | 0 | 0 | 582 | 0 | 0 | 0 | 0 | 101 |
 
 ## Workflow Evidence
 
@@ -626,6 +626,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.table-row-height` | Row Height | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.text-autofit` | Text Autofit | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.text-box` | Text Box | Yes | Yes | none | shared | insert/text (RibbonButton) | insert/text (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.text-column-spacing` | Column Spacing | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.text-columns` | Text Columns | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.text-direction` | Text Direction | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.theme.berlin` | Berlin | Yes | Yes | none | shared | design/themes (RibbonButton) | design/themes (RibbonButton) | Available in both generated FreeP ribbon profiles. |
