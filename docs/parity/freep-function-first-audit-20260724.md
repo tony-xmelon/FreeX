@@ -1465,3 +1465,14 @@ slide composition and notes-page export all collapsed to `M/d/yyyy`. A shared fo
 honors `datetime1` through `datetime4` consistently while preserving cached field text as the
 source of truth. Focused coverage exercises all four formats in both consuming paths; this is
 functional presentation parity with no new PowerPoint raster claim.
+
+### 2026-08-01 host-aware video export planning
+
+Windows MediaComposition video export now has an explicit shared-planner capability input. WPF
+and Avalonia pass their detected host capability into `BuildVideoExportPlan`, so an available
+MP4 encoder marks the plan executable while a host without an encoder remains deferred with its
+host-specific reason. This removes the previous host-only `IsImplemented` patch-up and keeps
+Backstage/command state aligned with actual execution. Shared planner coverage passes 73/73,
+WPF lifecycle coverage 19/19, Avalonia video-plan coverage 2/2, and the Windows native frame,
+narration, and camera-overlay export contract passes 7/7. No PowerPoint-authoritative video
+baseline claim is attached.
