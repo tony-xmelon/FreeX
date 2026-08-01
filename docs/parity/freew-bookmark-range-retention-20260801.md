@@ -22,8 +22,8 @@ bookmarks into whole-paragraph ranges. Word-only `_GoBack` and bookmark table-co
   before `CommitToModel`, rather than being restored from a stale paragraph snapshot.
 - Exact model clone paths, document merge, mail merge, table-header projection, and Avalonia paragraph clones
   retain the metadata. Bookmark-name remapping and `Paragraph.BookmarkName` renames update matching starts.
-- Compare/combine paragraphs whose runs are regenerated deliberately do not copy raw run indices; those paths
-  need visible-text offset mapping and are tracked as the next editing-model slice.
+- Compare/combine paragraphs whose runs are regenerated use explicit visible-text/source-run mapping rather
+  than copying raw indices; see `freew-bookmark-run-remapping-20260801.md`.
 
 ## Verification
 
@@ -42,7 +42,8 @@ oracle failures remain on current main; the complete affected `DocumentViewRound
 
 ## Residual
 
-Boundary positions are run-relative in the core model. WPF text edits use live anchors, but model commands that
-split/coalesce runs (comments and revisions), compare/combine regenerated paragraphs, boundaries nested inside
-expanded field payloads, and exact ordering against comment markers still need explicit offset/owner mapping.
-The writer clamps any retained out-of-range index rather than emitting malformed XML.
+Boundary positions are run-relative in the core model. WPF text edits use live anchors, and comment/revision/
+compare/combine regeneration now remaps them. Insertion exactly on a boundary still needs a Word-compatible
+caret-affinity policy; boundaries nested inside expanded field payloads and exact ordering against comment
+markers also need explicit package ownership. The writer clamps out-of-range indices rather than emitting
+malformed XML.
