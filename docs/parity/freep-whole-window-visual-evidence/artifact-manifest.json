@@ -40,7 +40,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Host/MainWindow.cs",
-                       "sha256":  "75563344f5503b0558eccb5b9c5f3324f4e391ee76fa7572dadc017664c9b8be"
+                       "sha256":  "c999b728e98518f438141ca6f4a158e238731149ecd88b8b93e687e45c1bcb97"
                    },
                    {
                        "path":  "freep/FreeP.App.Host/MainWindow.WholeWindowVisualEvidence.cs",
