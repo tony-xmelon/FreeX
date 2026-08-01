@@ -41,6 +41,7 @@ dotnet test freew\FreeW.App.Avalonia.Tests\FreeW.App.Avalonia.Tests.csproj --con
 
 ## Residuals
 
-- Inline AutoShapes remain governed by their existing inline fallback/live ownership and are not added by this chart/WordArt/SmartArt slice.
+- Inline AutoShapes and mixed inline-object paragraphs are covered by the follow-up
+  `freew-avalonia-inline-shape-pdf-20260801.md`.
 - PDF text still uses the shared writer's built-in font faces; exact Office font embedding remains outside this adapter.
 - This slice proves model, operation, writer, and raster behavior. It does not claim pixel identity against a Word PDF baseline.
