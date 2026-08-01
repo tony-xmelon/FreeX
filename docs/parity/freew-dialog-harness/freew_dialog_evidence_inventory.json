@@ -1,6 +1,6 @@
 {
   "schema": "freew.dialog-route-inventory.v1",
-  "generatedFromSha256": "ec348c0c2b7b5162026ae8185a18c6ec1ee9f6e397b9b131e400edd6ec5b229d",
+  "generatedFromSha256": "747b50efdfc3b56c6122d359487490b0ff44b97e6eac2395fa75d3d0ddc682ca",
   "scenarios": [
     {
       "id": "avalonia.about.initial",
@@ -313,6 +313,36 @@
       "surfaceKind": "dialog"
     },
     {
+      "id": "avalonia.caption.initial",
+      "host": "avalonia",
+      "routeId": "caption",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.caption.populated",
+      "host": "avalonia",
+      "routeId": "caption",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.caption.validation-error",
+      "host": "avalonia",
+      "routeId": "caption",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
       "id": "avalonia.cell-edit.initial",
       "host": "avalonia",
       "routeId": "cell-edit",
@@ -349,6 +379,36 @@
       "state": "initial",
       "tab": null,
       "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.character-formatting-picker.initial",
+      "host": "avalonia",
+      "routeId": "character-formatting-picker",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.character-formatting-picker.populated",
+      "host": "avalonia",
+      "routeId": "character-formatting-picker",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.character-formatting-picker.validation-error",
+      "host": "avalonia",
+      "routeId": "character-formatting-picker",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
@@ -1006,6 +1066,36 @@
       "id": "avalonia.footnote-endnote-options.validation-error",
       "host": "avalonia",
       "routeId": "footnote-endnote-options",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.header-footer-text.initial",
+      "host": "avalonia",
+      "routeId": "header-footer-text",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.header-footer-text.populated",
+      "host": "avalonia",
+      "routeId": "header-footer-text",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.header-footer-text.validation-error",
+      "host": "avalonia",
+      "routeId": "header-footer-text",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",

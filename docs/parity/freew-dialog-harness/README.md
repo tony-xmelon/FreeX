@@ -20,7 +20,7 @@ Paste Special, Style, and Manage Styles are content-sized WPF static prompts rat
 
 ## Current Run
 
-- Inventory: 158 routes and 466 host-specific scenarios: 187 WPF authority states and 279 Avalonia states.
+- Inventory: 161 routes and 475 host-specific scenarios: 187 WPF authority states and 279 Avalonia states; the remaining 9 scenarios are current Avalonia-owned route/state rows without committed capture evidence.
 - WPF: 187/187 app-owned captures, with 187 full PNGs and 187 target crops.
 - Avalonia: 279/279 app-owned Skia captures, with zero unsupported or invalid-content rows.
 - Eight WPF-authority product routes: 25/25 Avalonia states captured across Cell Shading, Compare Documents, Legal Notices, Password Prompt, Screen Clip Overlay, Symbol Picker, Table Formula, and Table Properties.
