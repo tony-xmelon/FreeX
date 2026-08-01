@@ -14,10 +14,13 @@ powershell -File tools/Run-FreeXTextBoxInlineEditPhysicalLinuxValidation.ps1
 
 The wrapper writes `results.json`, `runtime-observations.json`, the strict schema,
 the deterministic fixture, and before/editing/editing-multiline/committed/canceled
-PNG evidence under `artifacts/freex-textbox-inline-edit-physical-wave93/`. The
-probe reads the saved drawing XML for the exact authored text, while the opt-in
-production observer records editor visibility, focus, automation ID, bounds, and
-the live model text. It does not invoke editor methods or test-only seams.
+PNG evidence under `artifacts/freex-textbox-inline-edit-physical-wave93/`. Before
+interaction, the probe reads the fixture drawing XML to establish input provenance.
+Commit and cancellation are then proved from exact opt-in live model observations
+plus screenshots; this interaction lane does not save the workbook because Ctrl+S
+can legitimately route a loaded fixture through the native Save As flow. The
+observer emits only after the editor has positive laid-out bounds, and it does not
+invoke editor methods or test-only seams.
 
 This worktree intentionally does not run Docker. The orchestrator owns serialized
 container execution and must report the physical result separately from the focused
