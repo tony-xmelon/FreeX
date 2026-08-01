@@ -43,11 +43,11 @@ nested inline-table rendering and cell editing, plus FreeW table-cell and page-b
 Their focused tests were rerun after each merge. One stale FreeW source guard was corrected to
 assert the retained 1.5-DIP inset expression after its local variable declaration was refactored.
 The final sync also includes FreeP nested-table Tab navigation and canonical FreeW decorative-page-
-border art tokens.
+border art tokens and placement semantics.
 
 ## Verification
 
-- Repository generated-artifact preflight: passed across 10,285 text files after the final upstream
+- Repository generated-artifact preflight: passed across 10,286 text files after the final upstream
   merge and deterministic manifest/dashboard regeneration.
 - Full serialized Release build: passed, 98 projects, zero warnings and zero errors.
 - Full `FreeX.DefaultTests.slnx` Release suite before the final upstream sync: passed with no
@@ -66,6 +66,8 @@ border art tokens.
 - Final FreeP Avalonia-renderer rerun after Tab-navigation integration: 214/214 passed.
 - Final FreeW model, IO, and Presentation reruns after canonical border-art integration:
   1,557/1,557, 1,197/1,197, and 1,095/1,095 passed.
+- Final FreeW model and IO reruns after border-placement integration: 1,559/1,559 and
+  1,200/1,200 passed.
 
 ## Remaining work
 
