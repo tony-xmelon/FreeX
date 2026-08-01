@@ -20,6 +20,17 @@
 - The five-style ranking corpus exported 5/5 Word references in 51.6 seconds. A separate preserved
   direct PDF export completed through readiness-polled COM and the owned Word process exited normally.
 
+The same current-main fallback render ranked the next curated border targets as follows. These references
+can be regenerated deterministically with `New-PageBorderArtProbe.ps1`; the scratch PNGs are not retained.
+
+| Style | Whole page | Perimeter | Interior control |
+| --- | ---: | ---: | ---: |
+| Papyrus | 7.2516% | 18.0840% | 0.7706% |
+| Weaving Ribbon | 6.7783% | 16.7159% | 0.8327% |
+| Birds in Flight | 5.6322% | 13.6681% | 0.8244% |
+| Painted Eggs | 5.4440% | 13.1677% | 0.8230% |
+| People | 3.1136% | 7.0506% | 0.7582% |
+
 ## Measured result
 
 Mean absolute RGB channel difference from direct `(x,y)` pixel access against the same Word PNG:
