@@ -49,6 +49,10 @@ Date: 2026-08-01
   focus loss commits only the edited cell body back through the parent buffer,
   preserving sibling cells and the inline-table run.
 - Focused model commit and Avalonia nested-table render/hit-test contracts pass.
+- The outer editor now delegates selection metadata, rich formatting, paragraph
+  commands, hyperlinks, clipboard operations, and inline-object activation to
+  the focused child, so ribbon commands continue to work while a nested cell
+  is active.
 
 ## Integration and verification
 
