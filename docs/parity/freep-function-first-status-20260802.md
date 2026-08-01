@@ -54,6 +54,9 @@ behavior already exists on current `main`; no duplicate implementation was added
 Native SmartArt quick styles `simple1` through `simple5` now resolve to distinct live profiles
 (Simple Fill, White Outline, Subtle, Moderate, and Intense) instead of allowing the generic
 `simple` identifier to collapse Moderate and Intense into the Subtle rendering path.
+The parsed SmartArt quick-style model now also retains each native style label's line, fill,
+effect, and font reference indices through cloning, so function-first editing does not discard
+the source style matrix references even when the raw quick-style part remains the authority.
 
 The follow-up capability audit corrected the remaining list against current code: Avalonia already
 has Windows native printer submission, MP4 export, persisted narration muxing, and camera
