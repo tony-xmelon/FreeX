@@ -1,7 +1,7 @@
 # FreeW Legal Notices Visual Parity Wave 90
 
-Date: 2026-08-01  
-Authority: FreeW WPF `SharedLegalNoticesDialog`  
+Date: 2026-08-01
+Authority: FreeW WPF `SharedLegalNoticesDialog`
 Scope: shared Avalonia Legal Notices template adapter and FreeW parity tests
 
 ## Change

@@ -38,8 +38,10 @@ inspections. Its nine ordered rows are:
 The PowerShell wrapper rejects duplicate or reordered rows, failed rows, missing
 or empty evidence, non-basename evidence references, invalid package hashes,
 missing PPTX parts, changed collision hashes, and fixture source/mount hash drift.
-It updates no existing parity status by itself: the existing FreeP native-picker
-human-evidence record remains manual until a real run supplies the physical proof.
+The Wave 90 integration run completed all **9/9** rows with strict manifest
+validation. Its harness-owned container was stopped after capture; the retained
+manifest and screenshots live in the timestamped session below the artifact root
+described above.
 
 ## Verification boundary
 
