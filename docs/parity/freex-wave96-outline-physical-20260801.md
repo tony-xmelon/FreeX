@@ -20,9 +20,10 @@ restoration of the worksheet values.
 5. Physically clicks the visible row-group toggle to collapse and then expand the group.
 6. Reads all three values back through the production formula editor and records the postcondition.
 
-The PowerShell runner requires `outline-group-physical` for the focused lane, and the source test
-guards the selector, real gestures, visual evidence, and restoration fields. Docker execution is
-intentionally left to the parent integration worker.
+The PowerShell runner requires `outline-group-physical` for both the focused selector and the
+default `all` physical lane, and the source test guards the selector, real gestures, visual
+evidence, restoration fields, and default-lane dispatch. Parent integration Docker execution
+passed the focused selector 1/1 before the default-lane wiring was finalized.
 
 ## Remaining Nearby Coverage
 
