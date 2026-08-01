@@ -27,5 +27,5 @@ passed the focused selector 1/1 before the default-lane wiring was finalized.
 
 ## Remaining Nearby Coverage
 
-This slice covers a single-level row group. Nested groups, column grouping, filtered-range scope,
+This slice covers single-level row and column groups. Nested groups, filtered-range scope,
 save/reopen persistence, and WPF-paired screenshots remain separate physical evidence work.
