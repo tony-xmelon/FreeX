@@ -41,6 +41,15 @@ Date: 2026-08-01
 - Focused agent verification passed 257/257 presentation math tests, 41/41 WPF
   renderer-host tests, and 42/42 Avalonia renderer-host tests.
 
+### FreeP nested inline-table cell editing
+
+- Avalonia now hit-tests the existing inline-table cell geometry instead of
+  treating a nested table as one opaque replacement character.
+- A double-clicked cell opens a focused child rich-text editor over that cell;
+  focus loss commits only the edited cell body back through the parent buffer,
+  preserving sibling cells and the inline-table run.
+- Focused model commit and Avalonia nested-table render/hit-test contracts pass.
+
 ## Integration and verification
 
 - Merged 40 concurrent `origin/main` commits across three sync points, including
@@ -69,6 +78,9 @@ Date: 2026-08-01
   are primarily framework glyph, border, tab, and scrollbar pixels.
 - FreeP: add document-level `mathPr` inheritance, PowerPoint-authoritative font
   fallback and math metrics, and broader OMML visual baselines.
+- FreeP: extend nested inline-table editing to richer cell commands and
+  keyboard navigation after the bounded text-entry path is exercised in the
+  host workflow.
 
 ## Process hygiene
 
