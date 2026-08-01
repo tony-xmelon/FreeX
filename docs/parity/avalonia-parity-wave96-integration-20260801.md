@@ -44,10 +44,10 @@ Date: 2026-08-01
   passed **5,115/5,115** with **56** intentional skips. A single clipboard-flavor test failed once
   in the all-up run, then passed independently and in the complete Host Logic assembly (**1,488
   passed**, **4 skipped**) without a source change.
-- A final unrelated `main` sync added FreeP motion-path gallery and FreeW package-retention work.
-  The combined tree rebuilt with zero warnings/errors; the affected motion-path lanes passed
-  **83** presentation, **4** WPF host, and **4** Avalonia tests, and the new FreeW package tests
-  passed **4/4** before the final preflight.
+- Final unrelated `main` syncs added FreeP motion-path gallery/reversal and FreeW package/custom
+  table-style retention work. The combined tree rebuilt with zero warnings/errors; the gallery
+  lanes passed **83** presentation, **4** WPF host, and **4** Avalonia tests, reversal passed in all
+  three hosts, and the focused FreeW package/style-retention tests passed before the final preflight.
 - Serialized Linux physical lanes: **94/94 passed**: FreeX **25/25**, FreeW **45/45**, and FreeP
   **24/24**. Every manifest contract passed and every harness-owned container stopped.
 
