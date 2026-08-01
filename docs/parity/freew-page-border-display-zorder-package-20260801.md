@@ -15,7 +15,8 @@ move a behind-text border in front of document content.
 - The writer emits only non-default values, matching Word's canonical omission behavior.
 
 The semantic model is intentionally separate from renderer calibration. This slice prevents package data
-loss; page-index filtering and behind-text composition are follow-up visual-owner work.
+loss. Page-index filtering is covered by the follow-up `freew-page-border-display-render-20260801.md`;
+behind-text composition remains separate visual-owner work.
 
 ## Verification
 
