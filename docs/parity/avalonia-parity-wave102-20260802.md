@@ -53,7 +53,11 @@ claim complete native-template or text-rasterization parity.
 - FreeW Avalonia Backstage tests: 36 passed.
 - FreeW shared Backstage planner tests: 14 passed.
 - FreeW WPF and Avalonia Open captures: 1/1 each; both passed content gates.
-
-Full repository gates and Linux smoke are run after the final synchronization
-with `origin/main`.
-
+- Repository preflight passed, including generated evidence and conflict-marker
+  checks across 10,324 text files.
+- Full `FreeX.slnx` Release build passed with zero warnings and zero errors.
+- `FreeX.DefaultTests.slnx` passed every non-UI project; benchmark-only skips
+  remained expected.
+- The isolated Linux Docker/Xvfb smoke passed all seven production-app flows:
+  launch, cell entry, Format Cells, Find/Replace, Go To, name-box navigation,
+  and final app stability.
