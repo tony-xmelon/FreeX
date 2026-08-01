@@ -7,7 +7,7 @@ Scope: FreeW Avalonia direct PDF export. No package, WPF, FreeP, or FreeX behavi
 
 Direct PDF export now retains Word-style line numbers already resolved by the live Avalonia layout. The adapter consumes `BuildLineNumberRenderItems()` rather than building a second sequence, preserving:
 
-- continuous and restart-each-page modes;
+- continuous, restart-each-page, and restart-each-section modes;
 - authored start and count-by values;
 - paragraph-level line-number suppression;
 - physical page and column ownership;
@@ -17,7 +17,7 @@ The PDF operations are inserted after table surfaces and before behind-text floa
 
 ## Evidence
 
-`DocumentViewPdfExportTests` covers a continuous sequence starting at 3 with count-by 2 and a suppressed middle paragraph (`3, 5`), exact font/color/gutter placement, operation order before body text, and a disabled control. A multi-page restart fixture verifies that every physical PDF page starts at the authored value 2. The focused gate also writes portable PDF bytes and requires visible dark ink inside the rendered Skia page gutter.
+`DocumentViewPdfExportTests` covers a continuous sequence starting at 3 with count-by 2 and a suppressed middle paragraph (`3, 5`), exact font/color/gutter placement, operation order before body text, and a disabled control. A multi-page restart fixture verifies that every physical PDF page starts at the authored value 2. A two-section fixture verifies a same-page restart from 4 to 9 at a continuous section break. The focused gate also writes portable PDF bytes and requires visible dark ink inside the rendered Skia page gutter.
 
 ## Verification
 
@@ -35,5 +35,4 @@ dotnet test freew\FreeW.App.Avalonia.Tests\FreeW.App.Avalonia.Tests.csproj --con
 ## Residuals
 
 - The shared portable text operation uses its built-in Helvetica face rather than Word's line-number style font. Font-family selection remains a shared PDF vocabulary enhancement.
-- Section-specific line-number changes are constrained by the current document-level Avalonia line-number model; this slice preserves the live renderer's ownership rather than adding a second section paginator.
 - This slice proves model, operation, writer, and raster behavior. It does not claim pixel identity against a Word PDF baseline.
