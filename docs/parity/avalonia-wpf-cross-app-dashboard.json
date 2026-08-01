@@ -134,8 +134,8 @@
                  {
                      "app":  "FreeW",
                      "commandInventory":  {
-                                              "totalCommands":  934,
-                                              "bothProfiles":  484,
+                                              "totalCommands":  935,
+                                              "bothProfiles":  485,
                                               "wpfProfileOnly":  155,
                                               "avaloniaProfileOnly":  295,
                                               "missingWpfProfile":  295,
@@ -205,8 +205,8 @@
                  {
                      "app":  "FreeP",
                      "commandInventory":  {
-                                              "totalCommands":  581,
-                                              "bothProfiles":  581,
+                                              "totalCommands":  584,
+                                              "bothProfiles":  584,
                                               "wpfOnly":  0,
                                               "avaloniaOnly":  0,
                                               "actionableMissingWpf":  0,

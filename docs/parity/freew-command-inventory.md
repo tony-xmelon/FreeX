@@ -10,13 +10,13 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 
 | Total | Both profiles | WPF profile only | Avalonia profile only | Missing WPF profile | Missing Avalonia profile | Actionable missing WPF | Actionable missing Avalonia |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 934 | 484 | 155 | 295 | 295 | 155 | 0 | 0 |
+| 935 | 485 | 155 | 295 | 295 | 155 | 0 | 0 |
 
 ## Classification Counts
 
 | Shared profile | Profile-shape only | Command-id aliases | Platform-only | Deferred | Actionable gaps | Behavior evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|
-| 484 | 402 | 43 | 5 | 0 | 0 | 106 |
+| 485 | 402 | 43 | 5 | 0 | 0 | 106 |
 
 ## Classification Rules
 
@@ -469,6 +469,7 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 | `freew.line-numbers-none` | None | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/page-setup (RibbonMenuItem; Menu) | layout/page-setup (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.line-numbers-options` | Line Numbering Options... | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/page-setup (RibbonMenuItem; Menu) | layout/page-setup (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.line-numbers-restart-page` | Restart Each Page | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/page-setup (RibbonMenuItem; Menu) | layout/page-setup (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | - | Command is present in both compiled FreeW ribbon profiles. |
+| `freew.line-numbers-restart-section` | Restart Each Section | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/page-setup (RibbonMenuItem; Menu) | layout/page-setup (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.line-spacing` | Line and Paragraph Spacing | Yes | Yes | none | shared-profile | shared-profile | shared-profile | home/paragraph (RibbonComboBox; Medium)<br>layout/paragraph (RibbonComboBox; Medium) | home/paragraph (RibbonComboBox; Medium)<br>layout/paragraph (RibbonComboBox; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.link-bookmark` | Link to Bookmark | Yes | Yes | none | shared-profile | shared-profile | shared-profile | insert/links (RibbonButton; Small) | insert/links (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.manage-sources` | Manage Sources | Yes | Yes | none | shared-profile | shared-profile | shared-profile | references/citations (RibbonButton; Medium) | references/citations (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | References fields and generated regions: FreeWRibbonParityTests.ReferencesCitations_ExposesBackedWordStyleManageSources<br>ReferencesTabTests.ReplaceSources_replaces_source_list_and_undo_reverts | Command is present in both compiled FreeW ribbon profiles. |
