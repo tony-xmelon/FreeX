@@ -17,6 +17,9 @@ package, or mutation semantics changed.
 ## Evidence boundary
 
 The headless source contract proves the fixed-width command strip uses wrapping
-and contains reachable Apply/Close controls. The existing physical runner still
-proves Add sibling, save, and reopen. A fresh X11 run is required before claiming
-physical Apply/text replacement evidence; this slice does not claim that run.
+and contains reachable Apply/Close controls. The physical runner contract now
+also includes a visible Apply/text-replacement row between Add sibling and save:
+it changes the first outline row, clicks the wrapped Apply command, reads the
+edited value through X11 clipboard input, and requires that value in the saved
+and fresh-process-reopened package. A fresh X11 run is still required before
+claiming that physical evidence; this slice does not claim that run.
