@@ -18,7 +18,8 @@ application window, and retains a screenshot plus a machine-readable manifest fo
 - opening and dismissing the app's File surface.
 
 FreeW additionally runs an eighteen-row physical editing slice within the
-exact thirty-seven-row contract: it clicks the real document editor, replaces
+exact forty-five-row contract (the prior thirty-seven-row baseline plus the
+Wave 95 backstage/options extension): it clicks the real document editor, replaces
 the selection with a sentinel, proves exact X11 clipboard text, proves Ctrl+Z and
 Ctrl+Y restore the exact clipboard states, proves Ctrl+X followed by Ctrl+Z
 restores the exact selected content, and exercises Ctrl+Shift+V with an exact
@@ -47,7 +48,7 @@ FreeW runs Ctrl+N twice on the dirty document. The first prompt is cancelled and
 must preserve an exact clipboard sentinel; the second selects Don't save through
 physical Tab/Return navigation and must leave a removed prompt, owner restoration,
 a clean title, and a genuinely empty document proven by an unchanged unique
-clipboard marker. These twelve rows bring the FreeW contract from the prior
+clipboard marker. Those twelve rows brought the prior FreeW contract from
 twenty-five rows to exactly thirty-seven while keeping coverage non-exhaustive.
 The required FreeW IDs are `file-open-shortcut-dialog-open`,
 `file-open-shortcut-dialog-dismissal`, `file-save-shortcut-dialog-open`,
@@ -56,6 +57,17 @@ The required FreeW IDs are `file-open-shortcut-dialog-open`,
 `file-print-shortcut-dialog-dismissal`, `file-new-shortcut-dirty-prompt-open`,
 `file-new-shortcut-cancel-preserves`, and
 `file-new-shortcut-discard-creates-clean`.
+The Wave 95 extension adds eight FreeW-only real-input rows for the Backstage
+Print and Export panes and the Options workflow. `backstage-print-open` and
+`backstage-print-dismissal` navigate the real rail to Print and prove Escape
+restores the owner. `backstage-export-open` and
+`backstage-export-dismissal` cover the matching Export route. `options-open`
+opens the real Options dialog through the Backstage Options pane;
+`options-tab-navigation` uses physical Ctrl+Tab input, `options-focus` uses a
+physical Tab input while requiring dialog focus, and `options-close` proves
+Escape restores the original owner/window state. These rows bring the FreeW
+manifest to exactly forty-five results; FreeP remains an exact twenty-four-row
+contract.
 FreeP first runs `nested-keytip-prefix-deferral`: physical `Alt,N,T,X` inserts
 and selects a text box, then `Alt,A,N,B` must retain key-tip mode because
 `Blinds In=BI` is still reachable even though `Blink=B` is an exact leaf.
