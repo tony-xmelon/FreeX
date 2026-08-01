@@ -76,7 +76,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditingSurface.cs",
-                       "sha256":  "6ff9979f68c679eaec3a57efba78b129f441e808f32d5a162490ac7ca3f22299"
+                       "sha256":  "4ca7ed3472fb55995d8761bbef8ce1d3e89a9f6ecd4c36b89a0d9b9bbebb9ce7"
                    },
                    {
                        "path":  "shared/Free.Shared.Ribbon/RibbonVisualMetrics.cs",
