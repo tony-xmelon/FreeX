@@ -53,6 +53,8 @@ Date: 2026-08-01
   commands, hyperlinks, clipboard operations, and inline-object activation to
   the focused child, so ribbon commands continue to work while a nested cell
   is active.
+- Tab and Shift+Tab now commit the active nested cell and move to the next or
+  previous populated cell using the editing surface's measured cell geometry.
 
 ## Integration and verification
 
@@ -82,9 +84,9 @@ Date: 2026-08-01
   are primarily framework glyph, border, tab, and scrollbar pixels.
 - FreeP: add document-level `mathPr` inheritance, PowerPoint-authoritative font
   fallback and math metrics, and broader OMML visual baselines.
-- FreeP: extend nested inline-table editing to richer cell commands and
-  keyboard navigation after the bounded text-entry path is exercised in the
-  host workflow.
+- FreeP: extend nested inline-table editing to table-specific structural
+  commands, in-place OLE hosting, and full host-level workflow coverage; rich
+  cell commands and measured Tab/Shift+Tab navigation are now covered.
 
 ## Process hygiene
 
