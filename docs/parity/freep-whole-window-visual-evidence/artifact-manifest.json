@@ -88,11 +88,11 @@
                    },
                    {
                        "path":  "shared/Free.Shared.Ribbon.Wpf/RibbonWpfRenderer.cs",
-                       "sha256":  "f752de75d1a004dca7da15661588ffeb6c797460013c1e88d93885966f30e01e"
+                       "sha256":  "73ddcfb9b8d88a02fd4d1e8ef16e763e99a7c7801e022e0b079554203577798d"
                    },
                    {
                        "path":  "shared/Free.Shared.Ribbon.Avalonia/AvaloniaRibbonRenderer.cs",
-                       "sha256":  "ecbb7b23d3bcad14cc5f17cb3871c54d0efc1168c4cf3444797564216442efe1"
+                       "sha256":  "f1d6e417e68a207d6b7df85a1ed1fa10da60bcec002d0f3966003b73606f931d"
                    },
                    {
                        "path":  "tools/FreeP.RenderCompare/WholeWindowVisualEvidence.cs",
