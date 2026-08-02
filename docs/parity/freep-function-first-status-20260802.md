@@ -105,6 +105,12 @@ the shared presentation planner remains authoritative for slide range, layout, a
 slides-per-page. This is an application-owned settings surface, not a claim of OS-owned print
 dialog chrome parity.
 
+The Wave 105 Docker/X11 physical lane now proves that portable route through real application
+input. It opens File > Print, activates the first print layout, selects a non-default queue,
+submits two landscape uncollated copies for pages 2-3 through the private fake CUPS boundary,
+captures the generated PDF, and restores owner focus. All nine strict gates pass; no test-only
+print callback or fabricated application queue is used.
+
 The chart package reader now also honors authored `c:order` for series groups when reopening a
 deck, so a producer's physical XML order cannot silently change plot or legend order. A focused
 package regression covers reversed `c:ser` placement with preserved authored order.

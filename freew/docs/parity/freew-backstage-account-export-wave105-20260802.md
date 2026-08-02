@@ -9,4 +9,4 @@ Bounded fresh paired captures were taken only for the two affected routes at 560
 | `backstage-account.open` | 2.5366% | 2.7710 | 0 | 0.914628 | none | `pass` |
 | `backstage-export.open` | 13.5435% | 11.5055 | 12 | 0.855760 | none | `genuine-visual-mismatch` |
 
-Export retains a visual residual from framework text/control rendering, but its WPF and Avalonia action orders are identical. The temporary fresh manifests and images are under ignored `artifacts/freew-wave105-*`; the tracked aggregate dashboards were not modified.
+Export retains a visual residual from framework text/control rendering, but its WPF and Avalonia action orders are identical. The temporary fresh manifests and images are under ignored `artifacts/freew-wave105-*`; the two fresh rows were folded into the canonical FreeW comparison and cross-app dashboard.
