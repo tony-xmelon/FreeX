@@ -59,6 +59,11 @@ Combo chart creation now has a direct Insert Chart command as well. It creates a
 undoable column-plus-line chart with the line series on the secondary axis, reusing the
 existing combo package and renderer semantics.
 
+Authored chart value-axis `ReverseOrder` now reaches the shared WPF/Avalonia chart planner
+for standard Cartesian columns, bars, lines, areas, scatter/bubble, stock, trendline, data-label,
+gridline, tick, and secondary-axis plans. The default direction remains unchanged; focused
+planner contracts cover the mirrored geometry and annotations.
+
 Nested RTF cell text direction now survives parsing, clipboard serialization, and both host
 compositors. The Avalonia nested inline-table editor now consumes the same parsed quarter-turn
 cell text directions instead of painting those cells horizontally. The native `trapezoidList`
