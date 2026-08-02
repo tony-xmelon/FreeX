@@ -58,6 +58,13 @@ The parsed SmartArt quick-style model now also retains each native style label's
 effect, and font reference indices through cloning, so function-first editing does not discard
 the source style matrix references even when the raw quick-style part remains the authority.
 
+Slide Zoom now has a shared authoring workflow in WPF and Avalonia: the Insert ribbon command
+offers other slides, writes a native PowerPoint 2016 `pslz:sldZm` frame with the writer's
+effective target slide id, and routes insertion through the existing undo/redo command bus.
+The authoring path is covered for loaded and unsaved decks, and a package round-trip verifies
+that the native target survives save/reopen. Existing slideshow navigation and preserved-object
+fallback rendering remain unchanged.
+
 The follow-up capability audit corrected the remaining list against current code: Avalonia already
 has Windows native printer submission, MP4 export, persisted narration muxing, and camera
 picture-in-picture handoff. Those are no longer classified as wholly deferred. The remaining
@@ -86,6 +93,8 @@ Portable/Linux printing remains on its platform adapter and is not affected.
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
 - Richer chart authoring/layout semantics beyond the modeled chart grid and option planners.
+- Full Zoom authoring depth beyond slide targets, including section/summary zoom collections,
+  PowerPoint preview-thumbnail generation, and richer zoom-format options.
 - Portable/non-Windows in-place OLE hosting inside text runs remains external activation; Windows
   WPF and Windows Avalonia now have native in-place host paths with model byte save-back.
 - Broader real-deck media/caption/recording persistence and PowerPoint-authoritative recording
