@@ -100,7 +100,12 @@ ordinary direct slide jumps clear stale Zoom context. This closes a functional n
 the same route now consumes a valid authored `transitionDur` as a Zoom transition duration in
 both hosts. Both hosts can now restore a custom Zoom cover to a freshly rendered native target
 preview through one undoable command, including an individually selected Summary Zoom tile.
-PowerPoint-exact preview crop/position styling remains separate work.
+PowerPoint-exact preview position styling remains separate work; crop authoring is now covered.
+
+The Zoom Format dialog now exposes preview crop edges in both desktop hosts. Values are stored
+in the shared `ZoomObjectProperties` model as PowerPoint's thousandths-of-a-percent units,
+patched into native DrawingML `a:srcRect`, and carried through the existing undo/redo and
+save/reopen path. Blank crop input preserves the pre-existing uncropped XML shape.
 
 The follow-up capability audit corrected the remaining list against current code: Avalonia already
 has Windows native printer submission, MP4 export, persisted narration muxing, and camera
@@ -130,8 +135,8 @@ Portable/Linux printing remains on its platform adapter and is not affected.
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
 - Richer chart authoring/layout semantics beyond the modeled chart grid and option planners.
-- Full Zoom authoring depth beyond the current slide, section, and summary target/preview/cover-image paths,
-  including PowerPoint-exact preview crop/position styling and transition rendering.
+- Full Zoom authoring depth beyond the current slide, section, and summary target/preview/cover-image/crop
+  paths, including PowerPoint-exact positioning and transition rendering.
 - Portable/non-Windows in-place OLE hosting inside text runs remains external activation; Windows
   WPF and Windows Avalonia now have native in-place host paths with model byte save-back.
 - Broader real-deck media/caption/recording persistence and PowerPoint-authoritative recording
