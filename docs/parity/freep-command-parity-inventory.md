@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 644 | 644 | 0 | 0 | 0 | 0 | 0 | 0 | 644 | 0 | 0 | 0 | 0 | 103 |
+| 645 | 645 | 0 | 0 | 0 | 0 | 0 | 0 | 645 | 0 | 0 | 0 | 0 | 103 |
 
 ## Workflow Evidence
 
@@ -333,6 +333,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.insert-chart-funnel` | Funnel | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-line` | Line | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-line-markers` | Line with Markers | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-of-pie` | Pie of Pie / Bar of Pie | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-pie` | Pie | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-radar` | Radar | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-scatter` | Scatter | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
