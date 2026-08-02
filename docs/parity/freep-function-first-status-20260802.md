@@ -55,6 +55,10 @@ command catalog and ribbon in both desktop hosts. The existing chart model, pack
 editable-data, and renderer paths were already present; this closes the remaining
 authoring entry-point gap without changing visual behavior.
 
+Combo chart creation now has a direct Insert Chart command as well. It creates an
+undoable column-plus-line chart with the line series on the secondary axis, reusing the
+existing combo package and renderer semantics.
+
 Nested RTF cell text direction now survives parsing, clipboard serialization, and both host
 compositors. The Avalonia nested inline-table editor now consumes the same parsed quarter-turn
 cell text directions instead of painting those cells horizontally. The native `trapezoidList`
