@@ -33,4 +33,11 @@ Focused tests cover:
 - An unchecked control with both metadata elements absent across both saves.
 - Microsoft 365 Open XML schema validation after each save.
 
-Relevant full `FreeW.Core.Model.Tests` and `FreeW.Core.IO.Tests` suites are required before integration.
+## Verification
+
+- Focused model contract: 2 passed, 0 failed.
+- Focused IO/package/schema contract: 2 passed, 0 failed.
+- Full `FreeW.Core.Model.Tests`: 1,577 passed, 0 failed, 0 skipped.
+- Full `FreeW.Core.IO.Tests`: 1,218 passed, 0 failed, 0 skipped.
+- Microsoft 365 schema validation: no schema errors after the first or second save in both focused
+  metadata-present and metadata-absent cases.
