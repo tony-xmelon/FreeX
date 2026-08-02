@@ -65,6 +65,12 @@ The authoring path is covered for loaded and unsaved decks, and a package round-
 that the native target survives save/reopen. Existing slideshow navigation and preserved-object
 fallback rendering remain unchanged.
 
+Section Zoom authoring now uses the same workflow for named sections. Both hosts offer populated
+sections, create a native PowerPoint 2016 \`sectionZmObj\` payload, and preserve the existing section
+membership/undo contracts through save and reopen. Section and slide target navigation therefore
+share one functional authoring path; preview thumbnails and additional Zoom formatting remain
+separate presentation-depth work.
+
 The follow-up capability audit corrected the remaining list against current code: Avalonia already
 has Windows native printer submission, MP4 export, persisted narration muxing, and camera
 picture-in-picture handoff. Those are no longer classified as wholly deferred. The remaining
@@ -93,7 +99,7 @@ Portable/Linux printing remains on its platform adapter and is not affected.
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
 - Richer chart authoring/layout semantics beyond the modeled chart grid and option planners.
-- Full Zoom authoring depth beyond slide targets, including section/summary zoom collections,
+- Full Zoom authoring depth beyond slide and section targets, including summary zoom collections,
   PowerPoint preview-thumbnail generation, and richer zoom-format options.
 - Portable/non-Windows in-place OLE hosting inside text runs remains external activation; Windows
   WPF and Windows Avalonia now have native in-place host paths with model byte save-back.
