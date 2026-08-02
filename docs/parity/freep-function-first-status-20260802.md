@@ -70,6 +70,9 @@ Authored `c:tickLblPos` now reaches the shared WPF/Avalonia chart planner for th
 Cartesian category, primary-value, and secondary-value label paths: `none` suppresses labels,
 `low` and `high` move them to the corresponding chart side, and `nextTo` preserves the existing
 axis-adjacent placement.
+Authored major and minor `c:*TickMark` values now reach the shared axis primitives: omitted
+values retain the prior outward geometry, while `in`, `out`, `cross`, and `none` control the
+corresponding primary, secondary, stock-boundary, and combo minor tick segments.
 
 Nested RTF cell text direction now survives parsing, clipboard serialization, and both host
 compositors. The Avalonia nested inline-table editor now consumes the same parsed quarter-turn
