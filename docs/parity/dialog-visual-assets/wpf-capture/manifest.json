@@ -73,7 +73,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.Options.EaseOfAccess.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-current-source-wpf-targeted-parity-capture-wave112-2026-08-02",
+                         "recaptureStatus":  "fresh-wpf-client-frame-capture-wave112-2026-08-02",
+                         "expectedWidth":  744,
+                         "expectedHeight":  521,
+                         "note":  "Fresh current-source WPF capture from FreeX.App.Host --parity-capture --parity-capture-target dialog.Options.EaseOfAccess at the canonical 744x521 client frame."
                      },
                      {
                          "id":  "dialog.Options.Advanced",
