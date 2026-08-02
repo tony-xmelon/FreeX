@@ -20,7 +20,9 @@ The existing modeled alias, lock, tag, control kind, checkbox/date/list properti
 - Block-level package test verifies binding and identity survive an edited paragraph.
 - A complete custom-XML package fixture requires `customXml/item1.xml`, its item-properties part, relationships, bytes, binding, and edited display text to survive two writes.
 
+The follow-up 2026-08-02 slice evaluates the retained binding for inline and block plain-text controls. It maps the store item through `customXmlProps`, applies namespace-aware XPath evaluation, refreshes on open, and exposes an explicit refresh API after custom XML changes. See `freew-custom-xml-data-binding-refresh-20260802.md`.
+
 ## Residuals
 
-- FreeW preserves and exposes the binding but does not yet evaluate arbitrary XPath expressions to refresh displayed text automatically when custom XML data changes.
-- Repeating-section and mapped rich-media content controls remain separate feature slices.
+- Rich-text, picture, repeating-section, and other mapped control kinds remain separate feature slices.
+- FreeW does not yet expose a custom XML editing surface; programmatic callers can replace the preserved item bytes and invoke the refresh resolver.
