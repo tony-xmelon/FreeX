@@ -73,6 +73,11 @@ font reference metadata from the newly selected native `styleLbl` elements. A st
 cannot leave the live editor carrying reference indices from the previous Quick Style; the raw style
 part remains authoritative for unsupported fields.
 
+Hierarchy SmartArt reordering now keeps the assistant prefix ahead of regular reports. Move Up/Down
+still reorders peers within the assistant and report partitions, but rejects a move that would cross
+that PowerPoint org-chart boundary, preventing an assistant from becoming an ordinary report or a
+report from being promoted ahead of assistants.
+
 Slide Zoom now has a shared authoring workflow in WPF and Avalonia: the Insert ribbon command
 offers other slides, writes a native PowerPoint 2016 `pslz:sldZm` frame with the writer's
 effective target slide id, and routes insertion through the existing undo/redo command bus.
