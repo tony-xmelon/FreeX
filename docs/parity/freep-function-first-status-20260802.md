@@ -73,6 +73,12 @@ font reference metadata from the newly selected native `styleLbl` elements. A st
 cannot leave the live editor carrying reference indices from the previous Quick Style; the raw style
 part remains authoritative for unsupported fields.
 
+SmartArt Change Colors now targets the native node `styleLbl` fill palettes instead of the first
+`fillClrLst` in document order. This preserves background/style-label fills when a valid colors
+part places them before `node0`, while keeping the shared WPF/Avalonia authoring and undo routes
+unchanged. The package-owner regression is covered by Presentation, WPF, and Avalonia tests;
+this is a functional/source-semantics fix with no new raster-fidelity claim.
+
 Hierarchy SmartArt reordering now keeps the assistant prefix ahead of regular reports. Move Up/Down
 still reorders peers within the assistant and report partitions, but rejects a move that would cross
 that PowerPoint org-chart boundary, preventing an assistant from becoming an ordinary report or a
