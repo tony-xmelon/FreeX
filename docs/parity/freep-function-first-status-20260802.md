@@ -113,6 +113,12 @@ part places them before `node0`, while keeping the shared WPF/Avalonia authoring
 unchanged. The package-owner regression is covered by Presentation, WPF, and Avalonia tests;
 this is a functional/source-semantics fix with no new raster-fidelity claim.
 
+Imported `increasingCircleProcess` SmartArt layouts are now admitted to the live layout engine.
+The engine already had dedicated geometry, but the package reader's allow-list incorrectly left
+this imported layout on cached-drawing fallback, preventing live edits and cache regeneration from
+reflecting the authored layout. `groupedList` remains intentionally cached-only for imported
+decks because its native cache contains roles not represented by the bounded live geometry.
+
 Regenerated SmartArt picture caches now use schema-valid `dsp:sp` nodes with `a:blipFill`
 instead of the invalid `dsp:pic` child under `dsp:spTree`. Image relationships, geometry,
 reader reopen, and node picture bytes are preserved; the full Presentation test project is
