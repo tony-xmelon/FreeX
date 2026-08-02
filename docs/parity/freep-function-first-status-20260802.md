@@ -122,6 +122,11 @@ The chart package reader now also honors authored `c:order` for series groups wh
 deck, so a producer's physical XML order cannot silently change plot or legend order. A focused
 package regression covers reversed `c:ser` placement with preserved authored order.
 
+Chart axis options now also support PowerPoint's authored `c:customUnit` divisor. The custom
+value is editable in both desktop hosts, participates in undo/redo, survives PPTX save/reopen,
+and is consumed by the shared axis-label renderer; built-in and unknown display-unit behavior
+remains unchanged.
+
 Pie and doughnut point explosion is now a complete authoring path: `<c:explosion>` survives
 PPTX round-trip, the shared WPF/Avalonia planner moves the selected slice and label, and the
 existing Chart Point Options command/dialogs can set the bounded 0-100% value with undo.
