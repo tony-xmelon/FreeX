@@ -29,6 +29,6 @@ or malformed rule in a first/even or non-final-section story is reported before 
 
 ## Residual
 
-Letters output currently combines record bodies with page breaks. Giving each output record its own final
-header/footer story requires record-boundary section ownership in `CombineMergedRecords`; that is a separate
-combination slice. Interactive Complete-and-pause reporting also remains separate host behavior.
+Record-boundary section ownership for Letters output is covered by the follow-up
+`freew-mail-merge-letter-record-sections-20260802.md` slice. Interactive Complete-and-pause reporting remains
+separate host behavior.

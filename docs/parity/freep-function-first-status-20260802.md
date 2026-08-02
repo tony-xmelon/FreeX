@@ -63,6 +63,9 @@ Authored chart value-axis `ReverseOrder` now reaches the shared WPF/Avalonia cha
 for standard Cartesian columns, bars, lines, areas, scatter/bubble, stock, trendline, data-label,
 gridline, tick, and secondary-axis plans. The default direction remains unchanged; focused
 planner contracts cover the mirrored geometry and annotations.
+Authored chart value-axis `CrossBetween` now reaches the shared WPF/Avalonia planner for
+column, bar, and secondary-axis tick/label placement, preserving the default `Between`
+geometry and honoring `MidCat` at the first category midpoint.
 
 Nested RTF cell text direction now survives parsing, clipboard serialization, and both host
 compositors. The Avalonia nested inline-table editor now consumes the same parsed quarter-turn
