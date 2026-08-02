@@ -28,18 +28,18 @@ Avalonia image. WPF PNG SHA-256:
 
 ## Evidence
 
-After replacing the stale one-row WPF image, the honest paired triage score is
-`0.104142` (sample `0.033760`, luma `0.008819`, non-background `0.061283`).
-The previous `0.103141` score must not be treated as an improvement baseline:
-it was computed from semantically mismatched PNGs. Both manifests now report
-`720x420` logical dimensions, nonblank captures, and the same two-row issue
-state.
+After replacing the stale one-row WPF image, the intermediate honest paired
+triage score was `0.104142` (sample `0.033760`, luma `0.008819`,
+non-background `0.061283`). The previous `0.103141` score must not be treated
+as an improvement baseline: it was computed from semantically mismatched
+PNGs.
 
-The Avalonia PNG remains the earlier committed Linux capture asset. A fresh
-Linux production recapture is intentionally deferred to the parent agent,
-which owns Docker serialization; current source already contains the
-Avalonia-specific `704x383` client geometry intended to match WPF's native
-frame reserve.
+The parent integration lane then ran a fresh production Avalonia capture in
+Linux Docker/Xvfb at 96 DPI and promoted the resulting nonblank `720x420` PNG.
+With current pixels on both sides, `dialog.ErrorChecking` now scores `0.047`
+and is no longer a leading outlier. Both manifests report `720x420` logical
+dimensions and the same shared D6/D7 issue state. The highest remaining FreeX
+triage score is now `0.098981` for `dialog.FormatCells.Border`.
 
 ## Verification
 
@@ -50,10 +50,14 @@ frame reserve.
 - `FreeX.App.Services.Tests` planner filter: 3/3 passed.
 - `FreeX.App.Host.Tests` Error Checking source/fixture filter: 18/18 passed.
 - `FreeX.App.Avalonia.Tests` compact dialog source filter: 16/16 passed.
+- Linux Docker/Xvfb focused production capture: 1/1 requested surface emitted,
+  nonblank at `720x420`, with the complete action row visible.
+- Regenerated cross-app dashboard: 94/94 paired FreeX surfaces, zero logical
+  dimension mismatches, and 27 raw pixel-size differences all normalized by
+  capture DPI.
 
 ## Residuals
 
 Native WPF versus Avalonia text rasterization, button templates, selected-row
-colors, and scrollbar glyphs remain visual differences. The next visual
-judgment should use a fresh Linux capture from the current source, not the
-older Avalonia PNG, after the semantic fixture correction is integrated.
+colors, and scrollbar glyphs remain visual differences. The next FreeX visual
+slice is `dialog.FormatCells.Border`; Error Checking no longer leads the queue.
