@@ -106,7 +106,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.FormatCells.Border.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-direct-avalonia-parity-capture",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-focused-capture-format-cells-border-wave109-2026-08-02",
+                         "expectedWidth":  620,
+                         "expectedHeight":  597,
+                         "note":  "Fresh focused capture from current FreeX Avalonia source in Linux Docker/Xvfb on 2026-08-02 after the native ClientSize resize repair; canonical 620x597 PNG at 96 DPI with Top, Right, Bottom, Left, OK, and Cancel fully visible and no padded black rows."
                      },
                      {
                          "id":  "dialog.FormatCells.Protection",

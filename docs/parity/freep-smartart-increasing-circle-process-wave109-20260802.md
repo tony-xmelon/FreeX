@@ -4,7 +4,7 @@ Wave109 adds the previously unsupported common PowerPoint SmartArt layout family
 
 ## Shared implementation
 
-- `SmartArtLayoutPreset.IncreasingCircleProcess` is carried through authoring, insertion, native layout identity, and the PPTX reader live-layout allow-list.
+- `SmartArtLayoutPreset.IncreasingCircleProcess` is carried through authoring, insertion, and native layout identity. Imported PowerPoint decks retain their cached drawing until the bounded live layout models PowerPoint's background-role geometry.
 - `SmartArtLayoutEngine` emits editable ellipse nodes with increasing diameters on a shared baseline and straight connectors between adjacent nodes.
 - The renderer-neutral `SlideShape` output is consumed by both WPF and Avalonia through the existing shared compositor path.
 - The shared ribbon definition exposes the layout in the SmartArt design group, with routes registered in both `FreeP.App.Host` and `FreeP.App.Avalonia`.
@@ -16,6 +16,7 @@ Wave109 adds the previously unsupported common PowerPoint SmartArt layout family
 - Host focused tests: 440 passed.
 - Ribbon definition profile tests: 23 passed.
 - Avalonia extended SmartArt registration test: 1 passed.
+- The all-up default lane caught and now guards the imported-deck cache boundary: the PowerPoint corpus keeps its neutral background ellipses instead of replacing them with the approximate authoring layout.
 - No Docker commands were run.
 
 ## PowerPoint-authoritative residuals
