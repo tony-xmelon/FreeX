@@ -189,8 +189,10 @@ remains unchanged.
 Native `c:ofPieChart` families are now retained as an explicit pie-of-pie/bar-of-pie chart
 model through clone and PPTX save/reopen, including `ofPieType`, split rule/position, secondary
 pie size, gap width, and series-line presence. Both hosts route the imported family through the
-existing pie primitives rather than silently changing it to a column chart. Exact two-plot
-PowerPoint layout and secondary-pie rendering remain separate chart-depth work.
+existing pie primitives rather than silently changing it to a column chart. The shared scene plan
+now splits visible points into primary and secondary plots according to the authored split mode;
+both WPF and Avalonia render a secondary pie or bar from those primitives. Exact Office spacing,
+connector lines, and custom split-point authoring remain separate chart-depth work.
 
 Pie and doughnut point explosion is now a complete authoring path: `<c:explosion>` survives
 PPTX round-trip, the shared WPF/Avalonia planner moves the selected slice and label, and the
