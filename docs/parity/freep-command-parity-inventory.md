@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 628 | 628 | 0 | 0 | 0 | 0 | 0 | 0 | 628 | 0 | 0 | 0 | 0 | 103 |
+| 629 | 629 | 0 | 0 | 0 | 0 | 0 | 0 | 629 | 0 | 0 | 0 | 0 | 103 |
 
 ## Workflow Evidence
 
@@ -327,6 +327,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.insert-chart-column` | Column | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-column-stacked` | Stacked Column | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-column-stacked-100` | 100% Stacked Column | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-combo` | Combo | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-doughnut` | Doughnut | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-funnel` | Funnel | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-line` | Line | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
