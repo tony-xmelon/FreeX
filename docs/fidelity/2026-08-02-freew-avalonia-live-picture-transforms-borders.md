@@ -36,10 +36,14 @@ floating ownership is captured from the validated block/run snapshot during coll
 
 ## Evidence
 
-`DocumentViewPictureRenderingTests` provides headless captures for inline, floating, header, and grouped
-pictures using an asymmetric four-quadrant bitmap. It verifies both flips plus 90-degree rotation, the
-unchanged identity controls in every host, authored red dash/gap pixels, exact point-to-DIP border width,
-RGB brush color, and large-dash-dot contract values.
+`DocumentViewPictureRenderingTests` verifies the exact center-based matrix produced by both flips plus
+90-degree rotation, neutral identity controls, authored point-to-DIP border width, RGB brush color,
+every supported dash token, and the model-bearing call site for inline, floating, header/footer, and
+grouped pictures.
+
+The current Avalonia headless backend returns no compositor frame and no bytes from an offscreen
+`RenderTargetBitmap`, so this slice makes no pixel-level visual claim. The tests fail loudly on the
+deterministic geometry/pen/ownership contracts instead of treating missing pixel output as a skip.
 
 Focused evidence command:
 
@@ -47,6 +51,6 @@ Focused evidence command:
 dotnet test freew/FreeW.App.Avalonia.Tests/FreeW.App.Avalonia.Tests.csproj --configuration Release --filter FullyQualifiedName~DocumentViewPictureRenderingTests --logger "trx;LogFileName=picture-rendering-tests.trx"
 ```
 
-Result: 10 passed, 0 failed, 0 skipped.
+Result: focused result recorded by the integration gate.
 
 `BuildPdfContent`, `BuildPdfImage`, PDF tests, and existing PDF documentation were not edited.
