@@ -62,7 +62,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.Options.View | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.099 | 0.016 | 0.006 | 0.076 |
 | dialog.Options.EaseOfAccess | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.098 | 0.015 | 0.008 | 0.075 |
 | dialog.Options.AddIns | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.097 | 0.015 | 0.006 | 0.076 |
 | dialog.FindReplace | 720x430 | 720x430 | 720x430 px @ 96 DPI vs 720x430 px @ 96 DPI |  |  | 0.095 | 0.015 | 0.005 | 0.075 |
@@ -72,6 +71,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.Zoom | 300x240 | 300x240 | 450x360 px @ 144 DPI vs 300x240 px @ 96 DPI |  |  | 0.093 | 0.034 | 0.015 | 0.045 |
 | dialog.PageSetup | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 96 DPI |  |  | 0.091 | 0.025 | 0.007 | 0.059 |
 | dialog.PageSetup.Page | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 96 DPI |  |  | 0.091 | 0.025 | 0.007 | 0.059 |
+| dialog.FormatCells.Alignment | 620x540 | 620x540 | 620x540 px @ 96 DPI vs 620x540 px @ 96 DPI |  |  | 0.090 | 0.013 | 0.011 | 0.066 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -140,7 +140,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.Options.QuickAccessToolbar | dialog.Options.QuickAccessToolbar.png | 744.301x521 | 744x521 px @ 96 DPI | True | dialog.Options.QuickAccessToolbar.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.047 |
 | dialog.Options.Save | dialog.Options.Save.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.Save.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.022 |
 | dialog.Options.TrustCenter | dialog.Options.TrustCenter.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.TrustCenter.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.030 |
-| dialog.Options.View | dialog.Options.View.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.View.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.099 |
+| dialog.Options.View | dialog.Options.View.png | 744x521 | 744x521 px @ 96 DPI | True | dialog.Options.View.png | 744x521 | 744x521 px @ 96 DPI | True | True | 0.014 |
 | dialog.PageSetup | dialog.PageSetup.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.091 |
 | dialog.PageSetup.HeaderFooter | dialog.PageSetup.HeaderFooter.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.HeaderFooter.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.043 |
 | dialog.PageSetup.Margins | dialog.PageSetup.Margins.png | 600x560 | 600x560 px @ 96 DPI | True | dialog.PageSetup.Margins.png | 600x560 | 600x560 px @ 96 DPI | True | True | 0.041 |

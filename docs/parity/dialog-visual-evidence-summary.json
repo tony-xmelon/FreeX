@@ -27,7 +27,7 @@
                     "visualReviewTriageThreshold":  0.4,
                     "visualReviewTriageThresholdRationale":  "This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.",
                     "visualReviewCandidateCount":  0,
-                    "highestTriageScore":  0.098637,
+                    "highestTriageScore":  0.097761,
                     "dimensionMismatchBuckets":  {
 
                                                  }
@@ -3428,7 +3428,7 @@
                                "routeFamily":  "dialog.Options",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Options.View.png",
-                                           "fileBytes":  11024,
+                                           "fileBytes":  16703,
                                            "width":  744,
                                            "height":  521,
                                            "dpiX":  95.986595,
@@ -3436,15 +3436,15 @@
                                            "logicalWidth":  744.104,
                                            "logicalHeight":  521.073,
                                            "pixels":  387624,
-                                           "distinctColors":  161,
+                                           "distinctColors":  167,
                                            "opaqueRatio":  1,
-                                           "nonBackgroundRatio":  0.68123,
+                                           "nonBackgroundRatio":  0.681374,
                                            "isNonBlank":  true,
-                                           "meanLuma":  248.951239
+                                           "meanLuma":  248.914803
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Options.View.png",
-                                                "fileBytes":  22319,
+                                                "fileBytes":  25575,
                                                 "width":  744,
                                                 "height":  521,
                                                 "dpiX":  96,
@@ -3452,11 +3452,11 @@
                                                 "logicalWidth":  744,
                                                 "logicalHeight":  521,
                                                 "pixels":  387624,
-                                                "distinctColors":  1060,
+                                                "distinctColors":  241,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.757554,
+                                                "nonBackgroundRatio":  0.685373,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  250.377641
+                                                "meanLuma":  249.185979
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -3471,10 +3471,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.01644,
-                                                  "lumaDelta":  0.005594,
-                                                  "nonBackgroundDelta":  0.076324,
-                                                  "triageScore":  0.098637,
+                                                  "sampleMeanDelta":  0.008832,
+                                                  "lumaDelta":  0.001063,
+                                                  "nonBackgroundDelta":  0.003999,
+                                                  "triageScore":  0.014174,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6286,14 +6286,6 @@
                        ],
     "topPairedOutliers":  [
                               {
-                                  "id":  "dialog.Options.View",
-                                  "triageScore":  0.098637,
-                                  "sampleMeanDelta":  0.01644,
-                                  "dimension":  "744.104x521.073 vs 744x521 logical; 744x521 vs 744x521 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.076324
-                              },
-                              {
                                   "id":  "dialog.Options.EaseOfAccess",
                                   "triageScore":  0.097761,
                                   "sampleMeanDelta":  0.015313,
@@ -6364,6 +6356,14 @@
                                   "dimension":  "600.084x560.078 vs 600x560 logical; 600x560 vs 600x560 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.058729
+                              },
+                              {
+                                  "id":  "dialog.FormatCells.Alignment",
+                                  "triageScore":  0.089782,
+                                  "sampleMeanDelta":  0.013081,
+                                  "dimension":  "620.087x540.075 vs 620x540 logical; 620x540 vs 620x540 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.06586
                               }
                           ],
     "visualReviewCandidates":  [
