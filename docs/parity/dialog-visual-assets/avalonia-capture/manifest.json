@@ -718,7 +718,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.Options.AddIns.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-current-source-avalonia-linux-docker-xvfb-capture-wave113-2026-08-02",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-capture-wave113-2026-08-02",
+                         "expectedWidth":  744,
+                         "expectedHeight":  521,
+                         "note":  "Fresh current-source Avalonia capture from the self-contained Linux app in Ubuntu 24.04 Docker/Xvfb via --parity-capture --parity-capture-surface dialog.Options.AddIns at 96 DPI."
                      },
                      {
                          "id":  "dialog.Options.TrustCenter",
