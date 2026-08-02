@@ -45,11 +45,15 @@ automatically for mirror-margin, book-fold, reverse-book-fold, and two-up printi
 - Overlay insertion is between `w:bordersDoNotSurroundFooter` and `w:hideSpellingErrors`, matching
   `CT_Settings` schema order.
 - Reopen and second-save tests prove model stability and exact `settings.xml` stability.
+- `PageLayout.MarginsDip` applies the gutter to the top edge when requested, to the left edge by default,
+  and to the alternating inside edge for mirrored pages. `ContentAreaDip` therefore drives the same effective
+  printable geometry through editor layout, pagination, preview, and PDF consumers.
+- The document-global setting is propagated to non-final section page settings after `settings.xml` is read.
+- Visual-evidence page snapshots preserve the setting instead of silently reverting to a side gutter.
 
 ## Verification
 
 - `dotnet test freew/FreeW.Core.Model.Tests/FreeW.Core.Model.Tests.csproj --configuration Release --filter FullyQualifiedName~GutterAtTop`: 2/2 passed.
+- `dotnet test freew/FreeW.Core.Model.Tests/FreeW.Core.Model.Tests.csproj --configuration Release --filter "FullyQualifiedName~PageLayoutTests|FullyQualifiedName~GutterAtTopModelTests"`: 16/16 passed.
 - `dotnet test freew/FreeW.Core.IO.Tests/FreeW.Core.IO.Tests.csproj --configuration Release --filter FullyQualifiedName~GutterAtTop`: 10/10 passed.
 - Neighboring settings and preservation regression filter: 110/110 passed.
-
-No WPF, Avalonia, or host source was edited by this slice.

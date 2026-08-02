@@ -12,6 +12,11 @@ Word's canonical package form.
 - The reader accepts the empty element and the `1`, `true`, and `on` forms as enabled.
 - The reader accepts `0`, `false`, and `off` as disabled.
 - The writer emits the canonical empty `<w:doNotDisplayPageBoundaries/>` element only when enabled.
+- WPF Print Layout removes only vertical page padding and replaces its dashed labeled page-break cue with a
+  compact solid boundary; horizontal margins and pagination inputs remain unchanged.
+- Avalonia Print Layout uses a collapsed shared surface plan: displayed top/bottom whitespace and inter-page
+  gap are zero, while text-area height remains unchanged. Header/footer chrome is hidden with that whitespace.
+- Web Layout, Draft, default Print Layout, and print/PDF export geometry remain on their existing paths.
 - The default does not create `word/settings.xml` in a newly authored document.
 - A preserved settings part is overlaid at the element's `CT_Settings` schema position without disturbing
   neighboring unmodelled settings.
