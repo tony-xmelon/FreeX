@@ -16,8 +16,8 @@ formatting runs as one candidate. Existing DOCX IO writes U+00AD as `w:softHyphe
 
 ## Verification
 
-- `ManualHyphenationPlannerTests`: 6/6
-- full `FreeW.App.Presentation.Tests`: 1,175/1,175
+- `ManualHyphenationPlannerTests`: 7/7
+- full `FreeW.App.Presentation.Tests`: 1,176/1,176
 - `ApplyManualHyphenationCommandTests`: 1/1
 - WPF manual-hyphenation route guard: 1/1
 - Avalonia manual-hyphenation route guard: 1/1
@@ -34,4 +34,7 @@ the existing single undoable `ApplyManualHyphenationCommand`.
 The same review pass then covers ordinary footnotes and endnotes in numeric ID order. Reserved separator and
 continuation-separator note IDs are excluded, and shared paragraph instances remain deduplicated.
 
-Comments and text inside drawing objects remain separate story-owner slices.
+Text-box paragraphs on inline/floating shapes and shapes inside nested drawing groups are reviewed recursively.
+Reference sets prevent malformed cyclic/shared group graphs from looping or reviewing the same paragraph twice.
+
+Comments remain a separate review-story slice.
