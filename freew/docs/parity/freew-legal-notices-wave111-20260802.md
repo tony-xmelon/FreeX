@@ -1,7 +1,7 @@
 # FreeW Legal Notices Visual Parity Wave 111
 
-Date: 2026-08-02  
-Scope: FreeW Avalonia Legal Notices initial state and all five notice tabs  
+Date: 2026-08-02
+Scope: FreeW Avalonia Legal Notices initial state and all five notice tabs
 Authority: shared WPF `SharedLegalNoticesDialog` and paired 620x600 harness captures
 
 ## Change
