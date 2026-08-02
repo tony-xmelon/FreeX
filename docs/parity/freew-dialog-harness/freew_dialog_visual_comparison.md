@@ -86,7 +86,7 @@ Inventory scenarios: **478**. Captured WPF: **190**. Captured Avalonia: **288**.
 | `hyphenation-options.initial` | captured/captured | **genuine-visual-mismatch** | pass (2.6% painted) | pass (2.4% painted) | 5.09 % | 4.21 |  | heatmaps/hyphenation-options.initial.png |
 | `hyphenation-options.populated` | captured/captured | **genuine-visual-mismatch** | pass (2.6% painted) | pass (2.4% painted) | 5.09 % | 4.21 |  | heatmaps/hyphenation-options.populated.png |
 | `hyphenation-options.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (2.7% painted) | pass (2.5% painted) | 5.20 % | 4.38 |  | heatmaps/hyphenation-options.validation-error.png |
-| `icon-picker.initial` | captured/captured | **genuine-visual-mismatch** | pass (12.7% painted) | pass (8.0% painted) | 13.54 % | 19.68 |  | heatmaps/icon-picker.initial.png |
+| `icon-picker.initial` | captured/captured | **genuine-visual-mismatch** | pass (12.7% painted) | pass (10.0% painted) | 12.10 % | 15.36 |  | heatmaps/icon-picker.initial.png |
 | `icon-picker.populated` | captured/captured | **pass** | pass (2.4% painted) | pass (2.3% painted) | 1.12 % | 1.10 |  | heatmaps/icon-picker.populated.png |
 | `icon-picker.validation-error` | captured/captured | **pass** | pass (2.5% painted) | pass (2.3% painted) | 1.20 % | 1.22 |  | heatmaps/icon-picker.validation-error.png |
 | `image-adjust.initial` | captured/captured | **genuine-visual-mismatch** | pass (3.4% painted) | pass (2.7% painted) | 5.53 % | 4.10 |  | heatmaps/image-adjust.initial.png |
