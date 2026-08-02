@@ -2,7 +2,7 @@
 
 ## Current position
 
-The current `main` baseline reports **619/619** FreeP command IDs shared by WPF and
+The current `main` baseline reports **620/620** FreeP command IDs shared by WPF and
 Avalonia, with **0 actionable WPF gaps, 0 actionable Avalonia gaps, 0 known deferred
 command rows, and 103 workflow-evidence rows**. This is reachability coverage, not a
 claim that every PowerPoint feature has identical depth or native behavior.
@@ -21,6 +21,11 @@ The latest functional work is concentrated in three areas:
   transitions, notes fields, output planning, and Windows video execution have shared
   planner/host routes with focused tests. The slide-layout picker and selection mutation are
   also implemented in both hosts; earlier documentation describing it as a stub is stale.
+
+The generated command inventory was refreshed on 2026-08-02 from both ribbon profiles and
+matches this count: WPF and Avalonia have no actionable command gaps. This is reachability
+evidence only; the backlog below is intentionally about behavior depth and native workflow
+semantics rather than adding duplicate command IDs.
 
 ## Progress by day
 
@@ -93,7 +98,19 @@ PowerPoint's default-on behavior, explicit `false` remains opt-out, and WPF/Aval
 to the parent slide after the Zoom target is exhausted. Nested return paths use a stack, while
 ordinary direct slide jumps clear stale Zoom context. This closes a functional navigation gap;
 the same route now consumes a valid authored `transitionDur` as a Zoom transition duration in
-both hosts. PowerPoint-exact preview crop/position styling remains separate work.
+both hosts. Both hosts can now restore a custom Zoom cover to a freshly rendered native target
+preview through one undoable command, including an individually selected Summary Zoom tile.
+PowerPoint-exact preview position styling remains separate work; crop authoring is now covered.
+
+Summary Zoom tile layout is now authorable from the shared Zoom Format route. Both hosts expose
+each tile's offset and scale as percentage pairs; the shared command updates the selected
+`summaryZmObj`, preserves the other tiles, and restores the complete tile state through undo/redo
+and PPTX save/reopen.
+
+The Zoom Format dialog now exposes preview crop edges in both desktop hosts. Values are stored
+in the shared `ZoomObjectProperties` model as PowerPoint's thousandths-of-a-percent units,
+patched into native DrawingML `a:srcRect`, and carried through the existing undo/redo and
+save/reopen path. Blank crop input preserves the pre-existing uncropped XML shape.
 
 The follow-up capability audit corrected the remaining list against current code: Avalonia already
 has Windows native printer submission, MP4 export, persisted narration muxing, and camera
@@ -134,8 +151,8 @@ settings surface; it does not fabricate printer availability when CUPS is missin
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
 - Richer chart authoring/layout semantics beyond the modeled chart grid and option planners.
-- Full Zoom authoring depth beyond the current slide, section, and summary target/preview/cover-image paths,
-  including PowerPoint-exact preview crop/position styling and transition rendering.
+- Full Zoom authoring depth beyond the current slide, section, and summary target/preview/cover-image/crop/tile-layout
+  paths, including PowerPoint-exact slide/section positioning and transition rendering.
 - Portable/non-Windows in-place OLE hosting inside text runs remains external activation; Windows
   WPF and Windows Avalonia now have native in-place host paths with model byte save-back.
 - Broader real-deck media/caption/recording persistence and PowerPoint-authoritative recording
