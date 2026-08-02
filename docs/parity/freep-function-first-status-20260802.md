@@ -88,6 +88,12 @@ replacing that tile's native `blipFill` relationship. Each tile receives its own
 part; model tests cover independent tile images, undo/redo, and package round-trip. The authored target
 semantics are no longer collapsed to a single section.
 
+The shared slideshow route now consumes Zoom `returnToParent`: omitted source attributes use
+PowerPoint's default-on behavior, explicit `false` remains opt-out, and WPF/Avalonia both return
+to the parent slide after the Zoom target is exhausted. Nested return paths use a stack, while
+ordinary direct slide jumps clear stale Zoom context. This closes a functional navigation gap;
+PowerPoint-exact preview crop/position styling and transition rendering remain separate work.
+
 The follow-up capability audit corrected the remaining list against current code: Avalonia already
 has Windows native printer submission, MP4 export, persisted narration muxing, and camera
 picture-in-picture handoff. Those are no longer classified as wholly deferred. The remaining
