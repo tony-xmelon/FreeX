@@ -9,9 +9,9 @@ Inventory scenarios: **475**. Captured WPF: **187**. Captured Avalonia: **279**.
 | `about.initial` | captured/captured | **genuine-visual-mismatch** | pass (8.4% painted) | pass (9.8% painted) | 13.54 % | 16.78 |  | heatmaps/about.initial.png |
 | `about.populated` | captured/captured | **genuine-visual-mismatch** | pass (8.4% painted) | pass (9.8% painted) | 13.54 % | 16.78 |  | heatmaps/about.populated.png |
 | `about.validation-error` | captured/captured | **pass** | pass (1.9% painted) | pass (1.9% painted) | 1.76 % | 2.06 |  | heatmaps/about.validation-error.png |
-| `accessibility-report.initial` | captured/captured | **genuine-visual-mismatch** | pass (0.9% painted) | pass (0.8% painted) | 7.61 % | 17.08 |  | heatmaps/accessibility-report.initial.png |
-| `accessibility-report.populated` | captured/captured | **genuine-visual-mismatch** | pass (0.9% painted) | pass (0.8% painted) | 7.61 % | 17.08 |  | heatmaps/accessibility-report.populated.png |
-| `accessibility-report.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (0.9% painted) | pass (0.8% painted) | 7.61 % | 17.08 |  | heatmaps/accessibility-report.validation-error.png |
+| `accessibility-report.initial` | captured/captured | **pass** | pass (0.9% painted) | pass (0.9% painted) | 0.60 % | 0.83 |  | heatmaps/accessibility-report.initial.png |
+| `accessibility-report.populated` | captured/captured | **pass** | pass (0.9% painted) | pass (0.9% painted) | 0.60 % | 0.83 |  | heatmaps/accessibility-report.populated.png |
+| `accessibility-report.validation-error` | captured/captured | **pass** | pass (0.9% painted) | pass (0.9% painted) | 0.60 % | 0.83 |  | heatmaps/accessibility-report.validation-error.png |
 | `backstage-account.open` | captured/captured | **pass** | pass (2.6% painted) | pass (1.9% painted) | 2.54 % | 2.77 |  | heatmaps/backstage-account.open.png |
 | `backstage-export.open` | captured/captured | **genuine-visual-mismatch** | pass (11.1% painted) | pass (10.3% painted) | 13.54 % | 11.51 |  | heatmaps/backstage-export.open.png |
 | `backstage-home.open` | captured/captured | **genuine-visual-mismatch** | pass (10.1% painted) | pass (8.8% painted) | 16.15 % | 13.84 | action-button-order | heatmaps/backstage-home.open.png |
