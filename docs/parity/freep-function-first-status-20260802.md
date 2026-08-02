@@ -2,7 +2,7 @@
 
 ## Current position
 
-The current `main` baseline reports **614/614** FreeP command IDs shared by WPF and
+The current `main` baseline reports **618/618** FreeP command IDs shared by WPF and
 Avalonia, with **0 actionable WPF gaps, 0 actionable Avalonia gaps, 0 known deferred
 command rows, and 103 workflow-evidence rows**. This is reachability coverage, not a
 claim that every PowerPoint feature has identical depth or native behavior.
@@ -68,8 +68,8 @@ fallback rendering remain unchanged.
 Section Zoom authoring now uses the same workflow for named sections. Both hosts offer populated
 sections, create a native PowerPoint 2016 \`sectionZmObj\` payload, and preserve the existing section
 membership/undo contracts through save and reopen. Section and slide target navigation therefore
-share one functional authoring path; preview thumbnails and additional Zoom formatting remain
-separate presentation-depth work.
+share one functional authoring path; Summary Zoom previews and the shared Zoom Format command now
+cover the first presentation-depth layer, while PowerPoint-exact cover styling remains separate work.
 
 Summary Zoom now completes the multi-target side of that workflow. Both hosts expose a multi-select
 Insert Summary Zoom command, the shared model retains every section tile and its native layout factors,
@@ -78,9 +78,10 @@ hit-testing resolves the clicked tile to its section's first slide. Package roun
 are covered. Authored Summary Zooms now also render each target section's first slide through the active
 WPF/Avalonia renderer and attach the PNG to the corresponding \`summaryZmObj\` as a relationship-backed
 preview. The writer preserves those preview parts through save/reopen and retains a legacy
-AlternateContent shape fallback for viewers without the native zoom extension. Per-tile visual formatting
-remains separate presentation-depth work; the authored target semantics are no longer collapsed to a
-single section.
+AlternateContent shape fallback for viewers without the native zoom extension. The shared WPF/Avalonia
+Zoom Format command now edits `returnToParent`, `imageType`, `transitionDur`, and `showBg` across every
+summary tile as one undoable operation while preserving unmodeled XML. The authored target semantics are
+no longer collapsed to a single section.
 
 The follow-up capability audit corrected the remaining list against current code: Avalonia already
 has Windows native printer submission, MP4 export, persisted narration muxing, and camera
@@ -110,8 +111,8 @@ Portable/Linux printing remains on its platform adapter and is not affected.
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
 - Richer chart authoring/layout semantics beyond the modeled chart grid and option planners.
-- Full Zoom authoring depth beyond slide, section, and summary targets, including richer zoom-format
-  options and PowerPoint-exact preview styling.
+- Full Zoom authoring depth beyond slide, section, and summary targets, including PowerPoint-exact
+  preview styling and cover-image authoring.
 - Portable/non-Windows in-place OLE hosting inside text runs remains external activation; Windows
   WPF and Windows Avalonia now have native in-place host paths with model byte save-back.
 - Broader real-deck media/caption/recording persistence and PowerPoint-authoritative recording
