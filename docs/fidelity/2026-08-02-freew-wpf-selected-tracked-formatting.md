@@ -9,7 +9,8 @@ font weight bold in the reproduced undo contract.
 
 ## Owner Fix
 
-Non-empty body selections now use a model-backed range command. The command:
+Non-empty body selections for Bold, Italic, Underline, Superscript, Subscript, Strikethrough, Small Caps,
+and All Caps now use a model-backed range command. The command:
 
 - splits only the selected text range while preserving run marks;
 - records the active review author and previous formatting when Track Changes and Track Formatting are on;
@@ -23,10 +24,11 @@ text is unchanged.
 
 ## Verification
 
-- `DocumentViewTrackEditTests`: 14/14
+- `DocumentViewTrackEditTests`: 16/16
 - Selected Bold exact model + rendered-surface undo/redo contract: pass
 - Selected Italic Track Formatting suppression + undo/redo contract: pass
+- Selected Superscript tracking + baseline restoration: pass
+- Small Caps / All Caps mutual-exclusion contract: pass
 - Ribbon, protection, and character-format adjacent suite: 133/134 on the first run; the sole failure was
   a WPF spellchecker COM teardown race in an unrelated SmartArt test, whose exact rerun passed 1/1
 - WPF host/test Release build: 0 warnings, 0 errors
-
