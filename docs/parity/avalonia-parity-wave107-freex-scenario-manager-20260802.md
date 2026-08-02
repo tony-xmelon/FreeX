@@ -34,12 +34,15 @@ capture in `docs/parity/dialog-visual-assets/wpf-capture/dialog.ScenarioManager.
   emitted a valid `360x420` `dialog.ScenarioManager.png`, found the neutral
   WPF-style button surface and group border, and confirmed rendered pixels in
   the bottom rows.
+- A fresh production Avalonia capture was promoted into the committed evidence
+  set. Regenerating `dialog-visual-evidence-summary.json` reduced the Scenario
+  Manager triage score from `0.103523` to `0.063362`; its non-background delta
+  fell from `0.044216` to `0.015949`, removing it from the leading outliers.
 - `git diff --check` passed for the scoped changes.
 
-## Evidence limitation
+## Remaining limitation
 
-Docker was intentionally not run for this slice. The existing paired PNGs and
-the JSON triage score were therefore not regenerated here; the render test is
-current Avalonia headless evidence, while WPF geometry comes from the
-authoritative WPF source and committed capture. A fresh cross-host pixel score
-should be regenerated in the next visual-evidence pass.
+Docker was intentionally not run for this slice. The paired score uses the
+current Avalonia production capture and the committed WPF authority capture;
+it is deterministic prioritization evidence, not a human claim of exact visual
+identity. Cross-framework text and control rasterization differences remain.
