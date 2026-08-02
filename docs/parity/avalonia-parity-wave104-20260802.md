@@ -85,7 +85,7 @@ upstream merge and contains 173 tracked artifacts.
 
 ## Repository gates
 
-- Repository preflight passed, including the conflict-marker scan across 10,426
+- Repository preflight passed, including the conflict-marker scan across 10,430
   text files and all generated-evidence freshness checks.
 - `dotnet build FreeX.slnx --configuration Release --verbosity minimal`
   passed with 0 warnings and 0 errors.
@@ -93,6 +93,9 @@ upstream merge and contains 173 tracked artifacts.
   35,391 passed, 0 failed, and 133 framework-skipped discoveries out of 35,524.
   The initial run exposed one stale probe-order source assertion; the corrected
   test and its complete 2,564-test assembly both passed on rerun.
+- A final upstream-only sync added FreeP zoom-cover and FreeW track-revision
+  work. Exact-head focused verification passed both FreeP tests and all three
+  FreeW tests introduced by that sync.
 
 ## Remaining
 
