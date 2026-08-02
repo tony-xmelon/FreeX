@@ -74,6 +74,11 @@ Authored major and minor `c:*TickMark` values now reach the shared axis primitiv
 values retain the prior outward geometry, while `in`, `out`, `cross`, and `none` control the
 corresponding primary, secondary, stock-boundary, and combo minor tick segments.
 
+Avalonia SmartArt text-pane edits, layout changes, Quick Styles, and Change Colors now honor
+native data-part and drawing-cache refresh failures before committing the shared undo command.
+The WPF host already enforced this transaction boundary; the Avalonia host now reports the same
+failure state and leaves the model/package uncommitted when regeneration cannot complete.
+
 Nested RTF cell text direction now survives parsing, clipboard serialization, and both host
 compositors. The Avalonia nested inline-table editor now consumes the same parsed quarter-turn
 cell text directions instead of painting those cells horizontally. The native `trapezoidList`
