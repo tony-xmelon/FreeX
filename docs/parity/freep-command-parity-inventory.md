@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 624 | 624 | 0 | 0 | 0 | 0 | 0 | 0 | 624 | 0 | 0 | 0 | 0 | 103 |
+| 625 | 625 | 0 | 0 | 0 | 0 | 0 | 0 | 625 | 0 | 0 | 0 | 0 | 103 |
 
 ## Workflow Evidence
 
@@ -285,6 +285,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.chart.change-type.columnstacked` | Stacked Column | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.change-type.columnstacked100` | 100% Stacked Column | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.change-type.doughnut` | Doughnut | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.funnel` | Funnel | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.change-type.line` | Line | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.change-type.linemarkers` | Line with Markers | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.change-type.pie` | Pie | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
