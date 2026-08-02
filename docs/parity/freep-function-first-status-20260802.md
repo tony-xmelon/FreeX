@@ -93,6 +93,11 @@ part places them before `node0`, while keeping the shared WPF/Avalonia authoring
 unchanged. The package-owner regression is covered by Presentation, WPF, and Avalonia tests;
 this is a functional/source-semantics fix with no new raster-fidelity claim.
 
+Regenerated SmartArt picture caches now use schema-valid `dsp:sp` nodes with `a:blipFill`
+instead of the invalid `dsp:pic` child under `dsp:spTree`. Image relationships, geometry,
+reader reopen, and node picture bytes are preserved; the full Presentation test project is
+green at 3418/3418.
+
 Hierarchy SmartArt reordering now keeps the assistant prefix ahead of regular reports. Move Up/Down
 still reorders peers within the assistant and report partitions, but rejects a move that would cross
 that PowerPoint org-chart boundary, preventing an assistant from becoming an ordinary report or a
