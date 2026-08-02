@@ -46,6 +46,18 @@ difference. Export remains a genuine visual mismatch at 13.5435% changed pixels,
 no semantic difference. The canonical aggregate now records 17 passes and 166 genuine
 visual mismatches for the current FreeW comparison corpus.
 
+## Repository gates
+
+- Repository preflight passed, including generated-document freshness and Linux packaging.
+- `dotnet build FreeX.slnx --configuration Release` passed with zero warnings and errors.
+- The parallel default solution produced 35,431 passes, 133 skips, and three failures.
+  All three were isolated as concurrency effects: the complete WPF host-logic project passed
+  1,493 with four skips when run alone, the text-to-columns performance case passed 1/1,
+  and all 11 aggregate performance cases passed alone. The FreeP source-policy failure from
+  the first run was a stale exact-signature assertion after upstream added the optional Zoom
+  transition parameter; the assertion now anchors on the method name and the full FreeP
+  Avalonia project passes 556/556.
+
 ## Remaining boundaries
 
 Wave 105 closes the selected functional residuals; it does not claim repository-wide 100%
