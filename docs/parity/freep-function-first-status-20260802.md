@@ -64,6 +64,10 @@ picture-in-picture handoff. Those are no longer classified as wholly deferred. T
 printer gap is the PowerPoint-style printer-selection dialog on Avalonia; its Windows adapter
 currently submits through the native shell handoff after the shared print plan is built.
 
+The chart package reader now also honors authored `c:order` for series groups when reopening a
+deck, so a producer's physical XML order cannot silently change plot or legend order. A focused
+package regression covers reversed `c:ser` placement with preserved authored order.
+
 The WPF rich-text editor now upgrades an inline OLE placeholder to a native in-place OLE host
 when the registered server is available, while retaining the placeholder and external-activation
 fallback when it is not. Avalonia continues to use its cross-platform external activation path.
