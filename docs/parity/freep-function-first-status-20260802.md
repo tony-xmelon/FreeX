@@ -82,10 +82,11 @@ types receive a host preview immediately and preserve it through save/reopen. Th
 preview parts through save/reopen and retains a legacy
 AlternateContent shape fallback for viewers without the native zoom extension. The shared WPF/Avalonia
 Zoom Format command now edits `returnToParent`, `imageType`, `transitionDur`, and `showBg` across every
-summary tile as one undoable operation while preserving unmodeled XML. Single-target Slide and Section Zooms
-also expose an undoable Set Zoom Cover Image command that replaces the native `blipFill` relationship and
-round-trips the imported media bytes. The authored target semantics are no longer collapsed to a single
-section.
+summary tile as one undoable operation while preserving unmodeled XML. Slide and Section Zooms expose an
+undoable Set Zoom Cover Image command, and Summary Zoom now lets the user choose an individual tile before
+replacing that tile's native `blipFill` relationship. Each tile receives its own relationship-backed media
+part; model tests cover independent tile images, undo/redo, and package round-trip. The authored target
+semantics are no longer collapsed to a single section.
 
 The follow-up capability audit corrected the remaining list against current code: Avalonia already
 has Windows native printer submission, MP4 export, persisted narration muxing, and camera
@@ -115,8 +116,8 @@ Portable/Linux printing remains on its platform adapter and is not affected.
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
 - Richer chart authoring/layout semantics beyond the modeled chart grid and option planners.
-- Full Zoom authoring depth beyond the current slide, section, and summary target/preview paths, including
-  PowerPoint-exact preview styling and per-tile Summary Zoom cover-image authoring.
+- Full Zoom authoring depth beyond the current slide, section, and summary target/preview/cover-image paths,
+  including PowerPoint-exact preview crop/position styling and transition rendering.
 - Portable/non-Windows in-place OLE hosting inside text runs remains external activation; Windows
   WPF and Windows Avalonia now have native in-place host paths with model byte save-back.
 - Broader real-deck media/caption/recording persistence and PowerPoint-authoritative recording
