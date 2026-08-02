@@ -195,7 +195,8 @@ both WPF and Avalonia render a secondary pie or bar from those primitives. Exact
 connector lines remain separate chart-depth work; native custom split-point indices now
 round-trip, drive both host renderers, and are editable through the shared Pie/Doughnut/OfPie
 options workflow in both desktop hosts. That workflow also authors the secondary plot type,
-split rule/threshold, and secondary plot size with undoable command semantics.
+split rule/threshold, secondary plot size, secondary plot gap width, and series-line intent with
+undoable command semantics.
 
 Pie and doughnut point explosion is now a complete authoring path: `<c:explosion>` survives
 PPTX round-trip, the shared WPF/Avalonia planner moves the selected slice and label, and the
