@@ -43,6 +43,6 @@ output-mode behavior.
 
 ## Residual
 
-Even/first and non-final-section header/footer merge coverage remains separate from the existing merge
-engine's default header/footer ownership. Complete-and-pause currently reports the aggregate error list after
-simulation rather than pausing interactively at each failing record.
+Even/first and non-final-section header/footer merge coverage is covered by the follow-up section-story slice.
+The follow-up execute-policy slice aligns Complete-and-pause and Complete-without-pausing with Word's documented
+completion/report behavior.

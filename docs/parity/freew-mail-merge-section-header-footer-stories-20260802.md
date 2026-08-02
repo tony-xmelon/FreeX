@@ -30,5 +30,5 @@ or malformed rule in a first/even or non-final-section story is reported before 
 ## Residual
 
 Record-boundary section ownership for Letters output is covered by the follow-up
-`freew-mail-merge-letter-record-sections-20260802.md` slice. Interactive Complete-and-pause reporting remains
-separate host behavior.
+`freew-mail-merge-letter-record-sections-20260802.md` slice. Interactive Complete-and-pause reporting is covered
+by the follow-up Check for Errors execute-policy slice.

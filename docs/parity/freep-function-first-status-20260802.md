@@ -66,6 +66,10 @@ planner contracts cover the mirrored geometry and annotations.
 Authored chart value-axis `CrossBetween` now reaches the shared WPF/Avalonia planner for
 column, bar, and secondary-axis tick/label placement, preserving the default `Between`
 geometry and honoring `MidCat` at the first category midpoint.
+Authored `c:tickLblPos` now reaches the shared WPF/Avalonia chart planner for the common
+Cartesian category, primary-value, and secondary-value label paths: `none` suppresses labels,
+`low` and `high` move them to the corresponding chart side, and `nextTo` preserves the existing
+axis-adjacent placement.
 
 Nested RTF cell text direction now survives parsing, clipboard serialization, and both host
 compositors. The Avalonia nested inline-table editor now consumes the same parsed quarter-turn

@@ -28,5 +28,5 @@ in-memory model shape.
 
 ## Residual
 
-Complete-and-pause still reports aggregate errors rather than pausing at each individual failing record.
-Directory output intentionally keeps one continuous section, matching its catalog/list output semantics.
+Complete-and-pause behavior is covered by the follow-up Check for Errors execute-policy slice. Directory output
+intentionally keeps one continuous section, matching its catalog/list output semantics.
