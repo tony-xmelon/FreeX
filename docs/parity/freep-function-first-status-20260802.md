@@ -71,6 +71,14 @@ membership/undo contracts through save and reopen. Section and slide target navi
 share one functional authoring path; preview thumbnails and additional Zoom formatting remain
 separate presentation-depth work.
 
+Summary Zoom now completes the multi-target side of that workflow. Both hosts expose a multi-select
+Insert Summary Zoom command, the shared model retains every section tile and its native layout factors,
+the writer emits the PowerPoint 2016 \`summaryZmObj\` collection with a fixed layout, and slideshow
+hit-testing resolves the clicked tile to its section's first slide. Package round-trip and undo/redo
+are covered. Native PowerPoint preview/cover image generation, alternate-content fallback artwork, and
+per-tile visual formatting remain separate presentation-depth work; the authored target semantics are
+no longer collapsed to a single section.
+
 The follow-up capability audit corrected the remaining list against current code: Avalonia already
 has Windows native printer submission, MP4 export, persisted narration muxing, and camera
 picture-in-picture handoff. Those are no longer classified as wholly deferred. The remaining
