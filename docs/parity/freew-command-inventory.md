@@ -10,13 +10,13 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 
 | Total | Both profiles | WPF profile only | Avalonia profile only | Missing WPF profile | Missing Avalonia profile | Actionable missing WPF | Actionable missing Avalonia |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 939 | 489 | 155 | 295 | 295 | 155 | 0 | 0 |
+| 940 | 490 | 155 | 295 | 295 | 155 | 0 | 0 |
 
 ## Classification Counts
 
 | Shared profile | Profile-shape only | Command-id aliases | Platform-only | Deferred | Actionable gaps | Behavior evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|
-| 489 | 402 | 43 | 5 | 0 | 0 | 106 |
+| 490 | 402 | 43 | 5 | 0 | 0 | 106 |
 
 ## Classification Rules
 
@@ -920,6 +920,7 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 | `freew.tof.table` | Table | Yes | Yes | none | shared-profile | shared-profile | shared-profile | references/captions (RibbonMenuItem; Menu) | references/captions (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.toggle-field-codes` | Toggle Field Codes | Yes | Yes | none | shared-profile | shared-profile | shared-profile | insert/text (RibbonButton; Small) | insert/text (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.track-changes` | Track Changes | Yes | Yes | none | shared-profile | shared-profile | shared-profile | review/tracking (RibbonToggleButton; Medium) | review/tracking (RibbonToggleButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Review tracking: FreeWRibbonParityTests.ReviewTrackingAndChanges_CommandRoutesExecuteBackedActions<br>DocumentViewTrackEditTests.Typing_with_TrackChanges_on_records_a_tracked_insertion | Command is present in both compiled FreeW ribbon profiles. |
+| `freew.track-formatting` | Track Formatting | Yes | Yes | none | shared-profile | shared-profile | shared-profile | review/tracking (RibbonToggleButton; Medium) | review/tracking (RibbonToggleButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.underline` | Underline | Yes | Yes | none | shared-profile | shared-profile | shared-profile | home/font (RibbonToggleButton; Small) | home/font (RibbonToggleButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.undo` | Undo | Yes | Yes | none | shared-profile | shared-profile | shared-profile | home/editing (RibbonButton; Medium) | home/editing (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | Comments-only protection history: ProtectionEnforcementTests.CommentsOnlyProtection_AllowsEachClassifiedCommentHistoryEntry<br>DocumentViewProtectionTests.CommentsOnly_allows_each_classified_comment_history_entry | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.update-fields` | Update Fields | Yes | Yes | none | shared-profile | shared-profile | shared-profile | insert/text (RibbonButton; Small) | insert/text (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source<br>WPF registry source<br>Avalonia registry source | References fields and generated regions: NumericCitationEditorTests.UpdateFields_CitationFieldAndBibliographyRefresh_DoNotOverwriteCitationFromStaleView<br>ReferencesTabTests.UpdateFields_refreshes_toc_and_bibliography_in_same_pass | Command is present in both compiled FreeW ribbon profiles. |

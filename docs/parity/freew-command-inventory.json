@@ -55,15 +55,15 @@
     }
   ],
   "summary": {
-    "totalCommands": 939,
-    "both": 489,
+    "totalCommands": 940,
+    "both": 490,
     "wpfOnly": 155,
     "avaloniaOnly": 295,
     "missingWpf": 295,
     "missingAvalonia": 155,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 489,
+    "sharedProfile": 490,
     "profileShapeOnly": 402,
     "commandIdAliases": 43,
     "platformOnly": 5,
@@ -35235,6 +35235,48 @@
           "path": "freew/FreeW.App.Avalonia.Tests/DocumentViewTrackEditTests.cs",
           "test": "DocumentViewTrackEditTests.Typing_with_TrackChanges_on_records_a_tracked_insertion"
         }
+      }
+    },
+    {
+      "commandId": "freew.track-formatting",
+      "label": "Track Formatting",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "tracking",
+          "group": "Tracking",
+          "label": "Track Formatting",
+          "controlType": "RibbonToggleButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "review",
+          "tab": "Review",
+          "groupId": "tracking",
+          "group": "Tracking",
+          "label": "Track Formatting",
+          "controlType": "RibbonToggleButton",
+          "layout": "Medium"
+        }
+      ],
+      "sourceLiteralEvidence": {
+        "wpfDefinitionSource": true,
+        "avaloniaDefinitionSource": true,
+        "wpfRegistrySource": true,
+        "avaloniaRegistrySource": true
       }
     },
     {
