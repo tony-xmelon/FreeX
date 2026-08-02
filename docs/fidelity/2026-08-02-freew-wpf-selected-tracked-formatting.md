@@ -25,7 +25,7 @@ for newly typed text is unchanged.
 
 ## Verification
 
-- `DocumentViewTrackEditTests`: 26/26
+- `DocumentViewTrackEditTests`: 28/28
 - Selected Bold exact model + rendered-surface undo/redo contract: pass
 - Selected Italic Track Formatting suppression + undo/redo contract: pass
 - Selected Superscript tracking + baseline restoration: pass
@@ -35,7 +35,10 @@ for newly typed text is unchanged.
 - Exact selected-character Border and Shading tracking + paragraph restoration: pass
 - Exact selected-character Clear Formatting tracking + collapsed-caret paragraph fallback: pass
 - Text Color and Highlight exact-range tracking, clear-color restoration, and collapsed-caret pending colors: pass
+- Font dialog complete formatting snapshot, advanced typography, undo/redo, and collapsed-caret control: pass
 - `ProtectionEnforcementTests`: 12/12
+- `FontDialogPolicySourceGuardTests`: 2/2
+- `FontDialogPlannerTests`: 22/22
 - `FreeWRibbonParityTests`: 104/104
 - Ribbon, protection, and character-format adjacent suite: 133/134 on the first run; the sole failure was
   a WPF spellchecker COM teardown race in an unrelated SmartArt test, whose exact rerun passed 1/1
