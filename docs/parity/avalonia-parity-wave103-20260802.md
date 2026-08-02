@@ -87,17 +87,17 @@ Focused tests:
 Repository gates:
 
 - `tools/Test-RepositoryPreflight.ps1`: passed, including generated parity
-  evidence and conflict-marker checks across 10,345 text files.
+  evidence and conflict-marker checks across 10,374 text files.
 - `dotnet build FreeX.slnx --configuration Release`: passed with zero warnings
   and zero errors.
 - `FreeX.DefaultTests.slnx`: all 19 runnable test assemblies were accounted for,
-  with 35,279 passed, zero failed, and 133 skipped/not executed; the fixtures
-  project contains no tests. The monolithic runner wrapper exited while Core IO
-  was active, so the owned orphaned PIDs were stopped explicitly and the
-  incomplete projects were rerun individually. `FreeP.App.Avalonia.Tests`
-  passed 544/544 on its clean isolated rerun; Core IO passed 5,116 with 56
-  benchmark-only skips; Core Model passed 5,517 with 40 benchmark-only skips;
-  Integration passed 608 with one skip; ParityCompare passed 30/30.
+  with 35,359 passed, zero failed, and 133 skipped/not executed; the fixtures
+  project contains no tests. Final merged-head validation used bounded
+  per-project batches after the monolithic wrapper exited while Core IO was
+  active. One clipboard-isolated host test failed once in the shared batch,
+  then passed both alone and in the clean full-host rerun. Core IO passed 5,122
+  with 56 benchmark-only skips; Core Model passed 5,549 with 40 benchmark-only
+  skips; Integration passed 608 with one skip; ParityCompare passed 30/30.
 - Linux Docker/X11 `pivot-field-list`: 2/2 physical probes passed against
   `FreeX_wave50_pivot_fields.xlsx` at 1280x820 and 96 DPI. The harness-owned
   container on port 6903 stopped normally.
