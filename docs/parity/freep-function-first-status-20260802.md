@@ -191,8 +191,9 @@ model through clone and PPTX save/reopen, including `ofPieType`, split rule/posi
 pie size, gap width, and series-line presence. Both hosts route the imported family through the
 existing pie primitives rather than silently changing it to a column chart. The shared scene plan
 now splits visible points into primary and secondary plots according to the authored split mode;
-both WPF and Avalonia render a secondary pie or bar from those primitives. Exact Office spacing,
-connector lines remain separate chart-depth work; native custom split-point indices now
+both WPF and Avalonia render a secondary pie or bar from those primitives. The authored
+series-line flag now produces the same shared two-segment connector plan in both renderers;
+native custom split-point indices now
 round-trip, drive both host renderers, and are editable through the shared Pie/Doughnut/OfPie
 options workflow in both desktop hosts. That workflow also authors the secondary plot type,
 split rule/threshold, secondary plot size, secondary plot gap width, and series-line intent with
