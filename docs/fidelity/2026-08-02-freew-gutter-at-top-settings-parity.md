@@ -50,6 +50,8 @@ automatically for mirror-margin, book-fold, reverse-book-fold, and two-up printi
   printable geometry through editor layout, pagination, preview, and PDF consumers.
 - The document-global setting is propagated to non-final section page settings after `settings.xml` is read.
 - Visual-evidence page snapshots preserve the setting instead of silently reverting to a side gutter.
+- The shared Page Setup planner exposes Left/Top gutter position, and both WPF and Avalonia dialogs seed,
+  edit, and apply it through the existing one-step page-settings command.
 
 ## Verification
 
@@ -57,3 +59,4 @@ automatically for mirror-margin, book-fold, reverse-book-fold, and two-up printi
 - `dotnet test freew/FreeW.Core.Model.Tests/FreeW.Core.Model.Tests.csproj --configuration Release --filter "FullyQualifiedName~PageLayoutTests|FullyQualifiedName~GutterAtTopModelTests"`: 16/16 passed.
 - `dotnet test freew/FreeW.Core.IO.Tests/FreeW.Core.IO.Tests.csproj --configuration Release --filter FullyQualifiedName~GutterAtTop`: 10/10 passed.
 - Neighboring settings and preservation regression filter: 110/110 passed.
+- Shared Page Setup planner: 6/6 passed; WPF Page Setup: 3/3 passed; Avalonia Page Setup: 29/29 passed.
