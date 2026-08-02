@@ -214,6 +214,20 @@ value is editable in both desktop hosts, participates in undo/redo, survives PPT
 and is consumed by the shared axis-label renderer; built-in and unknown display-unit behavior
 remains unchanged.
 
+Chart manual-layout dialogs now preserve unknown authored `c:xMode`, `c:yMode`, `c:wMode`, or
+`c:hMode` tokens instead of normalizing them to `factor` when a user accepts the dialog unchanged.
+The shared planner exposes an explicit preserve-source choice, the undo command carries the raw
+token, and both WPF/Avalonia dialogs use the same mode list. This is package/function parity for
+future PowerPoint chart modes; the existing factor/edge authoring path is unchanged.
+
+### 2026-08-03
+
+Chart axis import/save now preserves unknown authored `c:majorTickMark`, `c:minorTickMark`,
+`c:tickLblPos`, `c:crosses`, `c:crossBetween`, and `c:lblAlgn` tokens through the shared axis
+model, clone path, axis dialog working copy, undo command, and PPTX writer. Known PowerPoint
+values retain their existing editing and rendering behavior; accepting an unchanged axis dialog
+no longer silently rewrites future axis semantics.
+
 Chart-level `c:roundedCorners` is now consumed by the shared scene plan and rendered as a
 bounded rounded chart frame in both WPF and Avalonia; omitted metadata remains rectangular.
 
