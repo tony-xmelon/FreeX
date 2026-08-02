@@ -8,7 +8,7 @@ did not add manual soft hyphens.
 
 The WPF and Avalonia hosts now share a non-mutating review session. Each candidate is presented in document
 order with its available break positions and Yes, No, and Cancel actions. Accepted positions are applied as
-one undoable body-text command using U+00AD. The automatic-hyphenation setting is not changed.
+one undoable document command using U+00AD. The automatic-hyphenation setting is not changed.
 
 The planner covers top-level body paragraphs and table-cell paragraphs, honors paragraph hyphen suppression
 and the document CAPS policy, skips words that already contain a soft hyphen, and treats words split across
@@ -16,14 +16,19 @@ formatting runs as one candidate. Existing DOCX IO writes U+00AD as `w:softHyphe
 
 ## Verification
 
-- `ManualHyphenationPlannerTests`: 4/4
+- `ManualHyphenationPlannerTests`: 5/5
+- full `FreeW.App.Presentation.Tests`: 1,174/1,174
 - `ApplyManualHyphenationCommandTests`: 1/1
 - WPF manual-hyphenation route guard: 1/1
 - Avalonia manual-hyphenation route guard: 1/1
 - WPF Release host build: 0 warnings, 0 errors
 - Avalonia Release host build: 0 warnings, 0 errors
 
-## Remaining Difference
+## Header/footer follow-up (2026-08-02)
 
-Word can review additional text stories such as headers and footers. This slice deliberately limits manual
-review to the main document story and table cells, matching FreeW's current editable body ownership.
+Manual review now continues from the main document and table cells into every section's default, even-page,
+and first-page header/footer stories. Shared inherited story paragraphs are reviewed once by reference, so a
+header reused by two section slots cannot receive duplicate soft-hyphen edits. Accepted story edits still use
+the existing single undoable `ApplyManualHyphenationCommand`.
+
+Footnotes, endnotes, comments, and text inside drawing objects remain separate story-owner slices.
