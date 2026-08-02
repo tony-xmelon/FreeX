@@ -24,8 +24,20 @@ picture therefore disappeared on open/save.
 The package assertions verify `a:blip` attributes, relationship type/target/`TargetMode`, media-part
 presence or absence, and the reopened model for document and part-local stories.
 
+## Local preview follow-up (2026-08-02)
+
+Path-aware opens now resolve link-only pictures from local `file:` or relative filesystem targets into a runtime-only preview buffer. WPF, Avalonia, and Avalonia PDF rendering consume embedded bytes first and that resolved buffer second. The writer still sees only the original embedded bytes, so saving a displayed link-only picture does not create a `word/media/*` part or add `r:embed`.
+
+Resolution is bounded to 64 MiB and deliberately rejects HTTP(S), other network schemes, and UNC hosts. Missing, inaccessible, oversized, or malformed targets keep the existing sized placeholder.
+
+Verification on current main:
+
+- `FreeW.Core.IO.Tests`: 1,428/1,428, including local resolution, remote rejection, link-only XML, and reopened-model assertions.
+- `FreeW.App.Presentation.Tests`: 1,173/1,173, including the path-aware open workflow.
+- WPF runtime decode: 1/1 focused host test.
+- Avalonia runtime decode and PDF image operation: 2/2 focused tests.
+- WPF and Avalonia consuming Release artifacts built with 0 warnings and 0 errors through the focused host gates.
+
 ## Residual
 
-FreeW deliberately does not resolve or download external image targets. A link-only picture is retained
-for Word-compatible package round-trip but has no raster preview in FreeW unless the source package also
-contains `r:embed` bytes.
+FreeW does not download remote linked pictures. They remain package-faithful and render as a sized placeholder unless the source package also contains `r:embed` bytes.
