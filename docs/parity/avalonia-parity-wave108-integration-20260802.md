@@ -40,9 +40,9 @@ Date: 2026-08-02
   evidence provenance.
 - Release solution build: passed with 0 warnings and 0 errors.
 - Default non-UI lane: 35,454 passed, 0 failed, 133 not executed; 35,587 total.
-- Post-sync affected suites: 958/958 passed across FreeP SmartArt and FreeW
-  web-hidden model, package, Avalonia, and WPF host coverage; repository
-  preflight and the full Release build then passed again.
+- Post-sync affected suites: 1,050/1,050 passed across FreeP SmartArt and
+  FreeW web-hidden/noProof model, package, Avalonia, and WPF host coverage;
+  repository preflight and the full Release build then passed again.
 
 ## Remaining
 
