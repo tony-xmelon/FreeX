@@ -58,6 +58,13 @@ The parsed SmartArt quick-style model now also retains each native style label's
 effect, and font reference indices through cloning, so function-first editing does not discard
 the source style matrix references even when the raw quick-style part remains the authority.
 
+Slide Zoom now has a shared authoring workflow in WPF and Avalonia: the Insert ribbon command
+offers other slides, writes a native PowerPoint 2016 `pslz:sldZm` frame with the writer's
+effective target slide id, and routes insertion through the existing undo/redo command bus.
+The authoring path is covered for loaded and unsaved decks, and a package round-trip verifies
+that the native target survives save/reopen. Existing slideshow navigation and preserved-object
+fallback rendering remain unchanged.
+
 The follow-up capability audit corrected the remaining list against current code: Avalonia already
 has Windows native printer submission, MP4 export, persisted narration muxing, and camera
 picture-in-picture handoff. Those are no longer classified as wholly deferred. The remaining
@@ -74,7 +81,9 @@ existing Chart Point Options command/dialogs can set the bounded 0-100% value wi
 
 The WPF rich-text editor now upgrades an inline OLE placeholder to a native in-place OLE host
 when the registered server is available, while retaining the placeholder and external-activation
-fallback when it is not. Avalonia continues to use its cross-platform external activation path.
+fallback when it is not. Windows Avalonia now uses the same COM site lifecycle through
+`NativeControlHost`, with measured inline-run placement and save-back on host teardown; portable
+Avalonia targets retain external activation.
 
 The Avalonia Windows Print pane now opens the native Windows printer-selection dialog through
 `PrintDlgEx`, then routes the selected queue through the existing capability-checked PDF handoff.
@@ -84,8 +93,10 @@ Portable/Linux printing remains on its platform adapter and is not affected.
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
 - Richer chart authoring/layout semantics beyond the modeled chart grid and option planners.
-- Cross-host in-place OLE hosting inside text runs: WPF now has the native host path, while
-  Avalonia still uses external activation until an equivalent native host is available.
+- Full Zoom authoring depth beyond slide targets, including section/summary zoom collections,
+  PowerPoint preview-thumbnail generation, and richer zoom-format options.
+- Portable/non-Windows in-place OLE hosting inside text runs remains external activation; Windows
+  WPF and Windows Avalonia now have native in-place host paths with model byte save-back.
 - Broader real-deck media/caption/recording persistence and PowerPoint-authoritative recording
   baselines beyond the current deterministic capture and handoff paths.
 - Broader PowerPoint-authoritative export baselines and printer-setting handoff beyond queue
