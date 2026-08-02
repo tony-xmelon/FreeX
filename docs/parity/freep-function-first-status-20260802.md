@@ -186,6 +186,9 @@ value is editable in both desktop hosts, participates in undo/redo, survives PPT
 and is consumed by the shared axis-label renderer; built-in and unknown display-unit behavior
 remains unchanged.
 
+Chart-level `c:roundedCorners` is now consumed by the shared scene plan and rendered as a
+bounded rounded chart frame in both WPF and Avalonia; omitted metadata remains rectangular.
+
 Native `c:ofPieChart` families are now retained as an explicit pie-of-pie/bar-of-pie chart
 model through clone and PPTX save/reopen, including `ofPieType`, split rule/position, secondary
 pie size, gap width, and series-line presence. Both hosts route the imported family through the
