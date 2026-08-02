@@ -102,6 +102,11 @@ both hosts. Both hosts can now restore a custom Zoom cover to a freshly rendered
 preview through one undoable command, including an individually selected Summary Zoom tile.
 PowerPoint-exact preview position styling remains separate work; crop authoring is now covered.
 
+Summary Zoom tile layout is now authorable from the shared Zoom Format route. Both hosts expose
+each tile's offset and scale as percentage pairs; the shared command updates the selected
+`summaryZmObj`, preserves the other tiles, and restores the complete tile state through undo/redo
+and PPTX save/reopen.
+
 The Zoom Format dialog now exposes preview crop edges in both desktop hosts. Values are stored
 in the shared `ZoomObjectProperties` model as PowerPoint's thousandths-of-a-percent units,
 patched into native DrawingML `a:srcRect`, and carried through the existing undo/redo and
@@ -135,8 +140,8 @@ Portable/Linux printing remains on its platform adapter and is not affected.
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
 - Richer chart authoring/layout semantics beyond the modeled chart grid and option planners.
-- Full Zoom authoring depth beyond the current slide, section, and summary target/preview/cover-image/crop
-  paths, including PowerPoint-exact positioning and transition rendering.
+- Full Zoom authoring depth beyond the current slide, section, and summary target/preview/cover-image/crop/tile-layout
+  paths, including PowerPoint-exact slide/section positioning and transition rendering.
 - Portable/non-Windows in-place OLE hosting inside text runs remains external activation; Windows
   WPF and Windows Avalonia now have native in-place host paths with model byte save-back.
 - Broader real-deck media/caption/recording persistence and PowerPoint-authoritative recording
