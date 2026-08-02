@@ -50,6 +50,11 @@ package compatibility. The command inventory remained synchronized across both h
 
 ### 2026-08-02
 
+Funnel and Waterfall chart creation is now reachable from the actual shared Insert Chart
+command catalog and ribbon in both desktop hosts. The existing chart model, package,
+editable-data, and renderer paths were already present; this closes the remaining
+authoring entry-point gap without changing visual behavior.
+
 Nested RTF cell text direction now survives parsing, clipboard serialization, and both host
 compositors. The Avalonia nested inline-table editor now consumes the same parsed quarter-turn
 cell text directions instead of painting those cells horizontally. The native `trapezoidList`
