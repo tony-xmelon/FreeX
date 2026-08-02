@@ -62,6 +62,11 @@ Native SmartArt quick styles `simple1` through `simple5` now resolve to distinct
 The parsed SmartArt quick-style model now also retains each native style label's line, fill,
 effect, and font reference indices through cloning, so function-first editing does not discard
 the source style matrix references even when the raw quick-style part remains the authority.
+The native `3d1` through `3d9` SmartArt scene styles now also resolve to distinct bounded live
+profiles (Polished, Inset, Cartoon, Powder, Brick Scene, Flat Scene, Metallic Scene, Sunset Scene,
+and Bird's Eye Scene) in the shared planner. Their native quickStyle identities and raw parts remain
+round-trip authoritative; exact Office bevel, lighting, and effect raster semantics remain visual
+depth work.
 
 Slide Zoom now has a shared authoring workflow in WPF and Avalonia: the Insert ribbon command
 offers other slides, writes a native PowerPoint 2016 `pslz:sldZm` frame with the writer's
