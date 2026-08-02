@@ -68,6 +68,11 @@ and Bird's Eye Scene) in the shared planner. Their native quickStyle identities 
 round-trip authoritative; exact Office bevel, lighting, and effect raster semantics remain visual
 depth work.
 
+SmartArt Quick Style authoring now refreshes the shared model's per-label line, fill, effect, and
+font reference metadata from the newly selected native `styleLbl` elements. A style change therefore
+cannot leave the live editor carrying reference indices from the previous Quick Style; the raw style
+part remains authoritative for unsupported fields.
+
 Slide Zoom now has a shared authoring workflow in WPF and Avalonia: the Insert ribbon command
 offers other slides, writes a native PowerPoint 2016 `pslz:sldZm` frame with the writer's
 effective target slide id, and routes insertion through the existing undo/redo command bus.
