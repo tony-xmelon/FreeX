@@ -29,7 +29,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.Sort.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Fresh FreeX Avalonia production capture in Ubuntu 24.04 Docker/Xvfb on 2026-08-02 via --parity-capture --parity-capture-surface dialog.AccessibilityChecker; shared two-issue fixture, WPF-aligned 360x520 geometry, tree hierarchy, details, and action row."
                      },
                      {
                          "id":  "dialog.SortOptions",

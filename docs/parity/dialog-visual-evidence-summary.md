@@ -62,7 +62,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.AccessibilityChecker | 360x520 | 360x520 | 360x520 px @ 96 DPI vs 360x520 px @ 96 DPI |  |  | 0.099 | 0.040 | 0.023 | 0.036 |
 | dialog.Options.View | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.099 | 0.016 | 0.006 | 0.076 |
 | dialog.Options.EaseOfAccess | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.098 | 0.015 | 0.008 | 0.075 |
 | dialog.Options.AddIns | 744x521 | 744x521 | 744x521 px @ 96 DPI vs 744x521 px @ 96 DPI |  |  | 0.097 | 0.015 | 0.006 | 0.076 |
@@ -72,6 +71,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.Options.Formulas | 744x777 | 744x777 | 744x777 px @ 96 DPI vs 744x777 px @ 96 DPI |  |  | 0.093 | 0.033 | 0.006 | 0.054 |
 | dialog.Zoom | 300x240 | 300x240 | 450x360 px @ 144 DPI vs 300x240 px @ 96 DPI |  |  | 0.093 | 0.034 | 0.015 | 0.045 |
 | dialog.PageSetup | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 96 DPI |  |  | 0.091 | 0.025 | 0.007 | 0.059 |
+| dialog.PageSetup.Page | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 96 DPI |  |  | 0.091 | 0.025 | 0.007 | 0.059 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -90,7 +90,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | Surface id | WPF PNG | WPF logical size | WPF raw PNG | WPF nonblank | Avalonia PNG | Avalonia logical size | Avalonia raw PNG | Avalonia nonblank | Dimension match | Score |
 | --- | --- | ---: | ---: | --- | --- | ---: | ---: | --- | --- | ---: |
 | dialog.About | dialog.About.png | 560x420 | 840x630 px @ 144 DPI | True | dialog.About.png | 560x420 | 560x420 px @ 96 DPI | True | True | 0.085 |
-| dialog.AccessibilityChecker | dialog.AccessibilityChecker.png | 360x520 | 360x520 px @ 96 DPI | True | dialog.AccessibilityChecker.png | 360x520 | 360x520 px @ 96 DPI | True | True | 0.099 |
+| dialog.AccessibilityChecker | dialog.AccessibilityChecker.png | 360x520 | 360x520 px @ 96 DPI | True | dialog.AccessibilityChecker.png | 360x520 | 360x520 px @ 96 DPI | True | True | 0.084 |
 | dialog.AddWatch | dialog.AddWatch.png | 360x170 | 540x255 px @ 144 DPI | True | dialog.AddWatch.png | 360x170 | 360x170 px @ 96 DPI | True | True | 0.088 |
 | dialog.AdvancedFilter | dialog.AdvancedFilter.png | 420x340 | 630x510 px @ 144 DPI | True | dialog.AdvancedFilter.png | 420x340 | 420x340 px @ 96 DPI | True | True | 0.057 |
 | dialog.AllowEditRanges | dialog.AllowEditRanges.png | 430x420 | 430x420 px @ 96 DPI | True | dialog.AllowEditRanges.png | 430x420 | 430x420 px @ 96 DPI | True | True | 0.079 |

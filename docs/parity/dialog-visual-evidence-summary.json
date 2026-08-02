@@ -27,7 +27,7 @@
                     "visualReviewTriageThreshold":  0.4,
                     "visualReviewTriageThresholdRationale":  "This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.",
                     "visualReviewCandidateCount":  0,
-                    "highestTriageScore":  0.09887,
+                    "highestTriageScore":  0.098637,
                     "dimensionMismatchBuckets":  {
 
                                                  }
@@ -118,7 +118,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AccessibilityChecker.png",
-                                                "fileBytes":  42467,
+                                                "fileBytes":  37563,
                                                 "width":  360,
                                                 "height":  520,
                                                 "dpiX":  96,
@@ -126,11 +126,11 @@
                                                 "logicalWidth":  360,
                                                 "logicalHeight":  520,
                                                 "pixels":  187200,
-                                                "distinctColors":  1588,
+                                                "distinctColors":  362,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.139669,
+                                                "nonBackgroundRatio":  0.124797,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  239.44262
+                                                "meanLuma":  243.16273
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -145,10 +145,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.039611,
-                                                  "lumaDelta":  0.023296,
-                                                  "nonBackgroundDelta":  0.035684,
-                                                  "triageScore":  0.09887,
+                                                  "sampleMeanDelta":  0.054555,
+                                                  "lumaDelta":  0.008707,
+                                                  "nonBackgroundDelta":  0.020812,
+                                                  "triageScore":  0.084354,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6286,14 +6286,6 @@
                        ],
     "topPairedOutliers":  [
                               {
-                                  "id":  "dialog.AccessibilityChecker",
-                                  "triageScore":  0.09887,
-                                  "sampleMeanDelta":  0.039611,
-                                  "dimension":  "360.05x520.073 vs 360x520 logical; 360x520 vs 360x520 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.035684
-                              },
-                              {
                                   "id":  "dialog.Options.View",
                                   "triageScore":  0.098637,
                                   "sampleMeanDelta":  0.01644,
@@ -6359,6 +6351,14 @@
                               },
                               {
                                   "id":  "dialog.PageSetup",
+                                  "triageScore":  0.09103,
+                                  "sampleMeanDelta":  0.025114,
+                                  "dimension":  "600.084x560.078 vs 600x560 logical; 600x560 vs 600x560 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.058729
+                              },
+                              {
+                                  "id":  "dialog.PageSetup.Page",
                                   "triageScore":  0.09103,
                                   "sampleMeanDelta":  0.025114,
                                   "dimension":  "600.084x560.078 vs 600x560 logical; 600x560 vs 600x560 px",
