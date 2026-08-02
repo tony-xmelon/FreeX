@@ -549,7 +549,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.ErrorChecking.png",
                          "captured":  true,
-                         "note":  "Promoted from formula-diagnostics-tour committed WPF screenshot evidence (screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_error_checking_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                         "note":  "Fresh targeted FreeX.App.Host --parity-capture-target dialog.ErrorChecking capture from the shared ErrorCheckingDialogPlanner.CreateParityIssues fixture; replaces stale one-row formula-diagnostics-tour evidence"
                      },
                      {
                          "id":  "dialog.EvaluateFormula",
