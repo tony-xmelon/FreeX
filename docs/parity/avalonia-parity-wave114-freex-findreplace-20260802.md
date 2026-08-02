@@ -8,8 +8,8 @@ WPF-only `GridLength` and `DataGridLength` properties; Avalonia consumes the sam
 planner values directly. Find and Replace behavior, format-picker cancellation behavior,
 result navigation, options controls, and action routing remain unchanged.
 
-The Avalonia construction also corrects measured evidence-size geometry: the options header
-uses a shared 112px minimum and restores left content alignment after common button chrome,
+The Avalonia construction also corrects measured evidence-size geometry: its options header
+uses the Avalonia-only 112px minimum and restores left content alignment after common button chrome,
 the options/results transition uses the measured Avalonia calibration, and the root bottom
 inset moves the results and action bands down toward the WPF positions. No fake renderer
 controls were added.
@@ -24,7 +24,8 @@ Fresh WPF capture completed at 720x430 for:
 
 The fresh WPF Find state shows the fully visible `Options >>` header, results top at the
 WPF reference position, and actions docked at the lower band. The Replace state preserves
-the second row and all five actions with the same shared widths. The prior real-Linux
+the second row and all five actions with the same shared widths. The WPF `OptionsExpander`
+remains auto-sized as the visual authority. The prior real-Linux
 Avalonia capture was inspected for both states; it showed the pre-fix clipped options label
 and results/actions bands 3-6px high.
 
@@ -43,10 +44,10 @@ remain the last successful real-Linux capture, and no Avalonia after/after metri
 For a quantitative reference, fresh WPF after PNGs versus that retained real-Linux Avalonia
 reference measured:
 
-| Surface | Before WPF vs Avalonia | Current WPF vs retained Avalonia |
+| Surface | Prior WPF vs Avalonia reference | Corrected WPF baseline vs retained Avalonia |
 | --- | ---: | ---: |
-| `dialog.FindReplace` / Find | 2.4765789760% | 2.4803289760% |
-| `dialog.FindReplace.Find` | 2.4765789760% | 2.4803289760% |
+| `dialog.FindReplace` / Find | 2.4765789760% | 2.4765789760% |
+| `dialog.FindReplace.Find` | 2.4765789760% | 2.4765789760% |
 | `dialog.FindReplace.Replace` | 2.7847540850% | 2.7847540850% |
 
 These values are reference comparisons, not a substitute for the unavailable current
