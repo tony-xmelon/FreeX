@@ -102,6 +102,15 @@ both hosts. Both hosts can now restore a custom Zoom cover to a freshly rendered
 preview through one undoable command, including an individually selected Summary Zoom tile.
 PowerPoint-exact preview position styling remains separate work; crop authoring is now covered.
 
+Zoom `showBg` is now consumed at the slideshow transition boundary in both desktop hosts. The
+incoming target surface honors the authored setting (with PowerPoint's omitted-attribute default
+of true), while the outgoing slide is captured with its own background before the transition
+composes the two surfaces. Instant display and transition completion restore normal background
+painting. Focused shared planner coverage passed 206 tests; the WPF host policy source contract
+passed 2 tests, the Avalonia host policy contract passed 4 tests, and both consuming Release
+host builds completed with zero warnings/errors. This closes a functional transition-state gap;
+it is not a claim of PowerPoint-exact Zoom position or transition raster parity.
+
 Summary Zoom tile layout is now authorable from the shared Zoom Format route. Both hosts expose
 each tile's offset and scale as percentage pairs; the shared command updates the selected
 `summaryZmObj`, preserves the other tiles, and restores the complete tile state through undo/redo
