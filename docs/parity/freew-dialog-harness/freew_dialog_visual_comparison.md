@@ -144,7 +144,7 @@ Inventory scenarios: **478**. Captured WPF: **190**. Captured Avalonia: **288**.
 | `page-setup.populated` | captured/captured | **genuine-visual-mismatch** | pass (16.4% painted) | pass (15.5% painted) | 15.25 % | 8.79 |  | heatmaps/page-setup.populated.png |
 | `page-setup.tab-layout` | captured/captured | **genuine-visual-mismatch** | pass (11.4% painted) | pass (10.8% painted) | 6.72 % | 4.96 |  | heatmaps/page-setup.tab-layout.png |
 | `page-setup.tab-margins` | captured/captured | **genuine-visual-mismatch** | pass (16.4% painted) | pass (15.5% painted) | 15.25 % | 8.79 |  | heatmaps/page-setup.tab-margins.png |
-| `page-setup.tab-paper` | captured/captured | **genuine-visual-mismatch** | pass (6.5% painted) | pass (5.9% painted) | 4.69 % | 3.38 |  | heatmaps/page-setup.tab-paper.png |
+| `page-setup.tab-paper` | captured/captured | **genuine-visual-mismatch** | pass (6.5% painted) | pass (5.9% painted) | 4.69 % | 3.39 |  | heatmaps/page-setup.tab-paper.png |
 | `page-setup.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (16.5% painted) | pass (15.6% painted) | 15.35 % | 8.93 |  | heatmaps/page-setup.validation-error.png |
 | `paragraph.initial` | captured/captured | **genuine-visual-mismatch** | pass (14.1% painted) | pass (13.4% painted) | 8.15 % | 9.39 |  | heatmaps/paragraph.initial.png |
 | `paragraph.populated` | captured/captured | **genuine-visual-mismatch** | pass (14.1% painted) | pass (13.4% painted) | 8.15 % | 9.39 |  | heatmaps/paragraph.populated.png |

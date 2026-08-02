@@ -11,8 +11,9 @@ insets, label-to-field geometry, field widths, checkbox and launcher spacing,
 tab names, labels, and the validation policy consumed by both hosts.
 
 The planner remains the single state and validation authority. No controls were
-added solely for visual evidence, and the WPF host's duplicated Page Setup
-labels were changed to consume the planner labels as well.
+added solely for visual evidence, and both hosts consume the planner labels.
+The shared custom-height label is `Height (pt):`, preserving the WPF authority
+text rather than propagating Avalonia's former leading-space quirk.
 
 ## Paired evidence
 
@@ -27,12 +28,16 @@ Fresh WPF and Avalonia captures covered all six canonical states:
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Initial / populated / Margins | 52,635 | 51,228 | 15.665% | 15.246% | 8.794 |
 | Layout | 23,810 | 22,585 | 7.086% | 6.722% | 4.962 |
-| Paper | 16,247 | 15,755 | 4.835% | 4.689% | 3.382 |
+| Paper | 16,247 | 15,765 | 4.835% | 4.692% | 3.387 |
 | Validation error | 53,035 | 51,560 | 15.784% | 15.345% | 8.929 |
 
 All six pairs pass the content gate and have no semantic differences. The
 non-Page-Setup rows retain the same semantic row hash before and after this
 refresh (`856c56f050b05e81383c43da9e4dfe4ff06e674864e1996ee499cc89cceb63b2`).
+
+This follow-up recaptured the full six-state Page Setup set after correcting
+`CustomHeightLabel`; only the Paper row changed from the original Wave114
+refresh.
 
 The production Avalonia host was also published and exercised in the owned
 Linux Docker/Xvfb desktop at 1280x820, 96 DPI. Visible Margins, Paper, and

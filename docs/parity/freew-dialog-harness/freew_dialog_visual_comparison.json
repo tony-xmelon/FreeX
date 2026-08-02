@@ -7602,11 +7602,11 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 15755,
-        "changedRatio": 0.046889880952380954,
-        "meanAbsoluteChannelDelta": 3.3824742063490967,
+        "changedPixels": 15765,
+        "changedRatio": 0.046919642857142854,
+        "meanAbsoluteChannelDelta": 3.3871438492062396,
         "p95AbsoluteChannelDelta": 7,
-        "luminanceSimilarity": 0.9202700328512532,
+        "luminanceSimilarity": 0.920188907215233,
         "perceptualHashDistance": 0
       },
       "semanticDifference": null,
@@ -7641,10 +7641,10 @@
         "opaqueRatio": 0.9115238095238095,
         "nearTransparentRatio": 0.08847619047619047,
         "nearBlackRatio": 0.0003754832305924146,
-        "dominantColorRatio": 0.9351883293281789,
+        "dominantColorRatio": 0.9351915943997492,
         "distinctColorCount": 46,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.05907738095238095,
+        "contentPixelRatio": 0.05907440476190476,
         "contentBounds": {
           "x": 14,
           "y": 14,
