@@ -7010,12 +7010,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 27717,
-        "changedRatio": 0.08249107142857143,
-        "meanAbsoluteChannelDelta": 5.13979166666651,
-        "p95AbsoluteChannelDelta": 34,
-        "luminanceSimilarity": 0.9033332497373491,
-        "perceptualHashDistance": 3
+        "changedPixels": 21353,
+        "changedRatio": 0.06355059523809524,
+        "meanAbsoluteChannelDelta": 4.408113095237939,
+        "p95AbsoluteChannelDelta": 15,
+        "luminanceSimilarity": 0.9065781048795737,
+        "perceptualHashDistance": 1
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/options.initial.png",
@@ -7057,7 +7057,7 @@
           "x": 14,
           "y": 14,
           "width": 514,
-          "height": 537
+          "height": 205
         }
       }
     },
@@ -7067,12 +7067,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 27813,
-        "changedRatio": 0.08277678571428572,
-        "meanAbsoluteChannelDelta": 5.176401785714129,
-        "p95AbsoluteChannelDelta": 34,
-        "luminanceSimilarity": 0.9028323036301253,
-        "perceptualHashDistance": 3
+        "changedPixels": 21449,
+        "changedRatio": 0.06383630952380952,
+        "meanAbsoluteChannelDelta": 4.444723214285558,
+        "p95AbsoluteChannelDelta": 15,
+        "luminanceSimilarity": 0.9060598536333994,
+        "perceptualHashDistance": 1
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/options.populated.png",
@@ -7114,7 +7114,7 @@
           "x": 14,
           "y": 14,
           "width": 514,
-          "height": 537
+          "height": 205
         }
       }
     },
@@ -7124,14 +7124,14 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 55887,
-        "changedRatio": 0.16633035714285715,
-        "meanAbsoluteChannelDelta": 11.841746031746053,
+        "changedPixels": 39903,
+        "changedRatio": 0.11875892857142857,
+        "meanAbsoluteChannelDelta": 10.057893849204538,
         "p95AbsoluteChannelDelta": 80.66666666666667,
-        "luminanceSimilarity": 0.8391209562645431,
-        "perceptualHashDistance": 12
+        "luminanceSimilarity": 0.8456276491049171,
+        "perceptualHashDistance": 1
       },
-      "semanticDifference": "action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/options.tab-auto-correct.png",
       "note": null,
       "wpfContent": {
@@ -7142,11 +7142,11 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.9131994047619048,
         "nearTransparentRatio": 0.08680059523809523,
-        "nearBlackRatio": 0.012570273925725553,
-        "dominantColorRatio": 0.894102693630127,
-        "distinctColorCount": 384,
+        "nearBlackRatio": 0.012576792086952272,
+        "dominantColorRatio": 0.893858262584125,
+        "distinctColorCount": 382,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.09072916666666667,
+        "contentPixelRatio": 0.09091666666666667,
         "contentBounds": {
           "x": 14,
           "y": 14,
@@ -7162,16 +7162,16 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.9115238095238095,
         "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 0.002151682164873054,
-        "dominantColorRatio": 0.88748236861352,
-        "distinctColorCount": 87,
+        "nearBlackRatio": 0.0008587138230070003,
+        "dominantColorRatio": 0.8905548009612371,
+        "distinctColorCount": 131,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.1025625,
+        "contentPixelRatio": 0.09976190476190476,
         "contentBounds": {
           "x": 14,
           "y": 14,
           "width": 514,
-          "height": 537
+          "height": 383
         }
       }
     },
@@ -7181,12 +7181,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 37602,
-        "changedRatio": 0.11191071428571428,
-        "meanAbsoluteChannelDelta": 11.635826388889722,
-        "p95AbsoluteChannelDelta": 91,
-        "luminanceSimilarity": 0.8301785914167261,
-        "perceptualHashDistance": 5
+        "changedPixels": 33862,
+        "changedRatio": 0.1007797619047619,
+        "meanAbsoluteChannelDelta": 9.493684523809623,
+        "p95AbsoluteChannelDelta": 63,
+        "luminanceSimilarity": 0.8506289818653265,
+        "perceptualHashDistance": 4
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/options.tab-auto-format-as-you-type.png",
@@ -7219,16 +7219,16 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.9115238095238095,
         "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 0.006549733570159858,
-        "dominantColorRatio": 0.929957684672448,
-        "distinctColorCount": 66,
+        "nearBlackRatio": 0.000607303312088601,
+        "dominantColorRatio": 0.9379048688747257,
+        "distinctColorCount": 56,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.0638452380952381,
+        "contentPixelRatio": 0.05660119047619048,
         "contentBounds": {
           "x": 14,
           "y": 14,
           "width": 514,
-          "height": 537
+          "height": 364
         }
       }
     },
@@ -7238,12 +7238,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 27717,
-        "changedRatio": 0.08249107142857143,
-        "meanAbsoluteChannelDelta": 5.13979166666651,
-        "p95AbsoluteChannelDelta": 34,
-        "luminanceSimilarity": 0.9033332497373491,
-        "perceptualHashDistance": 3
+        "changedPixels": 21353,
+        "changedRatio": 0.06355059523809524,
+        "meanAbsoluteChannelDelta": 4.408113095237939,
+        "p95AbsoluteChannelDelta": 15,
+        "luminanceSimilarity": 0.9065781048795737,
+        "perceptualHashDistance": 1
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/options.tab-general.png",
@@ -7285,7 +7285,7 @@
           "x": 14,
           "y": 14,
           "width": 514,
-          "height": 537
+          "height": 205
         }
       }
     },
@@ -7317,12 +7317,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 28125,
-        "changedRatio": 0.08370535714285714,
-        "meanAbsoluteChannelDelta": 5.310052579364941,
-        "p95AbsoluteChannelDelta": 34,
-        "luminanceSimilarity": 0.9008501385368421,
-        "perceptualHashDistance": 4
+        "changedPixels": 21761,
+        "changedRatio": 0.06476488095238095,
+        "meanAbsoluteChannelDelta": 4.578374007936369,
+        "p95AbsoluteChannelDelta": 15,
+        "luminanceSimilarity": 0.904011016727368,
+        "perceptualHashDistance": 2
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/options.validation-error.png",
@@ -7364,7 +7364,7 @@
           "x": 14,
           "y": 14,
           "width": 514,
-          "height": 537
+          "height": 205
         }
       }
     },

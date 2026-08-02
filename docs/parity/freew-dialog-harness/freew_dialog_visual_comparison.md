@@ -132,14 +132,14 @@ Inventory scenarios: **478**. Captured WPF: **190**. Captured Avalonia: **288**.
 | `multilevel-list.initial` | captured/captured | **pass** | pass (24.2% painted) | pass (24.0% painted) | 2.77 % | 2.45 |  | heatmaps/multilevel-list.initial.png |
 | `multilevel-list.populated` | captured/captured | **pass** | pass (24.2% painted) | pass (24.0% painted) | 2.77 % | 2.45 |  | heatmaps/multilevel-list.populated.png |
 | `multilevel-list.validation-error` | captured/captured | **pass** | pass (24.2% painted) | pass (24.1% painted) | 2.92 % | 2.65 |  | heatmaps/multilevel-list.validation-error.png |
-| `options.initial` | captured/captured | **genuine-visual-mismatch** | pass (5.4% painted) | pass (5.4% painted) | 8.25 % | 5.14 |  | heatmaps/options.initial.png |
-| `options.populated` | captured/captured | **genuine-visual-mismatch** | pass (5.4% painted) | pass (5.4% painted) | 8.28 % | 5.18 |  | heatmaps/options.populated.png |
-| `options.tab-auto-correct` | captured/captured | **genuine-visual-mismatch** | pass (9.1% painted) | pass (10.3% painted) | 16.63 % | 11.84 | action-button-order | heatmaps/options.tab-auto-correct.png |
-| `options.tab-auto-format-as-you-type` | captured/captured | **genuine-visual-mismatch** | pass (6.0% painted) | pass (6.4% painted) | 11.19 % | 11.64 |  | heatmaps/options.tab-auto-format-as-you-type.png |
-| `options.tab-general` | captured/captured | **genuine-visual-mismatch** | pass (5.4% painted) | pass (5.4% painted) | 8.25 % | 5.14 |  | heatmaps/options.tab-general.png |
+| `options.initial` | captured/captured | **genuine-visual-mismatch** | pass (5.4% painted) | pass (5.4% painted) | 6.36 % | 4.41 |  | heatmaps/options.initial.png |
+| `options.populated` | captured/captured | **genuine-visual-mismatch** | pass (5.4% painted) | pass (5.4% painted) | 6.38 % | 4.44 |  | heatmaps/options.populated.png |
+| `options.tab-auto-correct` | captured/captured | **genuine-visual-mismatch** | pass (9.1% painted) | pass (10.0% painted) | 11.88 % | 10.06 |  | heatmaps/options.tab-auto-correct.png |
+| `options.tab-auto-format-as-you-type` | captured/captured | **genuine-visual-mismatch** | pass (6.0% painted) | pass (5.7% painted) | 10.08 % | 9.49 |  | heatmaps/options.tab-auto-format-as-you-type.png |
+| `options.tab-general` | captured/captured | **genuine-visual-mismatch** | pass (5.4% painted) | pass (5.4% painted) | 6.36 % | 4.41 |  | heatmaps/options.tab-general.png |
 | `options.tab-replace` | state-not-applicable | **state-not-applicable** |  |  |  |  |  |  |
 | `options.tab-with` | state-not-applicable | **state-not-applicable** |  |  |  |  |  |  |
-| `options.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (5.4% painted) | pass (5.4% painted) | 8.37 % | 5.31 |  | heatmaps/options.validation-error.png |
+| `options.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (5.4% painted) | pass (5.4% painted) | 6.48 % | 4.58 |  | heatmaps/options.validation-error.png |
 | `page-setup.initial` | captured/captured | **genuine-visual-mismatch** | pass (16.8% painted) | pass (16.0% painted) | 15.67 % | 8.96 |  | heatmaps/page-setup.initial.png |
 | `page-setup.populated` | captured/captured | **genuine-visual-mismatch** | pass (16.8% painted) | pass (16.0% painted) | 15.67 % | 8.96 |  | heatmaps/page-setup.populated.png |
 | `page-setup.tab-layout` | captured/captured | **genuine-visual-mismatch** | pass (10.9% painted) | pass (10.9% painted) | 7.09 % | 5.17 |  | heatmaps/page-setup.tab-layout.png |
