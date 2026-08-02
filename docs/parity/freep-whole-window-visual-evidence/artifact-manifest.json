@@ -40,7 +40,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Host/MainWindow.cs",
-                       "sha256":  "c999b728e98518f438141ca6f4a158e238731149ecd88b8b93e687e45c1bcb97"
+                       "sha256":  "9d30391254f05fcee40af9f1924ce6a80d73b2c1da3595b1dfead88c7910fa6d"
                    },
                    {
                        "path":  "freep/FreeP.App.Host/MainWindow.WholeWindowVisualEvidence.cs",
@@ -52,7 +52,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Avalonia/MainWindow.cs",
-                       "sha256":  "e5e5ba7253c00899026e4d4af3c9d8bb9890cc64356e99bd173cc17534f43b54"
+                       "sha256":  "d5bc9a3dd45c87e49125d4edc1380a932d8b69ad6d720e2de57376b5aa9ad26c"
                    },
                    {
                        "path":  "freep/FreeP.App.Avalonia/MainWindow.WholeWindowVisualEvidence.cs",
@@ -68,15 +68,15 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaInCanvasTextEditor.cs",
-                       "sha256":  "284bf4cb5cc02e4a8a7a3e001e3dc41ae1d854ae1fcc4aa65c6eaf9e446685bc"
+                       "sha256":  "c6b59663c25020df188105a86b521bf92e91efa6ce8a22ef1a0d0cd76908d3ad"
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditor.cs",
-                       "sha256":  "4f3d91891dcad13775ce05a512b929a370bd59f7f1866b62f3245b5f2cf42e75"
+                       "sha256":  "cae41cdcaac0ef975e250c000e265d2ec96c731677935ae3f7c4bec4f133c886"
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditingSurface.cs",
-                       "sha256":  "b877a550b3a75f39859acb33b94a5d49ecb9f86d713bc43f0384575a857555e1"
+                       "sha256":  "50a87d81c7ca08f3a02a7a769a362c6bd4842321c4419e27adbf2a63ca4de672"
                    },
                    {
                        "path":  "shared/Free.Shared.Ribbon/RibbonVisualMetrics.cs",
