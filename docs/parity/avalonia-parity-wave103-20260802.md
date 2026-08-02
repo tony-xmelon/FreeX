@@ -87,7 +87,7 @@ Focused tests:
 Repository gates:
 
 - `tools/Test-RepositoryPreflight.ps1`: passed, including generated parity
-  evidence and conflict-marker checks across 10,374 text files.
+  evidence and conflict-marker checks across 10,386 text files.
 - `dotnet build FreeX.slnx --configuration Release`: passed with zero warnings
   and zero errors.
 - `FreeX.DefaultTests.slnx`: all 19 runnable test assemblies were accounted for,
