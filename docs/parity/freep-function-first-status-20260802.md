@@ -93,7 +93,9 @@ PowerPoint's default-on behavior, explicit `false` remains opt-out, and WPF/Aval
 to the parent slide after the Zoom target is exhausted. Nested return paths use a stack, while
 ordinary direct slide jumps clear stale Zoom context. This closes a functional navigation gap;
 the same route now consumes a valid authored `transitionDur` as a Zoom transition duration in
-both hosts. PowerPoint-exact preview crop/position styling remains separate work.
+both hosts. Both hosts can now restore a custom Zoom cover to a freshly rendered native target
+preview through one undoable command, including an individually selected Summary Zoom tile.
+PowerPoint-exact preview crop/position styling remains separate work.
 
 The follow-up capability audit corrected the remaining list against current code: Avalonia already
 has Windows native printer submission, MP4 export, persisted narration muxing, and camera
