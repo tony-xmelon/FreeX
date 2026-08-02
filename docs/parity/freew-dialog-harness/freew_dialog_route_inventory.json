@@ -1,7 +1,7 @@
 {
   "schema": "freew.dialog-route-inventory.v1",
   "schemaVersion": 1,
-  "generatedFromSha256": "747b50efdfc3b56c6122d359487490b0ff44b97e6eac2395fa75d3d0ddc682ca",
+  "generatedFromSha256": "5f1b669a9ab03c45e947e562efe59f3902fcfd8ad6fffa5c89c5ce0a40c88d0a",
   "routes": [
     {
       "host": "avalonia",
@@ -213,20 +213,13 @@
       "typeName": "BordersAndShadingDialog",
       "sourcePath": "freew/FreeW.App.Avalonia/ParagraphCommandDialogs.cs",
       "modalMode": "modal",
-      "tabs": [
-        "Borders",
-        "Page Border",
-        "Shading"
-      ],
+      "tabs": [],
       "limitation": null,
       "surfaceKind": "dialog",
       "states": [
         "initial",
         "populated",
-        "validation-error",
-        "tab-borders",
-        "tab-page-border",
-        "tab-shading"
+        "validation-error"
       ],
       "sourceRouteId": "borders-and-shading"
     },
@@ -937,6 +930,22 @@
         "validation-error"
       ],
       "sourceRouteId": "manage-styles"
+    },
+    {
+      "host": "avalonia",
+      "routeId": "manual-hyphenation",
+      "typeName": "ManualHyphenationDialog",
+      "sourcePath": "freew/FreeW.App.Avalonia/PageLayoutDialogs.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null,
+      "surfaceKind": "dialog",
+      "states": [
+        "initial",
+        "populated",
+        "validation-error"
+      ],
+      "sourceRouteId": "manual-hyphenation"
     },
     {
       "host": "avalonia",
@@ -2294,6 +2303,22 @@
     },
     {
       "host": "wpf",
+      "routeId": "manual-hyphenation",
+      "typeName": "ManualHyphenationDialog",
+      "sourcePath": "freew/FreeW.App.Host/ManualHyphenationDialog.cs",
+      "modalMode": "modal",
+      "tabs": [],
+      "limitation": null,
+      "surfaceKind": "dialog",
+      "states": [
+        "initial",
+        "populated",
+        "validation-error"
+      ],
+      "sourceRouteId": "manual-hyphenation"
+    },
+    {
+      "host": "wpf",
       "routeId": "mark-citation",
       "typeName": "MarkCitationDialog",
       "sourcePath": "freew/FreeW.App.Host/MarkCitationDialog.cs",
@@ -2891,36 +2916,6 @@
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "avalonia.borders-and-shading.tab-borders",
-      "host": "avalonia",
-      "routeId": "borders-and-shading",
-      "state": "relevant-tab",
-      "tab": "Borders",
-      "description": "Selected tab: Borders.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "avalonia.borders-and-shading.tab-page-border",
-      "host": "avalonia",
-      "routeId": "borders-and-shading",
-      "state": "relevant-tab",
-      "tab": "Page Border",
-      "description": "Selected tab: Page Border.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "avalonia.borders-and-shading.tab-shading",
-      "host": "avalonia",
-      "routeId": "borders-and-shading",
-      "state": "relevant-tab",
-      "tab": "Shading",
-      "description": "Selected tab: Shading.",
       "limitation": null,
       "surfaceKind": "dialog"
     },
@@ -4268,6 +4263,36 @@
       "id": "avalonia.manage-styles.validation-error",
       "host": "avalonia",
       "routeId": "manage-styles",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.manual-hyphenation.initial",
+      "host": "avalonia",
+      "routeId": "manual-hyphenation",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.manual-hyphenation.populated",
+      "host": "avalonia",
+      "routeId": "manual-hyphenation",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "avalonia.manual-hyphenation.validation-error",
+      "host": "avalonia",
+      "routeId": "manual-hyphenation",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
@@ -6688,6 +6713,36 @@
       "id": "wpf.manage-styles.validation-error",
       "host": "wpf",
       "routeId": "manage-styles",
+      "state": "validation-error",
+      "tab": null,
+      "description": "Representative validation or error state after invalid input.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.manual-hyphenation.initial",
+      "host": "wpf",
+      "routeId": "manual-hyphenation",
+      "state": "initial",
+      "tab": null,
+      "description": "Default constructor state with initial keyboard focus.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.manual-hyphenation.populated",
+      "host": "wpf",
+      "routeId": "manual-hyphenation",
+      "state": "populated",
+      "tab": null,
+      "description": "Representative populated fields, selections, and checked options.",
+      "limitation": null,
+      "surfaceKind": "dialog"
+    },
+    {
+      "id": "wpf.manual-hyphenation.validation-error",
+      "host": "wpf",
+      "routeId": "manual-hyphenation",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",
