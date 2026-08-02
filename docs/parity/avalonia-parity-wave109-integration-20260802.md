@@ -23,6 +23,7 @@ Date: 2026-08-02
 - The first default-lane run caught one imported SmartArt cache-boundary regression. After repair, FreeP presentation passed 3,389/3,389, WPF host passed 1,920/1,920, and Avalonia host passed 557/557; the unchanged FreeX Avalonia project had already passed 1,952/1,952 in the first run.
 - Full Release solution build passed with zero warnings and zero errors before and after the regression repair.
 - Repository preflight passed after refreshing the generated FreeP whole-window manifest.
+- After merging 48 upstream commits, the affected focused suites passed 1,063/1,063, repository preflight passed, and the full 89-project Release build again completed with zero warnings and zero errors.
 
 ## Remaining
 
