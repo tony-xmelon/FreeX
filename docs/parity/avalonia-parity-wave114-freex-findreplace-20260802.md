@@ -71,4 +71,4 @@ failure because this capture intentionally contains only Find/Replace surfaces.
 The remaining material uncertainty is the missing current Avalonia Linux screenshot and
 therefore the missing true after/after pixel delta. A rerun in an environment where the
 capture container can start the app is required to close that evidence gap. Renderer-native
-font and control-template differences also remain outside the shared planner’s authority.
+font and control-template differences also remain outside the shared planner's authority.
