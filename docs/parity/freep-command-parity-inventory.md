@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 614 | 614 | 0 | 0 | 0 | 0 | 0 | 0 | 614 | 0 | 0 | 0 | 0 | 103 |
+| 617 | 617 | 0 | 0 | 0 | 0 | 0 | 0 | 617 | 0 | 0 | 0 | 0 | 103 |
 
 ## Workflow Evidence
 
@@ -338,6 +338,8 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.insert-curved-connector` | Curved Connector | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-elbow-connector` | Elbow Connector | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-link` | Hyperlink | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-section-zoom` | Section Zoom | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-slide-zoom` | Slide Zoom | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-accent-process` | Accent Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-alternating-process` | Alternating Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-arrow-ribbon` | Arrow Ribbon | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
@@ -412,6 +414,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.insert-smartart-vertical-bullet-list` | Vertical Bullet List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-vertical-chevron-list` | Vertical Chevron List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-vertical-process` | Vertical Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-summary-zoom` | Summary Zoom | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-table-2x2` | 2x2 | Yes | Yes | none | shared | insert/tables (RibbonButton) | insert/tables (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-table-3x3` | Table | Yes | Yes | none | shared | insert/tables (RibbonButton) | insert/tables (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-table-4x4` | 4x4 | Yes | Yes | none | shared | insert/tables (RibbonButton) | insert/tables (RibbonButton) | Available in both generated FreeP ribbon profiles. |
