@@ -2,7 +2,7 @@
 
 ## Current position
 
-The current `main` baseline reports **619/619** FreeP command IDs shared by WPF and
+The current `main` baseline reports **620/620** FreeP command IDs shared by WPF and
 Avalonia, with **0 actionable WPF gaps, 0 actionable Avalonia gaps, 0 known deferred
 command rows, and 103 workflow-evidence rows**. This is reachability coverage, not a
 claim that every PowerPoint feature has identical depth or native behavior.
@@ -21,6 +21,11 @@ The latest functional work is concentrated in three areas:
   transitions, notes fields, output planning, and Windows video execution have shared
   planner/host routes with focused tests. The slide-layout picker and selection mutation are
   also implemented in both hosts; earlier documentation describing it as a stub is stale.
+
+The generated command inventory was refreshed on 2026-08-02 from both ribbon profiles and
+matches this count: WPF and Avalonia have no actionable command gaps. This is reachability
+evidence only; the backlog below is intentionally about behavior depth and native workflow
+semantics rather than adding duplicate command IDs.
 
 ## Progress by day
 
