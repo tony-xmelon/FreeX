@@ -22,7 +22,8 @@ instructions. Both hosts pass their mapped/augmented recipient rows to the share
 
 The completion policies now execute:
 
-- **Simulate and report** never mutates the template.
+- **Simulate and report** never mutates the template and opens a separate editable report document in a
+  new WPF or Avalonia shell window. The report includes the record count and every issue/instruction pair.
 - **Complete and pause** completes only when simulation is clean.
 - **Complete without pausing** completes even when the report contains errors.
 
@@ -32,17 +33,16 @@ output-mode behavior.
 
 ## Verification
 
-- shared mail-merge dialog planners: 14/14;
-- full `FreeW.App.Presentation.Tests`: 1,178/1,178;
-- WPF Find Recipient / Check for Errors command contracts: 2/2;
-- Avalonia Check for Errors route and execution contracts: 5/5;
+- shared mail-merge dialog planners: 15/15;
+- full `FreeW.App.Presentation.Tests`: 1,179/1,179;
+- WPF Find Recipient / Check for Errors command contracts: 3/3;
+- Avalonia focused Check for Errors route and execution contracts: 4/4;
 - full Avalonia Mailings engine tests: 29/29;
 - focused merge-model and rule tests: 98/98;
 - WPF and Avalonia Release test consumers built successfully.
 
 ## Residual
 
-The Simulate mode currently displays its deterministic report in the host's modal information surface. Word
-opens that report as a separate editable document; opening the generated report in a second full shell window
-remains a window-ownership slice. Even/first and non-final-section header/footer merge coverage also remains
-separate from the existing merge engine's default header/footer ownership.
+Even/first and non-final-section header/footer merge coverage remains separate from the existing merge
+engine's default header/footer ownership. Complete-and-pause currently reports the aggregate error list after
+simulation rather than pausing interactively at each failing record.
