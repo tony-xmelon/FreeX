@@ -77,7 +77,9 @@ the writer emits the PowerPoint 2016 \`summaryZmObj\` collection with a fixed la
 hit-testing resolves the clicked tile to its section's first slide. Package round-trip and undo/redo
 are covered. Authored Summary Zooms now also render each target section's first slide through the active
 WPF/Avalonia renderer and attach the PNG to the corresponding \`summaryZmObj\` as a relationship-backed
-preview. The writer preserves those preview parts through save/reopen and retains a legacy
+preview. Slide and Section Zoom insertion now uses the same single-target preview path, so all three Zoom
+types receive a host preview immediately and preserve it through save/reopen. The writer preserves those
+preview parts through save/reopen and retains a legacy
 AlternateContent shape fallback for viewers without the native zoom extension. The shared WPF/Avalonia
 Zoom Format command now edits `returnToParent`, `imageType`, `transitionDur`, and `showBg` across every
 summary tile as one undoable operation while preserving unmodeled XML. The authored target semantics are
@@ -111,8 +113,8 @@ Portable/Linux printing remains on its platform adapter and is not affected.
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
 - Richer chart authoring/layout semantics beyond the modeled chart grid and option planners.
-- Full Zoom authoring depth beyond slide, section, and summary targets, including PowerPoint-exact
-  preview styling and cover-image authoring.
+- Full Zoom authoring depth beyond the current slide, section, and summary target/preview paths, including
+  PowerPoint-exact preview styling and cover-image authoring.
 - Portable/non-Windows in-place OLE hosting inside text runs remains external activation; Windows
   WPF and Windows Avalonia now have native in-place host paths with model byte save-back.
 - Broader real-deck media/caption/recording persistence and PowerPoint-authoritative recording
