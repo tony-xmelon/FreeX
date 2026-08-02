@@ -74,7 +74,9 @@ existing Chart Point Options command/dialogs can set the bounded 0-100% value wi
 
 The WPF rich-text editor now upgrades an inline OLE placeholder to a native in-place OLE host
 when the registered server is available, while retaining the placeholder and external-activation
-fallback when it is not. Avalonia continues to use its cross-platform external activation path.
+fallback when it is not. Windows Avalonia now uses the same COM site lifecycle through
+`NativeControlHost`, with measured inline-run placement and save-back on host teardown; portable
+Avalonia targets retain external activation.
 
 The Avalonia Windows Print pane now opens the native Windows printer-selection dialog through
 `PrintDlgEx`, then routes the selected queue through the existing capability-checked PDF handoff.
@@ -84,8 +86,8 @@ Portable/Linux printing remains on its platform adapter and is not affected.
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
 - Richer chart authoring/layout semantics beyond the modeled chart grid and option planners.
-- Cross-host in-place OLE hosting inside text runs: WPF now has the native host path, while
-  Avalonia still uses external activation until an equivalent native host is available.
+- Portable/non-Windows in-place OLE hosting inside text runs remains external activation; Windows
+  WPF and Windows Avalonia now have native in-place host paths with model byte save-back.
 - Broader real-deck media/caption/recording persistence and PowerPoint-authoritative recording
   baselines beyond the current deterministic capture and handoff paths.
 - Broader PowerPoint-authoritative export baselines and printer-setting handoff beyond queue
