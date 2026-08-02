@@ -16,8 +16,8 @@ formatting runs as one candidate. Existing DOCX IO writes U+00AD as `w:softHyphe
 
 ## Verification
 
-- `ManualHyphenationPlannerTests`: 5/5
-- full `FreeW.App.Presentation.Tests`: 1,174/1,174
+- `ManualHyphenationPlannerTests`: 6/6
+- full `FreeW.App.Presentation.Tests`: 1,175/1,175
 - `ApplyManualHyphenationCommandTests`: 1/1
 - WPF manual-hyphenation route guard: 1/1
 - Avalonia manual-hyphenation route guard: 1/1
@@ -31,4 +31,7 @@ and first-page header/footer stories. Shared inherited story paragraphs are revi
 header reused by two section slots cannot receive duplicate soft-hyphen edits. Accepted story edits still use
 the existing single undoable `ApplyManualHyphenationCommand`.
 
-Footnotes, endnotes, comments, and text inside drawing objects remain separate story-owner slices.
+The same review pass then covers ordinary footnotes and endnotes in numeric ID order. Reserved separator and
+continuation-separator note IDs are excluded, and shared paragraph instances remain deduplicated.
+
+Comments and text inside drawing objects remain separate story-owner slices.
