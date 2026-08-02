@@ -72,6 +72,10 @@ The WPF rich-text editor now upgrades an inline OLE placeholder to a native in-p
 when the registered server is available, while retaining the placeholder and external-activation
 fallback when it is not. Avalonia continues to use its cross-platform external activation path.
 
+The Avalonia Windows Print pane now opens the native Windows printer-selection dialog through
+`PrintDlgEx`, then routes the selected queue through the existing capability-checked PDF handoff.
+Portable/Linux printing remains on its platform adapter and is not affected.
+
 ## What remains
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
@@ -80,8 +84,8 @@ fallback when it is not. Avalonia continues to use its cross-platform external a
   Avalonia still uses external activation until an equivalent native host is available.
 - Broader real-deck media/caption/recording persistence and PowerPoint-authoritative recording
   baselines beyond the current deterministic capture and handoff paths.
-- PowerPoint-style printer-selection dialog execution on Avalonia (Windows native queue submission
-  is already available), plus broader PowerPoint-authoritative export baselines.
+- Broader PowerPoint-authoritative export baselines and printer-setting handoff beyond queue
+  selection.
 - Physical WPF/Avalonia interaction proof for richer mixed workflows and PowerPoint COM-backed
   validation where exact application behavior or visual parity is being claimed.
 
