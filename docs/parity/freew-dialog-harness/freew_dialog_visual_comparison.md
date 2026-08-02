@@ -163,9 +163,9 @@ Inventory scenarios: **475**. Captured WPF: **187**. Captured Avalonia: **279**.
 | `sort.initial` | captured/captured | **genuine-visual-mismatch** | pass (5.0% painted) | pass (5.5% painted) | 8.81 % | 5.78 |  | heatmaps/sort.initial.png |
 | `sort.populated` | captured/captured | **genuine-visual-mismatch** | pass (5.1% painted) | pass (5.5% painted) | 8.85 % | 5.83 |  | heatmaps/sort.populated.png |
 | `sort.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (5.0% painted) | pass (5.5% painted) | 8.81 % | 5.78 |  | heatmaps/sort.validation-error.png |
-| `style.initial` | captured/captured | **genuine-visual-mismatch** | pass (25.8% painted) | pass (26.4% painted) | 16.06 % | 10.37 |  | heatmaps/style.initial.png |
-| `style.populated` | captured/captured | **genuine-visual-mismatch** | pass (26.0% painted) | pass (26.7% painted) | 16.27 % | 10.58 |  | heatmaps/style.populated.png |
-| `style.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (25.8% painted) | pass (26.4% painted) | 16.06 % | 10.37 |  | heatmaps/style.validation-error.png |
+| `style.initial` | captured/captured | **genuine-visual-mismatch** | pass (25.6% painted) | pass (25.3% painted) | 3.78 % | 4.15 |  | heatmaps/style.initial.png |
+| `style.populated` | captured/captured | **genuine-visual-mismatch** | pass (25.9% painted) | pass (25.6% painted) | 3.92 % | 4.43 |  | heatmaps/style.populated.png |
+| `style.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (25.6% painted) | pass (25.3% painted) | 3.78 % | 4.15 |  | heatmaps/style.validation-error.png |
 | `symbol-picker.initial` | captured/captured | **pass** | pass (32.9% painted) | pass (33.0% painted) | 2.09 % | 1.72 |  | heatmaps/symbol-picker.initial.png |
 | `table-formula.initial` | captured/captured | **genuine-visual-mismatch** | pass (6.0% painted) | pass (3.2% painted) | 6.67 % | 3.58 | focus | heatmaps/table-formula.initial.png |
 | `table-formula.populated` | captured/captured | **genuine-visual-mismatch** | pass (6.0% painted) | pass (3.6% painted) | 7.00 % | 4.15 | focus | heatmaps/table-formula.populated.png |
