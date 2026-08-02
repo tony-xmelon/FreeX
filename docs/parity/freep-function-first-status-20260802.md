@@ -2,7 +2,7 @@
 
 ## Current position
 
-The current `main` baseline reports **620/620** FreeP command IDs shared by WPF and
+The current `main` baseline reports **641/641** FreeP command IDs shared by WPF and
 Avalonia, with **0 actionable WPF gaps, 0 actionable Avalonia gaps, 0 known deferred
 command rows, and 103 workflow-evidence rows**. This is reachability coverage, not a
 claim that every PowerPoint feature has identical depth or native behavior.
@@ -71,6 +71,11 @@ Native SmartArt quick styles `simple1` through `simple5` now resolve to distinct
 The parsed SmartArt quick-style model now also retains each native style label's line, fill,
 effect, and font reference indices through cloning, so function-first editing does not discard
 the source style matrix references even when the raw quick-style part remains the authority.
+
+SmartArt Change Layout now updates the native layout definition's title and category metadata
+alongside its unique ID. Saved decks therefore report the selected layout consistently to
+PowerPoint and other consumers, including when FreeP had to synthesize a missing layout part;
+the raw layout body and unsupported attributes remain preserved.
 The native `3d1` through `3d9` SmartArt scene styles now also resolve to distinct bounded live
 profiles (Polished, Inset, Cartoon, Powder, Brick Scene, Flat Scene, Metallic Scene, Sunset Scene,
 and Bird's Eye Scene) in the shared planner. Their native quickStyle identities and raw parts remain
@@ -87,6 +92,11 @@ SmartArt Change Colors now targets the native node `styleLbl` fill palettes inst
 part places them before `node0`, while keeping the shared WPF/Avalonia authoring and undo routes
 unchanged. The package-owner regression is covered by Presentation, WPF, and Avalonia tests;
 this is a functional/source-semantics fix with no new raster-fidelity claim.
+
+Regenerated SmartArt picture caches now use schema-valid `dsp:sp` nodes with `a:blipFill`
+instead of the invalid `dsp:pic` child under `dsp:spTree`. Image relationships, geometry,
+reader reopen, and node picture bytes are preserved; the full Presentation test project is
+green at 3418/3418.
 
 Hierarchy SmartArt reordering now keeps the assistant prefix ahead of regular reports. Move Up/Down
 still reorders peers within the assistant and report partitions, but rejects a move that would cross

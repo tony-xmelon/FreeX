@@ -14,7 +14,7 @@ Date: 2026-08-02
 - FreeX remains 94/94 paired surfaces with no missing, blank, or logical-size mismatch rows. Accessibility Checker triage improved from `0.098870` to `0.084354`; its non-background delta improved from `0.035684` to `0.020812`.
 - FreeW now inventories 163 route families and 478 scenarios. Fresh current-source evidence captured 190/190 WPF and 288/288 Avalonia scenarios, with zero unsupported, invalid-content, or semantic-mismatch rows. The comparison contains 28 passes, 155 genuine visual mismatches, 105 Avalonia extensions, and 7 state-not-applicable rows.
 - FreeW About initial/populated changed-pixel ratios improved from `0.135369` to `0.113967`; its validation state remains a pass. All three paired Manual Hyphenation states are passes after the Cancel/Escape repair.
-- FreeP command evidence is 631/631 shared-profile commands with zero actionable WPF or Avalonia gaps.
+- FreeP command evidence is 643/643 shared-profile commands with zero actionable WPF or Avalonia gaps.
 
 ## Verification
 
