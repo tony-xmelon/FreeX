@@ -193,7 +193,9 @@ existing pie primitives rather than silently changing it to a column chart. The 
 now splits visible points into primary and secondary plots according to the authored split mode;
 both WPF and Avalonia render a secondary pie or bar from those primitives. Exact Office spacing,
 connector lines remain separate chart-depth work; native custom split-point indices now
-round-trip and drive both host renderers.
+round-trip, drive both host renderers, and are editable through the shared Pie/Doughnut/OfPie
+options workflow in both desktop hosts. That workflow also authors the secondary plot type,
+split rule/threshold, and secondary plot size with undoable command semantics.
 
 Pie and doughnut point explosion is now a complete authoring path: `<c:explosion>` survives
 PPTX round-trip, the shared WPF/Avalonia planner moves the selected slice and label, and the
@@ -221,7 +223,8 @@ depth work in the backlog below, rather than another renderer-only calibration.
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
 - Richer chart authoring/layout semantics beyond the modeled chart grid and option planners,
-  including a dedicated UI for editing OfPie custom split-point membership.
+  including exact Office connector-line geometry and the remaining native chart decoration
+  families.
 - Full Zoom authoring depth beyond the current slide, section, and summary target/preview/cover-image/crop/tile-layout
   paths, including PowerPoint-exact slide/section positioning and transition rendering.
 - Portable/non-Windows in-place OLE hosting inside text runs remains external activation; Windows
