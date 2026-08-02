@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 629 | 629 | 0 | 0 | 0 | 0 | 0 | 0 | 629 | 0 | 0 | 0 | 0 | 103 |
+| 641 | 641 | 0 | 0 | 0 | 0 | 0 | 0 | 641 | 0 | 0 | 0 | 0 | 103 |
 
 ## Workflow Evidence
 
@@ -499,9 +499,21 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.shape.bevel.none` | No Shape Bevel | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape.bevel.strong` | Strong Shape Bevel | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape.bevel.subtle` | Subtle Shape Bevel | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape.fill-transparency` | Fill Transparency | Yes | Yes | none | shared | insert/illustrations (RibbonDropdown) | insert/illustrations (RibbonDropdown) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape.fill-transparency.0` | 0% | Yes | Yes | none | shared | insert/illustrations (RibbonMenuItem) | insert/illustrations (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape.fill-transparency.100` | 100% | Yes | Yes | none | shared | insert/illustrations (RibbonMenuItem) | insert/illustrations (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape.fill-transparency.25` | 25% | Yes | Yes | none | shared | insert/illustrations (RibbonMenuItem) | insert/illustrations (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape.fill-transparency.50` | 50% | Yes | Yes | none | shared | insert/illustrations (RibbonMenuItem) | insert/illustrations (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape.fill-transparency.75` | 75% | Yes | Yes | none | shared | insert/illustrations (RibbonMenuItem) | insert/illustrations (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape.glow.none` | No Shape Glow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape.glow.strong` | Strong Shape Glow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape.glow.subtle` | Subtle Shape Glow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape.outline-transparency` | Outline Transparency | Yes | Yes | none | shared | insert/illustrations (RibbonDropdown) | insert/illustrations (RibbonDropdown) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape.outline-transparency.0` | 0% | Yes | Yes | none | shared | insert/illustrations (RibbonMenuItem) | insert/illustrations (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape.outline-transparency.100` | 100% | Yes | Yes | none | shared | insert/illustrations (RibbonMenuItem) | insert/illustrations (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape.outline-transparency.25` | 25% | Yes | Yes | none | shared | insert/illustrations (RibbonMenuItem) | insert/illustrations (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape.outline-transparency.50` | 50% | Yes | Yes | none | shared | insert/illustrations (RibbonMenuItem) | insert/illustrations (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.shape.outline-transparency.75` | 75% | Yes | Yes | none | shared | insert/illustrations (RibbonMenuItem) | insert/illustrations (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape.shadow.none` | No Shape Shadow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape.shadow.offset` | Offset Shape Shadow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.shape.shadow.subtle` | Subtle Shape Shadow | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
