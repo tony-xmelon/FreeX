@@ -12,7 +12,7 @@ Date: 2026-08-02
 
 - FreeX: 94/94 paired surfaces, zero missing or blank captures, zero scale-aware dimension mismatches, and exact `620x597` Format Cells Border evidence. The highest remaining triage score is `0.098870` for `dialog.AccessibilityChecker`.
 - FreeW: 183 paired rendered rows, with 20 passes and 163 genuine visual mismatches. Word-authoritative PNG baselines remain unavailable in the current inputs.
-- FreeP: 625/625 shared-profile commands with zero actionable host gaps after the final upstream sync. Dialog/pane evidence remains 28/28 pass and whole-window evidence remains 33/33 paired with zero explicit product mismatches.
+- FreeP: 628/628 shared-profile commands with zero actionable host gaps after the final upstream sync. Dialog/pane evidence remains 28/28 pass and whole-window evidence remains 33/33 paired with zero explicit product mismatches.
 
 ## Verification
 

@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 625 | 625 | 0 | 0 | 0 | 0 | 0 | 0 | 625 | 0 | 0 | 0 | 0 | 103 |
+| 628 | 628 | 0 | 0 | 0 | 0 | 0 | 0 | 628 | 0 | 0 | 0 | 0 | 103 |
 
 ## Workflow Evidence
 
@@ -294,6 +294,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.chart.change-type.stock` | Stock | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.change-type.surface` | Surface | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.change-type.surface3d` | 3-D Surface | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.change-type.waterfall` | Waterfall | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.data-table-options` | Data Table | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.edit-data` | Edit Data | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.format-options` | Chart Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
@@ -327,6 +328,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.insert-chart-column-stacked` | Stacked Column | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-column-stacked-100` | 100% Stacked Column | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-doughnut` | Doughnut | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-funnel` | Funnel | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-line` | Line | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-line-markers` | Line with Markers | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-pie` | Pie | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
@@ -335,6 +337,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.insert-chart-stock` | Stock | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-surface` | Surface | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-chart-surface-3d` | 3-D Surface | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-chart-waterfall` | Waterfall | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-connector` | Connector | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-curved-connector` | Curved Connector | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-elbow-connector` | Elbow Connector | Yes | Yes | none | shared | insert/illustrations (RibbonButton) | insert/illustrations (RibbonButton) | Available in both generated FreeP ribbon profiles. |
