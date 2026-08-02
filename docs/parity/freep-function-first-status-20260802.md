@@ -89,9 +89,13 @@ section.
 
 The follow-up capability audit corrected the remaining list against current code: Avalonia already
 has Windows native printer submission, MP4 export, persisted narration muxing, and camera
-picture-in-picture handoff. Those are no longer classified as wholly deferred. The remaining
-printer gap is the PowerPoint-style printer-selection dialog on Avalonia; its Windows adapter
-currently submits through the native shell handoff after the shared print plan is built.
+picture-in-picture handoff. Those are no longer classified as wholly deferred. Portable Avalonia
+now also opens an in-app PowerPoint-style printer/settings surface backed by the shared
+`PrintSelectionPlanner` and `IPlatformPrintService`. It discovers actual CUPS queues and carries
+printer, copies, page range, collation, and orientation settings into the foreground submission;
+the shared presentation planner remains authoritative for slide range, layout, and handout
+slides-per-page. This is an application-owned settings surface, not a claim of OS-owned print
+dialog chrome parity.
 
 The chart package reader now also honors authored `c:order` for series groups when reopening a
 deck, so a producer's physical XML order cannot silently change plot or legend order. A focused
@@ -107,9 +111,10 @@ fallback when it is not. Windows Avalonia now uses the same COM site lifecycle t
 `NativeControlHost`, with measured inline-run placement and save-back on host teardown; portable
 Avalonia targets retain external activation.
 
-The Avalonia Windows Print pane now opens the native Windows printer-selection dialog through
-`PrintDlgEx`, then routes the selected queue through the existing capability-checked PDF handoff.
-Portable/Linux printing remains on its platform adapter and is not affected.
+The Avalonia Windows Print pane continues to open the native Windows printer-selection dialog
+through `PrintDlgEx`, then routes the selected queue through the existing capability-checked PDF
+handoff. Portable/Linux printing now uses the CUPS platform adapter and the new Avalonia-owned
+settings surface; it does not fabricate printer availability when CUPS is missing.
 
 ## What remains
 
@@ -121,8 +126,9 @@ Portable/Linux printing remains on its platform adapter and is not affected.
   WPF and Windows Avalonia now have native in-place host paths with model byte save-back.
 - Broader real-deck media/caption/recording persistence and PowerPoint-authoritative recording
   baselines beyond the current deterministic capture and handoff paths.
-- Broader PowerPoint-authoritative export baselines and printer-setting handoff beyond queue
-  selection.
+- Printer-driver-specific settings, OS-owned print-dialog chrome, and hardware-backed printer
+  behavior remain platform boundaries beyond the modeled portable settings surface and Windows
+  native queue-selection path.
 - Physical WPF/Avalonia interaction proof for richer mixed workflows and PowerPoint COM-backed
   validation where exact application behavior or visual parity is being claimed.
 
