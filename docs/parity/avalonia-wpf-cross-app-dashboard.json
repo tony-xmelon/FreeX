@@ -134,8 +134,8 @@
                  {
                      "app":  "FreeW",
                      "commandInventory":  {
-                                              "totalCommands":  939,
-                                              "bothProfiles":  489,
+                                              "totalCommands":  940,
+                                              "bothProfiles":  490,
                                               "wpfProfileOnly":  155,
                                               "avaloniaProfileOnly":  295,
                                               "missingWpfProfile":  295,
@@ -175,8 +175,8 @@
                                                                    },
                                               "pairedEvidence":  {
                                                                      "pairedScenarioCount":  183,
-                                                                     "passCount":  16,
-                                                                     "mismatchCount":  167,
+                                                                     "passCount":  17,
+                                                                     "mismatchCount":  166,
                                                                      "limitationCount":  0,
                                                                      "avaloniaOnlyScenarioCount":  96,
                                                                      "evidenceClassification":  "paired WPF/Avalonia dialog comparison rows; mismatch classifications remain unresolved visual evidence, not a parity pass/fail"
@@ -205,8 +205,8 @@
                  {
                      "app":  "FreeP",
                      "commandInventory":  {
-                                              "totalCommands":  619,
-                                              "bothProfiles":  619,
+                                              "totalCommands":  620,
+                                              "bothProfiles":  620,
                                               "wpfOnly":  0,
                                               "avaloniaOnly":  0,
                                               "actionableMissingWpf":  0,

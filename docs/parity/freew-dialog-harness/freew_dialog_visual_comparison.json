@@ -351,17 +351,17 @@
     {
       "scenarioId": "backstage-account.open",
       "captureStatus": "captured/captured",
-      "classification": "genuine-visual-mismatch",
+      "classification": "pass",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 13731,
-        "changedRatio": 0.040866071428571425,
-        "meanAbsoluteChannelDelta": 4.581509920634854,
+        "changedPixels": 8523,
+        "changedRatio": 0.02536607142857143,
+        "meanAbsoluteChannelDelta": 2.771006944444445,
         "p95AbsoluteChannelDelta": 0,
-        "luminanceSimilarity": 0.8949008827496839,
+        "luminanceSimilarity": 0.9146276368180878,
         "perceptualHashDistance": 0
       },
-      "semanticDifference": "action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/backstage-account.open.png",
       "note": null,
       "wpfContent": {
@@ -373,10 +373,10 @@
         "opaqueRatio": 0.911577380952381,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.9707610329279956,
+        "dominantColorRatio": 0.9714409332526561,
         "distinctColorCount": 134,
         "luminanceRange": 203.99999999999997,
-        "contentPixelRatio": 0.026592261904761903,
+        "contentPixelRatio": 0.025970238095238095,
         "contentBounds": {
           "x": 0,
           "y": 0,
@@ -393,15 +393,15 @@
         "opaqueRatio": 0.9115238095238095,
         "nearTransparentRatio": 0.08847619047619047,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.9719824208546651,
-        "distinctColorCount": 589,
+        "dominantColorRatio": 0.9788553965102915,
+        "distinctColorCount": 34,
         "luminanceRange": 203.99999999999997,
-        "contentPixelRatio": 0.025407738095238094,
+        "contentPixelRatio": 0.019273809523809523,
         "contentBounds": {
           "x": 0,
           "y": 10,
-          "width": 412,
-          "height": 317
+          "width": 353,
+          "height": 314
         }
       }
     },
@@ -411,14 +411,14 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 61251,
-        "changedRatio": 0.18229464285714286,
-        "meanAbsoluteChannelDelta": 14.825587301587387,
-        "p95AbsoluteChannelDelta": 113.66666666666667,
-        "luminanceSimilarity": 0.8377049661840514,
-        "perceptualHashDistance": 14
+        "changedPixels": 45506,
+        "changedRatio": 0.1354345238095238,
+        "meanAbsoluteChannelDelta": 11.505538690476254,
+        "p95AbsoluteChannelDelta": 106,
+        "luminanceSimilarity": 0.8557597893122805,
+        "perceptualHashDistance": 12
       },
-      "semanticDifference": "action-button-order",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/backstage-export.open.png",
       "note": null,
       "wpfContent": {
@@ -450,15 +450,15 @@
         "opaqueRatio": 0.9115238095238095,
         "nearTransparentRatio": 0.08847619047619047,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.8923407951102288,
-        "distinctColorCount": 665,
+        "dominantColorRatio": 0.88748236861352,
+        "distinctColorCount": 44,
         "luminanceRange": 203.99999999999997,
-        "contentPixelRatio": 0.09800595238095237,
+        "contentPixelRatio": 0.1025625,
         "contentBounds": {
           "x": 0,
-          "y": 10,
-          "width": 542,
-          "height": 546
+          "y": 0,
+          "width": 544,
+          "height": 563
         }
       }
     },
@@ -13363,8 +13363,8 @@
     }
   ],
   "counts": {
-    "genuine-visual-mismatch": 167,
-    "pass": 16,
+    "genuine-visual-mismatch": 166,
+    "pass": 17,
     "state-not-applicable": 4,
     "avalonia-extension": 96
   }
