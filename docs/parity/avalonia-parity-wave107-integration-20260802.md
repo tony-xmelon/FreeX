@@ -48,6 +48,9 @@ Date: 2026-08-02
 - Repository preflight: passed on the final integrated source.
 - Release solution build: passed with `0` warnings and `0` errors.
 - Default solution: `35,447` passed, `0` failed, `133` skipped; `35,580` total.
+- After the final upstream sync, the affected FreeP Zoom/SmartArt and FreeW
+  page-border suites passed `508/508`; repository preflight and the full Release
+  build then passed again with `0` warnings and `0` errors.
 
 ## Remaining
 
