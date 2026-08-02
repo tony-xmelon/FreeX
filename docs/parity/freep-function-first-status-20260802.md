@@ -117,8 +117,9 @@ Imported `increasingCircleProcess` SmartArt layouts are now admitted to the live
 The engine already had dedicated geometry, but the package reader's allow-list incorrectly left
 this imported layout on cached-drawing fallback, preventing live edits and cache regeneration from
 reflecting the authored layout. Simple imported `groupedList` and `hierarchy3` caches are now
-admitted when their cache is exactly one matching text shape per parsed node; richer native
-caches with connectors or additional roles remain authoritative on the cached path.
+admitted when their cache is exactly one matching text shape per parsed node. Hierarchy3 also
+admits the exact native node-plus-parent-connector cache that the shared planner can regenerate;
+backgrounds, extra roles, pictures, and other richer caches remain authoritative on the cached path.
 
 Regenerated SmartArt picture caches now use schema-valid `dsp:sp` nodes with `a:blipFill`
 instead of the invalid `dsp:pic` child under `dsp:spTree`. Image relationships, geometry,
