@@ -214,6 +214,12 @@ value is editable in both desktop hosts, participates in undo/redo, survives PPT
 and is consumed by the shared axis-label renderer; built-in and unknown display-unit behavior
 remains unchanged.
 
+Chart manual-layout dialogs now preserve unknown authored `c:xMode`, `c:yMode`, `c:wMode`, or
+`c:hMode` tokens instead of normalizing them to `factor` when a user accepts the dialog unchanged.
+The shared planner exposes an explicit preserve-source choice, the undo command carries the raw
+token, and both WPF/Avalonia dialogs use the same mode list. This is package/function parity for
+future PowerPoint chart modes; the existing factor/edge authoring path is unchanged.
+
 Chart-level `c:roundedCorners` is now consumed by the shared scene plan and rendered as a
 bounded rounded chart frame in both WPF and Avalonia; omitted metadata remains rectangular.
 
