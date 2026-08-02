@@ -296,7 +296,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.ErrorChecking.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-direct-avalonia-parity-capture",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-focused-capture-error-checking-wave108-2026-08-02",
+                         "expectedWidth":  720,
+                         "expectedHeight":  420,
+                         "note":  "Fresh FreeX Avalonia production capture in Linux Docker/Xvfb on 2026-08-02 via --parity-capture --parity-capture-surface dialog.ErrorChecking; shared D6/D7 fixture, complete 720x420 frame and action row, nonblank."
                      },
                      {
                          "id":  "dialog.EvaluateFormula",

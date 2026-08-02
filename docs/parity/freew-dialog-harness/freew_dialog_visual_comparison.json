@@ -180,15 +180,15 @@
     {
       "scenarioId": "accessibility-report.initial",
       "captureStatus": "captured/captured",
-      "classification": "genuine-visual-mismatch",
+      "classification": "pass",
       "metrics": {
         "comparedPixels": 313600,
-        "changedPixels": 23876,
-        "changedRatio": 0.07613520408163266,
-        "meanAbsoluteChannelDelta": 17.08283694727888,
-        "p95AbsoluteChannelDelta": 255,
-        "luminanceSimilarity": 0.7454717733062628,
-        "perceptualHashDistance": 2
+        "changedPixels": 1876,
+        "changedRatio": 0.005982142857142857,
+        "meanAbsoluteChannelDelta": 0.8315933248299328,
+        "p95AbsoluteChannelDelta": 0,
+        "luminanceSimilarity": 0.9495485331834252,
+        "perceptualHashDistance": 0
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/accessibility-report.initial.png",
@@ -217,35 +217,35 @@
         "passesContentGate": true,
         "failure": null,
         "width": 560,
-        "height": 600,
-        "pixelCount": 336000,
-        "opaqueRatio": 0.9115238095238095,
-        "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 2.2855500992581758E-05,
-        "dominantColorRatio": 0.9906651603803155,
-        "distinctColorCount": 358,
-        "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.00843154761904762,
+        "height": 560,
+        "pixelCount": 313600,
+        "opaqueRatio": 0.9072448979591837,
+        "nearTransparentRatio": 0.09275510204081633,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9897262681363176,
+        "distinctColorCount": 25,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.009320790816326531,
         "contentBounds": {
-          "x": 16,
+          "x": 17,
           "y": 18,
-          "width": 512,
-          "height": 531
+          "width": 511,
+          "height": 60
         }
       }
     },
     {
       "scenarioId": "accessibility-report.populated",
       "captureStatus": "captured/captured",
-      "classification": "genuine-visual-mismatch",
+      "classification": "pass",
       "metrics": {
         "comparedPixels": 313600,
-        "changedPixels": 23876,
-        "changedRatio": 0.07613520408163266,
-        "meanAbsoluteChannelDelta": 17.08283694727888,
-        "p95AbsoluteChannelDelta": 255,
-        "luminanceSimilarity": 0.7454717733062628,
-        "perceptualHashDistance": 2
+        "changedPixels": 1876,
+        "changedRatio": 0.005982142857142857,
+        "meanAbsoluteChannelDelta": 0.8315933248299328,
+        "p95AbsoluteChannelDelta": 0,
+        "luminanceSimilarity": 0.9495485331834252,
+        "perceptualHashDistance": 0
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/accessibility-report.populated.png",
@@ -274,35 +274,35 @@
         "passesContentGate": true,
         "failure": null,
         "width": 560,
-        "height": 600,
-        "pixelCount": 336000,
-        "opaqueRatio": 0.9115238095238095,
-        "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 2.2855500992581758E-05,
-        "dominantColorRatio": 0.9906651603803155,
-        "distinctColorCount": 358,
-        "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.00843154761904762,
+        "height": 560,
+        "pixelCount": 313600,
+        "opaqueRatio": 0.9072448979591837,
+        "nearTransparentRatio": 0.09275510204081633,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9897262681363176,
+        "distinctColorCount": 25,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.009320790816326531,
         "contentBounds": {
-          "x": 16,
+          "x": 17,
           "y": 18,
-          "width": 512,
-          "height": 531
+          "width": 511,
+          "height": 60
         }
       }
     },
     {
       "scenarioId": "accessibility-report.validation-error",
       "captureStatus": "captured/captured",
-      "classification": "genuine-visual-mismatch",
+      "classification": "pass",
       "metrics": {
         "comparedPixels": 313600,
-        "changedPixels": 23876,
-        "changedRatio": 0.07613520408163266,
-        "meanAbsoluteChannelDelta": 17.08283694727888,
-        "p95AbsoluteChannelDelta": 255,
-        "luminanceSimilarity": 0.7454717733062628,
-        "perceptualHashDistance": 2
+        "changedPixels": 1876,
+        "changedRatio": 0.005982142857142857,
+        "meanAbsoluteChannelDelta": 0.8315933248299328,
+        "p95AbsoluteChannelDelta": 0,
+        "luminanceSimilarity": 0.9495485331834252,
+        "perceptualHashDistance": 0
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/accessibility-report.validation-error.png",
@@ -331,20 +331,20 @@
         "passesContentGate": true,
         "failure": null,
         "width": 560,
-        "height": 600,
-        "pixelCount": 336000,
-        "opaqueRatio": 0.9115238095238095,
-        "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 2.2855500992581758E-05,
-        "dominantColorRatio": 0.9906651603803155,
-        "distinctColorCount": 358,
-        "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.00843154761904762,
+        "height": 560,
+        "pixelCount": 313600,
+        "opaqueRatio": 0.9072448979591837,
+        "nearTransparentRatio": 0.09275510204081633,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9897262681363176,
+        "distinctColorCount": 25,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.009320790816326531,
         "contentBounds": {
-          "x": 16,
+          "x": 17,
           "y": 18,
-          "width": 512,
-          "height": 531
+          "width": 511,
+          "height": 60
         }
       }
     },
@@ -13363,8 +13363,8 @@
     }
   ],
   "counts": {
-    "genuine-visual-mismatch": 166,
-    "pass": 17,
+    "genuine-visual-mismatch": 163,
+    "pass": 20,
     "state-not-applicable": 4,
     "avalonia-extension": 96
   }
