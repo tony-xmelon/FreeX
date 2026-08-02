@@ -85,12 +85,12 @@ upstream merge and contains 173 tracked artifacts.
 
 ## Repository gates
 
-- Repository preflight passed, including the conflict-marker scan across 10,418
+- Repository preflight passed, including the conflict-marker scan across 10,426
   text files and all generated-evidence freshness checks.
 - `dotnet build FreeX.slnx --configuration Release --verbosity minimal`
   passed with 0 warnings and 0 errors.
 - The default non-UI lane accounted for all 19 runnable test assemblies:
-  35,390 passed, 0 failed, and 133 framework-skipped discoveries out of 35,523.
+  35,391 passed, 0 failed, and 133 framework-skipped discoveries out of 35,524.
   The initial run exposed one stale probe-order source assertion; the corrected
   test and its complete 2,564-test assembly both passed on rerun.
 
