@@ -140,12 +140,12 @@ Inventory scenarios: **478**. Captured WPF: **190**. Captured Avalonia: **288**.
 | `options.tab-replace` | state-not-applicable | **state-not-applicable** |  |  |  |  |  |  |
 | `options.tab-with` | state-not-applicable | **state-not-applicable** |  |  |  |  |  |  |
 | `options.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (5.4% painted) | pass (5.4% painted) | 6.48 % | 4.58 |  | heatmaps/options.validation-error.png |
-| `page-setup.initial` | captured/captured | **genuine-visual-mismatch** | pass (16.8% painted) | pass (16.0% painted) | 15.67 % | 8.96 |  | heatmaps/page-setup.initial.png |
-| `page-setup.populated` | captured/captured | **genuine-visual-mismatch** | pass (16.8% painted) | pass (16.0% painted) | 15.67 % | 8.96 |  | heatmaps/page-setup.populated.png |
-| `page-setup.tab-layout` | captured/captured | **genuine-visual-mismatch** | pass (10.9% painted) | pass (10.9% painted) | 7.09 % | 5.17 |  | heatmaps/page-setup.tab-layout.png |
-| `page-setup.tab-margins` | captured/captured | **genuine-visual-mismatch** | pass (16.8% painted) | pass (16.0% painted) | 15.67 % | 8.96 |  | heatmaps/page-setup.tab-margins.png |
-| `page-setup.tab-paper` | captured/captured | **genuine-visual-mismatch** | pass (6.7% painted) | pass (6.1% painted) | 4.84 % | 3.46 |  | heatmaps/page-setup.tab-paper.png |
-| `page-setup.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (16.9% painted) | pass (16.1% painted) | 15.78 % | 9.13 |  | heatmaps/page-setup.validation-error.png |
+| `page-setup.initial` | captured/captured | **genuine-visual-mismatch** | pass (16.4% painted) | pass (15.5% painted) | 15.25 % | 8.79 |  | heatmaps/page-setup.initial.png |
+| `page-setup.populated` | captured/captured | **genuine-visual-mismatch** | pass (16.4% painted) | pass (15.5% painted) | 15.25 % | 8.79 |  | heatmaps/page-setup.populated.png |
+| `page-setup.tab-layout` | captured/captured | **genuine-visual-mismatch** | pass (11.4% painted) | pass (10.8% painted) | 6.72 % | 4.96 |  | heatmaps/page-setup.tab-layout.png |
+| `page-setup.tab-margins` | captured/captured | **genuine-visual-mismatch** | pass (16.4% painted) | pass (15.5% painted) | 15.25 % | 8.79 |  | heatmaps/page-setup.tab-margins.png |
+| `page-setup.tab-paper` | captured/captured | **genuine-visual-mismatch** | pass (6.5% painted) | pass (5.9% painted) | 4.69 % | 3.38 |  | heatmaps/page-setup.tab-paper.png |
+| `page-setup.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (16.5% painted) | pass (15.6% painted) | 15.35 % | 8.93 |  | heatmaps/page-setup.validation-error.png |
 | `paragraph.initial` | captured/captured | **genuine-visual-mismatch** | pass (14.1% painted) | pass (13.4% painted) | 8.15 % | 9.39 |  | heatmaps/paragraph.initial.png |
 | `paragraph.populated` | captured/captured | **genuine-visual-mismatch** | pass (14.1% painted) | pass (13.4% painted) | 8.15 % | 9.39 |  | heatmaps/paragraph.populated.png |
 | `paragraph.tab-indents-and-spacing` | captured/captured | **genuine-visual-mismatch** | pass (14.1% painted) | pass (13.4% painted) | 8.15 % | 9.39 |  | heatmaps/paragraph.tab-indents-and-spacing.png |
