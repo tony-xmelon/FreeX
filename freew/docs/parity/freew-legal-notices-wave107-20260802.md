@@ -15,21 +15,22 @@ WPF scrollbar lane; only the realized Avalonia line box is corrected.
 Tab order, selection, focus, copy/read-only behavior, scroll retention, automation IDs, dialog
 geometry, and the 18 px visible scrollbar lane are unchanged.
 
-## Existing visual evidence
+## Fresh visual evidence
 
-The checked-in comparison report predates this change. Its current paired rows measure:
+The integrated Wave107 branch recaptured all six Legal Notices states at 96 DPI and refreshed
+the route rows in `docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json`.
 
-| State | Changed pixels |
-| --- | ---: |
-| `legal-notices.tab-legal-notices` | 21.06% |
-| `legal-notices.tab-privacy-notice` | 18.39% |
-| `legal-notices.tab-third-party-notices` | 21.67% |
-| `legal-notices.tab-third-party-license-texts` | 21.74% |
+| State | Before | After | Improvement |
+| --- | ---: | ---: | ---: |
+| `legal-notices.initial` | 10.317% | 9.102% | 1.215 pp |
+| `legal-notices.tab-project-license` | 10.317% | 9.102% | 1.215 pp |
+| `legal-notices.tab-legal-notices` | 21.061% | 19.857% | 1.204 pp |
+| `legal-notices.tab-privacy-notice` | 18.393% | 17.567% | 0.826 pp |
+| `legal-notices.tab-third-party-notices` | 21.665% | 19.574% | 2.092 pp |
+| `legal-notices.tab-third-party-license-texts` | 21.736% | 19.898% | 1.838 pp |
 
-Archived WPF/Avalonia captures and heatmaps show the long Avalonia body ending one or more
-rows earlier than WPF, with a shorter scrollbar thumb. The new line-box value addresses that
-measured geometry mismatch. A fresh harness capture is still required to quantify the post-
-change ratio; this focused implementation slice intentionally did not run the visual harness.
+Every paired state improved. The refreshed heatmaps confirm that the corrected line box closes
+the cumulative body-height mismatch and gives the long-document scrollbar a closer WPF geometry.
 
 Remaining expected visual limitation after recapture: cross-framework glyph rasterization and
 native tab, border, and scrollbar template pixels may remain different even when line count and
@@ -39,5 +40,7 @@ content alignment match.
 
 - FreeW Avalonia `LegalNoticesDialogVisualParityTests`: **11/11 passed**.
 - FreeW WPF `FreeWHelpInfoTests`: **9/9 passed**.
+- Fresh WPF captures: **6/6 captured**.
+- Fresh Avalonia captures: **6/6 captured**, all passing the pixel-content gate.
 - No Docker was run.
 - No build-server shutdown was run.
