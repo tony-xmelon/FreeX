@@ -92,7 +92,8 @@ The shared slideshow route now consumes Zoom `returnToParent`: omitted source at
 PowerPoint's default-on behavior, explicit `false` remains opt-out, and WPF/Avalonia both return
 to the parent slide after the Zoom target is exhausted. Nested return paths use a stack, while
 ordinary direct slide jumps clear stale Zoom context. This closes a functional navigation gap;
-PowerPoint-exact preview crop/position styling and transition rendering remain separate work.
+the same route now consumes a valid authored `transitionDur` as a Zoom transition duration in
+both hosts. PowerPoint-exact preview crop/position styling remains separate work.
 
 The follow-up capability audit corrected the remaining list against current code: Avalonia already
 has Windows native printer submission, MP4 export, persisted narration muxing, and camera
