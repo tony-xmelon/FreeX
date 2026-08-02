@@ -152,6 +152,13 @@ through `PrintDlgEx`, then routes the selected queue through the existing capabi
 handoff. Portable/Linux printing now uses the CUPS platform adapter and the new Avalonia-owned
 settings surface; it does not fabricate printer availability when CUPS is missing.
 
+The continuation audit on the current main line found no new actionable command-level gap.
+SmartArt layout admission/edit/cache regeneration, chart option dialogs and package semantics,
+media caption-track parsing/playback, and Zoom target/preview/cover/crop/tile-layout routes are
+already connected through shared model and host paths. The latest Zoom crop slice was verified
+without reopening a visual-parity campaign. The next function-first work therefore remains
+depth work in the backlog below, rather than another renderer-only calibration.
+
 ## What remains
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
