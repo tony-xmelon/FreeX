@@ -32,13 +32,17 @@ Date: 2026-08-02
 - Focused FreeX: Services 3/3, WPF host 20/20, Avalonia compact-dialog source
   16/16.
 - Focused FreeW Accessibility Report: 2/2.
-- Focused FreeP SmartArt: Presentation 373/373 and WPF host/ribbon 445/445.
+- Focused FreeP SmartArt: Presentation 374/374 and WPF host/ribbon 445/445
+  after the final upstream SmartArt sync.
 - Linux production capture: 1/1 requested Error Checking surface, nonblank at
   720x420 with the complete action row visible.
 - Repository preflight: passed after refreshing generated FreeP whole-window
   evidence provenance.
 - Release solution build: passed with 0 warnings and 0 errors.
 - Default non-UI lane: 35,454 passed, 0 failed, 133 not executed; 35,587 total.
+- Post-sync affected suites: 958/958 passed across FreeP SmartArt and FreeW
+  web-hidden model, package, Avalonia, and WPF host coverage; repository
+  preflight and the full Release build then passed again.
 
 ## Remaining
 
@@ -47,4 +51,3 @@ Date: 2026-08-02
   needs Word-authoritative PNG baselines on a Word-capable host.
 - FreeP still needs PowerPoint-authoritative picture crop/mask/effect geometry,
   broader native layout XML coverage, and richer real-deck/media/math evidence.
-
