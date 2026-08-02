@@ -1,0 +1,40 @@
+{
+  "schema": "freew.icon-picker-wave112-evidence.v1",
+  "date": "2026-08-02",
+  "wpfManifest": "artifacts/wave112-icon-picker-final-wpf/wpf_dialog_capture_manifest.json",
+  "avaloniaManifest": "artifacts/wave112-icon-picker-final2-avalonia/avalonia_dialog_capture_manifest.json",
+  "wpfIconStatesCaptured": 3,
+  "avaloniaIconStatesCaptured": 3,
+  "states": [
+    {
+      "scenarioId": "icon-picker.initial",
+      "captureStatus": "captured/captured",
+      "classification": "genuine-visual-mismatch",
+      "changedPixelRatio": 0.12101190476190476,
+      "meanAbsoluteChannelDelta": 15.355136904761732,
+      "p95AbsoluteChannelDelta": 156,
+      "perceptualHashDistance": 5,
+      "semanticDifference": null
+    },
+    {
+      "scenarioId": "icon-picker.populated",
+      "captureStatus": "captured/captured",
+      "classification": "pass",
+      "changedPixelRatio": 0.0111875,
+      "meanAbsoluteChannelDelta": 1.102616071428558,
+      "p95AbsoluteChannelDelta": 0,
+      "perceptualHashDistance": 0,
+      "semanticDifference": null
+    },
+    {
+      "scenarioId": "icon-picker.validation-error",
+      "captureStatus": "captured/captured",
+      "classification": "pass",
+      "changedPixelRatio": 0.012020833333333333,
+      "meanAbsoluteChannelDelta": 1.2193869047618862,
+      "p95AbsoluteChannelDelta": 0,
+      "perceptualHashDistance": 0,
+      "semanticDifference": null
+    }
+  ]
+}
