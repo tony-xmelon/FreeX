@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 620 | 620 | 0 | 0 | 0 | 0 | 0 | 0 | 620 | 0 | 0 | 0 | 0 | 103 |
+| 622 | 622 | 0 | 0 | 0 | 0 | 0 | 0 | 622 | 0 | 0 | 0 | 0 | 103 |
 
 ## Workflow Evidence
 
@@ -389,6 +389,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.insert-smartart-org-chart` | Org Chart | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-phased-process` | Phased Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-picture-accent-list` | Picture Accent List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-picture-accent-process` | Picture Accent Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-picture-caption-list` | Picture Caption List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-picture-grid` | Picture Grid | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-picture-lineup` | Picture Lineup | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
@@ -607,6 +608,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.smartart.layout.org-chart` | Organization Chart | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.phased-process` | Phased Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.picture-accent-list` | Picture Accent List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.picture-accent-process` | Picture Accent Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.picture-caption-list` | Picture Caption List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.picture-grid` | Picture Grid | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.picture-lineup` | Picture Lineup | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
