@@ -220,6 +220,7 @@
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsFixedWidthBreakPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsFixedWidthRulerPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsOptions.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsParityFixture.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsResult.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsSplitter.cs",
