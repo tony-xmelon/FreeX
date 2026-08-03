@@ -43,6 +43,19 @@ evidence from the integrated implementations.
 - Focused integrated tests passed for FreeX WPF/Avalonia About parity (3 tests), FreeW WPF/Avalonia
   AutoFormat parity (13 tests), and FreeP host, presentation, Avalonia renderer, and fixture
   gridMatrix contracts (10 tests).
+- Repository preflight passed across 10,851 text files, including 220 JSON files, 260 XML-backed
+  files, 90 PowerShell tools, 124 projects, 91 solution entries, and 22 default-test entries.
+- Full serialized `FreeX.slnx` Release build passed with zero warnings and zero errors.
+- The first all-up test run exposed one stale generated-profile expectation and one transient
+  clipboard-isolation failure. The expected FreeP workflow list now includes the gridMatrix row;
+  both cases passed focused, and the complete serialized rerun passed.
+- Full `FreeX.DefaultTests.slnx` rerun: 36,358 discovered across 21 produced TRX files, 36,224
+  executed and passed, 134 not executed, and zero failed.
+
+## Integration correction
+
+- `FreePRibbonDefinitionProfileTests` now registers
+  `freep.smartart.grid-matrix-import-cells` in the exact generated workflow-evidence order.
 
 ## Remaining work
 
