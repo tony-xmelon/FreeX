@@ -42,8 +42,20 @@ from the committed manifests and PNGs after integration:
 - FreeP Avalonia math baseline tests: 44/44 passed.
 - FreeP WPF math baseline tests: 43/43 passed.
 
-Repository preflight, the full Release build, and the default test solution are
-run serially from the integration branch before promotion.
+## Integration gates
+
+- Repository preflight: passed.
+- Full `Release` solution build: passed with 0 warnings and 0 errors.
+- Default test solution: 36,201 tests represented; 36,066 passed, 135 skipped,
+  and one OS-clipboard test failed during the parallel all-up run.
+- The parallel runner also left `FreeX.App.Avalonia.Tests` alive after the
+  other 20 completed projects had written results. Its exact owned process tree
+  was stopped without touching unrelated sessions; the assembly then passed
+  2,011/2,011 in isolation with the VSTest hang detector enabled.
+- The all-up clipboard failure passed in a fresh isolated host. Three additional
+  clipboard-state failures exposed by a serial owning-assembly run also passed
+  individually in fresh hosts. This is test-host/OS clipboard isolation
+  contention rather than a product failure in the Wave121 changes.
 
 ## Remaining parity work
 
