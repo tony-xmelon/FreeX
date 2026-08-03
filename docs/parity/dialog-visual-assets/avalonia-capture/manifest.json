@@ -286,7 +286,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.InsertHyperlink.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-direct-avalonia-parity-capture",
+                         "recaptureStatus":  "fresh-avalonia-capture-wave115-semantic-fixture",
+                         "expectedWidth":  560,
+                         "expectedHeight":  300,
+                         "note":  "Fresh Avalonia capture using HyperlinkDialogParityFixture.Target and DisplayText, semantically matching the authoritative WPF insert-objects-links-tour evidence; captured 2026-08-03 via --parity-capture --parity-capture-surface dialog.InsertHyperlink."
                      },
                      {
                          "id":  "dialog.SymbolPicker",

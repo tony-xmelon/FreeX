@@ -64,7 +64,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
 | dialog.FindReplace | 720x430 | 720x430 | 720x430 px @ 96 DPI vs 720x430 px @ 96 DPI |  |  | 0.095 | 0.015 | 0.005 | 0.075 |
 | dialog.FindReplace.Find | 720x430 | 720x430 | 720x430 px @ 96 DPI vs 720x430 px @ 96 DPI |  |  | 0.095 | 0.015 | 0.005 | 0.075 |
-| dialog.InsertHyperlink | 560x300 | 560x300 | 840x450 px @ 144 DPI vs 560x300 px @ 96 DPI |  |  | 0.095 | 0.046 | 0.008 | 0.041 |
 | dialog.Options.Formulas | 744x777 | 744x777 | 744x777 px @ 96 DPI vs 744x777 px @ 96 DPI |  |  | 0.093 | 0.033 | 0.006 | 0.054 |
 | dialog.Zoom | 300x240 | 300x240 | 450x360 px @ 144 DPI vs 300x240 px @ 96 DPI |  |  | 0.093 | 0.034 | 0.015 | 0.045 |
 | dialog.PageSetup | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 96 DPI |  |  | 0.091 | 0.025 | 0.007 | 0.059 |
@@ -72,6 +71,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.FormatCells.Alignment | 620x540 | 620x540 | 620x540 px @ 96 DPI vs 620x540 px @ 96 DPI |  |  | 0.090 | 0.013 | 0.011 | 0.066 |
 | dialog.EvaluateFormula | 600x360 | 600x360 | 900x540 px @ 144 DPI vs 600x360 px @ 96 DPI |  |  | 0.090 | 0.030 | 0.007 | 0.052 |
 | dialog.TextToColumns | 500x430 | 500x430 | 750x645 px @ 144 DPI vs 500x430 px @ 96 DPI |  |  | 0.089 | 0.068 | 0.009 | 0.012 |
+| dialog.GoalSeekStatus | 380x190 | 380x190 | 380x190 px @ 96 DPI vs 380x190 px @ 96 DPI |  |  | 0.089 | 0.029 | 0.012 | 0.047 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -123,7 +123,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.GoTo | dialog.GoTo.png | 420x320 | 420x320 px @ 96 DPI | True | dialog.GoTo.png | 420x320 | 420x320 px @ 96 DPI | True | True | 0.066 |
 | dialog.GoToSpecial | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | dialog.GoToSpecial.png | 430x438 | 430x438 px @ 96 DPI | True | True | 0.034 |
 | dialog.HeaderFooterDialog | dialog.HeaderFooterDialog.png | 760x600 | 760x600 px @ 96 DPI | True | dialog.HeaderFooterDialog.png | 760x600 | 760x600 px @ 96 DPI | True | True | 0.034 |
-| dialog.InsertHyperlink | dialog.InsertHyperlink.png | 560x300 | 840x450 px @ 144 DPI | True | dialog.InsertHyperlink.png | 560x300 | 560x300 px @ 96 DPI | True | True | 0.095 |
+| dialog.InsertHyperlink | dialog.InsertHyperlink.png | 560x300 | 840x450 px @ 144 DPI | True | dialog.InsertHyperlink.png | 560x300 | 560x300 px @ 96 DPI | True | True | 0.069 |
 | dialog.InsertSlicer | dialog.InsertSlicer.png | 410x270 | 615x405 px @ 144 DPI | True | dialog.InsertSlicer.png | 410x270 | 410x270 px @ 96 DPI | True | True | 0.046 |
 | dialog.InsertTimeline | dialog.InsertTimeline.png | 410x270 | 615x405 px @ 144 DPI | True | dialog.InsertTimeline.png | 410x270 | 410x270 px @ 96 DPI | True | True | 0.040 |
 | dialog.LegalNotices | dialog.LegalNotices.png | 840x620 | 1260x930 px @ 144 DPI | True | dialog.LegalNotices.png | 840x620 | 840x620 px @ 96 DPI | True | True | 0.030 |

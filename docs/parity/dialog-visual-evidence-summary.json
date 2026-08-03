@@ -2272,7 +2272,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.InsertHyperlink.png",
-                                                "fileBytes":  15870,
+                                                "fileBytes":  12384,
                                                 "width":  560,
                                                 "height":  300,
                                                 "dpiX":  96,
@@ -2280,11 +2280,17 @@
                                                 "logicalWidth":  560,
                                                 "logicalHeight":  300,
                                                 "pixels":  168000,
-                                                "distinctColors":  1268,
+                                                "distinctColors":  237,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.073048,
+                                                "nonBackgroundRatio":  0.08447,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  248.844222
+                                                "meanLuma":  247.264786,
+                                                "manifestNote":  "Fresh Avalonia capture using HyperlinkDialogParityFixture.Target and DisplayText, semantically matching the authoritative WPF insert-objects-links-tour evidence; captured 2026-08-03 via --parity-capture --parity-capture-surface dialog.InsertHyperlink.",
+                                                "evidenceSource":  "fresh-direct-avalonia-parity-capture",
+                                                "sourcePng":  null,
+                                                "recaptureStatus":  "fresh-avalonia-capture-wave115-semantic-fixture",
+                                                "expectedWidth":  560,
+                                                "expectedHeight":  300
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -2299,10 +2305,10 @@
                                                   "rawPixelHeightDelta":  150,
                                                   "captureScaleNormalizedDimensionMatch":  true,
                                                   "dimensionDeltaRatio":  0.000103,
-                                                  "sampleMeanDelta":  0.045699,
-                                                  "lumaDelta":  0.007836,
-                                                  "nonBackgroundDelta":  0.041235,
-                                                  "triageScore":  0.094874,
+                                                  "sampleMeanDelta":  0.037252,
+                                                  "lumaDelta":  0.001642,
+                                                  "nonBackgroundDelta":  0.029813,
+                                                  "triageScore":  0.06881,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  560,
                                                   "expectedHeight":  300,
@@ -6326,14 +6332,6 @@
                                   "nonBackgroundDelta":  0.074658
                               },
                               {
-                                  "id":  "dialog.InsertHyperlink",
-                                  "triageScore":  0.094874,
-                                  "sampleMeanDelta":  0.045699,
-                                  "dimension":  "560.029x300.015 vs 560x300 logical; 840x450 vs 560x300 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.041235
-                              },
-                              {
                                   "id":  "dialog.Options.Formulas",
                                   "triageScore":  0.092999,
                                   "sampleMeanDelta":  0.03279,
@@ -6388,6 +6386,14 @@
                                   "dimension":  "500.026x430.022 vs 500x430 logical; 750x645 vs 500x430 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.011885
+                              },
+                              {
+                                  "id":  "dialog.GoalSeekStatus",
+                                  "triageScore":  0.088677,
+                                  "sampleMeanDelta":  0.029102,
+                                  "dimension":  "380.053x190.027 vs 380x190 logical; 380x190 vs 380x190 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.047285
                               }
                           ],
     "visualReviewCandidates":  [
