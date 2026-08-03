@@ -29,7 +29,7 @@ Fresh WPF and Avalonia harness captures cover all six Page Setup scenarios:
 `initial`, `populated`, `validation-error`, `tab-margins`, `tab-paper`, and
 `tab-layout`. The route-scoped report and paired PNGs are under:
 
-`artifacts/parity-wave121-freew-page-setup-20260803-corrected/`
+`artifacts/parity-wave121-freew-page-setup-20260803-nextpage/`
 
 The focused comparison improved as follows:
 
@@ -39,6 +39,11 @@ The focused comparison improved as follows:
 | Validation error | 15.35% | 10.19% | 7.23 |
 | Paper | 4.69% | 4.63% | 3.34 |
 | Layout | 6.72% | 7.48% | 5.23 |
+
+The retained NextPage capture timestamps are WPF PNG and manifest at
+`2026-08-03T07:09:11Z`, Avalonia PNG and manifest at
+`2026-08-03T07:09:18Z`, and comparison JSON/HTML at
+`2026-08-03T07:09:22Z`.
 
 All six WPF captures and all six Avalonia captures passed the harness content
 gate. The corrected `tab-layout` pair now has the same authoritative
@@ -55,6 +60,8 @@ state mismatch.
 - WPF harness build: 0 warnings, 0 errors.
 - Avalonia harness build: 0 warnings, 0 errors.
 - Fresh paired captures: 6/6 WPF and 6/6 Avalonia.
+- Fresh NextPage evidence: both `tab-layout` images visibly show `New page`;
+  the relevant section-start ComboBox is selected index `1` in both manifests.
 - Harness route seed regression: both factories explicitly map to
   `VisualHarnessSectionStart = NextPage` (`New page`).
 - `git diff --check`: passed after evidence generation.
