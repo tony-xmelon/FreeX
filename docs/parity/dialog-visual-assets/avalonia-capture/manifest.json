@@ -191,7 +191,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.TextToColumns.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-current-source-avalonia-parity-capture",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-targeted-capture-texttocolumns-wave124-2026-08-03",
+                         "expectedWidth":  560,
+                         "expectedHeight":  560,
+                         "note":  "Fresh current-source Avalonia capture in Ubuntu 24.04 Docker/Xvfb via --parity-capture --parity-capture-surface dialog.TextToColumns; canonical 560x560 PNG at 96 DPI. Replaces stale 500x430 evidence."
                      },
                      {
                          "id":  "dialog.AdvancedFilter",
