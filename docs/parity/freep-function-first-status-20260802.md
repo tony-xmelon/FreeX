@@ -2,7 +2,7 @@
 
 ## Current position
 
-The current `main` baseline reports **641/641** FreeP command IDs shared by WPF and
+The current `main` baseline reports **645/645** FreeP command IDs shared by WPF and
 Avalonia, with **0 actionable WPF gaps, 0 actionable Avalonia gaps, 0 known deferred
 command rows, and 105 workflow-evidence rows**. This is reachability coverage, not a
 claim that every PowerPoint feature has identical depth or native behavior.
@@ -291,6 +291,10 @@ cache grammar. The reader requires the exact node order, equal square geometry, 
 and effect-free drawing cache before handing it to the shared live plan; unsupported variants
 remain cached. This adds one concrete relationship-family workflow row without claiming broad
 intersection-region or effect parity.
+
+Chart package retention now also preserves authored non-OfPie `c:serLines` presence through the
+shared chart model, clone path, and PPTX reader/writer. The existing OfPie series-line workflow
+remains unchanged; generic series-line rendering is still a separate chart-family geometry task.
 
 The current integration tip also includes concurrent FreeW table authoring and formatting
 undo slices. Those are repository progress, not a change to the FreeP command count or the
