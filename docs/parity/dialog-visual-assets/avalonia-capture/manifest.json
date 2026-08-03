@@ -638,7 +638,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.Options.Formulas.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-current-source-avalonia-parity-capture",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-targeted-capture-options-formulas-wave116-2026-08-03",
+                         "expectedWidth":  744,
+                         "expectedHeight":  777,
+                         "note":  "Fresh current-source Avalonia capture from Ubuntu 24.04 Docker/Xvfb via --parity-capture --parity-capture-surface dialog.Options.Formulas. Iterative calculation remains present; the non-authoritative Avalonia-only error-checking master row was removed so rule rows align with WPF."
                      },
                      {
                          "id":  "dialog.Options.Proofing",

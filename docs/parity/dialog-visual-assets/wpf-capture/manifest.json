@@ -21,7 +21,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.Options.Formulas.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-current-source-wpf-targeted-parity-capture",
+                         "recaptureStatus":  "fresh-windows-current-source-targeted-capture-options-formulas-wave116-2026-08-03",
+                         "expectedWidth":  744,
+                         "expectedHeight":  777,
+                         "note":  "Fresh current-source WPF capture from FreeX.App.Host --parity-capture. The current production OptIterativeEnabled / maximum-iterations / maximum-change band is present; this replaces the stale pre-iterative canonical PNG."
                      },
                      {
                          "id":  "dialog.Options.Proofing",

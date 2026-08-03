@@ -2956,7 +2956,7 @@
                                "routeFamily":  "dialog.Options",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.Options.Formulas.png",
-                                           "fileBytes":  38863,
+                                           "fileBytes":  62271,
                                            "width":  744,
                                            "height":  777,
                                            "dpiX":  95.986595,
@@ -2964,15 +2964,21 @@
                                            "logicalWidth":  744.104,
                                            "logicalHeight":  777.109,
                                            "pixels":  578088,
-                                           "distinctColors":  219,
+                                           "distinctColors":  235,
                                            "opaqueRatio":  1,
-                                           "nonBackgroundRatio":  0.683199,
+                                           "nonBackgroundRatio":  0.682168,
                                            "isNonBlank":  true,
-                                           "meanLuma":  244.747963
+                                           "meanLuma":  243.756005,
+                                           "manifestNote":  "Fresh current-source WPF capture from FreeX.App.Host --parity-capture. The current production OptIterativeEnabled / maximum-iterations / maximum-change band is present; this replaces the stale pre-iterative canonical PNG.",
+                                           "evidenceSource":  "fresh-current-source-wpf-targeted-parity-capture",
+                                           "sourcePng":  null,
+                                           "recaptureStatus":  "fresh-windows-current-source-targeted-capture-options-formulas-wave116-2026-08-03",
+                                           "expectedWidth":  744,
+                                           "expectedHeight":  777
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.Options.Formulas.png",
-                                                "fileBytes":  65658,
+                                                "fileBytes":  97116,
                                                 "width":  744,
                                                 "height":  777,
                                                 "dpiX":  96,
@@ -2980,11 +2986,17 @@
                                                 "logicalWidth":  744,
                                                 "logicalHeight":  777,
                                                 "pixels":  578088,
-                                                "distinctColors":  2263,
+                                                "distinctColors":  249,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.73741,
+                                                "nonBackgroundRatio":  0.687174,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  246.205955
+                                                "meanLuma":  245.807921,
+                                                "manifestNote":  "Fresh current-source Avalonia capture from Ubuntu 24.04 Docker/Xvfb via --parity-capture --parity-capture-surface dialog.Options.Formulas. Iterative calculation remains present; the non-authoritative Avalonia-only error-checking master row was removed so rule rows align with WPF.",
+                                                "evidenceSource":  "fresh-current-source-avalonia-parity-capture",
+                                                "sourcePng":  null,
+                                                "recaptureStatus":  "fresh-linux-docker-xvfb-targeted-capture-options-formulas-wave116-2026-08-03",
+                                                "expectedWidth":  744,
+                                                "expectedHeight":  777
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -2999,10 +3011,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.03279,
-                                                  "lumaDelta":  0.005718,
-                                                  "nonBackgroundDelta":  0.054211,
-                                                  "triageScore":  0.092999,
+                                                  "sampleMeanDelta":  0.031408,
+                                                  "lumaDelta":  0.008047,
+                                                  "nonBackgroundDelta":  0.005006,
+                                                  "triageScore":  0.04474,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6332,14 +6344,6 @@
                                   "nonBackgroundDelta":  0.074658
                               },
                               {
-                                  "id":  "dialog.Options.Formulas",
-                                  "triageScore":  0.092999,
-                                  "sampleMeanDelta":  0.03279,
-                                  "dimension":  "744.104x777.109 vs 744x777 logical; 744x777 vs 744x777 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.054211
-                              },
-                              {
                                   "id":  "dialog.Zoom",
                                   "triageScore":  0.092952,
                                   "sampleMeanDelta":  0.033554,
@@ -6394,6 +6398,14 @@
                                   "dimension":  "380.053x190.027 vs 380x190 logical; 380x190 vs 380x190 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.047285
+                              },
+                              {
+                                  "id":  "dialog.AddWatch",
+                                  "triageScore":  0.087879,
+                                  "sampleMeanDelta":  0.054369,
+                                  "dimension":  "360.019x170.009 vs 360x170 logical; 540x255 vs 360x170 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.033272
                               }
                           ],
     "visualReviewCandidates":  [
