@@ -62,8 +62,8 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.About | 560x420 | 560x420 | 560x420 px @ 96 DPI vs 560x420 px @ 96 DPI |  |  | 0.107 | 0.071 | 0.014 | 0.021 |
 | dialog.AllowEditRanges | 430x420 | 430x420 | 430x420 px @ 96 DPI vs 430x420 px @ 96 DPI |  |  | 0.079 | 0.022 | 0.014 | 0.042 |
+| dialog.About | 560x420 | 560x420 | 560x420 px @ 96 DPI vs 560x420 px @ 96 DPI |  |  | 0.077 | 0.058 | 0.006 | 0.014 |
 | dialog.SelectDataSource | 620x500 | 620x500 | 930x750 px @ 144 DPI vs 620x500 px @ 96 DPI |  |  | 0.075 | 0.036 | 0.006 | 0.033 |
 | dialog.ConditionalFormatManage | 560x420 | 560x420 | 840x630 px @ 144 DPI vs 560x420 px @ 96 DPI |  |  | 0.074 | 0.045 | 0.000 | 0.028 |
 | dialog.ChangeChartType | 640x390 | 640x390 | 960x585 px @ 144 DPI vs 640x390 px @ 96 DPI |  |  | 0.070 | 0.036 | 0.008 | 0.025 |
@@ -89,7 +89,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 
 | Surface id | WPF PNG | WPF logical size | WPF raw PNG | WPF nonblank | Avalonia PNG | Avalonia logical size | Avalonia raw PNG | Avalonia nonblank | Dimension match | Score |
 | --- | --- | ---: | ---: | --- | --- | ---: | ---: | --- | --- | ---: |
-| dialog.About | dialog.About.png | 560x420 | 560x420 px @ 96 DPI | True | dialog.About.png | 560x420 | 560x420 px @ 96 DPI | True | True | 0.107 |
+| dialog.About | dialog.About.png | 560x420 | 560x420 px @ 96 DPI | True | dialog.About.png | 560x420 | 560x420 px @ 96 DPI | True | True | 0.077 |
 | dialog.AccessibilityChecker | dialog.AccessibilityChecker.png | 360x520 | 360x520 px @ 96 DPI | True | dialog.AccessibilityChecker.png | 360x520 | 360x520 px @ 96 DPI | True | True | 0.067 |
 | dialog.AddWatch | dialog.AddWatch.png | 360x170 | 360x170 px @ 96 DPI | True | dialog.AddWatch.png | 360x170 | 360x170 px @ 96 DPI | True | True | 0.036 |
 | dialog.AdvancedFilter | dialog.AdvancedFilter.png | 420x340 | 630x510 px @ 144 DPI | True | dialog.AdvancedFilter.png | 420x340 | 420x340 px @ 96 DPI | True | True | 0.057 |
