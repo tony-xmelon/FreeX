@@ -267,6 +267,15 @@ already connected through shared model and host paths. The latest Zoom crop slic
 without reopening a visual-parity campaign. The next function-first work therefore remains
 depth work in the backlog below, rather than another renderer-only calibration.
 
+### 2026-08-04
+
+Native line-chart `c:dropLines` and `c:upDownBars` now retain authored presence, gap width,
+and up/down fills through the shared model, clone path, PPTX reader/writer, and both renderers.
+Stock OHLC charts now consume the same `c:upDownBars` payload from their Open/Close series and
+paint the resulting bands beneath the high/low stems. Focused package, planner, host, and both
+renderer build lanes cover the line and stock paths; this closes a chart-family semantic gap
+without broad visual calibration.
+
 ## What remains
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
