@@ -7124,12 +7124,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 39941,
-        "changedRatio": 0.11887202380952382,
-        "meanAbsoluteChannelDelta": 10.062350198410881,
-        "p95AbsoluteChannelDelta": 80.66666666666667,
-        "luminanceSimilarity": 0.8456429077674465,
-        "perceptualHashDistance": 1
+        "changedPixels": 35234,
+        "changedRatio": 0.10486309523809524,
+        "meanAbsoluteChannelDelta": 8.714455357143978,
+        "p95AbsoluteChannelDelta": 70,
+        "luminanceSimilarity": 0.8536950960544356,
+        "perceptualHashDistance": 9
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/options.tab-auto-correct.png",
@@ -7142,11 +7142,11 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.9131994047619048,
         "nearTransparentRatio": 0.08680059523809523,
-        "nearBlackRatio": 0.012576792086952272,
-        "dominantColorRatio": 0.893858262584125,
-        "distinctColorCount": 382,
+        "nearBlackRatio": 0.012589828409405706,
+        "dominantColorRatio": 0.8934736910717487,
+        "distinctColorCount": 434,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.09091666666666667,
+        "contentPixelRatio": 0.09135416666666667,
         "contentBounds": {
           "x": 14,
           "y": 14,
@@ -7162,16 +7162,16 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
-        "nearBlackRatio": 0.0008555683511278538,
-        "dominantColorRatio": 0.8906954501981145,
-        "distinctColorCount": 131,
+        "nearBlackRatio": 0.0009108712483490458,
+        "dominantColorRatio": 0.8999538058152623,
+        "distinctColorCount": 147,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.1,
+        "contentPixelRatio": 0.0915297619047619,
         "contentBounds": {
           "x": 14,
           "y": 14,
-          "width": 516,
-          "height": 383
+          "width": 518,
+          "height": 387
         }
       }
     },

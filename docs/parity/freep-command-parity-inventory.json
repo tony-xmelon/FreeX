@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 0,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 104
+    "workflowEvidenceRows": 105
   },
   "workflowEvidence": [
     {
@@ -1226,6 +1226,26 @@
         "tools/FreeP.RenderCompare.Tests/SmartArtFixtureEvidenceTests.cs"
       ],
       "remainingWork": "The real fixture-backed grouped-list cache grammar with two distinct empty body bands, two headers, and four child boxes is admitted to the shared live plan. Missing, duplicate, ambiguous, extra, effect-bearing, picture-bearing, or otherwise unproven grouped-list roles remain on cached drawing fallback; broader grouped-list role parity, exact PowerPoint geometry/effects, and authoritative visual baselines remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.relationship1-import-ellipses",
+      "area": "SmartArt relationship1 imported node-ellipse live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume the same shared relationship1 overlapping-ellipse plan through SlideCompositor; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/avalonia-parity-wave133-freep-smartart-20260803.md"
+      ],
+      "verification": [
+        "freep/FreeP.Core.IO/PptxPackageReader.cs",
+        "freep/FreeP.App.Presentation/SmartArtLayoutEngine.cs",
+        "freep/FreeP.App.Presentation/SlideCompositor.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs",
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtDefaultLiveRendererContractTests.cs",
+        "freep/FreeP.App.Rendering.Avalonia.Tests/SmartArtDefaultLiveRendererContractTests.cs",
+        "tools/FreeP.RenderCompare.Tests/SmartArtFixtureEvidenceTests.cs"
+      ],
+      "remainingWork": "The checked-in relationship1 package admits exactly three ordered, same-sized ellipse nodes with distinct matching text, a horizontal step within 1 EMU of the shared planner's truncated 58% diameter step, and no extra roles or effects. Missing, duplicate, ambiguous, non-ellipse, wrong-ratio, non-overlapping, effect-bearing, picture-bearing, or otherwise unproven relationship caches remain on cached drawing fallback; other relationship families and exact PowerPoint intersection/effect fidelity remain deferred."
     },
     {
       "evidenceId": "freep.smartart.basic-process",
