@@ -245,7 +245,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.FormatCells.Alignment.png",
                          "captured":  true,
-                         "note":  "Captured from FreeX.App.Host --parity-capture Format Cells dialog surface"
+                         "evidenceSource":  "fresh-current-source-wpf-targeted-parity-capture",
+                         "recaptureStatus":  "fresh-wpf-format-cells-wave127-2026-08-03",
+                         "expectedWidth":  620,
+                         "expectedHeight":  540,
+                         "note":  "Fresh current-source WPF capture from FreeX.App.Host --parity-capture --parity-capture-target dialog.FormatCells at 620x540 and 96 DPI."
                      },
                      {
                          "id":  "dialog.FormatCells.Font",
