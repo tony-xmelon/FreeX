@@ -4,7 +4,7 @@
 
 The current `main` baseline reports **641/641** FreeP command IDs shared by WPF and
 Avalonia, with **0 actionable WPF gaps, 0 actionable Avalonia gaps, 0 known deferred
-command rows, and 103 workflow-evidence rows**. This is reachability coverage, not a
+command rows, and 105 workflow-evidence rows**. This is reachability coverage, not a
 claim that every PowerPoint feature has identical depth or native behavior.
 
 The latest functional work is concentrated in three areas:
@@ -285,6 +285,12 @@ Imported SmartArt `matrix1` is now admitted to the same live Basic Matrix plan a
 consume the shared whole-plus-four-quadrant editable composition; save/reopen and cache
 regeneration retain the live package state. This is bounded import/editability evidence for
 the native alias, not a claim of PowerPoint-identical SmartArt raster geometry.
+
+Imported SmartArt `relationship1` is now admitted for the audited three-node overlapping-ellipse
+cache grammar. The reader requires the exact node order, equal square geometry, shared 58% step,
+and effect-free drawing cache before handing it to the shared live plan; unsupported variants
+remain cached. This adds one concrete relationship-family workflow row without claiming broad
+intersection-region or effect parity.
 
 The current integration tip also includes concurrent FreeW table authoring and formatting
 undo slices. Those are repository progress, not a change to the FreeP command count or the
