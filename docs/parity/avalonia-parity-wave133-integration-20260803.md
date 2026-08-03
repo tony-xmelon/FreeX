@@ -50,7 +50,7 @@ evidence from the integrated implementations.
 
 ## Verification
 
-- Repository preflight passed across 10,829 text files, including generated documentation, macOS
+- Repository preflight passed across 10,836 text files, including generated documentation, macOS
   readiness, Linux packaging readiness, 220 JSON files, 260 XML files, 90 PowerShell files, 124
   projects, 91 solution entries, and 22 default-test entries.
 - Full serialized `FreeX.slnx` Release build passed with zero warnings and zero errors.
@@ -59,7 +59,7 @@ evidence from the integrated implementations.
 - Focused integrated tests passed for FreeX Sparkline chrome, FreeW WPF/Avalonia AutoCorrect
   parity, FreeP host and presentation relationship contracts, Avalonia renderer contracts, real
   fixture evidence, and generated-profile retention.
-- Full `FreeX.DefaultTests.slnx` clean serialized run: 36,346 discovered across 21 projects, 36,212
+- Full `FreeX.DefaultTests.slnx` clean serialized run: 36,353 discovered across 21 projects, 36,219
   executed and passed, 134 not executed, and zero failed.
 
 ## Remaining work
