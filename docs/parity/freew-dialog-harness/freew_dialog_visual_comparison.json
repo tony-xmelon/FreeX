@@ -7181,12 +7181,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 33868,
-        "changedRatio": 0.10079761904761905,
-        "meanAbsoluteChannelDelta": 9.494744047619147,
-        "p95AbsoluteChannelDelta": 63,
-        "luminanceSimilarity": 0.8506240609147819,
-        "perceptualHashDistance": 4
+        "changedPixels": 22537,
+        "changedRatio": 0.06707440476190477,
+        "meanAbsoluteChannelDelta": 6.61591666666669,
+        "p95AbsoluteChannelDelta": 34,
+        "luminanceSimilarity": 0.8753009053730492,
+        "perceptualHashDistance": 2
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/options.tab-auto-format-as-you-type.png",
@@ -7220,15 +7220,15 @@
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0.0006050787578318662,
-        "dominantColorRatio": 0.9381193111210874,
+        "dominantColorRatio": 0.9398174353769381,
         "distinctColorCount": 56,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.05661309523809524,
+        "contentPixelRatio": 0.05505952380952381,
         "contentBounds": {
           "x": 14,
           "y": 14,
-          "width": 516,
-          "height": 364
+          "width": 518,
+          "height": 337
         }
       }
     },
