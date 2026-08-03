@@ -124,28 +124,28 @@
                          "kind":  "dialog",
                          "png":  "dialog.PageSetup.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Fresh current-source Avalonia targeted capture in Ubuntu 24.04 Docker/Xvfb on 2026-08-03 at the shared 600x560 client frame."
                      },
                      {
                          "id":  "dialog.PageSetup.Page",
                          "kind":  "dialog",
                          "png":  "dialog.PageSetup.Page.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Fresh current-source Avalonia targeted Page tab capture in Ubuntu 24.04 Docker/Xvfb on 2026-08-03."
                      },
                      {
                          "id":  "dialog.PageSetup.Margins",
                          "kind":  "dialog",
                          "png":  "dialog.PageSetup.Margins.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Fresh current-source Avalonia targeted Margins tab capture in Ubuntu 24.04 Docker/Xvfb on 2026-08-03 with WPF labels and grid geometry."
                      },
                      {
                          "id":  "dialog.PageSetup.HeaderFooter",
                          "kind":  "dialog",
                          "png":  "dialog.PageSetup.HeaderFooter.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Fresh current-source Avalonia targeted Header/Footer tab capture in Ubuntu 24.04 Docker/Xvfb on 2026-08-03."
                      },
                      {
                          "id":  "dialog.PageSetup.Sheet",
@@ -153,10 +153,10 @@
                          "png":  "dialog.PageSetup.Sheet.png",
                          "captured":  true,
                          "evidenceSource":  "focused-current-avalonia-parity-capture",
-                         "recaptureStatus":  "fresh-linux-docker-focused-capture-page-setup-sheet-wave22-2026-07-27",
+                         "recaptureStatus":  "fresh-linux-docker-focused-capture-page-setup-wave120-2026-08-03",
                          "expectedWidth":  600,
                          "expectedHeight":  560,
-                         "note":  "Fresh focused capture from merged FreeX Avalonia source in Ubuntu 24.04 Docker/Xvfb on 2026-07-27. The Wave 22 Sheet tab uses the WPF three-column control order, restores range-picker buttons, removes the unnecessary vertical scrollbar, and retains the shared 600x560 dialog size at 96 DPI."
+                         "note":  "Fresh current-source Avalonia targeted Sheet tab capture in Ubuntu 24.04 Docker/Xvfb on 2026-08-03 using the shared parity workbook fixture and 600x560 client frame."
                      },
                      {
                          "id":  "dialog.HeaderFooterDialog",

@@ -182,35 +182,35 @@
                          "kind":  "dialog",
                          "png":  "dialog.PageSetup.png",
                          "captured":  true,
-                         "note":  "Promoted from FREEX_PAGE_LAYOUT_SETUP_TOUR page-setup-dialog capture"
+                         "note":  "Fresh current-source WPF targeted capture on 2026-08-03 at the shared 600x560 client frame."
                      },
                      {
                          "id":  "dialog.PageSetup.Page",
                          "kind":  "dialog",
                          "png":  "dialog.PageSetup.Page.png",
                          "captured":  true,
-                         "note":  "Refreshed from FREEX_PAGE_LAYOUT_SETUP_TOUR page-setup-dialog-page-tab capture"
+                         "note":  "Fresh current-source WPF targeted Page tab capture on 2026-08-03 at the shared 600x560 client frame."
                      },
                      {
                          "id":  "dialog.PageSetup.Margins",
                          "kind":  "dialog",
                          "png":  "dialog.PageSetup.Margins.png",
                          "captured":  true,
-                         "note":  "Refreshed from FREEX_PAGE_LAYOUT_SETUP_TOUR page-setup-dialog-margins-tab capture"
+                         "note":  "Fresh current-source WPF targeted Margins tab capture on 2026-08-03 with separate left, right, top, bottom, header, and footer fields."
                      },
                      {
                          "id":  "dialog.PageSetup.HeaderFooter",
                          "kind":  "dialog",
                          "png":  "dialog.PageSetup.HeaderFooter.png",
                          "captured":  true,
-                         "note":  "Fresh same-state capture after shared ParityDemoWorkbookFactory seeding; 600x560 client-frame capture"
+                         "note":  "Fresh current-source WPF targeted Header/Footer tab capture on 2026-08-03 at the shared 600x560 client frame."
                      },
                      {
                          "id":  "dialog.PageSetup.Sheet",
                          "kind":  "dialog",
                          "png":  "dialog.PageSetup.Sheet.png",
                          "captured":  true,
-                         "note":  "Refreshed from FREEX_PAGE_LAYOUT_SETUP_TOUR page-setup-dialog-sheet-tab-print-titles capture"
+                         "note":  "Fresh current-source WPF targeted Sheet tab capture on 2026-08-03 using the shared parity workbook fixture."
                      },
                      {
                          "id":  "dialog.HeaderFooterDialog",
