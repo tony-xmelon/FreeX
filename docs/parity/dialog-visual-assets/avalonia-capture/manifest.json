@@ -341,7 +341,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.AddWatch.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Fresh current-source Wave126 Avalonia capture from Ubuntu 24.04 Docker/Xvfb via --parity-capture --parity-capture-surface dialog.AddWatch on 2026-08-03; shared AddWatchDialogPlanner.ParitySelectedRangeText renders Sheet1!$B$2 and StripDisplayMnemonic renders Selected range:; paired 360x170 evidence"
                      },
                      {
                          "id":  "dialog.OpenWorkbook",

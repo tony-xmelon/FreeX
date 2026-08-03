@@ -32,8 +32,8 @@ Sources:
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
 | Paired dimension mismatches (scale-aware logical units) | 0 |
-| Raw PNG pixel dimension mismatches | 24 |
-| Raw PNG mismatches normalized by capture DPI | 24 |
+| Raw PNG pixel dimension mismatches | 23 |
+| Raw PNG mismatches normalized by capture DPI | 23 |
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
 | Policy-accepted native/control differences | 0 |
@@ -62,7 +62,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.AddWatch | 360x170 | 360x170 | 540x255 px @ 144 DPI vs 360x170 px @ 96 DPI |  |  | 0.088 | 0.054 | 0.000 | 0.033 |
 | dialog.FormatCells.Alignment | 620x540 | 620x540 | 620x540 px @ 96 DPI vs 620x540 px @ 96 DPI |  |  | 0.087 | 0.015 | 0.006 | 0.065 |
 | dialog.CreateTable | 360x190 | 360x190 | 540x285 px @ 144 DPI vs 360x190 px @ 96 DPI |  |  | 0.086 | 0.040 | 0.004 | 0.041 |
 | dialog.About | 560x420 | 560x420 | 840x630 px @ 144 DPI vs 560x420 px @ 96 DPI |  |  | 0.085 | 0.055 | 0.009 | 0.020 |
@@ -72,6 +71,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.Sparkline | 380x280 | 380x280 | 380x280 px @ 96 DPI vs 380x280 px @ 96 DPI |  |  | 0.077 | 0.054 | 0.001 | 0.022 |
 | dialog.SelectDataSource | 620x500 | 620x500 | 930x750 px @ 144 DPI vs 620x500 px @ 96 DPI |  |  | 0.075 | 0.036 | 0.006 | 0.033 |
 | dialog.ConditionalFormatManage | 560x420 | 560x420 | 840x630 px @ 144 DPI vs 560x420 px @ 96 DPI |  |  | 0.074 | 0.045 | 0.000 | 0.028 |
+| dialog.ChangeChartType | 640x390 | 640x390 | 960x585 px @ 144 DPI vs 640x390 px @ 96 DPI |  |  | 0.070 | 0.036 | 0.008 | 0.025 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -91,7 +91,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | --- | --- | ---: | ---: | --- | --- | ---: | ---: | --- | --- | ---: |
 | dialog.About | dialog.About.png | 560x420 | 840x630 px @ 144 DPI | True | dialog.About.png | 560x420 | 560x420 px @ 96 DPI | True | True | 0.085 |
 | dialog.AccessibilityChecker | dialog.AccessibilityChecker.png | 360x520 | 360x520 px @ 96 DPI | True | dialog.AccessibilityChecker.png | 360x520 | 360x520 px @ 96 DPI | True | True | 0.084 |
-| dialog.AddWatch | dialog.AddWatch.png | 360x170 | 540x255 px @ 144 DPI | True | dialog.AddWatch.png | 360x170 | 360x170 px @ 96 DPI | True | True | 0.088 |
+| dialog.AddWatch | dialog.AddWatch.png | 360x170 | 360x170 px @ 96 DPI | True | dialog.AddWatch.png | 360x170 | 360x170 px @ 96 DPI | True | True | 0.036 |
 | dialog.AdvancedFilter | dialog.AdvancedFilter.png | 420x340 | 630x510 px @ 144 DPI | True | dialog.AdvancedFilter.png | 420x340 | 420x340 px @ 96 DPI | True | True | 0.057 |
 | dialog.AllowEditRanges | dialog.AllowEditRanges.png | 430x420 | 430x420 px @ 96 DPI | True | dialog.AllowEditRanges.png | 430x420 | 430x420 px @ 96 DPI | True | True | 0.079 |
 | dialog.AutoFilter | dialog.AutoFilter.png | 312x436.689 | 468x655 px @ 144 DPI | True | dialog.AutoFilter.png | 312x437 | 312x437 px @ 96 DPI | True | True | 0.054 |

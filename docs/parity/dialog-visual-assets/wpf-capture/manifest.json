@@ -484,7 +484,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.AddWatch.png",
                          "captured":  true,
-                         "note":  "Promoted from FREEX_FORMULA_DIAGNOSTICS_TOUR add-watch dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                         "note":  "Fresh current-source Wave126 WPF capture from FreeX.App.Host --parity-capture on 2026-08-03; AddWatchDialogPlanner.ParitySelectedRangeText renders Sheet1!$B$2 and the WPF mnemonic-aware Label renders Selected range:; paired 360x170 evidence replaces stale B2/540x255 content"
                      },
                      {
                          "id":  "dialog.AdvancedFilter",
