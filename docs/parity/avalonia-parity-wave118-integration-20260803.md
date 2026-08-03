@@ -41,8 +41,13 @@ Focused parent-owned verification passed 37 tests with zero failures:
 - FreeP host cycle2/package boundary: 10 passed.
 - FreeP presentation cycle2 behavior: 2 passed.
 
-Generated-document, repository-preflight, full Release build, and default-suite
-results are recorded by the final integration commit and push gate.
+Generated-document checks and repository preflight passed. `FreeX.slnx` and
+`FreeX.DefaultTests.slnx` both built in Release with zero warnings and zero
+errors. The default solution contains 36,172 tests: 36,038 passed and 134 were
+skipped after retrying the sole transient failure. The first run's Windows
+clipboard assertion read an empty system clipboard; the exact test then passed
+in isolation, and its complete 1,502-test host-logic assembly passed with 1,498
+executed and 4 skipped. No product or Wave118 test remained failing.
 
 ## Honest Residuals
 
