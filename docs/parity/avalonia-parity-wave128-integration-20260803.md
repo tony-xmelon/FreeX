@@ -41,8 +41,13 @@ Date: 2026-08-03
   8 Avalonia parity tests.
 - The combined dialog visual summary and cross-app dashboard were regenerated
   after all three commits and their check modes passed.
-- Final repository preflight, Release build, and serial default non-UI test lane
-  are recorded in the integration commit that follows this note.
+- Final repository preflight passed, and the Release solution build completed
+  with zero warnings and zero errors.
+- The serial default non-UI lane produced 21 TRX files covering 36,306 tests.
+  It initially exposed one stale Create Table source guard and one transient
+  clipboard-isolation failure. After updating the guard, both affected
+  assemblies passed in full: 2,020 Avalonia tests and 1,498 Host Logic tests,
+  with four intentional skips and no remaining failures.
 
 ## Residuals
 
