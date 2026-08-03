@@ -276,6 +276,10 @@ paint the resulting bands beneath the high/low stems. Focused package, planner, 
 renderer build lanes cover the line and stock paths; this closes a chart-family semantic gap
 without broad visual calibration.
 
+Waterfall `c:showConnectorLines` is now retained as an explicit model option, round-tripped
+including `val="0"`, and consumed by the shared planner and both renderers as horizontal
+connectors between consecutive cumulative bars.
+
 ## What remains
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
