@@ -1,7 +1,7 @@
 # Avalonia Parity Wave125: FreeW Legal Notices
 
-Date: 2026-08-03  
-Scope: FreeW Legal Notices, four long-document tabs  
+Date: 2026-08-03
+Scope: FreeW Legal Notices, four long-document tabs
 Decision: documentation-only closeout; no product source change retained.
 
 ## Diagnosis
