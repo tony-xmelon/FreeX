@@ -161,21 +161,21 @@
                          "kind":  "dialog",
                          "png":  "dialog.FindReplace.png",
                          "captured":  true,
-                         "note":  "Captured from FreeX.App.Host --parity-capture Find/Replace default tab surface"
+                         "note":  "Fresh current-source WPF targeted capture on 2026-08-03 at the shared 720x430 client frame."
                      },
                      {
                          "id":  "dialog.FindReplace.Find",
                          "kind":  "dialog",
                          "png":  "dialog.FindReplace.Find.png",
                          "captured":  true,
-                         "note":  "Captured from FreeX.App.Host --parity-capture Find/Replace Find tab surface"
+                         "note":  "Fresh current-source WPF targeted capture on 2026-08-03 at the shared 720x430 client frame."
                      },
                      {
                          "id":  "dialog.FindReplace.Replace",
                          "kind":  "dialog",
                          "png":  "dialog.FindReplace.Replace.png",
                          "captured":  true,
-                         "note":  "Captured from FreeX.App.Host --parity-capture Find/Replace Replace tab surface"
+                         "note":  "Fresh current-source WPF targeted capture on 2026-08-03 at the shared 720x430 client frame."
                      },
                      {
                          "id":  "dialog.PageSetup",

@@ -170,21 +170,21 @@
                          "kind":  "dialog",
                          "png":  "dialog.FindReplace.png",
                          "captured":  true,
-                         "note":  "Recaptured from current origin/main Avalonia source in Linux Docker on 2026-07-24; exact-size nonblank evidence"
+                         "note":  "Fresh current-source Avalonia capture in Ubuntu 24.04 Docker/Xvfb on 2026-08-03 at the shared 720x430 client frame; nonblank evidence after WPF-authoritative 74px Find / 108px Replace tab-host sizing."
                      },
                      {
                          "id":  "dialog.FindReplace.Find",
                          "kind":  "dialog",
                          "png":  "dialog.FindReplace.Find.png",
                          "captured":  true,
-                         "note":  "Recaptured from current origin/main Avalonia source in Linux Docker on 2026-07-24; exact-size nonblank evidence"
+                         "note":  "Fresh current-source Avalonia capture in Ubuntu 24.04 Docker/Xvfb on 2026-08-03 at the shared 720x430 client frame; nonblank evidence after WPF-authoritative 74px Find / 108px Replace tab-host sizing."
                      },
                      {
                          "id":  "dialog.FindReplace.Replace",
                          "kind":  "dialog",
                          "png":  "dialog.FindReplace.Replace.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Fresh current-source Avalonia capture in Ubuntu 24.04 Docker/Xvfb on 2026-08-03 at the shared 720x430 client frame; nonblank evidence after WPF-authoritative 74px Find / 108px Replace tab-host sizing."
                      },
                      {
                          "id":  "dialog.TextToColumns",

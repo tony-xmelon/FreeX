@@ -62,8 +62,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.FindReplace | 720x430 | 720x430 | 720x430 px @ 96 DPI vs 720x430 px @ 96 DPI |  |  | 0.095 | 0.015 | 0.005 | 0.075 |
-| dialog.FindReplace.Find | 720x430 | 720x430 | 720x430 px @ 96 DPI vs 720x430 px @ 96 DPI |  |  | 0.095 | 0.015 | 0.005 | 0.075 |
 | dialog.Zoom | 300x240 | 300x240 | 450x360 px @ 144 DPI vs 300x240 px @ 96 DPI |  |  | 0.093 | 0.034 | 0.015 | 0.045 |
 | dialog.PageSetup | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 96 DPI |  |  | 0.091 | 0.025 | 0.007 | 0.059 |
 | dialog.PageSetup.Page | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 96 DPI |  |  | 0.091 | 0.025 | 0.007 | 0.059 |
@@ -72,6 +70,8 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.TextToColumns | 500x430 | 500x430 | 750x645 px @ 144 DPI vs 500x430 px @ 96 DPI |  |  | 0.089 | 0.068 | 0.009 | 0.012 |
 | dialog.GoalSeekStatus | 380x190 | 380x190 | 380x190 px @ 96 DPI vs 380x190 px @ 96 DPI |  |  | 0.089 | 0.029 | 0.012 | 0.047 |
 | dialog.AddWatch | 360x170 | 360x170 | 540x255 px @ 144 DPI vs 360x170 px @ 96 DPI |  |  | 0.088 | 0.054 | 0.000 | 0.033 |
+| dialog.CreateTable | 360x190 | 360x190 | 540x285 px @ 144 DPI vs 360x190 px @ 96 DPI |  |  | 0.086 | 0.040 | 0.004 | 0.041 |
+| dialog.About | 560x420 | 560x420 | 840x630 px @ 144 DPI vs 560x420 px @ 96 DPI |  |  | 0.085 | 0.055 | 0.009 | 0.020 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -106,9 +106,9 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.ErrorChecking | dialog.ErrorChecking.png | 720x420 | 720x420 px @ 96 DPI | True | dialog.ErrorChecking.png | 720x420 | 720x420 px @ 96 DPI | True | True | 0.047 |
 | dialog.EvaluateFormula | dialog.EvaluateFormula.png | 600x360 | 900x540 px @ 144 DPI | True | dialog.EvaluateFormula.png | 600x360 | 600x360 px @ 96 DPI | True | True | 0.090 |
 | dialog.ExportOptions | dialog.ExportOptions.png | 430x552 | 430x552 px @ 96 DPI | True | dialog.ExportOptions.png | 430x552 | 430x552 px @ 96 DPI | True | True | 0.058 |
-| dialog.FindReplace | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.095 |
-| dialog.FindReplace.Find | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.095 |
-| dialog.FindReplace.Replace | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.054 |
+| dialog.FindReplace | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.054 |
+| dialog.FindReplace.Find | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.054 |
+| dialog.FindReplace.Replace | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.053 |
 | dialog.ForecastSheet | dialog.ForecastSheet.png | 320x150 | 480x225 px @ 144 DPI | True | dialog.ForecastSheet.png | 320x150 | 320x150 px @ 96 DPI | True | True | 0.057 |
 | dialog.FormatCells | dialog.FormatCells.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.029 |
 | dialog.FormatCells.Alignment | dialog.FormatCells.Alignment.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Alignment.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.090 |
