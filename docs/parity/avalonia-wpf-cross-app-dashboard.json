@@ -63,8 +63,8 @@
                                                   "wpfManifestIdsWithoutAvaloniaPair":  0,
                                                   "additionalAvaloniaCapturedSurfaceIds":  0,
                                                   "pairedDimensionMismatches":  0,
-                                                  "pairedRawPixelDimensionMismatches":  26,
-                                                  "pairedCaptureScaleNormalizedDimensionMatches":  26,
+                                                  "pairedRawPixelDimensionMismatches":  25,
+                                                  "pairedCaptureScaleNormalizedDimensionMatches":  25,
                                                   "pairedExpectedSizeMismatches":  0,
                                                   "stalePromotedExpectedSizeEvidence":  0,
                                                   "contentVisualDimensionMismatchRows":  0,
@@ -75,7 +75,7 @@
                                                   "visualReviewTriageThreshold":  0.4,
                                                   "visualReviewTriageThresholdRationale":  "This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.",
                                                   "visualReviewCandidateCount":  0,
-                                                  "highestTriageScore":  0.089608,
+                                                  "highestTriageScore":  0.089042,
                                                   "visualReviewCandidateSurfaceIds":  [
 
                                                                                       ],
@@ -101,14 +101,14 @@
                                                                        "avaloniaManifestSurfaceCount":  94,
                                                                        "pairedManifestSurfaceCount":  94,
                                                                        "nonBlankPngFailures":  0,
-                                                                       "rawPngDimensionMismatchRows":  26,
-                                                                       "dpiNormalizedDimensionMatches":  26
+                                                                       "rawPngDimensionMismatchRows":  25,
+                                                                       "dpiNormalizedDimensionMatches":  25
                                                                    },
                                               "pairedEvidence":  {
                                                                      "pairedSurfaceCount":  94,
                                                                      "scaleAwareDimensionMismatchCount":  0,
                                                                      "unresolvedVisualReviewCandidateCount":  0,
-                                                                     "highestTriageScore":  0.089608,
+                                                                     "highestTriageScore":  0.089042,
                                                                      "evidenceClassification":  "paired WPF/Avalonia app-owned dialog screenshots and manifest metadata; not a visual-parity result"
                                                                  },
                                               "physicalEvidence":  {
@@ -129,7 +129,7 @@
                                                                                        },
                                               "claimBoundary":  "Coverage, manifest pairing, and DPI-normalized size comparability only; do not read these fields as visual parity."
                                           },
-                     "nextSlice":  "Command/dialog route coverage is complete for the generated inputs: all 0 pseudo-gallery rows are catalog-backed in classifier evidence (0 conditional-format rows over 38 runtime catalog items, 0 font/border rows, and 0 accounting-symbol rows), and dialog screenshot evidence has 94 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. This is coverage and size-comparability evidence, not visual parity. The paired screenshots retain 0 unresolved high-delta visual review candidates at triage score \u003e= 0.4 (highest 0.089608); keep those candidates separate from 0 scale-aware dimension mismatch rows and 26 raw PNG pixel dimension mismatches."
+                     "nextSlice":  "Command/dialog route coverage is complete for the generated inputs: all 0 pseudo-gallery rows are catalog-backed in classifier evidence (0 conditional-format rows over 38 runtime catalog items, 0 font/border rows, and 0 accounting-symbol rows), and dialog screenshot evidence has 94 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. This is coverage and size-comparability evidence, not visual parity. The paired screenshots retain 0 unresolved high-delta visual review candidates at triage score \u003e= 0.4 (highest 0.089042); keep those candidates separate from 0 scale-aware dimension mismatch rows and 25 raw PNG pixel dimension mismatches."
                  },
                  {
                      "app":  "FreeW",

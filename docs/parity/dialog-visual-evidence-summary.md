@@ -32,8 +32,8 @@ Sources:
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
 | Paired dimension mismatches (scale-aware logical units) | 0 |
-| Raw PNG pixel dimension mismatches | 26 |
-| Raw PNG mismatches normalized by capture DPI | 26 |
+| Raw PNG pixel dimension mismatches | 25 |
+| Raw PNG mismatches normalized by capture DPI | 25 |
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
 | Policy-accepted native/control differences | 0 |
@@ -62,7 +62,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.EvaluateFormula | 600x360 | 600x360 | 900x540 px @ 144 DPI vs 600x360 px @ 96 DPI |  |  | 0.090 | 0.030 | 0.007 | 0.052 |
 | dialog.TextToColumns | 500x430 | 500x430 | 750x645 px @ 144 DPI vs 500x430 px @ 96 DPI |  |  | 0.089 | 0.068 | 0.009 | 0.012 |
 | dialog.GoalSeekStatus | 380x190 | 380x190 | 380x190 px @ 96 DPI vs 380x190 px @ 96 DPI |  |  | 0.089 | 0.029 | 0.012 | 0.047 |
 | dialog.AddWatch | 360x170 | 360x170 | 540x255 px @ 144 DPI vs 360x170 px @ 96 DPI |  |  | 0.088 | 0.054 | 0.000 | 0.033 |
@@ -72,6 +71,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.AccessibilityChecker | 360x520 | 360x520 | 360x520 px @ 96 DPI vs 360x520 px @ 96 DPI |  |  | 0.084 | 0.055 | 0.009 | 0.021 |
 | dialog.ShapeGradient | 500x300 | 500x300 | 500x300 px @ 96 DPI vs 500x300 px @ 96 DPI |  |  | 0.082 | 0.055 | 0.022 | 0.004 |
 | dialog.AllowEditRanges | 430x420 | 430x420 | 430x420 px @ 96 DPI vs 430x420 px @ 96 DPI |  |  | 0.079 | 0.022 | 0.014 | 0.042 |
+| dialog.Sparkline | 380x280 | 380x280 | 380x280 px @ 96 DPI vs 380x280 px @ 96 DPI |  |  | 0.077 | 0.054 | 0.001 | 0.022 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -104,7 +104,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.DataTable | dialog.DataTable.png | 360x210 | 540x315 px @ 144 DPI | True | dialog.DataTable.png | 360x210 | 360x210 px @ 96 DPI | True | True | 0.068 |
 | dialog.DataValidation | dialog.DataValidation.png | 520x560 | 780x840 px @ 144 DPI | True | dialog.DataValidation.png | 520x560 | 520x560 px @ 96 DPI | True | True | 0.059 |
 | dialog.ErrorChecking | dialog.ErrorChecking.png | 720x420 | 720x420 px @ 96 DPI | True | dialog.ErrorChecking.png | 720x420 | 720x420 px @ 96 DPI | True | True | 0.047 |
-| dialog.EvaluateFormula | dialog.EvaluateFormula.png | 600x360 | 900x540 px @ 144 DPI | True | dialog.EvaluateFormula.png | 600x360 | 600x360 px @ 96 DPI | True | True | 0.090 |
+| dialog.EvaluateFormula | dialog.EvaluateFormula.png | 600x360 | 600x360 px @ 96 DPI | True | dialog.EvaluateFormula.png | 600x360 | 600x360 px @ 96 DPI | True | True | 0.025 |
 | dialog.ExportOptions | dialog.ExportOptions.png | 430x552 | 430x552 px @ 96 DPI | True | dialog.ExportOptions.png | 430x552 | 430x552 px @ 96 DPI | True | True | 0.058 |
 | dialog.FindReplace | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.054 |
 | dialog.FindReplace.Find | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Find.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.054 |
