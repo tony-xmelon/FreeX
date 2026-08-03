@@ -485,7 +485,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.AccessibilityChecker.png",
                          "captured":  true,
-                         "note":  "Captured from FreeX.App.Host --parity-capture-target dialog.AccessibilityChecker planner-backed direct surface at 360x520"
+                         "evidenceSource":  "fresh-current-source-wpf-targeted-parity-capture-wave131-2026-08-03",
+                         "recaptureStatus":  "fresh-windows-current-source-targeted-capture-accessibility-wave131-2026-08-03",
+                         "expectedWidth":  360,
+                         "expectedHeight":  520,
+                         "note":  "Fresh current-source WPF capture from FreeX.App.Host --parity-capture --parity-capture-target dialog.AccessibilityChecker on 2026-08-03; planner-backed direct surface at 360x520 px and 96 DPI, nonblank."
                      },
                      {
                          "id":  "dialog.AddWatch",

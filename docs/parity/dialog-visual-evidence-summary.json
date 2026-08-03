@@ -126,11 +126,17 @@
                                            "opaqueRatio":  1,
                                            "nonBackgroundRatio":  0.103985,
                                            "isNonBlank":  true,
-                                           "meanLuma":  245.383121
+                                           "meanLuma":  245.383121,
+                                           "manifestNote":  "Fresh current-source WPF capture from FreeX.App.Host --parity-capture --parity-capture-target dialog.AccessibilityChecker on 2026-08-03; planner-backed direct surface at 360x520 px and 96 DPI, nonblank.",
+                                           "evidenceSource":  "fresh-current-source-wpf-targeted-parity-capture-wave131-2026-08-03",
+                                           "sourcePng":  null,
+                                           "recaptureStatus":  "fresh-windows-current-source-targeted-capture-accessibility-wave131-2026-08-03",
+                                           "expectedWidth":  360,
+                                           "expectedHeight":  520
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.AccessibilityChecker.png",
-                                                "fileBytes":  37563,
+                                                "fileBytes":  37532,
                                                 "width":  360,
                                                 "height":  520,
                                                 "dpiX":  96,
@@ -138,11 +144,17 @@
                                                 "logicalWidth":  360,
                                                 "logicalHeight":  520,
                                                 "pixels":  187200,
-                                                "distinctColors":  362,
+                                                "distinctColors":  358,
                                                 "opaqueRatio":  1,
                                                 "nonBackgroundRatio":  0.124797,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  243.16273
+                                                "meanLuma":  245.648067,
+                                                "manifestNote":  "Fresh current-source Avalonia production capture from Ubuntu 24.04 Docker/Xvfb via tools/Run-LinuxParityCapture.ps1 on 2026-08-03; app exit 0, capture_validated true, nonblank 360x520 PNG at 96 DPI after the Wave131 selected-row parity fix.",
+                                                "evidenceSource":  "fresh-current-source-avalonia-linux-docker-xvfb-capture-wave131-2026-08-03",
+                                                "sourcePng":  null,
+                                                "recaptureStatus":  "fresh-linux-docker-xvfb-targeted-capture-accessibility-wave131-2026-08-03",
+                                                "expectedWidth":  360,
+                                                "expectedHeight":  520
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -157,10 +169,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.054555,
-                                                  "lumaDelta":  0.008707,
+                                                  "sampleMeanDelta":  0.044489,
+                                                  "lumaDelta":  0.001039,
                                                   "nonBackgroundDelta":  0.020812,
-                                                  "triageScore":  0.084354,
+                                                  "triageScore":  0.066619,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6402,14 +6414,6 @@
                                   "nonBackgroundDelta":  0.021484
                               },
                               {
-                                  "id":  "dialog.AccessibilityChecker",
-                                  "triageScore":  0.084354,
-                                  "sampleMeanDelta":  0.054555,
-                                  "dimension":  "360.05x520.073 vs 360x520 logical; 360x520 vs 360x520 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.020812
-                              },
-                              {
                                   "id":  "dialog.ShapeGradient",
                                   "triageScore":  0.082369,
                                   "sampleMeanDelta":  0.055031,
@@ -6472,6 +6476,14 @@
                                   "dimension":  "560.029x300.015 vs 560x300 logical; 840x450 vs 560x300 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.029813
+                              },
+                              {
+                                  "id":  "dialog.DataTable",
+                                  "triageScore":  0.067528,
+                                  "sampleMeanDelta":  0.019808,
+                                  "dimension":  "360.019x210.011 vs 360x210 logical; 540x315 vs 360x210 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.03958
                               }
                           ],
     "visualReviewCandidates":  [

@@ -612,7 +612,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.AccessibilityChecker.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-current-source-avalonia-linux-docker-xvfb-capture-wave131-2026-08-03",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-targeted-capture-accessibility-wave131-2026-08-03",
+                         "expectedWidth":  360,
+                         "expectedHeight":  520,
+                         "note":  "Fresh current-source Avalonia production capture from Ubuntu 24.04 Docker/Xvfb via tools/Run-LinuxParityCapture.ps1 on 2026-08-03; app exit 0, capture_validated true, nonblank 360x520 PNG at 96 DPI after the Wave131 selected-row parity fix."
                      },
                      {
                          "id":  "dialog.AllowEditRanges",
