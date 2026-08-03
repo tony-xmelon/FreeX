@@ -24,6 +24,9 @@ Date: 2026-08-03
 - FreeP Avalonia document-math-margin renderer test: 1 passed.
 - FreeW Legal Notices visual tests: 12 passed; shared metrics test: 1 passed; fresh WPF/Avalonia evidence captures completed.
 - Dialog visual summary and cross-app parity dashboard regenerated successfully.
+- Repository preflight passed.
+- `dotnet build FreeX.slnx --configuration Release` passed with zero warnings and zero errors.
+- The default non-UI lane completed TRX results for all 21 test projects: 36,270 discovered, 36,136 passed, 134 intentionally skipped/not executed, and zero failures, errors, timeouts, or aborts. The outer command reached its five-minute wrapper timeout after the last TRX completed; no worktree-scoped test process survived.
 
 ## Residuals
 
