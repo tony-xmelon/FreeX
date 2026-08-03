@@ -230,7 +230,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.GoalSeekStatus.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-current-source-avalonia-parity-capture",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-targeted-capture-goalseek-wave125-2026-08-03",
+                         "expectedWidth":  380,
+                         "expectedHeight":  190,
+                         "note":  "Fresh current-source Avalonia capture from Ubuntu 24.04 Docker/Xvfb via tools/Run-LinuxParityCapture.ps1; foreground xvfb-run app exit 0, bounded container cleanup, nonblank 380x190 PNG at 96 DPI."
                      },
                      {
                          "id":  "dialog.DataTable",

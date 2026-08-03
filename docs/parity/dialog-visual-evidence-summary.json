@@ -27,7 +27,7 @@
                     "visualReviewTriageThreshold":  0.4,
                     "visualReviewTriageThresholdRationale":  "This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.",
                     "visualReviewCandidateCount":  0,
-                    "highestTriageScore":  0.088677,
+                    "highestTriageScore":  0.087879,
                     "dimensionMismatchBuckets":  {
 
                                                  }
@@ -2004,7 +2004,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.GoalSeekStatus.png",
-                                                "fileBytes":  6179,
+                                                "fileBytes":  10037,
                                                 "width":  380,
                                                 "height":  190,
                                                 "dpiX":  96,
@@ -2012,11 +2012,17 @@
                                                 "logicalWidth":  380,
                                                 "logicalHeight":  190,
                                                 "pixels":  72200,
-                                                "distinctColors":  67,
+                                                "distinctColors":  977,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.047493,
+                                                "nonBackgroundRatio":  0.103809,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  249.115777
+                                                "meanLuma":  247.92872,
+                                                "manifestNote":  "Fresh current-source Avalonia capture from Ubuntu 24.04 Docker/Xvfb via tools/Run-LinuxParityCapture.ps1; foreground xvfb-run app exit 0, bounded container cleanup, nonblank 380x190 PNG at 96 DPI.",
+                                                "evidenceSource":  "fresh-current-source-avalonia-parity-capture",
+                                                "sourcePng":  null,
+                                                "recaptureStatus":  "fresh-linux-docker-xvfb-targeted-capture-goalseek-wave125-2026-08-03",
+                                                "expectedWidth":  380,
+                                                "expectedHeight":  190
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -2031,10 +2037,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.029102,
-                                                  "lumaDelta":  0.012011,
-                                                  "nonBackgroundDelta":  0.047285,
-                                                  "triageScore":  0.088677,
+                                                  "sampleMeanDelta":  0.019925,
+                                                  "lumaDelta":  0.007356,
+                                                  "nonBackgroundDelta":  0.00903,
+                                                  "triageScore":  0.03659,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6352,14 +6358,6 @@
                        ],
     "topPairedOutliers":  [
                               {
-                                  "id":  "dialog.GoalSeekStatus",
-                                  "triageScore":  0.088677,
-                                  "sampleMeanDelta":  0.029102,
-                                  "dimension":  "380.053x190.027 vs 380x190 logical; 380x190 vs 380x190 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.047285
-                              },
-                              {
                                   "id":  "dialog.AddWatch",
                                   "triageScore":  0.087879,
                                   "sampleMeanDelta":  0.054369,
@@ -6430,6 +6428,14 @@
                                   "dimension":  "620.032x500.026 vs 620x500 logical; 930x750 vs 620x500 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.033371
+                              },
+                              {
+                                  "id":  "dialog.ConditionalFormatManage",
+                                  "triageScore":  0.073983,
+                                  "sampleMeanDelta":  0.045425,
+                                  "dimension":  "560.029x420.022 vs 560x420 logical; 840x630 vs 560x420 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.027958
                               }
                           ],
     "visualReviewCandidates":  [
