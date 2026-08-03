@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 0,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 103
+    "workflowEvidenceRows": 104
   },
   "workflowEvidence": [
     {
@@ -1206,6 +1206,26 @@
         "freep/FreeP.App.Host.Tests/SmartArtTests.cs"
       ],
       "remainingWork": "continuousBlockProcess now uses dedicated shared compact rounded-block geometry with stable block/connector roles, regenerated drawing-cache evidence, and schema-valid PPTX round-trip coverage. Unsupported process variants still fall back to cached drawing; exact PowerPoint spacing/effects, PowerPoint-authoritative visual baselines, and broader SmartArt authoring remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.grouped-list-import-bands",
+      "area": "SmartArt grouped-list imported band-cache live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume the same shared grouped-list band, header, and child shape plan through SlideCompositor; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/avalonia-parity-wave132-freep-smartart-20260803.md"
+      ],
+      "verification": [
+        "freep/FreeP.Core.IO/PptxPackageReader.cs",
+        "freep/FreeP.App.Presentation/SmartArtLayoutEngine.cs",
+        "freep/FreeP.App.Presentation/SlideCompositor.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs",
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtDefaultLiveRendererContractTests.cs",
+        "freep/FreeP.App.Rendering.Avalonia.Tests/SmartArtDefaultLiveRendererContractTests.cs",
+        "tools/FreeP.RenderCompare.Tests/SmartArtFixtureEvidenceTests.cs"
+      ],
+      "remainingWork": "The real fixture-backed grouped-list cache grammar with two distinct empty body bands, two headers, and four child boxes is admitted to the shared live plan. Missing, duplicate, ambiguous, extra, effect-bearing, picture-bearing, or otherwise unproven grouped-list roles remain on cached drawing fallback; broader grouped-list role parity, exact PowerPoint geometry/effects, and authoritative visual baselines remain deferred."
     },
     {
       "evidenceId": "freep.smartart.basic-process",
