@@ -23,6 +23,12 @@ The Avalonia evidence was captured from the current source in Linux
 Docker/Xvfb at the same 560x420 size and also passes `app_exit=0`,
 `capture_validated=true`, nonblank, and dimension checks.
 
+Both fresh PNGs and their provenance are now promoted to the canonical
+WPF/Avalonia capture manifests. The dialog visual evidence summary was
+regenerated from those committed assets. The canonical pair is 560x420 at
+approximately 96 DPI on both sides, with zero expected-size mismatches and
+zero nonblank failures.
+
 ## Measured decisions
 
 The Avalonia wrapper keeps a named platform override:
@@ -46,6 +52,14 @@ scored `0.107744`. The shared About host therefore leaves the neutral override
 removed, preserving the WPF-matching resting button chrome without changing
 other shared dialog consumers.
 
+The truthful canonical current-source score is **0.107196** with sample mean
+delta `0.071472`, luma delta `0.013961`, and non-background delta `0.021484`.
+This is not claimed as a visual improvement over the stale `0.084615` score:
+that earlier number compared against invalid WPF evidence with an artificial
+blank lower band. The new score is the valid baseline for future visual
+tuning; the code changes here claim shared-host deduplication and corrected
+capture geometry, not a stale-baseline raster improvement.
+
 ## Verification
 
 - `FreeX.App.Avalonia.Tests` About dialog parity test: 1 passed.
@@ -57,6 +71,6 @@ other shared dialog consumers.
 ## Residuals
 
 The paired images still contain expected WPF-versus-Avalonia text rasterization
-and native scrollbar differences. The old promoted WPF About PNG remains
-untouched because it was stale; this slice records fresh current-source
-evidence without making a stale-canonical-image visual claim.
+and native scrollbar differences. The canonical PNGs now represent the fresh
+current-source pair; future visual changes should be measured against
+`0.107196` and the committed provenance, not the retired stale score.

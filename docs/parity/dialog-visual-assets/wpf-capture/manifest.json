@@ -474,7 +474,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.About.png",
                          "captured":  true,
-                         "note":  "Promoted from FREEX_HELP_ABOUT_LEGAL_TOUR about dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                         "evidenceSource":  "fresh-current-source-wpf-client-sized-about-capture-wave130-2026-08-03",
+                         "recaptureStatus":  "fresh-wpf-client-frame-capture-wave130-2026-08-03",
+                         "expectedWidth":  560,
+                         "expectedHeight":  420,
+                         "note":  "Fresh current-source WPF capture from FreeX.App.Host --parity-capture after fixing About outer-versus-client capture geometry; 560x420 client frame at approximately 96 DPI."
                      },
                      {
                          "id":  "dialog.AccessibilityChecker",

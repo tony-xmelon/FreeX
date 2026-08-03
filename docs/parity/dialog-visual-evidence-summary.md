@@ -32,8 +32,8 @@ Sources:
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
 | Paired dimension mismatches (scale-aware logical units) | 0 |
-| Raw PNG pixel dimension mismatches | 22 |
-| Raw PNG mismatches normalized by capture DPI | 22 |
+| Raw PNG pixel dimension mismatches | 21 |
+| Raw PNG mismatches normalized by capture DPI | 21 |
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
 | Policy-accepted native/control differences | 0 |
@@ -62,7 +62,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.About | 560x420 | 560x420 | 840x630 px @ 144 DPI vs 560x420 px @ 96 DPI |  |  | 0.085 | 0.055 | 0.009 | 0.020 |
+| dialog.About | 560x420 | 560x420 | 560x420 px @ 96 DPI vs 560x420 px @ 96 DPI |  |  | 0.107 | 0.071 | 0.014 | 0.021 |
 | dialog.AccessibilityChecker | 360x520 | 360x520 | 360x520 px @ 96 DPI vs 360x520 px @ 96 DPI |  |  | 0.084 | 0.055 | 0.009 | 0.021 |
 | dialog.ShapeGradient | 500x300 | 500x300 | 500x300 px @ 96 DPI vs 500x300 px @ 96 DPI |  |  | 0.082 | 0.055 | 0.022 | 0.004 |
 | dialog.AllowEditRanges | 430x420 | 430x420 | 430x420 px @ 96 DPI vs 430x420 px @ 96 DPI |  |  | 0.079 | 0.022 | 0.014 | 0.042 |
@@ -89,7 +89,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 
 | Surface id | WPF PNG | WPF logical size | WPF raw PNG | WPF nonblank | Avalonia PNG | Avalonia logical size | Avalonia raw PNG | Avalonia nonblank | Dimension match | Score |
 | --- | --- | ---: | ---: | --- | --- | ---: | ---: | --- | --- | ---: |
-| dialog.About | dialog.About.png | 560x420 | 840x630 px @ 144 DPI | True | dialog.About.png | 560x420 | 560x420 px @ 96 DPI | True | True | 0.085 |
+| dialog.About | dialog.About.png | 560x420 | 560x420 px @ 96 DPI | True | dialog.About.png | 560x420 | 560x420 px @ 96 DPI | True | True | 0.107 |
 | dialog.AccessibilityChecker | dialog.AccessibilityChecker.png | 360x520 | 360x520 px @ 96 DPI | True | dialog.AccessibilityChecker.png | 360x520 | 360x520 px @ 96 DPI | True | True | 0.084 |
 | dialog.AddWatch | dialog.AddWatch.png | 360x170 | 360x170 px @ 96 DPI | True | dialog.AddWatch.png | 360x170 | 360x170 px @ 96 DPI | True | True | 0.036 |
 | dialog.AdvancedFilter | dialog.AdvancedFilter.png | 420x340 | 630x510 px @ 144 DPI | True | dialog.AdvancedFilter.png | 420x340 | 420x340 px @ 96 DPI | True | True | 0.057 |

@@ -50,7 +50,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.About.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-current-source-avalonia-linux-docker-xvfb-about-capture-wave130-2026-08-03",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-about-capture-wave130-2026-08-03",
+                         "expectedWidth":  560,
+                         "expectedHeight":  420,
+                         "note":  "Fresh current-source Avalonia capture from Linux Docker/Xvfb via Run-LinuxParityCapture.ps1; 560x420 client frame at 96 DPI."
                      },
                      {
                          "id":  "dialog.LegalNotices",
