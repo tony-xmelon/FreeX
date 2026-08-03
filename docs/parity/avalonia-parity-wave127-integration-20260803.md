@@ -22,6 +22,9 @@ Date: 2026-08-03
 - FreeW shared action-plan test: 1 passed; WPF localization/accelerator test: 1 passed; host boundary tests: 4 passed; Avalonia Watermark tests: 3 passed.
 - FreeP parser/layout alignment tests: 3 passed; WPF renderer test: 1 passed; Avalonia renderer test: 1 passed.
 - Dialog visual summary, cross-app dashboard generation/check, and dashboard aggregation guards passed.
+- Repository preflight passed.
+- `dotnet build FreeX.slnx --configuration Release` passed with zero warnings and zero errors.
+- The default non-UI solution lane ran one project at a time to avoid the known parallel-host memory contention: 21 TRX files, 36,297 discovered, 36,163 executed and passed, 134 intentionally skipped/not executed, and zero failures, errors, timeouts, or aborts. No Wave127 test process remained.
 
 ## Residuals
 
