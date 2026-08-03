@@ -2,11 +2,12 @@
 
 ## Scope
 
-This slice adds bounded no-COM geometry evidence for PowerPoint `basicMatrix`
-and `matrix1` SmartArt imports.
+This historical note was superseded by Wave 115. The current bounded layout
+admission is for PowerPoint `basicMatrix` only; `matrix1` has no fixture/package
+evidence in this app and stays on cached fallback.
 
 The reader now classifies matrix layout IDs as `SmartArtFamily.Matrix` and
-admits only `basicMatrix`/`matrix1` into live layout. Unsupported matrix
+admits only `basicMatrix` into live layout. Unsupported matrix
 siblings keep the cached `dsp:drawing` fallback path.
 
 ## Shared Behavior
