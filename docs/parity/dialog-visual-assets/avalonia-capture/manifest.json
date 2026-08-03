@@ -50,11 +50,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.About.png",
                          "captured":  true,
-                         "evidenceSource":  "fresh-current-source-avalonia-linux-docker-xvfb-about-capture-wave130-2026-08-03",
-                         "recaptureStatus":  "fresh-linux-docker-xvfb-about-capture-wave130-2026-08-03",
+                         "evidenceSource":  "fresh-current-source-avalonia-linux-docker-xvfb-about-capture-wave134-2026-08-04",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-about-capture-wave134-2026-08-04",
                          "expectedWidth":  560,
                          "expectedHeight":  420,
-                         "note":  "Fresh current-source Avalonia capture from Linux Docker/Xvfb via Run-LinuxParityCapture.ps1; 560x420 client frame at 96 DPI."
+                         "note":  "Fresh current-source Avalonia capture from Linux Docker/Xvfb via Run-LinuxParityCapture.ps1 after Wave 134 About vertical line-box, read-only scrollbar lane, viewport, and action-button surface alignment; 560x420 client frame at 96 DPI."
                      },
                      {
                          "id":  "dialog.LegalNotices",
