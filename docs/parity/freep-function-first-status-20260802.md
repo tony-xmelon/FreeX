@@ -319,7 +319,8 @@ Chart context targeting now uses the same scene plan: right-clicking a chart tit
 axis label/title, plot area, series, or data point opens the corresponding existing formatting
 surface in both WPF and Avalonia. Data points retain exact series/category indices; chart-area,
 axis, text, and series menus route through their established target selectors rather than
-creating a second formatting model.
+creating a second formatting model. Plot-area and category/value-axis context actions now
+initialize those existing dialogs on the hit target, so the user does not have to reselect it.
 
 The current integration tip also includes concurrent FreeW table authoring and formatting
 undo slices. Those are repository progress, not a change to the FreeP command count or the
