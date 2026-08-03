@@ -32,8 +32,8 @@ Sources:
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
 | Paired dimension mismatches (scale-aware logical units) | 0 |
-| Raw PNG pixel dimension mismatches | 27 |
-| Raw PNG mismatches normalized by capture DPI | 27 |
+| Raw PNG pixel dimension mismatches | 26 |
+| Raw PNG mismatches normalized by capture DPI | 26 |
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
 | Policy-accepted native/control differences | 0 |
@@ -62,7 +62,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.Zoom | 300x240 | 300x240 | 450x360 px @ 144 DPI vs 300x240 px @ 96 DPI |  |  | 0.093 | 0.034 | 0.015 | 0.045 |
 | dialog.PageSetup | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 96 DPI |  |  | 0.091 | 0.025 | 0.007 | 0.059 |
 | dialog.PageSetup.Page | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 96 DPI |  |  | 0.091 | 0.025 | 0.007 | 0.059 |
 | dialog.FormatCells.Alignment | 620x540 | 620x540 | 620x540 px @ 96 DPI vs 620x540 px @ 96 DPI |  |  | 0.090 | 0.013 | 0.011 | 0.066 |
@@ -72,6 +71,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.AddWatch | 360x170 | 360x170 | 540x255 px @ 144 DPI vs 360x170 px @ 96 DPI |  |  | 0.088 | 0.054 | 0.000 | 0.033 |
 | dialog.CreateTable | 360x190 | 360x190 | 540x285 px @ 144 DPI vs 360x190 px @ 96 DPI |  |  | 0.086 | 0.040 | 0.004 | 0.041 |
 | dialog.About | 560x420 | 560x420 | 840x630 px @ 144 DPI vs 560x420 px @ 96 DPI |  |  | 0.085 | 0.055 | 0.009 | 0.020 |
+| dialog.AccessibilityChecker | 360x520 | 360x520 | 360x520 px @ 96 DPI vs 360x520 px @ 96 DPI |  |  | 0.084 | 0.055 | 0.009 | 0.021 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -182,7 +182,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.UnhideSheet | dialog.UnhideSheet.png | 340x160 | 510x240 px @ 144 DPI | True | dialog.UnhideSheet.png | 340x160 | 340x160 px @ 96 DPI | True | True | 0.041 |
 | dialog.WatchWindow | dialog.WatchWindow.png | 760x320 | 760x320 px @ 96 DPI | True | dialog.WatchWindow.png | 760x320 | 760x320 px @ 96 DPI | True | True | 0.065 |
 | dialog.WorkbookStatistics | dialog.WorkbookStatistics.png | 500x560 | 500x560 px @ 96 DPI | True | dialog.WorkbookStatistics.png | 500x560 | 500x560 px @ 96 DPI | True | True | 0.050 |
-| dialog.Zoom | dialog.Zoom.png | 300x240 | 450x360 px @ 144 DPI | True | dialog.Zoom.png | 300x240 | 300x240 px @ 96 DPI | True | True | 0.093 |
+| dialog.Zoom | dialog.Zoom.png | 300x240 | 300x240 px @ 96 DPI | True | dialog.Zoom.png | 300x240 | 300x240 px @ 96 DPI | True | True | 0.035 |
 
 ## Avalonia-Manifest-Only Screenshot Surfaces
 

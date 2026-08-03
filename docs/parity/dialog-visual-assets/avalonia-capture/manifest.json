@@ -364,7 +364,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.Zoom.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Fresh current-source Avalonia focused parity capture on 2026-08-03 from Ubuntu 24.04 Docker/Xvfb; complete uncropped client frame at 300x240 px and 96 DPI."
                      },
                      {
                          "id":  "dialog.CustomViews",

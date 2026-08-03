@@ -762,7 +762,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.Zoom.png",
                          "captured":  true,
-                         "note":  "Promoted from view-panes-zoom-tour committed WPF screenshot evidence (screenshots\\view-panes-zoom-tour\\freex_view_panes_zoom_dialog_custom_125.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                         "note":  "Fresh current-source WPF full parity capture on 2026-08-03; complete uncropped dialog.Zoom client frame at 300x240 px and 96 DPI."
                      }
                  ]
 }
