@@ -35,5 +35,15 @@ Date: 2026-08-03
 - FreeP Reading Order focused tests: 5 passed; both affected projects built cleanly.
 - Dialog evidence summary and cross-app dashboard generator checks passed.
 
-Repository preflight, solution build, and the default test solution are recorded
-by the integration commit that follows this note.
+## Integration Gates
+
+- Repository preflight: passed after refreshing the FreeP whole-window manifest's
+  two expected host source hashes.
+- `dotnet build FreeX.slnx --configuration Release`: passed with 0 warnings and
+  0 errors.
+- Default solution: 36,186 total, 36,050 passed, 134 skipped, and 2 Windows
+  clipboard tests failed during parallel project execution.
+- The two clipboard tests passed 2/2 when rerun in isolation.
+- The complete owning Host Logic assembly then passed serially: 1,498 passed,
+  4 skipped, 0 failed. This confirms cross-project clipboard contention rather
+  than a Wave120 product regression.
