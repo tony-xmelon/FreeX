@@ -5,8 +5,9 @@
 Basic Matrix now has a dedicated shared live-layout plan. It is not an alias
 of Grid Matrix: Basic Matrix expresses four components as quadrants belonging
 to one whole, while Grid Matrix emphasizes placement along two axes. The
-implementation admits `basicMatrix` only; no `matrix1` fixture or package
-evidence was found, so that sibling remains on cached fallback.
+implementation admits both `basicMatrix` and the native imported `matrix1`
+identity to the same bounded shared plan; `matrix1` is not aliased to Grid
+Matrix.
 
 ## Shared behavior
 
@@ -27,7 +28,8 @@ evidence was found, so that sibling remains on cached fallback.
 
 Focused presentation, WPF host/package, and Avalonia headless tests cover
 geometry, node selection, names/order, no-connector policy, cache regeneration,
-PPTX save/reopen, and shared host consumption. Microsoft documents Basic Matrix
+PPTX save/reopen, imported `matrix1` admission, and shared host consumption.
+Microsoft documents Basic Matrix
 as a four-quadrant relationship of components to a whole and publishes a Basic
 Matrix preview with a central whole marker; the whole diamond is the
 renderer-neutral approximation of that native whole role. The [Microsoft
