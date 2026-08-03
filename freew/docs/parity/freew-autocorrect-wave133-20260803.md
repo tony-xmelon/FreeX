@@ -34,7 +34,7 @@ The previous pair is the retained `before-compare` report for the rejected clipp
 - Added WPF and Avalonia functional geometry/content assertions.
 - Removed the probe-only WPF harness instrumentation; the reusable capture harness remains unchanged.
 
-## Validation and retained screenshots
+## Validation and canonical evidence
 
 - WPF focused tests: `dotnet test freew\\FreeW.App.Host.Tests\\FreeW.App.Host.Tests.csproj --configuration Release --filter FullyQualifiedName~OptionsDialogParityTests -m:1 -p:NodeReuse=false /nr:false --logger "trx;LogFileName=wave133-wpf-layout-once.trx"` passed: 4, failed: 0.
 - Avalonia focused tests: `dotnet test freew\\FreeW.App.Avalonia.Tests\\FreeW.App.Avalonia.Tests.csproj --configuration Release --filter FullyQualifiedName~OptionsDialogVisualParityTests -m:1 -p:NodeReuse=false /nr:false --logger "trx;LogFileName=wave133-avalonia-geometry-final.trx"` passed: 7, failed: 0.
@@ -42,9 +42,4 @@ The previous pair is the retained `before-compare` report for the rejected clipp
 - Fresh WPF and Avalonia captures passed content validation; semantic difference was null.
 - Final inventory and comparison freshness checks passed. The comparison generation command returned nonzero for the remaining genuine mismatch after writing the valid target row.
 
-Retained evidence:
-
-- WPF: `freew/artifacts/wave133-autocorrect-review/final-wpf6/full/wpf/wpf.options.tab-auto-correct.png`
-- Avalonia: `freew/artifacts/wave133-autocorrect-review/final-avalonia6/full/avalonia/avalonia.options.tab-auto-correct.png`
-- Comparison: `freew/artifacts/wave133-autocorrect-review/final-compare6/freew_dialog_visual_comparison.json`
-- Freshness inputs: `freew/artifacts/wave133-autocorrect-review/final-inventory6/`
+The fresh WPF and Avalonia screenshots were visually inspected before integration. Their target row and current-source freshness hashes are route-merged into the tracked `docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json`, `.md`, `.html`, and `freew_dialog_visual_freshness.json`. Disposable worker capture and probe directories are cleaned with the worker worktree.

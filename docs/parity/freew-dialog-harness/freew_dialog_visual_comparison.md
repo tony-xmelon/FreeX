@@ -134,7 +134,7 @@ Inventory scenarios: **478**. Captured WPF: **190**. Captured Avalonia: **288**.
 | `multilevel-list.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (24.2% painted) | pass (24.2% painted) | 3.27 % | 2.90 |  | heatmaps/multilevel-list.validation-error.png |
 | `options.initial` | captured/captured | **genuine-visual-mismatch** | pass (5.4% painted) | pass (5.4% painted) | 6.40 % | 4.43 |  | heatmaps/options.initial.png |
 | `options.populated` | captured/captured | **genuine-visual-mismatch** | pass (5.4% painted) | pass (5.4% painted) | 6.43 % | 4.47 |  | heatmaps/options.populated.png |
-| `options.tab-auto-correct` | captured/captured | **genuine-visual-mismatch** | pass (9.1% painted) | pass (10.0% painted) | 11.89 % | 10.06 |  | heatmaps/options.tab-auto-correct.png |
+| `options.tab-auto-correct` | captured/captured | **genuine-visual-mismatch** | pass (9.1% painted) | pass (9.2% painted) | 10.49 % | 8.71 |  | heatmaps/options.tab-auto-correct.png |
 | `options.tab-auto-format-as-you-type` | captured/captured | **genuine-visual-mismatch** | pass (6.0% painted) | pass (5.7% painted) | 10.08 % | 9.49 |  | heatmaps/options.tab-auto-format-as-you-type.png |
 | `options.tab-general` | captured/captured | **genuine-visual-mismatch** | pass (5.4% painted) | pass (5.4% painted) | 6.40 % | 4.43 |  | heatmaps/options.tab-general.png |
 | `options.tab-replace` | state-not-applicable | **state-not-applicable** |  |  |  |  |  |  |

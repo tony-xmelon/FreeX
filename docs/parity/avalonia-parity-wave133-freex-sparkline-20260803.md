@@ -10,16 +10,9 @@ Aligned the Avalonia insert-Sparkline dialog to the WPF authority's captured cli
 
 ## Fresh Evidence
 
-The WPF authority capture was produced by the owned `FreeX.App.Host.exe` process (PID 15880, exit 0) at:
+The WPF authority capture was produced by an owned `FreeX.App.Host.exe` process and exited cleanly. The integrated Avalonia frame was captured from the current Linux publish by `Run-LinuxParityCapture.ps1`; the bounded container reported `app_exit=0` and `capture_validated=true`.
 
-- `artifacts/parity/wave133-sparkline-final-wpf-owned-20260803/manifest.json`
-- `artifacts/parity/wave133-sparkline-final-wpf-owned-20260803/dialog.Sparkline.png`
-
-The Avalonia Linux Docker capture was produced by `Run-LinuxParityCapture.ps1`; the bounded container `freex-wave133-sparkline-final3-20260803` reported `app_exit=0` and `capture_validated=true`:
-
-- `artifacts/parity/wave133-sparkline-final3-avalonia-20260803/manifest.json`
-- `artifacts/parity/wave133-sparkline-final3-avalonia-20260803/dialog.Sparkline.png`
-- `artifacts/parity/wave133-sparkline-final3-20260803.json`
+The reviewed Avalonia frame is promoted to `docs/parity/dialog-visual-assets/avalonia-capture/dialog.Sparkline.png`. Its paired metrics are recorded in `docs/parity/dialog-visual-evidence-summary.json` and `.md`; worker and integration capture directories are disposable verification inputs rather than tracked evidence.
 
 Both PNGs are nonblank and exactly `380x280`; expected-size checks pass.
 
@@ -52,4 +45,4 @@ The user-supplied prior triage values were `0.053716` sample mean delta and `0.0
 
 The remaining visual delta is primarily platform rasterization and native control rendering: Avalonia reports 1016 distinct colors versus WPF's 166, with `lumaDelta=0.010391` and `nonBackgroundDelta=0.014671`. No product-owned size mismatch remains in the final evidence.
 
-All named Docker capture containers from this task exited and were removed by the bounded capture script. The owned WPF process exited with code 0. No machine-wide process termination was used, and `dotnet build-server shutdown` was intentionally not run because another session has active builds. Intermediate capture/publish directories are retained under `artifacts/parity` as local evidence; no shared or FreeW/FreeP files were edited.
+All named Docker capture containers from this task exited and were removed by the bounded capture script. The owned WPF process exited with code 0. No machine-wide process termination was used, and `dotnet build-server shutdown` was intentionally not run because another session has active builds. Intermediate capture/publish directories are cleaned after canonical promotion; no shared or FreeW/FreeP implementation files were edited.
