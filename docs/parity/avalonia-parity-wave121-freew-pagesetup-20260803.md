@@ -33,7 +33,7 @@ Fresh WPF and Avalonia harness captures cover all six Page Setup scenarios:
 
 The focused comparison improved as follows:
 
-| State | Previous changed pixels | Corrected changed pixels | Corrected mean channel delta |
+| State | Previous changed pixels | NextPage changed pixels | NextPage mean channel delta |
 | --- | ---: | ---: | ---: |
 | Initial / populated / Margins | 15.25% | 10.10% | 7.11 |
 | Validation error | 15.35% | 10.19% | 7.23 |
@@ -46,7 +46,7 @@ The retained NextPage capture timestamps are WPF PNG and manifest at
 `2026-08-03T07:09:22Z`.
 
 All six WPF captures and all six Avalonia captures passed the harness content
-gate. The corrected `tab-layout` pair now has the same authoritative
+gate. The retained NextPage `tab-layout` pair has the same authoritative
 `Section start: New page` value in both images and manifests. The remaining
 Layout delta is primarily native text antialiasing, input border rasterization,
 tab chrome, focus border, and action-button template pixels, rather than a
