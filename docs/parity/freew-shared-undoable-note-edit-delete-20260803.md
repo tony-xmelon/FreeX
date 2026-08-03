@@ -55,3 +55,15 @@ instances on undo.
 - DOCX package/reopen tests: 2/2 passed, including `w:footnoteReference` and `word/footnotes.xml`.
 - WPF editable Notes tests: 9/9 passed.
 - Avalonia footnote insertion tests: 3/3 passed.
+
+## Follow-up: table-cell note insertion
+
+- WPF ordinary table-cell paragraphs now resolve the caret to a stable model table/row/cell/paragraph
+  address and execute the shared undoable insertion path instead of mutating the FlowDocument first.
+- The shared table-cell command splits the owning formatted run at the exact text offset, creates the note,
+  and restores both the original runs and note store as one undo/redo operation.
+- DOCX verification asserts the reference remains inside `w:tc`, the note body is written to
+  `word/footnotes.xml`, and reopening preserves the marker's exact run position.
+- Wrapped/rotated table-cell visuals that do not expose a direct editable WPF paragraph retain the existing
+  fallback path; this slice does not infer coordinates through a disconnected nested FlowDocument.
+- Focused verification: model note commands 6/6, DOCX package/reopen 3/3, WPF editable Notes 10/10.
