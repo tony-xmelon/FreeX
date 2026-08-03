@@ -568,7 +568,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.EvaluateFormula.png",
                          "captured":  true,
-                         "note":  "Promoted from formula-diagnostics-tour committed WPF screenshot evidence (screenshots\\formula-diagnostics-tour\\freex_formula_diagnostics_evaluate_default.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                         "evidenceSource":  "fresh-current-source-wpf-targeted-parity-capture",
+                         "recaptureStatus":  "fresh-wpf-client-frame-capture-wave122-2026-08-03",
+                         "expectedWidth":  600,
+                         "expectedHeight":  360,
+                         "note":  "Fresh current-source WPF capture from FreeX.App.Host --parity-capture --parity-capture-target dialog.EvaluateFormula using the shared EvaluateFormulaDialogPlanner.CreateParitySummary fixture; Sheet1!D6 / =SUM(D2:D5) / 469 at 600x360 px and 96 DPI. Replaces stale B2 / =A2+A3 / 20 evidence."
                      },
                      {
                          "id":  "dialog.ForecastSheet",

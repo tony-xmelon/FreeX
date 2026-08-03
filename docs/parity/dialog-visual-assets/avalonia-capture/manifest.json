@@ -315,7 +315,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.EvaluateFormula.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-current-source-avalonia-linux-docker-xvfb-capture",
+                         "recaptureStatus":  "fresh-avalonia-client-frame-capture-wave122-2026-08-03",
+                         "expectedWidth":  600,
+                         "expectedHeight":  360,
+                         "note":  "Fresh current-source Avalonia capture from the self-contained Linux app in Ubuntu 24.04 Docker/Xvfb via --parity-capture --parity-capture-target dialog.EvaluateFormula using the shared EvaluateFormulaDialogPlanner.CreateParitySummary fixture; Sheet1!D6 / =SUM(D2:D5) / 469 at 600x360 px and 96 DPI."
                      },
                      {
                          "id":  "dialog.WatchWindow",
