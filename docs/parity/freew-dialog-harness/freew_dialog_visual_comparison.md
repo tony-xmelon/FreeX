@@ -159,9 +159,9 @@ Inventory scenarios: **478**. Captured WPF: **190**. Captured Avalonia: **288**.
 | `properties.initial` | captured/captured | **genuine-visual-mismatch** | pass (3.7% painted) | pass (2.9% painted) | 6.65 % | 4.33 | focus | heatmaps/properties.initial.png |
 | `properties.populated` | captured/captured | **genuine-visual-mismatch** | pass (3.8% painted) | pass (3.0% painted) | 6.76 % | 4.48 | focus | heatmaps/properties.populated.png |
 | `properties.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (3.8% painted) | pass (3.0% painted) | 6.78 % | 4.51 | focus | heatmaps/properties.validation-error.png |
-| `restrict-editing.initial` | captured/captured | **genuine-visual-mismatch** | pass (5.8% painted) | pass (5.0% painted) | 10.57 % | 7.31 | default-button | heatmaps/restrict-editing.initial.png |
-| `restrict-editing.populated` | captured/captured | **genuine-visual-mismatch** | pass (5.8% painted) | pass (5.0% painted) | 10.58 % | 7.32 | default-button | heatmaps/restrict-editing.populated.png |
-| `restrict-editing.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (5.8% painted) | pass (5.0% painted) | 10.61 % | 7.35 | default-button | heatmaps/restrict-editing.validation-error.png |
+| `restrict-editing.initial` | captured/captured | **genuine-visual-mismatch** | pass (5.8% painted) | pass (5.4% painted) | 5.88 % | 4.24 |  | heatmaps/restrict-editing.initial.png |
+| `restrict-editing.populated` | captured/captured | **genuine-visual-mismatch** | pass (5.8% painted) | pass (5.5% painted) | 5.90 % | 4.25 |  | heatmaps/restrict-editing.populated.png |
+| `restrict-editing.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (5.8% painted) | pass (5.5% painted) | 5.92 % | 4.28 |  | heatmaps/restrict-editing.validation-error.png |
 | `screen-clip-overlay.open` | captured/captured | **pass** | pass (17.5% painted) | pass (17.5% painted) | 0.00 % | 0.06 |  | heatmaps/screen-clip-overlay.open.png |
 | `sort.initial` | captured/captured | **genuine-visual-mismatch** | pass (5.0% painted) | pass (5.3% painted) | 8.73 % | 5.86 |  | heatmaps/sort.initial.png |
 | `sort.populated` | captured/captured | **genuine-visual-mismatch** | pass (5.1% painted) | pass (5.3% painted) | 8.78 % | 5.91 |  | heatmaps/sort.populated.png |

@@ -8457,14 +8457,14 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 35513,
-        "changedRatio": 0.10569345238095237,
-        "meanAbsoluteChannelDelta": 7.306848214285815,
-        "p95AbsoluteChannelDelta": 51,
-        "luminanceSimilarity": 0.8850272776784133,
-        "perceptualHashDistance": 10
+        "changedPixels": 19763,
+        "changedRatio": 0.05881845238095238,
+        "meanAbsoluteChannelDelta": 4.2360734126979125,
+        "p95AbsoluteChannelDelta": 17,
+        "luminanceSimilarity": 0.9093518173634079,
+        "perceptualHashDistance": 1
       },
-      "semanticDifference": "default-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/restrict-editing.initial.png",
       "note": null,
       "wpfContent": {
@@ -8493,18 +8493,18 @@
         "width": 560,
         "height": 600,
         "pixelCount": 336000,
-        "opaqueRatio": 0.9115238095238095,
-        "nearTransparentRatio": 0.08847619047619047,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.9454667746316999,
-        "distinctColorCount": 110,
+        "dominantColorRatio": 0.9404843232551936,
+        "distinctColorCount": 58,
         "luminanceRange": 223.99999999999997,
-        "contentPixelRatio": 0.04963095238095238,
+        "contentPixelRatio": 0.05444940476190476,
         "contentBounds": {
-          "x": 16,
+          "x": 14,
           "y": 18,
-          "width": 512,
-          "height": 531
+          "width": 518,
+          "height": 329
         }
       }
     },
@@ -8514,14 +8514,14 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 35561,
-        "changedRatio": 0.10583630952380953,
-        "meanAbsoluteChannelDelta": 7.322872023809625,
-        "p95AbsoluteChannelDelta": 51,
-        "luminanceSimilarity": 0.8848834312332535,
-        "perceptualHashDistance": 10
+        "changedPixels": 19811,
+        "changedRatio": 0.05896130952380953,
+        "meanAbsoluteChannelDelta": 4.252097222221722,
+        "p95AbsoluteChannelDelta": 17,
+        "luminanceSimilarity": 0.9091694404844416,
+        "perceptualHashDistance": 1
       },
-      "semanticDifference": "default-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/restrict-editing.populated.png",
       "note": null,
       "wpfContent": {
@@ -8550,18 +8550,18 @@
         "width": 560,
         "height": 600,
         "pixelCount": 336000,
-        "opaqueRatio": 0.9115238095238095,
-        "nearTransparentRatio": 0.08847619047619047,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.9453100511963223,
-        "distinctColorCount": 113,
+        "dominantColorRatio": 0.9403281738983338,
+        "distinctColorCount": 62,
         "luminanceRange": 223.99999999999997,
-        "contentPixelRatio": 0.049773809523809526,
+        "contentPixelRatio": 0.05459226190476191,
         "contentBounds": {
-          "x": 16,
+          "x": 14,
           "y": 18,
-          "width": 512,
-          "height": 531
+          "width": 518,
+          "height": 329
         }
       }
     },
@@ -8571,14 +8571,14 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 35657,
-        "changedRatio": 0.1061220238095238,
-        "meanAbsoluteChannelDelta": 7.354919642857244,
-        "p95AbsoluteChannelDelta": 51,
-        "luminanceSimilarity": 0.8845962762393959,
-        "perceptualHashDistance": 10
+        "changedPixels": 19907,
+        "changedRatio": 0.05924702380952381,
+        "meanAbsoluteChannelDelta": 4.284144841269341,
+        "p95AbsoluteChannelDelta": 17,
+        "luminanceSimilarity": 0.9088057809118688,
+        "perceptualHashDistance": 1
       },
-      "semanticDifference": "default-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/restrict-editing.validation-error.png",
       "note": null,
       "wpfContent": {
@@ -8607,18 +8607,18 @@
         "width": 560,
         "height": 600,
         "pixelCount": 336000,
-        "opaqueRatio": 0.9115238095238095,
-        "nearTransparentRatio": 0.08847619047619047,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.9449966043255669,
-        "distinctColorCount": 113,
+        "dominantColorRatio": 0.940015875184614,
+        "distinctColorCount": 62,
         "luminanceRange": 223.99999999999997,
-        "contentPixelRatio": 0.05005952380952381,
+        "contentPixelRatio": 0.05487797619047619,
         "contentBounds": {
-          "x": 16,
+          "x": 14,
           "y": 18,
-          "width": 512,
-          "height": 531
+          "width": 518,
+          "height": 329
         }
       }
     },
