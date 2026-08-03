@@ -280,6 +280,16 @@ Waterfall `c:showConnectorLines` is now retained as an explicit model option, ro
 including `val="0"`, and consumed by the shared planner and both renderers as horizontal
 connectors between consecutive cumulative bars.
 
+Imported SmartArt `matrix1` is now admitted to the same live Basic Matrix plan as the existing
+`basicMatrix` identity. The reader keeps the native layout identity, while WPF and Avalonia
+consume the shared whole-plus-four-quadrant editable composition; save/reopen and cache
+regeneration retain the live package state. This is bounded import/editability evidence for
+the native alias, not a claim of PowerPoint-identical SmartArt raster geometry.
+
+The current integration tip also includes concurrent FreeW table authoring and formatting
+undo slices. Those are repository progress, not a change to the FreeP command count or the
+FreeP visual-fidelity boundary below.
+
 ## What remains
 
 - Advanced SmartArt regeneration and style semantics beyond the current live layout catalog.
