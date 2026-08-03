@@ -126,9 +126,9 @@ Inventory scenarios: **478**. Captured WPF: **190**. Captured Avalonia: **288**.
 | `manual-hyphenation.initial` | captured/captured | **pass** | pass (5.6% painted) | pass (5.7% painted) | 2.50 % | 1.86 |  | heatmaps/manual-hyphenation.initial.png |
 | `manual-hyphenation.populated` | captured/captured | **pass** | pass (5.6% painted) | pass (5.7% painted) | 2.52 % | 1.85 |  | heatmaps/manual-hyphenation.populated.png |
 | `manual-hyphenation.validation-error` | captured/captured | **pass** | pass (5.6% painted) | pass (5.7% painted) | 2.52 % | 1.85 |  | heatmaps/manual-hyphenation.validation-error.png |
-| `mark-citation.initial` | captured/captured | **genuine-visual-mismatch** | pass (6.4% painted) | pass (4.7% painted) | 10.45 % | 4.55 |  | heatmaps/mark-citation.initial.png |
-| `mark-citation.populated` | captured/captured | **genuine-visual-mismatch** | pass (6.4% painted) | pass (4.8% painted) | 10.48 % | 4.67 |  | heatmaps/mark-citation.populated.png |
-| `mark-citation.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (6.5% painted) | pass (4.7% painted) | 10.52 % | 4.73 |  | heatmaps/mark-citation.validation-error.png |
+| `mark-citation.initial` | captured/captured | **genuine-visual-mismatch** | pass (6.4% painted) | pass (6.0% painted) | 4.54 % | 3.42 |  | heatmaps/mark-citation.initial.png |
+| `mark-citation.populated` | captured/captured | **genuine-visual-mismatch** | pass (6.4% painted) | pass (6.3% painted) | 4.85 % | 3.90 |  | heatmaps/mark-citation.populated.png |
+| `mark-citation.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (6.5% painted) | pass (6.1% painted) | 4.65 % | 3.57 |  | heatmaps/mark-citation.validation-error.png |
 | `multilevel-list.initial` | captured/captured | **pass** | pass (24.2% painted) | pass (24.0% painted) | 2.77 % | 2.45 |  | heatmaps/multilevel-list.initial.png |
 | `multilevel-list.populated` | captured/captured | **pass** | pass (24.2% painted) | pass (24.0% painted) | 2.77 % | 2.45 |  | heatmaps/multilevel-list.populated.png |
 | `multilevel-list.validation-error` | captured/captured | **pass** | pass (24.2% painted) | pass (24.1% painted) | 2.92 % | 2.65 |  | heatmaps/multilevel-list.validation-error.png |

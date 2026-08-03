@@ -6668,12 +6668,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 35106,
-        "changedRatio": 0.10448214285714286,
-        "meanAbsoluteChannelDelta": 4.550053571428383,
-        "p95AbsoluteChannelDelta": 25,
-        "luminanceSimilarity": 0.9171158447055682,
-        "perceptualHashDistance": 0
+        "changedPixels": 15242,
+        "changedRatio": 0.04536309523809524,
+        "meanAbsoluteChannelDelta": 3.4238849206348503,
+        "p95AbsoluteChannelDelta": 6.333333333333333,
+        "luminanceSimilarity": 0.9184054725450455,
+        "perceptualHashDistance": 1
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/mark-citation.initial.png",
@@ -6695,7 +6695,7 @@
           "x": 16,
           "y": 20,
           "width": 513,
-          "height": 197
+          "height": 199
         }
       },
       "avaloniaContent": {
@@ -6704,18 +6704,18 @@
         "width": 560,
         "height": 600,
         "pixelCount": 336000,
-        "opaqueRatio": 0.9115238095238095,
-        "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 0,
-        "dominantColorRatio": 0.9487416414167799,
-        "distinctColorCount": 31,
-        "luminanceRange": 223.99999999999997,
-        "contentPixelRatio": 0.046723214285714285,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 4.554356241745229E-05,
+        "dominantColorRatio": 0.9344855854624948,
+        "distinctColorCount": 33,
+        "luminanceRange": 254.99999999999997,
+        "contentPixelRatio": 0.0599375,
         "contentBounds": {
           "x": 16,
-          "y": 12,
-          "width": 512,
-          "height": 110
+          "y": 20,
+          "width": 514,
+          "height": 194
         }
       }
     },
@@ -6725,12 +6725,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 35227,
-        "changedRatio": 0.10484226190476191,
-        "meanAbsoluteChannelDelta": 4.672964285714202,
-        "p95AbsoluteChannelDelta": 25,
-        "luminanceSimilarity": 0.9149730519031382,
-        "perceptualHashDistance": 0
+        "changedPixels": 16305,
+        "changedRatio": 0.04852678571428572,
+        "meanAbsoluteChannelDelta": 3.8960406746031637,
+        "p95AbsoluteChannelDelta": 8,
+        "luminanceSimilarity": 0.9110172923702873,
+        "perceptualHashDistance": 1
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/mark-citation.populated.png",
@@ -6752,7 +6752,7 @@
           "x": 16,
           "y": 20,
           "width": 513,
-          "height": 197
+          "height": 199
         }
       },
       "avaloniaContent": {
@@ -6761,18 +6761,18 @@
         "width": 560,
         "height": 600,
         "pixelCount": 336000,
-        "opaqueRatio": 0.9115238095238095,
-        "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 0.00024161529620729286,
-        "dominantColorRatio": 0.94776865008881,
-        "distinctColorCount": 38,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0.00024073025849224782,
+        "dominantColorRatio": 0.9311088556204009,
+        "distinctColorCount": 45,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.04761011904761905,
+        "contentPixelRatio": 0.06302678571428572,
         "contentBounds": {
           "x": 16,
-          "y": 12,
-          "width": 512,
-          "height": 110
+          "y": 20,
+          "width": 514,
+          "height": 194
         }
       }
     },
@@ -6782,12 +6782,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 35342,
-        "changedRatio": 0.10518452380952381,
-        "meanAbsoluteChannelDelta": 4.733136904761774,
-        "p95AbsoluteChannelDelta": 25,
-        "luminanceSimilarity": 0.9138461550565209,
-        "perceptualHashDistance": 0
+        "changedPixels": 15623,
+        "changedRatio": 0.04649702380952381,
+        "meanAbsoluteChannelDelta": 3.572688492063406,
+        "p95AbsoluteChannelDelta": 7,
+        "luminanceSimilarity": 0.9159259492676282,
+        "perceptualHashDistance": 1
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/mark-citation.validation-error.png",
@@ -6809,7 +6809,7 @@
           "x": 16,
           "y": 20,
           "width": 513,
-          "height": 197
+          "height": 199
         }
       },
       "avaloniaContent": {
@@ -6818,18 +6818,18 @@
         "width": 560,
         "height": 600,
         "pixelCount": 336000,
-        "opaqueRatio": 0.9115238095238095,
-        "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 0.00023508515306655523,
-        "dominantColorRatio": 0.9479416988820395,
-        "distinctColorCount": 38,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0.00027976759770720696,
+        "dominantColorRatio": 0.9336885731201895,
+        "distinctColorCount": 39,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.047452380952380954,
+        "contentPixelRatio": 0.06066666666666667,
         "contentBounds": {
           "x": 16,
-          "y": 12,
-          "width": 512,
-          "height": 110
+          "y": 20,
+          "width": 514,
+          "height": 194
         }
       }
     },
