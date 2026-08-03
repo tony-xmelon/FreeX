@@ -5674,7 +5674,7 @@
                                "routeFamily":  "dialog.ShapeGradient",
                                "wpf":  {
                                            "relativePath":  "docs\\parity\\dialog-visual-assets\\wpf-capture\\dialog.ShapeGradient.png",
-                                           "fileBytes":  9972,
+                                           "fileBytes":  9963,
                                            "width":  500,
                                            "height":  300,
                                            "dpiX":  95.961197,
@@ -5682,21 +5682,21 @@
                                            "logicalWidth":  500.202,
                                            "logicalHeight":  300.121,
                                            "pixels":  150000,
-                                           "distinctColors":  408,
+                                           "distinctColors":  406,
                                            "opaqueRatio":  1,
-                                           "nonBackgroundRatio":  0.17836,
+                                           "nonBackgroundRatio":  0.17814,
                                            "isNonBlank":  true,
-                                           "meanLuma":  241.130575,
-                                           "manifestNote":  "Tightened from WPF direct parity capture by removing bottom whitespace after row 300 and preserving the ShapeGradient planner dialog area at 500x300.",
-                                           "evidenceSource":  "corrected-direct-parity-capture",
+                                           "meanLuma":  241.029571,
+                                           "manifestNote":  "Fresh current-source WPF production capture using ShapeGradientParityFixture; cropped only the established bottom whitespace after row 300 to preserve the 500x300 ShapeGradient planner area.",
+                                           "evidenceSource":  "fresh-current-source-wpf-capture-wave132-2026-08-03",
                                            "sourcePng":  null,
-                                           "recaptureStatus":  "tightened-bottom-whitespace-to-planner-height",
+                                           "recaptureStatus":  "fresh-wpf-capture-cropped-to-planner-height-wave132-2026-08-03",
                                            "expectedWidth":  500,
                                            "expectedHeight":  300
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ShapeGradient.png",
-                                                "fileBytes":  11719,
+                                                "fileBytes":  17325,
                                                 "width":  500,
                                                 "height":  300,
                                                 "dpiX":  96,
@@ -5704,11 +5704,17 @@
                                                 "logicalWidth":  500,
                                                 "logicalHeight":  300,
                                                 "pixels":  150000,
-                                                "distinctColors":  411,
+                                                "distinctColors":  2086,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.1742,
+                                                "nonBackgroundRatio":  0.186673,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  235.426428
+                                                "meanLuma":  239.597757,
+                                                "manifestNote":  "Fresh current-source Avalonia production capture from Ubuntu 24.04 Docker/Xvfb at the shared 500x300 planner size, using ShapeGradientParityFixture and the measured dialog chrome/layout correction.",
+                                                "evidenceSource":  "fresh-current-source-avalonia-linux-docker-xvfb-capture-wave132-2026-08-03",
+                                                "sourcePng":  null,
+                                                "recaptureStatus":  "fresh-linux-docker-xvfb-targeted-capture-shape-gradient-wave132-2026-08-03",
+                                                "expectedWidth":  500,
+                                                "expectedHeight":  300
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -5723,10 +5729,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000808,
-                                                  "sampleMeanDelta":  0.055031,
-                                                  "lumaDelta":  0.022369,
-                                                  "nonBackgroundDelta":  0.00416,
-                                                  "triageScore":  0.082369,
+                                                  "sampleMeanDelta":  0.040534,
+                                                  "lumaDelta":  0.005615,
+                                                  "nonBackgroundDelta":  0.008533,
+                                                  "triageScore":  0.055491,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  500,
                                                   "expectedHeight":  300,
@@ -6414,14 +6420,6 @@
                                   "nonBackgroundDelta":  0.021484
                               },
                               {
-                                  "id":  "dialog.ShapeGradient",
-                                  "triageScore":  0.082369,
-                                  "sampleMeanDelta":  0.055031,
-                                  "dimension":  "500.202x300.121 vs 500x300 logical; 500x300 vs 500x300 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.00416
-                              },
-                              {
                                   "id":  "dialog.AllowEditRanges",
                                   "triageScore":  0.078735,
                                   "sampleMeanDelta":  0.022148,
@@ -6484,6 +6482,14 @@
                                   "dimension":  "360.019x210.011 vs 360x210 logical; 540x315 vs 360x210 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.03958
+                              },
+                              {
+                                  "id":  "dialog.AccessibilityChecker",
+                                  "triageScore":  0.066619,
+                                  "sampleMeanDelta":  0.044489,
+                                  "dimension":  "360.05x520.073 vs 360x520 logical; 360x520 vs 360x520 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.020812
                               }
                           ],
     "visualReviewCandidates":  [

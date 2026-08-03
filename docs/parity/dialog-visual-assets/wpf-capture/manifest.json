@@ -704,11 +704,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.ShapeGradient.png",
                          "captured":  true,
-                         "evidenceSource":  "corrected-direct-parity-capture",
-                         "recaptureStatus":  "tightened-bottom-whitespace-to-planner-height",
+                         "evidenceSource":  "fresh-current-source-wpf-capture-wave132-2026-08-03",
+                         "recaptureStatus":  "fresh-wpf-capture-cropped-to-planner-height-wave132-2026-08-03",
                          "expectedWidth":  500,
                          "expectedHeight":  300,
-                         "note":  "Tightened from WPF direct parity capture by removing bottom whitespace after row 300 and preserving the ShapeGradient planner dialog area at 500x300."
+                         "note":  "Fresh current-source WPF production capture using ShapeGradientParityFixture; cropped only the established bottom whitespace after row 300 to preserve the 500x300 ShapeGradient planner area."
                      },
                      {
                          "id":  "dialog.Sort",

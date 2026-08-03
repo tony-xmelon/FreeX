@@ -598,7 +598,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.ShapeGradient.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-current-source-avalonia-linux-docker-xvfb-capture-wave132-2026-08-03",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-targeted-capture-shape-gradient-wave132-2026-08-03",
+                         "expectedWidth":  500,
+                         "expectedHeight":  300,
+                         "note":  "Fresh current-source Avalonia production capture from Ubuntu 24.04 Docker/Xvfb at the shared 500x300 planner size, using ShapeGradientParityFixture and the measured dialog chrome/layout correction."
                      },
                      {
                          "id":  "dialog.ConditionalFormatManage",
