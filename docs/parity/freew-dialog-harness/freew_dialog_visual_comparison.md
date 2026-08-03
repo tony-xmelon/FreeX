@@ -25,12 +25,12 @@ Inventory scenarios: **478**. Captured WPF: **190**. Captured Avalonia: **288**.
 | `bookmark-manager.initial` | captured/captured | **pass** | pass (2.8% painted) | pass (2.6% painted) | 2.88 % | 1.64 |  | heatmaps/bookmark-manager.initial.png |
 | `bookmark-manager.populated` | captured/captured | **pass** | pass (6.0% painted) | pass (6.2% painted) | 2.73 % | 2.14 |  | heatmaps/bookmark-manager.populated.png |
 | `bookmark-manager.validation-error` | captured/captured | **pass** | pass (6.0% painted) | pass (6.2% painted) | 2.73 % | 2.14 |  | heatmaps/bookmark-manager.validation-error.png |
-| `borders-and-shading.initial` | captured/captured | **genuine-visual-mismatch** | pass (13.5% painted) | pass (10.3% painted) | 11.28 % | 6.58 |  | heatmaps/borders-and-shading.initial.png |
-| `borders-and-shading.populated` | captured/captured | **genuine-visual-mismatch** | pass (13.5% painted) | pass (10.3% painted) | 11.28 % | 6.58 |  | heatmaps/borders-and-shading.populated.png |
+| `borders-and-shading.initial` | captured/captured | **genuine-visual-mismatch** | pass (13.5% painted) | pass (10.8% painted) | 11.19 % | 6.50 |  | heatmaps/borders-and-shading.initial.png |
+| `borders-and-shading.populated` | captured/captured | **genuine-visual-mismatch** | pass (13.5% painted) | pass (10.8% painted) | 11.19 % | 6.50 |  | heatmaps/borders-and-shading.populated.png |
 | `borders-and-shading.tab-borders` | state-not-applicable | **state-not-applicable** |  |  |  |  |  |  |
 | `borders-and-shading.tab-page-border` | state-not-applicable | **state-not-applicable** |  |  |  |  |  |  |
 | `borders-and-shading.tab-shading` | state-not-applicable | **state-not-applicable** |  |  |  |  |  |  |
-| `borders-and-shading.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (13.6% painted) | pass (10.4% painted) | 11.39 % | 6.74 |  | heatmaps/borders-and-shading.validation-error.png |
+| `borders-and-shading.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (13.6% painted) | pass (10.9% painted) | 11.29 % | 6.66 |  | heatmaps/borders-and-shading.validation-error.png |
 | `building-blocks-organizer.initial` | captured/captured | **genuine-visual-mismatch** | pass (3.5% painted) | pass (2.4% painted) | 6.00 % | 4.59 |  | heatmaps/building-blocks-organizer.initial.png |
 | `building-blocks-organizer.populated` | captured/captured | **genuine-visual-mismatch** | pass (3.5% painted) | pass (2.4% painted) | 6.01 % | 4.60 |  | heatmaps/building-blocks-organizer.populated.png |
 | `building-blocks-organizer.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (3.5% painted) | pass (2.3% painted) | 6.02 % | 4.63 |  | heatmaps/building-blocks-organizer.validation-error.png |
