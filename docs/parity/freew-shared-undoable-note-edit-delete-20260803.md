@@ -36,3 +36,22 @@ The all-up WPF host test project did not finish or write a TRX within its bounde
 its owned process tree was stopped. The affected focused WPF suite completed independently at 8/8.
 
 This is a functional/package parity slice; it does not require a Word COM visual baseline.
+
+## Follow-up: caret-positioned note insertion
+
+The two hosts also had different insertion semantics: Avalonia grouped note creation and marker creation
+for undo, but appended the marker at paragraph end; WPF inserted at the caret but mutated the note store
+outside its command bus. `InsertNoteCommand` now owns note creation plus marker insertion at a measured
+plain-text offset. It splits a formatted run without losing formatting and restores the original run
+instances on undo.
+
+- WPF top-level/list paragraphs use the shared command; undo/redo removes and restores the note plus
+  marker as one edit.
+- Avalonia uses the same command and now inserts at the actual caret/selection endpoint rather than at
+  paragraph end.
+- The existing WPF table-cell FlowDocument path remains as the fallback until shared table-cell paragraph
+  addressing is introduced; its prior behavior is preserved.
+- Model insertion tests: 5/5 passed.
+- DOCX package/reopen tests: 2/2 passed, including `w:footnoteReference` and `word/footnotes.xml`.
+- WPF editable Notes tests: 9/9 passed.
+- Avalonia footnote insertion tests: 3/3 passed.
