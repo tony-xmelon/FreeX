@@ -60,9 +60,9 @@ Inventory scenarios: **478**. Captured WPF: **190**. Captured Avalonia: **288**.
 | `customize-theme-colors.initial` | captured/captured | **genuine-visual-mismatch** | pass (7.9% painted) | pass (6.3% painted) | 9.64 % | 7.46 |  | heatmaps/customize-theme-colors.initial.png |
 | `customize-theme-colors.populated` | captured/captured | **genuine-visual-mismatch** | pass (7.9% painted) | pass (6.3% painted) | 9.64 % | 7.46 |  | heatmaps/customize-theme-colors.populated.png |
 | `customize-theme-colors.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (7.9% painted) | pass (6.3% painted) | 9.64 % | 7.46 |  | heatmaps/customize-theme-colors.validation-error.png |
-| `customize-theme-fonts.initial` | captured/captured | **genuine-visual-mismatch** | pass (2.8% painted) | pass (3.0% painted) | 5.56 % | 3.60 | default-button,cancel-button | heatmaps/customize-theme-fonts.initial.png |
-| `customize-theme-fonts.populated` | captured/captured | **genuine-visual-mismatch** | pass (2.8% painted) | pass (3.0% painted) | 5.56 % | 3.60 | default-button,cancel-button | heatmaps/customize-theme-fonts.populated.png |
-| `customize-theme-fonts.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (2.8% painted) | pass (3.0% painted) | 5.63 % | 3.70 | default-button,cancel-button | heatmaps/customize-theme-fonts.validation-error.png |
+| `customize-theme-fonts.initial` | captured/captured | **genuine-visual-mismatch** | pass (2.8% painted) | pass (2.9% painted) | 3.09 % | 2.16 |  | heatmaps/customize-theme-fonts.initial.png |
+| `customize-theme-fonts.populated` | captured/captured | **genuine-visual-mismatch** | pass (2.8% painted) | pass (2.9% painted) | 3.09 % | 2.16 |  | heatmaps/customize-theme-fonts.populated.png |
+| `customize-theme-fonts.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (2.8% painted) | pass (2.9% painted) | 3.16 % | 2.27 |  | heatmaps/customize-theme-fonts.validation-error.png |
 | `date-time.initial` | captured/captured | **genuine-visual-mismatch** | pass (5.8% painted) | pass (6.0% painted) | 5.98 % | 4.73 |  | heatmaps/date-time.initial.png |
 | `date-time.populated` | captured/captured | **genuine-visual-mismatch** | pass (5.8% painted) | pass (6.0% painted) | 5.98 % | 4.73 |  | heatmaps/date-time.populated.png |
 | `date-time.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (5.8% painted) | pass (6.0% painted) | 5.98 % | 4.73 |  | heatmaps/date-time.validation-error.png |
