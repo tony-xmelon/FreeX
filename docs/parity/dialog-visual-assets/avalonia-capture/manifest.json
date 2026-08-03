@@ -277,7 +277,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.CreateTable.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-direct-avalonia-parity-capture",
+                         "recaptureStatus":  "wave128-linux-docker-focused-capture-2026-08-03",
+                         "expectedWidth":  360,
+                         "expectedHeight":  190,
+                         "note":  "Fresh FreeX --parity-capture --parity-capture-surface dialog.CreateTable from current source on 2026-08-03 in Linux Docker/Xvfb; canonical 360x190 PNG at 96 DPI."
                      },
                      {
                          "id":  "dialog.RecommendedPivotTables",

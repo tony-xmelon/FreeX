@@ -537,7 +537,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.CreateTable.png",
                          "captured":  true,
-                         "note":  "Promoted from insert-tables-charts-tour committed WPF screenshot evidence (screenshots\\insert-tables-charts-tour\\freex_insert_tables_charts_create_table_dialog.png) after direct FreeX.App.Host --parity-capture emitted a transparent dialog PNG"
+                         "evidenceSource":  "fresh-current-source-wpf-targeted-parity-capture",
+                         "recaptureStatus":  "wave128-targeted-capture-2026-08-03",
+                         "expectedWidth":  360,
+                         "expectedHeight":  190,
+                         "note":  "Fresh FreeX.App.Host --parity-capture-target dialog.CreateTable from current source on 2026-08-03; canonical 360x190 PNG at 96 DPI."
                      },
                      {
                          "id":  "dialog.CustomViews",

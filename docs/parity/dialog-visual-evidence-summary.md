@@ -32,8 +32,8 @@ Sources:
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
 | Paired dimension mismatches (scale-aware logical units) | 0 |
-| Raw PNG pixel dimension mismatches | 23 |
-| Raw PNG mismatches normalized by capture DPI | 23 |
+| Raw PNG pixel dimension mismatches | 22 |
+| Raw PNG mismatches normalized by capture DPI | 22 |
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
 | Policy-accepted native/control differences | 0 |
@@ -63,7 +63,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
 | dialog.FormatCells.Alignment | 620x540 | 620x540 | 620x540 px @ 96 DPI vs 620x540 px @ 96 DPI |  |  | 0.087 | 0.015 | 0.006 | 0.065 |
-| dialog.CreateTable | 360x190 | 360x190 | 540x285 px @ 144 DPI vs 360x190 px @ 96 DPI |  |  | 0.086 | 0.040 | 0.004 | 0.041 |
 | dialog.About | 560x420 | 560x420 | 840x630 px @ 144 DPI vs 560x420 px @ 96 DPI |  |  | 0.085 | 0.055 | 0.009 | 0.020 |
 | dialog.AccessibilityChecker | 360x520 | 360x520 | 360x520 px @ 96 DPI vs 360x520 px @ 96 DPI |  |  | 0.084 | 0.055 | 0.009 | 0.021 |
 | dialog.ShapeGradient | 500x300 | 500x300 | 500x300 px @ 96 DPI vs 500x300 px @ 96 DPI |  |  | 0.082 | 0.055 | 0.022 | 0.004 |
@@ -72,6 +71,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.SelectDataSource | 620x500 | 620x500 | 930x750 px @ 144 DPI vs 620x500 px @ 96 DPI |  |  | 0.075 | 0.036 | 0.006 | 0.033 |
 | dialog.ConditionalFormatManage | 560x420 | 560x420 | 840x630 px @ 144 DPI vs 560x420 px @ 96 DPI |  |  | 0.074 | 0.045 | 0.000 | 0.028 |
 | dialog.ChangeChartType | 640x390 | 640x390 | 960x585 px @ 144 DPI vs 640x390 px @ 96 DPI |  |  | 0.070 | 0.036 | 0.008 | 0.025 |
+| dialog.PivotTableOptions.Display | 520x500 | 520x500 | 520x500 px @ 96 DPI vs 520x500 px @ 96 DPI |  |  | 0.069 | 0.045 | 0.006 | 0.019 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -99,7 +99,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.ConditionalFormatManage | dialog.ConditionalFormatManage.png | 560x420 | 840x630 px @ 144 DPI | True | dialog.ConditionalFormatManage.png | 560x420 | 560x420 px @ 96 DPI | True | True | 0.074 |
 | dialog.ConditionalFormatNewRule | dialog.ConditionalFormatNewRule.png | 634.256x334 | 634x334 px @ 96 DPI | True | dialog.ConditionalFormatNewRule.png | 634x334 | 634x334 px @ 96 DPI | True | True | 0.046 |
 | dialog.Consolidate | dialog.Consolidate.png | 380x420 | 380x420 px @ 96 DPI | True | dialog.Consolidate.png | 380x420 | 380x420 px @ 96 DPI | True | True | 0.031 |
-| dialog.CreateTable | dialog.CreateTable.png | 360x190 | 540x285 px @ 144 DPI | True | dialog.CreateTable.png | 360x190 | 360x190 px @ 96 DPI | True | True | 0.086 |
+| dialog.CreateTable | dialog.CreateTable.png | 360x190 | 360x190 px @ 96 DPI | True | dialog.CreateTable.png | 360x190 | 360x190 px @ 96 DPI | True | True | 0.045 |
 | dialog.CustomViews | dialog.CustomViews.png | 640x360 | 960x540 px @ 144 DPI | True | dialog.CustomViews.png | 640x360 | 640x360 px @ 96 DPI | True | True | 0.058 |
 | dialog.DataTable | dialog.DataTable.png | 360x210 | 540x315 px @ 144 DPI | True | dialog.DataTable.png | 360x210 | 360x210 px @ 96 DPI | True | True | 0.068 |
 | dialog.DataValidation | dialog.DataValidation.png | 520x560 | 780x840 px @ 144 DPI | True | dialog.DataValidation.png | 520x560 | 520x560 px @ 96 DPI | True | True | 0.059 |

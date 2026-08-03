@@ -63,8 +63,8 @@
                                                   "wpfManifestIdsWithoutAvaloniaPair":  0,
                                                   "additionalAvaloniaCapturedSurfaceIds":  0,
                                                   "pairedDimensionMismatches":  0,
-                                                  "pairedRawPixelDimensionMismatches":  23,
-                                                  "pairedCaptureScaleNormalizedDimensionMatches":  23,
+                                                  "pairedRawPixelDimensionMismatches":  22,
+                                                  "pairedCaptureScaleNormalizedDimensionMatches":  22,
                                                   "pairedExpectedSizeMismatches":  0,
                                                   "stalePromotedExpectedSizeEvidence":  0,
                                                   "contentVisualDimensionMismatchRows":  0,
@@ -101,8 +101,8 @@
                                                                        "avaloniaManifestSurfaceCount":  94,
                                                                        "pairedManifestSurfaceCount":  94,
                                                                        "nonBlankPngFailures":  0,
-                                                                       "rawPngDimensionMismatchRows":  23,
-                                                                       "dpiNormalizedDimensionMatches":  23
+                                                                       "rawPngDimensionMismatchRows":  22,
+                                                                       "dpiNormalizedDimensionMatches":  22
                                                                    },
                                               "pairedEvidence":  {
                                                                      "pairedSurfaceCount":  94,
@@ -129,7 +129,7 @@
                                                                                        },
                                               "claimBoundary":  "Coverage, manifest pairing, and DPI-normalized size comparability only; do not read these fields as visual parity."
                                           },
-                     "nextSlice":  "Command/dialog route coverage is complete for the generated inputs: all 0 pseudo-gallery rows are catalog-backed in classifier evidence (0 conditional-format rows over 38 runtime catalog items, 0 font/border rows, and 0 accounting-symbol rows), and dialog screenshot evidence has 94 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. This is coverage and size-comparability evidence, not visual parity. The paired screenshots retain 0 unresolved high-delta visual review candidates at triage score \u003e= 0.4 (highest 0.086598); keep those candidates separate from 0 scale-aware dimension mismatch rows and 23 raw PNG pixel dimension mismatches."
+                     "nextSlice":  "Command/dialog route coverage is complete for the generated inputs: all 0 pseudo-gallery rows are catalog-backed in classifier evidence (0 conditional-format rows over 38 runtime catalog items, 0 font/border rows, and 0 accounting-symbol rows), and dialog screenshot evidence has 94 paired WPF/Avalonia manifest surface ids with 0 Avalonia-only ids. This is coverage and size-comparability evidence, not visual parity. The paired screenshots retain 0 unresolved high-delta visual review candidates at triage score \u003e= 0.4 (highest 0.086598); keep those candidates separate from 0 scale-aware dimension mismatch rows and 22 raw PNG pixel dimension mismatches."
                  },
                  {
                      "app":  "FreeW",
