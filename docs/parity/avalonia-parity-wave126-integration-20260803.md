@@ -22,6 +22,9 @@ Date: 2026-08-03
 - FreeW Page Setup Avalonia visual tests: 6 passed; WPF host tests: 4 passed; shared planner tests: 10 passed.
 - FreeP wrapped-paragraph parsing/layout tests: 17 passed; WPF renderer test: 1 passed; Avalonia renderer test: 1 passed.
 - Dialog visual summary and cross-app parity dashboard checks passed.
+- Repository preflight passed.
+- `dotnet build FreeX.slnx --configuration Release` passed with zero warnings and zero errors.
+- The default non-UI solution run completed 20 TRX files before its ten-minute wrapper timeout. It exposed one stale Add Watch source-contract assertion, which was corrected and then passed in the full 2,619-test services assembly. The only unfinished test assembly from the wrapper, `FreeX.App.Avalonia.Tests`, passed all 2,017 tests in a bounded standalone rerun with hang diagnostics enabled. `FreeX.Fixtures` is the remaining solution entry and is not a test assembly. There are no remaining failed, timed-out, aborted, or running Wave126 test processes.
 
 ## Residuals
 
