@@ -627,7 +627,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.AllowEditRanges.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Fresh current-source Avalonia capture from Ubuntu 24.04 Docker/Xvfb via tools/Run-LinuxParityCapture.ps1 after Wave 135 Allow Edit Ranges geometry alignment and F4 point-mode restoration; 430x420 px at 96 DPI."
                      },
                      {
                          "id":  "dialog.ProtectSheet",
