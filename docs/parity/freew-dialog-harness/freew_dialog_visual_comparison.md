@@ -17,7 +17,7 @@ Inventory scenarios: **478**. Captured WPF: **190**. Captured Avalonia: **288**.
 | `backstage-home.open` | captured/captured | **genuine-visual-mismatch** | pass (9.7% painted) | pass (8.9% painted) | 12.32 % | 9.23 |  | heatmaps/backstage-home.open.png |
 | `backstage-info.open` | captured/captured | **genuine-visual-mismatch** | pass (6.3% painted) | pass (5.9% painted) | 6.97 % | 4.38 |  | heatmaps/backstage-info.open.png |
 | `backstage-new.open` | captured/captured | **pass** | pass (1.2% painted) | pass (1.0% painted) | 1.55 % | 0.91 |  | heatmaps/backstage-new.open.png |
-| `backstage-open.open` | captured/captured | **genuine-visual-mismatch** | pass (12.3% painted) | pass (11.5% painted) | 15.41 % | 12.19 |  | heatmaps/backstage-open.open.png |
+| `backstage-open.open` | captured/captured | **genuine-visual-mismatch** | pass (12.2% painted) | pass (11.5% painted) | 12.81 % | 11.26 |  | heatmaps/backstage-open.open.png |
 | `backstage-options.open` | captured/captured | **pass** | pass (1.8% painted) | pass (1.5% painted) | 1.49 % | 1.18 |  | heatmaps/backstage-options.open.png |
 | `backstage-print.open` | captured/captured | **genuine-visual-mismatch** | pass (7.2% painted) | pass (7.0% painted) | 8.65 % | 6.66 |  | heatmaps/backstage-print.open.png |
 | `backstage-save-as.open` | captured/captured | **genuine-visual-mismatch** | pass (11.6% painted) | pass (11.1% painted) | 9.30 % | 6.84 |  | heatmaps/backstage-save-as.open.png |

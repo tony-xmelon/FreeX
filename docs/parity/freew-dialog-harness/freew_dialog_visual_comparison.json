@@ -639,12 +639,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 51780,
-        "changedRatio": 0.15410714285714286,
-        "meanAbsoluteChannelDelta": 12.190487103174586,
+        "changedPixels": 43033,
+        "changedRatio": 0.12807440476190476,
+        "meanAbsoluteChannelDelta": 11.261983134920696,
         "p95AbsoluteChannelDelta": 106,
-        "luminanceSimilarity": 0.8578660861049381,
-        "perceptualHashDistance": 2
+        "luminanceSimilarity": 0.860795882647425,
+        "perceptualHashDistance": 6
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/backstage-open.open.png",
@@ -658,10 +658,10 @@
         "opaqueRatio": 0.9116279761904762,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0.0003220580485234126,
-        "dominantColorRatio": 0.8638149890370139,
-        "distinctColorCount": 283,
+        "dominantColorRatio": 0.8655586568552821,
+        "distinctColorCount": 279,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.12278869047619048,
+        "contentPixelRatio": 0.12154761904761904,
         "contentBounds": {
           "x": 0,
           "y": 0,
@@ -678,14 +678,14 @@
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0.0002569958164984808,
-        "dominantColorRatio": 0.8739321661168908,
-        "distinctColorCount": 67,
+        "dominantColorRatio": 0.8739809627909095,
+        "distinctColorCount": 63,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.11533630952380952,
+        "contentPixelRatio": 0.11529166666666667,
         "contentBounds": {
           "x": 0,
           "y": 0,
-          "width": 546,
+          "width": 545,
           "height": 563
         }
       }
