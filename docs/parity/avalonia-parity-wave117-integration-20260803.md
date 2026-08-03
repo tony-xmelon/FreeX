@@ -57,4 +57,3 @@ claiming pixel-identical PowerPoint geometry.
   Customize Theme Colors and adjacent Backstage surfaces remain candidates.
 - FreeP: broader evidence-backed SmartArt/effect specialization, chart/media
   depth, and PowerPoint-authoritative visual baselines remain open.
-
