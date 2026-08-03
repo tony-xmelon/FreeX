@@ -2781,14 +2781,14 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 43453,
-        "changedRatio": 0.12932440476190477,
-        "meanAbsoluteChannelDelta": 10.05626488095247,
-        "p95AbsoluteChannelDelta": 80.66666666666667,
-        "luminanceSimilarity": 0.8623845563312771,
-        "perceptualHashDistance": 4
+        "changedPixels": 32404,
+        "changedRatio": 0.09644047619047619,
+        "meanAbsoluteChannelDelta": 7.463060515873732,
+        "p95AbsoluteChannelDelta": 66.66666666666667,
+        "luminanceSimilarity": 0.8813092846342371,
+        "perceptualHashDistance": 1
       },
-      "semanticDifference": "default-button,cancel-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/customize-theme-colors.initial.png",
       "note": null,
       "wpfContent": {
@@ -2817,18 +2817,18 @@
         "width": 560,
         "height": 600,
         "pixelCount": 336000,
-        "opaqueRatio": 0.9115238095238095,
-        "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 0.0023639118169470276,
-        "dominantColorRatio": 0.9321256921951729,
-        "distinctColorCount": 37,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0.002355252799302533,
+        "dominantColorRatio": 0.931281270535267,
+        "distinctColorCount": 38,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.06186904761904762,
+        "contentPixelRatio": 0.06286904761904762,
         "contentBounds": {
           "x": 14,
           "y": 18,
-          "width": 516,
-          "height": 372
+          "width": 518,
+          "height": 452
         }
       }
     },
@@ -2838,14 +2838,14 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 43453,
-        "changedRatio": 0.12932440476190477,
-        "meanAbsoluteChannelDelta": 10.05626488095247,
-        "p95AbsoluteChannelDelta": 80.66666666666667,
-        "luminanceSimilarity": 0.8623845563312771,
-        "perceptualHashDistance": 4
+        "changedPixels": 32404,
+        "changedRatio": 0.09644047619047619,
+        "meanAbsoluteChannelDelta": 7.463060515873732,
+        "p95AbsoluteChannelDelta": 66.66666666666667,
+        "luminanceSimilarity": 0.8813092846342371,
+        "perceptualHashDistance": 1
       },
-      "semanticDifference": "default-button,cancel-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/customize-theme-colors.populated.png",
       "note": null,
       "wpfContent": {
@@ -2874,18 +2874,18 @@
         "width": 560,
         "height": 600,
         "pixelCount": 336000,
-        "opaqueRatio": 0.9115238095238095,
-        "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 0.0023639118169470276,
-        "dominantColorRatio": 0.9321256921951729,
-        "distinctColorCount": 37,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0.002355252799302533,
+        "dominantColorRatio": 0.931281270535267,
+        "distinctColorCount": 38,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.06186904761904762,
+        "contentPixelRatio": 0.06286904761904762,
         "contentBounds": {
           "x": 14,
           "y": 18,
-          "width": 516,
-          "height": 372
+          "width": 518,
+          "height": 452
         }
       }
     },
@@ -2895,14 +2895,14 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 43464,
-        "changedRatio": 0.12935714285714286,
-        "meanAbsoluteChannelDelta": 10.059372023809619,
-        "p95AbsoluteChannelDelta": 80.66666666666667,
-        "luminanceSimilarity": 0.8623694321442548,
-        "perceptualHashDistance": 4
+        "changedPixels": 32387,
+        "changedRatio": 0.09638988095238095,
+        "meanAbsoluteChannelDelta": 7.460012896826109,
+        "p95AbsoluteChannelDelta": 66.66666666666667,
+        "luminanceSimilarity": 0.8812973609799372,
+        "perceptualHashDistance": 1
       },
-      "semanticDifference": "default-button,cancel-button",
+      "semanticDifference": null,
       "heatmapPath": "heatmaps/customize-theme-colors.validation-error.png",
       "note": null,
       "wpfContent": {
@@ -2931,18 +2931,18 @@
         "width": 560,
         "height": 600,
         "pixelCount": 336000,
-        "opaqueRatio": 0.9115238095238095,
-        "nearTransparentRatio": 0.08847619047619047,
-        "nearBlackRatio": 0.002409622818932191,
-        "dominantColorRatio": 0.9320832462647581,
-        "distinctColorCount": 37,
+        "opaqueRatio": 0.914875,
+        "nearTransparentRatio": 0.085125,
+        "nearBlackRatio": 0.0024007963617199853,
+        "dominantColorRatio": 0.9312389800844508,
+        "distinctColorCount": 38,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.06190773809523809,
+        "contentPixelRatio": 0.0629077380952381,
         "contentBounds": {
           "x": 14,
           "y": 18,
-          "width": 516,
-          "height": 372
+          "width": 518,
+          "height": 452
         }
       }
     },
