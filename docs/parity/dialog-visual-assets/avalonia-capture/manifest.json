@@ -86,10 +86,10 @@
                          "png":  "dialog.FormatCells.Alignment.png",
                          "captured":  true,
                          "evidenceSource":  "fresh-current-source-avalonia-targeted-parity-capture",
-                         "recaptureStatus":  "fresh-linux-docker-xvfb-format-cells-wave127-2026-08-03",
+                          "recaptureStatus":  "fresh-linux-docker-xvfb-format-cells-wave129-2026-08-03",
                          "expectedWidth":  620,
                          "expectedHeight":  540,
-                         "note":  "Fresh current-source Avalonia capture from Linux Docker/Xvfb --parity-capture --parity-capture-surface dialog.FormatCells.Alignment at 620x540 and 96 DPI after the Alignment checkbox-height fix."
+                          "note":  "Fresh current-source Avalonia capture from this Wave129 worktree in Linux Docker/Xvfb via --parity-capture --parity-capture-surface dialog.FormatCells.Alignment at 620x540 and 96 DPI after shared tab-header, geometry, and combo-chrome tuning."
                      },
                      {
                          "id":  "dialog.FormatCells.Font",

@@ -62,7 +62,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.FormatCells.Alignment | 620x540 | 620x540 | 620x540 px @ 96 DPI vs 620x540 px @ 96 DPI |  |  | 0.087 | 0.015 | 0.006 | 0.065 |
 | dialog.About | 560x420 | 560x420 | 840x630 px @ 144 DPI vs 560x420 px @ 96 DPI |  |  | 0.085 | 0.055 | 0.009 | 0.020 |
 | dialog.AccessibilityChecker | 360x520 | 360x520 | 360x520 px @ 96 DPI vs 360x520 px @ 96 DPI |  |  | 0.084 | 0.055 | 0.009 | 0.021 |
 | dialog.ShapeGradient | 500x300 | 500x300 | 500x300 px @ 96 DPI vs 500x300 px @ 96 DPI |  |  | 0.082 | 0.055 | 0.022 | 0.004 |
@@ -72,6 +71,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.ConditionalFormatManage | 560x420 | 560x420 | 840x630 px @ 144 DPI vs 560x420 px @ 96 DPI |  |  | 0.074 | 0.045 | 0.000 | 0.028 |
 | dialog.ChangeChartType | 640x390 | 640x390 | 960x585 px @ 144 DPI vs 640x390 px @ 96 DPI |  |  | 0.070 | 0.036 | 0.008 | 0.025 |
 | dialog.PivotTableOptions.Display | 520x500 | 520x500 | 520x500 px @ 96 DPI vs 520x500 px @ 96 DPI |  |  | 0.069 | 0.045 | 0.006 | 0.019 |
+| dialog.InsertHyperlink | 560x300 | 560x300 | 840x450 px @ 144 DPI vs 560x300 px @ 96 DPI |  |  | 0.069 | 0.037 | 0.002 | 0.030 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -111,7 +111,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.FindReplace.Replace | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | dialog.FindReplace.Replace.png | 720x430 | 720x430 px @ 96 DPI | True | True | 0.053 |
 | dialog.ForecastSheet | dialog.ForecastSheet.png | 320x150 | 480x225 px @ 144 DPI | True | dialog.ForecastSheet.png | 320x150 | 320x150 px @ 96 DPI | True | True | 0.057 |
 | dialog.FormatCells | dialog.FormatCells.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.029 |
-| dialog.FormatCells.Alignment | dialog.FormatCells.Alignment.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Alignment.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.087 |
+| dialog.FormatCells.Alignment | dialog.FormatCells.Alignment.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Alignment.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.024 |
 | dialog.FormatCells.Border | dialog.FormatCells.Border.png | 620x597 | 620x597 px @ 96 DPI | True | dialog.FormatCells.Border.png | 620x597 | 620x597 px @ 96 DPI | True | True | 0.033 |
 | dialog.FormatCells.Fill | dialog.FormatCells.Fill.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Fill.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.046 |
 | dialog.FormatCells.Font | dialog.FormatCells.Font.png | 620x540 | 620x540 px @ 96 DPI | True | dialog.FormatCells.Font.png | 620x540 | 620x540 px @ 96 DPI | True | True | 0.059 |

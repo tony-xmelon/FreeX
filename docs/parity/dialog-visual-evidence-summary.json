@@ -27,7 +27,7 @@
                     "visualReviewTriageThreshold":  0.4,
                     "visualReviewTriageThresholdRationale":  "This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.",
                     "visualReviewCandidateCount":  0,
-                    "highestTriageScore":  0.086598,
+                    "highestTriageScore":  0.084615,
                     "dimensionMismatchBuckets":  {
 
                                                  }
@@ -1498,7 +1498,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.FormatCells.Alignment.png",
-                                                "fileBytes":  20197,
+                                                "fileBytes":  20240,
                                                 "width":  620,
                                                 "height":  540,
                                                 "dpiX":  96,
@@ -1506,15 +1506,15 @@
                                                 "logicalWidth":  620,
                                                 "logicalHeight":  540,
                                                 "pixels":  334800,
-                                                "distinctColors":  1615,
+                                                "distinctColors":  1792,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.062118,
+                                                "nonBackgroundRatio":  0.134498,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  250.47272,
-                                                "manifestNote":  "Fresh current-source Avalonia capture from Linux Docker/Xvfb --parity-capture --parity-capture-surface dialog.FormatCells.Alignment at 620x540 and 96 DPI after the Alignment checkbox-height fix.",
+                                                "meanLuma":  249.683861,
+                                                "manifestNote":  "Fresh current-source Avalonia capture from this Wave129 worktree in Linux Docker/Xvfb via --parity-capture --parity-capture-surface dialog.FormatCells.Alignment at 620x540 and 96 DPI after shared tab-header, geometry, and combo-chrome tuning.",
                                                 "evidenceSource":  "fresh-current-source-avalonia-targeted-parity-capture",
                                                 "sourcePng":  null,
-                                                "recaptureStatus":  "fresh-linux-docker-xvfb-format-cells-wave127-2026-08-03",
+                                                "recaptureStatus":  "fresh-linux-docker-xvfb-format-cells-wave129-2026-08-03",
                                                 "expectedWidth":  620,
                                                 "expectedHeight":  540
                                             },
@@ -1531,10 +1531,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.014973,
-                                                  "lumaDelta":  0.005963,
-                                                  "nonBackgroundDelta":  0.065382,
-                                                  "triageScore":  0.086598,
+                                                  "sampleMeanDelta":  0.014197,
+                                                  "lumaDelta":  0.00287,
+                                                  "nonBackgroundDelta":  0.006998,
+                                                  "triageScore":  0.024344,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6382,14 +6382,6 @@
                        ],
     "topPairedOutliers":  [
                               {
-                                  "id":  "dialog.FormatCells.Alignment",
-                                  "triageScore":  0.086598,
-                                  "sampleMeanDelta":  0.014973,
-                                  "dimension":  "620.087x540.075 vs 620x540 logical; 620x540 vs 620x540 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.065382
-                              },
-                              {
                                   "id":  "dialog.About",
                                   "triageScore":  0.084615,
                                   "sampleMeanDelta":  0.055308,
@@ -6460,6 +6452,14 @@
                                   "dimension":  "520.073x500.07 vs 520x500 logical; 520x500 vs 520x500 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.018642
+                              },
+                              {
+                                  "id":  "dialog.InsertHyperlink",
+                                  "triageScore":  0.06881,
+                                  "sampleMeanDelta":  0.037252,
+                                  "dimension":  "560.029x300.015 vs 560x300 logical; 840x450 vs 560x300 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.029813
                               }
                           ],
     "visualReviewCandidates":  [
