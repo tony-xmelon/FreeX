@@ -32,8 +32,8 @@ Sources:
 | Avalonia-manifest-only screenshot surface ids needing WPF manifest pair | 0 |
 | Nonblank PNG check failures | 0 |
 | Paired dimension mismatches (scale-aware logical units) | 0 |
-| Raw PNG pixel dimension mismatches | 25 |
-| Raw PNG mismatches normalized by capture DPI | 25 |
+| Raw PNG pixel dimension mismatches | 24 |
+| Raw PNG mismatches normalized by capture DPI | 24 |
 | Paired expected-size evidence mismatches | 0 |
 | Stale promoted expected-size evidence | 0 |
 | Policy-accepted native/control differences | 0 |
@@ -62,7 +62,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.TextToColumns | 500x430 | 500x430 | 750x645 px @ 144 DPI vs 500x430 px @ 96 DPI |  |  | 0.089 | 0.068 | 0.009 | 0.012 |
 | dialog.GoalSeekStatus | 380x190 | 380x190 | 380x190 px @ 96 DPI vs 380x190 px @ 96 DPI |  |  | 0.089 | 0.029 | 0.012 | 0.047 |
 | dialog.AddWatch | 360x170 | 360x170 | 540x255 px @ 144 DPI vs 360x170 px @ 96 DPI |  |  | 0.088 | 0.054 | 0.000 | 0.033 |
 | dialog.FormatCells.Alignment | 620x540 | 620x540 | 620x540 px @ 96 DPI vs 620x540 px @ 96 DPI |  |  | 0.087 | 0.015 | 0.006 | 0.065 |
@@ -72,6 +71,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.ShapeGradient | 500x300 | 500x300 | 500x300 px @ 96 DPI vs 500x300 px @ 96 DPI |  |  | 0.082 | 0.055 | 0.022 | 0.004 |
 | dialog.AllowEditRanges | 430x420 | 430x420 | 430x420 px @ 96 DPI vs 430x420 px @ 96 DPI |  |  | 0.079 | 0.022 | 0.014 | 0.042 |
 | dialog.Sparkline | 380x280 | 380x280 | 380x280 px @ 96 DPI vs 380x280 px @ 96 DPI |  |  | 0.077 | 0.054 | 0.001 | 0.022 |
+| dialog.SelectDataSource | 620x500 | 620x500 | 930x750 px @ 144 DPI vs 620x500 px @ 96 DPI |  |  | 0.075 | 0.036 | 0.006 | 0.033 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -178,7 +178,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.Sparkline | dialog.Sparkline.png | 380x280 | 380x280 px @ 96 DPI | True | dialog.Sparkline.png | 380x280 | 380x280 px @ 96 DPI | True | True | 0.077 |
 | dialog.Subtotal | dialog.Subtotal.png | 380x390 | 380x390 px @ 96 DPI | True | dialog.Subtotal.png | 380x390 | 380x390 px @ 96 DPI | True | True | 0.038 |
 | dialog.SymbolPicker | dialog.SymbolPicker.png | 840x620 | 840x620 px @ 96 DPI | True | dialog.SymbolPicker.png | 840x620 | 840x620 px @ 96 DPI | True | True | 0.036 |
-| dialog.TextToColumns | dialog.TextToColumns.png | 500x430 | 750x645 px @ 144 DPI | True | dialog.TextToColumns.png | 500x430 | 500x430 px @ 96 DPI | True | True | 0.089 |
+| dialog.TextToColumns | dialog.TextToColumns.png | 560x560 | 560x560 px @ 96 DPI | True | dialog.TextToColumns.png | 560x560 | 560x560 px @ 96 DPI | True | True | 0.032 |
 | dialog.UnhideSheet | dialog.UnhideSheet.png | 340x160 | 510x240 px @ 144 DPI | True | dialog.UnhideSheet.png | 340x160 | 340x160 px @ 96 DPI | True | True | 0.041 |
 | dialog.WatchWindow | dialog.WatchWindow.png | 760x320 | 760x320 px @ 96 DPI | True | dialog.WatchWindow.png | 760x320 | 760x320 px @ 96 DPI | True | True | 0.065 |
 | dialog.WorkbookStatistics | dialog.WorkbookStatistics.png | 500x560 | 500x560 px @ 96 DPI | True | dialog.WorkbookStatistics.png | 500x560 | 500x560 px @ 96 DPI | True | True | 0.050 |
