@@ -296,6 +296,15 @@ Chart package retention now also preserves authored non-OfPie `c:serLines` prese
 shared chart model, clone path, and PPTX reader/writer. The existing OfPie series-line workflow
 remains unchanged; generic series-line rendering is still a separate chart-family geometry task.
 
+Native pie-family `c:leaderLines` presence now survives the shared chart model, clone path, and
+PPTX reader/writer. The existing shared pie-label leader geometry consumes this source token in
+both hosts even when the older `c:showLeaderLines` data-label flag is absent.
+
+Generic chart `c:serLines` is now consumed for stacked and 100%-stacked column/bar charts. The
+shared planner connects adjacent points within each series, and WPF/Avalonia paint the same
+renderer-neutral line primitives; clustered charts and non-bar families retain the authored
+token without inventing unsupported geometry.
+
 The current integration tip also includes concurrent FreeW table authoring and formatting
 undo slices. Those are repository progress, not a change to the FreeP command count or the
 FreeP visual-fidelity boundary below.
