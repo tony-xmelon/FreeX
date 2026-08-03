@@ -73,6 +73,8 @@ axis-adjacent placement.
 Authored major and minor `c:*TickMark` values now reach the shared axis primitives: omitted
 values retain the prior outward geometry, while `in`, `out`, `cross`, and `none` control the
 corresponding primary, secondary, stock-boundary, and combo minor tick segments.
+Chart context targeting now preserves category/value ownership for axis-title hits, so both
+desktop hosts open the exact axis options workflow instead of falling back to chart-wide text.
 
 Avalonia SmartArt text-pane edits, layout changes, Quick Styles, and Change Colors now honor
 native data-part and drawing-cache refresh failures before committing the shared undo command.
