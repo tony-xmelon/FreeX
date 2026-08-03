@@ -112,11 +112,11 @@ Inventory scenarios: **478**. Captured WPF: **190**. Captured Avalonia: **288**.
 | `insert-smart-art.populated` | captured/captured | **genuine-visual-mismatch** | pass (11.3% painted) | pass (10.9% painted) | 9.69 % | 5.12 |  | heatmaps/insert-smart-art.populated.png |
 | `insert-smart-art.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (7.8% painted) | pass (7.4% painted) | 6.35 % | 4.50 |  | heatmaps/insert-smart-art.validation-error.png |
 | `legal-notices.initial` | captured/captured | **genuine-visual-mismatch** | pass (8.3% painted) | pass (7.4% painted) | 8.98 % | 9.57 |  | heatmaps/legal-notices.initial.png |
-| `legal-notices.tab-legal-notices` | captured/captured | **genuine-visual-mismatch** | pass (14.5% painted) | pass (13.6% painted) | 18.28 % | 19.87 |  | heatmaps/legal-notices.tab-legal-notices.png |
-| `legal-notices.tab-privacy-notice` | captured/captured | **genuine-visual-mismatch** | pass (12.6% painted) | pass (12.1% painted) | 16.51 % | 18.58 |  | heatmaps/legal-notices.tab-privacy-notice.png |
+| `legal-notices.tab-legal-notices` | captured/captured | **genuine-visual-mismatch** | pass (14.5% painted) | pass (13.5% painted) | 17.79 % | 18.54 |  | heatmaps/legal-notices.tab-legal-notices.png |
+| `legal-notices.tab-privacy-notice` | captured/captured | **genuine-visual-mismatch** | pass (12.6% painted) | pass (12.1% painted) | 16.46 % | 18.48 |  | heatmaps/legal-notices.tab-privacy-notice.png |
 | `legal-notices.tab-project-license` | captured/captured | **genuine-visual-mismatch** | pass (8.3% painted) | pass (7.4% painted) | 8.98 % | 9.57 |  | heatmaps/legal-notices.tab-project-license.png |
-| `legal-notices.tab-third-party-license-texts` | captured/captured | **genuine-visual-mismatch** | pass (14.5% painted) | pass (12.9% painted) | 18.52 % | 21.22 |  | heatmaps/legal-notices.tab-third-party-license-texts.png |
-| `legal-notices.tab-third-party-notices` | captured/captured | **genuine-visual-mismatch** | pass (14.9% painted) | pass (12.9% painted) | 18.00 % | 20.32 |  | heatmaps/legal-notices.tab-third-party-notices.png |
+| `legal-notices.tab-third-party-license-texts` | captured/captured | **genuine-visual-mismatch** | pass (14.5% painted) | pass (12.8% painted) | 17.97 % | 19.97 |  | heatmaps/legal-notices.tab-third-party-license-texts.png |
+| `legal-notices.tab-third-party-notices` | captured/captured | **genuine-visual-mismatch** | pass (14.9% painted) | pass (12.9% painted) | 17.61 % | 19.13 |  | heatmaps/legal-notices.tab-third-party-notices.png |
 | `line-number-options.initial` | captured/captured | **genuine-visual-mismatch** | pass (5.6% painted) | pass (4.8% painted) | 6.39 % | 3.31 |  | heatmaps/line-number-options.initial.png |
 | `line-number-options.populated` | captured/captured | **genuine-visual-mismatch** | pass (5.6% painted) | pass (4.8% painted) | 6.39 % | 3.31 |  | heatmaps/line-number-options.populated.png |
 | `line-number-options.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (5.7% painted) | pass (4.9% painted) | 6.53 % | 3.51 |  | heatmaps/line-number-options.validation-error.png |
