@@ -309,6 +309,12 @@ The same path now preserves an authored `c:serLines/c:spPr/a:ln` stroke, includi
 width, dash, and explicit no-line state. That style reaches the shared connector primitives
 and both desktop renderers; omitted style keeps the prior default stroke.
 
+Chart point interaction now uses shared planned geometry: a double-click on a painted column,
+bar, waterfall, pie, line, scatter, bubble, radar, funnel, or area point identifies its
+series/category and opens the existing point-format dialog with that point selected in both
+WPF and Avalonia. The hit path is framework-free and rotation-aware; the ribbon dialog remains
+the same command surface.
+
 The current integration tip also includes concurrent FreeW table authoring and formatting
 undo slices. Those are repository progress, not a change to the FreeP command count or the
 FreeP visual-fidelity boundary below.
