@@ -300,6 +300,15 @@ Native pie-family `c:leaderLines` presence now survives the shared chart model, 
 PPTX reader/writer. The existing shared pie-label leader geometry consumes this source token in
 both hosts even when the older `c:showLeaderLines` data-label flag is absent.
 
+Generic chart `c:serLines` is now consumed for stacked and 100%-stacked column/bar charts. The
+shared planner connects adjacent points within each series, and WPF/Avalonia paint the same
+renderer-neutral line primitives; clustered charts and non-bar families retain the authored
+token without inventing unsupported geometry.
+
+The same path now preserves an authored `c:serLines/c:spPr/a:ln` stroke, including color,
+width, dash, and explicit no-line state. That style reaches the shared connector primitives
+and both desktop renderers; omitted style keeps the prior default stroke.
+
 The current integration tip also includes concurrent FreeW table authoring and formatting
 undo slices. Those are repository progress, not a change to the FreeP command count or the
 FreeP visual-fidelity boundary below.
