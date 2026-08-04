@@ -136,6 +136,11 @@ gap and fill styling, and both desktop hosts use the same planner. Package and u
 coverage verifies that toggling visibility does not flatten or rewrite the chart
 family payload.
 
+The stacked-chart continuation also exposes authored `serLines` visibility for
+stacked column/bar families. Its command changes only the presence token, preserving
+the existing line style and chart geometry; planner, package/undo, and both-host dialog
+coverage keep the control out of unsupported chart families.
+
 ## What remains
 
 - Advanced SmartArt layout/style/effect semantics outside the bounded live catalog and
