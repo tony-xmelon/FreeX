@@ -27,8 +27,10 @@ Fresh Avalonia captures passed the content gate for all three scenarios:
 The retained paired comparison remains `changedRatio=0.1135804` and
 `meanAbsoluteChannelDelta=4.5137143`. A fresh WPF capture was not available
 because this host produced a blank raster, so those paired values were not
-recomputed or promoted. The horizontal envelope now matches the retained
-authority; the one-pixel vertical residual remains visible for follow-up.
+recomputed or promoted. The fresh horizontal bound also measured one pixel
+narrower, but this source change is vertical-only, so that observation is not
+attributed to the margin correction. The one-pixel vertical residual remains
+visible for follow-up.
 
 ## Verification
 
