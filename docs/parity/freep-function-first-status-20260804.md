@@ -68,17 +68,25 @@ the resulting rectangle to their native caption surfaces. Focused coverage is
 Presentation 12/12, WPF media-host 32/32, and Avalonia media-host 8/8; both host
 projects build with 0 warnings and 0 errors.
 
+The chart continuation closed two concrete native ChartEx editing gaps. Single-series
+non-waterfall ChartEx data edits now update the preserved category/value payload while
+leaving family-specific XML untouched; an explicit chart-type change now converts the
+object to a modeled classic chart and remains undoable. No-edit native ChartEx
+round-trips remain on the verbatim preservation path. Focused chart coverage is
+2,025/2,025 host tests plus 3,631/3,631 shared Presentation tests on the Release
+baseline.
+
 ## What remains
 
 - Advanced SmartArt layout/style/effect semantics outside the bounded live catalog and
   PowerPoint-authoritative authoring baselines.
-- Richer chart authoring/layout semantics, including exact Office connector geometry and
-  remaining native decoration families.
+- Richer chart authoring/layout semantics, including multi-series native ChartEx
+  authoring, exact Office connector geometry, and remaining native decoration families.
 - Full Zoom authoring depth beyond the current target, preview, cover-image, crop,
   retargeting, target-list, and tile-layout paths.
 - Broader real-deck media/caption/recording persistence and PowerPoint recording baselines,
-  beyond the now format-preserving internal caption authoring path and the corrected
-  Windows camera identity handoff.
+  beyond the now format-preserving internal caption authoring path, XamlPackage/RTF
+  clipboard paths, and the corrected Windows camera identity handoff.
 - Printer-driver/OS-owned dialog behavior, portable non-Windows OLE, and physical mixed
   workflow validation.
 - PowerPoint COM-backed visual validation for claims that need Microsoft-authored output.
