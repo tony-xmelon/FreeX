@@ -2,6 +2,8 @@
 
 Date: 2026-08-04
 
+Final upstream base: `42af3da77d`.
+
 ## Accepted slices
 
 - FreeX Print Preview now opens the existing Page Setup workflow when the user
@@ -63,3 +65,8 @@ affected assembly then passed `1,498` executable tests with `4` benchmark
 skips. Substituting that full-assembly rerun, current-source default evidence is
 `36,438` passed across `21` test assemblies, `134` benchmark or explicit skips,
 and zero failures.
+
+After the default lane, the final upstream merge added FreeW explicit
+auto-hyphenation preservation and nested fidelity-corpus coverage. Its affected
+Avalonia, WPF host, and Core IO suites passed `86/86`, `25/25`, and `229/229`;
+repository preflight and the full zero-warning Release build then passed again.
