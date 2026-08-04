@@ -13,20 +13,13 @@ PowerPoint parity.
 - The authoritative command used for the missing deck was:
   `dotnet run --project tools/FreeP.RenderCompare/FreeP.RenderCompare.csproj --configuration Release --no-restore -- --powerpoint-export tools/FreeP.RenderCompare/corpus/15-smartart-grouped-list.pptx tools/FreeP.RenderCompare/corpus/pptx-ref/15-smartart-grouped-list --width 1280 --height 720`
 
-The validator now accepts `--decks <name[,name...]>` and reports each completed
-deck before printing the aggregate. A targeted retry of the historically
-problematic decks completed successfully:
-
-- `10-motionpath.pptx`: exported `1/1`, reference match `1/1`.
-- `14-smartart-live.pptx`: exported `4/4`, reference match `4/4`.
-- `21-comments-notes.pptx`: exported `2/2`, reference match `2/2`.
-
-The targeted run therefore completed `3/3` decks and `7/7` reference matches
-with no missing or differing slides. The earlier unfiltered multi-deck run did
-not return within its bounded session window; use the filter for focused triage
-and retain the per-deck timeout for broad runs. Owned child processes and
-temporary output were cleaned up; the existing PowerPoint process was left
-untouched.
+The validator now accepts `--decks <name[,name...]>`, isolates each deck's
+PowerPoint COM export, and reports each completed deck before printing the
+aggregate. The complete current-main run completed all `27/27` decks and
+`53/53` reference slides with `0` failed exports, `0` missing references, and
+`0` reference diffs. This supersedes the earlier targeted-only result; owned
+child processes and temporary output were cleaned up, and unrelated PowerPoint
+processes were left untouched.
 
 ## Windows Video Functionality
 
@@ -47,8 +40,9 @@ Commands:
 
 ## Remaining Function Gaps
 
-The next function-first work should address the bounded validator's per-deck
-process isolation and then deepen real presenter capture, permissions/error
-paths, custom-show persistence, advanced animation authoring, richer SmartArt
-and chart editing, native printer handoff, and OLE hosting. Visual work remains
-secondary unless it proves one of those functions is being consumed.
+The validator's per-deck isolation is now closed. Remaining function-first work
+is to deepen real presenter capture, permissions/error paths, custom-show
+persistence, advanced animation authoring, richer SmartArt and chart editing,
+native printer handoff, portable non-Windows OLE, and real-deck media/recording
+coverage. Visual work remains secondary unless it proves one of those functions
+is being consumed.
