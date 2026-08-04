@@ -462,7 +462,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ChangeChartType.png",
-                                                "fileBytes":  26629,
+                                                "fileBytes":  28586,
                                                 "width":  640,
                                                 "height":  390,
                                                 "dpiX":  96,
@@ -470,11 +470,11 @@
                                                 "logicalWidth":  640,
                                                 "logicalHeight":  390,
                                                 "pixels":  249600,
-                                                "distinctColors":  2438,
+                                                "distinctColors":  386,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.100994,
+                                                "nonBackgroundRatio":  0.098994,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  245.891437
+                                                "meanLuma":  246.927229
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -489,10 +489,10 @@
                                                   "rawPixelHeightDelta":  195,
                                                   "captureScaleNormalizedDimensionMatch":  true,
                                                   "dimensionDeltaRatio":  0.000103,
-                                                  "sampleMeanDelta":  0.04643,
-                                                  "lumaDelta":  0.008996,
-                                                  "nonBackgroundDelta":  0.028698,
-                                                  "triageScore":  0.084227,
+                                                  "sampleMeanDelta":  0.045503,
+                                                  "lumaDelta":  0.004934,
+                                                  "nonBackgroundDelta":  0.026699,
+                                                  "triageScore":  0.077239,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  640,
                                                   "expectedHeight":  390,
@@ -6433,11 +6433,11 @@
                               },
                               {
                                   "id":  "dialog.ChangeChartType",
-                                  "triageScore":  0.084227,
-                                  "sampleMeanDelta":  0.04643,
+                                  "triageScore":  0.077239,
+                                  "sampleMeanDelta":  0.045503,
                                   "dimension":  "640.033x390.02 vs 640x390 logical; 960x585 vs 640x390 px",
                                   "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.028698
+                                  "nonBackgroundDelta":  0.026699
                               },
                               {
                                   "id":  "dialog.PivotTableOptions.Display",
