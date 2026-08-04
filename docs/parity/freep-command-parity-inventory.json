@@ -17,7 +17,7 @@
     "knownDeferred": 0,
     "platformOnly": 0,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 107
+    "workflowEvidenceRows": 108
   },
   "workflowEvidence": [
     {
@@ -1289,6 +1289,26 @@
         "tools/FreeP.RenderCompare/SmartArtFixtureGenerator.cs"
       ],
       "remainingWork": "The checked-in fixture admits only four ordered distinct non-empty ellipse nodes with strictly growing square diameters on one baseline, equal positive gaps, and three empty line roles, without unsupported effects or extra roles. Malformed, ambiguous, effectful, picture-bearing, richer PowerPoint background/chord/rectangle, or otherwise unproven increasingCircleProcess caches remain on cached drawing fallback; exact PowerPoint role geometry, effects, text fitting, and broader process-family import parity remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.vertical-arrow-list-import-slots",
+      "area": "SmartArt verticalArrowList imported four-slot live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume the same shared verticalArrowList down-arrow plan through SlideCompositor; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/avalonia-parity-wave136-freep-smartart-vertical-arrow-list-20260804.md"
+      ],
+      "verification": [
+        "freep/FreeP.Core.IO/PptxPackageReader.cs",
+        "freep/FreeP.App.Presentation/SmartArtLayoutEngine.cs",
+        "freep/FreeP.App.Presentation.Tests/SmartArtLayoutTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtDefaultLiveRendererContractTests.cs",
+        "freep/FreeP.App.Rendering.Avalonia.Tests/SmartArtDefaultLiveRendererContractTests.cs",
+        "tools/FreeP.RenderCompare.Tests/SmartArtFixtureEvidenceTests.cs",
+        "tools/FreeP.RenderCompare/SmartArtFixtureGenerator.cs"
+      ],
+      "remainingWork": "The deterministic fixture admits only four distinct non-empty flat nodes with four effect-free DownArrow cache shapes in exact shared-planner slot geometry. Richer, malformed, effect-bearing, picture-bearing, reordered, differently spaced, or otherwise unproven verticalArrowList caches remain on cached drawing fallback; exact PowerPoint arrow contours, text fitting, effects, and larger imported variants remain deferred."
     },
     {
       "evidenceId": "freep.smartart.basic-process",
