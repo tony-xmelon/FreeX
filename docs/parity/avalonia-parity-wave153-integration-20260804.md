@@ -41,7 +41,19 @@ authoritative Word baselines remain external evidence.
 - FreeW worker lane: `33/33` passed.
 - Shared ribbon worker lane: `11/11` passed.
 - FreeX production host state-store lane: `1/1` passed.
-- Combined integration verification is recorded after final testing.
+- Combined integration lanes passed: FreeW page flow `33/33`, shared ribbon
+  state/lifecycle `11/11`, and FreeX production host wiring `1/1`.
+- Repository preflight passed across `220` JSON files, `261` XML-backed files,
+  `125` .NET projects, `92` solution entries, and `11,109` text files. Generated
+  command, dialog, and visual-evidence documents are current.
+- The full Release solution build completed with zero warnings and zero errors.
+- The default non-UI aggregate lane did not complete: the FreeX Avalonia
+  testhost repeated the known runaway, reaching `4.5 GB` in the aggregate run
+  and `4.4 GB` in a standalone guarded run. Both exact owned process trees were
+  stopped. The only reported assertion failure before termination was FreeP's
+  startup trace timing out at 30 seconds under aggregate load; it passed `1/1`
+  in two seconds when rerun alone. No completed project reported a Wave 153
+  product assertion failure.
 
 Detailed slice notes:
 
