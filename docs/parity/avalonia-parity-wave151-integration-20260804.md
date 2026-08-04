@@ -2,6 +2,8 @@
 
 Date: 2026-08-04
 
+Final upstream base: `d1751f1e08b3`.
+
 ## Accepted slices
 
 - FreeX Avalonia Print Preview now provides an Entire Workbook page stream in
@@ -50,9 +52,18 @@ Integration-focused verification passed before the repository-wide lane:
 - FreeW worker verification: `75/75` Avalonia geometry tests and `11/11`
   planner tests, plus a zero-warning Release build.
 
-Repository preflight, full Release build, and the default non-UI lane are run
-from the integrated branch before push; final counts are recorded below once
-that lane completes.
+Repository preflight passed across `220` JSON files, `261` XML-backed files,
+`125` .NET projects, `92` solution entries, and `11,098` text files. FreeP
+evidence remains current at `28/28` dialog/pane pairs and `33/33` whole-window
+pairs. The full Release solution build completed with zero warnings and zero
+errors.
+
+The default non-UI projects cover `36,480` executed tests and `134` skipped
+benchmark or explicit cases. The repaired Avalonia assembly passed `2,043/2,043`
+standalone. Aggregate WPF host runs exposed three unrelated OS-clipboard flakes;
+each failing case passed immediately in isolation (`3/3`), and no Wave 151
+slice changes clipboard code. The final upstream FreeP Zoom and FreeW native
+pagination changes passed `282/282` focused tests after the last sync.
 
 Detailed slice notes:
 
