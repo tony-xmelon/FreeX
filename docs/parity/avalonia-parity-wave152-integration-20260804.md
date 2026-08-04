@@ -36,5 +36,8 @@ wiring and a production behavior regression before it can count toward parity.
 ## Verification
 
 - FreeW worker lane: `28/28` Release tests passed.
-- Repository verification is recorded here after integration completes.
-
+- Integration FreeW lane: `28/28` Release tests passed on the current upstream
+  base with isolated single-node build settings.
+- Repository preflight passed across `220` JSON files, `261` XML-backed files,
+  `125` .NET projects, `92` solution entries, and `11,101` text files. Generated
+  command, dialog, and visual-evidence documents are current.
