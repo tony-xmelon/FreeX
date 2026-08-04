@@ -2,7 +2,7 @@
 
 Date: 2026-08-04
 
-Final upstream base before verification: `7f1fdc5da2`.
+Final upstream base: `fdeb3b4f484d`.
 
 ## Accepted slices
 
@@ -63,3 +63,7 @@ current at `33/33` paired across its `173`-artifact manifest. The full Release
 solution build completed with zero warnings and zero errors. The serialized
 default lane passed `36,466` tests across `21` assemblies, skipped `134`
 benchmark or explicit cases, and reported zero failures.
+
+The final upstream sync added FreeP print-markup export and FreeW WPF canonical
+footnote continuation. Their affected FreeP presentation, FreeW presentation,
+and FreeW host lanes passed `78/78`, `140/140`, and `23/23` respectively.
