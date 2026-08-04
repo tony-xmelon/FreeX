@@ -37,6 +37,12 @@ and the consuming WPF/Avalonia projects build cleanly.
 - TTML/DFXP playback planning now respects inherited `body`/`div` `begin`, `end`, and
   `dur` boundaries as well as frame/tick clocks, so child cues cannot outlive their
   containing timed region.
+- WebVTT cue settings `position`, `line`, `size`, and `align` now flow through the
+  shared cue descriptor and are honored by both slideshow caption hosts; SRT/TTML
+  retain their existing default bottom-strip behavior.
+- Windows WPF and Windows Avalonia camera readiness now enumerate the same WinRT
+  `DeviceInformation` identities consumed by `MediaCapture`; a missing requested
+  camera is deferred explicitly instead of silently selecting another device.
 
 ## 2026-08-04 continuation
 
@@ -56,6 +62,12 @@ but is not being treated as fully live until each native grammar is independentl
 The current SmartArt-focused Presentation lane passed **394/394** tests on the same
 Release baseline. No new command or renderer calibration is justified by this audit.
 
+The caption-placement continuation is bounded to percentage-based WebVTT settings.
+The shared planner owns parsing and placement math, while WPF and Avalonia only apply
+the resulting rectangle to their native caption surfaces. Focused coverage is
+Presentation 12/12, WPF media-host 32/32, and Avalonia media-host 8/8; both host
+projects build with 0 warnings and 0 errors.
+
 ## What remains
 
 - Advanced SmartArt layout/style/effect semantics outside the bounded live catalog and
@@ -65,7 +77,8 @@ Release baseline. No new command or renderer calibration is justified by this au
 - Full Zoom authoring depth beyond the current target, preview, cover-image, crop,
   retargeting, target-list, and tile-layout paths.
 - Broader real-deck media/caption/recording persistence and PowerPoint recording baselines,
-  beyond the now format-preserving internal caption authoring path.
+  beyond the now format-preserving internal caption authoring path and the corrected
+  Windows camera identity handoff.
 - Printer-driver/OS-owned dialog behavior, portable non-Windows OLE, and physical mixed
   workflow validation.
 - PowerPoint COM-backed visual validation for claims that need Microsoft-authored output.
