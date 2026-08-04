@@ -9,14 +9,16 @@ per-theme menu command ids worked, which hid the live combo route gap.
 
 ## Change
 
-`freew.theme` now uses `ValueRibbonCommand`, resolves the selected name through
-`DocumentTheme.FindByName`, and calls the existing undoable `DocumentView.ApplyTheme` path. Existing
-`freew.theme.<name>` menu commands are unchanged.
+`freew.theme` now uses a stateful command, resolves the selected name through
+`DocumentTheme.FindByName`, and calls the existing undoable `DocumentView.ApplyTheme` path. Its state
+reads `Document.Theme.Name`, allowing ribbon refresh to publish the current theme from newly created,
+edited, undone, and loaded documents. Existing `freew.theme.<name>` menu commands are unchanged.
 
 ## Behavior
 
 - Selecting `Berlin` from the top-level combo applies the Berlin theme.
 - Undo restores the prior `Office` theme.
+- A freshly loaded `Ion` document publishes `Ion` without executing the command.
 - Unknown, null, and empty selected values are no-ops.
 - The existing `freew.theme.berlin` menu command remains covered as a control.
 
