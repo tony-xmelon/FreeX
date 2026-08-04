@@ -24,6 +24,10 @@ Wave 142 closed four evidence-backed host divergences:
 - FreeW Table of Authorities filtered solution run: all matching tests passed, including planner 18, WPF host 15, and Avalonia visual 2.
 - FreeP context-menu parity: Avalonia 17/17 and WPF 5/5 passed.
 - Shared Avalonia dialog mnemonic behavior: 1/1 passed.
+- Repository preflight passed, including generated-document freshness and solution-lane guards.
+- The full Release solution build passed with zero warnings and zero errors.
+- The default lane retained the established 26 FreeX and four FreeP WPF raster failures. One FreeP media-controller test also failed transiently under all-project parallel load, then passed both in isolation and in the complete FreeP WPF host run; that host run finished with 2,023 passes and only its four known WPF raster failures.
+- The complete FreeX Avalonia suite passed 2,028/2,028 in the default lane.
 
 ## Evidence boundaries
 
