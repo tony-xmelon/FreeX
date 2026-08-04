@@ -173,9 +173,10 @@ Inventory scenarios: **478**. Captured WPF: **190**. Captured Avalonia: **288**.
 | `table-formula.initial` | captured/captured | **genuine-visual-mismatch** | pass (6.0% painted) | pass (5.9% painted) | 4.46 % | 3.30 |  | heatmaps/table-formula.initial.png |
 | `table-formula.populated` | captured/captured | **genuine-visual-mismatch** | pass (6.0% painted) | pass (6.3% painted) | 4.84 % | 3.88 |  | heatmaps/table-formula.populated.png |
 | `table-formula.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (6.1% painted) | pass (6.1% painted) | 5.76 % | 3.98 |  | heatmaps/table-formula.validation-error.png |
-| `table-of-authorities.initial` | captured/captured | **genuine-visual-mismatch** | pass (9.0% painted) | pass (8.8% painted) | 11.36 % | 4.51 |  | heatmaps/table-of-authorities.initial.png |
-| `table-of-authorities.populated` | captured/captured | **genuine-visual-mismatch** | pass (9.0% painted) | pass (8.8% painted) | 11.36 % | 4.51 |  | heatmaps/table-of-authorities.populated.png |
-| `table-of-authorities.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (9.0% painted) | pass (8.8% painted) | 11.36 % | 4.51 |  | heatmaps/table-of-authorities.validation-error.png |
+| `table-of-authorities.initial` | captured/captured | **genuine-visual-mismatch** | pass (9.0% painted) | pass (7.3% painted) | 11.36 %* | 4.51* |  | heatmaps/table-of-authorities.initial.png |
+| `table-of-authorities.populated` | captured/captured | **genuine-visual-mismatch** | pass (9.0% painted) | pass (7.3% painted) | 11.36 %* | 4.51* |  | heatmaps/table-of-authorities.populated.png |
+| `table-of-authorities.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (9.0% painted) | pass (7.3% painted) | 11.36 %* | 4.51* |  | heatmaps/table-of-authorities.validation-error.png |
+\* The fresh Avalonia content gate passed; paired diff values retain the prior committed WPF authority because this host's fresh WPF raster was blank.
 | `table-properties.initial` | captured/captured | **genuine-visual-mismatch** | pass (11.6% painted) | pass (10.4% painted) | 9.01 % | 6.77 |  | heatmaps/table-properties.initial.png |
 | `table-properties.populated` | captured/captured | **genuine-visual-mismatch** | pass (11.6% painted) | pass (10.4% painted) | 9.01 % | 6.77 |  | heatmaps/table-properties.populated.png |
 | `table-properties.tab-cell` | captured/captured | **genuine-visual-mismatch** | pass (8.2% painted) | pass (7.3% painted) | 6.52 % | 4.85 |  | heatmaps/table-properties.tab-cell.png |

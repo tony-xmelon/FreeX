@@ -4,7 +4,7 @@
 
 The generated FreeP command inventory on `main` reports **648/648** command IDs
 available in both WPF and Avalonia, with **0 actionable WPF gaps**, **0 actionable
-Avalonia gaps**, **0 known deferred command rows**, and **108 workflow-evidence rows**.
+Avalonia gaps**, **0 known deferred command rows**, and **110 workflow-evidence rows**.
 This is reachability coverage; it does not claim identical PowerPoint-native depth.
 
 The function-first lane is now in a "close proven gaps, preserve honest boundaries"
@@ -32,6 +32,8 @@ and the consuming WPF/Avalonia projects build cleanly.
   recording, Zoom objects (including undoable Slide/Section retargeting and Summary Zoom
   target-list edits), and export/print handoff all have shared planner/host routes with
   focused evidence; platform-native behavior is kept explicit in the evidence manifests.
+- Internal caption replacement now preserves an existing WebVTT, SRT, TTML, or DFXP
+  package format and relationship identity; WebVTT remains the default for new tracks.
 
 ## 2026-08-04 continuation
 
@@ -39,8 +41,17 @@ The SmartArt Text Pane is now a user-reachable command in the shared Insert/Smar
 for both desktop hosts. Its existing outline, hierarchy-assistant, and picture-node actions
 continue through the transactional model, native data-part, and drawing-cache refresh path;
 the host entry point does not create a second SmartArt editing implementation. The generated
-inventory and status counts were refreshed together after this route was added: 648/648 shared
-commands and 108 workflow-evidence rows.
+inventory and status counts now include the subsequent bounded `process1` and `list1`
+SmartArt import-cache admissions: 648/648 shared commands and 110 workflow-evidence rows.
+
+The current function-first audit also rechecked the SmartArt relationship boundary.
+`relationship1` is a real, bounded authoring path: the reader admits only its audited
+three-node cache grammar, the shared layout engine regenerates the editable nodes, and
+unsupported cache/effect variants remain on the preserved native drawing path. The
+broader relationship catalog is already exposed as model metadata and insertion choices,
+but is not being treated as fully live until each native grammar is independently proven.
+The current SmartArt-focused Presentation lane passed **394/394** tests on the same
+Release baseline. No new command or renderer calibration is justified by this audit.
 
 ## What remains
 
@@ -50,7 +61,8 @@ commands and 108 workflow-evidence rows.
   remaining native decoration families.
 - Full Zoom authoring depth beyond the current target, preview, cover-image, crop,
   retargeting, target-list, and tile-layout paths.
-- Broader real-deck media/caption/recording persistence and PowerPoint recording baselines.
+- Broader real-deck media/caption/recording persistence and PowerPoint recording baselines,
+  beyond the now format-preserving internal caption authoring path.
 - Printer-driver/OS-owned dialog behavior, portable non-Windows OLE, and physical mixed
   workflow validation.
 - PowerPoint COM-backed visual validation for claims that need Microsoft-authored output.

@@ -613,7 +613,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.ConditionalFormatManage.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-current-source-avalonia-linux-docker-xvfb-capture-wave138-2026-08-04",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-targeted-capture-conditional-format-manage-wave138-2026-08-04",
+                         "expectedWidth":  560,
+                         "expectedHeight":  420,
+                         "note":  "Fresh current-source Avalonia production capture from Ubuntu 24.04 Docker/Xvfb via tools/Run-LinuxParityCapture.ps1; app exit 0, capture_validated true, nonblank 560x420 PNG at 96 DPI. Shared ConditionalFormatManageParityFixture matches the retained WPF authority's two-rule C2:C6 state."
                      },
                      {
                          "id":  "dialog.AccessibilityChecker",

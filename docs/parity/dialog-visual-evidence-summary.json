@@ -27,7 +27,7 @@
                     "visualReviewTriageThreshold":  0.4,
                     "visualReviewTriageThresholdRationale":  "This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.",
                     "visualReviewCandidateCount":  0,
-                    "highestTriageScore":  0.073983,
+                    "highestTriageScore":  0.069584,
                     "dimensionMismatchBuckets":  {
 
                                                  }
@@ -526,7 +526,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ConditionalFormatManage.png",
-                                                "fileBytes":  16046,
+                                                "fileBytes":  19886,
                                                 "width":  560,
                                                 "height":  420,
                                                 "dpiX":  96,
@@ -534,11 +534,17 @@
                                                 "logicalWidth":  560,
                                                 "logicalHeight":  420,
                                                 "pixels":  235200,
-                                                "distinctColors":  802,
+                                                "distinctColors":  2359,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.146424,
+                                                "nonBackgroundRatio":  0.20287,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  245.87259
+                                                "meanLuma":  246.12172,
+                                                "manifestNote":  "Fresh current-source Avalonia production capture from Ubuntu 24.04 Docker/Xvfb via tools/Run-LinuxParityCapture.ps1; app exit 0, capture_validated true, nonblank 560x420 PNG at 96 DPI. Shared ConditionalFormatManageParityFixture matches the retained WPF authority\u0027s two-rule C2:C6 state.",
+                                                "evidenceSource":  "fresh-current-source-avalonia-linux-docker-xvfb-capture-wave138-2026-08-04",
+                                                "sourcePng":  null,
+                                                "recaptureStatus":  "fresh-linux-docker-xvfb-targeted-capture-conditional-format-manage-wave138-2026-08-04",
+                                                "expectedWidth":  560,
+                                                "expectedHeight":  420
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -553,10 +559,10 @@
                                                   "rawPixelHeightDelta":  210,
                                                   "captureScaleNormalizedDimensionMatch":  true,
                                                   "dimensionDeltaRatio":  0.000103,
-                                                  "sampleMeanDelta":  0.045425,
-                                                  "lumaDelta":  0.000498,
-                                                  "nonBackgroundDelta":  0.027958,
-                                                  "triageScore":  0.073983,
+                                                  "sampleMeanDelta":  0.035432,
+                                                  "lumaDelta":  0.001475,
+                                                  "nonBackgroundDelta":  0.028488,
+                                                  "triageScore":  0.065497,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6418,14 +6424,6 @@
                        ],
     "topPairedOutliers":  [
                               {
-                                  "id":  "dialog.ConditionalFormatManage",
-                                  "triageScore":  0.073983,
-                                  "sampleMeanDelta":  0.045425,
-                                  "dimension":  "560.029x420.022 vs 560x420 logical; 840x630 vs 560x420 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.027958
-                              },
-                              {
                                   "id":  "dialog.ChangeChartType",
                                   "triageScore":  0.069584,
                                   "sampleMeanDelta":  0.03641,
@@ -6480,6 +6478,14 @@
                                   "dimension":  "600.084x560.078 vs 600x560 logical; 600x560 vs 600x560 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.022988
+                              },
+                              {
+                                  "id":  "dialog.ConditionalFormatManage",
+                                  "triageScore":  0.065497,
+                                  "sampleMeanDelta":  0.035432,
+                                  "dimension":  "560.029x420.022 vs 560x420 logical; 840x630 vs 560x420 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.028488
                               },
                               {
                                   "id":  "dialog.WatchWindow",
