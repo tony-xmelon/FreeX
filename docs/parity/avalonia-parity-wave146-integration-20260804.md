@@ -32,6 +32,9 @@ solution entries, 22 default-test entries, and 11,020 conflict-marker-scanned
 text files. It also confirmed 33/33 current FreeP whole-window evidence pairs.
 The upstream ChartEx series-layout command required deterministic regeneration
 of the FreeP command inventory (`649/649`) and its cross-app dashboard view.
+After the final `origin/main` merge, repository preflight passed again and the
+92-project `FreeX.slnx` Release build completed with zero warnings and zero
+errors.
 
 ## Evidence boundary
 
