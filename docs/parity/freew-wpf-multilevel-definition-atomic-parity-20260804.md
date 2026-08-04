@@ -6,6 +6,10 @@ Avalonia already applied a `Define New Multilevel List` result as one undo group
 
 The paragraph transform now lives in `MultilevelListDialogPlanner`, while the reversible number-format replacement lives in `FreeW.Core.Model`. Both hosts consume those shared semantics. WPF applies the complete definition in one undo group.
 
+The main Multilevel List command and all three gallery presets now use that same atomic route in both hosts. Reapplying a preset to an existing list no longer toggles it off, and the heading-linked preset includes style assignment in the same undo transaction.
+
+The preset undo contract exposed a WPF retention defect: `ListStartOverride` had no native `FlowDocument` slot and was absent from `ParagraphTag`, so commit discarded authored starts. WPF now tags and restores the override alongside list kind and level.
+
 ## Verification
 
 - Shared planner definition transform: 3 level/start cases.
