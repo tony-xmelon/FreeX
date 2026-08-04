@@ -577,7 +577,11 @@
                          "kind":  "dialog",
                          "png":  "dialog.SelectDataSource.png",
                          "captured":  true,
-                         "note":  ""
+                         "evidenceSource":  "fresh-current-source-avalonia-linux-docker-xvfb-capture-wave137-2026-08-04",
+                         "recaptureStatus":  "fresh-linux-docker-xvfb-targeted-capture-select-data-source-wave137-2026-08-04",
+                         "expectedWidth":  620,
+                         "expectedHeight":  500,
+                         "note":  "Fresh current-source Avalonia production capture from Ubuntu 24.04 Docker/Xvfb via tools/Run-LinuxParityCapture.ps1; app exit 0, capture_validated true, nonblank 620x500 PNG at 96 DPI after the Wave137 scoped WPF chrome, inner-width, and mnemonic-registration correction."
                      },
                      {
                          "id":  "dialog.FormatChartArea",
