@@ -37,6 +37,9 @@ and the consuming WPF/Avalonia projects build cleanly.
 - TTML/DFXP playback planning now respects inherited `body`/`div` `begin`, `end`, and
   `dur` boundaries as well as frame/tick clocks, so child cues cannot outlive their
   containing timed region.
+- Windows WPF and Windows Avalonia camera readiness now enumerate the same WinRT
+  `DeviceInformation` identities consumed by `MediaCapture`; a missing requested
+  camera is deferred explicitly instead of silently selecting another device.
 
 ## 2026-08-04 continuation
 
@@ -65,7 +68,8 @@ Release baseline. No new command or renderer calibration is justified by this au
 - Full Zoom authoring depth beyond the current target, preview, cover-image, crop,
   retargeting, target-list, and tile-layout paths.
 - Broader real-deck media/caption/recording persistence and PowerPoint recording baselines,
-  beyond the now format-preserving internal caption authoring path.
+  beyond the now format-preserving internal caption authoring path and the corrected
+  Windows camera identity handoff.
 - Printer-driver/OS-owned dialog behavior, portable non-Windows OLE, and physical mixed
   workflow validation.
 - PowerPoint COM-backed visual validation for claims that need Microsoft-authored output.
