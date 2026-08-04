@@ -11,7 +11,7 @@ The parity scope recorded that Avalonia exposed synonym Replace over the shared 
 
 `ThesaurusPresentationPlanner` now owns the canonical Insert tooltip/action contract, while retaining the old `ReplaceToolTip` alias for existing consumers. Avalonia uses the editor's command-bus-backed `CanReplaceCurrentProofingWord` and `ReplaceCurrentProofingWord` APIs, so Insert respects selection/caret position, protected/editing locks, undo, dirty notifications, and caret collapse. The visible pane refreshes through the existing document/caret refresh subscriptions.
 
-Avalonia now renders separate Insert and Copy controls for every planned synonym. Insert is disabled when the current word cannot be replaced. Copy is disabled when no injected clipboard service or attached platform clipboard exists, and clipboard failures remain non-mutating. WPF now consumes the same shared Insert tooltip field and presents the matching Insert label.
+Avalonia now renders separate Insert and Copy controls for every planned synonym. Insert reuses WPF's existing insert glyph and is disabled when the current word cannot be replaced. Copy is disabled when no injected clipboard service or attached platform clipboard exists, and clipboard failures remain non-mutating. WPF retains its authority glyph and consumes the same shared Insert tooltip field.
 
 ## Verification
 
