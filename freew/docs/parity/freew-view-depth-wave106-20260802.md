@@ -24,4 +24,4 @@ The documented residual in `docs/parity/2026-06-27-avalonia-wpf-parity-scope.md`
 
 ## Remaining residual
 
-This is a prerequisite, not a claim of complete page-view parity. Cross-page clipboard/undo parity remains deferred. Avalonia's live editor is editable but still needs a native horizontal page-grid layout with page-aware hit testing and pair scrolling; its current adapter preserves the live editor and navigation contract while that deeper layout work remains. Multiple Pages remains a read-only grid, and Split remains a live-editor plus read-only snapshot.
+This is a prerequisite, not a claim of complete page-view parity. Avalonia's live editor already preserves cross-page selection, clipboard insertion, and undo history while Side-to-Side navigation changes the visible pair. It still needs a native horizontal page-grid layout with page-aware hit testing and pair scrolling; the current adapter preserves the live editor and navigation contract while that deeper layout work remains. Multiple Pages remains a read-only grid, and Split remains a live-editor plus read-only snapshot.
