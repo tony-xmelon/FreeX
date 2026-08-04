@@ -4,20 +4,20 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia) plus freep/FreeP.App.Presentation SmartArtLayoutPreset",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 645,
-    "both": 645,
+    "totalCommands": 646,
+    "both": 646,
     "wpfOnly": 0,
     "avaloniaOnly": 0,
     "missingWpf": 0,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 645,
+    "shared": 646,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 0,
     "commandIdAliases": 0,
-    "workflowEvidenceRows": 108
+    "workflowEvidenceRows": 109
   },
   "workflowEvidence": [
     {
@@ -1309,6 +1309,27 @@
         "tools/FreeP.RenderCompare/SmartArtFixtureGenerator.cs"
       ],
       "remainingWork": "The deterministic fixture admits only four distinct non-empty flat nodes with four effect-free DownArrow cache shapes in exact shared-planner slot geometry. Richer, malformed, effect-bearing, picture-bearing, reordered, differently spaced, or otherwise unproven verticalArrowList caches remain on cached drawing fallback; exact PowerPoint arrow contours, text fitting, effects, and larger imported variants remain deferred."
+    },
+    {
+      "evidenceId": "freep.smartart.process1-import-node-connectors",
+      "area": "SmartArt process1 imported five-stage node-and-connector live layout",
+      "status": "shared-render-planner-evidence",
+      "hostCoverage": "WPF/Avalonia consume the same shared process1 node and connector plan through SlideCompositor; no renderer-local SmartArt policy",
+      "evidenceDocs": [
+        "docs/parity/avalonia-parity-wave137-freep-smartart-process1-20260804.md"
+      ],
+      "verification": [
+        "freep/FreeP.Core.IO/PptxPackageReader.cs",
+        "freep/FreeP.App.Presentation/SmartArtLayoutEngine.cs",
+        "freep/FreeP.App.Presentation/SlideCompositor.cs",
+        "freep/FreeP.App.Host.Tests/PptxPackageReaderSourceTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtTests.cs",
+        "freep/FreeP.App.Host.Tests/SmartArtDefaultLiveRendererContractTests.cs",
+        "freep/FreeP.App.Rendering.Avalonia.Tests/SmartArtDefaultLiveRendererContractTests.cs",
+        "tools/FreeP.RenderCompare.Tests/SmartArtFixtureEvidenceTests.cs",
+        "tools/FreeP.RenderCompare/SmartArtFixtureGenerator.cs"
+      ],
+      "remainingWork": "The deterministic process1 fixture admits only one five-node ordered chain with five effect-free rounded node boxes and four empty line connectors at the exact shared-plan slots. Changed geometry, reordered or mismatched text, effects, pictures, extra roles, missing cache parts, richer process caches, and other unproven process variants remain on cached drawing fallback; exact PowerPoint geometry, text fitting, effects, and broader process-family import parity remain deferred."
     },
     {
       "evidenceId": "freep.smartart.basic-process",
@@ -8356,6 +8377,40 @@
           "groupId": "slides",
           "group": "Slides",
           "label": "Duplicate Slide",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.edit-zoom-target",
+      "label": "[[Ribbon_Command_ChangeZoomTarget_Label]]",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "links",
+          "group": "Links",
+          "label": "[[Ribbon_Command_ChangeZoomTarget_Label]]",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "links",
+          "group": "Links",
+          "label": "[[Ribbon_Command_ChangeZoomTarget_Label]]",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
