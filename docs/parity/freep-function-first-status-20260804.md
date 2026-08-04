@@ -2,7 +2,7 @@
 
 Evidence anchor: current `main` is `42d57f0132`. The latest focused Release
 baseline reported for the function-first lane is **2,027/2,027** host tests and
-**3,632/3,632** shared Presentation tests. These are implementation/contract
+**3,633/3,633** shared Presentation tests. These are implementation/contract
 counts, not a claim that every PowerPoint-native behavior has been reproduced.
 
 ## Current position
@@ -39,6 +39,9 @@ and the consuming WPF/Avalonia projects build cleanly.
   focused evidence; platform-native behavior is kept explicit in the evidence manifests.
 - Internal caption replacement now preserves an existing WebVTT, SRT, TTML, or DFXP
   package format and relationship identity; WebVTT remains the default for new tracks.
+- External caption relationships can now be deleted through the shared authoring pane
+  and undo bus without mutating the linked remote resource; in-place text replacement
+  remains intentionally separate and creates an internal track.
 - TTML/DFXP playback planning now respects inherited `body`/`div` `begin`, `end`, and
   `dur` boundaries as well as frame/tick clocks, so child cues cannot outlive their
   containing timed region.
