@@ -76,12 +76,21 @@ round-trips remain on the verbatim preservation path. Focused chart coverage is
 2,025/2,025 host tests plus 3,631/3,631 shared Presentation tests on the Release
 baseline.
 
+The native ChartEx data path now also resolves the schema's per-series `cx:dataId`
+references. Multi-series preserved payloads with one unambiguous category dimension and
+one value dimension per referenced series can be edited through the existing chart-data
+command, while ambiguous families remain verbatim. The reader reconstructs omitted
+`cx:pt` gaps from `ptCount`/`idx`, and the writer changes only the referenced values and
+series names, retaining family-specific extensions. This closes the basic multi-series
+authoring gap without pretending that series-specific layout, decoration, or connector
+semantics are modeled.
+
 ## What remains
 
 - Advanced SmartArt layout/style/effect semantics outside the bounded live catalog and
   PowerPoint-authoritative authoring baselines.
-- Richer chart authoring/layout semantics, including multi-series native ChartEx
-  authoring, exact Office connector geometry, and remaining native decoration families.
+- Richer chart authoring/layout semantics, including series-specific native ChartEx
+  layout, exact Office connector geometry, and remaining native decoration families.
 - Full Zoom authoring depth beyond the current target, preview, cover-image, crop,
   retargeting, target-list, and tile-layout paths.
 - Broader real-deck media/caption/recording persistence and PowerPoint recording baselines,
