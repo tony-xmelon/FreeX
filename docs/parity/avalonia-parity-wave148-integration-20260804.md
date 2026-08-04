@@ -2,7 +2,7 @@
 
 Date: 2026-08-04
 
-Final upstream base: `42af3da77d`.
+Final upstream base: `671a022206`.
 
 ## Accepted slices
 
@@ -69,4 +69,7 @@ and zero failures.
 After the default lane, the final upstream merge added FreeW explicit
 auto-hyphenation preservation and nested fidelity-corpus coverage. Its affected
 Avalonia, WPF host, and Core IO suites passed `86/86`, `25/25`, and `229/229`;
-repository preflight and the full zero-warning Release build then passed again.
+the next upstream merge added FreeP Summary Zoom target reordering, whose
+Avalonia, WPF host, and presentation suites passed `4/4`, `4/4`, and `9/9`.
+Final repository preflight then passed across all `11,053` checked text files,
+and the full `Release` solution built again with zero warnings and zero errors.
