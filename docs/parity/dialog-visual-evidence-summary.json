@@ -27,7 +27,7 @@
                     "visualReviewTriageThreshold":  0.4,
                     "visualReviewTriageThresholdRationale":  "This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.",
                     "visualReviewCandidateCount":  0,
-                    "highestTriageScore":  0.077246,
+                    "highestTriageScore":  0.075491,
                     "dimensionMismatchBuckets":  {
 
                                                  }
@@ -60,7 +60,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.About.png",
-                                                "fileBytes":  68831,
+                                                "fileBytes":  64688,
                                                 "width":  560,
                                                 "height":  420,
                                                 "dpiX":  96,
@@ -70,13 +70,13 @@
                                                 "pixels":  235200,
                                                 "distinctColors":  213,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.135136,
+                                                "nonBackgroundRatio":  0.128108,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  241.549863,
-                                                "manifestNote":  "Fresh current-source Avalonia capture from Linux Docker/Xvfb via Run-LinuxParityCapture.ps1 after Wave 134 About vertical line-box, read-only scrollbar lane, viewport, and action-button surface alignment; 560x420 client frame at 96 DPI.",
-                                                "evidenceSource":  "fresh-current-source-avalonia-linux-docker-xvfb-about-capture-wave134-2026-08-04",
+                                                "meanLuma":  242.347308,
+                                                "manifestNote":  "Fresh current-source Avalonia capture from Linux Docker/Xvfb via Run-LinuxParityCapture.ps1 after the Wave 136 measured About line-height correction; 560x420 client frame at 96 DPI.",
+                                                "evidenceSource":  "fresh-current-source-avalonia-linux-docker-xvfb-about-capture-wave136-2026-08-04",
                                                 "sourcePng":  null,
-                                                "recaptureStatus":  "fresh-linux-docker-xvfb-about-capture-wave134-2026-08-04",
+                                                "recaptureStatus":  "fresh-linux-docker-xvfb-about-capture-wave136-2026-08-04",
                                                 "expectedWidth":  560,
                                                 "expectedHeight":  420
                                             },
@@ -93,10 +93,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.057872,
-                                                  "lumaDelta":  0.005549,
-                                                  "nonBackgroundDelta":  0.013546,
-                                                  "triageScore":  0.077246,
+                                                  "sampleMeanDelta":  0.046975,
+                                                  "lumaDelta":  0.002421,
+                                                  "nonBackgroundDelta":  0.006518,
+                                                  "triageScore":  0.056193,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6412,14 +6412,6 @@
                        ],
     "topPairedOutliers":  [
                               {
-                                  "id":  "dialog.About",
-                                  "triageScore":  0.077246,
-                                  "sampleMeanDelta":  0.057872,
-                                  "dimension":  "560.078x420.059 vs 560x420 logical; 560x420 vs 560x420 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.013546
-                              },
-                              {
                                   "id":  "dialog.SelectDataSource",
                                   "triageScore":  0.075491,
                                   "sampleMeanDelta":  0.036019,
@@ -6490,6 +6482,14 @@
                                   "dimension":  "600.084x560.078 vs 600x560 logical; 600x560 vs 600x560 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.022988
+                              },
+                              {
+                                  "id":  "dialog.WatchWindow",
+                                  "triageScore":  0.065491,
+                                  "sampleMeanDelta":  0.02717,
+                                  "dimension":  "760.106x320.045 vs 760x320 logical; 760x320 vs 760x320 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.02905
                               }
                           ],
     "visualReviewCandidates":  [
