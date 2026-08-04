@@ -27,7 +27,7 @@
                     "visualReviewTriageThreshold":  0.4,
                     "visualReviewTriageThresholdRationale":  "This is a deterministic review-prioritization cutoff over the triage score (normalized sample, luma, non-background, and logical-size deltas); it is not a pass/fail or visual-parity acceptance threshold. Rows at or above it remain unresolved review candidates until a human compares the paired evidence.",
                     "visualReviewCandidateCount":  0,
-                    "highestTriageScore":  0.069584,
+                    "highestTriageScore":  0.084227,
                     "dimensionMismatchBuckets":  {
 
                                                  }
@@ -462,7 +462,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.ChangeChartType.png",
-                                                "fileBytes":  23011,
+                                                "fileBytes":  26629,
                                                 "width":  640,
                                                 "height":  390,
                                                 "dpiX":  96,
@@ -470,11 +470,11 @@
                                                 "logicalWidth":  640,
                                                 "logicalHeight":  390,
                                                 "pixels":  249600,
-                                                "distinctColors":  1310,
+                                                "distinctColors":  2438,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.097007,
+                                                "nonBackgroundRatio":  0.100994,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  246.053575
+                                                "meanLuma":  245.891437
                                             },
                                "comparison":  {
                                                   "dimensionMatch":  true,
@@ -489,10 +489,10 @@
                                                   "rawPixelHeightDelta":  195,
                                                   "captureScaleNormalizedDimensionMatch":  true,
                                                   "dimensionDeltaRatio":  0.000103,
-                                                  "sampleMeanDelta":  0.03641,
-                                                  "lumaDelta":  0.00836,
-                                                  "nonBackgroundDelta":  0.024712,
-                                                  "triageScore":  0.069584,
+                                                  "sampleMeanDelta":  0.04643,
+                                                  "lumaDelta":  0.008996,
+                                                  "nonBackgroundDelta":  0.028698,
+                                                  "triageScore":  0.084227,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  640,
                                                   "expectedHeight":  390,
@@ -6425,11 +6425,11 @@
     "topPairedOutliers":  [
                               {
                                   "id":  "dialog.ChangeChartType",
-                                  "triageScore":  0.069584,
-                                  "sampleMeanDelta":  0.03641,
+                                  "triageScore":  0.084227,
+                                  "sampleMeanDelta":  0.04643,
                                   "dimension":  "640.033x390.02 vs 640x390 logical; 960x585 vs 640x390 px",
                                   "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.024712
+                                  "nonBackgroundDelta":  0.028698
                               },
                               {
                                   "id":  "dialog.PivotTableOptions.Display",
