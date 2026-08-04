@@ -307,10 +307,10 @@
                          "png":  "dialog.InsertHyperlink.png",
                          "captured":  true,
                          "evidenceSource":  "fresh-direct-avalonia-parity-capture",
-                         "recaptureStatus":  "fresh-avalonia-capture-wave115-semantic-fixture",
+                         "recaptureStatus":  "fresh-avalonia-capture-wave145-inactive-list-template",
                          "expectedWidth":  560,
                          "expectedHeight":  300,
-                         "note":  "Fresh Avalonia capture using HyperlinkDialogParityFixture.Target and DisplayText, semantically matching the authoritative WPF insert-objects-links-tour evidence; captured 2026-08-03 via --parity-capture --parity-capture-surface dialog.InsertHyperlink."
+                         "note":  "Fresh Avalonia capture using HyperlinkDialogParityFixture.Target and DisplayText after the hyperlink list adopted the shared Windows-style template with inactive selected-row chrome and zero vertical item padding; captured 2026-08-04 via --parity-capture --parity-capture-surface dialog.InsertHyperlink. The retained WPF PNG remains the visual authority."
                      },
                      {
                          "id":  "dialog.SymbolPicker",
