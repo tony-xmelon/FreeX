@@ -123,6 +123,12 @@ matched 816x528 sequence improved p1/p2/p3 from **6.9059/9.2442/7.3462%** to
 ordinary positive-spacing/no-spacing controls byte-stable. `DocumentViewRoundTrip`
 coverage for the lane is **50/50**.
 
+The chart continuation now exposes native waterfall connector-line visibility through
+the existing shared Chart Options workflow. The planner and undoable display command
+carry `ChartShape.ShowWaterfallConnectorLines`, and WPF/Avalonia show the checkbox only
+for waterfall charts; classic chart behavior and the existing ChartEx payload path are
+unchanged. Focused planner and command coverage is included in the current chart lane.
+
 ## What remains
 
 - Advanced SmartArt layout/style/effect semantics outside the bounded live catalog and

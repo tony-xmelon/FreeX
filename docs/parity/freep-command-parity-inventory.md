@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 648 | 648 | 0 | 0 | 0 | 0 | 0 | 0 | 648 | 0 | 0 | 0 | 0 | 110 |
+| 649 | 649 | 0 | 0 | 0 | 0 | 0 | 0 | 649 | 0 | 0 | 0 | 0 | 110 |
 
 ## Workflow Evidence
 
@@ -304,6 +304,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.chart.change-type.surface3d` | 3-D Surface | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.change-type.waterfall` | Waterfall | Yes | Yes | none | shared | insert/charts (RibbonMenuItem) | insert/charts (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.data-table-options` | Data Table | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.chart.edit-chartex-series-layout` | Layout Options (Series) | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.edit-data` | Edit Data | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.format-options` | Chart Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.chart.layout-options` | Layout Options | Yes | Yes | none | shared | insert/charts (RibbonButton) | insert/charts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
