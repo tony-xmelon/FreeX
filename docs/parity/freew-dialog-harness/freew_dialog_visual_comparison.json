@@ -9264,7 +9264,7 @@
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/table-of-authorities.initial.png",
-      "note": null,
+      "note": "Fresh Avalonia capture passed the full and target content gates. The committed WPF authority and paired diff metrics are retained because this host's fresh WPF raster was blank.",
       "wpfContent": {
         "passesContentGate": true,
         "failure": null,
@@ -9294,15 +9294,15 @@
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.903301257652945,
+        "dominantColorRatio": 0.9203345499970722,
         "distinctColorCount": 35,
         "luminanceRange": 223.99999999999997,
-        "contentPixelRatio": 0.08846726190476191,
+        "contentPixelRatio": 0.07288392857142857,
         "contentBounds": {
           "x": 16,
           "y": 20,
           "width": 514,
-          "height": 206
+          "height": 184
         }
       }
     },
@@ -9321,7 +9321,7 @@
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/table-of-authorities.populated.png",
-      "note": null,
+      "note": "Fresh Avalonia capture passed the full and target content gates. The committed WPF authority and paired diff metrics are retained because this host's fresh WPF raster was blank.",
       "wpfContent": {
         "passesContentGate": true,
         "failure": null,
@@ -9351,15 +9351,15 @@
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.903301257652945,
+        "dominantColorRatio": 0.9203345499970722,
         "distinctColorCount": 35,
         "luminanceRange": 223.99999999999997,
-        "contentPixelRatio": 0.08846726190476191,
+        "contentPixelRatio": 0.07288392857142857,
         "contentBounds": {
           "x": 16,
           "y": 20,
           "width": 514,
-          "height": 206
+          "height": 184
         }
       }
     },
@@ -9378,7 +9378,7 @@
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/table-of-authorities.validation-error.png",
-      "note": null,
+      "note": "Fresh Avalonia capture passed the full and target content gates. The committed WPF authority and paired diff metrics are retained because this host's fresh WPF raster was blank.",
       "wpfContent": {
         "passesContentGate": true,
         "failure": null,
@@ -9408,15 +9408,15 @@
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.903301257652945,
+        "dominantColorRatio": 0.9203345499970722,
         "distinctColorCount": 35,
         "luminanceRange": 223.99999999999997,
-        "contentPixelRatio": 0.08846726190476191,
+        "contentPixelRatio": 0.07288392857142857,
         "contentBounds": {
           "x": 16,
           "y": 20,
           "width": 514,
-          "height": 206
+          "height": 184
         }
       }
     },
