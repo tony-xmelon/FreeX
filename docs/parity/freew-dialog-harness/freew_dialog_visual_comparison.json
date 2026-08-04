@@ -411,11 +411,11 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 45833,
-        "changedRatio": 0.1364077380952381,
-        "meanAbsoluteChannelDelta": 10.852949404761937,
+        "changedPixels": 40578,
+        "changedRatio": 0.12076785714285715,
+        "meanAbsoluteChannelDelta": 10.365937500000024,
         "p95AbsoluteChannelDelta": 106,
-        "luminanceSimilarity": 0.8660733343249114,
+        "luminanceSimilarity": 0.866808966367289,
         "perceptualHashDistance": 12
       },
       "semanticDifference": null,
@@ -450,14 +450,14 @@
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.8878945211094412,
+        "dominantColorRatio": 0.8860630192779394,
         "distinctColorCount": 44,
         "luminanceRange": 203.99999999999997,
-        "contentPixelRatio": 0.1025625,
+        "contentPixelRatio": 0.10423809523809524,
         "contentBounds": {
           "x": 0,
           "y": 0,
-          "width": 546,
+          "width": 545,
           "height": 563
         }
       }
