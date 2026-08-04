@@ -1089,6 +1089,7 @@
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewCommentSummaryInstructionBuilder.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewDialogPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewInstructionBuilder.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewNavigationState.cs",
@@ -1097,6 +1098,7 @@
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewSettingsPanelPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewSurfacePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewToolbarStatePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewWorkbookPaginationContext.cs",
                                                    "src\\FreeX.App.Services\\PrintJobPlanner.cs",
                                                    "src\\FreeX.App.Services\\WorkbookExportPrintPlanner.cs"
                                                ],
