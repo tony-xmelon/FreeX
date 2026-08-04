@@ -4438,7 +4438,7 @@
                                        },
                                "avalonia":  {
                                                 "relativePath":  "docs\\parity\\dialog-visual-assets\\avalonia-capture\\dialog.PivotTableOptions.Display.png",
-                                                "fileBytes":  24542,
+                                                "fileBytes":  41952,
                                                 "width":  520,
                                                 "height":  500,
                                                 "dpiX":  96,
@@ -4446,15 +4446,15 @@
                                                 "logicalWidth":  520,
                                                 "logicalHeight":  500,
                                                 "pixels":  260000,
-                                                "distinctColors":  331,
+                                                "distinctColors":  249,
                                                 "opaqueRatio":  1,
-                                                "nonBackgroundRatio":  0.13495,
+                                                "nonBackgroundRatio":  0.127881,
                                                 "isNonBlank":  true,
-                                                "meanLuma":  247.349874,
-                                                "manifestNote":  "Fresh same-size WPF/Avalonia PivotTable Options capture for wave17.",
-                                                "evidenceSource":  "fresh-wave17-targeted-capture",
+                                                "meanLuma":  248.124602,
+                                                "manifestNote":  "Fresh same-size WPF/Avalonia PivotTable Options Display capture for wave144 after parity-fixture correction.",
+                                                "evidenceSource":  "fresh-wave144-linux-xvfb-targeted-capture",
                                                 "sourcePng":  null,
-                                                "recaptureStatus":  "wave17-2026-07-27",
+                                                "recaptureStatus":  "wave144-2026-08-04",
                                                 "expectedWidth":  520,
                                                 "expectedHeight":  500
                                             },
@@ -4471,10 +4471,10 @@
                                                   "rawPixelHeightDelta":  0,
                                                   "captureScaleNormalizedDimensionMatch":  false,
                                                   "dimensionDeltaRatio":  0.000279,
-                                                  "sampleMeanDelta":  0.044593,
-                                                  "lumaDelta":  0.00579,
-                                                  "nonBackgroundDelta":  0.018642,
-                                                  "triageScore":  0.069304,
+                                                  "sampleMeanDelta":  0.038051,
+                                                  "lumaDelta":  0.008828,
+                                                  "nonBackgroundDelta":  0.011573,
+                                                  "triageScore":  0.058731,
                                                   "expectedSizeMismatch":  false,
                                                   "expectedWidth":  null,
                                                   "expectedHeight":  null,
@@ -6440,14 +6440,6 @@
                                   "nonBackgroundDelta":  0.026699
                               },
                               {
-                                  "id":  "dialog.PivotTableOptions.Display",
-                                  "triageScore":  0.069304,
-                                  "sampleMeanDelta":  0.044593,
-                                  "dimension":  "520.073x500.07 vs 520x500 logical; 520x500 vs 520x500 px",
-                                  "dimensionMismatchBucket":  null,
-                                  "nonBackgroundDelta":  0.018642
-                              },
-                              {
                                   "id":  "dialog.InsertHyperlink",
                                   "triageScore":  0.06881,
                                   "sampleMeanDelta":  0.037252,
@@ -6502,6 +6494,14 @@
                                   "dimension":  "360.019x420.022 vs 360x420 logical; 540x630 vs 360x420 px",
                                   "dimensionMismatchBucket":  null,
                                   "nonBackgroundDelta":  0.015949
+                              },
+                              {
+                                  "id":  "dialog.RenameSheet",
+                                  "triageScore":  0.062039,
+                                  "sampleMeanDelta":  0.04475,
+                                  "dimension":  "340.017x150.008 vs 340x150 logical; 510x225 vs 340x150 px",
+                                  "dimensionMismatchBucket":  null,
+                                  "nonBackgroundDelta":  0.014669
                               }
                           ],
     "visualReviewCandidates":  [

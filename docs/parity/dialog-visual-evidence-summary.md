@@ -64,7 +64,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
 | dialog.DataTable | 360x210 | 360x210 | 540x315 px @ 144 DPI vs 360x210 px @ 96 DPI |  |  | 0.101 | 0.043 | 0.006 | 0.051 |
 | dialog.ChangeChartType | 640x390 | 640x390 | 960x585 px @ 144 DPI vs 640x390 px @ 96 DPI |  |  | 0.077 | 0.046 | 0.005 | 0.027 |
-| dialog.PivotTableOptions.Display | 520x500 | 520x500 | 520x500 px @ 96 DPI vs 520x500 px @ 96 DPI |  |  | 0.069 | 0.045 | 0.006 | 0.019 |
 | dialog.InsertHyperlink | 560x300 | 560x300 | 840x450 px @ 144 DPI vs 560x300 px @ 96 DPI |  |  | 0.069 | 0.037 | 0.002 | 0.030 |
 | dialog.AccessibilityChecker | 360x520 | 360x520 | 360x520 px @ 96 DPI vs 360x520 px @ 96 DPI |  |  | 0.067 | 0.044 | 0.001 | 0.021 |
 | dialog.GoTo | 420x320 | 420x320 | 420x320 px @ 96 DPI vs 420x320 px @ 96 DPI |  |  | 0.066 | 0.027 | 0.011 | 0.028 |
@@ -72,6 +71,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.ConditionalFormatManage | 560x420 | 560x420 | 840x630 px @ 144 DPI vs 560x420 px @ 96 DPI |  |  | 0.065 | 0.035 | 0.001 | 0.028 |
 | dialog.WatchWindow | 760x320 | 760x320 | 760x320 px @ 96 DPI vs 760x320 px @ 96 DPI |  |  | 0.065 | 0.027 | 0.009 | 0.029 |
 | dialog.ScenarioManager | 360x420 | 360x420 | 540x630 px @ 144 DPI vs 360x420 px @ 96 DPI |  |  | 0.063 | 0.042 | 0.005 | 0.016 |
+| dialog.RenameSheet | 340x150 | 340x150 | 510x225 px @ 144 DPI vs 340x150 px @ 96 DPI |  |  | 0.062 | 0.045 | 0.003 | 0.015 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -153,7 +153,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.PivotTableOptions | dialog.PivotTableOptions.png | 520x676 | 520x676 px @ 96 DPI | True | dialog.PivotTableOptions.png | 520x676 | 520x676 px @ 96 DPI | True | True | 0.046 |
 | dialog.PivotTableOptions.AltText | dialog.PivotTableOptions.AltText.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.AltText.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.039 |
 | dialog.PivotTableOptions.Data | dialog.PivotTableOptions.Data.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.Data.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.059 |
-| dialog.PivotTableOptions.Display | dialog.PivotTableOptions.Display.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.Display.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.069 |
+| dialog.PivotTableOptions.Display | dialog.PivotTableOptions.Display.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.Display.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.059 |
 | dialog.PivotTableOptions.LayoutAndFormat | dialog.PivotTableOptions.LayoutAndFormat.png | 520x676 | 520x676 px @ 96 DPI | True | dialog.PivotTableOptions.LayoutAndFormat.png | 520x676 | 520x676 px @ 96 DPI | True | True | 0.046 |
 | dialog.PivotTableOptions.Printing | dialog.PivotTableOptions.Printing.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.Printing.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.041 |
 | dialog.PivotTableOptions.TotalsAndFilters | dialog.PivotTableOptions.TotalsAndFilters.png | 520x500 | 520x500 px @ 96 DPI | True | dialog.PivotTableOptions.TotalsAndFilters.png | 520x500 | 520x500 px @ 96 DPI | True | True | 0.045 |

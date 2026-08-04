@@ -470,9 +470,9 @@
                          "kind":  "dialog",
                          "png":  "dialog.PivotTableOptions.Display.png",
                          "captured":  true,
-                         "note":  "Fresh same-size WPF/Avalonia PivotTable Options capture for wave17.",
-                         "evidenceSource":  "fresh-wave17-targeted-capture",
-                         "recaptureStatus":  "wave17-2026-07-27",
+                         "note":  "Fresh same-size WPF/Avalonia PivotTable Options Display capture for wave144 after parity-fixture correction.",
+                         "evidenceSource":  "fresh-wave144-linux-xvfb-targeted-capture",
+                         "recaptureStatus":  "wave144-2026-08-04",
                          "expectedWidth":  520,
                          "expectedHeight":  500
                      },
