@@ -8,10 +8,11 @@ Selecting a value in the Avalonia combo therefore had no command target.
 
 ## Change
 
-Avalonia now registers `freew.style` as a `ValueRibbonCommand`. It resolves the combo's display label
-against `BuiltInStyles.Gallery` and calls the existing `DocumentView.ApplyNamedStyle` owner path. That
-path seeds missing built-in definitions, applies paragraph StyleId through the command bus, handles
-multi-paragraph selections, and remains undoable.
+Avalonia now registers `freew.style` as a stateful paragraph-style command. It resolves the combo's
+display label against `BuiltInStyles.Gallery` and calls the existing `DocumentView.ApplyNamedStyle`
+owner path. That path seeds missing built-in definitions, applies paragraph StyleId through the
+command bus, handles multi-paragraph selections, and remains undoable. Its state reads the caret
+paragraph's model StyleId so ribbon refresh publishes the current built-in or custom display name.
 
 Existing quick-style buttons, the richer Styles gallery, Clear Style, New Style, and Manage Styles
 commands are unchanged.
@@ -20,6 +21,8 @@ commands are unchanged.
 
 - `Heading 1` resolves to style id `Heading1` and applies to the caret paragraph.
 - Undo restores the prior null StyleId.
+- A paragraph without an explicit StyleId displays `Normal`.
+- Loaded paragraph styles publish their display name, including custom document styles.
 - Unknown, null, and empty combo values are no-ops.
 - Registry coverage still requires all gallery item and adjacent Styles commands.
 
