@@ -4,7 +4,7 @@
 
 The generated FreeP command inventory on `main` reports **645/645** command IDs
 available in both WPF and Avalonia, with **0 actionable WPF gaps**, **0 actionable
-Avalonia gaps**, **0 known deferred command rows**, and **107 workflow-evidence rows**.
+Avalonia gaps**, **0 known deferred command rows**, and **108 workflow-evidence rows**.
 This is reachability coverage; it does not claim identical PowerPoint-native depth.
 
 The function-first lane is now in a "close proven gaps, preserve honest boundaries"
@@ -23,10 +23,14 @@ and the consuming WPF/Avalonia projects build cleanly.
   edits, undo, native data-part updates, and drawing-cache regeneration are transactional
   in both hosts. Unsupported SmartArt variants remain on their preserved cached-drawing
   path rather than being guessed into a live layout.
+- The SmartArt Text Pane is now directly reachable from the shared Insert/SmartArt ribbon
+  in both WPF and Avalonia; its outline/node edits continue through the transactional
+  data-part and drawing-cache refresh path.
 - Chart insertion and current modeled chart option/data workflows are shared. Remaining
   chart work is deeper Office semantics, not a missing command route.
 - Reading order, accessibility remediation, proofing, comments, media captions, presenter
-  recording, Zoom objects, and export/print handoff all have shared planner/host routes with
+  recording, Zoom objects (including undoable Slide/Section retargeting and Summary Zoom
+  target-list edits), and export/print handoff all have shared planner/host routes with
   focused evidence; platform-native behavior is kept explicit in the evidence manifests.
 
 ## What remains
@@ -35,8 +39,8 @@ and the consuming WPF/Avalonia projects build cleanly.
   PowerPoint-authoritative authoring baselines.
 - Richer chart authoring/layout semantics, including exact Office connector geometry and
   remaining native decoration families.
-- Full Zoom authoring depth beyond the current target, preview, cover-image, crop, and
-  tile-layout paths.
+- Full Zoom authoring depth beyond the current target, preview, cover-image, crop,
+  retargeting, target-list, and tile-layout paths.
 - Broader real-deck media/caption/recording persistence and PowerPoint recording baselines.
 - Printer-driver/OS-owned dialog behavior, portable non-Windows OLE, and physical mixed
   workflow validation.
