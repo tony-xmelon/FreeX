@@ -37,6 +37,9 @@ and the consuming WPF/Avalonia projects build cleanly.
 - TTML/DFXP playback planning now respects inherited `body`/`div` `begin`, `end`, and
   `dur` boundaries as well as frame/tick clocks, so child cues cannot outlive their
   containing timed region.
+- WebVTT cue settings `position`, `line`, `size`, and `align` now flow through the
+  shared cue descriptor and are honored by both slideshow caption hosts; SRT/TTML
+  retain their existing default bottom-strip behavior.
 - Windows WPF and Windows Avalonia camera readiness now enumerate the same WinRT
   `DeviceInformation` identities consumed by `MediaCapture`; a missing requested
   camera is deferred explicitly instead of silently selecting another device.
@@ -58,6 +61,12 @@ broader relationship catalog is already exposed as model metadata and insertion 
 but is not being treated as fully live until each native grammar is independently proven.
 The current SmartArt-focused Presentation lane passed **394/394** tests on the same
 Release baseline. No new command or renderer calibration is justified by this audit.
+
+The caption-placement continuation is bounded to percentage-based WebVTT settings.
+The shared planner owns parsing and placement math, while WPF and Avalonia only apply
+the resulting rectangle to their native caption surfaces. Focused coverage is
+Presentation 12/12, WPF media-host 32/32, and Avalonia media-host 8/8; both host
+projects build with 0 warnings and 0 errors.
 
 ## What remains
 
