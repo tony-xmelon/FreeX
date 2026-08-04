@@ -44,6 +44,15 @@ the host entry point does not create a second SmartArt editing implementation. T
 inventory and status counts were refreshed together after this route was added: 648/648 shared
 commands and 108 workflow-evidence rows.
 
+The current function-first audit also rechecked the SmartArt relationship boundary.
+`relationship1` is a real, bounded authoring path: the reader admits only its audited
+three-node cache grammar, the shared layout engine regenerates the editable nodes, and
+unsupported cache/effect variants remain on the preserved native drawing path. The
+broader relationship catalog is already exposed as model metadata and insertion choices,
+but is not being treated as fully live until each native grammar is independently proven.
+The current SmartArt-focused Presentation lane passed **394/394** tests on the same
+Release baseline. No new command or renderer calibration is justified by this audit.
+
 ## What remains
 
 - Advanced SmartArt layout/style/effect semantics outside the bounded live catalog and
