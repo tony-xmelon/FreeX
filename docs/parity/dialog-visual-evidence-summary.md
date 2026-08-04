@@ -62,10 +62,10 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
+| dialog.DataTable | 360x210 | 360x210 | 540x315 px @ 144 DPI vs 360x210 px @ 96 DPI |  |  | 0.101 | 0.043 | 0.006 | 0.051 |
 | dialog.ChangeChartType | 640x390 | 640x390 | 960x585 px @ 144 DPI vs 640x390 px @ 96 DPI |  |  | 0.084 | 0.046 | 0.009 | 0.029 |
 | dialog.PivotTableOptions.Display | 520x500 | 520x500 | 520x500 px @ 96 DPI vs 520x500 px @ 96 DPI |  |  | 0.069 | 0.045 | 0.006 | 0.019 |
 | dialog.InsertHyperlink | 560x300 | 560x300 | 840x450 px @ 144 DPI vs 560x300 px @ 96 DPI |  |  | 0.069 | 0.037 | 0.002 | 0.030 |
-| dialog.DataTable | 360x210 | 360x210 | 540x315 px @ 144 DPI vs 360x210 px @ 96 DPI |  |  | 0.068 | 0.020 | 0.008 | 0.040 |
 | dialog.AccessibilityChecker | 360x520 | 360x520 | 360x520 px @ 96 DPI vs 360x520 px @ 96 DPI |  |  | 0.067 | 0.044 | 0.001 | 0.021 |
 | dialog.GoTo | 420x320 | 420x320 | 420x320 px @ 96 DPI vs 420x320 px @ 96 DPI |  |  | 0.066 | 0.027 | 0.011 | 0.028 |
 | dialog.PageSetup.Sheet | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 96 DPI |  |  | 0.066 | 0.038 | 0.004 | 0.023 |
@@ -101,7 +101,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.Consolidate | dialog.Consolidate.png | 380x420 | 380x420 px @ 96 DPI | True | dialog.Consolidate.png | 380x420 | 380x420 px @ 96 DPI | True | True | 0.031 |
 | dialog.CreateTable | dialog.CreateTable.png | 360x190 | 360x190 px @ 96 DPI | True | dialog.CreateTable.png | 360x190 | 360x190 px @ 96 DPI | True | True | 0.045 |
 | dialog.CustomViews | dialog.CustomViews.png | 640x360 | 960x540 px @ 144 DPI | True | dialog.CustomViews.png | 640x360 | 640x360 px @ 96 DPI | True | True | 0.058 |
-| dialog.DataTable | dialog.DataTable.png | 360x210 | 540x315 px @ 144 DPI | True | dialog.DataTable.png | 360x210 | 360x210 px @ 96 DPI | True | True | 0.068 |
+| dialog.DataTable | dialog.DataTable.png | 360x210 | 540x315 px @ 144 DPI | True | dialog.DataTable.png | 360x210 | 360x210 px @ 96 DPI | True | True | 0.101 |
 | dialog.DataValidation | dialog.DataValidation.png | 520x560 | 780x840 px @ 144 DPI | True | dialog.DataValidation.png | 520x560 | 520x560 px @ 96 DPI | True | True | 0.059 |
 | dialog.ErrorChecking | dialog.ErrorChecking.png | 720x420 | 720x420 px @ 96 DPI | True | dialog.ErrorChecking.png | 720x420 | 720x420 px @ 96 DPI | True | True | 0.047 |
 | dialog.EvaluateFormula | dialog.EvaluateFormula.png | 600x360 | 600x360 px @ 96 DPI | True | dialog.EvaluateFormula.png | 600x360 | 600x360 px @ 96 DPI | True | True | 0.025 |

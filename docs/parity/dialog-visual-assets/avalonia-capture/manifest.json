@@ -249,7 +249,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.DataTable.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Fresh current-source Avalonia capture from Ubuntu 24.04 Docker/Xvfb via tools/Run-LinuxParityCapture.ps1; exact 360x210 at 96 DPI, app_exit=0, nonblank; parity fixture opens the WPF-retained E2/F2 input state with both worksheet range pickers visible."
                      },
                      {
                          "id":  "dialog.ScenarioManager",
