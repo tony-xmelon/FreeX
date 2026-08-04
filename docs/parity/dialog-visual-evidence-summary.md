@@ -62,7 +62,6 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 
 | Surface id | WPF logical size | Avalonia logical size | Raw PNG sizes | Bucket | Evidence flag | Score | Sample delta | Luma delta | Non-bg delta |
 | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | ---: |
-| dialog.SelectDataSource | 620x500 | 620x500 | 930x750 px @ 144 DPI vs 620x500 px @ 96 DPI |  |  | 0.075 | 0.036 | 0.006 | 0.033 |
 | dialog.ConditionalFormatManage | 560x420 | 560x420 | 840x630 px @ 144 DPI vs 560x420 px @ 96 DPI |  |  | 0.074 | 0.045 | 0.000 | 0.028 |
 | dialog.ChangeChartType | 640x390 | 640x390 | 960x585 px @ 144 DPI vs 640x390 px @ 96 DPI |  |  | 0.070 | 0.036 | 0.008 | 0.025 |
 | dialog.PivotTableOptions.Display | 520x500 | 520x500 | 520x500 px @ 96 DPI vs 520x500 px @ 96 DPI |  |  | 0.069 | 0.045 | 0.006 | 0.019 |
@@ -72,6 +71,7 @@ Outliers are ranked by a deterministic triage score: normalized 32x32 ARGB sampl
 | dialog.GoTo | 420x320 | 420x320 | 420x320 px @ 96 DPI vs 420x320 px @ 96 DPI |  |  | 0.066 | 0.027 | 0.011 | 0.028 |
 | dialog.PageSetup.Sheet | 600x560 | 600x560 | 600x560 px @ 96 DPI vs 600x560 px @ 96 DPI |  |  | 0.066 | 0.038 | 0.004 | 0.023 |
 | dialog.WatchWindow | 760x320 | 760x320 | 760x320 px @ 96 DPI vs 760x320 px @ 96 DPI |  |  | 0.065 | 0.027 | 0.009 | 0.029 |
+| dialog.ScenarioManager | 360x420 | 360x420 | 540x630 px @ 144 DPI vs 360x420 px @ 96 DPI |  |  | 0.063 | 0.042 | 0.005 | 0.016 |
 
 ## Scale-Aware Dimension Mismatch Details
 
@@ -169,7 +169,7 @@ These rows have a DPI-normalized checked-in PNG size that disagrees with the dia
 | dialog.RenameSheet | dialog.RenameSheet.png | 340x150 | 510x225 px @ 144 DPI | True | dialog.RenameSheet.png | 340x150 | 340x150 px @ 96 DPI | True | True | 0.062 |
 | dialog.SaveAsWorkbook | dialog.SaveAsWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | dialog.SaveAsWorkbook.png | 640x420 | 640x420 px @ 96 DPI | True | True | 0.036 |
 | dialog.ScenarioManager | dialog.ScenarioManager.png | 360x420 | 540x630 px @ 144 DPI | True | dialog.ScenarioManager.png | 360x420 | 360x420 px @ 96 DPI | True | True | 0.063 |
-| dialog.SelectDataSource | dialog.SelectDataSource.png | 620x500 | 930x750 px @ 144 DPI | True | dialog.SelectDataSource.png | 620x500 | 620x500 px @ 96 DPI | True | True | 0.075 |
+| dialog.SelectDataSource | dialog.SelectDataSource.png | 620x500 | 930x750 px @ 144 DPI | True | dialog.SelectDataSource.png | 620x500 | 620x500 px @ 96 DPI | True | True | 0.029 |
 | dialog.SelectionPane | dialog.SelectionPane.png | 520x440 | 520x440 px @ 96 DPI | True | dialog.SelectionPane.png | 520x440 | 520x440 px @ 96 DPI | True | True | 0.044 |
 | dialog.ShapeEffects | dialog.ShapeEffects.png | 380x190 | 570x285 px @ 144 DPI | True | dialog.ShapeEffects.png | 380x190 | 380x190 px @ 96 DPI | True | True | 0.032 |
 | dialog.ShapeGradient | dialog.ShapeGradient.png | 500x300 | 500x300 px @ 96 DPI | True | dialog.ShapeGradient.png | 500x300 | 500x300 px @ 96 DPI | True | True | 0.055 |
