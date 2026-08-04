@@ -15,3 +15,5 @@ The product path required no correction: section metadata survived the complete 
 `FreeW.App.Host.Tests` Release build: 0 warnings, 0 errors.
 
 `PaginatedCommitCoordinatorTests`: 8 passed, 0 failed.
+
+The adjacent `W21LabelCellAndSectionHfTests` suite is also Release-enabled so label-grid population, undoable table-cell writes, per-page section ownership, header/footer commit, and direct package retention can no longer disappear from the normal lane.
