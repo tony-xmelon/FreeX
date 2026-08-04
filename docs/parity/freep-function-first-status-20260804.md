@@ -34,6 +34,9 @@ and the consuming WPF/Avalonia projects build cleanly.
   focused evidence; platform-native behavior is kept explicit in the evidence manifests.
 - Internal caption replacement now preserves an existing WebVTT, SRT, TTML, or DFXP
   package format and relationship identity; WebVTT remains the default for new tracks.
+- TTML/DFXP playback planning now respects inherited `body`/`div` `begin`, `end`, and
+  `dur` boundaries as well as frame/tick clocks, so child cues cannot outlive their
+  containing timed region.
 
 ## 2026-08-04 continuation
 
