@@ -152,6 +152,12 @@ The WPF and Avalonia media caption panes now expose that same value through a Pl
 volume slider and Apply action, so the function is reachable from the desktop UI rather
 than only through the shared editing API.
 
+The same panes now expose the existing authored playback start mode (On click or
+Automatically) and Loop until stopped flag. One shared undoable mutation updates both
+values together, and both desktop hosts consume the persisted state during slide show
+playback. This closes the media playback-options authoring gap without adding a host-local
+media model.
+
 ## What remains
 
 - Advanced SmartArt layout/style/effect semantics outside the bounded live catalog and
