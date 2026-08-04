@@ -34,7 +34,7 @@ metadata. Both `AvaloniaDialogButtonRowFactory` and
   `Alt+O`/`Alt+C`/`Alt+A` metadata, unchanged default/cancel semantics, and
   the direct shared `ApplyButton` path.
 - The shared-shell test project is invoked directly for focused validation and
-  is listed only in the shared/default test-solution inventories; no
+  is listed in the full solution. It remains outside the default non-UI test lane; no
   FreeX/FreeW/FreeP app file or app-specific test was changed.
 - WPF authority is `shared/Free.Shared.Shell.Wpf/DialogResources.xaml` and
   `shared/Free.Shared.Shell.Wpf/DialogButtonRowFactory.cs`.
