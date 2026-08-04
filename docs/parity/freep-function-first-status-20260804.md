@@ -45,9 +45,10 @@ and the consuming WPF/Avalonia projects build cleanly.
   and foreground-dialog evidence, not an absent FreeP print route.
 - Internal caption replacement now preserves an existing WebVTT, SRT, TTML, or DFXP
   package format and relationship identity; WebVTT remains the default for new tracks.
-- External caption relationships can now be deleted through the shared authoring pane
-  and undo bus without mutating the linked remote resource; in-place text replacement
-  remains intentionally separate and creates an internal track.
+- External caption relationships can now be deleted or replaced through the shared
+  authoring pane and undo bus without mutating the linked remote resource. Replace
+  converts the selected relationship in place to an embedded caption part, preserving
+  its slot and metadata while switching the relationship to package-owned content.
 - TTML/DFXP playback planning now respects inherited `body`/`div` `begin`, `end`, and
   `dur` boundaries as well as frame/tick clocks, so child cues cannot outlive their
   containing timed region.
