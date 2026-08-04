@@ -21,7 +21,8 @@ distribution is a separate behavior.
 ## Regression coverage
 
 `PageVerticalAlignmentTests` verifies that center and bottom alignment move the first body glyph by the
-planner's computed per-page offset, and that Web Layout remains continuous/top-anchored.
+planner's computed per-page offset, that Web Layout remains continuous/top-anchored, and that an
+image-only page measures and shifts its inline image geometry.
 
 ## Boundary
 
@@ -32,5 +33,5 @@ metrics remains separate. It does not claim Word's Justified paragraph-spacing d
 ## Verification
 
 - `dotnet build freew/FreeW.App.Avalonia.Tests/FreeW.App.Avalonia.Tests.csproj --configuration Release --no-restore` - passed, 0 warnings, 0 errors.
-- `dotnet test freew/FreeW.App.Avalonia.Tests/FreeW.App.Avalonia.Tests.csproj --configuration Release --no-build --filter "FullyQualifiedName~PageVerticalAlignmentTests"` - passed, 2/2.
+- `dotnet test freew/FreeW.App.Avalonia.Tests/FreeW.App.Avalonia.Tests.csproj --configuration Release --no-build --filter "FullyQualifiedName~PageVerticalAlignmentTests"` - passed, 3/3.
 - `dotnet test freew/FreeW.App.Presentation.Tests/FreeW.App.Presentation.Tests.csproj --configuration Release --filter "FullyQualifiedName~PageVerticalAlignmentPlannerTests"` - passed, 5/5.
