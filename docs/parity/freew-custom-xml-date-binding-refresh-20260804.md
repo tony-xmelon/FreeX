@@ -36,5 +36,6 @@ namespace, missing-XPath, and custom-value controls remain in the same focused g
 
 ## Remaining work
 
-Word's text-storage date mapping and non-Gregorian calendars require separate source
-semantics and are deliberately preserved rather than guessed in this slice.
+Text-storage and omitted-storage mapping are covered by the follow-up
+`freew-custom-xml-text-date-binding-refresh-20260805.md`. Non-Gregorian calendars
+still require separate source semantics and remain preserved rather than guessed.
