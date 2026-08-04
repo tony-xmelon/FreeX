@@ -4,7 +4,7 @@
 
 The generated FreeP command inventory on `main` reports **648/648** command IDs
 available in both WPF and Avalonia, with **0 actionable WPF gaps**, **0 actionable
-Avalonia gaps**, **0 known deferred command rows**, and **108 workflow-evidence rows**.
+Avalonia gaps**, **0 known deferred command rows**, and **110 workflow-evidence rows**.
 This is reachability coverage; it does not claim identical PowerPoint-native depth.
 
 The function-first lane is now in a "close proven gaps, preserve honest boundaries"
@@ -39,8 +39,8 @@ The SmartArt Text Pane is now a user-reachable command in the shared Insert/Smar
 for both desktop hosts. Its existing outline, hierarchy-assistant, and picture-node actions
 continue through the transactional model, native data-part, and drawing-cache refresh path;
 the host entry point does not create a second SmartArt editing implementation. The generated
-inventory and status counts were refreshed together after this route was added: 648/648 shared
-commands and 108 workflow-evidence rows.
+inventory and status counts now include the subsequent bounded `process1` and `list1`
+SmartArt import-cache admissions: 648/648 shared commands and 110 workflow-evidence rows.
 
 ## What remains
 
