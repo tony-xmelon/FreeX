@@ -524,7 +524,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.ChangeChartType.png",
                          "captured":  true,
-                         "note":  "Promoted from FREEX_CHART_DATA_LAYOUT_TOUR change-chart-type dialog capture after direct FreeX.App.Host --parity-capture emitted a transparent singleton dialog PNG"
+                         "note":  "Retained nonblank historical authority from FREEX_CHART_DATA_LAYOUT_TOUR. Current-source WPF full recapture on 2026-08-04 was fully transparent and was not promoted; current WPF source now uses the shared populated subtype-gallery fixture."
                      },
                      {
                          "id":  "dialog.Consolidate",

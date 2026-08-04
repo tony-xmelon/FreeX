@@ -570,7 +570,7 @@
                          "kind":  "dialog",
                          "png":  "dialog.ChangeChartType.png",
                          "captured":  true,
-                         "note":  ""
+                         "note":  "Wave 139 current-source Docker/Xvfb capture after shared picker geometry alignment; exact 640x390, nonblank, app exit 0."
                      },
                      {
                          "id":  "dialog.SelectDataSource",
