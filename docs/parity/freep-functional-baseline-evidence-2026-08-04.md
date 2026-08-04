@@ -41,8 +41,10 @@ Commands:
 ## Remaining Function Gaps
 
 The validator's per-deck isolation is now closed. Remaining function-first work
-is to deepen real presenter capture, permissions/error paths, custom-show
-persistence, advanced animation authoring, richer SmartArt and chart editing,
-native printer handoff, portable non-Windows OLE, and real-deck media/recording
-coverage. Visual work remains secondary unless it proves one of those functions
-is being consumed.
+is to deepen real presenter capture, permissions/error paths, advanced animation
+authoring, richer SmartArt and chart editing, foreground/driver-level native
+printer validation, portable non-Windows OLE, and real-deck media/recording
+coverage. WPF native print handoff and the Avalonia platform printer route are
+present; the remaining printer item is OS-owned behavior and evidence, not a
+missing application command path. Visual work remains secondary unless it proves
+one of those functions is being consumed.

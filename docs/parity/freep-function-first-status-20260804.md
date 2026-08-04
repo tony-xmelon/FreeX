@@ -38,6 +38,11 @@ and the consuming WPF/Avalonia projects build cleanly.
   recording, Zoom objects (including undoable Slide/Section retargeting and Summary Zoom
   target-list edits), and export/print handoff all have shared planner/host routes with
   focused evidence; platform-native behavior is kept explicit in the evidence manifests.
+- Native print handoff is implemented at the host boundary: WPF opens the Windows
+  `PrintDialog`, applies copies/collation/color options, and submits the shared raster
+  paginator; Avalonia uses its platform printer adapters where available and retains an
+  explicit preview/PDF fallback. The remaining print risk is OS/printer-driver behavior
+  and foreground-dialog evidence, not an absent FreeP print route.
 - Internal caption replacement now preserves an existing WebVTT, SRT, TTML, or DFXP
   package format and relationship identity; WebVTT remains the default for new tracks.
 - External caption relationships can now be deleted through the shared authoring pane
@@ -171,8 +176,8 @@ media model.
   beyond the now format-preserving internal caption authoring path, XamlPackage/RTF
   clipboard paths, native Windows capture/export adapters, and the corrected Windows
   camera identity handoff.
-- Printer-driver/OS-owned dialog behavior, portable non-Windows OLE, and physical mixed
-  workflow validation.
+- Printer-driver/OS-owned dialog behavior, foreground native-dialog evidence, portable
+  non-Windows OLE, and physical mixed workflow validation.
 - PowerPoint COM-backed visual validation for claims that need Microsoft-authored output.
 
 These are evidence or platform boundaries unless a reproducible user-visible behavior
