@@ -1,8 +1,8 @@
 # FreeP Function-First Status - 2026-08-04
 
-Evidence anchor: current `main` is `42d57f0132`. The latest focused Release
-baseline reported for the function-first lane is **2,027/2,027** host tests and
-**3,633/3,633** shared Presentation tests. These are implementation/contract
+Evidence anchor: current `main` is `d57443cd2a`. The latest verified Release
+baseline includes **3,641/3,641** shared Presentation tests, plus the focused
+host and renderer contracts listed below. These are implementation/contract
 counts, not a claim that every PowerPoint-native behavior has been reproduced.
 
 ## Current position
