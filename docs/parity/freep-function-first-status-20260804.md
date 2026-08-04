@@ -2,7 +2,7 @@
 
 ## Current position
 
-The generated FreeP command inventory on `main` reports **645/645** command IDs
+The generated FreeP command inventory on `main` reports **648/648** command IDs
 available in both WPF and Avalonia, with **0 actionable WPF gaps**, **0 actionable
 Avalonia gaps**, **0 known deferred command rows**, and **108 workflow-evidence rows**.
 This is reachability coverage; it does not claim identical PowerPoint-native depth.
@@ -23,12 +23,24 @@ and the consuming WPF/Avalonia projects build cleanly.
   edits, undo, native data-part updates, and drawing-cache regeneration are transactional
   in both hosts. Unsupported SmartArt variants remain on their preserved cached-drawing
   path rather than being guessed into a live layout.
+- The SmartArt Text Pane is now directly reachable from the shared Insert/SmartArt ribbon
+  in both WPF and Avalonia; its outline/node edits continue through the transactional
+  data-part and drawing-cache refresh path.
 - Chart insertion and current modeled chart option/data workflows are shared. Remaining
   chart work is deeper Office semantics, not a missing command route.
 - Reading order, accessibility remediation, proofing, comments, media captions, presenter
   recording, Zoom objects (including undoable Slide/Section retargeting and Summary Zoom
   target-list edits), and export/print handoff all have shared planner/host routes with
   focused evidence; platform-native behavior is kept explicit in the evidence manifests.
+
+## 2026-08-04 continuation
+
+The SmartArt Text Pane is now a user-reachable command in the shared Insert/SmartArt ribbon
+for both desktop hosts. Its existing outline, hierarchy-assistant, and picture-node actions
+continue through the transactional model, native data-part, and drawing-cache refresh path;
+the host entry point does not create a second SmartArt editing implementation. The generated
+inventory and status counts were refreshed together after this route was added: 648/648 shared
+commands and 108 workflow-evidence rows.
 
 ## What remains
 
