@@ -15,8 +15,19 @@ Update 2026-07-20:
 - Focused planner coverage proves clock timing, `dur` timing, nested-span text flattening, and whitespace normalization for imported TTML cues.
 - The host package round-trip test proves a PowerPoint-style native TTML caption remains byte-identical while planning as an available one-cue transcript after load and save.
 
+Update 2026-08-04:
+
+- Internal caption replacement now preserves the existing WebVTT, SRT, TTML, or DFXP
+  format, package path, and relationship id unless an explicit supported source path
+  selects another format.
+- New internal tracks continue to default to WebVTT. TTML output is generated through
+  the shared planner with XML escaping and is immediately consumable by the existing
+  TTML transcript path.
+
 Remaining gaps:
 
 - No local PowerPoint COM caption/playback baseline is available on this machine.
 - Real-deck PowerPoint-native media/caption corpus breadth is still deferred.
-- TTML visual rendering, playback integration, advanced timing (frame/tick rates and inherited timing contexts), styling/layout semantics, and authoring remain deferred; FreeP authoring continues to emit WebVTT.
+- TTML visual styling/layout semantics and PowerPoint-authoritative caption baselines remain
+  deferred. Frame/tick rates, inherited timing contexts, playback, and native format-preserving
+  internal authoring are covered by the shared planner/package paths.
