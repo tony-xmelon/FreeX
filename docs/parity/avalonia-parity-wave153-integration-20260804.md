@@ -2,7 +2,7 @@
 
 Date: 2026-08-04
 
-Upstream base after final implementation sync: `0eeed25b4d`.
+Upstream base after final implementation sync: `6a3a707c7f`.
 
 ## Accepted slices
 
