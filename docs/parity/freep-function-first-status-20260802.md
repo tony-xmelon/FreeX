@@ -75,6 +75,9 @@ values retain the prior outward geometry, while `in`, `out`, `cross`, and `none`
 corresponding primary, secondary, stock-boundary, and combo minor tick segments.
 Chart context targeting now preserves category/value/secondary-value ownership for axis-title hits,
 so both desktop hosts open the exact axis options workflow instead of falling back to chart-wide text.
+Chart title rich text is now retained as an independent model target through reader, writer, clone,
+shared planner, undo command, and both desktop title-formatting dialogs; legend text remains on the
+chart-wide default path until its own serialized style owner is modeled.
 
 Avalonia SmartArt text-pane edits, layout changes, Quick Styles, and Change Colors now honor
 native data-part and drawing-cache refresh failures before committing the shared undo command.
