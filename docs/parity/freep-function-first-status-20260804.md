@@ -32,6 +32,8 @@ and the consuming WPF/Avalonia projects build cleanly.
   recording, Zoom objects (including undoable Slide/Section retargeting and Summary Zoom
   target-list edits), and export/print handoff all have shared planner/host routes with
   focused evidence; platform-native behavior is kept explicit in the evidence manifests.
+- Internal caption replacement now preserves an existing WebVTT, SRT, TTML, or DFXP
+  package format and relationship identity; WebVTT remains the default for new tracks.
 
 ## 2026-08-04 continuation
 
@@ -50,7 +52,8 @@ SmartArt import-cache admissions: 648/648 shared commands and 110 workflow-evide
   remaining native decoration families.
 - Full Zoom authoring depth beyond the current target, preview, cover-image, crop,
   retargeting, target-list, and tile-layout paths.
-- Broader real-deck media/caption/recording persistence and PowerPoint recording baselines.
+- Broader real-deck media/caption/recording persistence and PowerPoint recording baselines,
+  beyond the now format-preserving internal caption authoring path.
 - Printer-driver/OS-owned dialog behavior, portable non-Windows OLE, and physical mixed
   workflow validation.
 - PowerPoint COM-backed visual validation for claims that need Microsoft-authored output.
