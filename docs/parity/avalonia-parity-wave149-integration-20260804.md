@@ -2,7 +2,7 @@
 
 Date: 2026-08-04
 
-Final upstream base before the final remote check: `40016cec15`.
+Final upstream base: `237b6e8083`.
 
 ## Accepted slices
 
@@ -64,8 +64,13 @@ affected-assembly rerun gives current-source default evidence of `36,451`
 passed across `21` assemblies, `134` benchmark or explicit skips, and zero
 failures.
 
+The final upstream merge added FreeP Zoom theme-border resolution plus FreeW
+WPF floating-table text-distance and bound date-control refresh behavior. Its
+affected FreeP host/presentation lanes passed `38/38` and `143/143`; affected
+FreeW WPF host and Core IO lanes passed `61/61` and `20/20`.
+
 Repository preflight passed over `220` JSON files, `261` XML-backed files,
 `90` PowerShell scripts, `125` .NET projects, `92` solution entries, `22`
-default-test entries, and `11,062` text files. FreeP whole-window evidence
+default-test entries, and `11,066` text files. FreeP whole-window evidence
 remained `33/33` paired after regenerating its `173`-artifact manifest. The
 full `Release` solution build completed with zero warnings and zero errors.
