@@ -13,11 +13,20 @@ PowerPoint parity.
 - The authoritative command used for the missing deck was:
   `dotnet run --project tools/FreeP.RenderCompare/FreeP.RenderCompare.csproj --configuration Release --no-restore -- --powerpoint-export tools/FreeP.RenderCompare/corpus/15-smartart-grouped-list.pptx tools/FreeP.RenderCompare/corpus/pptx-ref/15-smartart-grouped-list --width 1280 --height 720`
 
-The full multi-deck validator was also started with a 45-second per-deck bound,
-but did not return within the bounded session window and was terminated. It is a
-RenderCompare harness/process-ownership gap, not evidence that any particular
-deck failed to open. The owned child process and temporary output were cleaned
-up; the existing PowerPoint process was left untouched.
+The validator now accepts `--decks <name[,name...]>` and reports each completed
+deck before printing the aggregate. A targeted retry of the historically
+problematic decks completed successfully:
+
+- `10-motionpath.pptx`: exported `1/1`, reference match `1/1`.
+- `14-smartart-live.pptx`: exported `4/4`, reference match `4/4`.
+- `21-comments-notes.pptx`: exported `2/2`, reference match `2/2`.
+
+The targeted run therefore completed `3/3` decks and `7/7` reference matches
+with no missing or differing slides. The earlier unfiltered multi-deck run did
+not return within its bounded session window; use the filter for focused triage
+and retain the per-deck timeout for broad runs. Owned child processes and
+temporary output were cleaned up; the existing PowerPoint process was left
+untouched.
 
 ## Windows Video Functionality
 
