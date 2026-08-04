@@ -23,6 +23,9 @@ and the consuming WPF/Avalonia projects build cleanly.
   edits, undo, native data-part updates, and drawing-cache regeneration are transactional
   in both hosts. Unsupported SmartArt variants remain on their preserved cached-drawing
   path rather than being guessed into a live layout.
+- The SmartArt Text Pane is now directly reachable from the shared Insert/SmartArt ribbon
+  in both WPF and Avalonia; its outline/node edits continue through the transactional
+  data-part and drawing-cache refresh path.
 - Chart insertion and current modeled chart option/data workflows are shared. Remaining
   chart work is deeper Office semantics, not a missing command route.
 - Reading order, accessibility remediation, proofing, comments, media captions, presenter
