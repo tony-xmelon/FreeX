@@ -1,5 +1,10 @@
 # FreeP Function-First Status - 2026-08-04
 
+Evidence anchor: current `main` is `42d57f0132`. The latest focused Release
+baseline reported for the function-first lane is **2,027/2,027** host tests and
+**3,632/3,632** shared Presentation tests. These are implementation/contract
+counts, not a claim that every PowerPoint-native behavior has been reproduced.
+
 ## Current position
 
 The generated FreeP command inventory on `main` reports **648/648** command IDs
@@ -43,6 +48,10 @@ and the consuming WPF/Avalonia projects build cleanly.
 - Windows WPF and Windows Avalonia camera readiness now enumerate the same WinRT
   `DeviceInformation` identities consumed by `MediaCapture`; a missing requested
   camera is deferred explicitly instead of silently selecting another device.
+- Windows WPF and Windows Avalonia have native recording capture/export adapters
+  when the Windows media capability is available. Generic planner messages that
+  describe MP4/camera work as deferred apply to unavailable or injected-host
+  capability states; they are not evidence that the desktop routes are absent.
 
 ## 2026-08-04 continuation
 
@@ -85,6 +94,14 @@ series names, retaining family-specific extensions. This closes the basic multi-
 authoring gap without pretending that series-specific layout, decoration, or connector
 semantics are modeled.
 
+The current table lane also closes a concrete fixed-width paginated-cell gap. When
+the WPF host owns a nested `TableCell`/`BlockUIContainer` inset, serialized positive
+left margin is mapped to the measured residual rather than double-counted. The
+matched 816x528 sequence improved p1/p2/p3 from **6.9059/9.2442/7.3462%** to
+**6.7027/8.8065/7.1575%**, with bounded table ROIs improving on every page and
+ordinary positive-spacing/no-spacing controls byte-stable. `DocumentViewRoundTrip`
+coverage for the lane is **50/50**.
+
 ## What remains
 
 - Advanced SmartArt layout/style/effect semantics outside the bounded live catalog and
@@ -95,7 +112,8 @@ semantics are modeled.
   retargeting, target-list, and tile-layout paths.
 - Broader real-deck media/caption/recording persistence and PowerPoint recording baselines,
   beyond the now format-preserving internal caption authoring path, XamlPackage/RTF
-  clipboard paths, and the corrected Windows camera identity handoff.
+  clipboard paths, native Windows capture/export adapters, and the corrected Windows
+  camera identity handoff.
 - Printer-driver/OS-owned dialog behavior, portable non-Windows OLE, and physical mixed
   workflow validation.
 - PowerPoint COM-backed visual validation for claims that need Microsoft-authored output.
