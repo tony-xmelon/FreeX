@@ -52,7 +52,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Avalonia/MainWindow.cs",
-                       "sha256":  "25daf0e56e5c908e7f0f7c172115706efb3859aa7d779d788dea378db67a8fee"
+                       "sha256":  "aa57763ea74f61a16b126650c475a6a9990eb7ab24ca35ad04d9a35301b124cc"
                    },
                    {
                        "path":  "freep/FreeP.App.Avalonia/MainWindow.WholeWindowVisualEvidence.cs",
@@ -92,7 +92,7 @@
                    },
                    {
                        "path":  "shared/Free.Shared.Ribbon.Avalonia/AvaloniaRibbonRenderer.cs",
-                       "sha256":  "032197aa671ba8360df39acbf4e33b3f1c216e42b17a24a970f551be2f37a461"
+                       "sha256":  "27a3ceaff6662d7514b66a04474c5bd24f200525040ac151e3ed47f7cfc0c7b6"
                    },
                    {
                        "path":  "tools/FreeP.RenderCompare/WholeWindowVisualEvidence.cs",
