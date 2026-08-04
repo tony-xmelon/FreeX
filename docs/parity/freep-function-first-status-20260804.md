@@ -1,7 +1,7 @@
 # FreeP Function-First Status - 2026-08-04
 
-Evidence anchor: current `main` is `d57443cd2a`. The latest verified Release
-baseline includes **3,641/3,641** shared Presentation tests, plus the focused
+Evidence anchor: current `main` is `63469d3a74`. The latest verified Release
+baseline includes **3,647/3,647** shared Presentation tests, plus the focused
 host and renderer contracts listed below. These are implementation/contract
 counts, not a claim that every PowerPoint-native behavior has been reproduced.
 
@@ -85,7 +85,7 @@ non-waterfall ChartEx data edits now update the preserved category/value payload
 leaving family-specific XML untouched; an explicit chart-type change now converts the
 object to a modeled classic chart and remains undoable. No-edit native ChartEx
 round-trips remain on the verbatim preservation path. Focused chart coverage is
-2,025/2,025 host tests plus 3,631/3,631 shared Presentation tests on the Release
+2,025/2,025 host tests plus 3,647/3,647 shared Presentation tests on the Release
 baseline.
 
 The native ChartEx data path now also resolves the schema's per-series `cx:dataId`
@@ -96,6 +96,12 @@ command, while ambiguous families remain verbatim. The reader reconstructs omitt
 series names, retaining family-specific extensions. This closes the basic multi-series
 authoring gap without pretending that series-specific layout, decoration, or connector
 semantics are modeled.
+
+The animation continuation now resolves authored `a:schemeClr` and direct RGB colors
+through the active presentation theme and slide color map, including the bounded
+lumMod/lumOff/tint/shade transforms used by PowerPoint animation effects. The shared
+planner owns the color semantics; WPF and Avalonia only consume the resulting playback
+colors. Focused coverage is Presentation 127/127, WPF host 2/2, and Avalonia host 4/4.
 
 The current table lane also closes a concrete fixed-width paginated-cell gap. When
 the WPF host owns a nested `TableCell`/`BlockUIContainer` inset, serialized positive
