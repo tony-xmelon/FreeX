@@ -148,6 +148,10 @@ the timing node when a non-default volume needs persistence instead of hard-codi
 `EditingSession.SetSelectedMediaVolume` commits it through an undoable shared command.
 Default 80% media remains package-compatible with the previous writer path.
 
+The WPF and Avalonia media caption panes now expose that same value through a Playback
+volume slider and Apply action, so the function is reachable from the desktop UI rather
+than only through the shared editing API.
+
 ## What remains
 
 - Advanced SmartArt layout/style/effect semantics outside the bounded live catalog and
