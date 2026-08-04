@@ -6,10 +6,11 @@ WPF handled a double-click on an embedded OLE shape through `WpfOleInPlaceHost` 
 
 ## Change
 
-Avalonia now mirrors the WPF route for unrotated, unflipped OLE shapes. A stage-level native OLE overlay hosts the embedded server, commits edited bytes back to the existing `OleObjectInfo.EmbeddedBytes` payload, and closes before slide/editor refreshes. If native creation declines or fails, the host invokes the existing external activation fallback. Unsupported rotations/flips continue to use external activation without flattening the fallback picture or native package payload.
+Avalonia now mirrors the WPF route for unrotated, unflipped OLE shapes. A stage-level native OLE overlay hosts the embedded server, commits edited bytes back to the existing `OleObjectInfo.EmbeddedBytes` payload, and closes before slide/editor refreshes or window shutdown. If native creation declines or fails, the host invokes the existing external activation fallback. Unsupported rotations/flips continue to use external activation without flattening the fallback picture or native package payload. Close is idempotent and removes the exact overlay child, resets overlay hit testing, and deletes the source/storage temp files on failure, refresh, editor rewire, and `MainWindow.Closed`.
 
 ## Evidence
 
 - `AvaloniaOleActivationRoutingTests` covers in-place-first routing and external fallback behavior.
 - Existing `OleMathRoundTripTests` covers exact OLE embedded-byte PPTX round-trip and ZIP emission.
+- `MainWindowHeadlessTests` exercises the window close lifecycle after the host cleanup hook is installed; the host close path owns COM release, byte commit, overlay removal, hit-test reset, and temp-file deletion.
 - Focused Release commands and results are recorded in the Wave 148 task handoff.
