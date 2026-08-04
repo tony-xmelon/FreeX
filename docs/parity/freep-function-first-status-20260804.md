@@ -1,6 +1,7 @@
 # FreeP Function-First Status - 2026-08-04
 
-Evidence anchor: current `main` is `63469d3a74`. The latest verified Release
+Evidence anchor: current function slice is `21714a7292` (based on `origin/main`
+`feaa9695c4`). The latest verified Release
 baseline includes **3,647/3,647** shared Presentation tests, plus the focused
 host and renderer contracts listed below. These are implementation/contract
 counts, not a claim that every PowerPoint-native behavior has been reproduced.
@@ -97,6 +98,13 @@ series names, retaining family-specific extensions. This closes the basic multi-
 authoring gap without pretending that series-specific layout, decoration, or connector
 semantics are modeled.
 
+The next bounded ChartEx authoring gap is now closed: each native series retains its
+`cx:series/@layoutId` through read, clone, and write, and the shared editing session
+exposes an undoable per-series layout edit without downgrading the object to classic
+chart XML. Unsupported family-specific children remain preserved rather than being
+synthesized. Focused chart contracts are **114/114** on the compiling and no-build
+passes for this slice.
+
 The animation continuation now resolves authored `a:schemeClr` and direct RGB colors
 through the active presentation theme and slide color map, including the bounded
 lumMod/lumOff/tint/shade transforms used by PowerPoint animation effects. The shared
@@ -115,8 +123,8 @@ coverage for the lane is **50/50**.
 
 - Advanced SmartArt layout/style/effect semantics outside the bounded live catalog and
   PowerPoint-authoritative authoring baselines.
-- Richer chart authoring/layout semantics, including series-specific native ChartEx
-  layout, exact Office connector geometry, and remaining native decoration families.
+- Richer chart authoring/layout semantics, including exact Office connector geometry
+  and remaining native decoration families.
 - Full Zoom authoring depth beyond the current target, preview, cover-image, crop,
   retargeting, target-list, and tile-layout paths.
 - Broader real-deck media/caption/recording persistence and PowerPoint recording baselines,
