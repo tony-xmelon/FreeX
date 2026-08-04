@@ -23,9 +23,14 @@ Wave 137 advanced one bounded parity residual in each application:
 - FreeW Avalonia backstage tests: `40/40` passed.
 - FreeW presentation backstage tests: `75/75` passed.
 - FreeP focused worker tests: `530/530` passed before the final negative-test amendment; the amended SmartArt reader lane passed `279/279`.
+- Repository preflight passed after refreshing the FreeP whole-window evidence manifest (`33/33` paired scenarios).
+- `dotnet build FreeX.slnx --configuration Release` passed with zero warnings and zero errors.
+- Post-review contract suites passed: FreeP ribbon definitions `28/28` and FreeX Avalonia `2025/2025`.
 - FreeP command inventory and dialog visual-evidence freshness checks passed.
 - The cross-app dashboard was regenerated from the integrated evidence.
 
 ## Evidence boundaries
 
-The committed WPF dialog frame remains the FreeX authority because this Windows host intermittently produces blank WPF `RenderTargetBitmap` captures; blank frames were rejected and never promoted. FreeW Export remains classified as a genuine visual mismatch after the measurable improvement. FreeP `process1` admission is intentionally limited to the exact audited five-node chain and nine-role cache; malformed hierarchy, missing roles, changed geometry or text order, effects, pictures, and richer caches retain fallback behavior.
+The committed WPF dialog frame remains the FreeX authority because this Windows host intermittently produces blank WPF `RenderTargetBitmap` captures; blank frames were rejected and never promoted. The default non-UI lane initially reported three stale Wave 137 source/inventory contracts, which were corrected and passed their complete owning suites. Its other 30 failures were unrelated WPF pixel assertions across FreeX print rendering and FreeP slide/rich-text rendering. Serial reruns reproduced zero-painted-pixel output in both apps, matching the pre-existing host rendering outage rather than the Avalonia changes in this wave.
+
+FreeW Export remains classified as a genuine visual mismatch after the measurable improvement. FreeP `process1` admission is intentionally limited to the exact audited five-node chain and nine-role cache; malformed hierarchy, missing roles, changed geometry or text order, effects, pictures, and richer caches retain fallback behavior.
