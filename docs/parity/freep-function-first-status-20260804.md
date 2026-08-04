@@ -129,6 +129,13 @@ carry `ChartShape.ShowWaterfallConnectorLines`, and WPF/Avalonia show the checkb
 for waterfall charts; classic chart behavior and the existing ChartEx payload path are
 unchanged. Focused planner and command coverage is included in the current chart lane.
 
+The follow-on chart function slice exposes existing line/stock `dropLines` and
+`upDownBars` visibility through the same shared Chart Options workflow. The controls
+are gated to line-marker/line/stock families, the atomic command preserves authored
+gap and fill styling, and both desktop hosts use the same planner. Package and undo
+coverage verifies that toggling visibility does not flatten or rewrite the chart
+family payload.
+
 ## What remains
 
 - Advanced SmartArt layout/style/effect semantics outside the bounded live catalog and
