@@ -36,7 +36,7 @@ effects or imported grammar beyond the exact FreeP-authored signature.
 
 ## Current-source verification
 
-After merging `origin/main` through `df72072f73`, all focused suites and source
+After merging `origin/main` through `16104b2f0c`, all focused suites and source
 guards passed:
 
 - FreeX Change Chart Type source contract: `11/11`.
@@ -54,13 +54,15 @@ Repository preflight passed over `220` JSON files, `261` XML-backed files,
 `33/33` paired with zero explicit mismatches or capture limitations after its
 `173`-artifact manifest was regenerated.
 
-The serialized default lane passed `36,416` tests across `21` test assemblies;
+The final serialized default lane passed `36,419` tests across `21` test assemblies;
 `134` benchmark or explicitly skipped cases were not executed and no tests
-failed. The first full lane exposed an order-dependent WPF copy-picture failure:
+failed. An earlier full lane exposed an order-dependent WPF copy-picture failure:
 the clipboard retry accepted a successful text round trip even when Windows had
 dropped the requested bitmap flavor. Retry success now requires both text and
-bitmap round trips for rich clipboard payloads. The complete affected assembly
-then passed `1,498` tests with `4` benchmark skips.
+bitmap round trips for rich clipboard payloads. The final lane included the
+complete affected assembly at `1,498` passes with `4` benchmark skips.
+
+The full `Release` solution build completed with zero warnings and zero errors.
 
 The earlier Subtotal capture pause was not reproducible after correcting stale
 source guards, rebuilding, and running the suite serially. No speculative
