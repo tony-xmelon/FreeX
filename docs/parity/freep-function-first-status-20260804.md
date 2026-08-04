@@ -1,6 +1,6 @@
 # FreeP Function-First Status - 2026-08-04
 
-Evidence anchor: current function slice is `1dfd791f08` (current `origin/main`
+Evidence anchor: current function slice is `6595634265` (current `origin/main`
 after the concurrent FreeW merge). The latest verified Release
 baseline includes **3,647/3,647** shared Presentation tests, plus the focused
 host and renderer contracts listed below. These are implementation/contract
@@ -140,6 +140,13 @@ The stacked-chart continuation also exposes authored `serLines` visibility for
 stacked column/bar families. Its command changes only the presence token, preserving
 the existing line style and chart geometry; planner, package/undo, and both-host dialog
 coverage keep the control out of unsupported chart families.
+
+The media continuation now preserves authored playback volume. `MediaInfo` carries a
+clamped 0-100 percentage, the reader consumes `p:cMediaNode/@vol`, and the writer emits
+the timing node when a non-default volume needs persistence instead of hard-coding
+`80000`. WPF and Avalonia initialize their playback sessions from the same value, and
+`EditingSession.SetSelectedMediaVolume` commits it through an undoable shared command.
+Default 80% media remains package-compatible with the previous writer path.
 
 ## What remains
 
