@@ -277,6 +277,13 @@ recording/MP4 persistence scenario, or an OS/PowerPoint-authored workflow that c
 be exercised on the appropriate host. This keeps the function-first lane from
 reopening isolated pixel probes after the visual-fidelity floor has been reached.
 
+The recording boundary was independently checked on the same Windows machine:
+`FreeP.App.Recording.Tests` passed **53/53**, and the WPF video export adapter
+contract passed **7/7**. This confirms that frame-package construction, MP4 host
+handoff, cancellation, and injected narration/camera mux paths are implemented;
+the remaining recording work is real-device capture and PowerPoint-authored
+recording persistence evidence, not a missing shared command route.
+
 The current FreeP command surface remains **650/650** shared-profile commands,
 with **0 actionable WPF gaps**, **0 actionable Avalonia gaps**, **0 known deferred
 command rows**, and **110 workflow-evidence rows**. The latest bounded function
