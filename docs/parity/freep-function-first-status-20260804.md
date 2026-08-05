@@ -175,6 +175,13 @@ values together, and both desktop hosts consume the persisted state during slide
 playback. This closes the media playback-options authoring gap without adding a host-local
 media model.
 
+The Set Up Slide Show workflow now also exposes the already-modeled PowerPoint
+`showMediaCtrls` policy. The value is carried by the same shared undoable settings command,
+round-trips through the existing PresentationML extension, and is consumed by both WPF and
+Avalonia slideshow media controllers. The setting was previously available only through
+the model/API, so this closes the last user-facing authoring gap in that bounded playback
+policy without changing the media hit-testing or rendering contract.
+
 The Set Up Slide Show mode is now functionally complete for the three PresentationML
 show modes: Presented by a speaker, Browsed by an individual, and Browsed at a kiosk.
 The selected mode round-trips through `p:present`, `p:browse`, or `p:kiosk`, is undoable
@@ -190,6 +197,16 @@ restart value as milliseconds, matching the PresentationML contract. Browse mode
 hosts the slide stage in a scroll container using the persisted scrollbar policy, and
 kiosk mode restarts through the shared first-slide navigation plan after the persisted
 interval in both WPF and Avalonia.
+
+The slideshow package/compositor lane now honors `p:showPr/@showMasterSp`. The model
+preserves its default-on/explicit-off state, and shared composition paints authored
+non-placeholder master and layout decoration before slide content while leaving
+placeholder definitions on their existing inheritance path. This restores a concrete
+function gap for master-owned logos and decoration in playback/export without changing
+the existing placeholder or background contracts. Focused shared package/compositor
+coverage is **3/3**, the full Presentation suite is **3,728/3,728**, the host
+round-trip/SmartArt/show-settings lane is **351/351**, and the consuming FreeP Release
+build is clean.
 
 The show-settings lane now also preserves `p:showPr/@showNarration` (defaulting to true)
 through the model, undo command, and package reader/writer. Both desktop dialogs expose
