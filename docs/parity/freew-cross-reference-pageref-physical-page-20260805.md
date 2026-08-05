@@ -30,7 +30,9 @@ changes a stale cached `9` to `2` in both renderers. Shared planner coverage als
 `PageBreakBefore` advances to page 3, an `EvenPage` transition after page 1 starts on page 2, and an
 `OddPage` transition after page 1 inserts the parity blank and starts on page 3.
 
-## Boundary
+## Follow-up
 
-This slice resolves physical pages. Section page-number restarts and non-Arabic page-number display
-formats require a separate logical-page field contract; they are not inferred from physical layout.
+The adjacent logical-page boundary is closed by
+`freew-cross-reference-pageref-logical-page-20260805.md`. Physical placement remains the source of
+page ownership; the shared page-label planner now supplies section restarts, number formats, and
+chapter prefixes to both modeled and imported `PAGEREF` fields.
