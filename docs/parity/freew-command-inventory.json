@@ -3,7 +3,7 @@
   "schemaVersion": 5,
   "generatedBy": "tools/Generate-FreeWCommandInventory.ps1",
   "topologySource": "freew/FreeW.Ribbon.Definitions FreeWRibbon.Build(FreeWRibbonCapabilities.Wpf/Avalonia)",
-  "sourceLiteralEvidenceNote": "Source literal evidence records exact command-id text in source files only; it is not behavior proof and never creates inventory rows.",
+  "sourceLiteralEvidenceNote": "Source literal evidence records exact command-id text in source files only; canonical shared definitions contribute to both profile-definition columns. It is not behavior proof and never creates inventory rows.",
   "behaviorEvidenceNote": "Behavior evidence links a bounded command row to focused WPF and Avalonia tests; it strengthens parity confidence but does not create inventory rows or change gap classification.",
   "classificationNote": "Gap classifications are generated from explicit rule order: shared-profile, command-id-alias, platform-only, profile-shape-only, deferred, then actionable-gap. Direct one-sided controls require paired behavior evidence to avoid actionable-gap.",
   "classificationRules": [
@@ -33,6 +33,11 @@
     }
   ],
   "sourceLiteralFiles": [
+    {
+      "id": "canonicalDefinitionSource",
+      "label": "Canonical shared definition source",
+      "path": "freew/FreeW.Ribbon.Definitions/FreeWCanonicalRibbonTabs.cs"
+    },
     {
       "id": "wpfDefinitionSource",
       "label": "WPF definition source",
@@ -152,8 +157,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       },
       "behaviorEvidence": {
         "evidenceId": "freew.review-bulk-changes.shared-behavior",
@@ -537,8 +542,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       },
       "behaviorEvidence": {
         "evidenceId": "freew.platform-only.window-shell",
@@ -7096,7 +7101,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       },
       "behaviorEvidence": {
         "evidenceId": "freew.review-display.shared-behavior",
@@ -7150,8 +7155,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       },
       "behaviorEvidence": {
         "evidenceId": "freew.review-display.shared-behavior",
@@ -7206,7 +7211,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       },
       "behaviorEvidence": {
         "evidenceId": "freew.review-display.shared-behavior",
@@ -7261,7 +7266,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       },
       "behaviorEvidence": {
         "evidenceId": "freew.review-display.shared-behavior",
@@ -7316,7 +7321,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       },
       "behaviorEvidence": {
         "evidenceId": "freew.review-display.shared-behavior",
@@ -7525,8 +7530,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -9742,7 +9747,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -19082,8 +19087,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -19265,8 +19270,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -19805,8 +19810,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       },
       "behaviorEvidence": {
         "evidenceId": "freew.outline-view.shared-behavior",
@@ -20723,8 +20728,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -22026,8 +22031,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       },
       "behaviorEvidence": {
         "evidenceId": "freew.print-family-view.shared-behavior",
@@ -22081,8 +22086,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       },
       "behaviorEvidence": {
         "evidenceId": "freew.backstage-print-export.shared-behavior",
@@ -22426,8 +22431,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -22468,8 +22473,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -22510,8 +22515,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -22552,8 +22557,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -22594,8 +22599,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -22636,8 +22641,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -22678,8 +22683,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -22775,8 +22780,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       },
       "behaviorEvidence": {
         "evidenceId": "freew.review-bulk-changes.shared-behavior",
@@ -23186,8 +23191,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -23293,8 +23298,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -28405,8 +28410,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -28503,7 +28508,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       },
       "behaviorEvidence": {
         "evidenceId": "freew.review-show-markup.shared-behavior",
@@ -28558,7 +28563,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       },
       "behaviorEvidence": {
         "evidenceId": "freew.review-show-markup.shared-behavior",
@@ -28613,7 +28618,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       },
       "behaviorEvidence": {
         "evidenceId": "freew.review-show-markup.shared-behavior",
@@ -30417,7 +30422,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -30520,8 +30525,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": false,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -35220,8 +35225,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       },
       "behaviorEvidence": {
         "evidenceId": "freew.review-tracking.shared-behavior",
@@ -35275,8 +35280,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -35697,8 +35702,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -36784,7 +36789,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
       }
     },
@@ -36826,8 +36831,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -36899,8 +36904,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -36941,8 +36946,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -37014,8 +37019,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -37056,8 +37061,8 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
+        "wpfRegistrySource": false,
+        "avaloniaRegistrySource": false
       }
     }
   ]
