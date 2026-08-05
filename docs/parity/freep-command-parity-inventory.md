@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 649 | 649 | 0 | 0 | 0 | 0 | 0 | 0 | 649 | 0 | 0 | 0 | 0 | 110 |
+| 650 | 650 | 0 | 0 | 0 | 0 | 0 | 0 | 650 | 0 | 0 | 0 | 0 | 110 |
 
 ## Workflow Evidence
 
@@ -542,6 +542,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.slideshow.from-current-slide` | From Current Slide | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | transitions/slideshow-from-transitions (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slideshow.record-timings` | Record Timings | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | transitions/slideshow-from-transitions (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.slideshow.rehearse-timings` | Rehearse Timings | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | transitions/slideshow-from-transitions (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.slideshow.setup` | Set Up Slide Show | Yes | Yes | none | shared | transitions/slideshow-from-transitions (RibbonButton) | transitions/slideshow-from-transitions (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.colors.colored-fill-accent-1` | Colored Fill - Accent 1 | Yes | Yes | none | shared | design/smartart-colors (RibbonMenuItem) | design/smartart-colors (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.colors.colored-fill-accent-2` | Colored Fill - Accent 2 | Yes | Yes | none | shared | design/smartart-colors (RibbonMenuItem) | design/smartart-colors (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.colors.colored-fill-accent-3` | Colored Fill - Accent 3 | Yes | Yes | none | shared | design/smartart-colors (RibbonMenuItem) | design/smartart-colors (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
