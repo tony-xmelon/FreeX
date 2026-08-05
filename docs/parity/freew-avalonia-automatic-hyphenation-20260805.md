@@ -42,5 +42,33 @@ automatic hyphenation therefore did not change rendered line breaks.
 This slice is renderer-functional parity for ordinary body paragraphs and does not require a Word
 COM raster baseline: it activates an already serialized Word layout setting while preserving source
 text and caret semantics. Exact dictionary-quality hyphenation remains bounded by the shared English
-heuristic. Table-cell and auxiliary-story wrapping, `HyphenationZonePt`, and
-`ConsecutiveHyphenLimit` remain separate follow-up ownership paths.
+heuristic. Table-cell and auxiliary-story wrapping remain separate follow-up ownership paths.
+
+## Measured line policy follow-up
+
+The same-day follow-up closes the two serialized settings that require measured-line state:
+
+- An omitted `w:hyphenationZone` now uses the Open XML default of 360 twips (18 points).
+- An authored zone is compared with the ordinary whole-word line's trailing whitespace, excluding
+  trailing spaces. An automatic break is consumed only when that whitespace exceeds the zone.
+- `w:consecutiveHyphenLimit` now caps generated hyphenated line endings; zero remains unlimited and
+  each emitted non-hyphenated line resets the paragraph streak.
+- The exact decision is shared by keep-lines height preflight and actual line emission, preserving
+  pagination/render agreement.
+- Overlong first words remain eligible because they have no ordinary whole-word fallback to which a
+  hyphenation zone can apply.
+
+The semantics follow the official Open XML
+[`hyphenationZone`](https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.wordprocessing.hyphenationzone)
+definition and Word's
+[`ConsecutiveHyphensLimit`](https://learn.microsoft.com/en-us/office/vba/api/word.document.consecutivehyphenslimit)
+contract. Modern Word reports a compatibility-mode caveat for the VBA zone property, so this is
+package/layout semantic evidence rather than a claim that every modern-mode Word build changes its
+raster for an authored zone.
+
+Follow-up verification:
+
+- Shared candidate and measured-line policy: 13/13.
+- Avalonia automatic-hyphenation compositor: 7/7.
+- Combined hyphenation, column, and floating-wrap controls: 33/33.
+- Consuming Avalonia Release build: 0 warnings, 0 errors.
