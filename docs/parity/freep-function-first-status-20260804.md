@@ -427,3 +427,15 @@ rows**. Remaining work is still bounded to reproducible depth or host evidence:
 deeper SmartArt grammar/effects, richer ChartEx/decorations, full Zoom authoring depth,
 PowerPoint-authored recording persistence and real-device capture, printer/foreground
 dialog behavior, portable OLE activation, and matched PowerPoint visual exports.
+
+## 2026-08-05 connector routing continuation
+
+Elbow connectors now avoid intervening non-endpoint shapes through a deterministic
+orthogonal visibility graph. The existing endpoint-only route remains unchanged when
+the path is clear; attached shape movement passes the current slide obstacles into the
+shared model router, and undo restores both connector bounds and route. WPF and Avalonia
+consume the same `ElbowRoute` waypoints.
+
+Focused connector contracts passed **16/16**, the full Presentation lane passed
+**3,745/3,745**, and both desktop Release consumers built with **0 warnings/errors**.
+Evidence is recorded in `docs/parity/freep-connector-obstacle-routing-20260805.md`.
