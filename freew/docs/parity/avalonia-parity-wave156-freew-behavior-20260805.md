@@ -40,6 +40,7 @@ treated as a product failure and was followed by the serial green runs above.
 
 ## Residuals
 
-This does not claim Word COM or native WPF/Avalonia pixel identity. Source-manager
-clipboard/file interchange and the remaining document-editing breadth still require
-their own focused slices.
+This does not claim Word COM or native WPF/Avalonia pixel identity. A Wave 157 authority
+audit confirmed that WPF Manage Sources does not expose clipboard or file interchange,
+so those are not Avalonia parity residuals. The remaining document-editing breadth and
+dialog visual fidelity remain separate work.

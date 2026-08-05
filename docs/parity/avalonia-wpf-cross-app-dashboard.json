@@ -154,6 +154,11 @@
                                                                   "docs/parity/freew-dialog-harness/freew_dialog_route_inventory.json",
                                                                   "docs/parity/freew-dialog-harness/freew_dialog_visual_comparison.json"
                                                               ],
+                                              "canonicalComparison":  {
+                                                                          "kind":  "canonical-inputs-only",
+                                                                          "description":  "Rows and counts cover only the inventory and WPF/Avalonia capture manifests supplied to this compare invocation.",
+                                                                          "refreshInstruction":  "Route-local evidence remains outside this aggregate until it is merged with --baseline and --refresh-route."
+                                                                      },
                                               "routeCoverage":  {
                                                                     "inventoryScenarioCount":  478,
                                                                     "inventoryRouteCount":  99,
