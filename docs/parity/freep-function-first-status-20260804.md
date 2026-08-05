@@ -318,3 +318,17 @@ This is a function/runtime slice, not a visual calibration claim.
 Focused proof: shared planner contracts **9/9**, Avalonia media adapter tests
 **13/13**, WPF media-controller tests **36/36**, and the full Presentation test
 project **3733/3733**; affected Release consumers build with **0 warnings/errors**.
+
+## 2026-08-05 media bookmark continuation
+
+Media bookmarks were already read, written, and editable, but slideshow playback did
+not consume them. The shared interaction planner now resolves named bookmarks with
+trimmed case-insensitive lookup and clamps them to the active trim window. WPF and
+Avalonia expose the same `TrySeekToBookmark` playback-control operation and reapply
+the authored fade/volume envelope after seeking. This is a functional control slice,
+not a visual calibration claim; the evidence is recorded in
+`docs/parity/freep-media-bookmark-playback-20260805.md`.
+
+Focused proof: shared media planner contracts **10/10**, Avalonia media adapter tests
+**14/14**, WPF media-controller tests **37/37**, and the full Presentation test
+project **3735/3735**; affected Release consumers build with **0 warnings/errors**.
