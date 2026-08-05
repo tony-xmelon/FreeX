@@ -93,4 +93,26 @@ Table follow-up verification:
 - Table structure, vertical alignment, PDF, hidden-text, and hyphenation controls: 131/131.
 - Consuming Avalonia Release build: 0 warnings, 0 errors.
 
-Auxiliary note-story wrapping remains a separate follow-up owner.
+## Footnote and endnote follow-up
+
+Footnote and endnote regions use a separate fragment renderer rather than body/table placed glyphs.
+Their formerly duplicated height-measurement and item-emission loops now share one layout routine.
+Consequently, footnote-band reservation, endnote fit checks, live drawing, and direct PDF export all
+consume identical line breaks.
+
+When enabled for the effective note paragraph, an accepted automatic break emits a note-only text
+fragment ending in `-`. It never edits the source `Footnote`/`Endnote` paragraph. The decision uses
+the same authored/default zone and consecutive-line cap; when the cap rejects a break in an
+overlong active word, a non-hyphenated fragment advances the line and resets the streak. With
+automatic hyphenation disabled or suppressed, the prior overlong-word behavior remains unchanged.
+
+Auxiliary-story verification:
+
+- Automatic-hyphenation host contracts: 11/11, including footnote live/PDF/source invariants,
+  disabled control, and unlimited-versus-limited consecutive line endings.
+- Footnote, endnote, continuation pagination, PDF, and hyphenation controls: 100/100.
+- Consuming Avalonia Release build: 0 warnings, 0 errors.
+
+This completes the Avalonia automatic-hyphenation owner set for ordinary body paragraphs, table
+cells, and the rendered footnote/endnote stories. Header/footer editing remains on its independent
+single-line region model and is not an automatic line-wrap owner.
