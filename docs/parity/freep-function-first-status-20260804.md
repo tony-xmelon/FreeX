@@ -11,6 +11,28 @@ counts, not a claim that every PowerPoint-native behavior has been reproduced.
 
 ## Current FreeP checkpoint - 2026-08-05
 
+### Current-main refresh: `4152ba61ac`
+
+The current `origin/main` tip is `4152ba61ac` (2026-08-05), not the older
+`9c7f9d0983` checkpoint referenced later in this handoff. Since that older
+checkpoint, FreeP added native Zoom frame-border soft-edge and reflection
+authoring through the existing undo, package, WPF, and Avalonia routes. The
+reflection model retains alpha, distance, direction, scale, and optional blur
+metadata; both desktop dialogs expose the settings and native `a:reflection`
+round-trips without changing unrelated Zoom properties.
+
+Latest slice gates were Presentation planner/compositor **168/168**, WPF host
+round-trip/Zoom authoring **46/46**, Avalonia Zoom authoring **4/4**, the full
+`FreeP.App.Presentation.Tests` lane **3,770/3,770**, and a clean Release
+solution build. The reflection renderer uses the shared mirror/fade ownership
+path; directional/blurred raster equivalence remains an explicit visual-depth
+boundary rather than an unverified parity claim.
+
+The current function-first baseline therefore remains: **650/650** shared
+commands, **0 actionable WPF gaps**, **0 actionable Avalonia gaps**, and **0
+known deferred command rows**. The next implementation should be selected from
+a reproducible feature-depth trigger, not from another isolated pixel delta.
+
 The latest FreeP-specific mainline work closes three bounded, source-backed gaps:
 
 - `250ed89360` preserves authored SmartArt cache text formatting by stable model ID
