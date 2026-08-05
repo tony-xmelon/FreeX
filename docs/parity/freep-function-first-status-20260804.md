@@ -253,7 +253,7 @@ pixel calibration without such a function-first trigger.
 
 ## 2026-08-05 continuation
 
-The function-first lane was rechecked from current `main` (`98b16ce79d`). The
+The function-first lane was rechecked from current `main` (`c7af0b78ef`). The
 PowerPoint-authoritative corpus remains complete at **27/27 decks** and **53/53
 slide PNGs**; the isolated COM export reports **0 failed exports**, **0 missing
 references**, and **0 reference diffs**. This is the current baseline for any
@@ -273,3 +273,19 @@ grammar, a ChartEx authoring/layout operation, deeper Zoom editing, recording/me
 capture behavior, printer/OLE host behavior, or a PowerPoint-authored animation
 workflow. Until such a fixture exists, preserved cached drawings, platform-owned
 dialogs, and PowerPoint-authoritative pixel baselines remain intentional boundaries.
+
+## 2026-08-05 media continuation
+
+The bounded media playback workflow now preserves PresentationML
+`p:cMediaNode/@showWhenStopped` as an explicit `MediaInfo.ShowWhenStopped` policy.
+The default remains true and is omitted on write; an authored false value writes as
+`showWhenStopped="0"`, survives read/write, participates in the existing undoable
+playback-options command, and is exposed in both desktop media panes. WPF and
+Avalonia slideshow controllers consume the same policy: video is initially hidden
+until play, and is hidden again on pause/end when the policy is false. Audio remains
+visually collapsed as before. This is a function/persistence slice, not a visual
+calibration claim.
+
+Focused proof: the new package round-trip, command undo/redo, and shared-plan checks
+pass with the full Presentation suite at **3730/3730**; affected WPF media tests pass
+**73/73**; WPF and Avalonia Release consumers build with **0 warnings/errors**.
