@@ -246,7 +246,7 @@
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-                                                   "src\\FreeX.App.Services\\AdvancedFilterPlanner.cs"
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AdvancedFilterPlanner.cs"
                                                ],
                      "notes":  [
 
