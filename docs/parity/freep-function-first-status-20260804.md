@@ -1,8 +1,9 @@
-# FreeP Function-First Status - 2026-08-04
+# FreeP Function-First Status - 2026-08-05
 
-Evidence anchor: current function slice is `a654eccf69` (current `origin/main`
-after the concurrent FreeW merge). The latest verified Release
-baseline includes **3,720/3,720** shared Presentation tests, plus the focused
+Evidence anchor: current function slice is `36b58c9359` (current `origin/main`).
+Historical continuation entries below retain their original snapshot labels;
+the current verified Release baseline includes **3,735/3,735** shared Presentation
+tests, plus the focused
 host and renderer contracts listed below. These are implementation/contract
 counts, not a claim that every PowerPoint-native behavior has been reproduced.
 
@@ -357,3 +358,48 @@ not a visual calibration claim; the evidence is recorded in
 Focused proof: shared media planner contracts **10/10**, Avalonia media adapter tests
 **14/14**, WPF media-controller tests **37/37**, and the full Presentation test
 project **3735/3735**; affected Release consumers build with **0 warnings/errors**.
+
+## 2026-08-05 current-main correction
+
+The authoritative integration point for this status is now `6b1081ed3e`
+(`origin/main`), not the earlier `c7af0b78ef`/`9c7f9d0983` snapshots mentioned
+in the historical continuation entries above. Current mainline includes the
+media playback slices for show-when-stopped, trim windows, fades, and named
+bookmarks, as well as the current plain-text table projection and recording
+boundary verification.
+
+Current verification remains:
+
+- shared FreeP Presentation Release lane: **3,735/3,735**;
+- generated command inventory: **650/650** shared-profile commands;
+- actionable host gaps: **0 WPF**, **0 Avalonia**;
+- known deferred command rows: **0**;
+- workflow-evidence rows: **110**;
+- recording package/runtime contracts: **53/53**;
+- WPF video-export adapter contract: **7/7**.
+
+These counts prove current route, package, and host contracts. They do not prove
+all PowerPoint-native feature depth or OS-owned behavior. The remaining work is
+deliberately bounded to reproducible evidence: deeper SmartArt grammar and
+effects, richer ChartEx/decorations, full Zoom effect authoring, real
+PowerPoint-authored recording persistence and device capture, printer/foreground
+dialog behavior, portable OLE activation, and matched PowerPoint visual exports.
+No new renderer-only pixel calibration is justified without a fresh behavioral
+fixture that demonstrates one of those boundaries.
+
+## 2026-08-05 latest mainline checkpoint
+
+The functional baseline is now `36b58c9359`, with the plain-text table projection
+(`9c7f9d0983`) included on `origin/main`. Plain-text export now emits table rows as
+tab-separated records, preserves multi-paragraph cell line breaks using the selected
+EOL, and retains empty-cell tab positions. The focused adapter lane is **12/12** and
+the adapter/file-dialog controls are **55/55**.
+
+This checkpoint also confirms that the remaining list is not a missing route inventory:
+the generated command surface remains **650/650**, with **0 actionable WPF gaps**,
+**0 actionable Avalonia gaps**, and **0 known deferred command rows**. The next
+functional work must therefore be tied to one of the explicit depth boundaries above
+and a reproducible package or host contract. In particular, no additional generic
+clipboard, command, or renderer calibration slice is justified without new source
+evidence; such changes risk inflating the parity counts without increasing PowerPoint
+behavioral equivalence.
