@@ -208,6 +208,11 @@ coverage is **3/3**, the full Presentation suite is **3,728/3,728**, the host
 round-trip/SmartArt/show-settings lane is **351/351**, and the consuming FreeP Release
 build is clean.
 
+The `Show master graphics` option is now reachable from both desktop Set Up Slide Show
+dialogs and flows through the shared undo transaction, so the master-decoration policy
+is editable as well as package-aware and compositor-consumed. WPF and Avalonia dialog
+coverage asserts apply/undo with the option disabled.
+
 The show-settings lane now also preserves `p:showPr/@showNarration` (defaulting to true)
 through the model, undo command, and package reader/writer. Both desktop dialogs expose
 the Play narration switch, and both slideshow hosts suppress audio playback/click plans
@@ -216,6 +221,14 @@ interpretation of PowerPoint's authored narration policy; it does not claim full
 PowerPoint recording-track classification or microphone/voice-over authoring parity.
 Focused coverage for the shared settings/media contracts is **7/7**, WPF dialog **2/2**,
 and Avalonia dialog **1/1** on a clean Release consumer build.
+
+The Header and Footer workflow now preserves the document-level
+`p:showPr/@showSpecialPlsOnTitleSld` policy alongside the existing per-slide visibility
+flags. Applying to all slides updates that policy through the undo bus, both desktop
+hosts surface the existing title-slide checkbox through the shared planner, and the
+reader/writer round-trip the native attribute without inventing it when the policy is
+off. This closes the package/function gap for title-slide special placeholders; it is
+not a new visual calibration claim.
 
 ## What remains
 
