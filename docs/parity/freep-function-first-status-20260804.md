@@ -250,3 +250,26 @@ not a new visual calibration claim.
 These are evidence or platform boundaries unless a reproducible user-visible behavior
 demonstrates a narrower function gap. The next session should not spend time on isolated
 pixel calibration without such a function-first trigger.
+
+## 2026-08-05 continuation
+
+The function-first lane was rechecked from current `main` (`98b16ce79d`). The
+PowerPoint-authoritative corpus remains complete at **27/27 decks** and **53/53
+slide PNGs**; the isolated COM export reports **0 failed exports**, **0 missing
+references**, and **0 reference diffs**. This is the current baseline for any
+new visual claim, but it does not turn a raster match into a feature claim.
+
+The current FreeP command surface remains **650/650** shared-profile commands,
+with **0 actionable WPF gaps**, **0 actionable Avalonia gaps**, **0 known deferred
+command rows**, and **110 workflow-evidence rows**. The latest bounded function
+slices also include title-slide special-placeholder policy, master-graphics and
+show-settings persistence/consumption, native XamlPackage and RTF rich clipboard
+projection, and Windows-native recording/capture readiness. Their contracts are
+covered by the current Release baseline rather than by a new renderer calibration.
+
+The next implementation slice must therefore be selected from a reproducible
+behavioral fixture in one of the explicit boundaries above: a new SmartArt native
+grammar, a ChartEx authoring/layout operation, deeper Zoom editing, recording/media
+capture behavior, printer/OLE host behavior, or a PowerPoint-authored animation
+workflow. Until such a fixture exists, preserved cached drawings, platform-owned
+dialogs, and PowerPoint-authoritative pixel baselines remain intentional boundaries.
