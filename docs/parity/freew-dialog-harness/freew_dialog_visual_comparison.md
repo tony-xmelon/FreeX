@@ -8,9 +8,9 @@ Inventory scenarios: **478**. Captured WPF: **190**. Captured Avalonia: **288**.
 
 | Scenario | Capture | Classification | WPF content | Avalonia content | Changed ratio | Mean channel delta | Semantic diff | Heatmap |
 | --- | --- | --- | --- | --- | ---: | ---: | --- | --- |
-| `about.initial` | captured/captured | **genuine-visual-mismatch** | pass (8.4% painted) | pass (7.6% painted) | 11.53 % | 14.34 |  | heatmaps/about.initial.png |
-| `about.populated` | captured/captured | **genuine-visual-mismatch** | pass (8.4% painted) | pass (7.6% painted) | 11.53 % | 14.34 |  | heatmaps/about.populated.png |
-| `about.validation-error` | captured/captured | **pass** | pass (1.9% painted) | pass (1.3% painted) | 1.38 % | 1.19 |  | heatmaps/about.validation-error.png |
+| `about.initial` | captured/captured | **genuine-visual-mismatch** | pass (8.4% painted) | pass (7.1% painted) | 11.41 % | 14.29 |  | heatmaps/about.initial.png |
+| `about.populated` | captured/captured | **genuine-visual-mismatch** | pass (8.4% painted) | pass (7.1% painted) | 11.41 % | 14.29 |  | heatmaps/about.populated.png |
+| `about.validation-error` | captured/captured | **genuine-visual-mismatch** | pass (8.4% painted) | pass (7.1% painted) | 11.41 % | 14.29 |  | heatmaps/about.validation-error.png |
 | `accessibility-report.initial` | captured/captured | **pass** | pass (0.9% painted) | pass (0.9% painted) | 0.59 % | 0.82 |  | heatmaps/accessibility-report.initial.png |
 | `accessibility-report.populated` | captured/captured | **pass** | pass (0.9% painted) | pass (0.9% painted) | 0.59 % | 0.82 |  | heatmaps/accessibility-report.populated.png |
 | `accessibility-report.validation-error` | captured/captured | **pass** | pass (0.9% painted) | pass (0.9% painted) | 0.59 % | 0.82 |  | heatmaps/accessibility-report.validation-error.png |
