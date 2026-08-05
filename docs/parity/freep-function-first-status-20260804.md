@@ -289,3 +289,17 @@ calibration claim.
 Focused proof: the new package round-trip, command undo/redo, and shared-plan checks
 pass with the full Presentation suite at **3730/3730**; affected WPF media tests pass
 **73/73**; WPF and Avalonia Release consumers build with **0 warnings/errors**.
+
+## 2026-08-05 media trim continuation
+
+Media trim values were already persisted and editable, but slideshow playback did not
+consume them. Both desktop hosts now resolve the authored trim-from-start and
+trim-from-end values against the active engine duration, seek to the start boundary
+before playback, clamp manual seeks to the playback window, and stop or loop at the
+trimmed end. Unknown duration preserves the start boundary and defers end enforcement
+until the engine reports duration. This is a function/runtime slice, not a visual
+calibration claim.
+
+Focused proof: shared trim-window contracts **2/2**, Avalonia media adapter tests
+**12/12**, WPF media-controller tests **36/36**; WPF and Avalonia Release test
+consumers build with **0 warnings/errors**.
