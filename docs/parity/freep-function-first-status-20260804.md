@@ -559,3 +559,21 @@ removal/display-options undo tests passed **4/4**. The Avalonia startup dirty
 state lead passed **1/1** on current main. This is a functional
 source-authority fix with no visual calibration claim. Evidence is recorded in
 `docs/parity/freep-chartex-native-title-legend-ownership-20260806.md`.
+
+## 2026-08-06 deterministic function audit
+
+The current mainline (`d251a1a31e`) was rechecked after the ChartEx and native
+INDEX ownership integrations. The repository-wide default solution name in the
+older agent instructions is stale; the current `FreeX.DefaultTests.slnx` run
+timed out without producing test results, so that timeout is not treated as a
+product failure. The bounded FreeP suites completed cleanly: Presentation
+**3,785/3,785**, WPF host **2,089/2,089**, Avalonia **603/603**, and Recording
+**53/53**. The Release-consuming artifacts were already built and the focused
+ChartEx gates remain **9/9** plus **4/4**.
+
+This audit found no new actionable command or host-function gap. Remaining
+work stays bounded to the documented depth/platform boundaries: deeper native
+SmartArt and ChartEx semantics, full Zoom authoring depth, PowerPoint-authored
+recording/device persistence, printer/foreground-dialog behavior, portable OLE
+activation, and matched PowerPoint visual exports. No speculative renderer or
+animation change is justified by the current evidence.
