@@ -198,6 +198,16 @@ hosts the slide stage in a scroll container using the persisted scrollbar policy
 kiosk mode restarts through the shared first-slide navigation plan after the persisted
 interval in both WPF and Avalonia.
 
+The slideshow package/compositor lane now honors `p:showPr/@showMasterSp`. The model
+preserves its default-on/explicit-off state, and shared composition paints authored
+non-placeholder master and layout decoration before slide content while leaving
+placeholder definitions on their existing inheritance path. This restores a concrete
+function gap for master-owned logos and decoration in playback/export without changing
+the existing placeholder or background contracts. Focused shared package/compositor
+coverage is **3/3**, the full Presentation suite is **3,728/3,728**, the host
+round-trip/SmartArt/show-settings lane is **351/351**, and the consuming FreeP Release
+build is clean.
+
 The show-settings lane now also preserves `p:showPr/@showNarration` (defaulting to true)
 through the model, undo command, and package reader/writer. Both desktop dialogs expose
 the Play narration switch, and both slideshow hosts suppress audio playback/click plans
