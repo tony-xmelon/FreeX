@@ -185,10 +185,11 @@ behavior slice, not a visual calibration claim.
 
 The same show-mode state now retains PresentationML's browse scrollbar preference and
 kiosk restart interval. `p:browse/@showScrollbar` and `p:kiosk/@restart` survive read,
-undo, and write without being synthesized into the wrong show mode; the desktop setup
-dialogs preserve these values while changing other playback options. The host window
-policy remains unchanged for these two native-window preferences until a platform
-scrollbar/timer surface is available.
+undo, and write without being synthesized into the wrong show mode. The model names the
+restart value as milliseconds, matching the PresentationML contract. Browse mode now
+hosts the slide stage in a scroll container using the persisted scrollbar policy, and
+kiosk mode restarts through the shared first-slide navigation plan after the persisted
+interval in both WPF and Avalonia.
 
 ## What remains
 
