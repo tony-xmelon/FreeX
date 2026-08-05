@@ -72,3 +72,25 @@ Follow-up verification:
 - Avalonia automatic-hyphenation compositor: 7/7.
 - Combined hyphenation, column, and floating-wrap controls: 33/33.
 - Consuming Avalonia Release build: 0 warnings, 0 errors.
+
+## Table-cell follow-up
+
+Avalonia table cells now consume the same automatic-break candidates, default/authored zone, and
+consecutive-line policy as ordinary body paragraphs. The table row-height preflight and actual cell
+render use the same wrapped-line plan, so a generated hyphen cannot produce a different measured row
+height from the painted row.
+
+The wrapped-cell line carries the optional visible hyphen separately from its original characters.
+Rendering and direct PDF export consume that display glyph, while the table model, placed cell
+characters, paragraph offsets, editing boundaries, and saved text remain unchanged. Existing table
+formatting ownership remains narrow: the cell's established effective run formatting measures and
+paints the generated hyphen.
+
+Table follow-up verification:
+
+- Automatic-hyphenation host contracts: 9/9, including model/caret/PDF invariants and a bounded
+  consecutive-line-limit comparison inside a table cell.
+- Table structure, vertical alignment, PDF, hidden-text, and hyphenation controls: 131/131.
+- Consuming Avalonia Release build: 0 warnings, 0 errors.
+
+Auxiliary note-story wrapping remains a separate follow-up owner.
