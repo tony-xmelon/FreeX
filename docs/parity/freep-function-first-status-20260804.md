@@ -1,11 +1,41 @@
 # FreeP Function-First Status - 2026-08-05
 
-Evidence anchor: current function slice is `36b58c9359` (current `origin/main`).
+Evidence anchor: current FreeP function baseline is the checked-out `main` commit.
+The shared repository may contain newer FreeW merges; those are not counted as
+FreeP feature evidence unless they touch the FreeP implementation or contracts.
 Historical continuation entries below retain their original snapshot labels;
-the current verified Release baseline includes **3,735/3,735** shared Presentation
+the current verified Release baseline includes **3,749/3,749** shared Presentation
 tests, plus the focused
 host and renderer contracts listed below. These are implementation/contract
 counts, not a claim that every PowerPoint-native behavior has been reproduced.
+
+## Current FreeP checkpoint - 2026-08-05
+
+The latest FreeP-specific mainline work closes three bounded, source-backed gaps:
+
+- `250ed89360` preserves authored SmartArt cache text formatting by stable model ID
+  during drawing-cache regeneration, while generated geometry and text remain the
+  editable authority.
+- `5c7f6401b` / `861f75bf5b` add generated Table of Figures/Tables/Equations page
+  references using the existing physical-page and logical-label resolver.
+- `8e70312538` preserves PresentationML animation acceleration/deceleration through
+  model clone, normal and motion-path package round-trip, and shared WPF/Avalonia
+  slideshow easing.
+- The current presenter-property slice preserves PresentationML `p:showPr/p:penClr` as a theme-aware model value,
+  round-trips it through package IO, and seeds the shared WPF/Avalonia presenter session
+  defaults without overriding explicit transient tool choices.
+
+The animation and presenter-property slices pass the full Presentation Release lane at **3,749/3,749**;
+focused WPF animation-pane coverage was **18/18**, Avalonia animation-pane coverage
+was **4/4**, and both consuming desktop Release builds were clean. SmartArt and
+generated-index evidence is recorded in their focused contracts and remains separate
+from the visual-fidelity corpus.
+
+This checkpoint does not widen the command-surface claim: the generated inventory is
+still **650/650**, with **0 actionable WPF gaps**, **0 actionable Avalonia gaps**, and
+**0 known deferred command rows**. The next FreeP implementation must come from a
+reproducible depth boundary below, rather than another generic command or pixel-only
+probe.
 
 ## Current position
 
