@@ -72,7 +72,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditor.cs",
-                       "sha256":  "408daf4024b7ad8ae24e638c8367f9e00ddeee3528f4ce194cbdbf960e6f7643"
+                       "sha256":  "7bce62af9aeb8baa152e962083869485c6417026ca6dca945637c9158d6334f1"
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditingSurface.cs",
