@@ -403,3 +403,27 @@ and a reproducible package or host contract. In particular, no additional generi
 clipboard, command, or renderer calibration slice is justified without new source
 evidence; such changes risk inflating the parity counts without increasing PowerPoint
 behavioral equivalence.
+
+## 2026-08-05 latest functional checkpoint
+
+Current mainline is `24f2baca6f`. Two small source-backed gaps were closed after the
+previous checkpoint:
+
+- Table cell diagonal borders now have explicit model, undo, PPTX read/write, shared
+  draw-op, and WPF/Avalonia rendering ownership for `lnTlToBr` and `lnBlToTr`.
+  The focused table command lane passed **109/109**.
+- Zoom frame border pattern validation now accepts the valid extreme DrawingML presets
+  `pct0` and `pct100`, which the existing render path already handled. The focused
+  catalog/planner lane passed **6/6**.
+
+Both desktop consumers built cleanly in Release for these slices. The candidate ChartEx
+manual-layout boundary was audited in the same pass: mixed factor/edge coordinates are
+already consumed by the shared chart planner and covered by focused render-planner tests,
+so no duplicate change was kept.
+
+The function-first baseline remains **650/650** shared-profile commands, with **0
+actionable WPF gaps**, **0 actionable Avalonia gaps**, and **0 known deferred command
+rows**. Remaining work is still bounded to reproducible depth or host evidence:
+deeper SmartArt grammar/effects, richer ChartEx/decorations, full Zoom authoring depth,
+PowerPoint-authored recording persistence and real-device capture, printer/foreground
+dialog behavior, portable OLE activation, and matched PowerPoint visual exports.
