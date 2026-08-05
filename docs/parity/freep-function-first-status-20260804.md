@@ -592,3 +592,14 @@ The shared Presentation suite passed **3,787/3,787**. WPF SmartArt passed
 consumers built with **0 warnings/errors**. This is a functional text-pane/cache
 parity slice and makes no new visual-fidelity claim. Evidence is recorded in
 `docs/parity/freep-smartart-preserved-cache-multi-text-edit-20260806.md`.
+
+## 2026-08-06 SmartArt duplicate-text cache synchronization
+
+Preserved SmartArt cache edits now support repeated source labels when the full
+cached text-body and fallback-shape sequences match the prior logical node
+sequence, using verified ordinal ownership. Divergent or ambiguous caches keep
+the existing conservative rejection path. Presentation passed **3,788/3,788**;
+WPF SmartArt **313/313**; Avalonia SmartArt **33/33**; both Release consumers
+built with **0 warnings/errors**. This is a functional cache-edit slice with no
+new visual-fidelity claim. Evidence is recorded in
+`docs/parity/freep-smartart-preserved-cache-duplicate-text-edit-20260806.md`.
