@@ -545,3 +545,17 @@ path. Single-target and Summary Zoom tile draw operations preserve the native
 presentation tests passed **165/165**; both desktop Release consumers built with
 **0 warnings/errors**. Evidence is recorded in
 `docs/parity/freep-zoom-cover-image-crop-20260806.md`.
+
+## 2026-08-06 ChartEx native title/legend ownership
+
+Current main `dc1058882f` exposed four native ChartEx edit failures because the
+writer removed preserved `cx:title`/`cx:legend` nodes when the high-level model
+property was null. The model now records explicit title/legend edit requests;
+untouched preserved native nodes survive import and save, while title/options
+commands mark deliberate replacement or removal and restore the marker on undo.
+
+Focused native ChartEx edit tests passed **9/9**, and the existing ChartEx
+removal/display-options undo tests passed **4/4**. The Avalonia startup dirty
+state lead passed **1/1** on current main. This is a functional
+source-authority fix with no visual calibration claim. Evidence is recorded in
+`docs/parity/freep-chartex-native-title-legend-ownership-20260806.md`.
