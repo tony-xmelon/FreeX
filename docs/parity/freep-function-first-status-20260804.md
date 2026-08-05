@@ -534,3 +534,14 @@ Integrated a bounded slideshow function slice: when a Zoom object has Return to 
 transition duration and `showBg` value now travel with the parent return stack. Both Advance and Back preserve
 those values, so returning from a Slide, Section, or Summary Zoom uses the same transition contract as entering it.
 Ordinary slide navigation and non-returning Zooms remain unchanged. Evidence: `docs/parity/freep-zoom-return-transition-20260806.md`.
+
+## 2026-08-06 Zoom cover-image crop semantics
+
+Newly authored Zoom cover images now fill their frame using the shared centered
+aspect-ratio crop planner across WPF and Avalonia. Explicit imported/manual crop
+edges remain authoritative, and preview images remain on the existing full-source
+path. Single-target and Summary Zoom tile draw operations preserve the native
+`imageType="cover"` semantic through canvas transform previews. Focused
+presentation tests passed **165/165**; both desktop Release consumers built with
+**0 warnings/errors**. Evidence is recorded in
+`docs/parity/freep-zoom-cover-image-crop-20260806.md`.
