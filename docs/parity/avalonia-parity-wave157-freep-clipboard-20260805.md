@@ -23,9 +23,9 @@
   passed `1/1`; with an internal shape clipboard present, active-cell Paste/Cut did not paste or
   delete slide shapes.
 - `FreeP.App.Avalonia.Tests` ribbon clipboard filter passed `3/3`.
-- `FreeP.App.Rendering.Avalonia.Tests` `AvaloniaRichTextEditorTests` passed `37/37`, including
-  custom payload precedence, external-format fallback, table projection, and modeled run-effect
-  preservation.
+- `FreeP.App.Rendering.Avalonia.Tests` `AvaloniaRichTextEditorTests` passed `38/38`, including
+  custom payload precedence, external-format fallback, table projection, modeled run-effect
+  preservation, and the rich-input clipboard context menu.
 - `FreeP.App.Presentation.Tests` `InCanvasRichClipboardTests` passed `7/7`.
 - WPF authority `FreeP.App.Host.Tests` `WpfRichTextClipboardAdapterTests` passed `15/15`.
 - `git diff --check`: passed.
