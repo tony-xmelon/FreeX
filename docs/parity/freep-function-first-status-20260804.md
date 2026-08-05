@@ -175,6 +175,14 @@ values together, and both desktop hosts consume the persisted state during slide
 playback. This closes the media playback-options authoring gap without adding a host-local
 media model.
 
+The Set Up Slide Show mode is now functionally complete for the three PresentationML
+show modes: Presented by a speaker, Browsed by an individual, and Browsed at a kiosk.
+The selected mode round-trips through `p:present`, `p:browse`, or `p:kiosk`, is undoable
+with the other show settings, and is reachable from both desktop dialogs. WPF and
+Avalonia consume Browse-by-individual as a normal resizable slideshow window; speaker
+and kiosk modes retain the existing borderless presentation window. This is a host
+behavior slice, not a visual calibration claim.
+
 ## What remains
 
 - Advanced SmartArt layout/style/effect semantics outside the bounded live catalog and
