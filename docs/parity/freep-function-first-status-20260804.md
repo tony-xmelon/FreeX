@@ -1,6 +1,6 @@
 # FreeP Function-First Status - 2026-08-05
 
-Evidence anchor: current function slice is `6b1081ed3e` (current `origin/main`).
+Evidence anchor: current function slice is `36b58c9359` (current `origin/main`).
 Historical continuation entries below retain their original snapshot labels;
 the current verified Release baseline includes **3,735/3,735** shared Presentation
 tests, plus the focused
@@ -386,3 +386,20 @@ PowerPoint-authored recording persistence and device capture, printer/foreground
 dialog behavior, portable OLE activation, and matched PowerPoint visual exports.
 No new renderer-only pixel calibration is justified without a fresh behavioral
 fixture that demonstrates one of those boundaries.
+
+## 2026-08-05 latest mainline checkpoint
+
+The functional baseline is now `36b58c9359`, with the plain-text table projection
+(`9c7f9d0983`) included on `origin/main`. Plain-text export now emits table rows as
+tab-separated records, preserves multi-paragraph cell line breaks using the selected
+EOL, and retains empty-cell tab positions. The focused adapter lane is **12/12** and
+the adapter/file-dialog controls are **55/55**.
+
+This checkpoint also confirms that the remaining list is not a missing route inventory:
+the generated command surface remains **650/650**, with **0 actionable WPF gaps**,
+**0 actionable Avalonia gaps**, and **0 known deferred command rows**. The next
+functional work must therefore be tied to one of the explicit depth boundaries above
+and a reproducible package or host contract. In particular, no additional generic
+clipboard, command, or renderer calibration slice is justified without new source
+evidence; such changes risk inflating the parity counts without increasing PowerPoint
+behavioral equivalence.
