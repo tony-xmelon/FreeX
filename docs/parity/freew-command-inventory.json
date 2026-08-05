@@ -19853,7 +19853,7 @@
       "avaloniaLocations": [],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": false
       }
@@ -19883,7 +19883,7 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
@@ -20266,7 +20266,7 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
@@ -20297,7 +20297,7 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
@@ -20328,7 +20328,7 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
@@ -20611,7 +20611,7 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
@@ -20642,7 +20642,7 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
@@ -21244,7 +21244,7 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
@@ -21584,7 +21584,7 @@
       "avaloniaLocations": [],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": false
       }
@@ -30419,7 +30419,7 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
@@ -30524,7 +30524,7 @@
       "avaloniaLocations": [],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": false,
+        "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
@@ -35503,7 +35503,7 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
@@ -35534,7 +35534,7 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
@@ -35565,7 +35565,7 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
@@ -35596,7 +35596,7 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
@@ -35627,7 +35627,7 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
@@ -35658,7 +35658,7 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
@@ -36860,7 +36860,7 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
@@ -36975,7 +36975,7 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": false,
+        "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
