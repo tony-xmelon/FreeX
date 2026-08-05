@@ -175,6 +175,13 @@ values together, and both desktop hosts consume the persisted state during slide
 playback. This closes the media playback-options authoring gap without adding a host-local
 media model.
 
+The Set Up Slide Show workflow now also exposes the already-modeled PowerPoint
+`showMediaCtrls` policy. The value is carried by the same shared undoable settings command,
+round-trips through the existing PresentationML extension, and is consumed by both WPF and
+Avalonia slideshow media controllers. The setting was previously available only through
+the model/API, so this closes the last user-facing authoring gap in that bounded playback
+policy without changing the media hit-testing or rendering contract.
+
 The Set Up Slide Show mode is now functionally complete for the three PresentationML
 show modes: Presented by a speaker, Browsed by an individual, and Browsed at a kiosk.
 The selected mode round-trips through `p:present`, `p:browse`, or `p:kiosk`, is undoable
