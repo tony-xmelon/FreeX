@@ -259,6 +259,24 @@ slide PNGs**; the isolated COM export reports **0 failed exports**, **0 missing
 references**, and **0 reference diffs**. This is the current baseline for any
 new visual claim, but it does not turn a raster match into a feature claim.
 
+## 2026-08-05 continuation — current-main verification
+
+The function-first baseline was re-run from `origin/main` at `9c7f9d0983`, which
+also includes the latest plain-text table projection merge from the concurrent
+FreeW lane. The shared FreeP Presentation Release lane passed **3,735/3,735**
+tests (0 failed, 0 skipped). The generated command inventory remains **650/650**
+shared-profile commands, with **0 actionable WPF gaps**, **0 actionable Avalonia
+gaps**, **0 known deferred command rows**, and **110 workflow-evidence rows**.
+
+No new FreeP code slice is justified by this verification: the remaining list is
+feature depth or host/evidence boundary work, not an unimplemented command route.
+The next implementation should be selected only with a reproducible user-visible
+trigger from one of these boundaries: a specific SmartArt family/style/effect,
+ChartEx or chart-decoration semantics, Zoom preview/cover/tile behavior, a real
+recording/MP4 persistence scenario, or an OS/PowerPoint-authored workflow that can
+be exercised on the appropriate host. This keeps the function-first lane from
+reopening isolated pixel probes after the visual-fidelity floor has been reached.
+
 The current FreeP command surface remains **650/650** shared-profile commands,
 with **0 actionable WPF gaps**, **0 actionable Avalonia gaps**, **0 known deferred
 command rows**, and **110 workflow-evidence rows**. The latest bounded function
