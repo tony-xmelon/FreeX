@@ -73,6 +73,6 @@ above.
 
 ## Remaining index scope
 
-This does not yet implement XE bookmark page ranges (`\r`), alternate index identifiers (`\f`), bold or
-italic page-number switches, Mark All, or the configurable Insert Index layout dialog. Those are separate
-semantic slices and should retain the same source-field, package, generated-output, and host-route gates.
+This does not yet implement XE bookmark page ranges (`\r`), alternate index identifiers (`\f`), Mark All,
+or the configurable Insert Index layout dialog. Bold and italic page-number switches are covered by the
+follow-up `freew-index-page-number-formatting-20260805.md` slice.
