@@ -509,3 +509,22 @@ consume the same `ElbowRoute` waypoints.
 Focused connector contracts passed **16/16**, the full Presentation lane passed
 **3,745/3,745**, and both desktop Release consumers built with **0 warnings/errors**.
 Evidence is recorded in `docs/parity/freep-connector-obstacle-routing-20260805.md`.
+
+## 2026-08-06 preserved SmartArt cache text editing
+
+The SmartArt text pane now commits one uniquely matched text-only edit even when the
+imported family is rendered from a native `dsp:drawing` cache outside the live layout
+planner. The edit updates `data1.xml` plus the cached shape text while preserving the
+authored geometry, effects, rotations, extra roles, and run formatting. Structural
+changes and ambiguous/missing cache mappings remain rejected. WPF and Avalonia use the
+same fallback after their normal cache-regeneration path.
+
+Focused preserved-cache contracts passed **2/2**, the WPF SmartArt text-pane host
+contract passed **1/1**, and both desktop Release consumers built with **0
+warnings/errors**. Evidence is recorded in
+`docs/parity/freep-smartart-preserved-cache-text-edit-20260806.md`.
+
+The accompanying PowerPoint COM probe showed that native `Opposing Ideas` contains
+background/divider/rotated-arrow roles not reproduced by the current generic live
+layout planner. That family remains cached for visual safety; this slice does not claim
+live SmartArt layout parity.
