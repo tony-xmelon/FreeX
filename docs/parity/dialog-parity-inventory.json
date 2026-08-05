@@ -983,6 +983,7 @@
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphGeometry.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphResolver.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ManageConditionalFormatsPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ManageConditionalFormatsSession.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\PresentationRgb.cs",
                                                    "src\\FreeX.App.Presentation\\Dialogs\\ConditionalFormatRuleSchema.cs"
                                                ],
@@ -1023,6 +1024,7 @@
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphGeometry.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphResolver.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ManageConditionalFormatsPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ManageConditionalFormatsSession.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\PresentationRgb.cs",
                                                    "src\\FreeX.App.Presentation\\Dialogs\\ConditionalFormatRuleSchema.cs"
                                                ],
