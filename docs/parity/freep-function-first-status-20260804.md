@@ -1,10 +1,10 @@
 # FreeP Function-First Status - 2026-08-05
 
-Evidence anchor: current FreeP function slice is `8e70312538`.
+Evidence anchor: current FreeP function baseline is the checked-out `main` commit.
 The shared repository may contain newer FreeW merges; those are not counted as
 FreeP feature evidence unless they touch the FreeP implementation or contracts.
 Historical continuation entries below retain their original snapshot labels;
-the current verified Release baseline includes **3,747/3,747** shared Presentation
+the current verified Release baseline includes **3,749/3,749** shared Presentation
 tests, plus the focused
 host and renderer contracts listed below. These are implementation/contract
 counts, not a claim that every PowerPoint-native behavior has been reproduced.
@@ -21,8 +21,11 @@ The latest FreeP-specific mainline work closes three bounded, source-backed gaps
 - `8e70312538` preserves PresentationML animation acceleration/deceleration through
   model clone, normal and motion-path package round-trip, and shared WPF/Avalonia
   slideshow easing.
+- The current presenter-property slice preserves PresentationML `p:showPr/p:penClr` as a theme-aware model value,
+  round-trips it through package IO, and seeds the shared WPF/Avalonia presenter session
+  defaults without overriding explicit transient tool choices.
 
-The animation slice passed the full Presentation Release lane at **3,747/3,747**;
+The animation and presenter-property slices pass the full Presentation Release lane at **3,749/3,749**;
 focused WPF animation-pane coverage was **18/18**, Avalonia animation-pane coverage
 was **4/4**, and both consuming desktop Release builds were clean. SmartArt and
 generated-index evidence is recorded in their focused contracts and remains separate
