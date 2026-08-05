@@ -36,10 +36,17 @@ anchor outside an open menu.
 
 - Focused Wave161 class: **3 passed, 0 failed, 0 skipped**.
 - The focused run used the generated Release test assembly with `--no-build --no-restore`.
+- The synchronized integration branch reran the strengthened routed-event class from a clean Release
+  build: **3 passed, 0 failed, 0 skipped**.
+- The Linux Docker production context-menu catalog reported **19/19 PivotChart rows passed** across the
+  filtered and no-filter variants, including the family aggregate. The all-context run emitted 13,958
+  result rows; its 54 failures belong to the pre-existing Worksheet Show Notes and AutoFilter criteria
+  clusters, not PivotChart.
 - `git diff --check`: passed.
 
 ## Residuals
 
 Native desktop keyboard delivery and pixel-level comparison of Avalonia gesture text remain outside this
-headless interaction slice. The underlying WPF and Avalonia menu item order, dynamic headers, enablement,
-and gesture tokens are covered here.
+slice: the Linux production run dispatches the real menu actions but does not inject the assigned letters
+through X11. The underlying WPF and Avalonia menu item order, dynamic headers, enablement, gesture tokens,
+routed menu-root handling, and Linux production action routes are covered here.
