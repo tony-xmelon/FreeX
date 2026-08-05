@@ -13670,5 +13670,10 @@
     "pass": 25,
     "state-not-applicable": 7,
     "avalonia-extension": 105
+  },
+  "scope": {
+    "kind": "canonical-inputs-only",
+    "description": "Rows and counts cover only the inventory and WPF/Avalonia capture manifests supplied to this compare invocation.",
+    "refreshInstruction": "Route-local evidence remains outside this aggregate until it is merged with --baseline and --refresh-route."
   }
 }
