@@ -1,8 +1,9 @@
-# FreeP Function-First Status - 2026-08-04
+# FreeP Function-First Status - 2026-08-05
 
-Evidence anchor: current function slice is `a654eccf69` (current `origin/main`
-after the concurrent FreeW merge). The latest verified Release
-baseline includes **3,720/3,720** shared Presentation tests, plus the focused
+Evidence anchor: current function slice is `36b58c9359` (current `origin/main`).
+Historical continuation entries below retain their original snapshot labels;
+the current verified Release baseline includes **3,735/3,735** shared Presentation
+tests, plus the focused
 host and renderer contracts listed below. These are implementation/contract
 counts, not a claim that every PowerPoint-native behavior has been reproduced.
 
@@ -250,3 +251,191 @@ not a new visual calibration claim.
 These are evidence or platform boundaries unless a reproducible user-visible behavior
 demonstrates a narrower function gap. The next session should not spend time on isolated
 pixel calibration without such a function-first trigger.
+
+## 2026-08-05 continuation
+
+The function-first lane was rechecked from current `main` (`c7af0b78ef`). The
+PowerPoint-authoritative corpus remains complete at **27/27 decks** and **53/53
+slide PNGs**; the isolated COM export reports **0 failed exports**, **0 missing
+references**, and **0 reference diffs**. This is the current baseline for any
+new visual claim, but it does not turn a raster match into a feature claim.
+
+## 2026-08-05 continuation — current-main verification
+
+The function-first baseline was re-run from `origin/main` at `9c7f9d0983`, which
+also includes the latest plain-text table projection merge from the concurrent
+FreeW lane. The shared FreeP Presentation Release lane passed **3,735/3,735**
+tests (0 failed, 0 skipped). The generated command inventory remains **650/650**
+shared-profile commands, with **0 actionable WPF gaps**, **0 actionable Avalonia
+gaps**, **0 known deferred command rows**, and **110 workflow-evidence rows**.
+
+No new FreeP code slice is justified by this verification: the remaining list is
+feature depth or host/evidence boundary work, not an unimplemented command route.
+The next implementation should be selected only with a reproducible user-visible
+trigger from one of these boundaries: a specific SmartArt family/style/effect,
+ChartEx or chart-decoration semantics, Zoom preview/cover/tile behavior, a real
+recording/MP4 persistence scenario, or an OS/PowerPoint-authored workflow that can
+be exercised on the appropriate host. This keeps the function-first lane from
+reopening isolated pixel probes after the visual-fidelity floor has been reached.
+
+The recording boundary was independently checked on the same Windows machine:
+`FreeP.App.Recording.Tests` passed **53/53**, and the WPF video export adapter
+contract passed **7/7**. This confirms that frame-package construction, MP4 host
+handoff, cancellation, and injected narration/camera mux paths are implemented;
+the remaining recording work is real-device capture and PowerPoint-authored
+recording persistence evidence, not a missing shared command route.
+
+The current FreeP command surface remains **650/650** shared-profile commands,
+with **0 actionable WPF gaps**, **0 actionable Avalonia gaps**, **0 known deferred
+command rows**, and **110 workflow-evidence rows**. The latest bounded function
+slices also include title-slide special-placeholder policy, master-graphics and
+show-settings persistence/consumption, native XamlPackage and RTF rich clipboard
+projection, and Windows-native recording/capture readiness. Their contracts are
+covered by the current Release baseline rather than by a new renderer calibration.
+
+The next implementation slice must therefore be selected from a reproducible
+behavioral fixture in one of the explicit boundaries above: a new SmartArt native
+grammar, a ChartEx authoring/layout operation, deeper Zoom editing, recording/media
+capture behavior, printer/OLE host behavior, or a PowerPoint-authored animation
+workflow. Until such a fixture exists, preserved cached drawings, platform-owned
+dialogs, and PowerPoint-authoritative pixel baselines remain intentional boundaries.
+
+## 2026-08-05 media continuation
+
+The bounded media playback workflow now preserves PresentationML
+`p:cMediaNode/@showWhenStopped` as an explicit `MediaInfo.ShowWhenStopped` policy.
+The default remains true and is omitted on write; an authored false value writes as
+`showWhenStopped="0"`, survives read/write, participates in the existing undoable
+playback-options command, and is exposed in both desktop media panes. WPF and
+Avalonia slideshow controllers consume the same policy: video is initially hidden
+until play, and is hidden again on pause/end when the policy is false. Audio remains
+visually collapsed as before. This is a function/persistence slice, not a visual
+calibration claim.
+
+Focused proof: the new package round-trip, command undo/redo, and shared-plan checks
+pass with the full Presentation suite at **3730/3730**; affected WPF media tests pass
+**73/73**; WPF and Avalonia Release consumers build with **0 warnings/errors**.
+
+## 2026-08-05 media trim continuation
+
+Media trim values were already persisted and editable, but slideshow playback did not
+consume them. Both desktop hosts now resolve the authored trim-from-start and
+trim-from-end values against the active engine duration, seek to the start boundary
+before playback, clamp manual seeks to the playback window, and stop or loop at the
+trimmed end. Unknown duration preserves the start boundary and defers end enforcement
+until the engine reports duration. This is a function/runtime slice, not a visual
+calibration claim.
+
+Focused proof: shared trim-window contracts **2/2**, Avalonia media adapter tests
+**12/12**, WPF media-controller tests **36/36**; WPF and Avalonia Release test
+consumers build with **0 warnings/errors**.
+
+## 2026-08-05 media fade continuation
+
+Media fade-in and fade-out values were already persisted and editable, but neither
+slideshow host applied them during playback. The shared media planner now computes
+an effective volume envelope from the resolved trim window: fade-in begins at the
+trimmed start, fade-out ends at the trimmed end when duration is known, and the
+authored volume remains the ceiling. WPF and Avalonia apply the same envelope on
+open/start, seek, loop restart, timer enforcement, and live volume changes. Unknown
+duration still supports fade-in and defers fade-out until the engine reports an end.
+This is a function/runtime slice, not a visual calibration claim.
+
+Focused proof: shared planner contracts **9/9**, Avalonia media adapter tests
+**13/13**, WPF media-controller tests **36/36**, and the full Presentation test
+project **3733/3733**; affected Release consumers build with **0 warnings/errors**.
+
+## 2026-08-05 media bookmark continuation
+
+Media bookmarks were already read, written, and editable, but slideshow playback did
+not consume them. The shared interaction planner now resolves named bookmarks with
+trimmed case-insensitive lookup and clamps them to the active trim window. WPF and
+Avalonia expose the same `TrySeekToBookmark` playback-control operation and reapply
+the authored fade/volume envelope after seeking. This is a functional control slice,
+not a visual calibration claim; the evidence is recorded in
+`docs/parity/freep-media-bookmark-playback-20260805.md`.
+
+Focused proof: shared media planner contracts **10/10**, Avalonia media adapter tests
+**14/14**, WPF media-controller tests **37/37**, and the full Presentation test
+project **3735/3735**; affected Release consumers build with **0 warnings/errors**.
+
+## 2026-08-05 current-main correction
+
+The authoritative integration point for this status is now `6b1081ed3e`
+(`origin/main`), not the earlier `c7af0b78ef`/`9c7f9d0983` snapshots mentioned
+in the historical continuation entries above. Current mainline includes the
+media playback slices for show-when-stopped, trim windows, fades, and named
+bookmarks, as well as the current plain-text table projection and recording
+boundary verification.
+
+Current verification remains:
+
+- shared FreeP Presentation Release lane: **3,735/3,735**;
+- generated command inventory: **650/650** shared-profile commands;
+- actionable host gaps: **0 WPF**, **0 Avalonia**;
+- known deferred command rows: **0**;
+- workflow-evidence rows: **110**;
+- recording package/runtime contracts: **53/53**;
+- WPF video-export adapter contract: **7/7**.
+
+These counts prove current route, package, and host contracts. They do not prove
+all PowerPoint-native feature depth or OS-owned behavior. The remaining work is
+deliberately bounded to reproducible evidence: deeper SmartArt grammar and
+effects, richer ChartEx/decorations, full Zoom effect authoring, real
+PowerPoint-authored recording persistence and device capture, printer/foreground
+dialog behavior, portable OLE activation, and matched PowerPoint visual exports.
+No new renderer-only pixel calibration is justified without a fresh behavioral
+fixture that demonstrates one of those boundaries.
+
+## 2026-08-05 latest mainline checkpoint
+
+The functional baseline is now `36b58c9359`, with the plain-text table projection
+(`9c7f9d0983`) included on `origin/main`. Plain-text export now emits table rows as
+tab-separated records, preserves multi-paragraph cell line breaks using the selected
+EOL, and retains empty-cell tab positions. The focused adapter lane is **12/12** and
+the adapter/file-dialog controls are **55/55**.
+
+This checkpoint also confirms that the remaining list is not a missing route inventory:
+the generated command surface remains **650/650**, with **0 actionable WPF gaps**,
+**0 actionable Avalonia gaps**, and **0 known deferred command rows**. The next
+functional work must therefore be tied to one of the explicit depth boundaries above
+and a reproducible package or host contract. In particular, no additional generic
+clipboard, command, or renderer calibration slice is justified without new source
+evidence; such changes risk inflating the parity counts without increasing PowerPoint
+behavioral equivalence.
+
+## 2026-08-05 latest functional checkpoint
+
+Current mainline is `24f2baca6f`. Two small source-backed gaps were closed after the
+previous checkpoint:
+
+- Table cell diagonal borders now have explicit model, undo, PPTX read/write, shared
+  draw-op, and WPF/Avalonia rendering ownership for `lnTlToBr` and `lnBlToTr`.
+  The focused table command lane passed **109/109**.
+- Zoom frame border pattern validation now accepts the valid extreme DrawingML presets
+  `pct0` and `pct100`, which the existing render path already handled. The focused
+  catalog/planner lane passed **6/6**.
+
+Both desktop consumers built cleanly in Release for these slices. The candidate ChartEx
+manual-layout boundary was audited in the same pass: mixed factor/edge coordinates are
+already consumed by the shared chart planner and covered by focused render-planner tests,
+so no duplicate change was kept.
+
+The function-first baseline remains **650/650** shared-profile commands, with **0
+actionable WPF gaps**, **0 actionable Avalonia gaps**, and **0 known deferred command
+rows**. Remaining work is still bounded to reproducible depth or host evidence:
+deeper SmartArt grammar/effects, richer ChartEx/decorations, full Zoom authoring depth,
+PowerPoint-authored recording persistence and real-device capture, printer/foreground
+dialog behavior, portable OLE activation, and matched PowerPoint visual exports.
+
+## 2026-08-05 connector routing continuation
+
+Elbow connectors now avoid intervening non-endpoint shapes through a deterministic
+orthogonal visibility graph. The existing endpoint-only route remains unchanged when
+the path is clear; attached shape movement passes the current slide obstacles into the
+shared model router, and undo restores both connector bounds and route. WPF and Avalonia
+consume the same `ElbowRoute` waypoints.
+
+Focused connector contracts passed **16/16**, the full Presentation lane passed
+**3,745/3,745**, and both desktop Release consumers built with **0 warnings/errors**.
+Evidence is recorded in `docs/parity/freep-connector-obstacle-routing-20260805.md`.

@@ -42,5 +42,77 @@ automatic hyphenation therefore did not change rendered line breaks.
 This slice is renderer-functional parity for ordinary body paragraphs and does not require a Word
 COM raster baseline: it activates an already serialized Word layout setting while preserving source
 text and caret semantics. Exact dictionary-quality hyphenation remains bounded by the shared English
-heuristic. Table-cell and auxiliary-story wrapping, `HyphenationZonePt`, and
-`ConsecutiveHyphenLimit` remain separate follow-up ownership paths.
+heuristic. Table-cell and auxiliary-story wrapping remain separate follow-up ownership paths.
+
+## Measured line policy follow-up
+
+The same-day follow-up closes the two serialized settings that require measured-line state:
+
+- An omitted `w:hyphenationZone` now uses the Open XML default of 360 twips (18 points).
+- An authored zone is compared with the ordinary whole-word line's trailing whitespace, excluding
+  trailing spaces. An automatic break is consumed only when that whitespace exceeds the zone.
+- `w:consecutiveHyphenLimit` now caps generated hyphenated line endings; zero remains unlimited and
+  each emitted non-hyphenated line resets the paragraph streak.
+- The exact decision is shared by keep-lines height preflight and actual line emission, preserving
+  pagination/render agreement.
+- Overlong first words remain eligible because they have no ordinary whole-word fallback to which a
+  hyphenation zone can apply.
+
+The semantics follow the official Open XML
+[`hyphenationZone`](https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.wordprocessing.hyphenationzone)
+definition and Word's
+[`ConsecutiveHyphensLimit`](https://learn.microsoft.com/en-us/office/vba/api/word.document.consecutivehyphenslimit)
+contract. Modern Word reports a compatibility-mode caveat for the VBA zone property, so this is
+package/layout semantic evidence rather than a claim that every modern-mode Word build changes its
+raster for an authored zone.
+
+Follow-up verification:
+
+- Shared candidate and measured-line policy: 13/13.
+- Avalonia automatic-hyphenation compositor: 7/7.
+- Combined hyphenation, column, and floating-wrap controls: 33/33.
+- Consuming Avalonia Release build: 0 warnings, 0 errors.
+
+## Table-cell follow-up
+
+Avalonia table cells now consume the same automatic-break candidates, default/authored zone, and
+consecutive-line policy as ordinary body paragraphs. The table row-height preflight and actual cell
+render use the same wrapped-line plan, so a generated hyphen cannot produce a different measured row
+height from the painted row.
+
+The wrapped-cell line carries the optional visible hyphen separately from its original characters.
+Rendering and direct PDF export consume that display glyph, while the table model, placed cell
+characters, paragraph offsets, editing boundaries, and saved text remain unchanged. Existing table
+formatting ownership remains narrow: the cell's established effective run formatting measures and
+paints the generated hyphen.
+
+Table follow-up verification:
+
+- Automatic-hyphenation host contracts: 9/9, including model/caret/PDF invariants and a bounded
+  consecutive-line-limit comparison inside a table cell.
+- Table structure, vertical alignment, PDF, hidden-text, and hyphenation controls: 131/131.
+- Consuming Avalonia Release build: 0 warnings, 0 errors.
+
+## Footnote and endnote follow-up
+
+Footnote and endnote regions use a separate fragment renderer rather than body/table placed glyphs.
+Their formerly duplicated height-measurement and item-emission loops now share one layout routine.
+Consequently, footnote-band reservation, endnote fit checks, live drawing, and direct PDF export all
+consume identical line breaks.
+
+When enabled for the effective note paragraph, an accepted automatic break emits a note-only text
+fragment ending in `-`. It never edits the source `Footnote`/`Endnote` paragraph. The decision uses
+the same authored/default zone and consecutive-line cap; when the cap rejects a break in an
+overlong active word, a non-hyphenated fragment advances the line and resets the streak. With
+automatic hyphenation disabled or suppressed, the prior overlong-word behavior remains unchanged.
+
+Auxiliary-story verification:
+
+- Automatic-hyphenation host contracts: 11/11, including footnote live/PDF/source invariants,
+  disabled control, and unlimited-versus-limited consecutive line endings.
+- Footnote, endnote, continuation pagination, PDF, and hyphenation controls: 100/100.
+- Consuming Avalonia Release build: 0 warnings, 0 errors.
+
+This completes the Avalonia automatic-hyphenation owner set for ordinary body paragraphs, table
+cells, and the rendered footnote/endnote stories. Header/footer editing remains on its independent
+single-line region model and is not an automatic line-wrap owner.
