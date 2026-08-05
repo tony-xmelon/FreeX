@@ -1,14 +1,14 @@
 # FreeP Function-First Status - 2026-08-04
 
-Evidence anchor: current function slice is `6595634265` (current `origin/main`
+Evidence anchor: current function slice is `a654eccf69` (current `origin/main`
 after the concurrent FreeW merge). The latest verified Release
-baseline includes **3,647/3,647** shared Presentation tests, plus the focused
+baseline includes **3,720/3,720** shared Presentation tests, plus the focused
 host and renderer contracts listed below. These are implementation/contract
 counts, not a claim that every PowerPoint-native behavior has been reproduced.
 
 ## Current position
 
-The generated FreeP command inventory on `main` reports **648/648** command IDs
+The generated FreeP command inventory on `main` reports **650/650** command IDs
 available in both WPF and Avalonia, with **0 actionable WPF gaps**, **0 actionable
 Avalonia gaps**, **0 known deferred command rows**, and **110 workflow-evidence rows**.
 This is reachability coverage; it does not claim identical PowerPoint-native depth.
@@ -157,6 +157,17 @@ Default 80% media remains package-compatible with the previous writer path.
 The WPF and Avalonia media caption panes now expose that same value through a Playback
 volume slider and Apply action, so the function is reachable from the desktop UI rather
 than only through the shared editing API.
+
+## 2026-08-05 continuation
+
+The Slide Show Settings dialog is now reachable from both desktop ribbons and applies
+the shared `UseSlideTimings`, `ShowWithAnimation`, and `LoopUntilStopped` state through
+the existing undo bus. The playback setting is now consumed consistently: when
+`ShowWithAnimation` is false, shared WPF/Avalonia host planning suppresses ordinary
+slide transitions, Back transitions, and authored Zoom transitions as well as object
+animation steps. This prevents the setting from disabling only shape animations while
+leaving slide-level motion active. Focused host/planner coverage and the full Release
+FreeP test lane remain the acceptance gate.
 
 The same panes now expose the existing authored playback start mode (On click or
 Automatically) and Loop until stopped flag. One shared undoable mutation updates both
