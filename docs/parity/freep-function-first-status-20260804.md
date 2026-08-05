@@ -303,3 +303,18 @@ calibration claim.
 Focused proof: shared trim-window contracts **2/2**, Avalonia media adapter tests
 **12/12**, WPF media-controller tests **36/36**; WPF and Avalonia Release test
 consumers build with **0 warnings/errors**.
+
+## 2026-08-05 media fade continuation
+
+Media fade-in and fade-out values were already persisted and editable, but neither
+slideshow host applied them during playback. The shared media planner now computes
+an effective volume envelope from the resolved trim window: fade-in begins at the
+trimmed start, fade-out ends at the trimmed end when duration is known, and the
+authored volume remains the ceiling. WPF and Avalonia apply the same envelope on
+open/start, seek, loop restart, timer enforcement, and live volume changes. Unknown
+duration still supports fade-in and defers fade-out until the engine reports an end.
+This is a function/runtime slice, not a visual calibration claim.
+
+Focused proof: shared planner contracts **9/9**, Avalonia media adapter tests
+**13/13**, WPF media-controller tests **36/36**, and the full Presentation test
+project **3733/3733**; affected Release consumers build with **0 warnings/errors**.
