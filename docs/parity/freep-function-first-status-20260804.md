@@ -1,8 +1,9 @@
-# FreeP Function-First Status - 2026-08-04
+# FreeP Function-First Status - 2026-08-05
 
-Evidence anchor: current function slice is `a654eccf69` (current `origin/main`
-after the concurrent FreeW merge). The latest verified Release
-baseline includes **3,720/3,720** shared Presentation tests, plus the focused
+Evidence anchor: current function slice is `6b1081ed3e` (current `origin/main`).
+Historical continuation entries below retain their original snapshot labels;
+the current verified Release baseline includes **3,735/3,735** shared Presentation
+tests, plus the focused
 host and renderer contracts listed below. These are implementation/contract
 counts, not a claim that every PowerPoint-native behavior has been reproduced.
 
@@ -357,3 +358,31 @@ not a visual calibration claim; the evidence is recorded in
 Focused proof: shared media planner contracts **10/10**, Avalonia media adapter tests
 **14/14**, WPF media-controller tests **37/37**, and the full Presentation test
 project **3735/3735**; affected Release consumers build with **0 warnings/errors**.
+
+## 2026-08-05 current-main correction
+
+The authoritative integration point for this status is now `6b1081ed3e`
+(`origin/main`), not the earlier `c7af0b78ef`/`9c7f9d0983` snapshots mentioned
+in the historical continuation entries above. Current mainline includes the
+media playback slices for show-when-stopped, trim windows, fades, and named
+bookmarks, as well as the current plain-text table projection and recording
+boundary verification.
+
+Current verification remains:
+
+- shared FreeP Presentation Release lane: **3,735/3,735**;
+- generated command inventory: **650/650** shared-profile commands;
+- actionable host gaps: **0 WPF**, **0 Avalonia**;
+- known deferred command rows: **0**;
+- workflow-evidence rows: **110**;
+- recording package/runtime contracts: **53/53**;
+- WPF video-export adapter contract: **7/7**.
+
+These counts prove current route, package, and host contracts. They do not prove
+all PowerPoint-native feature depth or OS-owned behavior. The remaining work is
+deliberately bounded to reproducible evidence: deeper SmartArt grammar and
+effects, richer ChartEx/decorations, full Zoom effect authoring, real
+PowerPoint-authored recording persistence and device capture, printer/foreground
+dialog behavior, portable OLE activation, and matched PowerPoint visual exports.
+No new renderer-only pixel calibration is justified without a fresh behavioral
+fixture that demonstrates one of those boundaries.
