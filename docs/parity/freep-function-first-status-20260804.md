@@ -528,3 +528,9 @@ The accompanying PowerPoint COM probe showed that native `Opposing Ideas` contai
 background/divider/rotated-arrow roles not reproduced by the current generic live
 layout planner. That family remains cached for visual safety; this slice does not claim
 live SmartArt layout parity.
+## 2026-08-06: Zoom Return to Parent transition state
+
+Integrated a bounded slideshow function slice: when a Zoom object has Return to Parent enabled, its authored
+transition duration and `showBg` value now travel with the parent return stack. Both Advance and Back preserve
+those values, so returning from a Slide, Section, or Summary Zoom uses the same transition contract as entering it.
+Ordinary slide navigation and non-returning Zooms remain unchanged. Evidence: `docs/parity/freep-zoom-return-transition-20260806.md`.
