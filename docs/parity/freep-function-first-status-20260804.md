@@ -577,3 +577,18 @@ SmartArt and ChartEx semantics, full Zoom authoring depth, PowerPoint-authored
 recording/device persistence, printer/foreground-dialog behavior, portable OLE
 activation, and matched PowerPoint visual exports. No speculative renderer or
 animation change is justified by the current evidence.
+
+## 2026-08-06 preserved SmartArt multi-text cache synchronization
+
+The preserved native SmartArt cache path now applies multiple uniquely matched
+text-only edits in one text-pane commit. It validates unchanged node topology,
+rejects ambiguous duplicate source text, and checks cached paragraph shape before
+mutating either the `dsp:drawing` cache or fallback shapes. Layout, effects, and
+authored geometry remain untouched; structural or unsupported changes continue to
+fall back rather than guessing a new cache.
+
+The shared Presentation suite passed **3,787/3,787**. WPF SmartArt passed
+**313/313** and Avalonia SmartArt passed **33/33**; WPF and Avalonia Release
+consumers built with **0 warnings/errors**. This is a functional text-pane/cache
+parity slice and makes no new visual-fidelity claim. Evidence is recorded in
+`docs/parity/freep-smartart-preserved-cache-multi-text-edit-20260806.md`.
