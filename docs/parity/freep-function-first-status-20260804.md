@@ -191,6 +191,15 @@ hosts the slide stage in a scroll container using the persisted scrollbar policy
 kiosk mode restarts through the shared first-slide navigation plan after the persisted
 interval in both WPF and Avalonia.
 
+The show-settings lane now also preserves `p:showPr/@showNarration` (defaulting to true)
+through the model, undo command, and package reader/writer. Both desktop dialogs expose
+the Play narration switch, and both slideshow hosts suppress audio playback/click plans
+when it is disabled while continuing to present video. This is the bounded FreeP
+interpretation of PowerPoint's authored narration policy; it does not claim full
+PowerPoint recording-track classification or microphone/voice-over authoring parity.
+Focused coverage for the shared settings/media contracts is **7/7**, WPF dialog **2/2**,
+and Avalonia dialog **1/1** on a clean Release consumer build.
+
 ## What remains
 
 - Advanced SmartArt layout/style/effect semantics outside the bounded live catalog and
