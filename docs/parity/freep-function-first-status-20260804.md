@@ -33,6 +33,24 @@ commands, **0 actionable WPF gaps**, **0 actionable Avalonia gaps**, and **0
 known deferred command rows**. The next implementation should be selected from
 a reproducible feature-depth trigger, not from another isolated pixel delta.
 
+## 2026-08-06 continuation - ChartEx explicit-empty authoring
+
+Current main is `4d8b151d16`. The preserved native ChartEx writer now treats
+cleared title and legend model values as explicit authoring operations: when a
+user removes either item, the corresponding preserved `cx:title` or `cx:legend`
+node is removed instead of being silently carried into the saved package.
+Regression coverage is in `ChartDataCommandTests` (88/88 on the compiling and
+no-build passes), with clean WPF and Avalonia Release builds. This is a package
+and function correction; it makes no new visual-parity claim.
+
+The audit following this slice found no additional reproducible missing command
+route. SmartArt relationship families beyond the bounded imported `relationship1`
+cache grammar remain intentionally preserved-cached unless a native cache grammar
+is independently proven. ChartEx series layout, data, title, legend, and modeled
+decoration paths remain source-scoped; unsupported family-specific payloads stay
+verbatim. The remaining backlog is therefore the depth/platform list below, not
+another generic command or pixel-only adjustment.
+
 The latest FreeP-specific mainline work closes three bounded, source-backed gaps:
 
 - `250ed89360` preserves authored SmartArt cache text formatting by stable model ID
