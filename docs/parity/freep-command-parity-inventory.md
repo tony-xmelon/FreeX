@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 655 | 655 | 0 | 0 | 0 | 0 | 0 | 0 | 655 | 0 | 0 | 0 | 0 | 110 |
+| 657 | 657 | 0 | 0 | 0 | 0 | 0 | 0 | 657 | 0 | 0 | 0 | 0 | 110 |
 
 ## Workflow Evidence
 
@@ -140,6 +140,8 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.anim.emphasis.change-font-style` | Change Font Style | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.emphasis.change-line-color` | Change Line Color | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.emphasis.color-pulse` | Color Pulse | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.emphasis.flash-bulb` | FlashBulb | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.emphasis.flicker` | Flicker | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.emphasis.grow-shrink` | Grow/Shrink | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.emphasis.grow-with-color` | Grow With Color | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.emphasis.pulse` | Pulse | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
