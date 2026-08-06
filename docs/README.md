@@ -22,6 +22,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [planning/freew-command-inventory.md](planning/freew-command-inventory.md) - FreeW command inventory; defer current icon status to the June 19 FreeW icon audit.
 - [planning/freew-file-formats.md](planning/freew-file-formats.md) - FreeW document-format adapter status matrix and remaining format gaps.
 - [planning/freep-powerpoint-parity-status-2026-06-27.md](planning/freep-powerpoint-parity-status-2026-06-27.md) - current FreeP PowerPoint parity status, remaining gaps, and first-wave worker orchestration map.
+- [planning/freep-functional-parity-audit-2026-08-06.md](planning/freep-functional-parity-audit-2026-08-06.md) - current function-first audit separating implemented Windows media/OLE paths from the remaining capture, caption-mux, host, and external-baseline boundaries.
 - [performance/backlog-2026-06-04.md](performance/backlog-2026-06-04.md) - current performance backlog and active XLSX open/save IO priority.
 
 ## User
