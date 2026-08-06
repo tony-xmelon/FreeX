@@ -39,6 +39,15 @@ discovery reads the retained field instruction rather than its stale display res
 the rules-aware merge materializes the collected answer into every finished record,
 clears the finished field payload, and updates the ASK bookmark.
 
+The native prompt plan also retains Word's `\\d` default-answer switch. WPF and
+Avalonia seed their existing prompt text boxes with that value; headless merge callers
+use the default only when no explicit answer was supplied, so an intentionally empty
+answer remains authoritative.
+
+Both desktop hosts now distinguish an intentional blank response from cancellation.
+Choosing OK with an empty text box materializes an empty field result; Cancel aborts
+the complete Finish & Merge operation before replacing the document or printing.
+
 Native fields without `\\o` are deliberately preserved with their cached result. Word
 defines those as record-interactive, so reusing one merge-wide answer would be an
 incorrect shortcut; per-record answer orchestration remains a separate bounded slice.
