@@ -5,11 +5,12 @@ Date: 2026-08-06
 ## FreeX hidden-row AutoFit slice
 
 The Avalonia row-header parent and overlay handle now share the resolved target
-for a boundary immediately before a contiguous hidden run. A first press on
-that collapsed boundary is consumed instead of starting a zero-size resize
-capture; the second press can therefore reach the real contiguous AutoFit path
-for rows `4:5`. The deterministic host coverage also pins the planner range and
-the first-press capture guard.
+for a boundary immediately before a contiguous hidden run. A collapsed-boundary
+press may begin resize capture so manual drag-to-unhide remains available, but a
+sub-threshold release is restored and released without a command; the second
+press can therefore reach the real contiguous AutoFit path for rows `4:5`. The
+deterministic host coverage pins the planner range and this click-versus-drag
+behavior.
 
 The physical probe retains its strict schema-v2 contract. Its B5 follow-up now
 uses the calibrated handle inset when translating the outlined B4 height into
@@ -43,9 +44,23 @@ visible-row cases, not evidence to weaken the gate around hidden rows.
 
 - `FreeX.App.Avalonia.Tests`: 25/25 passed, including the row-header source and
   hidden-boundary AutoFit regressions.
+- `FreeX.App.Presentation.Tests`: 18/18 passed, including the shared drag
+  threshold and collapsed-boundary positive-size planner coverage.
 - `FreeX.App.Services.Tests`: 13/13 passed, including the strict selector/tool
   contract and corrected B5 geometry assertion.
 - `git diff --check`: passed.
+
+## Review correction
+
+The initial Wave165 implementation consumed the first press whenever the
+resolved target differed from the visible row or its displayed height was zero.
+That preserved the double-click path but incorrectly blocked manual drag-to-
+unhide/resize. The follow-up correction restores `BeginHeaderResize` for every
+boundary, including collapsed runs, and applies the shared four-pixel movement
+threshold during preview and commit. A sub-threshold click now restores,
+detaches, and releases without a command or `RefreshShell`; a positive drag
+still commits its requested height. No physical X11 rerun was used for this
+review correction.
 
 ## Honest residual
 
