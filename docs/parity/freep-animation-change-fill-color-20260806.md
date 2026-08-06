@@ -19,20 +19,27 @@ setter operations, is preserved on `ShapeAnimation`, cloned through editing
 command paths, and re-emitted by the writer. Ordinary Bold `emph/1` remains on
 its existing path because it has no `fillcolor` behavior payload.
 
+The shared Animations ribbon now also exposes Change Fill Color as an authoring
+command. New animations emit the same native `emph/1` identity, bind the
+target `spid`, and use PowerPoint's observed default `accent2` destination;
+the operation remains undoable through the existing animation command bus.
+
 During slideshow playback, the WPF and Avalonia hosts create a fill-only mask
 from the authored solid shape geometry. They animate a separate color layer
 through that mask, leaving the shape text and outline in the normal overlay
 untouched. The source and destination colors are resolved by the shared
 planner, including theme colors such as `accent2`.
 
-This closes the import, playback classification, package round-trip, and
-solid-fill host playback gap. Gradient, picture, pattern, and partially
+This closes the import, authoring, playback classification, package round-trip,
+and solid-fill host playback gap. Gradient, picture, pattern, and partially
 transparent fill fidelity remain separate work because this route intentionally
 requires a resolvable solid source fill.
 
 ## Verification
 
-- `FreeP.App.Presentation.Tests` focused planner/round-trip filter: 136/136.
+- `FreeP.App.Presentation.Tests` authoring planner/round-trip filter: 128/128.
+- `FreeP.App.Presentation.Tests` full Release suite: 3,820/3,820.
+- Ribbon definition profile: 24/24; localization: 11/11.
 - WPF `FreeP.App.Host` Release build: 0 warnings, 0 errors.
 - Avalonia `FreeP.App.Avalonia` Release build: 0 warnings, 0 errors.
 - The focused contract verifies the fill target, both native setters, raw
