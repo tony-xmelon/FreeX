@@ -24,6 +24,24 @@ The round-trip contract verifies native XML, undo removal/restoration, and reope
 model values. The compositor contract verifies the resolved reflection alpha,
 distance, and vertical scale on a Zoom preview `DrawOp.Picture`.
 
+## Wave166 authoring closure
+
+Before Wave166, `endPos` was already modeled by `ZoomFrameBorderReflection`,
+preserved by the package reader/writer, and consumed by the shared picture
+compositor, but it was absent from both Zoom Format dialogs. Wave166 adds the
+shared formatter/parser and WPF/Avalonia fields and state. The native contract is
+`a:reflection/@endPos`, exposed by Open XML SDK as `Reflection.EndPosition`; the
+schema defines it as the end position along the alpha-gradient ramp for the end
+alpha value and types it as `ST_PositiveFixedPercentage`:
+[Microsoft Learn Reflection](https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.drawing.reflection?view=openxml-3.0.1).
+
+FreeP authoring uses `0..100%` in the dialogs and stores the fixed-percentage
+integer in `0..100000` (`37.5%` becomes `endPos="37500"`). Editing patches only
+the modeled reflection attributes, so the existing alpha, blur, distance,
+direction, scale, sibling effects, and unsupported reflection attributes remain
+intact. Focused evidence passed Presentation `173/173`, WPF/package `46/46`, and
+Avalonia `4/4`.
+
 ## Boundary
 
 Wave 165 closes the remaining `blurRad` authoring-depth boundary. Both desktop
