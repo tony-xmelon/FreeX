@@ -69,3 +69,45 @@ becoming positive `66,66` and unhidden through the user interaction. The strict
 focused selector remains open because the bounded X11 runs did not obtain
 column growth and visible-row growth in the same authoritative manifest. No
 `3 passed, 0 failed` selector closure is claimed in this wave.
+
+## FreeW Cross Reference dialog
+
+Avalonia now uses the WPF-authoritative three-list layout and modal validation
+contract rather than platform-local combo boxes and an inline status row. Fresh
+560x600, 96 DPI captures improved all three canonical states from
+`9.5050595%` changed pixels / `5.7631349` mean channel delta to
+`6.1699405%` / `4.8313780`. The states remain genuine visual mismatches because
+native list templates, scrollbar edges, and text rasterization differ; no
+threshold, crop, mask, or fixture was changed.
+
+Integrated Cross Reference verification passed 3/3 Avalonia dialog tests,
+70/70 shared model tests, 11/11 WPF host tests, and 11/11 core IO tests. The
+larger counts include the caption-reference work merged concurrently from
+`origin/main`.
+
+## FreeP Zoom reflection blur
+
+Zoom frame reflection blur is now authorable through WPF and Avalonia and
+projected through a shared renderer-neutral blur-pass plan consumed by both
+renderers. The existing model, undo command, and native DrawingML writer remain
+the package authority; `a:reflection/@blurRad="12700"` survives undo/redo and
+PPTX reopen while unsupported native payload remains preserved.
+
+Integrated Zoom/reflection verification passed 132/132 presentation tests,
+15/15 WPF host/package tests, and 6/6 Avalonia tests. PowerPoint-authoritative
+pixel fidelity for the bounded halo approximation and other unsupported Zoom
+effect families remain outside this slice.
+
+## Integration gate
+
+- Repository preflight passed after regenerating the two expected FreeP
+  whole-window MainWindow source hashes made stale by concurrent media work.
+- FreeP whole-window evidence is current at 33/33 paired captures with zero
+  explicit product mismatches or capture limitations.
+- FreeW evidence consistency is current at 295 rows: 159 genuine visual
+  mismatches, 24 passes, 105 Avalonia extensions, and 7 not-applicable rows.
+- `dotnet build FreeX.slnx --configuration Release` passed with 0 warnings and
+  0 errors.
+
+Wave 165 advances three bounded parity surfaces. It does not claim complete
+functional or visual parity for FreeX, FreeW, or FreeP.
