@@ -603,3 +603,32 @@ WPF SmartArt **313/313**; Avalonia SmartArt **33/33**; both Release consumers
 built with **0 warnings/errors**. This is a functional cache-edit slice with no
 new visual-fidelity claim. Evidence is recorded in
 `docs/parity/freep-smartart-preserved-cache-duplicate-text-edit-20260806.md`.
+
+## 2026-08-06 current-main checkpoint - function-first boundary reaffirmed
+
+Current main is `b9776d1e28`. The latest FreeP implementation slice is native
+ChartEx data-label visibility ownership: `cx:visibility` fields for percent,
+legend-key, bubble-size, and leader-lines now round-trip through the existing
+`ChartDataLabels` model, including an explicit `leaderLines=false` state. The
+focused Presentation command lane passed **137/137**, the focused Host chart lane
+passed **122/122**, the full Presentation test project passed **3,796/3,796**, and
+the Avalonia Release build completed with **0 warnings / 0 errors**. The package
+and host assertions cover edit, save/reopen, and undo/redo behavior; this is a
+functional/package claim and makes no new visual-fidelity claim.
+
+The FreeP function-first audit still reports **650/650** shared command routes,
+**0 actionable WPF gaps**, **0 actionable Avalonia gaps**, **0 known deferred
+command rows**, and **110 workflow-evidence rows**. A fresh audit of the remaining
+routes found no narrower unimplemented command behavior suitable for a safe patch.
+Unknown native ChartEx XML remains preserved, while the currently modeled title,
+legend, series data/layout, value-color, point-format, and data-label operations
+have explicit package contracts.
+
+The remaining work is therefore intentionally bounded rather than a missing
+command route: deeper SmartArt grammar/style/effect families, richer ChartEx
+authoring and Office-specific connector/decorations, full Zoom authoring depth,
+real-deck media/caption/recording persistence and PowerPoint recording baselines,
+printer/foreground native-dialog behavior, portable OLE, and Microsoft-authored
+visual validation. A new code slice should require a reproducible user-visible
+trigger in one of those boundaries; isolated pixel differences without such a
+behavioral trigger are not acceptance evidence.
