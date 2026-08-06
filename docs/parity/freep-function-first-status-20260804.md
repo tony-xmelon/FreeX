@@ -604,6 +604,23 @@ built with **0 warnings/errors**. This is a functional cache-edit slice with no
 new visual-fidelity claim. Evidence is recorded in
 `docs/parity/freep-smartart-preserved-cache-duplicate-text-edit-20260806.md`.
 
+## 2026-08-06 relationship1 two-node cache admission
+
+The imported `relationship1` cache grammar now admits its source-backed
+two-node variant in addition to the previously proven three-node form. The
+guard requires exactly two or three ordered ellipse node shapes, matching
+non-empty node text, equal square extents, the shared 0.58 overlap step, and no
+extra roles or unsupported effects. The shared live planner already generated
+the same two-node ellipse family, so cache regeneration, undo, package
+round-trip, WPF, and Avalonia continue through the existing shared routes.
+
+All other relationship1 cache variants remain preserved-cached: malformed or
+ambiguous data, fewer/more nodes, non-ellipse or extra background/divider/
+connector roles, reordered/missing text, wrong geometry or overlap, and
+effectful caches. Other relationship-family cache grammars remain fallback-only
+until independently proven. Evidence is recorded in
+`docs/parity/freep-smartart-relationship1-two-node-cache-20260806.md`.
+
 ## 2026-08-06 current-main checkpoint - function-first boundary reaffirmed
 
 Current main is `b9776d1e28`. The latest FreeP implementation slice is native
