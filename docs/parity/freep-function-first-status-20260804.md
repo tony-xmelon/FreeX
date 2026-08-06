@@ -661,3 +661,30 @@ contracts cover the same family. Existing Presentation, WPF, and Avalonia tests
 already exercise the live plans and cached fallback boundaries. No code change was
 made, and no new visual-parity claim is implied. This route should remain closed
 unless a new PowerPoint-authored semantic or editing failure is reproduced.
+
+## 2026-08-06 current-main continuation
+
+Current `main` is `9f923f69bb` (`FreeP clear stale Zoom previews when retargeting`).
+Retargeting an existing Slide or Section Zoom now removes only its stale
+auto-generated preview relationship/media when the object is not authored as a cover
+image; undo restores the exact prior XML, relationship, and media payload. User-authored
+cover images remain intact. Focused Slide Zoom coverage is **8/8**, the full Presentation
+lane is **3,804/3,804** on the consuming Release artifact, and WPF/Avalonia Release
+builds are clean.
+
+The follow-up boundary audit checked the two most tempting next routes. Animation-pane
+effect options already cover the modeled directional, amount, wheel-spoke, spin,
+motion-reversal, and timing behaviors; the remaining unsupported option families need
+PowerPoint-authored playback semantics rather than a safe generic mutation. Imported
+`hierarchy3` SmartArt with a preserved `dsp:drawing` remains intentionally
+cache-authoritative, while the bounded live hierarchy plan remains available for
+authoring and cache regeneration. Its focused corpus contract passes, so no speculative
+renderer or cache-ownership change is warranted.
+
+This checkpoint keeps the function-first backlog honest: advanced SmartArt
+grammar/style/effects, richer ChartEx family semantics, deeper Zoom authoring beyond the
+current target/preview/cover/crop/retarget/target-list/tile paths, real recording/device
+and PowerPoint-authored persistence evidence, OS/printer/foreground-dialog behavior,
+portable OLE activation, and matched PowerPoint visual exports. No new implementation
+slice is justified until one of those boundaries supplies a reproducible package or host
+behavior; isolated pixel tuning remains intentionally paused.
