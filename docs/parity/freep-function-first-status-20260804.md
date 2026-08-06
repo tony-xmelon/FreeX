@@ -632,3 +632,15 @@ printer/foreground native-dialog behavior, portable OLE, and Microsoft-authored
 visual validation. A new code slice should require a reproducible user-visible
 trigger in one of those boundaries; isolated pixel differences without such a
 behavioral trigger are not acceptance evidence.
+
+## 2026-08-06 relationship SmartArt dispatch audit
+
+The suspected relationship-family dispatch gap was rechecked against current main
+and closed as a false lead. `SmartArtLayoutEngine` dispatches all nine authored
+relationship layouts (`relationship1`, `opposingIdeas`, `convergingRadial`,
+`divergingRadial`, `basicVenn`, `radialVenn`, `targetList`, `stackedVenn`, and
+`interlockingRings`); the reader allow-list, insertion presets, and host compositor
+contracts cover the same family. Existing Presentation, WPF, and Avalonia tests
+already exercise the live plans and cached fallback boundaries. No code change was
+made, and no new visual-parity claim is implied. This route should remain closed
+unless a new PowerPoint-authored semantic or editing failure is reproduced.
