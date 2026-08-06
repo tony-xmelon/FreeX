@@ -38,13 +38,14 @@ a pass.
 - FreeX Avalonia AutoFit/input: 24/24; Linux runner/schema tooling: 13/13.
 - FreeW Backstage: 40/40. Canonical evidence consistency passed with 295 rows,
   159 genuine mismatches, 24 passes, 105 Avalonia extensions, and 7 N/A rows.
-- FreeP SmartArt: shared Presentation 398/398, WPF host/package 316/316,
+- FreeP SmartArt: shared Presentation 401/401, WPF host/package 316/316,
   Avalonia renderer 12/12, and Avalonia host 33/33.
 - All focused commands passed again after merging the latest `origin/main`,
   including Round 121, FreeP ChartEx, and FreeW bibliography changes.
 - Repository preflight passed, including generated parity documents, packaging,
   workflow, source-fingerprint, and conflict-marker guards.
-- The complete `FreeX.slnx` Release build passed with 0 warnings and 0 errors.
+- The complete `FreeX.slnx` Release build passed with 0 warnings and 0 errors,
+  and passed again after the final upstream SmartArt/FreeW sync.
   The default solution wrapper was not repeated because the same unchanged
   wrapper timed out and left a testhost in Wave 163; this wave uses the complete
   touched cohorts above plus preflight and the full solution build.
