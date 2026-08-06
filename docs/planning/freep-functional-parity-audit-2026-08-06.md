@@ -22,7 +22,7 @@ Focused current-main verification on `424a2bf0f5`:
 ## Actual Remaining Function Boundaries
 
 - Live microphone/camera capture still depends on OS devices, permissions, and host session state; deterministic injected payloads are not a substitute for live-device evidence.
-- Recording caption artifacts are preserved and planned as media metadata. The ffmpeg mux path materializes package-owned WebVTT tracks as slide-offset timed `mov_text` streams; Windows `MediaComposition` has no timed-text stream API, so the Windows adapter uses the existing ffmpeg mux path when ffmpeg is installed and fails explicitly rather than silently dropping captions when it is not.
+- Recording caption artifacts are preserved and planned as media metadata. The ffmpeg mux path materializes package-owned WebVTT tracks as slide-offset timed `mov_text` streams; Windows `MediaComposition` has no timed-text stream API, so the Windows adapter uses the existing ffmpeg mux path when ffmpeg is installed and fails explicitly rather than silently dropping captions when it is not. The shared host capability surface reports timed-caption muxing separately from ordinary MP4 encoding, so callers can distinguish a caption-capable host from a video-only host.
 - Native printer-dialog execution remains host/driver dependent even though print packages and physical page ranges are implemented.
 - PowerPoint-authoritative COM recording/export baselines and broader real-deck media/caption baselines remain external evidence work.
 - Advanced chart families, deep animation authoring/playback semantics, and other package features explicitly marked unsupported remain bounded feature-depth work.
