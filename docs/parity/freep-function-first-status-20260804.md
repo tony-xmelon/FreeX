@@ -1,4 +1,4 @@
-# FreeP Function-First Status - 2026-08-05
+# FreeP Function-First Status - 2026-08-06
 
 Evidence anchor: current FreeP function baseline is the checked-out `main` commit.
 The shared repository may contain newer FreeW merges; those are not counted as
@@ -9,7 +9,32 @@ tests, plus the focused
 host and renderer contracts listed below. These are implementation/contract
 counts, not a claim that every PowerPoint-native behavior has been reproduced.
 
-## Current FreeP checkpoint - 2026-08-05
+## Current FreeP checkpoint - 2026-08-06
+
+### Current-main refresh: `7c6c1c064f`
+
+The current `origin/main` tip is `7c6c1c064f`. Since the preceding checkpoint,
+native emphasis animation identities were promoted from raw-preserved payloads
+to distinct shared authoring values: `FlashBulb` and `Flicker` retain native
+effect IDs 26 and 27 while using the existing Blink playback fallback, and
+`ColorWave` retains native effect ID 20 while using the existing ColorPulse
+playback fallback. The shared planner, WPF/Avalonia ribbon routes, localization,
+and package round-trip contracts all consume these identities.
+
+The current verification snapshot is **3,844/3,844** FreeP Presentation tests,
+**21/21** Localization tests, **209/209** focused host ribbon tests, and clean
+WPF/Avalonia Release builds. The generated command inventory is now **658/658**
+shared command IDs, with **0 actionable WPF gaps**, **0 actionable Avalonia gaps**,
+and **0 known deferred command rows**. These are implementation and contract
+counts, not a claim that every PowerPoint-native playback or visual behavior is
+identical.
+
+The animation boundary remains explicit: the newly promoted effects have model
+and package identity, but their playback fallback is intentionally shared until
+PowerPoint-authored timing/effect semantics justify deeper renderer work.
+
+Historical continuation entries below retain their original snapshot labels and
+counts; they are not silently rewritten to the latest mainline totals.
 
 ### Current-main refresh: `4152ba61ac`
 

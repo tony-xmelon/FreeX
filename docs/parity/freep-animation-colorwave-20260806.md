@@ -1,14 +1,15 @@
 # FreeP ColorWave animation preservation - 2026-08-06
 
 PowerPoint-authored ColorWave emphasis uses `presetClass="emph"`
-`presetID="20"`. FreeP already preserved unrecognized preset tokens for
-lossless package round-trip, but imported ID 20 previously selected the generic
-Pulse playback fallback.
+`presetID="20"`. FreeP now preserves that identity as a distinct
+`AnimationPreset` through import, authoring, save/reopen, and the shared
+WPF/Avalonia ribbon command plans.
 
-The shared reader now selects the existing ColorPulse playback contract for this
-color emphasis effect while retaining the native class, ID, and subtype for
-writing. ColorWave remains raw-preserved rather than being promoted to a new
-authoring enum value until its distinct wave timing semantics are modeled.
+ColorWave intentionally uses the existing ColorPulse playback contract until
+its distinct wave timing semantics are modeled. The native class, ID, and
+authored subtype remain package authority, so this closes functional identity
+and authoring parity without claiming pixel-identical PowerPoint timing or
+raster playback.
 
 This is a functional playback and package-preservation correction; it makes no
 claim of pixel-identical PowerPoint timing or raster playback.
