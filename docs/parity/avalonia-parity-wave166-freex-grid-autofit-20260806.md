@@ -61,13 +61,13 @@ Calibration passed and the strict selector returned `3 passed, 0 failed`:
 
 ## Final authoritative result
 
-Commit `32dd9f5ce215b66c2b968773a413be63a69fb184` is the source provenance for
+Commit `46e9c63a111d7f07005c867286f40ec75385fcc5` is the source provenance for
 the final run. Report:
-`artifacts/linux-interactive/freex/interaction-validation/20260806T045515Z`.
+`artifacts/linux-interactive/freex/interaction-validation/20260806T050053Z`.
 Physical session:
-`artifacts/linux-interactive/freex/sessions/20260806T045915621Z`.
+`artifacts/linux-interactive/freex/sessions/20260806T050446187Z`.
 The owned app image was
-`sha256:66b2b8d5edeaeb0b02e03cf4a6af2a58d69d16447d332e252ed8bdb2277a1920`.
+`sha256:a333532775f756c635689cd943cee3836a0244c580c540ec323ca21c03720bfa`.
 
 The authoritative strict selector returned `3 passed, 0 failed, 3 total` with
 calibration passed at `1280x820`, `96 DPI`:
@@ -77,9 +77,10 @@ calibration passed at `1280x820`, `96 DPI`:
 - hidden rows `4:5`: `0,0 -> 66,66`, boundary `14,292`,
   `hiddenRowsAfter=[]`, `unhidden=true`, `sized=true`.
 
-Three calibrated post-implementation attempts were used: attempt 1 exposed the
-whole-column-selection race, attempt 2 passed before commit, and attempt 3 is the
-SHA-linked final result above. The deterministic pointer-helper regression passed
+Four calibrated post-implementation attempts were used: attempt 1 exposed the
+whole-column-selection race, attempt 2 passed before the implementation commit,
+attempt 3 passed from the implementation commit, and attempt 4 is the final
+SHA-linked result above. The deterministic pointer-helper regression passed
 `1/1`; the full `FreeX.App.Services.Tests` lane passed `2625/2625`. No selector,
 schema, threshold, expected-growth, calibration, or postcondition residual remains
 in this Wave166 slice. Broader Linux interaction surfaces remain outside this
