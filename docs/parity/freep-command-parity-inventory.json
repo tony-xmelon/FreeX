@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia) plus freep/FreeP.App.Presentation SmartArtLayoutPreset",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 650,
-    "both": 650,
+    "totalCommands": 658,
+    "both": 658,
     "wpfOnly": 0,
     "avaloniaOnly": 0,
     "missingWpf": 0,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 650,
+    "shared": 658,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 0,
@@ -2150,6 +2150,176 @@
       ]
     },
     {
+      "commandId": "freep.anim.emphasis.change-fill-color",
+      "label": "Change Fill Color",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Change Fill Color",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Change Fill Color",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.emphasis.change-font-color",
+      "label": "Change Font Color",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Change Font Color",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Change Font Color",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.emphasis.change-font-size",
+      "label": "Change Font Size",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Change Font Size",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Change Font Size",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.emphasis.change-font-style",
+      "label": "Change Font Style",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Change Font Style",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Change Font Style",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.emphasis.change-line-color",
+      "label": "Change Line Color",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Change Line Color",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Change Line Color",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.anim.emphasis.color-pulse",
       "label": "Color Pulse",
       "wpfPresent": true,
@@ -2178,6 +2348,108 @@
           "groupId": "animation-effects",
           "group": "Animation",
           "label": "Color Pulse",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.emphasis.color-wave",
+      "label": "Color Wave",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Color Wave",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Color Wave",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.emphasis.flash-bulb",
+      "label": "FlashBulb",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "FlashBulb",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "FlashBulb",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.anim.emphasis.flicker",
+      "label": "Flicker",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Flicker",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "animations",
+          "tab": "Animations",
+          "groupId": "animation-effects",
+          "group": "Animation",
+          "label": "Flicker",
           "controlType": "RibbonButton",
           "layout": "Medium"
         }
