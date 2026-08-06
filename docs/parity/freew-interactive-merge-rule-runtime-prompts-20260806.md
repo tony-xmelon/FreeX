@@ -59,6 +59,12 @@ defines ASK answers as bookmark content consumed at reference locations. The
 defines `\\d` as the default response and `\\o` as one prompt for the merge instead of
 one prompt for each merged record.
 
+Native FILLIN answers and ASK bookmark values also pass through the same calibrated
+general-result formatter as MERGEFIELD. Word's `\\* Upper`, `\\* Lower`,
+`\\* FirstCap`, and `\\* Caps` transforms therefore apply before the visible FILLIN
+result or referenced ASK bookmark is materialized; `\\* MERGEFORMAT` remains a
+format-retention marker rather than a text transform.
+
 Native fields without `\\o` are deliberately preserved with their cached result. Word
 defines those as record-interactive, so reusing one merge-wide answer would be an
 incorrect shortcut; per-record answer orchestration remains a separate bounded slice.
