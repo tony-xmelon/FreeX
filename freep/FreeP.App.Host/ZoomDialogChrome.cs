@@ -1,43 +1,28 @@
-using Avalonia.Automation;
-using Avalonia.Controls;
-using Avalonia.Media;
-using Free.Shared.Shell.Avalonia;
+using System.Windows;
+using System.Windows.Automation;
+using System.Windows.Controls;
 using FreeP.App.Compositor;
 
-namespace FreeP.App.Avalonia;
+namespace FreeP.App.Host;
 
 internal static class ZoomDialogChrome
 {
-    private static readonly AvaloniaCompactDialogChromeStyle Style = new(FontFamily.Default);
-
-    internal static void Apply(Window window) =>
-        AvaloniaCompactDialogChrome.ApplyWindow(window, Style);
-
     internal static void Apply(
         Window window,
         PresentationDialogSurfacePlan<ZoomTargetDialogField, ZoomTargetDialogAction> surface)
     {
-        Apply(window);
         AutomationProperties.SetName(window, surface.AccessibleName);
         AutomationProperties.SetAutomationId(window, surface.AutomationId);
     }
 
     internal static void ApplyField(
-        Control control,
+        DependencyObject control,
         PresentationDialogFieldPlan<ZoomTargetDialogField> field)
     {
         AutomationProperties.SetName(control, field.AccessibleName);
         AutomationProperties.SetAutomationId(control, field.AutomationId);
         if (!string.IsNullOrWhiteSpace(field.HelpText))
             AutomationProperties.SetHelpText(control, field.HelpText);
-    }
-
-    internal static Button MakeButton(string label, bool isDefault, Action action)
-    {
-        var button = new Button { Content = label, IsDefault = isDefault, MinWidth = 80 };
-        AvaloniaCompactDialogChrome.ApplyButton(button, Style, minWidth: 80, isDefault: isDefault);
-        button.Click += (_, _) => action();
-        return button;
     }
 
     internal static Button MakeButton(
@@ -51,15 +36,10 @@ internal static class ZoomDialogChrome
             IsDefault = plan.IsDefault,
             IsCancel = plan.IsCancel,
             IsEnabled = isEnabled,
-            MinWidth = 80,
+            MinWidth = 75,
         };
         AutomationProperties.SetName(button, plan.AccessibleName);
         AutomationProperties.SetAutomationId(button, plan.AutomationId);
-        AvaloniaCompactDialogChrome.ApplyButton(
-            button,
-            Style,
-            minWidth: 80,
-            isDefault: plan.IsDefault);
         button.Click += (_, _) => action();
         return button;
     }
