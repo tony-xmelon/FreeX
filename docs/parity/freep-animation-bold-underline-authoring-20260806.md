@@ -16,3 +16,8 @@ iterator. The writer and authoring planner emit the same package semantics,
 while playback continues to use the renderer-neutral Bold and Underline
 effect identities. Round-trip tests cover the package XML, model identity,
 clone preservation, playback mapping, and undo/redo authoring paths.
+
+The shared bidirectional map also emits the native `15` and `18` IDs for
+generic Bold and Underline model animations. The reader still requires the
+corresponding native style setter when classifying an imported `emph/15` or
+`emph/18`, because PowerPoint uses nearby emphasis IDs for other effects.
