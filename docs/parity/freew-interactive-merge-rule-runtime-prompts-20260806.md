@@ -48,6 +48,17 @@ Both desktop hosts now distinguish an intentional blank response from cancellati
 Choosing OK with an empty text box materializes an empty field result; Cancel aborts
 the complete Finish & Merge operation before replacing the document or printing.
 
+Native `ASK` follows Word's bookmark ownership: the field itself emits no visible text,
+stores its answer in the named bookmark, and a following native `REF` materializes that
+answer. A `REF` whose bookmark is not owned by the current merge remains intact with its
+cached result, preserving ordinary document cross-reference behavior.
+
+Microsoft's [mail-merge rules reference](https://support.microsoft.com/en-us/word/set-the-rules-for-a-mail-merge)
+defines ASK answers as bookmark content consumed at reference locations. The
+[Word `MailMergeFields.AddFillIn` API](https://learn.microsoft.com/en-us/office/vba/api/word.mailmergefields.addfillin)
+defines `\\d` as the default response and `\\o` as one prompt for the merge instead of
+one prompt for each merged record.
+
 Native fields without `\\o` are deliberately preserved with their cached result. Word
 defines those as record-interactive, so reusing one merge-wide answer would be an
 incorrect shortcut; per-record answer orchestration remains a separate bounded slice.
