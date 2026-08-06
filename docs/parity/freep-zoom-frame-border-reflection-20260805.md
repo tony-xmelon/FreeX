@@ -26,6 +26,9 @@ distance, and vertical scale on a Zoom preview `DrawOp.Picture`.
 
 ## Boundary
 
-The current host implementation paints the authored mirror and opacity fade. It
-does not claim independent blur-kernel parity for `blurRad`; that remains a future
-renderer-depth item and is intentionally not approximated by a global bitmap blur.
+Wave 165 closes the remaining `blurRad` authoring-depth boundary. Both desktop
+dialogs now expose Reflection blur, the existing shared command writes the value
+to native `a:reflection/@blurRad`, and package reopen reconstructs it. The shared
+picture plan now turns the authored radius into deterministic reflection halo
+passes consumed by both WPF and Avalonia. This is a bounded renderer projection,
+not a claim of PowerPoint pixel identity or an unrelated global bitmap blur.
