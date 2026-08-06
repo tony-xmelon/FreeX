@@ -31,6 +31,24 @@ finish operation without replacing the template or submitting a print job.
 - The Avalonia engine contract proves the same Fill-in and Ask answers are present in
   every merged record and that Ask sets the expected bookmark value.
 
+## Native Word Fields
+
+The follow-up import slice recognizes native Word `FILLIN` and `ASK` complex fields
+when their authored `\\o` switch requests one prompt for the complete merge. Prompt
+discovery reads the retained field instruction rather than its stale display result;
+the rules-aware merge materializes the collected answer into every finished record,
+clears the finished field payload, and updates the ASK bookmark.
+
+Native fields without `\\o` are deliberately preserved with their cached result. Word
+defines those as record-interactive, so reusing one merge-wide answer would be an
+incorrect shortcut; per-record answer orchestration remains a separate bounded slice.
+
+- Native model contracts: 3/3 passed, including exact `\\o` ownership and the no-`\\o`
+  preservation control.
+- Native DOCX write/read/discover/resolve round trip: 1/1 passed.
+- Complete `MailMergeTests` after the native slice: 207/207 passed.
+- `MailMergeRichContentRoundTripTests`: 4/4 passed.
+
 ## Process Rule
 
 Interactive field parity has two owners: document-wide prompt discovery and a host
