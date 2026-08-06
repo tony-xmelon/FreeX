@@ -603,3 +603,88 @@ WPF SmartArt **313/313**; Avalonia SmartArt **33/33**; both Release consumers
 built with **0 warnings/errors**. This is a functional cache-edit slice with no
 new visual-fidelity claim. Evidence is recorded in
 `docs/parity/freep-smartart-preserved-cache-duplicate-text-edit-20260806.md`.
+
+## 2026-08-06 relationship1 two-node cache admission
+
+The imported `relationship1` cache grammar now admits its source-backed
+two-node variant in addition to the previously proven three-node form. The
+guard requires exactly two or three ordered ellipse node shapes, matching
+non-empty node text, equal square extents, the shared 0.58 overlap step, and no
+extra roles or unsupported effects. The shared live planner already generated
+the same two-node ellipse family, so cache regeneration, undo, package
+round-trip, WPF, and Avalonia continue through the existing shared routes.
+
+All other relationship1 cache variants remain preserved-cached: malformed or
+ambiguous data, fewer/more nodes, non-ellipse or extra background/divider/
+connector roles, reordered/missing text, wrong geometry or overlap, and
+effectful caches. Other relationship-family cache grammars remain fallback-only
+until independently proven. Evidence is recorded in
+`docs/parity/freep-smartart-relationship1-two-node-cache-20260806.md`.
+
+## 2026-08-06 current-main checkpoint - function-first boundary reaffirmed
+
+Current main is `b9776d1e28`. The latest FreeP implementation slice is native
+ChartEx data-label visibility ownership: `cx:visibility` fields for percent,
+legend-key, bubble-size, and leader-lines now round-trip through the existing
+`ChartDataLabels` model, including an explicit `leaderLines=false` state. The
+focused Presentation command lane passed **137/137**, the focused Host chart lane
+passed **122/122**, the full Presentation test project passed **3,796/3,796**, and
+the Avalonia Release build completed with **0 warnings / 0 errors**. The package
+and host assertions cover edit, save/reopen, and undo/redo behavior; this is a
+functional/package claim and makes no new visual-fidelity claim.
+
+The FreeP function-first audit still reports **650/650** shared command routes,
+**0 actionable WPF gaps**, **0 actionable Avalonia gaps**, **0 known deferred
+command rows**, and **110 workflow-evidence rows**. A fresh audit of the remaining
+routes found no narrower unimplemented command behavior suitable for a safe patch.
+Unknown native ChartEx XML remains preserved, while the currently modeled title,
+legend, series data/layout, value-color, point-format, and data-label operations
+have explicit package contracts.
+
+The remaining work is therefore intentionally bounded rather than a missing
+command route: deeper SmartArt grammar/style/effect families, richer ChartEx
+authoring and Office-specific connector/decorations, full Zoom authoring depth,
+real-deck media/caption/recording persistence and PowerPoint recording baselines,
+printer/foreground native-dialog behavior, portable OLE, and Microsoft-authored
+visual validation. A new code slice should require a reproducible user-visible
+trigger in one of those boundaries; isolated pixel differences without such a
+behavioral trigger are not acceptance evidence.
+
+## 2026-08-06 relationship SmartArt dispatch audit
+
+The suspected relationship-family dispatch gap was rechecked against current main
+and closed as a false lead. `SmartArtLayoutEngine` dispatches all nine authored
+relationship layouts (`relationship1`, `opposingIdeas`, `convergingRadial`,
+`divergingRadial`, `basicVenn`, `radialVenn`, `targetList`, `stackedVenn`, and
+`interlockingRings`); the reader allow-list, insertion presets, and host compositor
+contracts cover the same family. Existing Presentation, WPF, and Avalonia tests
+already exercise the live plans and cached fallback boundaries. No code change was
+made, and no new visual-parity claim is implied. This route should remain closed
+unless a new PowerPoint-authored semantic or editing failure is reproduced.
+
+## 2026-08-06 current-main continuation
+
+Current `main` is `9f923f69bb` (`FreeP clear stale Zoom previews when retargeting`).
+Retargeting an existing Slide or Section Zoom now removes only its stale
+auto-generated preview relationship/media when the object is not authored as a cover
+image; undo restores the exact prior XML, relationship, and media payload. User-authored
+cover images remain intact. Focused Slide Zoom coverage is **8/8**, the full Presentation
+lane is **3,804/3,804** on the consuming Release artifact, and WPF/Avalonia Release
+builds are clean.
+
+The follow-up boundary audit checked the two most tempting next routes. Animation-pane
+effect options already cover the modeled directional, amount, wheel-spoke, spin,
+motion-reversal, and timing behaviors; the remaining unsupported option families need
+PowerPoint-authored playback semantics rather than a safe generic mutation. Imported
+`hierarchy3` SmartArt with a preserved `dsp:drawing` remains intentionally
+cache-authoritative, while the bounded live hierarchy plan remains available for
+authoring and cache regeneration. Its focused corpus contract passes, so no speculative
+renderer or cache-ownership change is warranted.
+
+This checkpoint keeps the function-first backlog honest: advanced SmartArt
+grammar/style/effects, richer ChartEx family semantics, deeper Zoom authoring beyond the
+current target/preview/cover/crop/retarget/target-list/tile paths, real recording/device
+and PowerPoint-authored persistence evidence, OS/printer/foreground-dialog behavior,
+portable OLE activation, and matched PowerPoint visual exports. No new implementation
+slice is justified until one of those boundaries supplies a reproducible package or host
+behavior; isolated pixel tuning remains intentionally paused.
