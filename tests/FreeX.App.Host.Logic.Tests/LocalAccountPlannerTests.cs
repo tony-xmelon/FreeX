@@ -15,7 +15,7 @@ public sealed class LocalAccountPlannerTests
         workbook.AddSheet("Sheet1");
 
         var plan = LocalAccountPlanner.Create(
-            new FreeXOptions { UserName = "Analyst" },
+            new AppOptions { UserName = "Analyst" },
             @"C:\Work\Budget.xlsx",
             "Budget.xlsx",
             userNameProvider: () => "anton",
@@ -49,7 +49,7 @@ public sealed class LocalAccountPlannerTests
     public void Create_ProjectsDisplayedRowsThroughBackstageAccountCatalog()
     {
         var plan = LocalAccountPlanner.Create(
-            new FreeXOptions { UserName = "Analyst" },
+            new AppOptions { UserName = "Analyst" },
             @"C:\Work\Budget.xlsx",
             "Budget.xlsx",
             userNameProvider: () => "anton",
@@ -72,7 +72,7 @@ public sealed class LocalAccountPlannerTests
     public void Create_ReportsSaveAsRequiredForUnsavedOrMissingWorkbookPaths()
     {
         var unsaved = LocalAccountPlanner.Create(
-            new FreeXOptions { UserName = "" },
+            new AppOptions { UserName = "" },
             null,
             "Book1",
             userNameProvider: () => "anton",
@@ -87,7 +87,7 @@ public sealed class LocalAccountPlannerTests
         unsaved.Details.Should().ContainEquivalentOf(new LocalAccountDetail("FreeX user name", "anton"));
 
         var missing = LocalAccountPlanner.Create(
-            new FreeXOptions { UserName = "Analyst" },
+            new AppOptions { UserName = "Analyst" },
             @"C:\Missing\Book1.xlsx",
             "Book1",
             userNameProvider: () => "anton",
@@ -105,7 +105,7 @@ public sealed class LocalAccountPlannerTests
     public void Create_ReportsInvalidWorkbookPathsWithoutProbingTheFileSystem()
     {
         var plan = LocalAccountPlanner.Create(
-            new FreeXOptions { UserName = "Analyst" },
+            new AppOptions { UserName = "Analyst" },
             "bad\0path.xlsx",
             "Book1",
             userNameProvider: () => "anton",
@@ -123,7 +123,7 @@ public sealed class LocalAccountPlannerTests
     public void FormatMessageBody_IncludesTheNoMicrosoftAccountBoundaryAndLocalDetails()
     {
         var plan = LocalAccountPlanner.Create(
-            new FreeXOptions { UserName = "Analyst" },
+            new AppOptions { UserName = "Analyst" },
             @"C:\Work\Budget.xlsx",
             "Budget.xlsx",
             userNameProvider: () => "anton",
@@ -132,7 +132,11 @@ public sealed class LocalAccountPlannerTests
             optionsPathProvider: () => "options.json",
             fileExists: _ => true);
 
-        var message = DeferredCommandMessages.LocalAccountInfo(plan);
+        var textResolver = new FreeX.App.Presentation.Localization.ResourceKeyTextResolver(UiText.Get, UiText.Format);
+        var message = FreeX.App.Presentation.Shell.DeferredCommandMessageResolver.Resolve(
+            FreeX.App.Presentation.Shell.DeferredCommandMessagePlanner.LocalAccountInfo(),
+            textResolver,
+            body => LocalAccountWorkflowPlanner.FormatMessageBody(plan, body));
 
         message.Body.Should().Contain("Microsoft account integration is not implemented");
         message.Body.Should().Contain("FreeX user name: Analyst");
