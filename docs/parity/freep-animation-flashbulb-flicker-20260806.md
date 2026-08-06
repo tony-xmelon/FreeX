@@ -5,11 +5,11 @@ PowerPoint-authored emphasis effects use `presetID="26"` for FlashBulb and
 `AnimationPreset` values through import, authoring, save/reopen, and the shared
 WPF/Avalonia ribbon command plans.
 
-Both effects intentionally use the existing Blink playback contract until a
-distinct renderer-neutral visual effect is modeled. The native `presetClass`,
-ID, and authored subtype remain authoritative in the package; this slice fixes
-functional identity and authoring parity without claiming pixel-identical
-PowerPoint timing or raster playback.
+The shared playback planner now keeps the identities distinct: FlashBulb uses
+a short flash frame contract, while Flicker uses an irregular multi-step
+opacity contract. WPF and Avalonia consume the same effect kinds and timing
+shape; the native `presetClass`, ID, and authored subtype remain authoritative
+in the package.
 
-This is a functional playback and package-preservation correction; it makes no
-claim of pixel-identical PowerPoint timing or raster playback.
+This is a bounded functional playback correction. It does not claim
+pixel-identical PowerPoint timing or raster playback.
