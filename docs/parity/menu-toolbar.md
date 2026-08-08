@@ -15,19 +15,19 @@
 <!-- command-inventory:coverage-summary:start -->
 | Tab | Implemented | Partial | Not Implemented | Deferred | Excluded | Coverage |
 |---|---:|---:|---:|---:|---:|---:|
-| File/Backstage | 8 | 5 | 0 | 0 | 2 | **100%** |
+| File/Backstage | 8 | 4 | 0 | 0 | 3 | **100%** |
 | QAT | 3 | 1 | 0 | 0 | 0 | **100%** |
-| Home | 51 | 8 | 0 | 0 | 1 | **100%** |
-| Insert | 10 | 6 | 0 | 0 | 9 | **100%** |
+| Home | 48 | 8 | 0 | 0 | 1 | **100%** |
+| Insert | 10 | 4 | 0 | 0 | 9 | **100%** |
 | Draw | 10 | 3 | 0 | 0 | 1 | **100%** |
-| Page Layout | 18 | 1 | 0 | 0 | 0 | **100%** |
-| Formulas | 21 | 1 | 0 | 0 | 0 | **100%** |
+| Page Layout | 16 | 1 | 0 | 0 | 0 | **100%** |
+| Formulas | 16 | 1 | 0 | 0 | 0 | **100%** |
 | Data | 17 | 1 | 0 | 0 | 2 | **100%** |
-| Review | 13 | 4 | 0 | 0 | 5 | **100%** |
-| View | 21 | 0 | 0 | 0 | 0 | **100%** |
-| Sheet Tabs | 10 | 0 | 0 | 0 | 0 | **100%** |
+| Review | 11 | 2 | 0 | 0 | 6 | **100%** |
+| View | 20 | 1 | 0 | 0 | 0 | **100%** |
+| Sheet Tabs | 9 | 0 | 0 | 0 | 0 | **100%** |
 | Help | 6 | 0 | 0 | 0 | 3 | **100%** |
-| **TOTAL** | **188** | **30** | **0** | **0** | **23** | **100%** |
+| **TOTAL** | **174** | **26** | **0** | **0** | **25** | **100%** |
 <!-- command-inventory:coverage-summary:end -->
 
 Coverage = (Implemented + Partial) / (Implemented + Partial + Not Implemented). Deferred and Excluded items are reported separately.
