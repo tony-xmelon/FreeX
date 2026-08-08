@@ -1,8 +1,8 @@
 # Project Build History Metrics
 
-Generated: 2026-08-09 00:40 +03:00
+Generated: 2026-08-09 01:04 +03:00
 Repository: https://github.com/tony-xmelon/FreeX.git
-Baseline ref: HEAD at `0e244e2ea` (`0e244e2ea1b7f5037f240ee62acb4064689ad163`)
+Baseline ref: HEAD at `7e75bb6db` (`7e75bb6dbb758fc5b7ce26df2864fe21e532f62c`)
 History window: 2026-05-12 through 2026-08-09
 
 ## Scope And Caveats
@@ -12,7 +12,7 @@ History window: 2026-05-12 through 2026-08-09
 - Files Changed is the count of *distinct* file paths touched that day (deduplicated across the day's commits); LoC/Source/Test/Docs +/- are the raw additive churn (not deduplicated), i.e. repeated edits to the same file all count.
 - Source C# / Test C# is split by path: a `.cs` file is classified as a test file if any path segment is `test`/`tests` (case-insensitive) or the filename ends in `Test(s).cs`; everything else `.cs` is source. Docs +/- covers every tracked `.md` file, not only `docs/`.
 - Current repository footprint LOC counts are exact for the current checkout (`git ls-files` + line counts). Historical cumulative LOC per day is not computed (would require checking out every daily snapshot).
-- **Token columns currently reflect only the machine(s) that have contributed a project-history-tokens-<MachineId>.json file into `.metrics-data` so far: ALITOP, DESKTOP-DGEV3SF, I5-32GB.** This run's own machine id is `DESKTOP-DGEV3SF`. Other machines' logs are pending: copy their project-history-tokens-*.json (produced by running this same script there) into that directory and re-run to aggregate. The git-derived metrics above and below are complete/authoritative regardless of which machines have reported tokens.
+- **Token columns currently reflect only the machine(s) that have contributed a project-history-tokens-<MachineId>.json file into `.metrics-data` so far: ALITOP, DESKTOP-DGEV3SF, I5-32GB.** This run's own machine id is `ALITOP`. Other machines' logs are pending: copy their project-history-tokens-*.json (produced by running this same script there) into that directory and re-run to aggregate. The git-derived metrics above and below are complete/authoritative regardless of which machines have reported tokens.
 - Anthropic (Claude Code) token rows sum `message.usage` fields from every `*.jsonl` transcript (including subagent transcripts) under `~/.claude/projects/*FreeX*`, deduplicated by `requestId` where present. Only numeric usage + timestamp + model were read - no transcript content was inspected or stored.
 - OpenAI (Codex) token rows sum `payload.info.last_token_usage` from `token_count` events in `~/.codex/sessions/**/*.jsonl` and `~/.codex/archived_sessions/*.jsonl`, filtered to sessions whose recorded `cwd` contains "FreeX". Codex's sqlite logs (`logs_2.sqlite` etc.) were **not** parsed - no stable, documented per-day usage schema was available there without heavy reverse-engineering, so per the "do not guess" rule they are left out rather than estimated.
 - Codex extraction note (ALITOP: Codex jsonl sessions were extracted via payload.info.last_token_usage on event_msg/token_count lines, filtered to sessions whose recorded cwd contains 'FreeX'. Codex's sqlite logs (logs_2.sqlite etc.) were NOT parsed (no stable documented per-day usage schema without heavy reverse-engineering) - if the jsonl sessions directories are ever pruned/rotated, coverage for older dates could be incomplete.)
@@ -23,19 +23,19 @@ History window: 2026-05-12 through 2026-08-09
 
 ## Current Repository Footprint
 
-- Registered worktrees: 3
-- Local branches: 4
-- Remote branches: 537
+- Registered worktrees: 9
+- Local branches: 14
+- Remote branches: 543
 - Tracked files: 13,901
 - Current C# source LOC: 1,234,551
 - Current C# test LOC: 1,187,390
 - Current XAML LOC: 6,862
-- Current docs LOC: 137,588
-- Observed Codex JSONL sessions/logs (this machine, all projects, unfiltered): 0
-- Observed Claude FreeX JSONL sessions/logs (this machine): 49
-- Provider log bytes attributed (all machines reporting so far): 201,004,301,424
-- Observed raw provider tokens (all machines reporting so far): 4,181,339,146,900
-- Provider-style billable-equivalent tokens (all machines reporting so far): 2,138,873,547,518
+- Current docs LOC: 137,590
+- Observed Codex JSONL sessions/logs (this machine, all projects, unfiltered): 382
+- Observed Claude FreeX JSONL sessions/logs (this machine): 573
+- Provider log bytes attributed (all machines reporting so far): 201,010,836,589
+- Observed raw provider tokens (all machines reporting so far): 4,181,348,792,242
+- Provider-style billable-equivalent tokens (all machines reporting so far): 2,138,874,995,775
 
 ## Daily Build Churn
 
@@ -78,8 +78,8 @@ History window: 2026-05-12 through 2026-08-09
 | 2026-06-15 | 70 | 157 | +13,869 / -1,562 | +7,529 / -1,437 | +4,047 / -8 | +1,717 / -79 | +42,743,937 / -0 | 30,780,177 | 54,731,836 | 2 |
 | 2026-06-16 | 107 | 334 | +18,140 / -12,667 | +10,949 / -6,481 | +1,878 / -2,265 | +2,414 / -19 | +66,763,143 / -0 | 1,129,966 | 75,483,343 | 2 |
 | 2026-06-17 | 556 | 709 | +107,409 / -5,766 | +66,962 / -3,569 | +34,555 / -1,483 | +3,169 / -466 | +49,582,997 / -0 | 55,874,027 | 699,069,320 | 2 |
-| 2026-06-18 | 205 | 1163 | +32,866 / -8,917 | +20,486 / -4,674 | +6,557 / -1,220 | +1,718 / -189 | +131,545,266 / -0 | 51,822,119 | 837,838,817 | 3 |
-| 2026-06-19 | 418 | 1114 | +118,113 / -28,365 | +61,232 / -12,779 | +22,205 / -2,466 | +2,755 / -288 | +221,439,685 / -0 | 236,385,059 | 1,500,603,716 | 4 |
+| 2026-06-18 | 205 | 1163 | +32,866 / -8,917 | +20,486 / -4,674 | +6,557 / -1,220 | +1,718 / -189 | +131,594,185 / -0 | 51,518,407 | 837,838,817 | 3 |
+| 2026-06-19 | 418 | 1114 | +118,113 / -28,365 | +61,232 / -12,779 | +22,205 / -2,466 | +2,755 / -288 | +221,655,801 / -0 | 236,385,059 | 1,500,603,716 | 4 |
 | 2026-06-20 | 114 | 227 | +16,009 / -1,515 | +7,134 / -998 | +8,324 / -381 | +182 / -101 | +845,728,399 / -0 | 932,457,783 | 0 | 2 |
 | 2026-06-21 | 151 | 446 | +24,518 / -23,151 | +15,157 / -10,093 | +8,180 / -1,372 | +1,009 / -557 | +1,558,832,973 / -0 | 2,367,286,629 | 0 | 2 |
 | 2026-06-22 | 150 | 328 | +24,526 / -6,772 | +14,516 / -4,388 | +7,009 / -2,020 | +965 / -167 | +1,385,410,206 / -0 | 1,881,342,028 | 0 | 2 |
@@ -129,9 +129,9 @@ History window: 2026-05-12 through 2026-08-09
 | 2026-08-05 | 224 | 307 | +24,065 / -2,223 | +11,892 / -1,839 | +8,633 / -129 | +3,154 / -69 | +11,130,821,965 / -0 | 358,365,097,981 | 0 | 2 |
 | 2026-08-06 | 184 | 467 | +29,465 / -2,420 | +10,021 / -1,629 | +15,146 / -487 | +3,218 / -145 | +9,996,560,290 / -0 | 268,022,581,345 | 401,538,372 | 2 |
 | 2026-08-07 | 3 | 169 | +13,616 / -408 | +2,577 / -372 | +11,002 / -36 | +0 / -0 | +159,134,076 / -0 | 0 | 85,333,982 | 1 |
-| 2026-08-08 | 29 | 309 | +38,917 / -11,918 | +2,974 / -235 | +8,687 / -443 | +12,958 / -9,475 | +209,422,947 / -0 | 0 | 891,093,560 | 4 |
-| 2026-08-09 | 0 | 0 | +0 / -0 | +0 / -0 | +0 / -0 | +0 / -0 | +4,753,597 / -0 | 0 | 15,921,761 | 0 |
-| TOTAL | 31,942 | 89,028 | +6,235,475 / -2,646,170 | +1,846,119 / -597,026 | +1,599,685 / -390,941 | +215,210 / -76,629 | +201,004,301,424 / -0 | 4,164,879,155,357 | 16,459,991,543 | 6 |
+| 2026-08-08 | 29 | 309 | +38,917 / -11,918 | +2,974 / -235 | +8,687 / -443 | +12,958 / -9,475 | +209,639,063 / -0 | 0 | 897,276,923 | 4 |
+| 2026-08-09 | 1 | 3 | +211 / -123 | +0 / -0 | +0 / -0 | +91 / -89 | +10,807,611 / -0 | 0 | 19,687,452 | 1 |
+| TOTAL | 31,943 | 89,031 | +6,235,686 / -2,646,293 | +1,846,119 / -597,026 | +1,599,685 / -390,941 | +215,301 / -76,718 | +201,010,836,589 / -0 | 4,164,878,851,645 | 16,469,940,597 | 6 |
 
 ## Git Churn By App
 
@@ -149,8 +149,8 @@ History window: 2026-05-12 through 2026-08-09
 | FreeW | 2,043 | 4,784 | +481,035 / -51,015 |
 | FreeP | 2,195 | 3,539 | +440,091 / -43,291 |
 | Shared | 456 | 759 | +50,150 / -5,815 |
-| Docs/Tooling/Other | 7,917 | 43,111 | +1,288,226 / -837,820 |
-| TOTAL | 23,588 | 89,028 | +6,235,475 / -2,646,170 |
+| Docs/Tooling/Other | 7,918 | 43,114 | +1,288,437 / -837,943 |
+| TOTAL | 23,589 | 89,031 | +6,235,686 / -2,646,293 |
 
 ### Git Churn By App - Monthly
 
@@ -168,7 +168,7 @@ History window: 2026-05-12 through 2026-08-09
 | 2026-07 | FreeW | 964 | 1,869 | +182,194 / -22,960 |
 | 2026-07 | FreeX | 750 | 5,996 | +459,715 / -34,800 |
 | 2026-07 | Shared | 141 | 210 | +11,501 / -1,609 |
-| 2026-08 | Docs/Tooling/Other | 1,085 | 995 | +76,900 / -21,379 |
+| 2026-08 | Docs/Tooling/Other | 1,086 | 998 | +77,111 / -21,502 |
 | 2026-08 | FreeP | 419 | 707 | +70,218 / -5,198 |
 | 2026-08 | FreeW | 453 | 845 | +65,422 / -7,098 |
 | 2026-08 | FreeX | 202 | 1,354 | +97,672 / -6,296 |
@@ -192,8 +192,8 @@ History window: 2026-05-12 through 2026-08-09
 | Windows (WPF) | 7,801 | 22,283 | +1,772,748 / -1,218,886 |
 | Avalonia (Linux/macOS) | 3,286 | 3,545 | +416,671 / -65,035 |
 | Platform-neutral (core/shared/IO/model) | 9,329 | 20,089 | +2,757,830 / -524,429 |
-| Non-code | 7,917 | 43,111 | +1,288,226 / -837,820 |
-| TOTAL | 28,333 | 89,028 | +6,235,475 / -2,646,170 |
+| Non-code | 7,918 | 43,114 | +1,288,437 / -837,943 |
+| TOTAL | 28,334 | 89,031 | +6,235,686 / -2,646,293 |
 
 ### Git Churn By Platform Layer - Monthly
 
@@ -211,7 +211,7 @@ History window: 2026-05-12 through 2026-08-09
 | 2026-07 | Platform-neutral (core/shared/IO/model) | 2,367 | 6,665 | +590,717 / -37,656 |
 | 2026-07 | Windows (WPF) | 1,696 | 2,023 | +140,575 / -19,909 |
 | 2026-08 | Avalonia (Linux/macOS) | 657 | 761 | +57,761 / -6,992 |
-| 2026-08 | Non-code | 1,085 | 995 | +76,900 / -21,379 |
+| 2026-08 | Non-code | 1,086 | 998 | +77,111 / -21,502 |
 | 2026-08 | Platform-neutral (core/shared/IO/model) | 772 | 1,594 | +136,592 / -8,210 |
 | 2026-08 | Windows (WPF) | 538 | 633 | +44,833 / -4,493 |
 
@@ -257,8 +257,8 @@ History window: 2026-05-12 through 2026-08-09
 | 2026-08-01 | anthropic | 11 | 11 | 741 | 164,362,659 | 1,866 | 0 | 2,140,101 | 108,563,400 | 237,056 | 0 | 110,942,423 | 13,770,388 |
 | 2026-08-01 | openai | 102 | 102 | 1,790,810 | 8,274,378,374 | 257,475,976,720 | 251,839,824,512 | 0 | 0 | 459,689,593 | 124,333,662 | 258,059,999,975 | 132,140,087,719 |
 | 2026-08-07 | anthropic | 2 | 2 | 225 | 159,134,076 | 450 | 0 | 2,132,587 | 83,067,521 | 133,424 | 0 | 85,333,982 | 11,106,360 |
-| 2026-08-08 | anthropic | 52 | 52 | 3,425 | 209,422,947 | 58,710 | 0 | 15,015,588 | 874,904,303 | 1,114,959 | 0 | 891,093,560 | 107,433,584 |
-| 2026-08-09 | anthropic | 1 | 1 | 23 | 4,753,597 | 46 | 0 | 661,155 | 15,241,131 | 19,429 | 0 | 15,921,761 | 2,370,032 |
+| 2026-08-08 | anthropic | 52 | 52 | 3,449 | 209,639,063 | 58,758 | 0 | 15,285,677 | 880,810,518 | 1,121,970 | 0 | 897,276,923 | 108,368,876 |
+| 2026-08-09 | anthropic | 2 | 2 | 37 | 10,807,611 | 74 | 0 | 933,037 | 18,732,713 | 21,628 | 0 | 19,687,452 | 3,061,270 |
 | 2026-08-06 | openai | 147 | 147 | 1,883,600 | 9,828,729,106 | 267,257,944,470 | 259,878,564,224 | 0 | 0 | 588,037,110 | 176,599,765 | 268,022,581,345 | 138,083,299,233 |
 | 2026-08-04 | openai | 103 | 103 | 2,272,676 | 10,161,870,868 | 326,209,388,564 | 319,363,993,984 | 0 | 0 | 564,561,894 | 156,266,304 | 326,930,216,762 | 167,248,219,770 |
 | 2026-08-05 | openai | 139 | 139 | 2,540,026 | 11,130,821,965 | 357,365,178,943 | 347,225,751,424 | 0 | 0 | 775,345,637 | 224,573,401 | 358,365,097,981 | 184,752,222,269 |
@@ -334,11 +334,11 @@ History window: 2026-05-12 through 2026-08-09
 | 2026-06-19 | openai | 24 | 24 | 1,821 | 92,888,803 | 235,477,650 | 225,208,576 | 0 | 0 | 712,093 | 195,316 | 236,385,059 | 123,780,771 |
 | 2026-06-20 | openai | 50 | 50 | 6,945 | 845,728,399 | 928,614,994 | 890,344,960 | 0 | 0 | 2,953,040 | 889,749 | 932,457,783 | 487,285,303 |
 | 2026-06-21 | openai | 259 | 259 | 17,945 | 1,558,832,973 | 2,355,267,399 | 2,240,219,648 | 0 | 0 | 8,996,809 | 3,022,421 | 2,367,286,629 | 1,247,176,805 |
-| 2026-06-19 | anthropic | 269 | 269 | 9,866 | 128,550,882 | 3,092,469 | 0 | 36,854,147 | 1,458,640,823 | 2,016,277 | 0 | 1,500,603,716 | 197,040,512 |
+| 2026-06-19 | anthropic | 269 | 269 | 9,866 | 128,766,998 | 3,092,469 | 0 | 36,854,147 | 1,458,640,823 | 2,016,277 | 0 | 1,500,603,716 | 197,040,512 |
 | 2026-06-17 | openai | 1 | 1 | 424 | 8,269,141 | 55,563,266 | 51,939,840 | 0 | 0 | 233,163 | 77,598 | 55,874,027 | 29,904,107 |
-| 2026-06-18 | anthropic | 43 | 43 | 3,332 | 97,321,714 | 484,287 | 0 | 20,894,622 | 814,159,666 | 2,300,242 | 0 | 837,838,817 | 110,318,773 |
-| 2026-06-18 | openai | 6 | 6 | 426 | 34,223,552 | 51,486,863 | 49,053,952 | 0 | 0 | 269,324 | 65,932 | 51,822,119 | 27,295,143 |
-| TOTAL | all | 10723 | 10723 | 29,062,902 | 201,004,301,424 | 4,155,040,567,847 | 4,056,285,510,272 | 395,681,973 | 16,024,183,044 | 7,824,005,896 | 2,054,708,140 | 4,181,339,146,900 | 2,138,873,547,518 |
+| 2026-06-18 | anthropic | 43 | 43 | 3,332 | 97,537,830 | 484,287 | 0 | 20,894,622 | 814,159,666 | 2,300,242 | 0 | 837,838,817 | 110,318,773 |
+| 2026-06-18 | openai | 5 | 5 | 414 | 34,056,355 | 51,190,565 | 48,803,072 | 0 | 0 | 264,528 | 63,314 | 51,518,407 | 27,116,871 |
+| TOTAL | all | 10723 | 10723 | 29,062,928 | 201,010,836,589 | 4,155,040,271,625 | 4,056,285,259,392 | 396,223,944 | 16,033,580,841 | 7,824,010,310 | 2,054,705,522 | 4,181,348,792,242 | 2,138,874,995,775 |
 
 ## Provider Token Totals
 
@@ -346,9 +346,9 @@ EXACT - summed directly from the per-day Anthropic and OpenAI usage rows above (
 
 | Provider | Raw Tokens | Billable Eq Tokens |
 | --- | ---: | ---: |
-| Anthropic (Claude) | 16,459,991,543 | 2,137,147,297 |
-| OpenAI (Codex) | 4,164,879,155,357 | 2,136,736,400,221 |
-| TOTAL | 4,181,339,146,900 | 2,138,873,547,518 |
+| Anthropic (Claude) | 16,469,940,597 | 2,138,773,826 |
+| OpenAI (Codex) | 4,164,878,851,645 | 2,136,736,221,949 |
+| TOTAL | 4,181,348,792,242 | 2,138,874,995,775 |
 
 ## Measured Token Usage By App (Provider-Attributed)
 
@@ -356,18 +356,18 @@ Unlike the estimated allocation below, this is **measured, not derived from chur
 
 | Provider | App | Events | Raw Tokens | Billable Eq Tokens |
 | --- | --- | ---: | ---: | ---: |
-| anthropic | FreeX | 4,294 | 770,872,130 | 92,533,513 |
-| anthropic | FreeW | 977 | 302,587,630 | 34,614,233 |
-| anthropic | FreeP | 133 | 47,353,590 | 5,950,685 |
-| anthropic | Shared | 423 | 45,716,023 | 5,698,528 |
-| anthropic | Docs/Tooling/Other | 44,941 | 10,487,637,415 | 1,327,144,316 |
-| anthropic | Unclassified (no file-edit yet) | 10,713 | 577,172,783 | 125,281,190 |
-| openai | FreeX | 8,905,144 | 1,279,942,222,056 | 657,102,520,808 |
-| openai | FreeW | 1,323,725 | 185,682,408,921 | 95,355,905,177 |
-| openai | FreeP | 2,953,676 | 429,603,387,598 | 220,489,158,478 |
-| openai | Shared | 145,052 | 21,164,254,360 | 10,904,014,744 |
-| openai | Docs/Tooling/Other | 10,225,597 | 1,470,467,692,613 | 753,553,165,893 |
-| openai | Unclassified (no file-edit yet) | 383,175 | 42,792,441,987 | 22,155,328,451 |
+| anthropic | FreeX | 11,438 | 1,524,819,440 | 180,225,000 |
+| anthropic | FreeW | 9,840 | 1,484,694,524 | 185,166,571 |
+| anthropic | FreeP | 3,968 | 588,308,732 | 71,304,360 |
+| anthropic | Shared | 1,039 | 123,011,335 | 14,830,627 |
+| anthropic | Docs/Tooling/Other | 52,567 | 11,982,217,337 | 1,517,474,332 |
+| anthropic | Unclassified (no file-edit yet) | 15,131 | 766,889,229 | 169,772,936 |
+| openai | FreeX | 8,917,439 | 1,281,729,663,425 | 658,033,898,689 |
+| openai | FreeW | 4,888,062 | 704,781,390,169 | 361,572,655,961 |
+| openai | FreeP | 3,085,382 | 449,048,976,902 | 230,465,164,934 |
+| openai | Shared | 153,079 | 22,284,524,640 | 11,480,492,896 |
+| openai | Docs/Tooling/Other | 11,534,152 | 1,663,551,173,801 | 852,651,593,385 |
+| openai | Unclassified (no file-edit yet) | 390,831 | 43,483,122,708 | 22,532,416,084 |
 
 ## Measured Token Usage By Platform (Provider-Attributed)
 
@@ -375,16 +375,16 @@ Same measured "most recently touched file" attribution as the App breakdown abov
 
 | Provider | Platform | Events | Raw Tokens | Billable Eq Tokens |
 | --- | --- | ---: | ---: | ---: |
-| anthropic | Windows (WPF) | 2,465 | 573,989,278 | 68,956,799 |
-| anthropic | Avalonia (Linux/macOS) | 1,729 | 276,987,801 | 32,986,745 |
-| anthropic | Platform-neutral (core/shared/IO/model) | 1,633 | 315,552,294 | 36,853,415 |
-| anthropic | Non-code | 44,941 | 10,487,637,415 | 1,327,144,316 |
-| anthropic | Unclassified (no file-edit yet) | 10,713 | 577,172,783 | 125,281,190 |
-| openai | Windows (WPF) | 2,722,811 | 381,298,811,951 | 196,587,799,599 |
-| openai | Avalonia (Linux/macOS) | 5,867,129 | 856,804,095,990 | 439,030,013,174 |
-| openai | Platform-neutral (core/shared/IO/model) | 4,733,957 | 677,771,063,135 | 347,945,809,631 |
-| openai | Non-code | 10,229,297 | 1,470,985,994,472 | 753,841,142,696 |
-| openai | Unclassified (no file-edit yet) | 383,175 | 42,792,441,987 | 22,155,328,451 |
+| anthropic | Windows (WPF) | 9,409 | 1,497,500,005 | 183,978,257 |
+| anthropic | Avalonia (Linux/macOS) | 5,891 | 889,967,890 | 106,686,068 |
+| anthropic | Platform-neutral (core/shared/IO/model) | 10,985 | 1,333,366,136 | 160,862,233 |
+| anthropic | Non-code | 52,567 | 11,982,217,337 | 1,517,474,332 |
+| anthropic | Unclassified (no file-edit yet) | 15,131 | 766,889,229 | 169,772,936 |
+| openai | Windows (WPF) | 4,138,146 | 584,596,549,842 | 300,876,237,778 |
+| openai | Avalonia (Linux/macOS) | 6,239,349 | 912,763,758,411 | 467,658,489,611 |
+| openai | Platform-neutral (core/shared/IO/model) | 6,656,890 | 959,238,355,288 | 492,357,444,056 |
+| openai | Non-code | 11,543,729 | 1,664,797,065,396 | 853,311,634,420 |
+| openai | Unclassified (no file-edit yet) | 390,831 | 43,483,122,708 | 22,532,416,084 |
 
 ## Estimated Token Allocation By App / Platform (derived, not measured)
 
@@ -396,15 +396,15 @@ The sections below are **estimates derived from git churn share, not measurement
 
 | App | Est. Allocated Raw Tokens | Share |
 | --- | ---: | ---: |
-| FreeX | 1,349,296,708,767 | 32.3 % |
-| FreeW | 731,697,791,934 | 17.5 % |
-| FreeP | 1,081,511,087,969 | 25.9 % |
-| Shared | 49,369,513,173 | 1.2 % |
-| Docs/Tooling/Other | 969,448,123,296 | 23.2 % |
-| Unallocated (tokens logged, no churn that day) | 15,921,761 | 0.0 % |
-| TOTAL | 4,181,339,146,900 | 100.0% |
+| FreeX | 1,349,297,861,714 | 32.3 % |
+| FreeW | 731,697,768,060 | 17.5 % |
+| FreeP | 1,081,511,198,901 | 25.9 % |
+| Shared | 49,369,497,441 | 1.2 % |
+| Docs/Tooling/Other | 969,472,466,127 | 23.2 % |
+| Unallocated (tokens logged, no churn that day) | 0 | 0.0 % |
+| TOTAL | 4,181,348,792,242 | 100.0% |
 
-- Days allocated (had both tokens and churn weight): 87. Days with tokens but no churn to allocate against (routed to Unallocated): 1.
+- Days allocated (had both tokens and churn weight): 88. Days with tokens but no churn to allocate against (routed to Unallocated): 0.
 
 ### Estimated Token Allocation By Platform Layer (derived, not measured)
 
@@ -412,14 +412,14 @@ The sections below are **estimates derived from git churn share, not measurement
 
 | Platform Layer | Est. Allocated Raw Tokens | Share |
 | --- | ---: | ---: |
-| Windows (WPF) | 655,501,153,648 | 15.7 % |
-| Avalonia (Linux/macOS) | 834,878,660,039 | 20.0 % |
-| Platform-neutral (core/shared/IO/model) | 1,721,495,288,156 | 41.2 % |
-| Non-code | 969,448,123,296 | 23.2 % |
-| Unallocated (tokens logged, no churn that day) | 15,921,761 | 0.0 % |
-| TOTAL | 4,181,339,146,900 | 100.0% |
+| Windows (WPF) | 655,501,378,687 | 15.7 % |
+| Avalonia (Linux/macOS) | 834,879,252,836 | 20.0 % |
+| Platform-neutral (core/shared/IO/model) | 1,721,495,694,593 | 41.2 % |
+| Non-code | 969,472,466,127 | 23.2 % |
+| Unallocated (tokens logged, no churn that day) | 0 | 0.0 % |
+| TOTAL | 4,181,348,792,242 | 100.0% |
 
-- Days allocated (had both tokens and churn weight): 87. Days with tokens but no churn to allocate against (routed to Unallocated): 1.
+- Days allocated (had both tokens and churn weight): 88. Days with tokens but no churn to allocate against (routed to Unallocated): 0.
 
 ## Token Extraction Notes
 
@@ -521,10 +521,11 @@ The sections below are **estimates derived from git churn share, not measurement
 - 2026-08-06: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
 - 2026-08-07: Claude <noreply@anthropic.com>
 - 2026-08-08: Anton <lumodataroom@gmail.com>; Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>; tony-xmelon <tony.xmelon@gmail.com>
+- 2026-08-09: tony-xmelon <tony.xmelon@gmail.com>
 
 ## Reading The Trend
 
-- The daily churn table covers 2026-05-12 through 2026-08-09, computed fresh from git history reachable from HEAD (`0e244e2ea`) at generation time.
-- Across the window: 31,942 commits, 89,028 changed-file/day entries, +6,235,475 / -2,646,170 LoC.
-- Token rows reflect 201,004,301,424 bytes of local provider logs, 4,181,339,146,900 observed raw tokens, and 2,138,873,547,518 provider-style billable-equivalent tokens, from machine(s): ALITOP, DESKTOP-DGEV3SF, I5-32GB.
-- This machine (DESKTOP-DGEV3SF) has contributed its token logs. Run this script on the user's other machines and copy their project-history-tokens-*.json into .metrics-data before re-running here (or there) to fold their usage into these totals.
+- The daily churn table covers 2026-05-12 through 2026-08-09, computed fresh from git history reachable from HEAD (`7e75bb6db`) at generation time.
+- Across the window: 31,943 commits, 89,031 changed-file/day entries, +6,235,686 / -2,646,293 LoC.
+- Token rows reflect 201,010,836,589 bytes of local provider logs, 4,181,348,792,242 observed raw tokens, and 2,138,874,995,775 provider-style billable-equivalent tokens, from machine(s): ALITOP, DESKTOP-DGEV3SF, I5-32GB.
+- This machine (ALITOP) has contributed its token logs. Run this script on the user's other machines and copy their project-history-tokens-*.json into .metrics-data before re-running here (or there) to fold their usage into these totals.
