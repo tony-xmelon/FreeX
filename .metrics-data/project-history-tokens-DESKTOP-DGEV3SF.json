@@ -1,0 +1,2231 @@
+{
+    "machineId":  "DESKTOP-DGEV3SF",
+    "generatedAt":  "2026-08-08T13:21:57.0021992+03:00",
+    "startDate":  "2026-05-12",
+    "endDate":  "2026-08-08",
+    "anthropic":  {
+                      "2026-06-16":  {
+                                         "files":  11,
+                                         "sessions":  11,
+                                         "events":  475,
+                                         "bytes":  21200052,
+                                         "input":  106748,
+                                         "cachedInput":  0,
+                                         "cacheWrite":  2389427,
+                                         "cacheRead":  53721106,
+                                         "output":  224309,
+                                         "reasoning":  0,
+                                         "apps":  {
+                                                      "Docs/Tooling/Other":  {
+                                                                                 "events":  264,
+                                                                                 "input":  96636,
+                                                                                 "cachedInput":  0,
+                                                                                 "cacheWrite":  1556832,
+                                                                                 "cacheRead":  23890231,
+                                                                                 "output":  136133,
+                                                                                 "reasoning":  0
+                                                                             },
+                                                      "FreeX":  {
+                                                                    "events":  211,
+                                                                    "input":  10112,
+                                                                    "cachedInput":  0,
+                                                                    "cacheWrite":  832595,
+                                                                    "cacheRead":  29830875,
+                                                                    "output":  88176,
+                                                                    "reasoning":  0
+                                                                }
+                                                  },
+                                         "platforms":  {
+                                                           "Avalonia (Linux/macOS)":  {
+                                                                                          "events":  43,
+                                                                                          "input":  1407,
+                                                                                          "cachedInput":  0,
+                                                                                          "cacheWrite":  226255,
+                                                                                          "cacheRead":  5681191,
+                                                                                          "output":  3146,
+                                                                                          "reasoning":  0
+                                                                                      },
+                                                           "Non-code":  {
+                                                                            "events":  264,
+                                                                            "input":  96636,
+                                                                            "cachedInput":  0,
+                                                                            "cacheWrite":  1556832,
+                                                                            "cacheRead":  23890231,
+                                                                            "output":  136133,
+                                                                            "reasoning":  0
+                                                                        },
+                                                           "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                           "events":  41,
+                                                                                                           "input":  1390,
+                                                                                                           "cachedInput":  0,
+                                                                                                           "cacheWrite":  284905,
+                                                                                                           "cacheRead":  3657542,
+                                                                                                           "output":  3596,
+                                                                                                           "reasoning":  0
+                                                                                                       },
+                                                           "Windows (WPF)":  {
+                                                                                 "events":  127,
+                                                                                 "input":  7315,
+                                                                                 "cachedInput":  0,
+                                                                                 "cacheWrite":  321435,
+                                                                                 "cacheRead":  20492142,
+                                                                                 "output":  81434,
+                                                                                 "reasoning":  0
+                                                                             }
+                                                       }
+                                     },
+                      "2026-06-17":  {
+                                         "files":  22,
+                                         "sessions":  22,
+                                         "events":  2775,
+                                         "bytes":  41313856,
+                                         "input":  219455,
+                                         "cachedInput":  0,
+                                         "cacheWrite":  12334318,
+                                         "cacheRead":  685179278,
+                                         "output":  1336269,
+                                         "reasoning":  0,
+                                         "apps":  {
+                                                      "Docs/Tooling/Other":  {
+                                                                                 "events":  2433,
+                                                                                 "input":  197032,
+                                                                                 "cachedInput":  0,
+                                                                                 "cacheWrite":  10954705,
+                                                                                 "cacheRead":  569973480,
+                                                                                 "output":  1012405,
+                                                                                 "reasoning":  0
+                                                                             },
+                                                      "FreeW":  {
+                                                                    "events":  290,
+                                                                    "input":  15023,
+                                                                    "cachedInput":  0,
+                                                                    "cacheWrite":  1038631,
+                                                                    "cacheRead":  100051271,
+                                                                    "output":  263668,
+                                                                    "reasoning":  0
+                                                                },
+                                                      "FreeX":  {
+                                                                    "events":  52,
+                                                                    "input":  7400,
+                                                                    "cachedInput":  0,
+                                                                    "cacheWrite":  340982,
+                                                                    "cacheRead":  15154527,
+                                                                    "output":  60196,
+                                                                    "reasoning":  0
+                                                                }
+                                                  },
+                                         "platforms":  {
+                                                           "Non-code":  {
+                                                                            "events":  2433,
+                                                                            "input":  197032,
+                                                                            "cachedInput":  0,
+                                                                            "cacheWrite":  10954705,
+                                                                            "cacheRead":  569973480,
+                                                                            "output":  1012405,
+                                                                            "reasoning":  0
+                                                                        },
+                                                           "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                           "events":  100,
+                                                                                                           "input":  4234,
+                                                                                                           "cachedInput":  0,
+                                                                                                           "cacheWrite":  188340,
+                                                                                                           "cacheRead":  33563085,
+                                                                                                           "output":  72758,
+                                                                                                           "reasoning":  0
+                                                                                                       },
+                                                           "Windows (WPF)":  {
+                                                                                 "events":  242,
+                                                                                 "input":  18189,
+                                                                                 "cachedInput":  0,
+                                                                                 "cacheWrite":  1191273,
+                                                                                 "cacheRead":  81642713,
+                                                                                 "output":  251106,
+                                                                                 "reasoning":  0
+                                                                             }
+                                                       }
+                                     },
+                      "2026-06-18":  {
+                                         "files":  18,
+                                         "sessions":  18,
+                                         "events":  1623,
+                                         "bytes":  42233598,
+                                         "input":  192525,
+                                         "cachedInput":  0,
+                                         "cacheWrite":  15088511,
+                                         "cacheRead":  549481070,
+                                         "output":  1374708,
+                                         "reasoning":  0,
+                                         "apps":  {
+                                                      "Docs/Tooling/Other":  {
+                                                                                 "events":  1026,
+                                                                                 "input":  156082,
+                                                                                 "cachedInput":  0,
+                                                                                 "cacheWrite":  12748878,
+                                                                                 "cacheRead":  301298631,
+                                                                                 "output":  718207,
+                                                                                 "reasoning":  0
+                                                                             },
+                                                      "FreeW":  {
+                                                                    "events":  338,
+                                                                    "input":  29752,
+                                                                    "cachedInput":  0,
+                                                                    "cacheWrite":  1506559,
+                                                                    "cacheRead":  150923734,
+                                                                    "output":  377254,
+                                                                    "reasoning":  0
+                                                                },
+                                                      "FreeX":  {
+                                                                    "events":  243,
+                                                                    "input":  6653,
+                                                                    "cachedInput":  0,
+                                                                    "cacheWrite":  796509,
+                                                                    "cacheRead":  96467959,
+                                                                    "output":  278781,
+                                                                    "reasoning":  0
+                                                                },
+                                                      "Shared":  {
+                                                                     "events":  16,
+                                                                     "input":  38,
+                                                                     "cachedInput":  0,
+                                                                     "cacheWrite":  36565,
+                                                                     "cacheRead":  790746,
+                                                                     "output":  466,
+                                                                     "reasoning":  0
+                                                                 }
+                                                  },
+                                         "platforms":  {
+                                                           "Avalonia (Linux/macOS)":  {
+                                                                                          "events":  13,
+                                                                                          "input":  4,
+                                                                                          "cachedInput":  0,
+                                                                                          "cacheWrite":  9414,
+                                                                                          "cacheRead":  714988,
+                                                                                          "output":  440,
+                                                                                          "reasoning":  0
+                                                                                      },
+                                                           "Non-code":  {
+                                                                            "events":  1026,
+                                                                            "input":  156082,
+                                                                            "cachedInput":  0,
+                                                                            "cacheWrite":  12748878,
+                                                                            "cacheRead":  301298631,
+                                                                            "output":  718207,
+                                                                            "reasoning":  0
+                                                                        },
+                                                           "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                           "events":  154,
+                                                                                                           "input":  8442,
+                                                                                                           "cachedInput":  0,
+                                                                                                           "cacheWrite":  1219446,
+                                                                                                           "cacheRead":  75301144,
+                                                                                                           "output":  190141,
+                                                                                                           "reasoning":  0
+                                                                                                       },
+                                                           "Windows (WPF)":  {
+                                                                                 "events":  430,
+                                                                                 "input":  27997,
+                                                                                 "cachedInput":  0,
+                                                                                 "cacheWrite":  1110773,
+                                                                                 "cacheRead":  172166307,
+                                                                                 "output":  465920,
+                                                                                 "reasoning":  0
+                                                                             }
+                                                       }
+                                     },
+                      "2026-08-08":  {
+                                         "files":  8,
+                                         "sessions":  8,
+                                         "events":  456,
+                                         "bytes":  6881390,
+                                         "input":  36572,
+                                         "cachedInput":  0,
+                                         "cacheWrite":  1718072,
+                                         "cacheRead":  101944250,
+                                         "output":  175757,
+                                         "reasoning":  0,
+                                         "apps":  {
+                                                      "Docs/Tooling/Other":  {
+                                                                                 "events":  450,
+                                                                                 "input":  36560,
+                                                                                 "cachedInput":  0,
+                                                                                 "cacheWrite":  1709833,
+                                                                                 "cacheRead":  101126828,
+                                                                                 "output":  175475,
+                                                                                 "reasoning":  0
+                                                                             },
+                                                      "FreeX":  {
+                                                                    "events":  6,
+                                                                    "input":  12,
+                                                                    "cachedInput":  0,
+                                                                    "cacheWrite":  8239,
+                                                                    "cacheRead":  817422,
+                                                                    "output":  282,
+                                                                    "reasoning":  0
+                                                                }
+                                                  },
+                                         "platforms":  {
+                                                           "Non-code":  {
+                                                                            "events":  450,
+                                                                            "input":  36560,
+                                                                            "cachedInput":  0,
+                                                                            "cacheWrite":  1709833,
+                                                                            "cacheRead":  101126828,
+                                                                            "output":  175475,
+                                                                            "reasoning":  0
+                                                                        },
+                                                           "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                           "events":  6,
+                                                                                                           "input":  12,
+                                                                                                           "cachedInput":  0,
+                                                                                                           "cacheWrite":  8239,
+                                                                                                           "cacheRead":  817422,
+                                                                                                           "output":  282,
+                                                                                                           "reasoning":  0
+                                                                                                       }
+                                                       }
+                                     }
+                  },
+    "openai":  {
+                   "2026-05-14":  {
+                                      "files":  5,
+                                      "sessions":  5,
+                                      "events":  1621,
+                                      "bytes":  376867910,
+                                      "input":  228903051,
+                                      "cachedInput":  223460352,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  485175,
+                                      "reasoning":  70202,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  1621,
+                                                                              "input":  228903051,
+                                                                              "cachedInput":  223460352,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  485175,
+                                                                              "reasoning":  70202
+                                                                          }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  1621,
+                                                                         "input":  228903051,
+                                                                         "cachedInput":  223460352,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  485175,
+                                                                         "reasoning":  70202
+                                                                     }
+                                                    }
+                                  },
+                   "2026-05-15":  {
+                                      "files":  1,
+                                      "sessions":  1,
+                                      "events":  4560,
+                                      "bytes":  284219112,
+                                      "input":  672998247,
+                                      "cachedInput":  660068096,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  1467643,
+                                      "reasoning":  170945,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  4560,
+                                                                              "input":  672998247,
+                                                                              "cachedInput":  660068096,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  1467643,
+                                                                              "reasoning":  170945
+                                                                          }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  4560,
+                                                                         "input":  672998247,
+                                                                         "cachedInput":  660068096,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  1467643,
+                                                                         "reasoning":  170945
+                                                                     }
+                                                    }
+                                  },
+                   "2026-05-16":  {
+                                      "files":  1,
+                                      "sessions":  1,
+                                      "events":  5503,
+                                      "bytes":  284219112,
+                                      "input":  785631408,
+                                      "cachedInput":  768870528,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  1854098,
+                                      "reasoning":  228326,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  5503,
+                                                                              "input":  785631408,
+                                                                              "cachedInput":  768870528,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  1854098,
+                                                                              "reasoning":  228326
+                                                                          }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  5503,
+                                                                         "input":  785631408,
+                                                                         "cachedInput":  768870528,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  1854098,
+                                                                         "reasoning":  228326
+                                                                     }
+                                                    }
+                                  },
+                   "2026-05-17":  {
+                                      "files":  3,
+                                      "sessions":  3,
+                                      "events":  1960,
+                                      "bytes":  595008047,
+                                      "input":  272786866,
+                                      "cachedInput":  263650304,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  663945,
+                                      "reasoning":  93284,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  1960,
+                                                                              "input":  272786866,
+                                                                              "cachedInput":  263650304,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  663945,
+                                                                              "reasoning":  93284
+                                                                          }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  1960,
+                                                                         "input":  272786866,
+                                                                         "cachedInput":  263650304,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  663945,
+                                                                         "reasoning":  93284
+                                                                     }
+                                                    }
+                                  },
+                   "2026-05-18":  {
+                                      "files":  2,
+                                      "sessions":  2,
+                                      "events":  1968,
+                                      "bytes":  376952223,
+                                      "input":  284433721,
+                                      "cachedInput":  277189376,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  654054,
+                                      "reasoning":  92778,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  1968,
+                                                                              "input":  284433721,
+                                                                              "cachedInput":  277189376,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  654054,
+                                                                              "reasoning":  92778
+                                                                          }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  1968,
+                                                                         "input":  284433721,
+                                                                         "cachedInput":  277189376,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  654054,
+                                                                         "reasoning":  92778
+                                                                     }
+                                                    }
+                                  },
+                   "2026-05-19":  {
+                                      "files":  213,
+                                      "sessions":  213,
+                                      "events":  15949,
+                                      "bytes":  1356047844,
+                                      "input":  1934682836,
+                                      "cachedInput":  1865385728,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  5005687,
+                                      "reasoning":  1013432,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  15949,
+                                                                              "input":  1934682836,
+                                                                              "cachedInput":  1865385728,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  5005687,
+                                                                              "reasoning":  1013432
+                                                                          }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  15949,
+                                                                         "input":  1934682836,
+                                                                         "cachedInput":  1865385728,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  5005687,
+                                                                         "reasoning":  1013432
+                                                                     }
+                                                    }
+                                  },
+                   "2026-05-20":  {
+                                      "files":  80,
+                                      "sessions":  80,
+                                      "events":  12091,
+                                      "bytes":  1309338672,
+                                      "input":  1642352261,
+                                      "cachedInput":  1593468416,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  3478792,
+                                      "reasoning":  662610,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  12091,
+                                                                              "input":  1642352261,
+                                                                              "cachedInput":  1593468416,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  3478792,
+                                                                              "reasoning":  662610
+                                                                          }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  12091,
+                                                                         "input":  1642352261,
+                                                                         "cachedInput":  1593468416,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  3478792,
+                                                                         "reasoning":  662610
+                                                                     }
+                                                    }
+                                  },
+                   "2026-05-21":  {
+                                      "files":  87,
+                                      "sessions":  87,
+                                      "events":  9007,
+                                      "bytes":  1170931269,
+                                      "input":  1118380109,
+                                      "cachedInput":  1084102144,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  2804713,
+                                      "reasoning":  484236,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  9007,
+                                                                              "input":  1118380109,
+                                                                              "cachedInput":  1084102144,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  2804713,
+                                                                              "reasoning":  484236
+                                                                          }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  9007,
+                                                                         "input":  1118380109,
+                                                                         "cachedInput":  1084102144,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  2804713,
+                                                                         "reasoning":  484236
+                                                                     }
+                                                    }
+                                  },
+                   "2026-05-22":  {
+                                      "files":  38,
+                                      "sessions":  38,
+                                      "events":  4267,
+                                      "bytes":  1239152391,
+                                      "input":  586840256,
+                                      "cachedInput":  568882176,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  1189575,
+                                      "reasoning":  212172,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  4267,
+                                                                              "input":  586840256,
+                                                                              "cachedInput":  568882176,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  1189575,
+                                                                              "reasoning":  212172
+                                                                          }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  4267,
+                                                                         "input":  586840256,
+                                                                         "cachedInput":  568882176,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  1189575,
+                                                                         "reasoning":  212172
+                                                                     }
+                                                    }
+                                  },
+                   "2026-05-23":  {
+                                      "files":  77,
+                                      "sessions":  77,
+                                      "events":  20634,
+                                      "bytes":  1337443550,
+                                      "input":  2845976246,
+                                      "cachedInput":  2772940544,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  5792856,
+                                      "reasoning":  920648,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  20564,
+                                                                              "input":  2837065586,
+                                                                              "cachedInput":  2764336640,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  5772888,
+                                                                              "reasoning":  914773
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  70,
+                                                                 "input":  8910660,
+                                                                 "cachedInput":  8603904,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  19968,
+                                                                 "reasoning":  5875
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  20564,
+                                                                         "input":  2837065586,
+                                                                         "cachedInput":  2764336640,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  5772888,
+                                                                         "reasoning":  914773
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  49,
+                                                                                                        "input":  7206277,
+                                                                                                        "cachedInput":  7022464,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  13483,
+                                                                                                        "reasoning":  4747
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  21,
+                                                                              "input":  1704383,
+                                                                              "cachedInput":  1581440,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  6485,
+                                                                              "reasoning":  1128
+                                                                          }
+                                                    }
+                                  },
+                   "2026-05-24":  {
+                                      "files":  57,
+                                      "sessions":  57,
+                                      "events":  13343,
+                                      "bytes":  1344925060,
+                                      "input":  1815015023,
+                                      "cachedInput":  1766173056,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  3588009,
+                                      "reasoning":  577885,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  12689,
+                                                                              "input":  1730637088,
+                                                                              "cachedInput":  1684257792,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  3413538,
+                                                                              "reasoning":  540819
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  654,
+                                                                 "input":  84377935,
+                                                                 "cachedInput":  81915264,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  174471,
+                                                                 "reasoning":  37066
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  12689,
+                                                                         "input":  1730637088,
+                                                                         "cachedInput":  1684257792,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  3413538,
+                                                                         "reasoning":  540819
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  9,
+                                                                                                        "input":  1062006,
+                                                                                                        "cachedInput":  813568,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  4398,
+                                                                                                        "reasoning":  855
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  645,
+                                                                              "input":  83315929,
+                                                                              "cachedInput":  81101696,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  170073,
+                                                                              "reasoning":  36211
+                                                                          }
+                                                    }
+                                  },
+                   "2026-05-25":  {
+                                      "files":  188,
+                                      "sessions":  188,
+                                      "events":  17860,
+                                      "bytes":  1457405777,
+                                      "input":  2321739339,
+                                      "cachedInput":  2252745088,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  5143919,
+                                      "reasoning":  903840,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  17771,
+                                                                              "input":  2309941794,
+                                                                              "cachedInput":  2241242624,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  5121598,
+                                                                              "reasoning":  900418
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  89,
+                                                                 "input":  11797545,
+                                                                 "cachedInput":  11502464,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  22321,
+                                                                 "reasoning":  3422
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  17771,
+                                                                         "input":  2309941794,
+                                                                         "cachedInput":  2241242624,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  5121598,
+                                                                         "reasoning":  900418
+                                                                     },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  89,
+                                                                              "input":  11797545,
+                                                                              "cachedInput":  11502464,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  22321,
+                                                                              "reasoning":  3422
+                                                                          }
+                                                    }
+                                  },
+                   "2026-05-26":  {
+                                      "files":  548,
+                                      "sessions":  548,
+                                      "events":  46296,
+                                      "bytes":  1647129970,
+                                      "input":  5952654969,
+                                      "cachedInput":  5766743040,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  15047907,
+                                      "reasoning":  2418450,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  46296,
+                                                                              "input":  5952654969,
+                                                                              "cachedInput":  5766743040,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  15047907,
+                                                                              "reasoning":  2418450
+                                                                          }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  46296,
+                                                                         "input":  5952654969,
+                                                                         "cachedInput":  5766743040,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  15047907,
+                                                                         "reasoning":  2418450
+                                                                     }
+                                                    }
+                                  },
+                   "2026-05-27":  {
+                                      "files":  294,
+                                      "sessions":  294,
+                                      "events":  36627,
+                                      "bytes":  1626117603,
+                                      "input":  4637115732,
+                                      "cachedInput":  4468712448,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  9470811,
+                                      "reasoning":  1749663,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  36627,
+                                                                              "input":  4637115732,
+                                                                              "cachedInput":  4468712448,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  9470811,
+                                                                              "reasoning":  1749663
+                                                                          }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  36627,
+                                                                         "input":  4637115732,
+                                                                         "cachedInput":  4468712448,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  9470811,
+                                                                         "reasoning":  1749663
+                                                                     }
+                                                    }
+                                  },
+                   "2026-05-28":  {
+                                      "files":  386,
+                                      "sessions":  386,
+                                      "events":  186507,
+                                      "bytes":  1125394533,
+                                      "input":  24014231896,
+                                      "cachedInput":  23567933440,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  38313607,
+                                      "reasoning":  4146165,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  186507,
+                                                                              "input":  24014231896,
+                                                                              "cachedInput":  23567933440,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  38313607,
+                                                                              "reasoning":  4146165
+                                                                          }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  186507,
+                                                                         "input":  24014231896,
+                                                                         "cachedInput":  23567933440,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  38313607,
+                                                                         "reasoning":  4146165
+                                                                     }
+                                                    }
+                                  },
+                   "2026-05-29":  {
+                                      "files":  244,
+                                      "sessions":  244,
+                                      "events":  316657,
+                                      "bytes":  1374858003,
+                                      "input":  42315429592,
+                                      "cachedInput":  41551918848,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  73046880,
+                                      "reasoning":  6322658,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  316657,
+                                                                              "input":  42315429592,
+                                                                              "cachedInput":  41551918848,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  73046880,
+                                                                              "reasoning":  6322658
+                                                                          }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  316657,
+                                                                         "input":  42315429592,
+                                                                         "cachedInput":  41551918848,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  73046880,
+                                                                         "reasoning":  6322658
+                                                                     }
+                                                    }
+                                  },
+                   "2026-05-30":  {
+                                      "files":  280,
+                                      "sessions":  280,
+                                      "events":  118863,
+                                      "bytes":  1173014787,
+                                      "input":  15957243192,
+                                      "cachedInput":  15420708224,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  33925992,
+                                      "reasoning":  8352004,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  105644,
+                                                                              "input":  14156817782,
+                                                                              "cachedInput":  13674092544,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  29237133,
+                                                                              "reasoning":  6893593
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  13219,
+                                                                 "input":  1800425410,
+                                                                 "cachedInput":  1746615680,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  4688859,
+                                                                 "reasoning":  1458411
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  105707,
+                                                                         "input":  14167240341,
+                                                                         "cachedInput":  13684129408,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  29265666,
+                                                                         "reasoning":  6906215
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  2093,
+                                                                                                        "input":  270617877,
+                                                                                                        "cachedInput":  263471616,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  712748,
+                                                                                                        "reasoning":  211769
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  11063,
+                                                                              "input":  1519384974,
+                                                                              "cachedInput":  1473107200,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  3947578,
+                                                                              "reasoning":  1234020
+                                                                          }
+                                                    }
+                                  },
+                   "2026-05-31":  {
+                                      "files":  315,
+                                      "sessions":  315,
+                                      "events":  57704,
+                                      "bytes":  900746114,
+                                      "input":  7641032254,
+                                      "cachedInput":  7377207296,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  17127671,
+                                      "reasoning":  4796813,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  43382,
+                                                                              "input":  5628244647,
+                                                                              "cachedInput":  5419080960,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  12351518,
+                                                                              "reasoning":  3287515
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  14322,
+                                                                 "input":  2012787607,
+                                                                 "cachedInput":  1958126336,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  4776153,
+                                                                 "reasoning":  1509298
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  43382,
+                                                                         "input":  5628244647,
+                                                                         "cachedInput":  5419080960,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  12351518,
+                                                                         "reasoning":  3287515
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  2862,
+                                                                                                        "input":  441979194,
+                                                                                                        "cachedInput":  433256576,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  985149,
+                                                                                                        "reasoning":  303625
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  11460,
+                                                                              "input":  1570808413,
+                                                                              "cachedInput":  1524869760,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  3791004,
+                                                                              "reasoning":  1205673
+                                                                          }
+                                                    }
+                                  },
+                   "2026-06-01":  {
+                                      "files":  348,
+                                      "sessions":  348,
+                                      "events":  278655,
+                                      "bytes":  1377207318,
+                                      "input":  37631362291,
+                                      "cachedInput":  36790162816,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  77938081,
+                                      "reasoning":  15570194,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  156635,
+                                                                              "input":  20097095198,
+                                                                              "cachedInput":  19621643264,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  42702564,
+                                                                              "reasoning":  8049489
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  122020,
+                                                                 "input":  17534267093,
+                                                                 "cachedInput":  17168519552,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  35235517,
+                                                                 "reasoning":  7520705
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  156635,
+                                                                         "input":  20097095198,
+                                                                         "cachedInput":  19621643264,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  42702564,
+                                                                         "reasoning":  8049489
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  41758,
+                                                                                                        "input":  5952585548,
+                                                                                                        "cachedInput":  5799720064,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  13226178,
+                                                                                                        "reasoning":  3641296
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  80262,
+                                                                              "input":  11581681545,
+                                                                              "cachedInput":  11368799488,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  22009339,
+                                                                              "reasoning":  3879409
+                                                                          }
+                                                    }
+                                  },
+                   "2026-06-02":  {
+                                      "files":  169,
+                                      "sessions":  169,
+                                      "events":  16921,
+                                      "bytes":  582848690,
+                                      "input":  2194371059,
+                                      "cachedInput":  2116485888,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  6248236,
+                                      "reasoning":  2122814,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  4018,
+                                                                              "input":  389513587,
+                                                                              "cachedInput":  365254912,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  1704691,
+                                                                              "reasoning":  702658
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  12903,
+                                                                 "input":  1804857472,
+                                                                 "cachedInput":  1751230976,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  4543545,
+                                                                 "reasoning":  1420156
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  4018,
+                                                                         "input":  389513587,
+                                                                         "cachedInput":  365254912,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  1704691,
+                                                                         "reasoning":  702658
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  6611,
+                                                                                                        "input":  913164423,
+                                                                                                        "cachedInput":  887009408,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  2461288,
+                                                                                                        "reasoning":  766164
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  6292,
+                                                                              "input":  891693049,
+                                                                              "cachedInput":  864221568,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  2082257,
+                                                                              "reasoning":  653992
+                                                                          }
+                                                    }
+                                  },
+                   "2026-06-03":  {
+                                      "files":  258,
+                                      "sessions":  258,
+                                      "events":  22685,
+                                      "bytes":  327829638,
+                                      "input":  2808316823,
+                                      "cachedInput":  2710139520,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  10325545,
+                                      "reasoning":  3935852,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  16898,
+                                                                              "input":  2036349830,
+                                                                              "cachedInput":  1958234752,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  7558707,
+                                                                              "reasoning":  2941804
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  5787,
+                                                                 "input":  771966993,
+                                                                 "cachedInput":  751904768,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  2766838,
+                                                                 "reasoning":  994048
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  16898,
+                                                                         "input":  2036349830,
+                                                                         "cachedInput":  1958234752,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  7558707,
+                                                                         "reasoning":  2941804
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  3314,
+                                                                                                        "input":  448526601,
+                                                                                                        "cachedInput":  436390656,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  1660744,
+                                                                                                        "reasoning":  593673
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  2473,
+                                                                              "input":  323440392,
+                                                                              "cachedInput":  315514112,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  1106094,
+                                                                              "reasoning":  400375
+                                                                          }
+                                                    }
+                                  },
+                   "2026-06-04":  {
+                                      "files":  144,
+                                      "sessions":  144,
+                                      "events":  11344,
+                                      "bytes":  537165112,
+                                      "input":  1382178887,
+                                      "cachedInput":  1330908160,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  4931659,
+                                      "reasoning":  1799127,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  7500,
+                                                                              "input":  891012146,
+                                                                              "cachedInput":  853984384,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  3137555,
+                                                                              "reasoning":  1165444
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  3844,
+                                                                 "input":  491166741,
+                                                                 "cachedInput":  476923776,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  1794104,
+                                                                 "reasoning":  633683
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  7500,
+                                                                         "input":  891012146,
+                                                                         "cachedInput":  853984384,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  3137555,
+                                                                         "reasoning":  1165444
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  2766,
+                                                                                                        "input":  352063658,
+                                                                                                        "cachedInput":  342563712,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  1315212,
+                                                                                                        "reasoning":  469889
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  1078,
+                                                                              "input":  139103083,
+                                                                              "cachedInput":  134360064,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  478892,
+                                                                              "reasoning":  163794
+                                                                          }
+                                                    }
+                                  },
+                   "2026-06-05":  {
+                                      "files":  160,
+                                      "sessions":  160,
+                                      "events":  16028,
+                                      "bytes":  529851791,
+                                      "input":  1985998832,
+                                      "cachedInput":  1914221568,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  6987966,
+                                      "reasoning":  2481992,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  10321,
+                                                                              "input":  1263648638,
+                                                                              "cachedInput":  1214007424,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  4465978,
+                                                                              "reasoning":  1532780
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  5707,
+                                                                 "input":  722350194,
+                                                                 "cachedInput":  700214144,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  2521988,
+                                                                 "reasoning":  949212
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  10321,
+                                                                         "input":  1263648638,
+                                                                         "cachedInput":  1214007424,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  4465978,
+                                                                         "reasoning":  1532780
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  2987,
+                                                                                                        "input":  392761738,
+                                                                                                        "cachedInput":  381037056,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  1454476,
+                                                                                                        "reasoning":  571289
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  2720,
+                                                                              "input":  329588456,
+                                                                              "cachedInput":  319177088,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  1067512,
+                                                                              "reasoning":  377923
+                                                                          }
+                                                    }
+                                  },
+                   "2026-06-06":  {
+                                      "files":  221,
+                                      "sessions":  221,
+                                      "events":  17015,
+                                      "bytes":  614166472,
+                                      "input":  2115882025,
+                                      "cachedInput":  2042154368,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  6839308,
+                                      "reasoning":  2221378,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  7548,
+                                                                              "input":  880310925,
+                                                                              "cachedInput":  841266816,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  3153977,
+                                                                              "reasoning":  1073037
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  9467,
+                                                                 "input":  1235571100,
+                                                                 "cachedInput":  1200887552,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  3685331,
+                                                                 "reasoning":  1148341
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  7548,
+                                                                         "input":  880310925,
+                                                                         "cachedInput":  841266816,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  3153977,
+                                                                         "reasoning":  1073037
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  4922,
+                                                                                                        "input":  667423302,
+                                                                                                        "cachedInput":  648898048,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  2035637,
+                                                                                                        "reasoning":  700770
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  4545,
+                                                                              "input":  568147798,
+                                                                              "cachedInput":  551989504,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  1649694,
+                                                                              "reasoning":  447571
+                                                                          }
+                                                    }
+                                  },
+                   "2026-06-07":  {
+                                      "files":  247,
+                                      "sessions":  247,
+                                      "events":  54838,
+                                      "bytes":  1254024427,
+                                      "input":  7568388391,
+                                      "cachedInput":  7322797184,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  22880749,
+                                      "reasoning":  7204602,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  25225,
+                                                                              "input":  3397783032,
+                                                                              "cachedInput":  3261860736,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  10820643,
+                                                                              "reasoning":  3534321
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  29613,
+                                                                 "input":  4170605359,
+                                                                 "cachedInput":  4060936448,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  12060106,
+                                                                 "reasoning":  3670281
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  25225,
+                                                                         "input":  3397783032,
+                                                                         "cachedInput":  3261860736,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  10820643,
+                                                                         "reasoning":  3534321
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  18982,
+                                                                                                        "input":  2710173486,
+                                                                                                        "cachedInput":  2646196096,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  7814071,
+                                                                                                        "reasoning":  2394589
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  10631,
+                                                                              "input":  1460431873,
+                                                                              "cachedInput":  1414740352,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  4246035,
+                                                                              "reasoning":  1275692
+                                                                          }
+                                                    }
+                                  },
+                   "2026-06-08":  {
+                                      "files":  265,
+                                      "sessions":  265,
+                                      "events":  83259,
+                                      "bytes":  913319882,
+                                      "input":  11421206595,
+                                      "cachedInput":  10954855168,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  37401112,
+                                      "reasoning":  10981910,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  37687,
+                                                                              "input":  5165459078,
+                                                                              "cachedInput":  4922094848,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  16463771,
+                                                                              "reasoning":  5145198
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  45572,
+                                                                 "input":  6255747517,
+                                                                 "cachedInput":  6032760320,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  20937341,
+                                                                 "reasoning":  5836712
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Avalonia (Linux/macOS)":  {
+                                                                                       "events":  38,
+                                                                                       "input":  1910659,
+                                                                                       "cachedInput":  1846528,
+                                                                                       "cacheWrite":  0,
+                                                                                       "cacheRead":  0,
+                                                                                       "output":  17738,
+                                                                                       "reasoning":  8315
+                                                                                   },
+                                                        "Non-code":  {
+                                                                         "events":  37692,
+                                                                         "input":  5166256283,
+                                                                         "cachedInput":  4922887808,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  16473571,
+                                                                         "reasoning":  5145198
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  9548,
+                                                                                                        "input":  1271430386,
+                                                                                                        "cachedInput":  1236156544,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  3741710,
+                                                                                                        "reasoning":  885911
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  35981,
+                                                                              "input":  4981609267,
+                                                                              "cachedInput":  4793964288,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  17168093,
+                                                                              "reasoning":  4942486
+                                                                          }
+                                                    }
+                                  },
+                   "2026-06-09":  {
+                                      "files":  34,
+                                      "sessions":  34,
+                                      "events":  2271,
+                                      "bytes":  464384611,
+                                      "input":  291056974,
+                                      "cachedInput":  275603712,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  861802,
+                                      "reasoning":  207434,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  1186,
+                                                                              "input":  133594673,
+                                                                              "cachedInput":  125138048,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  451558,
+                                                                              "reasoning":  116598
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  1085,
+                                                                 "input":  157462301,
+                                                                 "cachedInput":  150465664,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  410244,
+                                                                 "reasoning":  90836
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Avalonia (Linux/macOS)":  {
+                                                                                       "events":  6,
+                                                                                       "input":  864924,
+                                                                                       "cachedInput":  859904,
+                                                                                       "cacheWrite":  0,
+                                                                                       "cacheRead":  0,
+                                                                                       "output":  2383,
+                                                                                       "reasoning":  195
+                                                                                   },
+                                                        "Non-code":  {
+                                                                         "events":  1186,
+                                                                         "input":  133594673,
+                                                                         "cachedInput":  125138048,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  451558,
+                                                                         "reasoning":  116598
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  319,
+                                                                                                        "input":  42059130,
+                                                                                                        "cachedInput":  40127872,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  117307,
+                                                                                                        "reasoning":  23431
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  760,
+                                                                              "input":  114538247,
+                                                                              "cachedInput":  109477888,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  290554,
+                                                                              "reasoning":  67210
+                                                                          }
+                                                    }
+                                  },
+                   "2026-06-10":  {
+                                      "files":  109,
+                                      "sessions":  109,
+                                      "events":  9474,
+                                      "bytes":  388691202,
+                                      "input":  1303178844,
+                                      "cachedInput":  1243035136,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  4405226,
+                                      "reasoning":  1135918,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  4394,
+                                                                              "input":  533578253,
+                                                                              "cachedInput":  502574336,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  1936713,
+                                                                              "reasoning":  517992
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  5080,
+                                                                 "input":  769600591,
+                                                                 "cachedInput":  740460800,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  2468513,
+                                                                 "reasoning":  617926
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  4394,
+                                                                         "input":  533578253,
+                                                                         "cachedInput":  502574336,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  1936713,
+                                                                         "reasoning":  517992
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  372,
+                                                                                                        "input":  49989699,
+                                                                                                        "cachedInput":  48265728,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  184502,
+                                                                                                        "reasoning":  59354
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  4708,
+                                                                              "input":  719610892,
+                                                                              "cachedInput":  692195072,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  2284011,
+                                                                              "reasoning":  558572
+                                                                          }
+                                                    }
+                                  },
+                   "2026-06-11":  {
+                                      "files":  52,
+                                      "sessions":  52,
+                                      "events":  52177,
+                                      "bytes":  463150892,
+                                      "input":  7286946283,
+                                      "cachedInput":  6975355392,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  23252077,
+                                      "reasoning":  6248147,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  25794,
+                                                                              "input":  3524580967,
+                                                                              "cachedInput":  3352759680,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  11192765,
+                                                                              "reasoning":  3176350
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  26383,
+                                                                 "input":  3762365316,
+                                                                 "cachedInput":  3622595712,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  12059312,
+                                                                 "reasoning":  3071797
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Avalonia (Linux/macOS)":  {
+                                                                                       "events":  3,
+                                                                                       "input":  461685,
+                                                                                       "cachedInput":  458368,
+                                                                                       "cacheWrite":  0,
+                                                                                       "cacheRead":  0,
+                                                                                       "output":  1374,
+                                                                                       "reasoning":  187
+                                                                                   },
+                                                        "Non-code":  {
+                                                                         "events":  25796,
+                                                                         "input":  3524899849,
+                                                                         "cachedInput":  3353076864,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  11196685,
+                                                                         "reasoning":  3176350
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  2056,
+                                                                                                        "input":  298707474,
+                                                                                                        "cachedInput":  289704960,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  1114329,
+                                                                                                        "reasoning":  299015
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  24322,
+                                                                              "input":  3462877275,
+                                                                              "cachedInput":  3332115200,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  10939689,
+                                                                              "reasoning":  2772595
+                                                                          }
+                                                    }
+                                  },
+                   "2026-06-12":  {
+                                      "files":  9,
+                                      "sessions":  9,
+                                      "events":  1163,
+                                      "bytes":  110597493,
+                                      "input":  148017188,
+                                      "cachedInput":  140751488,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  489722,
+                                      "reasoning":  127223,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  474,
+                                                                              "input":  53447747,
+                                                                              "cachedInput":  49665664,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  214867,
+                                                                              "reasoning":  61576
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  689,
+                                                                 "input":  94569441,
+                                                                 "cachedInput":  91085824,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  274855,
+                                                                 "reasoning":  65647
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  474,
+                                                                         "input":  53447747,
+                                                                         "cachedInput":  49665664,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  214867,
+                                                                         "reasoning":  61576
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  86,
+                                                                                                        "input":  12591288,
+                                                                                                        "cachedInput":  12316544,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  39364,
+                                                                                                        "reasoning":  11093
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  603,
+                                                                              "input":  81978153,
+                                                                              "cachedInput":  78769280,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  235491,
+                                                                              "reasoning":  54554
+                                                                          }
+                                                    }
+                                  },
+                   "2026-06-13":  {
+                                      "files":  19,
+                                      "sessions":  19,
+                                      "events":  2933,
+                                      "bytes":  83055504,
+                                      "input":  381739088,
+                                      "cachedInput":  366717312,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  1580533,
+                                      "reasoning":  533050,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  1444,
+                                                                              "input":  186299249,
+                                                                              "cachedInput":  177965696,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  760027,
+                                                                              "reasoning":  260752
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  1489,
+                                                                 "input":  195439839,
+                                                                 "cachedInput":  188751616,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  820506,
+                                                                 "reasoning":  272298
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  1444,
+                                                                         "input":  186299249,
+                                                                         "cachedInput":  177965696,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  760027,
+                                                                         "reasoning":  260752
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  356,
+                                                                                                        "input":  50428283,
+                                                                                                        "cachedInput":  49072128,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  190295,
+                                                                                                        "reasoning":  67151
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  1133,
+                                                                              "input":  145011556,
+                                                                              "cachedInput":  139679488,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  630211,
+                                                                              "reasoning":  205147
+                                                                          }
+                                                    }
+                                  },
+                   "2026-06-14":  {
+                                      "files":  1,
+                                      "sessions":  1,
+                                      "events":  224,
+                                      "bytes":  25076744,
+                                      "input":  35129128,
+                                      "cachedInput":  33879040,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  77292,
+                                      "reasoning":  23336,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  86,
+                                                                              "input":  12692236,
+                                                                              "cachedInput":  12197888,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  33114,
+                                                                              "reasoning":  9715
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  138,
+                                                                 "input":  22436892,
+                                                                 "cachedInput":  21681152,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  44178,
+                                                                 "reasoning":  13621
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  86,
+                                                                         "input":  12692236,
+                                                                         "cachedInput":  12197888,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  33114,
+                                                                         "reasoning":  9715
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  13,
+                                                                                                        "input":  1800297,
+                                                                                                        "cachedInput":  1753472,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  6782,
+                                                                                                        "reasoning":  2286
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  125,
+                                                                              "input":  20636595,
+                                                                              "cachedInput":  19927680,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  37396,
+                                                                              "reasoning":  11335
+                                                                          }
+                                                    }
+                                  },
+                   "2026-06-15":  {
+                                      "files":  1,
+                                      "sessions":  1,
+                                      "events":  188,
+                                      "bytes":  25076744,
+                                      "input":  30477529,
+                                      "cachedInput":  29122944,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  62450,
+                                      "reasoning":  23140,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  129,
+                                                                              "input":  20862682,
+                                                                              "cachedInput":  19737728,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  44415,
+                                                                              "reasoning":  17240
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  59,
+                                                                 "input":  9614847,
+                                                                 "cachedInput":  9385216,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  18035,
+                                                                 "reasoning":  5900
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  129,
+                                                                         "input":  20862682,
+                                                                         "cachedInput":  19737728,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  44415,
+                                                                         "reasoning":  17240
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  22,
+                                                                                                        "input":  2952104,
+                                                                                                        "cachedInput":  2867968,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  5284,
+                                                                                                        "reasoning":  1289
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  37,
+                                                                              "input":  6662743,
+                                                                              "cachedInput":  6517248,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  12751,
+                                                                              "reasoning":  4611
+                                                                          }
+                                                    }
+                                  },
+                   "2026-06-16":  {
+                                      "files":  1,
+                                      "sessions":  1,
+                                      "events":  8,
+                                      "bytes":  25076744,
+                                      "input":  757471,
+                                      "cachedInput":  443520,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  2262,
+                                      "reasoning":  997,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  8,
+                                                                              "input":  757471,
+                                                                              "cachedInput":  443520,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  2262,
+                                                                              "reasoning":  997
+                                                                          }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  8,
+                                                                         "input":  757471,
+                                                                         "cachedInput":  443520,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  2262,
+                                                                         "reasoning":  997
+                                                                     }
+                                                    }
+                                  },
+                   "2026-07-29":  {
+                                      "files":  3,
+                                      "sessions":  3,
+                                      "events":  333,
+                                      "bytes":  13635153,
+                                      "input":  44394770,
+                                      "cachedInput":  42664192,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  130918,
+                                      "reasoning":  35853,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  224,
+                                                                              "input":  25104180,
+                                                                              "cachedInput":  23587456,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  91579,
+                                                                              "reasoning":  27248
+                                                                          },
+                                                   "FreeX":  {
+                                                                 "events":  109,
+                                                                 "input":  19290590,
+                                                                 "cachedInput":  19076736,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  39339,
+                                                                 "reasoning":  8605
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Avalonia (Linux/macOS)":  {
+                                                                                       "events":  58,
+                                                                                       "input":  9806100,
+                                                                                       "cachedInput":  9684096,
+                                                                                       "cacheWrite":  0,
+                                                                                       "cacheRead":  0,
+                                                                                       "output":  18944,
+                                                                                       "reasoning":  4701
+                                                                                   },
+                                                        "Non-code":  {
+                                                                         "events":  224,
+                                                                         "input":  25104180,
+                                                                         "cachedInput":  23587456,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  91579,
+                                                                         "reasoning":  27248
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  3,
+                                                                                                        "input":  540259,
+                                                                                                        "cachedInput":  530560,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  3589,
+                                                                                                        "reasoning":  214
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  48,
+                                                                              "input":  8944231,
+                                                                              "cachedInput":  8862080,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  16806,
+                                                                              "reasoning":  3690
+                                                                          }
+                                                    }
+                                  },
+                   "2026-07-30":  {
+                                      "files":  4,
+                                      "sessions":  4,
+                                      "events":  1187,
+                                      "bytes":  60380242,
+                                      "input":  163305869,
+                                      "cachedInput":  158231552,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  386867,
+                                      "reasoning":  108153,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  619,
+                                                                              "input":  81025729,
+                                                                              "cachedInput":  78454656,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  208123,
+                                                                              "reasoning":  59977
+                                                                          },
+                                                   "FreeP":  {
+                                                                 "events":  109,
+                                                                 "input":  12952879,
+                                                                 "cachedInput":  12315776,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  27893,
+                                                                 "reasoning":  6133
+                                                             },
+                                                   "FreeW":  {
+                                                                 "events":  3,
+                                                                 "input":  294512,
+                                                                 "cachedInput":  284160,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  3311,
+                                                                 "reasoning":  852
+                                                             },
+                                                   "FreeX":  {
+                                                                 "events":  456,
+                                                                 "input":  69032749,
+                                                                 "cachedInput":  67176960,
+                                                                 "cacheWrite":  0,
+                                                                 "cacheRead":  0,
+                                                                 "output":  147540,
+                                                                 "reasoning":  41191
+                                                             }
+                                               },
+                                      "platforms":  {
+                                                        "Avalonia (Linux/macOS)":  {
+                                                                                       "events":  262,
+                                                                                       "input":  32462233,
+                                                                                       "cachedInput":  30691712,
+                                                                                       "cacheWrite":  0,
+                                                                                       "cacheRead":  0,
+                                                                                       "output":  102476,
+                                                                                       "reasoning":  30071
+                                                                                   },
+                                                        "Non-code":  {
+                                                                         "events":  619,
+                                                                         "input":  81025729,
+                                                                         "cachedInput":  78454656,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  208123,
+                                                                         "reasoning":  59977
+                                                                     },
+                                                        "Platform-neutral (core/shared/IO/model)":  {
+                                                                                                        "events":  31,
+                                                                                                        "input":  3646079,
+                                                                                                        "cachedInput":  3454720,
+                                                                                                        "cacheWrite":  0,
+                                                                                                        "cacheRead":  0,
+                                                                                                        "output":  9085,
+                                                                                                        "reasoning":  1888
+                                                                                                    },
+                                                        "Windows (WPF)":  {
+                                                                              "events":  275,
+                                                                              "input":  46171828,
+                                                                              "cachedInput":  45630464,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  67183,
+                                                                              "reasoning":  16217
+                                                                          }
+                                                    }
+                                  },
+                   "2026-08-03":  {
+                                      "files":  1,
+                                      "sessions":  1,
+                                      "events":  137,
+                                      "bytes":  45724730,
+                                      "input":  8525826,
+                                      "cachedInput":  8349696,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  16477,
+                                      "reasoning":  3890,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  137,
+                                                                              "input":  8525826,
+                                                                              "cachedInput":  8349696,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  16477,
+                                                                              "reasoning":  3890
+                                                                          }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  137,
+                                                                         "input":  8525826,
+                                                                         "cachedInput":  8349696,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  16477,
+                                                                         "reasoning":  3890
+                                                                     }
+                                                    }
+                                  },
+                   "2026-08-04":  {
+                                      "files":  1,
+                                      "sessions":  1,
+                                      "events":  268,
+                                      "bytes":  45724730,
+                                      "input":  37829633,
+                                      "cachedInput":  37305856,
+                                      "cacheWrite":  0,
+                                      "cacheRead":  0,
+                                      "output":  30815,
+                                      "reasoning":  6141,
+                                      "apps":  {
+                                                   "Docs/Tooling/Other":  {
+                                                                              "events":  268,
+                                                                              "input":  37829633,
+                                                                              "cachedInput":  37305856,
+                                                                              "cacheWrite":  0,
+                                                                              "cacheRead":  0,
+                                                                              "output":  30815,
+                                                                              "reasoning":  6141
+                                                                          }
+                                               },
+                                      "platforms":  {
+                                                        "Non-code":  {
+                                                                         "events":  268,
+                                                                         "input":  37829633,
+                                                                         "cachedInput":  37305856,
+                                                                         "cacheWrite":  0,
+                                                                         "cacheRead":  0,
+                                                                         "output":  30815,
+                                                                         "reasoning":  6141
+                                                                     }
+                                                    }
+                                  }
+               },
+    "codexNote":  "Codex jsonl sessions were extracted via payload.info.last_token_usage on event_msg/token_count lines, filtered to sessions whose recorded cwd contains \u0027FreeX\u0027. Codex\u0027s sqlite logs (logs_2.sqlite etc.) were NOT parsed (no stable documented per-day usage schema without heavy reverse-engineering) - if the jsonl sessions directories are ever pruned/rotated, coverage for older dates could be incomplete."
+}
