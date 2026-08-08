@@ -1,6 +1,6 @@
 # Multiplatform Port Plan: Linux
 
-**Last updated:** 2026-06-16
+**Last updated:** 2026-08-08
 
 FreeX v1 is a native Windows desktop app built on WPF (ADR-001). The macOS port
 ([multiplatform-macos-port.md](multiplatform-macos-port.md)) established a portable
@@ -11,6 +11,21 @@ configuration, freedesktop/XDG packaging and desktop integration, a hosted CI la
 readiness tooling. This plan records that path and the current Linux preview-app status.
 
 ## Current State
+
+Since this plan's port-foundation work landed, the shared Avalonia shell has advanced far
+beyond the initial preview: FreeX's generated cross-app parity dashboard
+([avalonia-wpf-cross-app-dashboard.md](../parity/avalonia-wpf-cross-app-dashboard.md), refreshed
+continuously from `docs/parity/*.json`) currently reports 546 FreeX functional commands with 0
+Avalonia-missing entries and all 57 inventoried dialog routes captured on both WPF and Avalonia.
+A dedicated Linux-Docker interactive-validation harness (`tools/LinuxInteractiveDocker/`)
+independently exercises the built app inside a Linux container; its most recent full-context
+catalog run, recorded in
+[avalonia-parity-wave162-integration-20260806.md](../parity/avalonia-parity-wave162-integration-20260806.md)
+(2026-08-06), passed **13,801 of 13,958 checks (157 skipped, 0 failed)** at `1280x820`, 96 DPI.
+Feature work continues under the numbered `avalonia-parity-wave*` records in `docs/parity/`
+(the highest-numbered as of this update is wave166, 2026-08-06); consult the newest
+`avalonia-parity-wave*` file there for the current slice rather than treating this plan as a
+live tracker of individual gaps.
 
 - `Core.Model`, `Core.Formula`, `Core.Calc`, `Core.Commands`, and `Core.IO` target plain
   `net10.0` and already build and run on Linux.

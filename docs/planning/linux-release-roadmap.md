@@ -1,6 +1,6 @@
 # Linux Release Roadmap: Toward Windows-Comparable
 
-**Last updated:** 2026-06-16
+**Last updated:** 2026-08-08
 
 **Goal:** reach a Linux release comparable to the Windows (WPF) FreeX app — a versioned,
 published, trustworthy Linux build with feature coverage, quality, and accessibility close
@@ -32,6 +32,26 @@ public-preview promotion gated on accessibility evidence. Comparable on Linux me
 - Hosted CI lane (`linux-app.yml`, manual dispatch): build, tests, package, headless +
   Xvfb GUI smoke, aggregate readiness. *(first hosted run validating)*
 - Readiness tooling + guard tests. *(done)*
+
+**2026-08-08 update:** the mid-June state below described an early preview with a large
+open feature-parity gap (see the R2 table). Since then, the shared Avalonia/WPF parity effort
+has landed a large number of dated `avalonia-parity-wave*` slices in `docs/parity/`
+(highest-numbered as of this update: wave166, 2026-08-06) covering command surface, dialogs,
+keytips, charts (including waterfall/pivot-chart), grid interaction, and more. Verified current
+evidence:
+
+- FreeX's generated cross-app parity dashboard
+  ([docs/parity/avalonia-wpf-cross-app-dashboard.md](../parity/avalonia-wpf-cross-app-dashboard.md))
+  currently reports 546 FreeX functional commands with 0 Avalonia-missing entries and all 57
+  inventoried dialog routes captured on both WPF and Avalonia.
+- The Linux-Docker interactive-validation harness's most recent full-context catalog run
+  ([docs/parity/avalonia-parity-wave162-integration-20260806.md](../parity/avalonia-parity-wave162-integration-20260806.md),
+  2026-08-06) passed 13,801 of 13,958 checks (157 skipped, 0 failed) at `1280x820`, 96 DPI.
+
+The R2 gap table below has not been re-audited row-by-row for this update, so treat its per-row
+priorities as historical (mid-June) unless a specific row is otherwise confirmed current;
+consult the newest `avalonia-parity-wave*` and `docs/parity/*` records for the authoritative
+current gap state before planning new Linux-specific parity work.
 
 ## Coordination with the macOS parity initiative (no duplication)
 

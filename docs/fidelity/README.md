@@ -1,6 +1,6 @@
 # Fidelity Workstream Summary
 
-**Last updated:** 2026-07-16
+**Last updated:** 2026-08-08
 
 This folder holds point-in-time XLSX and FreeW fidelity findings. Keep durable summaries here and avoid committing temporary handoff notes, downloaded sample workbooks, generated comparison outputs, or Excel ground-truth images. Local workbook binaries belong in ignored corpus folders such as `fidelity-corpus/files/`, `fidelity-corpus/runs/`, `freew-fidelity-corpus/files/`, or `freew-fidelity-corpus/runs/`.
 
@@ -61,6 +61,16 @@ Durable FreeW notes:
 - [2026-06-17-freew-corpus-roundtrip.md](2026-06-17-freew-corpus-roundtrip.md) - historical 26-file round-trip baseline, now superseded by the corpus-gated test path.
 - [2026-06-17-freew-word-visual-comparison.md](2026-06-17-freew-word-visual-comparison.md) - historical 26-file Word/LibreOffice visual comparison baseline.
 - [2026-06-17-freew-corpus-growth-scout.md](2026-06-17-freew-corpus-growth-scout.md) - historical 26-to-48 growth scout, superseded by the June 19 134-row manifest.
+
+Late-July/early-August FreeW slices continue the same no-Word-baseline discipline, now split across WPF-first and dedicated Avalonia-parity records. Representative recent entries: [2026-07-26-freew-page-border-dip-conversion.md](2026-07-26-freew-page-border-dip-conversion.md), [2026-07-28-freew-chart-text-fallback.md](2026-07-28-freew-chart-text-fallback.md), [2026-07-29-freew-avalonia-columns-source-parity.md](2026-07-29-freew-avalonia-columns-source-parity.md), [2026-07-30-freew-avalonia-table-page-surface-capture.md](2026-07-30-freew-avalonia-table-page-surface-capture.md), and [2026-07-31-freew-table-composition-footnote-layout.md](2026-07-31-freew-table-composition-footnote-layout.md). The August 2 batch is a dense settings/rendering-parity sweep (double-strikethrough, hidden text, run formatting, document defaults, page-border header/footer, embed/subset-font settings, and related WPF-vs-import contract checks); see [2026-08-02-freew-double-strikethrough-import-render-parity.md](2026-08-02-freew-double-strikethrough-import-render-parity.md), [2026-08-02-freew-run-hidden-text-rendering-parity.md](2026-08-02-freew-run-hidden-text-rendering-parity.md), and [2026-08-02-freew-page-border-header-footer-rendering-parity.md](2026-08-02-freew-page-border-header-footer-rendering-parity.md) as entry points, with the full dated set browsable in this folder (`docs/fidelity/2026-07-*freew*`, `docs/fidelity/2026-08-*freew*`).
+
+## Current FreeP Coverage
+
+FreeP fidelity work started landing in late July, focused on chart functional/package parity (FreeP shares its chart-model and reader/writer stack with FreeW/FreeX):
+
+- [2026-07-26-freep-chart-error-bars-functional.md](2026-07-26-freep-chart-error-bars-functional.md) - per-series error-bar model, `c:errBars` read/write, Series Options controls, and shared WPF/Avalonia line-and-cap painting for line/column/bar/area/stock/scatter/bubble/radar charts; pie/doughnut/surface error-bar geometry is a deliberate boundary.
+- [2026-08-02-freep-chart-series-order.md](2026-08-02-freep-chart-series-order.md) - chart reader now honors authored `c:order` instead of physical `c:ser` element order, fixing plot/legend order drift after a PowerPoint series edit; functional/package parity only, no raster claim.
+- [2026-08-02-freep-scatter-trendline-functional-parity.md](2026-08-02-freep-scatter-trendline-functional-parity.md) - scatter/bubble chart reader now routes native `c:trendline` through the existing trendline parser, so authored scatter trendlines survive a FreeP open/save round trip.
 
 ## Deferred Fidelity Items
 

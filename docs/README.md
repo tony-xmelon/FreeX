@@ -1,6 +1,6 @@
 # FreeX Documentation
 
-**Last updated:** 2026-07-01
+**Last updated:** 2026-08-08
 
 Use this index as the current documentation map. Point-in-time material lives under `history/` and `archive/`; prefer the newest status snapshot plus the current planning docs when making product or release decisions.
 
@@ -10,7 +10,8 @@ Use this index as the current documentation map. Point-in-time material lives un
 
 ## Start Here
 
-- [history/status-2026-06-24.md](history/status-2026-06-24.md) - current status snapshot covering the next tester release candidate off main, current workbook/document file-format surface, and release posture.
+- [history/status-2026-08-08.md](history/status-2026-08-08.md) - current status snapshot covering the next tester release candidate off main, FreeP/FreeW/Avalonia maturation since 2026-06-24, and release posture.
+- [history/status-2026-06-24.md](history/status-2026-06-24.md) - prior status snapshot covering the next tester release candidate off main, current workbook/document file-format surface, and release posture.
 - [history/status-2026-06-21.md](history/status-2026-06-21.md) - prior status snapshot covering the v0.8.127 tester release, current workbook/document file-format surface, release posture, and hygiene rules.
 - [planning/outstanding-build.md](planning/outstanding-build.md) - historical backlog plus current 2026-06-21 status note for outstanding build work.
 - [planning/next-phases.md](planning/next-phases.md) - next development phases and priority sequencing, retained as a June 3 planning snapshot unless superseded by newer status docs.
@@ -149,7 +150,8 @@ Use this index as the current documentation map. Point-in-time material lives un
 
 ## History
 
-- [history/status-2026-06-24.md](history/status-2026-06-24.md) - current status snapshot covering the next tester release candidate off main, current workbook/document file-format surface, and release posture.
+- [history/status-2026-08-08.md](history/status-2026-08-08.md) - current status snapshot covering the next tester release candidate off main, FreeP/FreeW/Avalonia maturation since 2026-06-24, and release posture.
+- [history/status-2026-06-24.md](history/status-2026-06-24.md) - prior status snapshot covering the next tester release candidate off main, current workbook/document file-format surface, and release posture.
 - [history/status-2026-06-21.md](history/status-2026-06-21.md) - prior status snapshot covering the v0.8.127 tester release, current format support, promotion blockers, and hygiene rules.
 - [history/status-2026-06-12.md](history/status-2026-06-12.md) - prior status snapshot covering the June 12 stable latest `origin/main` release, v0.8.114, prior failed run 113 hosted UI source-contract gate, and release blockers as of that date.
 - [history/status-2026-06-11.md](history/status-2026-06-11.md) - prior status snapshot covering the June 11 stable latest `origin/main` release, v0.8.112, prior failed run 111 hosted UI gate, and current release blockers.
