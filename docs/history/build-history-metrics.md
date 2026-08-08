@@ -1,8 +1,8 @@
 # Project Build History Metrics
 
-Generated: 2026-08-08 11:47 +03:00
+Generated: 2026-08-08 12:18 +03:00
 Repository: https://github.com/tony-xmelon/FreeX.git
-Baseline ref: HEAD at `318344017` (`318344017ea34108a97e84de5e1abe6026393275`)
+Baseline ref: HEAD at `b10585638` (`b10585638046e1ff8bb98f357797c409af618ffc`)
 History window: 2026-05-12 through 2026-08-08
 
 ## Scope And Caveats
@@ -12,7 +12,7 @@ History window: 2026-05-12 through 2026-08-08
 - Files Changed is the count of *distinct* file paths touched that day (deduplicated across the day's commits); LoC/Source/Test/Docs +/- are the raw additive churn (not deduplicated), i.e. repeated edits to the same file all count.
 - Source C# / Test C# is split by path: a `.cs` file is classified as a test file if any path segment is `test`/`tests` (case-insensitive) or the filename ends in `Test(s).cs`; everything else `.cs` is source. Docs +/- covers every tracked `.md` file, not only `docs/`.
 - Current repository footprint LOC counts are exact for the current checkout (`git ls-files` + line counts). Historical cumulative LOC per day is not computed (would require checking out every daily snapshot).
-- **Token columns currently reflect only the machine(s) that have contributed a project-history-tokens-<MachineId>.json file into `.metrics-data` so far: I5-32GB.** This run's own machine id is `I5-32GB`. Other machines' logs are pending: copy their project-history-tokens-*.json (produced by running this same script there) into that directory and re-run to aggregate. The git-derived metrics above and below are complete/authoritative regardless of which machines have reported tokens.
+- **Token columns currently reflect only the machine(s) that have contributed a project-history-tokens-<MachineId>.json file into `C:\Users\anton\OneDrive\Documents\FreeX\FreeX\.worktrees\metrics-breakdown-20260808\.metrics-data` so far: I5-32GB.** This run's own machine id is `I5-32GB`. Other machines' logs are pending: copy their project-history-tokens-*.json (produced by running this same script there) into that directory and re-run to aggregate. The git-derived metrics above and below are complete/authoritative regardless of which machines have reported tokens.
 - Anthropic (Claude Code) token rows sum `message.usage` fields from every `*.jsonl` transcript (including subagent transcripts) under `~/.claude/projects/*FreeX*`, deduplicated by `requestId` where present. Only numeric usage + timestamp + model were read - no transcript content was inspected or stored.
 - OpenAI (Codex) token rows sum `payload.info.last_token_usage` from `token_count` events in `~/.codex/sessions/**/*.jsonl` and `~/.codex/archived_sessions/*.jsonl`, filtered to sessions whose recorded `cwd` contains "FreeX". Codex's sqlite logs (`logs_2.sqlite` etc.) were **not** parsed - no stable, documented per-day usage schema was available there without heavy reverse-engineering, so per the "do not guess" rule they are left out rather than estimated.
 - Codex extraction note (I5-32GB: Codex jsonl sessions were extracted via payload.info.last_token_usage on event_msg/token_count lines, filtered to sessions whose recorded cwd contains 'FreeX'. Codex's sqlite logs (logs_2.sqlite etc.) were NOT parsed (no stable documented per-day usage schema without heavy reverse-engineering) - if the jsonl sessions directories are ever pruned/rotated, coverage for older dates could be incomplete.)
@@ -21,16 +21,16 @@ History window: 2026-05-12 through 2026-08-08
 
 ## Current Repository Footprint
 
-- Registered worktrees: 51
-- Local branches: 110
+- Registered worktrees: 50
+- Local branches: 109
 - Remote branches: 545
-- Tracked files: 13,886
-- Current C# source LOC: 1,233,803
-- Current C# test LOC: 1,184,003
+- Tracked files: 13,893
+- Current C# source LOC: 1,234,385
+- Current C# test LOC: 1,185,402
 - Current XAML LOC: 6,862
-- Current docs LOC: 137,204
+- Current docs LOC: 137,515
 - Observed Codex JSONL sessions/logs (this machine, all projects, unfiltered): 0
-- Observed Claude FreeX JSONL sessions/logs (this machine): 1,301
+- Observed Claude FreeX JSONL sessions/logs (this machine): 1,302
 - Provider log bytes attributed (all machines reporting so far): 98,965,039,200
 - Observed raw provider tokens (all machines reporting so far): 3,248,197,055,703
 - Provider-style billable-equivalent tokens (all machines reporting so far): 1,661,986,290,255
@@ -127,8 +127,90 @@ History window: 2026-05-12 through 2026-08-08
 | 2026-08-05 | 224 | 307 | +24,065 / -2,223 | +11,892 / -1,839 | +8,633 / -129 | +3,154 / -69 | +5,037,767,132 / -0 | 230,831,206,319 | 0 | 2 |
 | 2026-08-06 | 184 | 467 | +29,465 / -2,420 | +10,021 / -1,629 | +15,146 / -487 | +3,218 / -145 | +3,284,262,150 / -0 | 117,339,601,253 | 401,538,372 | 2 |
 | 2026-08-07 | 3 | 169 | +13,616 / -408 | +2,577 / -372 | +11,002 / -36 | +0 / -0 | +177,084,545 / -0 | 0 | 478,156,785 | 1 |
-| 2026-08-08 | 10 | 97 | +8,553 / -550 | +2,136 / -145 | +5,240 / -383 | +167 / -20 | +176,257,339 / -0 | 0 | 180,972,632 | 2 |
-| TOTAL | 31,923 | 88,816 | +6,205,111 / -2,634,802 | +1,845,281 / -596,936 | +1,596,238 / -390,881 | +202,419 / -67,174 | +98,965,039,200 / -0 | 3,237,280,038,645 | 10,917,017,058 | 6 |
+| 2026-08-08 | 17 | 159 | +16,867 / -3,664 | +2,756 / -183 | +6,644 / -388 | +6,355 / -3,072 | +176,257,339 / -0 | 0 | 180,972,632 | 3 |
+| TOTAL | 31,930 | 88,878 | +6,213,425 / -2,637,916 | +1,845,901 / -596,974 | +1,597,642 / -390,886 | +208,607 / -70,226 | +98,965,039,200 / -0 | 3,237,280,038,645 | 10,917,017,058 | 6 |
+
+## Git Churn By App
+
+- Buckets are assigned by repo path prefix: `FreeX` = `src/**` + `tests/**`; `FreeW` = `freew/**`; `FreeP` = `freep/**`; `Shared` = `shared/**`; `Docs/Tooling/Other` = everything else (`docs/**`, `tools/**`, top-level files, screenshots/fixture/corpus dirs, etc.).
+- `tests/**` is bucketed under `FreeX` even where it exercises `Shared`/`FreeW`/`FreeP` code, because the shared test projects that live under `tests/` predate the FreeW/FreeP split; see the "By Platform Layer" section below for a platform-aware (not app-aware) view of the same `tests/**` paths.
+- "Files Changed" and "LoC +/-" are an EXACT partition of the same `git log --numstat` data behind Daily Build Churn above: every changed path is assigned to exactly one bucket, so these two columns sum exactly to the Daily Build Churn TOTAL row (the generator asserts this at build time and warns if it ever drifts).
+- "Commits" counts a commit once per bucket if it touched at least one path in that bucket (a commit touching multiple buckets is counted in each), so it is NOT expected to sum to the Daily Build Churn TOTAL commit count: git suppresses `--numstat` output for merge commits unless `-m`/`-c` is passed, so a merge commit with no line-level diff is tallied in the overall commit total but contributes to zero buckets here.
+- "Files Changed" is the sum of per-day distinct-path counts (matches the Daily Build Churn convention, not a window-wide dedup).
+
+### Git Churn By App - Summary
+
+| App | Commits | Files Changed | LoC +/- |
+| --- | ---: | ---: | ---: |
+| FreeX | 10,974 | 36,696 | +3,973,748 / -1,708,135 |
+| FreeW | 2,042 | 4,781 | +480,982 / -51,011 |
+| FreeP | 2,194 | 3,536 | +440,041 / -43,280 |
+| Shared | 456 | 759 | +50,150 / -5,815 |
+| Docs/Tooling/Other | 7,909 | 43,106 | +1,268,504 / -829,675 |
+| TOTAL | 23,575 | 88,878 | +6,213,425 / -2,637,916 |
+
+### Git Churn By App - Monthly
+
+| Month | App | Commits | Files Changed | LoC +/- |
+| --- | --- | ---: | ---: | ---: |
+| 2026-05 | Docs/Tooling/Other | 2,480 | 36,849 | +700,892 / -659,722 |
+| 2026-05 | FreeX | 5,392 | 17,382 | +1,085,923 / -620,680 |
+| 2026-06 | Docs/Tooling/Other | 1,899 | 2,368 | +204,610 / -75,886 |
+| 2026-06 | FreeP | 288 | 527 | +102,235 / -14,312 |
+| 2026-06 | FreeW | 626 | 2,070 | +233,419 / -20,957 |
+| 2026-06 | FreeX | 4,633 | 12,103 | +2,332,663 / -1,046,453 |
+| 2026-06 | Shared | 242 | 467 | +32,775 / -3,103 |
+| 2026-07 | Docs/Tooling/Other | 2,453 | 2,899 | +305,824 / -80,833 |
+| 2026-07 | FreeP | 1,488 | 2,305 | +267,638 / -23,781 |
+| 2026-07 | FreeW | 964 | 1,869 | +182,194 / -22,960 |
+| 2026-07 | FreeX | 750 | 5,996 | +459,715 / -34,800 |
+| 2026-07 | Shared | 141 | 210 | +11,501 / -1,609 |
+| 2026-08 | Docs/Tooling/Other | 1,077 | 990 | +57,178 / -13,234 |
+| 2026-08 | FreeP | 418 | 704 | +70,168 / -5,187 |
+| 2026-08 | FreeW | 452 | 842 | +65,369 / -7,094 |
+| 2026-08 | FreeX | 199 | 1,215 | +95,447 / -6,202 |
+| 2026-08 | Shared | 73 | 82 | +5,874 / -1,103 |
+
+## Git Churn By Platform Layer
+
+- The codebase is organized by UI framework, not OS, so "platform" here means UI framework layer: `Windows (WPF)` = any path under `src/**`, `tests/**`, `freew/**`, `freep/**`, or `shared/**` matching `*.App.Host*`, `*.App.UI*`, `*.Wpf*`, or `*Free.Shared.*.Windows*` (e.g. `src/FreeX.App.Host`, `shared/Free.Shared.Ribbon.Wpf`, `shared/Free.Shared.AppServices.Windows`).
+- `Avalonia (Linux/macOS)` = same code area matching `*.App.Avalonia*`, `*.App.Rendering.Avalonia*`, or `*Free.Shared.*.Avalonia*` (e.g. `freep/FreeP.App.Rendering.Avalonia`, `shared/Free.Shared.Shell.Avalonia`).
+- `Platform-neutral (core/shared/IO/model)` = everything else under those same four top-level dirs (Core.*, App.Presentation, App.Services, Ribbon.Definitions, IO, Model, Commands, Drawing, Opc, Pdf/Pdf.Skia, etc.).
+- `Non-code` = everything outside `src/**`, `tests/**`, `freew/**`, `freep/**`, `shared/**` (`docs/**`, `tools/**`, top-level files, etc.).
+- Caveat: this is literal-glob matching per the above patterns, not a semantic "runs on Windows" judgment - e.g. `freep/FreeP.App.Ole.Windows` and `freep/FreeP.App.Recording.Windows` have "Windows" in their project name but do not match any of the `Windows (WPF)` globs above (no `.App.Host`, `.App.UI`, `.Wpf`, or `Free.Shared.*.Windows` substring), so they land in `Platform-neutral`.
+- "Files Changed" and "LoC +/-" are an EXACT partition of the same `git log --numstat` data behind Daily Build Churn above: every changed path is assigned to exactly one bucket, so these two columns sum exactly to the Daily Build Churn TOTAL row (the generator asserts this at build time and warns if it ever drifts).
+- "Commits" counts a commit once per bucket if it touched at least one path in that bucket (a commit touching multiple buckets is counted in each), so it is NOT expected to sum to the Daily Build Churn TOTAL commit count: git suppresses `--numstat` output for merge commits unless `-m`/`-c` is passed, so a merge commit with no line-level diff is tallied in the overall commit total but contributes to zero buckets here.
+- "Files Changed" is the sum of per-day distinct-path counts (matches the Daily Build Churn convention, not a window-wide dedup).
+
+### Git Churn By Platform Layer - Summary
+
+| Platform Layer | Commits | Files Changed | LoC +/- |
+| --- | ---: | ---: | ---: |
+| Windows (WPF) | 7,800 | 22,281 | +1,772,719 / -1,218,880 |
+| Avalonia (Linux/macOS) | 3,282 | 3,405 | +414,468 / -64,944 |
+| Platform-neutral (core/shared/IO/model) | 9,328 | 20,086 | +2,757,734 / -524,417 |
+| Non-code | 7,909 | 43,106 | +1,268,504 / -829,675 |
+| TOTAL | 28,319 | 88,878 | +6,213,425 / -2,637,916 |
+
+### Git Churn By Platform Layer - Monthly
+
+| Month | Platform Layer | Commits | Files Changed | LoC +/- |
+| --- | --- | ---: | ---: | ---: |
+| 2026-05 | Non-code | 2,480 | 36,849 | +700,892 / -659,722 |
+| 2026-05 | Platform-neutral (core/shared/IO/model) | 2,573 | 5,073 | +557,155 / -321,336 |
+| 2026-05 | Windows (WPF) | 3,073 | 12,309 | +528,768 / -299,344 |
+| 2026-06 | Avalonia (Linux/macOS) | 885 | 1,092 | +169,154 / -32,458 |
+| 2026-06 | Non-code | 1,899 | 2,368 | +204,610 / -75,886 |
+| 2026-06 | Platform-neutral (core/shared/IO/model) | 3,617 | 6,757 | +1,473,366 / -157,227 |
+| 2026-06 | Windows (WPF) | 2,494 | 7,318 | +1,058,572 / -895,140 |
+| 2026-07 | Avalonia (Linux/macOS) | 1,744 | 1,692 | +189,756 / -25,585 |
+| 2026-07 | Non-code | 2,453 | 2,899 | +305,824 / -80,833 |
+| 2026-07 | Platform-neutral (core/shared/IO/model) | 2,367 | 6,665 | +590,717 / -37,656 |
+| 2026-07 | Windows (WPF) | 1,696 | 2,023 | +140,575 / -19,909 |
+| 2026-08 | Avalonia (Linux/macOS) | 653 | 621 | +55,558 / -6,901 |
+| 2026-08 | Non-code | 1,077 | 990 | +57,178 / -13,234 |
+| 2026-08 | Platform-neutral (core/shared/IO/model) | 771 | 1,591 | +136,496 / -8,198 |
+| 2026-08 | Windows (WPF) | 537 | 631 | +44,804 / -4,487 |
 
 ## Daily Provider Token Usage
 
@@ -221,6 +303,51 @@ History window: 2026-05-12 through 2026-08-08
 | 2026-07-03 | anthropic | 15 | 15 | 498 | 155,634,155 | 109,987 | 0 | 2,817,488 | 87,063,387 | 97,199 | 0 | 90,088,061 | 12,435,385 |
 | TOTAL | all | 4871 | 4871 | 22,553,161 | 98,965,039,200 | 3,229,957,897,310 | 3,153,446,637,824 | 271,011,335 | 10,616,888,189 | 5,886,389,434 | 1,464,869,435 | 3,248,197,055,703 | 1,661,986,290,255 |
 
+## Provider Token Totals
+
+EXACT - summed directly from the per-day Anthropic and OpenAI usage rows above (each row is one date+provider; a date with both providers active contributes one row per provider).
+
+| Provider | Raw Tokens | Billable Eq Tokens |
+| --- | ---: | ---: |
+| Anthropic (Claude) | 10,917,017,058 | 1,429,570,522 |
+| OpenAI (Codex) | 3,237,280,038,645 | 1,660,556,719,733 |
+| TOTAL | 3,248,197,055,703 | 1,661,986,290,255 |
+
+## Estimated Token Allocation By App / Platform (derived, not measured)
+
+The sections below are **estimates derived from git churn share, not measurements**. Claude Code / Codex session logs do not record which app or platform layer a session worked on: of the local Claude session records, the overwhelming majority run on the `main` git branch (or an auto-generated `claude/<random-name>` branch carrying no app info), and the working directory (`cwd`) recorded in nearly every session is the monorepo root rather than an app subfolder - so there is no reliable field to group real usage by app or platform. The allocation below instead spreads each day's observed raw tokens across buckets using that same day's EXACT churn share from the "Git Churn By App" / "By Platform Layer" sections. Treat it as a rough proxy for where effort likely went, not as billed or measured per-app usage.
+
+### Estimated Token Allocation By App (derived, not measured)
+
+**ESTIMATE - do not read as measured per-bucket token usage.** Token logs carry no app/platform attribution; these figures allocate each day's combined raw token total (Anthropic + OpenAI) across buckets in proportion to that day's EXACT git churn share (LoC added + removed) from the churn section above. A day with tokens logged but zero churn in the window falls into `Unallocated` rather than being dropped or forced into a bucket.
+
+| App | Est. Allocated Raw Tokens | Share |
+| --- | ---: | ---: |
+| FreeX | 964,588,793,422 | 29.7 % |
+| FreeW | 548,216,449,422 | 16.9 % |
+| FreeP | 868,830,343,908 | 26.7 % |
+| Shared | 40,723,773,604 | 1.3 % |
+| Docs/Tooling/Other | 825,837,695,347 | 25.4 % |
+| Unallocated (tokens logged, no churn that day) | 0 | 0.0 % |
+| TOTAL | 3,248,197,055,703 | 100.0% |
+
+- Days allocated (had both tokens and churn weight): 56. Days with tokens but no churn to allocate against (routed to Unallocated): 0.
+
+### Estimated Token Allocation By Platform Layer (derived, not measured)
+
+**ESTIMATE - do not read as measured per-bucket token usage.** Token logs carry no app/platform attribution; these figures allocate each day's combined raw token total (Anthropic + OpenAI) across buckets in proportion to that day's EXACT git churn share (LoC added + removed) from the churn section above. A day with tokens logged but zero churn in the window falls into `Unallocated` rather than being dropped or forced into a bucket.
+
+| Platform Layer | Est. Allocated Raw Tokens | Share |
+| --- | ---: | ---: |
+| Windows (WPF) | 430,393,703,326 | 13.3 % |
+| Avalonia (Linux/macOS) | 677,345,932,160 | 20.9 % |
+| Platform-neutral (core/shared/IO/model) | 1,314,619,724,870 | 40.5 % |
+| Non-code | 825,837,695,347 | 25.4 % |
+| Unallocated (tokens logged, no churn that day) | 0 | 0.0 % |
+| TOTAL | 3,248,197,055,703 | 100.0% |
+
+- Days allocated (had both tokens and churn weight): 56. Days with tokens but no churn to allocate against (routed to Unallocated): 0.
+
 ## Token Extraction Notes
 
 - Anthropic / Claude source: `~/.claude/projects/*FreeX*/**/*.jsonl` (directory names containing "FreeX", case-insensitive; includes worktree-scoped project dirs and nested subagent transcripts).
@@ -228,6 +355,7 @@ History window: 2026-05-12 through 2026-08-08
 - Files/Sessions counts are distinct file/session-id counts contributing to that date+provider row. Events is the count of usage-bearing records attributed to that date.
 - Bytes +/- attributes each contributing file's full size to every date on which it had at least one attributed usage event (a file spanning multiple days is counted on each of those days).
 - Machines aggregated into this run's totals: I5-32GB.
+- Per-machine `project-history-tokens-<MachineId>.json` files (tracked in git; see the multi-machine workflow note at the top of `tools/Build-ProjectHistoryMetrics.ps1`) contain ONLY: `machineId`, `generatedAt`, `startDate`, `endDate`, an `anthropic` object and an `openai` object each keyed by date with per-day `files`/`sessions`/`events`/`bytes`/`input`/`cachedInput`/`cacheWrite`/`cacheRead`/`output`/`reasoning` counts, and a static `codexNote` methodology string. No transcript content, prompts, file paths, or session titles are read or stored.
 
 ## Git Authors Observed
 
@@ -319,11 +447,11 @@ History window: 2026-05-12 through 2026-08-08
 - 2026-08-05: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
 - 2026-08-06: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
 - 2026-08-07: Claude <noreply@anthropic.com>
-- 2026-08-08: Anton <lumodataroom@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-08-08: Anton <lumodataroom@gmail.com>; Claude <noreply@anthropic.com>; tony-xmelon <tony.xmelon@gmail.com>
 
 ## Reading The Trend
 
-- The daily churn table covers 2026-05-12 through 2026-08-08, computed fresh from git history reachable from HEAD (`318344017`) at generation time.
-- Across the window: 31,923 commits, 88,816 changed-file/day entries, +6,205,111 / -2,634,802 LoC.
+- The daily churn table covers 2026-05-12 through 2026-08-08, computed fresh from git history reachable from HEAD (`b10585638`) at generation time.
+- Across the window: 31,930 commits, 88,878 changed-file/day entries, +6,213,425 / -2,637,916 LoC.
 - Token rows reflect 98,965,039,200 bytes of local provider logs, 3,248,197,055,703 observed raw tokens, and 1,661,986,290,255 provider-style billable-equivalent tokens, from machine(s): I5-32GB.
-- This machine (I5-32GB) has contributed its token logs. Run this script on the user's other machines and copy their project-history-tokens-*.json into .metrics-data before re-running here (or there) to fold their usage into these totals.
+- This machine (I5-32GB) has contributed its token logs. Run this script on the user's other machines and copy their project-history-tokens-*.json into C:\Users\anton\OneDrive\Documents\FreeX\FreeX\.worktrees\metrics-breakdown-20260808\.metrics-data before re-running here (or there) to fold their usage into these totals.
