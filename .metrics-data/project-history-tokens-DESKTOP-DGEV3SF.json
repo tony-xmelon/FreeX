@@ -1,14 +1,14 @@
 {
     "machineId":  "DESKTOP-DGEV3SF",
-    "generatedAt":  "2026-08-08T17:54:20.4816146+03:00",
+    "generatedAt":  "2026-08-09T00:40:44.4494243+03:00",
     "startDate":  "2026-05-12",
-    "endDate":  "2026-08-08",
+    "endDate":  "2026-08-09",
     "anthropic":  {
                       "2026-06-16":  {
                                          "files":  11,
                                          "sessions":  11,
                                          "events":  475,
-                                         "bytes":  22047718,
+                                         "bytes":  22306143,
                                          "input":  106748,
                                          "cachedInput":  0,
                                          "cacheWrite":  2389427,
@@ -184,7 +184,7 @@
                                          "files":  18,
                                          "sessions":  18,
                                          "events":  1623,
-                                         "bytes":  43081264,
+                                         "bytes":  43339689,
                                          "input":  192525,
                                          "cachedInput":  0,
                                          "cacheWrite":  15088511,
@@ -289,22 +289,22 @@
                       "2026-08-08":  {
                                          "files":  8,
                                          "sessions":  8,
-                                         "events":  552,
-                                         "bytes":  7729056,
-                                         "input":  36764,
+                                         "events":  563,
+                                         "bytes":  7987481,
+                                         "input":  36786,
                                          "cachedInput":  0,
-                                         "cacheWrite":  2436481,
-                                         "cacheRead":  159719285,
-                                         "output":  259104,
+                                         "cacheWrite":  2444772,
+                                         "cacheRead":  167116435,
+                                         "output":  264127,
                                          "reasoning":  0,
                                          "apps":  {
                                                       "Docs/Tooling/Other":  {
-                                                                                 "events":  390,
-                                                                                 "input":  14036,
+                                                                                 "events":  401,
+                                                                                 "input":  14058,
                                                                                  "cachedInput":  0,
-                                                                                 "cacheWrite":  1902131,
-                                                                                 "cacheRead":  145227684,
-                                                                                 "output":  255209,
+                                                                                 "cacheWrite":  1910422,
+                                                                                 "cacheRead":  152624834,
+                                                                                 "output":  260232,
                                                                                  "reasoning":  0
                                                                              },
                                                       "FreeX":  {
@@ -328,12 +328,12 @@
                                                   },
                                          "platforms":  {
                                                            "Non-code":  {
-                                                                            "events":  390,
-                                                                            "input":  14036,
+                                                                            "events":  401,
+                                                                            "input":  14058,
                                                                             "cachedInput":  0,
-                                                                            "cacheWrite":  1902131,
-                                                                            "cacheRead":  145227684,
-                                                                            "output":  255209,
+                                                                            "cacheWrite":  1910422,
+                                                                            "cacheRead":  152624834,
+                                                                            "output":  260232,
                                                                             "reasoning":  0
                                                                         },
                                                            "Platform-neutral (core/shared/IO/model)":  {
@@ -354,6 +354,40 @@
                                                                                                    "output":  3613,
                                                                                                    "reasoning":  0
                                                                                                }
+                                                       }
+                                     },
+                      "2026-08-09":  {
+                                         "files":  1,
+                                         "sessions":  1,
+                                         "events":  23,
+                                         "bytes":  4753597,
+                                         "input":  46,
+                                         "cachedInput":  0,
+                                         "cacheWrite":  661155,
+                                         "cacheRead":  15241131,
+                                         "output":  19429,
+                                         "reasoning":  0,
+                                         "apps":  {
+                                                      "Docs/Tooling/Other":  {
+                                                                                 "events":  23,
+                                                                                 "input":  46,
+                                                                                 "cachedInput":  0,
+                                                                                 "cacheWrite":  661155,
+                                                                                 "cacheRead":  15241131,
+                                                                                 "output":  19429,
+                                                                                 "reasoning":  0
+                                                                             }
+                                                  },
+                                         "platforms":  {
+                                                           "Non-code":  {
+                                                                            "events":  23,
+                                                                            "input":  46,
+                                                                            "cachedInput":  0,
+                                                                            "cacheWrite":  661155,
+                                                                            "cacheRead":  15241131,
+                                                                            "output":  19429,
+                                                                            "reasoning":  0
+                                                                        }
                                                        }
                                      }
                   },
