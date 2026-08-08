@@ -3,6 +3,12 @@
 Status as of 2026-06-14. Benchmark workbook: 3 sheets × 20 000 rows × 15 cols
 = 900 045 cells, 4.8 MB on disk (FreeX-generated, canonical grid).
 
+<!-- VERIFY: numbers below are ~2 months stale as of this audit (2026-08-08); IO work continued after this
+     snapshot (e.g. startup pipeline prewarm landed 2026-06-14 same day, COIN XLSM open optimization
+     2026-06-20, and further patch-save fix/feature commits since). The qualitative picture (ClosedXML-bound
+     open, patch-save much closer to Excel than a full save) still matches the current codebase shape
+     (XlsxFileAdapter still wraps ClosedXML), but re-run the benchmark below before citing exact figures. -->
+
 Generate: `dotnet run --project tools/FreeX.AppIoBench -c Release -- --generate
 --out %TEMP%\freex-large.xlsx --rows 20000 --cols 15 --sheets 3`
 

@@ -31,8 +31,11 @@ live tracker of individual gaps.
   `net10.0` and already build and run on Linux.
 - `FreeX.App.Services` is the shared, portable app layer (workbook session orchestration,
   command-bus editing/formatting, clipboard/Paste Special planning, dialog planners,
-  export/print planning, recent-file store, options/diagnostics path planning). It is the
-  same layer the macOS lane uses; no Linux fork is required.
+  export/print planning). Some previously-`FreeX.App.Services` pieces (recent-file store,
+  app-data-path providers, share-action planning) have since moved into the cross-app
+  `shared/Free.Shared.AppServices` tier as part of the shared-tier extraction — see
+  [shared-tier-extraction.md](shared-tier-extraction.md). Either way it's the same shared
+  layer the macOS lane uses; no Linux fork is required.
 - `src/FreeX.App.Avalonia` is the cross-platform preview shell. It publishes self-contained
   for `linux-x64` and `linux-arm64` with a native ELF apphost (`FreeX`) and the bundled
   SkiaSharp/HarfBuzz/ICU native libraries — no system .NET is needed. Avalonia renders on

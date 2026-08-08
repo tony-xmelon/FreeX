@@ -2,6 +2,13 @@
 
 Generated: 2026-06-18
 
+<!-- VERIFY: ~7 weeks stale as of this audit (2026-08-08). The generator
+     (`tools/icon-audit/generate-freex-icon-audit.mjs`) still correctly points at
+     `src/FreeX.Ribbon.Definitions/Resources/CommandIconsSvg` (icons were NOT moved into shared/ by the later
+     shared-tier extraction — that project already held them at generation time), but a raw file count now
+     shows 384 SVGs there versus the "390" reported below — close but drifted. Regenerate via the script
+     rather than trusting exact figures. -->
+
 ## Summary
 
 - Commands audited: 290
