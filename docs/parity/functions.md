@@ -1,7 +1,7 @@
 # FreeX Formula Function Parity
 
 **Last updated:** 2026-06-01
-**Total implemented:** 488
+**Total implemented:** 496
 **Status:** All in-scope functions implemented
 
 ## Status Legend
@@ -150,7 +150,7 @@ Post-sweep hardening also pins `ASC`, `DBCS`, and `JIS` to Excel's non-DBCS lang
 
 ## Statistical
 
-**Coverage: 139/139 (100%)**
+**Coverage: 140/140 (100%)**
 
 | Function | Status |
 |---|---|

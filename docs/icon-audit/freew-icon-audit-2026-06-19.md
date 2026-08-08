@@ -2,6 +2,13 @@
 
 Generated: 2026-06-19
 
+<!-- VERIFY: SVG asset counts below are ~7 weeks stale as of this audit (2026-08-08). The generator
+     (`tools/icon-audit/generate-freew-icon-audit.mjs`) still points at the correct current directories
+     (`freew/FreeW.App.Host/Resources/CommandIconsSvg` for local, `src/FreeX.Ribbon.Definitions/Resources/CommandIconsSvg`
+     for shared — paths are current, not stale from the shared-tier extraction), but a raw file count now
+     shows 547 SVGs under the FreeW local directory versus the "168" reported here — FreeW's icon set has
+     grown substantially since this audit ran. Regenerate via the script rather than trusting this count. -->
+
 ## Summary
 
 - Commands audited: 169

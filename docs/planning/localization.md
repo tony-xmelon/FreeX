@@ -2,6 +2,13 @@
 
 Date: 2026-06-01
 
+<!-- Path correction 2026-08-08: neutral + satellite resources have since moved from
+`src/FreeX.App.Host/Resources/Strings.resx` into `shared/Free.Shared.Localization/Resources/`
+(43 satellite Strings.<culture>.resx files confirmed present there; none remain directly under
+src/FreeX.App.Host/Resources). `UiText.cs`, `LocExtension.cs`, and `AppLocalization.cs` are
+still in `src/FreeX.App.Host`. This makes the resource substrate reusable by FreeW/FreeP too;
+see shared-tier-extraction.md. Culture/UI-text guidance below is otherwise still accurate. -->
+
 ## Goal
 
 Make FreeX localizable without weakening spreadsheet fidelity. UI text should come from resources selected by `CurrentUICulture`; user-entered and displayed numbers/dates should respect `CurrentCulture` or an explicit workbook/import culture; file formats, formula storage, telemetry IDs, schema IDs, and command identities should remain invariant.
@@ -10,7 +17,7 @@ Make FreeX localizable without weakening spreadsheet fidelity. UI text should co
 
 - FreeX is a .NET 10 WPF desktop app. `FreeX.App.Host` owns the shell, dialogs, message boxes, localization resources, and command surface; `FreeX.App.UI` owns custom rendering such as the grid and charts; core projects own model, formulas, commands, calc, and IO.
 - The production localization substrate is implemented in `FreeX.App.Host`: `UiText` wraps `ResourceManager`, `LocExtension` binds XAML attributes to resources, `AppLocalization` applies startup UI culture and WPF language metadata, and `AppLanguageCatalog` discovers satellite resources after build.
-- Neutral resources now live in `src/FreeX.App.Host/Resources/Strings.resx`. The app now ships 43 complete satellite resource files covering `bg-BG`, `cs-CZ`, `da-DK`, `de-AT`, `de-CH`, `de-DE`, `el-GR`, `en-AU`, `en-CA`, `en-GB`, `en-IE`, `en-NZ`, `en-ZA`, `es-AR`, `es-CL`, `es-CO`, `es-ES`, `es-MX`, `et-EE`, `fi-FI`, `fr-CA`, `fr-FR`, `ga-IE`, `hr-HR`, `hu-HU`, `it-IT`, `lt-LT`, `lv-LV`, `mt-MT`, `nb-NO`, `nl-BE`, `nl-NL`, `pl-PL`, `pt-BR`, `pt-PT`, `ro-RO`, `sk-SK`, `sl-SI`, `sr-Cyrl-RS`, `sr-Latn-RS`, `sv-SE`, `tr-TR`, and `uk-UA`.
+- Neutral resources now live in `shared/Free.Shared.Localization/Resources/Strings.resx` (moved from `src/FreeX.App.Host/Resources/Strings.resx` as part of the shared-tier extraction). The app now ships 43 complete satellite resource files covering `bg-BG`, `cs-CZ`, `da-DK`, `de-AT`, `de-CH`, `de-DE`, `el-GR`, `en-AU`, `en-CA`, `en-GB`, `en-IE`, `en-NZ`, `en-ZA`, `es-AR`, `es-CL`, `es-CO`, `es-ES`, `es-MX`, `et-EE`, `fi-FI`, `fr-CA`, `fr-FR`, `ga-IE`, `hr-HR`, `hu-HU`, `it-IT`, `lt-LT`, `lv-LV`, `mt-MT`, `nb-NO`, `nl-BE`, `nl-NL`, `pl-PL`, `pt-BR`, `pt-PT`, `ro-RO`, `sk-SK`, `sl-SI`, `sr-Cyrl-RS`, `sr-Latn-RS`, `sv-SE`, `tr-TR`, and `uk-UA`.
 - XAML and host-source guard tests now enforce localization usage for user-facing XAML attributes, message/progress calls, automation names/help text, and used resource keys.
 - A large portion of host dialog and shell text now flows through `UiText`/`Loc`. Pseudo-localization contract smoke coverage now proves high-risk shell/ribbon/dialog strings can be expanded while preserving placeholders and access-key counts. Remaining work is native-speaker/translator review for the satellite files, core message-code boundaries, culture-sensitive user input audits, selectable pseudo-localized runtime/visual clipping coverage, and package/release language metadata validation.
 - Command identity remains a risk area wherever planners still infer behavior from display text. Continue migrating behavior to invariant command IDs before expanding translated command surfaces.

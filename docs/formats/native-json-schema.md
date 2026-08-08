@@ -1,6 +1,6 @@
 # FreeX Native JSON Schema
 
-FreeX `.fxl` files are UTF-8 JSON documents written by `NativeJsonAdapter`. The format is intended to be human-readable, stable enough for project fixtures, and explicit about reader compatibility. The current schema version is `1`.
+FreeX `.fxl` files are UTF-8 JSON documents written by `NativeJsonAdapter`. The format is intended to be human-readable, stable enough for project fixtures, and explicit about reader compatibility. The current schema version is `2`.
 
 ## Compatibility Header
 
@@ -9,10 +9,10 @@ Every newly saved native JSON workbook writes these root properties:
 | Property | Type | Meaning |
 |---|---|---|
 | `FileFormat` | string | Must be `FreeX.NativeJsonWorkbook` for versioned files. Legacy unversioned files may omit it. |
-| `SchemaVersion` | number | Writer schema version. Current value: `1`. |
+| `SchemaVersion` | number | Writer schema version. Current value: `2`. Bumped 1 -> 2 (R72-meta-1): schema version 2 marks the point at which an explicit conditional-format data-bar Min/Max threshold type is trusted as-is on load; only a loaded schema version still below 2 (a genuine pre-r70/legacy save) has its legacy Min/Max data-bar endpoint migrated to AutoMin/AutoMax. |
 | `MinimumReaderVersion` | number | Oldest reader schema version that may safely load the file. Current value: `1`. |
 
-Legacy unversioned files are accepted as pre-v1 documents and are migrated by save into the current header. Files with unsupported future versions are rejected until an explicit migration path is implemented.
+Legacy unversioned files are accepted as pre-v1 documents (schema version is treated as `1` when the field is missing) and are migrated by save into the current header. Files with unsupported future versions are rejected until an explicit migration path is implemented.
 
 ## Workbook Root
 

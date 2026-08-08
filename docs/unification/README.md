@@ -1,6 +1,8 @@
 # FreeFamily Unification Program
 
-> **Branch:** `unification-program` (kept **unmerged** so it can be compared side-by-side against stable `main`).
+> **Status:** the `unification-program` branch has been merged into `main` and deleted (all phases below landed
+> on `main`; the branch no longer exists as of this writing). This document is kept as the historical record
+> of the program's principles and phase-by-phase execution.
 > **Goal:** Maximise what is shared and kept consistent across a growing family of sister apps (FreeX = spreadsheet, FreeW = word processor, more to come) so that divergent codebases do **not** accumulate regressions and technical debt.
 
 ## Why this program exists
@@ -14,7 +16,13 @@ This branch is the deliberate, documented execution of that, kept separate from 
 
 ## Current shared spine (already healthy)
 
-Seven shared projects under `shared/`, with a clean portable/Windows split and **no domain leakage, nothing "shared in name only."** Both FreeX and FreeW already consume them.
+<!-- VERIFY: table below reflects the June 2026 program snapshot (7 projects). As of this audit (2026-08-08)
+     `shared/` has grown to 19 csproj — it now also includes Free.Shared.Ribbon.Avalonia, Free.Shared.Shell.Avalonia,
+     Free.Shared.Theme(.Wpf/.Avalonia), Free.Shared.Drawing, Free.Shared.Localization, Free.Shared.Pdf(.Skia/.Wpf) —
+     added by later sessions after this doc's last edit. Re-run `Glob shared/**/*.csproj` for the current list
+     before treating this table as exhaustive. -->
+
+Seven shared projects under `shared/` as of the program's initial phases, with a clean portable/Windows split and **no domain leakage, nothing "shared in name only."** FreeX, FreeW, and (later) FreeP consume them.
 
 | Project | TFM | Role |
 |---|---|---|
@@ -59,9 +67,13 @@ FreeX has ~3,530 lines across six `MainWindowSourceHygieneTests.*.cs` files plus
 
 ## How to compare against stable
 
+<!-- VERIFY (historical): this section described the pre-merge A/B comparison workflow. The
+     `unification-program` branch and its `.worktrees/unification` checkout no longer exist — the work is
+     merged into `main`. Kept here for historical context on how the comparison was originally done. -->
+
 - **Stable:** the main checkout at `…/FreeX` on branch `main`.
 - **Unified:** this worktree at `…/FreeX/.worktrees/unification` on branch `unification-program`.
 
-Both are independently buildable (`dotnet build FreeX.slnx -c Release`) and runnable, so the two backstage/shell experiences can be exercised side by side. This branch is **not merged** until the team signs off on the comparison.
+Both were independently buildable (`dotnet build FreeX.slnx -c Release`) and runnable, so the two backstage/shell experiences could be exercised side by side before the branch was merged into `main`.
 
 See [LOG.md](LOG.md) for the per-phase execution record (what changed, verification results, decisions).
