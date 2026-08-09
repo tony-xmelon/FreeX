@@ -6,9 +6,19 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ## Dedup exhaustion campaign report - DRAFT (2026-08-09)
 
-Added the [dedup exhaustion report](DEDUP-EXHAUSTION-2026-08-09.md), covering the campaign architecture,
-major extraction areas, measured renderer LOC reduction, and disposition of the lexical residuals. Final
-synchronization, test gates, and FreeX WPF visual parity remain explicitly **PENDING** for the orchestrator.
+Refreshed the [dedup exhaustion report](DEDUP-EXHAUSTION-2026-08-09.md) through the final implementation
+checkpoint and regenerated residual evidence. The last renderer extractions were FreeW table-border endpoint
+projection (`50f48c1aca`), FreeP chart-marker geometry (`ba00a89312`), FreeP selection-adorner projection
+geometry (`ec3faa3ee4`), and FreeP inline baseline placement (`3b149d3878`).
+
+Upstream synchronization preserved or repaired shared ownership in `7f7506e5d0`, `5c56d0198c`, and
+`8fc243fc79`; synchronized analysis commit `ad82671328` is the checkpoint recorded by residual-metrics commit
+`fd07a9db50`. The current measurement covers 309,986 renderer code lines: 11,205 exact duplicate lines
+(3.614679%), 11,963 normalized duplicate lines (3.859207%), and a campaign renderer delta of 26,618 additions
+versus 63,352 deletions, net **-36,734 C# LOC**.
+
+Final integration, synchronized build/test gates, and FreeX WPF visual parity remain explicitly **PENDING**
+for the parent orchestrator. This documentation entry does not claim those results.
 
 ---
 

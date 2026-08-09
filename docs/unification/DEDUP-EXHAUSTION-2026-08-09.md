@@ -6,19 +6,18 @@
 
 ## Scope and evidence
 
-This report closes the implementation inventory for branch `codex/dedup-exhaustion-20260805`. The dedup
-evidence tip is `4d7cfcdeaae6fb06d26a5d14f32eec9d7abd0a27`; its recorded campaign merge base is
-`a7547949df2e4a8ee6034005d9b916efc31cd53e`. That range contains 350 commits, including 309 non-merge commits.
-The branch subsequently merged current `origin/main` at pre-documentation tip
-`af49386c31dd4dc1fa75943ebdfda0c886a38543`. That is not the final synchronized commit: remaining slices and
-the final gates still have to land. The commit references below are representative anchors, not an exhaustive
-changelog.
+This report closes the implementation inventory for branch `codex/dedup-exhaustion-20260805`. The final
+implementation checkpoint is synchronized commit `ad826713286f358f170fa1a7ba6b838d9af209a1`, whose recorded
+upstream and merge base are both `e1225af9b1689b39050f8154774c2a097b92af95`. The regenerated residual
+evidence was committed in `fd07a9db50d315a1a9b5dc0c68eaaed7b3da7a81`. Subsequent synchronization and
+documentation commits do not replace the measured analysis commit or constitute final integration sign-off.
+The commit references below are representative anchors, not an exhaustive changelog.
 
 The interpretation follows the [program principles](README.md), [architecture roadmap](ROADMAP.md),
 [closed historical backlog](DEDUP-BACKLOG.md), [generated residual metrics](dedup-residual-metrics.md), and
-[execution log](LOG.md). The generated metrics use analysis commit
-`64fcc4384a223aa0d0de78430775ebb98b9d3ac0`; follow-up campaign commits after that checkpoint are reflected in
-the narrative but not retroactively invented as regenerated residual results.
+[execution log](LOG.md). The current generated metrics use analysis commit
+`ad826713286f358f170fa1a7ba6b838d9af209a1` and therefore include the final implemented renderer slices and
+the synchronization ownership fixes described below.
 
 ## Current and desired architecture
 
@@ -44,28 +43,25 @@ two thin native realizations, with each app retaining a focused workarea over it
 | Main editor and status | Workbook, document-editor, presentation-workarea, and application-frame sessions now own portable command/state transitions. Status display/options flow through shared models and a portable FreeX update workflow; native bars and editors only project state and events. | `3c38b5ee29`, `58eda0a80b`, `65c9a5bc7e`, `a06faa6204`, `617eaa8618` |
 | Localization and resources | Shared resource mechanics, catalog metadata, common shell text, About/legal resources, and thin localization facades replaced infrastructure copies. Product wording and localized catalog context remain product-owned. | `d0450c7d3f`, `d4f32dcefe`, `fce1268b87`, `dc1a6d71ee`, `2a295d6aa8`, `f05216fd53` |
 | Dialogs | FreeX range-selection lifecycle, FreeW reference/formatting/options/document dialogs, and FreeP chart/slideshow/layout/hyperlink/form dialogs moved their validation, commit policy, sessions, action catalogs, and typed schemas into portable tiers. WPF/Avalonia controls and modal lifetime remain native. | `fff17b7acf`, `64319d5647`, `ae9ec58c0b`, `8f6314bb16`, `467648ee61`, `0c866df67a` |
-| QuickAnalysis, PageLayout, charts, tables, text boxes, and shapes | FreeX selection and conditional-format policy, PageLayout workflows/outcomes, chart commands, structured-table selection/overlap, text-box editing, and drawing drag/completion moved out of renderer event handlers. Shared drawing/chart geometry and FreeP shape traversal cover reusable planning below those flows. | `7e91e91ae2`, `18df014f7a`, `f8fbee3708`, `9b194796bb`, `a454b8933b`, `55d4adb72d`, `7d77db7196` |
+| QuickAnalysis, PageLayout, charts, tables, text boxes, and shapes | FreeX selection and conditional-format policy, PageLayout workflows/outcomes, chart commands, structured-table selection/overlap, text-box editing, and drawing drag/completion moved out of renderer event handlers. The final slices also centralized FreeW table-border endpoint projection plus FreeP chart-marker and selection-adorner geometry. Shared drawing/chart geometry and FreeP shape traversal cover reusable planning below those flows. | `7e91e91ae2`, `18df014f7a`, `f8fbee3708`, `9b194796bb`, `a454b8933b`, `55d4adb72d`, `7d77db7196`, `50f48c1aca`, `ba00a89312`, `ec3faa3ee4` |
 | Sister-app startup and chrome | FreeW startup/recovery policy, shared Avalonia Backstage/ribbon chrome, launch-smoke bootstrap, and sister-app shell behavior converged while executable startup and native window creation stayed local. | `6fbbde4093`, `959f221b93`, `955c2a7897` |
-| Renderer planning | Portable geometry, text layout, render commands, pane/slideshow policy, and workarea sessions now feed FreeX/FreeW/FreeP renderers. Native canvas, drawing-context, accessibility, and animation realization remain in renderer packages. | `85b3c78807`, `d07cd19a63`, `2090efa777`, `df74a01411`, `9d98939999`, `320fd70985`, `649a373a1c`, `ba00a89312` |
-| Test and evidence infrastructure | Repository/source locators, temporary resources, localization contracts, evidence-tool workflow, ownership guards, and deterministic residual measurement were consolidated. Product scenarios and framework-specific capture drivers remain separate where they exercise different native stacks. | `ac51cbf3be`, `ef17eb6297`, `8a11d2a9f0`, `f05216fd53`, `9c428f2f1c`, `4d7cfcdeaa` |
+| Renderer planning | Portable geometry, text layout, render commands, pane/slideshow policy, and workarea sessions now feed FreeX/FreeW/FreeP renderers. Final FreeP work centralized chart-marker geometry, selection-adorner projection geometry, and inline baseline placement. Native canvas, drawing-context, accessibility, and animation realization remain in renderer packages. | `85b3c78807`, `d07cd19a63`, `2090efa777`, `df74a01411`, `9d98939999`, `320fd70985`, `649a373a1c`, `ba00a89312`, `ec3faa3ee4`, `3b149d3878` |
+| Test and evidence infrastructure | Repository/source locators, temporary resources, localization contracts, evidence-tool workflow, ownership guards, and deterministic residual measurement were consolidated. The final upstream synchronization preserved shared animation, shell-runner, table-projection, and test-locator ownership and repaired the thin sister-app adapters. Product scenarios and framework-specific capture drivers remain separate where they exercise different native stacks. | `ac51cbf3be`, `ef17eb6297`, `8a11d2a9f0`, `f05216fd53`, `9c428f2f1c`, `7f7506e5d0`, `5c56d0198c`, `8fc243fc79`, `ad82671328`, `fd07a9db50` |
 
 ## Measurable renderer reduction
 
-The deterministic checkpoint in [dedup-residual-metrics.md](dedup-residual-metrics.md) measured the eight
-configured renderer roots from merge base `a7547949df2e4a8ee6034005d9b916efc31cd53e` to analysis commit
-`64fcc4384a223aa0d0de78430775ebb98b9d3ac0`:
+The deterministic checkpoint in [dedup-residual-metrics.md](dedup-residual-metrics.md), committed by
+`fd07a9db50`, measured the eight configured renderer roots from merge base
+`e1225af9b1689b39050f8154774c2a097b92af95` to synchronized analysis commit
+`ad826713286f358f170fa1a7ba6b838d9af209a1`:
 
-| Measurement | Files changed | Added | Deleted | Net renderer C# LOC |
+| Scope | Files changed | Added | Deleted | Net C# LOC |
 |---|---:|---:|---:|---:|
-| Generated analysis checkpoint | 457 | 26,385 | 61,490 | **-35,105** |
-| Raw `git diff --numstat` at pre-documentation tip `4d7cfcdeaa` | 458 | 26,284 | 62,802 | **-36,518** |
+| All C# | 1,750 | 135,195 | 81,030 | **+54,165** |
+| Renderer C# | 460 | 26,618 | 63,352 | **-36,734** |
 
-The second row uses the same renderer-root path set as the generator and captures follow-up implementation
-after the generated checkpoint; it is a LOC delta, not a regenerated duplicate-coverage result. Documentation
-changes do not affect it.
-
-At the generated checkpoint, the renderers contained 310,906 measured code lines. Cross-root lexical coverage
-was 12,187 lines (3.919834%) for exact windows and 12,919 lines (4.155275%) for normalized windows. FreeX and
+At that checkpoint, the renderers contained 309,986 measured code lines. Cross-root duplicate coverage was
+11,205 lines (3.614679%) for exact windows and 11,963 lines (3.859207%) for normalized windows. FreeX and
 FreeW roots were each below 1.4% normalized coverage. The larger remaining percentages are concentrated in
 FreeP's parallel WPF/Avalonia app and rendering surfaces, where native control and rendering symmetry is much
 greater.
@@ -94,9 +90,10 @@ into these categories:
 - **Product and format semantics.** Cells/formulas, paragraphs/runs, slides/shapes, and XLSX/DOCX/PPTX-specific
   behavior remain separate even when small blocks happen to normalize alike.
 
-Some high-ranked checkpoint candidates were reduced by follow-up commits, including chart-option test plans,
-renderer text layout, and animation-pane schemas. The categories above are therefore the stable disposition;
-the line-ranked checkpoint list must not be read as a current extraction backlog.
+The current measurement already includes the final FreeW table endpoint projection (`50f48c1aca`), FreeP chart
+geometry (`ba00a89312`), selection-adorner geometry (`ec3faa3ee4`), and inline baseline (`3b149d3878`) slices.
+The categories above are therefore the stable disposition; the line-ranked candidate list is evidence for
+native-leaf classification and must not be read as a current extraction backlog.
 
 ## Extraction rule
 
