@@ -7,8 +7,9 @@ WPF/Avalonia workflow that consumes them.
 
 ## Current baseline
 
-- Main tip at this checkpoint: `d2197a476c`.
-- Command inventory: `658` command IDs present in both WPF and Avalonia; the
+- Main tip at the prior checkpoint: `d2197a476c`.
+- Current source audit tip: `379302391b` (`Merge Avalonia inline column-break parity`).
+- Command inventory: `668` command IDs present in both WPF and Avalonia; the
   inventory reports `0` WPF-only, `0` Avalonia-only, and `0` actionable command
   gaps.
 - Functional corpus recorded in the baseline evidence: `27/27` decks opened,
@@ -60,6 +61,30 @@ Recent function-first additions on main include:
 - cache-only SmartArt picture replacement/clearing, plus live and insertion
   payload support for the vertical picture-list layout; Avalonia inline page
   breaks now also paginate through the shared display-layer path.
+
+## Current-source audit: 2026-08-09
+
+The source audit was intentionally function-first. It found no new safe chart
+omission: doughnut, radar, bubble, stock, and Surface3D chart dispatches are
+present in both WPF and Avalonia. It also confirmed that the earlier OMML
+equation-array distribution gap is already represented by the shared model and
+layout planner. Those areas remain visual/evidence-depth work, not missing
+authoring routes.
+
+Rotated or flipped OLE is a genuine architectural boundary rather than a
+missing transform property. Native in-place activation creates an HWND child;
+the current WPF/Avalonia host engines can size that child but cannot apply the
+slide's rotation/flip transform. Both hosts therefore reject that route and
+retain external activation as the safe fallback. A visual-only transform shim
+would not provide editable in-place OLE semantics and was deliberately not
+added.
+
+The remaining rich-editor boundary is similarly explicit: the model and
+clipboard paths retain bullet/numbering metadata, but the WPF FlowDocument
+editing adapter still defers full list-continuity and IME behavior. Any next
+slice should add display-only list markers without contaminating model text or
+caret offsets, and should be proven against the existing WPF/Avalonia rich
+editor contracts before it is called parity.
 
 ## What remains
 
