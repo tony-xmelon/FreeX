@@ -5,7 +5,7 @@
 - Refresh imported `TEMPLATE` fields from the preserved `docProps/app.xml` `Template` value.
 - Refresh `DOCPROPERTY Template` through the same package-authoritative path.
 - Expose `Template (TEMPLATE)` in the shared Insert Field picker and resolve its initial result in WPF and Avalonia.
-- Preserve the cached Word result for `TEMPLATE \\p`; the full attached-template path belongs to the preserved external relationship graph and is not yet a modeled FreeW value.
+- Refresh `TEMPLATE \\p` from the preserved `w:attachedTemplate` external relationship, converting file URIs to Word-style paths while retaining the cached result for missing or malformed relationship data.
 
 ## Word contract
 
@@ -16,7 +16,7 @@ Microsoft documents `TEMPLATE` as the attached document template's file name and
 
 ## Acceptance
 
-- Shared model: plain `TEMPLATE`, `DOCPROPERTY Template`, general text formats, cached `\\p`, and malformed/missing package fallback.
-- DOCX: field instructions and `app.xml` survive save/reopen before recomputation.
+- Shared model: plain `TEMPLATE`, `DOCPROPERTY Template`, path-aware `\\p`, general text formats, and malformed/missing package fallback.
+- DOCX: field instructions, `app.xml`, and the attached-template relationship survive save/reopen before recomputation.
 - Editors: WPF and Avalonia F9 refresh the same imported values; picker insertion starts with the package value instead of an empty result.
 - Full FreeW Release solution build.
