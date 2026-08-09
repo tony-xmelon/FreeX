@@ -13,8 +13,9 @@ Avalonia.
 - `SlideShowPlaybackPlanner.ApplyHostTimingEasing` is the shared live-playback
   contract. Untimed effects retain the established cubic ease-in/out curve;
   authored acceleration/deceleration values use the shared OOXML envelope.
-- WPF adapts that contract through `PowerPointTimingEasingFunction` and applies
-  it to storyboard `DoubleAnimation` tracks.
+- WPF adapts that contract through an explicitly `EaseIn`-mode
+  `PowerPointTimingEasingFunction`, so `EasingFunctionBase` consumes the shared
+  curve directly, and applies it to storyboard `DoubleAnimation` tracks.
 - Avalonia applies the same contract to shape opacity helpers across Fade,
   Flash, Fly In, Float, Swoop, Boomerang, Bounce, and Zoom, plus the core Fly
   In translation helper.
