@@ -8,7 +8,8 @@ WPF/Avalonia workflow that consumes them.
 ## Current baseline
 
 - Main tip at the prior checkpoint: `d2197a476c`.
-- Current source audit tip: `379302391b` (`Merge Avalonia inline column-break parity`).
+- Current function-first checkpoint: `b331667406` (`freep: preserve RTF text effects`).
+- Current source audit tip: `b331667406`; the checkpoint includes the WPF rich-editor list-marker, inherited list-layout, inherited run-style, unsupported-SmartArt cached-authoring, schema-valid SmartArt picture-cache synchronization, and external RTF underline/text-effect normalization through the shared undoable/clipboard paths.
 - Command inventory: `668` command IDs present in both WPF and Avalonia; the
   inventory reports `0` WPF-only, `0` Avalonia-only, and `0` actionable command
   gaps.
@@ -53,6 +54,8 @@ Recent function-first additions on main include:
   including writer round-trip through the existing per-run text-fill model.
 - external RTF baseline offsets now round-trip exact `\\upN`/`\\dnN` half-point
   controls instead of collapsing authored values to coarse `\\super`/`\\sub`.
+- external RTF double, dashed, thick, and wave underline controls now retain
+  the shared `Run.Underline` semantic and normalize back to canonical `\\ul`.
 - WPF XamlPackage per-run `Background` fills, including direct and style-resource
   input plus writer package round-trip through the same text-fill model.
 - WPF in-canvas rich editing now shows character, auto-number, and image list
@@ -61,13 +64,32 @@ Recent function-first additions on main include:
   with no local bullet now inherit character/number marker defaults from
   `TextBody.LstStyle`, while explicit `BulletSuppressed` remains authoritative;
   alignment and list indentation inherit through the same style chain, with
-  local paragraph values overriding it.
+  local paragraph values overriding it. Inherited run defaults are applied at
+  paragraph scope so WPF shows style font/color defaults without baking them
+  into model runs during a no-op edit round-trip.
 - Windows WPF and Windows Avalonia now attempt native in-place OLE hosting for
   unrotated, unflipped slide objects, commit edited bytes back to the model, and
   fall back to external activation when the server declines or fails.
+- Windows-native presenter capture now classifies permission denial, privacy
+  policy blocking, cancellation, and ordinary device failures into actionable
+  status text instead of exposing raw WinRT exception messages. The capture
+  engine and package payload contract are unchanged; hardware-observable
+  permission prompts still require an integration fixture.
 - cache-only SmartArt picture replacement/clearing, plus live and insertion
   payload support for the vertical picture-list layout; Avalonia inline page
   breaks now also paginate through the shared display-layer path.
+- imported SmartArt picture-cache replacement/clearing now recognizes the
+  schema-valid `dsp:sp` + `a:blipFill` owner emitted by the writer, as well as
+  legacy `dsp:pic`-shaped payloads; the corresponding `ShapeFill.Picture`
+  fallback owner is refreshed or removed with the native media relationship.
+- a newly populated picture node can now attach to an existing cached shape
+  owner without rebuilding unsupported SmartArt layout geometry; the owner’s
+  authored transform survives while the media relationship and fallback fill
+  are added through the same undoable session.
+- SmartArt Quick Style and Change Colors now refresh simple cached fallback nodes
+  when a parsed data tree is present but its live layout grammar is unsupported;
+  native style/color parts and the visible cached owner stay aligned through
+  undo/redo as well as direct planner calls.
 
 ## Current-source audit: 2026-08-09
 
@@ -77,6 +99,15 @@ present in both WPF and Avalonia. It also confirmed that the earlier OMML
 equation-array distribution gap is already represented by the shared model and
 layout planner. Those areas remain visual/evidence-depth work, not missing
 authoring routes.
+
+The follow-up audit at `927be181cf` likewise found no smaller reproducible
+functional omission in the remaining candidates: connection-site resolution,
+SmartArt authoring/cache fallback, animation-pane workflow, accessibility/alt
+text, external RTF/XamlPackage clipboard paths, and rectangular Windows OLE
+hosting already have an implemented route or an explicit host boundary. The
+next product slice should therefore be selected from the bounded items below
+with a concrete package or host trigger, rather than inferred from a visual
+residual.
 
 Rotated or flipped OLE is a genuine architectural boundary rather than a
 missing transform property. Native in-place activation creates an HWND child;
@@ -98,7 +129,8 @@ These are genuine depth or evidence gaps, not generic missing ribbon commands:
 
 - SmartArt: broader PowerPoint-authored layout/style/color regeneration,
   richer assistant/org-chart semantics, cache authoring for unsupported or
-  partially populated media payloads, and authoritative PowerPoint visual
+  partially populated media payloads when no authored cached shape owner
+  exists, and authoritative PowerPoint visual
   baselines for the many bounded live layout families. The current lane now
   covers the vertical picture-list insertion path and cache-only picture
   replacement/clearing; those are no longer open omissions.
@@ -112,14 +144,16 @@ These are genuine depth or evidence gaps, not generic missing ribbon commands:
   are covered.
 - Presenter recording: the Windows WPF and Windows Avalonia default routes now
   select the WinRT camera engine, and Linux Avalonia selects its native
-  capture backend. Live microphone/camera capture, device permission/error UX,
-  and real PowerPoint recording baselines remain unproven because they require
-  hardware and host-observable capture. Injected payload and unavailable-device
-  contracts are separate and green; a deferred result must not be mistaken for
+  capture backend. Live microphone/camera capture and real PowerPoint recording
+  baselines remain unproven because they require hardware and host-observable
+  capture. Native permission/policy/cancellation failures now have explicit
+  user-facing status classification; injected payload and unavailable-device
+  contracts are separate and green. A deferred result must not be mistaken for
   a missing product route.
 - Media/captions: broader real-deck native media/caption corpus coverage and
   advanced caption styling/accessibility semantics remain open.
-- Editing depth: unsupported XamlPackage/RTF controls, richer list/field/RTL/
+- Editing depth: provider-specific XamlPackage/RTF controls beyond the shared
+  underline semantic, richer list/field/RTL/
   IME behavior, and rotated/flipped OLE transforms remain bounded. Portable
   non-Windows OLE remains an explicit platform gap; Windows in-place hosting is
   now covered for the rectangular unrotated route.
@@ -147,3 +181,48 @@ calibration based on pixel residuals alone.
 The current-main review also confirmed that the older Arc Left, Arc Up, and Arc
 Down motion-path branch is already represented on main; no duplicate command or
 historical inventory merge is needed.
+
+### 2026-08-09 external RTF text effects
+
+External RTF `\\outl` and `\\shad` character controls now map to the shared
+run outline and shadow owners. WPF and Avalonia already consume those owners
+through their common text visual plan; the RTF writer emits the boolean
+controls on round-trip. Provider-specific effect parameters are intentionally
+outside this control-only boundary. Focused shared RTF coverage passes 64/64,
+WPF rich clipboard coverage 23/23, and Avalonia clipboard coverage 40/40.
+
+### 2026-08-09 external RTF field instructions
+
+Integrated as `0d8f3024f` on the current main tip.
+
+External RTF fields now preserve the complete bounded non-hyperlink instruction
+through `FieldRun.Instruction`, the in-canvas clipboard payload, and RTF
+serialization. `FieldType` remains the native PPTX token; native `a:fld` output
+is unchanged. The focused field round-trip gate covers `PAGE \\* MERGEFORMAT`
+and the existing safe hyperlink boundary.
+
+### 2026-08-09 native PowerPoint field metadata
+
+Native DrawingML fields now preserve authored `a:fld/@id` and nullable
+`a:fld/@dirty` through the model, PPTX reader/writer, model/edit clones, and
+in-canvas clipboard payload. New fields retain generated IDs; omitted `dirty`
+remains omitted while explicit `0` and `1` survive. The WPF MediaFields gate is
+36/36 and the shared external clipboard gate remains 64/64. This is a package
+and update-semantics slice, with no new raster claim.
+
+### 2026-08-09 native text-run metadata
+
+Ordinary DrawingML text runs now preserve authored `a:rPr/@lang` and nullable
+`a:rPr/@dirty` through the shared run model, PPTX reader/writer, edit/model
+clones, and in-canvas clipboard payload. Omitted tokens remain omitted while
+explicit language and dirty values are emitted. The WPF MediaFields gate covers
+the added native run round-trip.
+
+### 2026-08-09 native text-run proofing metadata
+
+Ordinary DrawingML text runs now also preserve nullable `a:rPr/@noProof` and
+`a:rPr/@err` through PPTX read/write, model/edit clones, and in-canvas
+clipboard payloads. Explicit `0` and `1` survive while omitted flags remain
+omitted. This preserves authored proofing/error state without claiming a
+proofing engine; WPF `MediaFieldsTests` passed 37/37 and the focused clipboard
+gate passed 8/8 compiled plus 8/8 no-build.
