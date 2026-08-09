@@ -8,8 +8,8 @@ WPF/Avalonia workflow that consumes them.
 ## Current baseline
 
 - Main tip at the prior checkpoint: `d2197a476c`.
-- Current function-first checkpoint: pending commit for the external RTF underline-variant slice.
-- Current source audit tip: pending commit; the checkpoint includes the WPF rich-editor list-marker, inherited list-layout, inherited run-style, unsupported-SmartArt cached-authoring, schema-valid SmartArt picture-cache synchronization, and external RTF underline-variant normalization through the shared undoable/clipboard paths.
+- Current function-first checkpoint: `d0bdfaa8ee` (`freep: preserve RTF underline variants`).
+- Current source audit tip: `d0bdfaa8ee`; the checkpoint includes the WPF rich-editor list-marker, inherited list-layout, inherited run-style, unsupported-SmartArt cached-authoring, schema-valid SmartArt picture-cache synchronization, and external RTF underline-variant normalization through the shared undoable/clipboard paths.
 - Command inventory: `668` command IDs present in both WPF and Avalonia; the
   inventory reports `0` WPF-only, `0` Avalonia-only, and `0` actionable command
   gaps.
