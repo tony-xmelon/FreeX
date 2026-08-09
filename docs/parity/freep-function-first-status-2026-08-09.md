@@ -8,8 +8,8 @@ WPF/Avalonia workflow that consumes them.
 ## Current baseline
 
 - Main tip at the prior checkpoint: `d2197a476c`.
-- Current function-first checkpoint: `c98f962036` (`freep: refresh unsupported SmartArt cached visuals`).
-- Current source audit tip: `c98f962036`; the checkpoint includes the WPF rich-editor list-marker, inherited list-layout, inherited run-style, and unsupported-SmartArt cached-authoring slices.
+- Current function-first checkpoint: `7cea380ae0` (`freep: commit SmartArt cache edits through session`).
+- Current source audit tip: `7cea380ae0`; the checkpoint includes the WPF rich-editor list-marker, inherited list-layout, inherited run-style, and unsupported-SmartArt cached-authoring slices through the shared undoable session path.
 - Command inventory: `668` command IDs present in both WPF and Avalonia; the
   inventory reports `0` WPF-only, `0` Avalonia-only, and `0` actionable command
   gaps.
@@ -73,7 +73,8 @@ Recent function-first additions on main include:
   breaks now also paginate through the shared display-layer path.
 - SmartArt Quick Style and Change Colors now refresh simple cached fallback nodes
   when a parsed data tree is present but its live layout grammar is unsupported;
-  native style/color parts and the visible cached owner stay aligned.
+  native style/color parts and the visible cached owner stay aligned through
+  undo/redo as well as direct planner calls.
 
 ## Current-source audit: 2026-08-09
 
