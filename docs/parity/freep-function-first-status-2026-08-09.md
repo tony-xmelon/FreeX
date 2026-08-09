@@ -203,3 +203,11 @@ in-canvas clipboard payload. New fields retain generated IDs; omitted `dirty`
 remains omitted while explicit `0` and `1` survive. The WPF MediaFields gate is
 36/36 and the shared external clipboard gate remains 64/64. This is a package
 and update-semantics slice, with no new raster claim.
+
+### 2026-08-09 native text-run metadata
+
+Ordinary DrawingML text runs now preserve authored `a:rPr/@lang` and nullable
+`a:rPr/@dirty` through the shared run model, PPTX reader/writer, edit/model
+clones, and in-canvas clipboard payload. Omitted tokens remain omitted while
+explicit language and dirty values are emitted. The WPF MediaFields gate covers
+the added native run round-trip.
