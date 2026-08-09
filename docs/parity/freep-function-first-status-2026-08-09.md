@@ -7,7 +7,7 @@ WPF/Avalonia workflow that consumes them.
 
 ## Current baseline
 
-- Main tip at this checkpoint: `b5399bea24`.
+- Main tip at this checkpoint: `fa0ebc2585`.
 - Command inventory: `658` command IDs present in both WPF and Avalonia; the
   inventory reports `0` WPF-only, `0` Avalonia-only, and `0` actionable command
   gaps.
@@ -48,15 +48,22 @@ Recent function-first additions on main include:
   model/caret text, plus direct-PDF display-layer parity;
 - native Office artistic-effect source/preview separation and mixed run tokens
   such as breaks, no-break hyphens, smart tags, move revisions, ruby, and bidi.
+- external RTF character highlighting through `\\highlightN`/`\\chcbpatN`,
+  including writer round-trip through the existing per-run text-fill model.
+- cache-only SmartArt picture replacement/clearing, plus live and insertion
+  payload support for the vertical picture-list layout; Avalonia inline page
+  breaks now also paginate through the shared display-layer path.
 
 ## What remains
 
 These are genuine depth or evidence gaps, not generic missing ribbon commands:
 
 - SmartArt: broader PowerPoint-authored layout/style/color regeneration,
-  richer assistant/org-chart semantics, picture/media-backed cache authoring,
-  and authoritative PowerPoint visual baselines for the many bounded live
-  layout families.
+  richer assistant/org-chart semantics, cache authoring for unsupported or
+  partially populated media payloads, and authoritative PowerPoint visual
+  baselines for the many bounded live layout families. The current lane now
+  covers the vertical picture-list insertion path and cache-only picture
+  replacement/clearing; those are no longer open omissions.
 - Charts: exact Surface3D mesh/camera/facet ownership, family-specific radar,
   stock, doughnut, bubble, and ChartEx visual acceptance thresholds, and wider
   real-deck chart coverage. The shared ChartEx data/title/legend/label editing
