@@ -70,6 +70,11 @@ Recent function-first additions on main include:
 - Windows WPF and Windows Avalonia now attempt native in-place OLE hosting for
   unrotated, unflipped slide objects, commit edited bytes back to the model, and
   fall back to external activation when the server declines or fails.
+- Windows-native presenter capture now classifies permission denial, privacy
+  policy blocking, cancellation, and ordinary device failures into actionable
+  status text instead of exposing raw WinRT exception messages. The capture
+  engine and package payload contract are unchanged; hardware-observable
+  permission prompts still require an integration fixture.
 - cache-only SmartArt picture replacement/clearing, plus live and insertion
   payload support for the vertical picture-list layout; Avalonia inline page
   breaks now also paginate through the shared display-layer path.
@@ -139,10 +144,11 @@ These are genuine depth or evidence gaps, not generic missing ribbon commands:
   are covered.
 - Presenter recording: the Windows WPF and Windows Avalonia default routes now
   select the WinRT camera engine, and Linux Avalonia selects its native
-  capture backend. Live microphone/camera capture, device permission/error UX,
-  and real PowerPoint recording baselines remain unproven because they require
-  hardware and host-observable capture. Injected payload and unavailable-device
-  contracts are separate and green; a deferred result must not be mistaken for
+  capture backend. Live microphone/camera capture and real PowerPoint recording
+  baselines remain unproven because they require hardware and host-observable
+  capture. Native permission/policy/cancellation failures now have explicit
+  user-facing status classification; injected payload and unavailable-device
+  contracts are separate and green. A deferred result must not be mistaken for
   a missing product route.
 - Media/captions: broader real-deck native media/caption corpus coverage and
   advanced caption styling/accessibility semantics remain open.
