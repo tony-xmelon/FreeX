@@ -8,8 +8,8 @@ WPF/Avalonia workflow that consumes them.
 ## Current baseline
 
 - Main tip at the prior checkpoint: `d2197a476c`.
-- Current function-first checkpoint: `b54f55ef26` (`freep: sync schema-valid SmartArt picture caches`).
-- Current source audit tip: `b54f55ef26`; the checkpoint includes the WPF rich-editor list-marker, inherited list-layout, inherited run-style, unsupported-SmartArt cached-authoring, and schema-valid SmartArt picture-cache synchronization slices through the shared undoable session path.
+- Current function-first checkpoint: `b140fc6c0d` (`freep: refresh SmartArt picture fallback fills`).
+- Current source audit tip: `b140fc6c0d`; the checkpoint includes the WPF rich-editor list-marker, inherited list-layout, inherited run-style, unsupported-SmartArt cached-authoring, and schema-valid SmartArt picture-cache synchronization slices through the shared undoable session path.
 - Command inventory: `668` command IDs present in both WPF and Avalonia; the
   inventory reports `0` WPF-only, `0` Avalonia-only, and `0` actionable command
   gaps.
@@ -73,8 +73,8 @@ Recent function-first additions on main include:
   breaks now also paginate through the shared display-layer path.
 - imported SmartArt picture-cache replacement/clearing now recognizes the
   schema-valid `dsp:sp` + `a:blipFill` owner emitted by the writer, as well as
-  legacy `dsp:pic`-shaped payloads, so native media and fallback visuals stay
-  synchronized for existing cached picture slots.
+  legacy `dsp:pic`-shaped payloads; the corresponding `ShapeFill.Picture`
+  fallback owner is refreshed or removed with the native media relationship.
 - SmartArt Quick Style and Change Colors now refresh simple cached fallback nodes
   when a parsed data tree is present but its live layout grammar is unsupported;
   native style/color parts and the visible cached owner stay aligned through
