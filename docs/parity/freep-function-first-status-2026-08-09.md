@@ -55,6 +55,9 @@ Recent function-first additions on main include:
   controls instead of collapsing authored values to coarse `\\super`/`\\sub`.
 - WPF XamlPackage per-run `Background` fills, including direct and style-resource
   input plus writer package round-trip through the same text-fill model.
+- WPF in-canvas rich editing now shows character, auto-number, and image list
+  markers through tagged display-only inline visuals; marker text is excluded
+  from model runs, clipboard payloads, and logical caret offsets.
 - Windows WPF and Windows Avalonia now attempt native in-place OLE hosting for
   unrotated, unflipped slide objects, commit edited bytes back to the model, and
   fall back to external activation when the server declines or fails.
@@ -79,12 +82,11 @@ retain external activation as the safe fallback. A visual-only transform shim
 would not provide editable in-place OLE semantics and was deliberately not
 added.
 
-The remaining rich-editor boundary is similarly explicit: the model and
-clipboard paths retain bullet/numbering metadata, but the WPF FlowDocument
-editing adapter still defers full list-continuity and IME behavior. Any next
-slice should add display-only list markers without contaminating model text or
-caret offsets, and should be proven against the existing WPF/Avalonia rich
-editor contracts before it is called parity.
+The remaining rich-editor boundary is similarly explicit: WPF now has
+display-only list markers without contaminating model text or caret offsets,
+but full list-continuity behavior after arbitrary edits and IME behavior remain
+deferred. The marker slice is recorded in
+`docs/parity/freep-wpf-rich-editor-list-markers-20260809.md`.
 
 ## What remains
 
