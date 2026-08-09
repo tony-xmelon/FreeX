@@ -7,8 +7,9 @@ WPF/Avalonia workflow that consumes them.
 
 ## Current baseline
 
-- Main tip at this checkpoint: `956b4a1ea2`.
-- Command inventory: `658` command IDs present in both WPF and Avalonia; the
+- Main tip at the prior checkpoint: `d2197a476c`.
+- Current source audit tip: `379302391b` (`Merge Avalonia inline column-break parity`).
+- Command inventory: `668` command IDs present in both WPF and Avalonia; the
   inventory reports `0` WPF-only, `0` Avalonia-only, and `0` actionable command
   gaps.
 - Functional corpus recorded in the baseline evidence: `27/27` decks opened,
@@ -54,9 +55,42 @@ Recent function-first additions on main include:
   controls instead of collapsing authored values to coarse `\\super`/`\\sub`.
 - WPF XamlPackage per-run `Background` fills, including direct and style-resource
   input plus writer package round-trip through the same text-fill model.
+- WPF in-canvas rich editing now shows character, auto-number, and image list
+  markers through tagged display-only inline visuals; marker text is excluded
+  from model runs, clipboard payloads, and logical caret offsets. Paragraphs
+  with no local bullet now inherit character/number marker defaults from
+  `TextBody.LstStyle`, while explicit `BulletSuppressed` remains authoritative;
+  alignment and list indentation inherit through the same style chain, with
+  local paragraph values overriding it.
+- Windows WPF and Windows Avalonia now attempt native in-place OLE hosting for
+  unrotated, unflipped slide objects, commit edited bytes back to the model, and
+  fall back to external activation when the server declines or fails.
 - cache-only SmartArt picture replacement/clearing, plus live and insertion
   payload support for the vertical picture-list layout; Avalonia inline page
   breaks now also paginate through the shared display-layer path.
+
+## Current-source audit: 2026-08-09
+
+The source audit was intentionally function-first. It found no new safe chart
+omission: doughnut, radar, bubble, stock, and Surface3D chart dispatches are
+present in both WPF and Avalonia. It also confirmed that the earlier OMML
+equation-array distribution gap is already represented by the shared model and
+layout planner. Those areas remain visual/evidence-depth work, not missing
+authoring routes.
+
+Rotated or flipped OLE is a genuine architectural boundary rather than a
+missing transform property. Native in-place activation creates an HWND child;
+the current WPF/Avalonia host engines can size that child but cannot apply the
+slide's rotation/flip transform. Both hosts therefore reject that route and
+retain external activation as the safe fallback. A visual-only transform shim
+would not provide editable in-place OLE semantics and was deliberately not
+added.
+
+The remaining rich-editor boundary is similarly explicit: WPF now has
+display-only list markers, including inherited list-style defaults, without
+contaminating model text or caret offsets, but full list-continuity behavior
+after arbitrary edits and IME behavior remain deferred. The marker slice is recorded in
+`docs/parity/freep-wpf-rich-editor-list-markers-20260809.md`.
 
 ## What remains
 
@@ -86,8 +120,9 @@ These are genuine depth or evidence gaps, not generic missing ribbon commands:
 - Media/captions: broader real-deck native media/caption corpus coverage and
   advanced caption styling/accessibility semantics remain open.
 - Editing depth: unsupported XamlPackage/RTF controls, richer list/field/RTL/
-  IME behavior, and in-place OLE hosting remain bounded or deferred. Portable
-  non-Windows OLE also remains an explicit platform gap.
+  IME behavior, and rotated/flipped OLE transforms remain bounded. Portable
+  non-Windows OLE remains an explicit platform gap; Windows in-place hosting is
+  now covered for the rectangular unrotated route.
 - Native print/driver behavior: foreground dialog behavior and real printer or
   driver-level validation remain outside the deterministic paginator tests.
 
