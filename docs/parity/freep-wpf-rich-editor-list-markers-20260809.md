@@ -30,10 +30,15 @@ The converter now also resolves a paragraph with no local bullet element through
 character and auto-number markers use the style-level character/number format
 and marker typography; image bullets remain payload-owned by the paragraph.
 
+The same inheritance path now supplies paragraph alignment, left margin, and
+first-line/hanging indentation to WPF. Explicit paragraph values, including
+zero-valued overrides, remain authoritative.
+
 ## Verification
 
 - `Converter_RendersListMarkersWithoutAddingThemToLogicalText`: passed.
 - `Converter_InheritsListStyleMarkersButHonorsExplicitSuppression`: passed.
+- `Converter_InheritsListStyleParagraphLayoutButHonorsLocalOverrides`: passed.
 - `RichTextEditorTests`: `60/60`.
 - `WpfRichTextClipboardAdapterTests`: `23/23`.
 - Focused host test lane: `84/84`.

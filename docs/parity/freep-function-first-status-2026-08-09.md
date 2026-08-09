@@ -59,7 +59,9 @@ Recent function-first additions on main include:
   markers through tagged display-only inline visuals; marker text is excluded
   from model runs, clipboard payloads, and logical caret offsets. Paragraphs
   with no local bullet now inherit character/number marker defaults from
-  `TextBody.LstStyle`, while explicit `BulletSuppressed` remains authoritative.
+  `TextBody.LstStyle`, while explicit `BulletSuppressed` remains authoritative;
+  alignment and list indentation inherit through the same style chain, with
+  local paragraph values overriding it.
 - Windows WPF and Windows Avalonia now attempt native in-place OLE hosting for
   unrotated, unflipped slide objects, commit edited bytes back to the model, and
   fall back to external activation when the server declines or fails.
