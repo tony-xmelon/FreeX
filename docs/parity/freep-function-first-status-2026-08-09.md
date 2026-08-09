@@ -184,3 +184,13 @@ through their common text visual plan; the RTF writer emits the boolean
 controls on round-trip. Provider-specific effect parameters are intentionally
 outside this control-only boundary. Focused shared RTF coverage passes 64/64,
 WPF rich clipboard coverage 23/23, and Avalonia clipboard coverage 40/40.
+
+### 2026-08-09 external RTF field instructions
+
+Integrated as `0d8f3024f` on the current main tip.
+
+External RTF fields now preserve the complete bounded non-hyperlink instruction
+through `FieldRun.Instruction`, the in-canvas clipboard payload, and RTF
+serialization. `FieldType` remains the native PPTX token; native `a:fld` output
+is unchanged. The focused field round-trip gate covers `PAGE \\* MERGEFORMAT`
+and the existing safe hyperlink boundary.
