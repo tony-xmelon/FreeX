@@ -7,7 +7,7 @@ WPF/Avalonia workflow that consumes them.
 
 ## Current baseline
 
-- Main tip at this checkpoint: `f90c482f96`.
+- Main tip at this checkpoint: `fa0ebc2585`.
 - Command inventory: `658` command IDs present in both WPF and Avalonia; the
   inventory reports `0` WPF-only, `0` Avalonia-only, and `0` actionable command
   gaps.
@@ -48,6 +48,8 @@ Recent function-first additions on main include:
   model/caret text, plus direct-PDF display-layer parity;
 - native Office artistic-effect source/preview separation and mixed run tokens
   such as breaks, no-break hyphens, smart tags, move revisions, ruby, and bidi.
+- external RTF character highlighting through `\\highlightN`/`\\chcbpatN`,
+  including writer round-trip through the existing per-run text-fill model.
 - cache-only SmartArt picture replacement/clearing, plus live and insertion
   payload support for the vertical picture-list layout; Avalonia inline page
   breaks now also paginate through the shared display-layer path.
