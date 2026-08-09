@@ -57,7 +57,9 @@ Recent function-first additions on main include:
   input plus writer package round-trip through the same text-fill model.
 - WPF in-canvas rich editing now shows character, auto-number, and image list
   markers through tagged display-only inline visuals; marker text is excluded
-  from model runs, clipboard payloads, and logical caret offsets.
+  from model runs, clipboard payloads, and logical caret offsets. Paragraphs
+  with no local bullet now inherit character/number marker defaults from
+  `TextBody.LstStyle`, while explicit `BulletSuppressed` remains authoritative.
 - Windows WPF and Windows Avalonia now attempt native in-place OLE hosting for
   unrotated, unflipped slide objects, commit edited bytes back to the model, and
   fall back to external activation when the server declines or fails.
@@ -83,9 +85,9 @@ would not provide editable in-place OLE semantics and was deliberately not
 added.
 
 The remaining rich-editor boundary is similarly explicit: WPF now has
-display-only list markers without contaminating model text or caret offsets,
-but full list-continuity behavior after arbitrary edits and IME behavior remain
-deferred. The marker slice is recorded in
+display-only list markers, including inherited list-style defaults, without
+contaminating model text or caret offsets, but full list-continuity behavior
+after arbitrary edits and IME behavior remain deferred. The marker slice is recorded in
 `docs/parity/freep-wpf-rich-editor-list-markers-20260809.md`.
 
 ## What remains

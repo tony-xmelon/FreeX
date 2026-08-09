@@ -24,13 +24,20 @@ The implementation does not insert marker characters into `Run.Text` and does
 not create a second numbering counter. The existing model remains authoritative
 when an edit splits or merges paragraphs.
 
+The converter now also resolves a paragraph with no local bullet element through
+`TextBody.LstStyle.Resolve(level)`, matching the shared compositor. An explicit
+`BulletSuppressed` paragraph still wins over that inherited style. Inherited
+character and auto-number markers use the style-level character/number format
+and marker typography; image bullets remain payload-owned by the paragraph.
+
 ## Verification
 
 - `Converter_RendersListMarkersWithoutAddingThemToLogicalText`: passed.
+- `Converter_InheritsListStyleMarkersButHonorsExplicitSuppression`: passed.
 - `RichTextEditorTests`: `60/60`.
 - `WpfRichTextClipboardAdapterTests`: `23/23`.
-- Consuming `FreeP.App.Host.Tests` Release build: passed as part of the focused
-  test command.
+- Focused host test lane: `84/84`.
+- Consuming `FreeP.App.Host` Release build: passed with 0 warnings and 0 errors.
 
 This is a functional/editor-surface slice; no raster parity claim is attached.
 Full list-continuity behavior after arbitrary editing and IME behavior remain
