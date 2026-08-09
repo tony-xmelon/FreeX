@@ -211,3 +211,12 @@ Ordinary DrawingML text runs now preserve authored `a:rPr/@lang` and nullable
 clones, and in-canvas clipboard payload. Omitted tokens remain omitted while
 explicit language and dirty values are emitted. The WPF MediaFields gate covers
 the added native run round-trip.
+
+### 2026-08-09 native text-run proofing metadata
+
+Ordinary DrawingML text runs now also preserve nullable `a:rPr/@noProof` and
+`a:rPr/@err` through PPTX read/write, model/edit clones, and in-canvas
+clipboard payloads. Explicit `0` and `1` survive while omitted flags remain
+omitted. This preserves authored proofing/error state without claiming a
+proofing engine; WPF `MediaFieldsTests` passed 37/37 and the focused clipboard
+gate passed 8/8 compiled plus 8/8 no-build.
