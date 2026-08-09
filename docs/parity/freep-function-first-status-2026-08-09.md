@@ -7,7 +7,7 @@ WPF/Avalonia workflow that consumes them.
 
 ## Current baseline
 
-- Main tip at this checkpoint: `592fb274c4`.
+- Main tip at this checkpoint: `b5399bea24`.
 - Command inventory: `658` command IDs present in both WPF and Avalonia; the
   inventory reports `0` WPF-only, `0` Avalonia-only, and `0` actionable command
   gaps.
@@ -65,10 +65,13 @@ These are genuine depth or evidence gaps, not generic missing ribbon commands:
   exact advanced-effect playback comparisons still require a COM-capable
   baseline capture, even though the shared workflow and many playback families
   are covered.
-- Presenter recording: live microphone/camera capture, default Windows camera
-  encoding that produces local media bytes, permission/error UX, and real
-  PowerPoint recording baselines remain unproven. Injected payload and
-  unavailable-device contracts are separate and green.
+- Presenter recording: the Windows WPF and Windows Avalonia default routes now
+  select the WinRT camera engine, and Linux Avalonia selects its native
+  capture backend. Live microphone/camera capture, device permission/error UX,
+  and real PowerPoint recording baselines remain unproven because they require
+  hardware and host-observable capture. Injected payload and unavailable-device
+  contracts are separate and green; a deferred result must not be mistaken for
+  a missing product route.
 - Media/captions: broader real-deck native media/caption corpus coverage and
   advanced caption styling/accessibility semantics remain open.
 - Editing depth: unsupported XamlPackage/RTF controls, richer list/field/RTL/
@@ -94,3 +97,7 @@ reproducible package or host trigger, prove it through both hosts, and only
 then add visual comparison if the behavior changes rendered output. The current
 inventory does not justify another global easing, font, margin, or compositor
 calibration based on pixel residuals alone.
+
+The current-main review also confirmed that the older Arc Left, Arc Up, and Arc
+Down motion-path branch is already represented on main; no duplicate command or
+historical inventory merge is needed.
