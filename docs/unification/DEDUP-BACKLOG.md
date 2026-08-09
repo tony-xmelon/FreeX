@@ -1,13 +1,17 @@
-# Dedup Backlog — staged cross-app consolidation
+# Dedup Backlog - closed historical inventory
+
+**Closed 2026-08-09.** Every practical item in this inventory and the later whole-codebase audits has either
+been extracted, adopted, or recorded as an intentional renderer/domain boundary. Current evidence is generated
+in `dedup-residual-metrics.md`; the final classification and verification record is
+`DEDUP-EXHAUSTION-2026-08-09.md`. This file is retained to explain the provenance of the earlier candidates.
 
 Verified duplication candidates, ranked, each tagged with its **unlock condition** (which session must
 settle before extraction is safe). Built 2026-06-25 from a read-only cross-app audit while the three
 Microsoft-parity sessions (FreeX↔Excel, FreeW↔Word, FreeP↔PowerPoint) were active.
 
-**Why staged, not done:** dedup means editing the app layers to point at a shared copy, and every app
-source layer (`*.Core.IO`, `*.Core.Model`, `*.App.Presentation`) is hot with parity work right now.
-Executing would collide with and slow the parity push. This backlog makes execution *fast* once a field
-clears — the analysis is done, just re-verify line numbers (they drift) and extract.
+The inventory was originally staged because parity work made its source areas hot. Those ownership gates later
+cleared and the campaigns executed the candidates. Dates and file references below are historical and should
+not be interpreted as current open work.
 
 All file:line references below were opened/grepped during the audit. Re-verify before acting — the parity
 sessions move these files.
