@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 658 | 658 | 0 | 0 | 0 | 0 | 0 | 0 | 658 | 0 | 0 | 0 | 0 | 110 |
+| 666 | 666 | 0 | 0 | 0 | 0 | 0 | 0 | 666 | 0 | 0 | 0 | 0 | 110 |
 
 ## Workflow Evidence
 
@@ -700,8 +700,16 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.table-row-height` | Row Height | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.banded-columns` | Banded Columns | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.banded-rows` | Banded Rows | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.delete-column` | Delete Column | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.delete-row` | Delete Row | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.distribute-columns` | Distribute Columns | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.distribute-rows` | Distribute Rows | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.first-column` | First Column | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.first-row` | Header Row | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.insert-column-left` | Insert Column Left | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.insert-column-right` | Insert Column Right | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.insert-row-above` | Insert Row Above | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.insert-row-below` | Insert Row Below | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.last-column` | Last Column | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.last-row` | Total Row | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.merge-cells` | Merge Cells | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
