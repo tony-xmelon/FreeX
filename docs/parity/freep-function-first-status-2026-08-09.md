@@ -8,7 +8,8 @@ WPF/Avalonia workflow that consumes them.
 ## Current baseline
 
 - Main tip at the prior checkpoint: `d2197a476c`.
-- Current source audit tip: `379302391b` (`Merge Avalonia inline column-break parity`).
+- Current function-first checkpoint: `927be181cf` (`freep: inherit WPF rich-editor run styles`).
+- Current source audit tip: `927be181cf`; the checkpoint includes the WPF rich-editor list-marker, inherited list-layout, and inherited run-style slices.
 - Command inventory: `668` command IDs present in both WPF and Avalonia; the
   inventory reports `0` WPF-only, `0` Avalonia-only, and `0` actionable command
   gaps.
@@ -59,7 +60,11 @@ Recent function-first additions on main include:
   markers through tagged display-only inline visuals; marker text is excluded
   from model runs, clipboard payloads, and logical caret offsets. Paragraphs
   with no local bullet now inherit character/number marker defaults from
-  `TextBody.LstStyle`, while explicit `BulletSuppressed` remains authoritative.
+  `TextBody.LstStyle`, while explicit `BulletSuppressed` remains authoritative;
+  alignment and list indentation inherit through the same style chain, with
+  local paragraph values overriding it. Inherited run defaults are applied at
+  paragraph scope so WPF shows style font/color defaults without baking them
+  into model runs during a no-op edit round-trip.
 - Windows WPF and Windows Avalonia now attempt native in-place OLE hosting for
   unrotated, unflipped slide objects, commit edited bytes back to the model, and
   fall back to external activation when the server declines or fails.
@@ -75,6 +80,15 @@ present in both WPF and Avalonia. It also confirmed that the earlier OMML
 equation-array distribution gap is already represented by the shared model and
 layout planner. Those areas remain visual/evidence-depth work, not missing
 authoring routes.
+
+The follow-up audit at `927be181cf` likewise found no smaller reproducible
+functional omission in the remaining candidates: connection-site resolution,
+SmartArt authoring/cache fallback, animation-pane workflow, accessibility/alt
+text, external RTF/XamlPackage clipboard paths, and rectangular Windows OLE
+hosting already have an implemented route or an explicit host boundary. The
+next product slice should therefore be selected from the bounded items below
+with a concrete package or host trigger, rather than inferred from a visual
+residual.
 
 Rotated or flipped OLE is a genuine architectural boundary rather than a
 missing transform property. Native in-place activation creates an HWND child;
