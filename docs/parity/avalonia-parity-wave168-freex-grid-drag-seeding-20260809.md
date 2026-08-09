@@ -12,17 +12,30 @@ cell's value and make a valid clear look like a failed seed.
 
 `set_cell_text_without_save` now skips empty `xdotool type` packets and verifies an
 empty cell with `copy_cell_formula_allow_empty`, which installs a bounded sentinel
-clipboard owner before the physical edit. Non-empty seeds retain the existing
-formula clipboard verification path.
+clipboard owner before the physical edit.
+
+The integrated follow-up run `20260809T135428799Z` proved that empty handling was
+not the first failure: C3 committed `10`, Enter advanced to C4, and the immediate
+pointer reselection of C3 used for readback never changed the active cell. Seed
+verification now uses the existing absolute keyboard route (Ctrl+Home plus arrows)
+after Enter restores worksheet focus. Non-empty and empty readback share that route;
+empty values still use the bounded clipboard sentinel.
 
 ## Verification
 
-- Focused source regression: `GridDragSeedHelper_UsesEmptyAwareClipboardVerification`.
+- `GridDragSeedHelper_UsesKeyboardReadbackAndEmptyAwareClipboardVerification`:
+  passed, 1/1.
 - `git diff --check`: passed.
-- Docker proof remains deferred until the host has at least 6 GB free RAM and no
-  active Wave168 build; the exact command is
-  `Run-FreeXLinuxInteractionValidation.ps1 -PhysicalOnly -PhysicalProbeSelector grid-drag`.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File
+  tools/Run-FreeXLinuxInteractionValidation.ps1 -PhysicalOnly
+  -PhysicalProbeSelector grid-drag -TimeoutMinutes 20`: passed, 3/3, session
+  `20260809T140830970Z`.
+- Autofill produced `C3:C7 = 10,20,30,40,50`; move cleared E3:E4 and produced
+  `E6:E7 = MoveTop,MoveBottom`; Ctrl-drag preserved G3:G4 and produced
+  `G6:G7 = CopyTop,CopyBottom`. All three destination selections passed and all six
+  before/after screenshots were retained.
 
 ## Residuals
 
-The post-change physical X11 run and its before/after drag screenshots remain open.
+The focused grid-drag selector is closed. The broader physical selector inventory
+was not rerun in this follow-up.
