@@ -58,8 +58,8 @@ Each surface is tracked with these states:
 
 | Source | Current count | Notes |
 |---|---:|---|
-| Command surface in-scope rows | 199 | From `parity/command-inventory.json`: Implemented + Partial command-surface rows. |
-| Menu/toolbar in-scope rows | 200 | Includes the current Draw tab menu/toolbar delta. |
+| Command surface in-scope rows | 207 | From `parity/command-inventory.json`: Implemented + Partial command-surface rows (176 Implemented + 31 Partial of 230 total, 23 Excluded). |
+| Menu/toolbar in-scope rows | 218 | From `parity/command-inventory.json`: Implemented + Partial menu/toolbar rows (188 Implemented + 30 Partial of 241 total, 23 Excluded). Includes the current Draw tab menu/toolbar delta. |
 | Top-level ribbon/backstage tabs | 10 | File, Home, Insert, Draw, Page Layout, Formulas, Data, Review, View, Help. |
 | Contextual ribbon tab declarations | 7 | Shape Format, Picture Format, Chart Design, Format, Table Design, PivotTable Analyze, Design from collapsed `MainWindow.xaml` tab declarations. |
 | Dialog source classes | 119 | Unique `*Dialog` class/x:Class names in `src/FreeX.App.Host`. |

@@ -1,139 +1,434 @@
 # Project Build History Metrics
 
-Generated: 2026-06-06 09:26 +03:00
+Generated: 2026-08-09 11:45 +03:00
 Repository: https://github.com/tony-xmelon/FreeX.git
-Baseline ref: fixed local main snapshot `dd6543845`; origin/main observed at `602737745` before this metrics refresh
-History window: 2026-05-12 through 2026-06-06
+Baseline ref: HEAD at `181ad855c` (`181ad855c2cb12dbdce62a7eb813dab624f36d20`)
+History window: 2026-05-12 through 2026-08-09
 
 ## Scope And Caveats
 
-- Daily build rows are Git numstat churn on the fixed local main snapshot `dd6543845` for src, tests, and docs. They answer how much code changed per day. The June 6 refresh regenerates every date bucket from reachable commits at this snapshot, so earlier rows can move when later merges introduce commits whose commit dates fall on earlier days.
-- Git churn uses a no-rename numstat pass to keep the full-history ETL tractable across bulk corpus reshuffles; renamed files are therefore represented by their added and removed lines.
-- Current LOC counts are exact for the checkout at the baseline ref. Historical cumulative LOC requires a longer offline ETL pass over each snapshot and is intentionally not estimated here.
-- Token/provider rows were reprocessed from local Codex and Claude JSONL logs on 2026-06-06 for activity through 2026-06-06 inclusive. Bytes are attributed log-file bytes reported by those extraction passes; raw token counts are observed local usage, not provider invoices.
-- Provider-style billable-equivalent tokens apply cache weighting to make the local logs easier to compare with provider dashboards: OpenAI cached input is weighted at 0.5x, Anthropic cache write at 1.25x, Anthropic cache read at 0.1x, and output/reasoning at 1x. Exact billed cost still requires provider exports, model-level rates, and invoice-side normalization.
-- Daily build churn `Bytes +/-`, `OpenAI Tokens`, and `Anthropic Tokens` are the per-date raw provider-log totals from the token extraction table. Byte removals are reported as `-0` because logs are attributed by observed usage, not deleted usage.
+- This doc is produced by the committable, repeatable extractor `tools/Build-ProjectHistoryMetrics.ps1`, not a one-off local script. Re-run it to refresh.
+- Daily build rows are Git numstat churn for all commits reachable from HEAD (not just first-parent) whose commit date falls in the window, bucketed by that commit date in this machine's local timezone. A no-rename numstat pass is used, so renamed files are represented by their added and removed lines.
+- Files Changed is the count of *distinct* file paths touched that day (deduplicated across the day's commits); LoC/Source/Test/Docs +/- are the raw additive churn (not deduplicated), i.e. repeated edits to the same file all count.
+- Source C# / Test C# is split by path: a `.cs` file is classified as a test file if any path segment is `test`/`tests` (case-insensitive) or the filename ends in `Test(s).cs`; everything else `.cs` is source. Docs +/- covers every tracked `.md` file, not only `docs/`.
+- Current repository footprint LOC counts are exact for the current checkout (`git ls-files` + line counts). Historical cumulative LOC per day is not computed (would require checking out every daily snapshot).
+- **Token columns currently reflect only the machine(s) that have contributed a project-history-tokens-<MachineId>.json file into `.metrics-data` so far: ALITOP, DESKTOP-DGEV3SF, I5-32GB.** This run's own machine id is `DESKTOP-DGEV3SF`. Other machines' logs are pending: copy their project-history-tokens-*.json (produced by running this same script there) into that directory and re-run to aggregate. The git-derived metrics above and below are complete/authoritative regardless of which machines have reported tokens.
+- Anthropic (Claude Code) token rows sum `message.usage` fields from every `*.jsonl` transcript (including subagent transcripts) under `~/.claude/projects/*FreeX*`, deduplicated by `requestId` where present. Only numeric usage + timestamp + model were read - no transcript content was inspected or stored.
+- OpenAI (Codex) token rows sum `payload.info.last_token_usage` from `token_count` events in `~/.codex/sessions/**/*.jsonl` and `~/.codex/archived_sessions/*.jsonl`, filtered to sessions whose recorded `cwd` contains "FreeX". Codex's sqlite logs (`logs_2.sqlite` etc.) were **not** parsed - no stable, documented per-day usage schema was available there without heavy reverse-engineering, so per the "do not guess" rule they are left out rather than estimated.
+- Codex extraction note (ALITOP: Codex jsonl sessions were extracted via payload.info.last_token_usage on event_msg/token_count lines, filtered to sessions whose recorded cwd contains 'FreeX'. Codex's sqlite logs (logs_2.sqlite etc.) were NOT parsed (no stable documented per-day usage schema without heavy reverse-engineering) - if the jsonl sessions directories are ever pruned/rotated, coverage for older dates could be incomplete.)
+- Codex extraction note (DESKTOP-DGEV3SF: Codex jsonl sessions were extracted via payload.info.last_token_usage on event_msg/token_count lines, filtered to sessions whose recorded cwd contains 'FreeX'. Codex's sqlite logs (logs_2.sqlite etc.) were NOT parsed (no stable documented per-day usage schema without heavy reverse-engineering) - if the jsonl sessions directories are ever pruned/rotated, coverage for older dates could be incomplete.)
+- Codex extraction note (I5-32GB: Codex jsonl sessions were extracted via payload.info.last_token_usage on event_msg/token_count lines, filtered to sessions whose recorded cwd contains 'FreeX'. Codex's sqlite logs (logs_2.sqlite etc.) were NOT parsed (no stable documented per-day usage schema without heavy reverse-engineering) - if the jsonl sessions directories are ever pruned/rotated, coverage for older dates could be incomplete.)
+- Raw Tokens for Anthropic = Input + Cached Input + Cache Write + Cache Read + Output + Reasoning (Anthropic cache tokens are billed as distinct additive token types). Raw Tokens for OpenAI = Input + Output + Reasoning (OpenAI's `input_tokens` already includes `cached_input_tokens` as a discounted subset, so it is not added again; Cached Input is shown for visibility only).
+- Billable Eq Tokens applies simple cache weighting to make the local logs easier to compare with provider dashboards: OpenAI cached input at 0.5x, Anthropic cache write at 1.25x, Anthropic cache read at 0.1x, and all other input/output/reasoning tokens at 1x. This is an approximation, not an invoice.
 
 ## Current Repository Footprint
 
-- Registered worktrees: 1,254
-- Local branches: 1,269
-- Remote branches: 343
-- Tracked files: 3,086
-- Current C# source LOC: 261,670
-- Current C# test LOC: 266,998
-- Current XAML LOC: 8,387
-- Current docs LOC: 31,200
-- Observed Codex JSONL sessions/logs: 3,735
-- Observed Claude FreeX JSONL sessions/logs: 257
-- Provider log bytes attributed: 24,037,141,735
-- Observed raw provider tokens: 164,734,738,904
-- Provider-style billable-equivalent tokens: 83,551,490,303
+- Registered worktrees: 3
+- Local branches: 4
+- Remote branches: 537
+- Tracked files: 13,901
+- Current C# source LOC: 1,234,625
+- Current C# test LOC: 1,187,390
+- Current XAML LOC: 6,862
+- Current docs LOC: 137,591
+- Observed Codex JSONL sessions/logs (this machine, all projects, unfiltered): 4,598
+- Observed Claude FreeX JSONL sessions/logs (this machine): 49
+- Provider log bytes attributed (all machines reporting so far): 201,068,330,905
+- Observed raw provider tokens (all machines reporting so far): 4,181,740,835,712
+- Provider-style billable-equivalent tokens (all machines reporting so far): 2,138,926,442,128
 
 ## Daily Build Churn
 
 | Date | Commits | Files Changed | LoC +/- | Source C# +/- | Test C# +/- | Docs +/- | Bytes +/- | OpenAI Tokens | Anthropic Tokens | Git Authors |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 2026-05-12 | 21 | 46 | +6,520 / -121 | +4,349 / -113 | +1,672 / -1 | +180 / -0 | +58,308,841 / -0 | 0 | 46,952,042 | 1 |
-| 2026-05-13 | 27 | 444 | +56,420 / -40,844 | +8,579 / -2,151 | +2,847 / -418 | +4,633 / -1 | +53,525,808 / -0 | 0 | 89,096,112 | 1 |
-| 2026-05-14 | 24 | 57 | +10,239 / -736 | +4,244 / -451 | +1,330 / -0 | +2,432 / -14 | +430,120,353 / -0 | 230,175,315 | 72,028,574 | 1 |
-| 2026-05-15 | 26 | 173 | +30,205 / -848 | +15,827 / -788 | +7,135 / -10 | +2,927 / -1 | +339,350,510 / -0 | 675,028,848 | 70,356,959 | 1 |
-| 2026-05-16 | 39 | 215 | +42,607 / -4,580 | +17,290 / -2,854 | +20,324 / -1,390 | +20 / -18 | +343,989,780 / -0 | 788,413,672 | 165,410,741 | 1 |
-| 2026-05-17 | 33 | 2,901 | +649,481 / -637,975 | +7,727 / -786 | +3,859 / -246 | +2,375 / -64 | +659,020,523 / -0 | 273,797,872 | 179,734,396 | 1 |
-| 2026-05-18 | 20 | 88 | +28,420 / -4,156 | +15,762 / -1,342 | +8,712 / -191 | +3,277 / -617 | +430,511,763 / -0 | 285,434,755 | 87,615,455 | 1 |
-| 2026-05-19 | 811 | 386 | +61,812 / -9,990 | +31,075 / -7,680 | +24,138 / -581 | +4,805 / -1,179 | +1,357,117,034 / -0 | 1,946,649,860 | 0 | 1 |
-| 2026-05-20 | 690 | 286 | +44,418 / -16,508 | +26,656 / -14,721 | +11,786 / -233 | +5,237 / -1,243 | +1,395,852,939 / -0 | 1,648,668,689 | 382,576 | 1 |
-| 2026-05-21 | 762 | 1,056 | +53,310 / -25,641 | +31,633 / -21,474 | +8,048 / -1,113 | +3,192 / -1,072 | +1,257,318,014 / -0 | 1,122,427,892 | 76,187,087 | 1 |
-| 2026-05-22 | 366 | 908 | +52,373 / -27,105 | +27,707 / -20,953 | +4,433 / -161 | +691 / -118 | +1,325,289,120 / -0 | 588,664,932 | 26,472,688 | 1 |
-| 2026-05-23 | 1,201 | 1,053 | +58,138 / -43,831 | +29,006 / -20,566 | +13,437 / -379 | +1,076 / -308 | +1,423,690,334 / -0 | 2,854,848,393 | 76,777,952 | 2 |
-| 2026-05-24 | 1,374 | 1,017 | +58,047 / -24,632 | +30,886 / -15,126 | +14,265 / -295 | +6,781 / -634 | +1,431,171,844 / -0 | 1,820,600,791 | 68,471,261 | 1 |
-| 2026-05-25 | 718 | 866 | +36,866 / -10,715 | +19,660 / -4,447 | +14,209 / -301 | +2,590 / -1,108 | +1,543,652,561 / -0 | 2,329,328,343 | 86,546,349 | 2 |
-| 2026-05-26 | 1,470 | 616 | +62,189 / -25,784 | +33,720 / -22,040 | +26,024 / -1,922 | +1,752 / -1,469 | +1,733,724,959 / -0 | 5,974,647,607 | 38,435,538 | 2 |
-| 2026-05-27 | 1,405 | 440 | +36,301 / -10,217 | +17,580 / -8,443 | +16,681 / -452 | +987 / -688 | +1,626,117,603 / -0 | 4,649,815,155 | 0 | 1 |
-| 2026-05-28 | 937 | 468 | +27,736 / -6,691 | +11,212 / -5,041 | +14,032 / -770 | +1,825 / -723 | +1,223,852,707 / -0 | 24,060,030,258 | 178,994,747 | 2 |
-| 2026-05-29 | 1,113 | 3,602 | +385,507 / -368,477 | +183,073 / -178,910 | +185,647 / -174,292 | +4,284 / -3,826 | +1,462,089,547 / -0 | 42,404,907,390 | 15,242,087 | 2 |
-| 2026-05-30 | 506 | 816 | +55,970 / -18,599 | +14,507 / -4,745 | +14,808 / -2,718 | +4,711 / -5,633 | +1,212,978,019 / -0 | 16,008,528,128 | 156,988,459 | 1 |
-| 2026-05-31 | 246 | 258 | +30,256 / -2,952 | +6,950 / -1,224 | +7,245 / -698 | +393 / -328 | +943,168,843 / -0 | 7,667,291,701 | 173,614,787 | 1 |
-| 2026-06-01 | 1,007 | 562 | +685,723 / -6,681 | +21,732 / -4,852 | +21,838 / -519 | +1,469 / -715 | +1,418,142,128 / -0 | 37,729,785,040 | 272,171,419 | 1 |
-| 2026-06-02 | 999 | 410 | +30,878 / -4,040 | +13,222 / -2,949 | +15,082 / -451 | +733 / -424 | +623,478,593 / -0 | 2,202,148,604 | 186,835,909 | 1 |
-| 2026-06-03 | 954 | 1,134 | +188,898 / -152,007 | +36,080 / -20,279 | +142,398 / -128,355 | +3,040 / -768 | +367,196,018 / -0 | 2,821,033,482 | 192,985,278 | 1 |
-| 2026-06-04 | 466 | 1,056 | +67,307 / -42,327 | +10,529 / -1,061 | +11,751 / -4,279 | +34,399 / -36,334 | +483,416,394 / -0 | 1,388,288,258 | 147,297,213 | 1 |
-| 2026-06-05 | 937 | 382 | +49,800 / -12,014 | +19,252 / -5,344 | +14,937 / -5,287 | +1,669 / -1,246 | +466,610,695 / -0 | 1,994,988,468 | 147,771,206 | 1 |
-| 2026-06-06 | 375 | 177 | +9,222 / -1,307 | +3,780 / -459 | +4,760 / -409 | +654 / -399 | +427,446,805 / -0 | 651,152,197 | 61,714,419 | 1 |
-| TOTAL | 16,527 | 19,417 | +2,818,643 / -1,498,778 | +642,038 / -368,799 | +611,398 / -325,471 | +96,132 / -58,930 | +24,037,141,735 / -0 | 162,116,655,650 | 2,618,083,254 | 2 |
+| 2026-05-12 | 21 | 46 | +6,520 / -121 | +4,349 / -113 | +1,672 / -1 | +217 / -0 | +0 / -0 | 0 | 0 | 1 |
+| 2026-05-13 | 27 | 1695 | +56,420 / -40,844 | +8,579 / -2,151 | +2,847 / -418 | +5,146 / -5 | +0 / -0 | 0 | 0 | 1 |
+| 2026-05-14 | 24 | 57 | +10,239 / -736 | +4,244 / -451 | +1,330 / -0 | +3,671 / -32 | +376,867,910 / -0 | 229,458,428 | 0 | 1 |
+| 2026-05-15 | 26 | 173 | +30,205 / -848 | +15,827 / -788 | +7,135 / -10 | +2,952 / -16 | +284,219,112 / -0 | 674,636,835 | 0 | 1 |
+| 2026-05-16 | 39 | 285 | +42,607 / -4,580 | +17,290 / -2,854 | +20,324 / -1,390 | +30 / -28 | +284,219,112 / -0 | 787,713,832 | 0 | 1 |
+| 2026-05-17 | 33 | 35969 | +649,481 / -637,975 | +7,903 / -962 | +3,859 / -246 | +2,479 / -132 | +595,008,047 / -0 | 273,544,095 | 0 | 1 |
+| 2026-05-18 | 20 | 120 | +28,420 / -4,156 | +15,762 / -1,342 | +8,712 / -191 | +3,291 / -2,412 | +376,952,223 / -0 | 285,180,553 | 0 | 1 |
+| 2026-05-19 | 811 | 449 | +61,812 / -9,990 | +31,075 / -7,680 | +24,138 / -581 | +4,875 / -1,183 | +1,356,047,844 / -0 | 1,940,701,955 | 0 | 1 |
+| 2026-05-20 | 690 | 286 | +44,418 / -16,508 | +26,656 / -14,721 | +11,786 / -233 | +2,123 / -827 | +1,309,338,672 / -0 | 1,646,493,663 | 0 | 1 |
+| 2026-05-21 | 762 | 3997 | +53,310 / -25,641 | +31,633 / -21,474 | +8,048 / -1,113 | +3,191 / -1,070 | +1,170,931,269 / -0 | 1,121,669,058 | 0 | 1 |
+| 2026-05-22 | 366 | 908 | +52,373 / -27,105 | +27,707 / -20,953 | +4,433 / -161 | +691 / -118 | +1,239,152,391 / -0 | 588,242,003 | 0 | 1 |
+| 2026-05-23 | 1201 | 1054 | +58,138 / -43,831 | +29,006 / -20,566 | +13,437 / -379 | +1,080 / -308 | +1,337,443,550 / -0 | 2,852,689,750 | 0 | 2 |
+| 2026-05-24 | 1374 | 2067 | +58,047 / -24,632 | +30,886 / -15,126 | +14,265 / -295 | +1,799 / -386 | +1,344,925,060 / -0 | 1,819,180,917 | 0 | 1 |
+| 2026-05-25 | 718 | 866 | +36,866 / -10,715 | +19,660 / -4,447 | +14,209 / -301 | +1,745 / -263 | +1,457,405,777 / -0 | 2,327,787,098 | 0 | 2 |
+| 2026-05-26 | 1470 | 616 | +62,189 / -25,784 | +33,720 / -22,040 | +26,024 / -1,922 | +1,636 / -1,337 | +1,647,129,970 / -0 | 5,970,121,326 | 0 | 2 |
+| 2026-05-27 | 1405 | 440 | +36,301 / -10,217 | +17,580 / -8,443 | +16,681 / -452 | +987 / -688 | +1,626,117,603 / -0 | 4,648,336,206 | 0 | 1 |
+| 2026-05-28 | 937 | 468 | +27,736 / -6,691 | +11,212 / -5,041 | +14,032 / -770 | +1,821 / -719 | +1,125,394,533 / -0 | 24,056,691,668 | 0 | 2 |
+| 2026-05-29 | 1113 | 3606 | +385,507 / -368,477 | +183,073 / -178,910 | +185,647 / -174,292 | +3,347 / -2,889 | +1,374,858,003 / -0 | 42,394,799,130 | 0 | 2 |
+| 2026-05-30 | 506 | 871 | +55,970 / -18,599 | +14,507 / -4,745 | +14,808 / -2,718 | +3,930 / -871 | +1,173,014,787 / -0 | 15,999,521,188 | 0 | 1 |
+| 2026-05-31 | 246 | 258 | +30,256 / -2,952 | +6,950 / -1,224 | +7,245 / -698 | +287 / -219 | +900,746,114 / -0 | 7,662,956,738 | 0 | 1 |
+| 2026-06-01 | 1007 | 562 | +685,723 / -6,681 | +25,531 / -5,076 | +21,838 / -519 | +1,411 / -657 | +1,377,274,758 / -0 | 37,724,930,480 | 0 | 1 |
+| 2026-06-02 | 1000 | 410 | +30,881 / -4,046 | +13,213 / -2,955 | +15,094 / -451 | +619 / -310 | +582,848,690 / -0 | 2,202,742,109 | 0 | 1 |
+| 2026-06-03 | 954 | 1135 | +188,898 / -152,007 | +40,640 / -22,684 | +142,398 / -128,355 | +2,990 / -714 | +327,829,638 / -0 | 2,822,578,220 | 0 | 1 |
+| 2026-06-04 | 466 | 1056 | +67,307 / -42,327 | +16,232 / -1,288 | +11,751 / -4,279 | +31,479 / -33,364 | +537,165,112 / -0 | 1,388,909,673 | 0 | 1 |
+| 2026-06-05 | 938 | 383 | +49,940 / -12,038 | +33,127 / -5,487 | +15,019 / -5,290 | +1,362 / -939 | +529,851,791 / -0 | 1,995,468,790 | 0 | 1 |
+| 2026-06-06 | 1234 | 564 | +38,101 / -6,045 | +15,244 / -1,785 | +20,316 / -3,223 | +1,222 / -780 | +614,166,472 / -0 | 2,124,942,711 | 0 | 2 |
+| 2026-06-07 | 997 | 452 | +90,611 / -10,079 | +53,176 / -6,801 | +31,762 / -2,767 | +3,646 / -401 | +1,254,024,427 / -0 | 7,598,473,742 | 0 | 2 |
+| 2026-06-08 | 1414 | 903 | +92,034 / -9,527 | +32,955 / -6,770 | +27,573 / -990 | +3,011 / -440 | +913,319,882 / -0 | 11,469,589,617 | 0 | 2 |
+| 2026-06-09 | 106 | 173 | +9,452 / -723 | +4,811 / -284 | +2,944 / -87 | +184 / -70 | +464,384,611 / -0 | 292,126,210 | 0 | 2 |
+| 2026-06-10 | 310 | 949 | +64,626 / -2,273 | +36,430 / -1,250 | +6,759 / -262 | +1,402 / -466 | +388,691,202 / -0 | 1,308,719,988 | 0 | 1 |
+| 2026-06-11 | 149 | 438 | +21,156 / -1,949 | +8,114 / -930 | +4,064 / -324 | +1,133 / -60 | +463,150,892 / -0 | 7,316,446,507 | 0 | 1 |
+| 2026-06-12 | 132 | 700 | +45,512 / -20,325 | +8,665 / -2,034 | +30,433 / -18,133 | +432 / -67 | +110,597,493 / -0 | 148,634,133 | 0 | 1 |
+| 2026-06-13 | 111 | 202 | +10,749 / -1,287 | +5,052 / -812 | +3,749 / -165 | +432 / -141 | +83,055,504 / -0 | 383,852,671 | 0 | 1 |
+| 2026-06-14 | 18 | 105 | +7,941 / -318 | +2,317 / -169 | +1,063 / -113 | +101 / -9 | +25,076,744 / -0 | 35,229,756 | 0 | 1 |
+| 2026-06-15 | 70 | 157 | +13,869 / -1,562 | +7,529 / -1,437 | +4,047 / -8 | +1,717 / -79 | +42,917,943 / -0 | 30,780,177 | 54,731,836 | 2 |
+| 2026-06-16 | 107 | 334 | +18,140 / -12,667 | +10,949 / -6,481 | +1,878 / -2,265 | +2,414 / -19 | +67,162,666 / -0 | 1,129,966 | 75,483,343 | 2 |
+| 2026-06-17 | 556 | 709 | +107,409 / -5,766 | +66,962 / -3,569 | +34,555 / -1,483 | +3,169 / -466 | +49,582,997 / -0 | 55,874,027 | 699,069,320 | 2 |
+| 2026-06-18 | 205 | 1163 | +32,866 / -8,917 | +20,486 / -4,674 | +6,557 / -1,220 | +1,718 / -189 | +131,819,702 / -0 | 51,518,407 | 837,838,817 | 3 |
+| 2026-06-19 | 418 | 1114 | +118,113 / -28,365 | +61,232 / -12,779 | +22,205 / -2,466 | +2,755 / -288 | +221,829,807 / -0 | 236,385,059 | 1,500,603,716 | 4 |
+| 2026-06-20 | 114 | 227 | +16,009 / -1,515 | +7,134 / -998 | +8,324 / -381 | +182 / -101 | +845,728,399 / -0 | 932,457,783 | 0 | 2 |
+| 2026-06-21 | 151 | 446 | +24,518 / -23,151 | +15,157 / -10,093 | +8,180 / -1,372 | +1,009 / -557 | +1,558,832,973 / -0 | 2,367,286,629 | 0 | 2 |
+| 2026-06-22 | 150 | 328 | +24,526 / -6,772 | +14,516 / -4,388 | +7,009 / -2,020 | +965 / -167 | +1,385,410,206 / -0 | 1,881,342,028 | 0 | 2 |
+| 2026-06-23 | 258 | 626 | +29,831 / -8,475 | +17,992 / -5,945 | +7,979 / -2,210 | +2,153 / -180 | +1,259,142,261 / -0 | 1,164,660,342 | 233,816,141 | 3 |
+| 2026-06-24 | 167 | 582 | +49,927 / -2,328 | +29,247 / -1,818 | +17,872 / -230 | +440 / -68 | +174,408,844 / -0 | 0 | 1,172,866,673 | 3 |
+| 2026-06-25 | 209 | 837 | +789,630 / -715,512 | +48,513 / -4,174 | +21,221 / -297 | +1,919 / -96 | +438,347,202 / -0 | 0 | 1,998,791,712 | 2 |
+| 2026-06-26 | 388 | 582 | +130,777 / -5,445 | +69,513 / -5,128 | +60,112 / -272 | +903 / -13 | +451,358,679 / -0 | 0 | 3,031,581,553 | 2 |
+| 2026-06-27 | 45 | 151 | +11,669 / -2,289 | +5,798 / -1,678 | +5,389 / -581 | +376 / -2 | +1,529,698,971 / -0 | 240,773,796 | 140,513,107 | 2 |
+| 2026-06-28 | 277 | 931 | +53,729 / -36,191 | +33,441 / -26,979 | +19,839 / -8,955 | +9 / -9 | +348,237,946 / -0 | 1,087,310,744 | 0 | 1 |
+| 2026-06-29 | 214 | 569 | +37,591 / -10,686 | +22,494 / -10,029 | +14,378 / -636 | +2 / -2 | +377,021,044 / -0 | 1,063,985,386 | 0 | 1 |
+| 2026-06-30 | 300 | 747 | +44,167 / -21,445 | +28,640 / -20,124 | +14,286 / -1,046 | +34 / -33 | +639,030,586 / -0 | 1,299,562,494 | 0 | 1 |
+| 2026-07-01 | 180 | 507 | +77,681 / -19,690 | +14,211 / -3,418 | +10,916 / -272 | +4,587 / -2,870 | +1,501,891,347 / -0 | 1,110,955,972 | 0 | 2 |
+| 2026-07-02 | 250 | 279 | +44,415 / -4,972 | +25,352 / -2,245 | +13,790 / -396 | +800 / -482 | +1,523,332,511 / -0 | 4,668,395,839 | 343,401,673 | 2 |
+| 2026-07-03 | 521 | 474 | +65,078 / -8,289 | +29,886 / -3,200 | +20,256 / -401 | +1,564 / -913 | +1,502,514,892 / -0 | 8,166,552,226 | 90,088,061 | 1 |
+| 2026-07-04 | 390 | 538 | +51,704 / -5,524 | +20,790 / -2,544 | +27,109 / -313 | +1,716 / -1,213 | +1,476,936,361 / -0 | 12,241,939,818 | 209,752,996 | 1 |
+| 2026-07-05 | 168 | 449 | +41,883 / -3,884 | +17,068 / -1,729 | +18,155 / -390 | +777 / -278 | +1,250,939,060 / -0 | 1,562,699,038 | 354,424,446 | 1 |
+| 2026-07-06 | 95 | 353 | +26,690 / -2,044 | +16,398 / -1,620 | +9,043 / -142 | +750 / -63 | +1,257,905,228 / -0 | 2,346,225,671 | 115,379,441 | 1 |
+| 2026-07-07 | 88 | 354 | +34,032 / -2,281 | +14,457 / -1,901 | +18,805 / -222 | +428 / -98 | +1,499,847,649 / -0 | 17,362,096,552 | 207,687,836 | 1 |
+| 2026-07-08 | 1 | 7 | +268 / -8 | +71 / -6 | +22 / -0 | +28 / -0 | +181,139,267 / -0 | 33,935,675 | 18,562,148 | 1 |
+| 2026-07-09 | 9 | 384 | +25,047 / -1,179 | +8,096 / -1,081 | +16,951 / -98 | +0 / -0 | +160,214,334 / -0 | 0 | 323,296,789 | 1 |
+| 2026-07-10 | 8 | 27 | +2,567 / -1,619 | +1,167 / -1,617 | +1,400 / -2 | +0 / -0 | +160,320,760 / -0 | 0 | 162,635,017 | 1 |
+| 2026-07-11 | 9 | 342 | +28,082 / -1,207 | +6,911 / -1,071 | +21,168 / -134 | +3 / -2 | +160,817,722 / -0 | 0 | 242,606,778 | 1 |
+| 2026-07-12 | 12 | 243 | +15,962 / -1,005 | +3,676 / -863 | +12,285 / -142 | +0 / -0 | +168,769,548 / -0 | 0 | 191,679,547 | 1 |
+| 2026-07-13 | 188 | 610 | +67,031 / -3,507 | +25,658 / -2,355 | +37,055 / -459 | +1,616 / -90 | +1,301,387,496 / -0 | 1,143,617,258 | 216,933,331 | 1 |
+| 2026-07-14 | 235 | 359 | +35,039 / -3,253 | +13,890 / -1,041 | +12,713 / -321 | +3,375 / -361 | +3,684,935,696 / -0 | 1,225,880,889 | 0 | 2 |
+| 2026-07-15 | 205 | 503 | +20,341 / -14,048 | +11,677 / -8,853 | +6,003 / -2,734 | +651 / -13 | +3,358,746,009 / -0 | 2,843,226,916 | 0 | 2 |
+| 2026-07-16 | 158 | 450 | +27,920 / -7,478 | +10,911 / -2,853 | +11,256 / -558 | +1,812 / -13 | +3,448,684,069 / -0 | 2,023,391,638 | 81,062,676 | 2 |
+| 2026-07-17 | 196 | 331 | +27,020 / -2,642 | +15,367 / -2,078 | +8,973 / -453 | +1,856 / -19 | +4,475,363,886 / -0 | 63,289,720,927 | 45,186,610 | 2 |
+| 2026-07-18 | 98 | 105 | +4,217 / -219 | +999 / -190 | +743 / -19 | +2,475 / -10 | +2,561,375,818 / -0 | 1,007,536,412 | 0 | 1 |
+| 2026-07-19 | 156 | 227 | +19,191 / -1,676 | +7,533 / -1,192 | +7,832 / -193 | +1,344 / -9 | +5,398,362,057 / -0 | 100,942,869,322 | 48,654,724 | 2 |
+| 2026-07-20 | 352 | 1021 | +169,028 / -38,924 | +45,290 / -6,462 | +21,851 / -561 | +6,446 / -2,881 | +6,290,322,223 / -0 | 149,942,983,988 | 135,012,834 | 2 |
+| 2026-07-21 | 13 | 243 | +16,264 / -1,687 | +5,169 / -1,190 | +11,095 / -497 | +0 / -0 | +159,095,438 / -0 | 0 | 200,924,428 | 1 |
+| 2026-07-22 | 15 | 450 | +38,309 / -1,523 | +9,738 / -1,314 | +28,552 / -208 | +1 / -1 | +173,995,647 / -0 | 0 | 439,393,079 | 1 |
+| 2026-07-23 | 400 | 744 | +49,562 / -4,252 | +15,644 / -2,888 | +26,640 / -487 | +3,272 / -77 | +7,622,678,916 / -0 | 233,783,932,953 | 311,898,845 | 2 |
+| 2026-07-24 | 258 | 620 | +50,753 / -4,053 | +23,409 / -2,532 | +18,986 / -342 | +2,197 / -268 | +7,218,951,306 / -0 | 209,289,198,125 | 183,310,251 | 2 |
+| 2026-07-25 | 156 | 451 | +39,870 / -2,658 | +14,272 / -1,334 | +15,695 / -168 | +955 / -141 | +5,535,684,355 / -0 | 112,177,911,453 | 196,786,379 | 2 |
+| 2026-07-26 | 167 | 381 | +26,722 / -2,319 | +12,269 / -1,343 | +10,364 / -258 | +1,159 / -115 | +4,786,882,591 / -0 | 71,942,218,968 | 20,566,622 | 2 |
+| 2026-07-27 | 310 | 543 | +44,504 / -7,100 | +17,222 / -2,285 | +11,392 / -289 | +4,588 / -497 | +9,522,780,199 / -0 | 337,715,936,790 | 0 | 2 |
+| 2026-07-28 | 263 | 407 | +29,768 / -5,476 | +10,658 / -1,814 | +7,776 / -402 | +2,974 / -215 | +7,427,226,983 / -0 | 214,549,653,877 | 0 | 2 |
+| 2026-07-29 | 307 | 389 | +24,216 / -2,950 | +9,251 / -1,424 | +7,197 / -340 | +3,469 / -297 | +8,053,157,226 / -0 | 241,082,097,646 | 11,563,058 | 3 |
+| 2026-07-30 | 254 | 844 | +69,126 / -4,820 | +23,004 / -2,511 | +32,898 / -292 | +3,768 / -258 | +7,566,098,106 / -0 | 202,505,989,576 | 525,195,164 | 3 |
+| 2026-07-31 | 312 | 644 | +54,582 / -3,696 | +16,885 / -2,600 | +31,149 / -395 | +3,754 / -154 | +7,450,715,801 / -0 | 205,236,176,495 | 508,254,318 | 2 |
+| 2026-08-01 | 349 | 699 | +60,298 / -4,212 | +21,920 / -3,059 | +26,642 / -226 | +6,532 / -243 | +8,439,626,323 / -0 | 258,059,999,975 | 116,747,476 | 2 |
+| 2026-08-02 | 521 | 825 | +71,358 / -8,860 | +26,531 / -4,086 | +31,391 / -688 | +6,505 / -575 | +10,078,916,529 / -0 | 328,820,627,439 | 239,468,802 | 2 |
+| 2026-08-03 | 137 | 536 | +35,002 / -6,520 | +10,477 / -2,349 | +15,914 / -316 | +4,613 / -354 | +7,803,636,757 / -0 | 223,979,748,231 | 102,561,052 | 2 |
+| 2026-08-04 | 467 | 671 | +43,365 / -4,513 | +20,069 / -3,253 | +14,974 / -557 | +7,378 / -240 | +10,161,870,868 / -0 | 326,930,216,762 | 0 | 2 |
+| 2026-08-05 | 224 | 307 | +24,065 / -2,223 | +11,892 / -1,839 | +8,633 / -129 | +3,154 / -69 | +11,130,821,965 / -0 | 358,365,097,981 | 0 | 2 |
+| 2026-08-06 | 184 | 467 | +29,465 / -2,420 | +10,021 / -1,629 | +15,146 / -487 | +3,218 / -145 | +9,996,560,290 / -0 | 268,022,581,345 | 401,538,372 | 2 |
+| 2026-08-07 | 3 | 169 | +13,616 / -408 | +2,577 / -372 | +11,002 / -36 | +0 / -0 | +159,134,076 / -0 | 0 | 85,333,982 | 1 |
+| 2026-08-08 | 29 | 309 | +38,917 / -11,918 | +2,974 / -235 | +8,687 / -443 | +12,958 / -9,475 | +210,988,056 / -0 | 0 | 908,240,555 | 4 |
+| 2026-08-09 | 5 | 9 | +7,047 / -4,099 | +101 / -27 | +0 / -0 | +290 / -287 | +33,964,121 / -0 | 0 | 78,540,559 | 4 |
+| TOTAL | 31,947 | 89,037 | +6,242,522 / -2,650,269 | +1,846,220 / -597,053 | +1,599,685 / -390,941 | +215,500 / -76,916 | +201,068,330,905 / -0 | 4,164,878,851,645 | 16,861,984,067 | 6 |
+
+## Git Churn By App
+
+- Buckets are assigned by repo path prefix: `FreeX` = `src/**` + `tests/**`; `FreeW` = `freew/**`; `FreeP` = `freep/**`; `Shared` = `shared/**`; `Docs/Tooling/Other` = everything else (`docs/**`, `tools/**`, top-level files, screenshots/fixture/corpus dirs, etc.).
+- `tests/**` is bucketed under `FreeX` even where it exercises `Shared`/`FreeW`/`FreeP` code, because the shared test projects that live under `tests/` predate the FreeW/FreeP split; see the "By Platform Layer" section below for a platform-aware (not app-aware) view of the same `tests/**` paths.
+- "Files Changed" and "LoC +/-" are an EXACT partition of the same `git log --numstat` data behind Daily Build Churn above: every changed path is assigned to exactly one bucket, so these two columns sum exactly to the Daily Build Churn TOTAL row (the generator asserts this at build time and warns if it ever drifts).
+- "Commits" counts a commit once per bucket if it touched at least one path in that bucket (a commit touching multiple buckets is counted in each), so it is NOT expected to sum to the Daily Build Churn TOTAL commit count: git suppresses `--numstat` output for merge commits unless `-m`/`-c` is passed, so a merge commit with no line-level diff is tallied in the overall commit total but contributes to zero buckets here.
+- "Files Changed" is the sum of per-day distinct-path counts (matches the Daily Build Churn convention, not a window-wide dedup).
+
+### Git Churn By App - Summary
+
+| App | Commits | Files Changed | LoC +/- |
+| --- | ---: | ---: | ---: |
+| FreeX | 10,978 | 36,836 | +3,976,001 / -1,708,242 |
+| FreeW | 2,044 | 4,785 | +481,056 / -51,016 |
+| FreeP | 2,196 | 3,540 | +440,143 / -43,304 |
+| Shared | 456 | 759 | +50,150 / -5,815 |
+| Docs/Tooling/Other | 7,920 | 43,117 | +1,295,172 / -841,892 |
+| TOTAL | 23,594 | 89,037 | +6,242,522 / -2,650,269 |
+
+### Git Churn By App - Monthly
+
+| Month | App | Commits | Files Changed | LoC +/- |
+| --- | --- | ---: | ---: | ---: |
+| 2026-05 | Docs/Tooling/Other | 2,480 | 36,849 | +700,892 / -659,722 |
+| 2026-05 | FreeX | 5,392 | 17,382 | +1,085,923 / -620,680 |
+| 2026-06 | Docs/Tooling/Other | 1,899 | 2,368 | +204,610 / -75,886 |
+| 2026-06 | FreeP | 288 | 527 | +102,235 / -14,312 |
+| 2026-06 | FreeW | 626 | 2,070 | +233,419 / -20,957 |
+| 2026-06 | FreeX | 4,633 | 12,103 | +2,332,663 / -1,046,453 |
+| 2026-06 | Shared | 242 | 467 | +32,775 / -3,103 |
+| 2026-07 | Docs/Tooling/Other | 2,453 | 2,899 | +305,824 / -80,833 |
+| 2026-07 | FreeP | 1,488 | 2,305 | +267,638 / -23,781 |
+| 2026-07 | FreeW | 964 | 1,869 | +182,194 / -22,960 |
+| 2026-07 | FreeX | 750 | 5,996 | +459,715 / -34,800 |
+| 2026-07 | Shared | 141 | 210 | +11,501 / -1,609 |
+| 2026-08 | Docs/Tooling/Other | 1,088 | 1,001 | +83,846 / -25,451 |
+| 2026-08 | FreeP | 420 | 708 | +70,270 / -5,211 |
+| 2026-08 | FreeW | 454 | 846 | +65,443 / -7,099 |
+| 2026-08 | FreeX | 203 | 1,355 | +97,700 / -6,309 |
+| 2026-08 | Shared | 73 | 82 | +5,874 / -1,103 |
+
+## Git Churn By Platform Layer
+
+- The codebase is organized by UI framework, not OS, so "platform" here means UI framework layer: `Windows (WPF)` = any path under `src/**`, `tests/**`, `freew/**`, `freep/**`, or `shared/**` matching `*.App.Host*`, `*.App.UI*`, `*.Wpf*`, or `*Free.Shared.*.Windows*` (e.g. `src/FreeX.App.Host`, `shared/Free.Shared.Ribbon.Wpf`, `shared/Free.Shared.AppServices.Windows`).
+- `Avalonia (Linux/macOS)` = same code area matching `*.App.Avalonia*`, `*.App.Rendering.Avalonia*`, or `*Free.Shared.*.Avalonia*` (e.g. `freep/FreeP.App.Rendering.Avalonia`, `shared/Free.Shared.Shell.Avalonia`).
+- `Platform-neutral (core/shared/IO/model)` = everything else under those same four top-level dirs (Core.*, App.Presentation, App.Services, Ribbon.Definitions, IO, Model, Commands, Drawing, Opc, Pdf/Pdf.Skia, etc.).
+- `Non-code` = everything outside `src/**`, `tests/**`, `freew/**`, `freep/**`, `shared/**` (`docs/**`, `tools/**`, top-level files, etc.).
+- Caveat: this is literal-glob matching per the above patterns, not a semantic "runs on Windows" judgment - e.g. `freep/FreeP.App.Ole.Windows` and `freep/FreeP.App.Recording.Windows` have "Windows" in their project name but do not match any of the `Windows (WPF)` globs above (no `.App.Host`, `.App.UI`, `.Wpf`, or `Free.Shared.*.Windows` substring), so they land in `Platform-neutral`.
+- "Files Changed" and "LoC +/-" are an EXACT partition of the same `git log --numstat` data behind Daily Build Churn above: every changed path is assigned to exactly one bucket, so these two columns sum exactly to the Daily Build Churn TOTAL row (the generator asserts this at build time and warns if it ever drifts).
+- "Commits" counts a commit once per bucket if it touched at least one path in that bucket (a commit touching multiple buckets is counted in each), so it is NOT expected to sum to the Daily Build Churn TOTAL commit count: git suppresses `--numstat` output for merge commits unless `-m`/`-c` is passed, so a merge commit with no line-level diff is tallied in the overall commit total but contributes to zero buckets here.
+- "Files Changed" is the sum of per-day distinct-path counts (matches the Daily Build Churn convention, not a window-wide dedup).
+
+### Git Churn By Platform Layer - Summary
+
+| Platform Layer | Commits | Files Changed | LoC +/- |
+| --- | ---: | ---: | ---: |
+| Windows (WPF) | 7,801 | 22,283 | +1,772,748 / -1,218,886 |
+| Avalonia (Linux/macOS) | 3,287 | 3,548 | +416,772 / -65,062 |
+| Platform-neutral (core/shared/IO/model) | 9,329 | 20,089 | +2,757,830 / -524,429 |
+| Non-code | 7,920 | 43,117 | +1,295,172 / -841,892 |
+| TOTAL | 28,337 | 89,037 | +6,242,522 / -2,650,269 |
+
+### Git Churn By Platform Layer - Monthly
+
+| Month | Platform Layer | Commits | Files Changed | LoC +/- |
+| --- | --- | ---: | ---: | ---: |
+| 2026-05 | Non-code | 2,480 | 36,849 | +700,892 / -659,722 |
+| 2026-05 | Platform-neutral (core/shared/IO/model) | 2,573 | 5,073 | +557,155 / -321,336 |
+| 2026-05 | Windows (WPF) | 3,073 | 12,309 | +528,768 / -299,344 |
+| 2026-06 | Avalonia (Linux/macOS) | 885 | 1,092 | +169,154 / -32,458 |
+| 2026-06 | Non-code | 1,899 | 2,368 | +204,610 / -75,886 |
+| 2026-06 | Platform-neutral (core/shared/IO/model) | 3,617 | 6,757 | +1,473,366 / -157,227 |
+| 2026-06 | Windows (WPF) | 2,494 | 7,318 | +1,058,572 / -895,140 |
+| 2026-07 | Avalonia (Linux/macOS) | 1,744 | 1,692 | +189,756 / -25,585 |
+| 2026-07 | Non-code | 2,453 | 2,899 | +305,824 / -80,833 |
+| 2026-07 | Platform-neutral (core/shared/IO/model) | 2,367 | 6,665 | +590,717 / -37,656 |
+| 2026-07 | Windows (WPF) | 1,696 | 2,023 | +140,575 / -19,909 |
+| 2026-08 | Avalonia (Linux/macOS) | 658 | 764 | +57,862 / -7,019 |
+| 2026-08 | Non-code | 1,088 | 1,001 | +83,846 / -25,451 |
+| 2026-08 | Platform-neutral (core/shared/IO/model) | 772 | 1,594 | +136,592 / -8,210 |
+| 2026-08 | Windows (WPF) | 538 | 633 | +44,833 / -4,493 |
 
 ## Daily Provider Token Usage
 
 | Date | Provider | Files | Sessions | Events | Bytes +/- | Input | Cached Input | Cache Write | Cache Read | Output | Reasoning | Raw Tokens | Billable Eq Tokens |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 2026-05-12 | anthropic | 37 | 3 | 768 | 58,308,841 | 5,546 | 0 | 2,002,836 | 44,641,519 | 302,141 | 0 | 46,952,042 | 7,275,384 |
-| 2026-05-13 | anthropic | 16 | 2 | 979 | 53,525,808 | 7,984 | 0 | 2,781,018 | 85,729,081 | 578,029 | 0 | 89,096,112 | 12,635,194 |
-| 2026-05-14 | anthropic | 36 | 1 | 937 | 53,252,443 | 1,876 | 0 | 2,752,526 | 68,695,779 | 578,393 | 0 | 72,028,574 | 10,890,504 |
-| 2026-05-14 | openai | 5 | 5 | 1,621 | 376,867,910 | 228,903,051 | 223,460,352 | 0 | 0 | 485,175 | 70,202 | 230,175,315 | 117,728,252 |
-| 2026-05-15 | anthropic | 41 | 1 | 1,138 | 55,131,398 | 7,384 | 0 | 2,734,629 | 67,169,686 | 445,260 | 0 | 70,356,959 | 10,587,899 |
-| 2026-05-15 | openai | 1 | 1 | 4,560 | 284,219,112 | 672,998,247 | 660,068,096 | 0 | 0 | 1,467,643 | 170,945 | 675,028,848 | 344,602,787 |
-| 2026-05-16 | anthropic | 45 | 1 | 1,871 | 59,770,668 | 24,710 | 0 | 4,992,743 | 159,782,011 | 611,277 | 0 | 165,410,741 | 22,855,117 |
-| 2026-05-16 | openai | 1 | 1 | 5,503 | 284,219,112 | 785,631,408 | 768,870,528 | 0 | 0 | 1,854,098 | 228,326 | 788,413,672 | 403,278,568 |
-| 2026-05-17 | anthropic | 35 | 1 | 1,985 | 64,012,476 | 36,051 | 0 | 5,351,357 | 173,871,772 | 475,216 | 0 | 179,734,396 | 24,587,640 |
-| 2026-05-17 | openai | 3 | 3 | 1,960 | 595,008,047 | 272,786,866 | 263,650,304 | 0 | 0 | 663,945 | 93,284 | 273,797,872 | 141,718,943 |
-| 2026-05-18 | anthropic | 12 | 1 | 813 | 53,559,540 | 993 | 0 | 2,462,711 | 84,890,659 | 261,092 | 0 | 87,615,455 | 11,829,540 |
-| 2026-05-18 | openai | 2 | 2 | 1,968 | 376,952,223 | 284,433,721 | 277,189,376 | 0 | 0 | 654,054 | 92,778 | 285,434,755 | 146,585,865 |
-| 2026-05-19 | openai | 217 | 214 | 16,091 | 1,357,117,034 | 1,939,736,608 | 1,870,288,640 | 0 | 0 | 5,045,311 | 1,030,415 | 1,946,649,860 | 1,010,668,014 |
-| 2026-05-20 | anthropic | 1 | 1 | 11 | 86,136,729 | 13 | 0 | 34,469 | 345,627 | 2,467 | 0 | 382,576 | 80,129 |
-| 2026-05-20 | openai | 82 | 81 | 12,133 | 1,309,716,210 | 1,643,667,766 | 1,594,734,080 | 0 | 0 | 3,493,967 | 668,083 | 1,648,668,689 | 850,462,776 |
-| 2026-05-21 | anthropic | 2 | 1 | 794 | 86,386,745 | 3,640 | 0 | 2,283,553 | 73,043,689 | 856,205 | 0 | 76,187,087 | 11,018,655 |
-| 2026-05-21 | openai | 87 | 87 | 9,007 | 1,170,931,269 | 1,118,380,109 | 1,084,102,144 | 0 | 0 | 2,804,713 | 484,236 | 1,122,427,892 | 579,617,986 |
-| 2026-05-22 | anthropic | 1 | 1 | 301 | 86,136,729 | 5,841 | 0 | 2,002,779 | 24,078,649 | 385,419 | 0 | 26,472,688 | 5,302,599 |
-| 2026-05-22 | openai | 38 | 38 | 4,267 | 1,239,152,391 | 586,840,256 | 568,882,176 | 0 | 0 | 1,189,575 | 212,172 | 588,664,932 | 303,800,915 |
-| 2026-05-23 | anthropic | 1 | 1 | 707 | 86,136,729 | 2,620 | 0 | 1,548,615 | 74,668,986 | 557,731 | 0 | 76,777,952 | 9,963,018 |
-| 2026-05-23 | openai | 77 | 75 | 20,634 | 1,337,553,605 | 2,845,976,246 | 2,772,940,544 | 0 | 0 | 5,792,856 | 920,648 | 2,854,848,393 | 1,466,219,478 |
-| 2026-05-24 | anthropic | 1 | 1 | 659 | 86,136,729 | 1,560 | 0 | 1,220,663 | 67,005,102 | 243,936 | 0 | 68,471,261 | 8,471,835 |
-| 2026-05-24 | openai | 57 | 57 | 13,343 | 1,345,035,115 | 1,815,015,023 | 1,766,173,056 | 0 | 0 | 3,588,009 | 577,885 | 1,820,600,791 | 936,094,389 |
-| 2026-05-25 | anthropic | 1 | 1 | 778 | 86,136,729 | 1,527 | 0 | 1,183,214 | 85,074,172 | 287,436 | 0 | 86,546,349 | 10,275,398 |
-| 2026-05-25 | openai | 188 | 186 | 17,860 | 1,457,515,832 | 2,321,739,339 | 2,252,745,088 | 0 | 0 | 5,143,919 | 903,840 | 2,329,328,343 | 1,201,414,554 |
-| 2026-05-26 | anthropic | 3 | 1 | 383 | 86,594,989 | 549 | 0 | 649,782 | 37,632,606 | 152,601 | 0 | 38,435,538 | 4,728,638 |
-| 2026-05-26 | openai | 548 | 542 | 46,296 | 1,647,129,970 | 5,952,654,969 | 5,766,743,040 | 0 | 0 | 15,047,907 | 2,418,450 | 5,974,647,607 | 3,086,749,806 |
-| 2026-05-27 | openai | 294 | 289 | 36,627 | 1,626,117,603 | 4,637,115,732 | 4,468,712,448 | 0 | 0 | 9,470,811 | 1,749,663 | 4,649,815,155 | 2,413,979,982 |
-| 2026-05-28 | anthropic | 25 | 1 | 2,050 | 98,458,174 | 13,970 | 0 | 4,058,604 | 174,648,047 | 274,126 | 0 | 178,994,747 | 22,826,156 |
-| 2026-05-28 | openai | 386 | 277 | 186,507 | 1,125,394,533 | 24,014,231,896 | 23,567,933,440 | 0 | 0 | 38,313,607 | 4,146,165 | 24,060,030,258 | 12,272,724,948 |
-| 2026-05-29 | anthropic | 4 | 1 | 164 | 87,231,544 | 180 | 0 | 330,494 | 14,886,976 | 24,437 | 0 | 15,242,087 | 1,926,432 |
-| 2026-05-29 | openai | 244 | 125 | 316,657 | 1,374,858,003 | 42,315,429,592 | 41,551,918,848 | 0 | 0 | 73,046,880 | 6,322,658 | 42,404,907,390 | 21,618,839,706 |
-| 2026-05-30 | anthropic | 2 | 1 | 434 | 39,963,232 | 90,666 | 0 | 4,684,036 | 151,810,000 | 403,757 | 0 | 156,988,459 | 21,530,468 |
-| 2026-05-30 | openai | 280 | 251 | 118,863 | 1,173,014,787 | 15,957,243,192 | 15,420,708,224 | 0 | 0 | 33,925,992 | 8,352,004 | 16,008,528,128 | 8,289,167,076 |
-| 2026-05-31 | anthropic | 8 | 1 | 550 | 42,422,729 | 88,740 | 0 | 7,771,149 | 165,556,427 | 198,471 | 0 | 173,614,787 | 26,556,790 |
-| 2026-05-31 | openai | 315 | 304 | 57,704 | 900,746,114 | 7,641,032,254 | 7,377,207,296 | 0 | 0 | 17,127,671 | 4,796,813 | 7,667,291,701 | 3,974,353,090 |
-| 2026-06-01 | anthropic | 3 | 1 | 691 | 40,934,810 | 103,418 | 0 | 3,004,724 | 268,507,630 | 555,647 | 0 | 272,171,419 | 31,265,733 |
-| 2026-06-01 | openai | 348 | 297 | 278,655 | 1,377,207,318 | 37,631,362,291 | 36,790,162,816 | 0 | 0 | 77,938,081 | 15,570,194 | 37,729,785,040 | 19,329,789,158 |
-| 2026-06-02 | anthropic | 2 | 1 | 519 | 40,629,903 | 66,617 | 0 | 3,064,414 | 183,251,751 | 453,127 | 0 | 186,835,909 | 22,675,437 |
-| 2026-06-02 | openai | 169 | 165 | 16,921 | 582,848,690 | 2,194,371,059 | 2,116,485,888 | 0 | 0 | 6,248,236 | 2,122,814 | 2,202,148,604 | 1,144,499,165 |
-| 2026-06-03 | anthropic | 1 | 1 | 331 | 39,366,380 | 66,612 | 0 | 2,795,943 | 189,728,381 | 394,342 | 0 | 192,985,278 | 22,928,721 |
-| 2026-06-03 | openai | 258 | 253 | 22,685 | 327,829,638 | 2,808,316,823 | 2,710,139,520 | 0 | 0 | 10,325,545 | 3,935,852 | 2,821,033,482 | 1,467,508,460 |
-| 2026-06-04 | anthropic | 1 | 1 | 225 | 39,366,380 | 24,855 | 0 | 6,434,166 | 140,456,870 | 381,322 | 0 | 147,297,213 | 22,494,572 |
-| 2026-06-04 | openai | 144 | 144 | 11,344 | 444,050,014 | 1,382,178,887 | 1,330,908,160 | 0 | 0 | 4,931,659 | 1,799,127 | 1,388,288,258 | 723,455,593 |
-| 2026-06-05 | anthropic | 1 | 1 | 278 | 39,366,380 | 58,521 | 0 | 3,950,571 | 143,340,024 | 422,090 | 0 | 147,771,206 | 19,752,827 |
-| 2026-06-05 | openai | 160 | 160 | 16,028 | 427,244,315 | 1,985,998,832 | 1,914,221,568 | 0 | 0 | 6,987,966 | 2,481,992 | 1,994,988,468 | 1,038,358,006 |
-| 2026-06-06 | anthropic | 1 | 1 | 142 | 39,366,380 | 56,360 | 0 | 2,091,292 | 59,364,015 | 202,752 | 0 | 61,714,419 | 8,809,629 |
-| 2026-06-06 | openai | 72 | 72 | 5,226 | 388,080,425 | 648,186,297 | 624,849,280 | 0 | 0 | 2,092,626 | 750,188 | 651,152,197 | 338,604,471 |
-| TOTAL | all | 4,256 | 3,656 | 1,239,968 | 24,037,141,735 | 161,684,900,697 | 157,743,094,912 | 70,186,288 | 2,538,179,459 | 336,687,520 | 59,898,734 | 164,734,738,904 | 83,551,490,303 |
+| 2026-07-16 | anthropic | 1 | 1 | 152 | 158,613,485 | 304 | 0 | 3,519,874 | 77,269,254 | 273,244 | 0 | 81,062,676 | 12,400,316 |
+| 2026-07-16 | openai | 36 | 36 | 14,843 | 3,290,070,584 | 2,016,974,867 | 1,960,596,480 | 0 | 0 | 4,640,934 | 1,775,837 | 2,023,391,638 | 1,043,093,398 |
+| 2026-07-17 | anthropic | 3 | 3 | 159 | 159,411,260 | 928 | 0 | 1,435,221 | 43,571,606 | 178,855 | 0 | 45,186,610 | 6,330,970 |
+| 2026-07-15 | openai | 86 | 86 | 20,735 | 3,358,746,009 | 2,834,122,309 | 2,733,463,808 | 0 | 0 | 6,960,237 | 2,144,370 | 2,843,226,916 | 1,476,495,012 |
+| 2026-07-13 | anthropic | 4 | 4 | 473 | 160,433,484 | 109,663 | 0 | 2,123,574 | 213,965,859 | 734,235 | 0 | 216,933,331 | 24,894,951 |
+| 2026-07-13 | openai | 174 | 174 | 9,135 | 1,140,954,012 | 1,139,337,595 | 1,099,451,136 | 0 | 0 | 3,579,586 | 700,077 | 1,143,617,258 | 593,891,690 |
+| 2026-07-14 | openai | 156 | 156 | 9,359 | 3,684,935,696 | 1,221,842,371 | 1,182,893,696 | 0 | 0 | 3,442,197 | 596,321 | 1,225,880,889 | 634,434,041 |
+| 2026-07-20 | anthropic | 1 | 1 | 167 | 158,613,485 | 334 | 0 | 3,893,008 | 130,886,173 | 233,319 | 0 | 135,012,834 | 18,188,530 |
+| 2026-07-20 | openai | 70 | 70 | 1,031,423 | 6,131,708,738 | 149,610,650,788 | 145,964,298,496 | 0 | 0 | 270,892,484 | 61,440,716 | 149,942,983,988 | 76,960,834,740 |
+| 2026-07-21 | anthropic | 2 | 2 | 406 | 159,095,438 | 812 | 0 | 3,718,316 | 196,772,206 | 433,094 | 0 | 200,924,428 | 24,759,022 |
+| 2026-07-19 | openai | 45 | 45 | 695,518 | 5,238,957,069 | 100,715,619,001 | 98,153,452,288 | 0 | 0 | 186,200,441 | 41,049,880 | 100,942,869,322 | 51,866,143,178 |
+| 2026-07-17 | openai | 81 | 81 | 445,569 | 4,315,952,626 | 63,120,577,672 | 61,394,564,352 | 0 | 0 | 129,520,977 | 39,622,278 | 63,289,720,927 | 32,592,438,751 |
+| 2026-07-18 | openai | 7 | 7 | 7,225 | 2,561,375,818 | 1,004,638,485 | 981,206,528 | 0 | 0 | 2,115,142 | 782,785 | 1,007,536,412 | 516,933,148 |
+| 2026-07-19 | anthropic | 2 | 2 | 141 | 159,404,988 | 282 | 0 | 1,394,708 | 47,142,504 | 117,230 | 0 | 48,654,724 | 6,575,147 |
+| 2026-07-12 | anthropic | 9 | 9 | 763 | 168,769,548 | 134,428 | 0 | 3,685,547 | 186,838,588 | 1,020,984 | 0 | 191,679,547 | 24,446,205 |
+| 2026-07-05 | openai | 95 | 95 | 11,915 | 1,089,060,801 | 1,557,208,050 | 1,492,813,440 | 0 | 0 | 4,432,868 | 1,058,120 | 1,562,699,038 | 816,292,318 |
+| 2026-07-06 | anthropic | 1 | 1 | 163 | 158,613,485 | 56,401 | 0 | 5,297,218 | 109,779,366 | 246,456 | 0 | 115,379,441 | 17,902,316 |
+| 2026-07-06 | openai | 103 | 103 | 17,187 | 1,099,291,743 | 2,336,345,524 | 2,238,611,968 | 0 | 0 | 7,465,779 | 2,414,368 | 2,346,225,671 | 1,226,919,687 |
+| 2026-07-05 | anthropic | 5 | 5 | 1,076 | 161,878,259 | 70,064 | 0 | 10,054,789 | 343,862,219 | 437,374 | 0 | 354,424,446 | 47,462,146 |
+| 2026-07-03 | openai | 301 | 301 | 59,558 | 1,340,633,085 | 8,140,226,019 | 7,836,761,344 | 0 | 0 | 21,163,553 | 5,162,654 | 8,166,552,226 | 4,248,171,554 |
+| 2026-07-04 | anthropic | 4 | 4 | 692 | 160,935,608 | 57,388 | 0 | 5,004,981 | 204,167,457 | 523,170 | 0 | 209,752,996 | 27,253,530 |
+| 2026-07-04 | openai | 173 | 173 | 85,843 | 1,316,000,753 | 12,207,185,503 | 11,799,153,536 | 0 | 0 | 28,248,084 | 6,506,231 | 12,241,939,818 | 6,342,363,050 |
+| 2026-07-09 | anthropic | 5 | 5 | 726 | 160,214,334 | 123,660 | 0 | 2,808,856 | 319,491,988 | 872,285 | 0 | 323,296,789 | 36,456,214 |
+| 2026-07-10 | anthropic | 2 | 2 | 352 | 160,320,760 | 32,295 | 0 | 4,337,862 | 157,928,579 | 336,281 | 0 | 162,635,017 | 21,583,761 |
+| 2026-07-11 | anthropic | 4 | 4 | 601 | 160,817,722 | 81,447 | 0 | 3,169,903 | 238,690,274 | 665,154 | 0 | 242,606,778 | 28,578,007 |
+| 2026-07-08 | openai | 3 | 3 | 268 | 22,525,782 | 33,792,551 | 32,091,520 | 0 | 0 | 114,185 | 28,939 | 33,935,675 | 17,889,915 |
+| 2026-07-07 | anthropic | 9 | 9 | 813 | 162,055,110 | 148,754 | 0 | 2,836,401 | 204,285,444 | 417,237 | 0 | 207,687,836 | 24,540,037 |
+| 2026-07-07 | openai | 89 | 89 | 123,605 | 1,337,792,539 | 17,291,142,052 | 16,614,691,968 | 0 | 0 | 53,172,604 | 17,781,896 | 17,362,096,552 | 9,054,750,568 |
+| 2026-07-08 | anthropic | 1 | 1 | 23 | 158,613,485 | 17,716 | 0 | 850,706 | 17,673,849 | 19,877 | 0 | 18,562,148 | 2,868,360 |
+| 2026-07-22 | anthropic | 26 | 26 | 1,874 | 173,995,647 | 31,569 | 0 | 10,405,430 | 427,630,538 | 1,325,542 | 0 | 439,393,079 | 57,126,952 |
+| 2026-08-02 | openai | 80 | 80 | 2,268,571 | 9,912,253,903 | 328,011,862,600 | 320,738,449,408 | 0 | 0 | 621,628,810 | 187,136,029 | 328,820,627,439 | 168,451,402,735 |
+| 2026-08-03 | anthropic | 7 | 7 | 419 | 161,874,981 | 857 | 0 | 2,543,530 | 99,889,135 | 127,530 | 0 | 102,561,052 | 13,296,713 |
+| 2026-08-03 | openai | 75 | 75 | 1,564,441 | 7,641,761,776 | 223,508,139,484 | 218,804,121,088 | 0 | 0 | 374,777,972 | 96,830,775 | 223,979,748,231 | 114,577,687,687 |
+| 2026-08-02 | anthropic | 12 | 12 | 1,124 | 166,662,626 | 2,452 | 0 | 5,615,449 | 233,487,683 | 363,218 | 0 | 239,468,802 | 30,733,750 |
+| 2026-07-31 | openai | 77 | 77 | 1,415,185 | 7,274,986,624 | 204,778,576,883 | 200,229,825,280 | 0 | 0 | 364,534,116 | 93,065,496 | 205,236,176,495 | 105,121,263,855 |
+| 2026-08-01 | anthropic | 13 | 13 | 814 | 165,247,949 | 2,004 | 0 | 2,267,973 | 114,203,760 | 273,739 | 0 | 116,747,476 | 14,531,085 |
+| 2026-08-01 | openai | 102 | 102 | 1,790,810 | 8,274,378,374 | 257,475,976,720 | 251,839,824,512 | 0 | 0 | 459,689,593 | 124,333,662 | 258,059,999,975 | 132,140,087,719 |
+| 2026-08-07 | anthropic | 2 | 2 | 225 | 159,134,076 | 450 | 0 | 2,132,587 | 83,067,521 | 133,424 | 0 | 85,333,982 | 11,106,360 |
+| 2026-08-08 | anthropic | 53 | 53 | 3,511 | 210,988,056 | 59,134 | 0 | 15,901,647 | 891,119,072 | 1,160,702 | 0 | 908,240,555 | 110,208,802 |
+| 2026-08-09 | anthropic | 8 | 8 | 214 | 33,964,121 | 425 | 0 | 3,425,825 | 75,038,948 | 75,361 | 0 | 78,540,559 | 11,861,962 |
+| 2026-08-06 | openai | 147 | 147 | 1,883,600 | 9,828,729,106 | 267,257,944,470 | 259,878,564,224 | 0 | 0 | 588,037,110 | 176,599,765 | 268,022,581,345 | 138,083,299,233 |
+| 2026-08-04 | openai | 103 | 103 | 2,272,676 | 10,161,870,868 | 326,209,388,564 | 319,363,993,984 | 0 | 0 | 564,561,894 | 156,266,304 | 326,930,216,762 | 167,248,219,770 |
+| 2026-08-05 | openai | 139 | 139 | 2,540,026 | 11,130,821,965 | 357,365,178,943 | 347,225,751,424 | 0 | 0 | 775,345,637 | 224,573,401 | 358,365,097,981 | 184,752,222,269 |
+| 2026-08-06 | anthropic | 9 | 9 | 1,723 | 167,831,184 | 3,446 | 0 | 13,961,460 | 387,186,617 | 386,849 | 0 | 401,538,372 | 56,560,782 |
+| 2026-07-31 | anthropic | 28 | 28 | 2,403 | 175,729,177 | 4,789 | 0 | 8,561,807 | 498,959,877 | 727,845 | 0 | 508,254,318 | 61,330,880 |
+| 2026-07-25 | anthropic | 9 | 9 | 807 | 163,709,944 | 1,604 | 0 | 4,970,479 | 191,300,132 | 514,164 | 0 | 196,786,379 | 25,858,880 |
+| 2026-07-25 | openai | 47 | 47 | 768,244 | 5,371,974,411 | 111,942,365,380 | 109,424,527,232 | 0 | 0 | 190,140,380 | 45,405,693 | 112,177,911,453 | 57,465,647,837 |
+| 2026-07-26 | anthropic | 2 | 2 | 80 | 159,141,960 | 160 | 0 | 192,865 | 20,335,339 | 38,258 | 0 | 20,566,622 | 2,313,033 |
+| 2026-07-24 | openai | 72 | 72 | 1,444,932 | 7,054,858,757 | 208,810,225,825 | 203,897,403,136 | 0 | 0 | 378,236,010 | 100,736,290 | 209,289,198,125 | 107,340,496,557 |
+| 2026-07-23 | anthropic | 16 | 16 | 1,213 | 174,709,983 | 13,949 | 0 | 7,252,438 | 303,444,513 | 1,187,945 | 0 | 311,898,845 | 40,611,893 |
+| 2026-07-23 | openai | 76 | 76 | 1,613,389 | 7,447,968,933 | 233,254,737,233 | 227,700,989,824 | 0 | 0 | 422,960,607 | 106,235,113 | 233,783,932,953 | 119,933,438,041 |
+| 2026-07-24 | anthropic | 7 | 7 | 631 | 164,092,549 | 3,605 | 0 | 7,126,594 | 175,580,099 | 599,953 | 0 | 183,310,251 | 27,069,810 |
+| 2026-07-29 | openai | 65 | 65 | 1,656,197 | 7,894,543,741 | 240,554,274,857 | 235,189,714,304 | 0 | 0 | 422,615,410 | 105,207,379 | 241,082,097,646 | 123,487,240,494 |
+| 2026-07-30 | anthropic | 20 | 20 | 2,414 | 172,647,333 | 12,177 | 0 | 8,414,346 | 516,082,197 | 686,444 | 0 | 525,195,164 | 62,824,773 |
+| 2026-07-30 | openai | 60 | 60 | 1,394,407 | 7,393,450,773 | 202,058,624,627 | 197,575,613,696 | 0 | 0 | 357,608,371 | 89,756,578 | 202,505,989,576 | 103,718,182,728 |
+| 2026-07-29 | anthropic | 1 | 1 | 16 | 158,613,485 | 28 | 0 | 806,900 | 10,719,127 | 37,003 | 0 | 11,563,058 | 2,117,569 |
+| 2026-07-26 | openai | 35 | 35 | 492,043 | 4,627,740,631 | 71,790,835,586 | 70,194,665,216 | 0 | 0 | 121,873,231 | 29,510,151 | 71,942,218,968 | 36,844,886,360 |
+| 2026-07-27 | openai | 97 | 97 | 2,300,247 | 9,522,780,199 | 336,994,736,360 | 329,540,279,296 | 0 | 0 | 579,243,709 | 141,956,721 | 337,715,936,790 | 172,945,797,142 |
+| 2026-07-28 | openai | 55 | 55 | 1,466,517 | 7,427,226,983 | 214,085,589,608 | 209,344,500,096 | 0 | 0 | 372,184,618 | 91,879,651 | 214,549,653,877 | 109,877,403,829 |
+| 2026-07-03 | anthropic | 15 | 15 | 498 | 161,881,807 | 109,987 | 0 | 2,817,488 | 87,063,387 | 97,199 | 0 | 90,088,061 | 12,435,385 |
+| 2026-06-02 | openai | 169 | 169 | 16,921 | 582,848,690 | 2,194,371,059 | 2,116,485,888 | 0 | 0 | 6,248,236 | 2,122,814 | 2,202,742,109 | 1,144,499,165 |
+| 2026-06-03 | openai | 258 | 258 | 22,685 | 327,829,638 | 2,808,316,823 | 2,710,139,520 | 0 | 0 | 10,325,545 | 3,935,852 | 2,822,578,220 | 1,467,508,460 |
+| 2026-06-04 | openai | 144 | 144 | 11,344 | 537,165,112 | 1,382,178,887 | 1,330,908,160 | 0 | 0 | 4,931,659 | 1,799,127 | 1,388,909,673 | 723,455,593 |
+| 2026-06-01 | openai | 349 | 349 | 278,659 | 1,377,274,758 | 37,631,420,421 | 36,790,215,552 | 0 | 0 | 77,939,220 | 15,570,839 | 37,724,930,480 | 19,329,822,704 |
+| 2026-05-29 | openai | 244 | 244 | 316,657 | 1,374,858,003 | 42,315,429,592 | 41,551,918,848 | 0 | 0 | 73,046,880 | 6,322,658 | 42,394,799,130 | 21,618,839,706 |
+| 2026-05-30 | openai | 280 | 280 | 118,863 | 1,173,014,787 | 15,957,243,192 | 15,420,708,224 | 0 | 0 | 33,925,992 | 8,352,004 | 15,999,521,188 | 8,289,167,076 |
+| 2026-05-31 | openai | 315 | 315 | 57,704 | 900,746,114 | 7,641,032,254 | 7,377,207,296 | 0 | 0 | 17,127,671 | 4,796,813 | 7,662,956,738 | 3,974,353,090 |
+| 2026-06-09 | openai | 34 | 34 | 2,271 | 464,384,611 | 291,056,974 | 275,603,712 | 0 | 0 | 861,802 | 207,434 | 292,126,210 | 154,324,354 |
+| 2026-06-10 | openai | 109 | 109 | 9,474 | 388,691,202 | 1,303,178,844 | 1,243,035,136 | 0 | 0 | 4,405,226 | 1,135,918 | 1,308,719,988 | 687,202,420 |
+| 2026-06-11 | openai | 52 | 52 | 52,177 | 463,150,892 | 7,286,946,283 | 6,975,355,392 | 0 | 0 | 23,252,077 | 6,248,147 | 7,316,446,507 | 3,828,768,811 |
+| 2026-06-08 | openai | 265 | 265 | 83,259 | 913,319,882 | 11,421,206,595 | 10,954,855,168 | 0 | 0 | 37,401,112 | 10,981,910 | 11,469,589,617 | 5,992,162,033 |
+| 2026-06-05 | openai | 160 | 160 | 16,028 | 529,851,791 | 1,985,998,832 | 1,914,221,568 | 0 | 0 | 6,987,966 | 2,481,992 | 1,995,468,790 | 1,038,358,006 |
+| 2026-06-06 | openai | 221 | 221 | 17,015 | 614,166,472 | 2,115,882,025 | 2,042,154,368 | 0 | 0 | 6,839,308 | 2,221,378 | 2,124,942,711 | 1,103,865,527 |
+| 2026-06-07 | openai | 247 | 247 | 54,838 | 1,254,024,427 | 7,568,388,391 | 7,322,797,184 | 0 | 0 | 22,880,749 | 7,204,602 | 7,598,473,742 | 3,937,075,150 |
+| 2026-05-28 | openai | 386 | 386 | 186,507 | 1,125,394,533 | 24,014,231,896 | 23,567,933,440 | 0 | 0 | 38,313,607 | 4,146,165 | 24,056,691,668 | 12,272,724,948 |
+| 2026-05-18 | openai | 2 | 2 | 1,968 | 376,952,223 | 284,433,721 | 277,189,376 | 0 | 0 | 654,054 | 92,778 | 285,180,553 | 146,585,865 |
+| 2026-05-19 | openai | 213 | 213 | 15,949 | 1,356,047,844 | 1,934,682,836 | 1,865,385,728 | 0 | 0 | 5,005,687 | 1,013,432 | 1,940,701,955 | 1,008,009,091 |
+| 2026-05-20 | openai | 80 | 80 | 12,091 | 1,309,338,672 | 1,642,352,261 | 1,593,468,416 | 0 | 0 | 3,478,792 | 662,610 | 1,646,493,663 | 849,759,455 |
+| 2026-05-17 | openai | 3 | 3 | 1,960 | 595,008,047 | 272,786,866 | 263,650,304 | 0 | 0 | 663,945 | 93,284 | 273,544,095 | 141,718,943 |
+| 2026-05-14 | openai | 5 | 5 | 1,621 | 376,867,910 | 228,903,051 | 223,460,352 | 0 | 0 | 485,175 | 70,202 | 229,458,428 | 117,728,252 |
+| 2026-05-15 | openai | 1 | 1 | 4,560 | 284,219,112 | 672,998,247 | 660,068,096 | 0 | 0 | 1,467,643 | 170,945 | 674,636,835 | 344,602,787 |
+| 2026-05-16 | openai | 1 | 1 | 5,503 | 284,219,112 | 785,631,408 | 768,870,528 | 0 | 0 | 1,854,098 | 228,326 | 787,713,832 | 403,278,568 |
+| 2026-05-25 | openai | 188 | 188 | 17,860 | 1,457,405,777 | 2,321,739,339 | 2,252,745,088 | 0 | 0 | 5,143,919 | 903,840 | 2,327,787,098 | 1,201,414,554 |
+| 2026-05-26 | openai | 548 | 548 | 46,296 | 1,647,129,970 | 5,952,654,969 | 5,766,743,040 | 0 | 0 | 15,047,907 | 2,418,450 | 5,970,121,326 | 3,086,749,806 |
+| 2026-05-27 | openai | 294 | 294 | 36,627 | 1,626,117,603 | 4,637,115,732 | 4,468,712,448 | 0 | 0 | 9,470,811 | 1,749,663 | 4,648,336,206 | 2,413,979,982 |
+| 2026-05-24 | openai | 57 | 57 | 13,343 | 1,344,925,060 | 1,815,015,023 | 1,766,173,056 | 0 | 0 | 3,588,009 | 577,885 | 1,819,180,917 | 936,094,389 |
+| 2026-05-21 | openai | 87 | 87 | 9,007 | 1,170,931,269 | 1,118,380,109 | 1,084,102,144 | 0 | 0 | 2,804,713 | 484,236 | 1,121,669,058 | 579,617,986 |
+| 2026-05-22 | openai | 38 | 38 | 4,267 | 1,239,152,391 | 586,840,256 | 568,882,176 | 0 | 0 | 1,189,575 | 212,172 | 588,242,003 | 303,800,915 |
+| 2026-05-23 | openai | 77 | 77 | 20,634 | 1,337,443,550 | 2,845,976,246 | 2,772,940,544 | 0 | 0 | 5,792,856 | 920,648 | 2,852,689,750 | 1,466,219,478 |
+| 2026-06-12 | openai | 9 | 9 | 1,163 | 110,597,493 | 148,017,188 | 140,751,488 | 0 | 0 | 489,722 | 127,223 | 148,634,133 | 78,258,389 |
+| 2026-06-26 | anthropic | 528 | 528 | 21,725 | 451,358,679 | 2,511,969 | 0 | 70,178,497 | 2,954,496,879 | 4,394,208 | 0 | 3,031,581,553 | 390,078,986 |
+| 2026-06-27 | anthropic | 31 | 31 | 1,067 | 224,448,783 | 346,952 | 0 | 2,600,172 | 137,367,052 | 198,931 | 0 | 140,513,107 | 17,532,803 |
+| 2026-06-27 | openai | 55 | 55 | 2,058 | 1,305,250,188 | 239,303,297 | 223,690,496 | 0 | 0 | 1,112,047 | 358,452 | 240,773,796 | 128,928,548 |
+| 2026-06-25 | anthropic | 373 | 373 | 16,875 | 438,347,202 | 1,280,278 | 0 | 56,989,078 | 1,936,970,631 | 3,551,725 | 0 | 1,998,791,712 | 269,765,414 |
+| 2026-06-23 | anthropic | 77 | 77 | 2,898 | 100,171,493 | 192,201 | 0 | 7,304,461 | 225,422,038 | 897,441 | 0 | 233,816,141 | 32,762,422 |
+| 2026-06-23 | openai | 101 | 101 | 8,873 | 1,158,970,768 | 1,159,928,384 | 1,094,426,752 | 0 | 0 | 3,737,205 | 994,753 | 1,164,660,342 | 617,446,966 |
+| 2026-06-24 | anthropic | 236 | 236 | 10,258 | 174,408,844 | 420,213 | 0 | 32,013,642 | 1,138,065,074 | 2,367,744 | 0 | 1,172,866,673 | 156,611,517 |
+| 2026-07-01 | openai | 155 | 155 | 9,123 | 1,501,891,347 | 1,105,841,198 | 1,057,014,912 | 0 | 0 | 4,017,173 | 1,097,601 | 1,110,955,972 | 582,448,516 |
+| 2026-07-02 | anthropic | 48 | 48 | 1,876 | 226,560,336 | 430,647 | 0 | 11,238,983 | 331,302,261 | 429,782 | 0 | 343,401,673 | 48,039,384 |
+| 2026-07-02 | openai | 152 | 152 | 34,341 | 1,296,772,175 | 4,651,621,139 | 4,462,370,816 | 0 | 0 | 13,329,285 | 3,445,415 | 4,668,395,839 | 2,437,210,431 |
+| 2026-06-30 | openai | 164 | 164 | 10,794 | 639,030,586 | 1,292,774,827 | 1,235,585,536 | 0 | 0 | 5,120,271 | 1,667,396 | 1,299,562,494 | 681,769,726 |
+| 2026-06-28 | openai | 105 | 105 | 8,833 | 348,237,946 | 1,081,899,942 | 1,038,503,808 | 0 | 0 | 4,125,525 | 1,285,277 | 1,087,310,744 | 568,058,840 |
+| 2026-06-29 | anthropic | 1 | 1 | 1 | 19,267,248 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 2026-06-29 | openai | 120 | 120 | 8,905 | 357,753,796 | 1,058,366,234 | 1,006,416,896 | 0 | 0 | 4,210,454 | 1,408,698 | 1,063,985,386 | 560,776,938 |
+| 2026-06-22 | openai | 139 | 139 | 14,376 | 1,385,410,206 | 1,873,193,621 | 1,781,193,472 | 0 | 0 | 6,344,748 | 1,803,659 | 1,881,342,028 | 990,745,292 |
+| 2026-06-16 | anthropic | 12 | 12 | 520 | 39,201,504 | 110,507 | 0 | 3,220,254 | 71,884,761 | 267,821 | 0 | 75,483,343 | 11,592,122 |
+| 2026-06-16 | openai | 2 | 2 | 21 | 27,961,162 | 1,118,050 | 727,040 | 0 | 0 | 7,998 | 3,918 | 1,129,966 | 766,446 |
+| 2026-06-17 | anthropic | 22 | 22 | 2,775 | 41,313,856 | 219,455 | 0 | 12,334,318 | 685,179,278 | 1,336,269 | 0 | 699,069,320 | 85,491,549 |
+| 2026-06-15 | openai | 2 | 2 | 196 | 25,273,663 | 30,689,977 | 29,261,696 | 0 | 0 | 65,458 | 24,742 | 30,780,177 | 16,149,329 |
+| 2026-06-13 | openai | 19 | 19 | 2,933 | 83,055,504 | 381,739,088 | 366,717,312 | 0 | 0 | 1,580,533 | 533,050 | 383,852,671 | 200,494,015 |
+| 2026-06-14 | openai | 1 | 1 | 224 | 25,076,744 | 35,129,128 | 33,879,040 | 0 | 0 | 77,292 | 23,336 | 35,229,756 | 18,290,236 |
+| 2026-06-15 | anthropic | 4 | 4 | 309 | 17,644,280 | 15,192 | 0 | 997,901 | 53,580,840 | 137,903 | 0 | 54,731,836 | 6,758,555 |
+| 2026-06-19 | openai | 24 | 24 | 1,821 | 92,888,803 | 235,477,650 | 225,208,576 | 0 | 0 | 712,093 | 195,316 | 236,385,059 | 123,780,771 |
+| 2026-06-20 | openai | 50 | 50 | 6,945 | 845,728,399 | 928,614,994 | 890,344,960 | 0 | 0 | 2,953,040 | 889,749 | 932,457,783 | 487,285,303 |
+| 2026-06-21 | openai | 259 | 259 | 17,945 | 1,558,832,973 | 2,355,267,399 | 2,240,219,648 | 0 | 0 | 8,996,809 | 3,022,421 | 2,367,286,629 | 1,247,176,805 |
+| 2026-06-19 | anthropic | 269 | 269 | 9,866 | 128,941,004 | 3,092,469 | 0 | 36,854,147 | 1,458,640,823 | 2,016,277 | 0 | 1,500,603,716 | 197,040,512 |
+| 2026-06-17 | openai | 1 | 1 | 424 | 8,269,141 | 55,563,266 | 51,939,840 | 0 | 0 | 233,163 | 77,598 | 55,874,027 | 29,904,107 |
+| 2026-06-18 | anthropic | 43 | 43 | 3,332 | 97,763,347 | 484,287 | 0 | 20,894,622 | 814,159,666 | 2,300,242 | 0 | 837,838,817 | 110,318,773 |
+| 2026-06-18 | openai | 5 | 5 | 414 | 34,056,355 | 51,190,565 | 48,803,072 | 0 | 0 | 264,528 | 63,314 | 51,518,407 | 27,116,871 |
+| TOTAL | all | 10764 | 10764 | 29,065,120 | 201,068,330,905 | 4,155,040,433,288 | 4,056,285,259,392 | 405,153,857 | 16,414,502,614 | 7,826,040,431 | 2,054,705,522 | 4,181,740,835,712 | 2,138,926,442,128 |
+
+## Provider Token Totals
+
+EXACT - summed directly from the per-day Anthropic and OpenAI usage rows above (each row is one date+provider; a date with both providers active contributes one row per provider).
+
+| Provider | Raw Tokens | Billable Eq Tokens |
+| --- | ---: | ---: |
+| Anthropic (Claude) | 16,861,984,067 | 2,190,220,179 |
+| OpenAI (Codex) | 4,164,878,851,645 | 2,136,736,221,949 |
+| TOTAL | 4,181,740,835,712 | 2,138,926,442,128 |
+
+## Measured Token Usage By App (Provider-Attributed)
+
+Unlike the estimated allocation below, this is **measured, not derived from churn share**: branch name and session `cwd` indeed carry no app signal, but individual tool calls do. Each usage event is attributed to whichever app the session was most recently editing at that point - Anthropic via the `file_path` of the latest Edit/Write/Read tool call on the same message as the usage event, Codex via the file(s) in the latest `patch_apply_end` before the token_count event - using the same App/Platform buckets as the "Git Churn By App" / "By Platform Layer" sections above. This is a "most recently touched file" attribution, not a proportional split: a session that edits FreeX then Shared then FreeW has its tokens split across those three buckets according to when each edit happened. Because every event is attributed to exactly one app, the per-app totals below sum exactly to each provider's total in the "Daily Provider Token Usage" table. **`Unclassified (no file-edit yet)` is kept separate from `Docs/Tooling/Other`** on purpose: it is every event from before a session's FIRST Edit/Write/Read/patch (pure discussion, planning, or read-only investigation via Grep/Bash/Glob, which carry no file-path signal) or from a session that never edits a file at all - a coverage gap in this attribution method, not a measurement of non-app work. `Docs/Tooling/Other` itself is reserved for events attributed to a real, later-touched path that genuinely falls outside `src/`, `tests/`, `freew/`, `freep/`, `shared/` (e.g. this very script, or a docs/CI edit) - i.e. it is real signal, not a default.
+
+| Provider | App | Events | Raw Tokens | Billable Eq Tokens |
+| --- | --- | ---: | ---: | ---: |
+| anthropic | FreeX | 7,656 | 898,648,030 | 104,843,084 |
+| anthropic | FreeW | 9,491 | 1,436,312,786 | 179,517,023 |
+| anthropic | FreeP | 3,835 | 540,955,142 | 65,353,675 |
+| anthropic | Shared | 632 | 78,123,127 | 9,257,383 |
+| anthropic | Docs/Tooling/Other | 59,005 | 13,097,867,905 | 1,653,923,477 |
+| anthropic | Unclassified (no file-edit yet) | 15,556 | 810,077,077 | 177,325,536 |
+| openai | FreeX | 663,284 | 91,456,422,594 | 47,076,078,850 |
+| openai | FreeW | 3,564,340 | 519,099,279,923 | 266,216,907,379 |
+| openai | FreeP | 131,815 | 19,458,576,209 | 9,982,835,473 |
+| openai | Shared | 8,027 | 1,120,270,280 | 576,478,152 |
+| openai | Docs/Tooling/Other | 24,210,648 | 3,490,261,179,931 | 1,790,351,506,011 |
+| openai | Unclassified (no file-edit yet) | 390,831 | 43,483,122,708 | 22,532,416,084 |
+
+## Measured Token Usage By Platform (Provider-Attributed)
+
+Same measured "most recently touched file" attribution as the App breakdown above, using the same Windows (WPF) / Avalonia (Linux/macOS) / Platform-neutral / Non-code buckets as the "Git Churn By Platform Layer" section.
+
+| Provider | Platform | Events | Raw Tokens | Billable Eq Tokens |
+| --- | --- | ---: | ---: | ---: |
+| anthropic | Windows (WPF) | 7,743 | 1,201,287,331 | 146,582,887 |
+| anthropic | Avalonia (Linux/macOS) | 4,218 | 619,616,934 | 74,638,524 |
+| anthropic | Platform-neutral (core/shared/IO/model) | 9,653 | 1,133,134,820 | 137,749,755 |
+| anthropic | Non-code | 59,005 | 13,097,867,905 | 1,653,923,477 |
+| anthropic | Unclassified (no file-edit yet) | 15,556 | 810,077,077 | 177,325,536 |
+| openai | Windows (WPF) | 1,878,806 | 267,280,215,640 | 137,251,819,352 |
+| openai | Avalonia (Linux/macOS) | 372,587 | 56,005,354,406 | 28,652,398,118 |
+| openai | Platform-neutral (core/shared/IO/model) | 2,110,126 | 307,109,795,703 | 157,569,998,135 |
+| openai | Non-code | 24,216,595 | 3,491,000,363,188 | 1,790,729,590,260 |
+| openai | Unclassified (no file-edit yet) | 390,831 | 43,483,122,708 | 22,532,416,084 |
+
+## Estimated Token Allocation By App / Platform (derived, not measured)
+
+The sections below are **estimates derived from git churn share, not measurements** - kept alongside the measured section above because it has full coverage of every token-bearing day (the measured breakdown's `Docs/Tooling/Other` catch-all can include a large early-session share where no file had been touched yet), while this estimate assumes none. Claude Code / Codex session logs do not record which app or platform layer a session worked on via branch name or `cwd`: the overwhelming majority run on the `main` git branch (or an auto-generated `claude/<random-name>` branch carrying no app info), and the working directory recorded in nearly every session is the monorepo root rather than an app subfolder. (Individual tool calls DO carry a usable file-path signal, which is what the measured section above is built from - branch/cwd just is not it.) The allocation below instead spreads each day's observed raw tokens across buckets using that same day's EXACT churn share from the "Git Churn By App" / "By Platform Layer" sections. Treat it as a rough proxy for where effort likely went, not as billed or measured per-app usage.
+
+### Estimated Token Allocation By App (derived, not measured)
+
+**ESTIMATE - do not read as measured per-bucket token usage.** Token logs carry no app/platform attribution; these figures allocate each day's combined raw token total (Anthropic + OpenAI) across buckets in proportion to that day's EXACT git churn share (LoC added + removed) from the churn section above. A day with tokens logged but zero churn in the window falls into `Unallocated` rather than being dropped or forced into a bucket.
+
+| App | Est. Allocated Raw Tokens | Share |
+| --- | ---: | ---: |
+| FreeX | 1,349,530,407,380 | 32.3 % |
+| FreeW | 731,724,880,222 | 17.5 % |
+| FreeP | 1,081,548,608,432 | 25.9 % |
+| Shared | 49,371,291,258 | 1.2 % |
+| Docs/Tooling/Other | 969,565,648,420 | 23.2 % |
+| Unallocated (tokens logged, no churn that day) | 0 | 0.0 % |
+| TOTAL | 4,181,740,835,712 | 100.0% |
+
+- Days allocated (had both tokens and churn weight): 88. Days with tokens but no churn to allocate against (routed to Unallocated): 0.
+
+### Estimated Token Allocation By Platform Layer (derived, not measured)
+
+**ESTIMATE - do not read as measured per-bucket token usage.** Token logs carry no app/platform attribution; these figures allocate each day's combined raw token total (Anthropic + OpenAI) across buckets in proportion to that day's EXACT git churn share (LoC added + removed) from the churn section above. A day with tokens logged but zero churn in the window falls into `Unallocated` rather than being dropped or forced into a bucket.
+
+| Platform Layer | Est. Allocated Raw Tokens | Share |
+| --- | ---: | ---: |
+| Windows (WPF) | 655,534,080,883 | 15.7 % |
+| Avalonia (Linux/macOS) | 834,917,216,838 | 20.0 % |
+| Platform-neutral (core/shared/IO/model) | 1,721,723,889,572 | 41.2 % |
+| Non-code | 969,565,648,420 | 23.2 % |
+| Unallocated (tokens logged, no churn that day) | 0 | 0.0 % |
+| TOTAL | 4,181,740,835,712 | 100.0% |
+
+- Days allocated (had both tokens and churn weight): 88. Days with tokens but no churn to allocate against (routed to Unallocated): 0.
 
 ## Token Extraction Notes
 
-- OpenAI / Codex source: `C:/Users/anton/.codex/sessions/2026/05`, `C:/Users/anton/.codex/sessions/2026/06`, and `C:/Users/anton/.codex/archived_sessions`.
-- Anthropic / Claude source: `C:/Users/anton/.claude/projects/*FreeX*` and `C:/Users/anton/.claude/projects/*Freexcel*`.
-- Codex rows use `payload.info.last_token_usage` from `token_count` events to avoid re-summing cumulative totals.
-- Claude rows use assistant `message.usage` fields and request-id deduplication when available.
-- Files is the row-attributed log/session file count from the extractor outputs; for these local logs it tracks the distinct session/transcript files represented by the row.
-- Sessions counts distinct provider session IDs where available, with file-path fallback for transcripts that do not expose a session identifier.
-- freex_openai_daily_tokens.json: Scoped to C:/Users/anton/.codex/sessions/2026/05, C:/Users/anton/.codex/sessions/2026/06, and C:/Users/anton/.codex/archived_sessions.
-- freex_openai_daily_tokens.json: Included only JSONL session files whose session_meta cwd/initial_cwd contained FreeX or an earlier local project folder name, or whose transcript text mentioned the project.
-- freex_openai_daily_tokens.json: Aggregated event timestamps into local +03 dates from payload.info.last_token_usage on token_count events.
-- freex_openai_daily_tokens.json: bytes is the sum of distinct matching session file sizes attributed to each date/provider row; cacheCreate and cacheRead are fixed at 0 because Codex logs expose cached_input_tokens, not create/read split.
-- freex_openai_daily_tokens.json: Reprocessed `C:/Users/anton/.codex/sessions/2026/05`, `C:/Users/anton/.codex/sessions/2026/06`, and `C:/Users/anton/.codex/archived_sessions`; row-attributed OpenAI file/date bytes total 22,528,809,270 through 2026-06-06.
-- freex_anthropic_daily_tokens.json: Scanned only local Claude project directories under C:/Users/anton/.claude/projects whose directory names contain FreeX or an earlier local project folder name.
-- freex_anthropic_daily_tokens.json: Reprocessed local Claude FreeX/Freexcel project transcripts using line streaming; skipped non-jsonl tool-result side files.
-- freex_anthropic_daily_tokens.json: Deduplicated assistant usage events by requestId when present, otherwise by file path plus uuid/timestamp.
-- freex_anthropic_daily_tokens.json: Bytes are attributed per date as the sum of each matching .jsonl file's full size, counted once for every date on which that file had at least one attributed assistant usage event.
-- freex_anthropic_daily_tokens.json: Row-attributed Anthropic file/date bytes total 1,508,332,465 through 2026-06-06; attributed assistant usage events: 17,508.
+- Anthropic / Claude source: `~/.claude/projects/*FreeX*/**/*.jsonl` (directory names containing "FreeX", case-insensitive; includes worktree-scoped project dirs and nested subagent transcripts).
+- OpenAI / Codex source: `~/.codex/sessions/**/*.jsonl` and `~/.codex/archived_sessions/*.jsonl`, filtered to sessions whose `session_meta` `cwd` contains "FreeX".
+- Files/Sessions counts are distinct file/session-id counts contributing to that date+provider row. Events is the count of usage-bearing records attributed to that date.
+- Bytes +/- attributes each contributing file's full size to every date on which it had at least one attributed usage event (a file spanning multiple days is counted on each of those days).
+- Machines aggregated into this run's totals: ALITOP, DESKTOP-DGEV3SF, I5-32GB.
+- Per-machine `project-history-tokens-<MachineId>.json` files (tracked in git; see the multi-machine workflow note at the top of `tools/Build-ProjectHistoryMetrics.ps1`) contain ONLY: `machineId`, `generatedAt`, `startDate`, `endDate`, an `anthropic` object and an `openai` object each keyed by date with per-day `files`/`sessions`/`events`/`bytes`/`input`/`cachedInput`/`cacheWrite`/`cacheRead`/`output`/`reasoning` counts, and a static `codexNote` methodology string. No transcript content, prompts, file paths, or session titles are read or stored.
 
 ## Git Authors Observed
 
@@ -162,11 +457,75 @@ History window: 2026-05-12 through 2026-06-06
 - 2026-06-03: tony-xmelon <tony.xmelon@gmail.com>
 - 2026-06-04: tony-xmelon <tony.xmelon@gmail.com>
 - 2026-06-05: tony-xmelon <tony.xmelon@gmail.com>
-- 2026-06-06: tony-xmelon <tony.xmelon@gmail.com>
+- 2026-06-06: Codex <codex@local>; tony-xmelon <tony.xmelon@gmail.com>
+- 2026-06-07: Codex <codex@local>; tony-xmelon <tony.xmelon@gmail.com>
+- 2026-06-08: Codex <codex@local>; tony-xmelon <tony.xmelon@gmail.com>
+- 2026-06-09: Codex <codex@local>; tony-xmelon <tony.xmelon@gmail.com>
+- 2026-06-10: tony-xmelon <tony.xmelon@gmail.com>
+- 2026-06-11: tony-xmelon <tony.xmelon@gmail.com>
+- 2026-06-12: tony-xmelon <tony.xmelon@gmail.com>
+- 2026-06-13: tony-xmelon <tony.xmelon@gmail.com>
+- 2026-06-14: tony-xmelon <tony.xmelon@gmail.com>
+- 2026-06-15: Anton <lumodataroom@gmail.com>; tony-xmelon <tony.xmelon@gmail.com>
+- 2026-06-16: Anton <lumodataroom@gmail.com>; tony-xmelon <tony.xmelon@gmail.com>
+- 2026-06-17: Anton <lumodataroom@gmail.com>; tony-xmelon <tony.xmelon@gmail.com>
+- 2026-06-18: Anton <lumodataroom@gmail.com>; Antoni Ivanov <tony.xmelon@gmail.com>; tony-xmelon <tony.xmelon@gmail.com>
+- 2026-06-19: Anton <lumodataroom@gmail.com>; Antoni Ivanov <lumodataroom@gmail.com>; Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-06-20: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-06-21: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-06-22: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-06-23: Antoni Ivanov <lumodataroom@gmail.com>; Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-06-24: Antoni Ivanov <lumodataroom@gmail.com>; Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-06-25: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-06-26: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-06-27: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-06-28: Claude <noreply@anthropic.com>
+- 2026-06-29: Claude <noreply@anthropic.com>
+- 2026-06-30: Claude <noreply@anthropic.com>
+- 2026-07-01: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-07-02: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-07-03: Claude <noreply@anthropic.com>
+- 2026-07-04: Claude <noreply@anthropic.com>
+- 2026-07-05: Claude <noreply@anthropic.com>
+- 2026-07-06: Claude <noreply@anthropic.com>
+- 2026-07-07: Claude <noreply@anthropic.com>
+- 2026-07-08: Claude <noreply@anthropic.com>
+- 2026-07-09: Claude <noreply@anthropic.com>
+- 2026-07-10: Claude <noreply@anthropic.com>
+- 2026-07-11: Claude <noreply@anthropic.com>
+- 2026-07-12: Claude <noreply@anthropic.com>
+- 2026-07-13: Claude <noreply@anthropic.com>
+- 2026-07-14: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-07-15: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-07-16: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-07-17: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-07-18: Antoni Ivanov <tony.xmelon@gmail.com>
+- 2026-07-19: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-07-20: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-07-21: Claude <noreply@anthropic.com>
+- 2026-07-22: Claude <noreply@anthropic.com>
+- 2026-07-23: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-07-24: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-07-25: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-07-26: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-07-27: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-07-28: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-07-29: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>; tony-xmelon <tony.xmelon@gmail.com>
+- 2026-07-30: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>; tony-xmelon <tony.xmelon@gmail.com>
+- 2026-07-31: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-08-01: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-08-02: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-08-03: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-08-04: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-08-05: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-08-06: Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>
+- 2026-08-07: Claude <noreply@anthropic.com>
+- 2026-08-08: Anton <lumodataroom@gmail.com>; Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>; tony-xmelon <tony.xmelon@gmail.com>
+- 2026-08-09: Anton <lumodataroom@gmail.com>; Antoni Ivanov <tony.xmelon@gmail.com>; Claude <noreply@anthropic.com>; tony-xmelon <tony.xmelon@gmail.com>
 
 ## Reading The Trend
 
-- The project started in Git on 2026-05-12 and has consolidated work through 2026-06-06.
-- The daily churn table highlights where implementation volume, tests, and documentation moved together.
-- The refreshed token pass attributed 24,037,141,735 bytes of local provider logs, 164,734,738,904 observed raw tokens, and 83,551,490,303 provider-style billable-equivalent tokens across OpenAI/Codex and Anthropic/Claude rows through 2026-06-06.
-- June 4-6 added 1,778 integrated commits, 1,615 changed-file/day entries, +126,329 / -55,648 LoC, and 4,391,211,761 observed raw provider tokens.
+- The daily churn table covers 2026-05-12 through 2026-08-09, computed fresh from git history reachable from HEAD (`181ad855c`) at generation time.
+- Across the window: 31,947 commits, 89,037 changed-file/day entries, +6,242,522 / -2,650,269 LoC.
+- Token rows reflect 201,068,330,905 bytes of local provider logs, 4,181,740,835,712 observed raw tokens, and 2,138,926,442,128 provider-style billable-equivalent tokens, from machine(s): ALITOP, DESKTOP-DGEV3SF, I5-32GB.
+- This machine (DESKTOP-DGEV3SF) has contributed its token logs. Run this script on the user's other machines and copy their project-history-tokens-*.json into .metrics-data before re-running here (or there) to fold their usage into these totals.
