@@ -8,8 +8,8 @@ WPF/Avalonia workflow that consumes them.
 ## Current baseline
 
 - Main tip at the prior checkpoint: `d2197a476c`.
-- Current function-first checkpoint: `c98f962036` (`freep: refresh unsupported SmartArt cached visuals`).
-- Current source audit tip: `c98f962036`; the checkpoint includes the WPF rich-editor list-marker, inherited list-layout, inherited run-style, and unsupported-SmartArt cached-authoring slices.
+- Current function-first checkpoint: `b54f55ef26` (`freep: sync schema-valid SmartArt picture caches`).
+- Current source audit tip: `b54f55ef26`; the checkpoint includes the WPF rich-editor list-marker, inherited list-layout, inherited run-style, unsupported-SmartArt cached-authoring, and schema-valid SmartArt picture-cache synchronization slices through the shared undoable session path.
 - Command inventory: `668` command IDs present in both WPF and Avalonia; the
   inventory reports `0` WPF-only, `0` Avalonia-only, and `0` actionable command
   gaps.
@@ -71,9 +71,14 @@ Recent function-first additions on main include:
 - cache-only SmartArt picture replacement/clearing, plus live and insertion
   payload support for the vertical picture-list layout; Avalonia inline page
   breaks now also paginate through the shared display-layer path.
+- imported SmartArt picture-cache replacement/clearing now recognizes the
+  schema-valid `dsp:sp` + `a:blipFill` owner emitted by the writer, as well as
+  legacy `dsp:pic`-shaped payloads, so native media and fallback visuals stay
+  synchronized for existing cached picture slots.
 - SmartArt Quick Style and Change Colors now refresh simple cached fallback nodes
   when a parsed data tree is present but its live layout grammar is unsupported;
-  native style/color parts and the visible cached owner stay aligned.
+  native style/color parts and the visible cached owner stay aligned through
+  undo/redo as well as direct planner calls.
 
 ## Current-source audit: 2026-08-09
 
@@ -113,7 +118,8 @@ These are genuine depth or evidence gaps, not generic missing ribbon commands:
 
 - SmartArt: broader PowerPoint-authored layout/style/color regeneration,
   richer assistant/org-chart semantics, cache authoring for unsupported or
-  partially populated media payloads, and authoritative PowerPoint visual
+  partially populated media payloads when no authored cached picture slot
+  exists, and authoritative PowerPoint visual
   baselines for the many bounded live layout families. The current lane now
   covers the vertical picture-list insertion path and cache-only picture
   replacement/clearing; those are no longer open omissions.
