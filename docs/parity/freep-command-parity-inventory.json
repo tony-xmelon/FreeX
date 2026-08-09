@@ -4,15 +4,15 @@
   "source": "freep/FreeP.Ribbon.Definitions FreePRibbon.Build(FreePRibbonCapabilities.Wpf/Avalonia) plus freep/FreeP.App.Presentation SmartArtLayoutPreset",
   "notes": "Raw missing counts preserve one-sided generated profile surface counts. Actionable missing counts exclude platform-only commands so Avalonia shell and backed profile commands are not reported as WPF or Avalonia implementation gaps. Platform-only rows are allowed only when the note names the intended shell/profile variance and the WPF shell route that carries the behavior. Workflow evidence rows track bounded FreeP WPF/Avalonia parity-depth slices that are not command gaps.",
   "summary": {
-    "totalCommands": 658,
-    "both": 658,
+    "totalCommands": 668,
+    "both": 668,
     "wpfOnly": 0,
     "avaloniaOnly": 0,
     "missingWpf": 0,
     "missingAvalonia": 0,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "shared": 658,
+    "shared": 668,
     "avaloniaGaps": 0,
     "knownDeferred": 0,
     "platformOnly": 0,
@@ -12609,6 +12609,40 @@
       ]
     },
     {
+      "commandId": "freep.insert-smartart-vertical-picture-list",
+      "label": "Vertical Picture List",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Vertical Picture List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "smartart-insert",
+          "group": "SmartArt Layouts",
+          "label": "Vertical Picture List",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ]
+    },
+    {
       "commandId": "freep.insert-smartart-vertical-process",
       "label": "Vertical Process",
       "wpfPresent": true,
@@ -20565,6 +20599,40 @@
       ]
     },
     {
+      "commandId": "freep.smartart.layout.vertical-picture-list",
+      "label": "Vertical Picture List",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Vertical Picture List",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "design",
+          "tab": "Design",
+          "groupId": "smartart-layouts",
+          "group": "SmartArt Layouts",
+          "label": "Vertical Picture List",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.smartart.layout.vertical-process",
       "label": "Vertical Process",
       "wpfPresent": true,
@@ -21415,6 +21483,142 @@
       ]
     },
     {
+      "commandId": "freep.table.delete-column",
+      "label": "Delete Column",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Delete Column",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Delete Column",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.table.delete-row",
+      "label": "Delete Row",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Delete Row",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Delete Row",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.table.distribute-columns",
+      "label": "Distribute Columns",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Distribute Columns",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Distribute Columns",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.table.distribute-rows",
+      "label": "Distribute Rows",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Distribute Rows",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Distribute Rows",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
       "commandId": "freep.table.first-column",
       "label": "First Column",
       "wpfPresent": true,
@@ -21479,6 +21683,142 @@
           "label": "Header Row",
           "controlType": "RibbonToggleButton",
           "layout": "Small"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.table.insert-column-left",
+      "label": "Insert Column Left",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Insert Column Left",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Insert Column Left",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.table.insert-column-right",
+      "label": "Insert Column Right",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Insert Column Right",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Insert Column Right",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.table.insert-row-above",
+      "label": "Insert Row Above",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Insert Row Above",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Insert Row Above",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ]
+    },
+    {
+      "commandId": "freep.table.insert-row-below",
+      "label": "Insert Row Below",
+      "wpfPresent": true,
+      "avaloniaPresent": true,
+      "surface": "both",
+      "missingSide": "none",
+      "classification": "shared",
+      "notes": "Available in both generated FreeP ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Insert Row Below",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
+        }
+      ],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "home",
+          "tab": "Home",
+          "groupId": "font",
+          "group": "Font",
+          "label": "Insert Row Below",
+          "controlType": "RibbonButton",
+          "layout": "Medium"
         }
       ]
     },

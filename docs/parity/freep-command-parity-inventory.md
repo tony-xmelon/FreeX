@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 658 | 658 | 0 | 0 | 0 | 0 | 0 | 0 | 658 | 0 | 0 | 0 | 0 | 110 |
+| 668 | 668 | 0 | 0 | 0 | 0 | 0 | 0 | 668 | 0 | 0 | 0 | 0 | 110 |
 
 ## Workflow Evidence
 
@@ -441,6 +441,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.insert-smartart-vertical-box-list` | Vertical Box List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-vertical-bullet-list` | Vertical Bullet List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-vertical-chevron-list` | Vertical Chevron List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.insert-smartart-vertical-picture-list` | Vertical Picture List | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-smartart-vertical-process` | Vertical Process | Yes | Yes | none | shared | insert/smartart-insert (RibbonMenuItem) | insert/smartart-insert (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-summary-zoom` | Summary Zoom | Yes | Yes | none | shared | insert/links (RibbonButton) | insert/links (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.insert-table-2x2` | 2x2 | Yes | Yes | none | shared | insert/tables (RibbonButton) | insert/tables (RibbonButton) | Available in both generated FreeP ribbon profiles. |
@@ -675,6 +676,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.smartart.layout.vertical-box-list` | Vertical List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.vertical-bullet-list` | Vertical Bullet List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.vertical-chevron-list` | Vertical Chevron List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.smartart.layout.vertical-picture-list` | Vertical Picture List | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.layout.vertical-process` | Vertical Process | Yes | Yes | none | shared | design/smartart-layouts (RibbonButton) | design/smartart-layouts (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.style.birds-eye-scene` | Bird's Eye Scene | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.style.brick-scene` | Brick Scene | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
@@ -700,8 +702,16 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.table-row-height` | Row Height | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.banded-columns` | Banded Columns | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.banded-rows` | Banded Rows | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.delete-column` | Delete Column | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.delete-row` | Delete Row | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.distribute-columns` | Distribute Columns | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.distribute-rows` | Distribute Rows | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.first-column` | First Column | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.first-row` | Header Row | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.insert-column-left` | Insert Column Left | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.insert-column-right` | Insert Column Right | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.insert-row-above` | Insert Row Above | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.table.insert-row-below` | Insert Row Below | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.last-column` | Last Column | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.last-row` | Total Row | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.table.merge-cells` | Merge Cells | Yes | Yes | none | shared | home/font (RibbonButton) | home/font (RibbonButton) | Available in both generated FreeP ribbon profiles. |
