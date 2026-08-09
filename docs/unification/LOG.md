@@ -4,6 +4,14 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
+## Dedup exhaustion campaign report - DRAFT (2026-08-09)
+
+Added the [dedup exhaustion report](DEDUP-EXHAUSTION-2026-08-09.md), covering the campaign architecture,
+major extraction areas, measured renderer LOC reduction, and disposition of the lexical residuals. Final
+synchronization, test gates, and FreeX WPF visual parity remain explicitly **PENDING** for the orchestrator.
+
+---
+
 ## FreeW/FreeP Avalonia shared shell frame - DONE (dedup slice)
 
 **Branch:** `codex/dedup-avalonia-shell-frame-20260627`.
