@@ -8,8 +8,8 @@ WPF/Avalonia workflow that consumes them.
 ## Current baseline
 
 - Main tip at the prior checkpoint: `d2197a476c`.
-- Current function-first checkpoint: `88b22b79fa` (`freep: attach SmartArt pictures to cached shape owners`).
-- Current source audit tip: `88b22b79fa`; the checkpoint includes the WPF rich-editor list-marker, inherited list-layout, inherited run-style, unsupported-SmartArt cached-authoring, and schema-valid SmartArt picture-cache synchronization slices through the shared undoable session path.
+- Current function-first checkpoint: pending commit for the external RTF underline-variant slice.
+- Current source audit tip: pending commit; the checkpoint includes the WPF rich-editor list-marker, inherited list-layout, inherited run-style, unsupported-SmartArt cached-authoring, schema-valid SmartArt picture-cache synchronization, and external RTF underline-variant normalization through the shared undoable/clipboard paths.
 - Command inventory: `668` command IDs present in both WPF and Avalonia; the
   inventory reports `0` WPF-only, `0` Avalonia-only, and `0` actionable command
   gaps.
@@ -54,6 +54,8 @@ Recent function-first additions on main include:
   including writer round-trip through the existing per-run text-fill model.
 - external RTF baseline offsets now round-trip exact `\\upN`/`\\dnN` half-point
   controls instead of collapsing authored values to coarse `\\super`/`\\sub`.
+- external RTF double, dashed, thick, and wave underline controls now retain
+  the shared `Run.Underline` semantic and normalize back to canonical `\\ul`.
 - WPF XamlPackage per-run `Background` fills, including direct and style-resource
   input plus writer package round-trip through the same text-fill model.
 - WPF in-canvas rich editing now shows character, auto-number, and image list
@@ -144,7 +146,8 @@ These are genuine depth or evidence gaps, not generic missing ribbon commands:
   a missing product route.
 - Media/captions: broader real-deck native media/caption corpus coverage and
   advanced caption styling/accessibility semantics remain open.
-- Editing depth: unsupported XamlPackage/RTF controls, richer list/field/RTL/
+- Editing depth: provider-specific XamlPackage/RTF controls beyond the shared
+  underline semantic, richer list/field/RTL/
   IME behavior, and rotated/flipped OLE transforms remain bounded. Portable
   non-Windows OLE remains an explicit platform gap; Windows in-place hosting is
   now covered for the rectangular unrotated route.
