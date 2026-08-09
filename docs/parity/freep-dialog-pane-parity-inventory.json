@@ -232,7 +232,7 @@
                        "lifecycle":  "One instance is reused and switched between Find/Replace modes; Close, Escape, owner close, and presentation replacement close it.",
                        "validation":  "Shared policy disables empty-query search/replace and reports no-match/no-replacement status.",
                        "resultApplication":  "EditingSession.FindAll/NavigateTo/ReplaceOne/ReplaceAll; host refresh callback updates canvas and slide pane.",
-                       "sharedPolicy":  "PresentationApplicationFrameSession; FindReplaceDialogPlanner; FindReplaceDialogPolicy",
+                       "sharedPolicy":  "PresentationWorkareaSession; FindReplaceDialogPlanner; FindReplaceDialogPolicy",
                        "wpfSources":  [
                                           "freep/FreeP.App.Host/FindReplaceDialog.cs",
                                           "freep/FreeP.App.Host/MainWindow.cs"

@@ -163,6 +163,7 @@
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterHeaderButtonPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuCatalog.cs",
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuModel.cs",
+                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterParityFixturePlanner.cs"
                                                ],
                      "notes":  [
@@ -496,6 +497,7 @@
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
+                                                   "src\\FreeX.App.Presentation\\Sparklines\\SparklineAxisScalePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Sparklines\\SparklineLayoutEngine.cs",
                                                    "src\\FreeX.App.Presentation\\Sparklines\\SparklineSeriesReader.cs",
                                                    "src\\FreeX.App.Presentation\\SparklineUI\\SparklinePlanner.cs",
@@ -685,7 +687,8 @@
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPaneGroupedCommandPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPaneParityFixture.cs",
-                                                   "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPanePlanner.cs"
+                                                   "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPanePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPaneSession.cs"
                                                ],
                      "notes":  [
 
@@ -708,10 +711,12 @@
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotFieldItemsReader.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotSlicerTimelineDialogContract.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerItemResolver.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineHitDateResolver.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineInteractionPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelinePanePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineSourceReader.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
                                                ],
                      "notes":  [
@@ -735,10 +740,12 @@
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotFieldItemsReader.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\PivotSlicerTimelineDialogContract.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerItemResolver.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerLayoutModel.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineHitDateResolver.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineInteractionPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelinePanePlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\SlicerTimeline\\SlicerTimelineSourceReader.cs",
                                                    "src\\FreeX.App.Presentation\\SlicerTimeline\\TimelineLayoutModel.cs"
                                                ],
                      "notes":  [
@@ -966,6 +973,7 @@
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalDataBarLayoutPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatCommandPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatDialogPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatEvaluator.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatIconSetCatalog.cs",
@@ -1007,6 +1015,7 @@
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalDataBarLayoutPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatCommandPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatDialogPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatEvaluator.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatIconSetCatalog.cs",
@@ -1248,7 +1257,7 @@
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectionInputParser.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectionPassword.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectionStateProjector.cs",
-                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionWorkflowPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionWorkflowSession.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectSheetOptions.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectWorkbookOptions.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOption.cs",
@@ -1278,7 +1287,7 @@
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectionInputParser.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectionPassword.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectionStateProjector.cs",
-                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionWorkflowPlanner.cs",
+                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionWorkflowSession.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectSheetOptions.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectWorkbookOptions.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\SheetProtectionOption.cs",

@@ -36,11 +36,11 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Host/WpfWholeWindowVisualEvidenceCapture.cs",
-                       "sha256":  "43be1434fa37b93ec34122df52507a26e3164cdbceba79f88e32f57e2841b9cf"
+                       "sha256":  "5d2ac21a19fe0b0fdab4664078ec06f75d7a07616f6239f185661837207c6804"
                    },
                    {
                        "path":  "freep/FreeP.App.Host/MainWindow.cs",
-                       "sha256":  "eef18a46bfe7e659785a8b4b6eb1464b63439085ab764dd86ad2b147b43d410d"
+                       "sha256":  "56b0802248bb94c42d2fe68b4195e218b8514754292f9e7d2fe360cc45f07151"
                    },
                    {
                        "path":  "freep/FreeP.App.Host/MainWindow.WholeWindowVisualEvidence.cs",
@@ -48,23 +48,23 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Avalonia/AvaloniaWholeWindowVisualEvidenceCapture.cs",
-                       "sha256":  "9fc98c48b9bf62360258fe633313919d789ec8f6937da4e92f9bcbade66036ad"
+                       "sha256":  "5ab0d85f2131db1041a3867e8775948aa7a6afbbf76eed771d9a77ff0fa13365"
                    },
                    {
                        "path":  "freep/FreeP.App.Avalonia/MainWindow.cs",
-                       "sha256":  "36e7212efabea67af4ce77ee4730432e9fd3e6ecd73c32cb09aaca74eaca1978"
+                       "sha256":  "008f54df2a7d9a7c193c793fb86c08dbc421e2f211744007a814b74fb22de336"
                    },
                    {
                        "path":  "freep/FreeP.App.Avalonia/MainWindow.WholeWindowVisualEvidence.cs",
-                       "sha256":  "6bf039baeb956e86ce7c527e4b20dbf0ce7f1fb3e0c0abfc8d95186344ddf29a"
+                       "sha256":  "58860814ea9546d445bfe519d838b1c70cd522391bed50ca3fabf6a8e2b6ede5"
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Wpf/InCanvasTextEditor.cs",
-                       "sha256":  "0ef8098730cfdafe42c00ff12ed5cd5fd5e046eb50cb39ec06d83b429ecb30a2"
+                       "sha256":  "5d38affe4eb13f156c8155d4a4359bce3fdc23b9a84388541c175d54af0c4526"
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Wpf/TextBodyFlowDocumentConverter.cs",
-                       "sha256":  "e95491769fdbd5959b756eeccce55bcfa0869f17bc3e660b1966c805d09ea5bc"
+                       "sha256":  "7ce45511b82ff332f7bc473a41125924cff4b90a9cc8468fd2ed3c867ca4f047"
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaInCanvasTextEditor.cs",
@@ -72,7 +72,7 @@
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditor.cs",
-                       "sha256":  "7bce62af9aeb8baa152e962083869485c6417026ca6dca945637c9158d6334f1"
+                       "sha256":  "0e4b6edb38c3f85f962a707eb2878d959810980058d082bb9359598881d990ee"
                    },
                    {
                        "path":  "freep/FreeP.App.Rendering.Avalonia/AvaloniaRichTextEditingSurface.cs",
@@ -92,7 +92,7 @@
                    },
                    {
                        "path":  "shared/Free.Shared.Ribbon.Avalonia/AvaloniaRibbonRenderer.cs",
-                       "sha256":  "2f3b02403ca592ae8ca4fec283ad27d4f3444fdee425ebb71f25eb6847427ec9"
+                       "sha256":  "dd734eac2a8eb5e34a3834c4d94a1c34af79b5a18eb0203250d025342dfb610b"
                    },
                    {
                        "path":  "tools/FreeP.RenderCompare/WholeWindowVisualEvidence.cs",
