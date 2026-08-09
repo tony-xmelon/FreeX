@@ -194,3 +194,12 @@ through `FieldRun.Instruction`, the in-canvas clipboard payload, and RTF
 serialization. `FieldType` remains the native PPTX token; native `a:fld` output
 is unchanged. The focused field round-trip gate covers `PAGE \\* MERGEFORMAT`
 and the existing safe hyperlink boundary.
+
+### 2026-08-09 native PowerPoint field metadata
+
+Native DrawingML fields now preserve authored `a:fld/@id` and nullable
+`a:fld/@dirty` through the model, PPTX reader/writer, model/edit clones, and
+in-canvas clipboard payload. New fields retain generated IDs; omitted `dirty`
+remains omitted while explicit `0` and `1` survive. The WPF MediaFields gate is
+36/36 and the shared external clipboard gate remains 64/64. This is a package
+and update-semantics slice, with no new raster claim.
