@@ -7,7 +7,7 @@ WPF/Avalonia workflow that consumes them.
 
 ## Current baseline
 
-- Main tip at this checkpoint: `d53d9e203e`.
+- Main tip at this checkpoint: `956b4a1ea2`.
 - Command inventory: `658` command IDs present in both WPF and Avalonia; the
   inventory reports `0` WPF-only, `0` Avalonia-only, and `0` actionable command
   gaps.
@@ -50,6 +50,8 @@ Recent function-first additions on main include:
   such as breaks, no-break hyphens, smart tags, move revisions, ruby, and bidi.
 - external RTF character highlighting through `\\highlightN`/`\\chcbpatN`,
   including writer round-trip through the existing per-run text-fill model.
+- external RTF baseline offsets now round-trip exact `\\upN`/`\\dnN` half-point
+  controls instead of collapsing authored values to coarse `\\super`/`\\sub`.
 - WPF XamlPackage per-run `Background` fills, including direct and style-resource
   input plus writer package round-trip through the same text-fill model.
 - cache-only SmartArt picture replacement/clearing, plus live and insertion
