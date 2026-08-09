@@ -34,14 +34,20 @@ The same inheritance path now supplies paragraph alignment, left margin, and
 first-line/hanging indentation to WPF. Explicit paragraph values, including
 zero-valued overrides, remain authoritative.
 
+Run defaults from the resolved style level are applied to the WPF paragraph
+scope rather than copied onto each WPF run. This makes inherited font size,
+weight, italic, literal font family, and color visible while keeping local-value
+read-back lossless for model edits.
+
 ## Verification
 
 - `Converter_RendersListMarkersWithoutAddingThemToLogicalText`: passed.
 - `Converter_InheritsListStyleMarkersButHonorsExplicitSuppression`: passed.
 - `Converter_InheritsListStyleParagraphLayoutButHonorsLocalOverrides`: passed.
+- `Converter_InheritsRunDefaultsAtParagraphScopeWithoutBakingThemIntoRuns`: passed.
 - `RichTextEditorTests`: `60/60`.
 - `WpfRichTextClipboardAdapterTests`: `23/23`.
-- Focused host test lane: `84/84`.
+- Focused host test lane: `86/86`.
 - Consuming `FreeP.App.Host` Release build: passed with 0 warnings and 0 errors.
 
 This is a functional/editor-surface slice; no raster parity claim is attached.

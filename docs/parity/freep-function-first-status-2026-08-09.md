@@ -61,7 +61,9 @@ Recent function-first additions on main include:
   with no local bullet now inherit character/number marker defaults from
   `TextBody.LstStyle`, while explicit `BulletSuppressed` remains authoritative;
   alignment and list indentation inherit through the same style chain, with
-  local paragraph values overriding it.
+  local paragraph values overriding it. Inherited run defaults are applied at
+  paragraph scope so WPF shows style font/color defaults without baking them
+  into model runs during a no-op edit round-trip.
 - Windows WPF and Windows Avalonia now attempt native in-place OLE hosting for
   unrotated, unflipped slide objects, commit edited bytes back to the model, and
   fall back to external activation when the server declines or fails.
