@@ -7,7 +7,7 @@ WPF/Avalonia workflow that consumes them.
 
 ## Current baseline
 
-- Main tip at this checkpoint: `956b4a1ea2`.
+- Main tip at this checkpoint: `d2197a476c`.
 - Command inventory: `658` command IDs present in both WPF and Avalonia; the
   inventory reports `0` WPF-only, `0` Avalonia-only, and `0` actionable command
   gaps.
