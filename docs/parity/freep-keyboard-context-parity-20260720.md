@@ -7,7 +7,7 @@
 - Shortcut gestures: 18
 - Semantic shortcut commands: 17
 - Context-menu surfaces: 2
-- Context-menu command rows: 7
+- Context-menu command rows: 8
 - Context-menu separators: 3
 - Keyboard context invocation routes: Apps, Shift+F10
 - Keyboard dismiss route: Escape
@@ -43,8 +43,9 @@
 | 2 | Separator | - | - | False | False | False |
 | 3 | Command | NewSlide | New Slide | True | False | False |
 | 4 | Command | DuplicateSlide | Duplicate Slide | True | False | False |
-| 5 | Separator | - | - | False | False | False |
-| 6 | Command | DeleteSlide | Delete Slide | True | False | False |
+| 5 | Command | ToggleHiddenSlide | Hide Slide | True | True | False |
+| 6 | Separator | - | - | False | False | False |
+| 7 | Command | DeleteSlide | Delete Slide | True | False | False |
 
 ## Section header Context Menu
 
@@ -58,8 +59,8 @@
 
 | Profile | Tabs | Groups | Actionable controls | Nested menu commands | Total keyed entries |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| WPF | 6 | 22 | 116 | 56 | 200 |
-| Avalonia | 6 | 23 | 118 | 56 | 203 |
+| WPF | 6 | 28 | 396 | 246 | 676 |
+| Avalonia | 6 | 28 | 396 | 246 | 676 |
 
 All counted entries have non-empty KeyTips and every tab, group, control, and nested-menu scope is collision-free. Shared command KeyTips match between profiles except the declared `freep.new-slide` profile override.
 
