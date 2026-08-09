@@ -1,6 +1,6 @@
 {
     "machineId":  "DESKTOP-DGEV3SF",
-    "generatedAt":  "2026-08-09T00:40:44.4494243+03:00",
+    "generatedAt":  "2026-08-09T11:45:30.2889443+03:00",
     "startDate":  "2026-05-12",
     "endDate":  "2026-08-09",
     "anthropic":  {
@@ -8,7 +8,7 @@
                                          "files":  11,
                                          "sessions":  11,
                                          "events":  475,
-                                         "bytes":  22306143,
+                                         "bytes":  22531660,
                                          "input":  106748,
                                          "cachedInput":  0,
                                          "cacheWrite":  2389427,
@@ -184,7 +184,7 @@
                                          "files":  18,
                                          "sessions":  18,
                                          "events":  1623,
-                                         "bytes":  43339689,
+                                         "bytes":  43565206,
                                          "input":  192525,
                                          "cachedInput":  0,
                                          "cacheWrite":  15088511,
@@ -290,7 +290,7 @@
                                          "files":  8,
                                          "sessions":  8,
                                          "events":  563,
-                                         "bytes":  7987481,
+                                         "bytes":  8212998,
                                          "input":  36786,
                                          "cachedInput":  0,
                                          "cacheWrite":  2444772,
@@ -359,33 +359,33 @@
                       "2026-08-09":  {
                                          "files":  1,
                                          "sessions":  1,
-                                         "events":  23,
-                                         "bytes":  4753597,
-                                         "input":  46,
+                                         "events":  54,
+                                         "bytes":  4979114,
+                                         "input":  108,
                                          "cachedInput":  0,
-                                         "cacheWrite":  661155,
-                                         "cacheRead":  15241131,
-                                         "output":  19429,
+                                         "cacheWrite":  1363064,
+                                         "cacheRead":  36733424,
+                                         "output":  32595,
                                          "reasoning":  0,
                                          "apps":  {
                                                       "Docs/Tooling/Other":  {
-                                                                                 "events":  23,
-                                                                                 "input":  46,
+                                                                                 "events":  54,
+                                                                                 "input":  108,
                                                                                  "cachedInput":  0,
-                                                                                 "cacheWrite":  661155,
-                                                                                 "cacheRead":  15241131,
-                                                                                 "output":  19429,
+                                                                                 "cacheWrite":  1363064,
+                                                                                 "cacheRead":  36733424,
+                                                                                 "output":  32595,
                                                                                  "reasoning":  0
                                                                              }
                                                   },
                                          "platforms":  {
                                                            "Non-code":  {
-                                                                            "events":  23,
-                                                                            "input":  46,
+                                                                            "events":  54,
+                                                                            "input":  108,
                                                                             "cachedInput":  0,
-                                                                            "cacheWrite":  661155,
-                                                                            "cacheRead":  15241131,
-                                                                            "output":  19429,
+                                                                            "cacheWrite":  1363064,
+                                                                            "cacheRead":  36733424,
+                                                                            "output":  32595,
                                                                             "reasoning":  0
                                                                         }
                                                        }
