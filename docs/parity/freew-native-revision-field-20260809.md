@@ -3,6 +3,7 @@
 ## Scope
 
 - Refresh imported `REVNUM` fields from the preserved `/docProps/core.xml` `cp:revision` value.
+- Refresh `DOCPROPERTY "Revision Number"` from the same Word built-in-property source.
 - Preserve the cached field result when the package has no usable revision value.
 - Preserve both complex and `w:fldSimple` forms through DOCX save and reopen.
 - Offer `Revision Number (REVNUM)` in the shared field picker and resolve its initial value in WPF and Avalonia.
@@ -10,7 +11,7 @@
 
 ## Word contract
 
-Microsoft documents `REVNUM` as the field that inserts the number of times a document has been saved. In OOXML packages that value is serialized as `cp:revision` in `/docProps/core.xml`. FreeW already preserves unmodeled core-property elements, so the field resolver reads that source payload without duplicating it into a second metadata model.
+Microsoft documents `REVNUM` as the field that inserts the number of times a document has been saved, and identifies `wdPropertyRevision` as the built-in `Revision Number` property. In OOXML packages that value is serialized as `cp:revision` in `/docProps/core.xml`. FreeW already preserves unmodeled core-property elements, so both field forms read that source payload without duplicating it into a second metadata model.
 
 ## Acceptance
 
@@ -20,7 +21,7 @@ Microsoft documents `REVNUM` as the field that inserts the number of times a doc
 
 Focused Release verification:
 
-- `ComplexFieldEngineTests`: 73/73.
+- `ComplexFieldEngineTests`: 74/74.
 - `ComplexFieldUpdateRoundTripTests`: 6/6.
 - `FieldPickerDialogPlannerTests`: 4/4.
 - WPF `ComplexFieldEditorTests`: 18/18.
