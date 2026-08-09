@@ -2,6 +2,16 @@
 
 **Last updated:** 2026-06-08
 
+<!-- Status correction 2026-08-08: Stage 3 below (the native AppKit share-sheet adapter) has
+since landed -- src/FreeX.App.Avalonia/MacOs/MacOsWorkbookShareSheetService.cs exists and is
+wired through WorkbookShareSheetServiceFactory/FREEX_MACOS_SHARE_SHEET as this doc describes
+(commit 1310c9cb9a, "Add macOS share sheet host boundary"). The "Not implemented" release-note
+guidance in Stage 0/Stage 4 below is stale for the adapter's existence; Stage 4's human-validation
+requirement (interactive AppKit sheet completion on real hardware) still appears open. -->
+
+<!-- VERIFY: whether a completed human macOS validation pass exists for the native share sheet
+before calling native share-sheet parity fully promoted for public preview. -->
+
 This note scopes the smallest staged path from the current hosted macOS app bundle to a native AppKit share-sheet adapter. The immediate goal is to keep the existing `net10.0` Avalonia app path stable while using an opt-in lane for macOS-specific AppKit bindings.
 
 ## Current Baseline

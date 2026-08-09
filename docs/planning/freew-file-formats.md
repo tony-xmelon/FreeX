@@ -1,6 +1,6 @@
 # FreeW File-Format Adapter Status
 
-**Last updated:** 2026-07-03
+**Last updated:** 2026-08-08
 
 FreeW no longer hardcodes a DOCX-only file lifecycle. Current mainline uses `IDocumentFileAdapter`, `DocumentFileAdapterCatalog`, catalog-derived format resolution, and host/Avalonia picker filters so adding or changing a format is a catalog/adapter/test change instead of command string surgery.
 Backstage Save As / Export rows are planned from the same catalog-derived capability view so import-only, export-only, template, and compatibility formats are described explicitly.
@@ -24,9 +24,11 @@ Backstage Save As / Export rows are planned from the same catalog-derived capabi
 | Macro-enabled Word document | `.docm` | Yes | Yes | Uses the DOCX model path; macro/package preservation remains fidelity-driven. |
 | Word template | `.dotx` | Yes | Yes | Opens as a template-style document target. |
 | Macro-enabled Word template | `.dotm` | Yes | Yes | Template/macro package fidelity remains evidence-driven. |
-| Word XML | `.xml` | Yes | Yes | WordprocessingML/Flat OPC style adapter path. |
+| Strict Open XML document | `.docx` | Yes | Yes | Separate `DocxFileAdapter.Strict()` registration (namespace-rewrite transform) alongside the transitional OOXML adapter; same extension, distinct `FormatName`. |
+| Word XML (Flat OPC) | `.xml` | Yes | Yes | WordprocessingML/Flat OPC style adapter path (`WordXmlFileAdapter`). |
+| Word 2003 XML | `.xml` | Yes | Yes | Word 2003 single-file WordprocessingML (`<w:wordDocument>` root) via `Wordml2003FileAdapter`; registered under the same `.xml` extension as the Flat OPC adapter but a distinct `FormatName`, so the resolver dispatches by content sniff. |
 | Rich Text Format | `.rtf` | Yes | Yes | Text and supported formatting are mapped through `TextDocument`. |
-| HTML | `.html`, `.htm` | Yes | Yes | Document HTML import/export path. |
+| HTML | `.html`, `.htm` | Yes | Yes | Two save-mode registrations share these extensions: `HtmlFileAdapter.Filtered()` ("Web Page, Filtered" - clean HTML5) and `HtmlFileAdapter.WebPage()` ("Web Page" - adds Office round-trip scaffolding). |
 | MHTML | `.mhtml`, `.mht` | Yes | Yes | Web archive document path. |
 | PDF | `.pdf` | Yes | No | Import-only text extraction path through the explicit PDF import command; PDF export is a separate fixed-layout output, not editable round-trip support. |
 | Legacy Word | `.doc`, `.dot` | Yes | Yes | Compatibility adapter for Word 97-2003 binary formats. Save is available, but unsupported modern features may be simplified. `.dot` opens as a template/new document. |

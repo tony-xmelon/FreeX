@@ -30,6 +30,12 @@ toward widget-tree mapping over one logic source.
 
 ## Where we are (updated 2026-06-25)
 
+<!-- VERIFY: this snapshot is over 6 weeks stale as of 2026-08-08. FreeP in particular has grown far past
+     "scaffold" — freep/ now has ~750 .cs files across 19 projects including FreeP.App.Avalonia (58 files),
+     FreeP.App.Rendering.Avalonia, FreeP.App.Rendering.Wpf, FreeP.App.Recording(.Windows), FreeP.App.Ole.Windows,
+     and shared/Free.Shared.Ribbon.Avalonia + Free.Shared.Shell.Avalonia now exist. Treat the table below as
+     historical; re-audit against current freep/ and shared/ before relying on it. -->
+
 | Dimension | FreeX (spreadsheet) | FreeW (word) | FreeP (slides) |
 |---|---|---|---|
 | Windows · WPF | mature | solid | scaffold |
@@ -97,6 +103,11 @@ onto **one shared superset catalog** in `FreeX.App.Localization` (6,401 keys + 4
 duplicate Host `.resx` files were removed.
 
 ## Active session map (2026-06-25)
+
+<!-- VERIFY: this session-division snapshot is from 2026-06-25 and is stale as of the current audit
+     (2026-08-08) — `unification-program` itself has since been merged into `main` and deleted, so "this
+     session" and its "hot — do not edit" claim no longer apply. Kept for historical record of how work was
+     divided at the time; do not use it to infer current session ownership. -->
 
 Multiple sessions run in parallel over one OneDrive-shared `.git`. Division of labour:
 

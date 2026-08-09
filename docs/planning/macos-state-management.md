@@ -1,8 +1,8 @@
 # macOS Port State Management Note
 
-**Last updated:** 2026-06-09
+**Last updated:** 2026-06-09 (path correction 2026-08-08: the recent-file/app-data-path implementation moved from `FreeX.App.Services` into the cross-app shared tier)
 
-This note narrows the state-storage guidance from the [multiplatform macOS port plan](multiplatform-macos-port.md) and the [macOS dependency backlog](macos-port-dependency-backlog.md). The current tree has no `docs/research/` directory; the active anchors are the planning docs plus the portable recent-file implementation in `FreeX.App.Services`.
+This note narrows the state-storage guidance from the [multiplatform macOS port plan](multiplatform-macos-port.md) and the [macOS dependency backlog](macos-port-dependency-backlog.md). The current tree has no `docs/research/` directory; the active anchors are the planning docs plus the portable recent-file implementation, now in `shared/Free.Shared.AppServices` (`RecentFilesStore.cs`, `ApplicationDataPathProvider.cs`) rather than `FreeX.App.Services`.
 
 ## Placement Rules
 
@@ -33,7 +33,7 @@ Use Application Support for durable user/app state that should survive app resta
 
 ## Abstraction Direction
 
-- Keep durable app-state stores in `FreeX.App.Services` when they are shared by WPF and Avalonia. UI hosts should supply platform adapters; shared services must stay free of WPF, `Microsoft.Win32`, WinRT, COM, and Windows target frameworks.
+- Keep durable app-state stores in `shared/Free.Shared.AppServices` (not `FreeX.App.Services` — the shared-tier extraction moved `RecentFilesStore` and `ApplicationDataPathProvider` there so they are reusable by FreeW/FreeP as well as WPF and Avalonia). UI hosts should supply platform adapters; shared services must stay free of WPF, `Microsoft.Win32`, WinRT, COM, and Windows target frameworks.
 - Use `IApplicationDataPathProvider` for durable app data today. Before moving more WPF settings into shared macOS code, route `FreeXOptions` through a provider or settings-store abstraction instead of direct `Environment.GetFolderPath` calls.
 - Add separate providers for non-durable roots when needed, such as diagnostics and cache paths. Do not overload the application-data provider for logs, crash files, or generated cache artifacts.
 - Keep JSON state stores schema-tolerant, best-effort on load, atomic on save, and testable through injected paths and clocks.

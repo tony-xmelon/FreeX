@@ -1,7 +1,7 @@
 # FreeX Outstanding Build List
 
-**Last updated:** 2026-06-21
-**Basis:** originally reviewed on 2026-06-03 from repository Markdown, active code under `src/` and `tests/`, and release metadata. Refreshed on 2026-06-21 for current status pointers, release state, and major file-format deltas; see [../history/status-2026-06-21.md](../history/status-2026-06-21.md) for the current snapshot.
+**Last updated:** 2026-08-08
+**Basis:** originally reviewed on 2026-06-03 from repository Markdown, active code under `src/` and `tests/`, and release metadata. Current-status pointer refreshed on 2026-08-08; see [../history/status-2026-08-08.md](../history/status-2026-08-08.md) for the current snapshot.
 
 This remains the long-form backlog and historical implementation ledger. Older rows are preserved when useful for context, but the current status snapshot and dated fidelity/release docs should win when they disagree with a June 3 metric.
 
