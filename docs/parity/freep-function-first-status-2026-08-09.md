@@ -8,8 +8,8 @@ WPF/Avalonia workflow that consumes them.
 ## Current baseline
 
 - Main tip at the prior checkpoint: `d2197a476c`.
-- Current function-first checkpoint: `b140fc6c0d` (`freep: refresh SmartArt picture fallback fills`).
-- Current source audit tip: `b140fc6c0d`; the checkpoint includes the WPF rich-editor list-marker, inherited list-layout, inherited run-style, unsupported-SmartArt cached-authoring, and schema-valid SmartArt picture-cache synchronization slices through the shared undoable session path.
+- Current function-first checkpoint: `88b22b79fa` (`freep: attach SmartArt pictures to cached shape owners`).
+- Current source audit tip: `88b22b79fa`; the checkpoint includes the WPF rich-editor list-marker, inherited list-layout, inherited run-style, unsupported-SmartArt cached-authoring, and schema-valid SmartArt picture-cache synchronization slices through the shared undoable session path.
 - Command inventory: `668` command IDs present in both WPF and Avalonia; the
   inventory reports `0` WPF-only, `0` Avalonia-only, and `0` actionable command
   gaps.
@@ -75,6 +75,10 @@ Recent function-first additions on main include:
   schema-valid `dsp:sp` + `a:blipFill` owner emitted by the writer, as well as
   legacy `dsp:pic`-shaped payloads; the corresponding `ShapeFill.Picture`
   fallback owner is refreshed or removed with the native media relationship.
+- a newly populated picture node can now attach to an existing cached shape
+  owner without rebuilding unsupported SmartArt layout geometry; the owner’s
+  authored transform survives while the media relationship and fallback fill
+  are added through the same undoable session.
 - SmartArt Quick Style and Change Colors now refresh simple cached fallback nodes
   when a parsed data tree is present but its live layout grammar is unsupported;
   native style/color parts and the visible cached owner stay aligned through
@@ -118,7 +122,7 @@ These are genuine depth or evidence gaps, not generic missing ribbon commands:
 
 - SmartArt: broader PowerPoint-authored layout/style/color regeneration,
   richer assistant/org-chart semantics, cache authoring for unsupported or
-  partially populated media payloads when no authored cached picture slot
+  partially populated media payloads when no authored cached shape owner
   exists, and authoritative PowerPoint visual
   baselines for the many bounded live layout families. The current lane now
   covers the vertical picture-list insertion path and cache-only picture
