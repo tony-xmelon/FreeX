@@ -54,6 +54,9 @@ Recent function-first additions on main include:
   controls instead of collapsing authored values to coarse `\\super`/`\\sub`.
 - WPF XamlPackage per-run `Background` fills, including direct and style-resource
   input plus writer package round-trip through the same text-fill model.
+- Windows WPF and Windows Avalonia now attempt native in-place OLE hosting for
+  unrotated, unflipped slide objects, commit edited bytes back to the model, and
+  fall back to external activation when the server declines or fails.
 - cache-only SmartArt picture replacement/clearing, plus live and insertion
   payload support for the vertical picture-list layout; Avalonia inline page
   breaks now also paginate through the shared display-layer path.
@@ -86,8 +89,9 @@ These are genuine depth or evidence gaps, not generic missing ribbon commands:
 - Media/captions: broader real-deck native media/caption corpus coverage and
   advanced caption styling/accessibility semantics remain open.
 - Editing depth: unsupported XamlPackage/RTF controls, richer list/field/RTL/
-  IME behavior, and in-place OLE hosting remain bounded or deferred. Portable
-  non-Windows OLE also remains an explicit platform gap.
+  IME behavior, and rotated/flipped OLE transforms remain bounded. Portable
+  non-Windows OLE remains an explicit platform gap; Windows in-place hosting is
+  now covered for the rectangular unrotated route.
 - Native print/driver behavior: foreground dialog behavior and real printer or
   driver-level validation remain outside the deterministic paginator tests.
 
