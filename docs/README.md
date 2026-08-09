@@ -171,7 +171,7 @@ Use this index as the current documentation map. Point-in-time material lives un
 - [history/status-2026-05-24.md](history/status-2026-05-24.md) - prior status snapshot.
 - [history/status-2026-05-21.md](history/status-2026-05-21.md) - prior status snapshot.
 - [history/status-2026-05-19.md](history/status-2026-05-19.md) - prior status snapshot.
-- [history/build-history-metrics.md](history/build-history-metrics.md) - historical generated build-history and provider-log metrics through 2026-06-06.
+- [history/build-history-metrics.md](history/build-history-metrics.md) - generated build-history and provider-log metrics, regenerated periodically (currently through 2026-08-09) by `tools/Build-ProjectHistoryMetrics.ps1`; token columns aggregate per-machine `project-history-tokens-<MachineId>.json` extracts from `.metrics-data/` across all contributing machines.
 - [history/thread-commit-timing.md](history/thread-commit-timing.md) - historical generated first-parent thread timing report with commit counts, discovery offsets, implementation spans, and integration lags.
 - [history/implementation-plan.md](history/implementation-plan.md) - historical formula/XLSX implementation plan retained for context.
 - [archive/superpowers/](archive/superpowers/) - historical implementation plans and specs; not current build-status documentation.
