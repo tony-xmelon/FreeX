@@ -8,8 +8,8 @@ WPF/Avalonia workflow that consumes them.
 ## Current baseline
 
 - Main tip at the prior checkpoint: `d2197a476c`.
-- Current function-first checkpoint: `d0bdfaa8ee` (`freep: preserve RTF underline variants`).
-- Current source audit tip: `d0bdfaa8ee`; the checkpoint includes the WPF rich-editor list-marker, inherited list-layout, inherited run-style, unsupported-SmartArt cached-authoring, schema-valid SmartArt picture-cache synchronization, and external RTF underline-variant normalization through the shared undoable/clipboard paths.
+- Current function-first checkpoint: pending `freep: preserve RTF text effects`.
+- Current source audit tip: pending; the checkpoint includes the WPF rich-editor list-marker, inherited list-layout, inherited run-style, unsupported-SmartArt cached-authoring, schema-valid SmartArt picture-cache synchronization, and external RTF underline/text-effect normalization through the shared undoable/clipboard paths.
 - Command inventory: `668` command IDs present in both WPF and Avalonia; the
   inventory reports `0` WPF-only, `0` Avalonia-only, and `0` actionable command
   gaps.
@@ -175,3 +175,12 @@ calibration based on pixel residuals alone.
 The current-main review also confirmed that the older Arc Left, Arc Up, and Arc
 Down motion-path branch is already represented on main; no duplicate command or
 historical inventory merge is needed.
+
+### 2026-08-09 external RTF text effects
+
+External RTF `\\outl` and `\\shad` character controls now map to the shared
+run outline and shadow owners. WPF and Avalonia already consume those owners
+through their common text visual plan; the RTF writer emits the boolean
+controls on round-trip. Provider-specific effect parameters are intentionally
+outside this control-only boundary. Focused shared RTF coverage passes 64/64,
+WPF rich clipboard coverage 23/23, and Avalonia clipboard coverage 40/40.
