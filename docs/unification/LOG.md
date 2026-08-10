@@ -4,7 +4,82 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
+## Dedup exhaustion continuation - ACTIVE (2026-08-10)
+
+**Integrated checkpoint:** `42e6ca0ca5f6028febf0a8fd8e541328351f19ae` on
+`codex/dedup-exhaustion-rescue-20260810`, synchronized with upstream at `7099fcdf2d`.
+
+This continuation integrates another cross-product ownership wave after the earlier measured checkpoint. The
+generated residual metrics still analyze `ad82671328`; they were intentionally left unchanged while active
+implementation and integration continue.
+
+**FreeX.**
+
+- `c182a994fb` moved read-only workbook state, viewport structural shifts, shrink-to-fit sizing, A1/date
+  display routing, and print-directory text into shared or portable planners/sessions consumed by WPF and
+  Avalonia.
+- `7d2fd2865e` centralized numeric precision, chart-series column mapping, Excel column-width conversion, and
+  culture-aware date entry across model, calc, IO, and application services.
+- `ba7f1254cd` routed color parsing and scalar display formatting through shared FreeX services instead of
+  dialog-specific copies.
+- `7eaff8971a` added `LocalizedTextDescriptor`, typed Advanced Filter validation/focus output, and Backstage
+  account text resolution. This is a partial typed-validation migration; other audited dialogs and semantic
+  text remain active work.
+
+**Shared cross-product utilities.**
+
+- `dcdecbf185` introduced `DesktopExternalUriLauncher` and routed FreeX and FreeP launch paths through it;
+  current FreeW adoption is included in its application/renderer workflow slices.
+- `dc444a4360` replaced FreeX and FreeW OOXML password-hash copies with one shared implementation.
+- `96c9a5c594` centralized directional-arrowhead geometry and FreeW WordArt foreground policy, with renderer
+  ownership guards.
+- `feaf0e2527` introduced a shared Legal Notices presentation/section model, product presentation factories,
+  and thin WPF/Avalonia realizers for FreeX and FreeW.
+
+**FreeW.**
+
+- `dbc8e216af` moved generated-reference pagination context, reference editing coordination, and table-cell
+  border visual planning out of WPF/Avalonia renderers.
+- `cfdc42febb` centralized application-frame/data-folder descriptors, shell text, document-properties input
+  capture, comment initials, style planning, zoom planning, and desktop URI workflow contracts. The remaining
+  audit still includes old call-site adoption plus equation/list/table-grid/heading/selection policy.
+
+**FreeP.**
+
+- `d283932f2b` centralized canvas gesture interaction and inline-table logical row layout for both renderers.
+- `612863ee39` added a portable presentation lifecycle adapter plus shared Backstage action binding,
+  automation-ID token composition, and print-surface state.
+- `f986e18fef` moved pane accessibility/text and workarea/review/selection/design/table-insertion semantics into
+  `FreeP.App.Presentation`.
+- `42e6ca0ca5` expanded the portable header/footer dialog session to own projection, enabled state, input
+  capture, apply semantics, focus, and select-all behavior.
+
+**Verification recorded before integration.**
+
+- macOS readiness passed across 1,012 source files (`9e834098f3`).
+- FreeX color/scalar focused tests passed (71 Services, 2 Avalonia); shared protection focused tests passed.
+- FreeP canvas/table focused builds and tests passed.
+- FreeX renderer integration focused runs passed: Services 36, Presentation 4, WPF UI 1, Avalonia 20,
+  viewport 5, read-only 5, and Host 6.
+- FreeX core touched-project builds passed; its Core.Model test rerun was cancelled and remains pending.
+- FreeP Backstage/lifecycle FreeP/FreeW Presentation, Host, and Avalonia builds passed; focused tests mostly
+  passed, with one FreeW presentation run interrupted.
+- FreeW pagination had 14 focused presentation tests pass; border tests, renderer guards, and a broad build
+  remain pending. FreeP pane/workarea built, but its focused tests were not completed.
+- No completed build/test run was recorded before integration for typed validation, renderer utilities, FreeW
+  workflow/dialogs, Legal Notices, or FreeP header/footer. Those runs are intentionally pending on the
+  synchronized integration tree.
+
+**Residual audit still active.** FreeX typed validation/semantic text, FreeW equation/list/table-grid/heading/
+selection projection and adoption holes, FreeP slideshow/media/OLE orchestration and semantic projection, then
+final source guards, regenerated metrics, full serial gates, and FreeX WPF baseline/candidate visual comparison.
+No scope-exhaustion or final-gate claim is made at this checkpoint.
+
+---
+
 ## Dedup exhaustion campaign report - DRAFT (2026-08-09)
+
+This is a historical measured checkpoint. The active status and later integrated work are recorded above.
 
 Refreshed the [dedup exhaustion report](DEDUP-EXHAUSTION-2026-08-09.md) through the final implementation
 checkpoint and regenerated residual evidence. The last renderer extractions were FreeW table-border endpoint
