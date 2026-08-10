@@ -6,9 +6,9 @@ Date: 2026-08-10
 
 Native DrawingML field runs can carry character layout metadata in the nested
 `a:fld/a:rPr` element. FreeP now preserves `kumimoji`, `smtClean`, `normalizeH`,
-`spc`, `kern`, `baseline`, `rtl`, and `cap` through the model, package reader and
-writer, in-canvas field cloning, and rich clipboard capture/restore. Explicit
-false values and omitted attributes remain distinct.
+`spc`, `kern`, `baseline`, `rtl`, `cap`, `b`, and `i` through the model, package
+reader and writer, in-canvas field cloning, and rich clipboard capture/restore.
+Explicit false values and omitted attributes remain distinct.
 
 The containing model `Run` receives the same effective metadata as the field
 descriptor so WPF/Avalonia consumers do not need a second field-specific layout
