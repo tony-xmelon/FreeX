@@ -36,6 +36,7 @@ proves mark undo/redo and same-paragraph duplicate suppression.
 ## Evidence boundary
 
 This closes basic single-level XE occurrence and page-list behavior. Word's advanced Index switches and
-dialogs, including subentries, cross-references, bookmarks/ranges, page-number formatting switches, and
-automatic contiguous-page range compression, remain separate functional depth. Index typography and
+dialogs, including subentries, cross-references, bookmarks/ranges, and page-number formatting switches,
+remain separate functional depth. Ordinary consecutive XE marks intentionally remain separate page
+references; Word creates a page range only from an explicit XE `\\r` bookmark. Index typography and
 column layout remain visual-comparison work.
