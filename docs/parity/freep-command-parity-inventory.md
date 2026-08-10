@@ -8,7 +8,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 
 | Total | Both | WPF only | Avalonia only | Missing WPF raw | Missing Avalonia raw | Actionable missing WPF | Actionable missing Avalonia | Shared | Avalonia gaps | Known deferred | Platform-only | Command-id aliases | Workflow evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 668 | 668 | 0 | 0 | 0 | 0 | 0 | 0 | 668 | 0 | 0 | 0 | 0 | 110 |
+| 689 | 689 | 0 | 0 | 0 | 0 | 0 | 0 | 689 | 0 | 0 | 0 | 0 | 110 |
 
 ## Workflow Evidence
 
@@ -153,32 +153,52 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.anim.emphasis.wave` | Wave | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.appear` | Appear | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.blinds` | Blinds In | Yes | Yes | none | shared | animations/animation-effects (RibbonDropdown) | animations/animation-effects (RibbonDropdown) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.entrance.boomerang` | Boomerang In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.entrance.bounce` | Bounce In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.box` | Box In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.checkerboard` | Checkerboard In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.circle` | Circle In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.entrance.crawl` | Crawl In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.diamond` | Diamond In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.entrance.dissolve` | Dissolve In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.fade` | Fade In | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.entrance.flash` | Flash In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.entrance.float` | Float In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.fly-in` | Fly In | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.entrance.peek` | Peek In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.plus` | Plus In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.random-bars` | Random Bars In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.entrance.spiral` | Spiral In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.split` | Split | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.strips` | Strips In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.entrance.swivel` | Swivel In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.entrance.swoop` | Swoop In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.wedge` | Wedge In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.wheel` | Wheel In | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.wipe` | Wipe | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.entrance.zoom` | Zoom In | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.exit.blinds` | Blinds Out | Yes | Yes | none | shared | animations/animation-effects (RibbonDropdown) | animations/animation-effects (RibbonDropdown) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.exit.boomerang-out` | Boomerang Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.exit.bounce-out` | Bounce Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.exit.box` | Box Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.exit.checkerboard` | Checkerboard Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.exit.circle` | Circle Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.exit.crawl-out` | Crawl Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.exit.diamond` | Diamond Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.exit.disappear` | Disappear | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.exit.dissolve-out` | Dissolve Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.exit.fade-out` | Fade Out | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.exit.flash-out` | Flash Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.exit.float-out` | Float Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.exit.fly-out` | Fly Out | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.exit.peek-out` | Peek Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.exit.plus` | Plus Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.exit.random-bars` | Random Bars Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.exit.spiral-out` | Spiral Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.exit.split` | Split Out | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.exit.strips` | Strips Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.exit.swivel-out` | Swivel Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
+| `freep.anim.exit.swoop-out` | Swoop Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.exit.wedge` | Wedge Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.exit.wheel` | Wheel Out | Yes | Yes | none | shared | animations/animation-effects (RibbonMenuItem) | animations/animation-effects (RibbonMenuItem) | Available in both generated FreeP ribbon profiles. |
 | `freep.anim.exit.wipe` | Wipe Out | Yes | Yes | none | shared | animations/animation-effects (RibbonButton) | animations/animation-effects (RibbonButton) | Available in both generated FreeP ribbon profiles. |
@@ -693,6 +713,7 @@ Raw missing counts preserve one-sided generated profile surface counts. Actionab
 | `freep.smartart.style.subtle` | Subtle Effect | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.style.sunset-scene` | Sunset Scene | Yes | Yes | none | shared | design/smartart-styles (RibbonButton) | design/smartart-styles (RibbonButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.smartart.text-pane` | Text Pane | Yes | Yes | none | shared | insert/smartart-insert (RibbonButton) | insert/smartart-insert (RibbonButton) | Available in both generated FreeP ribbon profiles. |
+| `freep.strikethrough` | Strikethrough | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.subscript` | Subscript | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.superscript` | Superscript | Yes | Yes | none | shared | home/font (RibbonToggleButton) | home/font (RibbonToggleButton) | Available in both generated FreeP ribbon profiles. |
 | `freep.table-cell-anchor` | Table Cell Alignment | Yes | Yes | none | shared | home/font (RibbonComboBox) | home/font (RibbonComboBox) | Available in both generated FreeP ribbon profiles. |
