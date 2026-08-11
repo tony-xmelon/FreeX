@@ -1,8 +1,7 @@
 # FreeFamily Unification Architecture Roadmap
 
-Updated 2026-08-10 at integrated campaign checkpoint `42e6ca0ca5`. Companion to `README.md` (principles),
-`LOG.md` (execution record), and `dedup-residual-metrics.md` (historical generated residual evidence at
-`ad82671328`, pending regeneration for the final synchronized tree).
+Updated 2026-08-11 at final code checkpoint `662e17e385`. Companion to `README.md` (principles), `LOG.md`
+(execution record), and `dedup-residual-metrics.md` (current deterministic residual evidence).
 
 ## Vision
 
@@ -23,7 +22,7 @@ The objective is dual thin renderers, not renderer replacement.
 |---|---|---|---|
 | Windows WPF | mature | mature | mature |
 | Linux/macOS Avalonia | strong | strong | strong |
-| Portable workarea/session tier | high adoption; validation/text tail active | high adoption; projection/catalog tail active | high adoption; slideshow/media tail active |
+| Portable workarea/session tier | exhausted to native adapters | exhausted to native adapters | exhausted to native adapters |
 | Shared application frame | adopted | adopted | adopted |
 | Shared theme/localization mechanics | adopted | adopted | adopted |
 
@@ -40,40 +39,35 @@ portable policy for most campaign scope:
 - FreeP slideshow/media/pane policy, chart/table/text/shape flows, chart-option sessions, and rendering plans;
 - OPC, DrawingML, colors, units, geometry, PDF, themes, localization mechanics, and test infrastructure.
 
-The current continuation also shares desktop URI launching, OOXML protection hashing, Legal Notices
-presentation, directional-arrowhead/WordArt policy, FreeW pagination and application-dialog workflows, FreeP
-Backstage/lifecycle/pane/header-footer contracts, and additional FreeX renderer/core policies. The active
-residual queue below prevents a completion claim at this checkpoint.
+The final continuation also shares desktop URI launching, OOXML protection hashing, Legal Notices presentation,
+directional-arrowhead/WordArt policy, startup lifetime, application-frame titles, FreeW pagination/dialog/field
+workflows, FreeP Backstage/slideshow/pane/text contracts, and FreeX renderer/accessibility/shell policies.
 
 ## Workstreams
 
-### WS-A - Renderer thinning - in progress
+### WS-A - Renderer thinning - implementation complete
 
-Most planned WPF/Avalonia policy extractions are complete, including the current FreeX renderer, FreeW border,
-and FreeP canvas/pane slices. The adversarial audit still identifies portable slideshow geometry/orchestration,
-document projection rules, semantic IDs/text, and adoption holes in native files. Scope is exhausted only after
-those candidates are extracted or explicitly classified from the final tree.
+All measured candidates were extracted or classified from the final tree. Remaining matches are native control,
+event, focus, geometry/materialization, drawing, media, accessibility-attachment, and capture adapters.
 
-### WS-B - Product portable tiers - residual ownership active
+### WS-B - Product portable tiers - complete
 
 `FreeX.App.Presentation`/`FreeX.App.Services`, `FreeW.App.Presentation`, and `FreeP.App.Presentation` own each
-product's main renderer-neutral workarea behavior. The current queue finishes typed validation and semantic
-text in FreeX, projection/catalog policy in FreeW, and slideshow/media coordinators in FreeP. Their document
-models remain separate by design.
+product's renderer-neutral workarea behavior. Their document models remain separate by design.
 
-### WS-C - Shared document substrate - mature, final audit active
+### WS-C - Shared document substrate - mature
 
 OPC/package properties, secure XML, DrawingML units/colors/geometry, file descriptors, PDF primitives, and
 text search are shared. The continuation added one OOXML protection hash implementation and shared
 directional-arrowhead geometry. XLSX, DOCX, and PPTX rules stay local when the formats encode different
-semantics; final audit classification is still pending.
+semantics.
 
-### WS-D - Common application frame - residual adoption active
+### WS-D - Common application frame - complete
 
 Ribbon, Backstage, shell workflow, theming, localization mechanics, options, diagnostics, file lifecycle,
 print/export orchestration, desktop URI launching, Legal Notices, and shared dialog mechanics are common.
 FreeW application workflow/dialog contracts and FreeP Backstage/header-footer contracts have joined that frame;
-older call-site adoption and a small semantic-text tail remain.
+all three Avalonia apps now share startup lifetime policy and shared title contracts.
 
 ### WS-E - Test and evidence infrastructure - final gates pending
 
@@ -82,16 +76,11 @@ ownership guards are shared. Source guards defend architectural ownership; behav
 Several integrated slices intentionally deferred focused or broad verification, and the final synchronized
 preflight/build/test/visual gates have not run.
 
-## Current residual implementation queue
+## Remaining campaign queue
 
-1. **FreeX:** finish typed localized validation/focus descriptors, Manage Conditional Formats text resolution,
-   threaded-comment localization, semantic-ID catalogs, and the small zoom fallback.
-2. **FreeW:** centralize equation presets, table-grid projection, list-marker sequencing, heading style tokens,
-   and native-selection range projection; adopt shared comment/style contracts at the remaining old call sites.
-3. **FreeP:** centralize slideshow mask timelines, caption/fullscreen geometry, OLE activation, media-pane
-   orchestration, dialog automation-ID composition, and remaining review/table display strings.
-4. **Integration:** rerun interrupted and unrun focused tests, resolve source-guard findings, regenerate residual
-   metrics at the final SHA, then execute the full synchronized validation and FreeX WPF visual comparison.
+1. Run final repository preflight, Release build, default test lane, WPF UI lane, and ribbon lane.
+2. Capture final FreeX WPF evidence and compare every baseline surface pixel-for-pixel.
+3. Fast-forward and push `main`, verify ancestry, and clean campaign-owned worktrees/branches.
 
 ## Deliberate exceptions
 
@@ -125,4 +114,4 @@ lane, the UI lane when WPF behavior or UI infrastructure changed, and the focuse
 ribbon work. FreeX WPF must also be parity-captured against a clean pre-campaign `origin/main` baseline and
 the resulting manifests/images compared before merge.
 
-All of these final synchronized gates remain pending at `42e6ca0ca5`.
+These final synchronized gates are active after code checkpoint `662e17e385`.

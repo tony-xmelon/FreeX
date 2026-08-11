@@ -4,6 +4,24 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
+## Dedup implementation scope exhausted - FINAL GATES ACTIVE (2026-08-11)
+
+**Code checkpoint:** `662e17e38556c178efe21c3333ef47d52d214d31` on
+`codex/dedup-exhaustion-rescue-20260810`, based on `origin/main` `7cb6df15b8`.
+
+The final waves centralized FreeX shell/formula/focus/command/accessibility orchestration, FreeW field/reference,
+review/style/zoom/screen-clip/table-focus/temp-resource policy, FreeP slideshow/dialog/text/presenter/canvas policy,
+and cross-app Avalonia keytip/startup/title ownership. Dead FreeX recovery helpers were removed. Independent
+FreeX, FreeW, FreeP, and cross-product audits classify all remaining matches as native realization or genuine
+product/package semantics.
+
+Deterministic metrics at the code checkpoint report 301,963 renderer LOC and a net renderer reduction of
+52,920 LOC versus the merge base. Exact coverage is 3.248411%; normalized coverage is 3.469630%. The metrics
+self-test and repository `-Check` mode pass. Focused slice tests/builds are recorded in the exhaustion report;
+repository-wide build/test and exact FreeX WPF visual gates remain active before `main` integration.
+
+---
+
 ## Dedup exhaustion continuation - ACTIVE (2026-08-10)
 
 **Integrated checkpoint:** `42e6ca0ca5f6028febf0a8fd8e541328351f19ae` on

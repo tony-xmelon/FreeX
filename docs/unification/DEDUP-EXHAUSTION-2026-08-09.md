@@ -1,20 +1,18 @@
 # Dedup Exhaustion Report - 2026-08-09
 
-> **Status: ACTIVE CAMPAIGN, INTEGRATION CHECKPOINT.** The current integrated implementation tip is
-> `42e6ca0ca5f6028febf0a8fd8e541328351f19ae`. Substantial renderer and workflow ownership has moved into
-> shared or product-portable tiers, but the residual audit still contains implementable scope. This report
-> does not claim that scope is exhausted or that final validation has passed.
+> **Status: IMPLEMENTATION SCOPE EXHAUSTED; FINAL GATES ACTIVE.** The final code checkpoint is
+> `662e17e38556c178efe21c3333ef47d52d214d31`. Every identified portable candidate has either moved into a
+> shared/product-portable owner or been independently classified as native realization. Metrics are current;
+> broad build, test, visual-parity, and `main` integration evidence still must pass before final sign-off.
 
 ## Scope and evidence
 
-This report tracks the continuing dedup campaign on `codex/dedup-exhaustion-rescue-20260810`. The branch was
-synchronized with upstream at `7099fcdf2dda6cd64721651f838a403f742089e4`; the current documentation
-checkpoint includes all integrated dedup work through `42e6ca0ca5`.
+This report tracks the dedup campaign on `codex/dedup-exhaustion-rescue-20260810`. Its merge base and clean
+visual baseline are `origin/main` at `7cb6df15b89da6e03378b590e3966779b79f69b7`; the implementation
+checkpoint includes all integrated dedup work through `662e17e385`.
 
-The generated [residual metrics](dedup-residual-metrics.md) remain the historical measurement produced for
-analysis commit `ad826713286f358f170fa1a7ba6b838d9af209a1` and committed in `fd07a9db50d315a1a9b5dc0c68eaaed7b3da7a81`.
-They have intentionally not been regenerated during active integration and must not be interpreted as a
-measurement of `42e6ca0ca5`. Regeneration belongs to the final synchronized verification pass.
+The generated [residual metrics](dedup-residual-metrics.md) analyze that exact code checkpoint. Their
+determinism fixture and repository `-Check` mode both pass.
 
 The interpretation follows the [program principles](README.md), [architecture roadmap](ROADMAP.md),
 [historical backlog](DEDUP-BACKLOG.md), generated residual evidence, and [execution log](LOG.md). Commit
@@ -25,9 +23,9 @@ references below are representative ownership anchors rather than a complete cha
 | Layer | Current checkpoint | Desired state |
 |---|---|---|
 | Product domain | FreeX cells/formulas, FreeW paragraphs/runs, and FreeP slides/shapes retain distinct models and format semantics. | Keep genuine document-domain and XLSX/DOCX/PPTX differences product-owned. |
-| Focused portable workareas | `FreeX.App.Presentation` / `FreeX.App.Services`, `FreeW.App.Presentation`, and `FreeP.App.Presentation` own most workflow, validation, layout, and command policy. A small audited tail is still moving out of native hosts. | Each app exposes one focused workarea containing all renderer-neutral product decisions. |
+| Focused portable workareas | `FreeX.App.Presentation` / `FreeX.App.Services`, `FreeW.App.Presentation`, and `FreeP.App.Presentation` own renderer-neutral workflow, validation, layout, and command policy. | Each app exposes one focused workarea containing all renderer-neutral product decisions. |
 | Shared application frame | Portable `Free.Shared.*` projects own ribbon, Backstage, lifecycle, URI launching, protection hashing, Legal Notices presentation, common geometry, localization mechanics, theme, drawing/OPC/PDF primitives, and test infrastructure. | Cross-product application-frame policy is implemented once, with product descriptors supplying text and capabilities. |
-| Native renderers | WPF and Avalonia mostly construct controls, translate native input, project portable plans, apply effects, and manage native lifetime. Audited FreeX, FreeW, and FreeP policy residuals remain. | Native hosts are thin realizers with no duplicated validation, workflow, semantic text, or portable geometry decisions. |
+| Native renderers | WPF and Avalonia construct controls, translate native input, project portable plans, apply effects, and manage native lifetime. | Native hosts are thin realizers with no duplicated validation, workflow, semantic text, or portable geometry decisions. |
 
 The target is one portable decision path feeding two native realizations. It is not source-identical WPF and
 Avalonia trees, and it does not collapse the three real document domains into a false common model.
@@ -50,7 +48,7 @@ identified scope. The continuation below extends this base; it does not replace 
 | Renderer planning | Portable geometry, text layout, render commands, pane/slideshow policy, and workarea sessions feed FreeX/FreeW/FreeP renderers. Native canvas, drawing-context, accessibility, and animation realization remain renderer responsibilities. | `85b3c78807`, `d07cd19a63`, `2090efa777`, `df74a01411`, `9d98939999`, `320fd70985`, `649a373a1c`, `ba00a89312`, `ec3faa3ee4`, `3b149d3878` |
 | Test and evidence infrastructure | Repository/source locators, temporary resources, localization contracts, evidence workflow, ownership guards, and deterministic residual measurement were consolidated. Product scenarios and framework-specific capture drivers remain separate where they exercise different native stacks. | `ac51cbf3be`, `ef17eb6297`, `8a11d2a9f0`, `f05216fd53`, `9c428f2f1c`, `7f7506e5d0`, `5c56d0198c`, `8fc243fc79`, `ad82671328`, `fd07a9db50` |
 
-## Integrated continuation through `42e6ca0ca5`
+## Integrated continuation through `662e17e385`
 
 | Area | Integrated ownership change | Commits |
 |---|---|---|
@@ -65,6 +63,14 @@ identified scope. The continuation below extends this base; it does not replace 
 | FreeP panes and workarea | Centralized pane accessibility, pane text resources, review/workarea semantics, selection/design/table-insertion planning, and application-frame descriptors. | `f986e18fef` |
 | FreeP header/footer dialog | Expanded `HeaderFooterDialogSession` to own field projection, enabled state, input capture, apply semantics, focus, and select-all behavior for both renderers. | `42e6ca0ca5` |
 | Ownership/readiness tests | Updated macOS readiness checks to recognize shared ownership and exercise the real source tree. | `9e834098f3` |
+
+The final continuation added portable FreeX pivot, consolidate/find/update, options, calculation, formula-range,
+focus-cycle, command-routing, and accessibility-tree ownership; portable FreeW review/watermark/zoom, comment,
+screen-clip, generated-reference, complex-field insertion, table-focus, and read-aloud resource ownership; and
+portable FreeP identity/clone, pane, dialog, measured-text, slideshow-mask, presenter-refresh, canvas-automation,
+and keytip ownership. Shared Avalonia keytip input and startup lifetime now serve all sister apps. The last frame
+pass removed dead FreeX recovery orchestration, routed FreeW titles through its frame descriptor, and exposed
+FreeP's title as the shared `ApplicationWindowTitleSpec` directly.
 
 ## Verification ledger
 
@@ -84,48 +90,31 @@ lanes were integration-first and reserved broad gates for the final synchronized
 | FreeP pane/workarea (`f986e18fef`) | `FreeP.App.Presentation` built successfully; focused tests were not completed. |
 | Typed validation, renderer utilities, FreeW workflow/dialogs, Legal Notices, and FreeP header/footer (`7eaff8971a`, `96c9a5c594`, `cfdc42febb`, `feaf0e2527`, `42e6ca0ca5`) | No completed build/test run was recorded before integration; their focused and broad verification is intentionally pending. |
 
-No build or test command is run by this documentation-only lane.
+## Final measurable renderer reduction
 
-## Historical measurable renderer reduction
+The deterministic checkpoint measures eight renderer roots from merge base `7cb6df15b8` to code checkpoint
+`662e17e385`: 656 renderer files changed, 38,213 lines added, 91,133 deleted, for a **52,920 renderer C# LOC
+reduction**. The renderers contain 301,963 measured code lines. Cross-root coverage is 9,809 exact lines
+(3.248411%) and 10,477 normalized lines (3.469630%). FreeX is at 0.149743%-0.232031%; FreeW is at
+1.132578%-1.325058%. FreeP remains 10.491136%-20.367412% because its largest matched blocks are native pane,
+dialog, slideshow, media, text-measurement, drawing, accessibility, and visual-capture realizers around shared
+plans; two independent audits found no further stable renderer-neutral contract in those blocks.
 
-The deterministic checkpoint in [dedup-residual-metrics.md](dedup-residual-metrics.md), committed by
-`fd07a9db50`, measured the eight configured renderer roots from merge base
-`e1225af9b1689b39050f8154774c2a097b92af95` to analysis commit
-`ad826713286f358f170fa1a7ba6b838d9af209a1`:
+## Residual audit conclusion
 
-| Scope | Files changed | Added | Deleted | Net C# LOC |
-|---|---:|---:|---:|---:|
-| All C# | 1,750 | 135,195 | 81,030 | **+54,165** |
-| Renderer C# | 460 | 26,618 | 63,352 | **-36,734** |
-
-At that historical checkpoint, the renderers contained 309,986 measured code lines. Cross-root duplicate
-coverage was 11,205 lines (3.614679%) for exact windows and 11,963 lines (3.859207%) for normalized windows.
-These values demonstrate campaign direction but do not include the continuation integrated through
-`42e6ca0ca5`.
-
-## Current residual audit
-
-The latest adversarial and cross-app audits still identify practical portable ownership. The active residual
-categories are:
-
-- **FreeX typed validation and semantic text.** Complete the dialog validation/focus descriptor migrations,
-  Manage Conditional Formats text resolution, threaded-comment localization, semantic-ID catalogs, and the
-  remaining small zoom-validation fallback.
-- **FreeW document projection and catalog policy.** Centralize the equation preset catalog, canonical table-grid
-  projection, list-marker sequencing, heading style-token projection, and native-selection range projection;
-  finish adopting the shared comment-initials and style-planning contracts at older Ribbon/DocumentView sites.
-- **FreeP slideshow and media orchestration.** Move mask timelines, caption/fullscreen geometry, OLE activation
-  routing, and media-pane orchestration into portable coordinators.
-- **FreeP semantic projection cleanup.** Consolidate remaining dialog automation-ID composition and review/table
-  display-string composition where they encode policy rather than native control construction.
-- **Integration and evidence.** Re-run ownership guards and the interrupted/unrun focused tests, regenerate the
-  residual metrics at the final SHA, execute all required gates serially, and compare FreeX WPF visual evidence
-  with the clean pre-campaign baseline.
-
-The audit may retire a candidate after inspection when it is only native control construction, framework event
-adaptation, drawing-context projection, accessibility attachment, window lifetime, or deliberately parallel
-visual-evidence setup. Such classification must be recorded from the final tree rather than assumed from the
-historical metrics.
+- **FreeX:** residual matches are native text/control mutation, popup selection, focus application, selection and
+  status projection, picker/dialog realization, and platform window lifetime. Portable formula, command,
+  validation, file, options, accessibility, ribbon, Backstage, and recovery decisions are shared.
+- **FreeW:** residual matches are native table/author editor trees, Outline/Page Setup/Find-Replace controls,
+  selection rendering, geometry, focus, event translation, and document-view materialization. Portable editing,
+  fields/references, pagination, dialogs, style, review, print/file, and frame policy are shared.
+- **FreeP:** residual matches are native slideshow snapshots/storyboards/timers/media controls, pane and dialog
+  construction, canvas measurement/drawing/UIA, gesture pointer/cursor/adorner application, presenter projection,
+  and visual-evidence capture. Their routing, state, validation, geometry plans, animation steps, and workflows
+  are already portable.
+- **Cross-product:** file outcomes, temporary resources, localization mechanics, messages, options persistence,
+  ribbon infrastructure, Avalonia startup lifetime, and application-frame title policy are shared. Product text,
+  capability descriptors, native effects, and distinct XLSX/DOCX/PPTX semantics remain intentionally local.
 
 ## Extraction rule
 
@@ -141,16 +130,15 @@ print effects, or framework-specific test/capture setup. Mirrored source in thos
 the portable decision is already shared and the remaining symmetry is the cost of realizing or testing two
 native UI frameworks. File size or lexical equality alone is not a reason to extract.
 
-## Final validation - PENDING
+## Final validation - ACTIVE
 
 Do not convert a row to passed without evidence from the final synchronized implementation SHA.
 
 | Gate | Status | Required evidence |
 |---|---|---|
-| Residual audit and metrics | **PENDING** | Finish or classify the active audit categories, regenerate metrics for the final SHA, and pass the metrics check. |
-| Final synced commit | **PENDING** | Synchronize the completed campaign with the final integration tip and record the resulting commit SHA. |
+| Residual audit and metrics | **PASSED** | Audits exhausted/classified all candidates; metrics self-test and `-Check` pass at `662e17e385`. |
+| Final synced commit | **PENDING** | Synchronize the completed campaign with `origin/main`, push `main`, and record the resulting SHA. |
 | Builds and tests | **PENDING** | Record repository preflight, Release build, default test lane, applicable UI/ribbon lanes, and all focused reruns listed above. |
 | FreeX WPF visual parity | **PENDING** | Record baseline/candidate capture commits, manifests, image counts, and the comparison result. |
 
-Until these rows are complete, this document is an active campaign record rather than dedup exhaustion or
-integration sign-off.
+Until the remaining rows pass, implementation scope is exhausted but integration sign-off is not complete.
