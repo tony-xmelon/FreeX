@@ -9255,16 +9255,16 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 38163,
-        "changedRatio": 0.11358035714285715,
-        "meanAbsoluteChannelDelta": 4.513714285714285,
-        "p95AbsoluteChannelDelta": 22,
-        "luminanceSimilarity": 0.9192389698598409,
-        "perceptualHashDistance": 10
+        "changedPixels": 12268,
+        "changedRatio": 0.03651190476190476,
+        "meanAbsoluteChannelDelta": 2.4129047619047204,
+        "p95AbsoluteChannelDelta": 6,
+        "luminanceSimilarity": 0.9345826258833041,
+        "perceptualHashDistance": 0
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/table-of-authorities.initial.png",
-      "note": "Fresh Avalonia capture passed the full and target content gates. The committed WPF authority and paired diff metrics are retained because this host\u0027s fresh WPF raster was blank.",
+      "note": null,
       "wpfContent": {
         "passesContentGate": true,
         "failure": null,
@@ -9273,11 +9273,11 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.9131994047619048,
         "nearTransparentRatio": 0.08680059523809523,
-        "nearBlackRatio": 0.00017599035312138446,
-        "dominantColorRatio": 0.9014649567357048,
-        "distinctColorCount": 258,
-        "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.08982142857142857,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9116952107810387,
+        "distinctColorCount": 236,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.07990476190476191,
         "contentBounds": {
           "x": 16,
           "y": 20,
@@ -9294,15 +9294,15 @@
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.9203345499970722,
-        "distinctColorCount": 35,
+        "dominantColorRatio": 0.9204776869075271,
+        "distinctColorCount": 29,
         "luminanceRange": 223.99999999999997,
-        "contentPixelRatio": 0.07288392857142857,
+        "contentPixelRatio": 0.07275297619047619,
         "contentBounds": {
           "x": 16,
           "y": 20,
-          "width": 514,
-          "height": 184
+          "width": 513,
+          "height": 185
         }
       }
     },
@@ -9312,16 +9312,16 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 38163,
-        "changedRatio": 0.11358035714285715,
-        "meanAbsoluteChannelDelta": 4.513714285714285,
-        "p95AbsoluteChannelDelta": 22,
-        "luminanceSimilarity": 0.9192389698598409,
-        "perceptualHashDistance": 10
+        "changedPixels": 12548,
+        "changedRatio": 0.0373452380952381,
+        "meanAbsoluteChannelDelta": 2.4958124999998734,
+        "p95AbsoluteChannelDelta": 6,
+        "luminanceSimilarity": 0.9330689117619806,
+        "perceptualHashDistance": 0
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/table-of-authorities.populated.png",
-      "note": "Fresh Avalonia capture passed the full and target content gates. The committed WPF authority and paired diff metrics are retained because this host\u0027s fresh WPF raster was blank.",
+      "note": null,
       "wpfContent": {
         "passesContentGate": true,
         "failure": null,
@@ -9330,11 +9330,11 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.9131994047619048,
         "nearTransparentRatio": 0.08680059523809523,
-        "nearBlackRatio": 0.00017599035312138446,
-        "dominantColorRatio": 0.9014649567357048,
-        "distinctColorCount": 258,
-        "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.08982142857142857,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9114018935258363,
+        "distinctColorCount": 268,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.08015476190476191,
         "contentBounds": {
           "x": 16,
           "y": 20,
@@ -9351,15 +9351,15 @@
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.9203345499970722,
-        "distinctColorCount": 35,
+        "dominantColorRatio": 0.9202694877650472,
+        "distinctColorCount": 41,
         "luminanceRange": 223.99999999999997,
-        "contentPixelRatio": 0.07288392857142857,
+        "contentPixelRatio": 0.07294345238095239,
         "contentBounds": {
           "x": 16,
           "y": 20,
-          "width": 514,
-          "height": 184
+          "width": 513,
+          "height": 185
         }
       }
     },
@@ -9369,16 +9369,16 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 38163,
-        "changedRatio": 0.11358035714285715,
-        "meanAbsoluteChannelDelta": 4.513714285714285,
-        "p95AbsoluteChannelDelta": 22,
-        "luminanceSimilarity": 0.9192389698598409,
-        "perceptualHashDistance": 10
+        "changedPixels": 12268,
+        "changedRatio": 0.03651190476190476,
+        "meanAbsoluteChannelDelta": 2.4129047619047204,
+        "p95AbsoluteChannelDelta": 6,
+        "luminanceSimilarity": 0.9345826258833041,
+        "perceptualHashDistance": 0
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/table-of-authorities.validation-error.png",
-      "note": "Fresh Avalonia capture passed the full and target content gates. The committed WPF authority and paired diff metrics are retained because this host\u0027s fresh WPF raster was blank.",
+      "note": null,
       "wpfContent": {
         "passesContentGate": true,
         "failure": null,
@@ -9387,11 +9387,11 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.9131994047619048,
         "nearTransparentRatio": 0.08680059523809523,
-        "nearBlackRatio": 0.00017599035312138446,
-        "dominantColorRatio": 0.9014649567357048,
-        "distinctColorCount": 258,
-        "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.08982142857142857,
+        "nearBlackRatio": 0,
+        "dominantColorRatio": 0.9116952107810387,
+        "distinctColorCount": 236,
+        "luminanceRange": 223.99999999999997,
+        "contentPixelRatio": 0.07990476190476191,
         "contentBounds": {
           "x": 16,
           "y": 20,
@@ -9408,15 +9408,15 @@
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0,
-        "dominantColorRatio": 0.9203345499970722,
-        "distinctColorCount": 35,
+        "dominantColorRatio": 0.9204776869075271,
+        "distinctColorCount": 29,
         "luminanceRange": 223.99999999999997,
-        "contentPixelRatio": 0.07288392857142857,
+        "contentPixelRatio": 0.07275297619047619,
         "contentBounds": {
           "x": 16,
           "y": 20,
-          "width": 514,
-          "height": 184
+          "width": 513,
+          "height": 185
         }
       }
     },

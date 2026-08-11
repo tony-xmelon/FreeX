@@ -43,6 +43,11 @@ Paste Special, Style, and Manage Styles are content-sized WPF static prompts rat
   initial/populated changed-pixel ratio fell from 9.72% to 7.99% and validation-error fell from
   6.38% to 4.66%; WPF and Avalonia painted heights now both measure 305px, with only the known
   one-pixel width residual (517px versus 518px). All three rows retain matching semantics.
+- Table of Authorities now consumes one shared WPF-authority geometry contract in both hosts.
+  Its initial/validation changed-pixel ratio is 3.65% and populated is 3.73%, down from the
+  previously tracked 11.36%; WPF and Avalonia now share the exact `16,20,513x185` painted bounds
+  and perceptual hash distance is zero in all three states. The rows remain honest visual
+  mismatches for native text, checkbox, combo-box, and button rasterization.
 - Legal Notices keeps all five WPF-authority tabs visible with direct read-only text fields. Initial/project-license mean channel delta is 11.39, while the four long-document tabs remain between 20.03 and 24.05 because the host frameworks wrap and rasterize the same content differently.
 
 The affected routes retain nine genuine visual mismatches: three freshly paired About states and all six Legal Notices states. These are visible framework text-rendering, wrapping, tab-template, and scrollbar differences rather than missing content or falsely labeled limitations. The six semantic-only rows remain visible on Chart Title, Password Prompt, and Symbol Picker for action ordering, default/cancel metadata, and focus. Backstage and full-window surfaces are outside this dialog report. The paired report keeps every mismatch visible.
