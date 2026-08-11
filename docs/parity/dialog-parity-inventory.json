@@ -270,6 +270,7 @@
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateAggregation.cs",
+                                                   "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateApplicationWorkflow.cs",
                                                    "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateApplyPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateCellValue.cs",
                                                    "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateDialogModels.cs",
