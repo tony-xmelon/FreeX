@@ -5642,12 +5642,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 32646,
-        "changedRatio": 0.09716071428571428,
-        "meanAbsoluteChannelDelta": 5.1313412698399885,
-        "p95AbsoluteChannelDelta": 29,
-        "luminanceSimilarity": 0.9097796087235952,
-        "perceptualHashDistance": 8
+        "changedPixels": 26847,
+        "changedRatio": 0.07990178571428572,
+        "meanAbsoluteChannelDelta": 4.468891865078133,
+        "p95AbsoluteChannelDelta": 21.666666666666668,
+        "luminanceSimilarity": 0.9121049861621916,
+        "perceptualHashDistance": 9
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/insert-smart-art.initial.png",
@@ -5660,11 +5660,11 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.9131994047619048,
         "nearTransparentRatio": 0.08680059523809523,
-        "nearBlackRatio": 0.00027050369090879465,
-        "dominantColorRatio": 0.8738312122150341,
-        "distinctColorCount": 358,
+        "nearBlackRatio": 5.214528981374354E-05,
+        "dominantColorRatio": 0.893313996121694,
+        "distinctColorCount": 343,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.11299107142857143,
+        "contentPixelRatio": 0.0932827380952381,
         "contentBounds": {
           "x": 14,
           "y": 18,
@@ -5681,15 +5681,15 @@
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0.000335070494928399,
-        "dominantColorRatio": 0.879976447472007,
-        "distinctColorCount": 52,
+        "dominantColorRatio": 0.8997163286683713,
+        "distinctColorCount": 57,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.10980654761904762,
+        "contentPixelRatio": 0.0917470238095238,
         "contentBounds": {
           "x": 14,
           "y": 18,
           "width": 518,
-          "height": 294
+          "height": 305
         }
       }
     },
@@ -5699,12 +5699,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 32646,
-        "changedRatio": 0.09716071428571428,
-        "meanAbsoluteChannelDelta": 5.1313412698399885,
-        "p95AbsoluteChannelDelta": 29,
-        "luminanceSimilarity": 0.9097796087235952,
-        "perceptualHashDistance": 8
+        "changedPixels": 26847,
+        "changedRatio": 0.07990178571428572,
+        "meanAbsoluteChannelDelta": 4.468891865078133,
+        "p95AbsoluteChannelDelta": 21.666666666666668,
+        "luminanceSimilarity": 0.9121049861621916,
+        "perceptualHashDistance": 9
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/insert-smart-art.populated.png",
@@ -5717,11 +5717,11 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.9131994047619048,
         "nearTransparentRatio": 0.08680059523809523,
-        "nearBlackRatio": 0.00027050369090879465,
-        "dominantColorRatio": 0.8738312122150341,
-        "distinctColorCount": 358,
+        "nearBlackRatio": 5.214528981374354E-05,
+        "dominantColorRatio": 0.893313996121694,
+        "distinctColorCount": 343,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.11299107142857143,
+        "contentPixelRatio": 0.0932827380952381,
         "contentBounds": {
           "x": 14,
           "y": 18,
@@ -5738,15 +5738,15 @@
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0.000335070494928399,
-        "dominantColorRatio": 0.879976447472007,
-        "distinctColorCount": 52,
+        "dominantColorRatio": 0.8997163286683713,
+        "distinctColorCount": 57,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.10980654761904762,
+        "contentPixelRatio": 0.0917470238095238,
         "contentBounds": {
           "x": 14,
           "y": 18,
           "width": 518,
-          "height": 294
+          "height": 305
         }
       }
     },
@@ -5756,12 +5756,12 @@
       "classification": "genuine-visual-mismatch",
       "metrics": {
         "comparedPixels": 336000,
-        "changedPixels": 21424,
-        "changedRatio": 0.06376190476190476,
-        "meanAbsoluteChannelDelta": 4.511077380952296,
-        "p95AbsoluteChannelDelta": 30.666666666666668,
-        "luminanceSimilarity": 0.9085205572460066,
-        "perceptualHashDistance": 8
+        "changedPixels": 15643,
+        "changedRatio": 0.04655654761904762,
+        "meanAbsoluteChannelDelta": 3.8622182539683405,
+        "p95AbsoluteChannelDelta": 8,
+        "luminanceSimilarity": 0.9105271839249534,
+        "perceptualHashDistance": 9
       },
       "semanticDifference": null,
       "heatmapPath": "heatmaps/insert-smart-art.validation-error.png",
@@ -5774,11 +5774,11 @@
         "pixelCount": 336000,
         "opaqueRatio": 0.9131994047619048,
         "nearTransparentRatio": 0.08680059523809523,
-        "nearBlackRatio": 0.0002639855296820767,
-        "dominantColorRatio": 0.9100656704743592,
-        "distinctColorCount": 341,
+        "nearBlackRatio": 7.169977349389737E-05,
+        "dominantColorRatio": 0.9295484543810191,
+        "distinctColorCount": 315,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.07828869047619047,
+        "contentPixelRatio": 0.05860119047619047,
         "contentBounds": {
           "x": 14,
           "y": 18,
@@ -5795,15 +5795,15 @@
         "opaqueRatio": 0.914875,
         "nearTransparentRatio": 0.085125,
         "nearBlackRatio": 0.000686406547863031,
-        "dominantColorRatio": 0.9186266664064178,
-        "distinctColorCount": 43,
+        "dominantColorRatio": 0.938366547602782,
+        "distinctColorCount": 48,
         "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.07444642857142857,
+        "contentPixelRatio": 0.05638690476190476,
         "contentBounds": {
           "x": 14,
           "y": 18,
           "width": 518,
-          "height": 294
+          "height": 305
         }
       }
     },
