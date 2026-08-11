@@ -70,16 +70,16 @@
     }
   ],
   "summary": {
-    "totalCommands": 940,
-    "both": 490,
-    "wpfOnly": 155,
-    "avaloniaOnly": 295,
-    "missingWpf": 295,
-    "missingAvalonia": 155,
+    "totalCommands": 927,
+    "both": 503,
+    "wpfOnly": 142,
+    "avaloniaOnly": 282,
+    "missingWpf": 282,
+    "missingAvalonia": 142,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 490,
-    "profileShapeOnly": 402,
+    "sharedProfile": 503,
+    "profileShapeOnly": 376,
     "commandIdAliases": 43,
     "platformOnly": 5,
     "deferred": 0,
@@ -2006,10 +2006,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2037,10 +2037,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2068,10 +2068,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2099,10 +2099,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2130,10 +2130,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2161,10 +2161,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2192,10 +2192,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2223,10 +2223,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2254,10 +2254,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2285,10 +2285,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2316,10 +2316,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2347,10 +2347,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2378,10 +2378,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2451,10 +2451,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2482,10 +2482,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2513,10 +2513,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2544,10 +2544,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2575,10 +2575,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2606,10 +2606,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2637,10 +2637,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2668,10 +2668,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2699,10 +2699,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2730,10 +2730,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2761,10 +2761,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2792,10 +2792,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -2823,10 +2823,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -3184,7 +3184,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -4105,7 +4105,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -4595,7 +4595,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -7939,13 +7939,13 @@
       "commandId": "freew.equation-accent",
       "label": "Accent (Hat)",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -7958,398 +7958,6 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.equation-bar",
-      "label": "Overbar",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "symbols",
-          "group": "Symbols",
-          "label": "Overbar",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.equation-bracket",
-      "label": "Bracket",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "symbols",
-          "group": "Symbols",
-          "label": "Bracket",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.equation-fraction",
-      "label": "Fraction",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "symbols",
-          "group": "Symbols",
-          "label": "Fraction",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.equation-func",
-      "label": "Function (sin)",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "symbols",
-          "group": "Symbols",
-          "label": "Function (sin)",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.equation-groupchr",
-      "label": "Group (brace)",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "symbols",
-          "group": "Symbols",
-          "label": "Group (brace)",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.equation-integral",
-      "label": "Integral",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "symbols",
-          "group": "Symbols",
-          "label": "Integral",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.equation-matrix",
-      "label": "Matrix (2x2)",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "symbols",
-          "group": "Symbols",
-          "label": "Matrix (2x2)",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.equation-nthroot",
-      "label": "Radical (nth Root)",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "symbols",
-          "group": "Symbols",
-          "label": "Radical (nth Root)",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.equation-product",
-      "label": "Product",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "symbols",
-          "group": "Symbols",
-          "label": "Product",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.equation-radical",
-      "label": "Radical (Square Root)",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "symbols",
-          "group": "Symbols",
-          "label": "Radical (Square Root)",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.equation-script",
-      "label": "Subscript / Superscript",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "symbols",
-          "group": "Symbols",
-          "label": "Subscript / Superscript",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.equation-summation",
-      "label": "Summation",
-      "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [
-        {
-          "profile": "WPF",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "symbols",
-          "group": "Symbols",
-          "label": "Summation",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.equation.accent",
-      "label": "Accent",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -8363,24 +7971,35 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
-      "commandId": "freew.equation.bar",
-      "label": "Bar",
-      "wpfPresent": false,
+      "commandId": "freew.equation-bar",
+      "label": "Overbar",
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Overbar",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -8394,24 +8013,35 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
-      "commandId": "freew.equation.bracket",
+      "commandId": "freew.equation-bracket",
       "label": "Bracket",
-      "wpfPresent": false,
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Bracket",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -8425,14 +8055,14 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
-      "commandId": "freew.equation.default",
+      "commandId": "freew.equation-default",
       "label": "Insert New Equation",
       "wpfPresent": false,
       "avaloniaPresent": true,
@@ -8456,24 +8086,35 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
-      "commandId": "freew.equation.fraction",
-      "label": "Fraction  a/b",
-      "wpfPresent": false,
+      "commandId": "freew.equation-fraction",
+      "label": "Fraction",
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Fraction",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -8487,24 +8128,35 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
-      "commandId": "freew.equation.func",
-      "label": "Function",
-      "wpfPresent": false,
+      "commandId": "freew.equation-func",
+      "label": "Function (sin)",
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Function (sin)",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -8518,24 +8170,35 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
-      "commandId": "freew.equation.groupchr",
-      "label": "Group Character",
-      "wpfPresent": false,
+      "commandId": "freew.equation-groupchr",
+      "label": "Group (brace)",
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Group (brace)",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -8549,24 +8212,35 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
-      "commandId": "freew.equation.integral",
-      "label": "Integral  ∫",
-      "wpfPresent": false,
+      "commandId": "freew.equation-integral",
+      "label": "Integral",
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Integral",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -8580,24 +8254,35 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
-      "commandId": "freew.equation.matrix",
-      "label": "Matrix",
-      "wpfPresent": false,
+      "commandId": "freew.equation-matrix",
+      "label": "Matrix (2x2)",
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Matrix (2x2)",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -8611,24 +8296,35 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
-      "commandId": "freew.equation.nthroot",
-      "label": "Nth Root",
-      "wpfPresent": false,
+      "commandId": "freew.equation-nthroot",
+      "label": "Radical (nth Root)",
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Radical (nth Root)",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -8642,24 +8338,35 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
-      "commandId": "freew.equation.product",
+      "commandId": "freew.equation-product",
       "label": "Product",
-      "wpfPresent": false,
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Product",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -8673,24 +8380,35 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
-      "commandId": "freew.equation.radical",
-      "label": "Radical  √x",
-      "wpfPresent": false,
+      "commandId": "freew.equation-radical",
+      "label": "Radical (Square Root)",
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Radical (Square Root)",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -8704,24 +8422,35 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
-      "commandId": "freew.equation.script",
-      "label": "Script  xⁿ",
-      "wpfPresent": false,
+      "commandId": "freew.equation-script",
+      "label": "Subscript / Superscript",
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Subscript / Superscript",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -8735,24 +8464,35 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
-      "commandId": "freew.equation.summation",
-      "label": "Summation  ∑",
-      "wpfPresent": false,
+      "commandId": "freew.equation-summation",
+      "label": "Summation",
+      "wpfPresent": true,
       "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
+      "wpfLocations": [
+        {
+          "profile": "WPF",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "symbols",
+          "group": "Symbols",
+          "label": "Summation",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -8766,10 +8506,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -9069,7 +8809,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -9100,7 +8840,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -9131,7 +8871,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -9162,7 +8902,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -9193,7 +8933,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -9224,7 +8964,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -9255,7 +8995,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -9286,7 +9026,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -9317,7 +9057,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -9348,7 +9088,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -9379,7 +9119,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -10740,10 +10480,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -10771,10 +10511,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -10802,10 +10542,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -10833,10 +10573,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -10864,10 +10604,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -10895,10 +10635,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -10926,10 +10666,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -10957,10 +10697,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -10988,10 +10728,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -11019,10 +10759,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -11050,10 +10790,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -11081,10 +10821,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -11112,10 +10852,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -11143,10 +10883,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -11174,10 +10914,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -20031,7 +19771,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -20062,7 +19802,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -20093,7 +19833,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -20124,7 +19864,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -20155,7 +19895,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -20186,7 +19926,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -20217,7 +19957,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -20248,7 +19988,7 @@
         "wpfDefinitionSource": false,
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -20851,10 +20591,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -20882,10 +20622,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -20913,10 +20653,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -20944,10 +20684,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -20975,10 +20715,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -21006,10 +20746,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -21037,10 +20777,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -21068,10 +20808,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -21099,10 +20839,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -21130,10 +20870,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -21161,10 +20901,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -21192,10 +20932,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -21223,10 +20963,10 @@
         }
       ],
       "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
+        "wpfDefinitionSource": false,
+        "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -24310,7 +24050,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -25012,7 +24752,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
@@ -25054,7 +24794,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
@@ -25096,7 +24836,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
@@ -25138,7 +24878,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
@@ -25180,7 +24920,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
@@ -25437,7 +25177,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
@@ -25479,7 +25219,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
@@ -25521,7 +25261,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
@@ -25563,7 +25303,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
@@ -25605,7 +25345,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
@@ -25884,7 +25624,7 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
@@ -29064,7 +28804,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
@@ -29453,7 +29193,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
