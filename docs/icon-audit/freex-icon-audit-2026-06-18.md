@@ -46,7 +46,7 @@ Evidence:
 - `screenshots/icon-visual-validation-20260619/contextual-table/`: `900_Table_Design.png` plus manifest.
 - `screenshots/icon-visual-validation-20260619/contextual-chart/`: `900_Chart_Design.png`, `900_Chart_Format.png`, plus manifest.
 - `screenshots/icon-visual-validation-20260619/context-menus/worksheet-context-menu-tour/`: `freex_context_menu_worksheet_cell_opened.png` plus manifest, validating small context-menu icon display.
-- `screenshots/ribbon-declarative/home_live.png`: declarative ribbon capture validating the Home tab uses the SVG-backed declarative renderer.
+- `artifacts/icon-audit/freex-ribbon/tab.Home.png`: maintained parity-host capture validating the Home tab uses the SVG-backed declarative renderer.
 - `screenshots/icon-visual-validation-20260619/contact-sheet.png`: scan sheet for the app-run captures above.
 
 Visual assertion: no broken-image placeholders, blank glyph slots, or missing SVG render failures were observed in the generated app screenshots. The contextual Chart/Table icons remain marked for stylistic review where they do not yet match Excel's denser contextual-tab language, but the current validation did not find a new wiring/display discrepancy requiring a separate fix agent.
@@ -64,7 +64,7 @@ $env:FREEX_SS_TOUR='1'; $env:FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER='1'; $env:FRE
 
 $env:FREEX_WORKSHEET_CONTEXT_MENU_TOUR='1'; $env:FREEX_SS_TOUR_ALLOW_BACKGROUND_RENDER='1'; $env:FREEX_SS_TOUR_OUTPUT_SUBDIR='icon-visual-validation-20260619/context-menus'; .\src\FreeX.App.Host\bin\Release\net10.0-windows10.0.19041.0\FreeX.App.Host.exe
 
-$env:FREEX_RIBBON_DECLARATIVE='1'; $env:FREEX_RIBBON_DECLARATIVE_CAPTURE='1'; $env:FREEX_RIBBON_DECLARATIVE_WIDTH='1200'; .\src\FreeX.App.Host\bin\Release\net10.0-windows10.0.19041.0\FreeX.App.Host.exe
+dotnet run --project tools\FreeX.ParityCapture.Wpf\FreeX.ParityCapture.Wpf.csproj --configuration Release -- --parity-capture artifacts\icon-audit\freex-ribbon --parity-capture-target tab.Home
 ```
 
 ## Inconsistent Rows
