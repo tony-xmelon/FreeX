@@ -313,36 +313,6 @@
       "surfaceKind": "dialog"
     },
     {
-      "id": "avalonia.cell-edit.initial",
-      "host": "avalonia",
-      "routeId": "cell-edit",
-      "state": "initial",
-      "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "avalonia.cell-edit.populated",
-      "host": "avalonia",
-      "routeId": "cell-edit",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "avalonia.cell-edit.validation-error",
-      "host": "avalonia",
-      "routeId": "cell-edit",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
       "id": "avalonia.cell-shading.initial",
       "host": "avalonia",
       "routeId": "cell-shading",

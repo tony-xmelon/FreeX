@@ -257,22 +257,6 @@
     },
     {
       "host": "avalonia",
-      "routeId": "cell-edit",
-      "typeName": "CellEditDialog",
-      "sourcePath": "freew/FreeW.App.Avalonia/CellEditDialog.cs",
-      "modalMode": "modal",
-      "tabs": [],
-      "limitation": null,
-      "surfaceKind": "dialog",
-      "states": [
-        "initial",
-        "populated",
-        "validation-error"
-      ],
-      "sourceRouteId": "cell-edit"
-    },
-    {
-      "host": "avalonia",
       "routeId": "cell-shading",
       "typeName": "CellShadingDialog",
       "sourcePath": "freew/FreeW.App.Avalonia/CellShadingDialog.cs",
@@ -2973,36 +2957,6 @@
       "id": "avalonia.caption.validation-error",
       "host": "avalonia",
       "routeId": "caption",
-      "state": "validation-error",
-      "tab": null,
-      "description": "Representative validation or error state after invalid input.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "avalonia.cell-edit.initial",
-      "host": "avalonia",
-      "routeId": "cell-edit",
-      "state": "initial",
-      "tab": null,
-      "description": "Default constructor state with initial keyboard focus.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "avalonia.cell-edit.populated",
-      "host": "avalonia",
-      "routeId": "cell-edit",
-      "state": "populated",
-      "tab": null,
-      "description": "Representative populated fields, selections, and checked options.",
-      "limitation": null,
-      "surfaceKind": "dialog"
-    },
-    {
-      "id": "avalonia.cell-edit.validation-error",
-      "host": "avalonia",
-      "routeId": "cell-edit",
       "state": "validation-error",
       "tab": null,
       "description": "Representative validation or error state after invalid input.",

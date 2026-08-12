@@ -4,7 +4,7 @@
 
 **Evidence scope:** `canonical-inputs-only`. Rows and counts cover only the inventory and WPF/Avalonia capture manifests supplied to this compare invocation. Route-local evidence remains outside this aggregate until it is merged with --baseline and --refresh-route.
 
-Inventory scenarios: **478**. Captured WPF: **190**. Captured Avalonia: **288**.
+Inventory scenarios: **475**. Captured WPF: **190**. Captured Avalonia: **285**.
 
 | Scenario | Capture | Classification | WPF content | Avalonia content | Changed ratio | Mean channel delta | Semantic diff | Heatmap |
 | --- | --- | --- | --- | --- | ---: | ---: | --- | --- |
@@ -204,9 +204,6 @@ Inventory scenarios: **478**. Captured WPF: **190**. Captured Avalonia: **288**.
 | `caption.initial` | avalonia-extension | **avalonia-extension** |  | pass (5.2% painted) |  |  |  |  |
 | `caption.populated` | avalonia-extension | **avalonia-extension** |  | pass (5.2% painted) |  |  |  |  |
 | `caption.validation-error` | avalonia-extension | **avalonia-extension** |  | pass (5.3% painted) |  |  |  |  |
-| `cell-edit.initial` | avalonia-extension | **avalonia-extension** |  | pass (1.5% painted) |  |  |  |  |
-| `cell-edit.populated` | avalonia-extension | **avalonia-extension** |  | pass (1.6% painted) |  |  |  |  |
-| `cell-edit.validation-error` | avalonia-extension | **avalonia-extension** |  | pass (1.6% painted) |  |  |  |  |
 | `character-formatting-picker.initial` | avalonia-extension | **avalonia-extension** |  | pass (2.8% painted) |  |  |  |  |
 | `character-formatting-picker.populated` | avalonia-extension | **avalonia-extension** |  | pass (2.6% painted) |  |  |  |  |
 | `character-formatting-picker.validation-error` | avalonia-extension | **avalonia-extension** |  | pass (2.8% painted) |  |  |  |  |
