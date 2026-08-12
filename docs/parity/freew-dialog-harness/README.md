@@ -16,6 +16,10 @@ dotnet run --project freew/tools/FreeW.DialogVisualHarness/FreeW.DialogVisualHar
 
 The comparison normalizes both sides to 96-DPI logical target dimensions, emits target crops and heatmaps, and reports focus/default/cancel/action-order metadata independently from image metrics. Desktop DPI is recorded as environment metadata, not used as a parity exemption.
 
+Both capture hosts accept `--route <route-id>` for a complete route-local manifest or
+`--scenario <host.scenario-id>` for one state. Route-local manifests can be merged into the
+canonical comparison with `--baseline` and `--refresh-route` without fabricating unrelated rows.
+
 Paste Special, Style, and Manage Styles are content-sized WPF static prompts rather than the harness's standard fixed-size routes. Their Avalonia captures therefore consume the freshly captured WPF manifest through `--wpf-authority`, ensuring both hosts are rendered at the same WPF-authority outer dimensions. Avalonia-only routes retain their own declared capture dimensions.
 
 ## Current Run
@@ -35,6 +39,15 @@ Paste Special, Style, and Manage Styles are content-sized WPF static prompts rat
 - The WPF static-prompt adapter now applies populated, validation, and requested-tab state before capture; it no longer labels a Font-tab bitmap as the Advanced state.
 - About and Legal Notices content/structure delta: the Wave160 About refresh aligns the short document's vertical viewport placement with WPF; its fresh initial/populated/validation rows are 11.41% changed pixels with 14.29 mean channel delta, down from the fresh pre-fix 13.86% / 18.41.
 - About now renders the complete WPF-authority product, license, privacy, and source information. The remaining delta is native framework text/control rasterization after the measured viewport correction.
+- Insert SmartArt now consumes one shared WPF-authority geometry contract in both hosts. Its
+  initial/populated changed-pixel ratio fell from 9.72% to 7.99% and validation-error fell from
+  6.38% to 4.66%; WPF and Avalonia painted heights now both measure 305px, with only the known
+  one-pixel width residual (517px versus 518px). All three rows retain matching semantics.
+- Table of Authorities now consumes one shared WPF-authority geometry contract in both hosts.
+  Its initial/validation changed-pixel ratio is 3.65% and populated is 3.73%, down from the
+  previously tracked 11.36%; WPF and Avalonia now share the exact `16,20,513x185` painted bounds
+  and perceptual hash distance is zero in all three states. The rows remain honest visual
+  mismatches for native text, checkbox, combo-box, and button rasterization.
 - Legal Notices keeps all five WPF-authority tabs visible with direct read-only text fields. Initial/project-license mean channel delta is 11.39, while the four long-document tabs remain between 20.03 and 24.05 because the host frameworks wrap and rasterize the same content differently.
 
 The affected routes retain nine genuine visual mismatches: three freshly paired About states and all six Legal Notices states. These are visible framework text-rendering, wrapping, tab-template, and scrollbar differences rather than missing content or falsely labeled limitations. The six semantic-only rows remain visible on Chart Title, Password Prompt, and Symbol Picker for action ordering, default/cancel metadata, and focus. Backstage and full-window surfaces are outside this dialog report. The paired report keeps every mismatch visible.
