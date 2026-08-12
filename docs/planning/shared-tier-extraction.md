@@ -62,13 +62,16 @@ tests/      # test projects; shared-tier tests use Free.Shared.*.Tests names
 ## Phase 3 (Opc) status — increment 3a done
 
 Moved into `Free.Shared.Opc` (namespace `Free.Shared.Opc`), behaviour-preserving:
-SecureXmlReaderSettings, SaveStreamPreparer, NativePasswordHelper, WorkbookOpenSizeGuard
+SecureXmlReaderSettings, SaveStreamPreparer, WorkbookOpenSizeGuard
 (+ WorkbookTooLargeException/WorkbookInvalidException), XlsxXmlTextEscaper,
 XlsxXmlNormalizationHelpers, XlsxNativeXmlMerger, XlsxSaveResult, XsltWorkbookTransform.
 Wiring: `FreeX.Core.IO` references Opc + global `using Free.Shared.Opc`; six consuming
 projects got the same global using; Opc grants `InternalsVisibleTo` to `FreeX.Core.IO`
 and `FreeX.Core.IO.Tests` (the moved helpers stay `internal` until intentionally
 promoted to the public shared API for FreeW).
+
+Native password hashing is owned by `FreeX.Core.Model.ProtectionPasswordHelper` over the
+`Free.Shared.IO.Sha256PasswordStorage` primitive.
 
 Deferred OPC sub-work (real refactors, not moves):
 - **Split `XlsxPackagePath`** into a format-neutral path/relationship core (→ Opc) and the
