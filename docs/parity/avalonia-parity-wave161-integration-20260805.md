@@ -1,5 +1,4 @@
 # Avalonia parity Wave161 integration
-
 Date: 2026-08-05
 
 ## Integrated slices
@@ -38,4 +37,3 @@ Date: 2026-08-05
   private payload only.
 - FreeW retains 159 genuine paired visual mismatches; this wave prevents an evidence-neutral production
   tweak rather than reducing that count.
-

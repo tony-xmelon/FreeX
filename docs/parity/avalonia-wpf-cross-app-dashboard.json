@@ -31,8 +31,8 @@
                                             "excluded":  23
                                         },
                      "functionalMatrix":  {
-                                              "totalCommands":  546,
-                                              "parity":  540,
+                                              "totalCommands":  553,
+                                              "parity":  547,
                                               "avaloniaMissing":  0,
                                               "wpfMissing":  6,
                                               "bothMissing":  0,
@@ -134,15 +134,15 @@
                  {
                      "app":  "FreeW",
                      "commandInventory":  {
-                                              "totalCommands":  940,
-                                              "bothProfiles":  490,
-                                              "wpfProfileOnly":  155,
-                                              "avaloniaProfileOnly":  295,
-                                              "missingWpfProfile":  295,
-                                              "missingAvaloniaProfile":  155,
+                                              "totalCommands":  927,
+                                              "bothProfiles":  503,
+                                              "wpfProfileOnly":  142,
+                                              "avaloniaProfileOnly":  282,
+                                              "missingWpfProfile":  282,
+                                              "missingAvaloniaProfile":  142,
                                               "actionableMissingWpf":  0,
                                               "actionableMissingAvalonia":  0,
-                                              "profileShapeOnly":  402,
+                                              "profileShapeOnly":  376,
                                               "commandIdAliases":  43,
                                               "platformOnly":  5,
                                               "deferred":  0,
@@ -160,20 +160,20 @@
                                                                           "refreshInstruction":  "Route-local evidence remains outside this aggregate until it is merged with --baseline and --refresh-route."
                                                                       },
                                               "routeCoverage":  {
-                                                                    "inventoryScenarioCount":  478,
-                                                                    "inventoryRouteCount":  99,
-                                                                    "comparisonScenarioCount":  295,
-                                                                    "comparedRouteCount":  99,
+                                                                    "inventoryScenarioCount":  475,
+                                                                    "inventoryRouteCount":  98,
+                                                                    "comparisonScenarioCount":  292,
+                                                                    "comparedRouteCount":  98,
                                                                     "pairedRouteCount":  64,
-                                                                    "avaloniaOnlyRouteCount":  36,
+                                                                    "avaloniaOnlyRouteCount":  35,
                                                                     "stateNotApplicableRouteCount":  4
                                                                 },
                                               "artifactCoverage":  {
-                                                                       "evidenceRowCount":  295,
+                                                                       "evidenceRowCount":  292,
                                                                        "pairedComparisonRowCount":  183,
                                                                        "pairedWpfArtifactRowCount":  183,
                                                                        "pairedAvaloniaArtifactRowCount":  183,
-                                                                       "avaloniaOnlyArtifactRowCount":  105,
+                                                                       "avaloniaOnlyArtifactRowCount":  102,
                                                                        "stateNotApplicableRowCount":  7,
                                                                        "artifactManifestAvailable":  false,
                                                                        "artifactKind":  "embedded comparison-row content metrics and classifications"
@@ -183,7 +183,7 @@
                                                                      "passCount":  24,
                                                                      "mismatchCount":  159,
                                                                      "limitationCount":  0,
-                                                                     "avaloniaOnlyScenarioCount":  105,
+                                                                     "avaloniaOnlyScenarioCount":  102,
                                                                      "evidenceClassification":  "paired WPF/Avalonia dialog comparison rows; mismatch classifications remain unresolved visual evidence, not a parity pass/fail"
                                                                  },
                                               "physicalEvidence":  {

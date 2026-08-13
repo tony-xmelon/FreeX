@@ -20,4 +20,3 @@ text-pane routes therefore keep one valid hierarchy contract.
 
 This is a functional/model/package correction; it makes no PowerPoint COM or
 new pixel-fidelity claim.
-

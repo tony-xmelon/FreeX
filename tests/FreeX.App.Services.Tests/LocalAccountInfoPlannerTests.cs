@@ -35,4 +35,29 @@ public sealed class LocalAccountInfoPlannerTests
         plan.DeviceName.Should().BeEmpty();
         plan.UserName.Should().BeEmpty();
     }
+
+    [Fact]
+    public void CreateBackstageAccountPaneRequest_ProjectsAccountAndWorkbookState()
+    {
+        var plan = LocalAccountInfoPlanner.Build(
+            typeof(LocalAccountInfoPlannerTests).Assembly,
+            deviceName: "FREEX-PC",
+            userName: "anton",
+            optionsAvailable: true);
+
+        var request = LocalAccountInfoPlanner.CreateBackstageAccountPaneRequest(
+            plan,
+            @"C:\work\budget.xlsx",
+            "Budget");
+
+        request.UserName.Should().Be("anton");
+        request.DeviceName.Should().Be("FREEX-PC");
+        request.VersionText.Should().Be(plan.VersionText);
+        request.OptionsAvailable.Should().BeTrue();
+        request.CurrentWorkbookPath.Should().Be(@"C:\work\budget.xlsx");
+        request.CurrentWorkbookName.Should().Be("Budget");
+        request.TrademarkNotice.Should().Be(plan.TrademarkNotice);
+        request.LicenseNotice.Should().Be(plan.LicenseNotice);
+        request.PrivacyNotice.Should().Be(plan.PrivacyNotice);
+    }
 }

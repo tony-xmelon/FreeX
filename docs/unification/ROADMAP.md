@@ -1,153 +1,119 @@
-# Unification Program — Architecture Roadmap
+# FreeFamily Unification Architecture Roadmap
 
-The north star and the remaining work to get there. Companion to `README.md` (principles) and
-`LOG.md` (per-change execution record). Living document — updated as workstreams land.
+Updated 2026-08-13 at final code checkpoint `b9661deea0`. Companion to `README.md` (principles), `LOG.md`
+(execution record), and `dedup-residual-metrics.md` (current deterministic residual evidence).
 
 ## Vision
 
-A family of sister apps — **FreeX** (spreadsheet), **FreeW** (word processor), **FreeP** (presentations),
-and more — on **Windows, Linux, macOS**, where each app is, as close as feasible:
+FreeX (spreadsheet), FreeW (word processor), and FreeP (presentations) run on Windows through WPF and on
+Linux/macOS through Avalonia. Each product should be, as close as practical:
 
-- a **thin renderer per platform** (WPF on Windows, Avalonia on Linux/macOS), plus
-- a **per-app document model** (the genuinely app-specific part: cells+formulas / paragraphs+runs / slides+shapes),
+- a thin native renderer that constructs widgets, projects a portable plan, and applies native effects;
+- a focused product workarea over its genuinely distinct document model; and
+- a consumer of a shared application frame for ribbon, Backstage, shell, dialogs, services, file lifecycle,
+  print/export, localization mechanics, theming, and test infrastructure.
 
-over a **fat shared portable tier** that holds everything else — application logic
-(planning/decision/validation/formatting), chrome (ribbon/backstage/dialogs/shell), document plumbing
-(OPC packaging, properties, styling primitives, units), theming (design tokens), localization,
-and cross-cutting services (undo, options, recent files, diagnostics, autosave, file-lifecycle,
-print/export, update, file-associations).
+WPF remains the Windows renderer for fidelity and performance. Avalonia remains the cross-platform renderer.
+The objective is dual thin renderers, not renderer replacement.
 
-Full purity is unattainable; get as close as feasible and stop where the cost exceeds the benefit
-(genuine platform/domain divergence stays divergent).
+## Current state
 
-## Strategic decision — renderer strategy: **DUAL THIN RENDERERS** (2026-06-23)
-
-Keep **two** renderers — **WPF for Windows** (fidelity/perf) and **Avalonia for Linux/macOS** — and make
-**both thin** by draining their logic into the shared portable tier. WPF is **not** retired. (Avalonia-primary
-on all platforms was considered and declined for Windows-fidelity risk.) The dominant lever for every app:
-**push logic out of both renderers into `*.App.Presentation` / `Free.Shared.*`** so each renderer shrinks
-toward widget-tree mapping over one logic source.
-
-## Where we are (updated 2026-06-25)
-
-<!-- VERIFY: this snapshot is over 6 weeks stale as of 2026-08-08. FreeP in particular has grown far past
-     "scaffold" — freep/ now has ~750 .cs files across 19 projects including FreeP.App.Avalonia (58 files),
-     FreeP.App.Rendering.Avalonia, FreeP.App.Rendering.Wpf, FreeP.App.Recording(.Windows), FreeP.App.Ole.Windows,
-     and shared/Free.Shared.Ribbon.Avalonia + Free.Shared.Shell.Avalonia now exist. Treat the table below as
-     historical; re-audit against current freep/ and shared/ before relying on it. -->
-
-| Dimension | FreeX (spreadsheet) | FreeW (word) | FreeP (slides) |
+| Dimension | FreeX | FreeW | FreeP |
 |---|---|---|---|
-| Windows · WPF | mature | solid | scaffold |
-| Linux/macOS · Avalonia | strong (dialog parity ongoing) | **substantial chrome + editing surface** | none yet |
-| Shared-tier adoption | high | high | high (scaffold consumes it) |
-| Applies shared theme | yes | yes | yes |
-| Localization | one shared catalog (Win = Linux) | shared | shared |
+| Windows WPF | mature | mature | mature |
+| Linux/macOS Avalonia | strong | strong | strong |
+| Portable workarea/session tier | exhausted to native adapters | exhausted to native adapters | exhausted to native adapters |
+| Shared application frame | adopted | adopted | adopted |
+| Shared theme/localization mechanics | adopted | adopted | adopted |
 
-Reality checks:
-- **Shared tier now captures most non-rendering code.** A comprehensive cross-app audit (2026-06-25) confirmed
-  the unification has been effective: file-lifecycle, ribbon model, backstage, theming, PDF, OPC, units,
-  options, autosave, diagnostics, undo, localization are all shared. FreeP re-implements *nothing* — it
-  consumes the shared tier out of the box.
-- **FreeW Avalonia went from a 2.8k stub to a real shell** (this session): file lifecycle, backstage, side
-  panes, page-layout + pagination + view modes — all consuming the portable `FreeW.App.Presentation` planners.
-- **The remaining big gaps are feature build-out, not dedup**: FreeP's presentation domain (in active
-  development by a dedicated session), and the deep Avalonia editing-surface fidelity (incremental).
+The shared spine contains 20 projects. Portable projects own decisions and contracts; WPF, Avalonia, Windows,
+Skia, and other platform packages own realization only. The three product renderers now consume shared or
+portable policy for most campaign scope:
+
+- adaptive ribbon layout, command profiles, invocation, overflow, focus, keytips, and chrome;
+- Backstage navigation/panes, recent files, file lifecycle, save/open/export/print workflows;
+- application options, autosave, diagnostics, document state, status-bar planning, and shell messaging;
+- dialog sessions, validation, range selection, commit planning, and shared compact-dialog mechanics;
+- FreeX QuickAnalysis, PageLayout, chart/table/textbox/shape, formula, selection, and command workflows;
+- FreeW editing/navigation, page layout, fields, image/chart/page-border rendering plans, and PDF projection;
+- FreeP slideshow/media/pane policy, chart/table/text/shape flows, chart-option sessions, and rendering plans;
+- OPC, DrawingML, colors, units, geometry, PDF, themes, localization mechanics, and test infrastructure.
+
+The final continuation also shares desktop URI launching, OOXML protection hashing, Legal Notices presentation,
+directional-arrowhead/WordArt policy, startup lifetime, application-frame titles, FreeW pagination/dialog/field
+workflows, FreeP Backstage/slideshow/pane/text contracts, FreeX renderer/accessibility/shell policies, sister-app
+Avalonia startup, platform print-service selection, packaging-smoke execution, ribbon menu icons, localized planner
+resources, static semantic command IDs, and workbook keyboard shortcut aliases.
 
 ## Workstreams
 
-Status: done · in progress · blocked/contended · not started
+### WS-A - Renderer thinning - implementation complete
 
-### WS-A — Renderer thinning (long-haul, opportunistic) — in progress
-Drain logic from the WPF + Avalonia renderers into the portable tier. The byte-level dedup is exhausted; the
-remaining prize is disentangling logic from framework inside the big renderer files. Advanced opportunistically
-as files are touched. FreeW's Avalonia editing surface (page layout/pagination/view modes) was built this
-session as thin views over portable model APIs.
+All measured candidates were extracted or classified from the final tree. Remaining matches are native control,
+event, focus, geometry/materialization, drawing, media, accessibility-attachment, and capture adapters.
 
-### WS-B — Portable tiers for FreeW & FreeP — done (FreeW) / via its session (FreeP)
-`freew/FreeW.App.Presentation` stood up and all backstage/ribbon planners migrated; the portable backstage
-records moved to `Free.Shared.Shell`. FreeW's Avalonia shell now consumes these planners. FreeP's portable
-tier (`FreeP.App.Presentation` SlideCompositor) is being built by the FreeP-foundation session.
+### WS-B - Product portable tiers - complete
 
-### WS-C — Shared document substrate — in progress
-Landed: `FileFormatDescriptor` → `Free.Shared.IO`; OPC core/extended/custom property constants + W3CDTF →
-`Free.Shared.Opc.OpcPackageProperties` (both ZIP-entry and PartName conventions); DrawingML/OOXML units
-(EMU/dxa/points) → `Free.Shared.Opc.DrawingMlUnits`. Deferred (hot files): shared `CoreDocumentProperties`
-(FreeW + FreeP doc-props), theme-color-scheme model. Future-high-value: the DrawingML/OPC/color overlap the
-new FreeP IO opens up (shared color/geometry/package-walking across all three apps) — when FreeP settles.
+`FreeX.App.Presentation`/`FreeX.App.Services`, `FreeW.App.Presentation`, and `FreeP.App.Presentation` own each
+product's renderer-neutral workarea behavior. Their document models remain separate by design.
 
-### WS-D — Chrome completion — in progress
-Ribbon, backstage, shell, dialogs, status bar are largely shared. FreeW Avalonia backstage built (app-specific,
-mirroring FreeX). Remaining shared-Avalonia-chrome extraction is deferred until `FreeX.App.Avalonia` (dialog
-parity) settles.
+### WS-C - Shared document substrate - mature
 
-### WS-E — Neutralize FreeX-homed shared code — done
-`PseudoLocalization` → `Free.Shared.Localization`. Localization fully converged into one shared superset
-catalog (see below).
+OPC/package properties, secure XML, DrawingML units/colors/geometry, file descriptors, PDF primitives, and
+text search are shared. The continuation added one OOXML protection hash implementation and shared
+directional-arrowhead geometry. XLSX, DOCX, and PPTX rules stay local when the formats encode different
+semantics.
 
-### WS-F — Platform leaves — in progress
-Velopack update + file-associations shared (Windows). Linux/macOS leaves ongoing via the Avalonia work.
+### WS-D - Common application frame - complete
 
-### WS-G — Theming (design tokens) — done
-Built end-to-end this session. `Free.Shared.Theme` (token contract: 21 color roles + typography + metrics) +
-WPF and Avalonia appliers + `BrandThemes.FreeX/FreeW/FreeP`. All three apps apply their own theme at startup;
-all WPF chrome consumes tokens; the shared ribbon renderer is tokenized (neutral colors byte-identical
-cross-app, accent per-app — FreeP's ribbon wears its brick brand). A Windows/Linux chrome typography+metrics
-parity baseline is captured at `docs/parity/theme-token-baseline.md`. Reskinning is a `Theme`-object swap
-(`FREEX_THEME=midnight` etc.). Remaining: migrate the last hardcoded colors as the contended chrome settles.
+Ribbon, Backstage, shell workflow, theming, localization mechanics, options, diagnostics, file lifecycle,
+print/export orchestration, desktop URI launching, Legal Notices, and shared dialog mechanics are common.
+FreeW application workflow/dialog contracts and FreeP Backstage/header-footer contracts have joined that frame;
+all three Avalonia apps now share startup lifetime policy and shared title contracts.
 
-### Localization convergence — done (the Win = Linux fidelity fix)
-FreeX-WPF and Avalonia previously used divergent catalogs (5,077 vs 1,701 keys; 43 vs 1 locales). Converged
-onto **one shared superset catalog** in `FreeX.App.Localization` (6,401 keys + 43 locale satellites); Host
-`UiText` reads it; Windows verified byte-identical by test; Linux gained ~3,376 keys + 42 locales. The dead
-duplicate Host `.resx` files were removed.
+### WS-E - Test and evidence infrastructure - final gates pending
 
-## Active session map (2026-06-25)
+Repository/source location, temporary resources, localization contracts, parity capture, image comparison, and
+ownership guards are shared. Source guards defend architectural ownership; behavior tests remain preferred.
+Several integrated slices intentionally deferred focused or broad verification, and the final synchronized
+preflight/build/test/visual gates have not run.
 
-<!-- VERIFY: this session-division snapshot is from 2026-06-25 and is stale as of the current audit
-     (2026-08-08) — `unification-program` itself has since been merged into `main` and deleted, so "this
-     session" and its "hot — do not edit" claim no longer apply. Kept for historical record of how work was
-     divided at the time; do not use it to infer current session ownership. -->
+## Remaining campaign queue
 
-Multiple sessions run in parallel over one OneDrive-shared `.git`. Division of labour:
+1. Run final repository preflight, Release build, default test lane, WPF UI lane, and ribbon lane.
+2. Capture final FreeX WPF evidence and compare every baseline surface pixel-for-pixel.
+3. Fast-forward and push `main`, verify ancestry, and clean campaign-owned worktrees/branches.
 
-| Session | Owns (hot — do not edit) |
-|---|---|
-| **Unification (this)** | shared tier, dedup, theming, localization, **FreeW Avalonia shell** |
-| FreeW word-parity | `freew/FreeW.Core.*`, `freew/FreeW.App.Host/**` |
-| FreeX dialog-parity / macOS | `src/FreeX.App.Avalonia/**`, FreeX dialog files |
-| FreeP foundation | `freep/**` (pptx IO, compositor, WPF renderer, RenderCompare) |
-| Shapes | `shared/Free.Shared.Drawing/**` (Geometry/ShapeGeometry port) |
-| Code review | read-only |
+## Deliberate exceptions
 
-## What's next (priority)
+These are not unfinished dedup work:
 
-1. **FreeP's presentation domain** — the family's biggest gap; **actively owned** by the FreeP-foundation
-   session (do not collide). The FreeP *Avalonia* renderer is the natural unification contribution once their
-   compositor API stabilizes.
-2. **Resume gated dedup as fields clear** — see `DEDUP-BACKLOG.md` for the verified, file:line-ranked
-   candidates with per-item unlock conditions. Headliners: shared `CoreDocumentProperties` (B2) across all
-   three `Core.IO` layers; finishing the `Free.Shared.Drawing` migration by deleting the un-deleted FreeX
-   geometry originals (B3, ~633 LOC); cross-app color/EMU (B4); and residual adoption of the already-landed
-   OPC helper substrate (B1) where app-local wrappers still duplicate `Free.Shared.Opc`.
-3. **FreeW Avalonia polish** (incremental): rulers, deeper formatting fidelity.
+- cells/formulas versus paragraphs/runs versus slides/shapes;
+- XLSX, DOCX, and PPTX package semantics that are not the same standard primitive;
+- product command/profile text and localized resource content;
+- native WPF/Avalonia control trees, data binding, routed/pointer events, window ownership, and modal lifetime;
+- renderer-specific drawing/PDF projection after geometry and policy have already been planned portably;
+- product-only workflows with no second consumer and no stable neutral contract.
 
-The **safe, non-colliding dedup frontier is currently processed/empty** — remaining real dedup is owned by
-active sessions and resumes as those fields clear (`DEDUP-BACKLOG.md` is staged to execute on the moment one does).
+Coincidentally equal resource values are not a sharing signal. Localization infrastructure and contracts are
+shared; product wording stays in the product catalog so translators and feature owners retain context.
 
-## Deferred alignment items (do when already touching the area)
+## Future trigger after this campaign
 
-- **Headless WPF dialog suppression audit.** File-command prompts are already service-injected in FreeX,
-  FreeW, and FreeP through `IUserMessageService`; do not chase the old FreeW/FreeP file-command DI item.
-  Remaining `HeadlessMessageBox.Handler` usage belongs to shared WPF dialog/test infrastructure and should be
-  reduced only when a dialog-specific slice can prove a per-instance seam is cleaner than the current global
-  test hook.
+After the active residual queue is finished or classified, do not start another broad dedup campaign from file
+size alone. Re-open this roadmap only when one of these is true:
 
-## Contention discipline
+1. `tools/Measure-DedupResiduals.ps1` identifies a new high-confidence cross-renderer block with reusable policy.
+2. The same behavior change must be implemented in two renderers or products.
+3. A new sister app would otherwise copy an existing workflow.
+4. A native file contains decision, validation, command construction, or geometry that can be behavior-tested
+   without referencing its UI framework.
 
-The repo is under OneDrive; many parallel worktrees share one `.git`. Always: work in a **fresh** worktree
-(never the shared checkout), **never `git stash`**, commit by explicit path, verify `git ls-files | wc -l` > 0
-before building, build with `-m:1`, push via fetch -> rebase -> `HEAD:main`, and **avoid files owned by an
-active session** (see the session map). Adding a `freew.*` Avalonia ribbon command requires a matching
-`{slug}.svg` asset + running `RibbonCommandIconAssetTests` (a non-incremental rebuild is needed for the asset
-to propagate to test output).
+## Integration gate
+
+Every renderer-thinning campaign must run repository preflight, the Release solution build, the default test
+lane, the UI lane when WPF behavior or UI infrastructure changed, and the focused ribbon lane for adaptive
+ribbon work. FreeX WPF must also be parity-captured against a clean pre-campaign `origin/main` baseline and
+the resulting manifests/images compared before merge.
+
+These final synchronized gates are active after code checkpoint `b9661deea0`.

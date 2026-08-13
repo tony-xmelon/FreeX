@@ -2,9 +2,9 @@
   "schema": "freew.dialog-visual-comparison.v1",
   "generatedFromSha256": "3ac744a62d2ef2f2ae6cbdbab7857074f7ddc2273b2fac5750980da82ef71692",
   "targetDpi": 96,
-  "inventoryScenarioCount": 478,
+  "inventoryScenarioCount": 475,
   "wpfCaptureCount": 190,
-  "avaloniaCaptureCount": 288,
+  "avaloniaCaptureCount": 285,
   "rows": [
     {
       "scenarioId": "about.initial",
@@ -10695,96 +10695,6 @@
       }
     },
     {
-      "scenarioId": "cell-edit.initial",
-      "captureStatus": "avalonia-extension",
-      "classification": "avalonia-extension",
-      "metrics": null,
-      "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "Avalonia-owned route/state; outside the WPF-authority pairing set.",
-      "wpfContent": null,
-      "avaloniaContent": {
-        "passesContentGate": true,
-        "failure": null,
-        "width": 560,
-        "height": 600,
-        "pixelCount": 336000,
-        "opaqueRatio": 0.914875,
-        "nearTransparentRatio": 0.085125,
-        "nearBlackRatio": 0,
-        "dominantColorRatio": 0.9837799855561845,
-        "distinctColorCount": 19,
-        "luminanceRange": 223.99999999999997,
-        "contentPixelRatio": 0.014839285714285715,
-        "contentBounds": {
-          "x": 14,
-          "y": 18,
-          "width": 518,
-          "height": 78
-        }
-      }
-    },
-    {
-      "scenarioId": "cell-edit.populated",
-      "captureStatus": "avalonia-extension",
-      "classification": "avalonia-extension",
-      "metrics": null,
-      "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "Avalonia-owned route/state; outside the WPF-authority pairing set.",
-      "wpfContent": null,
-      "avaloniaContent": {
-        "passesContentGate": true,
-        "failure": null,
-        "width": 560,
-        "height": 600,
-        "pixelCount": 336000,
-        "opaqueRatio": 0.914875,
-        "nearTransparentRatio": 0.085125,
-        "nearBlackRatio": 0.0002049460308785353,
-        "dominantColorRatio": 0.9829602014326704,
-        "distinctColorCount": 26,
-        "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.015589285714285714,
-        "contentBounds": {
-          "x": 14,
-          "y": 18,
-          "width": 518,
-          "height": 78
-        }
-      }
-    },
-    {
-      "scenarioId": "cell-edit.validation-error",
-      "captureStatus": "avalonia-extension",
-      "classification": "avalonia-extension",
-      "metrics": null,
-      "semanticDifference": null,
-      "heatmapPath": null,
-      "note": "Avalonia-owned route/state; outside the WPF-authority pairing set.",
-      "wpfContent": null,
-      "avaloniaContent": {
-        "passesContentGate": true,
-        "failure": null,
-        "width": 560,
-        "height": 600,
-        "pixelCount": 336000,
-        "opaqueRatio": 0.914875,
-        "nearTransparentRatio": 0.085125,
-        "nearBlackRatio": 0.00023422403528975465,
-        "dominantColorRatio": 0.9829829732138791,
-        "distinctColorCount": 26,
-        "luminanceRange": 254.99999999999997,
-        "contentPixelRatio": 0.01556845238095238,
-        "contentBounds": {
-          "x": 14,
-          "y": 18,
-          "width": 518,
-          "height": 78
-        }
-      }
-    },
-    {
       "scenarioId": "character-formatting-picker.initial",
       "captureStatus": "avalonia-extension",
       "classification": "avalonia-extension",
@@ -13669,7 +13579,7 @@
     "genuine-visual-mismatch": 159,
     "pass": 24,
     "state-not-applicable": 7,
-    "avalonia-extension": 105
+    "avalonia-extension": 102
   },
   "scope": {
     "kind": "canonical-inputs-only",

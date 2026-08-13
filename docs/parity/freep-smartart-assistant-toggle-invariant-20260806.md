@@ -24,4 +24,3 @@ assistant insertion.
 - Focused `SmartArtEditingPlannerTests`: **154/154**.
 - No PowerPoint COM or pixel-fidelity claim is made by this slice; it is a
   shared model, text-pane, undo, and package-semantics correction.
-

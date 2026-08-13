@@ -28,4 +28,3 @@ Focused current-main verification on `424a2bf0f5`:
 - Advanced chart families, deep animation authoring/playback semantics, and other package features explicitly marked unsupported remain bounded feature-depth work.
 
 The current command-surface inventory has no actionable WPF/Avalonia command-id gap. The remaining work is therefore depth, external capability, and package/media execution rather than another missing ribbon route. Visual parity work stays paused at the user's direction.
-
