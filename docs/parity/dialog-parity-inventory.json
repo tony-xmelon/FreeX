@@ -164,7 +164,6 @@
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuCatalog.cs",
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuModel.cs",
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterMenuPlanner.cs",
-                                                   "src\\FreeX.App.Presentation\\Filtering\\AutoFilterParityFixturePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Filtering\\AutoFilterPopupPlacementPlanner.cs"
                                                ],
                      "notes":  [
@@ -216,13 +215,13 @@
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsApplyPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsCommandPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDelimiters.cs",
+                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogMetrics.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogResult.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsDialogState.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsFixedWidthBreakPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsFixedWidthRulerPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsOptions.cs",
-                                                   "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsParityFixture.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsResult.cs",
                                                    "src\\FreeX.App.Presentation\\TextToColumns\\TextToColumnsSplitter.cs",
@@ -277,7 +276,6 @@
                                                    "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateDialogPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateInputParser.cs",
                                                    "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateModels.cs",
-                                                   "src\\FreeX.App.Presentation\\Consolidate\\ConsolidateParityFixture.cs",
                                                    "src\\FreeX.App.Presentation\\Consolidate\\ConsolidatePlanner.cs"
                                                ],
                      "notes":  [
@@ -546,7 +544,7 @@
                                           ],
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
-                                                   "src\\FreeX.App.Services\\SymbolPickerSelectionPlanner.cs"
+                                                   "src\\FreeX.App.Presentation\\Dialogs\\SymbolPickerCatalogPlanner.cs"
                                                ],
                      "notes":  [
 
@@ -663,7 +661,6 @@
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupDialogModel.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupDialogPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupInitialFocusTarget.cs",
-                                                   "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeParser.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeSelectionFormatter.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupRangeSelectionTarget.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PageSetupSubmissionPlanner.cs"
@@ -688,7 +685,6 @@
                      "avaloniaCaptureHarnessRoute":  true,
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPaneGroupedCommandPlanner.cs",
-                                                   "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPaneParityFixture.cs",
                                                    "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPanePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\DrawingUI\\SelectionPaneSession.cs"
                                                ],
@@ -873,6 +869,7 @@
                                                    "src\\FreeX.App.Presentation\\Charts\\LegendLayoutBuilder.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\TrendlineAnnotationFormatter.cs",
                                                    "src\\FreeX.App.Presentation\\Charts\\TrendlineCalculator.cs",
+                                                   "src\\FreeX.App.Presentation\\Charts\\TrendlineProjectionPlanner.cs",
                                                    "src\\FreeX.Core.Commands\\ChartCommands.Mutate.cs"
                                                ],
                      "notes":  [
@@ -983,16 +980,12 @@
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatEvaluator.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatIconSetCatalog.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatInputParser.cs",
-                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatManageParityFixture.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatPresetFactory.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatPresetGalleryPlanner.cs",
-                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRangeSelector.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRenderEvaluator.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRuleBuilder.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRuleMoveDirection.cs",
-                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRulePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatStatistics.cs",
-                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatStatsCache.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormattingResults.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconCellLayoutPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphGeometry.cs",
@@ -1028,16 +1021,12 @@
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatEvaluator.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatIconSetCatalog.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatInputParser.cs",
-                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatManageParityFixture.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatPresetFactory.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatPresetGalleryPlanner.cs",
-                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRangeSelector.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRenderEvaluator.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRuleBuilder.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRuleMoveDirection.cs",
-                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatRulePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatStatistics.cs",
-                                                   "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormatStatsCache.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalFormattingResults.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconCellLayoutPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\ConditionalFormatting\\ConditionalIconGlyphGeometry.cs",
@@ -1115,7 +1104,6 @@
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewInstructionBuilder.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewNavigationState.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewPaginationContext.cs",
-                                                   "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewParityFixture.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewSettingsPanelPlanner.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewSurfacePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\PageLayout\\PrintPreviewToolbarStatePlanner.cs",
@@ -1264,7 +1252,6 @@
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\Protection\\AllowEditRangePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectionDialogPlanner.cs",
-                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionInputParser.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectionPassword.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectionStateProjector.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectionWorkflowSession.cs",
@@ -1294,7 +1281,6 @@
                      "sharedBackingEvidence":  [
                                                    "src\\FreeX.App.Presentation\\Protection\\AllowEditRangePlanner.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectionDialogPlanner.cs",
-                                                   "src\\FreeX.App.Presentation\\Protection\\ProtectionInputParser.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectionPassword.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectionStateProjector.cs",
                                                    "src\\FreeX.App.Presentation\\Protection\\ProtectionWorkflowSession.cs",
