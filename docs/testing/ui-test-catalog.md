@@ -58,15 +58,15 @@ Each surface is tracked with these states:
 
 | Source | Current count | Notes |
 |---|---:|---|
-| Command surface in-scope rows | 207 | From `parity/command-inventory.json`: Implemented + Partial command-surface rows (176 Implemented + 31 Partial of 230 total, 23 Excluded). |
-| Menu/toolbar in-scope rows | 218 | From `parity/command-inventory.json`: Implemented + Partial menu/toolbar rows (188 Implemented + 30 Partial of 241 total, 23 Excluded). Includes the current Draw tab menu/toolbar delta. |
+| Command surface in-scope rows | 199 | From `parity/command-inventory.json`: Implemented + Partial command-surface rows (173 Implemented + 26 Partial of 224 total, 25 Excluded). |
+| Menu/toolbar in-scope rows | 200 | From `parity/command-inventory.json`: Implemented + Partial menu/toolbar rows (174 Implemented + 26 Partial of 225 total, 25 Excluded). Includes the current Draw tab menu/toolbar delta. |
 | Top-level ribbon/backstage tabs | 10 | File, Home, Insert, Draw, Page Layout, Formulas, Data, Review, View, Help. |
-| Contextual ribbon tab declarations | 7 | Shape Format, Picture Format, Chart Design, Format, Table Design, PivotTable Analyze, Design from collapsed `MainWindow.xaml` tab declarations. |
+| Contextual ribbon tab declarations | 7 | Shape Format, Picture Format, Chart Design, Format, Table Design, PivotTable Analyze, Design from `FreeXRibbon` shared definitions. |
 | Dialog source classes | 119 | Unique `*Dialog` class/x:Class names in `src/FreeX.App.Host`. |
-| XAML click-wired controls | 40 | `Click="..."` occurrences in `MainWindow.xaml` on latest synced `origin/main`. |
-| Explicit UIA automation ids | 35 | `AutomationProperties.AutomationId="..."` declarations in `MainWindow.xaml`. |
-| Ribbon keytip metadata declarations | 31 | `RibbonTooltip.KeyTip="..."` declarations in `MainWindow.xaml`. |
-| Keyboard command shortcut usages | 61 | 61 matcher rules / 84 dispatcher targets |
+| XAML click-wired controls | 40 | Renderer-specific `Click="..."` occurrences remaining in `src/FreeX.App.Host/MainWindow.xaml`. |
+| Explicit UIA automation ids | 35 | Renderer-specific `AutomationProperties.AutomationId="..."` declarations remaining in `src/FreeX.App.Host/MainWindow.xaml`. |
+| Ribbon keytip metadata declarations | 14 | Renderer-specific `RibbonTooltip.KeyTip="..."` declarations remaining in `src/FreeX.App.Host/MainWindow.xaml`. |
+| Keyboard command shortcut usages | 20 | 20 renderer-local matcher rules / 59 host dispatcher targets; shared ribbon definitions own the extracted command metadata. |
 | Documented shortcut rows | 93 | From `parity/shortcuts.md`: 93 parity, 0 partial. |
 | Worksheet context menu commands | 51 | From `WorksheetContextMenuPlanner.BuildCommands()`. |
 | Screenshot tool scripts | 2 | `tools/screenshot_excel.ps1`, `tools/screenshot_ribbon.ps1` documented and present. |
@@ -107,7 +107,7 @@ Each command should be tested against every applicable target. Mark non-applicab
 
 | Surface | Catalog notes |
 |---|---|
-| Shortcut/keytip routing | 93 documented shortcut rows; 84 matcher rules; 83 dispatcher targets; broad XAML keytip metadata including top-level `F/H/N/J/P/M/A/R/W/Y` plus contextual PivotTable `JA/JD`; representative nested menu keytip coverage exists; all 93 shortcut rows are at Parity. |
+| Shortcut/keytip routing | 93 documented shortcut rows; 20 renderer-local matcher rules; 59 host dispatcher targets; shared `FreeXRibbon` definitions own extracted ribbon command/keytip metadata while 14 renderer-specific XAML declarations remain. Representative nested menu keytip coverage exists, and all 93 shortcut rows are at Parity. |
 | Mouse/grid interaction | Grid click, Shift+click, drag selection, double-click edit/pivot detail, row/column/top-left header selection, autofill handle, row/column resize, page-layout margin guide drag, split divider drag, split-pane mini-scrollbars, pivot chart field buttons, wheel/Shift+wheel/Ctrl+wheel, and sheet-tab click/group/drag/double-click/right-click all need live WPF hit-test evidence. `tools/FreeX.ForegroundCapture` now retains partial foreground proof for grid/header drag selection, guarded S4 foreground proof for row/column resize and ordinary/Shift wheel scroll, complete foreground proof for sheet-tab right-click and double-click rename, and S6 foreground proof for status Zoom In/Out clicks, footer view shortcut clicks, slider drag, native UIA RangeValue set, and Ctrl+wheel-over-grid zoom. |
 | Context menus | Worksheet context menu has 51 planner commands and should be tested through right-click, Shift+F10, Menu key, access-key traversal, target-specific disabled states, and command state mutation. Sheet-tab, pivot field, ribbon dropdown, backstage recent/pinned, and object-aware context menus need separate rows. |
 | Ribbon/backstage/dialogs | Backstage, QAT, Home, Insert, Draw, Page Layout, Formulas, Data, Review, View, contextual PivotTable Analyze/Design, and Help are fully inventoried in parity docs. Dialog coverage is strong at parser/planner level but needs real focus order, access keys, Escape/Enter/default/cancel, high-DPI layout, and UIA pattern checks. |
