@@ -1,15 +1,16 @@
 # Dedup Exhaustion Report - 2026-08-09
 
 > **Status: IMPLEMENTATION SCOPE EXHAUSTED; FINAL GATES ACTIVE.** The final code checkpoint is
-> `662e17e38556c178efe21c3333ef47d52d214d31`. Every identified portable candidate has either moved into a
+> `b9661deea09a048a4931b872d84a47ea1e83642a`. Every identified portable candidate has either moved into a
 > shared/product-portable owner or been independently classified as native realization. Metrics are current;
 > broad build, test, visual-parity, and `main` integration evidence still must pass before final sign-off.
 
 ## Scope and evidence
 
-This report tracks the dedup campaign on `codex/dedup-exhaustion-rescue-20260810`. Its merge base and clean
-visual baseline are `origin/main` at `7cb6df15b89da6e03378b590e3966779b79f69b7`; the implementation
-checkpoint includes all integrated dedup work through `662e17e385`.
+This report tracks the dedup campaign on `codex/dedup-exhaustion-rescue-20260810`. Its merge base is
+`origin/main` at `afb02e6b0af25250fdfa46e0a6900ea6c7f72d31`; the preserved clean visual baseline is the earlier
+pre-campaign `7cb6df15b89da6e03378b590e3966779b79f69b7`. The implementation checkpoint includes all integrated
+dedup work through `b9661deea0` and is a direct descendant of `origin/main` with no main-only commits.
 
 The generated [residual metrics](dedup-residual-metrics.md) analyze that exact code checkpoint. Their
 determinism fixture and repository `-Check` mode both pass.
@@ -48,7 +49,7 @@ identified scope. The continuation below extends this base; it does not replace 
 | Renderer planning | Portable geometry, text layout, render commands, pane/slideshow policy, and workarea sessions feed FreeX/FreeW/FreeP renderers. Native canvas, drawing-context, accessibility, and animation realization remain renderer responsibilities. | `85b3c78807`, `d07cd19a63`, `2090efa777`, `df74a01411`, `9d98939999`, `320fd70985`, `649a373a1c`, `ba00a89312`, `ec3faa3ee4`, `3b149d3878` |
 | Test and evidence infrastructure | Repository/source locators, temporary resources, localization contracts, evidence workflow, ownership guards, and deterministic residual measurement were consolidated. Product scenarios and framework-specific capture drivers remain separate where they exercise different native stacks. | `ac51cbf3be`, `ef17eb6297`, `8a11d2a9f0`, `f05216fd53`, `9c428f2f1c`, `7f7506e5d0`, `5c56d0198c`, `8fc243fc79`, `ad82671328`, `fd07a9db50` |
 
-## Integrated continuation through `662e17e385`
+## Integrated continuation through `b9661deea0`
 
 | Area | Integrated ownership change | Commits |
 |---|---|---|
@@ -72,6 +73,16 @@ and keytip ownership. Shared Avalonia keytip input and startup lifetime now serv
 pass removed dead FreeX recovery orchestration, routed FreeW titles through its frame descriptor, and exposed
 FreeP's title as the shared `ApplicationWindowTitleSpec` directly.
 
+The closing waves then standardized FreeW/FreeP Avalonia startup and packaging-smoke envelopes; centralized
+platform print-service selection; removed the FreeP WPF ribbon adapter; added portable Custom Show and media-pane
+host coordination; centralized FreeW floating-position registration; moved menu icon metadata and static FreeX
+ribbon command identity into shared/portable catalogs; converged localized AutoFilter and workbook-info planner
+resources; removed dead reflective/pass-through facades; replaced high-volume WPF/Avalonia test reflection with
+typed tool-host access; centralized FreeX shortcut aliases; and removed the final FreeX ribbon-renderer facade.
+Representative closing commits are `59b388af63`, `08287dd03c`, `77f8bef490`, `8bb26a047b`, `9c7c3e7c78`,
+`49a5c94a0d`, `8ee9595de8`, `e7c1ec098e`, `ecbf22ff20`, `842e355bff`, `d16222f515`, `1b3f96c645`, and
+`cdf8ed85b7`.
+
 ## Verification ledger
 
 Verification recorded while producing the integrated slices is intentionally uneven because several agent
@@ -92,11 +103,12 @@ lanes were integration-first and reserved broad gates for the final synchronized
 
 ## Final measurable renderer reduction
 
-The deterministic checkpoint measures eight renderer roots from merge base `7cb6df15b8` to code checkpoint
-`662e17e385`: 656 renderer files changed, 38,213 lines added, 91,133 deleted, for a **52,920 renderer C# LOC
-reduction**. The renderers contain 301,963 measured code lines. Cross-root coverage is 9,809 exact lines
-(3.248411%) and 10,477 normalized lines (3.469630%). FreeX is at 0.149743%-0.232031%; FreeW is at
-1.132578%-1.325058%. FreeP remains 10.491136%-20.367412% because its largest matched blocks are native pane,
+The deterministic checkpoint measures eight renderer roots from merge base `afb02e6b0a` to code checkpoint
+`b9661deea0`: 789 renderer files changed, 44,954 lines added, 158,585 deleted, for a **113,631 renderer C# LOC
+reduction**. The renderers contain 249,346 measured code lines. Cross-root coverage is 7,954 exact lines
+(3.189945%) and 8,388 normalized lines (3.364000%). FreeX is at 0.182953%-0.185355% exact and
+0.206452%-0.206801% normalized; FreeW is at 1.109443%-1.116174% exact. FreeP remains 10.582481%-18.309002%
+because its largest matched blocks are native pane,
 dialog, slideshow, media, text-measurement, drawing, accessibility, and visual-capture realizers around shared
 plans; two independent audits found no further stable renderer-neutral contract in those blocks.
 
@@ -136,7 +148,7 @@ Do not convert a row to passed without evidence from the final synchronized impl
 
 | Gate | Status | Required evidence |
 |---|---|---|
-| Residual audit and metrics | **PASSED** | Audits exhausted/classified all candidates; metrics self-test and `-Check` pass at `662e17e385`. |
+| Residual audit and metrics | **PASSED** | Three fresh final audits found no P0-P2 practical scope; metrics self-test and `-Check` pass at `b9661deea0`. |
 | Final synced commit | **PENDING** | Synchronize the completed campaign with `origin/main`, push `main`, and record the resulting SHA. |
 | Builds and tests | **PENDING** | Record repository preflight, Release build, default test lane, applicable UI/ribbon lanes, and all focused reruns listed above. |
 | FreeX WPF visual parity | **PENDING** | Record baseline/candidate capture commits, manifests, image counts, and the comparison result. |

@@ -1,6 +1,6 @@
 # FreeFamily Unification Architecture Roadmap
 
-Updated 2026-08-11 at final code checkpoint `662e17e385`. Companion to `README.md` (principles), `LOG.md`
+Updated 2026-08-13 at final code checkpoint `b9661deea0`. Companion to `README.md` (principles), `LOG.md`
 (execution record), and `dedup-residual-metrics.md` (current deterministic residual evidence).
 
 ## Vision
@@ -41,7 +41,9 @@ portable policy for most campaign scope:
 
 The final continuation also shares desktop URI launching, OOXML protection hashing, Legal Notices presentation,
 directional-arrowhead/WordArt policy, startup lifetime, application-frame titles, FreeW pagination/dialog/field
-workflows, FreeP Backstage/slideshow/pane/text contracts, and FreeX renderer/accessibility/shell policies.
+workflows, FreeP Backstage/slideshow/pane/text contracts, FreeX renderer/accessibility/shell policies, sister-app
+Avalonia startup, platform print-service selection, packaging-smoke execution, ribbon menu icons, localized planner
+resources, static semantic command IDs, and workbook keyboard shortcut aliases.
 
 ## Workstreams
 
@@ -114,4 +116,4 @@ lane, the UI lane when WPF behavior or UI infrastructure changed, and the focuse
 ribbon work. FreeX WPF must also be parity-captured against a clean pre-campaign `origin/main` baseline and
 the resulting manifests/images compared before merge.
 
-These final synchronized gates are active after code checkpoint `662e17e385`.
+These final synchronized gates are active after code checkpoint `b9661deea0`.

@@ -4,6 +4,32 @@ Newest entries first. Each phase records: what changed, how it was verified, and
 
 ---
 
+## Dedup implementation scope exhausted - final checkpoint (2026-08-13)
+
+**Implementation checkpoint:** `b9661deea09a048a4931b872d84a47ea1e83642a` on
+`codex/dedup-exhaustion-rescue-20260810`, directly based on `origin/main` `afb02e6b0a` with no main-only commits.
+
+Closing slices standardized sister-app Avalonia startup and packaging smoke execution, centralized platform
+print-service selection and FreeW command registration, retired the FreeP WPF ribbon adapter, extracted FreeP
+Custom Show/media-pane coordination, moved ribbon menu icons and FreeX static menu IDs into declarative metadata,
+converged localized planner adapters, removed dead reflective/pass-through facades, replaced high-volume test
+reflection with typed tool-host access, centralized FreeX shortcut aliases, and removed the final FreeX ribbon
+renderer facade.
+
+Three fresh final audits independently found no P0-P2 practical production dedup scope in FreeX, FreeW/FreeP,
+or the cross-app frame. Residual matches are native controls/events/focus/drawing/accessibility/media/window
+realization, format/product semantics, or tiny composition roots where another abstraction would add more API
+than it removes.
+
+Deterministic metrics report 249,346 renderer LOC and a net renderer reduction of **113,631 C# lines** versus
+the merge base. Exact cross-root coverage is 3.189945%; normalized coverage is 3.364000%. The measurement
+self-test and repository check mode pass. Focused closing-slice verification includes 113 localized-planner tests,
+159 semantic-ribbon tests, 26 facade tests, 11 ribbon ownership tests, successful FreeW dialog harness builds,
+and clean WPF/Avalonia test-host builds. Repository-wide and exact FreeX WPF visual gates remain active before
+`main` promotion.
+
+---
+
 ## Dedup implementation scope exhausted - FINAL GATES ACTIVE (2026-08-11)
 
 **Code checkpoint:** `662e17e38556c178efe21c3333ef47d52d214d31` on

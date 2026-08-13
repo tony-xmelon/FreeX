@@ -1,8 +1,8 @@
 # FreeFamily Unification Program
 
-> **Status (2026-08-10):** the foundational program has landed and the current renderer/workflow dedup
-> campaign is still active at integrated checkpoint `42e6ca0ca5`. Dated execution evidence is in `LOG.md`;
-> generated residual measurement still describes the older `ad82671328` checkpoint until final regeneration.
+> **Status (2026-08-13):** practical renderer/workflow dedup scope is exhausted at implementation checkpoint
+> `b9661deea0`; synchronized build, test, visual-parity, and `main` promotion gates are active. Dated execution
+> evidence is in `LOG.md`, and generated residual measurement describes this exact implementation checkpoint.
 > **Goal:** maximize what is shared across FreeX (spreadsheet), FreeW (word processor), and FreeP
 > (presentations), leaving WPF and Avalonia as thin native renderers over focused app workareas.
 
@@ -37,9 +37,9 @@ plus its WPF/Avalonia leaves.
 
 Pattern in use throughout: **neutral model (POCO/planner) + thin per-platform renderer**, with interface seams (`IRibbonRenderer`, `IUserMessageService`, `IBackstageStrings`, `IApplicationDataPathProvider`, …) implemented once per host.
 
-## Active campaign checkpoint
+## Final campaign checkpoint
 
-The continuation integrated through `42e6ca0ca5` adds shared desktop URI launching, OOXML protection hashing,
+The completed continuation through `b9661deea0` adds shared desktop URI launching, OOXML protection hashing,
 Legal Notices presentation, directional-arrowhead/WordArt policies, and further product-portable ownership:
 
 - FreeX renderer integration and core spreadsheet policies, plus the first typed localized validation
@@ -48,10 +48,11 @@ Legal Notices presentation, directional-arrowhead/WordArt policies, and further 
   workflow contracts; and
 - FreeP canvas/table layout, Backstage/file lifecycle, pane/workarea semantics, and header/footer dialog state.
 
-The campaign is not yet exhausted. The active audit still covers FreeX validation/semantic-text adoption,
-FreeW equation/list/table-grid/heading/selection projection and adoption holes, and FreeP slideshow/media/OLE
-orchestration plus remaining semantic projection. See the [dated campaign report](DEDUP-EXHAUSTION-2026-08-09.md)
-for the exact verification ledger and residual categories.
+Closing waves also converged sister-app startup, print-service selection, packaging-smoke execution, ribbon menu
+metadata and semantic IDs, localized planner resources, typed test access, and shortcut aliases. Three independent
+final audits found no remaining P0-P2 portable policy duplication. See the
+[dated campaign report](DEDUP-EXHAUSTION-2026-08-09.md) for the exact verification ledger, metrics, and residual
+native-renderer classifications.
 
 ## Governance principles (how we avoid divergence)
 
