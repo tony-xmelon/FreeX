@@ -29,23 +29,23 @@
                    },
     "repository":  {
                        "analysisRevision":  "HEAD",
-                       "analysisCommit":  "b9661deea09a048a4931b872d84a47ea1e83642a",
-                       "upstreamRevision":  "origin/main",
+                       "analysisCommit":  "330c37305442eae39f1be3dfc606563b09d02d66",
+                       "upstreamRevision":  "afb02e6b0af25250fdfa46e0a6900ea6c7f72d31",
                        "upstreamCommit":  "afb02e6b0af25250fdfa46e0a6900ea6c7f72d31",
                        "mergeBaseCommit":  "afb02e6b0af25250fdfa46e0a6900ea6c7f72d31",
-                       "inputTreeSha256":  "76aa40d4c935bcd77b74439359d670f759ab988a23b228a5dea91cb968ad198e",
+                       "inputTreeSha256":  "dfa59e994fbf08c40927745e11d4703dd8e5388cf6bc8e69f859949951e2eefa",
                        "campaignLocDelta":  {
                                                 "allCSharp":  {
-                                                                  "filesChanged":  3909,
-                                                                  "addedLines":  273791,
-                                                                  "deletedLines":  174305,
-                                                                  "netLines":  99486
+                                                                  "filesChanged":  4003,
+                                                                  "addedLines":  278849,
+                                                                  "deletedLines":  175507,
+                                                                  "netLines":  103342
                                                               },
                                                 "rendererCSharp":  {
-                                                                       "filesChanged":  789,
-                                                                       "addedLines":  44954,
-                                                                       "deletedLines":  158585,
-                                                                       "netLines":  -113631
+                                                                       "filesChanged":  790,
+                                                                       "addedLines":  45595,
+                                                                       "deletedLines":  158628,
+                                                                       "netLines":  -113033
                                                                    }
                                             }
                    },
@@ -57,9 +57,9 @@
                                        "platform":  "WPF",
                                        "path":  "src/FreeX.App.Host",
                                        "fileCount":  281,
-                                       "physicalLines":  72212,
-                                       "nonBlankLines":  63254,
-                                       "codeLines":  59578
+                                       "physicalLines":  72184,
+                                       "nonBlankLines":  63228,
+                                       "codeLines":  59553
                                    },
                                    {
                                        "id":  "FreeX.Avalonia",
@@ -67,9 +67,9 @@
                                        "platform":  "Avalonia",
                                        "path":  "src/FreeX.App.Avalonia",
                                        "fileCount":  163,
-                                       "physicalLines":  79726,
-                                       "nonBlankLines":  71032,
-                                       "codeLines":  65280
+                                       "physicalLines":  79732,
+                                       "nonBlankLines":  71037,
+                                       "codeLines":  65285
                                    },
                                    {
                                        "id":  "FreeW.Wpf",
@@ -77,9 +77,9 @@
                                        "platform":  "WPF",
                                        "path":  "freew/FreeW.App.Host",
                                        "fileCount":  103,
-                                       "physicalLines":  51359,
-                                       "nonBlankLines":  46101,
-                                       "codeLines":  39299
+                                       "physicalLines":  51267,
+                                       "nonBlankLines":  46020,
+                                       "codeLines":  39232
                                    },
                                    {
                                        "id":  "FreeW.Avalonia",
@@ -87,9 +87,9 @@
                                        "platform":  "Avalonia",
                                        "path":  "freew/FreeW.App.Avalonia",
                                        "fileCount":  85,
-                                       "physicalLines":  50702,
-                                       "nonBlankLines":  45437,
-                                       "codeLines":  41481
+                                       "physicalLines":  51414,
+                                       "nonBlankLines":  46088,
+                                       "codeLines":  42125
                                    },
                                    {
                                        "id":  "FreeP.Wpf.App",
@@ -134,15 +134,15 @@
                                ],
                      "totals":  {
                                     "fileCount":  760,
-                                    "physicalLines":  305649,
-                                    "nonBlankLines":  271767,
-                                    "codeLines":  249346
+                                    "physicalLines":  306247,
+                                    "nonBlankLines":  272316,
+                                    "codeLines":  249903
                                 },
                      "duplicateCoverage":  {
                                                "exact":  {
-                                                             "codeLines":  249346,
+                                                             "codeLines":  249903,
                                                              "duplicateLines":  7954,
-                                                             "percent":  3.189945,
+                                                             "percent":  3.182835,
                                                              "byRoot":  [
                                                                             {
                                                                                 "rootId":  "FreeP.Avalonia.App",
@@ -170,34 +170,34 @@
                                                                             },
                                                                             {
                                                                                 "rootId":  "FreeW.Avalonia",
-                                                                                "codeLines":  41481,
+                                                                                "codeLines":  42125,
                                                                                 "duplicateLines":  463,
-                                                                                "coveragePercent":  1.116174
+                                                                                "coveragePercent":  1.09911
                                                                             },
                                                                             {
                                                                                 "rootId":  "FreeW.Wpf",
-                                                                                "codeLines":  39299,
+                                                                                "codeLines":  39232,
                                                                                 "duplicateLines":  436,
-                                                                                "coveragePercent":  1.109443
+                                                                                "coveragePercent":  1.111338
                                                                             },
                                                                             {
                                                                                 "rootId":  "FreeX.Avalonia",
-                                                                                "codeLines":  65280,
+                                                                                "codeLines":  65285,
                                                                                 "duplicateLines":  121,
-                                                                                "coveragePercent":  0.185355
+                                                                                "coveragePercent":  0.185341
                                                                             },
                                                                             {
                                                                                 "rootId":  "FreeX.Wpf",
-                                                                                "codeLines":  59578,
+                                                                                "codeLines":  59553,
                                                                                 "duplicateLines":  109,
-                                                                                "coveragePercent":  0.182953
+                                                                                "coveragePercent":  0.18303
                                                                             }
                                                                         ]
                                                          },
                                                "normalized":  {
-                                                                  "codeLines":  249346,
+                                                                  "codeLines":  249903,
                                                                   "duplicateLines":  8388,
-                                                                  "percent":  3.364,
+                                                                  "percent":  3.356502,
                                                                   "byRoot":  [
                                                                                  {
                                                                                      "rootId":  "FreeP.Avalonia.App",
@@ -225,27 +225,27 @@
                                                                                  },
                                                                                  {
                                                                                      "rootId":  "FreeW.Avalonia",
-                                                                                     "codeLines":  41481,
+                                                                                     "codeLines":  42125,
                                                                                      "duplicateLines":  475,
-                                                                                     "coveragePercent":  1.145103
+                                                                                     "coveragePercent":  1.127596
                                                                                  },
                                                                                  {
                                                                                      "rootId":  "FreeW.Wpf",
-                                                                                     "codeLines":  39299,
+                                                                                     "codeLines":  39232,
                                                                                      "duplicateLines":  436,
-                                                                                     "coveragePercent":  1.109443
+                                                                                     "coveragePercent":  1.111338
                                                                                  },
                                                                                  {
                                                                                      "rootId":  "FreeX.Avalonia",
-                                                                                     "codeLines":  65280,
+                                                                                     "codeLines":  65285,
                                                                                      "duplicateLines":  135,
-                                                                                     "coveragePercent":  0.206801
+                                                                                     "coveragePercent":  0.206786
                                                                                  },
                                                                                  {
                                                                                      "rootId":  "FreeX.Wpf",
-                                                                                     "codeLines":  59578,
+                                                                                     "codeLines":  59553,
                                                                                      "duplicateLines":  123,
-                                                                                     "coveragePercent":  0.206452
+                                                                                     "coveragePercent":  0.206539
                                                                                  }
                                                                              ]
                                                               }
@@ -563,8 +563,8 @@
                                                                "endLineA":  931,
                                                                "rootB":  "FreeW.Wpf",
                                                                "fileB":  "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
-                                                               "startLineB":  4960,
-                                                               "endLineB":  4996,
+                                                               "startLineB":  4951,
+                                                               "endLineB":  4987,
                                                                "sourceLineCount":  33,
                                                                "normalizedCharacterCount":  1308
                                                            },
@@ -676,12 +676,12 @@
                                                                "mode":  "exact",
                                                                "rootA":  "FreeW.Avalonia",
                                                                "fileA":  "freew/FreeW.App.Avalonia/MainWindow.cs",
-                                                               "startLineA":  1619,
-                                                               "endLineA":  1650,
+                                                               "startLineA":  1633,
+                                                               "endLineA":  1664,
                                                                "rootB":  "FreeW.Wpf",
                                                                "fileB":  "freew/FreeW.App.Host/MainWindow.cs",
-                                                               "startLineB":  2516,
-                                                               "endLineB":  2547,
+                                                               "startLineB":  2520,
+                                                               "endLineB":  2551,
                                                                "sourceLineCount":  29,
                                                                "normalizedCharacterCount":  1175
                                                            },
@@ -1183,8 +1183,8 @@
                                                                "mode":  "exact",
                                                                "rootA":  "FreeW.Avalonia",
                                                                "fileA":  "freew/FreeW.App.Avalonia/Editing/DocumentView.cs",
-                                                               "startLineA":  15915,
-                                                               "endLineA":  15935,
+                                                               "startLineA":  16556,
+                                                               "endLineA":  16576,
                                                                "rootB":  "FreeW.Wpf",
                                                                "fileB":  "freew/FreeW.App.Host/Editing/DocumentView.cs",
                                                                "startLineB":  764,
@@ -1534,8 +1534,8 @@
                                                                "mode":  "exact",
                                                                "rootA":  "FreeX.Avalonia",
                                                                "fileA":  "src/FreeX.App.Avalonia/MainWindow.cs",
-                                                               "startLineA":  9484,
-                                                               "endLineA":  9502,
+                                                               "startLineA":  9486,
+                                                               "endLineA":  9504,
                                                                "rootB":  "FreeX.Wpf",
                                                                "fileB":  "src/FreeX.App.Host/MainWindow.FormulaReferenceEditing.cs",
                                                                "startLineB":  169,
@@ -1759,8 +1759,8 @@
                                                                "endLineA":  7135,
                                                                "rootB":  "FreeW.Avalonia",
                                                                "fileB":  "freew/FreeW.App.Avalonia/MainWindow.cs",
-                                                               "startLineB":  2856,
-                                                               "endLineB":  2871,
+                                                               "startLineB":  2870,
+                                                               "endLineB":  2885,
                                                                "sourceLineCount":  15,
                                                                "normalizedCharacterCount":  365
                                                            },
@@ -2431,8 +2431,8 @@
                                                                "mode":  "exact",
                                                                "rootA":  "FreeW.Avalonia",
                                                                "fileA":  "freew/FreeW.App.Avalonia/Editing/DocumentView.cs",
-                                                               "startLineA":  10328,
-                                                               "endLineA":  10342,
+                                                               "startLineA":  10619,
+                                                               "endLineA":  10633,
                                                                "rootB":  "FreeW.Wpf",
                                                                "fileB":  "freew/FreeW.App.Host/Editing/PageBorderArtWpfRenderer.cs",
                                                                "startLineB":  41,
@@ -2461,8 +2461,8 @@
                                                                "endLineA":  492,
                                                                "rootB":  "FreeW.Wpf",
                                                                "fileB":  "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
-                                                               "startLineB":  6508,
-                                                               "endLineB":  6521,
+                                                               "startLineB":  6499,
+                                                               "endLineB":  6512,
                                                                "sourceLineCount":  13,
                                                                "normalizedCharacterCount":  424
                                                            },
@@ -2470,12 +2470,12 @@
                                                                "mode":  "exact",
                                                                "rootA":  "FreeW.Avalonia",
                                                                "fileA":  "freew/FreeW.App.Avalonia/MainWindow.cs",
-                                                               "startLineA":  1695,
-                                                               "endLineA":  1709,
+                                                               "startLineA":  1709,
+                                                               "endLineA":  1723,
                                                                "rootB":  "FreeW.Wpf",
                                                                "fileB":  "freew/FreeW.App.Host/MainWindow.cs",
-                                                               "startLineB":  2592,
-                                                               "endLineB":  2606,
+                                                               "startLineB":  2596,
+                                                               "endLineB":  2610,
                                                                "sourceLineCount":  13,
                                                                "normalizedCharacterCount":  516
                                                            },
@@ -2483,8 +2483,8 @@
                                                                "mode":  "exact",
                                                                "rootA":  "FreeX.Avalonia",
                                                                "fileA":  "src/FreeX.App.Avalonia/MainWindow.cs",
-                                                               "startLineA":  24597,
-                                                               "endLineA":  24609,
+                                                               "startLineA":  24598,
+                                                               "endLineA":  24610,
                                                                "rootB":  "FreeX.Wpf",
                                                                "fileB":  "src/FreeX.App.Host/MainWindow.HomeFormatting.cs",
                                                                "startLineB":  285,
@@ -2496,8 +2496,8 @@
                                                                "mode":  "exact",
                                                                "rootA":  "FreeX.Avalonia",
                                                                "fileA":  "src/FreeX.App.Avalonia/MainWindow.cs",
-                                                               "startLineA":  24679,
-                                                               "endLineA":  24692,
+                                                               "startLineA":  24680,
+                                                               "endLineA":  24693,
                                                                "rootB":  "FreeX.Wpf",
                                                                "fileB":  "src/FreeX.App.Host/MainWindow.HomeFormatting.cs",
                                                                "startLineB":  371,
@@ -2743,8 +2743,8 @@
                                                                "mode":  "exact",
                                                                "rootA":  "FreeW.Avalonia",
                                                                "fileA":  "freew/FreeW.App.Avalonia/Editing/DocumentView.cs",
-                                                               "startLineA":  10299,
-                                                               "endLineA":  10310,
+                                                               "startLineA":  10590,
+                                                               "endLineA":  10601,
                                                                "rootB":  "FreeW.Wpf",
                                                                "fileB":  "freew/FreeW.App.Host/Editing/PageBorderArtWpfRenderer.cs",
                                                                "startLineB":  11,
@@ -2756,12 +2756,12 @@
                                                                "mode":  "exact",
                                                                "rootA":  "FreeW.Avalonia",
                                                                "fileA":  "freew/FreeW.App.Avalonia/Editing/DocumentView.cs",
-                                                               "startLineA":  20905,
-                                                               "endLineA":  20918,
+                                                               "startLineA":  21569,
+                                                               "endLineA":  21582,
                                                                "rootB":  "FreeW.Wpf",
                                                                "fileB":  "freew/FreeW.App.Host/Editing/DocumentView.cs",
-                                                               "startLineB":  3634,
-                                                               "endLineB":  3647,
+                                                               "startLineB":  3635,
+                                                               "endLineB":  3648,
                                                                "sourceLineCount":  12,
                                                                "normalizedCharacterCount":  209
                                                            },
@@ -2808,8 +2808,8 @@
                                                                "mode":  "exact",
                                                                "rootA":  "FreeX.Avalonia",
                                                                "fileA":  "src/FreeX.App.Avalonia/MainWindow.cs",
-                                                               "startLineA":  10753,
-                                                               "endLineA":  10766,
+                                                               "startLineA":  10755,
+                                                               "endLineA":  10768,
                                                                "rootB":  "FreeX.Wpf",
                                                                "fileB":  "src/FreeX.App.Host/MainWindow.Editing.cs",
                                                                "startLineB":  362,
@@ -2821,8 +2821,8 @@
                                                                "mode":  "exact",
                                                                "rootA":  "FreeX.Avalonia",
                                                                "fileA":  "src/FreeX.App.Avalonia/MainWindow.cs",
-                                                               "startLineA":  26095,
-                                                               "endLineA":  26106,
+                                                               "startLineA":  26096,
+                                                               "endLineA":  26107,
                                                                "rootB":  "FreeX.Wpf",
                                                                "fileB":  "src/FreeX.App.Host/ExcelWorksheetNavigationPlanner.cs",
                                                                "startLineB":  103,
@@ -3189,8 +3189,8 @@
                                                                     "endLineA":  931,
                                                                     "rootB":  "FreeW.Wpf",
                                                                     "fileB":  "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
-                                                                    "startLineB":  4960,
-                                                                    "endLineB":  4996,
+                                                                    "startLineB":  4951,
+                                                                    "endLineB":  4987,
                                                                     "sourceLineCount":  33,
                                                                     "normalizedCharacterCount":  1295,
                                                                     "exactEquivalent":  true
@@ -3325,12 +3325,12 @@
                                                                     "mode":  "normalized",
                                                                     "rootA":  "FreeW.Avalonia",
                                                                     "fileA":  "freew/FreeW.App.Avalonia/MainWindow.cs",
-                                                                    "startLineA":  1619,
-                                                                    "endLineA":  1650,
+                                                                    "startLineA":  1633,
+                                                                    "endLineA":  1664,
                                                                     "rootB":  "FreeW.Wpf",
                                                                     "fileB":  "freew/FreeW.App.Host/MainWindow.cs",
-                                                                    "startLineB":  2516,
-                                                                    "endLineB":  2547,
+                                                                    "startLineB":  2520,
+                                                                    "endLineB":  2551,
                                                                     "sourceLineCount":  29,
                                                                     "normalizedCharacterCount":  1200,
                                                                     "exactEquivalent":  true
@@ -3955,8 +3955,8 @@
                                                                     "mode":  "normalized",
                                                                     "rootA":  "FreeW.Avalonia",
                                                                     "fileA":  "freew/FreeW.App.Avalonia/Editing/DocumentView.cs",
-                                                                    "startLineA":  15915,
-                                                                    "endLineA":  15935,
+                                                                    "startLineA":  16556,
+                                                                    "endLineA":  16576,
                                                                     "rootB":  "FreeW.Wpf",
                                                                     "fileB":  "freew/FreeW.App.Host/Editing/DocumentView.cs",
                                                                     "startLineB":  764,
@@ -4305,8 +4305,8 @@
                                                                     "mode":  "normalized",
                                                                     "rootA":  "FreeX.Avalonia",
                                                                     "fileA":  "src/FreeX.App.Avalonia/MainWindow.cs",
-                                                                    "startLineA":  9484,
-                                                                    "endLineA":  9502,
+                                                                    "startLineA":  9486,
+                                                                    "endLineA":  9504,
                                                                     "rootB":  "FreeX.Wpf",
                                                                     "fileB":  "src/FreeX.App.Host/MainWindow.FormulaReferenceEditing.cs",
                                                                     "startLineB":  169,
@@ -4561,8 +4561,8 @@
                                                                     "endLineA":  7135,
                                                                     "rootB":  "FreeW.Avalonia",
                                                                     "fileB":  "freew/FreeW.App.Avalonia/MainWindow.cs",
-                                                                    "startLineB":  2856,
-                                                                    "endLineB":  2871,
+                                                                    "startLineB":  2870,
+                                                                    "endLineB":  2885,
                                                                     "sourceLineCount":  15,
                                                                     "normalizedCharacterCount":  349,
                                                                     "exactEquivalent":  true
@@ -4893,8 +4893,8 @@
                                                                     "mode":  "normalized",
                                                                     "rootA":  "FreeX.Avalonia",
                                                                     "fileA":  "src/FreeX.App.Avalonia/MainWindow.cs",
-                                                                    "startLineA":  10793,
-                                                                    "endLineA":  10807,
+                                                                    "startLineA":  10795,
+                                                                    "endLineA":  10809,
                                                                     "rootB":  "FreeX.Wpf",
                                                                     "fileB":  "src/FreeX.App.Host/MainWindow.Editing.cs",
                                                                     "startLineB":  402,
@@ -5187,8 +5187,8 @@
                                                                     "mode":  "normalized",
                                                                     "rootA":  "FreeW.Avalonia",
                                                                     "fileA":  "freew/FreeW.App.Avalonia/Editing/DocumentView.cs",
-                                                                    "startLineA":  10328,
-                                                                    "endLineA":  10342,
+                                                                    "startLineA":  10619,
+                                                                    "endLineA":  10633,
                                                                     "rootB":  "FreeW.Wpf",
                                                                     "fileB":  "freew/FreeW.App.Host/Editing/PageBorderArtWpfRenderer.cs",
                                                                     "startLineB":  41,
@@ -5205,8 +5205,8 @@
                                                                     "endLineA":  492,
                                                                     "rootB":  "FreeW.Wpf",
                                                                     "fileB":  "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
-                                                                    "startLineB":  6508,
-                                                                    "endLineB":  6521,
+                                                                    "startLineB":  6499,
+                                                                    "endLineB":  6512,
                                                                     "sourceLineCount":  13,
                                                                     "normalizedCharacterCount":  416,
                                                                     "exactEquivalent":  true
@@ -5215,12 +5215,12 @@
                                                                     "mode":  "normalized",
                                                                     "rootA":  "FreeW.Avalonia",
                                                                     "fileA":  "freew/FreeW.App.Avalonia/MainWindow.cs",
-                                                                    "startLineA":  1695,
-                                                                    "endLineA":  1709,
+                                                                    "startLineA":  1709,
+                                                                    "endLineA":  1723,
                                                                     "rootB":  "FreeW.Wpf",
                                                                     "fileB":  "freew/FreeW.App.Host/MainWindow.cs",
-                                                                    "startLineB":  2592,
-                                                                    "endLineB":  2606,
+                                                                    "startLineB":  2596,
+                                                                    "endLineB":  2610,
                                                                     "sourceLineCount":  13,
                                                                     "normalizedCharacterCount":  494,
                                                                     "exactEquivalent":  true
@@ -5229,8 +5229,8 @@
                                                                     "mode":  "normalized",
                                                                     "rootA":  "FreeX.Avalonia",
                                                                     "fileA":  "src/FreeX.App.Avalonia/MainWindow.cs",
-                                                                    "startLineA":  24597,
-                                                                    "endLineA":  24609,
+                                                                    "startLineA":  24598,
+                                                                    "endLineA":  24610,
                                                                     "rootB":  "FreeX.Wpf",
                                                                     "fileB":  "src/FreeX.App.Host/MainWindow.HomeFormatting.cs",
                                                                     "startLineB":  285,
@@ -5243,8 +5243,8 @@
                                                                     "mode":  "normalized",
                                                                     "rootA":  "FreeX.Avalonia",
                                                                     "fileA":  "src/FreeX.App.Avalonia/MainWindow.cs",
-                                                                    "startLineA":  24679,
-                                                                    "endLineA":  24692,
+                                                                    "startLineA":  24680,
+                                                                    "endLineA":  24693,
                                                                     "rootB":  "FreeX.Wpf",
                                                                     "fileB":  "src/FreeX.App.Host/MainWindow.HomeFormatting.cs",
                                                                     "startLineB":  371,
@@ -5387,8 +5387,8 @@
                                                                     "endLineA":  7581,
                                                                     "rootB":  "FreeW.Avalonia",
                                                                     "fileB":  "freew/FreeW.App.Avalonia/MainWindow.cs",
-                                                                    "startLineB":  2889,
-                                                                    "endLineB":  2901,
+                                                                    "startLineB":  2903,
+                                                                    "endLineB":  2915,
                                                                     "sourceLineCount":  12,
                                                                     "normalizedCharacterCount":  404,
                                                                     "exactEquivalent":  false
@@ -5579,8 +5579,8 @@
                                                                     "mode":  "normalized",
                                                                     "rootA":  "FreeW.Avalonia",
                                                                     "fileA":  "freew/FreeW.App.Avalonia/Editing/DocumentView.cs",
-                                                                    "startLineA":  10299,
-                                                                    "endLineA":  10310,
+                                                                    "startLineA":  10590,
+                                                                    "endLineA":  10601,
                                                                     "rootB":  "FreeW.Wpf",
                                                                     "fileB":  "freew/FreeW.App.Host/Editing/PageBorderArtWpfRenderer.cs",
                                                                     "startLineB":  11,
@@ -5593,12 +5593,12 @@
                                                                     "mode":  "normalized",
                                                                     "rootA":  "FreeW.Avalonia",
                                                                     "fileA":  "freew/FreeW.App.Avalonia/Editing/DocumentView.cs",
-                                                                    "startLineA":  20905,
-                                                                    "endLineA":  20918,
+                                                                    "startLineA":  21569,
+                                                                    "endLineA":  21582,
                                                                     "rootB":  "FreeW.Wpf",
                                                                     "fileB":  "freew/FreeW.App.Host/Editing/DocumentView.cs",
-                                                                    "startLineB":  3634,
-                                                                    "endLineB":  3647,
+                                                                    "startLineB":  3635,
+                                                                    "endLineB":  3648,
                                                                     "sourceLineCount":  12,
                                                                     "normalizedCharacterCount":  203,
                                                                     "exactEquivalent":  true
@@ -5663,8 +5663,8 @@
                                                                     "mode":  "normalized",
                                                                     "rootA":  "FreeX.Avalonia",
                                                                     "fileA":  "src/FreeX.App.Avalonia/MainWindow.cs",
-                                                                    "startLineA":  10753,
-                                                                    "endLineA":  10766,
+                                                                    "startLineA":  10755,
+                                                                    "endLineA":  10768,
                                                                     "rootB":  "FreeX.Wpf",
                                                                     "fileB":  "src/FreeX.App.Host/MainWindow.Editing.cs",
                                                                     "startLineB":  362,
@@ -5677,8 +5677,8 @@
                                                                     "mode":  "normalized",
                                                                     "rootA":  "FreeX.Avalonia",
                                                                     "fileA":  "src/FreeX.App.Avalonia/MainWindow.cs",
-                                                                    "startLineA":  26095,
-                                                                    "endLineA":  26106,
+                                                                    "startLineA":  26096,
+                                                                    "endLineA":  26107,
                                                                     "rootB":  "FreeX.Wpf",
                                                                     "fileB":  "src/FreeX.App.Host/ExcelWorksheetNavigationPlanner.cs",
                                                                     "startLineB":  103,
@@ -7030,20 +7030,20 @@
                                    {
                                        "rootId":  "FreeW.Avalonia",
                                        "path":  "freew/FreeW.App.Avalonia/Editing/DocumentView.AutomationSemantics.cs",
-                                       "physicalLines":  560,
-                                       "nonBlankLines":  532,
-                                       "codeLines":  532,
-                                       "sha256":  "a1bc661ea2d4d0cb142fee37be757afdff513a41761aaca601d3982355cf02a2",
-                                       "normalizedSha256":  "c32dd6108429afa70ec2ee889a9141ba3b020c47d2fff59dd28d7f19e8f96015"
+                                       "physicalLines":  567,
+                                       "nonBlankLines":  539,
+                                       "codeLines":  539,
+                                       "sha256":  "efcc74c47881e182b92044b71d46f7f86583c418122f4bbae8adf37099c5ba85",
+                                       "normalizedSha256":  "6bad2ea745f65b061efaeb7291851abf561c8158874d21a6a651efb657ea3bd3"
                                    },
                                    {
                                        "rootId":  "FreeW.Avalonia",
                                        "path":  "freew/FreeW.App.Avalonia/Editing/DocumentView.cs",
-                                       "physicalLines":  24480,
-                                       "nonBlankLines":  22037,
-                                       "codeLines":  19353,
-                                       "sha256":  "d70605790c6a8a90c43d08842b83a988ea31528036c9d22b58e1507df0b1c5ae",
-                                       "normalizedSha256":  "803d426d02a04bbfb54a5b50f6b0b8906c72e3e051e6dc7587fed75f4de4c4f2"
+                                       "physicalLines":  25158,
+                                       "nonBlankLines":  22655,
+                                       "codeLines":  19964,
+                                       "sha256":  "d5aab558f8ff60f4825583f7dc44555cd3bf893875be1ccf9d5eb002659458f4",
+                                       "normalizedSha256":  "f171929d8d08727d50e16f71612a9c496b1688731d1b111ce48963e48f21a8a8"
                                    },
                                    {
                                        "rootId":  "FreeW.Avalonia",
@@ -7210,11 +7210,11 @@
                                    {
                                        "rootId":  "FreeW.Avalonia",
                                        "path":  "freew/FreeW.App.Avalonia/MainWindow.cs",
-                                       "physicalLines":  4050,
-                                       "nonBlankLines":  3639,
-                                       "codeLines":  3424,
-                                       "sha256":  "12f5bce68c70e39a75e07b052b6aaf0b349565388ed539bd030d7b986b92aeaf",
-                                       "normalizedSha256":  "69ad43570089fa8e0833fe81d0d7cd3a6571947265d5d23ca3393a9a41af95c9"
+                                       "physicalLines":  4075,
+                                       "nonBlankLines":  3663,
+                                       "codeLines":  3448,
+                                       "sha256":  "7e8a1bb2d96c6c5aae5e52f09e6263afefec2bf2e8f9c282b6da05c54bc11c5a",
+                                       "normalizedSha256":  "739f41bf5c509fcd2e049fb42364e36189754c03890c3e6e12dfeec9ab46e130"
                                    },
                                    {
                                        "rootId":  "FreeW.Avalonia",
@@ -7453,11 +7453,11 @@
                                    {
                                        "rootId":  "FreeW.Avalonia",
                                        "path":  "freew/FreeW.App.Avalonia/ReviewingPane.cs",
-                                       "physicalLines":  339,
-                                       "nonBlankLines":  294,
-                                       "codeLines":  243,
-                                       "sha256":  "1b37aac18c38a810c0e632f08f3fa0090fcf25c96c4fe027606a8e466c8c2e0d",
-                                       "normalizedSha256":  "6813f192a10eeb0f6964adc9b6b821892a56e774eb3f80907cc0e91011ea45a6"
+                                       "physicalLines":  341,
+                                       "nonBlankLines":  296,
+                                       "codeLines":  245,
+                                       "sha256":  "3690a7dc771268212f3f826d19d655379d7e075370cfd21d421fed41057f120e",
+                                       "normalizedSha256":  "8c2e0ff1e520dd759c32fdcc72abb794d462ede68f1b704be7203baa976372e7"
                                    },
                                    {
                                        "rootId":  "FreeW.Avalonia",
@@ -7867,11 +7867,11 @@
                                    {
                                        "rootId":  "FreeW.Wpf",
                                        "path":  "freew/FreeW.App.Host/Editing/DocumentView.cs",
-                                       "physicalLines":  17873,
-                                       "nonBlankLines":  16191,
-                                       "codeLines":  13203,
-                                       "sha256":  "327e52007028e196bb6092832ef74e0146d4c0307cd7e742eaf2e139b81aa006",
-                                       "normalizedSha256":  "52477d0fff188f23f10eb3fd95613c8828b07b4e1d53b08f03ddbc8231cdde80"
+                                       "physicalLines":  17832,
+                                       "nonBlankLines":  16154,
+                                       "codeLines":  13174,
+                                       "sha256":  "cf1f59168c2b07bb4a6eedf83daab46750317e46784023b0d930403b1545e978",
+                                       "normalizedSha256":  "dac05cee1739e0f5352c0bf868cf070254b796a7216ab2dd3d35c758ac8d2850"
                                    },
                                    {
                                        "rootId":  "FreeW.Wpf",
@@ -7939,11 +7939,11 @@
                                    {
                                        "rootId":  "FreeW.Wpf",
                                        "path":  "freew/FreeW.App.Host/Editing/Ruler.cs",
-                                       "physicalLines":  679,
-                                       "nonBlankLines":  594,
-                                       "codeLines":  500,
-                                       "sha256":  "f299a200bda165ab7cb43816417b051405f4881f144ac4cdb81293b34dc14180",
-                                       "normalizedSha256":  "fbbfadcd08b89d99c0fefc4e145a15f13ba6fd7e39b8faa5e79eb16a908e7343"
+                                       "physicalLines":  631,
+                                       "nonBlankLines":  554,
+                                       "codeLines":  463,
+                                       "sha256":  "5f8a6cfb9aba1e0f0050b3b77e7d31c54e38780ece3f1241d222b04736378f5c",
+                                       "normalizedSha256":  "4e387affd27e4186d34e24f5db7027518172690200686946e323a3356bb57531"
                                    },
                                    {
                                        "rootId":  "FreeW.Wpf",
@@ -8002,11 +8002,11 @@
                                    {
                                        "rootId":  "FreeW.Wpf",
                                        "path":  "freew/FreeW.App.Host/FileCommands.cs",
-                                       "physicalLines":  384,
-                                       "nonBlankLines":  338,
-                                       "codeLines":  264,
-                                       "sha256":  "8cc070baf7be69fc31321916652300a9fc62039cd5e7ce62fc56fd8d3a392f5a",
-                                       "normalizedSha256":  "de6907be77127a3623d1c616547cdacc5a6ca846639e3fb9614ac6a4b67a35cb"
+                                       "physicalLines":  396,
+                                       "nonBlankLines":  348,
+                                       "codeLines":  273,
+                                       "sha256":  "084a3655626d7dfca9ad201dca9aef93b705ffea91ebefe6b61a23a58efe67ad",
+                                       "normalizedSha256":  "b04edabc78525798e9bdc8938680e13b838a56da8ce170d2e7a9660122ef48b6"
                                    },
                                    {
                                        "rootId":  "FreeW.Wpf",
@@ -8164,11 +8164,11 @@
                                    {
                                        "rootId":  "FreeW.Wpf",
                                        "path":  "freew/FreeW.App.Host/MainWindow.cs",
-                                       "physicalLines":  3495,
-                                       "nonBlankLines":  3118,
-                                       "codeLines":  2568,
-                                       "sha256":  "0308de83c51d65bf0807619dd81a5a28b6e9b4343e87522ad343010e855e15ca",
-                                       "normalizedSha256":  "e4e41f5ca55c4d08d5456ea1d1b09990f3a83423cd446c580ab5d1f81963a537"
+                                       "physicalLines":  3497,
+                                       "nonBlankLines":  3120,
+                                       "codeLines":  2571,
+                                       "sha256":  "831fb4992a0fdb391acde67133c83356df3c61c912d4bd22ea8431909cd82564",
+                                       "normalizedSha256":  "eab0cec0949e27aadc0118bf80691c738614edefc5d79c92786c2ae9b8ad07f4"
                                    },
                                    {
                                        "rootId":  "FreeW.Wpf",
@@ -8326,11 +8326,11 @@
                                    {
                                        "rootId":  "FreeW.Wpf",
                                        "path":  "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
-                                       "physicalLines":  8519,
-                                       "nonBlankLines":  7711,
-                                       "codeLines":  6933,
-                                       "sha256":  "734ed66eff1467776bf83998340b84f70ccb99c7c0aaf6a131768026a7d3511a",
-                                       "normalizedSha256":  "77d7a3f4bf2bde728a56f71c6934ec43d9918c18805cf38d6c3a1766c25df9be"
+                                       "physicalLines":  8510,
+                                       "nonBlankLines":  7702,
+                                       "codeLines":  6925,
+                                       "sha256":  "7946bd8506b8e91c945ef659bf4fdfa90231706ccff66779ef3fe0f366a4febd",
+                                       "normalizedSha256":  "a8cc7620fd7abac090649ea7817646a9c8bee14fcdb4023fbe15c530f3b0cedf"
                                    },
                                    {
                                        "rootId":  "FreeW.Wpf",
@@ -8443,11 +8443,11 @@
                                    {
                                        "rootId":  "FreeW.Wpf",
                                        "path":  "freew/FreeW.App.Host/SvgRasterizerHelper.cs",
-                                       "physicalLines":  105,
-                                       "nonBlankLines":  94,
-                                       "codeLines":  70,
-                                       "sha256":  "6ad0f4a1d547809d8c16d9fc6e34755484f25182d0542cea68cddd33871b52be",
-                                       "normalizedSha256":  "cf642fa87a16daaf1af4780062a12c4492c7d69a52c6238c45daa25e9bb2b0e1"
+                                       "physicalLines":  99,
+                                       "nonBlankLines":  89,
+                                       "codeLines":  67,
+                                       "sha256":  "f8bd8ea5d9823c95c334b0f4ccfa68f22daf45910f78a6dbcca74524c79787ad",
+                                       "normalizedSha256":  "79a88a9f2e22be38e9525bbb40e44fe4b5661a9c43c7fa9c604715b989bde02b"
                                    },
                                    {
                                        "rootId":  "FreeW.Wpf",
@@ -8542,11 +8542,11 @@
                                    {
                                        "rootId":  "FreeW.Wpf",
                                        "path":  "freew/FreeW.App.Host/ZoomDialog.cs",
-                                       "physicalLines":  168,
-                                       "nonBlankLines":  148,
-                                       "codeLines":  129,
-                                       "sha256":  "26b5f0b50b9f27acfe64b294bdf746c2829380fbd45085aa60a57c5e197313be",
-                                       "normalizedSha256":  "fe5999231cad1c4097f50cdad8a5a430d07e6888a2eae06e3fcd25a3aa43cdcd"
+                                       "physicalLines":  166,
+                                       "nonBlankLines":  146,
+                                       "codeLines":  127,
+                                       "sha256":  "bb9979a57d825de457a681e8937f2557446e6ecc07fd24ab6355f5f1dbb7bddc",
+                                       "normalizedSha256":  "532d7e996d664be358713d817b5bfad01921011ca990735e5fd74757de2afe07"
                                    },
                                    {
                                        "rootId":  "FreeX.Avalonia",
@@ -8614,11 +8614,11 @@
                                    {
                                        "rootId":  "FreeX.Avalonia",
                                        "path":  "src/FreeX.App.Avalonia/AvaloniaStatusBarCustomizeMenu.cs",
-                                       "physicalLines":  75,
-                                       "nonBlankLines":  64,
-                                       "codeLines":  51,
-                                       "sha256":  "bb52224fbdb2b87773ca69190e5818eaf60513351a374e7c9e7b70c7ffcdea22",
-                                       "normalizedSha256":  "51fb5b941a4912a2db8106cf1515d232731ff810c5eec93ec4df770727bb51ee"
+                                       "physicalLines":  80,
+                                       "nonBlankLines":  68,
+                                       "codeLines":  55,
+                                       "sha256":  "021c7f9422f872ad95e97a7f6bc011e94ba37bf686679ec1e209d027c6942497",
+                                       "normalizedSha256":  "1634bb3fe5a98044e563a381c05ebf32a9855ea4f29cf06d093c1870f1f56642"
                                    },
                                    {
                                        "rootId":  "FreeX.Avalonia",
@@ -8779,7 +8779,7 @@
                                        "physicalLines":  426,
                                        "nonBlankLines":  376,
                                        "codeLines":  376,
-                                       "sha256":  "9819a3edca7885e0e3d34a4a4d6710b6ab07ad481e9095f855b1d7f2ae076c3f",
+                                       "sha256":  "0e6be002553f658370de08d6dd6b0d04e57837786e1c165b090fc300f01a2cd2",
                                        "normalizedSha256":  "c9c7b27f53b8a92ee28a8b77d567a4909a82e9e28c8f19e0d6946cd831fa25a9"
                                    },
                                    {
@@ -8992,11 +8992,11 @@
                                    {
                                        "rootId":  "FreeX.Avalonia",
                                        "path":  "src/FreeX.App.Avalonia/MainWindow.cs",
-                                       "physicalLines":  27987,
-                                       "nonBlankLines":  25063,
-                                       "codeLines":  23177,
-                                       "sha256":  "1fdf7910a0aa50836b862dff7318b667fbbfdbfd34b70bb49933fd4b2e46c341",
-                                       "normalizedSha256":  "3034e9e8a7617607d6b21132ca394c97af1c2258e26ed3d81919fa0981f95692"
+                                       "physicalLines":  27988,
+                                       "nonBlankLines":  25064,
+                                       "codeLines":  23178,
+                                       "sha256":  "29b0380c0288c19a9210f56560b0b01748f5f4d7483f6e4eff183a468c26de53",
+                                       "normalizedSha256":  "30962426a00afd0f6b15a901d8a57051ebadb37b51bc00846e69328e2167f10b"
                                    },
                                    {
                                        "rootId":  "FreeX.Avalonia",
@@ -9040,7 +9040,7 @@
                                        "physicalLines":  527,
                                        "nonBlankLines":  471,
                                        "codeLines":  466,
-                                       "sha256":  "91207cd130f5a585a49656f263b6f91bf7fa20f5f10dca55047f2b9be823cd7d",
+                                       "sha256":  "9fbe119807e1fe794540bfdbc2c92aed8a0a6804ecdd1b4f22facc11ac45105f",
                                        "normalizedSha256":  "84161d05b89c4ab3ebfcfe9268ed2a206379495b7ac8c8a91a94d854514a39c2"
                                    },
                                    {
@@ -10306,11 +10306,11 @@
                                    {
                                        "rootId":  "FreeX.Wpf",
                                        "path":  "src/FreeX.App.Host/ColorPickerDialog.xaml.cs",
-                                       "physicalLines":  354,
-                                       "nonBlankLines":  298,
+                                       "physicalLines":  357,
+                                       "nonBlankLines":  301,
                                        "codeLines":  291,
-                                       "sha256":  "acfc7d3bb7d9f273290138236e652da45d65ad9cd8359fda3e14a9bd53caed6d",
-                                       "normalizedSha256":  "5d7757cc616a1c3b4797a382031fccd81848a15fd8e35a96a3cf7086878e103f"
+                                       "sha256":  "682287ccc4e01a019530ecc7d293f95c1172b323c0ac4de0315242e6de68e19b",
+                                       "normalizedSha256":  "dd0c3033967713d2c4bd26e3dee3fdd543a1951bec8f9d81b215d7bfa0547d0c"
                                    },
                                    {
                                        "rootId":  "FreeX.Wpf",
@@ -10864,11 +10864,11 @@
                                    {
                                        "rootId":  "FreeX.Wpf",
                                        "path":  "src/FreeX.App.Host/MainWindow.CellsCommands.cs",
-                                       "physicalLines":  849,
-                                       "nonBlankLines":  740,
-                                       "codeLines":  630,
-                                       "sha256":  "af2764194a7d90dbb969705c9b4dbf4d2e8cbf079e86989bd08dc839d90e087b",
-                                       "normalizedSha256":  "acb9929efa34b004f1b209b3b937f860af855d3d10fb7602aeb20d9529b50a9b"
+                                       "physicalLines":  862,
+                                       "nonBlankLines":  753,
+                                       "codeLines":  641,
+                                       "sha256":  "cc383491f2679b0a0ee6ca4959d08eada305a7a97ca6a0276e4dc362b013bb73",
+                                       "normalizedSha256":  "8640fc3fb1539f5d5da696b5a21dabd16a0e6b6604fbcbd3a736916e1c4c5ac1"
                                    },
                                    {
                                        "rootId":  "FreeX.Wpf",
@@ -10909,11 +10909,11 @@
                                    {
                                        "rootId":  "FreeX.Wpf",
                                        "path":  "src/FreeX.App.Host/MainWindow.CommandExecution.cs",
-                                       "physicalLines":  500,
-                                       "nonBlankLines":  435,
-                                       "codeLines":  419,
-                                       "sha256":  "2d0ce80f6d2ed26da0d4f4d253f7860844fbbfba6e7ed1c25f680328cf922d62",
-                                       "normalizedSha256":  "23cfe8fe36f8fe45994777f4808dd606802bba9de8e2dcd590b576018022ea18"
+                                       "physicalLines":  519,
+                                       "nonBlankLines":  453,
+                                       "codeLines":  437,
+                                       "sha256":  "5f6fe4b6187fed458d5465381dad3d5597e6efa1ff9a99a4c4958be3b537f573",
+                                       "normalizedSha256":  "c64b470aba49cf3dcf1307ab1bffef0b624f7790a69906eb067f8ec97c8b1580"
                                    },
                                    {
                                        "rootId":  "FreeX.Wpf",
@@ -10939,8 +10939,8 @@
                                        "physicalLines":  438,
                                        "nonBlankLines":  386,
                                        "codeLines":  347,
-                                       "sha256":  "9eee8fc7958ccb04c883f00da3d6257f87aa64f670494acb5a2811383e6cb016",
-                                       "normalizedSha256":  "14c13ca82088038e6ed994a3c861c6d990aca040d98a0da3315e9b47efe3fe6b"
+                                       "sha256":  "9ddbcbbd8102b6b87928bdb53bbf63682533ab53b43140b725ad58e4127d47a0",
+                                       "normalizedSha256":  "a0ac59193342bd6e60ef347d713b837c69906424b43980c673b2409b2ceeb837"
                                    },
                                    {
                                        "rootId":  "FreeX.Wpf",
@@ -11224,11 +11224,11 @@
                                    {
                                        "rootId":  "FreeX.Wpf",
                                        "path":  "src/FreeX.App.Host/MainWindow.PrintExport.cs",
-                                       "physicalLines":  613,
-                                       "nonBlankLines":  553,
-                                       "codeLines":  512,
-                                       "sha256":  "42c85c2af0021ed43a9dea7343e32da427a37ce98a27d8cdcfeb962ee8ad58e1",
-                                       "normalizedSha256":  "4b3a192208fcb8b4e81e033021bfe49aa0e8137614a97f2cf3ed51457bd33904"
+                                       "physicalLines":  550,
+                                       "nonBlankLines":  493,
+                                       "codeLines":  458,
+                                       "sha256":  "391451fb232cada035cc4adf6fa2a18e5ac637fe6f7fbeb61f2609822d788def",
+                                       "normalizedSha256":  "fa61bbba559bc4609179494b916616375a5682d76c2acf057c9bad73b0d7804d"
                                    },
                                    {
                                        "rootId":  "FreeX.Wpf",
@@ -11884,8 +11884,8 @@
                                        "physicalLines":  276,
                                        "nonBlankLines":  241,
                                        "codeLines":  222,
-                                       "sha256":  "66b464cb2372d2d7abae6b65e84c1a76bc9377ea654ac1533fa45aec161b72dd",
-                                       "normalizedSha256":  "ef502df4995b6b4498f92339bf0b3c6241d628a7677c98041090edb99af9a51c"
+                                       "sha256":  "e252743ae210ab03116e5ca200ba18352c4d79a31be792935ca804f498124b5d",
+                                       "normalizedSha256":  "6d70016de9096856135904d03a41f989a1f1c893c1d73387db8db8e38fccf97f"
                                    },
                                    {
                                        "rootId":  "FreeX.Wpf",

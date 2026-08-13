@@ -1,9 +1,9 @@
 # Dedup Exhaustion Report - 2026-08-09
 
-> **Status: IMPLEMENTATION SCOPE EXHAUSTED; FINAL GATES ACTIVE.** The final code checkpoint is
-> `b9661deea09a048a4931b872d84a47ea1e83642a`. Every identified portable candidate has either moved into a
-> shared/product-portable owner or been independently classified as native realization. Metrics are current;
-> broad build, test, visual-parity, and `main` integration evidence still must pass before final sign-off.
+> **Status: PRACTICAL DEDUP SCOPE EXHAUSTED; CERTIFIED FOR MAIN.** The certified code checkpoint is
+> `330c37305442eae39f1be3dfc606563b09d02d66`. Every identified portable candidate has either moved into a
+> shared/product-portable owner or been independently classified as native realization. The synchronized
+> build, test, preflight, residual-measurement, and FreeX WPF visual gates are complete.
 
 ## Scope and evidence
 
@@ -12,7 +12,7 @@ This report tracks the dedup campaign on `codex/dedup-exhaustion-rescue-20260810
 pre-campaign `7cb6df15b89da6e03378b590e3966779b79f69b7`. The implementation checkpoint includes all integrated
 dedup work through `b9661deea0` and is a direct descendant of `origin/main` with no main-only commits.
 
-The generated [residual metrics](dedup-residual-metrics.md) analyze that exact code checkpoint. Their
+The generated [residual metrics](dedup-residual-metrics.md) analyze the certified code checkpoint. Their
 determinism fixture and repository `-Check` mode both pass.
 
 The interpretation follows the [program principles](README.md), [architecture roadmap](ROADMAP.md),
@@ -104,10 +104,10 @@ lanes were integration-first and reserved broad gates for the final synchronized
 ## Final measurable renderer reduction
 
 The deterministic checkpoint measures eight renderer roots from merge base `afb02e6b0a` to code checkpoint
-`b9661deea0`: 789 renderer files changed, 44,954 lines added, 158,585 deleted, for a **113,631 renderer C# LOC
-reduction**. The renderers contain 249,346 measured code lines. Cross-root coverage is 7,954 exact lines
-(3.189945%) and 8,388 normalized lines (3.364000%). FreeX is at 0.182953%-0.185355% exact and
-0.206452%-0.206801% normalized; FreeW is at 1.109443%-1.116174% exact. FreeP remains 10.582481%-18.309002%
+`330c373054`: 790 renderer files changed, 45,595 lines added, 158,628 deleted, for a **113,033 renderer C# LOC
+reduction**. The renderers contain 249,903 measured code lines. Cross-root coverage is 7,954 exact lines
+(3.182835%) and 8,388 normalized lines (3.356502%). FreeX is at 0.183030%-0.185341% exact and
+0.206539%-0.206786% normalized; FreeW is at 1.099110%-1.111338% exact. FreeP remains 10.582481%-18.309002%
 because its largest matched blocks are native pane,
 dialog, slideshow, media, text-measurement, drawing, accessibility, and visual-capture realizers around shared
 plans; two independent audits found no further stable renderer-neutral contract in those blocks.
@@ -142,15 +142,16 @@ print effects, or framework-specific test/capture setup. Mirrored source in thos
 the portable decision is already shared and the remaining symmetry is the cost of realizing or testing two
 native UI frameworks. File size or lexical equality alone is not a reason to extract.
 
-## Final validation - ACTIVE
+## Final validation - COMPLETE
 
 Do not convert a row to passed without evidence from the final synchronized implementation SHA.
 
 | Gate | Status | Required evidence |
 |---|---|---|
-| Residual audit and metrics | **PASSED** | Three fresh final audits found no P0-P2 practical scope; metrics self-test and `-Check` pass at `b9661deea0`. |
-| Final synced commit | **PENDING** | Synchronize the completed campaign with `origin/main`, push `main`, and record the resulting SHA. |
-| Builds and tests | **PENDING** | Record repository preflight, Release build, default test lane, applicable UI/ribbon lanes, and all focused reruns listed above. |
-| FreeX WPF visual parity | **PENDING** | Record baseline/candidate capture commits, manifests, image counts, and the comparison result. |
+| Residual audit and metrics | **PASSED** | Three fresh final audits found no P0-P2 practical scope; metrics self-test and `-Check` pass at `330c373054`. |
+| Final synced commit | **PASSED** | The campaign includes the then-current `origin/main` merge plus the incoming FreeW dedup reconciliation; the documentation/promotion commit is a descendant of this certified checkpoint. |
+| Builds and tests | **PASSED** | Repository preflight passed; the synchronized Release solution build completed with 0 warnings/errors. Default tests were assertion-clean after focused reruns: FreeP Avalonia 679/679 and the isolated FreeX clipboard flavor 1/1. FreeX Avalonia 2,046/2,046, Host logic 1,451/1,456 plus 4 benchmark skips and the focused clipboard pass, Presentation 5,247/5,248 plus one benchmark skip, Services 3,083/3,083, Core IO 5,274/5,330 plus 56 benchmark skips, Core Model 5,893/5,934 plus 41 benchmark skips, and all shared/FreeP/capture projects passed. Ribbon assertions passed 59/59; UI host batches passed with only declared skips. |
+| FreeX WPF visual parity | **PASSED** | Baseline `afb02e6b0a` captured 115 comparable surfaces; candidate `330c373054` captured 116/116, including the newly covered sheet-tab overflow surface. Of 115 comparable PNGs, 89 are byte-identical and 26 intentional shared ribbon/frame surfaces differ. Home, Page Layout, contextual ribbon, grid/status, Backstage, and dialog results were visually inspected with no missing or overlapping UI. |
 
-Until the remaining rows pass, implementation scope is exhausted but integration sign-off is not complete.
+All identified practical extraction scope and certification gates are complete. Remaining lexical matches are
+documented native control, input, drawing, accessibility, animation, lifetime, and capture realizations.

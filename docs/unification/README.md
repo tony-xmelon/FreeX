@@ -1,8 +1,8 @@
 # FreeFamily Unification Program
 
-> **Status (2026-08-13):** practical renderer/workflow dedup scope is exhausted at implementation checkpoint
-> `b9661deea0`; synchronized build, test, visual-parity, and `main` promotion gates are active. Dated execution
-> evidence is in `LOG.md`, and generated residual measurement describes this exact implementation checkpoint.
+> **Status (2026-08-13):** practical renderer/workflow dedup scope is exhausted and certified at code checkpoint
+> `330c373054`; synchronized build, test, preflight, residual-measurement, and FreeX WPF visual gates pass.
+> Dated execution evidence is in `LOG.md`, and generated residual measurement describes the certified checkpoint.
 > **Goal:** maximize what is shared across FreeX (spreadsheet), FreeW (word processor), and FreeP
 > (presentations), leaving WPF and Avalonia as thin native renderers over focused app workareas.
 
@@ -39,7 +39,7 @@ Pattern in use throughout: **neutral model (POCO/planner) + thin per-platform re
 
 ## Final campaign checkpoint
 
-The completed continuation through `b9661deea0` adds shared desktop URI launching, OOXML protection hashing,
+The completed continuation through `330c373054` adds shared desktop URI launching, OOXML protection hashing,
 Legal Notices presentation, directional-arrowhead/WordArt policies, and further product-portable ownership:
 
 - FreeX renderer integration and core spreadsheet policies, plus the first typed localized validation
@@ -95,6 +95,7 @@ worktree with the same parity-capture manifest. Compare every PNG and the manife
 is in addition to repository preflight, the Release solution build, the default test lane, the UI lane for
 WPF changes, and the focused ribbon lane for adaptive-layout work.
 
-Those final synchronized gates and the campaign candidate comparison are still pending at `42e6ca0ca5`.
+The final candidate captured 116/116 FreeX WPF surfaces against the preserved pre-campaign baseline; all
+certification gates and residual audits are recorded in the dated campaign report.
 
 See [LOG.md](LOG.md) for the per-phase execution record (what changed, verification results, decisions).
