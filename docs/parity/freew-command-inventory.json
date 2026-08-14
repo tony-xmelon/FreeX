@@ -97,6 +97,11 @@
       "id": "headerFooterWorkflowSource",
       "label": "Shared Header Footer registry source",
       "path": "freew/FreeW.App.Presentation/Ribbon/HeaderFooterRibbonWorkflow.cs"
+    },
+    {
+      "id": "designWorkflowSource",
+      "label": "Shared Design registry source",
+      "path": "freew/FreeW.App.Presentation/Ribbon/DesignRibbonWorkflow.cs"
     }
   ],
   "summary": {
@@ -114,7 +119,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 258
+    "behaviorEvidenceRows": 309
   },
   "commands": [
     {
@@ -5825,6 +5830,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Office effect preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -5856,6 +5874,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Subtle effect preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -5887,6 +5918,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Moderate effect preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -5918,6 +5962,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Intense effect preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -6983,6 +7040,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "Both renderers preserve their native custom-spacing dialog behind one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -7025,6 +7095,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "Both renderers preserve their native Customize Colors dialog behind one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -7067,6 +7150,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "Both renderers preserve their native Customize Fonts dialog behind one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -21123,7 +21219,20 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The WPF Page Borders route shares its native dialog adapter with the Avalonia alias.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -21153,8 +21262,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Avalonia Page Borders route shares its native dialog adapter with the WPF alias.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -21259,6 +21381,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "Both renderers preserve native page-color picker behavior behind the shared Design route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -21290,6 +21425,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Light Blue page-color preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -21321,6 +21469,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Light Gray page-color preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -21352,6 +21513,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Light Green page-color preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -21383,6 +21557,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Light Yellow page-color preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -21414,6 +21601,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The shared Design workflow clears the page background for No Color.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -21445,6 +21645,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Rose page-color preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -21476,6 +21689,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Tan page-color preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -21507,6 +21733,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The White page-color preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -22670,8 +22909,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Avalonia paragraph-spacing dropdown and WPF gallery alias share one command.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -22703,6 +22955,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Compact paragraph-spacing preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -22734,6 +22999,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Double paragraph-spacing preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -22765,6 +23043,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The No Paragraph Space preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -22796,6 +23087,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Open paragraph-spacing preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -22827,6 +23131,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Relaxed paragraph-spacing preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -22858,6 +23175,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Tight paragraph-spacing preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -23010,7 +23340,20 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The WPF paragraph-spacing gallery root and Avalonia dropdown alias share one command.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -24217,6 +24560,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "Both renderers reset to the same catalog default style set through the shared workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -32440,7 +32796,20 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "Both renderers resolve and report style-set choices through one stateful shared command.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -35466,7 +35835,20 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
+        "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "Both renderers resolve and apply full document themes through one stateful shared command.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -35549,6 +35931,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "Both renderers resolve theme-color choices through the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -35580,6 +35975,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Berlin color preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -35611,6 +36019,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Ion color preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -35642,6 +36063,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Office color preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -35673,6 +36107,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Slate color preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -35755,6 +36202,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "Both renderers resolve document effect-set choices through the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -35837,6 +36297,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "Both renderers resolve document font-set choices through the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -35868,6 +36341,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Cambria font preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -35899,6 +36385,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Georgia font preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -35930,6 +36429,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Office font preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -35961,6 +36473,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Trebuchet font preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -35992,6 +36517,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Berlin theme preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -36023,6 +36561,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Ion theme preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -36054,6 +36605,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Office theme preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -36085,6 +36649,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The Slate theme preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -37055,6 +37632,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "Both renderers preserve native Watermark dropdown/dialog behavior behind one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -37084,8 +37674,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The CONFIDENTIAL watermark preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -37115,8 +37718,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "Both renderers preserve their native Custom Watermark dialog behind the shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -37146,8 +37762,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The DO NOT COPY watermark preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -37177,8 +37806,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The DRAFT watermark preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -37208,8 +37850,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "Both renderers remove the watermark through the same shared mutation route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -37239,8 +37894,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.design.shared-workflow",
+        "slice": "Design command behavior",
+        "summary": "The URGENT watermark preset is registered by the shared Design workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
+          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
+        }
       }
     },
     {
