@@ -99,7 +99,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 174
+    "behaviorEvidenceRows": 179
   },
   "commands": [
     {
@@ -1183,6 +1183,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.caption.shared-workflow",
+        "slice": "Caption and cross-reference command behavior",
+        "summary": "Both renderers route the primary caption command and its compatibility alias through one shared command identity.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/CaptionRibbonWorkflowTests.cs",
+          "test": "CaptionRibbonWorkflowTests.SharedWorkflowOwnsPrimaryAliasFixedLabelsAndCrossReference"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/CaptionRibbonWorkflowTests.cs",
+          "test": "CaptionRibbonWorkflowTests.BothRenderersDelegateCaptionPolicyAndAvaloniaUsesLabelSpecificDialogPort"
+        }
       }
     },
     {
@@ -6793,6 +6806,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.caption.shared-workflow",
+        "slice": "Caption and cross-reference command behavior",
+        "summary": "Both renderers route the cross-reference picker through the shared Captions command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/CaptionRibbonWorkflowTests.cs",
+          "test": "CaptionRibbonWorkflowTests.SharedWorkflowOwnsPrimaryAliasFixedLabelsAndCrossReference"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/CaptionRibbonWorkflowTests.cs",
+          "test": "CaptionRibbonWorkflowTests.BothRenderersDelegateCaptionPolicyAndAvaloniaUsesLabelSpecificDialogPort"
+        }
       }
     },
     {
@@ -16500,6 +16526,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.caption.shared-workflow",
+        "slice": "Caption and cross-reference command behavior",
+        "summary": "Both renderers open their caption text dialog preselected to the Equation label instead of inserting an empty caption.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/CaptionRibbonWorkflowTests.cs",
+          "test": "CaptionRibbonWorkflowTests.SharedWorkflowOwnsPrimaryAliasFixedLabelsAndCrossReference"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/CaptionRibbonWorkflowTests.cs",
+          "test": "CaptionRibbonWorkflowTests.BothRenderersDelegateCaptionPolicyAndAvaloniaUsesLabelSpecificDialogPort"
+        }
       }
     },
     {
@@ -16542,6 +16581,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.caption.shared-workflow",
+        "slice": "Caption and cross-reference command behavior",
+        "summary": "Both renderers open their caption text dialog preselected to the Figure label instead of inserting an empty caption.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/CaptionRibbonWorkflowTests.cs",
+          "test": "CaptionRibbonWorkflowTests.SharedWorkflowOwnsPrimaryAliasFixedLabelsAndCrossReference"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/CaptionRibbonWorkflowTests.cs",
+          "test": "CaptionRibbonWorkflowTests.BothRenderersDelegateCaptionPolicyAndAvaloniaUsesLabelSpecificDialogPort"
+        }
       }
     },
     {
@@ -16584,6 +16636,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.caption.shared-workflow",
+        "slice": "Caption and cross-reference command behavior",
+        "summary": "Both renderers open their caption text dialog preselected to the Table label instead of inserting an empty caption.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/CaptionRibbonWorkflowTests.cs",
+          "test": "CaptionRibbonWorkflowTests.SharedWorkflowOwnsPrimaryAliasFixedLabelsAndCrossReference"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/CaptionRibbonWorkflowTests.cs",
+          "test": "CaptionRibbonWorkflowTests.BothRenderersDelegateCaptionPolicyAndAvaloniaUsesLabelSpecificDialogPort"
+        }
       }
     },
     {
