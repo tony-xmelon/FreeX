@@ -84,7 +84,7 @@ The synchronized exhaustion checkpoint reports:
 | FreeP normalized duplicate lines | 7,789 | 5,912 | -1,877 |
 | FreeP normalized coverage | 17.624963% | 13.935837% | -3.689126 points |
 | Repository exact duplicate lines | 8,516 | 6,459 | -2,057 |
-| Repository exact coverage | 3.393694% | 2.593184% | -0.800510 points |
+| Repository exact coverage | 3.393694% | 2.593205% | -0.800489 points |
 
 Renderer-root exact coverage is 15.276625% for the WPF app, 13.745981% for the Avalonia app, 8.397790% for
 WPF rendering, and 7.011476% for Avalonia rendering. The final synchronization incorporated upstream shared
@@ -122,15 +122,24 @@ Repository certification was run from the isolated campaign worktree after synch
 - The UI solution contents pass as direct, non-duplicated partitions: 5,132 WPF host tests, 1,055 app UI tests,
   and 51 shared WPF ribbon/shell tests pass. There are 51 declared benchmark or live-E2E skips and no failures.
 - Current whole-window FreeP evidence passes all 33 scenarios on WPF and Avalonia with no mismatch, limitation,
-  or duplicate scenario. Dialog/pane evidence passes all 28 scenarios and its 123 PNG artifacts are byte-identical
-  to the pre-campaign baseline.
+  or duplicate scenario. Dialog/pane evidence captures all 28 paired scenarios with no capture limitation.
 - The stabilized whole-window baseline and candidate each pass 33/33. Of 168 compared PNGs, 163 are byte-identical;
   the five Account-pane artifacts differ only in displayed commit/version text (client mean pixel difference
   0.0780% WPF and 0.0720% Avalonia).
+- The stabilized pre-campaign and pre-sync dedup dialog captures are byte-identical across all 123 PNG artifacts.
+  Both live reports classify the same 19 comparisons as passes and the same nine as known semantic/parity
+  mismatches. After the final upstream compact-dialog synchronization, a clean recapture again paired 28/28 with
+  no limitation and no classification change: 93 artifacts remain byte-identical, while 15 Avalonia targets and
+  their 15 derived diffs reflect the synchronized shared-token refinements (0.9698% average and 2.8583% maximum
+  mean-channel delta).
+- A post-sync whole-window recapture again passes 33/33. Of its 168 PNGs, 160 are byte-identical to baseline; five
+  Account artifacts contain commit/version text and three Recent artifacts contain the harness-opened corpus path.
 
 Certification also repaired two pre-existing UI-lane defects found while closing the campaign: authored print
 scales above 100% are no longer canceled by residual-fit clamping, and redirected PowerShell test processes drain
-stdout and stderr concurrently instead of deadlocking on expected-error fixtures.
+stdout and stderr concurrently instead of deadlocking on expected-error fixtures. Final live capture additionally
+rejected brittle Avalonia button/ComboBox control-tree replacement in favor of native templates over shared visual
+tokens, and added headless editable/non-editable ComboBox coverage.
 
 ## Completion rule - met
 
