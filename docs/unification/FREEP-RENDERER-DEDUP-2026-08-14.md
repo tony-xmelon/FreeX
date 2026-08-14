@@ -1,6 +1,6 @@
 # FreeP Renderer Dedup Campaign - 2026-08-14
 
-> **Status: PRACTICAL SCOPE EXHAUSTED; CERTIFICATION IN PROGRESS.** This campaign reopened the FreeP renderer
+> **Status: COMPLETE; PRACTICAL SCOPE EXHAUSTED AND CERTIFIED.** This campaign reopened the FreeP renderer
 > boundary after later shared-shell and presentation-policy work made additional WPF/Avalonia extraction
 > practical. The campaign baseline is `d30813abf43b3700a559cf2775e2512b2d135957` on `origin/main`.
 
@@ -78,16 +78,18 @@ The synchronized exhaustion checkpoint reports:
 
 | Measure | Baseline `d30813abf4` | Exhaustion checkpoint | Delta |
 |---|---:|---:|---:|
-| FreeP renderer code lines | 44,193 | 42,299 | -1,894 |
-| FreeP exact duplicate lines | 7,391 | 5,294 | -2,097 |
-| FreeP exact coverage | 16.724368% | 12.515662% | -4.208706 points |
-| FreeP normalized duplicate lines | 7,789 | 5,872 | -1,917 |
-| FreeP normalized coverage | 17.624963% | 13.882125% | -3.742838 points |
-| Repository exact duplicate lines | 8,516 | 6,419 | -2,097 |
-| Repository exact coverage | 3.393694% | 2.577870% | -0.815824 points |
+| FreeP renderer code lines | 44,193 | 42,423 | -1,770 |
+| FreeP exact duplicate lines | 7,391 | 5,334 | -2,057 |
+| FreeP exact coverage | 16.724368% | 12.573368% | -4.151000 points |
+| FreeP normalized duplicate lines | 7,789 | 5,912 | -1,877 |
+| FreeP normalized coverage | 17.624963% | 13.935837% | -3.689126 points |
+| Repository exact duplicate lines | 8,516 | 6,459 | -2,057 |
+| Repository exact coverage | 3.393694% | 2.593184% | -0.800510 points |
 
-Renderer-root exact coverage is 15.304143% for the WPF app, 13.745981% for the Avalonia app, 8.177044% for
-WPF rendering, and 6.697060% for Avalonia rendering. The campaign also removed duplicated visual-evidence,
+Renderer-root exact coverage is 15.276625% for the WPF app, 13.745981% for the Avalonia app, 8.397790% for
+WPF rendering, and 7.011476% for Avalonia rendering. The final synchronization incorporated upstream shared
+table-edit transaction work, adding paired native table-cell editor realization after the earlier exhaustion
+checkpoint. The campaign also removed duplicated visual-evidence,
 render-comparison, ownership-test, and MSBuild variant plumbing outside the measured renderer roots.
 
 The original 9-11% working target was not reached. Repeated implementation attempts established that reaching
@@ -101,7 +103,7 @@ remaining lexical duplication warrants.
 |---|---:|---|
 | MainWindow | 860 | Native control inventory/construction, media chrome, recursive menu realization, platform event/focus/UIA wiring, and ribbon endpoint composition around shared policies. |
 | SlideShowWindow | 453 | Public compatibility facade, native transitions/storyboards, framework timers, ink/media overlays, monitor and window lifetime. |
-| SlideCanvas plus chart/gesture/adorner files | 446 | Native text/drawing artifacts, chart clipping/geometry, automation inheritance/events, cursors and coordinate conversion around shared render sequences. |
+| SlideCanvas plus chart/gesture/adorner/table-editor files | about 486 | Native text/drawing artifacts, chart clipping/geometry, automation inheritance/events, cursors, coordinate conversion, and native table-cell controls around shared render sequences and edit transactions. |
 | PresenterViewWindow and media controllers | 323 | Native Grid/control/preview construction, window chrome/events, monitor and media backend realization. |
 | Dialog and pane pairs | about 544 | Native control trees, styling, event wiring, focus and modal lifetime around shared schemas, sessions, validation and action routing. |
 | Small normalized startup/localization pairs | Whole-file matches | Intentional product composition over existing shared factories/bootstrap. |
@@ -110,7 +112,27 @@ The final MainWindow tail audit also rejected a layout-picker adapter, domain co
 profile facade: each replaced direct native loops or endpoint binding with delegate plumbing without moving any
 additional policy.
 
-## Completion rule
+## Certification
+
+Repository certification was run from the isolated campaign worktree after synchronizing with `origin/main`.
+
+- Repository preflight and generated-document checks pass.
+- `FreeX.slnx` Release build passes with zero warnings and zero errors.
+- The complete default test solution passes serially; FreeP Presentation alone reports 4,935 passing tests.
+- The UI solution contents pass as direct, non-duplicated partitions: 5,132 WPF host tests, 1,055 app UI tests,
+  and 51 shared WPF ribbon/shell tests pass. There are 51 declared benchmark or live-E2E skips and no failures.
+- Current whole-window FreeP evidence passes all 33 scenarios on WPF and Avalonia with no mismatch, limitation,
+  or duplicate scenario. Dialog/pane evidence passes all 28 scenarios and its 123 PNG artifacts are byte-identical
+  to the pre-campaign baseline.
+- The stabilized whole-window baseline and candidate each pass 33/33. Of 168 compared PNGs, 163 are byte-identical;
+  the five Account-pane artifacts differ only in displayed commit/version text (client mean pixel difference
+  0.0780% WPF and 0.0720% Avalonia).
+
+Certification also repaired two pre-existing UI-lane defects found while closing the campaign: authored print
+scales above 100% are no longer canceled by residual-fit clamping, and redirected PowerShell test processes drain
+stdout and stderr concurrently instead of deadlocking on expected-error fixtures.
+
+## Completion rule - met
 
 The campaign is complete when repeated residual audits find no remaining stable renderer-neutral contract with
 meaningful duplication reduction, all accepted slices pass focused and repository-wide verification, and FreeP
