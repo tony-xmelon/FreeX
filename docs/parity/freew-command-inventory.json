@@ -87,6 +87,11 @@
       "id": "pageLayoutWorkflowSource",
       "label": "Shared Page Layout registry source",
       "path": "freew/FreeW.App.Presentation/Ribbon/PageLayoutRibbonWorkflow.cs"
+    },
+    {
+      "id": "mailMergeWorkflowSource",
+      "label": "Shared Mail Merge registry source",
+      "path": "freew/FreeW.App.Presentation/Ribbon/MailMergeRibbonWorkflow.cs"
     }
   ],
   "summary": {
@@ -104,7 +109,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 205
+    "behaviorEvidenceRows": 233
   },
   "commands": [
     {
@@ -17995,6 +18000,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Address Block and its compatibility alias share one command in both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18123,6 +18141,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Select Recipients and its compatibility alias share one renderer-supplied command.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18165,6 +18196,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Edit Recipients shares the same recipient-selection command in both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18207,6 +18251,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers route email-merge planning or delivery through the shared Mailings family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18249,6 +18306,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers route envelope setup through the shared Mailings command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18291,6 +18361,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers route merge-field insertion through the shared Mailings family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18333,6 +18416,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers route recipient filtering and sorting through the shared Mailings family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18430,6 +18526,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Finish & Merge and its compatibility alias share one command in both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18472,6 +18581,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Greeting Line and its compatibility alias share one command in both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18514,6 +18636,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers route label setup through the shared Mailings command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18556,6 +18691,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers route field matching through the shared Mailings family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18653,6 +18801,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Preview Results and its compatibility alias share one command in both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18695,6 +18856,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers route first-recipient navigation through the shared Mailings family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18737,6 +18911,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers route last-recipient navigation through the shared Mailings family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18779,6 +18966,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Next Recipient and its compatibility alias share one command in both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18821,6 +19021,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Previous Recipient and its compatibility alias share one command in both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18918,6 +19131,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers map Ask to the same shared rule kind.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -18960,6 +19186,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers map Fill-in to the same shared rule kind.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -19002,6 +19241,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers map If...Then...Else to the same shared rule kind.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -19044,6 +19296,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers map Next Record If to the same shared rule kind.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -19086,6 +19351,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers map Ref to the same shared rule kind.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -19128,6 +19406,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers map Set to the same shared rule kind.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -19170,6 +19461,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers map Skip Record If to the same shared rule kind.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -19212,6 +19516,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers expose the Rules dropdown through one shared non-mutating opener command.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -31223,6 +31540,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "The primary Start Mail Merge route shares the Letters command in both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -31265,6 +31595,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers start a directory merge through one shared command identity.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -31307,6 +31650,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers start a letters merge through one shared command identity.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
@@ -31349,6 +31705,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.mail-merge.shared-workflow",
+        "slice": "Mail Merge command behavior",
+        "summary": "Both renderers return to a normal document through one shared command identity.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.RegistersEveryOwnedActionAndCompatibilityAliasWithSharedIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/MailMergeRibbonWorkflowTests.cs",
+          "test": "MailMergeRibbonWorkflowTests.BothRenderersDelegateMailingsIdentityToSharedPresentation"
+        }
       }
     },
     {
