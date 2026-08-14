@@ -99,7 +99,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 143
+    "behaviorEvidenceRows": 148
   },
   "commands": [
     {
@@ -7740,6 +7740,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.drop-cap.shared-workflow",
+        "slice": "Drop Cap command behavior",
+        "summary": "The primary Drop Cap face and Dropped menu routes share one command identity in both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DropCapRibbonWorkflowTests.cs",
+          "test": "DropCapRibbonWorkflowTests.SharedWorkflowOwnsPrimaryCanonicalAndLegacyCommandIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DropCapRibbonWorkflowTests.cs",
+          "test": "DropCapRibbonWorkflowTests.BothRenderersDelegateDropCapPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -7782,6 +7795,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.drop-cap.shared-workflow",
+        "slice": "Drop Cap command behavior",
+        "summary": "Both visible renderer menus resolve Dropped through one shared semantic route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DropCapRibbonWorkflowTests.cs",
+          "test": "DropCapRibbonWorkflowTests.SharedWorkflowOwnsPrimaryCanonicalAndLegacyCommandIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DropCapRibbonWorkflowTests.cs",
+          "test": "DropCapRibbonWorkflowTests.BothRenderersDelegateDropCapPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -7824,6 +7850,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.drop-cap.shared-workflow",
+        "slice": "Drop Cap command behavior",
+        "summary": "Both visible renderer menus resolve In Margin through one shared semantic route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DropCapRibbonWorkflowTests.cs",
+          "test": "DropCapRibbonWorkflowTests.SharedWorkflowOwnsPrimaryCanonicalAndLegacyCommandIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DropCapRibbonWorkflowTests.cs",
+          "test": "DropCapRibbonWorkflowTests.BothRenderersDelegateDropCapPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -7866,6 +7905,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.drop-cap.shared-workflow",
+        "slice": "Drop Cap command behavior",
+        "summary": "Both visible renderer menus resolve None through one shared semantic route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DropCapRibbonWorkflowTests.cs",
+          "test": "DropCapRibbonWorkflowTests.SharedWorkflowOwnsPrimaryCanonicalAndLegacyCommandIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DropCapRibbonWorkflowTests.cs",
+          "test": "DropCapRibbonWorkflowTests.BothRenderersDelegateDropCapPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -7908,6 +7960,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.drop-cap.shared-workflow",
+        "slice": "Drop Cap command behavior",
+        "summary": "Both renderers preserve native options-dialog adapters behind one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DropCapRibbonWorkflowTests.cs",
+          "test": "DropCapRibbonWorkflowTests.SharedWorkflowOwnsPrimaryCanonicalAndLegacyCommandIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/DropCapRibbonWorkflowTests.cs",
+          "test": "DropCapRibbonWorkflowTests.BothRenderersDelegateDropCapPolicyToSharedPresentation"
+        }
       }
     },
     {
