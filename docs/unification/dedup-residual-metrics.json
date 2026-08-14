@@ -29,23 +29,23 @@
                    },
     "repository":  {
                        "analysisRevision":  "HEAD",
-                       "analysisCommit":  "40aa6e41db1932467a3d6ab8de3b7bdcea455bba",
+                       "analysisCommit":  "7f2938704239c0eecf719296bd0364d0217f9953",
                        "upstreamRevision":  "origin/main",
-                       "upstreamCommit":  "ac7fa4e155ed151a4f5fa6fa52442007716c4ab6",
-                       "mergeBaseCommit":  "ac7fa4e155ed151a4f5fa6fa52442007716c4ab6",
-                       "inputTreeSha256":  "5db8f0f6193eb72784dfee94f7d94bde80e862f41e4f24468f2faec717fbb8ce",
+                       "upstreamCommit":  "7f2938704239c0eecf719296bd0364d0217f9953",
+                       "mergeBaseCommit":  "7f2938704239c0eecf719296bd0364d0217f9953",
+                       "inputTreeSha256":  "e103b83270c9e7778337c76e46fa2f25bd05bf6c2396bfdd29e38b16c89f36db",
                        "campaignLocDelta":  {
                                                 "allCSharp":  {
-                                                                  "filesChanged":  207,
-                                                                  "addedLines":  10891,
-                                                                  "deletedLines":  6346,
-                                                                  "netLines":  4545
+                                                                  "filesChanged":  0,
+                                                                  "addedLines":  0,
+                                                                  "deletedLines":  0,
+                                                                  "netLines":  0
                                                               },
                                                 "rendererCSharp":  {
-                                                                       "filesChanged":  50,
-                                                                       "addedLines":  2541,
-                                                                       "deletedLines":  4591,
-                                                                       "netLines":  -2050
+                                                                       "filesChanged":  0,
+                                                                       "addedLines":  0,
+                                                                       "deletedLines":  0,
+                                                                       "netLines":  0
                                                                    }
                                             }
                    },
@@ -77,9 +77,9 @@
                                        "platform":  "WPF",
                                        "path":  "freew/FreeW.App.Host",
                                        "fileCount":  104,
-                                       "physicalLines":  51407,
-                                       "nonBlankLines":  46185,
-                                       "codeLines":  39453
+                                       "physicalLines":  51414,
+                                       "nonBlankLines":  46192,
+                                       "codeLines":  39460
                                    },
                                    {
                                        "id":  "FreeW.Avalonia",
@@ -134,15 +134,15 @@
                                ],
                      "totals":  {
                                     "fileCount":  764,
-                                    "physicalLines":  305033,
-                                    "nonBlankLines":  271303,
-                                    "codeLines":  249105
+                                    "physicalLines":  305040,
+                                    "nonBlankLines":  271310,
+                                    "codeLines":  249112
                                 },
                      "duplicateCoverage":  {
                                                "exact":  {
-                                                             "codeLines":  249105,
+                                                             "codeLines":  249112,
                                                              "duplicateLines":  6549,
-                                                             "percent":  2.629012,
+                                                             "percent":  2.628938,
                                                              "byRoot":  [
                                                                             {
                                                                                 "rootId":  "FreeP.Avalonia.App",
@@ -176,9 +176,9 @@
                                                                             },
                                                                             {
                                                                                 "rootId":  "FreeW.Wpf",
-                                                                                "codeLines":  39453,
+                                                                                "codeLines":  39460,
                                                                                 "duplicateLines":  460,
-                                                                                "coveragePercent":  1.165944
+                                                                                "coveragePercent":  1.165737
                                                                             },
                                                                             {
                                                                                 "rootId":  "FreeX.Avalonia",
@@ -195,9 +195,9 @@
                                                                         ]
                                                          },
                                                "normalized":  {
-                                                                  "codeLines":  249105,
+                                                                  "codeLines":  249112,
                                                                   "duplicateLines":  7143,
-                                                                  "percent":  2.867466,
+                                                                  "percent":  2.867385,
                                                                   "byRoot":  [
                                                                                  {
                                                                                      "rootId":  "FreeP.Avalonia.App",
@@ -231,9 +231,9 @@
                                                                                  },
                                                                                  {
                                                                                      "rootId":  "FreeW.Wpf",
-                                                                                     "codeLines":  39453,
+                                                                                     "codeLines":  39460,
                                                                                      "duplicateLines":  448,
-                                                                                     "coveragePercent":  1.135528
+                                                                                     "coveragePercent":  1.135327
                                                                                  },
                                                                                  {
                                                                                      "rootId":  "FreeX.Avalonia",
@@ -407,8 +407,8 @@
                                                                "endLineA":  988,
                                                                "rootB":  "FreeW.Wpf",
                                                                "fileB":  "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
-                                                               "startLineB":  4716,
-                                                               "endLineB":  4756,
+                                                               "startLineB":  4723,
+                                                               "endLineB":  4763,
                                                                "sourceLineCount":  37,
                                                                "normalizedCharacterCount":  1435
                                                            },
@@ -2188,8 +2188,8 @@
                                                                "endLineA":  492,
                                                                "rootB":  "FreeW.Wpf",
                                                                "fileB":  "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
-                                                               "startLineB":  6406,
-                                                               "endLineB":  6419,
+                                                               "startLineB":  6413,
+                                                               "endLineB":  6426,
                                                                "sourceLineCount":  13,
                                                                "normalizedCharacterCount":  424
                                                            },
@@ -2617,8 +2617,8 @@
                                                                "endLineA":  1231,
                                                                "rootB":  "FreeW.Wpf",
                                                                "fileB":  "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
-                                                               "startLineB":  1466,
-                                                               "endLineB":  1477,
+                                                               "startLineB":  1473,
+                                                               "endLineB":  1484,
                                                                "sourceLineCount":  12,
                                                                "normalizedCharacterCount":  600
                                                            },
@@ -2811,8 +2811,8 @@
                                                                     "endLineA":  988,
                                                                     "rootB":  "FreeW.Wpf",
                                                                     "fileB":  "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
-                                                                    "startLineB":  4716,
-                                                                    "endLineB":  4756,
+                                                                    "startLineB":  4723,
+                                                                    "endLineB":  4763,
                                                                     "sourceLineCount":  37,
                                                                     "normalizedCharacterCount":  1414,
                                                                     "exactEquivalent":  true
@@ -4827,8 +4827,8 @@
                                                                     "endLineA":  492,
                                                                     "rootB":  "FreeW.Wpf",
                                                                     "fileB":  "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
-                                                                    "startLineB":  6406,
-                                                                    "endLineB":  6419,
+                                                                    "startLineB":  6413,
+                                                                    "endLineB":  6426,
                                                                     "sourceLineCount":  13,
                                                                     "normalizedCharacterCount":  416,
                                                                     "exactEquivalent":  true
@@ -5289,8 +5289,8 @@
                                                                     "endLineA":  1231,
                                                                     "rootB":  "FreeW.Wpf",
                                                                     "fileB":  "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
-                                                                    "startLineB":  1466,
-                                                                    "endLineB":  1477,
+                                                                    "startLineB":  1473,
+                                                                    "endLineB":  1484,
                                                                     "sourceLineCount":  12,
                                                                     "normalizedCharacterCount":  584,
                                                                     "exactEquivalent":  true
@@ -7989,11 +7989,11 @@
                                    {
                                        "rootId":  "FreeW.Wpf",
                                        "path":  "freew/FreeW.App.Host/Ribbon/FreeWRibbonCommands.cs",
-                                       "physicalLines":  8405,
-                                       "nonBlankLines":  7638,
-                                       "codeLines":  6924,
-                                       "sha256":  "3de52e5f702cda10bc215492ff5c1c3dd30b6a94824c715ec12968261134d43e",
-                                       "normalizedSha256":  "8d7d85b10c74889a1c243a48ef2d9fbdb74b673c3e4aacdb4a1be0aabee8652a"
+                                       "physicalLines":  8412,
+                                       "nonBlankLines":  7645,
+                                       "codeLines":  6931,
+                                       "sha256":  "3777851253725e49232e318432c9bef21b9811f8a8336535df6739649bf9b628",
+                                       "normalizedSha256":  "f60c0724fcebda7d3ecac7f79a96498d00f9d1f5ca04648e1b34d309acf1f425"
                                    },
                                    {
                                        "rootId":  "FreeW.Wpf",

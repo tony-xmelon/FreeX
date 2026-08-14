@@ -84,7 +84,7 @@ The synchronized exhaustion checkpoint reports:
 | FreeP normalized duplicate lines | 7,789 | 5,950 | -1,839 |
 | FreeP normalized coverage | 17.624963% | 14.024419% | -3.600544 points |
 | Repository exact duplicate lines | 8,516 | 6,549 | -1,967 |
-| Repository exact coverage | 3.393694% | 2.629012% | -0.764682 points |
+| Repository exact coverage | 3.393694% | 2.628938% | -0.764756 points |
 
 Renderer-root exact coverage is 15.408022% for the WPF app, 13.860896% for the Avalonia app, 8.397790% for
 WPF rendering, and 7.011476% for Avalonia rendering. The final synchronization incorporated upstream shared
