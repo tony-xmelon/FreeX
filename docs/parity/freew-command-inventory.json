@@ -82,6 +82,11 @@
       "id": "paragraphEditingWorkflowSource",
       "label": "Shared Paragraph editing registry source",
       "path": "freew/FreeW.App.Presentation/Ribbon/ParagraphEditingRibbonWorkflow.cs"
+    },
+    {
+      "id": "pageLayoutWorkflowSource",
+      "label": "Shared Page Layout registry source",
+      "path": "freew/FreeW.App.Presentation/Ribbon/PageLayoutRibbonWorkflow.cs"
     }
   ],
   "summary": {
@@ -99,7 +104,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 182
+    "behaviorEvidenceRows": 205
   },
   "commands": [
     {
@@ -5420,6 +5425,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers apply and report the Left-column preset through the same shared policy.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -5504,6 +5522,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers apply and report the One-column preset through the same shared policy.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -5546,6 +5577,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers apply and report the Right-column preset through the same shared policy.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -5588,6 +5632,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers apply and report the Three-column preset through the same shared policy.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -5630,6 +5687,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers apply and report the Two-column preset through the same shared policy.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -7168,6 +7238,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers toggle and report different-first-page layout through the same shared policy.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -11512,6 +11595,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers toggle automatic hyphenation through the same shared policy.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -11554,6 +11650,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers enable and report automatic hyphenation through the same shared policy.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -11638,6 +11747,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers disable and report automatic hyphenation through the same shared policy.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -17193,6 +17315,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers cycle backed line-number modes through the same shared policy.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -17235,6 +17370,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers apply and report continuous line numbering through the same shared policy.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -17277,6 +17425,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers apply and report the disabled line-number mode through the same shared policy.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -17361,6 +17522,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers apply and report per-page line-number restarts through the same shared policy.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -17403,6 +17577,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers apply and report per-section line-number restarts through the same shared policy.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -17656,6 +17843,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers toggle Normal and Narrow margins through the same shared policy.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -20243,6 +20443,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers toggle page orientation through the same undoable shared page mutation.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -20741,8 +20954,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "The Narrow margin menu route is backed by the shared renderer-neutral preset command.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -20772,8 +20998,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "The Normal margin menu route is backed by the shared renderer-neutral preset command.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -20803,8 +21042,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "The Wide margin menu route is backed by the shared renderer-neutral preset command.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -21086,8 +21338,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "The A4 paper menu route is backed by the shared renderer-neutral preset command.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -21117,8 +21382,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "The Letter paper menu route is backed by the shared renderer-neutral preset command.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -21161,6 +21439,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers cycle page vertical alignment through the same shared policy.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
@@ -29053,6 +29344,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.page-layout.shared-workflow",
+        "slice": "Page Layout command behavior",
+        "summary": "Both renderers toggle Letter and A4 paper through the same orientation-preserving shared policy.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.SharedCommandsOwnMutationAndCheckedStatePolicy"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/PageLayoutRibbonWorkflowTests.cs",
+          "test": "PageLayoutRibbonWorkflowTests.BothRenderersDelegatePageLayoutQuickActionsToSharedPresentation"
+        }
       }
     },
     {
