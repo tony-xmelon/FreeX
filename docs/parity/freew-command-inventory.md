@@ -10,13 +10,13 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 
 | Total | Both profiles | WPF profile only | Avalonia profile only | Missing WPF profile | Missing Avalonia profile | Actionable missing WPF | Actionable missing Avalonia |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 919 | 514 | 131 | 274 | 274 | 131 | 0 | 0 |
+| 916 | 517 | 128 | 271 | 271 | 128 | 0 | 0 |
 
 ## Classification Counts
 
 | Shared profile | Profile-shape only | Command-id aliases | Platform-only | Deferred | Actionable gaps | Behavior evidence rows |
 |---:|---:|---:|---:|---:|---:|---:|
-| 514 | 357 | 43 | 5 | 0 | 0 | 113 |
+| 517 | 351 | 43 | 5 | 0 | 0 | 113 |
 
 ## Classification Rules
 
@@ -194,12 +194,9 @@ Gap classifications are generated from explicit rule order: shared-profile, comm
 | `freew.copy` | Copy | Yes | Yes | none | shared-profile | shared-profile | shared-profile | home/clipboard (RibbonButton; Medium) | home/clipboard (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.copy-diagnostics` | Copy Diagnostics | Yes | Yes | none | shared-profile | shared-profile | shared-profile | help/help (RibbonButton; Large) | help/help (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source | WPF Help shell variance: FreeWRibbonParityTests.HelpTab_ExposesOnlyBackedFreeWLocalSupportCommands<br>RibbonAndDocumentTests.Avalonia_file_shell_and_WPF_authority_legal_notice_commands_are_backed | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.cover-page` | Cover Page | Yes | Yes | none | shared-profile | shared-profile | shared-profile | insert/pages (RibbonDropdown; Medium) | insert/pages (RibbonDropdown; Medium) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
-| `freew.cover-page-banded` | Banded | Yes | No | Avalonia | wpf-profile-only | profile-shape-only | profile-shape-only | insert/pages (RibbonMenuItem; Menu) | - | WPF definition source<br>Avalonia definition source<br>WPF registry source | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
-| `freew.cover-page-default` | Default | Yes | No | Avalonia | wpf-profile-only | profile-shape-only | profile-shape-only | insert/pages (RibbonMenuItem; Menu) | - | WPF definition source<br>Avalonia definition source<br>WPF registry source | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
-| `freew.cover-page-motion` | Motion | Yes | No | Avalonia | wpf-profile-only | profile-shape-only | profile-shape-only | insert/pages (RibbonMenuItem; Menu) | - | WPF definition source<br>Avalonia definition source<br>WPF registry source | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
-| `freew.cover-page.banded` | Banded | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | insert/pages (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source<br>Avalonia registry source | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
-| `freew.cover-page.default` | Default | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | insert/pages (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source<br>Avalonia registry source | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
-| `freew.cover-page.motion` | Motion | No | Yes | WPF | avalonia-profile-only | profile-shape-only | profile-shape-only | - | insert/pages (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source<br>Avalonia registry source | - | Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence. |
+| `freew.cover-page-banded` | Banded | Yes | Yes | none | shared-profile | shared-profile | shared-profile | insert/pages (RibbonMenuItem; Menu) | insert/pages (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
+| `freew.cover-page-default` | Default | Yes | Yes | none | shared-profile | shared-profile | shared-profile | insert/pages (RibbonMenuItem; Menu) | insert/pages (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
+| `freew.cover-page-motion` | Motion | Yes | Yes | none | shared-profile | shared-profile | shared-profile | insert/pages (RibbonMenuItem; Menu) | insert/pages (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.cross-reference` | Cross-reference | Yes | Yes | none | shared-profile | shared-profile | shared-profile | insert/links (RibbonButton; Small)<br>references/captions (RibbonButton; Medium) | references/captions (RibbonButton; Medium) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.custom-margins` | Custom Margins… | Yes | Yes | none | shared-profile | shared-profile | shared-profile | layout/page-setup (RibbonMenuItem; Menu) | layout/page-setup (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |
 | `freew.custom-paragraph-spacing` | Custom Paragraph Spacing… | Yes | Yes | none | shared-profile | shared-profile | shared-profile | design/themes (RibbonMenuItem; Menu) | design/document-formatting (RibbonMenuItem; Menu) | WPF definition source<br>Avalonia definition source | - | Command is present in both compiled FreeW ribbon profiles. |

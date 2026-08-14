@@ -70,16 +70,16 @@
     }
   ],
   "summary": {
-    "totalCommands": 919,
-    "both": 514,
-    "wpfOnly": 131,
-    "avaloniaOnly": 274,
-    "missingWpf": 274,
-    "missingAvalonia": 131,
+    "totalCommands": 916,
+    "both": 517,
+    "wpfOnly": 128,
+    "avaloniaOnly": 271,
+    "missingWpf": 271,
+    "missingAvalonia": 128,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 514,
-    "profileShapeOnly": 357,
+    "sharedProfile": 517,
+    "profileShapeOnly": 351,
     "commandIdAliases": 43,
     "platformOnly": 5,
     "deferred": 0,
@@ -6489,13 +6489,13 @@
       "commandId": "freew.cover-page-banded",
       "label": "Banded",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -6508,11 +6508,22 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "pages",
+          "group": "Pages",
+          "label": "Banded",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
@@ -6520,13 +6531,13 @@
       "commandId": "freew.cover-page-default",
       "label": "Default",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -6539,11 +6550,22 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "insert",
+          "tab": "Insert",
+          "groupId": "pages",
+          "group": "Pages",
+          "label": "Default",
+          "controlType": "RibbonMenuItem",
+          "layout": "Menu"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
       }
     },
@@ -6551,13 +6573,13 @@
       "commandId": "freew.cover-page-motion",
       "label": "Motion",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -6570,88 +6592,6 @@
           "layout": "Menu"
         }
       ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.cover-page.banded",
-      "label": "Banded",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "pages",
-          "group": "Pages",
-          "label": "Banded",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.cover-page.default",
-      "label": "Default",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "pages",
-          "group": "Pages",
-          "label": "Default",
-          "controlType": "RibbonMenuItem",
-          "layout": "Menu"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.cover-page.motion",
-      "label": "Motion",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "profile-shape-only",
-      "gapClassificationRule": "profile-shape-only",
-      "notes": "Row is generated only by menu, dropdown, combo, gallery, or palette shape; a direct projection is retained only with paired behavior evidence.",
-      "wpfLocations": [],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -6668,7 +6608,7 @@
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
+        "avaloniaRegistrySource": false
       }
     },
     {
