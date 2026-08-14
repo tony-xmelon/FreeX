@@ -99,7 +99,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 179
+    "behaviorEvidenceRows": 182
   },
   "commands": [
     {
@@ -16369,6 +16369,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.index.shared-workflow",
+        "slice": "Index command behavior",
+        "summary": "Both renderers open their native Insert Index flow through one shared, fail-closed route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/IndexRibbonWorkflowTests.cs",
+          "test": "IndexRibbonWorkflowTests.SharedWorkflowRoutesMarkInsertAndRefresh"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/IndexRibbonWorkflowTests.cs",
+          "test": "IndexRibbonWorkflowTests.BothRenderersDelegateIndexPolicyAndAvaloniaHasNoDefaultMutationFallback"
+        }
       }
     },
     {
@@ -16411,6 +16424,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.index.shared-workflow",
+        "slice": "Index command behavior",
+        "summary": "Both renderers open their native Mark Index Entry flow through one shared, fail-closed route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/IndexRibbonWorkflowTests.cs",
+          "test": "IndexRibbonWorkflowTests.SharedWorkflowRoutesMarkInsertAndRefresh"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/IndexRibbonWorkflowTests.cs",
+          "test": "IndexRibbonWorkflowTests.BothRenderersDelegateIndexPolicyAndAvaloniaHasNoDefaultMutationFallback"
+        }
       }
     },
     {
@@ -16453,6 +16479,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.index.shared-workflow",
+        "slice": "Index command behavior",
+        "summary": "Both renderers open their native Update Index flow through one shared, fail-closed route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/IndexRibbonWorkflowTests.cs",
+          "test": "IndexRibbonWorkflowTests.SharedWorkflowRoutesMarkInsertAndRefresh"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/IndexRibbonWorkflowTests.cs",
+          "test": "IndexRibbonWorkflowTests.BothRenderersDelegateIndexPolicyAndAvaloniaHasNoDefaultMutationFallback"
+        }
       }
     },
     {
