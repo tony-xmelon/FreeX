@@ -125,21 +125,21 @@
     }
   ],
   "summary": {
-    "totalCommands": 919,
-    "both": 581,
-    "wpfOnly": 105,
-    "avaloniaOnly": 233,
-    "missingWpf": 233,
-    "missingAvalonia": 105,
+    "totalCommands": 912,
+    "both": 583,
+    "wpfOnly": 103,
+    "avaloniaOnly": 226,
+    "missingWpf": 226,
+    "missingAvalonia": 103,
     "actionableMissingWpf": 0,
     "actionableMissingAvalonia": 0,
-    "sharedProfile": 581,
+    "sharedProfile": 583,
     "profileShapeOnly": 324,
-    "commandIdAliases": 9,
+    "commandIdAliases": 0,
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 465
+    "behaviorEvidenceRows": 461
   },
   "commands": [
     {
@@ -17763,50 +17763,6 @@
       }
     },
     {
-      "commandId": "freew.insert-bookmark",
-      "label": "Bookmark",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "links",
-          "group": "Links",
-          "label": "Bookmark",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
-      },
-      "behaviorEvidence": {
-        "evidenceId": "freew.insert-editing.shared-workflow",
-        "slice": "Insert editing command behavior",
-        "summary": "The compatibility bookmark alias resolves to the same shared native command.",
-        "wpfEvidence": {
-          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
-          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
-        },
-        "avaloniaEvidence": {
-          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
-          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
-        }
-      }
-    },
-    {
       "commandId": "freew.insert-caption.equation",
       "label": "Equation",
       "wpfPresent": true,
@@ -18014,50 +17970,6 @@
       }
     },
     {
-      "commandId": "freew.insert-hyperlink",
-      "label": "Hyperlink",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "links",
-          "group": "Links",
-          "label": "Hyperlink",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
-      },
-      "behaviorEvidence": {
-        "evidenceId": "freew.insert-editing.shared-workflow",
-        "slice": "Insert editing command behavior",
-        "summary": "The compatibility hyperlink alias resolves to the same shared native command.",
-        "wpfEvidence": {
-          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
-          "test": "InsertEditingRibbonWorkflowTests.ContentControlsPrepareBeforeMutationWhileFieldActionsPreserveDirectExecution"
-        },
-        "avaloniaEvidence": {
-          "path": "freew/FreeW.App.Presentation.Tests/InsertEditingRibbonWorkflowTests.cs",
-          "test": "InsertEditingRibbonWorkflowTests.BothRenderersDelegateInsertEditingIdentityToSharedPresentation"
-        }
-      }
-    },
-    {
       "commandId": "freew.insert-icon",
       "label": "Icons",
       "wpfPresent": true,
@@ -18152,50 +18064,6 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
-      }
-    },
-    {
-      "commandId": "freew.insert-table",
-      "label": "Table",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "insert",
-          "tab": "Insert",
-          "groupId": "tables",
-          "group": "Tables",
-          "label": "Table",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
-      },
-      "behaviorEvidence": {
-        "evidenceId": "freew.table-insertion.shared-workflow",
-        "slice": "Insert table command behavior",
-        "summary": "The shared insertion workflow maps the legacy Table route to the canonical 3 Ã— 3 insertion command for both renderers.",
-        "wpfEvidence": {
-          "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
-          "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
-        },
-        "avaloniaEvidence": {
-          "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
-          "test": "TableInsertionRibbonWorkflowTests.BothRenderersDelegateTableInsertionPolicyToSharedPresentation"
-        }
       }
     },
     {
@@ -21983,13 +21851,13 @@
       "commandId": "freew.page-border",
       "label": "Page Borders",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -22002,39 +21870,6 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
-        "avaloniaRegistrySource": true
-      },
-      "behaviorEvidence": {
-        "evidenceId": "freew.design.shared-workflow",
-        "slice": "Design command behavior",
-        "summary": "The WPF Page Borders route shares its native dialog adapter with the Avalonia alias.",
-        "wpfEvidence": {
-          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
-          "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
-        },
-        "avaloniaEvidence": {
-          "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
-          "test": "DesignRibbonWorkflowTests.BothRenderersDelegateDesignIdentityToSharedPresentation"
-        }
-      }
-    },
-    {
-      "commandId": "freew.page-borders",
-      "label": "Page Borders",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [],
       "avaloniaLocations": [
         {
           "profile": "Avalonia",
@@ -22056,7 +21891,7 @@
       "behaviorEvidence": {
         "evidenceId": "freew.design.shared-workflow",
         "slice": "Design command behavior",
-        "summary": "The Avalonia Page Borders route shares its native dialog adapter with the WPF alias.",
+        "summary": "The WPF Page Borders route shares its native dialog adapter with the Avalonia alias.",
         "wpfEvidence": {
           "path": "freew/FreeW.App.Presentation.Tests/DesignRibbonWorkflowTests.cs",
           "test": "DesignRibbonWorkflowTests.SharedWorkflowOwnsChoiceResolutionPresetMappingAndPreparationOrder"
@@ -33213,37 +33048,6 @@
       }
     },
     {
-      "commandId": "freew.split",
-      "label": "Split",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "view",
-          "tab": "View",
-          "groupId": "window",
-          "group": "Window",
-          "label": "Split",
-          "controlType": "RibbonToggleButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": false
-      }
-    },
-    {
       "commandId": "freew.split-table",
       "label": "Split Table",
       "wpfPresent": true,
@@ -33302,13 +33106,13 @@
       "commandId": "freew.split-window",
       "label": "Split",
       "wpfPresent": true,
-      "avaloniaPresent": false,
-      "profileSurface": "wpf-only",
-      "missingProfile": "Avalonia",
-      "classification": "wpf-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
+      "avaloniaPresent": true,
+      "profileSurface": "both",
+      "missingProfile": "none",
+      "classification": "shared-profile",
+      "gapClassification": "shared-profile",
+      "gapClassificationRule": "shared-profile",
+      "notes": "Command is present in both compiled FreeW ribbon profiles.",
       "wpfLocations": [
         {
           "profile": "WPF",
@@ -33321,7 +33125,18 @@
           "layout": "Medium"
         }
       ],
-      "avaloniaLocations": [],
+      "avaloniaLocations": [
+        {
+          "profile": "Avalonia",
+          "tabId": "view",
+          "tab": "View",
+          "groupId": "window",
+          "group": "Window",
+          "label": "Split",
+          "controlType": "RibbonToggleButton",
+          "layout": "Medium"
+        }
+      ],
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
@@ -41928,37 +41743,6 @@
       }
     },
     {
-      "commandId": "freew.zoom-in",
-      "label": "Zoom In",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "view",
-          "tab": "View",
-          "groupId": "zoom",
-          "group": "Zoom",
-          "label": "Zoom In",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
-      }
-    },
-    {
       "commandId": "freew.zoom-multiple-pages",
       "label": "Multiple Pages",
       "wpfPresent": true,
@@ -42040,37 +41824,6 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
-      }
-    },
-    {
-      "commandId": "freew.zoom-out",
-      "label": "Zoom Out",
-      "wpfPresent": false,
-      "avaloniaPresent": true,
-      "profileSurface": "avalonia-only",
-      "missingProfile": "WPF",
-      "classification": "avalonia-profile-only",
-      "gapClassification": "command-id-alias",
-      "gapClassificationRule": "command-id-alias",
-      "notes": "Other profile exposes the same or closest command intent under a different generated command id.",
-      "wpfLocations": [],
-      "avaloniaLocations": [
-        {
-          "profile": "Avalonia",
-          "tabId": "view",
-          "tab": "View",
-          "groupId": "zoom",
-          "group": "Zoom",
-          "label": "Zoom Out",
-          "controlType": "RibbonButton",
-          "layout": "Medium"
-        }
-      ],
-      "sourceLiteralEvidence": {
-        "wpfDefinitionSource": true,
-        "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
-        "avaloniaRegistrySource": true
       }
     },
     {
