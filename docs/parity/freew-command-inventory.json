@@ -99,7 +99,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 148
+    "behaviorEvidenceRows": 163
   },
   "commands": [
     {
@@ -8099,6 +8099,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.equation.shared-workflow",
+        "slice": "Equation insertion behavior",
+        "summary": "The Equation split-button face inserts the shared default equation through the same renderer port.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.SharedWorkflowRegistersDefaultPresetsAndCompatibilityAliases"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.BothRenderersDelegateEquationDispatchToSharedPresentation"
+        }
       }
     },
     {
@@ -8141,6 +8154,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.equation.shared-workflow",
+        "slice": "Equation insertion behavior",
+        "summary": "Both renderers insert a fresh shared accent equation preset.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.SharedWorkflowRegistersDefaultPresetsAndCompatibilityAliases"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.BothRenderersDelegateEquationDispatchToSharedPresentation"
+        }
       }
     },
     {
@@ -8183,6 +8209,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.equation.shared-workflow",
+        "slice": "Equation insertion behavior",
+        "summary": "Both renderers insert a fresh shared overbar equation preset.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.SharedWorkflowRegistersDefaultPresetsAndCompatibilityAliases"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.BothRenderersDelegateEquationDispatchToSharedPresentation"
+        }
       }
     },
     {
@@ -8225,6 +8264,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.equation.shared-workflow",
+        "slice": "Equation insertion behavior",
+        "summary": "Both renderers insert a fresh shared bracket equation preset.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.SharedWorkflowRegistersDefaultPresetsAndCompatibilityAliases"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.BothRenderersDelegateEquationDispatchToSharedPresentation"
+        }
       }
     },
     {
@@ -8256,6 +8308,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.equation.shared-workflow",
+        "slice": "Equation insertion behavior",
+        "summary": "Both renderers expose the canonical Insert New Equation route and shared default factory.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.SharedWorkflowRegistersDefaultPresetsAndCompatibilityAliases"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.BothRenderersDelegateEquationDispatchToSharedPresentation"
+        }
       }
     },
     {
@@ -8298,6 +8363,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.equation.shared-workflow",
+        "slice": "Equation insertion behavior",
+        "summary": "Both renderers insert a fresh shared fraction equation preset.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.SharedWorkflowRegistersDefaultPresetsAndCompatibilityAliases"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.BothRenderersDelegateEquationDispatchToSharedPresentation"
+        }
       }
     },
     {
@@ -8340,6 +8418,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.equation.shared-workflow",
+        "slice": "Equation insertion behavior",
+        "summary": "Both renderers insert a fresh shared function equation preset.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.SharedWorkflowRegistersDefaultPresetsAndCompatibilityAliases"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.BothRenderersDelegateEquationDispatchToSharedPresentation"
+        }
       }
     },
     {
@@ -8382,6 +8473,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.equation.shared-workflow",
+        "slice": "Equation insertion behavior",
+        "summary": "Both renderers insert a fresh shared group-character equation preset.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.SharedWorkflowRegistersDefaultPresetsAndCompatibilityAliases"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.BothRenderersDelegateEquationDispatchToSharedPresentation"
+        }
       }
     },
     {
@@ -8424,6 +8528,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.equation.shared-workflow",
+        "slice": "Equation insertion behavior",
+        "summary": "Both renderers insert a fresh shared integral equation preset.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.SharedWorkflowRegistersDefaultPresetsAndCompatibilityAliases"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.BothRenderersDelegateEquationDispatchToSharedPresentation"
+        }
       }
     },
     {
@@ -8466,6 +8583,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.equation.shared-workflow",
+        "slice": "Equation insertion behavior",
+        "summary": "Both renderers insert a fresh shared matrix equation preset.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.SharedWorkflowRegistersDefaultPresetsAndCompatibilityAliases"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.BothRenderersDelegateEquationDispatchToSharedPresentation"
+        }
       }
     },
     {
@@ -8508,6 +8638,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.equation.shared-workflow",
+        "slice": "Equation insertion behavior",
+        "summary": "Both renderers insert a fresh shared nth-root equation preset.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.SharedWorkflowRegistersDefaultPresetsAndCompatibilityAliases"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.BothRenderersDelegateEquationDispatchToSharedPresentation"
+        }
       }
     },
     {
@@ -8550,6 +8693,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.equation.shared-workflow",
+        "slice": "Equation insertion behavior",
+        "summary": "Both renderers insert a fresh shared product equation preset.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.SharedWorkflowRegistersDefaultPresetsAndCompatibilityAliases"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.BothRenderersDelegateEquationDispatchToSharedPresentation"
+        }
       }
     },
     {
@@ -8592,6 +8748,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.equation.shared-workflow",
+        "slice": "Equation insertion behavior",
+        "summary": "Both renderers insert a fresh shared square-root equation preset.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.SharedWorkflowRegistersDefaultPresetsAndCompatibilityAliases"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.BothRenderersDelegateEquationDispatchToSharedPresentation"
+        }
       }
     },
     {
@@ -8634,6 +8803,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.equation.shared-workflow",
+        "slice": "Equation insertion behavior",
+        "summary": "Both renderers insert a fresh shared subscript/superscript equation preset.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.SharedWorkflowRegistersDefaultPresetsAndCompatibilityAliases"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.BothRenderersDelegateEquationDispatchToSharedPresentation"
+        }
       }
     },
     {
@@ -8676,6 +8858,19 @@
         "avaloniaDefinitionSource": false,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.equation.shared-workflow",
+        "slice": "Equation insertion behavior",
+        "summary": "Both renderers insert a fresh shared summation equation preset.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.SharedWorkflowRegistersDefaultPresetsAndCompatibilityAliases"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/EquationRibbonWorkflowTests.cs",
+          "test": "EquationRibbonWorkflowTests.BothRenderersDelegateEquationDispatchToSharedPresentation"
+        }
       }
     },
     {
