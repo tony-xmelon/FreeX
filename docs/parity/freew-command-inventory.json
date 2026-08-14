@@ -92,6 +92,11 @@
       "id": "mailMergeWorkflowSource",
       "label": "Shared Mail Merge registry source",
       "path": "freew/FreeW.App.Presentation/Ribbon/MailMergeRibbonWorkflow.cs"
+    },
+    {
+      "id": "headerFooterWorkflowSource",
+      "label": "Shared Header Footer registry source",
+      "path": "freew/FreeW.App.Presentation/Ribbon/HeaderFooterRibbonWorkflow.cs"
     }
   ],
   "summary": {
@@ -109,7 +114,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 233
+    "behaviorEvidenceRows": 258
   },
   "commands": [
     {
@@ -7146,6 +7151,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "Both renderers route date and time insertion through the shared Header/Footer command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -9789,6 +9807,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "Both renderers route footer insertion through the shared Header/Footer command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10096,6 +10127,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "Both renderers route header insertion through the shared Header/Footer command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10193,6 +10237,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "Both renderers close Header/Footer editing through the shared command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10233,8 +10290,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "Both renderers preserve native Different First Page checked state behind one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10275,8 +10345,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "Both renderers preserve native Different Odd and Even Pages checked state behind one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10319,6 +10402,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "The shared workflow owns the canonical even-footer edit-slot mapping.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10361,6 +10457,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "The shared workflow owns the canonical even-header edit-slot mapping.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10403,6 +10512,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "The shared workflow owns the canonical first-page-footer edit-slot mapping.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10445,6 +10567,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "The shared workflow owns the canonical first-page-header edit-slot mapping.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10507,6 +10642,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "The shared workflow owns the canonical default-footer edit-slot mapping.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10569,6 +10717,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "The shared workflow owns the canonical default-header edit-slot mapping.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10609,8 +10770,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "Both renderers preserve native footer-distance state behind one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10653,6 +10827,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "The shared workflow owns the canonical footer navigation-slot mapping.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10695,6 +10882,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "The shared workflow owns the canonical header navigation-slot mapping.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10735,8 +10935,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": true,
+        "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "Both renderers preserve native header-distance state behind one shared route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10779,6 +10992,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "Both renderers insert Header/Footer date and time content through the shared command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10821,6 +11047,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "Both renderers insert Header/Footer document information through the shared command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10883,6 +11122,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "Both renderers insert a header page number through the shared command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -10925,6 +11177,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "Both renderers insert a footer page number through the shared command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -21416,6 +21681,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "Both renderers route the primary page-number action through one shared command identity.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -21458,6 +21736,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "Both renderers route bottom-of-page numbering through the shared Header/Footer command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -21500,6 +21791,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "Both renderers route current-position numbering through the shared Header/Footer command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -21542,6 +21846,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "Both renderers route page-number formatting through the shared Header/Footer command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -21584,6 +21901,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.header-footer.shared-workflow",
+        "slice": "Header and Footer command behavior",
+        "summary": "Both renderers route top-of-page numbering through the shared Header/Footer command family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.RegistersEveryPrimaryAndContextualActionWithFourStatefulHandles"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/HeaderFooterRibbonWorkflowTests.cs",
+          "test": "HeaderFooterRibbonWorkflowTests.BothRenderersDelegateHeaderFooterMappingToSharedPresentation"
+        }
       }
     },
     {
