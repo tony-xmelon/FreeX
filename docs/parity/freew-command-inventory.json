@@ -99,7 +99,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 169
+    "behaviorEvidenceRows": 174
   },
   "commands": [
     {
@@ -35369,6 +35369,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-of-figures.shared-workflow",
+        "slice": "Table of Figures command behavior",
+        "summary": "The primary Table of Figures command shares the Figure-label insertion command in both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableOfFiguresRibbonWorkflowTests.cs",
+          "test": "TableOfFiguresRibbonWorkflowTests.SharedWorkflowOwnsInsertRefreshLabelsAndPrimaryIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableOfFiguresRibbonWorkflowTests.cs",
+          "test": "TableOfFiguresRibbonWorkflowTests.BothRenderersDelegateTableOfFiguresPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -35411,6 +35424,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-of-figures.shared-workflow",
+        "slice": "Table of Figures command behavior",
+        "summary": "The primary update command shares the Figure-label refresh command in both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableOfFiguresRibbonWorkflowTests.cs",
+          "test": "TableOfFiguresRibbonWorkflowTests.SharedWorkflowOwnsInsertRefreshLabelsAndPrimaryIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableOfFiguresRibbonWorkflowTests.cs",
+          "test": "TableOfFiguresRibbonWorkflowTests.BothRenderersDelegateTableOfFiguresPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -35453,6 +35479,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-of-figures.shared-workflow",
+        "slice": "Table of Figures command behavior",
+        "summary": "Both renderers insert an Equation-labelled table through the shared label workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableOfFiguresRibbonWorkflowTests.cs",
+          "test": "TableOfFiguresRibbonWorkflowTests.SharedWorkflowOwnsInsertRefreshLabelsAndPrimaryIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableOfFiguresRibbonWorkflowTests.cs",
+          "test": "TableOfFiguresRibbonWorkflowTests.BothRenderersDelegateTableOfFiguresPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -35495,6 +35534,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-of-figures.shared-workflow",
+        "slice": "Table of Figures command behavior",
+        "summary": "Both renderers insert a Figure-labelled table through the shared label workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableOfFiguresRibbonWorkflowTests.cs",
+          "test": "TableOfFiguresRibbonWorkflowTests.SharedWorkflowOwnsInsertRefreshLabelsAndPrimaryIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableOfFiguresRibbonWorkflowTests.cs",
+          "test": "TableOfFiguresRibbonWorkflowTests.BothRenderersDelegateTableOfFiguresPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -35537,6 +35589,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-of-figures.shared-workflow",
+        "slice": "Table of Figures command behavior",
+        "summary": "Both renderers insert a Table-labelled table through the shared label workflow.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableOfFiguresRibbonWorkflowTests.cs",
+          "test": "TableOfFiguresRibbonWorkflowTests.SharedWorkflowOwnsInsertRefreshLabelsAndPrimaryIdentity"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableOfFiguresRibbonWorkflowTests.cs",
+          "test": "TableOfFiguresRibbonWorkflowTests.BothRenderersDelegateTableOfFiguresPolicyToSharedPresentation"
+        }
       }
     },
     {
