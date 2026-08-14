@@ -67,6 +67,11 @@
       "id": "avaloniaRegistrySource",
       "label": "Avalonia registry source",
       "path": "freew/FreeW.App.Avalonia/Ribbon/FreeWAvaloniaRibbonCommands.cs"
+    },
+    {
+      "id": "quickPartWorkflowSource",
+      "label": "Shared Quick Parts registry source",
+      "path": "freew/FreeW.App.Presentation/Ribbon/QuickPartRibbonWorkflow.cs"
     }
   ],
   "summary": {
