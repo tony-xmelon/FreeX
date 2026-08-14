@@ -99,7 +99,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 133
+    "behaviorEvidenceRows": 143
   },
   "commands": [
     {
@@ -579,6 +579,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.font-effects.shared-workflow",
+        "slice": "Font effect command behavior",
+        "summary": "Both renderers route all-caps formatting through the shared font-effect family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.StatefulNativeFontCommandsKeepTheirStateAndExecutionBehavior"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.BothRenderersDelegateFontEffectMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -817,6 +830,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.font-effects.shared-workflow",
+        "slice": "Font effect command behavior",
+        "summary": "Both renderers preserve native bold toggle state behind one shared semantic route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.StatefulNativeFontCommandsKeepTheirStateAndExecutionBehavior"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.BothRenderersDelegateFontEffectMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -9615,6 +9641,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.font-effects.shared-workflow",
+        "slice": "Font effect command behavior",
+        "summary": "Both renderers route font growth through the shared font-effect family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.StatefulNativeFontCommandsKeepTheirStateAndExecutionBehavior"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.BothRenderersDelegateFontEffectMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -16544,6 +16583,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.font-effects.shared-workflow",
+        "slice": "Font effect command behavior",
+        "summary": "Both renderers preserve native italic toggle behavior behind one shared semantic route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.StatefulNativeFontCommandsKeepTheirStateAndExecutionBehavior"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.BothRenderersDelegateFontEffectMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -28520,6 +28572,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.font-effects.shared-workflow",
+        "slice": "Font effect command behavior",
+        "summary": "Both renderers route font shrinking through the shared font-effect family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.StatefulNativeFontCommandsKeepTheirStateAndExecutionBehavior"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.BothRenderersDelegateFontEffectMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -28614,6 +28679,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.font-effects.shared-workflow",
+        "slice": "Font effect command behavior",
+        "summary": "Both renderers route small-caps formatting through the shared font-effect family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.StatefulNativeFontCommandsKeepTheirStateAndExecutionBehavior"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.BothRenderersDelegateFontEffectMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -30635,6 +30713,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.font-effects.shared-workflow",
+        "slice": "Font effect command behavior",
+        "summary": "Both renderers route strikethrough through the shared font-effect family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.StatefulNativeFontCommandsKeepTheirStateAndExecutionBehavior"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.BothRenderersDelegateFontEffectMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -31498,6 +31589,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.font-effects.shared-workflow",
+        "slice": "Font effect command behavior",
+        "summary": "Both renderers route subscript formatting through the shared font-effect family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.StatefulNativeFontCommandsKeepTheirStateAndExecutionBehavior"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.BothRenderersDelegateFontEffectMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -31540,6 +31644,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.font-effects.shared-workflow",
+        "slice": "Font effect command behavior",
+        "summary": "Both renderers route superscript formatting through the shared font-effect family.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.StatefulNativeFontCommandsKeepTheirStateAndExecutionBehavior"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.BothRenderersDelegateFontEffectMappingToSharedPresentation"
+        }
       }
     },
     {
@@ -35276,6 +35393,19 @@
         "avaloniaDefinitionSource": true,
         "wpfRegistrySource": false,
         "avaloniaRegistrySource": false
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.font-effects.shared-workflow",
+        "slice": "Font effect command behavior",
+        "summary": "Both renderers preserve native underline toggle behavior behind one shared semantic route.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.StatefulNativeFontCommandsKeepTheirStateAndExecutionBehavior"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/FontEffectRibbonWorkflowTests.cs",
+          "test": "FontEffectRibbonWorkflowTests.BothRenderersDelegateFontEffectMappingToSharedPresentation"
+        }
       }
     },
     {
