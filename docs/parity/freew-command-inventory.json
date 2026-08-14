@@ -72,6 +72,11 @@
       "id": "quickPartWorkflowSource",
       "label": "Shared Quick Parts registry source",
       "path": "freew/FreeW.App.Presentation/Ribbon/QuickPartRibbonWorkflow.cs"
+    },
+    {
+      "id": "tableInsertionWorkflowSource",
+      "label": "Shared Table insertion registry source",
+      "path": "freew/FreeW.App.Presentation/Ribbon/TableInsertionRibbonWorkflow.cs"
     }
   ],
   "summary": {
@@ -89,7 +94,7 @@
     "platformOnly": 5,
     "deferred": 0,
     "actionableGaps": 0,
-    "behaviorEvidenceRows": 113
+    "behaviorEvidenceRows": 118
   },
   "commands": [
     {
@@ -16344,8 +16349,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-insertion.shared-workflow",
+        "slice": "Insert table command behavior",
+        "summary": "The shared insertion workflow maps the legacy Table route to the canonical 3 Ã— 3 insertion command for both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
+          "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
+          "test": "TableInsertionRibbonWorkflowTests.BothRenderersDelegateTableInsertionPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -31448,8 +31466,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-insertion.shared-workflow",
+        "slice": "Insert table command behavior",
+        "summary": "The shared insertion workflow maps the 2 Ã— 2 menu choice and primary Table face to one command for both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
+          "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
+          "test": "TableInsertionRibbonWorkflowTests.BothRenderersDelegateTableInsertionPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -31479,8 +31510,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-insertion.shared-workflow",
+        "slice": "Insert table command behavior",
+        "summary": "The shared insertion workflow maps the 3 Ã— 3 menu choice and legacy Table route to one command for both renderers.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
+          "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
+          "test": "TableInsertionRibbonWorkflowTests.BothRenderersDelegateTableInsertionPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -31510,8 +31554,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-insertion.shared-workflow",
+        "slice": "Insert table command behavior",
+        "summary": "The shared insertion workflow inserts a 4 Ã— 4 table through the same renderer port in both hosts.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
+          "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
+          "test": "TableInsertionRibbonWorkflowTests.BothRenderersDelegateTableInsertionPolicyToSharedPresentation"
+        }
       }
     },
     {
@@ -31541,8 +31598,21 @@
       "sourceLiteralEvidence": {
         "wpfDefinitionSource": true,
         "avaloniaDefinitionSource": true,
-        "wpfRegistrySource": false,
+        "wpfRegistrySource": true,
         "avaloniaRegistrySource": true
+      },
+      "behaviorEvidence": {
+        "evidenceId": "freew.table-insertion.shared-workflow",
+        "slice": "Insert table command behavior",
+        "summary": "The shared insertion workflow inserts a 5 Ã— 2 table through the same renderer port in both hosts.",
+        "wpfEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
+          "test": "TableInsertionRibbonWorkflowTests.EditorFamilyBuilderReceivesTheSameCanonicalAndAdapterCommands"
+        },
+        "avaloniaEvidence": {
+          "path": "freew/FreeW.App.Presentation.Tests/TableInsertionRibbonWorkflowTests.cs",
+          "test": "TableInsertionRibbonWorkflowTests.BothRenderersDelegateTableInsertionPolicyToSharedPresentation"
+        }
       }
     },
     {
